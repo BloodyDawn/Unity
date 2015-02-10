@@ -27,8 +27,8 @@ import org.w3c.dom.Node;
 
 import com.l2jserver.gameserver.data.xml.IXmlReader;
 import com.l2jserver.gameserver.enums.MountType;
-import com.l2jserver.gameserver.model.L2PetData;
-import com.l2jserver.gameserver.model.L2PetLevelData;
+import com.l2jserver.gameserver.model.PetData;
+import com.l2jserver.gameserver.model.PetLevelData;
 import com.l2jserver.gameserver.model.StatsSet;
 
 /**
@@ -38,7 +38,7 @@ import com.l2jserver.gameserver.model.StatsSet;
  */
 public final class PetDataTable implements IXmlReader
 {
-	private final Map<Integer, L2PetData> _pets = new HashMap<>();
+	private final Map<Integer, PetData> _pets = new HashMap<>();
 	
 	/**
 	 * Instantiates a new pet data table.
@@ -68,7 +68,7 @@ public final class PetDataTable implements IXmlReader
 				int npcId = parseInteger(d.getAttributes(), "id");
 				int itemId = parseInteger(d.getAttributes(), "itemId");
 				// index ignored for now
-				L2PetData data = new L2PetData(npcId, itemId);
+				PetData data = new PetData(npcId, itemId);
 				for (Node p = d.getFirstChild(); p != null; p = p.getNextSibling())
 				{
 					if (p.getNodeName().equals("set"))
@@ -141,7 +141,7 @@ public final class PetDataTable implements IXmlReader
 										}
 									}
 								}
-								data.addNewStat(level, new L2PetLevelData(set));
+								data.addNewStat(level, new PetLevelData(set));
 							}
 						}
 					}
@@ -155,9 +155,9 @@ public final class PetDataTable implements IXmlReader
 	 * @param itemId
 	 * @return
 	 */
-	public L2PetData getPetDataByItemId(int itemId)
+	public PetData getPetDataByItemId(int itemId)
 	{
-		for (L2PetData data : _pets.values())
+		for (PetData data : _pets.values())
 		{
 			if (data.getItemId() == itemId)
 			{
@@ -173,9 +173,9 @@ public final class PetDataTable implements IXmlReader
 	 * @param petLevel the pet level.
 	 * @return the pet's parameters for the given Id and level.
 	 */
-	public L2PetLevelData getPetLevelData(int petId, int petLevel)
+	public PetLevelData getPetLevelData(int petId, int petLevel)
 	{
-		final L2PetData pd = getPetData(petId);
+		final PetData pd = getPetData(petId);
 		if (pd != null)
 		{
 			return pd.getPetLevelData(petLevel);
@@ -188,7 +188,7 @@ public final class PetDataTable implements IXmlReader
 	 * @param petId the pet Id.
 	 * @return the pet data
 	 */
-	public L2PetData getPetData(int petId)
+	public PetData getPetData(int petId)
 	{
 		if (!_pets.containsKey(petId))
 		{

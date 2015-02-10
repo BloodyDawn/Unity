@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.network.serverpackets;
 
 import com.l2jserver.gameserver.data.xml.impl.RecipeData;
-import com.l2jserver.gameserver.model.L2RecipeList;
+import com.l2jserver.gameserver.model.RecipeList;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 public class RecipeItemMakeInfo extends L2GameServerPacket
@@ -45,7 +45,7 @@ public class RecipeItemMakeInfo extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		final L2RecipeList recipe = RecipeData.getInstance().getRecipeList(_id);
+		final RecipeList recipe = RecipeData.getInstance().getRecipeList(_id);
 		if (recipe != null)
 		{
 			writeC(0xDD);

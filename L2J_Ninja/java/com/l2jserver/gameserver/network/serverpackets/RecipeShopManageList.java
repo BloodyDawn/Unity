@@ -20,15 +20,15 @@ package com.l2jserver.gameserver.network.serverpackets;
 
 import java.util.Iterator;
 
-import com.l2jserver.gameserver.model.L2ManufactureItem;
-import com.l2jserver.gameserver.model.L2RecipeList;
+import com.l2jserver.gameserver.model.ManufactureItem;
+import com.l2jserver.gameserver.model.RecipeList;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 public class RecipeShopManageList extends L2GameServerPacket
 {
 	private final L2PcInstance _seller;
 	private final boolean _isDwarven;
-	private L2RecipeList[] _recipes;
+	private RecipeList[] _recipes;
 	
 	public RecipeShopManageList(L2PcInstance seller, boolean isDwarven)
 	{
@@ -46,8 +46,8 @@ public class RecipeShopManageList extends L2GameServerPacket
 		
 		if (_seller.hasManufactureShop())
 		{
-			final Iterator<L2ManufactureItem> it = _seller.getManufactureItems().values().iterator();
-			L2ManufactureItem item;
+			final Iterator<ManufactureItem> it = _seller.getManufactureItems().values().iterator();
+			ManufactureItem item;
 			while (it.hasNext())
 			{
 				item = it.next();
@@ -77,7 +77,7 @@ public class RecipeShopManageList extends L2GameServerPacket
 			
 			for (int i = 0; i < _recipes.length; i++)
 			{
-				L2RecipeList temp = _recipes[i];
+				RecipeList temp = _recipes[i];
 				writeD(temp.getId());
 				writeD(i + 1);
 			}
@@ -90,7 +90,7 @@ public class RecipeShopManageList extends L2GameServerPacket
 		else
 		{
 			writeD(_seller.getManufactureItems().size());
-			for (L2ManufactureItem item : _seller.getManufactureItems().values())
+			for (ManufactureItem item : _seller.getManufactureItems().values())
 			{
 				writeD(item.getRecipeId());
 				writeD(0x00);

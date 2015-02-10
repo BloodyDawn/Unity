@@ -18,11 +18,11 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.L2RecipeList;
+import com.l2jserver.gameserver.model.RecipeList;
 
 public class RecipeBookItemList extends L2GameServerPacket
 {
-	private L2RecipeList[] _recipes;
+	private RecipeList[] _recipes;
 	private final boolean _isDwarvenCraft;
 	private final int _maxMp;
 	
@@ -32,7 +32,7 @@ public class RecipeBookItemList extends L2GameServerPacket
 		_maxMp = maxMp;
 	}
 	
-	public void addRecipes(L2RecipeList[] recipeBook)
+	public void addRecipes(RecipeList[] recipeBook)
 	{
 		_recipes = recipeBook;
 	}

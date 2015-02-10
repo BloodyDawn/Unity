@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
-import com.l2jserver.gameserver.model.L2SkillLearn;
+import com.l2jserver.gameserver.model.SkillLearn;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -73,7 +73,7 @@ public class RequestAcquireAbilityList extends L2GameClientPacket
 		
 		for (SkillHolder holder : _skills)
 		{
-			final L2SkillLearn learn = SkillTreesData.getInstance().getAbilitySkill(holder.getSkillId(), holder.getSkillLvl());
+			final SkillLearn learn = SkillTreesData.getInstance().getAbilitySkill(holder.getSkillId(), holder.getSkillLvl());
 			if (learn == null)
 			{
 				_log.warning(getClass().getSimpleName() + ": SkillLearn " + holder.getSkillId() + "(" + holder.getSkillLvl() + ") not found!");

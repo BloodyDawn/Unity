@@ -23,8 +23,8 @@ import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.enums.PrivateStoreType;
 import com.l2jserver.gameserver.handler.IActionHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.TvTEvent;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -53,7 +53,7 @@ public class L2PcInstanceAction implements IActionHandler
 	 * @param activeChar The player that start an action on target L2PcInstance
 	 */
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
+	public boolean action(L2PcInstance activeChar, WorldObject target, boolean interact)
 	{
 		// See description in TvTEvent.java
 		if (!TvTEvent.onAction(activeChar, target.getObjectId()))
@@ -94,7 +94,7 @@ public class L2PcInstanceAction implements IActionHandler
 				{
 					// activeChar with lvl < 21 can't attack a cursed weapon holder
 					// And a cursed weapon holder can't attack activeChars with lvl < 21
-					if ((((L2PcInstance) target).isCursedWeaponEquipped() && (activeChar.getLevel() < 21)) || (activeChar.isCursedWeaponEquipped() && (((L2Character) target).getLevel() < 21)))
+					if ((((L2PcInstance) target).isCursedWeaponEquipped() && (activeChar.getLevel() < 21)) || (activeChar.isCursedWeaponEquipped() && (((Creature) target).getLevel() < 21)))
 					{
 						activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 					}

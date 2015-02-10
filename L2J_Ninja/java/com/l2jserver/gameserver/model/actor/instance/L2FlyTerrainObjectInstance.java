@@ -19,11 +19,11 @@
 package com.l2jserver.gameserver.model.actor.instance;
 
 import com.l2jserver.gameserver.enums.InstanceType;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 
-public final class L2FlyTerrainObjectInstance extends L2Npc
+public final class L2FlyTerrainObjectInstance extends Npc
 {
 	public L2FlyTerrainObjectInstance(int objectId, L2NpcTemplate template)
 	{

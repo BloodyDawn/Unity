@@ -21,8 +21,8 @@ package com.l2jserver.gameserver.model.actor.instance;
 import java.util.concurrent.ScheduledFuture;
 
 import com.l2jserver.gameserver.enums.InstanceType;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.knownlist.MonsterKnownList;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.util.MinionList;
@@ -35,7 +35,7 @@ import com.l2jserver.gameserver.util.MinionList;
  * <li>L2GrandBossInstance</li>
  * </ul>
  */
-public class L2MonsterInstance extends L2Attackable
+public class L2MonsterInstance extends Attackable
 {
 	protected boolean _enableMinions = true;
 	
@@ -80,7 +80,7 @@ public class L2MonsterInstance extends L2Attackable
 	 * Return True if the attacker is not another L2MonsterInstance.
 	 */
 	@Override
-	public boolean isAutoAttackable(L2Character attacker)
+	public boolean isAutoAttackable(Creature attacker)
 	{
 		return super.isAutoAttackable(attacker) && !isEventMob();
 	}
@@ -140,7 +140,7 @@ public class L2MonsterInstance extends L2Attackable
 	}
 	
 	@Override
-	public boolean doDie(L2Character killer)
+	public boolean doDie(Creature killer)
 	{
 		if (!super.doDie(killer))
 		{

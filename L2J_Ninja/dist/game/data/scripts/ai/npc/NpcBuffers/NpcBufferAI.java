@@ -19,9 +19,9 @@
 package ai.npc.NpcBuffers;
 
 import com.l2jserver.gameserver.ThreadPoolManager;
-import com.l2jserver.gameserver.model.L2Party;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.Party;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2TamedBeastInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -33,10 +33,10 @@ import com.l2jserver.gameserver.util.Util;
  */
 public class NpcBufferAI implements Runnable
 {
-	private final L2Npc _npc;
+	private final Npc _npc;
 	private final NpcBufferSkillData _skillData;
 	
-	protected NpcBufferAI(L2Npc npc, NpcBufferSkillData skill)
+	protected NpcBufferAI(Npc npc, NpcBufferSkillData skill)
 	{
 		_npc = npc;
 		_skillData = skill;
@@ -83,7 +83,7 @@ public class NpcBufferAI implements Runnable
 			}
 			case RANGE:
 			{
-				for (L2Character target : _npc.getKnownList().getKnownCharactersInRadius(skill.getAffectRange()))
+				for (Creature target : _npc.getKnownList().getKnownCharactersInRadius(skill.getAffectRange()))
 				{
 					switch (_skillData.getAffectObject())
 					{
@@ -122,7 +122,7 @@ public class NpcBufferAI implements Runnable
 	 * @param target the target
 	 * @return {@code true} if target can be affected by positive effect, {@code false} otherwise
 	 */
-	private boolean isFriendly(L2PcInstance player, L2Character target)
+	private boolean isFriendly(L2PcInstance player, Creature target)
 	{
 		if (target.isPlayable())
 		{
@@ -135,7 +135,7 @@ public class NpcBufferAI implements Runnable
 			
 			if (player.isInParty() && targetPlayer.isInParty())
 			{
-				final L2Party party = player.getParty();
+				final Party party = player.getParty();
 				
 				if (party.containsPlayer(targetPlayer))
 				{
@@ -172,7 +172,7 @@ public class NpcBufferAI implements Runnable
 	 * @param target the target
 	 * @return {@code true} if target can be affected by negative effect, {@code false} otherwise
 	 */
-	private boolean isEnemy(L2PcInstance player, L2Character target)
+	private boolean isEnemy(L2PcInstance player, Creature target)
 	{
 		if (isFriendly(player, target))
 		{

@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.l2jserver.gameserver.enums.Race;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.zone.L2ZoneType;
 
@@ -40,12 +40,12 @@ public class L2RespawnZone extends L2ZoneType
 	}
 	
 	@Override
-	protected void onEnter(L2Character character)
+	protected void onEnter(Creature character)
 	{
 	}
 	
 	@Override
-	protected void onExit(L2Character character)
+	protected void onExit(Creature character)
 	{
 	}
 	

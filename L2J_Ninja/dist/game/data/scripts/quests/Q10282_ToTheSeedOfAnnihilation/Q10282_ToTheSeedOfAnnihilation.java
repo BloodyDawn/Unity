@@ -18,7 +18,7 @@
  */
 package quests.Q10282_ToTheSeedOfAnnihilation;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
@@ -46,7 +46,7 @@ public class Q10282_ToTheSeedOfAnnihilation extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String htmltext = event;
 		final QuestState st = getQuestState(player, false);
@@ -70,7 +70,7 @@ public class Q10282_ToTheSeedOfAnnihilation extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);

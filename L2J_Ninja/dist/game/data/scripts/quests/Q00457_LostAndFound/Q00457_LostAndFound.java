@@ -25,7 +25,7 @@ import com.l2jserver.gameserver.datatables.SpawnTable;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.enums.QuestType;
 import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
@@ -67,7 +67,7 @@ public final class Q00457_LostAndFound extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final QuestState st = getQuestState(player, false);
 		if (st == null)
@@ -141,7 +141,7 @@ public final class Q00457_LostAndFound extends Quest
 				}
 				for (L2Spawn escortSpawn : _escortCheckers)
 				{
-					final L2Npc escort = escortSpawn.getLastSpawn();
+					final Npc escort = escortSpawn.getLastSpawn();
 					if ((escort != null) && npc.isInsideRadius(escort, 1000, false, false))
 					{
 						startQuestTimer("STOP", 1000, npc, player);
@@ -182,7 +182,7 @@ public final class Q00457_LostAndFound extends Quest
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		if (npc.getTarget() != null)
 		{
@@ -192,7 +192,7 @@ public final class Q00457_LostAndFound extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		final QuestState st = getQuestState(player, true);
 		
@@ -204,7 +204,7 @@ public final class Q00457_LostAndFound extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
 		QuestState st = getQuestState(player, true);
@@ -238,13 +238,13 @@ public final class Q00457_LostAndFound extends Quest
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		_escortCheckers = SpawnTable.getInstance().getSpawns(ESCORT_CHECKER);
 		return super.onSpawn(npc);
 	}
 	
-	public void broadcastNpcSay(L2Npc npc, L2PcInstance player, NpcStringId stringId, boolean whisper)
+	public void broadcastNpcSay(Npc npc, L2PcInstance player, NpcStringId stringId, boolean whisper)
 	{
 		((whisper) ? player : npc).sendPacket(new NpcSay(npc.getObjectId(), ((whisper) ? ChatType.NPC_WHISPER : ChatType.NPC_GENERAL), npc.getId(), stringId));
 	}

@@ -30,10 +30,10 @@ import com.l2jserver.gameserver.instancemanager.ClanHallManager;
 import com.l2jserver.gameserver.instancemanager.FortManager;
 import com.l2jserver.gameserver.instancemanager.SiegeManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.L2SiegeClan;
+import com.l2jserver.gameserver.model.SiegeClan;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2CubicInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PetInstance;
@@ -99,7 +99,7 @@ public final class Formulas
 	 * @param cha
 	 * @return
 	 */
-	public static int getRegeneratePeriod(L2Character cha)
+	public static int getRegeneratePeriod(Creature cha)
 	{
 		return cha.isDoor() ? HP_REGENERATE_PERIOD * 100 : HP_REGENERATE_PERIOD;
 	}
@@ -171,7 +171,7 @@ public final class Formulas
 	 * FuncAtkAccuracy -> Math.sqrt(_player.getDEX())*6+_player.getLevel()<br>
 	 * @param cha L2PcInstance or L2Summon that must obtain basic Func objects
 	 */
-	public static void addFuncsToNewCharacter(L2Character cha)
+	public static void addFuncsToNewCharacter(Creature cha)
 	{
 		if (cha.isPlayer())
 		{
@@ -235,7 +235,7 @@ public final class Formulas
 	 * @param cha
 	 * @return
 	 */
-	public static final double calcHpRegen(L2Character cha)
+	public static final double calcHpRegen(Creature cha)
 	{
 		double init = cha.isPlayer() ? cha.getActingPlayer().getTemplate().getBaseHpRegen(cha.getLevel()) : cha.getTemplate().getBaseHpReg();
 		double hpRegenMultiplier = cha.isRaid() ? Config.RAID_HP_REGEN_MULTIPLIER : Config.HP_REGEN_MULTIPLIER;
@@ -348,7 +348,7 @@ public final class Formulas
 	 * @param cha
 	 * @return
 	 */
-	public static final double calcMpRegen(L2Character cha)
+	public static final double calcMpRegen(Creature cha)
 	{
 		double init = cha.isPlayer() ? cha.getActingPlayer().getTemplate().getBaseMpRegen(cha.getLevel()) : cha.getTemplate().getBaseMpReg();
 		double mpRegenMultiplier = cha.isRaid() ? Config.RAID_MP_REGEN_MULTIPLIER : Config.MP_REGEN_MULTIPLIER;
@@ -450,7 +450,7 @@ public final class Formulas
 	 * @param cha
 	 * @return
 	 */
-	public static final double calcCpRegen(L2Character cha)
+	public static final double calcCpRegen(Creature cha)
 	{
 		double init = cha.isPlayer() ? cha.getActingPlayer().getTemplate().getBaseCpRegen(cha.getLevel()) : cha.getTemplate().getBaseHpReg();
 		double cpRegenMultiplier = Config.CP_REGEN_MULTIPLIER;
@@ -505,7 +505,7 @@ public final class Formulas
 			return 0;
 		}
 		
-		L2SiegeClan siegeClan = siege.getAttackerClan(activeChar.getClan().getId());
+		SiegeClan siegeClan = siege.getAttackerClan(activeChar.getClan().getId());
 		if ((siegeClan == null) || siegeClan.getFlag().isEmpty() || !Util.checkIfInRange(200, activeChar, siegeClan.getFlag().get(0), true))
 		{
 			return 0;
@@ -514,7 +514,7 @@ public final class Formulas
 		return 1.5; // If all is true, then modifier will be 50% more
 	}
 	
-	public static double calcBlowDamage(L2Character attacker, L2Character target, Skill skill, byte shld, boolean ss)
+	public static double calcBlowDamage(Creature attacker, Creature target, Skill skill, byte shld, boolean ss)
 	{
 		double defence = target.getPDef(attacker);
 		
@@ -561,7 +561,7 @@ public final class Formulas
 		double weaponMod = attacker.getRandomDamageMultiplier();
 		
 		double penaltyMod = 1;
-		if ((target instanceof L2Attackable) && !target.isRaid() && !target.isRaidMinion() && (target.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY) && (attacker.getActingPlayer() != null) && ((target.getLevel() - attacker.getActingPlayer().getLevel()) >= 2))
+		if ((target instanceof Attackable) && !target.isRaid() && !target.isRaidMinion() && (target.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY) && (attacker.getActingPlayer() != null) && ((target.getLevel() - attacker.getActingPlayer().getLevel()) >= 2))
 		{
 			int lvlDiff = target.getLevel() - attacker.getActingPlayer().getLevel() - 1;
 			if (lvlDiff >= Config.NPC_SKILL_DMG_PENALTY.size())
@@ -605,7 +605,7 @@ public final class Formulas
 		return Math.max(damage, 1);
 	}
 	
-	public static double calcBackstabDamage(L2Character attacker, L2Character target, Skill skill, byte shld, boolean ss)
+	public static double calcBackstabDamage(Creature attacker, Creature target, Skill skill, byte shld, boolean ss)
 	{
 		double defence = target.getPDef(attacker);
 		
@@ -703,7 +703,7 @@ public final class Formulas
 	 * @param ss if weapon item was charged by soulshot
 	 * @return
 	 */
-	public static final double calcPhysDam(L2Character attacker, L2Character target, Skill skill, byte shld, boolean crit, boolean ss)
+	public static final double calcPhysDam(Creature attacker, Creature target, Skill skill, byte shld, boolean crit, boolean ss)
 	{
 		final boolean isPvP = attacker.isPlayable() && target.isPlayable();
 		final boolean isPvE = attacker.isPlayable() && target.isAttackable();
@@ -850,7 +850,7 @@ public final class Formulas
 		return damage;
 	}
 	
-	public static final double calcMagicDam(L2Character attacker, L2Character target, Skill skill, byte shld, boolean sps, boolean bss, boolean mcrit)
+	public static final double calcMagicDam(Creature attacker, Creature target, Skill skill, byte shld, boolean sps, boolean bss, boolean mcrit)
 	{
 		int mDef = target.getMDef(attacker, skill);
 		switch (shld)
@@ -959,7 +959,7 @@ public final class Formulas
 		return damage;
 	}
 	
-	public static final double calcMagicDam(L2CubicInstance attacker, L2Character target, Skill skill, boolean mcrit, byte shld)
+	public static final double calcMagicDam(L2CubicInstance attacker, Creature target, Skill skill, boolean mcrit, byte shld)
 	{
 		int mDef = target.getMDef(attacker.getOwner(), skill);
 		switch (shld)
@@ -1052,7 +1052,7 @@ public final class Formulas
 	 * @param target
 	 * @return
 	 */
-	public static final boolean calcCrit(double rate, boolean skill, L2Character target)
+	public static final boolean calcCrit(double rate, boolean skill, Creature target)
 	{
 		double finalRate = target.getStat().calcStat(Stats.DEFENCE_CRITICAL_RATE, rate, null, null) + target.getStat().calcStat(Stats.DEFENCE_CRITICAL_RATE_ADD, 0, null, null);
 		return finalRate > Rnd.get(1000);
@@ -1068,7 +1068,7 @@ public final class Formulas
 	 * @param dmg
 	 * @return true in case when ATTACK is canceled due to hit
 	 */
-	public static final boolean calcAtkBreak(L2Character target, double dmg)
+	public static final boolean calcAtkBreak(Creature target, double dmg)
 	{
 		if (target.isChanneling())
 		{
@@ -1117,7 +1117,7 @@ public final class Formulas
 	 * @param rate
 	 * @return
 	 */
-	public static final int calcPAtkSpd(L2Character attacker, L2Character target, double rate)
+	public static final int calcPAtkSpd(Creature attacker, Creature target, double rate)
 	{
 		// measured Oct 2006 by Tank6585, formula by Sami
 		// attack speed 312 equals 1500 ms delay... (or 300 + 40 ms delay?)
@@ -1135,7 +1135,7 @@ public final class Formulas
 	 * @param skillTime
 	 * @return
 	 */
-	public static final int calcAtkSpd(L2Character attacker, Skill skill, double skillTime)
+	public static final int calcAtkSpd(Creature attacker, Skill skill, double skillTime)
 	{
 		if (skill.isMagic())
 		{
@@ -1150,7 +1150,7 @@ public final class Formulas
 	 * @param target
 	 * @return {@code true} if hit missed (target evaded), {@code false} otherwise.
 	 */
-	public static boolean calcHitMiss(L2Character attacker, L2Character target)
+	public static boolean calcHitMiss(Creature attacker, Creature target)
 	{
 		int chance = (80 + (2 * (attacker.getAccuracy() - target.getEvasionRate(attacker)))) * 10;
 		
@@ -1174,7 +1174,7 @@ public final class Formulas
 	 * @param sendSysMsg
 	 * @return
 	 */
-	public static byte calcShldUse(L2Character attacker, L2Character target, Skill skill, boolean sendSysMsg)
+	public static byte calcShldUse(Creature attacker, Creature target, Skill skill, boolean sendSysMsg)
 	{
 		if ((skill != null) && skill.ignoreShield())
 		{
@@ -1235,17 +1235,17 @@ public final class Formulas
 		return shldSuccess;
 	}
 	
-	public static byte calcShldUse(L2Character attacker, L2Character target, Skill skill)
+	public static byte calcShldUse(Creature attacker, Creature target, Skill skill)
 	{
 		return calcShldUse(attacker, target, skill, true);
 	}
 	
-	public static byte calcShldUse(L2Character attacker, L2Character target)
+	public static byte calcShldUse(Creature attacker, Creature target)
 	{
 		return calcShldUse(attacker, target, null, true);
 	}
 	
-	public static boolean calcMagicAffected(L2Character actor, L2Character target, Skill skill)
+	public static boolean calcMagicAffected(Creature actor, Creature target, Skill skill)
 	{
 		// TODO: CHECK/FIX THIS FORMULA UP!!
 		double defence = 0;
@@ -1269,7 +1269,7 @@ public final class Formulas
 		return d > 0;
 	}
 	
-	public static double calcLvlBonusMod(L2Character attacker, L2Character target, Skill skill)
+	public static double calcLvlBonusMod(Creature attacker, Creature target, Skill skill)
 	{
 		int attackerLvl = skill.getMagicLevel() > 0 ? skill.getMagicLevel() : attacker.getLevel();
 		double skillLvlBonusRateMod = 1 + (skill.getLvlBonusRate() / 100.);
@@ -1284,7 +1284,7 @@ public final class Formulas
 	 * @param skill the skill
 	 * @return {@code true} if the effect lands
 	 */
-	public static boolean calcEffectSuccess(L2Character attacker, L2Character target, Skill skill)
+	public static boolean calcEffectSuccess(Creature attacker, Creature target, Skill skill)
 	{
 		// StaticObjects can not receive continuous effects.
 		if (target.isDoor() || (target instanceof L2SiegeFlagInstance) || (target instanceof L2StaticObjectInstance))
@@ -1382,7 +1382,7 @@ public final class Formulas
 		return true;
 	}
 	
-	public static boolean calcCubicSkillSuccess(L2CubicInstance attacker, L2Character target, Skill skill, byte shld)
+	public static boolean calcCubicSkillSuccess(L2CubicInstance attacker, Creature target, Skill skill, byte shld)
 	{
 		if (skill.isDebuff())
 		{
@@ -1446,7 +1446,7 @@ public final class Formulas
 		return (Rnd.get(100) < finalRate);
 	}
 	
-	public static boolean calcMagicSuccess(L2Character attacker, L2Character target, Skill skill)
+	public static boolean calcMagicSuccess(Creature attacker, Creature target, Skill skill)
 	{
 		if (skill.getPower() == -1)
 		{
@@ -1487,7 +1487,7 @@ public final class Formulas
 		return (Rnd.get(100) < rate);
 	}
 	
-	public static double calcManaDam(L2Character attacker, L2Character target, Skill skill, byte shld, boolean sps, boolean bss, boolean mcrit)
+	public static double calcManaDam(Creature attacker, Creature target, Skill skill, byte shld, boolean sps, boolean bss, boolean mcrit)
 	{
 		// Formula: (SQR(M.Atk)*Power*(Target Max MP/97))/M.Def
 		double mAtk = attacker.getMAtk(target, skill);
@@ -1556,7 +1556,7 @@ public final class Formulas
 		return damage;
 	}
 	
-	public static double calculateSkillResurrectRestorePercent(double baseRestorePercent, L2Character caster)
+	public static double calculateSkillResurrectRestorePercent(double baseRestorePercent, Creature caster)
 	{
 		if ((baseRestorePercent == 0) || (baseRestorePercent == 100))
 		{
@@ -1575,7 +1575,7 @@ public final class Formulas
 		return restorePercent;
 	}
 	
-	public static boolean calcPhysicalSkillEvasion(L2Character activeChar, L2Character target, Skill skill)
+	public static boolean calcPhysicalSkillEvasion(Creature activeChar, Creature target, Skill skill)
 	{
 		if (skill.isMagic() || skill.isDebuff())
 		{
@@ -1600,7 +1600,7 @@ public final class Formulas
 		return false;
 	}
 	
-	public static boolean calcSkillMastery(L2Character actor, Skill sk)
+	public static boolean calcSkillMastery(Creature actor, Skill sk)
 	{
 		// Static Skills are not affected by Skill Mastery.
 		if (sk.isStatic())
@@ -1645,7 +1645,7 @@ public final class Formulas
 	 * @param skill Can be {@code null} if there is no skill used for the attack.
 	 * @return The attribute bonus
 	 */
-	public static double calcAttributeBonus(L2Character attacker, L2Character target, Skill skill)
+	public static double calcAttributeBonus(Creature attacker, Creature target, Skill skill)
 	{
 		int attack_attribute;
 		int defence_attribute;
@@ -1819,7 +1819,7 @@ public final class Formulas
 		return result;
 	}
 	
-	public static void calcDamageReflected(L2Character attacker, L2Character target, Skill skill, boolean crit)
+	public static void calcDamageReflected(Creature attacker, Creature target, Skill skill, boolean crit)
 	{
 		// Only melee skills can be reflected
 		if (skill.isMagic() || (skill.getCastRange() > MELEE_ATTACK_RANGE))
@@ -1862,7 +1862,7 @@ public final class Formulas
 	 * @param skill
 	 * @return {@code true} if reflect, {@code false} otherwise.
 	 */
-	public static boolean calcBuffDebuffReflection(L2Character target, Skill skill)
+	public static boolean calcBuffDebuffReflection(Creature target, Skill skill)
 	{
 		if (!skill.isDebuff() || (skill.getActivateRate() == -1))
 		{
@@ -1878,7 +1878,7 @@ public final class Formulas
 	 * @param fallHeight
 	 * @return damage
 	 */
-	public static double calcFallDam(L2Character cha, int fallHeight)
+	public static double calcFallDam(Creature cha, int fallHeight)
 	{
 		if (!Config.ENABLE_FALLING_DAMAGE || (fallHeight < 0))
 		{
@@ -1888,7 +1888,7 @@ public final class Formulas
 		return damage;
 	}
 	
-	public static boolean calcBlowSuccess(L2Character activeChar, L2Character target, Skill skill)
+	public static boolean calcBlowSuccess(Creature activeChar, Creature target, Skill skill)
 	{
 		double dexMod = BaseStats.DEX.calcBonus(activeChar);
 		// Apply DEX Mod.
@@ -1913,7 +1913,7 @@ public final class Formulas
 		return Rnd.get(100) < rate;
 	}
 	
-	public static List<BuffInfo> calcCancelStealEffects(L2Character activeChar, L2Character target, Skill skill, String slot, int rate, int max)
+	public static List<BuffInfo> calcCancelStealEffects(Creature activeChar, Creature target, Skill skill, String slot, int rate, int max)
 	{
 		final List<BuffInfo> canceled = new ArrayList<>(max);
 		switch (slot)
@@ -1998,7 +1998,7 @@ public final class Formulas
 	 * @param skill the skill
 	 * @return the time that the effect will last
 	 */
-	public static int calcEffectAbnormalTime(L2Character caster, L2Character target, Skill skill)
+	public static int calcEffectAbnormalTime(Creature caster, Creature target, Skill skill)
 	{
 		int time = skill.isPassive() || skill.isToggle() ? -1 : skill.getAbnormalTime();
 		
@@ -2045,7 +2045,7 @@ public final class Formulas
 	 * @param skill
 	 * @return chance for effect to succeed
 	 */
-	public static boolean calcProbability(double baseChance, L2Character attacker, L2Character target, Skill skill)
+	public static boolean calcProbability(double baseChance, Creature attacker, Creature target, Skill skill)
 	{
 		return Rnd.get(100) < ((((((skill.getMagicLevel() + baseChance) - target.getLevel()) + 30) - target.getINT()) * calcAttributeBonus(attacker, target, skill)) * calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false));
 	}
@@ -2098,7 +2098,7 @@ public final class Formulas
 		return result;
 	}
 	
-	public static double calcGeneralTraitBonus(L2Character attacker, L2Character target, TraitType traitType, boolean ignoreResistance)
+	public static double calcGeneralTraitBonus(Creature attacker, Creature target, TraitType traitType, boolean ignoreResistance)
 	{
 		if (traitType == TraitType.NONE)
 		{
@@ -2138,14 +2138,14 @@ public final class Formulas
 		return Util.constrain(result, 0.05, 2.0);
 	}
 	
-	public static double calcWeaponTraitBonus(L2Character attacker, L2Character target)
+	public static double calcWeaponTraitBonus(Creature attacker, Creature target)
 	{
 		final TraitType type = attacker.getAttackType().getTraitType();
 		double result = target.getStat().getDefenceTraits()[type.getId()] - 1.0;
 		return 1.0 - result;
 	}
 	
-	public static double calcAttackTraitBonus(L2Character attacker, L2Character target)
+	public static double calcAttackTraitBonus(Creature attacker, Creature target)
 	{
 		final double weaponTraitBonus = calcWeaponTraitBonus(attacker, target);
 		if (weaponTraitBonus == 0)

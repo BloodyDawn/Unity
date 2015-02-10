@@ -33,8 +33,8 @@ import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.data.sql.impl.TerritoryTable;
 import com.l2jserver.gameserver.datatables.NpcPersonalAIData;
 import com.l2jserver.gameserver.idfactory.IdFactory;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.interfaces.IIdentifiable;
 import com.l2jserver.gameserver.model.interfaces.ILocational;
@@ -75,22 +75,22 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 	/** Maximum respawn delay */
 	private int _respawnMaxDelay;
 	/** The generic constructor of L2NpcInstance managed by this L2Spawn */
-	private Constructor<? extends L2Npc> _constructor;
+	private Constructor<? extends Npc> _constructor;
 	/** If True a L2NpcInstance is respawned each time that another is killed */
 	private boolean _doRespawn;
 	/** If true then spawn is custom */
 	private boolean _customSpawn;
 	private static List<SpawnListener> _spawnListeners = new FastList<>();
-	private final FastList<L2Npc> _spawnedNpcs = new FastList<>();
+	private final FastList<Npc> _spawnedNpcs = new FastList<>();
 	private Map<Integer, Location> _lastSpawnPoints;
 	private boolean _isNoRndWalk = false; // Is no random walk
 	
 	/** The task launching the function doSpawn() */
 	class SpawnTask implements Runnable
 	{
-		private final L2Npc _oldNpc;
+		private final Npc _oldNpc;
 		
-		public SpawnTask(L2Npc pOldNpc)
+		public SpawnTask(Npc pOldNpc)
 		{
 			_oldNpc = pOldNpc;
 		}
@@ -145,7 +145,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		String className = "com.l2jserver.gameserver.model.actor.instance." + _template.getType() + "Instance";
 		
 		// Create the generic constructor of L2Npc managed by this L2Spawn
-		_constructor = Class.forName(className).asSubclass(L2Npc.class).getConstructor(int.class, L2NpcTemplate.class);
+		_constructor = Class.forName(className).asSubclass(Npc.class).getConstructor(int.class, L2NpcTemplate.class);
 	}
 	
 	/**
@@ -188,7 +188,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		return _location;
 	}
 	
-	public Location getLocation(L2Object obj)
+	public Location getLocation(WorldObject obj)
 	{
 		return ((_lastSpawnPoints == null) || (obj == null) || !_lastSpawnPoints.containsKey(obj.getObjectId())) ? _location : _lastSpawnPoints.get(obj.getObjectId());
 	}
@@ -203,7 +203,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 	 * @param obj object to check
 	 * @return the X position of the last spawn point of given NPC.
 	 */
-	public int getX(L2Object obj)
+	public int getX(WorldObject obj)
 	{
 		return getLocation(obj).getX();
 	}
@@ -228,7 +228,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 	 * @param obj object to check
 	 * @return the Y position of the last spawn point of given NPC.
 	 */
-	public int getY(L2Object obj)
+	public int getY(WorldObject obj)
 	{
 		return getLocation(obj).getY();
 	}
@@ -253,7 +253,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 	 * @param obj object to check
 	 * @return the Z position of the last spawn point of given NPC.
 	 */
-	public int getZ(L2Object obj)
+	public int getZ(WorldObject obj)
 	{
 		return getLocation(obj).getZ();
 	}
@@ -407,7 +407,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 	 * _currentCount < _maximumCount</B></FONT>
 	 * @param oldNpc
 	 */
-	public void decreaseCount(L2Npc oldNpc)
+	public void decreaseCount(Npc oldNpc)
 	{
 		// sanity check
 		if (_currentCount <= 0)
@@ -459,7 +459,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 	 * @param val
 	 * @return
 	 */
-	public L2Npc spawnOne(boolean val)
+	public Npc spawnOne(boolean val)
 	{
 		return doSpawn(val);
 	}
@@ -488,7 +488,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		_doRespawn = true;
 	}
 	
-	public L2Npc doSpawn()
+	public Npc doSpawn()
 	{
 		return doSpawn(false);
 	}
@@ -514,7 +514,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 	 * @param isSummonSpawn
 	 * @return
 	 */
-	public L2Npc doSpawn(boolean isSummonSpawn)
+	public Npc doSpawn(boolean isSummonSpawn)
 	{
 		try
 		{
@@ -527,7 +527,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 			}
 			
 			// Call the constructor of the L2Npc
-			L2Npc npc = _constructor.newInstance(IdFactory.getInstance().getNextId(), _template);
+			Npc npc = _constructor.newInstance(IdFactory.getInstance().getNextId(), _template);
 			npc.setInstanceId(getInstanceId()); // Must be done before object is spawned into visible world
 			if (isSummonSpawn)
 			{
@@ -553,7 +553,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 	 * @param mob
 	 * @return
 	 */
-	private L2Npc initializeNpcInstance(L2Npc mob)
+	private Npc initializeNpcInstance(Npc mob)
 	{
 		int newlocx = 0;
 		int newlocy = 0;
@@ -626,9 +626,9 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 			mob.setHeading(getHeading());
 		}
 		
-		if (mob instanceof L2Attackable)
+		if (mob instanceof Attackable)
 		{
-			((L2Attackable) mob).setChampion(false);
+			((Attackable) mob).setChampion(false);
 		}
 		
 		if (Config.L2JMOD_CHAMPION_ENABLE)
@@ -638,7 +638,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 			{
 				if (Rnd.get(100) < Config.L2JMOD_CHAMPION_FREQUENCY)
 				{
-					((L2Attackable) mob).setChampion(true);
+					((Attackable) mob).setChampion(true);
 				}
 			}
 		}
@@ -686,7 +686,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		}
 	}
 	
-	public static void notifyNpcSpawned(L2Npc npc)
+	public static void notifyNpcSpawned(Npc npc)
 	{
 		synchronized (_spawnListeners)
 		{
@@ -756,7 +756,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		return (_spawnTerritory != null) && (_location.getX() == 0) && (_location.getY() == 0);
 	}
 	
-	public L2Npc getLastSpawn()
+	public Npc getLastSpawn()
 	{
 		if (!_spawnedNpcs.isEmpty())
 		{
@@ -766,7 +766,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		return null;
 	}
 	
-	public final FastList<L2Npc> getSpawnedNpcs()
+	public final FastList<Npc> getSpawnedNpcs()
 	{
 		return _spawnedNpcs;
 	}
@@ -774,7 +774,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 	/**
 	 * @param oldNpc
 	 */
-	public void respawnNpc(L2Npc oldNpc)
+	public void respawnNpc(Npc oldNpc)
 	{
 		if (_doRespawn)
 		{

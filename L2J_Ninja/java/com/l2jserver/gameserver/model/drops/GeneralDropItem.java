@@ -23,7 +23,7 @@ import java.util.Collection;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.datatables.ItemTable;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.model.items.L2Item;
@@ -64,7 +64,7 @@ public class GeneralDropItem implements IDropItem
 		return 1.;
 	}
 	
-	private final long getMinMax(L2Character victim, L2Character killer, long val)
+	private final long getMinMax(Creature victim, Creature killer, long val)
 	{
 		double multiplier = 1;
 		
@@ -124,7 +124,7 @@ public class GeneralDropItem implements IDropItem
 	 * @param killer the killer
 	 * @return the min modified by any rates.
 	 */
-	public long getMin(L2Character victim, L2Character killer)
+	public long getMin(Creature victim, Creature killer)
 	{
 		return getMinMax(victim, killer, getMin());
 	}
@@ -144,7 +144,7 @@ public class GeneralDropItem implements IDropItem
 	 * @param killer the killer
 	 * @return the max modified by any rates.
 	 */
-	public long getMax(L2Character victim, L2Character killer)
+	public long getMax(Creature victim, Creature killer)
 	{
 		return getMinMax(victim, killer, getMax());
 	}
@@ -164,7 +164,7 @@ public class GeneralDropItem implements IDropItem
 	 * @param killer the killer
 	 * @return the chance modified by any rates.
 	 */
-	public double getChance(L2Character victim, L2Character killer)
+	public double getChance(Creature victim, Creature killer)
 	{
 		double multiplier = 1;
 		
@@ -200,7 +200,7 @@ public class GeneralDropItem implements IDropItem
 	 * @see com.l2jserver.gameserver.model.drop.IDropItem#calculateDrops(com.l2jserver.gameserver.model.actor.L2Character, com.l2jserver.gameserver.model.actor.L2Character)
 	 */
 	@Override
-	public Collection<ItemHolder> calculateDrops(L2Character victim, L2Character killer)
+	public Collection<ItemHolder> calculateDrops(Creature victim, Creature killer)
 	{
 		final int levelDifference = victim.getLevel() - killer.getLevel();
 		final double levelGapChanceToDrop;

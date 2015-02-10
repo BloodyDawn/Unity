@@ -31,10 +31,10 @@ import com.l2jserver.gameserver.handler.BypassHandler;
 import com.l2jserver.gameserver.handler.CommunityBoardHandler;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.handler.IBypassHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Hero;
 import com.l2jserver.gameserver.model.events.EventDispatcher;
@@ -115,7 +115,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				return;
 			}
 			
-			if ((bypassOriginId > 0) && !Util.isInsideRangeOfObjectId(activeChar, bypassOriginId, L2Npc.INTERACTION_DISTANCE))
+			if ((bypassOriginId > 0) && !Util.isInsideRangeOfObjectId(activeChar, bypassOriginId, Npc.INTERACTION_DISTANCE))
 			{
 				// No logging here, this could be a common case where the player has the html still open and run too far away and then clicks a html action
 				return;
@@ -192,11 +192,11 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				}
 				if (Util.isDigit(id))
 				{
-					L2Object object = L2World.getInstance().findObject(Integer.parseInt(id));
+					WorldObject object = World.getInstance().findObject(Integer.parseInt(id));
 					
-					if ((object != null) && object.isNpc() && (endOfId > 0) && activeChar.isInsideRadius(object, L2Npc.INTERACTION_DISTANCE, false, false))
+					if ((object != null) && object.isNpc() && (endOfId > 0) && activeChar.isInsideRadius(object, Npc.INTERACTION_DISTANCE, false, false))
 					{
-						((L2Npc) object).onBypassFeedback(activeChar, _command.substring(endOfId + 1));
+						((Npc) object).onBypassFeedback(activeChar, _command.substring(endOfId + 1));
 					}
 				}
 				
@@ -264,7 +264,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 			}
 			else if (_command.startsWith("menu_select"))
 			{
-				final L2Npc lastNpc = activeChar.getLastFolkNPC();
+				final Npc lastNpc = activeChar.getLastFolkNPC();
 				if ((lastNpc != null) && lastNpc.canInteract(activeChar))
 				{
 					final String[] split = _command.substring(_command.indexOf("?") + 1).split("&");
@@ -275,7 +275,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 			}
 			else if (_command.startsWith("manor_menu_select"))
 			{
-				final L2Npc lastNpc = activeChar.getLastFolkNPC();
+				final Npc lastNpc = activeChar.getLastFolkNPC();
 				if (Config.ALLOW_MANOR && (lastNpc != null) && lastNpc.canInteract(activeChar))
 				{
 					final String[] split = _command.substring(_command.indexOf("?") + 1).split("&");
@@ -292,10 +292,10 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				{
 					if (bypassOriginId > 0)
 					{
-						L2Object bypassOrigin = activeChar.getKnownList().getKnownObjects().get(bypassOriginId);
+						WorldObject bypassOrigin = activeChar.getKnownList().getKnownObjects().get(bypassOriginId);
 						if ((bypassOrigin != null) && bypassOrigin.isInstanceTypes(InstanceType.L2Character))
 						{
-							handler.useBypass(_command, activeChar, (L2Character) bypassOrigin);
+							handler.useBypass(_command, activeChar, (Creature) bypassOrigin);
 						}
 						else
 						{
@@ -344,14 +344,14 @@ public final class RequestBypassToServer extends L2GameClientPacket
 	 */
 	private static void comeHere(L2PcInstance activeChar)
 	{
-		L2Object obj = activeChar.getTarget();
+		WorldObject obj = activeChar.getTarget();
 		if (obj == null)
 		{
 			return;
 		}
-		if (obj instanceof L2Npc)
+		if (obj instanceof Npc)
 		{
-			L2Npc temp = (L2Npc) obj;
+			Npc temp = (Npc) obj;
 			temp.setTarget(activeChar);
 			temp.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, activeChar.getLocation());
 		}

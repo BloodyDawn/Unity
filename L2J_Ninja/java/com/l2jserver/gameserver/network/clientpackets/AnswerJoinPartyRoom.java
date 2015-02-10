@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.network.clientpackets;
 
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.PartyMatchRoom;
 import com.l2jserver.gameserver.model.PartyMatchRoomList;
 import com.l2jserver.gameserver.model.PartyMatchWaitingList;
@@ -61,7 +61,7 @@ public final class AnswerJoinPartyRoom extends L2GameClientPacket
 			player.setActiveRequester(null);
 			return;
 		}
-		else if (L2World.getInstance().getPlayer(partner.getObjectId()) == null)
+		else if (World.getInstance().getPlayer(partner.getObjectId()) == null)
 		{
 			// Partner hasn't been found, cancel the invitation
 			player.sendPacket(SystemMessageId.THAT_PLAYER_IS_NOT_ONLINE);

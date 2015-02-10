@@ -23,8 +23,8 @@ import java.util.Collection;
 import java.util.List;
 
 import com.l2jserver.gameserver.handler.ITargetTypeHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
 import com.l2jserver.gameserver.model.zone.ZoneId;
@@ -37,16 +37,16 @@ import com.l2jserver.gameserver.util.Util;
 public class BehindArea implements ITargetTypeHandler
 {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
 	{
-		List<L2Character> targetList = new ArrayList<>();
+		List<Creature> targetList = new ArrayList<>();
 		if ((target == null) || (((target == activeChar) || target.isAlikeDead()) && (skill.getCastRange() >= 0)) || (!(target.isAttackable() || target.isPlayable())))
 		{
 			activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 			return EMPTY_TARGET_LIST;
 		}
 		
-		final L2Character origin;
+		final Creature origin;
 		final boolean srcInArena = (activeChar.isInsideZone(ZoneId.PVP) && !activeChar.isInsideZone(ZoneId.SIEGE));
 		
 		if (skill.getCastRange() >= 0)
@@ -58,7 +58,7 @@ public class BehindArea implements ITargetTypeHandler
 			
 			if (onlyFirst)
 			{
-				return new L2Character[]
+				return new Creature[]
 				{
 					target
 				};
@@ -72,9 +72,9 @@ public class BehindArea implements ITargetTypeHandler
 			origin = activeChar;
 		}
 		
-		final Collection<L2Character> objs = activeChar.getKnownList().getKnownCharacters();
+		final Collection<Creature> objs = activeChar.getKnownList().getKnownCharacters();
 		int maxTargets = skill.getAffectLimit();
-		for (L2Character obj : objs)
+		for (Creature obj : objs)
 		{
 			if (!(obj.isAttackable() || obj.isPlayable()))
 			{
@@ -112,7 +112,7 @@ public class BehindArea implements ITargetTypeHandler
 			return EMPTY_TARGET_LIST;
 		}
 		
-		return targetList.toArray(new L2Character[targetList.size()]);
+		return targetList.toArray(new Creature[targetList.size()]);
 	}
 	
 	@Override

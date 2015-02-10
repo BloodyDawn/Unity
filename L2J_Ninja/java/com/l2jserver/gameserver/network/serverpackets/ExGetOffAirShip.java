@@ -18,13 +18,13 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 
 public class ExGetOffAirShip extends L2GameServerPacket
 {
 	private final int _playerId, _airShipId, _x, _y, _z;
 	
-	public ExGetOffAirShip(L2Character player, L2Character ship, int x, int y, int z)
+	public ExGetOffAirShip(Creature player, Creature ship, int x, int y, int z)
 	{
 		_playerId = player.getObjectId();
 		_airShipId = ship.getObjectId();

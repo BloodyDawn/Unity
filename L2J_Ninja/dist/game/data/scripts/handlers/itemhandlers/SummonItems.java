@@ -19,8 +19,8 @@
 package handlers.itemhandlers;
 
 import com.l2jserver.gameserver.data.xml.impl.PetDataTable;
-import com.l2jserver.gameserver.model.L2PetData;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.PetData;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.TvTEvent;
 import com.l2jserver.gameserver.model.holders.PetItemHolder;
@@ -33,7 +33,7 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 public class SummonItems extends ItemSkillsTemplate
 {
 	@Override
-	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+	public boolean useItem(Playable playable, L2ItemInstance item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{
@@ -70,7 +70,7 @@ public class SummonItems extends ItemSkillsTemplate
 			return false;
 		}
 		
-		final L2PetData petData = PetDataTable.getInstance().getPetDataByItemId(item.getId());
+		final PetData petData = PetDataTable.getInstance().getPetDataByItemId(item.getId());
 		if ((petData == null) || (petData.getNpcId() == -1))
 		{
 			return false;

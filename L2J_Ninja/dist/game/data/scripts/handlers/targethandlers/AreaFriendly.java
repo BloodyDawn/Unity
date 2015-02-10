@@ -26,8 +26,8 @@ import java.util.List;
 
 import com.l2jserver.gameserver.GeoData;
 import com.l2jserver.gameserver.handler.ITargetTypeHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2SiegeFlagInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
@@ -39,9 +39,9 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 public class AreaFriendly implements ITargetTypeHandler
 {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
 	{
-		List<L2Character> targetList = new ArrayList<>();
+		List<Creature> targetList = new ArrayList<>();
 		if (!checkTarget(activeChar, target) && (skill.getCastRange() >= 0))
 		{
 			activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
@@ -50,7 +50,7 @@ public class AreaFriendly implements ITargetTypeHandler
 		
 		if (onlyFirst)
 		{
-			return new L2Character[]
+			return new Creature[]
 			{
 				target
 			};
@@ -58,7 +58,7 @@ public class AreaFriendly implements ITargetTypeHandler
 		
 		if (activeChar.getActingPlayer().isInOlympiadMode())
 		{
-			return new L2Character[]
+			return new Creature[]
 			{
 				activeChar
 			};
@@ -68,12 +68,12 @@ public class AreaFriendly implements ITargetTypeHandler
 		if (target != null)
 		{
 			int maxTargets = skill.getAffectLimit();
-			final Collection<L2Character> objs = target.getKnownList().getKnownCharactersInRadius(skill.getAffectRange());
+			final Collection<Creature> objs = target.getKnownList().getKnownCharactersInRadius(skill.getAffectRange());
 			
 			// TODO: Chain Heal - The recovery amount decreases starting from the most injured person.
 			Collections.sort(targetList, new CharComparator());
 			
-			for (L2Character obj : objs)
+			for (Creature obj : objs)
 			{
 				if (!checkTarget(activeChar, obj) || (obj == activeChar))
 				{
@@ -93,10 +93,10 @@ public class AreaFriendly implements ITargetTypeHandler
 		{
 			return EMPTY_TARGET_LIST;
 		}
-		return targetList.toArray(new L2Character[targetList.size()]);
+		return targetList.toArray(new Creature[targetList.size()]);
 	}
 	
-	private boolean checkTarget(L2Character activeChar, L2Character target)
+	private boolean checkTarget(Creature activeChar, Creature target)
 	{
 		if (!GeoData.getInstance().canSeeTarget(activeChar, target))
 		{
@@ -138,10 +138,10 @@ public class AreaFriendly implements ITargetTypeHandler
 		return true;
 	}
 	
-	public class CharComparator implements Comparator<L2Character>
+	public class CharComparator implements Comparator<Creature>
 	{
 		@Override
-		public int compare(L2Character char1, L2Character char2)
+		public int compare(Creature char1, Creature char2)
 		{
 			return Double.compare((char1.getCurrentHp() / char1.getMaxHp()), (char2.getCurrentHp() / char2.getMaxHp()));
 		}

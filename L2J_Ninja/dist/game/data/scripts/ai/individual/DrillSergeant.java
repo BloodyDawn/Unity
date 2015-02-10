@@ -20,8 +20,8 @@ package ai.individual;
 
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
@@ -45,18 +45,18 @@ public final class DrillSergeant extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.equals("SOCIAL_SHOW"))
 		{
 			final int socialActionId = SOCIAL_ACTIONS[getRandom(SOCIAL_ACTIONS.length)];
 			npc.broadcastSocialAction(socialActionId);
 			
-			for (L2Character chars : npc.getKnownList().getKnownCharactersInRadius(500))
+			for (Creature chars : npc.getKnownList().getKnownCharactersInRadius(500))
 			{
 				if (chars.isNpc() && (chars.getId() == GUARD))
 				{
-					final L2Npc guard = (L2Npc) chars;
+					final Npc guard = (Npc) chars;
 					guard.getVariables().set("SOCIAL_ACTION_ID", socialActionId);
 					startQuestTimer("SOCIAL_ACTION", getRandom(500, 1500), guard, null);
 					
@@ -75,7 +75,7 @@ public final class DrillSergeant extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		if (npc.getId() == SERGANT)
 		{

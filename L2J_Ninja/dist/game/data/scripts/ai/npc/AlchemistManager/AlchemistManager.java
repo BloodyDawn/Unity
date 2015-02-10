@@ -24,8 +24,8 @@ import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
 import com.l2jserver.gameserver.enums.Race;
-import com.l2jserver.gameserver.model.L2SkillLearn;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.SkillLearn;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.AcquireSkillType;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -56,7 +56,7 @@ public final class AlchemistManager extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String htmltext = null;
 		switch (event)
@@ -77,7 +77,7 @@ public final class AlchemistManager extends AbstractNpcAI
 			{
 				if (player.getRace() == Race.ERTHEIA)
 				{
-					final List<L2SkillLearn> alchemySkills = SkillTreesData.getInstance().getAvailableAlchemySkills(player);
+					final List<SkillLearn> alchemySkills = SkillTreesData.getInstance().getAvailableAlchemySkills(player);
 					
 					if (alchemySkills.isEmpty())
 					{

@@ -21,7 +21,7 @@ package com.l2jserver.gameserver.model;
 import java.util.concurrent.ScheduledFuture;
 
 import com.l2jserver.gameserver.instancemanager.WalkingManager;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.events.EventDispatcher;
 import com.l2jserver.gameserver.model.events.impl.character.npc.OnNpcMoveRouteFinished;
 import com.l2jserver.util.Rnd;
@@ -50,7 +50,7 @@ public class WalkInfo
 	/**
 	 * @return name of route of this WalkInfo.
 	 */
-	public L2WalkRoute getRoute()
+	public WalkRoute getRoute()
 	{
 		return WalkingManager.getInstance().getRoute(_routeName);
 	}
@@ -58,7 +58,7 @@ public class WalkInfo
 	/**
 	 * @return current node of this WalkInfo.
 	 */
-	public L2NpcWalkerNode getCurrentNode()
+	public NpcWalkerNode getCurrentNode()
 	{
 		return getRoute().getNodeList().get(_currentNode);
 	}
@@ -67,7 +67,7 @@ public class WalkInfo
 	 * Calculate next node for this WalkInfo and send debug message from given npc
 	 * @param npc NPC to debug message to be sent from
 	 */
-	public void calculateNextNode(L2Npc npc)
+	public void calculateNextNode(Npc npc)
 	{
 		// Check this first, within the bounds of random moving, we have no conception of "first" or "last" node
 		if (getRoute().getRepeatType() == WalkingManager.REPEAT_RANDOM)

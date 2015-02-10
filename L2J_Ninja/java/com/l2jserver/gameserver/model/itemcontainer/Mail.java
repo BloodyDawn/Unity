@@ -25,7 +25,7 @@ import java.util.logging.Level;
 
 import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.enums.ItemLocation;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
 
@@ -143,7 +143,7 @@ public class Mail extends ItemContainer
 						continue;
 					}
 					
-					L2World.getInstance().storeObject(item);
+					World.getInstance().storeObject(item);
 					
 					// If stackable item is found just add to current quantity
 					if (item.isStackable() && (getItemByItemId(item.getId()) != null))

@@ -21,7 +21,7 @@ package quests.Q00270_TheOneWhoEndsSilence;
 import quests.Q10288_SecretMission.Q10288_SecretMission;
 
 import com.l2jserver.gameserver.enums.QuestSound;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
@@ -62,7 +62,7 @@ public class Q00270_TheOneWhoEndsSilence extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final QuestState st = getQuestState(player, false);
 		if (st == null)
@@ -276,7 +276,7 @@ public class Q00270_TheOneWhoEndsSilence extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		switch (npc.getId())
 		{
@@ -335,7 +335,7 @@ public class Q00270_TheOneWhoEndsSilence extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
@@ -439,7 +439,7 @@ public class Q00270_TheOneWhoEndsSilence extends Quest
 	 * @param chance the reward chance
 	 * @param atLeastOne if {@code true} it will reward two items if the chance is meet and one if the chance is not meet, if {@code false} if the chance is not meet doesn't reward, otherwise reward one item
 	 */
-	private static void giveItem(L2PcInstance player, L2Npc npc, int chance, boolean atLeastOne)
+	private static void giveItem(L2PcInstance player, Npc npc, int chance, boolean atLeastOne)
 	{
 		if ((player != null) && Util.checkIfInRange(1500, npc, player, false))
 		{

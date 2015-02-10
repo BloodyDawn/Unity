@@ -26,7 +26,7 @@ import com.l2jserver.gameserver.MonsterRace;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.idfactory.IdFactory;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.knownlist.RaceManagerKnownList;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
@@ -42,7 +42,7 @@ import com.l2jserver.gameserver.network.serverpackets.PlaySound;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.util.Broadcast;
 
-public class L2RaceManagerInstance extends L2Npc
+public class L2RaceManagerInstance extends Npc
 {
 	public static final int LANES = 8;
 	public static final int WINDOW_START = 0;

@@ -22,7 +22,7 @@ import instances.AbstractInstance;
 import quests.Q10285_MeetingSirra.Q10285_MeetingSirra;
 
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
 import com.l2jserver.gameserver.model.quest.QuestState;
@@ -53,7 +53,7 @@ public final class JiniaGuildHideout2 extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
+	public String onTalk(Npc npc, L2PcInstance talker)
 	{
 		final QuestState qs = talker.getQuestState(Q10285_MeetingSirra.class.getSimpleName());
 		if ((qs != null) && qs.isMemoState(1))

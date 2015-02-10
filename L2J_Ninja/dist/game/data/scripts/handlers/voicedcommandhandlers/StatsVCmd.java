@@ -19,7 +19,7 @@
 package handlers.voicedcommandhandlers;
 
 import com.l2jserver.gameserver.handler.IVoicedCommandHandler;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.L2Event;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -46,7 +46,7 @@ public class StatsVCmd implements IVoicedCommandHandler
 			return false;
 		}
 		
-		final L2PcInstance pc = L2World.getInstance().getPlayer(params);
+		final L2PcInstance pc = World.getInstance().getPlayer(params);
 		if ((pc == null))
 		{
 			activeChar.sendPacket(SystemMessageId.THAT_PLAYER_IS_NOT_ONLINE);

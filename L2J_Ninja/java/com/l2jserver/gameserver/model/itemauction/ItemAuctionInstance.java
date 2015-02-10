@@ -45,7 +45,7 @@ import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.data.sql.impl.CharNameTable;
 import com.l2jserver.gameserver.enums.ItemLocation;
 import com.l2jserver.gameserver.instancemanager.ItemAuctionManager;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
@@ -507,7 +507,7 @@ public final class ItemAuctionInstance
 				item.setOwnerId(bid.getPlayerObjId());
 				item.setItemLocation(ItemLocation.WAREHOUSE);
 				item.updateDatabase();
-				L2World.getInstance().removeObject(item);
+				World.getInstance().removeObject(item);
 				
 				_log.log(Level.INFO, getClass().getSimpleName() + ": Auction " + auction.getAuctionId() + " has finished. Highest bid by " + CharNameTable.getInstance().getNameById(bid.getPlayerObjId()) + " for instance " + _instanceId);
 			}

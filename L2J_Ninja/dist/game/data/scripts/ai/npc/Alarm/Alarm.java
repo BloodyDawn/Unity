@@ -24,7 +24,7 @@ import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.enums.QuestSound;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.network.NpcStringId;
@@ -51,11 +51,11 @@ public final class Alarm extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String htmltext = null;
 		final L2PcInstance player0 = npc.getVariables().getObject("player0", L2PcInstance.class);
-		final L2Npc npc0 = npc.getVariables().getObject("npc0", L2Npc.class);
+		final Npc npc0 = npc.getVariables().getObject("npc0", Npc.class);
 		switch (event)
 		{
 			case "SELF_DESTRUCT_IN_60":
@@ -212,7 +212,7 @@ public final class Alarm extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance talker)
+	public String onFirstTalk(Npc npc, L2PcInstance talker)
 	{
 		String htmltext = getNoQuestMsg(talker);
 		if (verifyMemoState(talker, ART_OF_PERSUASION_ID, 3) || verifyMemoState(talker, NIKOLAS_COOPERATION_ID, 3))
@@ -231,7 +231,7 @@ public final class Alarm extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		startQuestTimer("SELF_DESTRUCT_IN_60", 60000, npc, null);
 		broadcastNpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.INTRUDER_ALERT_THE_ALARM_WILL_SELF_DESTRUCT_IN_2_MINUTES);

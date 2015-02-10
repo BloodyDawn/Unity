@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.model.events.impl.character;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
 
@@ -27,14 +27,14 @@ import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
  */
 public class OnCreatureTeleported implements IBaseEvent
 {
-	private final L2Character _creature;
+	private final Creature _creature;
 	
-	public OnCreatureTeleported(L2Character creature)
+	public OnCreatureTeleported(Creature creature)
 	{
 		_creature = creature;
 	}
 	
-	public L2Character getCreature()
+	public Creature getCreature()
 	{
 		return _creature;
 	}

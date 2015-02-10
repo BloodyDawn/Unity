@@ -33,7 +33,7 @@ import com.l2jserver.Config;
 import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.ItemsAutoDestroy;
 import com.l2jserver.gameserver.ThreadPoolManager;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
 
 /**
@@ -106,7 +106,7 @@ public final class ItemsOnGroundManager implements Runnable
 				while (rs.next())
 				{
 					item = new L2ItemInstance(rs.getInt(1), rs.getInt(2));
-					L2World.getInstance().storeObject(item);
+					World.getInstance().storeObject(item);
 					// this check and..
 					if (item.isStackable() && (rs.getInt(3) > 1))
 					{
@@ -118,13 +118,13 @@ public final class ItemsOnGroundManager implements Runnable
 						item.setEnchantLevel(rs.getInt(4));
 					}
 					item.setXYZ(rs.getInt(5), rs.getInt(6), rs.getInt(7));
-					item.setWorldRegion(L2World.getInstance().getRegion(item.getLocation()));
+					item.setWorldRegion(World.getInstance().getRegion(item.getLocation()));
 					item.getWorldRegion().addVisibleObject(item);
 					final long dropTime = rs.getLong(8);
 					item.setDropTime(dropTime);
 					item.setProtected(dropTime == -1);
 					item.setIsVisible(true);
-					L2World.getInstance().addVisibleObject(item, item.getWorldRegion());
+					World.getInstance().addVisibleObject(item, item.getWorldRegion());
 					_items.add(item);
 					count++;
 					// add to ItemsAutoDestroy only items not protected

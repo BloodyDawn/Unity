@@ -19,7 +19,7 @@
 
 package com.l2jserver.gameserver.network.clientpackets;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jserver.gameserver.util.Util;
@@ -67,7 +67,7 @@ public final class RequestLinkHtml extends L2GameClientPacket
 			return;
 		}
 		
-		if ((htmlObjectId > 0) && !Util.isInsideRangeOfObjectId(actor, htmlObjectId, L2Npc.INTERACTION_DISTANCE))
+		if ((htmlObjectId > 0) && !Util.isInsideRangeOfObjectId(actor, htmlObjectId, Npc.INTERACTION_DISTANCE))
 		{
 			// No logging here, this could be a common case
 			return;

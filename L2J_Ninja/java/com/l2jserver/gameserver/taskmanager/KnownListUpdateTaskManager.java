@@ -26,11 +26,11 @@ import javolution.util.FastSet;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.ThreadPoolManager;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.L2WorldRegion;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.WorldRegion;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2GuardInstance;
 
 public class KnownListUpdateTaskManager
@@ -43,7 +43,7 @@ public class KnownListUpdateTaskManager
 	// Do full update every FULL_UPDATE_TIMER * KNOWNLIST_UPDATE_INTERVAL
 	public static int _fullUpdateTimer = FULL_UPDATE_TIMER;
 	
-	protected static final FastSet<L2WorldRegion> _failedRegions = new FastSet<>(1);
+	protected static final FastSet<WorldRegion> _failedRegions = new FastSet<>(1);
 	
 	protected KnownListUpdateTaskManager()
 	{
@@ -62,9 +62,9 @@ public class KnownListUpdateTaskManager
 			try
 			{
 				boolean failed;
-				for (L2WorldRegion regions[] : L2World.getInstance().getWorldRegions())
+				for (WorldRegion regions[] : World.getInstance().getWorldRegions())
 				{
-					for (L2WorldRegion r : regions) // go through all world regions
+					for (WorldRegion r : regions) // go through all world regions
 					{
 						// avoid stopping update if something went wrong in updateRegion()
 						try
@@ -104,10 +104,10 @@ public class KnownListUpdateTaskManager
 		}
 	}
 	
-	public void updateRegion(L2WorldRegion region, boolean fullUpdate, boolean forgetObjects)
+	public void updateRegion(WorldRegion region, boolean fullUpdate, boolean forgetObjects)
 	{
-		Collection<L2Object> vObj = region.getVisibleObjects().values();
-		for (L2Object object : vObj) // and for all members in region
+		Collection<WorldObject> vObj = region.getVisibleObjects().values();
+		for (WorldObject object : vObj) // and for all members in region
 		{
 			if ((object == null) || !object.isVisible())
 			{
@@ -122,12 +122,12 @@ public class KnownListUpdateTaskManager
 				object.getKnownList().forgetObjects(aggro || fullUpdate);
 				continue;
 			}
-			for (L2WorldRegion regi : region.getSurroundingRegions())
+			for (WorldRegion regi : region.getSurroundingRegions())
 			{
-				if ((object instanceof L2Playable) || (aggro && regi.isActive()) || fullUpdate)
+				if ((object instanceof Playable) || (aggro && regi.isActive()) || fullUpdate)
 				{
-					Collection<L2Object> inrObj = regi.getVisibleObjects().values();
-					for (L2Object obj : inrObj)
+					Collection<WorldObject> inrObj = regi.getVisibleObjects().values();
+					for (WorldObject obj : inrObj)
 					{
 						if (obj != object)
 						{
@@ -135,13 +135,13 @@ public class KnownListUpdateTaskManager
 						}
 					}
 				}
-				else if (object instanceof L2Character)
+				else if (object instanceof Creature)
 				{
 					if (regi.isActive())
 					{
-						Collection<L2Object> inrPls = regi.getVisibleObjects().values();
+						Collection<WorldObject> inrPls = regi.getVisibleObjects().values();
 						
-						for (L2Object obj : inrPls)
+						for (WorldObject obj : inrPls)
 						{
 							if (obj != object)
 							{

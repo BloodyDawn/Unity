@@ -21,7 +21,7 @@ package ai.npc.Teleports.TeleportWithCharm;
 import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
@@ -49,7 +49,7 @@ public final class TeleportWithCharm extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		switch (npc.getId())
 		{

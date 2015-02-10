@@ -21,7 +21,7 @@ package com.l2jserver.gameserver.network.clientpackets;
 import com.l2jserver.gameserver.data.sql.impl.ClanTable;
 import com.l2jserver.gameserver.model.ClanPrivilege;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2ClanMember;
+import com.l2jserver.gameserver.model.ClanMember;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
@@ -95,7 +95,7 @@ public final class RequestStopPledgeWar extends L2GameClientPacket
 		// return;
 		// }
 		
-		for (L2ClanMember member : playerClan.getMembers())
+		for (ClanMember member : playerClan.getMembers())
 		{
 			if ((member == null) || (member.getPlayerInstance() == null))
 			{

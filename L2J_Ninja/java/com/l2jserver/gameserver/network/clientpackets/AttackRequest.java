@@ -19,8 +19,8 @@
 package com.l2jserver.gameserver.network.clientpackets;
 
 import com.l2jserver.gameserver.enums.PrivateStoreType;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
@@ -78,14 +78,14 @@ public final class AttackRequest extends L2GameClientPacket
 		}
 		
 		// avoid using expensive operations if not needed
-		final L2Object target;
+		final WorldObject target;
 		if (activeChar.getTargetId() == _objectId)
 		{
 			target = activeChar.getTarget();
 		}
 		else
 		{
-			target = L2World.getInstance().findObject(_objectId);
+			target = World.getInstance().findObject(_objectId);
 		}
 		
 		if (target == null)

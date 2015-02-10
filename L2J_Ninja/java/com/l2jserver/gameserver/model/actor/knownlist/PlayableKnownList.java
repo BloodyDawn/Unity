@@ -18,18 +18,18 @@
  */
 package com.l2jserver.gameserver.model.actor.knownlist;
 
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.actor.Playable;
 
 public class PlayableKnownList extends CharKnownList
 {
-	public PlayableKnownList(L2Playable activeChar)
+	public PlayableKnownList(Playable activeChar)
 	{
 		super(activeChar);
 	}
 	
 	@Override
-	public L2Playable getActiveChar()
+	public Playable getActiveChar()
 	{
-		return (L2Playable) super.getActiveChar();
+		return (Playable) super.getActiveChar();
 	}
 }

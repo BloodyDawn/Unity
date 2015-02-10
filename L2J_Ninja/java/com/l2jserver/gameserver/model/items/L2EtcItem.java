@@ -21,7 +21,7 @@ package com.l2jserver.gameserver.model.items;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.l2jserver.gameserver.model.L2ExtractableProduct;
+import com.l2jserver.gameserver.model.ExtractableProduct;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.model.items.type.EtcItemType;
@@ -35,7 +35,7 @@ public final class L2EtcItem extends L2Item
 	private String _handler;
 	private EtcItemType _type;
 	private final boolean _isBlessed;
-	private final List<L2ExtractableProduct> _extractableItems;
+	private final List<ExtractableProduct> _extractableItems;
 	private final boolean _isInfinite;
 	
 	/**
@@ -102,7 +102,7 @@ public final class L2EtcItem extends L2Item
 					_log.info(StringUtil.concat("> Max amount < Min amount in ", part, ", item ", toString()));
 					continue;
 				}
-				L2ExtractableProduct product = new L2ExtractableProduct(itemId, min, max, chance);
+				ExtractableProduct product = new ExtractableProduct(itemId, min, max, chance);
 				_extractableItems.add(product);
 			}
 			((ArrayList<?>) _extractableItems).trimToSize();
@@ -159,7 +159,7 @@ public final class L2EtcItem extends L2Item
 	/**
 	 * @return the extractable items list.
 	 */
-	public List<L2ExtractableProduct> getExtractableItems()
+	public List<ExtractableProduct> getExtractableItems()
 	{
 		return _extractableItems;
 	}

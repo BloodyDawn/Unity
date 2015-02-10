@@ -28,7 +28,7 @@ import com.l2jserver.gameserver.data.xml.impl.NpcData;
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
 import com.l2jserver.gameserver.network.NpcStringId;
@@ -56,7 +56,7 @@ public final class DevastatedCastle extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		if (npc.getId() == MIKHAIL)
 		{
@@ -70,7 +70,7 @@ public final class DevastatedCastle extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
 		if (!_hall.isInSiege())
 		{
@@ -106,7 +106,7 @@ public final class DevastatedCastle extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		if (!_hall.isInSiege())
 		{

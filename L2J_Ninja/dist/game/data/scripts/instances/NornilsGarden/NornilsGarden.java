@@ -22,11 +22,11 @@ import instances.AbstractInstance;
 
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.L2Party;
+import com.l2jserver.gameserver.model.Party;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Instance;
@@ -47,7 +47,7 @@ public final class NornilsGarden extends AbstractInstance
 {
 	protected class NornilsWorld extends InstanceWorld
 	{
-		protected L2Npc first_npc = null;
+		protected Npc first_npc = null;
 		protected boolean spawned_1 = false;
 		protected boolean spawned_2 = false;
 		protected boolean spawned_3 = false;
@@ -167,7 +167,7 @@ public final class NornilsGarden extends AbstractInstance
 	};
 	// @formatter:on
 	
-	private static final void dropHerb(L2Npc mob, L2PcInstance player, int[][] drop)
+	private static final void dropHerb(Npc mob, L2PcInstance player, int[][] drop)
 	{
 		final int chance = getRandom(100);
 		for (int[] element : drop)
@@ -179,7 +179,7 @@ public final class NornilsGarden extends AbstractInstance
 		}
 	}
 	
-	private static final void giveBuffs(L2Character ch)
+	private static final void giveBuffs(Creature ch)
 	{
 		if (skill1 != null)
 		{
@@ -222,7 +222,7 @@ public final class NornilsGarden extends AbstractInstance
 	public final void teleportPlayer(L2PcInstance player, Location loc, int instanceId)
 	{
 		giveBuffs(player);
-		final L2Summon pet = player.getPet();
+		final Summon pet = player.getPet();
 		if (pet != null)
 		{
 			giveBuffs(pet);
@@ -245,7 +245,7 @@ public final class NornilsGarden extends AbstractInstance
 		}
 	}
 	
-	private final synchronized String enterInstance(L2Npc npc, L2PcInstance player)
+	private final synchronized String enterInstance(Npc npc, L2PcInstance player)
 	{
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		if (world != null)
@@ -295,7 +295,7 @@ public final class NornilsGarden extends AbstractInstance
 		prepareInstance((NornilsWorld) world);
 		
 		// and finally teleport party into instance
-		final L2Party party = player.getParty();
+		final Party party = player.getParty();
 		if (party != null)
 		{
 			for (L2PcInstance partyMember : party.getMembers())
@@ -319,7 +319,7 @@ public final class NornilsGarden extends AbstractInstance
 		}
 	}
 	
-	private void spawn1(L2Npc npc)
+	private void spawn1(Npc npc)
 	{
 		InstanceWorld inst = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (inst instanceof NornilsWorld)
@@ -337,7 +337,7 @@ public final class NornilsGarden extends AbstractInstance
 		}
 	}
 	
-	private void spawn2(L2Npc npc)
+	private void spawn2(Npc npc)
 	{
 		InstanceWorld inst = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (inst instanceof NornilsWorld)
@@ -355,7 +355,7 @@ public final class NornilsGarden extends AbstractInstance
 		}
 	}
 	
-	private void spawn3(L2Character cha)
+	private void spawn3(Creature cha)
 	{
 		InstanceWorld inst = InstanceManager.getInstance().getWorld(cha.getInstanceId());
 		if (inst instanceof NornilsWorld)
@@ -373,7 +373,7 @@ public final class NornilsGarden extends AbstractInstance
 		}
 	}
 	
-	private void spawn4(L2Character cha)
+	private void spawn4(Creature cha)
 	{
 		InstanceWorld inst = InstanceManager.getInstance().getWorld(cha.getInstanceId());
 		if (inst instanceof NornilsWorld)
@@ -401,9 +401,9 @@ public final class NornilsGarden extends AbstractInstance
 		}
 	}
 	
-	private static final String checkConditions(L2Npc npc, L2PcInstance player)
+	private static final String checkConditions(Npc npc, L2PcInstance player)
 	{
-		final L2Party party = player.getParty();
+		final Party party = player.getParty();
 		// player must be in party
 		if (party == null)
 		{
@@ -463,7 +463,7 @@ public final class NornilsGarden extends AbstractInstance
 	}
 	
 	@Override
-	public String onEnterZone(L2Character character, L2ZoneType zone)
+	public String onEnterZone(Creature character, L2ZoneType zone)
 	{
 		if ((character instanceof L2PcInstance) && !character.isDead() && !character.isTeleporting() && ((L2PcInstance) character).isOnline())
 		{
@@ -492,7 +492,7 @@ public final class NornilsGarden extends AbstractInstance
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String htmltext = event;
 		QuestState st = getQuestState(player, false);
@@ -559,7 +559,7 @@ public final class NornilsGarden extends AbstractInstance
 	}
 	
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player)
+	public final String onTalk(Npc npc, L2PcInstance player)
 	{
 		if (Util.contains(_final_gates, npc.getId()))
 		{
@@ -570,14 +570,14 @@ public final class NornilsGarden extends AbstractInstance
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public final String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		getQuestState(player, true);
 		return npc.getId() + ".html";
 	}
 	
 	@Override
-	public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public final String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
 		if ((npc.getId() == _herb_jar) && !npc.isDead())
 		{
@@ -593,7 +593,7 @@ public final class NornilsGarden extends AbstractInstance
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public final String onKill(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		final QuestState st = getQuestState(player, false);
 		if (st == null)

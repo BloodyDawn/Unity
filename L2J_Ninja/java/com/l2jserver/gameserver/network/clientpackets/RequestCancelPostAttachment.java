@@ -22,7 +22,7 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.enums.ItemLocation;
 import com.l2jserver.gameserver.enums.PrivateStoreType;
 import com.l2jserver.gameserver.instancemanager.MailManager;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Message;
 import com.l2jserver.gameserver.model.itemcontainer.ItemContainer;
@@ -212,7 +212,7 @@ public final class RequestCancelPostAttachment extends L2GameClientPacket
 		// Update current load status on player
 		activeChar.sendPacket(new ExUserInfoInvenWeight(activeChar));
 		
-		final L2PcInstance receiver = L2World.getInstance().getPlayer(msg.getReceiverId());
+		final L2PcInstance receiver = World.getInstance().getPlayer(msg.getReceiverId());
 		if (receiver != null)
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANCELED_THE_SENT_MAIL);

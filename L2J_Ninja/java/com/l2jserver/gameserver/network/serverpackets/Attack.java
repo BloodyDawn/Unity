@@ -24,7 +24,7 @@ import java.util.List;
 
 import com.l2jserver.gameserver.model.Hit;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 
 public class Attack extends L2GameServerPacket
 {
@@ -41,7 +41,7 @@ public class Attack extends L2GameServerPacket
 	 * @param useShots
 	 * @param ssGrade
 	 */
-	public Attack(L2Character attacker, L2Character target, boolean useShots, int ssGrade)
+	public Attack(Creature attacker, Creature target, boolean useShots, int ssGrade)
 	{
 		_attackerObjId = attacker.getObjectId();
 		_soulshot = useShots;
@@ -58,7 +58,7 @@ public class Attack extends L2GameServerPacket
 	 * @param crit
 	 * @param shld
 	 */
-	public void addHit(L2Character target, int damage, boolean miss, boolean crit, byte shld)
+	public void addHit(Creature target, int damage, boolean miss, boolean crit, byte shld)
 	{
 		_hits.add(new Hit(target, damage, miss, crit, shld, _soulshot, _ssGrade));
 	}

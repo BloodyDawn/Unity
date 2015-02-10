@@ -25,8 +25,8 @@ import java.util.List;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.model.L2Clan;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
@@ -107,7 +107,7 @@ public final class Q00501_ProofOfClanAlliance extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
@@ -171,7 +171,7 @@ public final class Q00501_ProofOfClanAlliance extends Quest
 						npc.setScriptValue(0);
 						for (Location loc : LOCS)
 						{
-							final L2Npc box = addSpawn(npc, getRandom(BOX_OF_ATHREA_1, BOX_OF_ATHREA_5), loc, false, 300000);
+							final Npc box = addSpawn(npc, getRandom(BOX_OF_ATHREA_1, BOX_OF_ATHREA_5), loc, false, 300000);
 							box.disableCoreAI(true);
 							box.setIsNoRndWalk(true);
 						}
@@ -238,7 +238,7 @@ public final class Q00501_ProofOfClanAlliance extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		final QuestState qs = getRandomPartyMemberState(killer, -1, 3, npc);
 		if (qs == null)
@@ -282,10 +282,10 @@ public final class Q00501_ProofOfClanAlliance extends Quest
 				case BOX_OF_ATHREA_4:
 				case BOX_OF_ATHREA_5:
 				{
-					final L2Character summoner = npc.getSummoner();
+					final Creature summoner = npc.getSummoner();
 					if ((summoner != null) && summoner.isNpc() && lqs.isMemoState(4))
 					{
-						final L2Npc arthea = (L2Npc) summoner;
+						final Npc arthea = (Npc) summoner;
 						if ((lqs.getInt("flag") == 3) && arthea.isScriptValue(15))
 						{
 							lqs.set("flag", lqs.getInt("flag") + 1);
@@ -324,7 +324,7 @@ public final class Q00501_ProofOfClanAlliance extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = getQuestState(player, true);
 		final QuestState lqs = getLeaderQuestState(player, getName());
@@ -531,7 +531,7 @@ public final class Q00501_ProofOfClanAlliance extends Quest
 	}
 	
 	@Override
-	public QuestState getRandomPartyMemberState(L2PcInstance player, int condition, int playerChance, L2Npc target)
+	public QuestState getRandomPartyMemberState(L2PcInstance player, int condition, int playerChance, Npc target)
 	{
 		if ((player == null) || (playerChance < 1))
 		{

@@ -18,8 +18,8 @@
  */
 package com.l2jserver.gameserver.handler;
 
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
 
@@ -28,9 +28,9 @@ import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
  */
 public interface ITargetTypeHandler
 {
-	static final L2Object[] EMPTY_TARGET_LIST = new L2Object[0];
+	static final WorldObject[] EMPTY_TARGET_LIST = new WorldObject[0];
 	
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target);
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target);
 	
 	public Enum<L2TargetType> getTargetType();
 }

@@ -21,7 +21,7 @@ package handlers.bypasshandlers;
 import com.l2jserver.gameserver.handler.IBypassHandler;
 import com.l2jserver.gameserver.handler.IVoicedCommandHandler;
 import com.l2jserver.gameserver.handler.VoicedCommandHandler;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
@@ -35,7 +35,7 @@ public class VoiceCommand implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Character target)
+	public boolean useBypass(String command, L2PcInstance activeChar, Creature target)
 	{
 		// only voice commands allowed
 		if ((command.length() > 7) && (command.charAt(6) == '.'))

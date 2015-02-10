@@ -26,10 +26,10 @@ import java.util.concurrent.ScheduledFuture;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.L2Party;
+import com.l2jserver.gameserver.model.Party;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.PcCondOverride;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2QuestGuardInstance;
@@ -102,7 +102,7 @@ public final class UrbanArea extends AbstractInstance
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public final String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		if (!npc.isAffectedBySkill(STONE.getSkillId()))
 		{
@@ -112,7 +112,7 @@ public final class UrbanArea extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		String htmltext = null;
 		if (npc.getId() == KANAF)
@@ -142,7 +142,7 @@ public final class UrbanArea extends AbstractInstance
 			{
 				final UrbanAreaWorld world = (UrbanAreaWorld) tmpworld;
 				
-				final L2Party party = player.getParty();
+				final Party party = player.getParty();
 				
 				if (party == null)
 				{
@@ -183,7 +183,7 @@ public final class UrbanArea extends AbstractInstance
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if ((tmpworld != null) && (tmpworld instanceof UrbanAreaWorld))
@@ -233,7 +233,7 @@ public final class UrbanArea extends AbstractInstance
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
+	public final String onSpawn(Npc npc)
 	{
 		if (npc.getId() == DOWNTOWN_NATIVE)
 		{
@@ -251,7 +251,7 @@ public final class UrbanArea extends AbstractInstance
 	}
 	
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAggroRangeEnter(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if ((tmpworld != null) && (tmpworld instanceof UrbanAreaWorld))
@@ -277,7 +277,7 @@ public final class UrbanArea extends AbstractInstance
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if ((tmpworld != null) && (tmpworld instanceof UrbanAreaWorld))
@@ -323,7 +323,7 @@ public final class UrbanArea extends AbstractInstance
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if ((tmpworld != null) && (tmpworld instanceof UrbanAreaWorld))
@@ -342,7 +342,7 @@ public final class UrbanArea extends AbstractInstance
 			return true;
 		}
 		
-		final L2Party party = player.getParty();
+		final Party party = player.getParty();
 		
 		if ((party == null) || !party.isLeader(player))
 		{
@@ -401,9 +401,9 @@ public final class UrbanArea extends AbstractInstance
 	
 	private static class CallAmaskari implements Runnable
 	{
-		private final L2Npc _caller;
+		private final Npc _caller;
 		
-		public CallAmaskari(L2Npc caller)
+		public CallAmaskari(Npc caller)
 		{
 			_caller = caller;
 		}
@@ -430,10 +430,10 @@ public final class UrbanArea extends AbstractInstance
 	
 	private class ExitInstance implements Runnable
 	{
-		private final L2Party _party;
+		private final Party _party;
 		private final UrbanAreaWorld _world;
 		
-		public ExitInstance(L2Party party, UrbanAreaWorld world)
+		public ExitInstance(Party party, UrbanAreaWorld world)
 		{
 			_party = party;
 			_world = world;

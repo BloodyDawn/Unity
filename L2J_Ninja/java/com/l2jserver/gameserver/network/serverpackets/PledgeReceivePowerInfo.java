@@ -18,19 +18,19 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.L2ClanMember;
+import com.l2jserver.gameserver.model.ClanMember;
 
 /**
  * @author -Wooden-
  */
 public class PledgeReceivePowerInfo extends L2GameServerPacket
 {
-	private final L2ClanMember _member;
+	private final ClanMember _member;
 	
 	/**
 	 * @param member
 	 */
-	public PledgeReceivePowerInfo(L2ClanMember member)
+	public PledgeReceivePowerInfo(ClanMember member)
 	{
 		_member = member;
 	}

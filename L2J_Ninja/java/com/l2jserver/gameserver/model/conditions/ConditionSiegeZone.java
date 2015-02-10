@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.model.conditions;
 
 import com.l2jserver.gameserver.instancemanager.CastleManager;
 import com.l2jserver.gameserver.instancemanager.FortManager;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Castle;
 import com.l2jserver.gameserver.model.entity.Fort;
@@ -57,9 +57,9 @@ public final class ConditionSiegeZone extends Condition
 	}
 	
 	@Override
-	public boolean testImpl(L2Character effector, L2Character effected, Skill skill, L2Item item)
+	public boolean testImpl(Creature effector, Creature effected, Skill skill, L2Item item)
 	{
-		L2Character target = _self ? effector : effected;
+		Creature target = _self ? effector : effected;
 		Castle castle = CastleManager.getInstance().getCastle(target);
 		Fort fort = FortManager.getInstance().getFort(target);
 		
@@ -81,7 +81,7 @@ public final class ConditionSiegeZone extends Condition
 	 * @param value the value
 	 * @return true, if successful
 	 */
-	public static boolean checkIfOk(L2Character activeChar, Castle castle, int value)
+	public static boolean checkIfOk(Creature activeChar, Castle castle, int value)
 	{
 		if ((activeChar == null) || !(activeChar instanceof L2PcInstance))
 		{
@@ -127,7 +127,7 @@ public final class ConditionSiegeZone extends Condition
 	 * @param value the value
 	 * @return true, if successful
 	 */
-	public static boolean checkIfOk(L2Character activeChar, Fort fort, int value)
+	public static boolean checkIfOk(Creature activeChar, Fort fort, int value)
 	{
 		if ((activeChar == null) || !(activeChar instanceof L2PcInstance))
 		{

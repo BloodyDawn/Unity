@@ -37,8 +37,8 @@ import com.l2jserver.gameserver.GeoData;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.enums.HtmlActionScope;
 import com.l2jserver.gameserver.enums.IllegalActionPunishmentType;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.tasks.player.IllegalPlayerActionTask;
 import com.l2jserver.gameserver.model.interfaces.ILocational;
@@ -223,7 +223,7 @@ public final class Util
 	 * @param includeZAxis
 	 * @return {@code true} if the two objects are within specified range between each other, {@code false} otherwise
 	 */
-	public static boolean checkIfInRange(int range, L2Object obj1, L2Object obj2, boolean includeZAxis)
+	public static boolean checkIfInRange(int range, WorldObject obj1, WorldObject obj2, boolean includeZAxis)
 	{
 		if ((obj1 == null) || (obj2 == null))
 		{
@@ -239,13 +239,13 @@ public final class Util
 		}
 		
 		int rad = 0;
-		if (obj1 instanceof L2Character)
+		if (obj1 instanceof Creature)
 		{
-			rad += ((L2Character) obj1).getTemplate().getCollisionRadius();
+			rad += ((Creature) obj1).getTemplate().getCollisionRadius();
 		}
-		if (obj2 instanceof L2Character)
+		if (obj2 instanceof Creature)
 		{
-			rad += ((L2Character) obj2).getTemplate().getCollisionRadius();
+			rad += ((Creature) obj2).getTemplate().getCollisionRadius();
 		}
 		
 		double dx = obj1.getX() - obj2.getX();
@@ -268,7 +268,7 @@ public final class Util
 	 * @param includeZAxis if true, check also Z axis (3-dimensional check), otherwise only 2D
 	 * @return {@code true} if objects are within specified range between each other, {@code false} otherwise
 	 */
-	public static boolean checkIfInShortRadius(int radius, L2Object obj1, L2Object obj2, boolean includeZAxis)
+	public static boolean checkIfInShortRadius(int radius, WorldObject obj1, WorldObject obj2, boolean includeZAxis)
 	{
 		if ((obj1 == null) || (obj2 == null))
 		{
@@ -718,11 +718,11 @@ public final class Util
 	 * @param invisible : if {@code true}, count invisible characters aswell
 	 * @return the number of targets found
 	 */
-	public static int getPlayersCountInRadius(int range, L2Object npc, boolean playable, boolean invisible)
+	public static int getPlayersCountInRadius(int range, WorldObject npc, boolean playable, boolean invisible)
 	{
 		int count = 0;
-		final Collection<L2Object> objs = npc.getKnownList().getKnownObjects().values();
-		for (L2Object obj : objs)
+		final Collection<WorldObject> objs = npc.getKnownList().getKnownObjects().values();
+		for (WorldObject obj : objs)
 		{
 			if ((obj != null) && (playable && (obj.isPlayable() || obj.isPet())))
 			{
@@ -731,7 +731,7 @@ public final class Util
 					continue;
 				}
 				
-				final L2Character cha = (L2Character) obj;
+				final Creature cha = (Creature) obj;
 				if (((cha.getZ() < (npc.getZ() - 100)) && (cha.getZ() > (npc.getZ() + 100))) || !(GeoData.getInstance().canSeeTarget(cha.getX(), cha.getY(), cha.getZ(), npc.getX(), npc.getY(), npc.getZ())))
 				{
 					continue;
@@ -746,9 +746,9 @@ public final class Util
 		return count;
 	}
 	
-	public static boolean isInsideRangeOfObjectId(L2Object obj, int targetObjId, int radius)
+	public static boolean isInsideRangeOfObjectId(WorldObject obj, int targetObjId, int radius)
 	{
-		L2Object target = obj.getKnownList().getKnownObjects().get(targetObjId);
+		WorldObject target = obj.getKnownList().getKnownObjects().get(targetObjId);
 		if (target == null)
 		{
 			return false;

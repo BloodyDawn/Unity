@@ -19,7 +19,7 @@
 package handlers.itemhandlers;
 
 import com.l2jserver.gameserver.handler.IItemHandler;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
 import com.l2jserver.gameserver.model.zone.ZoneId;
@@ -32,7 +32,7 @@ import com.l2jserver.util.Rnd;
 public class RollingDice implements IItemHandler
 {
 	@Override
-	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+	public boolean useItem(Playable playable, L2ItemInstance item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{

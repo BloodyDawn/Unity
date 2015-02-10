@@ -26,8 +26,8 @@ import java.util.logging.Level;
 import javolution.util.FastList;
 
 import com.l2jserver.gameserver.ThreadPoolManager;
-import com.l2jserver.gameserver.ai.L2CharacterAI;
-import com.l2jserver.gameserver.ai.L2DoorAI;
+import com.l2jserver.gameserver.ai.CharacterAI;
+import com.l2jserver.gameserver.ai.DoorAI;
 import com.l2jserver.gameserver.data.xml.impl.DoorData;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.enums.Race;
@@ -36,10 +36,10 @@ import com.l2jserver.gameserver.instancemanager.ClanHallManager;
 import com.l2jserver.gameserver.instancemanager.FortManager;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.knownlist.DoorKnownList;
 import com.l2jserver.gameserver.model.actor.stat.DoorStat;
 import com.l2jserver.gameserver.model.actor.status.DoorStatus;
@@ -59,7 +59,7 @@ import com.l2jserver.gameserver.network.serverpackets.StaticObject;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.util.Rnd;
 
-public class L2DoorInstance extends L2Character
+public class L2DoorInstance extends Creature
 {
 	public static final byte OPEN_BY_CLICK = 1;
 	public static final byte OPEN_BY_TIME = 2;
@@ -116,7 +116,7 @@ public class L2DoorInstance extends L2Character
 	}
 	
 	/** This class may be created only by L2Character and only for AI */
-	public class AIAccessor extends L2Character.AIAccessor
+	public class AIAccessor extends Creature.AIAccessor
 	{
 		@Override
 		public L2DoorInstance getActor()
@@ -140,7 +140,7 @@ public class L2DoorInstance extends L2Character
 		}
 		
 		@Override
-		public void doAttack(L2Character target)
+		public void doAttack(Creature target)
 		{
 		}
 		
@@ -151,9 +151,9 @@ public class L2DoorInstance extends L2Character
 	}
 	
 	@Override
-	protected L2CharacterAI initAI()
+	protected CharacterAI initAI()
 	{
-		return new L2DoorAI(new AIAccessor());
+		return new DoorAI(new AIAccessor());
 	}
 	
 	private void startTimerOpen()
@@ -378,10 +378,10 @@ public class L2DoorInstance extends L2Character
 	}
 	
 	@Override
-	public boolean isAutoAttackable(L2Character attacker)
+	public boolean isAutoAttackable(Creature attacker)
 	{
 		// Doors can`t be attacked by NPCs
-		if (!(attacker instanceof L2Playable))
+		if (!(attacker instanceof Playable))
 		{
 			return false;
 		}
@@ -614,8 +614,8 @@ public class L2DoorInstance extends L2Character
 	{
 		FastList<L2DefenderInstance> result = new FastList<>();
 		
-		Collection<L2Object> objs = getKnownList().getKnownObjects().values();
-		for (L2Object obj : objs)
+		Collection<WorldObject> objs = getKnownList().getKnownObjects().values();
+		for (WorldObject obj : objs)
 		{
 			if (obj instanceof L2DefenderInstance)
 			{
@@ -657,7 +657,7 @@ public class L2DoorInstance extends L2Character
 	}
 	
 	@Override
-	public void reduceCurrentHp(double damage, L2Character attacker, boolean awake, boolean isDOT, Skill skill)
+	public void reduceCurrentHp(double damage, Creature attacker, boolean awake, boolean isDOT, Skill skill)
 	{
 		if (isWall() && (getInstanceId() == 0))
 		{
@@ -677,13 +677,13 @@ public class L2DoorInstance extends L2Character
 	}
 	
 	@Override
-	public void reduceCurrentHpByDOT(double i, L2Character attacker, Skill skill)
+	public void reduceCurrentHpByDOT(double i, Creature attacker, Skill skill)
 	{
 		// doors can't be damaged by DOTs
 	}
 	
 	@Override
-	public boolean doDie(L2Character killer)
+	public boolean doDie(Creature killer)
 	{
 		if (!super.doDie(killer))
 		{

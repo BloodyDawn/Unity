@@ -39,9 +39,9 @@ import com.l2jserver.gameserver.data.xml.impl.EnchantItemHPBonusData;
 import com.l2jserver.gameserver.engines.DocumentEngine;
 import com.l2jserver.gameserver.enums.ItemLocation;
 import com.l2jserver.gameserver.idfactory.IdFactory;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.actor.Attackable;
 import com.l2jserver.gameserver.model.actor.instance.L2EventMonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.EventDispatcher;
@@ -220,9 +220,9 @@ public class ItemTable
 		if (process.equalsIgnoreCase("loot"))
 		{
 			ScheduledFuture<?> itemLootShedule;
-			if ((reference instanceof L2Attackable) && ((L2Attackable) reference).isRaid()) // loot privilege for raids
+			if ((reference instanceof Attackable) && ((Attackable) reference).isRaid()) // loot privilege for raids
 			{
-				L2Attackable raid = (L2Attackable) reference;
+				Attackable raid = (Attackable) reference;
 				// if in CommandChannel and was killing a World/RaidBoss
 				if ((raid.getFirstCommandChannelAttacked() != null) && !Config.AUTO_LOOT_RAIDS)
 				{
@@ -245,7 +245,7 @@ public class ItemTable
 		}
 		
 		// Add the L2ItemInstance object to _allObjects of L2world
-		L2World.getInstance().storeObject(item);
+		World.getInstance().storeObject(item);
 		
 		// Set Item parameters
 		if (item.isStackable() && (count > 1))
@@ -274,9 +274,9 @@ public class ItemTable
 			if (actor.isGM())
 			{
 				String referenceName = "no-reference";
-				if (reference instanceof L2Object)
+				if (reference instanceof WorldObject)
 				{
-					referenceName = (((L2Object) reference).getName() != null ? ((L2Object) reference).getName() : "no-name");
+					referenceName = (((WorldObject) reference).getName() != null ? ((WorldObject) reference).getName() : "no-name");
 				}
 				else if (reference instanceof String)
 				{
@@ -323,7 +323,7 @@ public class ItemTable
 			item.setItemLocation(ItemLocation.VOID);
 			item.setLastChange(L2ItemInstance.REMOVED);
 			
-			L2World.getInstance().removeObject(item);
+			World.getInstance().removeObject(item);
 			IdFactory.getInstance().releaseId(item.getObjectId());
 			
 			if (Config.LOG_ITEMS)
@@ -348,9 +348,9 @@ public class ItemTable
 				if (actor.isGM())
 				{
 					String referenceName = "no-reference";
-					if (reference instanceof L2Object)
+					if (reference instanceof WorldObject)
 					{
-						referenceName = (((L2Object) reference).getName() != null ? ((L2Object) reference).getName() : "no-name");
+						referenceName = (((WorldObject) reference).getName() != null ? ((WorldObject) reference).getName() : "no-name");
 					}
 					else if (reference instanceof String)
 					{

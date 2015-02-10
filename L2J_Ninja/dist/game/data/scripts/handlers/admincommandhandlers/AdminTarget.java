@@ -19,7 +19,7 @@
 package handlers.admincommandhandlers;
 
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
@@ -54,7 +54,7 @@ public class AdminTarget implements IAdminCommandHandler
 		try
 		{
 			String targetName = command.substring(13);
-			L2PcInstance player = L2World.getInstance().getPlayer(targetName);
+			L2PcInstance player = World.getInstance().getPlayer(targetName);
 			if (player != null)
 			{
 				player.onAction(activeChar);

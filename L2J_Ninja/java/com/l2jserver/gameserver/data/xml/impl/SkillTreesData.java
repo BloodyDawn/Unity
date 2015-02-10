@@ -42,7 +42,7 @@ import com.l2jserver.gameserver.enums.CategoryType;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.enums.SubclassType;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2SkillLearn;
+import com.l2jserver.gameserver.model.SkillLearn;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.AcquireSkillType;
@@ -79,27 +79,27 @@ import com.l2jserver.gameserver.model.skills.Skill;
 public final class SkillTreesData implements IXmlReader
 {
 	// ClassId, FastMap of Skill Hash Code, L2SkillLearn
-	private static final Map<ClassId, Map<Integer, L2SkillLearn>> _classSkillTrees = new HashMap<>();
-	private static final Map<ClassId, Map<Integer, L2SkillLearn>> _transferSkillTrees = new HashMap<>();
-	private static final Map<Race, Map<Integer, L2SkillLearn>> _raceSkillTree = new HashMap<>();
-	private static final Map<SubclassType, Map<Integer, L2SkillLearn>> _revelationSkillTree = new HashMap<>();
+	private static final Map<ClassId, Map<Integer, SkillLearn>> _classSkillTrees = new HashMap<>();
+	private static final Map<ClassId, Map<Integer, SkillLearn>> _transferSkillTrees = new HashMap<>();
+	private static final Map<Race, Map<Integer, SkillLearn>> _raceSkillTree = new HashMap<>();
+	private static final Map<SubclassType, Map<Integer, SkillLearn>> _revelationSkillTree = new HashMap<>();
 	// Skill Hash Code, L2SkillLearn
-	private static final Map<Integer, L2SkillLearn> _collectSkillTree = new HashMap<>();
-	private static final Map<Integer, L2SkillLearn> _fishingSkillTree = new HashMap<>();
-	private static final Map<Integer, L2SkillLearn> _pledgeSkillTree = new HashMap<>();
-	private static final Map<Integer, L2SkillLearn> _subClassSkillTree = new HashMap<>();
-	private static final Map<Integer, L2SkillLearn> _subPledgeSkillTree = new HashMap<>();
-	private static final Map<Integer, L2SkillLearn> _transformSkillTree = new HashMap<>();
-	private static final Map<Integer, L2SkillLearn> _commonSkillTree = new HashMap<>();
-	private static final Map<Integer, L2SkillLearn> _subClassChangeSkillTree = new HashMap<>();
-	private static final Map<Integer, L2SkillLearn> _abilitySkillTree = new HashMap<>();
-	private static final Map<Integer, L2SkillLearn> _alchemySkillTree = new HashMap<>();
-	private static final Map<Integer, L2SkillLearn> _dualClassSkillTree = new HashMap<>();
+	private static final Map<Integer, SkillLearn> _collectSkillTree = new HashMap<>();
+	private static final Map<Integer, SkillLearn> _fishingSkillTree = new HashMap<>();
+	private static final Map<Integer, SkillLearn> _pledgeSkillTree = new HashMap<>();
+	private static final Map<Integer, SkillLearn> _subClassSkillTree = new HashMap<>();
+	private static final Map<Integer, SkillLearn> _subPledgeSkillTree = new HashMap<>();
+	private static final Map<Integer, SkillLearn> _transformSkillTree = new HashMap<>();
+	private static final Map<Integer, SkillLearn> _commonSkillTree = new HashMap<>();
+	private static final Map<Integer, SkillLearn> _subClassChangeSkillTree = new HashMap<>();
+	private static final Map<Integer, SkillLearn> _abilitySkillTree = new HashMap<>();
+	private static final Map<Integer, SkillLearn> _alchemySkillTree = new HashMap<>();
+	private static final Map<Integer, SkillLearn> _dualClassSkillTree = new HashMap<>();
 	// Other skill trees
-	private static final Map<Integer, L2SkillLearn> _nobleSkillTree = new HashMap<>();
-	private static final Map<Integer, L2SkillLearn> _heroSkillTree = new HashMap<>();
-	private static final Map<Integer, L2SkillLearn> _gameMasterSkillTree = new HashMap<>();
-	private static final Map<Integer, L2SkillLearn> _gameMasterAuraSkillTree = new HashMap<>();
+	private static final Map<Integer, SkillLearn> _nobleSkillTree = new HashMap<>();
+	private static final Map<Integer, SkillLearn> _heroSkillTree = new HashMap<>();
+	private static final Map<Integer, SkillLearn> _gameMasterSkillTree = new HashMap<>();
+	private static final Map<Integer, SkillLearn> _gameMasterAuraSkillTree = new HashMap<>();
 	// Remove skill tree
 	private static final Map<ClassId, Set<Integer>> _removeSkillCache = new HashMap<>();
 	
@@ -178,10 +178,10 @@ public final class SkillTreesData implements IXmlReader
 				{
 					if ("skillTree".equalsIgnoreCase(d.getNodeName()))
 					{
-						final Map<Integer, L2SkillLearn> classSkillTree = new HashMap<>();
-						final Map<Integer, L2SkillLearn> transferSkillTree = new HashMap<>();
-						final Map<Integer, L2SkillLearn> raceSkillTree = new HashMap<>();
-						final Map<Integer, L2SkillLearn> revelationSkillTree = new HashMap<>();
+						final Map<Integer, SkillLearn> classSkillTree = new HashMap<>();
+						final Map<Integer, SkillLearn> transferSkillTree = new HashMap<>();
+						final Map<Integer, SkillLearn> raceSkillTree = new HashMap<>();
+						final Map<Integer, SkillLearn> revelationSkillTree = new HashMap<>();
 						
 						type = d.getAttributes().getNamedItem("type").getNodeValue();
 						attr = d.getAttributes().getNamedItem("classId");
@@ -229,7 +229,7 @@ public final class SkillTreesData implements IXmlReader
 									learnSkillSet.set(attr.getNodeName(), attr.getNodeValue());
 								}
 								
-								final L2SkillLearn skillLearn = new L2SkillLearn(learnSkillSet);
+								final SkillLearn skillLearn = new SkillLearn(learnSkillSet);
 								for (Node b = c.getFirstChild(); b != null; b = b.getNextSibling())
 								{
 									attrs = b.getAttributes();
@@ -416,9 +416,9 @@ public final class SkillTreesData implements IXmlReader
 	 * @param classId the class skill tree Id
 	 * @return the complete Class Skill Tree including skill trees from parent class for a given {@code classId}
 	 */
-	public Map<Integer, L2SkillLearn> getCompleteClassSkillTree(ClassId classId)
+	public Map<Integer, SkillLearn> getCompleteClassSkillTree(ClassId classId)
 	{
-		final Map<Integer, L2SkillLearn> skillTree = new HashMap<>();
+		final Map<Integer, SkillLearn> skillTree = new HashMap<>();
 		// Add all skills that belong to all classes.
 		skillTree.putAll(_commonSkillTree);
 		while ((classId != null) && (_classSkillTrees.get(classId) != null))
@@ -435,7 +435,7 @@ public final class SkillTreesData implements IXmlReader
 	 * @param classId the transfer skill tree Id
 	 * @return the complete Transfer Skill Tree for a given {@code classId}
 	 */
-	public Map<Integer, L2SkillLearn> getTransferSkillTree(ClassId classId)
+	public Map<Integer, SkillLearn> getTransferSkillTree(ClassId classId)
 	{
 		return _transferSkillTrees.get(classId);
 	}
@@ -445,7 +445,7 @@ public final class SkillTreesData implements IXmlReader
 	 * @param race the race skill tree Id
 	 * @return the complete race Skill Tree for a given {@code Race}
 	 */
-	public Collection<L2SkillLearn> getRaceSkillTree(Race race)
+	public Collection<SkillLearn> getRaceSkillTree(Race race)
 	{
 		return _raceSkillTree.containsKey(race) ? _raceSkillTree.get(race).values() : Collections.emptyList();
 	}
@@ -454,7 +454,7 @@ public final class SkillTreesData implements IXmlReader
 	 * Gets the common skill tree.
 	 * @return the complete Common Skill Tree
 	 */
-	public Map<Integer, L2SkillLearn> getCommonSkillTree()
+	public Map<Integer, SkillLearn> getCommonSkillTree()
 	{
 		return _commonSkillTree;
 	}
@@ -463,7 +463,7 @@ public final class SkillTreesData implements IXmlReader
 	 * Gets the collect skill tree.
 	 * @return the complete Collect Skill Tree
 	 */
-	public Map<Integer, L2SkillLearn> getCollectSkillTree()
+	public Map<Integer, SkillLearn> getCollectSkillTree()
 	{
 		return _collectSkillTree;
 	}
@@ -472,7 +472,7 @@ public final class SkillTreesData implements IXmlReader
 	 * Gets the fishing skill tree.
 	 * @return the complete Fishing Skill Tree
 	 */
-	public Map<Integer, L2SkillLearn> getFishingSkillTree()
+	public Map<Integer, SkillLearn> getFishingSkillTree()
 	{
 		return _fishingSkillTree;
 	}
@@ -481,7 +481,7 @@ public final class SkillTreesData implements IXmlReader
 	 * Gets the pledge skill tree.
 	 * @return the complete Pledge Skill Tree
 	 */
-	public Map<Integer, L2SkillLearn> getPledgeSkillTree()
+	public Map<Integer, SkillLearn> getPledgeSkillTree()
 	{
 		return _pledgeSkillTree;
 	}
@@ -490,7 +490,7 @@ public final class SkillTreesData implements IXmlReader
 	 * Gets the sub class skill tree.
 	 * @return the complete Sub-Class Skill Tree
 	 */
-	public Map<Integer, L2SkillLearn> getSubClassSkillTree()
+	public Map<Integer, SkillLearn> getSubClassSkillTree()
 	{
 		return _subClassSkillTree;
 	}
@@ -499,7 +499,7 @@ public final class SkillTreesData implements IXmlReader
 	 * Gets the sub class change skill tree.
 	 * @return the complete Common Skill Tree
 	 */
-	public Map<Integer, L2SkillLearn> getSubClassChangeSkillTree()
+	public Map<Integer, SkillLearn> getSubClassChangeSkillTree()
 	{
 		return _subClassChangeSkillTree;
 	}
@@ -508,7 +508,7 @@ public final class SkillTreesData implements IXmlReader
 	 * Gets the sub pledge skill tree.
 	 * @return the complete Sub-Pledge Skill Tree
 	 */
-	public Map<Integer, L2SkillLearn> getSubPledgeSkillTree()
+	public Map<Integer, SkillLearn> getSubPledgeSkillTree()
 	{
 		return _subPledgeSkillTree;
 	}
@@ -517,7 +517,7 @@ public final class SkillTreesData implements IXmlReader
 	 * Gets the transform skill tree.
 	 * @return the complete Transform Skill Tree
 	 */
-	public Map<Integer, L2SkillLearn> getTransformSkillTree()
+	public Map<Integer, SkillLearn> getTransformSkillTree()
 	{
 		return _transformSkillTree;
 	}
@@ -526,7 +526,7 @@ public final class SkillTreesData implements IXmlReader
 	 * Gets the ability skill tree.
 	 * @return the complete Ability Skill Tree
 	 */
-	public Map<Integer, L2SkillLearn> getAbilitySkillTree()
+	public Map<Integer, SkillLearn> getAbilitySkillTree()
 	{
 		return _abilitySkillTree;
 	}
@@ -535,7 +535,7 @@ public final class SkillTreesData implements IXmlReader
 	 * Gets the ability skill tree.
 	 * @return the complete Ability Skill Tree
 	 */
-	public Map<Integer, L2SkillLearn> getAlchemySkillTree()
+	public Map<Integer, SkillLearn> getAlchemySkillTree()
 	{
 		return _alchemySkillTree;
 	}
@@ -548,7 +548,7 @@ public final class SkillTreesData implements IXmlReader
 	{
 		final Map<Integer, Skill> tree = new HashMap<>();
 		final SkillData st = SkillData.getInstance();
-		for (Entry<Integer, L2SkillLearn> e : _nobleSkillTree.entrySet())
+		for (Entry<Integer, SkillLearn> e : _nobleSkillTree.entrySet())
 		{
 			tree.put(e.getKey(), st.getSkill(e.getValue().getSkillId(), e.getValue().getSkillLevel()));
 		}
@@ -563,7 +563,7 @@ public final class SkillTreesData implements IXmlReader
 	{
 		final Map<Integer, Skill> tree = new HashMap<>();
 		final SkillData st = SkillData.getInstance();
-		for (Entry<Integer, L2SkillLearn> e : _heroSkillTree.entrySet())
+		for (Entry<Integer, SkillLearn> e : _heroSkillTree.entrySet())
 		{
 			tree.put(e.getKey(), st.getSkill(e.getValue().getSkillId(), e.getValue().getSkillLevel()));
 		}
@@ -578,7 +578,7 @@ public final class SkillTreesData implements IXmlReader
 	{
 		final Map<Integer, Skill> tree = new HashMap<>();
 		final SkillData st = SkillData.getInstance();
-		for (Entry<Integer, L2SkillLearn> e : _gameMasterSkillTree.entrySet())
+		for (Entry<Integer, SkillLearn> e : _gameMasterSkillTree.entrySet())
 		{
 			tree.put(e.getKey(), st.getSkill(e.getValue().getSkillId(), e.getValue().getSkillLevel()));
 		}
@@ -593,7 +593,7 @@ public final class SkillTreesData implements IXmlReader
 	{
 		final Map<Integer, Skill> tree = new HashMap<>();
 		final SkillData st = SkillData.getInstance();
-		for (Entry<Integer, L2SkillLearn> e : _gameMasterAuraSkillTree.entrySet())
+		for (Entry<Integer, SkillLearn> e : _gameMasterAuraSkillTree.entrySet())
 		{
 			tree.put(e.getKey(), st.getSkill(e.getValue().getSkillId(), e.getValue().getSkillLevel()));
 		}
@@ -607,8 +607,8 @@ public final class SkillTreesData implements IXmlReader
 	 */
 	public boolean hasAvailableSkills(L2PcInstance player, ClassId classId)
 	{
-		final Map<Integer, L2SkillLearn> skills = getCompleteClassSkillTree(classId);
-		for (L2SkillLearn skill : skills.values())
+		final Map<Integer, SkillLearn> skills = getCompleteClassSkillTree(classId);
+		for (SkillLearn skill : skills.values())
 		{
 			if ((skill.getSkillId() == CommonSkill.DIVINE_INSPIRATION.getId()) || skill.isAutoGet() || skill.isLearnedByFS() || (skill.getGetLevel() > player.getLevel()))
 			{
@@ -635,7 +635,7 @@ public final class SkillTreesData implements IXmlReader
 	 * @param includeAutoGet if {@code true} Auto-Get skills will be included
 	 * @return all available skills for a given {@code player}, {@code classId}, {@code includeByFs} and {@code includeAutoGet}
 	 */
-	public List<L2SkillLearn> getAvailableSkills(L2PcInstance player, ClassId classId, boolean includeByFs, boolean includeAutoGet)
+	public List<SkillLearn> getAvailableSkills(L2PcInstance player, ClassId classId, boolean includeByFs, boolean includeAutoGet)
 	{
 		return getAvailableSkills(player, classId, includeByFs, includeAutoGet, player);
 	}
@@ -649,10 +649,10 @@ public final class SkillTreesData implements IXmlReader
 	 * @param holder
 	 * @return all available skills for a given {@code player}, {@code classId}, {@code includeByFs} and {@code includeAutoGet}
 	 */
-	private List<L2SkillLearn> getAvailableSkills(L2PcInstance player, ClassId classId, boolean includeByFs, boolean includeAutoGet, ISkillsHolder holder)
+	private List<SkillLearn> getAvailableSkills(L2PcInstance player, ClassId classId, boolean includeByFs, boolean includeAutoGet, ISkillsHolder holder)
 	{
-		final List<L2SkillLearn> result = new LinkedList<>();
-		final Map<Integer, L2SkillLearn> skills = getCompleteClassSkillTree(classId);
+		final List<SkillLearn> result = new LinkedList<>();
+		final Map<Integer, SkillLearn> skills = getCompleteClassSkillTree(classId);
 		
 		if (skills.isEmpty())
 		{
@@ -663,9 +663,9 @@ public final class SkillTreesData implements IXmlReader
 		
 		final boolean isAwaken = player.isInCategory(CategoryType.AWAKEN_GROUP);
 		
-		for (Entry<Integer, L2SkillLearn> entry : skills.entrySet())
+		for (Entry<Integer, SkillLearn> entry : skills.entrySet())
 		{
-			final L2SkillLearn skill = entry.getValue();
+			final SkillLearn skill = entry.getValue();
 			
 			if (((skill.getSkillId() == CommonSkill.DIVINE_INSPIRATION.getId()) && (!Config.AUTO_LEARN_DIVINE_INSPIRATION && includeAutoGet) && !player.isGM()) || (!includeAutoGet && skill.isAutoGet()) || (!includeByFs && skill.isLearnedByFS()) || isRemoveSkill(classId, skill.getSkillId()))
 			{
@@ -700,10 +700,10 @@ public final class SkillTreesData implements IXmlReader
 	{
 		// Get available skills
 		PlayerSkillHolder holder = new PlayerSkillHolder(player);
-		List<L2SkillLearn> learnable = getAvailableSkills(player, classId, includeByFs, includeAutoGet, holder);
+		List<SkillLearn> learnable = getAvailableSkills(player, classId, includeByFs, includeAutoGet, holder);
 		while (learnable.size() > 0)
 		{
-			for (L2SkillLearn s : learnable)
+			for (SkillLearn s : learnable)
 			{
 				Skill sk = SkillData.getInstance().getSkill(s.getSkillId(), s.getSkillLevel());
 				holder.addSkill(sk);
@@ -720,10 +720,10 @@ public final class SkillTreesData implements IXmlReader
 	 * @param player the player requesting the Auto-Get skills
 	 * @return all the available Auto-Get skills for a given {@code player}
 	 */
-	public List<L2SkillLearn> getAvailableAutoGetSkills(L2PcInstance player)
+	public List<SkillLearn> getAvailableAutoGetSkills(L2PcInstance player)
 	{
-		final List<L2SkillLearn> result = new ArrayList<>();
-		final Map<Integer, L2SkillLearn> skills = getCompleteClassSkillTree(player.getClassId());
+		final List<SkillLearn> result = new ArrayList<>();
+		final Map<Integer, SkillLearn> skills = getCompleteClassSkillTree(player.getClassId());
 		if (skills.isEmpty())
 		{
 			// The Skill Tree for this class is undefined, so we return an empty list.
@@ -737,7 +737,7 @@ public final class SkillTreesData implements IXmlReader
 		// Race skills
 		if (isAwaken)
 		{
-			for (L2SkillLearn skill : getRaceSkillTree(race))
+			for (SkillLearn skill : getRaceSkillTree(race))
 			{
 				if (player.getKnownSkill(skill.getSkillId()) == null)
 				{
@@ -746,7 +746,7 @@ public final class SkillTreesData implements IXmlReader
 			}
 		}
 		
-		for (L2SkillLearn skill : skills.values())
+		for (SkillLearn skill : skills.values())
 		{
 			if (!skill.getRaces().isEmpty() && !skill.getRaces().contains(race))
 			{
@@ -780,11 +780,11 @@ public final class SkillTreesData implements IXmlReader
 	 * @param player the player
 	 * @return all the available Fishing skills for a given {@code player}
 	 */
-	public List<L2SkillLearn> getAvailableFishingSkills(L2PcInstance player)
+	public List<SkillLearn> getAvailableFishingSkills(L2PcInstance player)
 	{
-		final List<L2SkillLearn> result = new ArrayList<>();
+		final List<SkillLearn> result = new ArrayList<>();
 		final Race playerRace = player.getRace();
-		for (L2SkillLearn skill : _fishingSkillTree.values())
+		for (SkillLearn skill : _fishingSkillTree.values())
 		{
 			// If skill is Race specific and the player's race isn't allowed, skip it.
 			if (!skill.getRaces().isEmpty() && !skill.getRaces().contains(playerRace))
@@ -817,12 +817,12 @@ public final class SkillTreesData implements IXmlReader
 	 * @param type the player current subclass type
 	 * @return all the available revelation skills for a given {@code player}
 	 */
-	public List<L2SkillLearn> getAvailableRevelationSkills(L2PcInstance player, SubclassType type)
+	public List<SkillLearn> getAvailableRevelationSkills(L2PcInstance player, SubclassType type)
 	{
-		final List<L2SkillLearn> result = new ArrayList<>();
-		Map<Integer, L2SkillLearn> revelationSkills = _revelationSkillTree.get(type);
+		final List<SkillLearn> result = new ArrayList<>();
+		Map<Integer, SkillLearn> revelationSkills = _revelationSkillTree.get(type);
 		
-		for (L2SkillLearn skill : revelationSkills.values())
+		for (SkillLearn skill : revelationSkills.values())
 		{
 			final Skill oldSkill = player.getSkills().get(skill.getSkillId());
 			
@@ -839,11 +839,11 @@ public final class SkillTreesData implements IXmlReader
 	 * @param player the player requesting the alchemy skills
 	 * @return all the available alchemy skills for a given {@code player}
 	 */
-	public List<L2SkillLearn> getAvailableAlchemySkills(L2PcInstance player)
+	public List<SkillLearn> getAvailableAlchemySkills(L2PcInstance player)
 	{
-		final List<L2SkillLearn> result = new ArrayList<>();
+		final List<SkillLearn> result = new ArrayList<>();
 		
-		for (L2SkillLearn skill : _alchemySkillTree.values())
+		for (SkillLearn skill : _alchemySkillTree.values())
 		{
 			if (skill.isLearnedByNpc() && (player.getLevel() >= skill.getGetLevel()))
 			{
@@ -870,10 +870,10 @@ public final class SkillTreesData implements IXmlReader
 	 * @param player the collecting skill learning player
 	 * @return all the available Collecting skills for a given {@code player}
 	 */
-	public List<L2SkillLearn> getAvailableCollectSkills(L2PcInstance player)
+	public List<SkillLearn> getAvailableCollectSkills(L2PcInstance player)
 	{
-		final List<L2SkillLearn> result = new ArrayList<>();
-		for (L2SkillLearn skill : _collectSkillTree.values())
+		final List<SkillLearn> result = new ArrayList<>();
+		for (SkillLearn skill : _collectSkillTree.values())
 		{
 			final Skill oldSkill = player.getSkills().get(skill.getSkillId());
 			if (oldSkill != null)
@@ -896,9 +896,9 @@ public final class SkillTreesData implements IXmlReader
 	 * @param player the transfer skill learning player
 	 * @return all the available Transfer skills for a given {@code player}
 	 */
-	public List<L2SkillLearn> getAvailableTransferSkills(L2PcInstance player)
+	public List<SkillLearn> getAvailableTransferSkills(L2PcInstance player)
 	{
-		final List<L2SkillLearn> result = new ArrayList<>();
+		final List<SkillLearn> result = new ArrayList<>();
 		final ClassId classId = player.getClassId();
 		
 		if (!_transferSkillTrees.containsKey(classId))
@@ -906,7 +906,7 @@ public final class SkillTreesData implements IXmlReader
 			return result;
 		}
 		
-		for (L2SkillLearn skill : _transferSkillTrees.get(classId).values())
+		for (SkillLearn skill : _transferSkillTrees.get(classId).values())
 		{
 			// If player doesn't know this transfer skill:
 			if (player.getKnownSkill(skill.getSkillId()) == null)
@@ -922,11 +922,11 @@ public final class SkillTreesData implements IXmlReader
 	 * @param player the transformation skill learning player
 	 * @return all the available Transformation skills for a given {@code player}
 	 */
-	public List<L2SkillLearn> getAvailableTransformSkills(L2PcInstance player)
+	public List<SkillLearn> getAvailableTransformSkills(L2PcInstance player)
 	{
-		final List<L2SkillLearn> result = new ArrayList<>();
+		final List<SkillLearn> result = new ArrayList<>();
 		final Race race = player.getRace();
-		for (L2SkillLearn skill : _transformSkillTree.values())
+		for (SkillLearn skill : _transformSkillTree.values())
 		{
 			if ((player.getLevel() >= skill.getGetLevel()) && (skill.getRaces().isEmpty() || skill.getRaces().contains(race)))
 			{
@@ -952,11 +952,11 @@ public final class SkillTreesData implements IXmlReader
 	 * @param clan the pledge skill learning clan
 	 * @return all the available Pledge skills for a given {@code clan}
 	 */
-	public List<L2SkillLearn> getAvailablePledgeSkills(L2Clan clan)
+	public List<SkillLearn> getAvailablePledgeSkills(L2Clan clan)
 	{
-		final List<L2SkillLearn> result = new ArrayList<>();
+		final List<SkillLearn> result = new ArrayList<>();
 		
-		for (L2SkillLearn skill : _pledgeSkillTree.values())
+		for (SkillLearn skill : _pledgeSkillTree.values())
 		{
 			if (!skill.isResidencialSkill() && (clan.getLevel() >= skill.getGetLevel()))
 			{
@@ -983,10 +983,10 @@ public final class SkillTreesData implements IXmlReader
 	 * @param includeSquad if squad skill will be added too
 	 * @return all the available pledge skills for a given {@code clan}
 	 */
-	public Map<Integer, L2SkillLearn> getMaxPledgeSkills(L2Clan clan, boolean includeSquad)
+	public Map<Integer, SkillLearn> getMaxPledgeSkills(L2Clan clan, boolean includeSquad)
 	{
-		final Map<Integer, L2SkillLearn> result = new HashMap<>();
-		for (L2SkillLearn skill : _pledgeSkillTree.values())
+		final Map<Integer, SkillLearn> result = new HashMap<>();
+		for (SkillLearn skill : _pledgeSkillTree.values())
 		{
 			if (!skill.isResidencialSkill() && (clan.getLevel() >= skill.getGetLevel()))
 			{
@@ -1000,7 +1000,7 @@ public final class SkillTreesData implements IXmlReader
 		
 		if (includeSquad)
 		{
-			for (L2SkillLearn skill : _subPledgeSkillTree.values())
+			for (SkillLearn skill : _subPledgeSkillTree.values())
 			{
 				if ((clan.getLevel() >= skill.getGetLevel()))
 				{
@@ -1020,10 +1020,10 @@ public final class SkillTreesData implements IXmlReader
 	 * @param clan the sub-pledge skill learning clan
 	 * @return all the available Sub-Pledge skills for a given {@code clan}
 	 */
-	public List<L2SkillLearn> getAvailableSubPledgeSkills(L2Clan clan)
+	public List<SkillLearn> getAvailableSubPledgeSkills(L2Clan clan)
 	{
-		final List<L2SkillLearn> result = new ArrayList<>();
-		for (L2SkillLearn skill : _subPledgeSkillTree.values())
+		final List<SkillLearn> result = new ArrayList<>();
+		for (SkillLearn skill : _subPledgeSkillTree.values())
 		{
 			if ((clan.getLevel() >= skill.getGetLevel()) && clan.isLearnableSubSkill(skill.getSkillId(), skill.getSkillLevel()))
 			{
@@ -1038,10 +1038,10 @@ public final class SkillTreesData implements IXmlReader
 	 * @param player the sub-class skill learning player
 	 * @return all the available Sub-Class skills for a given {@code player}
 	 */
-	public List<L2SkillLearn> getAvailableSubClassSkills(L2PcInstance player)
+	public List<SkillLearn> getAvailableSubClassSkills(L2PcInstance player)
 	{
-		final List<L2SkillLearn> result = new ArrayList<>();
-		for (L2SkillLearn skill : _subClassSkillTree.values())
+		final List<SkillLearn> result = new ArrayList<>();
+		for (SkillLearn skill : _subClassSkillTree.values())
 		{
 			final Skill oldSkill = player.getSkills().get(skill.getSkillId());
 			if (((oldSkill == null) && (skill.getSkillLevel() == 1)) || ((oldSkill != null) && (oldSkill.getLevel() == (skill.getSkillLevel() - 1))))
@@ -1057,10 +1057,10 @@ public final class SkillTreesData implements IXmlReader
 	 * @param player the dual-class skill learning player
 	 * @return all the available Dual-Class skills for a given {@code player} sorted by skill ID
 	 */
-	public List<L2SkillLearn> getAvailableDualClassSkills(L2PcInstance player)
+	public List<SkillLearn> getAvailableDualClassSkills(L2PcInstance player)
 	{
-		final List<L2SkillLearn> result = new ArrayList<>();
-		for (L2SkillLearn skill : _dualClassSkillTree.values())
+		final List<SkillLearn> result = new ArrayList<>();
+		for (SkillLearn skill : _dualClassSkillTree.values())
 		{
 			final Skill oldSkill = player.getSkills().get(skill.getSkillId());
 			if (((oldSkill == null) && (skill.getSkillLevel() == 1)) || ((oldSkill != null) && (oldSkill.getLevel() == (skill.getSkillLevel() - 1))))
@@ -1068,7 +1068,7 @@ public final class SkillTreesData implements IXmlReader
 				result.add(skill);
 			}
 		}
-		result.sort(Comparator.comparing(L2SkillLearn::getSkillId));
+		result.sort(Comparator.comparing(SkillLearn::getSkillId));
 		return result;
 	}
 	
@@ -1077,10 +1077,10 @@ public final class SkillTreesData implements IXmlReader
 	 * @param residenceId the id of the Castle, Fort, Territory
 	 * @return all the available Residential skills for a given {@code residenceId}
 	 */
-	public List<L2SkillLearn> getAvailableResidentialSkills(int residenceId)
+	public List<SkillLearn> getAvailableResidentialSkills(int residenceId)
 	{
-		final List<L2SkillLearn> result = new ArrayList<>();
-		for (L2SkillLearn skill : _pledgeSkillTree.values())
+		final List<SkillLearn> result = new ArrayList<>();
+		for (SkillLearn skill : _pledgeSkillTree.values())
 		{
 			if (skill.isResidencialSkill() && skill.getResidenceIds().contains(residenceId))
 			{
@@ -1098,9 +1098,9 @@ public final class SkillTreesData implements IXmlReader
 	 * @param player the player learning the skill
 	 * @return the skill learn for the specified parameters
 	 */
-	public L2SkillLearn getSkillLearn(AcquireSkillType skillType, int id, int lvl, L2PcInstance player)
+	public SkillLearn getSkillLearn(AcquireSkillType skillType, int id, int lvl, L2PcInstance player)
 	{
-		L2SkillLearn sl = null;
+		SkillLearn sl = null;
 		switch (skillType)
 		{
 			case CLASS:
@@ -1149,7 +1149,7 @@ public final class SkillTreesData implements IXmlReader
 	 * @param lvl the transformation skill level
 	 * @return the transform skill from the Transform Skill Tree for a given {@code id} and {@code lvl}
 	 */
-	public L2SkillLearn getTransformSkill(int id, int lvl)
+	public SkillLearn getTransformSkill(int id, int lvl)
 	{
 		return _transformSkillTree.get(SkillData.getSkillHashCode(id, lvl));
 	}
@@ -1160,7 +1160,7 @@ public final class SkillTreesData implements IXmlReader
 	 * @param lvl the ability skill level
 	 * @return the ability skill from the Ability Skill Tree for a given {@code id} and {@code lvl}
 	 */
-	public L2SkillLearn getAbilitySkill(int id, int lvl)
+	public SkillLearn getAbilitySkill(int id, int lvl)
 	{
 		return _abilitySkillTree.get(SkillData.getSkillHashCode(id, lvl));
 	}
@@ -1171,7 +1171,7 @@ public final class SkillTreesData implements IXmlReader
 	 * @param lvl the alchemy skill level
 	 * @return the alchemy skill from the Alchemy Skill Tree for a given {@code id} and {@code lvl}
 	 */
-	public L2SkillLearn getAlchemySkill(int id, int lvl)
+	public SkillLearn getAlchemySkill(int id, int lvl)
 	{
 		return _alchemySkillTree.get(SkillData.getSkillHashCode(id, lvl));
 	}
@@ -1183,7 +1183,7 @@ public final class SkillTreesData implements IXmlReader
 	 * @param classId the class skill tree Id
 	 * @return the class skill from the Class Skill Trees for a given {@code classId}, {@code id} and {@code lvl}
 	 */
-	public L2SkillLearn getClassSkill(int id, int lvl, ClassId classId)
+	public SkillLearn getClassSkill(int id, int lvl, ClassId classId)
 	{
 		return getCompleteClassSkillTree(classId).get(SkillData.getSkillHashCode(id, lvl));
 	}
@@ -1194,7 +1194,7 @@ public final class SkillTreesData implements IXmlReader
 	 * @param lvl the fishing skill level
 	 * @return Fishing skill from the Fishing Skill Tree for a given {@code id} and {@code lvl}
 	 */
-	public L2SkillLearn getFishingSkill(int id, int lvl)
+	public SkillLearn getFishingSkill(int id, int lvl)
 	{
 		return _fishingSkillTree.get(SkillData.getSkillHashCode(id, lvl));
 	}
@@ -1205,7 +1205,7 @@ public final class SkillTreesData implements IXmlReader
 	 * @param lvl the pledge skill level
 	 * @return the pledge skill from the Pledge Skill Tree for a given {@code id} and {@code lvl}
 	 */
-	public L2SkillLearn getPledgeSkill(int id, int lvl)
+	public SkillLearn getPledgeSkill(int id, int lvl)
 	{
 		return _pledgeSkillTree.get(SkillData.getSkillHashCode(id, lvl));
 	}
@@ -1216,7 +1216,7 @@ public final class SkillTreesData implements IXmlReader
 	 * @param lvl the sub-pledge skill level
 	 * @return the sub-pledge skill from the Sub-Pledge Skill Tree for a given {@code id} and {@code lvl}
 	 */
-	public L2SkillLearn getSubPledgeSkill(int id, int lvl)
+	public SkillLearn getSubPledgeSkill(int id, int lvl)
 	{
 		return _subPledgeSkillTree.get(SkillData.getSkillHashCode(id, lvl));
 	}
@@ -1228,7 +1228,7 @@ public final class SkillTreesData implements IXmlReader
 	 * @param classId the transfer skill tree Id
 	 * @return the transfer skill from the Transfer Skill Trees for a given {@code classId}, {@code id} and {@code lvl}
 	 */
-	public L2SkillLearn getTransferSkill(int id, int lvl, ClassId classId)
+	public SkillLearn getTransferSkill(int id, int lvl, ClassId classId)
 	{
 		if (_transferSkillTrees.get(classId) != null)
 		{
@@ -1244,9 +1244,9 @@ public final class SkillTreesData implements IXmlReader
 	 * @param race the race skill tree Id
 	 * @return the transfer skill from the Race Skill Trees for a given {@code race}, {@code id} and {@code lvl}
 	 */
-	public L2SkillLearn getRaceSkill(int id, int lvl, Race race)
+	public SkillLearn getRaceSkill(int id, int lvl, Race race)
 	{
-		for (L2SkillLearn skill : getRaceSkillTree(race))
+		for (SkillLearn skill : getRaceSkillTree(race))
 		{
 			if ((skill.getSkillId() == id) && (skill.getSkillLevel() == lvl))
 			{
@@ -1262,7 +1262,7 @@ public final class SkillTreesData implements IXmlReader
 	 * @param lvl the sub-class skill level
 	 * @return the sub-class skill from the Sub-Class Skill Tree for a given {@code id} and {@code lvl}
 	 */
-	public L2SkillLearn getSubClassSkill(int id, int lvl)
+	public SkillLearn getSubClassSkill(int id, int lvl)
 	{
 		return _subClassSkillTree.get(SkillData.getSkillHashCode(id, lvl));
 	}
@@ -1273,7 +1273,7 @@ public final class SkillTreesData implements IXmlReader
 	 * @param lvl the dual-class skill level
 	 * @return the dual-class skill from the Dual-Class Skill Tree for a given {@code id} and {@code lvl}
 	 */
-	public L2SkillLearn getDualClassSkill(int id, int lvl)
+	public SkillLearn getDualClassSkill(int id, int lvl)
 	{
 		return _dualClassSkillTree.get(SkillData.getSkillHashCode(id, lvl));
 	}
@@ -1284,7 +1284,7 @@ public final class SkillTreesData implements IXmlReader
 	 * @param lvl the common skill level
 	 * @return the common skill from the Common Skill Tree for a given {@code id} and {@code lvl}
 	 */
-	public L2SkillLearn getCommonSkill(int id, int lvl)
+	public SkillLearn getCommonSkill(int id, int lvl)
 	{
 		return _commonSkillTree.get(SkillData.getSkillHashCode(id, lvl));
 	}
@@ -1295,7 +1295,7 @@ public final class SkillTreesData implements IXmlReader
 	 * @param lvl the collect skill level
 	 * @return the collect skill from the Collect Skill Tree for a given {@code id} and {@code lvl}
 	 */
-	public L2SkillLearn getCollectSkill(int id, int lvl)
+	public SkillLearn getCollectSkill(int id, int lvl)
 	{
 		return _collectSkillTree.get(SkillData.getSkillHashCode(id, lvl));
 	}
@@ -1307,7 +1307,7 @@ public final class SkillTreesData implements IXmlReader
 	 * @param lvl the revelation skill level
 	 * @return the revelation skill from the Revelation Skill Tree for a given {@code id} and {@code lvl}
 	 */
-	public L2SkillLearn getRevelationSkill(SubclassType type, int id, int lvl)
+	public SkillLearn getRevelationSkill(SubclassType type, int id, int lvl)
 	{
 		return _revelationSkillTree.get(type).get(SkillData.getSkillHashCode(id, lvl));
 	}
@@ -1318,7 +1318,7 @@ public final class SkillTreesData implements IXmlReader
 	 * @param skillTree the skill tree to search the minimum get level
 	 * @return the minimum level for a new skill for a given {@code player} and {@code skillTree}
 	 */
-	public int getMinLevelForNewSkill(L2PcInstance player, Map<Integer, L2SkillLearn> skillTree)
+	public int getMinLevelForNewSkill(L2PcInstance player, Map<Integer, SkillLearn> skillTree)
 	{
 		int minLevel = 0;
 		if (skillTree.isEmpty())
@@ -1327,7 +1327,7 @@ public final class SkillTreesData implements IXmlReader
 		}
 		else
 		{
-			for (L2SkillLearn s : skillTree.values())
+			for (SkillLearn s : skillTree.values())
 			{
 				if (player.getLevel() < s.getGetLevel())
 				{
@@ -1341,10 +1341,10 @@ public final class SkillTreesData implements IXmlReader
 		return minLevel;
 	}
 	
-	public List<L2SkillLearn> getNextAvailableSkills(L2PcInstance player, ClassId classId, boolean includeByFs, boolean includeAutoGet)
+	public List<SkillLearn> getNextAvailableSkills(L2PcInstance player, ClassId classId, boolean includeByFs, boolean includeAutoGet)
 	{
-		final Map<Integer, L2SkillLearn> completeClassSkillTree = getCompleteClassSkillTree(classId);
-		final List<L2SkillLearn> result = new LinkedList<>();
+		final Map<Integer, SkillLearn> completeClassSkillTree = getCompleteClassSkillTree(classId);
+		final List<SkillLearn> result = new LinkedList<>();
 		if (completeClassSkillTree.isEmpty())
 		{
 			return result;
@@ -1353,7 +1353,7 @@ public final class SkillTreesData implements IXmlReader
 		
 		if (minLevelForNewSkill > 0)
 		{
-			for (L2SkillLearn skill : completeClassSkillTree.values())
+			for (SkillLearn skill : completeClassSkillTree.values())
 			{
 				if ((!includeAutoGet && skill.isAutoGet()) || (!includeByFs && skill.isLearnedByFS()))
 				{
@@ -1406,7 +1406,7 @@ public final class SkillTreesData implements IXmlReader
 			return true;
 		}
 		
-		for (L2SkillLearn skill : _heroSkillTree.values())
+		for (SkillLearn skill : _heroSkillTree.values())
 		{
 			if ((skill.getSkillId() == skillId) && (skillLevel == -1))
 			{
@@ -1424,7 +1424,7 @@ public final class SkillTreesData implements IXmlReader
 	 */
 	public boolean isGMSkill(int skillId, int skillLevel)
 	{
-		final Map<Integer, L2SkillLearn> gmSkills = new HashMap<>();
+		final Map<Integer, SkillLearn> gmSkills = new HashMap<>();
 		gmSkills.putAll(_gameMasterSkillTree);
 		gmSkills.putAll(_gameMasterAuraSkillTree);
 		if (gmSkills.containsKey(SkillData.getSkillHashCode(skillId, skillLevel)))
@@ -1432,7 +1432,7 @@ public final class SkillTreesData implements IXmlReader
 			return true;
 		}
 		
-		for (L2SkillLearn skill : gmSkills.values())
+		for (SkillLearn skill : gmSkills.values())
 		{
 			if ((skill.getSkillId() == skillId) && (skillLevel == -1))
 			{
@@ -1482,9 +1482,9 @@ public final class SkillTreesData implements IXmlReader
 	 */
 	public void addSkills(L2PcInstance gmchar, boolean auraSkills)
 	{
-		final Collection<L2SkillLearn> skills = auraSkills ? _gameMasterAuraSkillTree.values() : _gameMasterSkillTree.values();
+		final Collection<SkillLearn> skills = auraSkills ? _gameMasterAuraSkillTree.values() : _gameMasterSkillTree.values();
 		final SkillData st = SkillData.getInstance();
-		for (L2SkillLearn sl : skills)
+		for (SkillLearn sl : skills)
 		{
 			gmchar.addSkill(st.getSkill(sl.getSkillId(), sl.getSkillLevel()), false); // Don't Save GM skills to database
 		}
@@ -1499,7 +1499,7 @@ public final class SkillTreesData implements IXmlReader
 		int[] array;
 		
 		// Class specific skills:
-		Map<Integer, L2SkillLearn> tempMap;
+		Map<Integer, SkillLearn> tempMap;
 		final Set<ClassId> keySet = _classSkillTrees.keySet();
 		_skillsByClassIdHashCodes = new HashMap<>(keySet.size());
 		for (ClassId cls : keySet)
@@ -1521,7 +1521,7 @@ public final class SkillTreesData implements IXmlReader
 		_skillsByRaceHashCodes = new HashMap<>(Race.values().length);
 		for (Race r : Race.values())
 		{
-			for (L2SkillLearn s : _fishingSkillTree.values())
+			for (SkillLearn s : _fishingSkillTree.values())
 			{
 				if (s.getRaces().contains(r))
 				{
@@ -1529,7 +1529,7 @@ public final class SkillTreesData implements IXmlReader
 				}
 			}
 			
-			for (L2SkillLearn s : _transformSkillTree.values())
+			for (SkillLearn s : _transformSkillTree.values())
 			{
 				if (s.getRaces().contains(r))
 				{
@@ -1549,7 +1549,7 @@ public final class SkillTreesData implements IXmlReader
 		}
 		
 		// Skills available for all classes and races
-		for (L2SkillLearn s : _commonSkillTree.values())
+		for (SkillLearn s : _commonSkillTree.values())
 		{
 			if (s.getRaces().isEmpty())
 			{
@@ -1557,7 +1557,7 @@ public final class SkillTreesData implements IXmlReader
 			}
 		}
 		
-		for (L2SkillLearn s : _fishingSkillTree.values())
+		for (SkillLearn s : _fishingSkillTree.values())
 		{
 			if (s.getRaces().isEmpty())
 			{
@@ -1565,7 +1565,7 @@ public final class SkillTreesData implements IXmlReader
 			}
 		}
 		
-		for (L2SkillLearn s : _transformSkillTree.values())
+		for (SkillLearn s : _transformSkillTree.values())
 		{
 			if (s.getRaces().isEmpty())
 			{
@@ -1573,17 +1573,17 @@ public final class SkillTreesData implements IXmlReader
 			}
 		}
 		
-		for (L2SkillLearn s : _collectSkillTree.values())
+		for (SkillLearn s : _collectSkillTree.values())
 		{
 			list.add(SkillData.getSkillHashCode(s.getSkillId(), s.getSkillLevel()));
 		}
 		
-		for (L2SkillLearn s : _abilitySkillTree.values())
+		for (SkillLearn s : _abilitySkillTree.values())
 		{
 			list.add(SkillData.getSkillHashCode(s.getSkillId(), s.getSkillLevel()));
 		}
 		
-		for (L2SkillLearn s : _alchemySkillTree.values())
+		for (SkillLearn s : _alchemySkillTree.values())
 		{
 			list.add(SkillData.getSkillHashCode(s.getSkillId(), s.getSkillLevel()));
 		}
@@ -1660,31 +1660,31 @@ public final class SkillTreesData implements IXmlReader
 	private void report()
 	{
 		int classSkillTreeCount = 0;
-		for (Map<Integer, L2SkillLearn> classSkillTree : _classSkillTrees.values())
+		for (Map<Integer, SkillLearn> classSkillTree : _classSkillTrees.values())
 		{
 			classSkillTreeCount += classSkillTree.size();
 		}
 		
 		int transferSkillTreeCount = 0;
-		for (Map<Integer, L2SkillLearn> trasferSkillTree : _transferSkillTrees.values())
+		for (Map<Integer, SkillLearn> trasferSkillTree : _transferSkillTrees.values())
 		{
 			transferSkillTreeCount += trasferSkillTree.size();
 		}
 		
 		int raceSkillTreeCount = 0;
-		for (Map<Integer, L2SkillLearn> raceSkillTree : _raceSkillTree.values())
+		for (Map<Integer, SkillLearn> raceSkillTree : _raceSkillTree.values())
 		{
 			raceSkillTreeCount += raceSkillTree.size();
 		}
 		
 		int revelationSkillTreeCount = 0;
-		for (Map<Integer, L2SkillLearn> revelationSkillTree : _revelationSkillTree.values())
+		for (Map<Integer, SkillLearn> revelationSkillTree : _revelationSkillTree.values())
 		{
 			revelationSkillTreeCount += revelationSkillTree.size();
 		}
 		
 		int dwarvenOnlyFishingSkillCount = 0;
-		for (L2SkillLearn fishSkill : _fishingSkillTree.values())
+		for (SkillLearn fishSkill : _fishingSkillTree.values())
 		{
 			if (fishSkill.getRaces().contains(Race.DWARF))
 			{
@@ -1693,7 +1693,7 @@ public final class SkillTreesData implements IXmlReader
 		}
 		
 		int resSkillCount = 0;
-		for (L2SkillLearn pledgeSkill : _pledgeSkillTree.values())
+		for (SkillLearn pledgeSkill : _pledgeSkillTree.values())
 		{
 			if (pledgeSkill.isResidencialSkill())
 			{

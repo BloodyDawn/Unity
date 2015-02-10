@@ -20,8 +20,8 @@ package com.l2jserver.gameserver.model.actor.knownlist;
 
 import com.l2jserver.gameserver.ai.CtrlEvent;
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2FriendlyMobInstance;
 
 public class FriendlyMobKnownList extends AttackableKnownList
@@ -32,7 +32,7 @@ public class FriendlyMobKnownList extends AttackableKnownList
 	}
 	
 	@Override
-	public boolean addKnownObject(L2Object object)
+	public boolean addKnownObject(WorldObject object)
 	{
 		if (!super.addKnownObject(object))
 		{
@@ -48,14 +48,14 @@ public class FriendlyMobKnownList extends AttackableKnownList
 	}
 	
 	@Override
-	protected boolean removeKnownObject(L2Object object, boolean forget)
+	protected boolean removeKnownObject(WorldObject object, boolean forget)
 	{
 		if (!super.removeKnownObject(object, forget))
 		{
 			return false;
 		}
 		
-		if (!(object instanceof L2Character))
+		if (!(object instanceof Creature))
 		{
 			return true;
 		}

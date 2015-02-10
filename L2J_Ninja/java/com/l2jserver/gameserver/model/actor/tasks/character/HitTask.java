@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.model.actor.tasks.character;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 
 /**
  * Task launching the function onHitTimer().<br>
@@ -33,15 +33,15 @@ import com.l2jserver.gameserver.model.actor.L2Character;
  */
 public final class HitTask implements Runnable
 {
-	private final L2Character _character;
-	private final L2Character _hitTarget;
+	private final Creature _character;
+	private final Creature _hitTarget;
 	private final int _damage;
 	private final boolean _crit;
 	private final boolean _miss;
 	private final byte _shld;
 	private final boolean _soulshot;
 	
-	public HitTask(L2Character character, L2Character target, int damage, boolean crit, boolean miss, boolean soulshot, byte shld)
+	public HitTask(Creature character, Creature target, int damage, boolean crit, boolean miss, boolean soulshot, byte shld)
 	{
 		_character = character;
 		_hitTarget = target;

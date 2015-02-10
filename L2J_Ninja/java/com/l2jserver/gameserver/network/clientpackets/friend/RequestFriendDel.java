@@ -24,7 +24,7 @@ import java.util.logging.Level;
 
 import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.data.sql.impl.CharNameTable;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.clientpackets.L2GameClientPacket;
@@ -93,7 +93,7 @@ public final class RequestFriendDel extends L2GameClientPacket
 			activeChar.getFriendList().remove(Integer.valueOf(id));
 			activeChar.sendPacket(new FriendRemove(_name, 1));
 			
-			L2PcInstance player = L2World.getInstance().getPlayer(_name);
+			L2PcInstance player = World.getInstance().getPlayer(_name);
 			if (player != null)
 			{
 				player.getFriendList().remove(Integer.valueOf(activeChar.getObjectId()));

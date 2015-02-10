@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.model.actor.instance;
 
 import com.l2jserver.gameserver.data.xml.impl.NpcData;
 import com.l2jserver.gameserver.enums.InstanceType;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 
 /**
@@ -53,7 +53,7 @@ public final class L2ChestInstance extends L2MonsterInstance
 	}
 	
 	@Override
-	public void doItemDrop(L2NpcTemplate npcTemplate, L2Character lastAttacker)
+	public void doItemDrop(L2NpcTemplate npcTemplate, Creature lastAttacker)
 	{
 		int id = getTemplate().getId();
 		

@@ -20,7 +20,7 @@ package handlers.effecthandlers;
 
 import com.l2jserver.gameserver.enums.ShotType;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
@@ -63,8 +63,8 @@ public final class Heal extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		L2Character target = info.getEffected();
-		L2Character activeChar = info.getEffector();
+		Creature target = info.getEffected();
+		Creature activeChar = info.getEffector();
 		if ((target == null) || target.isDead() || target.isDoor() || target.isInvul())
 		{
 			return;

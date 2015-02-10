@@ -29,10 +29,10 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.xml.impl.RecipeData;
 import com.l2jserver.gameserver.datatables.ItemTable;
 import com.l2jserver.gameserver.enums.StatType;
-import com.l2jserver.gameserver.model.L2ManufactureItem;
-import com.l2jserver.gameserver.model.L2RecipeInstance;
-import com.l2jserver.gameserver.model.L2RecipeList;
-import com.l2jserver.gameserver.model.L2RecipeStatInstance;
+import com.l2jserver.gameserver.model.ManufactureItem;
+import com.l2jserver.gameserver.model.RecipeInstance;
+import com.l2jserver.gameserver.model.RecipeList;
+import com.l2jserver.gameserver.model.RecipeStatInstance;
 import com.l2jserver.gameserver.model.TempItem;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
@@ -84,14 +84,14 @@ public class RecipeController
 	
 	public void requestManufactureItem(L2PcInstance manufacturer, int recipeListId, L2PcInstance player)
 	{
-		final L2RecipeList recipeList = RecipeData.getInstance().getValidRecipeList(player, recipeListId);
+		final RecipeList recipeList = RecipeData.getInstance().getValidRecipeList(player, recipeListId);
 		if (recipeList == null)
 		{
 			return;
 		}
 		
-		List<L2RecipeList> dwarfRecipes = Arrays.asList(manufacturer.getDwarvenRecipeBook());
-		List<L2RecipeList> commonRecipes = Arrays.asList(manufacturer.getCommonRecipeBook());
+		List<RecipeList> dwarfRecipes = Arrays.asList(manufacturer.getDwarvenRecipeBook());
+		List<RecipeList> commonRecipes = Arrays.asList(manufacturer.getCommonRecipeBook());
 		
 		if (!dwarfRecipes.contains(recipeList) && !commonRecipes.contains(recipeList))
 		{
@@ -130,14 +130,14 @@ public class RecipeController
 			return;
 		}
 		
-		final L2RecipeList recipeList = RecipeData.getInstance().getValidRecipeList(player, recipeListId);
+		final RecipeList recipeList = RecipeData.getInstance().getValidRecipeList(player, recipeListId);
 		if (recipeList == null)
 		{
 			return;
 		}
 		
-		List<L2RecipeList> dwarfRecipes = Arrays.asList(player.getDwarvenRecipeBook());
-		List<L2RecipeList> commonRecipes = Arrays.asList(player.getCommonRecipeBook());
+		List<RecipeList> dwarfRecipes = Arrays.asList(player.getDwarvenRecipeBook());
+		List<RecipeList> commonRecipes = Arrays.asList(player.getCommonRecipeBook());
 		
 		if (!dwarfRecipes.contains(recipeList) && !commonRecipes.contains(recipeList))
 		{
@@ -175,7 +175,7 @@ public class RecipeController
 		private static final Logger _log = Logger.getLogger(RecipeItemMaker.class.getName());
 		protected boolean _isValid;
 		protected List<TempItem> _items = null;
-		protected final L2RecipeList _recipeList;
+		protected final RecipeList _recipeList;
 		protected final L2PcInstance _player; // "crafter"
 		protected final L2PcInstance _target; // "customer"
 		protected final Skill _skill;
@@ -189,7 +189,7 @@ public class RecipeController
 		protected int _totalItems;
 		protected int _delay;
 		
-		public RecipeItemMaker(L2PcInstance pPlayer, L2RecipeList pRecipeList, L2PcInstance pTarget)
+		public RecipeItemMaker(L2PcInstance pPlayer, RecipeList pRecipeList, L2PcInstance pTarget)
 		{
 			_player = pPlayer;
 			_target = pTarget;
@@ -249,7 +249,7 @@ public class RecipeController
 			// check that customer can afford to pay for creation services
 			if (_player != _target)
 			{
-				final L2ManufactureItem item = _player.getManufactureItems().get(_recipeList.getId());
+				final ManufactureItem item = _player.getManufactureItems().get(_recipeList.getId());
 				if (item != null)
 				{
 					_price = item.getCost();
@@ -513,7 +513,7 @@ public class RecipeController
 		{
 			_itemGrab = _skillLevel;
 			
-			for (L2RecipeStatInstance altStatChange : _recipeList.getAltStatChange())
+			for (RecipeStatInstance altStatChange : _recipeList.getAltStatChange())
 			{
 				if (altStatChange.getType() == StatType.XP)
 				{
@@ -540,7 +540,7 @@ public class RecipeController
 		private boolean calculateStatUse(boolean isWait, boolean isReduce)
 		{
 			boolean ret = true;
-			for (L2RecipeStatInstance statUse : _recipeList.getStatUse())
+			for (RecipeStatInstance statUse : _recipeList.getStatUse())
 			{
 				double modifiedValue = statUse.getValue() / _creationPasses;
 				if (statUse.getType() == StatType.HP)
@@ -601,12 +601,12 @@ public class RecipeController
 		
 		private List<TempItem> listItems(boolean remove)
 		{
-			L2RecipeInstance[] recipes = _recipeList.getRecipes();
+			RecipeInstance[] recipes = _recipeList.getRecipes();
 			Inventory inv = _target.getInventory();
 			List<TempItem> materials = new ArrayList<>();
 			SystemMessage sm;
 			
-			for (L2RecipeInstance recipe : recipes)
+			for (RecipeInstance recipe : recipes)
 			{
 				if (recipe.getQuantity() > 0)
 				{

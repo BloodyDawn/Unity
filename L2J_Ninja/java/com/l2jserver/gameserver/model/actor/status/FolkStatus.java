@@ -19,26 +19,26 @@
 package com.l2jserver.gameserver.model.actor.status;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2ClanHallManagerInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2NpcInstance;
 
 public class FolkStatus extends NpcStatus
 {
-	public FolkStatus(L2Npc activeChar)
+	public FolkStatus(Npc activeChar)
 	{
 		super(activeChar);
 	}
 	
 	@Override
-	public final void reduceHp(double value, L2Character attacker)
+	public final void reduceHp(double value, Creature attacker)
 	{
 		reduceHp(value, attacker, true, false, false);
 	}
 	
 	@Override
-	public final void reduceHp(double value, L2Character attacker, boolean awake, boolean isDOT, boolean isHpConsumption)
+	public final void reduceHp(double value, Creature attacker, boolean awake, boolean isDOT, boolean isHpConsumption)
 	{
 	}
 	

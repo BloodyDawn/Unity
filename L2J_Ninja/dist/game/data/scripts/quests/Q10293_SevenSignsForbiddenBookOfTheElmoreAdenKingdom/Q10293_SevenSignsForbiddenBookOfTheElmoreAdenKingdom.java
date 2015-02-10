@@ -20,7 +20,7 @@ package quests.Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom;
 
 import quests.Q10292_SevenSignsGirlOfDoubt.Q10292_SevenSignsGirlOfDoubt;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
@@ -57,7 +57,7 @@ public final class Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom extends 
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
@@ -202,7 +202,7 @@ public final class Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom extends 
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
@@ -218,7 +218,7 @@ public final class Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom extends 
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);

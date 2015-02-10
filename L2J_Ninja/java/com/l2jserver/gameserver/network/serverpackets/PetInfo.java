@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.network.serverpackets;
 
 import java.util.Set;
 
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2ServitorInstance;
 import com.l2jserver.gameserver.model.skills.AbnormalVisualEffect;
@@ -28,7 +28,7 @@ import com.l2jserver.gameserver.taskmanager.AttackStanceTaskManager;
 
 public class PetInfo extends L2GameServerPacket
 {
-	private final L2Summon _summon;
+	private final Summon _summon;
 	private final int _val;
 	private final int _runSpd, _walkSpd;
 	private final int _swimRunSpd;
@@ -41,7 +41,7 @@ public class PetInfo extends L2GameServerPacket
 	private int _maxFed, _curFed;
 	private int _statusMask = 0;
 	
-	public PetInfo(L2Summon summon, int val)
+	public PetInfo(Summon summon, int val)
 	{
 		_summon = summon;
 		_moveMultiplier = summon.getMovementSpeedMultiplier();

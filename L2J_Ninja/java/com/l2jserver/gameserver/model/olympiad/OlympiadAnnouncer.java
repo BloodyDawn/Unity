@@ -23,7 +23,7 @@ import java.util.Set;
 import com.l2jserver.gameserver.datatables.SpawnTable;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.serverpackets.NpcSay;
 
@@ -72,7 +72,7 @@ public final class OlympiadAnnouncer implements Runnable
 						continue;
 				}
 				
-				L2Npc manager;
+				Npc manager;
 				NpcSay packet;
 				for (L2Spawn spawn : _managers)
 				{

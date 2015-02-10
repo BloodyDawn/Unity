@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.model.actor.knownlist;
 
 import com.l2jserver.gameserver.MonsterRace;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.instance.L2RaceManagerInstance;
 import com.l2jserver.gameserver.network.serverpackets.DeleteObject;
 
@@ -31,7 +31,7 @@ public class RaceManagerKnownList extends NpcKnownList
 	}
 	
 	@Override
-	protected boolean removeKnownObject(L2Object object, boolean forget)
+	protected boolean removeKnownObject(WorldObject object, boolean forget)
 	{
 		if (!super.removeKnownObject(object, forget))
 		{

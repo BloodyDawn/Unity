@@ -19,7 +19,7 @@
 package handlers.usercommandhandlers;
 
 import com.l2jserver.gameserver.handler.IUserCommandHandler;
-import com.l2jserver.gameserver.model.L2CommandChannel;
+import com.l2jserver.gameserver.model.CommandChannel;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.ExMultiPartyCommandChannelInfo;
 
@@ -47,7 +47,7 @@ public class ChannelInfo implements IUserCommandHandler
 			return false;
 		}
 		
-		final L2CommandChannel channel = activeChar.getParty().getCommandChannel();
+		final CommandChannel channel = activeChar.getParty().getCommandChannel();
 		activeChar.sendPacket(new ExMultiPartyCommandChannelInfo(channel));
 		return true;
 	}

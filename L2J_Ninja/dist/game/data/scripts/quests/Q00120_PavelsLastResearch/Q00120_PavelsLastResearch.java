@@ -21,8 +21,8 @@ package quests.Q00120_PavelsLastResearch;
 import quests.Q00114_ResurrectionOfAnOldManager.Q00114_ResurrectionOfAnOldManager;
 
 import com.l2jserver.gameserver.enums.QuestSound;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -66,7 +66,7 @@ public final class Q00120_PavelsLastResearch extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
@@ -1142,7 +1142,7 @@ public final class Q00120_PavelsLastResearch extends Quest
 	}
 	
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance player, Skill skill, L2Object[] targets, boolean isSummon)
+	public String onSkillSee(Npc npc, L2PcInstance player, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(player, false);
 		if ((qs != null) && qs.isStarted())
@@ -1155,7 +1155,7 @@ public final class Q00120_PavelsLastResearch extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = getQuestState(player, true);
 		String html = getNoQuestMsg(player);

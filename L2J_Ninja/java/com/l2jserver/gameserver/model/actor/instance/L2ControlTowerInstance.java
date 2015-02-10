@@ -25,14 +25,14 @@ import javolution.util.FastList;
 
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Tower;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Tower;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 
 /**
  * Class for Control Tower instance.
  */
-public class L2ControlTowerInstance extends L2Tower
+public class L2ControlTowerInstance extends Tower
 {
 	private volatile List<L2Spawn> _guards;
 	
@@ -43,7 +43,7 @@ public class L2ControlTowerInstance extends L2Tower
 	}
 	
 	@Override
-	public boolean doDie(L2Character killer)
+	public boolean doDie(Creature killer)
 	{
 		if (getCastle().getSiege().isInProgress())
 		{

@@ -25,9 +25,9 @@ import java.util.concurrent.ScheduledFuture;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.enums.TrapAction;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.knownlist.TrapKnownList;
 import com.l2jserver.gameserver.model.actor.tasks.npc.trap.TrapTask;
 import com.l2jserver.gameserver.model.actor.tasks.npc.trap.TrapTriggerTask;
@@ -50,7 +50,7 @@ import com.l2jserver.gameserver.taskmanager.DecayTaskManager;
  * Trap instance.
  * @author Zoey76
  */
-public final class L2TrapInstance extends L2Npc
+public final class L2TrapInstance extends Npc
 {
 	private static final int TICK = 1000; // 1s
 	private boolean _hasLifeTime;
@@ -119,7 +119,7 @@ public final class L2TrapInstance extends L2Npc
 	 * @param cha the character to verify
 	 * @return {@code true} if the character can see the trap, {@code false} otherwise
 	 */
-	public boolean canBeSeen(L2Character cha)
+	public boolean canBeSeen(Creature cha)
 	{
 		if ((cha != null) && _playersWhoDetectedMe.contains(cha.getObjectId()))
 		{
@@ -162,7 +162,7 @@ public final class L2TrapInstance extends L2Npc
 		return false;
 	}
 	
-	public boolean checkTarget(L2Character target)
+	public boolean checkTarget(Creature target)
 	{
 		if (!Skill.checkForAreaOffensiveSkills(this, target, _skill.getSkill(), _isInArena))
 		{
@@ -198,7 +198,7 @@ public final class L2TrapInstance extends L2Npc
 		// trap owned by players not attack non-flagged players
 		if (_owner != null)
 		{
-			if (target instanceof L2Attackable)
+			if (target instanceof Attackable)
 			{
 				return true;
 			}
@@ -284,7 +284,7 @@ public final class L2TrapInstance extends L2Npc
 	}
 	
 	@Override
-	public boolean isAutoAttackable(L2Character attacker)
+	public boolean isAutoAttackable(Creature attacker)
 	{
 		return !canBeSeen(attacker);
 	}
@@ -313,7 +313,7 @@ public final class L2TrapInstance extends L2Npc
 	}
 	
 	@Override
-	public void sendDamageMessage(L2Character target, int damage, boolean mcrit, boolean pcrit, boolean miss)
+	public void sendDamageMessage(Creature target, int damage, boolean mcrit, boolean pcrit, boolean miss)
 	{
 		if (miss || (_owner == null))
 		{
@@ -349,7 +349,7 @@ public final class L2TrapInstance extends L2Npc
 		}
 	}
 	
-	public void setDetected(L2Character detector)
+	public void setDetected(Creature detector)
 	{
 		if (_isInArena)
 		{
@@ -385,7 +385,7 @@ public final class L2TrapInstance extends L2Npc
 	 * Trigger the trap.
 	 * @param target the target
 	 */
-	public void triggerTrap(L2Character target)
+	public void triggerTrap(Creature target)
 	{
 		if (_trapTask != null)
 		{

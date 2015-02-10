@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.model.itemauction;
 
 import com.l2jserver.gameserver.datatables.ItemTable;
-import com.l2jserver.gameserver.model.L2Augmentation;
+import com.l2jserver.gameserver.model.Augmentation;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.items.L2Item;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
@@ -92,7 +92,7 @@ public final class AuctionItem
 		final int augmentationId = _itemExtra.getInt("augmentation_id", 0);
 		if (augmentationId > 0)
 		{
-			item.setAugmentation(new L2Augmentation(augmentationId));
+			item.setAugmentation(new Augmentation(augmentationId));
 		}
 		
 		return item;

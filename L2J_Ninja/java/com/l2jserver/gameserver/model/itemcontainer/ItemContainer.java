@@ -33,8 +33,8 @@ import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.GameTimeController;
 import com.l2jserver.gameserver.datatables.ItemTable;
 import com.l2jserver.gameserver.enums.ItemLocation;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.items.L2Item;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
@@ -52,7 +52,7 @@ public abstract class ItemContainer
 	{
 	}
 	
-	protected abstract L2Character getOwner();
+	protected abstract Creature getOwner();
 	
 	protected abstract ItemLocation getBaseLocation();
 	
@@ -678,7 +678,7 @@ public abstract class ItemContainer
 				{
 					item.updateDatabase(true);
 					item.deleteMe();
-					L2World.getInstance().removeObject(item);
+					World.getInstance().removeObject(item);
 				}
 			}
 		}
@@ -723,7 +723,7 @@ public abstract class ItemContainer
 						continue;
 					}
 					
-					L2World.getInstance().storeObject(item);
+					World.getInstance().storeObject(item);
 					
 					L2PcInstance owner = getOwner() == null ? null : getOwner().getActingPlayer();
 					

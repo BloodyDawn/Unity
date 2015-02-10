@@ -23,10 +23,10 @@ import ai.npc.AbstractNpcAI;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.instancemanager.GrandBossManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.L2CommandChannel;
-import com.l2jserver.gameserver.model.L2Party;
+import com.l2jserver.gameserver.model.CommandChannel;
+import com.l2jserver.gameserver.model.Party;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.zone.type.L2BossZone;
 
@@ -50,7 +50,7 @@ public final class SteelCitadelTeleport extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		final int belethStatus = GrandBossManager.getInstance().getBossStatus(BELETH);
 		if (belethStatus == 3)
@@ -63,7 +63,7 @@ public final class SteelCitadelTeleport extends AbstractNpcAI
 			return "32376-03.htm";
 		}
 		
-		final L2CommandChannel channel = player.getParty() == null ? null : player.getParty().getCommandChannel();
+		final CommandChannel channel = player.getParty() == null ? null : player.getParty().getCommandChannel();
 		if ((channel == null) || (channel.getLeader().getObjectId() != player.getObjectId()) || (channel.getMemberCount() < Config.BELETH_MIN_PLAYERS))
 		{
 			return "32376-02a.htm";
@@ -74,7 +74,7 @@ public final class SteelCitadelTeleport extends AbstractNpcAI
 		{
 			GrandBossManager.getInstance().setBossStatus(BELETH, 1);
 			
-			for (L2Party party : channel.getPartys())
+			for (Party party : channel.getPartys())
 			{
 				if (party == null)
 				{

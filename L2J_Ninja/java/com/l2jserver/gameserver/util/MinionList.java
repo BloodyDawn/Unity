@@ -28,7 +28,7 @@ import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.data.xml.impl.NpcData;
 import com.l2jserver.gameserver.idfactory.IdFactory;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.holders.MinionHolder;
@@ -202,7 +202,7 @@ public class MinionList
 	 * @param caller
 	 * @param attacker
 	 */
-	public void onAssist(L2Character caller, L2Character attacker)
+	public void onAssist(Creature caller, Creature attacker)
 	{
 		if (attacker == null)
 		{

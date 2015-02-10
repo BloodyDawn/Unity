@@ -20,7 +20,7 @@ package ai.npc.Scarecrow;
 
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 
 /**
  * Scarecrow AI.
@@ -39,7 +39,7 @@ public final class Scarecrow extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		npc.disableCoreAI(true);
 		npc.setIsImmobilized(true);

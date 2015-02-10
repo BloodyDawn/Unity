@@ -22,8 +22,8 @@ import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.instancemanager.CoupleManager;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Couple;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
@@ -53,14 +53,14 @@ public final class Wedding extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (player.getPartnerId() == 0)
 		{
 			return "NoPartner.html";
 		}
 		
-		final L2PcInstance partner = L2World.getInstance().getPlayer(player.getPartnerId());
+		final L2PcInstance partner = World.getInstance().getPlayer(player.getPartnerId());
 		if ((partner == null) || !partner.isOnline())
 		{
 			return "NotFound.html";
@@ -177,7 +177,7 @@ public final class Wedding extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		final String htmltext = getHtm(player.getHtmlPrefix(), "Start.html");
 		return htmltext.replaceAll("%fee%", String.valueOf(Config.L2JMOD_WEDDING_PRICE));

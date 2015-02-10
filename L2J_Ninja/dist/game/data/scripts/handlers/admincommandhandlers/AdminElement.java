@@ -20,7 +20,7 @@ package handlers.admincommandhandlers;
 
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.model.Elementals;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
@@ -113,7 +113,7 @@ public class AdminElement implements IAdminCommandHandler
 	private void setElement(L2PcInstance activeChar, byte type, int value, int armorType)
 	{
 		// get the target
-		L2Object target = activeChar.getTarget();
+		WorldObject target = activeChar.getTarget();
 		if (target == null)
 		{
 			target = activeChar;

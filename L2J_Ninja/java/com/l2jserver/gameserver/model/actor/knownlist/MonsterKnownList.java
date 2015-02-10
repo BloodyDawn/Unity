@@ -20,9 +20,9 @@ package com.l2jserver.gameserver.model.actor.knownlist;
 
 import com.l2jserver.gameserver.ai.CtrlEvent;
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.ai.L2CharacterAI;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.ai.CharacterAI;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
@@ -34,14 +34,14 @@ public class MonsterKnownList extends AttackableKnownList
 	}
 	
 	@Override
-	public boolean addKnownObject(L2Object object)
+	public boolean addKnownObject(WorldObject object)
 	{
 		if (!super.addKnownObject(object))
 		{
 			return false;
 		}
 		
-		final L2CharacterAI ai = getActiveChar().getAI(); // force AI creation
+		final CharacterAI ai = getActiveChar().getAI(); // force AI creation
 		
 		// Set the L2MonsterInstance Intention to AI_INTENTION_ACTIVE if the state was AI_INTENTION_IDLE
 		if ((object instanceof L2PcInstance) && (ai != null) && (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE))
@@ -53,14 +53,14 @@ public class MonsterKnownList extends AttackableKnownList
 	}
 	
 	@Override
-	protected boolean removeKnownObject(L2Object object, boolean forget)
+	protected boolean removeKnownObject(WorldObject object, boolean forget)
 	{
 		if (!super.removeKnownObject(object, forget))
 		{
 			return false;
 		}
 		
-		if (!(object instanceof L2Character))
+		if (!(object instanceof Creature))
 		{
 			return true;
 		}

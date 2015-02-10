@@ -24,7 +24,7 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.handler.IVoicedCommandHandler;
 import com.l2jserver.gameserver.handler.VoicedCommandHandler;
 import com.l2jserver.gameserver.instancemanager.AntiFeedManager;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.TvTEvent;
 import com.l2jserver.gameserver.model.olympiad.OlympiadManager;
@@ -58,7 +58,7 @@ public final class TvTManager extends AbstractNpcAI implements IVoicedCommandHan
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if ((player == null) || !TvTEvent.isParticipating())
 		{
@@ -133,7 +133,7 @@ public final class TvTManager extends AbstractNpcAI implements IVoicedCommandHan
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		String htmltext = null;
 		if (TvTEvent.isParticipating())

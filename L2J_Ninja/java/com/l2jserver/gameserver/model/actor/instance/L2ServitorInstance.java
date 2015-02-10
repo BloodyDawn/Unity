@@ -39,9 +39,9 @@ import com.l2jserver.gameserver.data.sql.impl.SummonEffectsTable;
 import com.l2jserver.gameserver.data.sql.impl.SummonEffectsTable.SummonEffect;
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.enums.InstanceType;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
 import com.l2jserver.gameserver.model.skills.AbnormalType;
@@ -55,7 +55,7 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 /**
  * @author UnAfraid
  */
-public class L2ServitorInstance extends L2Summon implements Runnable
+public class L2ServitorInstance extends Summon implements Runnable
 {
 	protected static final Logger log = Logger.getLogger(L2ServitorInstance.class.getName());
 	
@@ -177,7 +177,7 @@ public class L2ServitorInstance extends L2Summon implements Runnable
 	}
 	
 	@Override
-	public boolean doDie(L2Character killer)
+	public boolean doDie(Creature killer)
 	{
 		if (!super.doDie(killer))
 		{
@@ -471,13 +471,13 @@ public class L2ServitorInstance extends L2Summon implements Runnable
 	}
 	
 	@Override
-	public boolean destroyItem(String process, int objectId, long count, L2Object reference, boolean sendMessage)
+	public boolean destroyItem(String process, int objectId, long count, WorldObject reference, boolean sendMessage)
 	{
 		return getOwner().destroyItem(process, objectId, count, reference, sendMessage);
 	}
 	
 	@Override
-	public boolean destroyItemByItemId(String process, int itemId, long count, L2Object reference, boolean sendMessage)
+	public boolean destroyItemByItemId(String process, int itemId, long count, WorldObject reference, boolean sendMessage)
 	{
 		return getOwner().destroyItemByItemId(process, itemId, count, reference, sendMessage);
 	}

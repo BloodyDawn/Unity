@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.model.stats.functions;
 
 import java.util.logging.Logger;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.stats.Stats;
@@ -128,5 +128,5 @@ public abstract class AbstractFunction
 	 * @param initVal the initial value
 	 * @return the calculated value
 	 */
-	public abstract double calc(L2Character effector, L2Character effected, Skill skill, double initVal);
+	public abstract double calc(Creature effector, Creature effected, Skill skill, double initVal);
 }

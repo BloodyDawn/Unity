@@ -18,8 +18,8 @@
  */
 package com.l2jserver.gameserver.network.clientpackets;
 
-import com.l2jserver.gameserver.model.L2Party;
-import com.l2jserver.gameserver.model.L2Party.messageType;
+import com.l2jserver.gameserver.model.Party;
+import com.l2jserver.gameserver.model.Party.messageType;
 import com.l2jserver.gameserver.model.PartyMatchRoom;
 import com.l2jserver.gameserver.model.PartyMatchRoomList;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -62,7 +62,7 @@ public final class RequestAnswerJoinParty extends L2GameClientPacket
 		{
 			return;
 		}
-		final L2Party party = requestor.getParty();
+		final Party party = requestor.getParty();
 		requestor.sendPacket(new JoinParty(_response));
 		
 		if (_response == 1)

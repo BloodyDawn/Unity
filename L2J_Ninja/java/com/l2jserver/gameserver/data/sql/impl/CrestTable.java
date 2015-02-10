@@ -36,8 +36,8 @@ import java.util.logging.Logger;
 import com.l2jserver.Config;
 import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2Crest;
-import com.l2jserver.gameserver.model.L2Crest.CrestType;
+import com.l2jserver.gameserver.model.Crest;
+import com.l2jserver.gameserver.model.Crest.CrestType;
 import com.l2jserver.util.file.filter.BMPFilter;
 
 /**
@@ -48,7 +48,7 @@ public final class CrestTable
 {
 	private static final Logger LOGGER = Logger.getLogger(CrestTable.class.getName());
 	
-	private final Map<Integer, L2Crest> _crests = new ConcurrentHashMap<>();
+	private final Map<Integer, Crest> _crests = new ConcurrentHashMap<>();
 	private final AtomicInteger _nextId = new AtomicInteger(1);
 	
 	protected CrestTable()
@@ -103,7 +103,7 @@ public final class CrestTable
 				CrestType crestType = CrestType.getById(rs.getInt("type"));
 				if (crestType != null)
 				{
-					_crests.put(id, new L2Crest(id, data, crestType));
+					_crests.put(id, new Crest(id, data, crestType));
 				}
 				else
 				{
@@ -175,7 +175,7 @@ public final class CrestTable
 						final int crestId = Integer.parseInt(file.getName().substring(12, file.getName().length() - 4));
 						if (crestsInUse.contains(crestId))
 						{
-							final L2Crest crest = createCrest(data, CrestType.PLEDGE_LARGE);
+							final Crest crest = createCrest(data, CrestType.PLEDGE_LARGE);
 							if (crest != null)
 							{
 								for (L2Clan clan : ClanTable.getInstance().getClans())
@@ -194,7 +194,7 @@ public final class CrestTable
 						final int crestId = Integer.parseInt(file.getName().substring(6, file.getName().length() - 4));
 						if (crestsInUse.contains(crestId))
 						{
-							final L2Crest crest = createCrest(data, CrestType.PLEDGE);
+							final Crest crest = createCrest(data, CrestType.PLEDGE);
 							if (crest != null)
 							{
 								for (L2Clan clan : ClanTable.getInstance().getClans())
@@ -213,7 +213,7 @@ public final class CrestTable
 						final int crestId = Integer.parseInt(file.getName().substring(10, file.getName().length() - 4));
 						if (crestsInUse.contains(crestId))
 						{
-							final L2Crest crest = createCrest(data, CrestType.ALLY);
+							final Crest crest = createCrest(data, CrestType.ALLY);
 							if (crest != null)
 							{
 								for (L2Clan clan : ClanTable.getInstance().getClans())
@@ -242,7 +242,7 @@ public final class CrestTable
 	 * @param crestId The crest id
 	 * @return {@code L2Crest} if crest is found, {@code null} if crest was not found.
 	 */
-	public L2Crest getCrest(int crestId)
+	public Crest getCrest(int crestId)
 	{
 		return _crests.get(crestId);
 	}
@@ -253,13 +253,13 @@ public final class CrestTable
 	 * @param crestType
 	 * @return {@code L2Crest} on success, {@code null} on failure.
 	 */
-	public L2Crest createCrest(byte[] data, CrestType crestType)
+	public Crest createCrest(byte[] data, CrestType crestType)
 	{
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
 			try (PreparedStatement statement = con.prepareStatement("INSERT INTO `crests`(`crest_id`, `data`, `type`) VALUES(?, ?, ?)"))
 			{
-				final L2Crest crest = new L2Crest(getNextId(), data, crestType);
+				final Crest crest = new Crest(getNextId(), data, crestType);
 				statement.setInt(1, crest.getId());
 				statement.setBytes(2, crest.getData());
 				statement.setInt(3, crest.getType().getId());

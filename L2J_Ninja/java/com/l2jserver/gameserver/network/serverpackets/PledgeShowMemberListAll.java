@@ -22,14 +22,14 @@ import java.util.Collection;
 
 import com.l2jserver.gameserver.model.L2Clan;
 import com.l2jserver.gameserver.model.L2Clan.SubPledge;
-import com.l2jserver.gameserver.model.L2ClanMember;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.ClanMember;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 public class PledgeShowMemberListAll extends L2GameServerPacket
 {
 	private final L2Clan _clan;
-	private final Collection<L2ClanMember> _members;
+	private final Collection<ClanMember> _members;
 	private int _pledgeType;
 	
 	public PledgeShowMemberListAll(L2Clan clan)
@@ -46,7 +46,7 @@ public class PledgeShowMemberListAll extends L2GameServerPacket
 		
 		for (SubPledge subPledge : _clan.getAllSubPledges())
 		{
-			L2PcInstance pLeader = L2World.getInstance().getPlayer(subPledge.getLeaderId());
+			L2PcInstance pLeader = World.getInstance().getPlayer(subPledge.getLeaderId());
 			writePledge(subPledge, (pLeader == null ? "" : pLeader.getName()));
 		}
 	}
@@ -80,7 +80,7 @@ public class PledgeShowMemberListAll extends L2GameServerPacket
 		writeD(0x00); // Territory castle ID
 		writeD(_clan.getSubPledgeMembersCount(_pledgeType));
 		
-		for (L2ClanMember m : _members)
+		for (ClanMember m : _members)
 		{
 			if (m.getPledgeType() != _pledgeType)
 			{

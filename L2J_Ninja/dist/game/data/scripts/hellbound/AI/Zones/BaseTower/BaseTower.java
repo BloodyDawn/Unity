@@ -24,7 +24,7 @@ import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.data.xml.impl.DoorData;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
@@ -54,7 +54,7 @@ public final class BaseTower extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public final String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		final ClassId classId = player.getClassId();
 		if (classId.equalsOrChildOf(ClassId.HELL_KNIGHT) || classId.equalsOrChildOf(ClassId.SOULTAKER))
@@ -65,7 +65,7 @@ public final class BaseTower extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.equalsIgnoreCase("CLOSE"))
 		{
@@ -75,7 +75,7 @@ public final class BaseTower extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAggroRangeEnter(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		if (!BODY_DESTROYER_TARGET_LIST.containsKey(npc.getObjectId()))
 		{
@@ -87,7 +87,7 @@ public final class BaseTower extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		switch (npc.getId())
 		{

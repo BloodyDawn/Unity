@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.model.events.impl.character.player.clan;
 
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2ClanMember;
+import com.l2jserver.gameserver.model.ClanMember;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
 
@@ -28,16 +28,16 @@ import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
  */
 public class OnPlayerClanDestroy implements IBaseEvent
 {
-	private final L2ClanMember _activeChar;
+	private final ClanMember _activeChar;
 	private final L2Clan _clan;
 	
-	public OnPlayerClanDestroy(L2ClanMember activeChar, L2Clan clan)
+	public OnPlayerClanDestroy(ClanMember activeChar, L2Clan clan)
 	{
 		_activeChar = activeChar;
 		_clan = clan;
 	}
 	
-	public L2ClanMember getActiveChar()
+	public ClanMember getActiveChar()
 	{
 		return _activeChar;
 	}

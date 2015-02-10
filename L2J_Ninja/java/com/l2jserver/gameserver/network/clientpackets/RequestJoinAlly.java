@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.network.clientpackets;
 
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.AskJoinAlly;
@@ -50,7 +50,7 @@ public final class RequestJoinAlly extends L2GameClientPacket
 			return;
 		}
 		
-		L2PcInstance ob = L2World.getInstance().getPlayer(_id);
+		L2PcInstance ob = World.getInstance().getPlayer(_id);
 		
 		if (ob == null)
 		{

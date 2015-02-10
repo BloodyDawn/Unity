@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.model.events.impl.character.trap;
 
 import com.l2jserver.gameserver.enums.TrapAction;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2TrapInstance;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
@@ -30,10 +30,10 @@ import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
 public class OnTrapAction implements IBaseEvent
 {
 	private final L2TrapInstance _trap;
-	private final L2Character _trigger;
+	private final Creature _trigger;
 	private final TrapAction _action;
 	
-	public OnTrapAction(L2TrapInstance trap, L2Character trigger, TrapAction action)
+	public OnTrapAction(L2TrapInstance trap, Creature trigger, TrapAction action)
 	{
 		_trap = trap;
 		_trigger = trigger;
@@ -45,7 +45,7 @@ public class OnTrapAction implements IBaseEvent
 		return _trap;
 	}
 	
-	public L2Character getTrigger()
+	public Creature getTrigger()
 	{
 		return _trigger;
 	}

@@ -24,7 +24,7 @@ import javolution.util.FastSet;
 import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -52,7 +52,7 @@ public final class Ranku extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.equalsIgnoreCase("checkup") && (npc.getId() == RANKU) && !npc.isDead())
 		{
@@ -71,7 +71,7 @@ public final class Ranku extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
 		if (npc.getId() == RANKU)
 		{
@@ -89,7 +89,7 @@ public final class Ranku extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		if (npc.getId() == MINION)
 		{

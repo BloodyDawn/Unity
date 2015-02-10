@@ -21,9 +21,9 @@ package handlers.admincommandhandlers;
 import com.l2jserver.gameserver.datatables.SpawnTable;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.instancemanager.RaidBossSpawnManager;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
@@ -56,10 +56,10 @@ public class AdminDelete implements IAdminCommandHandler
 	// TODO: add possibility to delete any L2Object (except L2PcInstance)
 	private void handleDelete(L2PcInstance activeChar)
 	{
-		L2Object obj = activeChar.getTarget();
-		if (obj instanceof L2Npc)
+		WorldObject obj = activeChar.getTarget();
+		if (obj instanceof Npc)
 		{
-			L2Npc target = (L2Npc) obj;
+			Npc target = (Npc) obj;
 			target.deleteMe();
 			
 			L2Spawn spawn = target.getSpawn();

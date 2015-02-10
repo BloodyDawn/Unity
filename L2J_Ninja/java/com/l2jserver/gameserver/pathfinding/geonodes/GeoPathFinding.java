@@ -39,7 +39,7 @@ import javolution.util.FastMap;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.GeoData;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.pathfinding.AbstractNode;
 import com.l2jserver.gameserver.pathfinding.AbstractNodeLoc;
@@ -70,11 +70,11 @@ public class GeoPathFinding extends PathFinding
 	@Override
 	public List<AbstractNodeLoc> findPath(int x, int y, int z, int tx, int ty, int tz, int instanceId, boolean playable)
 	{
-		int gx = (x - L2World.MAP_MIN_X) >> 4;
-		int gy = (y - L2World.MAP_MIN_Y) >> 4;
+		int gx = (x - World.MAP_MIN_X) >> 4;
+		int gy = (y - World.MAP_MIN_Y) >> 4;
 		short gz = (short) z;
-		int gtx = (tx - L2World.MAP_MIN_X) >> 4;
-		int gty = (ty - L2World.MAP_MIN_Y) >> 4;
+		int gtx = (tx - World.MAP_MIN_X) >> 4;
+		int gty = (ty - World.MAP_MIN_Y) >> 4;
 		short gtz = (short) tz;
 		
 		GeoNode start = readNode(gx, gy, gz);
@@ -422,7 +422,7 @@ public class GeoPathFinding extends PathFinding
 	
 	private void LoadPathNodeFile(byte rx, byte ry)
 	{
-		if ((rx < L2World.TILE_X_MIN) || (rx > L2World.TILE_X_MAX) || (ry < L2World.TILE_Y_MIN) || (ry > L2World.TILE_Y_MAX))
+		if ((rx < World.TILE_X_MIN) || (rx > World.TILE_X_MAX) || (ry < World.TILE_Y_MIN) || (ry > World.TILE_Y_MAX))
 		{
 			_log.warning("Failed to Load PathNode File: invalid region " + rx + "," + ry + Config.EOL);
 			return;

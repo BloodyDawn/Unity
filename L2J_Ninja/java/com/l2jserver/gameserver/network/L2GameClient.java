@@ -48,9 +48,9 @@ import com.l2jserver.gameserver.data.xml.impl.SecondaryAuthData;
 import com.l2jserver.gameserver.instancemanager.AntiFeedManager;
 import com.l2jserver.gameserver.model.CharSelectInfoPackage;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.PcCondOverride;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.L2Event;
 import com.l2jserver.gameserver.model.olympiad.OlympiadManager;
@@ -587,7 +587,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 			return null;
 		}
 		
-		L2PcInstance character = L2World.getInstance().getPlayer(objId);
+		L2PcInstance character = World.getInstance().getPlayer(objId);
 		if (character != null)
 		{
 			// exploit prevention, should not happens in normal way
@@ -776,7 +776,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 						OlympiadManager.getInstance().unRegisterNoble(getActiveChar());
 						
 						// If the L2PcInstance has Pet, unsummon it
-						L2Summon pet = getActiveChar().getPet();
+						Summon pet = getActiveChar().getPet();
 						if (pet != null)
 						{
 							pet.setRestoreSummon(true);
@@ -944,12 +944,12 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 				if ((player != null) && player.isOnline()) // safety precaution
 				{
 					saveCharToDisk();
-					final L2Summon pet = player.getPet();
+					final Summon pet = player.getPet();
 					if (pet != null)
 					{
 						pet.storeMe();
 					}
-					player.getServitors().values().forEach(L2Summon::storeMe);
+					player.getServitors().values().forEach(Summon::storeMe);
 				}
 			}
 			catch (Exception e)

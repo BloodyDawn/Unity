@@ -21,7 +21,7 @@ package quests.Q00138_TempleChampionPart2;
 import quests.Q00137_TempleChampionPart1.Q00137_TempleChampionPart1;
 
 import com.l2jserver.gameserver.enums.QuestSound;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
@@ -60,7 +60,7 @@ public class Q00138_TempleChampionPart2 extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final QuestState st = getQuestState(player, false);
 		if (st == null)
@@ -117,7 +117,7 @@ public class Q00138_TempleChampionPart2 extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		final QuestState st = getQuestState(player, false);
 		if ((st != null) && st.isStarted() && st.isCond(4) && (st.getQuestItemsCount(RELICS_OF_THE_DARK_ELF_TRAINEE) < 10))
@@ -136,7 +136,7 @@ public class Q00138_TempleChampionPart2 extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);

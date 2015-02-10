@@ -22,8 +22,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.l2jserver.gameserver.data.xml.impl.ArmorSetsData;
-import com.l2jserver.gameserver.model.L2ArmorSet;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.ArmorSet;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -52,7 +52,7 @@ public class FuncArmorSet extends AbstractFunction
 	}
 	
 	@Override
-	public double calc(L2Character effector, L2Character effected, Skill skill, double initVal)
+	public double calc(Creature effector, Creature effected, Skill skill, double initVal)
 	{
 		double value = initVal;
 		final L2PcInstance player = effector.getActingPlayer();
@@ -61,7 +61,7 @@ public class FuncArmorSet extends AbstractFunction
 			final L2ItemInstance chest = player.getChestArmorInstance();
 			if (chest != null)
 			{
-				final L2ArmorSet set = ArmorSetsData.getInstance().getSet(chest.getId());
+				final ArmorSet set = ArmorSetsData.getInstance().getSet(chest.getId());
 				if ((set != null) && (set.getPiecesCount(player) >= set.getMinimumPieces()))
 				{
 					switch (getStat())

@@ -24,7 +24,7 @@ import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.instancemanager.FourSepulchersManager;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.quest.QuestState;
@@ -135,7 +135,7 @@ public class L2SepulcherMonsterInstance extends L2MonsterInstance
 	}
 	
 	@Override
-	public boolean doDie(L2Character killer)
+	public boolean doDie(Creature killer)
 	{
 		if (!super.doDie(killer))
 		{
@@ -288,7 +288,7 @@ public class L2SepulcherMonsterInstance extends L2MonsterInstance
 		return super.deleteMe();
 	}
 	
-	private void giveCup(L2Character killer)
+	private void giveCup(Creature killer)
 	{
 		String questId = "620_FourGoblets";
 		int cupId = 0;
@@ -518,7 +518,7 @@ public class L2SepulcherMonsterInstance extends L2MonsterInstance
 	}
 	
 	@Override
-	public boolean isAutoAttackable(L2Character attacker)
+	public boolean isAutoAttackable(Creature attacker)
 	{
 		return true;
 	}

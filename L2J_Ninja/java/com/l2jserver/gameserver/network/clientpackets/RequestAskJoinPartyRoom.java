@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.network.clientpackets;
 
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ExAskJoinPartyRoom;
@@ -48,7 +48,7 @@ public class RequestAskJoinPartyRoom extends L2GameClientPacket
 		}
 		
 		// Send PartyRoom invite request (with activeChar) name to the target
-		final L2PcInstance target = L2World.getInstance().getPlayer(_name);
+		final L2PcInstance target = World.getInstance().getPlayer(_name);
 		if (target != null)
 		{
 			if (!target.isProcessingRequest())

@@ -22,9 +22,9 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.handler.IActionHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.L2Event;
 import com.l2jserver.gameserver.model.events.EventDispatcher;
@@ -58,13 +58,13 @@ public class L2NpcAction implements IActionHandler
 	 * @param activeChar The L2PcInstance that start an action on the L2Npc
 	 */
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
+	public boolean action(L2PcInstance activeChar, WorldObject target, boolean interact)
 	{
-		if (!((L2Npc) target).canTarget(activeChar))
+		if (!((Npc) target).canTarget(activeChar))
 		{
 			return false;
 		}
-		activeChar.setLastFolkNPC((L2Npc) target);
+		activeChar.setLastFolkNPC((Npc) target);
 		// Check if the L2PcInstance already target the L2Npc
 		if (target != activeChar.getTarget())
 		{
@@ -73,13 +73,13 @@ public class L2NpcAction implements IActionHandler
 			// Check if the activeChar is attackable (without a forced attack)
 			if (target.isAutoAttackable(activeChar))
 			{
-				((L2Npc) target).getAI(); // wake up ai
+				((Npc) target).getAI(); // wake up ai
 			}
 		}
 		else if (interact)
 		{
 			// Check if the activeChar is attackable (without a forced attack) and isn't dead
-			if (target.isAutoAttackable(activeChar) && !((L2Character) target).isAlikeDead())
+			if (target.isAutoAttackable(activeChar) && !((Creature) target).isAlikeDead())
 			{
 				// Check the height difference
 				if (Math.abs(activeChar.getZ() - target.getZ()) < 400) // this max heigth difference might need some tweaking
@@ -97,14 +97,14 @@ public class L2NpcAction implements IActionHandler
 			else if (!target.isAutoAttackable(activeChar))
 			{
 				// Calculate the distance between the L2PcInstance and the L2Npc
-				if (!((L2Npc) target).canInteract(activeChar))
+				if (!((Npc) target).canInteract(activeChar))
 				{
 					// Notify the L2PcInstance AI with AI_INTENTION_INTERACT
 					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
 				}
 				else
 				{
-					final L2Npc npc = (L2Npc) target;
+					final Npc npc = (Npc) target;
 					// Turn NPC to the player.
 					activeChar.sendPacket(new MoveToPawn(activeChar, npc, 100));
 					if (npc.hasRandomAnimation())

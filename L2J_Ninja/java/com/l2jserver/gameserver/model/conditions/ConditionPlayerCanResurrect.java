@@ -18,8 +18,8 @@
  */
 package com.l2jserver.gameserver.model.conditions;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.items.L2Item;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -40,7 +40,7 @@ public class ConditionPlayerCanResurrect extends Condition
 	}
 	
 	@Override
-	public boolean testImpl(L2Character effector, L2Character effected, Skill skill, L2Item item)
+	public boolean testImpl(Creature effector, Creature effected, Skill skill, L2Item item)
 	{
 		// Need skill rework for fix that properly
 		if (skill.getAffectRange() > 0)
@@ -81,7 +81,7 @@ public class ConditionPlayerCanResurrect extends Condition
 		}
 		else if (effected.isSummon())
 		{
-			final L2Summon summon = (L2Summon) effected;
+			final Summon summon = (Summon) effected;
 			final L2PcInstance player = summon.getOwner();
 			if (!summon.isDead())
 			{

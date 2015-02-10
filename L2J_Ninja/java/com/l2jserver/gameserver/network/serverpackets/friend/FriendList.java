@@ -27,7 +27,7 @@ import javolution.util.FastList;
 
 import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.data.sql.impl.CharNameTable;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.L2GameServerPacket;
 
@@ -64,7 +64,7 @@ public class FriendList extends L2GameServerPacket
 		for (int objId : player.getFriendList())
 		{
 			String name = CharNameTable.getInstance().getNameById(objId);
-			L2PcInstance player1 = L2World.getInstance().getPlayer(objId);
+			L2PcInstance player1 = World.getInstance().getPlayer(objId);
 			
 			boolean online = false;
 			int classid = 0;

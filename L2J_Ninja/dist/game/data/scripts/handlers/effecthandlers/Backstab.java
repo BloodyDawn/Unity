@@ -20,7 +20,7 @@ package handlers.effecthandlers;
 
 import com.l2jserver.gameserver.enums.ShotType;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
@@ -66,8 +66,8 @@ public final class Backstab extends AbstractEffect
 			return;
 		}
 		
-		L2Character target = info.getEffected();
-		L2Character activeChar = info.getEffector();
+		Creature target = info.getEffected();
+		Creature activeChar = info.getEffector();
 		boolean ss = info.getSkill().useSoulShot() && activeChar.isChargedShot(ShotType.SOULSHOTS);
 		byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
 		double damage = Formulas.calcBackstabDamage(activeChar, target, info.getSkill(), shld, ss);

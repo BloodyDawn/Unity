@@ -41,14 +41,14 @@ import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.instancemanager.CHSiegeManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2Party;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.Party;
 import com.l2jserver.gameserver.model.L2Spawn;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.TeleportWhereType;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
 import com.l2jserver.gameserver.model.entity.clanhall.SiegableHall;
@@ -196,8 +196,8 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 		{
 			for (int arenaId : ARENA_ZONES)
 			{
-				final Collection<L2Character> chars = ZoneManager.getInstance().getZoneById(arenaId).getCharactersInside();
-				for (L2Character chr : chars)
+				final Collection<Creature> chars = ZoneManager.getInstance().getZoneById(arenaId).getCharactersInside();
+				for (Creature chr : chars)
 				{
 					if (chr != null)
 					{
@@ -301,7 +301,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		String html = "";
 		final int npcId = npc.getId();
@@ -354,7 +354,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String html = event;
 		final L2Clan clan = player.getClan();
@@ -445,7 +445,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 			case CARETAKER:
 				if (event.equals("portToArena"))
 				{
-					final L2Party party = player.getParty();
+					final Party party = player.getParty();
 					if (clan == null)
 					{
 						html = "game_manager009.htm";
@@ -591,7 +591,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		if (!_rainbow.isInSiege())
 		{
@@ -634,9 +634,9 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 			return null;
 		}
 		
-		L2Object target = player.getTarget();
+		WorldObject target = player.getTarget();
 		
-		if ((target == null) || !(target instanceof L2Npc))
+		if ((target == null) || !(target instanceof Npc))
 		{
 			return null;
 		}
@@ -693,7 +693,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 			if (pc != null)
 			{
 				pc.stopAllEffects();
-				final L2Summon pet = pc.getPet();
+				final Summon pet = pc.getPet();
 				if (pet != null)
 				{
 					pet.unSummon(pc);
@@ -765,7 +765,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 	private static void increaseGourdHp(int index)
 	{
 		L2Spawn gourd = _gourds[index];
-		L2Npc gourdNpc = gourd.getLastSpawn();
+		Npc gourdNpc = gourd.getLastSpawn();
 		gourdNpc.setCurrentHp(gourdNpc.getCurrentHp() + 1000);
 	}
 	
@@ -778,8 +778,8 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 				continue;
 			}
 			
-			final Collection<L2Character> chars = ZoneManager.getInstance().getZoneById(id).getCharactersInside();
-			for (L2Character chr : chars)
+			final Collection<Creature> chars = ZoneManager.getInstance().getZoneById(id).getCharactersInside();
+			for (Creature chr : chars)
 			{
 				if (chr != null)
 				{
@@ -792,7 +792,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 		}
 	}
 	
-	private static void shoutRandomText(L2Npc npc)
+	private static void shoutRandomText(Npc npc)
 	{
 		int length = _textPassages.length;
 		

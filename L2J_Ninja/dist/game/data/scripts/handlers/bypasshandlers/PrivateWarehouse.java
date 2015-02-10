@@ -22,8 +22,8 @@ import java.util.logging.Level;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.handler.IBypassHandler;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
@@ -43,7 +43,7 @@ public class PrivateWarehouse implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Character target)
+	public boolean useBypass(String command, L2PcInstance activeChar, Creature target)
 	{
 		if (!target.isNpc())
 		{
@@ -61,9 +61,9 @@ public class PrivateWarehouse implements IBypassHandler
 			{
 				if (Config.L2JMOD_ENABLE_WAREHOUSESORTING_PRIVATE)
 				{
-					final NpcHtmlMessage msg = new NpcHtmlMessage(((L2Npc) target).getObjectId());
+					final NpcHtmlMessage msg = new NpcHtmlMessage(((Npc) target).getObjectId());
 					msg.setFile(activeChar.getHtmlPrefix(), "data/html/mods/WhSortedP.htm");
-					msg.replace("%objectId%", String.valueOf(((L2Npc) target).getObjectId()));
+					msg.replace("%objectId%", String.valueOf(((Npc) target).getObjectId()));
 					activeChar.sendPacket(msg);
 				}
 				else

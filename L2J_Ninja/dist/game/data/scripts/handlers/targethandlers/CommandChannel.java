@@ -22,9 +22,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.l2jserver.gameserver.handler.ITargetTypeHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2Party;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.Party;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
@@ -35,9 +35,9 @@ import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
 public class CommandChannel implements ITargetTypeHandler
 {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
 	{
-		final List<L2Character> targetList = new ArrayList<>();
+		final List<Creature> targetList = new ArrayList<>();
 		final L2PcInstance player = activeChar.getActingPlayer();
 		if (player == null)
 		{
@@ -47,7 +47,7 @@ public class CommandChannel implements ITargetTypeHandler
 		targetList.add(player);
 		
 		final int radius = skill.getAffectRange();
-		final L2Party party = player.getParty();
+		final Party party = player.getParty();
 		final boolean hasChannel = (party != null) && party.isInCommandChannel();
 		
 		if (Skill.addPet(activeChar, player, radius, false))
@@ -66,7 +66,7 @@ public class CommandChannel implements ITargetTypeHandler
 		// if player in not in party
 		if (party == null)
 		{
-			return targetList.toArray(new L2Character[targetList.size()]);
+			return targetList.toArray(new Creature[targetList.size()]);
 		}
 		
 		// Get all visible objects in a spherical area near the L2Character
@@ -90,7 +90,7 @@ public class CommandChannel implements ITargetTypeHandler
 			}
 		}
 		
-		return targetList.toArray(new L2Character[targetList.size()]);
+		return targetList.toArray(new Creature[targetList.size()]);
 	}
 	
 	@Override

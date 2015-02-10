@@ -22,7 +22,7 @@ import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.GameTimeController;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
@@ -44,7 +44,7 @@ public final class Shadai extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.equals("VALIDATE_POS") && (npc != null))
 		{
@@ -70,7 +70,7 @@ public final class Shadai extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
+	public final String onSpawn(Npc npc)
 	{
 		startQuestTimer("VALIDATE_POS", 60000, npc, null, true);
 		return super.onSpawn(npc);

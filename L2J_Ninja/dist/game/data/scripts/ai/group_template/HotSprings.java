@@ -21,8 +21,8 @@ package ai.group_template;
 import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.datatables.SkillData;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -55,7 +55,7 @@ public final class HotSprings extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
 		if (getRandom(100) < DISEASE_CHANCE)
 		{
@@ -89,7 +89,7 @@ public final class HotSprings extends AbstractNpcAI
 		return super.onAttack(npc, attacker, damage, isSummon);
 	}
 	
-	private void tryToInfect(L2Npc npc, L2Character player, int diseaseId)
+	private void tryToInfect(Npc npc, Creature player, int diseaseId)
 	{
 		final BuffInfo info = player.getEffectList().getBuffInfoBySkillId(diseaseId);
 		final int skillLevel = (info == null) ? 1 : (info.getSkill().getLevel() < 10) ? info.getSkill().getLevel() + 1 : 10;

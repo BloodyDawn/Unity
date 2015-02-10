@@ -25,7 +25,7 @@ import com.l2jserver.gameserver.datatables.ItemTable;
 import com.l2jserver.gameserver.enums.ItemLocation;
 import com.l2jserver.gameserver.enums.PrivateStoreType;
 import com.l2jserver.gameserver.instancemanager.MailManager;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Message;
 import com.l2jserver.gameserver.model.itemcontainer.ItemContainer;
@@ -242,7 +242,7 @@ public final class RequestPostAttachment extends L2GameClientPacket
 		activeChar.sendPacket(new ExUserInfoInvenWeight(activeChar));
 		
 		SystemMessage sm;
-		final L2PcInstance sender = L2World.getInstance().getPlayer(msg.getSenderId());
+		final L2PcInstance sender = World.getInstance().getPlayer(msg.getSenderId());
 		if (adena > 0)
 		{
 			if (sender != null)
@@ -259,7 +259,7 @@ public final class RequestPostAttachment extends L2GameClientPacket
 				paidAdena.setOwnerId(msg.getSenderId());
 				paidAdena.setItemLocation(ItemLocation.INVENTORY);
 				paidAdena.updateDatabase(true);
-				L2World.getInstance().removeObject(paidAdena);
+				World.getInstance().removeObject(paidAdena);
 			}
 		}
 		else if (sender != null)

@@ -25,7 +25,7 @@ import org.w3c.dom.Node;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.GameTimeController;
 import com.l2jserver.gameserver.data.xml.IXmlReader;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 
 /**
  * This class load, holds and calculates the hit condition bonuses.
@@ -119,7 +119,7 @@ public final class HitConditionBonusData implements IXmlReader
 	 * @param target the attacked character.
 	 * @return the bonus of the attacker against the target.
 	 */
-	public double getConditionBonus(L2Character attacker, L2Character target)
+	public double getConditionBonus(Creature attacker, Creature target)
 	{
 		double mod = 100;
 		// Get high or low bonus

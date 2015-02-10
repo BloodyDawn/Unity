@@ -29,9 +29,9 @@ import quests.Q00195_SevenSignsSecretRitualOfThePriests.Q00195_SevenSignsSecretR
 
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
@@ -49,9 +49,9 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 	protected static final class HSWorld extends InstanceWorld
 	{
 		protected int doorst = 0;
-		protected final static Map<Integer, List<L2Npc>> _save_point = new HashMap<>();
+		protected final static Map<Integer, List<Npc>> _save_point = new HashMap<>();
 		
-		public static Map<Integer, List<L2Npc>> getMonsters()
+		public static Map<Integer, List<Npc>> getMonsters()
 		{
 			return _save_point;
 		}
@@ -95,7 +95,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		switch (event)
 		{
@@ -131,9 +131,9 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 					}
 				}
 				
-				OUTTER: for (Entry<Integer, List<L2Npc>> entry : HSWorld._save_point.entrySet())
+				OUTTER: for (Entry<Integer, List<Npc>> entry : HSWorld._save_point.entrySet())
 				{
-					for (L2Npc monster : entry.getValue())
+					for (Npc monster : entry.getValue())
 					{
 						if (monster.getObjectId() == npc.getObjectId())
 						{
@@ -153,7 +153,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 		if (firstEntrance)
 		{
 			world.addAllowed(player.getObjectId());
-			final Map<Integer, List<L2Npc>> save_point = HSWorld.getMonsters();
+			final Map<Integer, List<Npc>> save_point = HSWorld.getMonsters();
 			save_point.put(0, spawnGroup("save_point1", world.getInstanceId()));
 			save_point.put(1, spawnGroup("save_point2", world.getInstanceId()));
 			save_point.put(2, spawnGroup("save_point3", world.getInstanceId()));
@@ -163,7 +163,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
+	public String onTalk(Npc npc, L2PcInstance talker)
 	{
 		switch (npc.getId())
 		{
@@ -201,7 +201,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 							npc.decayMe();
 							for (int objId : world.getAllowed())
 							{
-								final L2PcInstance pl = L2World.getInstance().getPlayer(objId);
+								final L2PcInstance pl = World.getInstance().getPlayer(objId);
 								if (pl != null)
 								{
 									pl.showQuestMovie(11);
@@ -245,7 +245,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 	}
 	
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAggroRangeEnter(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		npc.broadcastPacket(new MagicSkillUse(npc, player, GUARD_SKILL.getSkillId(), 1, 2000, 1));
 		startQuestTimer("teleportPlayer", 2000, npc, player);

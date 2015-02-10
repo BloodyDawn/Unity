@@ -19,8 +19,8 @@
 package com.l2jserver.gameserver.network.clientpackets;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
@@ -85,7 +85,7 @@ public final class Action extends L2GameClientPacket
 			}
 		}
 		
-		final L2Object obj;
+		final WorldObject obj;
 		if (activeChar.getTargetId() == _objectId)
 		{
 			obj = activeChar.getTarget();
@@ -96,7 +96,7 @@ public final class Action extends L2GameClientPacket
 		}
 		else
 		{
-			obj = L2World.getInstance().findObject(_objectId);
+			obj = World.getInstance().findObject(_objectId);
 		}
 		
 		// If object requested does not exist, add warn msg into logs

@@ -20,7 +20,7 @@ package quests.Q00128_PailakaSongOfIceAndFire;
 
 import com.l2jserver.gameserver.enums.QuestSound;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Instance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
@@ -84,7 +84,7 @@ public final class Q00128_PailakaSongOfIceAndFire extends Quest
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String htmltext = null;
 		final QuestState st = getQuestState(player, false);
@@ -180,7 +180,7 @@ public final class Q00128_PailakaSongOfIceAndFire extends Quest
 	}
 	
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player)
+	public final String onTalk(Npc npc, L2PcInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
@@ -303,7 +303,7 @@ public final class Q00128_PailakaSongOfIceAndFire extends Quest
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public final String onKill(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		final QuestState st = getQuestState(player, false);
 		if ((st != null) && st.isStarted())

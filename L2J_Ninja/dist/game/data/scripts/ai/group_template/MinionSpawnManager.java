@@ -24,7 +24,7 @@ import java.util.Set;
 import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.MinionHolder;
@@ -418,7 +418,7 @@ public final class MinionSpawnManager extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		if (npc.getTemplate().getParameters().getSet().get("SummonPrivateRate") == null)
 		{
@@ -428,7 +428,7 @@ public final class MinionSpawnManager extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
 		if (npc.isMonster())
 		{

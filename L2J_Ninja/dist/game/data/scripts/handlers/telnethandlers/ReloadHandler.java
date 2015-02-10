@@ -37,7 +37,7 @@ import com.l2jserver.gameserver.instancemanager.DayNightSpawnManager;
 import com.l2jserver.gameserver.instancemanager.QuestManager;
 import com.l2jserver.gameserver.instancemanager.RaidBossSpawnManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.scripting.L2ScriptEngineManager;
 
 /**
@@ -108,7 +108,7 @@ public class ReloadHandler implements ITelnetHandler
 					_print.print("Reloading spawns... ");
 					RaidBossSpawnManager.getInstance().cleanUp();
 					DayNightSpawnManager.getInstance().cleanUp();
-					L2World.getInstance().deleteVisibleNpcSpawns();
+					World.getInstance().deleteVisibleNpcSpawns();
 					NpcData.getInstance().load();
 					SpawnTable.getInstance().load();
 					RaidBossSpawnManager.getInstance().load();

@@ -18,13 +18,13 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 
 public final class DeleteObject extends L2GameServerPacket
 {
 	private final int _objectId;
 	
-	public DeleteObject(L2Object obj)
+	public DeleteObject(WorldObject obj)
 	{
 		_objectId = obj.getObjectId();
 	}

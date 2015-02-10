@@ -21,8 +21,8 @@ package com.l2jserver.gameserver.network.clientpackets;
 import com.l2jserver.gameserver.data.sql.impl.ClanTable;
 import com.l2jserver.gameserver.data.sql.impl.CrestTable;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2Crest;
-import com.l2jserver.gameserver.model.L2Crest.CrestType;
+import com.l2jserver.gameserver.model.Crest;
+import com.l2jserver.gameserver.model.Crest.CrestType;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 
@@ -93,7 +93,7 @@ public final class RequestSetAllyCrest extends L2GameClientPacket
 		}
 		else
 		{
-			final L2Crest crest = CrestTable.getInstance().createCrest(_data, CrestType.ALLY);
+			final Crest crest = CrestTable.getInstance().createCrest(_data, CrestType.ALLY);
 			if (crest != null)
 			{
 				leaderClan.changeAllyCrest(crest.getId(), false);

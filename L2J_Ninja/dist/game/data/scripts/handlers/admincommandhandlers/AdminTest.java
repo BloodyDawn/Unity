@@ -25,8 +25,8 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.serverpackets.MagicSkillUse;
@@ -96,15 +96,15 @@ public class AdminTest implements IAdminCommandHandler
 	 */
 	private void adminTestSkill(L2PcInstance activeChar, int id, boolean msu)
 	{
-		L2Character caster;
-		L2Object target = activeChar.getTarget();
-		if (!(target instanceof L2Character))
+		Creature caster;
+		WorldObject target = activeChar.getTarget();
+		if (!(target instanceof Creature))
 		{
 			caster = activeChar;
 		}
 		else
 		{
-			caster = (L2Character) target;
+			caster = (Creature) target;
 		}
 		
 		Skill _skill = SkillData.getInstance().getSkill(id, 1);

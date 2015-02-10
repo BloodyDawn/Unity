@@ -20,8 +20,8 @@ package com.l2jserver.gameserver.network.clientpackets;
 
 import com.l2jserver.gameserver.enums.PartyDistributionType;
 import com.l2jserver.gameserver.model.BlockList;
-import com.l2jserver.gameserver.model.L2Party;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.Party;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.request.PartyRequest;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -51,7 +51,7 @@ public final class RequestJoinParty extends L2GameClientPacket
 	protected void runImpl()
 	{
 		L2PcInstance requestor = getClient().getActiveChar();
-		L2PcInstance target = L2World.getInstance().getPlayer(_name);
+		L2PcInstance target = World.getInstance().getPlayer(_name);
 		
 		if (requestor == null)
 		{
@@ -155,7 +155,7 @@ public final class RequestJoinParty extends L2GameClientPacket
 	 */
 	private void addTargetToParty(L2PcInstance target, L2PcInstance requestor)
 	{
-		final L2Party party = requestor.getParty();
+		final Party party = requestor.getParty();
 		
 		// summary of ppl already in party and ppl that get invitation
 		if (!party.isLeader(requestor))
@@ -206,7 +206,7 @@ public final class RequestJoinParty extends L2GameClientPacket
 			requestor.addRequest(request);
 			target.addRequest(request);
 			target.sendPacket(new AskJoinParty(requestor.getName(), partyDistributionType));
-			requestor.setParty(new L2Party(requestor, partyDistributionType));
+			requestor.setParty(new Party(requestor, partyDistributionType));
 			requestor.getParty().setPendingInvitation(true);
 		}
 		else

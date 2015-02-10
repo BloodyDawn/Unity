@@ -27,8 +27,8 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.instancemanager.GrandBossManager;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2GrandBossInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.NpcStringId;
@@ -56,7 +56,7 @@ public final class Core extends AbstractNpcAI
 	
 	private static boolean _FirstAttacked;
 	
-	private final List<L2Attackable> Minions = new FastList<>();
+	private final List<Attackable> Minions = new FastList<>();
 	
 	private Core()
 	{
@@ -114,32 +114,32 @@ public final class Core extends AbstractNpcAI
 		GrandBossManager.getInstance().addBoss(npc);
 		npc.broadcastPacket(new PlaySound(1, "BS01_A", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
 		// Spawn minions
-		L2Attackable mob;
+		Attackable mob;
 		for (int i = 0; i < 5; i++)
 		{
 			final int x = 16800 + (i * 360);
-			mob = (L2Attackable) addSpawn(DEATH_KNIGHT, x, 110000, npc.getZ(), 280 + getRandom(40), false, 0);
+			mob = (Attackable) addSpawn(DEATH_KNIGHT, x, 110000, npc.getZ(), 280 + getRandom(40), false, 0);
 			mob.setIsRaidMinion(true);
 			Minions.add(mob);
-			mob = (L2Attackable) addSpawn(DEATH_KNIGHT, x, 109000, npc.getZ(), 280 + getRandom(40), false, 0);
+			mob = (Attackable) addSpawn(DEATH_KNIGHT, x, 109000, npc.getZ(), 280 + getRandom(40), false, 0);
 			mob.setIsRaidMinion(true);
 			Minions.add(mob);
 			final int x2 = 16800 + (i * 600);
-			mob = (L2Attackable) addSpawn(DOOM_WRAITH, x2, 109300, npc.getZ(), 280 + getRandom(40), false, 0);
+			mob = (Attackable) addSpawn(DOOM_WRAITH, x2, 109300, npc.getZ(), 280 + getRandom(40), false, 0);
 			mob.setIsRaidMinion(true);
 			Minions.add(mob);
 		}
 		for (int i = 0; i < 4; i++)
 		{
 			int x = 16800 + (i * 450);
-			mob = (L2Attackable) addSpawn(SUSCEPTOR, x, 110300, npc.getZ(), 280 + getRandom(40), false, 0);
+			mob = (Attackable) addSpawn(SUSCEPTOR, x, 110300, npc.getZ(), 280 + getRandom(40), false, 0);
 			mob.setIsRaidMinion(true);
 			Minions.add(mob);
 		}
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.equalsIgnoreCase("core_unlock"))
 		{
@@ -149,7 +149,7 @@ public final class Core extends AbstractNpcAI
 		}
 		else if (event.equalsIgnoreCase("spawn_minion"))
 		{
-			L2Attackable mob = (L2Attackable) addSpawn(npc.getId(), npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0);
+			Attackable mob = (Attackable) addSpawn(npc.getId(), npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0);
 			mob.setIsRaidMinion(true);
 			Minions.add(mob);
 		}
@@ -157,7 +157,7 @@ public final class Core extends AbstractNpcAI
 		{
 			for (int i = 0; i < Minions.size(); i++)
 			{
-				L2Attackable mob = Minions.get(i);
+				Attackable mob = Minions.get(i);
 				if (mob != null)
 				{
 					mob.decayMe();
@@ -169,7 +169,7 @@ public final class Core extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
 		if (npc.getId() == CORE)
 		{
@@ -191,7 +191,7 @@ public final class Core extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		final int npcId = npc.getId();
 		if (npcId == CORE)

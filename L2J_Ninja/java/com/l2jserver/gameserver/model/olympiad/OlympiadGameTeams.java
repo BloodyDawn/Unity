@@ -24,9 +24,9 @@ import java.util.logging.Level;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.idfactory.IdFactory;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.zone.type.L2OlympiadStadiumZone;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -120,7 +120,7 @@ public class OlympiadGameTeams extends AbstractOlympiadGame
 			
 			for (int objectId : teamOne)
 			{
-				player = L2World.getInstance().getPlayer(objectId);
+				player = World.getInstance().getPlayer(objectId);
 				if ((player == null) || !player.isOnline())
 				{
 					teamOnePlayers.clear();
@@ -143,7 +143,7 @@ public class OlympiadGameTeams extends AbstractOlympiadGame
 			
 			for (int objectId : teamTwo)
 			{
-				player = L2World.getInstance().getPlayer(objectId);
+				player = World.getInstance().getPlayer(objectId);
 				if ((player == null) || !player.isOnline())
 				{
 					teamTwoPlayers.clear();
@@ -237,7 +237,7 @@ public class OlympiadGameTeams extends AbstractOlympiadGame
 	}
 	
 	@Override
-	public final void sendOlympiadInfo(L2Character player)
+	public final void sendOlympiadInfo(Creature player)
 	{
 		for (int i = 0; i < MAX_TEAM_SIZE; i++)
 		{

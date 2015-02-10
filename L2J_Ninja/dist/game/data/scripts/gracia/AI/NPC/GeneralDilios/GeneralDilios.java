@@ -26,7 +26,7 @@ import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.serverpackets.NpcSay;
@@ -40,7 +40,7 @@ public final class GeneralDilios extends AbstractNpcAI
 	private static final int GENERAL_ID = 32549;
 	private static final int GUARD_ID = 32619;
 	
-	private L2Npc _general = null;
+	private Npc _general = null;
 	private final Set<L2Spawn> _guards = Collections.newSetFromMap(new ConcurrentHashMap<L2Spawn, Boolean>());
 	
 	private static final NpcStringId[] DILIOS_TEXT =
@@ -63,7 +63,7 @@ public final class GeneralDilios extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.startsWith("command_"))
 		{
@@ -96,7 +96,7 @@ public final class GeneralDilios extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		if (npc.getId() == GENERAL_ID)
 		{

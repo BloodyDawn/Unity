@@ -22,7 +22,7 @@ import java.util.List;
 
 import javolution.util.FastList;
 
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.actor.Playable;
 
 /**
  * @author Luca Baldi
@@ -61,7 +61,7 @@ public final class RelationChanged extends L2GameServerPacket
 	private List<Relation> _multi;
 	private byte _mask = (byte) 0x00;
 	
-	public RelationChanged(L2Playable activeChar, int relation, boolean autoattackable)
+	public RelationChanged(Playable activeChar, int relation, boolean autoattackable)
 	{
 		_mask |= SEND_ONE;
 		
@@ -81,7 +81,7 @@ public final class RelationChanged extends L2GameServerPacket
 		_multi = FastList.newInstance();
 	}
 	
-	public void addRelation(L2Playable activeChar, int relation, boolean autoattackable)
+	public void addRelation(Playable activeChar, int relation, boolean autoattackable)
 	{
 		if (activeChar.isInvisible())
 		{

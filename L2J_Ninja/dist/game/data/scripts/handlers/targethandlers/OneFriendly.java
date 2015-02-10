@@ -19,8 +19,8 @@
 package handlers.targethandlers;
 
 import com.l2jserver.gameserver.handler.ITargetTypeHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2SiegeFlagInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
@@ -32,7 +32,7 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 public final class OneFriendly implements ITargetTypeHandler
 {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
 	{
 		// Check for null target or any other invalid target
 		if ((target == null) || target.isDead())
@@ -48,13 +48,13 @@ public final class OneFriendly implements ITargetTypeHandler
 		}
 		
 		// If a target is found, return it in a table else send a system message TARGET_IS_INCORRECT
-		return new L2Character[]
+		return new Creature[]
 		{
 			target
 		};
 	}
 	
-	private boolean checkTarget(L2Character activeChar, L2Character target)
+	private boolean checkTarget(Creature activeChar, Creature target)
 	{
 		if ((target == null) || target.isAlikeDead() || target.isDoor() || (target instanceof L2SiegeFlagInstance) || target.isMonster())
 		{

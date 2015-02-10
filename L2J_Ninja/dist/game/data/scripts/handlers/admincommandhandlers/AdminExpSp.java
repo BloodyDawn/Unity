@@ -24,7 +24,7 @@ import java.util.logging.Logger;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.xml.impl.ClassListData;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -90,7 +90,7 @@ public class AdminExpSp implements IAdminCommandHandler
 	
 	private void addExpSp(L2PcInstance activeChar)
 	{
-		L2Object target = activeChar.getTarget();
+		WorldObject target = activeChar.getTarget();
 		L2PcInstance player = null;
 		if (target instanceof L2PcInstance)
 		{
@@ -113,7 +113,7 @@ public class AdminExpSp implements IAdminCommandHandler
 	
 	private boolean adminAddExpSp(L2PcInstance activeChar, String ExpSp)
 	{
-		L2Object target = activeChar.getTarget();
+		WorldObject target = activeChar.getTarget();
 		L2PcInstance player = null;
 		if (target instanceof L2PcInstance)
 		{
@@ -160,7 +160,7 @@ public class AdminExpSp implements IAdminCommandHandler
 	
 	private boolean adminRemoveExpSP(L2PcInstance activeChar, String ExpSp)
 	{
-		L2Object target = activeChar.getTarget();
+		WorldObject target = activeChar.getTarget();
 		L2PcInstance player = null;
 		if (target instanceof L2PcInstance)
 		{

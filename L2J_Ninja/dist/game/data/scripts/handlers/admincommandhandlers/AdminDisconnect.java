@@ -19,7 +19,7 @@
 package handlers.admincommandhandlers;
 
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
@@ -51,7 +51,7 @@ public class AdminDisconnect implements IAdminCommandHandler
 	
 	private void disconnectCharacter(L2PcInstance activeChar)
 	{
-		L2Object target = activeChar.getTarget();
+		WorldObject target = activeChar.getTarget();
 		L2PcInstance player = null;
 		if (target instanceof L2PcInstance)
 		{

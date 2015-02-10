@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.ai;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 
 /**
  * Interface of AI and client state.<br>
@@ -49,7 +49,7 @@ public interface Ctrl
 	 * Gets the actor.
 	 * @return the actor
 	 */
-	L2Character getActor();
+	Creature getActor();
 	
 	/**
 	 * Gets the intention.
@@ -61,7 +61,7 @@ public interface Ctrl
 	 * Gets the attack target.
 	 * @return the attack target
 	 */
-	L2Character getAttackTarget();
+	Creature getAttackTarget();
 	
 	/**
 	 * Set general state/intention for AI, with optional data.

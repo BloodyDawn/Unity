@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.model.clan.entry;
 
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
@@ -85,7 +85,7 @@ public class PledgeWaitingInfo
 	
 	public L2PcInstance getPlayerInstance()
 	{
-		return L2World.getInstance().getPlayer(_playerId);
+		return World.getInstance().getPlayer(_playerId);
 	}
 	
 	public boolean isOnline()

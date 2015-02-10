@@ -31,9 +31,9 @@ import com.l2jserver.gameserver.enums.MountType;
 import com.l2jserver.gameserver.instancemanager.GrandBossManager;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2GrandBossInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
@@ -114,7 +114,7 @@ public final class Valakas extends AbstractNpcAI
 	private static final byte DEAD = 3; // Valakas has been killed. Entry is locked.
 	// Misc
 	private long _timeTracker = 0; // Time tracker for last attack on Valakas.
-	private L2Playable _actualVictim; // Actual target of Valakas.
+	private Playable _actualVictim; // Actual target of Valakas.
 	private static L2BossZone ZONE;
 	
 	private Valakas()
@@ -138,7 +138,7 @@ public final class Valakas extends AbstractNpcAI
 			else
 			{
 				// The time has expired while the server was offline. Spawn valakas in his cave as DORMANT.
-				final L2Npc valakas = addSpawn(VALAKAS, -105200, -253104, -15264, 0, false, 0);
+				final Npc valakas = addSpawn(VALAKAS, -105200, -253104, -15264, 0, false, 0);
 				GrandBossManager.getInstance().setBossStatus(VALAKAS, DORMANT);
 				GrandBossManager.getInstance().addBoss((L2GrandBossInstance) valakas);
 				
@@ -157,7 +157,7 @@ public final class Valakas extends AbstractNpcAI
 			final int hp = info.getInt("currentHP");
 			final int mp = info.getInt("currentMP");
 			
-			final L2Npc valakas = addSpawn(VALAKAS, loc_x, loc_y, loc_z, heading, false, 0);
+			final Npc valakas = addSpawn(VALAKAS, loc_x, loc_y, loc_z, heading, false, 0);
 			GrandBossManager.getInstance().addBoss((L2GrandBossInstance) valakas);
 			
 			valakas.setCurrentHpMp(hp, mp);
@@ -187,7 +187,7 @@ public final class Valakas extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (npc != null)
 		{
@@ -365,7 +365,7 @@ public final class Valakas extends AbstractNpcAI
 		{
 			if (event.equalsIgnoreCase("valakas_unlock"))
 			{
-				final L2Npc valakas = addSpawn(VALAKAS, -105200, -253104, -15264, 32768, false, 0);
+				final Npc valakas = addSpawn(VALAKAS, -105200, -253104, -15264, 32768, false, 0);
 				GrandBossManager.getInstance().addBoss((L2GrandBossInstance) valakas);
 				GrandBossManager.getInstance().setBossStatus(VALAKAS, DORMANT);
 			}
@@ -378,14 +378,14 @@ public final class Valakas extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		npc.disableCoreAI(true);
 		return super.onSpawn(npc);
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
 		if (!ZONE.isInsideZone(attacker))
 		{
@@ -420,7 +420,7 @@ public final class Valakas extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		// Cancel skill_task and regen_task.
 		cancelQuestTimer("regen_task", npc, null);
@@ -454,12 +454,12 @@ public final class Valakas extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAggroRangeEnter(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		return null;
 	}
 	
-	private void callSkillAI(L2Npc npc)
+	private void callSkillAI(Npc npc)
 	{
 		if (npc.isInvul() || npc.isCastingNow())
 		{
@@ -516,7 +516,7 @@ public final class Valakas extends AbstractNpcAI
 	 * @param npc valakas
 	 * @return a skill holder
 	 */
-	private SkillHolder getRandomSkill(L2Npc npc)
+	private SkillHolder getRandomSkill(Npc npc)
 	{
 		final int hpRatio = (int) ((npc.getCurrentHp() / npc.getMaxHp()) * 100);
 		
@@ -545,11 +545,11 @@ public final class Valakas extends AbstractNpcAI
 	 * @param npc
 	 * @return a random L2Playable.
 	 */
-	private L2Playable getRandomTarget(L2Npc npc)
+	private Playable getRandomTarget(Npc npc)
 	{
-		List<L2Playable> result = new ArrayList<>();
+		List<Playable> result = new ArrayList<>();
 		
-		for (L2Character obj : npc.getKnownList().getKnownCharacters())
+		for (Creature obj : npc.getKnownList().getKnownCharacters())
 		{
 			if ((obj == null) || obj.isPet())
 			{
@@ -557,7 +557,7 @@ public final class Valakas extends AbstractNpcAI
 			}
 			else if (!obj.isDead() && obj.isPlayable())
 			{
-				result.add((L2Playable) obj);
+				result.add((Playable) obj);
 			}
 		}
 		

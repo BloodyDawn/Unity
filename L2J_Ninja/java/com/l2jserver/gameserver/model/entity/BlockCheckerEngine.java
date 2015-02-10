@@ -35,8 +35,8 @@ import com.l2jserver.gameserver.enums.Team;
 import com.l2jserver.gameserver.instancemanager.HandysBlockCheckerManager;
 import com.l2jserver.gameserver.model.ArenaParticipantsHolder;
 import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2BlockInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
@@ -389,7 +389,7 @@ public final class BlockCheckerEngine
 					player.setTeam(Team.BLUE);
 				}
 				player.stopAllEffects();
-				final L2Summon pet = player.getPet();
+				final Summon pet = player.getPet();
 				if (pet != null)
 				{
 					pet.unSummon(player);
@@ -616,7 +616,7 @@ public final class BlockCheckerEngine
 				}
 				
 				item.decayMe();
-				L2World.getInstance().removeObject(item);
+				World.getInstance().removeObject(item);
 			}
 			_drops.clear();
 		}

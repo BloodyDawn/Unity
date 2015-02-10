@@ -23,7 +23,7 @@ import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.handler.IChatHandler;
 import com.l2jserver.gameserver.instancemanager.MapRegionManager;
 import com.l2jserver.gameserver.model.BlockList;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -60,7 +60,7 @@ public final class ChatShout implements IChatHandler
 		if (Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("on") || (Config.DEFAULT_GLOBAL_CHAT.equalsIgnoreCase("gm") && activeChar.canOverrideCond(PcCondOverride.CHAT_CONDITIONS)))
 		{
 			final int region = MapRegionManager.getInstance().getMapRegionLocId(activeChar);
-			for (L2PcInstance player : L2World.getInstance().getPlayers())
+			for (L2PcInstance player : World.getInstance().getPlayers())
 			{
 				if ((region == MapRegionManager.getInstance().getMapRegionLocId(player)) && !BlockList.isBlocked(player, activeChar) && (player.getInstanceId() == activeChar.getInstanceId()))
 				{
@@ -76,7 +76,7 @@ public final class ChatShout implements IChatHandler
 				return;
 			}
 			
-			for (L2PcInstance player : L2World.getInstance().getPlayers())
+			for (L2PcInstance player : World.getInstance().getPlayers())
 			{
 				if (!BlockList.isBlocked(player, activeChar))
 				{

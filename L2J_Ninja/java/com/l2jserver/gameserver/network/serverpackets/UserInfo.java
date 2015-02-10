@@ -23,7 +23,7 @@ import com.l2jserver.gameserver.enums.UserInfoType;
 import com.l2jserver.gameserver.instancemanager.RaidBossPointsManager;
 import com.l2jserver.gameserver.model.Elementals;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2Party;
+import com.l2jserver.gameserver.model.Party;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.zone.ZoneId;
 
@@ -358,7 +358,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 	private int calculateRelation(L2PcInstance activeChar)
 	{
 		int relation = 0;
-		final L2Party party = activeChar.getParty();
+		final Party party = activeChar.getParty();
 		final L2Clan clan = activeChar.getClan();
 		
 		if (party != null)

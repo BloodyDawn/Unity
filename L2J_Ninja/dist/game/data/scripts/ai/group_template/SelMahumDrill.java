@@ -23,11 +23,11 @@ import ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.datatables.SpawnTable;
 import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.L2Spawn;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.util.Util;
@@ -141,7 +141,7 @@ public final class SelMahumDrill extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		switch (event)
 		{
@@ -186,7 +186,7 @@ public final class SelMahumDrill extends AbstractNpcAI
 				{
 					for (L2Spawn npcSpawn : SpawnTable.getInstance().getSpawns(npcId))
 					{
-						final L2Npc soldier = npcSpawn.getLastSpawn();
+						final Npc soldier = npcSpawn.getLastSpawn();
 						if ((soldier != null) && !soldier.isDead() && (npcSpawn.getName() != null) && npcSpawn.getName().startsWith("smtg_drill_group") && !soldier.staysInSpawnLoc() && ((soldier.getAI().getIntention() == CtrlIntention.AI_INTENTION_ACTIVE) || (soldier.getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE)))
 						{
 							soldier.setHeading(npcSpawn.getHeading());
@@ -201,7 +201,7 @@ public final class SelMahumDrill extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
 		if (getRandom(10) < 1)
 		{
@@ -211,7 +211,7 @@ public final class SelMahumDrill extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onEventReceived(String eventName, L2Npc sender, L2Npc receiver, L2Object reference)
+	public String onEventReceived(String eventName, Npc sender, Npc receiver, WorldObject reference)
 	{
 		if ((receiver != null) && !receiver.isDead() && receiver.isInMySpawnGroup(sender))
 		{
@@ -237,7 +237,7 @@ public final class SelMahumDrill extends AbstractNpcAI
 						}
 						if (receiver.canBeAttacked())
 						{
-							((L2Attackable) receiver).clearAggroList();
+							((Attackable) receiver).clearAggroList();
 						}
 						receiver.disableCoreAI(true);
 						receiver.getVariables().set("BUSY_STATE", 1);
@@ -261,14 +261,14 @@ public final class SelMahumDrill extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		npc.broadcastEvent("CHIEF_DIED", TRAINING_RANGE, null);
 		return null;
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		if (Util.contains(MAHUM_CHIEFS, npc.getId()))
 		{
@@ -285,7 +285,7 @@ public final class SelMahumDrill extends AbstractNpcAI
 		return super.onSpawn(npc);
 	}
 	
-	private void handleSocialAction(L2Npc npc, Actions action, boolean firstCall)
+	private void handleSocialAction(Npc npc, Actions action, boolean firstCall)
 	{
 		if ((npc.getVariables().getInt("BUSY_STATE") != 0) || (npc.getAI().getIntention() != CtrlIntention.AI_INTENTION_ACTIVE) || !npc.staysInSpawnLoc())
 		{

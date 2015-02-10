@@ -20,8 +20,8 @@ package quests.Q00458_PerfectForm;
 
 import com.l2jserver.gameserver.enums.QuestSound;
 import com.l2jserver.gameserver.enums.QuestType;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
@@ -85,7 +85,7 @@ public class Q00458_PerfectForm extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String noQuest = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, false);
@@ -215,7 +215,7 @@ public class Q00458_PerfectForm extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		final QuestState st = getQuestState(player, false);
 		if ((st != null) && st.isCond(1))
@@ -232,7 +232,7 @@ public class Q00458_PerfectForm extends Quest
 			{
 				st.set(variable, String.valueOf(currentValue + 1)); // IncreaseNPCLogByID
 				
-				L2Attackable mob = (L2Attackable) npc;
+				Attackable mob = (Attackable) npc;
 				if (mob.isOverhit())
 				{
 					st.set("overhitsTotal", String.valueOf(st.getInt("overhitsTotal") + 1)); // memoStateEx 1
@@ -282,7 +282,7 @@ public class Q00458_PerfectForm extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);

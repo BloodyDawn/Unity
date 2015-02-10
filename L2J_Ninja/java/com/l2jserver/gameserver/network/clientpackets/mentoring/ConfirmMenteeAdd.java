@@ -25,7 +25,7 @@ import java.util.logging.Level;
 import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.enums.CategoryType;
 import com.l2jserver.gameserver.instancemanager.MentorManager;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.EventDispatcher;
 import com.l2jserver.gameserver.model.events.impl.character.player.mentoring.OnPlayerMenteeAdd;
@@ -60,7 +60,7 @@ public class ConfirmMenteeAdd extends L2GameClientPacket
 			return;
 		}
 		
-		final L2PcInstance mentor = L2World.getInstance().getPlayer(_mentor);
+		final L2PcInstance mentor = World.getInstance().getPlayer(_mentor);
 		if (mentor == null)
 		{
 			return;

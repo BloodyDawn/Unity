@@ -25,9 +25,9 @@ import com.l2jserver.gameserver.data.xml.impl.ExperienceData;
 import com.l2jserver.gameserver.data.xml.impl.PetDataTable;
 import com.l2jserver.gameserver.enums.PartySmallWindowUpdateType;
 import com.l2jserver.gameserver.enums.UserInfoType;
-import com.l2jserver.gameserver.model.L2PetLevelData;
+import com.l2jserver.gameserver.model.PetLevelData;
 import com.l2jserver.gameserver.model.PcCondOverride;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2ClassMasterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PetInstance;
@@ -135,7 +135,7 @@ public class PcStat extends PlayableStat
 		float ratioTakenByPlayer = 0;
 		
 		// if this player has a pet and it is in his range he takes from the owner's Exp, give the pet Exp now
-		final L2Summon sPet = activeChar.getPet();
+		final Summon sPet = activeChar.getPet();
 		if ((sPet != null) && Util.checkIfInShortRadius(Config.ALT_PARTY_RANGE, activeChar, sPet, false))
 		{
 			L2PetInstance pet = (L2PetInstance) sPet;
@@ -277,7 +277,7 @@ public class PcStat extends PlayableStat
 		}
 		
 		// Synchronize level with pet if possible.
-		final L2Summon sPet = getActiveChar().getPet();
+		final Summon sPet = getActiveChar().getPet();
 		if (sPet != null)
 		{
 			final L2PetInstance pet = (L2PetInstance) sPet;
@@ -570,7 +570,7 @@ public class PcStat extends PlayableStat
 		}
 		else if (player.isMounted())
 		{
-			final L2PetLevelData data = PetDataTable.getInstance().getPetLevelData(player.getMountNpcId(), player.getMountLevel());
+			final PetLevelData data = PetDataTable.getInstance().getPetLevelData(player.getMountNpcId(), player.getMountLevel());
 			if (data != null)
 			{
 				return data.getSpeedOnRide(type);

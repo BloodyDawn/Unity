@@ -21,7 +21,7 @@ package quests.Q10322_SearchingForTheMysteriousPower;
 import quests.Q10321_QualificationsOfTheSeeker.Q10321_QualificationsOfTheSeeker;
 
 import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -90,7 +90,7 @@ public final class Q10322_SearchingForTheMysteriousPower extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
@@ -136,7 +136,7 @@ public final class Q10322_SearchingForTheMysteriousPower extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(killer, false);
 		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(1500, npc, killer, true))
@@ -154,7 +154,7 @@ public final class Q10322_SearchingForTheMysteriousPower extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = null;

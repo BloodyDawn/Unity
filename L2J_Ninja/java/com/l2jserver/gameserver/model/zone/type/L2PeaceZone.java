@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.model.zone.type;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.zone.L2ZoneType;
 import com.l2jserver.gameserver.model.zone.ZoneId;
@@ -36,7 +36,7 @@ public class L2PeaceZone extends L2ZoneType
 	}
 	
 	@Override
-	protected void onEnter(L2Character character)
+	protected void onEnter(Creature character)
 	{
 		if (character.isPlayer())
 		{
@@ -61,7 +61,7 @@ public class L2PeaceZone extends L2ZoneType
 	}
 	
 	@Override
-	protected void onExit(L2Character character)
+	protected void onExit(Creature character)
 	{
 		if (Config.PEACE_ZONE_MODE != 2)
 		{

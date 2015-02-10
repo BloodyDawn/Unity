@@ -25,9 +25,9 @@ import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
@@ -78,7 +78,7 @@ public final class MithrilMine extends AbstractInstance
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final InstanceWorld world = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		
@@ -100,7 +100,7 @@ public final class MithrilMine extends AbstractInstance
 				{
 					for (Location loc : MOB_SPAWNS)
 					{
-						final L2Attackable spawnedMob = (L2Attackable) addSpawn(MITHRIL_MILLIPEDE, loc, false, 0, false, world.getInstanceId());
+						final Attackable spawnedMob = (Attackable) addSpawn(MITHRIL_MILLIPEDE, loc, false, 0, false, world.getInstanceId());
 						spawnedMob.setScriptValue(1);
 						spawnedMob.setIsRunning(true);
 						spawnedMob.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, npc);
@@ -111,11 +111,11 @@ public final class MithrilMine extends AbstractInstance
 			}
 			case "FINISH":
 			{
-				for (L2Character knownChar : npc.getKnownList().getKnownCharacters())
+				for (Creature knownChar : npc.getKnownList().getKnownCharacters())
 				{
 					if ((knownChar != null) && (knownChar.getId() == KEGOR))
 					{
-						final L2Npc kegor = (L2Npc) knownChar;
+						final Npc kegor = (Npc) knownChar;
 						kegor.setScriptValue(2);
 						kegor.setWalking();
 						kegor.setTarget(player);
@@ -131,7 +131,7 @@ public final class MithrilMine extends AbstractInstance
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = player.getQuestState(Q10284_AcquisitionOfDivineSword.class.getSimpleName());
 		if ((qs != null))
@@ -156,7 +156,7 @@ public final class MithrilMine extends AbstractInstance
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		final InstanceWorld world = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		final MMWorld _world = ((MMWorld) world);
@@ -189,7 +189,7 @@ public final class MithrilMine extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
+	public String onTalk(Npc npc, L2PcInstance talker)
 	{
 		switch (npc.getId())
 		{

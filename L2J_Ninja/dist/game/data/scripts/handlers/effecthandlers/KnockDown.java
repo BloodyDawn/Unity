@@ -22,7 +22,7 @@ import com.l2jserver.gameserver.GeoData;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
@@ -56,7 +56,7 @@ public final class KnockDown extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		final L2Character effected = info.getEffected();
+		final Creature effected = info.getEffected();
 		final double radians = Math.toRadians(Util.calculateAngleFrom(info.getEffector(), info.getEffected()));
 		final int newHeading = Util.calculateHeadingFrom(info.getEffected(), info.getEffector());
 		final int x = (int) (info.getEffected().getX() + (_distance * Math.cos(radians)));

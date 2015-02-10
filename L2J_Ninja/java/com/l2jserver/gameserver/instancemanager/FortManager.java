@@ -30,7 +30,7 @@ import javolution.util.FastList;
 import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.InstanceListManager;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.entity.Fort;
 
 public final class FortManager implements InstanceListManager
@@ -39,12 +39,12 @@ public final class FortManager implements InstanceListManager
 	
 	private List<Fort> _forts;
 	
-	public final int findNearestFortIndex(L2Object obj)
+	public final int findNearestFortIndex(WorldObject obj)
 	{
 		return findNearestFortIndex(obj, Long.MAX_VALUE);
 	}
 	
-	public final int findNearestFortIndex(L2Object obj, long maxDistance)
+	public final int findNearestFortIndex(WorldObject obj, long maxDistance)
 	{
 		int index = getFortIndex(obj);
 		if (index < 0)
@@ -117,7 +117,7 @@ public final class FortManager implements InstanceListManager
 		return null;
 	}
 	
-	public final Fort getFort(L2Object activeObject)
+	public final Fort getFort(WorldObject activeObject)
 	{
 		return getFort(activeObject.getX(), activeObject.getY(), activeObject.getZ());
 	}
@@ -136,7 +136,7 @@ public final class FortManager implements InstanceListManager
 		return -1;
 	}
 	
-	public final int getFortIndex(L2Object activeObject)
+	public final int getFortIndex(WorldObject activeObject)
 	{
 		return getFortIndex(activeObject.getX(), activeObject.getY(), activeObject.getZ());
 	}

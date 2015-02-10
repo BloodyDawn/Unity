@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.model.events.impl.character;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -29,14 +29,14 @@ import com.l2jserver.gameserver.model.skills.Skill;
  */
 public class OnCreatureDamageReceived implements IBaseEvent
 {
-	private final L2Character _attacker;
-	private final L2Character _target;
+	private final Creature _attacker;
+	private final Creature _target;
 	private final double _damage;
 	private final Skill _skill;
 	private final boolean _crit;
 	private final boolean _damageOverTime;
 	
-	public OnCreatureDamageReceived(L2Character attacker, L2Character target, double damage, Skill skill, boolean crit, boolean damageOverTime)
+	public OnCreatureDamageReceived(Creature attacker, Creature target, double damage, Skill skill, boolean crit, boolean damageOverTime)
 	{
 		_attacker = attacker;
 		_target = target;
@@ -46,12 +46,12 @@ public class OnCreatureDamageReceived implements IBaseEvent
 		_damageOverTime = damageOverTime;
 	}
 	
-	public final L2Character getAttacker()
+	public final Creature getAttacker()
 	{
 		return _attacker;
 	}
 	
-	public final L2Character getTarget()
+	public final Creature getTarget()
 	{
 		return _target;
 	}

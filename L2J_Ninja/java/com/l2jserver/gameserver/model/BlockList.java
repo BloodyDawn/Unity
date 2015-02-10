@@ -199,7 +199,7 @@ public class BlockList
 		sm.addString(charName);
 		listOwner.sendPacket(sm);
 		
-		L2PcInstance player = L2World.getInstance().getPlayer(targetId);
+		L2PcInstance player = World.getInstance().getPlayer(targetId);
 		
 		if (player != null)
 		{
@@ -261,7 +261,7 @@ public class BlockList
 	 */
 	public static boolean isInBlockList(int ownerId, int targetId)
 	{
-		L2PcInstance player = L2World.getInstance().getPlayer(ownerId);
+		L2PcInstance player = World.getInstance().getPlayer(ownerId);
 		if (player != null)
 		{
 			return BlockList.isBlocked(player, targetId);

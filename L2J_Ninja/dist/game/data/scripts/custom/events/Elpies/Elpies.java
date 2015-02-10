@@ -24,7 +24,7 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.datatables.SpawnTable;
 import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2EventMonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Event;
@@ -141,7 +141,7 @@ public final class Elpies extends Event
 		
 		for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(ELPY))
 		{
-			L2Npc npc = spawn.getLastSpawn();
+			Npc npc = spawn.getLastSpawn();
 			if (npc != null)
 			{
 				npc.deleteMe();
@@ -154,7 +154,7 @@ public final class Elpies extends Event
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		if (EVENT_ACTIVE)
 		{
@@ -173,7 +173,7 @@ public final class Elpies extends Event
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		((L2EventMonsterInstance) npc).eventSetDropOnGround(true);
 		((L2EventMonsterInstance) npc).eventSetBlockOffensiveSkills(true);
@@ -226,7 +226,7 @@ public final class Elpies extends Event
 		}
 	}
 	
-	private static final void dropItem(L2Npc mob, L2PcInstance player, int[][] droplist)
+	private static final void dropItem(Npc mob, L2PcInstance player, int[][] droplist)
 	{
 		final int chance = getRandom(100);
 		

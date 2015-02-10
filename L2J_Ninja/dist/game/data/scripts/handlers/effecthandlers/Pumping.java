@@ -21,7 +21,7 @@ package handlers.effecthandlers;
 import com.l2jserver.gameserver.data.xml.impl.FishingRodsData;
 import com.l2jserver.gameserver.enums.ShotType;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
@@ -69,7 +69,7 @@ public final class Pumping extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		final L2Character activeChar = info.getEffector();
+		final Creature activeChar = info.getEffector();
 		if (!activeChar.isPlayer())
 		{
 			return;

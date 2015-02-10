@@ -18,35 +18,35 @@
  */
 package com.l2jserver.gameserver.model.actor.knownlist;
 
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 
 public class NullKnownList extends ObjectKnownList
 {
-	public NullKnownList(L2Object activeObject)
+	public NullKnownList(WorldObject activeObject)
 	{
 		super(activeObject);
 	}
 	
 	@Override
-	public boolean addKnownObject(L2Object object)
+	public boolean addKnownObject(WorldObject object)
 	{
 		return false;
 	}
 	
 	@Override
-	public L2Object getActiveObject()
+	public WorldObject getActiveObject()
 	{
 		return super.getActiveObject();
 	}
 	
 	@Override
-	public int getDistanceToForgetObject(L2Object object)
+	public int getDistanceToForgetObject(WorldObject object)
 	{
 		return 0;
 	}
 	
 	@Override
-	public int getDistanceToWatchObject(L2Object object)
+	public int getDistanceToWatchObject(WorldObject object)
 	{
 		return 0;
 	}
@@ -57,7 +57,7 @@ public class NullKnownList extends ObjectKnownList
 	}
 	
 	@Override
-	protected boolean removeKnownObject(L2Object object, boolean forget)
+	protected boolean removeKnownObject(WorldObject object, boolean forget)
 	{
 		return false;
 	}

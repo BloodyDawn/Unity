@@ -20,8 +20,8 @@ package ai.npc.CastleAmbassador;
 
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Castle;
 import com.l2jserver.gameserver.model.entity.Fort;
@@ -60,7 +60,7 @@ public final class CastleAmbassador extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (npc != null)
 		{
@@ -124,7 +124,7 @@ public final class CastleAmbassador extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onEventReceived(String eventName, L2Npc sender, L2Npc receiver, L2Object reference)
+	public String onEventReceived(String eventName, Npc sender, Npc receiver, WorldObject reference)
 	{
 		if (receiver != null)
 		{
@@ -134,7 +134,7 @@ public final class CastleAmbassador extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		final Fort fortresss = npc.getFort();
 		final int fortOwner = fortresss.getOwnerClan() == null ? 0 : fortresss.getOwnerClan().getId();
@@ -157,7 +157,7 @@ public final class CastleAmbassador extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		final Castle castle = npc.getFort().getCastleByAmbassador(npc.getId());
 		if (castle.getOwnerId() == 0)

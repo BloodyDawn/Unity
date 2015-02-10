@@ -22,9 +22,9 @@ import com.l2jserver.gameserver.GeoData;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.handler.IActionHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jserver.gameserver.model.events.EventDispatcher;
@@ -35,7 +35,7 @@ import com.l2jserver.gameserver.network.serverpackets.PetStatusShow;
 public class L2PetInstanceAction implements IActionHandler
 {
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
+	public boolean action(L2PcInstance activeChar, WorldObject target, boolean interact)
 	{
 		// Aggression target lock effect
 		if (activeChar.isLockedTarget() && (activeChar.getLockedTarget() != target))
@@ -67,7 +67,7 @@ public class L2PetInstanceAction implements IActionHandler
 					activeChar.onActionRequest();
 				}
 			}
-			else if (!((L2Character) target).isInsideRadius(activeChar, 150, false, false))
+			else if (!((Creature) target).isInsideRadius(activeChar, 150, false, false))
 			{
 				if (GeoData.getInstance().canSeeTarget(activeChar, target))
 				{
@@ -82,7 +82,7 @@ public class L2PetInstanceAction implements IActionHandler
 					activeChar.sendPacket(new PetStatusShow((L2PetInstance) target));
 					
 					// Notify to scripts
-					EventDispatcher.getInstance().notifyEventAsync(new OnPlayerSummonTalk((L2Summon) target), (L2Summon) target);
+					EventDispatcher.getInstance().notifyEventAsync(new OnPlayerSummonTalk((Summon) target), (Summon) target);
 				}
 				activeChar.updateNotMoveUntil();
 			}

@@ -21,7 +21,7 @@ package com.l2jserver.gameserver.network.clientpackets;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.instancemanager.FortSiegeManager;
 import com.l2jserver.gameserver.instancemanager.MercTicketManager;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -42,7 +42,7 @@ public final class RequestPetGetItem extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2World world = L2World.getInstance();
+		World world = World.getInstance();
 		L2ItemInstance item = (L2ItemInstance) world.findObject(_objectId);
 		if ((item == null) || (getActiveChar() == null) || !getActiveChar().hasPet())
 		{

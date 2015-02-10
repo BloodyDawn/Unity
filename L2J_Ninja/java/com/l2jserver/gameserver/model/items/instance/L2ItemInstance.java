@@ -50,13 +50,13 @@ import com.l2jserver.gameserver.instancemanager.ItemsOnGroundManager;
 import com.l2jserver.gameserver.instancemanager.MercTicketManager;
 import com.l2jserver.gameserver.model.DropProtection;
 import com.l2jserver.gameserver.model.Elementals;
-import com.l2jserver.gameserver.model.L2Augmentation;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.L2WorldRegion;
+import com.l2jserver.gameserver.model.Augmentation;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.WorldRegion;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.knownlist.NullKnownList;
 import com.l2jserver.gameserver.model.events.EventDispatcher;
@@ -93,7 +93,7 @@ import com.l2jserver.gameserver.util.GMAudit;
  * This class manages items.
  * @version $Revision: 1.4.2.1.2.11 $ $Date: 2005/03/31 16:07:50 $
  */
-public final class L2ItemInstance extends L2Object
+public final class L2ItemInstance extends WorldObject
 {
 	private static final Logger _log = Logger.getLogger(L2ItemInstance.class.getName());
 	private static final Logger _logItems = Logger.getLogger("item");
@@ -132,7 +132,7 @@ public final class L2ItemInstance extends L2Object
 	private boolean _wear;
 	
 	/** Augmented Item */
-	private L2Augmentation _augmentation = null;
+	private Augmentation _augmentation = null;
 	
 	/** Shadow item */
 	private int _mana = -1;
@@ -260,11 +260,11 @@ public final class L2ItemInstance extends L2Object
 	 * <BR>
 	 * @param player Player that pick up the item
 	 */
-	public final void pickupMe(L2Character player)
+	public final void pickupMe(Creature player)
 	{
 		assert getWorldRegion() != null;
 		
-		L2WorldRegion oldregion = getWorldRegion();
+		WorldRegion oldregion = getWorldRegion();
 		
 		// Create a server->client GetItem packet to pick up the L2ItemInstance
 		player.broadcastPacket(new GetItem(this, player.getObjectId()));
@@ -286,7 +286,7 @@ public final class L2ItemInstance extends L2Object
 		
 		// outside of synchronized to avoid deadlocks
 		// Remove the L2ItemInstance from the world
-		L2World.getInstance().removeVisibleObject(this, oldregion);
+		World.getInstance().removeVisibleObject(this, oldregion);
 		
 		if (player.isPlayer())
 		{
@@ -327,9 +327,9 @@ public final class L2ItemInstance extends L2Object
 			if (creator.isGM())
 			{
 				String referenceName = "no-reference";
-				if (reference instanceof L2Object)
+				if (reference instanceof WorldObject)
 				{
-					referenceName = (((L2Object) reference).getName() != null ? ((L2Object) reference).getName() : "no-name");
+					referenceName = (((WorldObject) reference).getName() != null ? ((WorldObject) reference).getName() : "no-name");
 				}
 				else if (reference instanceof String)
 				{
@@ -495,9 +495,9 @@ public final class L2ItemInstance extends L2Object
 			if (creator.isGM())
 			{
 				String referenceName = "no-reference";
-				if (reference instanceof L2Object)
+				if (reference instanceof WorldObject)
 				{
-					referenceName = (((L2Object) reference).getName() != null ? ((L2Object) reference).getName() : "no-name");
+					referenceName = (((WorldObject) reference).getName() != null ? ((WorldObject) reference).getName() : "no-name");
 				}
 				else if (reference instanceof String)
 				{
@@ -856,7 +856,7 @@ public final class L2ItemInstance extends L2Object
 	 */
 	public boolean isAvailable(L2PcInstance player, boolean allowAdena, boolean allowNonTradeable)
 	{
-		final L2Summon pet = player.getPet();
+		final Summon pet = player.getPet();
 		
 		return ((!isEquipped()) // Not equipped
 			&& (getItem().getType2() != L2Item.TYPE2_QUEST) // Not Quest Item
@@ -904,7 +904,7 @@ public final class L2ItemInstance extends L2Object
 	 * Returns the augmentation object for this item
 	 * @return augmentation
 	 */
-	public L2Augmentation getAugmentation()
+	public Augmentation getAugmentation()
 	{
 		return _augmentation;
 	}
@@ -914,7 +914,7 @@ public final class L2ItemInstance extends L2Object
 	 * @param augmentation
 	 * @return return true if sucessfull
 	 */
-	public boolean setAugmentation(L2Augmentation augmentation)
+	public boolean setAugmentation(Augmentation augmentation)
 	{
 		// there shall be no previous augmentation..
 		if (_augmentation != null)
@@ -947,7 +947,7 @@ public final class L2ItemInstance extends L2Object
 		}
 		
 		// Copy augmentation before removing it.
-		final L2Augmentation augment = _augmentation;
+		final Augmentation augment = _augmentation;
 		_augmentation = null;
 		
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
@@ -979,7 +979,7 @@ public final class L2ItemInstance extends L2Object
 					int aug_attributes = rs.getInt(1);
 					if (aug_attributes != -1)
 					{
-						_augmentation = new L2Augmentation(rs.getInt("augAttributes"));
+						_augmentation = new Augmentation(rs.getInt("augAttributes"));
 					}
 				}
 			}
@@ -1371,7 +1371,7 @@ public final class L2ItemInstance extends L2Object
 				}
 				
 				// delete from world
-				L2World.getInstance().removeObject(this);
+				World.getInstance().removeObject(this);
 			}
 			else
 			{
@@ -1405,7 +1405,7 @@ public final class L2ItemInstance extends L2Object
 	 * @return boolean false
 	 */
 	@Override
-	public boolean isAutoAttackable(L2Character attacker)
+	public boolean isAutoAttackable(Creature attacker)
 	{
 		return false;
 	}
@@ -1415,7 +1415,7 @@ public final class L2ItemInstance extends L2Object
 	 * @param player the player
 	 * @return the functions list
 	 */
-	public List<AbstractFunction> getStatFuncs(L2Character player)
+	public List<AbstractFunction> getStatFuncs(Creature player)
 	{
 		return getItem().getStatFuncs(this, player);
 	}
@@ -1544,10 +1544,10 @@ public final class L2ItemInstance extends L2Object
 	public class ItemDropTask implements Runnable
 	{
 		private int _x, _y, _z;
-		private final L2Character _dropper;
+		private final Creature _dropper;
 		private final L2ItemInstance _itm;
 		
-		public ItemDropTask(L2ItemInstance item, L2Character dropper, int x, int y, int z)
+		public ItemDropTask(L2ItemInstance item, Creature dropper, int x, int y, int z)
 		{
 			_x = x;
 			_y = y;
@@ -1583,7 +1583,7 @@ public final class L2ItemInstance extends L2Object
 				// Set the x,y,z position of the L2ItemInstance dropped and update its _worldregion
 				_itm.setIsVisible(true);
 				_itm.setXYZ(_x, _y, _z);
-				_itm.setWorldRegion(L2World.getInstance().getRegion(getLocation()));
+				_itm.setWorldRegion(World.getInstance().getRegion(getLocation()));
 				
 				// Add the L2ItemInstance dropped to _visibleObjects of its L2WorldRegion
 			}
@@ -1595,7 +1595,7 @@ public final class L2ItemInstance extends L2Object
 			// this can synchronize on others instances, so it's out of
 			// synchronized, to avoid deadlocks
 			// Add the L2ItemInstance dropped in the world as a visible object
-			L2World.getInstance().addVisibleObject(_itm, _itm.getWorldRegion());
+			World.getInstance().addVisibleObject(_itm, _itm.getWorldRegion());
 			if (Config.SAVE_DROPPED_ITEM)
 			{
 				ItemsOnGroundManager.getInstance().save(_itm);
@@ -1604,7 +1604,7 @@ public final class L2ItemInstance extends L2Object
 		}
 	}
 	
-	public final void dropMe(L2Character dropper, int x, int y, int z)
+	public final void dropMe(Creature dropper, int x, int y, int z)
 	{
 		ThreadPoolManager.getInstance().executeGeneral(new ItemDropTask(this, dropper, x, y, z));
 		if ((dropper != null) && dropper.isPlayer())
@@ -1869,7 +1869,7 @@ public final class L2ItemInstance extends L2Object
 			}
 			player.sendPacket(SystemMessageId.THE_LIMITED_TIME_ITEM_HAS_DISAPPEARED_BECAUSE_THE_REMAINING_TIME_RAN_OUT);
 			// delete from world
-			L2World.getInstance().removeObject(this);
+			World.getInstance().removeObject(this);
 		}
 	}
 	
@@ -2095,7 +2095,7 @@ public final class L2ItemInstance extends L2Object
 	@Override
 	public L2PcInstance getActingPlayer()
 	{
-		return L2World.getInstance().getPlayer(getOwnerId());
+		return World.getInstance().getPlayer(getOwnerId());
 	}
 	
 	public int getEquipReuseDelay()

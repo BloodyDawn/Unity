@@ -44,16 +44,16 @@ import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.L2CommandChannel;
-import com.l2jserver.gameserver.model.L2Party;
-import com.l2jserver.gameserver.model.L2Territory;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.CommandChannel;
+import com.l2jserver.gameserver.model.Party;
+import com.l2jserver.gameserver.model.Territory;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.PcCondOverride;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2GrandBossInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -86,17 +86,17 @@ public final class FinalEmperialTomb extends AbstractInstance
 	private class FETWorld extends InstanceWorld
 	{
 		protected Lock lock = new ReentrantLock();
-		protected FastList<L2Npc> npcList = new FastList<>();
+		protected FastList<Npc> npcList = new FastList<>();
 		protected int darkChoirPlayerCount = 0;
 		protected FrintezzaSong OnSong = null;
 		protected ScheduledFuture<?> songTask = null;
 		protected ScheduledFuture<?> songEffectTask = null;
 		protected boolean isVideo = false;
-		protected L2Npc frintezzaDummy = null;
-		protected L2Npc overheadDummy = null;
-		protected L2Npc portraitDummy1 = null;
-		protected L2Npc portraitDummy3 = null;
-		protected L2Npc scarletDummy = null;
+		protected Npc frintezzaDummy = null;
+		protected Npc overheadDummy = null;
+		protected Npc portraitDummy1 = null;
+		protected Npc portraitDummy3 = null;
+		protected Npc scarletDummy = null;
 		protected L2GrandBossInstance frintezza = null;
 		protected L2GrandBossInstance activeScarlet = null;
 		protected List<L2MonsterInstance> demons = new FastList<>();
@@ -194,7 +194,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 	private static final int TIME_BETWEEN_DEMON_SPAWNS = 20000;
 	private static final int MAX_DEMONS = 24;
 	private static final boolean debug = false;
-	private final Map<Integer, L2Territory> _spawnZoneList = new HashMap<>();
+	private final Map<Integer, Territory> _spawnZoneList = new HashMap<>();
 	private final Map<Integer, List<FETSpawn>> _spawnList = new HashMap<>();
 	private final List<Integer> _mustKillMobsId = new FastList<>();
 	protected static final int[] FIRST_ROOM_DOORS =
@@ -431,7 +431,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 									continue;
 								}
 								int maxz = Integer.parseInt(att.getNodeValue());
-								L2Territory ter = new L2Territory(id);
+								Territory ter = new Territory(id);
 								
 								for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
 								{
@@ -488,14 +488,14 @@ public final class FinalEmperialTomb extends AbstractInstance
 			return true;
 		}
 		
-		final L2Party party = player.getParty();
+		final Party party = player.getParty();
 		if (party == null)
 		{
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_CURRENTLY_IN_A_PARTY_SO_YOU_CANNOT_ENTER);
 			return false;
 		}
 		
-		final L2CommandChannel channel = player.getParty().getCommandChannel();
+		final CommandChannel channel = player.getParty().getCommandChannel();
 		if (channel == null)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_ENTER_BECAUSE_YOU_ARE_NOT_ASSOCIATED_WITH_THE_CURRENT_COMMAND_CHANNEL);
@@ -569,7 +569,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 		}
 	}
 	
-	protected boolean checkKillProgress(L2Npc mob, FETWorld world)
+	protected boolean checkKillProgress(Npc mob, FETWorld world)
 	{
 		if (world.npcList.contains(mob))
 		{
@@ -721,7 +721,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 	
 	protected void spawn(FETWorld world, int npcId, int x, int y, int z, int h, boolean addToKillTable)
 	{
-		final L2Npc npc = addSpawn(npcId, x, y, z, h, false, 0, false, world.getInstanceId());
+		final Npc npc = addSpawn(npcId, x, y, z, h, false, 0, false, world.getInstanceId());
 		if (addToKillTable)
 		{
 			world.npcList.add(npc);
@@ -729,7 +729,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 		npc.setIsNoRndWalk(true);
 		if (npc.isInstanceTypes(InstanceType.L2Attackable))
 		{
-			((L2Attackable) npc).setSeeThroughSilentMove(true);
+			((Attackable) npc).setSeeThroughSilentMove(true);
 		}
 		if (Util.contains(AI_DISABLED_MOBS, npcId))
 		{
@@ -777,9 +777,9 @@ public final class FinalEmperialTomb extends AbstractInstance
 	
 	private class SoulBreakingArrow implements Runnable
 	{
-		private final L2Npc _npc;
+		private final Npc _npc;
 		
-		protected SoulBreakingArrow(L2Npc npc)
+		protected SoulBreakingArrow(Npc npc)
 		{
 			_npc = npc;
 		}
@@ -850,19 +850,19 @@ public final class FinalEmperialTomb extends AbstractInstance
 					
 					if ((_world.frintezza != null) && !_world.frintezza.isDead() && (_world.activeScarlet != null) && !_world.activeScarlet.isDead())
 					{
-						List<L2Character> targetList = new FastList<>();
+						List<Creature> targetList = new FastList<>();
 						if (skill.hasEffectType(L2EffectType.STUN) || skill.isDebuff())
 						{
 							for (int objId : _world.getAllowed())
 							{
-								L2PcInstance player = L2World.getInstance().getPlayer(objId);
+								L2PcInstance player = World.getInstance().getPlayer(objId);
 								if ((player != null) && player.isOnline() && (player.getInstanceId() == _world.getInstanceId()))
 								{
 									if (!player.isDead())
 									{
 										targetList.add(player);
 									}
-									final L2Summon pet = player.getPet();
+									final Summon pet = player.getPet();
 									if ((pet != null) && !pet.isDead())
 									{
 										targetList.add(pet);
@@ -883,7 +883,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 						}
 						if (targetList.size() > 0)
 						{
-							_world.frintezza.doCast(skill, targetList.get(0), targetList.toArray(new L2Character[targetList.size()]));
+							_world.frintezza.doCast(skill, targetList.get(0), targetList.toArray(new Creature[targetList.size()]));
 						}
 					}
 					break;
@@ -1210,7 +1210,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 		{
 			for (int objId : _world.getAllowed())
 			{
-				L2PcInstance player = L2World.getInstance().getPlayer(objId);
+				L2PcInstance player = World.getInstance().getPlayer(objId);
 				if ((player != null) && player.isOnline() && (player.getInstanceId() == _world.getInstanceId()))
 				{
 					player.abortAttack();
@@ -1228,7 +1228,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 		{
 			for (int objId : _world.getAllowed())
 			{
-				L2PcInstance player = L2World.getInstance().getPlayer(objId);
+				L2PcInstance player = World.getInstance().getPlayer(objId);
 				if ((player != null) && player.isOnline() && (player.getInstanceId() == _world.getInstanceId()))
 				{
 					player.enableAllSkills();
@@ -1241,7 +1241,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 		{
 			for (int objId : _world.getAllowed())
 			{
-				L2PcInstance player = L2World.getInstance().getPlayer(objId);
+				L2PcInstance player = World.getInstance().getPlayer(objId);
 				if ((player != null) && player.isOnline() && (player.getInstanceId() == _world.getInstanceId()))
 				{
 					if (player.getX() < x)
@@ -1305,12 +1305,12 @@ public final class FinalEmperialTomb extends AbstractInstance
 		
 		private void addAggroToMobs()
 		{
-			L2PcInstance target = L2World.getInstance().getPlayer(_world.getAllowed().get(getRandom(_world.getAllowed().size())));
+			L2PcInstance target = World.getInstance().getPlayer(_world.getAllowed().get(getRandom(_world.getAllowed().size())));
 			if ((target == null) || (target.getInstanceId() != _world.getInstanceId()) || target.isDead() || target.isFakeDeath())
 			{
 				for (int objId : _world.getAllowed())
 				{
-					target = L2World.getInstance().getPlayer(objId);
+					target = World.getInstance().getPlayer(objId);
 					if ((target != null) && (target.getInstanceId() == _world.getInstanceId()) && !target.isDead() && !target.isFakeDeath())
 					{
 						break;
@@ -1318,7 +1318,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 					target = null;
 				}
 			}
-			for (L2Npc mob : _world.npcList)
+			for (Npc mob : _world.npcList)
 			{
 				mob.setRunning();
 				if (target != null)
@@ -1338,7 +1338,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 	{
 		for (int objId : world.getAllowed())
 		{
-			L2PcInstance player = L2World.getInstance().getPlayer(objId);
+			L2PcInstance player = World.getInstance().getPlayer(objId);
 			if ((player != null) && player.isOnline() && (player.getInstanceId() == world.getInstanceId()))
 			{
 				player.sendPacket(packet);
@@ -1346,12 +1346,12 @@ public final class FinalEmperialTomb extends AbstractInstance
 		}
 	}
 	
-	protected void updateKnownList(FETWorld world, L2Npc npc)
+	protected void updateKnownList(FETWorld world, Npc npc)
 	{
 		Map<Integer, L2PcInstance> npcKnownPlayers = npc.getKnownList().getKnownPlayers();
 		for (int objId : world.getAllowed())
 		{
-			L2PcInstance player = L2World.getInstance().getPlayer(objId);
+			L2PcInstance player = World.getInstance().getPlayer(objId);
 			if ((player != null) && player.isOnline() && (player.getInstanceId() == world.getInstanceId()))
 			{
 				npcKnownPlayers.put(player.getObjectId(), player);
@@ -1360,7 +1360,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpworld instanceof FETWorld)
@@ -1393,7 +1393,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 	}
 	
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill)
+	public String onSpellFinished(Npc npc, L2PcInstance player, Skill skill)
 	{
 		if (skill.isSuicideAttack())
 		{
@@ -1403,7 +1403,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpworld instanceof FETWorld)
@@ -1461,7 +1461,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		int npcId = npc.getId();
 		getQuestState(player, true);

@@ -28,11 +28,11 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.datatables.ItemTable;
 import com.l2jserver.gameserver.enums.ItemGrade;
 import com.l2jserver.gameserver.model.Elementals;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.commission.CommissionItemType;
 import com.l2jserver.gameserver.model.conditions.Condition;
@@ -687,7 +687,7 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 	 * @param player : L2Character pointing out the player
 	 * @return the list of functions
 	 */
-	public final List<AbstractFunction> getStatFuncs(L2ItemInstance item, L2Character player)
+	public final List<AbstractFunction> getStatFuncs(L2ItemInstance item, Creature player)
 	{
 		if ((_funcTemplates == null) || _funcTemplates.isEmpty())
 		{
@@ -781,7 +781,7 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 		return _unequipSkill == null ? null : _unequipSkill.getSkill();
 	}
 	
-	public boolean checkCondition(L2Character activeChar, L2Object object, boolean sendMessage)
+	public boolean checkCondition(Creature activeChar, WorldObject object, boolean sendMessage)
 	{
 		if (activeChar.canOverrideCond(PcCondOverride.ITEM_CONDITIONS) && !Config.GM_ITEM_RESTRICTION)
 		{
@@ -807,7 +807,7 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 			return true;
 		}
 		
-		final L2Character target = (object instanceof L2Character) ? (L2Character) object : null;
+		final Creature target = (object instanceof Creature) ? (Creature) object : null;
 		for (Condition preCondition : _preConditions)
 		{
 			if (preCondition == null)
@@ -817,7 +817,7 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 			
 			if (!preCondition.test(activeChar, target, null, null))
 			{
-				if (activeChar instanceof L2Summon)
+				if (activeChar instanceof Summon)
 				{
 					activeChar.sendPacket(SystemMessageId.THIS_PET_CANNOT_USE_THIS_ITEM);
 					return false;

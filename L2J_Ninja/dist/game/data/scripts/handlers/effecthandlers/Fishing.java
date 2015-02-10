@@ -23,7 +23,7 @@ import com.l2jserver.gameserver.GeoData;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
@@ -71,7 +71,7 @@ public final class Fishing extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		final L2Character activeChar = info.getEffector();
+		final Creature activeChar = info.getEffector();
 		if (!activeChar.isPlayer())
 		{
 			return;

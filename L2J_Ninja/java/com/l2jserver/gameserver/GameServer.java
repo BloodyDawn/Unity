@@ -131,7 +131,7 @@ import com.l2jserver.gameserver.instancemanager.SiegeManager;
 import com.l2jserver.gameserver.instancemanager.WalkingManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.AutoSpawnHandler;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.PartyMatchRoomList;
 import com.l2jserver.gameserver.model.PartyMatchWaitingList;
 import com.l2jserver.gameserver.model.entity.Hero;
@@ -204,7 +204,7 @@ public class GameServer
 		// start game time control early
 		GameTimeController.init();
 		InstanceManager.getInstance();
-		L2World.getInstance();
+		World.getInstance();
 		MapRegionManager.getInstance();
 		AnnouncementsTable.getInstance();
 		GlobalVariablesManager.getInstance();

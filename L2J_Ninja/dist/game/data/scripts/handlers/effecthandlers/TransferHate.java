@@ -19,8 +19,8 @@
 package handlers.effecthandlers;
 
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
@@ -63,14 +63,14 @@ public final class TransferHate extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		for (L2Character obj : info.getEffector().getKnownList().getKnownCharactersInRadius(info.getSkill().getAffectRange()))
+		for (Creature obj : info.getEffector().getKnownList().getKnownCharactersInRadius(info.getSkill().getAffectRange()))
 		{
 			if ((obj == null) || !obj.isAttackable() || obj.isDead())
 			{
 				continue;
 			}
 			
-			final L2Attackable hater = ((L2Attackable) obj);
+			final Attackable hater = ((Attackable) obj);
 			final int hate = hater.getHating(info.getEffector());
 			if (hate <= 0)
 			{

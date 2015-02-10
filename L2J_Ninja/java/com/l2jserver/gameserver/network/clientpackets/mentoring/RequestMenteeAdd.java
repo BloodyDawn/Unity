@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.network.clientpackets.mentoring;
 
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.clientpackets.L2GameClientPacket;
@@ -47,7 +47,7 @@ public class RequestMenteeAdd extends L2GameClientPacket
 			return;
 		}
 		
-		final L2PcInstance mentee = L2World.getInstance().getPlayer(_target);
+		final L2PcInstance mentee = World.getInstance().getPlayer(_target);
 		if (mentee == null)
 		{
 			return;

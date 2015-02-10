@@ -21,7 +21,7 @@ package com.l2jserver.gameserver.network.clientpackets;
 import com.l2jserver.gameserver.enums.UserInfoType;
 import com.l2jserver.gameserver.instancemanager.ClanEntryManager;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.JoinPledge;
 import com.l2jserver.gameserver.network.serverpackets.UserInfo;
@@ -57,7 +57,7 @@ public class RequestPledgeWaitingUserAccept extends L2GameClientPacket
 		
 		if (_acceptRequest)
 		{
-			final L2PcInstance player = L2World.getInstance().getPlayer(_playerId);
+			final L2PcInstance player = World.getInstance().getPlayer(_playerId);
 			if (player != null)
 			{
 				final L2Clan clan = activeChar.getClan();

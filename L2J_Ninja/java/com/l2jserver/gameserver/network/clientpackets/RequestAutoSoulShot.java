@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.network.clientpackets;
 
 import com.l2jserver.gameserver.enums.PrivateStoreType;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.items.L2Item;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
@@ -78,12 +78,12 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 						if (isSoulshot)
 						{
 							int soulshotCount = 0;
-							final L2Summon pet = activeChar.getPet();
+							final Summon pet = activeChar.getPet();
 							if (pet != null)
 							{
 								soulshotCount += pet.getSoulShotsPerHit();
 							}
-							for (L2Summon servitor : activeChar.getServitors().values())
+							for (Summon servitor : activeChar.getServitors().values())
 							{
 								soulshotCount += servitor.getSoulShotsPerHit();
 							}
@@ -96,12 +96,12 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 						else if (isSpiritshot)
 						{
 							int spiritshotCount = 0;
-							final L2Summon pet = activeChar.getPet();
+							final Summon pet = activeChar.getPet();
 							if (pet != null)
 							{
 								spiritshotCount += pet.getSpiritShotsPerHit();
 							}
-							for (L2Summon servitor : activeChar.getServitors().values())
+							for (Summon servitor : activeChar.getServitors().values())
 							{
 								spiritshotCount += servitor.getSpiritShotsPerHit();
 							}
@@ -122,7 +122,7 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 						activeChar.sendPacket(sm);
 						
 						// Recharge summon's shots
-						final L2Summon pet = activeChar.getPet();
+						final Summon pet = activeChar.getPet();
 						if (pet != null)
 						{
 							pet.rechargeShots(isSoulshot, isSpiritshot);

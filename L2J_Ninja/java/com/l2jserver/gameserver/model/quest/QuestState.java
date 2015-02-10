@@ -31,8 +31,8 @@ import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.enums.QuestSound;
 import com.l2jserver.gameserver.enums.QuestType;
 import com.l2jserver.gameserver.instancemanager.QuestManager;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.AbstractScript;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
@@ -646,9 +646,9 @@ public final class QuestState
 	
 	/**
 	 * Add player to get notification of characters death
-	 * @param character the {@link L2Character} object of the character to get notification of death
+	 * @param character the {@link Creature} object of the character to get notification of death
 	 */
-	public void addNotifyOfDeath(L2Character character)
+	public void addNotifyOfDeath(Creature character)
 	{
 		if (!(character instanceof L2PcInstance))
 		{
@@ -757,12 +757,12 @@ public final class QuestState
 		return AbstractScript.giveItemRandomly(_player, null, itemId, amount, amount, limit, dropChance, playSound);
 	}
 	
-	public boolean giveItemRandomly(L2Npc npc, int itemId, long amount, long limit, double dropChance, boolean playSound)
+	public boolean giveItemRandomly(Npc npc, int itemId, long amount, long limit, double dropChance, boolean playSound)
 	{
 		return AbstractScript.giveItemRandomly(_player, npc, itemId, amount, amount, limit, dropChance, playSound);
 	}
 	
-	public boolean giveItemRandomly(L2Npc npc, int itemId, long minAmount, long maxAmount, long limit, double dropChance, boolean playSound)
+	public boolean giveItemRandomly(Npc npc, int itemId, long minAmount, long maxAmount, long limit, double dropChance, boolean playSound)
 	{
 		return AbstractScript.giveItemRandomly(_player, npc, itemId, minAmount, maxAmount, limit, dropChance, playSound);
 	}
@@ -872,7 +872,7 @@ public final class QuestState
 	 * @param time time in milliseconds till the event is executed
 	 * @param npc the L2Npc associated with this event
 	 */
-	public void startQuestTimer(String name, long time, L2Npc npc)
+	public void startQuestTimer(String name, long time, Npc npc)
 	{
 		getQuest().startQuestTimer(name, time, npc, _player, false);
 	}
@@ -895,7 +895,7 @@ public final class QuestState
 	 * @param time time in milliseconds till the event is executed/repeated
 	 * @param npc the L2Npc associated with this event
 	 */
-	public void startRepeatingQuestTimer(String name, long time, L2Npc npc)
+	public void startRepeatingQuestTimer(String name, long time, Npc npc)
 	{
 		getQuest().startQuestTimer(name, time, npc, _player, true);
 	}
@@ -914,10 +914,10 @@ public final class QuestState
 	 * Add a temporary spawn of the specified npc.<br>
 	 * Player's coordinates will be used for the spawn.
 	 * @param npcId the Id of the npc to spawn
-	 * @return the {@link L2Npc} object of the newly spawned npc or {@code null} if the npc doesn't exist
+	 * @return the {@link Npc} object of the newly spawned npc or {@code null} if the npc doesn't exist
 	 * @see #addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, int despawnDelay, boolean isSummonSpawn)
 	 */
-	public L2Npc addSpawn(int npcId)
+	public Npc addSpawn(int npcId)
 	{
 		return addSpawn(npcId, _player.getX(), _player.getY(), _player.getZ(), 0, false, 0, false);
 	}
@@ -927,10 +927,10 @@ public final class QuestState
 	 * Player's coordinates will be used for the spawn.
 	 * @param npcId the Id of the npc to spawn
 	 * @param despawnDelay time in milliseconds till the npc is despawned (default: 0)
-	 * @return the {@link L2Npc} object of the newly spawned npc or {@code null} if the npc doesn't exist
+	 * @return the {@link Npc} object of the newly spawned npc or {@code null} if the npc doesn't exist
 	 * @see #addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, int despawnDelay, boolean isSummonSpawn)
 	 */
-	public L2Npc addSpawn(int npcId, int despawnDelay)
+	public Npc addSpawn(int npcId, int despawnDelay)
 	{
 		return addSpawn(npcId, _player.getX(), _player.getY(), _player.getZ(), 0, false, despawnDelay, false);
 	}
@@ -941,10 +941,10 @@ public final class QuestState
 	 * @param x the X coordinate of the npc spawn location
 	 * @param y the Y coordinate of the npc spawn location
 	 * @param z the Z coordinate (height) of the npc spawn location
-	 * @return the {@link L2Npc} object of the newly spawned npc or {@code null} if the npc doesn't exist
+	 * @return the {@link Npc} object of the newly spawned npc or {@code null} if the npc doesn't exist
 	 * @see #addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, int despawnDelay, boolean isSummonSpawn)
 	 */
-	public L2Npc addSpawn(int npcId, int x, int y, int z)
+	public Npc addSpawn(int npcId, int x, int y, int z)
 	{
 		return addSpawn(npcId, x, y, z, 0, false, 0, false);
 	}
@@ -956,10 +956,10 @@ public final class QuestState
 	 * @param y the Y coordinate of the npc spawn location
 	 * @param z the Z coordinate (height) of the npc spawn location
 	 * @param despawnDelay time in milliseconds till the npc is despawned (default: 0)
-	 * @return the {@link L2Npc} object of the newly spawned npc or {@code null} if the npc doesn't exist
+	 * @return the {@link Npc} object of the newly spawned npc or {@code null} if the npc doesn't exist
 	 * @see #addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, int despawnDelay, boolean isSummonSpawn)
 	 */
-	public L2Npc addSpawn(int npcId, int x, int y, int z, int despawnDelay)
+	public Npc addSpawn(int npcId, int x, int y, int z, int despawnDelay)
 	{
 		return addSpawn(npcId, x, y, z, 0, false, despawnDelay, false);
 	}
@@ -968,10 +968,10 @@ public final class QuestState
 	 * Add a temporary spawn of the specified npc.
 	 * @param npcId the Id of the npc to spawn
 	 * @param cha the character whose coordinates will be used for the npc spawn
-	 * @return the {@link L2Npc} object of the newly spawned npc or {@code null} if the npc doesn't exist
+	 * @return the {@link Npc} object of the newly spawned npc or {@code null} if the npc doesn't exist
 	 * @see #addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, int despawnDelay, boolean isSummonSpawn)
 	 */
-	public L2Npc addSpawn(int npcId, L2Character cha)
+	public Npc addSpawn(int npcId, Creature cha)
 	{
 		return addSpawn(npcId, cha.getX(), cha.getY(), cha.getZ(), cha.getHeading(), true, 0, false);
 	}
@@ -981,10 +981,10 @@ public final class QuestState
 	 * @param npcId the Id of the npc to spawn
 	 * @param cha the character whose coordinates will be used for the npc spawn
 	 * @param despawnDelay time in milliseconds till the npc is despawned (default: 0)
-	 * @return the {@link L2Npc} object of the newly spawned npc or {@code null} if the npc doesn't exist
+	 * @return the {@link Npc} object of the newly spawned npc or {@code null} if the npc doesn't exist
 	 * @see #addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, int despawnDelay, boolean isSummonSpawn)
 	 */
-	public L2Npc addSpawn(int npcId, L2Character cha, int despawnDelay)
+	public Npc addSpawn(int npcId, Creature cha, int despawnDelay)
 	{
 		return addSpawn(npcId, cha.getX(), cha.getY(), cha.getZ(), cha.getHeading(), true, despawnDelay, false);
 	}
@@ -995,10 +995,10 @@ public final class QuestState
 	 * @param cha the character whose coordinates will be used for the npc spawn
 	 * @param randomOffset if {@code true}, adds +/- 50~100 to X/Y coordinates of the spawn location
 	 * @param despawnDelay time in milliseconds till the npc is despawned (default: 0)
-	 * @return the {@link L2Npc} object of the newly spawned npc or {@code null} if the npc doesn't exist
+	 * @return the {@link Npc} object of the newly spawned npc or {@code null} if the npc doesn't exist
 	 * @see #addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, int despawnDelay, boolean isSummonSpawn)
 	 */
-	public L2Npc addSpawn(int npcId, L2Character cha, boolean randomOffset, int despawnDelay)
+	public Npc addSpawn(int npcId, Creature cha, boolean randomOffset, int despawnDelay)
 	{
 		return addSpawn(npcId, cha.getX(), cha.getY(), cha.getZ(), cha.getHeading(), randomOffset, despawnDelay, false);
 	}
@@ -1012,10 +1012,10 @@ public final class QuestState
 	 * @param heading the heading of the npc
 	 * @param randomOffset if {@code true}, adds +/- 50~100 to X/Y coordinates of the spawn location
 	 * @param despawnDelay time in milliseconds till the npc is despawned (default: 0)
-	 * @return the {@link L2Npc} object of the newly spawned npc or {@code null} if the npc doesn't exist
+	 * @return the {@link Npc} object of the newly spawned npc or {@code null} if the npc doesn't exist
 	 * @see #addSpawn(int, int, int, int, int, boolean, int, boolean)
 	 */
-	public L2Npc addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, int despawnDelay)
+	public Npc addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, int despawnDelay)
 	{
 		return addSpawn(npcId, x, y, z, heading, randomOffset, despawnDelay, false);
 	}
@@ -1030,18 +1030,18 @@ public final class QuestState
 	 * @param randomOffset if {@code true}, adds +/- 50~100 to X/Y coordinates of the spawn location
 	 * @param despawnDelay time in milliseconds till the npc is despawned (default: 0)
 	 * @param isSummonSpawn if {@code true}, displays a summon animation on npc spawn (default: {@code false})
-	 * @return the {@link L2Npc} object of the newly spawned npc or {@code null} if the npc doesn't exist
+	 * @return the {@link Npc} object of the newly spawned npc or {@code null} if the npc doesn't exist
 	 * @see #addSpawn(int)
 	 * @see #addSpawn(int, int)
-	 * @see #addSpawn(int, L2Character)
-	 * @see #addSpawn(int, L2Character, int)
+	 * @see #addSpawn(int, Creature)
+	 * @see #addSpawn(int, Creature, int)
 	 * @see #addSpawn(int, int, int, int)
-	 * @see #addSpawn(int, L2Character, boolean, int)
+	 * @see #addSpawn(int, Creature, boolean, int)
 	 * @see #addSpawn(int, int, int, int, int)
 	 * @see #addSpawn(int, int, int, int, int, boolean, int)
 	 * @see #addSpawn(int, int, int, int, int, boolean, int, boolean)
 	 */
-	public L2Npc addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, int despawnDelay, boolean isSummonSpawn)
+	public Npc addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, int despawnDelay, boolean isSummonSpawn)
 	{
 		return AbstractScript.addSpawn(npcId, x, y, z, heading, randomOffset, despawnDelay, isSummonSpawn);
 	}
@@ -1050,9 +1050,9 @@ public final class QuestState
 	 * Send an HTML file to the specified player.
 	 * @param filename the name of the HTML file to show
 	 * @return the contents of the HTML file that was sent to the player
-	 * @see #showHtmlFile(String, L2Npc)
+	 * @see #showHtmlFile(String, Npc)
 	 * @see Quest#showHtmlFile(L2PcInstance, String)
-	 * @see Quest#showHtmlFile(L2PcInstance, String, L2Npc)
+	 * @see Quest#showHtmlFile(L2PcInstance, String, Npc)
 	 */
 	public String showHtmlFile(String filename)
 	{
@@ -1065,9 +1065,9 @@ public final class QuestState
 	 * @param npc the NPC that is showing the HTML file
 	 * @return the contents of the HTML file that was sent to the player
 	 * @see Quest#showHtmlFile(L2PcInstance, String)
-	 * @see Quest#showHtmlFile(L2PcInstance, String, L2Npc)
+	 * @see Quest#showHtmlFile(L2PcInstance, String, Npc)
 	 */
-	public String showHtmlFile(String filename, L2Npc npc)
+	public String showHtmlFile(String filename, Npc npc)
 	{
 		return getQuest().showHtmlFile(_player, filename, npc);
 	}

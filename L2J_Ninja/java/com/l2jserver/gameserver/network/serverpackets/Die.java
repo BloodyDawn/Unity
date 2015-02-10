@@ -26,8 +26,8 @@ import com.l2jserver.gameserver.instancemanager.CHSiegeManager;
 import com.l2jserver.gameserver.instancemanager.CastleManager;
 import com.l2jserver.gameserver.instancemanager.FortManager;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2SiegeClan;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.SiegeClan;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.entity.Castle;
 import com.l2jserver.gameserver.model.entity.Fort;
 import com.l2jserver.gameserver.model.entity.clanhall.SiegableHall;
@@ -49,7 +49,7 @@ public class Die extends L2GameServerPacket
 	private List<Integer> _items = null;
 	private boolean _itemsEnabled;
 	
-	public Die(L2Character activeChar)
+	public Die(Creature activeChar)
 	{
 		_objectId = activeChar.getObjectId();
 		if (activeChar.isPlayer())
@@ -58,7 +58,7 @@ public class Die extends L2GameServerPacket
 			boolean isInCastleDefense = false;
 			boolean isInFortDefense = false;
 			
-			L2SiegeClan siegeClan = null;
+			SiegeClan siegeClan = null;
 			final Castle castle = CastleManager.getInstance().getCastle(activeChar);
 			final Fort fort = FortManager.getInstance().getFort(activeChar);
 			final SiegableHall hall = CHSiegeManager.getInstance().getNearbyClanHall(activeChar);

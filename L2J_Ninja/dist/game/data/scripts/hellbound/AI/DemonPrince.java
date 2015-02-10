@@ -23,7 +23,7 @@ import java.util.Map;
 import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -57,7 +57,7 @@ public final class DemonPrince extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.equalsIgnoreCase("cast") && (npc != null) && (npc.getId() == FIEND) && !npc.isDead())
 		{
@@ -67,7 +67,7 @@ public final class DemonPrince extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
 		if (!npc.isDead())
 		{
@@ -93,14 +93,14 @@ public final class DemonPrince extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		ATTACK_STATE.remove(npc.getObjectId());
 		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
+	public final String onSpawn(Npc npc)
 	{
 		if (npc.getId() == FIEND)
 		{
@@ -109,7 +109,7 @@ public final class DemonPrince extends AbstractNpcAI
 		return super.onSpawn(npc);
 	}
 	
-	private void spawnMinions(L2Npc master)
+	private void spawnMinions(Npc master)
 	{
 		if ((master != null) && !master.isDead())
 		{

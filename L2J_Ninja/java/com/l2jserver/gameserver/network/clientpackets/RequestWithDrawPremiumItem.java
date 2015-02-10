@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.network.clientpackets;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.model.L2PremiumItem;
+import com.l2jserver.gameserver.model.PremiumItem;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ExGetPremiumItemList;
@@ -78,7 +78,7 @@ public final class RequestWithDrawPremiumItem extends L2GameClientPacket
 			return;
 		}
 		
-		L2PremiumItem _item = activeChar.getPremiumItemList().get(_itemNum);
+		PremiumItem _item = activeChar.getPremiumItemList().get(_itemNum);
 		if (_item == null)
 		{
 			return;

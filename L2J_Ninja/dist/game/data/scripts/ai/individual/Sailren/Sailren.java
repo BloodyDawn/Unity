@@ -23,8 +23,8 @@ import ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.instancemanager.GlobalVariablesManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.TeleportWhereType;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2RaidBossInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
@@ -83,7 +83,7 @@ public final class Sailren extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		switch (event)
 		{
@@ -151,7 +151,7 @@ public final class Sailren extends AbstractNpcAI
 			case "SPAWN_SAILREN":
 			{
 				final L2RaidBossInstance sailren = (L2RaidBossInstance) addSpawn(SAILREN, 27549, -6638, -2008, 0, false, 0);
-				final L2Npc movieNpc = addSpawn(MOVIE_NPC, sailren.getX(), sailren.getY(), sailren.getZ() + 30, 0, false, 26000);
+				final Npc movieNpc = addSpawn(MOVIE_NPC, sailren.getX(), sailren.getY(), sailren.getZ() + 30, 0, false, 26000);
 				sailren.setIsInvul(true);
 				sailren.setIsImmobilized(true);
 				zone.broadcastPacket(new SpecialCamera(movieNpc, 60, 110, 30, 4000, 1500, 20000, 0, 65, 1, 0, 0));
@@ -223,7 +223,7 @@ public final class Sailren extends AbstractNpcAI
 				{
 					STATUS = Status.ALIVE;
 				}
-				for (L2Character charInside : zone.getCharactersInside())
+				for (Creature charInside : zone.getCharactersInside())
 				{
 					if (charInside != null)
 					{
@@ -257,7 +257,7 @@ public final class Sailren extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
 		if (zone.isCharacterInZone(attacker))
 		{
@@ -267,7 +267,7 @@ public final class Sailren extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		if (zone.isCharacterInZone(killer))
 		{
@@ -290,7 +290,7 @@ public final class Sailren extends AbstractNpcAI
 					_killCount++;
 					if (_killCount == 3)
 					{
-						final L2Npc pterosaur = addSpawn(PTEROSAUR, 27313, -6766, -1975, 0, false, 0);
+						final Npc pterosaur = addSpawn(PTEROSAUR, 27313, -6766, -1975, 0, false, 0);
 						addAttackPlayerDesire(pterosaur, killer);
 						_killCount = 0;
 					}
@@ -298,7 +298,7 @@ public final class Sailren extends AbstractNpcAI
 				}
 				case PTEROSAUR:
 				{
-					final L2Npc trex = addSpawn(TREX, 27313, -6766, -1975, 0, false, 0);
+					final Npc trex = addSpawn(TREX, 27313, -6766, -1975, 0, false, 0);
 					addAttackPlayerDesire(trex, killer);
 					break;
 				}

@@ -18,8 +18,8 @@
  */
 package com.l2jserver.gameserver.model.events.impl.character;
 
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -30,13 +30,13 @@ import com.l2jserver.gameserver.model.skills.Skill;
  */
 public class OnCreatureSkillUse implements IBaseEvent
 {
-	private final L2Character _caster;
+	private final Creature _caster;
 	private final Skill _skill;
 	private final boolean _simultaneously;
-	private final L2Character _target;
-	private final L2Object[] _targets;
+	private final Creature _target;
+	private final WorldObject[] _targets;
 	
-	public OnCreatureSkillUse(L2Character caster, Skill skill, boolean simultaneously, L2Character target, L2Object[] targets)
+	public OnCreatureSkillUse(Creature caster, Skill skill, boolean simultaneously, Creature target, WorldObject[] targets)
 	{
 		_caster = caster;
 		_skill = skill;
@@ -45,7 +45,7 @@ public class OnCreatureSkillUse implements IBaseEvent
 		_targets = targets;
 	}
 	
-	public final L2Character getCaster()
+	public final Creature getCaster()
 	{
 		return _caster;
 	}
@@ -60,12 +60,12 @@ public class OnCreatureSkillUse implements IBaseEvent
 		return _simultaneously;
 	}
 	
-	public final L2Character getTarget()
+	public final Creature getTarget()
 	{
 		return _target;
 	}
 	
-	public L2Object[] getTargets()
+	public WorldObject[] getTargets()
 	{
 		return _targets;
 	}

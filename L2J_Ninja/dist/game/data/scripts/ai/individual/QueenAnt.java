@@ -28,9 +28,9 @@ import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.instancemanager.GrandBossManager;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Npc;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Npc;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2GrandBossInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -156,7 +156,7 @@ public final class QueenAnt extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.equalsIgnoreCase("heal"))
 		{
@@ -225,7 +225,7 @@ public final class QueenAnt extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		final L2MonsterInstance mob = (L2MonsterInstance) npc;
 		switch (npc.getId())
@@ -250,7 +250,7 @@ public final class QueenAnt extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFactionCall(L2Npc npc, L2Npc caller, L2PcInstance attacker, boolean isSummon)
+	public String onFactionCall(Npc npc, Npc caller, L2PcInstance attacker, boolean isSummon)
 	{
 		if ((caller == null) || (npc == null))
 		{
@@ -262,14 +262,14 @@ public final class QueenAnt extends AbstractNpcAI
 			if (caller.getCurrentHp() < caller.getMaxHp())
 			{
 				npc.setTarget(caller);
-				((L2Attackable) npc).useMagic(HEAL1.getSkill());
+				((Attackable) npc).useMagic(HEAL1.getSkill());
 			}
 		}
 		return null;
 	}
 	
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAggroRangeEnter(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		if ((npc == null) || (player.isGM() && player.isInvisible()))
 		{
@@ -277,7 +277,7 @@ public final class QueenAnt extends AbstractNpcAI
 		}
 		
 		final boolean isMage;
-		final L2Playable character;
+		final Playable character;
 		if (isSummon)
 		{
 			isMage = false;
@@ -318,7 +318,7 @@ public final class QueenAnt extends AbstractNpcAI
 				curse.applyEffects(npc, character);
 			}
 			
-			((L2Attackable) npc).stopHating(character); // for calling again
+			((Attackable) npc).stopHating(character); // for calling again
 			return null;
 		}
 		
@@ -326,7 +326,7 @@ public final class QueenAnt extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		int npcId = npc.getId();
 		if (npcId == QUEEN)

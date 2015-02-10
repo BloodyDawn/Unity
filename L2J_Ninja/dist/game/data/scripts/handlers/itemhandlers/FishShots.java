@@ -22,8 +22,8 @@ import java.util.logging.Level;
 
 import com.l2jserver.gameserver.enums.ShotType;
 import com.l2jserver.gameserver.handler.IItemHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.items.L2Weapon;
@@ -40,7 +40,7 @@ import com.l2jserver.gameserver.util.Broadcast;
 public class FishShots implements IItemHandler
 {
 	@Override
-	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+	public boolean useItem(Playable playable, L2ItemInstance item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{
@@ -86,7 +86,7 @@ public class FishShots implements IItemHandler
 		
 		activeChar.setChargedShot(ShotType.FISH_SOULSHOTS, true);
 		activeChar.destroyItemWithoutTrace("Consume", item.getObjectId(), 1, null, false);
-		L2Object oldTarget = activeChar.getTarget();
+		WorldObject oldTarget = activeChar.getTarget();
 		activeChar.setTarget(activeChar);
 		
 		Broadcast.toSelfAndKnownPlayers(activeChar, new MagicSkillUse(activeChar, skills[0].getSkillId(), skills[0].getSkillLvl(), 0, 0));

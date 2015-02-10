@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.model.events.impl.character.npc.attackable;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
@@ -28,18 +28,18 @@ import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
  */
 public class OnAttackableAggroRangeEnter implements IBaseEvent
 {
-	private final L2Npc _npc;
+	private final Npc _npc;
 	private final L2PcInstance _activeChar;
 	private final boolean _isSummon;
 	
-	public OnAttackableAggroRangeEnter(L2Npc npc, L2PcInstance attacker, boolean isSummon)
+	public OnAttackableAggroRangeEnter(Npc npc, L2PcInstance attacker, boolean isSummon)
 	{
 		_npc = npc;
 		_activeChar = attacker;
 		_isSummon = isSummon;
 	}
 	
-	public L2Npc getNpc()
+	public Npc getNpc()
 	{
 		return _npc;
 	}

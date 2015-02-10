@@ -23,7 +23,7 @@ import instances.AbstractInstance;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
@@ -37,7 +37,7 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 {
 	protected static final class MoSWorld extends InstanceWorld
 	{
-		protected L2Npc elcadia = null;
+		protected Npc elcadia = null;
 	}
 	
 	// NPCs
@@ -99,7 +99,7 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(player);
 		if (!(tmpworld instanceof MoSWorld))
@@ -187,7 +187,7 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
+	public String onTalk(Npc npc, L2PcInstance talker)
 	{
 		if (npc.getId() == ODD_GLOBE)
 		{

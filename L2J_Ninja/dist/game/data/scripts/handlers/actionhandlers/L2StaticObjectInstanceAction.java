@@ -22,8 +22,8 @@ import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.cache.HtmCache;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.handler.IActionHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2StaticObjectInstance;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -31,7 +31,7 @@ import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 public class L2StaticObjectInstanceAction implements IActionHandler
 {
 	@Override
-	public boolean action(final L2PcInstance activeChar, final L2Object target, final boolean interact)
+	public boolean action(final L2PcInstance activeChar, final WorldObject target, final boolean interact)
 	{
 		final L2StaticObjectInstance staticObject = (L2StaticObjectInstance) target;
 		if (staticObject.getType() < 0)
@@ -48,7 +48,7 @@ public class L2StaticObjectInstanceAction implements IActionHandler
 		else if (interact)
 		{
 			// Calculate the distance between the L2PcInstance and the L2NpcInstance
-			if (!activeChar.isInsideRadius(staticObject, L2Npc.INTERACTION_DISTANCE, false, false))
+			if (!activeChar.isInsideRadius(staticObject, Npc.INTERACTION_DISTANCE, false, false))
 			{
 				// Notify the L2PcInstance AI with AI_INTENTION_INTERACT
 				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, staticObject);

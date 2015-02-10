@@ -22,7 +22,7 @@ import java.util.logging.Logger;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.instance.L2GuardInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 
@@ -36,7 +36,7 @@ public class GuardKnownList extends AttackableKnownList
 	}
 	
 	@Override
-	public boolean addKnownObject(L2Object object)
+	public boolean addKnownObject(WorldObject object)
 	{
 		if (!super.addKnownObject(object))
 		{
@@ -82,7 +82,7 @@ public class GuardKnownList extends AttackableKnownList
 	}
 	
 	@Override
-	protected boolean removeKnownObject(L2Object object, boolean forget)
+	protected boolean removeKnownObject(WorldObject object, boolean forget)
 	{
 		if (!super.removeKnownObject(object, forget))
 		{

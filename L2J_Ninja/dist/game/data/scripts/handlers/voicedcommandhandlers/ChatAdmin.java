@@ -24,7 +24,7 @@ import com.l2jserver.gameserver.data.sql.impl.CharNameTable;
 import com.l2jserver.gameserver.data.xml.impl.AdminData;
 import com.l2jserver.gameserver.handler.IVoicedCommandHandler;
 import com.l2jserver.gameserver.instancemanager.PunishmentManager;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.punishment.PunishmentAffect;
 import com.l2jserver.gameserver.model.punishment.PunishmentTask;
@@ -71,7 +71,7 @@ public class ChatAdmin implements IVoicedCommandHandler
 				int objId = CharNameTable.getInstance().getIdByName(name);
 				if (objId > 0)
 				{
-					L2PcInstance player = L2World.getInstance().getPlayer(objId);
+					L2PcInstance player = World.getInstance().getPlayer(objId);
 					if ((player == null) || !player.isOnline())
 					{
 						activeChar.sendMessage("Player not online !");
@@ -132,7 +132,7 @@ public class ChatAdmin implements IVoicedCommandHandler
 				int objId = CharNameTable.getInstance().getIdByName(name);
 				if (objId > 0)
 				{
-					L2PcInstance player = L2World.getInstance().getPlayer(objId);
+					L2PcInstance player = World.getInstance().getPlayer(objId);
 					if ((player == null) || !player.isOnline())
 					{
 						activeChar.sendMessage("Player not online !");

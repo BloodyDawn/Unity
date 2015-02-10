@@ -22,7 +22,7 @@ import java.util.List;
 
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
 import com.l2jserver.gameserver.enums.InstanceType;
-import com.l2jserver.gameserver.model.L2SkillLearn;
+import com.l2jserver.gameserver.model.SkillLearn;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.base.AcquireSkillType;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -69,7 +69,7 @@ public final class L2FishermanInstance extends L2MerchantInstance
 	
 	public static void showFishSkillList(L2PcInstance player)
 	{
-		final List<L2SkillLearn> skills = SkillTreesData.getInstance().getAvailableFishingSkills(player);
+		final List<SkillLearn> skills = SkillTreesData.getInstance().getAvailableFishingSkills(player);
 		
 		if (skills.isEmpty())
 		{

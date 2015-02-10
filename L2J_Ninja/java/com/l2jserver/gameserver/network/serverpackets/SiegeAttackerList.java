@@ -22,7 +22,7 @@ import java.util.Collection;
 
 import com.l2jserver.gameserver.data.sql.impl.ClanTable;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2SiegeClan;
+import com.l2jserver.gameserver.model.SiegeClan;
 import com.l2jserver.gameserver.model.entity.Castle;
 import com.l2jserver.gameserver.model.entity.clanhall.SiegableHall;
 
@@ -81,7 +81,7 @@ public final class SiegeAttackerList extends L2GameServerPacket
 				
 				writeD(size);
 				writeD(size);
-				for (L2SiegeClan siegeclan : _castle.getSiege().getAttackerClans())
+				for (SiegeClan siegeclan : _castle.getSiege().getAttackerClans())
 				{
 					clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
 					if (clan == null)
@@ -112,13 +112,13 @@ public final class SiegeAttackerList extends L2GameServerPacket
 			writeD(0x00); // 0
 			writeD(0x01); // 1
 			writeD(0x00); // 0
-			final Collection<L2SiegeClan> attackers = _hall.getSiege().getAttackerClans();
+			final Collection<SiegeClan> attackers = _hall.getSiege().getAttackerClans();
 			final int size = attackers.size();
 			if (size > 0)
 			{
 				writeD(size);
 				writeD(size);
-				for (L2SiegeClan sClan : attackers)
+				for (SiegeClan sClan : attackers)
 				{
 					final L2Clan clan = ClanTable.getInstance().getClan(sClan.getClanId());
 					if (clan == null)

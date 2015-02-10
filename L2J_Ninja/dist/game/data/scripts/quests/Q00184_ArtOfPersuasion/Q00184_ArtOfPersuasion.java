@@ -21,7 +21,7 @@ package quests.Q00184_ArtOfPersuasion;
 import quests.Q00183_RelicExploration.Q00183_RelicExploration;
 import quests.Q00185_NikolasCooperation.Q00185_NikolasCooperation;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
@@ -56,7 +56,7 @@ public final class Q00184_ArtOfPersuasion extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
@@ -166,7 +166,7 @@ public final class Q00184_ArtOfPersuasion extends Quest
 				{
 					npc.getVariables().set("SPAWNED", true);
 					npc.getVariables().set("PLAYER_ID", player.getObjectId());
-					L2Npc alarm = addSpawn(ALARM_OF_GIANT, player.getX() + 80, player.getY() + 60, player.getZ(), 16384, false, 0);
+					Npc alarm = addSpawn(ALARM_OF_GIANT, player.getX() + 80, player.getY() + 60, player.getZ(), 16384, false, 0);
 					alarm.getVariables().set("player0", player);
 					alarm.getVariables().set("npc0", npc);
 				}
@@ -199,7 +199,7 @@ public final class Q00184_ArtOfPersuasion extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = getQuestState(player, true);
 		final int memoState = qs.getMemoState();

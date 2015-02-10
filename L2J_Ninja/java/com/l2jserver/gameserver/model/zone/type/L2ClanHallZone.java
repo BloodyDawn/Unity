@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.model.zone.type;
 
 import com.l2jserver.gameserver.instancemanager.ClanHallManager;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.entity.ClanHall;
 import com.l2jserver.gameserver.model.entity.clanhall.AuctionableHall;
 import com.l2jserver.gameserver.model.zone.ZoneId;
@@ -60,7 +60,7 @@ public class L2ClanHallZone extends L2ResidenceZone
 	}
 	
 	@Override
-	protected void onEnter(L2Character character)
+	protected void onEnter(Creature character)
 	{
 		if (character.isPlayer())
 		{
@@ -81,7 +81,7 @@ public class L2ClanHallZone extends L2ResidenceZone
 	}
 	
 	@Override
-	protected void onExit(L2Character character)
+	protected void onExit(Creature character)
 	{
 		if (character.isPlayer())
 		{

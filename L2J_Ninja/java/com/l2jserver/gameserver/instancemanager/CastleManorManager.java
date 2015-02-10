@@ -44,7 +44,7 @@ import com.l2jserver.gameserver.data.xml.IXmlReader;
 import com.l2jserver.gameserver.enums.ManorMode;
 import com.l2jserver.gameserver.model.CropProcure;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2ClanMember;
+import com.l2jserver.gameserver.model.ClanMember;
 import com.l2jserver.gameserver.model.L2Seed;
 import com.l2jserver.gameserver.model.SeedProduction;
 import com.l2jserver.gameserver.model.StatsSet;
@@ -366,7 +366,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 					final L2Clan owner = castle.getOwner();
 					if (owner != null)
 					{
-						final L2ClanMember clanLeader = owner.getLeader();
+						final ClanMember clanLeader = owner.getLeader();
 						if ((clanLeader != null) && clanLeader.isOnline())
 						{
 							clanLeader.getPlayerInstance().sendPacket(SystemMessageId.THE_MANOR_INFORMATION_HAS_BEEN_UPDATED);
@@ -406,7 +406,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 						_procureNext.get(castleId).clear();
 						
 						// Notify clan leader
-						final L2ClanMember clanLeader = owner.getLeader();
+						final ClanMember clanLeader = owner.getLeader();
 						if ((clanLeader != null) && clanLeader.isOnline())
 						{
 							clanLeader.getPlayerInstance().sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_FUNDS_IN_THE_CLAN_WAREHOUSE_FOR_THE_MANOR_TO_OPERATE);

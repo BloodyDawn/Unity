@@ -24,7 +24,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import javolution.util.FastList;
 
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.entity.Instance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
@@ -120,7 +120,7 @@ public class InstanceWorld
 	 * @param killer
 	 * @param victim
 	 */
-	public void onDeath(L2Character killer, L2Character victim)
+	public void onDeath(Creature killer, Creature victim)
 	{
 		if ((victim != null) && victim.isPlayer())
 		{

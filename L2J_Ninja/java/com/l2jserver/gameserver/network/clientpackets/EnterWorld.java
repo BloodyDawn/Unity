@@ -41,8 +41,8 @@ import com.l2jserver.gameserver.instancemanager.MailManager;
 import com.l2jserver.gameserver.instancemanager.PetitionManager;
 import com.l2jserver.gameserver.instancemanager.SiegeManager;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.TeleportWhereType;
 import com.l2jserver.gameserver.model.actor.instance.L2ClassMasterInstance;
@@ -166,7 +166,7 @@ public class EnterWorld extends L2GameClientPacket
 			}
 		}
 		
-		if (L2World.getInstance().findObject(activeChar.getObjectId()) != null)
+		if (World.getInstance().findObject(activeChar.getObjectId()) != null)
 		{
 			if (Config.DEBUG)
 			{
@@ -446,7 +446,7 @@ public class EnterWorld extends L2GameClientPacket
 		sm.addString(activeChar.getName());
 		for (int id : activeChar.getFriendList())
 		{
-			L2Object obj = L2World.getInstance().findObject(id);
+			WorldObject obj = World.getInstance().findObject(id);
 			if (obj != null)
 			{
 				obj.sendPacket(sm);
@@ -634,7 +634,7 @@ public class EnterWorld extends L2GameClientPacket
 		int objId = cha.getPartnerId();
 		if (objId != 0)
 		{
-			final L2PcInstance partner = L2World.getInstance().getPlayer(objId);
+			final L2PcInstance partner = World.getInstance().getPlayer(objId);
 			if (partner != null)
 			{
 				partner.sendMessage("Your Partner has logged in.");
@@ -666,7 +666,7 @@ public class EnterWorld extends L2GameClientPacket
 	{
 		if (activeChar.getSponsor() != 0)
 		{
-			final L2PcInstance sponsor = L2World.getInstance().getPlayer(activeChar.getSponsor());
+			final L2PcInstance sponsor = World.getInstance().getPlayer(activeChar.getSponsor());
 			if (sponsor != null)
 			{
 				final SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.YOUR_APPRENTICE_S1_HAS_LOGGED_IN);
@@ -676,7 +676,7 @@ public class EnterWorld extends L2GameClientPacket
 		}
 		else if (activeChar.getApprentice() != 0)
 		{
-			final L2PcInstance apprentice = L2World.getInstance().getPlayer(activeChar.getApprentice());
+			final L2PcInstance apprentice = World.getInstance().getPlayer(activeChar.getApprentice());
 			if (apprentice != null)
 			{
 				final SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.YOUR_SPONSOR_C1_HAS_LOGGED_IN);

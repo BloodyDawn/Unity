@@ -27,7 +27,7 @@ import javax.script.ScriptException;
 
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.instancemanager.QuestManager;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.ListenerRegisterType;
@@ -195,7 +195,7 @@ public class AdminQuest implements IAdminCommandHandler
 			}
 			else
 			{
-				final L2Character character = (L2Character) activeChar.getTarget();
+				final Creature character = (Creature) activeChar.getTarget();
 				final StringBuilder sb = new StringBuilder();
 				final Set<String> questNames = new TreeSet<>();
 				for (EventType type : EventType.values())

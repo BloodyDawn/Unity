@@ -19,8 +19,8 @@
 package com.l2jserver.gameserver.model.actor.instance;
 
 import com.l2jserver.gameserver.enums.InstanceType;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.knownlist.FriendlyMobKnownList;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 
@@ -28,7 +28,7 @@ import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
  * This class represents Friendly Mobs lying over the world.<br>
  * These friendly mobs should only attack players with karma > 0 and it is always aggro, since it just attacks players with karma.
  */
-public class L2FriendlyMobInstance extends L2Attackable
+public class L2FriendlyMobInstance extends Attackable
 {
 	public L2FriendlyMobInstance(int objectId, L2NpcTemplate template)
 	{
@@ -49,7 +49,7 @@ public class L2FriendlyMobInstance extends L2Attackable
 	}
 	
 	@Override
-	public boolean isAutoAttackable(L2Character attacker)
+	public boolean isAutoAttackable(Creature attacker)
 	{
 		if (attacker instanceof L2PcInstance)
 		{

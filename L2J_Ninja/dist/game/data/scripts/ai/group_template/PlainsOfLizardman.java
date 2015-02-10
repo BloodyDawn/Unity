@@ -22,10 +22,10 @@ import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 
@@ -96,16 +96,16 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.equals("fantasy_mushroom") && (npc != null) && (player != null))
 		{
 			npc.doCast(FANTASY_MUSHROOM_SKILL.getSkill());
-			for (L2Character target : npc.getKnownList().getKnownCharactersInRadius(200))
+			for (Creature target : npc.getKnownList().getKnownCharactersInRadius(200))
 			{
 				if ((target != null) && target.isAttackable())
 				{
-					final L2Npc monster = (L2Npc) target;
+					final Npc monster = (Npc) target;
 					npc.setTarget(monster);
 					npc.doCast(STUN_EFFECT.getSkill());
 					addAttackPlayerDesire(monster, player);
@@ -117,7 +117,7 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
 		switch (npc.getId())
 		{
@@ -141,11 +141,11 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 				{
 					npc.setScriptValue(1);
 					npc.setIsInvul(true);
-					for (L2Character target : npc.getKnownList().getKnownCharactersInRadius(1000))
+					for (Creature target : npc.getKnownList().getKnownCharactersInRadius(1000))
 					{
 						if ((target != null) && target.isAttackable())
 						{
-							final L2Attackable monster = (L2Attackable) target;
+							final Attackable monster = (Attackable) target;
 							if ((monster.getId() == TANTA_MAGICIAN) || (monster.getId() == TANTA_SCOUT))
 							{
 								target.setIsRunning(true);
@@ -161,7 +161,7 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		// Tanta Guard
 		if (getRandom(1000) == 0)
@@ -171,7 +171,7 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 		
 		// Invisible buff npc
 		final int random = getRandom(100);
-		final L2Npc buffer = addSpawn(INVISIBLE_NPC, npc.getLocation(), false, 6000);
+		final Npc buffer = addSpawn(INVISIBLE_NPC, npc.getLocation(), false, 6000);
 		buffer.setTarget(killer);
 		
 		if (random <= 42)
@@ -213,7 +213,7 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 		return super.onKill(npc, killer, isSummon);
 	}
 	
-	private void castRandomBuff(L2Npc npc, int chance1, int chance2, SkillHolder... buffs)
+	private void castRandomBuff(Npc npc, int chance1, int chance2, SkillHolder... buffs)
 	{
 		final int rand = getRandom(100);
 		if (rand <= chance1)
@@ -231,7 +231,7 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 	}
 	
 	@Override
-	protected void castSkill(L2Npc npc, L2Playable target, SkillHolder skill)
+	protected void castSkill(Npc npc, Playable target, SkillHolder skill)
 	{
 		npc.doDie(target);
 		super.castSkill(addSpawn(INVISIBLE_NPC, npc, false, 6000), target, skill);

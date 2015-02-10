@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.network.clientpackets.shuttle;
 
 import java.util.logging.Level;
 
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2ShuttleInstance;
 import com.l2jserver.gameserver.network.clientpackets.L2GameClientPacket;
@@ -53,7 +53,7 @@ public class RequestShuttleGetOn extends L2GameClientPacket
 		}
 		
 		// TODO: better way?
-		for (L2Object obj : activeChar.getKnownList().getKnownObjects().values())
+		for (WorldObject obj : activeChar.getKnownList().getKnownObjects().values())
 		{
 			if ((obj instanceof L2ShuttleInstance))
 			{

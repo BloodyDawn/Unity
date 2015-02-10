@@ -21,7 +21,7 @@ package com.l2jserver.gameserver.model.entity;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.enums.Team;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.util.Rnd;
 
@@ -68,7 +68,7 @@ public class TvTEventTeleporter implements Runnable
 			return;
 		}
 		
-		L2Summon summon = _playerInstance.getPet();
+		Summon summon = _playerInstance.getPet();
 		
 		if (summon != null)
 		{

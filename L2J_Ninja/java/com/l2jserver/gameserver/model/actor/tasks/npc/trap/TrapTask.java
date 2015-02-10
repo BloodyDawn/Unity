@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.model.actor.tasks.npc.trap;
 
 import java.util.logging.Logger;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2TrapInstance;
 import com.l2jserver.gameserver.network.serverpackets.SocialAction;
 
@@ -73,7 +73,7 @@ public class TrapTask implements Runnable
 					}
 				}
 				
-				for (L2Character target : _trap.getKnownList().getKnownCharacters())
+				for (Creature target : _trap.getKnownList().getKnownCharacters())
 				{
 					if (_trap.checkTarget(target))
 					{

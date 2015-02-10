@@ -25,8 +25,8 @@ import java.util.logging.Logger;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.xml.impl.DoorData;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.interfaces.ILocational;
 import com.l2jserver.gameserver.util.GeoUtils;
@@ -53,9 +53,9 @@ public class GeoData
 		int loadedRegions = 0;
 		try
 		{
-			for (int regionX = L2World.TILE_X_MIN; regionX <= L2World.TILE_X_MAX; regionX++)
+			for (int regionX = World.TILE_X_MIN; regionX <= World.TILE_X_MAX; regionX++)
 			{
-				for (int regionY = L2World.TILE_Y_MIN; regionY <= L2World.TILE_Y_MAX; regionY++)
+				for (int regionY = World.TILE_Y_MIN; regionY <= World.TILE_Y_MAX; regionY++)
 				{
 					final Path geoFilePath = Config.GEODATA_PATH.resolve(String.format(FILE_NAME_FORMAT, regionX, regionY));
 					final Boolean loadFile = Config.GEODATA_REGIONS.get(regionX + "_" + regionY);
@@ -219,7 +219,7 @@ public class GeoData
 	 * @param target the target
 	 * @return {@code true} if the character can see the target (LOS), {@code false} otherwise
 	 */
-	public boolean canSeeTarget(L2Object cha, L2Object target)
+	public boolean canSeeTarget(WorldObject cha, WorldObject target)
 	{
 		if (target.isDoor())
 		{
@@ -236,7 +236,7 @@ public class GeoData
 	 * @param worldPosition the world position
 	 * @return {@code true} if the character can see the target at the given world position, {@code false} otherwise
 	 */
-	public boolean canSeeTarget(L2Object cha, ILocational worldPosition)
+	public boolean canSeeTarget(WorldObject cha, ILocational worldPosition)
 	{
 		return canSeeTarget(cha.getX(), cha.getY(), cha.getZ(), cha.getInstanceId(), worldPosition.getX(), worldPosition.getY(), worldPosition.getZ());
 	}

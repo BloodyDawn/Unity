@@ -24,7 +24,7 @@ import java.util.Map;
 import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
@@ -64,7 +64,7 @@ public final class PaganTeleporters extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		switch (event)
 		{
@@ -84,7 +84,7 @@ public final class PaganTeleporters extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		if (TRIOLS_LOCS.containsKey(npc.getId()))
 		{
@@ -94,7 +94,7 @@ public final class PaganTeleporters extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		switch (npc.getId())
 		{

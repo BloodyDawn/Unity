@@ -21,9 +21,9 @@ package handlers.effecthandlers;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.handler.ITargetTypeHandler;
 import com.l2jserver.gameserver.handler.TargetHandler;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.events.EventType;
@@ -92,15 +92,15 @@ public final class TriggerSkillByDamage extends AbstractEffect
 		}
 		
 		final Skill triggerSkill = _skill.getSkill();
-		final L2Object[] targets = targetHandler.getTargetList(triggerSkill, event.getTarget(), false, event.getAttacker());
-		for (L2Object triggerTarget : targets)
+		final WorldObject[] targets = targetHandler.getTargetList(triggerSkill, event.getTarget(), false, event.getAttacker());
+		for (WorldObject triggerTarget : targets)
 		{
 			if ((triggerTarget == null) || !triggerTarget.isCharacter())
 			{
 				continue;
 			}
 			
-			final L2Character targetChar = (L2Character) triggerTarget;
+			final Creature targetChar = (Creature) triggerTarget;
 			if (!targetChar.isInvul())
 			{
 				event.getTarget().makeTriggerCast(triggerSkill, targetChar);

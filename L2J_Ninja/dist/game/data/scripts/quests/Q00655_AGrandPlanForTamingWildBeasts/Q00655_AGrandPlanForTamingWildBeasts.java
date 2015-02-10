@@ -25,7 +25,7 @@ import com.l2jserver.gameserver.cache.HtmCache;
 import com.l2jserver.gameserver.enums.QuestSound;
 import com.l2jserver.gameserver.instancemanager.CHSiegeManager;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
 import com.l2jserver.gameserver.model.entity.clanhall.SiegableHall;
@@ -59,7 +59,7 @@ public final class Q00655_AGrandPlanForTamingWildBeasts extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
@@ -108,7 +108,7 @@ public final class Q00655_AGrandPlanForTamingWildBeasts extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
+	public String onTalk(Npc npc, L2PcInstance talker)
 	{
 		final QuestState qs = getQuestState(talker, true);
 		String htmltext = getNoQuestMsg(talker);
@@ -227,7 +227,7 @@ public final class Q00655_AGrandPlanForTamingWildBeasts extends Quest
 	 * @param player the player
 	 * @param npc the wild beast
 	 */
-	public static void reward(L2PcInstance player, L2Npc npc)
+	public static void reward(L2PcInstance player, Npc npc)
 	{
 		final L2Clan clan = player.getClan();
 		final L2PcInstance clanLeader = clan != null ? clan.getLeader().getPlayerInstance() : null;

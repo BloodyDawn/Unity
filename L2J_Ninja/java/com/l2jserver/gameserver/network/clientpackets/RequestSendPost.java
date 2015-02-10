@@ -27,7 +27,7 @@ import com.l2jserver.gameserver.data.xml.impl.AdminData;
 import com.l2jserver.gameserver.enums.PrivateStoreType;
 import com.l2jserver.gameserver.instancemanager.MailManager;
 import com.l2jserver.gameserver.model.BlockList;
-import com.l2jserver.gameserver.model.L2AccessLevel;
+import com.l2jserver.gameserver.model.AccessLevel;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Message;
 import com.l2jserver.gameserver.model.itemcontainer.Mail;
@@ -213,7 +213,7 @@ public final class RequestSendPost extends L2GameClientPacket
 		}
 		
 		final int level = CharNameTable.getInstance().getAccessLevelById(receiverId);
-		final L2AccessLevel accessLevel = AdminData.getInstance().getAccessLevel(level);
+		final AccessLevel accessLevel = AdminData.getInstance().getAccessLevel(level);
 		
 		if (accessLevel.isGm() && !activeChar.getAccessLevel().isGm())
 		{

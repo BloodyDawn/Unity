@@ -21,8 +21,8 @@ package com.l2jserver.gameserver.network.serverpackets;
 import java.util.Arrays;
 import java.util.List;
 
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
 
 /**
  * MagicSkillLaunched server packet implementation.
@@ -33,9 +33,9 @@ public class MagicSkillLaunched extends L2GameServerPacket
 	private final int _charObjId;
 	private final int _skillId;
 	private final int _skillLevel;
-	private final List<L2Object> _targets;
+	private final List<WorldObject> _targets;
 	
-	public MagicSkillLaunched(L2Character cha, int skillId, int skillLevel, L2Object... targets)
+	public MagicSkillLaunched(Creature cha, int skillId, int skillLevel, WorldObject... targets)
 	{
 		_charObjId = cha.getObjectId();
 		_skillId = skillId;
@@ -44,13 +44,13 @@ public class MagicSkillLaunched extends L2GameServerPacket
 		//@formatter:off
 		if (targets == null)
 		{
-			targets = new L2Object[] { cha };
+			targets = new WorldObject[] { cha };
 		}
 		//@formatter:on
 		_targets = Arrays.asList(targets);
 	}
 	
-	public MagicSkillLaunched(L2Character cha, int skillId, int skillLevel)
+	public MagicSkillLaunched(Creature cha, int skillId, int skillLevel)
 	{
 		this(cha, skillId, skillId, cha);
 	}
@@ -64,7 +64,7 @@ public class MagicSkillLaunched extends L2GameServerPacket
 		writeD(_skillId);
 		writeD(_skillLevel);
 		writeD(_targets.size());
-		for (L2Object target : _targets)
+		for (WorldObject target : _targets)
 		{
 			writeD(target.getObjectId());
 		}

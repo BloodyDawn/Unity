@@ -29,9 +29,9 @@ import ai.npc.AbstractNpcAI;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.enums.InstanceReenterType;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.actor.L2Npc;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.actor.Npc;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Instance;
 import com.l2jserver.gameserver.model.holders.InstanceReenterTimeHolder;
@@ -183,7 +183,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 	{
 		for (Integer objId : world.getAllowed())
 		{
-			final L2PcInstance player = L2World.getInstance().getPlayer(objId);
+			final L2PcInstance player = World.getInstance().getPlayer(objId);
 			
 			if (player != null)
 			{
@@ -205,7 +205,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 	 * @param instanceId - ID of instance
 	 * @return list of spawned NPC's
 	 */
-	protected List<L2Npc> spawnGroup(String groupName, int instanceId)
+	protected List<Npc> spawnGroup(String groupName, int instanceId)
 	{
 		return InstanceManager.getInstance().getInstance(instanceId).spawnGroup(groupName);
 	}
@@ -220,7 +220,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 		for (int objectId : world.getAllowed())
 		{
 			InstanceManager.getInstance().setInstanceTime(objectId, world.getTemplateId(), time);
-			final L2PcInstance player = L2World.getInstance().getPlayer(objectId);
+			final L2PcInstance player = World.getInstance().getPlayer(objectId);
 			if ((player != null) && player.isOnline())
 			{
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INSTANT_ZONE_S1_S_ENTRY_HAS_BEEN_RESTRICTED_YOU_CAN_CHECK_THE_NEXT_POSSIBLE_ENTRY_TIME_BY_USING_THE_COMMAND_INSTANCEZONE).addString(InstanceManager.getInstance().getInstance(world.getInstanceId()).getName()));
@@ -244,13 +244,13 @@ public abstract class AbstractInstance extends AbstractNpcAI
 			{
 				player.stopAllEffectsExceptThoseThatLastThroughDeath();
 				
-				final L2Summon pet = player.getPet();
+				final Summon pet = player.getPet();
 				if (pet != null)
 				{
 					pet.stopAllEffectsExceptThoseThatLastThroughDeath();
 				}
 				
-				player.getServitors().values().forEach(L2Summon::stopAllEffectsExceptThoseThatLastThroughDeath);
+				player.getServitors().values().forEach(Summon::stopAllEffectsExceptThoseThatLastThroughDeath);
 				break;
 			}
 			case WHITELIST:
@@ -263,7 +263,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 					}
 				}
 				
-				for (L2Summon summon : player.getServitors().values())
+				for (Summon summon : player.getServitors().values())
 				{
 					for (BuffInfo info : summon.getEffectList().getBuffs().values())
 					{
@@ -274,7 +274,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 					}
 				}
 				
-				final L2Summon pet = player.getPet();
+				final Summon pet = player.getPet();
 				if (pet != null)
 				{
 					for (BuffInfo info : pet.getEffectList().getBuffs().values())
@@ -297,7 +297,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 					}
 				}
 				
-				for (L2Summon summon : player.getServitors().values())
+				for (Summon summon : player.getServitors().values())
 				{
 					for (BuffInfo info : summon.getEffectList().getBuffs().values())
 					{
@@ -308,7 +308,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 					}
 				}
 				
-				final L2Summon pet = player.getPet();
+				final Summon pet = player.getPet();
 				if (pet != null)
 				{
 					for (BuffInfo info : pet.getEffectList().getBuffs().values())

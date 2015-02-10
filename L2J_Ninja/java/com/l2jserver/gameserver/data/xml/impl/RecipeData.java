@@ -28,9 +28,9 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
 import com.l2jserver.gameserver.data.xml.IXmlReader;
-import com.l2jserver.gameserver.model.L2RecipeInstance;
-import com.l2jserver.gameserver.model.L2RecipeList;
-import com.l2jserver.gameserver.model.L2RecipeStatInstance;
+import com.l2jserver.gameserver.model.RecipeInstance;
+import com.l2jserver.gameserver.model.RecipeList;
+import com.l2jserver.gameserver.model.RecipeStatInstance;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
@@ -40,7 +40,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
  */
 public class RecipeData implements IXmlReader
 {
-	private final Map<Integer, L2RecipeList> _recipes = new HashMap<>();
+	private final Map<Integer, RecipeList> _recipes = new HashMap<>();
 	
 	/**
 	 * Instantiates a new recipe data.
@@ -62,9 +62,9 @@ public class RecipeData implements IXmlReader
 	public void parseDocument(Document doc)
 	{
 		// TODO: Cleanup checks enforced by XSD.
-		final List<L2RecipeInstance> recipePartList = new ArrayList<>();
-		final List<L2RecipeStatInstance> recipeStatUseList = new ArrayList<>();
-		final List<L2RecipeStatInstance> recipeAltStatChangeList = new ArrayList<>();
+		final List<RecipeInstance> recipePartList = new ArrayList<>();
+		final List<RecipeStatInstance> recipeStatUseList = new ArrayList<>();
+		final List<RecipeStatInstance> recipeAltStatChangeList = new ArrayList<>();
 		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
 		{
 			if ("list".equalsIgnoreCase(n.getNodeName()))
@@ -139,7 +139,7 @@ public class RecipeData implements IXmlReader
 								int value = Integer.parseInt(c.getAttributes().getNamedItem("value").getNodeValue());
 								try
 								{
-									recipeStatUseList.add(new L2RecipeStatInstance(statName, value));
+									recipeStatUseList.add(new RecipeStatInstance(statName, value));
 								}
 								catch (Exception e)
 								{
@@ -153,7 +153,7 @@ public class RecipeData implements IXmlReader
 								int value = Integer.parseInt(c.getAttributes().getNamedItem("value").getNodeValue());
 								try
 								{
-									recipeAltStatChangeList.add(new L2RecipeStatInstance(statName, value));
+									recipeAltStatChangeList.add(new RecipeStatInstance(statName, value));
 								}
 								catch (Exception e)
 								{
@@ -165,7 +165,7 @@ public class RecipeData implements IXmlReader
 							{
 								int ingId = Integer.parseInt(c.getAttributes().getNamedItem("id").getNodeValue());
 								int ingCount = Integer.parseInt(c.getAttributes().getNamedItem("count").getNodeValue());
-								recipePartList.add(new L2RecipeInstance(ingId, ingCount));
+								recipePartList.add(new RecipeInstance(ingId, ingCount));
 							}
 							else if ("production".equalsIgnoreCase(c.getNodeName()))
 							{
@@ -181,16 +181,16 @@ public class RecipeData implements IXmlReader
 							}
 						}
 						
-						L2RecipeList recipeList = new L2RecipeList(set, haveRare);
-						for (L2RecipeInstance recipePart : recipePartList)
+						RecipeList recipeList = new RecipeList(set, haveRare);
+						for (RecipeInstance recipePart : recipePartList)
 						{
 							recipeList.addRecipe(recipePart);
 						}
-						for (L2RecipeStatInstance recipeStatUse : recipeStatUseList)
+						for (RecipeStatInstance recipeStatUse : recipeStatUseList)
 						{
 							recipeList.addStatUse(recipeStatUse);
 						}
-						for (L2RecipeStatInstance recipeAltStatChange : recipeAltStatChangeList)
+						for (RecipeStatInstance recipeAltStatChange : recipeAltStatChangeList)
 						{
 							recipeList.addAltStatChange(recipeAltStatChange);
 						}
@@ -207,7 +207,7 @@ public class RecipeData implements IXmlReader
 	 * @param listId the list id
 	 * @return the recipe list
 	 */
-	public L2RecipeList getRecipeList(int listId)
+	public RecipeList getRecipeList(int listId)
 	{
 		return _recipes.get(listId);
 	}
@@ -217,9 +217,9 @@ public class RecipeData implements IXmlReader
 	 * @param itemId the item id
 	 * @return the recipe by item id
 	 */
-	public L2RecipeList getRecipeByItemId(int itemId)
+	public RecipeList getRecipeByItemId(int itemId)
 	{
-		for (L2RecipeList find : _recipes.values())
+		for (RecipeList find : _recipes.values())
 		{
 			if (find.getRecipeId() == itemId)
 			{
@@ -237,7 +237,7 @@ public class RecipeData implements IXmlReader
 	{
 		int[] idList = new int[_recipes.size()];
 		int i = 0;
-		for (L2RecipeList rec : _recipes.values())
+		for (RecipeList rec : _recipes.values())
 		{
 			idList[i++] = rec.getRecipeId();
 		}
@@ -250,9 +250,9 @@ public class RecipeData implements IXmlReader
 	 * @param id the recipe list id
 	 * @return the valid recipe list
 	 */
-	public L2RecipeList getValidRecipeList(L2PcInstance player, int id)
+	public RecipeList getValidRecipeList(L2PcInstance player, int id)
 	{
-		L2RecipeList recipeList = _recipes.get(id);
+		RecipeList recipeList = _recipes.get(id);
 		if ((recipeList == null) || (recipeList.getRecipes().length == 0))
 		{
 			player.sendMessage(getClass().getSimpleName() + ": No recipe for: " + id);

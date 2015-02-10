@@ -20,7 +20,7 @@ package handlers.itemhandlers;
 
 import com.l2jserver.gameserver.data.xml.impl.AppearanceItemData;
 import com.l2jserver.gameserver.handler.IItemHandler;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.request.ShapeShiftingItemRequest;
 import com.l2jserver.gameserver.model.items.appearance.AppearanceStone;
@@ -34,7 +34,7 @@ import com.l2jserver.gameserver.network.serverpackets.appearance.ExChooseShapeSh
 public class Appearance implements IItemHandler
 {
 	@Override
-	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+	public boolean useItem(Playable playable, L2ItemInstance item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{

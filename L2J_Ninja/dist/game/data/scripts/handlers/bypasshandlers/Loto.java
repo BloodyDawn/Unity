@@ -24,8 +24,8 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.handler.IBypassHandler;
 import com.l2jserver.gameserver.idfactory.IdFactory;
 import com.l2jserver.gameserver.instancemanager.games.Lottery;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -42,7 +42,7 @@ public class Loto implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Character target)
+	public boolean useBypass(String command, L2PcInstance activeChar, Creature target)
 	{
 		if (!target.isNpc())
 		{
@@ -68,7 +68,7 @@ public class Loto implements IBypassHandler
 				activeChar.setLoto(i, 0);
 			}
 		}
-		showLotoWindow(activeChar, (L2Npc) target, val);
+		showLotoWindow(activeChar, (Npc) target, val);
 		
 		return false;
 	}
@@ -91,7 +91,7 @@ public class Loto implements IBypassHandler
 	// 23 - current lottery jackpot
 	// 24 - Previous winning numbers/Prize claim
 	// >24 - check lottery ticket by item object id
-	public static final void showLotoWindow(L2PcInstance player, L2Npc npc, int val)
+	public static final void showLotoWindow(L2PcInstance player, Npc npc, int val)
 	{
 		int npcId = npc.getTemplate().getId();
 		String filename;

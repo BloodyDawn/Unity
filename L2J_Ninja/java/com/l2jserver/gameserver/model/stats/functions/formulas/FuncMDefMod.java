@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.model.stats.functions.formulas;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -44,7 +44,7 @@ public class FuncMDefMod extends AbstractFunction
 	}
 	
 	@Override
-	public double calc(L2Character effector, L2Character effected, Skill skill, double initVal)
+	public double calc(Creature effector, Creature effected, Skill skill, double initVal)
 	{
 		double value = initVal;
 		if (effector.isPlayer())

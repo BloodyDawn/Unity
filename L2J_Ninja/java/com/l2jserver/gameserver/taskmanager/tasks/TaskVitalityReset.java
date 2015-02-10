@@ -25,7 +25,7 @@ import java.util.logging.Level;
 
 import com.l2jserver.Config;
 import com.l2jserver.L2DatabaseFactory;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.stat.PcStat;
 import com.l2jserver.gameserver.taskmanager.Task;
@@ -52,7 +52,7 @@ public class TaskVitalityReset extends Task
 		Calendar cal = Calendar.getInstance();
 		if (cal.get(Calendar.DAY_OF_WEEK) == Config.ALT_VITALITY_DATE_RESET)
 		{
-			for (L2PcInstance player : L2World.getInstance().getPlayers())
+			for (L2PcInstance player : World.getInstance().getPlayers())
 			{
 				player.setVitalityPoints(PcStat.MAX_VITALITY_POINTS, false);
 			}

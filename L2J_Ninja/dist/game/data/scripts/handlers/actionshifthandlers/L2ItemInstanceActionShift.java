@@ -20,7 +20,7 @@ package handlers.actionshifthandlers;
 
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.handler.IActionShiftHandler;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -29,7 +29,7 @@ import com.l2jserver.util.StringUtil;
 public class L2ItemInstanceActionShift implements IActionShiftHandler
 {
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
+	public boolean action(L2PcInstance activeChar, WorldObject target, boolean interact)
 	{
 		if (activeChar.getAccessLevel().isGm())
 		{

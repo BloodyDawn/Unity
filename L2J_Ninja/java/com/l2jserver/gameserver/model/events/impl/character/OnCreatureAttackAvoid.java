@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.model.events.impl.character;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
 
@@ -28,8 +28,8 @@ import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
  */
 public class OnCreatureAttackAvoid implements IBaseEvent
 {
-	private final L2Character _attacker;
-	private final L2Character _target;
+	private final Creature _attacker;
+	private final Creature _target;
 	private final boolean _damageOverTime;
 	
 	/**
@@ -37,19 +37,19 @@ public class OnCreatureAttackAvoid implements IBaseEvent
 	 * @param target who avoid
 	 * @param isDot is dot damage
 	 */
-	public OnCreatureAttackAvoid(L2Character attacker, L2Character target, boolean isDot)
+	public OnCreatureAttackAvoid(Creature attacker, Creature target, boolean isDot)
 	{
 		_attacker = attacker;
 		_target = target;
 		_damageOverTime = isDot;
 	}
 	
-	public final L2Character getAttacker()
+	public final Creature getAttacker()
 	{
 		return _attacker;
 	}
 	
-	public final L2Character getTarget()
+	public final Creature getTarget()
 	{
 		return _target;
 	}

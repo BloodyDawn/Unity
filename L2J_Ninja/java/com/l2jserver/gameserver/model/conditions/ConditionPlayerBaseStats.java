@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.model.conditions;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.items.L2Item;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -39,7 +39,7 @@ public class ConditionPlayerBaseStats extends Condition
 	 * @param stat the stat
 	 * @param value the value
 	 */
-	public ConditionPlayerBaseStats(L2Character player, BaseStat stat, int value)
+	public ConditionPlayerBaseStats(Creature player, BaseStat stat, int value)
 	{
 		super();
 		_stat = stat;
@@ -51,7 +51,7 @@ public class ConditionPlayerBaseStats extends Condition
 	 * @return true, if successful
 	 */
 	@Override
-	public boolean testImpl(L2Character effector, L2Character effected, Skill skill, L2Item item)
+	public boolean testImpl(Creature effector, Creature effected, Skill skill, L2Item item)
 	{
 		if (effector.getActingPlayer() == null)
 		{

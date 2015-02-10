@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.model.actor.instance;
 
 import com.l2jserver.gameserver.enums.InstanceType;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 
@@ -27,7 +27,7 @@ import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
  * @author NightMarez
  * @version $Revision: 1.3.2.2.2.5 $ $Date: 2005/03/27 15:29:32 $
  */
-public final class L2ObservationInstance extends L2Npc
+public final class L2ObservationInstance extends Npc
 {
 	public L2ObservationInstance(int objectId, L2NpcTemplate template)
 	{

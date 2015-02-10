@@ -26,8 +26,8 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.handler.ChatHandler;
 import com.l2jserver.gameserver.handler.IChatHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
 import com.l2jserver.gameserver.model.events.EventDispatcher;
@@ -213,7 +213,7 @@ public final class Say2 extends L2GameClientPacket
 			}
 		}
 		
-		final ChatFilterReturn filter = EventDispatcher.getInstance().notifyEvent(new OnPlayerChat(activeChar, L2World.getInstance().getPlayer(_target), _text, chatType), ChatFilterReturn.class);
+		final ChatFilterReturn filter = EventDispatcher.getInstance().notifyEvent(new OnPlayerChat(activeChar, World.getInstance().getPlayer(_target), _text, chatType), ChatFilterReturn.class);
 		if (filter != null)
 		{
 			_text = filter.getFilteredText();
@@ -275,7 +275,7 @@ public final class Say2 extends L2GameClientPacket
 				result.append(_text.charAt(pos++));
 			}
 			final int id = Integer.parseInt(result.toString());
-			final L2Object item = L2World.getInstance().findObject(id);
+			final WorldObject item = World.getInstance().findObject(id);
 			if (item.isItem())
 			{
 				if (owner.getInventory().getItemByObjectId(id) == null)

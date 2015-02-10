@@ -37,7 +37,7 @@ import com.l2jserver.gameserver.instancemanager.CastleManager;
 import com.l2jserver.gameserver.instancemanager.SiegeManager;
 import com.l2jserver.gameserver.instancemanager.TownManager;
 import com.l2jserver.gameserver.model.L2TeleportLocation;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.model.items.L2Item;
@@ -55,7 +55,7 @@ import com.l2jserver.gameserver.util.Util;
 /**
  * @author NightMarez
  */
-public final class L2TeleporterInstance extends L2Npc
+public final class L2TeleporterInstance extends Npc
 {
 	private static final int COND_ALL_FALSE = 0;
 	private static final int COND_BUSY_BECAUSE_OF_SIEGE = 1;

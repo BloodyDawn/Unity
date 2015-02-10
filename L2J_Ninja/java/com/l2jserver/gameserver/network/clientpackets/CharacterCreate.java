@@ -30,8 +30,8 @@ import com.l2jserver.gameserver.data.xml.impl.InitialShortcutData;
 import com.l2jserver.gameserver.data.xml.impl.PlayerTemplateData;
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
 import com.l2jserver.gameserver.datatables.SkillData;
-import com.l2jserver.gameserver.model.L2SkillLearn;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.SkillLearn;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.appearance.PcAppearance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -225,7 +225,7 @@ public final class CharacterCreate extends L2GameClientPacket
 			_log.fine("Character init start");
 		}
 		
-		L2World.getInstance().storeObject(newChar);
+		World.getInstance().storeObject(newChar);
 		
 		if (Config.STARTING_ADENA > 0)
 		{
@@ -269,12 +269,12 @@ public final class CharacterCreate extends L2GameClientPacket
 			}
 		}
 		
-		for (L2SkillLearn skill : SkillTreesData.getInstance().getRaceSkillTree(newChar.getRace()))
+		for (SkillLearn skill : SkillTreesData.getInstance().getRaceSkillTree(newChar.getRace()))
 		{
 			newChar.addSkill(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()), true);
 		}
 		
-		for (L2SkillLearn skill : SkillTreesData.getInstance().getAvailableSkills(newChar, newChar.getClassId(), false, true))
+		for (SkillLearn skill : SkillTreesData.getInstance().getAvailableSkills(newChar, newChar.getClassId(), false, true))
 		{
 			if (Config.DEBUG)
 			{

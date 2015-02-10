@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
@@ -35,7 +35,7 @@ public class ExSpawnEmitter extends L2GameServerPacket
 		_npcObjectId = npcObjectId;
 	}
 	
-	public ExSpawnEmitter(L2PcInstance player, L2Npc npc)
+	public ExSpawnEmitter(L2PcInstance player, Npc npc)
 	{
 		this(player.getObjectId(), npc.getObjectId());
 	}

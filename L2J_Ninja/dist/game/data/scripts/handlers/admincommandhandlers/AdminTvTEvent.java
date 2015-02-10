@@ -20,7 +20,7 @@ package handlers.admincommandhandlers;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.TvTEvent;
 import com.l2jserver.gameserver.model.entity.TvTEventTeleporter;
@@ -43,7 +43,7 @@ public class AdminTvTEvent implements IAdminCommandHandler
 	{
 		if (command.equals("admin_tvt_add"))
 		{
-			L2Object target = activeChar.getTarget();
+			WorldObject target = activeChar.getTarget();
 			
 			if (!(target instanceof L2PcInstance))
 			{
@@ -55,7 +55,7 @@ public class AdminTvTEvent implements IAdminCommandHandler
 		}
 		else if (command.equals("admin_tvt_remove"))
 		{
-			L2Object target = activeChar.getTarget();
+			WorldObject target = activeChar.getTarget();
 			
 			if (!(target instanceof L2PcInstance))
 			{

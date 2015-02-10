@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.network.serverpackets;
 
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2ClanMember;
+import com.l2jserver.gameserver.model.ClanMember;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 public class GMViewPledgeInfo extends L2GameServerPacket
@@ -61,7 +61,7 @@ public class GMViewPledgeInfo extends L2GameServerPacket
 		writeD(0x00); // T3 Unknown
 		
 		writeD(_clan.getMembers().size());
-		for (L2ClanMember member : _clan.getMembers())
+		for (ClanMember member : _clan.getMembers())
 		{
 			if (member != null)
 			{

@@ -38,10 +38,10 @@ import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.instancemanager.AntiFeedManager;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PetInstance;
@@ -88,7 +88,7 @@ public class TvTEvent
 	/** The spawn of the participation npc<br> */
 	private static L2Spawn _npcSpawn = null;
 	/** the npc instance of the participation npc<br> */
-	private static L2Npc _lastNpcSpawn = null;
+	private static Npc _lastNpcSpawn = null;
 	/** Instance id<br> */
 	private static int _TvTEventInstance = 0;
 	
@@ -517,7 +517,7 @@ public class TvTEvent
 			// Remove the player from team
 			_teams[teamId].removePlayer(playerObjectId);
 			
-			final L2PcInstance player = L2World.getInstance().getPlayer(playerObjectId);
+			final L2PcInstance player = World.getInstance().getPlayer(playerObjectId);
 			if (player != null)
 			{
 				player.removeEventListener(TvTEventListener.class);
@@ -807,7 +807,7 @@ public class TvTEvent
 	 * @param killerCharacter as L2Character<br>
 	 * @param killedPlayerInstance as L2PcInstance<br>
 	 */
-	public static void onKill(L2Character killerCharacter, L2PcInstance killedPlayerInstance)
+	public static void onKill(Creature killerCharacter, L2PcInstance killedPlayerInstance)
 	{
 		if ((killedPlayerInstance == null) || !isStarted())
 		{
@@ -832,7 +832,7 @@ public class TvTEvent
 		
 		if ((killerCharacter instanceof L2PetInstance) || (killerCharacter instanceof L2ServitorInstance))
 		{
-			killerPlayerInstance = ((L2Summon) killerCharacter).getOwner();
+			killerPlayerInstance = ((Summon) killerCharacter).getOwner();
 			
 			if (killerPlayerInstance == null)
 			{

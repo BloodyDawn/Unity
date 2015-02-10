@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.network.serverpackets;
 
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 
 /**
  * @author UnAfraid
@@ -29,7 +29,7 @@ public class ExTeleportToLocationActivate extends L2GameServerPacket
 	private final int _objectId;
 	private final Location _loc;
 	
-	public ExTeleportToLocationActivate(L2Character character)
+	public ExTeleportToLocationActivate(Creature character)
 	{
 		_objectId = character.getObjectId();
 		_loc = character.getLocation();

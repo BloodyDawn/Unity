@@ -30,10 +30,10 @@ import com.l2jserver.gameserver.data.xml.impl.NpcData;
 import com.l2jserver.gameserver.idfactory.IdFactory;
 import com.l2jserver.gameserver.instancemanager.GraciaSeedsManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -54,7 +54,7 @@ public class EnergySeeds extends AbstractNpcAI
 	private static final int RESPAWN = 480000;
 	private static final int RANDOM_RESPAWN_OFFSET = 180000;
 	private static Map<Integer, ESSpawn> _spawns = new FastMap<>();
-	protected static Map<L2Npc, Integer> _spawnedNpcs = new FastMap<L2Npc, Integer>().shared();
+	protected static Map<Npc, Integer> _spawnedNpcs = new FastMap<Npc, Integer>().shared();
 	
 	private static final int TEMPORARY_TELEPORTER = 32602;
 	// @formatter:off
@@ -119,7 +119,7 @@ public class EnergySeeds extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon)
+	public String onSkillSee(Npc npc, L2PcInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
 		if (!Util.contains(targets, npc) || (skill.getId() != 5780))
 		{
@@ -178,7 +178,7 @@ public class EnergySeeds extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.equalsIgnoreCase("StartSoDAi"))
 		{
@@ -226,7 +226,7 @@ public class EnergySeeds extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		if (npc.getId() == TEMPORARY_TELEPORTER)
 		{
@@ -237,7 +237,7 @@ public class EnergySeeds extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		if (_spawnedNpcs.containsKey(npc) && _spawns.containsKey(_spawnedNpcs.get(npc)))
 		{
@@ -248,7 +248,7 @@ public class EnergySeeds extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onEnterZone(L2Character character, L2ZoneType zone)
+	public String onEnterZone(Creature character, L2ZoneType zone)
 	{
 		if (character.getInstanceId() != 0)
 		{
@@ -296,7 +296,7 @@ public class EnergySeeds extends AbstractNpcAI
 	
 	public void stopAI(GraciaSeeds type)
 	{
-		for (L2Npc seed : _spawnedNpcs.keySet())
+		for (Npc seed : _spawnedNpcs.keySet())
 		{
 			if (type == _spawns.get(_spawnedNpcs.get(seed))._seedId)
 			{
@@ -305,7 +305,7 @@ public class EnergySeeds extends AbstractNpcAI
 		}
 	}
 	
-	public void seedCollectEvent(L2PcInstance player, L2Npc seedEnergy, GraciaSeeds seedType)
+	public void seedCollectEvent(L2PcInstance player, Npc seedEnergy, GraciaSeeds seedType)
 	{
 		if (player == null)
 		{
@@ -343,7 +343,7 @@ public class EnergySeeds extends AbstractNpcAI
 		}
 	}
 	
-	private L2MonsterInstance spawnSupriseMob(L2Npc energy, int npcId)
+	private L2MonsterInstance spawnSupriseMob(Npc energy, int npcId)
 	{
 		L2NpcTemplate supriseMobTemplate = NpcData.getInstance().getTemplate(npcId);
 		L2MonsterInstance monster = new L2MonsterInstance(IdFactory.getInstance().getNextId(), supriseMobTemplate);

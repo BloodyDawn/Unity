@@ -34,8 +34,8 @@ import com.l2jserver.gameserver.enums.CategoryType;
 import com.l2jserver.gameserver.enums.MailType;
 import com.l2jserver.gameserver.instancemanager.MailManager;
 import com.l2jserver.gameserver.instancemanager.MentorManager;
-import com.l2jserver.gameserver.model.L2Mentee;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.Mentee;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassLevel;
 import com.l2jserver.gameserver.model.entity.Message;
@@ -148,7 +148,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String htmltext = event;
 		
@@ -168,7 +168,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 			if (Util.isDigit(params[1]))
 			{
 				final int objectId = Integer.valueOf(params[1]);
-				MentorManager.getInstance().getMentees(objectId).stream().filter(Objects::nonNull).filter(L2Mentee::isOnline).forEach(mentee ->
+				MentorManager.getInstance().getMentees(objectId).stream().filter(Objects::nonNull).filter(Mentee::isOnline).forEach(mentee ->
 				{
 					MentorManager.getInstance().cancelMentoringBuffs(mentee.getPlayerInstance());
 					mentee.sendPacket(new ExMentorList(mentee.getPlayerInstance()));
@@ -179,7 +179,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		return "33587-01.htm";
 	}
@@ -221,7 +221,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 		
 		if (event.isMenteeOnline())
 		{
-			final L2Mentee mentor = MentorManager.getInstance().getMentor(player.getObjectId());
+			final Mentee mentor = MentorManager.getInstance().getMentor(player.getObjectId());
 			if ((mentor != null) && mentor.isOnline())
 			{
 				//@formatter:off
@@ -257,7 +257,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 		}
 		else
 		{
-			final L2Mentee mentor = MentorManager.getInstance().getMentor(player.getObjectId());
+			final Mentee mentor = MentorManager.getInstance().getMentor(player.getObjectId());
 			if ((mentor != null) && mentor.isOnline())
 			{
 				if (MentorManager.getInstance().isAllMenteesOffline(mentor.getObjectId(), player.getObjectId()))
@@ -282,7 +282,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 			// stop buffs removal task
 			cancelQuestTimer("REMOVE_BUFFS " + player.getObjectId(), null, null);
 			
-			MentorManager.getInstance().getMentees(player.getObjectId()).stream().filter(Objects::nonNull).filter(L2Mentee::isOnline).forEach(mentee ->
+			MentorManager.getInstance().getMentees(player.getObjectId()).stream().filter(Objects::nonNull).filter(Mentee::isOnline).forEach(mentee ->
 			{
 				//@formatter:off
 				final long menteeBuffs = mentee.getPlayerInstance().getEffectList().getEffects()
@@ -322,7 +322,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 		else
 		{
 			startQuestTimer("REMOVE_BUFFS " + player.getObjectId(), 5 * 60 * 1000, null, null);
-			MentorManager.getInstance().getMentees(player.getObjectId()).stream().filter(Objects::nonNull).filter(L2Mentee::isOnline).forEach(mentee ->
+			MentorManager.getInstance().getMentees(player.getObjectId()).stream().filter(Objects::nonNull).filter(Mentee::isOnline).forEach(mentee ->
 			{
 				mentee.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOUR_MENTOR_S1_HAS_DISCONNECTED).addCharName(player));
 				mentee.sendPacket(new ExMentorList(mentee.getPlayerInstance()));
@@ -377,7 +377,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 		}
 		else
 		{
-			final L2Mentee mentor = MentorManager.getInstance().getMentor(player.getObjectId());
+			final Mentee mentor = MentorManager.getInstance().getMentor(player.getObjectId());
 			if ((mentor != null) && mentor.isOnline())
 			{
 				mentor.sendPacket(new ExMentorList(mentor.getPlayerInstance()));
@@ -413,7 +413,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void onMenteeRemove(OnPlayerMenteeRemove event)
 	{
-		final L2Mentee mentee = event.getMentee();
+		final Mentee mentee = event.getMentee();
 		final L2PcInstance mentor = event.getMentor();
 		final L2PcInstance player = mentee.getPlayerInstance();
 		
@@ -463,7 +463,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 	private void handleGraduateMentee(L2PcInstance player)
 	{
 		MentorManager.getInstance().cancelMentoringBuffs(player);
-		final L2Mentee mentor = MentorManager.getInstance().getMentor(player.getObjectId());
+		final Mentee mentor = MentorManager.getInstance().getMentor(player.getObjectId());
 		if (mentor != null)
 		{
 			MentorManager.getInstance().setPenalty(mentor.getObjectId(), Config.MENTOR_PENALTY_FOR_MENTEE_COMPLETE);
@@ -503,7 +503,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 			return;
 		}
 		
-		final L2Mentee mentor = MentorManager.getInstance().getMentor(player.getObjectId());
+		final Mentee mentor = MentorManager.getInstance().getMentor(player.getObjectId());
 		if (mentor == null)
 		{
 			return;

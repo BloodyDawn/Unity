@@ -23,7 +23,7 @@ import java.util.logging.Level;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.sql.impl.TerritoryTable;
 import com.l2jserver.gameserver.idfactory.IdFactory;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2ControllableMobInstance;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.util.Rnd;
@@ -43,7 +43,7 @@ public class L2GroupSpawn extends L2Spawn
 		setAmount(1);
 	}
 	
-	public L2Npc doGroupSpawn()
+	public Npc doGroupSpawn()
 	{
 		try
 		{
@@ -78,7 +78,7 @@ public class L2GroupSpawn extends L2Spawn
 				newlocz = getZ();
 			}
 			
-			final L2Npc mob = new L2ControllableMobInstance(IdFactory.getInstance().getNextId(), _template);
+			final Npc mob = new L2ControllableMobInstance(IdFactory.getInstance().getNextId(), _template);
 			mob.setCurrentHpMp(mob.getMaxHp(), mob.getMaxMp());
 			
 			if (getHeading() == -1)

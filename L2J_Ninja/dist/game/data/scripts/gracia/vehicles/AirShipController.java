@@ -29,8 +29,8 @@ import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.ClanPrivilege;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.VehiclePathPoint;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2AirShipInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2ControllableAirShipInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -118,7 +118,7 @@ public abstract class AirShipController extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if ("summon".equalsIgnoreCase(event))
 		{
@@ -285,7 +285,7 @@ public abstract class AirShipController extends Quest
 	}
 	
 	@Override
-	public String onEnterZone(L2Character character, L2ZoneType zone)
+	public String onEnterZone(Creature character, L2ZoneType zone)
 	{
 		if (character instanceof L2ControllableAirShipInstance)
 		{
@@ -321,7 +321,7 @@ public abstract class AirShipController extends Quest
 	}
 	
 	@Override
-	public String onExitZone(L2Character character, L2ZoneType zone)
+	public String onExitZone(Creature character, L2ZoneType zone)
 	{
 		if (character instanceof L2ControllableAirShipInstance)
 		{
@@ -342,7 +342,7 @@ public abstract class AirShipController extends Quest
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		return npc.getId() + ".htm";
 	}

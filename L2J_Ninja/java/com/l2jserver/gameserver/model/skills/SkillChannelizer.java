@@ -28,8 +28,8 @@ import com.l2jserver.gameserver.GeoData;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.enums.ShotType;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.MagicSkillLaunched;
@@ -43,23 +43,23 @@ public class SkillChannelizer implements Runnable
 {
 	private static final Logger _log = Logger.getLogger(SkillChannelizer.class.getName());
 	
-	private final L2Character _channelizer;
-	private List<L2Character> _channelized;
+	private final Creature _channelizer;
+	private List<Creature> _channelized;
 	
 	private Skill _skill;
 	private volatile ScheduledFuture<?> _task = null;
 	
-	public SkillChannelizer(L2Character channelizer)
+	public SkillChannelizer(Creature channelizer)
 	{
 		_channelizer = channelizer;
 	}
 	
-	public L2Character getChannelizer()
+	public Creature getChannelizer()
 	{
 		return _channelizer;
 	}
 	
-	public List<L2Character> getChannelized()
+	public List<Creature> getChannelized()
 	{
 		return _channelized;
 	}
@@ -99,7 +99,7 @@ public class SkillChannelizer implements Runnable
 		// Cancel target channelization and unset it.
 		if (_channelized != null)
 		{
-			for (L2Character chars : _channelized)
+			for (Creature chars : _channelized)
 			{
 				chars.getSkillChannelized().removeChannelizer(_skill.getChannelingSkillId(), getChannelizer());
 			}
@@ -158,14 +158,14 @@ public class SkillChannelizer implements Runnable
 					return;
 				}
 				
-				final List<L2Character> targetList = new ArrayList<>();
+				final List<Creature> targetList = new ArrayList<>();
 				
-				for (L2Object chars : _skill.getTargetList(_channelizer))
+				for (WorldObject chars : _skill.getTargetList(_channelizer))
 				{
 					if (chars.isCharacter())
 					{
-						targetList.add((L2Character) chars);
-						((L2Character) chars).getSkillChannelized().addChannelizer(_skill.getChannelingSkillId(), getChannelizer());
+						targetList.add((Creature) chars);
+						((Creature) chars).getSkillChannelized().addChannelizer(_skill.getChannelingSkillId(), getChannelizer());
 					}
 				}
 				
@@ -175,7 +175,7 @@ public class SkillChannelizer implements Runnable
 				}
 				_channelized = targetList;
 				
-				for (L2Character character : _channelized)
+				for (Creature character : _channelized)
 				{
 					if (!Util.checkIfInRange(_skill.getEffectRange(), _channelizer, character, true))
 					{

@@ -22,7 +22,7 @@ import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.instancemanager.CastleManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Castle;
 import com.l2jserver.gameserver.model.stats.Stats;
@@ -106,7 +106,7 @@ public class L2DamageZone extends L2ZoneType
 	}
 	
 	@Override
-	protected void onEnter(L2Character character)
+	protected void onEnter(Creature character)
 	{
 		if ((getSettings().getTask() == null) && ((_damageHPPerSec != 0) || (_damageMPPerSec != 0)))
 		{
@@ -130,7 +130,7 @@ public class L2DamageZone extends L2ZoneType
 	}
 	
 	@Override
-	protected void onExit(L2Character character)
+	protected void onExit(Creature character)
 	{
 		if (_characterList.isEmpty() && (getSettings().getTask() != null))
 		{
@@ -190,7 +190,7 @@ public class L2DamageZone extends L2ZoneType
 				}
 			}
 			
-			for (L2Character temp : _dmgZone.getCharactersInside())
+			for (Creature temp : _dmgZone.getCharactersInside())
 			{
 				if ((temp != null) && !temp.isDead())
 				{

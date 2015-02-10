@@ -18,26 +18,26 @@
  */
 package com.l2jserver.gameserver.model.actor.status;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Duel;
 
 public class NpcStatus extends CharStatus
 {
-	public NpcStatus(L2Npc activeChar)
+	public NpcStatus(Npc activeChar)
 	{
 		super(activeChar);
 	}
 	
 	@Override
-	public void reduceHp(double value, L2Character attacker)
+	public void reduceHp(double value, Creature attacker)
 	{
 		reduceHp(value, attacker, true, false, false);
 	}
 	
 	@Override
-	public void reduceHp(double value, L2Character attacker, boolean awake, boolean isDOT, boolean isHpConsumption)
+	public void reduceHp(double value, Creature attacker, boolean awake, boolean isDOT, boolean isHpConsumption)
 	{
 		if (getActiveChar().isDead())
 		{
@@ -60,8 +60,8 @@ public class NpcStatus extends CharStatus
 	}
 	
 	@Override
-	public L2Npc getActiveChar()
+	public Npc getActiveChar()
 	{
-		return (L2Npc) super.getActiveChar();
+		return (Npc) super.getActiveChar();
 	}
 }

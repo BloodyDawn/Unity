@@ -22,7 +22,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.l2jserver.gameserver.instancemanager.MailManager;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Message;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -56,7 +56,7 @@ public final class MessageDeletionTask implements Runnable
 		{
 			try
 			{
-				final L2PcInstance sender = L2World.getInstance().getPlayer(msg.getSenderId());
+				final L2PcInstance sender = World.getInstance().getPlayer(msg.getSenderId());
 				if (sender != null)
 				{
 					msg.getAttachments().returnToWh(sender.getWarehouse());
@@ -70,7 +70,7 @@ public final class MessageDeletionTask implements Runnable
 				msg.getAttachments().deleteMe();
 				msg.removeAttachments();
 				
-				final L2PcInstance receiver = L2World.getInstance().getPlayer(msg.getReceiverId());
+				final L2PcInstance receiver = World.getInstance().getPlayer(msg.getReceiverId());
 				if (receiver != null)
 				{
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THE_MAIL_WAS_RETURNED_DUE_TO_THE_EXCEEDED_WAITING_TIME);

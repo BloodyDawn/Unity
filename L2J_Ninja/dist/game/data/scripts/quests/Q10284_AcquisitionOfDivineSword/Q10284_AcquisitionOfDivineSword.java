@@ -22,7 +22,7 @@ import quests.Q10283_RequestOfIceMerchant.Q10283_RequestOfIceMerchant;
 
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -56,7 +56,7 @@ public final class Q10284_AcquisitionOfDivineSword extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final QuestState st = getQuestState(player, false);
 		if (st == null)
@@ -198,7 +198,7 @@ public final class Q10284_AcquisitionOfDivineSword extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);

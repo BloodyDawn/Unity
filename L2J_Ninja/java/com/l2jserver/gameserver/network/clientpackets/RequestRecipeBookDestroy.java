@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.network.clientpackets;
 
 import com.l2jserver.gameserver.data.xml.impl.RecipeData;
-import com.l2jserver.gameserver.model.L2RecipeList;
+import com.l2jserver.gameserver.model.RecipeList;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.RecipeBookItemList;
 
@@ -52,7 +52,7 @@ public final class RequestRecipeBookDestroy extends L2GameClientPacket
 			return;
 		}
 		
-		final L2RecipeList rp = RecipeData.getInstance().getRecipeList(_recipeID);
+		final RecipeList rp = RecipeData.getInstance().getRecipeList(_recipeID);
 		if (rp == null)
 		{
 			return;

@@ -23,8 +23,8 @@ import java.util.Collection;
 import java.util.List;
 
 import com.l2jserver.gameserver.handler.ITargetTypeHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.TvTEvent;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -36,12 +36,12 @@ import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
 public class PartyClan implements ITargetTypeHandler
 {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
 	{
-		List<L2Character> targetList = new ArrayList<>();
+		List<Creature> targetList = new ArrayList<>();
 		if (onlyFirst)
 		{
-			return new L2Character[]
+			return new Creature[]
 			{
 				activeChar
 			};
@@ -76,7 +76,7 @@ public class PartyClan implements ITargetTypeHandler
 		// if player in clan and not in party
 		if (!(hasClan || hasParty))
 		{
-			return targetList.toArray(new L2Character[targetList.size()]);
+			return targetList.toArray(new Creature[targetList.size()]);
 		}
 		
 		// Get all visible objects in a spherical area near the L2Character
@@ -161,7 +161,7 @@ public class PartyClan implements ITargetTypeHandler
 			
 			targetList.add(obj);
 		}
-		return targetList.toArray(new L2Character[targetList.size()]);
+		return targetList.toArray(new Creature[targetList.size()]);
 	}
 	
 	@Override

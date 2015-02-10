@@ -19,7 +19,7 @@
 package handlers.usercommandhandlers;
 
 import com.l2jserver.gameserver.handler.IUserCommandHandler;
-import com.l2jserver.gameserver.model.L2Party;
+import com.l2jserver.gameserver.model.Party;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
@@ -46,7 +46,7 @@ public class PartyInfo implements IUserCommandHandler
 		activeChar.sendPacket(SystemMessageId.PARTY_INFORMATION);
 		if (activeChar.isInParty())
 		{
-			final L2Party party = activeChar.getParty();
+			final Party party = activeChar.getParty();
 			switch (party.getDistributionType())
 			{
 				case FINDERS_KEEPERS:

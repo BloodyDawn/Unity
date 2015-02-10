@@ -21,8 +21,8 @@ package hellbound.AI;
 import hellbound.HellboundEngine;
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 
@@ -45,11 +45,11 @@ public final class HellboundCore extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.equalsIgnoreCase("cast") && (HellboundEngine.getInstance().getLevel() <= 6))
 		{
-			for (L2Character naia : npc.getKnownList().getKnownCharactersInRadius(900))
+			for (Creature naia : npc.getKnownList().getKnownCharactersInRadius(900))
 			{
 				if ((naia != null) && naia.isMonster() && (naia.getId() == NAIA) && !naia.isDead())
 				{
@@ -63,7 +63,7 @@ public final class HellboundCore extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
+	public final String onSpawn(Npc npc)
 	{
 		startQuestTimer("cast", 10000, npc, null);
 		return super.onSpawn(npc);

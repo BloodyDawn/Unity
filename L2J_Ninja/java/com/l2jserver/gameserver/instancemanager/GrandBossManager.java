@@ -39,10 +39,10 @@ import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.data.xml.impl.NpcData;
 import com.l2jserver.gameserver.instancemanager.tasks.GrandBossManagerStoreTask;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2GrandBossInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.interfaces.IStorable;
@@ -198,7 +198,7 @@ public final class GrandBossManager implements IStorable
 		return null;
 	}
 	
-	public final L2BossZone getZone(L2Character character)
+	public final L2BossZone getZone(Creature character)
 	{
 		if (_zones != null)
 		{
@@ -233,7 +233,7 @@ public final class GrandBossManager implements IStorable
 		return null;
 	}
 	
-	public boolean checkIfInZone(String zoneType, L2Object obj)
+	public boolean checkIfInZone(String zoneType, WorldObject obj)
 	{
 		L2BossZone temp = getZone(obj.getX(), obj.getY(), obj.getZ());
 		if (temp == null)

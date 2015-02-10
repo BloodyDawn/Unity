@@ -24,7 +24,7 @@ import com.l2jserver.gameserver.instancemanager.CastleManager;
 import com.l2jserver.gameserver.instancemanager.ClanHallManager;
 import com.l2jserver.gameserver.instancemanager.FortManager;
 import com.l2jserver.gameserver.instancemanager.MapRegionManager;
-import com.l2jserver.gameserver.model.L2SiegeClan;
+import com.l2jserver.gameserver.model.SiegeClan;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.TeleportWhereType;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -192,7 +192,7 @@ public final class RequestRestartPoint extends L2GameClientPacket
 			}
 			case 4: // to siege HQ
 			{
-				L2SiegeClan siegeClan = null;
+				SiegeClan siegeClan = null;
 				castle = CastleManager.getInstance().getCastle(activeChar);
 				fort = FortManager.getInstance().getFort(activeChar);
 				hall = CHSiegeManager.getInstance().getNearbyClanHall(activeChar);

@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.model.stats.functions;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.items.L2Item;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
@@ -35,7 +35,7 @@ public class FuncEnchant extends AbstractFunction
 	}
 	
 	@Override
-	public double calc(L2Character effector, L2Character effected, Skill skill, double initVal)
+	public double calc(Creature effector, Creature effected, Skill skill, double initVal)
 	{
 		double value = initVal;
 		if ((getApplayCond() != null) && !getApplayCond().test(effector, effected, skill))

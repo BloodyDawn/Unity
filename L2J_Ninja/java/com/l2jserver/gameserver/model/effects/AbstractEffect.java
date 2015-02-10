@@ -28,7 +28,7 @@ import java.util.logging.Logger;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.handler.EffectHandler;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -120,7 +120,7 @@ public abstract class AbstractEffect
 	 * @param skill the skill
 	 * @return {@code true} if there isn't a condition to test or it's passed, {@code false} otherwise
 	 */
-	public boolean testConditions(L2Character caster, L2Character target, Skill skill)
+	public boolean testConditions(Creature caster, Creature target, Skill skill)
 	{
 		return (_attachCond == null) || _attachCond.test(caster, target, skill);
 	}
@@ -236,7 +236,7 @@ public abstract class AbstractEffect
 	 * @param skill the skill
 	 * @return a list of stat functions.
 	 */
-	public List<AbstractFunction> getStatFuncs(L2Character caster, L2Character target, Skill skill)
+	public List<AbstractFunction> getStatFuncs(Creature caster, Creature target, Skill skill)
 	{
 		if (getFuncTemplates() == null)
 		{

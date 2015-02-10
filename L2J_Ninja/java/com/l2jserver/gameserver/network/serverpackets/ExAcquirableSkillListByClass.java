@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.network.serverpackets;
 
 import java.util.List;
 
-import com.l2jserver.gameserver.model.L2SkillLearn;
+import com.l2jserver.gameserver.model.SkillLearn;
 import com.l2jserver.gameserver.model.base.AcquireSkillType;
 
 /**
@@ -28,10 +28,10 @@ import com.l2jserver.gameserver.model.base.AcquireSkillType;
  */
 public class ExAcquirableSkillListByClass extends L2GameServerPacket
 {
-	final List<L2SkillLearn> _learnable;
+	final List<SkillLearn> _learnable;
 	final AcquireSkillType _type;
 	
-	public ExAcquirableSkillListByClass(List<L2SkillLearn> learnable, AcquireSkillType type)
+	public ExAcquirableSkillListByClass(List<SkillLearn> learnable, AcquireSkillType type)
 	{
 		_learnable = learnable;
 		_type = type;
@@ -44,7 +44,7 @@ public class ExAcquirableSkillListByClass extends L2GameServerPacket
 		writeH(0xFA);
 		writeH(_type.getId());
 		writeH(_learnable.size());
-		for (L2SkillLearn skill : _learnable)
+		for (SkillLearn skill : _learnable)
 		{
 			writeD(skill.getSkillId());
 			writeH(skill.getSkillLevel());

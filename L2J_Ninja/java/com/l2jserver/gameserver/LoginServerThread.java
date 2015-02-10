@@ -46,7 +46,7 @@ import javolution.util.FastMap;
 
 import com.l2jserver.Config;
 import com.l2jserver.L2DatabaseFactory;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.L2GameClient;
 import com.l2jserver.gameserver.network.L2GameClient.GameClientState;
@@ -283,10 +283,10 @@ public class LoginServerThread extends Thread
 								st.addAttribute(ServerStatus.SERVER_AGE, ServerStatus.SERVER_AGE_ALL);
 							}
 							sendPacket(st);
-							if (L2World.getInstance().getAllPlayersCount() > 0)
+							if (World.getInstance().getAllPlayersCount() > 0)
 							{
 								final List<String> playerList = new ArrayList<>();
-								for (L2PcInstance player : L2World.getInstance().getPlayers())
+								for (L2PcInstance player : World.getInstance().getPlayers())
 								{
 									playerList.add(player.getAccountName());
 								}

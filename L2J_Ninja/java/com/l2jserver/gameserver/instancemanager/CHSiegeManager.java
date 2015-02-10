@@ -30,7 +30,7 @@ import com.l2jserver.Config;
 import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.model.L2Clan;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
 import com.l2jserver.gameserver.model.entity.clanhall.SiegableHall;
@@ -97,7 +97,7 @@ public final class CHSiegeManager
 		return getConquerableHalls().get(clanHall);
 	}
 	
-	public final SiegableHall getNearbyClanHall(L2Character activeChar)
+	public final SiegableHall getNearbyClanHall(Creature activeChar)
 	{
 		return getNearbyClanHall(activeChar.getX(), activeChar.getY(), 10000);
 	}
@@ -117,7 +117,7 @@ public final class CHSiegeManager
 		return null;
 	}
 	
-	public final ClanHallSiegeEngine getSiege(L2Character character)
+	public final ClanHallSiegeEngine getSiege(Creature character)
 	{
 		SiegableHall hall = getNearbyClanHall(character);
 		if (hall == null)

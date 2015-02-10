@@ -27,7 +27,7 @@ import ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.model.L2Spawn;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.NpcStringId;
@@ -144,7 +144,7 @@ public final class Keltas extends AbstractNpcAI
 		for (L2Spawn spawn : _spawnedMonsters)
 		{
 			spawn.stopRespawn();
-			L2Npc minion = spawn.getLastSpawn();
+			Npc minion = spawn.getLastSpawn();
 			if ((minion != null) && !minion.isDead())
 			{
 				minion.deleteMe();
@@ -154,11 +154,11 @@ public final class Keltas extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.equalsIgnoreCase("despawn"))
 		{
-			final L2Npc keltas = _spawnedKeltas;
+			final Npc keltas = _spawnedKeltas;
 			if ((keltas != null) && !keltas.isDead())
 			{
 				broadcastNpcSay(keltas, ChatType.NPC_SHOUT, NpcStringId.THAT_IS_IT_FOR_TODAY_LET_S_RETREAT_EVERYONE_PULL_BACK);
@@ -171,7 +171,7 @@ public final class Keltas extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		cancelQuestTimers("despawn");
 		despawnMinions();
@@ -179,7 +179,7 @@ public final class Keltas extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
+	public final String onSpawn(Npc npc)
 	{
 		_spawnedKeltas = (L2MonsterInstance) npc;
 		broadcastNpcSay(_spawnedKeltas, ChatType.NPC_SHOUT, NpcStringId.GUYS_SHOW_THEM_OUR_POWER);

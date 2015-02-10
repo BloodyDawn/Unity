@@ -18,15 +18,15 @@
  */
 package com.l2jserver.gameserver.model.actor.poly;
 
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 
 public class ObjectPoly
 {
-	private final L2Object _activeObject;
+	private final WorldObject _activeObject;
 	private int _polyId;
 	private String _polyType;
 	
-	public ObjectPoly(L2Object activeObject)
+	public ObjectPoly(WorldObject activeObject)
 	{
 		_activeObject = activeObject;
 	}
@@ -37,7 +37,7 @@ public class ObjectPoly
 		setPolyType(polyType);
 	}
 	
-	public final L2Object getActiveObject()
+	public final WorldObject getActiveObject()
 	{
 		return _activeObject;
 	}

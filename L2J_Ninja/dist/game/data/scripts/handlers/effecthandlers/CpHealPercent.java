@@ -19,7 +19,7 @@
 package handlers.effecthandlers;
 
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
@@ -50,7 +50,7 @@ public final class CpHealPercent extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		final L2Character target = info.getEffected();
+		final Creature target = info.getEffected();
 		if ((target == null) || target.isDead() || target.isDoor())
 		{
 			return;

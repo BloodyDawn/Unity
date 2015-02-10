@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.network.clientpackets;
 
 import com.l2jserver.gameserver.data.xml.impl.EnchantSkillGroupsData;
-import com.l2jserver.gameserver.model.L2EnchantSkillLearn;
+import com.l2jserver.gameserver.model.EnchantSkillLearn;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.ExEnchantSkillInfoDetail;
 
@@ -84,7 +84,7 @@ public final class RequestExEnchantSkillInfoDetail extends L2GameClientPacket
 		// if reqlvl is 100,200,.. check base skill lvl enchant
 		if ((reqSkillLvl % 100) == 0)
 		{
-			L2EnchantSkillLearn esl = EnchantSkillGroupsData.getInstance().getSkillEnchantmentBySkillId(_skillId);
+			EnchantSkillLearn esl = EnchantSkillGroupsData.getInstance().getSkillEnchantmentBySkillId(_skillId);
 			if (esl != null)
 			{
 				// if player dont have min level to enchant

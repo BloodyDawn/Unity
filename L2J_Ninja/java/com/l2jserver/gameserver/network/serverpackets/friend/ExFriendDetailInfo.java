@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.network.serverpackets.friend;
 
 import java.util.Calendar;
 
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.L2GameServerPacket;
 
@@ -46,7 +46,7 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 		
 		writeD(_player.getObjectId());
 		
-		L2PcInstance friend = L2World.getInstance().getPlayer(_name);
+		L2PcInstance friend = World.getInstance().getPlayer(_name);
 		if (friend == null)
 		{
 			writeS(_name);

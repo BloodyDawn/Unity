@@ -18,14 +18,14 @@
  */
 package com.l2jserver.gameserver.model.actor.stat;
 
-import com.l2jserver.gameserver.model.actor.L2Vehicle;
+import com.l2jserver.gameserver.model.actor.Vehicle;
 
 public class VehicleStat extends CharStat
 {
 	private float _moveSpeed = 0;
 	private int _rotationSpeed = 0;
 	
-	public VehicleStat(L2Vehicle activeChar)
+	public VehicleStat(Vehicle activeChar)
 	{
 		super(activeChar);
 	}

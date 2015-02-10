@@ -22,7 +22,7 @@ import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.QuestSound;
 import com.l2jserver.gameserver.model.L2Seed;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.conditions.Condition;
@@ -97,7 +97,7 @@ public final class Sow extends AbstractEffect
 		target.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 	}
 	
-	private static boolean calcSuccess(L2Character activeChar, L2Character target, L2Seed seed)
+	private static boolean calcSuccess(Creature activeChar, Creature target, L2Seed seed)
 	{
 		// TODO: check all the chances
 		final int minlevelSeed = seed.getLevel() - 5;

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
-import com.l2jserver.gameserver.model.L2SkillLearn;
+import com.l2jserver.gameserver.model.SkillLearn;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.AdditionalItemHolder;
@@ -248,7 +248,7 @@ public final class Transform implements IIdentifiable
 			}
 			
 			// Add collection skills.
-			for (L2SkillLearn skill : SkillTreesData.getInstance().getCollectSkillTree().values())
+			for (SkillLearn skill : SkillTreesData.getInstance().getCollectSkillTree().values())
 			{
 				if (player.getKnownSkill(skill.getSkillId()) != null)
 				{

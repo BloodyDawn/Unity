@@ -31,7 +31,7 @@ import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.instancemanager.ItemAuctionManager;
 import com.l2jserver.gameserver.model.ItemInfo;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -88,7 +88,7 @@ public final class ItemAuction
 		
 		final L2ItemInstance item = _auctionItem.createNewItemInstance();
 		_itemInfo = new ItemInfo(item);
-		L2World.getInstance().removeObject(item);
+		World.getInstance().removeObject(item);
 		
 		for (final ItemAuctionBid bid : _auctionBids)
 		{

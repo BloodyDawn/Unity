@@ -63,7 +63,7 @@ import org.w3c.dom.Node;
 import com.l2jserver.gameserver.data.xml.IXmlReader;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.enums.IllegalActionPunishmentType;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.util.FloodProtectorConfig;
@@ -2671,9 +2671,9 @@ public final class Config
 			GEODATA_PATH = Paths.get(geoData.getString("GeoDataPath", "./data/geodata"));
 			TRY_LOAD_UNSPECIFIED_REGIONS = geoData.getBoolean("TryLoadUnspecifiedRegions", true);
 			GEODATA_REGIONS = new HashMap<>();
-			for (int regionX = L2World.TILE_X_MIN; regionX <= L2World.TILE_X_MAX; regionX++)
+			for (int regionX = World.TILE_X_MIN; regionX <= World.TILE_X_MAX; regionX++)
 			{
-				for (int regionY = L2World.TILE_Y_MIN; regionY <= L2World.TILE_Y_MAX; regionY++)
+				for (int regionY = World.TILE_Y_MIN; regionY <= World.TILE_Y_MAX; regionY++)
 				{
 					String key = regionX + "_" + regionY;
 					if (geoData.containskey(regionX + "_" + regionY))

@@ -30,7 +30,7 @@ import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.serverpackets.NpcSay;
@@ -318,13 +318,13 @@ public class MC_Show extends AbstractNpcAI
 		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new StartMCShow(), diff, 14400000L);
 	}
 	
-	private void autoChat(L2Npc npc, NpcStringId npcString, ChatType type)
+	private void autoChat(Npc npc, NpcStringId npcString, ChatType type)
 	{
 		npc.broadcastPacket(new NpcSay(npc.getObjectId(), type, npc.getId(), npcString));
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		if (IS_STARTED)
 		{
@@ -365,7 +365,7 @@ public class MC_Show extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if ((event == null) || event.isEmpty())
 		{

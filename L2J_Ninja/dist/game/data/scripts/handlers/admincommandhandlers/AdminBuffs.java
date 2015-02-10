@@ -26,8 +26,8 @@ import java.util.StringTokenizer;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.skills.AbnormalType;
@@ -67,7 +67,7 @@ public class AdminBuffs implements IAdminCommandHandler
 			if (st.hasMoreTokens())
 			{
 				final String playername = st.nextToken();
-				L2PcInstance player = L2World.getInstance().getPlayer(playername);
+				L2PcInstance player = World.getInstance().getPlayer(playername);
 				if (player != null)
 				{
 					int page = 1;
@@ -83,7 +83,7 @@ public class AdminBuffs implements IAdminCommandHandler
 			}
 			else if ((activeChar.getTarget() != null) && activeChar.getTarget().isCharacter())
 			{
-				showBuffs(activeChar, (L2Character) activeChar.getTarget(), 1, command.endsWith("_ps"));
+				showBuffs(activeChar, (Creature) activeChar.getTarget(), 1, command.endsWith("_ps"));
 				return true;
 			}
 			else
@@ -138,7 +138,7 @@ public class AdminBuffs implements IAdminCommandHandler
 			{
 				int radius = Integer.parseInt(val);
 				
-				for (L2Character knownChar : activeChar.getKnownList().getKnownCharactersInRadius(radius))
+				for (Creature knownChar : activeChar.getKnownList().getKnownCharactersInRadius(radius))
 				{
 					if (knownChar.isPlayer() && !knownChar.equals(activeChar))
 					{
@@ -167,7 +167,7 @@ public class AdminBuffs implements IAdminCommandHandler
 				
 				try
 				{
-					player = L2World.getInstance().getPlayer(playername);
+					player = World.getInstance().getPlayer(playername);
 				}
 				catch (Exception e)
 				{
@@ -238,7 +238,7 @@ public class AdminBuffs implements IAdminCommandHandler
 		return ADMIN_COMMANDS;
 	}
 	
-	public static void showBuffs(L2PcInstance activeChar, L2Character target, int page, boolean passive)
+	public static void showBuffs(L2PcInstance activeChar, Creature target, int page, boolean passive)
 	{
 		final List<BuffInfo> effects = new ArrayList<>();
 		if (!passive)
@@ -337,10 +337,10 @@ public class AdminBuffs implements IAdminCommandHandler
 	
 	private static void removeBuff(L2PcInstance activeChar, int objId, int skillId)
 	{
-		L2Character target = null;
+		Creature target = null;
 		try
 		{
-			target = (L2Character) L2World.getInstance().findObject(objId);
+			target = (Creature) World.getInstance().findObject(objId);
 		}
 		catch (Exception e)
 		{
@@ -364,10 +364,10 @@ public class AdminBuffs implements IAdminCommandHandler
 	
 	private static void removeAllBuffs(L2PcInstance activeChar, int objId)
 	{
-		L2Character target = null;
+		Creature target = null;
 		try
 		{
-			target = (L2Character) L2World.getInstance().findObject(objId);
+			target = (Creature) World.getInstance().findObject(objId);
 		}
 		catch (Exception e)
 		{

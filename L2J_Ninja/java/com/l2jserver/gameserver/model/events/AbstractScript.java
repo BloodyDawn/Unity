@@ -50,10 +50,10 @@ import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.L2Spawn;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -361,7 +361,7 @@ public abstract class AbstractScript extends ManagedScript
 	}
 	
 	/**
-	 * Provides instant callback operation when {@link L2Attackable} dies from a {@link L2PcInstance}.
+	 * Provides instant callback operation when {@link Attackable} dies from a {@link L2PcInstance}.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -374,7 +374,7 @@ public abstract class AbstractScript extends ManagedScript
 	// ---------------------------------------------------------------------------------------------------------------------------
 	
 	/**
-	 * Provides instant callback operation when {@link L2PcInstance} talk to {@link L2Npc} for first time.
+	 * Provides instant callback operation when {@link L2PcInstance} talk to {@link Npc} for first time.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -385,7 +385,7 @@ public abstract class AbstractScript extends ManagedScript
 	}
 	
 	/**
-	 * Provides instant callback operation when {@link L2PcInstance} talk to {@link L2Npc} for first time.
+	 * Provides instant callback operation when {@link L2PcInstance} talk to {@link Npc} for first time.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -398,7 +398,7 @@ public abstract class AbstractScript extends ManagedScript
 	// ---------------------------------------------------------------------------------------------------------------------------
 	
 	/**
-	 * Provides instant callback operation when {@link L2PcInstance} talk to {@link L2Npc}.
+	 * Provides instant callback operation when {@link L2PcInstance} talk to {@link Npc}.
 	 * @param npcIds
 	 * @return
 	 */
@@ -408,7 +408,7 @@ public abstract class AbstractScript extends ManagedScript
 	}
 	
 	/**
-	 * Provides instant callback operation when {@link L2PcInstance} talk to {@link L2Npc}.
+	 * Provides instant callback operation when {@link L2PcInstance} talk to {@link Npc}.
 	 * @param npcIds
 	 * @return
 	 */
@@ -420,7 +420,7 @@ public abstract class AbstractScript extends ManagedScript
 	// ---------------------------------------------------------------------------------------------------------------------------
 	
 	/**
-	 * Provides instant callback operation when teleport {@link L2Npc}.
+	 * Provides instant callback operation when teleport {@link Npc}.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -431,7 +431,7 @@ public abstract class AbstractScript extends ManagedScript
 	}
 	
 	/**
-	 * Provides instant callback operation when teleport {@link L2Npc}.
+	 * Provides instant callback operation when teleport {@link Npc}.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -444,7 +444,7 @@ public abstract class AbstractScript extends ManagedScript
 	// ---------------------------------------------------------------------------------------------------------------------------
 	
 	/**
-	 * Provides instant callback operation when {@link L2PcInstance} talk to {@link L2Npc} and must receive quest state.
+	 * Provides instant callback operation when {@link L2PcInstance} talk to {@link Npc} and must receive quest state.
 	 * @param npcIds
 	 * @return
 	 */
@@ -454,7 +454,7 @@ public abstract class AbstractScript extends ManagedScript
 	}
 	
 	/**
-	 * Provides instant callback operation when {@link L2PcInstance} talk to {@link L2Npc} and must receive quest state.
+	 * Provides instant callback operation when {@link L2PcInstance} talk to {@link Npc} and must receive quest state.
 	 * @param npcIds
 	 * @return
 	 */
@@ -538,7 +538,7 @@ public abstract class AbstractScript extends ManagedScript
 	// ---------------------------------------------------------------------------------------------------------------------------
 	
 	/**
-	 * Provides instant callback operation when {@link L2Npc} receives event from another {@link L2Npc}
+	 * Provides instant callback operation when {@link Npc} receives event from another {@link Npc}
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -549,7 +549,7 @@ public abstract class AbstractScript extends ManagedScript
 	}
 	
 	/**
-	 * Provides instant callback operation when {@link L2Npc} receives event from another {@link L2Npc}
+	 * Provides instant callback operation when {@link Npc} receives event from another {@link Npc}
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -562,7 +562,7 @@ public abstract class AbstractScript extends ManagedScript
 	// ---------------------------------------------------------------------------------------------------------------------------
 	
 	/**
-	 * Provides instant callback operation when {@link L2Npc} finishes to move.
+	 * Provides instant callback operation when {@link Npc} finishes to move.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -573,7 +573,7 @@ public abstract class AbstractScript extends ManagedScript
 	}
 	
 	/**
-	 * Provides instant callback operation when {@link L2Npc} finishes to move.
+	 * Provides instant callback operation when {@link Npc} finishes to move.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -586,7 +586,7 @@ public abstract class AbstractScript extends ManagedScript
 	// ---------------------------------------------------------------------------------------------------------------------------
 	
 	/**
-	 * Provides instant callback operation when {@link L2Npc} arrive to node of its route
+	 * Provides instant callback operation when {@link Npc} arrive to node of its route
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -597,7 +597,7 @@ public abstract class AbstractScript extends ManagedScript
 	}
 	
 	/**
-	 * Provides instant callback operation when {@link L2Npc} arrive to node of its route
+	 * Provides instant callback operation when {@link Npc} arrive to node of its route
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -610,7 +610,7 @@ public abstract class AbstractScript extends ManagedScript
 	// ---------------------------------------------------------------------------------------------------------------------------
 	
 	/**
-	 * Provides instant callback operation when {@link L2Npc} finishes to move on its route.
+	 * Provides instant callback operation when {@link Npc} finishes to move on its route.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -621,7 +621,7 @@ public abstract class AbstractScript extends ManagedScript
 	}
 	
 	/**
-	 * Provides instant callback operation when {@link L2Npc} finishes to move on its route.
+	 * Provides instant callback operation when {@link Npc} finishes to move on its route.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -634,7 +634,7 @@ public abstract class AbstractScript extends ManagedScript
 	// ---------------------------------------------------------------------------------------------------------------------------
 	
 	/**
-	 * Provides instant callback operation when {@link L2Npc} is about to hate and start attacking a creature.
+	 * Provides instant callback operation when {@link Npc} is about to hate and start attacking a creature.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -645,7 +645,7 @@ public abstract class AbstractScript extends ManagedScript
 	}
 	
 	/**
-	 * Provides instant callback operation when {@link L2Npc} is about to hate and start attacking a creature.
+	 * Provides instant callback operation when {@link Npc} is about to hate and start attacking a creature.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -656,7 +656,7 @@ public abstract class AbstractScript extends ManagedScript
 	}
 	
 	/**
-	 * Provides instant callback operation when {@link L2Npc} is about to hate and start attacking a creature.
+	 * Provides instant callback operation when {@link Npc} is about to hate and start attacking a creature.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -667,7 +667,7 @@ public abstract class AbstractScript extends ManagedScript
 	}
 	
 	/**
-	 * Provides instant callback operation when {@link L2Npc} is about to hate and start attacking a creature.
+	 * Provides instant callback operation when {@link Npc} is about to hate and start attacking a creature.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -680,7 +680,7 @@ public abstract class AbstractScript extends ManagedScript
 	// ---------------------------------------------------------------------------------------------------------------------------
 	
 	/**
-	 * Provides instant callback operation when {@link L2Npc} is about to hate and start attacking a creature.
+	 * Provides instant callback operation when {@link Npc} is about to hate and start attacking a creature.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -691,7 +691,7 @@ public abstract class AbstractScript extends ManagedScript
 	}
 	
 	/**
-	 * Provides instant callback operation when {@link L2Npc} is about to hate and start attacking a creature.
+	 * Provides instant callback operation when {@link Npc} is about to hate and start attacking a creature.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -702,7 +702,7 @@ public abstract class AbstractScript extends ManagedScript
 	}
 	
 	/**
-	 * Provides instant callback operation when {@link L2Npc} is about to hate and start attacking a creature.
+	 * Provides instant callback operation when {@link Npc} is about to hate and start attacking a creature.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -713,7 +713,7 @@ public abstract class AbstractScript extends ManagedScript
 	}
 	
 	/**
-	 * Provides instant callback operation when {@link L2Npc} is about to hate and start attacking a creature.
+	 * Provides instant callback operation when {@link Npc} is about to hate and start attacking a creature.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -726,7 +726,7 @@ public abstract class AbstractScript extends ManagedScript
 	// ---------------------------------------------------------------------------------------------------------------------------
 	
 	/**
-	 * Provides instant callback operation when {@link L2Npc} sees another creature.
+	 * Provides instant callback operation when {@link Npc} sees another creature.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -737,7 +737,7 @@ public abstract class AbstractScript extends ManagedScript
 	}
 	
 	/**
-	 * Provides instant callback operation when {@link L2Npc} sees another creature.
+	 * Provides instant callback operation when {@link Npc} sees another creature.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -798,7 +798,7 @@ public abstract class AbstractScript extends ManagedScript
 	// ---------------------------------------------------------------------------------------------------------------------------
 	
 	/**
-	 * Provides instant callback operation when {@link L2PcInstance} enters in {@link L2Attackable}'s aggressive range.
+	 * Provides instant callback operation when {@link L2PcInstance} enters in {@link Attackable}'s aggressive range.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -809,7 +809,7 @@ public abstract class AbstractScript extends ManagedScript
 	}
 	
 	/**
-	 * Provides instant callback operation when {@link L2PcInstance} enters in {@link L2Attackable}'s aggressive range.
+	 * Provides instant callback operation when {@link L2PcInstance} enters in {@link Attackable}'s aggressive range.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -918,7 +918,7 @@ public abstract class AbstractScript extends ManagedScript
 	// ---------------------------------------------------------------------------------------------------------------------------
 	
 	/**
-	 * Provides instant callback operation when {@link com.l2jserver.gameserver.model.actor.L2Character} Enters on a {@link L2ZoneType}.
+	 * Provides instant callback operation when {@link com.l2jserver.gameserver.model.actor.Creature} Enters on a {@link L2ZoneType}.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -929,7 +929,7 @@ public abstract class AbstractScript extends ManagedScript
 	}
 	
 	/**
-	 * Provides instant callback operation when {@link com.l2jserver.gameserver.model.actor.L2Character} Enters on a {@link L2ZoneType}.
+	 * Provides instant callback operation when {@link com.l2jserver.gameserver.model.actor.Creature} Enters on a {@link L2ZoneType}.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -942,7 +942,7 @@ public abstract class AbstractScript extends ManagedScript
 	// ---------------------------------------------------------------------------------------------------------------------------
 	
 	/**
-	 * Provides instant callback operation when {@link com.l2jserver.gameserver.model.actor.L2Character} Exits on a {@link L2ZoneType}.
+	 * Provides instant callback operation when {@link com.l2jserver.gameserver.model.actor.Creature} Exits on a {@link L2ZoneType}.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -953,7 +953,7 @@ public abstract class AbstractScript extends ManagedScript
 	}
 	
 	/**
-	 * Provides instant callback operation when {@link com.l2jserver.gameserver.model.actor.L2Character} Exits on a {@link L2ZoneType}.
+	 * Provides instant callback operation when {@link com.l2jserver.gameserver.model.actor.Creature} Exits on a {@link L2ZoneType}.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -1552,11 +1552,11 @@ public abstract class AbstractScript extends ManagedScript
 	 * Add a temporary spawn of the specified NPC.
 	 * @param npcId the ID of the NPC to spawn
 	 * @param pos the object containing the spawn location coordinates
-	 * @return the {@link L2Npc} object of the newly spawned NPC or {@code null} if the NPC doesn't exist
+	 * @return the {@link Npc} object of the newly spawned NPC or {@code null} if the NPC doesn't exist
 	 * @see #addSpawn(int, IPositionable, boolean, long, boolean, int)
 	 * @see #addSpawn(int, int, int, int, int, boolean, long, boolean, int)
 	 */
-	public static L2Npc addSpawn(int npcId, IPositionable pos)
+	public static Npc addSpawn(int npcId, IPositionable pos)
 	{
 		return addSpawn(npcId, pos.getX(), pos.getY(), pos.getZ(), pos.getHeading(), false, 0, false, 0);
 	}
@@ -1568,9 +1568,9 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param pos the object containing the spawn location coordinates
 	 * @param randomOffset if {@code true}, adds +/- 50~100 to X/Y coordinates of the spawn location
 	 * @param despawnDelay time in milliseconds till the NPC is despawned (0 - only despawned on server shutdown)
-	 * @return the {@link L2Npc} object of the newly spawned NPC, {@code null} if the NPC doesn't exist
+	 * @return the {@link Npc} object of the newly spawned NPC, {@code null} if the NPC doesn't exist
 	 */
-	public static L2Npc addSpawn(L2Npc summoner, int npcId, IPositionable pos, boolean randomOffset, long despawnDelay)
+	public static Npc addSpawn(Npc summoner, int npcId, IPositionable pos, boolean randomOffset, long despawnDelay)
 	{
 		return addSpawn(summoner, npcId, pos.getX(), pos.getY(), pos.getZ(), pos.getHeading(), randomOffset, despawnDelay, false, 0);
 	}
@@ -1580,11 +1580,11 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param npcId the ID of the NPC to spawn
 	 * @param pos the object containing the spawn location coordinates
 	 * @param isSummonSpawn if {@code true}, displays a summon animation on NPC spawn
-	 * @return the {@link L2Npc} object of the newly spawned NPC or {@code null} if the NPC doesn't exist
+	 * @return the {@link Npc} object of the newly spawned NPC or {@code null} if the NPC doesn't exist
 	 * @see #addSpawn(int, IPositionable, boolean, long, boolean, int)
 	 * @see #addSpawn(int, int, int, int, int, boolean, long, boolean, int)
 	 */
-	public static L2Npc addSpawn(int npcId, IPositionable pos, boolean isSummonSpawn)
+	public static Npc addSpawn(int npcId, IPositionable pos, boolean isSummonSpawn)
 	{
 		return addSpawn(npcId, pos.getX(), pos.getY(), pos.getZ(), pos.getHeading(), false, 0, isSummonSpawn, 0);
 	}
@@ -1595,11 +1595,11 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param pos the object containing the spawn location coordinates
 	 * @param randomOffset if {@code true}, adds +/- 50~100 to X/Y coordinates of the spawn location
 	 * @param despawnDelay time in milliseconds till the NPC is despawned (0 - only despawned on server shutdown)
-	 * @return the {@link L2Npc} object of the newly spawned NPC or {@code null} if the NPC doesn't exist
+	 * @return the {@link Npc} object of the newly spawned NPC or {@code null} if the NPC doesn't exist
 	 * @see #addSpawn(int, IPositionable, boolean, long, boolean, int)
 	 * @see #addSpawn(int, int, int, int, int, boolean, long, boolean, int)
 	 */
-	public static L2Npc addSpawn(int npcId, IPositionable pos, boolean randomOffset, long despawnDelay)
+	public static Npc addSpawn(int npcId, IPositionable pos, boolean randomOffset, long despawnDelay)
 	{
 		return addSpawn(npcId, pos.getX(), pos.getY(), pos.getZ(), pos.getHeading(), randomOffset, despawnDelay, false, 0);
 	}
@@ -1611,11 +1611,11 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param randomOffset if {@code true}, adds +/- 50~100 to X/Y coordinates of the spawn location
 	 * @param despawnDelay time in milliseconds till the NPC is despawned (0 - only despawned on server shutdown)
 	 * @param isSummonSpawn if {@code true}, displays a summon animation on NPC spawn
-	 * @return the {@link L2Npc} object of the newly spawned NPC or {@code null} if the NPC doesn't exist
+	 * @return the {@link Npc} object of the newly spawned NPC or {@code null} if the NPC doesn't exist
 	 * @see #addSpawn(int, IPositionable, boolean, long, boolean, int)
 	 * @see #addSpawn(int, int, int, int, int, boolean, long, boolean, int)
 	 */
-	public static L2Npc addSpawn(int npcId, IPositionable pos, boolean randomOffset, long despawnDelay, boolean isSummonSpawn)
+	public static Npc addSpawn(int npcId, IPositionable pos, boolean randomOffset, long despawnDelay, boolean isSummonSpawn)
 	{
 		return addSpawn(npcId, pos.getX(), pos.getY(), pos.getZ(), pos.getHeading(), randomOffset, despawnDelay, isSummonSpawn, 0);
 	}
@@ -1628,14 +1628,14 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param despawnDelay time in milliseconds till the NPC is despawned (0 - only despawned on server shutdown)
 	 * @param isSummonSpawn if {@code true}, displays a summon animation on NPC spawn
 	 * @param instanceId the ID of the instance to spawn the NPC in (0 - the open world)
-	 * @return the {@link L2Npc} object of the newly spawned NPC or {@code null} if the NPC doesn't exist
+	 * @return the {@link Npc} object of the newly spawned NPC or {@code null} if the NPC doesn't exist
 	 * @see #addSpawn(int, IPositionable)
 	 * @see #addSpawn(int, IPositionable, boolean)
 	 * @see #addSpawn(int, IPositionable, boolean, long)
 	 * @see #addSpawn(int, IPositionable, boolean, long, boolean)
 	 * @see #addSpawn(int, int, int, int, int, boolean, long, boolean, int)
 	 */
-	public static L2Npc addSpawn(int npcId, IPositionable pos, boolean randomOffset, long despawnDelay, boolean isSummonSpawn, int instanceId)
+	public static Npc addSpawn(int npcId, IPositionable pos, boolean randomOffset, long despawnDelay, boolean isSummonSpawn, int instanceId)
 	{
 		return addSpawn(npcId, pos.getX(), pos.getY(), pos.getZ(), pos.getHeading(), randomOffset, despawnDelay, isSummonSpawn, instanceId);
 	}
@@ -1649,11 +1649,11 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param heading the heading of the NPC
 	 * @param randomOffset if {@code true}, adds +/- 50~100 to X/Y coordinates of the spawn location
 	 * @param despawnDelay time in milliseconds till the NPC is despawned (0 - only despawned on server shutdown)
-	 * @return the {@link L2Npc} object of the newly spawned NPC or {@code null} if the NPC doesn't exist
+	 * @return the {@link Npc} object of the newly spawned NPC or {@code null} if the NPC doesn't exist
 	 * @see #addSpawn(int, IPositionable, boolean, long, boolean, int)
 	 * @see #addSpawn(int, int, int, int, int, boolean, long, boolean, int)
 	 */
-	public static L2Npc addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, long despawnDelay)
+	public static Npc addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, long despawnDelay)
 	{
 		return addSpawn(npcId, x, y, z, heading, randomOffset, despawnDelay, false, 0);
 	}
@@ -1668,11 +1668,11 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param randomOffset if {@code true}, adds +/- 50~100 to X/Y coordinates of the spawn location
 	 * @param despawnDelay time in milliseconds till the NPC is despawned (0 - only despawned on server shutdown)
 	 * @param isSummonSpawn if {@code true}, displays a summon animation on NPC spawn
-	 * @return the {@link L2Npc} object of the newly spawned NPC or {@code null} if the NPC doesn't exist
+	 * @return the {@link Npc} object of the newly spawned NPC or {@code null} if the NPC doesn't exist
 	 * @see #addSpawn(int, IPositionable, boolean, long, boolean, int)
 	 * @see #addSpawn(int, int, int, int, int, boolean, long, boolean, int)
 	 */
-	public static L2Npc addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, long despawnDelay, boolean isSummonSpawn)
+	public static Npc addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, long despawnDelay, boolean isSummonSpawn)
 	{
 		return addSpawn(npcId, x, y, z, heading, randomOffset, despawnDelay, isSummonSpawn, 0);
 	}
@@ -1688,12 +1688,12 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param despawnDelay time in milliseconds till the NPC is despawned (0 - only despawned on server shutdown)
 	 * @param isSummonSpawn if {@code true}, displays a summon animation on NPC spawn
 	 * @param instanceId the ID of the instance to spawn the NPC in (0 - the open world)
-	 * @return the {@link L2Npc} object of the newly spawned NPC or {@code null} if the NPC doesn't exist
+	 * @return the {@link Npc} object of the newly spawned NPC or {@code null} if the NPC doesn't exist
 	 * @see #addSpawn(int, IPositionable, boolean, long, boolean, int)
 	 * @see #addSpawn(int, int, int, int, int, boolean, long)
 	 * @see #addSpawn(int, int, int, int, int, boolean, long, boolean)
 	 */
-	public static L2Npc addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, long despawnDelay, boolean isSummonSpawn, int instanceId)
+	public static Npc addSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffset, long despawnDelay, boolean isSummonSpawn, int instanceId)
 	{
 		return addSpawn(null, npcId, x, y, z, heading, randomOffset, despawnDelay, isSummonSpawn, instanceId);
 	}
@@ -1710,12 +1710,12 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param despawnDelay time in milliseconds till the NPC is despawned (0 - only despawned on server shutdown)
 	 * @param isSummonSpawn if {@code true}, displays a summon animation on NPC spawn
 	 * @param instanceId the ID of the instance to spawn the NPC in (0 - the open world)
-	 * @return the {@link L2Npc} object of the newly spawned NPC or {@code null} if the NPC doesn't exist
+	 * @return the {@link Npc} object of the newly spawned NPC or {@code null} if the NPC doesn't exist
 	 * @see #addSpawn(int, IPositionable, boolean, long, boolean, int)
 	 * @see #addSpawn(int, int, int, int, int, boolean, long)
 	 * @see #addSpawn(int, int, int, int, int, boolean, long, boolean)
 	 */
-	public static L2Npc addSpawn(L2Npc summoner, int npcId, int x, int y, int z, int heading, boolean randomOffset, long despawnDelay, boolean isSummonSpawn, int instanceId)
+	public static Npc addSpawn(Npc summoner, int npcId, int x, int y, int z, int heading, boolean randomOffset, long despawnDelay, boolean isSummonSpawn, int instanceId)
 	{
 		try
 		{
@@ -1757,7 +1757,7 @@ public abstract class AbstractScript extends ManagedScript
 			spawn.setZ(z);
 			spawn.stopRespawn();
 			
-			final L2Npc npc = spawn.spawnOne(isSummonSpawn);
+			final Npc npc = spawn.spawnOne(isSummonSpawn);
 			if (despawnDelay > 0)
 			{
 				npc.scheduleDespawn(despawnDelay);
@@ -1804,7 +1804,7 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param minionId
 	 * @return
 	 */
-	public L2Npc addMinion(L2MonsterInstance master, int minionId)
+	public Npc addMinion(L2MonsterInstance master, int minionId)
 	{
 		return MinionList.spawnMinion(master, minionId);
 	}
@@ -2227,7 +2227,7 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param playSound if true, plays ItemSound.quest_itemget when items are given and ItemSound.quest_middle when the limit is reached
 	 * @return {@code true} if limit > 0 and the limit was reached or if limit <= 0 and items were given; {@code false} in all other cases
 	 */
-	public static boolean giveItemRandomly(L2PcInstance player, L2Npc npc, int itemId, long amountToGive, long limit, double dropChance, boolean playSound)
+	public static boolean giveItemRandomly(L2PcInstance player, Npc npc, int itemId, long amountToGive, long limit, double dropChance, boolean playSound)
 	{
 		return giveItemRandomly(player, npc, itemId, amountToGive, amountToGive, limit, dropChance, playSound);
 	}
@@ -2245,7 +2245,7 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param playSound if true, plays ItemSound.quest_itemget when items are given and ItemSound.quest_middle when the limit is reached
 	 * @return {@code true} if limit > 0 and the limit was reached or if limit <= 0 and items were given; {@code false} in all other cases
 	 */
-	public static boolean giveItemRandomly(L2PcInstance player, L2Npc npc, int itemId, long minAmount, long maxAmount, long limit, double dropChance, boolean playSound)
+	public static boolean giveItemRandomly(L2PcInstance player, Npc npc, int itemId, long minAmount, long maxAmount, long limit, double dropChance, boolean playSound)
 	{
 		final long currentCount = getQuestItemsCount(player, itemId);
 		
@@ -2499,10 +2499,10 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param npc the related NPC
 	 * @param isSummon {@code true} if the event that called this method was originated by the player's summon, {@code false} otherwise
 	 * @param includeParty if {@code true}, #actionForEachPlayer(L2PcInstance, L2Npc, boolean) will be called with the player's party members
-	 * @param includeCommandChannel if {@code true}, {@link #actionForEachPlayer(L2PcInstance, L2Npc, boolean)} will be called with the player's command channel members
-	 * @see #actionForEachPlayer(L2PcInstance, L2Npc, boolean)
+	 * @param includeCommandChannel if {@code true}, {@link #actionForEachPlayer(L2PcInstance, Npc, boolean)} will be called with the player's command channel members
+	 * @see #actionForEachPlayer(L2PcInstance, Npc, boolean)
 	 */
-	public final void executeForEachPlayer(L2PcInstance player, final L2Npc npc, final boolean isSummon, boolean includeParty, boolean includeCommandChannel)
+	public final void executeForEachPlayer(L2PcInstance player, final Npc npc, final boolean isSummon, boolean includeParty, boolean includeCommandChannel)
 	{
 		if ((includeParty || includeCommandChannel) && player.isInParty())
 		{
@@ -2530,12 +2530,12 @@ public abstract class AbstractScript extends ManagedScript
 	}
 	
 	/**
-	 * Overridable method called from {@link #executeForEachPlayer(L2PcInstance, L2Npc, boolean, boolean, boolean)}
+	 * Overridable method called from {@link #executeForEachPlayer(L2PcInstance, Npc, boolean, boolean, boolean)}
 	 * @param player the player on which the action will be run
 	 * @param npc the NPC related to this action
 	 * @param isSummon {@code true} if the event that called this method was originated by the player's summon
 	 */
-	public void actionForEachPlayer(L2PcInstance player, L2Npc npc, boolean isSummon)
+	public void actionForEachPlayer(L2PcInstance player, Npc npc, boolean isSummon)
 	{
 		// To be overridden in quest scripts.
 	}
@@ -2629,7 +2629,7 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param npc the NPC that performs the attack
 	 * @param playable the player
 	 */
-	protected void addAttackPlayerDesire(L2Npc npc, L2Playable playable)
+	protected void addAttackPlayerDesire(Npc npc, Playable playable)
 	{
 		addAttackPlayerDesire(npc, playable, 999);
 	}
@@ -2640,11 +2640,11 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param target the target of the attack
 	 * @param desire the desire to perform the attack
 	 */
-	protected void addAttackPlayerDesire(L2Npc npc, L2Playable target, int desire)
+	protected void addAttackPlayerDesire(Npc npc, Playable target, int desire)
 	{
-		if (npc instanceof L2Attackable)
+		if (npc instanceof Attackable)
 		{
-			((L2Attackable) npc).addDamageHate(target, 0, desire);
+			((Attackable) npc).addDamageHate(target, 0, desire);
 		}
 		npc.setIsRunning(true);
 		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
@@ -2656,7 +2656,7 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param loc the location
 	 * @param desire the desire
 	 */
-	protected void addMoveToDesire(L2Npc npc, Location loc, int desire)
+	protected void addMoveToDesire(Npc npc, Location loc, int desire)
 	{
 		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, loc);
 	}
@@ -2667,7 +2667,7 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param target the target of the cast
 	 * @param skill the skill to cast
 	 */
-	protected void castSkill(L2Npc npc, L2Playable target, SkillHolder skill)
+	protected void castSkill(Npc npc, Playable target, SkillHolder skill)
 	{
 		npc.setTarget(target);
 		npc.doCast(skill.getSkill());
@@ -2679,7 +2679,7 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param target the target of the cast
 	 * @param skill the skill to cast
 	 */
-	protected void castSkill(L2Npc npc, L2Playable target, Skill skill)
+	protected void castSkill(Npc npc, Playable target, Skill skill)
 	{
 		npc.setTarget(target);
 		npc.doCast(skill);
@@ -2692,7 +2692,7 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param skill the skill to cast
 	 * @param desire the desire to cast the skill
 	 */
-	protected void addSkillCastDesire(L2Npc npc, L2Character target, SkillHolder skill, int desire)
+	protected void addSkillCastDesire(Npc npc, Creature target, SkillHolder skill, int desire)
 	{
 		addSkillCastDesire(npc, target, skill.getSkill(), desire);
 	}
@@ -2704,11 +2704,11 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param skill the skill to cast
 	 * @param desire the desire to cast the skill
 	 */
-	protected void addSkillCastDesire(L2Npc npc, L2Character target, Skill skill, int desire)
+	protected void addSkillCastDesire(Npc npc, Creature target, Skill skill, int desire)
 	{
-		if (npc instanceof L2Attackable)
+		if (npc instanceof Attackable)
 		{
-			((L2Attackable) npc).addDamageHate(target, 0, desire);
+			((Attackable) npc).addDamageHate(target, 0, desire);
 		}
 		npc.setTarget(target);
 		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill, target);
@@ -2729,7 +2729,7 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param isWide
 	 * @param relAngle
 	 */
-	public static final void specialCamera(L2PcInstance player, L2Character creature, int force, int angle1, int angle2, int time, int range, int duration, int relYaw, int relPitch, int isWide, int relAngle)
+	public static final void specialCamera(L2PcInstance player, Creature creature, int force, int angle1, int angle2, int time, int range, int duration, int relYaw, int relPitch, int isWide, int relAngle)
 	{
 		player.sendPacket(new SpecialCamera(creature, force, angle1, angle2, time, range, duration, relYaw, relPitch, isWide, relAngle));
 	}
@@ -2748,7 +2748,7 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param isWide
 	 * @param relAngle
 	 */
-	public static final void specialCameraEx(L2PcInstance player, L2Character creature, int force, int angle1, int angle2, int time, int duration, int relYaw, int relPitch, int isWide, int relAngle)
+	public static final void specialCameraEx(L2PcInstance player, Creature creature, int force, int angle1, int angle2, int time, int duration, int relYaw, int relPitch, int isWide, int relAngle)
 	{
 		player.sendPacket(new SpecialCamera(creature, player, force, angle1, angle2, time, duration, relYaw, relPitch, isWide, relAngle));
 	}
@@ -2769,7 +2769,7 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param relAngle
 	 * @param unk
 	 */
-	public static final void specialCamera3(L2PcInstance player, L2Character creature, int force, int angle1, int angle2, int time, int range, int duration, int relYaw, int relPitch, int isWide, int relAngle, int unk)
+	public static final void specialCamera3(L2PcInstance player, Creature creature, int force, int angle1, int angle2, int time, int range, int duration, int relYaw, int relPitch, int isWide, int relAngle, int unk)
 	{
 		player.sendPacket(new SpecialCamera(creature, force, angle1, angle2, time, range, duration, relYaw, relPitch, isWide, relAngle, unk));
 	}

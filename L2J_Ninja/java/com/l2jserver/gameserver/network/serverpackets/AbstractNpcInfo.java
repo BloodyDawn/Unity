@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2TrapInstance;
 
 public abstract class AbstractNpcInfo extends L2GameServerPacket
@@ -37,7 +37,7 @@ public abstract class AbstractNpcInfo extends L2GameServerPacket
 	protected String _name = "";
 	protected String _title = "";
 	
-	public AbstractNpcInfo(L2Character cha)
+	public AbstractNpcInfo(Creature cha)
 	{
 		_isSummoned = cha.isShowSummonAnimation();
 		_x = cha.getX();
@@ -59,7 +59,7 @@ public abstract class AbstractNpcInfo extends L2GameServerPacket
 	{
 		private final L2TrapInstance _trap;
 		
-		public TrapInfo(L2TrapInstance cha, L2Character attacker)
+		public TrapInfo(L2TrapInstance cha, Creature attacker)
 		{
 			super(cha);
 			

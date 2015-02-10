@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.L2ManufactureItem;
+import com.l2jserver.gameserver.model.ManufactureItem;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 public class RecipeShopSellList extends L2GameServerPacket
@@ -46,7 +46,7 @@ public class RecipeShopSellList extends L2GameServerPacket
 		else
 		{
 			writeD(_manufacturer.getManufactureItems().size());
-			for (L2ManufactureItem temp : _manufacturer.getManufactureItems().values())
+			for (ManufactureItem temp : _manufacturer.getManufactureItems().values())
 			{
 				writeD(temp.getRecipeId());
 				writeD(0x00); // unknown

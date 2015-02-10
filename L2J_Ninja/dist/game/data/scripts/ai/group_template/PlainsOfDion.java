@@ -22,8 +22,8 @@ import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.GeoData;
 import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.util.Util;
@@ -64,7 +64,7 @@ public final class PlainsOfDion extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isSummon)
+	public String onAttack(Npc npc, L2PcInstance player, int damage, boolean isSummon)
 	{
 		if (npc.isScriptValue(0))
 		{
@@ -78,11 +78,11 @@ public final class PlainsOfDion extends AbstractNpcAI
 				broadcastNpcSay(npc, ChatType.NPC_GENERAL, MONSTERS_MSG[i]);
 			}
 			
-			for (L2Character obj : npc.getKnownList().getKnownCharactersInRadius(npc.getTemplate().getClanHelpRange()))
+			for (Creature obj : npc.getKnownList().getKnownCharactersInRadius(npc.getTemplate().getClanHelpRange()))
 			{
 				if (obj.isMonster() && Util.contains(DELU_LIZARDMEN, obj.getId()) && !obj.isAttackingNow() && !obj.isDead() && GeoData.getInstance().canSeeTarget(npc, obj))
 				{
-					final L2Npc monster = (L2Npc) obj;
+					final Npc monster = (Npc) obj;
 					addAttackPlayerDesire(monster, player);
 					broadcastNpcSay(monster, ChatType.NPC_GENERAL, MONSTERS_ASSIST_MSG[getRandom(3)]);
 				}

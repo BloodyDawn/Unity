@@ -23,7 +23,7 @@ import java.util.Arrays;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.model.Elementals;
 import com.l2jserver.gameserver.model.PcCondOverride;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.items.L2Weapon;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -35,7 +35,7 @@ import com.l2jserver.gameserver.model.zone.ZoneId;
 
 public class CharStat
 {
-	private final L2Character _activeChar;
+	private final Creature _activeChar;
 	private long _exp = 0;
 	private long _sp = 0;
 	private byte _level = 1;
@@ -47,7 +47,7 @@ public class CharStat
 	/** Creature's maximum buff count. */
 	private int _maxBuffCount = Config.BUFFS_MAX_AMOUNT;
 	
-	public CharStat(L2Character activeChar)
+	public CharStat(Creature activeChar)
 	{
 		_activeChar = activeChar;
 		Arrays.fill(_attackTraits, 1.0f);
@@ -73,7 +73,7 @@ public class CharStat
 	 * @param skill The L2Skill whose properties will be used in the calculation (ex : Level...)
 	 * @return
 	 */
-	public final double calcStat(Stats stat, double initVal, L2Character target, Skill skill)
+	public final double calcStat(Stats stat, double initVal, Creature target, Skill skill)
 	{
 		double value = initVal;
 		if (stat == null)
@@ -151,7 +151,7 @@ public class CharStat
 		return (int) Math.round(calcStat(Stats.ACCURACY_MAGIC, 0, null, null));
 	}
 	
-	public L2Character getActiveChar()
+	public Creature getActiveChar()
 	{
 		return _activeChar;
 	}
@@ -177,7 +177,7 @@ public class CharStat
 	 * @param init
 	 * @return the Critical Damage rate (base+modifier) of the L2Character.
 	 */
-	public final double getCriticalDmg(L2Character target, double init)
+	public final double getCriticalDmg(Creature target, double init)
 	{
 		return calcStat(Stats.CRITICAL_DAMAGE, init, target, null);
 	}
@@ -187,7 +187,7 @@ public class CharStat
 	 * @param skill
 	 * @return the Critical Hit rate (base+modifier) of the L2Character.
 	 */
-	public int getCriticalHit(L2Character target, Skill skill)
+	public int getCriticalHit(Creature target, Skill skill)
 	{
 		int val = (int) calcStat(Stats.CRITICAL_RATE, _activeChar.getTemplate().getBaseCritRate(), target, skill);
 		
@@ -211,7 +211,7 @@ public class CharStat
 	 * @param target
 	 * @return the Attack Evasion rate (base+modifier) of the L2Character.
 	 */
-	public int getEvasionRate(L2Character target)
+	public int getEvasionRate(Creature target)
 	{
 		int val = (int) Math.round(calcStat(Stats.EVASION_RATE, 0, target, null));
 		
@@ -227,7 +227,7 @@ public class CharStat
 	 * @param target
 	 * @return the Attack Evasion rate (base+modifier) of the L2Character.
 	 */
-	public int getMagicEvasionRate(L2Character target)
+	public int getMagicEvasionRate(Creature target)
 	{
 		int val = (int) Math.round(calcStat(Stats.MAGIC_EVASION_RATE, 0, target, null));
 		
@@ -318,7 +318,7 @@ public class CharStat
 	 * @param skill The L2Skill used against the target
 	 * @return
 	 */
-	public int getMAtk(L2Character target, Skill skill)
+	public int getMAtk(Creature target, Skill skill)
 	{
 		float bonusAtk = 1;
 		if (Config.L2JMOD_CHAMPION_ENABLE && _activeChar.isChampion())
@@ -360,7 +360,7 @@ public class CharStat
 	 * @param skill
 	 * @return the Magic Critical Hit rate (base+modifier) of the L2Character.
 	 */
-	public final int getMCriticalHit(L2Character target, Skill skill)
+	public final int getMCriticalHit(Creature target, Skill skill)
 	{
 		int val = (int) calcStat(Stats.MCRITICAL_RATE, getActiveChar().getTemplate().getBaseMCritRate(), target, skill);
 		
@@ -378,7 +378,7 @@ public class CharStat
 	 * @param skill The L2Skill used against the target
 	 * @return the MDef (base+modifier) of the L2Character against a skill in function of abnormal effects in progress.
 	 */
-	public int getMDef(L2Character target, Skill skill)
+	public int getMDef(Creature target, Skill skill)
 	{
 		// Get the base MDef of the L2Character
 		double defence = _activeChar.getTemplate().getBaseMDef();
@@ -515,7 +515,7 @@ public class CharStat
 	 * @param target
 	 * @return the PAtk (base+modifier) of the L2Character.
 	 */
-	public int getPAtk(L2Character target)
+	public int getPAtk(Creature target)
 	{
 		float bonusAtk = 1;
 		if (Config.L2JMOD_CHAMPION_ENABLE && _activeChar.isChampion())
@@ -547,7 +547,7 @@ public class CharStat
 	 * @param target
 	 * @return the PDef (base+modifier) of the L2Character.
 	 */
-	public int getPDef(L2Character target)
+	public int getPDef(Creature target)
 	{
 		return (int) calcStat(Stats.POWER_DEFENCE, (_activeChar.isRaid()) ? _activeChar.getTemplate().getBasePDef() * Config.RAID_PDEFENCE_MULTIPLIER : _activeChar.getTemplate().getBasePDef(), target, null);
 	}
@@ -594,7 +594,7 @@ public class CharStat
 	 * @param target
 	 * @return the weapon reuse modifier.
 	 */
-	public final double getWeaponReuseModifier(L2Character target)
+	public final double getWeaponReuseModifier(Creature target)
 	{
 		return calcStat(Stats.ATK_REUSE, 1, target, null);
 	}

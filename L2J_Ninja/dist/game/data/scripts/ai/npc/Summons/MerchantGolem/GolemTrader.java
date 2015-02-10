@@ -20,7 +20,7 @@ package ai.npc.Summons.MerchantGolem;
 
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 
 /**
  * Golem Trader AI.
@@ -38,7 +38,7 @@ public final class GolemTrader extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		npc.scheduleDespawn(180000);
 		return super.onSpawn(npc);

@@ -23,8 +23,8 @@ import java.util.Collection;
 import java.util.List;
 
 import com.l2jserver.gameserver.handler.ITargetTypeHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
 
@@ -34,19 +34,19 @@ import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
 public class AuraCorpseMob implements ITargetTypeHandler
 {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
 	{
-		List<L2Character> targetList = new ArrayList<>();
+		List<Creature> targetList = new ArrayList<>();
 		// Go through the L2Character _knownList
-		final Collection<L2Character> objs = activeChar.getKnownList().getKnownCharactersInRadius(skill.getAffectRange());
+		final Collection<Creature> objs = activeChar.getKnownList().getKnownCharactersInRadius(skill.getAffectRange());
 		int maxTargets = skill.getAffectLimit();
-		for (L2Character obj : objs)
+		for (Creature obj : objs)
 		{
 			if (obj.isAttackable() && obj.isDead())
 			{
 				if (onlyFirst)
 				{
-					return new L2Character[]
+					return new Creature[]
 					{
 						obj
 					};
@@ -60,7 +60,7 @@ public class AuraCorpseMob implements ITargetTypeHandler
 				targetList.add(obj);
 			}
 		}
-		return targetList.toArray(new L2Character[targetList.size()]);
+		return targetList.toArray(new Creature[targetList.size()]);
 	}
 	
 	@Override

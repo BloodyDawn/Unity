@@ -27,7 +27,7 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.sql.impl.CharNameTable;
 import com.l2jserver.gameserver.handler.ITelnetHandler;
 import com.l2jserver.gameserver.instancemanager.PunishmentManager;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
@@ -64,7 +64,7 @@ public class PlayerHandler implements ITelnetHandler
 			try
 			{
 				command = command.substring(5);
-				L2PcInstance player = L2World.getInstance().getPlayer(command);
+				L2PcInstance player = World.getInstance().getPlayer(command);
 				if (player != null)
 				{
 					player.sendMessage("You are kicked by gm");
@@ -83,7 +83,7 @@ public class PlayerHandler implements ITelnetHandler
 			
 			try
 			{
-				L2PcInstance player = L2World.getInstance().getPlayer(st.nextToken());
+				L2PcInstance player = World.getInstance().getPlayer(st.nextToken());
 				int itemId = Integer.parseInt(st.nextToken());
 				int amount = Integer.parseInt(st.nextToken());
 				
@@ -117,7 +117,7 @@ public class PlayerHandler implements ITelnetHandler
 			
 			try
 			{
-				L2PcInstance player = L2World.getInstance().getPlayer(st.nextToken());
+				L2PcInstance player = World.getInstance().getPlayer(st.nextToken());
 				itemType = Integer.parseInt(st.nextToken());
 				enchant = Integer.parseInt(st.nextToken());
 				

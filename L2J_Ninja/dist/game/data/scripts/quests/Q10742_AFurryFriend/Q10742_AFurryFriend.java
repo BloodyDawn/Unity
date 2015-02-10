@@ -21,7 +21,7 @@ package quests.Q10742_AFurryFriend;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
@@ -64,7 +64,7 @@ public class Q10742_AFurryFriend extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
@@ -84,7 +84,7 @@ public class Q10742_AFurryFriend extends Quest
 			case "33952-03.htm":
 			{
 				qs.startQuest();
-				final L2Npc ricky = addSpawn(RICKY, RICKY_SPAWN);
+				final Npc ricky = addSpawn(RICKY, RICKY_SPAWN);
 				ricky.setIsRunning(true);
 				ricky.setSummoner(player);
 				startQuestTimer("start_move_ricky", 1000, ricky, player);
@@ -105,7 +105,7 @@ public class Q10742_AFurryFriend extends Quest
 					if (!player.getKnownList().getKnownCharactersInRadius(500).stream().anyMatch(n -> (n.getId() == RICKY) && (n.getSummoner() == player)))
 					{
 						showOnScreenMsg(player, NpcStringId.TAKE_RICKY_TO_LEIRA_IN_UNDER_2_MINUTES, ExShowScreenMessage.MIDDLE_CENTER, 4500);
-						final L2Npc ricky = addSpawn(RICKY, player.getLocation());
+						final Npc ricky = addSpawn(RICKY, player.getLocation());
 						ricky.setSummoner(player);
 						ricky.setTitle(player.getAppearance().getVisibleName());
 						ricky.setIsRunning(true);
@@ -140,7 +140,7 @@ public class Q10742_AFurryFriend extends Quest
 					}
 					else
 					{
-						final L2Npc leira = (L2Npc) npc.getKnownList().getKnownCharactersInRadius(100).stream().filter(n -> (n.getId() == LEIRA)).findFirst().orElse(null);
+						final Npc leira = (Npc) npc.getKnownList().getKnownCharactersInRadius(100).stream().filter(n -> (n.getId() == LEIRA)).findFirst().orElse(null);
 						if (leira != null)
 						{
 							qs.setCond(2, true);
@@ -170,7 +170,7 @@ public class Q10742_AFurryFriend extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
@@ -220,7 +220,7 @@ public class Q10742_AFurryFriend extends Quest
 	}
 	
 	@Override
-	public void onMoveFinished(L2Npc npc)
+	public void onMoveFinished(Npc npc)
 	{
 		final int currentWaypoint = npc.getScriptValue();
 		

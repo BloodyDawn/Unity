@@ -30,8 +30,8 @@ import com.l2jserver.gameserver.enums.CategoryType;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
@@ -55,7 +55,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 		protected int maximalDefenseCounter = 0;
 		protected int timerCount = 0;
 		protected int enabledSeal = 0;
-		protected Set<L2Npc> spawnedNpc = Collections.newSetFromMap(new ConcurrentHashMap<L2Npc, Boolean>());
+		protected Set<Npc> spawnedNpc = Collections.newSetFromMap(new ConcurrentHashMap<Npc, Boolean>());
 		protected boolean openingPlayed = false;
 		protected boolean harnakMessage1 = false;
 		protected boolean harnakMessage2 = false;
@@ -112,7 +112,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String htmltext = null;
 		switch (event)
@@ -198,9 +198,9 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 				if (tmpworld instanceof HuRWorld)
 				{
 					final HuRWorld world = (HuRWorld) tmpworld;
-					final List<L2Npc> spawnedNpcs = spawnGroup("first_room", world.getInstanceId());
+					final List<Npc> spawnedNpcs = spawnGroup("first_room", world.getInstanceId());
 					world.spawnedNpc.addAll(spawnedNpcs);
-					final L2Npc razkan = spawnedNpcs.stream().filter(n -> n.getId() == RAKZAN).findFirst().orElse(null);
+					final Npc razkan = spawnedNpcs.stream().filter(n -> n.getId() == RAKZAN).findFirst().orElse(null);
 					if (razkan != null)
 					{
 						world.currentNpc = RAKZAN;
@@ -225,8 +225,8 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 				{
 					final HuRWorld world = (HuRWorld) tmpworld;
 					world.incStatus();
-					final List<L2Npc> spawnedNpcs = spawnGroup("third_room", world.getInstanceId());
-					final L2Npc powerSource = spawnedNpcs.stream().filter(n -> n.getId() == POWER_SOURCE).findFirst().orElse(null);
+					final List<Npc> spawnedNpcs = spawnGroup("third_room", world.getInstanceId());
+					final Npc powerSource = spawnedNpcs.stream().filter(n -> n.getId() == POWER_SOURCE).findFirst().orElse(null);
 					if (powerSource != null)
 					{
 						powerSource.setTarget(player);
@@ -283,10 +283,10 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 					if (tmpworld instanceof HuRWorld)
 					{
 						final HuRWorld world = (HuRWorld) tmpworld;
-						final List<L2Npc> spawnedNpcs = spawnGroup("second_room_wave_1_" + npcId, world.getInstanceId());
+						final List<Npc> spawnedNpcs = spawnGroup("second_room_wave_1_" + npcId, world.getInstanceId());
 						world.spawnedNpc.addAll(spawnedNpcs);
 						world.waveNpcId = npcId;
-						for (L2Npc spawnedNpc : spawnedNpcs)
+						for (Npc spawnedNpc : spawnedNpcs)
 						{
 							addAttackPlayerDesire(spawnedNpc, player);
 						}
@@ -301,9 +301,9 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 				if (tmpworld instanceof HuRWorld)
 				{
 					final HuRWorld world = (HuRWorld) tmpworld;
-					final List<L2Npc> spawnedNpcs = spawnGroup("second_room_wave_2_" + world.waveNpcId, world.getInstanceId());
+					final List<Npc> spawnedNpcs = spawnGroup("second_room_wave_2_" + world.waveNpcId, world.getInstanceId());
 					world.spawnedNpc.addAll(spawnedNpcs);
-					for (L2Npc spawnedNpc : spawnedNpcs)
+					for (Npc spawnedNpc : spawnedNpcs)
 					{
 						addAttackPlayerDesire(spawnedNpc, player);
 					}
@@ -318,14 +318,14 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 				if (tmpworld instanceof HuRWorld)
 				{
 					final HuRWorld world = (HuRWorld) tmpworld;
-					final List<L2Npc> spawnedNpcs = spawnGroup("second_room_wave_3_" + world.waveNpcId, world.getInstanceId());
+					final List<Npc> spawnedNpcs = spawnGroup("second_room_wave_3_" + world.waveNpcId, world.getInstanceId());
 					world.spawnedNpc.addAll(spawnedNpcs);
-					for (L2Npc spawnedNpc : spawnedNpcs)
+					for (Npc spawnedNpc : spawnedNpcs)
 					{
 						addAttackPlayerDesire(spawnedNpc, player);
 					}
-					final List<L2Npc> powersources = spawnGroup("power_source", world.getInstanceId());
-					for (L2Npc powersource : powersources)
+					final List<Npc> powersources = spawnGroup("power_source", world.getInstanceId());
+					for (Npc powersource : powersources)
 					{
 						powersource.setTarget(player);
 						startQuestTimer("cast_defense_maximum", 1, powersource, player);
@@ -394,13 +394,13 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 				if (tmpworld instanceof HuRWorld)
 				{
 					final HuRWorld world = (HuRWorld) tmpworld;
-					List<L2Npc> spawnedNpcs = spawnGroup("third_room_" + world.waveNpcId, world.getInstanceId());
-					for (L2Npc spawnedNpc : spawnedNpcs)
+					List<Npc> spawnedNpcs = spawnGroup("third_room_" + world.waveNpcId, world.getInstanceId());
+					for (Npc spawnedNpc : spawnedNpcs)
 					{
 						addAttackPlayerDesire(spawnedNpc, player);
 					}
 					spawnedNpcs = spawnGroup("seal", world.getInstanceId());
-					for (L2Npc spawnedNpc : spawnedNpcs)
+					for (Npc spawnedNpc : spawnedNpcs)
 					{
 						broadcastNpcSay(spawnedNpc, ChatType.NPC_GENERAL, NpcStringId.DISABLE_DEVICE_WILL_GO_OUT_OF_CONTROL_IN_1_MINUTE);
 						startQuestTimer("seal_say", 10000, spawnedNpc, player);
@@ -541,7 +541,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(killer);
 		if ((tmpworld instanceof HuRWorld))
@@ -563,7 +563,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 				{
 					case RAKZAN:
 					{
-						final L2Npc bathius = world.spawnedNpc.stream().filter(n -> n.getId() == KRAKIA_BATHUS).findFirst().orElse(null);
+						final Npc bathius = world.spawnedNpc.stream().filter(n -> n.getId() == KRAKIA_BATHUS).findFirst().orElse(null);
 						if (bathius != null)
 						{
 							bathius.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, NPC_ROOM1_LOC);
@@ -575,7 +575,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 					}
 					case KRAKIA_BATHUS:
 					{
-						final L2Npc bamonti = world.spawnedNpc.stream().filter(n -> n.getId() == BAMONTI).findFirst().orElse(null);
+						final Npc bamonti = world.spawnedNpc.stream().filter(n -> n.getId() == BAMONTI).findFirst().orElse(null);
 						if (bamonti != null)
 						{
 							bamonti.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, NPC_ROOM1_LOC);
@@ -587,7 +587,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 					}
 					case BAMONTI:
 					{
-						final L2Npc carcass = world.spawnedNpc.stream().filter(n -> n.getId() == KRAKIA_CARCASS).findFirst().orElse(null);
+						final Npc carcass = world.spawnedNpc.stream().filter(n -> n.getId() == KRAKIA_CARCASS).findFirst().orElse(null);
 						if (carcass != null)
 						{
 							carcass.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, NPC_ROOM1_LOC);
@@ -599,7 +599,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 					}
 					case KRAKIA_CARCASS:
 					{
-						final L2Npc khan = world.spawnedNpc.stream().filter(n -> n.getId() == WEISS_KHAN).findFirst().orElse(null);
+						final Npc khan = world.spawnedNpc.stream().filter(n -> n.getId() == WEISS_KHAN).findFirst().orElse(null);
 						if (khan != null)
 						{
 							khan.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, NPC_ROOM1_LOC);
@@ -611,7 +611,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 					}
 					case WEISS_KHAN:
 					{
-						final L2Npc seknus = world.spawnedNpc.stream().filter(n -> n.getId() == SEKNUS).findFirst().orElse(null);
+						final Npc seknus = world.spawnedNpc.stream().filter(n -> n.getId() == SEKNUS).findFirst().orElse(null);
 						if (seknus != null)
 						{
 							seknus.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, NPC_ROOM1_LOC);
@@ -623,7 +623,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 					}
 					case SEKNUS:
 					{
-						final L2Npc lotus = world.spawnedNpc.stream().filter(n -> n.getId() == KRAKIA_LOTUS).findFirst().orElse(null);
+						final Npc lotus = world.spawnedNpc.stream().filter(n -> n.getId() == KRAKIA_LOTUS).findFirst().orElse(null);
 						if (lotus != null)
 						{
 							lotus.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, NPC_ROOM1_LOC);
@@ -635,7 +635,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 					}
 					case KRAKIA_LOTUS:
 					{
-						final L2Npc ele = world.spawnedNpc.stream().filter(n -> n.getId() == WEISS_ELE).findFirst().orElse(null);
+						final Npc ele = world.spawnedNpc.stream().filter(n -> n.getId() == WEISS_ELE).findFirst().orElse(null);
 						if (ele != null)
 						{
 							ele.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, NPC_ROOM1_LOC);
@@ -690,7 +690,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isSummon)
+	public String onAttack(Npc npc, L2PcInstance player, int damage, boolean isSummon)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(player);
 		if (tmpworld instanceof HuRWorld)
@@ -712,7 +712,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 					{
 						if ((npc.getId() != world.currentNpc))
 						{
-							for (L2Npc livingNpc : world.spawnedNpc)
+							for (Npc livingNpc : world.spawnedNpc)
 							{
 								addAttackPlayerDesire(livingNpc, player);
 							}
@@ -778,7 +778,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 	}
 	
 	@Override
-	public String onSeeCreature(L2Npc npc, L2Character creature, boolean isSummon)
+	public String onSeeCreature(Npc npc, Creature creature, boolean isSummon)
 	{
 		if (Util.contains(POWER_SOURCES, npc.getId()) && creature.isPlayer())
 		{
@@ -792,7 +792,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 	}
 	
 	@Override
-	public String onEnterZone(L2Character character, L2ZoneType zone)
+	public String onEnterZone(Creature character, L2ZoneType zone)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(character.getActingPlayer());
 		if (tmpworld instanceof HuRWorld)

@@ -21,9 +21,9 @@ package ai.individual;
 import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2QuestGuardInstance;
 
@@ -44,16 +44,16 @@ public final class TrainningSoldier extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.equals("START_ATTACK") && (npc instanceof L2QuestGuardInstance))
 		{
 			final L2QuestGuardInstance soldier = (L2QuestGuardInstance) npc;
 			
 			//@formatter:off
-			final L2Npc dummy = (L2Npc) soldier.getKnownList().getKnownCharactersInRadius(150)
+			final Npc dummy = (Npc) soldier.getKnownList().getKnownCharactersInRadius(150)
 				.stream()
-				.filter(L2Object::isNpc)
+				.filter(WorldObject::isNpc)
 				.filter(obj -> (obj.getId() == DUMMY))
 				.findFirst()
 				.orElse(null);
@@ -76,7 +76,7 @@ public final class TrainningSoldier extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSeeCreature(L2Npc npc, L2Character creature, boolean isSummon)
+	public String onSeeCreature(Npc npc, Creature creature, boolean isSummon)
 	{
 		if (creature.isPlayer() && (npc.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK))
 		{

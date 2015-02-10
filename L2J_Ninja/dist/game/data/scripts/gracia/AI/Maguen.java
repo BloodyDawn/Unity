@@ -23,8 +23,8 @@ import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.instancemanager.QuestManager;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -83,7 +83,7 @@ public final class Maguen extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if ((npc == null) || (player == null))
 		{
@@ -94,7 +94,7 @@ public final class Maguen extends AbstractNpcAI
 		{
 			case "SPAWN_MAGUEN":
 			{
-				final L2Npc maguen = addSpawn(MAGUEN, npc.getLocation(), true, 60000, true);
+				final Npc maguen = addSpawn(MAGUEN, npc.getLocation(), true, 60000, true);
 				maguen.getVariables().set("SUMMON_PLAYER", player);
 				maguen.setTitle(player.getName());
 				maguen.setIsRunning(true);
@@ -170,7 +170,7 @@ public final class Maguen extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill)
+	public String onSpellFinished(Npc npc, L2PcInstance player, Skill skill)
 	{
 		final BuffInfo b_info = player.getEffectList().getBuffInfoByAbnormalType(B_PLASMA1.getSkill().getAbnormalType());
 		final BuffInfo c_info = player.getEffectList().getBuffInfoByAbnormalType(C_PLASMA1.getSkill().getAbnormalType());
@@ -254,7 +254,7 @@ public final class Maguen extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon)
+	public String onSkillSee(Npc npc, L2PcInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
 		if ((skill == MACHINE.getSkill()) && (caster == npc.getVariables().getObject("SUMMON_PLAYER", L2PcInstance.class)))
 		{
@@ -341,7 +341,7 @@ public final class Maguen extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		if (killer.isInParty())
 		{

@@ -28,8 +28,8 @@ import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.instancemanager.FortSiegeManager;
 import com.l2jserver.gameserver.model.FortSiegeSpawn;
 import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.NpcStringId;
@@ -52,7 +52,7 @@ public class L2FortCommanderInstance extends L2DefenderInstance
 	 * @param attacker The L2Character that the L2CommanderInstance try to attack
 	 */
 	@Override
-	public boolean isAutoAttackable(L2Character attacker)
+	public boolean isAutoAttackable(Creature attacker)
 	{
 		if ((attacker == null) || !(attacker instanceof L2PcInstance))
 		{
@@ -66,7 +66,7 @@ public class L2FortCommanderInstance extends L2DefenderInstance
 	}
 	
 	@Override
-	public void addDamageHate(L2Character attacker, int damage, int aggro)
+	public void addDamageHate(Creature attacker, int damage, int aggro)
 	{
 		if (attacker == null)
 		{
@@ -80,7 +80,7 @@ public class L2FortCommanderInstance extends L2DefenderInstance
 	}
 	
 	@Override
-	public boolean doDie(L2Character killer)
+	public boolean doDie(Creature killer)
 	{
 		if (!super.doDie(killer))
 		{
@@ -119,7 +119,7 @@ public class L2FortCommanderInstance extends L2DefenderInstance
 	}
 	
 	@Override
-	public final void addDamage(L2Character attacker, int damage, Skill skill)
+	public final void addDamage(Creature attacker, int damage, Skill skill)
 	{
 		L2Spawn spawn = getSpawn();
 		if ((spawn != null) && canTalk())
@@ -136,9 +136,9 @@ public class L2FortCommanderInstance extends L2DefenderInstance
 							npcString = NpcStringId.ATTACKING_THE_ENEMY_S_REINFORCEMENTS_IS_NECESSARY_TIME_TO_DIE;
 							break;
 						case 2:
-							if (attacker instanceof L2Summon)
+							if (attacker instanceof Summon)
 							{
-								attacker = ((L2Summon) attacker).getOwner();
+								attacker = ((Summon) attacker).getOwner();
 							}
 							npcString = NpcStringId.EVERYONE_CONCENTRATE_YOUR_ATTACKS_ON_S1_SHOW_THE_ENEMY_YOUR_RESOLVE;
 							break;

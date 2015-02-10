@@ -21,15 +21,15 @@ package com.l2jserver.gameserver.network.serverpackets;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
 
 public class PartySpelled extends L2GameServerPacket
 {
 	private final List<BuffInfo> _effects = new ArrayList<>();
-	private final L2Character _activeChar;
+	private final Creature _activeChar;
 	
-	public PartySpelled(L2Character cha)
+	public PartySpelled(Creature cha)
 	{
 		_activeChar = cha;
 	}

@@ -20,7 +20,7 @@ package ai.npc.ForgeOfTheGods;
 
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
@@ -53,7 +53,7 @@ public final class TarBeetle extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAggroRangeEnter(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		if (npc.getScriptValue() > 0)
 		{
@@ -73,7 +73,7 @@ public final class TarBeetle extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill)
+	public String onSpellFinished(Npc npc, L2PcInstance player, Skill skill)
 	{
 		if ((skill != null) && (skill.getId() == TAR_SPITE))
 		{

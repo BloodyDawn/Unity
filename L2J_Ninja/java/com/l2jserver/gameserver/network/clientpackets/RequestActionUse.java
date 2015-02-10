@@ -23,7 +23,7 @@ import java.util.Arrays;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.ai.CtrlEvent;
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.ai.L2SummonAI;
+import com.l2jserver.gameserver.ai.SummonAI;
 import com.l2jserver.gameserver.ai.NextAction;
 import com.l2jserver.gameserver.data.sql.impl.SummonSkillsTable;
 import com.l2jserver.gameserver.data.xml.impl.PetDataTable;
@@ -33,9 +33,9 @@ import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.enums.MountType;
 import com.l2jserver.gameserver.enums.PrivateStoreType;
 import com.l2jserver.gameserver.instancemanager.AirShipManager;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2BabyPetInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PetInstance;
@@ -135,9 +135,9 @@ public final class RequestActionUse extends L2GameClientPacket
 			}
 		}
 		
-		final L2Summon pet = activeChar.getPet();
-		final L2Summon servitor = activeChar.getAnyServitor();
-		final L2Object target = activeChar.getTarget();
+		final Summon pet = activeChar.getPet();
+		final Summon servitor = activeChar.getAnyServitor();
+		final WorldObject target = activeChar.getTarget();
 		switch (_actionId)
 		{
 			case 0: // Sit/Stand
@@ -171,7 +171,7 @@ public final class RequestActionUse extends L2GameClientPacket
 			case 15: // Change Movement Mode (Pets)
 				if (validateSummon(pet, true))
 				{
-					((L2SummonAI) pet.getAI()).notifyFollowStatusChange();
+					((SummonAI) pet.getAI()).notifyFollowStatusChange();
 				}
 				break;
 			case 16: // Attack (Pets)
@@ -226,7 +226,7 @@ public final class RequestActionUse extends L2GameClientPacket
 			case 21: // Change Movement Mode (Servitors)
 				if (validateSummon(servitor, false))
 				{
-					((L2SummonAI) servitor.getAI()).notifyFollowStatusChange();
+					((SummonAI) servitor.getAI()).notifyFollowStatusChange();
 				}
 				break;
 			case 22: // Attack (Servitors)
@@ -422,7 +422,7 @@ public final class RequestActionUse extends L2GameClientPacket
 			case 81:
 				if ((activeChar.getParty() != null) && (activeChar.getTarget() != null) && (activeChar.getTarget().isCharacter()))
 				{
-					activeChar.getParty().addTacticalSign(_actionId - 77, (L2Character) activeChar.getTarget());
+					activeChar.getParty().addTacticalSign(_actionId - 77, (Creature) activeChar.getTarget());
 				}
 				else
 				{
@@ -745,7 +745,7 @@ public final class RequestActionUse extends L2GameClientPacket
 				break;
 			case 1102: // Unsummon all servitors
 				boolean canUnsummon = true;
-				OUT: for (L2Summon s : activeChar.getServitors().values())
+				OUT: for (Summon s : activeChar.getServitors().values())
 				{
 					if (validateSummon(s, false))
 					{
@@ -988,7 +988,7 @@ public final class RequestActionUse extends L2GameClientPacket
 	 * @param target the target to sit, throne, bench or chair
 	 * @return {@code true} if the player can sit, {@code false} otherwise
 	 */
-	protected boolean useSit(L2PcInstance activeChar, L2Object target)
+	protected boolean useSit(L2PcInstance activeChar, WorldObject target)
 	{
 		if (activeChar.getMountType() != MountType.NONE)
 		{
@@ -1026,7 +1026,7 @@ public final class RequestActionUse extends L2GameClientPacket
 	 * @param target the target to cast the skill on, overwritten or ignored depending on skill type
 	 * @param pet if {@code true} it'll validate a pet, if {@code false} it will validate a servitor
 	 */
-	private void useSkill(int skillId, L2Object target, boolean pet)
+	private void useSkill(int skillId, WorldObject target, boolean pet)
 	{
 		final L2PcInstance activeChar = getActiveChar();
 		if (activeChar == null)
@@ -1036,7 +1036,7 @@ public final class RequestActionUse extends L2GameClientPacket
 		
 		if (pet)
 		{
-			final L2Summon summon = activeChar.getPet();
+			final Summon summon = activeChar.getPet();
 			if (!validateSummon(summon, pet))
 			{
 				return;
@@ -1072,7 +1072,7 @@ public final class RequestActionUse extends L2GameClientPacket
 		}
 		else
 		{
-			final L2Summon servitor = activeChar.getAnyServitor();
+			final Summon servitor = activeChar.getAnyServitor();
 			if (!validateSummon(servitor, pet))
 			{
 				return;
@@ -1141,7 +1141,7 @@ public final class RequestActionUse extends L2GameClientPacket
 	 * @param checkPet if {@code true} it'll validate a pet, if {@code false} it will validate a servitor
 	 * @return {@code true} if the summon is not null and whether is a pet or a servitor depending on {@code checkPet} value, {@code false} otherwise
 	 */
-	private boolean validateSummon(L2Summon summon, boolean checkPet)
+	private boolean validateSummon(Summon summon, boolean checkPet)
 	{
 		if ((summon != null) && ((checkPet && summon.isPet()) || summon.isServitor()))
 		{
@@ -1204,7 +1204,7 @@ public final class RequestActionUse extends L2GameClientPacket
 			return;
 		}
 		
-		final L2Object target = requester.getTarget();
+		final WorldObject target = requester.getTarget();
 		if ((target == null) || !target.isPlayer())
 		{
 			sendPacket(SystemMessageId.INVALID_TARGET);

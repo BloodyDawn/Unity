@@ -29,8 +29,8 @@ import com.l2jserver.gameserver.instancemanager.CastleManager;
 import com.l2jserver.gameserver.instancemanager.GlobalVariablesManager;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.TeleportWhereType;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.impl.sieges.castle.OnCastleSiegeFinish;
 import com.l2jserver.gameserver.model.events.impl.sieges.castle.OnCastleSiegeStart;
@@ -82,8 +82,8 @@ public final class Venom extends AbstractNpcAI
 	private static final SkillHolder VENOM_TELEPORT = new SkillHolder(4995, 1);
 	private static final SkillHolder RANGE_TELEPORT = new SkillHolder(4996, 1);
 	
-	private L2Npc _venom;
-	private L2Npc _massymore;
+	private Npc _venom;
+	private Npc _massymore;
 	
 	private Location _loc;
 	
@@ -123,7 +123,7 @@ public final class Venom extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
+	public String onTalk(Npc npc, L2PcInstance talker)
 	{
 		switch (npc.getId())
 		{
@@ -149,7 +149,7 @@ public final class Venom extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		switch (event)
 		{
@@ -179,7 +179,7 @@ public final class Venom extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAggroRangeEnter(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		if (isSummon)
 		{
@@ -222,7 +222,7 @@ public final class Venom extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill)
+	public String onSpellFinished(Npc npc, L2PcInstance player, Skill skill)
 	{
 		switch (skill.getId())
 		{
@@ -231,11 +231,11 @@ public final class Venom extends AbstractNpcAI
 				break;
 			case 4995:
 				teleportTarget(player);
-				((L2Attackable) npc).stopHating(player);
+				((Attackable) npc).stopHating(player);
 				break;
 			case 4996:
 				teleportTarget(player);
-				((L2Attackable) npc).stopHating(player);
+				((Attackable) npc).stopHating(player);
 				if ((_targets != null) && (_targets.size() > 0))
 				{
 					for (L2PcInstance target : _targets)
@@ -247,7 +247,7 @@ public final class Venom extends AbstractNpcAI
 						if (((x * x) + (y * y) + (z * z)) <= (range * range))
 						{
 							teleportTarget(target);
-							((L2Attackable) npc).stopHating(target);
+							((Attackable) npc).stopHating(target);
 						}
 					}
 					_targets.clear();
@@ -258,7 +258,7 @@ public final class Venom extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
+	public final String onSpawn(Npc npc)
 	{
 		switch (npc.getId())
 		{
@@ -276,7 +276,7 @@ public final class Venom extends AbstractNpcAI
 				_venom.disableSkill(RANGE_TELEPORT.getSkill(), -1);
 				_venom.doRevive();
 				broadcastNpcSay(npc, ChatType.NPC_SHOUT, NpcStringId.WHO_DARES_TO_COVET_THE_THRONE_OF_OUR_CASTLE_LEAVE_IMMEDIATELY_OR_YOU_WILL_PAY_THE_PRICE_OF_YOUR_AUDACITY_WITH_YOUR_VERY_OWN_BLOOD);
-				((L2Attackable) _venom).setCanReturnToSpawnPoint(false);
+				((Attackable) _venom).setCanReturnToSpawnPoint(false);
 				if (checkStatus() == DEAD)
 				{
 					_venom.deleteMe();
@@ -297,7 +297,7 @@ public final class Venom extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
 		final double distance = npc.calculateDistance(attacker, false, false);
 		if (_aggroMode && (getRandom(100) < 25))
@@ -324,13 +324,13 @@ public final class Venom extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		updateStatus(DEAD);
 		broadcastNpcSay(npc, ChatType.NPC_SHOUT, NpcStringId.IT_S_NOT_OVER_YET_IT_WON_T_BE_OVER_LIKE_THIS_NEVER);
 		if (!CastleManager.getInstance().getCastleById(CASTLE).getSiege().isInProgress())
 		{
-			L2Npc cube = addSpawn(TELEPORT_CUBE, CUBE, false, 0);
+			Npc cube = addSpawn(TELEPORT_CUBE, CUBE, false, 0);
 			startQuestTimer("cube_despawn", 120000, cube, null);
 		}
 		cancelQuestTimer("raid_check", npc, null);

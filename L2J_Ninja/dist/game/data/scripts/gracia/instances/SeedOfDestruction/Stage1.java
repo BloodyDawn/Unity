@@ -41,14 +41,14 @@ import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.enums.TrapAction;
 import com.l2jserver.gameserver.instancemanager.GraciaSeedsManager;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.L2CommandChannel;
-import com.l2jserver.gameserver.model.L2Party;
-import com.l2jserver.gameserver.model.L2Territory;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.CommandChannel;
+import com.l2jserver.gameserver.model.Party;
+import com.l2jserver.gameserver.model.Territory;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -78,7 +78,7 @@ public final class Stage1 extends Quest
 {
 	protected class SOD1World extends InstanceWorld
 	{
-		public Map<L2Npc, Boolean> npcList = new HashMap<>();
+		public Map<Npc, Boolean> npcList = new HashMap<>();
 		public int deviceSpawnedMobCount = 0;
 		public Lock lock = new ReentrantLock();
 	}
@@ -101,7 +101,7 @@ public final class Stage1 extends Quest
 	private static final int MAX_PLAYERS = 45;
 	private static final int MAX_DEVICESPAWNEDMOBCOUNT = 100; // prevent too much mob spawn
 	
-	private final Map<Integer, L2Territory> _spawnZoneList = new HashMap<>();
+	private final Map<Integer, Territory> _spawnZoneList = new HashMap<>();
 	private final Map<Integer, List<SODSpawn>> _spawnList = new HashMap<>();
 	private final List<Integer> _mustKillMobsId = new ArrayList<>();
 	
@@ -418,7 +418,7 @@ public final class Stage1 extends Quest
 									continue;
 								}
 								int maxz = Integer.parseInt(att.getNodeValue());
-								L2Territory ter = new L2Territory(id);
+								Territory ter = new Territory(id);
 								
 								for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
 								{
@@ -469,13 +469,13 @@ public final class Stage1 extends Quest
 	
 	private boolean checkConditions(L2PcInstance player)
 	{
-		final L2Party party = player.getParty();
+		final Party party = player.getParty();
 		if (party == null)
 		{
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_CURRENTLY_IN_A_PARTY_SO_YOU_CANNOT_ENTER);
 			return false;
 		}
-		final L2CommandChannel channel = player.getParty().getCommandChannel();
+		final CommandChannel channel = player.getParty().getCommandChannel();
 		if (channel == null)
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_ENTER_BECAUSE_YOU_ARE_NOT_ASSOCIATED_WITH_THE_CURRENT_COMMAND_CHANNEL);
@@ -572,7 +572,7 @@ public final class Stage1 extends Quest
 		return instanceId;
 	}
 	
-	protected boolean checkKillProgress(L2Npc mob, SOD1World world)
+	protected boolean checkKillProgress(Npc mob, SOD1World world)
 	{
 		if (world.npcList.containsKey(mob))
 		{
@@ -718,7 +718,7 @@ public final class Stage1 extends Quest
 			addTrap(npcId, x, y, z, h, skill, world.getInstanceId());
 			return;
 		}
-		L2Npc npc = addSpawn(npcId, x, y, z, h, false, 0, false, world.getInstanceId());
+		Npc npc = addSpawn(npcId, x, y, z, h, false, 0, false, world.getInstanceId());
 		if (addToKillTable)
 		{
 			world.npcList.put(npc, false);
@@ -726,7 +726,7 @@ public final class Stage1 extends Quest
 		npc.setIsNoRndWalk(true);
 		if (npc.isInstanceTypes(InstanceType.L2Attackable))
 		{
-			((L2Attackable) npc).setSeeThroughSilentMove(true);
+			((Attackable) npc).setSeeThroughSilentMove(true);
 		}
 		if (npcId == TIAT_VIDEO_NPC)
 		{
@@ -777,7 +777,7 @@ public final class Stage1 extends Quest
 		// set instance reenter time for all allowed players
 		for (int objectId : world.getAllowed())
 		{
-			L2PcInstance player = L2World.getInstance().getPlayer(objectId);
+			L2PcInstance player = World.getInstance().getPlayer(objectId);
 			InstanceManager.getInstance().setInstanceTime(objectId, INSTANCEID, reenter.getTimeInMillis());
 			if ((player != null) && player.isOnline())
 			{
@@ -790,7 +790,7 @@ public final class Stage1 extends Quest
 	{
 		for (int objId : world.getAllowed())
 		{
-			L2PcInstance player = L2World.getInstance().getPlayer(objId);
+			L2PcInstance player = World.getInstance().getPlayer(objId);
 			if (player != null)
 			{
 				player.sendPacket(message);
@@ -799,7 +799,7 @@ public final class Stage1 extends Quest
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		if (npc.getId() == TIAT_GUARD)
 		{
@@ -813,7 +813,7 @@ public final class Stage1 extends Quest
 	}
 	
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAggroRangeEnter(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		if ((isSummon == false) && (player != null))
 		{
@@ -827,7 +827,7 @@ public final class Stage1 extends Quest
 					{
 						for (int objId : world.getAllowed())
 						{
-							L2PcInstance pl = L2World.getInstance().getPlayer(objId);
+							L2PcInstance pl = World.getInstance().getPlayer(objId);
 							if (pl != null)
 							{
 								pl.showQuestMovie(5);
@@ -842,7 +842,7 @@ public final class Stage1 extends Quest
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpworld instanceof SOD1World)
@@ -874,7 +874,7 @@ public final class Stage1 extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpworld instanceof SOD1World)
@@ -882,10 +882,10 @@ public final class Stage1 extends Quest
 			SOD1World world = (SOD1World) tmpworld;
 			if (event.equalsIgnoreCase("Spawn"))
 			{
-				L2PcInstance target = L2World.getInstance().getPlayer(world.getAllowed().get(getRandom(world.getAllowed().size())));
+				L2PcInstance target = World.getInstance().getPlayer(world.getAllowed().get(getRandom(world.getAllowed().size())));
 				if ((world.deviceSpawnedMobCount < MAX_DEVICESPAWNEDMOBCOUNT) && (target != null) && (target.getInstanceId() == npc.getInstanceId()) && !target.isDead())
 				{
-					L2Attackable mob = (L2Attackable) addSpawn(SPAWN_MOB_IDS[getRandom(SPAWN_MOB_IDS.length)], npc.getSpawn().getLocation(), false, 0, false, world.getInstanceId());
+					Attackable mob = (Attackable) addSpawn(SPAWN_MOB_IDS[getRandom(SPAWN_MOB_IDS.length)], npc.getSpawn().getLocation(), false, 0, false, world.getInstanceId());
 					world.deviceSpawnedMobCount++;
 					mob.setSeeThroughSilentMove(true);
 					mob.setRunning();
@@ -923,18 +923,18 @@ public final class Stage1 extends Quest
 			}
 			else if (event.equalsIgnoreCase("BodyGuardThink"))
 			{
-				L2Character mostHate = ((L2Attackable) npc).getMostHated();
+				Creature mostHate = ((Attackable) npc).getMostHated();
 				if (mostHate != null)
 				{
 					double dist = Util.calculateDistance(mostHate.getXdestination(), mostHate.getYdestination(), 0, npc.getSpawn().getX(), npc.getSpawn().getY(), 0, false, false);
 					if (dist > 900)
 					{
-						((L2Attackable) npc).reduceHate(mostHate, ((L2Attackable) npc).getHating(mostHate));
+						((Attackable) npc).reduceHate(mostHate, ((Attackable) npc).getHating(mostHate));
 					}
-					mostHate = ((L2Attackable) npc).getMostHated();
-					if ((mostHate != null) || (((L2Attackable) npc).getHating(mostHate) < 5))
+					mostHate = ((Attackable) npc).getMostHated();
+					if ((mostHate != null) || (((Attackable) npc).getHating(mostHate) < 5))
 					{
-						((L2Attackable) npc).returnHome();
+						((Attackable) npc).returnHome();
 					}
 				}
 			}
@@ -943,7 +943,7 @@ public final class Stage1 extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		if (npc.getId() == SPAWN_DEVICE)
 		{
@@ -993,13 +993,13 @@ public final class Stage1 extends Quest
 					world.incStatus();
 					for (int objId : world.getAllowed())
 					{
-						L2PcInstance pl = L2World.getInstance().getPlayer(objId);
+						L2PcInstance pl = World.getInstance().getPlayer(objId);
 						if (pl != null)
 						{
 							pl.showQuestMovie(6);
 						}
 					}
-					for (L2Npc mob : InstanceManager.getInstance().getInstance(world.getInstanceId()).getNpcs())
+					for (Npc mob : InstanceManager.getInstance().getInstance(world.getInstanceId()).getNpcs())
 					{
 						mob.deleteMe();
 					}
@@ -1016,7 +1016,7 @@ public final class Stage1 extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		int npcId = npc.getId();
 		getQuestState(player, true);
@@ -1040,7 +1040,7 @@ public final class Stage1 extends Quest
 	}
 	
 	@Override
-	public String onTrapAction(L2TrapInstance trap, L2Character trigger, TrapAction action)
+	public String onTrapAction(L2TrapInstance trap, Creature trigger, TrapAction action)
 	{
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(trap.getInstanceId());
 		if (tmpworld instanceof SOD1World)

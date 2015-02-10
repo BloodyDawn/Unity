@@ -41,11 +41,11 @@ import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.data.xml.impl.AdminData;
 import com.l2jserver.gameserver.enums.ItemLocation;
 import com.l2jserver.gameserver.handler.ITelnetHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -90,7 +90,7 @@ public class DebugHandler implements ITelnetHandler
 						return false;
 					}
 					String charName = st.nextToken();
-					L2PcInstance targetPlayer = L2World.getInstance().getPlayer(charName);
+					L2PcInstance targetPlayer = World.getInstance().getPlayer(charName);
 					
 					if (targetPlayer == null)
 					{
@@ -362,8 +362,8 @@ public class DebugHandler implements ITelnetHandler
 		int playerCount = 0, objectCount = 0;
 		int max = LoginServerThread.getInstance().getMaxPlayer();
 		
-		playerCount = L2World.getInstance().getAllPlayersCount();
-		objectCount = L2World.getInstance().getVisibleObjectsCount();
+		playerCount = World.getInstance().getAllPlayersCount();
+		objectCount = World.getInstance().getVisibleObjectsCount();
 		
 		int itemCount = 0;
 		int itemVoidCount = 0;
@@ -378,15 +378,15 @@ public class DebugHandler implements ITelnetHandler
 		int summonCount = 0;
 		int AICount = 0;
 		
-		for (L2Object obj : L2World.getInstance().getVisibleObjects())
+		for (WorldObject obj : World.getInstance().getVisibleObjects())
 		{
 			if (obj == null)
 			{
 				continue;
 			}
-			if (obj instanceof L2Character)
+			if (obj instanceof Creature)
 			{
-				if (((L2Character) obj).hasAI())
+				if (((Creature) obj).hasAI())
 				{
 					AICount++;
 				}
@@ -411,7 +411,7 @@ public class DebugHandler implements ITelnetHandler
 					minionsGroupCount += ((L2MonsterInstance) obj).getMinionList().lazyCountSpawnedMinionsGroups();
 				}
 			}
-			else if (obj instanceof L2Npc)
+			else if (obj instanceof Npc)
 			{
 				npcCount++;
 			}
@@ -423,7 +423,7 @@ public class DebugHandler implements ITelnetHandler
 					detachedCount++;
 				}
 			}
-			else if (obj instanceof L2Summon)
+			else if (obj instanceof Summon)
 			{
 				summonCount++;
 			}
@@ -431,7 +431,7 @@ public class DebugHandler implements ITelnetHandler
 			{
 				doorCount++;
 			}
-			else if (obj instanceof L2Character)
+			else if (obj instanceof Creature)
 			{
 				charCount++;
 			}

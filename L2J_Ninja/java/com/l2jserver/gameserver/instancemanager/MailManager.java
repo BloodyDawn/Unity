@@ -36,7 +36,7 @@ import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.idfactory.IdFactory;
 import com.l2jserver.gameserver.instancemanager.tasks.MessageDeletionTask;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Message;
 import com.l2jserver.gameserver.network.serverpackets.ExNoticePostArrived;
@@ -185,7 +185,7 @@ public final class MailManager
 			_log.log(Level.WARNING, getClass().getSimpleName() + ": Error saving message:" + e.getMessage(), e);
 		}
 		
-		final L2PcInstance receiver = L2World.getInstance().getPlayer(msg.getReceiverId());
+		final L2PcInstance receiver = World.getInstance().getPlayer(msg.getReceiverId());
 		if (receiver != null)
 		{
 			receiver.sendPacket(ExNoticePostArrived.valueOf(true));

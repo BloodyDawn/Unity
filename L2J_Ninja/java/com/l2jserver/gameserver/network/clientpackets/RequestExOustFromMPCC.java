@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.network.clientpackets;
 
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
@@ -41,7 +41,7 @@ public final class RequestExOustFromMPCC extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance target = L2World.getInstance().getPlayer(_name);
+		L2PcInstance target = World.getInstance().getPlayer(_name);
 		L2PcInstance activeChar = getClient().getActiveChar();
 		
 		if ((target != null) && target.isInParty() && activeChar.isInParty() && activeChar.getParty().isInCommandChannel() && target.getParty().isInCommandChannel() && activeChar.getParty().getCommandChannel().getLeader().equals(activeChar) && activeChar.getParty().getCommandChannel().equals(target.getParty().getCommandChannel()))

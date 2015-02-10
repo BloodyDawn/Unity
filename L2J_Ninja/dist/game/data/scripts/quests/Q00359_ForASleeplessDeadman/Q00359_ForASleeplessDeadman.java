@@ -21,7 +21,7 @@ package quests.Q00359_ForASleeplessDeadman;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
@@ -70,7 +70,7 @@ public final class Q00359_ForASleeplessDeadman extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final QuestState st = getQuestState(player, false);
 		if (st == null)
@@ -107,7 +107,7 @@ public final class Q00359_ForASleeplessDeadman extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		final QuestState st = getRandomPartyMemberState(player, 1, 3, npc);
 		if ((st != null) && st.giveItemRandomly(npc, REMAINS_OF_ADEN_RESIDENTS, 1, REMAINS_COUNT, MOBS.get(npc.getId()), true))
@@ -118,7 +118,7 @@ public final class Q00359_ForASleeplessDeadman extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);

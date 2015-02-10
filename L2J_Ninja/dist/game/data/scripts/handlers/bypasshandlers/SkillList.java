@@ -24,8 +24,8 @@ import java.util.logging.Level;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
 import com.l2jserver.gameserver.handler.IBypassHandler;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2NpcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
@@ -40,7 +40,7 @@ public class SkillList implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Character target)
+	public boolean useBypass(String command, L2PcInstance activeChar, Creature target)
 	{
 		if (!(target instanceof L2NpcInstance))
 		{
@@ -54,7 +54,7 @@ public class SkillList implements IBypassHandler
 				String id = command.substring(9).trim();
 				if (id.length() != 0)
 				{
-					L2NpcInstance.showSkillList(activeChar, (L2Npc) target, ClassId.getClassId(Integer.parseInt(id)));
+					L2NpcInstance.showSkillList(activeChar, (Npc) target, ClassId.getClassId(Integer.parseInt(id)));
 				}
 				else
 				{
@@ -111,9 +111,9 @@ public class SkillList implements IBypassHandler
 					}
 					text += "</body></html>";
 					
-					final NpcHtmlMessage html = new NpcHtmlMessage(((L2Npc) target).getObjectId());
+					final NpcHtmlMessage html = new NpcHtmlMessage(((Npc) target).getObjectId());
 					html.setHtml(text);
-					html.replace("%objectId%", String.valueOf(((L2Npc) target).getObjectId()));
+					html.replace("%objectId%", String.valueOf(((Npc) target).getObjectId()));
 					activeChar.sendPacket(html);
 					
 					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -126,7 +126,7 @@ public class SkillList implements IBypassHandler
 		}
 		else
 		{
-			L2NpcInstance.showSkillList(activeChar, (L2Npc) target, activeChar.getClassId());
+			L2NpcInstance.showSkillList(activeChar, (Npc) target, activeChar.getClassId());
 		}
 		return true;
 	}

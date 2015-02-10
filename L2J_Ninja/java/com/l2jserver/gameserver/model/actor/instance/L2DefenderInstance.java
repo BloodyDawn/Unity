@@ -20,16 +20,16 @@ package com.l2jserver.gameserver.model.actor.instance;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.ai.L2CharacterAI;
-import com.l2jserver.gameserver.ai.L2FortSiegeGuardAI;
-import com.l2jserver.gameserver.ai.L2SiegeGuardAI;
-import com.l2jserver.gameserver.ai.L2SpecialSiegeGuardAI;
+import com.l2jserver.gameserver.ai.CharacterAI;
+import com.l2jserver.gameserver.ai.FortSiegeGuardAI;
+import com.l2jserver.gameserver.ai.SiegeGuardAI;
+import com.l2jserver.gameserver.ai.SpecialSiegeGuardAI;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.instancemanager.CastleManager;
 import com.l2jserver.gameserver.instancemanager.FortManager;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.knownlist.DefenderKnownList;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.entity.Castle;
@@ -37,7 +37,7 @@ import com.l2jserver.gameserver.model.entity.Fort;
 import com.l2jserver.gameserver.model.entity.clanhall.SiegableHall;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 
-public class L2DefenderInstance extends L2Attackable
+public class L2DefenderInstance extends Attackable
 {
 	private Castle _castle = null; // the castle which the instance should defend
 	private Fort _fort = null; // the fortress which the instance should defend
@@ -62,17 +62,17 @@ public class L2DefenderInstance extends L2Attackable
 	}
 	
 	@Override
-	protected L2CharacterAI initAI()
+	protected CharacterAI initAI()
 	{
 		if ((getConquerableHall() == null) && (getCastle(10000) == null))
 		{
-			return new L2FortSiegeGuardAI(new AIAccessor());
+			return new FortSiegeGuardAI(new AIAccessor());
 		}
 		else if (getCastle(10000) != null)
 		{
-			return new L2SiegeGuardAI(new AIAccessor());
+			return new SiegeGuardAI(new AIAccessor());
 		}
-		return new L2SpecialSiegeGuardAI(new AIAccessor());
+		return new SpecialSiegeGuardAI(new AIAccessor());
 	}
 	
 	/**
@@ -80,10 +80,10 @@ public class L2DefenderInstance extends L2Attackable
 	 * @param attacker The L2Character that the L2SiegeGuardInstance try to attack
 	 */
 	@Override
-	public boolean isAutoAttackable(L2Character attacker)
+	public boolean isAutoAttackable(Creature attacker)
 	{
 		// Attackable during siege by all except defenders
-		if (!(attacker instanceof L2Playable))
+		if (!(attacker instanceof Playable))
 		{
 			return false;
 		}
@@ -200,7 +200,7 @@ public class L2DefenderInstance extends L2Attackable
 	}
 	
 	@Override
-	public void addDamageHate(L2Character attacker, int damage, int aggro)
+	public void addDamageHate(Creature attacker, int damage, int aggro)
 	{
 		if (attacker == null)
 		{
@@ -209,7 +209,7 @@ public class L2DefenderInstance extends L2Attackable
 		
 		if (!(attacker instanceof L2DefenderInstance))
 		{
-			if ((damage == 0) && (aggro <= 1) && (attacker instanceof L2Playable))
+			if ((damage == 0) && (aggro <= 1) && (attacker instanceof Playable))
 			{
 				L2PcInstance player = attacker.getActingPlayer();
 				// Check if siege is in progress

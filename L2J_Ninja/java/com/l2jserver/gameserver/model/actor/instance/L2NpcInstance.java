@@ -24,8 +24,8 @@ import java.util.Map;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
 import com.l2jserver.gameserver.enums.InstanceType;
-import com.l2jserver.gameserver.model.L2SkillLearn;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.SkillLearn;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.status.FolkStatus;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.base.AcquireSkillType;
@@ -36,7 +36,7 @@ import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.util.StringUtil;
 
-public class L2NpcInstance extends L2Npc
+public class L2NpcInstance extends Npc
 {
 	public L2NpcInstance(int objectId, L2NpcTemplate template)
 	{
@@ -68,7 +68,7 @@ public class L2NpcInstance extends L2Npc
 	 * @param npc the last folk.
 	 * @param classId player's active class id.
 	 */
-	public static void showSkillList(L2PcInstance player, L2Npc npc, ClassId classId)
+	public static void showSkillList(L2PcInstance player, Npc npc, ClassId classId)
 	{
 		if (Config.DEBUG)
 		{
@@ -78,7 +78,7 @@ public class L2NpcInstance extends L2Npc
 		final int npcId = npc.getTemplate().getId();
 		if (npcId == 32611) // Tolonis (Officer)
 		{
-			final List<L2SkillLearn> skills = SkillTreesData.getInstance().getAvailableCollectSkills(player);
+			final List<SkillLearn> skills = SkillTreesData.getInstance().getAvailableCollectSkills(player);
 			
 			if (skills.isEmpty()) // No more skills to learn, come back when you level.
 			{
@@ -117,12 +117,12 @@ public class L2NpcInstance extends L2Npc
 		}
 		
 		// Normal skills, No LearnedByFS, no AutoGet skills.
-		final List<L2SkillLearn> skills = SkillTreesData.getInstance().getAvailableSkills(player, classId, false, false);
+		final List<SkillLearn> skills = SkillTreesData.getInstance().getAvailableSkills(player, classId, false, false);
 		player.setLearningClass(classId);
 		
 		if (skills.isEmpty())
 		{
-			final Map<Integer, L2SkillLearn> skillTree = SkillTreesData.getInstance().getCompleteClassSkillTree(classId);
+			final Map<Integer, SkillLearn> skillTree = SkillTreesData.getInstance().getCompleteClassSkillTree(classId);
 			final int minLevel = SkillTreesData.getInstance().getMinLevelForNewSkill(player, skillTree);
 			if (minLevel > 0)
 			{

@@ -25,7 +25,7 @@ import java.util.logging.Logger;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.xml.impl.EnchantItemData;
 import com.l2jserver.gameserver.enums.UserInfoType;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.request.EnchantItemRequest;
 import com.l2jserver.gameserver.model.items.L2Item;
@@ -346,7 +346,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 								return;
 							}
 							
-							L2World.getInstance().removeObject(item);
+							World.getInstance().removeObject(item);
 							L2ItemInstance crystals = null;
 							if (crystalId != 0)
 							{

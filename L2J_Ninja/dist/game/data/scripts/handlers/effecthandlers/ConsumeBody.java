@@ -19,7 +19,7 @@
 package handlers.effecthandlers;
 
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
@@ -49,6 +49,6 @@ public final class ConsumeBody extends AbstractEffect
 			return;
 		}
 		
-		((L2Npc) info.getEffected()).endDecayTask();
+		((Npc) info.getEffected()).endDecayTask();
 	}
 }

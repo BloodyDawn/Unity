@@ -24,8 +24,8 @@ import com.l2jserver.gameserver.cache.HtmCache;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.instancemanager.MapRegionManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.L2WorldRegion;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.WorldRegion;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.TeleportWhereType;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -133,7 +133,7 @@ public class AdminZone implements IAdminCommandHandler
 		adminReply.replace("%NOSTORE%", (activeChar.isInsideZone(ZoneId.NO_STORE) ? "<font color=\"LEVEL\">YES</font>" : "NO"));
 		adminReply.replace("%SCRIPT%", (activeChar.isInsideZone(ZoneId.SCRIPT) ? "<font color=\"LEVEL\">YES</font>" : "NO"));
 		StringBuilder zones = new StringBuilder(100);
-		L2WorldRegion region = L2World.getInstance().getRegion(activeChar.getX(), activeChar.getY());
+		WorldRegion region = World.getInstance().getRegion(activeChar.getX(), activeChar.getY());
 		for (L2ZoneType zone : region.getZones())
 		{
 			if (zone.isCharacterInZone(activeChar))

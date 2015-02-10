@@ -24,7 +24,7 @@ import java.util.Collections;
 
 import com.l2jserver.gameserver.enums.CategoryType;
 import com.l2jserver.gameserver.instancemanager.MentorManager;
-import com.l2jserver.gameserver.model.L2Mentee;
+import com.l2jserver.gameserver.model.Mentee;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.L2GameServerPacket;
 
@@ -34,7 +34,7 @@ import com.l2jserver.gameserver.network.serverpackets.L2GameServerPacket;
 public class ExMentorList extends L2GameServerPacket
 {
 	private final int _type;
-	private final Collection<L2Mentee> _mentees;
+	private final Collection<Mentee> _mentees;
 	
 	public ExMentorList(L2PcInstance activeChar)
 	{
@@ -68,7 +68,7 @@ public class ExMentorList extends L2GameServerPacket
 		writeD(_type);
 		writeD(0x00);
 		writeD(_mentees.size());
-		for (L2Mentee mentee : _mentees)
+		for (Mentee mentee : _mentees)
 		{
 			writeD(mentee.getObjectId());
 			writeS(mentee.getName());

@@ -19,7 +19,7 @@
 package handlers.effecthandlers;
 
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
+import com.l2jserver.gameserver.model.actor.Attackable;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
@@ -51,7 +51,7 @@ public final class Passive extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		L2Attackable target = (L2Attackable) info.getEffected();
+		Attackable target = (Attackable) info.getEffected();
 		target.abortAttack();
 		target.abortCast();
 		target.disableAllSkills();

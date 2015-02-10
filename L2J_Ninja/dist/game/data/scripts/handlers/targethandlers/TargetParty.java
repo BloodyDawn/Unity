@@ -22,8 +22,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.l2jserver.gameserver.handler.ITargetTypeHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
@@ -35,9 +35,9 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 public class TargetParty implements ITargetTypeHandler
 {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
 	{
-		List<L2Character> targetList = new ArrayList<>();
+		List<Creature> targetList = new ArrayList<>();
 		
 		// Check for null target or any other invalid target
 		if ((target == null) || target.isDead() || (target == activeChar))
@@ -81,7 +81,7 @@ public class TargetParty implements ITargetTypeHandler
 		{
 			targetList.add(target);
 		}
-		return targetList.toArray(new L2Character[targetList.size()]);
+		return targetList.toArray(new Creature[targetList.size()]);
 	}
 	
 	@Override

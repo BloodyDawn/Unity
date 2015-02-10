@@ -22,7 +22,7 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.handler.IChatHandler;
 import com.l2jserver.gameserver.model.BlockList;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -61,7 +61,7 @@ public final class ChatHeroVoice implements IChatHandler
 		}
 		
 		final CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getName(), text);
-		for (L2PcInstance player : L2World.getInstance().getPlayers())
+		for (L2PcInstance player : World.getInstance().getPlayers())
 		{
 			if ((player != null) && !BlockList.isBlocked(player, activeChar))
 			{

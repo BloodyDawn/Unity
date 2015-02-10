@@ -22,8 +22,8 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.datatables.BotReportTable;
 import com.l2jserver.gameserver.enums.PrivateStoreType;
 import com.l2jserver.gameserver.model.BlockList;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.skills.AbnormalType;
@@ -76,7 +76,7 @@ public final class TradeRequest extends L2GameClientPacket
 			}
 		}
 		
-		final L2Object target = L2World.getInstance().findObject(_objectId);
+		final WorldObject target = World.getInstance().findObject(_objectId);
 		// If there is no target, target is far away or
 		// they are in different instances (except multiverse)
 		// trade request is ignored and there is no system message.

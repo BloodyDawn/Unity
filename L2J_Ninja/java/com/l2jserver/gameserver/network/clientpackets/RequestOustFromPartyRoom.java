@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.network.clientpackets;
 
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.PartyMatchRoom;
 import com.l2jserver.gameserver.model.PartyMatchRoomList;
 import com.l2jserver.gameserver.model.PartyMatchWaitingList;
@@ -52,7 +52,7 @@ public final class RequestOustFromPartyRoom extends L2GameClientPacket
 			return;
 		}
 		
-		L2PcInstance member = L2World.getInstance().getPlayer(_charid);
+		L2PcInstance member = World.getInstance().getPlayer(_charid);
 		if (member == null)
 		{
 			return;

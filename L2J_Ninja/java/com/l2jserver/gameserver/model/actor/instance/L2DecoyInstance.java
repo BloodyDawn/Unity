@@ -24,14 +24,14 @@ import java.util.logging.Level;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.enums.InstanceType;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Decoy;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Decoy;
 import com.l2jserver.gameserver.model.actor.knownlist.DecoyKnownList;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.taskmanager.DecayTaskManager;
 
-public class L2DecoyInstance extends L2Decoy
+public class L2DecoyInstance extends Decoy
 {
 	private int _totalLifeTime;
 	private int _timeRemaining;
@@ -50,7 +50,7 @@ public class L2DecoyInstance extends L2Decoy
 	}
 	
 	@Override
-	public boolean doDie(L2Character killer)
+	public boolean doDie(Creature killer)
 	{
 		if (!super.doDie(killer))
 		{

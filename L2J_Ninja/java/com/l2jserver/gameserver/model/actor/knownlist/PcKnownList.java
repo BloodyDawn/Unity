@@ -19,9 +19,9 @@
 package com.l2jserver.gameserver.model.actor.knownlist;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2AirShipInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.DeleteObject;
@@ -60,7 +60,7 @@ public class PcKnownList extends PlayableKnownList
 	 * @param object The L2Object to add to _knownObjects and _knownPlayer
 	 */
 	@Override
-	public boolean addKnownObject(L2Object object)
+	public boolean addKnownObject(WorldObject object)
 	{
 		if (!super.addKnownObject(object))
 		{
@@ -80,10 +80,10 @@ public class PcKnownList extends PlayableKnownList
 			{
 				object.sendInfo(getActiveChar());
 				
-				if (object instanceof L2Character)
+				if (object instanceof Creature)
 				{
 					// Update the state of the L2Character object client side by sending Server->Client packet MoveToPawn/CharMoveToLocation and AutoAttackStart to the L2PcInstance
-					final L2Character obj = (L2Character) object;
+					final Creature obj = (Creature) object;
 					if (obj.hasAI())
 					{
 						obj.getAI().describeStateToPlayer(getActiveChar());
@@ -101,7 +101,7 @@ public class PcKnownList extends PlayableKnownList
 	 * @param object The L2Object to remove from _knownObjects and _knownPlayer
 	 */
 	@Override
-	protected boolean removeKnownObject(L2Object object, boolean forget)
+	protected boolean removeKnownObject(WorldObject object, boolean forget)
 	{
 		if (!super.removeKnownObject(object, forget))
 		{
@@ -123,7 +123,7 @@ public class PcKnownList extends PlayableKnownList
 		// Send Server-Client Packet DeleteObject to the L2PcInstance
 		getActiveChar().sendPacket(new DeleteObject(object));
 		
-		if (Config.CHECK_KNOWN && (object instanceof L2Npc) && getActiveChar().isGM())
+		if (Config.CHECK_KNOWN && (object instanceof Npc) && getActiveChar().isGM())
 		{
 			getActiveChar().sendMessage("Removed NPC: " + object.getName());
 		}
@@ -138,7 +138,7 @@ public class PcKnownList extends PlayableKnownList
 	}
 	
 	@Override
-	public int getDistanceToForgetObject(L2Object object)
+	public int getDistanceToForgetObject(WorldObject object)
 	{
 		if (object.isVehicle())
 		{
@@ -165,7 +165,7 @@ public class PcKnownList extends PlayableKnownList
 	}
 	
 	@Override
-	public int getDistanceToWatchObject(L2Object object)
+	public int getDistanceToWatchObject(WorldObject object)
 	{
 		if (object.isVehicle())
 		{

@@ -28,13 +28,13 @@ import com.l2jserver.gameserver.ai.CtrlEvent;
 import com.l2jserver.gameserver.cache.HtmCache;
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2Party;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.Party;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
@@ -55,9 +55,9 @@ public final class HallOfSuffering extends AbstractNpcAI
 {
 	protected class HSWorld extends InstanceWorld
 	{
-		public Map<L2Npc, Boolean> npcList = new HashMap<>();
-		public L2Npc klodekus = null;
-		public L2Npc klanikus = null;
+		public Map<Npc, Boolean> npcList = new HashMap<>();
+		public Npc klodekus = null;
+		public Npc klanikus = null;
 		public boolean isBossesAttacked = false;
 		public long startTime = 0;
 		public String ptLeaderName = "";
@@ -204,7 +204,7 @@ public final class HallOfSuffering extends AbstractNpcAI
 			return true;
 		}
 		
-		final L2Party party = player.getParty();
+		final Party party = player.getParty();
 		if (party == null)
 		{
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_CURRENTLY_IN_A_PARTY_SO_YOU_CANNOT_ENTER);
@@ -265,7 +265,7 @@ public final class HallOfSuffering extends AbstractNpcAI
 		{
 			return;
 		}
-		L2Party party = player.getParty();
+		Party party = player.getParty();
 		final int instanceId = InstanceManager.getInstance().createDynamicInstance(template);
 		world = new HSWorld();
 		world.setInstanceId(instanceId);
@@ -294,7 +294,7 @@ public final class HallOfSuffering extends AbstractNpcAI
 		}
 	}
 	
-	private boolean checkKillProgress(L2Npc mob, HSWorld world)
+	private boolean checkKillProgress(Npc mob, HSWorld world)
 	{
 		if (world.npcList.containsKey(mob))
 		{
@@ -333,11 +333,11 @@ public final class HallOfSuffering extends AbstractNpcAI
 	{
 		for (int[] mob : getRoomSpawns(world.getStatus()))
 		{
-			final L2Npc npc = addSpawn(mob[0], mob[1], mob[2], mob[3], 0, false, 0, false, world.getInstanceId());
+			final Npc npc = addSpawn(mob[0], mob[1], mob[2], mob[3], 0, false, 0, false, world.getInstanceId());
 			world.npcList.put(npc, false);
 		}
 		
-		final L2Npc mob = addSpawn(TUMOR_ALIVE, TUMOR_SPAWNS[world.getStatus()], false, 0, false, world.getInstanceId());
+		final Npc mob = addSpawn(TUMOR_ALIVE, TUMOR_SPAWNS[world.getStatus()], false, 0, false, world.getInstanceId());
 		mob.disableCoreAI(true);
 		mob.setIsImmobilized(true);
 		mob.setCurrentHp(mob.getMaxHp() * 0.5);
@@ -354,7 +354,7 @@ public final class HallOfSuffering extends AbstractNpcAI
 		world.klodekus.setIsMortal(false);
 	}
 	
-	private void bossSimpleDie(L2Npc boss)
+	private void bossSimpleDie(Npc boss)
 	{
 		// killing is only possible one time
 		synchronized (this)
@@ -454,7 +454,7 @@ public final class HallOfSuffering extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon)
+	public String onSkillSee(Npc npc, L2PcInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
 		if (skill.hasEffectType(L2EffectType.REBALANCE_HP, L2EffectType.HEAL))
 		{
@@ -463,13 +463,13 @@ public final class HallOfSuffering extends AbstractNpcAI
 			{
 				hate = 1000;
 			}
-			((L2Attackable) npc).addDamageHate(caster, 0, hate);
+			((Attackable) npc).addDamageHate(caster, 0, hate);
 		}
 		return super.onSkillSee(npc, caster, skill, targets, isSummon);
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpworld instanceof HSWorld)
@@ -482,12 +482,12 @@ public final class HallOfSuffering extends AbstractNpcAI
 					world.isBossesAttacked = false;
 					return "";
 				}
-				L2Npc mob = addSpawn(TWIN_MOBIDS[getRandom(TWIN_MOBIDS.length)], TWIN_SPAWNS[0][1], TWIN_SPAWNS[0][2], TWIN_SPAWNS[0][3], 0, false, 0, false, npc.getInstanceId());
-				((L2Attackable) mob).addDamageHate(((L2Attackable) npc).getMostHated(), 0, 1);
+				Npc mob = addSpawn(TWIN_MOBIDS[getRandom(TWIN_MOBIDS.length)], TWIN_SPAWNS[0][1], TWIN_SPAWNS[0][2], TWIN_SPAWNS[0][3], 0, false, 0, false, npc.getInstanceId());
+				((Attackable) mob).addDamageHate(((Attackable) npc).getMostHated(), 0, 1);
 				if (getRandom(100) < 33)
 				{
 					mob = addSpawn(TWIN_MOBIDS[getRandom(TWIN_MOBIDS.length)], TWIN_SPAWNS[1][1], TWIN_SPAWNS[1][2], TWIN_SPAWNS[1][3], 0, false, 0, false, npc.getInstanceId());
-					((L2Attackable) mob).addDamageHate(((L2Attackable) npc).getMostHated(), 0, 1);
+					((Attackable) mob).addDamageHate(((Attackable) npc).getMostHated(), 0, 1);
 				}
 				startQuestTimer("spawnBossGuards", BOSS_MINION_SPAWN_TIME, npc, null);
 			}
@@ -508,13 +508,13 @@ public final class HallOfSuffering extends AbstractNpcAI
 			else if (event.equalsIgnoreCase("ressurectTwin"))
 			{
 				Skill skill = SkillData.getInstance().getSkill(5824, 1);
-				L2Npc aliveTwin = (world.klanikus == npc ? world.klodekus : world.klanikus);
+				Npc aliveTwin = (world.klanikus == npc ? world.klodekus : world.klanikus);
 				npc.doRevive();
 				npc.doCast(skill);
 				npc.setCurrentHp(aliveTwin.getCurrentHp());
 				
 				// get most hated of other boss
-				L2Character hated = ((L2MonsterInstance) aliveTwin).getMostHated();
+				Creature hated = ((L2MonsterInstance) aliveTwin).getMostHated();
 				if (hated != null)
 				{
 					npc.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, hated, 1000);
@@ -532,7 +532,7 @@ public final class HallOfSuffering extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpworld instanceof HSWorld)
@@ -550,7 +550,7 @@ public final class HallOfSuffering extends AbstractNpcAI
 				// set instance reenter time for all allowed players
 				for (int objectId : tmpworld.getAllowed())
 				{
-					L2PcInstance player = L2World.getInstance().getPlayer(objectId);
+					L2PcInstance player = World.getInstance().getPlayer(objectId);
 					if ((player != null) && player.isOnline())
 					{
 						InstanceManager.getInstance().setInstanceTime(objectId, tmpworld.getTemplateId(), reenter.getTimeInMillis());
@@ -585,7 +585,7 @@ public final class HallOfSuffering extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpworld instanceof HSWorld)
@@ -630,7 +630,7 @@ public final class HallOfSuffering extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		if (npc.getId() == TEPIOS)
 		{
@@ -655,7 +655,7 @@ public final class HallOfSuffering extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
+	public String onTalk(Npc npc, L2PcInstance talker)
 	{
 		getQuestState(talker, true);
 		if (npc.getId() == MOUTHOFEKIMUS)

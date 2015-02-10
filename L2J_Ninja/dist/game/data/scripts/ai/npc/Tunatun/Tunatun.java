@@ -21,7 +21,7 @@ package ai.npc.Tunatun;
 import quests.Q00020_BringUpWithLove.Q00020_BringUpWithLove;
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.QuestState;
 
@@ -47,7 +47,7 @@ public final class Tunatun extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if ("Whip".equals(event))
 		{

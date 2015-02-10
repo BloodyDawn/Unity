@@ -23,10 +23,10 @@ import java.util.logging.Logger;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.InstanceType;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.L2WorldRegion;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.WorldRegion;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.knownlist.GuardKnownList;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.events.EventDispatcher;
@@ -39,7 +39,7 @@ import com.l2jserver.util.Rnd;
 /**
  * This class manages all Guards in the world. It inherits all methods from L2Attackable and adds some more such as tracking PK and aggressive L2MonsterInstance.
  */
-public class L2GuardInstance extends L2Attackable
+public class L2GuardInstance extends Attackable
 {
 	private static Logger _log = Logger.getLogger(L2GuardInstance.class.getName());
 	
@@ -76,7 +76,7 @@ public class L2GuardInstance extends L2Attackable
 	 * Return True if hte attacker is a L2MonsterInstance.
 	 */
 	@Override
-	public boolean isAutoAttackable(L2Character attacker)
+	public boolean isAutoAttackable(Creature attacker)
 	{
 		return attacker instanceof L2MonsterInstance;
 	}
@@ -91,7 +91,7 @@ public class L2GuardInstance extends L2Attackable
 		super.onSpawn();
 		
 		// check the region where this mob is, do not activate the AI if region is inactive.
-		L2WorldRegion region = L2World.getInstance().getRegion(getX(), getY());
+		WorldRegion region = World.getInstance().getRegion(getX(), getY());
 		if ((region != null) && (!region.isActive()))
 		{
 			getAI().stopAITask();

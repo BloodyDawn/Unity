@@ -20,7 +20,7 @@ package ai.group_template;
 
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 
 /**
  * @author UnAfraid
@@ -39,7 +39,7 @@ public final class NonLethalableNpcs extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		npc.setLethalable(false);
 		return super.onSpawn(npc);

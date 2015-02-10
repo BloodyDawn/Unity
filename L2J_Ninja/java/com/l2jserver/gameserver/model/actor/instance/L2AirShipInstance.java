@@ -18,11 +18,11 @@
  */
 package com.l2jserver.gameserver.model.actor.instance;
 
-import com.l2jserver.gameserver.ai.L2AirShipAI;
+import com.l2jserver.gameserver.ai.AirShipAI;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.instancemanager.AirShipManager;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Vehicle;
+import com.l2jserver.gameserver.model.actor.Vehicle;
 import com.l2jserver.gameserver.model.actor.templates.L2CharTemplate;
 import com.l2jserver.gameserver.network.serverpackets.ExAirShipInfo;
 import com.l2jserver.gameserver.network.serverpackets.ExGetOffAirShip;
@@ -34,13 +34,13 @@ import com.l2jserver.gameserver.network.serverpackets.ExStopMoveAirShip;
  * Flying airships. Very similar to Maktakien boats (see L2BoatInstance) but these do fly :P
  * @author DrHouse, DS
  */
-public class L2AirShipInstance extends L2Vehicle
+public class L2AirShipInstance extends Vehicle
 {
 	public L2AirShipInstance(int objectId, L2CharTemplate template)
 	{
 		super(objectId, template);
 		setInstanceType(InstanceType.L2AirShipInstance);
-		setAI(new L2AirShipAI(new AIAccessor()));
+		setAI(new AirShipAI(new AIAccessor()));
 	}
 	
 	@Override

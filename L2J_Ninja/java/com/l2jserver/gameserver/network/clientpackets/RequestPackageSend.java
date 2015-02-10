@@ -21,7 +21,7 @@ package com.l2jserver.gameserver.network.clientpackets;
 import java.util.logging.Level;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
@@ -87,8 +87,8 @@ public class RequestPackageSend extends L2GameClientPacket
 			return;
 		}
 		
-		final L2Npc manager = player.getLastFolkNPC();
-		if (((manager == null) || !player.isInsideRadius(manager, L2Npc.INTERACTION_DISTANCE, false, false)))
+		final Npc manager = player.getLastFolkNPC();
+		if (((manager == null) || !player.isInsideRadius(manager, Npc.INTERACTION_DISTANCE, false, false)))
 		{
 			return;
 		}

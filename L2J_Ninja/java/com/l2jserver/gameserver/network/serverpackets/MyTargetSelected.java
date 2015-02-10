@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2ControllableAirShipInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
@@ -35,7 +35,7 @@ public class MyTargetSelected extends L2GameServerPacket
 	 * @param player
 	 * @param target
 	 */
-	public MyTargetSelected(L2PcInstance player, L2Character target)
+	public MyTargetSelected(L2PcInstance player, Creature target)
 	{
 		_objectId = (target instanceof L2ControllableAirShipInstance) ? ((L2ControllableAirShipInstance) target).getHelmObjectId() : target.getObjectId();
 		_color = target.isAutoAttackable(player) ? (player.getLevel() - target.getLevel()) : 0;

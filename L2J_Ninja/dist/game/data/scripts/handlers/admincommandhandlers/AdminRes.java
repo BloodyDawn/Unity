@@ -22,9 +22,9 @@ import java.util.logging.Logger;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2ControllableMobInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -79,12 +79,12 @@ public class AdminRes implements IAdminCommandHandler
 	
 	private void handleRes(L2PcInstance activeChar, String resParam)
 	{
-		L2Object obj = activeChar.getTarget();
+		WorldObject obj = activeChar.getTarget();
 		
 		if (resParam != null)
 		{
 			// Check if a player name was specified as a param.
-			L2PcInstance plyr = L2World.getInstance().getPlayer(resParam);
+			L2PcInstance plyr = World.getInstance().getPlayer(resParam);
 			
 			if (plyr != null)
 			{
@@ -124,7 +124,7 @@ public class AdminRes implements IAdminCommandHandler
 			return;
 		}
 		
-		doResurrect((L2Character) obj);
+		doResurrect((Creature) obj);
 		
 		if (Config.DEBUG)
 		{
@@ -139,7 +139,7 @@ public class AdminRes implements IAdminCommandHandler
 	
 	private void handleNonPlayerRes(L2PcInstance activeChar, String radiusStr)
 	{
-		L2Object obj = activeChar.getTarget();
+		WorldObject obj = activeChar.getTarget();
 		
 		try
 		{
@@ -149,7 +149,7 @@ public class AdminRes implements IAdminCommandHandler
 			{
 				radius = Integer.parseInt(radiusStr);
 				
-				for (L2Character knownChar : activeChar.getKnownList().getKnownCharactersInRadius(radius))
+				for (Creature knownChar : activeChar.getKnownList().getKnownCharactersInRadius(radius))
 				{
 					if (!(knownChar instanceof L2PcInstance) && !(knownChar instanceof L2ControllableMobInstance))
 					{
@@ -172,10 +172,10 @@ public class AdminRes implements IAdminCommandHandler
 			return;
 		}
 		
-		doResurrect((L2Character) obj);
+		doResurrect((Creature) obj);
 	}
 	
-	private void doResurrect(L2Character targetChar)
+	private void doResurrect(Creature targetChar)
 	{
 		if (!targetChar.isDead())
 		{

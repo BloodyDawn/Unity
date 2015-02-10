@@ -21,7 +21,7 @@ package com.l2jserver.gameserver.network.clientpackets.mentoring;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.sql.impl.CharNameTable;
 import com.l2jserver.gameserver.instancemanager.MentorManager;
-import com.l2jserver.gameserver.model.L2Mentee;
+import com.l2jserver.gameserver.model.Mentee;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.EventDispatcher;
 import com.l2jserver.gameserver.model.events.impl.character.player.mentoring.OnPlayerMenteeLeft;
@@ -59,7 +59,7 @@ public class RequestMentorCancel extends L2GameClientPacket
 		{
 			if (player.isMentor())
 			{
-				final L2Mentee mentee = MentorManager.getInstance().getMentee(player.getObjectId(), objectId);
+				final Mentee mentee = MentorManager.getInstance().getMentee(player.getObjectId(), objectId);
 				if (mentee != null)
 				{
 					MentorManager.getInstance().cancelMentoringBuffs(mentee.getPlayerInstance());
@@ -80,7 +80,7 @@ public class RequestMentorCancel extends L2GameClientPacket
 			}
 			else if (player.isMentee())
 			{
-				final L2Mentee mentor = MentorManager.getInstance().getMentor(player.getObjectId());
+				final Mentee mentor = MentorManager.getInstance().getMentor(player.getObjectId());
 				if ((mentor != null) && (mentor.getObjectId() == objectId))
 				{
 					MentorManager.getInstance().cancelMentoringBuffs(player);

@@ -21,7 +21,7 @@ package com.l2jserver.gameserver.network.clientpackets;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
 import com.l2jserver.gameserver.enums.PrivateStoreType;
-import com.l2jserver.gameserver.model.L2SkillLearn;
+import com.l2jserver.gameserver.model.SkillLearn;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -74,7 +74,7 @@ public class RequestResetAbilityPoint extends L2GameClientPacket
 		
 		if (activeChar.reduceAdena("AbilityPointsReset", Config.ABILITY_POINTS_RESET_ADENA, activeChar, true))
 		{
-			for (L2SkillLearn sk : SkillTreesData.getInstance().getAbilitySkillTree().values())
+			for (SkillLearn sk : SkillTreesData.getInstance().getAbilitySkillTree().values())
 			{
 				final Skill skill = activeChar.getKnownSkill(sk.getSkillId());
 				if (skill != null)

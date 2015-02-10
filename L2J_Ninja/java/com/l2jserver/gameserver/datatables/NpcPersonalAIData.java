@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.util.Rnd;
 
 /**
@@ -88,7 +88,7 @@ public class NpcPersonalAIData
 	 * @param spawn link to NPC's spawn
 	 * @param spawnName name of spawn
 	 */
-	public void initializeNpcParameters(L2Npc npc, L2Spawn spawn, String spawnName)
+	public void initializeNpcParameters(Npc npc, L2Spawn spawn, String spawnName)
 	{
 		if (_AIData.containsKey(spawnName))
 		{

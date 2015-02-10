@@ -25,8 +25,8 @@ import javolution.util.FastList;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.xml.impl.MultisellData;
 import com.l2jserver.gameserver.model.Elementals;
-import com.l2jserver.gameserver.model.L2Augmentation;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.Augmentation;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.itemcontainer.PcInventory;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
@@ -97,7 +97,7 @@ public class MultiSellChoose extends L2GameClientPacket
 			return;
 		}
 		
-		final L2Npc npc = player.getLastFolkNPC();
+		final Npc npc = player.getLastFolkNPC();
 		if (((npc != null) && !list.isNpcAllowed(npc.getId())) || ((npc == null) && list.isNpcOnly()))
 		{
 			player.setMultiSell(null);
@@ -216,7 +216,7 @@ public class MultiSellChoose extends L2GameClientPacket
 					}
 				}
 				
-				FastList<L2Augmentation> augmentation = FastList.newInstance();
+				FastList<Augmentation> augmentation = FastList.newInstance();
 				Elementals[] elemental = null;
 				/** All ok, remove items and add final product */
 				
@@ -404,7 +404,7 @@ public class MultiSellChoose extends L2GameClientPacket
 									{
 										if (i < augmentation.size())
 										{
-											product.setAugmentation(new L2Augmentation(augmentation.get(i).getAugmentationId()));
+											product.setAugmentation(new Augmentation(augmentation.get(i).getAugmentationId()));
 										}
 										if (elemental != null)
 										{

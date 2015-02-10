@@ -33,9 +33,9 @@ import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.data.xml.IXmlReader;
 import com.l2jserver.gameserver.data.xml.impl.NpcData;
 import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.L2Territory;
+import com.l2jserver.gameserver.model.Territory;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.util.Rnd;
 
 /**
@@ -138,13 +138,13 @@ public class TarBeetleSpawn implements IXmlReader
 		zones.clear();
 	}
 	
-	public final void removeBeetle(L2Npc npc)
+	public final void removeBeetle(Npc npc)
 	{
 		zones.get(npc.getVariables().getInt("zoneIndex", 0)).removeSpawn(npc);
 		npc.deleteMe();
 	}
 	
-	private final class Zone extends L2Territory
+	private final class Zone extends Territory
 	{
 		private List<Zone> _bannedZones;
 		
@@ -192,7 +192,7 @@ public class TarBeetleSpawn implements IXmlReader
 	private final class SpawnZone
 	{
 		private final List<Zone> _zones = new ArrayList<>();
-		private final List<L2Npc> _spawn = new FastList<>();
+		private final List<Npc> _spawn = new FastList<>();
 		private final int _maxNpcCount;
 		private final int _index;
 		
@@ -207,14 +207,14 @@ public class TarBeetleSpawn implements IXmlReader
 			_zones.add(zone);
 		}
 		
-		public final void removeSpawn(L2Npc obj)
+		public final void removeSpawn(Npc obj)
 		{
 			_spawn.remove(obj);
 		}
 		
 		public final void unload()
 		{
-			_spawn.forEach(L2Npc::deleteMe);
+			_spawn.forEach(Npc::deleteMe);
 			_spawn.clear();
 			_zones.clear();
 		}
@@ -234,7 +234,7 @@ public class TarBeetleSpawn implements IXmlReader
 						spawn.setY(location.getY());
 						spawn.setZ(GeoData.getInstance().getSpawnHeight(location));
 						
-						final L2Npc npc = spawn.doSpawn();
+						final Npc npc = spawn.doSpawn();
 						npc.setIsNoRndWalk(true);
 						npc.setIsImmobilized(true);
 						npc.setIsInvul(true);
@@ -255,7 +255,7 @@ public class TarBeetleSpawn implements IXmlReader
 		{
 			if (_spawn.size() > 0)
 			{
-				for (L2Npc npc : _spawn)
+				for (Npc npc : _spawn)
 				{
 					final int val = npc.getScriptValue();
 					if (val == 5)

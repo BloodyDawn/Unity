@@ -33,7 +33,7 @@ import com.l2jserver.gameserver.enums.AIType;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.enums.Sex;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.base.ClassId;
 import com.l2jserver.gameserver.model.drops.DropListScope;
 import com.l2jserver.gameserver.model.drops.IDropItem;
@@ -554,7 +554,7 @@ public final class L2NpcTemplate extends L2CharTemplate implements IIdentifiable
 		return dropLists != null ? dropLists.get(dropListScope) : null;
 	}
 	
-	public Collection<ItemHolder> calculateDrops(DropListScope dropListScope, L2Character victim, L2Character killer)
+	public Collection<ItemHolder> calculateDrops(DropListScope dropListScope, Creature victim, Creature killer)
 	{
 		List<IDropItem> dropList = getDropList(dropListScope);
 		if (dropList == null)

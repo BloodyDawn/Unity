@@ -18,16 +18,16 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.L2Party;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.Party;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 public final class PartySmallWindowAll extends L2GameServerPacket
 {
-	private final L2Party _party;
+	private final Party _party;
 	private final L2PcInstance _exclude;
 	
-	public PartySmallWindowAll(L2PcInstance exclude, L2Party party)
+	public PartySmallWindowAll(L2PcInstance exclude, Party party)
 	{
 		_exclude = exclude;
 		_party = party;
@@ -60,7 +60,7 @@ public final class PartySmallWindowAll extends L2GameServerPacket
 				writeH(member.getClassId().getId());
 				writeC(0x01); // Unk
 				writeH(member.getRace().ordinal());
-				final L2Summon pet = member.getPet();
+				final Summon pet = member.getPet();
 				writeD(member.getServitors().size() + (pet != null ? 1 : 0)); // Summon size, one only atm
 				if (pet != null)
 				{

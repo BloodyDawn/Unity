@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.model.events.impl.character.npc.attackable;
 
-import com.l2jserver.gameserver.model.actor.L2Attackable;
+import com.l2jserver.gameserver.model.actor.Attackable;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
@@ -31,12 +31,12 @@ import com.l2jserver.gameserver.model.skills.Skill;
 public class OnAttackableAttack implements IBaseEvent
 {
 	private final L2PcInstance _attacker;
-	private final L2Attackable _target;
+	private final Attackable _target;
 	private final int _damage;
 	private final Skill _skill;
 	private final boolean _isSummon;
 	
-	public OnAttackableAttack(L2PcInstance attacker, L2Attackable target, int damage, Skill skill, boolean isSummon)
+	public OnAttackableAttack(L2PcInstance attacker, Attackable target, int damage, Skill skill, boolean isSummon)
 	{
 		_attacker = attacker;
 		_target = target;
@@ -50,7 +50,7 @@ public class OnAttackableAttack implements IBaseEvent
 		return _attacker;
 	}
 	
-	public final L2Attackable getTarget()
+	public final Attackable getTarget()
 	{
 		return _target;
 	}

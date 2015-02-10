@@ -18,17 +18,17 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 
 /**
  * @author -Wooden-
  */
 public class ExFishingHpRegen extends L2GameServerPacket
 {
-	private final L2Character _activeChar;
+	private final Creature _activeChar;
 	private final int _time, _fishHP, _hpMode, _anim, _goodUse, _penalty, _hpBarColor;
 	
-	public ExFishingHpRegen(L2Character character, int time, int fishHP, int HPmode, int GoodUse, int anim, int penalty, int hpBarColor)
+	public ExFishingHpRegen(Creature character, int time, int fishHP, int HPmode, int GoodUse, int anim, int penalty, int hpBarColor)
 	{
 		_activeChar = character;
 		_time = time;

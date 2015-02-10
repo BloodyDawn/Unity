@@ -23,8 +23,8 @@ import java.util.logging.Level;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.handler.IBypassHandler;
 import com.l2jserver.gameserver.model.ClanPrivilege;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2ClanHallManagerInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2WarehouseInstance;
@@ -47,7 +47,7 @@ public class ClanWarehouse implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Character target)
+	public boolean useBypass(String command, L2PcInstance activeChar, Creature target)
 	{
 		if (!(target instanceof L2WarehouseInstance) && !(target instanceof L2ClanHallManagerInstance))
 		{
@@ -77,9 +77,9 @@ public class ClanWarehouse implements IBypassHandler
 			{
 				if (Config.L2JMOD_ENABLE_WAREHOUSESORTING_CLAN)
 				{
-					final NpcHtmlMessage msg = new NpcHtmlMessage(((L2Npc) target).getObjectId());
+					final NpcHtmlMessage msg = new NpcHtmlMessage(((Npc) target).getObjectId());
 					msg.setFile(activeChar.getHtmlPrefix(), "data/html/mods/WhSortedC.htm");
-					msg.replace("%objectId%", String.valueOf(((L2Npc) target).getObjectId()));
+					msg.replace("%objectId%", String.valueOf(((Npc) target).getObjectId()));
 					activeChar.sendPacket(msg);
 				}
 				else

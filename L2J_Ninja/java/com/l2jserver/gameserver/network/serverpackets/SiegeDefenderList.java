@@ -21,7 +21,7 @@ package com.l2jserver.gameserver.network.serverpackets;
 import com.l2jserver.gameserver.data.sql.impl.ClanTable;
 import com.l2jserver.gameserver.enums.SiegeClanType;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2SiegeClan;
+import com.l2jserver.gameserver.model.SiegeClan;
 import com.l2jserver.gameserver.model.entity.Castle;
 
 /**
@@ -87,7 +87,7 @@ public final class SiegeDefenderList extends L2GameServerPacket
 		}
 		
 		// List of confirmed defenders
-		for (L2SiegeClan siegeClan : _castle.getSiege().getDefenderClans())
+		for (SiegeClan siegeClan : _castle.getSiege().getDefenderClans())
 		{
 			final L2Clan defendingClan = ClanTable.getInstance().getClan(siegeClan.getClanId());
 			if ((defendingClan == null) || (defendingClan == _castle.getOwner()))
@@ -108,7 +108,7 @@ public final class SiegeDefenderList extends L2GameServerPacket
 		}
 		
 		// List of not confirmed defenders
-		for (L2SiegeClan siegeClan : _castle.getSiege().getDefenderWaitingClans())
+		for (SiegeClan siegeClan : _castle.getSiege().getDefenderWaitingClans())
 		{
 			final L2Clan defendingClan = ClanTable.getInstance().getClan(siegeClan.getClanId());
 			if (defendingClan == null)

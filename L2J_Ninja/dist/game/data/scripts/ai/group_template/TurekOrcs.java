@@ -22,11 +22,11 @@ import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.NpcStringId;
 
@@ -57,14 +57,14 @@ public final class TurekOrcs extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.equalsIgnoreCase("checkState") && !npc.isDead() && (npc.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK))
 		{
 			if ((npc.getCurrentHp() > (npc.getMaxHp() * 0.7)) && (npc.getVariables().getInt("state") == 2))
 			{
 				npc.getVariables().set("state", 3);
-				((L2Attackable) npc).returnHome();
+				((Attackable) npc).returnHome();
 			}
 			else
 			{
@@ -75,7 +75,7 @@ public final class TurekOrcs extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
 		if (!npc.getVariables().hasVariable("isHit"))
 		{
@@ -95,20 +95,20 @@ public final class TurekOrcs extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onEventReceived(String eventName, L2Npc sender, L2Npc receiver, L2Object reference)
+	public String onEventReceived(String eventName, Npc sender, Npc receiver, WorldObject reference)
 	{
 		if (eventName.equals("WARNING") && !receiver.isDead() && (receiver.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK) && (reference != null) && (reference.getActingPlayer() != null) && !reference.getActingPlayer().isDead())
 		{
 			receiver.getVariables().set("state", 3);
 			receiver.setIsRunning(true);
-			((L2Attackable) receiver).addDamageHate(reference.getActingPlayer(), 0, 99999);
+			((Attackable) receiver).addDamageHate(reference.getActingPlayer(), 0, 99999);
 			receiver.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, reference.getActingPlayer());
 		}
 		return super.onEventReceived(eventName, sender, receiver, reference);
 	}
 	
 	@Override
-	public void onMoveFinished(L2Npc npc)
+	public void onMoveFinished(Npc npc)
 	{
 		// NPC reaches flee point
 		if (npc.getVariables().getInt("state") == 1)
@@ -118,7 +118,7 @@ public final class TurekOrcs extends AbstractNpcAI
 				npc.disableCoreAI(false);
 				startQuestTimer("checkState", 15000, npc, null);
 				npc.getVariables().set("state", 2);
-				npc.broadcastEvent("WARNING", 400, L2World.getInstance().getPlayer(npc.getVariables().getInt("attacker")));
+				npc.broadcastEvent("WARNING", 400, World.getInstance().getPlayer(npc.getVariables().getInt("attacker")));
 			}
 			else
 			{

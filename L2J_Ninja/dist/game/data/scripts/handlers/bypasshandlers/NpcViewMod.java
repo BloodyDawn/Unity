@@ -28,11 +28,11 @@ import com.l2jserver.gameserver.cache.HtmCache;
 import com.l2jserver.gameserver.datatables.ItemTable;
 import com.l2jserver.gameserver.handler.IBypassHandler;
 import com.l2jserver.gameserver.model.Elementals;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.drops.DropListScope;
 import com.l2jserver.gameserver.model.drops.GeneralDropItem;
@@ -56,7 +56,7 @@ public class NpcViewMod implements IBypassHandler
 	private static final int DROP_LIST_ITEMS_PER_PAGE = 10;
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Character bypassOrigin)
+	public boolean useBypass(String command, L2PcInstance activeChar, Creature bypassOrigin)
 	{
 		final StringTokenizer st = new StringTokenizer(command);
 		st.nextToken();
@@ -72,12 +72,12 @@ public class NpcViewMod implements IBypassHandler
 		{
 			case "view":
 			{
-				final L2Object target;
+				final WorldObject target;
 				if (st.hasMoreElements())
 				{
 					try
 					{
-						target = L2World.getInstance().findObject(Integer.parseInt(st.nextToken()));
+						target = World.getInstance().findObject(Integer.parseInt(st.nextToken()));
 					}
 					catch (NumberFormatException e)
 					{
@@ -89,7 +89,7 @@ public class NpcViewMod implements IBypassHandler
 					target = activeChar.getTarget();
 				}
 				
-				final L2Npc npc = target instanceof L2Npc ? (L2Npc) target : null;
+				final Npc npc = target instanceof Npc ? (Npc) target : null;
 				if (npc == null)
 				{
 					return false;
@@ -110,8 +110,8 @@ public class NpcViewMod implements IBypassHandler
 				try
 				{
 					final DropListScope dropListScope = Enum.valueOf(DropListScope.class, dropListScopeString);
-					final L2Object target = L2World.getInstance().findObject(Integer.parseInt(st.nextToken()));
-					final L2Npc npc = target instanceof L2Npc ? (L2Npc) target : null;
+					final WorldObject target = World.getInstance().findObject(Integer.parseInt(st.nextToken()));
+					final Npc npc = target instanceof Npc ? (Npc) target : null;
 					if (npc == null)
 					{
 						return false;
@@ -141,7 +141,7 @@ public class NpcViewMod implements IBypassHandler
 		return COMMANDS;
 	}
 	
-	public static void sendNpcView(L2PcInstance activeChar, L2Npc npc)
+	public static void sendNpcView(L2PcInstance activeChar, Npc npc)
 	{
 		final NpcHtmlMessage html = new NpcHtmlMessage();
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/mods/NpcView/Info.htm");
@@ -216,7 +216,7 @@ public class NpcViewMod implements IBypassHandler
 		activeChar.sendPacket(html);
 	}
 	
-	public static String getDropListButtons(L2Npc npc)
+	public static String getDropListButtons(Npc npc)
 	{
 		final StringBuilder sb = new StringBuilder();
 		final Map<DropListScope, List<IDropItem>> dropLists = npc.getTemplate().getDropLists();
@@ -237,7 +237,7 @@ public class NpcViewMod implements IBypassHandler
 		return sb.toString();
 	}
 	
-	public static void sendNpcDropList(L2PcInstance activeChar, L2Npc npc, DropListScope dropListScope, int page)
+	public static void sendNpcDropList(L2PcInstance activeChar, Npc npc, DropListScope dropListScope, int page)
 	{
 		final List<IDropItem> dropList = npc.getTemplate().getDropList(dropListScope);
 		if ((dropList == null) || dropList.isEmpty())

@@ -42,7 +42,7 @@ import com.l2jserver.gameserver.instancemanager.FortSiegeManager;
 import com.l2jserver.gameserver.instancemanager.SiegeManager;
 import com.l2jserver.gameserver.model.ClanPrivilege;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2ClanMember;
+import com.l2jserver.gameserver.model.ClanMember;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Auction;
 import com.l2jserver.gameserver.model.entity.Fort;
@@ -188,12 +188,12 @@ public class ClanTable
 		}
 		
 		L2Clan clan = new L2Clan(IdFactory.getInstance().getNextId(), clanName);
-		L2ClanMember leader = new L2ClanMember(clan, player);
+		ClanMember leader = new ClanMember(clan, player);
 		clan.setLeader(leader);
 		leader.setPlayerInstance(player);
 		clan.store();
 		player.setClan(clan);
-		player.setPledgeClass(L2ClanMember.calculatePledgeClass(player));
+		player.setPledgeClass(ClanMember.calculatePledgeClass(player));
 		player.setClanPrivileges(new EnumIntBitmask<>(ClanPrivilege.class, true));
 		
 		_clans.put(Integer.valueOf(clan.getId()), clan);
@@ -252,7 +252,7 @@ public class ClanTable
 			auction.cancelBid(clan.getId());
 		}
 		
-		L2ClanMember leaderMember = clan.getLeader();
+		ClanMember leaderMember = clan.getLeader();
 		if (leaderMember == null)
 		{
 			clan.getWarehouse().destroyAllItems("ClanRemove", null, null);
@@ -262,7 +262,7 @@ public class ClanTable
 			clan.getWarehouse().destroyAllItems("ClanRemove", clan.getLeader().getPlayerInstance(), null);
 		}
 		
-		for (L2ClanMember member : clan.getMembers())
+		for (ClanMember member : clan.getMembers())
 		{
 			clan.removeClanMember(member.getObjectId(), 0);
 		}
@@ -453,7 +453,7 @@ public class ClanTable
 	public void checkSurrender(L2Clan clan1, L2Clan clan2)
 	{
 		int count = 0;
-		for (L2ClanMember player : clan1.getMembers())
+		for (ClanMember player : clan1.getMembers())
 		{
 			if ((player != null) && (player.getPlayerInstance().getWantsPeace() == 1))
 			{

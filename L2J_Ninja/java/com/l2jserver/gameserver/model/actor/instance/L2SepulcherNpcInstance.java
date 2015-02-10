@@ -27,8 +27,8 @@ import com.l2jserver.gameserver.data.xml.impl.DoorData;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.instancemanager.FourSepulchersManager;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.events.EventDispatcher;
 import com.l2jserver.gameserver.model.events.EventType;
@@ -45,7 +45,7 @@ import com.l2jserver.util.Rnd;
 /**
  * @author sandman
  */
-public class L2SepulcherNpcInstance extends L2Npc
+public class L2SepulcherNpcInstance extends Npc
 {
 	protected Future<?> _closeTask = null;
 	protected Future<?> _spawnNextMysteriousBoxTask = null;
@@ -434,7 +434,7 @@ public class L2SepulcherNpcInstance extends L2Npc
 		}
 		
 		final CreatureSay creatureSay = new CreatureSay(0, ChatType.NPC_SHOUT, getName(), msg);
-		for (L2PcInstance player : L2World.getInstance().getPlayers())
+		for (L2PcInstance player : World.getInstance().getPlayers())
 		{
 			if (Util.checkIfInRange(15000, player, this, true))
 			{

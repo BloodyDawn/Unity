@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.model.stats;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 
 /**
  * @author Sdw
@@ -28,7 +28,7 @@ public enum BaseStats
 	STR // #TODO Check if correct
 	{
 		@Override
-		public double calcBonus(L2Character actor)
+		public double calcBonus(Creature actor)
 		{
 			return Math.pow(1.009, actor.getSTR() - 49);
 		}
@@ -36,7 +36,7 @@ public enum BaseStats
 	INT // @TODO Update
 	{
 		@Override
-		public double calcBonus(L2Character actor)
+		public double calcBonus(Creature actor)
 		{
 			return Math.pow(1.01, actor.getINT() - 49.4);
 		}
@@ -44,7 +44,7 @@ public enum BaseStats
 	DEX // Updated and better Formula to match Ertheia
 	{
 		@Override
-		public double calcBonus(L2Character actor)
+		public double calcBonus(Creature actor)
 		{
 			return Math.pow(1.004558949443461, actor.getDEX() - 19.27356040917275);
 		}
@@ -52,7 +52,7 @@ public enum BaseStats
 	WIT // Updated and better Formula to match Ertheia
 	{
 		@Override
-		public double calcBonus(L2Character actor)
+		public double calcBonus(Creature actor)
 		{
 			return Math.pow(1.013832042738272, actor.getWIT() - 64.57078483041223);
 		}
@@ -60,7 +60,7 @@ public enum BaseStats
 	CON // Updated and better Formula to match Ertheia
 	{
 		@Override
-		public double calcBonus(L2Character actor)
+		public double calcBonus(Creature actor)
 		{
 			return Math.pow(1.011685289099497, actor.getCON() - 34.80273839854561);
 		}
@@ -68,7 +68,7 @@ public enum BaseStats
 	MEN // Updated and better Formula to match Ertheia
 	{
 		@Override
-		public double calcBonus(L2Character actor)
+		public double calcBonus(Creature actor)
 		{
 			return Math.pow(1.003687502032154, actor.getMEN() + 30.4505503162);
 		}
@@ -76,7 +76,7 @@ public enum BaseStats
 	CHA // Addition for Ertheia
 	{
 		@Override
-		public double calcBonus(L2Character actor)
+		public double calcBonus(Creature actor)
 		{
 			return Math.pow(1.001, actor.getCHA() - 43);
 		}
@@ -84,7 +84,7 @@ public enum BaseStats
 	LUC // @TODO: Implement
 	{
 		@Override
-		public double calcBonus(L2Character actor)
+		public double calcBonus(Creature actor)
 		{
 			return 1;
 		}
@@ -92,11 +92,11 @@ public enum BaseStats
 	NONE
 	{
 		@Override
-		public double calcBonus(L2Character actor)
+		public double calcBonus(Creature actor)
 		{
 			return 1;
 		}
 	};
 	
-	public abstract double calcBonus(L2Character actor);
+	public abstract double calcBonus(Creature actor);
 }

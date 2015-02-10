@@ -26,7 +26,7 @@ import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.zone.AbstractZoneSettings;
 import com.l2jserver.gameserver.model.zone.L2ZoneType;
@@ -133,7 +133,7 @@ public class L2EffectZone extends L2ZoneType
 	}
 	
 	@Override
-	protected void onEnter(L2Character character)
+	protected void onEnter(Creature character)
 	{
 		if (_skills != null)
 		{
@@ -160,7 +160,7 @@ public class L2EffectZone extends L2ZoneType
 	}
 	
 	@Override
-	protected void onExit(L2Character character)
+	protected void onExit(Creature character)
 	{
 		if (character.isPlayer())
 		{
@@ -251,7 +251,7 @@ public class L2EffectZone extends L2ZoneType
 		{
 			if (isEnabled())
 			{
-				for (L2Character temp : getCharactersInside())
+				for (Creature temp : getCharactersInside())
 				{
 					if ((temp != null) && !temp.isDead())
 					{

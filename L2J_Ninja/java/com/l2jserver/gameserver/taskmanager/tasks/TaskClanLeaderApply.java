@@ -23,7 +23,7 @@ import java.util.Calendar;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.sql.impl.ClanTable;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2ClanMember;
+import com.l2jserver.gameserver.model.ClanMember;
 import com.l2jserver.gameserver.taskmanager.Task;
 import com.l2jserver.gameserver.taskmanager.TaskManager;
 import com.l2jserver.gameserver.taskmanager.TaskManager.ExecutedTask;
@@ -52,7 +52,7 @@ public class TaskClanLeaderApply extends Task
 			{
 				if (clan.getNewLeaderId() != 0)
 				{
-					final L2ClanMember member = clan.getClanMember(clan.getNewLeaderId());
+					final ClanMember member = clan.getClanMember(clan.getNewLeaderId());
 					if (member == null)
 					{
 						continue;

@@ -25,9 +25,9 @@ import com.l2jserver.gameserver.instancemanager.CHSiegeManager;
 import com.l2jserver.gameserver.instancemanager.FortSiegeManager;
 import com.l2jserver.gameserver.instancemanager.SiegeManager;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2SiegeClan;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.SiegeClan;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.status.SiegeFlagStatus;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.entity.Siegable;
@@ -36,7 +36,7 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 
-public class L2SiegeFlagInstance extends L2Npc
+public class L2SiegeFlagInstance extends Npc
 {
 	private final L2Clan _clan;
 	private Siegable _siege;
@@ -64,7 +64,7 @@ public class L2SiegeFlagInstance extends L2Npc
 			throw new NullPointerException(getClass().getSimpleName() + ": Initialization failed.");
 		}
 		
-		L2SiegeClan sc = _siege.getAttackerClan(_clan);
+		SiegeClan sc = _siege.getAttackerClan(_clan);
 		if (sc == null)
 		{
 			throw new NullPointerException(getClass().getSimpleName() + ": Cannot find siege clan.");
@@ -83,13 +83,13 @@ public class L2SiegeFlagInstance extends L2Npc
 	}
 	
 	@Override
-	public boolean isAutoAttackable(L2Character attacker)
+	public boolean isAutoAttackable(Creature attacker)
 	{
 		return !isInvul();
 	}
 	
 	@Override
-	public boolean doDie(L2Character killer)
+	public boolean doDie(Creature killer)
 	{
 		if (!super.doDie(killer))
 		{
@@ -97,7 +97,7 @@ public class L2SiegeFlagInstance extends L2Npc
 		}
 		if ((_siege != null) && (_clan != null))
 		{
-			L2SiegeClan sc = _siege.getAttackerClan(_clan);
+			SiegeClan sc = _siege.getAttackerClan(_clan);
 			if (sc != null)
 			{
 				sc.removeFlag(this);
@@ -158,7 +158,7 @@ public class L2SiegeFlagInstance extends L2Npc
 	}
 	
 	@Override
-	public void reduceCurrentHp(double damage, L2Character attacker, Skill skill)
+	public void reduceCurrentHp(double damage, Creature attacker, Skill skill)
 	{
 		super.reduceCurrentHp(damage, attacker, skill);
 		if (canTalk())

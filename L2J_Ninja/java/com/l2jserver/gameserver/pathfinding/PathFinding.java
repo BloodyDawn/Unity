@@ -21,7 +21,7 @@ package com.l2jserver.gameserver.pathfinding;
 import java.util.List;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.pathfinding.cellnodes.CellPathFinding;
 import com.l2jserver.gameserver.pathfinding.geonodes.GeoPathFinding;
 
@@ -172,12 +172,12 @@ public abstract class PathFinding
 	
 	public byte getRegionX(int node_pos)
 	{
-		return (byte) ((node_pos >> 8) + L2World.TILE_X_MIN);
+		return (byte) ((node_pos >> 8) + World.TILE_X_MIN);
 	}
 	
 	public byte getRegionY(int node_pos)
 	{
-		return (byte) ((node_pos >> 8) + L2World.TILE_Y_MIN);
+		return (byte) ((node_pos >> 8) + World.TILE_Y_MIN);
 	}
 	
 	public short getRegionOffset(byte rx, byte ry)
@@ -192,7 +192,7 @@ public abstract class PathFinding
 	 */
 	public int calculateWorldX(short node_x)
 	{
-		return L2World.MAP_MIN_X + (node_x * 128) + 48;
+		return World.MAP_MIN_X + (node_x * 128) + 48;
 	}
 	
 	/**
@@ -202,7 +202,7 @@ public abstract class PathFinding
 	 */
 	public int calculateWorldY(short node_y)
 	{
-		return L2World.MAP_MIN_Y + (node_y * 128) + 48;
+		return World.MAP_MIN_Y + (node_y * 128) + 48;
 	}
 	
 	public String[] getStat()

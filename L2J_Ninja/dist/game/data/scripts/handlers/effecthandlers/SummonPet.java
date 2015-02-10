@@ -22,7 +22,7 @@ import java.util.logging.Level;
 
 import com.l2jserver.gameserver.data.xml.impl.NpcData;
 import com.l2jserver.gameserver.data.xml.impl.PetDataTable;
-import com.l2jserver.gameserver.model.L2PetData;
+import com.l2jserver.gameserver.model.PetData;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PetInstance;
@@ -89,7 +89,7 @@ public final class SummonPet extends AbstractEffect
 			return;
 		}
 		
-		final L2PetData petData = PetDataTable.getInstance().getPetDataByItemId(item.getId());
+		final PetData petData = PetDataTable.getInstance().getPetDataByItemId(item.getId());
 		if ((petData == null) || (petData.getNpcId() == -1))
 		{
 			return;

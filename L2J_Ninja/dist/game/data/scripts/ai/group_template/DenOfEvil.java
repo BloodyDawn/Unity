@@ -24,8 +24,8 @@ import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.zone.type.L2EffectZone;
@@ -115,7 +115,7 @@ public final class DenOfEvil extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		npc.disableCoreAI(true);
 		npc.setIsImmobilized(true);
@@ -141,7 +141,7 @@ public final class DenOfEvil extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		ThreadPoolManager.getInstance().scheduleAi(new RespawnNewEye(npc.getLocation()), 15000);
 		L2EffectZone zone = ZoneManager.getInstance().getZone(npc, L2EffectZone.class);
@@ -197,7 +197,7 @@ public final class DenOfEvil extends AbstractNpcAI
 		
 		private void destroyZone()
 		{
-			for (L2Character character : _zone.getCharactersInside())
+			for (Creature character : _zone.getCharactersInside())
 			{
 				if (character == null)
 				{
@@ -215,7 +215,7 @@ public final class DenOfEvil extends AbstractNpcAI
 						if (character.isNpc())
 						{
 							// respawn eye
-							L2Npc npc = (L2Npc) character;
+							Npc npc = (Npc) character;
 							if (Util.contains(EYE_IDS, npc.getId()))
 							{
 								ThreadPoolManager.getInstance().scheduleAi(new RespawnNewEye(npc.getLocation()), 15000);

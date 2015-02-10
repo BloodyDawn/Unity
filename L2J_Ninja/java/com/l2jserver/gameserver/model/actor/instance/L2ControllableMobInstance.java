@@ -18,10 +18,10 @@
  */
 package com.l2jserver.gameserver.model.actor.instance;
 
-import com.l2jserver.gameserver.ai.L2CharacterAI;
-import com.l2jserver.gameserver.ai.L2ControllableMobAI;
+import com.l2jserver.gameserver.ai.CharacterAI;
+import com.l2jserver.gameserver.ai.ControllableMobAI;
 import com.l2jserver.gameserver.enums.InstanceType;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 
 /**
@@ -60,9 +60,9 @@ public class L2ControllableMobInstance extends L2MonsterInstance
 	}
 	
 	@Override
-	protected L2CharacterAI initAI()
+	protected CharacterAI initAI()
 	{
-		return new L2ControllableMobAI(new ControllableAIAcessor());
+		return new ControllableMobAI(new ControllableAIAcessor());
 	}
 	
 	@Override
@@ -77,7 +77,7 @@ public class L2ControllableMobInstance extends L2MonsterInstance
 	}
 	
 	@Override
-	public boolean doDie(L2Character killer)
+	public boolean doDie(Creature killer)
 	{
 		if (!super.doDie(killer))
 		{

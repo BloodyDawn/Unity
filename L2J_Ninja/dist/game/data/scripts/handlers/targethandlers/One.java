@@ -19,8 +19,8 @@
 package handlers.targethandlers;
 
 import com.l2jserver.gameserver.handler.ITargetTypeHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -31,7 +31,7 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 public class One implements ITargetTypeHandler
 {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
 	{
 		// Check for null target or any other invalid target
 		if ((target == null) || target.isDead() || ((target == activeChar) && skill.isBad()))
@@ -41,7 +41,7 @@ public class One implements ITargetTypeHandler
 		}
 		
 		// If a target is found, return it in a table else send a system message TARGET_IS_INCORRECT
-		return new L2Character[]
+		return new Creature[]
 		{
 			target
 		};

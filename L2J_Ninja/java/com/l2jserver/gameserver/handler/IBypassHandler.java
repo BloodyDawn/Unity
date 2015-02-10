@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.handler;
 
 import java.util.logging.Logger;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
@@ -37,7 +37,7 @@ public interface IBypassHandler
 	 * @param bypassOrigin
 	 * @return success
 	 */
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Character bypassOrigin);
+	public boolean useBypass(String command, L2PcInstance activeChar, Creature bypassOrigin);
 	
 	/**
 	 * This method is called at initialization to register all bypasses automatically.

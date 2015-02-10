@@ -20,7 +20,7 @@ package handlers.effecthandlers;
 
 import com.l2jserver.gameserver.enums.TrapAction;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2TrapInstance;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
@@ -58,7 +58,7 @@ public final class TrapRemove extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		final L2Character target = info.getEffected();
+		final Creature target = info.getEffected();
 		if (!target.isTrap())
 		{
 			return;

@@ -23,8 +23,8 @@ import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.PcCondOverride;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.zone.L2ZoneType;
 
@@ -62,7 +62,7 @@ public final class Warpgate extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.equals("enter"))
 		{
@@ -83,13 +83,13 @@ public final class Warpgate extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		return HellboundEngine.getInstance().isLocked() ? "Warpgate-01.html" : "Warpgate-02.html";
 	}
 	
 	@Override
-	public final String onEnterZone(L2Character character, L2ZoneType zone)
+	public final String onEnterZone(Creature character, L2ZoneType zone)
 	{
 		if (character.isPlayer())
 		{

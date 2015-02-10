@@ -26,7 +26,7 @@ import com.l2jserver.gameserver.data.xml.impl.ItemCrystalizationData;
 import com.l2jserver.gameserver.enums.PrivateStoreType;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.model.CrystalizationData;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemChanceHolder;
 import com.l2jserver.gameserver.model.itemcontainer.PcInventory;
@@ -268,7 +268,7 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 		
 		activeChar.broadcastUserInfo();
 		
-		L2World.getInstance().removeObject(removedItem);
+		World.getInstance().removeObject(removedItem);
 		
 		activeChar.setInCrystallize(false);
 	}

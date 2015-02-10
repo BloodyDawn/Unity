@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.model.events.impl.character.player;
 
-import com.l2jserver.gameserver.model.L2Augmentation;
+import com.l2jserver.gameserver.model.Augmentation;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
@@ -31,10 +31,10 @@ public class OnPlayerAugment implements IBaseEvent
 {
 	private final L2PcInstance _activeChar;
 	private final L2ItemInstance _item;
-	private final L2Augmentation _augmentation;
+	private final Augmentation _augmentation;
 	private final boolean _isAugment; // true = is being augmented // false = augment is being removed
 	
-	public OnPlayerAugment(L2PcInstance activeChar, L2ItemInstance item, L2Augmentation augment, boolean isAugment)
+	public OnPlayerAugment(L2PcInstance activeChar, L2ItemInstance item, Augmentation augment, boolean isAugment)
 	{
 		_activeChar = activeChar;
 		_item = item;
@@ -52,7 +52,7 @@ public class OnPlayerAugment implements IBaseEvent
 		return _item;
 	}
 	
-	public L2Augmentation getAugmentation()
+	public Augmentation getAugmentation()
 	{
 		return _augmentation;
 	}

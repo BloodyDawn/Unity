@@ -26,7 +26,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.handler.IChatHandler;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.CreatureSay;
@@ -86,7 +86,7 @@ public final class ChatWorld implements IChatHandler
 			}
 			
 			final CreatureSay cs = new CreatureSay(activeChar, type, text);
-			L2World.getInstance().getPlayers().stream().filter(activeChar::isNotBlocked).forEach(cs::sendTo);
+			World.getInstance().getPlayers().stream().filter(activeChar::isNotBlocked).forEach(cs::sendTo);
 			
 			activeChar.setWorldChatPoints(activeChar.getWorldChatPoints() - 1);
 			activeChar.sendPacket(new ExWorldChatCnt(activeChar));

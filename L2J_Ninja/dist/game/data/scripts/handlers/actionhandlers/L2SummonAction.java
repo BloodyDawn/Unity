@@ -22,8 +22,8 @@ import com.l2jserver.gameserver.GeoData;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.handler.IActionHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.EventDispatcher;
 import com.l2jserver.gameserver.model.events.impl.character.player.OnPlayerSummonTalk;
@@ -34,7 +34,7 @@ import com.l2jserver.gameserver.network.serverpackets.PetStatusShow;
 public class L2SummonAction implements IActionHandler
 {
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
+	public boolean action(L2PcInstance activeChar, WorldObject target, boolean interact)
 	{
 		// Aggression target lock effect
 		if (activeChar.isLockedTarget() && (activeChar.getLockedTarget() != target))
@@ -43,14 +43,14 @@ public class L2SummonAction implements IActionHandler
 			return false;
 		}
 		
-		if ((activeChar == ((L2Summon) target).getOwner()) && (activeChar.getTarget() == target))
+		if ((activeChar == ((Summon) target).getOwner()) && (activeChar.getTarget() == target))
 		{
-			activeChar.sendPacket(new PetStatusShow((L2Summon) target));
+			activeChar.sendPacket(new PetStatusShow((Summon) target));
 			activeChar.updateNotMoveUntil();
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			
 			// Notify to scripts
-			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerSummonTalk((L2Summon) target), (L2Summon) target);
+			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerSummonTalk((Summon) target), (Summon) target);
 		}
 		else if (activeChar.getTarget() != target)
 		{
@@ -70,7 +70,7 @@ public class L2SummonAction implements IActionHandler
 			{
 				// This Action Failed packet avoids activeChar getting stuck when clicking three or more times
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-				if (((L2Summon) target).isInsideRadius(activeChar, 150, false, false))
+				if (((Summon) target).isInsideRadius(activeChar, 150, false, false))
 				{
 					activeChar.updateNotMoveUntil();
 				}

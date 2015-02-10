@@ -25,9 +25,9 @@ import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
@@ -76,19 +76,19 @@ public final class IceQueensCastle extends AbstractInstance
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		switch (event)
 		{
 			case "ATTACK_KNIGHT":
 			{
-				for (L2Character character : npc.getKnownList().getKnownCharacters())
+				for (Creature character : npc.getKnownList().getKnownCharacters())
 				{
-					if ((character.getId() == ARCHERY_KNIGHT) && !character.isDead() && !((L2Attackable) character).isDecayed())
+					if ((character.getId() == ARCHERY_KNIGHT) && !character.isDead() && !((Attackable) character).isDecayed())
 					{
 						npc.setIsRunning(true);
 						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, character);
-						((L2Attackable) npc).addDamageHate(character, 0, 999999);
+						((Attackable) npc).addDamageHate(character, 0, 999999);
 					}
 				}
 				startQuestTimer("ATTACK_KNIGHT", 3000, npc, null);
@@ -139,17 +139,17 @@ public final class IceQueensCastle extends AbstractInstance
 	}
 	
 	@Override
-	public String onSeeCreature(L2Npc npc, L2Character creature, boolean isSummon)
+	public String onSeeCreature(Npc npc, Creature creature, boolean isSummon)
 	{
 		if (creature.isPlayer() && npc.isScriptValue(0))
 		{
-			for (L2Character character : npc.getKnownList().getKnownCharacters())
+			for (Creature character : npc.getKnownList().getKnownCharacters())
 			{
-				if ((character.getId() == ARCHERY_KNIGHT) && !character.isDead() && !((L2Attackable) character).isDecayed())
+				if ((character.getId() == ARCHERY_KNIGHT) && !character.isDead() && !((Attackable) character).isDecayed())
 				{
 					npc.setIsRunning(true);
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, character);
-					((L2Attackable) npc).addDamageHate(character, 0, 999999);
+					((Attackable) npc).addDamageHate(character, 0, 999999);
 					npc.setScriptValue(1);
 					startQuestTimer("ATTACK_KNIGHT", 5000, npc, null);
 				}
@@ -160,7 +160,7 @@ public final class IceQueensCastle extends AbstractInstance
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
+	public final String onSpawn(Npc npc)
 	{
 		startQuestTimer("TIMER_MOVING", 60000, npc, null);
 		startQuestTimer("TIMER_BLIZZARD", 180000, npc, null);
@@ -168,7 +168,7 @@ public final class IceQueensCastle extends AbstractInstance
 	}
 	
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill)
+	public String onSpellFinished(Npc npc, L2PcInstance player, Skill skill)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		
@@ -185,7 +185,7 @@ public final class IceQueensCastle extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
+	public String onTalk(Npc npc, L2PcInstance talker)
 	{
 		enterInstance(talker, new IQCWorld(), "IceQueensCastle.xml", TEMPLATE_ID);
 		return super.onTalk(npc, talker);

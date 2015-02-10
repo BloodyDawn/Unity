@@ -21,7 +21,7 @@ package quests.Q00702_ATrapForRevenge;
 import quests.Q10273_GoodDayToFly.Q10273_GoodDayToFly;
 
 import com.l2jserver.gameserver.enums.QuestSound;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
@@ -64,7 +64,7 @@ public class Q00702_ATrapForRevenge extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String htmltext = event;
 		final QuestState st = getQuestState(player, false);
@@ -265,7 +265,7 @@ public class Q00702_ATrapForRevenge extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		final L2PcInstance partyMember = getRandomPartyMember(player, 2);
 		if (partyMember == null)
@@ -362,7 +362,7 @@ public class Q00702_ATrapForRevenge extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);

@@ -23,7 +23,7 @@ import ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.zone.type.L2EffectZone;
 import com.l2jserver.gameserver.network.NpcStringId;
@@ -48,7 +48,7 @@ public final class QueenShyeed extends AbstractNpcAI
 	private static final L2EffectZone PC_BUFF_ZONE = ZoneManager.getInstance().getZoneById(200105, L2EffectZone.class);
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		switch (event)
 		{
@@ -67,7 +67,7 @@ public final class QueenShyeed extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		broadcastNpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.SHYEED_S_CRY_IS_STEADILY_DYING_DOWN);
 		startRespawn();
@@ -91,7 +91,7 @@ public final class QueenShyeed extends AbstractNpcAI
 			startQuestTimer("respawn", remain, null, null);
 			return;
 		}
-		final L2Npc npc = addSpawn(SHYEED, SHYEED_LOC, false, 0);
+		final Npc npc = addSpawn(SHYEED, SHYEED_LOC, false, 0);
 		startQuestTimer("despawn", 10800000, npc, null);
 		PC_BUFF_ZONE.setEnabled(false);
 		MOB_BUFF_ZONE.setEnabled(true);

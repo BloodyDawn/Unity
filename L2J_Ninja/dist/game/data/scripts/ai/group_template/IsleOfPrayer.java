@@ -23,7 +23,7 @@ import java.util.Map;
 
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemChanceHolder;
 
@@ -66,7 +66,7 @@ public final class IsleOfPrayer extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		final ItemChanceHolder holder = MONSTERS.get(npc.getId());
 		if (getRandom(10000) <= holder.getChance())

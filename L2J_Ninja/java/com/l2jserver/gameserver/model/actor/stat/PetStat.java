@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.model.actor.stat;
 
 import com.l2jserver.gameserver.data.xml.impl.ExperienceData;
 import com.l2jserver.gameserver.data.xml.impl.PetDataTable;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.stats.Stats;
@@ -167,25 +167,25 @@ public class PetStat extends SummonStat
 	}
 	
 	@Override
-	public int getMAtk(L2Character target, Skill skill)
+	public int getMAtk(Creature target, Skill skill)
 	{
 		return (int) calcStat(Stats.MAGIC_ATTACK, getActiveChar().getPetLevelData().getPetMAtk(), target, skill);
 	}
 	
 	@Override
-	public int getMDef(L2Character target, Skill skill)
+	public int getMDef(Creature target, Skill skill)
 	{
 		return (int) calcStat(Stats.MAGIC_DEFENCE, getActiveChar().getPetLevelData().getPetMDef(), target, skill);
 	}
 	
 	@Override
-	public int getPAtk(L2Character target)
+	public int getPAtk(Creature target)
 	{
 		return (int) calcStat(Stats.POWER_ATTACK, getActiveChar().getPetLevelData().getPetPAtk(), target, null);
 	}
 	
 	@Override
-	public int getPDef(L2Character target)
+	public int getPDef(Creature target)
 	{
 		return (int) calcStat(Stats.POWER_DEFENCE, getActiveChar().getPetLevelData().getPetPDef(), target, null);
 	}

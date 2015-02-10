@@ -20,8 +20,8 @@ package com.l2jserver.gameserver.network.clientpackets.adenadistribution;
 
 import java.util.List;
 
-import com.l2jserver.gameserver.model.L2CommandChannel;
-import com.l2jserver.gameserver.model.L2Party;
+import com.l2jserver.gameserver.model.CommandChannel;
+import com.l2jserver.gameserver.model.Party;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.request.AdenaDistributionRequest;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -48,7 +48,7 @@ public class RequestDivideAdenaStart extends L2GameClientPacket
 			return;
 		}
 		
-		final L2Party party = player.getParty();
+		final Party party = player.getParty();
 		
 		if (party == null)
 		{
@@ -56,7 +56,7 @@ public class RequestDivideAdenaStart extends L2GameClientPacket
 			return;
 		}
 		
-		final L2CommandChannel commandChannel = party.getCommandChannel();
+		final CommandChannel commandChannel = party.getCommandChannel();
 		
 		if ((commandChannel != null) && !commandChannel.isLeader(player))
 		{

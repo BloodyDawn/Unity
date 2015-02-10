@@ -25,10 +25,10 @@ import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.datatables.SpawnTable;
 import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.L2Spawn;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.impl.character.OnCreatureSkillUse;
@@ -71,7 +71,7 @@ public final class Minigame extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final MinigameRoom room = getRoomByManager(npc);
 		switch (event)
@@ -117,7 +117,7 @@ public final class Minigame extends AbstractNpcAI
 				}
 				else
 				{
-					for (L2Npc burner : room.getBurners())
+					for (Npc burner : room.getBurners())
 					{
 						burner.setState(2);
 						burner.setIsRunning(false);
@@ -146,7 +146,7 @@ public final class Minigame extends AbstractNpcAI
 			{
 				if (room.getCurrentPot() < 9)
 				{
-					L2Npc b = room.getBurners()[room.getOrder()[room.getCurrentPot()]];
+					Npc b = room.getBurners()[room.getOrder()[room.getCurrentPot()]];
 					b.setState(1);
 					b.setIsRunning(false);
 					startQuestTimer("off", 2000, b, null); // Stopping burning each pot 2s after
@@ -202,7 +202,7 @@ public final class Minigame extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance talker)
+	public String onFirstTalk(Npc npc, L2PcInstance talker)
 	{
 		String htmltext = null;
 		final MinigameRoom room = getRoomByManager(npc);
@@ -241,7 +241,7 @@ public final class Minigame extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		switch (npc.getId())
 		{
@@ -266,11 +266,11 @@ public final class Minigame extends AbstractNpcAI
 		final boolean miniGameStarted = room.getStarted();
 		if (miniGameStarted && (event.getSkill().getId() == SKILL_TORCH_LIGHT))
 		{
-			for (L2Object obj : event.getTargets())
+			for (WorldObject obj : event.getTargets())
 			{
 				if ((obj != null) && obj.isNpc())
 				{
-					L2Npc npc = (L2Npc) obj;
+					Npc npc = (Npc) obj;
 					if (npc.getId() == BURNER)
 					{
 						npc.doCast(TRIGGER_MIRAGE.getSkill());
@@ -326,10 +326,10 @@ public final class Minigame extends AbstractNpcAI
 	 * @param manager the NPC instructor
 	 * @return MinigameRoom
 	 */
-	private MinigameRoom initRoom(L2Npc manager)
+	private MinigameRoom initRoom(Npc manager)
 	{
-		final L2Npc[] burners = new L2Npc[9];
-		L2Npc lastSpawn;
+		final Npc[] burners = new Npc[9];
+		Npc lastSpawn;
 		int potNumber = 0;
 		
 		for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(BURNER))
@@ -349,7 +349,7 @@ public final class Minigame extends AbstractNpcAI
 	 * @param manager the NPC instructor
 	 * @return MinigameRoom
 	 */
-	private MinigameRoom getRoomByManager(L2Npc manager)
+	private MinigameRoom getRoomByManager(Npc manager)
 	{
 		for (MinigameRoom room : _rooms)
 		{
@@ -384,15 +384,15 @@ public final class Minigame extends AbstractNpcAI
 	 */
 	private class MinigameRoom
 	{
-		private final L2Npc[] _burners;
-		private final L2Npc _manager;
+		private final Npc[] _burners;
+		private final Npc _manager;
 		private L2PcInstance _participant;
 		private boolean _started;
 		private int _attemptNumber;
 		private int _currentPot;
 		private final int _order[];
 		
-		public MinigameRoom(L2Npc[] burners, L2Npc manager)
+		public MinigameRoom(Npc[] burners, Npc manager)
 		{
 			_burners = burners;
 			_manager = manager;
@@ -408,7 +408,7 @@ public final class Minigame extends AbstractNpcAI
 		 * @param npc the L2Npc burner
 		 * @return the array index
 		 */
-		public int getBurnerPos(L2Npc npc)
+		public int getBurnerPos(Npc npc)
 		{
 			for (int i = 0; i < 9; i++)
 			{
@@ -425,7 +425,7 @@ public final class Minigame extends AbstractNpcAI
 		 */
 		public void burnThemAll()
 		{
-			for (L2Npc burner : _burners)
+			for (Npc burner : _burners)
 			{
 				burner.setState(1);
 				burner.setIsRunning(false);
@@ -436,7 +436,7 @@ public final class Minigame extends AbstractNpcAI
 		 * Retrieve a list of burners
 		 * @return An array of L2Npcs
 		 */
-		public L2Npc[] getBurners()
+		public Npc[] getBurners()
 		{
 			return _burners;
 		}
@@ -445,7 +445,7 @@ public final class Minigame extends AbstractNpcAI
 		 * Retrieve the current game manager
 		 * @return The L2Npc game instructor
 		 */
-		public L2Npc getManager()
+		public Npc getManager()
 		{
 			return _manager;
 		}

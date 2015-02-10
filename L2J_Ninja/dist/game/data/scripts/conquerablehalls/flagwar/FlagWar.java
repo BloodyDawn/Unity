@@ -30,18 +30,18 @@ import java.util.Map.Entry;
 import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.ai.L2SpecialSiegeGuardAI;
+import com.l2jserver.gameserver.ai.SpecialSiegeGuardAI;
 import com.l2jserver.gameserver.data.sql.impl.ClanTable;
 import com.l2jserver.gameserver.data.xml.impl.NpcData;
 import com.l2jserver.gameserver.enums.SiegeClanType;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2ClanMember;
-import com.l2jserver.gameserver.model.L2SiegeClan;
+import com.l2jserver.gameserver.model.ClanMember;
+import com.l2jserver.gameserver.model.SiegeClan;
 import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.TeleportWhereType;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.entity.Siegable;
@@ -126,7 +126,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		String html = null;
 		if (npc.getId() == MESSENGER)
@@ -161,7 +161,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public synchronized String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public synchronized String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String html = event;
 		L2Clan clan = player.getClan();
@@ -359,7 +359,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public synchronized String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public synchronized String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		if (_hall.isInSiege())
 		{
@@ -435,7 +435,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, CENTER);
 		return null;
@@ -489,7 +489,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		{
 			L2Clan owner = ClanTable.getInstance().getClan(_hall.getOwnerId());
 			final Location loc = _hall.getZone().getSpawns().get(0); // Owner restart point
-			for (L2ClanMember pc : owner.getMembers())
+			for (ClanMember pc : owner.getMembers())
 			{
 				if (pc != null)
 				{
@@ -665,7 +665,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 			data.warrior.setRespawnDelay(10000);
 			data.warrior.setAmount(1);
 			data.warrior.init();
-			((L2SpecialSiegeGuardAI) data.warrior.getLastSpawn().getAI()).getAlly().addAll(data.players);
+			((SpecialSiegeGuardAI) data.warrior.getLastSpawn().getAI()).getAlly().addAll(data.players);
 		}
 		catch (Exception e)
 		{
@@ -678,7 +678,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	{
 		for (int objId : data.players)
 		{
-			L2PcInstance plr = L2World.getInstance().getPlayer(objId);
+			L2PcInstance plr = World.getInstance().getPlayer(objId);
 			if (plr != null)
 			{
 				data.playersInstance.add(plr);
@@ -690,7 +690,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	{
 		final int clanId = clan.getId();
 		
-		L2SiegeClan sc = new L2SiegeClan(clanId, SiegeClanType.ATTACKER);
+		SiegeClan sc = new SiegeClan(clanId, SiegeClanType.ATTACKER);
 		getAttackers().put(clanId, sc);
 		
 		ClanData data = new ClanData();

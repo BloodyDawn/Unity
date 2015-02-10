@@ -22,7 +22,7 @@ import instances.AbstractInstance;
 import quests.Q10287_StoryOfThoseLeft.Q10287_StoryOfThoseLeft;
 
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
 import com.l2jserver.gameserver.model.quest.QuestState;
@@ -53,7 +53,7 @@ public final class JiniaGuildHideout4 extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
+	public String onTalk(Npc npc, L2PcInstance talker)
 	{
 		final QuestState qs = talker.getQuestState(Q10287_StoryOfThoseLeft.class.getSimpleName());
 		if ((qs != null) && qs.isMemoState(1))

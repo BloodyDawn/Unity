@@ -24,7 +24,7 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.xml.impl.ClassListData;
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
 import com.l2jserver.gameserver.enums.IllegalActionPunishmentType;
-import com.l2jserver.gameserver.model.L2SkillLearn;
+import com.l2jserver.gameserver.model.SkillLearn;
 import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.impl.character.player.OnPlayerProfessionChange;
@@ -86,7 +86,7 @@ public final class SkillTransfer extends AbstractNpcAI
 			long count = PORMANDERS[index].getCount() - player.getInventory().getInventoryItemCount(PORMANDERS[index].getId(), -1, false);
 			for (Skill sk : player.getAllSkills())
 			{
-				for (L2SkillLearn s : SkillTreesData.getInstance().getTransferSkillTree(player.getClassId()).values())
+				for (SkillLearn s : SkillTreesData.getInstance().getTransferSkillTree(player.getClassId()).values())
 				{
 					if (s.getSkillId() == sk.getId())
 					{

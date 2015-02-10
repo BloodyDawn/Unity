@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.network.clientpackets;
 
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.AskJoinPledge;
@@ -57,7 +57,7 @@ public final class RequestJoinPledge extends L2GameClientPacket
 			return;
 		}
 		
-		final L2PcInstance target = L2World.getInstance().getPlayer(_target);
+		final L2PcInstance target = World.getInstance().getPlayer(_target);
 		if (target == null)
 		{
 			activeChar.sendPacket(SystemMessageId.YOU_HAVE_INVITED_THE_WRONG_TARGET);

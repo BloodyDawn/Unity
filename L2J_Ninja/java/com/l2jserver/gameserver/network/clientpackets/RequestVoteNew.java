@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.network.clientpackets;
 
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ExVoteSystemInfo;
@@ -46,7 +46,7 @@ public final class RequestVoteNew extends L2GameClientPacket
 			return;
 		}
 		
-		L2Object object = activeChar.getTarget();
+		WorldObject object = activeChar.getTarget();
 		
 		if (!(object instanceof L2PcInstance))
 		{

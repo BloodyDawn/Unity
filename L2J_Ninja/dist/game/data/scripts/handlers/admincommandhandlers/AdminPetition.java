@@ -20,7 +20,7 @@ package handlers.admincommandhandlers;
 
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.instancemanager.PetitionManager;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 
@@ -102,7 +102,7 @@ public class AdminPetition implements IAdminCommandHandler
 		{
 			try
 			{
-				L2Object targetChar = activeChar.getTarget();
+				WorldObject targetChar = activeChar.getTarget();
 				if ((targetChar == null) || !(targetChar instanceof L2PcInstance))
 				{
 					activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);

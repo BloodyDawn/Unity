@@ -27,11 +27,11 @@ import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.instancemanager.AntiFeedManager;
 import com.l2jserver.gameserver.instancemanager.CastleManager;
 import com.l2jserver.gameserver.instancemanager.FortManager;
-import com.l2jserver.gameserver.model.L2Party;
-import com.l2jserver.gameserver.model.L2Party.messageType;
+import com.l2jserver.gameserver.model.Party;
+import com.l2jserver.gameserver.model.Party.messageType;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.TvTEvent;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
@@ -236,7 +236,7 @@ public abstract class AbstractOlympiadGame
 			// Remove Summon's Buffs
 			if (player.hasSummon())
 			{
-				final L2Summon pet = player.getPet();
+				final Summon pet = player.getPet();
 				if (pet != null)
 				{
 					pet.unSummon(player);
@@ -256,7 +256,7 @@ public abstract class AbstractOlympiadGame
 			// Remove player from his party
 			if (removeParty)
 			{
-				final L2Party party = player.getParty();
+				final Party party = player.getParty();
 				if (party != null)
 				{
 					party.removePartyMember(player, messageType.Expelled);
@@ -322,7 +322,7 @@ public abstract class AbstractOlympiadGame
 			{
 				player.setAgathionId(0);
 			}
-			final L2Summon pet = player.getPet();
+			final Summon pet = player.getPet();
 			if ((pet != null) && !pet.isDead())
 			{
 				pet.setTarget(null);
@@ -461,7 +461,7 @@ public abstract class AbstractOlympiadGame
 	
 	public abstract boolean containsParticipant(int playerId);
 	
-	public abstract void sendOlympiadInfo(L2Character player);
+	public abstract void sendOlympiadInfo(Creature player);
 	
 	public abstract void broadcastOlympiadInfo(L2OlympiadStadiumZone stadium);
 	

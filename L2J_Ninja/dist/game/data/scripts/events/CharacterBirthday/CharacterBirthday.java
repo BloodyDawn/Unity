@@ -18,7 +18,7 @@
  */
 package events.CharacterBirthday;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.util.Util;
@@ -66,7 +66,7 @@ public final class CharacterBirthday extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String htmltext = event;
 		if (event.equalsIgnoreCase("despawn_npc"))
@@ -97,7 +97,7 @@ public final class CharacterBirthday extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		if (SPAWNS >= 3)
 		{
@@ -106,7 +106,7 @@ public final class CharacterBirthday extends Quest
 		
 		if (!Util.checkIfInRange(10, npc, player, true))
 		{
-			L2Npc spawned = addSpawn(32600, player.getX() + 10, player.getY() + 10, player.getZ() + 10, 0, false, 0, true);
+			Npc spawned = addSpawn(32600, player.getX() + 10, player.getY() + 10, player.getZ() + 10, 0, false, 0, true);
 			startQuestTimer("despawn_npc", 180000, spawned, player);
 			SPAWNS++;
 		}

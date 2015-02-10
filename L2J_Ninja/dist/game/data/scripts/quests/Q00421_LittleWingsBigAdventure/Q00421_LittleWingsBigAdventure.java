@@ -24,8 +24,8 @@ import java.util.Map;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.enums.QuestSound;
-import com.l2jserver.gameserver.model.actor.L2Npc;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Npc;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
@@ -87,7 +87,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		String htmltext = null;
@@ -127,7 +127,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 			}
 			case "30747-04.html":
 			{
-				final L2Summon summon = player.getPet();
+				final Summon summon = player.getPet();
 				
 				if (summon == null)
 				{
@@ -145,7 +145,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 			}
 			case "30747-05.html":
 			{
-				final L2Summon summon = player.getPet();
+				final Summon summon = player.getPet();
 				
 				if (summon == null)
 				{
@@ -185,7 +185,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
+	public String onTalk(Npc npc, L2PcInstance talker)
 	{
 		final QuestState qs = getQuestState(talker, true);
 		String htmltext = getNoQuestMsg(talker);
@@ -247,7 +247,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 					}
 					case 200:
 					{
-						final L2Summon summon = talker.getPet();
+						final Summon summon = talker.getPet();
 						
 						if (summon == null)
 						{
@@ -293,7 +293,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 					{
 						if (!hasQuestItems(talker, FAIRY_LEAF))
 						{
-							final L2Summon summon = talker.getPet();
+							final Summon summon = talker.getPet();
 							
 							if (summon == null)
 							{
@@ -373,7 +373,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(attacker, false);
 		if ((qs != null) && qs.isCond(2))
@@ -383,7 +383,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 				final NpcData data = NPC_DATA.get(npc.getId());
 				if ((qs.getMemoState() % data.memoStateMod) < data.memoStateValue)
 				{
-					final L2Summon pet = attacker.getPet();
+					final Summon pet = attacker.getPet();
 					if ((pet != null) && (pet.getControlObjectId() == qs.getInt("fluteObjectId")))
 					{
 						final int hits = qs.getInt("hits") + 1;
@@ -447,13 +447,13 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		if (Util.checkIfInRange(1500, killer, npc, true))
 		{
 			for (int i = 0; i < 20; i++)
 			{
-				L2Npc guardian = addSpawn(SOUL_OF_TREE_GUARDIAN, npc);
+				Npc guardian = addSpawn(SOUL_OF_TREE_GUARDIAN, npc);
 				startQuestTimer("DESPAWN_GUARDIAN", 300000, guardian, null);
 				
 				if (i == 0)

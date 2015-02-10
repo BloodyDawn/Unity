@@ -22,7 +22,7 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.handler.IChatHandler;
 import com.l2jserver.gameserver.model.BlockList;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -61,7 +61,7 @@ public final class ChatWhisper implements IChatHandler
 			return;
 		}
 		
-		final L2PcInstance receiver = L2World.getInstance().getPlayer(target);
+		final L2PcInstance receiver = World.getInstance().getPlayer(target);
 		
 		if ((receiver != null) && !receiver.isSilenceMode(activeChar.getObjectId()))
 		{

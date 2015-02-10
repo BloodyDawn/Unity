@@ -40,7 +40,7 @@ import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.enums.ItemLocation;
 import com.l2jserver.gameserver.enums.MailType;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.CommissionManagerInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.commission.CommissionItem;
@@ -454,7 +454,7 @@ public final class CommissionManager
 	 */
 	public static boolean isPlayerAllowedToInteract(L2PcInstance player)
 	{
-		final L2Npc npc = player.getLastFolkNPC();
+		final Npc npc = player.getLastFolkNPC();
 		if ((npc != null) && (npc instanceof CommissionManagerInstance))
 		{
 			return npc.calculateDistance(player, true, false) <= INTERACTION_DISTANCE;

@@ -19,7 +19,7 @@
 package handlers.voicedcommandhandlers;
 
 import com.l2jserver.gameserver.handler.IVoicedCommandHandler;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.util.Util;
 
@@ -40,7 +40,7 @@ public class SetVCmd implements IVoicedCommandHandler
 	{
 		if (command.equals("set"))
 		{
-			final L2Object target = activeChar.getTarget();
+			final WorldObject target = activeChar.getTarget();
 			if ((target == null) || !target.isPlayer())
 			{
 				return false;

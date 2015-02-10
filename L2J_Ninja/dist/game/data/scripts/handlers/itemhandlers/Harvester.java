@@ -20,9 +20,9 @@ package handlers.itemhandlers;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.handler.IItemHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
@@ -35,7 +35,7 @@ import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 public final class Harvester implements IItemHandler
 {
 	@Override
-	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+	public boolean useItem(Playable playable, L2ItemInstance item, boolean forceUse)
 	{
 		if (!Config.ALLOW_MANOR)
 		{
@@ -55,8 +55,8 @@ public final class Harvester implements IItemHandler
 		}
 		
 		final L2PcInstance activeChar = playable.getActingPlayer();
-		final L2Object target = activeChar.getTarget();
-		if ((target == null) || !target.isMonster() || !((L2Character) target).isDead())
+		final WorldObject target = activeChar.getTarget();
+		if ((target == null) || !target.isMonster() || !((Creature) target).isDead())
 		{
 			activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);

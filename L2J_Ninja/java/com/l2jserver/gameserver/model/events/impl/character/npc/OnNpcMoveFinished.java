@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.model.events.impl.character.npc;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
 
@@ -27,14 +27,14 @@ import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
  */
 public class OnNpcMoveFinished implements IBaseEvent
 {
-	private final L2Npc _npc;
+	private final Npc _npc;
 	
-	public OnNpcMoveFinished(L2Npc npc)
+	public OnNpcMoveFinished(Npc npc)
 	{
 		_npc = npc;
 	}
 	
-	public L2Npc getNpc()
+	public Npc getNpc()
 	{
 		return _npc;
 	}

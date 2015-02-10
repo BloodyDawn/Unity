@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.network.serverpackets;
 
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 public class ExGetOnAirShip extends L2GameServerPacket
@@ -27,7 +27,7 @@ public class ExGetOnAirShip extends L2GameServerPacket
 	private final int _playerId, _airShipId;
 	private final Location _pos;
 	
-	public ExGetOnAirShip(L2PcInstance player, L2Character ship)
+	public ExGetOnAirShip(L2PcInstance player, Creature ship)
 	{
 		_playerId = player.getObjectId();
 		_airShipId = ship.getObjectId();

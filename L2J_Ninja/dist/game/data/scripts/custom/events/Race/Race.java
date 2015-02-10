@@ -27,7 +27,7 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Event;
 import com.l2jserver.gameserver.model.quest.QuestState;
@@ -43,9 +43,9 @@ import com.l2jserver.gameserver.util.Broadcast;
 public final class Race extends Event
 {
 	// Event NPC's list
-	private List<L2Npc> _npclist;
+	private List<Npc> _npclist;
 	// Npc
-	private L2Npc _npc;
+	private Npc _npc;
 	// Player list
 	private List<L2PcInstance> _players;
 	// Event Task
@@ -217,7 +217,7 @@ public final class Race extends Event
 			}
 		}
 		// Despawn NPCs
-		for (L2Npc _npc : _npclist)
+		for (Npc _npc : _npclist)
 		{
 			if (_npc != null)
 			{
@@ -274,7 +274,7 @@ public final class Race extends Event
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String htmltext = event;
 		QuestState st = getQuestState(player, false);
@@ -329,7 +329,7 @@ public final class Race extends Event
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		getQuestState(player, true);
 		
@@ -353,9 +353,9 @@ public final class Race extends Event
 		return _players.contains(player) ? 1 : 0;
 	}
 	
-	private L2Npc recordSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffSet, long despawnDelay)
+	private Npc recordSpawn(int npcId, int x, int y, int z, int heading, boolean randomOffSet, long despawnDelay)
 	{
-		final L2Npc npc = addSpawn(npcId, x, y, z, heading, randomOffSet, despawnDelay);
+		final Npc npc = addSpawn(npcId, x, y, z, heading, randomOffSet, despawnDelay);
 		if (npc != null)
 		{
 			_npclist.add(npc);

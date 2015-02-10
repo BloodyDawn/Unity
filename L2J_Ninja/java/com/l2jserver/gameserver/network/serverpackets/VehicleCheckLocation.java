@@ -18,19 +18,19 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 
 /**
  * @author Maktakien
  */
 public class VehicleCheckLocation extends L2GameServerPacket
 {
-	private final L2Character _boat;
+	private final Creature _boat;
 	
 	/**
 	 * @param boat
 	 */
-	public VehicleCheckLocation(L2Character boat)
+	public VehicleCheckLocation(Creature boat)
 	{
 		_boat = boat;
 	}

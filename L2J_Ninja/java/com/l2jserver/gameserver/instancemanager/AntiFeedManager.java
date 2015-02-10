@@ -23,7 +23,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.L2GameClient;
 
@@ -56,7 +56,7 @@ public final class AntiFeedManager
 	 * @param target Target character
 	 * @return True if kill is non-feeded.
 	 */
-	public final boolean check(L2Character attacker, L2Character target)
+	public final boolean check(Creature attacker, Creature target)
 	{
 		if (!Config.L2JMOD_ANTIFEED_ENABLE)
 		{

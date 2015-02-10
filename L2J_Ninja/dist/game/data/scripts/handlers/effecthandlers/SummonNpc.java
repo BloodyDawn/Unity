@@ -23,7 +23,7 @@ import com.l2jserver.gameserver.idfactory.IdFactory;
 import com.l2jserver.gameserver.model.L2Spawn;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2DecoyInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2EffectPointInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -168,7 +168,7 @@ public final class SummonNpc extends AbstractEffect
 				spawn.setHeading(player.getHeading());
 				spawn.stopRespawn();
 				
-				final L2Npc npc = spawn.doSpawn(_isSummonSpawn);
+				final Npc npc = spawn.doSpawn(_isSummonSpawn);
 				npc.setSummoner(player);
 				npc.setName(npcTemplate.getName());
 				npc.setTitle(npcTemplate.getName());

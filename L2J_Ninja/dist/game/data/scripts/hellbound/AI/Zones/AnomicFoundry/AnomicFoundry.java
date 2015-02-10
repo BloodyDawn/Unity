@@ -30,8 +30,8 @@ import com.l2jserver.gameserver.datatables.SpawnTable;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.model.L2Spawn;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -87,7 +87,7 @@ public final class AnomicFoundry extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.equalsIgnoreCase("make_spawn_1"))
 		{
@@ -113,7 +113,7 @@ public final class AnomicFoundry extends AbstractNpcAI
 		{
 			if ((npc != null) && !npc.isDead())
 			{
-				((L2Attackable) npc).returnHome();
+				((Attackable) npc).returnHome();
 			}
 		}
 		else if (event.equalsIgnoreCase("reset_respawn_time"))
@@ -124,7 +124,7 @@ public final class AnomicFoundry extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAggroRangeEnter(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		if (getRandom(10000) < 2000)
 		{
@@ -137,7 +137,7 @@ public final class AnomicFoundry extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
 		int atkIndex = _atkIndex.containsKey(npc.getObjectId()) ? _atkIndex.get(npc.getObjectId()) : 0;
 		if (atkIndex == 0)
@@ -172,7 +172,7 @@ public final class AnomicFoundry extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		if (getSpawnGroup(npc) >= 0)
 		{
@@ -200,7 +200,7 @@ public final class AnomicFoundry extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
+	public final String onSpawn(Npc npc)
 	{
 		SpawnTable.getInstance().addNewSpawn(npc.getSpawn(), false);
 		if (getSpawnGroup(npc) >= 0)
@@ -216,7 +216,7 @@ public final class AnomicFoundry extends AbstractNpcAI
 	}
 	
 	@Override
-	protected void onTeleport(L2Npc npc)
+	protected void onTeleport(Npc npc)
 	{
 		if ((getSpawnGroup(npc) >= 0) && (getSpawnGroup(npc) <= 2))
 		{
@@ -237,7 +237,7 @@ public final class AnomicFoundry extends AbstractNpcAI
 		}
 	}
 	
-	private static int getSpawnGroup(L2Npc npc)
+	private static int getSpawnGroup(Npc npc)
 	{
 		final int coordX = npc.getSpawn().getX();
 		final int coordY = npc.getSpawn().getY();
@@ -254,7 +254,7 @@ public final class AnomicFoundry extends AbstractNpcAI
 	}
 	
 	// Zoey76: TODO: This should be done with onFactionCall(..)
-	private static void requestHelp(L2Npc requester, L2PcInstance agressor, int range, int helperId)
+	private static void requestHelp(Npc requester, L2PcInstance agressor, int range, int helperId)
 	{
 		for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(helperId))
 		{

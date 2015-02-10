@@ -27,7 +27,7 @@ import java.util.logging.Logger;
 import javolution.util.FastList;
 
 import com.l2jserver.L2DatabaseFactory;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Couple;
 
@@ -104,8 +104,8 @@ public final class CoupleManager
 		Couple couple = getCouples().get(index);
 		if (couple != null)
 		{
-			L2PcInstance player1 = L2World.getInstance().getPlayer(couple.getPlayer1Id());
-			L2PcInstance player2 = L2World.getInstance().getPlayer(couple.getPlayer2Id());
+			L2PcInstance player1 = World.getInstance().getPlayer(couple.getPlayer1Id());
+			L2PcInstance player2 = World.getInstance().getPlayer(couple.getPlayer2Id());
 			if (player1 != null)
 			{
 				player1.setPartnerId(0);

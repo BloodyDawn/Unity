@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
-import com.l2jserver.gameserver.model.L2SkillLearn;
+import com.l2jserver.gameserver.model.SkillLearn;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.ListenersContainer;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
@@ -52,8 +52,8 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 	
 	protected void initResidentialSkills()
 	{
-		final List<L2SkillLearn> residentialSkills = SkillTreesData.getInstance().getAvailableResidentialSkills(getResidenceId());
-		for (L2SkillLearn s : residentialSkills)
+		final List<SkillLearn> residentialSkills = SkillTreesData.getInstance().getAvailableResidentialSkills(getResidenceId());
+		for (SkillLearn s : residentialSkills)
 		{
 			_residentialSkills.add(new SkillHolder(s.getSkillId(), s.getSkillLevel()));
 		}

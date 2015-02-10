@@ -23,9 +23,9 @@ import java.util.logging.Logger;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2ControllableMobInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -55,7 +55,7 @@ public class AdminKill implements IAdminCommandHandler
 			if (st.hasMoreTokens())
 			{
 				String firstParam = st.nextToken();
-				L2PcInstance plyr = L2World.getInstance().getPlayer(firstParam);
+				L2PcInstance plyr = World.getInstance().getPlayer(firstParam);
 				if (plyr != null)
 				{
 					if (st.hasMoreTokens())
@@ -63,7 +63,7 @@ public class AdminKill implements IAdminCommandHandler
 						try
 						{
 							int radius = Integer.parseInt(st.nextToken());
-							for (L2Character knownChar : plyr.getKnownList().getKnownCharactersInRadius(radius))
+							for (Creature knownChar : plyr.getKnownList().getKnownCharactersInRadius(radius))
 							{
 								if ((knownChar instanceof L2ControllableMobInstance) || (knownChar == activeChar))
 								{
@@ -90,7 +90,7 @@ public class AdminKill implements IAdminCommandHandler
 					{
 						int radius = Integer.parseInt(firstParam);
 						
-						for (L2Character knownChar : activeChar.getKnownList().getKnownCharactersInRadius(radius))
+						for (Creature knownChar : activeChar.getKnownList().getKnownCharactersInRadius(radius))
 						{
 							if ((knownChar instanceof L2ControllableMobInstance) || (knownChar == activeChar))
 							{
@@ -111,21 +111,21 @@ public class AdminKill implements IAdminCommandHandler
 			}
 			else
 			{
-				L2Object obj = activeChar.getTarget();
-				if ((obj instanceof L2ControllableMobInstance) || !(obj instanceof L2Character))
+				WorldObject obj = activeChar.getTarget();
+				if ((obj instanceof L2ControllableMobInstance) || !(obj instanceof Creature))
 				{
 					activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 				}
 				else
 				{
-					kill(activeChar, (L2Character) obj);
+					kill(activeChar, (Creature) obj);
 				}
 			}
 		}
 		return true;
 	}
 	
-	private void kill(L2PcInstance activeChar, L2Character target)
+	private void kill(L2PcInstance activeChar, Creature target)
 	{
 		if (target instanceof L2PcInstance)
 		{

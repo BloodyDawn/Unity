@@ -21,9 +21,9 @@ package gracia.AI.NPC.ZealotOfShilen;
 import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
@@ -49,7 +49,7 @@ public final class ZealotOfShilen extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (npc == null)
 		{
@@ -59,12 +59,12 @@ public final class ZealotOfShilen extends AbstractNpcAI
 		startQuestTimer("WATCHING", 10000, npc, null, true);
 		if (event.equalsIgnoreCase("WATCHING") && !npc.isAttackingNow())
 		{
-			for (L2Character character : npc.getKnownList().getKnownCharacters())
+			for (Creature character : npc.getKnownList().getKnownCharacters())
 			{
-				if (character.isMonster() && !character.isDead() && !((L2Attackable) character).isDecayed())
+				if (character.isMonster() && !character.isDead() && !((Attackable) character).isDecayed())
 				{
 					npc.setRunning();
-					((L2Attackable) npc).addDamageHate(character, 0, 999);
+					((Attackable) npc).addDamageHate(character, 0, 999);
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, character, null);
 				}
 			}
@@ -73,13 +73,13 @@ public final class ZealotOfShilen extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		return (npc.isAttackingNow()) ? "32628-01.html" : npc.getId() + ".html";
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		if (npc.getId() == ZEALOT)
 		{
@@ -88,7 +88,7 @@ public final class ZealotOfShilen extends AbstractNpcAI
 		else
 		{
 			npc.setIsInvul(true);
-			((L2Attackable) npc).setCanReturnToSpawnPoint(false);
+			((Attackable) npc).setCanReturnToSpawnPoint(false);
 			startQuestTimer("WATCHING", 10000, npc, null, true);
 		}
 		return super.onSpawn(npc);

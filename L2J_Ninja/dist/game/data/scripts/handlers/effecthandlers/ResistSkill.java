@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
@@ -61,7 +61,7 @@ public final class ResistSkill extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		final L2Character effected = info.getEffected();
+		final Creature effected = info.getEffected();
 		for (SkillHolder holder : _skills)
 		{
 			effected.addInvulAgainst(holder);
@@ -72,7 +72,7 @@ public final class ResistSkill extends AbstractEffect
 	@Override
 	public void onExit(BuffInfo info)
 	{
-		final L2Character effected = info.getEffected();
+		final Creature effected = info.getEffected();
 		for (SkillHolder holder : _skills)
 		{
 			info.getEffected().removeInvulAgainst(holder);

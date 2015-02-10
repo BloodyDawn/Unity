@@ -26,7 +26,7 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
 import com.l2jserver.gameserver.data.xml.IXmlReader;
-import com.l2jserver.gameserver.model.L2ArmorSet;
+import com.l2jserver.gameserver.model.ArmorSet;
 import com.l2jserver.gameserver.model.holders.ArmorsetSkillHolder;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 
@@ -36,7 +36,7 @@ import com.l2jserver.gameserver.model.holders.SkillHolder;
  */
 public final class ArmorSetsData implements IXmlReader
 {
-	private final Map<Integer, L2ArmorSet> _armorSets = new HashMap<>();
+	private final Map<Integer, ArmorSet> _armorSets = new HashMap<>();
 	
 	/**
 	 * Instantiates a new armor sets data.
@@ -58,7 +58,7 @@ public final class ArmorSetsData implements IXmlReader
 	public void parseDocument(Document doc)
 	{
 		NamedNodeMap attrs;
-		L2ArmorSet set;
+		ArmorSet set;
 		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
 		{
 			if ("list".equalsIgnoreCase(n.getNodeName()))
@@ -67,7 +67,7 @@ public final class ArmorSetsData implements IXmlReader
 				{
 					if ("set".equalsIgnoreCase(d.getNodeName()))
 					{
-						set = new L2ArmorSet();
+						set = new ArmorSet();
 						set.setIsVisual(parseBoolean(d.getAttributes(), "visual", false));
 						set.setMinimumPieces(parseInteger(d.getAttributes(), "minimumPieces"));
 						
@@ -187,7 +187,7 @@ public final class ArmorSetsData implements IXmlReader
 	 * @param chestId the chest Id identifying the armor set.
 	 * @return the armor set associated to the give chest Id.
 	 */
-	public L2ArmorSet getSet(int chestId)
+	public ArmorSet getSet(int chestId)
 	{
 		return _armorSets.get(chestId);
 	}

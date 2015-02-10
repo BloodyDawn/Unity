@@ -48,12 +48,12 @@ import com.l2jserver.gameserver.idfactory.IdFactory;
 import com.l2jserver.gameserver.instancemanager.CursedWeaponsManager;
 import com.l2jserver.gameserver.instancemanager.FortSiegeManager;
 import com.l2jserver.gameserver.instancemanager.ItemsOnGroundManager;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2PetData;
-import com.l2jserver.gameserver.model.L2PetLevelData;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.PetData;
+import com.l2jserver.gameserver.model.PetLevelData;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.stat.PetStat;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
@@ -77,7 +77,7 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.taskmanager.DecayTaskManager;
 import com.l2jserver.util.Rnd;
 
-public class L2PetInstance extends L2Summon
+public class L2PetInstance extends Summon
 {
 	protected static final Logger _logPet = Logger.getLogger(L2PetInstance.class.getName());
 	
@@ -91,14 +91,14 @@ public class L2PetInstance extends L2Summon
 	private boolean _respawned;
 	private final boolean _mountable;
 	private Future<?> _feedTask;
-	private L2PetData _data;
-	private L2PetLevelData _leveldata;
+	private PetData _data;
+	private PetLevelData _leveldata;
 	
 	/** The Experience before the last Death Penalty */
 	private long _expBeforeDeath = 0;
 	private int _curWeightPenalty = 0;
 	
-	public final L2PetLevelData getPetLevelData()
+	public final PetLevelData getPetLevelData()
 	{
 		if (_leveldata == null)
 		{
@@ -108,7 +108,7 @@ public class L2PetInstance extends L2Summon
 		return _leveldata;
 	}
 	
-	public final L2PetData getPetData()
+	public final PetData getPetData()
 	{
 		if (_data == null)
 		{
@@ -118,7 +118,7 @@ public class L2PetInstance extends L2Summon
 		return _data;
 	}
 	
-	public final void setPetData(L2PetLevelData value)
+	public final void setPetData(PetLevelData value)
 	{
 		_leveldata = value;
 	}
@@ -136,7 +136,7 @@ public class L2PetInstance extends L2Summon
 		{
 			try
 			{
-				final L2Summon pet = getOwner().getPet();
+				final Summon pet = getOwner().getPet();
 				if ((getOwner() == null) || (pet == null) || (pet.getObjectId() != getObjectId()))
 				{
 					stopFeed();
@@ -219,11 +219,11 @@ public class L2PetInstance extends L2Summon
 	
 	public synchronized static L2PetInstance spawnPet(L2NpcTemplate template, L2PcInstance owner, L2ItemInstance control)
 	{
-		if (L2World.getInstance().getPet(owner.getObjectId()) != null)
+		if (World.getInstance().getPet(owner.getObjectId()) != null)
 		{
 			return null; // owner has a pet listed in world
 		}
-		final L2PetData data = PetDataTable.getInstance().getPetData(template.getId());
+		final PetData data = PetDataTable.getInstance().getPetData(template.getId());
 		
 		L2PetInstance pet = restore(control, template, owner);
 		// add the pet instance to world
@@ -235,7 +235,7 @@ public class L2PetInstance extends L2Summon
 				pet.getStat().setLevel((byte) owner.getLevel());
 				pet.getStat().setExp(pet.getStat().getExpForLevel(owner.getLevel()));
 			}
-			L2World.getInstance().addPet(owner.getObjectId(), pet);
+			World.getInstance().addPet(owner.getObjectId(), pet);
 		}
 		return pet;
 	}
@@ -393,7 +393,7 @@ public class L2PetInstance extends L2Summon
 	 * @return boolean informing if the action was successfull
 	 */
 	@Override
-	public boolean destroyItem(String process, int objectId, long count, L2Object reference, boolean sendMessage)
+	public boolean destroyItem(String process, int objectId, long count, WorldObject reference, boolean sendMessage)
 	{
 		L2ItemInstance item = _inventory.destroyItem(process, objectId, count, getOwner(), reference);
 		
@@ -441,7 +441,7 @@ public class L2PetInstance extends L2Summon
 	 * @return boolean informing if the action was successfull
 	 */
 	@Override
-	public boolean destroyItemByItemId(String process, int itemId, long count, L2Object reference, boolean sendMessage)
+	public boolean destroyItemByItemId(String process, int itemId, long count, WorldObject reference, boolean sendMessage)
 	{
 		L2ItemInstance item = _inventory.destroyItemByItemId(process, itemId, count, getOwner(), reference);
 		
@@ -480,7 +480,7 @@ public class L2PetInstance extends L2Summon
 	}
 	
 	@Override
-	protected void doPickupItem(L2Object object)
+	protected void doPickupItem(WorldObject object)
 	{
 		if (isDead())
 		{
@@ -654,7 +654,7 @@ public class L2PetInstance extends L2Summon
 	}
 	
 	@Override
-	public boolean doDie(L2Character killer)
+	public boolean doDie(Creature killer)
 	{
 		L2PcInstance owner = getOwner();
 		if ((owner != null) && !owner.isInDuel() && (!isInsideZone(ZoneId.PVP) || isInsideZone(ZoneId.SIEGE)))
@@ -708,7 +708,7 @@ public class L2PetInstance extends L2Summon
 	 * @param reference Object referencing current action like NPC selling item or previous item in transformation
 	 * @return L2ItemInstance corresponding to the new item or the updated item in inventory
 	 */
-	public L2ItemInstance transferItem(String process, int objectId, long count, Inventory target, L2PcInstance actor, L2Object reference)
+	public L2ItemInstance transferItem(String process, int objectId, long count, Inventory target, L2PcInstance actor, WorldObject reference)
 	{
 		L2ItemInstance oldItem = getInventory().getItemByObjectId(objectId);
 		L2ItemInstance playerOldItem = target.getItemByItemId(oldItem.getId());
@@ -756,7 +756,7 @@ public class L2PetInstance extends L2Summon
 	public void destroyControlItem(L2PcInstance owner, boolean evolve)
 	{
 		// remove the pet instance from world
-		L2World.getInstance().removePet(owner.getObjectId());
+		World.getInstance().removePet(owner.getObjectId());
 		
 		// delete from inventory
 		try
@@ -792,7 +792,7 @@ public class L2PetInstance extends L2Summon
 				
 				owner.broadcastUserInfo();
 				
-				L2World.getInstance().removeObject(removedItem);
+				World.getInstance().removeObject(removedItem);
 			}
 		}
 		catch (Exception e)
@@ -891,7 +891,7 @@ public class L2PetInstance extends L2Summon
 				pet.setName(rset.getString("name"));
 				
 				long exp = rset.getLong("exp");
-				L2PetLevelData info = PetDataTable.getInstance().getPetLevelData(pet.getId(), pet.getLevel());
+				PetLevelData info = PetDataTable.getInstance().getPetLevelData(pet.getId(), pet.getLevel());
 				// DS: update experience based by level
 				// Avoiding pet delevels due to exp per level values changed.
 				if ((info != null) && (exp < info.getPetMaxExp()))
@@ -1180,7 +1180,7 @@ public class L2PetInstance extends L2Summon
 			{
 				getInventory().deleteMe();
 			}
-			L2World.getInstance().removePet(owner.getObjectId());
+			World.getInstance().removePet(owner.getObjectId());
 		}
 	}
 	
@@ -1253,19 +1253,19 @@ public class L2PetInstance extends L2Summon
 	}
 	
 	@Override
-	public int getCriticalHit(L2Character target, Skill skill)
+	public int getCriticalHit(Creature target, Skill skill)
 	{
 		return getStat().getCriticalHit(target, skill);
 	}
 	
 	@Override
-	public int getMAtk(L2Character target, Skill skill)
+	public int getMAtk(Creature target, Skill skill)
 	{
 		return getStat().getMAtk(target, skill);
 	}
 	
 	@Override
-	public int getMDef(L2Character target, Skill skill)
+	public int getMDef(Creature target, Skill skill)
 	{
 		return getStat().getMDef(target, skill);
 	}
@@ -1287,8 +1287,8 @@ public class L2PetInstance extends L2Summon
 		int oldOwnerId = getOwner().getObjectId();
 		
 		setOwner(owner);
-		L2World.getInstance().removePet(oldOwnerId);
-		L2World.getInstance().addPet(oldOwnerId, this);
+		World.getInstance().removePet(oldOwnerId);
+		World.getInstance().addPet(oldOwnerId, this);
 	}
 	
 	public int getInventoryLimit()

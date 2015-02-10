@@ -23,8 +23,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2CubicInstance;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
@@ -73,7 +73,7 @@ public final class CubicAction implements Runnable
 			{
 				if (_cubic.getOwner().hasSummon())
 				{
-					for (L2Summon servitor : _cubic.getOwner().getServitors().values())
+					for (Summon servitor : _cubic.getOwner().getServitors().values())
 					{
 						if (!AttackStanceTaskManager.getInstance().hasAttackStanceTask(servitor))
 						{
@@ -138,7 +138,7 @@ public final class CubicAction implements Runnable
 							_cubic.setTarget(null);
 						}
 					}
-					L2Character target = _cubic.getTarget();
+					Creature target = _cubic.getTarget();
 					if ((target != null) && !target.isDead())
 					{
 						if (Config.DEBUG)
@@ -149,7 +149,7 @@ public final class CubicAction implements Runnable
 						
 						_cubic.getOwner().broadcastPacket(new MagicSkillUse(_cubic.getOwner(), target, skill.getId(), skill.getLevel(), 0, 0));
 						
-						L2Character[] targets =
+						Creature[] targets =
 						{
 							target
 						};

@@ -28,8 +28,8 @@ import com.l2jserver.gameserver.data.xml.impl.PetDataTable;
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.enums.CategoryType;
 import com.l2jserver.gameserver.enums.InstanceType;
-import com.l2jserver.gameserver.model.L2PetData.L2PetSkillLearn;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.PetData.L2PetSkillLearn;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
@@ -135,7 +135,7 @@ public final class L2BabyPetInstance extends L2PetInstance
 	}
 	
 	@Override
-	public boolean doDie(L2Character killer)
+	public boolean doDie(Creature killer)
 	{
 		if (!super.doDie(killer))
 		{

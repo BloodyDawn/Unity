@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.model.olympiad;
 
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
@@ -70,7 +70,7 @@ public final class Participant
 	{
 		if ((player == null) || !player.isOnline())
 		{
-			player = L2World.getInstance().getPlayer(getObjectId());
+			player = World.getInstance().getPlayer(getObjectId());
 		}
 		return (player != null);
 	}

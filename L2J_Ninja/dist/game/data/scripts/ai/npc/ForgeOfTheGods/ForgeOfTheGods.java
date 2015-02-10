@@ -21,8 +21,8 @@ package ai.npc.ForgeOfTheGods;
 import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
@@ -91,7 +91,7 @@ public final class ForgeOfTheGods extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		switch (event)
 		{
@@ -109,10 +109,10 @@ public final class ForgeOfTheGods extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		int rand = getRandom(100);
-		L2Npc mob = null;
+		Npc mob = null;
 		_npcCount++;
 		
 		// For monsters at Forge of the Gods - Lower level
@@ -165,27 +165,27 @@ public final class ForgeOfTheGods extends AbstractNpcAI
 		}
 		if (mob != null)
 		{
-			((L2Attackable) mob).addDamageHate(killer, 0, 9999);
+			((Attackable) mob).addDamageHate(killer, 0, 9999);
 			mob.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK);
 		}
 		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
+	public final String onSpawn(Npc npc)
 	{
 		startQuestTimer("suicide", 60000, npc, null);
 		return super.onSpawn(npc);
 	}
 	
-	private L2Npc spawnLavasaurus(L2Npc npc, int rand, int... mobs)
+	private Npc spawnLavasaurus(Npc npc, int rand, int... mobs)
 	{
 		if (mobs.length < 2)
 		{
 			return null;
 		}
 		
-		L2Npc mob = null;
+		Npc mob = null;
 		if (rand <= FORGE_BONUS01)
 		{
 			mob = addSpawn(mobs[0], npc, true);

@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.network.clientpackets;
 
 import com.l2jserver.gameserver.model.ClanPrivilege;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2ClanMember;
+import com.l2jserver.gameserver.model.ClanMember;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
@@ -70,13 +70,13 @@ public final class RequestPledgeReorganizeMember extends L2GameClientPacket
 			return;
 		}
 		
-		final L2ClanMember member1 = clan.getClanMember(_memberName);
+		final ClanMember member1 = clan.getClanMember(_memberName);
 		if ((member1 == null) || (member1.getObjectId() == clan.getLeaderId()))
 		{
 			return;
 		}
 		
-		final L2ClanMember member2 = clan.getClanMember(_selectedMember);
+		final ClanMember member2 = clan.getClanMember(_selectedMember);
 		if ((member2 == null) || (member2.getObjectId() == clan.getLeaderId()))
 		{
 			return;

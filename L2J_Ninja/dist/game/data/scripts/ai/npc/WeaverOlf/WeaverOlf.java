@@ -21,7 +21,7 @@ package ai.npc.WeaverOlf;
 import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.network.NpcStringId;
@@ -160,7 +160,7 @@ public final class WeaverOlf extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.contains("_grade_"))
 		{
@@ -235,7 +235,7 @@ public final class WeaverOlf extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		return npc.getId() + "-1.htm";
 	}

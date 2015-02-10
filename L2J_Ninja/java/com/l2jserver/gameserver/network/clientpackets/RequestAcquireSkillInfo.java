@@ -23,8 +23,8 @@ import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.enums.CategoryType;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.model.ClanPrivilege;
-import com.l2jserver.gameserver.model.L2SkillLearn;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.SkillLearn;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2NpcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.AcquireSkillType;
@@ -67,7 +67,7 @@ public final class RequestAcquireSkillInfo extends L2GameClientPacket
 			return;
 		}
 		
-		final L2Npc trainer = activeChar.getLastFolkNPC();
+		final Npc trainer = activeChar.getLastFolkNPC();
 		if (!(trainer instanceof L2NpcInstance) && (_skillType != AcquireSkillType.CLASS))
 		{
 			return;
@@ -99,7 +99,7 @@ public final class RequestAcquireSkillInfo extends L2GameClientPacket
 			}
 		}
 		
-		final L2SkillLearn s = SkillTreesData.getInstance().getSkillLearn(_skillType, _id, _level, activeChar);
+		final SkillLearn s = SkillTreesData.getInstance().getSkillLearn(_skillType, _id, _level, activeChar);
 		if (s == null)
 		{
 			return;

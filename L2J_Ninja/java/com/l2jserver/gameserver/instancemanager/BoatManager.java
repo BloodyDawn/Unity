@@ -24,7 +24,7 @@ import javolution.util.FastMap;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.idfactory.IdFactory;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.VehiclePathPoint;
 import com.l2jserver.gameserver.model.actor.instance.L2BoatInstance;
@@ -179,7 +179,7 @@ public class BoatManager
 	
 	private void broadcastPacketsToPlayers(VehiclePathPoint point1, VehiclePathPoint point2, L2GameServerPacket... packets)
 	{
-		for (L2PcInstance player : L2World.getInstance().getPlayers())
+		for (L2PcInstance player : World.getInstance().getPlayers())
 		{
 			double dx = (double) player.getX() - point1.getX();
 			double dy = (double) player.getY() - point1.getY();

@@ -40,8 +40,8 @@ import org.w3c.dom.Node;
 import com.l2jserver.Config;
 import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.model.CursedWeapon;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2DefenderInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2FeedableBeastInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2FortCommanderInstance;
@@ -258,7 +258,7 @@ public final class CursedWeaponsManager
 		}
 	}
 	
-	public synchronized void checkDrop(L2Attackable attackable, L2PcInstance player)
+	public synchronized void checkDrop(Attackable attackable, L2PcInstance player)
 	{
 		if ((attackable instanceof L2DefenderInstance) || (attackable instanceof L2GuardInstance) || (attackable instanceof L2GrandBossInstance) || (attackable instanceof L2FeedableBeastInstance) || (attackable instanceof L2FortCommanderInstance))
 		{
@@ -303,7 +303,7 @@ public final class CursedWeaponsManager
 		}
 	}
 	
-	public void drop(int itemId, L2Character killer)
+	public void drop(int itemId, Creature killer)
 	{
 		CursedWeapon cw = _cursedWeapons.get(itemId);
 		

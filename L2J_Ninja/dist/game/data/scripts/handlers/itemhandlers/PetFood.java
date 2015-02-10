@@ -24,7 +24,7 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.xml.impl.PetDataTable;
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.handler.IItemHandler;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
@@ -40,7 +40,7 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 public class PetFood implements IItemHandler
 {
 	@Override
-	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+	public boolean useItem(Playable playable, L2ItemInstance item, boolean forceUse)
 	{
 		if (playable.isPet() && !((L2PetInstance) playable).canEatFoodId(item.getId()))
 		{
@@ -59,7 +59,7 @@ public class PetFood implements IItemHandler
 		return true;
 	}
 	
-	public boolean useFood(L2Playable activeChar, int skillId, int skillLevel, L2ItemInstance item)
+	public boolean useFood(Playable activeChar, int skillId, int skillLevel, L2ItemInstance item)
 	{
 		final Skill skill = SkillData.getInstance().getSkill(skillId, skillLevel);
 		if (skill != null)

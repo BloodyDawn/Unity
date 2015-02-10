@@ -21,13 +21,13 @@ package com.l2jserver.gameserver.network.serverpackets;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.model.skills.Skill;
 
 public class ExAbnormalStatusUpdateFromTarget extends L2GameServerPacket
 {
-	private final L2Character _character;
+	private final Creature _character;
 	private List<Effect> _effects = new ArrayList<>();
 	
 	private static class Effect
@@ -40,7 +40,7 @@ public class ExAbnormalStatusUpdateFromTarget extends L2GameServerPacket
 		public Effect(BuffInfo info)
 		{
 			final Skill skill = info.getSkill();
-			final L2Character caster = info.getEffector();
+			final Creature caster = info.getEffector();
 			int casterId = 0;
 			if (caster != null)
 			{
@@ -54,7 +54,7 @@ public class ExAbnormalStatusUpdateFromTarget extends L2GameServerPacket
 		}
 	}
 	
-	public ExAbnormalStatusUpdateFromTarget(L2Character character)
+	public ExAbnormalStatusUpdateFromTarget(Creature character)
 	{
 		_character = character;
 		_effects = new ArrayList<>();

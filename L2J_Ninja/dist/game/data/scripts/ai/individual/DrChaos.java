@@ -22,7 +22,7 @@ import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.datatables.SpawnTable;
 import com.l2jserver.gameserver.model.L2Spawn;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.network.serverpackets.PlaySound;
@@ -51,13 +51,13 @@ public final class DrChaos extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		switch (event)
 		{
 			case "1":
 			{
-				L2Npc machine = null;
+				Npc machine = null;
 				for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(STRANGE_MACHINE))
 				{
 					if (spawn != null)
@@ -100,7 +100,7 @@ public final class DrChaos extends Quest
 				npc.teleToLocation(NPC_LOCATION);
 				if (!_IsGolemSpawned)
 				{
-					L2Npc golem = addSpawn(CHAOS_GOLEM, 94640, -112496, -3336, 0, false, 0);
+					Npc golem = addSpawn(CHAOS_GOLEM, 94640, -112496, -3336, 0, false, 0);
 					_IsGolemSpawned = true;
 					startQuestTimer("6", 1000, golem, player);
 					player.sendPacket(new PlaySound(1, "Rm03_A", 0, 0, 0, 0, 0));
@@ -117,7 +117,7 @@ public final class DrChaos extends Quest
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		if (npc.getId() == DR_CHAOS)
 		{

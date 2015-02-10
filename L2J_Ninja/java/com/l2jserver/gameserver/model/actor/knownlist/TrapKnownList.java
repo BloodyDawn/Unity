@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.model.actor.knownlist;
 
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.instance.L2TrapInstance;
 
 public class TrapKnownList extends NpcKnownList
@@ -35,7 +35,7 @@ public class TrapKnownList extends NpcKnownList
 	}
 	
 	@Override
-	public int getDistanceToForgetObject(L2Object object)
+	public int getDistanceToForgetObject(WorldObject object)
 	{
 		if ((object == getActiveChar().getActingPlayer()) || (object == getActiveChar().getTarget()))
 		{
@@ -46,7 +46,7 @@ public class TrapKnownList extends NpcKnownList
 	}
 	
 	@Override
-	public int getDistanceToWatchObject(L2Object object)
+	public int getDistanceToWatchObject(WorldObject object)
 	{
 		return 1500;
 	}

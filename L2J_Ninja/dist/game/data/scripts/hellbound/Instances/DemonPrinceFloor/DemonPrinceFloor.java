@@ -21,10 +21,10 @@ package hellbound.Instances.DemonPrinceFloor;
 import instances.AbstractInstance;
 
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.L2Party;
+import com.l2jserver.gameserver.model.Party;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.PcCondOverride;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Instance;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
@@ -65,7 +65,7 @@ public final class DemonPrinceFloor extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		String htmltext = null;
 		if (npc.getId() == GK_4)
@@ -100,7 +100,7 @@ public final class DemonPrinceFloor extends AbstractInstance
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		final int instanceId = npc.getInstanceId();
 		if (instanceId > 0)
@@ -123,7 +123,7 @@ public final class DemonPrinceFloor extends AbstractInstance
 			return true;
 		}
 		
-		final L2Party party = player.getParty();
+		final Party party = player.getParty();
 		
 		if ((party == null) || !party.isLeader(player))
 		{

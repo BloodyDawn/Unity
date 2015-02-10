@@ -19,7 +19,7 @@
 package handlers.effecthandlers;
 
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
@@ -40,7 +40,7 @@ public final class TransferDamage extends AbstractEffect
 	{
 		if (info.getEffected().isPlayable() && info.getEffector().isPlayer())
 		{
-			((L2Playable) info.getEffected()).setTransferDamageTo(null);
+			((Playable) info.getEffected()).setTransferDamageTo(null);
 		}
 	}
 	
@@ -49,7 +49,7 @@ public final class TransferDamage extends AbstractEffect
 	{
 		if (info.getEffected().isPlayable() && info.getEffector().isPlayer())
 		{
-			((L2Playable) info.getEffected()).setTransferDamageTo(info.getEffector().getActingPlayer());
+			((Playable) info.getEffected()).setTransferDamageTo(info.getEffector().getActingPlayer());
 		}
 	}
 }

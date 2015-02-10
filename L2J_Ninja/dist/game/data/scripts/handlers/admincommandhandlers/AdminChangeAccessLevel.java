@@ -26,8 +26,8 @@ import com.l2jserver.Config;
 import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.data.xml.impl.AdminData;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.L2AccessLevel;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.AccessLevel;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 
@@ -68,7 +68,7 @@ public final class AdminChangeAccessLevel implements IAdminCommandHandler
 		{
 			String name = parts[1];
 			int lvl = Integer.parseInt(parts[2]);
-			L2PcInstance player = L2World.getInstance().getPlayer(name);
+			L2PcInstance player = World.getInstance().getPlayer(name);
 			if (player != null)
 			{
 				onlineChange(activeChar, player, lvl);
@@ -122,7 +122,7 @@ public final class AdminChangeAccessLevel implements IAdminCommandHandler
 		{
 			if (AdminData.getInstance().hasAccessLevel(lvl))
 			{
-				final L2AccessLevel acccessLevel = AdminData.getInstance().getAccessLevel(lvl);
+				final AccessLevel acccessLevel = AdminData.getInstance().getAccessLevel(lvl);
 				player.setAccessLevel(lvl, true);
 				player.sendMessage("Your access level has been changed to " + acccessLevel.getName() + " (" + acccessLevel.getLevel() + ").");
 				activeChar.sendMessage(player.getName() + "'s access level has been changed to " + acccessLevel.getName() + " (" + acccessLevel.getLevel() + ").");

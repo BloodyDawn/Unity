@@ -26,8 +26,8 @@ import java.util.List;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.xml.impl.RecipeData;
 import com.l2jserver.gameserver.enums.PrivateStoreType;
-import com.l2jserver.gameserver.model.L2ManufactureItem;
-import com.l2jserver.gameserver.model.L2RecipeList;
+import com.l2jserver.gameserver.model.ManufactureItem;
+import com.l2jserver.gameserver.model.RecipeList;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.zone.ZoneId;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -46,7 +46,7 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket
 	
 	private static final int BATCH_LENGTH = 12;
 	
-	private L2ManufactureItem[] _items = null;
+	private ManufactureItem[] _items = null;
 	
 	@Override
 	protected void readImpl()
@@ -57,7 +57,7 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket
 			return;
 		}
 		
-		_items = new L2ManufactureItem[count];
+		_items = new ManufactureItem[count];
 		for (int i = 0; i < count; i++)
 		{
 			int id = readD();
@@ -67,7 +67,7 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket
 				_items = null;
 				return;
 			}
-			_items[i] = new L2ManufactureItem(id, cost);
+			_items[i] = new ManufactureItem(id, cost);
 		}
 	}
 	
@@ -101,14 +101,14 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket
 			return;
 		}
 		
-		List<L2RecipeList> dwarfRecipes = Arrays.asList(player.getDwarvenRecipeBook());
-		List<L2RecipeList> commonRecipes = Arrays.asList(player.getCommonRecipeBook());
+		List<RecipeList> dwarfRecipes = Arrays.asList(player.getDwarvenRecipeBook());
+		List<RecipeList> commonRecipes = Arrays.asList(player.getCommonRecipeBook());
 		
 		player.getManufactureItems().clear();
 		
-		for (L2ManufactureItem i : _items)
+		for (ManufactureItem i : _items)
 		{
-			final L2RecipeList list = RecipeData.getInstance().getRecipeList(i.getRecipeId());
+			final RecipeList list = RecipeData.getInstance().getRecipeList(i.getRecipeId());
 			if (!dwarfRecipes.contains(list) && !commonRecipes.contains(list))
 			{
 				Util.handleIllegalPlayerAction(player, "Warning!! Player " + player.getName() + " of account " + player.getAccountName() + " tried to set recipe which he dont have.", Config.DEFAULT_PUNISH);

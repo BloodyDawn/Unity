@@ -22,10 +22,10 @@ import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
@@ -84,19 +84,19 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		switch (event)
 		{
 			case "TRAINING":
 			{
-				for (L2Character character : npc.getKnownList().getKnownCharactersInRadius(400))
+				for (Creature character : npc.getKnownList().getKnownCharactersInRadius(400))
 				{
 					if ((getRandom(100) < 30) && character.isNpc() && !character.isDead() && !character.isInCombat())
 					{
 						if ((character.getId() == CAPTAIN) && (getRandom(100) < 10) && npc.isScriptValue(0))
 						{
-							final L2Npc captain = (L2Npc) character;
+							final Npc captain = (Npc) character;
 							broadcastNpcSay(captain, ChatType.NPC_GENERAL, SOLINA_KNIGHTS_MSG[getRandom(SOLINA_KNIGHTS_MSG.length)]);
 							captain.setScriptValue(1);
 							startQuestTimer("TIMER", 10000, captain, null);
@@ -104,7 +104,7 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 						else if (character.getId() == KNIGHT)
 						{
 							character.setRunning();
-							((L2Attackable) character).addDamageHate(npc, 0, 100);
+							((Attackable) character).addDamageHate(npc, 0, 100);
 							character.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, npc, null);
 						}
 					}
@@ -137,9 +137,9 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isSummon)
+	public String onAttack(Npc npc, L2PcInstance player, int damage, boolean isSummon)
 	{
-		final L2Attackable mob = (L2Attackable) npc;
+		final Attackable mob = (Attackable) npc;
 		
 		switch (npc.getId())
 		{
@@ -199,13 +199,13 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 	}
 	
 	@Override
-	public boolean onNpcHate(L2Attackable mob, L2PcInstance player, boolean isSummon)
+	public boolean onNpcHate(Attackable mob, L2PcInstance player, boolean isSummon)
 	{
 		return player.getActiveWeaponInstance() != null;
 	}
 	
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAggroRangeEnter(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		if (player.getActiveWeaponInstance() != null)
 		{
@@ -263,11 +263,11 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon)
+	public String onSkillSee(Npc npc, L2PcInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
 		if (skill.hasEffectType(L2EffectType.AGGRESSION) && (targets.length != 0))
 		{
-			for (L2Object obj : targets)
+			for (WorldObject obj : targets)
 			{
 				if (obj.equals(npc))
 				{
@@ -281,7 +281,7 @@ public final class MonasteryOfSilence extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		npc.setIsInvul(true);
 		npc.disableCoreAI(true);

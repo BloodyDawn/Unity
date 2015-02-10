@@ -20,7 +20,7 @@ package quests.Q10338_SeizeYourDestiny;
 
 import com.l2jserver.gameserver.enums.CategoryType;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
@@ -61,7 +61,7 @@ public class Q10338_SeizeYourDestiny extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
@@ -125,7 +125,7 @@ public class Q10338_SeizeYourDestiny extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
@@ -208,7 +208,7 @@ public class Q10338_SeizeYourDestiny extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		if (npc.getId() == HARNAKS_WRAITH)
 		{

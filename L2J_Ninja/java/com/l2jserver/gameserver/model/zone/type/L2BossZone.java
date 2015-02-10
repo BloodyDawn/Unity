@@ -30,10 +30,10 @@ import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.TeleportWhereType;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.zone.AbstractZoneSettings;
 import com.l2jserver.gameserver.model.zone.L2ZoneType;
@@ -63,7 +63,7 @@ public class L2BossZone extends L2ZoneType
 		// after reboot/server downtime (outside of their control), within 30 of server restart
 		private final List<Integer> _playersAllowed = new FastList<>();
 		
-		private final List<L2Character> _raidList = new FastList<>();
+		private final List<Creature> _raidList = new FastList<>();
 		
 		protected Settings()
 		{
@@ -79,7 +79,7 @@ public class L2BossZone extends L2ZoneType
 			return _playersAllowed;
 		}
 		
-		public List<L2Character> getRaidList()
+		public List<Creature> getRaidList()
 		{
 			return _raidList;
 		}
@@ -147,7 +147,7 @@ public class L2BossZone extends L2ZoneType
 	 * That is if the server recently rebooted (boot-up time more recent than currentTime - _timeInvade) AND the player was in the zone prior to reboot.
 	 */
 	@Override
-	protected void onEnter(L2Character character)
+	protected void onEnter(Creature character)
 	{
 		if (isEnabled())
 		{
@@ -217,13 +217,13 @@ public class L2BossZone extends L2ZoneType
 						player.teleToLocation(TeleportWhereType.TOWN);
 					}
 				}
-				((L2Summon) character).unSummon(player);
+				((Summon) character).unSummon(player);
 			}
 		}
 	}
 	
 	@Override
-	protected void onExit(L2Character character)
+	protected void onExit(Creature character)
 	{
 		if (isEnabled())
 		{
@@ -259,7 +259,7 @@ public class L2BossZone extends L2ZoneType
 				{
 					getSettings().getRaidList().clear();
 					int count = 0;
-					for (L2Character obj : getCharactersInside())
+					for (Creature obj : getCharactersInside())
 					{
 						if (obj == null)
 						{
@@ -279,7 +279,7 @@ public class L2BossZone extends L2ZoneType
 					{
 						for (int i = 0; i < getSettings().getRaidList().size(); i++)
 						{
-							L2Attackable raid = (L2Attackable) getSettings().getRaidList().get(i);
+							Attackable raid = (Attackable) getSettings().getRaidList().get(i);
 							if ((raid == null) || (raid.getSpawn() == null) || raid.isDead())
 							{
 								continue;
@@ -295,7 +295,7 @@ public class L2BossZone extends L2ZoneType
 		}
 		if (character.isAttackable() && character.isRaid() && !character.isDead())
 		{
-			((L2Attackable) character).returnHome();
+			((Attackable) character).returnHome();
 		}
 	}
 	
@@ -363,7 +363,7 @@ public class L2BossZone extends L2ZoneType
 			return;
 		}
 		
-		for (L2Character character : getCharactersInside())
+		for (Creature character : getCharactersInside())
 		{
 			if ((character != null) && character.isPlayer())
 			{
@@ -387,7 +387,7 @@ public class L2BossZone extends L2ZoneType
 			return;
 		}
 		
-		for (L2Character character : getCharactersInside())
+		for (Creature character : getCharactersInside())
 		{
 			if ((character != null) && character.isPlayer())
 			{
@@ -435,7 +435,7 @@ public class L2BossZone extends L2ZoneType
 		}
 	}
 	
-	public void updateKnownList(L2Npc npc)
+	public void updateKnownList(Npc npc)
 	{
 		if ((_characterList == null) || _characterList.isEmpty())
 		{
@@ -443,7 +443,7 @@ public class L2BossZone extends L2ZoneType
 		}
 		
 		Map<Integer, L2PcInstance> npcKnownPlayers = npc.getKnownList().getKnownPlayers();
-		for (L2Character character : getCharactersInside())
+		for (Creature character : getCharactersInside())
 		{
 			if ((character != null) && character.isPlayer())
 			{

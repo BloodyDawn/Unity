@@ -20,8 +20,8 @@ package quests.Q10320_LetsGoToTheCentralSquare;
 
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.enums.Race;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.ListenerRegisterType;
@@ -67,7 +67,7 @@ public final class Q10320_LetsGoToTheCentralSquare extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
@@ -104,7 +104,7 @@ public final class Q10320_LetsGoToTheCentralSquare extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = null;
@@ -131,7 +131,7 @@ public final class Q10320_LetsGoToTheCentralSquare extends Quest
 	}
 	
 	@Override
-	public String onEnterZone(L2Character character, L2ZoneType zone)
+	public String onEnterZone(Creature character, L2ZoneType zone)
 	{
 		if (character.isPlayer())
 		{

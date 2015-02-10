@@ -22,8 +22,8 @@ import java.util.List;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.handler.IItemHandler;
-import com.l2jserver.gameserver.model.L2ExtractableProduct;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.ExtractableProduct;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.items.L2EtcItem;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
@@ -37,7 +37,7 @@ import com.l2jserver.util.Rnd;
 public class ExtractableItems implements IItemHandler
 {
 	@Override
-	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+	public boolean useItem(Playable playable, L2ItemInstance item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{
@@ -47,7 +47,7 @@ public class ExtractableItems implements IItemHandler
 		
 		final L2PcInstance activeChar = playable.getActingPlayer();
 		final L2EtcItem etcitem = (L2EtcItem) item.getItem();
-		final List<L2ExtractableProduct> exitem = etcitem.getExtractableItems();
+		final List<ExtractableProduct> exitem = etcitem.getExtractableItems();
 		if (exitem == null)
 		{
 			_log.info("No extractable data defined for " + etcitem);
@@ -61,7 +61,7 @@ public class ExtractableItems implements IItemHandler
 		}
 		
 		boolean created = false;
-		for (L2ExtractableProduct expi : exitem)
+		for (ExtractableProduct expi : exitem)
 		{
 			if (Rnd.get(100000) <= expi.getChance())
 			{

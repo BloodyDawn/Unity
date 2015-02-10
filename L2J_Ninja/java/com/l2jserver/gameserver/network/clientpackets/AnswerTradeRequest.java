@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.network.clientpackets;
 
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
@@ -66,7 +66,7 @@ public final class AnswerTradeRequest extends L2GameClientPacket
 			player.setActiveRequester(null);
 			return;
 		}
-		else if (L2World.getInstance().getPlayer(partner.getObjectId()) == null)
+		else if (World.getInstance().getPlayer(partner.getObjectId()) == null)
 		{
 			// Trade partner not found, cancel trade
 			player.sendPacket(new TradeDone(0));

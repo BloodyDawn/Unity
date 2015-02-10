@@ -27,11 +27,11 @@ import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.handler.IActionShiftHandler;
 import com.l2jserver.gameserver.instancemanager.WalkingManager;
 import com.l2jserver.gameserver.model.Elementals;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jserver.gameserver.util.Util;
@@ -54,7 +54,7 @@ public class L2NpcActionShift implements IActionShiftHandler
 	 * <BR>
 	 */
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
+	public boolean action(L2PcInstance activeChar, WorldObject target, boolean interact)
 	{
 		// Check if the L2PcInstance is a GM
 		if (activeChar.getAccessLevel().isGm())
@@ -67,78 +67,78 @@ public class L2NpcActionShift implements IActionShiftHandler
 			
 			html.replace("%objid%", String.valueOf(target.getObjectId()));
 			html.replace("%class%", target.getClass().getSimpleName());
-			html.replace("%race%", ((L2Npc) target).getTemplate().getRace().toString());
-			html.replace("%id%", String.valueOf(((L2Npc) target).getTemplate().getId()));
-			html.replace("%lvl%", String.valueOf(((L2Npc) target).getTemplate().getLevel()));
-			html.replace("%name%", String.valueOf(((L2Npc) target).getTemplate().getName()));
-			html.replace("%tmplid%", String.valueOf(((L2Npc) target).getTemplate().getId()));
-			html.replace("%aggro%", String.valueOf((target instanceof L2Attackable) ? ((L2Attackable) target).getAggroRange() : 0));
-			html.replace("%hp%", String.valueOf((int) ((L2Character) target).getCurrentHp()));
-			html.replace("%hpmax%", String.valueOf(((L2Character) target).getMaxHp()));
-			html.replace("%mp%", String.valueOf((int) ((L2Character) target).getCurrentMp()));
-			html.replace("%mpmax%", String.valueOf(((L2Character) target).getMaxMp()));
+			html.replace("%race%", ((Npc) target).getTemplate().getRace().toString());
+			html.replace("%id%", String.valueOf(((Npc) target).getTemplate().getId()));
+			html.replace("%lvl%", String.valueOf(((Npc) target).getTemplate().getLevel()));
+			html.replace("%name%", String.valueOf(((Npc) target).getTemplate().getName()));
+			html.replace("%tmplid%", String.valueOf(((Npc) target).getTemplate().getId()));
+			html.replace("%aggro%", String.valueOf((target instanceof Attackable) ? ((Attackable) target).getAggroRange() : 0));
+			html.replace("%hp%", String.valueOf((int) ((Creature) target).getCurrentHp()));
+			html.replace("%hpmax%", String.valueOf(((Creature) target).getMaxHp()));
+			html.replace("%mp%", String.valueOf((int) ((Creature) target).getCurrentMp()));
+			html.replace("%mpmax%", String.valueOf(((Creature) target).getMaxMp()));
 			
-			html.replace("%patk%", String.valueOf(((L2Character) target).getPAtk(null)));
-			html.replace("%matk%", String.valueOf(((L2Character) target).getMAtk(null, null)));
-			html.replace("%pdef%", String.valueOf(((L2Character) target).getPDef(null)));
-			html.replace("%mdef%", String.valueOf(((L2Character) target).getMDef(null, null)));
-			html.replace("%accu%", String.valueOf(((L2Character) target).getAccuracy()));
-			html.replace("%evas%", String.valueOf(((L2Character) target).getEvasionRate(null)));
-			html.replace("%crit%", String.valueOf(((L2Character) target).getCriticalHit(null, null)));
-			html.replace("%rspd%", String.valueOf(((L2Character) target).getRunSpeed()));
-			html.replace("%aspd%", String.valueOf(((L2Character) target).getPAtkSpd()));
-			html.replace("%cspd%", String.valueOf(((L2Character) target).getMAtkSpd()));
-			html.replace("%atkType%", String.valueOf(((L2Character) target).getTemplate().getBaseAttackType()));
-			html.replace("%atkRng%", String.valueOf(((L2Character) target).getTemplate().getBaseAttackRange()));
-			html.replace("%str%", String.valueOf(((L2Character) target).getSTR()));
-			html.replace("%dex%", String.valueOf(((L2Character) target).getDEX()));
-			html.replace("%con%", String.valueOf(((L2Character) target).getCON()));
-			html.replace("%int%", String.valueOf(((L2Character) target).getINT()));
-			html.replace("%wit%", String.valueOf(((L2Character) target).getWIT()));
-			html.replace("%men%", String.valueOf(((L2Character) target).getMEN()));
+			html.replace("%patk%", String.valueOf(((Creature) target).getPAtk(null)));
+			html.replace("%matk%", String.valueOf(((Creature) target).getMAtk(null, null)));
+			html.replace("%pdef%", String.valueOf(((Creature) target).getPDef(null)));
+			html.replace("%mdef%", String.valueOf(((Creature) target).getMDef(null, null)));
+			html.replace("%accu%", String.valueOf(((Creature) target).getAccuracy()));
+			html.replace("%evas%", String.valueOf(((Creature) target).getEvasionRate(null)));
+			html.replace("%crit%", String.valueOf(((Creature) target).getCriticalHit(null, null)));
+			html.replace("%rspd%", String.valueOf(((Creature) target).getRunSpeed()));
+			html.replace("%aspd%", String.valueOf(((Creature) target).getPAtkSpd()));
+			html.replace("%cspd%", String.valueOf(((Creature) target).getMAtkSpd()));
+			html.replace("%atkType%", String.valueOf(((Creature) target).getTemplate().getBaseAttackType()));
+			html.replace("%atkRng%", String.valueOf(((Creature) target).getTemplate().getBaseAttackRange()));
+			html.replace("%str%", String.valueOf(((Creature) target).getSTR()));
+			html.replace("%dex%", String.valueOf(((Creature) target).getDEX()));
+			html.replace("%con%", String.valueOf(((Creature) target).getCON()));
+			html.replace("%int%", String.valueOf(((Creature) target).getINT()));
+			html.replace("%wit%", String.valueOf(((Creature) target).getWIT()));
+			html.replace("%men%", String.valueOf(((Creature) target).getMEN()));
 			html.replace("%loc%", String.valueOf(target.getX() + " " + target.getY() + " " + target.getZ()));
-			html.replace("%heading%", String.valueOf(((L2Character) target).getHeading()));
-			html.replace("%collision_radius%", String.valueOf(((L2Character) target).getTemplate().getfCollisionRadius()));
-			html.replace("%collision_height%", String.valueOf(((L2Character) target).getTemplate().getfCollisionHeight()));
+			html.replace("%heading%", String.valueOf(((Creature) target).getHeading()));
+			html.replace("%collision_radius%", String.valueOf(((Creature) target).getTemplate().getfCollisionRadius()));
+			html.replace("%collision_height%", String.valueOf(((Creature) target).getTemplate().getfCollisionHeight()));
 			html.replace("%dist%", String.valueOf((int) activeChar.calculateDistance(target, true, false)));
 			
-			byte attackAttribute = ((L2Character) target).getAttackElement();
+			byte attackAttribute = ((Creature) target).getAttackElement();
 			html.replace("%ele_atk%", Elementals.getElementName(attackAttribute));
-			html.replace("%ele_atk_value%", String.valueOf(((L2Character) target).getAttackElementValue(attackAttribute)));
-			html.replace("%ele_dfire%", String.valueOf(((L2Character) target).getDefenseElementValue(Elementals.FIRE)));
-			html.replace("%ele_dwater%", String.valueOf(((L2Character) target).getDefenseElementValue(Elementals.WATER)));
-			html.replace("%ele_dwind%", String.valueOf(((L2Character) target).getDefenseElementValue(Elementals.WIND)));
-			html.replace("%ele_dearth%", String.valueOf(((L2Character) target).getDefenseElementValue(Elementals.EARTH)));
-			html.replace("%ele_dholy%", String.valueOf(((L2Character) target).getDefenseElementValue(Elementals.HOLY)));
-			html.replace("%ele_ddark%", String.valueOf(((L2Character) target).getDefenseElementValue(Elementals.DARK)));
+			html.replace("%ele_atk_value%", String.valueOf(((Creature) target).getAttackElementValue(attackAttribute)));
+			html.replace("%ele_dfire%", String.valueOf(((Creature) target).getDefenseElementValue(Elementals.FIRE)));
+			html.replace("%ele_dwater%", String.valueOf(((Creature) target).getDefenseElementValue(Elementals.WATER)));
+			html.replace("%ele_dwind%", String.valueOf(((Creature) target).getDefenseElementValue(Elementals.WIND)));
+			html.replace("%ele_dearth%", String.valueOf(((Creature) target).getDefenseElementValue(Elementals.EARTH)));
+			html.replace("%ele_dholy%", String.valueOf(((Creature) target).getDefenseElementValue(Elementals.HOLY)));
+			html.replace("%ele_ddark%", String.valueOf(((Creature) target).getDefenseElementValue(Elementals.DARK)));
 			
-			if (((L2Npc) target).getSpawn() != null)
+			if (((Npc) target).getSpawn() != null)
 			{
-				html.replace("%territory%", ((L2Npc) target).getSpawn().getSpawnTerritory() == null ? "None" : ((L2Npc) target).getSpawn().getSpawnTerritory().getName());
-				if (((L2Npc) target).getSpawn().isTerritoryBased())
+				html.replace("%territory%", ((Npc) target).getSpawn().getSpawnTerritory() == null ? "None" : ((Npc) target).getSpawn().getSpawnTerritory().getName());
+				if (((Npc) target).getSpawn().isTerritoryBased())
 				{
 					html.replace("%spawntype%", "Random");
-					final Location spawnLoc = ((L2Npc) target).getSpawn().getLocation(target);
+					final Location spawnLoc = ((Npc) target).getSpawn().getLocation(target);
 					html.replace("%spawn%", spawnLoc.getX() + " " + spawnLoc.getY() + " " + spawnLoc.getZ());
 				}
 				else
 				{
 					html.replace("%spawntype%", "Fixed");
-					html.replace("%spawn%", ((L2Npc) target).getSpawn().getX() + " " + ((L2Npc) target).getSpawn().getY() + " " + ((L2Npc) target).getSpawn().getZ());
+					html.replace("%spawn%", ((Npc) target).getSpawn().getX() + " " + ((Npc) target).getSpawn().getY() + " " + ((Npc) target).getSpawn().getZ());
 				}
-				html.replace("%loc2d%", String.valueOf((int) target.calculateDistance(((L2Npc) target).getSpawn().getLocation(target), false, false)));
-				html.replace("%loc3d%", String.valueOf((int) target.calculateDistance(((L2Npc) target).getSpawn().getLocation(target), true, false)));
-				if (((L2Npc) target).getSpawn().getRespawnMinDelay() == 0)
+				html.replace("%loc2d%", String.valueOf((int) target.calculateDistance(((Npc) target).getSpawn().getLocation(target), false, false)));
+				html.replace("%loc3d%", String.valueOf((int) target.calculateDistance(((Npc) target).getSpawn().getLocation(target), true, false)));
+				if (((Npc) target).getSpawn().getRespawnMinDelay() == 0)
 				{
 					html.replace("%resp%", "None");
 				}
-				else if (((L2Npc) target).getSpawn().hasRespawnRandom())
+				else if (((Npc) target).getSpawn().hasRespawnRandom())
 				{
-					html.replace("%resp%", String.valueOf(((L2Npc) target).getSpawn().getRespawnMinDelay() / 1000) + "-" + String.valueOf((((L2Npc) target).getSpawn().getRespawnMaxDelay() / 1000) + " sec"));
+					html.replace("%resp%", String.valueOf(((Npc) target).getSpawn().getRespawnMinDelay() / 1000) + "-" + String.valueOf((((Npc) target).getSpawn().getRespawnMaxDelay() / 1000) + " sec"));
 				}
 				else
 				{
-					html.replace("%resp%", String.valueOf(((L2Npc) target).getSpawn().getRespawnMinDelay() / 1000) + " sec");
+					html.replace("%resp%", String.valueOf(((Npc) target).getSpawn().getRespawnMinDelay() / 1000) + " sec");
 				}
 			}
 			else
@@ -151,18 +151,18 @@ public class L2NpcActionShift implements IActionShiftHandler
 				html.replace("%resp%", "<font color=FF0000>--</font>");
 			}
 			
-			if (((L2Npc) target).hasAI())
+			if (((Npc) target).hasAI())
 			{
-				Set<Integer> clans = ((L2Npc) target).getTemplate().getClans();
-				Set<Integer> ignoreClanNpcIds = ((L2Npc) target).getTemplate().getIgnoreClanNpcIds();
+				Set<Integer> clans = ((Npc) target).getTemplate().getClans();
+				Set<Integer> ignoreClanNpcIds = ((Npc) target).getTemplate().getIgnoreClanNpcIds();
 				String clansString = clans != null ? Util.implode(clans.toArray(), ", ") : "";
 				String ignoreClanNpcIdsString = ignoreClanNpcIds != null ? Util.implode(ignoreClanNpcIds.toArray(), ", ") : "";
 				
-				html.replace("%ai_intention%", "<tr><td><table width=270 border=0 bgcolor=131210><tr><td width=100><font color=FFAA00>Intention:</font></td><td align=right width=170>" + String.valueOf(((L2Npc) target).getAI().getIntention().name()) + "</td></tr></table></td></tr>");
-				html.replace("%ai%", "<tr><td><table width=270 border=0><tr><td width=100><font color=FFAA00>AI</font></td><td align=right width=170>" + ((L2Npc) target).getAI().getClass().getSimpleName() + "</td></tr></table></td></tr>");
-				html.replace("%ai_type%", "<tr><td><table width=270 border=0 bgcolor=131210><tr><td width=100><font color=FFAA00>AIType</font></td><td align=right width=170>" + String.valueOf(((L2Npc) target).getAiType()) + "</td></tr></table></td></tr>");
-				html.replace("%ai_clan%", "<tr><td><table width=270 border=0><tr><td width=100><font color=FFAA00>Clan & Range:</font></td><td align=right width=170>" + clansString + " " + String.valueOf(((L2Npc) target).getTemplate().getClanHelpRange()) + "</td></tr></table></td></tr>");
-				html.replace("%ai_enemy_clan%", "<tr><td><table width=270 border=0 bgcolor=131210><tr><td width=100><font color=FFAA00>Ignore & Range:</font></td><td align=right width=170>" + ignoreClanNpcIdsString + " " + String.valueOf(((L2Npc) target).getTemplate().getAggroRange()) + "</td></tr></table></td></tr>");
+				html.replace("%ai_intention%", "<tr><td><table width=270 border=0 bgcolor=131210><tr><td width=100><font color=FFAA00>Intention:</font></td><td align=right width=170>" + String.valueOf(((Npc) target).getAI().getIntention().name()) + "</td></tr></table></td></tr>");
+				html.replace("%ai%", "<tr><td><table width=270 border=0><tr><td width=100><font color=FFAA00>AI</font></td><td align=right width=170>" + ((Npc) target).getAI().getClass().getSimpleName() + "</td></tr></table></td></tr>");
+				html.replace("%ai_type%", "<tr><td><table width=270 border=0 bgcolor=131210><tr><td width=100><font color=FFAA00>AIType</font></td><td align=right width=170>" + String.valueOf(((Npc) target).getAiType()) + "</td></tr></table></td></tr>");
+				html.replace("%ai_clan%", "<tr><td><table width=270 border=0><tr><td width=100><font color=FFAA00>Clan & Range:</font></td><td align=right width=170>" + clansString + " " + String.valueOf(((Npc) target).getTemplate().getClanHelpRange()) + "</td></tr></table></td></tr>");
+				html.replace("%ai_enemy_clan%", "<tr><td><table width=270 border=0 bgcolor=131210><tr><td width=100><font color=FFAA00>Ignore & Range:</font></td><td align=right width=170>" + ignoreClanNpcIdsString + " " + String.valueOf(((Npc) target).getTemplate().getAggroRange()) + "</td></tr></table></td></tr>");
 			}
 			else
 			{
@@ -173,7 +173,7 @@ public class L2NpcActionShift implements IActionShiftHandler
 				html.replace("%ai_enemy_clan%", "");
 			}
 			
-			final String routeName = WalkingManager.getInstance().getRouteName((L2Npc) target);
+			final String routeName = WalkingManager.getInstance().getRouteName((Npc) target);
 			if (!routeName.isEmpty())
 			{
 				html.replace("%route%", "<tr><td><table width=270 border=0><tr><td width=100><font color=LEVEL>Route:</font></td><td align=right width=170>" + routeName + "</td></tr></table></td></tr>");
@@ -191,7 +191,7 @@ public class L2NpcActionShift implements IActionShiftHandler
 				return false;
 			}
 			activeChar.setTarget(target);
-			NpcViewMod.sendNpcView(activeChar, (L2Npc) target);
+			NpcViewMod.sendNpcView(activeChar, (Npc) target);
 		}
 		return true;
 	}

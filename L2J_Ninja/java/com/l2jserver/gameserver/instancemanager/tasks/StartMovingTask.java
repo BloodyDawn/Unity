@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.instancemanager.tasks;
 
 import com.l2jserver.gameserver.instancemanager.WalkingManager;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 
 /**
  * Task which starts npc movement.
@@ -27,10 +27,10 @@ import com.l2jserver.gameserver.model.actor.L2Npc;
  */
 public final class StartMovingTask implements Runnable
 {
-	final L2Npc _npc;
+	final Npc _npc;
 	final String _routeName;
 	
-	public StartMovingTask(L2Npc npc, String routeName)
+	public StartMovingTask(Npc npc, String routeName)
 	{
 		_npc = npc;
 		_routeName = routeName;

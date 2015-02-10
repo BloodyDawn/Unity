@@ -20,8 +20,8 @@ package com.l2jserver.gameserver.model.zone.type;
 
 import java.util.Collection;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.zone.L2ZoneType;
 import com.l2jserver.gameserver.model.zone.ZoneId;
@@ -36,7 +36,7 @@ public class L2WaterZone extends L2ZoneType
 	}
 	
 	@Override
-	protected void onEnter(L2Character character)
+	protected void onEnter(Creature character)
 	{
 		character.setInsideZone(ZoneId.WATER, true);
 		
@@ -61,18 +61,18 @@ public class L2WaterZone extends L2ZoneType
 			{
 				if (character.getRunSpeed() == 0)
 				{
-					player.sendPacket(new ServerObjectInfo((L2Npc) character, player));
+					player.sendPacket(new ServerObjectInfo((Npc) character, player));
 				}
 				else
 				{
-					player.sendPacket(new NpcInfo((L2Npc) character));
+					player.sendPacket(new NpcInfo((Npc) character));
 				}
 			}
 		}
 	}
 	
 	@Override
-	protected void onExit(L2Character character)
+	protected void onExit(Creature character)
 	{
 		character.setInsideZone(ZoneId.WATER, false);
 		
@@ -88,11 +88,11 @@ public class L2WaterZone extends L2ZoneType
 			{
 				if (character.getRunSpeed() == 0)
 				{
-					player.sendPacket(new ServerObjectInfo((L2Npc) character, player));
+					player.sendPacket(new ServerObjectInfo((Npc) character, player));
 				}
 				else
 				{
-					player.sendPacket(new NpcInfo((L2Npc) character));
+					player.sendPacket(new NpcInfo((Npc) character));
 				}
 			}
 		}

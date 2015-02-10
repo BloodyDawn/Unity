@@ -28,8 +28,8 @@ import javolution.text.TextBuilder;
 import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.instancemanager.QuestManager;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
@@ -65,13 +65,13 @@ public class AdminShowQuests implements IAdminCommandHandler
 	{
 		String[] cmdParams = command.split(" ");
 		L2PcInstance target = null;
-		L2Object targetObject = null;
+		WorldObject targetObject = null;
 		String[] val = new String[4];
 		val[0] = null;
 		
 		if (cmdParams.length > 1)
 		{
-			target = L2World.getInstance().getPlayer(cmdParams[1]);
+			target = World.getInstance().getPlayer(cmdParams[1]);
 			if (cmdParams.length > 2)
 			{
 				if (cmdParams[2].equals("0"))

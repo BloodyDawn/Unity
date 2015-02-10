@@ -23,8 +23,8 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.quest.Event;
@@ -51,7 +51,7 @@ public final class Rabbits extends Event
 	private static final int EVENT_TIME = 10;
 	private static final int TOTAL_CHEST_COUNT = 75;
 	private static final int TRANSFORMATION_ID = 105;
-	private final List<L2Npc> _npcs = new CopyOnWriteArrayList<>();
+	private final List<Npc> _npcs = new CopyOnWriteArrayList<>();
 	private final List<L2PcInstance> _players = new ArrayList<>();
 	private boolean _isActive = false;
 	
@@ -140,7 +140,7 @@ public final class Rabbits extends Event
 		cancelQuestTimers("END_RABBITS_EVENT");
 		
 		// Despawn NPCs
-		for (L2Npc npc : _npcs)
+		for (Npc npc : _npcs)
 		{
 			if (npc != null)
 			{
@@ -165,7 +165,7 @@ public final class Rabbits extends Event
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String htmltext = null;
 		switch (event)
@@ -197,13 +197,13 @@ public final class Rabbits extends Event
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		return npc.getId() + ".htm";
 	}
 	
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon)
+	public String onSkillSee(Npc npc, L2PcInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
 		if (skill.getId() == RABBIT_TORNADO.getSkillId())
 		{
@@ -231,7 +231,7 @@ public final class Rabbits extends Event
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
 		if (_isActive && ((skill == null) || (skill.getId() != RABBIT_TORNADO.getSkillId())))
 		{
@@ -240,7 +240,7 @@ public final class Rabbits extends Event
 		return super.onAttack(npc, attacker, damage, isSummon);
 	}
 	
-	private static void dropItem(L2Npc npc, L2PcInstance player, int[][] droplist)
+	private static void dropItem(Npc npc, L2PcInstance player, int[][] droplist)
 	{
 		final int chance = getRandom(100);
 		for (int[] drop : droplist)
@@ -253,9 +253,9 @@ public final class Rabbits extends Event
 		}
 	}
 	
-	private static void recordSpawn(List<L2Npc> npcs, int npcId, int x, int y, int z, int heading, boolean randomOffSet, long despawnDelay)
+	private static void recordSpawn(List<Npc> npcs, int npcId, int x, int y, int z, int heading, boolean randomOffSet, long despawnDelay)
 	{
-		final L2Npc npc = addSpawn(npcId, x, y, z, heading, randomOffSet, despawnDelay);
+		final Npc npc = addSpawn(npcId, x, y, z, heading, randomOffSet, despawnDelay);
 		if (npc.getId() == CHEST)
 		{
 			npc.setIsImmobilized(true);

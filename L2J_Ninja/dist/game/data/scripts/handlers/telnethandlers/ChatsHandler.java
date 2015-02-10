@@ -25,7 +25,7 @@ import java.util.StringTokenizer;
 import com.l2jserver.gameserver.data.xml.impl.AdminData;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.handler.ITelnetHandler;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.CreatureSay;
 import com.l2jserver.gameserver.util.Broadcast;
@@ -66,7 +66,7 @@ public class ChatsHandler implements ITelnetHandler
 				StringTokenizer st = new StringTokenizer(val);
 				String name = st.nextToken();
 				String message = val.substring(name.length() + 1);
-				L2PcInstance reciever = L2World.getInstance().getPlayer(name);
+				L2PcInstance reciever = World.getInstance().getPlayer(name);
 				CreatureSay cs = new CreatureSay(0, ChatType.WHISPER, "Telnet Priv", message);
 				if (reciever != null)
 				{

@@ -24,10 +24,10 @@ import java.util.List;
 
 import com.l2jserver.gameserver.handler.ITargetTypeHandler;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2ClanMember;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.ClanMember;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.TvTEvent;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -41,9 +41,9 @@ import com.l2jserver.gameserver.util.Util;
 public class CorpseClan implements ITargetTypeHandler
 {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
 	{
-		List<L2Object> targetList = new ArrayList<>();
+		List<WorldObject> targetList = new ArrayList<>();
 		if (activeChar.isPlayable())
 		{
 			final L2PcInstance player = activeChar.getActingPlayer();
@@ -54,7 +54,7 @@ public class CorpseClan implements ITargetTypeHandler
 			
 			if (player.isInOlympiadMode())
 			{
-				return new L2Object[]
+				return new WorldObject[]
 				{
 					player
 				};
@@ -65,7 +65,7 @@ public class CorpseClan implements ITargetTypeHandler
 			{
 				final int radius = skill.getAffectRange();
 				final int maxTargets = skill.getAffectLimit();
-				for (L2ClanMember member : clan.getMembers())
+				for (ClanMember member : clan.getMembers())
 				{
 					final L2PcInstance obj = member.getPlayerInstance();
 					if ((obj == null) || (obj == player))
@@ -109,7 +109,7 @@ public class CorpseClan implements ITargetTypeHandler
 					
 					if (onlyFirst)
 					{
-						return new L2Object[]
+						return new WorldObject[]
 						{
 							obj
 						};
@@ -127,10 +127,10 @@ public class CorpseClan implements ITargetTypeHandler
 		else if (activeChar.isNpc())
 		{
 			// for buff purposes, returns friendly mobs nearby and mob itself
-			final L2Npc npc = (L2Npc) activeChar;
+			final Npc npc = (Npc) activeChar;
 			if ((npc.getTemplate().getClans() == null) || npc.getTemplate().getClans().isEmpty())
 			{
-				return new L2Object[]
+				return new WorldObject[]
 				{
 					activeChar
 				};
@@ -138,11 +138,11 @@ public class CorpseClan implements ITargetTypeHandler
 			
 			targetList.add(activeChar);
 			
-			final Collection<L2Object> objs = activeChar.getKnownList().getKnownObjects().values();
+			final Collection<WorldObject> objs = activeChar.getKnownList().getKnownObjects().values();
 			int maxTargets = skill.getAffectLimit();
-			for (L2Object newTarget : objs)
+			for (WorldObject newTarget : objs)
 			{
-				if (newTarget.isNpc() && npc.isInMyClan((L2Npc) newTarget))
+				if (newTarget.isNpc() && npc.isInMyClan((Npc) newTarget))
 				{
 					if (!Util.checkIfInRange(skill.getCastRange(), activeChar, newTarget, true))
 					{
@@ -159,7 +159,7 @@ public class CorpseClan implements ITargetTypeHandler
 			}
 		}
 		
-		return targetList.toArray(new L2Object[targetList.size()]);
+		return targetList.toArray(new WorldObject[targetList.size()]);
 	}
 	
 	@Override

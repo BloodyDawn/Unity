@@ -20,7 +20,7 @@ package ai.individual;
 
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 
 /**
  * Ragna Orc Hero AI.
@@ -37,7 +37,7 @@ public final class RagnaOrcHero extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		spawnMinions(npc, getRandom(100) < 70 ? "Privates1" : "Privates2");
 		return super.onSpawn(npc);

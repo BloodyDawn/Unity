@@ -33,7 +33,7 @@ import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.data.xml.impl.NpcData;
 import com.l2jserver.gameserver.data.xml.impl.PetDataTable;
 import com.l2jserver.gameserver.datatables.SkillData;
-import com.l2jserver.gameserver.model.L2PetData;
+import com.l2jserver.gameserver.model.PetData;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2ServitorInstance;
@@ -134,7 +134,7 @@ public class CharSummonTable
 			LOGGER.warning(getClass().getSimpleName() + ": Null pet summoning item for: " + activeChar);
 			return;
 		}
-		final L2PetData petData = PetDataTable.getInstance().getPetDataByItemId(item.getId());
+		final PetData petData = PetDataTable.getInstance().getPetDataByItemId(item.getId());
 		if (petData == null)
 		{
 			LOGGER.warning(getClass().getSimpleName() + ": Null pet data for: " + activeChar + " and summoning item: " + item);

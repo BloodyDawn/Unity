@@ -24,11 +24,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.L2Party;
+import com.l2jserver.gameserver.model.Party;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.PcCondOverride;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
 import com.l2jserver.gameserver.network.NpcStringId;
@@ -44,7 +44,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 	protected class CavernOfThePirateCaptainWorld extends InstanceWorld
 	{
 		protected List<L2PcInstance> playersInside = new ArrayList<>();
-		protected L2Attackable _zaken;
+		protected Attackable _zaken;
 		protected long storeTime = 0;
 		protected boolean _is83;
 		protected int _zakenRoom;
@@ -215,7 +215,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 		}
 		
 		final boolean is83 = InstanceManager.getInstance().getPlayerWorld(player).getTemplateId() == TEMPLATE_ID_83 ? true : false;
-		final L2Party party = player.getParty();
+		final Party party = player.getParty();
 		final boolean isInCC = party.isInCommandChannel();
 		final List<L2PcInstance> members = (isInCC) ? party.getCommandChannel().getMembers() : party.getMembers();
 		final boolean isPartyLeader = (isInCC) ? party.getCommandChannel().isLeader(player) : party.isLeader(player);
@@ -280,7 +280,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.equals("enter60"))
 		{
@@ -364,7 +364,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		
@@ -409,7 +409,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		
@@ -435,7 +435,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 		return null;
 	}
 	
-	private int getRoomByCandle(L2Npc npc)
+	private int getRoomByCandle(Npc npc)
 	{
 		final int candleId = npc.getVariables().getInt("candleId", 0);
 		
@@ -473,25 +473,25 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 		}
 	}
 	
-	private L2Attackable spawnNpc(int npcId, int roomId, L2PcInstance player, CavernOfThePirateCaptainWorld world)
+	private Attackable spawnNpc(int npcId, int roomId, L2PcInstance player, CavernOfThePirateCaptainWorld world)
 	{
 		if ((player != null) && (npcId != ZAKEN_60) && (npcId != ZAKEN_83))
 		{
-			final L2Attackable mob = (L2Attackable) addSpawn(npcId, ROOM_DATA[roomId - 1][0] + getRandom(350), ROOM_DATA[roomId - 1][1] + getRandom(350), ROOM_DATA[roomId - 1][2], 0, false, 0, false, world.getInstanceId());
+			final Attackable mob = (Attackable) addSpawn(npcId, ROOM_DATA[roomId - 1][0] + getRandom(350), ROOM_DATA[roomId - 1][1] + getRandom(350), ROOM_DATA[roomId - 1][2], 0, false, 0, false, world.getInstanceId());
 			addAttackPlayerDesire(mob, player);
 			return mob;
 		}
-		return (L2Attackable) addSpawn(npcId, ROOM_DATA[roomId - 1][0], ROOM_DATA[roomId - 1][1], ROOM_DATA[roomId - 1][2], 0, false, 0, false, world.getInstanceId());
+		return (Attackable) addSpawn(npcId, ROOM_DATA[roomId - 1][0], ROOM_DATA[roomId - 1][1], ROOM_DATA[roomId - 1][2], 0, false, 0, false, world.getInstanceId());
 	}
 	
 	private void manageNpcSpawn(CavernOfThePirateCaptainWorld world)
 	{
-		final List<L2Npc> candles = new ArrayList<>();
+		final List<Npc> candles = new ArrayList<>();
 		world._zakenRoom = getRandom(1, 15);
 		
 		for (int i = 0; i < 36; i++)
 		{
-			final L2Npc candle = addSpawn(CANDLE, CANDLE_LOC[i], false, 0, false, world.getInstanceId());
+			final Npc candle = addSpawn(CANDLE, CANDLE_LOC[i], false, 0, false, world.getInstanceId());
 			candle.getVariables().set("candleId", i + 1);
 			candles.add(candle);
 		}

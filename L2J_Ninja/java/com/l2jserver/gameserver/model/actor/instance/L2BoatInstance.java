@@ -20,10 +20,10 @@ package com.l2jserver.gameserver.model.actor.instance;
 
 import java.util.logging.Logger;
 
-import com.l2jserver.gameserver.ai.L2BoatAI;
+import com.l2jserver.gameserver.ai.BoatAI;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Vehicle;
+import com.l2jserver.gameserver.model.actor.Vehicle;
 import com.l2jserver.gameserver.model.actor.templates.L2CharTemplate;
 import com.l2jserver.gameserver.network.serverpackets.VehicleDeparture;
 import com.l2jserver.gameserver.network.serverpackets.VehicleInfo;
@@ -32,7 +32,7 @@ import com.l2jserver.gameserver.network.serverpackets.VehicleStarted;
 /**
  * @author Maktakien, DS
  */
-public class L2BoatInstance extends L2Vehicle
+public class L2BoatInstance extends Vehicle
 {
 	protected static final Logger _logBoat = Logger.getLogger(L2BoatInstance.class.getName());
 	
@@ -40,7 +40,7 @@ public class L2BoatInstance extends L2Vehicle
 	{
 		super(objectId, template);
 		setInstanceType(InstanceType.L2BoatInstance);
-		setAI(new L2BoatAI(new AIAccessor()));
+		setAI(new BoatAI(new AIAccessor()));
 	}
 	
 	@Override

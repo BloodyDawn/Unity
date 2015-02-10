@@ -20,8 +20,8 @@ package com.l2jserver.gameserver.model.zone.type;
 
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.L2WorldRegion;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldRegion;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.zone.AbstractZoneSettings;
 import com.l2jserver.gameserver.model.zone.L2ZoneType;
@@ -33,11 +33,11 @@ import com.l2jserver.gameserver.model.zone.TaskZoneSettings;
  */
 public class L2DynamicZone extends L2ZoneType
 {
-	private final L2WorldRegion _region;
-	private final L2Character _owner;
+	private final WorldRegion _region;
+	private final Creature _owner;
 	private final Skill _skill;
 	
-	public L2DynamicZone(L2WorldRegion region, L2Character owner, Skill skill)
+	public L2DynamicZone(WorldRegion region, Creature owner, Skill skill)
 	{
 		super(-1);
 		_region = region;
@@ -60,7 +60,7 @@ public class L2DynamicZone extends L2ZoneType
 	}
 	
 	@Override
-	protected void onEnter(L2Character character)
+	protected void onEnter(Creature character)
 	{
 		if (character.isPlayer())
 		{
@@ -73,7 +73,7 @@ public class L2DynamicZone extends L2ZoneType
 	}
 	
 	@Override
-	protected void onExit(L2Character character)
+	protected void onExit(Creature character)
 	{
 		if (character.isPlayer())
 		{
@@ -99,7 +99,7 @@ public class L2DynamicZone extends L2ZoneType
 		getSettings().getTask().cancel(false);
 		
 		_region.removeZone(this);
-		for (L2Character member : getCharactersInside())
+		for (Creature member : getCharactersInside())
 		{
 			member.stopSkillEffects(true, _skill.getId());
 		}
@@ -108,7 +108,7 @@ public class L2DynamicZone extends L2ZoneType
 	}
 	
 	@Override
-	public void onDieInside(L2Character character)
+	public void onDieInside(Creature character)
 	{
 		if (character == _owner)
 		{
@@ -121,7 +121,7 @@ public class L2DynamicZone extends L2ZoneType
 	}
 	
 	@Override
-	public void onReviveInside(L2Character character)
+	public void onReviveInside(Creature character)
 	{
 		_skill.applyEffects(_owner, character);
 	}

@@ -41,7 +41,7 @@ import com.l2jserver.Config;
 import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.zone.ZoneId;
@@ -212,7 +212,7 @@ public final class BotReportTable
 	 */
 	public boolean reportBot(L2PcInstance reporter)
 	{
-		L2Object target = reporter.getTarget();
+		WorldObject target = reporter.getTarget();
 		
 		if (target == null)
 		{

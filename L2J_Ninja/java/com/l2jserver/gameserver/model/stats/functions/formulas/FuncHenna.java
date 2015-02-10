@@ -21,7 +21,7 @@ package com.l2jserver.gameserver.model.stats.functions.formulas;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.stats.Stats;
@@ -49,7 +49,7 @@ public class FuncHenna extends AbstractFunction
 	}
 	
 	@Override
-	public double calc(L2Character effector, L2Character effected, Skill skill, double initVal)
+	public double calc(Creature effector, Creature effected, Skill skill, double initVal)
 	{
 		L2PcInstance pc = effector.getActingPlayer();
 		double value = initVal;

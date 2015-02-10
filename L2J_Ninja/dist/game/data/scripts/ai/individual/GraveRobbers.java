@@ -20,7 +20,7 @@ package ai.individual;
 
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 
 /**
  * Grove Robber's AI.<br>
@@ -42,7 +42,7 @@ public final class GraveRobbers extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		spawnMinions(npc, "Privates" + getRandom(1, 2));
 		return super.onSpawn(npc);

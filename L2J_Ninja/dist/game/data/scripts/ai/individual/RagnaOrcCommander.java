@@ -20,7 +20,7 @@ package ai.individual;
 
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 
 /**
  * Ragna Orc Commander AI.
@@ -37,7 +37,7 @@ public final class RagnaOrcCommander extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		spawnMinions(npc, "Privates1");
 		spawnMinions(npc, getRandomBoolean() ? "Privates2" : "Privates3");

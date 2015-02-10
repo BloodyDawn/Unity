@@ -20,7 +20,7 @@ package quests.Q10275_ContainingTheAttributePower;
 
 import com.l2jserver.gameserver.enums.QuestSound;
 import com.l2jserver.gameserver.model.Elementals;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
@@ -62,7 +62,7 @@ public class Q10275_ContainingTheAttributePower extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String htmltext = event;
 		final QuestState st = getQuestState(player, false);
@@ -131,7 +131,7 @@ public class Q10275_ContainingTheAttributePower extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		final QuestState st = getQuestState(player, false);
 		if (st == null)
@@ -175,7 +175,7 @@ public class Q10275_ContainingTheAttributePower extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);

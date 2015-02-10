@@ -22,8 +22,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.model.L2ExtractableProductItem;
-import com.l2jserver.gameserver.model.L2ExtractableSkill;
+import com.l2jserver.gameserver.model.ExtractableProductItem;
+import com.l2jserver.gameserver.model.ExtractableSkill;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.conditions.Condition;
@@ -60,7 +60,7 @@ public final class RestorationRandom extends AbstractEffect
 			return;
 		}
 		
-		final L2ExtractableSkill exSkill = info.getSkill().getExtractableSkill();
+		final ExtractableSkill exSkill = info.getSkill().getExtractableSkill();
 		if (exSkill == null)
 		{
 			return;
@@ -86,7 +86,7 @@ public final class RestorationRandom extends AbstractEffect
 		// If you get chance equal 45% you fall into the second zone 30-80.
 		// Meaning you get the second production list.
 		// Calculate extraction
-		for (L2ExtractableProductItem expi : exSkill.getProductItems())
+		for (ExtractableProductItem expi : exSkill.getProductItems())
 		{
 			chance = expi.getChance();
 			if ((rndNum >= chanceFrom) && (rndNum <= (chance + chanceFrom)))

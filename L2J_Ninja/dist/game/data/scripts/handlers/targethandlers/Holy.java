@@ -19,8 +19,8 @@
 package handlers.targethandlers;
 
 import com.l2jserver.gameserver.handler.ITargetTypeHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2ArtefactInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
@@ -31,14 +31,14 @@ import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
 public class Holy implements ITargetTypeHandler
 {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
 	{
 		if (!(target instanceof L2ArtefactInstance))
 		{
 			return EMPTY_TARGET_LIST;
 		}
 		
-		return new L2Object[]
+		return new WorldObject[]
 		{
 			target
 		};

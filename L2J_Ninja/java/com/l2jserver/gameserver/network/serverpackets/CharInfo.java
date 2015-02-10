@@ -23,7 +23,7 @@ import java.util.Set;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.instancemanager.CursedWeaponsManager;
 import com.l2jserver.gameserver.model.PcCondOverride;
-import com.l2jserver.gameserver.model.actor.L2Decoy;
+import com.l2jserver.gameserver.model.actor.Decoy;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.model.skills.AbnormalVisualEffect;
@@ -98,7 +98,7 @@ public class CharInfo extends L2GameServerPacket
 		_armorEnchant = cha.getInventory().getArmorMinEnchant();
 	}
 	
-	public CharInfo(L2Decoy decoy)
+	public CharInfo(Decoy decoy)
 	{
 		this(decoy.getActingPlayer()); // init
 		_objId = decoy.getObjectId();

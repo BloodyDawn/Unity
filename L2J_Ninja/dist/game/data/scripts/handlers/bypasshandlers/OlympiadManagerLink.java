@@ -27,9 +27,9 @@ import com.l2jserver.gameserver.data.sql.impl.NpcBufferTable;
 import com.l2jserver.gameserver.data.sql.impl.NpcBufferTable.NpcBufferData;
 import com.l2jserver.gameserver.data.xml.impl.MultisellData;
 import com.l2jserver.gameserver.handler.IBypassHandler;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2OlympiadManagerInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Hero;
@@ -78,7 +78,7 @@ public class OlympiadManagerLink implements IBypassHandler
 	};
 	
 	@Override
-	public final boolean useBypass(String command, L2PcInstance activeChar, L2Character target)
+	public final boolean useBypass(String command, L2PcInstance activeChar, Creature target)
 	{
 		if (!(target instanceof L2OlympiadManagerInstance))
 		{
@@ -201,10 +201,10 @@ public class OlympiadManagerLink implements IBypassHandler
 						}
 						break;
 					case 7: // Equipment Rewards
-						MultisellData.getInstance().separateAndSend(102, activeChar, (L2Npc) target, false);
+						MultisellData.getInstance().separateAndSend(102, activeChar, (Npc) target, false);
 						break;
 					case 8: // Misc. Rewards
-						MultisellData.getInstance().separateAndSend(103, activeChar, (L2Npc) target, false);
+						MultisellData.getInstance().separateAndSend(103, activeChar, (Npc) target, false);
 						break;
 					case 9: // Your Grand Olympiad Score from the previous period is %points% point(s) | TODO: cleanup (not used anymore)
 						int point = Olympiad.getInstance().getLastNobleOlympiadPoints(activeChar.getObjectId());
@@ -279,7 +279,7 @@ public class OlympiadManagerLink implements IBypassHandler
 						
 						target.broadcastPacket(new MagicSkillUse(target, activeChar, skill.getId(), skill.getLevel(), 0, 0));
 						skill.applyEffects(activeChar, activeChar);
-						final L2Summon pet = activeChar.getPet();
+						final Summon pet = activeChar.getPet();
 						if (pet != null)
 						{
 							target.broadcastPacket(new MagicSkillUse(target, pet, skill.getId(), skill.getLevel(), 0, 0));

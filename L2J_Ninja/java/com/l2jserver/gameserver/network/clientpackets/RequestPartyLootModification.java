@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.network.clientpackets;
 
 import com.l2jserver.gameserver.enums.PartyDistributionType;
-import com.l2jserver.gameserver.model.L2Party;
+import com.l2jserver.gameserver.model.Party;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
@@ -52,7 +52,7 @@ public class RequestPartyLootModification extends L2GameClientPacket
 			return;
 		}
 		
-		final L2Party party = activeChar.getParty();
+		final Party party = activeChar.getParty();
 		if ((party == null) || !party.isLeader(activeChar) || (partyDistributionType == party.getDistributionType()))
 		{
 			return;

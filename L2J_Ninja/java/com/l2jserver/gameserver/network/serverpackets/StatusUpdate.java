@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.network.serverpackets;
 
 import java.util.ArrayList;
 
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 
 public final class StatusUpdate extends L2GameServerPacket
 {
@@ -72,7 +72,7 @@ public final class StatusUpdate extends L2GameServerPacket
 	}
 	
 	/**
-	 * If you have access to object itself use {@link StatusUpdate#StatusUpdate(L2Object)}.
+	 * If you have access to object itself use {@link StatusUpdate#StatusUpdate(WorldObject)}.
 	 * @param objectId
 	 */
 	public StatusUpdate(int objectId)
@@ -81,10 +81,10 @@ public final class StatusUpdate extends L2GameServerPacket
 	}
 	
 	/**
-	 * Create {@link StatusUpdate} packet for given {@link L2Object}.
+	 * Create {@link StatusUpdate} packet for given {@link WorldObject}.
 	 * @param object
 	 */
-	public StatusUpdate(L2Object object)
+	public StatusUpdate(WorldObject object)
 	{
 		_objectId = object.getObjectId();
 	}

@@ -20,8 +20,8 @@ package com.l2jserver.gameserver.model.actor.instance;
 
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.instancemanager.RaidBossPointsManager;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.entity.Hero;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -64,7 +64,7 @@ public final class L2GrandBossInstance extends L2MonsterInstance
 	}
 	
 	@Override
-	public boolean doDie(L2Character killer)
+	public boolean doDie(Creature killer)
 	{
 		if (!super.doDie(killer))
 		{
@@ -76,9 +76,9 @@ public final class L2GrandBossInstance extends L2MonsterInstance
 		{
 			player = (L2PcInstance) killer;
 		}
-		else if (killer instanceof L2Summon)
+		else if (killer instanceof Summon)
 		{
-			player = ((L2Summon) killer).getOwner();
+			player = ((Summon) killer).getOwner();
 		}
 		
 		if (player != null)

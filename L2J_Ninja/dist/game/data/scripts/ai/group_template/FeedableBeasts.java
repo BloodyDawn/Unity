@@ -27,9 +27,9 @@ import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2TamedBeastInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -356,7 +356,7 @@ public final class FeedableBeasts extends AbstractNpcAI
 		_GrowthCapableMobs.put(21505, temp);
 	}
 	
-	private void spawnNext(L2Npc npc, int growthLevel, L2PcInstance player, int food)
+	private void spawnNext(Npc npc, int growthLevel, L2PcInstance player, int food)
 	{
 		int npcId = npc.getId();
 		int nextNpcId = 0;
@@ -468,7 +468,7 @@ public final class FeedableBeasts extends AbstractNpcAI
 		{
 			// if not trained, the newly spawned mob will automatically be aggro against its feeder
 			// (what happened to "never bite the hand that feeds you" anyway?!)
-			L2Attackable nextNpc = (L2Attackable) addSpawn(nextNpcId, npc);
+			Attackable nextNpc = (Attackable) addSpawn(nextNpcId, npc);
 			
 			if (MAD_COW_POLYMORPH.containsKey(nextNpcId))
 			{
@@ -484,7 +484,7 @@ public final class FeedableBeasts extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.equalsIgnoreCase("polymorph Mad Cow") && (npc != null) && (player != null))
 		{
@@ -498,7 +498,7 @@ public final class FeedableBeasts extends AbstractNpcAI
 				// despawn the mad cow
 				npc.deleteMe();
 				// spawn the new mob
-				L2Attackable nextNpc = (L2Attackable) addSpawn(MAD_COW_POLYMORPH.get(npc.getId()), npc);
+				Attackable nextNpc = (Attackable) addSpawn(MAD_COW_POLYMORPH.get(npc.getId()), npc);
 				
 				// register the player in the feedinfo for the mob that just spawned
 				_FeedInfo.put(nextNpc.getObjectId(), player.getObjectId());
@@ -511,7 +511,7 @@ public final class FeedableBeasts extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon)
+	public String onSkillSee(Npc npc, L2PcInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
 		// this behavior is only run when the target of skill is the passed npc (chest)
 		// i.e. when the player is attempting to open the chest using a skill
@@ -611,7 +611,7 @@ public final class FeedableBeasts extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		// remove the feedinfo of the mob that got killed, if any
 		if (_FeedInfo.containsKey(npc.getObjectId()))

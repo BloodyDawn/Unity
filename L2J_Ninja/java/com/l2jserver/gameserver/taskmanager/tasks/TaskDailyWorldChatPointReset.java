@@ -23,7 +23,7 @@ import java.sql.PreparedStatement;
 
 import com.l2jserver.Config;
 import com.l2jserver.L2DatabaseFactory;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.ExWorldChatCnt;
 import com.l2jserver.gameserver.taskmanager.Task;
@@ -58,7 +58,7 @@ public class TaskDailyWorldChatPointReset extends Task
 		}
 		
 		// Update data for online players.
-		L2World.getInstance().getPlayers().stream().forEach(player ->
+		World.getInstance().getPlayers().stream().forEach(player ->
 		{
 			player.setWorldChatPoints(Config.WORLD_CHAT_POINTS_PER_DAY);
 			player.sendPacket(new ExWorldChatCnt(player));

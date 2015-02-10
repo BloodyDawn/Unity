@@ -22,7 +22,7 @@ import java.util.logging.Level;
 
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.model.actor.L2Attackable;
+import com.l2jserver.gameserver.model.actor.Attackable;
 import com.l2jserver.gameserver.model.events.Containers;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.ListenerRegisterType;
@@ -141,7 +141,7 @@ public class ListenerTest extends AbstractNpcAI
 		// Make sure a player killed this monster.
 		if ((event.getAttacker() != null) && event.getAttacker().isPlayable() && event.getTarget().isAttackable())
 		{
-			final L2Attackable monster = (L2Attackable) event.getTarget();
+			final Attackable monster = (Attackable) event.getTarget();
 			monster.dropItem(event.getAttacker().getActingPlayer(), new ItemHolder(57, Rnd.get(100, 1000)));
 		}
 	}

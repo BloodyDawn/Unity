@@ -22,7 +22,7 @@ import java.util.logging.Logger;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
@@ -49,7 +49,7 @@ public class AdminInvul implements IAdminCommandHandler
 		}
 		if (command.equals("admin_setinvul"))
 		{
-			L2Object target = activeChar.getTarget();
+			WorldObject target = activeChar.getTarget();
 			if (target instanceof L2PcInstance)
 			{
 				handleInvul((L2PcInstance) target);

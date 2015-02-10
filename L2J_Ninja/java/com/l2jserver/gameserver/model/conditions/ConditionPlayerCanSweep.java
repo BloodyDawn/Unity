@@ -19,9 +19,9 @@
 package com.l2jserver.gameserver.model.conditions;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.items.L2Item;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -49,7 +49,7 @@ public class ConditionPlayerCanSweep extends Condition
 	}
 	
 	@Override
-	public boolean testImpl(L2Character effector, L2Character effected, Skill skill, L2Item item)
+	public boolean testImpl(Creature effector, Creature effected, Skill skill, L2Item item)
 	{
 		boolean canSweep = false;
 		if (effector.getActingPlayer() != null)
@@ -57,15 +57,15 @@ public class ConditionPlayerCanSweep extends Condition
 			final L2PcInstance sweeper = effector.getActingPlayer();
 			if (skill != null)
 			{
-				final L2Object[] targets = skill.getTargetList(sweeper);
+				final WorldObject[] targets = skill.getTargetList(sweeper);
 				if (targets != null)
 				{
-					L2Attackable target;
-					for (L2Object objTarget : targets)
+					Attackable target;
+					for (WorldObject objTarget : targets)
 					{
-						if (objTarget instanceof L2Attackable)
+						if (objTarget instanceof Attackable)
 						{
-							target = (L2Attackable) objTarget;
+							target = (Attackable) objTarget;
 							if (target.isDead())
 							{
 								if (target.isSpoiled())

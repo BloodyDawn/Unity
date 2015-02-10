@@ -21,7 +21,7 @@ package handlers.effecthandlers;
 import com.l2jserver.gameserver.enums.CastleSide;
 import com.l2jserver.gameserver.instancemanager.CastleManager;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
@@ -59,7 +59,7 @@ public final class TakeCastle extends AbstractEffect
 		
 		final L2PcInstance effector = info.getEffector().getActingPlayer();
 		final Castle castle = CastleManager.getInstance().getCastle(effector);
-		final L2Character effected = info.getEffected();
+		final Creature effected = info.getEffected();
 		
 		castle.engrave(effector.getClan(), effected, _side);
 	}

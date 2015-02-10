@@ -18,14 +18,14 @@
  */
 package com.l2jserver.gameserver.network.clientpackets;
 
-import static com.l2jserver.gameserver.model.actor.L2Npc.INTERACTION_DISTANCE;
+import static com.l2jserver.gameserver.model.actor.Npc.INTERACTION_DISTANCE;
 import javolution.util.FastSet;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.enums.PrivateStoreType;
 import com.l2jserver.gameserver.model.ItemRequest;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.TradeList;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
@@ -92,7 +92,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 			return;
 		}
 		
-		L2Object object = L2World.getInstance().getPlayer(_storePlayerId);
+		WorldObject object = World.getInstance().getPlayer(_storePlayerId);
 		if (object == null)
 		{
 			return;

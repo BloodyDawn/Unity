@@ -22,8 +22,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.l2jserver.gameserver.handler.ITargetTypeHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
 
@@ -34,25 +34,25 @@ import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
 public class Summon implements ITargetTypeHandler
 {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
 	{
 		if (activeChar.hasSummon())
 		{
 			if (!activeChar.hasPet() && activeChar.hasServitors())
 			{
-				return activeChar.getServitors().values().toArray(new L2Character[0]);
+				return activeChar.getServitors().values().toArray(new Creature[0]);
 			}
 			else if (activeChar.hasPet() && !activeChar.hasServitors())
 			{
-				return new L2Character[]
+				return new Creature[]
 				{
 					activeChar.getPet()
 				};
 			}
-			final List<L2Character> targets = new ArrayList<>(1 + activeChar.getServitors().size());
+			final List<Creature> targets = new ArrayList<>(1 + activeChar.getServitors().size());
 			targets.add(activeChar.getPet());
 			targets.addAll(activeChar.getServitors().values());
-			return targets.toArray(new L2Character[0]);
+			return targets.toArray(new Creature[0]);
 		}
 		return EMPTY_TARGET_LIST;
 	}

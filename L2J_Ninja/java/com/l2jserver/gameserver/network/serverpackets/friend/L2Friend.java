@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.network.serverpackets.friend;
 
 import com.l2jserver.gameserver.data.sql.impl.CharNameTable;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.network.serverpackets.L2GameServerPacket;
 
 /**
@@ -42,7 +42,7 @@ public class L2Friend extends L2GameServerPacket
 		_action = action;
 		_objid = objId;
 		_name = CharNameTable.getInstance().getNameById(objId);
-		_online = L2World.getInstance().getPlayer(objId) != null;
+		_online = World.getInstance().getPlayer(objId) != null;
 	}
 	
 	@Override

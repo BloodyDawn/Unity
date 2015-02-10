@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.model.events.impl.character.npc;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
@@ -28,16 +28,16 @@ import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
  */
 public class OnNpcFirstTalk implements IBaseEvent
 {
-	private final L2Npc _npc;
+	private final Npc _npc;
 	private final L2PcInstance _activeChar;
 	
-	public OnNpcFirstTalk(L2Npc npc, L2PcInstance activeChar)
+	public OnNpcFirstTalk(Npc npc, L2PcInstance activeChar)
 	{
 		_npc = npc;
 		_activeChar = activeChar;
 	}
 	
-	public L2Npc getNpc()
+	public Npc getNpc()
 	{
 		return _npc;
 	}

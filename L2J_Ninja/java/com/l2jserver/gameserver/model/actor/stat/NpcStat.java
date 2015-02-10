@@ -18,11 +18,11 @@
  */
 package com.l2jserver.gameserver.model.actor.stat;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 
 public class NpcStat extends CharStat
 {
-	public NpcStat(L2Npc activeChar)
+	public NpcStat(Npc activeChar)
 	{
 		super(activeChar);
 	}
@@ -34,8 +34,8 @@ public class NpcStat extends CharStat
 	}
 	
 	@Override
-	public L2Npc getActiveChar()
+	public Npc getActiveChar()
 	{
-		return (L2Npc) super.getActiveChar();
+		return (Npc) super.getActiveChar();
 	}
 }

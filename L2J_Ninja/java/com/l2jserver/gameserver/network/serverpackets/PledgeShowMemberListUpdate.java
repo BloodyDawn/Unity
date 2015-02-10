@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.network.serverpackets;
 
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2ClanMember;
+import com.l2jserver.gameserver.model.ClanMember;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
@@ -57,7 +57,7 @@ public final class PledgeShowMemberListUpdate extends L2GameServerPacket
 		_isOnline = player.isOnline();
 	}
 	
-	public PledgeShowMemberListUpdate(L2ClanMember member)
+	public PledgeShowMemberListUpdate(ClanMember member)
 	{
 		_name = member.getName();
 		_level = member.getLevel();

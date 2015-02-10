@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.model.events.impl.character.player.mentoring;
 
-import com.l2jserver.gameserver.model.L2Mentee;
+import com.l2jserver.gameserver.model.Mentee;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
@@ -29,9 +29,9 @@ import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
 public class OnPlayerMenteeRemove implements IBaseEvent
 {
 	private final L2PcInstance _mentor;
-	private final L2Mentee _mentee;
+	private final Mentee _mentee;
 	
-	public OnPlayerMenteeRemove(L2PcInstance mentor, L2Mentee mentee)
+	public OnPlayerMenteeRemove(L2PcInstance mentor, Mentee mentee)
 	{
 		_mentor = mentor;
 		_mentee = mentee;
@@ -42,7 +42,7 @@ public class OnPlayerMenteeRemove implements IBaseEvent
 		return _mentor;
 	}
 	
-	public L2Mentee getMentee()
+	public Mentee getMentee()
 	{
 		return _mentee;
 	}

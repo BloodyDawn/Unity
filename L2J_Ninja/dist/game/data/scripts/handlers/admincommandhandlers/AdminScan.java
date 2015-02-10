@@ -23,11 +23,11 @@ import java.util.StringTokenizer;
 import com.l2jserver.gameserver.datatables.SpawnTable;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.instancemanager.RaidBossSpawnManager;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 
@@ -82,8 +82,8 @@ public class AdminScan implements IAdminCommandHandler
 				{
 					int objectId = Integer.parseInt(st.nextToken());
 					
-					final L2Object target = L2World.getInstance().findObject(objectId);
-					final L2Npc npc = target instanceof L2Npc ? (L2Npc) target : null;
+					final WorldObject target = World.getInstance().findObject(objectId);
+					final Npc npc = target instanceof Npc ? (Npc) target : null;
 					if (npc == null)
 					{
 						activeChar.sendMessage("NPC does not exist or object_id does not belong to an NPC");
@@ -127,9 +127,9 @@ public class AdminScan implements IAdminCommandHandler
 		final NpcHtmlMessage html = new NpcHtmlMessage();
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/scan.htm");
 		final StringBuilder sb = new StringBuilder();
-		for (L2Character character : activeChar.getKnownList().getKnownCharactersInRadius(radius))
+		for (Creature character : activeChar.getKnownList().getKnownCharactersInRadius(radius))
 		{
-			if (character instanceof L2Npc)
+			if (character instanceof Npc)
 			{
 				sb.append("<tr>");
 				sb.append("<td width=\"54\">" + character.getId() + "</td>");

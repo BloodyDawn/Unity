@@ -25,7 +25,7 @@ import com.l2jserver.gameserver.data.xml.impl.ExperienceData;
 import com.l2jserver.gameserver.data.xml.impl.PetDataTable;
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jserver.gameserver.model.events.EventDispatcher;
@@ -39,7 +39,7 @@ public class PlayableStat extends CharStat
 {
 	protected static final Logger _log = Logger.getLogger(PlayableStat.class.getName());
 	
-	public PlayableStat(L2Playable activeChar)
+	public PlayableStat(Playable activeChar)
 	{
 		super(activeChar);
 	}
@@ -257,9 +257,9 @@ public class PlayableStat extends CharStat
 	}
 	
 	@Override
-	public L2Playable getActiveChar()
+	public Playable getActiveChar()
 	{
-		return (L2Playable) super.getActiveChar();
+		return (Playable) super.getActiveChar();
 	}
 	
 	public int getMaxLevel()

@@ -20,7 +20,7 @@ package handlers.punishmenthandlers;
 
 import com.l2jserver.gameserver.LoginServerThread;
 import com.l2jserver.gameserver.handler.IPunishmentHandler;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.punishment.PunishmentTask;
 import com.l2jserver.gameserver.model.punishment.PunishmentType;
@@ -41,7 +41,7 @@ public class ChatBanHandler implements IPunishmentHandler
 			case CHARACTER:
 			{
 				int objectId = Integer.parseInt(String.valueOf(task.getKey()));
-				final L2PcInstance player = L2World.getInstance().getPlayer(objectId);
+				final L2PcInstance player = World.getInstance().getPlayer(objectId);
 				if (player != null)
 				{
 					applyToPlayer(task, player);
@@ -65,7 +65,7 @@ public class ChatBanHandler implements IPunishmentHandler
 			case IP:
 			{
 				String ip = String.valueOf(task.getKey());
-				for (L2PcInstance player : L2World.getInstance().getPlayers())
+				for (L2PcInstance player : World.getInstance().getPlayers())
 				{
 					if (player.getIPAddress().equals(ip))
 					{
@@ -85,7 +85,7 @@ public class ChatBanHandler implements IPunishmentHandler
 			case CHARACTER:
 			{
 				int objectId = Integer.parseInt(String.valueOf(task.getKey()));
-				final L2PcInstance player = L2World.getInstance().getPlayer(objectId);
+				final L2PcInstance player = World.getInstance().getPlayer(objectId);
 				if (player != null)
 				{
 					removeFromPlayer(player);
@@ -109,7 +109,7 @@ public class ChatBanHandler implements IPunishmentHandler
 			case IP:
 			{
 				String ip = String.valueOf(task.getKey());
-				for (L2PcInstance player : L2World.getInstance().getPlayers())
+				for (L2PcInstance player : World.getInstance().getPlayers())
 				{
 					if (player.getIPAddress().equals(ip))
 					{

@@ -20,7 +20,7 @@ package ai.npc.Teleports.NoblesseTeleport;
 
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
@@ -64,7 +64,7 @@ public final class NoblesseTeleport extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if ("teleportWithToken".equals(event))
 		{
@@ -81,7 +81,7 @@ public final class NoblesseTeleport extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		return player.isNoble() ? "nobleteleporter.htm" : "nobleteleporter-no.htm";
 	}

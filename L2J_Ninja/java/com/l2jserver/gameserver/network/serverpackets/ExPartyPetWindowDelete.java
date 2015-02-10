@@ -18,16 +18,16 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Summon;
 
 /**
  * @author KenM
  */
 public class ExPartyPetWindowDelete extends L2GameServerPacket
 {
-	private final L2Summon _summon;
+	private final Summon _summon;
 	
-	public ExPartyPetWindowDelete(L2Summon summon)
+	public ExPartyPetWindowDelete(Summon summon)
 	{
 		_summon = summon;
 	}

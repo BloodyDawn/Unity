@@ -35,7 +35,7 @@ import com.l2jserver.gameserver.handler.IVoicedCommandHandler;
 import com.l2jserver.gameserver.instancemanager.CoupleManager;
 import com.l2jserver.gameserver.instancemanager.GrandBossManager;
 import com.l2jserver.gameserver.instancemanager.SiegeManager;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.L2Event;
@@ -109,7 +109,7 @@ public class Wedding implements IVoicedCommandHandler
 			activeChar.sendMessage("You have broken up as a couple.");
 		}
 		
-		final L2PcInstance partner = L2World.getInstance().getPlayer(_partnerId);
+		final L2PcInstance partner = World.getInstance().getPlayer(_partnerId);
 		if (partner != null)
 		{
 			partner.setPartnerId(0);
@@ -335,7 +335,7 @@ public class Wedding implements IVoicedCommandHandler
 			return false;
 		}
 		
-		final L2PcInstance partner = L2World.getInstance().getPlayer(activeChar.getPartnerId());
+		final L2PcInstance partner = World.getInstance().getPlayer(activeChar.getPartnerId());
 		if ((partner == null) || !partner.isOnline())
 		{
 			activeChar.sendMessage("Your partner is not online.");

@@ -46,10 +46,10 @@ import com.l2jserver.gameserver.instancemanager.FortManager;
 import com.l2jserver.gameserver.instancemanager.SiegeManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.L2Spawn;
 import com.l2jserver.gameserver.model.TowerSpawn;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2ArtefactInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -73,7 +73,7 @@ public final class Castle extends AbstractResidence
 	protected static final Logger _log = Logger.getLogger(Castle.class.getName());
 	
 	private final List<L2DoorInstance> _doors = new ArrayList<>();
-	private final List<L2Npc> _sideNpcs = new ArrayList<>();
+	private final List<Npc> _sideNpcs = new ArrayList<>();
 	private int _ownerId = 0;
 	private Siege _siege = null;
 	private Calendar _siegeDate;
@@ -268,7 +268,7 @@ public final class Castle extends AbstractResidence
 		return null;
 	}
 	
-	public synchronized void engrave(L2Clan clan, L2Object target, CastleSide side)
+	public synchronized void engrave(L2Clan clan, WorldObject target, CastleSide side)
 	{
 		if (!_artefacts.contains(target))
 		{
@@ -449,7 +449,7 @@ public final class Castle extends AbstractResidence
 	 * @param obj
 	 * @return
 	 */
-	public double getDistance(L2Object obj)
+	public double getDistance(WorldObject obj)
 	{
 		return getZone().getDistanceToZone(obj);
 	}
@@ -1164,7 +1164,7 @@ public final class Castle extends AbstractResidence
 	
 	public void spawnSideNpcs()
 	{
-		_sideNpcs.stream().filter(Objects::nonNull).forEach(L2Npc::deleteMe);
+		_sideNpcs.stream().filter(Objects::nonNull).forEach(Npc::deleteMe);
 		_sideNpcs.clear();
 		
 		for (CastleSpawnHolder holder : getSideSpawns())
@@ -1192,7 +1192,7 @@ public final class Castle extends AbstractResidence
 				spawn.setY(holder.getY());
 				spawn.setZ(holder.getZ());
 				spawn.setHeading(holder.getHeading());
-				final L2Npc npc = spawn.doSpawn(false);
+				final Npc npc = spawn.doSpawn(false);
 				npc.broadcastInfo();
 				_sideNpcs.add(npc);
 			}

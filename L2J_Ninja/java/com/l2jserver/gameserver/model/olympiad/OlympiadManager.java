@@ -28,8 +28,8 @@ import javolution.util.FastMap;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.instancemanager.AntiFeedManager;
-import com.l2jserver.gameserver.model.L2Party;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.Party;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -285,7 +285,7 @@ public class OlympiadManager
 			}
 			case TEAMS:
 			{
-				final L2Party party = player.getParty();
+				final Party party = player.getParty();
 				if ((party == null) || (party.getMemberCount() != 3))
 				{
 					player.sendPacket(SystemMessageId.THE_REQUEST_CANNOT_BE_MADE_BECAUSE_THE_REQUIREMENTS_HAVE_NOT_BEEN_MET_TO_PARTICIPATE_IN_A_TEAM_MATCH_YOU_MUST_FIRST_FORM_A_3_MEMBER_PARTY);
@@ -562,7 +562,7 @@ public class OlympiadManager
 			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_BEEN_REMOVED_FROM_THE_OLYMPIAD_WAITING_LIST);
 			for (int objectId : _team)
 			{
-				L2PcInstance teamMember = L2World.getInstance().getPlayer(objectId);
+				L2PcInstance teamMember = World.getInstance().getPlayer(objectId);
 				if (teamMember != null)
 				{
 					teamMember.sendPacket(sm);

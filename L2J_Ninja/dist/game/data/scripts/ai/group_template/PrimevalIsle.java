@@ -26,10 +26,10 @@ import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.handler.IItemHandler;
 import com.l2jserver.gameserver.handler.ItemHandler;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
@@ -121,12 +121,12 @@ public final class PrimevalIsle extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill)
+	public String onSpellFinished(Npc npc, L2PcInstance player, Skill skill)
 	{
 		if (skill.getId() == CREW_SKILL.getSkillId())
 		{
 			startQuestTimer("START_INVUL", 4000, npc, null);
-			final L2Npc target = (L2Npc) npc.getTarget();
+			final Npc target = (Npc) npc.getTarget();
 			if (target != null)
 			{
 				target.doDie(npc);
@@ -134,8 +134,8 @@ public final class PrimevalIsle extends AbstractNpcAI
 		}
 		if (npc.isInCombat())
 		{
-			final L2Attackable mob = (L2Attackable) npc;
-			final L2Character target = mob.getMostHated();
+			final Attackable mob = (Attackable) npc;
+			final Creature target = mob.getMostHated();
 			if (((npc.getCurrentHp() / npc.getMaxHp()) * 100) < 60)
 			{
 				if (skill.getId() == SELFBUFF1.getSkillId())
@@ -180,7 +180,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		switch (event)
 		{
@@ -244,13 +244,13 @@ public final class PrimevalIsle extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSeeCreature(L2Npc npc, L2Character creature, boolean isSummon)
+	public String onSeeCreature(Npc npc, Creature creature, boolean isSummon)
 	{
 		if (Util.contains(MONSTERS, npc.getId()))
 		{
 			if (creature.isPlayer())
 			{
-				final L2Attackable mob = (L2Attackable) npc;
+				final Attackable mob = (Attackable) npc;
 				final int ag_type = npc.getTemplate().getParameters().getInt("ag_type", 0);
 				final int probPhysicalSpecial1 = npc.getTemplate().getParameters().getInt("ProbPhysicalSpecial1", 0);
 				final int probPhysicalSpecial2 = npc.getTemplate().getParameters().getInt("ProbPhysicalSpecial2", 0);
@@ -306,32 +306,32 @@ public final class PrimevalIsle extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAggroRangeEnter(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		if (npc.isScriptValue(0))
 		{
 			npc.setScriptValue(1);
 			broadcastNpcSay(npc, ChatType.NPC_GENERAL, "?");
-			((L2Attackable) npc).clearAggroList();
+			((Attackable) npc).clearAggroList();
 			startQuestTimer("TREX_ATTACK", 6000, npc, player);
 		}
 		return super.onAggroRangeEnter(npc, player, isSummon);
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
 		if (npc.getId() == EGG)
 		{
 			if ((getRandom(100) <= 80) && npc.isScriptValue(0))
 			{
 				npc.setScriptValue(1);
-				final L2Playable playable = isSummon ? attacker.getServitors().values().stream().findFirst().orElse(attacker.getPet()) : attacker;
-				for (L2Character characters : npc.getKnownList().getKnownCharactersInRadius(500))
+				final Playable playable = isSummon ? attacker.getServitors().values().stream().findFirst().orElse(attacker.getPet()) : attacker;
+				for (Creature characters : npc.getKnownList().getKnownCharactersInRadius(500))
 				{
 					if ((characters != null) && (characters.isAttackable()) && (getRandomBoolean()))
 					{
-						L2Attackable monster = (L2Attackable) characters;
+						Attackable monster = (Attackable) characters;
 						addAttackPlayerDesire(monster, playable);
 					}
 				}
@@ -339,8 +339,8 @@ public final class PrimevalIsle extends AbstractNpcAI
 		}
 		else if (Util.contains(TREX, npc.getId()))
 		{
-			final L2Attackable mob = (L2Attackable) npc;
-			final L2Character target = mob.getMostHated();
+			final Attackable mob = (Attackable) npc;
+			final Creature target = mob.getMostHated();
 			
 			if (((npc.getCurrentHp() / npc.getMaxHp()) * 100) <= 30)
 			{
@@ -401,7 +401,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 		}
 		else
 		{
-			L2Character target = null;
+			Creature target = null;
 			final int probPhysicalSpecial1 = npc.getTemplate().getParameters().getInt("ProbPhysicalSpecial1", 0);
 			final int probPhysicalSpecial2 = npc.getTemplate().getParameters().getInt("ProbPhysicalSpecial2", 0);
 			final SkillHolder selfRangeBuff1 = npc.getTemplate().getParameters().getObject("SelfRangeBuff1", SkillHolder.class);
@@ -419,7 +419,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 			
 			if ((((npc.getCurrentHp() / npc.getMaxHp()) * 100) <= 30) && (npc.getVariables().getInt("SELFBUFF_USED") == 0))
 			{
-				final L2Attackable mob = (L2Attackable) npc;
+				final Attackable mob = (Attackable) npc;
 				target = mob.getMostHated();
 				mob.clearAggroList();
 				if (!npc.isSkillDisabled(selfRangeBuff1.getSkillId()))
@@ -455,7 +455,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		if ((npc.getId() == DEINO) || ((npc.getId() == ORNIT) && !npc.isScriptValue(1)))
 		{
@@ -484,7 +484,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		if (Util.contains(SPRIGNANT, npc.getId()))
 		{

@@ -25,7 +25,7 @@ import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.NpcStringId;
 
@@ -90,7 +90,7 @@ public final class TeleportToFantasy extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		if (npc.getId() == PADDIES)
 		{

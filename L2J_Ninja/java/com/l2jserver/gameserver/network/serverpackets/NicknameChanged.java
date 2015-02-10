@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 
 /**
  * @author devScarlet
@@ -28,7 +28,7 @@ public class NicknameChanged extends L2GameServerPacket
 	private final String _title;
 	private final int _objectId;
 	
-	public NicknameChanged(L2Character cha)
+	public NicknameChanged(Creature cha)
 	{
 		_objectId = cha.getObjectId();
 		_title = cha.getTitle();

@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.model.actor.tasks.character;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.skills.Skill;
 
 /**
@@ -27,10 +27,10 @@ import com.l2jserver.gameserver.model.skills.Skill;
  */
 public final class UsePotionTask implements Runnable
 {
-	private final L2Character _character;
+	private final Creature _character;
 	private final Skill _skill;
 	
-	public UsePotionTask(L2Character character, Skill skill)
+	public UsePotionTask(Creature character, Skill skill)
 	{
 		_character = character;
 		_skill = skill;

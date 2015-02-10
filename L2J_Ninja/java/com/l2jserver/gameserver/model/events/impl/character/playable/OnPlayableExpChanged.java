@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.model.events.impl.character.playable;
 
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
 
@@ -27,18 +27,18 @@ import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
  */
 public class OnPlayableExpChanged implements IBaseEvent
 {
-	private final L2Playable _activeChar;
+	private final Playable _activeChar;
 	private final long _oldExp;
 	private final long _newExp;
 	
-	public OnPlayableExpChanged(L2Playable activeChar, long oldExp, long newExp)
+	public OnPlayableExpChanged(Playable activeChar, long oldExp, long newExp)
 	{
 		_activeChar = activeChar;
 		_oldExp = oldExp;
 		_newExp = newExp;
 	}
 	
-	public L2Playable getActiveChar()
+	public Playable getActiveChar()
 	{
 		return _activeChar;
 	}

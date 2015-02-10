@@ -24,8 +24,8 @@ import java.util.stream.Collectors;
 
 import com.l2jserver.gameserver.handler.IBypassHandler;
 import com.l2jserver.gameserver.instancemanager.QuestManager;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.listeners.AbstractEventListener;
@@ -44,7 +44,7 @@ public class QuestLink implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Character target)
+	public boolean useBypass(String command, L2PcInstance activeChar, Creature target)
 	{
 		String quest = "";
 		try
@@ -56,14 +56,14 @@ public class QuestLink implements IBypassHandler
 		}
 		if (quest.length() == 0)
 		{
-			showQuestWindow(activeChar, (L2Npc) target);
+			showQuestWindow(activeChar, (Npc) target);
 		}
 		else
 		{
 			int questNameEnd = quest.indexOf(" ");
 			if (questNameEnd == -1)
 			{
-				showQuestWindow(activeChar, (L2Npc) target, quest);
+				showQuestWindow(activeChar, (Npc) target, quest);
 			}
 			else
 			{
@@ -81,7 +81,7 @@ public class QuestLink implements IBypassHandler
 	 * @param npc The table containing quests of the L2NpcInstance
 	 * @param quests
 	 */
-	public static void showQuestChooseWindow(L2PcInstance player, L2Npc npc, Collection<Quest> quests)
+	public static void showQuestChooseWindow(L2PcInstance player, Npc npc, Collection<Quest> quests)
 	{
 		final StringBuilder sb = StringUtil.startAppend(150, "<html><body>");
 		String state = "";
@@ -162,7 +162,7 @@ public class QuestLink implements IBypassHandler
 	 * @param npc the L2NpcInstance that chats with the {@code player}
 	 * @param questId the Id of the quest to display the message
 	 */
-	public static void showQuestWindow(L2PcInstance player, L2Npc npc, String questId)
+	public static void showQuestWindow(L2PcInstance player, Npc npc, String questId)
 	{
 		String content = null;
 		
@@ -216,7 +216,7 @@ public class QuestLink implements IBypassHandler
 	 * @param player the L2PcInstance that talk with the {@code npc}.
 	 * @param npc the L2NpcInstance that chats with the {@code player}.
 	 */
-	private static void showQuestWindow(final L2PcInstance player, L2Npc npc)
+	private static void showQuestWindow(final L2PcInstance player, Npc npc)
 	{
 		//@formatter:off
 		final Set<Quest> quests = npc.getListeners(EventType.ON_NPC_TALK).stream()

@@ -29,12 +29,12 @@ import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.ai.CtrlEvent;
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.instancemanager.DuelManager;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2Party;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Playable;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.Party;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Playable;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.tasks.cubics.CubicAction;
 import com.l2jserver.gameserver.model.actor.tasks.cubics.CubicDisappear;
 import com.l2jserver.gameserver.model.actor.tasks.cubics.CubicHeal;
@@ -78,7 +78,7 @@ public final class L2CubicInstance implements IIdentifiable
 	public static final int SKILL_CUBIC_CURE = 5579;
 	
 	private final L2PcInstance _owner;
-	private L2Character _target;
+	private Creature _target;
 	
 	private final int _cubicId;
 	private final int _cubicPower;
@@ -208,12 +208,12 @@ public final class L2CubicInstance implements IIdentifiable
 		return _cubicPower;
 	}
 	
-	public L2Character getTarget()
+	public Creature getTarget()
 	{
 		return _target;
 	}
 	
-	public void setTarget(L2Character target)
+	public void setTarget(Creature target)
 	{
 		_target = target;
 	}
@@ -254,7 +254,7 @@ public final class L2CubicInstance implements IIdentifiable
 		try
 		{
 			_target = null;
-			L2Object ownerTarget = _owner.getTarget();
+			WorldObject ownerTarget = _owner.getTarget();
 			if (ownerTarget == null)
 			{
 				return;
@@ -269,7 +269,7 @@ public final class L2CubicInstance implements IIdentifiable
 					L2PcInstance target = ownerTarget.getActingPlayer();
 					if (enemyTeam.containsPlayer(target.getObjectId()) && !(target.isDead()))
 					{
-						_target = (L2Character) ownerTarget;
+						_target = (Creature) ownerTarget;
 					}
 				}
 				return;
@@ -282,9 +282,9 @@ public final class L2CubicInstance implements IIdentifiable
 				
 				if (DuelManager.getInstance().getDuel(_owner.getDuelId()).isPartyDuel())
 				{
-					L2Party partyA = PlayerA.getParty();
-					L2Party partyB = PlayerB.getParty();
-					L2Party partyEnemy = null;
+					Party partyA = PlayerA.getParty();
+					Party partyB = PlayerB.getParty();
+					Party partyEnemy = null;
 					
 					if (partyA != null)
 					{
@@ -333,7 +333,7 @@ public final class L2CubicInstance implements IIdentifiable
 					{
 						if (partyEnemy.getMembers().contains(ownerTarget))
 						{
-							_target = (L2Character) ownerTarget;
+							_target = (Creature) ownerTarget;
 						}
 						return;
 					}
@@ -356,41 +356,41 @@ public final class L2CubicInstance implements IIdentifiable
 			{
 				if (_owner.isOlympiadStart())
 				{
-					if (ownerTarget instanceof L2Playable)
+					if (ownerTarget instanceof Playable)
 					{
 						final L2PcInstance targetPlayer = ownerTarget.getActingPlayer();
 						if ((targetPlayer != null) && (targetPlayer.getOlympiadGameId() == _owner.getOlympiadGameId()) && (targetPlayer.getOlympiadSide() != _owner.getOlympiadSide()))
 						{
-							_target = (L2Character) ownerTarget;
+							_target = (Creature) ownerTarget;
 						}
 					}
 				}
 				return;
 			}
 			// test owners target if it is valid then use it
-			final L2Summon pet = _owner.getPet();
+			final Summon pet = _owner.getPet();
 			if (ownerTarget.isCharacter() && (ownerTarget != pet) && !_owner.hasServitor(ownerTarget.getObjectId()) && (ownerTarget != _owner))
 			{
 				// target mob which has aggro on you or your summon
-				if (ownerTarget instanceof L2Attackable)
+				if (ownerTarget instanceof Attackable)
 				{
-					if ((((L2Attackable) ownerTarget).getAggroList().get(_owner) != null) && !((L2Attackable) ownerTarget).isDead())
+					if ((((Attackable) ownerTarget).getAggroList().get(_owner) != null) && !((Attackable) ownerTarget).isDead())
 					{
-						_target = (L2Character) ownerTarget;
+						_target = (Creature) ownerTarget;
 						return;
 					}
 					if (_owner.hasSummon())
 					{
-						if ((((L2Attackable) ownerTarget).getAggroList().get(pet) != null) && !((L2Attackable) ownerTarget).isDead())
+						if ((((Attackable) ownerTarget).getAggroList().get(pet) != null) && !((Attackable) ownerTarget).isDead())
 						{
-							_target = (L2Character) ownerTarget;
+							_target = (Creature) ownerTarget;
 							return;
 						}
-						for (L2Summon servitor : _owner.getServitors().values())
+						for (Summon servitor : _owner.getServitors().values())
 						{
-							if ((((L2Attackable) ownerTarget).getAggroList().get(servitor) != null) && !((L2Attackable) ownerTarget).isDead())
+							if ((((Attackable) ownerTarget).getAggroList().get(servitor) != null) && !((Attackable) ownerTarget).isDead())
 							{
-								_target = (L2Character) ownerTarget;
+								_target = (Creature) ownerTarget;
 								return;
 							}
 						}
@@ -402,7 +402,7 @@ public final class L2CubicInstance implements IIdentifiable
 				
 				if (((_owner.getPvpFlag() > 0) && !_owner.isInsideZone(ZoneId.PEACE)) || _owner.isInsideZone(ZoneId.PVP))
 				{
-					if (!((L2Character) ownerTarget).isDead())
+					if (!((Creature) ownerTarget).isDead())
 					{
 						enemy = ownerTarget.getActingPlayer();
 					}
@@ -471,9 +471,9 @@ public final class L2CubicInstance implements IIdentifiable
 		}
 	}
 	
-	public void useCubicContinuous(Skill skill, L2Object[] targets)
+	public void useCubicContinuous(Skill skill, WorldObject[] targets)
 	{
-		for (L2Character target : (L2Character[]) targets)
+		for (Creature target : (Creature[]) targets)
 		{
 			if ((target == null) || target.isDead())
 			{
@@ -508,9 +508,9 @@ public final class L2CubicInstance implements IIdentifiable
 	 * @param skill
 	 * @param targets
 	 */
-	public void useCubicMdam(L2CubicInstance activeCubic, Skill skill, L2Object[] targets)
+	public void useCubicMdam(L2CubicInstance activeCubic, Skill skill, WorldObject[] targets)
 	{
-		for (L2Character target : (L2Character[]) targets)
+		for (Creature target : (Creature[]) targets)
 		{
 			if (target == null)
 			{
@@ -561,14 +561,14 @@ public final class L2CubicInstance implements IIdentifiable
 		}
 	}
 	
-	public void useCubicDrain(L2CubicInstance activeCubic, Skill skill, L2Object[] targets)
+	public void useCubicDrain(L2CubicInstance activeCubic, Skill skill, WorldObject[] targets)
 	{
 		if (Config.DEBUG)
 		{
 			_log.info("L2SkillDrain: useCubicSkill()");
 		}
 		
-		for (L2Character target : (L2Character[]) targets)
+		for (Creature target : (Creature[]) targets)
 		{
 			if (target.isAlikeDead())
 			{
@@ -607,14 +607,14 @@ public final class L2CubicInstance implements IIdentifiable
 		}
 	}
 	
-	public void useCubicDisabler(Skill skill, L2Object[] targets)
+	public void useCubicDisabler(Skill skill, WorldObject[] targets)
 	{
 		if (Config.DEBUG)
 		{
 			_log.info("Disablers: useCubicSkill()");
 		}
 		
-		for (L2Character target : (L2Character[]) targets)
+		for (Creature target : (Creature[]) targets)
 		{
 			if ((target == null) || target.isDead())
 			{
@@ -683,7 +683,7 @@ public final class L2CubicInstance implements IIdentifiable
 	 * @param target
 	 * @return true if the target is inside of the owner's max Cubic range
 	 */
-	public static boolean isInCubicRange(L2Character owner, L2Character target)
+	public static boolean isInCubicRange(Creature owner, Creature target)
 	{
 		if ((owner == null) || (target == null))
 		{
@@ -704,9 +704,9 @@ public final class L2CubicInstance implements IIdentifiable
 	/** this sets the friendly target for a cubic */
 	public void cubicTargetForHeal()
 	{
-		L2Character target = null;
+		Creature target = null;
 		double percentleft = 100.0;
-		L2Party party = _owner.getParty();
+		Party party = _owner.getParty();
 		
 		// if owner is in a duel but not in a party duel, then it is the same as he does not have a party
 		if (_owner.isInDuel())
@@ -721,7 +721,7 @@ public final class L2CubicInstance implements IIdentifiable
 		{
 			// Get all visible objects in a spheric area near the L2Character
 			// Get a list of Party Members
-			for (L2Character partyMember : party.getMembers())
+			for (Creature partyMember : party.getMembers())
 			{
 				if (!partyMember.isDead())
 				{
@@ -740,7 +740,7 @@ public final class L2CubicInstance implements IIdentifiable
 						}
 					}
 				}
-				final L2Summon pet = partyMember.getPet();
+				final Summon pet = partyMember.getPet();
 				if (pet != null)
 				{
 					if (pet.isDead() || !isInCubicRange(_owner, pet))
@@ -759,7 +759,7 @@ public final class L2CubicInstance implements IIdentifiable
 						}
 					}
 				}
-				for (L2Summon s : partyMember.getServitors().values())
+				for (Summon s : partyMember.getServitors().values())
 				{
 					if (s.isDead() || !isInCubicRange(_owner, s))
 					{
@@ -786,14 +786,14 @@ public final class L2CubicInstance implements IIdentifiable
 				percentleft = (_owner.getCurrentHp() / _owner.getMaxHp());
 				target = _owner;
 			}
-			for (L2Summon summon : _owner.getServitors().values())
+			for (Summon summon : _owner.getServitors().values())
 			{
 				if (!summon.isDead() && (summon.getCurrentHp() < summon.getMaxHp()) && (percentleft > (summon.getCurrentHp() / summon.getMaxHp())) && isInCubicRange(_owner, summon))
 				{
 					target = summon;
 				}
 			}
-			final L2Summon pet = _owner.getPet();
+			final Summon pet = _owner.getPet();
 			if (pet != null)
 			{
 				if (!pet.isDead() && (pet.getCurrentHp() < pet.getMaxHp()) && (percentleft > (pet.getCurrentHp() / pet.getMaxHp())) && isInCubicRange(_owner, pet))

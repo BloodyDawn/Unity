@@ -21,10 +21,10 @@ package com.l2jserver.gameserver.model.actor.instance;
 import java.util.Iterator;
 import java.util.List;
 
-import com.l2jserver.gameserver.ai.L2ShuttleAI;
+import com.l2jserver.gameserver.ai.ShuttleAI;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Vehicle;
+import com.l2jserver.gameserver.model.actor.Vehicle;
 import com.l2jserver.gameserver.model.actor.templates.L2CharTemplate;
 import com.l2jserver.gameserver.model.shuttle.L2ShuttleData;
 import com.l2jserver.gameserver.model.shuttle.L2ShuttleStop;
@@ -35,7 +35,7 @@ import com.l2jserver.gameserver.network.serverpackets.shuttle.ExShuttleInfo;
 /**
  * @author UnAfraid
  */
-public class L2ShuttleInstance extends L2Vehicle
+public class L2ShuttleInstance extends Vehicle
 {
 	private L2ShuttleData _shuttleData;
 	
@@ -43,7 +43,7 @@ public class L2ShuttleInstance extends L2Vehicle
 	{
 		super(objectId, template);
 		setInstanceType(InstanceType.L2ShuttleInstance);
-		setAI(new L2ShuttleAI(new AIAccessor()));
+		setAI(new ShuttleAI(new AIAccessor()));
 	}
 	
 	public List<L2ShuttleStop> getStops()

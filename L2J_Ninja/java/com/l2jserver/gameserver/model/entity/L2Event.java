@@ -40,8 +40,8 @@ import com.l2jserver.gameserver.data.xml.impl.NpcData;
 import com.l2jserver.gameserver.datatables.SpawnTable;
 import com.l2jserver.gameserver.instancemanager.AntiFeedManager;
 import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.holders.PlayerEventHolder;
@@ -208,7 +208,7 @@ public class L2Event
 	{
 		SpawnTable.getInstance().forEachSpawn(spawn ->
 		{
-			L2Npc npc = spawn.getLastSpawn();
+			Npc npc = spawn.getLastSpawn();
 			if ((npc != null) && npc.isEventMob())
 			{
 				npc.deleteMe();
@@ -386,7 +386,7 @@ public class L2Event
 			}
 			
 			List<L2PcInstance> temp = new FastList<>();
-			for (L2PcInstance player : L2World.getInstance().getPlayers())
+			for (L2PcInstance player : World.getInstance().getPlayers())
 			{
 				if (!player.isOnline())
 				{

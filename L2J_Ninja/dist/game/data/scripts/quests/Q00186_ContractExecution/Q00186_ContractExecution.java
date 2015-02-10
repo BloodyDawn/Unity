@@ -24,7 +24,7 @@ import java.util.Map;
 import quests.Q00184_ArtOfPersuasion.Q00184_ArtOfPersuasion;
 
 import com.l2jserver.gameserver.enums.QuestSound;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
@@ -69,7 +69,7 @@ public final class Q00186_ContractExecution extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
@@ -146,7 +146,7 @@ public final class Q00186_ContractExecution extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(killer, false);
 		if ((qs != null) && qs.isMemoState(2) && Util.checkIfInRange(1500, npc, killer, false) && (getRandom(100) < MONSTERS.get(npc.getId())))
@@ -161,7 +161,7 @@ public final class Q00186_ContractExecution extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = getQuestState(player, true);
 		final int memoState = qs.getMemoState();

@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.network.clientpackets;
 
 import com.l2jserver.gameserver.RecipeController;
 import com.l2jserver.gameserver.enums.PrivateStoreType;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.util.Util;
 
@@ -58,7 +58,7 @@ public final class RequestRecipeShopMakeItem extends L2GameClientPacket
 			return;
 		}
 		
-		L2PcInstance manufacturer = L2World.getInstance().getPlayer(_id);
+		L2PcInstance manufacturer = World.getInstance().getPlayer(_id);
 		if (manufacturer == null)
 		{
 			return;

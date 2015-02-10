@@ -28,7 +28,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.l2jserver.L2DatabaseFactory;
-import com.l2jserver.gameserver.model.L2Territory;
+import com.l2jserver.gameserver.model.Territory;
 import com.l2jserver.gameserver.model.Location;
 
 /**
@@ -38,7 +38,7 @@ public class TerritoryTable
 {
 	private static final Logger LOGGER = Logger.getLogger(TerritoryTable.class.getName());
 	
-	private static final Map<Integer, L2Territory> _territory = new HashMap<>();
+	private static final Map<Integer, Territory> _territory = new HashMap<>();
 	
 	/**
 	 * Instantiates a new territory.
@@ -81,10 +81,10 @@ public class TerritoryTable
 			while (rset.next())
 			{
 				int terrId = rset.getInt("loc_id");
-				L2Territory terr = _territory.get(terrId);
+				Territory terr = _territory.get(terrId);
 				if (terr == null)
 				{
-					terr = new L2Territory(terrId);
+					terr = new Territory(terrId);
 					_territory.put(terrId, terr);
 				}
 				terr.add(rset.getInt("loc_x"), rset.getInt("loc_y"), rset.getInt("loc_zmin"), rset.getInt("loc_zmax"), rset.getInt("proc"));

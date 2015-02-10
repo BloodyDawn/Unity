@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.model.actor.knownlist;
 
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.instance.L2DefenderInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2StaticObjectInstance;
 
@@ -36,7 +36,7 @@ public class StaticObjectKnownList extends CharKnownList
 	}
 	
 	@Override
-	public int getDistanceToForgetObject(L2Object object)
+	public int getDistanceToForgetObject(WorldObject object)
 	{
 		if (object instanceof L2DefenderInstance)
 		{
@@ -51,7 +51,7 @@ public class StaticObjectKnownList extends CharKnownList
 	}
 	
 	@Override
-	public int getDistanceToWatchObject(L2Object object)
+	public int getDistanceToWatchObject(WorldObject object)
 	{
 		if (object instanceof L2DefenderInstance)
 		{

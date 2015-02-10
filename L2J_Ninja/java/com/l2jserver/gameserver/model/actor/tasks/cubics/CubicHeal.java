@@ -21,7 +21,7 @@ package com.l2jserver.gameserver.model.actor.tasks.cubics;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2CubicInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.serverpackets.MagicSkillUse;
@@ -71,12 +71,12 @@ public class CubicHeal implements Runnable
 			if (skill != null)
 			{
 				_cubic.cubicTargetForHeal();
-				final L2Character target = _cubic.getTarget();
+				final Creature target = _cubic.getTarget();
 				if ((target != null) && !target.isDead())
 				{
 					if ((target.getMaxHp() - target.getCurrentHp()) > skill.getPower())
 					{
-						L2Character[] targets =
+						Creature[] targets =
 						{
 							target
 						};

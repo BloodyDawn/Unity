@@ -20,7 +20,7 @@ package quests.Q00129_PailakaDevilsLegacy;
 
 import com.l2jserver.gameserver.enums.QuestSound;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Instance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
@@ -74,7 +74,7 @@ public final class Q00129_PailakaDevilsLegacy extends Quest
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		String htmltext = null;
@@ -123,7 +123,7 @@ public final class Q00129_PailakaDevilsLegacy extends Quest
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public final String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		if ((npc.getId() != ADVENTURER2) || (qs == null) || !qs.isCompleted())
@@ -134,7 +134,7 @@ public final class Q00129_PailakaDevilsLegacy extends Quest
 	}
 	
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player)
+	public final String onTalk(Npc npc, L2PcInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState qs = getQuestState(player, true);
@@ -276,7 +276,7 @@ public final class Q00129_PailakaDevilsLegacy extends Quest
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public final String onKill(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(player, false);
 		

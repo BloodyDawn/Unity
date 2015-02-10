@@ -20,7 +20,7 @@ package handlers.effecthandlers;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
+import com.l2jserver.gameserver.model.actor.Attackable;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
@@ -68,7 +68,7 @@ public final class DeleteHateOfMe extends AbstractEffect
 			return;
 		}
 		
-		L2Attackable target = (L2Attackable) info.getEffected();
+		Attackable target = (Attackable) info.getEffected();
 		target.stopHating(info.getEffector());
 		target.setWalking();
 		target.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);

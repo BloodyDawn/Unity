@@ -23,23 +23,23 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2WorldRegion;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.WorldRegion;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.util.Util;
 
 public class ObjectKnownList
 {
-	private final L2Object _activeObject;
-	private Map<Integer, L2Object> _knownObjects;
+	private final WorldObject _activeObject;
+	private Map<Integer, WorldObject> _knownObjects;
 	
-	public ObjectKnownList(L2Object activeObject)
+	public ObjectKnownList(WorldObject activeObject)
 	{
 		_activeObject = activeObject;
 	}
 	
-	public boolean addKnownObject(L2Object object)
+	public boolean addKnownObject(WorldObject object)
 	{
 		if (object == null)
 		{
@@ -73,7 +73,7 @@ public class ObjectKnownList
 		return (getKnownObjects().put(object.getObjectId(), object) == null);
 	}
 	
-	public final boolean knowsObject(L2Object object)
+	public final boolean knowsObject(WorldObject object)
 	{
 		if (object == null)
 		{
@@ -91,12 +91,12 @@ public class ObjectKnownList
 		getKnownObjects().clear();
 	}
 	
-	public final boolean removeKnownObject(L2Object object)
+	public final boolean removeKnownObject(WorldObject object)
 	{
 		return removeKnownObject(object, false);
 	}
 	
-	protected boolean removeKnownObject(L2Object object, boolean forget)
+	protected boolean removeKnownObject(WorldObject object, boolean forget)
 	{
 		if (object == null)
 		{
@@ -116,7 +116,7 @@ public class ObjectKnownList
 	 */
 	public final void findObjects()
 	{
-		final L2WorldRegion region = getActiveObject().getWorldRegion();
+		final WorldRegion region = getActiveObject().getWorldRegion();
 		if (region == null)
 		{
 			return;
@@ -124,15 +124,15 @@ public class ObjectKnownList
 		
 		if (getActiveObject().isPlayable())
 		{
-			for (L2WorldRegion regi : region.getSurroundingRegions()) // offer members of this and surrounding regions
+			for (WorldRegion regi : region.getSurroundingRegions()) // offer members of this and surrounding regions
 			{
-				Collection<L2Object> vObj = regi.getVisibleObjects().values();
-				for (L2Object object : vObj)
+				Collection<WorldObject> vObj = regi.getVisibleObjects().values();
+				for (WorldObject object : vObj)
 				{
 					if (object != getActiveObject())
 					{
 						addKnownObject(object);
-						if (object instanceof L2Character)
+						if (object instanceof Creature)
 						{
 							object.getKnownList().addKnownObject(getActiveObject());
 						}
@@ -140,14 +140,14 @@ public class ObjectKnownList
 				}
 			}
 		}
-		else if (getActiveObject() instanceof L2Character)
+		else if (getActiveObject() instanceof Creature)
 		{
-			for (L2WorldRegion regi : region.getSurroundingRegions()) // offer members of this and surrounding regions
+			for (WorldRegion regi : region.getSurroundingRegions()) // offer members of this and surrounding regions
 			{
 				if (regi.isActive())
 				{
-					Collection<L2Playable> vPls = regi.getVisiblePlayable().values();
-					for (L2Object object : vPls)
+					Collection<Playable> vPls = regi.getVisiblePlayable().values();
+					for (WorldObject object : vPls)
 					{
 						if (object != getActiveObject())
 						{
@@ -166,9 +166,9 @@ public class ObjectKnownList
 	public void forgetObjects(boolean fullCheck)
 	{
 		// Go through knownObjects
-		final Collection<L2Object> objs = getKnownObjects().values();
-		final Iterator<L2Object> oIter = objs.iterator();
-		L2Object object;
+		final Collection<WorldObject> objs = getKnownObjects().values();
+		final Iterator<WorldObject> oIter = objs.iterator();
+		WorldObject object;
 		while (oIter.hasNext())
 		{
 			object = oIter.next();
@@ -192,17 +192,17 @@ public class ObjectKnownList
 		}
 	}
 	
-	public L2Object getActiveObject()
+	public WorldObject getActiveObject()
 	{
 		return _activeObject;
 	}
 	
-	public int getDistanceToForgetObject(L2Object object)
+	public int getDistanceToForgetObject(WorldObject object)
 	{
 		return 0;
 	}
 	
-	public int getDistanceToWatchObject(L2Object object)
+	public int getDistanceToWatchObject(WorldObject object)
 	{
 		return 0;
 	}
@@ -210,7 +210,7 @@ public class ObjectKnownList
 	/**
 	 * @return the _knownObjects containing all L2Object known by the L2Character.
 	 */
-	public final Map<Integer, L2Object> getKnownObjects()
+	public final Map<Integer, WorldObject> getKnownObjects()
 	{
 		if (_knownObjects == null)
 		{

@@ -18,13 +18,13 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 
 public final class MoveToLocation extends L2GameServerPacket
 {
 	private final int _charObjId, _x, _y, _z, _xDst, _yDst, _zDst;
 	
-	public MoveToLocation(L2Character cha)
+	public MoveToLocation(Creature cha)
 	{
 		_charObjId = cha.getObjectId();
 		_x = cha.getX();

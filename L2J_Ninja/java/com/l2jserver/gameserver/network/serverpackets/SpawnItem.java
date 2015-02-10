@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
 
 public final class SpawnItem extends L2GameServerPacket
@@ -29,7 +29,7 @@ public final class SpawnItem extends L2GameServerPacket
 	private int _stackable;
 	private long _count;
 	
-	public SpawnItem(L2Object obj)
+	public SpawnItem(WorldObject obj)
 	{
 		_objectId = obj.getObjectId();
 		_x = obj.getX();

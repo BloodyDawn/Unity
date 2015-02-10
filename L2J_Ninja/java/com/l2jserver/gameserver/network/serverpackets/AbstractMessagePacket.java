@@ -31,9 +31,9 @@ import com.l2jserver.gameserver.instancemanager.CastleManager;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.Elementals;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
@@ -193,11 +193,11 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 		return (T) this;
 	}
 	
-	public final T addCharName(final L2Character cha)
+	public final T addCharName(final Creature cha)
 	{
 		if (cha.isNpc())
 		{
-			final L2Npc npc = (L2Npc) cha;
+			final Npc npc = (Npc) cha;
 			if (npc.getTemplate().isUsingServerSideName())
 			{
 				return addString(npc.getTemplate().getName());
@@ -210,7 +210,7 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 		}
 		else if (cha.isSummon())
 		{
-			final L2Summon summon = (L2Summon) cha;
+			final Summon summon = (Summon) cha;
 			if (summon.getTemplate().isUsingServerSideName())
 			{
 				return addString(summon.getTemplate().getName());
@@ -242,12 +242,12 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 		return (T) this;
 	}
 	
-	public final T addNpcName(L2Npc npc)
+	public final T addNpcName(Npc npc)
 	{
 		return addNpcName(npc.getTemplate());
 	}
 	
-	public final T addNpcName(final L2Summon npc)
+	public final T addNpcName(final Summon npc)
 	{
 		return addNpcName(npc.getId());
 	}

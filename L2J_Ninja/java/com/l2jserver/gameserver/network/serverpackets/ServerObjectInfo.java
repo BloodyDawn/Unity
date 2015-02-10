@@ -18,22 +18,22 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 
 /**
  * @author devScarlet, mrTJO
  */
 public final class ServerObjectInfo extends L2GameServerPacket
 {
-	private final L2Npc _activeChar;
+	private final Npc _activeChar;
 	private final int _x, _y, _z, _heading;
 	private final int _idTemplate;
 	private final boolean _isAttackable;
 	private final double _collisionHeight, _collisionRadius;
 	private final String _name;
 	
-	public ServerObjectInfo(L2Npc activeChar, L2Character actor)
+	public ServerObjectInfo(Npc activeChar, Creature actor)
 	{
 		_activeChar = activeChar;
 		_idTemplate = _activeChar.getTemplate().getDisplayId();

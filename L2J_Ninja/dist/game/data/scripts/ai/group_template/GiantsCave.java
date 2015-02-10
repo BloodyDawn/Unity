@@ -21,8 +21,8 @@ package ai.group_template;
 import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.NpcStringId;
 
@@ -47,7 +47,7 @@ public final class GiantsCave extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.equals("ATTACK") && (player != null) && (npc != null) && !npc.isDead())
 		{
@@ -60,11 +60,11 @@ public final class GiantsCave extends AbstractNpcAI
 				broadcastNpcSay(npc, ChatType.NPC_SHOUT, NpcStringId.OH_GIANTS_AN_INTRUDER_HAS_BEEN_DISCOVERED);
 			}
 			
-			for (L2Character characters : npc.getKnownList().getKnownCharactersInRadius(450))
+			for (Creature characters : npc.getKnownList().getKnownCharactersInRadius(450))
 			{
 				if ((characters != null) && (characters.isAttackable()) && (getRandomBoolean()))
 				{
-					addAttackPlayerDesire((L2Npc) characters, player);
+					addAttackPlayerDesire((Npc) characters, player);
 				}
 			}
 		}
@@ -76,7 +76,7 @@ public final class GiantsCave extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
 		if (npc.isScriptValue(0))
 		{
@@ -88,7 +88,7 @@ public final class GiantsCave extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAggroRangeEnter(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		if (npc.isScriptValue(0))
 		{

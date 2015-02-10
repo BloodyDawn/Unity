@@ -25,9 +25,9 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2QuestGuardInstance;
 import com.l2jserver.gameserver.model.holders.ItemChanceHolder;
@@ -69,7 +69,7 @@ public final class Quarry extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String htmltext = null;
 		switch (event)
@@ -134,7 +134,7 @@ public final class Quarry extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
+	public final String onSpawn(Npc npc)
 	{
 		npc.setAutoAttackable(false);
 		if (npc instanceof L2QuestGuardInstance)
@@ -145,7 +145,7 @@ public final class Quarry extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public final String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		if (HellboundEngine.getInstance().getLevel() != 5)
 		{
@@ -155,18 +155,18 @@ public final class Quarry extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public final String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		npc.setAutoAttackable(false);
 		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
-	public final String onEnterZone(L2Character character, L2ZoneType zone)
+	public final String onEnterZone(Creature character, L2ZoneType zone)
 	{
 		if (character.isAttackable())
 		{
-			final L2Attackable npc = (L2Attackable) character;
+			final Attackable npc = (Attackable) character;
 			if (npc.getId() == SLAVE)
 			{
 				if (!npc.isDead() && !npc.isDecayed() && (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_FOLLOW))

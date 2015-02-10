@@ -21,8 +21,8 @@ package com.l2jserver.gameserver.network.clientpackets;
 import com.l2jserver.gameserver.data.sql.impl.CrestTable;
 import com.l2jserver.gameserver.model.ClanPrivilege;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2Crest;
-import com.l2jserver.gameserver.model.L2Crest.CrestType;
+import com.l2jserver.gameserver.model.Crest;
+import com.l2jserver.gameserver.model.Crest.CrestType;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 
@@ -99,7 +99,7 @@ public final class RequestExSetPledgeCrestLarge extends L2GameClientPacket
 				return;
 			}
 			
-			final L2Crest crest = CrestTable.getInstance().createCrest(_data, CrestType.PLEDGE_LARGE);
+			final Crest crest = CrestTable.getInstance().createCrest(_data, CrestType.PLEDGE_LARGE);
 			if (crest != null)
 			{
 				clan.changeLargeCrest(crest.getId());

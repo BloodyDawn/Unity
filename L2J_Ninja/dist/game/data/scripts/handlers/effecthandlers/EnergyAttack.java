@@ -20,7 +20,7 @@ package handlers.effecthandlers;
 
 import com.l2jserver.gameserver.enums.ShotType;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
@@ -81,7 +81,7 @@ public final class EnergyAttack extends AbstractEffect
 			return;
 		}
 		
-		final L2Character target = info.getEffected();
+		final Creature target = info.getEffected();
 		final Skill skill = info.getSkill();
 		
 		double attack = attacker.getPAtk(target);

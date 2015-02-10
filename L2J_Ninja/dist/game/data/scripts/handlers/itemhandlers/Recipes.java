@@ -20,8 +20,8 @@ package handlers.itemhandlers;
 
 import com.l2jserver.gameserver.data.xml.impl.RecipeData;
 import com.l2jserver.gameserver.handler.IItemHandler;
-import com.l2jserver.gameserver.model.L2RecipeList;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.RecipeList;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -33,7 +33,7 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 public class Recipes implements IItemHandler
 {
 	@Override
-	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+	public boolean useItem(Playable playable, L2ItemInstance item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{
@@ -48,7 +48,7 @@ public class Recipes implements IItemHandler
 			return false;
 		}
 		
-		final L2RecipeList rp = RecipeData.getInstance().getRecipeByItemId(item.getId());
+		final RecipeList rp = RecipeData.getInstance().getRecipeByItemId(item.getId());
 		if (rp == null)
 		{
 			return false;

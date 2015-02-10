@@ -20,7 +20,7 @@ package ai.individual;
 
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 
 /**
  * Training Golem AI.
@@ -38,7 +38,7 @@ public final class TrainingGolem extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		npc.setIsImmobilized(true);
 		return super.onSpawn(npc);

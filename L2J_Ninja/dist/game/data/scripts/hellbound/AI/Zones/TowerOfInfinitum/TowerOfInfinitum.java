@@ -25,9 +25,9 @@ import java.util.Map;
 
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.model.L2Party;
+import com.l2jserver.gameserver.model.Party;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.util.Util;
 
@@ -105,7 +105,7 @@ public final class TowerOfInfinitum extends AbstractNpcAI
 	private static final Location ENTER_LOCATION = new Location(-22204, 277056, -15023);
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String htmltext = event;
 		final int npcId = npc.getId();
@@ -114,7 +114,7 @@ public final class TowerOfInfinitum extends AbstractNpcAI
 		{
 			if (HellboundEngine.getInstance().getLevel() >= 11)
 			{
-				L2Party party = player.getParty();
+				Party party = player.getParty();
 				if ((party != null) && (party.getLeaderObjectId() == player.getObjectId()))
 				{
 					for (L2PcInstance partyMember : party.getMembers())
@@ -143,7 +143,7 @@ public final class TowerOfInfinitum extends AbstractNpcAI
 		else if ((event.equalsIgnoreCase("up") || event.equalsIgnoreCase("down")) && (npcId >= GK_FIRST) && (npcId <= GK_LAST))
 		{
 			final int direction = event.equalsIgnoreCase("up") ? 0 : 1;
-			final L2Party party = player.getParty();
+			final Party party = player.getParty();
 			
 			if (party == null)
 			{

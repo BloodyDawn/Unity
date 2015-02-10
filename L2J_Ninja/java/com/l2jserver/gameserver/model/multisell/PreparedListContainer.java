@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 import javolution.util.FastList;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.items.L2Armor;
 import com.l2jserver.gameserver.model.items.L2Weapon;
@@ -32,7 +32,7 @@ public class PreparedListContainer extends ListContainer
 {
 	private int _npcObjectId = 0;
 	
-	public PreparedListContainer(ListContainer template, boolean inventoryOnly, L2PcInstance player, L2Npc npc)
+	public PreparedListContainer(ListContainer template, boolean inventoryOnly, L2PcInstance player, Npc npc)
 	{
 		super(template);
 		

@@ -20,9 +20,9 @@ package handlers.targethandlers;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.handler.ITargetTypeHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
@@ -35,7 +35,7 @@ import com.l2jserver.gameserver.network.SystemMessageId;
 public class CorpseMob implements ITargetTypeHandler
 {
 	@Override
-	public L2Object[] getTargetList(Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
 	{
 		if ((target == null) || !target.isAttackable() || !target.isDead())
 		{
@@ -48,12 +48,12 @@ public class CorpseMob implements ITargetTypeHandler
 			return EMPTY_TARGET_LIST;
 		}
 		
-		if (skill.hasEffectType(L2EffectType.HP_DRAIN) && ((L2Attackable) target).isOldCorpse(activeChar.getActingPlayer(), Config.CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY, true))
+		if (skill.hasEffectType(L2EffectType.HP_DRAIN) && ((Attackable) target).isOldCorpse(activeChar.getActingPlayer(), Config.CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY, true))
 		{
 			return EMPTY_TARGET_LIST;
 		}
 		
-		return new L2Character[]
+		return new Creature[]
 		{
 			target
 		};

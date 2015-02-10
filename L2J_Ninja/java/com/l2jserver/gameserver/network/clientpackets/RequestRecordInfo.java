@@ -20,8 +20,8 @@ package com.l2jserver.gameserver.network.clientpackets;
 
 import java.util.Collection;
 
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.SpawnItem;
 import com.l2jserver.gameserver.network.serverpackets.UserInfo;
@@ -47,8 +47,8 @@ public class RequestRecordInfo extends L2GameClientPacket
 		
 		activeChar.sendPacket(new UserInfo(activeChar));
 		
-		Collection<L2Object> objs = activeChar.getKnownList().getKnownObjects().values();
-		for (L2Object object : objs)
+		Collection<WorldObject> objs = activeChar.getKnownList().getKnownObjects().values();
+		for (WorldObject object : objs)
 		{
 			if (object.getPoly().isMorphed() && object.getPoly().getPolyType().equals("item"))
 			{
@@ -60,13 +60,13 @@ public class RequestRecordInfo extends L2GameClientPacket
 				{
 					object.sendInfo(activeChar);
 					
-					if (object instanceof L2Character)
+					if (object instanceof Creature)
 					{
 						// Update the state of the L2Character object client
 						// side by sending Server->Client packet
 						// MoveToPawn/CharMoveToLocation and AutoAttackStart to
 						// the L2PcInstance
-						final L2Character obj = (L2Character) object;
+						final Creature obj = (Creature) object;
 						if (obj.getAI() != null)
 						{
 							obj.getAI().describeStateToPlayer(activeChar);

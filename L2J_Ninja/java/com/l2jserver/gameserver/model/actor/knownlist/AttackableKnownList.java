@@ -21,20 +21,20 @@ package com.l2jserver.gameserver.model.actor.knownlist;
 import java.util.Collection;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 public class AttackableKnownList extends NpcKnownList
 {
-	public AttackableKnownList(L2Attackable activeChar)
+	public AttackableKnownList(Attackable activeChar)
 	{
 		super(activeChar);
 	}
 	
 	@Override
-	protected boolean removeKnownObject(L2Object object, boolean forget)
+	protected boolean removeKnownObject(WorldObject object, boolean forget)
 	{
 		if (!super.removeKnownObject(object, forget))
 		{
@@ -42,7 +42,7 @@ public class AttackableKnownList extends NpcKnownList
 		}
 		
 		// Remove the L2Object from the _aggrolist of the L2Attackable
-		if (object instanceof L2Character)
+		if (object instanceof Creature)
 		{
 			getActiveChar().getAggroList().remove(object);
 		}
@@ -59,21 +59,21 @@ public class AttackableKnownList extends NpcKnownList
 	}
 	
 	@Override
-	public L2Attackable getActiveChar()
+	public Attackable getActiveChar()
 	{
-		return (L2Attackable) super.getActiveChar();
+		return (Attackable) super.getActiveChar();
 	}
 	
 	@Override
-	public int getDistanceToForgetObject(L2Object object)
+	public int getDistanceToForgetObject(WorldObject object)
 	{
 		return (int) (getDistanceToWatchObject(object) * 1.5);
 	}
 	
 	@Override
-	public int getDistanceToWatchObject(L2Object object)
+	public int getDistanceToWatchObject(WorldObject object)
 	{
-		if (!(object instanceof L2Character))
+		if (!(object instanceof Creature))
 		{
 			return 0;
 		}

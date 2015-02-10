@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.network.clientpackets;
 
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2ClanMember;
+import com.l2jserver.gameserver.model.ClanMember;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.PledgeReceiveMemberInfo;
 
@@ -57,7 +57,7 @@ public final class RequestPledgeMemberInfo extends L2GameClientPacket
 		{
 			return;
 		}
-		L2ClanMember member = clan.getClanMember(_player);
+		ClanMember member = clan.getClanMember(_player);
 		if (member == null)
 		{
 			return;

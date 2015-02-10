@@ -23,7 +23,7 @@ import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.data.xml.impl.DoorData;
 import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.NpcStringId;
@@ -63,7 +63,7 @@ public final class Natives extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public final String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		String htmltext = null;
 		final int hellboundLevel = HellboundEngine.getInstance().getLevel();
@@ -100,7 +100,7 @@ public final class Natives extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String htmltext = null;
 		if (npc.getId() == TRAITOR)
@@ -179,7 +179,7 @@ public final class Natives extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
+	public final String onSpawn(Npc npc)
 	{
 		if ((npc.getId() == NATIVE) && (HellboundEngine.getInstance().getLevel() < 6))
 		{

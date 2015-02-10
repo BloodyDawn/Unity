@@ -23,8 +23,8 @@ import instances.AbstractInstance;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
 import com.l2jserver.gameserver.model.zone.L2ZoneType;
@@ -81,7 +81,7 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		switch (event)
 		{
@@ -124,7 +124,7 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 	}
 	
 	@Override
-	public final String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isSummon)
+	public final String onAttack(Npc npc, L2PcInstance player, int damage, boolean isSummon)
 	{
 		if ((damage > 0) && npc.isScriptValue(0))
 		{
@@ -166,14 +166,14 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public final String onKill(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		npc.dropItem(player, getRandomBoolean() ? SHIELD_POTION : HEAL_POTION, getRandom(1, 7));
 		return super.onKill(npc, player, isSummon);
 	}
 	
 	@Override
-	public String onExitZone(L2Character character, L2ZoneType zone)
+	public String onExitZone(Creature character, L2ZoneType zone)
 	{
 		if ((character.isPlayer()) && !character.isDead() && !character.isTeleporting() && ((L2PcInstance) character).isOnline())
 		{
@@ -187,7 +187,7 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 	}
 	
 	@Override
-	public String onSeeCreature(L2Npc npc, L2Character creature, boolean isSummon)
+	public String onSeeCreature(Npc npc, Creature creature, boolean isSummon)
 	{
 		if (npc.isScriptValue(0) && creature.isPlayer())
 		{
@@ -198,7 +198,7 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		npc.setInvisible(true);
 		startQuestTimer("BLOOM_TIMER", 1000, npc, null);

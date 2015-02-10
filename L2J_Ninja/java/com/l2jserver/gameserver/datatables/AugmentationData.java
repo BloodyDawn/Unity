@@ -34,7 +34,7 @@ import org.w3c.dom.Node;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.xml.impl.OptionData;
-import com.l2jserver.gameserver.model.L2Augmentation;
+import com.l2jserver.gameserver.model.Augmentation;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.items.L2Item;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
@@ -518,7 +518,7 @@ public class AugmentationData
 	 * @param targetItem
 	 * @return
 	 */
-	public L2Augmentation generateRandomAugmentation(int lifeStoneLevel, int lifeStoneGrade, int bodyPart, int lifeStoneId, L2ItemInstance targetItem)
+	public Augmentation generateRandomAugmentation(int lifeStoneLevel, int lifeStoneGrade, int bodyPart, int lifeStoneId, L2ItemInstance targetItem)
 	{
 		switch (bodyPart)
 		{
@@ -531,7 +531,7 @@ public class AugmentationData
 		}
 	}
 	
-	private L2Augmentation generateRandomWeaponAugmentation(int lifeStoneLevel, int lifeStoneGrade, int lifeStoneId, L2ItemInstance item)
+	private Augmentation generateRandomWeaponAugmentation(int lifeStoneLevel, int lifeStoneGrade, int lifeStoneId, L2ItemInstance item)
 	{
 		int stat12 = 0;
 		int stat34 = 0;
@@ -705,7 +705,7 @@ public class AugmentationData
 					}
 				}
 			}
-			return new L2Augmentation(((stat34 << 16) + stat12));
+			return new Augmentation(((stat34 << 16) + stat12));
 		}
 		boolean generateSkill = false;
 		boolean generateGlow = false;
@@ -872,10 +872,10 @@ public class AugmentationData
 		{
 			LOGGER.info(getClass().getSimpleName() + ": Augmentation success: stat12=" + stat12 + "; stat34=" + stat34 + "; resultColor=" + resultColor + "; level=" + lifeStoneLevel + "; grade=" + lifeStoneGrade);
 		}
-		return new L2Augmentation(((stat34 << 16) + stat12));
+		return new Augmentation(((stat34 << 16) + stat12));
 	}
 	
-	private L2Augmentation generateRandomAccessoryAugmentation(int lifeStoneLevel, int bodyPart, int lifeStoneId)
+	private Augmentation generateRandomAccessoryAugmentation(int lifeStoneLevel, int bodyPart, int lifeStoneId)
 	{
 		int stat12 = 0;
 		int stat34 = 0;
@@ -943,7 +943,7 @@ public class AugmentationData
 				}
 			}
 			
-			return new L2Augmentation(((stat34 << 16) + stat12));
+			return new Augmentation(((stat34 << 16) + stat12));
 		}
 		lifeStoneLevel = Math.min(lifeStoneLevel, 9);
 		int base = 0;
@@ -996,7 +996,7 @@ public class AugmentationData
 		{
 			LOGGER.info(getClass().getSimpleName() + ": Accessory augmentation success: stat12=" + stat12 + "; stat34=" + stat34 + "; level=" + lifeStoneLevel);
 		}
-		return new L2Augmentation(((stat34 << 16) + stat12));
+		return new Augmentation(((stat34 << 16) + stat12));
 	}
 	
 	public static final AugmentationData getInstance()

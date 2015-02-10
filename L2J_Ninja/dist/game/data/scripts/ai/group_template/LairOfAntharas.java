@@ -21,8 +21,8 @@ package ai.group_template;
 import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.serverpackets.ValidateLocation;
@@ -56,13 +56,13 @@ public final class LairOfAntharas extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.equals("CHECK_HOME") && (npc != null) && !npc.isDead())
 		{
 			if ((npc.calculateDistance(npc.getSpawn().getLocation(), false, false) > 10) && !npc.isInCombat())
 			{
-				((L2Attackable) npc).returnHome();
+				((Attackable) npc).returnHome();
 			}
 			else if ((npc.getHeading() != npc.getSpawn().getHeading()) && !npc.isInCombat())
 			{
@@ -74,7 +74,7 @@ public final class LairOfAntharas extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAggroRangeEnter(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		if (npc.isScriptValue(0) && (getRandom(100) < KNORIKS_CHANCE))
 		{
@@ -88,7 +88,7 @@ public final class LairOfAntharas extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		switch (npc.getId())
 		{
@@ -96,7 +96,7 @@ public final class LairOfAntharas extends AbstractNpcAI
 			{
 				if (getRandom(100) > KNIGHT_CHANCE)
 				{
-					final L2Npc newKnight = addSpawn(DRAGON_KNIGHT2, npc, false, 0, true);
+					final Npc newKnight = addSpawn(DRAGON_KNIGHT2, npc, false, 0, true);
 					npc.deleteMe();
 					broadcastNpcSay(newKnight, ChatType.NPC_SHOUT, NpcStringId.THOSE_WHO_SET_FOOT_IN_THIS_PLACE_SHALL_NOT_LEAVE_ALIVE);
 					addAttackPlayerDesire(newKnight, killer);
@@ -107,7 +107,7 @@ public final class LairOfAntharas extends AbstractNpcAI
 			{
 				if (getRandom(100) > KNIGHT_CHANCE)
 				{
-					final L2Npc eliteKnight = addSpawn(ELITE_DRAGON_KNIGHT, npc, false, 0, true);
+					final Npc eliteKnight = addSpawn(ELITE_DRAGON_KNIGHT, npc, false, 0, true);
 					npc.deleteMe();
 					broadcastNpcSay(eliteKnight, ChatType.NPC_SHOUT, NpcStringId.IF_YOU_WISH_TO_SEE_HELL_I_WILL_GRANT_YOU_YOUR_WISH);
 					addAttackPlayerDesire(eliteKnight, killer);
@@ -125,7 +125,7 @@ public final class LairOfAntharas extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		if ((npc.getId() == DRAGON_GUARD) || (npc.getId() == DRAGON_MAGE))
 		{

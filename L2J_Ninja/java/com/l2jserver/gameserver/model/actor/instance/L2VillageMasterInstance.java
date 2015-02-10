@@ -33,8 +33,8 @@ import com.l2jserver.gameserver.instancemanager.FortSiegeManager;
 import com.l2jserver.gameserver.instancemanager.SiegeManager;
 import com.l2jserver.gameserver.model.L2Clan;
 import com.l2jserver.gameserver.model.L2Clan.SubPledge;
-import com.l2jserver.gameserver.model.L2ClanMember;
-import com.l2jserver.gameserver.model.L2SkillLearn;
+import com.l2jserver.gameserver.model.ClanMember;
+import com.l2jserver.gameserver.model.SkillLearn;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.base.AcquireSkillType;
 import com.l2jserver.gameserver.model.base.PlayerClass;
@@ -207,7 +207,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 			}
 			
 			final L2Clan clan = player.getClan();
-			final L2ClanMember member = clan.getClanMember(cmdParams);
+			final ClanMember member = clan.getClanMember(cmdParams);
 			if (member == null)
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_DOES_NOT_EXIST);
@@ -496,11 +496,11 @@ public class L2VillageMasterInstance extends L2NpcInstance
 		
 		if (pledgeType != L2Clan.SUBUNIT_ACADEMY)
 		{
-			final L2ClanMember leaderSubPledge = clan.getClanMember(leaderName);
+			final ClanMember leaderSubPledge = clan.getClanMember(leaderName);
 			final L2PcInstance leaderPlayer = leaderSubPledge.getPlayerInstance();
 			if (leaderPlayer != null)
 			{
-				leaderPlayer.setPledgeClass(L2ClanMember.calculatePledgeClass(leaderPlayer));
+				leaderPlayer.setPledgeClass(ClanMember.calculatePledgeClass(leaderPlayer));
 				leaderPlayer.sendPacket(new UserInfo(leaderPlayer));
 			}
 		}
@@ -582,11 +582,11 @@ public class L2VillageMasterInstance extends L2NpcInstance
 		subPledge.setLeaderId(clan.getClanMember(leaderName).getObjectId());
 		clan.updateSubPledgeInDB(subPledge.getId());
 		
-		final L2ClanMember leaderSubPledge = clan.getClanMember(leaderName);
+		final ClanMember leaderSubPledge = clan.getClanMember(leaderName);
 		final L2PcInstance leaderPlayer = leaderSubPledge.getPlayerInstance();
 		if (leaderPlayer != null)
 		{
-			leaderPlayer.setPledgeClass(L2ClanMember.calculatePledgeClass(leaderPlayer));
+			leaderPlayer.setPledgeClass(ClanMember.calculatePledgeClass(leaderPlayer));
 			leaderPlayer.sendPacket(new UserInfo(leaderPlayer));
 		}
 		
@@ -612,7 +612,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 			return;
 		}
 		
-		final List<L2SkillLearn> skills = SkillTreesData.getInstance().getAvailablePledgeSkills(player.getClan());
+		final List<SkillLearn> skills = SkillTreesData.getInstance().getAvailablePledgeSkills(player.getClan());
 		
 		if (skills.isEmpty())
 		{

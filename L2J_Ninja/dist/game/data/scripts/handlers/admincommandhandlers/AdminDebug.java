@@ -19,9 +19,9 @@
 package handlers.admincommandhandlers;
 
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 
@@ -38,10 +38,10 @@ public class AdminDebug implements IAdminCommandHandler
 		String[] commandSplit = command.split(" ");
 		if (ADMIN_COMMANDS[0].equalsIgnoreCase(commandSplit[0]))
 		{
-			L2Object target;
+			WorldObject target;
 			if (commandSplit.length > 1)
 			{
-				target = L2World.getInstance().getPlayer(commandSplit[1].trim());
+				target = World.getInstance().getPlayer(commandSplit[1].trim());
 				if (target == null)
 				{
 					activeChar.sendPacket(SystemMessageId.THAT_PLAYER_IS_NOT_ONLINE);
@@ -53,9 +53,9 @@ public class AdminDebug implements IAdminCommandHandler
 				target = activeChar.getTarget();
 			}
 			
-			if (target instanceof L2Character)
+			if (target instanceof Creature)
 			{
-				setDebug(activeChar, (L2Character) target);
+				setDebug(activeChar, (Creature) target);
 			}
 			else
 			{
@@ -71,7 +71,7 @@ public class AdminDebug implements IAdminCommandHandler
 		return ADMIN_COMMANDS;
 	}
 	
-	private final void setDebug(L2PcInstance activeChar, L2Character target)
+	private final void setDebug(L2PcInstance activeChar, Creature target)
 	{
 		if (target.isDebug())
 		{

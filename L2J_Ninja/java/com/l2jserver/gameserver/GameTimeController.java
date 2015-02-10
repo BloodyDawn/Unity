@@ -25,7 +25,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.l2jserver.gameserver.instancemanager.DayNightSpawnManager;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 
 /**
  * Game Time controller class.
@@ -46,7 +46,7 @@ public final class GameTimeController extends Thread
 	
 	private static GameTimeController _instance;
 	
-	private final Set<L2Character> _movingObjects = ConcurrentHashMap.newKeySet();
+	private final Set<Creature> _movingObjects = ConcurrentHashMap.newKeySet();
 	private final long _referenceTime;
 	
 	private GameTimeController()
@@ -103,7 +103,7 @@ public final class GameTimeController extends Thread
 	 * Add a L2Character to movingObjects of GameTimeController.
 	 * @param cha The L2Character to add to movingObjects of GameTimeController
 	 */
-	public final void registerMovingObject(final L2Character cha)
+	public final void registerMovingObject(final Creature cha)
 	{
 		if (cha == null)
 		{
@@ -126,7 +126,7 @@ public final class GameTimeController extends Thread
 	 */
 	private final void moveObjects()
 	{
-		_movingObjects.removeIf(L2Character::updatePosition);
+		_movingObjects.removeIf(Creature::updatePosition);
 	}
 	
 	public final void stopTimer()

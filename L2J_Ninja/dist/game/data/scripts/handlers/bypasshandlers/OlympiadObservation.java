@@ -21,8 +21,8 @@ package handlers.bypasshandlers;
 import java.util.logging.Level;
 
 import com.l2jserver.gameserver.handler.IBypassHandler;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2OlympiadManagerInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.olympiad.Olympiad;
@@ -44,11 +44,11 @@ public class OlympiadObservation implements IBypassHandler
 	};
 	
 	@Override
-	public final boolean useBypass(String command, L2PcInstance activeChar, L2Character target)
+	public final boolean useBypass(String command, L2PcInstance activeChar, Creature target)
 	{
 		try
 		{
-			final L2Npc olymanager = activeChar.getLastFolkNPC();
+			final Npc olymanager = activeChar.getLastFolkNPC();
 			
 			if (command.startsWith(COMMANDS[0])) // list
 			{

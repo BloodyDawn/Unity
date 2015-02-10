@@ -24,8 +24,8 @@ import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.data.xml.impl.MultisellData;
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
-import com.l2jserver.gameserver.model.L2SkillLearn;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.SkillLearn;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.AcquireSkillType;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -55,7 +55,7 @@ public final class AvantGarde extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAcquireSkill(L2Npc npc, L2PcInstance player, Skill skill, AcquireSkillType type)
+	public String onAcquireSkill(Npc npc, L2PcInstance player, Skill skill, AcquireSkillType type)
 	{
 		if (type.equals(AcquireSkillType.TRANSFORM))
 		{
@@ -65,7 +65,7 @@ public final class AvantGarde extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String htmltext = null;
 		switch (event)
@@ -111,13 +111,13 @@ public final class AvantGarde extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		return "32323-01.html";
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
+	public String onTalk(Npc npc, L2PcInstance talker)
 	{
 		return "32323-01.html";
 	}
@@ -128,7 +128,7 @@ public final class AvantGarde extends AbstractNpcAI
 	 */
 	public static void showTransformSkillList(L2PcInstance player)
 	{
-		final List<L2SkillLearn> skills = SkillTreesData.getInstance().getAvailableTransformSkills(player);
+		final List<SkillLearn> skills = SkillTreesData.getInstance().getAvailableTransformSkills(player);
 		
 		if (skills.isEmpty())
 		{

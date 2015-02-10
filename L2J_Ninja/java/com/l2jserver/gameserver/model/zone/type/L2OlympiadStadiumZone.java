@@ -27,9 +27,9 @@ import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.TeleportWhereType;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2OlympiadManagerInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -122,7 +122,7 @@ public class L2OlympiadStadiumZone extends L2ZoneRespawn
 	
 	public final void spawnBuffers()
 	{
-		for (L2Npc buffer : InstanceManager.getInstance().getInstance(getInstanceId()).getNpcs())
+		for (Npc buffer : InstanceManager.getInstance().getInstance(getInstanceId()).getNpcs())
 		{
 			if ((buffer instanceof L2OlympiadManagerInstance) && !buffer.isVisible())
 			{
@@ -133,7 +133,7 @@ public class L2OlympiadStadiumZone extends L2ZoneRespawn
 	
 	public final void deleteBuffers()
 	{
-		for (L2Npc buffer : InstanceManager.getInstance().getInstance(getInstanceId()).getNpcs())
+		for (Npc buffer : InstanceManager.getInstance().getInstance(getInstanceId()).getNpcs())
 		{
 			if ((buffer instanceof L2OlympiadManagerInstance) && buffer.isVisible())
 			{
@@ -156,7 +156,7 @@ public class L2OlympiadStadiumZone extends L2ZoneRespawn
 	
 	public final void broadcastPacketToObservers(L2GameServerPacket packet)
 	{
-		for (L2Character character : getCharactersInside())
+		for (Creature character : getCharactersInside())
 		{
 			if ((character != null) && character.isPlayer() && character.getActingPlayer().inObserverMode())
 			{
@@ -166,7 +166,7 @@ public class L2OlympiadStadiumZone extends L2ZoneRespawn
 	}
 	
 	@Override
-	protected final void onEnter(L2Character character)
+	protected final void onEnter(Creature character)
 	{
 		if (getSettings().getOlympiadTask() != null)
 		{
@@ -194,7 +194,7 @@ public class L2OlympiadStadiumZone extends L2ZoneRespawn
 				else
 				{
 					// check for pet
-					final L2Summon pet = player.getPet();
+					final Summon pet = player.getPet();
 					if (pet != null)
 					{
 						pet.unSummon(player);
@@ -205,7 +205,7 @@ public class L2OlympiadStadiumZone extends L2ZoneRespawn
 	}
 	
 	@Override
-	protected final void onExit(L2Character character)
+	protected final void onExit(Creature character)
 	{
 		if (getSettings().getOlympiadTask() != null)
 		{
@@ -239,7 +239,7 @@ public class L2OlympiadStadiumZone extends L2ZoneRespawn
 			sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_LEFT_A_COMBAT_ZONE);
 		}
 		
-		for (L2Character character : getCharactersInside())
+		for (Creature character : getCharactersInside())
 		{
 			if (character == null)
 			{

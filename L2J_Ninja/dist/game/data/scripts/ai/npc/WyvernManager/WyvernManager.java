@@ -24,7 +24,7 @@ import java.util.Map;
 import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Fort;
 import com.l2jserver.gameserver.model.entity.clanhall.SiegableHall;
@@ -105,7 +105,7 @@ public final class WyvernManager extends AbstractNpcAI
 		addFirstTalkId(MANAGERS.keySet());
 	}
 	
-	private String mountWyvern(L2Npc npc, L2PcInstance player)
+	private String mountWyvern(Npc npc, L2PcInstance player)
 	{
 		if (player.isMounted() && (player.getMountLevel() >= STRIDER_LVL) && Util.contains(STRIDERS, player.getMountNpcId()))
 		{
@@ -121,7 +121,7 @@ public final class WyvernManager extends AbstractNpcAI
 		return replacePart(player.getHtmlPrefix(), "wyvernmanager-05.html");
 	}
 	
-	private boolean isOwnerClan(L2Npc npc, L2PcInstance player)
+	private boolean isOwnerClan(Npc npc, L2PcInstance player)
 	{
 		switch (MANAGERS.get(npc.getId()))
 		{
@@ -157,7 +157,7 @@ public final class WyvernManager extends AbstractNpcAI
 		}
 	}
 	
-	private boolean isInSiege(L2Npc npc)
+	private boolean isInSiege(Npc npc)
 	{
 		switch (MANAGERS.get(npc.getId()))
 		{
@@ -181,7 +181,7 @@ public final class WyvernManager extends AbstractNpcAI
 		}
 	}
 	
-	private String getResidenceName(L2Npc npc)
+	private String getResidenceName(Npc npc)
 	{
 		switch (MANAGERS.get(npc.getId()))
 		{
@@ -204,7 +204,7 @@ public final class WyvernManager extends AbstractNpcAI
 		}
 	}
 	
-	private String replaceAll(L2Npc npc, String htmlPrefix)
+	private String replaceAll(Npc npc, String htmlPrefix)
 	{
 		return replacePart(htmlPrefix, "wyvernmanager-01.html").replace("%residence_name%", getResidenceName(npc));
 	}
@@ -215,7 +215,7 @@ public final class WyvernManager extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String htmltext = null;
 		switch (event)
@@ -274,7 +274,7 @@ public final class WyvernManager extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		String htmltext = null;
 		if (!isOwnerClan(npc, player))

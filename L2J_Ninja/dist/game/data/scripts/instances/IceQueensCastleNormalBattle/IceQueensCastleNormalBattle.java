@@ -31,13 +31,13 @@ import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.enums.MountType;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.L2CommandChannel;
-import com.l2jserver.gameserver.model.L2Party;
+import com.l2jserver.gameserver.model.CommandChannel;
+import com.l2jserver.gameserver.model.Party;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.PcCondOverride;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2GrandBossInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2NpcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -68,8 +68,8 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 	protected class IQCNBWorld extends InstanceWorld
 	{
 		protected List<L2PcInstance> playersInside = new ArrayList<>();
-		protected List<L2Npc> knightStatues = new ArrayList<>();
-		protected List<L2Attackable> spawnedMobs = new CopyOnWriteArrayList<>();
+		protected List<Npc> knightStatues = new ArrayList<>();
+		protected List<Attackable> spawnedMobs = new CopyOnWriteArrayList<>();
 		protected L2NpcInstance controller = null;
 		protected L2GrandBossInstance freya = null;
 		protected L2QuestGuardInstance supp_Jinia = null;
@@ -193,7 +193,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.equals("enterEasy"))
 		{
@@ -223,7 +223,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							{
 								if (loc.getZ() == -11168)
 								{
-									final L2Npc statue = addSpawn(INVISIBLE_NPC, loc, false, 0, false, world.getInstanceId());
+									final Npc statue = addSpawn(INVISIBLE_NPC, loc, false, 0, false, world.getInstanceId());
 									world.knightStatues.add(statue);
 								}
 							}
@@ -337,7 +337,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						{
 							if (loc.getZ() == -10960)
 							{
-								final L2Npc statue = addSpawn(INVISIBLE_NPC, loc, false, 0, false, world.getInstanceId());
+								final Npc statue = addSpawn(INVISIBLE_NPC, loc, false, 0, false, world.getInstanceId());
 								world.knightStatues.add(statue);
 								startQuestTimer("SPAWN_KNIGHT", 5000, statue, null);
 							}
@@ -439,7 +439,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						final int time = (world.isHardCore ? getRandom(35, 40) : getRandom(55, 60)) * 1000;
 						startQuestTimer("CAST_BLIZZARD", time, world.controller, null);
 						
-						for (L2Attackable minion : world.spawnedMobs)
+						for (Attackable minion : world.spawnedMobs)
 						{
 							if ((minion != null) && !minion.isDead() && !minion.isInCombat())
 							{
@@ -495,14 +495,14 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					}
 					case "START_SPAWN":
 					{
-						for (L2Npc statues : world.knightStatues)
+						for (Npc statues : world.knightStatues)
 						{
 							notifyEvent("SPAWN_KNIGHT", statues, null);
 						}
 						
 						for (Location loc : KNIGHTS_LOC)
 						{
-							final L2Attackable knight = (L2Attackable) addSpawn((world.isHardCore ? KNIGHT_HARD : KNIGHT_EASY), loc, false, 0, false, world.getInstanceId());
+							final Attackable knight = (Attackable) addSpawn((world.isHardCore ? KNIGHT_HARD : KNIGHT_EASY), loc, false, 0, false, world.getInstanceId());
 							knight.disableCoreAI(true);
 							knight.setState(1);
 							knight.getSpawn().setLocation(loc);
@@ -521,7 +521,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						if (world.canSpawnMobs)
 						{
 							final Location loc = new Location(MIDDLE_POINT.getX() + getRandom(-1000, 1000), MIDDLE_POINT.getY() + getRandom(-1000, 1000), MIDDLE_POINT.getZ());
-							final L2Attackable knight = (L2Attackable) addSpawn(world.isHardCore ? KNIGHT_HARD : KNIGHT_EASY, npc.getLocation(), false, 0, false, world.getInstanceId());
+							final Attackable knight = (Attackable) addSpawn(world.isHardCore ? KNIGHT_HARD : KNIGHT_EASY, npc.getLocation(), false, 0, false, world.getInstanceId());
 							knight.getVariables().set("SPAWNED_NPC", npc);
 							knight.disableCoreAI(true);
 							knight.setIsImmobilized(true);
@@ -539,7 +539,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						if (world.canSpawnMobs)
 						{
 							final Location loc = new Location(MIDDLE_POINT.getX() + getRandom(-1000, 1000), MIDDLE_POINT.getY() + getRandom(-1000, 1000), MIDDLE_POINT.getZ());
-							final L2Attackable glacier = (L2Attackable) addSpawn(GLACIER, loc, false, 0, false, world.getInstanceId());
+							final Attackable glacier = (Attackable) addSpawn(GLACIER, loc, false, 0, false, world.getInstanceId());
 							glacier.setState(1);
 							glacier.disableCoreAI(true);
 							glacier.setIsImmobilized(true);
@@ -555,13 +555,13 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							npc.disableCoreAI(false);
 							npc.setIsImmobilized(false);
 							npc.setState(2);
-							manageRandomAttack(world, (L2Attackable) npc);
+							manageRandomAttack(world, (Attackable) npc);
 						}
 						break;
 					}
 					case "FIND_TARGET":
 					{
-						manageRandomAttack(world, (L2Attackable) npc);
+						manageRandomAttack(world, (Attackable) npc);
 						break;
 					}
 					case "CHANGE_STATE":
@@ -656,10 +656,10 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					}
 					case "LEADER_RANDOMIZE":
 					{
-						final L2Attackable mob = (L2Attackable) npc;
+						final Attackable mob = (Attackable) npc;
 						mob.clearAggroList();
 						
-						for (L2Character characters : npc.getKnownList().getKnownPlayersInRadius(1000))
+						for (Creature characters : npc.getKnownList().getKnownPlayersInRadius(1000))
 						{
 							if ((characters != null))
 							{
@@ -671,7 +671,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					}
 					case "LEADER_DASH":
 					{
-						final L2Character mostHated = ((L2Attackable) npc).getMostHated();
+						final Creature mostHated = ((Attackable) npc).getMostHated();
 						if (getRandomBoolean() && !npc.isCastingNow() && (mostHated != null) && !mostHated.isDead() && (npc.calculateDistance(mostHated, true, false) < 1000))
 						{
 							npc.setTarget(mostHated);
@@ -682,7 +682,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					}
 					case "LEADER_DESTROY":
 					{
-						final L2Attackable mob = (L2Attackable) npc;
+						final Attackable mob = (Attackable) npc;
 						if (npc.getVariables().getInt("OFF_SHOUT") == 0)
 						{
 							manageScreenMsg(world, NpcStringId.THE_SPACE_FEELS_LIKE_ITS_GRADUALLY_STARTING_TO_SHAKE);
@@ -709,7 +709,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 									broadcastNpcSay(npc, ChatType.SHOUT, NpcStringId.ARCHER_HEED_MY_CALL);
 									for (int i = 0; i < 3; i++)
 									{
-										final L2Attackable breath = (L2Attackable) addSpawn(BREATH, npc.getLocation(), true, 0, false, world.getInstanceId());
+										final Attackable breath = (Attackable) addSpawn(BREATH, npc.getLocation(), true, 0, false, world.getInstanceId());
 										breath.setIsRunning(true);
 										breath.addDamageHate(mob.getMostHated(), 0, 999);
 										breath.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, mob.getMostHated());
@@ -755,7 +755,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		
@@ -783,7 +783,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		
@@ -818,7 +818,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							}
 						}
 						
-						final L2Character mostHated = ((L2Attackable) npc).getMostHated();
+						final Creature mostHated = ((Attackable) npc).getMostHated();
 						final boolean canReachMostHated = (mostHated != null) && !mostHated.isDead() && (npc.calculateDistance(mostHated, true, false) <= 800);
 						
 						if (getRandom(10000) < 3333)
@@ -903,7 +903,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						}
 					}
 					
-					final L2Character mostHated = ((L2Attackable) npc).getMostHated();
+					final Creature mostHated = ((Attackable) npc).getMostHated();
 					final boolean canReachMostHated = (mostHated != null) && !mostHated.isDead() && (npc.calculateDistance(mostHated, true, false) <= 800);
 					
 					if (getRandom(10000) < 3333)
@@ -986,7 +986,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 				{
 					if (npc.isCoreAIDisabled())
 					{
-						manageRandomAttack(world, (L2Attackable) npc);
+						manageRandomAttack(world, (Attackable) npc);
 						npc.disableCoreAI(false);
 						npc.setIsImmobilized(false);
 						npc.setState(2);
@@ -1014,7 +1014,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					}
 					else if ((npc.getVariables().getInt("OFF_SHOUT") == 0) && (npc.getVariables().getInt("DELAY_VAL") == 1))
 					{
-						final L2Character mostHated = ((L2Attackable) npc).getMostHated();
+						final Creature mostHated = ((Attackable) npc).getMostHated();
 						final boolean canReachMostHated = (mostHated != null) && !mostHated.isDead() && (npc.calculateDistance(mostHated, true, false) < 1000);
 						
 						if (npc.getVariables().getInt("TIMER_ON") == 0)
@@ -1038,7 +1038,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							}
 							else if (npc.checkDoCastConditions(POWER_STRIKE.getSkill()) && !npc.isCastingNow() && canReachMostHated)
 							{
-								npc.setTarget(((L2Attackable) npc).getMostHated());
+								npc.setTarget(((Attackable) npc).getMostHated());
 								npc.doCast(POWER_STRIKE.getSkill());
 							}
 						}
@@ -1054,7 +1054,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							}
 							else if (npc.checkDoCastConditions(POINT_TARGET.getSkill()) && !npc.isCastingNow() && canReachMostHated)
 							{
-								npc.setTarget(((L2Attackable) npc).getMostHated());
+								npc.setTarget(((Attackable) npc).getMostHated());
 								npc.doCast(POINT_TARGET.getSkill());
 							}
 						}
@@ -1070,7 +1070,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							}
 							else if (npc.checkDoCastConditions(CYLINDER_THROW.getSkill()) && !npc.isCastingNow() && canReachMostHated)
 							{
-								npc.setTarget(((L2Attackable) npc).getMostHated());
+								npc.setTarget(((Attackable) npc).getMostHated());
 								npc.doCast(CYLINDER_THROW.getSkill());
 							}
 						}
@@ -1083,7 +1083,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 	}
 	
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill)
+	public String onSpellFinished(Npc npc, L2PcInstance player, Skill skill)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		
@@ -1099,7 +1099,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					{
 						if (getRandom(100) < 75)
 						{
-							final L2Attackable breath = (L2Attackable) addSpawn(BREATH, npc.getLocation(), false, 0, false, world.getInstanceId());
+							final Attackable breath = (Attackable) addSpawn(BREATH, npc.getLocation(), false, 0, false, world.getInstanceId());
 							if (player != null)
 							{
 								breath.setIsRunning(true);
@@ -1131,7 +1131,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		
@@ -1167,7 +1167,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 				case KNIGHT_EASY:
 				case KNIGHT_HARD:
 				{
-					final L2Npc spawnedBy = npc.getVariables().getObject("SPAWNED_NPC", L2Npc.class);
+					final Npc spawnedBy = npc.getVariables().getObject("SPAWNED_NPC", Npc.class);
 					final NpcVariables var = world.controller.getVariables();
 					int knightCount = var.getInt("KNIGHT_COUNT");
 					
@@ -1271,8 +1271,8 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 	@Override
 	protected boolean checkConditions(L2PcInstance player)
 	{
-		final L2Party party = player.getParty();
-		final L2CommandChannel channel = party != null ? party.getCommandChannel() : null;
+		final Party party = player.getParty();
+		final CommandChannel channel = party != null ? party.getCommandChannel() : null;
 		
 		if (player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS))
 		{
@@ -1333,7 +1333,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 		return true;
 	}
 	
-	private void manageRandomAttack(IQCNBWorld world, L2Attackable mob)
+	private void manageRandomAttack(IQCNBWorld world, Attackable mob)
 	{
 		final List<L2PcInstance> players = new ArrayList<>();
 		for (L2PcInstance player : world.playersInside)
@@ -1361,7 +1361,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 	private void manageDespawnMinions(IQCNBWorld world)
 	{
 		world.canSpawnMobs = false;
-		for (L2Attackable mobs : world.spawnedMobs)
+		for (Attackable mobs : world.spawnedMobs)
 		{
 			if ((mobs != null) && !mobs.isDead())
 			{

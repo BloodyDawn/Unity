@@ -23,8 +23,8 @@ import ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
@@ -54,7 +54,7 @@ public final class FrightenedRagnaOrc extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
 		if (npc.isScriptValue(0))
 		{
@@ -71,7 +71,7 @@ public final class FrightenedRagnaOrc extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		final NpcStringId msg = getRandomBoolean() ? NpcStringId.UGH_A_CURSE_UPON_YOU : NpcStringId.I_REALLY_DIDN_T_WANT_TO_FIGHT;
 		broadcastNpcSay(npc, ChatType.NPC_GENERAL, msg);
@@ -81,7 +81,7 @@ public final class FrightenedRagnaOrc extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		switch (event)
 		{
@@ -119,7 +119,7 @@ public final class FrightenedRagnaOrc extends AbstractNpcAI
 						npc.doCast(SKILL.getSkill());
 						for (int i = 0; i < 10; i++)
 						{
-							((L2Attackable) npc).dropItem(player, Inventory.ADENA_ID, ADENA);
+							((Attackable) npc).dropItem(player, Inventory.ADENA_ID, ADENA);
 						}
 					}
 					else

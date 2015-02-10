@@ -31,7 +31,7 @@ import java.util.logging.Logger;
 
 import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.datatables.SkillData;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Summon;
 
 public class SummonSkillsTable
 {
@@ -74,7 +74,7 @@ public class SummonSkillsTable
 		LOGGER.info(getClass().getSimpleName() + ": Loaded " + count + " skills.");
 	}
 	
-	public int getAvailableLevel(L2Summon cha, int skillId)
+	public int getAvailableLevel(Summon cha, int skillId)
 	{
 		int lvl = 0;
 		if (!_skillTrees.containsKey(cha.getId()))
@@ -123,7 +123,7 @@ public class SummonSkillsTable
 		return lvl;
 	}
 	
-	public List<Integer> getAvailableSkills(L2Summon cha)
+	public List<Integer> getAvailableSkills(Summon cha)
 	{
 		List<Integer> skillIds = new ArrayList<>();
 		if (!_skillTrees.containsKey(cha.getId()))

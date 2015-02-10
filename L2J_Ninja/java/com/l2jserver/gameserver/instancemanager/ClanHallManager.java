@@ -30,7 +30,7 @@ import javolution.util.FastMap;
 import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.data.sql.impl.ClanTable;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.entity.Auction;
 import com.l2jserver.gameserver.model.entity.ClanHall;
@@ -227,7 +227,7 @@ public final class ClanHallManager
 		return null;
 	}
 	
-	public final ClanHall getClanHall(L2Object activeObject)
+	public final ClanHall getClanHall(WorldObject activeObject)
 	{
 		return getClanHall(activeObject.getX(), activeObject.getY(), activeObject.getZ());
 	}

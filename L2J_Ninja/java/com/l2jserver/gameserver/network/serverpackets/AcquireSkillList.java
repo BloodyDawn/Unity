@@ -23,7 +23,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
-import com.l2jserver.gameserver.model.L2SkillLearn;
+import com.l2jserver.gameserver.model.SkillLearn;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -34,7 +34,7 @@ import com.l2jserver.gameserver.model.skills.Skill;
 public class AcquireSkillList extends L2GameServerPacket
 {
 	final L2PcInstance _activeChar;
-	final List<L2SkillLearn> _learnable;
+	final List<SkillLearn> _learnable;
 	
 	public AcquireSkillList(L2PcInstance activeChar)
 	{
@@ -48,7 +48,7 @@ public class AcquireSkillList extends L2GameServerPacket
 	{
 		writeC(0x90);
 		writeH(_learnable.size());
-		for (L2SkillLearn skill : _learnable)
+		for (SkillLearn skill : _learnable)
 		{
 			writeD(skill.getSkillId());
 			writeH(skill.getSkillLevel());

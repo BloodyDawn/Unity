@@ -18,12 +18,12 @@
  */
 package com.l2jserver.gameserver.network.clientpackets;
 
-import static com.l2jserver.gameserver.model.actor.L2Npc.INTERACTION_DISTANCE;
+import static com.l2jserver.gameserver.model.actor.Npc.INTERACTION_DISTANCE;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.xml.impl.BuyListData;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2MerchantInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.buylist.L2BuyList;
@@ -91,17 +91,17 @@ public final class RequestRefundItem extends L2GameClientPacket
 			return;
 		}
 		
-		L2Object target = player.getTarget();
+		WorldObject target = player.getTarget();
 		if (!player.isGM() && ((target == null) || !(target instanceof L2MerchantInstance) || (player.getInstanceId() != target.getInstanceId()) || !player.isInsideRadius(target, INTERACTION_DISTANCE, true, false)))
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
-		L2Character merchant = null;
+		Creature merchant = null;
 		if (target instanceof L2MerchantInstance)
 		{
-			merchant = (L2Character) target;
+			merchant = (Creature) target;
 		}
 		else if (!player.isGM())
 		{

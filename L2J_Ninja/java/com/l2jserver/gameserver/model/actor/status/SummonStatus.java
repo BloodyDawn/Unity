@@ -18,9 +18,9 @@
  */
 package com.l2jserver.gameserver.model.actor.status;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Playable;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Playable;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Duel;
 import com.l2jserver.gameserver.model.stats.Stats;
@@ -28,19 +28,19 @@ import com.l2jserver.gameserver.util.Util;
 
 public class SummonStatus extends PlayableStatus
 {
-	public SummonStatus(L2Summon activeChar)
+	public SummonStatus(Summon activeChar)
 	{
 		super(activeChar);
 	}
 	
 	@Override
-	public void reduceHp(double value, L2Character attacker)
+	public void reduceHp(double value, Creature attacker)
 	{
 		reduceHp(value, attacker, true, false, false);
 	}
 	
 	@Override
-	public void reduceHp(double value, L2Character attacker, boolean awake, boolean isDOT, boolean isHPConsumption)
+	public void reduceHp(double value, Creature attacker, boolean awake, boolean isDOT, boolean isHPConsumption)
 	{
 		if ((attacker == null) || getActiveChar().isDead())
 		{
@@ -72,7 +72,7 @@ public class SummonStatus extends PlayableStatus
 							membersInRange++;
 						}
 					}
-					if ((attacker instanceof L2Playable) && (caster.getCurrentCp() > 0))
+					if ((attacker instanceof Playable) && (caster.getCurrentCp() > 0))
 					{
 						if (caster.getCurrentCp() > transferDmg)
 						{
@@ -100,7 +100,7 @@ public class SummonStatus extends PlayableStatus
 			transferDmg = Math.min((int) caster.getCurrentHp() - 1, transferDmg);
 			if (transferDmg > 0)
 			{
-				if ((attacker instanceof L2Playable) && (caster.getCurrentCp() > 0))
+				if ((attacker instanceof Playable) && (caster.getCurrentCp() > 0))
 				{
 					if (caster.getCurrentCp() > transferDmg)
 					{
@@ -121,8 +121,8 @@ public class SummonStatus extends PlayableStatus
 	}
 	
 	@Override
-	public L2Summon getActiveChar()
+	public Summon getActiveChar()
 	{
-		return (L2Summon) super.getActiveChar();
+		return (Summon) super.getActiveChar();
 	}
 }

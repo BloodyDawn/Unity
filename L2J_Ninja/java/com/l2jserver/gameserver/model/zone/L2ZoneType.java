@@ -28,8 +28,8 @@ import javolution.util.FastMap;
 
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.EventDispatcher;
 import com.l2jserver.gameserver.model.events.ListenersContainer;
@@ -48,7 +48,7 @@ public abstract class L2ZoneType extends ListenersContainer
 	
 	private final int _id;
 	protected L2ZoneForm _zone;
-	protected FastMap<Integer, L2Character> _characterList;
+	protected FastMap<Integer, Creature> _characterList;
 	
 	/** Parameters to affect specific characters */
 	private boolean _checkAffected = false;
@@ -205,7 +205,7 @@ public abstract class L2ZoneType extends ListenersContainer
 	 * @param character the player to verify.
 	 * @return {@code true} if the given character is affected by this zone, {@code false} otherwise.
 	 */
-	private boolean isAffected(L2Character character)
+	private boolean isAffected(Creature character)
 	{
 		// Check lvl
 		if ((character.getLevel() < _minLvl) || (character.getLevel() > _maxLvl))
@@ -405,7 +405,7 @@ public abstract class L2ZoneType extends ListenersContainer
 	 * @param object
 	 * @return
 	 */
-	public boolean isInsideZone(L2Object object)
+	public boolean isInsideZone(WorldObject object)
 	{
 		return isInsideZone(object.getX(), object.getY(), object.getZ(), object.getInstanceId());
 	}
@@ -415,12 +415,12 @@ public abstract class L2ZoneType extends ListenersContainer
 		return getZone().getDistanceToZone(x, y);
 	}
 	
-	public double getDistanceToZone(L2Object object)
+	public double getDistanceToZone(WorldObject object)
 	{
 		return getZone().getDistanceToZone(object.getX(), object.getY());
 	}
 	
-	public void revalidateInZone(L2Character character)
+	public void revalidateInZone(Creature character)
 	{
 		// If the character can't be affected by this zone return
 		if (_checkAffected)
@@ -457,7 +457,7 @@ public abstract class L2ZoneType extends ListenersContainer
 	 * Force fully removes a character from the zone Should use during teleport / logoff
 	 * @param character
 	 */
-	public void removeCharacter(L2Character character)
+	public void removeCharacter(Creature character)
 	{
 		// Was the character inside this zone?
 		if (_characterList.containsKey(character.getObjectId()))
@@ -478,7 +478,7 @@ public abstract class L2ZoneType extends ListenersContainer
 	 * @param character
 	 * @return
 	 */
-	public boolean isCharacterInZone(L2Character character)
+	public boolean isCharacterInZone(Creature character)
 	{
 		return _characterList.containsKey(character.getObjectId());
 	}
@@ -497,15 +497,15 @@ public abstract class L2ZoneType extends ListenersContainer
 		_settings = settings;
 	}
 	
-	protected abstract void onEnter(L2Character character);
+	protected abstract void onEnter(Creature character);
 	
-	protected abstract void onExit(L2Character character);
+	protected abstract void onExit(Creature character);
 	
-	public void onDieInside(L2Character character)
+	public void onDieInside(Creature character)
 	{
 	}
 	
-	public void onReviveInside(L2Character character)
+	public void onReviveInside(Creature character)
 	{
 	}
 	
@@ -517,12 +517,12 @@ public abstract class L2ZoneType extends ListenersContainer
 	{
 	}
 	
-	public Map<Integer, L2Character> getCharacters()
+	public Map<Integer, Creature> getCharacters()
 	{
 		return _characterList;
 	}
 	
-	public Collection<L2Character> getCharactersInside()
+	public Collection<Creature> getCharactersInside()
 	{
 		return _characterList.values();
 	}
@@ -530,7 +530,7 @@ public abstract class L2ZoneType extends ListenersContainer
 	public List<L2PcInstance> getPlayersInside()
 	{
 		List<L2PcInstance> players = new ArrayList<>();
-		for (L2Character ch : _characterList.values())
+		for (Creature ch : _characterList.values())
 		{
 			if ((ch != null) && ch.isPlayer())
 			{
@@ -552,7 +552,7 @@ public abstract class L2ZoneType extends ListenersContainer
 			return;
 		}
 		
-		for (L2Character character : _characterList.values())
+		for (Creature character : _characterList.values())
 		{
 			if ((character != null) && character.isPlayer())
 			{

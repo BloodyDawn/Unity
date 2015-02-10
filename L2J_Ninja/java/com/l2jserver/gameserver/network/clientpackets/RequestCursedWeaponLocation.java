@@ -25,7 +25,7 @@ import javolution.util.FastList;
 import com.l2jserver.gameserver.instancemanager.CursedWeaponsManager;
 import com.l2jserver.gameserver.model.CursedWeapon;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.network.serverpackets.ExCursedWeaponLocation;
 import com.l2jserver.gameserver.network.serverpackets.ExCursedWeaponLocation.CursedWeaponInfo;
 
@@ -46,7 +46,7 @@ public final class RequestCursedWeaponLocation extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2Character activeChar = getClient().getActiveChar();
+		Creature activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;

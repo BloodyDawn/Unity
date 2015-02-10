@@ -22,13 +22,13 @@ import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.handler.IActionHandler;
 import com.l2jserver.gameserver.instancemanager.MercTicketManager;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 public class L2ItemInstanceAction implements IActionHandler
 {
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
+	public boolean action(L2PcInstance activeChar, WorldObject target, boolean interact)
 	{
 		// this causes the validate position handler to do the pickup if the location is reached.
 		// mercenary tickets can only be picked up by the castle owner.

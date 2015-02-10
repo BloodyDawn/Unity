@@ -22,7 +22,7 @@ import quests.Q00198_SevenSignsEmbryo.Q00198_SevenSignsEmbryo;
 
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.enums.QuestSound;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -70,7 +70,7 @@ public final class Q10292_SevenSignsGirlOfDoubt extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final QuestState st = getQuestState(player, false);
 		if (st == null)
@@ -164,9 +164,9 @@ public final class Q10292_SevenSignsGirlOfDoubt extends Quest
 				if (st.isCond(5))
 				{
 					isBusy = true;
-					final L2Npc creature1 = addSpawn(CREATURE_OF_THE_DUSK1, 89440, -238016, -9632, 335, false, 0, false, player.getInstanceId());
+					final Npc creature1 = addSpawn(CREATURE_OF_THE_DUSK1, 89440, -238016, -9632, 335, false, 0, false, player.getInstanceId());
 					creature1.setIsNoRndWalk(true);
-					final L2Npc creature2 = addSpawn(CREATURE_OF_THE_DUSK2, 89524, -238131, -9632, 56, false, 0, false, player.getInstanceId());
+					final Npc creature2 = addSpawn(CREATURE_OF_THE_DUSK2, 89524, -238131, -9632, 56, false, 0, false, player.getInstanceId());
 					creature2.setIsNoRndWalk(true);
 					ThreadPoolManager.getInstance().scheduleGeneral(() ->
 					{
@@ -200,7 +200,7 @@ public final class Q10292_SevenSignsGirlOfDoubt extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		if (Util.contains(MOBS, npc.getId()))
 		{
@@ -227,7 +227,7 @@ public final class Q10292_SevenSignsGirlOfDoubt extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);

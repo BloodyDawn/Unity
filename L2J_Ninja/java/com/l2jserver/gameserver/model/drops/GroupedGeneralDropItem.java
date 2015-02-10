@@ -25,7 +25,7 @@ import java.util.List;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.datatables.ItemTable;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2RaidBossInstance;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
 import com.l2jserver.gameserver.model.items.L2Item;
@@ -68,7 +68,7 @@ public class GroupedGeneralDropItem implements IDropItem
 	 * @param killer the killer
 	 * @return the chance modified by any rates.
 	 */
-	public double getChance(L2Character victim, L2Character killer)
+	public double getChance(Creature victim, Creature killer)
 	{
 		for (final GeneralDropItem gdi : getItems())
 		{
@@ -105,7 +105,7 @@ public class GroupedGeneralDropItem implements IDropItem
 	 * @see com.l2jserver.gameserver.model.drop.IDropItem#calculateDrops(com.l2jserver.gameserver.model.actor.L2Character, com.l2jserver.gameserver.model.actor.L2Character)
 	 */
 	@Override
-	public Collection<ItemHolder> calculateDrops(L2Character victim, L2Character killer)
+	public Collection<ItemHolder> calculateDrops(Creature victim, Creature killer)
 	{
 		final int levelDifference = victim.getLevel() - killer.getLevel();
 		double chanceModifier;

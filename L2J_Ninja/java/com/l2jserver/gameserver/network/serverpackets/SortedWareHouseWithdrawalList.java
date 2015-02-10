@@ -25,7 +25,7 @@ import java.util.List;
 import javolution.util.FastList;
 
 import com.l2jserver.gameserver.data.xml.impl.RecipeData;
-import com.l2jserver.gameserver.model.L2RecipeList;
+import com.l2jserver.gameserver.model.RecipeList;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.items.L2Item;
 import com.l2jserver.gameserver.model.items.L2WarehouseItem;
@@ -289,8 +289,8 @@ public class SortedWareHouseWithdrawalList extends AbstractItemPacket
 			{
 				try
 				{
-					L2RecipeList rp1 = rd.getRecipeByItemId(o1.getItemId());
-					L2RecipeList rp2 = rd.getRecipeByItemId(o2.getItemId());
+					RecipeList rp1 = rd.getRecipeByItemId(o1.getItemId());
+					RecipeList rp2 = rd.getRecipeByItemId(o2.getItemId());
 					
 					if (rp1 == null)
 					{

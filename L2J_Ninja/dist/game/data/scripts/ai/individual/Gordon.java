@@ -20,9 +20,9 @@ package ai.individual;
 
 import ai.npc.AbstractNpcAI;
 
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
@@ -41,7 +41,7 @@ public final class Gordon extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSeeCreature(L2Npc npc, L2Character creature, boolean isSummon)
+	public String onSeeCreature(Npc npc, Creature creature, boolean isSummon)
 	{
 		if (creature.isPlayer() && ((L2PcInstance) creature).isCursedWeaponEquipped())
 		{
@@ -51,9 +51,9 @@ public final class Gordon extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
-		((L2Attackable) npc).setCanReturnToSpawnPoint(false);
+		((Attackable) npc).setCanReturnToSpawnPoint(false);
 		return super.onSpawn(npc);
 	}
 	

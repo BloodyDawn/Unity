@@ -19,7 +19,7 @@
 package quests.Q00551_OlympiadStarter;
 
 import com.l2jserver.gameserver.enums.QuestType;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.olympiad.CompetitionType;
 import com.l2jserver.gameserver.model.olympiad.Participant;
@@ -54,7 +54,7 @@ public class Q00551_OlympiadStarter extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final QuestState st = getQuestState(player, false);
 		if (st == null)
@@ -199,7 +199,7 @@ public class Q00551_OlympiadStarter extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);

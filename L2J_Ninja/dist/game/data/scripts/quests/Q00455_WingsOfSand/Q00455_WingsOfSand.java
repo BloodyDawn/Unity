@@ -23,7 +23,7 @@ import java.util.List;
 
 import com.l2jserver.gameserver.enums.QuestSound;
 import com.l2jserver.gameserver.enums.QuestType;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
@@ -73,7 +73,7 @@ public class Q00455_WingsOfSand extends Quest
 	}
 	
 	@Override
-	public void actionForEachPlayer(L2PcInstance player, L2Npc npc, boolean isSummon)
+	public void actionForEachPlayer(L2PcInstance player, Npc npc, boolean isSummon)
 	{
 		final QuestState st = getQuestState(player, false);
 		if ((st != null) && Util.checkIfInRange(1500, npc, player, false) && (getRandom(1000) < CHANCE))
@@ -92,7 +92,7 @@ public class Q00455_WingsOfSand extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final QuestState st = getQuestState(player, false);
 		if (st == null)
@@ -124,14 +124,14 @@ public class Q00455_WingsOfSand extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		executeForEachPlayer(killer, npc, isSummon, true, false);
 		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		final QuestState st = getQuestState(player, true);
 		if (st == null)

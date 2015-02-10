@@ -22,7 +22,7 @@ import quests.Q10325_SearchingForNewPower.Q10325_SearchingForNewPower;
 
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
@@ -70,7 +70,7 @@ public class Q10326_RespectYourElders extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
@@ -85,7 +85,7 @@ public class Q10326_RespectYourElders extends Quest
 			{
 				qs.startQuest();
 				htmltext = event;
-				final L2Npc handerMonkey = addSpawn(HANDERMONKEY, HANDERMONKEY_SPAWN, false, 300000);
+				final Npc handerMonkey = addSpawn(HANDERMONKEY, HANDERMONKEY_SPAWN, false, 300000);
 				startQuestTimer("MOVE_DELAY", 500, handerMonkey, player);
 				break;
 			}
@@ -168,7 +168,7 @@ public class Q10326_RespectYourElders extends Quest
 	}
 	
 	@Override
-	public void onMoveFinished(L2Npc npc)
+	public void onMoveFinished(Npc npc)
 	{
 		npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getTemplate().getDisplayId(), NpcStringId.COME_ON_CREEK));
 		final L2PcInstance owner = npc.getVariables().getObject("OWNER", L2PcInstance.class);
@@ -182,7 +182,7 @@ public class Q10326_RespectYourElders extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = null;

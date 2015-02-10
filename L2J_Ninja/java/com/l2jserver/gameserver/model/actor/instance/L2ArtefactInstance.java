@@ -19,8 +19,8 @@
 package com.l2jserver.gameserver.model.actor.instance;
 
 import com.l2jserver.gameserver.enums.InstanceType;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
@@ -30,7 +30,7 @@ import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
  * <BR>
  * @version $Revision: 1.11.2.1.2.7 $ $Date: 2005/04/06 16:13:40 $
  */
-public final class L2ArtefactInstance extends L2Npc
+public final class L2ArtefactInstance extends Npc
 {
 	/**
 	 * Constructor of L2ArtefactInstance (use L2Character and L2NpcInstance constructor).<BR>
@@ -60,7 +60,7 @@ public final class L2ArtefactInstance extends L2Npc
 	 * Return False.
 	 */
 	@Override
-	public boolean isAutoAttackable(L2Character attacker)
+	public boolean isAutoAttackable(Creature attacker)
 	{
 		return false;
 	}
@@ -79,12 +79,12 @@ public final class L2ArtefactInstance extends L2Npc
 	}
 	
 	@Override
-	public void reduceCurrentHp(double damage, L2Character attacker, Skill skill)
+	public void reduceCurrentHp(double damage, Creature attacker, Skill skill)
 	{
 	}
 	
 	@Override
-	public void reduceCurrentHp(double damage, L2Character attacker, boolean awake, boolean isDOT, Skill skill)
+	public void reduceCurrentHp(double damage, Creature attacker, boolean awake, boolean isDOT, Skill skill)
 	{
 	}
 }

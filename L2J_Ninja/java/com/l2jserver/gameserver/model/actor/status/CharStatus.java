@@ -27,7 +27,7 @@ import javolution.util.FastSet;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.ThreadPoolManager;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.stat.CharStat;
 import com.l2jserver.gameserver.model.stats.Formulas;
@@ -37,13 +37,13 @@ public class CharStatus
 {
 	protected static final Logger _log = Logger.getLogger(CharStatus.class.getName());
 	
-	private final L2Character _activeChar;
+	private final Creature _activeChar;
 	
 	private double _currentHp = 0; // Current HP of the L2Character
 	private double _currentMp = 0; // Current MP of the L2Character
 	
 	/** Array containing all clients that need to be notified about hp/mp updates of the L2Character */
-	private Set<L2Character> _StatusListener;
+	private Set<Creature> _StatusListener;
 	
 	private Future<?> _regTask;
 	
@@ -53,7 +53,7 @@ public class CharStatus
 	private static final byte REGEN_FLAG_HP = 1;
 	private static final byte REGEN_FLAG_MP = 2;
 	
-	public CharStatus(L2Character activeChar)
+	public CharStatus(Creature activeChar)
 	{
 		_activeChar = activeChar;
 	}
@@ -70,7 +70,7 @@ public class CharStatus
 	 * <ul>
 	 * @param object L2Character to add to the listener
 	 */
-	public final void addStatusListener(L2Character object)
+	public final void addStatusListener(Creature object)
 	{
 		if (object == getActiveChar())
 		{
@@ -92,7 +92,7 @@ public class CharStatus
 	 * </ul>
 	 * @param object L2Character to add to the listener
 	 */
-	public final void removeStatusListener(L2Character object)
+	public final void removeStatusListener(Creature object)
 	{
 		getStatusListener().remove(object);
 	}
@@ -105,11 +105,11 @@ public class CharStatus
 	 * When a RegenTask is in progress sever just need to go through this list to send Server->Client packet StatusUpdate.
 	 * @return The list of L2Character to inform or null if empty
 	 */
-	public final Set<L2Character> getStatusListener()
+	public final Set<Creature> getStatusListener()
 	{
 		if (_StatusListener == null)
 		{
-			_StatusListener = new FastSet<L2Character>().shared();
+			_StatusListener = new FastSet<Creature>().shared();
 		}
 		return _StatusListener;
 	}
@@ -124,17 +124,17 @@ public class CharStatus
 	 * @param value
 	 * @param attacker
 	 */
-	public void reduceHp(double value, L2Character attacker)
+	public void reduceHp(double value, Creature attacker)
 	{
 		reduceHp(value, attacker, true, false, false);
 	}
 	
-	public void reduceHp(double value, L2Character attacker, boolean isHpConsumption)
+	public void reduceHp(double value, Creature attacker, boolean isHpConsumption)
 	{
 		reduceHp(value, attacker, true, false, isHpConsumption);
 	}
 	
-	public void reduceHp(double value, L2Character attacker, boolean awake, boolean isDOT, boolean isHPConsumption)
+	public void reduceHp(double value, Creature attacker, boolean awake, boolean isDOT, boolean isHPConsumption)
 	{
 		if (getActiveChar().isDead())
 		{
@@ -435,7 +435,7 @@ public class CharStatus
 		}
 	}
 	
-	public L2Character getActiveChar()
+	public Creature getActiveChar()
 	{
 		return _activeChar;
 	}

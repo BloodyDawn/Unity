@@ -24,7 +24,7 @@ import java.util.List;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.xml.impl.AbilityPointsData;
 import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
-import com.l2jserver.gameserver.model.L2SkillLearn;
+import com.l2jserver.gameserver.model.SkillLearn;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 
@@ -43,7 +43,7 @@ public class ExAcquireAPSkillList extends L2GameServerPacket
 		_abilityPoints = activeChar.getAbilityPoints();
 		_usedAbilityPoints = activeChar.getAbilityPointsUsed();
 		_price = AbilityPointsData.getInstance().getPrice(_abilityPoints);
-		for (L2SkillLearn sk : SkillTreesData.getInstance().getAbilitySkillTree().values())
+		for (SkillLearn sk : SkillTreesData.getInstance().getAbilitySkillTree().values())
 		{
 			final Skill knownSkill = activeChar.getKnownSkill(sk.getSkillId());
 			if (knownSkill != null)

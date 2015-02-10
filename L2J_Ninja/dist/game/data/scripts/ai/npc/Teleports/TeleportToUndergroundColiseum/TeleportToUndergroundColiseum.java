@@ -21,7 +21,7 @@ package ai.npc.Teleports.TeleportToUndergroundColiseum;
 import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.util.Util;
 
@@ -96,7 +96,7 @@ public final class TeleportToUndergroundColiseum extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.endsWith(".htm"))
 		{
@@ -115,7 +115,7 @@ public final class TeleportToUndergroundColiseum extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		if (Util.contains(MANAGERS, npc.getId()))
 		{
@@ -129,7 +129,7 @@ public final class TeleportToUndergroundColiseum extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		return "32491.htm";
 	}

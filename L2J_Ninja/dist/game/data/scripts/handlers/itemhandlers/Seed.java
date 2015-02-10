@@ -22,9 +22,9 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.handler.IItemHandler;
 import com.l2jserver.gameserver.instancemanager.CastleManorManager;
 import com.l2jserver.gameserver.instancemanager.MapRegionManager;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.L2Seed;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2ChestInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -39,7 +39,7 @@ import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 public class Seed implements IItemHandler
 {
 	@Override
-	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
+	public boolean useItem(Playable playable, L2ItemInstance item, boolean forceUse)
 	{
 		if (!Config.ALLOW_MANOR)
 		{
@@ -51,7 +51,7 @@ public class Seed implements IItemHandler
 			return false;
 		}
 		
-		final L2Object tgt = playable.getTarget();
+		final WorldObject tgt = playable.getTarget();
 		if (!tgt.isNpc())
 		{
 			playable.sendPacket(SystemMessageId.INVALID_TARGET);

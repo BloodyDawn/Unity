@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
 import com.l2jserver.gameserver.model.itemcontainer.ItemContainer;
@@ -97,7 +97,7 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 		}
 		final boolean isPrivate = warehouse instanceof PcWarehouse;
 		
-		final L2Npc manager = player.getLastFolkNPC();
+		final Npc manager = player.getLastFolkNPC();
 		if (((manager == null) || !manager.isWarehouse() || !manager.canInteract(player)) && !player.isGM())
 		{
 			return;

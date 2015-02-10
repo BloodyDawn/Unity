@@ -26,7 +26,7 @@ import com.l2jserver.gameserver.enums.NpcInfoType;
 import com.l2jserver.gameserver.enums.Team;
 import com.l2jserver.gameserver.instancemanager.TownManager;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2GuardInstance;
 import com.l2jserver.gameserver.model.skills.AbnormalVisualEffect;
 import com.l2jserver.gameserver.model.zone.ZoneId;
@@ -36,7 +36,7 @@ import com.l2jserver.gameserver.model.zone.ZoneId;
  */
 public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 {
-	private final L2Npc _npc;
+	private final Npc _npc;
 	private final byte[] _masks = new byte[]
 	{
 		(byte) 0x00,
@@ -57,7 +57,7 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 	private int _statusMask = 0;
 	private final Set<AbnormalVisualEffect> _abnormalVisualEffects;
 	
-	public NpcInfo(L2Npc npc)
+	public NpcInfo(Npc npc)
 	{
 		_npc = npc;
 		_abnormalVisualEffects = npc.getCurrentAbnormalVisualEffects();
@@ -203,7 +203,7 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 		calcBlockSize(_npc, component);
 	}
 	
-	private void calcBlockSize(L2Npc npc, NpcInfoType type)
+	private void calcBlockSize(Npc npc, NpcInfoType type)
 	{
 		switch (type)
 		{

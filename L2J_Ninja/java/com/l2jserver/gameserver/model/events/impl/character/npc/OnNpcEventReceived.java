@@ -18,8 +18,8 @@
  */
 package com.l2jserver.gameserver.model.events.impl.character.npc;
 
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
 
@@ -29,11 +29,11 @@ import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
 public class OnNpcEventReceived implements IBaseEvent
 {
 	private final String _eventName;
-	private final L2Npc _sender;
-	private final L2Npc _receiver;
-	private final L2Object _reference;
+	private final Npc _sender;
+	private final Npc _receiver;
+	private final WorldObject _reference;
 	
-	public OnNpcEventReceived(String eventName, L2Npc sender, L2Npc receiver, L2Object reference)
+	public OnNpcEventReceived(String eventName, Npc sender, Npc receiver, WorldObject reference)
 	{
 		_eventName = eventName;
 		_sender = sender;
@@ -46,17 +46,17 @@ public class OnNpcEventReceived implements IBaseEvent
 		return _eventName;
 	}
 	
-	public L2Npc getSender()
+	public Npc getSender()
 	{
 		return _sender;
 	}
 	
-	public L2Npc getReceiver()
+	public Npc getReceiver()
 	{
 		return _receiver;
 	}
 	
-	public L2Object getReference()
+	public WorldObject getReference()
 	{
 		return _reference;
 	}

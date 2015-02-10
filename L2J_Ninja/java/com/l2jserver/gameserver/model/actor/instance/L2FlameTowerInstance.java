@@ -22,8 +22,8 @@ import java.util.List;
 
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Tower;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Tower;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.zone.L2ZoneType;
 
@@ -31,7 +31,7 @@ import com.l2jserver.gameserver.model.zone.L2ZoneType;
  * Class for Flame Control Tower instance.
  * @author JIV
  */
-public class L2FlameTowerInstance extends L2Tower
+public class L2FlameTowerInstance extends Tower
 {
 	private int _upgradeLevel = 0;
 	private List<Integer> _zoneList;
@@ -43,7 +43,7 @@ public class L2FlameTowerInstance extends L2Tower
 	}
 	
 	@Override
-	public boolean doDie(L2Character killer)
+	public boolean doDie(Creature killer)
 	{
 		enableZones(false);
 		return super.doDie(killer);

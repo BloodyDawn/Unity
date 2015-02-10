@@ -19,7 +19,7 @@
 package handlers.usercommandhandlers;
 
 import com.l2jserver.gameserver.handler.IUserCommandHandler;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.olympiad.Olympiad;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -45,7 +45,7 @@ public class OlympiadStat implements IUserCommandHandler
 		}
 		
 		int nobleObjId = activeChar.getObjectId();
-		final L2Object target = activeChar.getTarget();
+		final WorldObject target = activeChar.getTarget();
 		if (target != null)
 		{
 			if (target.isPlayer() && target.getActingPlayer().isNoble())

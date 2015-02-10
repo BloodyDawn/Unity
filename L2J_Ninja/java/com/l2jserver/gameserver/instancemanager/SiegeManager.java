@@ -35,7 +35,7 @@ import com.l2jserver.Config;
 import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.TowerSpawn;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -236,7 +236,7 @@ public final class SiegeManager
 		return getSiege(loc.getX(), loc.getY(), loc.getZ());
 	}
 	
-	public final Siege getSiege(L2Object activeObject)
+	public final Siege getSiege(WorldObject activeObject)
 	{
 		return getSiege(activeObject.getX(), activeObject.getY(), activeObject.getZ());
 	}

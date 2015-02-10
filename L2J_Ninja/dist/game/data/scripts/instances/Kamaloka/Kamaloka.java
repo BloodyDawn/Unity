@@ -30,13 +30,13 @@ import java.util.logging.Level;
 
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.L2Party;
+import com.l2jserver.gameserver.model.Party;
 import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Instance;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
@@ -1174,7 +1174,7 @@ public final class Kamaloka extends AbstractInstance
 		public List<L2Spawn> firstRoom; // list of the spawns in the first room (excluding shaman)
 		public List<Integer> secondRoom;// list of objectIds mobs in the second room
 		public int miniBoss = 0; // objectId of the miniboss
-		public L2Npc boss = null; // boss
+		public Npc boss = null; // boss
 	}
 	
 	public Kamaloka()
@@ -1229,7 +1229,7 @@ public final class Kamaloka extends AbstractInstance
 	 */
 	private static final boolean checkConditions(L2PcInstance player, int index)
 	{
-		final L2Party party = player.getParty();
+		final Party party = player.getParty();
 		// player must be in party
 		if (party == null)
 		{
@@ -1304,7 +1304,7 @@ public final class Kamaloka extends AbstractInstance
 	 * Removing all buffs from player and pet except BUFFS_WHITELIST
 	 * @param ch player
 	 */
-	private static final void removeBuffs(L2Character ch)
+	private static final void removeBuffs(Creature ch)
 	{
 		final Function<BuffInfo, Boolean> removeBuffs = info ->
 		{
@@ -1317,7 +1317,7 @@ public final class Kamaloka extends AbstractInstance
 		};
 		
 		ch.getEffectList().forEach(removeBuffs, false);
-		final L2Summon pet = ch.getPet();
+		final Summon pet = ch.getPet();
 		if (pet != null)
 		{
 			pet.getEffectList().forEach(removeBuffs, false);
@@ -1405,7 +1405,7 @@ public final class Kamaloka extends AbstractInstance
 		spawnKama((KamaWorld) world);
 		
 		// and finally teleport party into instance
-		final L2Party party = player.getParty();
+		final Party party = player.getParty();
 		for (L2PcInstance partyMember : party.getMembers())
 		{
 			world.addAllowed(partyMember.getObjectId());
@@ -1439,7 +1439,7 @@ public final class Kamaloka extends AbstractInstance
 			// set instance reenter time for all allowed players
 			for (int objectId : world.getAllowed())
 			{
-				L2PcInstance obj = L2World.getInstance().getPlayer(objectId);
+				L2PcInstance obj = World.getInstance().getPlayer(objectId);
 				if ((obj != null) && obj.isOnline())
 				{
 					InstanceManager.getInstance().setInstanceTime(objectId, world.getTemplateId(), reenter.getTimeInMillis());
@@ -1463,7 +1463,7 @@ public final class Kamaloka extends AbstractInstance
 	{
 		int[] npcs;
 		int[][] spawns;
-		L2Npc npc;
+		Npc npc;
 		final int index = world.index;
 		
 		// first room
@@ -1532,7 +1532,7 @@ public final class Kamaloka extends AbstractInstance
 	 * Handles only player's enter, single parameter - integer kamaloka index
 	 */
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (npc == null)
 		{
@@ -1554,13 +1554,13 @@ public final class Kamaloka extends AbstractInstance
 	 * Talk with captains and using of the escape teleporter
 	 */
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player)
+	public final String onTalk(Npc npc, L2PcInstance player)
 	{
 		final int npcId = npc.getId();
 		
 		if (npcId == TELEPORTER)
 		{
-			final L2Party party = player.getParty();
+			final Party party = player.getParty();
 			// only party leader can talk with escape teleporter
 			if ((party != null) && party.isLeader(player))
 			{
@@ -1596,7 +1596,7 @@ public final class Kamaloka extends AbstractInstance
 	 * Only escape teleporters first talk handled
 	 */
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public final String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		if (npc.getId() == TELEPORTER)
 		{
@@ -1610,7 +1610,7 @@ public final class Kamaloka extends AbstractInstance
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public final String onKill(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		final InstanceWorld tmpWorld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpWorld instanceof KamaWorld)

@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.network.clientpackets;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ExDuelAskStart;
@@ -47,7 +47,7 @@ public final class RequestDuelStart extends L2GameClientPacket
 	protected void runImpl()
 	{
 		L2PcInstance activeChar = getClient().getActiveChar();
-		L2PcInstance targetChar = L2World.getInstance().getPlayer(_player);
+		L2PcInstance targetChar = World.getInstance().getPlayer(_player);
 		if (activeChar == null)
 		{
 			return;

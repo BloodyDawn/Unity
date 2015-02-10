@@ -26,8 +26,8 @@ import javolution.util.FastMap;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.data.xml.impl.BuyListData;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2MerchantInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.buylist.L2BuyList;
@@ -135,10 +135,10 @@ public final class RequestPreviewItem extends L2GameClientPacket
 		}
 		
 		// Check current target of the player and the INTERACTION_DISTANCE
-		L2Object target = activeChar.getTarget();
+		WorldObject target = activeChar.getTarget();
 		if (!activeChar.isGM() && ((target == null // No target (i.e. GM Shop)
 			) || !((target instanceof L2MerchantInstance)) // Target not a merchant
-		|| !activeChar.isInsideRadius(target, L2Npc.INTERACTION_DISTANCE, false, false) // Distance is too far
+		|| !activeChar.isInsideRadius(target, Npc.INTERACTION_DISTANCE, false, false) // Distance is too far
 		))
 		{
 			return;

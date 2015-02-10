@@ -22,9 +22,9 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.PrivateStoreType;
 import com.l2jserver.gameserver.instancemanager.DuelManager;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Playable;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Playable;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.stat.PcStat;
 import com.l2jserver.gameserver.model.entity.Duel;
@@ -59,18 +59,18 @@ public class PcStatus extends PlayableStatus
 	}
 	
 	@Override
-	public final void reduceHp(double value, L2Character attacker)
+	public final void reduceHp(double value, Creature attacker)
 	{
 		reduceHp(value, attacker, true, false, false, false);
 	}
 	
 	@Override
-	public final void reduceHp(double value, L2Character attacker, boolean awake, boolean isDOT, boolean isHPConsumption)
+	public final void reduceHp(double value, Creature attacker, boolean awake, boolean isDOT, boolean isHPConsumption)
 	{
 		reduceHp(value, attacker, awake, isDOT, isHPConsumption, false);
 	}
 	
-	public final void reduceHp(double value, L2Character attacker, boolean awake, boolean isDOT, boolean isHPConsumption, boolean ignoreCP)
+	public final void reduceHp(double value, Creature attacker, boolean awake, boolean isDOT, boolean isHPConsumption, boolean ignoreCP)
 	{
 		if (getActiveChar().isDead())
 		{
@@ -147,7 +147,7 @@ public class PcStatus extends PlayableStatus
 			}
 			
 			// Check and calculate transfered damage
-			final L2Summon summon = getActiveChar().getAnyServitor();
+			final Summon summon = getActiveChar().getAnyServitor();
 			if ((summon != null) && Util.checkIfInRange(1000, getActiveChar(), summon, true))
 			{
 				tDmg = ((int) value * (int) getActiveChar().getStat().calcStat(Stats.TRANSFER_DAMAGE_PERCENT, 0, null, null)) / 100;
@@ -202,7 +202,7 @@ public class PcStatus extends PlayableStatus
 						}
 					}
 					
-					if ((attacker instanceof L2Playable) && (caster.getCurrentCp() > 0))
+					if ((attacker instanceof Playable) && (caster.getCurrentCp() > 0))
 					{
 						if (caster.getCurrentCp() > transferDmg)
 						{
@@ -224,7 +224,7 @@ public class PcStatus extends PlayableStatus
 				}
 			}
 			
-			if (!ignoreCP && (attacker instanceof L2Playable))
+			if (!ignoreCP && (attacker instanceof Playable))
 			{
 				if (getCurrentCp() >= value)
 				{
@@ -303,7 +303,7 @@ public class PcStatus extends PlayableStatus
 				stopHpMpRegeneration();
 				getActiveChar().setIsDead(true);
 				getActiveChar().setIsPendingRevive(true);
-				final L2Summon pet = getActiveChar().getPet();
+				final Summon pet = getActiveChar().getPet();
 				if (pet != null)
 				{
 					pet.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null);

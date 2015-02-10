@@ -24,7 +24,7 @@ import java.util.Map;
 import quests.Q00115_TheOtherSideOfTruth.Q00115_TheOtherSideOfTruth;
 
 import com.l2jserver.gameserver.enums.QuestSound;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
@@ -101,7 +101,7 @@ public final class Q00648_AnIceMerchantsDream extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final QuestState st = getQuestState(player, false);
 		final QuestState q115 = player.getQuestState(Q00115_TheOtherSideOfTruth.class.getSimpleName());
@@ -280,7 +280,7 @@ public final class Q00648_AnIceMerchantsDream extends Quest
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		final QuestState st = getRandomPartyMemberState(killer, -1, 3, npc);
 		if (st != null)
@@ -304,7 +304,7 @@ public final class Q00648_AnIceMerchantsDream extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		final QuestState st = getQuestState(player, true);
 		final QuestState st2 = player.getQuestState(Q00115_TheOtherSideOfTruth.class.getSimpleName());

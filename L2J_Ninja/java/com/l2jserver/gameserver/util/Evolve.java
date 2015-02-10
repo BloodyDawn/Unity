@@ -28,10 +28,10 @@ import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.data.xml.impl.NpcData;
 import com.l2jserver.gameserver.data.xml.impl.PetDataTable;
-import com.l2jserver.gameserver.model.L2PetData;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.actor.L2Npc;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.PetData;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.actor.Npc;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
@@ -51,14 +51,14 @@ public final class Evolve
 {
 	protected static final Logger _log = Logger.getLogger(Evolve.class.getName());
 	
-	public static final boolean doEvolve(L2PcInstance player, L2Npc npc, int itemIdtake, int itemIdgive, int petminlvl)
+	public static final boolean doEvolve(L2PcInstance player, Npc npc, int itemIdtake, int itemIdgive, int petminlvl)
 	{
 		if ((itemIdtake == 0) || (itemIdgive == 0) || (petminlvl == 0))
 		{
 			return false;
 		}
 		
-		final L2Summon pet = player.getPet();
+		final Summon pet = player.getPet();
 		if (pet == null)
 		{
 			return false;
@@ -78,7 +78,7 @@ public final class Evolve
 		int oldY = currentPet.getY();
 		int oldZ = currentPet.getZ();
 		
-		L2PetData oldData = PetDataTable.getInstance().getPetDataByItemId(itemIdtake);
+		PetData oldData = PetDataTable.getInstance().getPetDataByItemId(itemIdtake);
 		
 		if (oldData == null)
 		{
@@ -92,7 +92,7 @@ public final class Evolve
 			return false;
 		}
 		
-		L2PetData petData = PetDataTable.getInstance().getPetDataByItemId(itemIdgive);
+		PetData petData = PetDataTable.getInstance().getPetDataByItemId(itemIdgive);
 		
 		if (petData == null)
 		{
@@ -162,7 +162,7 @@ public final class Evolve
 		return true;
 	}
 	
-	public static final boolean doRestore(L2PcInstance player, L2Npc npc, int itemIdtake, int itemIdgive, int petminlvl)
+	public static final boolean doRestore(L2PcInstance player, Npc npc, int itemIdtake, int itemIdgive, int petminlvl)
 	{
 		if ((itemIdtake == 0) || (itemIdgive == 0) || (petminlvl == 0))
 		{
@@ -181,13 +181,13 @@ public final class Evolve
 			oldpetlvl = petminlvl;
 		}
 		
-		L2PetData oldData = PetDataTable.getInstance().getPetDataByItemId(itemIdtake);
+		PetData oldData = PetDataTable.getInstance().getPetDataByItemId(itemIdtake);
 		if (oldData == null)
 		{
 			return false;
 		}
 		
-		L2PetData petData = PetDataTable.getInstance().getPetDataByItemId(itemIdgive);
+		PetData petData = PetDataTable.getInstance().getPetDataByItemId(itemIdgive);
 		if (petData == null)
 		{
 			return false;
@@ -246,7 +246,7 @@ public final class Evolve
 		
 		player.broadcastUserInfo();
 		
-		L2World world = L2World.getInstance();
+		World world = World.getInstance();
 		world.removeObject(removedItem);
 		
 		ThreadPoolManager.getInstance().scheduleGeneral(new EvolveFinalizer(player, petSummon), 900);

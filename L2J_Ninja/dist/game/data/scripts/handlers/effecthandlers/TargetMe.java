@@ -19,7 +19,7 @@
 package handlers.effecthandlers;
 
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
@@ -41,7 +41,7 @@ public final class TargetMe extends AbstractEffect
 	{
 		if (info.getEffected().isPlayable())
 		{
-			((L2Playable) info.getEffected()).setLockedTarget(null);
+			((Playable) info.getEffected()).setLockedTarget(null);
 		}
 	}
 	
@@ -61,7 +61,7 @@ public final class TargetMe extends AbstractEffect
 				}
 			}
 			
-			((L2Playable) info.getEffected()).setLockedTarget(info.getEffector());
+			((Playable) info.getEffected()).setLockedTarget(info.getEffector());
 		}
 	}
 }

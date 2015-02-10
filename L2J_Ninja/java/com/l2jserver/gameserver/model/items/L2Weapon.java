@@ -21,8 +21,8 @@ package com.l2jserver.gameserver.model.items;
 import java.util.Objects;
 
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.conditions.ConditionGameChance;
@@ -342,7 +342,7 @@ public final class L2Weapon extends L2Item
 	 * @param caster the L2Character pointing out the caster
 	 * @param target the L2Character pointing out the target
 	 */
-	public void castOnCriticalSkill(L2Character caster, L2Character target)
+	public void castOnCriticalSkill(Creature caster, Creature target)
 	{
 		if ((_skillsOnCrit == null))
 		{
@@ -365,7 +365,7 @@ public final class L2Weapon extends L2Item
 			return;
 		}
 		
-		L2Character[] targets =
+		Creature[] targets =
 		{
 			target
 		};
@@ -378,7 +378,7 @@ public final class L2Weapon extends L2Item
 	 * @param target the L2Character pointing out the target
 	 * @param trigger the L2Skill pointing out the skill triggering this action
 	 */
-	public void castOnMagicSkill(L2Character caster, L2Character target, Skill trigger)
+	public void castOnMagicSkill(Creature caster, Creature target, Skill trigger)
 	{
 		if (_skillsOnMagic == null)
 		{
@@ -419,7 +419,7 @@ public final class L2Weapon extends L2Item
 			return;
 		}
 		
-		L2Character[] targets =
+		Creature[] targets =
 		{
 			target
 		};
@@ -438,7 +438,7 @@ public final class L2Weapon extends L2Item
 				.filter(npc -> Util.checkIfInRange(1000, npc, caster, false))
 				.forEach(npc -> 
 				{
-					EventDispatcher.getInstance().notifyEventAsync(new OnNpcSkillSee((L2Npc) npc, caster.getActingPlayer(), onMagicSkill, targets, false), npc);
+					EventDispatcher.getInstance().notifyEventAsync(new OnNpcSkillSee((Npc) npc, caster.getActingPlayer(), onMagicSkill, targets, false), npc);
 				});
 			//@formatter:on
 		}

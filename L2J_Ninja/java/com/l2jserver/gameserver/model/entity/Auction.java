@@ -39,7 +39,7 @@ import com.l2jserver.gameserver.idfactory.IdFactory;
 import com.l2jserver.gameserver.instancemanager.AuctionManager;
 import com.l2jserver.gameserver.instancemanager.ClanHallManager;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 
@@ -360,9 +360,9 @@ public class Auction
 					statement.setLong(7, System.currentTimeMillis());
 					statement.execute();
 				}
-				if (L2World.getInstance().getPlayer(_highestBidderName) != null)
+				if (World.getInstance().getPlayer(_highestBidderName) != null)
 				{
-					L2World.getInstance().getPlayer(_highestBidderName).sendMessage("You have been out bidded");
+					World.getInstance().getPlayer(_highestBidderName).sendMessage("You have been out bidded");
 				}
 			}
 			
@@ -408,9 +408,9 @@ public class Auction
 			}
 			else
 			{
-				if (L2World.getInstance().getPlayer(b.getName()) != null)
+				if (World.getInstance().getPlayer(b.getName()) != null)
 				{
-					L2World.getInstance().getPlayer(b.getName()).sendMessage("Congratulation you have won ClanHall!");
+					World.getInstance().getPlayer(b.getName()).sendMessage("Congratulation you have won ClanHall!");
 				}
 			}
 			ClanTable.getInstance().getClanByName(b.getClanName()).setAuctionBiddedAt(0, true);

@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
@@ -27,7 +27,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 public class ExFishingEnd extends L2GameServerPacket
 {
 	private final boolean _win;
-	private final L2Character _activeChar;
+	private final Creature _activeChar;
 	
 	public ExFishingEnd(boolean win, L2PcInstance character)
 	{

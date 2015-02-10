@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 
 /**
  * @author kerberos
@@ -27,7 +27,7 @@ public class ExStopMoveAirShip extends L2GameServerPacket
 {
 	private final int _objectId, _x, _y, _z, _heading;
 	
-	public ExStopMoveAirShip(L2Character ship)
+	public ExStopMoveAirShip(Creature ship)
 	{
 		_objectId = ship.getObjectId();
 		_x = ship.getX();

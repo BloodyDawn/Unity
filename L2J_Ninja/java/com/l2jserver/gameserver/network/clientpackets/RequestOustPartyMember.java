@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.network.clientpackets;
 
-import com.l2jserver.gameserver.model.L2Party.messageType;
+import com.l2jserver.gameserver.model.Party.messageType;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**

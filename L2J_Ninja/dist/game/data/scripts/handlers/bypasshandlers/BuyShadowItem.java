@@ -19,8 +19,8 @@
 package handlers.bypasshandlers;
 
 import com.l2jserver.gameserver.handler.IBypassHandler;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2MerchantInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -33,14 +33,14 @@ public class BuyShadowItem implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Character target)
+	public boolean useBypass(String command, L2PcInstance activeChar, Creature target)
 	{
 		if (!(target instanceof L2MerchantInstance))
 		{
 			return false;
 		}
 		
-		final NpcHtmlMessage html = new NpcHtmlMessage(((L2Npc) target).getObjectId());
+		final NpcHtmlMessage html = new NpcHtmlMessage(((Npc) target).getObjectId());
 		if (activeChar.getLevel() < 40)
 		{
 			html.setFile(activeChar.getHtmlPrefix(), "data/html/common/shadow_item-lowlevel.htm");
@@ -57,7 +57,7 @@ public class BuyShadowItem implements IBypassHandler
 		{
 			html.setFile(activeChar.getHtmlPrefix(), "data/html/common/shadow_item_b.htm");
 		}
-		html.replace("%objectId%", String.valueOf(((L2Npc) target).getObjectId()));
+		html.replace("%objectId%", String.valueOf(((Npc) target).getObjectId()));
 		activeChar.sendPacket(html);
 		
 		return true;

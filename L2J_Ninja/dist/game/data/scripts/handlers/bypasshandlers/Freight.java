@@ -19,7 +19,7 @@
 package handlers.bypasshandlers;
 
 import com.l2jserver.gameserver.handler.IBypassHandler;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.itemcontainer.PcFreight;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
@@ -39,7 +39,7 @@ public class Freight implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Character target)
+	public boolean useBypass(String command, L2PcInstance activeChar, Creature target)
 	{
 		if (!target.isNpc())
 		{

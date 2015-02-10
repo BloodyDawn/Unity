@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.model.actor.instance;
 
 import com.l2jserver.gameserver.datatables.ItemTable;
 import com.l2jserver.gameserver.model.ArenaParticipantsHolder;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.entity.BlockCheckerEngine;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
@@ -107,7 +107,7 @@ public class L2BlockInstance extends L2MonsterInstance
 	}
 	
 	@Override
-	public boolean isAutoAttackable(L2Character attacker)
+	public boolean isAutoAttackable(Creature attacker)
 	{
 		if (attacker instanceof L2PcInstance)
 		{
@@ -117,7 +117,7 @@ public class L2BlockInstance extends L2MonsterInstance
 	}
 	
 	@Override
-	public boolean doDie(L2Character killer)
+	public boolean doDie(Creature killer)
 	{
 		return false;
 	}

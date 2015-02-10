@@ -59,9 +59,9 @@ import com.l2jserver.gameserver.LoginServerThread;
 import com.l2jserver.gameserver.RecipeController;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.ai.L2CharacterAI;
-import com.l2jserver.gameserver.ai.L2PlayerAI;
-import com.l2jserver.gameserver.ai.L2SummonAI;
+import com.l2jserver.gameserver.ai.CharacterAI;
+import com.l2jserver.gameserver.ai.PlayerAI;
+import com.l2jserver.gameserver.ai.SummonAI;
 import com.l2jserver.gameserver.cache.WarehouseCacheManager;
 import com.l2jserver.gameserver.communitybbs.BB.Forum;
 import com.l2jserver.gameserver.communitybbs.Manager.ForumsBBSManager;
@@ -122,24 +122,24 @@ import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.ArenaParticipantsHolder;
 import com.l2jserver.gameserver.model.BlockList;
 import com.l2jserver.gameserver.model.ClanPrivilege;
-import com.l2jserver.gameserver.model.L2AccessLevel;
+import com.l2jserver.gameserver.model.AccessLevel;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2ClanMember;
-import com.l2jserver.gameserver.model.L2ContactList;
-import com.l2jserver.gameserver.model.L2EnchantSkillLearn;
-import com.l2jserver.gameserver.model.L2ManufactureItem;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2Party;
-import com.l2jserver.gameserver.model.L2Party.messageType;
-import com.l2jserver.gameserver.model.L2PetData;
-import com.l2jserver.gameserver.model.L2PetLevelData;
-import com.l2jserver.gameserver.model.L2PremiumItem;
-import com.l2jserver.gameserver.model.L2Radar;
-import com.l2jserver.gameserver.model.L2RecipeList;
+import com.l2jserver.gameserver.model.ClanMember;
+import com.l2jserver.gameserver.model.ContactList;
+import com.l2jserver.gameserver.model.EnchantSkillLearn;
+import com.l2jserver.gameserver.model.ManufactureItem;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.Party;
+import com.l2jserver.gameserver.model.Party.messageType;
+import com.l2jserver.gameserver.model.PetData;
+import com.l2jserver.gameserver.model.PetLevelData;
+import com.l2jserver.gameserver.model.PremiumItem;
+import com.l2jserver.gameserver.model.Radar;
+import com.l2jserver.gameserver.model.RecipeList;
 import com.l2jserver.gameserver.model.L2Request;
-import com.l2jserver.gameserver.model.L2SkillLearn;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.L2WorldRegion;
+import com.l2jserver.gameserver.model.SkillLearn;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.WorldRegion;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.Macro;
 import com.l2jserver.gameserver.model.MacroList;
@@ -154,13 +154,13 @@ import com.l2jserver.gameserver.model.TeleportWhereType;
 import com.l2jserver.gameserver.model.TimeStamp;
 import com.l2jserver.gameserver.model.TradeList;
 import com.l2jserver.gameserver.model.UIKeysSettings;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Decoy;
-import com.l2jserver.gameserver.model.actor.L2Npc;
-import com.l2jserver.gameserver.model.actor.L2Playable;
-import com.l2jserver.gameserver.model.actor.L2Summon;
-import com.l2jserver.gameserver.model.actor.L2Vehicle;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Decoy;
+import com.l2jserver.gameserver.model.actor.Npc;
+import com.l2jserver.gameserver.model.actor.Playable;
+import com.l2jserver.gameserver.model.actor.Summon;
+import com.l2jserver.gameserver.model.actor.Vehicle;
 import com.l2jserver.gameserver.model.actor.appearance.PcAppearance;
 import com.l2jserver.gameserver.model.actor.knownlist.PcKnownList;
 import com.l2jserver.gameserver.model.actor.request.AbstractRequest;
@@ -344,7 +344,7 @@ import com.l2jserver.util.Rnd;
  * This class represents all player characters in the world.<br>
  * There is always a client-thread connected to this (except if a player-store is activated upon logout).
  */
-public final class L2PcInstance extends L2Playable
+public final class L2PcInstance extends Playable
 {
 	// Character Skill SQL String Definitions:
 	private static final String RESTORE_SKILLS_FOR_CHAR = "SELECT skill_id,skill_level FROM character_skills WHERE charId=? AND class_index=?";
@@ -407,25 +407,25 @@ public final class L2PcInstance extends L2Playable
 	
 	private final List<IEventListener> _eventListeners = new FastList<IEventListener>().shared();
 	
-	public class AIAccessor extends L2Character.AIAccessor
+	public class AIAccessor extends Creature.AIAccessor
 	{
 		public L2PcInstance getPlayer()
 		{
 			return L2PcInstance.this;
 		}
 		
-		public void doPickupItem(L2Object object)
+		public void doPickupItem(WorldObject object)
 		{
 			L2PcInstance.this.doPickupItem(object);
 		}
 		
-		public void doInteract(L2Character target)
+		public void doInteract(Creature target)
 		{
 			L2PcInstance.this.doInteract(target);
 		}
 		
 		@Override
-		public void doAttack(L2Character target)
+		public void doAttack(Creature target)
 		{
 			super.doAttack(target);
 			
@@ -465,8 +465,8 @@ public final class L2PcInstance extends L2Playable
 	
 	/** data for mounted pets */
 	private int _controlItemId;
-	private L2PetData _data;
-	private L2PetLevelData _leveldata;
+	private PetData _data;
+	private PetLevelData _leveldata;
 	private int _curFeed;
 	protected Future<?> _mountFeedTask;
 	private ScheduledFuture<?> _dismountTask;
@@ -508,7 +508,7 @@ public final class L2PcInstance extends L2Playable
 	
 	private int _lastCompassZone; // the last compass zone update send to the client
 	
-	private final L2ContactList _contactList = new L2ContactList(this);
+	private final ContactList _contactList = new ContactList(this);
 	
 	private int _bookmarkslot = 0; // The Teleport Bookmark Slot
 	
@@ -533,7 +533,7 @@ public final class L2PcInstance extends L2Playable
 	private SystemMessageId _noDuelReason = SystemMessageId.THERE_IS_NO_OPPONENT_TO_RECEIVE_YOUR_CHALLENGE_FOR_A_DUEL;
 	
 	/** Boat and AirShip */
-	private L2Vehicle _vehicle = null;
+	private Vehicle _vehicle = null;
 	private Location _inVehiclePosition;
 	
 	public ScheduledFuture<?> _taskforfish;
@@ -553,11 +553,11 @@ public final class L2PcInstance extends L2Playable
 	private Transform _transformation;
 	
 	/** The table containing all L2RecipeList of the L2PcInstance */
-	private final Map<Integer, L2RecipeList> _dwarvenRecipeBook = new FastMap<>();
-	private final Map<Integer, L2RecipeList> _commonRecipeBook = new FastMap<>();
+	private final Map<Integer, RecipeList> _dwarvenRecipeBook = new FastMap<>();
+	private final Map<Integer, RecipeList> _commonRecipeBook = new FastMap<>();
 	
 	/** Premium Items */
-	private final Map<Integer, L2PremiumItem> _premiumItems = new FastMap<>();
+	private final Map<Integer, PremiumItem> _premiumItems = new FastMap<>();
 	
 	/** True if the L2PcInstance is sitting */
 	private boolean _waitTypeSitting;
@@ -587,7 +587,7 @@ public final class L2PcInstance extends L2Playable
 	
 	private TradeList _activeTradeList;
 	private ItemContainer _activeWarehouse;
-	private volatile Map<Integer, L2ManufactureItem> _manufactureItems;
+	private volatile Map<Integer, ManufactureItem> _manufactureItems;
 	private String _storeName = "";
 	private TradeList _sellList;
 	private TradeList _buyList;
@@ -599,7 +599,7 @@ public final class L2PcInstance extends L2Playable
 	private boolean _hero = false;
 	
 	/** The L2FolkInstance corresponding to the last Folk which one the player talked. */
-	private L2Npc _lastFolkNpc = null;
+	private Npc _lastFolkNpc = null;
 	
 	/** Last NPC Id talked on a quest */
 	private int _questNpcObject = 0;
@@ -628,11 +628,11 @@ public final class L2PcInstance extends L2Playable
 	private int _hennaCHA;
 	
 	/** The Pet of the L2PcInstance */
-	private L2Summon _pet = null;
+	private Summon _pet = null;
 	/** Servitors of the L2PcInstance */
-	private volatile Map<Integer, L2Summon> _servitors = null;
+	private volatile Map<Integer, Summon> _servitors = null;
 	/** The L2Decoy of the L2PcInstance */
-	private L2Decoy _decoy = null;
+	private Decoy _decoy = null;
 	/** The L2Trap of the L2PcInstance */
 	private L2TrapInstance _trap = null;
 	/** The L2Agathion of the L2PcInstance */
@@ -645,7 +645,7 @@ public final class L2PcInstance extends L2Playable
 	
 	// client radar
 	// TODO: This needs to be better integrated and saved/loaded
-	private final L2Radar _radar;
+	private final Radar _radar;
 	
 	// Party matching
 	// private int _partymatching = 0;
@@ -689,7 +689,7 @@ public final class L2PcInstance extends L2Playable
 	// WorldPosition used by TARGET_SIGNET_GROUND
 	private Location _currentSkillWorldPosition;
 	
-	private L2AccessLevel _accessLevel;
+	private AccessLevel _accessLevel;
 	
 	private boolean _messageRefusal = false; // message refusal mode
 	
@@ -699,7 +699,7 @@ public final class L2PcInstance extends L2Playable
 	private boolean _tradeRefusal = false; // Trade refusal
 	private boolean _exchangeRefusal = false; // Exchange refusal
 	
-	private L2Party _party;
+	private Party _party;
 	
 	// this is needed to find the inviting player for Party response
 	// there can only be one active party request at once
@@ -1118,7 +1118,7 @@ public final class L2PcInstance extends L2Playable
 		getAI();
 		
 		// Create a L2Radar object
-		_radar = new L2Radar(this);
+		_radar = new Radar(this);
 	}
 	
 	@Override
@@ -1198,9 +1198,9 @@ public final class L2PcInstance extends L2Playable
 	}
 	
 	@Override
-	protected L2CharacterAI initAI()
+	protected CharacterAI initAI()
 	{
-		return new L2PlayerAI(new L2PcInstance.AIAccessor());
+		return new PlayerAI(new L2PcInstance.AIAccessor());
 	}
 	
 	/** Return the Level of the L2PcInstance. */
@@ -1284,17 +1284,17 @@ public final class L2PcInstance extends L2Playable
 	/**
 	 * @return a table containing all Common L2RecipeList of the L2PcInstance.
 	 */
-	public L2RecipeList[] getCommonRecipeBook()
+	public RecipeList[] getCommonRecipeBook()
 	{
-		return _commonRecipeBook.values().toArray(new L2RecipeList[_commonRecipeBook.values().size()]);
+		return _commonRecipeBook.values().toArray(new RecipeList[_commonRecipeBook.values().size()]);
 	}
 	
 	/**
 	 * @return a table containing all Dwarf L2RecipeList of the L2PcInstance.
 	 */
-	public L2RecipeList[] getDwarvenRecipeBook()
+	public RecipeList[] getDwarvenRecipeBook()
 	{
-		return _dwarvenRecipeBook.values().toArray(new L2RecipeList[_dwarvenRecipeBook.values().size()]);
+		return _dwarvenRecipeBook.values().toArray(new RecipeList[_dwarvenRecipeBook.values().size()]);
 	}
 	
 	/**
@@ -1302,7 +1302,7 @@ public final class L2PcInstance extends L2Playable
 	 * @param recipe The L2RecipeList to add to the _recipebook
 	 * @param saveToDb
 	 */
-	public void registerCommonRecipeList(L2RecipeList recipe, boolean saveToDb)
+	public void registerCommonRecipeList(RecipeList recipe, boolean saveToDb)
 	{
 		_commonRecipeBook.put(recipe.getId(), recipe);
 		
@@ -1317,7 +1317,7 @@ public final class L2PcInstance extends L2Playable
 	 * @param recipe The L2RecipeList to add to the _recipebook
 	 * @param saveToDb
 	 */
-	public void registerDwarvenRecipeList(L2RecipeList recipe, boolean saveToDb)
+	public void registerDwarvenRecipeList(RecipeList recipe, boolean saveToDb)
 	{
 		_dwarvenRecipeBook.put(recipe.getId(), recipe);
 		
@@ -1488,10 +1488,10 @@ public final class L2PcInstance extends L2Playable
 		
 		if (getLastQuestNpcObject() > 0)
 		{
-			final L2Object object = L2World.getInstance().findObject(getLastQuestNpcObject());
-			if (object.isNpc() && isInsideRadius(object, L2Npc.INTERACTION_DISTANCE, false, false))
+			final WorldObject object = World.getInstance().findObject(getLastQuestNpcObject());
+			if (object.isNpc() && isInsideRadius(object, Npc.INTERACTION_DISTANCE, false, false))
 			{
-				final L2Npc npc = (L2Npc) object;
+				final Npc npc = (Npc) object;
 				quest.notifyEvent(event, npc, this);
 			}
 		}
@@ -1699,7 +1699,7 @@ public final class L2PcInstance extends L2Playable
 		if (hasSummon())
 		{
 			final RelationChanged rc = new RelationChanged();
-			final L2Summon pet = getPet();
+			final Summon pet = getPet();
 			if (pet != null)
 			{
 				rc.addRelation(pet, getRelation(this), false);
@@ -1728,7 +1728,7 @@ public final class L2PcInstance extends L2Playable
 				rc.addRelation(this, relation, isAutoAttackable(player));
 				if (hasSummon())
 				{
-					final L2Summon pet = getPet();
+					final Summon pet = getPet();
 					if (pet != null)
 					{
 						rc.addRelation(pet, relation, isAutoAttackable(player));
@@ -1995,9 +1995,9 @@ public final class L2PcInstance extends L2Playable
 		}
 		if ((_karma == 0) && (karma > 0))
 		{
-			Collection<L2Object> objs = getKnownList().getKnownObjects().values();
+			Collection<WorldObject> objs = getKnownList().getKnownObjects().values();
 			
-			for (L2Object object : objs)
+			for (WorldObject object : objs)
 			{
 				if (!(object instanceof L2GuardInstance))
 				{
@@ -2614,10 +2614,10 @@ public final class L2PcInstance extends L2Playable
 	public void giveAvailableAutoGetSkills()
 	{
 		// Get available skills
-		final List<L2SkillLearn> autoGetSkills = SkillTreesData.getInstance().getAvailableAutoGetSkills(this);
+		final List<SkillLearn> autoGetSkills = SkillTreesData.getInstance().getAvailableAutoGetSkills(this);
 		final SkillData st = SkillData.getInstance();
 		Skill skill;
-		for (L2SkillLearn s : autoGetSkills)
+		for (SkillLearn s : autoGetSkills)
 		{
 			skill = st.getSkill(s.getSkillId(), s.getSkillLevel());
 			if (skill != null)
@@ -2658,7 +2658,7 @@ public final class L2PcInstance extends L2Playable
 		return PlayerTemplateData.getInstance().getTemplate(_baseClass).getRace();
 	}
 	
-	public L2Radar getRadar()
+	public Radar getRadar()
 	{
 		return _radar;
 	}
@@ -2964,7 +2964,7 @@ public final class L2PcInstance extends L2Playable
 	 * @param reference : L2Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @param sendMessage : boolean Specifies whether to send message to Client about this action
 	 */
-	public void addAdena(String process, long count, L2Object reference, boolean sendMessage)
+	public void addAdena(String process, long count, WorldObject reference, boolean sendMessage)
 	{
 		if (sendMessage)
 		{
@@ -2999,7 +2999,7 @@ public final class L2PcInstance extends L2Playable
 	 * @param sendMessage : boolean Specifies whether to send message to Client about this action
 	 * @return boolean informing if the action was successful
 	 */
-	public boolean reduceAdena(String process, long count, L2Object reference, boolean sendMessage)
+	public boolean reduceAdena(String process, long count, WorldObject reference, boolean sendMessage)
 	{
 		if (count > getAdena())
 		{
@@ -3051,7 +3051,7 @@ public final class L2PcInstance extends L2Playable
 	 * @param sendMessage : boolean Specifies whether to send message to Client about this action
 	 * @return boolean informing if the action was successful
 	 */
-	public boolean reduceBeautyTickets(String process, long count, L2Object reference, boolean sendMessage)
+	public boolean reduceBeautyTickets(String process, long count, WorldObject reference, boolean sendMessage)
 	{
 		if (count > getBeautyTickets())
 		{
@@ -3110,7 +3110,7 @@ public final class L2PcInstance extends L2Playable
 	 * @param reference : L2Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @param sendMessage : boolean Specifies whether to send message to Client about this action
 	 */
-	public void addAncientAdena(String process, long count, L2Object reference, boolean sendMessage)
+	public void addAncientAdena(String process, long count, WorldObject reference, boolean sendMessage)
 	{
 		if (sendMessage)
 		{
@@ -3145,7 +3145,7 @@ public final class L2PcInstance extends L2Playable
 	 * @param sendMessage : boolean Specifies whether to send message to Client about this action
 	 * @return boolean informing if the action was successful
 	 */
-	public boolean reduceAncientAdena(String process, long count, L2Object reference, boolean sendMessage)
+	public boolean reduceAncientAdena(String process, long count, WorldObject reference, boolean sendMessage)
 	{
 		if (count > getAncientAdena())
 		{
@@ -3204,7 +3204,7 @@ public final class L2PcInstance extends L2Playable
 	 * @param reference : L2Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @param sendMessage : boolean Specifies whether to send message to Client about this action
 	 */
-	public void addItem(String process, L2ItemInstance item, L2Object reference, boolean sendMessage)
+	public void addItem(String process, L2ItemInstance item, WorldObject reference, boolean sendMessage)
 	{
 		if (item.getCount() > 0)
 		{
@@ -3283,7 +3283,7 @@ public final class L2PcInstance extends L2Playable
 	 * @param sendMessage : boolean Specifies whether to send message to Client about this action
 	 * @return
 	 */
-	public L2ItemInstance addItem(String process, int itemId, long count, L2Object reference, boolean sendMessage)
+	public L2ItemInstance addItem(String process, int itemId, long count, WorldObject reference, boolean sendMessage)
 	{
 		if (count > 0)
 		{
@@ -3369,7 +3369,7 @@ public final class L2PcInstance extends L2Playable
 	 * @param reference the reference object
 	 * @param sendMessage if {@code true} a system message will be sent
 	 */
-	public void addItem(String process, ItemHolder item, L2Object reference, boolean sendMessage)
+	public void addItem(String process, ItemHolder item, WorldObject reference, boolean sendMessage)
 	{
 		addItem(process, item.getId(), item.getCount(), reference, sendMessage);
 	}
@@ -3382,7 +3382,7 @@ public final class L2PcInstance extends L2Playable
 	 * @param sendMessage : boolean Specifies whether to send message to Client about this action
 	 * @return boolean informing if the action was successful
 	 */
-	public boolean destroyItem(String process, L2ItemInstance item, L2Object reference, boolean sendMessage)
+	public boolean destroyItem(String process, L2ItemInstance item, WorldObject reference, boolean sendMessage)
 	{
 		return destroyItem(process, item, item.getCount(), reference, sendMessage);
 	}
@@ -3396,7 +3396,7 @@ public final class L2PcInstance extends L2Playable
 	 * @param sendMessage : boolean Specifies whether to send message to Client about this action
 	 * @return boolean informing if the action was successful
 	 */
-	public boolean destroyItem(String process, L2ItemInstance item, long count, L2Object reference, boolean sendMessage)
+	public boolean destroyItem(String process, L2ItemInstance item, long count, WorldObject reference, boolean sendMessage)
 	{
 		item = _inventory.destroyItem(process, item, count, this, reference);
 		
@@ -3456,7 +3456,7 @@ public final class L2PcInstance extends L2Playable
 	 * @return boolean informing if the action was successful
 	 */
 	@Override
-	public boolean destroyItem(String process, int objectId, long count, L2Object reference, boolean sendMessage)
+	public boolean destroyItem(String process, int objectId, long count, WorldObject reference, boolean sendMessage)
 	{
 		L2ItemInstance item = _inventory.getItemByObjectId(objectId);
 		
@@ -3481,7 +3481,7 @@ public final class L2PcInstance extends L2Playable
 	 * @param sendMessage : boolean Specifies whether to send message to Client about this action
 	 * @return boolean informing if the action was successful
 	 */
-	public boolean destroyItemWithoutTrace(String process, int objectId, long count, L2Object reference, boolean sendMessage)
+	public boolean destroyItemWithoutTrace(String process, int objectId, long count, WorldObject reference, boolean sendMessage)
 	{
 		L2ItemInstance item = _inventory.getItemByObjectId(objectId);
 		
@@ -3508,7 +3508,7 @@ public final class L2PcInstance extends L2Playable
 	 * @return boolean informing if the action was successful
 	 */
 	@Override
-	public boolean destroyItemByItemId(String process, int itemId, long count, L2Object reference, boolean sendMessage)
+	public boolean destroyItemByItemId(String process, int itemId, long count, WorldObject reference, boolean sendMessage)
 	{
 		if (itemId == Inventory.ADENA_ID)
 		{
@@ -3572,7 +3572,7 @@ public final class L2PcInstance extends L2Playable
 	 * @param reference : L2Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return L2ItemInstance corresponding to the new item or the updated item in inventory
 	 */
-	public L2ItemInstance transferItem(String process, int objectId, long count, Inventory target, L2Object reference)
+	public L2ItemInstance transferItem(String process, int objectId, long count, Inventory target, WorldObject reference)
 	{
 		L2ItemInstance oldItem = checkItemManipulation(objectId, count, "transfer");
 		if (oldItem == null)
@@ -3658,7 +3658,7 @@ public final class L2PcInstance extends L2Playable
 	}
 	
 	/**
-	 * Use instead of calling {@link #addItem(String, L2ItemInstance, L2Object, boolean)} and {@link #destroyItemByItemId(String, int, long, L2Object, boolean)}<br>
+	 * Use instead of calling {@link #addItem(String, L2ItemInstance, WorldObject, boolean)} and {@link #destroyItemByItemId(String, int, long, WorldObject, boolean)}<br>
 	 * This method validates slots and weight limit, for stackable and non-stackable items.
 	 * @param process a generic string representing the process that is exchanging this items
 	 * @param reference the (probably NPC) reference, could be null
@@ -3669,7 +3669,7 @@ public final class L2PcInstance extends L2Playable
 	 * @param sendMessage if {@code true} it will send messages to the acting player
 	 * @return {@code true} if the player successfully exchanged the items, {@code false} otherwise
 	 */
-	public boolean exchangeItemsById(String process, L2Object reference, int coinId, long cost, int rewardId, long count, boolean sendMessage)
+	public boolean exchangeItemsById(String process, WorldObject reference, int coinId, long cost, int rewardId, long count, boolean sendMessage)
 	{
 		final PcInventory inv = getInventory();
 		if (!inv.validateCapacityByItemId(rewardId, count))
@@ -3707,7 +3707,7 @@ public final class L2PcInstance extends L2Playable
 	 * @param protectItem whether or not dropped item must be protected temporary against other players
 	 * @return boolean informing if the action was successful
 	 */
-	public boolean dropItem(String process, L2ItemInstance item, L2Object reference, boolean sendMessage, boolean protectItem)
+	public boolean dropItem(String process, L2ItemInstance item, WorldObject reference, boolean sendMessage, boolean protectItem)
 	{
 		item = _inventory.dropItem(process, item, this, reference);
 		
@@ -3781,7 +3781,7 @@ public final class L2PcInstance extends L2Playable
 		return true;
 	}
 	
-	public boolean dropItem(String process, L2ItemInstance item, L2Object reference, boolean sendMessage)
+	public boolean dropItem(String process, L2ItemInstance item, WorldObject reference, boolean sendMessage)
 	{
 		return dropItem(process, item, reference, sendMessage, false);
 	}
@@ -3799,7 +3799,7 @@ public final class L2PcInstance extends L2Playable
 	 * @param protectItem
 	 * @return L2ItemInstance corresponding to the new item or the updated item in inventory
 	 */
-	public L2ItemInstance dropItem(String process, int objectId, long count, int x, int y, int z, L2Object reference, boolean sendMessage, boolean protectItem)
+	public L2ItemInstance dropItem(String process, int objectId, long count, int x, int y, int z, WorldObject reference, boolean sendMessage, boolean protectItem)
 	{
 		L2ItemInstance invitem = _inventory.getItemByObjectId(objectId);
 		L2ItemInstance item = _inventory.dropItem(process, objectId, count, this, reference);
@@ -3875,7 +3875,7 @@ public final class L2PcInstance extends L2Playable
 	public L2ItemInstance checkItemManipulation(int objectId, long count, String action)
 	{
 		// TODO: if we remove objects that are not visisble from the L2World, we'll have to remove this check
-		if (L2World.getInstance().findObject(objectId) == null)
+		if (World.getInstance().findObject(objectId) == null)
 		{
 			_log.finest(getObjectId() + ": player tried to " + action + " item not available in L2World");
 			return null;
@@ -3902,7 +3902,7 @@ public final class L2PcInstance extends L2Playable
 		}
 		
 		// Pet is summoned and not the item that summoned the pet AND not the buggle from strider you're mounting
-		final L2Summon pet = getPet();
+		final Summon pet = getPet();
 		if (((pet != null) && (pet.getControlObjectId() == objectId)) || (getMountObjectID() == objectId))
 		{
 			if (Config.DEBUG)
@@ -4280,7 +4280,7 @@ public final class L2PcInstance extends L2Playable
 				rc.addRelation(this, relation, isAutoAttackable(player));
 				if (hasSummon())
 				{
-					final L2Summon pet = getPet();
+					final Summon pet = getPet();
 					if (pet != null)
 					{
 						rc.addRelation(pet, relation, isAutoAttackable(player));
@@ -4324,7 +4324,7 @@ public final class L2PcInstance extends L2Playable
 					rc.addRelation(this, relation, isAutoAttackable(player));
 					if (hasSummon())
 					{
-						final L2Summon pet = getPet();
+						final Summon pet = getPet();
 						if (pet != null)
 						{
 							rc.addRelation(pet, relation, isAutoAttackable(player));
@@ -4407,7 +4407,7 @@ public final class L2PcInstance extends L2Playable
 	 * to the L2PcInstance</li> <li>If the private store is a STORE_PRIVATE_MANUFACTURE, send a Server->Client RecipeShopSellList packet to the L2PcInstance</li>
 	 * @param target The L2Character targeted
 	 */
-	public void doInteract(L2Character target)
+	public void doInteract(Creature target)
 	{
 		if (target instanceof L2PcInstance)
 		{
@@ -4451,7 +4451,7 @@ public final class L2PcInstance extends L2Playable
 	 * @param itemId the item ID
 	 * @param itemCount the item count
 	 */
-	public void doAutoLoot(L2Attackable target, int itemId, long itemCount)
+	public void doAutoLoot(Attackable target, int itemId, long itemCount)
 	{
 		if (isInParty() && !ItemTable.getInstance().getTemplate(itemId).hasExImmediateEffect())
 		{
@@ -4468,11 +4468,11 @@ public final class L2PcInstance extends L2Playable
 	}
 	
 	/**
-	 * Method overload for {@link L2PcInstance#doAutoLoot(L2Attackable, int, long)}
+	 * Method overload for {@link L2PcInstance#doAutoLoot(Attackable, int, long)}
 	 * @param target the NPC dropping the item
 	 * @param item the item holder
 	 */
-	public void doAutoLoot(L2Attackable target, ItemHolder item)
+	public void doAutoLoot(Attackable target, ItemHolder item)
 	{
 		doAutoLoot(target, item.getId(), item.getCount());
 	}
@@ -4483,7 +4483,7 @@ public final class L2PcInstance extends L2Playable
 	 * current weight</li> <FONT COLOR=#FF0000><B> <U>Caution</U> : If a Party is in progress, distribute Items between party members</B></FONT>
 	 * @param object The L2ItemInstance to pick up
 	 */
-	protected void doPickupItem(L2Object object)
+	protected void doPickupItem(WorldObject object)
 	{
 		if (isAlikeDead() || isFakeDeath())
 		{
@@ -4833,7 +4833,7 @@ public final class L2PcInstance extends L2Playable
 	 * @param newTarget The L2Object to target
 	 */
 	@Override
-	public void setTarget(L2Object newTarget)
+	public void setTarget(WorldObject newTarget)
 	{
 		if (newTarget != null)
 		{
@@ -4852,14 +4852,14 @@ public final class L2PcInstance extends L2Playable
 			}
 			
 			// vehicles cant be targeted
-			if (!isGM() && (newTarget instanceof L2Vehicle))
+			if (!isGM() && (newTarget instanceof Vehicle))
 			{
 				newTarget = null;
 			}
 		}
 		
 		// Get the current target
-		L2Object oldTarget = getTarget();
+		WorldObject oldTarget = getTarget();
 		
 		if (oldTarget != null)
 		{
@@ -4877,9 +4877,9 @@ public final class L2PcInstance extends L2Playable
 			oldTarget.removeStatusListener(this);
 		}
 		
-		if (newTarget instanceof L2Character)
+		if (newTarget instanceof Creature)
 		{
-			final L2Character target = (L2Character) newTarget;
+			final Creature target = (Creature) newTarget;
 			
 			// Validate location of the new target.
 			if (newTarget.getObjectId() != getObjectId())
@@ -5119,7 +5119,7 @@ public final class L2PcInstance extends L2Playable
 		}
 		else
 		{
-			L2PcInstance ptarget = L2World.getInstance().getPlayer(_engageid);
+			L2PcInstance ptarget = World.getInstance().getPlayer(_engageid);
 			setEngageRequest(false, 0);
 			if (ptarget != null)
 			{
@@ -5166,7 +5166,7 @@ public final class L2PcInstance extends L2Playable
 	 * @param killer
 	 */
 	@Override
-	public boolean doDie(L2Character killer)
+	public boolean doDie(Creature killer)
 	{
 		if (killer != null)
 		{
@@ -5329,7 +5329,7 @@ public final class L2PcInstance extends L2Playable
 		return true;
 	}
 	
-	private void onDieDropItem(L2Character killer)
+	private void onDieDropItem(Creature killer)
 	{
 		if (L2Event.isParticipant(this) || (killer == null))
 		{
@@ -5347,7 +5347,7 @@ public final class L2PcInstance extends L2Playable
 		if ((!isInsideZone(ZoneId.PVP) || (pk == null)) && (!isGM() || Config.KARMA_DROP_GM))
 		{
 			boolean isKarmaDrop = false;
-			boolean isKillerNpc = (killer instanceof L2Npc);
+			boolean isKillerNpc = (killer instanceof Npc);
 			int pkLimit = Config.KARMA_PK_LIMIT;
 			
 			int dropEquip = 0;
@@ -5380,7 +5380,7 @@ public final class L2PcInstance extends L2Playable
 				
 				int itemDropPercent = 0;
 				
-				final L2Summon pet = getPet();
+				final Summon pet = getPet();
 				
 				for (L2ItemInstance itemDrop : getInventory().getItems())
 				{
@@ -5432,7 +5432,7 @@ public final class L2PcInstance extends L2Playable
 		}
 	}
 	
-	public void onKillUpdatePvPKarma(L2Character target)
+	public void onKillUpdatePvPKarma(Creature target)
 	{
 		if ((target == null) || !target.isPlayable())
 		{
@@ -5513,7 +5513,7 @@ public final class L2PcInstance extends L2Playable
 	 * Increase the pvp kills count and send the info to the player
 	 * @param target
 	 */
-	public void increasePvpKills(L2Character target)
+	public void increasePvpKills(Creature target)
 	{
 		if ((target instanceof L2PcInstance) && AntiFeedManager.getInstance().check(this, target))
 		{
@@ -5530,7 +5530,7 @@ public final class L2PcInstance extends L2Playable
 	 * Increase pk count, karma and send the info to the player
 	 * @param target
 	 */
-	public void increasePkKillsAndKarma(L2Character target)
+	public void increasePkKillsAndKarma(Creature target)
 	{
 		// Only playables can increase karma/pk
 		if ((target == null) || !target.isPlayable())
@@ -5567,7 +5567,7 @@ public final class L2PcInstance extends L2Playable
 		}
 	}
 	
-	public void updatePvPStatus(L2Character target)
+	public void updatePvPStatus(Creature target)
 	{
 		L2PcInstance player_target = target.getActingPlayer();
 		
@@ -5625,7 +5625,7 @@ public final class L2PcInstance extends L2Playable
 	 * @param killer
 	 * @param atWar
 	 */
-	public void calculateDeathExpPenalty(L2Character killer, boolean atWar)
+	public void calculateDeathExpPenalty(Creature killer, boolean atWar)
 	{
 		final int lvl = getLevel();
 		double percentLost = PlayerXpPercentLostData.getInstance().getXpPercent(getLevel());
@@ -5715,24 +5715,24 @@ public final class L2PcInstance extends L2Playable
 	}
 	
 	@Override
-	public L2Summon getPet()
+	public Summon getPet()
 	{
 		return _pet;
 	}
 	
 	@Override
-	public Map<Integer, L2Summon> getServitors()
+	public Map<Integer, Summon> getServitors()
 	{
 		return _servitors == null ? Collections.emptyMap() : _servitors;
 	}
 	
-	public L2Summon getAnyServitor()
+	public Summon getAnyServitor()
 	{
 		return getServitors().values().stream().findAny().orElse(null);
 	}
 	
 	@Override
-	public L2Summon getServitor(int objectId)
+	public Summon getServitor(int objectId)
 	{
 		return getServitors().get(objectId);
 	}
@@ -5740,7 +5740,7 @@ public final class L2PcInstance extends L2Playable
 	/**
 	 * @return the L2Decoy of the L2PcInstance or null.
 	 */
-	public L2Decoy getDecoy()
+	public Decoy getDecoy()
 	{
 		return _decoy;
 	}
@@ -5757,12 +5757,12 @@ public final class L2PcInstance extends L2Playable
 	 * Set the L2Summon of the L2PcInstance.
 	 * @param pet
 	 */
-	public void setPet(L2Summon pet)
+	public void setPet(Summon pet)
 	{
 		_pet = pet;
 	}
 	
-	public void addServitor(L2Summon servitor)
+	public void addServitor(Summon servitor)
 	{
 		if (_servitors == null)
 		{
@@ -5781,7 +5781,7 @@ public final class L2PcInstance extends L2Playable
 	 * Set the L2Decoy of the L2PcInstance.
 	 * @param decoy
 	 */
-	public void setDecoy(L2Decoy decoy)
+	public void setDecoy(Decoy decoy)
 	{
 		_decoy = decoy;
 	}
@@ -6001,7 +6001,7 @@ public final class L2PcInstance extends L2Playable
 	 * Get the manufacture items map of this player.
 	 * @return the the manufacture items map
 	 */
-	public Map<Integer, L2ManufactureItem> getManufactureItems()
+	public Map<Integer, ManufactureItem> getManufactureItems()
 	{
 		if (_manufactureItems == null)
 		{
@@ -6009,7 +6009,7 @@ public final class L2PcInstance extends L2Playable
 			{
 				if (_manufactureItems == null)
 				{
-					_manufactureItems = Collections.synchronizedMap(new LinkedHashMap<Integer, L2ManufactureItem>());
+					_manufactureItems = Collections.synchronizedMap(new LinkedHashMap<Integer, ManufactureItem>());
 				}
 			}
 		}
@@ -6377,7 +6377,7 @@ public final class L2PcInstance extends L2Playable
 		return true;
 	}
 	
-	public boolean mount(L2Summon pet)
+	public boolean mount(Summon pet)
 	{
 		if (!disarmWeapons() || !disarmShield() || isTransformed())
 		{
@@ -6420,7 +6420,7 @@ public final class L2PcInstance extends L2Playable
 		return true;
 	}
 	
-	public boolean mountPlayer(L2Summon pet)
+	public boolean mountPlayer(Summon pet)
 	{
 		if ((pet != null) && pet.isMountable() && !isMounted() && !isBetrayed())
 		{
@@ -6576,7 +6576,7 @@ public final class L2PcInstance extends L2Playable
 	 * Set the _party object of the L2PcInstance (without joining it).
 	 * @param party
 	 */
-	public void setParty(L2Party party)
+	public void setParty(Party party)
 	{
 		_party = party;
 	}
@@ -6585,7 +6585,7 @@ public final class L2PcInstance extends L2Playable
 	 * Set the _party object of the L2PcInstance AND join it.
 	 * @param party
 	 */
-	public void joinParty(L2Party party)
+	public void joinParty(Party party)
 	{
 		if (party != null)
 		{
@@ -6612,7 +6612,7 @@ public final class L2PcInstance extends L2Playable
 	 * Return the _party object of the L2PcInstance.
 	 */
 	@Override
-	public L2Party getParty()
+	public Party getParty()
 	{
 		return _party;
 	}
@@ -6663,7 +6663,7 @@ public final class L2PcInstance extends L2Playable
 	 * @return the _accessLevel of the L2PcInstance.
 	 */
 	@Override
-	public L2AccessLevel getAccessLevel()
+	public AccessLevel getAccessLevel()
 	{
 		if (Config.EVERYBODY_HAS_ADMIN_RIGHTS)
 		{
@@ -6722,7 +6722,7 @@ public final class L2PcInstance extends L2Playable
 				rc.addRelation(this, relation, isAutoAttackable(player));
 				if (hasSummon())
 				{
-					final L2Summon pet = getPet();
+					final Summon pet = getPet();
 					if (pet != null)
 					{
 						rc.addRelation(pet, relation, isAutoAttackable(player));
@@ -6763,7 +6763,7 @@ public final class L2PcInstance extends L2Playable
 				rc.addRelation(this, relation, isAutoAttackable(player));
 				if (hasSummon())
 				{
-					final L2Summon pet = getPet();
+					final Summon pet = getPet();
 					if (pet != null)
 					{
 						rc.addRelation(pet, relation, isAutoAttackable(player));
@@ -6955,7 +6955,7 @@ public final class L2PcInstance extends L2Playable
 							player.getClanPrivileges().setAll();
 							player.setPowerGrade(1);
 						}
-						player.setPledgeClass(L2ClanMember.calculatePledgeClass(player));
+						player.setPledgeClass(ClanMember.calculatePledgeClass(player));
 					}
 					else
 					{
@@ -7102,8 +7102,8 @@ public final class L2PcInstance extends L2Playable
 			}
 			
 			// Restore pet if exists in the world
-			player.setPet(L2World.getInstance().getPet(player.getObjectId()));
-			final L2Summon pet = player.getPet();
+			player.setPet(World.getInstance().getPet(player.getObjectId()));
+			final Summon pet = player.getPet();
 			if (pet != null)
 			{
 				pet.setOwner(player);
@@ -7111,7 +7111,7 @@ public final class L2PcInstance extends L2Playable
 			
 			if (player.hasServitors())
 			{
-				for (L2Summon summon : player.getServitors().values())
+				for (Summon summon : player.getServitors().values())
 				{
 					summon.setOwner(player);
 				}
@@ -7301,7 +7301,7 @@ public final class L2PcInstance extends L2Playable
 			{
 				_dwarvenRecipeBook.clear();
 				
-				L2RecipeList recipe;
+				RecipeList recipe;
 				RecipeData rd = RecipeData.getInstance();
 				while (rset.next())
 				{
@@ -7333,7 +7333,7 @@ public final class L2PcInstance extends L2Playable
 		}
 	}
 	
-	public Map<Integer, L2PremiumItem> getPremiumItemList()
+	public Map<Integer, PremiumItem> getPremiumItemList()
 	{
 		return _premiumItems;
 	}
@@ -7353,7 +7353,7 @@ public final class L2PcInstance extends L2Playable
 					int itemId = rset.getInt("itemId");
 					long itemCount = rset.getLong("itemCount");
 					String itemSender = rset.getString("itemSender");
-					_premiumItems.put(itemNum, new L2PremiumItem(itemId, itemCount, itemSender));
+					_premiumItems.put(itemNum, new PremiumItem(itemId, itemCount, itemSender));
 				}
 			}
 		}
@@ -8359,7 +8359,7 @@ public final class L2PcInstance extends L2Playable
 	 * </ul>
 	 */
 	@Override
-	public boolean isAutoAttackable(L2Character attacker)
+	public boolean isAutoAttackable(Creature attacker)
 	{
 		if (attacker == null)
 		{
@@ -8563,7 +8563,7 @@ public final class L2PcInstance extends L2Playable
 		}
 		
 		// Check if the target is correct and Notify the AI with AI_INTENTION_CAST and target
-		L2Object target = null;
+		WorldObject target = null;
 		switch (skill.getTargetType())
 		{
 			case AURA: // AURA, SELF should be cast even if no target has been found
@@ -8651,7 +8651,7 @@ public final class L2PcInstance extends L2Playable
 		
 		// ************************************* Check Target *******************************************
 		// Create and set a L2Object containing the target of the skill
-		L2Object target = null;
+		WorldObject target = null;
 		L2TargetType sklTargetType = skill.getTargetType();
 		Location worldPosition = getCurrentSkillWorldPosition();
 		
@@ -8724,7 +8724,7 @@ public final class L2PcInstance extends L2Playable
 		if (isInDuel())
 		{
 			// Get L2PcInstance
-			if (target instanceof L2Playable)
+			if (target instanceof Playable)
 			{
 				// Get L2PcInstance
 				L2PcInstance cha = target.getActingPlayer();
@@ -8968,7 +8968,7 @@ public final class L2PcInstance extends L2Playable
 	
 	public boolean isInLooterParty(int LooterId)
 	{
-		L2PcInstance looter = L2World.getInstance().getPlayer(LooterId);
+		L2PcInstance looter = World.getInstance().getPlayer(LooterId);
 		
 		// if L2PcInstance is in a CommandChannel
 		if (isInParty() && getParty().isInCommandChannel() && (looter != null))
@@ -8990,14 +8990,14 @@ public final class L2PcInstance extends L2Playable
 	 * @param skill L2Skill instance with the skill being casted
 	 * @return {@code false} if the skill is a pvpSkill and target is not a valid pvp target, {@code true} otherwise.
 	 */
-	public boolean checkPvpSkill(L2Object target, Skill skill)
+	public boolean checkPvpSkill(WorldObject target, Skill skill)
 	{
 		if ((skill == null) || (target == null))
 		{
 			return false;
 		}
 		
-		if (!(target instanceof L2Playable))
+		if (!(target instanceof Playable))
 		{
 			return true;
 		}
@@ -9363,7 +9363,7 @@ public final class L2PcInstance extends L2Playable
 	 * Set the _lastFolkNpc of the L2PcInstance corresponding to the last Folk wich one the player talked.
 	 * @param folkNpc
 	 */
-	public void setLastFolkNPC(L2Npc folkNpc)
+	public void setLastFolkNPC(Npc folkNpc)
 	{
 		_lastFolkNpc = folkNpc;
 	}
@@ -9371,7 +9371,7 @@ public final class L2PcInstance extends L2Playable
 	/**
 	 * @return the _lastFolkNpc of the L2PcInstance corresponding to the last Folk wich one the player talked.
 	 */
-	public L2Npc getLastFolkNPC()
+	public Npc getLastFolkNPC()
 	{
 		return _lastFolkNpc;
 	}
@@ -9599,7 +9599,7 @@ public final class L2PcInstance extends L2Playable
 	
 	public void enterOlympiadObserverMode(Location loc, int id)
 	{
-		final L2Summon pet = getPet();
+		final Summon pet = getPet();
 		if (pet != null)
 		{
 			pet.unSummon(this);
@@ -10070,14 +10070,14 @@ public final class L2PcInstance extends L2Playable
 	{
 		super.setTeam(team);
 		broadcastUserInfo();
-		final L2Summon pet = getPet();
+		final Summon pet = getPet();
 		if (pet != null)
 		{
 			pet.broadcastStatusUpdate();
 		}
 		if (hasServitors())
 		{
-			getServitors().values().forEach(L2Summon::broadcastStatusUpdate);
+			getServitors().values().forEach(Summon::broadcastStatusUpdate);
 		}
 	}
 	
@@ -10130,7 +10130,7 @@ public final class L2PcInstance extends L2Playable
 			boolean isEnchantable = SkillData.getInstance().isEnchantable(s.getId());
 			if (isEnchantable)
 			{
-				L2EnchantSkillLearn esl = EnchantSkillGroupsData.getInstance().getSkillEnchantmentBySkillId(s.getId());
+				EnchantSkillLearn esl = EnchantSkillGroupsData.getInstance().getSkillEnchantmentBySkillId(s.getId());
 				if (esl != null)
 				{
 					// if player dont have min level to enchant
@@ -10217,9 +10217,9 @@ public final class L2PcInstance extends L2Playable
 			getSubClasses().put(newClass.getClassIndex(), newClass);
 			
 			final ClassId subTemplate = ClassId.getClassId(classId);
-			final Map<Integer, L2SkillLearn> skillTree = SkillTreesData.getInstance().getCompleteClassSkillTree(subTemplate);
+			final Map<Integer, SkillLearn> skillTree = SkillTreesData.getInstance().getCompleteClassSkillTree(subTemplate);
 			final Map<Integer, Skill> prevSkillList = new HashMap<>();
-			for (L2SkillLearn skillInfo : skillTree.values())
+			for (SkillLearn skillInfo : skillTree.values())
 			{
 				if (skillInfo.getGetLevel() <= newClass.getLevel())
 				{
@@ -10780,7 +10780,7 @@ public final class L2PcInstance extends L2Playable
 			}
 			return;
 		}
-		final L2Summon pet = getPet();
+		final Summon pet = getPet();
 		if ((Pet && (pet != null) && pet.isDead()) || (!Pet && isDead()))
 		{
 			_reviveRequested = 1;
@@ -10806,7 +10806,7 @@ public final class L2PcInstance extends L2Playable
 	
 	public void reviveAnswer(int answer)
 	{
-		final L2Summon pet = getPet();
+		final Summon pet = getPet();
 		if ((_reviveRequested != 1) || (!isDead() && !_revivePet) || (_revivePet && (pet != null) && !pet.isDead()))
 		{
 			return;
@@ -10941,12 +10941,12 @@ public final class L2PcInstance extends L2Playable
 		}
 		
 		// Modify the position of the pet if necessary
-		final L2Summon pet = getPet();
+		final Summon pet = getPet();
 		if (pet != null)
 		{
 			pet.setFollowStatus(false);
 			pet.teleToLocation(getLocation(), false);
-			((L2SummonAI) pet.getAI()).setStartFollowController(true);
+			((SummonAI) pet.getAI()).setStartFollowController(true);
 			pet.setFollowStatus(true);
 			pet.updateAndBroadcastStatus(0);
 		}
@@ -10955,7 +10955,7 @@ public final class L2PcInstance extends L2Playable
 		{
 			s.setFollowStatus(false);
 			s.teleToLocation(getLocation(), false);
-			((L2SummonAI) s.getAI()).setStartFollowController(true);
+			((SummonAI) s.getAI()).setStartFollowController(true);
 			s.setFollowStatus(true);
 			s.updateAndBroadcastStatus(0);
 		});
@@ -11036,7 +11036,7 @@ public final class L2PcInstance extends L2Playable
 	}
 	
 	@Override
-	public void reduceCurrentHp(double value, L2Character attacker, boolean awake, boolean isDOT, Skill skill)
+	public void reduceCurrentHp(double value, Creature attacker, boolean awake, boolean isDOT, Skill skill)
 	{
 		if (skill != null)
 		{
@@ -11192,7 +11192,7 @@ public final class L2PcInstance extends L2Playable
 		}
 		
 		// Pet is summoned and not the item that summoned the pet AND not the buggle from strider you're mounting
-		final L2Summon pet = getPet();
+		final Summon pet = getPet();
 		if (((pet != null) && (pet.getControlObjectId() == objectId)) || (getMountObjectID() == objectId))
 		{
 			if (Config.DEBUG)
@@ -11263,12 +11263,12 @@ public final class L2PcInstance extends L2Playable
 		return (L2ShuttleInstance) _vehicle;
 	}
 	
-	public L2Vehicle getVehicle()
+	public Vehicle getVehicle()
 	{
 		return _vehicle;
 	}
 	
-	public void setVehicle(L2Vehicle v)
+	public void setVehicle(Vehicle v)
 	{
 		if ((v == null) && (_vehicle != null))
 		{
@@ -11493,7 +11493,7 @@ public final class L2PcInstance extends L2Playable
 		getEffectList().stopAllToggles();
 		
 		// Remove from world regions zones
-		final L2WorldRegion oldRegion = getWorldRegion();
+		final WorldRegion oldRegion = getWorldRegion();
 		if (oldRegion != null)
 		{
 			oldRegion.removeFromZones(this);
@@ -11532,7 +11532,7 @@ public final class L2PcInstance extends L2Playable
 		{
 			try
 			{
-				L2Summon pet = getPet();
+				Summon pet = getPet();
 				if (pet != null)
 				{
 					pet.setRestoreSummon(true);
@@ -11562,7 +11562,7 @@ public final class L2PcInstance extends L2Playable
 			// set the status for pledge member list to OFFLINE
 			try
 			{
-				L2ClanMember clanMember = getClan().getClanMember(getObjectId());
+				ClanMember clanMember = getClan().getClanMember(getObjectId());
 				if (clanMember != null)
 				{
 					clanMember.setPlayerInstance(null);
@@ -11630,7 +11630,7 @@ public final class L2PcInstance extends L2Playable
 						final int x = loc.getX() + Rnd.get(-30, 30);
 						final int y = loc.getY() + Rnd.get(-30, 30);
 						setXYZInvisible(x, y, loc.getZ());
-						final L2Summon pet = getPet();
+						final Summon pet = getPet();
 						if (pet != null) // dead pet
 						{
 							pet.teleToLocation(loc, true);
@@ -11748,8 +11748,8 @@ public final class L2PcInstance extends L2Playable
 		}
 		
 		// Remove L2Object object from _allObjects of L2World
-		L2World.getInstance().removeObject(this);
-		L2World.getInstance().removeFromAllPlayers(this); // force remove in case of crash during teleport
+		World.getInstance().removeObject(this);
+		World.getInstance().removeFromAllPlayers(this); // force remove in case of crash during teleport
 		
 		try
 		{
@@ -12525,7 +12525,7 @@ public final class L2PcInstance extends L2Playable
 		return buff == null ? 0 : buff.getSkill().getLevel();
 	}
 	
-	public void calculateShilensBreathDebuffLevel(L2Character killer)
+	public void calculateShilensBreathDebuffLevel(Creature killer)
 	{
 		if (killer == null)
 		{
@@ -12609,7 +12609,7 @@ public final class L2PcInstance extends L2Playable
 	}
 	
 	@Override
-	public final void sendDamageMessage(L2Character target, int damage, boolean mcrit, boolean pcrit, boolean miss)
+	public final void sendDamageMessage(Creature target, int damage, boolean mcrit, boolean pcrit, boolean miss)
 	{
 		// Check if hit is missed
 		if (miss)
@@ -12770,7 +12770,7 @@ public final class L2PcInstance extends L2Playable
 		}
 		if (hasPet())
 		{
-			final L2Summon pet = getPet();
+			final Summon pet = getPet();
 			setCurrentFeed(((L2PetInstance) pet).getCurrentFed());
 			_controlItemId = pet.getControlObjectId();
 			sendPacket(new SetupGauge(3, (getCurrentFeed() * 10000) / getFeedConsume(), (getMaxFeed() * 10000) / getFeedConsume()));
@@ -12805,7 +12805,7 @@ public final class L2PcInstance extends L2Playable
 		_data = null;
 	}
 	
-	public final L2PetData getPetData(int npcId)
+	public final PetData getPetData(int npcId)
 	{
 		if (_data == null)
 		{
@@ -12814,7 +12814,7 @@ public final class L2PcInstance extends L2Playable
 		return _data;
 	}
 	
-	private final L2PetLevelData getPetLevelData(int npcId)
+	private final PetLevelData getPetLevelData(int npcId)
 	{
 		if (_leveldata == null)
 		{
@@ -13264,7 +13264,7 @@ public final class L2PcInstance extends L2Playable
 			rc.addRelation(this, relation1, isAutoAttackable(activeChar));
 			if (hasSummon())
 			{
-				final L2Summon pet = getPet();
+				final Summon pet = getPet();
 				if (pet != null)
 				{
 					rc.addRelation(pet, relation1, isAutoAttackable(activeChar));
@@ -13283,7 +13283,7 @@ public final class L2PcInstance extends L2Playable
 			rc.addRelation(activeChar, relation2, activeChar.isAutoAttackable(this));
 			if (activeChar.hasSummon())
 			{
-				final L2Summon pet = getPet();
+				final Summon pet = getPet();
 				if (pet != null)
 				{
 					rc.addRelation(pet, relation2, activeChar.isAutoAttackable(this));
@@ -13448,7 +13448,7 @@ public final class L2PcInstance extends L2Playable
 		L2FriendStatus pkt = new L2FriendStatus(this, type);
 		for (int id : _friendList)
 		{
-			L2PcInstance friend = L2World.getInstance().getPlayer(id);
+			L2PcInstance friend = World.getInstance().getPlayer(id);
 			if (friend != null)
 			{
 				friend.sendPacket(pkt);
@@ -13522,7 +13522,7 @@ public final class L2PcInstance extends L2Playable
 				{
 					AtomicInteger slot = new AtomicInteger(1);
 					con.setAutoCommit(false);
-					for (L2ManufactureItem item : _manufactureItems.values())
+					for (ManufactureItem item : _manufactureItems.values())
 					{
 						st.setInt(1, getObjectId());
 						st.setInt(2, item.getRecipeId());
@@ -13556,7 +13556,7 @@ public final class L2PcInstance extends L2Playable
 			{
 				while (rset.next())
 				{
-					getManufactureItems().put(rset.getInt("recipeId"), new L2ManufactureItem(rset.getInt("recipeId"), rset.getLong("price")));
+					getManufactureItems().put(rset.getInt("recipeId"), new ManufactureItem(rset.getInt("recipeId"), rset.getLong("price")));
 				}
 			}
 		}
@@ -13815,7 +13815,7 @@ public final class L2PcInstance extends L2Playable
 	 */
 	public void checkPlayerSkills()
 	{
-		L2SkillLearn learn;
+		SkillLearn learn;
 		for (Entry<Integer, Skill> e : getSkills().entrySet())
 		{
 			learn = SkillTreesData.getInstance().getClassSkill(e.getKey(), e.getValue().getLevel() % 100, getClassId());
@@ -13833,8 +13833,8 @@ public final class L2PcInstance extends L2Playable
 	private void deacreaseSkillLevel(Skill skill, int lvlDiff)
 	{
 		int nextLevel = -1;
-		final Map<Integer, L2SkillLearn> skillTree = SkillTreesData.getInstance().getCompleteClassSkillTree(getClassId());
-		for (L2SkillLearn sl : skillTree.values())
+		final Map<Integer, SkillLearn> skillTree = SkillTreesData.getInstance().getCompleteClassSkillTree(getClassId());
+		for (SkillLearn sl : skillTree.values())
 		{
 			if ((sl.getSkillId() == skill.getId()) && (nextLevel < sl.getSkillLevel()) && (getLevel() >= (sl.getGetLevel() - lvlDiff)))
 			{
@@ -13893,13 +13893,13 @@ public final class L2PcInstance extends L2Playable
 		return Config.INVENTORY_MAXIMUM_QUEST_ITEMS;
 	}
 	
-	public boolean canAttackCharacter(L2Character cha)
+	public boolean canAttackCharacter(Creature cha)
 	{
-		if (cha instanceof L2Attackable)
+		if (cha instanceof Attackable)
 		{
 			return true;
 		}
-		else if (cha instanceof L2Playable)
+		else if (cha instanceof Playable)
 		{
 			if (cha.isInsideZone(ZoneId.PVP) && !cha.isInsideZone(ZoneId.SIEGE))
 			{
@@ -13907,9 +13907,9 @@ public final class L2PcInstance extends L2Playable
 			}
 			
 			L2PcInstance target;
-			if (cha instanceof L2Summon)
+			if (cha instanceof Summon)
 			{
-				target = ((L2Summon) cha).getOwner();
+				target = ((Summon) cha).getOwner();
 			}
 			else
 			{
@@ -14103,7 +14103,7 @@ public final class L2PcInstance extends L2Playable
 		return _lastPetitionGmName;
 	}
 	
-	public L2ContactList getContactList()
+	public ContactList getContactList()
 	{
 		return _contactList;
 	}
@@ -14422,7 +14422,7 @@ public final class L2PcInstance extends L2Playable
 	 * @param target the target
 	 * @return {@code true} if this player got war with the target, {@code false} otherwise.
 	 */
-	public boolean atWarWith(L2Playable target)
+	public boolean atWarWith(Playable target)
 	{
 		if (target == null)
 		{
@@ -14597,7 +14597,7 @@ public final class L2PcInstance extends L2Playable
 	 */
 	public int getSummonPoints()
 	{
-		return getServitors().values().stream().mapToInt(L2Summon::getSummonPoints).sum();
+		return getServitors().values().stream().mapToInt(Summon::getSummonPoints).sum();
 	}
 	
 	/**

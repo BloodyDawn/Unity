@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.network.NpcStringId;
 
 /**
@@ -52,7 +52,7 @@ public final class NpcSay extends L2GameServerPacket
 		_text = text;
 	}
 	
-	public NpcSay(L2Npc npc, ChatType messageType, String text)
+	public NpcSay(Npc npc, ChatType messageType, String text)
 	{
 		_objectId = npc.getObjectId();
 		_textType = messageType;
@@ -69,7 +69,7 @@ public final class NpcSay extends L2GameServerPacket
 		_npcString = npcString.getId();
 	}
 	
-	public NpcSay(L2Npc npc, ChatType messageType, NpcStringId npcString)
+	public NpcSay(Npc npc, ChatType messageType, NpcStringId npcString)
 	{
 		_objectId = npc.getObjectId();
 		_textType = messageType;

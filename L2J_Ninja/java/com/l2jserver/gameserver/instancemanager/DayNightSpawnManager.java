@@ -28,7 +28,7 @@ import javolution.util.FastMap;
 
 import com.l2jserver.gameserver.GameTimeController;
 import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2RaidBossInstance;
 
 /**
@@ -105,7 +105,7 @@ public final class DayNightSpawnManager
 					}
 					
 					spawn.stopRespawn();
-					L2Npc last = spawn.getLastSpawn();
+					Npc last = spawn.getLastSpawn();
 					if (last != null)
 					{
 						last.deleteMe();

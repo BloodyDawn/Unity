@@ -34,8 +34,8 @@ import java.util.logging.Logger;
 import javolution.util.FastMap;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.effects.EffectFlag;
@@ -93,7 +93,7 @@ public final class CharEffectList
 	/** If {@code true} only party icons need to be updated. */
 	private boolean _partyOnly = false;
 	/** The owner of this effect list. */
-	private final L2Character _owner;
+	private final Creature _owner;
 	/** Hidden buffs count, prevents iterations. */
 	private final AtomicInteger _hiddenBuffs = new AtomicInteger();
 	
@@ -101,7 +101,7 @@ public final class CharEffectList
 	 * Constructor for effect list.
 	 * @param owner the creature that owns this effect list
 	 */
-	public CharEffectList(L2Character owner)
+	public CharEffectList(Creature owner)
 	{
 		_owner = owner;
 	}
@@ -1489,7 +1489,7 @@ public final class CharEffectList
 		{
 			if (_owner.isSummon())
 			{
-				final L2PcInstance summonOwner = ((L2Summon) _owner).getOwner();
+				final L2PcInstance summonOwner = ((Summon) _owner).getOwner();
 				if (summonOwner != null)
 				{
 					if (summonOwner.isInParty())
@@ -1572,8 +1572,8 @@ public final class CharEffectList
 		// @formatter:off
 		_owner.getStatus().getStatusListener().stream()
 			.filter(Objects::nonNull)
-			.filter(L2Object::isPlayer)
-			.map(L2Character::getActingPlayer)
+			.filter(WorldObject::isPlayer)
+			.map(Creature::getActingPlayer)
 			.forEach(upd::sendTo);
 		// @formatter:on
 		

@@ -23,9 +23,9 @@ import java.util.List;
 import javolution.util.FastList;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.ai.L2ControllableMobAI;
+import com.l2jserver.gameserver.ai.ControllableMobAI;
 import com.l2jserver.gameserver.datatables.SpawnTable;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2ControllableMobInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
@@ -78,19 +78,19 @@ public final class MobGroup
 	{
 		try
 		{
-			L2ControllableMobAI mobGroupAI = (L2ControllableMobAI) getMobs().get(0).getAI();
+			ControllableMobAI mobGroupAI = (ControllableMobAI) getMobs().get(0).getAI();
 			
 			switch (mobGroupAI.getAlternateAI())
 			{
-				case L2ControllableMobAI.AI_NORMAL:
+				case ControllableMobAI.AI_NORMAL:
 					return "Idle";
-				case L2ControllableMobAI.AI_FORCEATTACK:
+				case ControllableMobAI.AI_FORCEATTACK:
 					return "Force Attacking";
-				case L2ControllableMobAI.AI_FOLLOW:
+				case ControllableMobAI.AI_FOLLOW:
 					return "Following";
-				case L2ControllableMobAI.AI_CAST:
+				case ControllableMobAI.AI_CAST:
 					return "Casting";
-				case L2ControllableMobAI.AI_ATTACK_GROUP:
+				case ControllableMobAI.AI_ATTACK_GROUP:
 					return "Attacking Group";
 				default:
 					return "Idle";
@@ -182,7 +182,7 @@ public final class MobGroup
 				int y = player.getY() + Rnd.nextInt(50);
 				
 				mobInst.teleToLocation(new Location(x, y, player.getZ()), true);
-				L2ControllableMobAI ai = (L2ControllableMobAI) mobInst.getAI();
+				ControllableMobAI ai = (ControllableMobAI) mobInst.getAI();
 				ai.follow(player);
 			}
 		}
@@ -261,13 +261,13 @@ public final class MobGroup
 				continue;
 			}
 			
-			L2ControllableMobAI ai = (L2ControllableMobAI) mobInst.getAI();
-			ai.setAlternateAI(L2ControllableMobAI.AI_NORMAL);
+			ControllableMobAI ai = (ControllableMobAI) mobInst.getAI();
+			ai.setAlternateAI(ControllableMobAI.AI_NORMAL);
 			ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 		}
 	}
 	
-	public void setAttackTarget(L2Character target)
+	public void setAttackTarget(Creature target)
 	{
 		removeDead();
 		
@@ -278,7 +278,7 @@ public final class MobGroup
 				continue;
 			}
 			
-			L2ControllableMobAI ai = (L2ControllableMobAI) mobInst.getAI();
+			ControllableMobAI ai = (ControllableMobAI) mobInst.getAI();
 			ai.forceAttack(target);
 		}
 	}
@@ -294,12 +294,12 @@ public final class MobGroup
 				continue;
 			}
 			
-			L2ControllableMobAI ai = (L2ControllableMobAI) mobInst.getAI();
+			ControllableMobAI ai = (ControllableMobAI) mobInst.getAI();
 			ai.stop();
 		}
 	}
 	
-	public void returnGroup(L2Character activeChar)
+	public void returnGroup(Creature activeChar)
 	{
 		setIdleMode();
 		
@@ -315,12 +315,12 @@ public final class MobGroup
 			int randX = Rnd.nextInt(MobGroupTable.RANDOM_RANGE);
 			int randY = Rnd.nextInt(MobGroupTable.RANDOM_RANGE);
 			
-			L2ControllableMobAI ai = (L2ControllableMobAI) mobInst.getAI();
+			ControllableMobAI ai = (ControllableMobAI) mobInst.getAI();
 			ai.move(activeChar.getX() + (signX * randX), activeChar.getY() + (signY * randY), activeChar.getZ());
 		}
 	}
 	
-	public void setFollowMode(L2Character character)
+	public void setFollowMode(Creature character)
 	{
 		removeDead();
 		
@@ -331,7 +331,7 @@ public final class MobGroup
 				continue;
 			}
 			
-			L2ControllableMobAI ai = (L2ControllableMobAI) mobInst.getAI();
+			ControllableMobAI ai = (ControllableMobAI) mobInst.getAI();
 			ai.follow(character);
 		}
 	}
@@ -347,8 +347,8 @@ public final class MobGroup
 				continue;
 			}
 			
-			L2ControllableMobAI ai = (L2ControllableMobAI) mobInst.getAI();
-			ai.setAlternateAI(L2ControllableMobAI.AI_CAST);
+			ControllableMobAI ai = (ControllableMobAI) mobInst.getAI();
+			ai.setAlternateAI(ControllableMobAI.AI_CAST);
 		}
 	}
 	
@@ -363,7 +363,7 @@ public final class MobGroup
 				continue;
 			}
 			
-			L2ControllableMobAI ai = (L2ControllableMobAI) mobInst.getAI();
+			ControllableMobAI ai = (ControllableMobAI) mobInst.getAI();
 			ai.setNotMoving(enabled);
 		}
 	}
@@ -407,7 +407,7 @@ public final class MobGroup
 				continue;
 			}
 			
-			L2ControllableMobAI ai = (L2ControllableMobAI) mobInst.getAI();
+			ControllableMobAI ai = (ControllableMobAI) mobInst.getAI();
 			ai.forceAttackGroup(otherGrp);
 			ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 		}

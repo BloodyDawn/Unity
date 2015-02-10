@@ -33,8 +33,8 @@ import javolution.util.FastList;
 import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.InstanceListManager;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2ClanMember;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.ClanMember;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Castle;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
@@ -61,12 +61,12 @@ public final class CastleManager implements InstanceListManager
 		8183
 	};
 	
-	public final int findNearestCastleIndex(L2Object obj)
+	public final int findNearestCastleIndex(WorldObject obj)
 	{
 		return findNearestCastleIndex(obj, Long.MAX_VALUE);
 	}
 	
-	public final int findNearestCastleIndex(L2Object obj, long maxDistance)
+	public final int findNearestCastleIndex(WorldObject obj, long maxDistance)
 	{
 		int index = getCastleIndex(obj);
 		if (index < 0)
@@ -139,7 +139,7 @@ public final class CastleManager implements InstanceListManager
 		return null;
 	}
 	
-	public final Castle getCastle(L2Object activeObject)
+	public final Castle getCastle(WorldObject activeObject)
 	{
 		return getCastle(activeObject.getX(), activeObject.getY(), activeObject.getZ());
 	}
@@ -158,7 +158,7 @@ public final class CastleManager implements InstanceListManager
 		return -1;
 	}
 	
-	public final int getCastleIndex(L2Object activeObject)
+	public final int getCastleIndex(WorldObject activeObject)
 	{
 		return getCastleIndex(activeObject.getX(), activeObject.getY(), activeObject.getZ());
 	}
@@ -218,13 +218,13 @@ public final class CastleManager implements InstanceListManager
 	// remove this castle's circlets from the clan
 	public void removeCirclet(L2Clan clan, int castleId)
 	{
-		for (L2ClanMember member : clan.getMembers())
+		for (ClanMember member : clan.getMembers())
 		{
 			removeCirclet(member, castleId);
 		}
 	}
 	
-	public void removeCirclet(L2ClanMember member, int castleId)
+	public void removeCirclet(ClanMember member, int castleId)
 	{
 		if (member == null)
 		{

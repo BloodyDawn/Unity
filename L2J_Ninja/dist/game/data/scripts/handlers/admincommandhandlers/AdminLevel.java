@@ -22,8 +22,8 @@ import java.util.StringTokenizer;
 
 import com.l2jserver.gameserver.data.xml.impl.ExperienceData;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 
@@ -38,7 +38,7 @@ public class AdminLevel implements IAdminCommandHandler
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
-		L2Object targetChar = activeChar.getTarget();
+		WorldObject targetChar = activeChar.getTarget();
 		StringTokenizer st = new StringTokenizer(command, " ");
 		String actualCommand = st.nextToken(); // Get actual command
 		
@@ -52,9 +52,9 @@ public class AdminLevel implements IAdminCommandHandler
 		{
 			try
 			{
-				if (targetChar instanceof L2Playable)
+				if (targetChar instanceof Playable)
 				{
-					((L2Playable) targetChar).getStat().addLevel(Byte.parseByte(val));
+					((Playable) targetChar).getStat().addLevel(Byte.parseByte(val));
 				}
 			}
 			catch (NumberFormatException e)

@@ -26,8 +26,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.l2jserver.gameserver.ThreadPoolManager;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2CubicInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.AutoAttackStop;
@@ -40,7 +40,7 @@ public class AttackStanceTaskManager
 {
 	protected static final Logger _log = Logger.getLogger(AttackStanceTaskManager.class.getName());
 	
-	protected static final Map<L2Character, Long> _attackStanceTasks = new ConcurrentHashMap<>();
+	protected static final Map<Creature, Long> _attackStanceTasks = new ConcurrentHashMap<>();
 	
 	/**
 	 * Instantiates a new attack stance task manager.
@@ -54,7 +54,7 @@ public class AttackStanceTaskManager
 	 * Adds the attack stance task.
 	 * @param actor the actor
 	 */
-	public void addAttackStanceTask(L2Character actor)
+	public void addAttackStanceTask(Creature actor)
 	{
 		if (actor != null)
 		{
@@ -77,7 +77,7 @@ public class AttackStanceTaskManager
 	 * Removes the attack stance task.
 	 * @param actor the actor
 	 */
-	public void removeAttackStanceTask(L2Character actor)
+	public void removeAttackStanceTask(Creature actor)
 	{
 		if (actor != null)
 		{
@@ -94,7 +94,7 @@ public class AttackStanceTaskManager
 	 * @param actor the actor
 	 * @return {@code true} if the character has an attack stance task, {@code false} otherwise
 	 */
-	public boolean hasAttackStanceTask(L2Character actor)
+	public boolean hasAttackStanceTask(Creature actor)
 	{
 		if (actor != null)
 		{
@@ -115,9 +115,9 @@ public class AttackStanceTaskManager
 			long current = System.currentTimeMillis();
 			try
 			{
-				final Iterator<Entry<L2Character, Long>> iter = _attackStanceTasks.entrySet().iterator();
-				Entry<L2Character, Long> e;
-				L2Character actor;
+				final Iterator<Entry<Creature, Long>> iter = _attackStanceTasks.entrySet().iterator();
+				Entry<Creature, Long> e;
+				Creature actor;
 				while (iter.hasNext())
 				{
 					e = iter.next();
@@ -130,7 +130,7 @@ public class AttackStanceTaskManager
 							actor.getAI().setAutoAttacking(false);
 							if (actor.isPlayer() && actor.hasSummon())
 							{
-								final L2Summon pet = actor.getPet();
+								final Summon pet = actor.getPet();
 								if (pet != null)
 								{
 									pet.broadcastPacket(new AutoAttackStop(pet.getObjectId()));

@@ -18,18 +18,18 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 
 /**
  * @author -Wooden-
  */
 public class ExFishingStartCombat extends L2GameServerPacket
 {
-	private final L2Character _activeChar;
+	private final Creature _activeChar;
 	private final int _time, _hp;
 	private final int _lureType, _deceptiveMode, _mode;
 	
-	public ExFishingStartCombat(L2Character character, int time, int hp, int mode, int lureType, int deceptiveMode)
+	public ExFishingStartCombat(Creature character, int time, int hp, int mode, int lureType, int deceptiveMode)
 	{
 		_activeChar = character;
 		_time = time;

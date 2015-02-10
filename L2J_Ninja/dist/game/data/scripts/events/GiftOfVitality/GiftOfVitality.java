@@ -18,7 +18,7 @@
  */
 package events.GiftOfVitality;
 
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.event.LongTimeEvent;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
@@ -88,7 +88,7 @@ public final class GiftOfVitality extends LongTimeEvent
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String htmltext = event;
 		switch (event)
@@ -164,7 +164,7 @@ public final class GiftOfVitality extends LongTimeEvent
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		return "4306.htm";
 	}

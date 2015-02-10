@@ -30,9 +30,9 @@ import com.l2jserver.gameserver.GameServer;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.cache.HtmCache;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2BoatInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.clientpackets.L2GameClientPacket;
@@ -402,7 +402,7 @@ public final class AdminPForge implements IAdminCommandHandler
 							return false;
 						}
 						
-						L2Object target = null;
+						WorldObject target = null;
 						L2BoatInstance boat = null;
 						String value = st.nextToken();
 						switch (value)
@@ -444,9 +444,9 @@ public final class AdminPForge implements IAdminCommandHandler
 								break;
 							case "$tboid":
 								target = activeChar.getTarget();
-								if ((target != null) && (target instanceof L2Playable))
+								if ((target != null) && (target instanceof Playable))
 								{
-									boat = ((L2Playable) target).getActingPlayer().getBoat();
+									boat = ((Playable) target).getActingPlayer().getBoat();
 									if (boat != null)
 									{
 										value = String.valueOf(boat.getObjectId());
@@ -459,9 +459,9 @@ public final class AdminPForge implements IAdminCommandHandler
 								break;
 							case "$ttitle":
 								target = activeChar.getTarget();
-								if ((target != null) && (target instanceof L2Character))
+								if ((target != null) && (target instanceof Creature))
 								{
-									value = String.valueOf(((L2Character) target).getTitle());
+									value = String.valueOf(((Creature) target).getTitle());
 								}
 								else
 								{

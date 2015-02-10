@@ -23,7 +23,7 @@ import ai.npc.AbstractNpcAI;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.instancemanager.CastleManorManager;
 import com.l2jserver.gameserver.model.PcCondOverride;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2MerchantInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.EventType;
@@ -74,7 +74,7 @@ public final class ManorManager extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String htmltext = null;
 		switch (event)
@@ -89,7 +89,7 @@ public final class ManorManager extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		if (Config.ALLOW_MANOR)
 		{
@@ -117,7 +117,7 @@ public final class ManorManager extends AbstractNpcAI
 			return;
 		}
 		
-		final L2Npc npc = evt.getTarget();
+		final Npc npc = evt.getTarget();
 		final int templateId = npc.getTemplate().getParameters().getInt("manor_id", -1);
 		final int castleId = (evt.getManorId() == -1) ? templateId : evt.getManorId();
 		switch (evt.getRequest())

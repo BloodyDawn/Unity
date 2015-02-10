@@ -23,8 +23,8 @@ import java.util.List;
 import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.datatables.SkillData;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -89,7 +89,7 @@ public final class StakatoNest extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
 		final L2MonsterInstance mob = (L2MonsterInstance) npc;
 		
@@ -117,7 +117,7 @@ public final class StakatoNest extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		final L2MonsterInstance monster;
 		switch (npc.getId())
@@ -129,7 +129,7 @@ public final class StakatoNest extends AbstractNpcAI
 					Broadcast.toSelfAndKnownPlayers(npc, new MagicSkillUse(npc, 2046, 1, 1000, 0));
 					for (int i = 0; i < 3; i++)
 					{
-						L2Npc spawned = addSpawn(STAKATO_CAPTAIN, monster, true);
+						Npc spawned = addSpawn(STAKATO_CAPTAIN, monster, true);
 						addAttackPlayerDesire(spawned, killer);
 					}
 				}
@@ -148,7 +148,7 @@ public final class StakatoNest extends AbstractNpcAI
 					Broadcast.toSelfAndKnownPlayers(npc, new MagicSkillUse(npc, 2046, 1, 1000, 0));
 					for (int i = 0; i < 3; i++)
 					{
-						L2Npc spawned = addSpawn(STAKATO_GUARD, monster, true);
+						Npc spawned = addSpawn(STAKATO_GUARD, monster, true);
 						addAttackPlayerDesire(spawned, killer);
 					}
 				}
@@ -179,19 +179,19 @@ public final class StakatoNest extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance caster, Skill skill, L2Object[] targets, boolean isSummon)
+	public String onSkillSee(Npc npc, L2PcInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
 		if (Util.contains(COCOONS, npc.getId()) && Util.contains(targets, npc) && (skill.getId() == GROWTH_ACCELERATOR))
 		{
 			npc.doDie(caster);
-			final L2Npc spawned = addSpawn(STAKATO_CHIEF, npc.getX(), npc.getY(), npc.getZ(), Util.calculateHeadingFrom(npc, caster), false, 0, true);
+			final Npc spawned = addSpawn(STAKATO_CHIEF, npc.getX(), npc.getY(), npc.getZ(), Util.calculateHeadingFrom(npc, caster), false, 0, true);
 			addAttackPlayerDesire(spawned, caster);
 		}
 		return super.onSkillSee(npc, caster, skill, targets, isSummon);
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if ((npc == null) || (player == null) || npc.isDead())
 		{
@@ -212,13 +212,13 @@ public final class StakatoNest extends AbstractNpcAI
 		{
 			npc.getSpawn().decreaseCount(npc);
 			npc.deleteMe();
-			final L2Npc spawned = addSpawn(npcId, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0, true);
+			final Npc spawned = addSpawn(npcId, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0, true);
 			addAttackPlayerDesire(spawned, player);
 		}
 		return super.onAdvEvent(event, npc, player);
 	}
 	
-	private static L2MonsterInstance checkMinion(L2Npc npc)
+	private static L2MonsterInstance checkMinion(Npc npc)
 	{
 		final L2MonsterInstance mob = (L2MonsterInstance) npc;
 		if (mob.hasMinions())
@@ -232,7 +232,7 @@ public final class StakatoNest extends AbstractNpcAI
 		return null;
 	}
 	
-	private static void giveCocoon(L2PcInstance player, L2Npc npc)
+	private static void giveCocoon(L2PcInstance player, Npc npc)
 	{
 		player.addItem("StakatoCocoon", ((getRandom(100) > 80) ? LARGE_COCOON : SMALL_COCOON), 1, npc, true);
 	}

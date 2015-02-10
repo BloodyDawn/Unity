@@ -18,8 +18,8 @@
  */
 package com.l2jserver.gameserver.network.clientpackets;
 
-import com.l2jserver.gameserver.model.L2Party;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.Party;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ExAskJoinMPCC;
@@ -50,7 +50,7 @@ public final class RequestExAskJoinMPCC extends L2GameClientPacket
 			return;
 		}
 		
-		final L2PcInstance player = L2World.getInstance().getPlayer(_name);
+		final L2PcInstance player = World.getInstance().getPlayer(_name);
 		if (player == null)
 		{
 			return;
@@ -65,7 +65,7 @@ public final class RequestExAskJoinMPCC extends L2GameClientPacket
 		// activeChar is in a Party?
 		if (activeChar.isInParty())
 		{
-			L2Party activeParty = activeChar.getParty();
+			Party activeParty = activeChar.getParty();
 			// activeChar is PartyLeader? && activeChars Party is already in a CommandChannel?
 			if (activeParty.getLeader().equals(activeChar))
 			{

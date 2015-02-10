@@ -45,7 +45,7 @@ import com.l2jserver.gameserver.instancemanager.tasks.FourSepulchersChangeCoolDo
 import com.l2jserver.gameserver.instancemanager.tasks.FourSepulchersChangeEntryTimeTask;
 import com.l2jserver.gameserver.instancemanager.tasks.FourSepulchersChangeWarmUpTimeTask;
 import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2SepulcherMonsterInstance;
@@ -147,7 +147,7 @@ public final class FourSepulchersManager
 	protected List<L2Spawn> _managers;
 	protected List<L2Spawn> _dukeFinalSpawns;
 	protected List<L2Spawn> _emperorsGraveSpawns;
-	protected List<L2Npc> _allMobs = new FastList<>();
+	protected List<Npc> _allMobs = new FastList<>();
 	
 	private long _attackTimeEnd = 0;
 	private long _coolDownTimeEnd = 0;
@@ -935,7 +935,7 @@ public final class FourSepulchersManager
 		_inWarmUpTime = isWarmUpTime;
 	}
 	
-	public synchronized void tryEntry(L2Npc npc, L2PcInstance player)
+	public synchronized void tryEntry(Npc npc, L2PcInstance player)
 	{
 		Quest hostQuest = QuestManager.getInstance().getQuest(QUEST_ID);
 		if (hostQuest == null)
@@ -1336,7 +1336,7 @@ public final class FourSepulchersManager
 		return true;
 	}
 	
-	public void spawnKeyBox(L2Npc activeChar)
+	public void spawnKeyBox(Npc activeChar)
 	{
 		if (!isAttackTime())
 		{
@@ -1357,7 +1357,7 @@ public final class FourSepulchersManager
 		}
 	}
 	
-	public void spawnExecutionerOfHalisha(L2Npc activeChar)
+	public void spawnExecutionerOfHalisha(Npc activeChar)
 	{
 		if (!isAttackTime())
 		{
@@ -1472,7 +1472,7 @@ public final class FourSepulchersManager
 	
 	public void deleteAllMobs()
 	{
-		for (L2Npc mob : _allMobs)
+		for (Npc mob : _allMobs)
 		{
 			if (mob == null)
 			{
@@ -1664,7 +1664,7 @@ public final class FourSepulchersManager
 		return _hallGateKeepers;
 	}
 	
-	public void showHtmlFile(L2PcInstance player, String file, L2Npc npc, L2PcInstance member)
+	public void showHtmlFile(L2PcInstance player, String file, Npc npc, L2PcInstance member)
 	{
 		final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
 		html.setFile(player.getHtmlPrefix(), "data/html/SepulcherNpc/" + file);

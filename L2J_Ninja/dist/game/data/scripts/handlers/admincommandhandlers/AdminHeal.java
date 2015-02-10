@@ -23,9 +23,9 @@ import java.util.logging.Logger;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 
@@ -82,10 +82,10 @@ public class AdminHeal implements IAdminCommandHandler
 	private void handleHeal(L2PcInstance activeChar, String player)
 	{
 		
-		L2Object obj = activeChar.getTarget();
+		WorldObject obj = activeChar.getTarget();
 		if (player != null)
 		{
-			L2PcInstance plyr = L2World.getInstance().getPlayer(player);
+			L2PcInstance plyr = World.getInstance().getPlayer(player);
 			
 			if (plyr != null)
 			{
@@ -96,12 +96,12 @@ public class AdminHeal implements IAdminCommandHandler
 				try
 				{
 					int radius = Integer.parseInt(player);
-					Collection<L2Object> objs = activeChar.getKnownList().getKnownObjects().values();
-					for (L2Object object : objs)
+					Collection<WorldObject> objs = activeChar.getKnownList().getKnownObjects().values();
+					for (WorldObject object : objs)
 					{
-						if (object instanceof L2Character)
+						if (object instanceof Creature)
 						{
-							L2Character character = (L2Character) object;
+							Creature character = (Creature) object;
 							character.setCurrentHpMp(character.getMaxHp(), character.getMaxMp());
 							if (object instanceof L2PcInstance)
 							{
@@ -122,9 +122,9 @@ public class AdminHeal implements IAdminCommandHandler
 		{
 			obj = activeChar;
 		}
-		if (obj instanceof L2Character)
+		if (obj instanceof Creature)
 		{
-			L2Character target = (L2Character) obj;
+			Creature target = (Creature) obj;
 			target.setCurrentHpMp(target.getMaxHp(), target.getMaxMp());
 			if (target instanceof L2PcInstance)
 			{

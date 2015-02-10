@@ -21,8 +21,8 @@ package handlers.bypasshandlers;
 import com.l2jserver.gameserver.data.sql.impl.ClanTable;
 import com.l2jserver.gameserver.handler.IBypassHandler;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 
@@ -34,14 +34,14 @@ public class TerritoryStatus implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, L2Character target)
+	public boolean useBypass(String command, L2PcInstance activeChar, Creature target)
 	{
 		if (!target.isNpc())
 		{
 			return false;
 		}
 		
-		final L2Npc npc = (L2Npc) target;
+		final Npc npc = (Npc) target;
 		final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
 		{
 			if (npc.getCastle().getOwnerId() > 0)

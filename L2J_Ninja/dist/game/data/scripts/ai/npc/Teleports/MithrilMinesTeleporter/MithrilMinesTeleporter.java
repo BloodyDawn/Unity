@@ -21,7 +21,7 @@ package ai.npc.Teleports.MithrilMinesTeleporter;
 import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
@@ -52,7 +52,7 @@ public final class MithrilMinesTeleporter extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		int index = Integer.parseInt(event) - 1;
 		if (LOCS.length > index)
@@ -64,19 +64,19 @@ public final class MithrilMinesTeleporter extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
-		if (npc.isInsideRadius(173147, -173762, 0, L2Npc.INTERACTION_DISTANCE, false, true))
+		if (npc.isInsideRadius(173147, -173762, 0, Npc.INTERACTION_DISTANCE, false, true))
 		{
 			return "32652-01.htm";
 		}
 		
-		if (npc.isInsideRadius(181941, -174614, 0, L2Npc.INTERACTION_DISTANCE, false, true))
+		if (npc.isInsideRadius(181941, -174614, 0, Npc.INTERACTION_DISTANCE, false, true))
 		{
 			return "32652-02.htm";
 		}
 		
-		if (npc.isInsideRadius(179560, -182956, 0, L2Npc.INTERACTION_DISTANCE, false, true))
+		if (npc.isInsideRadius(179560, -182956, 0, Npc.INTERACTION_DISTANCE, false, true))
 		{
 			return "32652-03.htm";
 		}

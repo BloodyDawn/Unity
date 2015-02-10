@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.model.L2SkillLearn;
+import com.l2jserver.gameserver.model.SkillLearn;
 import com.l2jserver.gameserver.model.base.AcquireSkillType;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
 import com.l2jserver.gameserver.model.skills.CommonSkill;
@@ -69,7 +69,7 @@ public class AcquireSkillInfo extends L2GameServerPacket
 	 * @param skillType the skill learning type.
 	 * @param skillLearn the skill learn.
 	 */
-	public AcquireSkillInfo(AcquireSkillType skillType, L2SkillLearn skillLearn)
+	public AcquireSkillInfo(AcquireSkillType skillType, SkillLearn skillLearn)
 	{
 		_id = skillLearn.getSkillId();
 		_level = skillLearn.getSkillLevel();
@@ -96,7 +96,7 @@ public class AcquireSkillInfo extends L2GameServerPacket
 	 * @param skillLearn the skill learn.
 	 * @param sp the custom SP amount.
 	 */
-	public AcquireSkillInfo(AcquireSkillType skillType, L2SkillLearn skillLearn, int sp)
+	public AcquireSkillInfo(AcquireSkillType skillType, SkillLearn skillLearn, int sp)
 	{
 		_id = skillLearn.getSkillId();
 		_level = skillLearn.getSkillLevel();

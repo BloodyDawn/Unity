@@ -19,8 +19,8 @@
 package handlers.effecthandlers;
 
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Npc;
-import com.l2jserver.gameserver.model.actor.L2Playable;
+import com.l2jserver.gameserver.model.actor.Npc;
+import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
@@ -55,7 +55,7 @@ public final class SoulEating extends AbstractEffect
 		}
 	}
 	
-	public void onExperienceReceived(L2Playable playable, long exp)
+	public void onExperienceReceived(Playable playable, long exp)
 	{
 		// TODO: Verify logic.
 		if (playable.isPlayer() && (exp >= _expNeeded))
@@ -72,7 +72,7 @@ public final class SoulEating extends AbstractEffect
 			
 			if ((player.getTarget() != null) && player.getTarget().isNpc())
 			{
-				final L2Npc npc = (L2Npc) playable.getTarget();
+				final Npc npc = (Npc) playable.getTarget();
 				player.broadcastPacket(new ExSpawnEmitter(player, npc), 500);
 			}
 		}

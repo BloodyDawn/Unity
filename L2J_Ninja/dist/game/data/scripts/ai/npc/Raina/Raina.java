@@ -40,7 +40,7 @@ import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
 import com.l2jserver.gameserver.enums.CategoryType;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.enums.SubclassInfoType;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
 import com.l2jserver.gameserver.model.base.ClassLevel;
@@ -145,7 +145,7 @@ public final class Raina extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String htmltext = null;
 		switch (event)
@@ -424,7 +424,7 @@ public final class Raina extends AbstractNpcAI
 	public final void OnNpcMenuSelect(OnNpcMenuSelect event)
 	{
 		final L2PcInstance player = event.getTalker();
-		final L2Npc npc = event.getNpc();
+		final Npc npc = event.getNpc();
 		final int ask = event.getAsk();
 		
 		switch (ask)
@@ -813,7 +813,7 @@ public final class Raina extends AbstractNpcAI
 		return subclasses;
 	}
 	
-	private NpcHtmlMessage getNpcHtmlMessage(L2PcInstance player, L2Npc npc, String fileName)
+	private NpcHtmlMessage getNpcHtmlMessage(L2PcInstance player, Npc npc, String fileName)
 	{
 		final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
 		html.setHtml(HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "data/scripts/ai/npc/Raina/" + fileName));

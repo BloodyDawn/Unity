@@ -31,7 +31,7 @@ import com.l2jserver.gameserver.cache.HtmCache;
 import com.l2jserver.gameserver.data.sql.impl.CharNameTable;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.instancemanager.PunishmentManager;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.punishment.PunishmentAffect;
 import com.l2jserver.gameserver.model.punishment.PunishmentTask;
@@ -165,7 +165,7 @@ public class AdminPunishment implements IAdminCommandHandler
 								{
 									return useAdminCommand("admin_punishment", activeChar);
 								}
-								target = L2World.getInstance().getPlayer(playerName);
+								target = World.getInstance().getPlayer(playerName);
 							}
 							if ((target == null) && ((activeChar.getTarget() == null) || !activeChar.getTarget().isPlayer()))
 							{

@@ -24,7 +24,7 @@ import java.util.StringTokenizer;
 import com.l2jserver.gameserver.data.xml.impl.NpcData;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.idfactory.IdFactory;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
@@ -167,12 +167,12 @@ public class AdminFightCalculator implements IAdminCommandHandler
 	{
 		params = params.trim();
 		
-		L2Character npc1 = null;
-		L2Character npc2 = null;
+		Creature npc1 = null;
+		Creature npc2 = null;
 		if (params.length() == 0)
 		{
 			npc1 = activeChar;
-			npc2 = (L2Character) activeChar.getTarget();
+			npc2 = (Creature) activeChar.getTarget();
 			if (npc2 == null)
 			{
 				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);

@@ -35,9 +35,9 @@ import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.instancemanager.GlobalVariablesManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.L2Party;
+import com.l2jserver.gameserver.model.Party;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -146,7 +146,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 	private static Map<Integer, int[][]> SPAWNS = new HashMap<>();
 	
 	private L2MonsterInstance _lock;
-	private final L2Npc _controller;
+	private final Npc _controller;
 	private int _counter;
 	private int _despawnedSporesCount;
 	private final int[] _indexCount =
@@ -158,8 +158,8 @@ public final class TowerOfNaia extends AbstractNpcAI
 	private int _winIndex;
 	
 	private final Map<Integer, Boolean> _activeRooms = new FastMap<>();
-	private final Map<Integer, List<L2Npc>> _spawns = new FastMap<>();
-	private final FastList<L2Npc> _sporeSpawn = new FastList<L2Npc>().shared();
+	private final Map<Integer, List<Npc>> _spawns = new FastMap<>();
+	private final FastList<Npc> _sporeSpawn = new FastList<Npc>().shared();
 	static
 	{
 		// Format: entrance_door, exit_door
@@ -389,7 +389,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public final String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		final int npcId = npc.getId();
 		
@@ -418,7 +418,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String htmltext = event;
 		
@@ -436,7 +436,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 			// Spores is not attacked too long - despawn them all, reinit values
 			if (_challengeState == STATE_SPORE_IDLE_TOO_LONG)
 			{
-				for (L2Npc spore : _sporeSpawn)
+				for (Npc spore : _sporeSpawn)
 				{
 					if ((spore != null) && !spore.isDead())
 					{
@@ -454,7 +454,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 				{
 					if (!_sporeSpawn.isEmpty())
 					{
-						for (L2Npc spore : _sporeSpawn)
+						for (Npc spore : _sporeSpawn)
 						{
 							if ((spore != null) && !spore.isDead())
 							{
@@ -471,10 +471,10 @@ public final class TowerOfNaia extends AbstractNpcAI
 				// Requirements aren't met, despawn reached spores
 				else
 				{
-					Iterator<L2Npc> it = _sporeSpawn.iterator();
+					Iterator<Npc> it = _sporeSpawn.iterator();
 					while (it.hasNext())
 					{
-						L2Npc spore = it.next();
+						Npc spore = it.next();
 						if ((spore != null) && !spore.isDead() && (spore.getX() == spore.getSpawn().getX()) && (spore.getY() == spore.getSpawn().getY()))
 						{
 							spore.deleteMe();
@@ -542,7 +542,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 		else if (event.equalsIgnoreCase("teleport") && (_lock != null))
 		{
 			htmltext = null;
-			L2Party party = player.getParty();
+			Party party = player.getParty();
 			if (party != null)
 			{
 				if (Util.checkIfInRange(3000, party.getLeader(), npc, true))
@@ -577,7 +577,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 		else if (event.equalsIgnoreCase("go") && _activeRooms.containsKey(npcId) && !_activeRooms.get(npcId))
 		{
 			htmltext = null;
-			L2Party party = player.getParty();
+			Party party = player.getParty();
 			
 			if (party != null)
 			{
@@ -594,7 +594,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
 		if ((_lock != null) && (npc.getObjectId() == _lock.getObjectId()))
 		{
@@ -620,7 +620,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		int npcId = npc.getId();
 		
@@ -652,7 +652,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 			
 			if ((managerId > 0) && _spawns.containsKey(managerId))
 			{
-				List<L2Npc> spawned = _spawns.get(managerId);
+				List<Npc> spawned = _spawns.get(managerId);
 				spawned.remove(npc);
 				if (spawned.isEmpty() && DOORS.containsKey(managerId))
 				{
@@ -712,7 +712,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 					if ((Math.abs(_indexCount[sporeGroup]) < ELEMENT_INDEX_LIMIT) && (Math.abs(_indexCount[sporeGroup]) > 0) && ((_indexCount[sporeGroup] % 20) == 0) && (getRandom(100) < 50))
 					{
 						String el = ELEMENTS_NAME[Arrays.binarySearch(ELEMENTS, npcId)];
-						for (L2Npc spore : _sporeSpawn)
+						for (Npc spore : _sporeSpawn)
 						{
 							if ((spore != null) && !spore.isDead() && (spore.getId() == npcId))
 							{
@@ -739,7 +739,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 						_winIndex = Arrays.binarySearch(ELEMENTS, npcId);
 						int[] coord = SPORES_MERGE_POSITION[_winIndex];
 						
-						for (L2Npc spore : _sporeSpawn)
+						for (Npc spore : _sporeSpawn)
 						{
 							if ((spore != null) && !spore.isDead())
 							{
@@ -756,7 +756,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
+	public final String onSpawn(Npc npc)
 	{
 		final int npcId = npc.getId();
 		
@@ -814,7 +814,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 		
 		if (_spawns.containsKey(managerId) && (_spawns.get(managerId) != null))
 		{
-			for (L2Npc npc : _spawns.get(managerId))
+			for (Npc npc : _spawns.get(managerId))
 			{
 				if ((npc != null) && !npc.isDead())
 				{
@@ -846,7 +846,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 		GlobalVariablesManager.getInstance().set("elpy_respawn_time", respawnTime);
 	}
 	
-	private int moveTo(L2Npc npc, int[] coords)
+	private int moveTo(Npc npc, int[] coords)
 	{
 		int time = 0;
 		if (npc != null)
@@ -878,12 +878,12 @@ public final class TowerOfNaia extends AbstractNpcAI
 		}
 	}
 	
-	private L2Npc spawnRandomSpore()
+	private Npc spawnRandomSpore()
 	{
 		return addSpawn(getRandom(SPORE_FIRE, SPORE_EARTH), -45474, 247450, -13994, 49152, false, 0, false);
 	}
 	
-	private L2Npc spawnOppositeSpore(int srcSporeId)
+	private Npc spawnOppositeSpore(int srcSporeId)
 	{
 		final int idx = Arrays.binarySearch(ELEMENTS, srcSporeId);
 		return idx >= 0 ? addSpawn(OPPOSITE_ELEMENTS[idx], -45474, 247450, -13994, 49152, false, 0, false) : null;
@@ -902,10 +902,10 @@ public final class TowerOfNaia extends AbstractNpcAI
 		if (SPAWNS.containsKey(managerId))
 		{
 			int[][] spawnList = SPAWNS.get(managerId);
-			List<L2Npc> spawned = new FastList<>();
+			List<Npc> spawned = new FastList<>();
 			for (int[] spawn : spawnList)
 			{
-				L2Npc spawnedNpc = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4], false, 0, false);
+				Npc spawnedNpc = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4], false, 0, false);
 				spawned.add(spawnedNpc);
 			}
 			if (!spawned.isEmpty())
@@ -915,7 +915,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 		}
 	}
 	
-	private void removeForeigners(int managerId, L2Party party)
+	private void removeForeigners(int managerId, Party party)
 	{
 		if ((party != null) && ZONES.containsKey(managerId) && (ZoneManager.getInstance().getZoneById(ZONES.get(managerId)) != null))
 		{
@@ -924,7 +924,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 			{
 				if (player != null)
 				{
-					L2Party charParty = player.getParty();
+					Party charParty = player.getParty();
 					if ((charParty == null) || (charParty.getLeaderObjectId() != party.getLeaderObjectId()))
 					{
 						player.teleToLocation(16110, 243841, 11616);

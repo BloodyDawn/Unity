@@ -22,7 +22,7 @@ import java.util.logging.Logger;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
@@ -175,7 +175,7 @@ public class AdminEnchant implements IAdminCommandHandler
 	private void setEnchant(L2PcInstance activeChar, int ench, int armorType)
 	{
 		// get the target
-		L2Object target = activeChar.getTarget();
+		WorldObject target = activeChar.getTarget();
 		if (target == null)
 		{
 			target = activeChar;

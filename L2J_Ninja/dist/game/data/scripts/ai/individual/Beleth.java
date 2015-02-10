@@ -32,13 +32,13 @@ import com.l2jserver.gameserver.data.xml.impl.NpcData;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.instancemanager.GrandBossManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.L2Spawn;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
@@ -61,12 +61,12 @@ import com.l2jserver.gameserver.util.Util;
  */
 public final class Beleth extends AbstractNpcAI
 {
-	protected static L2Npc CAMERA;
-	protected static L2Npc CAMERA2;
-	protected static L2Npc CAMERA3;
-	protected static L2Npc CAMERA4;
-	protected static L2Npc BELETH;
-	protected static L2Npc PRIEST;
+	protected static Npc CAMERA;
+	protected static Npc CAMERA2;
+	protected static Npc CAMERA3;
+	protected static Npc CAMERA4;
+	protected static Npc BELETH;
+	protected static Npc PRIEST;
 	protected static L2ZoneType ZONE = null;
 	private static L2PcInstance BELETH_KILLER;
 	private static boolean DEBUG = false;
@@ -75,7 +75,7 @@ public final class Beleth extends AbstractNpcAI
 	private static int ALLOW_OBJECT_ID = 0;
 	private static int KILLED = 0;
 	protected static ScheduledFuture<?> SPAWN_TIMER = null;
-	protected static ArrayList<L2Npc> MINIONS = new ArrayList<>();
+	protected static ArrayList<Npc> MINIONS = new ArrayList<>();
 	private static SkillHolder BLEED = new SkillHolder(5495, 1);
 	private static SkillHolder FIREBALL = new SkillHolder(5496, 1);
 	private static SkillHolder HORN_OF_RISING = new SkillHolder(5497, 1);
@@ -113,7 +113,7 @@ public final class Beleth extends AbstractNpcAI
 		DoorData.getInstance().getDoor(20240001).openMe();
 	}
 	
-	protected static L2Npc spawn(int npcId, Location loc)
+	protected static Npc spawn(int npcId, Location loc)
 	{
 		try
 		{
@@ -151,9 +151,9 @@ public final class Beleth extends AbstractNpcAI
 	private static class Cast implements Runnable
 	{
 		SkillHolder _skill;
-		L2Npc _npc;
+		Npc _npc;
 		
-		public Cast(SkillHolder skill, L2Npc npc)
+		public Cast(SkillHolder skill, Npc npc)
 		{
 			_skill = skill;
 			_npc = npc;
@@ -189,7 +189,7 @@ public final class Beleth extends AbstractNpcAI
 				{
 					case 1:
 						MOVIE = true;
-						for (L2Character npc : ZONE.getCharactersInside())
+						for (Creature npc : ZONE.getCharactersInside())
 						{
 							if (npc.isNpc())
 							{
@@ -252,7 +252,7 @@ public final class Beleth extends AbstractNpcAI
 						{
 							int x = (int) ((150 * Math.cos(i * 1.046666667)) + 16323);
 							int y = (int) ((150 * Math.sin(i * 1.046666667)) + 213059);
-							L2Npc minion = spawn(29119, new Location(x, y, -9357, 49152, BELETH.getInstanceId()));
+							Npc minion = spawn(29119, new Location(x, y, -9357, 49152, BELETH.getInstanceId()));
 							minion.setShowSummonAnimation(true);
 							minion.decayMe();
 							MINIONS.add(minion);
@@ -290,7 +290,7 @@ public final class Beleth extends AbstractNpcAI
 						break;
 					case 19:
 						ZONE.broadcastPacket(new SpecialCamera(CAMERA3, 40, 260, 0, 0, 4000, 0, 0, 1, 0, 0));
-						for (L2Npc blth : MINIONS)
+						for (Npc blth : MINIONS)
 						{
 							blth.spawnMe();
 						}
@@ -314,7 +314,7 @@ public final class Beleth extends AbstractNpcAI
 						break;
 					case 24:
 						BELETH.deleteMe();
-						for (L2Npc bel : MINIONS)
+						for (Npc bel : MINIONS)
 						{
 							bel.deleteMe();
 						}
@@ -395,7 +395,7 @@ public final class Beleth extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onEnterZone(L2Character character, L2ZoneType zone)
+	public String onEnterZone(Creature character, L2ZoneType zone)
 	{
 		if (((character.isPlayer()) && (GrandBossManager.getInstance().getBossStatus(29118) == 1)) || (DEBUG && (GrandBossManager.getInstance().getBossStatus(29118) != 2) && (character.isPlayer())))
 		{
@@ -406,7 +406,7 @@ public final class Beleth extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		if (npc == null)
 		{
@@ -469,7 +469,7 @@ public final class Beleth extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSkillSee(L2Npc npc, L2PcInstance player, Skill skill, L2Object[] targets, boolean isSummon)
+	public String onSkillSee(Npc npc, L2PcInstance player, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
 		if ((npc != null) && !npc.isDead() && ((npc.getId() == 29118) || (npc.getId() == 29119)) && !npc.isCastingNow() && skill.hasEffectType(L2EffectType.HEAL) && (getRandom(100) < 80))
 		{
@@ -480,7 +480,7 @@ public final class Beleth extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
 		if (npc == null)
 		{
@@ -492,7 +492,7 @@ public final class Beleth extends AbstractNpcAI
 			if ((npc.getObjectId() == ALLOW_OBJECT_ID) && !ATTACKED)
 			{
 				ATTACKED = true;
-				L2Npc fakeBeleth = MINIONS.get(getRandom(MINIONS.size()));
+				Npc fakeBeleth = MINIONS.get(getRandom(MINIONS.size()));
 				while (fakeBeleth.getObjectId() == ALLOW_OBJECT_ID)
 				{
 					fakeBeleth = MINIONS.get(getRandom(MINIONS.size()));
@@ -506,7 +506,7 @@ public final class Beleth extends AbstractNpcAI
 			final double distance = npc.calculateDistance(attacker, false, false);
 			if ((distance > 500) || (getRandom(100) < 80))
 			{
-				for (L2Npc beleth : MINIONS)
+				for (Npc beleth : MINIONS)
 				{
 					if ((beleth != null) && !beleth.isDead() && Util.checkIfInRange(900, beleth, attacker, false) && !beleth.isCastingNow())
 					{
@@ -527,14 +527,14 @@ public final class Beleth extends AbstractNpcAI
 					npc.doCast(LIGHTENING.getSkill());
 					return null;
 				}
-				((L2Attackable) npc).clearAggroList();
+				((Attackable) npc).clearAggroList();
 			}
 		}
 		return null;
 	}
 	
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill)
+	public String onSpellFinished(Npc npc, L2PcInstance player, Skill skill)
 	{
 		if ((npc != null) && !npc.isDead() && ((npc.getId() == 29118) || (npc.getId() == 29119)) && !npc.isCastingNow())
 		{
@@ -571,13 +571,13 @@ public final class Beleth extends AbstractNpcAI
 				npc.doCast(FIREBALL.getSkill());
 				return null;
 			}
-			((L2Attackable) npc).clearAggroList();
+			((Attackable) npc).clearAggroList();
 		}
 		return null;
 	}
 	
 	@Override
-	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAggroRangeEnter(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		if ((npc != null) && !npc.isDead() && ((npc.getId() == 29118) || (npc.getId() == 29119)) && !npc.isCastingNow() && !MOVIE)
 		{
@@ -596,7 +596,7 @@ public final class Beleth extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		if ((npc.getId() == 29118) || (npc.getId() == 29119))
 		{
@@ -614,7 +614,7 @@ public final class Beleth extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		final String html;
 		if ((BELETH_KILLER != null) && (player.getObjectId() == BELETH_KILLER.getObjectId()))
@@ -631,7 +631,7 @@ public final class Beleth extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		return null;
 	}
@@ -684,7 +684,7 @@ public final class Beleth extends AbstractNpcAI
 	{
 		if ((MINIONS != null) && !MINIONS.isEmpty())
 		{
-			for (L2Npc npc : MINIONS)
+			for (Npc npc : MINIONS)
 			{
 				if ((npc == null) || npc.isDead())
 				{
@@ -704,7 +704,7 @@ public final class Beleth extends AbstractNpcAI
 	protected static void SpawnBeleths()
 	{
 		int a = 0;
-		L2Npc npc;
+		Npc npc;
 		for (int i = 0; i < 16; i++)
 		{
 			a++;

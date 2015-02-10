@@ -37,10 +37,10 @@ import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.instancemanager.RaidBossSpawnManager;
 import com.l2jserver.gameserver.instancemanager.RaidBossSpawnManager.StatusEnum;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.L2Party;
+import com.l2jserver.gameserver.model.Party;
 import com.l2jserver.gameserver.model.L2Spawn;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -125,7 +125,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 	protected ScheduledFuture<?> _countdown = null;
 	
 	// NPC's, spawned after Tully's death are stored here
-	protected static List<L2Npc> postMortemSpawn = new FastList<>();
+	protected static List<Npc> postMortemSpawn = new FastList<>();
 	// TODO: Zoey76: Not thread-safe, probably will lead to problems.
 	protected static Set<Integer> brokenContraptions = new HashSet<>();
 	protected static Set<Integer> rewardedContraptions = new HashSet<>();
@@ -133,7 +133,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 	
 	private final List<L2MonsterInstance> spawnedFollowers = new FastList<>();
 	private final List<L2MonsterInstance> spawnedFollowerMinions = new FastList<>();
-	private L2Npc spawnedAgent = null;
+	private Npc spawnedAgent = null;
 	private L2Spawn pillarSpawn = null;
 	
 	private final int[][] deathCount = new int[2][4];
@@ -539,7 +539,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public final String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		final ClassId classId = player.getClassId();
 		final int npcId = npc.getId();
@@ -591,7 +591,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 		}
 		else if (npcId == AGENT)
 		{
-			final L2Party party = player.getParty();
+			final Party party = player.getParty();
 			if ((party == null) || (party.getLeaderObjectId() != player.getObjectId()))
 			{
 				return "32372-01a.htm";
@@ -631,11 +631,11 @@ public final class TullyWorkshop extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		if (npc.getId() == TOMBSTONE)
 		{
-			final L2Party party = player.getParty();
+			final Party party = player.getParty();
 			if (party == null)
 			{
 				return "32344-03.htm";
@@ -697,7 +697,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String htmltext = event;
 		
@@ -711,7 +711,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 		}
 		else if (event.equalsIgnoreCase("cube_68_spawn"))
 		{
-			final L2Npc spawnedNpc = addSpawn(CUBE_68, 12527, 279714, -11622, 16384, false, 0, false);
+			final Npc spawnedNpc = addSpawn(CUBE_68, 12527, 279714, -11622, 16384, false, 0, false);
 			startQuestTimer("cube_68_despawn", 600000, spawnedNpc, null);
 		}
 		else if (event.equalsIgnoreCase("end_7th_floor_attack"))
@@ -802,7 +802,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 		
 		if (event.equalsIgnoreCase("enter") && (npcId == DORIAN))
 		{
-			L2Party party = player.getParty();
+			Party party = player.getParty();
 			
 			if ((party != null) && (party.getLeaderObjectId() == player.getObjectId()))
 			{
@@ -846,7 +846,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 		else if ((event.equalsIgnoreCase("up") || event.equalsIgnoreCase("down")) && TELE_COORDS.containsKey(npcId))
 		{
 			final int direction = event.equalsIgnoreCase("up") ? 0 : 1;
-			final L2Party party = player.getParty();
+			final Party party = player.getParty();
 			if (party == null)
 			{
 				player.sendPacket(SystemMessageId.YOU_ARE_NOT_CURRENTLY_IN_A_PARTY_SO_YOU_CANNOT_ENTER);
@@ -928,7 +928,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 			if (event.equalsIgnoreCase("tele_to_7th_floor") && (allowAgentSpawn == false))
 			{
 				htmltext = null;
-				L2Party party = player.getParty();
+				Party party = player.getParty();
 				if (party == null)
 				{
 					player.teleToLocation(-12501, 281397, -11936);
@@ -974,7 +974,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 			else if (event.equalsIgnoreCase("buff") && (allowAgentSpawn_7th == false))
 			{
 				htmltext = null;
-				final L2Party party = player.getParty();
+				final Party party = player.getParty();
 				if (party == null)
 				{
 					if (!Util.checkIfInRange(400, player, npc, true))
@@ -1041,7 +1041,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 		else if (event.equalsIgnoreCase("teleport") && (npcId == DWARVEN_GHOST))
 		{
 			htmltext = null;
-			final L2Party party = player.getParty();
+			final Party party = player.getParty();
 			if (party == null)
 			{
 				player.teleToLocation(-12176, 279696, -13596);
@@ -1075,7 +1075,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 		{
 			htmltext = null;
 			final int tpId = Integer.parseInt(event.substring(10));
-			final L2Party party = player.getParty();
+			final Party party = player.getParty();
 			
 			if (party != null)
 			{
@@ -1107,7 +1107,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
 		final int npcId = npc.getId();
 		if (Arrays.binarySearch(TELEPORTING_MONSTERS, npcId) >= 0)
@@ -1165,7 +1165,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFactionCall(L2Npc npc, L2Npc caller, L2PcInstance attacker, boolean isSummon)
+	public String onFactionCall(Npc npc, Npc caller, L2PcInstance attacker, boolean isSummon)
 	{
 		int npcId = npc.getId();
 		if ((npcId == TEMENIR) || (npcId == DRAXIUS) || (npcId == KIRETCENAH))
@@ -1193,7 +1193,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		final int npcId = npc.getId();
 		
@@ -1201,7 +1201,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 		{
 			for (int i[] : POST_MORTEM_SPAWNLIST)
 			{
-				final L2Npc spawnedNpc = addSpawn(i[0], i[1], i[2], i[3], i[4], false, i[5], false);
+				final Npc spawnedNpc = addSpawn(i[0], i[1], i[2], i[3], i[4], false, i[5], false);
 				postMortemSpawn.add(spawnedNpc);
 			}
 			
@@ -1212,7 +1212,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 			_countdown = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() ->
 			{
 				countdownTime -= 10000;
-				L2Npc _npc = null;
+				Npc _npc = null;
 				if ((postMortemSpawn != null) && (postMortemSpawn.size() > 0))
 				{
 					_npc = postMortemSpawn.get(0);
@@ -1235,7 +1235,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 						_countdown = null;
 					}
 					
-					for (L2Npc spawnedNpc : postMortemSpawn)
+					for (Npc spawnedNpc : postMortemSpawn)
 					{
 						if ((spawnedNpc != null) && ((spawnedNpc.getId() == INGENIOUS_CONTRAPTION) || (spawnedNpc.getId() == TIMETWISTER_GOLEM)))
 						{
@@ -1316,7 +1316,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 						int cf = floor == 1 ? 3 : 0;
 						int servantId = SERVANT_FIRST + nextServantIdx + cf;
 						int[] coords = SERVANT_COORDINATES[(room + cf)];
-						L2Npc spawnedNpc = addSpawn(servantId, coords[0], coords[1], coords[2], 0, false, 0, false);
+						Npc spawnedNpc = addSpawn(servantId, coords[0], coords[1], coords[2], 0, false, 0, false);
 						allowServantSpawn = false;
 						startQuestTimer("despawn_servant", 180000, spawnedNpc, null);
 					}
@@ -1340,7 +1340,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 						allowServantSpawn = false;
 						final int cf = roomData[0] == 1 ? 3 : 0;
 						final int[] coords = AGENT_COORDINATES[(roomData[1] + cf)];
-						L2Npc spawnedNpc = addSpawn(AGENT, coords[0], coords[1], coords[2], 0, false, 0, false);
+						Npc spawnedNpc = addSpawn(AGENT, coords[0], coords[1], coords[2], 0, false, 0, false);
 						startQuestTimer("despawn_agent", 180000, spawnedNpc, null);
 					}
 				}
@@ -1399,11 +1399,11 @@ public final class TullyWorkshop extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
+	public final String onSpawn(Npc npc)
 	{
 		if ((npc.getId() == TULLY) && npc.isInsideRadius(-12557, 273901, -9000, 1000, true, false))
 		{
-			for (L2Npc spawnedNpc : postMortemSpawn)
+			for (Npc spawnedNpc : postMortemSpawn)
 			{
 				if (spawnedNpc != null)
 				{
@@ -1428,7 +1428,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, Skill skill)
+	public String onSpellFinished(Npc npc, L2PcInstance player, Skill skill)
 	{
 		final int npcId = npc.getId();
 		final int skillId = skill.getId();
@@ -1454,7 +1454,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 		return super.onSpellFinished(npc, player, skill);
 	}
 	
-	private int[] getRoomData(L2Npc npc)
+	private int[] getRoomData(Npc npc)
 	{
 		int[] ret =
 		{
@@ -1548,7 +1548,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 			for (int i = 12; i <= 13; i++)
 			{
 				int[] data = POST_MORTEM_SPAWNLIST[i];
-				L2Npc spawnedNpc = addSpawn(data[0], data[1], data[2], data[3], data[4], false, 0, false);
+				Npc spawnedNpc = addSpawn(data[0], data[1], data[2], data[3], data[4], false, 0, false);
 				postMortemSpawn.add(spawnedNpc);
 			}
 		}

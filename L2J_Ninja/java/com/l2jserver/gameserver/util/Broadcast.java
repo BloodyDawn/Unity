@@ -23,9 +23,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.CharInfo;
 import com.l2jserver.gameserver.network.serverpackets.CreatureSay;
@@ -50,7 +50,7 @@ public final class Broadcast
 	 * @param character
 	 * @param mov
 	 */
-	public static void toPlayersTargettingMyself(L2Character character, L2GameServerPacket mov)
+	public static void toPlayersTargettingMyself(Creature character, L2GameServerPacket mov)
 	{
 		Collection<L2PcInstance> plrs = character.getKnownList().getKnownPlayers().values();
 		for (L2PcInstance player : plrs)
@@ -74,7 +74,7 @@ public final class Broadcast
 	 * @param character
 	 * @param mov
 	 */
-	public static void toKnownPlayers(L2Character character, L2GameServerPacket mov)
+	public static void toKnownPlayers(Creature character, L2GameServerPacket mov)
 	{
 		final Collection<L2PcInstance> plrs = character.getKnownList().getKnownPlayers().values();
 		for (L2PcInstance player : plrs)
@@ -96,7 +96,7 @@ public final class Broadcast
 						rc.addRelation((L2PcInstance) character, relation, character.isAutoAttackable(player));
 						if (character.hasSummon())
 						{
-							final L2Summon pet = character.getPet();
+							final Summon pet = character.getPet();
 							if (pet != null)
 							{
 								rc.addRelation(pet, relation, character.isAutoAttackable(player));
@@ -129,7 +129,7 @@ public final class Broadcast
 	 * @param mov
 	 * @param radius
 	 */
-	public static void toKnownPlayersInRadius(L2Character character, L2GameServerPacket mov, int radius)
+	public static void toKnownPlayersInRadius(Creature character, L2GameServerPacket mov, int radius)
 	{
 		if (radius < 0)
 		{
@@ -154,7 +154,7 @@ public final class Broadcast
 	 * @param character
 	 * @param mov
 	 */
-	public static void toSelfAndKnownPlayers(L2Character character, L2GameServerPacket mov)
+	public static void toSelfAndKnownPlayers(Creature character, L2GameServerPacket mov)
 	{
 		if (character instanceof L2PcInstance)
 		{
@@ -165,7 +165,7 @@ public final class Broadcast
 	}
 	
 	// To improve performance we are comparing values of radius^2 instead of calculating sqrt all the time
-	public static void toSelfAndKnownPlayersInRadius(L2Character character, L2GameServerPacket mov, int radius)
+	public static void toSelfAndKnownPlayersInRadius(Creature character, L2GameServerPacket mov, int radius)
 	{
 		if (radius < 0)
 		{
@@ -196,7 +196,7 @@ public final class Broadcast
 	 */
 	public static void toAllOnlinePlayers(L2GameServerPacket packet)
 	{
-		for (L2PcInstance player : L2World.getInstance().getPlayers())
+		for (L2PcInstance player : World.getInstance().getPlayers())
 		{
 			if (player.isOnline())
 			{
@@ -217,7 +217,7 @@ public final class Broadcast
 	
 	public static void toPlayersInInstance(L2GameServerPacket packet, int instanceId)
 	{
-		for (L2PcInstance player : L2World.getInstance().getPlayers())
+		for (L2PcInstance player : World.getInstance().getPlayers())
 		{
 			if (player.isOnline() && (player.getInstanceId() == instanceId))
 			{

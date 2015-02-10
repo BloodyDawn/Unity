@@ -22,9 +22,9 @@ import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.ai.CtrlEvent;
 import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.NpcStringId;
 
@@ -78,13 +78,13 @@ public final class WarriorFishingBlock extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		switch (event)
 		{
 			case "SPAWN":
 			{
-				final L2Object obj = npc.getTarget();
+				final WorldObject obj = npc.getTarget();
 				if ((obj == null) || !obj.isPlayer())
 				{
 					npc.decayMe();
@@ -93,7 +93,7 @@ public final class WarriorFishingBlock extends AbstractNpcAI
 				{
 					final L2PcInstance target = obj.getActingPlayer();
 					broadcastNpcSay(npc, ChatType.NPC_GENERAL, NPC_STRINGS_ON_SPAWN[getRandom(NPC_STRINGS_ON_SPAWN.length)], target.getName());
-					((L2Attackable) npc).addDamageHate(target, 0, 2000);
+					((Attackable) npc).addDamageHate(target, 0, 2000);
 					npc.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, target);
 					npc.addAttackerToAttackByList(target);
 					
@@ -111,7 +111,7 @@ public final class WarriorFishingBlock extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
 		if (getRandom(100) < CHANCE_TO_SHOUT_ON_ATTACK)
 		{
@@ -121,7 +121,7 @@ public final class WarriorFishingBlock extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		broadcastNpcSay(npc, ChatType.NPC_GENERAL, NPC_STRINGS_ON_KILL[getRandom(NPC_STRINGS_ON_KILL.length)]);
 		cancelQuestTimer("DESPAWN", npc, killer);
@@ -129,7 +129,7 @@ public final class WarriorFishingBlock extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		startQuestTimer("SPAWN", 2000, npc, null);
 		return super.onSpawn(npc);

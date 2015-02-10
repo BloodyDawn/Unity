@@ -19,7 +19,7 @@
 package handlers.effecthandlers;
 
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
@@ -51,7 +51,7 @@ public final class ImmobilePetBuff extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		if (info.getEffected().isSummon() && info.getEffector().isPlayer() && (((L2Summon) info.getEffected()).getOwner() == info.getEffector()))
+		if (info.getEffected().isSummon() && info.getEffector().isPlayer() && (((Summon) info.getEffected()).getOwner() == info.getEffector()))
 		{
 			info.getEffected().setIsImmobilized(true);
 		}

@@ -24,10 +24,10 @@ import javolution.util.FastMap;
 
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.L2Party;
+import com.l2jserver.gameserver.model.Party;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.PcCondOverride;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Instance;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
@@ -219,9 +219,9 @@ public final class DarkCloudMansion extends AbstractInstance
 	
 	protected static class DMCNpc
 	{
-		public L2Npc npc;
+		public Npc npc;
 		public boolean isDead = false;
-		public L2Npc golem = null;
+		public Npc golem = null;
 		public int status = 0;
 		public int order = 0;
 		public int count = 0;
@@ -244,7 +244,7 @@ public final class DarkCloudMansion extends AbstractInstance
 			return true;
 		}
 		
-		final L2Party party = player.getParty();
+		final Party party = player.getParty();
 		if (party == null)
 		{
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_CURRENTLY_IN_A_PARTY_SO_YOU_CANNOT_ENTER);
@@ -735,7 +735,7 @@ public final class DarkCloudMansion extends AbstractInstance
 		world.rooms.put("FifthRoom", FifthRoom);
 	}
 	
-	protected boolean checkKillProgress(L2Npc npc, DMCRoom room)
+	protected boolean checkKillProgress(Npc npc, DMCRoom room)
 	{
 		boolean cont = true;
 		for (DMCNpc npcobj : room.npcList)
@@ -772,7 +772,7 @@ public final class DarkCloudMansion extends AbstractInstance
 		}
 	}
 	
-	protected void checkStone(L2Npc npc, int order[], DMCNpc npcObj, DMCWorld world)
+	protected void checkStone(Npc npc, int order[], DMCNpc npcObj, DMCWorld world)
 	{
 		for (int i = 1; i < 7; i++)
 		{
@@ -804,7 +804,7 @@ public final class DarkCloudMansion extends AbstractInstance
 		}
 	}
 	
-	protected void checkBelethSample(DMCWorld world, L2Npc npc, L2PcInstance player)
+	protected void checkBelethSample(DMCWorld world, Npc npc, L2PcInstance player)
 	{
 		DMCRoom FifthRoom = world.rooms.get("FifthRoom");
 		
@@ -837,7 +837,7 @@ public final class DarkCloudMansion extends AbstractInstance
 		}
 	}
 	
-	protected void killedBelethSample(DMCWorld world, L2Npc npc)
+	protected void killedBelethSample(DMCWorld world, Npc npc)
 	{
 		int decayedSamples = 0;
 		DMCRoom FifthRoom = world.rooms.get("FifthRoom");
@@ -913,7 +913,7 @@ public final class DarkCloudMansion extends AbstractInstance
 		}
 	}
 	
-	protected void chkShadowColumn(DMCWorld world, L2Npc npc)
+	protected void chkShadowColumn(DMCWorld world, Npc npc)
 	{
 		DMCRoom ForthRoom = world.rooms.get("ForthRoom");
 		
@@ -938,7 +938,7 @@ public final class DarkCloudMansion extends AbstractInstance
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (npc == null)
 		{
@@ -1005,7 +1005,7 @@ public final class DarkCloudMansion extends AbstractInstance
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		final DMCWorld world;
@@ -1085,7 +1085,7 @@ public final class DarkCloudMansion extends AbstractInstance
 	}
 	
 	@Override
-	public String onAttack(L2Npc npc, L2PcInstance player, int damage, boolean isSummon, Skill skill)
+	public String onAttack(Npc npc, L2PcInstance player, int damage, boolean isSummon, Skill skill)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		final DMCWorld world;
@@ -1120,7 +1120,7 @@ public final class DarkCloudMansion extends AbstractInstance
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		DMCWorld world;
@@ -1160,7 +1160,7 @@ public final class DarkCloudMansion extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		final int npcId = npc.getId();
 		if (npcId == YIYEN)

@@ -34,8 +34,8 @@ import com.l2jserver.gameserver.data.xml.impl.ArmorSetsData;
 import com.l2jserver.gameserver.datatables.ItemTable;
 import com.l2jserver.gameserver.enums.ItemLocation;
 import com.l2jserver.gameserver.enums.PrivateStoreType;
-import com.l2jserver.gameserver.model.L2ArmorSet;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.ArmorSet;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ArmorsetSkillHolder;
@@ -606,7 +606,7 @@ public abstract class Inventory extends ItemContainer
 			final L2PcInstance player = (L2PcInstance) inventory.getOwner();
 			boolean update = false;
 			
-			final L2ArmorSet armorSet = ArmorSetsData.getInstance().getSet(chestItem.getId());
+			final ArmorSet armorSet = ArmorSetsData.getInstance().getSet(chestItem.getId());
 			if (armorSet != null)
 			{
 				// Checks if equipped item is part of set
@@ -645,7 +645,7 @@ public abstract class Inventory extends ItemContainer
 				}
 			}
 			
-			final L2ArmorSet visualArmorSet = ArmorSetsData.getInstance().getSet(chestItem.getVisualId());
+			final ArmorSet visualArmorSet = ArmorSetsData.getInstance().getSet(chestItem.getVisualId());
 			if ((visualArmorSet != null) && visualArmorSet.isVisual())
 			{
 				int pieces = visualArmorSet.getVisualPiecesCount(player);
@@ -712,7 +712,7 @@ public abstract class Inventory extends ItemContainer
 					return;
 				}
 				
-				final L2ArmorSet armorSet = ArmorSetsData.getInstance().getSet(chestItem.getId());
+				final ArmorSet armorSet = ArmorSetsData.getInstance().getSet(chestItem.getId());
 				if ((armorSet != null) && !armorSet.isVisual())
 				{
 					if (armorSet.containItem(slot, item.getId())) // removed part of set
@@ -737,7 +737,7 @@ public abstract class Inventory extends ItemContainer
 					}
 				}
 				
-				final L2ArmorSet visualArmorSet = ArmorSetsData.getInstance().getSet(chestItem.getVisualId());
+				final ArmorSet visualArmorSet = ArmorSetsData.getInstance().getSet(chestItem.getVisualId());
 				if ((visualArmorSet != null) && visualArmorSet.isVisual())
 				{
 					if (visualArmorSet.containItem(slot, item.getVisualId())) // removed part of set
@@ -765,7 +765,7 @@ public abstract class Inventory extends ItemContainer
 		}
 	}
 	
-	protected static boolean removeArmorsetBonus(L2PcInstance player, L2ArmorSet armorSet)
+	protected static boolean removeArmorsetBonus(L2PcInstance player, ArmorSet armorSet)
 	{
 		boolean remove = armorSet != null;
 		final List<ArmorsetSkillHolder> skills = armorSet != null ? armorSet.getSkills() : null;
@@ -1849,7 +1849,7 @@ public abstract class Inventory extends ItemContainer
 						}
 					}
 					
-					L2World.getInstance().storeObject(item);
+					World.getInstance().storeObject(item);
 					
 					// If stackable item is found in inventory just add to current quantity
 					if (item.isStackable() && (getItemByItemId(item.getId()) != null))
@@ -1997,7 +1997,7 @@ public abstract class Inventory extends ItemContainer
 		
 		final L2PcInstance player = getOwner().getActingPlayer();
 		final L2ItemInstance chest = getPaperdollItem(PAPERDOLL_CHEST);
-		final L2ArmorSet set = chest != null ? ArmorSetsData.getInstance().getSet(chest.getId()) : null;
+		final ArmorSet set = chest != null ? ArmorSetsData.getInstance().getSet(chest.getId()) : null;
 		
 		// No Chest - No Bonus
 		if ((chest == null) || (set == null))

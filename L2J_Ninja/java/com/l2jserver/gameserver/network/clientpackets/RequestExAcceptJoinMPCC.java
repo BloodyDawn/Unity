@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.network.clientpackets;
 
-import com.l2jserver.gameserver.model.L2CommandChannel;
+import com.l2jserver.gameserver.model.CommandChannel;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
@@ -56,7 +56,7 @@ public final class RequestExAcceptJoinMPCC extends L2GameClientPacket
 				boolean newCc = false;
 				if (!requestor.getParty().isInCommandChannel())
 				{
-					new L2CommandChannel(requestor); // Create new CC
+					new CommandChannel(requestor); // Create new CC
 					sm = SystemMessage.getSystemMessage(SystemMessageId.THE_COMMAND_CHANNEL_HAS_BEEN_FORMED);
 					requestor.sendPacket(sm);
 					newCc = true;

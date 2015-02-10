@@ -33,7 +33,7 @@ import org.w3c.dom.Node;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.xml.IXmlReader;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.multisell.Entry;
 import com.l2jserver.gameserver.model.multisell.Ingredient;
@@ -231,7 +231,7 @@ public final class MultisellData implements IXmlReader
 	 * @param productMultiplier
 	 * @param ingredientMultiplier
 	 */
-	public final void separateAndSend(int listId, L2PcInstance player, L2Npc npc, boolean inventoryOnly, double productMultiplier, double ingredientMultiplier)
+	public final void separateAndSend(int listId, L2PcInstance player, Npc npc, boolean inventoryOnly, double productMultiplier, double ingredientMultiplier)
 	{
 		ListContainer template = _entries.get(listId);
 		if (template == null)
@@ -272,7 +272,7 @@ public final class MultisellData implements IXmlReader
 		player.setMultiSell(list);
 	}
 	
-	public final void separateAndSend(int listId, L2PcInstance player, L2Npc npc, boolean inventoryOnly)
+	public final void separateAndSend(int listId, L2PcInstance player, Npc npc, boolean inventoryOnly)
 	{
 		separateAndSend(listId, player, npc, inventoryOnly, 1, 1);
 	}

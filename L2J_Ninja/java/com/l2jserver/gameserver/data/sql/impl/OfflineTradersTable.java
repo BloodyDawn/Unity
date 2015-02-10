@@ -30,8 +30,8 @@ import com.l2jserver.Config;
 import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.LoginServerThread;
 import com.l2jserver.gameserver.enums.PrivateStoreType;
-import com.l2jserver.gameserver.model.L2ManufactureItem;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.ManufactureItem;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.TradeItem;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.L2GameClient;
@@ -61,7 +61,7 @@ public class OfflineTradersTable
 			stm2.execute();
 			con.setAutoCommit(false); // avoid halfway done
 			
-			for (L2PcInstance pc : L2World.getInstance().getPlayers())
+			for (L2PcInstance pc : World.getInstance().getPlayers())
 			{
 				try
 				{
@@ -113,7 +113,7 @@ public class OfflineTradersTable
 									continue;
 								}
 								title = pc.getStoreName();
-								for (L2ManufactureItem i : pc.getManufactureItems().values())
+								for (ManufactureItem i : pc.getManufactureItems().values())
 								{
 									stm_items.setInt(1, pc.getObjectId());
 									stm_items.setInt(2, i.getRecipeId());
@@ -223,7 +223,7 @@ public class OfflineTradersTable
 								case MANUFACTURE:
 									while (items.next())
 									{
-										player.getManufactureItems().put(items.getInt(2), new L2ManufactureItem(items.getInt(2), items.getLong(4)));
+										player.getManufactureItems().put(items.getInt(2), new ManufactureItem(items.getInt(2), items.getLong(4)));
 									}
 									player.setStoreName(rs.getString("title"));
 									break;

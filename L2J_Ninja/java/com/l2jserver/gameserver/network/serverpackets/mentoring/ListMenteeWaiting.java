@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.l2jserver.gameserver.enums.CategoryType;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.L2GameServerPacket;
 
@@ -38,7 +38,7 @@ public class ListMenteeWaiting extends L2GameServerPacket
 	public ListMenteeWaiting(int page, int minLevel, int maxLevel)
 	{
 		_page = page;
-		for (L2PcInstance player : L2World.getInstance().getPlayers())
+		for (L2PcInstance player : World.getInstance().getPlayers())
 		{
 			if ((player.getLevel() >= minLevel) && (player.getLevel() <= maxLevel) && !player.isMentee() && !player.isMentor() && !player.isInCategory(CategoryType.AWAKEN_GROUP))
 			{

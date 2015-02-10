@@ -51,13 +51,13 @@ import com.l2jserver.gameserver.enums.InstanceRemoveBuffType;
 import com.l2jserver.gameserver.idfactory.IdFactory;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.L2World;
-import com.l2jserver.gameserver.model.L2WorldRegion;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.WorldRegion;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.TeleportWhereType;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.templates.L2DoorTemplate;
@@ -83,7 +83,7 @@ public final class Instance
 	/** Allow random walk for NPCs, global parameter. */
 	private boolean _allowRandomWalk = true;
 	private final List<Integer> _players = new FastList<Integer>().shared();
-	private final List<L2Npc> _npcs = new FastList<L2Npc>().shared();
+	private final List<Npc> _npcs = new FastList<Npc>().shared();
 	private final Map<Integer, L2DoorInstance> _doors = new ConcurrentHashMap<>();
 	private final Map<String, List<L2Spawn>> _manualSpawn = new HashMap<>();
 	private Location _spawnLoc = null;
@@ -248,12 +248,12 @@ public final class Instance
 		}
 	}
 	
-	public void addNpc(L2Npc npc)
+	public void addNpc(Npc npc)
 	{
 		_npcs.add(npc);
 	}
 	
-	public void removeNpc(L2Npc npc)
+	public void removeNpc(Npc npc)
 	{
 		if (npc.getSpawn() != null)
 		{
@@ -287,7 +287,7 @@ public final class Instance
 		return _players;
 	}
 	
-	public List<L2Npc> getNpcs()
+	public List<Npc> getNpcs()
 	{
 		return _npcs;
 	}
@@ -348,7 +348,7 @@ public final class Instance
 	{
 		for (Integer objectId : _players)
 		{
-			final L2PcInstance player = L2World.getInstance().getPlayer(objectId);
+			final L2PcInstance player = World.getInstance().getPlayer(objectId);
 			if ((player != null) && (player.getInstanceId() == getId()))
 			{
 				player.setInstanceId(0);
@@ -367,7 +367,7 @@ public final class Instance
 	
 	public void removeNpcs()
 	{
-		for (L2Npc mob : _npcs)
+		for (Npc mob : _npcs)
 		{
 			if (mob != null)
 			{
@@ -384,7 +384,7 @@ public final class Instance
 	
 	public void removeSpawnedNpcs()
 	{
-		_npcs.stream().filter(Objects::nonNull).forEach(L2Npc::deleteMe);
+		_npcs.stream().filter(Objects::nonNull).forEach(Npc::deleteMe);
 		_npcs.clear();
 	}
 	
@@ -394,7 +394,7 @@ public final class Instance
 		{
 			if (door != null)
 			{
-				L2WorldRegion region = door.getWorldRegion();
+				WorldRegion region = door.getWorldRegion();
 				door.decayMe();
 				
 				if (region != null)
@@ -403,7 +403,7 @@ public final class Instance
 				}
 				
 				door.getKnownList().removeAllKnownObjects();
-				L2World.getInstance().removeObject(door);
+				World.getInstance().removeObject(door);
 			}
 		}
 		_doors.clear();
@@ -414,9 +414,9 @@ public final class Instance
 	 * @param groupName - name of group from XML definition to spawn
 	 * @return list of spawned NPC's
 	 */
-	public List<L2Npc> spawnGroup(String groupName)
+	public List<Npc> spawnGroup(String groupName)
 	{
-		List<L2Npc> ret = null;
+		List<Npc> ret = null;
 		if (_manualSpawn.containsKey(groupName))
 		{
 			final List<L2Spawn> manualSpawn = _manualSpawn.get(groupName);
@@ -815,7 +815,7 @@ public final class Instance
 		{
 			for (Integer objectId : _players)
 			{
-				final L2PcInstance player = L2World.getInstance().getPlayer(objectId);
+				final L2PcInstance player = World.getInstance().getPlayer(objectId);
 				if ((player != null) && (player.getInstanceId() == getId()))
 				{
 					player.sendPacket(cs);
@@ -876,7 +876,7 @@ public final class Instance
 	 * @param killer the character that killed the {@code victim}
 	 * @param victim the character that was killed by the {@code killer}
 	 */
-	public final void notifyDeath(L2Character killer, L2Character victim)
+	public final void notifyDeath(Creature killer, Creature victim)
 	{
 		final InstanceWorld instance = InstanceManager.getInstance().getPlayerWorld(victim.getActingPlayer());
 		if (instance != null)

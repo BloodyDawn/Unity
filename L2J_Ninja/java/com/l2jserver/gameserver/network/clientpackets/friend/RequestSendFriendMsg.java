@@ -23,7 +23,7 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 import com.l2jserver.Config;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.clientpackets.L2GameClientPacket;
@@ -62,7 +62,7 @@ public final class RequestSendFriendMsg extends L2GameClientPacket
 			return;
 		}
 		
-		final L2PcInstance targetPlayer = L2World.getInstance().getPlayer(_reciever);
+		final L2PcInstance targetPlayer = World.getInstance().getPlayer(_reciever);
 		if ((targetPlayer == null) || !targetPlayer.getFriendList().contains(activeChar.getObjectId()))
 		{
 			activeChar.sendPacket(SystemMessageId.THAT_PLAYER_IS_NOT_ONLINE);

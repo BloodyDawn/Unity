@@ -27,7 +27,7 @@ import ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.NpcStringId;
@@ -58,14 +58,14 @@ public final class Slaves extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onSpawn(L2Npc npc)
+	public final String onSpawn(Npc npc)
 	{
 		((L2MonsterInstance) npc).enableMinions(HellboundEngine.getInstance().getLevel() < 5);
 		return super.onSpawn(npc);
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public final String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		if (((L2MonsterInstance) npc).getMinionList() != null)
 		{

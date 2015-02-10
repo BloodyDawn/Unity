@@ -20,7 +20,7 @@ package handlers.effecthandlers;
 
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
@@ -63,7 +63,7 @@ public final class Hide extends AbstractEffect
 				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 			}
 			
-			for (L2Character target : activeChar.getKnownList().getKnownCharacters())
+			for (Creature target : activeChar.getKnownList().getKnownCharacters())
 			{
 				if ((target != null) && (target.getTarget() == activeChar))
 				{

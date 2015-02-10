@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.model.events.impl.character;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
 import com.l2jserver.gameserver.model.zone.L2ZoneType;
@@ -28,16 +28,16 @@ import com.l2jserver.gameserver.model.zone.L2ZoneType;
  */
 public class OnCreatureZoneExit implements IBaseEvent
 {
-	private final L2Character _creature;
+	private final Creature _creature;
 	private final L2ZoneType _zone;
 	
-	public OnCreatureZoneExit(L2Character creature, L2ZoneType zone)
+	public OnCreatureZoneExit(Creature creature, L2ZoneType zone)
 	{
 		_creature = creature;
 		_zone = zone;
 	}
 	
-	public L2Character getCreature()
+	public Creature getCreature()
 	{
 		return _creature;
 	}

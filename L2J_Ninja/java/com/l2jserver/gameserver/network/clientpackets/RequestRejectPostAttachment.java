@@ -21,7 +21,7 @@ package com.l2jserver.gameserver.network.clientpackets;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.enums.MailType;
 import com.l2jserver.gameserver.instancemanager.MailManager;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Message;
 import com.l2jserver.gameserver.model.zone.ZoneId;
@@ -92,7 +92,7 @@ public final class RequestRejectPostAttachment extends L2GameClientPacket
 		activeChar.sendPacket(SystemMessageId.MAIL_SUCCESSFULLY_RETURNED);
 		activeChar.sendPacket(new ExChangePostState(true, _msgId, Message.REJECTED));
 		
-		final L2PcInstance sender = L2World.getInstance().getPlayer(msg.getSenderId());
+		final L2PcInstance sender = World.getInstance().getPlayer(msg.getSenderId());
 		if (sender != null)
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_RETURNED_THE_MAIL);

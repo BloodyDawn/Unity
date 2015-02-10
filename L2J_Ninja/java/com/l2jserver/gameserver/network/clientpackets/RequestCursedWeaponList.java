@@ -23,7 +23,7 @@ import java.util.List;
 import javolution.util.FastList;
 
 import com.l2jserver.gameserver.instancemanager.CursedWeaponsManager;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.network.serverpackets.ExCursedWeaponList;
 
 /**
@@ -43,7 +43,7 @@ public class RequestCursedWeaponList extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2Character activeChar = getClient().getActiveChar();
+		Creature activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;

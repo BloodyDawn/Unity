@@ -23,7 +23,7 @@ import java.util.StringTokenizer;
 
 import com.l2jserver.gameserver.cache.HtmCache;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jserver.gameserver.util.Util;
@@ -126,7 +126,7 @@ public final class AdminPrimePoints implements IAdminCommandHandler
 						
 						if (range <= 0)
 						{
-							final int count = increaseForAll(L2World.getInstance().getPlayers(), value);
+							final int count = increaseForAll(World.getInstance().getPlayers(), value);
 							activeChar.sendMessage("You increased Prime Point(s) of all online players (" + count + ") by " + value + ".");
 						}
 						else if (range > 0)

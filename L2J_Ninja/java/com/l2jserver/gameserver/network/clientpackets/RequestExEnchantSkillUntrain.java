@@ -25,8 +25,8 @@ import java.util.logging.Logger;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.xml.impl.EnchantSkillGroupsData;
 import com.l2jserver.gameserver.datatables.SkillData;
-import com.l2jserver.gameserver.model.L2EnchantSkillGroup.EnchantSkillHolder;
-import com.l2jserver.gameserver.model.L2EnchantSkillLearn;
+import com.l2jserver.gameserver.model.EnchantSkillGroup.EnchantSkillHolder;
+import com.l2jserver.gameserver.model.EnchantSkillLearn;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
@@ -89,7 +89,7 @@ public final class RequestExEnchantSkillUntrain extends L2GameClientPacket
 			return;
 		}
 		
-		L2EnchantSkillLearn s = EnchantSkillGroupsData.getInstance().getSkillEnchantmentBySkillId(_skillId);
+		EnchantSkillLearn s = EnchantSkillGroupsData.getInstance().getSkillEnchantmentBySkillId(_skillId);
 		if (s == null)
 		{
 			return;

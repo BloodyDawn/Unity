@@ -19,8 +19,8 @@
 package com.l2jserver.gameserver.model.actor.instance;
 
 import com.l2jserver.gameserver.enums.InstanceType;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.events.EventDispatcher;
 import com.l2jserver.gameserver.model.events.impl.character.npc.attackable.OnAttackableAttack;
@@ -43,18 +43,18 @@ public final class L2QuestGuardInstance extends L2GuardInstance
 	}
 	
 	@Override
-	public void addDamage(L2Character attacker, int damage, Skill skill)
+	public void addDamage(Creature attacker, int damage, Skill skill)
 	{
 		super.addDamage(attacker, damage, skill);
 		
-		if (attacker instanceof L2Attackable)
+		if (attacker instanceof Attackable)
 		{
 			EventDispatcher.getInstance().notifyEventAsync(new OnAttackableAttack(null, this, damage, skill, false), this);
 		}
 	}
 	
 	@Override
-	public boolean doDie(L2Character killer)
+	public boolean doDie(Creature killer)
 	{
 		// Kill the L2NpcInstance (the corpse disappeared after 7 seconds)
 		if (!super.doDie(killer))
@@ -62,7 +62,7 @@ public final class L2QuestGuardInstance extends L2GuardInstance
 			return false;
 		}
 		
-		if (killer instanceof L2Attackable)
+		if (killer instanceof Attackable)
 		{
 			// Delayed notification
 			EventDispatcher.getInstance().notifyEventAsync(new OnAttackableKill(null, this, false), this);
@@ -71,7 +71,7 @@ public final class L2QuestGuardInstance extends L2GuardInstance
 	}
 	
 	@Override
-	public void addDamageHate(L2Character attacker, int damage, int aggro)
+	public void addDamageHate(Creature attacker, int damage, int aggro)
 	{
 		if (!_isPassive && !(attacker instanceof L2PcInstance))
 		{
@@ -85,7 +85,7 @@ public final class L2QuestGuardInstance extends L2GuardInstance
 	}
 	
 	@Override
-	public boolean isAutoAttackable(L2Character attacker)
+	public boolean isAutoAttackable(Creature attacker)
 	{
 		return _isAutoAttackable && !(attacker instanceof L2PcInstance);
 	}

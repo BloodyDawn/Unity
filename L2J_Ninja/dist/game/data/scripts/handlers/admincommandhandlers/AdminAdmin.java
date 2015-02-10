@@ -27,8 +27,8 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.xml.impl.AdminData;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Hero;
 import com.l2jserver.gameserver.model.olympiad.Olympiad;
@@ -312,12 +312,12 @@ public class AdminAdmin implements IAdminCommandHandler
 					}
 					
 					final CreatureSay cs = new CreatureSay(activeChar, ChatType.WORLD, sb.toString());
-					L2World.getInstance().getPlayers().stream().filter(activeChar::isNotBlocked).forEach(cs::sendTo);
+					World.getInstance().getPlayers().stream().filter(activeChar::isNotBlocked).forEach(cs::sendTo);
 					break;
 				}
 				case "see":
 				{
-					final L2Object target = activeChar.getTarget();
+					final WorldObject target = activeChar.getTarget();
 					if ((target == null) || !target.isPlayer())
 					{
 						activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
@@ -334,7 +334,7 @@ public class AdminAdmin implements IAdminCommandHandler
 				}
 				case "set":
 				{
-					final L2Object target = activeChar.getTarget();
+					final WorldObject target = activeChar.getTarget();
 					if ((target == null) || !target.isPlayer())
 					{
 						activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);

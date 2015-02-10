@@ -24,7 +24,7 @@ import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.instancemanager.RaidBossPointsManager;
 import com.l2jserver.gameserver.instancemanager.RaidBossSpawnManager;
 import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.entity.Hero;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -75,7 +75,7 @@ public class L2RaidBossInstance extends L2MonsterInstance
 	}
 	
 	@Override
-	public boolean doDie(L2Character killer)
+	public boolean doDie(Creature killer)
 	{
 		if (!super.doDie(killer))
 		{

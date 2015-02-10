@@ -39,15 +39,15 @@ import com.l2jserver.gameserver.handler.ITargetTypeHandler;
 import com.l2jserver.gameserver.handler.TargetHandler;
 import com.l2jserver.gameserver.instancemanager.HandysBlockCheckerManager;
 import com.l2jserver.gameserver.model.ArenaParticipantsHolder;
-import com.l2jserver.gameserver.model.L2ExtractableProductItem;
-import com.l2jserver.gameserver.model.L2ExtractableSkill;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.ExtractableProductItem;
+import com.l2jserver.gameserver.model.ExtractableSkill;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Playable;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Playable;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2BlockInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2CubicInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
@@ -74,7 +74,7 @@ public final class Skill implements IIdentifiable
 {
 	private static final Logger _log = Logger.getLogger(Skill.class.getName());
 	
-	private static final L2Object[] EMPTY_TARGET_LIST = new L2Object[0];
+	private static final WorldObject[] EMPTY_TARGET_LIST = new WorldObject[0];
 	
 	/** Skill ID. */
 	private final int _id;
@@ -205,7 +205,7 @@ public final class Skill implements IIdentifiable
 	private final boolean _excludedFromCheck;
 	private final boolean _simultaneousCast;
 	
-	private L2ExtractableSkill _extractableItems = null;
+	private ExtractableSkill _extractableItems = null;
 	
 	private final String _icon;
 	
@@ -462,7 +462,7 @@ public final class Skill implements IIdentifiable
 	 * @param isPvE
 	 * @return
 	 */
-	public double getPower(L2Character activeChar, L2Character target, boolean isPvP, boolean isPvE)
+	public double getPower(Creature activeChar, Creature target, boolean isPvP, boolean isPvE)
 	{
 		if (activeChar == null)
 		{
@@ -973,7 +973,7 @@ public final class Skill implements IIdentifiable
 		return _effectPoint < 0;
 	}
 	
-	public boolean checkCondition(L2Character activeChar, L2Object object, boolean itemOrWeapon)
+	public boolean checkCondition(Creature activeChar, WorldObject object, boolean itemOrWeapon)
 	{
 		if (activeChar.canOverrideCond(PcCondOverride.SKILL_CONDITIONS) && !Config.GM_SKILL_RESTRICTION)
 		{
@@ -994,7 +994,7 @@ public final class Skill implements IIdentifiable
 			return true;
 		}
 		
-		final L2Character target = (object instanceof L2Character) ? (L2Character) object : null;
+		final Creature target = (object instanceof Creature) ? (Creature) object : null;
 		for (Condition cond : preCondition)
 		{
 			if (!cond.test(activeChar, target, this))
@@ -1030,17 +1030,17 @@ public final class Skill implements IIdentifiable
 		return (_rideState == null) || _rideState.contains(player.getMountType());
 	}
 	
-	public L2Object[] getTargetList(L2Character activeChar, boolean onlyFirst)
+	public WorldObject[] getTargetList(Creature activeChar, boolean onlyFirst)
 	{
 		// Init to null the target of the skill
-		L2Character target = null;
+		Creature target = null;
 		
 		// Get the L2Objcet targeted by the user of the skill at this moment
-		L2Object objTarget = activeChar.getTarget();
+		WorldObject objTarget = activeChar.getTarget();
 		// If the L2Object targeted is a L2Character, it becomes the L2Character target
-		if (objTarget instanceof L2Character)
+		if (objTarget instanceof Creature)
 		{
-			target = (L2Character) objTarget;
+			target = (Creature) objTarget;
 		}
 		
 		return getTargetList(activeChar, onlyFirst, target);
@@ -1067,7 +1067,7 @@ public final class Skill implements IIdentifiable
 	 * @param target
 	 * @return
 	 */
-	public L2Object[] getTargetList(L2Character activeChar, boolean onlyFirst, L2Character target)
+	public WorldObject[] getTargetList(Creature activeChar, boolean onlyFirst, Creature target)
 	{
 		final ITargetTypeHandler handler = TargetHandler.getInstance().getHandler(getTargetType());
 		if (handler != null)
@@ -1085,14 +1085,14 @@ public final class Skill implements IIdentifiable
 		return EMPTY_TARGET_LIST;
 	}
 	
-	public L2Object[] getTargetList(L2Character activeChar)
+	public WorldObject[] getTargetList(Creature activeChar)
 	{
 		return getTargetList(activeChar, false);
 	}
 	
-	public L2Object getFirstOfTargetList(L2Character activeChar)
+	public WorldObject getFirstOfTargetList(Creature activeChar)
 	{
-		L2Object[] targets = getTargetList(activeChar, true);
+		WorldObject[] targets = getTargetList(activeChar, true);
 		if (targets.length == 0)
 		{
 			return null;
@@ -1110,7 +1110,7 @@ public final class Skill implements IIdentifiable
 	 * @param sourceInArena
 	 * @return
 	 */
-	public static final boolean checkForAreaOffensiveSkills(L2Character caster, L2Character target, Skill skill, boolean sourceInArena)
+	public static final boolean checkForAreaOffensiveSkills(Creature caster, Creature target, Skill skill, boolean sourceInArena)
 	{
 		if ((target == null) || target.isDead() || (target == caster))
 		{
@@ -1185,7 +1185,7 @@ public final class Skill implements IIdentifiable
 		else
 		{
 			// target is mob
-			if ((targetPlayer == null) && (target instanceof L2Attackable) && (caster instanceof L2Attackable))
+			if ((targetPlayer == null) && (target instanceof Attackable) && (caster instanceof Attackable))
 			{
 				return false;
 			}
@@ -1198,9 +1198,9 @@ public final class Skill implements IIdentifiable
 		return true;
 	}
 	
-	public static final boolean addPet(L2Character caster, L2PcInstance owner, int radius, boolean isDead)
+	public static final boolean addPet(Creature caster, L2PcInstance owner, int radius, boolean isDead)
 	{
-		final L2Summon pet = owner.getPet();
+		final Summon pet = owner.getPet();
 		if (pet == null)
 		{
 			return false;
@@ -1208,7 +1208,7 @@ public final class Skill implements IIdentifiable
 		return addCharacter(caster, pet, radius, isDead);
 	}
 	
-	public static final boolean addCharacter(L2Character caster, L2Character target, int radius, boolean isDead)
+	public static final boolean addCharacter(Creature caster, Creature target, int radius, boolean isDead)
 	{
 		if (isDead != target.isDead())
 		{
@@ -1222,14 +1222,14 @@ public final class Skill implements IIdentifiable
 		return true;
 	}
 	
-	public List<AbstractFunction> getStatFuncs(AbstractEffect effect, L2Character player)
+	public List<AbstractFunction> getStatFuncs(AbstractEffect effect, Creature player)
 	{
 		if (_funcTemplates == null)
 		{
 			return Collections.<AbstractFunction> emptyList();
 		}
 		
-		if (!(player instanceof L2Playable) && !(player instanceof L2Attackable))
+		if (!(player instanceof Playable) && !(player instanceof Attackable))
 		{
 			return Collections.<AbstractFunction> emptyList();
 		}
@@ -1302,25 +1302,25 @@ public final class Skill implements IIdentifiable
 	}
 	
 	/**
-	 * Method overload for {@link Skill#applyEffects(L2Character, L2CubicInstance, L2Character, boolean, boolean, boolean, int)}.<br>
+	 * Method overload for {@link Skill#applyEffects(Creature, L2CubicInstance, Creature, boolean, boolean, boolean, int)}.<br>
 	 * Simplify the calls.
 	 * @param effector the caster of the skill
 	 * @param effected the target of the effect
 	 */
-	public void applyEffects(L2Character effector, L2Character effected)
+	public void applyEffects(Creature effector, Creature effected)
 	{
 		applyEffects(effector, null, effected, false, false, true, 0);
 	}
 	
 	/**
-	 * Method overload for {@link Skill#applyEffects(L2Character, L2CubicInstance, L2Character, boolean, boolean, boolean, int)}.<br>
+	 * Method overload for {@link Skill#applyEffects(Creature, L2CubicInstance, Creature, boolean, boolean, boolean, int)}.<br>
 	 * Simplify the calls, allowing abnormal time time customization.
 	 * @param effector the caster of the skill
 	 * @param effected the target of the effect
 	 * @param instant if {@code true} instant effects will be applied to the effected
 	 * @param abnormalTime custom abnormal time, if equal or lesser than zero will be ignored
 	 */
-	public void applyEffects(L2Character effector, L2Character effected, boolean instant, int abnormalTime)
+	public void applyEffects(Creature effector, Creature effected, boolean instant, int abnormalTime)
 	{
 		applyEffects(effector, null, effected, false, false, instant, abnormalTime);
 	}
@@ -1335,7 +1335,7 @@ public final class Skill implements IIdentifiable
 	 * @param instant if {@code true} instant effects will be applied to the effected
 	 * @param abnormalTime custom abnormal time, if equal or lesser than zero will be ignored
 	 */
-	public void applyEffects(L2Character effector, L2CubicInstance cubic, L2Character effected, boolean self, boolean passive, boolean instant, int abnormalTime)
+	public void applyEffects(Creature effector, L2CubicInstance cubic, Creature effected, boolean self, boolean passive, boolean instant, int abnormalTime)
 	{
 		// null targets cannot receive any effects.
 		if (effected == null)
@@ -1431,7 +1431,7 @@ public final class Skill implements IIdentifiable
 	 * @param caster the caster
 	 * @param targets the targets
 	 */
-	public void activateSkill(L2Character caster, L2Object[] targets)
+	public void activateSkill(Creature caster, WorldObject[] targets)
 	{
 		switch (getId())
 		{
@@ -1470,7 +1470,7 @@ public final class Skill implements IIdentifiable
 			}
 			default:
 			{
-				for (L2Character target : (L2Character[]) targets)
+				for (Creature target : (Creature[]) targets)
 				{
 					if (Formulas.calcBuffDebuffReflection(target, this))
 					{
@@ -1638,10 +1638,10 @@ public final class Skill implements IIdentifiable
 	 * @return the parsed extractable skill
 	 * @author Zoey76
 	 */
-	private L2ExtractableSkill parseExtractableSkill(int skillId, int skillLvl, String values)
+	private ExtractableSkill parseExtractableSkill(int skillId, int skillLvl, String values)
 	{
 		final String[] prodLists = values.split(";");
-		final List<L2ExtractableProductItem> products = new ArrayList<>();
+		final List<ExtractableProductItem> products = new ArrayList<>();
 		String[] prodData;
 		for (String prodList : prodLists)
 		{
@@ -1672,14 +1672,14 @@ public final class Skill implements IIdentifiable
 			{
 				_log.warning("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " -> incomplete/invalid production data or wrong seperator!");
 			}
-			products.add(new L2ExtractableProductItem(items, chance));
+			products.add(new ExtractableProductItem(items, chance));
 		}
 		
 		if (products.isEmpty())
 		{
 			_log.warning("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " -> There are no production items!");
 		}
-		return new L2ExtractableSkill(SkillData.getSkillHashCode(skillId, skillLvl), products);
+		return new ExtractableSkill(SkillData.getSkillHashCode(skillId, skillLvl), products);
 	}
 	
 	/**
@@ -1712,7 +1712,7 @@ public final class Skill implements IIdentifiable
 		}
 	}
 	
-	public L2ExtractableSkill getExtractableSkill()
+	public ExtractableSkill getExtractableSkill()
 	{
 		return _extractableItems;
 	}

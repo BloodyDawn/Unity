@@ -28,9 +28,9 @@ import java.util.logging.LogRecord;
 
 import com.l2jserver.Config;
 import com.l2jserver.L2DatabaseFactory;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.EventDispatcher;
 import com.l2jserver.gameserver.model.events.impl.olympiad.OnOlympiadMatchResult;
@@ -78,13 +78,13 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 		while (list.size() > 1)
 		{
 			playerOneObjectId = list.remove(Rnd.nextInt(list.size()));
-			playerOne = L2World.getInstance().getPlayer(playerOneObjectId);
+			playerOne = World.getInstance().getPlayer(playerOneObjectId);
 			if ((playerOne == null) || !playerOne.isOnline())
 			{
 				continue;
 			}
 			
-			playerTwo = L2World.getInstance().getPlayer(list.remove(Rnd.nextInt(list.size())));
+			playerTwo = World.getInstance().getPlayer(list.remove(Rnd.nextInt(list.size())));
 			if ((playerTwo == null) || !playerTwo.isOnline())
 			{
 				list.add(playerOneObjectId);
@@ -107,7 +107,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 	}
 	
 	@Override
-	public final void sendOlympiadInfo(L2Character player)
+	public final void sendOlympiadInfo(Creature player)
 	{
 		player.sendPacket(new ExOlympiadUserInfo(_playerOne));
 		player.sendPacket(new ExOlympiadUserInfo(_playerTwo));

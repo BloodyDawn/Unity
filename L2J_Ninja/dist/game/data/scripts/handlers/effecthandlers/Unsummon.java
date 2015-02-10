@@ -19,7 +19,7 @@
 package handlers.effecthandlers;
 
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
@@ -76,7 +76,7 @@ public final class Unsummon extends AbstractEffect
 	{
 		if (info.getEffected().isServitor())
 		{
-			final L2Summon servitor = (L2Summon) info.getEffected();
+			final Summon servitor = (Summon) info.getEffected();
 			final L2PcInstance summonOwner = servitor.getOwner();
 			
 			servitor.abortAttack();

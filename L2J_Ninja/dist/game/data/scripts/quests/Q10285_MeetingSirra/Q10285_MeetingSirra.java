@@ -23,7 +23,7 @@ import quests.Q10284_AcquisitionOfDivineSword.Q10284_AcquisitionOfDivineSword;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
 import com.l2jserver.gameserver.model.quest.Quest;
@@ -59,7 +59,7 @@ public final class Q10285_MeetingSirra extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		final QuestState st = getQuestState(player, false);
 		if (st == null)
@@ -104,7 +104,7 @@ public final class Q10285_MeetingSirra extends Quest
 			{
 				if (st.isMemoState(1) && (st.getInt("ex") == 2))
 				{
-					final L2Npc sirra = addSpawn(SIRRA, -23905, -8790, -5384, 56238, false, 0, false, npc.getInstanceId());
+					final Npc sirra = addSpawn(SIRRA, -23905, -8790, -5384, 56238, false, 0, false, npc.getInstanceId());
 					sirra.broadcastPacket(new NpcSay(sirra.getObjectId(), ChatType.NPC_GENERAL, sirra.getId(), NpcStringId.THERE_S_NOTHING_YOU_CAN_T_SAY_I_CAN_T_LISTEN_TO_YOU_ANYMORE));
 					st.set("ex", 3);
 					st.setCond(5, true);
@@ -210,7 +210,7 @@ public final class Q10285_MeetingSirra extends Quest
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, L2PcInstance player)
 	{
 		QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);

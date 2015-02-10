@@ -21,7 +21,7 @@ package ai.npc.Sirra;
 import ai.npc.AbstractNpcAI;
 
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
 
@@ -44,7 +44,7 @@ public final class Sirra extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		final InstanceWorld world = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		

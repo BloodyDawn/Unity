@@ -23,9 +23,9 @@ import java.util.List;
 
 import com.l2jserver.gameserver.ai.CtrlEvent;
 import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.effects.EffectFlag;
@@ -80,13 +80,13 @@ public final class Confuse extends AbstractEffect
 	{
 		info.getEffected().getAI().notifyEvent(CtrlEvent.EVT_CONFUSED);
 		
-		final List<L2Character> targetList = new ArrayList<>();
+		final List<Creature> targetList = new ArrayList<>();
 		// Getting the possible targets
-		for (L2Object obj : info.getEffected().getKnownList().getKnownObjects().values())
+		for (WorldObject obj : info.getEffected().getKnownList().getKnownObjects().values())
 		{
-			if (((info.getEffected().isMonster() && obj.isAttackable()) || (obj instanceof L2Character)) && (obj != info.getEffected()))
+			if (((info.getEffected().isMonster() && obj.isAttackable()) || (obj instanceof Creature)) && (obj != info.getEffected()))
 			{
-				targetList.add((L2Character) obj);
+				targetList.add((Creature) obj);
 			}
 		}
 		
@@ -94,7 +94,7 @@ public final class Confuse extends AbstractEffect
 		if (!targetList.isEmpty())
 		{
 			// Choosing randomly a new target
-			final L2Character target = targetList.get(Rnd.nextInt(targetList.size()));
+			final Creature target = targetList.get(Rnd.nextInt(targetList.size()));
 			// Attacking the target
 			info.getEffected().setTarget(target);
 			info.getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);

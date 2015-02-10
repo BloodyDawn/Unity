@@ -19,16 +19,16 @@
 package com.l2jserver.gameserver.model.actor.instance;
 
 import com.l2jserver.gameserver.enums.InstanceType;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 
-public class L2EffectPointInstance extends L2Npc
+public class L2EffectPointInstance extends Npc
 {
 	private final L2PcInstance _owner;
 	
-	public L2EffectPointInstance(int objectId, L2NpcTemplate template, L2Character owner)
+	public L2EffectPointInstance(int objectId, L2NpcTemplate template, Creature owner)
 	{
 		super(objectId, template);
 		setInstanceType(InstanceType.L2EffectPointInstance);

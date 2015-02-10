@@ -21,8 +21,8 @@ package ai.npc;
 import java.util.logging.Logger;
 
 import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.MinionHolder;
@@ -49,7 +49,7 @@ public abstract class AbstractNpcAI extends Quest
 	 * Simple on first talk event handler.
 	 */
 	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
 		return npc.getId() + ".html";
 	}
@@ -84,7 +84,7 @@ public abstract class AbstractNpcAI extends Quest
 	 * @param type
 	 * @param text
 	 */
-	protected void broadcastNpcSay(L2Npc npc, ChatType type, String text)
+	protected void broadcastNpcSay(Npc npc, ChatType type, String text)
 	{
 		Broadcast.toKnownPlayers(npc, new NpcSay(npc.getObjectId(), type, npc.getTemplate().getDisplayId(), text));
 	}
@@ -95,7 +95,7 @@ public abstract class AbstractNpcAI extends Quest
 	 * @param type
 	 * @param stringId
 	 */
-	protected void broadcastNpcSay(L2Npc npc, ChatType type, NpcStringId stringId)
+	protected void broadcastNpcSay(Npc npc, ChatType type, NpcStringId stringId)
 	{
 		Broadcast.toKnownPlayers(npc, new NpcSay(npc.getObjectId(), type, npc.getTemplate().getDisplayId(), stringId));
 	}
@@ -107,7 +107,7 @@ public abstract class AbstractNpcAI extends Quest
 	 * @param stringId
 	 * @param parameters
 	 */
-	protected void broadcastNpcSay(L2Npc npc, ChatType type, NpcStringId stringId, String... parameters)
+	protected void broadcastNpcSay(Npc npc, ChatType type, NpcStringId stringId, String... parameters)
 	{
 		final NpcSay say = new NpcSay(npc.getObjectId(), type, npc.getTemplate().getDisplayId(), stringId);
 		if (parameters != null)
@@ -127,7 +127,7 @@ public abstract class AbstractNpcAI extends Quest
 	 * @param text
 	 * @param radius
 	 */
-	protected void broadcastNpcSay(L2Npc npc, ChatType type, String text, int radius)
+	protected void broadcastNpcSay(Npc npc, ChatType type, String text, int radius)
 	{
 		Broadcast.toKnownPlayersInRadius(npc, new NpcSay(npc.getObjectId(), type, npc.getTemplate().getDisplayId(), text), radius);
 	}
@@ -139,7 +139,7 @@ public abstract class AbstractNpcAI extends Quest
 	 * @param stringId
 	 * @param radius
 	 */
-	protected void broadcastNpcSay(L2Npc npc, ChatType type, NpcStringId stringId, int radius)
+	protected void broadcastNpcSay(Npc npc, ChatType type, NpcStringId stringId, int radius)
 	{
 		Broadcast.toKnownPlayersInRadius(npc, new NpcSay(npc.getObjectId(), type, npc.getTemplate().getDisplayId(), stringId), radius);
 	}
@@ -149,7 +149,7 @@ public abstract class AbstractNpcAI extends Quest
 	 * @param character
 	 * @param actionId
 	 */
-	protected void broadcastSocialAction(L2Character character, int actionId)
+	protected void broadcastSocialAction(Creature character, int actionId)
 	{
 		Broadcast.toSelfAndKnownPlayers(character, new SocialAction(character.getObjectId(), actionId));
 	}
@@ -160,12 +160,12 @@ public abstract class AbstractNpcAI extends Quest
 	 * @param actionId
 	 * @param radius
 	 */
-	protected void broadcastSocialAction(L2Character character, int actionId, int radius)
+	protected void broadcastSocialAction(Creature character, int actionId, int radius)
 	{
 		Broadcast.toSelfAndKnownPlayersInRadius(character, new SocialAction(character.getObjectId(), actionId), radius);
 	}
 	
-	public void spawnMinions(final L2Npc npc, final String spawnName)
+	public void spawnMinions(final Npc npc, final String spawnName)
 	{
 		for (MinionHolder is : npc.getTemplate().getParameters().getMinionList(spawnName))
 		{

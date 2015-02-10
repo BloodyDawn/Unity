@@ -27,25 +27,25 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import javolution.util.FastList;
 
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Summon;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.util.Util;
 
 public class CharKnownList extends ObjectKnownList
 {
 	private Map<Integer, L2PcInstance> _knownPlayers;
-	private Map<Integer, L2Summon> _knownSummons;
+	private Map<Integer, Summon> _knownSummons;
 	private Map<Integer, Integer> _knownRelations;
 	
-	public CharKnownList(L2Character activeChar)
+	public CharKnownList(Creature activeChar)
 	{
 		super(activeChar);
 	}
 	
 	@Override
-	public boolean addKnownObject(L2Object object)
+	public boolean addKnownObject(WorldObject object)
 	{
 		if (!super.addKnownObject(object))
 		{
@@ -58,7 +58,7 @@ public class CharKnownList extends ObjectKnownList
 		}
 		else if (object.isSummon())
 		{
-			getKnownSummons().put(object.getObjectId(), (L2Summon) object);
+			getKnownSummons().put(object.getObjectId(), (Summon) object);
 		}
 		
 		return true;
@@ -94,7 +94,7 @@ public class CharKnownList extends ObjectKnownList
 	}
 	
 	@Override
-	protected boolean removeKnownObject(L2Object object, boolean forget)
+	protected boolean removeKnownObject(WorldObject object, boolean forget)
 	{
 		if (!super.removeKnownObject(object, forget))
 		{
@@ -147,9 +147,9 @@ public class CharKnownList extends ObjectKnownList
 				}
 			}
 			
-			final Collection<L2Summon> sums = getKnownSummons().values();
-			final Iterator<L2Summon> sIter = sums.iterator();
-			L2Summon summon;
+			final Collection<Summon> sums = getKnownSummons().values();
+			final Iterator<Summon> sIter = sums.iterator();
+			Summon summon;
 			
 			while (sIter.hasNext())
 			{
@@ -173,9 +173,9 @@ public class CharKnownList extends ObjectKnownList
 			return;
 		}
 		// Go through knownObjects
-		final Collection<L2Object> objs = getKnownObjects().values();
-		final Iterator<L2Object> oIter = objs.iterator();
-		L2Object object;
+		final Collection<WorldObject> objs = getKnownObjects().values();
+		final Iterator<WorldObject> oIter = objs.iterator();
+		WorldObject object;
 		while (oIter.hasNext())
 		{
 			object = oIter.next();
@@ -201,38 +201,38 @@ public class CharKnownList extends ObjectKnownList
 		}
 	}
 	
-	public L2Character getActiveChar()
+	public Creature getActiveChar()
 	{
-		return (L2Character) super.getActiveObject();
+		return (Creature) super.getActiveObject();
 	}
 	
-	public Collection<L2Character> getKnownCharacters()
+	public Collection<Creature> getKnownCharacters()
 	{
-		FastList<L2Character> result = new FastList<>();
+		FastList<Creature> result = new FastList<>();
 		
-		final Collection<L2Object> objs = getKnownObjects().values();
-		for (L2Object obj : objs)
+		final Collection<WorldObject> objs = getKnownObjects().values();
+		for (WorldObject obj : objs)
 		{
-			if (obj instanceof L2Character)
+			if (obj instanceof Creature)
 			{
-				result.add((L2Character) obj);
+				result.add((Creature) obj);
 			}
 		}
 		return result;
 	}
 	
-	public Collection<L2Character> getKnownCharactersInRadius(long radius)
+	public Collection<Creature> getKnownCharactersInRadius(long radius)
 	{
-		List<L2Character> result = new ArrayList<>();
+		List<Creature> result = new ArrayList<>();
 		
-		final Collection<L2Object> objs = getKnownObjects().values();
-		for (L2Object obj : objs)
+		final Collection<WorldObject> objs = getKnownObjects().values();
+		for (WorldObject obj : objs)
 		{
-			if (obj instanceof L2Character)
+			if (obj instanceof Creature)
 			{
 				if (Util.checkIfInRange((int) radius, getActiveChar(), obj, true))
 				{
-					result.add((L2Character) obj);
+					result.add((Creature) obj);
 				}
 			}
 		}
@@ -258,7 +258,7 @@ public class CharKnownList extends ObjectKnownList
 		return _knownRelations;
 	}
 	
-	public final Map<Integer, L2Summon> getKnownSummons()
+	public final Map<Integer, Summon> getKnownSummons()
 	{
 		if (_knownSummons == null)
 		{

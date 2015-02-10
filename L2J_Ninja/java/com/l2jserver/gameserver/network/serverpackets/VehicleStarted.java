@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 
 /**
  * @author Kerberos
@@ -32,7 +32,7 @@ public class VehicleStarted extends L2GameServerPacket
 	 * @param boat
 	 * @param state
 	 */
-	public VehicleStarted(L2Character boat, int state)
+	public VehicleStarted(Creature boat, int state)
 	{
 		_objectId = boat.getObjectId();
 		_state = state;

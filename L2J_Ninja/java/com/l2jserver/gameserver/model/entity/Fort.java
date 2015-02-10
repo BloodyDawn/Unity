@@ -51,9 +51,9 @@ import com.l2jserver.gameserver.instancemanager.CastleManager;
 import com.l2jserver.gameserver.instancemanager.FortManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.L2Object;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2StaticObjectInstance;
@@ -332,7 +332,7 @@ public final class Fort extends AbstractResidence
 	 * @param obj
 	 * @return
 	 */
-	public double getDistance(L2Object obj)
+	public double getDistance(WorldObject obj)
 	{
 		return getZone().getDistanceToZone(obj);
 	}
@@ -838,7 +838,7 @@ public final class Fort extends AbstractResidence
 				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_IS_VICTORIOUS_IN_THE_FORTRESS_BATTLE_OF_S2);
 				sm.addString(clan.getName());
 				sm.addCastleId(getResidenceId());
-				L2World.getInstance().getPlayers().forEach(p -> p.sendPacket(sm));
+				World.getInstance().getPlayers().forEach(p -> p.sendPacket(sm));
 				clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
 				clan.broadcastToOnlineMembers(new PlaySound(1, "Siege_Victory", 0, 0, 0, 0, 0));
 				if (_FortUpdater[0] != null)

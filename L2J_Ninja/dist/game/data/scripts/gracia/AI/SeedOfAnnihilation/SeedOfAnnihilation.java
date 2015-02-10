@@ -27,8 +27,8 @@ import ai.npc.AbstractNpcAI;
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Character;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Creature;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.zone.L2ZoneType;
@@ -284,7 +284,7 @@ public class SeedOfAnnihilation extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onSpawn(Npc npc)
 	{
 		for (SeedRegion element : _regionsData)
 		{
@@ -297,7 +297,7 @@ public class SeedOfAnnihilation extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.equalsIgnoreCase("ChangeSeedsStatus"))
 		{
@@ -309,7 +309,7 @@ public class SeedOfAnnihilation extends AbstractNpcAI
 			{
 				_regionsData[i].activeBuff = ZONE_BUFFS_LIST[buffsNow][i];
 				
-				for (L2Npc af : _regionsData[i].af_npcs)
+				for (Npc af : _regionsData[i].af_npcs)
 				{
 					af.setState(_regionsData[i].activeBuff);
 				}
@@ -338,7 +338,7 @@ public class SeedOfAnnihilation extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onEnterZone(L2Character character, L2ZoneType zone)
+	public String onEnterZone(Creature character, L2ZoneType zone)
 	{
 		if (_teleportZones.containsKey(zone.getId()))
 		{
@@ -354,7 +354,7 @@ public class SeedOfAnnihilation extends AbstractNpcAI
 		public int[][] minion_lists;
 		public int buff_zone;
 		public int[][] af_spawns;
-		public L2Npc[] af_npcs = new L2Npc[2];
+		public Npc[] af_npcs = new Npc[2];
 		public int activeBuff = 0;
 		
 		public SeedRegion(int[] emi, int[][] ml, int bz, int[][] as)

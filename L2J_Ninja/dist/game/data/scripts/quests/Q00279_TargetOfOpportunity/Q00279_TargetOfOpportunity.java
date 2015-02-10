@@ -22,7 +22,7 @@ import java.util.Arrays;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.enums.QuestSound;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
@@ -67,7 +67,7 @@ public final class Q00279_TargetOfOpportunity extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		String htmltext = event;
 		final QuestState st = getQuestState(player, false);
@@ -91,7 +91,7 @@ public final class Q00279_TargetOfOpportunity extends Quest
 	}
 	
 	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public final String onKill(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		L2PcInstance pl = getRandomPartyMember(player, "progress", "1");
 		final int idx = Arrays.binarySearch(MONSTERS, npc.getId());
@@ -120,7 +120,7 @@ public final class Q00279_TargetOfOpportunity extends Quest
 	}
 	
 	@Override
-	public final String onTalk(L2Npc npc, L2PcInstance player)
+	public final String onTalk(Npc npc, L2PcInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);

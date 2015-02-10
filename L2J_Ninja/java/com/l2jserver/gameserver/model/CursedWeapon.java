@@ -31,9 +31,9 @@ import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.data.xml.impl.TransformData;
 import com.l2jserver.gameserver.datatables.SkillData;
 import com.l2jserver.gameserver.instancemanager.CursedWeaponsManager;
-import com.l2jserver.gameserver.model.L2Party.messageType;
-import com.l2jserver.gameserver.model.actor.L2Attackable;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.Party.messageType;
+import com.l2jserver.gameserver.model.actor.Attackable;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.interfaces.INamable;
 import com.l2jserver.gameserver.model.items.L2Item;
@@ -200,7 +200,7 @@ public class CursedWeapon implements INamable
 			else if (_item != null)
 			{
 				_item.decayMe();
-				L2World.getInstance().removeObject(_item);
+				World.getInstance().removeObject(_item);
 				_log.info(_name + " item has been removed from World.");
 			}
 		}
@@ -250,12 +250,12 @@ public class CursedWeapon implements INamable
 		}
 	}
 	
-	private void dropIt(L2Attackable attackable, L2PcInstance player)
+	private void dropIt(Attackable attackable, L2PcInstance player)
 	{
 		dropIt(attackable, player, null, true);
 	}
 	
-	private void dropIt(L2Attackable attackable, L2PcInstance player, L2Character killer, boolean fromMonster)
+	private void dropIt(Attackable attackable, L2PcInstance player, Creature killer, boolean fromMonster)
 	{
 		_isActivated = false;
 		
@@ -388,7 +388,7 @@ public class CursedWeapon implements INamable
 		
 	}
 	
-	public boolean checkDrop(L2Attackable attackable, L2PcInstance player)
+	public boolean checkDrop(Attackable attackable, L2PcInstance player)
 	{
 		if (Rnd.get(100000) < _dropRate)
 		{
@@ -511,7 +511,7 @@ public class CursedWeapon implements INamable
 		}
 	}
 	
-	public void dropIt(L2Character killer)
+	public void dropIt(Creature killer)
 	{
 		if (Rnd.get(100) <= _disapearChance)
 		{

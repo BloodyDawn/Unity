@@ -25,7 +25,7 @@ import javolution.util.FastList;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.enums.ItemLocation;
 import com.l2jserver.gameserver.instancemanager.ItemsOnGroundManager;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
 
 public final class ItemsAutoDestroy
@@ -68,8 +68,8 @@ public final class ItemsAutoDestroy
 				{
 					if ((curtime - item.getDropTime()) > item.getItem().getAutoDestroyTime())
 					{
-						L2World.getInstance().removeVisibleObject(item, item.getWorldRegion());
-						L2World.getInstance().removeObject(item);
+						World.getInstance().removeVisibleObject(item, item.getWorldRegion());
+						World.getInstance().removeObject(item);
 						_items.remove(item);
 						if (Config.SAVE_DROPPED_ITEM)
 						{
@@ -81,8 +81,8 @@ public final class ItemsAutoDestroy
 				{
 					if ((curtime - item.getDropTime()) > Config.HERB_AUTO_DESTROY_TIME)
 					{
-						L2World.getInstance().removeVisibleObject(item, item.getWorldRegion());
-						L2World.getInstance().removeObject(item);
+						World.getInstance().removeVisibleObject(item, item.getWorldRegion());
+						World.getInstance().removeObject(item);
 						_items.remove(item);
 						if (Config.SAVE_DROPPED_ITEM)
 						{
@@ -96,8 +96,8 @@ public final class ItemsAutoDestroy
 					
 					if ((curtime - item.getDropTime()) > sleep)
 					{
-						L2World.getInstance().removeVisibleObject(item, item.getWorldRegion());
-						L2World.getInstance().removeObject(item);
+						World.getInstance().removeVisibleObject(item, item.getWorldRegion());
+						World.getInstance().removeObject(item);
 						_items.remove(item);
 						if (Config.SAVE_DROPPED_ITEM)
 						{

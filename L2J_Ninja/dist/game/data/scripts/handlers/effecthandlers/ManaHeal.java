@@ -19,7 +19,7 @@
 package handlers.effecthandlers;
 
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
@@ -51,7 +51,7 @@ public final class ManaHeal extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		L2Character target = info.getEffected();
+		Creature target = info.getEffected();
 		if ((target == null) || target.isDead() || target.isDoor() || target.isInvul())
 		{
 			return;

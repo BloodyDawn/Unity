@@ -21,8 +21,8 @@ package handlers.actionhandlers;
 import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.handler.IActionHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 public class L2ArtefactInstanceAction implements IActionHandler
@@ -41,9 +41,9 @@ public class L2ArtefactInstanceAction implements IActionHandler
 	 * <BR>
 	 */
 	@Override
-	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
+	public boolean action(L2PcInstance activeChar, WorldObject target, boolean interact)
 	{
-		if (!((L2Npc) target).canTarget(activeChar))
+		if (!((Npc) target).canTarget(activeChar))
 		{
 			return false;
 		}
@@ -54,7 +54,7 @@ public class L2ArtefactInstanceAction implements IActionHandler
 		else if (interact)
 		{
 			// Calculate the distance between the L2PcInstance and the L2NpcInstance
-			if (!((L2Npc) target).canInteract(activeChar))
+			if (!((Npc) target).canInteract(activeChar))
 			{
 				// Notify the L2PcInstance AI with AI_INTENTION_INTERACT
 				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);

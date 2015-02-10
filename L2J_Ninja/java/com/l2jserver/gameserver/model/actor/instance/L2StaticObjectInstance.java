@@ -18,10 +18,10 @@
  */
 package com.l2jserver.gameserver.model.actor.instance;
 
-import com.l2jserver.gameserver.ai.L2CharacterAI;
+import com.l2jserver.gameserver.ai.CharacterAI;
 import com.l2jserver.gameserver.enums.InstanceType;
 import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.knownlist.StaticObjectKnownList;
 import com.l2jserver.gameserver.model.actor.stat.StaticObjStat;
 import com.l2jserver.gameserver.model.actor.status.StaticObjStatus;
@@ -36,7 +36,7 @@ import com.l2jserver.gameserver.network.serverpackets.StaticObject;
  * Static Object instance.
  * @author godson
  */
-public final class L2StaticObjectInstance extends L2Character
+public final class L2StaticObjectInstance extends Creature
 {
 	/** The interaction distance of the L2StaticObjectInstance */
 	public static final int INTERACTION_DISTANCE = 150;
@@ -47,7 +47,7 @@ public final class L2StaticObjectInstance extends L2Character
 	private ShowTownMap _map;
 	
 	/** This class may be created only by L2Character and only for AI */
-	public class AIAccessor extends L2Character.AIAccessor
+	public class AIAccessor extends Creature.AIAccessor
 	{
 		@Override
 		public L2StaticObjectInstance getActor()
@@ -71,7 +71,7 @@ public final class L2StaticObjectInstance extends L2Character
 		}
 		
 		@Override
-		public void doAttack(L2Character target)
+		public void doAttack(Creature target)
 		{
 		}
 		
@@ -82,7 +82,7 @@ public final class L2StaticObjectInstance extends L2Character
 	}
 	
 	@Override
-	protected L2CharacterAI initAI()
+	protected CharacterAI initAI()
 	{
 		return null;
 	}
@@ -196,7 +196,7 @@ public final class L2StaticObjectInstance extends L2Character
 	}
 	
 	@Override
-	public boolean isAutoAttackable(L2Character attacker)
+	public boolean isAutoAttackable(Creature attacker)
 	{
 		return false;
 	}

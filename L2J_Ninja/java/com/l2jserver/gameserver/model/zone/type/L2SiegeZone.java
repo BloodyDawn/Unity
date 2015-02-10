@@ -26,7 +26,7 @@ import com.l2jserver.gameserver.instancemanager.FortManager;
 import com.l2jserver.gameserver.instancemanager.FortSiegeManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.TeleportWhereType;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Fort;
 import com.l2jserver.gameserver.model.entity.FortSiege;
@@ -156,7 +156,7 @@ public class L2SiegeZone extends L2ZoneType
 	}
 	
 	@Override
-	protected void onEnter(L2Character character)
+	protected void onEnter(Creature character)
 	{
 		if (getSettings().isActiveSiege())
 		{
@@ -187,7 +187,7 @@ public class L2SiegeZone extends L2ZoneType
 	}
 	
 	@Override
-	protected void onExit(L2Character character)
+	protected void onExit(Creature character)
 	{
 		character.setInsideZone(ZoneId.PVP, false);
 		character.setInsideZone(ZoneId.SIEGE, false);
@@ -234,7 +234,7 @@ public class L2SiegeZone extends L2ZoneType
 	}
 	
 	@Override
-	public void onDieInside(L2Character character)
+	public void onDieInside(Creature character)
 	{
 		if (getSettings().isActiveSiege())
 		{
@@ -261,7 +261,7 @@ public class L2SiegeZone extends L2ZoneType
 	{
 		if (getSettings().isActiveSiege())
 		{
-			for (L2Character character : getCharactersInside())
+			for (Creature character : getCharactersInside())
 			{
 				if (character != null)
 				{
@@ -272,7 +272,7 @@ public class L2SiegeZone extends L2ZoneType
 		else
 		{
 			L2PcInstance player;
-			for (L2Character character : getCharactersInside())
+			for (Creature character : getCharactersInside())
 			{
 				if (character == null)
 				{

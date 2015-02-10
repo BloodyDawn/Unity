@@ -23,7 +23,7 @@ import java.util.StringTokenizer;
 
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.L2World;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jserver.gameserver.util.GMAudit;
@@ -50,7 +50,7 @@ public class AdminInstanceZone implements IAdminCommandHandler
 				StringTokenizer st = new StringTokenizer(command, " ");
 				
 				st.nextToken();
-				final L2PcInstance player = L2World.getInstance().getPlayer(st.nextToken());
+				final L2PcInstance player = World.getInstance().getPlayer(st.nextToken());
 				final int instanceId = Integer.parseInt(st.nextToken());
 				final String name = InstanceManager.getInstance().getInstanceIdName(instanceId);
 				InstanceManager.getInstance().deleteInstanceTime(player.getObjectId(), instanceId);
@@ -78,7 +78,7 @@ public class AdminInstanceZone implements IAdminCommandHandler
 				
 				try
 				{
-					player = L2World.getInstance().getPlayer(playername);
+					player = World.getInstance().getPlayer(playername);
 				}
 				catch (Exception e)
 				{

@@ -24,7 +24,7 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.xml.impl.DoorData;
 import com.l2jserver.gameserver.instancemanager.GlobalVariablesManager;
 import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.actor.L2Npc;
+import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.util.Broadcast;
@@ -72,7 +72,7 @@ public final class HellboundEngine extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
 		if (event.equals(UPDATE_EVENT))
 		{
@@ -105,7 +105,7 @@ public final class HellboundEngine extends AbstractNpcAI
 		final HellboundSpawns hellboundSpawns = HellboundSpawns.getInstance();
 		for (L2Spawn spawn : hellboundSpawns.getSpawns())
 		{
-			final L2Npc npc = spawn.getLastSpawn();
+			final Npc npc = spawn.getLastSpawn();
 			if ((getLevel() < hellboundSpawns.getSpawnMinLevel(spawn.getId())) || (getLevel() > hellboundSpawns.getSpawnMaxLevel(spawn.getId())))
 			{
 				spawn.stopRespawn();
@@ -224,7 +224,7 @@ public final class HellboundEngine extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		final int npcId = npc.getId();
 		final HellboundPointData hellboundPointData = HellboundPointData.getInstance();

@@ -20,8 +20,8 @@ package handlers.admincommandhandlers;
 
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.L2Object;
-import com.l2jserver.gameserver.model.actor.L2Character;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2StaticObjectInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -45,15 +45,15 @@ public class AdminTargetSay implements IAdminCommandHandler
 		{
 			try
 			{
-				final L2Object obj = activeChar.getTarget();
-				if ((obj instanceof L2StaticObjectInstance) || !(obj instanceof L2Character))
+				final WorldObject obj = activeChar.getTarget();
+				if ((obj instanceof L2StaticObjectInstance) || !(obj instanceof Creature))
 				{
 					activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 					return false;
 				}
 				
 				final String message = command.substring(16);
-				final L2Character target = (L2Character) obj;
+				final Creature target = (Creature) obj;
 				target.broadcastPacket(new CreatureSay(target.getObjectId(), target.isPlayer() ? ChatType.GENERAL : ChatType.NPC_GENERAL, target.getName(), message));
 			}
 			catch (StringIndexOutOfBoundsException e)
