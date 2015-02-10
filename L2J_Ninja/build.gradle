@@ -36,6 +36,10 @@ tasks.eclipse.doLast {
 	}
 }
 
+tasks.cleanEclipse.doLast {
+	delete('.settings')
+}
+
 def generalManifest = manifest {
 	attributes('Built-By': System.getProperty('user.name'),
 			'Built-Date': new Date(),
