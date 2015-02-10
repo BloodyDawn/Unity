@@ -43,7 +43,6 @@ import javax.script.SimpleScriptContext;
 import javolution.util.FastMap;
 
 import com.l2jserver.Config;
-import com.l2jserver.script.jython.JythonScriptEngine;
 
 /**
  * Caches script engines and provides functionality for executing and managing scripts.
@@ -132,23 +131,6 @@ public final class L2ScriptEngineManager
 			{
 				_log.log(Level.WARNING, "Failed initializing factory: " + e.getMessage(), e);
 			}
-		}
-		
-		preConfigure();
-	}
-	
-	private void preConfigure()
-	{
-		// Jython sys.path
-		String dataPackDirForwardSlashes = SCRIPT_FOLDER.getPath().replaceAll("\\\\", "/");
-		String configScript = "import sys;sys.path.insert(0,'" + dataPackDirForwardSlashes + "');";
-		try
-		{
-			eval("jython", configScript);
-		}
-		catch (ScriptException e)
-		{
-			_log.severe("Failed preconfiguring jython: " + e.getMessage());
 		}
 	}
 	
@@ -360,7 +342,6 @@ public final class L2ScriptEngineManager
 				context.setAttribute(ScriptEngine.FILENAME, relativeName, ScriptContext.ENGINE_SCOPE);
 				context.setAttribute("classpath", SCRIPT_FOLDER.getAbsolutePath(), ScriptContext.ENGINE_SCOPE);
 				context.setAttribute("sourcepath", SCRIPT_FOLDER.getAbsolutePath(), ScriptContext.ENGINE_SCOPE);
-				context.setAttribute(JythonScriptEngine.JYTHON_ENGINE_INSTANCE, engine, ScriptContext.ENGINE_SCOPE);
 				
 				setCurrentLoadingScript(file);
 				ScriptContext ctx = engine.getContext();

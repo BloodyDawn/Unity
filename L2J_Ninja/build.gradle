@@ -1,5 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'distribution'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
 
 defaultTasks('build')
 
@@ -13,8 +15,25 @@ sourceSets {
 	}
 }
 
+repositories {
+	mavenCentral()
+}
+
 dependencies {
 	compile(fileTree(dir: 'dist/libs', include: '*.jar'))
+	compile(group: 'com.mchange', name: 'c3p0', version: '0.9.5-pre10')
+	compile(group: 'com.sun.mail', name: 'javax.mail', version: '1.5.2')
+	compile(group: 'org.bitlet', name: 'weupnp', version: '0.1.2')
+	
+	runtime(group: 'org.eclipse.jdt.core.compiler', name: 'ecj', version: '4.4')
+	runtime(group: 'mysql', name: 'mysql-connector-java', version: '5.1.34')
+}
+
+tasks.eclipse.doLast {
+	copy {
+		from('eclipse-settings')
+		into('.settings')
+	}
 }
 
 def generalManifest = manifest {
