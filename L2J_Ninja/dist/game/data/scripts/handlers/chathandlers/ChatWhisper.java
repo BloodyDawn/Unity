@@ -22,8 +22,8 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.enums.ChatType;
 import com.l2jserver.gameserver.handler.IChatHandler;
 import com.l2jserver.gameserver.model.BlockList;
-import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.PcCondOverride;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.CreatureSay;
@@ -37,7 +37,7 @@ public final class ChatWhisper implements IChatHandler
 {
 	private static final ChatType[] CHAT_TYPES =
 	{
-		ChatType.NPC_WHISPER,
+		ChatType.WHISPER,
 	};
 	
 	@Override
