@@ -25,7 +25,7 @@ import com.l2jserver.gameserver.model.Elementals;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jserver.gameserver.network.serverpackets.TutorialShowHtml;
@@ -79,7 +79,7 @@ public class Debug
 		attacker.sendPacket(new TutorialShowHtml(msg.getHtml()));
 	}
 	
-	public static void sendItemDebug(L2PcInstance player, L2ItemInstance item, StatsSet set)
+	public static void sendItemDebug(L2PcInstance player, ItemInstance item, StatsSet set)
 	{
 		final StringBuilder sb = new StringBuilder();
 		for (Entry<String, Object> entry : set.getSet().entrySet())

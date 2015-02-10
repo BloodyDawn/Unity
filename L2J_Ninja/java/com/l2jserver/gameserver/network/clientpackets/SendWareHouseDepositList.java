@@ -29,7 +29,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
 import com.l2jserver.gameserver.model.itemcontainer.ItemContainer;
 import com.l2jserver.gameserver.model.itemcontainer.PcWarehouse;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ExUserInfoInvenWeight;
 import com.l2jserver.gameserver.network.serverpackets.InventoryUpdate;
@@ -128,7 +128,7 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 		
 		for (ItemHolder i : _items)
 		{
-			L2ItemInstance item = player.checkItemManipulation(i.getId(), i.getCount(), "deposit");
+			ItemInstance item = player.checkItemManipulation(i.getId(), i.getCount(), "deposit");
 			if (item == null)
 			{
 				_log.warning("Error depositing a warehouse object for char " + player.getName() + " (validity check)");
@@ -175,7 +175,7 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 		for (ItemHolder i : _items)
 		{
 			// Check validity of requested item
-			L2ItemInstance oldItem = player.checkItemManipulation(i.getId(), i.getCount(), "deposit");
+			ItemInstance oldItem = player.checkItemManipulation(i.getId(), i.getCount(), "deposit");
 			if (oldItem == null)
 			{
 				_log.warning("Error depositing a warehouse object for char " + player.getName() + " (olditem == null)");
@@ -187,7 +187,7 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 				continue;
 			}
 			
-			final L2ItemInstance newItem = player.getInventory().transferItem(warehouse.getName(), i.getId(), i.getCount(), warehouse, player, manager);
+			final ItemInstance newItem = player.getInventory().transferItem(warehouse.getName(), i.getId(), i.getCount(), warehouse, player, manager);
 			if (newItem == null)
 			{
 				_log.warning("Error depositing a warehouse object for char " + player.getName() + " (newitem == null)");

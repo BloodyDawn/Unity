@@ -26,7 +26,7 @@ import com.l2jserver.gameserver.model.itemcontainer.PcInventory;
 import com.l2jserver.gameserver.model.items.L2Item;
 import com.l2jserver.gameserver.model.items.appearance.AppearanceStone;
 import com.l2jserver.gameserver.model.items.appearance.AppearanceType;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.items.type.ArmorType;
 import com.l2jserver.gameserver.model.items.type.WeaponType;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -68,9 +68,9 @@ public class RequestExTryToPutShapeShiftingEnchantSupportItem extends L2GameClie
 		}
 		
 		final PcInventory inventory = player.getInventory();
-		final L2ItemInstance targetItem = inventory.getItemByObjectId(_targetItemObjId);
-		final L2ItemInstance extracItem = inventory.getItemByObjectId(_extracItemObjId);
-		L2ItemInstance stone = request.getAppearanceStone();
+		final ItemInstance targetItem = inventory.getItemByObjectId(_targetItemObjId);
+		final ItemInstance extracItem = inventory.getItemByObjectId(_extracItemObjId);
+		ItemInstance stone = request.getAppearanceStone();
 		if ((targetItem == null) || (extracItem == null) || (stone == null))
 		{
 			player.sendPacket(ExShapeShiftingResult.FAILED);

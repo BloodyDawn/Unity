@@ -37,7 +37,7 @@ import com.l2jserver.gameserver.model.ClanMember;
 import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Castle;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 public final class CastleManager implements InstanceListManager
 {
@@ -240,7 +240,7 @@ public final class CastleManager implements InstanceListManager
 			{
 				try
 				{
-					L2ItemInstance circlet = player.getInventory().getItemByItemId(circletId);
+					ItemInstance circlet = player.getInventory().getItemByItemId(circletId);
 					if (circlet != null)
 					{
 						if (circlet.isEquipped())

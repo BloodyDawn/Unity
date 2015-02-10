@@ -67,10 +67,10 @@ import com.l2jserver.gameserver.model.events.impl.item.OnItemBypassEvent;
 import com.l2jserver.gameserver.model.events.impl.item.OnItemTalk;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
-import com.l2jserver.gameserver.model.items.L2Armor;
-import com.l2jserver.gameserver.model.items.L2EtcItem;
+import com.l2jserver.gameserver.model.items.Armor;
+import com.l2jserver.gameserver.model.items.EtcItem;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.L2Weapon;
+import com.l2jserver.gameserver.model.items.Weapon;
 import com.l2jserver.gameserver.model.items.appearance.AppearanceStone;
 import com.l2jserver.gameserver.model.items.type.EtcItemType;
 import com.l2jserver.gameserver.model.items.type.ItemType;
@@ -93,9 +93,9 @@ import com.l2jserver.gameserver.util.GMAudit;
  * This class manages items.
  * @version $Revision: 1.4.2.1.2.11 $ $Date: 2005/03/31 16:07:50 $
  */
-public final class L2ItemInstance extends WorldObject
+public final class ItemInstance extends WorldObject
 {
-	private static final Logger _log = Logger.getLogger(L2ItemInstance.class.getName());
+	private static final Logger _log = Logger.getLogger(ItemInstance.class.getName());
 	private static final Logger _logItems = Logger.getLogger("item");
 	
 	/** ID of the owner */
@@ -181,7 +181,7 @@ public final class L2ItemInstance extends WorldObject
 	 * @param objectId : int designating the ID of the object in the world
 	 * @param itemId : int designating the ID of the item
 	 */
-	public L2ItemInstance(int objectId, int itemId)
+	public ItemInstance(int objectId, int itemId)
 	{
 		super(objectId);
 		setInstanceType(InstanceType.L2ItemInstance);
@@ -207,7 +207,7 @@ public final class L2ItemInstance extends WorldObject
 	 * @param objectId : int designating the ID of the object in the world
 	 * @param item : L2Item containing informations of the item
 	 */
-	public L2ItemInstance(int objectId, L2Item item)
+	public ItemInstance(int objectId, L2Item item)
 	{
 		super(objectId);
 		setInstanceType(InstanceType.L2ItemInstance);
@@ -230,7 +230,7 @@ public final class L2ItemInstance extends WorldObject
 	 * Sets the next free object ID in the ID factory.
 	 * @param itemId the item template ID
 	 */
-	public L2ItemInstance(int itemId)
+	public ItemInstance(int itemId)
 	{
 		this(IdFactory.getInstance().getNextId(), itemId);
 	}
@@ -629,7 +629,7 @@ public final class L2ItemInstance extends WorldObject
 	 */
 	public boolean isEtcItem()
 	{
-		return (_item instanceof L2EtcItem);
+		return (_item instanceof EtcItem);
 	}
 	
 	/**
@@ -637,7 +637,7 @@ public final class L2ItemInstance extends WorldObject
 	 */
 	public boolean isWeapon()
 	{
-		return (_item instanceof L2Weapon);
+		return (_item instanceof Weapon);
 	}
 	
 	/**
@@ -645,17 +645,17 @@ public final class L2ItemInstance extends WorldObject
 	 */
 	public boolean isArmor()
 	{
-		return (_item instanceof L2Armor);
+		return (_item instanceof Armor);
 	}
 	
 	/**
 	 * @return the characteristics of the L2EtcItem, {@code false} otherwise.
 	 */
-	public L2EtcItem getEtcItem()
+	public EtcItem getEtcItem()
 	{
-		if (_item instanceof L2EtcItem)
+		if (_item instanceof EtcItem)
 		{
-			return (L2EtcItem) _item;
+			return (EtcItem) _item;
 		}
 		return null;
 	}
@@ -663,11 +663,11 @@ public final class L2ItemInstance extends WorldObject
 	/**
 	 * @return the characteristics of the L2Weapon.
 	 */
-	public L2Weapon getWeaponItem()
+	public Weapon getWeaponItem()
 	{
-		if (_item instanceof L2Weapon)
+		if (_item instanceof Weapon)
 		{
-			return (L2Weapon) _item;
+			return (Weapon) _item;
 		}
 		return null;
 	}
@@ -675,11 +675,11 @@ public final class L2ItemInstance extends WorldObject
 	/**
 	 * @return the characteristics of the L2Armor.
 	 */
-	public L2Armor getArmorItem()
+	public Armor getArmorItem()
 	{
-		if (_item instanceof L2Armor)
+		if (_item instanceof Armor)
 		{
-			return (L2Armor) _item;
+			return (Armor) _item;
 		}
 		return null;
 	}
@@ -1226,9 +1226,9 @@ public final class L2ItemInstance extends WorldObject
 	public static class ScheduleConsumeManaTask implements Runnable
 	{
 		private static final Logger _log = Logger.getLogger(ScheduleConsumeManaTask.class.getName());
-		private final L2ItemInstance _shadowItem;
+		private final ItemInstance _shadowItem;
 		
-		public ScheduleConsumeManaTask(L2ItemInstance item)
+		public ScheduleConsumeManaTask(ItemInstance item)
 		{
 			_shadowItem = item;
 		}
@@ -1340,9 +1340,9 @@ public final class L2ItemInstance extends WorldObject
 				// unequip
 				if (isEquipped())
 				{
-					L2ItemInstance[] unequiped = player.getInventory().unEquipItemInSlotAndRecord(getLocationSlot());
+					ItemInstance[] unequiped = player.getInventory().unEquipItemInSlotAndRecord(getLocationSlot());
 					InventoryUpdate iu = new InventoryUpdate();
-					for (L2ItemInstance item : unequiped)
+					for (ItemInstance item : unequiped)
 					{
 						item.unChargeAllShots();
 						iu.addModifiedItem(item);
@@ -1470,9 +1470,9 @@ public final class L2ItemInstance extends WorldObject
 	 * @param rs
 	 * @return L2ItemInstance
 	 */
-	public static L2ItemInstance restoreFromDb(int ownerId, ResultSet rs)
+	public static ItemInstance restoreFromDb(int ownerId, ResultSet rs)
 	{
-		L2ItemInstance inst = null;
+		ItemInstance inst = null;
 		int objectId, item_id, loc_data, enchant_level, custom_type1, custom_type2, manaLeft;
 		long time, count;
 		ItemLocation loc;
@@ -1500,7 +1500,7 @@ public final class L2ItemInstance extends WorldObject
 			_log.severe("Item item_id=" + item_id + " not known, object_id=" + objectId);
 			return null;
 		}
-		inst = new L2ItemInstance(objectId, item);
+		inst = new ItemInstance(objectId, item);
 		inst._ownerId = ownerId;
 		inst.setCount(count);
 		inst._enchantLevel = enchant_level;
@@ -1545,9 +1545,9 @@ public final class L2ItemInstance extends WorldObject
 	{
 		private int _x, _y, _z;
 		private final Creature _dropper;
-		private final L2ItemInstance _itm;
+		private final ItemInstance _itm;
 		
-		public ItemDropTask(L2ItemInstance item, Creature dropper, int x, int y, int z)
+		public ItemDropTask(ItemInstance item, Creature dropper, int x, int y, int z)
 		{
 			_x = x;
 			_y = y;
@@ -1838,9 +1838,9 @@ public final class L2ItemInstance extends WorldObject
 		{
 			if (isEquipped())
 			{
-				L2ItemInstance[] unequiped = player.getInventory().unEquipItemInSlotAndRecord(getLocationSlot());
+				ItemInstance[] unequiped = player.getInventory().unEquipItemInSlotAndRecord(getLocationSlot());
 				InventoryUpdate iu = new InventoryUpdate();
-				for (L2ItemInstance item : unequiped)
+				for (ItemInstance item : unequiped)
 				{
 					item.unChargeAllShots();
 					iu.addModifiedItem(item);
@@ -1896,9 +1896,9 @@ public final class L2ItemInstance extends WorldObject
 	public static class ScheduleLifeTimeTask implements Runnable
 	{
 		private static final Logger _log = Logger.getLogger(ScheduleLifeTimeTask.class.getName());
-		private final L2ItemInstance _limitedItem;
+		private final ItemInstance _limitedItem;
 		
-		public ScheduleLifeTimeTask(L2ItemInstance item)
+		public ScheduleLifeTimeTask(ItemInstance item)
 		{
 			_limitedItem = item;
 		}

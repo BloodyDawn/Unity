@@ -34,7 +34,7 @@ import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.ItemsAutoDestroy;
 import com.l2jserver.gameserver.ThreadPoolManager;
 import com.l2jserver.gameserver.model.World;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * This class manage all items on ground.
@@ -44,7 +44,7 @@ public final class ItemsOnGroundManager implements Runnable
 {
 	private static final Logger _log = Logger.getLogger(ItemsOnGroundManager.class.getName());
 	
-	private final List<L2ItemInstance> _items = new FastList<L2ItemInstance>().shared();
+	private final List<ItemInstance> _items = new FastList<ItemInstance>().shared();
 	
 	protected ItemsOnGroundManager()
 	{
@@ -102,10 +102,10 @@ public final class ItemsOnGroundManager implements Runnable
 			int count = 0;
 			try (ResultSet rs = ps.executeQuery())
 			{
-				L2ItemInstance item;
+				ItemInstance item;
 				while (rs.next())
 				{
-					item = new L2ItemInstance(rs.getInt(1), rs.getInt(2));
+					item = new ItemInstance(rs.getInt(1), rs.getInt(2));
 					World.getInstance().storeObject(item);
 					// this check and..
 					if (item.isStackable() && (rs.getInt(3) > 1))
@@ -153,7 +153,7 @@ public final class ItemsOnGroundManager implements Runnable
 		}
 	}
 	
-	public void save(L2ItemInstance item)
+	public void save(ItemInstance item)
 	{
 		if (!Config.SAVE_DROPPED_ITEM)
 		{
@@ -162,7 +162,7 @@ public final class ItemsOnGroundManager implements Runnable
 		_items.add(item);
 	}
 	
-	public void removeObject(L2ItemInstance item)
+	public void removeObject(ItemInstance item)
 	{
 		if (Config.SAVE_DROPPED_ITEM)
 		{
@@ -211,7 +211,7 @@ public final class ItemsOnGroundManager implements Runnable
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("INSERT INTO itemsonground(object_id,item_id,count,enchant_level,x,y,z,drop_time,equipable) VALUES(?,?,?,?,?,?,?,?,?)"))
 		{
-			for (L2ItemInstance item : _items)
+			for (ItemInstance item : _items)
 			{
 				if (item == null)
 				{

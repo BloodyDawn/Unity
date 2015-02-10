@@ -24,7 +24,7 @@ import java.util.List;
 import com.l2jserver.gameserver.enums.ItemLocation;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * Format:(ch) d[dd]
@@ -62,7 +62,7 @@ public final class RequestSaveInventoryOrder extends L2GameClientPacket
 			Inventory inventory = player.getInventory();
 			for (InventoryOrder order : _order)
 			{
-				L2ItemInstance item = inventory.getItemByObjectId(order.objectID);
+				ItemInstance item = inventory.getItemByObjectId(order.objectID);
 				if ((item != null) && (item.getItemLocation() == ItemLocation.INVENTORY))
 				{
 					item.setItemLocation(ItemLocation.INVENTORY, order.order);

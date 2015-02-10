@@ -31,7 +31,7 @@ import com.l2jserver.gameserver.data.xml.IXmlReader;
 import com.l2jserver.gameserver.datatables.ItemTable;
 import com.l2jserver.gameserver.enums.StatFunction;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.items.type.CrystalType;
 import com.l2jserver.gameserver.model.stats.Stats;
 import com.l2jserver.gameserver.model.stats.functions.FuncTemplate;
@@ -125,7 +125,7 @@ public class EnchantItemHPBonusData implements IXmlReader
 	 * @param item the item
 	 * @return the HP bonus
 	 */
-	public final int getHPBonus(L2ItemInstance item)
+	public final int getHPBonus(ItemInstance item)
 	{
 		final List<Integer> values = _armorHPBonuses.get(item.getItem().getCrystalTypePlus());
 		if ((values == null) || values.isEmpty() || (item.getOlyEnchantLevel() <= 0))

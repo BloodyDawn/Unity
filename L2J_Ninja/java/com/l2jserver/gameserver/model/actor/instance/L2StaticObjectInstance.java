@@ -26,8 +26,8 @@ import com.l2jserver.gameserver.model.actor.knownlist.StaticObjectKnownList;
 import com.l2jserver.gameserver.model.actor.stat.StaticObjStat;
 import com.l2jserver.gameserver.model.actor.status.StaticObjStatus;
 import com.l2jserver.gameserver.model.actor.templates.L2CharTemplate;
-import com.l2jserver.gameserver.model.items.L2Weapon;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.Weapon;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.serverpackets.ShowTownMap;
 import com.l2jserver.gameserver.network.serverpackets.StaticObject;
@@ -172,25 +172,25 @@ public final class L2StaticObjectInstance extends Creature
 	}
 	
 	@Override
-	public L2ItemInstance getActiveWeaponInstance()
+	public ItemInstance getActiveWeaponInstance()
 	{
 		return null;
 	}
 	
 	@Override
-	public L2Weapon getActiveWeaponItem()
+	public Weapon getActiveWeaponItem()
 	{
 		return null;
 	}
 	
 	@Override
-	public L2ItemInstance getSecondaryWeaponInstance()
+	public ItemInstance getSecondaryWeaponInstance()
 	{
 		return null;
 	}
 	
 	@Override
-	public L2Weapon getSecondaryWeaponItem()
+	public Weapon getSecondaryWeaponItem()
 	{
 		return null;
 	}

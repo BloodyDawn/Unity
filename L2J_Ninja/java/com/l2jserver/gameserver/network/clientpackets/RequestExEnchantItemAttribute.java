@@ -23,7 +23,7 @@ import com.l2jserver.gameserver.enums.PrivateStoreType;
 import com.l2jserver.gameserver.model.Elementals;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.request.EnchantItemAttributeRequest;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ExAttributeEnchantResult;
 import com.l2jserver.gameserver.network.serverpackets.InventoryUpdate;
@@ -94,8 +94,8 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 			return;
 		}
 		
-		final L2ItemInstance item = player.getInventory().getItemByObjectId(_objectId);
-		final L2ItemInstance stone = request.getEnchantingStone();
+		final ItemInstance item = player.getInventory().getItemByObjectId(_objectId);
+		final ItemInstance stone = request.getEnchantingStone();
 		if ((item == null) || (stone == null))
 		{
 			player.removeRequest(request.getClass());
@@ -282,7 +282,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 		player.sendPacket(iu);
 	}
 	
-	private int addElement(final L2PcInstance player, final L2ItemInstance stone, final L2ItemInstance item, byte elementToAdd)
+	private int addElement(final L2PcInstance player, final ItemInstance stone, final ItemInstance item, byte elementToAdd)
 	{
 		final Elementals oldElement = item.getElemental(elementToAdd);
 		final int elementValue = oldElement == null ? 0 : oldElement.getValue();
@@ -346,7 +346,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 		return success ? 1 : 0;
 	}
 	
-	public int getLimit(L2ItemInstance item, int sotneId)
+	public int getLimit(ItemInstance item, int sotneId)
 	{
 		final Elementals.ElementalItems elementItem = Elementals.getItemElemental(sotneId);
 		if (elementItem == null)
@@ -361,7 +361,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 		return Elementals.ARMOR_VALUES[elementItem._type._maxLevel];
 	}
 	
-	public int getPowerToAdd(int stoneId, int oldValue, L2ItemInstance item)
+	public int getPowerToAdd(int stoneId, int oldValue, ItemInstance item)
 	{
 		if (Elementals.getItemElement(stoneId) != Elementals.NONE)
 		{

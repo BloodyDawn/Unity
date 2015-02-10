@@ -23,7 +23,7 @@ import java.util.Set;
 
 import com.l2jserver.gameserver.model.Elementals;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * @author Kerberos
@@ -36,7 +36,7 @@ public class ExChooseInventoryAttributeItem extends L2GameServerPacket
 	private final int _level;
 	private final Set<Integer> _items = new HashSet<>();
 	
-	public ExChooseInventoryAttributeItem(L2PcInstance activeChar, L2ItemInstance stone)
+	public ExChooseInventoryAttributeItem(L2PcInstance activeChar, ItemInstance stone)
 	{
 		_itemId = stone.getDisplayId();
 		_count = stone.getCount();
@@ -48,7 +48,7 @@ public class ExChooseInventoryAttributeItem extends L2GameServerPacket
 		_level = Elementals.getMaxElementLevel(_itemId);
 		
 		// Register only items that can be put an attribute stone/crystal
-		for (L2ItemInstance item : activeChar.getInventory().getItems())
+		for (ItemInstance item : activeChar.getInventory().getItems())
 		{
 			if (item.isElementable())
 			{

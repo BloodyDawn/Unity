@@ -48,7 +48,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2FortCommanderInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2GrandBossInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2GuardInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.gameserver.util.Broadcast;
@@ -279,7 +279,7 @@ public final class CursedWeaponsManager
 		}
 	}
 	
-	public void activate(L2PcInstance player, L2ItemInstance item)
+	public void activate(L2PcInstance player, ItemInstance item)
 	{
 		CursedWeapon cw = _cursedWeapons.get(item.getId());
 		if (player.isCursedWeaponEquipped()) // cannot own 2 cursed swords

@@ -117,9 +117,9 @@ import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.interfaces.IPositionable;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.model.itemcontainer.PcInventory;
-import com.l2jserver.gameserver.model.items.L2EtcItem;
+import com.l2jserver.gameserver.model.items.EtcItem;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.olympiad.Olympiad;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.stats.Stats;
@@ -1829,7 +1829,7 @@ public abstract class AbstractScript extends ManagedScript
 	public long getQuestItemsCount(L2PcInstance player, int... itemIds)
 	{
 		long count = 0;
-		for (L2ItemInstance item : player.getInventory().getItems())
+		for (ItemInstance item : player.getInventory().getItems())
 		{
 			if (item == null)
 			{
@@ -1968,7 +1968,7 @@ public abstract class AbstractScript extends ManagedScript
 	 */
 	public static int getEnchantLevel(L2PcInstance player, int itemId)
 	{
-		final L2ItemInstance enchantedItem = player.getInventory().getItemByItemId(itemId);
+		final ItemInstance enchantedItem = player.getInventory().getItemByItemId(itemId);
 		if (enchantedItem == null)
 		{
 			return 0;
@@ -2031,9 +2031,9 @@ public abstract class AbstractScript extends ManagedScript
 			}
 			else if (Config.RATE_QUEST_REWARD_USE_MULTIPLIERS)
 			{
-				if (item instanceof L2EtcItem)
+				if (item instanceof EtcItem)
 				{
-					switch (((L2EtcItem) item).getItemType())
+					switch (((EtcItem) item).getItemType())
 					{
 						case POTION:
 							count *= Config.RATE_QUEST_REWARD_POTION;
@@ -2065,7 +2065,7 @@ public abstract class AbstractScript extends ManagedScript
 		}
 		
 		// Add items to player's inventory
-		final L2ItemInstance itemInstance = player.getInventory().addItem("Quest", itemId, count, player, player.getTarget());
+		final ItemInstance itemInstance = player.getInventory().addItem("Quest", itemId, count, player, player.getTarget());
 		if (itemInstance == null)
 		{
 			return;
@@ -2080,7 +2080,7 @@ public abstract class AbstractScript extends ManagedScript
 	 * @param item the item obtain by the player
 	 * @param count the item count
 	 */
-	private static void sendItemGetMessage(L2PcInstance player, L2ItemInstance item, long count)
+	private static void sendItemGetMessage(L2PcInstance player, ItemInstance item, long count)
 	{
 		// If item for reward is gold, send message of gold reward to client
 		if (item.getId() == Inventory.ADENA_ID)
@@ -2146,7 +2146,7 @@ public abstract class AbstractScript extends ManagedScript
 		}
 		
 		// Add items to player's inventory
-		final L2ItemInstance item = player.getInventory().addItem("Quest", itemId, count, player, player.getTarget());
+		final ItemInstance item = player.getInventory().addItem("Quest", itemId, count, player, player.getTarget());
 		if (item == null)
 		{
 			return;
@@ -2176,7 +2176,7 @@ public abstract class AbstractScript extends ManagedScript
 		}
 		
 		// Add items to player's inventory
-		final L2ItemInstance item = player.getInventory().addItem("Quest", itemId, count, player, player.getTarget());
+		final ItemInstance item = player.getInventory().addItem("Quest", itemId, count, player, player.getTarget());
 		if (item == null)
 		{
 			return;
@@ -2283,7 +2283,7 @@ public abstract class AbstractScript extends ManagedScript
 			}
 			
 			// Give the item to player
-			L2ItemInstance item = player.addItem("Quest", itemId, amountToGive, npc, true);
+			ItemInstance item = player.addItem("Quest", itemId, amountToGive, npc, true);
 			if (item != null)
 			{
 				// limit reached (if there is no limit, this block doesn't execute)
@@ -2320,7 +2320,7 @@ public abstract class AbstractScript extends ManagedScript
 	public static boolean takeItems(L2PcInstance player, int itemId, long amount)
 	{
 		// Get object item from player's inventory list
-		final L2ItemInstance item = player.getInventory().getItemByItemId(itemId);
+		final ItemInstance item = player.getInventory().getItemByItemId(itemId);
 		if (item == null)
 		{
 			return false;
@@ -2335,9 +2335,9 @@ public abstract class AbstractScript extends ManagedScript
 		// Destroy the quantity of items wanted
 		if (item.isEquipped())
 		{
-			final L2ItemInstance[] unequiped = player.getInventory().unEquipItemInBodySlotAndRecord(item.getItem().getBodyPart());
+			final ItemInstance[] unequiped = player.getInventory().unEquipItemInBodySlotAndRecord(item.getItem().getBodyPart());
 			InventoryUpdate iu = new InventoryUpdate();
-			for (L2ItemInstance itm : unequiped)
+			for (ItemInstance itm : unequiped)
 			{
 				iu.addModifiedItem(itm);
 			}

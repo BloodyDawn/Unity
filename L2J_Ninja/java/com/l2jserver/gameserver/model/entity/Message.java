@@ -30,7 +30,7 @@ import com.l2jserver.gameserver.enums.MailType;
 import com.l2jserver.gameserver.idfactory.IdFactory;
 import com.l2jserver.gameserver.instancemanager.MailManager;
 import com.l2jserver.gameserver.model.itemcontainer.Mail;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.util.Rnd;
 
 /**
@@ -178,7 +178,7 @@ public class Message
 		_unloadTask = ThreadPoolManager.getInstance().scheduleGeneral(new AttachmentsUnloadTask(this), UNLOAD_ATTACHMENTS_INTERVAL + Rnd.get(UNLOAD_ATTACHMENTS_INTERVAL));
 	}
 	
-	public Message(int receiverId, L2ItemInstance item, MailType mailType)
+	public Message(int receiverId, ItemInstance item, MailType mailType)
 	{
 		_messageId = IdFactory.getInstance().getNextId();
 		_senderId = -1;

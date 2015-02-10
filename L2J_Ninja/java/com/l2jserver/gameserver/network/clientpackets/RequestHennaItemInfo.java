@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.network.clientpackets;
 
 import com.l2jserver.gameserver.data.xml.impl.HennaData;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.L2Henna;
+import com.l2jserver.gameserver.model.items.Henna;
 import com.l2jserver.gameserver.network.serverpackets.HennaItemDrawInfo;
 
 /**
@@ -47,7 +47,7 @@ public final class RequestHennaItemInfo extends L2GameClientPacket
 			return;
 		}
 		
-		final L2Henna henna = HennaData.getInstance().getHenna(_symbolId);
+		final Henna henna = HennaData.getInstance().getHenna(_symbolId);
 		if (henna == null)
 		{
 			if (_symbolId != 0)

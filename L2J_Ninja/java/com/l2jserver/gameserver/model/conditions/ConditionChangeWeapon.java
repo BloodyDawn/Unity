@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.model.conditions;
 
 import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.L2Weapon;
+import com.l2jserver.gameserver.model.items.Weapon;
 import com.l2jserver.gameserver.model.skills.Skill;
 
 /**
@@ -54,7 +54,7 @@ public class ConditionChangeWeapon extends Condition
 		
 		if (_required)
 		{
-			final L2Weapon weaponItem = effector.getActiveWeaponItem();
+			final Weapon weaponItem = effector.getActiveWeaponItem();
 			if (weaponItem == null)
 			{
 				return false;

@@ -27,7 +27,7 @@ import com.l2jserver.gameserver.instancemanager.games.Lottery;
 import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 import com.l2jserver.gameserver.network.serverpackets.InventoryUpdate;
@@ -228,7 +228,7 @@ public class Loto implements IBypassHandler
 			sm.addItemName(4442);
 			player.sendPacket(sm);
 			
-			L2ItemInstance item = new L2ItemInstance(IdFactory.getInstance().getNextId(), 4442);
+			ItemInstance item = new ItemInstance(IdFactory.getInstance().getNextId(), 4442);
 			item.setCount(1);
 			item.setCustomType1(lotonumber);
 			item.setEnchantLevel(enchant);
@@ -237,7 +237,7 @@ public class Loto implements IBypassHandler
 			
 			InventoryUpdate iu = new InventoryUpdate();
 			iu.addItem(item);
-			L2ItemInstance adenaupdate = player.getInventory().getItemByItemId(57);
+			ItemInstance adenaupdate = player.getInventory().getItemByItemId(57);
 			iu.addModifiedItem(adenaupdate);
 			player.sendPacket(iu);
 			
@@ -256,7 +256,7 @@ public class Loto implements IBypassHandler
 			
 			int lotonumber = Lottery.getInstance().getId();
 			String message = "";
-			for (L2ItemInstance item : player.getInventory().getItems())
+			for (ItemInstance item : player.getInventory().getItems())
 			{
 				if (item == null)
 				{
@@ -307,7 +307,7 @@ public class Loto implements IBypassHandler
 		else if (val > 25) // >25 - check lottery ticket by item object id
 		{
 			int lotonumber = Lottery.getInstance().getId();
-			L2ItemInstance item = player.getInventory().getItemByObjectId(val);
+			ItemInstance item = player.getInventory().getItemByObjectId(val);
 			if ((item == null) || (item.getId() != 4442) || (item.getCustomType1() >= lotonumber))
 			{
 				return;

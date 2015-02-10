@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.network.serverpackets;
 
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * @author Migi, DS
@@ -28,7 +28,7 @@ import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
 public class ExReplyPostItemList extends AbstractItemPacket
 {
 	L2PcInstance _activeChar;
-	private final L2ItemInstance[] _itemList;
+	private final ItemInstance[] _itemList;
 	
 	public ExReplyPostItemList(L2PcInstance activeChar)
 	{
@@ -42,7 +42,7 @@ public class ExReplyPostItemList extends AbstractItemPacket
 		writeC(0xFE);
 		writeH(0xB3);
 		writeD(_itemList.length);
-		for (L2ItemInstance item : _itemList)
+		for (ItemInstance item : _itemList)
 		{
 			writeItem(item);
 		}

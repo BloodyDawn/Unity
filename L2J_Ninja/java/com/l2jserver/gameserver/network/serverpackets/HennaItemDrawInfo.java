@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.network.serverpackets;
 
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.L2Henna;
+import com.l2jserver.gameserver.model.items.Henna;
 
 /**
  * @author Zoey76
@@ -27,9 +27,9 @@ import com.l2jserver.gameserver.model.items.L2Henna;
 public class HennaItemDrawInfo extends L2GameServerPacket
 {
 	private final L2PcInstance _activeChar;
-	private final L2Henna _henna;
+	private final Henna _henna;
 	
-	public HennaItemDrawInfo(L2Henna henna, L2PcInstance player)
+	public HennaItemDrawInfo(Henna henna, L2PcInstance player)
 	{
 		_henna = henna;
 		_activeChar = player;

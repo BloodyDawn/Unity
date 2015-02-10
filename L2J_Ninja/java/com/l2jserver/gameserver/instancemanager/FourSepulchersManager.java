@@ -51,7 +51,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2SepulcherMonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2SepulcherNpcInstance;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.network.NpcStringId;
@@ -1092,7 +1092,7 @@ public final class FourSepulchersManager
 					mem.addItem("Quest", USED_PASS, 1, mem, true);
 				}
 				
-				L2ItemInstance hallsKey = mem.getInventory().getItemByItemId(CHAPEL_KEY);
+				ItemInstance hallsKey = mem.getInventory().getItemByItemId(CHAPEL_KEY);
 				if (hallsKey != null)
 				{
 					mem.destroyItemByItemId("Quest", CHAPEL_KEY, hallsKey.getCount(), mem, true);
@@ -1126,7 +1126,7 @@ public final class FourSepulchersManager
 					mem.addItem("Quest", USED_PASS, 1, mem, true);
 				}
 				
-				L2ItemInstance hallsKey = mem.getInventory().getItemByItemId(CHAPEL_KEY);
+				ItemInstance hallsKey = mem.getInventory().getItemByItemId(CHAPEL_KEY);
 				if (hallsKey != null)
 				{
 					mem.destroyItemByItemId("Quest", CHAPEL_KEY, hallsKey.getCount(), mem, true);
@@ -1149,7 +1149,7 @@ public final class FourSepulchersManager
 				player.addItem("Quest", USED_PASS, 1, player, true);
 			}
 			
-			L2ItemInstance hallsKey = player.getInventory().getItemByItemId(CHAPEL_KEY);
+			ItemInstance hallsKey = player.getInventory().getItemByItemId(CHAPEL_KEY);
 			if (hallsKey != null)
 			{
 				player.destroyItemByItemId("Quest", CHAPEL_KEY, hallsKey.getCount(), player, true);

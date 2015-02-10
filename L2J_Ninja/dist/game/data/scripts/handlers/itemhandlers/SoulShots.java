@@ -25,8 +25,8 @@ import com.l2jserver.gameserver.handler.IItemHandler;
 import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
-import com.l2jserver.gameserver.model.items.L2Weapon;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.Weapon;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.items.type.ActionType;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.MagicSkillUse;
@@ -36,7 +36,7 @@ import com.l2jserver.util.Rnd;
 public class SoulShots implements IItemHandler
 {
 	@Override
-	public boolean useItem(Playable playable, L2ItemInstance item, boolean forceUse)
+	public boolean useItem(Playable playable, ItemInstance item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{
@@ -45,8 +45,8 @@ public class SoulShots implements IItemHandler
 		}
 		
 		final L2PcInstance activeChar = playable.getActingPlayer();
-		final L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
-		final L2Weapon weaponItem = activeChar.getActiveWeaponItem();
+		final ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
+		final Weapon weaponItem = activeChar.getActiveWeaponItem();
 		final SkillHolder[] skills = item.getItem().getSkills();
 		
 		int itemId = item.getId();

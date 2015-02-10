@@ -35,8 +35,8 @@ import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.events.EventDispatcher;
 import com.l2jserver.gameserver.model.events.impl.character.trap.OnTrapAction;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
-import com.l2jserver.gameserver.model.items.L2Weapon;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.Weapon;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.olympiad.OlympiadGameManager;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.zone.ZoneId;
@@ -230,7 +230,7 @@ public final class L2TrapInstance extends Npc
 	}
 	
 	@Override
-	public L2Weapon getActiveWeaponItem()
+	public Weapon getActiveWeaponItem()
 	{
 		return null;
 	}
@@ -261,13 +261,13 @@ public final class L2TrapInstance extends Npc
 	}
 	
 	@Override
-	public L2ItemInstance getSecondaryWeaponInstance()
+	public ItemInstance getSecondaryWeaponInstance()
 	{
 		return null;
 	}
 	
 	@Override
-	public L2Weapon getSecondaryWeaponItem()
+	public Weapon getSecondaryWeaponItem()
 	{
 		return null;
 	}

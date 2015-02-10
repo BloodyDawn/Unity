@@ -27,7 +27,7 @@ import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.enums.ItemLocation;
 import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * @author DS
@@ -69,7 +69,7 @@ public class Mail extends ItemContainer
 	public void setNewMessageId(int messageId)
 	{
 		_messageId = messageId;
-		for (L2ItemInstance item : _items)
+		for (ItemInstance item : _items)
 		{
 			if (item == null)
 			{
@@ -84,7 +84,7 @@ public class Mail extends ItemContainer
 	
 	public void returnToWh(ItemContainer wh)
 	{
-		for (L2ItemInstance item : _items)
+		for (ItemInstance item : _items)
 		{
 			if (item == null)
 			{
@@ -102,7 +102,7 @@ public class Mail extends ItemContainer
 	}
 	
 	@Override
-	protected void addItem(L2ItemInstance item)
+	protected void addItem(ItemInstance item)
 	{
 		super.addItem(item);
 		item.setItemLocation(getBaseLocation(), _messageId);
@@ -114,7 +114,7 @@ public class Mail extends ItemContainer
 	@Override
 	public void updateDatabase()
 	{
-		for (L2ItemInstance item : _items)
+		for (ItemInstance item : _items)
 		{
 			if (item != null)
 			{
@@ -134,10 +134,10 @@ public class Mail extends ItemContainer
 			statement.setInt(3, getMessageId());
 			try (ResultSet inv = statement.executeQuery())
 			{
-				L2ItemInstance item;
+				ItemInstance item;
 				while (inv.next())
 				{
-					item = L2ItemInstance.restoreFromDb(getOwnerId(), inv);
+					item = ItemInstance.restoreFromDb(getOwnerId(), inv);
 					if (item == null)
 					{
 						continue;

@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.model.zone;
 
 import com.l2jserver.gameserver.idfactory.IdFactory;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * Abstract base class for any zone form
@@ -51,7 +51,7 @@ public abstract class L2ZoneForm
 	
 	protected final void dropDebugItem(int itemId, int num, int x, int y, int z)
 	{
-		L2ItemInstance item = new L2ItemInstance(IdFactory.getInstance().getNextId(), itemId);
+		ItemInstance item = new ItemInstance(IdFactory.getInstance().getNextId(), itemId);
 		item.setCount(num);
 		item.spawnMe(x, y, z + 5);
 		ZoneManager.getInstance().getDebugItems().add(item);

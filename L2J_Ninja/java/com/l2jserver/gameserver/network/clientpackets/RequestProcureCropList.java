@@ -30,7 +30,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2MerchantInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.UniqueItemHolder;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 
@@ -106,7 +106,7 @@ public class RequestProcureCropList extends L2GameClientPacket
 		int slots = 0, weight = 0;
 		for (CropHolder i : _items)
 		{
-			final L2ItemInstance item = player.getInventory().getItemByObjectId(i.getObjectId());
+			final ItemInstance item = player.getInventory().getItemByObjectId(i.getObjectId());
 			if ((item == null) || (item.getCount() < i.getCount()) || (item.getId() != i.getId()))
 			{
 				sendActionFailed();

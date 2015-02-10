@@ -37,7 +37,7 @@ import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.interfaces.INamable;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.CommonSkill;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -79,7 +79,7 @@ public class CursedWeapon implements INamable
 	
 	private int _playerId = 0;
 	protected L2PcInstance _player = null;
-	private L2ItemInstance _item = null;
+	private ItemInstance _item = null;
 	private int _playerKarma = 0;
 	private int _playerPkKills = 0;
 	protected int transformationId = 0;
@@ -113,7 +113,7 @@ public class CursedWeapon implements INamable
 				_player.storeMe();
 				
 				// Destroy
-				L2ItemInstance removedItem = _player.getInventory().destroyItemByItemId("", _itemId, 1, _player, null);
+				ItemInstance removedItem = _player.getInventory().destroyItemByItemId("", _itemId, 1, _player, null);
 				if (!Config.FORCE_INVENTORY_UPDATE)
 				{
 					InventoryUpdate iu = new InventoryUpdate();
@@ -174,7 +174,7 @@ public class CursedWeapon implements INamable
 			if ((_player != null) && (_player.getInventory().getItemByItemId(_itemId) != null))
 			{
 				// Destroy
-				L2ItemInstance removedItem = _player.getInventory().destroyItemByItemId("", _itemId, 1, _player, null);
+				ItemInstance removedItem = _player.getInventory().destroyItemByItemId("", _itemId, 1, _player, null);
 				if (!Config.FORCE_INVENTORY_UPDATE)
 				{
 					InventoryUpdate iu = new InventoryUpdate();
@@ -405,7 +405,7 @@ public class CursedWeapon implements INamable
 		return false;
 	}
 	
-	public void activate(L2PcInstance player, L2ItemInstance item)
+	public void activate(L2PcInstance player, ItemInstance item)
 	{
 		// If the player is mounted, attempt to unmount first.
 		// Only allow picking up the cursed weapon if unmounting is successful.
@@ -618,7 +618,7 @@ public class CursedWeapon implements INamable
 		_player = player;
 	}
 	
-	public void setItem(L2ItemInstance item)
+	public void setItem(ItemInstance item)
 	{
 		_item = item;
 	}

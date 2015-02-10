@@ -24,7 +24,7 @@ import com.l2jserver.gameserver.model.ArenaParticipantsHolder;
 import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2BlockInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
@@ -32,7 +32,7 @@ import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 public class EventItem implements IItemHandler
 {
 	@Override
-	public boolean useItem(Playable playable, L2ItemInstance item, boolean forceUse)
+	public boolean useItem(Playable playable, ItemInstance item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{
@@ -59,7 +59,7 @@ public class EventItem implements IItemHandler
 		return used;
 	}
 	
-	private final boolean useBlockCheckerItem(final L2PcInstance castor, L2ItemInstance item)
+	private final boolean useBlockCheckerItem(final L2PcInstance castor, ItemInstance item)
 	{
 		final int blockCheckerArena = castor.getBlockCheckerArena();
 		if (blockCheckerArena == -1)

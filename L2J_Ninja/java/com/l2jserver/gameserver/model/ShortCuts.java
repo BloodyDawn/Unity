@@ -30,7 +30,7 @@ import com.l2jserver.L2DatabaseFactory;
 import com.l2jserver.gameserver.enums.ShortcutType;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.interfaces.IRestorable;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.items.type.EtcItemType;
 import com.l2jserver.gameserver.network.serverpackets.ExAutoSoulShot;
 import com.l2jserver.gameserver.network.serverpackets.ShortCutInit;
@@ -73,7 +73,7 @@ public class ShortCuts implements IRestorable
 		// Verify shortcut
 		if (shortcut.getType() == ShortcutType.ITEM)
 		{
-			final L2ItemInstance item = _owner.getInventory().getItemByObjectId(shortcut.getId());
+			final ItemInstance item = _owner.getInventory().getItemByObjectId(shortcut.getId());
 			if (item == null)
 			{
 				return;
@@ -123,7 +123,7 @@ public class ShortCuts implements IRestorable
 		deleteShortCutFromDb(old);
 		if (old.getType() == ShortcutType.ITEM)
 		{
-			L2ItemInstance item = _owner.getInventory().getItemByObjectId(old.getId());
+			ItemInstance item = _owner.getInventory().getItemByObjectId(old.getId());
 			
 			if ((item != null) && (item.getItemType() == EtcItemType.SHOT))
 			{
@@ -209,7 +209,7 @@ public class ShortCuts implements IRestorable
 		{
 			if (sc.getType() == ShortcutType.ITEM)
 			{
-				L2ItemInstance item = _owner.getInventory().getItemByObjectId(sc.getId());
+				ItemInstance item = _owner.getInventory().getItemByObjectId(sc.getId());
 				if (item == null)
 				{
 					deleteShortCut(sc.getSlot(), sc.getPage());

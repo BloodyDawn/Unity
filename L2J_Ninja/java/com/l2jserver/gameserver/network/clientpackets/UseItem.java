@@ -35,10 +35,10 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
-import com.l2jserver.gameserver.model.items.L2EtcItem;
+import com.l2jserver.gameserver.model.items.EtcItem;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.L2Weapon;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.Weapon;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.items.type.ArmorType;
 import com.l2jserver.gameserver.model.items.type.WeaponType;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -59,10 +59,10 @@ public final class UseItem extends L2GameClientPacket
 	/** Weapon Equip Task */
 	private static class WeaponEquipTask implements Runnable
 	{
-		L2ItemInstance item;
+		ItemInstance item;
 		L2PcInstance activeChar;
 		
-		protected WeaponEquipTask(L2ItemInstance it, L2PcInstance character)
+		protected WeaponEquipTask(ItemInstance it, L2PcInstance character)
 		{
 			item = it;
 			activeChar = character;
@@ -121,7 +121,7 @@ public final class UseItem extends L2GameClientPacket
 			return;
 		}
 		
-		final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_objectId);
+		final ItemInstance item = activeChar.getInventory().getItemByObjectId(_objectId);
 		if (item == null)
 		{
 			return;
@@ -252,7 +252,7 @@ public final class UseItem extends L2GameClientPacket
 					// Don't allow other Race to Wear Kamael exclusive Weapons.
 					if (!item.isEquipped() && item.isWeapon() && !activeChar.canOverrideCond(PcCondOverride.ITEM_CONDITIONS))
 					{
-						L2Weapon wpn = (L2Weapon) item.getItem();
+						Weapon wpn = (Weapon) item.getItem();
 						
 						switch (activeChar.getRace())
 						{
@@ -342,7 +342,7 @@ public final class UseItem extends L2GameClientPacket
 		}
 		else
 		{
-			final L2Weapon weaponItem = activeChar.getActiveWeaponItem();
+			final Weapon weaponItem = activeChar.getActiveWeaponItem();
 			if (((weaponItem != null) && (weaponItem.getItemType() == WeaponType.FISHINGROD)) && (((_itemId >= 6519) && (_itemId <= 6527)) || ((_itemId >= 7610) && (_itemId <= 7613)) || ((_itemId >= 7807) && (_itemId <= 7809)) || ((_itemId >= 8484) && (_itemId <= 8486)) || ((_itemId >= 8505) && (_itemId <= 8513))))
 			{
 				activeChar.getInventory().setPaperdollItem(Inventory.PAPERDOLL_LHAND, item);
@@ -352,7 +352,7 @@ public final class UseItem extends L2GameClientPacket
 				return;
 			}
 			
-			final L2EtcItem etcItem = item.getEtcItem();
+			final EtcItem etcItem = item.getEtcItem();
 			final IItemHandler handler = ItemHandler.getInstance().getHandler(etcItem);
 			if (handler == null)
 			{
@@ -380,7 +380,7 @@ public final class UseItem extends L2GameClientPacket
 		}
 	}
 	
-	private void reuseData(L2PcInstance activeChar, L2ItemInstance item, long remainingTime)
+	private void reuseData(L2PcInstance activeChar, ItemInstance item, long remainingTime)
 	{
 		final int hours = (int) (remainingTime / 3600000L);
 		final int minutes = (int) (remainingTime % 3600000L) / 60000;

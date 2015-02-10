@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.model;
 
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 public class TradeItem
 {
@@ -47,7 +47,7 @@ public class TradeItem
 	private int _visualId;
 	private int _augmentId;
 	
-	public TradeItem(L2ItemInstance item, long count, long price)
+	public TradeItem(ItemInstance item, long count, long price)
 	{
 		_objectId = item.getObjectId();
 		_item = item.getItem();
@@ -81,7 +81,7 @@ public class TradeItem
 		_price = price;
 		_elemAtkType = Elementals.NONE;
 		_elemAtkPower = 0;
-		_enchantOptions = L2ItemInstance.DEFAULT_ENCHANT_OPTIONS;
+		_enchantOptions = ItemInstance.DEFAULT_ENCHANT_OPTIONS;
 	}
 	
 	public TradeItem(TradeItem item, long count, long price)

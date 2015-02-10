@@ -113,8 +113,8 @@ import com.l2jserver.gameserver.model.interfaces.ILocational;
 import com.l2jserver.gameserver.model.interfaces.ISkillsHolder;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.L2Weapon;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.Weapon;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.items.type.WeaponType;
 import com.l2jserver.gameserver.model.options.OptionsSkillHolder;
 import com.l2jserver.gameserver.model.options.OptionsSkillType;
@@ -877,7 +877,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// Check if attacker's weapon can attack
 			if (getActiveWeaponItem() != null)
 			{
-				L2Weapon wpn = getActiveWeaponItem();
+				Weapon wpn = getActiveWeaponItem();
 				if (!wpn.isAttackWeapon() && !isGM())
 				{
 					if (wpn.getItemType() == WeaponType.FISHINGROD)
@@ -927,7 +927,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			stopEffectsOnAction();
 			
 			// Get the active weapon item corresponding to the active weapon instance (always equipped in the right hand)
-			L2Weapon weaponItem = getActiveWeaponItem();
+			Weapon weaponItem = getActiveWeaponItem();
 			
 			// GeoData Los Check here (or dz > 1000)
 			if (!GeoData.getInstance().canSeeTarget(this, target))
@@ -1937,7 +1937,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// reduce talisman mana on skill use
 			if ((skill.getReferenceItemId() > 0) && (ItemTable.getInstance().getTemplate(skill.getReferenceItemId()).getBodyPart() == L2Item.SLOT_DECO))
 			{
-				for (L2ItemInstance item : getInventory().getItemsByItemId(skill.getReferenceItemId()))
+				for (ItemInstance item : getInventory().getItemsByItemId(skill.getReferenceItemId()))
 				{
 					if (item.isEquipped())
 					{
@@ -2134,7 +2134,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		// Check if the caster's weapon is limited to use only its own skills
 		if (getActiveWeaponItem() != null)
 		{
-			L2Weapon wep = getActiveWeaponItem();
+			Weapon wep = getActiveWeaponItem();
 			if (wep.useWeaponSkillsOnly() && !isGM() && wep.hasSkills())
 			{
 				boolean found = false;
@@ -2162,7 +2162,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		if ((skill.getItemConsumeId() > 0) && (getInventory() != null))
 		{
 			// Get the L2ItemInstance consumed by the spell
-			L2ItemInstance requiredItems = getInventory().getItemByItemId(skill.getItemConsumeId());
+			ItemInstance requiredItems = getInventory().getItemByItemId(skill.getItemConsumeId());
 			
 			// Check if the caster owns enough consumed Item to cast
 			if ((requiredItems == null) || (requiredItems.getCount() < skill.getItemConsumeCount()))
@@ -2200,7 +2200,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * @param item the item
 	 * @param reuse the reuse
 	 */
-	public final void addTimeStampItem(L2ItemInstance item, long reuse)
+	public final void addTimeStampItem(ItemInstance item, long reuse)
 	{
 		addTimeStampItem(item, reuse, -1);
 	}
@@ -2212,7 +2212,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * @param reuse the reuse
 	 * @param systime the system time
 	 */
-	public final void addTimeStampItem(L2ItemInstance item, long reuse, long systime)
+	public final void addTimeStampItem(ItemInstance item, long reuse, long systime)
 	{
 		if (_reuseTimeStampsItems == null)
 		{
@@ -4944,19 +4944,19 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * <B><U> Overridden in </U> :</B> <li>L2PcInstance</li>
 	 * @return the active weapon instance (always equiped in the right hand).
 	 */
-	public abstract L2ItemInstance getActiveWeaponInstance();
+	public abstract ItemInstance getActiveWeaponInstance();
 	
 	/**
 	 * <B><U> Overridden in </U> :</B> <li>L2PcInstance</li>
 	 * @return the active weapon item (always equiped in the right hand).
 	 */
-	public abstract L2Weapon getActiveWeaponItem();
+	public abstract Weapon getActiveWeaponItem();
 	
 	/**
 	 * <B><U> Overridden in </U> :</B> <li>L2PcInstance</li>
 	 * @return the secondary weapon instance (always equiped in the left hand).
 	 */
-	public abstract L2ItemInstance getSecondaryWeaponInstance();
+	public abstract ItemInstance getSecondaryWeaponInstance();
 	
 	/**
 	 * <B><U> Overridden in </U> :</B> <li>L2PcInstance</li>
@@ -5046,7 +5046,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		
 		if (!miss && (damage > 0))
 		{
-			L2Weapon weapon = getActiveWeaponItem();
+			Weapon weapon = getActiveWeaponItem();
 			boolean isBow = ((weapon != null) && ((weapon.getItemType() == WeaponType.BOW) || (weapon.getItemType() == WeaponType.CROSSBOW)));
 			int reflectedDamage = 0;
 			
@@ -5160,7 +5160,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		}
 		
 		// Launch weapon Special ability effect if available
-		L2Weapon activeWeapon = getActiveWeaponItem();
+		Weapon activeWeapon = getActiveWeaponItem();
 		if (activeWeapon != null)
 		{
 			activeWeapon.castOnCriticalSkill(this, target);
@@ -5356,7 +5356,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * @param weapon
 	 * @return the Attack Speed of the L2Character (delay (in milliseconds) before next attack).
 	 */
-	public int calculateTimeBetweenAttacks(Creature target, L2Weapon weapon)
+	public int calculateTimeBetweenAttacks(Creature target, Weapon weapon)
 	{
 		if ((weapon != null) && !isTransformed())
 		{
@@ -5374,7 +5374,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		return Formulas.calcPAtkSpd(this, target, getPAtkSpd());
 	}
 	
-	public int calculateReuseTime(Creature target, L2Weapon weapon)
+	public int calculateReuseTime(Creature target, Weapon weapon)
 	{
 		if ((weapon == null) || isTransformed())
 		{
@@ -5904,7 +5904,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	{
 		try
 		{
-			L2Weapon activeWeapon = getActiveWeaponItem();
+			Weapon activeWeapon = getActiveWeaponItem();
 			
 			// Check if the toggle skill effects are already in progress on the L2Character
 			if (skill.isToggle() && isAffectedBySkill(skill.getId()))
@@ -6272,7 +6272,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public final double getRandomDamageMultiplier()
 	{
-		L2Weapon activeWeapon = getActiveWeaponItem();
+		Weapon activeWeapon = getActiveWeaponItem();
 		int random;
 		
 		if (activeWeapon != null)
@@ -6935,7 +6935,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public final WeaponType getAttackType()
 	{
-		final L2Weapon weapon = getActiveWeaponItem();
+		final Weapon weapon = getActiveWeaponItem();
 		if (weapon != null)
 		{
 			return weapon.getItemType();

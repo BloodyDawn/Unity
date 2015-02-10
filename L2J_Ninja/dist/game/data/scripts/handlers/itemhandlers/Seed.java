@@ -29,7 +29,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2ChestInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 
@@ -39,7 +39,7 @@ import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 public class Seed implements IItemHandler
 {
 	@Override
-	public boolean useItem(Playable playable, L2ItemInstance item, boolean forceUse)
+	public boolean useItem(Playable playable, ItemInstance item, boolean forceUse)
 	{
 		if (!Config.ALLOW_MANOR)
 		{

@@ -29,7 +29,7 @@ import com.l2jserver.gameserver.model.EnchantSkillGroup.EnchantSkillHolder;
 import com.l2jserver.gameserver.model.EnchantSkillLearn;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ExEnchantSkillInfo;
@@ -125,7 +125,7 @@ public final class RequestExEnchantSkillRouteChange extends L2GameClientPacket
 		if (player.getSp() >= requiredSp)
 		{
 			// only first lvl requires book
-			L2ItemInstance spb = player.getInventory().getItemByItemId(reqItemId);
+			ItemInstance spb = player.getInventory().getItemByItemId(reqItemId);
 			if (Config.ES_SP_BOOK_NEEDED)
 			{
 				if (spb == null)// Haven't spellbook

@@ -24,7 +24,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentSkipListMap;
 
 import com.l2jserver.gameserver.model.ItemInfo;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * @author UnAfraid
@@ -37,7 +37,7 @@ public abstract class AbstractInventoryUpdate extends AbstractItemPacket
 	{
 	}
 	
-	public AbstractInventoryUpdate(L2ItemInstance item)
+	public AbstractInventoryUpdate(ItemInstance item)
 	{
 		addItem(item);
 	}
@@ -50,29 +50,29 @@ public abstract class AbstractInventoryUpdate extends AbstractItemPacket
 		}
 	}
 	
-	public final void addItem(L2ItemInstance item)
+	public final void addItem(ItemInstance item)
 	{
 		_items.put(item.getObjectId(), new ItemInfo(item));
 	}
 	
-	public final void addNewItem(L2ItemInstance item)
+	public final void addNewItem(ItemInstance item)
 	{
 		_items.put(item.getObjectId(), new ItemInfo(item, 1));
 	}
 	
-	public final void addModifiedItem(L2ItemInstance item)
+	public final void addModifiedItem(ItemInstance item)
 	{
 		_items.put(item.getObjectId(), new ItemInfo(item, 2));
 	}
 	
-	public final void addRemovedItem(L2ItemInstance item)
+	public final void addRemovedItem(ItemInstance item)
 	{
 		_items.put(item.getObjectId(), new ItemInfo(item, 3));
 	}
 	
-	public final void addItems(List<L2ItemInstance> items)
+	public final void addItems(List<ItemInstance> items)
 	{
-		for (L2ItemInstance item : items)
+		for (ItemInstance item : items)
 		{
 			_items.put(item.getObjectId(), new ItemInfo(item));
 		}

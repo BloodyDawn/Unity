@@ -39,7 +39,7 @@ import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.events.ListenersContainer;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.interfaces.IIdentifiable;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.items.type.ActionType;
 import com.l2jserver.gameserver.model.items.type.CrystalType;
 import com.l2jserver.gameserver.model.items.type.EtcItemType;
@@ -687,7 +687,7 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 	 * @param player : L2Character pointing out the player
 	 * @return the list of functions
 	 */
-	public final List<AbstractFunction> getStatFuncs(L2ItemInstance item, Creature player)
+	public final List<AbstractFunction> getStatFuncs(ItemInstance item, Creature player)
 	{
 		if ((_funcTemplates == null) || _funcTemplates.isEmpty())
 		{

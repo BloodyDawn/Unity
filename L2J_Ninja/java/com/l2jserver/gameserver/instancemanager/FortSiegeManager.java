@@ -42,7 +42,7 @@ import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Fort;
 import com.l2jserver.gameserver.model.entity.FortSiege;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.CommonSkill;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
@@ -292,7 +292,7 @@ public final class FortSiegeManager
 		return (itemId == 9819);
 	}
 	
-	public boolean activateCombatFlag(L2PcInstance player, L2ItemInstance item)
+	public boolean activateCombatFlag(L2PcInstance player, ItemInstance item)
 	{
 		if (!checkIfCanPickup(player))
 		{

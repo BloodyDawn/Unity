@@ -21,7 +21,7 @@ package com.l2jserver.gameserver.model.events.impl.item;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * @author UnAfraid
@@ -29,11 +29,11 @@ import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
 public class OnItemCreate implements IBaseEvent
 {
 	private final String _process;
-	private final L2ItemInstance _item;
+	private final ItemInstance _item;
 	private final L2PcInstance _activeChar;
 	private final Object _reference;
 	
-	public OnItemCreate(String process, L2ItemInstance item, L2PcInstance actor, Object reference)
+	public OnItemCreate(String process, ItemInstance item, L2PcInstance actor, Object reference)
 	{
 		_process = process;
 		_item = item;
@@ -46,7 +46,7 @@ public class OnItemCreate implements IBaseEvent
 		return _process;
 	}
 	
-	public L2ItemInstance getItem()
+	public ItemInstance getItem()
 	{
 		return _item;
 	}

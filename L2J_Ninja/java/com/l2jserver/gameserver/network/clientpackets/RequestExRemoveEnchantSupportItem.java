@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.network.clientpackets;
 
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.request.EnchantItemRequest;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.serverpackets.ExRemoveEnchantSupportItemResult;
 
 /**
@@ -51,7 +51,7 @@ public class RequestExRemoveEnchantSupportItem extends L2GameClientPacket
 			return;
 		}
 		
-		final L2ItemInstance supportItem = request.getSupportItem();
+		final ItemInstance supportItem = request.getSupportItem();
 		if ((supportItem == null) || (supportItem.getCount() < 1))
 		{
 			request.setSupportItem(L2PcInstance.ID_NONE);

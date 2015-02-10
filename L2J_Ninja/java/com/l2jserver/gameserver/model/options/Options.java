@@ -25,7 +25,7 @@ import java.util.List;
 import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.stats.functions.AbstractFunction;
 import com.l2jserver.gameserver.model.stats.functions.FuncTemplate;
@@ -62,7 +62,7 @@ public class Options
 		return !_funcs.isEmpty();
 	}
 	
-	public List<AbstractFunction> getStatFuncs(L2ItemInstance item, Creature player)
+	public List<AbstractFunction> getStatFuncs(ItemInstance item, Creature player)
 	{
 		if (_funcs.isEmpty())
 		{

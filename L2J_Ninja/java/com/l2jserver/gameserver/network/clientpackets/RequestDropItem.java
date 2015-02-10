@@ -25,7 +25,7 @@ import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.items.type.EtcItemType;
 import com.l2jserver.gameserver.model.zone.ZoneId;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -72,7 +72,7 @@ public final class RequestDropItem extends L2GameClientPacket
 			return;
 		}
 		
-		L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_objectId);
+		ItemInstance item = activeChar.getInventory().getItemByObjectId(_objectId);
 		
 		if ((item == null) || (_count == 0) || !activeChar.validateItemManipulation(_objectId, "drop") || (!Config.ALLOW_DISCARDITEM && !activeChar.canOverrideCond(PcCondOverride.DROP_ALL_ITEMS)) || (!item.isDropable() && !(activeChar.canOverrideCond(PcCondOverride.DROP_ALL_ITEMS) && Config.GM_TRADE_RESTRICTED_ITEMS)) || ((item.getItemType() == EtcItemType.PET_COLLAR) && activeChar.havePetInvItems()) || activeChar.isInsideZone(ZoneId.NO_ITEM_DROP))
 		{
@@ -190,9 +190,9 @@ public final class RequestDropItem extends L2GameClientPacket
 		
 		if (item.isEquipped())
 		{
-			L2ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(item.getLocationSlot());
+			ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(item.getLocationSlot());
 			InventoryUpdate iu = new InventoryUpdate();
-			for (L2ItemInstance itm : unequiped)
+			for (ItemInstance itm : unequiped)
 			{
 				itm.unChargeAllShots();
 				iu.addModifiedItem(itm);
@@ -204,7 +204,7 @@ public final class RequestDropItem extends L2GameClientPacket
 			activeChar.sendPacket(il);
 		}
 		
-		L2ItemInstance dropedItem = activeChar.dropItem("Drop", _objectId, _count, _x, _y, _z, null, false, false);
+		ItemInstance dropedItem = activeChar.dropItem("Drop", _objectId, _count, _x, _y, _z, null, false, false);
 		
 		if (Config.DEBUG)
 		{

@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.model.actor.request;
 
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * @author UnAfraid
@@ -34,7 +34,7 @@ public class CompoundRequest extends AbstractRequest
 		super(activeChar);
 	}
 	
-	public L2ItemInstance getItemOne()
+	public ItemInstance getItemOne()
 	{
 		return getActiveChar().getInventory().getItemByObjectId(_itemOne);
 	}
@@ -44,7 +44,7 @@ public class CompoundRequest extends AbstractRequest
 		_itemOne = itemOne;
 	}
 	
-	public L2ItemInstance getItemTwo()
+	public ItemInstance getItemTwo()
 	{
 		return getActiveChar().getInventory().getItemByObjectId(_itemTwo);
 	}

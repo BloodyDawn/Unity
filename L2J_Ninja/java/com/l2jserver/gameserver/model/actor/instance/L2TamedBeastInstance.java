@@ -35,7 +35,7 @@ import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.Location;
 import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 import com.l2jserver.gameserver.network.serverpackets.NpcInfo;
@@ -426,7 +426,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 			int foodTypeSkillId = _tamedBeast.getFoodType();
 			L2PcInstance owner = _tamedBeast.getOwner();
 			
-			L2ItemInstance item = null;
+			ItemInstance item = null;
 			if (_tamedBeast._isFreyaBeast)
 			{
 				item = owner.getInventory().getItemByItemId(foodTypeSkillId);

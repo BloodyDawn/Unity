@@ -37,7 +37,7 @@ import com.l2jserver.gameserver.data.xml.impl.OptionData;
 import com.l2jserver.gameserver.model.Augmentation;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.options.Options;
 import com.l2jserver.gameserver.network.clientpackets.AbstractRefinePacket;
 import com.l2jserver.util.Rnd;
@@ -518,7 +518,7 @@ public class AugmentationData
 	 * @param targetItem
 	 * @return
 	 */
-	public Augmentation generateRandomAugmentation(int lifeStoneLevel, int lifeStoneGrade, int bodyPart, int lifeStoneId, L2ItemInstance targetItem)
+	public Augmentation generateRandomAugmentation(int lifeStoneLevel, int lifeStoneGrade, int bodyPart, int lifeStoneId, ItemInstance targetItem)
 	{
 		switch (bodyPart)
 		{
@@ -531,7 +531,7 @@ public class AugmentationData
 		}
 	}
 	
-	private Augmentation generateRandomWeaponAugmentation(int lifeStoneLevel, int lifeStoneGrade, int lifeStoneId, L2ItemInstance item)
+	private Augmentation generateRandomWeaponAugmentation(int lifeStoneLevel, int lifeStoneGrade, int lifeStoneId, ItemInstance item)
 	{
 		int stat12 = 0;
 		int stat34 = 0;

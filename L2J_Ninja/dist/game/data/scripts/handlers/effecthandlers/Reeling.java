@@ -28,8 +28,8 @@ import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
 import com.l2jserver.gameserver.model.fishing.L2Fishing;
 import com.l2jserver.gameserver.model.fishing.L2FishingRod;
-import com.l2jserver.gameserver.model.items.L2Weapon;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.Weapon;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.model.stats.Stats;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -84,8 +84,8 @@ public final class Reeling extends AbstractEffect
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		final L2Weapon weaponItem = player.getActiveWeaponItem();
-		final L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
+		final Weapon weaponItem = player.getActiveWeaponItem();
+		final ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
 		if ((weaponInst == null) || (weaponItem == null))
 		{
 			return;

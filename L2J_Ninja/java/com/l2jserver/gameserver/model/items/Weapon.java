@@ -40,7 +40,7 @@ import com.l2jserver.util.StringUtil;
 /**
  * This class is dedicated to the management of weapons.
  */
-public final class L2Weapon extends L2Item
+public final class Weapon extends L2Item
 {
 	private final WeaponType _type;
 	private final boolean _isMagicWeapon;
@@ -76,7 +76,7 @@ public final class L2Weapon extends L2Item
 	 * Constructor for Weapon.
 	 * @param set the StatsSet designating the set of couples (key,value) characterizing the weapon.
 	 */
-	public L2Weapon(StatsSet set)
+	public Weapon(StatsSet set)
 	{
 		super(set);
 		_type = WeaponType.valueOf(set.getString("weapon_type", "none").toUpperCase());

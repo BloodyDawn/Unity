@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.network.serverpackets.commission;
 
 import java.util.List;
 
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.serverpackets.AbstractItemPacket;
 
 /**
@@ -28,9 +28,9 @@ import com.l2jserver.gameserver.network.serverpackets.AbstractItemPacket;
  */
 public class ExResponseCommissionItemList extends AbstractItemPacket
 {
-	private final List<L2ItemInstance> _items;
+	private final List<ItemInstance> _items;
 	
-	public ExResponseCommissionItemList(List<L2ItemInstance> items)
+	public ExResponseCommissionItemList(List<ItemInstance> items)
 	{
 		_items = items;
 	}
@@ -41,7 +41,7 @@ public class ExResponseCommissionItemList extends AbstractItemPacket
 		writeC(0xFE);
 		writeH(0xF3);
 		writeD(_items.size());
-		for (L2ItemInstance itemInstance : _items)
+		for (ItemInstance itemInstance : _items)
 		{
 			writeItem(itemInstance);
 		}

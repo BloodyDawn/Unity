@@ -27,7 +27,7 @@ import com.l2jserver.util.StringUtil;
 /**
  * This class is dedicated to the management of armors.
  */
-public final class L2Armor extends L2Item
+public final class Armor extends L2Item
 {
 	/**
 	 * Skill that activates when armor is enchanted +4.
@@ -39,7 +39,7 @@ public final class L2Armor extends L2Item
 	 * Constructor for Armor.
 	 * @param set the StatsSet designating the set of couples (key,value) characterizing the armor.
 	 */
-	public L2Armor(StatsSet set)
+	public Armor(StatsSet set)
 	{
 		super(set);
 		_type = set.getEnum("armor_type", ArmorType.class, ArmorType.NONE);

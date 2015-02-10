@@ -78,8 +78,8 @@ import com.l2jserver.gameserver.model.events.impl.character.npc.OnNpcTeleport;
 import com.l2jserver.gameserver.model.events.returns.TerminateReturn;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.L2Weapon;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.Weapon;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.olympiad.Olympiad;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
@@ -874,7 +874,7 @@ public class Npc extends Creature
 	 * Return null (regular NPCs don't have weapons instances).
 	 */
 	@Override
-	public L2ItemInstance getActiveWeaponInstance()
+	public ItemInstance getActiveWeaponInstance()
 	{
 		return null;
 	}
@@ -883,7 +883,7 @@ public class Npc extends Creature
 	 * Return the weapon item equipped in the right hand of the L2NpcInstance or null.
 	 */
 	@Override
-	public L2Weapon getActiveWeaponItem()
+	public Weapon getActiveWeaponItem()
 	{
 		// Get the weapon identifier equipped in the right hand of the L2NpcInstance
 		int weaponId = getTemplate().getRHandId();
@@ -896,19 +896,19 @@ public class Npc extends Creature
 		// Get the weapon item equipped in the right hand of the L2NpcInstance
 		L2Item item = ItemTable.getInstance().getTemplate(getTemplate().getRHandId());
 		
-		if (!(item instanceof L2Weapon))
+		if (!(item instanceof Weapon))
 		{
 			return null;
 		}
 		
-		return (L2Weapon) item;
+		return (Weapon) item;
 	}
 	
 	/**
 	 * Return null (regular NPCs don't have weapons instances).
 	 */
 	@Override
-	public L2ItemInstance getSecondaryWeaponInstance()
+	public ItemInstance getSecondaryWeaponInstance()
 	{
 		return null;
 	}
@@ -917,7 +917,7 @@ public class Npc extends Creature
 	 * Return the weapon item equipped in the left hand of the L2NpcInstance or null.
 	 */
 	@Override
-	public L2Weapon getSecondaryWeaponItem()
+	public Weapon getSecondaryWeaponItem()
 	{
 		// Get the weapon identifier equipped in the right hand of the L2NpcInstance
 		int weaponId = getTemplate().getLHandId();
@@ -929,12 +929,12 @@ public class Npc extends Creature
 		// Get the weapon item equipped in the right hand of the L2NpcInstance
 		L2Item item = ItemTable.getInstance().getTemplate(getTemplate().getLHandId());
 		
-		if (!(item instanceof L2Weapon))
+		if (!(item instanceof Weapon))
 		{
 			return null;
 		}
 		
-		return (L2Weapon) item;
+		return (Weapon) item;
 	}
 	
 	/**
@@ -1218,7 +1218,7 @@ public class Npc extends Creature
 		_currentCollisionHeight = getTemplate().getfCollisionHeight();
 		_currentCollisionRadius = getTemplate().getfCollisionRadius();
 		
-		final L2Weapon weapon = (killer != null) ? killer.getActiveWeaponItem() : null;
+		final Weapon weapon = (killer != null) ? killer.getActiveWeaponItem() : null;
 		_killingBlowWeaponId = (weapon != null) ? weapon.getId() : 0;
 		
 		DecayTaskManager.getInstance().add(this);
@@ -1766,9 +1766,9 @@ public class Npc extends Creature
 	 * @param itemCount the item count
 	 * @return the dropped item
 	 */
-	public L2ItemInstance dropItem(L2PcInstance player, int itemId, long itemCount)
+	public ItemInstance dropItem(L2PcInstance player, int itemId, long itemCount)
 	{
-		L2ItemInstance item = null;
+		ItemInstance item = null;
 		for (int i = 0; i < itemCount; i++)
 		{
 			// Randomize drop position.
@@ -1820,7 +1820,7 @@ public class Npc extends Creature
 	 * @param item the item holder
 	 * @return the dropped item
 	 */
-	public L2ItemInstance dropItem(L2PcInstance player, ItemHolder item)
+	public ItemInstance dropItem(L2PcInstance player, ItemHolder item)
 	{
 		return dropItem(player, item.getId(), item.getCount());
 	}

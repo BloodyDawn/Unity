@@ -46,11 +46,11 @@ import com.l2jserver.gameserver.model.actor.instance.L2EventMonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.EventDispatcher;
 import com.l2jserver.gameserver.model.events.impl.item.OnItemCreate;
-import com.l2jserver.gameserver.model.items.L2Armor;
-import com.l2jserver.gameserver.model.items.L2EtcItem;
+import com.l2jserver.gameserver.model.items.Armor;
+import com.l2jserver.gameserver.model.items.EtcItem;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.L2Weapon;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.Weapon;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.util.GMAudit;
 
 /**
@@ -64,9 +64,9 @@ public class ItemTable
 	public static final Map<String, Integer> _slots = new FastMap<>();
 	
 	private L2Item[] _allTemplates;
-	private final Map<Integer, L2EtcItem> _etcItems;
-	private final Map<Integer, L2Armor> _armors;
-	private final Map<Integer, L2Weapon> _weapons;
+	private final Map<Integer, EtcItem> _etcItems;
+	private final Map<Integer, Armor> _armors;
+	private final Map<Integer, Weapon> _weapons;
 	
 	static
 	{
@@ -138,17 +138,17 @@ public class ItemTable
 			{
 				highest = item.getId();
 			}
-			if (item instanceof L2EtcItem)
+			if (item instanceof EtcItem)
 			{
-				_etcItems.put(item.getId(), (L2EtcItem) item);
+				_etcItems.put(item.getId(), (EtcItem) item);
 			}
-			else if (item instanceof L2Armor)
+			else if (item instanceof Armor)
 			{
-				_armors.put(item.getId(), (L2Armor) item);
+				_armors.put(item.getId(), (Armor) item);
 			}
 			else
 			{
-				_weapons.put(item.getId(), (L2Weapon) item);
+				_weapons.put(item.getId(), (Weapon) item);
 			}
 		}
 		buildFastLookupTable(highest);
@@ -169,19 +169,19 @@ public class ItemTable
 		_allTemplates = new L2Item[size + 1];
 		
 		// Insert armor item in Fast Look Up Table
-		for (L2Armor item : _armors.values())
+		for (Armor item : _armors.values())
 		{
 			_allTemplates[item.getId()] = item;
 		}
 		
 		// Insert weapon item in Fast Look Up Table
-		for (L2Weapon item : _weapons.values())
+		for (Weapon item : _weapons.values())
 		{
 			_allTemplates[item.getId()] = item;
 		}
 		
 		// Insert etcItem item in Fast Look Up Table
-		for (L2EtcItem item : _etcItems.values())
+		for (EtcItem item : _etcItems.values())
 		{
 			_allTemplates[item.getId()] = item;
 		}
@@ -212,10 +212,10 @@ public class ItemTable
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return L2ItemInstance corresponding to the new item
 	 */
-	public L2ItemInstance createItem(String process, int itemId, long count, L2PcInstance actor, Object reference)
+	public ItemInstance createItem(String process, int itemId, long count, L2PcInstance actor, Object reference)
 	{
 		// Create and Init the L2ItemInstance corresponding to the Item Identifier
-		L2ItemInstance item = new L2ItemInstance(IdFactory.getInstance().getNextId(), itemId);
+		ItemInstance item = new ItemInstance(IdFactory.getInstance().getNextId(), itemId);
 		
 		if (process.equalsIgnoreCase("loot"))
 		{
@@ -295,7 +295,7 @@ public class ItemTable
 		return item;
 	}
 	
-	public L2ItemInstance createItem(String process, int itemId, int count, L2PcInstance actor)
+	public ItemInstance createItem(String process, int itemId, int count, L2PcInstance actor)
 	{
 		return createItem(process, itemId, count, actor, null);
 	}
@@ -313,7 +313,7 @@ public class ItemTable
 	 * @param actor the player requesting the item destroy.
 	 * @param reference the object referencing current action like NPC selling item or previous item in transformation.
 	 */
-	public void destroyItem(String process, L2ItemInstance item, L2PcInstance actor, Object reference)
+	public void destroyItem(String process, ItemInstance item, L2PcInstance actor, Object reference)
 	{
 		synchronized (item)
 		{
@@ -321,7 +321,7 @@ public class ItemTable
 			item.setCount(0);
 			item.setOwnerId(0);
 			item.setItemLocation(ItemLocation.VOID);
-			item.setLastChange(L2ItemInstance.REMOVED);
+			item.setLastChange(ItemInstance.REMOVED);
 			
 			World.getInstance().removeObject(item);
 			IdFactory.getInstance().releaseId(item.getObjectId());
@@ -390,9 +390,9 @@ public class ItemTable
 	
 	protected static class ResetOwner implements Runnable
 	{
-		L2ItemInstance _item;
+		ItemInstance _item;
 		
-		public ResetOwner(L2ItemInstance item)
+		public ResetOwner(ItemInstance item)
 		{
 			_item = item;
 		}
@@ -410,7 +410,7 @@ public class ItemTable
 		return _armors.keySet();
 	}
 	
-	public Collection<L2Armor> getAllArmors()
+	public Collection<Armor> getAllArmors()
 	{
 		return _armors.values();
 	}
@@ -420,7 +420,7 @@ public class ItemTable
 		return _weapons.keySet();
 	}
 	
-	public Collection<L2Weapon> getAllWeapons()
+	public Collection<Weapon> getAllWeapons()
 	{
 		return _weapons.values();
 	}
@@ -430,7 +430,7 @@ public class ItemTable
 		return _etcItems.keySet();
 	}
 	
-	public Collection<L2EtcItem> getAllEtcItems()
+	public Collection<EtcItem> getAllEtcItems()
 	{
 		return _etcItems.values();
 	}

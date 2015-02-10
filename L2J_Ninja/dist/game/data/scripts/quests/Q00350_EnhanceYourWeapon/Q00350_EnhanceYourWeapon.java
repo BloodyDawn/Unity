@@ -38,7 +38,7 @@ import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.Attackable;
 import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
@@ -259,7 +259,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 	
 	private static void exchangeCrystal(L2PcInstance player, Attackable mob, int takeid, int giveid, boolean broke)
 	{
-		L2ItemInstance Item = player.getInventory().destroyItemByItemId("SoulCrystal", takeid, 1, player, mob);
+		ItemInstance Item = player.getInventory().destroyItemByItemId("SoulCrystal", takeid, 1, player, mob);
 		if (Item != null)
 		{
 			// Prepare inventory update packet
@@ -298,9 +298,9 @@ public class Q00350_EnhanceYourWeapon extends Quest
 			return null;
 		}
 		
-		L2ItemInstance[] inv = player.getInventory().getItems();
+		ItemInstance[] inv = player.getInventory().getItems();
 		SoulCrystal ret = null;
-		for (L2ItemInstance item : inv)
+		for (ItemInstance item : inv)
 		{
 			int itemId = item.getId();
 			if (!SOUL_CRYSTALS.containsKey(itemId))

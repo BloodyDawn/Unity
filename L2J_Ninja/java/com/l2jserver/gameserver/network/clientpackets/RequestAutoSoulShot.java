@@ -22,7 +22,7 @@ import com.l2jserver.gameserver.enums.PrivateStoreType;
 import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.items.type.ActionType;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ExAutoSoulShot;
@@ -55,7 +55,7 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 		
 		if ((activeChar.getPrivateStoreType() == PrivateStoreType.NONE) && (activeChar.getActiveRequester() == null) && !activeChar.isDead())
 		{
-			final L2ItemInstance item = activeChar.getInventory().getItemByItemId(_itemId);
+			final ItemInstance item = activeChar.getInventory().getItemByItemId(_itemId);
 			if (item == null)
 			{
 				return;

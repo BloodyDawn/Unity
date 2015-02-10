@@ -44,9 +44,9 @@ import com.l2jserver.gameserver.model.effects.L2EffectType;
 import com.l2jserver.gameserver.model.events.EventDispatcher;
 import com.l2jserver.gameserver.model.events.impl.character.player.OnPlayerSummonSpawn;
 import com.l2jserver.gameserver.model.itemcontainer.PetInventory;
-import com.l2jserver.gameserver.model.items.L2EtcItem;
-import com.l2jserver.gameserver.model.items.L2Weapon;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.EtcItem;
+import com.l2jserver.gameserver.model.items.Weapon;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.items.type.ActionType;
 import com.l2jserver.gameserver.model.olympiad.OlympiadGameManager;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -473,7 +473,7 @@ public abstract class Summon extends Playable
 			{
 				for (int itemId : owner.getAutoSoulShot())
 				{
-					String handler = ((L2EtcItem) ItemTable.getInstance().getTemplate(itemId)).getHandlerName();
+					String handler = ((EtcItem) ItemTable.getInstance().getTemplate(itemId)).getHandlerName();
 					if ((handler != null) && handler.contains("Beast"))
 					{
 						owner.disableAutoShot(itemId);
@@ -522,7 +522,7 @@ public abstract class Summon extends Playable
 		return 0;
 	}
 	
-	public L2Weapon getActiveWeapon()
+	public Weapon getActiveWeapon()
 	{
 		return null;
 	}
@@ -542,25 +542,25 @@ public abstract class Summon extends Playable
 	}
 	
 	@Override
-	public L2ItemInstance getActiveWeaponInstance()
+	public ItemInstance getActiveWeaponInstance()
 	{
 		return null;
 	}
 	
 	@Override
-	public L2Weapon getActiveWeaponItem()
+	public Weapon getActiveWeaponItem()
 	{
 		return null;
 	}
 	
 	@Override
-	public L2ItemInstance getSecondaryWeaponInstance()
+	public ItemInstance getSecondaryWeaponInstance()
 	{
 		return null;
 	}
 	
 	@Override
-	public L2Weapon getSecondaryWeaponItem()
+	public Weapon getSecondaryWeaponItem()
 	{
 		return null;
 	}
@@ -1161,7 +1161,7 @@ public abstract class Summon extends Playable
 	@Override
 	public void rechargeShots(boolean physical, boolean magic)
 	{
-		L2ItemInstance item;
+		ItemInstance item;
 		IItemHandler handler;
 		
 		if ((getOwner().getAutoSoulShot() == null) || getOwner().getAutoSoulShot().isEmpty())

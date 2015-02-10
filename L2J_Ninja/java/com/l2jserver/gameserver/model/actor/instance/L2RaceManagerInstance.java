@@ -30,7 +30,7 @@ import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.knownlist.RaceManagerKnownList;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 import com.l2jserver.gameserver.network.serverpackets.DeleteObject;
@@ -443,7 +443,7 @@ public class L2RaceManagerInstance extends Npc
 			sm.addInt(_raceNumber);
 			sm.addItemName(4443);
 			player.sendPacket(sm);
-			L2ItemInstance item = new L2ItemInstance(IdFactory.getInstance().getNextId(), 4443);
+			ItemInstance item = new ItemInstance(IdFactory.getInstance().getNextId(), 4443);
 			item.setCount(1);
 			item.setEnchantLevel(_raceNumber);
 			item.setCustomType1(ticket);
@@ -451,7 +451,7 @@ public class L2RaceManagerInstance extends Npc
 			player.getInventory().addItem("Race", item, player, this);
 			InventoryUpdate iu = new InventoryUpdate();
 			iu.addItem(item);
-			L2ItemInstance adenaupdate = player.getInventory().getItemByItemId(Inventory.ADENA_ID);
+			ItemInstance adenaupdate = player.getInventory().getItemByItemId(Inventory.ADENA_ID);
 			iu.addModifiedItem(adenaupdate);
 			player.sendPacket(iu);
 			return;

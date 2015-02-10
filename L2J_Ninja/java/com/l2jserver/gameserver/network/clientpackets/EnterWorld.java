@@ -56,7 +56,7 @@ import com.l2jserver.gameserver.model.entity.Siege;
 import com.l2jserver.gameserver.model.entity.TvTEvent;
 import com.l2jserver.gameserver.model.entity.clanhall.AuctionableHall;
 import com.l2jserver.gameserver.model.entity.clanhall.SiegableHall;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.zone.ZoneId;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -496,7 +496,7 @@ public class EnterWorld extends L2GameClientPacket
 		sendPacket(new SkillCoolTime(activeChar));
 		sendPacket(new ExVoteSystemInfo(activeChar));
 		
-		for (L2ItemInstance i : activeChar.getInventory().getItems())
+		for (ItemInstance i : activeChar.getInventory().getItems())
 		{
 			if (i.isTimeLimitedItem())
 			{
@@ -508,7 +508,7 @@ public class EnterWorld extends L2GameClientPacket
 			}
 		}
 		
-		for (L2ItemInstance i : activeChar.getWarehouse().getItems())
+		for (ItemInstance i : activeChar.getWarehouse().getItems())
 		{
 			if (i.isTimeLimitedItem())
 			{

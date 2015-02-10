@@ -37,7 +37,7 @@ import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * @author UnAfraid
@@ -151,9 +151,9 @@ public class StatusHandler implements ITelnetHandler
 					AICount++;
 				}
 			}
-			if (obj instanceof L2ItemInstance)
+			if (obj instanceof ItemInstance)
 			{
-				if (((L2ItemInstance) obj).getItemLocation() == ItemLocation.VOID)
+				if (((ItemInstance) obj).getItemLocation() == ItemLocation.VOID)
 				{
 					itemVoidCount++;
 				}

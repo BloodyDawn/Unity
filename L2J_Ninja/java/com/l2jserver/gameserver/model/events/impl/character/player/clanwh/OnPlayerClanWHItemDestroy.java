@@ -22,7 +22,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
 import com.l2jserver.gameserver.model.itemcontainer.ItemContainer;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * @author UnAfraid
@@ -31,11 +31,11 @@ public class OnPlayerClanWHItemDestroy implements IBaseEvent
 {
 	private final String _process;
 	private final L2PcInstance _activeChar;
-	private final L2ItemInstance _item;
+	private final ItemInstance _item;
 	private final long _count;
 	private final ItemContainer _container;
 	
-	public OnPlayerClanWHItemDestroy(String process, L2PcInstance activeChar, L2ItemInstance item, long count, ItemContainer container)
+	public OnPlayerClanWHItemDestroy(String process, L2PcInstance activeChar, ItemInstance item, long count, ItemContainer container)
 	{
 		_process = process;
 		_activeChar = activeChar;
@@ -54,7 +54,7 @@ public class OnPlayerClanWHItemDestroy implements IBaseEvent
 		return _activeChar;
 	}
 	
-	public L2ItemInstance getItem()
+	public ItemInstance getItem()
 	{
 		return _item;
 	}

@@ -27,7 +27,7 @@ import com.l2jserver.gameserver.model.items.L2Item;
 import com.l2jserver.gameserver.model.items.appearance.AppearanceStone;
 import com.l2jserver.gameserver.model.items.appearance.AppearanceTargetType;
 import com.l2jserver.gameserver.model.items.appearance.AppearanceType;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.items.type.ArmorType;
 import com.l2jserver.gameserver.model.items.type.WeaponType;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -66,8 +66,8 @@ public class RequestExTryToPutShapeShiftingTargetItem extends L2GameClientPacket
 		}
 		
 		final PcInventory inventory = player.getInventory();
-		final L2ItemInstance targetItem = inventory.getItemByObjectId(_targetItemObjId);
-		L2ItemInstance stone = request.getAppearanceStone();
+		final ItemInstance targetItem = inventory.getItemByObjectId(_targetItemObjId);
+		ItemInstance stone = request.getAppearanceStone();
 		
 		if ((targetItem == null) || (stone == null))
 		{

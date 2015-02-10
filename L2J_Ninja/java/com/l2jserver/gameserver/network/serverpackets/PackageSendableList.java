@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * @author -Wooden-
@@ -26,10 +26,10 @@ import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
  */
 public class PackageSendableList extends AbstractItemPacket
 {
-	private final L2ItemInstance[] _items;
+	private final ItemInstance[] _items;
 	private final int _playerObjId;
 	
-	public PackageSendableList(L2ItemInstance[] items, int playerObjId)
+	public PackageSendableList(ItemInstance[] items, int playerObjId)
 	{
 		_items = items;
 		_playerObjId = playerObjId;
@@ -42,7 +42,7 @@ public class PackageSendableList extends AbstractItemPacket
 		writeD(_playerObjId);
 		writeQ(getClient().getActiveChar().getAdena());
 		writeD(_items.length);
-		for (L2ItemInstance item : _items)
+		for (ItemInstance item : _items)
 		{
 			writeItem(item);
 			writeD(item.getObjectId());

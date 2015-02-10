@@ -48,7 +48,7 @@ import com.l2jserver.gameserver.instancemanager.ItemAuctionManager;
 import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 import com.l2jserver.util.Rnd;
@@ -493,7 +493,7 @@ public final class ItemAuctionInstance
 		final ItemAuctionBid bid = auction.getHighestBid();
 		if (bid != null)
 		{
-			final L2ItemInstance item = auction.createNewItemInstance();
+			final ItemInstance item = auction.createNewItemInstance();
 			final L2PcInstance player = bid.getPlayer();
 			if (player != null)
 			{

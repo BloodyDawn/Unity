@@ -42,7 +42,7 @@ import com.l2jserver.gameserver.model.events.Containers;
 import com.l2jserver.gameserver.model.events.EventDispatcher;
 import com.l2jserver.gameserver.model.events.impl.character.player.OnPlayerCreate;
 import com.l2jserver.gameserver.model.items.PcItemTemplate;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.L2GameClient;
 import com.l2jserver.gameserver.network.serverpackets.CharCreateFail;
 import com.l2jserver.gameserver.network.serverpackets.CharCreateOk;
@@ -255,7 +255,7 @@ public final class CharacterCreate extends L2GameClientPacket
 		{
 			for (PcItemTemplate ie : initialItems)
 			{
-				final L2ItemInstance item = newChar.getInventory().addItem("Init", ie.getId(), ie.getCount(), newChar, null);
+				final ItemInstance item = newChar.getInventory().addItem("Init", ie.getId(), ie.getCount(), newChar, null);
 				if (item == null)
 				{
 					_log.warning("Could not create item during char creation: itemId " + ie.getId() + ", amount " + ie.getCount() + ".");

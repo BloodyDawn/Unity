@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.network.clientpackets;
 
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ExPutItemResultForVariationMake;
 
@@ -47,7 +47,7 @@ public final class RequestConfirmTargetItem extends AbstractRefinePacket
 			return;
 		}
 		
-		final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_itemObjId);
+		final ItemInstance item = activeChar.getInventory().getItemByObjectId(_itemObjId);
 		if (item == null)
 		{
 			return;

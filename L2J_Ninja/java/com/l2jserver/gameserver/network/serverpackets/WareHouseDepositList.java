@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 public final class WareHouseDepositList extends AbstractItemPacket
 {
@@ -32,7 +32,7 @@ public final class WareHouseDepositList extends AbstractItemPacket
 	public static final int FREIGHT = 1;
 	private final long _playerAdena;
 	private final int _invSize;
-	private final List<L2ItemInstance> _items = new ArrayList<>();
+	private final List<ItemInstance> _items = new ArrayList<>();
 	private final List<Integer> _itemsStackable = new ArrayList<>();
 	/**
 	 * <ul>
@@ -51,7 +51,7 @@ public final class WareHouseDepositList extends AbstractItemPacket
 		_invSize = player.getInventory().getSize();
 		
 		final boolean isPrivate = _whType == PRIVATE;
-		for (L2ItemInstance temp : player.getInventory().getAvailableItems(true, isPrivate, false))
+		for (ItemInstance temp : player.getInventory().getAvailableItems(true, isPrivate, false))
 		{
 			if ((temp != null) && temp.isDepositable(isPrivate))
 			{
@@ -80,7 +80,7 @@ public final class WareHouseDepositList extends AbstractItemPacket
 		
 		writeH(_items.size());
 		
-		for (L2ItemInstance item : _items)
+		for (ItemInstance item : _items)
 		{
 			writeItem(item);
 			writeD(item.getObjectId());

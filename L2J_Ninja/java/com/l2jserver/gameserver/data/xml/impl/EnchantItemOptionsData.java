@@ -26,7 +26,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
 import com.l2jserver.gameserver.data.xml.IXmlReader;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.options.EnchantOptions;
 import com.l2jserver.gameserver.util.Util;
 
@@ -111,7 +111,7 @@ public class EnchantItemOptionsData implements IXmlReader
 	 * @param item
 	 * @return enchant effects information.
 	 */
-	public EnchantOptions getOptions(L2ItemInstance item)
+	public EnchantOptions getOptions(ItemInstance item)
 	{
 		return item != null ? getOptions(item.getId(), item.getEnchantLevel()) : null;
 	}

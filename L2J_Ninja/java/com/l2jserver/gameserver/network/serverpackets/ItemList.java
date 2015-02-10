@@ -22,12 +22,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 public final class ItemList extends AbstractItemPacket
 {
 	private final L2PcInstance _activeChar;
-	private final List<L2ItemInstance> _items = new ArrayList<>();
+	private final List<ItemInstance> _items = new ArrayList<>();
 	private final boolean _showWindow;
 	
 	public ItemList(L2PcInstance activeChar, boolean showWindow)
@@ -35,7 +35,7 @@ public final class ItemList extends AbstractItemPacket
 		_activeChar = activeChar;
 		_showWindow = showWindow;
 		
-		for (L2ItemInstance item : activeChar.getInventory().getItems())
+		for (ItemInstance item : activeChar.getInventory().getItems())
 		{
 			if (!item.isQuestItem())
 			{
@@ -50,7 +50,7 @@ public final class ItemList extends AbstractItemPacket
 		writeC(0x11);
 		writeH(_showWindow ? 0x01 : 0x00);
 		writeH(_items.size());
-		for (L2ItemInstance item : _items)
+		for (ItemInstance item : _items)
 		{
 			writeItem(item);
 		}

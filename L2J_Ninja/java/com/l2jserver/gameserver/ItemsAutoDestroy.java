@@ -26,11 +26,11 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.enums.ItemLocation;
 import com.l2jserver.gameserver.instancemanager.ItemsOnGroundManager;
 import com.l2jserver.gameserver.model.World;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 public final class ItemsAutoDestroy
 {
-	private final List<L2ItemInstance> _items = new FastList<>();
+	private final List<ItemInstance> _items = new FastList<>();
 	
 	protected ItemsAutoDestroy()
 	{
@@ -42,7 +42,7 @@ public final class ItemsAutoDestroy
 		return SingletonHolder._instance;
 	}
 	
-	public synchronized void addItem(L2ItemInstance item)
+	public synchronized void addItem(ItemInstance item)
 	{
 		item.setDropTime(System.currentTimeMillis());
 		_items.add(item);
@@ -56,7 +56,7 @@ public final class ItemsAutoDestroy
 		}
 		
 		long curtime = System.currentTimeMillis();
-		for (L2ItemInstance item : _items)
+		for (ItemInstance item : _items)
 		{
 			if ((item == null) || (item.getDropTime() == 0) || (item.getItemLocation() != ItemLocation.VOID))
 			{

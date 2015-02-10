@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.model.conditions;
 
 import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 
 /**
@@ -50,7 +50,7 @@ public final class ConditionSlotItemType extends ConditionInventory
 			return false;
 		}
 		
-		final L2ItemInstance itemSlot = effector.getInventory().getPaperdollItem(_slot);
+		final ItemInstance itemSlot = effector.getInventory().getPaperdollItem(_slot);
 		if (itemSlot == null)
 		{
 			return false;

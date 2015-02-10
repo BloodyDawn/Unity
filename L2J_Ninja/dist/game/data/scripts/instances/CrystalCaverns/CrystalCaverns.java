@@ -47,7 +47,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2TrapInstance;
 import com.l2jserver.gameserver.model.entity.Instance;
 import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
@@ -77,7 +77,7 @@ public final class CrystalCaverns extends AbstractInstance
 {
 	protected static class CrystalGolem
 	{
-		protected L2ItemInstance foodItem = null;
+		protected ItemInstance foodItem = null;
 		protected boolean isAtDestination = false;
 		protected Location oldLoc = null;
 	}
@@ -543,7 +543,7 @@ public final class CrystalCaverns extends AbstractInstance
 				party.broadcastPacket(sm);
 				return false;
 			}
-			L2ItemInstance item = partyMember.getInventory().getItemByItemId(CONT_CRYSTAL);
+			ItemInstance item = partyMember.getInventory().getItemByItemId(CONT_CRYSTAL);
 			if (item == null)
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_ITEM_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED);
@@ -589,7 +589,7 @@ public final class CrystalCaverns extends AbstractInstance
 		}
 		for (L2PcInstance partyMember : party.getMembers())
 		{
-			L2ItemInstance item = partyMember.getInventory().getItemByItemId(RED_CORAL);
+			ItemInstance item = partyMember.getInventory().getItemByItemId(RED_CORAL);
 			if (item == null)
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_ITEM_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED);
@@ -623,9 +623,9 @@ public final class CrystalCaverns extends AbstractInstance
 		}
 		for (L2PcInstance partyMember : party.getMembers())
 		{
-			L2ItemInstance item1 = partyMember.getInventory().getItemByItemId(BOSS_CRYSTAL_1);
-			L2ItemInstance item2 = partyMember.getInventory().getItemByItemId(BOSS_CRYSTAL_2);
-			L2ItemInstance item3 = partyMember.getInventory().getItemByItemId(BOSS_CRYSTAL_3);
+			ItemInstance item1 = partyMember.getInventory().getItemByItemId(BOSS_CRYSTAL_1);
+			ItemInstance item2 = partyMember.getInventory().getItemByItemId(BOSS_CRYSTAL_2);
+			ItemInstance item3 = partyMember.getInventory().getItemByItemId(BOSS_CRYSTAL_3);
 			if ((item1 == null) || (item2 == null) || (item3 == null))
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_ITEM_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED);
@@ -1383,7 +1383,7 @@ public final class CrystalCaverns extends AbstractInstance
 				List<WorldObject> crystals = new FastList<>();
 				for (WorldObject object : World.getInstance().getVisibleObjects(npc, 300))
 				{
-					if ((object instanceof L2ItemInstance) && (object.getId() == CRYSTALFOOD))
+					if ((object instanceof ItemInstance) && (object.getId() == CRYSTALFOOD))
 					{
 						crystals.add(object);
 					}
@@ -1397,7 +1397,7 @@ public final class CrystalCaverns extends AbstractInstance
 					if (d < minDist)
 					{
 						minDist = d;
-						cryGolem.foodItem = (L2ItemInstance) crystal;
+						cryGolem.foodItem = (ItemInstance) crystal;
 					}
 				}
 				if (minDist != 300000)

@@ -23,7 +23,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.request.EnchantItemRequest;
 import com.l2jserver.gameserver.model.items.enchant.EnchantScroll;
 import com.l2jserver.gameserver.model.items.enchant.EnchantSupportItem;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ExPutEnchantSupportItemResult;
 
@@ -62,9 +62,9 @@ public class RequestExTryToPutEnchantSupportItem extends L2GameClientPacket
 		request.setEnchantingItem(_enchantObjectId);
 		request.setSupportItem(_supportObjectId);
 		
-		final L2ItemInstance item = request.getEnchantingItem();
-		final L2ItemInstance scroll = request.getEnchantingScroll();
-		final L2ItemInstance support = request.getSupportItem();
+		final ItemInstance item = request.getEnchantingItem();
+		final ItemInstance scroll = request.getEnchantingScroll();
+		final ItemInstance support = request.getSupportItem();
 		if ((item == null) || (scroll == null) || (support == null))
 		{
 			// message may be custom

@@ -23,11 +23,11 @@ import java.util.List;
 
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PetInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 public class GMViewItemList extends AbstractItemPacket
 {
-	private final List<L2ItemInstance> _items = new ArrayList<>();
+	private final List<ItemInstance> _items = new ArrayList<>();
 	private final int _limit;
 	private final String _playerName;
 	
@@ -35,7 +35,7 @@ public class GMViewItemList extends AbstractItemPacket
 	{
 		_playerName = cha.getName();
 		_limit = cha.getInventoryLimit();
-		for (L2ItemInstance item : cha.getInventory().getItems())
+		for (ItemInstance item : cha.getInventory().getItems())
 		{
 			_items.add(item);
 		}
@@ -45,7 +45,7 @@ public class GMViewItemList extends AbstractItemPacket
 	{
 		_playerName = cha.getName();
 		_limit = cha.getInventoryLimit();
-		for (L2ItemInstance item : cha.getInventory().getItems())
+		for (ItemInstance item : cha.getInventory().getItems())
 		{
 			_items.add(item);
 		}
@@ -59,7 +59,7 @@ public class GMViewItemList extends AbstractItemPacket
 		writeD(_limit); // inventory limit
 		writeH(0x01); // show window ??
 		writeH(_items.size());
-		for (L2ItemInstance item : _items)
+		for (ItemInstance item : _items)
 		{
 			writeItem(item);
 		}

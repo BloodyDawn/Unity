@@ -21,7 +21,7 @@ package com.l2jserver.gameserver.network.serverpackets;
 import java.util.List;
 
 import com.l2jserver.gameserver.model.ItemInfo;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * @author Yme, Advi, UnAfraid
@@ -32,7 +32,7 @@ public class PetInventoryUpdate extends AbstractInventoryUpdate
 	{
 	}
 	
-	public PetInventoryUpdate(L2ItemInstance item)
+	public PetInventoryUpdate(ItemInstance item)
 	{
 		super(item);
 	}

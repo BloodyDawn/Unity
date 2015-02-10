@@ -24,7 +24,7 @@ import java.util.logging.Logger;
 import com.l2jserver.gameserver.enums.StatFunction;
 import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.conditions.Condition;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.stats.Stats;
 
@@ -124,7 +124,7 @@ public final class FuncTemplate
 	 * @param owner the owner
 	 * @return the function if conditions are met, {@code null} otherwise
 	 */
-	public AbstractFunction getFunc(Creature caster, Creature target, L2ItemInstance item, Object owner)
+	public AbstractFunction getFunc(Creature caster, Creature target, ItemInstance item, Object owner)
 	{
 		return getFunc(caster, target, null, item, owner);
 	}
@@ -138,7 +138,7 @@ public final class FuncTemplate
 	 * @param owner the owner
 	 * @return the function if conditions are met, {@code null} otherwise
 	 */
-	private AbstractFunction getFunc(Creature caster, Creature target, Skill skill, L2ItemInstance item, Object owner)
+	private AbstractFunction getFunc(Creature caster, Creature target, Skill skill, ItemInstance item, Object owner)
 	{
 		if ((_attachCond != null) && !_attachCond.test(caster, target, skill))
 		{

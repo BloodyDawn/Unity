@@ -62,7 +62,7 @@ import com.l2jserver.gameserver.model.events.returns.TerminateReturn;
 import com.l2jserver.gameserver.model.holders.NpcLogListHolder;
 import com.l2jserver.gameserver.model.interfaces.IIdentifiable;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.olympiad.CompetitionType;
 import com.l2jserver.gameserver.model.olympiad.Participant;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -688,7 +688,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 * @param item
 	 * @param player
 	 */
-	public final void notifyItemTalk(L2ItemInstance item, L2PcInstance player)
+	public final void notifyItemTalk(ItemInstance item, L2PcInstance player)
 	{
 		String res = null;
 		try
@@ -708,7 +708,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 * @param player
 	 * @return
 	 */
-	public String onItemTalk(L2ItemInstance item, L2PcInstance player)
+	public String onItemTalk(ItemInstance item, L2PcInstance player)
 	{
 		return null;
 	}
@@ -718,7 +718,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 * @param player
 	 * @param event
 	 */
-	public final void notifyItemEvent(L2ItemInstance item, L2PcInstance player, String event)
+	public final void notifyItemEvent(ItemInstance item, L2PcInstance player, String event)
 	{
 		String res = null;
 		try
@@ -1134,7 +1134,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 * @param event
 	 * @return
 	 */
-	public String onItemEvent(L2ItemInstance item, L2PcInstance player, String event)
+	public String onItemEvent(ItemInstance item, L2PcInstance player, String event)
 	{
 		return null;
 	}

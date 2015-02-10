@@ -33,7 +33,7 @@ import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.events.EventDispatcher;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.impl.character.npc.OnNpcFirstTalk;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 import com.l2jserver.gameserver.network.serverpackets.CreatureSay;
@@ -310,7 +310,7 @@ public class L2SepulcherNpcInstance extends Npc
 		}
 		else if (command.startsWith("open_gate"))
 		{
-			L2ItemInstance hallsKey = player.getInventory().getItemByItemId(HALLS_KEY);
+			ItemInstance hallsKey = player.getInventory().getItemByItemId(HALLS_KEY);
 			if (hallsKey == null)
 			{
 				showHtmlFile(player, "Gatekeeper-no.htm");

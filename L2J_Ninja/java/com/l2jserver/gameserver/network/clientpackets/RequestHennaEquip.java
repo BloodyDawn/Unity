@@ -22,7 +22,7 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.data.xml.impl.HennaData;
 import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.L2Henna;
+import com.l2jserver.gameserver.model.items.Henna;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.InventoryUpdate;
 import com.l2jserver.gameserver.util.Util;
@@ -62,7 +62,7 @@ public final class RequestHennaEquip extends L2GameClientPacket
 			return;
 		}
 		
-		final L2Henna henna = HennaData.getInstance().getHenna(_symbolId);
+		final Henna henna = HennaData.getInstance().getHenna(_symbolId);
 		if (henna == null)
 		{
 			_log.warning(getClass().getName() + ": Invalid Henna Id: " + _symbolId + " from player " + activeChar);

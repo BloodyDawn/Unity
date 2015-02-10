@@ -22,7 +22,7 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.items.type.WeaponType;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.stats.Stats;
@@ -43,7 +43,7 @@ public class FuncEnchant extends AbstractFunction
 			return value;
 		}
 		
-		L2ItemInstance item = (L2ItemInstance) getFuncOwner();
+		ItemInstance item = (ItemInstance) getFuncOwner();
 		int enchant = item.getEnchantLevel();
 		if (enchant <= 0)
 		{

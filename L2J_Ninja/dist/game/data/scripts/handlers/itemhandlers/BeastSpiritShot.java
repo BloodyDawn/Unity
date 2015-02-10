@@ -28,7 +28,7 @@ import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.MagicSkillUse;
 import com.l2jserver.gameserver.util.Broadcast;
@@ -40,7 +40,7 @@ import com.l2jserver.gameserver.util.Broadcast;
 public class BeastSpiritShot implements IItemHandler
 {
 	@Override
-	public boolean useItem(Playable playable, L2ItemInstance item, boolean forceUse)
+	public boolean useItem(Playable playable, ItemInstance item, boolean forceUse)
 	{
 		if (!playable.isPlayer())
 		{

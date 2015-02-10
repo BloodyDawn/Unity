@@ -34,7 +34,7 @@ import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.TvTEvent;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.zone.type.L2OlympiadStadiumZone;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -275,7 +275,7 @@ public abstract class AbstractOlympiadGame
 			player.disableAutoShotsAll();
 			
 			// Discharge any active shots
-			L2ItemInstance item = player.getActiveWeaponInstance();
+			ItemInstance item = player.getActiveWeaponInstance();
 			if (item != null)
 			{
 				item.unChargeAllShots();
@@ -426,7 +426,7 @@ public abstract class AbstractOlympiadGame
 		try
 		{
 			SystemMessage sm;
-			L2ItemInstance item;
+			ItemInstance item;
 			final InventoryUpdate iu = new InventoryUpdate();
 			for (int[] it : reward)
 			{

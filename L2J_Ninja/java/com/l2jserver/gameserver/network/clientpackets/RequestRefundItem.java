@@ -28,7 +28,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2MerchantInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.buylist.L2BuyList;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 import com.l2jserver.gameserver.network.serverpackets.ExBuySellList;
@@ -132,7 +132,7 @@ public final class RequestRefundItem extends L2GameClientPacket
 		long adena = 0;
 		long slots = 0;
 		
-		L2ItemInstance[] refund = player.getRefund().getItems();
+		ItemInstance[] refund = player.getRefund().getItems();
 		int[] objectIds = new int[_items.length];
 		
 		for (int i = 0; i < _items.length; i++)
@@ -154,7 +154,7 @@ public final class RequestRefundItem extends L2GameClientPacket
 				}
 			}
 			
-			final L2ItemInstance item = refund[idx];
+			final ItemInstance item = refund[idx];
 			final L2Item template = item.getItem();
 			objectIds[i] = item.getObjectId();
 			
@@ -204,7 +204,7 @@ public final class RequestRefundItem extends L2GameClientPacket
 		
 		for (int i = 0; i < _items.length; i++)
 		{
-			L2ItemInstance item = player.getRefund().transferItem("Refund", objectIds[i], Long.MAX_VALUE, player.getInventory(), player, player.getLastFolkNPC());
+			ItemInstance item = player.getRefund().transferItem("Refund", objectIds[i], Long.MAX_VALUE, player.getInventory(), player, player.getLastFolkNPC());
 			if (item == null)
 			{
 				_log.warning("Error refunding object for char " + player.getName() + " (newitem == null)");

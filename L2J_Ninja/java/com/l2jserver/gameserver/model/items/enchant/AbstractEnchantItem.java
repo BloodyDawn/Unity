@@ -23,7 +23,7 @@ import java.util.logging.Logger;
 import com.l2jserver.gameserver.datatables.ItemTable;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.items.type.CrystalType;
 import com.l2jserver.gameserver.model.items.type.EtcItemType;
 import com.l2jserver.gameserver.model.items.type.ItemType;
@@ -119,7 +119,7 @@ public abstract class AbstractEnchantItem
 	 * @param supportItem
 	 * @return {@code true} if this support item can be used with the item to be enchanted, {@code false} otherwise
 	 */
-	public boolean isValid(L2ItemInstance itemToEnchant, EnchantSupportItem supportItem)
+	public boolean isValid(ItemInstance itemToEnchant, EnchantSupportItem supportItem)
 	{
 		if (itemToEnchant == null)
 		{

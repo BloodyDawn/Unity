@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.model.items;
 
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.items.type.CrystalType;
 import com.l2jserver.gameserver.model.items.type.ItemType;
 
@@ -32,7 +32,7 @@ import com.l2jserver.gameserver.model.items.type.ItemType;
  * </ul>
  * @version $Revision: 1.7.2.2.2.5 $ $Date: 2005/04/06 18:25:18 $
  */
-public class L2WarehouseItem
+public class WarehouseItem
 {
 	private final L2Item _item;
 	private final int _object;
@@ -64,7 +64,7 @@ public class L2WarehouseItem
 	
 	private final int _time;
 	
-	public L2WarehouseItem(L2ItemInstance item)
+	public WarehouseItem(ItemInstance item)
 	{
 		_item = item.getItem();
 		_object = item.getObjectId();
@@ -197,7 +197,7 @@ public class L2WarehouseItem
 	 */
 	public final boolean isWeapon()
 	{
-		return (_item instanceof L2Weapon);
+		return (_item instanceof Weapon);
 	}
 	
 	/**
@@ -205,7 +205,7 @@ public class L2WarehouseItem
 	 */
 	public final boolean isArmor()
 	{
-		return (_item instanceof L2Armor);
+		return (_item instanceof Armor);
 	}
 	
 	/**
@@ -213,7 +213,7 @@ public class L2WarehouseItem
 	 */
 	public final boolean isEtcItem()
 	{
-		return (_item instanceof L2EtcItem);
+		return (_item instanceof EtcItem);
 	}
 	
 	/**

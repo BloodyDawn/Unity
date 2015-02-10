@@ -54,7 +54,7 @@ import com.l2jserver.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
 import com.l2jserver.gameserver.model.entity.clanhall.SiegableHall;
 import com.l2jserver.gameserver.model.entity.clanhall.SiegeStatus;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.serverpackets.NpcSay;
 import com.l2jserver.gameserver.util.Broadcast;
@@ -386,7 +386,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 						}
 						else
 						{
-							final L2ItemInstance warDecrees = player.getInventory().getItemByItemId(WAR_DECREES);
+							final ItemInstance warDecrees = player.getInventory().getItemByItemId(WAR_DECREES);
 							if (warDecrees == null)
 							{
 								html = "messenger_yetti008.htm";

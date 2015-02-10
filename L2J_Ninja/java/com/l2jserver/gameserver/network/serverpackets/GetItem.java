@@ -18,14 +18,14 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 public final class GetItem extends L2GameServerPacket
 {
-	private final L2ItemInstance _item;
+	private final ItemInstance _item;
 	private final int _playerId;
 	
-	public GetItem(L2ItemInstance item, int playerId)
+	public GetItem(ItemInstance item, int playerId)
 	{
 		_item = item;
 		_playerId = playerId;

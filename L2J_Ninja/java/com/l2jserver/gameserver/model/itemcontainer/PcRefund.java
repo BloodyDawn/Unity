@@ -23,7 +23,7 @@ import java.util.logging.Level;
 import com.l2jserver.gameserver.datatables.ItemTable;
 import com.l2jserver.gameserver.enums.ItemLocation;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * @author DS
@@ -56,14 +56,14 @@ public class PcRefund extends ItemContainer
 	}
 	
 	@Override
-	protected void addItem(L2ItemInstance item)
+	protected void addItem(ItemInstance item)
 	{
 		super.addItem(item);
 		try
 		{
 			if (getSize() > 12)
 			{
-				L2ItemInstance removedItem = _items.remove(0);
+				ItemInstance removedItem = _items.remove(0);
 				if (removedItem != null)
 				{
 					ItemTable.getInstance().destroyItem("ClearRefund", removedItem, getOwner(), null);
@@ -87,7 +87,7 @@ public class PcRefund extends ItemContainer
 	{
 		try
 		{
-			for (L2ItemInstance item : _items)
+			for (ItemInstance item : _items)
 			{
 				if (item != null)
 				{

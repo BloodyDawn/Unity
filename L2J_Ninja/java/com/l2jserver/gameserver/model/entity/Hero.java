@@ -50,7 +50,7 @@ import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.olympiad.Olympiad;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.InventoryUpdate;
@@ -640,7 +640,7 @@ public class Hero
 			
 			for (int i = 0; i < Inventory.PAPERDOLL_TOTALSLOTS; i++)
 			{
-				L2ItemInstance equippedItem = player.getInventory().getPaperdollItem(i);
+				ItemInstance equippedItem = player.getInventory().getPaperdollItem(i);
 				if ((equippedItem != null) && equippedItem.isHeroItem())
 				{
 					player.getInventory().unEquipItemInSlot(i);
@@ -648,7 +648,7 @@ public class Hero
 			}
 			
 			final InventoryUpdate iu = new InventoryUpdate();
-			for (L2ItemInstance item : player.getInventory().getAvailableItems(false, false, false))
+			for (ItemInstance item : player.getInventory().getAvailableItems(false, false, false))
 			{
 				if ((item != null) && item.isHeroItem())
 				{

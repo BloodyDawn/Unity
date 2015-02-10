@@ -27,7 +27,7 @@ import com.l2jserver.gameserver.model.holders.ItemHolder;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.model.itemcontainer.ItemContainer;
 import com.l2jserver.gameserver.model.itemcontainer.PcFreight;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ExUserInfoInvenWeight;
 import com.l2jserver.gameserver.network.serverpackets.InventoryUpdate;
@@ -120,7 +120,7 @@ public class RequestPackageSend extends L2GameClientPacket
 		for (ItemHolder i : _items)
 		{
 			// Check validity of requested item
-			final L2ItemInstance item = player.checkItemManipulation(i.getId(), i.getCount(), "freight");
+			final ItemInstance item = player.checkItemManipulation(i.getId(), i.getCount(), "freight");
 			if (item == null)
 			{
 				_log.log(Level.WARNING, "Error depositing a warehouse object for char " + player.getName() + " (validity check)");
@@ -169,7 +169,7 @@ public class RequestPackageSend extends L2GameClientPacket
 		for (ItemHolder i : _items)
 		{
 			// Check validity of requested item
-			final L2ItemInstance oldItem = player.checkItemManipulation(i.getId(), i.getCount(), "deposit");
+			final ItemInstance oldItem = player.checkItemManipulation(i.getId(), i.getCount(), "deposit");
 			if (oldItem == null)
 			{
 				_log.log(Level.WARNING, "Error depositing a warehouse object for char " + player.getName() + " (olditem == null)");
@@ -177,7 +177,7 @@ public class RequestPackageSend extends L2GameClientPacket
 				return;
 			}
 			
-			final L2ItemInstance newItem = player.getInventory().transferItem("Trade", i.getId(), i.getCount(), warehouse, player, null);
+			final ItemInstance newItem = player.getInventory().transferItem("Trade", i.getId(), i.getCount(), warehouse, player, null);
 			if (newItem == null)
 			{
 				_log.log(Level.WARNING, "Error depositing a warehouse object for char " + player.getName() + " (newitem == null)");

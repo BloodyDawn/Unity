@@ -30,7 +30,7 @@ import com.l2jserver.util.StringUtil;
 /**
  * This class is dedicated to the management of EtcItem.
  */
-public final class L2EtcItem extends L2Item
+public final class EtcItem extends L2Item
 {
 	private String _handler;
 	private EtcItemType _type;
@@ -42,7 +42,7 @@ public final class L2EtcItem extends L2Item
 	 * Constructor for EtcItem.
 	 * @param set StatsSet designating the set of couples (key,value) for description of the Etc
 	 */
-	public L2EtcItem(StatsSet set)
+	public EtcItem(StatsSet set)
 	{
 		super(set);
 		_type = set.getEnum("etcitem_type", EtcItemType.class, EtcItemType.NONE);

@@ -21,7 +21,7 @@ package com.l2jserver.gameserver.model.stats.functions;
 import com.l2jserver.gameserver.data.xml.impl.EnchantItemHPBonusData;
 import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.conditions.Condition;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.stats.Stats;
 
@@ -43,7 +43,7 @@ public class FuncEnchantHp extends AbstractFunction
 			return initVal;
 		}
 		
-		final L2ItemInstance item = (L2ItemInstance) getFuncOwner();
+		final ItemInstance item = (ItemInstance) getFuncOwner();
 		if (item.getEnchantLevel() > 0)
 		{
 			return initVal + EnchantItemHPBonusData.getInstance().getHPBonus(item);

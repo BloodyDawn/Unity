@@ -20,8 +20,8 @@ package com.l2jserver.gameserver.network.clientpackets;
 
 import com.l2jserver.gameserver.model.Elementals;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.L2Weapon;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.Weapon;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ExBaseAttributeCancelResult;
 import com.l2jserver.gameserver.network.serverpackets.InventoryUpdate;
@@ -56,7 +56,7 @@ public class RequestExRemoveItemAttribute extends L2GameClientPacket
 			return;
 		}
 		
-		L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_objectId);
+		ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_objectId);
 		
 		if (targetItem == null)
 		{
@@ -126,12 +126,12 @@ public class RequestExRemoveItemAttribute extends L2GameClientPacket
 		}
 	}
 	
-	private long getPrice(L2ItemInstance item)
+	private long getPrice(ItemInstance item)
 	{
 		switch (item.getItem().getCrystalType())
 		{
 			case S:
-				if (item.getItem() instanceof L2Weapon)
+				if (item.getItem() instanceof Weapon)
 				{
 					_price = 50000;
 				}
@@ -141,7 +141,7 @@ public class RequestExRemoveItemAttribute extends L2GameClientPacket
 				}
 				break;
 			case S80:
-				if (item.getItem() instanceof L2Weapon)
+				if (item.getItem() instanceof Weapon)
 				{
 					_price = 100000;
 				}
@@ -151,7 +151,7 @@ public class RequestExRemoveItemAttribute extends L2GameClientPacket
 				}
 				break;
 			case S84:
-				if (item.getItem() instanceof L2Weapon)
+				if (item.getItem() instanceof Weapon)
 				{
 					_price = 200000;
 				}

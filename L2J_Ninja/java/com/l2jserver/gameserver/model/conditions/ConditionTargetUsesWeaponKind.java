@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.model.conditions;
 
 import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.L2Weapon;
+import com.l2jserver.gameserver.model.items.Weapon;
 import com.l2jserver.gameserver.model.skills.Skill;
 
 /**
@@ -48,7 +48,7 @@ public class ConditionTargetUsesWeaponKind extends Condition
 			return false;
 		}
 		
-		L2Weapon weapon = effected.getActiveWeaponItem();
+		Weapon weapon = effected.getActiveWeaponItem();
 		if (weapon == null)
 		{
 			return false;

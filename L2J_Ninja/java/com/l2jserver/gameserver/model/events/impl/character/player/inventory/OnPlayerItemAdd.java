@@ -21,7 +21,7 @@ package com.l2jserver.gameserver.model.events.impl.character.player.inventory;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * @author UnAfraid
@@ -29,9 +29,9 @@ import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
 public class OnPlayerItemAdd implements IBaseEvent
 {
 	private final L2PcInstance _activeChar;
-	private final L2ItemInstance _item;
+	private final ItemInstance _item;
 	
-	public OnPlayerItemAdd(L2PcInstance activeChar, L2ItemInstance item)
+	public OnPlayerItemAdd(L2PcInstance activeChar, ItemInstance item)
 	{
 		_activeChar = activeChar;
 		_item = item;
@@ -42,7 +42,7 @@ public class OnPlayerItemAdd implements IBaseEvent
 		return _activeChar;
 	}
 	
-	public L2ItemInstance getItem()
+	public ItemInstance getItem()
 	{
 		return _item;
 	}

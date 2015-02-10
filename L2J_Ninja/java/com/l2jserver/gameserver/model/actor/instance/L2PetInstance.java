@@ -59,8 +59,8 @@ import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.model.itemcontainer.PetInventory;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.L2Weapon;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.Weapon;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.AbnormalType;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.model.skills.EffectScope;
@@ -173,7 +173,7 @@ public class L2PetInstance extends Summon
 					return;
 				}
 				
-				L2ItemInstance food = null;
+				ItemInstance food = null;
 				for (int id : foodIds)
 				{
 					food = getInventory().getItemByItemId(id);
@@ -217,7 +217,7 @@ public class L2PetInstance extends Summon
 		}
 	}
 	
-	public synchronized static L2PetInstance spawnPet(L2NpcTemplate template, L2PcInstance owner, L2ItemInstance control)
+	public synchronized static L2PetInstance spawnPet(L2NpcTemplate template, L2PcInstance owner, ItemInstance control)
 	{
 		if (World.getInstance().getPet(owner.getObjectId()) != null)
 		{
@@ -247,7 +247,7 @@ public class L2PetInstance extends Summon
 	 * @param owner
 	 * @param control
 	 */
-	public L2PetInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, L2ItemInstance control)
+	public L2PetInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, ItemInstance control)
 	{
 		this(objectId, template, owner, control, (byte) (template.getDisplayId() == 12564 ? owner.getLevel() : template.getLevel()));
 	}
@@ -260,7 +260,7 @@ public class L2PetInstance extends Summon
 	 * @param control
 	 * @param level
 	 */
-	public L2PetInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, L2ItemInstance control, byte level)
+	public L2PetInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, ItemInstance control, byte level)
 	{
 		super(objectId, template, owner);
 		setInstanceType(InstanceType.L2PetInstance);
@@ -307,7 +307,7 @@ public class L2PetInstance extends Summon
 		return _controlObjectId;
 	}
 	
-	public L2ItemInstance getControlItem()
+	public ItemInstance getControlItem()
 	{
 		return getOwner().getInventory().getItemByObjectId(_controlObjectId);
 	}
@@ -334,9 +334,9 @@ public class L2PetInstance extends Summon
 	 * Returns the pet's currently equipped weapon instance (if any).
 	 */
 	@Override
-	public L2ItemInstance getActiveWeaponInstance()
+	public ItemInstance getActiveWeaponInstance()
 	{
-		for (L2ItemInstance item : getInventory().getItems())
+		for (ItemInstance item : getInventory().getItems())
 		{
 			if ((item.getItemLocation() == ItemLocation.PET_EQUIP) && (item.getItem().getBodyPart() == L2Item.SLOT_R_HAND))
 			{
@@ -351,27 +351,27 @@ public class L2PetInstance extends Summon
 	 * Returns the pet's currently equipped weapon (if any).
 	 */
 	@Override
-	public L2Weapon getActiveWeaponItem()
+	public Weapon getActiveWeaponItem()
 	{
-		L2ItemInstance weapon = getActiveWeaponInstance();
+		ItemInstance weapon = getActiveWeaponInstance();
 		
 		if (weapon == null)
 		{
 			return null;
 		}
 		
-		return (L2Weapon) weapon.getItem();
+		return (Weapon) weapon.getItem();
 	}
 	
 	@Override
-	public L2ItemInstance getSecondaryWeaponInstance()
+	public ItemInstance getSecondaryWeaponInstance()
 	{
 		// temporary? unavailable
 		return null;
 	}
 	
 	@Override
-	public L2Weapon getSecondaryWeaponItem()
+	public Weapon getSecondaryWeaponItem()
 	{
 		// temporary? unavailable
 		return null;
@@ -395,7 +395,7 @@ public class L2PetInstance extends Summon
 	@Override
 	public boolean destroyItem(String process, int objectId, long count, WorldObject reference, boolean sendMessage)
 	{
-		L2ItemInstance item = _inventory.destroyItem(process, objectId, count, getOwner(), reference);
+		ItemInstance item = _inventory.destroyItem(process, objectId, count, getOwner(), reference);
 		
 		if (item == null)
 		{
@@ -443,7 +443,7 @@ public class L2PetInstance extends Summon
 	@Override
 	public boolean destroyItemByItemId(String process, int itemId, long count, WorldObject reference, boolean sendMessage)
 	{
-		L2ItemInstance item = _inventory.destroyItemByItemId(process, itemId, count, getOwner(), reference);
+		ItemInstance item = _inventory.destroyItemByItemId(process, itemId, count, getOwner(), reference);
 		
 		if (item == null)
 		{
@@ -490,7 +490,7 @@ public class L2PetInstance extends Summon
 		getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		broadcastPacket(new StopMove(this));
 		
-		if (!(object instanceof L2ItemInstance))
+		if (!(object instanceof ItemInstance))
 		{
 			// dont try to pickup anything that is not an item :)
 			_logPet.warning(this + " trying to pickup wrong target." + object);
@@ -499,7 +499,7 @@ public class L2PetInstance extends Summon
 		}
 		
 		boolean follow = getFollowStatus();
-		final L2ItemInstance target = (L2ItemInstance) object;
+		final ItemInstance target = (ItemInstance) object;
 		
 		// Cursed weapons
 		if (CursedWeaponsManager.getInstance().isCursed(target.getId()))
@@ -630,7 +630,7 @@ public class L2PetInstance extends Summon
 			}
 			else
 			{
-				final L2ItemInstance item = getInventory().addItem("Pickup", target, getOwner(), this);
+				final ItemInstance item = getInventory().addItem("Pickup", target, getOwner(), this);
 				// sendPacket(new PetItemList(getInventory().getItems()));
 				sendPacket(new PetInventoryUpdate(item));
 			}
@@ -708,11 +708,11 @@ public class L2PetInstance extends Summon
 	 * @param reference Object referencing current action like NPC selling item or previous item in transformation
 	 * @return L2ItemInstance corresponding to the new item or the updated item in inventory
 	 */
-	public L2ItemInstance transferItem(String process, int objectId, long count, Inventory target, L2PcInstance actor, WorldObject reference)
+	public ItemInstance transferItem(String process, int objectId, long count, Inventory target, L2PcInstance actor, WorldObject reference)
 	{
-		L2ItemInstance oldItem = getInventory().getItemByObjectId(objectId);
-		L2ItemInstance playerOldItem = target.getItemByItemId(oldItem.getId());
-		L2ItemInstance newItem = getInventory().transferItem(process, objectId, count, target, actor, reference);
+		ItemInstance oldItem = getInventory().getItemByObjectId(objectId);
+		ItemInstance playerOldItem = target.getItemByItemId(oldItem.getId());
+		ItemInstance newItem = getInventory().transferItem(process, objectId, count, target, actor, reference);
 		
 		if (newItem == null)
 		{
@@ -761,7 +761,7 @@ public class L2PetInstance extends Summon
 		// delete from inventory
 		try
 		{
-			L2ItemInstance removedItem;
+			ItemInstance removedItem;
 			if (evolve)
 			{
 				removedItem = owner.getInventory().destroyItem("Evolve", getControlObjectId(), 1, getOwner(), this);
@@ -817,7 +817,7 @@ public class L2PetInstance extends Summon
 	{
 		try
 		{
-			for (L2ItemInstance item : getInventory().getItems())
+			for (ItemInstance item : getInventory().getItems())
 			{
 				dropItemHere(item);
 			}
@@ -828,7 +828,7 @@ public class L2PetInstance extends Summon
 		}
 	}
 	
-	public void dropItemHere(L2ItemInstance dropit, boolean protect)
+	public void dropItemHere(ItemInstance dropit, boolean protect)
 	{
 		dropit = getInventory().dropItem("Drop", dropit.getObjectId(), dropit.getCount(), getOwner(), this);
 		
@@ -843,7 +843,7 @@ public class L2PetInstance extends Summon
 		}
 	}
 	
-	public void dropItemHere(L2ItemInstance dropit)
+	public void dropItemHere(ItemInstance dropit)
 	{
 		dropItemHere(dropit, false);
 	}
@@ -855,7 +855,7 @@ public class L2PetInstance extends Summon
 		return _mountable;
 	}
 	
-	private static L2PetInstance restore(L2ItemInstance control, L2NpcTemplate template, L2PcInstance owner)
+	private static L2PetInstance restore(ItemInstance control, L2NpcTemplate template, L2PcInstance owner)
 	{
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("SELECT item_obj_id, name, level, curHp, curMp, exp, sp, fed FROM pets WHERE item_obj_id=?"))
@@ -1000,7 +1000,7 @@ public class L2PetInstance extends Summon
 			_logPet.log(Level.SEVERE, "Failed to store Pet [ObjectId: " + getObjectId() + "] data", e);
 		}
 		
-		L2ItemInstance itemInst = getControlItem();
+		ItemInstance itemInst = getControlItem();
 		if ((itemInst != null) && (itemInst.getEnchantLevel() != getStat().getLevel()))
 		{
 			itemInst.setEnchantLevel(getStat().getLevel());
@@ -1367,7 +1367,7 @@ public class L2PetInstance extends Summon
 	@Override
 	public final int getWeapon()
 	{
-		L2ItemInstance weapon = getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND);
+		ItemInstance weapon = getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND);
 		if (weapon != null)
 		{
 			return weapon.getId();
@@ -1378,7 +1378,7 @@ public class L2PetInstance extends Summon
 	@Override
 	public final int getArmor()
 	{
-		L2ItemInstance weapon = getInventory().getPaperdollItem(Inventory.PAPERDOLL_CHEST);
+		ItemInstance weapon = getInventory().getPaperdollItem(Inventory.PAPERDOLL_CHEST);
 		if (weapon != null)
 		{
 			return weapon.getId();
@@ -1388,7 +1388,7 @@ public class L2PetInstance extends Summon
 	
 	public final int getJewel()
 	{
-		L2ItemInstance weapon = getInventory().getPaperdollItem(Inventory.PAPERDOLL_NECK);
+		ItemInstance weapon = getInventory().getPaperdollItem(Inventory.PAPERDOLL_NECK);
 		if (weapon != null)
 		{
 			return weapon.getId();
@@ -1411,7 +1411,7 @@ public class L2PetInstance extends Summon
 	@Override
 	public void setName(String name)
 	{
-		final L2ItemInstance controlItem = getControlItem();
+		final ItemInstance controlItem = getControlItem();
 		if (controlItem != null)
 		{
 			if (controlItem.getCustomType2() == (name == null ? 1 : 0))

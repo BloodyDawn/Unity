@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.network.clientpackets.compound;
 
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.request.CompoundRequest;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.clientpackets.L2GameClientPacket;
 import com.l2jserver.gameserver.network.serverpackets.ExAdenaInvenCount;
@@ -72,8 +72,8 @@ public class RequestNewEnchantTry extends L2GameClientPacket
 		
 		request.setProcessing(true);
 		
-		final L2ItemInstance itemOne = request.getItemOne();
-		final L2ItemInstance itemTwo = request.getItemTwo();
+		final ItemInstance itemOne = request.getItemOne();
+		final ItemInstance itemTwo = request.getItemTwo();
 		if ((itemOne == null) || (itemTwo == null))
 		{
 			activeChar.sendPacket(ExEnchantFail.STATIC_PACKET);
@@ -116,7 +116,7 @@ public class RequestNewEnchantTry extends L2GameClientPacket
 			
 			if (activeChar.destroyItem("Compound-Item-One", itemOne, null, true) && activeChar.destroyItem("Compound-Item-Two", itemTwo, null, true))
 			{
-				final L2ItemInstance item = activeChar.addItem("Compound-Result", itemOne.getItem().getCompoundItem(), 1, null, true);
+				final ItemInstance item = activeChar.addItem("Compound-Result", itemOne.getItem().getCompoundItem(), 1, null, true);
 				activeChar.sendPacket(new ExEnchantSucess(item.getItem().getId()));
 			}
 		}

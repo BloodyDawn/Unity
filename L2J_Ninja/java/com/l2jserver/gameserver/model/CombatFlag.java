@@ -21,7 +21,7 @@ package com.l2jserver.gameserver.model;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.datatables.ItemTable;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.InventoryUpdate;
 import com.l2jserver.gameserver.network.serverpackets.ItemList;
@@ -33,8 +33,8 @@ public class CombatFlag
 	
 	private L2PcInstance _player = null;
 	private int _playerId = 0;
-	private L2ItemInstance _item = null;
-	private L2ItemInstance _itemInstance;
+	private ItemInstance _item = null;
+	private ItemInstance _itemInstance;
 	private final Location _location;
 	private final int _itemId;
 	@SuppressWarnings("unused")
@@ -66,7 +66,7 @@ public class CombatFlag
 		}
 	}
 	
-	public boolean activate(L2PcInstance player, L2ItemInstance item)
+	public boolean activate(L2PcInstance player, ItemInstance item)
 	{
 		if (player.isMounted())
 		{
@@ -121,7 +121,7 @@ public class CombatFlag
 		return _playerId;
 	}
 	
-	public L2ItemInstance getCombatFlagInstance()
+	public ItemInstance getCombatFlagInstance()
 	{
 		return _itemInstance;
 	}

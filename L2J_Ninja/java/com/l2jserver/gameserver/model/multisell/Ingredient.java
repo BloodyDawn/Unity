@@ -20,10 +20,10 @@ package com.l2jserver.gameserver.model.multisell;
 
 import com.l2jserver.gameserver.datatables.ItemTable;
 import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.items.L2Armor;
+import com.l2jserver.gameserver.model.items.Armor;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.L2Weapon;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.Weapon;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * @author DS
@@ -69,7 +69,7 @@ public class Ingredient
 		return _template;
 	}
 	
-	public final void setItemInfo(L2ItemInstance item)
+	public final void setItemInfo(ItemInstance item)
 	{
 		_itemInfo = new ItemInfo(item);
 	}
@@ -141,7 +141,7 @@ public class Ingredient
 	
 	public final boolean isArmorOrWeapon()
 	{
-		return _template == null ? false : (_template instanceof L2Armor) || (_template instanceof L2Weapon);
+		return _template == null ? false : (_template instanceof Armor) || (_template instanceof Weapon);
 	}
 	
 	public final int getWeight()

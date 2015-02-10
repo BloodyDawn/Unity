@@ -39,7 +39,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.entity.Castle;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.zone.L2ZoneType;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -267,7 +267,7 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 		return (T) this;
 	}
 	
-	public T addItemName(final L2ItemInstance item)
+	public T addItemName(final ItemInstance item)
 	{
 		return addItemName(item.getId());
 	}

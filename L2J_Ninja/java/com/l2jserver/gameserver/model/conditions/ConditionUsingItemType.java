@@ -21,7 +21,7 @@ package com.l2jserver.gameserver.model.conditions;
 import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.items.type.ArmorType;
 import com.l2jserver.gameserver.model.skills.Skill;
 
@@ -57,7 +57,7 @@ public final class ConditionUsingItemType extends Condition
 		if (_armor)
 		{
 			// Get the itemMask of the weared chest (if exists)
-			L2ItemInstance chest = inv.getPaperdollItem(Inventory.PAPERDOLL_CHEST);
+			ItemInstance chest = inv.getPaperdollItem(Inventory.PAPERDOLL_CHEST);
 			if (chest == null)
 			{
 				return false;
@@ -79,7 +79,7 @@ public final class ConditionUsingItemType extends Condition
 				return true;
 			}
 			// check legs armor
-			L2ItemInstance legs = inv.getPaperdollItem(Inventory.PAPERDOLL_LEGS);
+			ItemInstance legs = inv.getPaperdollItem(Inventory.PAPERDOLL_LEGS);
 			if (legs == null)
 			{
 				return false;

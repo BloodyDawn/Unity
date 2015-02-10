@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.network.clientpackets;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ExVariationCancelResult;
 import com.l2jserver.gameserver.network.serverpackets.InventoryUpdate;
@@ -50,7 +50,7 @@ public final class RequestRefineCancel extends L2GameClientPacket
 			return;
 		}
 		
-		L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_targetItemObjId);
+		ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_targetItemObjId);
 		if (targetItem == null)
 		{
 			activeChar.sendPacket(new ExVariationCancelResult(0));

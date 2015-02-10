@@ -35,7 +35,7 @@ import com.l2jserver.gameserver.model.MacroCmd;
 import com.l2jserver.gameserver.model.Shortcut;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.base.ClassId;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.serverpackets.ShortCutRegister;
 
 /**
@@ -274,7 +274,7 @@ public final class InitialShortcutData implements IXmlReader
 			{
 				case ITEM:
 				{
-					final L2ItemInstance item = player.getInventory().getItemByItemId(shortcutId);
+					final ItemInstance item = player.getInventory().getItemByItemId(shortcutId);
 					if (item == null)
 					{
 						continue;
@@ -318,7 +318,7 @@ public final class InitialShortcutData implements IXmlReader
 				{
 					case ITEM:
 					{
-						final L2ItemInstance item = player.getInventory().getItemByItemId(shortcutId);
+						final ItemInstance item = player.getInventory().getItemByItemId(shortcutId);
 						if (item == null)
 						{
 							continue;

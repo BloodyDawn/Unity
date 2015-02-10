@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.network.clientpackets;
 
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.items.type.CrystalType;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ExPutIntensiveResultForVariationMake;
@@ -51,13 +51,13 @@ public class RequestConfirmRefinerItem extends AbstractRefinePacket
 			return;
 		}
 		
-		final L2ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_targetItemObjId);
+		final ItemInstance targetItem = activeChar.getInventory().getItemByObjectId(_targetItemObjId);
 		if (targetItem == null)
 		{
 			return;
 		}
 		
-		final L2ItemInstance refinerItem = activeChar.getInventory().getItemByObjectId(_refinerItemObjId);
+		final ItemInstance refinerItem = activeChar.getInventory().getItemByObjectId(_refinerItemObjId);
 		if (refinerItem == null)
 		{
 			return;

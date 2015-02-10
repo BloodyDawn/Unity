@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.L2Henna;
+import com.l2jserver.gameserver.model.items.Henna;
 
 /**
  * This server packet sends the player's henna information using the Game Master's UI.
@@ -31,12 +31,12 @@ import com.l2jserver.gameserver.model.items.L2Henna;
 public final class GMHennaInfo extends L2GameServerPacket
 {
 	private final L2PcInstance _activeChar;
-	private final List<L2Henna> _hennas = new ArrayList<>();
+	private final List<Henna> _hennas = new ArrayList<>();
 	
 	public GMHennaInfo(L2PcInstance player)
 	{
 		_activeChar = player;
-		for (L2Henna henna : _activeChar.getHennaList())
+		for (Henna henna : _activeChar.getHennaList())
 		{
 			if (henna != null)
 			{
@@ -59,7 +59,7 @@ public final class GMHennaInfo extends L2GameServerPacket
 		writeC(0x00); // equip CHA
 		writeD(3); // Slots
 		writeD(_hennas.size()); // Size
-		for (L2Henna henna : _hennas)
+		for (Henna henna : _hennas)
 		{
 			writeD(henna.getDyeId());
 			writeD(0x01);

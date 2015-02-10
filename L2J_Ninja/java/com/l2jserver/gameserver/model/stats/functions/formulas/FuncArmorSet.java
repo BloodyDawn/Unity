@@ -25,7 +25,7 @@ import com.l2jserver.gameserver.data.xml.impl.ArmorSetsData;
 import com.l2jserver.gameserver.model.ArmorSet;
 import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.stats.Stats;
 import com.l2jserver.gameserver.model.stats.functions.AbstractFunction;
@@ -58,7 +58,7 @@ public class FuncArmorSet extends AbstractFunction
 		final L2PcInstance player = effector.getActingPlayer();
 		if (player != null)
 		{
-			final L2ItemInstance chest = player.getChestArmorInstance();
+			final ItemInstance chest = player.getChestArmorInstance();
 			if (chest != null)
 			{
 				final ArmorSet set = ArmorSetsData.getInstance().getSet(chest.getId());

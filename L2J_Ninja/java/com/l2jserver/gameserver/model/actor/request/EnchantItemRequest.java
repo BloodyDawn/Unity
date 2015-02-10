@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.model.actor.request;
 
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * @author UnAfraid
@@ -36,7 +36,7 @@ public final class EnchantItemRequest extends AbstractRequest
 		_enchantingScrollObjectId = enchantingScrollObjectId;
 	}
 	
-	public L2ItemInstance getEnchantingItem()
+	public ItemInstance getEnchantingItem()
 	{
 		return getActiveChar().getInventory().getItemByObjectId(_enchantingItemObjectId);
 	}
@@ -46,7 +46,7 @@ public final class EnchantItemRequest extends AbstractRequest
 		_enchantingItemObjectId = objectId;
 	}
 	
-	public L2ItemInstance getEnchantingScroll()
+	public ItemInstance getEnchantingScroll()
 	{
 		return getActiveChar().getInventory().getItemByObjectId(_enchantingScrollObjectId);
 	}
@@ -56,7 +56,7 @@ public final class EnchantItemRequest extends AbstractRequest
 		_enchantingScrollObjectId = objectId;
 	}
 	
-	public L2ItemInstance getSupportItem()
+	public ItemInstance getSupportItem()
 	{
 		return getActiveChar().getInventory().getItemByObjectId(_supportItemObjectId);
 	}

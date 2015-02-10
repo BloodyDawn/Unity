@@ -22,7 +22,7 @@ import com.l2jserver.gameserver.datatables.ItemTable;
 import com.l2jserver.gameserver.model.Augmentation;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * @author Forsaiken
@@ -83,9 +83,9 @@ public final class AuctionItem
 		return _itemCount;
 	}
 	
-	public final L2ItemInstance createNewItemInstance()
+	public final ItemInstance createNewItemInstance()
 	{
-		final L2ItemInstance item = ItemTable.getInstance().createItem("ItemAuction", _itemId, _itemCount, null, null);
+		final ItemInstance item = ItemTable.getInstance().createItem("ItemAuction", _itemId, _itemCount, null, null);
 		
 		item.setEnchantLevel(item.getDefaultEnchantLevel());
 		

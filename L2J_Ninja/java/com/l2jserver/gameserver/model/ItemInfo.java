@@ -20,8 +20,8 @@ package com.l2jserver.gameserver.model;
 
 import com.l2jserver.gameserver.model.buylist.Product;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.L2WarehouseItem;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.WarehouseItem;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * Get all information from L2ItemInstance to generate ItemInfo.
@@ -82,7 +82,7 @@ public class ItemInfo
 	 * Get all information from L2ItemInstance to generate ItemInfo.
 	 * @param item
 	 */
-	public ItemInfo(L2ItemInstance item)
+	public ItemInfo(ItemInstance item)
 	{
 		if (item == null)
 		{
@@ -121,17 +121,17 @@ public class ItemInfo
 		// Get the action to do clientside
 		switch (item.getLastChange())
 		{
-			case (L2ItemInstance.ADDED):
+			case (ItemInstance.ADDED):
 			{
 				_change = 1;
 				break;
 			}
-			case (L2ItemInstance.MODIFIED):
+			case (ItemInstance.MODIFIED):
 			{
 				_change = 2;
 				break;
 			}
-			case (L2ItemInstance.REMOVED):
+			case (ItemInstance.REMOVED):
 			{
 				_change = 3;
 				break;
@@ -153,7 +153,7 @@ public class ItemInfo
 		_visualId = item.getVisualId();
 	}
 	
-	public ItemInfo(L2ItemInstance item, int change)
+	public ItemInfo(ItemInstance item, int change)
 	{
 		this(item);
 		_change = change;
@@ -248,7 +248,7 @@ public class ItemInfo
 		_location = 0;
 	}
 	
-	public ItemInfo(L2WarehouseItem item)
+	public ItemInfo(WarehouseItem item)
 	{
 		if (item == null)
 		{

@@ -25,7 +25,7 @@ import java.util.logging.Logger;
 import com.l2jserver.gameserver.handler.IItemHandler;
 import com.l2jserver.gameserver.handler.ItemHandler;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
 
@@ -76,7 +76,7 @@ public class PetFeedTask implements Runnable
 				{
 					return;
 				}
-				L2ItemInstance food = null;
+				ItemInstance food = null;
 				for (int id : foodIds)
 				{
 					// TODO: possibly pet inv?

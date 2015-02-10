@@ -24,7 +24,7 @@ import com.l2jserver.gameserver.data.xml.impl.EnchantItemData;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.request.EnchantItemRequest;
 import com.l2jserver.gameserver.model.items.enchant.EnchantScroll;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ExPutEnchantTargetItemResult;
 
@@ -60,8 +60,8 @@ public class RequestExTryToPutEnchantTargetItem extends L2GameClientPacket
 		
 		request.setEnchantingItem(_objectId);
 		
-		final L2ItemInstance item = request.getEnchantingItem();
-		final L2ItemInstance scroll = request.getEnchantingScroll();
+		final ItemInstance item = request.getEnchantingItem();
+		final ItemInstance scroll = request.getEnchantingScroll();
 		if ((item == null) || (scroll == null))
 		{
 			return;

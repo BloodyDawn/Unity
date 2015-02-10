@@ -25,7 +25,7 @@ import javolution.util.FastList;
 import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2MerchantInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * This class ...
@@ -36,7 +36,7 @@ public class SellList extends L2GameServerPacket
 	private final L2PcInstance _activeChar;
 	private final L2MerchantInstance _lease;
 	private final long _money;
-	private final List<L2ItemInstance> _selllist = new FastList<>();
+	private final List<ItemInstance> _selllist = new FastList<>();
 	
 	public SellList(L2PcInstance player)
 	{
@@ -59,7 +59,7 @@ public class SellList extends L2GameServerPacket
 		if (_lease == null)
 		{
 			final Summon pet = _activeChar.getPet();
-			for (L2ItemInstance item : _activeChar.getInventory().getItems())
+			for (ItemInstance item : _activeChar.getInventory().getItems())
 			{
 				if (!item.isEquipped() && item.isSellable() && ((pet == null) || (item.getObjectId() != pet.getControlObjectId()))) // Pet is summoned and not the item that summoned the pet
 				{
@@ -77,7 +77,7 @@ public class SellList extends L2GameServerPacket
 		writeD(_lease == null ? 0x00 : 1000000 + _lease.getTemplate().getId());
 		writeH(_selllist.size());
 		
-		for (L2ItemInstance item : _selllist)
+		for (ItemInstance item : _selllist)
 		{
 			writeH(item.getItem().getType1());
 			writeD(item.getObjectId());

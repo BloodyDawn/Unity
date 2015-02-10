@@ -19,11 +19,11 @@
 package com.l2jserver.gameserver.network.serverpackets;
 
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 public class ExShowBaseAttributeCancelWindow extends L2GameServerPacket
 {
-	private final L2ItemInstance[] _items;
+	private final ItemInstance[] _items;
 	private long _price;
 	
 	public ExShowBaseAttributeCancelWindow(L2PcInstance player)
@@ -37,7 +37,7 @@ public class ExShowBaseAttributeCancelWindow extends L2GameServerPacket
 		writeC(0xFE);
 		writeH(0x75);
 		writeD(_items.length);
-		for (L2ItemInstance item : _items)
+		for (ItemInstance item : _items)
 		{
 			writeD(item.getObjectId());
 			writeQ(getPrice(item));
@@ -49,7 +49,7 @@ public class ExShowBaseAttributeCancelWindow extends L2GameServerPacket
 	 * @param item
 	 * @return
 	 */
-	private long getPrice(L2ItemInstance item)
+	private long getPrice(ItemInstance item)
 	{
 		switch (item.getItem().getCrystalType())
 		{

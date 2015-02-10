@@ -18,11 +18,11 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 public class DropItem extends L2GameServerPacket
 {
-	private final L2ItemInstance _item;
+	private final ItemInstance _item;
 	private final int _charObjId;
 	
 	/**
@@ -30,7 +30,7 @@ public class DropItem extends L2GameServerPacket
 	 * @param item : L2ItemInstance designating the item
 	 * @param playerObjId : int designating the player ID who dropped the item
 	 */
-	public DropItem(L2ItemInstance item, int playerObjId)
+	public DropItem(ItemInstance item, int playerObjId)
 	{
 		_item = item;
 		_charObjId = playerObjId;

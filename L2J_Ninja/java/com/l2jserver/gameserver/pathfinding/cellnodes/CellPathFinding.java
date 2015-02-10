@@ -30,7 +30,7 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.GeoData;
 import com.l2jserver.gameserver.idfactory.IdFactory;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.pathfinding.AbstractNode;
 import com.l2jserver.gameserver.pathfinding.AbstractNodeLoc;
 import com.l2jserver.gameserver.pathfinding.PathFinding;
@@ -50,7 +50,7 @@ public class CellPathFinding extends PathFinding
 	private int _postFilterPasses = 0;
 	private long _postFilterElapsed = 0;
 	
-	private FastList<L2ItemInstance> _debugItems = null;
+	private FastList<ItemInstance> _debugItems = null;
 	
 	public static CellPathFinding getInstance()
 	{
@@ -125,7 +125,7 @@ public class CellPathFinding extends PathFinding
 			}
 			else
 			{
-				for (L2ItemInstance item : _debugItems)
+				for (ItemInstance item : _debugItems)
 				{
 					if (item == null)
 					{
@@ -344,7 +344,7 @@ public class CellPathFinding extends PathFinding
 	
 	private final void dropDebugItem(int itemId, int num, AbstractNodeLoc loc)
 	{
-		final L2ItemInstance item = new L2ItemInstance(IdFactory.getInstance().getNextId(), itemId);
+		final ItemInstance item = new ItemInstance(IdFactory.getInstance().getNextId(), itemId);
 		item.setCount(num);
 		item.spawnMe(loc.getX(), loc.getY(), loc.getZ());
 		_debugItems.add(item);

@@ -37,7 +37,7 @@ import com.l2jserver.gameserver.model.TempItem;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.CommonSkill;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.stats.Stats;
@@ -394,7 +394,7 @@ public class RecipeController
 			if ((_target != _player) && (_price > 0)) // customer must pay for services
 			{
 				// attempt to pay for item
-				L2ItemInstance adenatransfer = _target.transferItem("PayManufacture", _target.getInventory().getAdenaInstance().getObjectId(), _price, _player.getInventory(), _player);
+				ItemInstance adenatransfer = _target.transferItem("PayManufacture", _target.getInventory().getAdenaInstance().getObjectId(), _price, _player.getInventory(), _player);
 				
 				if (adenatransfer == null)
 				{
@@ -610,7 +610,7 @@ public class RecipeController
 			{
 				if (recipe.getQuantity() > 0)
 				{
-					L2ItemInstance item = inv.getItemByItemId(recipe.getItemId());
+					ItemInstance item = inv.getItemByItemId(recipe.getItemId());
 					long itemQuantityAmount = item == null ? 0 : item.getCount();
 					
 					// check materials

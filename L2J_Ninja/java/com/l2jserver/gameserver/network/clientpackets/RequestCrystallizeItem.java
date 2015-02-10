@@ -30,7 +30,7 @@ import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.ItemChanceHolder;
 import com.l2jserver.gameserver.model.itemcontainer.PcInventory;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.items.type.CrystalType;
 import com.l2jserver.gameserver.model.skills.CommonSkill;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -102,7 +102,7 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 		PcInventory inventory = activeChar.getInventory();
 		if (inventory != null)
 		{
-			L2ItemInstance item = inventory.getItemByObjectId(_objectId);
+			ItemInstance item = inventory.getItemByObjectId(_objectId);
 			if (item == null)
 			{
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -120,7 +120,7 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 			}
 		}
 		
-		final L2ItemInstance itemToRemove = activeChar.getInventory().getItemByObjectId(_objectId);
+		final ItemInstance itemToRemove = activeChar.getInventory().getItemByObjectId(_objectId);
 		if ((itemToRemove == null) || itemToRemove.isShadowItem() || itemToRemove.isTimeLimitedItem())
 		{
 			return;
@@ -206,9 +206,9 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 		SystemMessage sm;
 		if (itemToRemove.isEquipped())
 		{
-			L2ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(itemToRemove.getLocationSlot());
+			ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(itemToRemove.getLocationSlot());
 			InventoryUpdate iu = new InventoryUpdate();
-			for (L2ItemInstance item : unequiped)
+			for (ItemInstance item : unequiped)
 			{
 				iu.addModifiedItem(item);
 			}
@@ -229,7 +229,7 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 		}
 		
 		// remove from inventory
-		final L2ItemInstance removedItem = activeChar.getInventory().destroyItem("Crystalize", _objectId, _count, activeChar, null);
+		final ItemInstance removedItem = activeChar.getInventory().destroyItem("Crystalize", _objectId, _count, activeChar, null);
 		
 		final InventoryUpdate iu = new InventoryUpdate();
 		iu.addRemovedItem(removedItem);
@@ -253,7 +253,7 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 			if (rand < holder.getChance())
 			{
 				// add crystals
-				final L2ItemInstance createdItem = activeChar.getInventory().addItem("Crystalize", holder.getId(), holder.getCount(), activeChar, activeChar);
+				final ItemInstance createdItem = activeChar.getInventory().addItem("Crystalize", holder.getId(), holder.getCount(), activeChar, activeChar);
 				
 				sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_EARNED_S2_S1_S);
 				sm.addItemName(createdItem);

@@ -31,7 +31,7 @@ import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
 import com.l2jserver.gameserver.model.holders.PetItemHolder;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.PetItemList;
@@ -82,7 +82,7 @@ public final class SummonPet extends AbstractEffect
 			return;
 		}
 		
-		final L2ItemInstance item = holder.getItem();
+		final ItemInstance item = holder.getItem();
 		if (player.getInventory().getItemByObjectId(item.getObjectId()) != item)
 		{
 			_log.log(Level.WARNING, "Player: " + player + " is trying to summon pet from item that he doesn't owns.");

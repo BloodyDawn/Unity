@@ -41,7 +41,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2BlockInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.itemcontainer.PcInventory;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.zone.ZoneId;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -121,7 +121,7 @@ public final class BlockCheckerEngine
 	// Common z coordinate
 	private static final int _zCoord = -2405;
 	// List of dropped items in event (for later deletion)
-	protected FastList<L2ItemInstance> _drops = new FastList<>();
+	protected FastList<ItemInstance> _drops = new FastList<>();
 	// Default arena
 	private static final byte DEFAULT_ARENA = -1;
 	// Event is started
@@ -261,7 +261,7 @@ public final class BlockCheckerEngine
 	 * Will add a new drop into the list of dropped items
 	 * @param item
 	 */
-	public void addNewDrop(L2ItemInstance item)
+	public void addNewDrop(ItemInstance item)
 	{
 		if (item != null)
 		{
@@ -601,7 +601,7 @@ public final class BlockCheckerEngine
 			}
 			_spawns.clear();
 			
-			for (L2ItemInstance item : _drops)
+			for (ItemInstance item : _drops)
 			{
 				// npe
 				if (item == null)

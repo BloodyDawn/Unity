@@ -26,7 +26,7 @@ import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Couple;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.CommonSkill;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.serverpackets.MagicSkillUse;
@@ -198,7 +198,7 @@ public final class Wedding extends AbstractNpcAI
 	{
 		if (Config.L2JMOD_WEDDING_FORMALWEAR)
 		{
-			final L2ItemInstance formalWear = player.getChestArmorInstance();
+			final ItemInstance formalWear = player.getChestArmorInstance();
 			return (formalWear != null) && (formalWear.getId() == FORMAL_WEAR);
 		}
 		return true;

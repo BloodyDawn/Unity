@@ -24,7 +24,7 @@ import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.items.type.CrystalType;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.model.stats.Formulas;
@@ -91,7 +91,7 @@ public final class HpCpHeal extends AbstractEffect
 		{
 			// no static bonus
 			// grade dynamic bonus
-			final L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
+			final ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
 			if (weaponInst != null)
 			{
 				mAtkMul = weaponInst.getItem().getCrystalType() == CrystalType.S84 ? 4 : weaponInst.getItem().getCrystalType() == CrystalType.S80 ? 2 : 1;

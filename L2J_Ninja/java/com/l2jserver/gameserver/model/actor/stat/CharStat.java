@@ -24,8 +24,8 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.model.Elementals;
 import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.actor.Creature;
-import com.l2jserver.gameserver.model.items.L2Weapon;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.Weapon;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.stats.Calculator;
 import com.l2jserver.gameserver.model.stats.MoveType;
@@ -557,7 +557,7 @@ public class CharStat
 	 */
 	public final int getPhysicalAttackRange()
 	{
-		final L2Weapon weapon = _activeChar.getActiveWeaponItem();
+		final Weapon weapon = _activeChar.getActiveWeaponItem();
 		int baseAttackRange;
 		if (_activeChar.isTransformed() && _activeChar.isPlayer())
 		{
@@ -577,7 +577,7 @@ public class CharStat
 	
 	public int getPhysicalAttackAngle()
 	{
-		final L2Weapon weapon = _activeChar.getActiveWeaponItem();
+		final Weapon weapon = _activeChar.getActiveWeaponItem();
 		final int baseAttackAngle;
 		if (weapon != null)
 		{
@@ -698,7 +698,7 @@ public class CharStat
 	
 	public byte getAttackElement()
 	{
-		L2ItemInstance weaponInstance = _activeChar.getActiveWeaponInstance();
+		ItemInstance weaponInstance = _activeChar.getActiveWeaponInstance();
 		// 1st order - weapon element
 		if ((weaponInstance != null) && (weaponInstance.getAttackElementType() >= 0))
 		{

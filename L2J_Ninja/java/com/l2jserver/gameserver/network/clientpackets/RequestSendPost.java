@@ -31,7 +31,7 @@ import com.l2jserver.gameserver.model.AccessLevel;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Message;
 import com.l2jserver.gameserver.model.itemcontainer.Mail;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.zone.ZoneId;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ExNoticePostSent;
@@ -274,7 +274,7 @@ public final class RequestSendPost extends L2GameClientPacket
 			for (AttachmentItem i : _items)
 			{
 				// Check validity of requested item
-				L2ItemInstance item = player.checkItemManipulation(i.getObjectId(), i.getCount(), "attach");
+				ItemInstance item = player.checkItemManipulation(i.getObjectId(), i.getCount(), "attach");
 				if ((item == null) || !item.isTradeable() || item.isEquipped())
 				{
 					player.sendPacket(SystemMessageId.THE_ITEM_THAT_YOU_RE_TRYING_TO_SEND_CANNOT_BE_FORWARDED_BECAUSE_IT_ISN_T_PROPER);
@@ -319,14 +319,14 @@ public final class RequestSendPost extends L2GameClientPacket
 		for (AttachmentItem i : _items)
 		{
 			// Check validity of requested item
-			L2ItemInstance oldItem = player.checkItemManipulation(i.getObjectId(), i.getCount(), "attach");
+			ItemInstance oldItem = player.checkItemManipulation(i.getObjectId(), i.getCount(), "attach");
 			if ((oldItem == null) || !oldItem.isTradeable() || oldItem.isEquipped())
 			{
 				_log.warning("Error adding attachment for char " + player.getName() + " (olditem == null)");
 				return false;
 			}
 			
-			final L2ItemInstance newItem = player.getInventory().transferItem("SendMail", i.getObjectId(), i.getCount(), attachments, player, receiver);
+			final ItemInstance newItem = player.getInventory().transferItem("SendMail", i.getObjectId(), i.getCount(), attachments, player, receiver);
 			if (newItem == null)
 			{
 				_log.warning("Error adding attachment for char " + player.getName() + " (newitem == null)");

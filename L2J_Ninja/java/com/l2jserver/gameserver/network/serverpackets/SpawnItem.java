@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.network.serverpackets;
 
 import com.l2jserver.gameserver.model.WorldObject;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 public final class SpawnItem extends L2GameServerPacket
 {
@@ -36,9 +36,9 @@ public final class SpawnItem extends L2GameServerPacket
 		_y = obj.getY();
 		_z = obj.getZ();
 		
-		if (obj instanceof L2ItemInstance)
+		if (obj instanceof ItemInstance)
 		{
-			L2ItemInstance item = (L2ItemInstance) obj;
+			ItemInstance item = (ItemInstance) obj;
 			_itemId = item.getDisplayId();
 			_stackable = item.isStackable() ? 0x01 : 0x00;
 			_count = item.getCount();

@@ -29,7 +29,7 @@ import com.l2jserver.gameserver.instancemanager.CursedWeaponsManager;
 import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ExUserInfoInvenWeight;
 import com.l2jserver.gameserver.network.serverpackets.InventoryUpdate;
@@ -87,7 +87,7 @@ public final class RequestDestroyItem extends L2GameClientPacket
 			return;
 		}
 		
-		L2ItemInstance itemToRemove = activeChar.getInventory().getItemByObjectId(_objectId);
+		ItemInstance itemToRemove = activeChar.getInventory().getItemByObjectId(_objectId);
 		
 		// if we can't find the requested item, its actually a cheat
 		if (itemToRemove == null)
@@ -187,17 +187,17 @@ public final class RequestDestroyItem extends L2GameClientPacket
 				activeChar.sendPacket(sm);
 			}
 			
-			L2ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(itemToRemove.getLocationSlot());
+			ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(itemToRemove.getLocationSlot());
 			
 			InventoryUpdate iu = new InventoryUpdate();
-			for (L2ItemInstance itm : unequiped)
+			for (ItemInstance itm : unequiped)
 			{
 				iu.addModifiedItem(itm);
 			}
 			activeChar.sendPacket(iu);
 		}
 		
-		L2ItemInstance removedItem = activeChar.getInventory().destroyItem("Destroy", itemToRemove, count, activeChar, null);
+		ItemInstance removedItem = activeChar.getInventory().destroyItem("Destroy", itemToRemove, count, activeChar, null);
 		
 		if (removedItem == null)
 		{

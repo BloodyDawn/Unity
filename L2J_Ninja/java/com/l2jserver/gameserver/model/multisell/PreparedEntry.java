@@ -22,7 +22,7 @@ import static com.l2jserver.gameserver.model.itemcontainer.Inventory.ADENA_ID;
 
 import java.util.ArrayList;
 
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * @author DS
@@ -31,7 +31,7 @@ public class PreparedEntry extends Entry
 {
 	private long _taxAmount = 0;
 	
-	public PreparedEntry(Entry template, L2ItemInstance item, boolean applyTaxes, boolean maintainEnchantment, double taxRate)
+	public PreparedEntry(Entry template, ItemInstance item, boolean applyTaxes, boolean maintainEnchantment, double taxRate)
 	{
 		_entryId = template.getEntryId() * 100000;
 		if (maintainEnchantment && (item != null))

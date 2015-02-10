@@ -19,7 +19,7 @@
 package com.l2jserver.gameserver.network.clientpackets;
 
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.L2Henna;
+import com.l2jserver.gameserver.model.items.Henna;
 import com.l2jserver.gameserver.network.SystemMessageId;
 
 /**
@@ -51,7 +51,7 @@ public final class RequestHennaRemove extends L2GameClientPacket
 			return;
 		}
 		
-		L2Henna henna;
+		Henna henna;
 		boolean found = false;
 		for (int i = 1; i <= 3; i++)
 		{

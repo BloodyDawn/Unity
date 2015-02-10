@@ -22,7 +22,7 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.enums.PrivateStoreType;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PetInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.util.Util;
 
@@ -76,7 +76,7 @@ public final class RequestGiveItemToPet extends L2GameClientPacket
 			return;
 		}
 		
-		final L2ItemInstance item = player.getInventory().getItemByObjectId(_objectId);
+		final ItemInstance item = player.getInventory().getItemByObjectId(_objectId);
 		if (item == null)
 		{
 			return;

@@ -25,7 +25,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.conditions.Condition;
 import com.l2jserver.gameserver.model.effects.AbstractEffect;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
-import com.l2jserver.gameserver.model.items.L2Weapon;
+import com.l2jserver.gameserver.model.items.Weapon;
 import com.l2jserver.gameserver.model.items.type.WeaponType;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.model.skills.Skill;
@@ -120,7 +120,7 @@ public final class EnergyAttack extends AbstractEffect
 			double ssBoost = ss ? 2 : 1.0;
 			
 			double weaponTypeBoost;
-			L2Weapon weapon = attacker.getActiveWeaponItem();
+			Weapon weapon = attacker.getActiveWeaponItem();
 			if ((weapon != null) && ((weapon.getItemType() == WeaponType.BOW) || (weapon.getItemType() == WeaponType.CROSSBOW)))
 			{
 				weaponTypeBoost = 70;

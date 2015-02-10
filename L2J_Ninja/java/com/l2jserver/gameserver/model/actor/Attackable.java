@@ -65,7 +65,7 @@ import com.l2jserver.gameserver.model.events.impl.character.npc.attackable.OnAtt
 import com.l2jserver.gameserver.model.events.impl.character.npc.attackable.OnAttackableKill;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.model.stats.Stats;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -1109,7 +1109,7 @@ public class Attackable extends Npc
 	/**
 	 * @return the active weapon of this L2Attackable (= null).
 	 */
-	public L2ItemInstance getActiveWeapon()
+	public ItemInstance getActiveWeapon()
 	{
 		return null;
 	}

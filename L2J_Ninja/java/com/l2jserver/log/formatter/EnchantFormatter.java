@@ -25,7 +25,7 @@ import java.util.logging.LogRecord;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.util.StringUtil;
 
@@ -59,9 +59,9 @@ public class EnchantFormatter extends Formatter
 						StringUtil.append(output, " IP:", player.getClient().getConnection().getInetAddress().getHostAddress());
 					}
 				}
-				else if (p instanceof L2ItemInstance)
+				else if (p instanceof ItemInstance)
 				{
-					L2ItemInstance item = (L2ItemInstance) p;
+					ItemInstance item = (ItemInstance) p;
 					if (item.getEnchantLevel() > 0)
 					{
 						StringUtil.append(output, "+", String.valueOf(item.getEnchantLevel()), " ");

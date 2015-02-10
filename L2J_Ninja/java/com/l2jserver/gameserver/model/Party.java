@@ -45,7 +45,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2ServitorInstance;
 import com.l2jserver.gameserver.model.holders.ItemHolder;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.stats.Stats;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ExAskModifyPartyLooting;
@@ -680,7 +680,7 @@ public class Party extends AbstractPlayerGroup
 	 * @param player
 	 * @param item
 	 */
-	public void distributeItem(L2PcInstance player, L2ItemInstance item)
+	public void distributeItem(L2PcInstance player, ItemInstance item)
 	{
 		if (item.getId() == Inventory.ADENA_ID)
 		{

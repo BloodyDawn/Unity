@@ -33,7 +33,7 @@ import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 import com.l2jserver.gameserver.model.effects.L2EffectType;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.BuffInfo;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -54,13 +54,13 @@ public final class L2BabyPetInstance extends L2PetInstance
 	
 	protected boolean _bufferMode = true;
 	
-	public L2BabyPetInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, L2ItemInstance control)
+	public L2BabyPetInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, ItemInstance control)
 	{
 		super(objectId, template, owner, control);
 		setInstanceType(InstanceType.L2BabyPetInstance);
 	}
 	
-	public L2BabyPetInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, L2ItemInstance control, byte level)
+	public L2BabyPetInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, ItemInstance control, byte level)
 	{
 		super(objectId, template, owner, control, level);
 		setInstanceType(InstanceType.L2BabyPetInstance);

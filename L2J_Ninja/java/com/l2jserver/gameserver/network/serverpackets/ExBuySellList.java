@@ -19,15 +19,15 @@
 package com.l2jserver.gameserver.network.serverpackets;
 
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * @author ShanSoft
  */
 public class ExBuySellList extends AbstractItemPacket
 {
-	private L2ItemInstance[] _sellList = null;
-	private L2ItemInstance[] _refundList = null;
+	private ItemInstance[] _sellList = null;
+	private ItemInstance[] _refundList = null;
 	private final boolean _done;
 	
 	public ExBuySellList(L2PcInstance player, boolean done)
@@ -51,7 +51,7 @@ public class ExBuySellList extends AbstractItemPacket
 		if ((_sellList != null))
 		{
 			writeH(_sellList.length);
-			for (L2ItemInstance item : _sellList)
+			for (ItemInstance item : _sellList)
 			{
 				writeItem(item);
 				writeQ(item.getItem().getReferencePrice() / 2);
@@ -66,7 +66,7 @@ public class ExBuySellList extends AbstractItemPacket
 		{
 			writeH(_refundList.length);
 			int i = 0;
-			for (L2ItemInstance item : _refundList)
+			for (ItemInstance item : _refundList)
 			{
 				writeItem(item);
 				writeD(i++);

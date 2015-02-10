@@ -30,7 +30,7 @@ import org.w3c.dom.Node;
 import com.l2jserver.gameserver.data.xml.IXmlReader;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.base.ClassId;
-import com.l2jserver.gameserver.model.items.L2Henna;
+import com.l2jserver.gameserver.model.items.Henna;
 
 /**
  * This class holds the henna related information.<br>
@@ -41,7 +41,7 @@ import com.l2jserver.gameserver.model.items.L2Henna;
  */
 public final class HennaData implements IXmlReader
 {
-	private final Map<Integer, L2Henna> _hennaList = new HashMap<>();
+	private final Map<Integer, Henna> _hennaList = new HashMap<>();
 	
 	/**
 	 * Instantiates a new henna data.
@@ -132,7 +132,7 @@ public final class HennaData implements IXmlReader
 				}
 			}
 		}
-		final L2Henna henna = new L2Henna(set);
+		final Henna henna = new Henna(set);
 		henna.setWearClassIds(wearClassIds);
 		_hennaList.put(henna.getDyeId(), henna);
 	}
@@ -142,7 +142,7 @@ public final class HennaData implements IXmlReader
 	 * @param id of the dye.
 	 * @return the dye with that id.
 	 */
-	public L2Henna getHenna(int id)
+	public Henna getHenna(int id)
 	{
 		return _hennaList.get(id);
 	}
@@ -152,10 +152,10 @@ public final class HennaData implements IXmlReader
 	 * @param classId the player's class Id.
 	 * @return the list with all the allowed dyes.
 	 */
-	public List<L2Henna> getHennaList(ClassId classId)
+	public List<Henna> getHennaList(ClassId classId)
 	{
-		final List<L2Henna> list = new ArrayList<>();
-		for (L2Henna henna : _hennaList.values())
+		final List<Henna> list = new ArrayList<>();
+		for (Henna henna : _hennaList.values())
 		{
 			if (henna.isAllowedClass(classId))
 			{

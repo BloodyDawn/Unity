@@ -33,7 +33,7 @@ import com.l2jserver.gameserver.model.effects.L2EffectType;
 import com.l2jserver.gameserver.model.events.EventDispatcher;
 import com.l2jserver.gameserver.model.events.impl.character.player.OnPlayerChat;
 import com.l2jserver.gameserver.model.events.returns.ChatFilterReturn;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 import com.l2jserver.gameserver.util.Util;
@@ -283,7 +283,7 @@ public final class Say2 extends L2GameClientPacket
 					_log.info(getClient() + " trying publish item which doesnt own! ID:" + id);
 					return false;
 				}
-				((L2ItemInstance) item).publish();
+				((ItemInstance) item).publish();
 			}
 			else
 			{

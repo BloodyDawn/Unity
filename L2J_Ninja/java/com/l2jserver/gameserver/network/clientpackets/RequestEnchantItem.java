@@ -32,7 +32,7 @@ import com.l2jserver.gameserver.model.items.L2Item;
 import com.l2jserver.gameserver.model.items.enchant.EnchantResultType;
 import com.l2jserver.gameserver.model.items.enchant.EnchantScroll;
 import com.l2jserver.gameserver.model.items.enchant.EnchantSupportItem;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.CommonSkill;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -92,9 +92,9 @@ public final class RequestEnchantItem extends L2GameClientPacket
 			return;
 		}
 		
-		final L2ItemInstance item = request.getEnchantingItem();
-		final L2ItemInstance scroll = request.getEnchantingScroll();
-		final L2ItemInstance support = request.getSupportItem();
+		final ItemInstance item = request.getEnchantingItem();
+		final ItemInstance scroll = request.getEnchantingScroll();
+		final ItemInstance support = request.getSupportItem();
 		if ((item == null) || (scroll == null))
 		{
 			activeChar.removeRequest(request.getClass());
@@ -280,8 +280,8 @@ public final class RequestEnchantItem extends L2GameClientPacket
 								activeChar.sendPacket(sm);
 							}
 							
-							L2ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(item.getLocationSlot());
-							for (L2ItemInstance itm : unequiped)
+							ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(item.getLocationSlot());
+							for (ItemInstance itm : unequiped)
 							{
 								iu.addModifiedItem(itm);
 							}
@@ -347,7 +347,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 							}
 							
 							World.getInstance().removeObject(item);
-							L2ItemInstance crystals = null;
+							ItemInstance crystals = null;
 							if (crystalId != 0)
 							{
 								crystals = activeChar.getInventory().addItem("Enchant", crystalId, count, activeChar, item);

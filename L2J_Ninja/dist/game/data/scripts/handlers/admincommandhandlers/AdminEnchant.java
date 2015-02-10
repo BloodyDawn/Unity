@@ -25,7 +25,7 @@ import com.l2jserver.gameserver.handler.IAdminCommandHandler;
 import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.CharInfo;
 import com.l2jserver.gameserver.network.serverpackets.InventoryUpdate;
@@ -193,10 +193,10 @@ public class AdminEnchant implements IAdminCommandHandler
 		
 		// now we need to find the equipped weapon of the targeted character...
 		int curEnchant = 0; // display purposes only
-		L2ItemInstance itemInstance = null;
+		ItemInstance itemInstance = null;
 		
 		// only attempt to enchant if there is a weapon equipped
-		L2ItemInstance parmorInstance = player.getInventory().getPaperdollItem(armorType);
+		ItemInstance parmorInstance = player.getInventory().getPaperdollItem(armorType);
 		if ((parmorInstance != null) && (parmorInstance.getLocationSlot() == armorType))
 		{
 			itemInstance = parmorInstance;

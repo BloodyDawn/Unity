@@ -30,7 +30,7 @@ import com.l2jserver.gameserver.instancemanager.PunishmentManager;
 import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.punishment.PunishmentAffect;
 import com.l2jserver.gameserver.model.punishment.PunishmentTask;
 import com.l2jserver.gameserver.model.punishment.PunishmentType;
@@ -89,7 +89,7 @@ public class PlayerHandler implements ITelnetHandler
 				
 				if (player != null)
 				{
-					L2ItemInstance item = player.getInventory().addItem("Status-Give", itemId, amount, null, null);
+					ItemInstance item = player.getInventory().addItem("Status-Give", itemId, amount, null, null);
 					InventoryUpdate iu = new InventoryUpdate();
 					iu.addItem(item);
 					player.sendPacket(iu);
@@ -287,10 +287,10 @@ public class PlayerHandler implements ITelnetHandler
 	{
 		// now we need to find the equipped weapon of the targeted character...
 		int curEnchant = 0; // display purposes only
-		L2ItemInstance itemInstance = null;
+		ItemInstance itemInstance = null;
 		
 		// only attempt to enchant if there is a weapon equipped
-		L2ItemInstance parmorInstance = activeChar.getInventory().getPaperdollItem(armorType);
+		ItemInstance parmorInstance = activeChar.getInventory().getPaperdollItem(armorType);
 		if ((parmorInstance != null) && (parmorInstance.getLocationSlot() == armorType))
 		{
 			itemInstance = parmorInstance;

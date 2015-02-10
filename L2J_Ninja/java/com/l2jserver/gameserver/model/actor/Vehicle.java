@@ -41,8 +41,8 @@ import com.l2jserver.gameserver.model.actor.knownlist.VehicleKnownList;
 import com.l2jserver.gameserver.model.actor.stat.VehicleStat;
 import com.l2jserver.gameserver.model.actor.templates.L2CharTemplate;
 import com.l2jserver.gameserver.model.interfaces.ILocational;
-import com.l2jserver.gameserver.model.items.L2Weapon;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.Weapon;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.InventoryUpdate;
 import com.l2jserver.gameserver.network.serverpackets.L2GameServerPacket;
@@ -312,7 +312,7 @@ public abstract class Vehicle extends Creature
 		final Collection<L2PcInstance> passengers = getKnownList().getKnownPlayersInRadius(1000);
 		if ((passengers != null) && !passengers.isEmpty())
 		{
-			L2ItemInstance ticket;
+			ItemInstance ticket;
 			InventoryUpdate iu;
 			for (L2PcInstance player : passengers)
 			{
@@ -471,25 +471,25 @@ public abstract class Vehicle extends Creature
 	}
 	
 	@Override
-	public L2ItemInstance getActiveWeaponInstance()
+	public ItemInstance getActiveWeaponInstance()
 	{
 		return null;
 	}
 	
 	@Override
-	public L2Weapon getActiveWeaponItem()
+	public Weapon getActiveWeaponItem()
 	{
 		return null;
 	}
 	
 	@Override
-	public L2ItemInstance getSecondaryWeaponInstance()
+	public ItemInstance getSecondaryWeaponInstance()
 	{
 		return null;
 	}
 	
 	@Override
-	public L2Weapon getSecondaryWeaponItem()
+	public Weapon getSecondaryWeaponItem()
 	{
 		return null;
 	}

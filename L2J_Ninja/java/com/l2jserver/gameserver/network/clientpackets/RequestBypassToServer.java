@@ -41,7 +41,7 @@ import com.l2jserver.gameserver.model.events.EventDispatcher;
 import com.l2jserver.gameserver.model.events.impl.character.npc.OnNpcManorBypass;
 import com.l2jserver.gameserver.model.events.impl.character.npc.OnNpcMenuSelect;
 import com.l2jserver.gameserver.model.events.impl.character.player.OnPlayerBypass;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 import com.l2jserver.gameserver.network.serverpackets.ConfirmDlg;
@@ -216,7 +216,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				}
 				try
 				{
-					final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(Integer.parseInt(id));
+					final ItemInstance item = activeChar.getInventory().getItemByObjectId(Integer.parseInt(id));
 					if ((item != null) && (endOfId > 0))
 					{
 						item.onBypassFeedback(activeChar, _command.substring(endOfId + 1));

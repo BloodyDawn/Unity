@@ -33,7 +33,7 @@ import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2OlympiadManagerInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.entity.Hero;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.olympiad.CompetitionType;
 import com.l2jserver.gameserver.model.olympiad.Olympiad;
 import com.l2jserver.gameserver.model.olympiad.OlympiadManager;
@@ -217,7 +217,7 @@ public class OlympiadManagerLink implements IBypassHandler
 						passes = Olympiad.getInstance().getNoblessePasses(activeChar, true);
 						if (passes > 0)
 						{
-							L2ItemInstance item = activeChar.getInventory().addItem("Olympiad", GATE_PASS, passes, activeChar, target);
+							ItemInstance item = activeChar.getInventory().addItem("Olympiad", GATE_PASS, passes, activeChar, target);
 							
 							InventoryUpdate iu = new InventoryUpdate();
 							iu.addModifiedItem(item);

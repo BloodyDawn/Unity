@@ -33,9 +33,9 @@ import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.buylist.L2BuyList;
 import com.l2jserver.gameserver.model.buylist.Product;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
-import com.l2jserver.gameserver.model.items.L2Armor;
+import com.l2jserver.gameserver.model.items.Armor;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.L2Weapon;
+import com.l2jserver.gameserver.model.items.Weapon;
 import com.l2jserver.gameserver.model.items.type.ArmorType;
 import com.l2jserver.gameserver.model.items.type.WeaponType;
 import com.l2jserver.gameserver.network.SystemMessageId;
@@ -191,7 +191,7 @@ public final class RequestPreviewItem extends L2GameClientPacket
 				continue;
 			}
 			
-			if (template instanceof L2Weapon)
+			if (template instanceof Weapon)
 			{
 				if (activeChar.getRace().ordinal() == 5)
 				{
@@ -205,7 +205,7 @@ public final class RequestPreviewItem extends L2GameClientPacket
 					}
 				}
 			}
-			else if (template instanceof L2Armor)
+			else if (template instanceof Armor)
 			{
 				if (activeChar.getRace().ordinal() == 5)
 				{

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 public final class WareHouseWithdrawalList extends AbstractItemPacket
 {
@@ -33,7 +33,7 @@ public final class WareHouseWithdrawalList extends AbstractItemPacket
 	private L2PcInstance _activeChar;
 	private long _playerAdena;
 	private final int _invSize;
-	private L2ItemInstance[] _items;
+	private ItemInstance[] _items;
 	private final List<Integer> _itemsStackable = new ArrayList<>();
 	/**
 	 * <ul>
@@ -60,7 +60,7 @@ public final class WareHouseWithdrawalList extends AbstractItemPacket
 		
 		_items = _activeChar.getActiveWarehouse().getItems();
 		
-		for (L2ItemInstance item : _items)
+		for (ItemInstance item : _items)
 		{
 			if (item.isStackable())
 			{
@@ -82,7 +82,7 @@ public final class WareHouseWithdrawalList extends AbstractItemPacket
 			writeD(itemId);
 		}
 		writeD(_invSize);
-		for (L2ItemInstance item : _items)
+		for (ItemInstance item : _items)
 		{
 			writeItem(item);
 			writeD(item.getObjectId());

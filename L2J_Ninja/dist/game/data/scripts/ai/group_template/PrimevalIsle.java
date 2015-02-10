@@ -32,7 +32,7 @@ import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.Playable;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 import com.l2jserver.gameserver.network.NpcStringId;
 import com.l2jserver.gameserver.util.Util;
@@ -467,7 +467,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 			if (player.getInventory().getSize(false) <= (player.getInventoryLimit() * 0.8))
 			{
 				giveItems(player, DEINONYCHUS, 1);
-				final L2ItemInstance summonItem = player.getInventory().getItemByItemId(DEINONYCHUS);
+				final ItemInstance summonItem = player.getInventory().getItemByItemId(DEINONYCHUS);
 				final IItemHandler handler = ItemHandler.getInstance().getHandler(summonItem.getEtcItem());
 				if ((handler != null) && !player.hasPet())
 				{

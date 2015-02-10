@@ -32,7 +32,7 @@ import com.l2jserver.gameserver.model.actor.instance.L2MerchantInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.buylist.L2BuyList;
 import com.l2jserver.gameserver.model.holders.UniqueItemHolder;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 import com.l2jserver.gameserver.network.serverpackets.ExBuySellList;
 import com.l2jserver.gameserver.network.serverpackets.ExUserInfoInvenWeight;
@@ -155,7 +155,7 @@ public final class RequestSellItem extends L2GameClientPacket
 		// Proceed the sell
 		for (UniqueItemHolder i : _items)
 		{
-			L2ItemInstance item = player.checkItemManipulation(i.getObjectId(), i.getCount(), "sell");
+			ItemInstance item = player.checkItemManipulation(i.getObjectId(), i.getCount(), "sell");
 			if ((item == null) || (!item.isSellable()))
 			{
 				continue;

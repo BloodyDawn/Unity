@@ -21,25 +21,25 @@ package com.l2jserver.gameserver.model.events.impl.item;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.events.EventType;
 import com.l2jserver.gameserver.model.events.impl.IBaseEvent;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * @author UnAfraid
  */
 public class OnItemBypassEvent implements IBaseEvent
 {
-	private final L2ItemInstance _item;
+	private final ItemInstance _item;
 	private final L2PcInstance _activeChar;
 	private final String _event;
 	
-	public OnItemBypassEvent(L2ItemInstance item, L2PcInstance activeChar, String event)
+	public OnItemBypassEvent(ItemInstance item, L2PcInstance activeChar, String event)
 	{
 		_item = item;
 		_activeChar = activeChar;
 		_event = event;
 	}
 	
-	public L2ItemInstance getItem()
+	public ItemInstance getItem()
 	{
 		return _item;
 	}

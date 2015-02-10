@@ -35,7 +35,7 @@ import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.ExAdenaInvenCount;
 import com.l2jserver.gameserver.network.serverpackets.ExUserInfoInvenWeight;
@@ -71,7 +71,7 @@ public final class Evolve
 			return false;
 		}
 		
-		L2ItemInstance item = null;
+		ItemInstance item = null;
 		long petexp = currentPet.getStat().getExp();
 		String oldname = currentPet.getName();
 		int oldX = currentPet.getX();
@@ -169,7 +169,7 @@ public final class Evolve
 			return false;
 		}
 		
-		L2ItemInstance item = player.getInventory().getItemByItemId(itemIdtake);
+		ItemInstance item = player.getInventory().getItemByItemId(itemIdtake);
 		if (item == null)
 		{
 			return false;
@@ -202,13 +202,13 @@ public final class Evolve
 		L2NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(npcId);
 		
 		// deleting old pet item
-		L2ItemInstance removedItem = player.getInventory().destroyItem("PetRestore", item, player, npc);
+		ItemInstance removedItem = player.getInventory().destroyItem("PetRestore", item, player, npc);
 		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_DISAPPEARED);
 		sm.addItemName(removedItem);
 		player.sendPacket(sm);
 		
 		// Give new pet item
-		L2ItemInstance addedItem = player.getInventory().addItem("PetRestore", itemIdgive, 1, player, npc);
+		ItemInstance addedItem = player.getInventory().addItem("PetRestore", itemIdgive, 1, player, npc);
 		
 		// Summoning new pet
 		L2PetInstance petSummon = L2PetInstance.spawnPet(npcTemplate, player, addedItem);

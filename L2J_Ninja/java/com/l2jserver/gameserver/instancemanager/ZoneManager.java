@@ -37,7 +37,7 @@ import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.WorldRegion;
 import com.l2jserver.gameserver.model.actor.Creature;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.zone.AbstractZoneSettings;
 import com.l2jserver.gameserver.model.zone.L2ZoneForm;
 import com.l2jserver.gameserver.model.zone.L2ZoneRespawn;
@@ -61,7 +61,7 @@ public final class ZoneManager implements IXmlReader
 	private final Map<Class<? extends L2ZoneType>, Map<Integer, ? extends L2ZoneType>> _classZones = new HashMap<>();
 	private final Map<String, NpcSpawnTerritory> _spawnTerritories = new HashMap<>();
 	private int _lastDynamicId = 300000;
-	private List<L2ItemInstance> _debugItems;
+	private List<ItemInstance> _debugItems;
 	
 	/**
 	 * Instantiates a new zone manager.
@@ -697,7 +697,7 @@ public final class ZoneManager implements IXmlReader
 	 * General storage for debug items used for visualizing zones.
 	 * @return list of items
 	 */
-	public List<L2ItemInstance> getDebugItems()
+	public List<ItemInstance> getDebugItems()
 	{
 		if (_debugItems == null)
 		{
@@ -713,10 +713,10 @@ public final class ZoneManager implements IXmlReader
 	{
 		if (_debugItems != null)
 		{
-			final Iterator<L2ItemInstance> it = _debugItems.iterator();
+			final Iterator<ItemInstance> it = _debugItems.iterator();
 			while (it.hasNext())
 			{
-				final L2ItemInstance item = it.next();
+				final ItemInstance item = it.next();
 				if (item != null)
 				{
 					item.decayMe();

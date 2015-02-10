@@ -22,7 +22,7 @@ import com.l2jserver.gameserver.datatables.ItemTable;
 import com.l2jserver.gameserver.enums.ItemLocation;
 import com.l2jserver.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 public class PetInventory extends Inventory
 {
@@ -65,7 +65,7 @@ public class PetInventory extends Inventory
 		getOwner().updateAndBroadcastStatus(1);
 	}
 	
-	public boolean validateCapacity(L2ItemInstance item)
+	public boolean validateCapacity(ItemInstance item)
 	{
 		int slots = 0;
 		
@@ -83,7 +83,7 @@ public class PetInventory extends Inventory
 		return ((_items.size() + slots) <= _owner.getInventoryLimit());
 	}
 	
-	public boolean validateWeight(L2ItemInstance item, long count)
+	public boolean validateWeight(ItemInstance item, long count)
 	{
 		int weight = 0;
 		L2Item template = ItemTable.getInstance().getTemplate(item.getId());
@@ -118,7 +118,7 @@ public class PetInventory extends Inventory
 	{
 		super.restore();
 		// check for equiped items from other pets
-		for (L2ItemInstance item : _items)
+		for (ItemInstance item : _items)
 		{
 			if (item.isEquipped())
 			{
@@ -132,7 +132,7 @@ public class PetInventory extends Inventory
 	
 	public void transferItemsToOwner()
 	{
-		for (L2ItemInstance item : _items)
+		for (ItemInstance item : _items)
 		{
 			getOwner().transferItem("return", item.getObjectId(), item.getCount(), getOwner().getOwner().getInventory(), getOwner().getOwner(), getOwner());
 		}

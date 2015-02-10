@@ -23,8 +23,8 @@ import com.l2jserver.gameserver.model.ItemInfo;
 import com.l2jserver.gameserver.model.TradeItem;
 import com.l2jserver.gameserver.model.buylist.Product;
 import com.l2jserver.gameserver.model.itemcontainer.PcInventory;
-import com.l2jserver.gameserver.model.items.L2WarehouseItem;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.WarehouseItem;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * @author UnAfraid
@@ -52,12 +52,12 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 		writeItem(new ItemInfo(item));
 	}
 	
-	protected void writeItem(L2WarehouseItem item)
+	protected void writeItem(WarehouseItem item)
 	{
 		writeItem(new ItemInfo(item));
 	}
 	
-	protected void writeItem(L2ItemInstance item)
+	protected void writeItem(ItemInstance item)
 	{
 		writeItem(new ItemInfo(item));
 	}

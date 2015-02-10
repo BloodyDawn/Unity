@@ -21,7 +21,7 @@ package com.l2jserver.gameserver.network.clientpackets;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.World;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.L2GameClient;
 import com.l2jserver.gameserver.network.serverpackets.ExRpItemLink;
 
@@ -46,9 +46,9 @@ public class RequestExRqItemLink extends L2GameClientPacket
 		if (client != null)
 		{
 			WorldObject object = World.getInstance().findObject(_objectId);
-			if (object instanceof L2ItemInstance)
+			if (object instanceof ItemInstance)
 			{
-				L2ItemInstance item = (L2ItemInstance) object;
+				ItemInstance item = (ItemInstance) object;
 				if (item.isPublished())
 				{
 					client.sendPacket(new ExRpItemLink(item));

@@ -21,7 +21,7 @@ package com.l2jserver.gameserver.network.clientpackets;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PetInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.util.Util;
 
 /**
@@ -66,7 +66,7 @@ public final class RequestGetItemFromPet extends L2GameClientPacket
 		}
 		
 		final L2PetInstance pet = (L2PetInstance) player.getPet();
-		final L2ItemInstance item = pet.getInventory().getItemByObjectId(_objectId);
+		final ItemInstance item = pet.getInventory().getItemByObjectId(_objectId);
 		if (item == null)
 		{
 			return;

@@ -18,7 +18,7 @@
  */
 package com.l2jserver.gameserver.network.serverpackets;
 
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 public class EnchantResult extends L2GameServerPacket
 {
@@ -45,10 +45,10 @@ public class EnchantResult extends L2GameServerPacket
 	
 	public EnchantResult(int result, int crystal, int count)
 	{
-		this(result, crystal, count, 0, L2ItemInstance.DEFAULT_ENCHANT_OPTIONS);
+		this(result, crystal, count, 0, ItemInstance.DEFAULT_ENCHANT_OPTIONS);
 	}
 	
-	public EnchantResult(int result, L2ItemInstance item)
+	public EnchantResult(int result, ItemInstance item)
 	{
 		this(result, 0, 0, item.getEnchantLevel(), item.getEnchantOptions());
 	}

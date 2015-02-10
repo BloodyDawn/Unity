@@ -28,7 +28,7 @@ import com.l2jserver.gameserver.model.actor.Npc;
 import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.model.quest.State;
@@ -104,7 +104,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 				{
 					if (getQuestItemsCount(player, DRAGONFLUTE_OF_WIND, DRAGONFLUTE_OF_STAR, DRAGONFLUTE_OF_TWILIGHT) == 1)
 					{
-						final L2ItemInstance flute = getFlute(player);
+						final ItemInstance flute = getFlute(player);
 						
 						if (flute.getEnchantLevel() < MIN_HACHLING_LVL)
 						{
@@ -329,7 +329,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 								}
 								else if (fluteCount == 1)
 								{
-									final L2ItemInstance flute = getFlute(talker);
+									final ItemInstance flute = getFlute(talker);
 									
 									if (flute.getObjectId() == qs.getInt("fluteObjectId"))
 									{
@@ -468,7 +468,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 		return super.onKill(npc, killer, isSummon);
 	}
 	
-	private static L2ItemInstance getFlute(L2PcInstance player)
+	private static ItemInstance getFlute(L2PcInstance player)
 	{
 		final int fluteItemId;
 		if (hasQuestItems(player, DRAGONFLUTE_OF_WIND))

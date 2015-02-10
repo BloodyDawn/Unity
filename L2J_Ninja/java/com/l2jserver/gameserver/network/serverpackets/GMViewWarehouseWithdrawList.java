@@ -20,11 +20,11 @@ package com.l2jserver.gameserver.network.serverpackets;
 
 import com.l2jserver.gameserver.model.L2Clan;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 public class GMViewWarehouseWithdrawList extends AbstractItemPacket
 {
-	private final L2ItemInstance[] _items;
+	private final ItemInstance[] _items;
 	private final String _playerName;
 	private final long _money;
 	
@@ -49,7 +49,7 @@ public class GMViewWarehouseWithdrawList extends AbstractItemPacket
 		writeS(_playerName);
 		writeQ(_money);
 		writeH(_items.length);
-		for (L2ItemInstance item : _items)
+		for (ItemInstance item : _items)
 		{
 			writeItem(item);
 			writeD(item.getObjectId());

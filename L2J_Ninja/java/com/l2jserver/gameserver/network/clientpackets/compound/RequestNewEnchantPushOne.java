@@ -20,7 +20,7 @@ package com.l2jserver.gameserver.network.clientpackets.compound;
 
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.request.CompoundRequest;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.clientpackets.L2GameClientPacket;
 import com.l2jserver.gameserver.network.serverpackets.compound.ExEnchantOneFail;
@@ -69,7 +69,7 @@ public class RequestNewEnchantPushOne extends L2GameClientPacket
 		
 		// Make sure player owns this item.
 		request.setItemOne(_objectId);
-		final L2ItemInstance itemOne = request.getItemOne();
+		final ItemInstance itemOne = request.getItemOne();
 		if (itemOne == null)
 		{
 			activeChar.sendPacket(ExEnchantOneFail.STATIC_PACKET);

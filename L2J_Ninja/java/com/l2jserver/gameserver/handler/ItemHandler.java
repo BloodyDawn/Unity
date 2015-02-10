@@ -21,13 +21,13 @@ package com.l2jserver.gameserver.handler;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jserver.gameserver.model.items.L2EtcItem;
+import com.l2jserver.gameserver.model.items.EtcItem;
 
 /**
  * This class manages handlers of items
  * @author UnAfraid
  */
-public class ItemHandler implements IHandler<IItemHandler, L2EtcItem>
+public class ItemHandler implements IHandler<IItemHandler, EtcItem>
 {
 	private final Map<String, IItemHandler> _datatable;
 	
@@ -64,7 +64,7 @@ public class ItemHandler implements IHandler<IItemHandler, L2EtcItem>
 	 * @return IItemHandler
 	 */
 	@Override
-	public IItemHandler getHandler(L2EtcItem item)
+	public IItemHandler getHandler(EtcItem item)
 	{
 		if ((item == null) || (item.getHandlerName() == null))
 		{

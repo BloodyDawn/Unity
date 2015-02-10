@@ -28,7 +28,7 @@ import com.l2jserver.gameserver.model.base.ClassId;
  * Class for the Henna object.
  * @author Zoey76
  */
-public class L2Henna
+public class Henna
 {
 	private final int _dyeId;
 	private final String _dyeName;
@@ -47,7 +47,7 @@ public class L2Henna
 	private final int _cancel_count;
 	private final List<ClassId> _wear_class;
 	
-	public L2Henna(StatsSet set)
+	public Henna(StatsSet set)
 	{
 		_dyeId = set.getInt("dyeId");
 		_dyeName = set.getString("dyeName");

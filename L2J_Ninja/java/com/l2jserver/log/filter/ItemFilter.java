@@ -23,7 +23,7 @@ import java.util.Set;
 import java.util.logging.Filter;
 import java.util.logging.LogRecord;
 
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.items.type.EtcItemType;
 import com.l2jserver.gameserver.model.items.type.ItemType;
 
@@ -59,7 +59,7 @@ public class ItemFilter implements Filter
 			return true;
 		}
 		
-		L2ItemInstance item = ((L2ItemInstance) record.getParameters()[0]);
+		ItemInstance item = ((ItemInstance) record.getParameters()[0]);
 		if (!EXCLUDED_ITEM_TYPES.contains(item.getItemType()))
 		{
 			return true;

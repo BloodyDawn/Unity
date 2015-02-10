@@ -25,7 +25,7 @@ import java.util.logging.Level;
 import com.l2jserver.gameserver.data.xml.impl.EnchantItemGroupsData;
 import com.l2jserver.gameserver.model.StatsSet;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.items.type.EtcItemType;
 import com.l2jserver.gameserver.model.items.type.ItemType;
 import com.l2jserver.gameserver.network.Debug;
@@ -103,7 +103,7 @@ public final class EnchantScroll extends AbstractEnchantItem
 	 * @return {@code true} if this scroll can be used with the specified support item and the item to be enchanted, {@code false} otherwise
 	 */
 	@Override
-	public boolean isValid(L2ItemInstance itemToEnchant, EnchantSupportItem supportItem)
+	public boolean isValid(ItemInstance itemToEnchant, EnchantSupportItem supportItem)
 	{
 		if ((_items != null) && !_items.contains(itemToEnchant.getId()))
 		{
@@ -132,7 +132,7 @@ public final class EnchantScroll extends AbstractEnchantItem
 	 * @param enchantItem
 	 * @return the chance of current scroll's group.
 	 */
-	public double getChance(L2PcInstance player, L2ItemInstance enchantItem)
+	public double getChance(L2PcInstance player, ItemInstance enchantItem)
 	{
 		if (EnchantItemGroupsData.getInstance().getScrollGroup(_scrollGroupId) == null)
 		{
@@ -155,7 +155,7 @@ public final class EnchantScroll extends AbstractEnchantItem
 	 * @param supportItem
 	 * @return the total chance for success rate of this scroll
 	 */
-	public EnchantResultType calculateSuccess(L2PcInstance player, L2ItemInstance enchantItem, EnchantSupportItem supportItem)
+	public EnchantResultType calculateSuccess(L2PcInstance player, ItemInstance enchantItem, EnchantSupportItem supportItem)
 	{
 		if (!isValid(enchantItem, supportItem))
 		{

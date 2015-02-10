@@ -22,7 +22,7 @@ import com.l2jserver.gameserver.handler.IItemHandler;
 import com.l2jserver.gameserver.handler.ItemHandler;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PetInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.PetItemList;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
@@ -57,7 +57,7 @@ public final class RequestPetUseItem extends L2GameClientPacket
 		}
 		
 		final L2PetInstance pet = (L2PetInstance) activeChar.getPet();
-		final L2ItemInstance item = pet.getInventory().getItemByObjectId(_objectId);
+		final ItemInstance item = pet.getInventory().getItemByObjectId(_objectId);
 		if (item == null)
 		{
 			return;
@@ -97,7 +97,7 @@ public final class RequestPetUseItem extends L2GameClientPacket
 		useItem(pet, item, activeChar);
 	}
 	
-	private void useItem(L2PetInstance pet, L2ItemInstance item, L2PcInstance activeChar)
+	private void useItem(L2PetInstance pet, ItemInstance item, L2PcInstance activeChar)
 	{
 		if (item.isEquipable())
 		{

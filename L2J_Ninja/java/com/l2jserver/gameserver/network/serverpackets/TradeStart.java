@@ -22,13 +22,13 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.instancemanager.MentorManager;
 import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 public final class TradeStart extends AbstractItemPacket
 {
 	private final L2PcInstance _activeChar;
 	private final L2PcInstance _partner;
-	private final L2ItemInstance[] _itemList;
+	private final ItemInstance[] _itemList;
 	private int _mask = 0;
 	
 	public TradeStart(L2PcInstance player)
@@ -80,7 +80,7 @@ public final class TradeStart extends AbstractItemPacket
 			writeC(_partner.getLevel());
 		}
 		writeH(_itemList.length);
-		for (L2ItemInstance item : _itemList)
+		for (ItemInstance item : _itemList)
 		{
 			writeItem(item);
 		}

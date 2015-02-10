@@ -23,9 +23,9 @@ import java.util.Arrays;
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.L2EtcItem;
+import com.l2jserver.gameserver.model.items.EtcItem;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.InventoryUpdate;
 import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
@@ -62,7 +62,7 @@ public class RequestUnEquipItem extends L2GameClientPacket
 			return;
 		}
 		
-		final L2ItemInstance item = activeChar.getInventory().getPaperdollItemByL2ItemId(_slot);
+		final ItemInstance item = activeChar.getInventory().getPaperdollItemByL2ItemId(_slot);
 		// Wear-items are not to be unequipped.
 		if (item == null)
 		{
@@ -77,7 +77,7 @@ public class RequestUnEquipItem extends L2GameClientPacket
 		}
 		
 		// Arrows and bolts.
-		if ((_slot == L2Item.SLOT_L_HAND) && (item.getItem() instanceof L2EtcItem))
+		if ((_slot == L2Item.SLOT_L_HAND) && (item.getItem() instanceof EtcItem))
 		{
 			return;
 		}
@@ -106,7 +106,7 @@ public class RequestUnEquipItem extends L2GameClientPacket
 			return;
 		}
 		
-		final L2ItemInstance[] unequipped = activeChar.getInventory().unEquipItemInBodySlotAndRecord(_slot);
+		final ItemInstance[] unequipped = activeChar.getInventory().unEquipItemInBodySlotAndRecord(_slot);
 		activeChar.broadcastUserInfo();
 		
 		// This can be 0 if the user pressed the right mouse button twice very fast.

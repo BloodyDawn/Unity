@@ -26,7 +26,7 @@ import com.l2jserver.gameserver.model.holders.ArmorsetSkillHolder;
 import com.l2jserver.gameserver.model.holders.SkillHolder;
 import com.l2jserver.gameserver.model.itemcontainer.Inventory;
 import com.l2jserver.gameserver.model.itemcontainer.PcInventory;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 
 /**
  * @author Luno
@@ -178,10 +178,10 @@ public final class ArmorSet
 	{
 		final Inventory inv = player.getInventory();
 		
-		final L2ItemInstance legsItem = inv.getPaperdollItem(Inventory.PAPERDOLL_LEGS);
-		final L2ItemInstance headItem = inv.getPaperdollItem(Inventory.PAPERDOLL_HEAD);
-		final L2ItemInstance glovesItem = inv.getPaperdollItem(Inventory.PAPERDOLL_GLOVES);
-		final L2ItemInstance feetItem = inv.getPaperdollItem(Inventory.PAPERDOLL_FEET);
+		final ItemInstance legsItem = inv.getPaperdollItem(Inventory.PAPERDOLL_LEGS);
+		final ItemInstance headItem = inv.getPaperdollItem(Inventory.PAPERDOLL_HEAD);
+		final ItemInstance glovesItem = inv.getPaperdollItem(Inventory.PAPERDOLL_GLOVES);
+		final ItemInstance feetItem = inv.getPaperdollItem(Inventory.PAPERDOLL_FEET);
 		
 		int legs = 0;
 		int head = 0;
@@ -276,7 +276,7 @@ public final class ArmorSet
 	{
 		Inventory inv = player.getInventory();
 		
-		L2ItemInstance shieldItem = inv.getPaperdollItem(Inventory.PAPERDOLL_LHAND);
+		ItemInstance shieldItem = inv.getPaperdollItem(Inventory.PAPERDOLL_LHAND);
 		return ((shieldItem != null) && _shield.contains(Integer.valueOf(shieldItem.getId())));
 	}
 	
@@ -323,7 +323,7 @@ public final class ArmorSet
 		int enchantLevel = Byte.MAX_VALUE;
 		for (int armorSlot : ARMORSET_SLOTS)
 		{
-			final L2ItemInstance itemPart = inv.getPaperdollItem(armorSlot);
+			final ItemInstance itemPart = inv.getPaperdollItem(armorSlot);
 			if (itemPart != null)
 			{
 				if (enchantLevel > itemPart.getEnchantLevel())
@@ -344,10 +344,10 @@ public final class ArmorSet
 	{
 		final Inventory inv = player.getInventory();
 		
-		final L2ItemInstance legsItem = inv.getPaperdollItem(Inventory.PAPERDOLL_LEGS);
-		final L2ItemInstance headItem = inv.getPaperdollItem(Inventory.PAPERDOLL_HEAD);
-		final L2ItemInstance glovesItem = inv.getPaperdollItem(Inventory.PAPERDOLL_GLOVES);
-		final L2ItemInstance feetItem = inv.getPaperdollItem(Inventory.PAPERDOLL_FEET);
+		final ItemInstance legsItem = inv.getPaperdollItem(Inventory.PAPERDOLL_LEGS);
+		final ItemInstance headItem = inv.getPaperdollItem(Inventory.PAPERDOLL_HEAD);
+		final ItemInstance glovesItem = inv.getPaperdollItem(Inventory.PAPERDOLL_GLOVES);
+		final ItemInstance feetItem = inv.getPaperdollItem(Inventory.PAPERDOLL_FEET);
 		
 		int legs = 0;
 		int head = 0;

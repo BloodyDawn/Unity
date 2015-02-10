@@ -34,7 +34,7 @@ import com.l2jserver.gameserver.model.events.ListenerRegisterType;
 import com.l2jserver.gameserver.model.events.annotations.RegisterEvent;
 import com.l2jserver.gameserver.model.events.annotations.RegisterType;
 import com.l2jserver.gameserver.model.events.impl.character.player.OnPlayerChangeToAwakenedClass;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.quest.QuestState;
 import com.l2jserver.gameserver.network.SystemMessageId;
 import com.l2jserver.gameserver.network.serverpackets.AcquireSkillList;
@@ -217,7 +217,7 @@ public final class AwakeningMaster extends AbstractNpcAI
 			return;
 		}
 		
-		final L2ItemInstance item = player.getInventory().getItemByItemId(SCROLL_OF_AFTERLIFE);
+		final ItemInstance item = player.getInventory().getItemByItemId(SCROLL_OF_AFTERLIFE);
 		if (item == null)
 		{
 			return;

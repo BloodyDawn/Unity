@@ -24,7 +24,7 @@ import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.Summon;
 import com.l2jserver.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.items.instance.L2ItemInstance;
+import com.l2jserver.gameserver.model.items.instance.ItemInstance;
 import com.l2jserver.gameserver.model.skills.Skill;
 
 /**
@@ -64,7 +64,7 @@ public class ConditionPlayerHasPet extends Condition
 			return true;
 		}
 		
-		final L2ItemInstance controlItem = ((L2PetInstance) pet).getControlItem();
+		final ItemInstance controlItem = ((L2PetInstance) pet).getControlItem();
 		return (controlItem != null) && _controlItemIds.contains(controlItem.getId());
 	}
 }
