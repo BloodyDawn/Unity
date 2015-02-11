@@ -30,6 +30,12 @@ dependencies {
 	runtime(group: 'mysql', name: 'mysql-connector-java', version: '5.1.34')
 }
 
+eclipse {
+	project {
+		natures('org.springsource.ide.eclipse.gradle.core.nature')
+	}
+}
+
 tasks.eclipse.doLast {
 	copy {
 		from('eclipse-settings')
