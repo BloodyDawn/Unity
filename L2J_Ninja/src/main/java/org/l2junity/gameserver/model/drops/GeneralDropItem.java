@@ -233,9 +233,13 @@ public class GeneralDropItem implements IDropItem
 		
 		if (successes > 0)
 		{
-			final Collection<ItemHolder> items = new ArrayList<>(1);
-			items.add(new ItemHolder(getItemId(), Rnd.get(getMin(victim, killer), getMax(victim, killer)) * successes));
-			return items;
+			final long count = Rnd.get(getMin(victim, killer), getMax(victim, killer)) * successes;
+			if (count > 0)
+			{
+				final Collection<ItemHolder> items = new ArrayList<>(1);
+				items.add(new ItemHolder(getItemId(), count));
+				return items;
+			}
 		}
 		
 		return null;

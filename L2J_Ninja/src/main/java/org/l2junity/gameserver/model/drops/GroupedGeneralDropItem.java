@@ -145,9 +145,13 @@ public class GroupedGeneralDropItem implements IDropItem
 			totalChance += item.getChance();
 			if (totalChance > random)
 			{
-				final Collection<ItemHolder> items = new ArrayList<>(1);
-				items.add(new ItemHolder(item.getItemId(), Rnd.get(item.getMin(victim, killer), item.getMax(victim, killer)) * successes));
-				return items;
+				final long count = Rnd.get(item.getMin(victim, killer), item.getMax(victim, killer)) * successes;
+				if (count > 0)
+				{
+					final Collection<ItemHolder> items = new ArrayList<>(1);
+					items.add(new ItemHolder(item.getItemId(), count));
+					return items;
+				}
 			}
 		}
 		
