@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Point picking</title>
+	<title>Zone Creator</title>
 </head>
 <body>
 <center>
@@ -18,19 +18,19 @@
 	<table>	
 		<tr>
 			<td><edit var="name" width=127 height=15></td>
-			<td><button action="bypass -h admin_pointpicking setname $name" value="Set name" width=130 height=19 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
+			<td><button action="bypass -h admin_zones setname $name" value="Set name" width=130 height=19 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
 		</tr>
 		<tr>
-			<td><button action="bypass -h admin_pointpicking start" value="Picking" width=130 height=19 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-			<td><button action="bypass -h admin_pointpicking finish" value="Moving" width=130 height=19 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
+			<td><button action="bypass -h admin_zones start" value="Picking" width=130 height=19 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
+			<td><button action="bypass -h admin_zones finish" value="Moving" width=130 height=19 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
 		</tr>
 		<tr>
-			<td><button action="bypass -h admin_pointpicking dump" value="Dump" width=130 height=19 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-			<td><button action="bypass -h admin_pointpicking clear" value="Clear" width=130 height=19 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
+			<td><button action="bypass -h admin_zones dump" value="Dump" width=130 height=19 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
+			<td><button action="bypass -h admin_zones clear" value="Clear" width=130 height=19 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
 		</tr>
 		<tr>
-			<td><button action="bypass -h admin_pointpicking show" value="Show" width=130 height=19 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
-			<td><button action="bypass -h admin_pointpicking hide" value="Hide" width=130 height=19 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
+			<td><button action="bypass -h admin_zones show" value="Show" width=130 height=19 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
+			<td><button action="bypass -h admin_zones hide" value="Hide" width=130 height=19 back="L2UI_CT1.Button_DF_Down" fore="L2UI_CT1.Button_DF"></td>
 		</tr>
 	</table>
 </center>
@@ -47,9 +47,9 @@ Name: <font color="LEVEL">%name%</font>
 	<tr>
 		<td fixwidth=5></td>
 		<td fixwidth=20>#</td>
-		<td fixwidth=50>X</td>
-		<td fixwidth=50>Y</td>
-		<td fixwidth=50>Z</td>
+		<td fixwidth=60>X</td>
+		<td fixwidth=60>Y</td>
+		<td fixwidth=60>Z</td>
 		<td fixwidth=30>Edit</td>
 		<td fixwidth=30>Tele</td>
 		<td fixwidth=30>Dele</td>

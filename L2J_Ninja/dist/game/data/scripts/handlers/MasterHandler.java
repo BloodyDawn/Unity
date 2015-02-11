@@ -83,7 +83,7 @@ import handlers.admincommandhandlers.AdminPathNode;
 import handlers.admincommandhandlers.AdminPcCondOverride;
 import handlers.admincommandhandlers.AdminPetition;
 import handlers.admincommandhandlers.AdminPledge;
-import handlers.admincommandhandlers.AdminPointPicking;
+import handlers.admincommandhandlers.AdminZones;
 import handlers.admincommandhandlers.AdminPolymorph;
 import handlers.admincommandhandlers.AdminPrimePoints;
 import handlers.admincommandhandlers.AdminPunishment;
@@ -373,7 +373,7 @@ public class MasterHandler
 			AdminPetition.class,
 			AdminPForge.class,
 			AdminPledge.class,
-			AdminPointPicking.class,
+			AdminZones.class,
 			AdminPolymorph.class,
 			AdminPrimePoints.class,
 			AdminPunishment.class,
