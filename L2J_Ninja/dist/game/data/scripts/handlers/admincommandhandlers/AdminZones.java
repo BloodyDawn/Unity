@@ -59,7 +59,7 @@ import ai.npc.AbstractNpcAI;
 /**
  * @author UnAfraid
  */
-public class AdminPointPicking extends AbstractNpcAI implements IAdminCommandHandler
+public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 {
 	private static final Logger _log = Logger.getLogger(AdminPathNode.class.getName());
 	private final Map<Integer, ZoneNodeHolder> _zones = new ConcurrentHashMap<>();
@@ -67,12 +67,11 @@ public class AdminPointPicking extends AbstractNpcAI implements IAdminCommandHan
 	private static final String[] COMMANDS =
 	{
 		"admin_zones",
-		"admin_pointpicking"
 	};
 	
-	public AdminPointPicking()
+	public AdminZones()
 	{
-		super(AdminPointPicking.class.getSimpleName(), "handlers");
+		super(AdminZones.class.getSimpleName(), "handlers");
 	}
 	
 	@Override
@@ -109,19 +108,11 @@ public class AdminPointPicking extends AbstractNpcAI implements IAdminCommandHan
 						}
 						break;
 					}
-				}
-				break;
-			}
-			case "admin_pointpicking":
-			{
-				if (!st.hasMoreTokens())
-				{
-					break;
-				}
-				
-				final String subCmd = st.nextToken();
-				switch (subCmd)
-				{
+					case "create":
+					{
+						buildHtmlWindow(activeChar, 0);
+						break;
+					}
 					case "setname":
 					{
 						String name = "";
@@ -277,8 +268,7 @@ public class AdminPointPicking extends AbstractNpcAI implements IAdminCommandHan
 		if ((zoneType != null) && (zoneType.getZone() instanceof ZoneNPoly))
 		{
 			final ZoneNPoly zone = (ZoneNPoly) zoneType.getZone();
-			_zones.put(activeChar.getObjectId(), new ZoneNodeHolder());
-			final ZoneNodeHolder holder = _zones.get(activeChar.getObjectId());
+			final ZoneNodeHolder holder = _zones.put(activeChar.getObjectId(), new ZoneNodeHolder());
 			holder.setName(zoneType.getName());
 			for (int i = 0; i < zone.getX().length; i++)
 			{
@@ -301,8 +291,7 @@ public class AdminPointPicking extends AbstractNpcAI implements IAdminCommandHan
 			activeChar.sendMessage("You cannot use symbols like: < > & \" $ \\");
 			return;
 		}
-		_zones.putIfAbsent(activeChar.getObjectId(), new ZoneNodeHolder());
-		_zones.get(activeChar.getObjectId()).setName(name);
+		_zones.computeIfAbsent(activeChar.getObjectId(), key -> new ZoneNodeHolder()).setName(name);
 	}
 	
 	/**
@@ -341,9 +330,9 @@ public class AdminPointPicking extends AbstractNpcAI implements IAdminCommandHan
 	 */
 	private void showPoints(L2PcInstance activeChar)
 	{
-		if (_zones.containsKey(activeChar.getObjectId()))
+		final ZoneNodeHolder holder = _zones.get(activeChar.getObjectId());
+		if (holder != null)
 		{
-			final ZoneNodeHolder holder = _zones.get(activeChar.getObjectId());
 			if (holder.getNodes().size() < 3)
 			{
 				activeChar.sendMessage("In order to visualize this zone you must have at least 3 points.");
@@ -374,9 +363,9 @@ public class AdminPointPicking extends AbstractNpcAI implements IAdminCommandHan
 	 */
 	private void changePoint(L2PcInstance activeChar, int index)
 	{
-		if (_zones.containsKey(activeChar.getObjectId()))
+		final ZoneNodeHolder holder = _zones.get(activeChar.getObjectId());
+		if (holder != null)
 		{
-			final ZoneNodeHolder holder = _zones.get(activeChar.getObjectId());
 			final Location loc = holder.getNodes().get(index);
 			if (loc != null)
 			{
@@ -392,9 +381,9 @@ public class AdminPointPicking extends AbstractNpcAI implements IAdminCommandHan
 	 */
 	private void deletePoint(L2PcInstance activeChar, int index)
 	{
-		if (_zones.containsKey(activeChar.getObjectId()))
+		final ZoneNodeHolder holder = _zones.get(activeChar.getObjectId());
+		if (holder != null)
 		{
-			final ZoneNodeHolder holder = _zones.get(activeChar.getObjectId());
 			final Location loc = holder.getNodes().get(index);
 			if (loc != null)
 			{
@@ -414,45 +403,48 @@ public class AdminPointPicking extends AbstractNpcAI implements IAdminCommandHan
 	 */
 	private void dumpPoints(final L2PcInstance activeChar)
 	{
-		if (_zones.containsKey(activeChar.getObjectId()))
+		final ZoneNodeHolder holder = _zones.get(activeChar.getObjectId());
+		if ((holder != null) && !holder.getNodes().isEmpty())
 		{
-			final ZoneNodeHolder holder = _zones.get(activeChar.getObjectId());
-			if (!holder.getNodes().isEmpty())
+			if (holder.getName().isEmpty())
 			{
-				final Location firstNode = holder.getNodes().get(0);
-				final StringBuilder sb = new StringBuilder();
-				sb.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + Config.EOL);
-				sb.append("<list enabled=\"true\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"../../../data/xsd/zones.xsd\">" + Config.EOL);
-				sb.append("\t<zone name=\"" + holder.getName() + "\" type=\"ScriptZone\" shape=\"NPoly\" minZ=\"" + (firstNode.getZ() - 100) + "\" maxZ=\"" + (firstNode.getZ() + 100) + "\">" + Config.EOL);
-				for (Location loc : holder.getNodes())
+				activeChar.sendMessage("Set name first!");
+				return;
+			}
+			
+			final Location firstNode = holder.getNodes().get(0);
+			final StringBuilder sb = new StringBuilder();
+			sb.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + Config.EOL);
+			sb.append("<list enabled=\"true\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"../../../data/xsd/zones.xsd\">" + Config.EOL);
+			sb.append("\t<zone name=\"" + holder.getName() + "\" type=\"ScriptZone\" shape=\"NPoly\" minZ=\"" + (firstNode.getZ() - 100) + "\" maxZ=\"" + (firstNode.getZ() + 100) + "\">" + Config.EOL);
+			for (Location loc : holder.getNodes())
+			{
+				sb.append("\t\t<node X=\"" + loc.getX() + "\" Y=\"" + loc.getY() + "\" />" + Config.EOL);
+			}
+			sb.append("\t</zone>" + Config.EOL);
+			sb.append("</list>" + Config.EOL);
+			try
+			{
+				File file = new File(Config.DATAPACK_ROOT, "log/points/" + activeChar.getAccountName() + "/" + holder.getName() + ".xml");
+				if (file.exists())
 				{
-					sb.append("\t\t<node X=\"" + loc.getX() + "\" Y=\"" + loc.getY() + "\" />" + Config.EOL);
-				}
-				sb.append("\t</zone>" + Config.EOL);
-				sb.append("</list>" + Config.EOL);
-				try
-				{
-					File file = new File(Config.DATAPACK_ROOT, "log/points/" + activeChar.getAccountName() + "/" + holder.getName() + ".xml");
-					if (file.exists())
+					int i = 0;
+					while ((file = new File(Config.DATAPACK_ROOT, "log/points/" + activeChar.getAccountName() + "/" + holder.getName() + i + ".xml")).exists())
 					{
-						int i = 0;
-						while ((file = new File(Config.DATAPACK_ROOT, "log/points/" + activeChar.getAccountName() + "/" + holder.getName() + i + ".xml")).exists())
-						{
-							i++;
-						}
+						i++;
 					}
-					if (!file.getParentFile().isDirectory())
-					{
-						file.getParentFile().mkdirs();
-					}
-					Files.write(file.toPath(), sb.toString().getBytes(StandardCharsets.UTF_8));
-					activeChar.sendMessage("Successfully written on: " + file.getAbsolutePath().replace(Config.DATAPACK_ROOT.getAbsolutePath(), ""));
 				}
-				catch (Exception e)
+				if (!file.getParentFile().isDirectory())
 				{
-					activeChar.sendMessage("Failed writing the dump: " + e.getMessage());
-					_log.log(Level.WARNING, "Failed writing point picking dump for " + activeChar.getName() + ":" + e.getMessage(), e);
+					file.getParentFile().mkdirs();
 				}
+				Files.write(file.toPath(), sb.toString().getBytes(StandardCharsets.UTF_8));
+				activeChar.sendMessage("Successfully written on: " + file.getAbsolutePath().replace(Config.DATAPACK_ROOT.getAbsolutePath(), ""));
+			}
+			catch (Exception e)
+			{
+				activeChar.sendMessage("Failed writing the dump: " + e.getMessage());
+				_log.log(Level.WARNING, "Failed writing point picking dump for " + activeChar.getName() + ":" + e.getMessage(), e);
 			}
 		}
 	}
@@ -466,8 +458,7 @@ public class AdminPointPicking extends AbstractNpcAI implements IAdminCommandHan
 		if (activeChar.hasAction(PlayerAction.ADMIN_POINT_PICKING))
 		{
 			final Location newLocation = event.getLocation();
-			_zones.putIfAbsent(activeChar.getObjectId(), new ZoneNodeHolder());
-			final ZoneNodeHolder holder = _zones.get(activeChar.getObjectId());
+			final ZoneNodeHolder holder = _zones.computeIfAbsent(activeChar.getObjectId(), key -> new ZoneNodeHolder());
 			final Location changeLog = holder.getChangingLoc();
 			if (changeLog != null)
 			{
@@ -502,13 +493,12 @@ public class AdminPointPicking extends AbstractNpcAI implements IAdminCommandHan
 	private void buildHtmlWindow(final L2PcInstance activeChar, final int page)
 	{
 		final NpcHtmlMessage msg = new NpcHtmlMessage(0, 1);
-		msg.setFile(activeChar.getHtmlPrefix(), "data/html/admin/pointpicking.htm");
-		_zones.putIfAbsent(activeChar.getObjectId(), new ZoneNodeHolder());
-		final ZoneNodeHolder holder = _zones.get(activeChar.getObjectId());
+		msg.setFile(activeChar.getHtmlPrefix(), "data/html/admin/zone_editor_create.htm");
+		final ZoneNodeHolder holder = _zones.computeIfAbsent(activeChar.getObjectId(), key -> new ZoneNodeHolder());
 		final AtomicInteger position = new AtomicInteger(page * 20);
 		final PageResult result = HtmlUtil.createPage(holder.getNodes(), page, 20, i ->
 		{
-			return "<td align=center><button action=\"bypass -h admin_pointpicking list " + i + "\" value=\"" + (i + 1) + "\" width=30 height=22 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"></td>";
+			return "<td align=center><button action=\"bypass -h admin_zones list " + i + "\" value=\"" + (i + 1) + "\" width=30 height=22 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_CT1.Button_DF\"></td>";
 			
 		}, loc ->
 		{
@@ -519,9 +509,9 @@ public class AdminPointPicking extends AbstractNpcAI implements IAdminCommandHan
 			sb.append("<td fixwidth=50>" + loc.getX() + "</td>");
 			sb.append("<td fixwidth=50>" + loc.getY() + "</td>");
 			sb.append("<td fixwidth=50>" + loc.getZ() + "</td>");
-			sb.append("<td fixwidth=30><a action=\"bypass -h admin_pointpicking change " + holder.indexOf(loc) + "\">[E]</a></td>");
+			sb.append("<td fixwidth=30><a action=\"bypass -h admin_zones change " + holder.indexOf(loc) + "\">[E]</a></td>");
 			sb.append("<td fixwidth=30><a action=\"bypass -h admin_move_to " + loc.getX() + " " + loc.getY() + " " + loc.getZ() + "\">[T]</a></td>");
-			sb.append("<td fixwidth=30><a action=\"bypass -h admin_pointpicking delete " + holder.indexOf(loc) + "\">[D]</a></td>");
+			sb.append("<td fixwidth=30><a action=\"bypass -h admin_zones delete " + holder.indexOf(loc) + "\">[D]</a></td>");
 			sb.append("<td fixwidth=5></td>");
 			sb.append("</tr>");
 			return sb.toString();
