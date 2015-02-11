@@ -25,6 +25,7 @@ import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.logging.Logger;
@@ -101,8 +102,6 @@ public final class JavaExecutionContext extends AbstractExecutionContext<JavaScr
 		
 		try (final ScriptingFileManager fileManager = new ScriptingFileManager(getScriptingEngine().getCompiler().getStandardFileManager(fileManagerDiagnostics, null, StandardCharsets.UTF_8)))
 		{
-			final StringWriter strOut = new StringWriter();
-			final PrintWriter out = new PrintWriter(strOut);
 			final LinkedList<String> options = new LinkedList<>();
 			
 			addOptionIfNotNull(options, getProperty("source"), "-source");
@@ -135,12 +134,14 @@ public final class JavaExecutionContext extends AbstractExecutionContext<JavaScr
 			}
 			
 			// we really need an iterable of files or strings
-			final LinkedList<String> sourcePathStrings = new LinkedList<>();
+			final List<String> sourcePathStrings = new LinkedList<>();
 			for (Path sourcePath : sourcePaths)
 			{
 				sourcePathStrings.add(sourcePath.toString());
 			}
 			
+			final StringWriter strOut = new StringWriter();
+			final PrintWriter out = new PrintWriter(strOut);
 			final boolean compilationSuccess = getScriptingEngine().getCompiler().getTask(out, fileManager, compilationDiagnostics, options, null, fileManager.getJavaFileObjectsFromStrings(sourcePathStrings)).call();
 			if (!compilationSuccess)
 			{
@@ -171,8 +172,8 @@ public final class JavaExecutionContext extends AbstractExecutionContext<JavaScr
 			
 			final ClassLoader parentClassLoader = determineScriptParentClassloader();
 			
-			LinkedHashMap<Path, Throwable> executionFailures = new LinkedHashMap<>();
-			Iterable<ScriptingOutputFileObject> compiledClasses = fileManager.getCompiledClasses();
+			final Map<Path, Throwable> executionFailures = new LinkedHashMap<>();
+			final Iterable<ScriptingOutputFileObject> compiledClasses = fileManager.getCompiledClasses();
 			for (final Path sourcePath : sourcePaths)
 			{
 				boolean found = false;
