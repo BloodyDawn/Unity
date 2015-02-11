@@ -13,6 +13,11 @@ sourceSets {
 			srcDir('java')
 		}
 	}
+	scripts {
+		java {
+			srcDir('dist/game/data/scripts')
+		}
+	}
 }
 
 repositories {
