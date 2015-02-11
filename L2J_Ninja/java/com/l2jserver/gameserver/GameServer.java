@@ -131,9 +131,9 @@ import com.l2jserver.gameserver.instancemanager.SiegeManager;
 import com.l2jserver.gameserver.instancemanager.WalkingManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.AutoSpawnHandler;
-import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.PartyMatchRoomList;
 import com.l2jserver.gameserver.model.PartyMatchWaitingList;
+import com.l2jserver.gameserver.model.World;
 import com.l2jserver.gameserver.model.entity.Hero;
 import com.l2jserver.gameserver.model.entity.TvTManager;
 import com.l2jserver.gameserver.model.events.EventDispatcher;
@@ -197,7 +197,7 @@ public class GameServer
 		new File("log/game").mkdirs();
 		
 		// load script engines
-		printSection("Engines");
+		printSection("Scripting Engines");
 		L2ScriptEngineManager.getInstance();
 		
 		printSection("World");
@@ -314,15 +314,12 @@ public class GameServer
 		
 		try
 		{
-			_log.info(getClass().getSimpleName() + ": Loading server scripts:");
-			if (!Config.ALT_DEV_NO_HANDLERS || !Config.ALT_DEV_NO_QUESTS)
-			{
-				L2ScriptEngineManager.getInstance().executeScriptList(new File(Config.DATAPACK_ROOT, "data/scripts.cfg"));
-			}
+			_log.info("Loading server scripts...");
+			L2ScriptEngineManager.getInstance().executeScriptList();
 		}
-		catch (IOException ioe)
+		catch (Exception e)
 		{
-			_log.severe(getClass().getSimpleName() + ": Failed loading scripts.cfg, scripts are not going to be loaded!");
+			_log.log(Level.WARNING, "Failed to execute script list!", e);
 		}
 		
 		SpawnTable.getInstance().load();

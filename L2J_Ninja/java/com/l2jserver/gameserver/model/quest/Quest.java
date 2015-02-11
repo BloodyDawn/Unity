@@ -45,8 +45,8 @@ import com.l2jserver.gameserver.enums.CategoryType;
 import com.l2jserver.gameserver.enums.Race;
 import com.l2jserver.gameserver.enums.TrapAction;
 import com.l2jserver.gameserver.instancemanager.QuestManager;
-import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.Party;
+import com.l2jserver.gameserver.model.WorldObject;
 import com.l2jserver.gameserver.model.actor.Attackable;
 import com.l2jserver.gameserver.model.actor.Creature;
 import com.l2jserver.gameserver.model.actor.Npc;
@@ -71,7 +71,6 @@ import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
 import com.l2jserver.gameserver.network.serverpackets.ExQuestNpcLogList;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jserver.gameserver.network.serverpackets.NpcQuestHtmlMessage;
-import com.l2jserver.gameserver.scripting.ScriptManager;
 import com.l2jserver.util.Rnd;
 import com.l2jserver.util.Util;
 
@@ -1426,7 +1425,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public boolean showError(L2PcInstance player, Throwable t)
 	{
-		_log.log(Level.WARNING, getScriptFile().getAbsolutePath(), t);
+		_log.log(Level.WARNING, getScriptFile().toAbsolutePath().toString(), t);
 		if (t.getMessage() == null)
 		{
 			_log.warning(getClass().getSimpleName() + ": " + t.getMessage());
@@ -2786,12 +2785,6 @@ public class Quest extends AbstractScript implements IIdentifiable
 			return QuestManager.getInstance().removeScript(this) && super.unload();
 		}
 		return super.unload();
-	}
-	
-	@Override
-	public ScriptManager<?> getScriptManager()
-	{
-		return QuestManager.getInstance();
 	}
 	
 	public void setOnEnterWorld(boolean state)

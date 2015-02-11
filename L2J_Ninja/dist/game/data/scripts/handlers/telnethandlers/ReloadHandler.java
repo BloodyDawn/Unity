@@ -18,12 +18,11 @@
  */
 package handlers.telnethandlers;
 
-import java.io.File;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.nio.file.Paths;
 import java.util.StringTokenizer;
-
-import javax.script.ScriptException;
+import java.util.logging.Level;
 
 import com.l2jserver.gameserver.cache.HtmCache;
 import com.l2jserver.gameserver.data.sql.impl.TeleportLocationTable;
@@ -120,27 +119,14 @@ public class ReloadHandler implements ITelnetHandler
 					{
 						String questPath = st.hasMoreTokens() ? st.nextToken() : "";
 						
-						File file = new File(L2ScriptEngineManager.SCRIPT_FOLDER, questPath);
-						if (file.isFile())
+						try
 						{
-							try
-							{
-								L2ScriptEngineManager.getInstance().executeScript(file);
-								_print.println(file.getName() + " was successfully loaded!\n");
-							}
-							catch (ScriptException e)
-							{
-								_print.println("Failed loading: " + questPath);
-								L2ScriptEngineManager.getInstance().reportScriptFileError(file, e);
-							}
-							catch (Exception e)
-							{
-								_print.println("Failed loading: " + questPath);
-							}
+							L2ScriptEngineManager.getInstance().executeScript(Paths.get(questPath));
+							_print.println(questPath + " was successfully loaded!\n");
 						}
-						else
+						catch (Exception e)
 						{
-							_print.println(file.getName() + " is not a file in: " + questPath);
+							_log.log(Level.WARNING, "Failed to execute script!", e);
 						}
 					}
 					catch (StringIndexOutOfBoundsException e)

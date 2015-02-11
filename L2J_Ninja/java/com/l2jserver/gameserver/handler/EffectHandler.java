@@ -18,7 +18,6 @@
  */
 package com.l2jserver.gameserver.handler;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -66,8 +65,7 @@ public final class EffectHandler implements IHandler<Class<? extends AbstractEff
 		try
 		{
 			
-			File file = new File(L2ScriptEngineManager.SCRIPT_FOLDER, "handlers/EffectMasterHandler.java");
-			L2ScriptEngineManager.getInstance().executeScript(file);
+			L2ScriptEngineManager.getInstance().executeEffectMasterHandler();
 		}
 		catch (Exception e)
 		{

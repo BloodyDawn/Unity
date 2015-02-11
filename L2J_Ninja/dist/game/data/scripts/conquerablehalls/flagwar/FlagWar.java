@@ -503,7 +503,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		}
 		
 		// Schedule open doors closement and siege start in 2 minutes
-		ThreadPoolManager.getInstance().scheduleGeneral(new CloseOutterDoorsTask(FlagWar.super), 300000);
+		ThreadPoolManager.getInstance().scheduleGeneral(new CloseOutterDoorsTask(this), 300000);
 	}
 	
 	/**
