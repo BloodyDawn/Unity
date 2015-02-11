@@ -1128,7 +1128,6 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 * @param npc this parameter contains a reference to the exact instance of the NPC that the player is talking with.
 	 * @param player this parameter contains a reference to the exact instance of the player who is talking to the NPC.
 	 * @return the text returned by the event (may be {@code null}, a filename or just text)
-	 * @since <a href="http://trac.l2jserver.com/changeset/771">Jython AI support for "onFirstTalk"</a>
 	 */
 	public String onFirstTalk(Npc npc, L2PcInstance player)
 	{
