@@ -19,8 +19,6 @@
 package com.l2jserver.gameserver.scripting;
 
 import java.io.FileInputStream;
-import java.io.FileReader;
-import java.io.LineNumberReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -172,74 +170,70 @@ public final class ScriptEngineManager
 		// throws exception if not exists or not file
 		checkExistingFile("ScriptList", SCRIPT_LIST_FILE);
 		
-		try (final LineNumberReader lnr = new LineNumberReader(new FileReader(SCRIPT_LIST_FILE.toString())))
+		final LinkedHashMap<IExecutionContext, LinkedList<Path>> files = new LinkedHashMap<>();
+		final LinkedList<String> extWithoutEngine = new LinkedList<>();
+		
+		Files.lines(SCRIPT_LIST_FILE).forEach(line ->
 		{
-			final LinkedHashMap<IExecutionContext, LinkedList<Path>> files = new LinkedHashMap<>();
-			final LinkedList<String> extWithoutEngine = new LinkedList<>();
-			
-			String line;
-			while ((line = lnr.readLine()) != null)
+			line = line.trim();
+			if (line.isEmpty() || (line.charAt(0) == '#'))
 			{
-				line = line.trim();
-				if (line.isEmpty() || (line.charAt(0) == '#'))
-				{
-					continue;
-				}
-				
-				Path sourceFile = SCRIPT_FOLDER.resolve(line);
-				try
-				{
-					checkExistingFile("ScriptFile", sourceFile);
-				}
-				catch (Exception e)
-				{
-					_log.warning(e.getMessage());
-					continue;
-				}
-				
-				sourceFile = sourceFile.toAbsolutePath();
-				final String ext = getFileExtension(sourceFile);
-				if (ext == null)
-				{
-					_log.warning("ScriptFile: " + sourceFile + " does not have an extension to determine the script engine!");
-					continue;
-				}
-				
-				final IExecutionContext engine = getEngineByExtension(ext);
-				if (engine == null)
-				{
-					if (!extWithoutEngine.contains(ext))
-					{
-						extWithoutEngine.add(ext);
-						_log.warning("ScriptEngine: No engine registered for extension " + ext + "!");
-					}
-					continue;
-				}
-				
-				LinkedList<Path> ll = files.get(engine);
-				if (ll == null)
-				{
-					ll = new LinkedList<>();
-					files.put(engine, ll);
-				}
-				ll.add(sourceFile);
+				return;
 			}
 			
-			for (Entry<IExecutionContext, LinkedList<Path>> entry : files.entrySet())
+			Path sourceFile = SCRIPT_FOLDER.resolve(line);
+			try
 			{
-				_currentExecutionContext = entry.getKey();
-				try
+				checkExistingFile("ScriptFile", sourceFile);
+			}
+			catch (Exception e)
+			{
+				_log.warning(e.getMessage());
+				return;
+			}
+			
+			sourceFile = sourceFile.toAbsolutePath();
+			final String ext = getFileExtension(sourceFile);
+			if (ext == null)
+			{
+				_log.warning("ScriptFile: " + sourceFile + " does not have an extension to determine the script engine!");
+				return;
+			}
+			
+			final IExecutionContext engine = getEngineByExtension(ext);
+			if (engine == null)
+			{
+				if (!extWithoutEngine.contains(ext))
 				{
-					Map<Path, Throwable> invokationErrors = entry.getKey().executeScripts(entry.getValue());
-					for (Entry<Path, Throwable> entry2 : invokationErrors.entrySet())
-					{
-						_log.log(Level.WARNING, "ScriptEngine: " + entry2.getKey() + " failed execution!", entry2.getValue());
-					}
+					extWithoutEngine.add(ext);
+					_log.warning("ScriptEngine: No engine registered for extension " + ext + "!");
 				}
-				finally
+				return;
+			}
+			
+			LinkedList<Path> ll = files.get(engine);
+			if (ll == null)
+			{
+				ll = new LinkedList<>();
+				files.put(engine, ll);
+			}
+			ll.add(sourceFile);
+		});
+		
+		for (Entry<IExecutionContext, LinkedList<Path>> entry : files.entrySet())
+		{
+			_currentExecutionContext = entry.getKey();
+			try
+			{
+				Map<Path, Throwable> invokationErrors = entry.getKey().executeScripts(entry.getValue());
+				for (Entry<Path, Throwable> entry2 : invokationErrors.entrySet())
 				{
-					_currentExecutionContext = null;
+					_log.log(Level.WARNING, "ScriptEngine: " + entry2.getKey() + " failed execution!", entry2.getValue());
 				}
+			}
+			finally
+			{
+				_currentExecutionContext = null;
 			}
 		}
 	}
