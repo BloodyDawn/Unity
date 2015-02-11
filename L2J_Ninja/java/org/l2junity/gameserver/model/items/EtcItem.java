@@ -34,9 +34,9 @@ public final class EtcItem extends L2Item
 {
 	private String _handler;
 	private EtcItemType _type;
-	private final boolean _isBlessed;
-	private final List<ExtractableProduct> _extractableItems;
-	private final boolean _isInfinite;
+	private boolean _isBlessed;
+	private List<ExtractableProduct> _extractableItems;
+	private boolean _isInfinite;
 	
 	/**
 	 * Constructor for EtcItem.
@@ -45,6 +45,12 @@ public final class EtcItem extends L2Item
 	public EtcItem(StatsSet set)
 	{
 		super(set);
+	}
+	
+	@Override
+	public void set(StatsSet set)
+	{
+		super.set(set);
 		_type = set.getEnum("etcitem_type", EtcItemType.class, EtcItemType.NONE);
 		
 		// l2j custom - L2EtcItemType.SHOT

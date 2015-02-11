@@ -161,14 +161,17 @@ public final class DocumentItem extends DocumentBase
 	
 	private void makeItem() throws InvocationTargetException
 	{
+		// If item exists just reload the data.
 		if (_currentItem.item != null)
 		{
-			return; // item is already created
+			_currentItem.item.set(_currentItem.set);
+			return;
 		}
+		
 		try
 		{
-			Constructor<?> c = Class.forName("org.l2junity.gameserver.model.items." + _currentItem.type).getConstructor(StatsSet.class);
-			_currentItem.item = (L2Item) c.newInstance(_currentItem.set);
+			final Constructor<?> itemClass = Class.forName("org.l2junity.gameserver.model.items." + _currentItem.type).getConstructor(StatsSet.class);
+			_currentItem.item = (L2Item) itemClass.newInstance(_currentItem.set);
 		}
 		catch (Exception e)
 		{

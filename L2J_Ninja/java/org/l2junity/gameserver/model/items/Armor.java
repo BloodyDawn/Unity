@@ -42,6 +42,12 @@ public final class Armor extends L2Item
 	public Armor(StatsSet set)
 	{
 		super(set);
+	}
+	
+	@Override
+	public void set(StatsSet set)
+	{
+		super.set(set);
 		_type = set.getEnum("armor_type", ArmorType.class, ArmorType.NONE);
 		
 		int _bodyPart = getBodyPart();
