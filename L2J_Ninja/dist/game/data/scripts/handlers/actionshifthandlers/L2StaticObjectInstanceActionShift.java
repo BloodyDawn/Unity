@@ -18,14 +18,14 @@
  */
 package handlers.actionshifthandlers;
 
-import com.l2jserver.gameserver.enums.InstanceType;
-import com.l2jserver.gameserver.handler.IActionShiftHandler;
-import com.l2jserver.gameserver.model.WorldObject;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.actor.instance.L2StaticObjectInstance;
-import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import com.l2jserver.gameserver.network.serverpackets.StaticObject;
-import com.l2jserver.util.StringUtil;
+import org.l2junity.gameserver.enums.InstanceType;
+import org.l2junity.gameserver.handler.IActionShiftHandler;
+import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
+import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
+import org.l2junity.gameserver.network.serverpackets.StaticObject;
+import org.l2junity.util.StringUtil;
 
 public class L2StaticObjectInstanceActionShift implements IActionShiftHandler
 {

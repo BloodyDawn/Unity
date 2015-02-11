@@ -24,9 +24,9 @@ import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.l2jserver.L2DatabaseFactory;
-import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.L2DatabaseFactory;
+import org.l2junity.gameserver.handler.IAdminCommandHandler;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * This class handles following admin commands: - delete = deletes target

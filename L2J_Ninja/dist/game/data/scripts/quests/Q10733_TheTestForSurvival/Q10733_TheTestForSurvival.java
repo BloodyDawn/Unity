@@ -18,15 +18,15 @@
  */
 package quests.Q10733_TheTestForSurvival;
 
-import quests.Q10732_AForeignLand.Q10732_AForeignLand;
+import org.l2junity.gameserver.enums.Race;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.base.ClassId;
+import org.l2junity.gameserver.model.quest.Quest;
+import org.l2junity.gameserver.model.quest.QuestState;
+import org.l2junity.gameserver.network.serverpackets.TutorialShowHtml;
 
-import com.l2jserver.gameserver.enums.Race;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.base.ClassId;
-import com.l2jserver.gameserver.model.quest.Quest;
-import com.l2jserver.gameserver.model.quest.QuestState;
-import com.l2jserver.gameserver.network.serverpackets.TutorialShowHtml;
+import quests.Q10732_AForeignLand.Q10732_AForeignLand;
 
 /**
  * @author Sdw

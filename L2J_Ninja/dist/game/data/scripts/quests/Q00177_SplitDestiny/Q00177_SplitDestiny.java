@@ -18,19 +18,19 @@
  */
 package quests.Q00177_SplitDestiny;
 
-import com.l2jserver.gameserver.data.xml.impl.CategoryData;
-import com.l2jserver.gameserver.enums.CategoryType;
-import com.l2jserver.gameserver.enums.SubclassInfoType;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.holders.ItemHolder;
-import com.l2jserver.gameserver.model.quest.Quest;
-import com.l2jserver.gameserver.model.quest.QuestState;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.ExSubjobInfo;
-import com.l2jserver.gameserver.network.serverpackets.SocialAction;
-import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
-import com.l2jserver.gameserver.util.Util;
+import org.l2junity.gameserver.data.xml.impl.CategoryData;
+import org.l2junity.gameserver.enums.CategoryType;
+import org.l2junity.gameserver.enums.SubclassInfoType;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.holders.ItemHolder;
+import org.l2junity.gameserver.model.quest.Quest;
+import org.l2junity.gameserver.model.quest.QuestState;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.ExSubjobInfo;
+import org.l2junity.gameserver.network.serverpackets.SocialAction;
+import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.util.Util;
 
 /**
  * @author Sdw

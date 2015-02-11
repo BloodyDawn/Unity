@@ -24,20 +24,20 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import com.l2jserver.gameserver.GameTimeController;
-import com.l2jserver.gameserver.LoginServerThread;
-import com.l2jserver.gameserver.data.xml.impl.AdminData;
-import com.l2jserver.gameserver.enums.ItemLocation;
-import com.l2jserver.gameserver.handler.ITelnetHandler;
-import com.l2jserver.gameserver.model.WorldObject;
-import com.l2jserver.gameserver.model.World;
-import com.l2jserver.gameserver.model.actor.Creature;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.Summon;
-import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
-import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.GameTimeController;
+import org.l2junity.gameserver.LoginServerThread;
+import org.l2junity.gameserver.data.xml.impl.AdminData;
+import org.l2junity.gameserver.enums.ItemLocation;
+import org.l2junity.gameserver.handler.ITelnetHandler;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.Summon;
+import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 /**
  * @author UnAfraid

@@ -18,17 +18,17 @@
  */
 package ai.npc.Teleports.SteelCitadelTeleport;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.Config;
+import org.l2junity.gameserver.instancemanager.GrandBossManager;
+import org.l2junity.gameserver.instancemanager.ZoneManager;
+import org.l2junity.gameserver.model.CommandChannel;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.Party;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.zone.type.L2BossZone;
 
-import com.l2jserver.Config;
-import com.l2jserver.gameserver.instancemanager.GrandBossManager;
-import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.CommandChannel;
-import com.l2jserver.gameserver.model.Party;
-import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.zone.type.L2BossZone;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Steel Citadel teleport AI.

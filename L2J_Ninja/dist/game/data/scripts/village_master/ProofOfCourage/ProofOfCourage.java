@@ -23,12 +23,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.gameserver.data.xml.impl.MultisellData;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.base.ClassId;
 
-import com.l2jserver.gameserver.data.xml.impl.MultisellData;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.base.ClassId;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Proof Of Courage implementation.

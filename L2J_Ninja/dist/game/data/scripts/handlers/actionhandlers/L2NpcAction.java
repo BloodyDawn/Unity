@@ -18,21 +18,21 @@
  */
 package handlers.actionhandlers;
 
-import com.l2jserver.Config;
-import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.enums.InstanceType;
-import com.l2jserver.gameserver.handler.IActionHandler;
-import com.l2jserver.gameserver.model.WorldObject;
-import com.l2jserver.gameserver.model.actor.Creature;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.entity.L2Event;
-import com.l2jserver.gameserver.model.events.EventDispatcher;
-import com.l2jserver.gameserver.model.events.EventType;
-import com.l2jserver.gameserver.model.events.impl.character.npc.OnNpcFirstTalk;
-import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
-import com.l2jserver.gameserver.network.serverpackets.MoveToPawn;
-import com.l2jserver.util.Rnd;
+import org.l2junity.Config;
+import org.l2junity.gameserver.ai.CtrlIntention;
+import org.l2junity.gameserver.enums.InstanceType;
+import org.l2junity.gameserver.handler.IActionHandler;
+import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.entity.L2Event;
+import org.l2junity.gameserver.model.events.EventDispatcher;
+import org.l2junity.gameserver.model.events.EventType;
+import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcFirstTalk;
+import org.l2junity.gameserver.network.serverpackets.ActionFailed;
+import org.l2junity.gameserver.network.serverpackets.MoveToPawn;
+import org.l2junity.util.Rnd;
 
 public class L2NpcAction implements IActionHandler
 {

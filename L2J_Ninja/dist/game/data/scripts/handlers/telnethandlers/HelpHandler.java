@@ -21,7 +21,7 @@ package handlers.telnethandlers;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-import com.l2jserver.gameserver.handler.ITelnetHandler;
+import org.l2junity.gameserver.handler.ITelnetHandler;
 
 /**
  * @author UnAfraid

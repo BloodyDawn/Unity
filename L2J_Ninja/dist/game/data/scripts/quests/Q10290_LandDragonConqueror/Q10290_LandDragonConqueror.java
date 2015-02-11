@@ -20,12 +20,12 @@ package quests.Q10290_LandDragonConqueror;
 
 import java.util.function.Function;
 
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.quest.Quest;
-import com.l2jserver.gameserver.model.quest.QuestState;
-import com.l2jserver.gameserver.model.quest.State;
-import com.l2jserver.gameserver.util.Util;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.quest.Quest;
+import org.l2junity.gameserver.model.quest.QuestState;
+import org.l2junity.gameserver.model.quest.State;
+import org.l2junity.gameserver.util.Util;
 
 /**
  * Land Dragon Conqueror (10290)

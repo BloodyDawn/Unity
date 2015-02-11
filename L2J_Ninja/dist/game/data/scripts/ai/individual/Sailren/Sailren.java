@@ -18,18 +18,18 @@
  */
 package ai.individual.Sailren;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.gameserver.instancemanager.GlobalVariablesManager;
+import org.l2junity.gameserver.instancemanager.ZoneManager;
+import org.l2junity.gameserver.model.TeleportWhereType;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.L2RaidBossInstance;
+import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.zone.type.L2NoRestartZone;
+import org.l2junity.gameserver.network.serverpackets.SpecialCamera;
 
-import com.l2jserver.gameserver.instancemanager.GlobalVariablesManager;
-import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.TeleportWhereType;
-import com.l2jserver.gameserver.model.actor.Creature;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.actor.instance.L2RaidBossInstance;
-import com.l2jserver.gameserver.model.holders.SkillHolder;
-import com.l2jserver.gameserver.model.zone.type.L2NoRestartZone;
-import com.l2jserver.gameserver.network.serverpackets.SpecialCamera;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Sailren AI.

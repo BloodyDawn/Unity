@@ -18,13 +18,13 @@
  */
 package quests.Q00185_NikolasCooperation;
 
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.quest.Quest;
+import org.l2junity.gameserver.model.quest.QuestState;
+
 import quests.Q00183_RelicExploration.Q00183_RelicExploration;
 import quests.Q00184_ArtOfPersuasion.Q00184_ArtOfPersuasion;
-
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.quest.Quest;
-import com.l2jserver.gameserver.model.quest.QuestState;
 
 /**
  * Nikola's Cooperation (185)

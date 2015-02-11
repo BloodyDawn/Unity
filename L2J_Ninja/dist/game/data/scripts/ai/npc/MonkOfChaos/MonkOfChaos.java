@@ -20,19 +20,19 @@ package ai.npc.MonkOfChaos;
 
 import java.util.List;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
+import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.enums.CategoryType;
+import org.l2junity.gameserver.enums.SubclassType;
+import org.l2junity.gameserver.model.SkillLearn;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.base.AcquireSkillType;
+import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.ExAcquirableSkillListByClass;
 
-import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
-import com.l2jserver.gameserver.datatables.SkillData;
-import com.l2jserver.gameserver.enums.CategoryType;
-import com.l2jserver.gameserver.enums.SubclassType;
-import com.l2jserver.gameserver.model.SkillLearn;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.base.AcquireSkillType;
-import com.l2jserver.gameserver.model.skills.Skill;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.ExAcquirableSkillListByClass;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Monk of Chaos AI.

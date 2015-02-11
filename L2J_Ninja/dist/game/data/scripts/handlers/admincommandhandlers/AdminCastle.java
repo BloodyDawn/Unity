@@ -20,17 +20,17 @@ package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
 
-import com.l2jserver.gameserver.cache.HtmCache;
-import com.l2jserver.gameserver.data.sql.impl.ClanTable;
-import com.l2jserver.gameserver.enums.CastleSide;
-import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.instancemanager.CastleManager;
-import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.entity.Castle;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import com.l2jserver.gameserver.util.Util;
+import org.l2junity.gameserver.cache.HtmCache;
+import org.l2junity.gameserver.data.sql.impl.ClanTable;
+import org.l2junity.gameserver.enums.CastleSide;
+import org.l2junity.gameserver.handler.IAdminCommandHandler;
+import org.l2junity.gameserver.instancemanager.CastleManager;
+import org.l2junity.gameserver.model.L2Clan;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.entity.Castle;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
+import org.l2junity.gameserver.util.Util;
 
 /**
  * Admin Castle manage admin commands.

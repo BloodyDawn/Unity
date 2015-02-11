@@ -18,30 +18,30 @@
  */
 package ai.npc.AwakeningMaster;
 
+import org.l2junity.gameserver.ThreadPoolManager;
+import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
+import org.l2junity.gameserver.enums.CategoryType;
+import org.l2junity.gameserver.enums.UserInfoType;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.base.ClassId;
+import org.l2junity.gameserver.model.entity.Hero;
+import org.l2junity.gameserver.model.events.EventType;
+import org.l2junity.gameserver.model.events.ListenerRegisterType;
+import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
+import org.l2junity.gameserver.model.events.annotations.RegisterType;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerChangeToAwakenedClass;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.model.quest.QuestState;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.AcquireSkillList;
+import org.l2junity.gameserver.network.serverpackets.ExChangeToAwakenedClass;
+import org.l2junity.gameserver.network.serverpackets.ExShowUsm;
+import org.l2junity.gameserver.network.serverpackets.SocialAction;
+import org.l2junity.gameserver.network.serverpackets.UserInfo;
+
 import quests.Q10338_SeizeYourDestiny.Q10338_SeizeYourDestiny;
 import ai.npc.AbstractNpcAI;
-
-import com.l2jserver.gameserver.ThreadPoolManager;
-import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
-import com.l2jserver.gameserver.enums.CategoryType;
-import com.l2jserver.gameserver.enums.UserInfoType;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.base.ClassId;
-import com.l2jserver.gameserver.model.entity.Hero;
-import com.l2jserver.gameserver.model.events.EventType;
-import com.l2jserver.gameserver.model.events.ListenerRegisterType;
-import com.l2jserver.gameserver.model.events.annotations.RegisterEvent;
-import com.l2jserver.gameserver.model.events.annotations.RegisterType;
-import com.l2jserver.gameserver.model.events.impl.character.player.OnPlayerChangeToAwakenedClass;
-import com.l2jserver.gameserver.model.items.instance.ItemInstance;
-import com.l2jserver.gameserver.model.quest.QuestState;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.AcquireSkillList;
-import com.l2jserver.gameserver.network.serverpackets.ExChangeToAwakenedClass;
-import com.l2jserver.gameserver.network.serverpackets.ExShowUsm;
-import com.l2jserver.gameserver.network.serverpackets.SocialAction;
-import com.l2jserver.gameserver.network.serverpackets.UserInfo;
 
 /**
  * AwakeningMaster AI.

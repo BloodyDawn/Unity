@@ -18,13 +18,13 @@
  */
 package handlers.effecthandlers;
 
-import com.l2jserver.gameserver.instancemanager.MapRegionManager;
-import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.TeleportWhereType;
-import com.l2jserver.gameserver.model.conditions.Condition;
-import com.l2jserver.gameserver.model.effects.AbstractEffect;
-import com.l2jserver.gameserver.model.effects.L2EffectType;
-import com.l2jserver.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.instancemanager.MapRegionManager;
+import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.TeleportWhereType;
+import org.l2junity.gameserver.model.conditions.Condition;
+import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.effects.L2EffectType;
+import org.l2junity.gameserver.model.skills.BuffInfo;
 
 /**
  * Escape effect implementation.

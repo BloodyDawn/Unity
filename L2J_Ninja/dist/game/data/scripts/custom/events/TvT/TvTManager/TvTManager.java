@@ -18,17 +18,17 @@
  */
 package custom.events.TvT.TvTManager;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.Config;
+import org.l2junity.gameserver.handler.IVoicedCommandHandler;
+import org.l2junity.gameserver.handler.VoicedCommandHandler;
+import org.l2junity.gameserver.instancemanager.AntiFeedManager;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.entity.TvTEvent;
+import org.l2junity.gameserver.model.olympiad.OlympiadManager;
+import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 
-import com.l2jserver.Config;
-import com.l2jserver.gameserver.handler.IVoicedCommandHandler;
-import com.l2jserver.gameserver.handler.VoicedCommandHandler;
-import com.l2jserver.gameserver.instancemanager.AntiFeedManager;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.entity.TvTEvent;
-import com.l2jserver.gameserver.model.olympiad.OlympiadManager;
-import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
+import ai.npc.AbstractNpcAI;
 
 /**
  * TvT Manager AI.

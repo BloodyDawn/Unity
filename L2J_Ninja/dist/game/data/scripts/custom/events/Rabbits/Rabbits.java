@@ -22,15 +22,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import com.l2jserver.Config;
-import com.l2jserver.gameserver.model.WorldObject;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.holders.SkillHolder;
-import com.l2jserver.gameserver.model.quest.Event;
-import com.l2jserver.gameserver.model.skills.Skill;
-import com.l2jserver.gameserver.util.Broadcast;
-import com.l2jserver.gameserver.util.Util;
+import org.l2junity.Config;
+import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.quest.Event;
+import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.util.Broadcast;
+import org.l2junity.gameserver.util.Util;
 
 /**
  * Rabbits event.<br>

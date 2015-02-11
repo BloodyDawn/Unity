@@ -18,14 +18,14 @@
  */
 package handlers.admincommandhandlers;
 
-import com.l2jserver.gameserver.data.xml.impl.AdminData;
-import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.WorldObject;
-import com.l2jserver.gameserver.model.World;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.CreatureSay;
+import org.l2junity.gameserver.data.xml.impl.AdminData;
+import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.handler.IAdminCommandHandler;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.CreatureSay;
 
 /**
  * This class handles following admin commands: - gmchat text = sends text to all online GM's - gmchat_menu text = same as gmchat, displays the admin panel after chat

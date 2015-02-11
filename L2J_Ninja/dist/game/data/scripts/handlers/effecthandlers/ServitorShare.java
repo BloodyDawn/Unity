@@ -18,15 +18,15 @@
  */
 package handlers.effecthandlers;
 
-import com.l2jserver.gameserver.ThreadPoolManager;
-import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.Creature;
-import com.l2jserver.gameserver.model.actor.Summon;
-import com.l2jserver.gameserver.model.conditions.Condition;
-import com.l2jserver.gameserver.model.effects.AbstractEffect;
-import com.l2jserver.gameserver.model.effects.EffectFlag;
-import com.l2jserver.gameserver.model.effects.L2EffectType;
-import com.l2jserver.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.ThreadPoolManager;
+import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Summon;
+import org.l2junity.gameserver.model.conditions.Condition;
+import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.effects.EffectFlag;
+import org.l2junity.gameserver.model.effects.L2EffectType;
+import org.l2junity.gameserver.model.skills.BuffInfo;
 
 /**
  * Servitor Share effect implementation.<br>

@@ -20,14 +20,14 @@ package hellbound.AI.Zones.BaseTower;
 
 import java.util.Map;
 
+import org.l2junity.gameserver.data.xml.impl.DoorData;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.base.ClassId;
+import org.l2junity.gameserver.model.holders.SkillHolder;
+
 import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
-
-import com.l2jserver.gameserver.data.xml.impl.DoorData;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.base.ClassId;
-import com.l2jserver.gameserver.model.holders.SkillHolder;
 
 /**
  * Base Tower.

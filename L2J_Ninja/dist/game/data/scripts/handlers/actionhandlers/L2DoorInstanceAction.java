@@ -18,17 +18,17 @@
  */
 package handlers.actionhandlers;
 
-import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.enums.InstanceType;
-import com.l2jserver.gameserver.handler.IActionHandler;
-import com.l2jserver.gameserver.model.WorldObject;
-import com.l2jserver.gameserver.model.actor.Creature;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.entity.clanhall.SiegableHall;
-import com.l2jserver.gameserver.model.holders.DoorRequestHolder;
-import com.l2jserver.gameserver.network.serverpackets.ConfirmDlg;
+import org.l2junity.gameserver.ai.CtrlIntention;
+import org.l2junity.gameserver.enums.InstanceType;
+import org.l2junity.gameserver.handler.IActionHandler;
+import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
+import org.l2junity.gameserver.model.holders.DoorRequestHolder;
+import org.l2junity.gameserver.network.serverpackets.ConfirmDlg;
 
 public class L2DoorInstanceAction implements IActionHandler
 {

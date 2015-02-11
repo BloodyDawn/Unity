@@ -18,16 +18,16 @@
  */
 package ai.fantasy_isle;
 
-import com.l2jserver.Config;
-import com.l2jserver.gameserver.instancemanager.HandysBlockCheckerManager;
-import com.l2jserver.gameserver.model.ArenaParticipantsHolder;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.quest.Quest;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.ExCubeGameChangeTimeToStart;
-import com.l2jserver.gameserver.network.serverpackets.ExCubeGameRequestReady;
-import com.l2jserver.gameserver.network.serverpackets.ExCubeGameTeamList;
+import org.l2junity.Config;
+import org.l2junity.gameserver.instancemanager.HandysBlockCheckerManager;
+import org.l2junity.gameserver.model.ArenaParticipantsHolder;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.quest.Quest;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.ExCubeGameChangeTimeToStart;
+import org.l2junity.gameserver.network.serverpackets.ExCubeGameRequestReady;
+import org.l2junity.gameserver.network.serverpackets.ExCubeGameTeamList;
 
 /**
  * Handys Block Checker Event AI.

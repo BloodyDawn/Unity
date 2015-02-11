@@ -18,19 +18,19 @@
  */
 package gracia.AI;
 
+import org.l2junity.gameserver.ai.CtrlIntention;
+import org.l2junity.gameserver.instancemanager.QuestManager;
+import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.quest.Quest;
+import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.NpcStringId;
+
 import gracia.AI.NPC.Nemo.Nemo;
 import ai.npc.AbstractNpcAI;
-
-import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.instancemanager.QuestManager;
-import com.l2jserver.gameserver.model.WorldObject;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.holders.SkillHolder;
-import com.l2jserver.gameserver.model.quest.Quest;
-import com.l2jserver.gameserver.model.skills.BuffInfo;
-import com.l2jserver.gameserver.model.skills.Skill;
-import com.l2jserver.gameserver.network.NpcStringId;
 
 /**
  * Maguen AI.

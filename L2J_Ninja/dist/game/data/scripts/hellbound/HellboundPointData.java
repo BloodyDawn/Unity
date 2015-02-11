@@ -21,11 +21,10 @@ package hellbound;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
-
-import com.l2jserver.gameserver.data.xml.IXmlReader;
 
 /**
  * Point data parser.

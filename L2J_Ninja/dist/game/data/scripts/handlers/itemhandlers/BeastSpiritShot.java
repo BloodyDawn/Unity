@@ -22,16 +22,16 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.stream.Collectors;
 
-import com.l2jserver.gameserver.enums.ShotType;
-import com.l2jserver.gameserver.handler.IItemHandler;
-import com.l2jserver.gameserver.model.actor.Playable;
-import com.l2jserver.gameserver.model.actor.Summon;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.holders.SkillHolder;
-import com.l2jserver.gameserver.model.items.instance.ItemInstance;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.MagicSkillUse;
-import com.l2jserver.gameserver.util.Broadcast;
+import org.l2junity.gameserver.enums.ShotType;
+import org.l2junity.gameserver.handler.IItemHandler;
+import org.l2junity.gameserver.model.actor.Playable;
+import org.l2junity.gameserver.model.actor.Summon;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
+import org.l2junity.gameserver.util.Broadcast;
 
 /**
  * Beast SpiritShot Handler

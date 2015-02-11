@@ -22,15 +22,15 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.l2junity.gameserver.ai.CtrlIntention;
+import org.l2junity.gameserver.data.xml.impl.NpcData;
+import org.l2junity.gameserver.model.actor.Attackable;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+
 import javolution.util.FastSet;
 import ai.npc.AbstractNpcAI;
-
-import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.data.xml.impl.NpcData;
-import com.l2jserver.gameserver.model.actor.Attackable;
-import com.l2jserver.gameserver.model.actor.Creature;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * Dark Water Dragon's AI.

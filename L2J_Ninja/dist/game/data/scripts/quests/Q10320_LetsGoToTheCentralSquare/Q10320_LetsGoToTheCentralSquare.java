@@ -18,24 +18,24 @@
  */
 package quests.Q10320_LetsGoToTheCentralSquare;
 
-import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.enums.Race;
-import com.l2jserver.gameserver.model.actor.Creature;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.events.EventType;
-import com.l2jserver.gameserver.model.events.ListenerRegisterType;
-import com.l2jserver.gameserver.model.events.annotations.RegisterEvent;
-import com.l2jserver.gameserver.model.events.annotations.RegisterType;
-import com.l2jserver.gameserver.model.events.impl.character.player.OnPlayerCreate;
-import com.l2jserver.gameserver.model.quest.Quest;
-import com.l2jserver.gameserver.model.quest.QuestState;
-import com.l2jserver.gameserver.model.quest.State;
-import com.l2jserver.gameserver.model.zone.L2ZoneType;
-import com.l2jserver.gameserver.network.NpcStringId;
-import com.l2jserver.gameserver.network.serverpackets.NpcSay;
-import com.l2jserver.gameserver.network.serverpackets.TutorialShowHtml;
-import com.l2jserver.gameserver.util.Broadcast;
+import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.enums.Race;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.events.EventType;
+import org.l2junity.gameserver.model.events.ListenerRegisterType;
+import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
+import org.l2junity.gameserver.model.events.annotations.RegisterType;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerCreate;
+import org.l2junity.gameserver.model.quest.Quest;
+import org.l2junity.gameserver.model.quest.QuestState;
+import org.l2junity.gameserver.model.quest.State;
+import org.l2junity.gameserver.model.zone.L2ZoneType;
+import org.l2junity.gameserver.network.NpcStringId;
+import org.l2junity.gameserver.network.serverpackets.NpcSay;
+import org.l2junity.gameserver.network.serverpackets.TutorialShowHtml;
+import org.l2junity.gameserver.util.Broadcast;
 
 /**
  * Let's Go To The Central Square (10320)

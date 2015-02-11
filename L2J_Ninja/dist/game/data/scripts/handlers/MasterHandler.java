@@ -259,20 +259,20 @@ import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.l2jserver.Config;
-import com.l2jserver.gameserver.handler.ActionHandler;
-import com.l2jserver.gameserver.handler.ActionShiftHandler;
-import com.l2jserver.gameserver.handler.AdminCommandHandler;
-import com.l2jserver.gameserver.handler.BypassHandler;
-import com.l2jserver.gameserver.handler.ChatHandler;
-import com.l2jserver.gameserver.handler.CommunityBoardHandler;
-import com.l2jserver.gameserver.handler.IHandler;
-import com.l2jserver.gameserver.handler.ItemHandler;
-import com.l2jserver.gameserver.handler.PunishmentHandler;
-import com.l2jserver.gameserver.handler.TargetHandler;
-import com.l2jserver.gameserver.handler.TelnetHandler;
-import com.l2jserver.gameserver.handler.UserCommandHandler;
-import com.l2jserver.gameserver.handler.VoicedCommandHandler;
+import org.l2junity.Config;
+import org.l2junity.gameserver.handler.ActionHandler;
+import org.l2junity.gameserver.handler.ActionShiftHandler;
+import org.l2junity.gameserver.handler.AdminCommandHandler;
+import org.l2junity.gameserver.handler.BypassHandler;
+import org.l2junity.gameserver.handler.ChatHandler;
+import org.l2junity.gameserver.handler.CommunityBoardHandler;
+import org.l2junity.gameserver.handler.IHandler;
+import org.l2junity.gameserver.handler.ItemHandler;
+import org.l2junity.gameserver.handler.PunishmentHandler;
+import org.l2junity.gameserver.handler.TargetHandler;
+import org.l2junity.gameserver.handler.TelnetHandler;
+import org.l2junity.gameserver.handler.UserCommandHandler;
+import org.l2junity.gameserver.handler.VoicedCommandHandler;
 
 /**
  * Master handler.

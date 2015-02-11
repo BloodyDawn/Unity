@@ -21,17 +21,17 @@ package handlers.effecthandlers;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.l2jserver.gameserver.ai.CtrlEvent;
-import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.model.WorldObject;
-import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.Creature;
-import com.l2jserver.gameserver.model.conditions.Condition;
-import com.l2jserver.gameserver.model.effects.AbstractEffect;
-import com.l2jserver.gameserver.model.effects.EffectFlag;
-import com.l2jserver.gameserver.model.skills.BuffInfo;
-import com.l2jserver.gameserver.model.stats.Formulas;
-import com.l2jserver.util.Rnd;
+import org.l2junity.gameserver.ai.CtrlEvent;
+import org.l2junity.gameserver.ai.CtrlIntention;
+import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.conditions.Condition;
+import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.effects.EffectFlag;
+import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.stats.Formulas;
+import org.l2junity.util.Rnd;
 
 /**
  * Confuse effect implementation.

@@ -18,20 +18,20 @@
  */
 package handlers.effecthandlers;
 
-import com.l2jserver.Config;
-import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.conditions.Condition;
-import com.l2jserver.gameserver.model.effects.AbstractEffect;
-import com.l2jserver.gameserver.model.entity.Instance;
-import com.l2jserver.gameserver.model.entity.TvTEvent;
-import com.l2jserver.gameserver.model.holders.SummonRequestHolder;
-import com.l2jserver.gameserver.model.skills.BuffInfo;
-import com.l2jserver.gameserver.model.zone.ZoneId;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.ConfirmDlg;
-import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.Config;
+import org.l2junity.gameserver.instancemanager.InstanceManager;
+import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.conditions.Condition;
+import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.entity.Instance;
+import org.l2junity.gameserver.model.entity.TvTEvent;
+import org.l2junity.gameserver.model.holders.SummonRequestHolder;
+import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.ConfirmDlg;
+import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * Call Pc effect implementation.

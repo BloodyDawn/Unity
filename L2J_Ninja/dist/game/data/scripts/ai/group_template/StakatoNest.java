@@ -20,17 +20,17 @@ package ai.group_template;
 
 import java.util.List;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
+import org.l2junity.gameserver.util.Broadcast;
+import org.l2junity.gameserver.util.Util;
 
-import com.l2jserver.gameserver.datatables.SkillData;
-import com.l2jserver.gameserver.model.WorldObject;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.skills.Skill;
-import com.l2jserver.gameserver.network.serverpackets.MagicSkillUse;
-import com.l2jserver.gameserver.util.Broadcast;
-import com.l2jserver.gameserver.util.Util;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Stakato Nest AI.

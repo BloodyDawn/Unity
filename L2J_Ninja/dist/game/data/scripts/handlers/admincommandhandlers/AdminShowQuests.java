@@ -23,21 +23,21 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.logging.Logger;
 
-import javolution.text.TextBuilder;
+import org.l2junity.L2DatabaseFactory;
+import org.l2junity.gameserver.handler.IAdminCommandHandler;
+import org.l2junity.gameserver.instancemanager.QuestManager;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.quest.Quest;
+import org.l2junity.gameserver.model.quest.QuestState;
+import org.l2junity.gameserver.model.quest.State;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.ExShowQuestMark;
+import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
+import org.l2junity.gameserver.network.serverpackets.QuestList;
 
-import com.l2jserver.L2DatabaseFactory;
-import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.instancemanager.QuestManager;
-import com.l2jserver.gameserver.model.WorldObject;
-import com.l2jserver.gameserver.model.World;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.quest.Quest;
-import com.l2jserver.gameserver.model.quest.QuestState;
-import com.l2jserver.gameserver.model.quest.State;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.ExShowQuestMark;
-import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import com.l2jserver.gameserver.network.serverpackets.QuestList;
+import javolution.text.TextBuilder;
 
 /**
  * TODO: Rework and cleanup.

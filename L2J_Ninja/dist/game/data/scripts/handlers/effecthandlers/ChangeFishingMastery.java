@@ -18,9 +18,9 @@
  */
 package handlers.effecthandlers;
 
-import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.conditions.Condition;
-import com.l2jserver.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.conditions.Condition;
+import org.l2junity.gameserver.model.effects.AbstractEffect;
 
 /**
  * Change Fishing Mastery dummy effect implementation.

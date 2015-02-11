@@ -18,21 +18,21 @@
  */
 package handlers.effecthandlers;
 
-import com.l2jserver.gameserver.enums.ShotType;
-import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.Creature;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.conditions.Condition;
-import com.l2jserver.gameserver.model.effects.AbstractEffect;
-import com.l2jserver.gameserver.model.effects.L2EffectType;
-import com.l2jserver.gameserver.model.items.Weapon;
-import com.l2jserver.gameserver.model.items.type.WeaponType;
-import com.l2jserver.gameserver.model.skills.BuffInfo;
-import com.l2jserver.gameserver.model.skills.Skill;
-import com.l2jserver.gameserver.model.stats.BaseStats;
-import com.l2jserver.gameserver.model.stats.Formulas;
-import com.l2jserver.gameserver.model.stats.Stats;
-import com.l2jserver.util.Rnd;
+import org.l2junity.gameserver.enums.ShotType;
+import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.conditions.Condition;
+import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.effects.L2EffectType;
+import org.l2junity.gameserver.model.items.Weapon;
+import org.l2junity.gameserver.model.items.type.WeaponType;
+import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.stats.BaseStats;
+import org.l2junity.gameserver.model.stats.Formulas;
+import org.l2junity.gameserver.model.stats.Stats;
+import org.l2junity.util.Rnd;
 
 /**
  * Energy Attack effect implementation.

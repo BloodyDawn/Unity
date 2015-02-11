@@ -20,17 +20,17 @@ package ai.npc.AlchemistManager;
 
 import java.util.List;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
+import org.l2junity.gameserver.enums.Race;
+import org.l2junity.gameserver.model.SkillLearn;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.base.AcquireSkillType;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.ExAcquirableSkillListByClass;
+import org.l2junity.gameserver.network.serverpackets.TutorialShowHtml;
 
-import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
-import com.l2jserver.gameserver.enums.Race;
-import com.l2jserver.gameserver.model.SkillLearn;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.base.AcquireSkillType;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.ExAcquirableSkillListByClass;
-import com.l2jserver.gameserver.network.serverpackets.TutorialShowHtml;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Alchemist Manager AI.

@@ -18,10 +18,10 @@
  */
 package handlers.communityboard;
 
-import com.l2jserver.gameserver.cache.HtmCache;
-import com.l2jserver.gameserver.handler.CommunityBoardHandler;
-import com.l2jserver.gameserver.handler.IWriteBoardHandler;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.cache.HtmCache;
+import org.l2junity.gameserver.handler.CommunityBoardHandler;
+import org.l2junity.gameserver.handler.IWriteBoardHandler;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * Memo board.

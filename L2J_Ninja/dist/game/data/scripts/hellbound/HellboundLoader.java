@@ -55,11 +55,11 @@ import hellbound.Instances.UrbanArea.UrbanArea;
 
 import java.util.logging.Logger;
 
-import com.l2jserver.Config;
-import com.l2jserver.gameserver.handler.AdminCommandHandler;
-import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.handler.IVoicedCommandHandler;
-import com.l2jserver.gameserver.handler.VoicedCommandHandler;
+import org.l2junity.Config;
+import org.l2junity.gameserver.handler.AdminCommandHandler;
+import org.l2junity.gameserver.handler.IAdminCommandHandler;
+import org.l2junity.gameserver.handler.IVoicedCommandHandler;
+import org.l2junity.gameserver.handler.VoicedCommandHandler;
 
 /**
  * Hellbound class-loader.

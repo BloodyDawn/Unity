@@ -18,15 +18,15 @@
  */
 package ai.individual;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.instancemanager.ZoneManager;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.zone.type.L2EffectZone;
+import org.l2junity.gameserver.network.NpcStringId;
 
-import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.zone.type.L2EffectZone;
-import com.l2jserver.gameserver.network.NpcStringId;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Queen Shyeed AI

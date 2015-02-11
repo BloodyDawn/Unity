@@ -18,20 +18,20 @@
  */
 package ai.group_template;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.gameserver.GameTimeController;
+import org.l2junity.gameserver.ai.CtrlIntention;
+import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.NpcStringId;
+import org.l2junity.gameserver.util.Util;
 
-import com.l2jserver.gameserver.GameTimeController;
-import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.datatables.SkillData;
-import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.model.WorldObject;
-import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.skills.Skill;
-import com.l2jserver.gameserver.network.NpcStringId;
-import com.l2jserver.gameserver.util.Util;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Sel Mahum Training Ground AI for squads and chefs.

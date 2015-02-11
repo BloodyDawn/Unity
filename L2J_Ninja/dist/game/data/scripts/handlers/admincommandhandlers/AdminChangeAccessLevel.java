@@ -22,14 +22,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import com.l2jserver.Config;
-import com.l2jserver.L2DatabaseFactory;
-import com.l2jserver.gameserver.data.xml.impl.AdminData;
-import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.AccessLevel;
-import com.l2jserver.gameserver.model.World;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.network.SystemMessageId;
+import org.l2junity.Config;
+import org.l2junity.L2DatabaseFactory;
+import org.l2junity.gameserver.data.xml.impl.AdminData;
+import org.l2junity.gameserver.handler.IAdminCommandHandler;
+import org.l2junity.gameserver.model.AccessLevel;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.network.SystemMessageId;
 
 /**
  * Change access level command handler.

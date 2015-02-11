@@ -20,16 +20,16 @@ package handlers.voicedcommandhandlers;
 
 import java.util.StringTokenizer;
 
-import com.l2jserver.gameserver.data.sql.impl.CharNameTable;
-import com.l2jserver.gameserver.data.xml.impl.AdminData;
-import com.l2jserver.gameserver.handler.IVoicedCommandHandler;
-import com.l2jserver.gameserver.instancemanager.PunishmentManager;
-import com.l2jserver.gameserver.model.World;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.punishment.PunishmentAffect;
-import com.l2jserver.gameserver.model.punishment.PunishmentTask;
-import com.l2jserver.gameserver.model.punishment.PunishmentType;
-import com.l2jserver.gameserver.util.Util;
+import org.l2junity.gameserver.data.sql.impl.CharNameTable;
+import org.l2junity.gameserver.data.xml.impl.AdminData;
+import org.l2junity.gameserver.handler.IVoicedCommandHandler;
+import org.l2junity.gameserver.instancemanager.PunishmentManager;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.punishment.PunishmentAffect;
+import org.l2junity.gameserver.model.punishment.PunishmentTask;
+import org.l2junity.gameserver.model.punishment.PunishmentType;
+import org.l2junity.gameserver.util.Util;
 
 public class ChatAdmin implements IVoicedCommandHandler
 {

@@ -20,18 +20,18 @@ package handlers.bypasshandlers;
 
 import java.util.logging.Level;
 
-import com.l2jserver.Config;
-import com.l2jserver.gameserver.handler.IBypassHandler;
-import com.l2jserver.gameserver.model.actor.Creature;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
-import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import com.l2jserver.gameserver.network.serverpackets.SortedWareHouseWithdrawalList;
-import com.l2jserver.gameserver.network.serverpackets.SortedWareHouseWithdrawalList.WarehouseListType;
-import com.l2jserver.gameserver.network.serverpackets.WareHouseDepositList;
-import com.l2jserver.gameserver.network.serverpackets.WareHouseWithdrawalList;
+import org.l2junity.Config;
+import org.l2junity.gameserver.handler.IBypassHandler;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.ActionFailed;
+import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
+import org.l2junity.gameserver.network.serverpackets.SortedWareHouseWithdrawalList;
+import org.l2junity.gameserver.network.serverpackets.WareHouseDepositList;
+import org.l2junity.gameserver.network.serverpackets.WareHouseWithdrawalList;
+import org.l2junity.gameserver.network.serverpackets.SortedWareHouseWithdrawalList.WarehouseListType;
 
 public class PrivateWarehouse implements IBypassHandler
 {

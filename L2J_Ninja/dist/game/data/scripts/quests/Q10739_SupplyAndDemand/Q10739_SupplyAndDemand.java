@@ -18,16 +18,16 @@
  */
 package quests.Q10739_SupplyAndDemand;
 
-import quests.Q10738_AnInnerBeauty.Q10738_AnInnerBeauty;
+import org.l2junity.gameserver.enums.Race;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.holders.ItemHolder;
+import org.l2junity.gameserver.model.quest.Quest;
+import org.l2junity.gameserver.model.quest.QuestState;
+import org.l2junity.gameserver.network.NpcStringId;
+import org.l2junity.gameserver.network.serverpackets.ExShowScreenMessage;
 
-import com.l2jserver.gameserver.enums.Race;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.holders.ItemHolder;
-import com.l2jserver.gameserver.model.quest.Quest;
-import com.l2jserver.gameserver.model.quest.QuestState;
-import com.l2jserver.gameserver.network.NpcStringId;
-import com.l2jserver.gameserver.network.serverpackets.ExShowScreenMessage;
+import quests.Q10738_AnInnerBeauty.Q10738_AnInnerBeauty;
 
 /**
  * @author Sdw

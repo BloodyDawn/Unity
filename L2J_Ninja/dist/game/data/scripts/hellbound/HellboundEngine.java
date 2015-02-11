@@ -18,16 +18,16 @@
  */
 package hellbound;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.Config;
+import org.l2junity.gameserver.data.xml.impl.DoorData;
+import org.l2junity.gameserver.instancemanager.GlobalVariablesManager;
+import org.l2junity.gameserver.model.L2Spawn;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.util.Broadcast;
 
-import com.l2jserver.Config;
-import com.l2jserver.gameserver.data.xml.impl.DoorData;
-import com.l2jserver.gameserver.instancemanager.GlobalVariablesManager;
-import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2DoorInstance;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.util.Broadcast;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Hellbound Engine.

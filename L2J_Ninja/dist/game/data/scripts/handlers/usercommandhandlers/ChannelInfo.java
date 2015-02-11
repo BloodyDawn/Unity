@@ -18,10 +18,10 @@
  */
 package handlers.usercommandhandlers;
 
-import com.l2jserver.gameserver.handler.IUserCommandHandler;
-import com.l2jserver.gameserver.model.CommandChannel;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.network.serverpackets.ExMultiPartyCommandChannelInfo;
+import org.l2junity.gameserver.handler.IUserCommandHandler;
+import org.l2junity.gameserver.model.CommandChannel;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.network.serverpackets.ExMultiPartyCommandChannelInfo;
 
 /**
  * Channel Info user command.

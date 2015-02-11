@@ -18,13 +18,13 @@
  */
 package instances.HideoutOfTheDawn;
 
-import instances.AbstractInstance;
+import org.l2junity.gameserver.instancemanager.InstanceManager;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 
-import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
+import instances.AbstractInstance;
 
 /**
  * Hideout of the Dawn instance zone.

@@ -20,15 +20,15 @@ package custom.events.Elpies;
 
 import java.util.concurrent.ScheduledFuture;
 
-import com.l2jserver.Config;
-import com.l2jserver.gameserver.ThreadPoolManager;
-import com.l2jserver.gameserver.datatables.SpawnTable;
-import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2EventMonsterInstance;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.quest.Event;
-import com.l2jserver.gameserver.util.Broadcast;
+import org.l2junity.Config;
+import org.l2junity.gameserver.ThreadPoolManager;
+import org.l2junity.gameserver.datatables.SpawnTable;
+import org.l2junity.gameserver.model.L2Spawn;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2EventMonsterInstance;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.quest.Event;
+import org.l2junity.gameserver.util.Broadcast;
 
 public final class Elpies extends Event
 {

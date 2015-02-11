@@ -20,20 +20,20 @@ package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
 
-import com.l2jserver.gameserver.data.sql.impl.ClanTable;
-import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.instancemanager.AuctionManager;
-import com.l2jserver.gameserver.instancemanager.CHSiegeManager;
-import com.l2jserver.gameserver.instancemanager.ClanHallManager;
-import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.entity.ClanHall;
-import com.l2jserver.gameserver.model.entity.clanhall.SiegableHall;
-import com.l2jserver.gameserver.model.zone.type.L2ClanHallZone;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import com.l2jserver.gameserver.util.Util;
-import com.l2jserver.util.StringUtil;
+import org.l2junity.gameserver.data.sql.impl.ClanTable;
+import org.l2junity.gameserver.handler.IAdminCommandHandler;
+import org.l2junity.gameserver.instancemanager.AuctionManager;
+import org.l2junity.gameserver.instancemanager.CHSiegeManager;
+import org.l2junity.gameserver.instancemanager.ClanHallManager;
+import org.l2junity.gameserver.model.L2Clan;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.entity.ClanHall;
+import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
+import org.l2junity.gameserver.model.zone.type.L2ClanHallZone;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
+import org.l2junity.gameserver.util.Util;
+import org.l2junity.util.StringUtil;
 
 /**
  * This class handles Clan Hall commands.

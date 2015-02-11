@@ -18,16 +18,16 @@
  */
 package ai.npc.Pantheon;
 
+import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.quest.QuestState;
+import org.l2junity.gameserver.network.NpcStringId;
+import org.l2junity.gameserver.network.serverpackets.ExShowScreenMessage;
+
 import quests.Q10320_LetsGoToTheCentralSquare.Q10320_LetsGoToTheCentralSquare;
 import ai.npc.AbstractNpcAI;
-
-import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.quest.QuestState;
-import com.l2jserver.gameserver.network.NpcStringId;
-import com.l2jserver.gameserver.network.serverpackets.ExShowScreenMessage;
 
 /**
  * Pantheon AI.

@@ -28,21 +28,21 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.util.StringTokenizer;
 
-import com.l2jserver.Config;
-import com.l2jserver.gameserver.data.xml.impl.AdminData;
-import com.l2jserver.gameserver.data.xml.impl.TransformData;
-import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.World;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.entity.L2Event;
-import com.l2jserver.gameserver.model.entity.L2Event.EventState;
-import com.l2jserver.gameserver.network.serverpackets.CharInfo;
-import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import com.l2jserver.gameserver.network.serverpackets.PlaySound;
-import com.l2jserver.gameserver.network.serverpackets.UserInfo;
-import com.l2jserver.gameserver.util.Broadcast;
-import com.l2jserver.util.Rnd;
-import com.l2jserver.util.StringUtil;
+import org.l2junity.Config;
+import org.l2junity.gameserver.data.xml.impl.AdminData;
+import org.l2junity.gameserver.data.xml.impl.TransformData;
+import org.l2junity.gameserver.handler.IAdminCommandHandler;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.entity.L2Event;
+import org.l2junity.gameserver.model.entity.L2Event.EventState;
+import org.l2junity.gameserver.network.serverpackets.CharInfo;
+import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
+import org.l2junity.gameserver.network.serverpackets.PlaySound;
+import org.l2junity.gameserver.network.serverpackets.UserInfo;
+import org.l2junity.gameserver.util.Broadcast;
+import org.l2junity.util.Rnd;
+import org.l2junity.util.StringUtil;
 
 /**
  * This class handles following admin commands: - admin = shows menu

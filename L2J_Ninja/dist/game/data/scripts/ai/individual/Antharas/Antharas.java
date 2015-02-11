@@ -22,32 +22,32 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.Config;
+import org.l2junity.gameserver.ai.CtrlIntention;
+import org.l2junity.gameserver.enums.MountType;
+import org.l2junity.gameserver.instancemanager.GrandBossManager;
+import org.l2junity.gameserver.instancemanager.ZoneManager;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.Party;
+import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Attackable;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.zone.type.L2NoRestartZone;
+import org.l2junity.gameserver.network.NpcStringId;
+import org.l2junity.gameserver.network.serverpackets.Earthquake;
+import org.l2junity.gameserver.network.serverpackets.ExShowScreenMessage;
+import org.l2junity.gameserver.network.serverpackets.PlaySound;
+import org.l2junity.gameserver.network.serverpackets.SocialAction;
+import org.l2junity.gameserver.network.serverpackets.SpecialCamera;
+import org.l2junity.gameserver.util.Broadcast;
+import org.l2junity.gameserver.util.Util;
 
-import com.l2jserver.Config;
-import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.enums.MountType;
-import com.l2jserver.gameserver.instancemanager.GrandBossManager;
-import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.Party;
-import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.Attackable;
-import com.l2jserver.gameserver.model.actor.Creature;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2GrandBossInstance;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.holders.SkillHolder;
-import com.l2jserver.gameserver.model.skills.Skill;
-import com.l2jserver.gameserver.model.zone.type.L2NoRestartZone;
-import com.l2jserver.gameserver.network.NpcStringId;
-import com.l2jserver.gameserver.network.serverpackets.Earthquake;
-import com.l2jserver.gameserver.network.serverpackets.ExShowScreenMessage;
-import com.l2jserver.gameserver.network.serverpackets.PlaySound;
-import com.l2jserver.gameserver.network.serverpackets.SocialAction;
-import com.l2jserver.gameserver.network.serverpackets.SpecialCamera;
-import com.l2jserver.gameserver.util.Broadcast;
-import com.l2jserver.gameserver.util.Util;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Antharas AI.

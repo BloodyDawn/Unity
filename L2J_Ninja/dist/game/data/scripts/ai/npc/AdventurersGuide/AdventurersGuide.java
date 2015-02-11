@@ -18,12 +18,12 @@
  */
 package ai.npc.AdventurersGuide;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.skills.Skill;
 
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.holders.SkillHolder;
-import com.l2jserver.gameserver.model.skills.Skill;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Adventurers Guide AI.

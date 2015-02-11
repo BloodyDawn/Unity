@@ -18,7 +18,7 @@
  */
 package ai.fantasy_isle;
 
-import com.l2jserver.gameserver.instancemanager.QuestManager;
+import org.l2junity.gameserver.instancemanager.QuestManager;
 
 /**
  * Start MC Show.

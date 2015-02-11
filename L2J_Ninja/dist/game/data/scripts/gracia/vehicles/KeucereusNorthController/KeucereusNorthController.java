@@ -18,10 +18,10 @@
  */
 package gracia.vehicles.KeucereusNorthController;
 
-import gracia.vehicles.AirShipController;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.VehiclePathPoint;
 
-import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.VehiclePathPoint;
+import gracia.vehicles.AirShipController;
 
 public final class KeucereusNorthController extends AirShipController
 {

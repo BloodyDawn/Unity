@@ -23,24 +23,24 @@ import java.net.Socket;
 import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
 
-import com.l2jserver.Config;
-import com.l2jserver.gameserver.data.sql.impl.CharNameTable;
-import com.l2jserver.gameserver.handler.ITelnetHandler;
-import com.l2jserver.gameserver.instancemanager.PunishmentManager;
-import com.l2jserver.gameserver.model.World;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.itemcontainer.Inventory;
-import com.l2jserver.gameserver.model.items.instance.ItemInstance;
-import com.l2jserver.gameserver.model.punishment.PunishmentAffect;
-import com.l2jserver.gameserver.model.punishment.PunishmentTask;
-import com.l2jserver.gameserver.model.punishment.PunishmentType;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.CharInfo;
-import com.l2jserver.gameserver.network.serverpackets.InventoryUpdate;
-import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
-import com.l2jserver.gameserver.network.serverpackets.UserInfo;
-import com.l2jserver.gameserver.util.GMAudit;
-import com.l2jserver.gameserver.util.Util;
+import org.l2junity.Config;
+import org.l2junity.gameserver.data.sql.impl.CharNameTable;
+import org.l2junity.gameserver.handler.ITelnetHandler;
+import org.l2junity.gameserver.instancemanager.PunishmentManager;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.itemcontainer.Inventory;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.model.punishment.PunishmentAffect;
+import org.l2junity.gameserver.model.punishment.PunishmentTask;
+import org.l2junity.gameserver.model.punishment.PunishmentType;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.CharInfo;
+import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
+import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.network.serverpackets.UserInfo;
+import org.l2junity.gameserver.util.GMAudit;
+import org.l2junity.gameserver.util.Util;
 
 /**
  * @author UnAfraid

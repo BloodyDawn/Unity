@@ -18,15 +18,15 @@
  */
 package hellbound.AI;
 
+import org.l2junity.gameserver.ThreadPoolManager;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.skills.Skill;
+
 import hellbound.HellboundEngine;
 import ai.npc.AbstractNpcAI;
-
-import com.l2jserver.gameserver.ThreadPoolManager;
-import com.l2jserver.gameserver.model.WorldObject;
-import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.skills.Skill;
 
 /**
  * Chimeras AI.

@@ -18,18 +18,18 @@
  */
 package handlers.effecthandlers;
 
-import com.l2jserver.gameserver.ThreadPoolManager;
-import com.l2jserver.gameserver.datatables.SkillData;
-import com.l2jserver.gameserver.enums.SubclassInfoType;
-import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.conditions.Condition;
-import com.l2jserver.gameserver.model.effects.AbstractEffect;
-import com.l2jserver.gameserver.model.skills.BuffInfo;
-import com.l2jserver.gameserver.model.skills.Skill;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.ExSubjobInfo;
-import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.ThreadPoolManager;
+import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.enums.SubclassInfoType;
+import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.conditions.Condition;
+import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.ExSubjobInfo;
+import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * @author Sdw

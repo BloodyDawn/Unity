@@ -22,13 +22,13 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.StringTokenizer;
 
-import com.l2jserver.gameserver.data.xml.impl.AdminData;
-import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.handler.ITelnetHandler;
-import com.l2jserver.gameserver.model.World;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.network.serverpackets.CreatureSay;
-import com.l2jserver.gameserver.util.Broadcast;
+import org.l2junity.gameserver.data.xml.impl.AdminData;
+import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.handler.ITelnetHandler;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.network.serverpackets.CreatureSay;
+import org.l2junity.gameserver.util.Broadcast;
 
 /**
  * @author UnAfraid

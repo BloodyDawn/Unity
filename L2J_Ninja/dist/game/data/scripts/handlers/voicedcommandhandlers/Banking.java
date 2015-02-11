@@ -18,9 +18,9 @@
  */
 package handlers.voicedcommandhandlers;
 
-import com.l2jserver.Config;
-import com.l2jserver.gameserver.handler.IVoicedCommandHandler;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.Config;
+import org.l2junity.gameserver.handler.IVoicedCommandHandler;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * This class trades Gold Bars for Adena and vice versa.

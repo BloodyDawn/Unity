@@ -18,11 +18,11 @@
  */
 package hellbound.AI.NPC.Buron;
 
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+
 import hellbound.HellboundEngine;
 import ai.npc.AbstractNpcAI;
-
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * Buron AI.

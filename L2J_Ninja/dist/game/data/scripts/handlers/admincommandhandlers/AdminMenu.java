@@ -22,17 +22,17 @@ import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.l2jserver.Config;
-import com.l2jserver.gameserver.data.xml.impl.AdminData;
-import com.l2jserver.gameserver.handler.AdminCommandHandler;
-import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.WorldObject;
-import com.l2jserver.gameserver.model.World;
-import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.Creature;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.network.SystemMessageId;
+import org.l2junity.Config;
+import org.l2junity.gameserver.data.xml.impl.AdminData;
+import org.l2junity.gameserver.handler.AdminCommandHandler;
+import org.l2junity.gameserver.handler.IAdminCommandHandler;
+import org.l2junity.gameserver.model.L2Clan;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.network.SystemMessageId;
 
 /**
  * This class handles following admin commands: - handles every admin menu command

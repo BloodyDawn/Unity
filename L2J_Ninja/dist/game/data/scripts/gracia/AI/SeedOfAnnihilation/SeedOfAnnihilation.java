@@ -21,19 +21,19 @@ package gracia.AI.SeedOfAnnihilation;
 import java.util.Calendar;
 import java.util.Map;
 
+import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.instancemanager.ZoneManager;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.zone.L2ZoneType;
+import org.l2junity.gameserver.model.zone.type.L2EffectZone;
+import org.l2junity.gameserver.util.Util;
+
 import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
-
-import com.l2jserver.gameserver.datatables.SkillData;
-import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.Creature;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.zone.L2ZoneType;
-import com.l2jserver.gameserver.model.zone.type.L2EffectZone;
-import com.l2jserver.gameserver.util.Util;
 
 /**
  * Seed Of Annihilation AI.

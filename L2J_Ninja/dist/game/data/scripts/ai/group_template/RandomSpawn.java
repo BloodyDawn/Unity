@@ -20,12 +20,12 @@ package ai.group_template;
 
 import java.util.Map;
 
+import org.l2junity.gameserver.ThreadPoolManager;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.actor.Npc;
+
 import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
-
-import com.l2jserver.gameserver.ThreadPoolManager;
-import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.Npc;
 
 /**
  * Manages spawn of NPCs having several random spawn points.

@@ -18,18 +18,18 @@
  */
 package handlers.admincommandhandlers;
 
-import com.l2jserver.gameserver.data.xml.impl.NpcData;
-import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.World;
-import com.l2jserver.gameserver.model.MobGroup;
-import com.l2jserver.gameserver.model.MobGroupTable;
-import com.l2jserver.gameserver.model.actor.Creature;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.MagicSkillUse;
-import com.l2jserver.gameserver.network.serverpackets.SetupGauge;
-import com.l2jserver.gameserver.util.Broadcast;
+import org.l2junity.gameserver.data.xml.impl.NpcData;
+import org.l2junity.gameserver.handler.IAdminCommandHandler;
+import org.l2junity.gameserver.model.MobGroup;
+import org.l2junity.gameserver.model.MobGroupTable;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
+import org.l2junity.gameserver.network.serverpackets.SetupGauge;
+import org.l2junity.gameserver.util.Broadcast;
 
 /**
  * @author littlecrow Admin commands handler for controllable mobs

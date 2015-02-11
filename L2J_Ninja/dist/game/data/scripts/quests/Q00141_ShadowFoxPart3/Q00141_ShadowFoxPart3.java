@@ -21,16 +21,16 @@ package quests.Q00141_ShadowFoxPart3;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.l2junity.gameserver.enums.QuestSound;
+import org.l2junity.gameserver.instancemanager.QuestManager;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.quest.Quest;
+import org.l2junity.gameserver.model.quest.QuestState;
+import org.l2junity.gameserver.model.quest.State;
+
 import quests.Q00140_ShadowFoxPart2.Q00140_ShadowFoxPart2;
 import quests.Q00998_FallenAngelSelect.Q00998_FallenAngelSelect;
-
-import com.l2jserver.gameserver.enums.QuestSound;
-import com.l2jserver.gameserver.instancemanager.QuestManager;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.quest.Quest;
-import com.l2jserver.gameserver.model.quest.QuestState;
-import com.l2jserver.gameserver.model.quest.State;
 
 /**
  * Shadow Fox - 3 (141)

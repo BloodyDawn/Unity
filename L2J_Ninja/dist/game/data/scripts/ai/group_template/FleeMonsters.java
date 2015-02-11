@@ -18,16 +18,16 @@
  */
 package ai.group_template;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.gameserver.GeoData;
+import org.l2junity.gameserver.ai.CtrlIntention;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.Summon;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.interfaces.ILocational;
+import org.l2junity.gameserver.util.Util;
 
-import com.l2jserver.gameserver.GeoData;
-import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.Summon;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.interfaces.ILocational;
-import com.l2jserver.gameserver.util.Util;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Flee Monsters AI.

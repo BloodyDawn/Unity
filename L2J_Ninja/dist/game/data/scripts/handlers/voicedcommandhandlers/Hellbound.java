@@ -18,10 +18,10 @@
  */
 package handlers.voicedcommandhandlers;
 
-import hellbound.HellboundEngine;
+import org.l2junity.gameserver.handler.IVoicedCommandHandler;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 
-import com.l2jserver.gameserver.handler.IVoicedCommandHandler;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
+import hellbound.HellboundEngine;
 
 /**
  * Hellbound voiced command.

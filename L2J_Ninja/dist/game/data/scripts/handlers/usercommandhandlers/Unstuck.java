@@ -18,21 +18,21 @@
  */
 package handlers.usercommandhandlers;
 
-import com.l2jserver.Config;
-import com.l2jserver.gameserver.GameTimeController;
-import com.l2jserver.gameserver.ThreadPoolManager;
-import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.datatables.SkillData;
-import com.l2jserver.gameserver.handler.IUserCommandHandler;
-import com.l2jserver.gameserver.model.TeleportWhereType;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.entity.TvTEvent;
-import com.l2jserver.gameserver.model.skills.Skill;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.ActionFailed;
-import com.l2jserver.gameserver.network.serverpackets.MagicSkillUse;
-import com.l2jserver.gameserver.network.serverpackets.SetupGauge;
-import com.l2jserver.gameserver.util.Broadcast;
+import org.l2junity.Config;
+import org.l2junity.gameserver.GameTimeController;
+import org.l2junity.gameserver.ThreadPoolManager;
+import org.l2junity.gameserver.ai.CtrlIntention;
+import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.handler.IUserCommandHandler;
+import org.l2junity.gameserver.model.TeleportWhereType;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.entity.TvTEvent;
+import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.ActionFailed;
+import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
+import org.l2junity.gameserver.network.serverpackets.SetupGauge;
+import org.l2junity.gameserver.util.Broadcast;
 
 /**
  * Unstuck user command.

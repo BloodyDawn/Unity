@@ -21,14 +21,14 @@ package ai.group_template;
 import java.util.HashSet;
 import java.util.Set;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.holders.MinionHolder;
+import org.l2junity.gameserver.network.NpcStringId;
 
-import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.holders.MinionHolder;
-import com.l2jserver.gameserver.network.NpcStringId;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Minion Spawn Manager.

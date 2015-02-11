@@ -18,12 +18,12 @@
  */
 package ai.npc.SymbolMaker;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.network.serverpackets.HennaEquipList;
+import org.l2junity.gameserver.network.serverpackets.HennaRemoveList;
 
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.network.serverpackets.HennaEquipList;
-import com.l2jserver.gameserver.network.serverpackets.HennaRemoveList;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Symbol Maker AI.

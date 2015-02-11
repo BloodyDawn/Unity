@@ -24,19 +24,18 @@ import java.util.concurrent.ScheduledFuture;
 
 import javolution.util.FastList;
 
+import org.l2junity.gameserver.GeoData;
+import org.l2junity.gameserver.ThreadPoolManager;
+import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.impl.NpcData;
+import org.l2junity.gameserver.model.L2Spawn;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.Territory;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.util.Rnd;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
-
-import com.l2jserver.gameserver.GeoData;
-import com.l2jserver.gameserver.ThreadPoolManager;
-import com.l2jserver.gameserver.data.xml.IXmlReader;
-import com.l2jserver.gameserver.data.xml.impl.NpcData;
-import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.Territory;
-import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.util.Rnd;
 
 /**
  * Tar Beetle zone spawn

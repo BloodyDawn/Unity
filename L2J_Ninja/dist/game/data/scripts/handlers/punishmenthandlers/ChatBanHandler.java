@@ -18,14 +18,14 @@
  */
 package handlers.punishmenthandlers;
 
-import com.l2jserver.gameserver.LoginServerThread;
-import com.l2jserver.gameserver.handler.IPunishmentHandler;
-import com.l2jserver.gameserver.model.World;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.punishment.PunishmentTask;
-import com.l2jserver.gameserver.model.punishment.PunishmentType;
-import com.l2jserver.gameserver.network.L2GameClient;
-import com.l2jserver.gameserver.network.serverpackets.EtcStatusUpdate;
+import org.l2junity.gameserver.LoginServerThread;
+import org.l2junity.gameserver.handler.IPunishmentHandler;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.punishment.PunishmentTask;
+import org.l2junity.gameserver.model.punishment.PunishmentType;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.gameserver.network.serverpackets.EtcStatusUpdate;
 
 /**
  * This class handles chat ban punishment.

@@ -18,9 +18,9 @@
  */
 package ai.npc.Scarecrow;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.gameserver.model.actor.Npc;
 
-import com.l2jserver.gameserver.model.actor.Npc;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Scarecrow AI.

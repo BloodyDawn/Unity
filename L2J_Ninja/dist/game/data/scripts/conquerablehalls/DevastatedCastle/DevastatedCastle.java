@@ -22,16 +22,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.data.sql.impl.ClanTable;
-import com.l2jserver.gameserver.data.xml.impl.NpcData;
-import com.l2jserver.gameserver.datatables.SkillData;
-import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
-import com.l2jserver.gameserver.network.NpcStringId;
+import org.l2junity.gameserver.ai.CtrlIntention;
+import org.l2junity.gameserver.data.sql.impl.ClanTable;
+import org.l2junity.gameserver.data.xml.impl.NpcData;
+import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.model.L2Clan;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
+import org.l2junity.gameserver.network.NpcStringId;
 
 /**
  * Devastated Castle clan hall siege script.

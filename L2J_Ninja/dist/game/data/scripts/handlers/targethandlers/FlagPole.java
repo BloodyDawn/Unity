@@ -18,11 +18,11 @@
  */
 package handlers.targethandlers;
 
-import com.l2jserver.gameserver.handler.ITargetTypeHandler;
-import com.l2jserver.gameserver.model.WorldObject;
-import com.l2jserver.gameserver.model.actor.Creature;
-import com.l2jserver.gameserver.model.skills.Skill;
-import com.l2jserver.gameserver.model.skills.targets.L2TargetType;
+import org.l2junity.gameserver.handler.ITargetTypeHandler;
+import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 
 /**
  * @author UnAfraid

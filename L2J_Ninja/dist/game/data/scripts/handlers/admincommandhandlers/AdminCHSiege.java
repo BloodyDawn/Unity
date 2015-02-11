@@ -20,17 +20,17 @@ package handlers.admincommandhandlers;
 
 import java.util.Calendar;
 
-import com.l2jserver.Config;
-import com.l2jserver.gameserver.data.sql.impl.ClanTable;
-import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.instancemanager.CHSiegeManager;
-import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.WorldObject;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
-import com.l2jserver.gameserver.model.entity.clanhall.SiegableHall;
-import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import com.l2jserver.gameserver.network.serverpackets.SiegeInfo;
+import org.l2junity.Config;
+import org.l2junity.gameserver.data.sql.impl.ClanTable;
+import org.l2junity.gameserver.handler.IAdminCommandHandler;
+import org.l2junity.gameserver.instancemanager.CHSiegeManager;
+import org.l2junity.gameserver.model.L2Clan;
+import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
+import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
+import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
+import org.l2junity.gameserver.network.serverpackets.SiegeInfo;
 
 /**
  * @author BiggBoss

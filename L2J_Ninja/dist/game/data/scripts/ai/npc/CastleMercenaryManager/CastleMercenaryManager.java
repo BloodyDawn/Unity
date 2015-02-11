@@ -20,15 +20,15 @@ package ai.npc.CastleMercenaryManager;
 
 import java.util.StringTokenizer;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.gameserver.model.ClanPrivilege;
+import org.l2junity.gameserver.model.PcCondOverride;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.entity.Castle;
+import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 
-import com.l2jserver.gameserver.model.ClanPrivilege;
-import com.l2jserver.gameserver.model.PcCondOverride;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2MerchantInstance;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.entity.Castle;
-import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Castle Mercenary Manager AI.

@@ -18,7 +18,7 @@
  */
 package instances.ChambersOfDelusion;
 
-import com.l2jserver.gameserver.model.Location;
+import org.l2junity.gameserver.model.Location;
 
 /**
  * Chamber of Delusion South.

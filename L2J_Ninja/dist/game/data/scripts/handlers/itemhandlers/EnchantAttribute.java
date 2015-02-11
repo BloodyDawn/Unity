@@ -18,13 +18,13 @@
  */
 package handlers.itemhandlers;
 
-import com.l2jserver.gameserver.handler.IItemHandler;
-import com.l2jserver.gameserver.model.actor.Playable;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.actor.request.EnchantItemAttributeRequest;
-import com.l2jserver.gameserver.model.items.instance.ItemInstance;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.ExChooseInventoryAttributeItem;
+import org.l2junity.gameserver.handler.IItemHandler;
+import org.l2junity.gameserver.model.actor.Playable;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.request.EnchantItemAttributeRequest;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.ExChooseInventoryAttributeItem;
 
 public class EnchantAttribute implements IItemHandler
 {

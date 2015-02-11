@@ -23,15 +23,15 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.Config;
+import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.network.NpcStringId;
+import org.l2junity.gameserver.util.Broadcast;
 
-import com.l2jserver.Config;
-import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.network.NpcStringId;
-import com.l2jserver.gameserver.util.Broadcast;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Mammons AI.

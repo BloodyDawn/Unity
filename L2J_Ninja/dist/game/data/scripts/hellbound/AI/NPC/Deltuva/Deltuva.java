@@ -18,11 +18,11 @@
  */
 package hellbound.AI.NPC.Deltuva;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 
-import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Deltuva AI.

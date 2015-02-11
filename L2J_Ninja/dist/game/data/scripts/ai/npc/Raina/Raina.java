@@ -18,7 +18,7 @@
  */
 package ai.npc.Raina;
 
-import static com.l2jserver.gameserver.model.base.ClassLevel.THIRD;
+import static org.l2junity.gameserver.model.base.ClassLevel.THIRD;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,33 +30,33 @@ import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.Config;
+import org.l2junity.gameserver.cache.HtmCache;
+import org.l2junity.gameserver.data.xml.impl.CategoryData;
+import org.l2junity.gameserver.data.xml.impl.ClassListData;
+import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
+import org.l2junity.gameserver.enums.CategoryType;
+import org.l2junity.gameserver.enums.Race;
+import org.l2junity.gameserver.enums.SubclassInfoType;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.base.ClassId;
+import org.l2junity.gameserver.model.base.ClassLevel;
+import org.l2junity.gameserver.model.base.PlayerClass;
+import org.l2junity.gameserver.model.base.SubClass;
+import org.l2junity.gameserver.model.events.EventType;
+import org.l2junity.gameserver.model.events.ListenerRegisterType;
+import org.l2junity.gameserver.model.events.annotations.Id;
+import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
+import org.l2junity.gameserver.model.events.annotations.RegisterType;
+import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcMenuSelect;
+import org.l2junity.gameserver.model.quest.QuestState;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.AcquireSkillList;
+import org.l2junity.gameserver.network.serverpackets.ExSubjobInfo;
+import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 
-import com.l2jserver.Config;
-import com.l2jserver.gameserver.cache.HtmCache;
-import com.l2jserver.gameserver.data.xml.impl.CategoryData;
-import com.l2jserver.gameserver.data.xml.impl.ClassListData;
-import com.l2jserver.gameserver.data.xml.impl.SkillTreesData;
-import com.l2jserver.gameserver.enums.CategoryType;
-import com.l2jserver.gameserver.enums.Race;
-import com.l2jserver.gameserver.enums.SubclassInfoType;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.base.ClassId;
-import com.l2jserver.gameserver.model.base.ClassLevel;
-import com.l2jserver.gameserver.model.base.PlayerClass;
-import com.l2jserver.gameserver.model.base.SubClass;
-import com.l2jserver.gameserver.model.events.EventType;
-import com.l2jserver.gameserver.model.events.ListenerRegisterType;
-import com.l2jserver.gameserver.model.events.annotations.Id;
-import com.l2jserver.gameserver.model.events.annotations.RegisterEvent;
-import com.l2jserver.gameserver.model.events.annotations.RegisterType;
-import com.l2jserver.gameserver.model.events.impl.character.npc.OnNpcMenuSelect;
-import com.l2jserver.gameserver.model.quest.QuestState;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.AcquireSkillList;
-import com.l2jserver.gameserver.network.serverpackets.ExSubjobInfo;
-import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Raina AI.

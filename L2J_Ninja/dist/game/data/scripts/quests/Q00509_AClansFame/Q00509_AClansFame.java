@@ -23,17 +23,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.l2jserver.gameserver.enums.QuestSound;
-import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.quest.Quest;
-import com.l2jserver.gameserver.model.quest.QuestState;
-import com.l2jserver.gameserver.model.quest.State;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.PledgeShowInfoUpdate;
-import com.l2jserver.gameserver.network.serverpackets.RadarControl;
-import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.enums.QuestSound;
+import org.l2junity.gameserver.model.L2Clan;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.quest.Quest;
+import org.l2junity.gameserver.model.quest.QuestState;
+import org.l2junity.gameserver.model.quest.State;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.PledgeShowInfoUpdate;
+import org.l2junity.gameserver.network.serverpackets.RadarControl;
+import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * A Clan's Fame (509)

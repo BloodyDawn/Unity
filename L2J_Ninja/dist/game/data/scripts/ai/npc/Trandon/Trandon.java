@@ -20,23 +20,23 @@ package ai.npc.Trandon;
 
 import java.util.Set;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.Config;
+import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.enums.Race;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.events.EventType;
+import org.l2junity.gameserver.model.events.ListenerRegisterType;
+import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
+import org.l2junity.gameserver.model.events.annotations.RegisterType;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSubChange;
+import org.l2junity.gameserver.model.itemcontainer.Inventory;
+import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.variables.PlayerVariables;
+import org.l2junity.gameserver.network.clientpackets.RequestAcquireSkill;
 
-import com.l2jserver.Config;
-import com.l2jserver.gameserver.datatables.SkillData;
-import com.l2jserver.gameserver.enums.Race;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.events.EventType;
-import com.l2jserver.gameserver.model.events.ListenerRegisterType;
-import com.l2jserver.gameserver.model.events.annotations.RegisterEvent;
-import com.l2jserver.gameserver.model.events.annotations.RegisterType;
-import com.l2jserver.gameserver.model.events.impl.character.player.OnPlayerLogin;
-import com.l2jserver.gameserver.model.events.impl.character.player.OnPlayerSubChange;
-import com.l2jserver.gameserver.model.itemcontainer.Inventory;
-import com.l2jserver.gameserver.model.skills.Skill;
-import com.l2jserver.gameserver.model.variables.PlayerVariables;
-import com.l2jserver.gameserver.network.clientpackets.RequestAcquireSkill;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Trandon AI.

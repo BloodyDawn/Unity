@@ -24,12 +24,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
 
+import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.model.StatsSet;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
-
-import com.l2jserver.gameserver.data.xml.IXmlReader;
-import com.l2jserver.gameserver.model.StatsSet;
 
 /**
  * @author UnAfraid

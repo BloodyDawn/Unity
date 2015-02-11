@@ -20,20 +20,20 @@ package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
 
-import com.l2jserver.gameserver.cache.HtmCache;
-import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.instancemanager.MapRegionManager;
-import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.World;
-import com.l2jserver.gameserver.model.WorldRegion;
-import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.TeleportWhereType;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.zone.L2ZoneType;
-import com.l2jserver.gameserver.model.zone.ZoneId;
-import com.l2jserver.gameserver.model.zone.type.NpcSpawnTerritory;
-import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import com.l2jserver.util.StringUtil;
+import org.l2junity.gameserver.cache.HtmCache;
+import org.l2junity.gameserver.handler.IAdminCommandHandler;
+import org.l2junity.gameserver.instancemanager.MapRegionManager;
+import org.l2junity.gameserver.instancemanager.ZoneManager;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.TeleportWhereType;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.WorldRegion;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.zone.L2ZoneType;
+import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.model.zone.type.NpcSpawnTerritory;
+import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
+import org.l2junity.util.StringUtil;
 
 /**
  * Small typo fix by Zoey76 24/02/2011

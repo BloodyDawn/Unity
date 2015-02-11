@@ -20,12 +20,12 @@ package ai.group_template;
 
 import java.util.Map;
 
+import org.l2junity.gameserver.model.actor.Attackable;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+
 import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
-
-import com.l2jserver.gameserver.model.actor.Attackable;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * Angel spawns...when one of the angels in the keys dies, the other angel will spawn.

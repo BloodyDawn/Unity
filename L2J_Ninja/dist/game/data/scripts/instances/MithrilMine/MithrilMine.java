@@ -18,21 +18,21 @@
  */
 package instances.MithrilMine;
 
+import org.l2junity.gameserver.ai.CtrlIntention;
+import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.instancemanager.InstanceManager;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.actor.Attackable;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.instancezone.InstanceWorld;
+import org.l2junity.gameserver.model.quest.QuestState;
+import org.l2junity.gameserver.network.NpcStringId;
+
 import instances.AbstractInstance;
 import quests.Q10284_AcquisitionOfDivineSword.Q10284_AcquisitionOfDivineSword;
-
-import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.Attackable;
-import com.l2jserver.gameserver.model.actor.Creature;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.holders.SkillHolder;
-import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
-import com.l2jserver.gameserver.model.quest.QuestState;
-import com.l2jserver.gameserver.network.NpcStringId;
 
 /**
  * Mithril Mine instance zone.

@@ -21,14 +21,14 @@ package vehicles;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.l2jserver.gameserver.ThreadPoolManager;
-import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.instancemanager.BoatManager;
-import com.l2jserver.gameserver.model.VehiclePathPoint;
-import com.l2jserver.gameserver.model.actor.instance.L2BoatInstance;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.CreatureSay;
-import com.l2jserver.gameserver.network.serverpackets.PlaySound;
+import org.l2junity.gameserver.ThreadPoolManager;
+import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.instancemanager.BoatManager;
+import org.l2junity.gameserver.model.VehiclePathPoint;
+import org.l2junity.gameserver.model.actor.instance.L2BoatInstance;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.CreatureSay;
+import org.l2junity.gameserver.network.serverpackets.PlaySound;
 
 /**
  * @author DS

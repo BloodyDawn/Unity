@@ -24,24 +24,24 @@ import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.concurrent.TimeUnit;
 
-import com.l2jserver.gameserver.cache.HtmCache;
-import com.l2jserver.gameserver.datatables.ItemTable;
-import com.l2jserver.gameserver.handler.IBypassHandler;
-import com.l2jserver.gameserver.model.Elementals;
-import com.l2jserver.gameserver.model.WorldObject;
-import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.World;
-import com.l2jserver.gameserver.model.actor.Creature;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.drops.DropListScope;
-import com.l2jserver.gameserver.model.drops.GeneralDropItem;
-import com.l2jserver.gameserver.model.drops.GroupedGeneralDropItem;
-import com.l2jserver.gameserver.model.drops.IDropItem;
-import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import com.l2jserver.gameserver.util.HtmlUtil;
-import com.l2jserver.gameserver.util.Util;
+import org.l2junity.gameserver.cache.HtmCache;
+import org.l2junity.gameserver.datatables.ItemTable;
+import org.l2junity.gameserver.handler.IBypassHandler;
+import org.l2junity.gameserver.model.Elementals;
+import org.l2junity.gameserver.model.L2Spawn;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.drops.DropListScope;
+import org.l2junity.gameserver.model.drops.GeneralDropItem;
+import org.l2junity.gameserver.model.drops.GroupedGeneralDropItem;
+import org.l2junity.gameserver.model.drops.IDropItem;
+import org.l2junity.gameserver.model.items.L2Item;
+import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
+import org.l2junity.gameserver.util.HtmlUtil;
+import org.l2junity.gameserver.util.Util;
 
 /**
  * @author NosBit

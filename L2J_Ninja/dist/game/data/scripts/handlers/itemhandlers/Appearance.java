@@ -18,15 +18,15 @@
  */
 package handlers.itemhandlers;
 
-import com.l2jserver.gameserver.data.xml.impl.AppearanceItemData;
-import com.l2jserver.gameserver.handler.IItemHandler;
-import com.l2jserver.gameserver.model.actor.Playable;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.actor.request.ShapeShiftingItemRequest;
-import com.l2jserver.gameserver.model.items.appearance.AppearanceStone;
-import com.l2jserver.gameserver.model.items.instance.ItemInstance;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.appearance.ExChooseShapeShiftingItem;
+import org.l2junity.gameserver.data.xml.impl.AppearanceItemData;
+import org.l2junity.gameserver.handler.IItemHandler;
+import org.l2junity.gameserver.model.actor.Playable;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.request.ShapeShiftingItemRequest;
+import org.l2junity.gameserver.model.items.appearance.AppearanceStone;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.appearance.ExChooseShapeShiftingItem;
 
 /**
  * @author UnAfraid

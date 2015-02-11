@@ -28,22 +28,22 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.logging.Level;
 
-import com.l2jserver.gameserver.datatables.SkillData;
-import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.Party;
-import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.World;
-import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.Creature;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.Summon;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.entity.Instance;
-import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
-import com.l2jserver.gameserver.model.skills.BuffInfo;
-import com.l2jserver.gameserver.model.skills.Skill;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.instancemanager.InstanceManager;
+import org.l2junity.gameserver.model.L2Spawn;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.Party;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.Summon;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.entity.Instance;
+import org.l2junity.gameserver.model.instancezone.InstanceWorld;
+import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
 public final class Kamaloka extends AbstractInstance
 {

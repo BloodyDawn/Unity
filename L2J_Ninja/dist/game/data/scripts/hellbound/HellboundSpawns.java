@@ -23,16 +23,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.data.xml.impl.NpcData;
+import org.l2junity.gameserver.datatables.SpawnTable;
+import org.l2junity.gameserver.model.L2Spawn;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
-
-import com.l2jserver.gameserver.data.xml.IXmlReader;
-import com.l2jserver.gameserver.data.xml.impl.NpcData;
-import com.l2jserver.gameserver.datatables.SpawnTable;
-import com.l2jserver.gameserver.model.L2Spawn;
-import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.templates.L2NpcTemplate;
 
 /**
  * Hellbound Spawns parser.

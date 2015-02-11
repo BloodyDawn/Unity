@@ -18,18 +18,18 @@
  */
 package ai.npc.FortressSiegeManager;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.gameserver.instancemanager.FortSiegeManager;
+import org.l2junity.gameserver.model.ClanPrivilege;
+import org.l2junity.gameserver.model.L2Clan;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.entity.Castle;
+import org.l2junity.gameserver.model.entity.Fort;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
+import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
-import com.l2jserver.gameserver.instancemanager.FortSiegeManager;
-import com.l2jserver.gameserver.model.ClanPrivilege;
-import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.entity.Castle;
-import com.l2jserver.gameserver.model.entity.Fort;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Fortress Siege Manager AI.

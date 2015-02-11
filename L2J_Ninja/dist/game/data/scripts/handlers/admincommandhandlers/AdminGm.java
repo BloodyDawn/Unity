@@ -20,9 +20,9 @@ package handlers.admincommandhandlers;
 
 import java.util.logging.Logger;
 
-import com.l2jserver.gameserver.data.xml.impl.AdminData;
-import com.l2jserver.gameserver.handler.IAdminCommandHandler;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.data.xml.impl.AdminData;
+import org.l2junity.gameserver.handler.IAdminCommandHandler;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 
 /**
  * This class handles following admin commands: - gm = turns gm mode off

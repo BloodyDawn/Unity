@@ -18,11 +18,11 @@
  */
 package handlers.itemhandlers;
 
-import com.l2jserver.gameserver.handler.IItemHandler;
-import com.l2jserver.gameserver.model.actor.Playable;
-import com.l2jserver.gameserver.model.items.instance.ItemInstance;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.ShowXMasSeal;
+import org.l2junity.gameserver.handler.IItemHandler;
+import org.l2junity.gameserver.model.actor.Playable;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.ShowXMasSeal;
 
 /**
  * @author devScarlet, mrTJO

@@ -20,10 +20,10 @@ package handlers.bypasshandlers;
 
 import java.util.logging.Level;
 
-import com.l2jserver.gameserver.handler.IBypassHandler;
-import com.l2jserver.gameserver.model.actor.Creature;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.entity.L2Event;
+import org.l2junity.gameserver.handler.IBypassHandler;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.entity.L2Event;
 
 public class EventEngine implements IBypassHandler
 {

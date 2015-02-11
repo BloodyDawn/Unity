@@ -20,15 +20,15 @@ package handlers.communityboard;
 
 import java.util.List;
 
-import com.l2jserver.gameserver.cache.HtmCache;
-import com.l2jserver.gameserver.data.sql.impl.ClanTable;
-import com.l2jserver.gameserver.handler.CommunityBoardHandler;
-import com.l2jserver.gameserver.handler.IWriteBoardHandler;
-import com.l2jserver.gameserver.instancemanager.CastleManager;
-import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.entity.Castle;
-import com.l2jserver.gameserver.util.Util;
+import org.l2junity.gameserver.cache.HtmCache;
+import org.l2junity.gameserver.data.sql.impl.ClanTable;
+import org.l2junity.gameserver.handler.CommunityBoardHandler;
+import org.l2junity.gameserver.handler.IWriteBoardHandler;
+import org.l2junity.gameserver.instancemanager.CastleManager;
+import org.l2junity.gameserver.model.L2Clan;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.entity.Castle;
+import org.l2junity.gameserver.util.Util;
 
 /**
  * Region board.

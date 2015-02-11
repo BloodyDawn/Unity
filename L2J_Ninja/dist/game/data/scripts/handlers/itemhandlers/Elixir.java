@@ -18,9 +18,9 @@
  */
 package handlers.itemhandlers;
 
-import com.l2jserver.gameserver.model.actor.Playable;
-import com.l2jserver.gameserver.model.items.instance.ItemInstance;
-import com.l2jserver.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.model.actor.Playable;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.SystemMessageId;
 
 public class Elixir extends ItemSkills
 {

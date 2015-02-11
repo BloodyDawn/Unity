@@ -23,8 +23,8 @@ import handlers.effecthandlers.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.l2jserver.gameserver.handler.EffectHandler;
-import com.l2jserver.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.handler.EffectHandler;
+import org.l2junity.gameserver.model.effects.AbstractEffect;
 
 /**
  * Effect Master handler.

@@ -21,15 +21,15 @@ package ai.individual;
 import java.util.ArrayList;
 import java.util.Map;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.gameserver.ai.CtrlIntention;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.actor.Attackable;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.quest.QuestTimer;
 
-import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.Attackable;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.holders.SkillHolder;
-import com.l2jserver.gameserver.model.quest.QuestTimer;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Anais AI.
@@ -169,7 +169,7 @@ public final class Anais extends AbstractNpcAI
 	
 	/*
 	 * (non-Javadoc)
-	 * @see com.l2jserver.gameserver.model.quest.Quest#onSpawn(com.l2jserver.gameserver.model.actor.L2Npc)
+	 * @see org.l2junity.gameserver.model.quest.Quest#onSpawn(org.l2junity.gameserver.model.actor.L2Npc)
 	 */
 	@Override
 	public String onSpawn(Npc npc)

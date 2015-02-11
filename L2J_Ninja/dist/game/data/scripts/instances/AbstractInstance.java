@@ -24,21 +24,21 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.logging.Logger;
 
-import ai.npc.AbstractNpcAI;
+import org.l2junity.Config;
+import org.l2junity.gameserver.enums.InstanceReenterType;
+import org.l2junity.gameserver.instancemanager.InstanceManager;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.Summon;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.entity.Instance;
+import org.l2junity.gameserver.model.holders.InstanceReenterTimeHolder;
+import org.l2junity.gameserver.model.instancezone.InstanceWorld;
+import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
-import com.l2jserver.Config;
-import com.l2jserver.gameserver.enums.InstanceReenterType;
-import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.World;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.Summon;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.entity.Instance;
-import com.l2jserver.gameserver.model.holders.InstanceReenterTimeHolder;
-import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
-import com.l2jserver.gameserver.model.skills.BuffInfo;
-import com.l2jserver.gameserver.network.SystemMessageId;
-import com.l2jserver.gameserver.network.serverpackets.SystemMessage;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Abstract class for Instances.

@@ -23,23 +23,23 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import com.l2jserver.gameserver.datatables.ItemTable;
-import com.l2jserver.gameserver.enums.ChatType;
-import com.l2jserver.gameserver.enums.QuestSound;
-import com.l2jserver.gameserver.enums.QuestType;
-import com.l2jserver.gameserver.model.AggroInfo;
-import com.l2jserver.gameserver.model.CommandChannel;
-import com.l2jserver.gameserver.model.actor.Attackable;
-import com.l2jserver.gameserver.model.actor.Creature;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.items.L2Item;
-import com.l2jserver.gameserver.model.quest.Quest;
-import com.l2jserver.gameserver.model.quest.QuestState;
-import com.l2jserver.gameserver.model.quest.State;
-import com.l2jserver.gameserver.network.NpcStringId;
-import com.l2jserver.gameserver.network.serverpackets.NpcSay;
-import com.l2jserver.gameserver.util.Util;
+import org.l2junity.gameserver.datatables.ItemTable;
+import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.enums.QuestSound;
+import org.l2junity.gameserver.enums.QuestType;
+import org.l2junity.gameserver.model.AggroInfo;
+import org.l2junity.gameserver.model.CommandChannel;
+import org.l2junity.gameserver.model.actor.Attackable;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.items.L2Item;
+import org.l2junity.gameserver.model.quest.Quest;
+import org.l2junity.gameserver.model.quest.QuestState;
+import org.l2junity.gameserver.model.quest.State;
+import org.l2junity.gameserver.network.NpcStringId;
+import org.l2junity.gameserver.network.serverpackets.NpcSay;
+import org.l2junity.gameserver.util.Util;
 
 /**
  * Don't Know, Don't Care (456)

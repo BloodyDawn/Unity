@@ -20,9 +20,9 @@ package conquerablehalls.flagwar.WildBeastReserve;
 
 import java.util.Collection;
 
-import com.l2jserver.gameserver.instancemanager.ZoneManager;
-import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.zone.type.L2ResidenceHallTeleportZone;
+import org.l2junity.gameserver.instancemanager.ZoneManager;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.zone.type.L2ResidenceHallTeleportZone;
 
 import conquerablehalls.flagwar.FlagWar;
 

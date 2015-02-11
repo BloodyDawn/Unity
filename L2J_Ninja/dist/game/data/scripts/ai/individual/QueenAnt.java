@@ -20,26 +20,26 @@ package ai.individual;
 
 import java.util.List;
 
+import org.l2junity.Config;
+import org.l2junity.gameserver.ai.CtrlIntention;
+import org.l2junity.gameserver.instancemanager.GrandBossManager;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Attackable;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.Playable;
+import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
+import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.skills.CommonSkill;
+import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.zone.type.L2BossZone;
+import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
+import org.l2junity.gameserver.network.serverpackets.PlaySound;
+
 import javolution.util.FastList;
 import ai.npc.AbstractNpcAI;
-
-import com.l2jserver.Config;
-import com.l2jserver.gameserver.ai.CtrlIntention;
-import com.l2jserver.gameserver.instancemanager.GrandBossManager;
-import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.StatsSet;
-import com.l2jserver.gameserver.model.actor.Attackable;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.Playable;
-import com.l2jserver.gameserver.model.actor.instance.L2GrandBossInstance;
-import com.l2jserver.gameserver.model.actor.instance.L2MonsterInstance;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.holders.SkillHolder;
-import com.l2jserver.gameserver.model.skills.CommonSkill;
-import com.l2jserver.gameserver.model.skills.Skill;
-import com.l2jserver.gameserver.model.zone.type.L2BossZone;
-import com.l2jserver.gameserver.network.serverpackets.MagicSkillUse;
-import com.l2jserver.gameserver.network.serverpackets.PlaySound;
 
 /**
  * Queen Ant's AI

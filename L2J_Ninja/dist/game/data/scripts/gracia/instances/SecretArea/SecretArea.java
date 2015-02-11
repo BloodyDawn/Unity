@@ -18,13 +18,13 @@
  */
 package gracia.instances.SecretArea;
 
-import com.l2jserver.gameserver.instancemanager.InstanceManager;
-import com.l2jserver.gameserver.model.Location;
-import com.l2jserver.gameserver.model.actor.Npc;
-import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.model.instancezone.InstanceWorld;
-import com.l2jserver.gameserver.model.quest.Quest;
-import com.l2jserver.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.instancemanager.InstanceManager;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.instancezone.InstanceWorld;
+import org.l2junity.gameserver.model.quest.Quest;
+import org.l2junity.gameserver.network.SystemMessageId;
 
 /**
  * Secret Area in the Keucereus Fortress instance zone.
