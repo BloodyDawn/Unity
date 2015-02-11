@@ -79,7 +79,7 @@ public class Q00137_TempleChampionPart1 extends Quest
 				st.setCond(2, true);
 				break;
 			case "30070-16.html":
-				if (st.isCond(3) && (st.hasQuestItems(EXECUTOR) && st.hasQuestItems(MISSIONARY)))
+				if (st.isCond(3) && (hasQuestItems(player, EXECUTOR) && hasQuestItems(player, MISSIONARY)))
 				{
 					st.takeItems(EXECUTOR, -1);
 					st.takeItems(MISSIONARY, -1);
@@ -159,7 +159,7 @@ public class Q00137_TempleChampionPart1 extends Quest
 				}
 				break;
 			default:
-				htmltext = ((player.getLevel() >= 35) && st.hasQuestItems(EXECUTOR, MISSIONARY)) ? "30070-01.htm" : "30070-00.html";
+				htmltext = ((player.getLevel() >= 35) && hasQuestItems(player, EXECUTOR, MISSIONARY)) ? "30070-01.htm" : "30070-00.html";
 				break;
 		}
 		return htmltext;

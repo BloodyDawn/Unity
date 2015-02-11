@@ -149,7 +149,7 @@ public class Q00278_HomeSecurity extends Quest
 				case 18905: // Farm Ravager (Crazy)
 				{
 					final int itemCount = ((getRandom(1000) < 486) ? getRandom(6) + 1 : getRandom(5) + 1);
-					if (st.giveItemRandomly(npc, SEL_MAHUM_MANE, itemCount, SEL_MAHUM_MANE_COUNT, 1.0, true))
+					if (giveItemRandomly(st.getPlayer(), npc, SEL_MAHUM_MANE, itemCount, SEL_MAHUM_MANE_COUNT, 1.0, true))
 					{
 						st.setCond(2, true);
 					}
@@ -158,7 +158,7 @@ public class Q00278_HomeSecurity extends Quest
 				case 18906: // Farm Bandit
 				case 18907: // Beast Devourer
 				{
-					if (st.giveItemRandomly(npc, SEL_MAHUM_MANE, 1, SEL_MAHUM_MANE_COUNT, 0.85, true))
+					if (giveItemRandomly(st.getPlayer(), npc, SEL_MAHUM_MANE, 1, SEL_MAHUM_MANE_COUNT, 0.85, true))
 					{
 						st.setCond(2, true);
 					}

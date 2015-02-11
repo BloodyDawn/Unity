@@ -99,7 +99,7 @@ public class Q00037_MakeFormalWear extends Quest
 				st.setCond(6, true);
 				break;
 			case "31520-08.html":
-				if (!st.hasQuestItems(SEWING_KIT, JEWEL_BOX, MYSTERIOUS_CLOTH))
+				if (!hasQuestItems(player, SEWING_KIT, JEWEL_BOX, MYSTERIOUS_CLOTH))
 				{
 					return "31520-09.html";
 				}
@@ -167,10 +167,10 @@ public class Q00037_MakeFormalWear extends Quest
 							htmltext = "31520-04.html";
 							break;
 						case 6:
-							htmltext = (st.hasQuestItems(SEWING_KIT, JEWEL_BOX, MYSTERIOUS_CLOTH)) ? "31520-06.html" : "31520-07.html";
+							htmltext = (hasQuestItems(player, SEWING_KIT, JEWEL_BOX, MYSTERIOUS_CLOTH)) ? "31520-06.html" : "31520-07.html";
 							break;
 						case 7:
-							htmltext = (st.hasQuestItems(DRESS_SHOES_BOX)) ? "31520-10.html" : "31520-11.html";
+							htmltext = (hasQuestItems(player, DRESS_SHOES_BOX)) ? "31520-10.html" : "31520-11.html";
 							break;
 					
 					}

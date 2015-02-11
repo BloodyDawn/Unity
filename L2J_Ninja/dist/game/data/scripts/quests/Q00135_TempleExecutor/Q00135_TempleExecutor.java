@@ -185,7 +185,7 @@ public class Q00135_TempleExecutor extends Quest
 								{
 									htmltext = "30068-08.html";
 								}
-								else if (st.hasQuestItems(PANOS_CREDENTIALS, SONINS_CREDENTIALS, ALEXS_CREDENTIALS))
+								else if (hasQuestItems(player, PANOS_CREDENTIALS, SONINS_CREDENTIALS, ALEXS_CREDENTIALS))
 								{
 									st.takeItems(SONINS_CREDENTIALS, -1);
 									st.takeItems(PANOS_CREDENTIALS, -1);
@@ -228,7 +228,7 @@ public class Q00135_TempleExecutor extends Quest
 							htmltext = "30291-08.html"; // 4
 							break;
 						case 4:
-							if (st.hasQuestItems(PANOS_CREDENTIALS, SONINS_CREDENTIALS))
+							if (hasQuestItems(player, PANOS_CREDENTIALS, SONINS_CREDENTIALS))
 							{
 								if (st.getQuestItemsCount(OLD_TREASURE_MAP) < ITEM_COUNT)
 								{

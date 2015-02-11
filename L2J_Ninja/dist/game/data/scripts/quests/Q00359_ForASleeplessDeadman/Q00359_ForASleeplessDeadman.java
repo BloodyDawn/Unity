@@ -110,7 +110,7 @@ public final class Q00359_ForASleeplessDeadman extends Quest
 	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		final QuestState st = getRandomPartyMemberState(player, 1, 3, npc);
-		if ((st != null) && st.giveItemRandomly(npc, REMAINS_OF_ADEN_RESIDENTS, 1, REMAINS_COUNT, MOBS.get(npc.getId()), true))
+		if ((st != null) && giveItemRandomly(st.getPlayer(), npc, REMAINS_OF_ADEN_RESIDENTS, 1, REMAINS_COUNT, MOBS.get(npc.getId()), true))
 		{
 			st.setCond(2, true);
 		}
