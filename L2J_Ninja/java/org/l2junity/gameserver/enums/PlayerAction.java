@@ -24,6 +24,7 @@ package org.l2junity.gameserver.enums;
 public enum PlayerAction
 {
 	ADMIN_COMMAND,
+	ADMIN_POINT_PICKING,
 	USER_ENGAGE;
 	
 	private final int _mask;

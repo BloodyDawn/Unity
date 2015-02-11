@@ -83,6 +83,7 @@ import handlers.admincommandhandlers.AdminPathNode;
 import handlers.admincommandhandlers.AdminPcCondOverride;
 import handlers.admincommandhandlers.AdminPetition;
 import handlers.admincommandhandlers.AdminPledge;
+import handlers.admincommandhandlers.AdminPointPicking;
 import handlers.admincommandhandlers.AdminPolymorph;
 import handlers.admincommandhandlers.AdminPrimePoints;
 import handlers.admincommandhandlers.AdminPunishment;
@@ -133,9 +134,9 @@ import handlers.bypasshandlers.TerritoryStatus;
 import handlers.bypasshandlers.TutorialClose;
 import handlers.bypasshandlers.VoiceCommand;
 import handlers.bypasshandlers.Wear;
-import handlers.chathandlers.ChatGeneral;
 import handlers.chathandlers.ChatAlliance;
 import handlers.chathandlers.ChatClan;
+import handlers.chathandlers.ChatGeneral;
 import handlers.chathandlers.ChatHeroVoice;
 import handlers.chathandlers.ChatParty;
 import handlers.chathandlers.ChatPartyMatchRoom;
@@ -143,8 +144,8 @@ import handlers.chathandlers.ChatPartyRoomAll;
 import handlers.chathandlers.ChatPartyRoomCommander;
 import handlers.chathandlers.ChatPetition;
 import handlers.chathandlers.ChatShout;
-import handlers.chathandlers.ChatWhisper;
 import handlers.chathandlers.ChatTrade;
+import handlers.chathandlers.ChatWhisper;
 import handlers.chathandlers.ChatWorld;
 import handlers.communityboard.ClanBoard;
 import handlers.communityboard.FavoriteBoard;
@@ -372,6 +373,7 @@ public class MasterHandler
 			AdminPetition.class,
 			AdminPForge.class,
 			AdminPledge.class,
+			AdminPointPicking.class,
 			AdminPolymorph.class,
 			AdminPrimePoints.class,
 			AdminPunishment.class,

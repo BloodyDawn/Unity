@@ -146,4 +146,14 @@ public class ZoneNPoly extends L2ZoneForm
 			GeoData.getInstance().getHeight(x, y, _z1)
 		};
 	}
+	
+	public int[] getX()
+	{
+		return _p.xpoints;
+	}
+	
+	public int[] getY()
+	{
+		return _p.ypoints;
+	}
 }

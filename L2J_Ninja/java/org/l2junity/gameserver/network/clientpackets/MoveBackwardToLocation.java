@@ -24,6 +24,9 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.events.EventDispatcher;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerMoveRequest;
+import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.StopMove;
@@ -45,7 +48,6 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 	private int _originY;
 	private int _originZ;
 	
-	@SuppressWarnings("unused")
 	private int _moveMovement;
 	
 	@Override
@@ -100,6 +102,16 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 		// sort of incompatibility fix.
 		// Validate position packets sends head level.
 		_targetZ += activeChar.getTemplate().getCollisionHeight();
+		
+		if (_moveMovement == 1)
+		{
+			final TerminateReturn terminate = EventDispatcher.getInstance().notifyEvent(new OnPlayerMoveRequest(activeChar, new Location(_targetX, _targetY, _targetZ)), activeChar, TerminateReturn.class);
+			if ((terminate != null) && terminate.terminate())
+			{
+				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+				return;
+			}
+		}
 		
 		if (activeChar.getTeleMode() > 0)
 		{
