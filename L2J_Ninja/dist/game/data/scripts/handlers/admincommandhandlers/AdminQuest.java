@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -42,6 +42,7 @@ import com.l2jserver.gameserver.util.Util;
 public class AdminQuest implements IAdminCommandHandler
 {
 	public static final Logger LOGGER = Logger.getLogger(AdminQuest.class.getName());
+	
 	private static final String[] ADMIN_COMMANDS =
 	{
 		"admin_quest_reload",
@@ -51,7 +52,7 @@ public class AdminQuest implements IAdminCommandHandler
 		"admin_quest_info"
 	};
 	
-	private Quest findScript(String script)
+	private static Quest findScript(String script)
 	{
 		if (Util.isDigit(script))
 		{
@@ -157,12 +158,11 @@ public class AdminQuest implements IAdminCommandHandler
 						if (listener.getOwner() instanceof Quest)
 						{
 							final Quest quest = (Quest) listener.getOwner();
-							if (questNames.contains(quest.getName()))
+							if (!questNames.add(quest.getName()))
 							{
 								continue;
 							}
 							sb.append("<tr><td colspan=\"4\"><font color=\"LEVEL\"><a action=\"bypass -h admin_quest_info " + quest.getName() + "\">" + quest.getName() + "</a></font></td></tr>");
-							questNames.add(quest.getName());
 						}
 					}
 				}
@@ -190,10 +190,9 @@ public class AdminQuest implements IAdminCommandHandler
 			final Set<EventType> listenerTypes = new TreeSet<>();
 			for (AbstractEventListener listener : quest.getListeners())
 			{
-				if (!listenerTypes.contains(listener.getType()))
+				if (listenerTypes.add(listener.getType()))
 				{
 					events += ", " + listener.getType().name();
-					listenerTypes.add(listener.getType());
 					counter++;
 				}
 				if (counter > 10)

@@ -395,13 +395,13 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="4" />
-		<set name="abnormalTime" val="3600" />		
+		<set name="abnormalTime" val="3600" />
 		<for>
 			<effect name="Buff">
 				<add stat="bonusExp" val="3" />
-				<add stat="bonusSp" val="3" />				
+				<add stat="bonusSp" val="3" />
 			</effect>
-		</for>		
+		</for>
 	</skill>
 	<skill id="19037" levels="1" name="Cloak of Radiant Light">
 		<!-- TODO: Confirm me -->
@@ -459,21 +459,21 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-			<for>
-				<effect name="Buff">
-					<mul stat="pvpPhysDef" val="1.05" />
-					<mul stat="pvpMagicalDef" val="1.05" />
-					<mul stat="pvpPhysSkillsDef" val="1.05" />
-					<add stat="STR" val="2" />
-					<add stat="DEX" val="2" />
-					<add stat="CON" val="2" />
-					<add stat="INT" val="2" />
-					<add stat="WIT" val="2" />
-					<add stat="MEN" val="2" />
-					<add stat="pDef" val="50.0" />
-					<add stat="mDef" val="40.0" />
-				</effect>
-			</for>
+		<for>
+			<effect name="Buff">
+				<mul stat="pvpPhysDef" val="1.05" />
+				<mul stat="pvpMagicalDef" val="1.05" />
+				<mul stat="pvpPhysSkillsDef" val="1.05" />
+				<add stat="STR" val="2" />
+				<add stat="DEX" val="2" />
+				<add stat="CON" val="2" />
+				<add stat="INT" val="2" />
+				<add stat="WIT" val="2" />
+				<add stat="MEN" val="2" />
+				<add stat="pDef" val="50.0" />
+				<add stat="mDef" val="40.0" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="19040" levels="1" name="Cloak of Darkness">
 		<!-- TODO: Confirm me -->
