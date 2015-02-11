@@ -104,7 +104,7 @@ public final class Core extends AbstractNpcAI
 	}
 	
 	@Override
-	public void saveGlobalData()
+	public void onSave()
 	{
 		saveGlobalQuestVar("Core_Attacked", Boolean.toString(_FirstAttacked));
 	}

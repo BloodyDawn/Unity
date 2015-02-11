@@ -120,20 +120,20 @@ public final class QuestManager
 	}
 	
 	/**
-	 * Calls {@link Quest#saveGlobalData()} in all quests and scripts.
+	 * Calls {@link Quest#onSave()} in all quests and scripts.
 	 */
 	public void save()
 	{
 		// Save quests.
 		for (Quest quest : _quests.values())
 		{
-			quest.saveGlobalData();
+			quest.onSave();
 		}
 		
 		// Save scripts.
 		for (Quest script : _scripts.values())
 		{
-			script.saveGlobalData();
+			script.onSave();
 		}
 	}
 	
@@ -231,7 +231,7 @@ public final class QuestManager
 	
 	public boolean unload(Quest ms)
 	{
-		ms.saveGlobalData();
+		ms.onSave();
 		return removeScript(ms);
 	}
 	
