@@ -44,11 +44,14 @@ import org.l2junity.gameserver.model.events.ListenerRegisterType;
 import org.l2junity.gameserver.model.events.annotations.Priority;
 import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
 import org.l2junity.gameserver.model.events.annotations.RegisterType;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerDlgAnswer;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerMoveRequest;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.zone.L2ZoneType;
 import org.l2junity.gameserver.model.zone.form.ZoneNPoly;
+import org.l2junity.gameserver.network.serverpackets.ConfirmDlg;
 import org.l2junity.gameserver.network.serverpackets.ExServerPrimitive;
+import org.l2junity.gameserver.network.serverpackets.ExShowTerritory;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.util.HtmlUtil;
 import org.l2junity.gameserver.util.Util;
@@ -100,11 +103,7 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 							{
 								name += st.nextToken() + " ";
 							}
-							if (!name.isEmpty())
-							{
-								name = name.substring(0, name.length() - 1);
-							}
-							loadZone(activeChar, name);
+							loadZone(activeChar, name.trim());
 						}
 						break;
 					}
@@ -140,22 +139,10 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 					case "show":
 					{
 						showPoints(activeChar);
-						// final ZoneNodeHolder holder = _zones.get(activeChar.getObjectId());
-						// if (holder != null)
-						// {
-						// final List<Location> list = holder.getNodes();
-						// if (list.size() < 3)
-						// {
-						// activeChar.sendMessage("You must have at least 3 nodes to use this option!");
-						// break;
-						// }
-						//
-						// final Location firstLoc = list.get(0);
-						// final ExShowTerritory exst = new ExShowTerritory(firstLoc.getZ() - 100, firstLoc.getZ() + 100);
-						// list.forEach(exst::addVertice);
-						// activeChar.sendPacket(exst);
-						// activeChar.sendMessage("In order to remove the debug you must restart your game client!");
-						// }
+						final ConfirmDlg dlg = new ConfirmDlg("When enable show territory you must restart client to remove it, are you sure about that?");
+						dlg.addTime(15 * 1000);
+						activeChar.sendPacket(dlg);
+						activeChar.addAction(PlayerAction.ADMIN_SHOW_TERRITORY);
 						break;
 					}
 					case "hide":
@@ -254,6 +241,7 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 	 */
 	private void loadZone(L2PcInstance activeChar, String zoneName)
 	{
+		activeChar.sendMessage("Searching for zone: " + zoneName);
 		final List<L2ZoneType> zones = ZoneManager.getInstance().getZones(activeChar);
 		L2ZoneType zoneType = null;
 		for (L2ZoneType zone : zones)
@@ -261,6 +249,7 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 			if (zone.getName().equalsIgnoreCase(zoneName))
 			{
 				zoneType = zone;
+				activeChar.sendMessage("Zone found: " + zone.getId());
 				break;
 			}
 		}
@@ -268,7 +257,8 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 		if ((zoneType != null) && (zoneType.getZone() instanceof ZoneNPoly))
 		{
 			final ZoneNPoly zone = (ZoneNPoly) zoneType.getZone();
-			final ZoneNodeHolder holder = _zones.put(activeChar.getObjectId(), new ZoneNodeHolder());
+			final ZoneNodeHolder holder = _zones.computeIfAbsent(activeChar.getObjectId(), val -> new ZoneNodeHolder());
+			holder.getNodes().clear();
 			holder.setName(zoneType.getName());
 			for (int i = 0; i < zone.getX().length; i++)
 			{
@@ -484,6 +474,32 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 		return null;
 	}
 	
+	@RegisterEvent(EventType.ON_PLAYER_DLG_ANSWER)
+	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+	public void onPlayerDlgAnswer(OnPlayerDlgAnswer event)
+	{
+		final L2PcInstance activeChar = event.getActiveChar();
+		if (activeChar.removeAction(PlayerAction.ADMIN_SHOW_TERRITORY) && (event.getAnswer() == 1))
+		{
+			final ZoneNodeHolder holder = _zones.get(activeChar.getObjectId());
+			if (holder != null)
+			{
+				final List<Location> list = holder.getNodes();
+				if (list.size() < 3)
+				{
+					activeChar.sendMessage("You must have at least 3 nodes to use this option!");
+					return;
+				}
+				
+				final Location firstLoc = list.get(0);
+				final ExShowTerritory exst = new ExShowTerritory(firstLoc.getZ() - 100, firstLoc.getZ() + 100);
+				list.forEach(exst::addVertice);
+				activeChar.sendPacket(exst);
+				activeChar.sendMessage("In order to remove the debug you must restart your game client!");
+			}
+		}
+	}
+	
 	@Override
 	public String[] getAdminCommandList()
 	{
@@ -506,9 +522,9 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 			sb.append("<tr>");
 			sb.append("<td fixwidth=5></td>");
 			sb.append("<td fixwidth=20>" + position.getAndIncrement() + "</td>");
-			sb.append("<td fixwidth=50>" + loc.getX() + "</td>");
-			sb.append("<td fixwidth=50>" + loc.getY() + "</td>");
-			sb.append("<td fixwidth=50>" + loc.getZ() + "</td>");
+			sb.append("<td fixwidth=60>" + loc.getX() + "</td>");
+			sb.append("<td fixwidth=60>" + loc.getY() + "</td>");
+			sb.append("<td fixwidth=60>" + loc.getZ() + "</td>");
 			sb.append("<td fixwidth=30><a action=\"bypass -h admin_zones change " + holder.indexOf(loc) + "\">[E]</a></td>");
 			sb.append("<td fixwidth=30><a action=\"bypass -h admin_move_to " + loc.getX() + " " + loc.getY() + " " + loc.getZ() + "\">[T]</a></td>");
 			sb.append("<td fixwidth=30><a action=\"bypass -h admin_zones delete " + holder.indexOf(loc) + "\">[D]</a></td>");
