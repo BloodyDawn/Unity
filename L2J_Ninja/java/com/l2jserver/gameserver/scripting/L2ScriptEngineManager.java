@@ -60,10 +60,7 @@ public final class L2ScriptEngineManager
 		registerEngine(new JavaScriptingEngine(), props);
 		
 		// Load external script engines
-		ServiceLoader.load(IScriptingEngine.class).forEach(engine ->
-		{
-			registerEngine(engine, props);
-		});
+		ServiceLoader.load(IScriptingEngine.class).forEach(engine -> registerEngine(engine, props));
 	}
 	
 	private Properties loadProperties()
