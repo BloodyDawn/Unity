@@ -54,7 +54,7 @@ public class Message
 	private String _receiverName = null;
 	private final String _subject, _content;
 	private boolean _unread, _returned;
-	private MailType _messageType;
+	private final MailType _messageType;
 	private boolean _deletedBySender;
 	private boolean _deletedByReceiver;
 	private final long _reqAdena;
@@ -113,6 +113,7 @@ public class Message
 		_deletedBySender = false;
 		_deletedByReceiver = false;
 		_reqAdena = reqAdena;
+		_messageType = MailType.REGULAR;
 	}
 	
 	/*
