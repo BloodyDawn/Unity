@@ -47,7 +47,7 @@ import com.l2jserver.gameserver.instancemanager.QuestManager;
 import com.l2jserver.gameserver.instancemanager.WalkingManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jserver.gameserver.scripting.L2ScriptEngineManager;
+import com.l2jserver.gameserver.scripting.ScriptEngineManager;
 import com.l2jserver.gameserver.util.Util;
 
 /**
@@ -215,7 +215,7 @@ public class AdminReload implements IAdminCommandHandler
 				{
 					try
 					{
-						L2ScriptEngineManager.getInstance().executeEffectMasterHandler();
+						ScriptEngineManager.getInstance().executeEffectMasterHandler();
 						AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded effect master handler.");
 					}
 					catch (Exception e)
@@ -229,7 +229,7 @@ public class AdminReload implements IAdminCommandHandler
 				{
 					try
 					{
-						L2ScriptEngineManager.getInstance().executeMasterHandler();
+						ScriptEngineManager.getInstance().executeMasterHandler();
 						AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded master handler.");
 					}
 					catch (Exception e)

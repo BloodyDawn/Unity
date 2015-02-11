@@ -25,7 +25,7 @@ import java.util.logging.Logger;
 
 import com.l2jserver.Config;
 import com.l2jserver.gameserver.model.quest.Quest;
-import com.l2jserver.gameserver.scripting.L2ScriptEngineManager;
+import com.l2jserver.gameserver.scripting.ScriptEngineManager;
 import com.l2jserver.util.Util;
 
 /**
@@ -100,7 +100,7 @@ public final class QuestManager
 		
 		try
 		{
-			L2ScriptEngineManager.getInstance().executeScriptList();
+			ScriptEngineManager.getInstance().executeScriptList();
 		}
 		catch (Exception e)
 		{

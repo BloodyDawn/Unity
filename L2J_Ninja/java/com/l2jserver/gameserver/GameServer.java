@@ -142,7 +142,7 @@ import com.l2jserver.gameserver.network.L2GameClient;
 import com.l2jserver.gameserver.network.L2GamePacketHandler;
 import com.l2jserver.gameserver.pathfinding.PathFinding;
 import com.l2jserver.gameserver.script.faenor.FaenorScriptEngine;
-import com.l2jserver.gameserver.scripting.L2ScriptEngineManager;
+import com.l2jserver.gameserver.scripting.ScriptEngineManager;
 import com.l2jserver.gameserver.taskmanager.KnownListUpdateTaskManager;
 import com.l2jserver.gameserver.taskmanager.TaskManager;
 import com.l2jserver.status.Status;
@@ -198,7 +198,7 @@ public class GameServer
 		
 		// load script engines
 		printSection("Scripting Engines");
-		L2ScriptEngineManager.getInstance();
+		ScriptEngineManager.getInstance();
 		
 		printSection("World");
 		// start game time control early
@@ -315,7 +315,7 @@ public class GameServer
 		try
 		{
 			_log.info("Loading server scripts...");
-			L2ScriptEngineManager.getInstance().executeScriptList();
+			ScriptEngineManager.getInstance().executeScriptList();
 		}
 		catch (Exception e)
 		{

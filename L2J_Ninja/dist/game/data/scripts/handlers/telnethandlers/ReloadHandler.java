@@ -37,7 +37,7 @@ import com.l2jserver.gameserver.instancemanager.QuestManager;
 import com.l2jserver.gameserver.instancemanager.RaidBossSpawnManager;
 import com.l2jserver.gameserver.instancemanager.ZoneManager;
 import com.l2jserver.gameserver.model.World;
-import com.l2jserver.gameserver.scripting.L2ScriptEngineManager;
+import com.l2jserver.gameserver.scripting.ScriptEngineManager;
 
 /**
  * @author UnAfraid
@@ -121,7 +121,7 @@ public class ReloadHandler implements ITelnetHandler
 						
 						try
 						{
-							L2ScriptEngineManager.getInstance().executeScript(Paths.get(questPath));
+							ScriptEngineManager.getInstance().executeScript(Paths.get(questPath));
 							_print.println(questPath + " was successfully loaded!\n");
 						}
 						catch (Exception e)

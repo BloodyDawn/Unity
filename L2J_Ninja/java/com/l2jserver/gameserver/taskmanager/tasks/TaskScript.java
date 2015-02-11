@@ -21,7 +21,7 @@ package com.l2jserver.gameserver.taskmanager.tasks;
 import java.nio.file.Paths;
 import java.util.logging.Level;
 
-import com.l2jserver.gameserver.scripting.L2ScriptEngineManager;
+import com.l2jserver.gameserver.scripting.ScriptEngineManager;
 import com.l2jserver.gameserver.taskmanager.Task;
 import com.l2jserver.gameserver.taskmanager.TaskManager.ExecutedTask;
 
@@ -43,7 +43,7 @@ public class TaskScript extends Task
 	{
 		try
 		{
-			L2ScriptEngineManager.getInstance().executeScript(Paths.get("cron", task.getParams()[2]));
+			ScriptEngineManager.getInstance().executeScript(Paths.get("cron", task.getParams()[2]));
 		}
 		catch (Exception e)
 		{

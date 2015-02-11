@@ -36,7 +36,7 @@ import com.l2jserver.gameserver.model.events.listeners.AbstractEventListener;
 import com.l2jserver.gameserver.model.quest.Quest;
 import com.l2jserver.gameserver.model.quest.QuestTimer;
 import com.l2jserver.gameserver.network.serverpackets.NpcHtmlMessage;
-import com.l2jserver.gameserver.scripting.L2ScriptEngineManager;
+import com.l2jserver.gameserver.scripting.ScriptEngineManager;
 import com.l2jserver.gameserver.util.Util;
 
 public class AdminQuest implements IAdminCommandHandler
@@ -104,7 +104,7 @@ public class AdminQuest implements IAdminCommandHandler
 			String script = st.nextToken();
 			try
 			{
-				L2ScriptEngineManager.getInstance().executeScript(Paths.get(script));
+				ScriptEngineManager.getInstance().executeScript(Paths.get(script));
 				activeChar.sendMessage("Script loaded seccessful!");
 			}
 			catch (Exception e)

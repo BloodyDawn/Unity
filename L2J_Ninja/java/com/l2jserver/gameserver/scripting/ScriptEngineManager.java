@@ -29,6 +29,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Objects;
 import java.util.Properties;
 import java.util.ServiceLoader;
 import java.util.logging.Level;
@@ -41,9 +42,9 @@ import com.l2jserver.gameserver.scripting.java.JavaScriptingEngine;
  * Caches script engines and provides functionality for executing and managing scripts.
  * @author KenM, HorridoJoho
  */
-public final class L2ScriptEngineManager
+public final class ScriptEngineManager
 {
-	private static final Logger _log = Logger.getLogger(L2ScriptEngineManager.class.getName());
+	private static final Logger _log = Logger.getLogger(ScriptEngineManager.class.getName());
 	public static final Path SCRIPT_LIST_FILE = Paths.get(Config.DATAPACK_ROOT.getAbsolutePath(), "data", "scripts.cfg");
 	public static final Path SCRIPT_FOLDER = Paths.get(Config.DATAPACK_ROOT.getAbsolutePath(), "data", "scripts");
 	public static final Path MASTER_HANDLER_FILE = Paths.get(SCRIPT_FOLDER.toString(), "handlers", "MasterHandler.java");
@@ -52,7 +53,7 @@ public final class L2ScriptEngineManager
 	private final Map<String, IExecutionContext> _extEngines = new HashMap<>();
 	private IExecutionContext _currentExecutionContext = null;
 	
-	protected L2ScriptEngineManager()
+	protected ScriptEngineManager()
 	{
 		final Properties props = loadProperties();
 		
@@ -245,10 +246,7 @@ public final class L2ScriptEngineManager
 	
 	public void executeScript(Path sourceFile) throws Exception
 	{
-		if (sourceFile == null)
-		{
-			throw new NullPointerException();
-		}
+		Objects.requireNonNull(sourceFile);
 		
 		if (!sourceFile.isAbsolute())
 		{
@@ -260,16 +258,10 @@ public final class L2ScriptEngineManager
 		
 		sourceFile = sourceFile.toAbsolutePath();
 		String ext = getFileExtension(sourceFile);
-		if (ext == null)
-		{
-			throw new Exception("ScriptFile: " + sourceFile + " does not have an extension to determine the script engine!");
-		}
+		Objects.requireNonNull(sourceFile, "ScriptFile: " + sourceFile + " does not have an extension to determine the script engine!");
 		
 		IExecutionContext engine = getEngineByExtension(ext);
-		if (engine == null)
-		{
-			throw new Exception("ScriptEngine: No engine registered for extension " + ext + "!");
-		}
+		Objects.requireNonNull(engine, "ScriptEngine: No engine registered for extension " + ext + "!");
 		
 		_currentExecutionContext = engine;
 		try
@@ -291,13 +283,13 @@ public final class L2ScriptEngineManager
 		return _currentExecutionContext.getCurrentExecutingScript();
 	}
 	
-	public static L2ScriptEngineManager getInstance()
+	public static ScriptEngineManager getInstance()
 	{
 		return SingletonHolder._instance;
 	}
 	
 	private static class SingletonHolder
 	{
-		protected static final L2ScriptEngineManager _instance = new L2ScriptEngineManager();
+		protected static final ScriptEngineManager _instance = new ScriptEngineManager();
 	}
 }
