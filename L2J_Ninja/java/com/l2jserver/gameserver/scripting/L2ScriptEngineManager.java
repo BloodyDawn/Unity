@@ -56,17 +56,14 @@ public final class L2ScriptEngineManager
 	{
 		final Properties props = loadProperties();
 		
+		// Default java engine implementation
+		registerEngine(new JavaScriptingEngine(), props);
+		
 		// Load external script engines
 		ServiceLoader.load(IScriptingEngine.class).forEach(engine ->
 		{
 			registerEngine(engine, props);
 		});
-		
-		// No external script engines
-		if (_extEngines.isEmpty())
-		{
-			registerEngine(new JavaScriptingEngine(), props);
-		}
 	}
 	
 	private Properties loadProperties()
