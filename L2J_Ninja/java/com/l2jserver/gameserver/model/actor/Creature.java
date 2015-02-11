@@ -48,10 +48,10 @@ import com.l2jserver.Config;
 import com.l2jserver.gameserver.GameTimeController;
 import com.l2jserver.gameserver.GeoData;
 import com.l2jserver.gameserver.ThreadPoolManager;
-import com.l2jserver.gameserver.ai.CtrlEvent;
-import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.ai.AttackableAI;
 import com.l2jserver.gameserver.ai.CharacterAI;
+import com.l2jserver.gameserver.ai.CtrlEvent;
+import com.l2jserver.gameserver.ai.CtrlIntention;
 import com.l2jserver.gameserver.data.xml.impl.CategoryData;
 import com.l2jserver.gameserver.data.xml.impl.DoorData;
 import com.l2jserver.gameserver.datatables.ItemTable;
@@ -63,17 +63,17 @@ import com.l2jserver.gameserver.enums.Team;
 import com.l2jserver.gameserver.enums.UserInfoType;
 import com.l2jserver.gameserver.instancemanager.InstanceManager;
 import com.l2jserver.gameserver.instancemanager.MapRegionManager;
-import com.l2jserver.gameserver.model.CharEffectList;
 import com.l2jserver.gameserver.model.AccessLevel;
+import com.l2jserver.gameserver.model.CharEffectList;
 import com.l2jserver.gameserver.model.L2Clan;
-import com.l2jserver.gameserver.model.WorldObject;
-import com.l2jserver.gameserver.model.Party;
-import com.l2jserver.gameserver.model.World;
-import com.l2jserver.gameserver.model.WorldRegion;
 import com.l2jserver.gameserver.model.Location;
+import com.l2jserver.gameserver.model.Party;
 import com.l2jserver.gameserver.model.PcCondOverride;
 import com.l2jserver.gameserver.model.TeleportWhereType;
 import com.l2jserver.gameserver.model.TimeStamp;
+import com.l2jserver.gameserver.model.World;
+import com.l2jserver.gameserver.model.WorldObject;
+import com.l2jserver.gameserver.model.WorldRegion;
 import com.l2jserver.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jserver.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jserver.gameserver.model.actor.knownlist.CharKnownList;
@@ -5157,13 +5157,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					}
 				}
 			}
-		}
-		
-		// Launch weapon Special ability effect if available
-		Weapon activeWeapon = getActiveWeaponItem();
-		if (activeWeapon != null)
-		{
-			activeWeapon.castOnCriticalSkill(this, target);
+			// Launch weapon Special ability effect if available
+			if (crit && (weapon != null))
+			{
+				weapon.castOnCriticalSkill(this, target);
+			}
 		}
 		
 		// Recharge any active auto-soulshot tasks for current creature.

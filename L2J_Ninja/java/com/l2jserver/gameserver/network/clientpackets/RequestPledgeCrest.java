@@ -34,6 +34,7 @@ public final class RequestPledgeCrest extends L2GameClientPacket
 	protected void readImpl()
 	{
 		_crestId = readD();
+		readD(); // clanId
 	}
 	
 	@Override

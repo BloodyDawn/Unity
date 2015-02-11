@@ -232,8 +232,8 @@ public class ItemInfo
 		_count = item.getCount();
 		
 		// Get custom item types (used loto, race tickets)
-		_type1 = 0;
-		_type2 = 0;
+		_type1 = item.getItem().getType1();
+		_type2 = item.getItem().getType2();
 		
 		// Verify if the L2ItemInstance is equipped
 		_equipped = 0;
