@@ -40,7 +40,6 @@ import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
  * Instant effects should not override {@link #onExit(BuffInfo)}.<br>
  * Instant effects should not override {@link #canStart(BuffInfo)}, all checks should be done {@link #onStart(BuffInfo)}.<br>
  * Do not call super class methods {@link #onStart(BuffInfo)} nor {@link #onExit(BuffInfo)}.
- * @since <a href="http://trac.l2jserver.com/changeset/6249">Changeset 6249</a> the "effect steal constructor" is deprecated.
  * @author Zoey76
  */
 public abstract class AbstractEffect
