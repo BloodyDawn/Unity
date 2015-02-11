@@ -25,6 +25,7 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Objects;
@@ -170,8 +171,8 @@ public final class ScriptEngineManager
 		// throws exception if not exists or not file
 		checkExistingFile("ScriptList", SCRIPT_LIST_FILE);
 		
-		final LinkedHashMap<IExecutionContext, LinkedList<Path>> files = new LinkedHashMap<>();
-		final LinkedList<String> extWithoutEngine = new LinkedList<>();
+		final Map<IExecutionContext, List<Path>> files = new LinkedHashMap<>();
+		final List<String> extWithoutEngine = new LinkedList<>();
 		
 		Files.lines(SCRIPT_LIST_FILE).forEach(line ->
 		{
@@ -211,7 +212,7 @@ public final class ScriptEngineManager
 				return;
 			}
 			
-			LinkedList<Path> ll = files.get(engine);
+			List<Path> ll = files.get(engine);
 			if (ll == null)
 			{
 				ll = new LinkedList<>();
@@ -220,7 +221,7 @@ public final class ScriptEngineManager
 			ll.add(sourceFile);
 		});
 		
-		for (Entry<IExecutionContext, LinkedList<Path>> entry : files.entrySet())
+		for (Entry<IExecutionContext, List<Path>> entry : files.entrySet())
 		{
 			_currentExecutionContext = entry.getKey();
 			try
