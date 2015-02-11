@@ -32,6 +32,9 @@ import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javolution.util.FastList;
+import javolution.util.FastMap;
+
 import org.l2junity.L2DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
@@ -44,9 +47,6 @@ import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.interfaces.IStorable;
 import org.l2junity.gameserver.model.zone.type.L2BossZone;
-
-import javolution.util.FastList;
-import javolution.util.FastMap;
 
 /**
  * Grand Boss manager.
@@ -92,12 +92,8 @@ public final class GrandBossManager implements IStorable
 				info.set("loc_z", rs.getInt("loc_z"));
 				info.set("heading", rs.getInt("heading"));
 				info.set("respawn_time", rs.getLong("respawn_time"));
-				double HP = rs.getDouble("currentHP"); // jython doesn't recognize doubles
-				int true_HP = (int) HP; // so use java's ability to type cast
-				info.set("currentHP", true_HP); // to convert double to int
-				double MP = rs.getDouble("currentMP");
-				int true_MP = (int) MP;
-				info.set("currentMP", true_MP);
+				info.set("currentHP", rs.getDouble("currentHP"));
+				info.set("currentMP", rs.getDouble("currentMP"));
 				int status = rs.getInt("status");
 				_bossStatus.put(bossId, status);
 				_storedInfo.put(bossId, info);
