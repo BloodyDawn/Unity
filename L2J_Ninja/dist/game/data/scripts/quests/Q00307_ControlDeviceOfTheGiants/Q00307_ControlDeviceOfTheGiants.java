@@ -72,7 +72,7 @@ public class Q00307_ControlDeviceOfTheGiants extends Quest
 				if (player.getLevel() >= 79)
 				{
 					st.startQuest();
-					htmltext = (st.hasQuestItems(CET_1_SHEET, CET_2_SHEET, CET_3_SHEET)) ? "32711-04a.html" : "32711-04.html";
+					htmltext = (hasQuestItems(player, CET_1_SHEET, CET_2_SHEET, CET_3_SHEET)) ? "32711-04a.html" : "32711-04.html";
 				}
 				break;
 			case "32711-05a.html":

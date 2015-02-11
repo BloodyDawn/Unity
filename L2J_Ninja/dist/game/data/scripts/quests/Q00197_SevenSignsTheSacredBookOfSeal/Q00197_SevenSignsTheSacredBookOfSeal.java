@@ -98,7 +98,7 @@ public final class Q00197_SevenSignsTheSacredBookOfSeal extends Quest
 			}
 			case "32593-08.html":
 			{
-				if (st.isCond(6) && st.hasQuestItems(MYSTERIOUS_HAND_WRITTEN_TEXT, SCULPTURE_OF_DOUBT))
+				if (st.isCond(6) && hasQuestItems(player, MYSTERIOUS_HAND_WRITTEN_TEXT, SCULPTURE_OF_DOUBT))
 				{
 					htmltext = event;
 				}
@@ -184,7 +184,7 @@ public final class Q00197_SevenSignsTheSacredBookOfSeal extends Quest
 			case "32595-07.html":
 			case "32595-08.html":
 			{
-				if (st.isCond(4) && st.hasQuestItems(SCULPTURE_OF_DOUBT))
+				if (st.isCond(4) && hasQuestItems(player, SCULPTURE_OF_DOUBT))
 				{
 					htmltext = event;
 				}
@@ -192,7 +192,7 @@ public final class Q00197_SevenSignsTheSacredBookOfSeal extends Quest
 			}
 			case "32595-09.html":
 			{
-				if (st.isCond(4) && st.hasQuestItems(SCULPTURE_OF_DOUBT))
+				if (st.isCond(4) && hasQuestItems(player, SCULPTURE_OF_DOUBT))
 				{
 					st.setCond(5, true);
 					htmltext = event;
@@ -202,7 +202,7 @@ public final class Q00197_SevenSignsTheSacredBookOfSeal extends Quest
 			case "32596-02.html":
 			case "32596-03.html":
 			{
-				if (st.isCond(5) && st.hasQuestItems(SCULPTURE_OF_DOUBT))
+				if (st.isCond(5) && hasQuestItems(player, SCULPTURE_OF_DOUBT))
 				{
 					htmltext = event;
 				}
@@ -210,7 +210,7 @@ public final class Q00197_SevenSignsTheSacredBookOfSeal extends Quest
 			}
 			case "32596-04.html":
 			{
-				if (st.isCond(5) && st.hasQuestItems(SCULPTURE_OF_DOUBT))
+				if (st.isCond(5) && hasQuestItems(player, SCULPTURE_OF_DOUBT))
 				{
 					st.giveItems(MYSTERIOUS_HAND_WRITTEN_TEXT, 1);
 					st.setCond(6, true);
@@ -278,7 +278,7 @@ public final class Q00197_SevenSignsTheSacredBookOfSeal extends Quest
 						}
 						else if (st.isCond(6))
 						{
-							if (st.hasQuestItems(MYSTERIOUS_HAND_WRITTEN_TEXT, SCULPTURE_OF_DOUBT))
+							if (hasQuestItems(player, MYSTERIOUS_HAND_WRITTEN_TEXT, SCULPTURE_OF_DOUBT))
 							{
 								htmltext = "32593-07.html";
 							}
@@ -324,14 +324,14 @@ public final class Q00197_SevenSignsTheSacredBookOfSeal extends Quest
 						}
 						else if (st.isCond(4))
 						{
-							if (st.hasQuestItems(SCULPTURE_OF_DOUBT))
+							if (hasQuestItems(player, SCULPTURE_OF_DOUBT))
 							{
 								htmltext = "32595-06.html";
 							}
 						}
 						else if (st.getCond() >= 5)
 						{
-							if (st.hasQuestItems(SCULPTURE_OF_DOUBT))
+							if (hasQuestItems(player, SCULPTURE_OF_DOUBT))
 							{
 								htmltext = "32595-10.html";
 							}
@@ -342,14 +342,14 @@ public final class Q00197_SevenSignsTheSacredBookOfSeal extends Quest
 					{
 						if (st.isCond(5))
 						{
-							if (st.hasQuestItems(SCULPTURE_OF_DOUBT))
+							if (hasQuestItems(player, SCULPTURE_OF_DOUBT))
 							{
 								htmltext = "32596-01.html";
 							}
 						}
 						else if (st.getCond() >= 6)
 						{
-							if (st.hasQuestItems(SCULPTURE_OF_DOUBT, MYSTERIOUS_HAND_WRITTEN_TEXT))
+							if (hasQuestItems(player, SCULPTURE_OF_DOUBT, MYSTERIOUS_HAND_WRITTEN_TEXT))
 							{
 								htmltext = "32596-05.html";
 							}

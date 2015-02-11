@@ -85,11 +85,11 @@ public class Q10275_ContainingTheAttributePower extends Quest
 				break;
 			case "32325-03.html":
 				st.setCond(3, true);
-				st.giveItems(YINSWORD, 1, Elementals.FIRE, 10);
+				giveItems(player, YINSWORD, 1, Elementals.FIRE, 10);
 				break;
 			case "32326-03.html":
 				st.setCond(8, true);
-				st.giveItems(YANGSWORD, 1, Elementals.EARTH, 10);
+				giveItems(player, YANGSWORD, 1, Elementals.EARTH, 10);
 				break;
 			case "32325-06.html":
 				if (st.hasQuestItems(YINSWORD))
@@ -97,7 +97,7 @@ public class Q10275_ContainingTheAttributePower extends Quest
 					st.takeItems(YINSWORD, 1);
 					htmltext = "32325-07.html";
 				}
-				st.giveItems(YINSWORD, 1, Elementals.FIRE, 10);
+				giveItems(player, YINSWORD, 1, Elementals.FIRE, 10);
 				break;
 			case "32326-06.html":
 				if (st.hasQuestItems(YANGSWORD))
@@ -105,24 +105,24 @@ public class Q10275_ContainingTheAttributePower extends Quest
 					st.takeItems(YANGSWORD, 1);
 					htmltext = "32326-07.html";
 				}
-				st.giveItems(YANGSWORD, 1, Elementals.EARTH, 10);
+				giveItems(player, YANGSWORD, 1, Elementals.EARTH, 10);
 				break;
 			case "32325-09.html":
 				st.setCond(5, true);
 				BLESSING_OF_FIRE.getSkill().applyEffects(player, player);
-				st.giveItems(YINSWORD, 1, Elementals.FIRE, 10);
+				giveItems(player, YINSWORD, 1, Elementals.FIRE, 10);
 				break;
 			case "32326-09.html":
 				st.setCond(10, true);
 				BLESSING_OF_EARTH.getSkill().applyEffects(player, player);
-				st.giveItems(YANGSWORD, 1, Elementals.EARTH, 10);
+				giveItems(player, YANGSWORD, 1, Elementals.EARTH, 10);
 				break;
 		}
 		
 		if (Util.isDigit(event))
 		{
 			htmltext = Integer.toString(npc.getId()) + "-1" + event + ".html";
-			st.giveItems(10520 + Integer.valueOf(event), 2);
+			giveItems(player, 10520 + Integer.valueOf(event), 2);
 			st.addExpAndSp(202160, 20375);
 			st.exitQuest(false, true);
 		}
@@ -144,7 +144,7 @@ public class Q10275_ContainingTheAttributePower extends Quest
 			case AIR:
 				if ((st.isCond(8) || st.isCond(10)) && (st.getItemEquipped(Inventory.PAPERDOLL_RHAND) == YANGSWORD) && (st.getQuestItemsCount(SOULPIECEAIR) < 6) && (getRandom(100) < 30))
 				{
-					st.giveItems(SOULPIECEAIR, 1);
+					giveItems(player, SOULPIECEAIR, 1);
 					if (st.getQuestItemsCount(SOULPIECEAIR) >= 6)
 					{
 						st.setCond(st.getCond() + 1, true);
@@ -158,7 +158,7 @@ public class Q10275_ContainingTheAttributePower extends Quest
 			case WATER:
 				if (((st.getCond() >= 3) || (st.getCond() <= 5)) && (st.getItemEquipped(Inventory.PAPERDOLL_RHAND) == YINSWORD) && (st.getQuestItemsCount(SOULPIECEWATER) < 6) && (getRandom(100) < 30))
 				{
-					st.giveItems(SOULPIECEWATER, 1);
+					giveItems(player, SOULPIECEWATER, 1);
 					if (st.getQuestItemsCount(SOULPIECEWATER) >= 6)
 					{
 						st.setCond(st.getCond() + 1, true);
