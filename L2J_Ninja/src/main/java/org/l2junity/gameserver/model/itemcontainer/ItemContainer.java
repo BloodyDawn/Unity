@@ -21,10 +21,16 @@ package org.l2junity.gameserver.model.itemcontainer;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
+import java.util.function.Predicate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
+
+import javolution.util.FastList;
 
 import org.l2junity.Config;
 import org.l2junity.L2DatabaseFactory;
@@ -36,8 +42,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-
-import javolution.util.FastList;
 
 /**
  * @author Advi
@@ -78,11 +82,22 @@ public abstract class ItemContainer
 	}
 	
 	/**
-	 * @return the items in inventory
+	 * Gets the items in inventory.
+	 * @return the items in inventory.
 	 */
-	public ItemInstance[] getItems()
+	public Collection<ItemInstance> getItems()
 	{
-		return _items.toArray(new ItemInstance[_items.size()]);
+		return getItems(i -> true);
+	}
+	
+	/**
+	 * Gets the items in inventory filtered by filter.
+	 * @param filter the filter
+	 * @return the filtered items in inventory
+	 */
+	public Collection<ItemInstance> getItems(Predicate<ItemInstance> filter)
+	{
+		return _items.stream().filter(Objects::nonNull).filter(filter).collect(Collectors.toCollection(LinkedList::new));
 	}
 	
 	/**
@@ -120,34 +135,9 @@ public abstract class ItemContainer
 	 * @param itemId the item Id
 	 * @return the items list from inventory by using its itemId
 	 */
-	public List<ItemInstance> getItemsByItemId(int itemId)
+	public Collection<ItemInstance> getItemsByItemId(int itemId)
 	{
-		final List<ItemInstance> returnList = new ArrayList<>();
-		for (ItemInstance item : _items)
-		{
-			if ((item != null) && (item.getId() == itemId))
-			{
-				returnList.add(item);
-			}
-		}
-		return returnList;
-	}
-	
-	/**
-	 * @param itemId the item Id
-	 * @param itemToIgnore used during the loop, to avoid returning the same item
-	 * @return the item from inventory by itemId
-	 */
-	public ItemInstance getItemByItemId(int itemId, ItemInstance itemToIgnore)
-	{
-		for (ItemInstance item : _items)
-		{
-			if ((item != null) && (item.getId() == itemId) && !item.equals(itemToIgnore))
-			{
-				return item;
-			}
-		}
-		return null;
+		return getItems(i -> i.getId() == itemId);
 	}
 	
 	/**
@@ -194,21 +184,9 @@ public abstract class ItemContainer
 			{
 				if (item.isStackable())
 				{
-					// FIXME: Zoey76: if there are more than one stacks of the same item Id
-					// it will return the count of the last one, if is not possible to
-					// have more than one stacks of the same item Id,
-					// it will continue iterating over all items
-					// possible fixes:
-					// count += item.getCount();
-					// or
-					// count = item.getCount();
-					// break;
-					count = item.getCount();
+					return item.getCount();
 				}
-				else
-				{
-					count++;
-				}
+				count++;
 			}
 		}
 		return count;

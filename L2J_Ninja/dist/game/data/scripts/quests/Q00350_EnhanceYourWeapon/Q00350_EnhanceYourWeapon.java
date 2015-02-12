@@ -297,9 +297,8 @@ public class Q00350_EnhanceYourWeapon extends Quest
 			return null;
 		}
 		
-		ItemInstance[] inv = player.getInventory().getItems();
 		SoulCrystal ret = null;
-		for (ItemInstance item : inv)
+		for (ItemInstance item : player.getInventory().getItems())
 		{
 			int itemId = item.getId();
 			if (!SOUL_CRYSTALS.containsKey(itemId))

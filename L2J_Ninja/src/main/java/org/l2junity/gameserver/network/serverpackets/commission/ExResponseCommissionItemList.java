@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.serverpackets.commission;
 
-import java.util.List;
+import java.util.Collection;
 
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.serverpackets.AbstractItemPacket;
@@ -28,9 +28,9 @@ import org.l2junity.gameserver.network.serverpackets.AbstractItemPacket;
  */
 public class ExResponseCommissionItemList extends AbstractItemPacket
 {
-	private final List<ItemInstance> _items;
+	private final Collection<ItemInstance> _items;
 	
-	public ExResponseCommissionItemList(List<ItemInstance> items)
+	public ExResponseCommissionItemList(Collection<ItemInstance> items)
 	{
 		_items = items;
 	}

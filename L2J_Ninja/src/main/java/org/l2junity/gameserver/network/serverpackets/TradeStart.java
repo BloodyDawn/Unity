@@ -18,6 +18,8 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import java.util.Collection;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.instancemanager.MentorManager;
 import org.l2junity.gameserver.model.PcCondOverride;
@@ -28,7 +30,7 @@ public final class TradeStart extends AbstractItemPacket
 {
 	private final L2PcInstance _activeChar;
 	private final L2PcInstance _partner;
-	private final ItemInstance[] _itemList;
+	private final Collection<ItemInstance> _itemList;
 	private int _mask = 0;
 	
 	public TradeStart(L2PcInstance player)
@@ -79,7 +81,7 @@ public final class TradeStart extends AbstractItemPacket
 		{
 			writeC(_partner.getLevel());
 		}
-		writeH(_itemList.length);
+		writeH(_itemList.size());
 		for (ItemInstance item : _itemList)
 		{
 			writeItem(item);

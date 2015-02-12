@@ -19,6 +19,7 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
@@ -33,7 +34,7 @@ public final class WareHouseWithdrawalList extends AbstractItemPacket
 	private L2PcInstance _activeChar;
 	private long _playerAdena;
 	private final int _invSize;
-	private ItemInstance[] _items;
+	private Collection<ItemInstance> _items;
 	private final List<Integer> _itemsStackable = new ArrayList<>();
 	/**
 	 * <ul>
@@ -75,7 +76,7 @@ public final class WareHouseWithdrawalList extends AbstractItemPacket
 		writeC(0x42);
 		writeH(_whType);
 		writeQ(_playerAdena);
-		writeH(_items.length);
+		writeH(_items.size());
 		writeH(_itemsStackable.size());
 		for (int itemId : _itemsStackable)
 		{

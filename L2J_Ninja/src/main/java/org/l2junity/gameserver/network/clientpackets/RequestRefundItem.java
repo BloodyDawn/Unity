@@ -132,7 +132,7 @@ public final class RequestRefundItem extends L2GameClientPacket
 		long adena = 0;
 		long slots = 0;
 		
-		ItemInstance[] refund = player.getRefund().getItems();
+		ItemInstance[] refund = player.getRefund().getItems().toArray(new ItemInstance[0]);
 		int[] objectIds = new int[_items.length];
 		
 		for (int i = 0; i < _items.length; i++)

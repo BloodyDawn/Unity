@@ -10417,7 +10417,7 @@ public final class L2PcInstance extends Playable
 			// Remove active item skills before saving char to database
 			// because next time when choosing this class, weared items can
 			// be different
-			for (ItemInstance item : getInventory().getAugmentedItems())
+			for (ItemInstance item : getInventory().getItems(ItemInstance::isAugmented))
 			{
 				if ((item != null) && item.isEquipped())
 				{

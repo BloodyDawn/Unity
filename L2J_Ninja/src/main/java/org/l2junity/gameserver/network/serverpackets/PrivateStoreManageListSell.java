@@ -18,6 +18,8 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import java.util.Collection;
+
 import org.l2junity.gameserver.model.TradeItem;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 
@@ -26,7 +28,7 @@ public class PrivateStoreManageListSell extends AbstractItemPacket
 	private final int _objId;
 	private final long _playerAdena;
 	private final boolean _packageSale;
-	private final TradeItem[] _itemList;
+	private final Collection<TradeItem> _itemList;
 	private final TradeItem[] _sellList;
 	
 	public PrivateStoreManageListSell(L2PcInstance player, boolean isPackageSale)
@@ -49,7 +51,7 @@ public class PrivateStoreManageListSell extends AbstractItemPacket
 		writeQ(_playerAdena);
 		
 		// section2
-		writeD(_itemList.length); // for potential sells
+		writeD(_itemList.size()); // for potential sells
 		for (TradeItem item : _itemList)
 		{
 			writeItem(item);

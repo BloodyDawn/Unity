@@ -18,17 +18,19 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import java.util.Collection;
+
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 public class ExShowBaseAttributeCancelWindow extends L2GameServerPacket
 {
-	private final ItemInstance[] _items;
+	private final Collection<ItemInstance> _items;
 	private long _price;
 	
 	public ExShowBaseAttributeCancelWindow(L2PcInstance player)
 	{
-		_items = player.getInventory().getElementItems();
+		_items = player.getInventory().getItems(i -> i.getElementals() != null);
 	}
 	
 	@Override
@@ -36,7 +38,7 @@ public class ExShowBaseAttributeCancelWindow extends L2GameServerPacket
 	{
 		writeC(0xFE);
 		writeH(0x75);
-		writeD(_items.length);
+		writeD(_items.size());
 		for (ItemInstance item : _items)
 		{
 			writeD(item.getObjectId());

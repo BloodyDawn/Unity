@@ -18,6 +18,8 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import java.util.Collection;
+
 import org.l2junity.gameserver.model.entity.Message;
 import org.l2junity.gameserver.model.itemcontainer.ItemContainer;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -28,7 +30,7 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 public class ExReplySentPost extends AbstractItemPacket
 {
 	private final Message _msg;
-	private ItemInstance[] _items = null;
+	private Collection<ItemInstance> _items = null;
 	
 	public ExReplySentPost(Message msg)
 	{
@@ -59,9 +61,9 @@ public class ExReplySentPost extends AbstractItemPacket
 		writeS(_msg.getSubject());
 		writeS(_msg.getContent());
 		
-		if ((_items != null) && (_items.length > 0))
+		if ((_items != null) && !_items.isEmpty())
 		{
-			writeD(_items.length);
+			writeD(_items.size());
 			for (ItemInstance item : _items)
 			{
 				writeItem(item);

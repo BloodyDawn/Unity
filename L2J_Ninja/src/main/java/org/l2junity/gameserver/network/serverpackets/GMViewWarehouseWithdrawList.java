@@ -18,13 +18,15 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import java.util.Collection;
+
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 public class GMViewWarehouseWithdrawList extends AbstractItemPacket
 {
-	private final ItemInstance[] _items;
+	private final Collection<ItemInstance> _items;
 	private final String _playerName;
 	private final long _money;
 	
@@ -48,7 +50,7 @@ public class GMViewWarehouseWithdrawList extends AbstractItemPacket
 		writeC(0x9b);
 		writeS(_playerName);
 		writeQ(_money);
-		writeH(_items.length);
+		writeH(_items.size());
 		for (ItemInstance item : _items)
 		{
 			writeItem(item);

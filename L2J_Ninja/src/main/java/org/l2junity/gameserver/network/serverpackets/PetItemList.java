@@ -18,13 +18,15 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import java.util.Collection;
+
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 public class PetItemList extends AbstractItemPacket
 {
-	private final ItemInstance[] _items;
+	private final Collection<ItemInstance> _items;
 	
-	public PetItemList(ItemInstance[] items)
+	public PetItemList(Collection<ItemInstance> items)
 	{
 		_items = items;
 	}
@@ -33,7 +35,7 @@ public class PetItemList extends AbstractItemPacket
 	protected final void writeImpl()
 	{
 		writeC(0xB3);
-		writeH(_items.length);
+		writeH(_items.size());
 		for (ItemInstance item : _items)
 		{
 			writeItem(item);

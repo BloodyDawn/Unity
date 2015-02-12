@@ -19,6 +19,9 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import java.util.ArrayList;
+import java.util.Collection;
+
+import javolution.util.FastList;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.MultisellData;
@@ -36,8 +39,6 @@ import org.l2junity.gameserver.network.serverpackets.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.serverpackets.ItemList;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.util.Rnd;
-
-import javolution.util.FastList;
 
 /**
  * The Class MultiSellChoose.
@@ -270,7 +271,7 @@ public class MultiSellChoose extends L2GameClientPacket
 									if (list.getMaintainEnchantment())
 									{
 										// loop through this list and remove (one by one) each item until the required amount is taken.
-										ItemInstance[] inventoryContents = inv.getAllItemsByItemId(e.getItemId(), e.getEnchantLevel(), false);
+										ItemInstance[] inventoryContents = inv.getAllItemsByItemId(e.getItemId(), e.getEnchantLevel(), false).toArray(new ItemInstance[0]);
 										for (int i = 0; i < (e.getItemCount() * _amount); i++)
 										{
 											if (inventoryContents[i].isAugmented())
@@ -328,9 +329,9 @@ public class MultiSellChoose extends L2GameClientPacket
 										// choice 1. Small number of items exchanged. No sorting.
 										for (int i = 1; i <= (e.getItemCount() * _amount); i++)
 										{
-											ItemInstance[] inventoryContents = inv.getAllItemsByItemId(e.getItemId(), false);
+											Collection<ItemInstance> inventoryContents = inv.getAllItemsByItemId(e.getItemId(), false);
 											
-											itemToTake = inventoryContents[0];
+											itemToTake = inventoryContents.iterator().next();
 											// get item with the LOWEST enchantment level from the inventory...
 											// +0 is lowest by default...
 											if (itemToTake.getEnchantLevel() > 0)

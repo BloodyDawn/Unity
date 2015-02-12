@@ -18,6 +18,8 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import java.util.Collection;
+
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
@@ -26,8 +28,8 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
  */
 public class ExBuySellList extends AbstractItemPacket
 {
-	private ItemInstance[] _sellList = null;
-	private ItemInstance[] _refundList = null;
+	private Collection<ItemInstance> _sellList = null;
+	private Collection<ItemInstance> _refundList = null;
 	private final boolean _done;
 	
 	public ExBuySellList(L2PcInstance player, boolean done)
@@ -50,7 +52,7 @@ public class ExBuySellList extends AbstractItemPacket
 		
 		if ((_sellList != null))
 		{
-			writeH(_sellList.length);
+			writeH(_sellList.size());
 			for (ItemInstance item : _sellList)
 			{
 				writeItem(item);
@@ -62,9 +64,9 @@ public class ExBuySellList extends AbstractItemPacket
 			writeH(0x00);
 		}
 		
-		if ((_refundList != null) && (_refundList.length > 0))
+		if ((_refundList != null) && !_refundList.isEmpty())
 		{
-			writeH(_refundList.length);
+			writeH(_refundList.size());
 			int i = 0;
 			for (ItemInstance item : _refundList)
 			{

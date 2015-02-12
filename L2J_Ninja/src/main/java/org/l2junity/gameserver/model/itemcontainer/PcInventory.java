@@ -21,9 +21,13 @@ package org.l2junity.gameserver.model.itemcontainer;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 import org.l2junity.Config;
 import org.l2junity.L2DatabaseFactory;
@@ -46,8 +50,6 @@ import org.l2junity.gameserver.network.serverpackets.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2junity.gameserver.network.serverpackets.ItemList;
 import org.l2junity.gameserver.util.Util;
-
-import javolution.util.FastList;
 
 public class PcInventory extends Inventory
 {
@@ -135,14 +137,14 @@ public class PcInventory extends Inventory
 	 * @param allowAncientAdena
 	 * @return L2ItemInstance : items in inventory
 	 */
-	public ItemInstance[] getUniqueItems(boolean allowAdena, boolean allowAncientAdena)
+	public Collection<ItemInstance> getUniqueItems(boolean allowAdena, boolean allowAncientAdena)
 	{
 		return getUniqueItems(allowAdena, allowAncientAdena, true);
 	}
 	
-	public ItemInstance[] getUniqueItems(boolean allowAdena, boolean allowAncientAdena, boolean onlyAvailable)
+	public Collection<ItemInstance> getUniqueItems(boolean allowAdena, boolean allowAncientAdena, boolean onlyAvailable)
 	{
-		FastList<ItemInstance> list = FastList.newInstance();
+		final Collection<ItemInstance> list = new LinkedList<>();
 		for (ItemInstance item : _items)
 		{
 			if (item == null)
@@ -172,10 +174,7 @@ public class PcInventory extends Inventory
 			}
 		}
 		
-		ItemInstance[] result = list.toArray(new ItemInstance[list.size()]);
-		FastList.recycle(list);
-		
-		return result;
+		return list;
 	}
 	
 	/**
@@ -184,14 +183,14 @@ public class PcInventory extends Inventory
 	 * @param allowAncientAdena
 	 * @return L2ItemInstance : items in inventory
 	 */
-	public ItemInstance[] getUniqueItemsByEnchantLevel(boolean allowAdena, boolean allowAncientAdena)
+	public Collection<ItemInstance> getUniqueItemsByEnchantLevel(boolean allowAdena, boolean allowAncientAdena)
 	{
 		return getUniqueItemsByEnchantLevel(allowAdena, allowAncientAdena, true);
 	}
 	
-	public ItemInstance[] getUniqueItemsByEnchantLevel(boolean allowAdena, boolean allowAncientAdena, boolean onlyAvailable)
+	public Collection<ItemInstance> getUniqueItemsByEnchantLevel(boolean allowAdena, boolean allowAncientAdena, boolean onlyAvailable)
 	{
-		FastList<ItemInstance> list = FastList.newInstance();
+		final Collection<ItemInstance> list = new LinkedList<>();
 		for (ItemInstance item : _items)
 		{
 			if (item == null)
@@ -223,17 +222,14 @@ public class PcInventory extends Inventory
 			}
 		}
 		
-		ItemInstance[] result = list.toArray(new ItemInstance[list.size()]);
-		FastList.recycle(list);
-		
-		return result;
+		return list;
 	}
 	
 	/**
 	 * @param itemId
 	 * @return
 	 */
-	public ItemInstance[] getAllItemsByItemId(int itemId)
+	public Collection<ItemInstance> getAllItemsByItemId(int itemId)
 	{
 		return getAllItemsByItemId(itemId, true);
 	}
@@ -244,26 +240,9 @@ public class PcInventory extends Inventory
 	 * @param includeEquipped : include equipped items
 	 * @return L2ItemInstance[] : matching items from inventory
 	 */
-	public ItemInstance[] getAllItemsByItemId(int itemId, boolean includeEquipped)
+	public Collection<ItemInstance> getAllItemsByItemId(int itemId, boolean includeEquipped)
 	{
-		FastList<ItemInstance> list = FastList.newInstance();
-		for (ItemInstance item : _items)
-		{
-			if (item == null)
-			{
-				continue;
-			}
-			
-			if ((item.getId() == itemId) && (includeEquipped || !item.isEquipped()))
-			{
-				list.add(item);
-			}
-		}
-		
-		ItemInstance[] result = list.toArray(new ItemInstance[list.size()]);
-		FastList.recycle(list);
-		
-		return result;
+		return getItems(i -> (i.getId() == itemId) && (includeEquipped || !i.isEquipped()));
 	}
 	
 	/**
@@ -271,7 +250,7 @@ public class PcInventory extends Inventory
 	 * @param enchantment
 	 * @return
 	 */
-	public ItemInstance[] getAllItemsByItemId(int itemId, int enchantment)
+	public Collection<ItemInstance> getAllItemsByItemId(int itemId, int enchantment)
 	{
 		return getAllItemsByItemId(itemId, enchantment, true);
 	}
@@ -283,26 +262,9 @@ public class PcInventory extends Inventory
 	 * @param includeEquipped : include equipped items
 	 * @return L2ItemInstance[] : matching items from inventory
 	 */
-	public ItemInstance[] getAllItemsByItemId(int itemId, int enchantment, boolean includeEquipped)
+	public Collection<ItemInstance> getAllItemsByItemId(int itemId, int enchantment, boolean includeEquipped)
 	{
-		FastList<ItemInstance> list = FastList.newInstance();
-		for (ItemInstance item : _items)
-		{
-			if (item == null)
-			{
-				continue;
-			}
-			
-			if ((item.getId() == itemId) && (item.getEnchantLevel() == enchantment) && (includeEquipped || !item.isEquipped()))
-			{
-				list.add(item);
-			}
-		}
-		
-		ItemInstance[] result = list.toArray(new ItemInstance[list.size()]);
-		FastList.recycle(list);
-		
-		return result;
+		return getItems(i -> (i.getId() == itemId) && (i.getEnchantLevel() == enchantment) && (includeEquipped || !i.isEquipped()));
 	}
 	
 	/**
@@ -311,74 +273,20 @@ public class PcInventory extends Inventory
 	 * @param feightable
 	 * @return the list of items in inventory available for transaction
 	 */
-	public ItemInstance[] getAvailableItems(boolean allowAdena, boolean allowNonTradeable, boolean feightable)
+	public Collection<ItemInstance> getAvailableItems(boolean allowAdena, boolean allowNonTradeable, boolean feightable)
 	{
-		FastList<ItemInstance> list = FastList.newInstance();
-		for (ItemInstance item : _items)
+		return getItems(i ->
 		{
-			if ((item == null) || !item.isAvailable(getOwner(), allowAdena, allowNonTradeable) || !canManipulateWithItemId(item.getId()))
+			if (!i.isAvailable(getOwner(), allowAdena, allowNonTradeable) || !canManipulateWithItemId(i.getId()))
 			{
-				continue;
+				return false;
 			}
 			else if (feightable)
 			{
-				if ((item.getItemLocation() == ItemLocation.INVENTORY) && item.isFreightable())
-				{
-					list.add(item);
-				}
+				return (i.getItemLocation() == ItemLocation.INVENTORY) && i.isFreightable();
 			}
-			else
-			{
-				list.add(item);
-			}
-		}
-		
-		ItemInstance[] result = list.toArray(new ItemInstance[list.size()]);
-		FastList.recycle(list);
-		
-		return result;
-	}
-	
-	/**
-	 * Get all augmented items
-	 * @return
-	 */
-	public ItemInstance[] getAugmentedItems()
-	{
-		FastList<ItemInstance> list = FastList.newInstance();
-		for (ItemInstance item : _items)
-		{
-			if ((item != null) && item.isAugmented())
-			{
-				list.add(item);
-			}
-		}
-		
-		ItemInstance[] result = list.toArray(new ItemInstance[list.size()]);
-		FastList.recycle(list);
-		
-		return result;
-	}
-	
-	/**
-	 * Get all element items
-	 * @return
-	 */
-	public ItemInstance[] getElementItems()
-	{
-		FastList<ItemInstance> list = FastList.newInstance();
-		for (ItemInstance item : _items)
-		{
-			if ((item != null) && (item.getElementals() != null))
-			{
-				list.add(item);
-			}
-		}
-		
-		ItemInstance[] result = list.toArray(new ItemInstance[list.size()]);
-		FastList.recycle(list);
-		
-		return result;
+			return true;
+		});
 	}
 	
 	/**
@@ -386,25 +294,14 @@ public class PcInventory extends Inventory
 	 * @param tradeList
 	 * @return L2ItemInstance : items in inventory
 	 */
-	public TradeItem[] getAvailableItems(TradeList tradeList)
+	public Collection<TradeItem> getAvailableItems(TradeList tradeList)
 	{
-		FastList<TradeItem> list = FastList.newInstance();
-		for (ItemInstance item : _items)
-		{
-			if ((item != null) && item.isAvailable(getOwner(), false, false))
-			{
-				TradeItem adjItem = tradeList.adjustAvailableItem(item);
-				if (adjItem != null)
-				{
-					list.add(adjItem);
-				}
-			}
-		}
-		
-		TradeItem[] result = list.toArray(new TradeItem[list.size()]);
-		FastList.recycle(list);
-		
-		return result;
+		//@formatter:off
+		return _items.stream().filter(Objects::nonNull)
+			.filter(i -> i.isAvailable(getOwner(), false, false))
+			.map(i -> tradeList.adjustAvailableItem(i))
+			.collect(Collectors.toCollection(LinkedList::new));
+		//@formatter:on
 	}
 	
 	/**

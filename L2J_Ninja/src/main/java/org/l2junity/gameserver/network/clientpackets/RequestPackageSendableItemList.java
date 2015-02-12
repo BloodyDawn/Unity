@@ -18,6 +18,8 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
+import java.util.Collection;
+
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.serverpackets.PackageSendableList;
 
@@ -40,7 +42,7 @@ public class RequestPackageSendableItemList extends L2GameClientPacket
 	@Override
 	public void runImpl()
 	{
-		ItemInstance[] items = getClient().getActiveChar().getInventory().getAvailableItems(true, true, true);
+		Collection<ItemInstance> items = getClient().getActiveChar().getInventory().getAvailableItems(true, true, true);
 		sendPacket(new PackageSendableList(items, _objectID));
 	}
 	
