@@ -299,7 +299,7 @@ public class PcInventory extends Inventory
 		//@formatter:off
 		return _items.stream().filter(Objects::nonNull)
 			.filter(i -> i.isAvailable(getOwner(), false, false))
-			.map(i -> tradeList.adjustAvailableItem(i))
+			.map(tradeList::adjustAvailableItem)
 			.collect(Collectors.toCollection(LinkedList::new));
 		//@formatter:on
 	}
