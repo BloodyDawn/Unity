@@ -13,7 +13,7 @@ subprojects {
 
 	tasks.eclipse.doLast {
 		copy {
-			from('eclipse-settings')
+			from('../eclipse-settings')
 			into('.settings')
 		}
 	}
