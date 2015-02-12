@@ -746,8 +746,6 @@ public final class Config
 	public static boolean BANKING_SYSTEM_ENABLED;
 	public static int BANKING_SYSTEM_GOLDBARS;
 	public static int BANKING_SYSTEM_ADENA;
-	public static boolean L2JMOD_ENABLE_WAREHOUSESORTING_CLAN;
-	public static boolean L2JMOD_ENABLE_WAREHOUSESORTING_PRIVATE;
 	public static boolean OFFLINE_TRADE_ENABLE;
 	public static boolean OFFLINE_CRAFT_ENABLE;
 	public static boolean OFFLINE_MODE_IN_PEACE_ZONE;
@@ -2170,9 +2168,6 @@ public final class Config
 			L2JMOD_WEDDING_FORMALWEAR = L2JModSettings.getBoolean("WeddingFormalWear", true);
 			L2JMOD_WEDDING_DIVORCE_COSTS = L2JModSettings.getInt("WeddingDivorceCosts", 20);
 			
-			L2JMOD_ENABLE_WAREHOUSESORTING_CLAN = L2JModSettings.getBoolean("EnableWarehouseSortingClan", false);
-			L2JMOD_ENABLE_WAREHOUSESORTING_PRIVATE = L2JModSettings.getBoolean("EnableWarehouseSortingPrivate", false);
-			
 			L2JMOD_OLD_DROP_BEHAVIOR = L2JModSettings.getBoolean("OldDropBehavior", false);
 			
 			if (TVT_EVENT_PARTICIPATION_NPC_ID == 0)
@@ -3457,12 +3452,6 @@ public final class Config
 				break;
 			case "tvteventparticipationnpcid":
 				TVT_EVENT_PARTICIPATION_NPC_ID = Integer.parseInt(pValue);
-				break;
-			case "enablewarehousesortingclan":
-				L2JMOD_ENABLE_WAREHOUSESORTING_CLAN = Boolean.parseBoolean(pValue);
-				break;
-			case "enablewarehousesortingprivate":
-				L2JMOD_ENABLE_WAREHOUSESORTING_PRIVATE = Boolean.parseBoolean(pValue);
 				break;
 			case "enablemanapotionsupport":
 				L2JMOD_ENABLE_MANA_POTIONS_SUPPORT = Boolean.parseBoolean(pValue);

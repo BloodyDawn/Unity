@@ -22,7 +22,6 @@ import java.text.SimpleDateFormat;
 import java.util.StringTokenizer;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.data.sql.impl.TeleportLocationTable;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.InstanceType;
@@ -34,8 +33,6 @@ import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
-import org.l2junity.gameserver.network.serverpackets.SortedWareHouseWithdrawalList;
-import org.l2junity.gameserver.network.serverpackets.SortedWareHouseWithdrawalList.WarehouseListType;
 import org.l2junity.gameserver.network.serverpackets.WareHouseDepositList;
 import org.l2junity.gameserver.network.serverpackets.WareHouseWithdrawalList;
 
@@ -240,26 +237,7 @@ public class L2FortManagerInstance extends L2MerchantInstance
 					}
 					else if (val.equalsIgnoreCase("withdraw"))
 					{
-						if (Config.L2JMOD_ENABLE_WAREHOUSESORTING_CLAN)
-						{
-							String htmFile = "data/html/mods/WhSortedC.htm";
-							String htmContent = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), htmFile);
-							if (htmContent != null)
-							{
-								final NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage(getObjectId());
-								npcHtmlMessage.setHtml(htmContent);
-								npcHtmlMessage.replace("%objectId%", String.valueOf(getObjectId()));
-								player.sendPacket(npcHtmlMessage);
-							}
-							else
-							{
-								_log.warning("Missing htm: " + htmFile + " !");
-							}
-						}
-						else
-						{
-							showVaultWindowWithdraw(player, null, (byte) 0);
-						}
+						showVaultWindowWithdraw(player);
 					}
 					else
 					{
@@ -271,23 +249,6 @@ public class L2FortManagerInstance extends L2MerchantInstance
 				{
 					html.setFile(player.getHtmlPrefix(), "data/html/fortress/foreman-noprivs.htm");
 					sendHtmlMessage(player, html);
-				}
-				return;
-			}
-			else if (actualCommand.startsWith("WithdrawSortedC"))
-			{
-				String param[] = command.split("_");
-				if (param.length > 2)
-				{
-					showVaultWindowWithdraw(player, WarehouseListType.valueOf(param[1]), SortedWareHouseWithdrawalList.getOrder(param[2]));
-				}
-				else if (param.length > 1)
-				{
-					showVaultWindowWithdraw(player, WarehouseListType.valueOf(param[1]), SortedWareHouseWithdrawalList.A2Z);
-				}
-				else
-				{
-					showVaultWindowWithdraw(player, WarehouseListType.ALL, SortedWareHouseWithdrawalList.A2Z);
 				}
 				return;
 			}
@@ -1019,20 +980,13 @@ public class L2FortManagerInstance extends L2MerchantInstance
 		player.sendPacket(new WareHouseDepositList(player, WareHouseDepositList.CLAN));
 	}
 	
-	private void showVaultWindowWithdraw(L2PcInstance player, WarehouseListType itemtype, byte sortorder)
+	private void showVaultWindowWithdraw(L2PcInstance player)
 	{
 		if (player.isClanLeader() || player.hasClanPrivilege(ClanPrivilege.CL_VIEW_WAREHOUSE))
 		{
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			player.setActiveWarehouse(player.getClan().getWarehouse());
-			if (itemtype != null)
-			{
-				player.sendPacket(new SortedWareHouseWithdrawalList(player, WareHouseWithdrawalList.CLAN, itemtype, sortorder));
-			}
-			else
-			{
-				player.sendPacket(new WareHouseWithdrawalList(player, WareHouseWithdrawalList.CLAN));
-			}
+			player.sendPacket(new WareHouseWithdrawalList(player, WareHouseWithdrawalList.CLAN));
 		}
 		else
 		{
