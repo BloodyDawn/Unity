@@ -1,0 +1,198 @@
+/*
+ * Copyright (C) 2004-2015 L2J DataPack
+ * 
+ * This file is part of L2J DataPack.
+ * 
+ * L2J DataPack is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * L2J DataPack is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+package handlers.targethandlers;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import org.l2junity.gameserver.handler.ITargetTypeHandler;
+import org.l2junity.gameserver.model.ClanMember;
+import org.l2junity.gameserver.model.L2Clan;
+import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.entity.TvTEvent;
+import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.targets.L2TargetType;
+import org.l2junity.gameserver.util.Util;
+
+/**
+ * @author UnAfraid
+ */
+public class Clan implements ITargetTypeHandler
+{
+	@Override
+	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
+	{
+		List<Creature> targetList = new ArrayList<>();
+		
+		if (activeChar.isPlayable())
+		{
+			final L2PcInstance player = activeChar.getActingPlayer();
+			
+			if (player == null)
+			{
+				return EMPTY_TARGET_LIST;
+			}
+			
+			if (player.isInOlympiadMode())
+			{
+				return new Creature[]
+				{
+					player
+				};
+			}
+			
+			if (onlyFirst)
+			{
+				return new Creature[]
+				{
+					player
+				};
+			}
+			
+			targetList.add(player);
+			
+			final int radius = skill.getAffectRange();
+			final L2Clan clan = player.getClan();
+			
+			if (Skill.addPet(activeChar, player, radius, false))
+			{
+				targetList.add(player.getPet());
+			}
+			
+			player.getServitors().values().forEach(s ->
+			{
+				if (Skill.addCharacter(activeChar, s, radius, false))
+				{
+					targetList.add(s);
+				}
+			});
+			
+			if (clan != null)
+			{
+				L2PcInstance obj;
+				for (ClanMember member : clan.getMembers())
+				{
+					obj = member.getPlayerInstance();
+					
+					if ((obj == null) || (obj == player))
+					{
+						continue;
+					}
+					
+					if (player.isInDuel())
+					{
+						if (player.getDuelId() != obj.getDuelId())
+						{
+							continue;
+						}
+						if (player.isInParty() && obj.isInParty() && (player.getParty().getLeaderObjectId() != obj.getParty().getLeaderObjectId()))
+						{
+							continue;
+						}
+					}
+					
+					// Don't add this target if this is a Pc->Pc pvp casting and pvp condition not met
+					if (!player.checkPvpSkill(obj, skill))
+					{
+						continue;
+					}
+					
+					if (!TvTEvent.checkForTvTSkill(player, obj, skill))
+					{
+						continue;
+					}
+					
+					if (Skill.addPet(activeChar, obj, radius, false))
+					{
+						targetList.add(obj.getPet());
+					}
+					
+					obj.getServitors().values().forEach(s ->
+					{
+						if (Skill.addCharacter(activeChar, s, radius, false))
+						{
+							targetList.add(s);
+						}
+					});
+					
+					if (!Skill.addCharacter(activeChar, obj, radius, false))
+					{
+						continue;
+					}
+					
+					if (onlyFirst)
+					{
+						return new Creature[]
+						{
+							obj
+						};
+					}
+					
+					targetList.add(obj);
+				}
+			}
+		}
+		else if (activeChar.isNpc())
+		{
+			// for buff purposes, returns friendly mobs nearby and mob itself
+			final Npc npc = (Npc) activeChar;
+			if ((npc.getTemplate().getClans() == null) || npc.getTemplate().getClans().isEmpty())
+			{
+				return new Creature[]
+				{
+					activeChar
+				};
+			}
+			
+			targetList.add(activeChar);
+			
+			final Collection<WorldObject> objs = activeChar.getKnownList().getKnownObjects().values();
+			int maxTargets = skill.getAffectLimit();
+			for (WorldObject newTarget : objs)
+			{
+				if (newTarget.isNpc() && npc.isInMyClan((Npc) newTarget))
+				{
+					if (!Util.checkIfInRange(skill.getCastRange(), activeChar, newTarget, true))
+					{
+						continue;
+					}
+					
+					if ((maxTargets > 0) && (targetList.size() >= maxTargets))
+					{
+						break;
+					}
+					
+					targetList.add((Npc) newTarget);
+				}
+			}
+		}
+		
+		return targetList.toArray(new Creature[targetList.size()]);
+	}
+	
+	@Override
+	public Enum<L2TargetType> getTargetType()
+	{
+		return L2TargetType.CLAN;
+	}
+}

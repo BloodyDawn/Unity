@@ -1,0 +1,28 @@
+subprojects {
+	apply plugin: 'eclipse'
+	
+	repositories {
+		mavenCentral()
+	}
+	
+	eclipse {
+		project {
+			natures('org.springsource.ide.eclipse.gradle.core.nature')
+		}
+	}
+
+	tasks.eclipse.doLast {
+		copy {
+			from('eclipse-settings')
+			into('.settings')
+		}
+	}
+
+	tasks.cleanEclipse.doLast {
+		delete('.settings')
+	}
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.2.1'
+}
