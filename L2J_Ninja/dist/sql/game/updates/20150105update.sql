@@ -1,1 +1,0 @@
-ALTER TABLE `character_subclasses` ADD `dual_class` BOOLEAN NOT NULL DEFAULT FALSE ;
