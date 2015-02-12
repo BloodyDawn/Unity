@@ -43,9 +43,9 @@ public class L2DefenderInstance extends Attackable
 	private Fort _fort = null; // the fortress which the instance should defend
 	private SiegableHall _hall = null; // the siegable hall which the instance should defend
 	
-	public L2DefenderInstance(int objectId, L2NpcTemplate template)
+	public L2DefenderInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2DefenderInstance);
 	}
 	

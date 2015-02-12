@@ -39,12 +39,11 @@ public final class L2GrandBossInstance extends L2MonsterInstance
 	
 	/**
 	 * Constructor for L2GrandBossInstance. This represent all grandbosses.
-	 * @param objectId ID of the instance
 	 * @param template L2NpcTemplate of the instance
 	 */
-	public L2GrandBossInstance(int objectId, L2NpcTemplate template)
+	public L2GrandBossInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2GrandBossInstance);
 		setIsRaid(true);
 		setLethalable(false);

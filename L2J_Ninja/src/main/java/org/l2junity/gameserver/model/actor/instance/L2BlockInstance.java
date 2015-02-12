@@ -37,13 +37,9 @@ public class L2BlockInstance extends L2MonsterInstance
 {
 	private int _colorEffect;
 	
-	/**
-	 * @param objectId
-	 * @param template
-	 */
-	public L2BlockInstance(int objectId, L2NpcTemplate template)
+	public L2BlockInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 	}
 	
 	/**

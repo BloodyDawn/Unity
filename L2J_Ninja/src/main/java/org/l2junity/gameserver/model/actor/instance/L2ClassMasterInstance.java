@@ -40,13 +40,9 @@ import org.l2junity.util.StringUtil;
  */
 public final class L2ClassMasterInstance extends L2MerchantInstance
 {
-	/**
-	 * @param objectId
-	 * @param template
-	 */
-	public L2ClassMasterInstance(int objectId, L2NpcTemplate template)
+	public L2ClassMasterInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2ClassMasterInstance);
 	}
 	

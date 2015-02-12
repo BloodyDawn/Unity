@@ -54,12 +54,11 @@ public class L2MonsterInstance extends Attackable
 	 * <li>Set the name of the L2MonsterInstance</li>
 	 * <li>Create a RandomAnimation Task that will be launched after the calculated delay if the server allow it</li>
 	 * </ul>
-	 * @param objectId the identifier of the object to initialized
 	 * @param template to apply to the NPC
 	 */
-	public L2MonsterInstance(int objectId, L2NpcTemplate template)
+	public L2MonsterInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2MonsterInstance);
 		setAutoAttackable(true);
 	}

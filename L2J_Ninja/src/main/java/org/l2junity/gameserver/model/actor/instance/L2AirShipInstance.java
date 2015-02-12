@@ -36,9 +36,9 @@ import org.l2junity.gameserver.network.serverpackets.ExStopMoveAirShip;
  */
 public class L2AirShipInstance extends Vehicle
 {
-	public L2AirShipInstance(int objectId, L2CharTemplate template)
+	public L2AirShipInstance(L2CharTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2AirShipInstance);
 		setAI(new AirShipAI(new AIAccessor()));
 	}

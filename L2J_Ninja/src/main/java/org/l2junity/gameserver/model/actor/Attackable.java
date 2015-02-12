@@ -37,8 +37,8 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.ai.FortSiegeGuardAI;
 import org.l2junity.gameserver.ai.SiegeGuardAI;
 import org.l2junity.gameserver.datatables.EventDroplist;
-import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.datatables.EventDroplist.DateDrop;
+import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
@@ -115,12 +115,11 @@ public class Attackable extends Npc
 	 * Call the L2Character constructor to set the _template of the L2Attackable (copy skills from template to object and link _calculators to NPC_STD_CALCULATOR)<br>
 	 * Set the name of the L2Attackable<br>
 	 * Create a RandomAnimation Task that will be launched after the calculated delay if the server allow it.
-	 * @param objectId identifier of the object initialized.
 	 * @param template the template to apply to the NPC.
 	 */
-	public Attackable(int objectId, L2NpcTemplate template)
+	public Attackable(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2Attackable);
 		setIsInvul(false);
 		_mustGiveExpSp = true;

@@ -23,6 +23,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
 
+import javolution.util.FastList;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -46,8 +48,6 @@ import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
 import org.l2junity.gameserver.util.Util;
 
-import javolution.util.FastList;
-
 /**
  * @author DS
  */
@@ -61,9 +61,9 @@ public abstract class Vehicle extends Creature
 	protected VehiclePathPoint[] _currentPath = null;
 	protected int _runState = 0;
 	
-	public Vehicle(int objectId, L2CharTemplate template)
+	public Vehicle(L2CharTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2Vehicle);
 		setIsFlying(true);
 	}

@@ -22,7 +22,6 @@ import java.util.logging.Level;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.sql.impl.TerritoryTable;
-import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2ControllableMobInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
@@ -78,7 +77,7 @@ public class L2GroupSpawn extends L2Spawn
 				newlocz = getZ();
 			}
 			
-			final Npc mob = new L2ControllableMobInstance(IdFactory.getInstance().getNextId(), _template);
+			final Npc mob = new L2ControllableMobInstance(_template);
 			mob.setCurrentHpMp(mob.getMaxHp(), mob.getMaxMp());
 			
 			if (getHeading() == -1)

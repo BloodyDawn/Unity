@@ -38,9 +38,9 @@ import org.l2junity.util.StringUtil;
 
 public class L2NpcInstance extends Npc
 {
-	public L2NpcInstance(int objectId, L2NpcTemplate template)
+	public L2NpcInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2NpcInstance);
 		setIsInvul(false);
 	}

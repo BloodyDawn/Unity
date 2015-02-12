@@ -26,6 +26,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 
+import javolution.util.FastMap;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.instancemanager.AuctionManager;
@@ -39,8 +41,6 @@ import org.l2junity.gameserver.model.entity.Auction.Bidder;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 
-import javolution.util.FastMap;
-
 public final class L2AuctioneerInstance extends Npc
 {
 	private static final int COND_ALL_FALSE = 0;
@@ -49,9 +49,9 @@ public final class L2AuctioneerInstance extends Npc
 	
 	private final Map<Integer, Auction> _pendingAuctions = new FastMap<>();
 	
-	public L2AuctioneerInstance(int objectId, L2NpcTemplate template)
+	public L2AuctioneerInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2AuctioneerInstance);
 	}
 	

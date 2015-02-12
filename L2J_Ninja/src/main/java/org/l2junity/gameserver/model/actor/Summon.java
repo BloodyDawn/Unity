@@ -108,9 +108,9 @@ public abstract class Summon extends Playable
 		}
 	}
 	
-	public Summon(int objectId, L2NpcTemplate template, L2PcInstance owner)
+	public Summon(L2NpcTemplate template, L2PcInstance owner)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2Summon);
 		setInstanceId(owner.getInstanceId()); // set instance to same as owner
 		setShowSummonAnimation(true);

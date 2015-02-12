@@ -25,7 +25,6 @@ import java.util.Map;
 import java.util.logging.Level;
 
 import org.l2junity.gameserver.data.xml.IXmlReader;
-import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.VehiclePathPoint;
@@ -163,7 +162,7 @@ public final class ShuttleData implements IXmlReader
 	{
 		for (L2ShuttleData data : _shuttles.values())
 		{
-			final L2ShuttleInstance shuttle = new L2ShuttleInstance(IdFactory.getInstance().getNextId(), new L2CharTemplate(new StatsSet()));
+			final L2ShuttleInstance shuttle = new L2ShuttleInstance(new L2CharTemplate(new StatsSet()));
 			shuttle.setData(data);
 			shuttle.setHeading(data.getLocation().getHeading());
 			shuttle.setLocationInvisible(data.getLocation());

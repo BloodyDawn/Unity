@@ -157,14 +157,13 @@ public class Npc extends Creature
 	 * <li>Set the name of the L2Character</li>
 	 * <li>Create a RandomAnimation Task that will be launched after the calculated delay if the server allow it</li>
 	 * </ul>
-	 * @param objectId Identifier of the object to initialized
 	 * @param template The L2NpcTemplate to apply to the NPC
 	 */
-	public Npc(int objectId, L2NpcTemplate template)
+	public Npc(L2NpcTemplate template)
 	{
 		// Call the L2Character constructor to set the _template of the L2Character, copy skills from template to object
 		// and link _calculators to NPC_STD_CALCULATOR
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2Npc);
 		initCharStatusUpdateValues();
 		

@@ -35,9 +35,9 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.network.serverpackets.SortedWareHouseWithdrawalList;
+import org.l2junity.gameserver.network.serverpackets.SortedWareHouseWithdrawalList.WarehouseListType;
 import org.l2junity.gameserver.network.serverpackets.WareHouseDepositList;
 import org.l2junity.gameserver.network.serverpackets.WareHouseWithdrawalList;
-import org.l2junity.gameserver.network.serverpackets.SortedWareHouseWithdrawalList.WarehouseListType;
 
 /**
  * Fortress Foreman implementation used for: Area Teleports, Support Magic, Clan Warehouse, Exp Loss Reduction
@@ -48,9 +48,9 @@ public class L2FortManagerInstance extends L2MerchantInstance
 	protected static final int COND_BUSY_BECAUSE_OF_SIEGE = 1;
 	protected static final int COND_OWNER = 2;
 	
-	public L2FortManagerInstance(int objectId, L2NpcTemplate template)
+	public L2FortManagerInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2FortManagerInstance);
 	}
 	

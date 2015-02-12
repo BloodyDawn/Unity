@@ -35,9 +35,9 @@ public abstract class Decoy extends Creature
 {
 	private final L2PcInstance _owner;
 	
-	public Decoy(int objectId, L2CharTemplate template, L2PcInstance owner)
+	public Decoy(L2CharTemplate template, L2PcInstance owner)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2Decoy);
 		_owner = owner;
 		setXYZInvisible(owner.getX(), owner.getY(), owner.getZ());

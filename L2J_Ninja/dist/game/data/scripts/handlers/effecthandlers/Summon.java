@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.data.xml.impl.ExperienceData;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.enums.Race;
-import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.actor.instance.L2ServitorInstance;
@@ -77,7 +76,7 @@ public final class Summon extends AbstractEffect
 		
 		final L2PcInstance player = info.getEffected().getActingPlayer();
 		final L2NpcTemplate template = NpcData.getInstance().getTemplate(_npcId);
-		final L2ServitorInstance summon = new L2ServitorInstance(IdFactory.getInstance().getNextId(), template, player);
+		final L2ServitorInstance summon = new L2ServitorInstance(template, player);
 		final int consumeItemInterval = (_consumeItemInterval > 0 ? _consumeItemInterval : (template.getRace() != Race.SIEGE_WEAPON ? 240 : 60)) * 1000;
 		
 		summon.setName(template.getName());

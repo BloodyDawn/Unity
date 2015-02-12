@@ -23,6 +23,8 @@ import java.util.Set;
 import java.util.concurrent.Future;
 import java.util.logging.Level;
 
+import javolution.util.FastList;
+
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CharacterAI;
 import org.l2junity.gameserver.ai.DoorAI;
@@ -57,8 +59,6 @@ import org.l2junity.gameserver.network.serverpackets.StaticObject;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.util.Rnd;
 
-import javolution.util.FastList;
-
 public class L2DoorInstance extends Creature
 {
 	public static final byte OPEN_BY_CLICK = 1;
@@ -79,13 +79,9 @@ public class L2DoorInstance extends Creature
 	// used for autoclose on open
 	private Future<?> _autoCloseTask;
 	
-	/**
-	 * @param objectId
-	 * @param template
-	 */
-	public L2DoorInstance(int objectId, L2DoorTemplate template)
+	public L2DoorInstance(L2DoorTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2DoorInstance);
 		setIsInvul(false);
 		setLethalable(false);

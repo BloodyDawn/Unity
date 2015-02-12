@@ -40,6 +40,10 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import javolution.util.FastList;
+import javolution.util.FastMap;
+import javolution.util.WeakFastSet;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.GeoData;
@@ -57,6 +61,7 @@ import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.enums.Team;
 import org.l2junity.gameserver.enums.UserInfoType;
+import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.instancemanager.MapRegionManager;
 import org.l2junity.gameserver.model.AccessLevel;
@@ -158,10 +163,6 @@ import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
 import org.l2junity.gameserver.util.Util;
 import org.l2junity.util.EmptyQueue;
 import org.l2junity.util.Rnd;
-
-import javolution.util.FastList;
-import javolution.util.FastMap;
-import javolution.util.WeakFastSet;
 
 /**
  * Mother class of all character objects of the world (PC, NPC...)<br>
@@ -279,6 +280,83 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	/** Future Skill Cast */
 	protected Future<?> _skillCast;
 	protected Future<?> _skillCast2;
+	
+	/**
+	 * Creates a creature.
+	 * @param template the creature template
+	 */
+	public Creature(L2CharTemplate template)
+	{
+		this(IdFactory.getInstance().getNextId(), template);
+	}
+	
+	/**
+	 * Constructor of L2Character.<br>
+	 * <B><U>Concept</U>:</B><br>
+	 * Each L2Character owns generic and static properties (ex : all Keltir have the same number of HP...).<br>
+	 * All of those properties are stored in a different template for each type of L2Character. Each template is loaded once in the server cache memory (reduce memory use).<br>
+	 * When a new instance of L2Character is spawned, server just create a link between the instance and the template This link is stored in <B>_template</B><br>
+	 * <B><U> Actions</U>:</B>
+	 * <ul>
+	 * <li>Set the _template of the L2Character</li>
+	 * <li>Set _overloaded to false (the character can take more items)</li>
+	 * <li>If L2Character is a L2NPCInstance, copy skills from template to object</li>
+	 * <li>If L2Character is a L2NPCInstance, link _calculators to NPC_STD_CALCULATOR</li>
+	 * <li>If L2Character is NOT a L2NPCInstance, create an empty _skills slot</li>
+	 * <li>If L2Character is a L2PcInstance or L2Summon, copy basic Calculator set to object</li>
+	 * </ul>
+	 * @param objectId Identifier of the object to initialized
+	 * @param template The L2CharTemplate to apply to the object
+	 */
+	public Creature(int objectId, L2CharTemplate template)
+	{
+		super(objectId);
+		if (template == null)
+		{
+			throw new NullPointerException("Template is null!");
+		}
+		
+		setInstanceType(InstanceType.L2Character);
+		initCharStat();
+		initCharStatus();
+		
+		// Set its template to the new L2Character
+		_template = template;
+		
+		if (isNpc())
+		{
+			// Copy the Standard Calculators of the L2NPCInstance in _calculators
+			_calculators = NPC_STD_CALCULATOR;
+			
+			// Copy the skills of the L2NPCInstance from its template to the L2Character Instance
+			// The skills list can be affected by spell effects so it's necessary to make a copy
+			// to avoid that a spell affecting a L2NpcInstance, affects others L2NPCInstance of the same type too.
+			for (Skill skill : template.getSkills().values())
+			{
+				addSkill(skill);
+			}
+		}
+		else
+		{
+			// If L2Character is a L2PcInstance or a L2Summon, create the basic calculator set
+			_calculators = new Calculator[Stats.NUM_STATS];
+			
+			if (isSummon())
+			{
+				// Copy the skills of the L2Summon from its template to the L2Character Instance
+				// The skills list can be affected by spell effects so it's necessary to make a copy
+				// to avoid that a spell affecting a L2Summon, affects others L2Summon of the same type too.
+				for (Skill skill : template.getSkills().values())
+				{
+					addSkill(skill);
+				}
+			}
+			
+			Formulas.addFuncsToNewCharacter(this);
+		}
+		
+		setIsInvul(true);
+	}
 	
 	public final CharEffectList getEffectList()
 	{
@@ -434,74 +512,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public AccessLevel getAccessLevel()
 	{
 		return null;
-	}
-	
-	/**
-	 * Constructor of L2Character.<br>
-	 * <B><U>Concept</U>:</B><br>
-	 * Each L2Character owns generic and static properties (ex : all Keltir have the same number of HP...).<br>
-	 * All of those properties are stored in a different template for each type of L2Character. Each template is loaded once in the server cache memory (reduce memory use).<br>
-	 * When a new instance of L2Character is spawned, server just create a link between the instance and the template This link is stored in <B>_template</B><br>
-	 * <B><U> Actions</U>:</B>
-	 * <ul>
-	 * <li>Set the _template of the L2Character</li>
-	 * <li>Set _overloaded to false (the character can take more items)</li>
-	 * <li>If L2Character is a L2NPCInstance, copy skills from template to object</li>
-	 * <li>If L2Character is a L2NPCInstance, link _calculators to NPC_STD_CALCULATOR</li>
-	 * <li>If L2Character is NOT a L2NPCInstance, create an empty _skills slot</li>
-	 * <li>If L2Character is a L2PcInstance or L2Summon, copy basic Calculator set to object</li>
-	 * </ul>
-	 * @param objectId Identifier of the object to initialized
-	 * @param template The L2CharTemplate to apply to the object
-	 */
-	public Creature(int objectId, L2CharTemplate template)
-	{
-		super(objectId);
-		if (template == null)
-		{
-			throw new NullPointerException("Template is null!");
-		}
-		
-		setInstanceType(InstanceType.L2Character);
-		initCharStat();
-		initCharStatus();
-		
-		// Set its template to the new L2Character
-		_template = template;
-		
-		if (isNpc())
-		{
-			// Copy the Standard Calculators of the L2NPCInstance in _calculators
-			_calculators = NPC_STD_CALCULATOR;
-			
-			// Copy the skills of the L2NPCInstance from its template to the L2Character Instance
-			// The skills list can be affected by spell effects so it's necessary to make a copy
-			// to avoid that a spell affecting a L2NpcInstance, affects others L2NPCInstance of the same type too.
-			for (Skill skill : template.getSkills().values())
-			{
-				addSkill(skill);
-			}
-		}
-		else
-		{
-			// If L2Character is a L2PcInstance or a L2Summon, create the basic calculator set
-			_calculators = new Calculator[Stats.NUM_STATS];
-			
-			if (isSummon())
-			{
-				// Copy the skills of the L2Summon from its template to the L2Character Instance
-				// The skills list can be affected by spell effects so it's necessary to make a copy
-				// to avoid that a spell affecting a L2Summon, affects others L2Summon of the same type too.
-				for (Skill skill : template.getSkills().values())
-				{
-					addSkill(skill);
-				}
-			}
-			
-			Formulas.addFuncsToNewCharacter(this);
-		}
-		
-		setIsInvul(true);
 	}
 	
 	protected void initCharStatusUpdateValues()

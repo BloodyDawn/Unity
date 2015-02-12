@@ -31,9 +31,9 @@ import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
 public final class L2FishermanInstance extends L2MerchantInstance
 {
-	public L2FishermanInstance(int objectId, L2NpcTemplate template)
+	public L2FishermanInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2FishermanInstance);
 	}
 	

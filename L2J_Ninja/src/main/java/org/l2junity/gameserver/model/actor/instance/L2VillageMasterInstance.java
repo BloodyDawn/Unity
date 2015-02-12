@@ -33,8 +33,8 @@ import org.l2junity.gameserver.instancemanager.FortSiegeManager;
 import org.l2junity.gameserver.instancemanager.SiegeManager;
 import org.l2junity.gameserver.model.ClanMember;
 import org.l2junity.gameserver.model.L2Clan;
-import org.l2junity.gameserver.model.SkillLearn;
 import org.l2junity.gameserver.model.L2Clan.SubPledge;
+import org.l2junity.gameserver.model.SkillLearn;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.base.AcquireSkillType;
 import org.l2junity.gameserver.model.base.PlayerClass;
@@ -59,13 +59,9 @@ public class L2VillageMasterInstance extends L2NpcInstance
 {
 	private static Logger _log = Logger.getLogger(L2VillageMasterInstance.class.getName());
 	
-	/**
-	 * @param objectId
-	 * @param template
-	 */
-	public L2VillageMasterInstance(int objectId, L2NpcTemplate template)
+	public L2VillageMasterInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2VillageMasterInstance);
 	}
 	

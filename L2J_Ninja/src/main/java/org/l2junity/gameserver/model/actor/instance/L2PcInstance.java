@@ -46,6 +46,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 
+import javolution.util.FastList;
+import javolution.util.FastMap;
+import javolution.util.FastSet;
+
 import org.l2junity.Config;
 import org.l2junity.L2DatabaseFactory;
 import org.l2junity.gameserver.GameTimeController;
@@ -129,6 +133,7 @@ import org.l2junity.gameserver.model.Macro;
 import org.l2junity.gameserver.model.MacroList;
 import org.l2junity.gameserver.model.ManufactureItem;
 import org.l2junity.gameserver.model.Party;
+import org.l2junity.gameserver.model.Party.messageType;
 import org.l2junity.gameserver.model.PartyMatchRoom;
 import org.l2junity.gameserver.model.PartyMatchRoomList;
 import org.l2junity.gameserver.model.PartyMatchWaitingList;
@@ -149,7 +154,6 @@ import org.l2junity.gameserver.model.UIKeysSettings;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.WorldRegion;
-import org.l2junity.gameserver.model.Party.messageType;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Decoy;
@@ -282,6 +286,7 @@ import org.l2junity.gameserver.network.serverpackets.ExUseSharedGroupItem;
 import org.l2junity.gameserver.network.serverpackets.ExUserInfoAbnormalVisualEffect;
 import org.l2junity.gameserver.network.serverpackets.ExUserInfoCubic;
 import org.l2junity.gameserver.network.serverpackets.ExUserInfoInvenWeight;
+import org.l2junity.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.serverpackets.GameGuardQuery;
 import org.l2junity.gameserver.network.serverpackets.GetOnVehicle;
 import org.l2junity.gameserver.network.serverpackets.HennaInfo;
@@ -326,7 +331,6 @@ import org.l2junity.gameserver.network.serverpackets.TradeOtherDone;
 import org.l2junity.gameserver.network.serverpackets.TradeStart;
 import org.l2junity.gameserver.network.serverpackets.UserInfo;
 import org.l2junity.gameserver.network.serverpackets.ValidateLocation;
-import org.l2junity.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.serverpackets.commission.ExResponseCommissionInfo;
 import org.l2junity.gameserver.network.serverpackets.friend.L2FriendStatus;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
@@ -335,10 +339,6 @@ import org.l2junity.gameserver.util.FloodProtectors;
 import org.l2junity.gameserver.util.Util;
 import org.l2junity.util.EnumIntBitmask;
 import org.l2junity.util.Rnd;
-
-import javolution.util.FastList;
-import javolution.util.FastMap;
-import javolution.util.FastSet;
 
 /**
  * This class represents all player characters in the world.<br>
@@ -921,7 +921,7 @@ public final class L2PcInstance extends Playable
 	public static L2PcInstance create(L2PcTemplate template, String accountName, String name, PcAppearance app)
 	{
 		// Create a new L2PcInstance with an account name
-		L2PcInstance player = new L2PcInstance(IdFactory.getInstance().getNextId(), template, accountName, app);
+		L2PcInstance player = new L2PcInstance(template, accountName, app);
 		// Set the name of the L2PcInstance
 		player.setName(name);
 		// Set Character's create time
@@ -1119,6 +1119,17 @@ public final class L2PcInstance extends Playable
 		
 		// Create a L2Radar object
 		_radar = new Radar(this);
+	}
+	
+	/**
+	 * Creates a player.
+	 * @param template the player template
+	 * @param accountName the account name
+	 * @param app the player appearance
+	 */
+	private L2PcInstance(L2PcTemplate template, String accountName, PcAppearance app)
+	{
+		this(IdFactory.getInstance().getNextId(), template, accountName, app);
 	}
 	
 	@Override

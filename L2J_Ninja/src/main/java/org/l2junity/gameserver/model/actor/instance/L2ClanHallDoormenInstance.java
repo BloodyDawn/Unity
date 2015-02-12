@@ -55,9 +55,9 @@ public class L2ClanHallDoormenInstance extends L2DoormenInstance
 		57
 	};
 	
-	public L2ClanHallDoormenInstance(int objectID, L2NpcTemplate template)
+	public L2ClanHallDoormenInstance(L2NpcTemplate template)
 	{
-		super(objectID, template);
+		super(template);
 		setInstanceType(InstanceType.L2ClanHallDoormenInstance);
 	}
 	

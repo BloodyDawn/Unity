@@ -23,13 +23,9 @@ import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 
 public class L2WarehouseInstance extends L2NpcInstance
 {
-	/**
-	 * @param objectId
-	 * @param template
-	 */
-	public L2WarehouseInstance(int objectId, L2NpcTemplate template)
+	public L2WarehouseInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2WarehouseInstance);
 	}
 	

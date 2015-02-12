@@ -26,9 +26,9 @@ import org.l2junity.gameserver.util.Evolve;
 
 public class L2PetManagerInstance extends L2MerchantInstance
 {
-	public L2PetManagerInstance(int objectID, L2NpcTemplate template)
+	public L2PetManagerInstance(L2NpcTemplate template)
 	{
-		super(objectID, template);
+		super(template);
 		setInstanceType(InstanceType.L2PetManagerInstance);
 	}
 	

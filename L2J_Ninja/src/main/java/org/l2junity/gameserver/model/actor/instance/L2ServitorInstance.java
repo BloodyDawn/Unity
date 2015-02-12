@@ -29,6 +29,8 @@ import java.util.concurrent.Future;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javolution.util.FastList;
+
 import org.l2junity.Config;
 import org.l2junity.L2DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -49,8 +51,6 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.SetSummonRemainTime;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
-
-import javolution.util.FastList;
 
 /**
  * @author UnAfraid
@@ -73,9 +73,9 @@ public class L2ServitorInstance extends Summon implements Runnable
 	
 	private int _referenceSkill;
 	
-	public L2ServitorInstance(int objectId, L2NpcTemplate template, L2PcInstance owner)
+	public L2ServitorInstance(L2NpcTemplate template, L2PcInstance owner)
 	{
-		super(objectId, template, owner);
+		super(template, owner);
 		setInstanceType(InstanceType.L2ServitorInstance);
 		setShowSummonAnimation(true);
 	}

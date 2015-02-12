@@ -30,9 +30,9 @@ import org.l2junity.gameserver.network.serverpackets.ActionFailed;
  */
 public abstract class Tower extends Npc
 {
-	public Tower(int objectId, L2NpcTemplate template)
+	public Tower(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setIsInvul(false);
 	}
 	

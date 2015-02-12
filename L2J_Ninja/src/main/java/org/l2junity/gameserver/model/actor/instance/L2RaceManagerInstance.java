@@ -20,6 +20,8 @@ package org.l2junity.gameserver.model.actor.instance;
 
 import java.util.List;
 
+import javolution.util.FastList;
+
 import org.l2junity.gameserver.MonsterRace;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.InstanceType;
@@ -39,8 +41,6 @@ import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.network.serverpackets.PlaySound;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.util.Broadcast;
-
-import javolution.util.FastList;
 
 public class L2RaceManagerInstance extends Npc
 {
@@ -93,9 +93,9 @@ public class L2RaceManagerInstance extends Npc
 		100000
 	};
 	
-	public L2RaceManagerInstance(int objectId, L2NpcTemplate template)
+	public L2RaceManagerInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2RaceManagerInstance);
 		if (_notInitialized)
 		{

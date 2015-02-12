@@ -36,9 +36,9 @@ public class L2BoatInstance extends Vehicle
 {
 	protected static final Logger _logBoat = Logger.getLogger(L2BoatInstance.class.getName());
 	
-	public L2BoatInstance(int objectId, L2CharTemplate template)
+	public L2BoatInstance(L2CharTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2BoatInstance);
 		setAI(new BoatAI(new AIAccessor()));
 	}

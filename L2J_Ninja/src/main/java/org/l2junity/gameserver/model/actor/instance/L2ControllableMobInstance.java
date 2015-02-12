@@ -53,9 +53,9 @@ public class L2ControllableMobInstance extends L2MonsterInstance
 		return 500;
 	}
 	
-	public L2ControllableMobInstance(int objectId, L2NpcTemplate template)
+	public L2ControllableMobInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2ControllableMobInstance);
 	}
 	

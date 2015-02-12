@@ -27,7 +27,6 @@ import java.util.Map;
 import java.util.Set;
 
 import org.l2junity.gameserver.data.xml.IXmlReader;
-import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.instancemanager.MapRegionManager;
 import org.l2junity.gameserver.model.StatsSet;
@@ -123,7 +122,7 @@ public class DoorData implements IXmlReader
 	{
 		insertCollisionData(set);
 		L2DoorTemplate template = new L2DoorTemplate(set);
-		L2DoorInstance door = new L2DoorInstance(IdFactory.getInstance().getNextId(), template);
+		L2DoorInstance door = new L2DoorInstance(template);
 		door.setCurrentHp(door.getMaxHp());
 		door.spawnMe(template.getX(), template.getY(), template.getZ());
 		putDoor(door, MapRegionManager.getInstance().getMapRegionLocId(door));

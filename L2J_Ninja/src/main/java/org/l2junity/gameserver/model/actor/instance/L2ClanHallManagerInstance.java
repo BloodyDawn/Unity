@@ -50,13 +50,9 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 	protected static final int COND_OWNER = 3;
 	private int _clanHallId = -1;
 	
-	/**
-	 * @param objectId
-	 * @param template
-	 */
-	public L2ClanHallManagerInstance(int objectId, L2NpcTemplate template)
+	public L2ClanHallManagerInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2ClanHallManagerInstance);
 	}
 	

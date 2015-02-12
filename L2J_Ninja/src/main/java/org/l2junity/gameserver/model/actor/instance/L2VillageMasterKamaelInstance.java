@@ -24,9 +24,9 @@ import org.l2junity.gameserver.model.base.PlayerClass;
 
 public final class L2VillageMasterKamaelInstance extends L2VillageMasterInstance
 {
-	public L2VillageMasterKamaelInstance(int objectId, L2NpcTemplate template)
+	public L2VillageMasterKamaelInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 	}
 	
 	@Override

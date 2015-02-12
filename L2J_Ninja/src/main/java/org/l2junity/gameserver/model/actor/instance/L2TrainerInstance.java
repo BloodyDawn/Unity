@@ -23,9 +23,9 @@ import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 
 public class L2TrainerInstance extends L2NpcInstance
 {
-	public L2TrainerInstance(int objectId, L2NpcTemplate template)
+	public L2TrainerInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2TrainerInstance);
 	}
 	

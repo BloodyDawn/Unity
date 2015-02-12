@@ -40,12 +40,11 @@ public final class L2ArtefactInstance extends Npc
 	 * <li>Call the L2Character constructor to set the _template of the L2ArtefactInstance (copy skills from template to object and link _calculators to NPC_STD_CALCULATOR)</li> <li>Set the name of the L2ArtefactInstance</li> <li>Create a RandomAnimation Task that will be launched after the
 	 * calculated delay if the server allow it</li><BR>
 	 * <BR>
-	 * @param objectId the identifier of the object to initialized
 	 * @param template to apply to the NPC
 	 */
-	public L2ArtefactInstance(int objectId, L2NpcTemplate template)
+	public L2ArtefactInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2ArtefactInstance);
 	}
 	

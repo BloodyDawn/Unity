@@ -36,9 +36,9 @@ public final class L2QuestGuardInstance extends L2GuardInstance
 	private boolean _isAutoAttackable = true;
 	private boolean _isPassive = false;
 	
-	public L2QuestGuardInstance(int objectId, L2NpcTemplate template)
+	public L2QuestGuardInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2QuestGuardInstance);
 	}
 	

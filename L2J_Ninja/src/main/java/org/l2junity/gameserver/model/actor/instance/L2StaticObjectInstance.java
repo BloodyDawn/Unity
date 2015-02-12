@@ -98,13 +98,12 @@ public final class L2StaticObjectInstance extends Creature
 	}
 	
 	/**
-	 * @param objectId
 	 * @param template
 	 * @param staticId
 	 */
-	public L2StaticObjectInstance(int objectId, L2CharTemplate template, int staticId)
+	public L2StaticObjectInstance(L2CharTemplate template, int staticId)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2StaticObjectInstance);
 		_staticObjectId = staticId;
 	}

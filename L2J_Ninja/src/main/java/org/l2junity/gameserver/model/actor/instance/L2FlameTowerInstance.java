@@ -36,9 +36,9 @@ public class L2FlameTowerInstance extends Tower
 	private int _upgradeLevel = 0;
 	private List<Integer> _zoneList;
 	
-	public L2FlameTowerInstance(int objectId, L2NpcTemplate template)
+	public L2FlameTowerInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2FlameTowerInstance);
 	}
 	

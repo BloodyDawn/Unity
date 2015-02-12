@@ -23,7 +23,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.l2junity.gameserver.data.xml.IXmlReader;
-import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
@@ -89,7 +88,7 @@ public final class StaticObjectData implements IXmlReader
 	 */
 	private void addObject(StatsSet set)
 	{
-		L2StaticObjectInstance obj = new L2StaticObjectInstance(IdFactory.getInstance().getNextId(), new L2CharTemplate(new StatsSet()), set.getInt("id"));
+		L2StaticObjectInstance obj = new L2StaticObjectInstance(new L2CharTemplate(new StatsSet()), set.getInt("id"));
 		obj.setType(set.getInt("type", 0));
 		obj.setName(set.getString("name"));
 		obj.setMap(set.getString("texture", "none"), set.getInt("map_x", 0), set.getInt("map_y", 0));

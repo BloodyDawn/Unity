@@ -44,7 +44,6 @@ import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.InstanceReenterType;
 import org.l2junity.gameserver.enums.InstanceRemoveBuffType;
-import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.Location;
@@ -274,7 +273,7 @@ public final class Instance
 			return;
 		}
 		
-		final L2DoorInstance newdoor = new L2DoorInstance(IdFactory.getInstance().getNextId(), new L2DoorTemplate(set));
+		final L2DoorInstance newdoor = new L2DoorInstance(new L2DoorTemplate(set));
 		newdoor.setInstanceId(getId());
 		newdoor.setCurrentHp(newdoor.getMaxHp());
 		newdoor.spawnMe(newdoor.getTemplate().getX(), newdoor.getTemplate().getY(), newdoor.getTemplate().getZ());

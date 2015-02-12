@@ -26,6 +26,8 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javolution.util.FastList;
+
 import org.l2junity.L2DatabaseFactory;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.enums.ItemLocation;
@@ -36,8 +38,6 @@ import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-
-import javolution.util.FastList;
 
 /**
  * This class is similar to the SiegeGuardManager, except it handles the loading of the mercenary tickets that are dropped on castle floors by the castle lords.<br>
@@ -354,7 +354,7 @@ public final class MercTicketManager
 		L2NpcTemplate template = NpcData.getInstance().getTemplate(npcId);
 		if (template != null)
 		{
-			final L2DefenderInstance npc = new L2DefenderInstance(IdFactory.getInstance().getNextId(), template);
+			final L2DefenderInstance npc = new L2DefenderInstance(template);
 			npc.setCurrentHpMp(npc.getMaxHp(), npc.getMaxMp());
 			npc.setDecayed(false);
 			npc.spawnMe(x, y, (z + 20));

@@ -43,7 +43,6 @@ import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.enums.QuestSound;
-import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
@@ -1784,7 +1783,7 @@ public abstract class AbstractScript extends ManagedScript
 	public L2TrapInstance addTrap(int trapId, int x, int y, int z, int heading, Skill skill, int instanceId)
 	{
 		final L2NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(trapId);
-		L2TrapInstance trap = new L2TrapInstance(IdFactory.getInstance().getNextId(), npcTemplate, instanceId, -1);
+		L2TrapInstance trap = new L2TrapInstance(npcTemplate, instanceId, -1);
 		trap.setCurrentHp(trap.getMaxHp());
 		trap.setCurrentMp(trap.getMaxMp());
 		trap.setIsInvul(true);

@@ -20,11 +20,12 @@ package gracia.AI;
 
 import java.util.Map;
 
+import javolution.util.FastMap;
+
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
-import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.GraciaSeedsManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.Location;
@@ -41,7 +42,6 @@ import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.util.Util;
 
-import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
 
 /**
@@ -346,7 +346,7 @@ public class EnergySeeds extends AbstractNpcAI
 	private L2MonsterInstance spawnSupriseMob(Npc energy, int npcId)
 	{
 		L2NpcTemplate supriseMobTemplate = NpcData.getInstance().getTemplate(npcId);
-		L2MonsterInstance monster = new L2MonsterInstance(IdFactory.getInstance().getNextId(), supriseMobTemplate);
+		L2MonsterInstance monster = new L2MonsterInstance(supriseMobTemplate);
 		monster.setCurrentHpMp(monster.getMaxHp(), monster.getMaxMp());
 		monster.setHeading(energy.getHeading());
 		monster.setInstanceId(energy.getInstanceId());

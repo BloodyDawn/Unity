@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.data.xml.impl.NpcData;
-import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.CHSiegeManager;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
@@ -64,7 +63,7 @@ public final class HeadquarterCreate extends AbstractEffect
 			return;
 		}
 		
-		final L2SiegeFlagInstance flag = new L2SiegeFlagInstance(player, IdFactory.getInstance().getNextId(), NpcData.getInstance().getTemplate(HQ_NPC_ID), _isAdvanced, false);
+		final L2SiegeFlagInstance flag = new L2SiegeFlagInstance(player, NpcData.getInstance().getTemplate(HQ_NPC_ID), _isAdvanced, false);
 		flag.setTitle(player.getClan().getName());
 		flag.setCurrentHpMp(flag.getMaxHp(), flag.getMaxMp());
 		flag.setHeading(player.getHeading());

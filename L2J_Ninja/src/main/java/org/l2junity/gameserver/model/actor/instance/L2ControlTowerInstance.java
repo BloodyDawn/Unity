@@ -21,13 +21,13 @@ package org.l2junity.gameserver.model.actor.instance;
 import java.util.List;
 import java.util.logging.Level;
 
+import javolution.util.FastList;
+
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Tower;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
-
-import javolution.util.FastList;
 
 /**
  * Class for Control Tower instance.
@@ -36,9 +36,9 @@ public class L2ControlTowerInstance extends Tower
 {
 	private volatile List<L2Spawn> _guards;
 	
-	public L2ControlTowerInstance(int objectId, L2NpcTemplate template)
+	public L2ControlTowerInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2ControlTowerInstance);
 	}
 	

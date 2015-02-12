@@ -25,9 +25,9 @@ import org.l2junity.gameserver.model.base.PlayerClass;
 
 public final class L2VillageMasterPriestInstance extends L2VillageMasterInstance
 {
-	public L2VillageMasterPriestInstance(int objectId, L2NpcTemplate template)
+	public L2VillageMasterPriestInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 	}
 	
 	@Override

@@ -31,9 +31,9 @@ public final class L2ChestInstance extends L2MonsterInstance
 {
 	private volatile boolean _specialDrop;
 	
-	public L2ChestInstance(int objectId, L2NpcTemplate template)
+	public L2ChestInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2ChestInstance);
 		setIsNoRndWalk(true);
 		_specialDrop = false;

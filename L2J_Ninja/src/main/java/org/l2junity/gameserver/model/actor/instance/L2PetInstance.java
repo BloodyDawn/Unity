@@ -27,6 +27,8 @@ import java.util.concurrent.Future;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javolution.util.FastList;
+
 import org.l2junity.Config;
 import org.l2junity.L2DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -42,7 +44,6 @@ import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.enums.PartyDistributionType;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.handler.ItemHandler;
-import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.instancemanager.FortSiegeManager;
 import org.l2junity.gameserver.instancemanager.ItemsOnGroundManager;
@@ -74,8 +75,6 @@ import org.l2junity.gameserver.network.serverpackets.StopMove;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.taskmanager.DecayTaskManager;
 import org.l2junity.util.Rnd;
-
-import javolution.util.FastList;
 
 public class L2PetInstance extends Summon
 {
@@ -242,27 +241,25 @@ public class L2PetInstance extends Summon
 	
 	/**
 	 * Constructor for new pet
-	 * @param objectId
 	 * @param template
 	 * @param owner
 	 * @param control
 	 */
-	public L2PetInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, ItemInstance control)
+	public L2PetInstance(L2NpcTemplate template, L2PcInstance owner, ItemInstance control)
 	{
-		this(objectId, template, owner, control, (byte) (template.getDisplayId() == 12564 ? owner.getLevel() : template.getLevel()));
+		this(template, owner, control, (byte) (template.getDisplayId() == 12564 ? owner.getLevel() : template.getLevel()));
 	}
 	
 	/**
 	 * Constructor for restored pet
-	 * @param objectId
 	 * @param template
 	 * @param owner
 	 * @param control
 	 * @param level
 	 */
-	public L2PetInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, ItemInstance control, byte level)
+	public L2PetInstance(L2NpcTemplate template, L2PcInstance owner, ItemInstance control, byte level)
 	{
-		super(objectId, template, owner);
+		super(template, owner);
 		setInstanceType(InstanceType.L2PetInstance);
 		
 		_controlObjectId = control.getObjectId();
@@ -864,27 +861,26 @@ public class L2PetInstance extends Summon
 			statement.setInt(1, control.getObjectId());
 			try (ResultSet rset = statement.executeQuery())
 			{
-				final int id = IdFactory.getInstance().getNextId();
 				if (!rset.next())
 				{
 					if (template.isType("L2BabyPet"))
 					{
-						pet = new L2BabyPetInstance(id, template, owner, control);
+						pet = new L2BabyPetInstance(template, owner, control);
 					}
 					else
 					{
-						pet = new L2PetInstance(id, template, owner, control);
+						pet = new L2PetInstance(template, owner, control);
 					}
 					return pet;
 				}
 				
 				if (template.isType("L2BabyPet"))
 				{
-					pet = new L2BabyPetInstance(id, template, owner, control, rset.getByte("level"));
+					pet = new L2BabyPetInstance(template, owner, control, rset.getByte("level"));
 				}
 				else
 				{
-					pet = new L2PetInstance(id, template, owner, control, rset.getByte("level"));
+					pet = new L2PetInstance(template, owner, control, rset.getByte("level"));
 				}
 				
 				pet._respawned = true;

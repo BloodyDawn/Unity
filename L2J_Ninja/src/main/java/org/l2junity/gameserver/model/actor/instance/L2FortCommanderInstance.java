@@ -18,6 +18,8 @@
  */
 package org.l2junity.gameserver.model.actor.instance;
 
+import javolution.util.FastList;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CtrlIntention;
@@ -33,16 +35,14 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.serverpackets.NpcSay;
 
-import javolution.util.FastList;
-
 public class L2FortCommanderInstance extends L2DefenderInstance
 {
 	
 	private boolean _canTalk;
 	
-	public L2FortCommanderInstance(int objectId, L2NpcTemplate template)
+	public L2FortCommanderInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2FortCommanderInstance);
 		_canTalk = true;
 	}

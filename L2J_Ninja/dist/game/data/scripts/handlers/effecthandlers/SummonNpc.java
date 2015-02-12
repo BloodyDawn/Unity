@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.data.xml.impl.NpcData;
-import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
@@ -101,7 +100,7 @@ public final class SummonNpc extends AbstractEffect
 		{
 			case "L2Decoy":
 			{
-				final L2DecoyInstance decoy = new L2DecoyInstance(IdFactory.getInstance().getNextId(), npcTemplate, player, _despawnDelay);
+				final L2DecoyInstance decoy = new L2DecoyInstance(npcTemplate, player, _despawnDelay);
 				decoy.setCurrentHp(decoy.getMaxHp());
 				decoy.setCurrentMp(decoy.getMaxMp());
 				decoy.setHeading(player.getHeading());
@@ -113,7 +112,7 @@ public final class SummonNpc extends AbstractEffect
 			}
 			case "L2EffectPoint": // TODO: Implement proper signet skills.
 			{
-				final L2EffectPointInstance effectPoint = new L2EffectPointInstance(IdFactory.getInstance().getNextId(), npcTemplate, player);
+				final L2EffectPointInstance effectPoint = new L2EffectPointInstance(npcTemplate, player);
 				effectPoint.setCurrentHp(effectPoint.getMaxHp());
 				effectPoint.setCurrentMp(effectPoint.getMaxMp());
 				int x = player.getX();

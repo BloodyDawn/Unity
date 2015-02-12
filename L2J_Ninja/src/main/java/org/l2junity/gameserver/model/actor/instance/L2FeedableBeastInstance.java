@@ -29,9 +29,9 @@ import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 // handled by scripted AI.
 public class L2FeedableBeastInstance extends L2MonsterInstance
 {
-	public L2FeedableBeastInstance(int objectId, L2NpcTemplate template)
+	public L2FeedableBeastInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2FeedableBeastInstance);
 	}
 }

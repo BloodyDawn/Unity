@@ -25,9 +25,9 @@ import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 
 public final class L2TerrainObjectInstance extends Npc
 {
-	public L2TerrainObjectInstance(int objectId, L2NpcTemplate template)
+	public L2TerrainObjectInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2TerrainObjectInstance);
 	}
 	

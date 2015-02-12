@@ -55,12 +55,19 @@ public abstract class Playable extends Creature
 	 * <ul>
 	 * <li>Call the L2Character constructor to create an empty _skills slot and link copy basic Calculator set to this L2Playable</li>
 	 * </ul>
-	 * @param objectId Identifier of the object to initialized
+	 * @param objectId the object id
 	 * @param template The L2CharTemplate to apply to the L2Playable
 	 */
 	public Playable(int objectId, L2CharTemplate template)
 	{
 		super(objectId, template);
+		setInstanceType(InstanceType.L2Playable);
+		setIsInvul(false);
+	}
+	
+	public Playable(L2CharTemplate template)
+	{
+		super(template);
 		setInstanceType(InstanceType.L2Playable);
 		setIsInvul(false);
 	}

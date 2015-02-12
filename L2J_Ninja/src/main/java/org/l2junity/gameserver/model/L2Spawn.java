@@ -34,7 +34,6 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.sql.impl.TerritoryTable;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.datatables.NpcPersonalAIData;
-import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
@@ -147,7 +146,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		String className = "org.l2junity.gameserver.model.actor.instance." + _template.getType() + "Instance";
 		
 		// Create the generic constructor of L2Npc managed by this L2Spawn
-		_constructor = Class.forName(className).asSubclass(Npc.class).getConstructor(int.class, L2NpcTemplate.class);
+		_constructor = Class.forName(className).asSubclass(Npc.class).getConstructor(L2NpcTemplate.class);
 	}
 	
 	/**
@@ -165,7 +164,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		String className = "org.l2junity.gameserver.model.actor.instance." + _template.getType() + "Instance";
 		
 		// Create the generic constructor of L2Npc managed by this L2Spawn
-		_constructor = Class.forName(className).asSubclass(Npc.class).getConstructor(int.class, L2NpcTemplate.class);
+		_constructor = Class.forName(className).asSubclass(Npc.class).getConstructor(L2NpcTemplate.class);
 	}
 	
 	/**
@@ -547,7 +546,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 			}
 			
 			// Call the constructor of the L2Npc
-			Npc npc = _constructor.newInstance(IdFactory.getInstance().getNextId(), _template);
+			Npc npc = _constructor.newInstance(_template);
 			npc.setInstanceId(getInstanceId()); // Must be done before object is spawned into visible world
 			if (isSummonSpawn)
 			{

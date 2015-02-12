@@ -41,9 +41,9 @@ import org.l2junity.gameserver.model.olympiad.OlympiadGameManager;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.AbstractNpcInfo.TrapInfo;
 import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
-import org.l2junity.gameserver.network.serverpackets.AbstractNpcInfo.TrapInfo;
 import org.l2junity.gameserver.taskmanager.DecayTaskManager;
 
 /**
@@ -64,9 +64,9 @@ public final class L2TrapInstance extends Npc
 	// Tasks
 	private ScheduledFuture<?> _trapTask = null;
 	
-	public L2TrapInstance(int objectId, L2NpcTemplate template, int instanceId, int lifeTime)
+	public L2TrapInstance(L2NpcTemplate template, int instanceId, int lifeTime)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2TrapInstance);
 		setInstanceId(instanceId);
 		setName(template.getName());
@@ -84,9 +84,9 @@ public final class L2TrapInstance extends Npc
 		}
 	}
 	
-	public L2TrapInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, int lifeTime)
+	public L2TrapInstance(L2NpcTemplate template, L2PcInstance owner, int lifeTime)
 	{
-		this(objectId, template, owner.getInstanceId(), lifeTime);
+		this(template, owner.getInstanceId(), lifeTime);
 		_owner = owner;
 	}
 	

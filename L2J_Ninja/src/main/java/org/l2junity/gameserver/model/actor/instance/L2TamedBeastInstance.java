@@ -23,12 +23,13 @@ import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
 import java.util.List;
 import java.util.concurrent.Future;
 
+import javolution.util.FastList;
+
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.InstanceType;
-import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -40,8 +41,6 @@ import org.l2junity.gameserver.network.serverpackets.NpcInfo;
 import org.l2junity.gameserver.network.serverpackets.SocialAction;
 import org.l2junity.gameserver.network.serverpackets.StopMove;
 import org.l2junity.util.Rnd;
-
-import javolution.util.FastList;
 
 // While a tamed beast behaves a lot like a pet (ingame) and does have
 // an owner, in all other aspects, it acts like a mob.
@@ -65,16 +64,16 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 	protected boolean _isFreyaBeast;
 	private List<Skill> _beastSkills = null;
 	
-	public L2TamedBeastInstance(int objectId, int npcTemplateId)
+	public L2TamedBeastInstance(int npcTemplateId)
 	{
-		super(IdFactory.getInstance().getNextId(), NpcData.getInstance().getTemplate(npcTemplateId));
+		super(NpcData.getInstance().getTemplate(npcTemplateId));
 		setInstanceType(InstanceType.L2TamedBeastInstance);
 		setHome(this);
 	}
 	
 	public L2TamedBeastInstance(int npcTemplateId, L2PcInstance owner, int foodSkillId, int x, int y, int z)
 	{
-		super(IdFactory.getInstance().getNextId(), NpcData.getInstance().getTemplate(npcTemplateId));
+		super(NpcData.getInstance().getTemplate(npcTemplateId));
 		_isFreyaBeast = false;
 		setInstanceType(InstanceType.L2TamedBeastInstance);
 		setCurrentHp(getMaxHp());
@@ -87,7 +86,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 	
 	public L2TamedBeastInstance(int npcTemplateId, L2PcInstance owner, int food, int x, int y, int z, boolean isFreyaBeast)
 	{
-		super(IdFactory.getInstance().getNextId(), NpcData.getInstance().getTemplate(npcTemplateId));
+		super(NpcData.getInstance().getTemplate(npcTemplateId));
 		_isFreyaBeast = isFreyaBeast;
 		setInstanceType(InstanceType.L2TamedBeastInstance);
 		setCurrentHp(getMaxHp());

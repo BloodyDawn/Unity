@@ -20,8 +20,9 @@ package org.l2junity.gameserver.instancemanager;
 
 import java.util.Map;
 
+import javolution.util.FastMap;
+
 import org.l2junity.Config;
-import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.VehiclePathPoint;
 import org.l2junity.gameserver.model.World;
@@ -29,8 +30,6 @@ import org.l2junity.gameserver.model.actor.instance.L2BoatInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
 import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
-
-import javolution.util.FastMap;
 
 public class BoatManager
 {
@@ -105,7 +104,7 @@ public class BoatManager
 		npcDat.set("basePDef", 100);
 		npcDat.set("baseMDef", 100);
 		L2CharTemplate template = new L2CharTemplate(npcDat);
-		L2BoatInstance boat = new L2BoatInstance(IdFactory.getInstance().getNextId(), template);
+		L2BoatInstance boat = new L2BoatInstance(template);
 		_boats.put(boat.getObjectId(), boat);
 		boat.setHeading(heading);
 		boat.setXYZInvisible(x, y, z);

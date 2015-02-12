@@ -29,9 +29,9 @@ import org.l2junity.gameserver.model.olympiad.Olympiad;
  */
 public class L2OlympiadManagerInstance extends Npc
 {
-	public L2OlympiadManagerInstance(int objectId, L2NpcTemplate template)
+	public L2OlympiadManagerInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2OlympiadManagerInstance);
 	}
 	

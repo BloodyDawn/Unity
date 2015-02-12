@@ -62,13 +62,9 @@ public final class L2TeleporterInstance extends Npc
 	private static final int COND_OWNER = 2;
 	private static final int COND_REGULAR = 3;
 	
-	/**
-	 * @param objectId
-	 * @param template
-	 */
-	public L2TeleporterInstance(int objectId, L2NpcTemplate template)
+	public L2TeleporterInstance(L2NpcTemplate template)
 	{
-		super(objectId, template);
+		super(template);
 		setInstanceType(InstanceType.L2TeleporterInstance);
 	}
 	

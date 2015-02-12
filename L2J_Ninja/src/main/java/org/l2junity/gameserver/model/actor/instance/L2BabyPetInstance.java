@@ -54,15 +54,15 @@ public final class L2BabyPetInstance extends L2PetInstance
 	
 	protected boolean _bufferMode = true;
 	
-	public L2BabyPetInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, ItemInstance control)
+	public L2BabyPetInstance(L2NpcTemplate template, L2PcInstance owner, ItemInstance control)
 	{
-		super(objectId, template, owner, control);
+		super(template, owner, control);
 		setInstanceType(InstanceType.L2BabyPetInstance);
 	}
 	
-	public L2BabyPetInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, ItemInstance control, byte level)
+	public L2BabyPetInstance(L2NpcTemplate template, L2PcInstance owner, ItemInstance control, byte level)
 	{
-		super(objectId, template, owner, control, level);
+		super(template, owner, control, level);
 		setInstanceType(InstanceType.L2BabyPetInstance);
 	}
 	

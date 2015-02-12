@@ -38,9 +38,9 @@ public class L2DecoyInstance extends Decoy
 	private Future<?> _DecoyLifeTask;
 	private Future<?> _HateSpam;
 	
-	public L2DecoyInstance(int objectId, L2NpcTemplate template, L2PcInstance owner, int totalLifeTime)
+	public L2DecoyInstance(L2NpcTemplate template, L2PcInstance owner, int totalLifeTime)
 	{
-		super(objectId, template, owner);
+		super(template, owner);
 		setInstanceType(InstanceType.L2DecoyInstance);
 		_totalLifeTime = totalLifeTime;
 		_timeRemaining = _totalLifeTime;
