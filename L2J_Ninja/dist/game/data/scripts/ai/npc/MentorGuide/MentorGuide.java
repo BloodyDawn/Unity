@@ -18,12 +18,11 @@
  */
 package ai.npc.MentorGuide;
 
-import static org.l2junity.gameserver.data.xml.IXmlReader.LOGGER;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.IXmlReader;
@@ -65,6 +64,8 @@ import ai.npc.AbstractNpcAI;
  */
 public class MentorGuide extends AbstractNpcAI implements IXmlReader
 {
+	private static final Logger LOGGER = Logger.getLogger(MentorGuide.class.getName());
+	
 	// NPCs
 	private static final int MENTOR_GUIDE = 33587;
 	
