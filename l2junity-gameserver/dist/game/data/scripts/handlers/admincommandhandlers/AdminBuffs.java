@@ -327,7 +327,7 @@ public class AdminBuffs implements IAdminCommandHandler
 		}
 		StringUtil.append(html, "</html>");
 		// Send the packet
-		activeChar.sendPacket(new NpcHtmlMessage(html.toString()));
+		activeChar.sendPacket(new NpcHtmlMessage(0, 1, html.toString()));
 		
 		if (Config.GMAUDIT)
 		{

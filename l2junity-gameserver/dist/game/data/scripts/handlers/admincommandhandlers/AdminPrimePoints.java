@@ -179,7 +179,7 @@ public final class AdminPrimePoints implements IAdminCommandHandler
 	
 	private void showMenuHtml(L2PcInstance activeChar)
 	{
-		final NpcHtmlMessage html = new NpcHtmlMessage(0, 0);
+		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		final L2PcInstance target = getTarget(activeChar);
 		final int points = target.getPrimePoints();
 		html.setHtml(HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/admin/primepoints.htm"));

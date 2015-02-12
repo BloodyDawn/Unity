@@ -151,7 +151,7 @@ public class AdminEvents implements IAdminCommandHandler
 	
 	private void showMenu(L2PcInstance activeChar)
 	{
-		final NpcHtmlMessage html = new NpcHtmlMessage();
+		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/gm_events.htm");
 		final StringBuilder cList = new StringBuilder(500);
 		for (Quest event : QuestManager.getInstance().getScripts().values())

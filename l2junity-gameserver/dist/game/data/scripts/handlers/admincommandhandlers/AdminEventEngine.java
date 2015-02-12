@@ -121,7 +121,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 				String eventName = command.substring(16);
 				try
 				{
-					final NpcHtmlMessage adminReply = new NpcHtmlMessage();
+					final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 					
 					DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream(Config.DATAPACK_ROOT + "/data/events/" + eventName)));
 					BufferedReader inbr = new BufferedReader(new InputStreamReader(in));
@@ -226,7 +226,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 				activeChar.sendPacket(_snd);
 				activeChar.broadcastPacket(_snd);
 				
-				final NpcHtmlMessage adminReply = new NpcHtmlMessage();
+				final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 				
 				final String replyMSG = StringUtil.concat("<html><title>[ L2J EVENT ENGINE ]</title><body><br>", "<center>The event <font color=\"LEVEL\">", L2Event._eventName, "</font> has been announced, now you can type //event_panel to see the event panel control</center><br>", "</body></html>");
 				adminReply.setHtml(replyMSG);
@@ -474,7 +474,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 	
 	public void showMainPage(L2PcInstance activeChar)
 	{
-		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
+		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		
 		final String replyMSG = StringUtil.concat("<html><title>[ L2J EVENT ENGINE ]</title><body>" + "<br><center><button value=\"Create NEW event \" action=\"bypass -h admin_event_new\" width=150 height=32 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">" + "<center><br><font color=LEVEL>Stored Events:</font><br></center>", showStoredEvents(), "</body></html>");
 		adminReply.setHtml(replyMSG);
@@ -483,7 +483,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 	
 	public void showNewEventPage(L2PcInstance activeChar)
 	{
-		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
+		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		
 		final StringBuilder replyMSG = StringUtil.startAppend(500, "<html><title>[ L2J EVENT ENGINE ]</title><body><br><br><center><font color=LEVEL>Event name:</font><br>");
 		
@@ -524,7 +524,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 	
 	public void showEventParameters(L2PcInstance activeChar, int teamnumbers)
 	{
-		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
+		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		StringBuilder sb = new StringBuilder();
 		
 		sb.append("<html><body><title>[ L2J EVENT ENGINE ]</title><br><center> Current event: <font color=\"LEVEL\">");
@@ -562,7 +562,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 	private void showEventControl(L2PcInstance activeChar)
 	{
 		
-		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
+		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		StringBuilder sb = new StringBuilder();
 		sb.append("<html><title>[ L2J EVENT ENGINE ]</title><body><br><center>Current event: <font color=\"LEVEL\">");
 		sb.append(L2Event._eventName);
@@ -599,7 +599,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 			
 			player.addItem("Event", id, num, activeChar, true);
 			
-			final NpcHtmlMessage adminReply = new NpcHtmlMessage();
+			final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 			adminReply.setHtml("<html><body> CONGRATULATIONS! You should have been rewarded. </body></html>");
 			player.sendPacket(adminReply);
 		}

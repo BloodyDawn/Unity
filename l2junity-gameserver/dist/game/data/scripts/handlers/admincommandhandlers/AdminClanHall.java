@@ -179,7 +179,7 @@ public class AdminClanHall implements IAdminCommandHandler
 	private void showClanHallSelectPage(L2PcInstance activeChar)
 	{
 		int i = 0;
-		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
+		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		adminReply.setFile(activeChar.getHtmlPrefix(), "data/html/admin/clanhalls.htm");
 		final StringBuilder cList = new StringBuilder(500);
 		for (SiegableHall hall : CHSiegeManager.getInstance().getConquerableHalls().values())
@@ -238,7 +238,7 @@ public class AdminClanHall implements IAdminCommandHandler
 	 */
 	private void showClanHallPage(L2PcInstance activeChar, ClanHall clanhall)
 	{
-		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
+		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		adminReply.setFile(activeChar.getHtmlPrefix(), "data/html/admin/clanhall.htm");
 		adminReply.replace("%clanhallName%", clanhall.getName());
 		adminReply.replace("%clanhallId%", String.valueOf(clanhall.getId()));
@@ -254,7 +254,7 @@ public class AdminClanHall implements IAdminCommandHandler
 	 */
 	private void showSiegableHallPage(L2PcInstance activeChar, SiegableHall hall)
 	{
-		final NpcHtmlMessage msg = new NpcHtmlMessage();
+		final NpcHtmlMessage msg = new NpcHtmlMessage(0, 1);
 		msg.setFile(null, "data/html/admin/siegablehall.htm");
 		msg.replace("%clanhallId%", String.valueOf(hall.getId()));
 		msg.replace("%clanhallName%", hall.getName());
