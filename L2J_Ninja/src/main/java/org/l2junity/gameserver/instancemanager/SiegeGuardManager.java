@@ -25,14 +25,12 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javolution.util.FastList;
+
 import org.l2junity.L2DatabaseFactory;
-import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
-import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.entity.Castle;
-
-import javolution.util.FastList;
 
 public final class SiegeGuardManager
 {
@@ -209,28 +207,18 @@ public final class SiegeGuardManager
 			}
 			try (ResultSet rs = ps.executeQuery())
 			{
-				L2Spawn spawn1;
-				L2NpcTemplate template1;
 				while (rs.next())
 				{
-					template1 = NpcData.getInstance().getTemplate(rs.getInt("npcId"));
-					if (template1 != null)
-					{
-						spawn1 = new L2Spawn(template1);
-						spawn1.setAmount(1);
-						spawn1.setX(rs.getInt("x"));
-						spawn1.setY(rs.getInt("y"));
-						spawn1.setZ(rs.getInt("z"));
-						spawn1.setHeading(rs.getInt("heading"));
-						spawn1.setRespawnDelay(rs.getInt("respawnDelay"));
-						spawn1.setLocationId(0);
-						
-						_siegeGuardSpawn.add(spawn1);
-					}
-					else
-					{
-						_log.warning(getClass().getSimpleName() + ": Missing npc data in npc table for id: " + rs.getInt("npcId"));
-					}
+					final L2Spawn spawn1 = new L2Spawn(rs.getInt("npcId"));
+					spawn1.setAmount(1);
+					spawn1.setX(rs.getInt("x"));
+					spawn1.setY(rs.getInt("y"));
+					spawn1.setZ(rs.getInt("z"));
+					spawn1.setHeading(rs.getInt("heading"));
+					spawn1.setRespawnDelay(rs.getInt("respawnDelay"));
+					spawn1.setLocationId(0);
+					
+					_siegeGuardSpawn.add(spawn1);
 				}
 			}
 		}

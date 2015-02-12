@@ -27,11 +27,13 @@ import java.util.List;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Logger;
 
+import javolution.util.FastList;
+import javolution.util.FastMap;
+
 import org.l2junity.Config;
 import org.l2junity.L2DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
-import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.SiegeClanType;
 import org.l2junity.gameserver.instancemanager.CHSiegeManager;
@@ -44,7 +46,6 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
-import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.entity.Siegable;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.network.NpcStringId;
@@ -52,9 +53,6 @@ import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.NpcSay;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.util.Broadcast;
-
-import javolution.util.FastList;
-import javolution.util.FastMap;
 
 /**
  * @author BiggBoss
@@ -160,9 +158,7 @@ public abstract class ClanHallSiegeEngine extends Quest implements Siegable
 				{
 					while (rset.next())
 					{
-						final int npcId = rset.getInt("npcId");
-						final L2NpcTemplate template = NpcData.getInstance().getTemplate(npcId);
-						L2Spawn spawn = new L2Spawn(template);
+						final L2Spawn spawn = new L2Spawn(rset.getInt("npcId"));
 						spawn.setX(rset.getInt("x"));
 						spawn.setY(rset.getInt("y"));
 						spawn.setZ(rset.getInt("z"));

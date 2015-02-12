@@ -33,6 +33,9 @@ import java.util.function.Function;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javolution.util.FastList;
+import javolution.util.FastSet;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.ai.CtrlIntention;
@@ -132,9 +135,6 @@ import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.scripting.ManagedScript;
 import org.l2junity.gameserver.util.MinionList;
 import org.l2junity.util.Rnd;
-
-import javolution.util.FastList;
-import javolution.util.FastSet;
 
 /**
  * @author UnAfraid
@@ -1719,12 +1719,7 @@ public abstract class AbstractScript extends ManagedScript
 	{
 		try
 		{
-			final L2NpcTemplate template = NpcData.getInstance().getTemplate(npcId);
-			if (template == null)
-			{
-				_log.severe("Couldn't find NPC template for ID:" + npcId + "!");
-				return null;
-			}
+			final L2Spawn spawn = new L2Spawn(npcId);
 			
 			if ((x == 0) && (y == 0))
 			{
@@ -1749,7 +1744,6 @@ public abstract class AbstractScript extends ManagedScript
 				y += offset;
 			}
 			
-			final L2Spawn spawn = new L2Spawn(template);
 			spawn.setInstanceId(instanceId);
 			spawn.setHeading(heading);
 			spawn.setX(x);

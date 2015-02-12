@@ -27,7 +27,6 @@ import javolution.util.FastList;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.IXmlReader;
-import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.Territory;
@@ -227,7 +226,7 @@ public class TarBeetleSpawn implements IXmlReader
 					final Location location = _zones.get(Rnd.get(_zones.size())).getRandomPoint();
 					if (location != null)
 					{
-						final L2Spawn spawn = new L2Spawn(NpcData.getInstance().getTemplate(18804));
+						final L2Spawn spawn = new L2Spawn(18804);
 						spawn.setHeading(Rnd.get(65535));
 						spawn.setX(location.getX());
 						spawn.setY(location.getY());

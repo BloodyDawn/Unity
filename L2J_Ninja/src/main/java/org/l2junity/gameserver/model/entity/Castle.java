@@ -29,13 +29,14 @@ import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javolution.util.FastMap;
+
 import org.l2junity.Config;
 import org.l2junity.L2DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.data.xml.impl.CastleData;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
-import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.enums.CastleSide;
 import org.l2junity.gameserver.enums.MountType;
 import org.l2junity.gameserver.instancemanager.CastleManager;
@@ -51,7 +52,6 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2ArtefactInstance;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
-import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.holders.CastleSpawnHolder;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.skills.CommonSkill;
@@ -65,8 +65,6 @@ import org.l2junity.gameserver.network.serverpackets.PlaySound;
 import org.l2junity.gameserver.network.serverpackets.PledgeShowInfoUpdate;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.util.Broadcast;
-
-import javolution.util.FastMap;
 
 public final class Castle extends AbstractResidence
 {
@@ -1171,17 +1169,10 @@ public final class Castle extends AbstractResidence
 		{
 			if (holder != null)
 			{
-				final L2NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(holder.getNpcId());
-				if (npcTemplate == null)
-				{
-					_log.warning(Castle.class.getSimpleName() + ": Spawn of the nonexisting NPC ID: " + holder.getNpcId());
-					return;
-				}
-				
 				L2Spawn spawn;
 				try
 				{
-					spawn = new L2Spawn(npcTemplate);
+					spawn = new L2Spawn(holder.getNpcId());
 				}
 				catch (Exception e)
 				{

@@ -29,20 +29,18 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javolution.util.FastList;
+import javolution.util.FastMap;
+
 import org.l2junity.L2DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
-import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.datatables.SpawnTable;
 import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.MapRegionManager;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.util.Broadcast;
 import org.l2junity.util.Rnd;
-
-import javolution.util.FastList;
-import javolution.util.FastMap;
 
 /**
  * Auto Spawn handler.<br>
@@ -466,15 +464,7 @@ public class AutoSpawnHandler
 				final int z = locationList[locationIndex].getZ();
 				final int heading = locationList[locationIndex].getHeading();
 				
-				// Fetch the template for this NPC ID and create a new spawn.
-				L2NpcTemplate npcTemp = NpcData.getInstance().getTemplate(spawnInst.getId());
-				if (npcTemp == null)
-				{
-					_log.warning("Couldnt find NPC id" + spawnInst.getId() + " Try to update your DP");
-					return;
-				}
-				
-				L2Spawn newSpawn = new L2Spawn(npcTemp);
+				final L2Spawn newSpawn = new L2Spawn(spawnInst.getId());
 				newSpawn.setX(x);
 				newSpawn.setY(y);
 				newSpawn.setZ(z);

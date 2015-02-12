@@ -621,8 +621,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			RaidBossSpawnManager.getInstance().deleteSpawn(spawn, true);
 			try
 			{
-				L2NpcTemplate template = NpcData.getInstance().getTemplate(target.getId());
-				L2Spawn spawnDat = new L2Spawn(template);
+				final L2Spawn spawnDat = new L2Spawn(target.getId());
 				if (Config.SAVE_GMSPAWN_ON_CUSTOM)
 				{
 					spawn.setCustom(true);

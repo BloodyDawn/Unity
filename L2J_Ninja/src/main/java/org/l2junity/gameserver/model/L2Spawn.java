@@ -21,14 +21,18 @@ package org.l2junity.gameserver.model;
 import java.lang.reflect.Constructor;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import javolution.util.FastList;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.sql.impl.TerritoryTable;
+import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.datatables.NpcPersonalAIData;
 import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.model.actor.Attackable;
@@ -40,8 +44,6 @@ import org.l2junity.gameserver.model.interfaces.INamable;
 import org.l2junity.gameserver.model.interfaces.IPositionable;
 import org.l2junity.gameserver.model.zone.type.NpcSpawnTerritory;
 import org.l2junity.util.Rnd;
-
-import javolution.util.FastList;
 
 /**
  * This class manages the spawn and respawn of a group of L2NpcInstance that are in the same are and have the same type.<br>
@@ -141,6 +143,24 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		{
 			return;
 		}
+		
+		String className = "org.l2junity.gameserver.model.actor.instance." + _template.getType() + "Instance";
+		
+		// Create the generic constructor of L2Npc managed by this L2Spawn
+		_constructor = Class.forName(className).asSubclass(Npc.class).getConstructor(int.class, L2NpcTemplate.class);
+	}
+	
+	/**
+	 * Creates a new spawn.
+	 * @param npcId the NPC ID
+	 * @throws SecurityException
+	 * @throws ClassNotFoundException
+	 * @throws NoSuchMethodException
+	 * @throws ClassCastException
+	 */
+	public L2Spawn(int npcId) throws SecurityException, ClassNotFoundException, NoSuchMethodException, ClassCastException
+	{
+		_template = Objects.requireNonNull(NpcData.getInstance().getTemplate(npcId), "NpcTemplate not found for NPC ID: " + npcId);
 		
 		String className = "org.l2junity.gameserver.model.actor.instance." + _template.getType() + "Instance";
 		

@@ -31,6 +31,9 @@ import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javolution.util.FastList;
+import javolution.util.FastMap;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
@@ -40,15 +43,11 @@ import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
-import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.holders.PlayerEventHolder;
 import org.l2junity.gameserver.network.serverpackets.CharInfo;
 import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.network.serverpackets.UserInfo;
-
-import javolution.util.FastList;
-import javolution.util.FastMap;
 
 /**
  * @since $Revision: 1.3.4.1 $ $Date: 2005/03/27 15:29:32 $ This ancient thingie got reworked by Nik at $Date: 2011/05/17 21:51:39 $ Yeah, for 6 years no one bothered reworking this buggy event engine.
@@ -167,12 +166,9 @@ public class L2Event
 	 */
 	public static void spawnEventNpc(L2PcInstance target)
 	{
-		
-		L2NpcTemplate template = NpcData.getInstance().getTemplate(_npcId);
-		
 		try
 		{
-			L2Spawn spawn = new L2Spawn(template);
+			final L2Spawn spawn = new L2Spawn(_npcId);
 			
 			spawn.setX(target.getX() + 50);
 			spawn.setY(target.getY() + 50);

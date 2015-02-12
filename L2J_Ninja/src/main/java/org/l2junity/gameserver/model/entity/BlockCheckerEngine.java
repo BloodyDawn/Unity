@@ -23,6 +23,9 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javolution.util.FastList;
+import javolution.util.FastMap;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
@@ -51,9 +54,6 @@ import org.l2junity.gameserver.network.serverpackets.ExCubeGameExtendedChangePoi
 import org.l2junity.gameserver.network.serverpackets.RelationChanged;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.util.Rnd;
-
-import javolution.util.FastList;
-import javolution.util.FastMap;
 
 /**
  * @author BiggBoss
@@ -520,10 +520,9 @@ public final class BlockCheckerEngine
 			// Spawn the block carrying girl
 			if ((_round == 1) || (_round == 2))
 			{
-				L2NpcTemplate girl = NpcData.getInstance().getTemplate(18676);
 				try
 				{
-					final L2Spawn girlSpawn = new L2Spawn(girl);
+					final L2Spawn girlSpawn = new L2Spawn(18676);
 					girlSpawn.setX(_arenaCoordinates[_arena][4] + Rnd.get(-400, 400));
 					girlSpawn.setY(_arenaCoordinates[_arena][5] + Rnd.get(-400, 400));
 					girlSpawn.setZ(_zCoord);

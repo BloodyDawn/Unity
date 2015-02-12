@@ -27,11 +27,12 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javolution.util.FastList;
+
 import org.l2junity.Config;
 import org.l2junity.L2DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
-import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.FortTeleportWhoType;
 import org.l2junity.gameserver.enums.SiegeClanType;
@@ -50,7 +51,6 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2FortCommanderInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
-import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.sieges.fort.OnFortSiegeFinish;
 import org.l2junity.gameserver.model.events.impl.sieges.fort.OnFortSiegeStart;
@@ -58,8 +58,6 @@ import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.NpcSay;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
-
-import javolution.util.FastList;
 
 public class FortSiege implements Siegable
 {
@@ -1099,28 +1097,18 @@ public class FortSiege implements Siegable
 		try
 		{
 			_commanders.clear();
-			L2Spawn spawnDat;
-			L2NpcTemplate template1;
 			for (FortSiegeSpawn _sp : FortSiegeManager.getInstance().getCommanderSpawnList(getFort().getResidenceId()))
 			{
-				template1 = NpcData.getInstance().getTemplate(_sp.getId());
-				if (template1 != null)
-				{
-					spawnDat = new L2Spawn(template1);
-					spawnDat.setAmount(1);
-					spawnDat.setX(_sp.getLocation().getX());
-					spawnDat.setY(_sp.getLocation().getY());
-					spawnDat.setZ(_sp.getLocation().getZ());
-					spawnDat.setHeading(_sp.getLocation().getHeading());
-					spawnDat.setRespawnDelay(60);
-					spawnDat.doSpawn();
-					spawnDat.stopRespawn();
-					_commanders.add(spawnDat);
-				}
-				else
-				{
-					_log.warning("FortSiege.spawnCommander: Data missing in NPC table for ID: " + _sp.getId() + ".");
-				}
+				final L2Spawn spawnDat = new L2Spawn(_sp.getId());
+				spawnDat.setAmount(1);
+				spawnDat.setX(_sp.getLocation().getX());
+				spawnDat.setY(_sp.getLocation().getY());
+				spawnDat.setZ(_sp.getLocation().getZ());
+				spawnDat.setHeading(_sp.getLocation().getHeading());
+				spawnDat.setRespawnDelay(60);
+				spawnDat.doSpawn();
+				spawnDat.stopRespawn();
+				_commanders.add(spawnDat);
 			}
 		}
 		catch (Exception e)
