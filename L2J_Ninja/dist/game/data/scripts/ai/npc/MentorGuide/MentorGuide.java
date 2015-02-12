@@ -18,6 +18,8 @@
  */
 package ai.npc.MentorGuide;
 
+import static org.l2junity.gameserver.data.xml.IXmlReader.LOGGER;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -156,7 +158,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 			if (hasQuestItems(player, MENTEE_CERT) && (player.getLevel() >= MAX_LEVEL) && (player.getClassId().level() == ClassLevel.AWAKEN.ordinal()))
 			{
 				takeItems(player, MENTEE_CERT, 1);
-				giveItems(player, DIPLOMA, 1);
+				giveItems(player, DIPLOMA, 40);
 				return null;
 			}
 			htmltext = "33587-04.htm";
