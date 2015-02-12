@@ -29,7 +29,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 
-import javolution.util.FastSet;
 import ai.npc.AbstractNpcAI;
 
 /**
@@ -43,8 +42,8 @@ public final class DarkWaterDragon extends AbstractNpcAI
 	private static final int FAFURION = 18482;
 	private static final int DETRACTOR1 = 22270;
 	private static final int DETRACTOR2 = 22271;
-	private static Set<Integer> SECOND_SPAWN = new FastSet<>(); // Used to track if second Shades were already spawned
-	private static Set<Integer> MY_TRACKING_SET = new FastSet<>(); // Used to track instances of npcs
+	private static Set<Integer> SECOND_SPAWN = ConcurrentHashMap.newKeySet(); // Used to track if second Shades were already spawned
+	private static Set<Integer> MY_TRACKING_SET = ConcurrentHashMap.newKeySet(); // Used to track instances of npcs
 	private static Map<Integer, L2PcInstance> ID_MAP = new ConcurrentHashMap<>(); // Used to track instances of npcs
 	
 	private DarkWaterDragon()
@@ -149,9 +148,8 @@ public final class DarkWaterDragon extends AbstractNpcAI
 		int npcObjId = npc.getObjectId();
 		if (npcId == DRAGON)
 		{
-			if (!MY_TRACKING_SET.contains(npcObjId)) // this allows to handle multiple instances of npc
+			if (MY_TRACKING_SET.add(npcObjId)) // this allows to handle multiple instances of npc
 			{
-				MY_TRACKING_SET.add(npcObjId);
 				// Spawn first 5 shades on first attack on Dark Water Dragon
 				Creature originalAttacker = isSummon ? attacker.getServitors().values().stream().findFirst().orElse(attacker.getPet()) : attacker;
 				spawnShade(originalAttacker, SHADE1, npc.getX() + 100, npc.getY() + 100, npc.getZ());
@@ -160,9 +158,8 @@ public final class DarkWaterDragon extends AbstractNpcAI
 				spawnShade(originalAttacker, SHADE2, npc.getX() - 100, npc.getY() - 100, npc.getZ());
 				spawnShade(originalAttacker, SHADE1, npc.getX() - 150, npc.getY() + 150, npc.getZ());
 			}
-			else if ((npc.getCurrentHp() < (npc.getMaxHp() / 2.0)) && !(SECOND_SPAWN.contains(npcObjId)))
+			else if ((npc.getCurrentHp() < (npc.getMaxHp() / 2.0)) && SECOND_SPAWN.add(npcObjId))
 			{
-				SECOND_SPAWN.add(npcObjId);
 				// Spawn second 5 shades on half hp of on Dark Water Dragon
 				Creature originalAttacker = isSummon ? attacker.getServitors().values().stream().findFirst().orElse(attacker.getPet()) : attacker;
 				spawnShade(originalAttacker, SHADE2, npc.getX() + 100, npc.getY() + 100, npc.getZ());
@@ -212,9 +209,8 @@ public final class DarkWaterDragon extends AbstractNpcAI
 		int npcObjId = npc.getObjectId();
 		if (npcId == FAFURION)
 		{
-			if (!MY_TRACKING_SET.contains(npcObjId))
+			if (MY_TRACKING_SET.add(npcObjId))
 			{
-				MY_TRACKING_SET.add(npcObjId);
 				// Spawn 4 Detractors on spawn of Fafurion
 				int x = npc.getX();
 				int y = npc.getY();

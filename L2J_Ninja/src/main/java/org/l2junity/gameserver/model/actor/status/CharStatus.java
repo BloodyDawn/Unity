@@ -19,6 +19,7 @@
 package org.l2junity.gameserver.model.actor.status;
 
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Future;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -30,8 +31,6 @@ import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.actor.stat.CharStat;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.util.Rnd;
-
-import javolution.util.FastSet;
 
 public class CharStatus
 {
@@ -109,7 +108,7 @@ public class CharStatus
 	{
 		if (_StatusListener == null)
 		{
-			_StatusListener = new FastSet<Creature>().shared();
+			_StatusListener = ConcurrentHashMap.newKeySet();
 		}
 		return _StatusListener;
 	}

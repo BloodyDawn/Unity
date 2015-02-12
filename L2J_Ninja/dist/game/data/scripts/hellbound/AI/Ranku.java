@@ -19,6 +19,7 @@
 package hellbound.AI;
 
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -28,7 +29,6 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.util.MinionList;
 
-import javolution.util.FastSet;
 import ai.npc.AbstractNpcAI;
 
 /**
@@ -42,7 +42,7 @@ public final class Ranku extends AbstractNpcAI
 	private static final int MINION = 32305;
 	private static final int MINION_2 = 25543;
 	// Misc
-	private static final Set<Integer> MY_TRACKING_SET = new FastSet<Integer>().shared();
+	private static final Set<Integer> MY_TRACKING_SET = ConcurrentHashMap.newKeySet();
 	
 	public Ranku()
 	{
@@ -77,11 +77,10 @@ public final class Ranku extends AbstractNpcAI
 		{
 			for (L2MonsterInstance minion : ((L2MonsterInstance) npc).getMinionList().getSpawnedMinions())
 			{
-				if ((minion != null) && !minion.isDead() && !MY_TRACKING_SET.contains(minion.getObjectId()))
+				if ((minion != null) && !minion.isDead() && MY_TRACKING_SET.add(minion.getObjectId()))
 				{
 					broadcastNpcSay(minion, ChatType.NPC_GENERAL, NpcStringId.DON_T_KILL_ME_PLEASE_SOMETHING_S_STRANGLING_ME);
 					startQuestTimer("checkup", 1000, npc, null);
-					MY_TRACKING_SET.add(minion.getObjectId());
 				}
 			}
 		}
@@ -93,10 +92,7 @@ public final class Ranku extends AbstractNpcAI
 	{
 		if (npc.getId() == MINION)
 		{
-			if (MY_TRACKING_SET.contains(npc.getObjectId()))
-			{
-				MY_TRACKING_SET.remove(npc.getObjectId());
-			}
+			MY_TRACKING_SET.remove(npc.getObjectId());
 			
 			final L2MonsterInstance master = ((L2MonsterInstance) npc).getLeader();
 			if ((master != null) && !master.isDead())
@@ -109,10 +105,7 @@ public final class Ranku extends AbstractNpcAI
 		{
 			for (L2MonsterInstance minion : ((L2MonsterInstance) npc).getMinionList().getSpawnedMinions())
 			{
-				if (MY_TRACKING_SET.contains(minion.getObjectId()))
-				{
-					MY_TRACKING_SET.remove(minion.getObjectId());
-				}
+				MY_TRACKING_SET.remove(minion.getObjectId());
 			}
 		}
 		return super.onKill(npc, killer, isSummon);

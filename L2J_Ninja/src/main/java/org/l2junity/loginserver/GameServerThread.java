@@ -27,6 +27,7 @@ import java.security.KeyPair;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
@@ -41,8 +42,6 @@ import org.l2junity.loginserver.network.loginserverpackets.RequestCharacters;
 import org.l2junity.util.Util;
 import org.l2junity.util.crypt.NewCrypt;
 import org.l2junity.util.network.BaseSendablePacket;
-
-import javolution.util.FastSet;
 
 /**
  * @author -Wooden-
@@ -64,7 +63,7 @@ public class GameServerThread extends Thread
 	private GameServerInfo _gsi;
 	
 	/** Authed Clients on a GameServer */
-	private final Set<String> _accountsOnGameServer = new FastSet<>();
+	private final Set<String> _accountsOnGameServer = ConcurrentHashMap.newKeySet();
 	
 	private String _connectionIPAddress;
 	

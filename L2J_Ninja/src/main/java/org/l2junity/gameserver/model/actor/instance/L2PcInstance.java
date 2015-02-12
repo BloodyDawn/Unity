@@ -48,7 +48,6 @@ import java.util.logging.Level;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
-import javolution.util.FastSet;
 
 import org.l2junity.Config;
 import org.l2junity.L2DatabaseFactory;
@@ -749,7 +748,7 @@ public final class L2PcInstance extends Playable
 	/** Player's cubics. */
 	private final Map<Integer, L2CubicInstance> _cubics = new ConcurrentSkipListMap<>();
 	/** Active shots. */
-	protected FastSet<Integer> _activeSoulShots = new FastSet<Integer>().shared();
+	protected Set<Integer> _activeSoulShots = ConcurrentHashMap.newKeySet();
 	
 	public final ReentrantLock soulShotLock = new ReentrantLock();
 	

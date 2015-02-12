@@ -21,7 +21,10 @@ package org.l2junity.gameserver.model;
 import static org.l2junity.gameserver.model.itemcontainer.Inventory.MAX_ADENA;
 
 import java.util.List;
+import java.util.Set;
 import java.util.logging.Logger;
+
+import javolution.util.FastList;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.datatables.ItemTable;
@@ -37,9 +40,6 @@ import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2junity.gameserver.network.serverpackets.ItemList;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.util.Util;
-
-import javolution.util.FastList;
-import javolution.util.FastSet;
 
 /**
  * @author Advi
@@ -675,7 +675,7 @@ public class TradeList
 	 * @param items
 	 * @return int: result of trading. 0 - ok, 1 - canceled (no adena), 2 - failed (item error)
 	 */
-	public synchronized int privateStoreBuy(L2PcInstance player, FastSet<ItemRequest> items)
+	public synchronized int privateStoreBuy(L2PcInstance player, Set<ItemRequest> items)
 	{
 		if (_locked)
 		{

@@ -34,7 +34,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javolution.util.FastList;
-import javolution.util.FastSet;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.GameTimeController;
@@ -288,11 +287,7 @@ public abstract class AbstractScript extends ManagedScript
 				
 				if (!ids.isEmpty())
 				{
-					if (!_registeredIds.containsKey(type))
-					{
-						_registeredIds.put(type, new FastSet<Integer>().shared());
-					}
-					_registeredIds.get(type).addAll(ids);
+					_registeredIds.computeIfAbsent(type, k -> ConcurrentHashMap.newKeySet()).addAll(ids);
 				}
 				
 				registerAnnotation(method, eventType, type, priority, ids);
@@ -1335,11 +1330,7 @@ public abstract class AbstractScript extends ManagedScript
 					}
 				}
 				
-				if (!_registeredIds.containsKey(registerType))
-				{
-					_registeredIds.put(registerType, new FastSet<Integer>().shared());
-				}
-				_registeredIds.get(registerType).add(id);
+				_registeredIds.computeIfAbsent(registerType, k -> ConcurrentHashMap.newKeySet()).add(id);
 			}
 		}
 		else
@@ -1450,11 +1441,8 @@ public abstract class AbstractScript extends ManagedScript
 					}
 				}
 			}
-			if (!_registeredIds.containsKey(registerType))
-			{
-				_registeredIds.put(registerType, new FastSet<Integer>().shared());
-			}
-			_registeredIds.get(registerType).addAll(ids);
+			
+			_registeredIds.computeIfAbsent(registerType, k -> ConcurrentHashMap.newKeySet()).addAll(ids);
 		}
 		else
 		{
@@ -1498,7 +1486,7 @@ public abstract class AbstractScript extends ManagedScript
 	
 	public Set<Integer> getRegisteredIds(ListenerRegisterType type)
 	{
-		return _registeredIds.containsKey(type) ? _registeredIds.get(type) : Collections.emptySet();
+		return _registeredIds.getOrDefault(type, Collections.emptySet());
 	}
 	
 	public List<AbstractEventListener> getListeners()

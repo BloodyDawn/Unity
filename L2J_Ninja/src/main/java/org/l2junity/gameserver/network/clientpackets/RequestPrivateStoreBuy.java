@@ -20,6 +20,9 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import static org.l2junity.gameserver.model.actor.Npc.INTERACTION_DISTANCE;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.model.ItemRequest;
@@ -29,8 +32,6 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.util.Util;
-
-import javolution.util.FastSet;
 
 /**
  * This class ...
@@ -43,7 +44,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 	private static final int BATCH_LENGTH = 20; // length of the one item
 	
 	private int _storePlayerId;
-	private FastSet<ItemRequest> _items = null;
+	private Set<ItemRequest> _items = null;
 	
 	@Override
 	protected void readImpl()
@@ -54,7 +55,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 		{
 			return;
 		}
-		_items = new FastSet<>();
+		_items = new HashSet<>();
 		
 		for (int i = 0; i < count; i++)
 		{
