@@ -80,8 +80,18 @@ public final class PacketReader
 	{
 		return _buf.readLong();
 	}
-	
-	/**
+
+    /**
+     * Reads a float
+     * @return the float
+     * @throws IndexOutOfBoundsException if {@code readableBytes} is less than {@code 4}
+     */
+    public float readE()
+    {
+        return _buf.readFloat();
+    }
+
+    /**
 	 * Reads a double
 	 * @return the double
 	 * @throws IndexOutOfBoundsException if {@code readableBytes} is less than {@code 8}
@@ -98,7 +108,7 @@ public final class PacketReader
 	 */
 	public String readS()
 	{
-		StringBuilder sb = new StringBuilder();
+		final StringBuilder sb = new StringBuilder();
 		
 		char chr;
 		while ((chr = _buf.readChar()) != 0)
@@ -107,6 +117,29 @@ public final class PacketReader
 		}
 		return sb.toString();
 	}
+
+
+    /**
+     * Reads a string with fixed length specified
+     * @return the string
+     * @throws IndexOutOfBoundsException if string {@code null} size is more then remaining buffer
+     */
+    public String readString()
+    {
+        final StringBuilder sb = new StringBuilder();
+        final int size = _buf.readShort(); // chars
+        final int readableSize = _buf.readableBytes(); // bytes
+        if ((size * 2)> readableSize)
+        {
+            throw new IndexOutOfBoundsException("size block size: " + (size * 2) + " is more then packet buffer: " + readableSize);
+        }
+
+        for (int i = 0; i < size; i++)
+        {
+            sb.append(_buf.readChar());
+        }
+        return sb.toString();
+    }
 	
 	/**
 	 * @param length
