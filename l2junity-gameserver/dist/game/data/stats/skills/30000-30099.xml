@@ -358,11 +358,19 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="30043" levels="2" name="Eminent Attribute Resistance">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Wind Resistance + 30. -->
+		<table name="#holyRes"> 0 30 </table>
+		<table name="#magicLvl"> 76 85 </table>
 		<set name="icon" val="icon.skill11006" />
 		<set name="operateType" val="P" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="windRes" val="30" />
+				<add stat="holyRes" val="#holyRes" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="30044" levels="2" name="Eminent Trait Resistance">
 		<!-- AUTO GENERATED SKILL -->
@@ -372,10 +380,18 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="30045" levels="3" name="Eminent Ability">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- INT + 2. -->
+		<table name="#INT"> 2 4 16 </table>
+		<table name="#magicLvl"> 40 76 85 </table>
 		<set name="icon" val="icon.skill11253" />
 		<set name="operateType" val="P" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="INT" val="#INT" />
+				<add stat="skillCritical" val="4" /> <!-- INT -->
+			</effect>
+		</for>
 	</skill>
 </list>
