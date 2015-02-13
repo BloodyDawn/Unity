@@ -104,12 +104,11 @@ public final class PacketReader
 	/**
 	 * Reads a string
 	 * @return the string
-	 * @throws IndexOutOfBoundsException if string {@code null} terminator is not found
+	 * @throws IndexOutOfBoundsException if string {@code null} terminator is not found within {@code readableBytes}
 	 */
 	public String readS()
 	{
 		final StringBuilder sb = new StringBuilder();
-		
 		char chr;
 		while ((chr = _buf.readChar()) != 0)
 		{
@@ -121,19 +120,18 @@ public final class PacketReader
 	/**
 	 * Reads a string with fixed length specified
 	 * @return the string
-	 * @throws IndexOutOfBoundsException if string {@code null} size is more then remaining buffer
+	 * @throws IndexOutOfBoundsException if {@code readableBytes} is less than {@code 2 + String.length * 2}
 	 */
 	public String readString()
 	{
 		final StringBuilder sb = new StringBuilder();
-		final int size = _buf.readShort(); // chars
-		final int readableSize = _buf.readableBytes(); // bytes
-		if ((size * 2) > readableSize)
+		final int stringLength = _buf.readShort();
+		if ((stringLength * 2) > getReadableBytes())
 		{
-			throw new IndexOutOfBoundsException("size block size: " + (size * 2) + " is more then packet buffer: " + readableSize);
+			throw new IndexOutOfBoundsException("readerIndex(" + _buf.readerIndex() + ") + length(" + (stringLength * 2) + ") exceeds writerIndex(" + _buf.writerIndex() + "): " + _buf);
 		}
 		
-		for (int i = 0; i < size; i++)
+		for (int i = 0; i < stringLength; i++)
 		{
 			sb.append(_buf.readChar());
 		}

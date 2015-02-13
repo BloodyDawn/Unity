@@ -94,9 +94,9 @@ public final class PacketWriter
 	{
 		if (value != null)
 		{
-			for (char ch : value.toCharArray())
+			for (int i = 0; i < value.length(); i++)
 			{
-				_buf.writeChar(ch);
+				_buf.writeChar(value.charAt(i));
 			}
 		}
 		
@@ -104,17 +104,17 @@ public final class PacketWriter
 	}
 	
 	/**
-	 * Writes a string with fixed length specified as first short, then array of chars
+	 * Writes a string with fixed length specified as [short length, char[length] data]
 	 * @param value
 	 */
 	public void writeString(String value)
 	{
 		if (value != null)
 		{
-			_buf.writeShort(value.toCharArray().length);
-			for (char ch : value.toCharArray())
+			_buf.writeShort(value.length());
+			for (int i = 0; i < value.length(); i++)
 			{
-				_buf.writeChar(ch);
+				_buf.writeChar(value.charAt(i));
 			}
 		}
 		else
