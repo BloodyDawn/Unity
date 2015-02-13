@@ -34,18 +34,39 @@
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="10303" levels="4" name="Superior Combat Master">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Max CP/ HP + 2%. -->
+		<table name="#max"> 1.02 1.03 1.04 1.05 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill0430" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="maxHp" val="#max" />
+				<mul stat="maxCp" val="#max" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10304" levels="4" name="Superior Dual Sword Mastery">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- When a dualsword or dual blunt is equipped, P. Atk. + 2% and additional + 709. -->
+		<table name="#pAtkMul"> 1.02 1.03 1.04 1.05 </table>
+		<table name="#pAtkAdd"> 709 828 982 1190 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<set name="icon" val="icon.skill11835" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#pAtkMul">
+					<using kind="DUAL, DUALBLUNT" />
+				</mul>
+				<add stat="pAtk" val="#pAtkMul">
+					<using kind="DUAL, DUALBLUNT" />
+				</add>
+			</effect>
+		</for>
 	</skill>
 	<skill id="10305" levels="4" name="Broad Pull">
 		<!-- AUTO GENERATED SKILL -->
