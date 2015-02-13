@@ -357,7 +357,7 @@ public final class AdminCHSiege implements IAdminCommandHandler
 	
 	private void sendSiegableHallPage(L2PcInstance activeChar, String hallId, SiegableHall hall)
 	{
-		final NpcHtmlMessage msg = new NpcHtmlMessage();
+		final NpcHtmlMessage msg = new NpcHtmlMessage(0, 1);
 		msg.setFile(null, "data/html/admin/siegablehall.htm");
 		msg.replace("%clanhallId%", hallId);
 		msg.replace("%clanhallName%", hall.getName());

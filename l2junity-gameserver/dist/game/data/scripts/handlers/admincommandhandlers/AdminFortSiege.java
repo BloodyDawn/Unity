@@ -153,7 +153,7 @@ public class AdminFortSiege implements IAdminCommandHandler
 	private void showFortSelectPage(L2PcInstance activeChar)
 	{
 		int i = 0;
-		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
+		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		adminReply.setFile(activeChar.getHtmlPrefix(), "data/html/admin/forts.htm");
 		
 		final List<Fort> forts = FortManager.getInstance().getForts();
@@ -180,7 +180,7 @@ public class AdminFortSiege implements IAdminCommandHandler
 	
 	private void showFortSiegePage(L2PcInstance activeChar, Fort fort)
 	{
-		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
+		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		adminReply.setFile(activeChar.getHtmlPrefix(), "data/html/admin/fort.htm");
 		adminReply.replace("%fortName%", fort.getName());
 		adminReply.replace("%fortId%", String.valueOf(fort.getResidenceId()));

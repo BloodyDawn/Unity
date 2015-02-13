@@ -124,12 +124,12 @@ public class AdminScan implements IAdminCommandHandler
 	
 	private void sendNpcList(L2PcInstance activeChar, int radius)
 	{
-		final NpcHtmlMessage html = new NpcHtmlMessage();
+		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/scan.htm");
 		final StringBuilder sb = new StringBuilder();
 		for (Creature character : activeChar.getKnownList().getKnownCharactersInRadius(radius))
 		{
-			if (character instanceof Npc)
+			if (character.isNpc())
 			{
 				sb.append("<tr>");
 				sb.append("<td width=\"54\">" + character.getId() + "</td>");

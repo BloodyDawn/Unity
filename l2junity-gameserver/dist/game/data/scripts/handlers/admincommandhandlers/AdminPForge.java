@@ -262,7 +262,7 @@ public final class AdminPForge implements IAdminCommandHandler
 		
 		valuesHtml = valuesHtml.replace("%editors%", editorsHtml);
 		valuesHtml = valuesHtml.replace("%send_bypass%", sendBypass);
-		activeChar.sendPacket(new NpcHtmlMessage(valuesHtml));
+		activeChar.sendPacket(new NpcHtmlMessage(0, 1, valuesHtml));
 	}
 	
 	@Override

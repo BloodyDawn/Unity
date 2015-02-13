@@ -891,7 +891,7 @@ public class AdminEditChar implements IAdminCommandHandler
 	{
 		final L2PcInstance[] players = World.getInstance().getPlayersSortedBy(Comparator.comparingLong(L2PcInstance::getUptime));
 		
-		final NpcHtmlMessage html = new NpcHtmlMessage();
+		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/charlist.htm");
 		
 		final PageResult result = HtmlUtil.createPage(players, page, 20, i ->
@@ -971,7 +971,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			ip = client.getConnection().getInetAddress().getHostAddress();
 		}
 		
-		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
+		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		adminReply.setFile(activeChar.getHtmlPrefix(), "data/html/admin/" + filename);
 		adminReply.replace("%name%", player.getName());
 		adminReply.replace("%level%", String.valueOf(player.getLevel()));
@@ -1086,7 +1086,7 @@ public class AdminEditChar implements IAdminCommandHandler
 	{
 		int CharactersFound = 0;
 		String name;
-		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
+		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		adminReply.setFile(activeChar.getHtmlPrefix(), "data/html/admin/charfind.htm");
 		
 		final StringBuilder replyMSG = new StringBuilder(1000);
@@ -1156,7 +1156,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		L2GameClient client;
 		String name, ip = "0.0.0.0";
 		final StringBuilder replyMSG = new StringBuilder(1000);
-		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
+		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		adminReply.setFile(activeChar.getHtmlPrefix(), "data/html/admin/ipfind.htm");
 		for (L2PcInstance player : World.getInstance().getPlayersSortedBy(Comparator.comparingLong(L2PcInstance::getUptime)))
 		{
@@ -1240,7 +1240,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		final StringBuilder replyMSG = new StringBuilder(chars.size() * 20);
 		chars.values().stream().forEachOrdered(name -> StringUtil.append(replyMSG, name, "<br1>"));
 		
-		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
+		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		adminReply.setFile(activeChar.getHtmlPrefix(), "data/html/admin/accountinfo.htm");
 		adminReply.replace("%account%", player.getAccountName());
 		adminReply.replace("%player%", characterName);
@@ -1297,7 +1297,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			StringUtil.append(results, "<a action=\"bypass -h admin_find_ip " + dualboxIP + "\">" + dualboxIP + " (" + dualboxIPs.get(dualboxIP) + ")</a><br1>");
 		}
 		
-		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
+		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		adminReply.setFile(activeChar.getHtmlPrefix(), "data/html/admin/dualbox.htm");
 		adminReply.replace("%multibox%", String.valueOf(multibox));
 		adminReply.replace("%results%", results.toString());
@@ -1349,7 +1349,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			StringUtil.append(results, "<a action=\"bypass -h admin_find_ip " + dualboxIP.ip + "\">" + dualboxIP.ip + " (" + dualboxIPs.get(dualboxIP) + ")</a><br1>");
 		}
 		
-		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
+		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		adminReply.setFile(activeChar.getHtmlPrefix(), "data/html/admin/dualbox.htm");
 		adminReply.replace("%multibox%", String.valueOf(multibox));
 		adminReply.replace("%results%", results.toString());
@@ -1433,7 +1433,7 @@ public class AdminEditChar implements IAdminCommandHandler
 	
 	private void gatherSummonInfo(Summon target, L2PcInstance activeChar)
 	{
-		final NpcHtmlMessage html = new NpcHtmlMessage();
+		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/petinfo.htm");
 		String name = target.getName();
 		html.replace("%name%", name == null ? "N/A" : name);
@@ -1472,7 +1472,7 @@ public class AdminEditChar implements IAdminCommandHandler
 	private void gatherPartyInfo(L2PcInstance target, L2PcInstance activeChar)
 	{
 		boolean color = true;
-		final NpcHtmlMessage html = new NpcHtmlMessage();
+		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/partyinfo.htm");
 		StringBuilder text = new StringBuilder(400);
 		for (L2PcInstance member : target.getParty().getMembers())

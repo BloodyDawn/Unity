@@ -36,7 +36,7 @@ public final class AdminManor implements IAdminCommandHandler
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
 		final CastleManorManager manor = CastleManorManager.getInstance();
-		final NpcHtmlMessage msg = new NpcHtmlMessage();
+		final NpcHtmlMessage msg = new NpcHtmlMessage(0, 1);
 		msg.setFile(activeChar.getHtmlPrefix(), "data/html/admin/manor.htm");
 		msg.replace("%status%", manor.getCurrentModeName());
 		msg.replace("%change%", manor.getNextModeChange());

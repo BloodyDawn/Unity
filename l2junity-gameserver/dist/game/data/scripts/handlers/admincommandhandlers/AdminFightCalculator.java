@@ -119,7 +119,7 @@ public class AdminFightCalculator implements IAdminCommandHandler
 			npc2 = NpcData.getInstance().getTemplate(mid2);
 		}
 		
-		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
+		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		
 		final String replyMSG;
 		
@@ -299,7 +299,7 @@ public class AdminFightCalculator implements IAdminCommandHandler
 		double maxHp2 = npc2.getMaxHp();
 		int hp2 = (int) ((Formulas.calcHpRegen(npc2) * 100000) / Formulas.getRegeneratePeriod(npc2));
 		
-		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
+		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		
 		final StringBuilder replyMSG = StringUtil.startAppend(1000, "<html><title>Selected mobs to fight</title>" + "<body>" + "<table>");
 		
