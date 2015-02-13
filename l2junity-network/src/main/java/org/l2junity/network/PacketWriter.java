@@ -33,7 +33,7 @@ public final class PacketWriter
 	}
 	
 	/**
-	 * Writes a byte
+	 * Writes a byte.
 	 * @param value the byte (The 24 high-order bits are ignored)
 	 */
 	public void writeC(int value)
@@ -42,7 +42,7 @@ public final class PacketWriter
 	}
 	
 	/**
-	 * Writes a short
+	 * Writes a short.
 	 * @param value the short (The 16 high-order bits are ignored)
 	 */
 	public void writeH(int value)
@@ -51,7 +51,7 @@ public final class PacketWriter
 	}
 	
 	/**
-	 * Writes an integer
+	 * Writes an integer.
 	 * @param value the integer
 	 */
 	public void writeD(int value)
@@ -60,7 +60,7 @@ public final class PacketWriter
 	}
 	
 	/**
-	 * Writes a long
+	 * Writes a long.
 	 * @param value the long
 	 */
 	public void writeQ(long value)
@@ -69,7 +69,7 @@ public final class PacketWriter
 	}
 	
 	/**
-	 * Writes a float
+	 * Writes a float.
 	 * @param value the float
 	 */
 	public void writeE(float value)
@@ -78,7 +78,7 @@ public final class PacketWriter
 	}
 	
 	/**
-	 * Writes a double
+	 * Writes a double.
 	 * @param value the double
 	 */
 	public void writeF(double value)
@@ -87,7 +87,7 @@ public final class PacketWriter
 	}
 	
 	/**
-	 * Writes a string
+	 * Writes a string.
 	 * @param value the string
 	 */
 	public void writeS(String value)
@@ -104,8 +104,8 @@ public final class PacketWriter
 	}
 	
 	/**
-	 * Writes a string with fixed length specified as [short length, char[length] data]
-	 * @param value
+	 * Writes a string with fixed length specified as [short length, char[length] data].
+	 * @param value the string
 	 */
 	public void writeString(String value)
 	{
@@ -124,8 +124,8 @@ public final class PacketWriter
 	}
 	
 	/**
-	 * Writes a byte array
-	 * @param bytes
+	 * Writes a byte array.
+	 * @param bytes the byte array
 	 */
 	public void writeB(byte[] bytes)
 	{

@@ -42,7 +42,7 @@ public final class PacketReader
 	}
 	
 	/**
-	 * Reads an unsigned byte
+	 * Reads an unsigned byte.
 	 * @return the unsigned byte
 	 * @throws IndexOutOfBoundsException if {@code readableBytes} is less than {@code 1}
 	 */
@@ -52,7 +52,7 @@ public final class PacketReader
 	}
 	
 	/**
-	 * Reads an unsigned short
+	 * Reads an unsigned short.
 	 * @return the unsigned short
 	 * @throws IndexOutOfBoundsException if {@code readableBytes} is less than {@code 2}
 	 */
@@ -62,7 +62,7 @@ public final class PacketReader
 	}
 	
 	/**
-	 * Reads an integer
+	 * Reads an integer.
 	 * @return the integer
 	 * @throws IndexOutOfBoundsException if {@code readableBytes} is less than {@code 4}
 	 */
@@ -72,7 +72,7 @@ public final class PacketReader
 	}
 	
 	/**
-	 * Reads a long
+	 * Reads a long.
 	 * @return the long
 	 * @throws IndexOutOfBoundsException if {@code readableBytes} is less than {@code 8}
 	 */
@@ -82,7 +82,7 @@ public final class PacketReader
 	}
 	
 	/**
-	 * Reads a float
+	 * Reads a float.
 	 * @return the float
 	 * @throws IndexOutOfBoundsException if {@code readableBytes} is less than {@code 4}
 	 */
@@ -92,7 +92,7 @@ public final class PacketReader
 	}
 	
 	/**
-	 * Reads a double
+	 * Reads a double.
 	 * @return the double
 	 * @throws IndexOutOfBoundsException if {@code readableBytes} is less than {@code 8}
 	 */
@@ -102,7 +102,7 @@ public final class PacketReader
 	}
 	
 	/**
-	 * Reads a string
+	 * Reads a string.
 	 * @return the string
 	 * @throws IndexOutOfBoundsException if string {@code null} terminator is not found within {@code readableBytes}
 	 */
@@ -118,7 +118,7 @@ public final class PacketReader
 	}
 	
 	/**
-	 * Reads a string with fixed length specified
+	 * Reads a fixed length string.
 	 * @return the string
 	 * @throws IndexOutOfBoundsException if {@code readableBytes} is less than {@code 2 + String.length * 2}
 	 */
@@ -139,8 +139,10 @@ public final class PacketReader
 	}
 	
 	/**
-	 * @param length
-	 * @return
+	 * Reads a byte array.
+	 * @param length the length
+	 * @return the byte array
+	 * @throws IndexOutOfBoundsException if {@code readableBytes} is less than {@code length}
 	 */
 	public byte[] readB(int length)
 	{
