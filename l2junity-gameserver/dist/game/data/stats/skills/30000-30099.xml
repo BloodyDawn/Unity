@@ -9,17 +9,25 @@
 		<set name="castRange" val="0" />
 	</skill>
 	<skill id="30001" levels="25" name="Hydro Attack">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- TODO: 10% more damage if target is debuffed -->
 		<!-- Attacks target with 6 Power added to M. Atk. 10% more damage if target is debuffed. Requires a sword or blunt weapon. -->
-		<table name="#mpConsumes"> 3 8 10 13 16 18 20 21 23 25 27 29 30 31 32 32 33 33 33 34 34 34 34 34 35 </table>
+		<table name="#mpInitialConsume"> 1 2 2 3 3 4 4 4 5 5 5 6 6 6 6 6 7 7 7 7 7 7 7 7 7 </table>
+		<table name="#mpConsume"> 2 6 8 10 13 14 16 17 18 20 22 23 24 25 26 26 26 26 26 27 27 27 27 27 28 </table>
 		<set name="icon" val="icon.skill30001" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
+		<set name="targetType" val="ONE" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="castRange" val="80" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="isMagic" val="1" />
+		<cond msgId="113" addName="1">
+			<using kind="SWORD,BLUNT" />
+		</cond>
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="30002" levels="3" name="Storm Sign">
 		<!-- AUTO GENERATED SKILL -->
