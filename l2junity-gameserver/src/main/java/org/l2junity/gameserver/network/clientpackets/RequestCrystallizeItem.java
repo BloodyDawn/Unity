@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.impl.ItemCrystalizationData;
 import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.enums.Race;
@@ -38,7 +39,6 @@ import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.util.Util;
-import org.l2junity.util.Rnd;
 
 /**
  * This class ...

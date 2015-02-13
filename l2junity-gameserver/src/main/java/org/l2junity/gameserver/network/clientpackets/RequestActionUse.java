@@ -21,6 +21,7 @@ package org.l2junity.gameserver.network.clientpackets;
 import java.util.Arrays;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.ai.NextAction;
@@ -56,7 +57,6 @@ import org.l2junity.gameserver.network.serverpackets.RecipeShopManageList;
 import org.l2junity.gameserver.network.serverpackets.SocialAction;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
-import org.l2junity.util.Rnd;
 
 /**
  * This class manages the action use request packet.

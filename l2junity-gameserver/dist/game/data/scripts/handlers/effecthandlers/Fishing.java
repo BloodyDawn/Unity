@@ -19,6 +19,7 @@
 package handlers.effecthandlers;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.PcCondOverride;
@@ -40,7 +41,6 @@ import org.l2junity.gameserver.model.zone.type.L2FishingZone;
 import org.l2junity.gameserver.model.zone.type.L2WaterZone;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
-import org.l2junity.util.Rnd;
 
 /**
  * Fishing effect implementation.

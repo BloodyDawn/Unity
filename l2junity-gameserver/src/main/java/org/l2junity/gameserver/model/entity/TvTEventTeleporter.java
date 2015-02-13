@@ -19,11 +19,11 @@
 package org.l2junity.gameserver.model.entity;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.Team;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
-import org.l2junity.util.Rnd;
 
 public class TvTEventTeleporter implements Runnable
 {

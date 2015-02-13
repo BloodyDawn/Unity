@@ -28,6 +28,7 @@ import java.util.Set;
 import java.util.concurrent.Future;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -60,7 +61,6 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.util.Util;
-import org.l2junity.util.Rnd;
 
 /**
  * This class manages AI of L2Attackable.

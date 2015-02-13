@@ -31,6 +31,7 @@ import javolution.util.FastList;
 
 import org.l2junity.Config;
 import org.l2junity.L2DatabaseFactory;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.sql.impl.CharSummonTable;
@@ -74,7 +75,6 @@ import org.l2junity.gameserver.network.serverpackets.PetInventoryUpdate;
 import org.l2junity.gameserver.network.serverpackets.StopMove;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.taskmanager.DecayTaskManager;
-import org.l2junity.util.Rnd;
 
 public class L2PetInstance extends Summon
 {

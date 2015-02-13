@@ -35,6 +35,7 @@ import java.util.stream.Collectors;
 
 import org.l2junity.Config;
 import org.l2junity.L2DatabaseFactory;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.enums.ManorMode;
@@ -48,7 +49,6 @@ import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.interfaces.IStorable;
 import org.l2junity.gameserver.model.itemcontainer.ItemContainer;
 import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.util.Rnd;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;

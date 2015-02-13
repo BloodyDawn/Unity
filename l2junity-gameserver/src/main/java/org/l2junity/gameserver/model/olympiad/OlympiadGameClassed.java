@@ -21,7 +21,7 @@ package org.l2junity.gameserver.model.olympiad;
 import java.util.List;
 
 import org.l2junity.Config;
-import org.l2junity.util.Rnd;
+import org.l2junity.commons.util.Rnd;
 
 /**
  * @author DS

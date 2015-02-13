@@ -38,9 +38,9 @@ import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.L2DatabaseFactory;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.loginserver.network.gameserverpackets.ServerStatus;
 import org.l2junity.util.IPSubnet;
-import org.l2junity.util.Rnd;
 
 import javolution.io.UTF8StreamReader;
 import javolution.xml.stream.XMLStreamConstants;

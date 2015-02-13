@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.network.clientpackets.compound;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.actor.request.CompoundRequest;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -29,7 +30,6 @@ import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2junity.gameserver.network.serverpackets.compound.ExEnchantFail;
 import org.l2junity.gameserver.network.serverpackets.compound.ExEnchantOneFail;
 import org.l2junity.gameserver.network.serverpackets.compound.ExEnchantSucess;
-import org.l2junity.util.Rnd;
 
 /**
  * @author UnAfraid

@@ -36,6 +36,7 @@ import java.util.logging.Logger;
 import javolution.util.FastList;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
@@ -132,7 +133,6 @@ import org.l2junity.gameserver.network.serverpackets.SpecialCamera;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.scripting.ManagedScript;
 import org.l2junity.gameserver.util.MinionList;
-import org.l2junity.util.Rnd;
 
 /**
  * @author UnAfraid
@@ -2424,7 +2424,7 @@ public abstract class AbstractScript extends ManagedScript
 	
 	/**
 	 * Get a random integer from 0 (inclusive) to {@code max} (exclusive).<br>
-	 * Use this method instead of importing {@link org.l2junity.util.Rnd} utility.
+	 * Use this method instead of importing {@link org.l2junity.commons.util.Rnd} utility.
 	 * @param max the maximum value for randomization
 	 * @return a random integer number from 0 to {@code max - 1}
 	 */
@@ -2435,7 +2435,7 @@ public abstract class AbstractScript extends ManagedScript
 	
 	/**
 	 * Get a random integer from {@code min} (inclusive) to {@code max} (inclusive).<br>
-	 * Use this method instead of importing {@link org.l2junity.util.Rnd} utility.
+	 * Use this method instead of importing {@link org.l2junity.commons.util.Rnd} utility.
 	 * @param min the minimum value for randomization
 	 * @param max the maximum value for randomization
 	 * @return a random integer number from {@code min} to {@code max}
@@ -2447,7 +2447,7 @@ public abstract class AbstractScript extends ManagedScript
 	
 	/**
 	 * Get a random boolean.<br>
-	 * Use this method instead of importing {@link org.l2junity.util.Rnd} utility.
+	 * Use this method instead of importing {@link org.l2junity.commons.util.Rnd} utility.
 	 * @return {@code true} or {@code false} randomly
 	 */
 	public static boolean getRandomBoolean()

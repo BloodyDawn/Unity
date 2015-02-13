@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.commons.network.codecs;
+package org.l2junity.network.codecs;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandler.Sharable;
@@ -27,8 +27,8 @@ import java.nio.ByteOrder;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2junity.commons.network.IOutgoingPacket;
-import org.l2junity.commons.network.PacketWriter;
+import org.l2junity.network.IOutgoingPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Nos

@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.commons.network.codecs;
+package org.l2junity.network.codecs;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
@@ -24,9 +24,9 @@ import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 
 import java.nio.ByteOrder;
 
-import org.l2junity.commons.network.IIncomingPacket;
-import org.l2junity.commons.network.IIncomingPackets;
-import org.l2junity.commons.network.PacketReader;
+import org.l2junity.network.IIncomingPacket;
+import org.l2junity.network.IIncomingPackets;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Nos

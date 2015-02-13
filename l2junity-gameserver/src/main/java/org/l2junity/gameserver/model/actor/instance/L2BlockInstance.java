@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.model.actor.instance;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.model.ArenaParticipantsHolder;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -28,7 +29,6 @@ import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.ExCubeGameChangePoints;
 import org.l2junity.gameserver.network.serverpackets.ExCubeGameExtendedChangePoints;
 import org.l2junity.gameserver.network.serverpackets.NpcInfo;
-import org.l2junity.util.Rnd;
 
 /**
  * @author BiggBoss

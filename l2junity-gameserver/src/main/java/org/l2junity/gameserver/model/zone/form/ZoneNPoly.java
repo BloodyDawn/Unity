@@ -20,10 +20,10 @@ package org.l2junity.gameserver.model.zone.form;
 
 import java.awt.Polygon;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.zone.L2ZoneForm;
-import org.l2junity.util.Rnd;
 
 /**
  * A not so primitive npoly zone

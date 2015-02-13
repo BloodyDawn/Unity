@@ -29,6 +29,7 @@ import java.util.logging.Logger;
 import javolution.util.FastList;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.sql.impl.TerritoryTable;
@@ -42,7 +43,6 @@ import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.interfaces.INamable;
 import org.l2junity.gameserver.model.interfaces.IPositionable;
 import org.l2junity.gameserver.model.zone.type.NpcSpawnTerritory;
-import org.l2junity.util.Rnd;
 
 /**
  * This class manages the spawn and respawn of a group of L2NpcInstance that are in the same are and have the same type.<br>

@@ -27,6 +27,7 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.loginserver.LoginController;
 import org.l2junity.loginserver.SessionKey;
 import org.l2junity.loginserver.network.serverpackets.L2LoginServerPacket;
@@ -34,7 +35,6 @@ import org.l2junity.loginserver.network.serverpackets.LoginFail;
 import org.l2junity.loginserver.network.serverpackets.PlayFail;
 import org.l2junity.loginserver.network.serverpackets.LoginFail.LoginFailReason;
 import org.l2junity.loginserver.network.serverpackets.PlayFail.PlayFailReason;
-import org.l2junity.util.Rnd;
 import org.l2junity.util.crypt.LoginCrypt;
 import org.l2junity.util.crypt.ScrambledKeyPair;
 import org.mmocore.network.MMOClient;

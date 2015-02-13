@@ -19,6 +19,7 @@
 package org.l2junity.gameserver.model.actor.instance;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.instancemanager.RaidBossPointsManager;
@@ -29,7 +30,6 @@ import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.entity.Hero;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
-import org.l2junity.util.Rnd;
 
 /**
  * This class manages all RaidBoss.<br>

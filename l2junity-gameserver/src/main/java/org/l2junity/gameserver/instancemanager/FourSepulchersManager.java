@@ -36,6 +36,7 @@ import javolution.util.FastMap;
 
 import org.l2junity.Config;
 import org.l2junity.L2DatabaseFactory;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.datatables.SpawnTable;
@@ -56,7 +57,6 @@ import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.util.Util;
-import org.l2junity.util.Rnd;
 
 /**
  * Zoey76: TODO: Use Location DTO instead of array of int.

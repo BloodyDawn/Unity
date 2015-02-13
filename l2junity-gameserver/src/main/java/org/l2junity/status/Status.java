@@ -30,7 +30,7 @@ import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.Server;
-import org.l2junity.util.Rnd;
+import org.l2junity.commons.util.Rnd;
 
 import javolution.util.FastList;
 

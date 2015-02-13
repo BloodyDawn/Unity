@@ -20,6 +20,7 @@ package handlers.itemhandlers;
 
 import java.util.logging.Level;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.model.actor.Playable;
@@ -31,7 +32,6 @@ import org.l2junity.gameserver.model.items.type.ActionType;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
 import org.l2junity.gameserver.util.Broadcast;
-import org.l2junity.util.Rnd;
 
 public class SoulShots implements IItemHandler
 {

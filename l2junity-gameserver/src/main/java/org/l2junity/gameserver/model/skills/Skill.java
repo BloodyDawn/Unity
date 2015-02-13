@@ -30,6 +30,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.datatables.SkillData;
@@ -68,7 +69,6 @@ import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import org.l2junity.gameserver.util.Util;
-import org.l2junity.util.Rnd;
 
 public final class Skill implements IIdentifiable
 {

@@ -30,6 +30,7 @@ import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_REST;
 
 import java.util.List;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -57,7 +58,6 @@ import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.AutoAttackStop;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
-import org.l2junity.util.Rnd;
 
 import javolution.util.FastList;
 

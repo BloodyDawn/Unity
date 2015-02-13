@@ -18,6 +18,7 @@
  */
 package handlers.effecthandlers;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.L2CubicInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
@@ -26,7 +27,6 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.network.serverpackets.CharInfo;
 import org.l2junity.gameserver.network.serverpackets.ExUserInfoCubic;
-import org.l2junity.util.Rnd;
 
 /**
  * Summon Cubic effect implementation.

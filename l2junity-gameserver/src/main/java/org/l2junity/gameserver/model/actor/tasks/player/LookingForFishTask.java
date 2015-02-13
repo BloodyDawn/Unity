@@ -18,8 +18,8 @@
  */
 package org.l2junity.gameserver.model.actor.tasks.player;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
-import org.l2junity.util.Rnd;
 
 /**
  * Task dedicated for looking for fishes.

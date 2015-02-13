@@ -18,10 +18,10 @@
  */
 package org.l2junity.gameserver.model.zone.form;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.zone.L2ZoneForm;
-import org.l2junity.util.Rnd;
 
 /**
  * A primitive circular zone

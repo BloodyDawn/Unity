@@ -18,6 +18,7 @@
  */
 package handlers.itemhandlers;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
@@ -27,7 +28,6 @@ import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.Dice;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.util.Broadcast;
-import org.l2junity.util.Rnd;
 
 public class RollingDice implements IItemHandler
 {

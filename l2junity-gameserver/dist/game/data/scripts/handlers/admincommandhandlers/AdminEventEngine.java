@@ -29,6 +29,7 @@ import java.io.PrintStream;
 import java.util.StringTokenizer;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.data.xml.impl.TransformData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
@@ -41,7 +42,6 @@ import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.network.serverpackets.PlaySound;
 import org.l2junity.gameserver.network.serverpackets.UserInfo;
 import org.l2junity.gameserver.util.Broadcast;
-import org.l2junity.util.Rnd;
 import org.l2junity.util.StringUtil;
 
 /**

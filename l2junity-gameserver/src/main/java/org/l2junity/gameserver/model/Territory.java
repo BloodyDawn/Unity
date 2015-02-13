@@ -21,7 +21,7 @@ package org.l2junity.gameserver.model;
 import java.util.List;
 import java.util.logging.Logger;
 
-import org.l2junity.util.Rnd;
+import org.l2junity.commons.util.Rnd;
 
 import javolution.util.FastList;
 

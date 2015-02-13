@@ -29,6 +29,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ItemsAutoDestroy;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.cache.HtmCache;
@@ -96,7 +97,6 @@ import org.l2junity.gameserver.network.serverpackets.ServerObjectInfo;
 import org.l2junity.gameserver.network.serverpackets.SocialAction;
 import org.l2junity.gameserver.taskmanager.DecayTaskManager;
 import org.l2junity.gameserver.util.Broadcast;
-import org.l2junity.util.Rnd;
 
 /**
  * This class represents a Non-Player-Character in the world.<br>

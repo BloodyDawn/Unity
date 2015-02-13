@@ -21,11 +21,11 @@ package org.l2junity.gameserver.model;
 import java.util.logging.Level;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.sql.impl.TerritoryTable;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2ControllableMobInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
-import org.l2junity.util.Rnd;
 
 /**
  * @author littlecrow A special spawn implementation to spawn controllable mob

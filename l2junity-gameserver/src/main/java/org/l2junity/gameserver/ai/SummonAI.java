@@ -24,6 +24,7 @@ import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
 
 import java.util.concurrent.Future;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.WorldObject;
@@ -31,7 +32,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.Creature.AIAccessor;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.util.Rnd;
 
 public class SummonAI extends PlayableAI implements Runnable
 {

@@ -22,8 +22,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.Location;
-import org.l2junity.util.Rnd;
 
 /**
  * Abstract zone with spawn locations

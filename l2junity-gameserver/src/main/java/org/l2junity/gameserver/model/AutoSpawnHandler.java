@@ -33,6 +33,7 @@ import javolution.util.FastList;
 import javolution.util.FastMap;
 
 import org.l2junity.L2DatabaseFactory;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.datatables.SpawnTable;
 import org.l2junity.gameserver.idfactory.IdFactory;
@@ -40,7 +41,6 @@ import org.l2junity.gameserver.instancemanager.MapRegionManager;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.util.Broadcast;
-import org.l2junity.util.Rnd;
 
 /**
  * Auto Spawn handler.<br>

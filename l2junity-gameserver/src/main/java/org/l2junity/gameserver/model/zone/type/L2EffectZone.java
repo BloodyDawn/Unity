@@ -20,6 +20,7 @@ package org.l2junity.gameserver.model.zone.type;
 
 import java.util.Map.Entry;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.InstanceType;
@@ -31,7 +32,6 @@ import org.l2junity.gameserver.model.zone.L2ZoneType;
 import org.l2junity.gameserver.model.zone.TaskZoneSettings;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.serverpackets.EtcStatusUpdate;
-import org.l2junity.util.Rnd;
 import org.l2junity.util.StringUtil;
 
 import javolution.util.FastMap;

@@ -16,19 +16,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.commons.network;
+package org.l2junity.network;
 
 /**
  * @author Nos
- * @param <T>
  */
-public interface IIncomingPacket<T>
+public interface IConnectionState
 {
-	/**
-	 * @param packet the packet reader
-	 * @return {@code true} if packet was readen successfully, {@code false} otherwise.
-	 */
-	public boolean read(PacketReader packet);
-	
-	public void run(T client) throws Exception;
+	public IConnectionState getState();
 }

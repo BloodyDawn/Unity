@@ -24,6 +24,7 @@ import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
 import java.util.Collection;
 import java.util.List;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.MobGroup;
 import org.l2junity.gameserver.model.MobGroupTable;
 import org.l2junity.gameserver.model.WorldObject;
@@ -38,7 +39,6 @@ import org.l2junity.gameserver.model.actor.instance.L2NpcInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.util.Util;
-import org.l2junity.util.Rnd;
 
 import javolution.util.FastList;
 

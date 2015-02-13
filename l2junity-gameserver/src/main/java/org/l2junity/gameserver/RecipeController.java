@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.impl.RecipeData;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.enums.StatType;
@@ -51,7 +52,6 @@ import org.l2junity.gameserver.network.serverpackets.SetupGauge;
 import org.l2junity.gameserver.network.serverpackets.StatusUpdate;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.util.Util;
-import org.l2junity.util.Rnd;
 
 import javolution.util.FastMap;
 

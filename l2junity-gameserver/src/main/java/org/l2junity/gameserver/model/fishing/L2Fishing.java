@@ -20,6 +20,7 @@ package org.l2junity.gameserver.model.fishing;
 
 import java.util.concurrent.Future;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.impl.FishingMonstersData;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -30,7 +31,6 @@ import org.l2junity.gameserver.network.serverpackets.ExFishingHpRegen;
 import org.l2junity.gameserver.network.serverpackets.ExFishingStartCombat;
 import org.l2junity.gameserver.network.serverpackets.PlaySound;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
-import org.l2junity.util.Rnd;
 
 public class L2Fishing implements Runnable
 {

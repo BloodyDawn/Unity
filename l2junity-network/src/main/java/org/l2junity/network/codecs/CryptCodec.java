@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.commons.network.codecs;
+package org.l2junity.network.codecs;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
@@ -24,7 +24,7 @@ import io.netty.handler.codec.ByteToMessageCodec;
 
 import java.util.List;
 
-import org.l2junity.commons.network.ICrypt;
+import org.l2junity.network.ICrypt;
 
 /**
  * @author Nos

@@ -16,13 +16,14 @@ sourceSets {
 
 dependencies {
 	compile(fileTree(dir: 'dist/libs', include: '*.jar'))
+	compile project(':l2junity-commons')
 	compile project(':l2junity-geodriver')
+	compile project(':l2junity-network')
 	compile project(':l2junity-mmocore')
 	
 	compile(group: 'com.mchange', name: 'c3p0', version: '0.9.5-pre10')
 	compile(group: 'com.sun.mail', name: 'javax.mail', version: '1.5.2')
 	compile(group: 'org.bitlet', name: 'weupnp', version: '0.1.2')
-	compile(group: 'io.netty', name: 'netty-all', version: '5.0.0.Alpha1')
 	
 	runtime(group: 'org.eclipse.jdt.core.compiler', name: 'ecj', version: '4.4')
 	runtime(group: 'mysql', name: 'mysql-connector-java', version: '5.1.34')

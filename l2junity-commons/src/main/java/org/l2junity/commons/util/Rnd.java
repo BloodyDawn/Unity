@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.util;
+package org.l2junity.commons.util;
 
 import java.security.SecureRandom;
 import java.util.Random;
@@ -81,7 +81,7 @@ public final class Rnd
 		/**
 		 * Get a random double number from 0 to 1
 		 * @return A random double number from 0 to 1
-		 * @see org.l2junity.util.Rnd#nextDouble()
+		 * @see org.l2junity.commons.util.Rnd#nextDouble()
 		 */
 		public final double get()
 		{
@@ -209,17 +209,17 @@ public final class Rnd
 		UNSECURE_ATOMIC,
 		
 		/**
-		 * Like {@link org.l2junity.util.Rnd.RandomType#UNSECURE_ATOMIC}.<br>
+		 * Like {@link org.l2junity.commons.util.Rnd.RandomType#UNSECURE_ATOMIC}.<br>
 		 * Each thread has it`s own random instance.<br>
 		 * Provides best parallel access speed.
-		 * @see org.l2junity.util.Rnd.ThreadLocalRandom
+		 * @see org.l2junity.commons.util.Rnd.ThreadLocalRandom
 		 */
 		UNSECURE_THREAD_LOCAL,
 		
 		/**
-		 * Like {@link org.l2junity.util.Rnd.RandomType#UNSECURE_ATOMIC}.<br>
+		 * Like {@link org.l2junity.commons.util.Rnd.RandomType#UNSECURE_ATOMIC}.<br>
 		 * Provides much faster parallel access speed.
-		 * @see org.l2junity.util.Rnd.NonAtomicRandom
+		 * @see org.l2junity.commons.util.Rnd.NonAtomicRandom
 		 */
 		UNSECURE_VOLATILE
 	}
@@ -315,7 +315,7 @@ public final class Rnd
 	/**
 	 * Get a random double number from 0 to 1
 	 * @return A random double number from 0 to 1
-	 * @see org.l2junity.util.Rnd#nextDouble()
+	 * @see org.l2junity.commons.util.Rnd#nextDouble()
 	 */
 	public static final double get()
 	{
@@ -437,7 +437,7 @@ public final class Rnd
 	/**
 	 * @param n
 	 * @return
-	 * @see org.l2junity.util.Rnd#get(int n)
+	 * @see org.l2junity.commons.util.Rnd#get(int n)
 	 */
 	public static final int nextInt(final int n)
 	{

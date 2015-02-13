@@ -27,6 +27,7 @@ import javolution.util.FastList;
 import javolution.util.FastMap;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.datatables.SkillData;
@@ -53,7 +54,6 @@ import org.l2junity.gameserver.network.serverpackets.ExCubeGameEnd;
 import org.l2junity.gameserver.network.serverpackets.ExCubeGameExtendedChangePoints;
 import org.l2junity.gameserver.network.serverpackets.RelationChanged;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
-import org.l2junity.util.Rnd;
 
 /**
  * @author BiggBoss

@@ -24,8 +24,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.enums.Race;
-import org.l2junity.util.Rnd;
 
 /**
  * @author Nyaran

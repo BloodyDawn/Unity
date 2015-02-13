@@ -19,6 +19,7 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.model.Elementals;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
@@ -30,7 +31,6 @@ import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.network.serverpackets.UserInfo;
 import org.l2junity.gameserver.util.Util;
-import org.l2junity.util.Rnd;
 
 public class RequestExEnchantItemAttribute extends L2GameClientPacket
 {

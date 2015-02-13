@@ -24,6 +24,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.concurrent.ScheduledFuture;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.enums.MailType;
@@ -31,7 +32,6 @@ import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.MailManager;
 import org.l2junity.gameserver.model.itemcontainer.Mail;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-import org.l2junity.util.Rnd;
 
 /**
  * @author Migi, DS

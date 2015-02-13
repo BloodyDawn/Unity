@@ -24,6 +24,7 @@ import java.util.concurrent.ScheduledFuture;
 
 import javolution.util.FastList;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.IXmlReader;
@@ -31,7 +32,6 @@ import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.Territory;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.util.Rnd;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;

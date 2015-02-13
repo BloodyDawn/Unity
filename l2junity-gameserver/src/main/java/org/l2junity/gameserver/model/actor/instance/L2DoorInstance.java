@@ -25,6 +25,7 @@ import java.util.logging.Level;
 
 import javolution.util.FastList;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CharacterAI;
 import org.l2junity.gameserver.ai.DoorAI;
@@ -57,7 +58,6 @@ import org.l2junity.gameserver.network.serverpackets.DoorStatusUpdate;
 import org.l2junity.gameserver.network.serverpackets.OnEventTrigger;
 import org.l2junity.gameserver.network.serverpackets.StaticObject;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
-import org.l2junity.util.Rnd;
 
 public class L2DoorInstance extends Creature
 {

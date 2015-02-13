@@ -1,0 +1,18 @@
+apply plugin: 'java'
+
+defaultTasks('build')
+
+sourceCompatibility = '1.8'
+
+dependencies {
+	compile(group: 'io.netty', name: 'netty-all', version: '5.0.0.Alpha1')
+}
+
+jar {
+	manifest {
+		attributes('Built-By': System.getProperty('user.name'),
+				'Built-Date': new Date(),
+				'Implementation-URL': 'http://www.l2junity.org/',
+			)
+	}
+}

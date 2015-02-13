@@ -20,7 +20,7 @@ package org.l2junity.util.crypt;
 
 import java.io.IOException;
 
-import org.l2junity.util.Rnd;
+import org.l2junity.commons.util.Rnd;
 
 /**
  * @author KenM

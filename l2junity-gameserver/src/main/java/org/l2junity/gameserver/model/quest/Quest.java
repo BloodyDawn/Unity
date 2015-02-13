@@ -40,6 +40,7 @@ import java.util.stream.Collectors;
 
 import org.l2junity.Config;
 import org.l2junity.L2DatabaseFactory;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.Race;
@@ -71,7 +72,6 @@ import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.ExQuestNpcLogList;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.network.serverpackets.NpcQuestHtmlMessage;
-import org.l2junity.util.Rnd;
 import org.l2junity.util.Util;
 
 /**

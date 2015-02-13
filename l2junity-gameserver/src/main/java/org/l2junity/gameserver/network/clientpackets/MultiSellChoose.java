@@ -24,6 +24,7 @@ import java.util.Collection;
 import javolution.util.FastList;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.impl.MultisellData;
 import org.l2junity.gameserver.model.Augmentation;
 import org.l2junity.gameserver.model.Elementals;
@@ -38,7 +39,6 @@ import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.serverpackets.ItemList;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
-import org.l2junity.util.Rnd;
 
 /**
  * The Class MultiSellChoose.

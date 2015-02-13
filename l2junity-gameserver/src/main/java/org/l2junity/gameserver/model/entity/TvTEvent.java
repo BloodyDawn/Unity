@@ -28,6 +28,7 @@ import java.util.logging.Logger;
 import javolution.util.FastMap;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.datatables.ItemTable;
@@ -58,7 +59,6 @@ import org.l2junity.gameserver.network.serverpackets.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
-import org.l2junity.util.Rnd;
 import org.l2junity.util.StringUtil;
 
 /**

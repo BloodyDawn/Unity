@@ -20,6 +20,7 @@ package custom.listeners;
 
 import java.util.logging.Level;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.events.Containers;
 import org.l2junity.gameserver.model.events.EventType;
@@ -39,7 +40,6 @@ import org.l2junity.gameserver.model.events.impl.sieges.castle.OnCastleSiegeStar
 import org.l2junity.gameserver.model.events.listeners.ConsumerEventListener;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.holders.ItemHolder;
-import org.l2junity.util.Rnd;
 
 import ai.npc.AbstractNpcAI;
 

@@ -23,6 +23,7 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.model.EnchantSkillLearn;
@@ -37,7 +38,6 @@ import org.l2junity.gameserver.network.serverpackets.ExEnchantSkillInfoDetail;
 import org.l2junity.gameserver.network.serverpackets.ExEnchantSkillResult;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.network.serverpackets.UserInfo;
-import org.l2junity.util.Rnd;
 
 /**
  * Format (ch) dd c: (id) 0xD0 h: (subid) 0x34 d: skill id d: skill lvl

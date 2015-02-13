@@ -19,6 +19,7 @@
 package handlers.actionhandlers;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.handler.IActionHandler;
@@ -32,7 +33,6 @@ import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcFirstTalk;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.MoveToPawn;
-import org.l2junity.util.Rnd;
 
 public class L2NpcAction implements IActionHandler
 {

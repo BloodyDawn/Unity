@@ -27,6 +27,7 @@ import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.L2DatabaseFactory;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.impl.TransformData;
 import org.l2junity.gameserver.datatables.SkillData;
@@ -49,7 +50,6 @@ import org.l2junity.gameserver.network.serverpackets.SocialAction;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.network.serverpackets.UserInfo;
 import org.l2junity.gameserver.util.Broadcast;
-import org.l2junity.util.Rnd;
 
 public class CursedWeapon implements INamable
 {

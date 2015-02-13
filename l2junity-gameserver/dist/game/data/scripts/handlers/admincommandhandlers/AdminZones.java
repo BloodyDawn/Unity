@@ -32,6 +32,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.enums.PlayerAction;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
@@ -55,7 +56,6 @@ import org.l2junity.gameserver.network.serverpackets.ExShowTerritory;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.util.HtmlUtil;
 import org.l2junity.gameserver.util.Util;
-import org.l2junity.util.Rnd;
 
 import ai.npc.AbstractNpcAI;
 

@@ -28,6 +28,7 @@ import java.util.logging.LogRecord;
 
 import org.l2junity.Config;
 import org.l2junity.L2DatabaseFactory;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -40,7 +41,6 @@ import org.l2junity.gameserver.network.serverpackets.ExOlympiadMatchResult;
 import org.l2junity.gameserver.network.serverpackets.ExOlympiadUserInfo;
 import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
-import org.l2junity.util.Rnd;
 
 /**
  * @author GodKratos, Pere, DS

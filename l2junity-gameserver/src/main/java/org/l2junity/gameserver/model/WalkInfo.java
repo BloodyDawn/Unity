@@ -20,11 +20,11 @@ package org.l2junity.gameserver.model;
 
 import java.util.concurrent.ScheduledFuture;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.instancemanager.WalkingManager;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcMoveRouteFinished;
-import org.l2junity.util.Rnd;
 
 /**
  * Holds info about current walk progress

@@ -23,6 +23,7 @@ import java.util.EnumMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.CharEffectList;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -31,7 +32,6 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
-import org.l2junity.util.Rnd;
 
 /**
  * Dispel By Slot Probability effect implementation.

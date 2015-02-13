@@ -51,6 +51,7 @@ import javolution.util.FastMap;
 
 import org.l2junity.Config;
 import org.l2junity.L2DatabaseFactory;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ItemsAutoDestroy;
@@ -337,7 +338,6 @@ import org.l2junity.gameserver.util.Broadcast;
 import org.l2junity.gameserver.util.FloodProtectors;
 import org.l2junity.gameserver.util.Util;
 import org.l2junity.util.EnumIntBitmask;
-import org.l2junity.util.Rnd;
 
 /**
  * This class represents all player characters in the world.<br>

@@ -22,10 +22,10 @@ import java.lang.reflect.Constructor;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
-import org.l2junity.util.Rnd;
 
 public class MonsterRace
 {

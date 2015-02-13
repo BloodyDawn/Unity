@@ -42,12 +42,12 @@ import javax.crypto.Cipher;
 
 import org.l2junity.Config;
 import org.l2junity.L2DatabaseFactory;
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.loginserver.GameServerTable.GameServerInfo;
 import org.l2junity.loginserver.model.data.AccountInfo;
 import org.l2junity.loginserver.network.L2LoginClient;
 import org.l2junity.loginserver.network.gameserverpackets.ServerStatus;
 import org.l2junity.loginserver.network.serverpackets.LoginFail.LoginFailReason;
-import org.l2junity.util.Rnd;
 import org.l2junity.util.crypt.ScrambledKeyPair;
 
 import javolution.util.FastMap;
