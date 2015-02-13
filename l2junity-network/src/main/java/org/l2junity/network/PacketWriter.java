@@ -124,10 +124,11 @@ public final class PacketWriter
 	}
 	
 	/**
-	 * @param bytez
+	 * Writes a byte array
+	 * @param bytes
 	 */
-	public void writeB(byte[] bytez)
+	public void writeB(byte[] bytes)
 	{
-		_buf.writeBytes(bytez);
+		_buf.writeBytes(bytes);
 	}
 }
