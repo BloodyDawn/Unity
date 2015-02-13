@@ -137,20 +137,23 @@ public class GroupedGeneralDropItem implements IDropItem
 			successes += (chance % 100) > (Rnd.nextDouble() * 100) ? 1 : 0;
 		}
 		
-		double totalChance = 0;
-		final double random = (Rnd.nextDouble() * 100);
-		for (GeneralDropItem item : getItems())
+		if (successes > 0)
 		{
-			// Grouped item chance rates should not be modified.
-			totalChance += item.getChance();
-			if (totalChance > random)
+			double totalChance = 0;
+			final double random = (Rnd.nextDouble() * 100);
+			for (GeneralDropItem item : getItems())
 			{
-				final long count = Rnd.get(item.getMin(victim, killer), item.getMax(victim, killer)) * successes;
-				if (count > 0)
+				// Grouped item chance rates should not be modified.
+				totalChance += item.getChance();
+				if (totalChance > random)
 				{
-					final Collection<ItemHolder> items = new ArrayList<>(1);
-					items.add(new ItemHolder(item.getItemId(), count));
-					return items;
+					final long count = Rnd.get(item.getMin(victim, killer), item.getMax(victim, killer)) * successes;
+					if (count > 0)
+					{
+						final Collection<ItemHolder> items = new ArrayList<>(1);
+						items.add(new ItemHolder(item.getItemId(), count));
+						return items;
+					}
 				}
 			}
 		}
