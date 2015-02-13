@@ -67,17 +67,16 @@ public final class PacketWriter
 	{
 		_buf.writeLong(value);
 	}
-
-
-    /**
-     * Writes a float
-     * @param value the float
-     */
-    public void writeE(float value)
-    {
-        _buf.writeFloat(value);
-    }
-
+	
+	/**
+	 * Writes a float
+	 * @param value the float
+	 */
+	public void writeE(float value)
+	{
+		_buf.writeFloat(value);
+	}
+	
 	/**
 	 * Writes a double
 	 * @param value the double
@@ -103,27 +102,26 @@ public final class PacketWriter
 		
 		_buf.writeChar(0);
 	}
-
-    /**
-     * Writes a string with fixed length specified as first short, then array of chars
-     * @param value
-     */
-    public void writeString(String value)
-    {
-        if (value != null)
-        {
-            _buf.writeShort(value.toCharArray().length);
-            for (char ch : value.toCharArray())
-            {
-                _buf.writeChar(ch);
-            }
-        }
-        else
-        {
-            _buf.writeShort(0);
-        }
-    }
-
+	
+	/**
+	 * Writes a string with fixed length specified as first short, then array of chars
+	 * @param value
+	 */
+	public void writeString(String value)
+	{
+		if (value != null)
+		{
+			_buf.writeShort(value.toCharArray().length);
+			for (char ch : value.toCharArray())
+			{
+				_buf.writeChar(ch);
+			}
+		}
+		else
+		{
+			_buf.writeShort(0);
+		}
+	}
 	
 	/**
 	 * @param bytez
