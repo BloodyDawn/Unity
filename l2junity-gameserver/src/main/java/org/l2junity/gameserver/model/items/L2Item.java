@@ -50,7 +50,6 @@ import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
-import org.l2junity.util.StringUtil;
 
 /**
  * This class contains all informations concerning the item (weapon, armor, etc).<BR>
@@ -235,13 +234,13 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 					
 					if (id == 0)
 					{
-						_log.info(StringUtil.concat("Ignoring item_skill(", element, ") for item ", toString(), ". Skill id is 0!"));
+						_log.info("Ignoring item_skill(" + element + ") for item " + this + ". Skill id is 0!");
 						continue;
 					}
 					
 					if (level == 0)
 					{
-						_log.info(StringUtil.concat("Ignoring item_skill(", element, ") for item ", toString(), ". Skill level is 0!"));
+						_log.info("Ignoring item_skill(" + element + ") for item " + this + ". Skill level is 0!");
 						continue;
 					}
 					
@@ -250,7 +249,7 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 				}
 				catch (Exception e)
 				{
-					_log.warning(StringUtil.concat("Failed to parse item_skill(", element, ") for item ", toString(), "! Format: SkillId0-SkillLevel0[;SkillIdN-SkillLevelN]"));
+					_log.warning("Failed to parse item_skill(" + element + ") for item " + this + "! Format: SkillId0-SkillLevel0[;SkillIdN-SkillLevelN]");
 				}
 			}
 			
@@ -279,7 +278,7 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 				catch (Exception nfe)
 				{
 					// Incorrect syntax, don't add new skill
-					_log.info(StringUtil.concat("Couldnt parse ", skills, " in weapon unequip skills! item ", toString()));
+					_log.info("Couldnt parse " + skills + " in weapon unequip skills! item " + this);
 				}
 				if ((id > 0) && (level > 0))
 				{

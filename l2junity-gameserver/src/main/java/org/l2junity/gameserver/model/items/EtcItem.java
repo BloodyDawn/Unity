@@ -25,7 +25,6 @@ import org.l2junity.gameserver.model.ExtractableProduct;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.type.EtcItemType;
-import org.l2junity.util.StringUtil;
 
 /**
  * This class is dedicated to the management of EtcItem.
@@ -96,7 +95,7 @@ public final class EtcItem extends L2Item
 				String[] data = part.split(",");
 				if (data.length != 4)
 				{
-					_log.info(StringUtil.concat("> Couldnt parse ", part, " in capsuled_items! item ", toString()));
+					_log.info("> Couldnt parse " + part + " in capsuled_items! item " + this);
 					continue;
 				}
 				int itemId = Integer.parseInt(data[0]);
@@ -105,7 +104,7 @@ public final class EtcItem extends L2Item
 				double chance = Double.parseDouble(data[3]);
 				if (max < min)
 				{
-					_log.info(StringUtil.concat("> Max amount < Min amount in ", part, ", item ", toString()));
+					_log.info("> Max amount < Min amount in " + part + ", item " + this);
 					continue;
 				}
 				ExtractableProduct product = new ExtractableProduct(itemId, min, max, chance);

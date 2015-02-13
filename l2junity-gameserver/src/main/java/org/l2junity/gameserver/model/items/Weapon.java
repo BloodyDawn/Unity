@@ -35,7 +35,6 @@ import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.util.Util;
-import org.l2junity.util.StringUtil;
 
 /**
  * This class is dedicated to the management of weapons.
@@ -129,7 +128,7 @@ public final class Weapon extends L2Item
 				catch (Exception nfe)
 				{
 					// Incorrect syntax, dont add new skill
-					_log.info(StringUtil.concat("> Couldnt parse ", skill, " in weapon enchant skills! item ", toString()));
+					_log.info("> Couldnt parse " + skill + " in weapon enchant skills! item " + this);
 				}
 				if ((id > 0) && (level > 0))
 				{
@@ -155,7 +154,7 @@ public final class Weapon extends L2Item
 				catch (Exception nfe)
 				{
 					// Incorrect syntax, don't add new skill
-					_log.info(StringUtil.concat("> Couldnt parse ", skill, " in weapon onmagic skills! item ", toString()));
+					_log.info("> Couldnt parse " + skill + " in weapon onmagic skills! item " + this);
 				}
 				if ((id > 0) && (level > 0) && (chance > 0))
 				{
@@ -182,7 +181,7 @@ public final class Weapon extends L2Item
 				catch (Exception nfe)
 				{
 					// Incorrect syntax, don't add new skill
-					_log.info(StringUtil.concat("> Couldnt parse ", skill, " in weapon oncrit skills! item ", toString()));
+					_log.info("> Couldnt parse " + skill + " in weapon oncrit skills! item " + this);
 				}
 				if ((id > 0) && (level > 0) && (chance > 0))
 				{

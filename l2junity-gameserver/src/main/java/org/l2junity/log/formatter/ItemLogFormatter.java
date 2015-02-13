@@ -18,27 +18,22 @@
  */
 package org.l2junity.log.formatter;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-import org.l2junity.util.StringUtil;
 
 /**
  * @author Advi
  */
-public class ItemLogFormatter extends Formatter
+public class ItemLogFormatter extends AbstractFormatter
 {
-	private final SimpleDateFormat dateFmt = new SimpleDateFormat("dd MMM H:mm:ss");
-	
 	@Override
 	public String format(LogRecord record)
 	{
 		final Object[] params = record.getParameters();
-		final StringBuilder output = StringUtil.startAppend(30 + record.getMessage().length() + (params.length * 50), "[", dateFmt.format(new Date(record.getMillis())), "] ", record.getMessage());
+		final StringBuilder output = new StringBuilder(32 + record.getMessage().length() + (params != null ? 10 * params.length : 0));
+		output.append(super.format(record));
 		
 		for (Object p : record.getParameters())
 		{
@@ -50,24 +45,28 @@ public class ItemLogFormatter extends Formatter
 			if (p instanceof ItemInstance)
 			{
 				ItemInstance item = (ItemInstance) p;
-				StringUtil.append(output, "item ", String.valueOf(item.getObjectId()), ":");
+				output.append("item ");
+				output.append(item.getObjectId());
+				output.append(":");
 				if (item.getEnchantLevel() > 0)
 				{
-					StringUtil.append(output, "+", String.valueOf(item.getEnchantLevel()), " ");
+					output.append("+");
+					output.append(item.getEnchantLevel());
+					output.append(" ");
 				}
 				
-				StringUtil.append(output, item.getItem().getName(), "(", String.valueOf(item.getCount()), ")");
+				output.append(item.getItem().getName());
+				output.append("(");
+				output.append(item.getCount());
+				output.append(")");
 			}
-			// else if (p instanceof L2PcInstance)
-			// output.append(((L2PcInstance)p).getName());
 			else
 			{
-				output.append(p.toString()/* + ":" + ((L2Object)p).getObjectId() */);
+				output.append(p);
 			}
 		}
 		output.append(Config.EOL);
 		
 		return output.toString();
 	}
-	
 }

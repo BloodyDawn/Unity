@@ -20,6 +20,8 @@ package org.l2junity.gameserver.model.zone.type;
 
 import java.util.Map.Entry;
 
+import javolution.util.FastMap;
+
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.datatables.SkillData;
@@ -32,9 +34,6 @@ import org.l2junity.gameserver.model.zone.L2ZoneType;
 import org.l2junity.gameserver.model.zone.TaskZoneSettings;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.serverpackets.EtcStatusUpdate;
-import org.l2junity.util.StringUtil;
-
-import javolution.util.FastMap;
 
 /**
  * another type of damage zone with skills
@@ -104,7 +103,7 @@ public class L2EffectZone extends L2ZoneType
 				String[] skillSplit = skill.split("-");
 				if (skillSplit.length != 2)
 				{
-					_log.warning(StringUtil.concat(getClass().getSimpleName() + ": invalid config property -> skillsIdLvl \"", skill, "\""));
+					_log.warning(getClass().getSimpleName() + ": invalid config property -> skillsIdLvl \"" + skill + "\"");
 				}
 				else
 				{
@@ -116,7 +115,7 @@ public class L2EffectZone extends L2ZoneType
 					{
 						if (!skill.isEmpty())
 						{
-							_log.warning(StringUtil.concat(getClass().getSimpleName() + ": invalid config property -> skillsIdLvl \"", skillSplit[0], "\"", skillSplit[1]));
+							_log.warning(getClass().getSimpleName() + ": invalid config property -> skillsIdLvl \"" + skillSplit[0] + "\"" + skillSplit[1]);
 						}
 					}
 				}

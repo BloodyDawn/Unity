@@ -39,7 +39,6 @@ import org.l2junity.gameserver.network.serverpackets.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2junity.gameserver.network.serverpackets.ItemList;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
-import org.l2junity.util.StringUtil;
 
 /**
  * @author Migi, DS
@@ -311,7 +310,7 @@ public final class RequestSendPost extends L2GameClientPacket
 		}
 		
 		final StringBuilder recv = new StringBuilder(32);
-		StringUtil.append(recv, msg.getReceiverName(), "[", String.valueOf(msg.getReceiverId()), "]");
+		recv.append(msg.getReceiverName() + "[" + msg.getReceiverId() + "]");
 		final String receiver = recv.toString();
 		
 		// Proceed to the transfer

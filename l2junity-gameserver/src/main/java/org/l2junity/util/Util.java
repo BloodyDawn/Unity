@@ -31,8 +31,10 @@ import java.time.temporal.TemporalAdjusters;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.StringJoiner;
 import java.util.logging.Logger;
 
+import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 
 /**
@@ -224,5 +226,15 @@ public final class Util
 			.min(Comparator.naturalOrder())
 			.orElse(dateNowWithDifferentTime.with(TemporalAdjusters.next(daysOfWeek.get(0))));
 		// @formatter:on
+	}
+	
+	public static String getTraceString(StackTraceElement[] stackTraceElements)
+	{
+		final StringJoiner sj = new StringJoiner(Config.EOL);
+		for (final StackTraceElement stackTraceElement : stackTraceElements)
+		{
+			sj.add(stackTraceElement.toString());
+		}
+		return sj.toString();
 	}
 }

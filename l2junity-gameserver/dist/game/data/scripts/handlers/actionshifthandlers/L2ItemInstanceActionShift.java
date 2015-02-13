@@ -24,7 +24,6 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
-import org.l2junity.util.StringUtil;
 
 public class L2ItemInstanceActionShift implements IActionShiftHandler
 {
@@ -33,7 +32,7 @@ public class L2ItemInstanceActionShift implements IActionShiftHandler
 	{
 		if (activeChar.getAccessLevel().isGm())
 		{
-			final NpcHtmlMessage html = new NpcHtmlMessage(StringUtil.concat("<html><body><center><font color=\"LEVEL\">Item Info</font></center><br><table border=0>", "<tr><td>Object ID: </td><td>", String.valueOf(target.getObjectId()), "</td></tr><tr><td>Item ID: </td><td>", String.valueOf(target.getId()), "</td></tr><tr><td>Owner ID: </td><td>", String.valueOf(((ItemInstance) target).getOwnerId()), "</td></tr><tr><td>Location: </td><td>", String.valueOf(((ItemInstance) target).getLocation()), "</td></tr><tr><td><br></td></tr><tr><td>Class: </td><td>", target.getClass().getSimpleName(), "</td></tr></table></body></html>"));
+			final NpcHtmlMessage html = new NpcHtmlMessage("<html><body><center><font color=\"LEVEL\">Item Info</font></center><br><table border=0><tr><td>Object ID: </td><td>" + target.getObjectId() + "</td></tr><tr><td>Item ID: </td><td>" + target.getId() + "</td></tr><tr><td>Owner ID: </td><td>" + ((ItemInstance) target).getOwnerId() + "</td></tr><tr><td>Location: </td><td>" + ((ItemInstance) target).getLocation() + "</td></tr><tr><td><br></td></tr><tr><td>Class: </td><td>" + target.getClass().getSimpleName() + "</td></tr></table></body></html>");
 			activeChar.sendPacket(html);
 		}
 		return true;

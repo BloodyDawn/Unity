@@ -18,25 +18,20 @@
  */
 package org.l2junity.log.formatter;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.network.L2GameClient;
-import org.l2junity.util.StringUtil;
 
-public class AccountingFormatter extends Formatter
+public class AccountingFormatter extends AbstractFormatter
 {
-	private final SimpleDateFormat dateFmt = new SimpleDateFormat("dd MMM H:mm:ss");
-	
 	@Override
 	public String format(LogRecord record)
 	{
 		final Object[] params = record.getParameters();
-		final StringBuilder output = StringUtil.startAppend(30 + record.getMessage().length() + (params == null ? 0 : params.length * 10), "[", dateFmt.format(new Date(record.getMillis())), "] ", record.getMessage());
+		final StringBuilder output = new StringBuilder(32 + record.getMessage().length() + (params != null ? 10 * params.length : 0));
+		output.append(super.format(record));
 		
 		if (params != null)
 		{
@@ -47,7 +42,7 @@ public class AccountingFormatter extends Formatter
 					continue;
 				}
 				
-				StringUtil.append(output, ", ");
+				output.append(", ");
 				
 				if (p instanceof L2GameClient)
 				{
@@ -70,18 +65,21 @@ public class AccountingFormatter extends Formatter
 						case IN_GAME:
 							if (client.getActiveChar() != null)
 							{
-								StringUtil.append(output, client.getActiveChar().getName());
-								StringUtil.append(output, "(", String.valueOf(client.getActiveChar().getObjectId()), ") ");
+								output.append(client.getActiveChar().getName());
+								output.append("(");
+								output.append(client.getActiveChar().getObjectId());
+								output.append(") ");
 							}
 						case AUTHED:
 							if (client.getAccountName() != null)
 							{
-								StringUtil.append(output, client.getAccountName(), " ");
+								output.append(client.getAccountName());
+								output.append(" ");
 							}
 						case CONNECTED:
 							if (address != null)
 							{
-								StringUtil.append(output, address);
+								output.append(address);
 							}
 							break;
 						default:
@@ -91,12 +89,14 @@ public class AccountingFormatter extends Formatter
 				else if (p instanceof L2PcInstance)
 				{
 					L2PcInstance player = (L2PcInstance) p;
-					StringUtil.append(output, player.getName());
-					StringUtil.append(output, "(", String.valueOf(player.getObjectId()), ")");
+					output.append(player.getName());
+					output.append("(");
+					output.append(player.getObjectId());
+					output.append(")");
 				}
 				else
 				{
-					StringUtil.append(output, p.toString());
+					output.append(p);
 				}
 			}
 		}

@@ -26,7 +26,6 @@ import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.quest.Event;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
-import org.l2junity.util.StringUtil;
 
 public class AdminEvents implements IAdminCommandHandler
 {
@@ -158,7 +157,7 @@ public class AdminEvents implements IAdminCommandHandler
 		{
 			if (event instanceof Event)
 			{
-				StringUtil.append(cList, "<font color=\"LEVEL\">" + event.getName() + ":</font><br1>", "<table width=270><tr>", "<td><button value=\"Start\" action=\"bypass -h admin_event_start_menu " + event.getName() + "\" width=80 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>", "<td><button value=\"Stop\" action=\"bypass -h admin_event_stop_menu " + event.getName() + "\" width=80 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>", "<td><button value=\"Menu\" action=\"bypass -h admin_event_bypass " + event.getName() + "\" width=80 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>", "</tr></table><br>");
+				cList.append("<font color=\"LEVEL\">" + event.getName() + ":</font><br1><table width=270><tr><td><button value=\"Start\" action=\"bypass -h admin_event_start_menu " + event.getName() + "\" width=80 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td><button value=\"Stop\" action=\"bypass -h admin_event_stop_menu " + event.getName() + "\" width=80 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>");
 			}
 		}
 		html.replace("%LIST%", cList.toString());

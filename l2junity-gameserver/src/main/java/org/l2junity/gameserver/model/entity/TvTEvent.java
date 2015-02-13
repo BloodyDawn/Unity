@@ -59,7 +59,6 @@ import org.l2junity.gameserver.network.serverpackets.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
-import org.l2junity.util.StringUtil;
 
 /**
  * @author HorridoJoho
@@ -543,7 +542,7 @@ public class TvTEvent
 			return "-";
 		}
 		
-		return StringUtil.concat(String.valueOf(itemNum), " ", ItemTable.getInstance().getTemplate(itemId).getName());
+		return itemNum + " " + ItemTable.getInstance().getTemplate(itemId).getName();
 	}
 	
 	/**

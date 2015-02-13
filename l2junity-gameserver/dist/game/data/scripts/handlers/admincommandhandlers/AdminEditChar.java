@@ -26,6 +26,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.StringJoiner;
 import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
@@ -55,7 +56,6 @@ import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.network.serverpackets.UserInfo;
 import org.l2junity.gameserver.util.HtmlUtil;
 import org.l2junity.gameserver.util.Util;
-import org.l2junity.util.StringUtil;
 
 /**
  * EditChar admin command implementation.
@@ -1097,7 +1097,15 @@ public class AdminEditChar implements IAdminCommandHandler
 			if (name.toLowerCase().contains(CharacterToFind.toLowerCase()))
 			{
 				CharactersFound = CharactersFound + 1;
-				StringUtil.append(replyMSG, "<tr><td width=80><a action=\"bypass -h admin_character_info ", name, "\">", name, "</a></td><td width=110>", ClassListData.getInstance().getClass(player.getClassId()).getClientCode(), "</td><td width=40>", String.valueOf(player.getLevel()), "</td></tr>");
+				replyMSG.append("<tr><td width=80><a action=\"bypass -h admin_character_info ");
+				replyMSG.append(name);
+				replyMSG.append("\">");
+				replyMSG.append(name);
+				replyMSG.append("</a></td><td width=110>");
+				replyMSG.append(ClassListData.getInstance().getClass(player.getClassId()).getClientCode());
+				replyMSG.append("</td><td width=40>");
+				replyMSG.append(player.getLevel());
+				replyMSG.append("</td></tr>");
 			}
 			if (CharactersFound > 20)
 			{
@@ -1189,7 +1197,15 @@ public class AdminEditChar implements IAdminCommandHandler
 			
 			name = player.getName();
 			CharactersFound = CharactersFound + 1;
-			StringUtil.append(replyMSG, "<tr><td width=80><a action=\"bypass -h admin_character_info ", name, "\">", name, "</a></td><td width=110>", ClassListData.getInstance().getClass(player.getClassId()).getClientCode(), "</td><td width=40>", String.valueOf(player.getLevel()), "</td></tr>");
+			replyMSG.append("<tr><td width=80><a action=\"bypass -h admin_character_info ");
+			replyMSG.append(name);
+			replyMSG.append("\">");
+			replyMSG.append(name);
+			replyMSG.append("</a></td><td width=110>");
+			replyMSG.append(ClassListData.getInstance().getClass(player.getClassId()).getClientCode());
+			replyMSG.append("</td><td width=40>");
+			replyMSG.append(player.getLevel());
+			replyMSG.append("</td></tr>");
 			
 			if (CharactersFound > 20)
 			{
@@ -1237,8 +1253,8 @@ public class AdminEditChar implements IAdminCommandHandler
 		}
 		
 		final Map<Integer, String> chars = player.getAccountChars();
-		final StringBuilder replyMSG = new StringBuilder(chars.size() * 20);
-		chars.values().stream().forEachOrdered(name -> StringUtil.append(replyMSG, name, "<br1>"));
+		final StringJoiner replyMSG = new StringJoiner("<br1>");
+		chars.values().stream().forEachOrdered(replyMSG::add);
 		
 		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		adminReply.setFile(activeChar.getHtmlPrefix(), "data/html/admin/accountinfo.htm");
@@ -1294,7 +1310,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		final StringBuilder results = new StringBuilder();
 		for (String dualboxIP : keys)
 		{
-			StringUtil.append(results, "<a action=\"bypass -h admin_find_ip " + dualboxIP + "\">" + dualboxIP + " (" + dualboxIPs.get(dualboxIP) + ")</a><br1>");
+			results.append("<a action=\"bypass -h admin_find_ip " + dualboxIP + "\">" + dualboxIP + " (" + dualboxIPs.get(dualboxIP) + ")</a><br1>");
 		}
 		
 		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
@@ -1346,7 +1362,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		final StringBuilder results = new StringBuilder();
 		for (IpPack dualboxIP : keys)
 		{
-			StringUtil.append(results, "<a action=\"bypass -h admin_find_ip " + dualboxIP.ip + "\">" + dualboxIP.ip + " (" + dualboxIPs.get(dualboxIP) + ")</a><br1>");
+			results.append("<a action=\"bypass -h admin_find_ip " + dualboxIP.ip + "\">" + dualboxIP.ip + " (" + dualboxIPs.get(dualboxIP) + ")</a><br1>");
 		}
 		
 		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);

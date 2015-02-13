@@ -38,7 +38,6 @@ import org.l2junity.gameserver.enums.ShortcutType;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.interfaces.IRestorable;
 import org.l2junity.gameserver.network.serverpackets.SendMacroList;
-import org.l2junity.util.StringUtil;
 
 public class MacroList implements IRestorable
 {
@@ -139,10 +138,10 @@ public class MacroList implements IRestorable
 			final StringBuilder sb = new StringBuilder(300);
 			for (MacroCmd cmd : macro.getCommands())
 			{
-				StringUtil.append(sb, String.valueOf(cmd.getType().ordinal()), ",", String.valueOf(cmd.getD1()), ",", String.valueOf(cmd.getD2()));
+				sb.append(cmd.getType().ordinal() + "," + cmd.getD1() + "," + cmd.getD2());
 				if ((cmd.getCmd() != null) && (cmd.getCmd().length() > 0))
 				{
-					StringUtil.append(sb, ",", cmd.getCmd());
+					sb.append("," + cmd.getCmd());
 				}
 				sb.append(';');
 			}

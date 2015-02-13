@@ -24,7 +24,6 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.handler.IVoicedCommandHandler;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
-import org.l2junity.util.StringUtil;
 
 public class Lang implements IVoicedCommandHandler
 {
@@ -44,10 +43,10 @@ public class Lang implements IVoicedCommandHandler
 		final NpcHtmlMessage msg = new NpcHtmlMessage();
 		if (params == null)
 		{
-			final StringBuilder html = StringUtil.startAppend(100);
+			final StringBuilder html = new StringBuilder(100);
 			for (String lang : Config.L2JMOD_MULTILANG_ALLOWED)
 			{
-				StringUtil.append(html, "<button value=\"", lang.toUpperCase(), "\" action=\"bypass -h voice .lang ", lang, "\" width=60 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"><br>");
+				html.append("<button value=\"" + lang.toUpperCase() + "\" action=\"bypass -h voice .lang " + lang + "\" width=60 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"><br>");
 			}
 			
 			msg.setFile(activeChar.getHtmlPrefix(), "data/html/mods/Lang/LanguageSelect.htm");

@@ -18,33 +18,30 @@
  */
 package org.l2junity.log.formatter;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
 
 import org.l2junity.Config;
-import org.l2junity.util.StringUtil;
 
-public class ChatLogFormatter extends Formatter
+public class ChatLogFormatter extends AbstractFormatter
 {
-	private final SimpleDateFormat dateFmt = new SimpleDateFormat("dd MMM H:mm:ss");
-	
 	@Override
 	public String format(LogRecord record)
 	{
 		Object[] params = record.getParameters();
-		final StringBuilder output = StringUtil.startAppend(30 + record.getMessage().length() + (params != null ? 10 * params.length : 0), "[", dateFmt.format(new Date(record.getMillis())), "] ");
+		final StringBuilder output = new StringBuilder(32 + record.getMessage().length() + (params != null ? 10 * params.length : 0));
+		output.append(super.format(record));
 		
 		if (params != null)
 		{
 			for (Object p : params)
 			{
-				StringUtil.append(output, String.valueOf(p), " ");
+				output.append(p);
+				output.append(" ");
 			}
 		}
 		
-		StringUtil.append(output, record.getMessage(), Config.EOL);
+		output.append(record.getMessage());
+		output.append(Config.EOL);
 		
 		return output.toString();
 	}

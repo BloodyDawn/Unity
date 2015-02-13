@@ -34,7 +34,6 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
-import org.l2junity.util.StringUtil;
 
 public class QuestLink implements IBypassHandler
 {
@@ -83,7 +82,8 @@ public class QuestLink implements IBypassHandler
 	 */
 	public static void showQuestChooseWindow(L2PcInstance player, Npc npc, Collection<Quest> quests)
 	{
-		final StringBuilder sb = StringUtil.startAppend(150, "<html><body>");
+		final StringBuilder sb = new StringBuilder(128);
+		sb.append("<html><body>");
 		String state = "";
 		String color = "";
 		
@@ -121,16 +121,16 @@ public class QuestLink implements IBypassHandler
 				state = quest.isCustomQuest() ? " (Done)" : "03";
 				color = "787878";
 			}
-			StringUtil.append(sb, "<font color=\"" + color + "\">");
-			StringUtil.append(sb, "<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_", String.valueOf(npc.getObjectId()), "_Quest ", quest.getName(), "\">");
+			sb.append("<font color=\"" + color + "\">");
+			sb.append("<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
 			
 			if (quest.isCustomQuest())
 			{
-				StringUtil.append(sb, quest.getDescr(), state);
+				sb.append(quest.getDescr() + state);
 			}
 			else
 			{
-				StringUtil.append(sb, "<fstring>", String.valueOf(quest.getNpcStringId()), state, "</fstring>");
+				sb.append("<fstring>" + quest.getNpcStringId() + state + "</fstring>");
 			}
 			sb.append("</button></font>");
 		}

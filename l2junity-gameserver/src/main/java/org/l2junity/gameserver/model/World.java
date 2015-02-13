@@ -34,7 +34,7 @@ import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
-import org.l2junity.util.StringUtil;
+import org.l2junity.util.Util;
 
 public final class World
 {
@@ -101,7 +101,7 @@ public final class World
 		if (_allObjects.containsKey(object.getObjectId()))
 		{
 			_log.log(Level.WARNING, getClass().getSimpleName() + ": Current object: " + object + " already exist in OID map!");
-			_log.log(Level.WARNING, StringUtil.getTraceString(Thread.currentThread().getStackTrace()));
+			_log.log(Level.WARNING, Util.getTraceString(Thread.currentThread().getStackTrace()));
 			_log.log(Level.WARNING, getClass().getSimpleName() + ": Previous object: " + _allObjects.get(object.getObjectId()) + " already exist in OID map!");
 			_log.log(Level.WARNING, _allObjectsDebug.get(object.getObjectId()));
 			_log.log(Level.WARNING, "---------------------- End ---------------------");
@@ -109,7 +109,7 @@ public final class World
 		}
 		
 		_allObjects.put(object.getObjectId(), object);
-		_allObjectsDebug.put(object.getObjectId(), StringUtil.getTraceString(Thread.currentThread().getStackTrace()));
+		_allObjectsDebug.put(object.getObjectId(), Util.getTraceString(Thread.currentThread().getStackTrace()));
 	}
 	
 	/**

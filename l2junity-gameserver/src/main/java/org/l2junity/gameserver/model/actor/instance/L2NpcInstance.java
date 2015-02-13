@@ -34,7 +34,6 @@ import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExAcquirableSkillListByClass;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
-import org.l2junity.util.StringUtil;
 
 public class L2NpcInstance extends Npc
 {
@@ -110,7 +109,7 @@ public class L2NpcInstance extends Npc
 		if (((L2NpcInstance) npc).getClassesToTeach().isEmpty())
 		{
 			final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
-			final String sb = StringUtil.concat("<html><body>I cannot teach you. My class list is empty.<br>Ask admin to fix it. Need add my npcid and classes to skill_learn.sql.<br>NpcId:", String.valueOf(npcId), ", Your classId:", String.valueOf(player.getClassId().getId()), "</body></html>");
+			final String sb = "<html><body>I cannot teach you. My class list is empty.<br>Ask admin to fix it. Need add my npcid and classes to skill_learn.sql.<br>NpcId:" + npcId + ", Your classId:" + player.getClassId().getId() + "</body></html>";
 			html.setHtml(sb);
 			player.sendPacket(html);
 			return;

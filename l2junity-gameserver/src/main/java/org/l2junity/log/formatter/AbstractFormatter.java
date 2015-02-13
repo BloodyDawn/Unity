@@ -18,31 +18,27 @@
  */
 package org.l2junity.log.formatter;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.StringJoiner;
 import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
 
-import org.l2junity.Config;
-
 /**
- * This class ...
- * @version $Revision: 1.1.4.1 $ $Date: 2005/03/27 15:30:08 $
+ * @author Nos
  */
-public class FileLogFormatter extends Formatter
+public abstract class AbstractFormatter extends Formatter
 {
-	private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss,SSS");
+	private final DateFormat _dateFormat = new SimpleDateFormat("dd/MM HH:mm:ss");
 	
 	@Override
 	public String format(LogRecord record)
 	{
-		final StringJoiner sj = new StringJoiner("\t", "", Config.EOL);
-		sj.add(dateFormat.format(new Date(record.getMillis())));
-		sj.add(record.getLevel().getName());
-		sj.add(String.valueOf(record.getThreadID()));
-		sj.add(record.getLoggerName());
-		sj.add(record.getMessage());
-		return sj.toString();
+		final StringBuilder sb = new StringBuilder(32);
+		sb.append("[");
+		sb.append(_dateFormat.format(new Date(record.getMillis())));
+		sb.append("] ");
+		sb.append(record.getMessage());
+		return sb.toString();
 	}
 }

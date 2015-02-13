@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.util;
 
+import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,7 +30,6 @@ import org.l2junity.gameserver.model.punishment.PunishmentAffect;
 import org.l2junity.gameserver.model.punishment.PunishmentTask;
 import org.l2junity.gameserver.model.punishment.PunishmentType;
 import org.l2junity.gameserver.network.L2GameClient;
-import org.l2junity.util.StringUtil;
 
 /**
  * Flood protector implementation.
@@ -192,7 +192,9 @@ public final class FloodProtectorAction
 	
 	private void log(String... lines)
 	{
-		final StringBuilder output = StringUtil.startAppend(100, _config.FLOOD_PROTECTOR_TYPE, ": ");
+		final StringBuilder output = new StringBuilder(100);
+		output.append(_config.FLOOD_PROTECTOR_TYPE);
+		output.append(": ");
 		String address = null;
 		try
 		{
@@ -210,27 +212,31 @@ public final class FloodProtectorAction
 			case IN_GAME:
 				if (_client.getActiveChar() != null)
 				{
-					StringUtil.append(output, _client.getActiveChar().getName());
-					StringUtil.append(output, "(", String.valueOf(_client.getActiveChar().getObjectId()), ") ");
+					output.append(_client.getActiveChar().getName());
+					output.append("(");
+					output.append(_client.getActiveChar().getObjectId());
+					output.append(") ");
 				}
 				break;
 			case AUTHED:
 				if (_client.getAccountName() != null)
 				{
-					StringUtil.append(output, _client.getAccountName(), " ");
+					output.append(_client.getAccountName());
+					output.append(" ");
 				}
 				break;
 			case CONNECTED:
 				if (address != null)
 				{
-					StringUtil.append(output, address);
+					output.append(address);
 				}
 				break;
 			default:
 				throw new IllegalStateException("Missing state on switch");
 		}
 		
-		StringUtil.append(output, lines);
+		Arrays.stream(lines).forEach(output::append);
+		
 		_log.warning(output.toString());
 	}
 }

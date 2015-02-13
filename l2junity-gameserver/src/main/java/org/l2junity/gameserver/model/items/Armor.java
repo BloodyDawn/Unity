@@ -22,7 +22,6 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.items.type.ArmorType;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.util.StringUtil;
 
 /**
  * This class is dedicated to the management of armors.
@@ -83,7 +82,7 @@ public final class Armor extends L2Item
 				catch (Exception nfe)
 				{
 					// Incorrect syntax, don't add new skill
-					_log.info(StringUtil.concat("> Couldnt parse ", skill, " in armor enchant skills! item ", toString()));
+					_log.info("> Couldnt parse " + skill + " in armor enchant skills! item " + this);
 				}
 				if ((id > 0) && (level > 0))
 				{

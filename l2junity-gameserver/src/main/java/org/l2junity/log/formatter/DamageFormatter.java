@@ -18,9 +18,6 @@
  */
 package org.l2junity.log.formatter;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
 
 import org.l2junity.Config;
@@ -29,17 +26,15 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.util.StringUtil;
 
-public class DamageFormatter extends Formatter
+public class DamageFormatter extends AbstractFormatter
 {
-	private final SimpleDateFormat dateFmt = new SimpleDateFormat("yy.MM.dd H:mm:ss");
-	
 	@Override
 	public String format(LogRecord record)
 	{
 		final Object[] params = record.getParameters();
-		final StringBuilder output = StringUtil.startAppend(30 + record.getMessage().length() + (params == null ? 0 : params.length * 10), "[", dateFmt.format(new Date(record.getMillis())), "] '---': ", record.getMessage());
+		final StringBuilder output = new StringBuilder(32 + record.getMessage().length() + (params != null ? 10 * params.length : 0));
+		output.append(super.format(record));
 		
 		if (params != null)
 		{
@@ -52,30 +47,40 @@ public class DamageFormatter extends Formatter
 				
 				if (p instanceof Creature)
 				{
+					final Creature creature = (Creature) p;
 					if ((p instanceof Attackable) && ((Attackable) p).isRaid())
 					{
-						StringUtil.append(output, "RaidBoss ");
+						output.append("RaidBoss ");
 					}
 					
-					StringUtil.append(output, ((Creature) p).getName(), "(", String.valueOf(((Creature) p).getObjectId()), ") ");
-					StringUtil.append(output, String.valueOf(((Creature) p).getLevel()), " lvl");
+					output.append(creature.getName());
+					output.append("(");
+					output.append(creature.getObjectId());
+					output.append(") ");
+					output.append(creature.getLevel());
+					output.append(" lvl");
 					
 					if (p instanceof Summon)
 					{
 						L2PcInstance owner = ((Summon) p).getOwner();
 						if (owner != null)
 						{
-							StringUtil.append(output, " Owner:", owner.getName(), "(", String.valueOf(owner.getObjectId()), ")");
+							output.append(" Owner:");
+							output.append(owner.getName());
+							output.append("(");
+							output.append(owner.getObjectId());
+							output.append(")");
 						}
 					}
 				}
 				else if (p instanceof Skill)
 				{
-					StringUtil.append(output, " with skill ", ((Skill) p).getName(), "(", String.valueOf(((Skill) p).getId()), ")");
+					output.append(" with skill ");
+					output.append(p);
 				}
 				else
 				{
-					StringUtil.append(output, p.toString());
+					output.append(p);
 				}
 			}
 		}

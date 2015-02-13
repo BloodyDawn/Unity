@@ -18,30 +18,26 @@
  */
 package org.l2junity.log.formatter;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
 
 import org.l2junity.Config;
-import org.l2junity.util.StringUtil;
 import org.l2junity.util.Util;
 
-public class ConsoleLogFormatter extends Formatter
+public class ConsoleLogFormatter extends AbstractFormatter
 {
-	private final SimpleDateFormat dateFmt = new SimpleDateFormat("dd/MM HH:mm:ss");
-	
 	@Override
 	public String format(LogRecord record)
 	{
-		final StringBuilder output = new StringBuilder(500);
-		StringUtil.append(output, "[", dateFmt.format(new Date(record.getMillis())), "] " + record.getMessage(), Config.EOL);
+		final StringBuilder output = new StringBuilder(128);
+		output.append(super.format(record));
+		output.append(Config.EOL);
 		
 		if (record.getThrown() != null)
 		{
 			try
 			{
-				StringUtil.append(output, Util.getStackTrace(record.getThrown()), Config.EOL);
+				output.append(Util.getStackTrace(record.getThrown()));
+				output.append(Config.EOL);
 			}
 			catch (Exception ex)
 			{
