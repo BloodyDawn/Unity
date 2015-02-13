@@ -282,6 +282,25 @@ public final class UseItem extends L2GameClientPacket
 								}
 								break;
 							}
+							case ERTHEIA:
+							{
+								switch (wpn.getItemType())
+								{
+									case SWORD:
+									case DAGGER:
+									case BOW:
+									case POLE:
+									case NONE:
+									case DUAL:
+									case RAPIER:
+									case ANCIENTSWORD:
+									case CROSSBOW:
+									case DUALDAGGER:
+										activeChar.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIRED_CONDITION_TO_EQUIP_THAT_ITEM);
+										return;
+								}
+								break;
+							}
 						}
 					}
 					break;
