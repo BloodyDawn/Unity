@@ -275,18 +275,41 @@
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="10008" levels="8" name="Shield Charge">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- TODO: abno -->
 		<!-- Uses a shield to attack target with 13634 Power added to P. Atk. and also P. Def. - 10%, P. Evasion - 2, and P. Critical Damage + 10%. Can be used while a shield is equipped. -->
-		<table name="#mpConsumes"> 53 54 56 58 59 61 63 65 </table>
+		<table name="#power"> 13634 14179 15269 16359 17449 18539 19629 20719 </table>
+		<table name="#enchPower"> 21809 22354 22899 23444 23989 24534 25079 25624 26169 26714 </table>
+		<table name="#mpConsume"> 53 54 56 58 59 61 63 65 </table>
 		<set name="icon" val="icon.skill10008" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
+		<set name="targetType" val="ONE" />
+		<set name="mpConsume" val="#mpConsume" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="570" />
+		<set name="power" val="#power" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isDebuff" val="true" />
+		<set name="overHit" val="true" />
+		<enchant1 name="power" val="#enchPower" />
+		<enchant2 name="pvpPower" val="#enchPower" />
+		<enchant3 name="power" val="#enchPower" />
+		<enchant4 name="power" val="#enchPower" />
+		<enchant5 name="power" val="#enchPower" />
+		<enchant6 name="power" val="#enchPower" />
+		<enchant7 name="power" val="#enchPower" />
+		<enchant8 name="power" val="#enchPower" />
+		<cond msgId="113" addName="1">
+			<using kind="SHIELD" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack" />
+			<effect name="Debuff">
+				<mul stat="pDef" val="0.9" />
+				<sub stat="rEvas" val="2" />
+				<mul stat="defCritDamage" val="1.1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10009" levels="8" name="Last Judgment">
 		<!-- AUTO GENERATED SKILL -->
@@ -899,10 +922,27 @@
 	<skill id="10060" levels="1" name="Aggression Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Provokes. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3" />
+		<set name="abnormalType" val="TARGET_LOCK" />
+		<set name="castRange" val="600" />
+		<set name="coolTime" val="200" />
+		<set name="effectPoint" val="-3928" />
+		<set name="effectRange" val="1100" />
+		<set name="hitTime" val="700" />
 		<set name="icon" val="icon.skill0086" />
+		<set name="isDebuff" val="true" />
+		<set name="magicLevel" val="85" />
+		<set name="reuseDelay" val="6000" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="reuseDelay" val="6000" />
+		<set name="staticReuse" val="true" />
 		<set name="isMagic" val="4" />
+		<set name="targetType" val="ONE" />
+		<for>
+			<effect name="TargetMe" />
+			<effect name="GetAgro" />
+		</for>
 	</skill>
 	<skill id="10061" levels="1" name="Price of Summoning">
 		<!-- AUTO GENERATED SKILL -->
@@ -1179,17 +1219,33 @@
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="10090" levels="4" name="Provoking Shackle">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Provokes nearby enemies and inflicts Hold for 9 sec. -->
-		<table name="#mpConsumes"> 59 61 63 65 </table>
-		<set name="icon" val="icon.skill10090new" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="hitTime" val="1000" />
+		<table name="#mpConsume"> 59 61 63 65 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="9" />
+		<set name="abnormalType" val="ROOT_PHYSICALLY" />
+		<set name="activateRate" val="80" />
+		<set name="basicProperty" val="CON" />
 		<set name="coolTime" val="470" />
-		<set name="reuseDelay" val="60000" />
+		<set name="effectRange" val="200" />
 		<set name="isDebuff" val="true" />
+		<set name="hitTime" val="1000" />
+		<set name="operateType" val="A2" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="reuseDelay" val="60000" />
+		<set name="targetType" val="AURA" />
+		<set name="icon" val="icon.skill10090new" />
+		<set name="trait" val="HOLD" />
+		<for>
+			<effect name="TargetMe" />
+			<effect name="Root" />
+			<effect name="DefenceTrait">
+				<param HOLD="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10091" levels="1" name="Templar's Will">
 		<!-- AUTO GENERATED SKILL -->
