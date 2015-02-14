@@ -48,6 +48,8 @@ import instances.NornilsGarden.NornilsGarden;
 import instances.PailakaDevilsLegacy.PailakaDevilsLegacy;
 import instances.PailakaSongOfIceAndFire.PailakaSongOfIceAndFire;
 import instances.SanctumOftheLordsOfDawn.SanctumOftheLordsOfDawn;
+import instances.SecretArea.SecretArea;
+import instances.SeedOfDestruction.Stage1;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -92,6 +94,8 @@ public final class InstanceLoader
 		PailakaDevilsLegacy.class,
 		PailakaSongOfIceAndFire.class,
 		SanctumOftheLordsOfDawn.class,
+		SecretArea.class,
+		Stage1.class,
 	};
 	
 	public static void main(String[] args)
