@@ -31,13 +31,13 @@ public class L2DoorInstanceActionShift implements IActionShiftHandler
 	@Override
 	public boolean action(L2PcInstance activeChar, WorldObject target, boolean interact)
 	{
-		if (activeChar.getAccessLevel().isGm())
+		if (activeChar.isGM())
 		{
 			activeChar.setTarget(target);
-			L2DoorInstance door = (L2DoorInstance) target;
+			final L2DoorInstance door = (L2DoorInstance) target;
 			activeChar.sendPacket(new StaticObject(door, activeChar.isGM()));
 			
-			final NpcHtmlMessage html = new NpcHtmlMessage();
+			final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 			html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/doorinfo.htm");
 			html.replace("%class%", target.getClass().getSimpleName());
 			html.replace("%hp%", String.valueOf((int) door.getCurrentHp()));
