@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.logging.Level;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.file.filter.NumericNameFilter;
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -39,7 +40,6 @@ import org.l2junity.gameserver.network.serverpackets.MultiSellList;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.network.serverpackets.UserInfo;
 import org.l2junity.gameserver.util.Util;
-import org.l2junity.util.file.filter.NumericNameFilter;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;

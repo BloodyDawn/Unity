@@ -16,18 +16,23 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.util.file.filter;
+package org.l2junity.commons.util.file.filter;
 
 import java.io.File;
 import java.io.FileFilter;
 
 /**
- * Specialized {@link FileFilter} class.<br>
- * Accepts <b>files</b> ending with ".bmp" only.
- * @author Zoey76
+ * @author lasarus
  */
-public class BMPFilter implements FileFilter
+public class ExtFilter implements FileFilter
 {
+	private final String _ext;
+	
+	public ExtFilter(String ext)
+	{
+		_ext = ext;
+	}
+	
 	@Override
 	public boolean accept(File f)
 	{
@@ -35,6 +40,6 @@ public class BMPFilter implements FileFilter
 		{
 			return false;
 		}
-		return f.getName().toLowerCase().endsWith(".bmp");
+		return f.getName().toLowerCase().endsWith(_ext);
 	}
 }

@@ -29,8 +29,8 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
+import org.l2junity.commons.util.file.filter.SQLFilter;
 import org.l2junity.tools.dbinstaller.DBOutputInterface;
-import org.l2junity.util.file.filter.SQLFilter;
 
 /**
  * @author mrTJO

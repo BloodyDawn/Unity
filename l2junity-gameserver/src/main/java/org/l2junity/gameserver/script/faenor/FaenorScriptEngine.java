@@ -28,11 +28,11 @@ import java.util.logging.Logger;
 import javax.script.ScriptContext;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.file.filter.XMLFilter;
 import org.l2junity.gameserver.script.Parser;
 import org.l2junity.gameserver.script.ParserNotCreatedException;
 import org.l2junity.gameserver.script.ScriptDocument;
 import org.l2junity.gameserver.script.ScriptEngine;
-import org.l2junity.util.file.filter.XMLFilter;
 import org.w3c.dom.Node;
 
 /**

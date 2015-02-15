@@ -45,6 +45,7 @@ import javolution.util.FastMap;
 import javolution.util.WeakFastSet;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.EmptyQueue;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.GeoData;
@@ -162,7 +163,6 @@ import org.l2junity.gameserver.pathfinding.AbstractNodeLoc;
 import org.l2junity.gameserver.pathfinding.PathFinding;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
 import org.l2junity.gameserver.util.Util;
-import org.l2junity.util.EmptyQueue;
 
 /**
  * Mother class of all character objects of the world (PC, NPC...)<br>

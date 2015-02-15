@@ -67,6 +67,6 @@ public class CryptCodec extends ByteToMessageCodec<ByteBuf>
 	{
 		in.resetReaderIndex();
 		_crypt.decrypt(in);
-		out.add(in.retain());
+		out.add(in.copy(0, in.writerIndex()));
 	}
 }

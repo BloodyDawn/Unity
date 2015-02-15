@@ -26,7 +26,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.l2junity.Config;
-import org.l2junity.util.file.filter.XMLFilter;
+import org.l2junity.commons.util.file.filter.XMLFilter;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;

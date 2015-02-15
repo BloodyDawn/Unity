@@ -28,8 +28,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.file.filter.HTMLFilter;
 import org.l2junity.gameserver.util.Util;
-import org.l2junity.util.file.filter.HTMLFilter;
 
 /**
  * @author Layane

@@ -24,12 +24,12 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.file.filter.XMLFilter;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.engines.items.DocumentItem;
 import org.l2junity.gameserver.engines.skills.DocumentSkill;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.util.file.filter.XMLFilter;
 
 import javolution.util.FastList;
 

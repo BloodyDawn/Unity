@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.time.Duration;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.LogManager;
@@ -34,6 +35,7 @@ import org.l2junity.Config;
 import org.l2junity.L2DatabaseFactory;
 import org.l2junity.Server;
 import org.l2junity.UPnPService;
+import org.l2junity.commons.util.DeadLockDetector;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.data.sql.impl.AnnouncementsTable;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
@@ -142,8 +144,8 @@ import org.l2junity.gameserver.script.faenor.FaenorScriptEngine;
 import org.l2junity.gameserver.scripting.ScriptEngineManager;
 import org.l2junity.gameserver.taskmanager.KnownListUpdateTaskManager;
 import org.l2junity.gameserver.taskmanager.TaskManager;
+import org.l2junity.gameserver.util.Broadcast;
 import org.l2junity.status.Status;
-import org.l2junity.util.DeadLockDetector;
 import org.l2junity.util.IPv4Filter;
 import org.mmocore.network.SelectorConfig;
 import org.mmocore.network.SelectorThread;
@@ -387,7 +389,14 @@ public class GameServer
 		
 		if (Config.DEADLOCK_DETECTOR)
 		{
-			_deadDetectThread = new DeadLockDetector();
+			_deadDetectThread = new DeadLockDetector(Duration.ofSeconds(Config.DEADLOCK_CHECK_INTERVAL), () ->
+			{
+				if (Config.RESTART_ON_DEADLOCK)
+				{
+					Broadcast.toAllOnlinePlayers("Server has stability issues - restarting now.");
+					Shutdown.getInstance().startTelnetShutdown("DeadLockDetector - Auto Restart", 60, true);
+				}
+			});
 			_deadDetectThread.setDaemon(true);
 			_deadDetectThread.start();
 		}

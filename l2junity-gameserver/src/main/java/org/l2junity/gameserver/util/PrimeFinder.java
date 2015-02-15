@@ -9,7 +9,7 @@
  * suitability of this software for any purpose. It is provided "as is"
  * without expressed or implied warranty.
  */
-package org.l2junity.util;
+package org.l2junity.gameserver.util;
 
 import java.util.Arrays;
 

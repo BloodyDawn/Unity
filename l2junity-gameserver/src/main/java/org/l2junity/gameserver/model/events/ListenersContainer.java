@@ -24,8 +24,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.PriorityBlockingQueue;
 import java.util.function.Predicate;
 
+import org.l2junity.commons.util.EmptyQueue;
 import org.l2junity.gameserver.model.events.listeners.AbstractEventListener;
-import org.l2junity.util.EmptyQueue;
 
 /**
  * @author UnAfraid

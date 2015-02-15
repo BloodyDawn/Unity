@@ -16,17 +16,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.util.file.filter;
+package org.l2junity.commons.util.file.filter;
 
 import java.io.File;
 import java.io.FileFilter;
 
 /**
  * Specialized {@link FileFilter} class.<br>
- * Accepts <b>files</b> starting with "Pledge_" only.
+ * Accepts <b>files</b> ending with ".htm" and ".html" only.
  * @author Zoey76
  */
-public class OldPledgeFilter implements FileFilter
+public class HTMLFilter implements FileFilter
 {
 	@Override
 	public boolean accept(File f)
@@ -35,6 +35,7 @@ public class OldPledgeFilter implements FileFilter
 		{
 			return false;
 		}
-		return f.getName().startsWith("Pledge_");
+		final String name = f.getName().toLowerCase();
+		return name.endsWith(".htm") || name.endsWith(".html");
 	}
 }

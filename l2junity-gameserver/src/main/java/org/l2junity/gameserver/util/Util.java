@@ -33,6 +33,7 @@ import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.file.filter.ExtFilter;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.HtmlActionScope;
@@ -45,7 +46,6 @@ import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.network.serverpackets.AbstractHtmlPacket;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.network.serverpackets.ShowBoard;
-import org.l2junity.util.file.filter.ExtFilter;
 
 /**
  * General Utility functions related to game server.
