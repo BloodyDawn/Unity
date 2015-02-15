@@ -1381,7 +1381,7 @@ public final class SystemMessageId
 	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_FRAUDULENT_TRANSACTIONS_UNDER_ANOTHER_PERSON_S_IDENTITY_FOR_MORE_INFORMATION_PLEASE_VISIT_THE_SUPPORT_CENTER_ON_THE_NCSOFT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 443, message = "You cannot use the game services as your identity has not been verified. For more information, please visit the Support Center on the NCSOFT website (https://support.lineage2.com).Service Center(/font).")
-	public static SystemMessageId YOU_CANNOT_USE_THE_GAME_SERVICES_AS_YOUR_IDENTITY_HAS_NOT_BEEN_VERIFIED_FOR_MORE_INFORMATION_PLEASE_VISIT_THE_SUPPORT_CENTER_ON_THE_NCSOFT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM_SERVICE_CENTER_FONT;
+	public static SystemMessageId YOU_CANNOT_USE_THE_GAME_SERVICES_AS_YOUR_IDENTITY_HAS_NOT_BEEN_VERIFIED_FOR_MORE_INFORMATION_PLEASE_VISIT_THE_SUPPORT_CENTER_ON_THE_NCSOFT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM_SERVICE_CENTER;
 	
 	@ClientString(id = 444, message = "This account and all related accounts have been restricted as you have requested a membership withdrawal.")
 	public static SystemMessageId THIS_ACCOUNT_AND_ALL_RELATED_ACCOUNTS_HAVE_BEEN_RESTRICTED_AS_YOU_HAVE_REQUESTED_A_MEMBERSHIP_WITHDRAWAL;
@@ -5440,7 +5440,7 @@ public final class SystemMessageId
 	public static SystemMessageId THE_ROYAL_GUARD_OF_S1_HAVE_BEEN_CREATED;
 	
 	@ClientString(id = 1796, message = "Please verify your identity to confirm your ownership of your account at the NCsoft website.  For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId PLEASE_VERIFY_YOUR_IDENTITY_TO_CONFIRM_YOUR_OWNERSHIP_OF_YOUR_ACCOUNT_AT_THE_NCSOFT_WEBSITE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId PLEASE_VERIFY_YOUR_IDENTITY_TO_CONFIRM_YOUR_OWNERSHIP_OF_YOUR_ACCOUNT_AT_THE_NCSOFT_WEBSITE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 1797, message = "$c1 has been promoted to $s2.")
 	public static SystemMessageId C1_HAS_BEEN_PROMOTED_TO_S2;
@@ -9601,7 +9601,7 @@ public final class SystemMessageId
 	public static SystemMessageId STRONG_DEFENSE_AND_SKILLFUL_WITH_SHIELDS_BR_CAN_PULL_TARGETS_USING_CHAINS_BR_GOLDEN_LION_COMPANION;
 	
 	@ClientString(id = 3338, message = "Inherited the powers of the Sigel Knight (font color='#FFDF4C')Abelius(/font) who was also known as the Golden Commander for his sense of honor and his ability to motivate troops. His beast companion, the golden lion Kelcion, fought by his side in every battle, inspiring fear and awe through his fierce roar.")
-	public static SystemMessageId INHERITED_THE_POWERS_OF_THE_SIGEL_KNIGHT_FONT_COLOR_FFDF4C_ABELIUS_FONT_WHO_WAS_ALSO_KNOWN_AS_THE_GOLDEN_COMMANDER_FOR_HIS_SENSE_OF_HONOR_AND_HIS_ABILITY_TO_MOTIVATE_TROOPS_HIS_BEAST_COMPANION_THE_GOLDEN_LION_KELCION_FOUGHT_BY_HIS_SIDE_IN_EVERY_BATTLE_INSPIRING_FEAR_AND_AWE_THROUGH_HIS_FIERCE_ROAR;
+	public static SystemMessageId INHERITED_THE_POWERS_OF_THE_SIGEL_KNIGHT_ABELIUS_WHO_WAS_ALSO_KNOWN_AS_THE_GOLDEN_COMMANDER_FOR_HIS_SENSE_OF_HONOR_AND_HIS_ABILITY_TO_MOTIVATE_TROOPS_HIS_BEAST_COMPANION_THE_GOLDEN_LION_KELCION_FOUGHT_BY_HIS_SIDE_IN_EVERY_BATTLE_INSPIRING_FEAR_AND_AWE_THROUGH_HIS_FIERCE_ROAR;
 	
 	@ClientString(id = 3339, message = "Melee Damage Dealer")
 	public static SystemMessageId MELEE_DAMAGE_DEALER;
@@ -9610,7 +9610,7 @@ public final class SystemMessageId
 	public static SystemMessageId DIVERSE_WEAPONS_EXPERT_BR_POWERFUL_ATTACKS_USING_MOMENTUM_BR_VARIOUS_REINFORCEMENT_SKILLS;
 	
 	@ClientString(id = 3341, message = "Inherited the powers of the Tyrr Warrior (font color='#FFDF4C')Sapyros(/font) who was known as the Tempest Leader for his rough, weather-beaten, unruly demeanor and his tempestuous nature. His fierce hand-to-hand battles were the stuff of legend. Once he engaged combat, he never backed down, and he never lost.")
-	public static SystemMessageId INHERITED_THE_POWERS_OF_THE_TYRR_WARRIOR_FONT_COLOR_FFDF4C_SAPYROS_FONT_WHO_WAS_KNOWN_AS_THE_TEMPEST_LEADER_FOR_HIS_ROUGH_WEATHER_BEATEN_UNRULY_DEMEANOR_AND_HIS_TEMPESTUOUS_NATURE_HIS_FIERCE_HAND_TO_HAND_BATTLES_WERE_THE_STUFF_OF_LEGEND_ONCE_HE_ENGAGED_COMBAT_HE_NEVER_BACKED_DOWN_AND_HE_NEVER_LOST;
+	public static SystemMessageId INHERITED_THE_POWERS_OF_THE_TYRR_WARRIOR_SAPYROS_WHO_WAS_KNOWN_AS_THE_TEMPEST_LEADER_FOR_HIS_ROUGH_WEATHER_BEATEN_UNRULY_DEMEANOR_AND_HIS_TEMPESTUOUS_NATURE_HIS_FIERCE_HAND_TO_HAND_BATTLES_WERE_THE_STUFF_OF_LEGEND_ONCE_HE_ENGAGED_COMBAT_HE_NEVER_BACKED_DOWN_AND_HE_NEVER_LOST;
 	
 	@ClientString(id = 3342, message = "Dagger Damage Dealer")
 	public static SystemMessageId DAGGER_DAMAGE_DEALER;
@@ -9619,7 +9619,7 @@ public final class SystemMessageId
 	public static SystemMessageId SUPERIOR_STEALTH_SKILLS_BR_WEAKENS_THE_ENEMY_WITH_CRITICAL_ATTACKS_BR_DIVERSE_SKILLS_USING_POISONS_AND_THROWING_WEAPONS;
 	
 	@ClientString(id = 3344, message = "Inherited the powers of the Othell Rogue (font color='#FFDF4C')Ashagen(/font), a fearsome warrior whose ferocity matched his cruelty. Brutal enough to strike an enemy's unprotected back, Ashagen was feared by his enemies and shunned by his allies.")
-	public static SystemMessageId INHERITED_THE_POWERS_OF_THE_OTHELL_ROGUE_FONT_COLOR_FFDF4C_ASHAGEN_FONT_A_FEARSOME_WARRIOR_WHOSE_FEROCITY_MATCHED_HIS_CRUELTY_BRUTAL_ENOUGH_TO_STRIKE_AN_ENEMY_S_UNPROTECTED_BACK_ASHAGEN_WAS_FEARED_BY_HIS_ENEMIES_AND_SHUNNED_BY_HIS_ALLIES;
+	public static SystemMessageId INHERITED_THE_POWERS_OF_THE_OTHELL_ROGUE_ASHAGEN_A_FEARSOME_WARRIOR_WHOSE_FEROCITY_MATCHED_HIS_CRUELTY_BRUTAL_ENOUGH_TO_STRIKE_AN_ENEMY_S_UNPROTECTED_BACK_ASHAGEN_WAS_FEARED_BY_HIS_ENEMIES_AND_SHUNNED_BY_HIS_ALLIES;
 	
 	@ClientString(id = 3345, message = "Bow and Crossbow Sharpshooter")
 	public static SystemMessageId BOW_AND_CROSSBOW_SHARPSHOOTER;
@@ -9628,7 +9628,7 @@ public final class SystemMessageId
 	public static SystemMessageId MASTER_AT_USING_BOWS_AND_CROSSBOWS_BR_THUNDER_HAWK_COMPANION_BR_EXPERTISE_WITH_TRAPS;
 	
 	@ClientString(id = 3347, message = "Inherited powers from the Yul Archer (font color='#FFDF4C')Cranigg(/font), a Giant hero sharpshooter whose third eye gave him precise accuracy and focus at a very long range.")
-	public static SystemMessageId INHERITED_POWERS_FROM_THE_YUL_ARCHER_FONT_COLOR_FFDF4C_CRANIGG_FONT_A_GIANT_HERO_SHARPSHOOTER_WHOSE_THIRD_EYE_GAVE_HIM_PRECISE_ACCURACY_AND_FOCUS_AT_A_VERY_LONG_RANGE;
+	public static SystemMessageId INHERITED_POWERS_FROM_THE_YUL_ARCHER_CRANIGG_A_GIANT_HERO_SHARPSHOOTER_WHOSE_THIRD_EYE_GAVE_HIM_PRECISE_ACCURACY_AND_FOCUS_AT_A_VERY_LONG_RANGE;
 	
 	@ClientString(id = 3348, message = "Magic Damage Dealer")
 	public static SystemMessageId MAGIC_DAMAGE_DEALER;
@@ -9637,7 +9637,7 @@ public final class SystemMessageId
 	public static SystemMessageId MASTER_OF_THE_FOUR_ELEMENTS_BR_VARIOUS_DEBUFF_SKILLS_BR_ABILITY_TO_CAST_TWO_SPELLS_AT_THE_SAME_TIME;
 	
 	@ClientString(id = 3350, message = "Feoh Wizard (font color='FFDF4C')Soltkreig(/font) was one of the Seven Giant Sages. Soltkreig, a supremely wise and intelligent Giant, was also a strategic tactician. He snatched victory from the claws of defeat many times thanks to his brilliant planning. Through years of study, he became the foremost expert on the four elements and mana theory.")
-	public static SystemMessageId FEOH_WIZARD_FONT_COLOR_FFDF4C_SOLTKREIG_FONT_WAS_ONE_OF_THE_SEVEN_GIANT_SAGES_SOLTKREIG_A_SUPREMELY_WISE_AND_INTELLIGENT_GIANT_WAS_ALSO_A_STRATEGIC_TACTICIAN_HE_SNATCHED_VICTORY_FROM_THE_CLAWS_OF_DEFEAT_MANY_TIMES_THANKS_TO_HIS_BRILLIANT_PLANNING_THROUGH_YEARS_OF_STUDY_HE_BECAME_THE_FOREMOST_EXPERT_ON_THE_FOUR_ELEMENTS_AND_MANA_THEORY;
+	public static SystemMessageId FEOH_WIZARD_FONT_COLOR_FFDF4C_SOLTKREIG_WAS_ONE_OF_THE_SEVEN_GIANT_SAGES_SOLTKREIG_A_SUPREMELY_WISE_AND_INTELLIGENT_GIANT_WAS_ALSO_A_STRATEGIC_TACTICIAN_HE_SNATCHED_VICTORY_FROM_THE_CLAWS_OF_DEFEAT_MANY_TIMES_THANKS_TO_HIS_BRILLIANT_PLANNING_THROUGH_YEARS_OF_STUDY_HE_BECAME_THE_FOREMOST_EXPERT_ON_THE_FOUR_ELEMENTS_AND_MANA_THEORY;
 	
 	@ClientString(id = 3351, message = "Magic Buffer")
 	public static SystemMessageId MAGIC_BUFFER;
@@ -9646,7 +9646,7 @@ public final class SystemMessageId
 	public static SystemMessageId DIVERSE_BUFF_SKILLS_BR_EXPERT_AT_ALLY_BOOSTING_ENEMY_WEAKENING_AND_CROWD_CONTROL_BR_POWERFUL_RUSH_AND_DUAL_WEAPON_ATTACKS;
 	
 	@ClientString(id = 3353, message = "Inherited the powers of Iss Enchanter (font color='#FFDF4C')Leister(/font), an insightful and observant Giant who combined magic with military strategy and tactics. His ability to anticipate and react to the flow of battle was legendary.")
-	public static SystemMessageId INHERITED_THE_POWERS_OF_ISS_ENCHANTER_FONT_COLOR_FFDF4C_LEISTER_FONT_AN_INSIGHTFUL_AND_OBSERVANT_GIANT_WHO_COMBINED_MAGIC_WITH_MILITARY_STRATEGY_AND_TACTICS_HIS_ABILITY_TO_ANTICIPATE_AND_REACT_TO_THE_FLOW_OF_BATTLE_WAS_LEGENDARY;
+	public static SystemMessageId INHERITED_THE_POWERS_OF_ISS_ENCHANTER_LEISTER_AN_INSIGHTFUL_AND_OBSERVANT_GIANT_WHO_COMBINED_MAGIC_WITH_MILITARY_STRATEGY_AND_TACTICS_HIS_ABILITY_TO_ANTICIPATE_AND_REACT_TO_THE_FLOW_OF_BATTLE_WAS_LEGENDARY;
 	
 	@ClientString(id = 3354, message = "Summoner and Ranged Magic Attack")
 	public static SystemMessageId SUMMONER_AND_RANGED_MAGIC_ATTACK;
@@ -9655,7 +9655,7 @@ public final class SystemMessageId
 	public static SystemMessageId CAN_BE_ACCOMPANIED_BY_MULTIPLE_SERVITORS_AT_THE_SAME_TIME_BR_SPECIALIZES_IN_ENEMY_DEBUFFS_WHILE_SERVITORS_DO_DAMAGE;
 	
 	@ClientString(id = 3356, message = "Inherited the powers of (font color='#FFDF4C')Nabiarov(/font) who had the power to open and close planar dimensions. He passionately sacrificed his eyesight to expand his immense summoning power even further. He was the first mage ever to maintain control over multiple summoned pets simultaneously.")
-	public static SystemMessageId INHERITED_THE_POWERS_OF_FONT_COLOR_FFDF4C_NABIAROV_FONT_WHO_HAD_THE_POWER_TO_OPEN_AND_CLOSE_PLANAR_DIMENSIONS_HE_PASSIONATELY_SACRIFICED_HIS_EYESIGHT_TO_EXPAND_HIS_IMMENSE_SUMMONING_POWER_EVEN_FURTHER_HE_WAS_THE_FIRST_MAGE_EVER_TO_MAINTAIN_CONTROL_OVER_MULTIPLE_SUMMONED_PETS_SIMULTANEOUSLY;
+	public static SystemMessageId INHERITED_THE_POWERS_OF_NABIAROV_WHO_HAD_THE_POWER_TO_OPEN_AND_CLOSE_PLANAR_DIMENSIONS_HE_PASSIONATELY_SACRIFICED_HIS_EYESIGHT_TO_EXPAND_HIS_IMMENSE_SUMMONING_POWER_EVEN_FURTHER_HE_WAS_THE_FIRST_MAGE_EVER_TO_MAINTAIN_CONTROL_OVER_MULTIPLE_SUMMONED_PETS_SIMULTANEOUSLY;
 	
 	@ClientString(id = 3357, message = "Magic Healer")
 	public static SystemMessageId MAGIC_HEALER;
@@ -9664,7 +9664,7 @@ public final class SystemMessageId
 	public static SystemMessageId HAS_SEVERAL_HEALING_AND_RESURRECTION_SKILLS_BR_SPECIALIZES_IN_REINFORCEMENT_SKILLS_BR_UNISON_OF_LIGHTS_COMPANION;
 	
 	@ClientString(id = 3359, message = "Aeore Healer (font color='#FFDF4C')Lakcis(/font) was a friend of Einhasad in the early days of the Giants. He combined his holy magic with the creation magic of Einhasad to create a new type of power, Saha. Saha spread rapidly throughout the Giants as the most popular source of healing.")
-	public static SystemMessageId AEORE_HEALER_FONT_COLOR_FFDF4C_LAKCIS_FONT_WAS_A_FRIEND_OF_EINHASAD_IN_THE_EARLY_DAYS_OF_THE_GIANTS_HE_COMBINED_HIS_HOLY_MAGIC_WITH_THE_CREATION_MAGIC_OF_EINHASAD_TO_CREATE_A_NEW_TYPE_OF_POWER_SAHA_SAHA_SPREAD_RAPIDLY_THROUGHOUT_THE_GIANTS_AS_THE_MOST_POPULAR_SOURCE_OF_HEALING;
+	public static SystemMessageId AEORE_HEALER_LAKCIS_WAS_A_FRIEND_OF_EINHASAD_IN_THE_EARLY_DAYS_OF_THE_GIANTS_HE_COMBINED_HIS_HOLY_MAGIC_WITH_THE_CREATION_MAGIC_OF_EINHASAD_TO_CREATE_A_NEW_TYPE_OF_POWER_SAHA_SAHA_SPREAD_RAPIDLY_THROUGHOUT_THE_GIANTS_AS_THE_MOST_POPULAR_SOURCE_OF_HEALING;
 	
 	@ClientString(id = 3360, message = "$s1 left")
 	public static SystemMessageId S1_LEFT;
@@ -11050,13 +11050,13 @@ public final class SystemMessageId
 	public static SystemMessageId THE_KEY_YOU_ENTERED_IS_ALREADY_USED_FOR_ANOTHER_FUNCTION_CLICK_THE_APPLY_BUTTON_TO_SWITCH_THE_KEYS;
 	
 	@ClientString(id = 3821, message = "If you want fame and economic development for your clan, select a request from any of the 3 guilds, and start the (font color='#FFDF4C')clan request(/font).(br)(br)But only the clan leader can make a decision.")
-	public static SystemMessageId IF_YOU_WANT_FAME_AND_ECONOMIC_DEVELOPMENT_FOR_YOUR_CLAN_SELECT_A_REQUEST_FROM_ANY_OF_THE_3_GUILDS_AND_START_THE_FONT_COLOR_FFDF4C_CLAN_REQUEST_FONT_BR_BR_BUT_ONLY_THE_CLAN_LEADER_CAN_MAKE_A_DECISION;
+	public static SystemMessageId IF_YOU_WANT_FAME_AND_ECONOMIC_DEVELOPMENT_FOR_YOUR_CLAN_SELECT_A_REQUEST_FROM_ANY_OF_THE_3_GUILDS_AND_START_THE_CLAN_REQUEST_BR_BR_BUT_ONLY_THE_CLAN_LEADER_CAN_MAKE_A_DECISION;
 	
 	@ClientString(id = 3822, message = "$s1 has been accepted.")
 	public static SystemMessageId S1_HAS_BEEN_ACCEPTED;
 	
 	@ClientString(id = 3823, message = "Clans are booming with the acquisition of (font color='#FFDF4C')individual request points(/font) earned through private hunts and (font color='#FFDF4C')clan request activities(/font) done with your clanmates.(br)(br)(Redeem individual request points to increase your clan request points. Individual fame goes up with each individual request point you redeem.)")
-	public static SystemMessageId CLANS_ARE_BOOMING_WITH_THE_ACQUISITION_OF_FONT_COLOR_FFDF4C_INDIVIDUAL_REQUEST_POINTS_FONT_EARNED_THROUGH_PRIVATE_HUNTS_AND_FONT_COLOR_FFDF4C_CLAN_REQUEST_ACTIVITIES_FONT_DONE_WITH_YOUR_CLANMATES_BR_BR_REDEEM_INDIVIDUAL_REQUEST_POINTS_TO_INCREASE_YOUR_CLAN_REQUEST_POINTS_INDIVIDUAL_FAME_GOES_UP_WITH_EACH_INDIVIDUAL_REQUEST_POINT_YOU_REDEEM;
+	public static SystemMessageId CLANS_ARE_BOOMING_WITH_THE_ACQUISITION_OF_INDIVIDUAL_REQUEST_POINTS_EARNED_THROUGH_PRIVATE_HUNTS_AND_CLAN_REQUEST_ACTIVITIES_DONE_WITH_YOUR_CLANMATES_BR_BR_REDEEM_INDIVIDUAL_REQUEST_POINTS_TO_INCREASE_YOUR_CLAN_REQUEST_POINTS_INDIVIDUAL_FAME_GOES_UP_WITH_EACH_INDIVIDUAL_REQUEST_POINT_YOU_REDEEM;
 	
 	@ClientString(id = 3824, message = "Redeem individual request points.")
 	public static SystemMessageId REDEEM_INDIVIDUAL_REQUEST_POINTS;
@@ -11086,7 +11086,7 @@ public final class SystemMessageId
 	public static SystemMessageId YOU_VE_GIVEN_UP_ON_S1;
 	
 	@ClientString(id = 3833, message = "What is a (font color='#FFDF4C')guild quest(/font)? It's a simple activity you can do before working on a guild request. If you succeed in it, you will get a badge of the guild.(br)(br)Good luck to every guild member.")
-	public static SystemMessageId WHAT_IS_A_FONT_COLOR_FFDF4C_GUILD_QUEST_FONT_IT_S_A_SIMPLE_ACTIVITY_YOU_CAN_DO_BEFORE_WORKING_ON_A_GUILD_REQUEST_IF_YOU_SUCCEED_IN_IT_YOU_WILL_GET_A_BADGE_OF_THE_GUILD_BR_BR_GOOD_LUCK_TO_EVERY_GUILD_MEMBER;
+	public static SystemMessageId WHAT_IS_A_GUILD_QUEST_IT_S_A_SIMPLE_ACTIVITY_YOU_CAN_DO_BEFORE_WORKING_ON_A_GUILD_REQUEST_IF_YOU_SUCCEED_IN_IT_YOU_WILL_GET_A_BADGE_OF_THE_GUILD_BR_BR_GOOD_LUCK_TO_EVERY_GUILD_MEMBER;
 	
 	@ClientString(id = 3834, message = "$s1 has requested clan member summoning.")
 	public static SystemMessageId S1_HAS_REQUESTED_CLAN_MEMBER_SUMMONING;
@@ -11101,7 +11101,7 @@ public final class SystemMessageId
 	public static SystemMessageId A_CLAN_QUEST_IS_STARTING;
 	
 	@ClientString(id = 3838, message = "What is a (font color='#FFDF4C')clan request(/font)? It's a clan activity designed to help a clan become a more solid, powerful organization. With badges of each dwarf guild you've obtained through request activities, you can increase clan level and purchase various rewards.(br)(br)Also, clans of level 5 or higher can obtain Clan Reputation after successfully finishing a clan request.(br)(br)(You can increase clan level through the Grand Master in any village.)")
-	public static SystemMessageId WHAT_IS_A_FONT_COLOR_FFDF4C_CLAN_REQUEST_FONT_IT_S_A_CLAN_ACTIVITY_DESIGNED_TO_HELP_A_CLAN_BECOME_A_MORE_SOLID_POWERFUL_ORGANIZATION_WITH_BADGES_OF_EACH_DWARF_GUILD_YOU_VE_OBTAINED_THROUGH_REQUEST_ACTIVITIES_YOU_CAN_INCREASE_CLAN_LEVEL_AND_PURCHASE_VARIOUS_REWARDS_BR_BR_ALSO_CLANS_OF_LEVEL_5_OR_HIGHER_CAN_OBTAIN_CLAN_REPUTATION_AFTER_SUCCESSFULLY_FINISHING_A_CLAN_REQUEST_BR_BR_YOU_CAN_INCREASE_CLAN_LEVEL_THROUGH_THE_GRAND_MASTER_IN_ANY_VILLAGE;
+	public static SystemMessageId WHAT_IS_A_CLAN_REQUEST_IT_S_A_CLAN_ACTIVITY_DESIGNED_TO_HELP_A_CLAN_BECOME_A_MORE_SOLID_POWERFUL_ORGANIZATION_WITH_BADGES_OF_EACH_DWARF_GUILD_YOU_VE_OBTAINED_THROUGH_REQUEST_ACTIVITIES_YOU_CAN_INCREASE_CLAN_LEVEL_AND_PURCHASE_VARIOUS_REWARDS_BR_BR_ALSO_CLANS_OF_LEVEL_5_OR_HIGHER_CAN_OBTAIN_CLAN_REPUTATION_AFTER_SUCCESSFULLY_FINISHING_A_CLAN_REQUEST_BR_BR_YOU_CAN_INCREASE_CLAN_LEVEL_THROUGH_THE_GRAND_MASTER_IN_ANY_VILLAGE;
 	
 	@ClientString(id = 3839, message = "Go to the clan request area.")
 	public static SystemMessageId GO_TO_THE_CLAN_REQUEST_AREA;
@@ -11554,7 +11554,7 @@ public final class SystemMessageId
 	public static SystemMessageId YOU_CAN_RUN_A_MAXIMUM_OF_3_CLIENTS_ON_THE_SAME_PC;
 	
 	@ClientString(id = 4082, message = "(font color='#FFDF4C')Path to Awakening(/font)(br)If you are a new player, you can earn free rewards as you level up by visiting the following website: http://truly-free.lineage2.com/path. Log in with your Lineage II account and claim the rewards when you reach each milestone. Don't miss out!")
-	public static SystemMessageId FONT_COLOR_FFDF4C_PATH_TO_AWAKENING_FONT_BR_IF_YOU_ARE_A_NEW_PLAYER_YOU_CAN_EARN_FREE_REWARDS_AS_YOU_LEVEL_UP_BY_VISITING_THE_FOLLOWING_WEBSITE_HTTP_TRULY_FREE_LINEAGE2_COM_PATH_LOG_IN_WITH_YOUR_LINEAGE_II_ACCOUNT_AND_CLAIM_THE_REWARDS_WHEN_YOU_REACH_EACH_MILESTONE_DON_T_MISS_OUT;
+	public static SystemMessageId PATH_TO_AWAKENING_BR_IF_YOU_ARE_A_NEW_PLAYER_YOU_CAN_EARN_FREE_REWARDS_AS_YOU_LEVEL_UP_BY_VISITING_THE_FOLLOWING_WEBSITE_HTTP_TRULY_FREE_LINEAGE2_COM_PATH_LOG_IN_WITH_YOUR_LINEAGE_II_ACCOUNT_AND_CLAIM_THE_REWARDS_WHEN_YOU_REACH_EACH_MILESTONE_DON_T_MISS_OUT;
 	
 	@ClientString(id = 4083, message = "Welcome to Lineage II!(br)Please select a character you can use for free, or purchase a Lineage II play pass.")
 	public static SystemMessageId WELCOME_TO_LINEAGE_II_BR_PLEASE_SELECT_A_CHARACTER_YOU_CAN_USE_FOR_FREE_OR_PURCHASE_A_LINEAGE_II_PLAY_PASS;
@@ -11716,7 +11716,7 @@ public final class SystemMessageId
 	public static SystemMessageId NOT_IN_USE_NEW_ADDITIONAL_POSSIBLE_FIELD;
 	
 	@ClientString(id = 4136, message = "Your personal information collection and usage matters have been changed to adhere to the rules regarding the promotion of usage of the information network system and information protection. After checking the changes, please agree to the collection and usage of the personal information.(br)(font color='#FFDF5F')(If you do not agree, service usage may become limited effective 2/06/2013. Please refer to the personal information treatment (handling) policy on the webpage for further details.)(/font)")
-	public static SystemMessageId YOUR_PERSONAL_INFORMATION_COLLECTION_AND_USAGE_MATTERS_HAVE_BEEN_CHANGED_TO_ADHERE_TO_THE_RULES_REGARDING_THE_PROMOTION_OF_USAGE_OF_THE_INFORMATION_NETWORK_SYSTEM_AND_INFORMATION_PROTECTION_AFTER_CHECKING_THE_CHANGES_PLEASE_AGREE_TO_THE_COLLECTION_AND_USAGE_OF_THE_PERSONAL_INFORMATION_BR_FONT_COLOR_FFDF5F_IF_YOU_DO_NOT_AGREE_SERVICE_USAGE_MAY_BECOME_LIMITED_EFFECTIVE_2_06_2013_PLEASE_REFER_TO_THE_PERSONAL_INFORMATION_TREATMENT_HANDLING_POLICY_ON_THE_WEBPAGE_FOR_FURTHER_DETAILS_FONT;
+	public static SystemMessageId YOUR_PERSONAL_INFORMATION_COLLECTION_AND_USAGE_MATTERS_HAVE_BEEN_CHANGED_TO_ADHERE_TO_THE_RULES_REGARDING_THE_PROMOTION_OF_USAGE_OF_THE_INFORMATION_NETWORK_SYSTEM_AND_INFORMATION_PROTECTION_AFTER_CHECKING_THE_CHANGES_PLEASE_AGREE_TO_THE_COLLECTION_AND_USAGE_OF_THE_PERSONAL_INFORMATION_BR_IF_YOU_DO_NOT_AGREE_SERVICE_USAGE_MAY_BECOME_LIMITED_EFFECTIVE_2_06_2013_PLEASE_REFER_TO_THE_PERSONAL_INFORMATION_TREATMENT_HANDLING_POLICY_ON_THE_WEBPAGE_FOR_FURTHER_DETAILS;
 	
 	@ClientString(id = 4137, message = "Characters cannot receive requested payment while teleporting between dimensions. Please try again later.")
 	public static SystemMessageId CHARACTERS_CANNOT_RECEIVE_REQUESTED_PAYMENT_WHILE_TELEPORTING_BETWEEN_DIMENSIONS_PLEASE_TRY_AGAIN_LATER;
@@ -13021,124 +13021,124 @@ public final class SystemMessageId
 	public static SystemMessageId FINISH_EDITING_WITHOUT_SAVING_CHANGES;
 	
 	@ClientString(id = 5000, message = "Your account has been restricted due to an account theft issue. If you have an email address registered to your account information, please check your inbox for an email message with details. If you have no direct connection to account theft, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)) and file a petition. For more details, please visit (font color='#FFDF4C')1:1 Customer Service Center(/font).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_AN_ACCOUNT_THEFT_ISSUE_IF_YOU_HAVE_AN_EMAIL_ADDRESS_REGISTERED_TO_YOUR_ACCOUNT_INFORMATION_PLEASE_CHECK_YOUR_INBOX_FOR_AN_EMAIL_MESSAGE_WITH_DETAILS_IF_YOU_HAVE_NO_DIRECT_CONNECTION_TO_ACCOUNT_THEFT_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT_AND_FILE_A_PETITION_FOR_MORE_DETAILS_PLEASE_VISIT_FONT_COLOR_FFDF4C_1_1_CUSTOMER_SERVICE_CENTER_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_AN_ACCOUNT_THEFT_ISSUE_IF_YOU_HAVE_AN_EMAIL_ADDRESS_REGISTERED_TO_YOUR_ACCOUNT_INFORMATION_PLEASE_CHECK_YOUR_INBOX_FOR_AN_EMAIL_MESSAGE_WITH_DETAILS_IF_YOU_HAVE_NO_DIRECT_CONNECTION_TO_ACCOUNT_THEFT_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM_AND_FILE_A_PETITION_FOR_MORE_DETAILS_PLEASE_VISIT_1_1_CUSTOMER_SERVICE_CENTER;
 	
 	@ClientString(id = 5001, message = "Your account has been restricted in accordance with our terms of service due to your confirmed fraudulent report. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_CONFIRMED_FRAUDULENT_REPORT_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_CONFIRMED_FRAUDULENT_REPORT_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5002, message = "Your account has been restricted in accordance with our terms of service as you failed to verify your identity within a given time after an account theft report. You may  undo the restriction by visiting the (font color='#FFDF4C')Lineage II Support Website((/font)(font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)(font color='#FFDF4C')) 1:1 Customer Service Center(font color='#FFDF4C')) Support Center(/font) and going through the personal verification process in the account theft report. For more details, please visit (font color='#FFDF4C')1:1 Customer Service Center(/font).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_AS_YOU_FAILED_TO_VERIFY_YOUR_IDENTITY_WITHIN_A_GIVEN_TIME_AFTER_AN_ACCOUNT_THEFT_REPORT_YOU_MAY_UNDO_THE_RESTRICTION_BY_VISITING_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT_FONT_COLOR_FFDF4C_1_1_CUSTOMER_SERVICE_CENTER_FONT_COLOR_FFDF4C_SUPPORT_CENTER_FONT_AND_GOING_THROUGH_THE_PERSONAL_VERIFICATION_PROCESS_IN_THE_ACCOUNT_THEFT_REPORT_FOR_MORE_DETAILS_PLEASE_VISIT_FONT_COLOR_FFDF4C_1_1_CUSTOMER_SERVICE_CENTER_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_AS_YOU_FAILED_TO_VERIFY_YOUR_IDENTITY_WITHIN_A_GIVEN_TIME_AFTER_AN_ACCOUNT_THEFT_REPORT_YOU_MAY_UNDO_THE_RESTRICTION_BY_VISITING_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM_1_1_CUSTOMER_SERVICE_CENTER_SUPPORT_CENTER_AND_GOING_THROUGH_THE_PERSONAL_VERIFICATION_PROCESS_IN_THE_ACCOUNT_THEFT_REPORT_FOR_MORE_DETAILS_PLEASE_VISIT_1_1_CUSTOMER_SERVICE_CENTER;
 	
 	@ClientString(id = 5003, message = "Your account has been restricted due to your abuse of game systems that resulted in damage to other players' gaming experience. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_ABUSE_OF_GAME_SYSTEMS_THAT_RESULTED_IN_DAMAGE_TO_OTHER_PLAYERS_GAMING_EXPERIENCE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_ABUSE_OF_GAME_SYSTEMS_THAT_RESULTED_IN_DAMAGE_TO_OTHER_PLAYERS_GAMING_EXPERIENCE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5004, message = "Your account has been restricted in accordance with our terms of service due to your selling, or attempting to sell, in-game goods or characters (account) for cash/real goods/goods from  another game. Your account is under suspension for 7 days since the date of exposure as decreed by the EULA, Section 3, Article 14. The account restriction will automatically be lifted after 7 days. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_SELLING_OR_ATTEMPTING_TO_SELL_IN_GAME_GOODS_OR_CHARACTERS_ACCOUNT_FOR_CASH_REAL_GOODS_GOODS_FROM_ANOTHER_GAME_YOUR_ACCOUNT_IS_UNDER_SUSPENSION_FOR_7_DAYS_SINCE_THE_DATE_OF_EXPOSURE_AS_DECREED_BY_THE_EULA_SECTION_3_ARTICLE_14_THE_ACCOUNT_RESTRICTION_WILL_AUTOMATICALLY_BE_LIFTED_AFTER_7_DAYS_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_SELLING_OR_ATTEMPTING_TO_SELL_IN_GAME_GOODS_OR_CHARACTERS_ACCOUNT_FOR_CASH_REAL_GOODS_GOODS_FROM_ANOTHER_GAME_YOUR_ACCOUNT_IS_UNDER_SUSPENSION_FOR_7_DAYS_SINCE_THE_DATE_OF_EXPOSURE_AS_DECREED_BY_THE_EULA_SECTION_3_ARTICLE_14_THE_ACCOUNT_RESTRICTION_WILL_AUTOMATICALLY_BE_LIFTED_AFTER_7_DAYS_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5005, message = "Your account has been restricted in accordance with our terms of service due to your selling, or attempting to sell, in-game goods or characters (account) for cash/real goods/goods from another game. Your account is restricted as decreed by the EULA, Section 3, Article 14. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_SELLING_OR_ATTEMPTING_TO_SELL_IN_GAME_GOODS_OR_CHARACTERS_ACCOUNT_FOR_CASH_REAL_GOODS_GOODS_FROM_ANOTHER_GAME_YOUR_ACCOUNT_IS_RESTRICTED_AS_DECREED_BY_THE_EULA_SECTION_3_ARTICLE_14_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_SELLING_OR_ATTEMPTING_TO_SELL_IN_GAME_GOODS_OR_CHARACTERS_ACCOUNT_FOR_CASH_REAL_GOODS_GOODS_FROM_ANOTHER_GAME_YOUR_ACCOUNT_IS_RESTRICTED_AS_DECREED_BY_THE_EULA_SECTION_3_ARTICLE_14_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5006, message = "Your account has been restricted in accordance with our terms of service due to misconduct or fraud. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_MISCONDUCT_OR_FRAUD_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_MISCONDUCT_OR_FRAUD_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5007, message = "Your account has been restricted due to misconduct. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_MISCONDUCT_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_MISCONDUCT_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5008, message = "Your account has been restricted due to your abuse of system weaknesses or bugs. Abusing bugs can cause grievous system errors or destroy the game balance. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_ABUSE_OF_SYSTEM_WEAKNESSES_OR_BUGS_ABUSING_BUGS_CAN_CAUSE_GRIEVOUS_SYSTEM_ERRORS_OR_DESTROY_THE_GAME_BALANCE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_ABUSE_OF_SYSTEM_WEAKNESSES_OR_BUGS_ABUSING_BUGS_CAN_CAUSE_GRIEVOUS_SYSTEM_ERRORS_OR_DESTROY_THE_GAME_BALANCE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5009, message = "Your account has been restricted due to your use of illegal programs. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_USE_OF_ILLEGAL_PROGRAMS_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_USE_OF_ILLEGAL_PROGRAMS_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5010, message = "Your account has been restricted in accordance with our terms of service due to your confirmed abuse of in-game systems resulting in abnormal gameplay. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_CONFIRMED_ABUSE_OF_IN_GAME_SYSTEMS_RESULTING_IN_ABNORMAL_GAMEPLAY_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_CONFIRMED_ABUSE_OF_IN_GAME_SYSTEMS_RESULTING_IN_ABNORMAL_GAMEPLAY_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5011, message = "Your account has been restricted at your request in accordance with our terms of service. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_AT_YOUR_REQUEST_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_AT_YOUR_REQUEST_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5012, message = "Your account has been restricted in accordance with our terms of service due to your confirmed attempts at misconduct or fraud. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_CONFIRMED_ATTEMPTS_AT_MISCONDUCT_OR_FRAUD_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_CONFIRMED_ATTEMPTS_AT_MISCONDUCT_OR_FRAUD_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5013, message = "Your account has been restricted in accordance with our terms of service due to your fraudulent use of another person's identity. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_FRAUDULENT_USE_OF_ANOTHER_PERSON_S_IDENTITY_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_FRAUDULENT_USE_OF_ANOTHER_PERSON_S_IDENTITY_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5014, message = "Your account has been restricted in accordance with our terms of service due to your fraudulent transactions under another person's identity. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_FRAUDULENT_TRANSACTIONS_UNDER_ANOTHER_PERSON_S_IDENTITY_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_FRAUDULENT_TRANSACTIONS_UNDER_ANOTHER_PERSON_S_IDENTITY_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5015, message = "Your account has been restricted in accordance with our terms of service due to your confirmed in-game gambling activities. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_CONFIRMED_IN_GAME_GAMBLING_ACTIVITIES_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_CONFIRMED_IN_GAME_GAMBLING_ACTIVITIES_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5016, message = "For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5017, message = "Please inquire through the (font color='#FFDF4C')Lineage II Customer Service Center(/font) or the (font color='#FFDF4C')1:1 support(/font) in the official website.")
-	public static SystemMessageId PLEASE_INQUIRE_THROUGH_THE_FONT_COLOR_FFDF4C_LINEAGE_II_CUSTOMER_SERVICE_CENTER_FONT_OR_THE_FONT_COLOR_FFDF4C_1_1_SUPPORT_FONT_IN_THE_OFFICIAL_WEBSITE;
+	public static SystemMessageId PLEASE_INQUIRE_THROUGH_THE_LINEAGE_II_CUSTOMER_SERVICE_CENTER_OR_THE_1_1_SUPPORT_IN_THE_OFFICIAL_WEBSITE;
 	
 	@ClientString(id = 5018, message = "In order to play Lineage II, you must be (font color='#FFDF4C')Ages 15 or above(/font). You must be (font color='#FFDF4C')18 or above(/font) in order to use the PvP servers.")
-	public static SystemMessageId IN_ORDER_TO_PLAY_LINEAGE_II_YOU_MUST_BE_FONT_COLOR_FFDF4C_AGES_15_OR_ABOVE_FONT_YOU_MUST_BE_FONT_COLOR_FFDF4C_18_OR_ABOVE_FONT_IN_ORDER_TO_USE_THE_PVP_SERVERS;
+	public static SystemMessageId IN_ORDER_TO_PLAY_LINEAGE_II_YOU_MUST_BE_AGES_15_OR_ABOVE_YOU_MUST_BE_18_OR_ABOVE_IN_ORDER_TO_USE_THE_PVP_SERVERS;
 	
 	@ClientString(id = 5019, message = "To create a new account, please visit the (font color='#FFDF4C')Lineage II Website (/font)(font color='#6699FF')((a href='asfunction:homePage')https://login.lineage2.com/login/loginform(/a))(/font) and click on the New Account Creation link.")
-	public static SystemMessageId TO_CREATE_A_NEW_ACCOUNT_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_LOGIN_LINEAGE2_COM_LOGIN_LOGINFORM_A_FONT_AND_CLICK_ON_THE_NEW_ACCOUNT_CREATION_LINK;
+	public static SystemMessageId TO_CREATE_A_NEW_ACCOUNT_PLEASE_VISIT_THE_LINEAGE_II_WEBSITE_HTTPS_LOGIN_LINEAGE2_COM_LOGIN_LOGINFORM_AND_CLICK_ON_THE_NEW_ACCOUNT_CREATION_LINK;
 	
 	@ClientString(id = 5020, message = "If you have lost your account, please visit the  (font color='#FFDF4C')Lineage II Website (/font)(font color='#6699FF')((a href='asfunction:homePage')https://login.lineage2.com/login/loginform(/a))(/font) and click on the Support link at the bottom of the page.")
-	public static SystemMessageId IF_YOU_HAVE_LOST_YOUR_ACCOUNT_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_LOGIN_LINEAGE2_COM_LOGIN_LOGINFORM_A_FONT_AND_CLICK_ON_THE_SUPPORT_LINK_AT_THE_BOTTOM_OF_THE_PAGE;
+	public static SystemMessageId IF_YOU_HAVE_LOST_YOUR_ACCOUNT_PLEASE_VISIT_THE_LINEAGE_II_WEBSITE_HTTPS_LOGIN_LINEAGE2_COM_LOGIN_LOGINFORM_AND_CLICK_ON_THE_SUPPORT_LINK_AT_THE_BOTTOM_OF_THE_PAGE;
 	
 	@ClientString(id = 5021, message = "Users who did not complete the (font color='#FFDF4C')Age 18 Verification(/font) may not login between (font color='#FFDF4C')10PM(/font) and (font color='#FFDF4C')6AM(/font) the next day.")
-	public static SystemMessageId USERS_WHO_DID_NOT_COMPLETE_THE_FONT_COLOR_FFDF4C_AGE_18_VERIFICATION_FONT_MAY_NOT_LOGIN_BETWEEN_FONT_COLOR_FFDF4C_10PM_FONT_AND_FONT_COLOR_FFDF4C_6AM_FONT_THE_NEXT_DAY;
+	public static SystemMessageId USERS_WHO_DID_NOT_COMPLETE_THE_AGE_18_VERIFICATION_MAY_NOT_LOGIN_BETWEEN_10PM_AND_6AM_THE_NEXT_DAY;
 	
 	@ClientString(id = 5022, message = "Please verify your identity to confirm your ownership of your account.  You may go through the verification process by visiting the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId PLEASE_VERIFY_YOUR_IDENTITY_TO_CONFIRM_YOUR_OWNERSHIP_OF_YOUR_ACCOUNT_YOU_MAY_GO_THROUGH_THE_VERIFICATION_PROCESS_BY_VISITING_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId PLEASE_VERIFY_YOUR_IDENTITY_TO_CONFIRM_YOUR_OWNERSHIP_OF_YOUR_ACCOUNT_YOU_MAY_GO_THROUGH_THE_VERIFICATION_PROCESS_BY_VISITING_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5023, message = "Your account has been restricted due to your confirmed attempt at trade involving cash/other servers/other games. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_CONFIRMED_ATTEMPT_AT_TRADE_INVOLVING_CASH_OTHER_SERVERS_OTHER_GAMES_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_CONFIRMED_ATTEMPT_AT_TRADE_INVOLVING_CASH_OTHER_SERVERS_OTHER_GAMES_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5024, message = "Your account has been restricted in accordance with an official request from an investigative agency (private law). This action was taken because the official request from the investigative agency has legal force. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_AN_OFFICIAL_REQUEST_FROM_AN_INVESTIGATIVE_AGENCY_PRIVATE_LAW_THIS_ACTION_WAS_TAKEN_BECAUSE_THE_OFFICIAL_REQUEST_FROM_THE_INVESTIGATIVE_AGENCY_HAS_LEGAL_FORCE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_AN_OFFICIAL_REQUEST_FROM_AN_INVESTIGATIVE_AGENCY_PRIVATE_LAW_THIS_ACTION_WAS_TAKEN_BECAUSE_THE_OFFICIAL_REQUEST_FROM_THE_INVESTIGATIVE_AGENCY_HAS_LEGAL_FORCE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5025, message = "Your account has been temporarily restricted due to acquisition of an item connected to account theft. Please visit the homepage and go through the personal verification process to lift the restriction. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_TEMPORARILY_RESTRICTED_DUE_TO_ACQUISITION_OF_AN_ITEM_CONNECTED_TO_ACCOUNT_THEFT_PLEASE_VISIT_THE_HOMEPAGE_AND_GO_THROUGH_THE_PERSONAL_VERIFICATION_PROCESS_TO_LIFT_THE_RESTRICTION_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_TEMPORARILY_RESTRICTED_DUE_TO_ACQUISITION_OF_AN_ITEM_CONNECTED_TO_ACCOUNT_THEFT_PLEASE_VISIT_THE_HOMEPAGE_AND_GO_THROUGH_THE_PERSONAL_VERIFICATION_PROCESS_TO_LIFT_THE_RESTRICTION_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5026, message = "Your account has been restricted due to your confirmed trade history involving cash/other servers/other games.  For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_CONFIRMED_TRADE_HISTORY_INVOLVING_CASH_OTHER_SERVERS_OTHER_GAMES_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_CONFIRMED_TRADE_HISTORY_INVOLVING_CASH_OTHER_SERVERS_OTHER_GAMES_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5027, message = "Your account has been restricted due to your confirmed cash/account trade activities. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_CONFIRMED_CASH_ACCOUNT_TRADE_ACTIVITIES_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_CONFIRMED_CASH_ACCOUNT_TRADE_ACTIVITIES_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5028, message = "You cannot use the game services as your identity has not been verified. Please the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)) and go to (font color='#FFDF4C'))(/font) to verify your identity. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOU_CANNOT_USE_THE_GAME_SERVICES_AS_YOUR_IDENTITY_HAS_NOT_BEEN_VERIFIED_PLEASE_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT_AND_GO_TO_FONT_COLOR_FFDF4C_FONT_TO_VERIFY_YOUR_IDENTITY_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOU_CANNOT_USE_THE_GAME_SERVICES_AS_YOUR_IDENTITY_HAS_NOT_BEEN_VERIFIED_PLEASE_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5029, message = "Your current account is inactive. If you do not log into the game for a period of time, your account turns into an inactive account.  You may convert your account to an active account by visiting the (font color='#FFDF4C')Lineage II Support Website((/font)(font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)(font color='#FFDF4C')) 1:1 Customer Service Center.")
-	public static SystemMessageId YOUR_CURRENT_ACCOUNT_IS_INACTIVE_IF_YOU_DO_NOT_LOG_INTO_THE_GAME_FOR_A_PERIOD_OF_TIME_YOUR_ACCOUNT_TURNS_INTO_AN_INACTIVE_ACCOUNT_YOU_MAY_CONVERT_YOUR_ACCOUNT_TO_AN_ACTIVE_ACCOUNT_BY_VISITING_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT_FONT_COLOR_FFDF4C_1_1_CUSTOMER_SERVICE_CENTER;
+	public static SystemMessageId YOUR_CURRENT_ACCOUNT_IS_INACTIVE_IF_YOU_DO_NOT_LOG_INTO_THE_GAME_FOR_A_PERIOD_OF_TIME_YOUR_ACCOUNT_TURNS_INTO_AN_INACTIVE_ACCOUNT_YOU_MAY_CONVERT_YOUR_ACCOUNT_TO_AN_ACTIVE_ACCOUNT_BY_VISITING_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM_1_1_CUSTOMER_SERVICE_CENTER;
 	
 	@ClientString(id = 5030, message = "(font color='#FFDF4C')Logging in.(/font)Please wait.")
-	public static SystemMessageId FONT_COLOR_FFDF4C_LOGGING_IN_FONT_PLEASE_WAIT;
+	public static SystemMessageId LOGGING_IN_PLEASE_WAIT;
 	
 	@ClientString(id = 5031, message = "The account has been temporarily restricted due to an incomplete cell phone (ARS) transaction. For more information, please visit http://us.ncsoft.com/en/.")
 	public static SystemMessageId THE_ACCOUNT_HAS_BEEN_TEMPORARILY_RESTRICTED_DUE_TO_AN_INCOMPLETE_CELL_PHONE_ARS_TRANSACTION_FOR_MORE_INFORMATION_PLEASE_VISIT_HTTP_US_NCSOFT_COM_EN;
 	
 	@ClientString(id = 5032, message = "Your account has not yet been authenticated. Please visit the (font color='#FFDF4C')homepage((/font)(font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com)(/a)(/font) and confirm your account authentication.")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_NOT_YET_BEEN_AUTHENTICATED_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_HOMEPAGE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT_AND_CONFIRM_YOUR_ACCOUNT_AUTHENTICATION;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_NOT_YET_BEEN_AUTHENTICATED_PLEASE_VISIT_THE_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_AND_CONFIRM_YOUR_ACCOUNT_AUTHENTICATION;
 	
 	@ClientString(id = 5033, message = "Your account has not completed the (font color='#FFDF4C')Parental Agreement(/font).(br) Please complete the (font color='#FFDF4C')Parental Agreement(/font) before logging in.")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_NOT_COMPLETED_THE_FONT_COLOR_FFDF4C_PARENTAL_AGREEMENT_FONT_BR_PLEASE_COMPLETE_THE_FONT_COLOR_FFDF4C_PARENTAL_AGREEMENT_FONT_BEFORE_LOGGING_IN;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_NOT_COMPLETED_THE_PARENTAL_AGREEMENT_BR_PLEASE_COMPLETE_THE_PARENTAL_AGREEMENT_BEFORE_LOGGING_IN;
 	
 	@ClientString(id = 5034, message = "This account has declined the User Agreement or has requested for membership withdrawal.  Please try again after (br)(font color='#FFDF4C')cancelling the Game Agreement declination(/font) or (font color='#FFDF4C')cancelling the membership withdrawal request(/font).")
-	public static SystemMessageId THIS_ACCOUNT_HAS_DECLINED_THE_USER_AGREEMENT_OR_HAS_REQUESTED_FOR_MEMBERSHIP_WITHDRAWAL_PLEASE_TRY_AGAIN_AFTER_BR_FONT_COLOR_FFDF4C_CANCELLING_THE_GAME_AGREEMENT_DECLINATION_FONT_OR_FONT_COLOR_FFDF4C_CANCELLING_THE_MEMBERSHIP_WITHDRAWAL_REQUEST_FONT;
+	public static SystemMessageId THIS_ACCOUNT_HAS_DECLINED_THE_USER_AGREEMENT_OR_HAS_REQUESTED_FOR_MEMBERSHIP_WITHDRAWAL_PLEASE_TRY_AGAIN_AFTER_BR_CANCELLING_THE_GAME_AGREEMENT_DECLINATION_OR_CANCELLING_THE_MEMBERSHIP_WITHDRAWAL_REQUEST;
 	
 	@ClientString(id = 5035, message = "All permissions on your account are restricted. (br)Please go to http://us.ncsoft.com/en/ for details.")
 	public static SystemMessageId ALL_PERMISSIONS_ON_YOUR_ACCOUNT_ARE_RESTRICTED_BR_PLEASE_GO_TO_HTTP_US_NCSOFT_COM_EN_FOR_DETAILS;
 	
 	@ClientString(id = 5036, message = "Please inquire through the (font color='#FFDF4C')Lineage II Support Website((/font)(font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)(font color='#FFDF4C')) 1:1 Customer Service Center(font color='#FFDF4C')) Customer Service Center(/font).")
-	public static SystemMessageId PLEASE_INQUIRE_THROUGH_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT_FONT_COLOR_FFDF4C_1_1_CUSTOMER_SERVICE_CENTER_FONT_COLOR_FFDF4C_CUSTOMER_SERVICE_CENTER_FONT;
+	public static SystemMessageId PLEASE_INQUIRE_THROUGH_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM_1_1_CUSTOMER_SERVICE_CENTER_CUSTOMER_SERVICE_CENTER;
 	
 	@ClientString(id = 5037, message = "You can no longer log in as your account has been converted to (font color='#FFDF4C')Unified Account(/font). (br)Please try again through the (font color='#FFDF4C')Unified Account(/font).")
-	public static SystemMessageId YOU_CAN_NO_LONGER_LOG_IN_AS_YOUR_ACCOUNT_HAS_BEEN_CONVERTED_TO_FONT_COLOR_FFDF4C_UNIFIED_ACCOUNT_FONT_BR_PLEASE_TRY_AGAIN_THROUGH_THE_FONT_COLOR_FFDF4C_UNIFIED_ACCOUNT_FONT;
+	public static SystemMessageId YOU_CAN_NO_LONGER_LOG_IN_AS_YOUR_ACCOUNT_HAS_BEEN_CONVERTED_TO_UNIFIED_ACCOUNT_BR_PLEASE_TRY_AGAIN_THROUGH_THE_UNIFIED_ACCOUNT;
 	
 	@ClientString(id = 5038, message = "You must change your password and secret question in order to log in. Please the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)) and (font color='#FFDF4C')change the password and secret question(/font).")
-	public static SystemMessageId YOU_MUST_CHANGE_YOUR_PASSWORD_AND_SECRET_QUESTION_IN_ORDER_TO_LOG_IN_PLEASE_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT_AND_FONT_COLOR_FFDF4C_CHANGE_THE_PASSWORD_AND_SECRET_QUESTION_FONT;
+	public static SystemMessageId YOU_MUST_CHANGE_YOUR_PASSWORD_AND_SECRET_QUESTION_IN_ORDER_TO_LOG_IN_PLEASE_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM_AND_CHANGE_THE_PASSWORD_AND_SECRET_QUESTION;
 	
 	@ClientString(id = 5039, message = "Your account has been restricted due to your use of illegal programs. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_USE_OF_ILLEGAL_PROGRAMS_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT2;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_USE_OF_ILLEGAL_PROGRAMS_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM2;
 	
 	@ClientString(id = 5040, message = "Your account has been restricted due to your confirmed abuse of a bug pertaining to the NCoin. For more information, please visit http://us.ncsoft.com/en/.")
 	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_CONFIRMED_ABUSE_OF_A_BUG_PERTAINING_TO_THE_NCOIN_FOR_MORE_INFORMATION_PLEASE_VISIT_HTTP_US_NCSOFT_COM_EN2;
@@ -13147,73 +13147,73 @@ public final class SystemMessageId
 	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_CONFIRMED_ABUSE_OF_FREE_NCOIN_FOR_MORE_INFORMATION_PLEASE_VISIT_HTTP_US_NCSOFT_COM_EN2;
 	
 	@ClientString(id = 5042, message = "Your account has been temporarily denied all game services due to connections with account registration done by means of identity theft. If you have no connection to the issue, please go through the personal verification process.  For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_TEMPORARILY_DENIED_ALL_GAME_SERVICES_DUE_TO_CONNECTIONS_WITH_ACCOUNT_REGISTRATION_DONE_BY_MEANS_OF_IDENTITY_THEFT_IF_YOU_HAVE_NO_CONNECTION_TO_THE_ISSUE_PLEASE_GO_THROUGH_THE_PERSONAL_VERIFICATION_PROCESS_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_TEMPORARILY_DENIED_ALL_GAME_SERVICES_DUE_TO_CONNECTIONS_WITH_ACCOUNT_REGISTRATION_DONE_BY_MEANS_OF_IDENTITY_THEFT_IF_YOU_HAVE_NO_CONNECTION_TO_THE_ISSUE_PLEASE_GO_THROUGH_THE_PERSONAL_VERIFICATION_PROCESS_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5043, message = "Your account has been denied all game services due to transaction fraud. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_DENIED_ALL_GAME_SERVICES_DUE_TO_TRANSACTION_FRAUD_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_DENIED_ALL_GAME_SERVICES_DUE_TO_TRANSACTION_FRAUD_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5044, message = "your account has been denied all game services due to your confirmed account trade history. (br)For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_DENIED_ALL_GAME_SERVICES_DUE_TO_YOUR_CONFIRMED_ACCOUNT_TRADE_HISTORY_BR_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_DENIED_ALL_GAME_SERVICES_DUE_TO_YOUR_CONFIRMED_ACCOUNT_TRADE_HISTORY_BR_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5045, message = "Your account has been restricted for a duration of 10 days due to your use of illegal programs. All game services are denied for the aforementioned period, and a repeated offense will result in a permanent ban. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_FOR_A_DURATION_OF_10_DAYS_DUE_TO_YOUR_USE_OF_ILLEGAL_PROGRAMS_ALL_GAME_SERVICES_ARE_DENIED_FOR_THE_AFOREMENTIONED_PERIOD_AND_A_REPEATED_OFFENSE_WILL_RESULT_IN_A_PERMANENT_BAN_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_FOR_A_DURATION_OF_10_DAYS_DUE_TO_YOUR_USE_OF_ILLEGAL_PROGRAMS_ALL_GAME_SERVICES_ARE_DENIED_FOR_THE_AFOREMENTIONED_PERIOD_AND_A_REPEATED_OFFENSE_WILL_RESULT_IN_A_PERMANENT_BAN_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5046, message = "Your account has been denied all game services due to your confirmed use of illegal programs. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_DENIED_ALL_GAME_SERVICES_DUE_TO_YOUR_CONFIRMED_USE_OF_ILLEGAL_PROGRAMS_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_DENIED_ALL_GAME_SERVICES_DUE_TO_YOUR_CONFIRMED_USE_OF_ILLEGAL_PROGRAMS_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5047, message = "Your account has been denied all game services due to your confirmed use of illegal programs. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_DENIED_ALL_GAME_SERVICES_DUE_TO_YOUR_CONFIRMED_USE_OF_ILLEGAL_PROGRAMS_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT2;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_DENIED_ALL_GAME_SERVICES_DUE_TO_YOUR_CONFIRMED_USE_OF_ILLEGAL_PROGRAMS_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM2;
 	
 	@ClientString(id = 5048, message = "Your account has been denied all game service at your request. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_DENIED_ALL_GAME_SERVICE_AT_YOUR_REQUEST_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_DENIED_ALL_GAME_SERVICE_AT_YOUR_REQUEST_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5049, message = "Your account has been restricted due to frequent posting of inappropriate content. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_FREQUENT_POSTING_OF_INAPPROPRIATE_CONTENT_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_FREQUENT_POSTING_OF_INAPPROPRIATE_CONTENT_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5050, message = "Your account has been restricted due to a confirmed post in violation of the law. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_A_CONFIRMED_POST_IN_VIOLATION_OF_THE_LAW_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_A_CONFIRMED_POST_IN_VIOLATION_OF_THE_LAW_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5051, message = "Your account has been denied all game services due to your confirmed use of the game for commercial purposes. For more details, please visit (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_DENIED_ALL_GAME_SERVICES_DUE_TO_YOUR_CONFIRMED_USE_OF_THE_GAME_FOR_COMMERCIAL_PURPOSES_FOR_MORE_DETAILS_PLEASE_VISIT_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_DENIED_ALL_GAME_SERVICES_DUE_TO_YOUR_CONFIRMED_USE_OF_THE_GAME_FOR_COMMERCIAL_PURPOSES_FOR_MORE_DETAILS_PLEASE_VISIT_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5052, message = "You have entered (font color='#FFDF4C')Regular Server(/font).")
-	public static SystemMessageId YOU_HAVE_ENTERED_FONT_COLOR_FFDF4C_REGULAR_SERVER_FONT;
+	public static SystemMessageId YOU_HAVE_ENTERED_REGULAR_SERVER;
 	
 	@ClientString(id = 5053, message = "You have entered (font color='#FFDF4C')Adult Server(/font).")
-	public static SystemMessageId YOU_HAVE_ENTERED_FONT_COLOR_FFDF4C_ADULT_SERVER_FONT;
+	public static SystemMessageId YOU_HAVE_ENTERED_ADULT_SERVER;
 	
 	@ClientString(id = 5054, message = "You have entered (font color='#FFDF4C')Teenage Server(/font).")
-	public static SystemMessageId YOU_HAVE_ENTERED_FONT_COLOR_FFDF4C_TEENAGE_SERVER_FONT;
+	public static SystemMessageId YOU_HAVE_ENTERED_TEENAGE_SERVER;
 	
 	@ClientString(id = 5055, message = "You cannot do that because of (font color='#FFDF4C')Fatigue(/font).")
-	public static SystemMessageId YOU_CANNOT_DO_THAT_BECAUSE_OF_FONT_COLOR_FFDF4C_FATIGUE_FONT;
+	public static SystemMessageId YOU_CANNOT_DO_THAT_BECAUSE_OF_FATIGUE;
 	
 	@ClientString(id = 5056, message = "Your account has been put on standby for personal verification due to its speculated registration under someone else's identity. If  this is not the case, please visit the website and go through the personal verification process to lift the restriction. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_PUT_ON_STANDBY_FOR_PERSONAL_VERIFICATION_DUE_TO_ITS_SPECULATED_REGISTRATION_UNDER_SOMEONE_ELSE_S_IDENTITY_IF_THIS_IS_NOT_THE_CASE_PLEASE_VISIT_THE_WEBSITE_AND_GO_THROUGH_THE_PERSONAL_VERIFICATION_PROCESS_TO_LIFT_THE_RESTRICTION_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_PUT_ON_STANDBY_FOR_PERSONAL_VERIFICATION_DUE_TO_ITS_SPECULATED_REGISTRATION_UNDER_SOMEONE_ELSE_S_IDENTITY_IF_THIS_IS_NOT_THE_CASE_PLEASE_VISIT_THE_WEBSITE_AND_GO_THROUGH_THE_PERSONAL_VERIFICATION_PROCESS_TO_LIFT_THE_RESTRICTION_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5057, message = "Your account has been denied all game services due to its confirmed registration under someone else's identity.  For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_DENIED_ALL_GAME_SERVICES_DUE_TO_ITS_CONFIRMED_REGISTRATION_UNDER_SOMEONE_ELSE_S_IDENTITY_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_DENIED_ALL_GAME_SERVICES_DUE_TO_ITS_CONFIRMED_REGISTRATION_UNDER_SOMEONE_ELSE_S_IDENTITY_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5058, message = "Your account has been temporarily restricted due to your speculated abnormal methods of gameplay. If you did not employ abnormal means to play the game, please visit the website and go through the personal verification process to lift the restriction. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_TEMPORARILY_RESTRICTED_DUE_TO_YOUR_SPECULATED_ABNORMAL_METHODS_OF_GAMEPLAY_IF_YOU_DID_NOT_EMPLOY_ABNORMAL_MEANS_TO_PLAY_THE_GAME_PLEASE_VISIT_THE_WEBSITE_AND_GO_THROUGH_THE_PERSONAL_VERIFICATION_PROCESS_TO_LIFT_THE_RESTRICTION_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_TEMPORARILY_RESTRICTED_DUE_TO_YOUR_SPECULATED_ABNORMAL_METHODS_OF_GAMEPLAY_IF_YOU_DID_NOT_EMPLOY_ABNORMAL_MEANS_TO_PLAY_THE_GAME_PLEASE_VISIT_THE_WEBSITE_AND_GO_THROUGH_THE_PERSONAL_VERIFICATION_PROCESS_TO_LIFT_THE_RESTRICTION_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5059, message = "Please enter more than (font color='#FFDF4C')1 letter(/font) and less than (font color='#FFDF4C')16 letters(/font).")
-	public static SystemMessageId PLEASE_ENTER_MORE_THAN_FONT_COLOR_FFDF4C_1_LETTER_FONT_AND_LESS_THAN_FONT_COLOR_FFDF4C_16_LETTERS_FONT;
+	public static SystemMessageId PLEASE_ENTER_MORE_THAN_1_LETTER_AND_LESS_THAN_16_LETTERS;
 	
 	@ClientString(id = 5060, message = "Welcome to (font color='#FFDF4C')Lineage II(/font). Please click on the (font color='#FFDF4C')Create Character(/font) tab to go to the Character Creation screen.")
-	public static SystemMessageId WELCOME_TO_FONT_COLOR_FFDF4C_LINEAGE_II_FONT_PLEASE_CLICK_ON_THE_FONT_COLOR_FFDF4C_CREATE_CHARACTER_FONT_TAB_TO_GO_TO_THE_CHARACTER_CREATION_SCREEN;
+	public static SystemMessageId WELCOME_TO_LINEAGE_II_PLEASE_CLICK_ON_THE_CREATE_CHARACTER_TAB_TO_GO_TO_THE_CHARACTER_CREATION_SCREEN;
 	
 	@ClientString(id = 5061, message = "A character belonging to a (font color='#FFDF4C')clan(/font) may not be deleted.")
-	public static SystemMessageId A_CHARACTER_BELONGING_TO_A_FONT_COLOR_FFDF4C_CLAN_FONT_MAY_NOT_BE_DELETED;
+	public static SystemMessageId A_CHARACTER_BELONGING_TO_A_CLAN_MAY_NOT_BE_DELETED;
 	
 	@ClientString(id = 5062, message = "A (font color='#FFDF4C')Clan Leader(/font) may not be deleted. Please disband the clan and try again.")
-	public static SystemMessageId A_FONT_COLOR_FFDF4C_CLAN_LEADER_FONT_MAY_NOT_BE_DELETED_PLEASE_DISBAND_THE_CLAN_AND_TRY_AGAIN;
+	public static SystemMessageId A_CLAN_LEADER_MAY_NOT_BE_DELETED_PLEASE_DISBAND_THE_CLAN_AND_TRY_AGAIN;
 	
 	@ClientString(id = 5063, message = "A (font color='#FFDF4C')Clan Member(/font) may not be deleted. Please leave the clan and try again.")
-	public static SystemMessageId A_FONT_COLOR_FFDF4C_CLAN_MEMBER_FONT_MAY_NOT_BE_DELETED_PLEASE_LEAVE_THE_CLAN_AND_TRY_AGAIN;
+	public static SystemMessageId A_CLAN_MEMBER_MAY_NOT_BE_DELETED_PLEASE_LEAVE_THE_CLAN_AND_TRY_AGAIN;
 	
 	@ClientString(id = 5064, message = "Authentication has failed as you have entered an incorrect authentication number or did not enter the authentication number.  If you fail authentication (font color='#FFDF4C')3 times(/font) in a row, game access will be restricted for (font color='#FFDF4C')30 minutes(/font).")
-	public static SystemMessageId AUTHENTICATION_HAS_FAILED_AS_YOU_HAVE_ENTERED_AN_INCORRECT_AUTHENTICATION_NUMBER_OR_DID_NOT_ENTER_THE_AUTHENTICATION_NUMBER_IF_YOU_FAIL_AUTHENTICATION_FONT_COLOR_FFDF4C_3_TIMES_FONT_IN_A_ROW_GAME_ACCESS_WILL_BE_RESTRICTED_FOR_FONT_COLOR_FFDF4C_30_MINUTES_FONT;
+	public static SystemMessageId AUTHENTICATION_HAS_FAILED_AS_YOU_HAVE_ENTERED_AN_INCORRECT_AUTHENTICATION_NUMBER_OR_DID_NOT_ENTER_THE_AUTHENTICATION_NUMBER_IF_YOU_FAIL_AUTHENTICATION_3_TIMES_IN_A_ROW_GAME_ACCESS_WILL_BE_RESTRICTED_FOR_30_MINUTES;
 	
 	@ClientString(id = 5065, message = "An unexpected error has occured. Please contact our Customer Support Team at https://support.lineage2.com")
 	public static SystemMessageId AN_UNEXPECTED_ERROR_HAS_OCCURED_PLEASE_CONTACT_OUR_CUSTOMER_SUPPORT_TEAM_AT_HTTPS_SUPPORT_LINEAGE2_COM3;
@@ -13222,118 +13222,118 @@ public final class SystemMessageId
 	public static SystemMessageId AN_UNEXPECTED_ERROR_HAS_OCCURED_PLEASE_CONTACT_OUR_CUSTOMER_SUPPORT_TEAM_AT_HTTPS_SUPPORT_LINEAGE2_COM4;
 	
 	@ClientString(id = 5067, message = "If you fail authentication (font color='#FFDF4C')3 times(/font) in a row,  game access will be restricted for (font color='#FFDF4C')30 minutes(/font). Please try again later.")
-	public static SystemMessageId IF_YOU_FAIL_AUTHENTICATION_FONT_COLOR_FFDF4C_3_TIMES_FONT_IN_A_ROW_GAME_ACCESS_WILL_BE_RESTRICTED_FOR_FONT_COLOR_FFDF4C_30_MINUTES_FONT_PLEASE_TRY_AGAIN_LATER;
+	public static SystemMessageId IF_YOU_FAIL_AUTHENTICATION_3_TIMES_IN_A_ROW_GAME_ACCESS_WILL_BE_RESTRICTED_FOR_30_MINUTES_PLEASE_TRY_AGAIN_LATER;
 	
 	@ClientString(id = 5068, message = "To request an NC OTP service,(br)run the cell phone NC OTP service(br)and enter the displayed NC OTP number within 1 minute.(br)If you did not make the request,(br)leave this part blank,(br)and click on the login tab.")
 	public static SystemMessageId TO_REQUEST_AN_NC_OTP_SERVICE_BR_RUN_THE_CELL_PHONE_NC_OTP_SERVICE_BR_AND_ENTER_THE_DISPLAYED_NC_OTP_NUMBER_WITHIN_1_MINUTE_BR_IF_YOU_DID_NOT_MAKE_THE_REQUEST_BR_LEAVE_THIS_PART_BLANK_BR_AND_CLICK_ON_THE_LOGIN_TAB;
 	
 	@ClientString(id = 5069, message = "Please enter card number (font color='#FFDF4C')$s1(/font).")
-	public static SystemMessageId PLEASE_ENTER_CARD_NUMBER_FONT_COLOR_FFDF4C_S1_FONT;
+	public static SystemMessageId PLEASE_ENTER_CARD_NUMBER_S1;
 	
 	@ClientString(id = 5070, message = "(font size='15' color='#FFDF5F')The Lineage II server has been restructured as of 06/11/14.(/font)(br)(font size='13' color='#ABABAB')Bartz, Fehyshar(/font) → Bartz(New)(br)(font size='13' color='#ABABAB')Erica, Gustin, Teon(/font) → Sieghardt(New)(br)(font size='13' color='#ABABAB')Franz, Irene, Aria(/font) → Kain(New)")
-	public static SystemMessageId FONT_SIZE_15_COLOR_FFDF5F_THE_LINEAGE_II_SERVER_HAS_BEEN_RESTRUCTURED_AS_OF_06_11_14_FONT_BR_FONT_SIZE_13_COLOR_ABABAB_BARTZ_FEHYSHAR_FONT_BARTZ_NEW_BR_FONT_SIZE_13_COLOR_ABABAB_ERICA_GUSTIN_TEON_FONT_SIEGHARDT_NEW_BR_FONT_SIZE_13_COLOR_ABABAB_FRANZ_IRENE_ARIA_FONT_KAIN_NEW;
+	public static SystemMessageId FONT_SIZE_15_COLOR_FFDF5F_THE_LINEAGE_II_SERVER_HAS_BEEN_RESTRUCTURED_AS_OF_06_11_14_BR_FONT_SIZE_13_COLOR_ABABAB_BARTZ_FEHYSHAR_BARTZ_NEW_BR_FONT_SIZE_13_COLOR_ABABAB_ERICA_GUSTIN_TEON_SIEGHARDT_NEW_BR_FONT_SIZE_13_COLOR_ABABAB_FRANZ_IRENE_ARIA_KAIN_NEW;
 	
 	@ClientString(id = 5071, message = "(font color='#FFDF4C')We give various benefits to warriors who return after a long time.(/font)")
-	public static SystemMessageId FONT_COLOR_FFDF4C_WE_GIVE_VARIOUS_BENEFITS_TO_WARRIORS_WHO_RETURN_AFTER_A_LONG_TIME_FONT;
+	public static SystemMessageId WE_GIVE_VARIOUS_BENEFITS_TO_WARRIORS_WHO_RETURN_AFTER_A_LONG_TIME;
 	
 	@ClientString(id = 5072, message = "You can receive the benefits provided to dormant customers on (font color='#FFDF4C')Lineage II Homepage ) Dormant Membership Page(/font)((font color='#6699FF')(a href='asfunction:homePage')lineage2.plaync.co.kr/service/freecoupon/dormancy(/a)(/font)).(br)Receive benefits for dormant customers and log into the game again!")
-	public static SystemMessageId YOU_CAN_RECEIVE_THE_BENEFITS_PROVIDED_TO_DORMANT_CUSTOMERS_ON_FONT_COLOR_FFDF4C_LINEAGE_II_HOMEPAGE_DORMANT_MEMBERSHIP_PAGE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_LINEAGE2_PLAYNC_CO_KR_SERVICE_FREECOUPON_DORMANCY_A_FONT_BR_RECEIVE_BENEFITS_FOR_DORMANT_CUSTOMERS_AND_LOG_INTO_THE_GAME_AGAIN;
+	public static SystemMessageId YOU_CAN_RECEIVE_THE_BENEFITS_PROVIDED_TO_DORMANT_CUSTOMERS_ON_LINEAGE_II_HOMEPAGE_DORMANT_MEMBERSHIP_PAGE_LINEAGE2_PLAYNC_CO_KR_SERVICE_FREECOUPON_DORMANCY_BR_RECEIVE_BENEFITS_FOR_DORMANT_CUSTOMERS_AND_LOG_INTO_THE_GAME_AGAIN;
 	
 	@ClientString(id = 5300, message = "Your account has been restricted due to an account theft issue. If you have an email address registered to your account information, please check your inbox for an email message with details. If you have no direct connection to account theft, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)) and file a petition. For more details, please visit (font color='#FFDF4C')1:1 Chat in Customer Service Center(/font).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_AN_ACCOUNT_THEFT_ISSUE_IF_YOU_HAVE_AN_EMAIL_ADDRESS_REGISTERED_TO_YOUR_ACCOUNT_INFORMATION_PLEASE_CHECK_YOUR_INBOX_FOR_AN_EMAIL_MESSAGE_WITH_DETAILS_IF_YOU_HAVE_NO_DIRECT_CONNECTION_TO_ACCOUNT_THEFT_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT_AND_FILE_A_PETITION_FOR_MORE_DETAILS_PLEASE_VISIT_FONT_COLOR_FFDF4C_1_1_CHAT_IN_CUSTOMER_SERVICE_CENTER_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_AN_ACCOUNT_THEFT_ISSUE_IF_YOU_HAVE_AN_EMAIL_ADDRESS_REGISTERED_TO_YOUR_ACCOUNT_INFORMATION_PLEASE_CHECK_YOUR_INBOX_FOR_AN_EMAIL_MESSAGE_WITH_DETAILS_IF_YOU_HAVE_NO_DIRECT_CONNECTION_TO_ACCOUNT_THEFT_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM_AND_FILE_A_PETITION_FOR_MORE_DETAILS_PLEASE_VISIT_1_1_CHAT_IN_CUSTOMER_SERVICE_CENTER;
 	
 	@ClientString(id = 5301, message = "Your account has been restricted in accordance with our terms of service due to your confirmed abuse of GM services or reporting services. For more details, please visit the (font color='#FFDF4C')website((/font)(font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)(font color='#FFDF4C')) 1:1 Customer Service Center(/font)(font color='#FFDF4C')) 1:1 Customer Service Center(/font).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_CONFIRMED_ABUSE_OF_GM_SERVICES_OR_REPORTING_SERVICES_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT_FONT_COLOR_FFDF4C_1_1_CUSTOMER_SERVICE_CENTER_FONT_FONT_COLOR_FFDF4C_1_1_CUSTOMER_SERVICE_CENTER_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_CONFIRMED_ABUSE_OF_GM_SERVICES_OR_REPORTING_SERVICES_FOR_MORE_DETAILS_PLEASE_VISIT_THE_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM_1_1_CUSTOMER_SERVICE_CENTER_1_1_CUSTOMER_SERVICE_CENTER;
 	
 	@ClientString(id = 5302, message = "Your account has been restricted in accordance with our terms of service as you failed to verify your identity within a given time after an account theft report. You may  undo the restriction by visiting the (font color='#FFDF4C')Lineage II Support Website((/font)(font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)(font color='#FFDF4C')) 1:1 Customer Service Center(font color='#FFDF4C')) Support Center(/font) and going through the identity verification process in the account theft report. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_AS_YOU_FAILED_TO_VERIFY_YOUR_IDENTITY_WITHIN_A_GIVEN_TIME_AFTER_AN_ACCOUNT_THEFT_REPORT_YOU_MAY_UNDO_THE_RESTRICTION_BY_VISITING_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT_FONT_COLOR_FFDF4C_1_1_CUSTOMER_SERVICE_CENTER_FONT_COLOR_FFDF4C_SUPPORT_CENTER_FONT_AND_GOING_THROUGH_THE_IDENTITY_VERIFICATION_PROCESS_IN_THE_ACCOUNT_THEFT_REPORT_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_AS_YOU_FAILED_TO_VERIFY_YOUR_IDENTITY_WITHIN_A_GIVEN_TIME_AFTER_AN_ACCOUNT_THEFT_REPORT_YOU_MAY_UNDO_THE_RESTRICTION_BY_VISITING_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5303, message = "Your account has been restricted due to your abuse of game systems that resulted in damage to other players' gaming experience. For more details, please the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font))(font color='#FFDF4C'))1:1 Chat in Customer Service Center(/font).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_ABUSE_OF_GAME_SYSTEMS_THAT_RESULTED_IN_DAMAGE_TO_OTHER_PLAYERS_GAMING_EXPERIENCE_FOR_MORE_DETAILS_PLEASE_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT_FONT_COLOR_FFDF4C_1_1_CHAT_IN_CUSTOMER_SERVICE_CENTER_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_ABUSE_OF_GAME_SYSTEMS_THAT_RESULTED_IN_DAMAGE_TO_OTHER_PLAYERS_GAMING_EXPERIENCE_FOR_MORE_DETAILS_PLEASE_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM_1_1_CHAT_IN_CUSTOMER_SERVICE_CENTER;
 	
 	@ClientString(id = 5304, message = "Your account has been restricted due to your confirmed attempt at commercial advertising or trade involving cash or other games. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_CONFIRMED_ATTEMPT_AT_COMMERCIAL_ADVERTISING_OR_TRADE_INVOLVING_CASH_OR_OTHER_GAMES_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_CONFIRMED_ATTEMPT_AT_COMMERCIAL_ADVERTISING_OR_TRADE_INVOLVING_CASH_OR_OTHER_GAMES_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5305, message = "Your account has been restricted due to your confirmed cash/account trade activities. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_CONFIRMED_CASH_ACCOUNT_TRADE_ACTIVITIES_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT2;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_CONFIRMED_CASH_ACCOUNT_TRADE_ACTIVITIES_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM2;
 	
 	@ClientString(id = 5306, message = "Your account has been restricted in accordance with our terms of service due to misconduct or fraud. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_MISCONDUCT_OR_FRAUD_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT2;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_MISCONDUCT_OR_FRAUD_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM2;
 	
 	@ClientString(id = 5307, message = "Your account has been restricted due to the use of inappropriate language. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_THE_USE_OF_INAPPROPRIATE_LANGUAGE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_THE_USE_OF_INAPPROPRIATE_LANGUAGE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5308, message = "Your account has been restricted due to your abuse of system weaknesses or bugs. Abusing bugs can cause serious system errors or destroy the game balance. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_ABUSE_OF_SYSTEM_WEAKNESSES_OR_BUGS_ABUSING_BUGS_CAN_CAUSE_SERIOUS_SYSTEM_ERRORS_OR_DESTROY_THE_GAME_BALANCE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_ABUSE_OF_SYSTEM_WEAKNESSES_OR_BUGS_ABUSING_BUGS_CAN_CAUSE_SERIOUS_SYSTEM_ERRORS_OR_DESTROY_THE_GAME_BALANCE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5309, message = "Your account has been restricted due to development/distribution of an illegal program or modification of the server program. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_DEVELOPMENT_DISTRIBUTION_OF_AN_ILLEGAL_PROGRAM_OR_MODIFICATION_OF_THE_SERVER_PROGRAM_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_DEVELOPMENT_DISTRIBUTION_OF_AN_ILLEGAL_PROGRAM_OR_MODIFICATION_OF_THE_SERVER_PROGRAM_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5310, message = "Your account has been restricted in accordance with our terms of service due to your confirmed abuse of in-game systems resulting in abnormal gameplay. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_CONFIRMED_ABUSE_OF_IN_GAME_SYSTEMS_RESULTING_IN_ABNORMAL_GAMEPLAY_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT2;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_CONFIRMED_ABUSE_OF_IN_GAME_SYSTEMS_RESULTING_IN_ABNORMAL_GAMEPLAY_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM2;
 	
 	@ClientString(id = 5311, message = "Your account has been restricted at your request in accordance with our terms of service. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_AT_YOUR_REQUEST_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT2;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_AT_YOUR_REQUEST_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM2;
 	
 	@ClientString(id = 5312, message = "Your account has been restricted in accordance with our terms of service due to your confirmed attempts at misconduct or fraud. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_CONFIRMED_ATTEMPTS_AT_MISCONDUCT_OR_FRAUD_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT2;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_CONFIRMED_ATTEMPTS_AT_MISCONDUCT_OR_FRAUD_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM2;
 	
 	@ClientString(id = 5313, message = "Your account has been restricted in accordance with our terms of service due to your fraudulent use of another person's identity. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_FRAUDULENT_USE_OF_ANOTHER_PERSON_S_IDENTITY_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT2;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_FRAUDULENT_USE_OF_ANOTHER_PERSON_S_IDENTITY_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM2;
 	
 	@ClientString(id = 5314, message = "Your account has been restricted in accordance with our terms of service due to your fraudulent transactions under another person's identity. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_FRAUDULENT_TRANSACTIONS_UNDER_ANOTHER_PERSON_S_IDENTITY_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT2;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_FRAUDULENT_TRANSACTIONS_UNDER_ANOTHER_PERSON_S_IDENTITY_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM2;
 	
 	@ClientString(id = 5315, message = "Your account has been restricted in accordance with our terms of service due to your confirmed in-game gambling activities. Please refer to the Support Center on the NCSOFT website (http://us.ncsoft.com/en/support) for more details.")
 	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_OUR_TERMS_OF_SERVICE_DUE_TO_YOUR_CONFIRMED_IN_GAME_GAMBLING_ACTIVITIES_PLEASE_REFER_TO_THE_SUPPORT_CENTER_ON_THE_NCSOFT_WEBSITE_HTTP_US_NCSOFT_COM_EN_SUPPORT_FOR_MORE_DETAILS;
 	
 	@ClientString(id = 5316, message = "Your account has been restricted due to your use of illegal programs. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_USE_OF_ILLEGAL_PROGRAMS_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT3;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_USE_OF_ILLEGAL_PROGRAMS_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM3;
 	
 	@ClientString(id = 5317, message = "Your account is temporarily restricted due to a complaint filed in the process of name changing. For more information, visit (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_IS_TEMPORARILY_RESTRICTED_DUE_TO_A_COMPLAINT_FILED_IN_THE_PROCESS_OF_NAME_CHANGING_FOR_MORE_INFORMATION_VISIT_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_IS_TEMPORARILY_RESTRICTED_DUE_TO_A_COMPLAINT_FILED_IN_THE_PROCESS_OF_NAME_CHANGING_FOR_MORE_INFORMATION_VISIT_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5318, message = "Please verify your identity to confirm your ownership of your account at the NCsoft website.  For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId PLEASE_VERIFY_YOUR_IDENTITY_TO_CONFIRM_YOUR_OWNERSHIP_OF_YOUR_ACCOUNT_AT_THE_NCSOFT_WEBSITE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT2;
+	public static SystemMessageId PLEASE_VERIFY_YOUR_IDENTITY_TO_CONFIRM_YOUR_OWNERSHIP_OF_YOUR_ACCOUNT_AT_THE_NCSOFT_WEBSITE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM2;
 	
 	@ClientString(id = 5319, message = "Your account has been restricted in accordance with an official request from an investigative agency (private law). This action was taken because the official request from the investigative agency has legal force. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_AN_OFFICIAL_REQUEST_FROM_AN_INVESTIGATIVE_AGENCY_PRIVATE_LAW_THIS_ACTION_WAS_TAKEN_BECAUSE_THE_OFFICIAL_REQUEST_FROM_THE_INVESTIGATIVE_AGENCY_HAS_LEGAL_FORCE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT2;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_IN_ACCORDANCE_WITH_AN_OFFICIAL_REQUEST_FROM_AN_INVESTIGATIVE_AGENCY_PRIVATE_LAW_THIS_ACTION_WAS_TAKEN_BECAUSE_THE_OFFICIAL_REQUEST_FROM_THE_INVESTIGATIVE_AGENCY_HAS_LEGAL_FORCE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM2;
 	
 	@ClientString(id = 5320, message = "Your account has been temporarily restricted due to acquisition of an item connected to account theft. Please visit the homepage and go through the personal verification process to lift the restriction. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_TEMPORARILY_RESTRICTED_DUE_TO_ACQUISITION_OF_AN_ITEM_CONNECTED_TO_ACCOUNT_THEFT_PLEASE_VISIT_THE_HOMEPAGE_AND_GO_THROUGH_THE_PERSONAL_VERIFICATION_PROCESS_TO_LIFT_THE_RESTRICTION_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT2;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_TEMPORARILY_RESTRICTED_DUE_TO_ACQUISITION_OF_AN_ITEM_CONNECTED_TO_ACCOUNT_THEFT_PLEASE_VISIT_THE_HOMEPAGE_AND_GO_THROUGH_THE_PERSONAL_VERIFICATION_PROCESS_TO_LIFT_THE_RESTRICTION_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM2;
 	
 	@ClientString(id = 5321, message = "Your account has been restricted due to your confirmed trade involving cash or other games. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_CONFIRMED_TRADE_INVOLVING_CASH_OR_OTHER_GAMES_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_CONFIRMED_TRADE_INVOLVING_CASH_OR_OTHER_GAMES_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5322, message = "You cannot use the game services as your identity has not been verified. Please the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)) and go to (font color='#FFDF4C'))(/font) to verify your identity. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOU_CANNOT_USE_THE_GAME_SERVICES_AS_YOUR_IDENTITY_HAS_NOT_BEEN_VERIFIED_PLEASE_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT_AND_GO_TO_FONT_COLOR_FFDF4C_FONT_TO_VERIFY_YOUR_IDENTITY_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT2;
+	public static SystemMessageId YOU_CANNOT_USE_THE_GAME_SERVICES_AS_YOUR_IDENTITY_HAS_NOT_BEEN_VERIFIED_PLEASE_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM2;
 	
 	@ClientString(id = 5323, message = "Your account has been restricted due to your use of illegal programs. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_USE_OF_ILLEGAL_PROGRAMS_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT4;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_USE_OF_ILLEGAL_PROGRAMS_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM4;
 	
 	@ClientString(id = 5324, message = "Your account has been restricted due to your unfair acquisition of items and disregard for item distribution rules agreed upon by members of your party. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_UNFAIR_ACQUISITION_OF_ITEMS_AND_DISREGARD_FOR_ITEM_DISTRIBUTION_RULES_AGREED_UPON_BY_MEMBERS_OF_YOUR_PARTY_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_UNFAIR_ACQUISITION_OF_ITEMS_AND_DISREGARD_FOR_ITEM_DISTRIBUTION_RULES_AGREED_UPON_BY_MEMBERS_OF_YOUR_PARTY_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5325, message = "Your account has been denied all game services due to your confirmed use of the game for commercial purposes. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_DENIED_ALL_GAME_SERVICES_DUE_TO_YOUR_CONFIRMED_USE_OF_THE_GAME_FOR_COMMERCIAL_PURPOSES_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_DENIED_ALL_GAME_SERVICES_DUE_TO_YOUR_CONFIRMED_USE_OF_THE_GAME_FOR_COMMERCIAL_PURPOSES_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5326, message = "The account has been temporarily restricted due to an incomplete cell phone (ARS) transaction. For more information, please visit http://us.ncsoft.com/en/.")
 	public static SystemMessageId THE_ACCOUNT_HAS_BEEN_TEMPORARILY_RESTRICTED_DUE_TO_AN_INCOMPLETE_CELL_PHONE_ARS_TRANSACTION_FOR_MORE_INFORMATION_PLEASE_VISIT_HTTP_US_NCSOFT_COM_EN2;
 	
 	@ClientString(id = 5327, message = "Your account has been restricted due to your confirmed attempt at commercial advertising. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_CONFIRMED_ATTEMPT_AT_COMMERCIAL_ADVERTISING_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_CONFIRMED_ATTEMPT_AT_COMMERCIAL_ADVERTISING_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5328, message = "Your identity verification has been temporarily suspended due to suspected account theft. If you are not involved in account theft, please verify your identity by clicking the 'Release' button in the login page. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_IDENTITY_VERIFICATION_HAS_BEEN_TEMPORARILY_SUSPENDED_DUE_TO_SUSPECTED_ACCOUNT_THEFT_IF_YOU_ARE_NOT_INVOLVED_IN_ACCOUNT_THEFT_PLEASE_VERIFY_YOUR_IDENTITY_BY_CLICKING_THE_RELEASE_BUTTON_IN_THE_LOGIN_PAGE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_IDENTITY_VERIFICATION_HAS_BEEN_TEMPORARILY_SUSPENDED_DUE_TO_SUSPECTED_ACCOUNT_THEFT_IF_YOU_ARE_NOT_INVOLVED_IN_ACCOUNT_THEFT_PLEASE_VERIFY_YOUR_IDENTITY_BY_CLICKING_THE_RELEASE_BUTTON_IN_THE_LOGIN_PAGE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 5329, message = "Your account has been temporarily restricted due to your speculated abnormal methods of gameplay. If you did not employ abnormal means to play the game, please visit the website and go through the personal verification process to lift the restriction. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_TEMPORARILY_RESTRICTED_DUE_TO_YOUR_SPECULATED_ABNORMAL_METHODS_OF_GAMEPLAY_IF_YOU_DID_NOT_EMPLOY_ABNORMAL_MEANS_TO_PLAY_THE_GAME_PLEASE_VISIT_THE_WEBSITE_AND_GO_THROUGH_THE_PERSONAL_VERIFICATION_PROCESS_TO_LIFT_THE_RESTRICTION_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT2;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_TEMPORARILY_RESTRICTED_DUE_TO_YOUR_SPECULATED_ABNORMAL_METHODS_OF_GAMEPLAY_IF_YOU_DID_NOT_EMPLOY_ABNORMAL_MEANS_TO_PLAY_THE_GAME_PLEASE_VISIT_THE_WEBSITE_AND_GO_THROUGH_THE_PERSONAL_VERIFICATION_PROCESS_TO_LIFT_THE_RESTRICTION_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM2;
 	
 	@ClientString(id = 5330, message = "Your account has been restricted due to your abuse of system weaknesses or bugs. Abusing bugs can cause grievous system errors or destroy the game balance. For more details, please visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_ABUSE_OF_SYSTEM_WEAKNESSES_OR_BUGS_ABUSING_BUGS_CAN_CAUSE_GRIEVOUS_SYSTEM_ERRORS_OR_DESTROY_THE_GAME_BALANCE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT2;
+	public static SystemMessageId YOUR_ACCOUNT_HAS_BEEN_RESTRICTED_DUE_TO_YOUR_ABUSE_OF_SYSTEM_WEAKNESSES_OR_BUGS_ABUSING_BUGS_CAN_CAUSE_GRIEVOUS_SYSTEM_ERRORS_OR_DESTROY_THE_GAME_BALANCE_FOR_MORE_DETAILS_PLEASE_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM2;
 	
 	@ClientString(id = 5331, message = "Your account is temporarily restricted due to a complaint filed in the process of name changing. For more information,visit the (font color='#FFDF4C')Lineage II Support Website(/font)((font color='#6699FF')(a href='asfunction:homePage')https://support.lineage2.com(/a)(/font)).")
-	public static SystemMessageId YOUR_ACCOUNT_IS_TEMPORARILY_RESTRICTED_DUE_TO_A_COMPLAINT_FILED_IN_THE_PROCESS_OF_NAME_CHANGING_FOR_MORE_INFORMATION_VISIT_THE_FONT_COLOR_FFDF4C_LINEAGE_II_SUPPORT_WEBSITE_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_HTTPS_SUPPORT_LINEAGE2_COM_A_FONT;
+	public static SystemMessageId YOUR_ACCOUNT_IS_TEMPORARILY_RESTRICTED_DUE_TO_A_COMPLAINT_FILED_IN_THE_PROCESS_OF_NAME_CHANGING_FOR_MORE_INFORMATION_VISIT_THE_LINEAGE_II_SUPPORT_WEBSITE_HTTPS_SUPPORT_LINEAGE2_COM;
 	
 	@ClientString(id = 6001, message = "The item has been successfully purchased.")
 	public static SystemMessageId THE_ITEM_HAS_BEEN_SUCCESSFULLY_PURCHASED2;
@@ -13594,7 +13594,7 @@ public final class SystemMessageId
 	public static SystemMessageId S1_S_APPEARANCE_HAS_BEEN_RESTORED;
 	
 	@ClientString(id = 6087, message = "If you've lost your information, please visit (font color='#FFDF4C')$s1((/font)(font color='#6699FF')(a href='asfunction:homePage')$s2(/a)(/font)(font color='#FFDF4C')) 1:1 Customer Service Center(/font) to verify.")
-	public static SystemMessageId IF_YOU_VE_LOST_YOUR_INFORMATION_PLEASE_VISIT_FONT_COLOR_FFDF4C_S1_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_S2_A_FONT_FONT_COLOR_FFDF4C_1_1_CUSTOMER_SERVICE_CENTER_FONT_TO_VERIFY;
+	public static SystemMessageId IF_YOU_VE_LOST_YOUR_INFORMATION_PLEASE_VISIT_S1_S2_1_1_CUSTOMER_SERVICE_CENTER_TO_VERIFY;
 	
 	@ClientString(id = 6088, message = "NC True")
 	public static SystemMessageId NC_TRUE;
@@ -13603,7 +13603,7 @@ public final class SystemMessageId
 	public static SystemMessageId WWW_NCTRUE_COM;
 	
 	@ClientString(id = 6090, message = "If you want to create a new account, please visit (font color='#FFDF4C')$s1((/font)(font color='#6699FF')(a href='asfunction:homePage')$s2(/a)(/font) and go to (font color='#FFDF4C'))(/font).")
-	public static SystemMessageId IF_YOU_WANT_TO_CREATE_A_NEW_ACCOUNT_PLEASE_VISIT_FONT_COLOR_FFDF4C_S1_FONT_FONT_COLOR_6699FF_A_HREF_ASFUNCTION_HOMEPAGE_S2_A_FONT_AND_GO_TO_FONT_COLOR_FFDF4C_FONT;
+	public static SystemMessageId IF_YOU_WANT_TO_CREATE_A_NEW_ACCOUNT_PLEASE_VISIT_S1_S2_AND_GO_TO;
 	
 	@ClientString(id = 6091, message = "You cannot select a deactivated character. Activation can occur through the premium account service.")
 	public static SystemMessageId YOU_CANNOT_SELECT_A_DEACTIVATED_CHARACTER_ACTIVATION_CAN_OCCUR_THROUGH_THE_PREMIUM_ACCOUNT_SERVICE;
