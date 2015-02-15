@@ -68,6 +68,7 @@ public final class Raina extends AbstractNpcAI
 	private static final int RAINA = 33491;
 	// Items
 	private static final int SUBCLASS_CERTIFICATE = 30433;
+	private static final int CHAOS_POMANDER = 37375;
 	private final static int ABELIUS_POWER = 32264;
 	private final static int SAPYROS_POWER = 32265;
 	private final static int ASHAGEN_POWER = 32266;
@@ -597,6 +598,7 @@ public final class Raina extends AbstractNpcAI
 					player.sendPacket(new AcquireSkillList(player));
 					player.sendSkillList();
 					addPowerItem(player);
+					giveItems(player, CHAOS_POMANDER, 2);
 				}
 				break;
 			}
