@@ -27,7 +27,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.L2TeleportLocation;
 
 public class TeleportLocationTable
@@ -44,7 +44,7 @@ public class TeleportLocationTable
 	public void reloadAll()
 	{
 		_teleports.clear();
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			Statement s = con.createStatement();
 			ResultSet rs = s.executeQuery("SELECT id, loc_x, loc_y, loc_z, price, fornoble, itemId FROM teleport"))
 		{
@@ -73,7 +73,7 @@ public class TeleportLocationTable
 		if (Config.CUSTOM_TELEPORT_TABLE)
 		{
 			int _cTeleCount = _teleports.size();
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				Statement s = con.createStatement();
 				ResultSet rs = s.executeQuery("SELECT id, loc_x, loc_y, loc_z, price, fornoble, itemId FROM custom_teleport"))
 			{

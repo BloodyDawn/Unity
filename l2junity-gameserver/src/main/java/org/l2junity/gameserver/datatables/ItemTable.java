@@ -31,7 +31,7 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.impl.EnchantItemHPBonusData;
 import org.l2junity.gameserver.engines.DocumentEngine;
@@ -367,7 +367,7 @@ public class ItemTable
 			// if it's a pet control item, delete the pet as well
 			if (item.getItem().isPetItem())
 			{
-				try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+				try (Connection con = DatabaseFactory.getInstance().getConnection();
 					PreparedStatement statement = con.prepareStatement("DELETE FROM pets WHERE item_obj_id=?"))
 				{
 					// Delete the pet in db

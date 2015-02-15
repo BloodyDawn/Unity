@@ -32,7 +32,7 @@ import java.util.logging.Logger;
 import javolution.util.FastMap;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.data.xml.impl.CastleData;
@@ -220,7 +220,7 @@ public final class Castle extends AbstractResidence
 		
 		public void dbSave()
 		{
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement ps = con.prepareStatement("REPLACE INTO castle_functions (castle_id, type, lvl, lease, rate, endTime) VALUES (?,?,?,?,?,?)"))
 			{
 				ps.setInt(1, getResidenceId());
@@ -365,7 +365,7 @@ public final class Castle extends AbstractResidence
 			}
 		}
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("UPDATE castle SET treasury = ? WHERE id = ?"))
 		{
 			ps.setLong(1, getTreasury());
@@ -627,7 +627,7 @@ public final class Castle extends AbstractResidence
 	@Override
 	protected void load()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps1 = con.prepareStatement("SELECT * FROM castle WHERE id = ?");
 			PreparedStatement ps2 = con.prepareStatement("SELECT clan_id FROM clan_data WHERE hasCastle = ?"))
 		{
@@ -674,7 +674,7 @@ public final class Castle extends AbstractResidence
 	/** Load All Functions */
 	private void loadFunctions()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM castle_functions WHERE castle_id = ?"))
 		{
 			ps.setInt(1, getResidenceId());
@@ -699,7 +699,7 @@ public final class Castle extends AbstractResidence
 	public void removeFunction(int functionType)
 	{
 		_function.remove(functionType);
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM castle_functions WHERE castle_id=? AND type=?"))
 		{
 			ps.setInt(1, getResidenceId());
@@ -774,7 +774,7 @@ public final class Castle extends AbstractResidence
 	// This method loads castle door upgrade data from database
 	private void loadDoorUpgrade()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM castle_doorupgrade WHERE castleId=?"))
 		{
 			ps.setInt(1, getResidenceId());
@@ -800,7 +800,7 @@ public final class Castle extends AbstractResidence
 			door.setCurrentHp(door.getCurrentHp());
 		}
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM castle_doorupgrade WHERE castleId=?"))
 		{
 			ps.setInt(1, getResidenceId());
@@ -825,7 +825,7 @@ public final class Castle extends AbstractResidence
 		
 		if (save)
 		{
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement ps = con.prepareStatement("REPLACE INTO castle_doorupgrade (doorId, ratio, castleId) values (?,?,?)"))
 			{
 				ps.setInt(1, doorId);
@@ -852,7 +852,7 @@ public final class Castle extends AbstractResidence
 			CastleManorManager.getInstance().resetManorData(getResidenceId());
 		}
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = DatabaseFactory.getInstance().getConnection())
 		{
 			// Need to remove has castle flag from clan_data, should be checked from castle table.
 			try (PreparedStatement ps = con.prepareStatement("UPDATE clan_data SET hasCastle = 0 WHERE hasCastle = ?"))
@@ -1025,7 +1025,7 @@ public final class Castle extends AbstractResidence
 	
 	public void updateShowNpcCrest()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("UPDATE castle SET showNpcCrest = ? WHERE id = ?"))
 		{
 			ps.setString(1, String.valueOf(getShowNpcCrest()));
@@ -1069,7 +1069,7 @@ public final class Castle extends AbstractResidence
 	{
 		_ticketBuyCount = count;
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("UPDATE castle SET ticketBuyCount = ? WHERE id = ?"))
 		{
 			ps.setInt(1, _ticketBuyCount);
@@ -1092,7 +1092,7 @@ public final class Castle extends AbstractResidence
 	{
 		if (save)
 		{
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement ps = con.prepareStatement("REPLACE INTO castle_trapupgrade (castleId, towerIndex, level) values (?,?,?)"))
 			{
 				ps.setInt(1, getResidenceId());
@@ -1119,7 +1119,7 @@ public final class Castle extends AbstractResidence
 			ts.setUpgradeLevel(0);
 		}
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM castle_trapupgrade WHERE castleId=?"))
 		{
 			ps.setInt(1, getResidenceId());
@@ -1202,7 +1202,7 @@ public final class Castle extends AbstractResidence
 			return;
 		}
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("UPDATE castle SET side = ? WHERE id = ?"))
 		{
 			ps.setString(1, side.toString());

@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.InstanceListManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.WorldObject;
@@ -167,7 +167,7 @@ public final class FortManager implements InstanceListManager
 	@Override
 	public void loadInstances()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			Statement s = con.createStatement();
 			ResultSet rs = s.executeQuery("SELECT id FROM fort ORDER BY id"))
 		{

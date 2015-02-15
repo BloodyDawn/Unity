@@ -27,7 +27,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.handler.IPunishmentHandler;
 import org.l2junity.gameserver.handler.PunishmentHandler;
@@ -184,7 +184,7 @@ public class PunishmentTask implements Runnable
 	{
 		if (!_isStored)
 		{
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement st = con.prepareStatement(INSERT_QUERY, Statement.RETURN_GENERATED_KEYS))
 			{
 				st.setString(1, _key);
@@ -223,7 +223,7 @@ public class PunishmentTask implements Runnable
 	{
 		if (_isStored)
 		{
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement st = con.prepareStatement(UPDATE_QUERY))
 			{
 				st.setLong(1, System.currentTimeMillis());

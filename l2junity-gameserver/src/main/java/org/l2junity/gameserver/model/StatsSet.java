@@ -615,6 +615,10 @@ public class StatsSet implements IParserAdvUtils
 	
 	public void set(String name, Object value)
 	{
+		if (value == null)
+		{
+			return;
+		}
 		_set.put(name, value);
 	}
 	
@@ -655,11 +659,19 @@ public class StatsSet implements IParserAdvUtils
 	
 	public void set(String key, String value)
 	{
+		if (value == null)
+		{
+			return;
+		}
 		_set.put(key, value);
 	}
 	
 	public void set(String key, Enum<?> value)
 	{
+		if (value == null)
+		{
+			return;
+		}
 		_set.put(key, value);
 	}
 	

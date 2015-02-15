@@ -26,7 +26,7 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 
 /**
  * @author UnAfraid
@@ -110,7 +110,7 @@ public class Announcement implements IAnnouncement
 	@Override
 	public boolean storeMe()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement st = con.prepareStatement(INSERT_QUERY, Statement.RETURN_GENERATED_KEYS))
 		{
 			st.setInt(1, _type.ordinal());
@@ -136,7 +136,7 @@ public class Announcement implements IAnnouncement
 	@Override
 	public boolean updateMe()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement st = con.prepareStatement(UPDATE_QUERY))
 		{
 			st.setInt(1, _type.ordinal());
@@ -156,7 +156,7 @@ public class Announcement implements IAnnouncement
 	@Override
 	public boolean deleteMe()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement st = con.prepareStatement(DELETE_QUERY))
 		{
 			st.setInt(1, _id);

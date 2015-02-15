@@ -33,11 +33,11 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 /**
  * This class manages the database connections.
  */
-public class L2DatabaseFactory
+public class DatabaseFactory
 {
-	private static final Logger _log = Logger.getLogger(L2DatabaseFactory.class.getName());
+	private static final Logger _log = Logger.getLogger(DatabaseFactory.class.getName());
 	
-	private static L2DatabaseFactory _instance;
+	private static DatabaseFactory _instance;
 	private static volatile ScheduledExecutorService _executor;
 	private ComboPooledDataSource _source;
 	
@@ -45,7 +45,7 @@ public class L2DatabaseFactory
 	 * Instantiates a new l2 database factory.
 	 * @throws SQLException the SQL exception
 	 */
-	public L2DatabaseFactory() throws SQLException
+	public DatabaseFactory() throws SQLException
 	{
 		try
 		{
@@ -152,13 +152,13 @@ public class L2DatabaseFactory
 	 * @return single instance of L2DatabaseFactory
 	 * @throws SQLException the SQL exception
 	 */
-	public static L2DatabaseFactory getInstance() throws SQLException
+	public static DatabaseFactory getInstance() throws SQLException
 	{
-		synchronized (L2DatabaseFactory.class)
+		synchronized (DatabaseFactory.class)
 		{
 			if (_instance == null)
 			{
-				_instance = new L2DatabaseFactory();
+				_instance = new DatabaseFactory();
 			}
 		}
 		return _instance;
@@ -242,7 +242,7 @@ public class L2DatabaseFactory
 	{
 		if (_executor == null)
 		{
-			synchronized (L2DatabaseFactory.class)
+			synchronized (DatabaseFactory.class)
 			{
 				if (_executor == null)
 				{

@@ -27,7 +27,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.ai.SpecialSiegeGuardAI;
@@ -780,7 +780,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	@Override
 	public final void loadAttackers()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = DatabaseFactory.getInstance().getConnection())
 		{
 			PreparedStatement statement = con.prepareStatement(SQL_LOAD_ATTACKERS);
 			statement.setInt(1, _hall.getId());
@@ -814,7 +814,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	
 	private final void loadAttackerMembers(int clanId)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = DatabaseFactory.getInstance().getConnection())
 		{
 			ArrayList<Integer> listInstance = _data.get(clanId).players;
 			
@@ -844,7 +844,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	
 	private final void saveClan(int clanId, int flag)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = DatabaseFactory.getInstance().getConnection())
 		{
 			PreparedStatement statement = con.prepareStatement(SQL_SAVE_CLAN);
 			statement.setInt(1, _hall.getId());
@@ -863,7 +863,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	
 	private final void saveNpc(int npc, int clanId)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = DatabaseFactory.getInstance().getConnection())
 		{
 			PreparedStatement statement = con.prepareStatement(SQL_SAVE_NPC);
 			statement.setInt(1, npc);
@@ -880,7 +880,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	
 	private final void saveMember(int clanId, int objectId)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = DatabaseFactory.getInstance().getConnection())
 		{
 			PreparedStatement statement = con.prepareStatement(SQL_SAVE_ATTACKER);
 			statement.setInt(1, _hall.getId());
@@ -898,7 +898,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	
 	private void clearTables()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = DatabaseFactory.getInstance().getConnection())
 		{
 			PreparedStatement stat1 = con.prepareStatement(SQL_CLEAR_CLAN);
 			stat1.setInt(1, _hall.getId());

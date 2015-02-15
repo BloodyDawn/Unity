@@ -33,7 +33,7 @@ import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.Server;
 import org.l2junity.UPnPService;
 import org.l2junity.loginserver.mail.MailSystem;
@@ -97,7 +97,7 @@ public final class L2LoginServer
 		// Prepare Database
 		try
 		{
-			L2DatabaseFactory.getInstance();
+			DatabaseFactory.getInstance();
 		}
 		catch (SQLException e)
 		{

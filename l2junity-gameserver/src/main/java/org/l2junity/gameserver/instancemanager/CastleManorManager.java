@@ -34,7 +34,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.IXmlReader;
@@ -165,7 +165,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 	
 	private final void loadDb()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement stProduction = con.prepareStatement("SELECT * FROM castle_manor_production WHERE castle_id=?");
 			PreparedStatement stProcure = con.prepareStatement("SELECT * FROM castle_manor_procure WHERE castle_id=?"))
 		{
@@ -437,7 +437,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 		_productionNext.put(castleId, list);
 		if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
 		{
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement dps = con.prepareStatement("DELETE FROM castle_manor_production WHERE castle_id = ? AND next_period = 1");
 				PreparedStatement ips = con.prepareStatement(INSERT_PRODUCT))
 			{
@@ -473,7 +473,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 		_procureNext.put(castleId, list);
 		if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
 		{
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement dps = con.prepareStatement("DELETE FROM castle_manor_procure WHERE castle_id = ? AND next_period = 1");
 				PreparedStatement ips = con.prepareStatement(INSERT_CROP))
 			{
@@ -507,7 +507,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 	
 	public final void updateCurrentProduction(int castleId, Collection<SeedProduction> items)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("UPDATE castle_manor_production SET amount = ? WHERE castle_id = ? AND seed_id = ? AND next_period = 0"))
 		{
 			for (SeedProduction sp : items)
@@ -527,7 +527,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 	
 	public final void updateCurrentProcure(int castleId, Collection<CropProcure> items)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("UPDATE castle_manor_procure SET amount = ? WHERE castle_id = ? AND crop_id = ? AND next_period = 0"))
 		{
 			for (CropProcure sp : items)
@@ -600,7 +600,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 	@Override
 	public final boolean storeMe()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ds = con.prepareStatement("DELETE FROM castle_manor_production");
 			PreparedStatement is = con.prepareStatement(INSERT_PRODUCT);
 			PreparedStatement dp = con.prepareStatement("DELETE FROM castle_manor_procure");
@@ -698,7 +698,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 		
 		if (Config.ALT_MANOR_SAVE_ALL_ACTIONS)
 		{
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement ds = con.prepareStatement("DELETE FROM castle_manor_production WHERE castle_id = ?");
 				PreparedStatement dc = con.prepareStatement("DELETE FROM castle_manor_procure WHERE castle_id = ?"))
 			{

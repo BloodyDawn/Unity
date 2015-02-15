@@ -27,7 +27,7 @@ import java.util.GregorianCalendar;
 import java.util.logging.Level;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.enums.MailType;
 import org.l2junity.gameserver.instancemanager.MailManager;
@@ -78,7 +78,7 @@ public class TaskBirthday extends Task
 	
 	private void checkBirthday(int year, int month, int day)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(QUERY))
 		{
 			statement.setString(1, "%-" + getNum(month + 1) + "-" + getNum(day));

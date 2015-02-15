@@ -31,7 +31,7 @@ import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.enums.MacroType;
 import org.l2junity.gameserver.enums.MacroUpdateType;
 import org.l2junity.gameserver.enums.ShortcutType;
@@ -126,7 +126,7 @@ public class MacroList implements IRestorable
 	
 	private void registerMacroInDb(Macro macro)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("INSERT INTO character_macroses (charId,id,icon,name,descr,acronym,commands) values(?,?,?,?,?,?,?)"))
 		{
 			ps.setInt(1, _owner.getObjectId());
@@ -162,7 +162,7 @@ public class MacroList implements IRestorable
 	
 	private void deleteMacroFromDb(Macro macro)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM character_macroses WHERE charId=? AND id=?"))
 		{
 			ps.setInt(1, _owner.getObjectId());
@@ -179,7 +179,7 @@ public class MacroList implements IRestorable
 	public boolean restoreMe()
 	{
 		_macroses.clear();
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("SELECT charId, id, icon, name, descr, acronym, commands FROM character_macroses WHERE charId=?"))
 		{
 			ps.setInt(1, _owner.getObjectId());

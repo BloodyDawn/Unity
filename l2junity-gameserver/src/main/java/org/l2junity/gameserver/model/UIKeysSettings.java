@@ -27,7 +27,7 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.xml.impl.UIData;
 
 /**
@@ -105,7 +105,7 @@ public class UIKeysSettings
 			}
 		}
 		query = query.substring(0, query.length() - 1) + "; ";
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(query))
 		{
 			statement.execute();
@@ -126,7 +126,7 @@ public class UIKeysSettings
 		}
 		query = query.substring(0, query.length() - 1) + ";";
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(query))
 		{
 			statement.execute();
@@ -147,7 +147,7 @@ public class UIKeysSettings
 		
 		_storedCategories = new HashMap<>();
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement stmt = con.prepareStatement("SELECT * FROM character_ui_categories WHERE `charId` = ? ORDER BY `catId`, `order`"))
 		{
 			stmt.setInt(1, _playerObjId);
@@ -179,7 +179,7 @@ public class UIKeysSettings
 		
 		_storedKeys = new HashMap<>();
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement stmt = con.prepareStatement("SELECT * FROM character_ui_actions WHERE `charId` = ? ORDER BY `cat`, `order`"))
 		{
 			stmt.setInt(1, _playerObjId);

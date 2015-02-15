@@ -31,7 +31,7 @@ import java.util.logging.Logger;
 import javolution.util.FastMap;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
@@ -79,7 +79,7 @@ public class RaidBossSpawnManager
 		_storedInfo.clear();
 		_schedules.clear();
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("SELECT * FROM raidboss_spawnlist ORDER BY boss_id");
 			ResultSet rset = statement.executeQuery())
 		{
@@ -280,7 +280,7 @@ public class RaidBossSpawnManager
 		
 		if (storeInDb)
 		{
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement = con.prepareStatement("INSERT INTO raidboss_spawnlist (boss_id,amount,loc_x,loc_y,loc_z,heading,respawn_time,currentHp,currentMp) VALUES(?,?,?,?,?,?,?,?,?)"))
 			{
 				statement.setInt(1, spawnDat.getId());
@@ -341,7 +341,7 @@ public class RaidBossSpawnManager
 		
 		if (updateDb)
 		{
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement = con.prepareStatement("DELETE FROM raidboss_spawnlist WHERE boss_id=?"))
 			{
 				statement.setInt(1, bossId);
@@ -360,7 +360,7 @@ public class RaidBossSpawnManager
 	 */
 	private void updateDb()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("UPDATE raidboss_spawnlist SET respawn_time = ?, currentHP = ?, currentMP = ? WHERE boss_id = ?"))
 		{
 			for (Integer bossId : _storedInfo.keySet())

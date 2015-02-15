@@ -23,7 +23,7 @@ import java.sql.PreparedStatement;
 import java.util.logging.Level;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.model.PcCondOverride;
@@ -155,7 +155,7 @@ public final class RequestDestroyItem extends L2GameClientPacket
 				pet.unSummon(activeChar);
 			}
 			
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement = con.prepareStatement("DELETE FROM pets WHERE item_obj_id=?"))
 			{
 				statement.setInt(1, _objectId);

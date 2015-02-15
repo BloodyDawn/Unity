@@ -32,7 +32,7 @@ import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.Server;
 import org.l2junity.UPnPService;
 import org.l2junity.commons.util.DeadLockDetector;
@@ -476,7 +476,7 @@ public class GameServer
 		// Initialize config
 		Config.load();
 		printSection("Database");
-		L2DatabaseFactory.getInstance();
+		DatabaseFactory.getInstance();
 		gameServer = new GameServer();
 		
 		if (Config.IS_TELNET_ENABLED)

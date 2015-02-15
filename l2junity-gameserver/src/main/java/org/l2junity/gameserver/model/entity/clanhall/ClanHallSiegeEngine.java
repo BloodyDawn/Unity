@@ -31,7 +31,7 @@ import javolution.util.FastList;
 import javolution.util.FastMap;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.enums.ChatType;
@@ -96,7 +96,7 @@ public abstract class ClanHallSiegeEngine extends Quest implements Siegable
 	
 	public void loadAttackers()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(SQL_LOAD_ATTACKERS))
 		{
 			statement.setInt(1, _hall.getId());
@@ -118,7 +118,7 @@ public abstract class ClanHallSiegeEngine extends Quest implements Siegable
 	
 	public final void saveAttackers()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement delStatement = con.prepareStatement("DELETE FROM clanhall_siege_attackers WHERE clanhall_id = ?"))
 		{
 			delStatement.setInt(1, _hall.getId());
@@ -150,7 +150,7 @@ public abstract class ClanHallSiegeEngine extends Quest implements Siegable
 		if (_guards == null)
 		{
 			_guards = new FastList<>();
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement = con.prepareStatement(SQL_LOAD_GUARDS))
 			{
 				statement.setInt(1, _hall.getId());

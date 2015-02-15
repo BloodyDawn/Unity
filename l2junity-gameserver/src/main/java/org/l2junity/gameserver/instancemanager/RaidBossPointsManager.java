@@ -30,7 +30,7 @@ import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 
 import javolution.util.FastMap;
@@ -53,7 +53,7 @@ public class RaidBossPointsManager
 	private final void init()
 	{
 		_list = new FastMap<>();
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			Statement s = con.createStatement();
 			ResultSet rs = s.executeQuery("SELECT `charId`,`boss_id`,`points` FROM `character_raid_points`"))
 		{
@@ -80,7 +80,7 @@ public class RaidBossPointsManager
 	
 	public final void updatePointsInDB(L2PcInstance player, int raidId, int points)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("REPLACE INTO character_raid_points (`charId`,`boss_id`,`points`) VALUES (?,?,?)"))
 		{
 			ps.setInt(1, player.getObjectId());
@@ -125,7 +125,7 @@ public class RaidBossPointsManager
 	
 	public final void cleanUp()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("DELETE from character_raid_points WHERE charId > 0"))
 		{
 			statement.executeUpdate();

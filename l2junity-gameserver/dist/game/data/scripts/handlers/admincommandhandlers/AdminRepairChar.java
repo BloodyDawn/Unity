@@ -24,7 +24,7 @@ import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 
@@ -64,7 +64,7 @@ public class AdminRepairChar implements IAdminCommandHandler
 		}
 		
 		String cmd = "UPDATE characters SET x=-84318, y=244579, z=-3730 WHERE char_name=?";
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = DatabaseFactory.getInstance().getConnection())
 		{
 			PreparedStatement statement = con.prepareStatement(cmd);
 			statement.setString(1, parts[1]);

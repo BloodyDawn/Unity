@@ -27,7 +27,7 @@ import java.util.Collection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.loginserver.GameServerTable;
 import org.l2junity.loginserver.GameServerThread;
 import org.l2junity.loginserver.GameServerTable.GameServerInfo;
@@ -82,7 +82,7 @@ public class ChangePassword extends BaseRecievePacket
 				int passUpdated = 0;
 				
 				// SQL connection
-				try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+				try (Connection con = DatabaseFactory.getInstance().getConnection();
 					PreparedStatement ps = con.prepareStatement("SELECT password FROM accounts WHERE login=?"))
 				{
 					ps.setString(1, accountName);
@@ -101,7 +101,7 @@ public class ChangePassword extends BaseRecievePacket
 					password = md.digest(password);
 					
 					// SQL connection
-					try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+					try (Connection con = DatabaseFactory.getInstance().getConnection();
 						PreparedStatement ps = con.prepareStatement("UPDATE accounts SET password=? WHERE login=?"))
 					{
 						ps.setString(1, Base64.getEncoder().encodeToString(password));

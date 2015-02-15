@@ -23,7 +23,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.handler.CommunityBoardHandler;
 import org.l2junity.gameserver.handler.IParseBoardHandler;
@@ -63,7 +63,7 @@ public class FavoriteBoard implements IParseBoardHandler
 			// Load Favorite links
 			final String list = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/CommunityBoard/favorite_list.html");
 			final StringBuilder sb = new StringBuilder();
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement ps = con.prepareStatement(SELECT_FAVORITES))
 			{
 				ps.setInt(1, activeChar.getObjectId());
@@ -100,7 +100,7 @@ public class FavoriteBoard implements IParseBoardHandler
 					return false;
 				}
 				
-				try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+				try (Connection con = DatabaseFactory.getInstance().getConnection();
 					PreparedStatement ps = con.prepareStatement(ADD_FAVORITE))
 				{
 					ps.setInt(1, activeChar.getObjectId());
@@ -125,7 +125,7 @@ public class FavoriteBoard implements IParseBoardHandler
 				return false;
 			}
 			
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement ps = con.prepareStatement(DELETE_FAVORITE))
 			{
 				ps.setInt(1, activeChar.getObjectId());

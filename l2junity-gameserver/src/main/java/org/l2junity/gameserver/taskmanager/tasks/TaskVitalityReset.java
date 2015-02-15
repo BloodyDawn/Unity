@@ -24,7 +24,7 @@ import java.util.Calendar;
 import java.util.logging.Level;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.actor.stat.PcStat;
@@ -57,7 +57,7 @@ public class TaskVitalityReset extends Task
 				player.setVitalityPoints(PcStat.MAX_VITALITY_POINTS, false);
 			}
 			
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement st = con.prepareStatement("DELETE FROM account_gsdata WHERE var = ?"))
 			{
 				st.setString(1, PcStat.VITALITY_VARIABLE);

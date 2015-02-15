@@ -41,7 +41,7 @@ import java.util.logging.Logger;
 import javax.crypto.Cipher;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.loginserver.GameServerTable.GameServerInfo;
 import org.l2junity.loginserver.model.data.AccountInfo;
@@ -219,7 +219,7 @@ public class LoginController
 			byte[] raw = password.getBytes(StandardCharsets.UTF_8);
 			String hashBase64 = Base64.getEncoder().encodeToString(md.digest(raw));
 			
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement ps = con.prepareStatement(USER_INFO_SELECT))
 			{
 				ps.setString(1, Long.toString(System.currentTimeMillis()));
@@ -254,7 +254,7 @@ public class LoginController
 				return null;
 			}
 			
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement ps = con.prepareStatement(AUTOCREATE_ACCOUNTS_INSERT))
 			{
 				ps.setString(1, login);
@@ -454,7 +454,7 @@ public class LoginController
 			
 			if (loginOk && (client.getLastServer() != serverId))
 			{
-				try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+				try (Connection con = DatabaseFactory.getInstance().getConnection();
 					PreparedStatement ps = con.prepareStatement(ACCOUNT_LAST_SERVER_UPDATE))
 				{
 					ps.setInt(1, serverId);
@@ -473,7 +473,7 @@ public class LoginController
 	
 	public void setAccountAccessLevel(String account, int banLevel)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement(ACCOUNT_ACCESS_LEVEL_UPDATE))
 		{
 			ps.setInt(1, banLevel);
@@ -488,7 +488,7 @@ public class LoginController
 	
 	public void setAccountLastTracert(String account, String pcIp, String hop1, String hop2, String hop3, String hop4)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement(ACCOUNT_IPS_UPDATE))
 		{
 			ps.setString(1, pcIp);
@@ -548,7 +548,7 @@ public class LoginController
 		{
 			List<InetAddress> ipWhiteList = new ArrayList<>();
 			List<InetAddress> ipBlackList = new ArrayList<>();
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement ps = con.prepareStatement(ACCOUNT_IPAUTH_SELECT))
 			{
 				ps.setString(1, info.getLogin());
@@ -594,7 +594,7 @@ public class LoginController
 			
 			client.setAccessLevel(info.getAccessLevel());
 			client.setLastServer(info.getLastServer());
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement ps = con.prepareStatement(ACCOUNT_INFO_UPDATE))
 			{
 				ps.setLong(1, System.currentTimeMillis());

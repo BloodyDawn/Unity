@@ -28,7 +28,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ItemsAutoDestroy;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.World;
@@ -83,7 +83,7 @@ public final class ItemsOnGroundManager implements Runnable
 				str = "UPDATE itemsonground SET drop_time = ? WHERE drop_time = -1";
 			}
 			
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement ps = con.prepareStatement(str))
 			{
 				ps.setLong(1, System.currentTimeMillis());
@@ -96,7 +96,7 @@ public final class ItemsOnGroundManager implements Runnable
 		}
 		
 		// Add items to world
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("SELECT object_id,item_id,count,enchant_level,x,y,z,drop_time,equipable FROM itemsonground"))
 		{
 			int count = 0;
@@ -182,7 +182,7 @@ public final class ItemsOnGroundManager implements Runnable
 	
 	public void emptyTable()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			Statement s = con.createStatement())
 		{
 			s.executeUpdate("DELETE FROM itemsonground");
@@ -208,7 +208,7 @@ public final class ItemsOnGroundManager implements Runnable
 			return;
 		}
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("INSERT INTO itemsonground(object_id,item_id,count,enchant_level,x,y,z,drop_time,equipable) VALUES(?,?,?,?,?,?,?,?,?)"))
 		{
 			for (ItemInstance item : _items)

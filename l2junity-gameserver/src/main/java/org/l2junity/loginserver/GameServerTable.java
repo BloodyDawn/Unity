@@ -37,7 +37,7 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.loginserver.network.gameserverpackets.ServerStatus;
 import org.l2junity.util.IPSubnet;
@@ -133,7 +133,7 @@ public final class GameServerTable
 	 */
 	private void loadRegisteredGameServers()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			Statement ps = con.createStatement();
 			ResultSet rs = ps.executeQuery("SELECT * FROM gameservers"))
 		{
@@ -240,7 +240,7 @@ public final class GameServerTable
 	public void registerServerOnDB(byte[] hexId, int id, String externalHost)
 	{
 		register(id, new GameServerInfo(id, hexId));
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("INSERT INTO gameservers (hexid,server_id,host) values (?,?,?)"))
 		{
 			ps.setString(1, hexToString(hexId));

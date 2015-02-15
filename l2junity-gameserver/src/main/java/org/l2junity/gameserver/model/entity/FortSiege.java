@@ -30,7 +30,7 @@ import java.util.logging.Logger;
 import javolution.util.FastList;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.enums.ChatType;
@@ -503,7 +503,7 @@ public class FortSiege implements Siegable
 	/** Clear all registered siege clans from database for fort */
 	public void clearSiegeClan()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM fortsiege_clans WHERE fort_id=?"))
 		{
 			ps.setInt(1, getFort().getResidenceId());
@@ -782,7 +782,7 @@ public class FortSiege implements Siegable
 	private void removeSiegeClan(int clanId)
 	{
 		final String query = (clanId != 0) ? DELETE_FORT_SIEGECLANS_BY_CLAN_ID : DELETE_FORT_SIEGECLANS;
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(query))
 		{
 			statement.setInt(1, getFort().getResidenceId());
@@ -990,7 +990,7 @@ public class FortSiege implements Siegable
 	private void loadSiegeClan()
 	{
 		getAttackerClans().clear();
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("SELECT clan_id FROM fortsiege_clans WHERE fort_id=?"))
 		{
 			ps.setInt(1, getFort().getResidenceId());
@@ -1051,7 +1051,7 @@ public class FortSiege implements Siegable
 	/** Save siege date to database. */
 	private void saveSiegeDate()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("UPDATE fort SET siegeDate = ? WHERE id = ?"))
 		{
 			ps.setLong(1, getSiegeDate().getTimeInMillis());
@@ -1075,7 +1075,7 @@ public class FortSiege implements Siegable
 			return;
 		}
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("INSERT INTO fortsiege_clans (clan_id,fort_id) values (?,?)"))
 		{
 			statement.setInt(1, clan.getId());

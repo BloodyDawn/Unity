@@ -37,7 +37,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.Server;
 import org.l2junity.loginserver.GameServerTable;
 import org.l2junity.tools.i18n.LanguageControl;
@@ -346,7 +346,7 @@ public abstract class BaseGameServerRegister
 	 */
 	public static void unregisterGameServer(int id) throws SQLException
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM gameservers WHERE server_id = ?"))
 		
 		{
@@ -362,7 +362,7 @@ public abstract class BaseGameServerRegister
 	 */
 	public static void unregisterAllGameServers() throws SQLException
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			Statement s = con.createStatement())
 		{
 			s.executeUpdate("DELETE FROM gameservers");

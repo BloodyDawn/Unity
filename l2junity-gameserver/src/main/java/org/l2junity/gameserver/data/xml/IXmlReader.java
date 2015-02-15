@@ -20,6 +20,7 @@ package org.l2junity.gameserver.data.xml;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -93,7 +94,7 @@ public interface IXmlReader
 		}
 		catch (Exception e)
 		{
-			LOGGER.warning(getClass().getSimpleName() + ": Could not parse file " + f.getName() + ": " + e.getMessage());
+			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Could not parse file " + f.getName() + ": ", e);
 			return;
 		}
 	}

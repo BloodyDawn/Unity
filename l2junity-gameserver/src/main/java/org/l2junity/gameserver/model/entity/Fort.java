@@ -37,7 +37,7 @@ import javolution.util.FastList;
 import javolution.util.FastMap;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.FortUpdater;
 import org.l2junity.gameserver.FortUpdater.UpdaterType;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -222,7 +222,7 @@ public final class Fort extends AbstractResidence
 		
 		public void dbSave()
 		{
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement ps = con.prepareStatement("REPLACE INTO fort_functions (fort_id, type, lvl, lease, rate, endTime) VALUES (?,?,?,?,?,?)"))
 			{
 				ps.setInt(1, getResidenceId());
@@ -499,7 +499,7 @@ public final class Fort extends AbstractResidence
 	
 	public void saveFortVariables()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("UPDATE fort SET supplyLvL=? WHERE id = ?"))
 		{
 			ps.setInt(1, _supplyLvL);
@@ -566,7 +566,7 @@ public final class Fort extends AbstractResidence
 	@Override
 	protected void load()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM fort WHERE id = ?"))
 		{
 			ps.setInt(1, getResidenceId());
@@ -628,7 +628,7 @@ public final class Fort extends AbstractResidence
 	/** Load All Functions */
 	private void loadFunctions()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM fort_functions WHERE fort_id = ?"))
 		{
 			ps.setInt(1, getResidenceId());
@@ -653,7 +653,7 @@ public final class Fort extends AbstractResidence
 	public void removeFunction(int functionType)
 	{
 		_function.remove(functionType);
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM fort_functions WHERE fort_id=? AND type=?"))
 		{
 			ps.setInt(1, getResidenceId());
@@ -755,7 +755,7 @@ public final class Fort extends AbstractResidence
 	// This method loads fort door upgrade data from database
 	private void loadDoorUpgrade()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM fort_doorupgrade WHERE fortId = ?"))
 		{
 			ps.setInt(1, getResidenceId());
@@ -775,7 +775,7 @@ public final class Fort extends AbstractResidence
 	
 	private void removeDoorUpgrade()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM fort_doorupgrade WHERE fortId = ?"))
 		{
 			ps.setInt(1, getResidenceId());
@@ -789,7 +789,7 @@ public final class Fort extends AbstractResidence
 	
 	private void saveDoorUpgrade(int doorId, int hp, int pDef, int mDef)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("INSERT INTO fort_doorupgrade (doorId, hp, pDef, mDef) VALUES (?,?,?,?)"))
 		{
 			ps.setInt(1, doorId);
@@ -818,7 +818,7 @@ public final class Fort extends AbstractResidence
 			_lastOwnedTime.setTimeInMillis(0);
 		}
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("UPDATE fort SET owner=?,lastOwnedTime=?,state=?,castleId=? WHERE id = ?"))
 		{
 			ps.setInt(1, clanId);
@@ -1030,7 +1030,7 @@ public final class Fort extends AbstractResidence
 	{
 		_state = state;
 		_castleId = castleId;
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("UPDATE fort SET state=?,castleId=? WHERE id = ?"))
 		{
 			ps.setInt(1, getFortState());
@@ -1162,7 +1162,7 @@ public final class Fort extends AbstractResidence
 	
 	private void initNpcs()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM fort_spawnlist WHERE fortId = ? AND spawnType = ?"))
 		{
 			ps.setInt(1, getResidenceId());
@@ -1193,7 +1193,7 @@ public final class Fort extends AbstractResidence
 	private void initSiegeNpcs()
 	{
 		_siegeNpcs.clear();
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("SELECT id, npcId, x, y, z, heading FROM fort_spawnlist WHERE fortId = ? AND spawnType = ? ORDER BY id"))
 		{
 			ps.setInt(1, getResidenceId());
@@ -1222,7 +1222,7 @@ public final class Fort extends AbstractResidence
 	private void initNpcCommanders()
 	{
 		_npcCommanders.clear();
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("SELECT id, npcId, x, y, z, heading FROM fort_spawnlist WHERE fortId = ? AND spawnType = ? ORDER BY id"))
 		{
 			ps.setInt(1, getResidenceId());
@@ -1254,7 +1254,7 @@ public final class Fort extends AbstractResidence
 		_specialEnvoys.clear();
 		_envoyCastles.clear();
 		_availableCastles.clear();
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("SELECT id, npcId, x, y, z, heading, castleId FROM fort_spawnlist WHERE fortId = ? AND spawnType = ? ORDER BY id"))
 		{
 			ps.setInt(1, getResidenceId());

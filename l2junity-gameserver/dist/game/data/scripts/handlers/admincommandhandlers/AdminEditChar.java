@@ -31,7 +31,7 @@ import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.data.xml.impl.ClassListData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
@@ -557,7 +557,7 @@ public class AdminEditChar implements IAdminCommandHandler
 				
 				if (player == null)
 				{
-					Connection con = L2DatabaseFactory.getInstance().getConnection();
+					Connection con = DatabaseFactory.getInstance().getConnection();
 					PreparedStatement ps = con.prepareStatement("UPDATE characters SET " + (changeCreateExpiryTime ? "clan_create_expiry_time" : "clan_join_expiry_time") + " WHERE char_name=? LIMIT 1");
 					
 					ps.setString(1, playerName);

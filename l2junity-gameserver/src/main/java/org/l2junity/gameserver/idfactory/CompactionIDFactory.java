@@ -24,7 +24,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 
 /**
  * 18.8.2010 - JIV: Disabling until someone update it
@@ -41,7 +41,7 @@ public class CompactionIDFactory extends IdFactory
 		_curOID = FIRST_OID;
 		_freeSize = 0;
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = DatabaseFactory.getInstance().getConnection())
 		{
 			Integer[] tmp_obj_ids = extractUsedObjectIDTable();
 			

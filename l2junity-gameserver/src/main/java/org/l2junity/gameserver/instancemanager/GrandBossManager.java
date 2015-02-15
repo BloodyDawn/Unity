@@ -35,7 +35,7 @@ import java.util.logging.Logger;
 import javolution.util.FastList;
 import javolution.util.FastMap;
 
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.instancemanager.tasks.GrandBossManagerStoreTask;
@@ -77,7 +77,7 @@ public final class GrandBossManager implements IStorable
 	
 	private void init()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			Statement s = con.createStatement();
 			ResultSet rs = s.executeQuery("SELECT * from grandboss_data ORDER BY boss_id"))
 		{
@@ -138,7 +138,7 @@ public final class GrandBossManager implements IStorable
 			zones.put(zone.getId(), new ArrayList<>());
 		}
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			Statement s = con.createStatement();
 			ResultSet rs = s.executeQuery("SELECT * from grandboss_list ORDER BY player_id"))
 		{
@@ -298,7 +298,7 @@ public final class GrandBossManager implements IStorable
 	@Override
 	public boolean storeMe()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement delete = con.prepareStatement(DELETE_GRAND_BOSS_LIST))
 		{
 			delete.executeUpdate();
@@ -376,7 +376,7 @@ public final class GrandBossManager implements IStorable
 	
 	private void updateDb(int bossId, boolean statusOnly)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = DatabaseFactory.getInstance().getConnection())
 		{
 			L2GrandBossInstance boss = _bosses.get(bossId);
 			StatsSet info = _storedInfo.get(bossId);

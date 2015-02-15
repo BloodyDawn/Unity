@@ -28,7 +28,7 @@ import java.util.logging.Logger;
 
 import javolution.util.FastList;
 
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.idfactory.IdFactory;
@@ -150,7 +150,7 @@ public final class MercTicketManager
 	 */
 	private final void load()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			Statement s = con.createStatement();
 			ResultSet rs = s.executeQuery("SELECT * FROM castle_siege_guards Where isHired = 1"))
 		{

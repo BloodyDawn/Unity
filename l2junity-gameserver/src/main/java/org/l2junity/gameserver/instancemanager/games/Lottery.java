@@ -28,7 +28,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -93,7 +93,7 @@ public class Lottery
 	public void increasePrize(long count)
 	{
 		_prize += count;
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(UPDATE_PRICE))
 		{
 			statement.setLong(1, getPrize());
@@ -128,7 +128,7 @@ public class Lottery
 		public void run()
 		{
 			
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				Statement statement = con.createStatement();
 				ResultSet rset = statement.executeQuery(SELECT_LAST_LOTTERY))
 			{
@@ -201,7 +201,7 @@ public class Lottery
 			ThreadPoolManager.getInstance().scheduleGeneral(new stopSellingTickets(), _enddate - System.currentTimeMillis() - (10 * MINUTE));
 			ThreadPoolManager.getInstance().scheduleGeneral(new finishLottery(), _enddate - System.currentTimeMillis());
 			
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement = con.prepareStatement(INSERT_LOTTERY))
 			{
 				statement.setInt(1, 1);
@@ -307,7 +307,7 @@ public class Lottery
 			int count3 = 0;
 			int count4 = 0;
 			
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement = con.prepareStatement(SELECT_LOTTERY_ITEM))
 			{
 				statement.setInt(1, getId());
@@ -422,7 +422,7 @@ public class Lottery
 				Broadcast.toAllOnlinePlayers(sm);
 			}
 			
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement = con.prepareStatement(UPDATE_LOTTERY))
 			{
 				statement.setLong(1, getPrize());
@@ -492,7 +492,7 @@ public class Lottery
 			0,
 			0
 		};
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(SELECT_LOTTERY_TICKET))
 		{
 			statement.setInt(1, id);

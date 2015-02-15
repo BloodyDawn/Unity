@@ -37,7 +37,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
@@ -162,7 +162,7 @@ public final class ItemAuctionInstance
 			throw new IllegalArgumentException("No items defined");
 		}
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement(SELECT_AUCTION_ID_BY_INSTANCE_ID))
 		{
 			ps.setInt(1, _instanceId);
@@ -543,7 +543,7 @@ public final class ItemAuctionInstance
 	
 	private final ItemAuction loadAuction(final int auctionId) throws SQLException
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = DatabaseFactory.getInstance().getConnection())
 		{
 			int auctionItemId = 0;
 			long startingTime = 0;

@@ -27,7 +27,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.LoginServerThread;
 import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.model.ManufactureItem;
@@ -51,7 +51,7 @@ public class OfflineTradersTable
 	
 	public void storeOffliners()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement stm1 = con.prepareStatement(CLEAR_OFFLINE_TABLE);
 			PreparedStatement stm2 = con.prepareStatement(CLEAR_OFFLINE_TABLE_ITEMS);
 			PreparedStatement stm3 = con.prepareStatement(SAVE_OFFLINE_STATUS);
@@ -146,7 +146,7 @@ public class OfflineTradersTable
 	{
 		LOGGER.info(getClass().getSimpleName() + ": Loading offline traders...");
 		int nTraders = 0;
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			Statement stm = con.createStatement();
 			ResultSet rs = stm.executeQuery(LOAD_OFFLINE_STATUS))
 		{

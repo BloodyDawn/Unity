@@ -35,7 +35,7 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.WorldObject;
@@ -110,7 +110,7 @@ public final class BotReportTable
 	 */
 	private void loadReportedCharData()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			Statement st = con.createStatement();
 			ResultSet rset = st.executeQuery(SQL_LOAD_REPORTED_CHAR_DATA))
 		{
@@ -180,7 +180,7 @@ public final class BotReportTable
 	 */
 	public void saveReportedCharData()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			Statement st = con.createStatement();
 			PreparedStatement ps = con.prepareStatement(SQL_INSERT_REPORTED_CHAR_DATA))
 		{

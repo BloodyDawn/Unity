@@ -27,7 +27,7 @@ import java.util.Map.Entry;
 
 import javolution.util.FastMap;
 
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.entity.Instance;
@@ -122,7 +122,7 @@ public final class InstanceManager implements IXmlReader
 			restoreInstanceTimes(playerObjId);
 		}
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement(ADD_INSTANCE_TIME))
 		{
 			ps.setInt(1, playerObjId);
@@ -144,7 +144,7 @@ public final class InstanceManager implements IXmlReader
 	 */
 	public void deleteInstanceTime(int playerObjId, int id)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement(DELETE_INSTANCE_TIME))
 		{
 			ps.setInt(1, playerObjId);
@@ -168,7 +168,7 @@ public final class InstanceManager implements IXmlReader
 			return; // already restored
 		}
 		_playerInstanceTimes.put(playerObjId, new FastMap<Integer, Long>());
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement(RESTORE_INSTANCE_TIMES))
 		{
 			ps.setInt(1, playerObjId);

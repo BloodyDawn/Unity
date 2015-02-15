@@ -31,7 +31,7 @@ import java.util.Map;
 import java.util.concurrent.ScheduledFuture;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
@@ -841,7 +841,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 	
 	private static void updateAttacker(int clanId, long count, boolean remove)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = DatabaseFactory.getInstance().getConnection())
 		{
 			PreparedStatement statement;
 			if (remove)
@@ -867,7 +867,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 	@Override
 	public void loadAttackers()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = DatabaseFactory.getInstance().getConnection())
 		{
 			PreparedStatement statement = con.prepareStatement("SELECT * FROM rainbowsprings_attacker_list");
 			ResultSet rset = statement.executeQuery();

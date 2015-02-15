@@ -26,7 +26,7 @@ import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.enums.ShortcutType;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.interfaces.IRestorable;
@@ -91,7 +91,7 @@ public class ShortCuts implements IRestorable
 			deleteShortCutFromDb(oldShortCut);
 		}
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("REPLACE INTO character_shortcuts (charId,slot,page,type,shortcut_id,level,class_index) values(?,?,?,?,?,?,?)"))
 		{
 			statement.setInt(1, _owner.getObjectId());
@@ -159,7 +159,7 @@ public class ShortCuts implements IRestorable
 	 */
 	private void deleteShortCutFromDb(Shortcut shortcut)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("DELETE FROM character_shortcuts WHERE charId=? AND slot=? AND page=? AND class_index=?"))
 		{
 			statement.setInt(1, _owner.getObjectId());
@@ -178,7 +178,7 @@ public class ShortCuts implements IRestorable
 	public boolean restoreMe()
 	{
 		_shortCuts.clear();
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("SELECT charId, slot, page, type, shortcut_id, level FROM character_shortcuts WHERE charId=? AND class_index=?"))
 		{
 			statement.setInt(1, _owner.getObjectId());

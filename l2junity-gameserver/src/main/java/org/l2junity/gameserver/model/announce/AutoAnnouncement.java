@@ -26,7 +26,7 @@ import java.sql.Statement;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.util.Broadcast;
 
@@ -95,7 +95,7 @@ public final class AutoAnnouncement extends Announcement implements Runnable
 	@Override
 	public boolean storeMe()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement st = con.prepareStatement(INSERT_QUERY, Statement.RETURN_GENERATED_KEYS))
 		{
 			st.setInt(1, getType().ordinal());
@@ -124,7 +124,7 @@ public final class AutoAnnouncement extends Announcement implements Runnable
 	@Override
 	public boolean updateMe()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement st = con.prepareStatement(UPDATE_QUERY))
 		{
 			st.setInt(1, getType().ordinal());

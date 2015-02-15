@@ -22,7 +22,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.UPnPService;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.data.sql.impl.OfflineTradersTable;
@@ -271,7 +271,7 @@ public class Shutdown extends Thread
 			// commit data, last chance
 			try
 			{
-				L2DatabaseFactory.getInstance().shutdown();
+				DatabaseFactory.getInstance().shutdown();
 				_log.info("L2Database Factory: Database connection has been shut down(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 			}
 			catch (Throwable t)

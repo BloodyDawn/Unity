@@ -25,7 +25,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.instancemanager.SiegeManager;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 
@@ -270,7 +270,7 @@ public class ClanMember
 	 */
 	public void updatePledgeType()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("UPDATE characters SET subpledge=? WHERE charId=?"))
 		{
 			ps.setLong(1, _pledgeType);
@@ -319,7 +319,7 @@ public class ClanMember
 	 */
 	public void updatePowerGrade()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("UPDATE characters SET power_grade=? WHERE charId=?"))
 		{
 			ps.setLong(1, _powerGrade);
@@ -748,7 +748,7 @@ public class ClanMember
 	 */
 	public void saveApprenticeAndSponsor(int apprentice, int sponsor)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("UPDATE characters SET apprentice=?,sponsor=? WHERE charId=?"))
 		{
 			ps.setInt(1, apprentice);

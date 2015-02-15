@@ -21,7 +21,7 @@ package org.l2junity.gameserver.taskmanager.tasks;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.taskmanager.Task;
 import org.l2junity.gameserver.taskmanager.TaskManager;
 import org.l2junity.gameserver.taskmanager.TaskTypes;
@@ -46,7 +46,7 @@ public class TaskDailySkillReuseClean extends Task
 	@Override
 	public void onTimeElapsed(ExecutedTask task)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = DatabaseFactory.getInstance().getConnection())
 		{
 			for (int skill_id : _daily_skills)
 			{

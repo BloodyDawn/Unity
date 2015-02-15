@@ -27,7 +27,7 @@ import java.util.logging.Logger;
 import javolution.util.FastList;
 import javolution.util.FastMap;
 
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.entity.Fort;
 
@@ -106,7 +106,7 @@ public final class FortSiegeGuardManager
 	void loadSiegeGuard()
 	{
 		_siegeGuards.clear();
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("SELECT npcId, x, y, z, heading, respawnDelay FROM fort_siege_guards WHERE fortId = ?"))
 		{
 			final int fortId = getFort().getResidenceId();

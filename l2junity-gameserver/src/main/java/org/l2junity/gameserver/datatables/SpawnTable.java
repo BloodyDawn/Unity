@@ -32,7 +32,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.instancemanager.DayNightSpawnManager;
@@ -247,7 +247,7 @@ public final class SpawnTable implements IXmlReader
 	private int fillSpawnTable(boolean isCustom)
 	{
 		int npcSpawnCount = 0;
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			Statement s = con.createStatement();
 			ResultSet rs = s.executeQuery(isCustom ? SELECT_CUSTOM_SPAWNS : SELECT_SPAWNS))
 		{
@@ -404,7 +404,7 @@ public final class SpawnTable implements IXmlReader
 		if (storeInDb)
 		{
 			final String spawnTable = spawn.isCustom() && Config.CUSTOM_SPAWNLIST_TABLE ? "custom_spawnlist" : "spawnlist";
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement insert = con.prepareStatement("INSERT INTO " + spawnTable + "(count,npc_templateid,locx,locy,locz,heading,respawn_delay,respawn_random,loc_id) values(?,?,?,?,?,?,?,?,?)"))
 			{
 				insert.setInt(1, spawn.getAmount());
@@ -439,7 +439,7 @@ public final class SpawnTable implements IXmlReader
 		
 		if (updateDb)
 		{
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement delete = con.prepareStatement("DELETE FROM " + (spawn.isCustom() ? "custom_spawnlist" : "spawnlist") + " WHERE locx=? AND locy=? AND locz=? AND npc_templateid=? AND heading=?"))
 			{
 				delete.setInt(1, spawn.getX());

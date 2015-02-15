@@ -23,7 +23,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import org.l2junity.Config;
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.AccessLevel;
@@ -75,7 +75,7 @@ public final class AdminChangeAccessLevel implements IAdminCommandHandler
 			}
 			else
 			{
-				try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+				try (Connection con = DatabaseFactory.getInstance().getConnection())
 				{
 					PreparedStatement statement = con.prepareStatement("UPDATE characters SET accesslevel=? WHERE char_name=?");
 					statement.setInt(1, lvl);

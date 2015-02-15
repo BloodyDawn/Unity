@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.communitybbs.BB.Forum;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 
@@ -43,7 +43,7 @@ public class ForumsBBSManager extends BaseBBSManager
 	protected ForumsBBSManager()
 	{
 		_table = new FastList<>();
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			Statement s = con.createStatement();
 			ResultSet rs = s.executeQuery("SELECT forum_id FROM forums WHERE forum_type = 0"))
 		{

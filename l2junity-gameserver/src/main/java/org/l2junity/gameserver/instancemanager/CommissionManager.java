@@ -36,7 +36,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.enums.MailType;
@@ -81,7 +81,7 @@ public final class CommissionManager
 	protected CommissionManager()
 	{
 		final Map<Integer, ItemInstance> itemInstances = new HashMap<>();
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = DatabaseFactory.getInstance().getConnection())
 		{
 			try (PreparedStatement ps = con.prepareStatement(SELECT_ALL_ITEMS))
 			{
@@ -255,7 +255,7 @@ public final class CommissionManager
 				return;
 			}
 			
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement ps = con.prepareStatement(INSERT_COMMISSION_ITEM, Statement.RETURN_GENERATED_KEYS))
 			{
 				final Instant startTime = Instant.now();
@@ -408,7 +408,7 @@ public final class CommissionManager
 	 */
 	private boolean deleteItemFromDB(long commissionId)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement(DELETE_COMMISSION_ITEM))
 		{
 			ps.setLong(1, commissionId);

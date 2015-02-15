@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2junity.L2DatabaseFactory;
+import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -61,7 +61,7 @@ public class ContactList
 	{
 		_contacts.clear();
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(QUERY_LOAD))
 		{
 			statement.setInt(1, activeChar.getObjectId());
@@ -127,7 +127,7 @@ public class ContactList
 			}
 		}
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(QUERY_ADD))
 		{
 			statement.setInt(1, activeChar.getObjectId());
@@ -164,7 +164,7 @@ public class ContactList
 		
 		_contacts.remove(name);
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(QUERY_REMOVE))
 		{
 			statement.setInt(1, activeChar.getObjectId());
