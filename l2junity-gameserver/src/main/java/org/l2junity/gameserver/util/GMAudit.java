@@ -26,8 +26,6 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2junity.Config;
-
 /**
  * Audits Game Master's actions.
  */
@@ -60,7 +58,7 @@ public class GMAudit
 		final File file = new File("log/GMAudit/" + name + ".txt");
 		try (FileWriter save = new FileWriter(file, true))
 		{
-			save.write(date + ">" + gmName + ">" + action + ">" + target + ">" + params + Config.EOL);
+			save.write(date + ">" + gmName + ">" + action + ">" + target + ">" + params + System.lineSeparator());
 		}
 		catch (IOException e)
 		{

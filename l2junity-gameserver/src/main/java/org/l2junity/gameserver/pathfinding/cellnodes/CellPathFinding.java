@@ -423,7 +423,7 @@ public class CellPathFinding extends PathFinding
 			sb.append(_postFilterPasses);
 			sb.append("/");
 			sb.append(String.format("%1.1f", (double) _postFilterPasses / _postFilterUses));
-			sb.append(Config.EOL);
+			sb.append(System.lineSeparator());
 		}
 		sb.append("Pathfind success/fail:");
 		sb.append(_findSuccess);

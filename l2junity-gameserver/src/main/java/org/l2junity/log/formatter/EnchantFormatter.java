@@ -20,7 +20,6 @@ package org.l2junity.log.formatter;
 
 import java.util.logging.LogRecord;
 
-import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -100,7 +99,7 @@ public class EnchantFormatter extends AbstractFormatter
 			}
 		}
 		
-		output.append(Config.EOL);
+		output.append(System.lineSeparator());
 		return output.toString();
 	}
 }

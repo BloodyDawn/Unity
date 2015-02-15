@@ -610,7 +610,7 @@ public class ThreadPoolManager
 			int count = ptf.getGroup().activeCount();
 			Thread[] threads = new Thread[count + 2];
 			ptf.getGroup().enumerate(threads);
-			sb.append("General Packet Thread Pool:" + Config.EOL + "Tasks in the queue: " + _generalPacketsThreadPool.getQueue().size() + Config.EOL + "Showing threads stack trace:" + Config.EOL + "There should be " + count + " Threads" + Config.EOL);
+			sb.append("General Packet Thread Pool:" + System.lineSeparator() + "Tasks in the queue: " + _generalPacketsThreadPool.getQueue().size() + System.lineSeparator() + "Showing threads stack trace:" + System.lineSeparator() + "There should be " + count + " Threads" + System.lineSeparator());
 			for (Thread t : threads)
 			{
 				if (t == null)
@@ -619,17 +619,17 @@ public class ThreadPoolManager
 				}
 				
 				sb.append(t.getName());
-				sb.append(Config.EOL);
+				sb.append(System.lineSeparator());
 				for (StackTraceElement ste : t.getStackTrace())
 				{
 					sb.append(ste);
-					sb.append(Config.EOL);
+					sb.append(System.lineSeparator());
 				}
 			}
 		}
 		
 		sb.append("Packet Tp stack traces printed.");
-		sb.append(Config.EOL);
+		sb.append(System.lineSeparator());
 		return sb.toString();
 	}
 	
@@ -644,7 +644,7 @@ public class ThreadPoolManager
 			int count = ptf.getGroup().activeCount();
 			Thread[] threads = new Thread[count + 2];
 			ptf.getGroup().enumerate(threads);
-			sb.append("I/O Packet Thread Pool:" + Config.EOL + "Tasks in the queue: " + _ioPacketsThreadPool.getQueue().size() + Config.EOL + "Showing threads stack trace:" + Config.EOL + "There should be " + count + " Threads" + Config.EOL);
+			sb.append("I/O Packet Thread Pool:" + System.lineSeparator() + "Tasks in the queue: " + _ioPacketsThreadPool.getQueue().size() + System.lineSeparator() + "Showing threads stack trace:" + System.lineSeparator() + "There should be " + count + " Threads" + System.lineSeparator());
 			
 			for (Thread t : threads)
 			{
@@ -654,16 +654,16 @@ public class ThreadPoolManager
 				}
 				
 				sb.append(t.getName());
-				sb.append(Config.EOL);
+				sb.append(System.lineSeparator());
 				for (StackTraceElement ste : t.getStackTrace())
 				{
 					sb.append(ste);
-					sb.append(Config.EOL);
+					sb.append(System.lineSeparator());
 				}
 			}
 		}
 		
-		sb.append("Packet Tp stack traces printed." + Config.EOL);
+		sb.append("Packet Tp stack traces printed." + System.lineSeparator());
 		
 		return sb.toString();
 	}
@@ -679,7 +679,7 @@ public class ThreadPoolManager
 			int count = ptf.getGroup().activeCount();
 			Thread[] threads = new Thread[count + 2];
 			ptf.getGroup().enumerate(threads);
-			sb.append("General Thread Pool:" + Config.EOL + "Tasks in the queue: " + _generalThreadPool.getQueue().size() + Config.EOL + "Showing threads stack trace:" + Config.EOL + "There should be " + +count + " Threads" + Config.EOL);
+			sb.append("General Thread Pool:" + System.lineSeparator() + "Tasks in the queue: " + _generalThreadPool.getQueue().size() + System.lineSeparator() + "Showing threads stack trace:" + System.lineSeparator() + "There should be " + +count + " Threads" + System.lineSeparator());
 			
 			for (Thread t : threads)
 			{
@@ -689,16 +689,16 @@ public class ThreadPoolManager
 				}
 				
 				sb.append(t.getName());
-				sb.append(Config.EOL);
+				sb.append(System.lineSeparator());
 				for (StackTraceElement ste : t.getStackTrace())
 				{
 					sb.append(ste);
-					sb.append(Config.EOL);
+					sb.append(System.lineSeparator());
 				}
 			}
 		}
 		
-		sb.append("Packet Tp stack traces printed." + Config.EOL);
+		sb.append("Packet Tp stack traces printed." + System.lineSeparator());
 		
 		return sb.toString();
 	}

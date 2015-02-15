@@ -20,8 +20,6 @@ package org.l2junity.log.formatter;
 
 import java.util.logging.LogRecord;
 
-import org.l2junity.Config;
-
 /**
  * @author zabbix
  */
@@ -46,7 +44,7 @@ public class AuditFormatter extends AbstractFormatter
 				output.append(p);
 			}
 		}
-		output.append(Config.EOL);
+		output.append(System.lineSeparator());
 		
 		return output.toString();
 	}

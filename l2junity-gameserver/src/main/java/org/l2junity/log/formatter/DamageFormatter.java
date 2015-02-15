@@ -20,7 +20,6 @@ package org.l2junity.log.formatter;
 
 import java.util.logging.LogRecord;
 
-import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
@@ -85,7 +84,7 @@ public class DamageFormatter extends AbstractFormatter
 			}
 		}
 		
-		output.append(Config.EOL);
+		output.append(System.lineSeparator());
 		return output.toString();
 	}
 }

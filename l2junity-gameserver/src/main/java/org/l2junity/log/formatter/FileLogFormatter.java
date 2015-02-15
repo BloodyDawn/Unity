@@ -24,8 +24,6 @@ import java.util.StringJoiner;
 import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
 
-import org.l2junity.Config;
-
 /**
  * This class ...
  * @version $Revision: 1.1.4.1 $ $Date: 2005/03/27 15:30:08 $
@@ -37,7 +35,7 @@ public class FileLogFormatter extends Formatter
 	@Override
 	public String format(LogRecord record)
 	{
-		final StringJoiner sj = new StringJoiner("\t", "", Config.EOL);
+		final StringJoiner sj = new StringJoiner("\t", "", System.lineSeparator());
 		sj.add(dateFormat.format(new Date(record.getMillis())));
 		sj.add(record.getLevel().getName());
 		sj.add(String.valueOf(record.getThreadID()));

@@ -20,7 +20,6 @@ package org.l2junity.log.formatter;
 
 import java.util.logging.LogRecord;
 
-import org.l2junity.Config;
 import org.l2junity.util.Util;
 
 public class ConsoleLogFormatter extends AbstractFormatter
@@ -30,14 +29,14 @@ public class ConsoleLogFormatter extends AbstractFormatter
 	{
 		final StringBuilder output = new StringBuilder(128);
 		output.append(super.format(record));
-		output.append(Config.EOL);
+		output.append(System.lineSeparator());
 		
 		if (record.getThrown() != null)
 		{
 			try
 			{
 				output.append(Util.getStackTrace(record.getThrown()));
-				output.append(Config.EOL);
+				output.append(System.lineSeparator());
 			}
 			catch (Exception ex)
 			{

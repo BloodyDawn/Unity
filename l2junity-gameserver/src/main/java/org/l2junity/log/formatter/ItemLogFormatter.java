@@ -20,7 +20,6 @@ package org.l2junity.log.formatter;
 
 import java.util.logging.LogRecord;
 
-import org.l2junity.Config;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 /**
@@ -65,7 +64,7 @@ public class ItemLogFormatter extends AbstractFormatter
 				output.append(p);
 			}
 		}
-		output.append(Config.EOL);
+		output.append(System.lineSeparator());
 		
 		return output.toString();
 	}

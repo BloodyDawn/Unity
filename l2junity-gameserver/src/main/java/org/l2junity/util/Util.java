@@ -31,7 +31,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.StringJoiner;
 
-import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 
 /**
@@ -205,7 +204,7 @@ public final class Util
 	
 	public static String getTraceString(StackTraceElement[] stackTraceElements)
 	{
-		final StringJoiner sj = new StringJoiner(Config.EOL);
+		final StringJoiner sj = new StringJoiner(System.lineSeparator());
 		for (final StackTraceElement stackTraceElement : stackTraceElements)
 		{
 			sj.add(stackTraceElement.toString());

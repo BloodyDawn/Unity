@@ -26,7 +26,6 @@ import java.sql.Statement;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 
-import org.l2junity.Config;
 import org.l2junity.L2DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.util.Broadcast;
@@ -170,7 +169,7 @@ public final class AutoAnnouncement extends Announcement implements Runnable
 	{
 		if ((_currentState == -1) || (_currentState > 0))
 		{
-			for (String content : getContent().split(Config.EOL))
+			for (String content : getContent().split(System.lineSeparator()))
 			{
 				Broadcast.toAllOnlinePlayers(content, (getType() == AnnouncementType.AUTO_CRITICAL));
 			}

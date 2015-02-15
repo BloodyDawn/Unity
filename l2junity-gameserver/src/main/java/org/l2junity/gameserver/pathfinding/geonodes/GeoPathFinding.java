@@ -34,6 +34,9 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javolution.util.FastList;
+import javolution.util.FastMap;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.model.Location;
@@ -43,9 +46,6 @@ import org.l2junity.gameserver.pathfinding.AbstractNodeLoc;
 import org.l2junity.gameserver.pathfinding.PathFinding;
 import org.l2junity.gameserver.pathfinding.utils.FastNodeList;
 import org.l2junity.gameserver.util.Util;
-
-import javolution.util.FastList;
-import javolution.util.FastMap;
 
 /**
  * @author -Nemesiss-
@@ -424,7 +424,7 @@ public class GeoPathFinding extends PathFinding
 	{
 		if ((rx < World.TILE_X_MIN) || (rx > World.TILE_X_MAX) || (ry < World.TILE_Y_MIN) || (ry > World.TILE_Y_MAX))
 		{
-			_log.warning("Failed to Load PathNode File: invalid region " + rx + "," + ry + Config.EOL);
+			_log.warning("Failed to Load PathNode File: invalid region " + rx + "," + ry + System.lineSeparator());
 			return;
 		}
 		short regionoffset = getRegionOffset(rx, ry);

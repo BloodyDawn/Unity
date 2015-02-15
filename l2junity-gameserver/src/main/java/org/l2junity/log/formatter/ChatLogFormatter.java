@@ -20,8 +20,6 @@ package org.l2junity.log.formatter;
 
 import java.util.logging.LogRecord;
 
-import org.l2junity.Config;
-
 public class ChatLogFormatter extends AbstractFormatter
 {
 	@Override
@@ -41,7 +39,7 @@ public class ChatLogFormatter extends AbstractFormatter
 		}
 		
 		output.append(record.getMessage());
-		output.append(Config.EOL);
+		output.append(System.lineSeparator());
 		
 		return output.toString();
 	}

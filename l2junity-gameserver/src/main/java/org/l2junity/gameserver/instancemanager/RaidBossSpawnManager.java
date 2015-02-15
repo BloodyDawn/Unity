@@ -28,6 +28,8 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javolution.util.FastMap;
+
 import org.l2junity.Config;
 import org.l2junity.L2DatabaseFactory;
 import org.l2junity.commons.util.Rnd;
@@ -38,8 +40,6 @@ import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.L2RaidBossInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
-
-import javolution.util.FastMap;
 
 /**
  * Raid Boss spawn manager.
@@ -443,7 +443,7 @@ public class RaidBossSpawnManager
 	 */
 	public String getRaidBossStatus(int bossId)
 	{
-		String msg = "RaidBoss Status..." + Config.EOL;
+		String msg = "RaidBoss Status..." + System.lineSeparator();
 		
 		if (_bosses == null)
 		{

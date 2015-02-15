@@ -129,7 +129,7 @@ public abstract class BaseGameServerRegister
 					{
 						if (bundle != null)
 						{
-							System.out.printf(bundle.getString("wrongUnregisterArg") + Config.EOL, gsId);
+							System.out.printf(bundle.getString("wrongUnregisterArg") + System.lineSeparator(), gsId);
 						}
 						System.exit(1);
 					}
@@ -448,12 +448,12 @@ public abstract class BaseGameServerRegister
 			if (getBundle() != null)
 			{
 				title = getBundle().getString("error");
-				msg += Config.EOL + getBundle().getString("reason") + ' ' + t.getLocalizedMessage();
+				msg += System.lineSeparator() + getBundle().getString("reason") + ' ' + t.getLocalizedMessage();
 			}
 			else
 			{
 				title = "Error";
-				msg += Config.EOL + "Cause: " + t.getLocalizedMessage();
+				msg += System.lineSeparator() + "Cause: " + t.getLocalizedMessage();
 			}
 			System.out.println(title + ": " + msg);
 		}
@@ -511,21 +511,21 @@ public abstract class BaseGameServerRegister
 					}
 					else
 					{
-						System.out.printf(getBundle().getString("registrationOk") + Config.EOL, registeredId);
+						System.out.printf(getBundle().getString("registrationOk") + System.lineSeparator(), registeredId);
 					}
 				}
 				else
 				{
-					System.out.printf(getBundle().getString("checkingIdInUse") + Config.EOL, _id);
+					System.out.printf(getBundle().getString("checkingIdInUse") + System.lineSeparator(), _id);
 					if (GameServerTable.getInstance().hasRegisteredGameServerOnId(_id))
 					{
 						System.out.println(getBundle().getString("yes"));
 						if (_force)
 						{
-							System.out.printf(getBundle().getString("forcingRegistration") + Config.EOL, _id);
+							System.out.printf(getBundle().getString("forcingRegistration") + System.lineSeparator(), _id);
 							BaseGameServerRegister.unregisterGameServer(_id);
 							BaseGameServerRegister.registerGameServer(_id, _outDir);
-							System.out.printf(getBundle().getString("registrationOk") + Config.EOL, _id);
+							System.out.printf(getBundle().getString("registrationOk") + System.lineSeparator(), _id);
 						}
 						else if (_fallback)
 						{
@@ -538,7 +538,7 @@ public abstract class BaseGameServerRegister
 							}
 							else
 							{
-								System.out.printf(getBundle().getString("registrationOk") + Config.EOL, registeredId);
+								System.out.printf(getBundle().getString("registrationOk") + System.lineSeparator(), registeredId);
 							}
 						}
 						else
@@ -584,7 +584,7 @@ public abstract class BaseGameServerRegister
 		@Override
 		public void run()
 		{
-			System.out.printf(getBundle().getString("removingGsId") + Config.EOL, _id);
+			System.out.printf(getBundle().getString("removingGsId") + System.lineSeparator(), _id);
 			try
 			{
 				BaseGameServerRegister.unregisterGameServer(_id);

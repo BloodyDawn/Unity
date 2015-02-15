@@ -25,6 +25,7 @@ import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.StringJoiner;
 import java.util.StringTokenizer;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -403,16 +404,17 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 			}
 			
 			final Location firstNode = holder.getNodes().get(0);
-			final StringBuilder sb = new StringBuilder();
-			sb.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + Config.EOL);
-			sb.append("<list enabled=\"true\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"../../../data/xsd/zones.xsd\">" + Config.EOL);
-			sb.append("\t<zone name=\"" + holder.getName() + "\" type=\"ScriptZone\" shape=\"NPoly\" minZ=\"" + (firstNode.getZ() - 100) + "\" maxZ=\"" + (firstNode.getZ() + 100) + "\">" + Config.EOL);
+			final StringJoiner sj = new StringJoiner(System.lineSeparator());
+			sj.add("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+			sj.add("<list enabled=\"true\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"../../../data/xsd/zones.xsd\">");
+			sj.add("\t<zone name=\"" + holder.getName() + "\" type=\"ScriptZone\" shape=\"NPoly\" minZ=\"" + (firstNode.getZ() - 100) + "\" maxZ=\"" + (firstNode.getZ() + 100) + "\">");
 			for (Location loc : holder.getNodes())
 			{
-				sb.append("\t\t<node X=\"" + loc.getX() + "\" Y=\"" + loc.getY() + "\" />" + Config.EOL);
+				sj.add("\t\t<node X=\"" + loc.getX() + "\" Y=\"" + loc.getY() + "\" />");
 			}
-			sb.append("\t</zone>" + Config.EOL);
-			sb.append("</list>" + Config.EOL);
+			sj.add("\t</zone>");
+			sj.add("</list>");
+			sj.add(""); // new line at end of file
 			try
 			{
 				File file = new File(Config.DATAPACK_ROOT, "log/points/" + activeChar.getAccountName() + "/" + holder.getName() + ".xml");
@@ -428,7 +430,7 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 				{
 					file.getParentFile().mkdirs();
 				}
-				Files.write(file.toPath(), sb.toString().getBytes(StandardCharsets.UTF_8));
+				Files.write(file.toPath(), sj.toString().getBytes(StandardCharsets.UTF_8));
 				activeChar.sendMessage("Successfully written on: " + file.getAbsolutePath().replace(Config.DATAPACK_ROOT.getAbsolutePath(), ""));
 			}
 			catch (Exception e)
