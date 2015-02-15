@@ -245,29 +245,25 @@ public class AdminSpawn implements IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_spawn_monster") || command.startsWith("admin_spawn"))
 		{
-			StringTokenizer st = new StringTokenizer(command, " ");
+			final StringTokenizer st = new StringTokenizer(command, " ");
 			try
 			{
-				String cmd = st.nextToken();
-				String id = st.nextToken();
-				int respawnTime = 0;
+				final String cmd = st.nextToken();
+				final String id = st.nextToken();
+				int respawnTime = 60;
 				int mobCount = 1;
+				
 				if (st.hasMoreTokens())
 				{
 					mobCount = Integer.parseInt(st.nextToken());
 				}
+				
 				if (st.hasMoreTokens())
 				{
 					respawnTime = Integer.parseInt(st.nextToken());
 				}
-				if (cmd.equalsIgnoreCase("admin_spawn_once"))
-				{
-					spawnMonster(activeChar, id, respawnTime, mobCount, false);
-				}
-				else
-				{
-					spawnMonster(activeChar, id, respawnTime, mobCount, true);
-				}
+				
+				spawnMonster(activeChar, id, respawnTime, mobCount, (!cmd.equalsIgnoreCase("admin_spawn_once")));
 			}
 			catch (Exception e)
 			{ // Case of wrong or missing monster data
@@ -396,7 +392,7 @@ public class AdminSpawn implements IAdminCommandHandler
 			target = activeChar;
 		}
 		
-		L2NpcTemplate template1;
+		final L2NpcTemplate template1;
 		if (monsterId.matches("[0-9]*"))
 		{
 			// First parameter was an ID number
@@ -412,7 +408,7 @@ public class AdminSpawn implements IAdminCommandHandler
 		
 		try
 		{
-			L2Spawn spawn = new L2Spawn(template1);
+			final L2Spawn spawn = new L2Spawn(template1);
 			if (Config.SAVE_GMSPAWN_ON_CUSTOM)
 			{
 				spawn.setCustom(true);
@@ -450,6 +446,7 @@ public class AdminSpawn implements IAdminCommandHandler
 					SpawnTable.getInstance().addNewSpawn(spawn, permanent);
 					spawn.init();
 				}
+				
 				if (!permanent)
 				{
 					spawn.stopRespawn();
