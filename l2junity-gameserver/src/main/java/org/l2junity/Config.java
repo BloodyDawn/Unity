@@ -56,6 +56,7 @@ import java.util.regex.PatternSyntaxException;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import org.l2junity.commons.util.PropertiesParser;
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.IllegalActionPunishmentType;
@@ -64,7 +65,6 @@ import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.util.FloodProtectorConfig;
 import org.l2junity.gameserver.util.Util;
-import org.l2junity.util.PropertiesParser;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;

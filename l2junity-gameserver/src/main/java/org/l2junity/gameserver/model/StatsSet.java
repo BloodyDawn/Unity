@@ -23,15 +23,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.l2junity.commons.util.TimeUtil;
 import org.l2junity.gameserver.model.holders.MinionHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.interfaces.IParserAdvUtils;
-import org.l2junity.util.TimeUtil;
-
-import javolution.util.FastMap;
 
 /**
  * This class is meant to hold a set of (key,value) pairs.<br>
@@ -42,13 +41,13 @@ public class StatsSet implements IParserAdvUtils
 {
 	private static final Logger _log = Logger.getLogger(StatsSet.class.getName());
 	/** Static empty immutable map, used to avoid multiple null checks over the source. */
-	public static final StatsSet EMPTY_STATSET = new StatsSet(Collections.<String, Object> emptyMap());
+	public static final StatsSet EMPTY_STATSET = new StatsSet(Collections.emptyMap());
 	
 	private final Map<String, Object> _set;
 	
 	public StatsSet()
 	{
-		this(new FastMap<String, Object>());
+		this(new ConcurrentHashMap<>());
 	}
 	
 	public StatsSet(Map<String, Object> map)

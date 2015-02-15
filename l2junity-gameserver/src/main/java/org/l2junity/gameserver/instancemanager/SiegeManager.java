@@ -31,6 +31,7 @@ import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.L2DatabaseFactory;
+import org.l2junity.commons.util.PropertiesParser;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.Location;
@@ -41,7 +42,6 @@ import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.Siege;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.util.PropertiesParser;
 
 import javolution.util.FastList;
 
