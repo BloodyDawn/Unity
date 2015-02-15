@@ -33,6 +33,15 @@ public final class PacketWriter
 	}
 	
 	/**
+	 * Gets the writable bytes.
+	 * @return the writable bytes
+	 */
+	public int getWritableBytes()
+	{
+		return _buf.writableBytes();
+	}
+	
+	/**
 	 * Writes a byte.
 	 * @param value the byte (The 24 high-order bits are ignored)
 	 */
