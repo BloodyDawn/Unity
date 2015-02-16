@@ -163,18 +163,38 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10315" levels="2" name="Superior Polearm Mastery">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- When a spear is equipped, P. Atk. + 2 % and additional P. Atk. + 583. -->
-		<set name="icon" val="icon.skill11836" />
+		<table name="#magicLvl"> 85 90 </table>
+		<table name="#pAtkAdd"> 583 678 </table>
+		<table name="#pAtkMul"> 1.02 1.03 </table>
 		<set name="operateType" val="P" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="icon" val="icon.skill11836" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#pAtkMul">
+					<using kind="POLE" />
+				</mul>
+				<add stat="pAtk" val="#pAtkAdd">
+					<using kind="POLE" />
+				</add>
+			</effect>
+		</for>
 	</skill>
 	<skill id="10316" levels="4" name="Bloodthirst">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- PvP P. Atk. + 5%. -->
-		<set name="icon" val="icon.skill0193" />
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#pvpPhysDmg"> 1.05 1.06 1.07 1.08 </table>
 		<set name="operateType" val="P" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="icon" val="icon.skill0193" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pvpPhysDmg" val="#pvpPhysDmg" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10317" levels="4" name="Thunder Slasher">
 		<!-- AUTO GENERATED SKILL -->

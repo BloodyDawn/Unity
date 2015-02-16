@@ -20,7 +20,6 @@ package instances.HarnakUndergroundRuins;
 
 import instances.AbstractInstance;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
@@ -55,7 +54,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 		protected int maximalDefenseCounter = 0;
 		protected int timerCount = 0;
 		protected int enabledSeal = 0;
-		protected Set<Npc> spawnedNpc = Collections.newSetFromMap(new ConcurrentHashMap<Npc, Boolean>());
+		protected Set<Npc> spawnedNpc = ConcurrentHashMap.newKeySet();
 		protected boolean openingPlayed = false;
 		protected boolean harnakMessage1 = false;
 		protected boolean harnakMessage2 = false;
