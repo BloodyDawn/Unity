@@ -10706,6 +10706,7 @@ public final class L2PcInstance extends Playable
 		super.doRevive();
 		updateEffectIcons();
 		sendPacket(new EtcStatusUpdate(this));
+		_revivePet = false;
 		_reviveRequested = 0;
 		_revivePower = 0;
 		
