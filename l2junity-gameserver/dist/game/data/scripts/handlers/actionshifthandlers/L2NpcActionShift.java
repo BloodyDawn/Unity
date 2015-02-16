@@ -38,31 +38,16 @@ import org.l2junity.gameserver.util.Util;
 
 public class L2NpcActionShift implements IActionShiftHandler
 {
-	/**
-	 * Manage and Display the GM console to modify the L2NpcInstance (GM only).<BR>
-	 * <BR>
-	 * <B><U> Actions (If the L2PcInstance is a GM only)</U> :</B><BR>
-	 * <BR>
-	 * <li>Set the L2NpcInstance as target of the L2PcInstance player (if necessary)</li> <li>Send a Server->Client packet MyTargetSelected to the L2PcInstance player (display the select window)</li> <li>If L2NpcInstance is autoAttackable, send a Server->Client packet StatusUpdate to the
-	 * L2PcInstance in order to update L2NpcInstance HP bar</li> <li>Send a Server->Client NpcHtmlMessage() containing the GM console about this L2NpcInstance</li><BR>
-	 * <BR>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : Each group of Server->Client packet must be terminated by a ActionFailed packet in order to avoid that client wait an other packet</B></FONT><BR>
-	 * <BR>
-	 * <B><U> Example of use </U> :</B><BR>
-	 * <BR>
-	 * <li>Client packet : Action</li><BR>
-	 * <BR>
-	 */
 	@Override
 	public boolean action(L2PcInstance activeChar, WorldObject target, boolean interact)
 	{
 		// Check if the L2PcInstance is a GM
-		if (activeChar.getAccessLevel().isGm())
+		if (activeChar.isGM())
 		{
 			// Set the target of the L2PcInstance activeChar
 			activeChar.setTarget(target);
 			
-			final NpcHtmlMessage html = new NpcHtmlMessage();
+			final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 			html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/npcinfo.htm");
 			
 			html.replace("%objid%", String.valueOf(target.getObjectId()));
