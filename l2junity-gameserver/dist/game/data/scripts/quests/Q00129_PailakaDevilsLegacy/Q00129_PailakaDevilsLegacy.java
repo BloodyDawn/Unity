@@ -23,7 +23,6 @@ import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.entity.Instance;
-import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
@@ -56,8 +55,6 @@ public final class Q00129_PailakaDevilsLegacy extends Quest
 	private static final int PAILAKA_KEY = 13150; // Pailaka All-Purpose Key
 	private static final int BRACELET = 13295; // Pailaka Bracelet
 	private static final int ESCAPE = 736; // Scroll of Escape
-	// Skills
-	private static final SkillHolder VITALITY_REPLENISHING = new SkillHolder(5774, 2); // Pailaka Reward Vitality Replenishing
 	// Misc
 	private static final int MIN_LEVEL = 61;
 	private static final int MAX_LEVEL = 67;
@@ -258,9 +255,8 @@ public final class Q00129_PailakaDevilsLegacy extends Quest
 					inst.setEmptyDestroyTime(0);
 					if (inst.containsPlayer(player.getObjectId()))
 					{
-						npc.setTarget(player);
-						npc.doCast(VITALITY_REPLENISHING.getSkill());
-						addExpAndSp(player, 10800000, 950000);
+						addExpAndSp(player, 4010000, 962);
+						giveAdena(player, 411500, true);
 						rewardItems(player, BRACELET, 1);
 						rewardItems(player, ESCAPE, 1);
 					}

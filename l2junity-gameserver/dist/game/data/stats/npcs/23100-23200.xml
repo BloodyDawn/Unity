@@ -357,14 +357,19 @@
 			<height normal="22.4" />
 		</collision>
 	</npc>
-	<npc id="23121" level="85" type="L2Npc" name="Thief" title="">
-		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+	<npc id="23121" level="8" type="L2Monster" name="Thief" title="">
+		<!-- TODO: Confirm me -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="7324" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+		<stats str="89" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="634" hpRegen="176.7" mp="1345.8" mpRegen="2.7" />
+			<attack physical="37" magical="25" random="10" critical="1" accuracy="4.75" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="81" magical="54" />
+			<attribute>
+				<defence fire="160" water="160" wind="160" earth="160" holy="160" dark="160" />
+			</attribute>			
 			<speed>
-				<walk ground="50" />
+				<walk ground="40" />
 				<run ground="120" />
 			</speed>
 		</stats>
