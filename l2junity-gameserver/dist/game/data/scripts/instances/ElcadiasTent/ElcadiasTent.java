@@ -18,6 +18,8 @@
  */
 package instances.ElcadiasTent;
 
+import instances.AbstractInstance;
+
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -25,7 +27,6 @@ import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.quest.QuestState;
 
-import instances.AbstractInstance;
 import quests.Q10292_SevenSignsGirlOfDoubt.Q10292_SevenSignsGirlOfDoubt;
 import quests.Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom.Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom;
 import quests.Q10294_SevenSignsToTheMonasteryOfSilence.Q10294_SevenSignsToTheMonasteryOfSilence;
@@ -36,11 +37,6 @@ import quests.Q10294_SevenSignsToTheMonasteryOfSilence.Q10294_SevenSignsToTheMon
  */
 public final class ElcadiasTent extends AbstractInstance
 {
-	protected class ETWorld extends InstanceWorld
-	{
-		
-	}
-	
 	// NPCs
 	private static final int ELCADIA = 32784;
 	private static final int GRUFF_LOOKING_MAN = 32862;
@@ -71,7 +67,7 @@ public final class ElcadiasTent extends AbstractInstance
 				|| ((ForbiddenBook != null) && ForbiddenBook.isStarted()) //
 				|| ((ForbiddenBook != null) && ForbiddenBook.isCompleted() && (Monastery == null)))
 			{
-				enterInstance(talker, new ETWorld(), "ElcadiasTent.xml", TEMPLATE_ID);
+				enterInstance(talker, "ElcadiasTent.xml", TEMPLATE_ID);
 			}
 			else
 			{

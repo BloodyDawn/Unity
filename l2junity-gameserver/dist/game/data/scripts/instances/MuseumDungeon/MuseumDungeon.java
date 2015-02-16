@@ -72,9 +72,8 @@ public final class MuseumDungeon extends AbstractInstance
 	{
 		protected L2QuestGuardInstance toyron = null;
 		protected L2MonsterInstance thief = null;
-		protected List<Npc> desks;
 		protected Set<Npc> spawnedThiefs = ConcurrentHashMap.newKeySet();
-		protected int bookDesk = 0;
+		protected Npc bookDesk = null;
 		protected int killedThiefs = 0;
 	}
 	
@@ -82,8 +81,7 @@ public final class MuseumDungeon extends AbstractInstance
 	{
 		super(MuseumDungeon.class.getSimpleName());
 		addStartNpc(PANTHEON);
-		addTalkId(PANTHEON);
-		addTalkId(TOYRON);
+		addTalkId(PANTHEON, TOYRON);
 		addFirstTalkId(DESK);
 		addAttackId(THIEF);
 		addKillId(THIEF);
@@ -105,21 +103,21 @@ public final class MuseumDungeon extends AbstractInstance
 				final MDWorld world = (MDWorld) tmpworld;
 				switch (event)
 				{
-					case "toyron_follow":
+					case "TOYRON_FOLLOW":
 					{
 						world.toyron.getAI().startFollow(player);
 						break;
 					}
-					case "toyron_shout":
+					case "TOYRON_SHOUT":
 					{
 						if (!world.toyron.canTarget(player))
 						{
-							cancelQuestTimer("toyron_shout", world.toyron, player);
+							cancelQuestTimer("TOYRON_SHOUT", world.toyron, player);
 						}
 						broadcastNpcSay(world.toyron, ChatType.NPC_GENERAL, TOYRON_SHOUT[getRandom(2)]);
 						break;
 					}
-					case "spawn_thiefs_stage_1":
+					case "SPAWN_THIEFS_STAGE_1":
 					{
 						final List<Npc> thiefs = spawnGroup("thiefs", world.getInstanceId());
 						world.spawnedThiefs.addAll(thiefs);
@@ -131,7 +129,7 @@ public final class MuseumDungeon extends AbstractInstance
 						}
 						break;
 					}
-					case "spawn_thiefs_stage_2":
+					case "SPAWN_THIEFS_STAGE_2":
 					{
 						final List<Npc> thiefs = spawnGroup("thiefs", world.getInstanceId());
 						world.spawnedThiefs.addAll(thiefs);
@@ -141,18 +139,18 @@ public final class MuseumDungeon extends AbstractInstance
 						}
 						break;
 					}
-					case "check_follow":
+					case "CHECK_FOLLOW":
 					{
 						if (world.toyron.canTarget(player))
 						{
-							startQuestTimer("toyron_follow", 500, world.toyron, player);
+							startQuestTimer("TOYRON_FOLLOW", 500, world.toyron, player);
 						}
 						break;
 					}
-					case "kill_thief":
+					case "KILL_THIEF":
 					{
 						npc.doDie(player);
-						startQuestTimer("toyron_follow", 500, world.toyron, player);
+						startQuestTimer("TOYRON_FOLLOW", 500, world.toyron, player);
 						break;
 					}
 				}
@@ -194,7 +192,7 @@ public final class MuseumDungeon extends AbstractInstance
 			broadcastNpcSay(world.toyron, ChatType.NPC_GENERAL, NpcStringId.ENOUGH_OF_THIS_COME_AT_ME);
 			world.toyron.reduceCurrentHp(1, npc, null); // TODO: Find better way for attack
 			npc.reduceCurrentHp(1, world.toyron, null);
-			startQuestTimer("kill_thief", 2500, npc, attacker);
+			startQuestTimer("KILL_THIEF", 2500, npc, attacker);
 		}
 		else
 		{
@@ -217,13 +215,13 @@ public final class MuseumDungeon extends AbstractInstance
 		}
 		else if (qs.isCond(1))
 		{
-			if (((npc.getObjectId() == world.bookDesk) && !qs.hasQuestItems(THE_WAR_OF_GODS_AND_GIANTS)))
+			if (((npc == world.bookDesk) && !qs.hasQuestItems(THE_WAR_OF_GODS_AND_GIANTS)))
 			{
 				qs.setCond(2);
 				giveItems(player, THE_WAR_OF_GODS_AND_GIANTS, 1);
 				showOnScreenMsg(player, NpcStringId.WATCH_OUT_YOU_ARE_BEING_ATTACKED, ExShowScreenMessage.TOP_CENTER, 4500);
-				startQuestTimer("spawn_thiefs_stage_1", 500, world.thief, player);
-				startQuestTimer("toyron_follow", 500, world.toyron, player);
+				startQuestTimer("SPAWN_THIEFS_STAGE_1", 500, world.thief, player);
+				startQuestTimer("TOYRON_FOLLOW", 500, world.toyron, player);
 				htmltext = "33126-01.html";
 			}
 			else
@@ -263,12 +261,12 @@ public final class MuseumDungeon extends AbstractInstance
 			{
 				if (world.spawnedThiefs.isEmpty())
 				{
-					startQuestTimer("spawn_thiefs_stage_2", 500, world.thief, player);
-					startQuestTimer("toyron_follow", 500, world.toyron, player);
+					startQuestTimer("SPAWN_THIEFS_STAGE_2", 500, world.thief, player);
+					startQuestTimer("TOYRON_FOLLOW", 500, world.toyron, player);
 				}
 				else
 				{
-					startQuestTimer("check_follow", 1000, world.toyron, player);
+					startQuestTimer("CHECK_FOLLOW", 1000, world.toyron, player);
 				}
 			}
 		}
@@ -277,20 +275,7 @@ public final class MuseumDungeon extends AbstractInstance
 	protected void spawnDesks(L2PcInstance player, MDWorld world)
 	{
 		final List<Npc> desks = spawnGroup("desks", world.getInstanceId());
-		for (Npc desk : desks)
-		{
-			double point = Math.random();
-			int counter = 0;
-			if (((point <= 0.25) && (counter == 0)) || ((point > 0.25) && (point <= 0.5) && (counter == 1)) || ((point > 0.5) && (point <= 0.75) && (counter == 2)) || ((point > 0.75) && (counter == 3)))
-			{
-				world.bookDesk = desk.getObjectId();
-			}
-			++counter;
-		}
-		if ((world.bookDesk == 0) && (desks.size() > 0))
-		{
-			world.bookDesk = desks.get(0).getObjectId();
-		}
+		world.bookDesk = desks.get(getRandom(desks.size()));
 	}
 	
 	@Override

@@ -18,13 +18,13 @@
  */
 package instances.HideoutOfTheDawn;
 
+import instances.AbstractInstance;
+
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
-
-import instances.AbstractInstance;
 
 /**
  * Hideout of the Dawn instance zone.
@@ -32,11 +32,6 @@ import instances.AbstractInstance;
  */
 public final class HideoutOfTheDawn extends AbstractInstance
 {
-	protected class HotDWorld extends InstanceWorld
-	{
-		
-	}
-	
 	// NPCs
 	private static final int WOOD = 32593;
 	private static final int JAINA = 32617;
@@ -60,7 +55,7 @@ public final class HideoutOfTheDawn extends AbstractInstance
 		{
 			case WOOD:
 			{
-				enterInstance(talker, new HotDWorld(), "HideoutOfTheDawn.xml", TEMPLATE_ID);
+				enterInstance(talker, "HideoutOfTheDawn.xml", TEMPLATE_ID);
 				return "32593-01.htm";
 			}
 			case JAINA:

@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.quest.State;
 
 /**
  * Pailaka - Song of Ice and Fire (128)
- * @author Gnacik, St3eT, Gladicek
+ * @author Gnacik, St3eT
  */
 public final class Q00128_PailakaSongOfIceAndFire extends Quest
 {
@@ -161,19 +161,14 @@ public final class Q00128_PailakaSongOfIceAndFire extends Quest
 			case "298": // Orcish Glaive
 			case "71": // Flamberge
 			{
-				st.exitQuest(false, true);
-				
-				Instance inst = InstanceManager.getInstance().getInstance(npc.getInstanceId());
+				final Instance inst = InstanceManager.getInstance().getInstance(npc.getInstanceId());
 				inst.setDuration(EXIT_TIME * 60000);
 				inst.setEmptyDestroyTime(0);
-				
-				if (inst.containsPlayer(player.getObjectId()))
-				{
-					giveAdena(player, 187200, true);
-					addExpAndSp(player, 1860000, 446);
-					giveItems(player, SCROLL_OF_ESCAPE, 1);
-					st.giveItems(Integer.valueOf(event), 1);
-				}
+				st.exitQuest(false, true);
+				giveAdena(player, 187200, true);
+				addExpAndSp(player, 1860000, 446);
+				giveItems(player, SCROLL_OF_ESCAPE, 1);
+				st.giveItems(Integer.parseInt(event), 1);
 				htmltext = "32510-2.htm";
 				break;
 			}
@@ -204,14 +199,7 @@ public final class Q00128_PailakaSongOfIceAndFire extends Quest
 					}
 					case State.STARTED:
 					{
-						if (st.getCond() > 1)
-						{
-							htmltext = "32497-00.htm";
-						}
-						else
-						{
-							htmltext = "32497-03.htm";
-						}
+						htmltext = (st.getCond() > 1) ? "32497-00.htm" : "32497-03.htm";
 						break;
 					}
 					case State.COMPLETED:
@@ -229,14 +217,7 @@ public final class Q00128_PailakaSongOfIceAndFire extends Quest
 			}
 			case SINAI:
 			{
-				if (st.getCond() > 1)
-				{
-					htmltext = "32500-00.htm";
-				}
-				else
-				{
-					htmltext = "32500-01.htm";
-				}
+				htmltext = (st.getCond() > 1) ? "32500-00.htm" : "32500-01.htm";
 				break;
 			}
 			case INSPECTOR:
