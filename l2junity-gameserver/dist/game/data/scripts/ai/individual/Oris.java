@@ -56,7 +56,7 @@ public final class Oris extends AbstractNpcAI
 		}
 		else if (event.equals("SPAM_TEXT") && (npc != null))
 		{
-			broadcastNpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.I_HAVEN_T_FELT_THIS_GOOD_IN_AGES, 1000);
+			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.I_HAVEN_T_FELT_THIS_GOOD_IN_AGES, 1000);
 		}
 		return super.onAdvEvent(event, npc, player);
 	}

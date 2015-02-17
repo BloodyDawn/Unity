@@ -18,6 +18,8 @@
  */
 package instances.LibraryOfSages;
 
+import instances.AbstractInstance;
+
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
@@ -25,8 +27,6 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.network.NpcStringId;
-
-import instances.AbstractInstance;
 
 /**
  * Library of Sages instance zone.
@@ -98,7 +98,7 @@ public final class LibraryOfSages extends AbstractInstance
 				{
 					npc.setIsRunning(true);
 					npc.getAI().startFollow(player);
-					broadcastNpcSay(npc, ChatType.NPC_GENERAL, ELCADIA_DIALOGS[getRandom(ELCADIA_DIALOGS.length)]);
+					npc.broadcastSay(ChatType.NPC_GENERAL, ELCADIA_DIALOGS[getRandom(ELCADIA_DIALOGS.length)]);
 					startQuestTimer("FOLLOW", 10000, npc, player);
 					break;
 				}

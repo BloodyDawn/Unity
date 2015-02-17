@@ -20,15 +20,12 @@ package ai.npc;
 
 import java.util.logging.Logger;
 
-import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.MinionHolder;
 import org.l2junity.gameserver.model.quest.Quest;
-import org.l2junity.gameserver.network.NpcStringId;
-import org.l2junity.gameserver.network.serverpackets.NpcSay;
 import org.l2junity.gameserver.network.serverpackets.SocialAction;
 import org.l2junity.gameserver.util.Broadcast;
 
@@ -76,72 +73,6 @@ public abstract class AbstractNpcAI extends Quest
 		addSkillSeeId(mobs);
 		addAggroRangeEnterId(mobs);
 		addFactionCallId(mobs);
-	}
-	
-	/**
-	 * Broadcasts NpcSay packet to all known players with custom string.
-	 * @param npc
-	 * @param type
-	 * @param text
-	 */
-	protected void broadcastNpcSay(Npc npc, ChatType type, String text)
-	{
-		Broadcast.toKnownPlayers(npc, new NpcSay(npc.getObjectId(), type, npc.getTemplate().getDisplayId(), text));
-	}
-	
-	/**
-	 * Broadcasts NpcSay packet to all known players with npc string id.
-	 * @param npc
-	 * @param type
-	 * @param stringId
-	 */
-	protected void broadcastNpcSay(Npc npc, ChatType type, NpcStringId stringId)
-	{
-		Broadcast.toKnownPlayers(npc, new NpcSay(npc.getObjectId(), type, npc.getTemplate().getDisplayId(), stringId));
-	}
-	
-	/**
-	 * Broadcasts NpcSay packet to all known players with npc string id.
-	 * @param npc
-	 * @param type
-	 * @param stringId
-	 * @param parameters
-	 */
-	protected void broadcastNpcSay(Npc npc, ChatType type, NpcStringId stringId, String... parameters)
-	{
-		final NpcSay say = new NpcSay(npc.getObjectId(), type, npc.getTemplate().getDisplayId(), stringId);
-		if (parameters != null)
-		{
-			for (String parameter : parameters)
-			{
-				say.addStringParameter(parameter);
-			}
-		}
-		Broadcast.toKnownPlayers(npc, say);
-	}
-	
-	/**
-	 * Broadcasts NpcSay packet to all known players with custom string in specific radius.
-	 * @param npc
-	 * @param type
-	 * @param text
-	 * @param radius
-	 */
-	protected void broadcastNpcSay(Npc npc, ChatType type, String text, int radius)
-	{
-		Broadcast.toKnownPlayersInRadius(npc, new NpcSay(npc.getObjectId(), type, npc.getTemplate().getDisplayId(), text), radius);
-	}
-	
-	/**
-	 * Broadcasts NpcSay packet to all known players with npc string id in specific radius.
-	 * @param npc
-	 * @param type
-	 * @param stringId
-	 * @param radius
-	 */
-	protected void broadcastNpcSay(Npc npc, ChatType type, NpcStringId stringId, int radius)
-	{
-		Broadcast.toKnownPlayersInRadius(npc, new NpcSay(npc.getObjectId(), type, npc.getTemplate().getDisplayId(), stringId), radius);
 	}
 	
 	/**

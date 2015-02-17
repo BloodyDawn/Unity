@@ -311,7 +311,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 		if (npc.isScriptValue(0))
 		{
 			npc.setScriptValue(1);
-			broadcastNpcSay(npc, ChatType.NPC_GENERAL, "?");
+			npc.broadcastSay(ChatType.NPC_GENERAL, "?");
 			((Attackable) npc).clearAggroList();
 			startQuestTimer("TREX_ATTACK", 6000, npc, player);
 		}

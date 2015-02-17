@@ -24,6 +24,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import javolution.util.FastList;
+import javolution.util.FastMap;
+
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
@@ -43,8 +46,6 @@ import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.util.MinionList;
 import org.l2junity.gameserver.util.Util;
 
-import javolution.util.FastList;
-import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
 
 /**
@@ -612,7 +613,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 					MinionList.spawnMinion(_lock, 18493);
 					MinionList.spawnMinion(_lock, 18493);
 				}
-				broadcastNpcSay(_controller, ChatType.NPC_GENERAL, NpcStringId.EMERGENCY_EMERGENCY_THE_OUTER_WALL_IS_WEAKENING_RAPIDLY);
+				_controller.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.EMERGENCY_EMERGENCY_THE_OUTER_WALL_IS_WEAKENING_RAPIDLY);
 				_counter -= 10;
 			}
 		}
@@ -716,7 +717,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 						{
 							if ((spore != null) && !spore.isDead() && (spore.getId() == npcId))
 							{
-								broadcastNpcSay(spore, ChatType.NPC_GENERAL, SPORES_NPCSTRING_ID[getRandom(4)], el);
+								spore.broadcastSay(ChatType.NPC_GENERAL, SPORES_NPCSTRING_ID[getRandom(4)], el);
 							}
 						}
 					}

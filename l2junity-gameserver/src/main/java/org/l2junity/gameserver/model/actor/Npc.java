@@ -37,6 +37,7 @@ import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.datatables.NpcPersonalAIData;
 import org.l2junity.gameserver.enums.AISkillScope;
 import org.l2junity.gameserver.enums.AIType;
+import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.enums.Race;
@@ -58,10 +59,10 @@ import org.l2junity.gameserver.model.actor.instance.L2ClanHallManagerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2DoormenInstance;
 import org.l2junity.gameserver.model.actor.instance.L2FishermanInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2TeleporterInstance;
 import org.l2junity.gameserver.model.actor.instance.L2TrainerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2WarehouseInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.knownlist.NpcKnownList;
 import org.l2junity.gameserver.model.actor.stat.NpcStat;
 import org.l2junity.gameserver.model.actor.status.NpcStatus;
@@ -86,6 +87,7 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.variables.NpcVariables;
 import org.l2junity.gameserver.model.zone.type.TownZone;
+import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.ExChangeNpcState;
@@ -93,6 +95,7 @@ import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.network.serverpackets.NpcInfo;
 import org.l2junity.gameserver.network.serverpackets.NpcInfoAbnormalVisualEffect;
+import org.l2junity.gameserver.network.serverpackets.NpcSay;
 import org.l2junity.gameserver.network.serverpackets.ServerObjectInfo;
 import org.l2junity.gameserver.network.serverpackets.SocialAction;
 import org.l2junity.gameserver.taskmanager.DecayTaskManager;
@@ -1956,5 +1959,56 @@ public class Npc extends Creature
 		{
 			_summonedNpcs.clear();
 		}
+	}
+	
+	/**
+	 * Broadcasts NpcSay packet to all known players.
+	 * @param chatType the chat type
+	 * @param text the text
+	 */
+	public void broadcastSay(ChatType chatType, String text)
+	{
+		Broadcast.toKnownPlayers(this, new NpcSay(getObjectId(), chatType, getTemplate().getDisplayId(), text));
+	}
+	
+	/**
+	 * Broadcasts NpcSay packet to all known players with NPC string id.
+	 * @param chatType the chat type
+	 * @param npcStringId the NPC string id
+	 * @param parameters the NPC string id parameters
+	 */
+	public void broadcastSay(ChatType chatType, NpcStringId npcStringId, String... parameters)
+	{
+		final NpcSay say = new NpcSay(getObjectId(), chatType, getTemplate().getDisplayId(), npcStringId);
+		if (parameters != null)
+		{
+			for (String parameter : parameters)
+			{
+				say.addStringParameter(parameter);
+			}
+		}
+		Broadcast.toKnownPlayers(this, say);
+	}
+	
+	/**
+	 * Broadcasts NpcSay packet to all known players with custom string in specific radius.
+	 * @param chatType the chat type
+	 * @param text the text
+	 * @param radius the radius
+	 */
+	public void broadcastSay(ChatType chatType, String text, int radius)
+	{
+		Broadcast.toKnownPlayersInRadius(this, new NpcSay(getObjectId(), chatType, getTemplate().getDisplayId(), text), radius);
+	}
+	
+	/**
+	 * Broadcasts NpcSay packet to all known players with NPC string id in specific radius.
+	 * @param chatType the chat type
+	 * @param npcStringId the NPC string id
+	 * @param radius the radius
+	 */
+	public void broadcastSay(ChatType chatType, NpcStringId npcStringId, int radius)
+	{
+		Broadcast.toKnownPlayersInRadius(this, new NpcSay(getObjectId(), chatType, getTemplate().getDisplayId(), npcStringId), radius);
 	}
 }

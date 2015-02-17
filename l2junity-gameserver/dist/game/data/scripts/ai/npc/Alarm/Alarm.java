@@ -61,19 +61,19 @@ public final class Alarm extends AbstractNpcAI
 			case "SELF_DESTRUCT_IN_60":
 			{
 				startQuestTimer("SELF_DESTRUCT_IN_30", 30000, npc, null);
-				broadcastNpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.THE_ALARM_WILL_SELF_DESTRUCT_IN_60_SECONDS_ENTER_PASSCODE_TO_OVERRIDE);
+				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.THE_ALARM_WILL_SELF_DESTRUCT_IN_60_SECONDS_ENTER_PASSCODE_TO_OVERRIDE);
 				break;
 			}
 			case "SELF_DESTRUCT_IN_30":
 			{
 				startQuestTimer("SELF_DESTRUCT_IN_10", 20000, npc, null);
-				broadcastNpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.THE_ALARM_WILL_SELF_DESTRUCT_IN_30_SECONDS_ENTER_PASSCODE_TO_OVERRIDE);
+				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.THE_ALARM_WILL_SELF_DESTRUCT_IN_30_SECONDS_ENTER_PASSCODE_TO_OVERRIDE);
 				break;
 			}
 			case "SELF_DESTRUCT_IN_10":
 			{
 				startQuestTimer("RECORDER_CRUSHED", 10000, npc, null);
-				broadcastNpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.THE_ALARM_WILL_SELF_DESTRUCT_IN_10_SECONDS_ENTER_PASSCODE_TO_OVERRIDE);
+				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.THE_ALARM_WILL_SELF_DESTRUCT_IN_10_SECONDS_ENTER_PASSCODE_TO_OVERRIDE);
 				break;
 			}
 			case "RECORDER_CRUSHED":
@@ -85,7 +85,7 @@ public final class Alarm extends AbstractNpcAI
 						npc0.getVariables().set("SPAWNED", false);
 						if (player0 != null)
 						{
-							broadcastNpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.RECORDER_CRUSHED);
+							npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.RECORDER_CRUSHED);
 							if (verifyMemoState(player0, ART_OF_PERSUASION_ID, -1))
 							{
 								setMemoState(player0, ART_OF_PERSUASION_ID, 5);
@@ -234,7 +234,7 @@ public final class Alarm extends AbstractNpcAI
 	public String onSpawn(Npc npc)
 	{
 		startQuestTimer("SELF_DESTRUCT_IN_60", 60000, npc, null);
-		broadcastNpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.INTRUDER_ALERT_THE_ALARM_WILL_SELF_DESTRUCT_IN_2_MINUTES);
+		npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.INTRUDER_ALERT_THE_ALARM_WILL_SELF_DESTRUCT_IN_2_MINUTES);
 		final PlayerInstance player = npc.getVariables().getObject("player0", PlayerInstance.class);
 		if (player != null)
 		{

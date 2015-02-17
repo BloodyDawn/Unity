@@ -71,11 +71,11 @@ public final class PlainsOfDion extends AbstractNpcAI
 			final int i = getRandom(5);
 			if (i < 2)
 			{
-				broadcastNpcSay(npc, ChatType.NPC_GENERAL, MONSTERS_MSG[i], player.getName());
+				npc.broadcastSay(ChatType.NPC_GENERAL, MONSTERS_MSG[i], player.getName());
 			}
 			else
 			{
-				broadcastNpcSay(npc, ChatType.NPC_GENERAL, MONSTERS_MSG[i]);
+				npc.broadcastSay(ChatType.NPC_GENERAL, MONSTERS_MSG[i]);
 			}
 			
 			for (Creature obj : npc.getKnownList().getKnownCharactersInRadius(npc.getTemplate().getClanHelpRange()))
@@ -84,7 +84,7 @@ public final class PlainsOfDion extends AbstractNpcAI
 				{
 					final Npc monster = (Npc) obj;
 					addAttackPlayerDesire(monster, player);
-					broadcastNpcSay(monster, ChatType.NPC_GENERAL, MONSTERS_ASSIST_MSG[getRandom(3)]);
+					monster.broadcastSay(ChatType.NPC_GENERAL, MONSTERS_ASSIST_MSG[getRandom(3)]);
 				}
 			}
 			npc.setScriptValue(1);

@@ -51,7 +51,7 @@ public final class Luderic extends AbstractNpcAI
 	{
 		if (event.equals("SPAM_TEXT") && (npc != null))
 		{
-			broadcastNpcSay(npc, ChatType.NPC_GENERAL, LUDERIC_SHOUT[getRandom(2)], 1000);
+			npc.broadcastSay(ChatType.NPC_GENERAL, LUDERIC_SHOUT[getRandom(2)], 1000);
 		}
 		else if (event.equals("SOCIAL_ACTION") && (npc != null))
 		{

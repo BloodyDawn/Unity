@@ -18,6 +18,8 @@
  */
 package hellbound.AI.NPC.Quarry;
 
+import hellbound.HellboundEngine;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.ChatType;
@@ -25,13 +27,12 @@ import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2QuestGuardInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.ItemChanceHolder;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.NpcStringId;
 
-import hellbound.HellboundEngine;
 import ai.npc.AbstractNpcAI;
 
 /**
@@ -103,7 +104,7 @@ public final class Quarry extends AbstractNpcAI
 						return null;
 					}
 				}
-				broadcastNpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.HUN_HUNGRY);
+				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.HUN_HUNGRY);
 				npc.doDie(npc);
 				break;
 			}
@@ -176,7 +177,7 @@ public final class Quarry extends AbstractNpcAI
 						startQuestTimer("DECAY", 1000, npc, null);
 						try
 						{
-							broadcastNpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.THANK_YOU_FOR_THE_RESCUE_IT_S_A_SMALL_GIFT);
+							npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.THANK_YOU_FOR_THE_RESCUE_IT_S_A_SMALL_GIFT);
 						}
 						catch (Exception e)
 						{

@@ -22,6 +22,8 @@ import hellbound.HellboundEngine;
 
 import java.util.Map;
 
+import javolution.util.FastMap;
+
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.datatables.SpawnTable;
 import org.l2junity.gameserver.enums.ChatType;
@@ -34,7 +36,6 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.NpcStringId;
 
-import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
 
 /**
@@ -142,7 +143,7 @@ public final class AnomicFoundry extends AbstractNpcAI
 		int atkIndex = _atkIndex.containsKey(npc.getObjectId()) ? _atkIndex.get(npc.getObjectId()) : 0;
 		if (atkIndex == 0)
 		{
-			broadcastNpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.ENEMY_INVASION_HURRY_UP);
+			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.ENEMY_INVASION_HURRY_UP);
 			cancelQuestTimer("return_laborer", npc, null);
 			startQuestTimer("return_laborer", 60000, npc, null);
 			
@@ -183,7 +184,7 @@ public final class AnomicFoundry extends AbstractNpcAI
 		{
 			if (getRandom(10000) < 8000)
 			{
-				broadcastNpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.PROCESS_SHOULDN_T_BE_DELAYED_BECAUSE_OF_ME);
+				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.PROCESS_SHOULDN_T_BE_DELAYED_BECAUSE_OF_ME);
 				if (respawnTime < respawnMax)
 				{
 					respawnTime += 10000;

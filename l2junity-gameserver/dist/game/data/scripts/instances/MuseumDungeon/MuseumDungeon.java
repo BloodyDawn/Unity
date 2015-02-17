@@ -29,8 +29,8 @@ import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2QuestGuardInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -114,7 +114,7 @@ public final class MuseumDungeon extends AbstractInstance
 						{
 							cancelQuestTimer("TOYRON_SHOUT", world.toyron, player);
 						}
-						broadcastNpcSay(world.toyron, ChatType.NPC_GENERAL, TOYRON_SHOUT[getRandom(2)]);
+						world.toyron.broadcastSay(ChatType.NPC_GENERAL, TOYRON_SHOUT[getRandom(2)]);
 						break;
 					}
 					case "SPAWN_THIEFS_STAGE_1":
@@ -125,7 +125,7 @@ public final class MuseumDungeon extends AbstractInstance
 						{
 							thief.setIsRunning(true);
 							addAttackPlayerDesire(thief, player);
-							broadcastNpcSay(thief, ChatType.NPC_GENERAL, THIEF_SHOUT[getRandom(2)]);
+							thief.broadcastSay(ChatType.NPC_GENERAL, THIEF_SHOUT[getRandom(2)]);
 						}
 						break;
 					}
@@ -189,7 +189,7 @@ public final class MuseumDungeon extends AbstractInstance
 		
 		if (skill != null)
 		{
-			broadcastNpcSay(world.toyron, ChatType.NPC_GENERAL, NpcStringId.ENOUGH_OF_THIS_COME_AT_ME);
+			world.toyron.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.ENOUGH_OF_THIS_COME_AT_ME);
 			world.toyron.reduceCurrentHp(1, npc, null); // TODO: Find better way for attack
 			npc.reduceCurrentHp(1, world.toyron, null);
 			startQuestTimer("KILL_THIEF", 2500, npc, attacker);

@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.script.faenor;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,7 +27,6 @@ import javax.script.ScriptContext;
 
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.script.DateRange;
-import org.l2junity.gameserver.script.IntList;
 import org.l2junity.gameserver.script.Parser;
 import org.l2junity.gameserver.script.ParserFactory;
 import org.l2junity.gameserver.script.ScriptEngine;
@@ -111,8 +111,8 @@ public class FaenorEventParser extends FaenorParser
 	{
 		try
 		{
-			int[] items = IntList.parse(attribute(drop, "Items"));
-			int[] count = IntList.parse(attribute(drop, "Count"));
+			int[] items = Arrays.stream(attribute(drop, "Items").split("(,|-)")).mapToInt(Integer::parseInt).toArray();
+			int[] count = Arrays.stream(attribute(drop, "Count").split("(,|-)")).mapToInt(Integer::parseInt).toArray();
 			double chance = getPercent(attribute(drop, "Chance"));
 			
 			_bridge.addEventDrop(items, count, chance, _eventDates);
