@@ -23,12 +23,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Calendar;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Logger;
-
-import javolution.util.FastList;
-import javolution.util.FastMap;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -72,8 +73,8 @@ public abstract class ClanHallSiegeEngine extends Quest implements Siegable
 	
 	protected final Logger _log;
 	
-	private final FastMap<Integer, SiegeClan> _attackers = new FastMap<>();
-	private FastList<L2Spawn> _guards;
+	private final Map<Integer, SiegeClan> _attackers = new ConcurrentHashMap<>();
+	private Collection<L2Spawn> _guards;
 	
 	public SiegableHall _hall;
 	public ScheduledFuture<?> _siegeTask;
@@ -149,7 +150,7 @@ public abstract class ClanHallSiegeEngine extends Quest implements Siegable
 	{
 		if (_guards == null)
 		{
-			_guards = new FastList<>();
+			_guards = new LinkedList<>();
 			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				PreparedStatement statement = con.prepareStatement(SQL_LOAD_GUARDS))
 			{
@@ -221,7 +222,7 @@ public abstract class ClanHallSiegeEngine extends Quest implements Siegable
 	
 	// XXX Attacker clans management -----------------------------
 	
-	public final FastMap<Integer, SiegeClan> getAttackers()
+	public final Map<Integer, SiegeClan> getAttackers()
 	{
 		return _attackers;
 	}
@@ -256,19 +257,16 @@ public abstract class ClanHallSiegeEngine extends Quest implements Siegable
 	}
 	
 	@Override
-	public List<SiegeClan> getAttackerClans()
+	public Collection<SiegeClan> getAttackerClans()
 	{
-		FastList<SiegeClan> result = new FastList<>();
-		result.addAll(_attackers.values());
-		return result;
+		return Collections.unmodifiableCollection(_attackers.values());
 	}
 	
 	@Override
 	public List<PlayerInstance> getAttackersInZone()
 	{
 		final Collection<PlayerInstance> list = _hall.getSiegeZone().getPlayersInside();
-		List<PlayerInstance> attackers = new FastList<>();
-		
+		final List<PlayerInstance> attackers = new LinkedList<>();
 		for (PlayerInstance pc : list)
 		{
 			final L2Clan clan = pc.getClan();

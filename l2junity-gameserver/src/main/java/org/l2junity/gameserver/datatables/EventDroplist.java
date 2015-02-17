@@ -19,12 +19,12 @@
 package org.l2junity.gameserver.datatables;
 
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.l2junity.gameserver.script.DateRange;
 import org.l2junity.gameserver.script.EventDrop;
-
-import javolution.util.FastList;
 
 /**
  * This class manage drop of Special Events created by GM for a defined period.<br>
@@ -37,7 +37,7 @@ public class EventDroplist
 	/**
 	 * The table containing all DataDrop object
 	 */
-	private static final List<DateDrop> _allNpcDateDrops = new FastList<>();
+	private static final List<DateDrop> _allNpcDateDrops = new CopyOnWriteArrayList<>();
 	
 	public static class DateDrop
 	{
@@ -106,7 +106,7 @@ public class EventDroplist
 	 */
 	public List<DateDrop> getAllDrops()
 	{
-		final List<DateDrop> list = new FastList<>();
+		final List<DateDrop> list = new LinkedList<>();
 		final Date currentDate = new Date();
 		for (DateDrop drop : _allNpcDateDrops)
 		{

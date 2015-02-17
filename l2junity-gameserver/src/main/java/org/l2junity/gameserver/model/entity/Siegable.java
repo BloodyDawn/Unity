@@ -19,6 +19,7 @@
 package org.l2junity.gameserver.model.entity;
 
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.List;
 
 import org.l2junity.gameserver.model.L2Clan;
@@ -39,7 +40,7 @@ public interface Siegable
 	
 	public SiegeClan getAttackerClan(L2Clan clan);
 	
-	public List<SiegeClan> getAttackerClans();
+	public Collection<SiegeClan> getAttackerClans();
 	
 	public List<PlayerInstance> getAttackersInZone();
 	

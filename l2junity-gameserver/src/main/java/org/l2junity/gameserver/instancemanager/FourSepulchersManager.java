@@ -48,9 +48,9 @@ import org.l2junity.gameserver.instancemanager.tasks.FourSepulchersChangeWarmUpT
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2SepulcherMonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.L2SepulcherNpcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
@@ -1016,7 +1016,7 @@ public final class FourSepulchersManager
 		}
 		if ((Config.FS_PARTY_MEMBER_COUNT <= 1) && player.isInParty())
 		{
-			List<PlayerInstance> members = new FastList<>();
+			final List<PlayerInstance> members = new LinkedList<>();
 			for (PlayerInstance mem : player.getParty().getMembers())
 			{
 				if (!mem.isDead() && Util.checkIfInRange(700, player, mem, true))
