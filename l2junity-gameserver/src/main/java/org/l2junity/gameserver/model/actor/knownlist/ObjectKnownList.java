@@ -65,7 +65,7 @@ public class ObjectKnownList
 		}
 		
 		// Check if object is not inside distance to watch object
-		if (!Util.checkIfInShortRadius(getDistanceToWatchObject(object), getActiveObject(), object, true))
+		if (!Util.checkIfInShortRange(getDistanceToWatchObject(object), getActiveObject(), object, true))
 		{
 			return false;
 		}
@@ -184,7 +184,7 @@ public class ObjectKnownList
 			}
 			
 			// Remove all objects invisible or too far
-			if (!object.isVisible() || !Util.checkIfInShortRadius(getDistanceToForgetObject(object), getActiveObject(), object, true))
+			if (!object.isVisible() || !Util.checkIfInShortRange(getDistanceToForgetObject(object), getActiveObject(), object, true))
 			{
 				oIter.remove();
 				removeKnownObject(object, true);

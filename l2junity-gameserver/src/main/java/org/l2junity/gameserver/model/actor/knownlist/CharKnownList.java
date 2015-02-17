@@ -138,7 +138,7 @@ public class CharKnownList extends ObjectKnownList
 				{
 					pIter.remove();
 				}
-				else if (!player.isVisible() || !Util.checkIfInShortRadius(getDistanceToForgetObject(player), getActiveObject(), player, true))
+				else if (!player.isVisible() || !Util.checkIfInShortRange(getDistanceToForgetObject(player), getActiveObject(), player, true))
 				{
 					pIter.remove();
 					removeKnownObject(player, true);
@@ -162,7 +162,7 @@ public class CharKnownList extends ObjectKnownList
 				{
 					continue;
 				}
-				else if (!summon.isVisible() || !Util.checkIfInShortRadius(getDistanceToForgetObject(summon), getActiveObject(), summon, true))
+				else if (!summon.isVisible() || !Util.checkIfInShortRange(getDistanceToForgetObject(summon), getActiveObject(), summon, true))
 				{
 					sIter.remove();
 					removeKnownObject(summon, true);
@@ -183,7 +183,7 @@ public class CharKnownList extends ObjectKnownList
 			{
 				oIter.remove();
 			}
-			else if (!object.isVisible() || !Util.checkIfInShortRadius(getDistanceToForgetObject(object), getActiveObject(), object, true))
+			else if (!object.isVisible() || !Util.checkIfInShortRange(getDistanceToForgetObject(object), getActiveObject(), object, true))
 			{
 				oIter.remove();
 				removeKnownObject(object, true);

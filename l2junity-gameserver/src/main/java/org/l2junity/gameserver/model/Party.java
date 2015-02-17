@@ -30,6 +30,8 @@ import java.util.concurrent.Future;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javolution.util.FastList;
+
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GameTimeController;
@@ -62,8 +64,6 @@ import org.l2junity.gameserver.network.serverpackets.PartySmallWindowDelete;
 import org.l2junity.gameserver.network.serverpackets.PartySmallWindowDeleteAll;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.util.Util;
-
-import javolution.util.FastList;
 
 /**
  * This class serves as a container for player parties.
@@ -160,7 +160,7 @@ public class Party extends AbstractPlayerGroup
 	 */
 	private L2PcInstance getCheckedRandomMember(int itemId, Creature target)
 	{
-		List<L2PcInstance> availableMembers = new FastList<>();
+		final List<L2PcInstance> availableMembers = new ArrayList<>();
 		for (L2PcInstance member : getMembers())
 		{
 			if (member.getInventory().validateCapacityByItemId(itemId) && Util.checkIfInRange(Config.ALT_PARTY_RANGE2, target, member, true))
@@ -168,11 +168,7 @@ public class Party extends AbstractPlayerGroup
 				availableMembers.add(member);
 			}
 		}
-		if (!availableMembers.isEmpty())
-		{
-			return availableMembers.get(Rnd.get(availableMembers.size()));
-		}
-		return null;
+		return !availableMembers.isEmpty() ? availableMembers.get(Rnd.get(availableMembers.size())) : null;
 	}
 	
 	/**

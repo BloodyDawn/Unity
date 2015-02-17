@@ -19,9 +19,12 @@
 package org.l2junity.gameserver.engines;
 
 import java.io.File;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
+
+import javolution.util.FastList;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.file.filter.XMLFilter;
@@ -30,8 +33,6 @@ import org.l2junity.gameserver.engines.items.DocumentItem;
 import org.l2junity.gameserver.engines.skills.DocumentSkill;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.skills.Skill;
-
-import javolution.util.FastList;
 
 /**
  * @author mkizub
@@ -114,7 +115,7 @@ public class DocumentEngine
 	 */
 	public List<L2Item> loadItems()
 	{
-		List<L2Item> list = new FastList<>();
+		List<L2Item> list = new LinkedList<>();
 		for (File f : _itemFiles)
 		{
 			DocumentItem document = new DocumentItem(f);

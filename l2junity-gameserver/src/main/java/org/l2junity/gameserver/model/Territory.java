@@ -18,12 +18,11 @@
  */
 package org.l2junity.gameserver.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
 import org.l2junity.commons.util.Rnd;
-
-import javolution.util.FastList;
 
 /**
  * @version 0.1, 2005-03-12
@@ -47,7 +46,7 @@ public class Territory
 		}
 	}
 	
-	private final List<Point> _points;
+	private final List<Point> _points = new ArrayList<>();
 	private final int _terr;
 	private int _xMin;
 	private int _xMax;
@@ -59,7 +58,6 @@ public class Territory
 	
 	public Territory(int terr)
 	{
-		_points = new FastList<>();
 		_terr = terr;
 		_xMin = 999999;
 		_xMax = -999999;

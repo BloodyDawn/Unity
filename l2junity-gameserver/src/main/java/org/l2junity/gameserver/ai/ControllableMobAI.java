@@ -21,6 +21,7 @@ package org.l2junity.gameserver.ai;
 import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_ACTIVE;
 import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -30,17 +31,15 @@ import org.l2junity.gameserver.model.MobGroupTable;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Creature.AIAccessor;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.Creature.AIAccessor;
 import org.l2junity.gameserver.model.actor.instance.L2ControllableMobInstance;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2NpcInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.util.Util;
-
-import javolution.util.FastList;
 
 /**
  * AI for controllable mobs
@@ -441,53 +440,27 @@ public final class ControllableMobAI extends AttackableAI
 	
 	private Creature findNextRndTarget()
 	{
-		int aggroRange = ((Attackable) _actor).getAggroRange();
-		Attackable npc = (Attackable) _actor;
-		int npcX, npcY, targetX, targetY;
-		double dy, dx;
-		double dblAggroRange = aggroRange * aggroRange;
-		
-		List<Creature> potentialTarget = new FastList<>();
-		
-		Collection<WorldObject> objs = npc.getKnownList().getKnownObjects().values();
-		for (WorldObject obj : objs)
+		final List<Creature> potentialTarget = new ArrayList<>();
+		for (WorldObject obj : _actor.getKnownList().getKnownObjects().values())
 		{
 			if (!(obj instanceof Creature))
 			{
 				continue;
 			}
 			
-			npcX = npc.getX();
-			npcY = npc.getY();
-			targetX = obj.getX();
-			targetY = obj.getY();
-			
-			dx = npcX - targetX;
-			dy = npcY - targetY;
-			
-			if (((dx * dx) + (dy * dy)) > dblAggroRange)
+			if (!Util.checkIfInShortRange(((Attackable) _actor).getAggroRange(), _actor, obj, false))
 			{
 				continue;
 			}
 			
-			Creature target = (Creature) obj;
-			
+			final Creature target = (Creature) obj;
 			if (checkAutoAttackCondition(target))
 			{
 				potentialTarget.add(target);
 			}
 		}
 		
-		if (potentialTarget.isEmpty())
-		{
-			return null;
-		}
-		
-		// we choose a random target
-		int choice = Rnd.nextInt(potentialTarget.size());
-		Creature target = potentialTarget.get(choice);
-		
-		return target;
+		return !potentialTarget.isEmpty() ? potentialTarget.get(Rnd.nextInt(potentialTarget.size())) : null;
 	}
 	
 	private L2ControllableMobInstance findNextGroupTarget()

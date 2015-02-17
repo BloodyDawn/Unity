@@ -18,15 +18,16 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
-import org.l2junity.gameserver.model.EnchantSkillLearn;
-import org.l2junity.gameserver.model.EnchantSkillGroup.EnchantSkillHolder;
+import java.util.LinkedList;
+import java.util.List;
 
-import javolution.util.FastList;
+import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
+import org.l2junity.gameserver.model.EnchantSkillGroup.EnchantSkillHolder;
+import org.l2junity.gameserver.model.EnchantSkillLearn;
 
 public final class ExEnchantSkillInfo extends L2GameServerPacket
 {
-	private final FastList<Integer> _routes; // skill lvls for each route
+	private final List<Integer> _routes = new LinkedList<>(); // skill lvls for each route
 	
 	private final int _id;
 	private final int _lvl;
@@ -34,7 +35,6 @@ public final class ExEnchantSkillInfo extends L2GameServerPacket
 	
 	public ExEnchantSkillInfo(int id, int lvl)
 	{
-		_routes = new FastList<>();
 		_id = id;
 		_lvl = lvl;
 		
@@ -92,7 +92,6 @@ public final class ExEnchantSkillInfo extends L2GameServerPacket
 		writeD(_maxEnchanted ? 0 : 1);
 		writeD(_lvl > 100 ? 1 : 0); // enchanted?
 		writeD(_routes.size());
-		
 		for (int level : _routes)
 		{
 			writeD(level);
