@@ -20,7 +20,7 @@ package handlers.itemhandlers;
 
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
@@ -40,7 +40,7 @@ public class TeleportBookmark implements IItemHandler
 			return false;
 		}
 		
-		L2PcInstance player = playable.getActingPlayer();
+		PlayerInstance player = playable.getActingPlayer();
 		
 		if (player.getBookMarkSlot() >= 9)
 		{

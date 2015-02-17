@@ -24,7 +24,7 @@ import java.util.logging.Logger;
 
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public class QuestTimer
 {
@@ -59,11 +59,11 @@ public class QuestTimer
 	private final String _name;
 	private final Quest _quest;
 	private final Npc _npc;
-	private final L2PcInstance _player;
+	private final PlayerInstance _player;
 	private final boolean _isRepeating;
 	private ScheduledFuture<?> _schedular;
 	
-	public QuestTimer(Quest quest, String name, long time, Npc npc, L2PcInstance player, boolean repeating)
+	public QuestTimer(Quest quest, String name, long time, Npc npc, PlayerInstance player, boolean repeating)
 	{
 		_name = name;
 		_quest = quest;
@@ -80,7 +80,7 @@ public class QuestTimer
 		}
 	}
 	
-	public QuestTimer(Quest quest, String name, long time, Npc npc, L2PcInstance player)
+	public QuestTimer(Quest quest, String name, long time, Npc npc, PlayerInstance player)
 	{
 		this(quest, name, time, npc, player, false);
 	}
@@ -119,7 +119,7 @@ public class QuestTimer
 	 * @param player the player attached to the desired timer (null if no player attached)
 	 * @return
 	 */
-	public boolean isMatch(Quest quest, String name, Npc npc, L2PcInstance player)
+	public boolean isMatch(Quest quest, String name, Npc npc, PlayerInstance player)
 	{
 		if ((quest == null) || (name == null))
 		{
@@ -157,7 +157,7 @@ public class QuestTimer
 		return _npc;
 	}
 	
-	public final L2PcInstance getPlayer()
+	public final PlayerInstance getPlayer()
 	{
 		return _player;
 	}

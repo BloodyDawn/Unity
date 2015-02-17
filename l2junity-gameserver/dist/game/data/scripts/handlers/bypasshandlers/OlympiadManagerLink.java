@@ -31,7 +31,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2OlympiadManagerInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Hero;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.olympiad.CompetitionType;
@@ -78,7 +78,7 @@ public class OlympiadManagerLink implements IBypassHandler
 	};
 	
 	@Override
-	public final boolean useBypass(String command, L2PcInstance activeChar, Creature target)
+	public final boolean useBypass(String command, PlayerInstance activeChar, Creature target)
 	{
 		if (!(target instanceof L2OlympiadManagerInstance))
 		{

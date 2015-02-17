@@ -22,13 +22,13 @@ import java.util.logging.Logger;
 
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public interface IActionShiftHandler
 {
 	public static Logger _log = Logger.getLogger(IActionShiftHandler.class.getName());
 	
-	public boolean action(L2PcInstance activeChar, WorldObject target, boolean interact);
+	public boolean action(PlayerInstance activeChar, WorldObject target, boolean interact);
 	
 	public InstanceType getInstanceType();
 }

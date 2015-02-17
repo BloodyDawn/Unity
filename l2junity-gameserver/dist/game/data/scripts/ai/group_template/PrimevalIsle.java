@@ -28,7 +28,7 @@ import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -121,7 +121,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpellFinished(Npc npc, L2PcInstance player, Skill skill)
+	public String onSpellFinished(Npc npc, PlayerInstance player, Skill skill)
 	{
 		if (skill.getId() == CREW_SKILL.getSkillId())
 		{
@@ -180,7 +180,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		switch (event)
 		{
@@ -306,7 +306,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAggroRangeEnter(Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAggroRangeEnter(Npc npc, PlayerInstance player, boolean isSummon)
 	{
 		if (npc.isScriptValue(0))
 		{
@@ -319,7 +319,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon)
 	{
 		if (npc.getId() == EGG)
 		{
@@ -455,7 +455,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		if ((npc.getId() == DEINO) || ((npc.getId() == ORNIT) && !npc.isScriptValue(1)))
 		{
@@ -463,7 +463,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 		}
 		if ((npc.getId() == SAILREN) || (getRandom(100) < 3))
 		{
-			final L2PcInstance player = npc.getId() == SAILREN ? getRandomPartyMember(killer) : killer;
+			final PlayerInstance player = npc.getId() == SAILREN ? getRandomPartyMember(killer) : killer;
 			if (player.getInventory().getSize(false) <= (player.getInventoryLimit() * 0.8))
 			{
 				giveItems(player, DEINONYCHUS, 1);

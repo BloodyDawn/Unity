@@ -23,7 +23,7 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.L2Event;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
@@ -47,7 +47,7 @@ public final class Logout extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance player = getClient().getActiveChar();
+		final PlayerInstance player = getClient().getActiveChar();
 		if (player == null)
 		{
 			return;

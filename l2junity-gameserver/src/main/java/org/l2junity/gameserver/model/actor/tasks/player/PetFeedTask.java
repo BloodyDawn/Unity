@@ -24,7 +24,7 @@ import java.util.logging.Logger;
 
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.handler.ItemHandler;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
@@ -37,9 +37,9 @@ public class PetFeedTask implements Runnable
 {
 	private static final Logger _log = Logger.getLogger(PetFeedTask.class.getName());
 	
-	private final L2PcInstance _player;
+	private final PlayerInstance _player;
 	
-	public PetFeedTask(L2PcInstance player)
+	public PetFeedTask(PlayerInstance player)
 	{
 		_player = player;
 	}

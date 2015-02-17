@@ -36,7 +36,7 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2CubicInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.L2SiegeFlagInstance;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
@@ -248,7 +248,7 @@ public final class Formulas
 		
 		if (cha.isPlayer())
 		{
-			L2PcInstance player = cha.getActingPlayer();
+			PlayerInstance player = cha.getActingPlayer();
 			
 			double siegeModifier = calcSiegeRegenModifier(player);
 			if (siegeModifier > 0)
@@ -356,7 +356,7 @@ public final class Formulas
 		
 		if (cha.isPlayer())
 		{
-			L2PcInstance player = cha.getActingPlayer();
+			PlayerInstance player = cha.getActingPlayer();
 			
 			// Mother Tree effect is calculated at last'
 			if (player.isInsideZone(ZoneId.MOTHER_TREE))
@@ -450,7 +450,7 @@ public final class Formulas
 	 * @param player the player
 	 * @return
 	 */
-	public static final double calcCpRegen(L2PcInstance player)
+	public static final double calcCpRegen(PlayerInstance player)
 	{
 		final double init = player.getActingPlayer().getTemplate().getBaseCpRegen(player.getLevel()) * player.getLevelMod() * BaseStats.CON.calcBonus(player);
 		double cpRegenMultiplier = Config.CP_REGEN_MULTIPLIER;
@@ -469,7 +469,7 @@ public final class Formulas
 		return player.calcStat(Stats.REGENERATE_CP_RATE, Math.max(1, init), null, null) * cpRegenMultiplier;
 	}
 	
-	public static final double calcSiegeRegenModifier(L2PcInstance activeChar)
+	public static final double calcSiegeRegenModifier(PlayerInstance activeChar)
 	{
 		if ((activeChar == null) || (activeChar.getClan() == null))
 		{
@@ -956,7 +956,7 @@ public final class Formulas
 		double damage = 91 * ((mAtk + skill.getPower(isPvP, isPvE)) / mDef);
 		
 		// Failure calculation
-		L2PcInstance owner = attacker.getOwner();
+		PlayerInstance owner = attacker.getOwner();
 		if (Config.ALT_GAME_MAGICFAILURES && !calcMagicSuccess(owner, target, skill))
 		{
 			if (calcMagicSuccess(owner, target, skill) && ((target.getLevel() - skill.getMagicLevel()) <= 9))
@@ -1196,7 +1196,7 @@ public final class Formulas
 		
 		if (sendSysMsg && target.isPlayer())
 		{
-			L2PcInstance enemy = target.getActingPlayer();
+			PlayerInstance enemy = target.getActingPlayer();
 			
 			switch (shldSuccess)
 			{
@@ -2033,7 +2033,7 @@ public final class Formulas
 	 * @param exp
 	 * @return the amount of karma player has loosed.
 	 */
-	public static int calculateKarmaLost(L2PcInstance player, long exp)
+	public static int calculateKarmaLost(PlayerInstance player, long exp)
 	{
 		double karmaLooseMul = KarmaData.getInstance().getMultiplier(player.getLevel());
 		if (exp > 0) // Received exp

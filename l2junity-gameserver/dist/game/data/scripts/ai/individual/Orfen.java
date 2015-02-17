@@ -35,7 +35,7 @@ import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.type.BossZone;
 import org.l2junity.gameserver.network.NpcStringId;
@@ -173,7 +173,7 @@ public final class Orfen extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if (event.equalsIgnoreCase("orfen_unlock"))
 		{
@@ -242,7 +242,7 @@ public final class Orfen extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSkillSee(Npc npc, L2PcInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public String onSkillSee(Npc npc, PlayerInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
 		if (npc.getId() == ORFEN)
 		{
@@ -261,7 +261,7 @@ public final class Orfen extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFactionCall(Npc npc, Npc caller, L2PcInstance attacker, boolean isSummon)
+	public String onFactionCall(Npc npc, Npc caller, PlayerInstance attacker, boolean isSummon)
 	{
 		if ((caller == null) || (npc == null) || npc.isCastingNow())
 		{
@@ -292,7 +292,7 @@ public final class Orfen extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon)
 	{
 		int npcId = npc.getId();
 		if (npcId == ORFEN)
@@ -324,7 +324,7 @@ public final class Orfen extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		if (npc.getId() == ORFEN)
 		{

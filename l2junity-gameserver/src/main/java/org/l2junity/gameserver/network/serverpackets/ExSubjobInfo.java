@@ -23,7 +23,7 @@ import java.util.List;
 
 import org.l2junity.gameserver.enums.SubclassInfoType;
 import org.l2junity.gameserver.enums.SubclassType;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.SubClass;
 
 /**
@@ -36,7 +36,7 @@ public class ExSubjobInfo extends L2GameServerPacket
 	private final int _type;
 	private final List<SubInfo> _subs;
 	
-	public ExSubjobInfo(L2PcInstance player, SubclassInfoType type)
+	public ExSubjobInfo(PlayerInstance player, SubclassInfoType type)
 	{
 		_currClassId = player.getClassId().getId();
 		_currRace = player.getRace().ordinal();
@@ -66,7 +66,7 @@ public class ExSubjobInfo extends L2GameServerPacket
 			_type = sub.isDualClass() ? SubclassType.DUALCLASS.ordinal() : SubclassType.SUBCLASS.ordinal();
 		}
 		
-		public SubInfo(L2PcInstance player)
+		public SubInfo(PlayerInstance player)
 		{
 			_index = 0;
 			_classId = player.getBaseClass();

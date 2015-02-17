@@ -21,7 +21,7 @@ package org.l2junity.gameserver.model.actor.tasks.player;
 import java.util.logging.Logger;
 
 import org.l2junity.gameserver.data.xml.impl.AdminData;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.LeaveWorld;
 
@@ -33,9 +33,9 @@ public class GameGuardCheckTask implements Runnable
 {
 	private static final Logger _log = Logger.getLogger(GameGuardCheckTask.class.getName());
 	
-	private final L2PcInstance _player;
+	private final PlayerInstance _player;
 	
-	public GameGuardCheckTask(L2PcInstance player)
+	public GameGuardCheckTask(PlayerInstance player)
 	{
 		_player = player;
 	}

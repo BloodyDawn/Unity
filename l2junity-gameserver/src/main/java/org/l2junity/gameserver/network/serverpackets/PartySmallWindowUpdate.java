@@ -19,14 +19,14 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.enums.PartySmallWindowUpdateType;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public final class PartySmallWindowUpdate extends L2GameServerPacket
 {
-	private final L2PcInstance _member;
+	private final PlayerInstance _member;
 	private int _flags = 0;
 	
-	public PartySmallWindowUpdate(L2PcInstance member, boolean addAllFlags)
+	public PartySmallWindowUpdate(PlayerInstance member, boolean addAllFlags)
 	{
 		_member = member;
 		if (addAllFlags)

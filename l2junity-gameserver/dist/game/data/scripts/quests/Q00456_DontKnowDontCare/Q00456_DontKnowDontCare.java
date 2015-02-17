@@ -32,7 +32,7 @@ import org.l2junity.gameserver.model.CommandChannel;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
@@ -146,7 +146,7 @@ public final class Q00456_DontKnowDontCare extends Quest
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		final Set<Integer> allowedPlayers = allowedPlayerMap.get(npc.getObjectId());
@@ -182,7 +182,7 @@ public final class Q00456_DontKnowDontCare extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
@@ -233,7 +233,7 @@ public final class Q00456_DontKnowDontCare extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		String htmltext = null;
@@ -265,7 +265,7 @@ public final class Q00456_DontKnowDontCare extends Quest
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		if (!killer.isInParty() || !killer.getParty().isInCommandChannel())
 		{
@@ -290,7 +290,7 @@ public final class Q00456_DontKnowDontCare extends Quest
 				continue;
 			}
 			
-			L2PcInstance attacker = aggro.getAttacker().getActingPlayer();
+			PlayerInstance attacker = aggro.getAttacker().getActingPlayer();
 			
 			if (attacker.isInParty() //
 				&& attacker.getParty().isInCommandChannel() //
@@ -312,7 +312,7 @@ public final class Q00456_DontKnowDontCare extends Quest
 		return super.onKill(npc, killer, isSummon);
 	}
 	
-	private static void rewardPlayer(L2PcInstance player, Npc npc)
+	private static void rewardPlayer(PlayerInstance player, Npc npc)
 	{
 		int chance = getRandom(10000);
 		final int reward;

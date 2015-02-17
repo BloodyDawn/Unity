@@ -19,17 +19,17 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.data.xml.impl.ExperienceData;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public class GMViewCharacterInfo extends L2GameServerPacket
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final int _runSpd, _walkSpd;
 	private final int _swimRunSpd, _swimWalkSpd;
 	private final int _flyRunSpd, _flyWalkSpd;
 	private final double _moveMultiplier;
 	
-	public GMViewCharacterInfo(L2PcInstance cha)
+	public GMViewCharacterInfo(PlayerInstance cha)
 	{
 		_activeChar = cha;
 		_moveMultiplier = cha.getMovementSpeedMultiplier();

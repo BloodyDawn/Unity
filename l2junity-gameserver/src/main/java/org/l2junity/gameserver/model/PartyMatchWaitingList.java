@@ -20,7 +20,7 @@ package org.l2junity.gameserver.model;
 
 import java.util.List;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 import javolution.util.FastList;
 
@@ -29,14 +29,14 @@ import javolution.util.FastList;
  */
 public class PartyMatchWaitingList
 {
-	private final List<L2PcInstance> _members;
+	private final List<PlayerInstance> _members;
 	
 	protected PartyMatchWaitingList()
 	{
 		_members = new FastList<>();
 	}
 	
-	public void addPlayer(L2PcInstance player)
+	public void addPlayer(PlayerInstance player)
 	{
 		// player.setPartyWait(1);
 		if (!_members.contains(player))
@@ -45,7 +45,7 @@ public class PartyMatchWaitingList
 		}
 	}
 	
-	public void removePlayer(L2PcInstance player)
+	public void removePlayer(PlayerInstance player)
 	{
 		// player.setPartyWait(0);
 		if (_members.contains(player))
@@ -54,7 +54,7 @@ public class PartyMatchWaitingList
 		}
 	}
 	
-	public List<L2PcInstance> getPlayers()
+	public List<PlayerInstance> getPlayers()
 	{
 		return _members;
 	}

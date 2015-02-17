@@ -21,7 +21,7 @@ package org.l2junity.gameserver.network.serverpackets;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.interfaces.IPositionable;
 import org.l2junity.gameserver.model.interfaces.IUpdateTypeComponent;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
@@ -193,7 +193,7 @@ public abstract class L2GameServerPacket extends SendablePacket<L2GameClient>
 	 * {@code L2World.getInstance().getPlayers().forEach(packet::sendTo)}
 	 * @param player
 	 */
-	public void sendTo(L2PcInstance player)
+	public void sendTo(PlayerInstance player)
 	{
 		player.sendPacket(this);
 	}

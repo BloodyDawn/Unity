@@ -22,25 +22,25 @@ import java.util.Objects;
 import java.util.concurrent.ScheduledFuture;
 
 import org.l2junity.gameserver.ThreadPoolManager;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author UnAfraid
  */
 public abstract class AbstractRequest
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private volatile long _timestamp = 0;
 	private volatile boolean _isProcessing;
 	private ScheduledFuture<?> _timeOutTask;
 	
-	public AbstractRequest(L2PcInstance activeChar)
+	public AbstractRequest(PlayerInstance activeChar)
 	{
 		Objects.requireNonNull(activeChar);
 		_activeChar = activeChar;
 	}
 	
-	public L2PcInstance getActiveChar()
+	public PlayerInstance getActiveChar()
 	{
 		return _activeChar;
 	}

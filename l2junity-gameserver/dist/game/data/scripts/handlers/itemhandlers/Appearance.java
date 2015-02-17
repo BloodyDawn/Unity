@@ -21,7 +21,7 @@ package handlers.itemhandlers;
 import org.l2junity.gameserver.data.xml.impl.AppearanceItemData;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.ShapeShiftingItemRequest;
 import org.l2junity.gameserver.model.items.appearance.AppearanceStone;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -42,7 +42,7 @@ public class Appearance implements IItemHandler
 			return false;
 		}
 		
-		final L2PcInstance player = playable.getActingPlayer();
+		final PlayerInstance player = playable.getActingPlayer();
 		if (player.hasRequest(ShapeShiftingItemRequest.class))
 		{
 			player.sendPacket(SystemMessageId.APPEARANCE_MODIFICATION_OR_RESTORATION_IN_PROGRESS_PLEASE_TRY_AGAIN_AFTER_COMPLETING_THIS_TASK);

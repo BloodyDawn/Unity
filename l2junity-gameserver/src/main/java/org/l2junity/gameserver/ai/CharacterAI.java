@@ -43,7 +43,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.events.EventDispatcher;
@@ -1074,7 +1074,7 @@ public class CharacterAI extends AbstractAI
 			}
 			
 			// while flying there is no move to cast
-			if ((_actor.getAI().getIntention() == CtrlIntention.AI_INTENTION_CAST) && (_actor instanceof L2PcInstance) && _actor.isTransformed())
+			if ((_actor.getAI().getIntention() == CtrlIntention.AI_INTENTION_CAST) && (_actor instanceof PlayerInstance) && _actor.isTransformed())
 			{
 				if (!_actor.getTransformation().isCombat())
 				{
@@ -1142,7 +1142,7 @@ public class CharacterAI extends AbstractAI
 		if ((target == null) || target.isAlikeDead())
 		{
 			// check if player is fakedeath
-			if ((target instanceof L2PcInstance) && ((L2PcInstance) target).isFakeDeath())
+			if ((target instanceof PlayerInstance) && ((PlayerInstance) target).isFakeDeath())
 			{
 				target.stopFakeDeath(true);
 				return false;
@@ -1173,9 +1173,9 @@ public class CharacterAI extends AbstractAI
 	protected boolean checkTargetLost(WorldObject target)
 	{
 		// check if player is fakedeath
-		if (target instanceof L2PcInstance)
+		if (target instanceof PlayerInstance)
 		{
-			L2PcInstance target2 = (L2PcInstance) target; // convert object to chara
+			PlayerInstance target2 = (PlayerInstance) target; // convert object to chara
 			
 			if (target2.isFakeDeath())
 			{

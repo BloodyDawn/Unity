@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -43,7 +43,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 {
 	protected class CavernOfThePirateCaptainWorld extends InstanceWorld
 	{
-		protected List<L2PcInstance> playersInside = new ArrayList<>();
+		protected List<PlayerInstance> playersInside = new ArrayList<>();
 		protected Attackable _zaken;
 		protected long storeTime = 0;
 		protected boolean _is83;
@@ -159,7 +159,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
+	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
 	{
 		if (firstEntrance)
 		{
@@ -173,14 +173,14 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 			}
 			else if (player.getParty().isInCommandChannel())
 			{
-				for (L2PcInstance players : player.getParty().getCommandChannel().getMembers())
+				for (PlayerInstance players : player.getParty().getCommandChannel().getMembers())
 				{
 					managePlayerEnter(players, curworld);
 				}
 			}
 			else
 			{
-				for (L2PcInstance players : player.getParty().getMembers())
+				for (PlayerInstance players : player.getParty().getMembers())
 				{
 					managePlayerEnter(players, curworld);
 				}
@@ -193,7 +193,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 		}
 	}
 	
-	private void managePlayerEnter(L2PcInstance player, CavernOfThePirateCaptainWorld world)
+	private void managePlayerEnter(PlayerInstance player, CavernOfThePirateCaptainWorld world)
 	{
 		world.playersInside.add(player);
 		world.addAllowed(player.getObjectId());
@@ -201,7 +201,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 	}
 	
 	@Override
-	protected boolean checkConditions(L2PcInstance player)
+	protected boolean checkConditions(PlayerInstance player)
 	{
 		if (player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS))
 		{
@@ -217,7 +217,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 		final boolean is83 = InstanceManager.getInstance().getPlayerWorld(player).getTemplateId() == TEMPLATE_ID_83 ? true : false;
 		final Party party = player.getParty();
 		final boolean isInCC = party.isInCommandChannel();
-		final List<L2PcInstance> members = (isInCC) ? party.getCommandChannel().getMembers() : party.getMembers();
+		final List<PlayerInstance> members = (isInCC) ? party.getCommandChannel().getMembers() : party.getMembers();
 		final boolean isPartyLeader = (isInCC) ? party.getCommandChannel().isLeader(player) : party.isLeader(player);
 		
 		if (!isPartyLeader)
@@ -232,7 +232,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 			return false;
 		}
 		
-		for (L2PcInstance groupMembers : members)
+		for (PlayerInstance groupMembers : members)
 		{
 			if (groupMembers.getLevel() < (is83 ? MIN_LV_83 : MIN_LV_60))
 			{
@@ -256,7 +256,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 		return true;
 	}
 	
-	private void broadcastSystemMessage(L2PcInstance player, L2PcInstance member, SystemMessageId msgId, boolean toGroup)
+	private void broadcastSystemMessage(PlayerInstance player, PlayerInstance member, SystemMessageId msgId, boolean toGroup)
 	{
 		final SystemMessage sm = SystemMessage.getSystemMessage(msgId);
 		
@@ -280,7 +280,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if (event.equals("enter60"))
 		{
@@ -364,7 +364,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		
@@ -374,7 +374,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 			
 			if (npc.getId() == ZAKEN_83)
 			{
-				for (L2PcInstance playersInside : world.playersInside)
+				for (PlayerInstance playersInside : world.playersInside)
 				{
 					if ((playersInside != null) && ((playersInside.getInstanceId() == world.getInstanceId()) && playersInside.isInsideRadius(npc, 1500, true, true)))
 					{
@@ -409,7 +409,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		
@@ -464,7 +464,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 	
 	private void manageScreenMsg(CavernOfThePirateCaptainWorld world, NpcStringId stringId)
 	{
-		for (L2PcInstance players : world.playersInside)
+		for (PlayerInstance players : world.playersInside)
 		{
 			if ((players != null) && (players.getInstanceId() == world.getInstanceId()))
 			{
@@ -473,7 +473,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 		}
 	}
 	
-	private Attackable spawnNpc(int npcId, int roomId, L2PcInstance player, CavernOfThePirateCaptainWorld world)
+	private Attackable spawnNpc(int npcId, int roomId, PlayerInstance player, CavernOfThePirateCaptainWorld world)
 	{
 		if ((player != null) && (npcId != ZAKEN_60) && (npcId != ZAKEN_83))
 		{

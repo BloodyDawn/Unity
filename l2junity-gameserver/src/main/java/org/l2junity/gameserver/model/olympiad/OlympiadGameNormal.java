@@ -32,7 +32,7 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.olympiad.OnOlympiadMatchResult;
 import org.l2junity.gameserver.model.zone.type.OlympiadStadiumZone;
@@ -72,8 +72,8 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 		}
 		
 		int playerOneObjectId = 0;
-		L2PcInstance playerOne = null;
-		L2PcInstance playerTwo = null;
+		PlayerInstance playerOne = null;
+		PlayerInstance playerTwo = null;
 		
 		while (list.size() > 1)
 		{
@@ -240,7 +240,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 	}
 	
 	@Override
-	protected final void handleDisconnect(L2PcInstance player)
+	protected final void handleDisconnect(PlayerInstance player)
 	{
 		if (player.getObjectId() == _playerOne.getObjectId())
 		{
@@ -728,7 +728,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 	}
 	
 	@Override
-	protected final void addDamage(L2PcInstance player, int damage)
+	protected final void addDamage(PlayerInstance player, int damage)
 	{
 		if ((_playerOne.getPlayer() == null) || (_playerTwo.getPlayer() == null))
 		{

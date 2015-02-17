@@ -20,7 +20,7 @@ package handlers.itemhandlers;
 
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.EnchantItemRequest;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -37,7 +37,7 @@ public class EnchantScrolls implements IItemHandler
 			return false;
 		}
 		
-		final L2PcInstance activeChar = playable.getActingPlayer();
+		final PlayerInstance activeChar = playable.getActingPlayer();
 		if (activeChar.isCastingNow())
 		{
 			return false;

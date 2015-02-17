@@ -19,7 +19,7 @@
 package quests.Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom;
 
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 
@@ -57,7 +57,7 @@ public final class Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom extends 
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
@@ -202,7 +202,7 @@ public final class Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom extends 
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
@@ -218,7 +218,7 @@ public final class Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom extends 
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);

@@ -25,7 +25,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.l2junity.DatabaseFactory;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
 
 /**
@@ -48,7 +48,7 @@ public class Mentee
 	
 	public void load()
 	{
-		L2PcInstance player = getPlayerInstance();
+		PlayerInstance player = getPlayerInstance();
 		if (player == null) // Only if player is offline
 		{
 			try (Connection con = DatabaseFactory.getInstance().getConnection();
@@ -112,7 +112,7 @@ public class Mentee
 		return _currentLevel;
 	}
 	
-	public L2PcInstance getPlayerInstance()
+	public PlayerInstance getPlayerInstance()
 	{
 		return World.getInstance().getPlayer(_objectId);
 	}

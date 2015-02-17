@@ -34,7 +34,7 @@ import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
@@ -109,7 +109,7 @@ public abstract class Chamber extends AbstractInstance
 				{
 					for (int objId : inst.getPlayers())
 					{
-						final L2PcInstance pl = World.getInstance().getPlayer(objId);
+						final PlayerInstance pl = World.getInstance().getPlayer(objId);
 						if ((pl != null) && pl.isOnline())
 						{
 							if ((partyInside == null) || !pl.isInParty() || (partyInside != pl.getParty()))
@@ -210,7 +210,7 @@ public abstract class Chamber extends AbstractInstance
 	}
 	
 	@Override
-	protected boolean checkConditions(L2PcInstance player)
+	protected boolean checkConditions(PlayerInstance player)
 	{
 		final Party party = player.getParty();
 		if (party == null)
@@ -225,7 +225,7 @@ public abstract class Chamber extends AbstractInstance
 			return false;
 		}
 		
-		for (L2PcInstance partyMember : party.getMembers())
+		for (PlayerInstance partyMember : party.getMembers())
 		{
 			if (partyMember.getLevel() < 80)
 			{
@@ -277,7 +277,7 @@ public abstract class Chamber extends AbstractInstance
 			// set instance reenter time for all allowed players
 			for (int objectId : world.getAllowed())
 			{
-				final L2PcInstance player = World.getInstance().getPlayer(objectId);
+				final PlayerInstance player = World.getInstance().getPlayer(objectId);
 				if ((player != null) && player.isOnline())
 				{
 					InstanceManager.getInstance().setInstanceTime(objectId, world.getTemplateId(), reenter.getTimeInMillis());
@@ -325,7 +325,7 @@ public abstract class Chamber extends AbstractInstance
 			}
 		}
 		
-		for (L2PcInstance partyMember : party.getMembers())
+		for (PlayerInstance partyMember : party.getMembers())
 		{
 			if (world.getInstanceId() == partyMember.getInstanceId())
 			{
@@ -364,7 +364,7 @@ public abstract class Chamber extends AbstractInstance
 			return;
 		}
 		
-		for (L2PcInstance partyMember : party.getMembers())
+		for (PlayerInstance partyMember : party.getMembers())
 		{
 			if (hasQuestItems(partyMember, DELUSION_MARK))
 			{
@@ -395,7 +395,7 @@ public abstract class Chamber extends AbstractInstance
 			return;
 		}
 		
-		for (L2PcInstance partyMember : party.getMembers())
+		for (PlayerInstance partyMember : party.getMembers())
 		{
 			if (world.getInstanceId() == partyMember.getInstanceId())
 			{
@@ -405,7 +405,7 @@ public abstract class Chamber extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
+	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
 	{
 		if (firstEntrance)
 		{
@@ -418,7 +418,7 @@ public abstract class Chamber extends AbstractInstance
 		}
 	}
 	
-	protected void exitInstance(L2PcInstance player)
+	protected void exitInstance(PlayerInstance player)
 	{
 		if ((player == null) || !player.isOnline() || (player.getInstanceId() == 0))
 		{
@@ -454,7 +454,7 @@ public abstract class Chamber extends AbstractInstance
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String htmltext = "";
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -505,7 +505,7 @@ public abstract class Chamber extends AbstractInstance
 					world.stopRoomChangeTask();
 					world.stopBanishTask();
 					
-					for (L2PcInstance partyMember : player.getParty().getMembers())
+					for (PlayerInstance partyMember : player.getParty().getMembers())
 					{
 						exitInstance(partyMember);
 					}
@@ -526,7 +526,7 @@ public abstract class Chamber extends AbstractInstance
 	}
 	
 	@Override
-	public String onAttack(final Npc npc, final L2PcInstance attacker, final int damage, final boolean isPet, final Skill skill)
+	public String onAttack(final Npc npc, final PlayerInstance attacker, final int damage, final boolean isPet, final Skill skill)
 	{
 		if (!npc.isBusy() && (npc.getCurrentHp() < (npc.getMaxHp() / 10)))
 		{
@@ -581,7 +581,7 @@ public abstract class Chamber extends AbstractInstance
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance player, boolean isPet)
+	public String onKill(Npc npc, PlayerInstance player, boolean isPet)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(player);
 		if ((tmpworld != null) && (tmpworld instanceof CDWorld))
@@ -610,7 +610,7 @@ public abstract class Chamber extends AbstractInstance
 	}
 	
 	@Override
-	public String onSpellFinished(Npc npc, L2PcInstance player, Skill skill)
+	public String onSpellFinished(Npc npc, PlayerInstance player, Skill skill)
 	{
 		if ((npc.getId() == BOX) && ((skill.getId() == 5376) || (skill.getId() == 5758)) && !npc.isDead())
 		{
@@ -620,7 +620,7 @@ public abstract class Chamber extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		int npcId = npc.getId();
 		QuestState st = getQuestState(player, false);

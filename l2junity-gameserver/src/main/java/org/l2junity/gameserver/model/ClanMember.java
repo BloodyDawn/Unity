@@ -27,7 +27,7 @@ import java.util.logging.Logger;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.instancemanager.SiegeManager;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * This class holds the clan members data.
@@ -45,7 +45,7 @@ public class ClanMember
 	private int _classId;
 	private boolean _sex;
 	private int _raceOrdinal;
-	private L2PcInstance _player;
+	private PlayerInstance _player;
 	private int _pledgeType;
 	private int _apprentice;
 	private int _sponsor;
@@ -81,7 +81,7 @@ public class ClanMember
 	 * @param clan the clan where the player belongs
 	 * @param player the player from which the clan member will be created
 	 */
-	public ClanMember(L2Clan clan, L2PcInstance player)
+	public ClanMember(L2Clan clan, PlayerInstance player)
 	{
 		if (clan == null)
 		{
@@ -106,7 +106,7 @@ public class ClanMember
 	 * Sets the player instance.
 	 * @param player the new player instance
 	 */
-	public void setPlayerInstance(L2PcInstance player)
+	public void setPlayerInstance(PlayerInstance player)
 	{
 		if ((player == null) && (_player != null))
 		{
@@ -143,7 +143,7 @@ public class ClanMember
 	 * Gets the player instance.
 	 * @return the player instance
 	 */
-	public L2PcInstance getPlayerInstance()
+	public PlayerInstance getPlayerInstance()
 	{
 		return _player;
 	}
@@ -442,7 +442,7 @@ public class ClanMember
 	 * @param player the player
 	 * @return the int
 	 */
-	public static int calculatePledgeClass(L2PcInstance player)
+	public static int calculatePledgeClass(PlayerInstance player)
 	{
 		int pledgeClass = 0;
 		if (player == null)

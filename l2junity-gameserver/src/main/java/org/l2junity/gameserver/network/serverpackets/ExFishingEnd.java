@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author -Wooden-
@@ -29,7 +29,7 @@ public class ExFishingEnd extends L2GameServerPacket
 	private final boolean _win;
 	private final Creature _activeChar;
 	
-	public ExFishingEnd(boolean win, L2PcInstance character)
+	public ExFishingEnd(boolean win, PlayerInstance character)
 	{
 		_win = win;
 		_activeChar = character;

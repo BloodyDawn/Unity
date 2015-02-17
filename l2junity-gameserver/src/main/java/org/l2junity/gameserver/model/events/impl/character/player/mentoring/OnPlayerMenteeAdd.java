@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.events.impl.character.player.mentoring;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.IBaseEvent;
 
@@ -27,21 +27,21 @@ import org.l2junity.gameserver.model.events.impl.IBaseEvent;
  */
 public class OnPlayerMenteeAdd implements IBaseEvent
 {
-	private final L2PcInstance _mentor;
-	private final L2PcInstance _mentee;
+	private final PlayerInstance _mentor;
+	private final PlayerInstance _mentee;
 	
-	public OnPlayerMenteeAdd(L2PcInstance mentor, L2PcInstance mentee)
+	public OnPlayerMenteeAdd(PlayerInstance mentor, PlayerInstance mentee)
 	{
 		_mentor = mentor;
 		_mentee = mentee;
 	}
 	
-	public L2PcInstance getMentor()
+	public PlayerInstance getMentor()
 	{
 		return _mentor;
 	}
 	
-	public L2PcInstance getMentee()
+	public PlayerInstance getMentee()
 	{
 		return _mentee;
 	}

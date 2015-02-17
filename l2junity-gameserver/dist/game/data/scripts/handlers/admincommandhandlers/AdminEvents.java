@@ -22,7 +22,7 @@ import java.util.StringTokenizer;
 
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.instancemanager.QuestManager;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Event;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -46,7 +46,7 @@ public class AdminEvents implements IAdminCommandHandler
 	}
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		if (activeChar == null)
 		{
@@ -148,7 +148,7 @@ public class AdminEvents implements IAdminCommandHandler
 		return false;
 	}
 	
-	private void showMenu(L2PcInstance activeChar)
+	private void showMenu(PlayerInstance activeChar)
 	{
 		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/gm_events.htm");

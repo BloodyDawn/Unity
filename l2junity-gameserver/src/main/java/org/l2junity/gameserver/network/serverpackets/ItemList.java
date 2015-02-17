@@ -21,16 +21,16 @@ package org.l2junity.gameserver.network.serverpackets;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 public final class ItemList extends AbstractItemPacket
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final List<ItemInstance> _items = new ArrayList<>();
 	private final boolean _showWindow;
 	
-	public ItemList(L2PcInstance activeChar, boolean showWindow)
+	public ItemList(PlayerInstance activeChar, boolean showWindow)
 	{
 		_activeChar = activeChar;
 		_showWindow = showWindow;

@@ -24,7 +24,7 @@ import java.util.StringTokenizer;
 import org.l2junity.Config;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 
 /**
@@ -39,7 +39,7 @@ public class AdminHtml implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		final StringTokenizer st = new StringTokenizer(command, " ");
 		final String actualCommand = st.nextToken();
@@ -78,7 +78,7 @@ public class AdminHtml implements IAdminCommandHandler
 	 * @param activeChar activeChar where html is shown
 	 * @param path relative path from directory data/html/admin/ to html
 	 */
-	public static void showAdminHtml(L2PcInstance activeChar, String path)
+	public static void showAdminHtml(PlayerInstance activeChar, String path)
 	{
 		showHtml(activeChar, "data/html/admin/" + path, false);
 	}
@@ -89,7 +89,7 @@ public class AdminHtml implements IAdminCommandHandler
 	 * @param path relative path from Config.DATAPACK_ROOT to html.
 	 * @param reload {@code true} will reload html and show it {@code false} will show it from cache.
 	 */
-	public static void showHtml(L2PcInstance activeChar, String path, boolean reload)
+	public static void showHtml(PlayerInstance activeChar, String path, boolean reload)
 	{
 		String content = null;
 		if (!reload)

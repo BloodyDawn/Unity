@@ -25,7 +25,7 @@ import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2QuestGuardInstance;
 import org.l2junity.gameserver.model.holders.ItemChanceHolder;
 import org.l2junity.gameserver.model.zone.ZoneType;
@@ -69,7 +69,7 @@ public final class Quarry extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String htmltext = null;
 		switch (event)
@@ -117,7 +117,7 @@ public final class Quarry extends AbstractNpcAI
 						{
 							if (getRandom(10000) < item.getChance())
 							{
-								npc.dropItem((L2PcInstance) npc.getTarget(), item.getId(), (int) (item.getCount() * Config.RATE_QUEST_DROP));
+								npc.dropItem((PlayerInstance) npc.getTarget(), item.getId(), (int) (item.getCount() * Config.RATE_QUEST_DROP));
 								break;
 							}
 						}
@@ -145,7 +145,7 @@ public final class Quarry extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onFirstTalk(Npc npc, L2PcInstance player)
+	public final String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		if (HellboundEngine.getInstance().getLevel() != 5)
 		{
@@ -155,7 +155,7 @@ public final class Quarry extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public final String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		npc.setAutoAttackable(false);
 		return super.onKill(npc, killer, isSummon);

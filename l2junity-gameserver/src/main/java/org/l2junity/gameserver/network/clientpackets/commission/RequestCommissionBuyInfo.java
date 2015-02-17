@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.clientpackets.commission;
 
 import org.l2junity.gameserver.instancemanager.CommissionManager;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.commission.CommissionItem;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
@@ -43,7 +43,7 @@ public class RequestCommissionBuyInfo extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance player = getActiveChar();
+		final PlayerInstance player = getActiveChar();
 		if (player == null)
 		{
 			return;

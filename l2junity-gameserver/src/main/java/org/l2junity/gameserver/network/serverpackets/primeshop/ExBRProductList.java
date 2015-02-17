@@ -20,7 +20,7 @@ package org.l2junity.gameserver.network.serverpackets.primeshop;
 
 import java.util.Collection;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.primeshop.PrimeShopGroup;
 import org.l2junity.gameserver.model.primeshop.PrimeShopItem;
 import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
@@ -30,11 +30,11 @@ import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
  */
 public class ExBRProductList extends L2GameServerPacket
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final int _type;
 	private final Collection<PrimeShopGroup> _primeList;
 	
-	public ExBRProductList(L2PcInstance activeChar, int type, Collection<PrimeShopGroup> items)
+	public ExBRProductList(PlayerInstance activeChar, int type, Collection<PrimeShopGroup> items)
 	{
 		_activeChar = activeChar;
 		_type = type;

@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.stat.PcStat;
 import org.l2junity.gameserver.model.variables.AccountVariables;
 import org.l2junity.gameserver.network.L2GameClient;
@@ -31,7 +31,7 @@ public class ExVitalityEffectInfo extends L2GameServerPacket
 {
 	private final int _points;
 	
-	public ExVitalityEffectInfo(L2PcInstance cha)
+	public ExVitalityEffectInfo(PlayerInstance cha)
 	{
 		_points = cha.getVitalityPoints();
 	}

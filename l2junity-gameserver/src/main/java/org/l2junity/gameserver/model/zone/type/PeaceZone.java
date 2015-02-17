@@ -20,7 +20,7 @@ package org.l2junity.gameserver.model.zone.type;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.ZoneId;
 
@@ -40,7 +40,7 @@ public class PeaceZone extends ZoneType
 	{
 		if (character.isPlayer())
 		{
-			L2PcInstance player = character.getActingPlayer();
+			PlayerInstance player = character.getActingPlayer();
 			// PVP possible during siege, now for siege participants only
 			// Could also check if this town is in siege, or if any siege is going on
 			if ((player.getSiegeState() != 0) && (Config.PEACE_ZONE_MODE == 1))

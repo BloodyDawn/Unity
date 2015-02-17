@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.Henna;
 import org.l2junity.gameserver.network.SystemMessageId;
 
@@ -39,7 +39,7 @@ public final class RequestHennaRemove extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = getActiveChar();
 		if (activeChar == null)
 		{
 			return;

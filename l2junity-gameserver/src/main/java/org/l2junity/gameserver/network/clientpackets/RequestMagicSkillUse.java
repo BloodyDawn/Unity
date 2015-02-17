@@ -22,7 +22,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.datatables.SkillData;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -50,7 +50,7 @@ public final class RequestMagicSkillUse extends L2GameClientPacket
 	protected void runImpl()
 	{
 		// Get the current L2PcInstance of the player
-		final L2PcInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = getActiveChar();
 		if (activeChar == null)
 		{
 			return;

@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.ExPrivateStoreSetWholeMsg;
 import org.l2junity.gameserver.util.Util;
 
@@ -42,7 +42,7 @@ public class SetPrivateStoreWholeMsg extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance player = getClient().getActiveChar();
+		final PlayerInstance player = getClient().getActiveChar();
 		if ((player == null) || (player.getSellList() == null))
 		{
 			return;

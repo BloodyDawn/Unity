@@ -19,7 +19,7 @@
 package handlers.usercommandhandlers;
 
 import org.l2junity.gameserver.handler.IUserCommandHandler;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.ExInzoneWaiting;
 
 /**
@@ -40,7 +40,7 @@ public class InstanceZone implements IUserCommandHandler
 	}
 	
 	@Override
-	public boolean useUserCommand(int id, L2PcInstance activeChar)
+	public boolean useUserCommand(int id, PlayerInstance activeChar)
 	{
 		if (id != COMMAND_IDS[0])
 		{

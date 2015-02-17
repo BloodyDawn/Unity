@@ -24,7 +24,7 @@ import org.l2junity.gameserver.data.xml.impl.ExperienceData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 
 public class AdminLevel implements IAdminCommandHandler
@@ -36,7 +36,7 @@ public class AdminLevel implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		WorldObject targetChar = activeChar.getTarget();
 		StringTokenizer st = new StringTokenizer(command, " ");
@@ -66,12 +66,12 @@ public class AdminLevel implements IAdminCommandHandler
 		{
 			try
 			{
-				if (!(targetChar instanceof L2PcInstance))
+				if (!(targetChar instanceof PlayerInstance))
 				{
 					activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET); // incorrect target!
 					return false;
 				}
-				L2PcInstance targetPlayer = (L2PcInstance) targetChar;
+				PlayerInstance targetPlayer = (PlayerInstance) targetChar;
 				
 				byte lvl = Byte.parseByte(val);
 				if ((lvl >= 1) && (lvl <= ExperienceData.getInstance().getMaxLevel()))

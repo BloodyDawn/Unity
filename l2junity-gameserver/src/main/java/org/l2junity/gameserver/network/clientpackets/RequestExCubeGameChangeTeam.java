@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.instancemanager.HandysBlockCheckerManager;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * Format: chdd d: Arena d: Team
@@ -48,7 +48,7 @@ public final class RequestExCubeGameChangeTeam extends L2GameClientPacket
 		{
 			return;
 		}
-		L2PcInstance player = getClient().getActiveChar();
+		PlayerInstance player = getClient().getActiveChar();
 		
 		switch (_team)
 		{

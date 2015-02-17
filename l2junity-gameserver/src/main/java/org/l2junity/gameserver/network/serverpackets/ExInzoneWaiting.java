@@ -23,7 +23,7 @@ import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
 
 import org.l2junity.gameserver.instancemanager.InstanceManager;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 
 /**
@@ -34,7 +34,7 @@ public class ExInzoneWaiting extends L2GameServerPacket
 	private final int _currentTemplateId;
 	private final Map<Integer, Long> _instanceTimes;
 	
-	public ExInzoneWaiting(L2PcInstance activeChar)
+	public ExInzoneWaiting(PlayerInstance activeChar)
 	{
 		final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(activeChar);
 		_currentTemplateId = (world != null) && (world.getTemplateId() >= 0) ? world.getTemplateId() : -1;

@@ -23,7 +23,7 @@ import java.util.List;
 
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.model.SkillLearn;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -53,7 +53,7 @@ public class RequestAcquireAbilityList extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;

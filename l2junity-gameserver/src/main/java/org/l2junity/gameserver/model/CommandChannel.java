@@ -23,7 +23,7 @@ import java.util.function.Function;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExCloseMPCC;
 import org.l2junity.gameserver.network.serverpackets.ExMPCCPartyInfoUpdate;
@@ -39,14 +39,14 @@ import javolution.util.FastList;
 public class CommandChannel extends AbstractPlayerGroup
 {
 	private final List<Party> _parties;
-	private L2PcInstance _commandLeader = null;
+	private PlayerInstance _commandLeader = null;
 	private int _channelLvl;
 	
 	/**
 	 * Create a new command channel and add the leader's party to it.
 	 * @param leader the leader of this command channel
 	 */
-	public CommandChannel(L2PcInstance leader)
+	public CommandChannel(PlayerInstance leader)
 	{
 		_commandLeader = leader;
 		Party party = leader.getParty();
@@ -162,9 +162,9 @@ public class CommandChannel extends AbstractPlayerGroup
 	 * @return a list of all members in this command channel
 	 */
 	@Override
-	public List<L2PcInstance> getMembers()
+	public List<PlayerInstance> getMembers()
 	{
-		List<L2PcInstance> members = new FastList<L2PcInstance>().shared();
+		List<PlayerInstance> members = new FastList<PlayerInstance>().shared();
 		for (Party party : getPartys())
 		{
 			members.addAll(party.getMembers());
@@ -182,7 +182,7 @@ public class CommandChannel extends AbstractPlayerGroup
 	}
 	
 	@Override
-	public void setLeader(L2PcInstance leader)
+	public void setLeader(PlayerInstance leader)
 	{
 		_commandLeader = leader;
 		if (leader.getLevel() > _channelLvl)
@@ -208,7 +208,7 @@ public class CommandChannel extends AbstractPlayerGroup
 	 * @return the leader of this command channel
 	 */
 	@Override
-	public L2PcInstance getLeader()
+	public PlayerInstance getLeader()
 	{
 		return _commandLeader;
 	}
@@ -219,7 +219,7 @@ public class CommandChannel extends AbstractPlayerGroup
 	 * @return {@code true} if he does, {@code false} otherwise
 	 */
 	@Override
-	public boolean containsPlayer(L2PcInstance player)
+	public boolean containsPlayer(PlayerInstance player)
 	{
 		if ((_parties != null) && !_parties.isEmpty())
 		{
@@ -239,7 +239,7 @@ public class CommandChannel extends AbstractPlayerGroup
 	 * @see org.l2junity.gameserver.model.AbstractPlayerGroup#forEachMember(Function)
 	 */
 	@Override
-	public boolean forEachMember(Function<L2PcInstance, Boolean> function)
+	public boolean forEachMember(Function<PlayerInstance, Boolean> function)
 	{
 		if ((_parties != null) && !_parties.isEmpty())
 		{

@@ -22,7 +22,7 @@ import java.util.logging.Level;
 
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.enums.ItemLocation;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 /**
@@ -30,9 +30,9 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
  */
 public class PcRefund extends ItemContainer
 {
-	private final L2PcInstance _owner;
+	private final PlayerInstance _owner;
 	
-	public PcRefund(L2PcInstance owner)
+	public PcRefund(PlayerInstance owner)
 	{
 		_owner = owner;
 	}
@@ -44,7 +44,7 @@ public class PcRefund extends ItemContainer
 	}
 	
 	@Override
-	public L2PcInstance getOwner()
+	public PlayerInstance getOwner()
 	{
 		return _owner;
 	}

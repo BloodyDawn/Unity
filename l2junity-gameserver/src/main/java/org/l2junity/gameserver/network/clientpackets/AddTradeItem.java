@@ -21,7 +21,7 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.gameserver.model.TradeItem;
 import org.l2junity.gameserver.model.TradeList;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.TradeOtherAdd;
 import org.l2junity.gameserver.network.serverpackets.TradeOwnAdd;
@@ -50,7 +50,7 @@ public final class AddTradeItem extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance player = getClient().getActiveChar();
+		final PlayerInstance player = getClient().getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -63,7 +63,7 @@ public final class AddTradeItem extends L2GameClientPacket
 			return;
 		}
 		
-		final L2PcInstance partner = trade.getPartner();
+		final PlayerInstance partner = trade.getPartner();
 		if ((partner == null) || (World.getInstance().getPlayer(partner.getObjectId()) == null) || (partner.getActiveTradeList() == null))
 		{
 			// Trade partner not found, cancel trade

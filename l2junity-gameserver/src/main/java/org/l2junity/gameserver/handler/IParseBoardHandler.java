@@ -20,7 +20,7 @@ package org.l2junity.gameserver.handler;
 
 import java.util.logging.Logger;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * Community Board interface.
@@ -36,7 +36,7 @@ public interface IParseBoardHandler
 	 * @param player the player
 	 * @return
 	 */
-	public boolean parseCommunityBoardCommand(String command, L2PcInstance player);
+	public boolean parseCommunityBoardCommand(String command, PlayerInstance player);
 	
 	/**
 	 * Gets the community board commands.

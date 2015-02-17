@@ -24,7 +24,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.L2GameClient;
 
 public final class AntiFeedManager
@@ -68,7 +68,7 @@ public final class AntiFeedManager
 			return false;
 		}
 		
-		final L2PcInstance targetPlayer = target.getActingPlayer();
+		final PlayerInstance targetPlayer = target.getActingPlayer();
 		if (targetPlayer == null)
 		{
 			return false;
@@ -84,7 +84,7 @@ public final class AntiFeedManager
 		
 		if (Config.L2JMOD_ANTIFEED_DUALBOX && (attacker != null))
 		{
-			final L2PcInstance attackerPlayer = attacker.getActingPlayer();
+			final PlayerInstance attackerPlayer = attacker.getActingPlayer();
 			if (attackerPlayer == null)
 			{
 				return false;
@@ -128,7 +128,7 @@ public final class AntiFeedManager
 	 * @return If number of all simultaneous connections from player's IP address lower than max then increment connection count and return true.<br>
 	 *         False if number of all simultaneous connections from player's IP address higher than max.
 	 */
-	public final boolean tryAddPlayer(int eventId, L2PcInstance player, int max)
+	public final boolean tryAddPlayer(int eventId, PlayerInstance player, int max)
 	{
 		return tryAddClient(eventId, player.getClient(), max);
 	}
@@ -166,7 +166,7 @@ public final class AntiFeedManager
 	 * @param player
 	 * @return true if success and false if any problem detected.
 	 */
-	public final boolean removePlayer(int eventId, L2PcInstance player)
+	public final boolean removePlayer(int eventId, PlayerInstance player)
 	{
 		return removeClient(eventId, player.getClient());
 	}
@@ -237,7 +237,7 @@ public final class AntiFeedManager
 	 * @param max
 	 * @return maximum number of allowed connections (whitelist + max)
 	 */
-	public final int getLimit(L2PcInstance player, int max)
+	public final int getLimit(PlayerInstance player, int max)
 	{
 		return getLimit(player.getClient(), max);
 	}

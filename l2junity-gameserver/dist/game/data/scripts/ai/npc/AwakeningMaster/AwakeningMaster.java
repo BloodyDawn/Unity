@@ -23,7 +23,7 @@ import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.UserInfoType;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.entity.Hero;
 import org.l2junity.gameserver.model.events.EventType;
@@ -78,7 +78,7 @@ public final class AwakeningMaster extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState st = getQuestState(player, true);
 		if (st == null)
@@ -180,7 +180,7 @@ public final class AwakeningMaster extends AbstractNpcAI
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void OnPlayerChangeToAwakenedClass(OnPlayerChangeToAwakenedClass event)
 	{
-		final L2PcInstance player = event.getActiveChar();
+		final PlayerInstance player = event.getActiveChar();
 		
 		if (player.isSubClassActive() && !player.isDualClassActive())
 		{

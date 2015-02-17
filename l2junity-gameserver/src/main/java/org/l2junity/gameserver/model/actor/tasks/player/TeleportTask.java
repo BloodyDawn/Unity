@@ -19,17 +19,17 @@
 package org.l2junity.gameserver.model.actor.tasks.player;
 
 import org.l2junity.gameserver.model.Location;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author UnAfraid
  */
 public class TeleportTask implements Runnable
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final Location _loc;
 	
-	public TeleportTask(L2PcInstance player, Location loc)
+	public TeleportTask(PlayerInstance player, Location loc)
 	{
 		_activeChar = player;
 		_loc = loc;

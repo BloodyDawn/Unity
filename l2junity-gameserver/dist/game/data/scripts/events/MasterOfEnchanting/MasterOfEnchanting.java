@@ -21,7 +21,7 @@ package events.MasterOfEnchanting;
 import java.util.Date;
 
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.event.LongTimeEvent;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -76,7 +76,7 @@ public final class MasterOfEnchanting extends LongTimeEvent
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String htmltext = event;
 		if (event.equalsIgnoreCase("buy_staff"))
@@ -270,7 +270,7 @@ public final class MasterOfEnchanting extends LongTimeEvent
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		return npc.getId() + ".htm";
 	}

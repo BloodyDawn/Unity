@@ -35,7 +35,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.NpcStringId;
@@ -389,7 +389,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onFirstTalk(Npc npc, L2PcInstance player)
+	public final String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		final int npcId = npc.getId();
 		
@@ -418,7 +418,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String htmltext = event;
 		
@@ -547,7 +547,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 			{
 				if (Util.checkIfInRange(3000, party.getLeader(), npc, true))
 				{
-					for (L2PcInstance partyMember : party.getMembers())
+					for (PlayerInstance partyMember : party.getMembers())
 					{
 						if (Util.checkIfInRange(2000, partyMember, npc, true))
 						{
@@ -594,7 +594,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
 		if ((_lock != null) && (npc.getObjectId() == _lock.getObjectId()))
 		{
@@ -620,7 +620,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		int npcId = npc.getId();
 		
@@ -920,7 +920,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 		if ((party != null) && ZONES.containsKey(managerId) && (ZoneManager.getInstance().getZoneById(ZONES.get(managerId)) != null))
 		{
 			ZoneType zone = ZoneManager.getInstance().getZoneById(ZONES.get(managerId));
-			for (L2PcInstance player : zone.getPlayersInside())
+			for (PlayerInstance player : zone.getPlayersInside())
 			{
 				if (player != null)
 				{
@@ -939,7 +939,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 		if (ZONES.containsKey(managerId) && (ZoneManager.getInstance().getZoneById(ZONES.get(managerId)) != null))
 		{
 			ZoneType zone = ZoneManager.getInstance().getZoneById(ZONES.get(managerId));
-			for (L2PcInstance player : zone.getPlayersInside())
+			for (PlayerInstance player : zone.getPlayersInside())
 			{
 				if (player != null)
 				{

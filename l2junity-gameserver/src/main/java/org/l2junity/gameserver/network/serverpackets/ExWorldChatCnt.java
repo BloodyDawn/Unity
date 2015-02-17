@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author UnAfraid
@@ -28,7 +28,7 @@ public class ExWorldChatCnt extends L2GameServerPacket
 {
 	private final int _points;
 	
-	public ExWorldChatCnt(L2PcInstance activeChar)
+	public ExWorldChatCnt(PlayerInstance activeChar)
 	{
 		_points = activeChar.getLevel() < Config.WORLD_CHAT_MIN_LEVEL ? 0 : activeChar.getWorldChatPoints();
 	}

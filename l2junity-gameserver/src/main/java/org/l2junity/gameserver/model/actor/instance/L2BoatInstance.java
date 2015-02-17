@@ -68,7 +68,7 @@ public class L2BoatInstance extends Vehicle
 	}
 	
 	@Override
-	public void oustPlayer(L2PcInstance player)
+	public void oustPlayer(PlayerInstance player)
 	{
 		super.oustPlayer(player);
 		
@@ -93,7 +93,7 @@ public class L2BoatInstance extends Vehicle
 	}
 	
 	@Override
-	public void sendInfo(L2PcInstance activeChar)
+	public void sendInfo(PlayerInstance activeChar)
 	{
 		activeChar.sendPacket(new VehicleInfo(this));
 	}

@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.data.xml.impl.EnchantItemData;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.EnchantItemRequest;
 import org.l2junity.gameserver.model.items.enchant.EnchantScroll;
 import org.l2junity.gameserver.model.items.enchant.EnchantSupportItem;
@@ -47,7 +47,7 @@ public class RequestExTryToPutEnchantSupportItem extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -69,8 +69,8 @@ public class RequestExTryToPutEnchantSupportItem extends L2GameClientPacket
 		{
 			// message may be custom
 			activeChar.sendPacket(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITIONS);
-			request.setEnchantingItem(L2PcInstance.ID_NONE);
-			request.setSupportItem(L2PcInstance.ID_NONE);
+			request.setEnchantingItem(PlayerInstance.ID_NONE);
+			request.setSupportItem(PlayerInstance.ID_NONE);
 			return;
 		}
 		
@@ -80,7 +80,7 @@ public class RequestExTryToPutEnchantSupportItem extends L2GameClientPacket
 		{
 			// message may be custom
 			activeChar.sendPacket(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITIONS);
-			request.setSupportItem(L2PcInstance.ID_NONE);
+			request.setSupportItem(PlayerInstance.ID_NONE);
 			activeChar.sendPacket(new ExPutEnchantSupportItemResult(0));
 			return;
 		}

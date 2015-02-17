@@ -20,7 +20,7 @@ package org.l2junity.gameserver.model.conditions;
 
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -49,7 +49,7 @@ public class ConditionPlayerCanTakeFort extends Condition
 			return !_val;
 		}
 		
-		final L2PcInstance player = effector.getActingPlayer();
+		final PlayerInstance player = effector.getActingPlayer();
 		boolean canTakeFort = true;
 		if (player.isAlikeDead() || player.isCursedWeaponEquipped() || !player.isClanLeader())
 		{

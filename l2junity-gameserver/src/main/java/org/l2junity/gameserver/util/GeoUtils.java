@@ -21,7 +21,7 @@ package org.l2junity.gameserver.util;
 import java.awt.Color;
 
 import org.l2junity.gameserver.GeoData;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.ExServerPrimitive;
 import org.l2junity.geodriver.Cell;
 
@@ -30,7 +30,7 @@ import org.l2junity.geodriver.Cell;
  */
 public final class GeoUtils
 {
-	public static void debug2DLine(L2PcInstance player, int x, int y, int tx, int ty, int z)
+	public static void debug2DLine(PlayerInstance player, int x, int y, int tx, int ty, int z)
 	{
 		int gx = GeoData.getInstance().getGeoX(x);
 		int gy = GeoData.getInstance().getGeoY(y);
@@ -53,7 +53,7 @@ public final class GeoUtils
 		player.sendPacket(prim);
 	}
 	
-	public static void debug3DLine(L2PcInstance player, int x, int y, int z, int tx, int ty, int tz)
+	public static void debug3DLine(PlayerInstance player, int x, int y, int z, int tx, int ty, int tz)
 	{
 		int gx = GeoData.getInstance().getGeoX(x);
 		int gy = GeoData.getInstance().getGeoY(y);
@@ -102,7 +102,7 @@ public final class GeoUtils
 		return Color.RED;
 	}
 	
-	public static void debugGrid(L2PcInstance player)
+	public static void debugGrid(PlayerInstance player)
 	{
 		int geoRadius = 10;
 		int blocksPerPacket = 49;

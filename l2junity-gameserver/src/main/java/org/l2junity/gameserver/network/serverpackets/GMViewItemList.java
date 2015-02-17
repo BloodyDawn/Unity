@@ -21,7 +21,7 @@ package org.l2junity.gameserver.network.serverpackets;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
@@ -31,7 +31,7 @@ public class GMViewItemList extends AbstractItemPacket
 	private final int _limit;
 	private final String _playerName;
 	
-	public GMViewItemList(L2PcInstance cha)
+	public GMViewItemList(PlayerInstance cha)
 	{
 		_playerName = cha.getName();
 		_limit = cha.getInventoryLimit();

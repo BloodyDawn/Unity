@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.l2junity.gameserver.data.xml.impl.BeautyShopData;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.beautyshop.BeautyData;
 import org.l2junity.gameserver.model.beautyshop.BeautyItem;
 
@@ -40,7 +40,7 @@ public class ExBeautyItemList extends L2GameServerPacket
 	private static final int FACE_TYPE = 1;
 	private static final int COLOR_TYPE = 2;
 	
-	public ExBeautyItemList(L2PcInstance activeChar)
+	public ExBeautyItemList(PlayerInstance activeChar)
 	{
 		_beautyData = BeautyShopData.getInstance().getBeautyData(activeChar.getRace(), activeChar.getAppearance().getSexType());
 		

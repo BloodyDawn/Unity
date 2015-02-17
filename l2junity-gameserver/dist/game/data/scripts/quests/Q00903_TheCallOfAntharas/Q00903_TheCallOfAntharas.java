@@ -21,7 +21,7 @@ package quests.Q00903_TheCallOfAntharas;
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.enums.QuestType;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
@@ -56,7 +56,7 @@ public class Q00903_TheCallOfAntharas extends Quest
 	}
 	
 	@Override
-	public void actionForEachPlayer(L2PcInstance player, Npc npc, boolean isSummon)
+	public void actionForEachPlayer(PlayerInstance player, Npc npc, boolean isSummon)
 	{
 		final QuestState st = getQuestState(player, false);
 		if ((st != null) && Util.checkIfInRange(1500, npc, player, false))
@@ -85,7 +85,7 @@ public class Q00903_TheCallOfAntharas extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState st = getQuestState(player, false);
 		if (st == null)
@@ -115,14 +115,14 @@ public class Q00903_TheCallOfAntharas extends Quest
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		executeForEachPlayer(killer, npc, isSummon, true, false);
 		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		final QuestState st = getQuestState(player, true);
 		if (st == null)

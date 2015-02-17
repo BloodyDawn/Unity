@@ -24,7 +24,7 @@ import java.util.logging.Level;
 
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.transform.Transform;
 import org.l2junity.gameserver.model.actor.transform.TransformLevelData;
 import org.l2junity.gameserver.model.actor.transform.TransformTemplate;
@@ -225,7 +225,7 @@ public final class TransformData implements IXmlReader
 		return _transformData.get(id);
 	}
 	
-	public boolean transformPlayer(int id, L2PcInstance player)
+	public boolean transformPlayer(int id, PlayerInstance player)
 	{
 		final Transform transform = getTransform(id);
 		if (transform != null)

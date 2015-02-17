@@ -18,18 +18,18 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public class ChairSit extends L2GameServerPacket
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final int _staticObjectId;
 	
 	/**
 	 * @param player
 	 * @param staticObjectId
 	 */
-	public ChairSit(L2PcInstance player, int staticObjectId)
+	public ChairSit(PlayerInstance player, int staticObjectId)
 	{
 		_activeChar = player;
 		_staticObjectId = staticObjectId;

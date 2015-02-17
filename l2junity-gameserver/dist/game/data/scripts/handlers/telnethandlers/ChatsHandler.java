@@ -26,7 +26,7 @@ import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.handler.ITelnetHandler;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.CreatureSay;
 import org.l2junity.gameserver.util.Broadcast;
 
@@ -66,7 +66,7 @@ public class ChatsHandler implements ITelnetHandler
 				StringTokenizer st = new StringTokenizer(val);
 				String name = st.nextToken();
 				String message = val.substring(name.length() + 1);
-				L2PcInstance reciever = World.getInstance().getPlayer(name);
+				PlayerInstance reciever = World.getInstance().getPlayer(name);
 				CreatureSay cs = new CreatureSay(0, ChatType.WHISPER, "Telnet Priv", message);
 				if (reciever != null)
 				{

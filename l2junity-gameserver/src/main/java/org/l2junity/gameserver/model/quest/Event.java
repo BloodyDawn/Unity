@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.quest;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * Abstract event class.
@@ -31,9 +31,9 @@ public abstract class Event extends Quest
 		super(-1, name, descr);
 	}
 	
-	public abstract boolean eventStart(L2PcInstance eventMaker);
+	public abstract boolean eventStart(PlayerInstance eventMaker);
 	
 	public abstract boolean eventStop();
 	
-	public abstract boolean eventBypass(L2PcInstance activeChar, String bypass);
+	public abstract boolean eventBypass(PlayerInstance activeChar, String bypass);
 }

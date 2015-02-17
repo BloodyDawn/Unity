@@ -29,7 +29,7 @@ import java.util.logging.Logger;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.enums.ChatType;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.announce.Announcement;
 import org.l2junity.gameserver.model.announce.AnnouncementType;
 import org.l2junity.gameserver.model.announce.AutoAnnouncement;
@@ -94,7 +94,7 @@ public final class AnnouncementsTable
 	 * Sending all announcements to the player
 	 * @param player
 	 */
-	public void showAnnouncements(L2PcInstance player)
+	public void showAnnouncements(PlayerInstance player)
 	{
 		sendAnnouncements(player, AnnouncementType.NORMAL);
 		sendAnnouncements(player, AnnouncementType.CRITICAL);
@@ -106,7 +106,7 @@ public final class AnnouncementsTable
 	 * @param player
 	 * @param type
 	 */
-	public void sendAnnouncements(L2PcInstance player, AnnouncementType type)
+	public void sendAnnouncements(PlayerInstance player, AnnouncementType type)
 	{
 		for (IAnnouncement announce : _announcements.values())
 		{

@@ -27,7 +27,7 @@ import org.l2junity.gameserver.instancemanager.MapRegionManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.SiegeClan;
 import org.l2junity.gameserver.model.TeleportWhereType;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.entity.Fort;
@@ -52,9 +52,9 @@ public final class RequestRestartPoint extends L2GameClientPacket
 	
 	class DeathTask implements Runnable
 	{
-		final L2PcInstance activeChar;
+		final PlayerInstance activeChar;
 		
-		DeathTask(L2PcInstance _activeChar)
+		DeathTask(PlayerInstance _activeChar)
 		{
 			activeChar = _activeChar;
 		}
@@ -69,7 +69,7 @@ public final class RequestRestartPoint extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = getClient().getActiveChar();
 		
 		if (activeChar == null)
 		{
@@ -110,7 +110,7 @@ public final class RequestRestartPoint extends L2GameClientPacket
 		portPlayer(activeChar);
 	}
 	
-	protected final void portPlayer(final L2PcInstance activeChar)
+	protected final void portPlayer(final PlayerInstance activeChar)
 	{
 		Location loc = null;
 		Castle castle = null;

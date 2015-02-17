@@ -39,7 +39,7 @@ import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -209,7 +209,7 @@ public final class BotReportTable
 	 * @param reporter (L2PcInstance who issued the report)
 	 * @return True, if the report was registered, False otherwise
 	 */
-	public boolean reportBot(L2PcInstance reporter)
+	public boolean reportBot(PlayerInstance reporter)
 	{
 		WorldObject target = reporter.getTarget();
 		
@@ -218,7 +218,7 @@ public final class BotReportTable
 			return false;
 		}
 		
-		L2PcInstance bot = target.getActingPlayer();
+		PlayerInstance bot = target.getActingPlayer();
 		
 		if ((bot == null) || (target.getObjectId() == reporter.getObjectId()))
 		{
@@ -340,7 +340,7 @@ public final class BotReportTable
 	 * @param bot (L2PcInstance to be punished)
 	 * @param rcd (RepotedCharData linked to this bot)
 	 */
-	private void handleReport(L2PcInstance bot, final ReportedCharData rcd)
+	private void handleReport(PlayerInstance bot, final ReportedCharData rcd)
 	{
 		// Report count punishment
 		punishBot(bot, _punishments.get(rcd.getReportCount()));
@@ -360,7 +360,7 @@ public final class BotReportTable
 	 * @param bot (L2PcInstance to punish)
 	 * @param ph (PunishHolder containing the debuff and a possible system message to send)
 	 */
-	private void punishBot(L2PcInstance bot, PunishHolder ph)
+	private void punishBot(PlayerInstance bot, PunishHolder ph)
 	{
 		if (ph != null)
 		{
@@ -442,7 +442,7 @@ public final class BotReportTable
 	 * @param player (The L2PcInstance owner of the connection)
 	 * @return int (hashed ip)
 	 */
-	private static int hashIp(L2PcInstance player)
+	private static int hashIp(PlayerInstance player)
 	{
 		String con = player.getClient().getConnection().getInetAddress().getHostAddress();
 		String[] rawByte = con.split("\\.");

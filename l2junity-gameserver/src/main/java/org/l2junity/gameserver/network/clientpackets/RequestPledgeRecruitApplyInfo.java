@@ -20,7 +20,7 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.enums.ClanEntryStatus;
 import org.l2junity.gameserver.instancemanager.ClanEntryManager;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.ExPledgeRecruitApplyInfo;
 
 /**
@@ -39,7 +39,7 @@ public class RequestPledgeRecruitApplyInfo extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;

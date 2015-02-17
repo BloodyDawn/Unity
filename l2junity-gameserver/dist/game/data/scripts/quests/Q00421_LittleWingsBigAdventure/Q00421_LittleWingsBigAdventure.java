@@ -26,7 +26,7 @@ import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.quest.Quest;
@@ -87,7 +87,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		String htmltext = null;
@@ -185,7 +185,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance talker)
+	public String onTalk(Npc npc, PlayerInstance talker)
 	{
 		final QuestState qs = getQuestState(talker, true);
 		String htmltext = getNoQuestMsg(talker);
@@ -373,7 +373,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 	}
 	
 	@Override
-	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(attacker, false);
 		if ((qs != null) && qs.isCond(2))
@@ -447,7 +447,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		if (Util.checkIfInRange(1500, killer, npc, true))
 		{
@@ -468,7 +468,7 @@ public final class Q00421_LittleWingsBigAdventure extends Quest
 		return super.onKill(npc, killer, isSummon);
 	}
 	
-	private static ItemInstance getFlute(L2PcInstance player)
+	private static ItemInstance getFlute(PlayerInstance player)
 	{
 		final int fluteItemId;
 		if (hasQuestItems(player, DRAGONFLUTE_OF_WIND))

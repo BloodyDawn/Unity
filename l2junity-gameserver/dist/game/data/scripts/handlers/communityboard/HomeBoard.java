@@ -27,7 +27,7 @@ import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.handler.CommunityBoardHandler;
 import org.l2junity.gameserver.handler.IParseBoardHandler;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * Home board.
@@ -51,7 +51,7 @@ public final class HomeBoard implements IParseBoardHandler
 	}
 	
 	@Override
-	public boolean parseCommunityBoardCommand(String command, L2PcInstance activeChar)
+	public boolean parseCommunityBoardCommand(String command, PlayerInstance activeChar)
 	{
 		if (command.equals("_bbshome") || command.equals("_bbstop"))
 		{
@@ -80,7 +80,7 @@ public final class HomeBoard implements IParseBoardHandler
 	 * @param player the player
 	 * @return the favorite links count
 	 */
-	private static int getFavoriteCount(L2PcInstance player)
+	private static int getFavoriteCount(PlayerInstance player)
 	{
 		int count = 0;
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
@@ -107,7 +107,7 @@ public final class HomeBoard implements IParseBoardHandler
 	 * @param player the player
 	 * @return the registered regions count
 	 */
-	private static int getRegionCount(L2PcInstance player)
+	private static int getRegionCount(PlayerInstance player)
 	{
 		return 0; // TODO: Implement.
 	}

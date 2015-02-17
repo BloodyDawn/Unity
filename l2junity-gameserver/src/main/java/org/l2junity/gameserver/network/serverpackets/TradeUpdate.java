@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.TradeItem;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author daemon
@@ -29,7 +29,7 @@ public class TradeUpdate extends AbstractItemPacket
 	private final TradeItem _item;
 	private final long _newCount;
 	
-	public TradeUpdate(L2PcInstance player, TradeItem item)
+	public TradeUpdate(PlayerInstance player, TradeItem item)
 	{
 		_item = item;
 		_newCount = player.getInventory().getItemByObjectId(item.getObjectId()).getCount() - item.getCount();

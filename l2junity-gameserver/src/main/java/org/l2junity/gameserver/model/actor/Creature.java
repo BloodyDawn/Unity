@@ -76,7 +76,7 @@ import org.l2junity.gameserver.model.TimeStamp;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.WorldRegion;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.knownlist.CharKnownList;
 import org.l2junity.gameserver.model.actor.stat.CharStat;
@@ -584,8 +584,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public void broadcastPacket(L2GameServerPacket mov)
 	{
 		mov.setInvisible(isInvisible());
-		Collection<L2PcInstance> plrs = getKnownList().getKnownPlayers().values();
-		for (L2PcInstance player : plrs)
+		Collection<PlayerInstance> plrs = getKnownList().getKnownPlayers().values();
+		for (PlayerInstance player : plrs)
 		{
 			if (player != null)
 			{
@@ -605,8 +605,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public void broadcastPacket(L2GameServerPacket mov, int radiusInKnownlist)
 	{
 		mov.setInvisible(isInvisible());
-		Collection<L2PcInstance> plrs = getKnownList().getKnownPlayers().values();
-		for (L2PcInstance player : plrs)
+		Collection<PlayerInstance> plrs = getKnownList().getKnownPlayers().values();
+		for (PlayerInstance player : plrs)
 		{
 			if ((player != null) && isInsideRadius(player, radiusInKnownlist, false, false))
 			{
@@ -874,7 +874,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 						return;
 					}
 					
-					final L2PcInstance actor = getActingPlayer();
+					final PlayerInstance actor = getActingPlayer();
 					if (actor.isTransformed() && !actor.getTransformation().canAttack())
 					{
 						sendPacket(ActionFailed.STATIC_PACKET);
@@ -1151,7 +1151,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			}
 			
 			// Flag the attacker if it's a L2PcInstance outside a PvP area
-			final L2PcInstance player = getActingPlayer();
+			final PlayerInstance player = getActingPlayer();
 			if (player != null)
 			{
 				AttackStanceTaskManager.getInstance().addAttackStanceTask(player);
@@ -2961,8 +2961,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		}
 		else if (isNpc())
 		{
-			Collection<L2PcInstance> plrs = getKnownList().getKnownPlayers().values();
-			for (L2PcInstance player : plrs)
+			Collection<PlayerInstance> plrs = getKnownList().getKnownPlayers().values();
+			for (PlayerInstance player : plrs)
 			{
 				if ((player == null) || !isVisibleFor(player))
 				{
@@ -3953,7 +3953,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			
 			if (isPlayer())
 			{
-				final L2PcInstance player = getActingPlayer();
+				final PlayerInstance player = getActingPlayer();
 				player.refreshOverloaded();
 				player.refreshExpertisePenalty();
 				sendPacket(info);
@@ -3978,8 +3978,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			{
 				if (broadcastFull)
 				{
-					Collection<L2PcInstance> plrs = getKnownList().getKnownPlayers().values();
-					for (L2PcInstance player : plrs)
+					Collection<PlayerInstance> plrs = getKnownList().getKnownPlayers().values();
+					for (PlayerInstance player : plrs)
 					{
 						if ((player == null) || !isVisibleFor(player))
 						{
@@ -5049,7 +5049,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		// If L2Character target is a L2PcInstance, send a system message
 		if (target.isPlayer())
 		{
-			L2PcInstance enemy = target.getActingPlayer();
+			PlayerInstance enemy = target.getActingPlayer();
 			enemy.getAI().clientStartAutoAttack();
 		}
 		
@@ -5139,7 +5139,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			getAI().clientStartAutoAttack();
 			if (isSummon())
 			{
-				L2PcInstance owner = ((Summon) this).getOwner();
+				PlayerInstance owner = ((Summon) this).getOwner();
 				if (owner != null)
 				{
 					owner.getAI().clientStartAutoAttack();
@@ -5235,7 +5235,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * @param player The L2PcInstance to attack
 	 */
 	@Override
-	public void onForcedAttack(L2PcInstance player)
+	public void onForcedAttack(PlayerInstance player)
 	{
 		if (isInsidePeaceZone(player))
 		{
@@ -5246,7 +5246,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		}
 		if (player.isInOlympiadMode() && (player.getTarget() != null) && player.getTarget().isPlayable())
 		{
-			L2PcInstance target = null;
+			PlayerInstance target = null;
 			WorldObject object = player.getTarget();
 			if ((object != null) && object.isPlayable())
 			{
@@ -5292,12 +5292,12 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * @param attacker
 	 * @return True if inside peace zone.
 	 */
-	public boolean isInsidePeaceZone(L2PcInstance attacker)
+	public boolean isInsidePeaceZone(PlayerInstance attacker)
 	{
 		return isInsidePeaceZone(attacker, this);
 	}
 	
-	public boolean isInsidePeaceZone(L2PcInstance attacker, WorldObject target)
+	public boolean isInsidePeaceZone(PlayerInstance attacker, WorldObject target)
 	{
 		return (!attacker.getAccessLevel().allowPeaceAttack() && isInsidePeaceZone((WorldObject) attacker, target));
 	}
@@ -5866,7 +5866,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		// If there is a queued skill, launch it and wipe the queue.
 		if (isPlayer())
 		{
-			L2PcInstance currPlayer = getActingPlayer();
+			PlayerInstance currPlayer = getActingPlayer();
 			SkillUseHolder queuedSkill = currPlayer.getQueuedSkill();
 			
 			currPlayer.setCurrentSkill(null, false, false);
@@ -5983,7 +5983,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// Launch the magic skill and calculate its effects
 			skill.activateSkill(this, targets);
 			
-			L2PcInstance player = getActingPlayer();
+			PlayerInstance player = getActingPlayer();
 			if (player != null)
 			{
 				for (WorldObject target : targets)
@@ -6005,7 +6005,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 									}
 									else if (target.isSummon() && ((Creature) target).hasAI())
 									{
-										L2PcInstance owner = ((Summon) target).getOwner();
+										PlayerInstance owner = ((Summon) target).getOwner();
 										if (owner != null)
 										{
 											owner.getAI().clientStartAutoAttack();
@@ -6799,7 +6799,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				
 				if (Config.ALT_VALIDATE_TRIGGER_SKILLS && isPlayable() && (target != null) && target.isPlayable())
 				{
-					final L2PcInstance player = getActingPlayer();
+					final PlayerInstance player = getActingPlayer();
 					if (!player.checkPvpSkill(target, skill))
 					{
 						return;
@@ -6825,7 +6825,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	}
 	
 	/**
-	 * Dummy method overriden in {@link L2PcInstance}
+	 * Dummy method overriden in {@link PlayerInstance}
 	 * @return {@code true} if current player can revive and shows 'To Village' button upon death, {@code false} otherwise.
 	 */
 	public boolean canRevive()
@@ -6834,7 +6834,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	}
 	
 	/**
-	 * Dummy method overriden in {@link L2PcInstance}
+	 * Dummy method overriden in {@link PlayerInstance}
 	 * @param val
 	 */
 	public void setCanRevive(boolean val)
@@ -6851,7 +6851,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	}
 	
 	/**
-	 * Dummy method overriden in {@link L2PcInstance}
+	 * Dummy method overriden in {@link PlayerInstance}
 	 * @return {@code true} if player is on event, {@code false} otherwise.
 	 */
 	public boolean isOnEvent()
@@ -6860,7 +6860,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	}
 	
 	/**
-	 * Dummy method overriden in {@link L2PcInstance}
+	 * Dummy method overriden in {@link PlayerInstance}
 	 * @return the clan id of current character.
 	 */
 	public int getClanId()
@@ -6869,7 +6869,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	}
 	
 	/**
-	 * Dummy method overriden in {@link L2PcInstance}
+	 * Dummy method overriden in {@link PlayerInstance}
 	 * @return the clan of current character.
 	 */
 	public L2Clan getClan()
@@ -6878,7 +6878,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	}
 	
 	/**
-	 * Dummy method overriden in {@link L2PcInstance}
+	 * Dummy method overriden in {@link PlayerInstance}
 	 * @return {@code true} if player is in academy, {@code false} otherwise.
 	 */
 	public boolean isAcademyMember()
@@ -6887,7 +6887,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	}
 	
 	/**
-	 * Dummy method overriden in {@link L2PcInstance}
+	 * Dummy method overriden in {@link PlayerInstance}
 	 * @return the pledge type of current character.
 	 */
 	public int getPledgeType()
@@ -6896,7 +6896,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	}
 	
 	/**
-	 * Dummy method overriden in {@link L2PcInstance}
+	 * Dummy method overriden in {@link PlayerInstance}
 	 * @return the alliance id of current character.
 	 */
 	public int getAllyId()

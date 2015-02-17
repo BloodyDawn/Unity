@@ -30,7 +30,7 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2ChestInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.AbnormalVisualEffect;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -99,7 +99,7 @@ public class AdminEffects implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command);
 		st.nextToken();
@@ -151,7 +151,7 @@ public class AdminEffects implements IAdminCommandHandler
 			
 			if (target.isPlayer())
 			{
-				((L2PcInstance) target).broadcastUserInfo();
+				((PlayerInstance) target).broadcastUserInfo();
 			}
 		}
 		else if (command.startsWith("admin_earthquake"))
@@ -214,8 +214,8 @@ public class AdminEffects implements IAdminCommandHandler
 		{
 			try
 			{
-				Collection<L2PcInstance> plrs = activeChar.getKnownList().getKnownPlayers().values();
-				for (L2PcInstance player : plrs)
+				Collection<PlayerInstance> plrs = activeChar.getKnownList().getKnownPlayers().values();
+				for (PlayerInstance player : plrs)
 				{
 					if (!player.isGM())
 					{
@@ -233,8 +233,8 @@ public class AdminEffects implements IAdminCommandHandler
 		{
 			try
 			{
-				Collection<L2PcInstance> plrs = activeChar.getKnownList().getKnownPlayers().values();
-				for (L2PcInstance player : plrs)
+				Collection<PlayerInstance> plrs = activeChar.getKnownList().getKnownPlayers().values();
+				for (PlayerInstance player : plrs)
 				{
 					player.stopAbnormalVisualEffect(AbnormalVisualEffect.PARALYZE);
 					player.setIsParalyzed(false);
@@ -395,8 +395,8 @@ public class AdminEffects implements IAdminCommandHandler
 		{
 			try
 			{
-				Collection<L2PcInstance> plrs = activeChar.getKnownList().getKnownPlayers().values();
-				for (L2PcInstance player : plrs)
+				Collection<PlayerInstance> plrs = activeChar.getKnownList().getKnownPlayers().values();
+				for (PlayerInstance player : plrs)
 				{
 					player.setTeam(Team.NONE);
 					player.broadcastUserInfo();
@@ -462,7 +462,7 @@ public class AdminEffects implements IAdminCommandHandler
 					target = st.nextToken();
 					if (target != null)
 					{
-						L2PcInstance player = World.getInstance().getPlayer(target);
+						PlayerInstance player = World.getInstance().getPlayer(target);
 						if (player != null)
 						{
 							if (performSocial(social, player, activeChar))
@@ -677,7 +677,7 @@ public class AdminEffects implements IAdminCommandHandler
 		return false;
 	}
 	
-	private boolean performSocial(int action, WorldObject target, L2PcInstance activeChar)
+	private boolean performSocial(int action, WorldObject target, PlayerInstance activeChar)
 	{
 		try
 		{
@@ -718,7 +718,7 @@ public class AdminEffects implements IAdminCommandHandler
 	 * @param duration
 	 * @param activeChar
 	 */
-	private void adminAtmosphere(String type, String state, int duration, L2PcInstance activeChar)
+	private void adminAtmosphere(String type, String state, int duration, PlayerInstance activeChar)
 	{
 		L2GameServerPacket packet = null;
 		
@@ -754,7 +754,7 @@ public class AdminEffects implements IAdminCommandHandler
 		}
 	}
 	
-	private void playAdminSound(L2PcInstance activeChar, String sound)
+	private void playAdminSound(PlayerInstance activeChar, String sound)
 	{
 		PlaySound _snd = new PlaySound(1, sound, 0, 0, 0, 0, 0);
 		activeChar.sendPacket(_snd);
@@ -768,7 +768,7 @@ public class AdminEffects implements IAdminCommandHandler
 		return ADMIN_COMMANDS;
 	}
 	
-	private void showMainPage(L2PcInstance activeChar, String command)
+	private void showMainPage(PlayerInstance activeChar, String command)
 	{
 		String filename = "effects_menu";
 		if (command.contains("social"))

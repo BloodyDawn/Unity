@@ -42,7 +42,7 @@ import org.l2junity.gameserver.model.SiegeClan;
 import org.l2junity.gameserver.model.TeleportWhereType;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.entity.Siegable;
 import org.l2junity.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
@@ -126,7 +126,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		String html = null;
 		if (npc.getId() == MESSENGER)
@@ -161,7 +161,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public synchronized String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public synchronized String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String html = event;
 		L2Clan clan = player.getClan();
@@ -359,7 +359,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public synchronized String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public synchronized String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		if (_hall.isInSiege())
 		{
@@ -493,7 +493,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 			{
 				if (pc != null)
 				{
-					final L2PcInstance player = pc.getPlayerInstance();
+					final PlayerInstance player = pc.getPlayerInstance();
 					if ((player != null) && player.isOnline())
 					{
 						player.teleToLocation(loc, false);
@@ -587,7 +587,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public final Location getInnerSpawnLoc(final L2PcInstance player)
+	public final Location getInnerSpawnLoc(final PlayerInstance player)
 	{
 		Location loc = null;
 		if (player.getClanId() == _hall.getOwnerId())
@@ -678,7 +678,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	{
 		for (int objId : data.players)
 		{
-			L2PcInstance plr = World.getInstance().getPlayer(objId);
+			PlayerInstance plr = World.getInstance().getPlayer(objId);
 			if (plr != null)
 			{
 				data.playersInstance.add(plr);
@@ -747,7 +747,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 			if (teleport)
 			{
 				// Teleport players outside
-				for (L2PcInstance pc : dat.playersInstance)
+				for (PlayerInstance pc : dat.playersInstance)
 				{
 					if (pc != null)
 					{
@@ -765,7 +765,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		return true;
 	}
 	
-	private void sendRegistrationPageDate(L2PcInstance player)
+	private void sendRegistrationPageDate(PlayerInstance player)
 	{
 		final NpcHtmlMessage msg = new NpcHtmlMessage();
 		msg.setHtml(getHtm(player.getHtmlPrefix(), "siege_date.htm"));
@@ -921,7 +921,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		int flag = 0;
 		int npc = 0;
 		ArrayList<Integer> players = new ArrayList<>(18);
-		ArrayList<L2PcInstance> playersInstance = new ArrayList<>(18);
+		ArrayList<PlayerInstance> playersInstance = new ArrayList<>(18);
 		L2Spawn warrior = null;
 		L2Spawn flagInstance = null;
 	}

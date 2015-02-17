@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.Henna;
 
 /**
@@ -26,9 +26,9 @@ import org.l2junity.gameserver.model.items.Henna;
  */
 public class HennaRemoveList extends L2GameServerPacket
 {
-	private final L2PcInstance _player;
+	private final PlayerInstance _player;
 	
-	public HennaRemoveList(L2PcInstance player)
+	public HennaRemoveList(PlayerInstance player)
 	{
 		_player = player;
 	}

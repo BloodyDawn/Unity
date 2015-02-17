@@ -20,7 +20,7 @@ package ai.group_template;
 
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 
 import ai.npc.AbstractNpcAI;
@@ -58,7 +58,7 @@ public final class Remnants extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onSkillSee(Npc npc, L2PcInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public final String onSkillSee(Npc npc, PlayerInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
 		if (skill.getId() == SKILL_HOLY_WATER)
 		{

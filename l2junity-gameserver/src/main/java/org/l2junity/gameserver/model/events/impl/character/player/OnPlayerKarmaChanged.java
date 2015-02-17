@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.events.impl.character.player;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.IBaseEvent;
 
@@ -27,18 +27,18 @@ import org.l2junity.gameserver.model.events.impl.IBaseEvent;
  */
 public class OnPlayerKarmaChanged implements IBaseEvent
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final int _oldKarma;
 	private final int _newKarma;
 	
-	public OnPlayerKarmaChanged(L2PcInstance activeChar, int oldKarma, int newKarma)
+	public OnPlayerKarmaChanged(PlayerInstance activeChar, int oldKarma, int newKarma)
 	{
 		_activeChar = activeChar;
 		_oldKarma = oldKarma;
 		_newKarma = newKarma;
 	}
 	
-	public L2PcInstance getActiveChar()
+	public PlayerInstance getActiveChar()
 	{
 		return _activeChar;
 	}

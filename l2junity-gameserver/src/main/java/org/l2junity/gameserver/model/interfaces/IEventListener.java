@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.interfaces;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author UnAfraid
@@ -45,5 +45,5 @@ public interface IEventListener
 	 */
 	public boolean canRevive();
 	
-	public L2PcInstance getPlayer();
+	public PlayerInstance getPlayer();
 }

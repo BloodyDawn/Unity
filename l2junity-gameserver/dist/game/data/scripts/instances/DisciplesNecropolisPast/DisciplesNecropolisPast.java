@@ -27,7 +27,7 @@ import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.quest.QuestState;
@@ -170,7 +170,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
+	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
 	{
 		if (firstEntrance)
 		{
@@ -190,7 +190,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(player);
 		if (tmpworld instanceof DNPWorld)
@@ -294,7 +294,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	}
 	
 	@Override
-	public String onAggroRangeEnter(Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAggroRangeEnter(Npc npc, PlayerInstance player, boolean isSummon)
 	{
 		switch (npc.getId())
 		{
@@ -342,7 +342,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	}
 	
 	@Override
-	public String onAttack(Npc npc, L2PcInstance player, int damage, boolean isSummon)
+	public String onAttack(Npc npc, PlayerInstance player, int damage, boolean isSummon)
 	{
 		InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(player);
 		if (tmpworld instanceof DNPWorld)
@@ -367,13 +367,13 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		return npc.getId() + ".htm";
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(player);
 		if (tmpworld instanceof DNPWorld)
@@ -415,7 +415,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance talker)
+	public String onTalk(Npc npc, PlayerInstance talker)
 	{
 		final QuestState qs = talker.getQuestState(Q00196_SevenSignsSealOfTheEmperor.class.getSimpleName());
 		String htmltext = getNoQuestMsg(talker);

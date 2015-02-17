@@ -32,7 +32,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.variables.NpcVariables;
@@ -100,7 +100,7 @@ public final class Baium extends AbstractNpcAI
 	// Misc
 	private L2GrandBossInstance _baium = null;
 	private static long _lastAttack = 0;
-	private static L2PcInstance _standbyPlayer = null;
+	private static PlayerInstance _standbyPlayer = null;
 	
 	private Baium()
 	{
@@ -165,7 +165,7 @@ public final class Baium extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		switch (event)
 		{
@@ -271,7 +271,7 @@ public final class Baium extends AbstractNpcAI
 					npc.doCast(BAIUM_PRESENT.getSkill());
 				}
 				
-				for (L2PcInstance players : zone.getPlayersInside())
+				for (PlayerInstance players : zone.getPlayersInside())
 				{
 					if (players.isHero())
 					{
@@ -410,7 +410,7 @@ public final class Baium extends AbstractNpcAI
 						}
 						else if (charInside.isPlayer())
 						{
-							notifyEvent("teleportOut", null, (L2PcInstance) charInside);
+							notifyEvent("teleportOut", null, (PlayerInstance) charInside);
 						}
 					}
 				}
@@ -482,7 +482,7 @@ public final class Baium extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
 		_lastAttack = System.currentTimeMillis();
 		
@@ -548,7 +548,7 @@ public final class Baium extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		if (zone.isCharacterInZone(killer))
 		{
@@ -574,7 +574,7 @@ public final class Baium extends AbstractNpcAI
 		
 		if (creature.isPlayer() && !creature.isDead() && (_standbyPlayer == null))
 		{
-			_standbyPlayer = (L2PcInstance) creature;
+			_standbyPlayer = (PlayerInstance) creature;
 		}
 		
 		if (creature.isInCategory(CategoryType.CLERIC_GROUP))
@@ -605,7 +605,7 @@ public final class Baium extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpellFinished(Npc npc, L2PcInstance player, Skill skill)
+	public String onSpellFinished(Npc npc, PlayerInstance player, Skill skill)
 	{
 		startQuestTimer("MANAGE_SKILLS", 1000, npc, null);
 		

@@ -19,7 +19,7 @@
 package ai.group_template;
 
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 
 import ai.npc.AbstractNpcAI;
@@ -42,7 +42,7 @@ public class Sandstorms extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAggroRangeEnter(Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAggroRangeEnter(Npc npc, PlayerInstance player, boolean isSummon)
 	{
 		npc.setTarget(player);
 		npc.doCast(GUST.getSkill());

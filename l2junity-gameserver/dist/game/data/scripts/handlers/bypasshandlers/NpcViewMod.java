@@ -33,7 +33,7 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.drops.DropListScope;
 import org.l2junity.gameserver.model.drops.GeneralDropItem;
 import org.l2junity.gameserver.model.drops.GroupedGeneralDropItem;
@@ -56,7 +56,7 @@ public class NpcViewMod implements IBypassHandler
 	private static final int DROP_LIST_ITEMS_PER_PAGE = 10;
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, Creature bypassOrigin)
+	public boolean useBypass(String command, PlayerInstance activeChar, Creature bypassOrigin)
 	{
 		final StringTokenizer st = new StringTokenizer(command);
 		st.nextToken();
@@ -141,7 +141,7 @@ public class NpcViewMod implements IBypassHandler
 		return COMMANDS;
 	}
 	
-	public static void sendNpcView(L2PcInstance activeChar, Npc npc)
+	public static void sendNpcView(PlayerInstance activeChar, Npc npc)
 	{
 		final NpcHtmlMessage html = new NpcHtmlMessage();
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/mods/NpcView/Info.htm");
@@ -237,7 +237,7 @@ public class NpcViewMod implements IBypassHandler
 		return sb.toString();
 	}
 	
-	public static void sendNpcDropList(L2PcInstance activeChar, Npc npc, DropListScope dropListScope, int page)
+	public static void sendNpcDropList(PlayerInstance activeChar, Npc npc, DropListScope dropListScope, int page)
 	{
 		final List<IDropItem> dropList = npc.getTemplate().getDropList(dropListScope);
 		if ((dropList == null) || dropList.isEmpty())

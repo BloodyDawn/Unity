@@ -19,7 +19,7 @@
 package hellbound.AI.NPC.Falk;
 
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 import ai.npc.AbstractNpcAI;
 
@@ -46,7 +46,7 @@ public final class Falk extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onFirstTalk(Npc npc, L2PcInstance player)
+	public final String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		if (hasAtLeastOneQuestItem(player, BASIC_CERT, STANDART_CERT, PREMIUM_CERT))
 		{
@@ -56,7 +56,7 @@ public final class Falk extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onTalk(Npc npc, L2PcInstance player)
+	public final String onTalk(Npc npc, PlayerInstance player)
 	{
 		if (hasAtLeastOneQuestItem(player, BASIC_CERT, STANDART_CERT, PREMIUM_CERT))
 		{
@@ -66,7 +66,7 @@ public final class Falk extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if (event.equalsIgnoreCase("badges"))
 		{

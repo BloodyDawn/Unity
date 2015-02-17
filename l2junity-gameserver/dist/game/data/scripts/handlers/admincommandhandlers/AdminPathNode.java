@@ -22,7 +22,7 @@ import java.util.List;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.pathfinding.AbstractNodeLoc;
 import org.l2junity.gameserver.pathfinding.PathFinding;
 
@@ -38,7 +38,7 @@ public class AdminPathNode implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		if (command.equals("admin_pn_info"))
 		{

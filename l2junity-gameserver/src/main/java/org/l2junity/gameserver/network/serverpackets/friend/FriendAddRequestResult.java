@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.serverpackets.friend;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
 
 /**
@@ -34,7 +34,7 @@ public class FriendAddRequestResult extends L2GameServerPacket
 	private final int _charLevel;
 	private final int _charClassId;
 	
-	public FriendAddRequestResult(L2PcInstance activeChar, int result)
+	public FriendAddRequestResult(PlayerInstance activeChar, int result)
 	{
 		_result = result;
 		_charId = activeChar.getObjectId();

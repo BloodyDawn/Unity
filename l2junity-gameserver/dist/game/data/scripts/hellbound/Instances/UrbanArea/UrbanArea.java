@@ -31,7 +31,7 @@ import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2QuestGuardInstance;
 import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
@@ -102,7 +102,7 @@ public final class UrbanArea extends AbstractInstance
 	}
 	
 	@Override
-	public final String onFirstTalk(Npc npc, L2PcInstance player)
+	public final String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		if (!npc.isAffectedBySkill(STONE.getSkillId()))
 		{
@@ -112,7 +112,7 @@ public final class UrbanArea extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		String htmltext = null;
 		if (npc.getId() == KANAF)
@@ -154,7 +154,7 @@ public final class UrbanArea extends AbstractInstance
 				}
 				else if (player.getInventory().getInventoryItemCount(KEY, -1, false) >= 1)
 				{
-					for (L2PcInstance partyMember : party.getMembers())
+					for (PlayerInstance partyMember : party.getMembers())
 					{
 						if (!Util.checkIfInRange(300, npc, partyMember, true))
 						{
@@ -183,7 +183,7 @@ public final class UrbanArea extends AbstractInstance
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if ((tmpworld != null) && (tmpworld instanceof UrbanAreaWorld))
@@ -251,7 +251,7 @@ public final class UrbanArea extends AbstractInstance
 	}
 	
 	@Override
-	public String onAggroRangeEnter(Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAggroRangeEnter(Npc npc, PlayerInstance player, boolean isSummon)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if ((tmpworld != null) && (tmpworld instanceof UrbanAreaWorld))
@@ -277,7 +277,7 @@ public final class UrbanArea extends AbstractInstance
 	}
 	
 	@Override
-	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if ((tmpworld != null) && (tmpworld instanceof UrbanAreaWorld))
@@ -323,7 +323,7 @@ public final class UrbanArea extends AbstractInstance
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if ((tmpworld != null) && (tmpworld instanceof UrbanAreaWorld))
@@ -335,7 +335,7 @@ public final class UrbanArea extends AbstractInstance
 	}
 	
 	@Override
-	protected boolean checkConditions(L2PcInstance player)
+	protected boolean checkConditions(PlayerInstance player)
 	{
 		if (player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS))
 		{
@@ -350,7 +350,7 @@ public final class UrbanArea extends AbstractInstance
 			return false;
 		}
 		
-		for (L2PcInstance partyMember : party.getMembers())
+		for (PlayerInstance partyMember : party.getMembers())
 		{
 			if (partyMember.getLevel() < MIN_LV)
 			{
@@ -374,7 +374,7 @@ public final class UrbanArea extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
+	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
 	{
 		if (firstEntrance)
 		{
@@ -385,7 +385,7 @@ public final class UrbanArea extends AbstractInstance
 			}
 			else
 			{
-				for (L2PcInstance partyMember : player.getParty().getMembers())
+				for (PlayerInstance partyMember : player.getParty().getMembers())
 				{
 					teleportPlayer(partyMember, ENTRY_POINT, world.getInstanceId());
 					world.addAllowed(partyMember.getObjectId());
@@ -444,7 +444,7 @@ public final class UrbanArea extends AbstractInstance
 		{
 			if ((_party != null) && (_world != null))
 			{
-				for (L2PcInstance partyMember : _party.getMembers())
+				for (PlayerInstance partyMember : _party.getMembers())
 				{
 					if ((partyMember != null) && !partyMember.isDead())
 					{

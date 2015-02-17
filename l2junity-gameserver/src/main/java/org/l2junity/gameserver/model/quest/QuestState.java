@@ -31,7 +31,7 @@ import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.enums.QuestType;
 import org.l2junity.gameserver.instancemanager.QuestManager;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.AbstractScript;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.network.NpcStringId;
@@ -51,7 +51,7 @@ public final class QuestState
 	private final String _questName;
 	
 	/** The "owner" of this QuestState object */
-	private final L2PcInstance _player;
+	private final PlayerInstance _player;
 	
 	/** The current state of the quest */
 	private byte _state;
@@ -70,7 +70,7 @@ public final class QuestState
 	 * @param player the owner of this {@link QuestState} object
 	 * @param state the initial state of the quest
 	 */
-	public QuestState(Quest quest, L2PcInstance player, byte state)
+	public QuestState(Quest quest, PlayerInstance player, byte state)
 	{
 		_questName = quest.getName();
 		_player = player;
@@ -96,9 +96,9 @@ public final class QuestState
 	}
 	
 	/**
-	 * @return the {@link L2PcInstance} object of the owner of this QuestState
+	 * @return the {@link PlayerInstance} object of the owner of this QuestState
 	 */
-	public L2PcInstance getPlayer()
+	public PlayerInstance getPlayer()
 	{
 		return _player;
 	}

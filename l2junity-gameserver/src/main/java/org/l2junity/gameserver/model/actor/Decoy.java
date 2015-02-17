@@ -21,7 +21,7 @@ package org.l2junity.gameserver.model.actor;
 import java.util.Collection;
 
 import org.l2junity.gameserver.enums.InstanceType;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.items.Weapon;
@@ -33,9 +33,9 @@ import org.l2junity.gameserver.taskmanager.DecayTaskManager;
 
 public abstract class Decoy extends Creature
 {
-	private final L2PcInstance _owner;
+	private final PlayerInstance _owner;
 	
-	public Decoy(L2CharTemplate template, L2PcInstance owner)
+	public Decoy(L2CharTemplate template, PlayerInstance owner)
 	{
 		super(template);
 		setInstanceType(InstanceType.L2Decoy);
@@ -54,9 +54,9 @@ public abstract class Decoy extends Creature
 	@Override
 	public void updateAbnormalVisualEffects()
 	{
-		Collection<L2PcInstance> plrs = getKnownList().getKnownPlayers().values();
+		Collection<PlayerInstance> plrs = getKnownList().getKnownPlayers().values();
 		
-		for (L2PcInstance player : plrs)
+		for (PlayerInstance player : plrs)
 		{
 			if (player != null)
 			{
@@ -118,14 +118,14 @@ public abstract class Decoy extends Creature
 		return getTemplate().getLevel();
 	}
 	
-	public void deleteMe(L2PcInstance owner)
+	public void deleteMe(PlayerInstance owner)
 	{
 		decayMe();
 		getKnownList().removeAllKnownObjects();
 		owner.setDecoy(null);
 	}
 	
-	public synchronized void unSummon(L2PcInstance owner)
+	public synchronized void unSummon(PlayerInstance owner)
 	{
 		
 		if (isVisible() && !isDead())
@@ -140,13 +140,13 @@ public abstract class Decoy extends Creature
 		}
 	}
 	
-	public final L2PcInstance getOwner()
+	public final PlayerInstance getOwner()
 	{
 		return _owner;
 	}
 	
 	@Override
-	public L2PcInstance getActingPlayer()
+	public PlayerInstance getActingPlayer()
 	{
 		return _owner;
 	}
@@ -158,7 +158,7 @@ public abstract class Decoy extends Creature
 	}
 	
 	@Override
-	public void sendInfo(L2PcInstance activeChar)
+	public void sendInfo(PlayerInstance activeChar)
 	{
 		activeChar.sendPacket(new CharInfo(this));
 	}

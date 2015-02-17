@@ -21,7 +21,7 @@ package org.l2junity.gameserver.network.clientpackets.appearance;
 import org.l2junity.gameserver.data.xml.impl.AppearanceItemData;
 import org.l2junity.gameserver.enums.InventorySlot;
 import org.l2junity.gameserver.enums.ItemLocation;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.ShapeShiftingItemRequest;
 import org.l2junity.gameserver.model.itemcontainer.PcInventory;
 import org.l2junity.gameserver.model.items.L2Item;
@@ -56,7 +56,7 @@ public class RequestShapeShiftingItem extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance player = getClient().getActiveChar();
+		final PlayerInstance player = getClient().getActiveChar();
 		if (player == null)
 		{
 			return;

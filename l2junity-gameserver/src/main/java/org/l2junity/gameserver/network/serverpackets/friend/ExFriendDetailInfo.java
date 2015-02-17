@@ -21,7 +21,7 @@ package org.l2junity.gameserver.network.serverpackets.friend;
 import java.util.Calendar;
 
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
 
 /**
@@ -30,11 +30,11 @@ import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
 public class ExFriendDetailInfo extends L2GameServerPacket
 {
 	private final int _objectId;
-	private final L2PcInstance _friend;
+	private final PlayerInstance _friend;
 	private final String _name;
 	private final int _lastAccess;
 	
-	public ExFriendDetailInfo(L2PcInstance player, String name)
+	public ExFriendDetailInfo(PlayerInstance player, String name)
 	{
 		_objectId = player.getObjectId();
 		_name = name;

@@ -22,7 +22,7 @@ import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.instancemanager.MapRegionManager;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Siege;
 import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.serverpackets.NpcSay;
@@ -58,7 +58,7 @@ public final class CastleTeleporter extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if (event.equalsIgnoreCase("teleporter-03.html"))
 		{
@@ -79,7 +79,7 @@ public final class CastleTeleporter extends AbstractNpcAI
 			npc.getCastle().oustAllPlayers();
 			npc.setScriptValue(0);
 			// TODO: Is it possible to get all the players for that region, instead of all players?
-			for (L2PcInstance pl : World.getInstance().getPlayers())
+			for (PlayerInstance pl : World.getInstance().getPlayers())
 			{
 				if (region == MapRegionManager.getInstance().getMapRegionLocId(pl))
 				{
@@ -91,7 +91,7 @@ public final class CastleTeleporter extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		final Siege siege = npc.getCastle().getSiege();
 		return (npc.isScriptValue(0)) ? (siege.isInProgress() && (siege.getControlTowerCount() == 0)) ? "teleporter-02.html" : "teleporter-01.html" : "teleporter-03.html";

@@ -25,7 +25,7 @@ import java.util.Map;
 import org.l2junity.Config;
 import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.enums.PrivateStoreType;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.EnchantItemAttributeRequest;
 import org.l2junity.gameserver.model.actor.request.EnchantItemRequest;
 import org.l2junity.gameserver.model.items.Armor;
@@ -211,7 +211,7 @@ public abstract class AbstractRefinePacket extends L2GameClientPacket
 	 * @param gemStones
 	 * @return
 	 */
-	protected static final boolean isValid(L2PcInstance player, ItemInstance item, ItemInstance refinerItem, ItemInstance gemStones)
+	protected static final boolean isValid(PlayerInstance player, ItemInstance item, ItemInstance refinerItem, ItemInstance gemStones)
 	{
 		if (!isValid(player, item, refinerItem))
 		{
@@ -253,7 +253,7 @@ public abstract class AbstractRefinePacket extends L2GameClientPacket
 	 * @param refinerItem
 	 * @return
 	 */
-	protected static final boolean isValid(L2PcInstance player, ItemInstance item, ItemInstance refinerItem)
+	protected static final boolean isValid(PlayerInstance player, ItemInstance item, ItemInstance refinerItem)
 	{
 		if (!isValid(player, item))
 		{
@@ -301,7 +301,7 @@ public abstract class AbstractRefinePacket extends L2GameClientPacket
 	 * @param item
 	 * @return
 	 */
-	protected static final boolean isValid(L2PcInstance player, ItemInstance item)
+	protected static final boolean isValid(PlayerInstance player, ItemInstance item)
 	{
 		if (!isValid(player))
 		{
@@ -399,7 +399,7 @@ public abstract class AbstractRefinePacket extends L2GameClientPacket
 	 * @param player
 	 * @return
 	 */
-	protected static final boolean isValid(L2PcInstance player)
+	protected static final boolean isValid(PlayerInstance player)
 	{
 		if (player.getPrivateStoreType() != PrivateStoreType.NONE)
 		{

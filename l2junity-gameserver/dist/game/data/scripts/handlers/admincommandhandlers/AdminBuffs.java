@@ -28,7 +28,7 @@ import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -57,7 +57,7 @@ public class AdminBuffs implements IAdminCommandHandler
 	private static final String FONT_RED2 = "</font>";
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		if (command.startsWith("admin_getbuffs"))
 		{
@@ -66,7 +66,7 @@ public class AdminBuffs implements IAdminCommandHandler
 			if (st.hasMoreTokens())
 			{
 				final String playername = st.nextToken();
-				L2PcInstance player = World.getInstance().getPlayer(playername);
+				PlayerInstance player = World.getInstance().getPlayer(playername);
 				if (player != null)
 				{
 					int page = 1;
@@ -159,7 +159,7 @@ public class AdminBuffs implements IAdminCommandHandler
 			StringTokenizer st = new StringTokenizer(command, " ");
 			command = st.nextToken();
 			
-			L2PcInstance player = null;
+			PlayerInstance player = null;
 			if (st.hasMoreTokens())
 			{
 				String playername = st.nextToken();
@@ -221,7 +221,7 @@ public class AdminBuffs implements IAdminCommandHandler
 	 * @param gmchar the player to switch the Game Master skills.
 	 * @param toAuraSkills if {@code true} it will remove "GM Aura" skills and add "GM regular" skills, vice versa if {@code false}.
 	 */
-	public static void switchSkills(L2PcInstance gmchar, boolean toAuraSkills)
+	public static void switchSkills(PlayerInstance gmchar, boolean toAuraSkills)
 	{
 		final Collection<Skill> skills = toAuraSkills ? SkillTreesData.getInstance().getGMSkillTree().values() : SkillTreesData.getInstance().getGMAuraSkillTree().values();
 		for (Skill skill : skills)
@@ -237,7 +237,7 @@ public class AdminBuffs implements IAdminCommandHandler
 		return ADMIN_COMMANDS;
 	}
 	
-	public static void showBuffs(L2PcInstance activeChar, Creature target, int page, boolean passive)
+	public static void showBuffs(PlayerInstance activeChar, Creature target, int page, boolean passive)
 	{
 		final List<BuffInfo> effects = new ArrayList<>();
 		if (!passive)
@@ -365,7 +365,7 @@ public class AdminBuffs implements IAdminCommandHandler
 		}
 	}
 	
-	private static void removeBuff(L2PcInstance activeChar, int objId, int skillId)
+	private static void removeBuff(PlayerInstance activeChar, int objId, int skillId)
 	{
 		Creature target = null;
 		try
@@ -392,7 +392,7 @@ public class AdminBuffs implements IAdminCommandHandler
 		}
 	}
 	
-	private static void removeAllBuffs(L2PcInstance activeChar, int objId)
+	private static void removeAllBuffs(PlayerInstance activeChar, int objId)
 	{
 		Creature target = null;
 		try

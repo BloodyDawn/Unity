@@ -27,7 +27,7 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.VehiclePathPoint;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.L2BoatInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
 import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
 
@@ -178,7 +178,7 @@ public class BoatManager
 	
 	private void broadcastPacketsToPlayers(VehiclePathPoint point1, VehiclePathPoint point2, L2GameServerPacket... packets)
 	{
-		for (L2PcInstance player : World.getInstance().getPlayers())
+		for (PlayerInstance player : World.getInstance().getPlayers())
 		{
 			double dx = (double) player.getX() - point1.getX();
 			double dy = (double) player.getY() - point1.getY();

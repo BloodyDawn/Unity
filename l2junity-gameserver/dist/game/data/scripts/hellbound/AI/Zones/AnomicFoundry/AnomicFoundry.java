@@ -30,7 +30,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.NpcStringId;
 
@@ -87,7 +87,7 @@ public final class AnomicFoundry extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if (event.equalsIgnoreCase("make_spawn_1"))
 		{
@@ -124,7 +124,7 @@ public final class AnomicFoundry extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAggroRangeEnter(Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAggroRangeEnter(Npc npc, PlayerInstance player, boolean isSummon)
 	{
 		if (getRandom(10000) < 2000)
 		{
@@ -137,7 +137,7 @@ public final class AnomicFoundry extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
 		int atkIndex = _atkIndex.containsKey(npc.getObjectId()) ? _atkIndex.get(npc.getObjectId()) : 0;
 		if (atkIndex == 0)
@@ -172,7 +172,7 @@ public final class AnomicFoundry extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		if (getSpawnGroup(npc) >= 0)
 		{
@@ -254,7 +254,7 @@ public final class AnomicFoundry extends AbstractNpcAI
 	}
 	
 	// Zoey76: TODO: This should be done with onFactionCall(..)
-	private static void requestHelp(Npc requester, L2PcInstance agressor, int range, int helperId)
+	private static void requestHelp(Npc requester, PlayerInstance agressor, int range, int helperId)
 	{
 		for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(helperId))
 		{

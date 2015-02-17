@@ -25,7 +25,7 @@ import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2TamedBeastInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.NpcStringId;
@@ -356,7 +356,7 @@ public final class FeedableBeasts extends AbstractNpcAI
 		_GrowthCapableMobs.put(21505, temp);
 	}
 	
-	private void spawnNext(Npc npc, int growthLevel, L2PcInstance player, int food)
+	private void spawnNext(Npc npc, int growthLevel, PlayerInstance player, int food)
 	{
 		int npcId = npc.getId();
 		int nextNpcId = 0;
@@ -484,7 +484,7 @@ public final class FeedableBeasts extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if (event.equalsIgnoreCase("polymorph Mad Cow") && (npc != null) && (player != null))
 		{
@@ -511,7 +511,7 @@ public final class FeedableBeasts extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSkillSee(Npc npc, L2PcInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public String onSkillSee(Npc npc, PlayerInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
 		// this behavior is only run when the target of skill is the passed npc (chest)
 		// i.e. when the player is attempting to open the chest using a skill
@@ -611,7 +611,7 @@ public final class FeedableBeasts extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		// remove the feedinfo of the mob that got killed, if any
 		if (_FeedInfo.containsKey(npc.getObjectId()))

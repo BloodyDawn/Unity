@@ -20,7 +20,7 @@ package handlers.admincommandhandlers;
 
 import org.l2junity.gameserver.data.xml.impl.TransformData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 
 /**
@@ -47,9 +47,9 @@ public class AdminRide implements IAdminCommandHandler
 	private static final int JET_BIKE_TRANSFORMATION_ID = 20001;
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
-		L2PcInstance player = getRideTarget(activeChar);
+		PlayerInstance player = getRideTarget(activeChar);
 		if (player == null)
 		{
 			return false;
@@ -129,17 +129,17 @@ public class AdminRide implements IAdminCommandHandler
 		return true;
 	}
 	
-	private L2PcInstance getRideTarget(L2PcInstance activeChar)
+	private PlayerInstance getRideTarget(PlayerInstance activeChar)
 	{
-		L2PcInstance player = null;
+		PlayerInstance player = null;
 		
-		if ((activeChar.getTarget() == null) || (activeChar.getTarget().getObjectId() == activeChar.getObjectId()) || !(activeChar.getTarget() instanceof L2PcInstance))
+		if ((activeChar.getTarget() == null) || (activeChar.getTarget().getObjectId() == activeChar.getObjectId()) || !(activeChar.getTarget() instanceof PlayerInstance))
 		{
 			player = activeChar;
 		}
 		else
 		{
-			player = (L2PcInstance) activeChar.getTarget();
+			player = (PlayerInstance) activeChar.getTarget();
 		}
 		
 		return player;

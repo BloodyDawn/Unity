@@ -20,7 +20,7 @@ package org.l2junity.gameserver.handler;
 
 import java.util.logging.Logger;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public interface IVoicedCommandHandler
 {
@@ -33,7 +33,7 @@ public interface IVoicedCommandHandler
 	 * @param params
 	 * @return command success
 	 */
-	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params);
+	public boolean useVoicedCommand(String command, PlayerInstance activeChar, String params);
 	
 	/**
 	 * this method is called at initialization to register all the item ids automatically

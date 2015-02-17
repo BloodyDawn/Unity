@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.events.impl.character.player;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.IBaseEvent;
 
@@ -27,18 +27,18 @@ import org.l2junity.gameserver.model.events.impl.IBaseEvent;
  */
 public class OnPlayerFameChanged implements IBaseEvent
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final int _oldFame;
 	private final int _newFame;
 	
-	public OnPlayerFameChanged(L2PcInstance activeChar, int oldFame, int newFame)
+	public OnPlayerFameChanged(PlayerInstance activeChar, int oldFame, int newFame)
 	{
 		_activeChar = activeChar;
 		_oldFame = oldFame;
 		_newFame = newFame;
 	}
 	
-	public L2PcInstance getActiveChar()
+	public PlayerInstance getActiveChar()
 	{
 		return _activeChar;
 	}

@@ -54,7 +54,7 @@ import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.zone.type.FortZone;
@@ -335,17 +335,17 @@ public final class Fort extends AbstractResidence
 		return getZone().getDistanceToZone(obj);
 	}
 	
-	public void closeDoor(L2PcInstance activeChar, int doorId)
+	public void closeDoor(PlayerInstance activeChar, int doorId)
 	{
 		openCloseDoor(activeChar, doorId, false);
 	}
 	
-	public void openDoor(L2PcInstance activeChar, int doorId)
+	public void openDoor(PlayerInstance activeChar, int doorId)
 	{
 		openCloseDoor(activeChar, doorId, true);
 	}
 	
-	public void openCloseDoor(L2PcInstance activeChar, int doorId, boolean open)
+	public void openCloseDoor(PlayerInstance activeChar, int doorId, boolean open)
 	{
 		if (activeChar.getClan() != getOwnerClan())
 		{
@@ -397,7 +397,7 @@ public final class Fort extends AbstractResidence
 			updateClansReputation(oldowner, true);
 			try
 			{
-				L2PcInstance oldleader = oldowner.getLeader().getPlayerInstance();
+				PlayerInstance oldleader = oldowner.getLeader().getPlayerInstance();
 				if (oldleader != null)
 				{
 					if (oldleader.getMountType() == MountType.WYVERN)
@@ -444,7 +444,7 @@ public final class Fort extends AbstractResidence
 			getSiege().endSiege();
 		}
 		
-		for (L2PcInstance member : clan.getOnlineMembers(0))
+		for (PlayerInstance member : clan.getOnlineMembers(0))
 		{
 			giveResidentialSkills(member);
 			member.sendSkillList();
@@ -457,7 +457,7 @@ public final class Fort extends AbstractResidence
 		L2Clan clan = getOwnerClan();
 		if (clan != null)
 		{
-			for (L2PcInstance member : clan.getOnlineMembers(0))
+			for (PlayerInstance member : clan.getOnlineMembers(0))
 			{
 				removeResidentialSkills(member);
 				member.sendSkillList();
@@ -677,7 +677,7 @@ public final class Fort extends AbstractResidence
 		}
 	}
 	
-	public boolean updateFunctions(L2PcInstance player, int type, int lvl, int lease, long rate, boolean addNew)
+	public boolean updateFunctions(PlayerInstance player, int type, int lvl, int lease, long rate, boolean addNew)
 	{
 		if (player == null)
 		{

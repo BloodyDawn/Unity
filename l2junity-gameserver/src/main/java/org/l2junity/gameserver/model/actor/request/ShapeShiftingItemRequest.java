@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.actor.request;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 /**
@@ -29,7 +29,7 @@ public class ShapeShiftingItemRequest extends AbstractRequest
 	private ItemInstance _appearanceStone;
 	private ItemInstance _appearanceExtractItem;
 	
-	public ShapeShiftingItemRequest(L2PcInstance activeChar, ItemInstance appearanceStone)
+	public ShapeShiftingItemRequest(PlayerInstance activeChar, ItemInstance appearanceStone)
 	{
 		super(activeChar);
 		_appearanceStone = appearanceStone;

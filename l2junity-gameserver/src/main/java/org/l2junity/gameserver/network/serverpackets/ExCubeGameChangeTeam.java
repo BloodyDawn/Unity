@@ -18,14 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author mrTJO
  */
 public class ExCubeGameChangeTeam extends L2GameServerPacket
 {
-	L2PcInstance _player;
+	PlayerInstance _player;
 	boolean _fromRedTeam;
 	
 	/**
@@ -33,7 +33,7 @@ public class ExCubeGameChangeTeam extends L2GameServerPacket
 	 * @param player Player Instance
 	 * @param fromRedTeam Is Player from Red Team?
 	 */
-	public ExCubeGameChangeTeam(L2PcInstance player, boolean fromRedTeam)
+	public ExCubeGameChangeTeam(PlayerInstance player, boolean fromRedTeam)
 	{
 		_player = player;
 		_fromRedTeam = fromRedTeam;

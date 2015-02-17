@@ -19,7 +19,7 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
@@ -62,7 +62,7 @@ public final class ResurrectionSpecial extends AbstractEffect
 		{
 			return;
 		}
-		L2PcInstance caster = info.getEffector().getActingPlayer();
+		PlayerInstance caster = info.getEffector().getActingPlayer();
 		
 		Skill skill = info.getSkill();
 		

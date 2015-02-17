@@ -23,17 +23,17 @@ import java.util.Collection;
 import org.l2junity.Config;
 import org.l2junity.gameserver.instancemanager.MentorManager;
 import org.l2junity.gameserver.model.PcCondOverride;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 public final class TradeStart extends AbstractItemPacket
 {
-	private final L2PcInstance _activeChar;
-	private final L2PcInstance _partner;
+	private final PlayerInstance _activeChar;
+	private final PlayerInstance _partner;
 	private final Collection<ItemInstance> _itemList;
 	private int _mask = 0;
 	
-	public TradeStart(L2PcInstance player)
+	public TradeStart(PlayerInstance player)
 	{
 		_activeChar = player;
 		_partner = player.getActiveTradeList().getPartner();

@@ -45,7 +45,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.serverpackets.AdminForgePacket;
 import org.l2junity.gameserver.taskmanager.DecayTaskManager;
@@ -90,7 +90,7 @@ public class DebugHandler implements ITelnetHandler
 						return false;
 					}
 					String charName = st.nextToken();
-					L2PcInstance targetPlayer = World.getInstance().getPlayer(charName);
+					PlayerInstance targetPlayer = World.getInstance().getPlayer(charName);
 					
 					if (targetPlayer == null)
 					{
@@ -415,10 +415,10 @@ public class DebugHandler implements ITelnetHandler
 			{
 				npcCount++;
 			}
-			else if (obj instanceof L2PcInstance)
+			else if (obj instanceof PlayerInstance)
 			{
 				pcCount++;
-				if ((((L2PcInstance) obj).getClient() != null) && ((L2PcInstance) obj).getClient().isDetached())
+				if ((((PlayerInstance) obj).getClient() != null) && ((PlayerInstance) obj).getClient().isDetached())
 				{
 					detachedCount++;
 				}

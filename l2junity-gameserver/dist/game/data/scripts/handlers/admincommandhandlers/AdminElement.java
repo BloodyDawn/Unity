@@ -21,7 +21,7 @@ package handlers.admincommandhandlers;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.Elementals;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -45,7 +45,7 @@ public class AdminElement implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		int armorType = -1;
 		
@@ -110,7 +110,7 @@ public class AdminElement implements IAdminCommandHandler
 		return ADMIN_COMMANDS;
 	}
 	
-	private void setElement(L2PcInstance activeChar, byte type, int value, int armorType)
+	private void setElement(PlayerInstance activeChar, byte type, int value, int armorType)
 	{
 		// get the target
 		WorldObject target = activeChar.getTarget();
@@ -118,10 +118,10 @@ public class AdminElement implements IAdminCommandHandler
 		{
 			target = activeChar;
 		}
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance)
+		PlayerInstance player = null;
+		if (target instanceof PlayerInstance)
 		{
-			player = (L2PcInstance) target;
+			player = (PlayerInstance) target;
 		}
 		else
 		{

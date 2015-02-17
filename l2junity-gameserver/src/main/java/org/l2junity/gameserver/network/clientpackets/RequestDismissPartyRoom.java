@@ -20,7 +20,7 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.PartyMatchRoom;
 import org.l2junity.gameserver.model.PartyMatchRoomList;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author Gnacik
@@ -43,7 +43,7 @@ public class RequestDismissPartyRoom extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance _activeChar = getClient().getActiveChar();
+		final PlayerInstance _activeChar = getClient().getActiveChar();
 		
 		if (_activeChar == null)
 		{

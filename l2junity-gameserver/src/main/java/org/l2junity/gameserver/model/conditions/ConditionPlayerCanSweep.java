@@ -22,7 +22,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -54,7 +54,7 @@ public class ConditionPlayerCanSweep extends Condition
 		boolean canSweep = false;
 		if (effector.getActingPlayer() != null)
 		{
-			final L2PcInstance sweeper = effector.getActingPlayer();
+			final PlayerInstance sweeper = effector.getActingPlayer();
 			if (skill != null)
 			{
 				final WorldObject[] targets = skill.getTargetList(sweeper);

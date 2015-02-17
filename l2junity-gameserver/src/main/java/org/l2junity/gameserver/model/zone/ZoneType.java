@@ -28,7 +28,7 @@ import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.ListenersContainer;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureZoneEnter;
@@ -219,12 +219,12 @@ public abstract class ZoneType extends ListenersContainer
 			return false;
 		}
 		
-		if (character instanceof L2PcInstance)
+		if (character instanceof PlayerInstance)
 		{
 			// Check class type
 			if (_classType != 0)
 			{
-				if (((L2PcInstance) character).isMageClass())
+				if (((PlayerInstance) character).isMageClass())
 				{
 					if (_classType == 1)
 					{
@@ -264,7 +264,7 @@ public abstract class ZoneType extends ListenersContainer
 				
 				for (int _clas : _class)
 				{
-					if (((L2PcInstance) character).getClassId().ordinal() == _clas)
+					if (((PlayerInstance) character).getClassId().ordinal() == _clas)
 					{
 						ok = true;
 						break;
@@ -509,11 +509,11 @@ public abstract class ZoneType extends ListenersContainer
 	{
 	}
 	
-	public void onPlayerLoginInside(L2PcInstance player)
+	public void onPlayerLoginInside(PlayerInstance player)
 	{
 	}
 	
-	public void onPlayerLogoutInside(L2PcInstance player)
+	public void onPlayerLogoutInside(PlayerInstance player)
 	{
 	}
 	
@@ -527,9 +527,9 @@ public abstract class ZoneType extends ListenersContainer
 		return _characterList.values();
 	}
 	
-	public List<L2PcInstance> getPlayersInside()
+	public List<PlayerInstance> getPlayersInside()
 	{
-		List<L2PcInstance> players = new ArrayList<>();
+		List<PlayerInstance> players = new ArrayList<>();
 		for (Creature ch : _characterList.values())
 		{
 			if ((ch != null) && ch.isPlayer())

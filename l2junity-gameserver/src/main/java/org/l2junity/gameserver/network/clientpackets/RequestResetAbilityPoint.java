@@ -22,7 +22,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.model.SkillLearn;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExAcquireAPSkillList;
@@ -41,7 +41,7 @@ public class RequestResetAbilityPoint extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = getActiveChar();
 		if (activeChar == null)
 		{
 			return;

@@ -49,7 +49,7 @@ public class L2AirShipInstance extends Vehicle
 		return true;
 	}
 	
-	public boolean isOwner(L2PcInstance player)
+	public boolean isOwner(PlayerInstance player)
 	{
 		return false;
 	}
@@ -59,7 +59,7 @@ public class L2AirShipInstance extends Vehicle
 		return 0;
 	}
 	
-	public boolean isCaptain(L2PcInstance player)
+	public boolean isCaptain(PlayerInstance player)
 	{
 		return false;
 	}
@@ -79,7 +79,7 @@ public class L2AirShipInstance extends Vehicle
 		return 0;
 	}
 	
-	public boolean setCaptain(L2PcInstance player)
+	public boolean setCaptain(PlayerInstance player)
 	{
 		return false;
 	}
@@ -123,7 +123,7 @@ public class L2AirShipInstance extends Vehicle
 	}
 	
 	@Override
-	public boolean addPassenger(L2PcInstance player)
+	public boolean addPassenger(PlayerInstance player)
 	{
 		if (!super.addPassenger(player))
 		{
@@ -140,7 +140,7 @@ public class L2AirShipInstance extends Vehicle
 	}
 	
 	@Override
-	public void oustPlayer(L2PcInstance player)
+	public void oustPlayer(PlayerInstance player)
 	{
 		super.oustPlayer(player);
 		final Location loc = getOustLoc();
@@ -184,7 +184,7 @@ public class L2AirShipInstance extends Vehicle
 	}
 	
 	@Override
-	public void sendInfo(L2PcInstance activeChar)
+	public void sendInfo(PlayerInstance activeChar)
 	{
 		if (isVisibleFor(activeChar))
 		{

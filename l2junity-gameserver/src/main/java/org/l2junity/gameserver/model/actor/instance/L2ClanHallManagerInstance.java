@@ -63,7 +63,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 	}
 	
 	@Override
-	public void onBypassFeedback(L2PcInstance player, String command)
+	public void onBypassFeedback(PlayerInstance player, String command)
 	{
 		if (getClanHall().isSiegableHall() && ((SiegableHall) getClanHall()).isInSiege())
 		{
@@ -1456,7 +1456,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 		super.onBypassFeedback(player, command);
 	}
 	
-	private void sendHtmlMessage(L2PcInstance player, NpcHtmlMessage html)
+	private void sendHtmlMessage(PlayerInstance player, NpcHtmlMessage html)
 	{
 		html.replace("%objectId%", String.valueOf(getObjectId()));
 		html.replace("%npcId%", String.valueOf(getId()));
@@ -1464,7 +1464,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 	}
 	
 	@Override
-	public void showChatWindow(L2PcInstance player)
+	public void showChatWindow(PlayerInstance player)
 	{
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 		String filename = "data/html/clanHallManager/chamberlain-no.htm";
@@ -1489,7 +1489,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 		player.sendPacket(html);
 	}
 	
-	protected int validateCondition(L2PcInstance player)
+	protected int validateCondition(PlayerInstance player)
 	{
 		if (getClanHall() == null)
 		{
@@ -1536,7 +1536,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 		return ClanHallManager.getInstance().getClanHallById(_clanHallId);
 	}
 	
-	private void doTeleport(L2PcInstance player, int val)
+	private void doTeleport(PlayerInstance player, int val)
 	{
 		if (Config.DEBUG)
 		{
@@ -1566,7 +1566,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
-	private void revalidateDeco(L2PcInstance player)
+	private void revalidateDeco(PlayerInstance player)
 	{
 		AuctionableHall ch = ClanHallManager.getInstance().getClanHallByOwner(player.getClan());
 		if (ch == null)

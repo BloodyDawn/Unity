@@ -31,7 +31,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.l2junity.DatabaseFactory;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 import javolution.util.FastMap;
 
@@ -78,7 +78,7 @@ public class RaidBossPointsManager
 		}
 	}
 	
-	public final void updatePointsInDB(L2PcInstance player, int raidId, int points)
+	public final void updatePointsInDB(PlayerInstance player, int raidId, int points)
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement("REPLACE INTO character_raid_points (`charId`,`boss_id`,`points`) VALUES (?,?,?)"))
@@ -94,7 +94,7 @@ public class RaidBossPointsManager
 		}
 	}
 	
-	public final void addPoints(L2PcInstance player, int bossId, int points)
+	public final void addPoints(PlayerInstance player, int bossId, int points)
 	{
 		final Map<Integer, Integer> tmpPoint = _list.computeIfAbsent(player.getObjectId(), k -> new FastMap<>());
 		updatePointsInDB(player, bossId, tmpPoint.merge(bossId, points, Integer::sum));
@@ -118,7 +118,7 @@ public class RaidBossPointsManager
 		return totalPoints;
 	}
 	
-	public final Map<Integer, Integer> getList(L2PcInstance player)
+	public final Map<Integer, Integer> getList(PlayerInstance player)
 	{
 		return _list.get(player.getObjectId());
 	}

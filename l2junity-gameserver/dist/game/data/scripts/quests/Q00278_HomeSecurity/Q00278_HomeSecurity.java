@@ -19,7 +19,7 @@
 package quests.Q00278_HomeSecurity;
 
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 
@@ -52,7 +52,7 @@ public class Q00278_HomeSecurity extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String htmltext = event;
 		final QuestState st = getQuestState(player, false);
@@ -139,7 +139,7 @@ public class Q00278_HomeSecurity extends Quest
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
 		final QuestState st = getRandomPartyMemberState(player, 1, 3, npc);
 		if (st != null)
@@ -170,7 +170,7 @@ public class Q00278_HomeSecurity extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);

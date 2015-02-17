@@ -31,7 +31,7 @@ import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.handler.ItemHandler;
 import org.l2junity.gameserver.instancemanager.FortSiegeManager;
 import org.l2junity.gameserver.model.PcCondOverride;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
@@ -60,9 +60,9 @@ public final class UseItem extends L2GameClientPacket
 	private static class WeaponEquipTask implements Runnable
 	{
 		ItemInstance item;
-		L2PcInstance activeChar;
+		PlayerInstance activeChar;
 		
-		protected WeaponEquipTask(ItemInstance it, L2PcInstance character)
+		protected WeaponEquipTask(ItemInstance it, PlayerInstance character)
 		{
 			item = it;
 			activeChar = character;
@@ -92,7 +92,7 @@ public final class UseItem extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -399,7 +399,7 @@ public final class UseItem extends L2GameClientPacket
 		}
 	}
 	
-	private void reuseData(L2PcInstance activeChar, ItemInstance item, long remainingTime)
+	private void reuseData(PlayerInstance activeChar, ItemInstance item, long remainingTime)
 	{
 		final int hours = (int) (remainingTime / 3600000L);
 		final int minutes = (int) (remainingTime % 3600000L) / 60000;
@@ -427,7 +427,7 @@ public final class UseItem extends L2GameClientPacket
 		activeChar.sendPacket(sm);
 	}
 	
-	private void sendSharedGroupUpdate(L2PcInstance activeChar, int group, long remaining, int reuse)
+	private void sendSharedGroupUpdate(PlayerInstance activeChar, int group, long remaining, int reuse)
 	{
 		if (group > 0)
 		{

@@ -22,7 +22,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.L2Clan;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
@@ -42,7 +42,7 @@ public final class RequestStartPledgeWar extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance player = getClient().getActiveChar();
+		PlayerInstance player = getClient().getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -97,12 +97,12 @@ public final class RequestStartPledgeWar extends L2GameClientPacket
 		
 		ClanTable.getInstance().storeclanswars(player.getClanId(), clan.getId());
 		
-		for (L2PcInstance member : _clan.getOnlineMembers(0))
+		for (PlayerInstance member : _clan.getOnlineMembers(0))
 		{
 			member.broadcastUserInfo();
 		}
 		
-		for (L2PcInstance member : clan.getOnlineMembers(0))
+		for (PlayerInstance member : clan.getOnlineMembers(0))
 		{
 			member.broadcastUserInfo();
 		}

@@ -23,7 +23,7 @@ import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.CreatureSay;
 
@@ -42,7 +42,7 @@ public class AdminGmChat implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		if (command.startsWith("admin_gmchat"))
 		{
@@ -63,7 +63,7 @@ public class AdminGmChat implements IAdminCommandHandler
 	 * @param command
 	 * @param activeChar
 	 */
-	private void snoop(String command, L2PcInstance activeChar)
+	private void snoop(String command, PlayerInstance activeChar)
 	{
 		WorldObject target = null;
 		if (command.length() > 12)
@@ -80,12 +80,12 @@ public class AdminGmChat implements IAdminCommandHandler
 			activeChar.sendPacket(SystemMessageId.SELECT_TARGET);
 			return;
 		}
-		if (!(target instanceof L2PcInstance))
+		if (!(target instanceof PlayerInstance))
 		{
 			activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 			return;
 		}
-		L2PcInstance player = (L2PcInstance) target;
+		PlayerInstance player = (PlayerInstance) target;
 		player.addSnooper(activeChar);
 		activeChar.addSnooped(player);
 	}
@@ -100,7 +100,7 @@ public class AdminGmChat implements IAdminCommandHandler
 	 * @param command
 	 * @param activeChar
 	 */
-	private void handleGmChat(String command, L2PcInstance activeChar)
+	private void handleGmChat(String command, PlayerInstance activeChar)
 	{
 		try
 		{

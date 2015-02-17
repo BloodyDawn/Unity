@@ -20,7 +20,7 @@ package ai.npc.Teleports.CrumaTower;
 
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 import ai.npc.AbstractNpcAI;
 
@@ -47,7 +47,7 @@ public final class CrumaTower extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance talker)
+	public String onTalk(Npc npc, PlayerInstance talker)
 	{
 		if (talker.getLevel() <= MAX_LEVEL)
 		{

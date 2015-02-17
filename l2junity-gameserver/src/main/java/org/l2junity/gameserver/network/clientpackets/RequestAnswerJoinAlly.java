@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.L2Clan;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 
 public final class RequestAnswerJoinAlly extends L2GameClientPacket
@@ -37,13 +37,13 @@ public final class RequestAnswerJoinAlly extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
-		L2PcInstance requestor = activeChar.getRequest().getPartner();
+		PlayerInstance requestor = activeChar.getRequest().getPartner();
 		if (requestor == null)
 		{
 			return;

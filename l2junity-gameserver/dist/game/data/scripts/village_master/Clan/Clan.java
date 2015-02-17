@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 
 /**
@@ -71,7 +71,7 @@ public final class Clan extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if (LEADER_REQUIRED.containsKey(event))
 		{
@@ -84,7 +84,7 @@ public final class Clan extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance talker)
+	public String onTalk(Npc npc, PlayerInstance talker)
 	{
 		return "9000-01.htm";
 	}

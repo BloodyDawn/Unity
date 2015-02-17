@@ -28,7 +28,7 @@ import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.handler.ITelnetHandler;
 import org.l2junity.gameserver.instancemanager.PunishmentManager;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.punishment.PunishmentAffect;
@@ -64,7 +64,7 @@ public class PlayerHandler implements ITelnetHandler
 			try
 			{
 				command = command.substring(5);
-				L2PcInstance player = World.getInstance().getPlayer(command);
+				PlayerInstance player = World.getInstance().getPlayer(command);
 				if (player != null)
 				{
 					player.sendMessage("You are kicked by gm");
@@ -83,7 +83,7 @@ public class PlayerHandler implements ITelnetHandler
 			
 			try
 			{
-				L2PcInstance player = World.getInstance().getPlayer(st.nextToken());
+				PlayerInstance player = World.getInstance().getPlayer(st.nextToken());
 				int itemId = Integer.parseInt(st.nextToken());
 				int amount = Integer.parseInt(st.nextToken());
 				
@@ -117,7 +117,7 @@ public class PlayerHandler implements ITelnetHandler
 			
 			try
 			{
-				L2PcInstance player = World.getInstance().getPlayer(st.nextToken());
+				PlayerInstance player = World.getInstance().getPlayer(st.nextToken());
 				itemType = Integer.parseInt(st.nextToken());
 				enchant = Integer.parseInt(st.nextToken());
 				
@@ -283,7 +283,7 @@ public class PlayerHandler implements ITelnetHandler
 		return false;
 	}
 	
-	private boolean setEnchant(L2PcInstance activeChar, int ench, int armorType)
+	private boolean setEnchant(PlayerInstance activeChar, int ench, int armorType)
 	{
 		// now we need to find the equipped weapon of the targeted character...
 		int curEnchant = 0; // display purposes only

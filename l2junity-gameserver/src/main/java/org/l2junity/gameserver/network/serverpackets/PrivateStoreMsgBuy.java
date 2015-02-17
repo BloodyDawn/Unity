@@ -18,14 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public class PrivateStoreMsgBuy extends L2GameServerPacket
 {
 	private final int _objId;
 	private String _storeMsg;
 	
-	public PrivateStoreMsgBuy(L2PcInstance player)
+	public PrivateStoreMsgBuy(PlayerInstance player)
 	{
 		_objId = player.getObjectId();
 		if (player.getBuyList() != null)

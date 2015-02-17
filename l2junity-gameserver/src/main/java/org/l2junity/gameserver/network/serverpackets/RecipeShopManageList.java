@@ -22,15 +22,15 @@ import java.util.Iterator;
 
 import org.l2junity.gameserver.model.ManufactureItem;
 import org.l2junity.gameserver.model.RecipeList;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public class RecipeShopManageList extends L2GameServerPacket
 {
-	private final L2PcInstance _seller;
+	private final PlayerInstance _seller;
 	private final boolean _isDwarven;
 	private RecipeList[] _recipes;
 	
-	public RecipeShopManageList(L2PcInstance seller, boolean isDwarven)
+	public RecipeShopManageList(PlayerInstance seller, boolean isDwarven)
 	{
 		_seller = seller;
 		_isDwarven = isDwarven;

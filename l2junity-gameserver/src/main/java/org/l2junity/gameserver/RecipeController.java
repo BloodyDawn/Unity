@@ -33,7 +33,7 @@ import org.l2junity.gameserver.model.RecipeInstance;
 import org.l2junity.gameserver.model.RecipeList;
 import org.l2junity.gameserver.model.RecipeStatInstance;
 import org.l2junity.gameserver.model.TempItem;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -64,7 +64,7 @@ public class RecipeController
 		_activeMakers.shared();
 	}
 	
-	public void requestBookOpen(L2PcInstance player, boolean isDwarvenCraft)
+	public void requestBookOpen(PlayerInstance player, boolean isDwarvenCraft)
 	{
 		// Check if player is trying to alter recipe book while engaged in manufacturing.
 		if (!_activeMakers.containsKey(player.getObjectId()))
@@ -77,12 +77,12 @@ public class RecipeController
 		player.sendPacket(SystemMessageId.YOU_MAY_NOT_ALTER_YOUR_RECIPE_BOOK_WHILE_ENGAGED_IN_MANUFACTURING);
 	}
 	
-	public void requestMakeItemAbort(L2PcInstance player)
+	public void requestMakeItemAbort(PlayerInstance player)
 	{
 		_activeMakers.remove(player.getObjectId()); // TODO: anything else here?
 	}
 	
-	public void requestManufactureItem(L2PcInstance manufacturer, int recipeListId, L2PcInstance player)
+	public void requestManufactureItem(PlayerInstance manufacturer, int recipeListId, PlayerInstance player)
 	{
 		final RecipeList recipeList = RecipeData.getInstance().getValidRecipeList(player, recipeListId);
 		if (recipeList == null)
@@ -121,7 +121,7 @@ public class RecipeController
 		}
 	}
 	
-	public void requestMakeItem(L2PcInstance player, int recipeListId)
+	public void requestMakeItem(PlayerInstance player, int recipeListId)
 	{
 		// Check if player is trying to operate a private store or private workshop while engaged in combat.
 		if (player.isInCombat() || player.isInDuel())
@@ -176,8 +176,8 @@ public class RecipeController
 		protected boolean _isValid;
 		protected List<TempItem> _items = null;
 		protected final RecipeList _recipeList;
-		protected final L2PcInstance _player; // "crafter"
-		protected final L2PcInstance _target; // "customer"
+		protected final PlayerInstance _player; // "crafter"
+		protected final PlayerInstance _target; // "customer"
 		protected final Skill _skill;
 		protected final int _skillId;
 		protected final int _skillLevel;
@@ -189,7 +189,7 @@ public class RecipeController
 		protected int _totalItems;
 		protected int _delay;
 		
-		public RecipeItemMaker(L2PcInstance pPlayer, RecipeList pRecipeList, L2PcInstance pTarget)
+		public RecipeItemMaker(PlayerInstance pPlayer, RecipeList pRecipeList, PlayerInstance pTarget)
 		{
 			_player = pPlayer;
 			_target = pTarget;

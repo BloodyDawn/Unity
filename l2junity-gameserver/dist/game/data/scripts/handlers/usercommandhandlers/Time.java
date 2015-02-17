@@ -24,7 +24,7 @@ import java.util.Date;
 import org.l2junity.Config;
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.handler.IUserCommandHandler;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
@@ -41,7 +41,7 @@ public class Time implements IUserCommandHandler
 	private static final SimpleDateFormat fmt = new SimpleDateFormat("H:mm.");
 	
 	@Override
-	public boolean useUserCommand(int id, L2PcInstance activeChar)
+	public boolean useUserCommand(int id, PlayerInstance activeChar)
 	{
 		if (COMMAND_IDS[0] != id)
 		{

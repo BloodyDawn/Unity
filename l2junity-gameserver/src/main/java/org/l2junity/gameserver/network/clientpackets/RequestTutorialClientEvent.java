@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.QuestState;
 
 public class RequestTutorialClientEvent extends L2GameClientPacket
@@ -36,7 +36,7 @@ public class RequestTutorialClientEvent extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance player = getClient().getActiveChar();
+		PlayerInstance player = getClient().getActiveChar();
 		
 		if (player == null)
 		{

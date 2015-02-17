@@ -33,7 +33,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -118,7 +118,7 @@ public final class EnergySeeds extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSkillSee(Npc npc, L2PcInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public String onSkillSee(Npc npc, PlayerInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
 		if (!Util.contains(targets, npc) || (skill.getId() != 5780))
 		{
@@ -178,7 +178,7 @@ public final class EnergySeeds extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if (event.equalsIgnoreCase("StartSoDAi"))
 		{
@@ -202,7 +202,7 @@ public final class EnergySeeds extends AbstractNpcAI
 					doorInstance.closeMe();
 				}
 			}
-			for (L2PcInstance ch : ZoneManager.getInstance().getZoneById(SOD_ZONE).getPlayersInside())
+			for (PlayerInstance ch : ZoneManager.getInstance().getZoneById(SOD_ZONE).getPlayersInside())
 			{
 				if (ch != null)
 				{
@@ -226,7 +226,7 @@ public final class EnergySeeds extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		if (npc.getId() == TEMPORARY_TELEPORTER)
 		{
@@ -237,7 +237,7 @@ public final class EnergySeeds extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
 		if (_spawnedNpcs.containsKey(npc) && _spawns.containsKey(_spawnedNpcs.get(npc)))
 		{
@@ -297,7 +297,7 @@ public final class EnergySeeds extends AbstractNpcAI
 		}
 	}
 	
-	public void seedCollectEvent(L2PcInstance player, Npc seedEnergy, GraciaSeeds seedType)
+	public void seedCollectEvent(PlayerInstance player, Npc seedEnergy, GraciaSeeds seedType)
 	{
 		if (player == null)
 		{

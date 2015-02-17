@@ -28,12 +28,12 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.util.Util;
 
 public class CharKnownList extends ObjectKnownList
 {
-	private Map<Integer, L2PcInstance> _knownPlayers;
+	private Map<Integer, PlayerInstance> _knownPlayers;
 	private Map<Integer, Summon> _knownSummons;
 	private Map<Integer, Integer> _knownRelations;
 	
@@ -66,7 +66,7 @@ public class CharKnownList extends ObjectKnownList
 	 * @param player The L2PcInstance to search in _knownPlayer
 	 * @return {@code true} if the player is in _knownPlayer of the character, {@code false} otherwise
 	 */
-	public final boolean knowsThePlayer(L2PcInstance player)
+	public final boolean knowsThePlayer(PlayerInstance player)
 	{
 		return (getActiveChar() == player) || getKnownPlayers().containsKey(player.getObjectId());
 	}
@@ -126,9 +126,9 @@ public class CharKnownList extends ObjectKnownList
 	{
 		if (!fullCheck)
 		{
-			final Collection<L2PcInstance> plrs = getKnownPlayers().values();
-			final Iterator<L2PcInstance> pIter = plrs.iterator();
-			L2PcInstance player;
+			final Collection<PlayerInstance> plrs = getKnownPlayers().values();
+			final Iterator<PlayerInstance> pIter = plrs.iterator();
+			PlayerInstance player;
 			while (pIter.hasNext())
 			{
 				player = pIter.next();
@@ -234,7 +234,7 @@ public class CharKnownList extends ObjectKnownList
 		return result;
 	}
 	
-	public final Map<Integer, L2PcInstance> getKnownPlayers()
+	public final Map<Integer, PlayerInstance> getKnownPlayers()
 	{
 		if (_knownPlayers == null)
 		{
@@ -261,10 +261,10 @@ public class CharKnownList extends ObjectKnownList
 		return _knownSummons;
 	}
 	
-	public final Collection<L2PcInstance> getKnownPlayersInRadius(long radius)
+	public final Collection<PlayerInstance> getKnownPlayersInRadius(long radius)
 	{
-		final List<L2PcInstance> result = new LinkedList<>();
-		for (L2PcInstance player : getKnownPlayers().values())
+		final List<PlayerInstance> result = new LinkedList<>();
+		for (PlayerInstance player : getKnownPlayers().values())
 		{
 			if (Util.checkIfInRange((int) radius, getActiveChar(), player, true))
 			{

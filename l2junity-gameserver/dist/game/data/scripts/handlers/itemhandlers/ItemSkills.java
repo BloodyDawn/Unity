@@ -19,7 +19,7 @@
 package handlers.itemhandlers;
 
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 
@@ -31,7 +31,7 @@ public class ItemSkills extends ItemSkillsTemplate
 	@Override
 	public boolean useItem(Playable playable, ItemInstance item, boolean forceUse)
 	{
-		final L2PcInstance activeChar = playable.getActingPlayer();
+		final PlayerInstance activeChar = playable.getActingPlayer();
 		if ((activeChar != null) && activeChar.isInOlympiadMode())
 		{
 			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_USE_THAT_ITEM_IN_A_OLYMPIAD_MATCH);

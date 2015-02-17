@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 
@@ -28,9 +28,9 @@ import org.l2junity.gameserver.model.quest.QuestState;
 public class GmViewQuestInfo extends L2GameServerPacket
 {
 	
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	
-	public GmViewQuestInfo(L2PcInstance cha)
+	public GmViewQuestInfo(PlayerInstance cha)
 	{
 		_activeChar = cha;
 	}

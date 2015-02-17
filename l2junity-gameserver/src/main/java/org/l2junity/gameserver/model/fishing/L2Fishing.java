@@ -24,7 +24,7 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.impl.FishingMonstersData;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.AbstractScript;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExFishingHpRegen;
@@ -34,7 +34,7 @@ import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
 public class L2Fishing implements Runnable
 {
-	private L2PcInstance _fisher;
+	private PlayerInstance _fisher;
 	private int _time;
 	private int _stop = 0;
 	private int _goodUse = 0;
@@ -76,7 +76,7 @@ public class L2Fishing implements Runnable
 		}
 	}
 	
-	public L2Fishing(L2PcInstance Fisher, L2Fish fish, boolean isNoob, boolean isUpperGrade)
+	public L2Fishing(PlayerInstance Fisher, L2Fish fish, boolean isNoob, boolean isUpperGrade)
 	{
 		_fisher = Fisher;
 		_fishMaxHp = fish.getFishHp();

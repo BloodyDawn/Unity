@@ -42,7 +42,7 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.instancemanager.AntiFeedManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Hero;
 import org.l2junity.gameserver.model.events.ListenersContainer;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -698,7 +698,7 @@ public class Olympiad extends ListenersContainer
 		return _period;
 	}
 	
-	public boolean playerInStadia(L2PcInstance player)
+	public boolean playerInStadia(PlayerInstance player)
 	{
 		return (ZoneManager.getInstance().getOlympiadStadium(player) != null);
 	}
@@ -1031,7 +1031,7 @@ public class Olympiad extends ListenersContainer
 		return names;
 	}
 	
-	public int getNoblessePasses(L2PcInstance player, boolean clear)
+	public int getNoblessePasses(PlayerInstance player, boolean clear)
 	{
 		if ((player == null) || (_period != 1) || _noblesRank.isEmpty())
 		{

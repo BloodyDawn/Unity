@@ -23,19 +23,19 @@ import java.util.List;
 
 import org.l2junity.gameserver.model.PartyMatchRoom;
 import org.l2junity.gameserver.model.PartyMatchRoomList;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author Gnacik
  */
 public class ListPartyWating extends L2GameServerPacket
 {
-	private final L2PcInstance _cha;
+	private final PlayerInstance _cha;
 	private final int _loc;
 	private final int _lim;
 	private final List<PartyMatchRoom> _rooms;
 	
-	public ListPartyWating(L2PcInstance player, int auto, int location, int limit)
+	public ListPartyWating(PlayerInstance player, int auto, int location, int limit)
 	{
 		_cha = player;
 		_loc = location;
@@ -86,7 +86,7 @@ public class ListPartyWating extends L2GameServerPacket
 			writeD(room.getMaxMembers());
 			writeS(room.getOwner().getName());
 			writeD(room.getMembers());
-			for (L2PcInstance member : room.getPartyMembers())
+			for (PlayerInstance member : room.getPartyMembers())
 			{
 				if (member != null)
 				{

@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.events.impl.character.player.inventory;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.IBaseEvent;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -28,16 +28,16 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
  */
 public class OnPlayerItemDestroy implements IBaseEvent
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final ItemInstance _item;
 	
-	public OnPlayerItemDestroy(L2PcInstance activeChar, ItemInstance item)
+	public OnPlayerItemDestroy(PlayerInstance activeChar, ItemInstance item)
 	{
 		_activeChar = activeChar;
 		_item = item;
 	}
 	
-	public L2PcInstance getActiveChar()
+	public PlayerInstance getActiveChar()
 	{
 		return _activeChar;
 	}

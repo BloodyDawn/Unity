@@ -26,7 +26,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2ObservationInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.ItemList;
@@ -90,7 +90,7 @@ public class Observation implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, Creature target)
+	public boolean useBypass(String command, PlayerInstance activeChar, Creature target)
 	{
 		if (!(target instanceof L2ObservationInstance))
 		{
@@ -157,7 +157,7 @@ public class Observation implements IBypassHandler
 		return false;
 	}
 	
-	private static final void doObserve(final L2PcInstance player, final Npc npc, final Location pos, final long cost)
+	private static final void doObserve(final PlayerInstance player, final Npc npc, final Location pos, final long cost)
 	{
 		if (player.reduceAdena("Broadcast", cost, npc, true))
 		{

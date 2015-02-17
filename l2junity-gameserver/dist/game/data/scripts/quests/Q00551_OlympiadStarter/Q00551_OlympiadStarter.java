@@ -20,7 +20,7 @@ package quests.Q00551_OlympiadStarter;
 
 import org.l2junity.gameserver.enums.QuestType;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.olympiad.CompetitionType;
 import org.l2junity.gameserver.model.olympiad.Participant;
 import org.l2junity.gameserver.model.quest.Quest;
@@ -54,7 +54,7 @@ public class Q00551_OlympiadStarter extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState st = getQuestState(player, false);
 		if (st == null)
@@ -88,7 +88,7 @@ public class Q00551_OlympiadStarter extends Quest
 	}
 	
 	@Override
-	public void onOlympiadLose(L2PcInstance loser, CompetitionType type)
+	public void onOlympiadLose(PlayerInstance loser, CompetitionType type)
 	{
 		if (loser != null)
 		{
@@ -127,7 +127,7 @@ public class Q00551_OlympiadStarter extends Quest
 	{
 		if (winner != null)
 		{
-			final L2PcInstance player = winner.getPlayer();
+			final PlayerInstance player = winner.getPlayer();
 			if (player == null)
 			{
 				return;
@@ -163,7 +163,7 @@ public class Q00551_OlympiadStarter extends Quest
 		
 		if (looser != null)
 		{
-			final L2PcInstance player = looser.getPlayer();
+			final PlayerInstance player = looser.getPlayer();
 			if (player == null)
 			{
 				return;
@@ -199,7 +199,7 @@ public class Q00551_OlympiadStarter extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);

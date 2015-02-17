@@ -22,7 +22,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.tasks.player.TeleportTask;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -66,7 +66,7 @@ public class JailZone extends ZoneType
 	{
 		if (character.isPlayer())
 		{
-			final L2PcInstance player = character.getActingPlayer();
+			final PlayerInstance player = character.getActingPlayer();
 			player.setInsideZone(ZoneId.JAIL, false);
 			player.setInsideZone(ZoneId.NO_SUMMON_FRIEND, false);
 			

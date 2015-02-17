@@ -19,7 +19,7 @@
 package hellbound.AI.NPC.Bernarde;
 
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 import hellbound.HellboundEngine;
 import ai.npc.AbstractNpcAI;
@@ -48,7 +48,7 @@ public final class Bernarde extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		switch (event)
 		{
@@ -88,7 +88,7 @@ public final class Bernarde extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onFirstTalk(Npc npc, L2PcInstance player)
+	public final String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		switch (HellboundEngine.getInstance().getLevel())
 		{
@@ -106,7 +106,7 @@ public final class Bernarde extends AbstractNpcAI
 		}
 	}
 	
-	private static final boolean isTransformed(L2PcInstance player)
+	private static final boolean isTransformed(PlayerInstance player)
 	{
 		return player.isTransformed() && (player.getTransformation().getId() == NATIVE_TRANSFORM);
 	}

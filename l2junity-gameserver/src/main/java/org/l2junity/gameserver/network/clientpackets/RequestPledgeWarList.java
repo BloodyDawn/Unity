@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.PledgeReceiveWarList;
 
 /**
@@ -44,7 +44,7 @@ public final class RequestPledgeWarList extends L2GameClientPacket
 	{
 		// _log.info("C5: RequestPledgeWarList d:"+_unk1);
 		// _log.info("C5: RequestPledgeWarList d:"+_tab);
-		L2PcInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;

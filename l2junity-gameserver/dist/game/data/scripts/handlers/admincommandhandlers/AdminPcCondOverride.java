@@ -22,7 +22,7 @@ import java.util.StringTokenizer;
 
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.PcCondOverride;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.util.Util;
 
@@ -39,7 +39,7 @@ public class AdminPcCondOverride implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command);
 		if (st.hasMoreTokens())

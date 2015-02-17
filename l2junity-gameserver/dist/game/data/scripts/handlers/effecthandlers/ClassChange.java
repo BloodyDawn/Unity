@@ -22,7 +22,7 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.SubclassInfoType;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -57,7 +57,7 @@ public class ClassChange extends AbstractEffect
 	{
 		if (info.getEffector().isPlayer())
 		{
-			final L2PcInstance player = info.getEffector().getActingPlayer();
+			final PlayerInstance player = info.getEffector().getActingPlayer();
 			
 			// TODO: FIX ME - Executing 1 second later otherwise interupted exception during storeCharBase()
 			ThreadPoolManager.getInstance().scheduleGeneral(() ->

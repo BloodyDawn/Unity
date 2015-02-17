@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.holders;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
@@ -26,16 +26,16 @@ import org.l2junity.gameserver.model.skills.Skill;
  */
 public class SummonRequestHolder
 {
-	private final L2PcInstance _target;
+	private final PlayerInstance _target;
 	private final Skill _skill;
 	
-	public SummonRequestHolder(L2PcInstance destination, Skill skill)
+	public SummonRequestHolder(PlayerInstance destination, Skill skill)
 	{
 		_target = destination;
 		_skill = skill;
 	}
 	
-	public L2PcInstance getTarget()
+	public PlayerInstance getTarget()
 	{
 		return _target;
 	}

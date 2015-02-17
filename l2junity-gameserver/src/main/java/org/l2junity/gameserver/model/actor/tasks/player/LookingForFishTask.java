@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.model.actor.tasks.player;
 
 import org.l2junity.commons.util.Rnd;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * Task dedicated for looking for fishes.
@@ -27,13 +27,13 @@ import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
  */
 public class LookingForFishTask implements Runnable
 {
-	private final L2PcInstance _player;
+	private final PlayerInstance _player;
 	private final boolean _isNoob, _isUpperGrade;
 	private final int _fishGroup;
 	private final double _fishGutsCheck;
 	private final long _endTaskTime;
 	
-	public LookingForFishTask(L2PcInstance player, int startCombatTime, double fishGutsCheck, int fishGroup, boolean isNoob, boolean isUpperGrade)
+	public LookingForFishTask(PlayerInstance player, int startCombatTime, double fishGutsCheck, int fishGroup, boolean isNoob, boolean isUpperGrade)
 	{
 		_player = player;
 		_fishGutsCheck = fishGutsCheck;

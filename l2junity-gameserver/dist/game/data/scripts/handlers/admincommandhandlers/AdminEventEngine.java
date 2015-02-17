@@ -34,7 +34,7 @@ import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.data.xml.impl.TransformData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.L2Event;
 import org.l2junity.gameserver.model.entity.L2Event.EventState;
 import org.l2junity.gameserver.network.serverpackets.CharInfo;
@@ -85,7 +85,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 	private static boolean npcsDeleted = false;
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command);
 		String actualCommand = st.nextToken();
@@ -248,7 +248,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 				{
 					int teamId = Integer.parseInt(st.nextToken());
 					
-					for (L2PcInstance player : L2Event._teams.get(teamId))
+					for (PlayerInstance player : L2Event._teams.get(teamId))
 					{
 						player.setTitle(L2Event._teamNames.get(teamId));
 						player.teleToLocation(activeChar.getLocation(), true);
@@ -262,7 +262,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 				while (st.hasMoreElements()) // Every next ST should be a team number
 				{
 					// Integer.parseInt(st.nextToken()) == teamId
-					for (L2PcInstance player : L2Event._teams.get(Integer.parseInt(st.nextToken())))
+					for (PlayerInstance player : L2Event._teams.get(Integer.parseInt(st.nextToken())))
 					{
 						if (player.getEventStatus() == null)
 						{
@@ -286,7 +286,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 			{
 				while (st.hasMoreElements()) // Every next ST should be a team number
 				{
-					for (L2PcInstance player : L2Event._teams.get(Integer.parseInt(st.nextToken())))
+					for (PlayerInstance player : L2Event._teams.get(Integer.parseInt(st.nextToken())))
 					{
 						player.reduceCurrentHp(player.getMaxHp() + player.getMaxCp() + 1, activeChar, null);
 					}
@@ -297,7 +297,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 			{
 				while (st.hasMoreElements()) // Every next ST should be a team number
 				{
-					for (L2PcInstance player : L2Event._teams.get(Integer.parseInt(st.nextToken())))
+					for (PlayerInstance player : L2Event._teams.get(Integer.parseInt(st.nextToken())))
 					{
 						if ((player == null) || !player.isDead())
 						{
@@ -321,7 +321,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 					polyIds[i++] = st.nextToken();
 				}
 				
-				for (L2PcInstance player : L2Event._teams.get(teamId))
+				for (PlayerInstance player : L2Event._teams.get(teamId))
 				{
 					player.getPoly().setPolyInfo("npc", polyIds[Rnd.get(polyIds.length)]);
 					player.teleToLocation(player.getLocation(), true);
@@ -336,7 +336,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 			{
 				while (st.hasMoreElements()) // Every next ST should be a team number
 				{
-					for (L2PcInstance player : L2Event._teams.get(Integer.parseInt(st.nextToken())))
+					for (PlayerInstance player : L2Event._teams.get(Integer.parseInt(st.nextToken())))
 					{
 						player.getPoly().setPolyInfo(null, "1");
 						player.decayMe();
@@ -359,7 +359,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 					transIds[i++] = Integer.parseInt(st.nextToken());
 				}
 				
-				for (L2PcInstance player : L2Event._teams.get(teamId))
+				for (PlayerInstance player : L2Event._teams.get(teamId))
 				{
 					int transId = transIds[Rnd.get(transIds.length)];
 					if (!TransformData.getInstance().transformPlayer(transId, player))
@@ -373,7 +373,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 			{
 				while (st.hasMoreElements()) // Every next ST should be a team number
 				{
-					for (L2PcInstance player : L2Event._teams.get(Integer.parseInt(st.nextToken())))
+					for (PlayerInstance player : L2Event._teams.get(Integer.parseInt(st.nextToken())))
 					{
 						player.stopTransformation(true);
 					}
@@ -386,7 +386,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 				{
 					while (st.hasMoreElements())
 					{
-						L2PcInstance player = World.getInstance().getPlayer(st.nextToken());
+						PlayerInstance player = World.getInstance().getPlayer(st.nextToken());
 						if (player != null)
 						{
 							L2Event.removeAndResetPlayer(player);
@@ -395,9 +395,9 @@ public class AdminEventEngine implements IAdminCommandHandler
 				}
 				else
 				{
-					if ((activeChar.getTarget() != null) && (activeChar.getTarget() instanceof L2PcInstance))
+					if ((activeChar.getTarget() != null) && (activeChar.getTarget() instanceof PlayerInstance))
 					{
-						L2Event.removeAndResetPlayer((L2PcInstance) activeChar.getTarget());
+						L2Event.removeAndResetPlayer((PlayerInstance) activeChar.getTarget());
 					}
 				}
 				showEventControl(activeChar);
@@ -479,7 +479,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 		return note + result.toString();
 	}
 	
-	public void showMainPage(L2PcInstance activeChar)
+	public void showMainPage(PlayerInstance activeChar)
 	{
 		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		
@@ -488,7 +488,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 		activeChar.sendPacket(adminReply);
 	}
 	
-	public void showNewEventPage(L2PcInstance activeChar)
+	public void showNewEventPage(PlayerInstance activeChar)
 	{
 		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		
@@ -530,7 +530,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 		activeChar.sendPacket(adminReply);
 	}
 	
-	public void showEventParameters(L2PcInstance activeChar, int teamnumbers)
+	public void showEventParameters(PlayerInstance activeChar, int teamnumbers)
 	{
 		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		StringBuilder sb = new StringBuilder();
@@ -567,7 +567,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 		activeChar.sendPacket(adminReply);
 	}
 	
-	private void showEventControl(L2PcInstance activeChar)
+	private void showEventControl(PlayerInstance activeChar)
 	{
 		
 		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
@@ -587,10 +587,10 @@ public class AdminEventEngine implements IAdminCommandHandler
 		activeChar.sendPacket(adminReply);
 	}
 	
-	private void rewardTeam(L2PcInstance activeChar, int team, int n, int id, String type)
+	private void rewardTeam(PlayerInstance activeChar, int team, int n, int id, String type)
 	{
 		int num = n;
-		for (L2PcInstance player : L2Event._teams.get(team))
+		for (PlayerInstance player : L2Event._teams.get(team))
 		{
 			if (type.equalsIgnoreCase("level"))
 			{

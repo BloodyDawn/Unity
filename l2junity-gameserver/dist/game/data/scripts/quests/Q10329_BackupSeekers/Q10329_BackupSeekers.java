@@ -21,7 +21,7 @@ package quests.Q10329_BackupSeekers;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.ListenerRegisterType;
 import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
@@ -90,7 +90,7 @@ public class Q10329_BackupSeekers extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
@@ -129,7 +129,7 @@ public class Q10329_BackupSeekers extends Quest
 			}
 			case "CHECK_PLAYER":
 			{
-				final L2PcInstance owner = npc.getSummoner().getActingPlayer();
+				final PlayerInstance owner = npc.getSummoner().getActingPlayer();
 				if (owner != null)
 				{
 					if (npc.calculateDistance(owner, false, false) < 150)
@@ -240,7 +240,7 @@ public class Q10329_BackupSeekers extends Quest
 	@Override
 	public void onMoveFinished(Npc npc)
 	{
-		final L2PcInstance owner = npc.getSummoner().getActingPlayer();
+		final PlayerInstance owner = npc.getSummoner().getActingPlayer();
 		
 		if (owner != null)
 		{
@@ -252,7 +252,7 @@ public class Q10329_BackupSeekers extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = null;

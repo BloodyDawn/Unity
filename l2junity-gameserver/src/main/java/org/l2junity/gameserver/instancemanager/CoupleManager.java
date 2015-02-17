@@ -26,7 +26,7 @@ import java.util.logging.Logger;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Couple;
 
 import javolution.util.FastList;
@@ -79,7 +79,7 @@ public final class CoupleManager
 		return null;
 	}
 	
-	public void createCouple(L2PcInstance player1, L2PcInstance player2)
+	public void createCouple(PlayerInstance player1, PlayerInstance player2)
 	{
 		if ((player1 != null) && (player2 != null))
 		{
@@ -104,8 +104,8 @@ public final class CoupleManager
 		Couple couple = getCouples().get(index);
 		if (couple != null)
 		{
-			L2PcInstance player1 = World.getInstance().getPlayer(couple.getPlayer1Id());
-			L2PcInstance player2 = World.getInstance().getPlayer(couple.getPlayer2Id());
+			PlayerInstance player1 = World.getInstance().getPlayer(couple.getPlayer1Id());
+			PlayerInstance player2 = World.getInstance().getPlayer(couple.getPlayer2Id());
 			if (player1 != null)
 			{
 				player1.setPartnerId(0);

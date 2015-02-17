@@ -26,7 +26,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.quest.QuestState;
@@ -167,7 +167,7 @@ public final class NornilsGarden extends AbstractInstance
 	};
 	// @formatter:on
 	
-	private static final void dropHerb(Npc mob, L2PcInstance player, int[][] drop)
+	private static final void dropHerb(Npc mob, PlayerInstance player, int[][] drop)
 	{
 		final int chance = getRandom(100);
 		for (int[] element : drop)
@@ -219,7 +219,7 @@ public final class NornilsGarden extends AbstractInstance
 	}
 	
 	@Override
-	public final void teleportPlayer(L2PcInstance player, Location loc, int instanceId)
+	public final void teleportPlayer(PlayerInstance player, Location loc, int instanceId)
 	{
 		giveBuffs(player);
 		final Summon pet = player.getPet();
@@ -234,7 +234,7 @@ public final class NornilsGarden extends AbstractInstance
 		super.teleportPlayer(player, loc, instanceId);
 	}
 	
-	private void exitInstance(L2PcInstance player)
+	private void exitInstance(PlayerInstance player)
 	{
 		InstanceWorld inst = InstanceManager.getInstance().getWorld(player.getInstanceId());
 		if (inst instanceof NornilsWorld)
@@ -245,7 +245,7 @@ public final class NornilsGarden extends AbstractInstance
 		}
 	}
 	
-	private final synchronized String enterInstance(Npc npc, L2PcInstance player)
+	private final synchronized String enterInstance(Npc npc, PlayerInstance player)
 	{
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		if (world != null)
@@ -298,7 +298,7 @@ public final class NornilsGarden extends AbstractInstance
 		final Party party = player.getParty();
 		if (party != null)
 		{
-			for (L2PcInstance partyMember : party.getMembers())
+			for (PlayerInstance partyMember : party.getMembers())
 			{
 				world.addAllowed(partyMember.getObjectId());
 				teleportPlayer(partyMember, SPAWN_PPL, instanceId);
@@ -391,7 +391,7 @@ public final class NornilsGarden extends AbstractInstance
 		}
 	}
 	
-	public void openDoor(QuestState st, L2PcInstance player, int doorId)
+	public void openDoor(QuestState st, PlayerInstance player, int doorId)
 	{
 		st.unset("correct");
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(player.getInstanceId());
@@ -401,7 +401,7 @@ public final class NornilsGarden extends AbstractInstance
 		}
 	}
 	
-	private static final String checkConditions(Npc npc, L2PcInstance player)
+	private static final String checkConditions(Npc npc, PlayerInstance player)
 	{
 		final Party party = player.getParty();
 		// player must be in party
@@ -418,7 +418,7 @@ public final class NornilsGarden extends AbstractInstance
 		}
 		boolean _kamael = false;
 		// for each party member
-		for (L2PcInstance partyMember : party.getMembers())
+		for (PlayerInstance partyMember : party.getMembers())
 		{
 			// player level must be in range
 			if (partyMember.getLevel() > INSTANCE_LVL_MAX)
@@ -465,7 +465,7 @@ public final class NornilsGarden extends AbstractInstance
 	@Override
 	public String onEnterZone(Creature character, ZoneType zone)
 	{
-		if ((character instanceof L2PcInstance) && !character.isDead() && !character.isTeleporting() && ((L2PcInstance) character).isOnline())
+		if ((character instanceof PlayerInstance) && !character.isDead() && !character.isTeleporting() && ((PlayerInstance) character).isOnline())
 		{
 			InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(character.getInstanceId());
 			if (tmpworld instanceof NornilsWorld)
@@ -492,7 +492,7 @@ public final class NornilsGarden extends AbstractInstance
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String htmltext = event;
 		QuestState st = getQuestState(player, false);
@@ -559,7 +559,7 @@ public final class NornilsGarden extends AbstractInstance
 	}
 	
 	@Override
-	public final String onTalk(Npc npc, L2PcInstance player)
+	public final String onTalk(Npc npc, PlayerInstance player)
 	{
 		if (Util.contains(_final_gates, npc.getId()))
 		{
@@ -570,14 +570,14 @@ public final class NornilsGarden extends AbstractInstance
 	}
 	
 	@Override
-	public final String onFirstTalk(Npc npc, L2PcInstance player)
+	public final String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		getQuestState(player, true);
 		return npc.getId() + ".html";
 	}
 	
 	@Override
-	public final String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public final String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon)
 	{
 		if ((npc.getId() == _herb_jar) && !npc.isDead())
 		{
@@ -593,7 +593,7 @@ public final class NornilsGarden extends AbstractInstance
 	}
 	
 	@Override
-	public final String onKill(Npc npc, L2PcInstance player, boolean isSummon)
+	public final String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
 		final QuestState st = getQuestState(player, false);
 		if (st == null)
@@ -627,7 +627,7 @@ public final class NornilsGarden extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
+	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
 	{
 		
 	}

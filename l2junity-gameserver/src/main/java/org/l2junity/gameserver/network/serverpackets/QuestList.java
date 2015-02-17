@@ -18,14 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 
 public class QuestList extends L2GameServerPacket
 {
 	private Quest[] _quests;
-	private L2PcInstance _activeChar;
+	private PlayerInstance _activeChar;
 	
 	public QuestList()
 	{

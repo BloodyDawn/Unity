@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.ClanMember;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public final class PledgeShowMemberListAdd extends L2GameServerPacket
 {
@@ -29,7 +29,7 @@ public final class PledgeShowMemberListAdd extends L2GameServerPacket
 	private final int _isOnline;
 	private final int _pledgeType;
 	
-	public PledgeShowMemberListAdd(L2PcInstance player)
+	public PledgeShowMemberListAdd(PlayerInstance player)
 	{
 		_name = player.getName();
 		_lvl = player.getLevel();

@@ -22,7 +22,7 @@ import java.util.List;
 
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.model.Location;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 import javolution.util.FastList;
 
@@ -42,7 +42,7 @@ import javolution.util.FastList;
  */
 public final class PlayerEventHolder
 {
-	private final L2PcInstance _player;
+	private final PlayerInstance _player;
 	private final String _name;
 	private final String _title;
 	private final int _clanId;
@@ -51,15 +51,15 @@ public final class PlayerEventHolder
 	private final int _pkKills;
 	private final int _karma;
 	
-	private final List<L2PcInstance> _kills;
+	private final List<PlayerInstance> _kills;
 	private boolean _sitForced;
 	
-	public PlayerEventHolder(L2PcInstance player)
+	public PlayerEventHolder(PlayerInstance player)
 	{
 		this(player, false);
 	}
 	
-	public PlayerEventHolder(L2PcInstance player, boolean sitForced)
+	public PlayerEventHolder(PlayerInstance player, boolean sitForced)
 	{
 		_player = player;
 		_name = player.getName();
@@ -95,7 +95,7 @@ public final class PlayerEventHolder
 		return _sitForced;
 	}
 	
-	public List<L2PcInstance> getKills()
+	public List<PlayerInstance> getKills()
 	{
 		return _kills;
 	}

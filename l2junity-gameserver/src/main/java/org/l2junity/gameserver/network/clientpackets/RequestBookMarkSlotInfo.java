@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.ExGetBookMarkInfoPacket;
 
 /**
@@ -37,7 +37,7 @@ public final class RequestBookMarkSlotInfo extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance player = getClient().getActiveChar();
+		PlayerInstance player = getClient().getActiveChar();
 		player.sendPacket(new ExGetBookMarkInfoPacket(player));
 	}
 	

@@ -22,7 +22,7 @@ import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.network.NpcStringId;
@@ -88,7 +88,7 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
+	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
 	{
 		if (firstEntrance)
 		{
@@ -99,7 +99,7 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(player);
 		if (!(tmpworld instanceof MoSWorld))
@@ -187,7 +187,7 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance talker)
+	public String onTalk(Npc npc, PlayerInstance talker)
 	{
 		if (npc.getId() == ODD_GLOBE)
 		{
@@ -196,7 +196,7 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 		return super.onTalk(npc, talker);
 	}
 	
-	protected void spawnElcadia(L2PcInstance player, MoSWorld world)
+	protected void spawnElcadia(PlayerInstance player, MoSWorld world)
 	{
 		if (world.elcadia != null)
 		{

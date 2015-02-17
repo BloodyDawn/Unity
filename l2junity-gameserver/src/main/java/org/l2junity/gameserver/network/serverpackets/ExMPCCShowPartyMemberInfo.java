@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.Party;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author chris_00
@@ -39,7 +39,7 @@ public class ExMPCCShowPartyMemberInfo extends L2GameServerPacket
 		writeC(0xFE);
 		writeH(0x4C);
 		writeD(_party.getMemberCount());
-		for (L2PcInstance pc : _party.getMembers())
+		for (PlayerInstance pc : _party.getMembers())
 		{
 			writeS(pc.getName());
 			writeD(pc.getObjectId());

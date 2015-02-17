@@ -43,7 +43,7 @@ import org.l2junity.gameserver.model.actor.instance.L2FeedableBeastInstance;
 import org.l2junity.gameserver.model.actor.instance.L2FortCommanderInstance;
 import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
 import org.l2junity.gameserver.model.actor.instance.L2GuardInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
@@ -257,7 +257,7 @@ public final class CursedWeaponsManager
 		}
 	}
 	
-	public synchronized void checkDrop(Attackable attackable, L2PcInstance player)
+	public synchronized void checkDrop(Attackable attackable, PlayerInstance player)
 	{
 		if ((attackable instanceof L2DefenderInstance) || (attackable instanceof L2GuardInstance) || (attackable instanceof L2GrandBossInstance) || (attackable instanceof L2FeedableBeastInstance) || (attackable instanceof L2FortCommanderInstance))
 		{
@@ -278,7 +278,7 @@ public final class CursedWeaponsManager
 		}
 	}
 	
-	public void activate(L2PcInstance player, ItemInstance item)
+	public void activate(PlayerInstance player, ItemInstance item)
 	{
 		CursedWeapon cw = _cursedWeapons.get(item.getId());
 		if (player.isCursedWeaponEquipped()) // cannot own 2 cursed swords
@@ -328,7 +328,7 @@ public final class CursedWeaponsManager
 		Broadcast.toAllOnlinePlayers(sm);
 	}
 	
-	public void checkPlayer(L2PcInstance player)
+	public void checkPlayer(PlayerInstance player)
 	{
 		if (player == null)
 		{

@@ -21,7 +21,7 @@ package org.l2junity.gameserver.network.serverpackets;
 import java.util.Map;
 
 import org.l2junity.gameserver.data.xml.impl.BeautyShopData;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.beautyshop.BeautyItem;
 
 /**
@@ -29,14 +29,14 @@ import org.l2junity.gameserver.model.beautyshop.BeautyItem;
  */
 public class ExResponseBeautyList extends L2GameServerPacket
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final int _type;
 	private final Map<Integer, BeautyItem> _beautyItem;
 	
 	public final static int SHOW_FACESHAPE = 1;
 	public final static int SHOW_HAIRSTYLE = 0;
 	
-	public ExResponseBeautyList(L2PcInstance activeChar, int type)
+	public ExResponseBeautyList(PlayerInstance activeChar, int type)
 	{
 		_activeChar = activeChar;
 		_type = type;

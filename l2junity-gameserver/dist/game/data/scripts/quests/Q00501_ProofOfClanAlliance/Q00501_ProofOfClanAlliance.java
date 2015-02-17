@@ -27,7 +27,7 @@ import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.quest.Quest;
@@ -107,7 +107,7 @@ public final class Q00501_ProofOfClanAlliance extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
@@ -238,7 +238,7 @@ public final class Q00501_ProofOfClanAlliance extends Quest
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		final QuestState qs = getRandomPartyMemberState(killer, -1, 3, npc);
 		if (qs == null)
@@ -246,7 +246,7 @@ public final class Q00501_ProofOfClanAlliance extends Quest
 			return super.onKill(npc, killer, isSummon);
 		}
 		
-		final L2PcInstance player = qs.getPlayer();
+		final PlayerInstance player = qs.getPlayer();
 		final QuestState lqs = getLeaderQuestState(player, getName());
 		if (lqs != null)
 		{
@@ -324,7 +324,7 @@ public final class Q00501_ProofOfClanAlliance extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		final QuestState qs = getQuestState(player, true);
 		final QuestState lqs = getLeaderQuestState(player, getName());
@@ -506,7 +506,7 @@ public final class Q00501_ProofOfClanAlliance extends Quest
 	 * @param player the player to check
 	 * @return {@code true} if the player has {@link AbnormalType#FATAL_POISON} abnormal
 	 */
-	private static boolean hasAbnormal(L2PcInstance player)
+	private static boolean hasAbnormal(PlayerInstance player)
 	{
 		return player.getEffectList().getBuffInfoByAbnormalType(AbnormalType.FATAL_POISON) != null;
 	}
@@ -517,11 +517,11 @@ public final class Q00501_ProofOfClanAlliance extends Quest
 	 * @param quest the quest name
 	 * @return the clan leader's quest state
 	 */
-	private static QuestState getLeaderQuestState(L2PcInstance player, String quest)
+	private static QuestState getLeaderQuestState(PlayerInstance player, String quest)
 	{
 		if (player.getClan() != null)
 		{
-			final L2PcInstance leader = player.getClan().getLeader().getPlayerInstance();
+			final PlayerInstance leader = player.getClan().getLeader().getPlayerInstance();
 			if (leader != null)
 			{
 				return leader.getQuestState(quest);
@@ -531,7 +531,7 @@ public final class Q00501_ProofOfClanAlliance extends Quest
 	}
 	
 	@Override
-	public QuestState getRandomPartyMemberState(L2PcInstance player, int condition, int playerChance, Npc target)
+	public QuestState getRandomPartyMemberState(PlayerInstance player, int condition, int playerChance, Npc target)
 	{
 		if ((player == null) || (playerChance < 1))
 		{
@@ -557,7 +557,7 @@ public final class Q00501_ProofOfClanAlliance extends Quest
 			}
 		}
 		
-		for (L2PcInstance member : player.getParty().getMembers())
+		for (PlayerInstance member : player.getParty().getMembers())
 		{
 			if (member == player)
 			{

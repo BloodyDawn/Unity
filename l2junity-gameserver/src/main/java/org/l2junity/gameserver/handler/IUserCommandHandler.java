@@ -20,7 +20,7 @@ package org.l2junity.gameserver.handler;
 
 import java.util.logging.Logger;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public interface IUserCommandHandler
 {
@@ -32,7 +32,7 @@ public interface IUserCommandHandler
 	 * @param activeChar
 	 * @return command success
 	 */
-	public boolean useUserCommand(int id, L2PcInstance activeChar);
+	public boolean useUserCommand(int id, PlayerInstance activeChar);
 	
 	/**
 	 * this method is called at initialization to register all the item ids automatically

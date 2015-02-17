@@ -27,7 +27,7 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2ControllableMobInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 
 /**
@@ -45,7 +45,7 @@ public class AdminKill implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		if (command.startsWith("admin_kill"))
 		{
@@ -55,7 +55,7 @@ public class AdminKill implements IAdminCommandHandler
 			if (st.hasMoreTokens())
 			{
 				String firstParam = st.nextToken();
-				L2PcInstance plyr = World.getInstance().getPlayer(firstParam);
+				PlayerInstance plyr = World.getInstance().getPlayer(firstParam);
 				if (plyr != null)
 				{
 					if (st.hasMoreTokens())
@@ -125,11 +125,11 @@ public class AdminKill implements IAdminCommandHandler
 		return true;
 	}
 	
-	private void kill(L2PcInstance activeChar, Creature target)
+	private void kill(PlayerInstance activeChar, Creature target)
 	{
-		if (target instanceof L2PcInstance)
+		if (target instanceof PlayerInstance)
 		{
-			if (!((L2PcInstance) target).isGM())
+			if (!((PlayerInstance) target).isGM())
 			{
 				target.stopAllEffects(); // e.g. invincibility effect
 			}

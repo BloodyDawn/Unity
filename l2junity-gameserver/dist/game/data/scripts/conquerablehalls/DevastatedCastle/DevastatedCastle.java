@@ -29,7 +29,7 @@ import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
 import org.l2junity.gameserver.network.NpcStringId;
 
@@ -70,7 +70,7 @@ public final class DevastatedCastle extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon)
 	{
 		if (!_hall.isInSiege())
 		{
@@ -106,7 +106,7 @@ public final class DevastatedCastle extends ClanHallSiegeEngine
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		if (!_hall.isInSiege())
 		{

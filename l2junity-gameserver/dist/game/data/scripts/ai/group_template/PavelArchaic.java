@@ -19,7 +19,7 @@
 package ai.group_template;
 
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 import ai.npc.AbstractNpcAI;
 
@@ -42,7 +42,7 @@ public final class PavelArchaic extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		if (getRandom(100) < 70)
 		{

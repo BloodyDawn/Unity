@@ -30,7 +30,7 @@ import org.l2junity.commons.util.file.filter.NumericNameFilter;
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.multisell.Entry;
 import org.l2junity.gameserver.model.multisell.Ingredient;
 import org.l2junity.gameserver.model.multisell.ListContainer;
@@ -230,7 +230,7 @@ public final class MultisellData implements IXmlReader
 	 * @param productMultiplier
 	 * @param ingredientMultiplier
 	 */
-	public final void separateAndSend(int listId, L2PcInstance player, Npc npc, boolean inventoryOnly, double productMultiplier, double ingredientMultiplier)
+	public final void separateAndSend(int listId, PlayerInstance player, Npc npc, boolean inventoryOnly, double productMultiplier, double ingredientMultiplier)
 	{
 		ListContainer template = _entries.get(listId);
 		if (template == null)
@@ -271,12 +271,12 @@ public final class MultisellData implements IXmlReader
 		player.setMultiSell(list);
 	}
 	
-	public final void separateAndSend(int listId, L2PcInstance player, Npc npc, boolean inventoryOnly)
+	public final void separateAndSend(int listId, PlayerInstance player, Npc npc, boolean inventoryOnly)
 	{
 		separateAndSend(listId, player, npc, inventoryOnly, 1, 1);
 	}
 	
-	public static final boolean hasSpecialIngredient(int id, long amount, L2PcInstance player)
+	public static final boolean hasSpecialIngredient(int id, long amount, PlayerInstance player)
 	{
 		switch (id)
 		{
@@ -308,7 +308,7 @@ public final class MultisellData implements IXmlReader
 		return false;
 	}
 	
-	public static final boolean takeSpecialIngredient(int id, long amount, L2PcInstance player)
+	public static final boolean takeSpecialIngredient(int id, long amount, PlayerInstance player)
 	{
 		switch (id)
 		{
@@ -327,7 +327,7 @@ public final class MultisellData implements IXmlReader
 		return false;
 	}
 	
-	public static final void giveSpecialProduct(int id, long amount, L2PcInstance player)
+	public static final void giveSpecialProduct(int id, long amount, PlayerInstance player)
 	{
 		switch (id)
 		{

@@ -26,7 +26,7 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2DecoyInstance;
 import org.l2junity.gameserver.model.actor.instance.L2EffectPointInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
@@ -83,7 +83,7 @@ public final class SummonNpc extends AbstractEffect
 			return;
 		}
 		
-		final L2PcInstance player = info.getEffected().getActingPlayer();
+		final PlayerInstance player = info.getEffected().getActingPlayer();
 		if (player.isMounted())
 		{
 			return;

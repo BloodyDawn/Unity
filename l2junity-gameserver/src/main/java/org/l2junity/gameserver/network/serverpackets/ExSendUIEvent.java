@@ -21,7 +21,7 @@ package org.l2junity.gameserver.network.serverpackets;
 import java.util.Arrays;
 import java.util.List;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.NpcStringId;
 
 public class ExSendUIEvent extends L2GameServerPacket
@@ -42,7 +42,7 @@ public class ExSendUIEvent extends L2GameServerPacket
 	 * @param endTime
 	 * @param text
 	 */
-	public ExSendUIEvent(L2PcInstance player, boolean hide, boolean countUp, int startTime, int endTime, String text)
+	public ExSendUIEvent(PlayerInstance player, boolean hide, boolean countUp, int startTime, int endTime, String text)
 	{
 		this(player, hide, countUp, startTime, endTime, -1, text);
 	}
@@ -56,7 +56,7 @@ public class ExSendUIEvent extends L2GameServerPacket
 	 * @param npcString
 	 * @param params
 	 */
-	public ExSendUIEvent(L2PcInstance player, boolean hide, boolean countUp, int startTime, int endTime, NpcStringId npcString, String... params)
+	public ExSendUIEvent(PlayerInstance player, boolean hide, boolean countUp, int startTime, int endTime, NpcStringId npcString, String... params)
 	{
 		this(player, hide, countUp, startTime, endTime, npcString.getId(), params);
 	}
@@ -70,7 +70,7 @@ public class ExSendUIEvent extends L2GameServerPacket
 	 * @param npcstringId
 	 * @param params
 	 */
-	public ExSendUIEvent(L2PcInstance player, boolean hide, boolean countUp, int startTime, int endTime, int npcstringId, String... params)
+	public ExSendUIEvent(PlayerInstance player, boolean hide, boolean countUp, int startTime, int endTime, int npcstringId, String... params)
 	{
 		_objectId = player.getObjectId();
 		_type = hide;

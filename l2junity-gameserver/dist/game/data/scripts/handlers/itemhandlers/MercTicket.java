@@ -22,7 +22,7 @@ import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.MercTicketManager;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -43,7 +43,7 @@ public class MercTicket implements IItemHandler
 		}
 		
 		int itemId = item.getId();
-		L2PcInstance activeChar = (L2PcInstance) playable;
+		PlayerInstance activeChar = (PlayerInstance) playable;
 		Castle castle = CastleManager.getInstance().getCastle(activeChar);
 		int castleId = -1;
 		if (castle != null)

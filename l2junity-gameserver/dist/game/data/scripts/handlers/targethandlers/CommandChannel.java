@@ -25,7 +25,7 @@ import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 
@@ -38,7 +38,7 @@ public class CommandChannel implements ITargetTypeHandler
 	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
 	{
 		final List<Creature> targetList = new ArrayList<>();
-		final L2PcInstance player = activeChar.getActingPlayer();
+		final PlayerInstance player = activeChar.getActingPlayer();
 		if (player == null)
 		{
 			return EMPTY_TARGET_LIST;
@@ -71,9 +71,9 @@ public class CommandChannel implements ITargetTypeHandler
 		
 		// Get all visible objects in a spherical area near the L2Character
 		int maxTargets = skill.getAffectLimit();
-		final List<L2PcInstance> members = hasChannel ? party.getCommandChannel().getMembers() : party.getMembers();
+		final List<PlayerInstance> members = hasChannel ? party.getCommandChannel().getMembers() : party.getMembers();
 		
-		for (L2PcInstance member : members)
+		for (PlayerInstance member : members)
 		{
 			if (activeChar == member)
 			{

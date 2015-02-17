@@ -25,7 +25,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.quest.QuestState;
@@ -78,7 +78,7 @@ public final class MithrilMine extends AbstractInstance
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final InstanceWorld world = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		
@@ -131,7 +131,7 @@ public final class MithrilMine extends AbstractInstance
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		final QuestState qs = player.getQuestState(Q10284_AcquisitionOfDivineSword.class.getSimpleName());
 		if ((qs != null))
@@ -156,7 +156,7 @@ public final class MithrilMine extends AbstractInstance
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
 		final InstanceWorld world = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		final MMWorld _world = ((MMWorld) world);
@@ -189,7 +189,7 @@ public final class MithrilMine extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance talker)
+	public String onTalk(Npc npc, PlayerInstance talker)
 	{
 		switch (npc.getId())
 		{
@@ -227,7 +227,7 @@ public final class MithrilMine extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
+	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
 	{
 		if (firstEntrance)
 		{

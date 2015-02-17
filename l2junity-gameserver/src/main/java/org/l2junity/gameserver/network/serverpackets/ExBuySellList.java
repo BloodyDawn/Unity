@@ -20,7 +20,7 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import java.util.Collection;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 /**
@@ -32,7 +32,7 @@ public class ExBuySellList extends AbstractItemPacket
 	private Collection<ItemInstance> _refundList = null;
 	private final boolean _done;
 	
-	public ExBuySellList(L2PcInstance player, boolean done)
+	public ExBuySellList(PlayerInstance player, boolean done)
 	{
 		_sellList = player.getInventory().getAvailableItems(false, false, false);
 		if (player.hasRefund())

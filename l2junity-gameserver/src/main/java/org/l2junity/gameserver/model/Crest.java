@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.model;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.network.serverpackets.AllyCrest;
 import org.l2junity.gameserver.network.serverpackets.ExPledgeEmblem;
@@ -93,7 +93,7 @@ public final class Crest implements IIdentifiable
 	 * @param activeChar the @{code L2PcInstance} where html is send to.
 	 * @return the client path to crest
 	 */
-	public String getClientPath(L2PcInstance activeChar)
+	public String getClientPath(PlayerInstance activeChar)
 	{
 		String path = null;
 		switch (getType())

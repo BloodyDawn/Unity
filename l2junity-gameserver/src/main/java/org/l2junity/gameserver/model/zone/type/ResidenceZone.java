@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.zone.type;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.L2ZoneRespawn;
 
 /**
@@ -35,7 +35,7 @@ public abstract class ResidenceZone extends L2ZoneRespawn
 	
 	public void banishForeigners(int owningClanId)
 	{
-		for (L2PcInstance temp : getPlayersInside())
+		for (PlayerInstance temp : getPlayersInside())
 		{
 			if ((owningClanId != 0) && (temp.getClanId() == owningClanId))
 			{

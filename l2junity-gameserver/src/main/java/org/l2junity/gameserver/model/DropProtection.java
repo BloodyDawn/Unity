@@ -21,7 +21,7 @@ package org.l2junity.gameserver.model;
 import java.util.concurrent.ScheduledFuture;
 
 import org.l2junity.gameserver.ThreadPoolManager;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 
 /**
@@ -30,7 +30,7 @@ import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 public class DropProtection implements Runnable
 {
 	private volatile boolean _isProtected = false;
-	private L2PcInstance _owner = null;
+	private PlayerInstance _owner = null;
 	private ScheduledFuture<?> _task = null;
 	
 	private static final long PROTECTED_MILLIS_TIME = 15000;
@@ -48,12 +48,12 @@ public class DropProtection implements Runnable
 		return _isProtected;
 	}
 	
-	public L2PcInstance getOwner()
+	public PlayerInstance getOwner()
 	{
 		return _owner;
 	}
 	
-	public synchronized boolean tryPickUp(L2PcInstance actor)
+	public synchronized boolean tryPickUp(PlayerInstance actor)
 	{
 		if (!_isProtected)
 		{
@@ -93,7 +93,7 @@ public class DropProtection implements Runnable
 		_task = null;
 	}
 	
-	public synchronized void protect(L2PcInstance player)
+	public synchronized void protect(PlayerInstance player)
 	{
 		unprotect();
 		

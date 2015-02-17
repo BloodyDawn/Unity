@@ -27,7 +27,7 @@ import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
 
@@ -44,7 +44,7 @@ public class AdminTest implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		if (command.equals("admin_stats"))
 		{
@@ -94,7 +94,7 @@ public class AdminTest implements IAdminCommandHandler
 	 * @param id
 	 * @param msu
 	 */
-	private void adminTestSkill(L2PcInstance activeChar, int id, boolean msu)
+	private void adminTestSkill(PlayerInstance activeChar, int id, boolean msu)
 	{
 		Creature caster;
 		WorldObject target = activeChar.getTarget();

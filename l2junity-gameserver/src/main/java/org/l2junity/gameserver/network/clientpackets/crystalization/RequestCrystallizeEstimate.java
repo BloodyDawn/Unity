@@ -25,7 +25,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.ItemCrystalizationData;
 import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.model.CrystalizationData;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.ItemChanceHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.CrystalType;
@@ -54,7 +54,7 @@ public class RequestCrystallizeEstimate extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = getActiveChar();
 		if ((activeChar == null) || activeChar.isInCrystallize())
 		{
 			return;

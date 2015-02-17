@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.SiegeClan;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.zone.type.SiegableHallZone;
 import org.l2junity.gameserver.model.zone.type.SiegeZone;
@@ -255,7 +255,7 @@ public final class SiegableHall extends ClanHall
 		_siegeZone.setIsActive(active);
 	}
 	
-	public final void showSiegeInfo(L2PcInstance player)
+	public final void showSiegeInfo(PlayerInstance player)
 	{
 		player.sendPacket(new SiegeInfo(this));
 	}

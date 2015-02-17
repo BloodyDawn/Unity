@@ -21,7 +21,7 @@ package handlers.effecthandlers;
 import org.l2junity.Config;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.entity.Instance;
@@ -64,8 +64,8 @@ public final class CallPc extends AbstractEffect
 			return;
 		}
 		
-		L2PcInstance target = info.getEffected().getActingPlayer();
-		L2PcInstance activeChar = info.getEffector().getActingPlayer();
+		PlayerInstance target = info.getEffected().getActingPlayer();
+		PlayerInstance activeChar = info.getEffector().getActingPlayer();
 		if (checkSummonTargetStatus(target, activeChar))
 		{
 			if ((_itemId != 0) && (_itemCount != 0))
@@ -93,7 +93,7 @@ public final class CallPc extends AbstractEffect
 		}
 	}
 	
-	public static boolean checkSummonTargetStatus(L2PcInstance target, L2PcInstance activeChar)
+	public static boolean checkSummonTargetStatus(PlayerInstance target, PlayerInstance activeChar)
 	{
 		if (target == activeChar)
 		{

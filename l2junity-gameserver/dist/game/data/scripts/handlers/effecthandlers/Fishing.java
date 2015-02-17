@@ -25,7 +25,7 @@ import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
@@ -77,7 +77,7 @@ public final class Fishing extends AbstractEffect
 			return;
 		}
 		
-		final L2PcInstance player = activeChar.getActingPlayer();
+		final PlayerInstance player = activeChar.getActingPlayer();
 		
 		if (!Config.ALLOWFISHING && !player.canOverrideCond(PcCondOverride.SKILL_CONDITIONS))
 		{
@@ -234,7 +234,7 @@ public final class Fishing extends AbstractEffect
 	 * @param waterZone the water zone
 	 * @return the bait z or {@link Integer#MIN_VALUE} when you cannot fish here
 	 */
-	private static int computeBaitZ(final L2PcInstance player, final int baitX, final int baitY, final FishingZone fishingZone, final WaterZone waterZone)
+	private static int computeBaitZ(final PlayerInstance player, final int baitX, final int baitY, final FishingZone fishingZone, final WaterZone waterZone)
 	{
 		if ((fishingZone == null))
 		{

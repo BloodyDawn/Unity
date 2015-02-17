@@ -26,7 +26,7 @@ import org.l2junity.gameserver.handler.IActionHandler;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.L2Event;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.EventType;
@@ -58,7 +58,7 @@ public class L2NpcAction implements IActionHandler
 	 * @param activeChar The L2PcInstance that start an action on the L2Npc
 	 */
 	@Override
-	public boolean action(L2PcInstance activeChar, WorldObject target, boolean interact)
+	public boolean action(PlayerInstance activeChar, WorldObject target, boolean interact)
 	{
 		if (!((Npc) target).canTarget(activeChar))
 		{

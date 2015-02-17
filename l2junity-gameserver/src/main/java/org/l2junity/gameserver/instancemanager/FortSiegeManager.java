@@ -36,7 +36,7 @@ import org.l2junity.gameserver.model.CombatFlag;
 import org.l2junity.gameserver.model.FortSiegeSpawn;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.FortSiege;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -69,7 +69,7 @@ public final class FortSiegeManager
 		load();
 	}
 	
-	public final void addSiegeSkills(L2PcInstance character)
+	public final void addSiegeSkills(PlayerInstance character)
 	{
 		character.addSkill(CommonSkill.SEAL_OF_RULER.getSkill(), false);
 		character.addSkill(CommonSkill.BUILD_HEADQUARTERS.getSkill(), false);
@@ -109,7 +109,7 @@ public final class FortSiegeManager
 		return register;
 	}
 	
-	public final void removeSiegeSkills(L2PcInstance character)
+	public final void removeSiegeSkills(PlayerInstance character)
 	{
 		character.removeSkill(CommonSkill.SEAL_OF_RULER.getSkill());
 		character.removeSkill(CommonSkill.BUILD_HEADQUARTERS.getSkill());
@@ -292,7 +292,7 @@ public final class FortSiegeManager
 		return (itemId == 9819);
 	}
 	
-	public boolean activateCombatFlag(L2PcInstance player, ItemInstance item)
+	public boolean activateCombatFlag(PlayerInstance player, ItemInstance item)
 	{
 		if (!checkIfCanPickup(player))
 		{
@@ -312,7 +312,7 @@ public final class FortSiegeManager
 		return true;
 	}
 	
-	public boolean checkIfCanPickup(L2PcInstance player)
+	public boolean checkIfCanPickup(PlayerInstance player)
 	{
 		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THE_FORTRESS_BATTLE_OF_S1_HAS_FINISHED);
 		sm.addItemName(9819);
@@ -345,7 +345,7 @@ public final class FortSiegeManager
 		return true;
 	}
 	
-	public void dropCombatFlag(L2PcInstance player, int fortId)
+	public void dropCombatFlag(PlayerInstance player, int fortId)
 	{
 		final Fort fort = FortManager.getInstance().getFortById(fortId);
 		

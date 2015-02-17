@@ -26,7 +26,7 @@ import java.util.Map;
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.primeshop.PrimeShopGroup;
 import org.l2junity.gameserver.model.primeshop.PrimeShopItem;
@@ -116,7 +116,7 @@ public class PrimeShopData implements IXmlReader
 		}
 	}
 	
-	public void showProductInfo(L2PcInstance player, int brId)
+	public void showProductInfo(PlayerInstance player, int brId)
 	{
 		final PrimeShopGroup item = _primeItems.get(brId);
 		

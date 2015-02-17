@@ -21,7 +21,7 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.RecipeController;
 import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -52,7 +52,7 @@ public final class OpenCommonRecipeBook extends AbstractEffect
 			return;
 		}
 		
-		L2PcInstance player = info.getEffector().getActingPlayer();
+		PlayerInstance player = info.getEffector().getActingPlayer();
 		if (player.getPrivateStoreType() != PrivateStoreType.NONE)
 		{
 			player.sendPacket(SystemMessageId.ITEM_CREATION_IS_NOT_POSSIBLE_WHILE_ENGAGED_IN_A_TRADE);

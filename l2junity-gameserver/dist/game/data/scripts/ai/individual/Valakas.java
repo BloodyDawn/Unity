@@ -33,7 +33,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -187,7 +187,7 @@ public final class Valakas extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if (npc != null)
 		{
@@ -200,7 +200,7 @@ public final class Valakas extends AbstractNpcAI
 				npc.teleToLocation(VALAKAS_LAIR);
 				
 				// Sound + socialAction.
-				for (L2PcInstance plyr : ZONE.getPlayersInside())
+				for (PlayerInstance plyr : ZONE.getPlayersInside())
 				{
 					plyr.sendPacket(new PlaySound(1, "B03_A", 0, 0, 0, 0, 0));
 					plyr.sendPacket(new SocialAction(npc.getObjectId(), 3));
@@ -385,7 +385,7 @@ public final class Valakas extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon)
 	{
 		if (!ZONE.isInsideZone(attacker))
 		{
@@ -420,7 +420,7 @@ public final class Valakas extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		// Cancel skill_task and regen_task.
 		cancelQuestTimer("regen_task", npc, null);
@@ -454,7 +454,7 @@ public final class Valakas extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAggroRangeEnter(Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAggroRangeEnter(Npc npc, PlayerInstance player, boolean isSummon)
 	{
 		return null;
 	}

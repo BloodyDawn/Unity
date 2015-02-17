@@ -24,7 +24,7 @@ import org.l2junity.gameserver.instancemanager.GlobalVariablesManager;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.util.Broadcast;
 
 import ai.npc.AbstractNpcAI;
@@ -72,7 +72,7 @@ public final class HellboundEngine extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if (event.equals(UPDATE_EVENT))
 		{
@@ -224,7 +224,7 @@ public final class HellboundEngine extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		final int npcId = npc.getId();
 		final HellboundPointData hellboundPointData = HellboundPointData.getInstance();

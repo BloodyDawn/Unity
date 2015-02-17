@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
@@ -32,7 +32,7 @@ public class ExAlchemySkillList extends L2GameServerPacket
 {
 	private final List<Skill> _skills = new ArrayList<>();
 	
-	public ExAlchemySkillList(final L2PcInstance player)
+	public ExAlchemySkillList(final PlayerInstance player)
 	{
 		for (Skill skill : player.getAllSkills())
 		{

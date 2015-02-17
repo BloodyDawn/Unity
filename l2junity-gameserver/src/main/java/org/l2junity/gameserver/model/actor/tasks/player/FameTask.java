@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.model.actor.tasks.player;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.network.serverpackets.UserInfo;
@@ -30,10 +30,10 @@ import org.l2junity.gameserver.network.serverpackets.UserInfo;
  */
 public class FameTask implements Runnable
 {
-	private final L2PcInstance _player;
+	private final PlayerInstance _player;
 	private final int _value;
 	
-	public FameTask(L2PcInstance player, int value)
+	public FameTask(PlayerInstance player, int value)
 	{
 		_player = player;
 		_value = value;

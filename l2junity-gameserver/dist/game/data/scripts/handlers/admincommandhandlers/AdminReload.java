@@ -46,7 +46,7 @@ import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.instancemanager.WalkingManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.scripting.ScriptEngineManager;
 import org.l2junity.gameserver.util.Util;
 
@@ -65,7 +65,7 @@ public class AdminReload implements IAdminCommandHandler
 	private static final String RELOAD_USAGE = "Usage: //reload <config|access|npc|quest [quest_id|quest_name]|walker|htm[l] [file|directory]|multisell|buylist|teleport|skill|item|door|effect|handler|enchant>";
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		final StringTokenizer st = new StringTokenizer(command, " ");
 		final String actualCommand = st.nextToken();

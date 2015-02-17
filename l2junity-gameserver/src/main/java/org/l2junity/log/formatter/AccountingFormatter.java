@@ -20,7 +20,7 @@ package org.l2junity.log.formatter;
 
 import java.util.logging.LogRecord;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.L2GameClient;
 
 public class AccountingFormatter extends AbstractFormatter
@@ -85,9 +85,9 @@ public class AccountingFormatter extends AbstractFormatter
 							throw new IllegalStateException("Missing state on switch");
 					}
 				}
-				else if (p instanceof L2PcInstance)
+				else if (p instanceof PlayerInstance)
 				{
-					L2PcInstance player = (L2PcInstance) p;
+					PlayerInstance player = (PlayerInstance) p;
 					output.append(player.getName());
 					output.append("(");
 					output.append(player.getObjectId());

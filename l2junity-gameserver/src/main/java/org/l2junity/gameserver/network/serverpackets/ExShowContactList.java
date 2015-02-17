@@ -20,7 +20,7 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import java.util.List;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author UnAfraid, mrTJO
@@ -29,7 +29,7 @@ public class ExShowContactList extends L2GameServerPacket
 {
 	private final List<String> _contacts;
 	
-	public ExShowContactList(L2PcInstance player)
+	public ExShowContactList(PlayerInstance player)
 	{
 		_contacts = player.getContactList().getAllContacts();
 	}

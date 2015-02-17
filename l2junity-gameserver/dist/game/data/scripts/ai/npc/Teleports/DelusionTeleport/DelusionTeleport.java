@@ -24,7 +24,7 @@ import java.util.Map;
 import org.l2junity.gameserver.instancemanager.TownManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.type.TownZone;
 
 import ai.npc.AbstractNpcAI;
@@ -76,7 +76,7 @@ public final class DelusionTeleport extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		if (npc.getId() == NPCS[0]) // Pathfinder Worker
 		{

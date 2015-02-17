@@ -44,7 +44,7 @@ import java.util.logging.Logger;
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.L2GameClient.GameClientState;
@@ -286,7 +286,7 @@ public class LoginServerThread extends Thread
 							if (World.getInstance().getAllPlayersCount() > 0)
 							{
 								final List<String> playerList = new ArrayList<>();
-								for (L2PcInstance player : World.getInstance().getPlayers())
+								for (PlayerInstance player : World.getInstance().getPlayers())
 								{
 									playerList.add(player.getAccountName());
 								}

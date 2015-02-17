@@ -24,7 +24,7 @@ import java.util.logging.Level;
 import org.l2junity.gameserver.LoginServerThread;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.handler.IVoicedCommandHandler;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 
 /**
@@ -38,7 +38,7 @@ public class ChangePassword implements IVoicedCommandHandler
 	};
 	
 	@Override
-	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String target)
+	public boolean useVoicedCommand(String command, PlayerInstance activeChar, String target)
 	{
 		if (target != null)
 		{

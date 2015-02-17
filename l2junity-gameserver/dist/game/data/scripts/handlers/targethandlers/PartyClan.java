@@ -25,7 +25,7 @@ import java.util.List;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
@@ -47,7 +47,7 @@ public class PartyClan implements ITargetTypeHandler
 			};
 		}
 		
-		final L2PcInstance player = activeChar.getActingPlayer();
+		final PlayerInstance player = activeChar.getActingPlayer();
 		
 		if (player == null)
 		{
@@ -80,9 +80,9 @@ public class PartyClan implements ITargetTypeHandler
 		}
 		
 		// Get all visible objects in a spherical area near the L2Character
-		final Collection<L2PcInstance> objs = activeChar.getKnownList().getKnownPlayersInRadius(radius);
+		final Collection<PlayerInstance> objs = activeChar.getKnownList().getKnownPlayersInRadius(radius);
 		int maxTargets = skill.getAffectLimit();
-		for (L2PcInstance obj : objs)
+		for (PlayerInstance obj : objs)
 		{
 			if (obj == null)
 			{

@@ -54,13 +54,13 @@ public final class L2BabyPetInstance extends L2PetInstance
 	
 	protected boolean _bufferMode = true;
 	
-	public L2BabyPetInstance(L2NpcTemplate template, L2PcInstance owner, ItemInstance control)
+	public L2BabyPetInstance(L2NpcTemplate template, PlayerInstance owner, ItemInstance control)
 	{
 		super(template, owner, control);
 		setInstanceType(InstanceType.L2BabyPetInstance);
 	}
 	
-	public L2BabyPetInstance(L2NpcTemplate template, L2PcInstance owner, ItemInstance control, byte level)
+	public L2BabyPetInstance(L2NpcTemplate template, PlayerInstance owner, ItemInstance control, byte level)
 	{
 		super(template, owner, control, level);
 		setInstanceType(InstanceType.L2BabyPetInstance);
@@ -147,7 +147,7 @@ public final class L2BabyPetInstance extends L2PetInstance
 	}
 	
 	@Override
-	public synchronized void unSummon(L2PcInstance owner)
+	public synchronized void unSummon(PlayerInstance owner)
 	{
 		stopCastTask();
 		abortCast();
@@ -250,7 +250,7 @@ public final class L2BabyPetInstance extends L2PetInstance
 		@Override
 		public void run()
 		{
-			final L2PcInstance owner = _baby.getOwner();
+			final PlayerInstance owner = _baby.getOwner();
 			// If the owner doesn't meet the conditions avoid casting.
 			if ((owner == null) || owner.isDead() || owner.isInvul())
 			{

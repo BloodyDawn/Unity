@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.model;
 
 import org.l2junity.gameserver.ThreadPoolManager;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
@@ -32,13 +32,13 @@ public class L2Request
 {
 	private static final int REQUEST_TIMEOUT = 15; // in secs
 	
-	protected L2PcInstance _player;
-	protected L2PcInstance _partner;
+	protected PlayerInstance _player;
+	protected PlayerInstance _partner;
 	protected boolean _isRequestor;
 	protected boolean _isAnswerer;
 	protected L2GameClientPacket _requestPacket;
 	
-	public L2Request(L2PcInstance player)
+	public L2Request(PlayerInstance player)
 	{
 		_player = player;
 	}
@@ -55,7 +55,7 @@ public class L2Request
 	 * Set the L2PcInstance member of a transaction (ex : FriendInvite, JoinAlly, JoinParty...).
 	 * @param partner
 	 */
-	private synchronized void setPartner(L2PcInstance partner)
+	private synchronized void setPartner(PlayerInstance partner)
 	{
 		_partner = partner;
 	}
@@ -63,7 +63,7 @@ public class L2Request
 	/**
 	 * @return the L2PcInstance member of a transaction (ex : FriendInvite, JoinAlly, JoinParty...).
 	 */
-	public L2PcInstance getPartner()
+	public PlayerInstance getPartner()
 	{
 		return _partner;
 	}
@@ -92,7 +92,7 @@ public class L2Request
 	 * @param packet
 	 * @return
 	 */
-	public synchronized boolean setRequest(L2PcInstance partner, L2GameClientPacket packet)
+	public synchronized boolean setRequest(PlayerInstance partner, L2GameClientPacket packet)
 	{
 		if (partner == null)
 		{

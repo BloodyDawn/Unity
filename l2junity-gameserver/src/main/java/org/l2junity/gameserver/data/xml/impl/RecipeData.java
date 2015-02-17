@@ -28,7 +28,7 @@ import org.l2junity.gameserver.model.RecipeInstance;
 import org.l2junity.gameserver.model.RecipeList;
 import org.l2junity.gameserver.model.RecipeStatInstance;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -249,7 +249,7 @@ public class RecipeData implements IXmlReader
 	 * @param id the recipe list id
 	 * @return the valid recipe list
 	 */
-	public RecipeList getValidRecipeList(L2PcInstance player, int id)
+	public RecipeList getValidRecipeList(PlayerInstance player, int id)
 	{
 		RecipeList recipeList = _recipes.get(id);
 		if ((recipeList == null) || (recipeList.getRecipes().length == 0))

@@ -25,7 +25,7 @@ import java.util.Collections;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.instancemanager.MentorManager;
 import org.l2junity.gameserver.model.Mentee;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
 
 /**
@@ -36,7 +36,7 @@ public class ExMentorList extends L2GameServerPacket
 	private final int _type;
 	private final Collection<Mentee> _mentees;
 	
-	public ExMentorList(L2PcInstance activeChar)
+	public ExMentorList(PlayerInstance activeChar)
 	{
 		if (activeChar.isMentor())
 		{

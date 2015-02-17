@@ -20,7 +20,7 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.handler.BypassHandler;
 import org.l2junity.gameserver.handler.IBypassHandler;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * format ch c: (id) 0xD0 h: (subid) 0x13
@@ -40,7 +40,7 @@ public final class RequestOlympiadMatchList extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getClient().getActiveChar();
 		if ((activeChar == null) || !activeChar.inObserverMode())
 		{
 			return;

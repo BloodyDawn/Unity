@@ -23,7 +23,7 @@ import java.util.Map;
 
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2VillageMasterFighterInstance;
 import org.l2junity.gameserver.model.actor.instance.L2VillageMasterPriestInstance;
 
@@ -65,13 +65,13 @@ public final class FirstClassTransferTalk extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		return event;
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		String htmltext = npc.getId() + "_";
 		

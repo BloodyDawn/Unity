@@ -23,7 +23,7 @@ import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.instancemanager.MailManager;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Message;
 import org.l2junity.gameserver.model.itemcontainer.ItemContainer;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -54,7 +54,7 @@ public final class RequestCancelPostAttachment extends L2GameClientPacket
 	@Override
 	public void runImpl()
 	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getClient().getActiveChar();
 		if ((activeChar == null) || !Config.ALLOW_MAIL || !Config.ALLOW_ATTACHMENTS)
 		{
 			return;
@@ -212,7 +212,7 @@ public final class RequestCancelPostAttachment extends L2GameClientPacket
 		// Update current load status on player
 		activeChar.sendPacket(new ExUserInfoInvenWeight(activeChar));
 		
-		final L2PcInstance receiver = World.getInstance().getPlayer(msg.getReceiverId());
+		final PlayerInstance receiver = World.getInstance().getPlayer(msg.getReceiverId());
 		if (receiver != null)
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANCELED_THE_SENT_MAIL);

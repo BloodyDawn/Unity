@@ -23,7 +23,7 @@ import java.util.Set;
 
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.holders.NpcLogListHolder;
 import org.l2junity.gameserver.model.quest.Quest;
@@ -63,7 +63,7 @@ public class Q10323_TrainLikeItsReal extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
@@ -157,7 +157,7 @@ public class Q10323_TrainLikeItsReal extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = null;
@@ -245,7 +245,7 @@ public class Q10323_TrainLikeItsReal extends Quest
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(killer, false);
 		
@@ -288,7 +288,7 @@ public class Q10323_TrainLikeItsReal extends Quest
 	}
 	
 	@Override
-	public Set<NpcLogListHolder> getNpcLogList(L2PcInstance activeChar)
+	public Set<NpcLogListHolder> getNpcLogList(PlayerInstance activeChar)
 	{
 		final QuestState qs = getQuestState(activeChar, false);
 		final Set<NpcLogListHolder> npcLogList = new HashSet<>(1);

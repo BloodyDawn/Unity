@@ -48,7 +48,7 @@ import org.l2junity.gameserver.model.actor.instance.L2FriendlyMobInstance;
 import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
 import org.l2junity.gameserver.model.actor.instance.L2GuardInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2RaidBossInstance;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
@@ -157,7 +157,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		if (target.isInvul())
 		{
 			// However EffectInvincible requires to check GMs specially
-			if ((target instanceof L2PcInstance) && target.isGM())
+			if ((target instanceof PlayerInstance) && target.isGM())
 			{
 				return false;
 			}
@@ -190,7 +190,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		}
 		
 		// Gets the player if there is any.
-		final L2PcInstance player = target.getActingPlayer();
+		final PlayerInstance player = target.getActingPlayer();
 		if (player != null)
 		{
 			// Don't take the aggro if the GM has the access level below or equal to GM_DONT_TAKE_AGGRO
@@ -231,7 +231,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			}
 			
 			// Check if the L2PcInstance target has karma (=PK)
-			if ((target instanceof L2PcInstance) && (((L2PcInstance) target).getKarma() > 0))
+			if ((target instanceof PlayerInstance) && (((PlayerInstance) target).getKarma() > 0))
 			{
 				return GeoData.getInstance().canSeeTarget(me, target); // Los Check
 			}
@@ -2065,7 +2065,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 						continue;
 					}
 					
-					if ((obj instanceof L2PcInstance) || (obj instanceof Summon))
+					if ((obj instanceof PlayerInstance) || (obj instanceof Summon))
 					{
 						if (dist2 <= range)
 						{
@@ -2148,7 +2148,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					continue;
 				}
 				
-				if ((obj instanceof L2PcInstance) || (obj instanceof Summon))
+				if ((obj instanceof PlayerInstance) || (obj instanceof Summon))
 				{
 					
 					if (dist2 <= range)
@@ -2225,7 +2225,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					continue;
 				}
-				if (obj instanceof L2PcInstance)
+				if (obj instanceof PlayerInstance)
 				{
 					return obj;
 					
@@ -2312,7 +2312,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					continue;
 				}
-				if (obj instanceof L2PcInstance)
+				if (obj instanceof PlayerInstance)
 				{
 					if (MostHate != null)
 					{
@@ -2427,7 +2427,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				{
 					continue;
 				}
-				if (obj instanceof L2PcInstance)
+				if (obj instanceof PlayerInstance)
 				{
 					if ((MostHate != null) && !MostHate.isDead())
 					{

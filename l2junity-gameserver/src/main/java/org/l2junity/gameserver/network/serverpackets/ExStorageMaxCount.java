@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.stats.Stats;
 
 /**
@@ -38,7 +38,7 @@ public class ExStorageMaxCount extends L2GameServerPacket
 	private final int _inventoryExtraSlots;
 	private final int _inventoryQuestItems;
 	
-	public ExStorageMaxCount(L2PcInstance activeChar)
+	public ExStorageMaxCount(PlayerInstance activeChar)
 	{
 		_inventory = activeChar.getInventoryLimit();
 		_warehouse = activeChar.getWareHouseLimit();

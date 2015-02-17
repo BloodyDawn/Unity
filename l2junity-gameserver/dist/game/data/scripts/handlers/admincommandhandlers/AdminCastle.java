@@ -26,7 +26,7 @@ import org.l2junity.gameserver.enums.CastleSide;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.model.L2Clan;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -44,7 +44,7 @@ public final class AdminCastle implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		final StringTokenizer st = new StringTokenizer(command, " ");
 		final String actualCommand = st.nextToken();
@@ -77,7 +77,7 @@ public final class AdminCastle implements IAdminCommandHandler
 				else
 				{
 					final String action = st.nextToken();
-					final L2PcInstance target = checkTarget(activeChar) ? activeChar.getActingPlayer() : null;
+					final PlayerInstance target = checkTarget(activeChar) ? activeChar.getActingPlayer() : null;
 					switch (action)
 					{
 						case "showRegWindow":
@@ -232,7 +232,7 @@ public final class AdminCastle implements IAdminCommandHandler
 		return true;
 	}
 	
-	private void showCastleMenu(L2PcInstance player, int castleId)
+	private void showCastleMenu(PlayerInstance player, int castleId)
 	{
 		final Castle castle = CastleManager.getInstance().getCastleById(castleId);
 		
@@ -250,9 +250,9 @@ public final class AdminCastle implements IAdminCommandHandler
 		}
 	}
 	
-	private boolean checkTarget(L2PcInstance player)
+	private boolean checkTarget(PlayerInstance player)
 	{
-		return ((player.getTarget() != null) && player.getTarget().isPlayer() && (((L2PcInstance) player.getTarget()).getClan() != null));
+		return ((player.getTarget() != null) && player.getTarget().isPlayer() && (((PlayerInstance) player.getTarget()).getClan() != null));
 	}
 	
 	@Override

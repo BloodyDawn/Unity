@@ -22,7 +22,7 @@ import java.util.logging.Logger;
 
 import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * This class handles following admin commands: - gm = turns gm mode off
@@ -37,7 +37,7 @@ public class AdminGm implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		if (command.equals("admin_gm") && activeChar.isGM())
 		{

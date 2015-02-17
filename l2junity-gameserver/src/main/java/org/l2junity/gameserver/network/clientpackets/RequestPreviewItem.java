@@ -27,7 +27,7 @@ import org.l2junity.gameserver.data.xml.impl.BuyListData;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.buylist.L2BuyList;
 import org.l2junity.gameserver.model.buylist.Product;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
@@ -59,9 +59,9 @@ public final class RequestPreviewItem extends L2GameClientPacket
 	
 	private class RemoveWearItemsTask implements Runnable
 	{
-		private final L2PcInstance activeChar;
+		private final PlayerInstance activeChar;
 		
-		protected RemoveWearItemsTask(L2PcInstance player)
+		protected RemoveWearItemsTask(PlayerInstance player)
 		{
 			activeChar = player;
 		}
@@ -116,7 +116,7 @@ public final class RequestPreviewItem extends L2GameClientPacket
 		}
 		
 		// Get the current player and return if null
-		L2PcInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;

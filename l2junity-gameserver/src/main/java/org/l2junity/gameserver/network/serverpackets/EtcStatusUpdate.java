@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.ZoneId;
 
 /**
@@ -26,10 +26,10 @@ import org.l2junity.gameserver.model.zone.ZoneId;
  */
 public class EtcStatusUpdate extends L2GameServerPacket
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private int _mask;
 	
-	public EtcStatusUpdate(L2PcInstance activeChar)
+	public EtcStatusUpdate(PlayerInstance activeChar)
 	{
 		_activeChar = activeChar;
 		_mask = _activeChar.getMessageRefusal() || _activeChar.isChatBanned() || _activeChar.isSilenceMode() ? 1 : 0;

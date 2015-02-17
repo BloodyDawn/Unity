@@ -29,7 +29,7 @@ import org.l2junity.gameserver.data.xml.impl.BuyListData;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.buylist.L2BuyList;
 import org.l2junity.gameserver.model.holders.UniqueItemHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -83,7 +83,7 @@ public final class RequestSellItem extends L2GameClientPacket
 	
 	protected void processSell()
 	{
-		L2PcInstance player = getClient().getActiveChar();
+		PlayerInstance player = getClient().getActiveChar();
 		
 		if (player == null)
 		{

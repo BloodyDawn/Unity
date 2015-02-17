@@ -22,7 +22,7 @@ import java.util.List;
 
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 import javolution.util.FastList;
@@ -33,12 +33,12 @@ import javolution.util.FastList;
  */
 public class SellList extends L2GameServerPacket
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final L2MerchantInstance _lease;
 	private final long _money;
 	private final List<ItemInstance> _selllist = new FastList<>();
 	
-	public SellList(L2PcInstance player)
+	public SellList(PlayerInstance player)
 	{
 		_activeChar = player;
 		_lease = null;
@@ -46,7 +46,7 @@ public class SellList extends L2GameServerPacket
 		doLease();
 	}
 	
-	public SellList(L2PcInstance player, L2MerchantInstance lease)
+	public SellList(PlayerInstance player, L2MerchantInstance lease)
 	{
 		_activeChar = player;
 		_lease = lease;

@@ -23,7 +23,7 @@ import java.util.List;
 
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.model.SkillLearn;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.ListenersContainer;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.interfaces.INamable;
@@ -91,7 +91,7 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 		return _residentialSkills;
 	}
 	
-	public void giveResidentialSkills(L2PcInstance player)
+	public void giveResidentialSkills(PlayerInstance player)
 	{
 		if ((_residentialSkills != null) && !_residentialSkills.isEmpty())
 		{
@@ -102,7 +102,7 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 		}
 	}
 	
-	public void removeResidentialSkills(L2PcInstance player)
+	public void removeResidentialSkills(PlayerInstance player)
 	{
 		if ((_residentialSkills != null) && !_residentialSkills.isEmpty())
 		{

@@ -21,7 +21,7 @@ package handlers.chathandlers;
 import org.l2junity.Config;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.handler.IChatHandler;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.CreatureSay;
 
@@ -37,7 +37,7 @@ public final class ChatPartyRoomAll implements IChatHandler
 	};
 	
 	@Override
-	public void handleChat(ChatType type, L2PcInstance activeChar, String target, String text)
+	public void handleChat(ChatType type, PlayerInstance activeChar, String target, String text)
 	{
 		if (activeChar.isInParty())
 		{

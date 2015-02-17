@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.RecipeItemMakeInfo;
 
 public final class RequestRecipeItemMakeInfo extends L2GameClientPacket
@@ -36,7 +36,7 @@ public final class RequestRecipeItemMakeInfo extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance player = getClient().getActiveChar();
+		final PlayerInstance player = getClient().getActiveChar();
 		if (player == null)
 		{
 			return;

@@ -20,7 +20,7 @@ package handlers.admincommandhandlers;
 
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * This class handles following admin commands: - character_disconnect = disconnects target player
@@ -34,7 +34,7 @@ public class AdminDisconnect implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		if (command.equals("admin_character_disconnect"))
 		{
@@ -49,13 +49,13 @@ public class AdminDisconnect implements IAdminCommandHandler
 		return ADMIN_COMMANDS;
 	}
 	
-	private void disconnectCharacter(L2PcInstance activeChar)
+	private void disconnectCharacter(PlayerInstance activeChar)
 	{
 		WorldObject target = activeChar.getTarget();
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance)
+		PlayerInstance player = null;
+		if (target instanceof PlayerInstance)
 		{
-			player = (L2PcInstance) target;
+			player = (PlayerInstance) target;
 		}
 		else
 		{

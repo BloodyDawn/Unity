@@ -21,7 +21,7 @@ package quests.Q10326_RespectYourElders;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
@@ -70,7 +70,7 @@ public class Q10326_RespectYourElders extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
@@ -104,7 +104,7 @@ public class Q10326_RespectYourElders extends Quest
 			}
 			case "CHECK_PLAYER":
 			{
-				final L2PcInstance owner = npc.getVariables().getObject("OWNER", L2PcInstance.class);
+				final PlayerInstance owner = npc.getVariables().getObject("OWNER", PlayerInstance.class);
 				if (owner != null)
 				{
 					if (npc.calculateDistance(owner, false, false) < 120)
@@ -171,7 +171,7 @@ public class Q10326_RespectYourElders extends Quest
 	public void onMoveFinished(Npc npc)
 	{
 		npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getTemplate().getDisplayId(), NpcStringId.COME_ON_CREEK));
-		final L2PcInstance owner = npc.getVariables().getObject("OWNER", L2PcInstance.class);
+		final PlayerInstance owner = npc.getVariables().getObject("OWNER", PlayerInstance.class);
 		
 		if (owner != null)
 		{
@@ -182,7 +182,7 @@ public class Q10326_RespectYourElders extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = null;

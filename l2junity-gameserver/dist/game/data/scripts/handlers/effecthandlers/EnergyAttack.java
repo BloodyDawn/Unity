@@ -22,7 +22,7 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
@@ -75,7 +75,7 @@ public final class EnergyAttack extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		final L2PcInstance attacker = info.getEffector() instanceof L2PcInstance ? (L2PcInstance) info.getEffector() : null;
+		final PlayerInstance attacker = info.getEffector() instanceof PlayerInstance ? (PlayerInstance) info.getEffector() : null;
 		if (attacker == null)
 		{
 			return;
@@ -141,7 +141,7 @@ public final class EnergyAttack extends AbstractEffect
 			
 			damage = attack / defence;
 			damage *= damageMultiplier;
-			if (target instanceof L2PcInstance)
+			if (target instanceof PlayerInstance)
 			{
 				damage *= attacker.getStat().calcStat(Stats.PVP_PHYS_SKILL_DMG, 1.0);
 				damage *= target.getStat().calcStat(Stats.PVP_PHYS_SKILL_DEF, 1.0);

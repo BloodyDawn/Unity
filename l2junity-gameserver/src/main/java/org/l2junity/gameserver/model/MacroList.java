@@ -35,7 +35,7 @@ import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.enums.MacroType;
 import org.l2junity.gameserver.enums.MacroUpdateType;
 import org.l2junity.gameserver.enums.ShortcutType;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.interfaces.IRestorable;
 import org.l2junity.gameserver.network.serverpackets.SendMacroList;
 
@@ -43,11 +43,11 @@ public class MacroList implements IRestorable
 {
 	private static final Logger _log = Logger.getLogger(MacroList.class.getName());
 	
-	private final L2PcInstance _owner;
+	private final PlayerInstance _owner;
 	private int _macroId;
 	private final Map<Integer, Macro> _macroses = Collections.synchronizedMap(new LinkedHashMap<Integer, Macro>());
 	
-	public MacroList(L2PcInstance owner)
+	public MacroList(PlayerInstance owner)
 	{
 		_owner = owner;
 		_macroId = 1000;

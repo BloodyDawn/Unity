@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.olympiad.Participant;
 
 /**
@@ -26,14 +26,14 @@ import org.l2junity.gameserver.model.olympiad.Participant;
  */
 public class ExOlympiadUserInfo extends L2GameServerPacket
 {
-	private final L2PcInstance _player;
+	private final PlayerInstance _player;
 	private Participant _par = null;
 	private int _curHp;
 	private int _maxHp;
 	private int _curCp;
 	private int _maxCp;
 	
-	public ExOlympiadUserInfo(L2PcInstance player)
+	public ExOlympiadUserInfo(PlayerInstance player)
 	{
 		_player = player;
 		if (_player != null)

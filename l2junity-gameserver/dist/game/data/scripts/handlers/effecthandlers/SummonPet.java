@@ -24,7 +24,7 @@ import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.data.xml.impl.PetDataTable;
 import org.l2junity.gameserver.model.PetData;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.conditions.Condition;
@@ -67,7 +67,7 @@ public final class SummonPet extends AbstractEffect
 			return;
 		}
 		
-		final L2PcInstance player = info.getEffector().getActingPlayer();
+		final PlayerInstance player = info.getEffector().getActingPlayer();
 		
 		if (player.hasPet() || player.isMounted())
 		{

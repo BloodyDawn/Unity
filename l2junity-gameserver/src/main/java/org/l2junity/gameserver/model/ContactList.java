@@ -27,7 +27,7 @@ import java.util.logging.Logger;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
@@ -43,14 +43,14 @@ import javolution.util.FastList;
 public class ContactList
 {
 	private final Logger _log = Logger.getLogger(getClass().getName());
-	private final L2PcInstance activeChar;
+	private final PlayerInstance activeChar;
 	private final List<String> _contacts;
 	
 	private static final String QUERY_ADD = "INSERT INTO character_contacts (charId, contactId) VALUES (?, ?)";
 	private static final String QUERY_REMOVE = "DELETE FROM character_contacts WHERE charId = ? and contactId = ?";
 	private static final String QUERY_LOAD = "SELECT contactId FROM character_contacts WHERE charId = ?";
 	
-	public ContactList(L2PcInstance player)
+	public ContactList(PlayerInstance player)
 	{
 		activeChar = player;
 		_contacts = new FastList<String>().shared();

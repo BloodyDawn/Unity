@@ -25,7 +25,7 @@ import java.util.logging.Level;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.impl.EnchantItemGroupsData;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.EtcItemType;
 import org.l2junity.gameserver.model.items.type.ItemType;
@@ -132,7 +132,7 @@ public final class EnchantScroll extends AbstractEnchantItem
 	 * @param enchantItem
 	 * @return the chance of current scroll's group.
 	 */
-	public double getChance(L2PcInstance player, ItemInstance enchantItem)
+	public double getChance(PlayerInstance player, ItemInstance enchantItem)
 	{
 		if (EnchantItemGroupsData.getInstance().getScrollGroup(_scrollGroupId) == null)
 		{
@@ -155,7 +155,7 @@ public final class EnchantScroll extends AbstractEnchantItem
 	 * @param supportItem
 	 * @return the total chance for success rate of this scroll
 	 */
-	public EnchantResultType calculateSuccess(L2PcInstance player, ItemInstance enchantItem, EnchantSupportItem supportItem)
+	public EnchantResultType calculateSuccess(PlayerInstance player, ItemInstance enchantItem, EnchantSupportItem supportItem)
 	{
 		if (!isValid(enchantItem, supportItem))
 		{

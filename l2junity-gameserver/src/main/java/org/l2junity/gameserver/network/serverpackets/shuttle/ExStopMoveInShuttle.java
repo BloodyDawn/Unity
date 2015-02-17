@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.serverpackets.shuttle;
 
 import org.l2junity.gameserver.model.Location;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
 
 /**
@@ -32,7 +32,7 @@ public class ExStopMoveInShuttle extends L2GameServerPacket
 	private final Location _pos;
 	private final int _heading;
 	
-	public ExStopMoveInShuttle(L2PcInstance player, int boatId)
+	public ExStopMoveInShuttle(PlayerInstance player, int boatId)
 	{
 		_charObjId = player.getObjectId();
 		_boatId = boatId;

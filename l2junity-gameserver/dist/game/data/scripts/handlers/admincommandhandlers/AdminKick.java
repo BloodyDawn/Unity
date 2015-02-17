@@ -22,7 +22,7 @@ import java.util.StringTokenizer;
 
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public class AdminKick implements IAdminCommandHandler
 {
@@ -33,7 +33,7 @@ public class AdminKick implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		if (command.startsWith("admin_kick"))
 		{
@@ -42,7 +42,7 @@ public class AdminKick implements IAdminCommandHandler
 			{
 				st.nextToken();
 				String player = st.nextToken();
-				L2PcInstance plyr = World.getInstance().getPlayer(player);
+				PlayerInstance plyr = World.getInstance().getPlayer(player);
 				if (plyr != null)
 				{
 					plyr.logout();
@@ -53,7 +53,7 @@ public class AdminKick implements IAdminCommandHandler
 		if (command.startsWith("admin_kick_non_gm"))
 		{
 			int counter = 0;
-			for (L2PcInstance player : World.getInstance().getPlayers())
+			for (PlayerInstance player : World.getInstance().getPlayers())
 			{
 				if (!player.isGM())
 				{

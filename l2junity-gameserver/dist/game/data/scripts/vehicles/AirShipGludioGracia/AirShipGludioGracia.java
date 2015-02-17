@@ -27,7 +27,7 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2AirShipInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -168,7 +168,7 @@ public final class AirShipGludioGracia extends Quest implements Runnable
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if (player.isTransformed())
 		{
@@ -234,7 +234,7 @@ public final class AirShipGludioGracia extends Quest implements Runnable
 	}
 	
 	@Override
-	public final String onFirstTalk(Npc npc, L2PcInstance player)
+	public final String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		return npc.getId() + ".htm";
 	}

@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.clientpackets.appearance;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.ShapeShiftingItemRequest;
 import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.appearance.ExShapeShiftingResult;
@@ -36,7 +36,7 @@ public class RequestExCancelShape_Shifting_Item extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance player = getActiveChar();
+		final PlayerInstance player = getActiveChar();
 		if (player == null)
 		{
 			return;

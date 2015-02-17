@@ -47,7 +47,7 @@ import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.L2Event;
 import org.l2junity.gameserver.model.olympiad.OlympiadManager;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -89,7 +89,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	private final InetAddress _addr;
 	private String _accountName;
 	private SessionKey _sessionId;
-	private L2PcInstance _activeChar;
+	private PlayerInstance _activeChar;
 	private final ReentrantLock _activeCharLock = new ReentrantLock();
 	private SecondaryPasswordAuth _secondaryAuth;
 	
@@ -204,12 +204,12 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		return true;
 	}
 	
-	public L2PcInstance getActiveChar()
+	public PlayerInstance getActiveChar()
 	{
 		return _activeChar;
 	}
 	
-	public void setActiveChar(L2PcInstance pActiveChar)
+	public void setActiveChar(PlayerInstance pActiveChar)
 	{
 		_activeChar = pActiveChar;
 		// JIV remove - done on spawn
@@ -578,7 +578,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		}
 	}
 	
-	public L2PcInstance loadCharFromDisk(int charslot)
+	public PlayerInstance loadCharFromDisk(int charslot)
 	{
 		final int objId = getObjectIdForSlot(charslot);
 		if (objId < 0)
@@ -586,7 +586,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 			return null;
 		}
 		
-		L2PcInstance character = World.getInstance().getPlayer(objId);
+		PlayerInstance character = World.getInstance().getPlayer(objId);
 		if (character != null)
 		{
 			// exploit prevention, should not happens in normal way
@@ -602,7 +602,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 			return null;
 		}
 		
-		character = L2PcInstance.load(objId);
+		character = PlayerInstance.load(objId);
 		if (character != null)
 		{
 			
@@ -829,7 +829,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	 * @param player the player to be check.
 	 * @return {@code true} if the player is allowed to remain as off-line shop.
 	 */
-	protected boolean offlineMode(L2PcInstance player)
+	protected boolean offlineMode(PlayerInstance player)
 	{
 		if (player.isInOlympiadMode() || player.isBlockedFromExit() || player.isJailed() || (player.getVehicle() != null))
 		{
@@ -939,7 +939,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		{
 			try
 			{
-				L2PcInstance player = getActiveChar();
+				PlayerInstance player = getActiveChar();
 				if ((player != null) && player.isOnline()) // safety precaution
 				{
 					saveCharToDisk();

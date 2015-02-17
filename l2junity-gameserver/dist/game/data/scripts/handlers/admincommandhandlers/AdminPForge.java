@@ -32,7 +32,7 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.L2BoatInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.AdminForgePacket;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -181,13 +181,13 @@ public final class AdminPForge implements IAdminCommandHandler
 		return false;
 	}
 	
-	private void showValuesUsage(L2PcInstance activeChar)
+	private void showValuesUsage(PlayerInstance activeChar)
 	{
 		activeChar.sendMessage("Usage: //forge_values opcode1[ opcode2[ opcode3]] ;[ format]");
 		showMainPage(activeChar);
 	}
 	
-	private void showSendUsage(L2PcInstance activeChar, String[] opCodes, String format)
+	private void showSendUsage(PlayerInstance activeChar, String[] opCodes, String format)
 	{
 		activeChar.sendMessage("Usage: //forge_send sc|sb|cs opcode1[;opcode2[;opcode3]][ format value1 ... valueN] ");
 		if (opCodes == null)
@@ -200,12 +200,12 @@ public final class AdminPForge implements IAdminCommandHandler
 		}
 	}
 	
-	private void showMainPage(L2PcInstance activeChar)
+	private void showMainPage(PlayerInstance activeChar)
 	{
 		AdminHtml.showAdminHtml(activeChar, "pforge/main.htm");
 	}
 	
-	private void showValuesPage(L2PcInstance activeChar, String[] opCodes, String format)
+	private void showValuesPage(PlayerInstance activeChar, String[] opCodes, String format)
 	{
 		String sendBypass = null;
 		String valuesHtml = HtmCache.getInstance().getHtmForce(activeChar.getHtmlPrefix(), "data/html/admin/pforge/values.htm");
@@ -266,7 +266,7 @@ public final class AdminPForge implements IAdminCommandHandler
 	}
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		if (command.equals("admin_forge"))
 		{

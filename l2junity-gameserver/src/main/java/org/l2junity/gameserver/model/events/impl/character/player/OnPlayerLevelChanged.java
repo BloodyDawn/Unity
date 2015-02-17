@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.events.impl.character.player;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.IBaseEvent;
 
@@ -27,18 +27,18 @@ import org.l2junity.gameserver.model.events.impl.IBaseEvent;
  */
 public class OnPlayerLevelChanged implements IBaseEvent
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final int _oldLevel;
 	private final int _newLevel;
 	
-	public OnPlayerLevelChanged(L2PcInstance activeChar, int oldLevel, int newLevel)
+	public OnPlayerLevelChanged(PlayerInstance activeChar, int oldLevel, int newLevel)
 	{
 		_activeChar = activeChar;
 		_oldLevel = oldLevel;
 		_newLevel = newLevel;
 	}
 	
-	public L2PcInstance getActiveChar()
+	public PlayerInstance getActiveChar()
 	{
 		return _activeChar;
 	}

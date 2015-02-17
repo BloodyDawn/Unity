@@ -24,7 +24,7 @@ import java.util.StringTokenizer;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.util.Util;
 
@@ -40,7 +40,7 @@ public final class AdminPrimePoints implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		final StringTokenizer st = new StringTokenizer(command, " ");
 		final String actualCommand = st.nextToken();
@@ -51,7 +51,7 @@ public final class AdminPrimePoints implements IAdminCommandHandler
 			{
 				final String action = st.nextToken();
 				
-				final L2PcInstance target = getTarget(activeChar);
+				final PlayerInstance target = getTarget(activeChar);
 				if ((target == null) || !st.hasMoreTokens())
 				{
 					return false;
@@ -147,10 +147,10 @@ public final class AdminPrimePoints implements IAdminCommandHandler
 		return true;
 	}
 	
-	private int increaseForAll(Collection<L2PcInstance> playerList, int value)
+	private int increaseForAll(Collection<PlayerInstance> playerList, int value)
 	{
 		int counter = 0;
-		for (L2PcInstance temp : playerList)
+		for (PlayerInstance temp : playerList)
 		{
 			if ((temp != null) && (temp.isOnlineInt() == 1))
 			{
@@ -172,15 +172,15 @@ public final class AdminPrimePoints implements IAdminCommandHandler
 		return counter;
 	}
 	
-	private L2PcInstance getTarget(L2PcInstance activeChar)
+	private PlayerInstance getTarget(PlayerInstance activeChar)
 	{
 		return ((activeChar.getTarget() != null) && (activeChar.getTarget().getActingPlayer() != null)) ? activeChar.getTarget().getActingPlayer() : activeChar;
 	}
 	
-	private void showMenuHtml(L2PcInstance activeChar)
+	private void showMenuHtml(PlayerInstance activeChar)
 	{
 		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
-		final L2PcInstance target = getTarget(activeChar);
+		final PlayerInstance target = getTarget(activeChar);
 		final int points = target.getPrimePoints();
 		html.setHtml(HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/admin/primepoints.htm"));
 		html.replace("%points%", Util.formatAdena(points));

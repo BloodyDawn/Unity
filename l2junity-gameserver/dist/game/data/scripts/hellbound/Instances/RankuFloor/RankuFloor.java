@@ -23,7 +23,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -65,7 +65,7 @@ public final class RankuFloor extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		String htmltext = null;
 		
@@ -100,7 +100,7 @@ public final class RankuFloor extends AbstractInstance
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		final int instanceId = npc.getInstanceId();
 		if (instanceId > 0)
@@ -115,7 +115,7 @@ public final class RankuFloor extends AbstractInstance
 	}
 	
 	@Override
-	protected boolean checkConditions(L2PcInstance player)
+	protected boolean checkConditions(PlayerInstance player)
 	{
 		if (player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS))
 		{
@@ -130,7 +130,7 @@ public final class RankuFloor extends AbstractInstance
 			return false;
 		}
 		
-		for (L2PcInstance partyMember : party.getMembers())
+		for (PlayerInstance partyMember : party.getMembers())
 		{
 			if (partyMember.getLevel() < MIN_LV)
 			{
@@ -167,7 +167,7 @@ public final class RankuFloor extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
+	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
 	{
 		if (firstEntrance)
 		{
@@ -179,7 +179,7 @@ public final class RankuFloor extends AbstractInstance
 			}
 			else
 			{
-				for (L2PcInstance partyMember : player.getParty().getMembers())
+				for (PlayerInstance partyMember : player.getParty().getMembers())
 				{
 					teleportPlayer(partyMember, ENTRY_POINT, world.getInstanceId());
 					partyMember.destroyItemByItemId("Quest", SEAL_BREAKER_10, 1, null, true);

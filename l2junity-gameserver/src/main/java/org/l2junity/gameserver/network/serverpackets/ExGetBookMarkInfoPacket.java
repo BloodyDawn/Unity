@@ -19,16 +19,16 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.TeleportBookmark;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author ShanSoft
  */
 public class ExGetBookMarkInfoPacket extends L2GameServerPacket
 {
-	private final L2PcInstance player;
+	private final PlayerInstance player;
 	
-	public ExGetBookMarkInfoPacket(L2PcInstance cha)
+	public ExGetBookMarkInfoPacket(PlayerInstance cha)
 	{
 		player = cha;
 	}

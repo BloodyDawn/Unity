@@ -20,7 +20,7 @@ package handlers.voicedcommandhandlers;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.handler.IVoicedCommandHandler;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * This class trades Gold Bars for Adena and vice versa.
@@ -36,7 +36,7 @@ public class Banking implements IVoicedCommandHandler
 	};
 	
 	@Override
-	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params)
+	public boolean useVoicedCommand(String command, PlayerInstance activeChar, String params)
 	{
 		if (command.equals("bank"))
 		{

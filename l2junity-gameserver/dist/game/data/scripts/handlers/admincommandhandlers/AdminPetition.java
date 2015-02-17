@@ -21,7 +21,7 @@ package handlers.admincommandhandlers;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.instancemanager.PetitionManager;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 
 /**
@@ -41,7 +41,7 @@ public class AdminPetition implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		int petitionId = -1;
 		
@@ -103,12 +103,12 @@ public class AdminPetition implements IAdminCommandHandler
 			try
 			{
 				WorldObject targetChar = activeChar.getTarget();
-				if ((targetChar == null) || !(targetChar instanceof L2PcInstance))
+				if ((targetChar == null) || !(targetChar instanceof PlayerInstance))
 				{
 					activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 					return false;
 				}
-				L2PcInstance targetPlayer = (L2PcInstance) targetChar;
+				PlayerInstance targetPlayer = (PlayerInstance) targetChar;
 				
 				String val = command.substring(15);
 				

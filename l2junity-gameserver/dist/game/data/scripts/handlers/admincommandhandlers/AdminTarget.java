@@ -20,7 +20,7 @@ package handlers.admincommandhandlers;
 
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * This class handles following admin commands: - target name = sets player with respective name as target
@@ -34,7 +34,7 @@ public class AdminTarget implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		if (command.startsWith("admin_target"))
 		{
@@ -49,12 +49,12 @@ public class AdminTarget implements IAdminCommandHandler
 		return ADMIN_COMMANDS;
 	}
 	
-	private void handleTarget(String command, L2PcInstance activeChar)
+	private void handleTarget(String command, PlayerInstance activeChar)
 	{
 		try
 		{
 			String targetName = command.substring(13);
-			L2PcInstance player = World.getInstance().getPlayer(targetName);
+			PlayerInstance player = World.getInstance().getPlayer(targetName);
 			if (player != null)
 			{
 				player.onAction(activeChar);

@@ -29,7 +29,7 @@ import org.l2junity.gameserver.data.xml.impl.MultisellData;
 import org.l2junity.gameserver.model.Augmentation;
 import org.l2junity.gameserver.model.Elementals;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.PcInventory;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.multisell.Entry;
@@ -73,7 +73,7 @@ public class MultiSellChoose extends L2GameClientPacket
 	@Override
 	public void runImpl()
 	{
-		final L2PcInstance player = getClient().getActiveChar();
+		final PlayerInstance player = getClient().getActiveChar();
 		if (player == null)
 		{
 			return;

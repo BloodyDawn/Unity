@@ -18,16 +18,16 @@
  */
 package org.l2junity.gameserver.model.entity;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author UnAfraid
  */
 public class TvTEventPlayer
 {
-	private final L2PcInstance _player;
+	private final PlayerInstance _player;
 	
-	protected TvTEventPlayer(L2PcInstance player)
+	protected TvTEventPlayer(PlayerInstance player)
 	{
 		_player = player;
 		
@@ -53,7 +53,7 @@ public class TvTEventPlayer
 		return false;
 	}
 	
-	public L2PcInstance getPlayer()
+	public PlayerInstance getPlayer()
 	{
 		return _player;
 	}

@@ -20,22 +20,22 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.data.xml.impl.RecipeData;
 import org.l2junity.gameserver.model.RecipeList;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public class RecipeItemMakeInfo extends L2GameServerPacket
 {
 	private final int _id;
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final boolean _success;
 	
-	public RecipeItemMakeInfo(int id, L2PcInstance player, boolean success)
+	public RecipeItemMakeInfo(int id, PlayerInstance player, boolean success)
 	{
 		_id = id;
 		_activeChar = player;
 		_success = success;
 	}
 	
-	public RecipeItemMakeInfo(int id, L2PcInstance player)
+	public RecipeItemMakeInfo(int id, PlayerInstance player)
 	{
 		_id = id;
 		_activeChar = player;

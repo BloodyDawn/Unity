@@ -28,7 +28,7 @@ import org.l2junity.gameserver.data.xml.impl.SecondaryAuthData;
 import org.l2junity.gameserver.instancemanager.AntiFeedManager;
 import org.l2junity.gameserver.instancemanager.PunishmentManager;
 import org.l2junity.gameserver.model.CharSelectInfoPackage;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.Containers;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSelect;
@@ -133,7 +133,7 @@ public class CharacterSelect extends L2GameClientPacket
 					}
 					
 					// load up character from disk
-					final L2PcInstance cha = client.loadCharFromDisk(_charSlot);
+					final PlayerInstance cha = client.loadCharFromDisk(_charSlot);
 					if (cha == null)
 					{
 						return; // handled in L2GameClient

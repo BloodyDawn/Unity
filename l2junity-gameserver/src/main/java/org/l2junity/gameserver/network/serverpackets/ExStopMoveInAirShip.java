@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * update 27.8.10
@@ -26,11 +26,11 @@ import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExStopMoveInAirShip extends L2GameServerPacket
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final int _shipObjId;
 	private final int x, y, z, h;
 	
-	public ExStopMoveInAirShip(L2PcInstance player, int shipObjId)
+	public ExStopMoveInAirShip(PlayerInstance player, int shipObjId)
 	{
 		_activeChar = player;
 		_shipObjId = shipObjId;

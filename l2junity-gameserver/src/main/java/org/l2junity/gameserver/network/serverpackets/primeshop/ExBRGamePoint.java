@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.serverpackets.primeshop;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
 
 /**
@@ -29,7 +29,7 @@ public class ExBRGamePoint extends L2GameServerPacket
 	private final int _charId;
 	private final int _charPoints;
 	
-	public ExBRGamePoint(final L2PcInstance player)
+	public ExBRGamePoint(final PlayerInstance player)
 	{
 		_charId = player.getObjectId();
 		_charPoints = player.getPrimePoints();

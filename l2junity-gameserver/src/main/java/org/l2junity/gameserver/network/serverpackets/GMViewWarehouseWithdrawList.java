@@ -21,7 +21,7 @@ package org.l2junity.gameserver.network.serverpackets;
 import java.util.Collection;
 
 import org.l2junity.gameserver.model.L2Clan;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 public class GMViewWarehouseWithdrawList extends AbstractItemPacket
@@ -30,7 +30,7 @@ public class GMViewWarehouseWithdrawList extends AbstractItemPacket
 	private final String _playerName;
 	private final long _money;
 	
-	public GMViewWarehouseWithdrawList(L2PcInstance cha)
+	public GMViewWarehouseWithdrawList(PlayerInstance cha)
 	{
 		_items = cha.getWarehouse().getItems();
 		_playerName = cha.getName();

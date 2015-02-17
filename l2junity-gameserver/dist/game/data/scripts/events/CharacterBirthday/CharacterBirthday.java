@@ -19,7 +19,7 @@
 package events.CharacterBirthday;
 
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.util.Util;
 
@@ -66,7 +66,7 @@ public final class CharacterBirthday extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String htmltext = event;
 		if (event.equalsIgnoreCase("despawn_npc"))
@@ -97,7 +97,7 @@ public final class CharacterBirthday extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		if (SPAWNS >= 3)
 		{

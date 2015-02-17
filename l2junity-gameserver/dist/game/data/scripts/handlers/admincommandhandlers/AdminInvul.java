@@ -23,7 +23,7 @@ import java.util.logging.Logger;
 import org.l2junity.Config;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * This class handles following admin commands: - invul = turns invulnerability on/off
@@ -39,7 +39,7 @@ public class AdminInvul implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		
 		if (command.equals("admin_invul"))
@@ -50,9 +50,9 @@ public class AdminInvul implements IAdminCommandHandler
 		if (command.equals("admin_setinvul"))
 		{
 			WorldObject target = activeChar.getTarget();
-			if (target instanceof L2PcInstance)
+			if (target instanceof PlayerInstance)
 			{
-				handleInvul((L2PcInstance) target);
+				handleInvul((PlayerInstance) target);
 			}
 		}
 		return true;
@@ -64,7 +64,7 @@ public class AdminInvul implements IAdminCommandHandler
 		return ADMIN_COMMANDS;
 	}
 	
-	private void handleInvul(L2PcInstance activeChar)
+	private void handleInvul(PlayerInstance activeChar)
 	{
 		String text;
 		if (activeChar.isInvul())

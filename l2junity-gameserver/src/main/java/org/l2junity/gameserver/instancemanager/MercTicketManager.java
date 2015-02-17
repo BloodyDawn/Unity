@@ -34,7 +34,7 @@ import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.L2DefenderInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -312,7 +312,7 @@ public final class MercTicketManager
 	 * @param activeChar
 	 * @return
 	 */
-	public int addTicket(int itemId, L2PcInstance activeChar)
+	public int addTicket(int itemId, PlayerInstance activeChar)
 	{
 		int x = activeChar.getX();
 		int y = activeChar.getY();

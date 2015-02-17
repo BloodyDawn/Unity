@@ -20,7 +20,7 @@ package ai.npc.SupportUnitCaptain;
 
 import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.clientpackets.RequestAcquireSkill;
 
 import ai.npc.AbstractNpcAI;
@@ -131,7 +131,7 @@ public final class SupportUnitCaptain extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		
 		final int fortOwner = npc.getFort().getOwnerClan() == null ? 0 : npc.getFort().getOwnerClan().getId();
@@ -273,7 +273,7 @@ public final class SupportUnitCaptain extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		final int fortOwner = npc.getFort().getOwnerClan() == null ? 0 : npc.getFort().getOwnerClan().getId();
 		return ((player.getClan() != null) && (player.getClanId() == fortOwner)) ? "unitcaptain.html" : "unitcaptain-04.html";

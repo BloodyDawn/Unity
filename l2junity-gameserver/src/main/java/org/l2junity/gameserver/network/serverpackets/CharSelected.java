@@ -19,18 +19,18 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.GameTimeController;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public class CharSelected extends L2GameServerPacket
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final int _sessionId;
 	
 	/**
 	 * @param cha
 	 * @param sessionId
 	 */
-	public CharSelected(L2PcInstance cha, int sessionId)
+	public CharSelected(PlayerInstance cha, int sessionId)
 	{
 		_activeChar = cha;
 		_sessionId = sessionId;

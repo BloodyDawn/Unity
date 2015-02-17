@@ -29,7 +29,7 @@ import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.PetitionState;
 import org.l2junity.gameserver.model.Petition;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.CreatureSay;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -68,7 +68,7 @@ public final class PetitionManager
 		_log.info(getClass().getSimpleName() + ": Pending petition queue cleared. " + numPetitions + " petition(s) removed.");
 	}
 	
-	public boolean acceptPetition(L2PcInstance respondingAdmin, int petitionId)
+	public boolean acceptPetition(PlayerInstance respondingAdmin, int petitionId)
 	{
 		if (!isValidPetition(petitionId))
 		{
@@ -103,7 +103,7 @@ public final class PetitionManager
 		return true;
 	}
 	
-	public boolean cancelActivePetition(L2PcInstance player)
+	public boolean cancelActivePetition(PlayerInstance player)
 	{
 		for (Petition currPetition : getPendingPetitions().values())
 		{
@@ -121,7 +121,7 @@ public final class PetitionManager
 		return false;
 	}
 	
-	public void checkPetitionMessages(L2PcInstance petitioner)
+	public void checkPetitionMessages(PlayerInstance petitioner)
 	{
 		if (petitioner != null)
 		{
@@ -145,7 +145,7 @@ public final class PetitionManager
 		}
 	}
 	
-	public boolean endActivePetition(L2PcInstance player)
+	public boolean endActivePetition(PlayerInstance player)
 	{
 		if (!player.isGM())
 		{
@@ -183,7 +183,7 @@ public final class PetitionManager
 		return getPendingPetitions().size();
 	}
 	
-	public int getPlayerTotalPetitionCount(L2PcInstance player)
+	public int getPlayerTotalPetitionCount(PlayerInstance player)
 	{
 		if (player == null)
 		{
@@ -250,7 +250,7 @@ public final class PetitionManager
 		return (currPetition.getState() == PetitionState.IN_PROCESS);
 	}
 	
-	public boolean isPlayerInConsultation(L2PcInstance player)
+	public boolean isPlayerInConsultation(PlayerInstance player)
 	{
 		if (player != null)
 		{
@@ -281,7 +281,7 @@ public final class PetitionManager
 		return Config.PETITIONING_ALLOWED;
 	}
 	
-	public boolean isPlayerPetitionPending(L2PcInstance petitioner)
+	public boolean isPlayerPetitionPending(PlayerInstance petitioner)
 	{
 		if (petitioner != null)
 		{
@@ -307,7 +307,7 @@ public final class PetitionManager
 		return getPendingPetitions().containsKey(petitionId);
 	}
 	
-	public boolean rejectPetition(L2PcInstance respondingAdmin, int petitionId)
+	public boolean rejectPetition(PlayerInstance respondingAdmin, int petitionId)
 	{
 		if (!isValidPetition(petitionId))
 		{
@@ -325,7 +325,7 @@ public final class PetitionManager
 		return (currPetition.endPetitionConsultation(PetitionState.RESPONDER_REJECT));
 	}
 	
-	public boolean sendActivePetitionMessage(L2PcInstance player, String messageText)
+	public boolean sendActivePetitionMessage(PlayerInstance player, String messageText)
 	{
 		// if (!isPlayerInConsultation(player))
 		// return false;
@@ -363,7 +363,7 @@ public final class PetitionManager
 		return false;
 	}
 	
-	public void sendPendingPetitionList(L2PcInstance activeChar)
+	public void sendPendingPetitionList(PlayerInstance activeChar)
 	{
 		final StringBuilder htmlContent = new StringBuilder(600 + (getPendingPetitionCount() * 300));
 		htmlContent.append("<html><body><center><table width=270><tr><td width=45><button value=\"Main\" action=\"bypass -h admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" + "<td width=180><center>Petition Menu</center></td>" + "<td width=45><button value=\"Back\" action=\"bypass -h admin_admin7\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br>" + "<table width=\"270\">" + "<tr><td><table width=\"270\"><tr><td><button value=\"Reset\" action=\"bypass -h admin_reset_petitions\" width=\"80\" height=\"21\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" + "<td align=right><button value=\"Refresh\" action=\"bypass -h admin_view_petitions\" width=\"80\" height=\"21\" back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br></td></tr>");
@@ -416,7 +416,7 @@ public final class PetitionManager
 		activeChar.sendPacket(htmlMsg);
 	}
 	
-	public int submitPetition(L2PcInstance petitioner, String petitionText, int petitionType)
+	public int submitPetition(PlayerInstance petitioner, String petitionText, int petitionType)
 	{
 		// Create a new petition instance and add it to the list of pending petitions.
 		final Petition newPetition = new Petition(petitioner, petitionText, petitionType);
@@ -430,7 +430,7 @@ public final class PetitionManager
 		return newPetitionId;
 	}
 	
-	public void viewPetition(L2PcInstance activeChar, int petitionId)
+	public void viewPetition(PlayerInstance activeChar, int petitionId)
 	{
 		if (!activeChar.isGM())
 		{

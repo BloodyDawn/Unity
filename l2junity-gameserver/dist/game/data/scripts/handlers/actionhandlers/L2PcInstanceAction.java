@@ -25,7 +25,7 @@ import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.handler.IActionHandler;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
@@ -53,7 +53,7 @@ public class L2PcInstanceAction implements IActionHandler
 	 * @param activeChar The player that start an action on target L2PcInstance
 	 */
 	@Override
-	public boolean action(L2PcInstance activeChar, WorldObject target, boolean interact)
+	public boolean action(PlayerInstance activeChar, WorldObject target, boolean interact)
 	{
 		// See description in TvTEvent.java
 		if (!TvTEvent.onAction(activeChar, target.getObjectId()))
@@ -83,7 +83,7 @@ public class L2PcInstanceAction implements IActionHandler
 		else if (interact)
 		{
 			// Check if this L2PcInstance has a Private Store
-			if (((L2PcInstance) target).getPrivateStoreType() != PrivateStoreType.NONE)
+			if (((PlayerInstance) target).getPrivateStoreType() != PrivateStoreType.NONE)
 			{
 				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
 			}
@@ -94,7 +94,7 @@ public class L2PcInstanceAction implements IActionHandler
 				{
 					// activeChar with lvl < 21 can't attack a cursed weapon holder
 					// And a cursed weapon holder can't attack activeChars with lvl < 21
-					if ((((L2PcInstance) target).isCursedWeaponEquipped() && (activeChar.getLevel() < 21)) || (activeChar.isCursedWeaponEquipped() && (((Creature) target).getLevel() < 21)))
+					if ((((PlayerInstance) target).isCursedWeaponEquipped() && (activeChar.getLevel() < 21)) || (activeChar.isCursedWeaponEquipped() && (((Creature) target).getLevel() < 21)))
 					{
 						activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 					}

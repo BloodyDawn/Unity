@@ -258,7 +258,7 @@ public class L2RaceManagerInstance extends Npc
 	}
 	
 	@Override
-	public void onBypassFeedback(L2PcInstance player, String command)
+	public void onBypassFeedback(PlayerInstance player, String command)
 	{
 		if (command.startsWith("BuyTicket") && (_state != ACCEPTING_BETS))
 		{
@@ -308,7 +308,7 @@ public class L2RaceManagerInstance extends Npc
 		}
 	}
 	
-	public void showOdds(L2PcInstance player)
+	public void showOdds(PlayerInstance player)
 	{
 		if (_state == ACCEPTING_BETS)
 		{
@@ -331,7 +331,7 @@ public class L2RaceManagerInstance extends Npc
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
-	public void showMonsterInfo(L2PcInstance player)
+	public void showMonsterInfo(PlayerInstance player)
 	{
 		int npcId = getTemplate().getId();
 		String filename, search;
@@ -349,7 +349,7 @@ public class L2RaceManagerInstance extends Npc
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
-	public void showBuyTicket(L2PcInstance player, int val)
+	public void showBuyTicket(PlayerInstance player, int val)
 	{
 		if (_state != ACCEPTING_BETS)
 		{

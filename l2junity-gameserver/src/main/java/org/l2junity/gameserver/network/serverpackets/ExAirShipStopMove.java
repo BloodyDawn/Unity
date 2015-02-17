@@ -19,13 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.instance.L2AirShipInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public class ExAirShipStopMove extends L2GameServerPacket
 {
 	private final int _playerId, _airShipId, _x, _y, _z;
 	
-	public ExAirShipStopMove(L2PcInstance player, L2AirShipInstance ship, int x, int y, int z)
+	public ExAirShipStopMove(PlayerInstance player, L2AirShipInstance ship, int x, int y, int z)
 	{
 		_playerId = player.getObjectId();
 		_airShipId = ship.getObjectId();

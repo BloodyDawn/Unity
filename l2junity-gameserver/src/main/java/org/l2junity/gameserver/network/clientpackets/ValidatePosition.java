@@ -20,7 +20,7 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.serverpackets.GetOnVehicle;
 import org.l2junity.gameserver.network.serverpackets.ValidateLocation;
@@ -52,7 +52,7 @@ public class ValidatePosition extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getClient().getActiveChar();
 		if ((activeChar == null) || activeChar.isTeleporting() || activeChar.inObserverMode())
 		{
 			return;

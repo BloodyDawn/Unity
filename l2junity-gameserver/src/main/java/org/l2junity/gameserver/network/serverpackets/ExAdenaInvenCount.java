@@ -18,16 +18,16 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author Sdw
  */
 public class ExAdenaInvenCount extends L2GameServerPacket
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	
-	public ExAdenaInvenCount(L2PcInstance cha)
+	public ExAdenaInvenCount(PlayerInstance cha)
 	{
 		_activeChar = cha;
 	}

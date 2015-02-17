@@ -30,7 +30,7 @@ import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.holders.InstanceReenterTimeHolder;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
@@ -58,12 +58,12 @@ public abstract class AbstractInstance extends AbstractNpcAI
 		super(name, "instances");
 	}
 	
-	protected void enterInstance(L2PcInstance player, String template, int templateId)
+	protected void enterInstance(PlayerInstance player, String template, int templateId)
 	{
 		enterInstance(player, new InstanceWorld(), template, templateId);
 	}
 	
-	protected void enterInstance(L2PcInstance player, InstanceWorld instance, String template, int templateId)
+	protected void enterInstance(PlayerInstance player, InstanceWorld instance, String template, int templateId)
 	{
 		final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		if (world != null)
@@ -188,7 +188,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 	{
 		for (Integer objId : world.getAllowed())
 		{
-			final L2PcInstance player = World.getInstance().getPlayer(objId);
+			final PlayerInstance player = World.getInstance().getPlayer(objId);
 			
 			if (player != null)
 			{
@@ -197,9 +197,9 @@ public abstract class AbstractInstance extends AbstractNpcAI
 		}
 	}
 	
-	protected abstract void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance);
+	protected abstract void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance);
 	
-	protected boolean checkConditions(L2PcInstance player)
+	protected boolean checkConditions(PlayerInstance player)
 	{
 		return true;
 	}
@@ -225,7 +225,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 		for (int objectId : world.getAllowed())
 		{
 			InstanceManager.getInstance().setInstanceTime(objectId, world.getTemplateId(), time);
-			final L2PcInstance player = World.getInstance().getPlayer(objectId);
+			final PlayerInstance player = World.getInstance().getPlayer(objectId);
 			if ((player != null) && player.isOnline())
 			{
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INSTANT_ZONE_S1_S_ENTRY_HAS_BEEN_RESTRICTED_YOU_CAN_CHECK_THE_NEXT_POSSIBLE_ENTRY_TIME_BY_USING_THE_COMMAND_INSTANCEZONE).addString(InstanceManager.getInstance().getInstance(world.getInstanceId()).getName()));
@@ -238,7 +238,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 		}
 	}
 	
-	private void handleRemoveBuffs(L2PcInstance player, InstanceWorld world)
+	private void handleRemoveBuffs(PlayerInstance player, InstanceWorld world)
 	{
 		final Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
 		final List<BuffInfo> buffToRemove = new ArrayList<>();

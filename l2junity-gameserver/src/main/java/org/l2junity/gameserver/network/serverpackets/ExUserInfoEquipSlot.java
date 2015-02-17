@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.enums.InventorySlot;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.PcInventory;
 
 /**
@@ -27,7 +27,7 @@ import org.l2junity.gameserver.model.itemcontainer.PcInventory;
  */
 public class ExUserInfoEquipSlot extends AbstractMaskPacket<InventorySlot>
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	
 	private final byte[] _masks = new byte[]
 	{
@@ -38,12 +38,12 @@ public class ExUserInfoEquipSlot extends AbstractMaskPacket<InventorySlot>
 		(byte) 0x00
 	};
 	
-	public ExUserInfoEquipSlot(L2PcInstance cha)
+	public ExUserInfoEquipSlot(PlayerInstance cha)
 	{
 		this(cha, true);
 	}
 	
-	public ExUserInfoEquipSlot(L2PcInstance cha, boolean addAll)
+	public ExUserInfoEquipSlot(PlayerInstance cha, boolean addAll)
 	{
 		_activeChar = cha;
 		

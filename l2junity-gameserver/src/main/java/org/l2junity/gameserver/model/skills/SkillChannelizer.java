@@ -30,7 +30,7 @@ import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.MagicSkillLaunched;
 import org.l2junity.gameserver.util.Util;
@@ -204,7 +204,7 @@ public class SkillChannelizer implements Runnable
 							// Update PvP status
 							if (character.isPlayable() && getChannelizer().isPlayer())
 							{
-								((L2PcInstance) getChannelizer()).updatePvPStatus(character);
+								((PlayerInstance) getChannelizer()).updatePvPStatus(character);
 							}
 							
 							skill.applyEffects(getChannelizer(), character);

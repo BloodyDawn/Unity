@@ -20,7 +20,7 @@ package quests.Q00139_ShadowFoxPart1;
 
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
@@ -61,7 +61,7 @@ public class Q00139_ShadowFoxPart1 extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState st = getQuestState(player, false);
 		if (st == null)
@@ -123,9 +123,9 @@ public class Q00139_ShadowFoxPart1 extends Quest
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
-		final L2PcInstance member = getRandomPartyMember(player, 2);
+		final PlayerInstance member = getRandomPartyMember(player, 2);
 		if (member == null)
 		{
 			return super.onKill(npc, player, isSummon);
@@ -141,7 +141,7 @@ public class Q00139_ShadowFoxPart1 extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);

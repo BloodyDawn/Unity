@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author KenM
@@ -28,13 +28,13 @@ public class ExPrivateStoreSetWholeMsg extends L2GameServerPacket
 	private final int _objectId;
 	private final String _msg;
 	
-	public ExPrivateStoreSetWholeMsg(L2PcInstance player, String msg)
+	public ExPrivateStoreSetWholeMsg(PlayerInstance player, String msg)
 	{
 		_objectId = player.getObjectId();
 		_msg = msg;
 	}
 	
-	public ExPrivateStoreSetWholeMsg(L2PcInstance player)
+	public ExPrivateStoreSetWholeMsg(PlayerInstance player)
 	{
 		this(player, player.getSellList().getTitle());
 	}

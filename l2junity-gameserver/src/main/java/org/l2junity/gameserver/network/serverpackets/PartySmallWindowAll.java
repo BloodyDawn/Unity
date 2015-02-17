@@ -20,14 +20,14 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public final class PartySmallWindowAll extends L2GameServerPacket
 {
 	private final Party _party;
-	private final L2PcInstance _exclude;
+	private final PlayerInstance _exclude;
 	
-	public PartySmallWindowAll(L2PcInstance exclude, Party party)
+	public PartySmallWindowAll(PlayerInstance exclude, Party party)
 	{
 		_exclude = exclude;
 		_party = party;
@@ -41,7 +41,7 @@ public final class PartySmallWindowAll extends L2GameServerPacket
 		writeC(_party.getDistributionType().getId());
 		writeC(_party.getMemberCount() - 1);
 		
-		for (L2PcInstance member : _party.getMembers())
+		for (PlayerInstance member : _party.getMembers())
 		{
 			if ((member != null) && (member != _exclude))
 			{

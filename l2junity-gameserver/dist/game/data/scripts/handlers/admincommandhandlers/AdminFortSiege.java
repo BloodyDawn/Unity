@@ -25,7 +25,7 @@ import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -52,7 +52,7 @@ public class AdminFortSiege implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
 		command = st.nextToken(); // Get actual command
@@ -74,10 +74,10 @@ public class AdminFortSiege implements IAdminCommandHandler
 		else
 		{
 			WorldObject target = activeChar.getTarget();
-			L2PcInstance player = null;
-			if (target instanceof L2PcInstance)
+			PlayerInstance player = null;
+			if (target instanceof PlayerInstance)
 			{
-				player = (L2PcInstance) target;
+				player = (PlayerInstance) target;
 			}
 			
 			if (command.equalsIgnoreCase("admin_add_fortattacker"))
@@ -149,7 +149,7 @@ public class AdminFortSiege implements IAdminCommandHandler
 		return true;
 	}
 	
-	private void showFortSelectPage(L2PcInstance activeChar)
+	private void showFortSelectPage(PlayerInstance activeChar)
 	{
 		int i = 0;
 		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
@@ -177,7 +177,7 @@ public class AdminFortSiege implements IAdminCommandHandler
 		activeChar.sendPacket(adminReply);
 	}
 	
-	private void showFortSiegePage(L2PcInstance activeChar, Fort fort)
+	private void showFortSiegePage(PlayerInstance activeChar, Fort fort)
 	{
 		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		adminReply.setFile(activeChar.getHtmlPrefix(), "data/html/admin/fort.htm");

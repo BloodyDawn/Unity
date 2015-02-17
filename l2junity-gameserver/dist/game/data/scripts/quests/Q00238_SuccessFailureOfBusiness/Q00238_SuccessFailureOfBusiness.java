@@ -20,7 +20,7 @@ package quests.Q00238_SuccessFailureOfBusiness;
 
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
@@ -61,7 +61,7 @@ public class Q00238_SuccessFailureOfBusiness extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState st = getQuestState(player, false);
 		if (st == null)
@@ -91,11 +91,11 @@ public class Q00238_SuccessFailureOfBusiness extends Quest
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		if (npc.getId() == BRAZIER_OF_PURITY)
 		{
-			final L2PcInstance partyMember = getRandomPartyMember(killer, 1);
+			final PlayerInstance partyMember = getRandomPartyMember(killer, 1);
 			if (partyMember != null)
 			{
 				final QuestState st = getQuestState(partyMember, false);
@@ -115,7 +115,7 @@ public class Q00238_SuccessFailureOfBusiness extends Quest
 		}
 		else
 		{
-			final L2PcInstance partyMember = getRandomPartyMember(killer, 3);
+			final PlayerInstance partyMember = getRandomPartyMember(killer, 3);
 			if ((partyMember != null) && (getRandom(100) < CHANCE_FOR_FRAGMENT))
 			{
 				final QuestState st = getQuestState(partyMember, false);
@@ -137,7 +137,7 @@ public class Q00238_SuccessFailureOfBusiness extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance talker)
+	public String onTalk(Npc npc, PlayerInstance talker)
 	{
 		String htmltext = getNoQuestMsg(talker);
 		final QuestState st = getQuestState(talker, true);

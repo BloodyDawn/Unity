@@ -21,7 +21,7 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.gameserver.model.PartyMatchRoom;
 import org.l2junity.gameserver.model.PartyMatchRoomList;
 import org.l2junity.gameserver.model.PartyMatchWaitingList;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.ExPartyRoomMember;
@@ -49,7 +49,7 @@ public final class RequestPartyMatchConfig extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance _activeChar = getClient().getActiveChar();
+		PlayerInstance _activeChar = getClient().getActiveChar();
 		
 		if (_activeChar == null)
 		{

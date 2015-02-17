@@ -28,7 +28,7 @@ import org.l2junity.gameserver.handler.IVoicedCommandHandler;
 import org.l2junity.gameserver.handler.VoicedCommandHandler;
 import org.l2junity.gameserver.model.BlockList;
 import org.l2junity.gameserver.model.PcCondOverride;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.CreatureSay;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
@@ -47,7 +47,7 @@ public final class ChatGeneral implements IChatHandler
 	};
 	
 	@Override
-	public void handleChat(ChatType type, L2PcInstance activeChar, String params, String text)
+	public void handleChat(ChatType type, PlayerInstance activeChar, String params, String text)
 	{
 		boolean vcd_used = false;
 		if (text.startsWith("."))
@@ -101,7 +101,7 @@ public final class ChatGeneral implements IChatHandler
 			}
 			
 			final CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getAppearance().getVisibleName(), text);
-			for (L2PcInstance player : activeChar.getKnownList().getKnownPlayers().values())
+			for (PlayerInstance player : activeChar.getKnownList().getKnownPlayers().values())
 			{
 				if ((player != null) && activeChar.isInsideRadius(player, 1250, false, true) && !BlockList.isBlocked(player, activeChar))
 				{

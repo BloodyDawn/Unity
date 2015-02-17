@@ -52,7 +52,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
@@ -480,7 +480,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 	}
 	
 	@Override
-	protected boolean checkConditions(L2PcInstance player)
+	protected boolean checkConditions(PlayerInstance player)
 	{
 		if (debug || player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS))
 		{
@@ -517,7 +517,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 			player.sendPacket(SystemMessageId.YOU_CANNOT_ENTER_DUE_TO_THE_PARTY_HAVING_EXCEEDED_THE_LIMIT);
 			return false;
 		}
-		for (L2PcInstance channelMember : channel.getMembers())
+		for (PlayerInstance channelMember : channel.getMembers())
 		{
 			if (channelMember.getLevel() < 80)
 			{
@@ -540,7 +540,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
+	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
 	{
 		if (firstEntrance)
 		{
@@ -554,7 +554,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 			}
 			else
 			{
-				for (L2PcInstance channelMember : player.getParty().getCommandChannel().getMembers())
+				for (PlayerInstance channelMember : player.getParty().getCommandChannel().getMembers())
 				{
 					channelMember.destroyItemByItemId(getName(), DEWDROP_OF_DESTRUCTION_ITEM_ID, channelMember.getInventory().getInventoryItemCount(DEWDROP_OF_DESTRUCTION_ITEM_ID, -1), null, true);
 					world.addAllowed(channelMember.getObjectId());
@@ -854,7 +854,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 						{
 							for (int objId : _world.getAllowed())
 							{
-								L2PcInstance player = World.getInstance().getPlayer(objId);
+								PlayerInstance player = World.getInstance().getPlayer(objId);
 								if ((player != null) && player.isOnline() && (player.getInstanceId() == _world.getInstanceId()))
 								{
 									if (!player.isDead())
@@ -1209,7 +1209,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 		{
 			for (int objId : _world.getAllowed())
 			{
-				L2PcInstance player = World.getInstance().getPlayer(objId);
+				PlayerInstance player = World.getInstance().getPlayer(objId);
 				if ((player != null) && player.isOnline() && (player.getInstanceId() == _world.getInstanceId()))
 				{
 					player.abortAttack();
@@ -1227,7 +1227,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 		{
 			for (int objId : _world.getAllowed())
 			{
-				L2PcInstance player = World.getInstance().getPlayer(objId);
+				PlayerInstance player = World.getInstance().getPlayer(objId);
 				if ((player != null) && player.isOnline() && (player.getInstanceId() == _world.getInstanceId()))
 				{
 					player.enableAllSkills();
@@ -1240,7 +1240,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 		{
 			for (int objId : _world.getAllowed())
 			{
-				L2PcInstance player = World.getInstance().getPlayer(objId);
+				PlayerInstance player = World.getInstance().getPlayer(objId);
 				if ((player != null) && player.isOnline() && (player.getInstanceId() == _world.getInstanceId()))
 				{
 					if (player.getX() < x)
@@ -1304,7 +1304,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 		
 		private void addAggroToMobs()
 		{
-			L2PcInstance target = World.getInstance().getPlayer(_world.getAllowed().get(getRandom(_world.getAllowed().size())));
+			PlayerInstance target = World.getInstance().getPlayer(_world.getAllowed().get(getRandom(_world.getAllowed().size())));
 			if ((target == null) || (target.getInstanceId() != _world.getInstanceId()) || target.isDead() || target.isFakeDeath())
 			{
 				for (int objId : _world.getAllowed())
@@ -1337,7 +1337,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 	{
 		for (int objId : world.getAllowed())
 		{
-			L2PcInstance player = World.getInstance().getPlayer(objId);
+			PlayerInstance player = World.getInstance().getPlayer(objId);
 			if ((player != null) && player.isOnline() && (player.getInstanceId() == world.getInstanceId()))
 			{
 				player.sendPacket(packet);
@@ -1347,10 +1347,10 @@ public final class FinalEmperialTomb extends AbstractInstance
 	
 	protected void updateKnownList(FETWorld world, Npc npc)
 	{
-		Map<Integer, L2PcInstance> npcKnownPlayers = npc.getKnownList().getKnownPlayers();
+		Map<Integer, PlayerInstance> npcKnownPlayers = npc.getKnownList().getKnownPlayers();
 		for (int objId : world.getAllowed())
 		{
-			L2PcInstance player = World.getInstance().getPlayer(objId);
+			PlayerInstance player = World.getInstance().getPlayer(objId);
 			if ((player != null) && player.isOnline() && (player.getInstanceId() == world.getInstanceId()))
 			{
 				npcKnownPlayers.put(player.getObjectId(), player);
@@ -1359,7 +1359,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 	}
 	
 	@Override
-	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpworld instanceof FETWorld)
@@ -1392,7 +1392,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 	}
 	
 	@Override
-	public String onSpellFinished(Npc npc, L2PcInstance player, Skill skill)
+	public String onSpellFinished(Npc npc, PlayerInstance player, Skill skill)
 	{
 		if (skill.isSuicideAttack())
 		{
@@ -1402,7 +1402,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpworld instanceof FETWorld)
@@ -1460,7 +1460,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		int npcId = npc.getId();
 		getQuestState(player, true);

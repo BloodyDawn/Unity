@@ -27,7 +27,7 @@ import org.l2junity.gameserver.instancemanager.FortSiegeManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.TeleportWhereType;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.FortSiege;
 import org.l2junity.gameserver.model.entity.Siegable;
@@ -166,7 +166,7 @@ public class SiegeZone extends ZoneType
 			
 			if (character.isPlayer())
 			{
-				L2PcInstance plyer = character.getActingPlayer();
+				PlayerInstance plyer = character.getActingPlayer();
 				if (plyer.isRegisteredOnThisSiegeField(getSettings().getSiegeableId()))
 				{
 					plyer.setIsInSiege(true); // in siege
@@ -196,7 +196,7 @@ public class SiegeZone extends ZoneType
 		{
 			if (character.isPlayer())
 			{
-				L2PcInstance player = character.getActingPlayer();
+				PlayerInstance player = character.getActingPlayer();
 				character.sendPacket(SystemMessageId.YOU_HAVE_LEFT_A_COMBAT_ZONE);
 				if (player.getMountType() == MountType.WYVERN)
 				{
@@ -211,7 +211,7 @@ public class SiegeZone extends ZoneType
 		}
 		if (character.isPlayer())
 		{
-			L2PcInstance activeChar = character.getActingPlayer();
+			PlayerInstance activeChar = character.getActingPlayer();
 			activeChar.stopFameTask();
 			activeChar.setIsInSiege(false);
 			
@@ -271,7 +271,7 @@ public class SiegeZone extends ZoneType
 		}
 		else
 		{
-			L2PcInstance player;
+			PlayerInstance player;
 			for (Creature character : getCharactersInside())
 			{
 				if (character == null)
@@ -303,7 +303,7 @@ public class SiegeZone extends ZoneType
 	 */
 	public void announceToPlayers(String message)
 	{
-		for (L2PcInstance player : getPlayersInside())
+		for (PlayerInstance player : getPlayersInside())
 		{
 			if (player != null)
 			{
@@ -339,7 +339,7 @@ public class SiegeZone extends ZoneType
 	public void banishForeigners(int owningClanId)
 	{
 		TeleportWhereType type = TeleportWhereType.TOWN;
-		for (L2PcInstance temp : getPlayersInside())
+		for (PlayerInstance temp : getPlayersInside())
 		{
 			if (temp.getClanId() == owningClanId)
 			{

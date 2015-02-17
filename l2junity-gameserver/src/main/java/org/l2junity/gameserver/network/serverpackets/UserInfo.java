@@ -24,7 +24,7 @@ import org.l2junity.gameserver.instancemanager.RaidBossPointsManager;
 import org.l2junity.gameserver.model.Elementals;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.Party;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.ZoneId;
 
 /**
@@ -32,7 +32,7 @@ import org.l2junity.gameserver.model.zone.ZoneId;
  */
 public class UserInfo extends AbstractMaskPacket<UserInfoType>
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	
 	private final int _relation;
 	private final int _runSpd;
@@ -56,12 +56,12 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 	
 	private int _initSize = 5;
 	
-	public UserInfo(L2PcInstance cha)
+	public UserInfo(PlayerInstance cha)
 	{
 		this(cha, true);
 	}
 	
-	public UserInfo(L2PcInstance cha, boolean addAll)
+	public UserInfo(PlayerInstance cha, boolean addAll)
 	{
 		_activeChar = cha;
 		
@@ -355,7 +355,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 		}
 	}
 	
-	private int calculateRelation(L2PcInstance activeChar)
+	private int calculateRelation(PlayerInstance activeChar)
 	{
 		int relation = 0;
 		final Party party = activeChar.getParty();

@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.clientpackets.shuttle;
 
 import org.l2junity.gameserver.model.Location;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.type.WeaponType;
 import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
@@ -56,7 +56,7 @@ public final class MoveToLocationInShuttle extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;

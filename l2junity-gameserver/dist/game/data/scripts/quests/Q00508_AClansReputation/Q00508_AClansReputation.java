@@ -26,7 +26,7 @@ import java.util.Map;
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
@@ -76,7 +76,7 @@ public class Q00508_AClansReputation extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		QuestState st = getQuestState(player, false);
 		if (st == null)
@@ -121,7 +121,7 @@ public class Q00508_AClansReputation extends Quest
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
 		if (player.getClan() == null)
 		{
@@ -135,7 +135,7 @@ public class Q00508_AClansReputation extends Quest
 		}
 		else
 		{
-			L2PcInstance pleader = player.getClan().getLeader().getPlayerInstance();
+			PlayerInstance pleader = player.getClan().getLeader().getPlayerInstance();
 			if ((pleader != null) && player.isInsideRadius(pleader, 1500, true, false))
 			{
 				st = pleader.getQuestState(getName());
@@ -158,7 +158,7 @@ public class Q00508_AClansReputation extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);

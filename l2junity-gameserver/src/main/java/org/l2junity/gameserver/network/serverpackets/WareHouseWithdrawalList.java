@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 public final class WareHouseWithdrawalList extends AbstractItemPacket
@@ -31,7 +31,7 @@ public final class WareHouseWithdrawalList extends AbstractItemPacket
 	public static final int CLAN = 2;
 	public static final int CASTLE = 3; // not sure
 	public static final int FREIGHT = 1;
-	private L2PcInstance _activeChar;
+	private PlayerInstance _activeChar;
 	private long _playerAdena;
 	private final int _invSize;
 	private Collection<ItemInstance> _items;
@@ -46,7 +46,7 @@ public final class WareHouseWithdrawalList extends AbstractItemPacket
 	 */
 	private int _whType;
 	
-	public WareHouseWithdrawalList(L2PcInstance player, int type)
+	public WareHouseWithdrawalList(PlayerInstance player, int type)
 	{
 		_activeChar = player;
 		_whType = type;

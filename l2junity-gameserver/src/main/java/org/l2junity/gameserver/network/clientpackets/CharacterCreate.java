@@ -34,7 +34,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.SkillLearn;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.appearance.PcAppearance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.stat.PcStat;
 import org.l2junity.gameserver.model.actor.templates.L2PcTemplate;
 import org.l2junity.gameserver.model.base.ClassId;
@@ -151,7 +151,7 @@ public final class CharacterCreate extends L2GameClientPacket
 			return;
 		}
 		
-		L2PcInstance newChar = null;
+		PlayerInstance newChar = null;
 		L2PcTemplate template = null;
 		
 		/*
@@ -192,7 +192,7 @@ public final class CharacterCreate extends L2GameClientPacket
 				return;
 			}
 			final PcAppearance app = new PcAppearance(_face, _hairColor, _hairStyle, _sex != 0);
-			newChar = L2PcInstance.create(template, getClient().getAccountName(), _name, app);
+			newChar = PlayerInstance.create(template, getClient().getAccountName(), _name, app);
 		}
 		
 		// HP and MP are at maximum and CP is zero by default.
@@ -218,7 +218,7 @@ public final class CharacterCreate extends L2GameClientPacket
 		return Config.CHARNAME_TEMPLATE_PATTERN.matcher(text).matches();
 	}
 	
-	private void initNewChar(L2GameClient client, L2PcInstance newChar)
+	private void initNewChar(L2GameClient client, PlayerInstance newChar)
 	{
 		if (Config.DEBUG)
 		{

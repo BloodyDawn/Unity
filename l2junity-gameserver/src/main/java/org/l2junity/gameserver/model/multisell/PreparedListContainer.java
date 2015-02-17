@@ -24,7 +24,7 @@ import java.util.Collection;
 import javolution.util.FastList;
 
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.Armor;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -33,7 +33,7 @@ public class PreparedListContainer extends ListContainer
 {
 	private int _npcObjectId = 0;
 	
-	public PreparedListContainer(ListContainer template, boolean inventoryOnly, L2PcInstance player, Npc npc)
+	public PreparedListContainer(ListContainer template, boolean inventoryOnly, PlayerInstance player, Npc npc)
 	{
 		super(template);
 		

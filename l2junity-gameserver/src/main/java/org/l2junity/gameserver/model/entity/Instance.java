@@ -54,7 +54,7 @@ import org.l2junity.gameserver.model.WorldRegion;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2DoorTemplate;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.holders.InstanceReenterTimeHolder;
@@ -346,7 +346,7 @@ public final class Instance
 	{
 		for (Integer objectId : _players)
 		{
-			final L2PcInstance player = World.getInstance().getPlayer(objectId);
+			final PlayerInstance player = World.getInstance().getPlayer(objectId);
 			if ((player != null) && (player.getInstanceId() == getId()))
 			{
 				player.setInstanceId(0);
@@ -813,7 +813,7 @@ public final class Instance
 		{
 			for (Integer objectId : _players)
 			{
-				final L2PcInstance player = World.getInstance().getPlayer(objectId);
+				final PlayerInstance player = World.getInstance().getPlayer(objectId);
 				if ((player != null) && (player.getInstanceId() == getId()))
 				{
 					player.sendPacket(cs);
@@ -839,7 +839,7 @@ public final class Instance
 		}
 	}
 	
-	public void cancelEjectDeadPlayer(L2PcInstance player)
+	public void cancelEjectDeadPlayer(PlayerInstance player)
 	{
 		final ScheduledFuture<?> task = _ejectDeadTasks.remove(player.getObjectId());
 		if (task != null)
@@ -848,7 +848,7 @@ public final class Instance
 		}
 	}
 	
-	public void addEjectDeadTask(L2PcInstance player)
+	public void addEjectDeadTask(PlayerInstance player)
 	{
 		if ((player != null))
 		{

@@ -234,7 +234,7 @@ public final class L2StaticObjectInstance extends Creature
 	}
 	
 	@Override
-	public void sendInfo(L2PcInstance activeChar)
+	public void sendInfo(PlayerInstance activeChar)
 	{
 		activeChar.sendPacket(new StaticObject(this));
 	}

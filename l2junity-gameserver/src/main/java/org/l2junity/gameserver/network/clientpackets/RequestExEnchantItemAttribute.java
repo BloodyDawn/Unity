@@ -22,7 +22,7 @@ import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.model.Elementals;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.EnchantItemAttributeRequest;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -49,7 +49,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance player = getActiveChar();
+		final PlayerInstance player = getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -282,7 +282,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 		player.sendPacket(iu);
 	}
 	
-	private int addElement(final L2PcInstance player, final ItemInstance stone, final ItemInstance item, byte elementToAdd)
+	private int addElement(final PlayerInstance player, final ItemInstance stone, final ItemInstance item, byte elementToAdd)
 	{
 		final Elementals oldElement = item.getElemental(elementToAdd);
 		final int elementValue = oldElement == null ? 0 : oldElement.getValue();

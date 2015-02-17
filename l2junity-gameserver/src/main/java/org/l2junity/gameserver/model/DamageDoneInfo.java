@@ -18,22 +18,22 @@
  */
 package org.l2junity.gameserver.model;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author xban1x
  */
 public final class DamageDoneInfo
 {
-	private final L2PcInstance _attacker;
+	private final PlayerInstance _attacker;
 	private int _damage = 0;
 	
-	public DamageDoneInfo(L2PcInstance attacker)
+	public DamageDoneInfo(PlayerInstance attacker)
 	{
 		_attacker = attacker;
 	}
 	
-	public L2PcInstance getAttacker()
+	public PlayerInstance getAttacker()
 	{
 		return _attacker;
 	}

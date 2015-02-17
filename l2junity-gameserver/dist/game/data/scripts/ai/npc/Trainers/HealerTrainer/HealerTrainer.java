@@ -25,7 +25,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.model.SkillLearn;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.AcquireSkillType;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -64,7 +64,7 @@ public final class HealerTrainer extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String htmltext = null;
 		switch (event)
@@ -165,7 +165,7 @@ public final class HealerTrainer extends AbstractNpcAI
 	 * @param player the player to verify
 	 * @return {@code true} if the player has the item for the current class, {@code false} otherwise
 	 */
-	private static boolean hasTransferSkillItems(L2PcInstance player)
+	private static boolean hasTransferSkillItems(PlayerInstance player)
 	{
 		int itemId;
 		switch (player.getClassId())

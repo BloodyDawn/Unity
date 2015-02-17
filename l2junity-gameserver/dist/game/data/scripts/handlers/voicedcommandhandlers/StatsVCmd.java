@@ -20,7 +20,7 @@ package handlers.voicedcommandhandlers;
 
 import org.l2junity.gameserver.handler.IVoicedCommandHandler;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.L2Event;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -37,7 +37,7 @@ public class StatsVCmd implements IVoicedCommandHandler
 	};
 	
 	@Override
-	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params)
+	public boolean useVoicedCommand(String command, PlayerInstance activeChar, String params)
 	{
 		if (!command.equals("stats") || (params == null) || params.isEmpty())
 		{
@@ -45,7 +45,7 @@ public class StatsVCmd implements IVoicedCommandHandler
 			return false;
 		}
 		
-		final L2PcInstance pc = World.getInstance().getPlayer(params);
+		final PlayerInstance pc = World.getInstance().getPlayer(params);
 		if ((pc == null))
 		{
 			activeChar.sendPacket(SystemMessageId.THAT_PLAYER_IS_NOT_ONLINE);
@@ -68,7 +68,7 @@ public class StatsVCmd implements IVoicedCommandHandler
 		
 		final StringBuilder replyMSG = new StringBuilder(300 + (pc.getEventStatus().getKills().size() * 50));
 		replyMSG.append("<html><body><center><font color=\"LEVEL\">[ L2J EVENT ENGINE ]</font></center><br><br>Statistics for player <font color=\"LEVEL\">" + pc.getName() + "</font><br>Total kills <font color=\"FF0000\">" + pc.getEventStatus().getKills().size() + "</font><br><br>Detailed list: <br>");
-		for (L2PcInstance plr : pc.getEventStatus().getKills())
+		for (PlayerInstance plr : pc.getEventStatus().getKills())
 		{
 			replyMSG.append("<font color=\"FF0000\">" + plr.getName() + "</font><br>");
 		}

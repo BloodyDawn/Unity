@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * update 27.8.10
@@ -26,10 +26,10 @@ import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExValidateLocationInAirShip extends L2GameServerPacket
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final int shipId, x, y, z, h;
 	
-	public ExValidateLocationInAirShip(L2PcInstance player)
+	public ExValidateLocationInAirShip(PlayerInstance player)
 	{
 		_activeChar = player;
 		shipId = _activeChar.getAirShip().getObjectId();

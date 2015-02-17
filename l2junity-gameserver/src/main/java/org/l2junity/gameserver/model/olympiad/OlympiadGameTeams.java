@@ -28,7 +28,7 @@ import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.type.OlympiadStadiumZone;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExOlympiadMatchResult;
@@ -105,9 +105,9 @@ public class OlympiadGameTeams extends AbstractOlympiadGame
 		
 		List<Integer> teamOne = null;
 		List<Integer> teamTwo = null;
-		L2PcInstance player;
-		List<L2PcInstance> teamOnePlayers = new ArrayList<>(MAX_TEAM_SIZE);
-		List<L2PcInstance> teamTwoPlayers = new ArrayList<>(MAX_TEAM_SIZE);
+		PlayerInstance player;
+		List<PlayerInstance> teamOnePlayers = new ArrayList<>(MAX_TEAM_SIZE);
+		List<PlayerInstance> teamTwoPlayers = new ArrayList<>(MAX_TEAM_SIZE);
 		
 		while (list.size() > 1)
 		{
@@ -469,7 +469,7 @@ public class OlympiadGameTeams extends AbstractOlympiadGame
 	}
 	
 	@Override
-	protected final void handleDisconnect(L2PcInstance player)
+	protected final void handleDisconnect(PlayerInstance player)
 	{
 		Participant par;
 		for (int i = _teamOneSize; --i >= 0;)
@@ -993,7 +993,7 @@ public class OlympiadGameTeams extends AbstractOlympiadGame
 	 * UnAfraid: TODO: We should calculate the damage in array separately for each player so we can display it on ExOlympiadMatchResult correctly.
 	 */
 	@Override
-	protected final void addDamage(L2PcInstance player, int damage)
+	protected final void addDamage(PlayerInstance player, int damage)
 	{
 		Participant par;
 		for (int i = _teamOneSize; --i >= 0;)

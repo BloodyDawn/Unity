@@ -19,7 +19,7 @@
 package hellbound.AI.NPC.Buron;
 
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 import hellbound.HellboundEngine;
 import ai.npc.AbstractNpcAI;
@@ -45,7 +45,7 @@ public final class Buron extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String htmltext = event;
 		if ("Rumor".equalsIgnoreCase(event))
@@ -87,7 +87,7 @@ public final class Buron extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onFirstTalk(Npc npc, L2PcInstance player)
+	public final String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		getQuestState(player, true);
 		switch (HellboundEngine.getInstance().getLevel())

@@ -19,7 +19,7 @@
 package ai.individual;
 
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 
 import ai.npc.AbstractNpcAI;
@@ -46,7 +46,7 @@ public final class EvasGiftBox extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		if (killer.isAffectedBySkill(BUFF))
 		{

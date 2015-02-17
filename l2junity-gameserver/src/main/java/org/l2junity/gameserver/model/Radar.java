@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.RadarControl;
 
 import javolution.util.FastList;
@@ -28,10 +28,10 @@ import javolution.util.FastList;
  */
 public final class Radar
 {
-	private final L2PcInstance _player;
+	private final PlayerInstance _player;
 	private final FastList<RadarMarker> _markers;
 	
-	public Radar(L2PcInstance player)
+	public Radar(PlayerInstance player)
 	{
 		_player = player;
 		_markers = new FastList<>();

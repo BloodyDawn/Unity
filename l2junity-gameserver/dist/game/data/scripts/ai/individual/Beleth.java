@@ -37,7 +37,7 @@ import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -66,7 +66,7 @@ public final class Beleth extends AbstractNpcAI
 	protected static Npc BELETH;
 	protected static Npc PRIEST;
 	protected static ZoneType ZONE = null;
-	private static L2PcInstance BELETH_KILLER;
+	private static PlayerInstance BELETH_KILLER;
 	private static boolean DEBUG = false;
 	protected static boolean MOVIE = false;
 	private static boolean ATTACKED = false;
@@ -400,7 +400,7 @@ public final class Beleth extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		if (npc == null)
 		{
@@ -463,7 +463,7 @@ public final class Beleth extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSkillSee(Npc npc, L2PcInstance player, Skill skill, WorldObject[] targets, boolean isSummon)
+	public String onSkillSee(Npc npc, PlayerInstance player, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
 		if ((npc != null) && !npc.isDead() && ((npc.getId() == 29118) || (npc.getId() == 29119)) && !npc.isCastingNow() && skill.hasEffectType(L2EffectType.HEAL) && (getRandom(100) < 80))
 		{
@@ -474,7 +474,7 @@ public final class Beleth extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon)
 	{
 		if (npc == null)
 		{
@@ -528,7 +528,7 @@ public final class Beleth extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpellFinished(Npc npc, L2PcInstance player, Skill skill)
+	public String onSpellFinished(Npc npc, PlayerInstance player, Skill skill)
 	{
 		if ((npc != null) && !npc.isDead() && ((npc.getId() == 29118) || (npc.getId() == 29119)) && !npc.isCastingNow())
 		{
@@ -559,7 +559,7 @@ public final class Beleth extends AbstractNpcAI
 					return null;
 				}
 			}
-			for (L2PcInstance plr : npc.getKnownList().getKnownPlayersInRadius(950))
+			for (PlayerInstance plr : npc.getKnownList().getKnownPlayersInRadius(950))
 			{
 				npc.setTarget(plr);
 				npc.doCast(FIREBALL.getSkill());
@@ -571,7 +571,7 @@ public final class Beleth extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAggroRangeEnter(Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAggroRangeEnter(Npc npc, PlayerInstance player, boolean isSummon)
 	{
 		if ((npc != null) && !npc.isDead() && ((npc.getId() == 29118) || (npc.getId() == 29119)) && !npc.isCastingNow() && !MOVIE)
 		{
@@ -608,7 +608,7 @@ public final class Beleth extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		final String html;
 		if ((BELETH_KILLER != null) && (player.getObjectId() == BELETH_KILLER.getObjectId()))
@@ -625,12 +625,12 @@ public final class Beleth extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		return null;
 	}
 	
-	private static void setBelethKiller(int event, L2PcInstance killer)
+	private static void setBelethKiller(int event, PlayerInstance killer)
 	{
 		if (event == 0)
 		{

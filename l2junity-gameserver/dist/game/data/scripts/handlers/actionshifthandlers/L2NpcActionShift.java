@@ -32,14 +32,14 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.util.Util;
 
 public class L2NpcActionShift implements IActionShiftHandler
 {
 	@Override
-	public boolean action(L2PcInstance activeChar, WorldObject target, boolean interact)
+	public boolean action(PlayerInstance activeChar, WorldObject target, boolean interact)
 	{
 		// Check if the L2PcInstance is a GM
 		if (activeChar.isGM())

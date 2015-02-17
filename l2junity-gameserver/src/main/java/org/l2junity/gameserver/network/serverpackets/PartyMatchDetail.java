@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.PartyMatchRoom;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author Gnacik
@@ -32,7 +32,7 @@ public class PartyMatchDetail extends L2GameServerPacket
 	 * @param player
 	 * @param room
 	 */
-	public PartyMatchDetail(L2PcInstance player, PartyMatchRoom room)
+	public PartyMatchDetail(PlayerInstance player, PartyMatchRoom room)
 	{
 		_room = room;
 	}

@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.model.zone.type;
 
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.L2ZoneRespawn;
 import org.l2junity.gameserver.model.zone.ZoneId;
 
@@ -63,7 +63,7 @@ public class ResidenceTeleportZone extends L2ZoneRespawn
 	
 	public void oustAllPlayers()
 	{
-		for (L2PcInstance player : getPlayersInside())
+		for (PlayerInstance player : getPlayersInside())
 		{
 			if ((player != null) && player.isOnline())
 			{

@@ -20,7 +20,7 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -44,7 +44,7 @@ public final class ShilensBreath extends AbstractEffect
 	{
 		if (info.getEffected().isPlayer() && !info.getEffected().isDead())
 		{
-			final L2PcInstance player = (L2PcInstance) info.getEffected();
+			final PlayerInstance player = (PlayerInstance) info.getEffected();
 			int nextLv = info.getSkill().getLevel() - 1;
 			
 			if (nextLv > 0)

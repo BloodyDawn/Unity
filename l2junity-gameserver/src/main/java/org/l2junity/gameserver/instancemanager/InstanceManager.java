@@ -29,7 +29,7 @@ import javolution.util.FastMap;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.xml.IXmlReader;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.w3c.dom.Document;
@@ -250,7 +250,7 @@ public final class InstanceManager implements IXmlReader
 	 * @param player the player to check
 	 * @return the instance world
 	 */
-	public InstanceWorld getPlayerWorld(L2PcInstance player)
+	public InstanceWorld getPlayerWorld(PlayerInstance player)
 	{
 		for (InstanceWorld temp : _instanceWorlds.values())
 		{

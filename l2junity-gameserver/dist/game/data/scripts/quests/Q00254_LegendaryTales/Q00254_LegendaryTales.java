@@ -20,7 +20,7 @@ package quests.Q00254_LegendaryTales;
 
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
@@ -102,7 +102,7 @@ public class Q00254_LegendaryTales extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
@@ -135,7 +135,7 @@ public class Q00254_LegendaryTales extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, false);
@@ -202,11 +202,11 @@ public class Q00254_LegendaryTales extends Quest
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance player, boolean isPet)
+	public String onKill(Npc npc, PlayerInstance player, boolean isPet)
 	{
 		if (player.isInParty())
 		{
-			for (L2PcInstance partyMember : player.getParty().getMembers())
+			for (PlayerInstance partyMember : player.getParty().getMembers())
 			{
 				actionForEachPlayer(partyMember, npc, false);
 			}
@@ -219,7 +219,7 @@ public class Q00254_LegendaryTales extends Quest
 	}
 	
 	@Override
-	public void actionForEachPlayer(L2PcInstance player, Npc npc, boolean isSummon)
+	public void actionForEachPlayer(PlayerInstance player, Npc npc, boolean isSummon)
 	{
 		final QuestState st = player.getQuestState(Q00254_LegendaryTales.class.getSimpleName());
 		

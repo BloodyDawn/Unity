@@ -21,7 +21,7 @@ package handlers.punishmenthandlers;
 import org.l2junity.gameserver.LoginServerThread;
 import org.l2junity.gameserver.handler.IPunishmentHandler;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.punishment.PunishmentTask;
 import org.l2junity.gameserver.model.punishment.PunishmentType;
 import org.l2junity.gameserver.network.L2GameClient;
@@ -40,7 +40,7 @@ public class BanHandler implements IPunishmentHandler
 			case CHARACTER:
 			{
 				int objectId = Integer.parseInt(String.valueOf(task.getKey()));
-				final L2PcInstance player = World.getInstance().getPlayer(objectId);
+				final PlayerInstance player = World.getInstance().getPlayer(objectId);
 				if (player != null)
 				{
 					applyToPlayer(player);
@@ -53,7 +53,7 @@ public class BanHandler implements IPunishmentHandler
 				final L2GameClient client = LoginServerThread.getInstance().getClient(account);
 				if (client != null)
 				{
-					final L2PcInstance player = client.getActiveChar();
+					final PlayerInstance player = client.getActiveChar();
 					if (player != null)
 					{
 						applyToPlayer(player);
@@ -68,7 +68,7 @@ public class BanHandler implements IPunishmentHandler
 			case IP:
 			{
 				String ip = String.valueOf(task.getKey());
-				for (L2PcInstance player : World.getInstance().getPlayers())
+				for (PlayerInstance player : World.getInstance().getPlayers())
 				{
 					if (player.getIPAddress().equals(ip))
 					{
@@ -90,7 +90,7 @@ public class BanHandler implements IPunishmentHandler
 	 * Applies all punishment effects from the player.
 	 * @param player
 	 */
-	private static void applyToPlayer(L2PcInstance player)
+	private static void applyToPlayer(PlayerInstance player)
 	{
 		player.logout();
 	}

@@ -20,7 +20,7 @@ package org.l2junity.gameserver.network.clientpackets.adenadistribution;
 
 import java.util.Objects;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.AdenaDistributionRequest;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
@@ -42,7 +42,7 @@ public class RequestDivideAdenaCancel extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance player = getClient().getActiveChar();
+		final PlayerInstance player = getClient().getActiveChar();
 		if (player == null)
 		{
 			return;

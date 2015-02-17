@@ -57,7 +57,7 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.WorldRegion;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.knownlist.NullKnownList;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerAugment;
@@ -302,7 +302,7 @@ public final class ItemInstance extends WorldObject
 	 * @param creator : L2PcInstance Player requesting the item creation
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 */
-	public void setOwnerId(String process, int owner_id, L2PcInstance creator, Object reference)
+	public void setOwnerId(String process, int owner_id, PlayerInstance creator, Object reference)
 	{
 		setOwnerId(owner_id);
 		
@@ -448,7 +448,7 @@ public final class ItemInstance extends WorldObject
 	 * @param creator : L2PcInstance Player requesting the item creation
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 */
-	public void changeCount(String process, long count, L2PcInstance creator, Object reference)
+	public void changeCount(String process, long count, PlayerInstance creator, Object reference)
 	{
 		if (count == 0)
 		{
@@ -513,7 +513,7 @@ public final class ItemInstance extends WorldObject
 	}
 	
 	// No logging (function designed for shots only)
-	public void changeCountWithoutTrace(int count, L2PcInstance creator, Object reference)
+	public void changeCountWithoutTrace(int count, PlayerInstance creator, Object reference)
 	{
 		changeCount(null, count, creator, reference);
 	}
@@ -854,7 +854,7 @@ public final class ItemInstance extends WorldObject
 	 * @param allowNonTradeable
 	 * @return if item is available for manipulation
 	 */
-	public boolean isAvailable(L2PcInstance player, boolean allowAdena, boolean allowNonTradeable)
+	public boolean isAvailable(PlayerInstance player, boolean allowAdena, boolean allowNonTradeable)
 	{
 		final Summon pet = player.getPet();
 		
@@ -1308,7 +1308,7 @@ public final class ItemInstance extends WorldObject
 			_consumingMana = false;
 		}
 		
-		final L2PcInstance player = getActingPlayer();
+		final PlayerInstance player = getActingPlayer();
 		if (player != null)
 		{
 			SystemMessage sm;
@@ -1833,7 +1833,7 @@ public final class ItemInstance extends WorldObject
 	
 	public void endOfLife()
 	{
-		L2PcInstance player = getActingPlayer();
+		PlayerInstance player = getActingPlayer();
 		if (player != null)
 		{
 			if (isEquipped())
@@ -1920,7 +1920,7 @@ public final class ItemInstance extends WorldObject
 		}
 	}
 	
-	public void updateElementAttrBonus(L2PcInstance player)
+	public void updateElementAttrBonus(PlayerInstance player)
 	{
 		if (_elementals == null)
 		{
@@ -1932,7 +1932,7 @@ public final class ItemInstance extends WorldObject
 		}
 	}
 	
-	public void removeElementAttrBonus(L2PcInstance player)
+	public void removeElementAttrBonus(PlayerInstance player)
 	{
 		if (_elementals == null)
 		{
@@ -1950,7 +1950,7 @@ public final class ItemInstance extends WorldObject
 	}
 	
 	@Override
-	public void sendInfo(L2PcInstance activeChar)
+	public void sendInfo(PlayerInstance activeChar)
 	{
 		if (_dropperObjectId != 0)
 		{
@@ -2018,7 +2018,7 @@ public final class ItemInstance extends WorldObject
 	
 	public int getOlyEnchantLevel()
 	{
-		L2PcInstance player = getActingPlayer();
+		PlayerInstance player = getActingPlayer();
 		int enchant = getEnchantLevel();
 		
 		if (player == null)
@@ -2051,7 +2051,7 @@ public final class ItemInstance extends WorldObject
 			return;
 		}
 		
-		final L2PcInstance player = getActingPlayer();
+		final PlayerInstance player = getActingPlayer();
 		
 		if (player != null)
 		{
@@ -2072,7 +2072,7 @@ public final class ItemInstance extends WorldObject
 			return;
 		}
 		
-		final L2PcInstance player = getActingPlayer();
+		final PlayerInstance player = getActingPlayer();
 		
 		if (player != null)
 		{
@@ -2093,7 +2093,7 @@ public final class ItemInstance extends WorldObject
 	}
 	
 	@Override
-	public L2PcInstance getActingPlayer()
+	public PlayerInstance getActingPlayer()
 	{
 		return World.getInstance().getPlayer(getOwnerId());
 	}
@@ -2107,7 +2107,7 @@ public final class ItemInstance extends WorldObject
 	 * @param activeChar
 	 * @param command
 	 */
-	public void onBypassFeedback(L2PcInstance activeChar, String command)
+	public void onBypassFeedback(PlayerInstance activeChar, String command)
 	{
 		if (command.startsWith("Quest"))
 		{
@@ -2173,7 +2173,7 @@ public final class ItemInstance extends WorldObject
 	 */
 	public void clearEnchantStats()
 	{
-		final L2PcInstance player = getActingPlayer();
+		final PlayerInstance player = getActingPlayer();
 		if (player == null)
 		{
 			_enchantOptions.clear();
@@ -2192,7 +2192,7 @@ public final class ItemInstance extends WorldObject
 	 */
 	public void applyEnchantStats()
 	{
-		final L2PcInstance player = getActingPlayer();
+		final PlayerInstance player = getActingPlayer();
 		if (!isEquipped() || (player == null) || (getEnchantOptions() == DEFAULT_ENCHANT_OPTIONS))
 		{
 			return;
@@ -2250,7 +2250,7 @@ public final class ItemInstance extends WorldObject
 				final AppearanceStone stone = AppearanceItemData.getInstance().getStone(appearanceStoneId);
 				if (stone != null)
 				{
-					final L2PcInstance player = getActingPlayer();
+					final PlayerInstance player = getActingPlayer();
 					if (player != null)
 					{
 						if (!stone.getRaces().isEmpty() && !stone.getRaces().contains(player.getRace()))
@@ -2306,7 +2306,7 @@ public final class ItemInstance extends WorldObject
 		vars.remove(ItemVariables.VISUAL_APPEARANCE_LIFE_TIME);
 		vars.storeMe();
 		
-		final L2PcInstance player = getActingPlayer();
+		final PlayerInstance player = getActingPlayer();
 		if (player != null)
 		{
 			final InventoryUpdate iu = new InventoryUpdate();

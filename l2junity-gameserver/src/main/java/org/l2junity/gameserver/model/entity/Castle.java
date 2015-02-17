@@ -51,7 +51,7 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2ArtefactInstance;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.CastleSpawnHolder;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.skills.CommonSkill;
@@ -452,17 +452,17 @@ public final class Castle extends AbstractResidence
 		return getZone().getDistanceToZone(obj);
 	}
 	
-	public void closeDoor(L2PcInstance activeChar, int doorId)
+	public void closeDoor(PlayerInstance activeChar, int doorId)
 	{
 		openCloseDoor(activeChar, doorId, false);
 	}
 	
-	public void openDoor(L2PcInstance activeChar, int doorId)
+	public void openDoor(PlayerInstance activeChar, int doorId)
 	{
 		openCloseDoor(activeChar, doorId, true);
 	}
 	
-	public void openCloseDoor(L2PcInstance activeChar, int doorId, boolean open)
+	public void openCloseDoor(PlayerInstance activeChar, int doorId, boolean open)
 	{
 		if (activeChar.getClanId() != getOwnerId())
 		{
@@ -514,7 +514,7 @@ public final class Castle extends AbstractResidence
 				}
 				try
 				{
-					L2PcInstance oldleader = oldOwner.getLeader().getPlayerInstance();
+					PlayerInstance oldleader = oldOwner.getLeader().getPlayerInstance();
 					if (oldleader != null)
 					{
 						if (oldleader.getMountType() == MountType.WYVERN)
@@ -528,7 +528,7 @@ public final class Castle extends AbstractResidence
 					_log.log(Level.WARNING, "Exception in setOwner: " + e.getMessage(), e);
 				}
 				oldOwner.setCastleId(0); // Unset has castle flag for old owner
-				for (L2PcInstance member : oldOwner.getOnlineMembers(0))
+				for (PlayerInstance member : oldOwner.getOnlineMembers(0))
 				{
 					removeResidentialSkills(member);
 					member.sendSkillList();
@@ -553,7 +553,7 @@ public final class Castle extends AbstractResidence
 		
 		if (clan != null)
 		{
-			for (L2PcInstance member : clan.getOnlineMembers(0))
+			for (PlayerInstance member : clan.getOnlineMembers(0))
 			{
 				giveResidentialSkills(member);
 				member.sendSkillList();
@@ -570,7 +570,7 @@ public final class Castle extends AbstractResidence
 			{
 				CastleManager.getInstance().removeCirclet(_formerOwner, getResidenceId());
 			}
-			for (L2PcInstance member : clan.getOnlineMembers(0))
+			for (PlayerInstance member : clan.getOnlineMembers(0))
 			{
 				removeResidentialSkills(member);
 				member.sendSkillList();
@@ -712,7 +712,7 @@ public final class Castle extends AbstractResidence
 		}
 	}
 	
-	public boolean updateFunctions(L2PcInstance player, int type, int lvl, int lease, long rate, boolean addNew)
+	public boolean updateFunctions(PlayerInstance player, int type, int lvl, int lease, long rate, boolean addNew)
 	{
 		if (player == null)
 		{
@@ -1145,7 +1145,7 @@ public final class Castle extends AbstractResidence
 	}
 	
 	@Override
-	public void giveResidentialSkills(L2PcInstance player)
+	public void giveResidentialSkills(PlayerInstance player)
 	{
 		super.giveResidentialSkills(player);
 		final Skill skill = getSide() == CastleSide.DARK ? CommonSkill.ABILITY_OF_DARKNESS.getSkill() : CommonSkill.ABILITY_OF_LIGHT.getSkill();
@@ -1153,7 +1153,7 @@ public final class Castle extends AbstractResidence
 	}
 	
 	@Override
-	public void removeResidentialSkills(L2PcInstance player)
+	public void removeResidentialSkills(PlayerInstance player)
 	{
 		super.removeResidentialSkills(player);
 		player.removeSkill(CommonSkill.ABILITY_OF_DARKNESS.getId());

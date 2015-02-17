@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.events.impl.character.player;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.IBaseEvent;
 
@@ -27,12 +27,12 @@ import org.l2junity.gameserver.model.events.impl.IBaseEvent;
  */
 public class OnPlayerDlgAnswer implements IBaseEvent
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final int _messageId;
 	private final int _answer;
 	private final int _requesterId;
 	
-	public OnPlayerDlgAnswer(L2PcInstance activeChar, int messageId, int answer, int requesterId)
+	public OnPlayerDlgAnswer(PlayerInstance activeChar, int messageId, int answer, int requesterId)
 	{
 		_activeChar = activeChar;
 		_messageId = messageId;
@@ -40,7 +40,7 @@ public class OnPlayerDlgAnswer implements IBaseEvent
 		_requesterId = requesterId;
 	}
 	
-	public L2PcInstance getActiveChar()
+	public PlayerInstance getActiveChar()
 	{
 		return _activeChar;
 	}

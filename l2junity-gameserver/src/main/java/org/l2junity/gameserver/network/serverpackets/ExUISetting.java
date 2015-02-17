@@ -22,7 +22,7 @@ import java.util.List;
 
 import org.l2junity.gameserver.model.ActionKey;
 import org.l2junity.gameserver.model.UIKeysSettings;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author mrTJO
@@ -32,7 +32,7 @@ public class ExUISetting extends L2GameServerPacket
 	private final UIKeysSettings _uiSettings;
 	private int buffsize, categories;
 	
-	public ExUISetting(L2PcInstance player)
+	public ExUISetting(PlayerInstance player)
 	{
 		_uiSettings = player.getUISettings();
 		calcSize();

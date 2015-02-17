@@ -21,7 +21,7 @@ package handlers.itemhandlers;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
@@ -38,7 +38,7 @@ public class Book implements IItemHandler
 			return false;
 		}
 		
-		L2PcInstance activeChar = (L2PcInstance) playable;
+		PlayerInstance activeChar = (PlayerInstance) playable;
 		final int itemId = item.getId();
 		
 		String filename = "data/html/help/" + itemId + ".htm";

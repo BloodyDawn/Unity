@@ -23,13 +23,13 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2AirShipInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.DeleteObject;
 import org.l2junity.gameserver.network.serverpackets.SpawnItem;
 
 public class PcKnownList extends PlayableKnownList
 {
-	public PcKnownList(L2PcInstance activeChar)
+	public PcKnownList(PlayerInstance activeChar)
 	{
 		super(activeChar);
 	}
@@ -132,9 +132,9 @@ public class PcKnownList extends PlayableKnownList
 	}
 	
 	@Override
-	public final L2PcInstance getActiveChar()
+	public final PlayerInstance getActiveChar()
 	{
-		return (L2PcInstance) super.getActiveChar();
+		return (PlayerInstance) super.getActiveChar();
 	}
 	
 	@Override

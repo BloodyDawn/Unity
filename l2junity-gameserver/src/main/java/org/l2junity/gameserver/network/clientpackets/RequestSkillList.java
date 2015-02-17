@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @version 1.4
@@ -36,7 +36,7 @@ public final class RequestSkillList extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance cha = getClient().getActiveChar();
+		final PlayerInstance cha = getClient().getActiveChar();
 		
 		if (cha != null)
 		{

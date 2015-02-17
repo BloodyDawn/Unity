@@ -51,7 +51,7 @@ import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2BlockInstance;
 import org.l2junity.gameserver.model.actor.instance.L2CubicInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
@@ -980,7 +980,7 @@ public final class Skill implements IIdentifiable
 			return true;
 		}
 		
-		if (activeChar.isPlayer() && !canBeUseWhileRiding((L2PcInstance) activeChar))
+		if (activeChar.isPlayer() && !canBeUseWhileRiding((PlayerInstance) activeChar))
 		{
 			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED_DUE_TO_UNSUITABLE_TERMS);
 			sm.addSkillName(_id);
@@ -1025,7 +1025,7 @@ public final class Skill implements IIdentifiable
 	 * @param player the player
 	 * @return {@code true} if the player can use this skill, {@code false} otherwise
 	 */
-	public boolean canBeUseWhileRiding(final L2PcInstance player)
+	public boolean canBeUseWhileRiding(final PlayerInstance player)
 	{
 		return (_rideState == null) || _rideState.contains(player.getMountType());
 	}
@@ -1117,8 +1117,8 @@ public final class Skill implements IIdentifiable
 			return false;
 		}
 		
-		final L2PcInstance player = caster.getActingPlayer();
-		final L2PcInstance targetPlayer = target.getActingPlayer();
+		final PlayerInstance player = caster.getActingPlayer();
+		final PlayerInstance targetPlayer = target.getActingPlayer();
 		if (player != null)
 		{
 			if (targetPlayer != null)
@@ -1198,7 +1198,7 @@ public final class Skill implements IIdentifiable
 		return true;
 	}
 	
-	public static final boolean addPet(Creature caster, L2PcInstance owner, int radius, boolean isDead)
+	public static final boolean addPet(Creature caster, PlayerInstance owner, int radius, boolean isDead)
 	{
 		final Summon pet = owner.getPet();
 		if (pet == null)
@@ -1440,7 +1440,7 @@ public final class Skill implements IIdentifiable
 			case 5853:
 			{
 				final L2BlockInstance block = targets[0] instanceof L2BlockInstance ? (L2BlockInstance) targets[0] : null;
-				final L2PcInstance player = caster.isPlayer() ? (L2PcInstance) caster : null;
+				final PlayerInstance player = caster.isPlayer() ? (PlayerInstance) caster : null;
 				if ((block == null) || (player == null))
 				{
 					return;

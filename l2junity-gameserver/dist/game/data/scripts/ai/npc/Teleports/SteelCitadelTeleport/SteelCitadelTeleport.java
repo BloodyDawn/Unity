@@ -25,7 +25,7 @@ import org.l2junity.gameserver.model.CommandChannel;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.type.BossZone;
 
 import ai.npc.AbstractNpcAI;
@@ -50,7 +50,7 @@ public final class SteelCitadelTeleport extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		final int belethStatus = GrandBossManager.getInstance().getBossStatus(BELETH);
 		if (belethStatus == 3)
@@ -81,7 +81,7 @@ public final class SteelCitadelTeleport extends AbstractNpcAI
 					continue;
 				}
 				
-				for (L2PcInstance pl : party.getMembers())
+				for (PlayerInstance pl : party.getMembers())
 				{
 					if (pl.isInsideRadius(npc.getX(), npc.getY(), npc.getZ(), 3000, true, false))
 					{

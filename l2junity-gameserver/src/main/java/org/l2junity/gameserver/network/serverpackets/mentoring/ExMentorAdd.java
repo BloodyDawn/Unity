@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.serverpackets.mentoring;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
 
 /**
@@ -26,9 +26,9 @@ import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
  */
 public class ExMentorAdd extends L2GameServerPacket
 {
-	final L2PcInstance _mentor;
+	final PlayerInstance _mentor;
 	
-	public ExMentorAdd(L2PcInstance mentor)
+	public ExMentorAdd(PlayerInstance mentor)
 	{
 		_mentor = mentor;
 	}

@@ -25,7 +25,7 @@ import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.data.sql.impl.AnnouncementsTable;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.PageResult;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.announce.Announcement;
 import org.l2junity.gameserver.model.announce.AnnouncementType;
 import org.l2junity.gameserver.model.announce.AutoAnnouncement;
@@ -48,7 +48,7 @@ public class AdminAnnouncements implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		final StringTokenizer st = new StringTokenizer(command);
 		final String cmd = st.hasMoreTokens() ? st.nextToken() : "";

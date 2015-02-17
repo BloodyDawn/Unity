@@ -23,7 +23,7 @@ import java.util.logging.Level;
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.model.L2Clan;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.PledgeInfo;
 
 public final class RequestPledgeInfo extends L2GameClientPacket
@@ -46,7 +46,7 @@ public final class RequestPledgeInfo extends L2GameClientPacket
 			_log.log(Level.FINE, "Info for clan " + _clanId + " requested");
 		}
 		
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;

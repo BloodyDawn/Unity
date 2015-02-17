@@ -21,7 +21,7 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.entity.Fort;
@@ -51,7 +51,7 @@ public final class TakeFortStart extends AbstractEffect
 	{
 		if (info.getEffector().isPlayer())
 		{
-			final L2PcInstance player = info.getEffector().getActingPlayer();
+			final PlayerInstance player = info.getEffector().getActingPlayer();
 			final Fort fort = FortManager.getInstance().getFort(player);
 			final L2Clan clan = player.getClan();
 			if ((fort != null) && (clan != null))

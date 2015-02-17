@@ -27,7 +27,7 @@ import java.util.logging.Logger;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.idfactory.IdFactory;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author evill33t
@@ -73,7 +73,7 @@ public class Couple
 		}
 	}
 	
-	public Couple(L2PcInstance player1, L2PcInstance player2)
+	public Couple(PlayerInstance player1, PlayerInstance player2)
 	{
 		int _tempPlayer1Id = player1.getObjectId();
 		int _tempPlayer2Id = player2.getObjectId();

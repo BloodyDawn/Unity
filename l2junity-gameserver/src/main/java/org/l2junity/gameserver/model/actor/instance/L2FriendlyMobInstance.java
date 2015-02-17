@@ -51,9 +51,9 @@ public class L2FriendlyMobInstance extends Attackable
 	@Override
 	public boolean isAutoAttackable(Creature attacker)
 	{
-		if (attacker instanceof L2PcInstance)
+		if (attacker instanceof PlayerInstance)
 		{
-			return ((L2PcInstance) attacker).getKarma() > 0;
+			return ((PlayerInstance) attacker).getKarma() > 0;
 		}
 		return false;
 	}

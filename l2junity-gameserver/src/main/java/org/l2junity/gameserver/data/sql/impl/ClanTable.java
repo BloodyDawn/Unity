@@ -43,7 +43,7 @@ import org.l2junity.gameserver.instancemanager.SiegeManager;
 import org.l2junity.gameserver.model.ClanMember;
 import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.L2Clan;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Auction;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.FortSiege;
@@ -140,7 +140,7 @@ public class ClanTable
 	 * @param clanName
 	 * @return NULL if clan with same name already exists
 	 */
-	public L2Clan createClan(L2PcInstance player, String clanName)
+	public L2Clan createClan(PlayerInstance player, String clanName)
 	{
 		if (null == player)
 		{

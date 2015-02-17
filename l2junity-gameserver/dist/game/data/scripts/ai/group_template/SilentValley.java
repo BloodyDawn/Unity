@@ -23,7 +23,7 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.network.NpcStringId;
 
@@ -73,7 +73,7 @@ public final class SilentValley extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if ((npc != null) && !npc.isDead())
 		{
@@ -95,7 +95,7 @@ public final class SilentValley extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(Npc npc, L2PcInstance player, int damage, boolean isSummon)
+	public String onAttack(Npc npc, PlayerInstance player, int damage, boolean isSummon)
 	{
 		switch (npc.getId())
 		{
@@ -137,7 +137,7 @@ public final class SilentValley extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		if (getRandom(1000) < SPAWN_CHANCE)
 		{
@@ -155,7 +155,7 @@ public final class SilentValley extends AbstractNpcAI
 	{
 		if (creature.isPlayable())
 		{
-			final L2PcInstance player = (isSummon) ? ((Summon) creature).getOwner() : creature.getActingPlayer();
+			final PlayerInstance player = (isSummon) ? ((Summon) creature).getOwner() : creature.getActingPlayer();
 			if ((npc.getId() == GUARD1) || (npc.getId() == GUARD2))
 			{
 				npc.setTarget(player);

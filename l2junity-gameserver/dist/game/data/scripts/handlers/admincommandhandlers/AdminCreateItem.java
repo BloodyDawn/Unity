@@ -23,7 +23,7 @@ import java.util.StringTokenizer;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.network.serverpackets.ExAdenaInvenCount;
 
@@ -43,7 +43,7 @@ public class AdminCreateItem implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		if (command.equals("admin_itemcreate"))
 		{
@@ -118,10 +118,10 @@ public class AdminCreateItem implements IAdminCommandHandler
 		{
 			try
 			{
-				L2PcInstance target;
-				if (activeChar.getTarget() instanceof L2PcInstance)
+				PlayerInstance target;
+				if (activeChar.getTarget() instanceof PlayerInstance)
 				{
-					target = (L2PcInstance) activeChar.getTarget();
+					target = (PlayerInstance) activeChar.getTarget();
 				}
 				else
 				{
@@ -187,7 +187,7 @@ public class AdminCreateItem implements IAdminCommandHandler
 				activeChar.sendMessage("This item does not stack - Creation aborted.");
 				return false;
 			}
-			for (L2PcInstance onlinePlayer : World.getInstance().getPlayers())
+			for (PlayerInstance onlinePlayer : World.getInstance().getPlayers())
 			{
 				if ((activeChar != onlinePlayer) && onlinePlayer.isOnline() && ((onlinePlayer.getClient() != null) && !onlinePlayer.getClient().isDetached()))
 				{
@@ -207,7 +207,7 @@ public class AdminCreateItem implements IAdminCommandHandler
 		return ADMIN_COMMANDS;
 	}
 	
-	private void createItem(L2PcInstance activeChar, L2PcInstance target, int id, long num)
+	private void createItem(PlayerInstance activeChar, PlayerInstance target, int id, long num)
 	{
 		L2Item template = ItemTable.getInstance().getTemplate(id);
 		if (template == null)

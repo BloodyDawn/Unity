@@ -37,7 +37,7 @@ import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.TowerSpawn;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.Siege;
 import org.l2junity.gameserver.model.interfaces.ILocational;
@@ -65,7 +65,7 @@ public final class SiegeManager
 		load();
 	}
 	
-	public final void addSiegeSkills(L2PcInstance character)
+	public final void addSiegeSkills(PlayerInstance character)
 	{
 		for (Skill sk : SkillData.getInstance().getSiegeSkills(character.isNoble(), character.getClan().getCastleId() > 0))
 		{
@@ -112,7 +112,7 @@ public final class SiegeManager
 		return register;
 	}
 	
-	public final void removeSiegeSkills(L2PcInstance character)
+	public final void removeSiegeSkills(PlayerInstance character)
 	{
 		for (Skill sk : SkillData.getInstance().getSiegeSkills(character.isNoble(), character.getClan().getCastleId() > 0))
 		{

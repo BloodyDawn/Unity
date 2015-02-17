@@ -19,7 +19,7 @@
 package ai.group_template;
 
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 
 import ai.npc.AbstractNpcAI;
@@ -43,7 +43,7 @@ public final class FrozenLabyrinth extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
 		if (npc.isScriptValue(0) && (skill != null) && !skill.isMagic())
 		{

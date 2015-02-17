@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author mrTJO
@@ -29,7 +29,7 @@ public class ExCubeGameExtendedChangePoints extends L2GameServerPacket
 	int _bluePoints;
 	int _redPoints;
 	boolean _isRedTeam;
-	L2PcInstance _player;
+	PlayerInstance _player;
 	int _playerPoints;
 	
 	/**
@@ -41,7 +41,7 @@ public class ExCubeGameExtendedChangePoints extends L2GameServerPacket
 	 * @param player Player Instance
 	 * @param playerPoints Current Player Points
 	 */
-	public ExCubeGameExtendedChangePoints(int timeLeft, int bluePoints, int redPoints, boolean isRedTeam, L2PcInstance player, int playerPoints)
+	public ExCubeGameExtendedChangePoints(int timeLeft, int bluePoints, int redPoints, boolean isRedTeam, PlayerInstance player, int playerPoints)
 	{
 		_timeLeft = timeLeft;
 		_bluePoints = bluePoints;

@@ -25,7 +25,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.AbilityPointsData;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.model.SkillLearn;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
@@ -38,7 +38,7 @@ public class ExAcquireAPSkillList extends L2GameServerPacket
 	private final boolean _enable;
 	private final List<Skill> _skills = new ArrayList<>();
 	
-	public ExAcquireAPSkillList(L2PcInstance activeChar)
+	public ExAcquireAPSkillList(PlayerInstance activeChar)
 	{
 		_abilityPoints = activeChar.getAbilityPoints();
 		_usedAbilityPoints = activeChar.getAbilityPointsUsed();

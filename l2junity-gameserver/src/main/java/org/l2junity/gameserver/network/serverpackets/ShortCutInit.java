@@ -19,13 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.Shortcut;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public final class ShortCutInit extends L2GameServerPacket
 {
 	private Shortcut[] _shortCuts;
 	
-	public ShortCutInit(L2PcInstance activeChar)
+	public ShortCutInit(PlayerInstance activeChar)
 	{
 		if (activeChar == null)
 		{

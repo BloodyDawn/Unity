@@ -18,14 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author Sdw
  */
 public class ExResponseBeautyRegistReset extends L2GameServerPacket
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final int _type;
 	private final int _result;
 	
@@ -35,7 +35,7 @@ public class ExResponseBeautyRegistReset extends L2GameServerPacket
 	public final static int CHANGE = 0;
 	public final static int RESTORE = 1;
 	
-	public ExResponseBeautyRegistReset(L2PcInstance activeChar, int type, int result)
+	public ExResponseBeautyRegistReset(PlayerInstance activeChar, int type, int result)
 	{
 		_activeChar = activeChar;
 		_type = type;

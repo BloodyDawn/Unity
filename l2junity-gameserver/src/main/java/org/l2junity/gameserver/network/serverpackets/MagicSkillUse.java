@@ -24,7 +24,7 @@ import java.util.List;
 
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.interfaces.IPositionable;
 
 /**
@@ -53,7 +53,7 @@ public final class MagicSkillUse extends L2GameServerPacket
 		Location skillWorldPos = null;
 		if (cha.isPlayer())
 		{
-			final L2PcInstance player = cha.getActingPlayer();
+			final PlayerInstance player = cha.getActingPlayer();
 			if (player.getCurrentSkillWorldPosition() != null)
 			{
 				skillWorldPos = player.getCurrentSkillWorldPosition();

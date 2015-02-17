@@ -41,7 +41,7 @@ public class L2DoormenInstance extends L2NpcInstance
 	}
 	
 	@Override
-	public void onBypassFeedback(L2PcInstance player, String command)
+	public void onBypassFeedback(PlayerInstance player, String command)
 	{
 		if (command.startsWith("Chat"))
 		{
@@ -90,7 +90,7 @@ public class L2DoormenInstance extends L2NpcInstance
 	}
 	
 	@Override
-	public void showChatWindow(L2PcInstance player)
+	public void showChatWindow(PlayerInstance player)
 	{
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 		
@@ -109,7 +109,7 @@ public class L2DoormenInstance extends L2NpcInstance
 		player.sendPacket(html);
 	}
 	
-	protected void openDoors(L2PcInstance player, String command)
+	protected void openDoors(PlayerInstance player, String command)
 	{
 		StringTokenizer st = new StringTokenizer(command.substring(10), ", ");
 		st.nextToken();
@@ -120,7 +120,7 @@ public class L2DoormenInstance extends L2NpcInstance
 		}
 	}
 	
-	protected void closeDoors(L2PcInstance player, String command)
+	protected void closeDoors(PlayerInstance player, String command)
 	{
 		StringTokenizer st = new StringTokenizer(command.substring(11), ", ");
 		st.nextToken();
@@ -131,7 +131,7 @@ public class L2DoormenInstance extends L2NpcInstance
 		}
 	}
 	
-	protected void cannotManageDoors(L2PcInstance player)
+	protected void cannotManageDoors(PlayerInstance player)
 	{
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 		
@@ -140,7 +140,7 @@ public class L2DoormenInstance extends L2NpcInstance
 		player.sendPacket(html);
 	}
 	
-	protected void doTeleport(L2PcInstance player, String command)
+	protected void doTeleport(PlayerInstance player, String command)
 	{
 		final int whereTo = Integer.parseInt(command.substring(5).trim());
 		L2TeleportLocation list = TeleportLocationTable.getInstance().getTemplate(whereTo);
@@ -159,7 +159,7 @@ public class L2DoormenInstance extends L2NpcInstance
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
-	protected boolean isOwnerClan(L2PcInstance player)
+	protected boolean isOwnerClan(PlayerInstance player)
 	{
 		return true;
 	}

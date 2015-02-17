@@ -20,7 +20,7 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.ClanMember;
 import org.l2junity.gameserver.model.ClanPrivilege;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 
 public class RequestGiveNickName extends L2GameClientPacket
@@ -40,7 +40,7 @@ public class RequestGiveNickName extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -71,7 +71,7 @@ public class RequestGiveNickName extends L2GameClientPacket
 			ClanMember member1 = activeChar.getClan().getClanMember(_target);
 			if (member1 != null)
 			{
-				L2PcInstance member = member1.getPlayerInstance();
+				PlayerInstance member = member1.getPlayerInstance();
 				if (member != null)
 				{
 					// is target from the same clan?

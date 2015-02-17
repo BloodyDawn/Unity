@@ -20,7 +20,7 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
 import org.l2junity.gameserver.model.EnchantSkillLearn;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.ExEnchantSkillInfoDetail;
 
 /**
@@ -51,7 +51,7 @@ public final class RequestExEnchantSkillInfoDetail extends L2GameClientPacket
 			return;
 		}
 		
-		L2PcInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = getClient().getActiveChar();
 		
 		if (activeChar == null)
 		{

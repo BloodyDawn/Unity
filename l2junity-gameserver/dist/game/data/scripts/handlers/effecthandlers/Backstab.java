@@ -21,7 +21,7 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
@@ -90,7 +90,7 @@ public final class Backstab extends AbstractEffect
 		
 		if (activeChar.isPlayer())
 		{
-			L2PcInstance activePlayer = activeChar.getActingPlayer();
+			PlayerInstance activePlayer = activeChar.getActingPlayer();
 			activePlayer.sendDamageMessage(target, (int) damage, false, true, false);
 		}
 		

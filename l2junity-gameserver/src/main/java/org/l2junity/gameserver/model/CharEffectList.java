@@ -34,7 +34,7 @@ import java.util.logging.Logger;
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
@@ -1489,7 +1489,7 @@ public final class CharEffectList
 		{
 			if (_owner.isSummon())
 			{
-				final L2PcInstance summonOwner = ((Summon) _owner).getOwner();
+				final PlayerInstance summonOwner = ((Summon) _owner).getOwner();
 				if (summonOwner != null)
 				{
 					if (summonOwner.isInParty())

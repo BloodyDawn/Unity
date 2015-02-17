@@ -23,7 +23,7 @@ import java.util.List;
 
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.instancemanager.MentorManager;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.SystemMessageId;
 
@@ -46,7 +46,7 @@ public final class CreatureSay extends L2GameServerPacket
 	 * @param messageType
 	 * @param text
 	 */
-	public CreatureSay(L2PcInstance sender, L2PcInstance receiver, String name, ChatType messageType, String text)
+	public CreatureSay(PlayerInstance sender, PlayerInstance receiver, String name, ChatType messageType, String text)
 	{
 		_objectId = sender.getObjectId();
 		_charName = name;
@@ -91,7 +91,7 @@ public final class CreatureSay extends L2GameServerPacket
 		_text = text;
 	}
 	
-	public CreatureSay(L2PcInstance player, ChatType messageType, String text)
+	public CreatureSay(PlayerInstance player, ChatType messageType, String text)
 	{
 		_objectId = player.getObjectId();
 		_textType = messageType;
@@ -175,7 +175,7 @@ public final class CreatureSay extends L2GameServerPacket
 	@Override
 	public final void runImpl()
 	{
-		final L2PcInstance _pci = getClient().getActiveChar();
+		final PlayerInstance _pci = getClient().getActiveChar();
 		if (_pci != null)
 		{
 			_pci.broadcastSnoop(_textType, _charName, _text);

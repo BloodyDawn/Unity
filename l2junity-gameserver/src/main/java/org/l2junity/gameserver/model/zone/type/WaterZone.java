@@ -22,7 +22,7 @@ import java.util.Collection;
 
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.serverpackets.NpcInfo;
@@ -43,7 +43,7 @@ public class WaterZone extends ZoneType
 		// TODO: update to only send speed status when that packet is known
 		if (character.isPlayer())
 		{
-			L2PcInstance player = character.getActingPlayer();
+			PlayerInstance player = character.getActingPlayer();
 			if (player.isTransformed() && !player.getTransformation().canSwim())
 			{
 				character.stopTransformation(true);
@@ -55,9 +55,9 @@ public class WaterZone extends ZoneType
 		}
 		else if (character.isNpc())
 		{
-			Collection<L2PcInstance> plrs = character.getKnownList().getKnownPlayers().values();
+			Collection<PlayerInstance> plrs = character.getKnownList().getKnownPlayers().values();
 			
-			for (L2PcInstance player : plrs)
+			for (PlayerInstance player : plrs)
 			{
 				if (character.getRunSpeed() == 0)
 				{
@@ -83,8 +83,8 @@ public class WaterZone extends ZoneType
 		}
 		else if (character.isNpc())
 		{
-			Collection<L2PcInstance> plrs = character.getKnownList().getKnownPlayers().values();
-			for (L2PcInstance player : plrs)
+			Collection<PlayerInstance> plrs = character.getKnownList().getKnownPlayers().values();
+			for (PlayerInstance player : plrs)
 			{
 				if (character.getRunSpeed() == 0)
 				{

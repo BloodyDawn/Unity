@@ -21,7 +21,7 @@ package handlers.communityboard;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.handler.CommunityBoardHandler;
 import org.l2junity.gameserver.handler.IWriteBoardHandler;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * Mail board.
@@ -41,7 +41,7 @@ public class MailBoard implements IWriteBoardHandler
 	}
 	
 	@Override
-	public boolean parseCommunityBoardCommand(String command, L2PcInstance activeChar)
+	public boolean parseCommunityBoardCommand(String command, PlayerInstance activeChar)
 	{
 		CommunityBoardHandler.getInstance().addBypass(activeChar, "Mail Command", command);
 		
@@ -51,7 +51,7 @@ public class MailBoard implements IWriteBoardHandler
 	}
 	
 	@Override
-	public boolean writeCommunityBoardCommand(L2PcInstance activeChar, String arg1, String arg2, String arg3, String arg4, String arg5)
+	public boolean writeCommunityBoardCommand(PlayerInstance activeChar, String arg1, String arg2, String arg3, String arg4, String arg5)
 	{
 		// TODO: Implement.
 		return false;

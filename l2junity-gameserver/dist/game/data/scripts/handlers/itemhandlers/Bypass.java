@@ -21,7 +21,7 @@ package handlers.itemhandlers;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 
@@ -33,11 +33,11 @@ public class Bypass implements IItemHandler
 	@Override
 	public boolean useItem(Playable playable, ItemInstance item, boolean forceUse)
 	{
-		if (!(playable instanceof L2PcInstance))
+		if (!(playable instanceof PlayerInstance))
 		{
 			return false;
 		}
-		L2PcInstance activeChar = (L2PcInstance) playable;
+		PlayerInstance activeChar = (PlayerInstance) playable;
 		final int itemId = item.getId();
 		
 		String filename = "data/html/item/" + itemId + ".htm";

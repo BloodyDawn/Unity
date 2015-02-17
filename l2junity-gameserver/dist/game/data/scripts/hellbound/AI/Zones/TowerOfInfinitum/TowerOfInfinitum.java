@@ -26,7 +26,7 @@ import java.util.Map;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.util.Util;
 
 import ai.npc.AbstractNpcAI;
@@ -105,7 +105,7 @@ public final class TowerOfInfinitum extends AbstractNpcAI
 	private static final Location ENTER_LOCATION = new Location(-22204, 277056, -15023);
 	
 	@Override
-	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String htmltext = event;
 		final int npcId = npc.getId();
@@ -117,14 +117,14 @@ public final class TowerOfInfinitum extends AbstractNpcAI
 				Party party = player.getParty();
 				if ((party != null) && (party.getLeaderObjectId() == player.getObjectId()))
 				{
-					for (L2PcInstance partyMember : party.getMembers())
+					for (PlayerInstance partyMember : party.getMembers())
 					{
 						if (!Util.checkIfInRange(300, partyMember, npc, true) || !partyMember.isAffectedBySkill(PASS_SKILL))
 						{
 							return "32302-02.htm";
 						}
 					}
-					for (L2PcInstance partyMember : party.getMembers())
+					for (PlayerInstance partyMember : party.getMembers())
 					{
 						partyMember.teleToLocation(ENTER_LOCATION, true);
 					}
@@ -155,7 +155,7 @@ public final class TowerOfInfinitum extends AbstractNpcAI
 			}
 			else
 			{
-				for (L2PcInstance partyMember : party.getMembers())
+				for (PlayerInstance partyMember : party.getMembers())
 				{
 					if (!Util.checkIfInRange(1000, partyMember, npc, false) || (Math.abs(partyMember.getZ() - npc.getZ()) > 100))
 					{
@@ -166,7 +166,7 @@ public final class TowerOfInfinitum extends AbstractNpcAI
 				final Location tele = TELE_COORDS.get(npcId)[direction];
 				if (tele != null)
 				{
-					for (L2PcInstance partyMember : party.getMembers())
+					for (PlayerInstance partyMember : party.getMembers())
 					{
 						partyMember.teleToLocation(tele, true);
 					}

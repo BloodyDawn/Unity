@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.model.events.impl.character.npc.attackable;
 
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.IBaseEvent;
 
@@ -30,10 +30,10 @@ public class OnAttackableFactionCall implements IBaseEvent
 {
 	private final Npc _npc;
 	private final Npc _caller;
-	private final L2PcInstance _attacker;
+	private final PlayerInstance _attacker;
 	private final boolean _isSummon;
 	
-	public OnAttackableFactionCall(Npc npc, Npc caller, L2PcInstance attacker, boolean isSummon)
+	public OnAttackableFactionCall(Npc npc, Npc caller, PlayerInstance attacker, boolean isSummon)
 	{
 		_npc = npc;
 		_caller = caller;
@@ -51,7 +51,7 @@ public class OnAttackableFactionCall implements IBaseEvent
 		return _caller;
 	}
 	
-	public L2PcInstance getAttacker()
+	public PlayerInstance getAttacker()
 	{
 		return _attacker;
 	}

@@ -25,7 +25,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.quest.QuestState;
@@ -44,7 +44,7 @@ public final class IceQueensCastle extends AbstractInstance
 {
 	protected class IQCWorld extends InstanceWorld
 	{
-		L2PcInstance player = null;
+		PlayerInstance player = null;
 	}
 	
 	// NPCs
@@ -76,7 +76,7 @@ public final class IceQueensCastle extends AbstractInstance
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		switch (event)
 		{
@@ -168,7 +168,7 @@ public final class IceQueensCastle extends AbstractInstance
 	}
 	
 	@Override
-	public String onSpellFinished(Npc npc, L2PcInstance player, Skill skill)
+	public String onSpellFinished(Npc npc, PlayerInstance player, Skill skill)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		
@@ -185,14 +185,14 @@ public final class IceQueensCastle extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance talker)
+	public String onTalk(Npc npc, PlayerInstance talker)
 	{
 		enterInstance(talker, new IQCWorld(), "IceQueensCastle.xml", TEMPLATE_ID);
 		return super.onTalk(npc, talker);
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
+	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
 	{
 		if (firstEntrance)
 		{
@@ -204,7 +204,7 @@ public final class IceQueensCastle extends AbstractInstance
 	}
 	
 	@Override
-	protected boolean checkConditions(L2PcInstance player)
+	protected boolean checkConditions(PlayerInstance player)
 	{
 		if (player.getLevel() < MIN_LV)
 		{

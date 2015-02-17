@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.actor.request;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 /**
@@ -29,7 +29,7 @@ public final class EnchantItemAttributeRequest extends AbstractRequest
 	private volatile int _enchantingItemObjectId;
 	private volatile int _enchantingStoneObjectId;
 	
-	public EnchantItemAttributeRequest(L2PcInstance activeChar, int enchantingStoneObjectId)
+	public EnchantItemAttributeRequest(PlayerInstance activeChar, int enchantingStoneObjectId)
 	{
 		super(activeChar);
 		_enchantingStoneObjectId = enchantingStoneObjectId;

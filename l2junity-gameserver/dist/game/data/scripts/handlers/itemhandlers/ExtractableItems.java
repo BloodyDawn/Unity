@@ -25,7 +25,7 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.model.ExtractableProduct;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.EtcItem;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -45,7 +45,7 @@ public class ExtractableItems implements IItemHandler
 			return false;
 		}
 		
-		final L2PcInstance activeChar = playable.getActingPlayer();
+		final PlayerInstance activeChar = playable.getActingPlayer();
 		final EtcItem etcitem = (EtcItem) item.getItem();
 		final List<ExtractableProduct> exitem = etcitem.getExtractableItems();
 		if (exitem == null)

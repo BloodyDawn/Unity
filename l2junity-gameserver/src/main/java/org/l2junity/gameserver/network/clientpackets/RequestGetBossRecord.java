@@ -21,7 +21,7 @@ package org.l2junity.gameserver.network.clientpackets;
 import java.util.Map;
 
 import org.l2junity.gameserver.instancemanager.RaidBossPointsManager;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.ExGetBossRecord;
 
 /**
@@ -42,7 +42,7 @@ public class RequestGetBossRecord extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;

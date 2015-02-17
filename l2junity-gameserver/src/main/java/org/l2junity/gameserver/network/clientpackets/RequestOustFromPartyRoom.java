@@ -22,7 +22,7 @@ import org.l2junity.gameserver.model.PartyMatchRoom;
 import org.l2junity.gameserver.model.PartyMatchRoomList;
 import org.l2junity.gameserver.model.PartyMatchWaitingList;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExClosePartyRoom;
 import org.l2junity.gameserver.network.serverpackets.ListPartyWating;
@@ -46,13 +46,13 @@ public final class RequestOustFromPartyRoom extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance player = getActiveChar();
+		PlayerInstance player = getActiveChar();
 		if (player == null)
 		{
 			return;
 		}
 		
-		L2PcInstance member = World.getInstance().getPlayer(_charid);
+		PlayerInstance member = World.getInstance().getPlayer(_charid);
 		if (member == null)
 		{
 			return;

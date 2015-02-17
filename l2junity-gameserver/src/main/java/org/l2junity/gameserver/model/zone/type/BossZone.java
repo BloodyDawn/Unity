@@ -31,7 +31,7 @@ import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.AbstractZoneSettings;
 import org.l2junity.gameserver.model.zone.ZoneType;
 
@@ -153,7 +153,7 @@ public class BossZone extends ZoneType
 		{
 			if (character.isPlayer())
 			{
-				final L2PcInstance player = character.getActingPlayer();
+				final PlayerInstance player = character.getActingPlayer();
 				if (player.canOverrideCond(PcCondOverride.ZONE_CONDITIONS))
 				{
 					return;
@@ -198,7 +198,7 @@ public class BossZone extends ZoneType
 			}
 			else if (character.isSummon())
 			{
-				final L2PcInstance player = character.getActingPlayer();
+				final PlayerInstance player = character.getActingPlayer();
 				if (player != null)
 				{
 					if (getSettings().getPlayersAllowed().contains(player.getObjectId()) || player.canOverrideCond(PcCondOverride.ZONE_CONDITIONS))
@@ -229,7 +229,7 @@ public class BossZone extends ZoneType
 		{
 			if (character.isPlayer())
 			{
-				final L2PcInstance player = character.getActingPlayer();
+				final PlayerInstance player = character.getActingPlayer();
 				if (player.canOverrideCond(PcCondOverride.ZONE_CONDITIONS))
 				{
 					return;
@@ -328,7 +328,7 @@ public class BossZone extends ZoneType
 		return getSettings().getPlayersAllowed();
 	}
 	
-	public boolean isPlayerAllowed(L2PcInstance player)
+	public boolean isPlayerAllowed(PlayerInstance player)
 	{
 		if (player.canOverrideCond(PcCondOverride.ZONE_CONDITIONS))
 		{
@@ -367,7 +367,7 @@ public class BossZone extends ZoneType
 		{
 			if ((character != null) && character.isPlayer())
 			{
-				L2PcInstance player = character.getActingPlayer();
+				PlayerInstance player = character.getActingPlayer();
 				if (player.isOnline())
 				{
 					player.teleToLocation(loc);
@@ -391,7 +391,7 @@ public class BossZone extends ZoneType
 		{
 			if ((character != null) && character.isPlayer())
 			{
-				L2PcInstance player = character.getActingPlayer();
+				PlayerInstance player = character.getActingPlayer();
 				if (player.isOnline())
 				{
 					if ((_oustLoc[0] != 0) && (_oustLoc[1] != 0) && (_oustLoc[2] != 0))
@@ -414,7 +414,7 @@ public class BossZone extends ZoneType
 	 * @param player reference to the player we wish to allow
 	 * @param durationInSec amount of time in seconds during which entry is valid.
 	 */
-	public void allowPlayerEntry(L2PcInstance player, int durationInSec)
+	public void allowPlayerEntry(PlayerInstance player, int durationInSec)
 	{
 		if (!player.canOverrideCond(PcCondOverride.ZONE_CONDITIONS))
 		{
@@ -426,7 +426,7 @@ public class BossZone extends ZoneType
 		}
 	}
 	
-	public void removePlayer(L2PcInstance player)
+	public void removePlayer(PlayerInstance player)
 	{
 		if (!player.canOverrideCond(PcCondOverride.ZONE_CONDITIONS))
 		{
@@ -442,12 +442,12 @@ public class BossZone extends ZoneType
 			return;
 		}
 		
-		Map<Integer, L2PcInstance> npcKnownPlayers = npc.getKnownList().getKnownPlayers();
+		Map<Integer, PlayerInstance> npcKnownPlayers = npc.getKnownList().getKnownPlayers();
 		for (Creature character : getCharactersInside())
 		{
 			if ((character != null) && character.isPlayer())
 			{
-				L2PcInstance player = character.getActingPlayer();
+				PlayerInstance player = character.getActingPlayer();
 				if (player.isOnline())
 				{
 					npcKnownPlayers.put(player.getObjectId(), player);

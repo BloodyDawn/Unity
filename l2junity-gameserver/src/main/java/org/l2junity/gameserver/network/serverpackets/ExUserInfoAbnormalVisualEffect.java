@@ -20,7 +20,7 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import java.util.Set;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.AbnormalVisualEffect;
 
 /**
@@ -28,9 +28,9 @@ import org.l2junity.gameserver.model.skills.AbnormalVisualEffect;
  */
 public class ExUserInfoAbnormalVisualEffect extends L2GameServerPacket
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	
-	public ExUserInfoAbnormalVisualEffect(L2PcInstance cha)
+	public ExUserInfoAbnormalVisualEffect(PlayerInstance cha)
 	{
 		_activeChar = cha;
 	}

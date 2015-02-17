@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.actor.tasks.character;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 
 /**
@@ -27,12 +27,12 @@ import org.l2junity.gameserver.model.skills.Skill;
  */
 public final class QueuedMagicUseTask implements Runnable
 {
-	private final L2PcInstance _currPlayer;
+	private final PlayerInstance _currPlayer;
 	private final Skill _queuedSkill;
 	private final boolean _isCtrlPressed;
 	private final boolean _isShiftPressed;
 	
-	public QueuedMagicUseTask(L2PcInstance currPlayer, Skill queuedSkill, boolean isCtrlPressed, boolean isShiftPressed)
+	public QueuedMagicUseTask(PlayerInstance currPlayer, Skill queuedSkill, boolean isCtrlPressed, boolean isShiftPressed)
 	{
 		_currPlayer = currPlayer;
 		_queuedSkill = queuedSkill;

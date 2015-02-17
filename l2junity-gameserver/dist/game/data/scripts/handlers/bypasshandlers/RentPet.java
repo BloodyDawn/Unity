@@ -25,7 +25,7 @@ import org.l2junity.gameserver.handler.IBypassHandler;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.network.serverpackets.SetupGauge;
 
@@ -37,7 +37,7 @@ public class RentPet implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, Creature target)
+	public boolean useBypass(String command, PlayerInstance activeChar, Creature target)
 	{
 		if (!(target instanceof L2MerchantInstance))
 		{
@@ -80,7 +80,7 @@ public class RentPet implements IBypassHandler
 		return false;
 	}
 	
-	public static final void tryRentPet(L2PcInstance player, int val)
+	public static final void tryRentPet(PlayerInstance player, int val)
 	{
 		if ((player == null) || player.hasSummon() || player.isMounted() || player.isRentedPet() || player.isTransformed() || player.isCursedWeaponEquipped())
 		{

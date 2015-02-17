@@ -25,7 +25,7 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.quest.QuestTimer;
 
@@ -45,7 +45,7 @@ public final class Anais extends AbstractNpcAI
 	private static SkillHolder DIVINE_NOVA = new SkillHolder(6326, 1);
 	// Instances
 	ArrayList<Npc> _divineBurners = new ArrayList<>(4);
-	private L2PcInstance _nextTarget = null;
+	private PlayerInstance _nextTarget = null;
 	private Npc _current = null;
 	private int _pot = 0;
 	
@@ -78,7 +78,7 @@ public final class Anais extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		switch (event)
 		{
@@ -90,12 +90,12 @@ public final class Anais extends AbstractNpcAI
 				}
 				if ((_current != null) || (_pot < 4))
 				{
-					final Map<Integer, L2PcInstance> players = npc.getKnownList().getKnownPlayers();
-					final L2PcInstance target = players.get(getRandom(players.size() - 1));
+					final Map<Integer, PlayerInstance> players = npc.getKnownList().getKnownPlayers();
+					final PlayerInstance target = players.get(getRandom(players.size() - 1));
 					_nextTarget = target;
 					if (_nextTarget == null)
 					{
-						_nextTarget = (L2PcInstance) npc.getTarget();
+						_nextTarget = (PlayerInstance) npc.getTarget();
 					}
 					final Npc b = _divineBurners.get(_pot);
 					_pot = _pot + 1;
@@ -146,7 +146,7 @@ public final class Anais extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon)
 	{
 		if (_pot == 0)
 		{
@@ -179,7 +179,7 @@ public final class Anais extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		npc.doCast(DIVINE_NOVA.getSkill());
 		cancelQuestTimer("GUARD_ATTACK", npc, _nextTarget);

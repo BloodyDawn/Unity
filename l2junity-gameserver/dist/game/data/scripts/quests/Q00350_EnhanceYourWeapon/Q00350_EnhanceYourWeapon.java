@@ -33,7 +33,7 @@ import org.l2junity.gameserver.model.AbsorberInfo;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
@@ -148,7 +148,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String htmltext = event;
 		QuestState st = getQuestState(player, false);
@@ -176,7 +176,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		if (npc.isAttackable() && NPC_LEVELING_INFO.containsKey(npc.getId()))
 		{
@@ -187,7 +187,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 	}
 	
 	@Override
-	public String onSkillSee(Npc npc, L2PcInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public String onSkillSee(Npc npc, PlayerInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
 		super.onSkillSee(npc, caster, skill, targets, isSummon);
 		
@@ -216,7 +216,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
@@ -256,7 +256,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 		return false;
 	}
 	
-	private static void exchangeCrystal(L2PcInstance player, Attackable mob, int takeid, int giveid, boolean broke)
+	private static void exchangeCrystal(PlayerInstance player, Attackable mob, int takeid, int giveid, boolean broke)
 	{
 		ItemInstance Item = player.getInventory().destroyItemByItemId("SoulCrystal", takeid, 1, player, mob);
 		if (Item != null)
@@ -289,7 +289,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 		}
 	}
 	
-	private static SoulCrystal getSCForPlayer(L2PcInstance player)
+	private static SoulCrystal getSCForPlayer(PlayerInstance player)
 	{
 		final QuestState st = player.getQuestState(Q00350_EnhanceYourWeapon.class.getSimpleName());
 		if ((st == null) || !st.isStarted())
@@ -327,7 +327,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 		return false;
 	}
 	
-	private static void levelCrystal(L2PcInstance player, SoulCrystal sc, Attackable mob)
+	private static void levelCrystal(PlayerInstance player, SoulCrystal sc, Attackable mob)
 	{
 		if ((sc == null) || !NPC_LEVELING_INFO.containsKey(mob.getId()))
 		{
@@ -356,7 +356,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 	 * @param mob
 	 * @param killer The player that last killed this L2Attackable $ Rewrite 06.12.06 - Yesod $ Rewrite 08.01.10 - Gigiikun
 	 */
-	public static void levelSoulCrystals(Attackable mob, L2PcInstance killer)
+	public static void levelSoulCrystals(Attackable mob, PlayerInstance killer)
 	{
 		// Only L2PcInstance can absorb a soul
 		if (killer == null)
@@ -365,14 +365,14 @@ public class Q00350_EnhanceYourWeapon extends Quest
 			return;
 		}
 		
-		Map<L2PcInstance, SoulCrystal> players = new HashMap<>();
+		Map<PlayerInstance, SoulCrystal> players = new HashMap<>();
 		int maxSCLevel = 0;
 		
 		// TODO: what if mob support last_hit + party?
 		if (isPartyLevelingMonster(mob.getId()) && (killer.getParty() != null))
 		{
 			// firts get the list of players who has one Soul Cry and the quest
-			for (L2PcInstance pl : killer.getParty().getMembers())
+			for (PlayerInstance pl : killer.getParty().getMembers())
 			{
 				if (pl == null)
 				{
@@ -452,7 +452,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 				// among those who have crystals, only. However, this might actually be correct (same as retail).
 				if (killer.getParty() != null)
 				{
-					L2PcInstance lucky = killer.getParty().getMembers().get(getRandom(killer.getParty().getMemberCount()));
+					PlayerInstance lucky = killer.getParty().getMembers().get(getRandom(killer.getParty().getMemberCount()));
 					levelCrystal(lucky, players.get(lucky), mob);
 				}
 				else
@@ -463,11 +463,11 @@ public class Q00350_EnhanceYourWeapon extends Quest
 			case PARTY_RANDOM:
 				if (killer.getParty() != null)
 				{
-					List<L2PcInstance> luckyParty = new ArrayList<>();
+					List<PlayerInstance> luckyParty = new ArrayList<>();
 					luckyParty.addAll(killer.getParty().getMembers());
 					while ((getRandom(100) < 33) && !luckyParty.isEmpty())
 					{
-						L2PcInstance lucky = luckyParty.remove(getRandom(luckyParty.size()));
+						PlayerInstance lucky = luckyParty.remove(getRandom(luckyParty.size()));
 						if (players.containsKey(lucky))
 						{
 							levelCrystal(lucky, players.get(lucky), mob);
@@ -482,7 +482,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 			case FULL_PARTY:
 				if (killer.getParty() != null)
 				{
-					for (L2PcInstance pl : killer.getParty().getMembers())
+					for (PlayerInstance pl : killer.getParty().getMembers())
 					{
 						levelCrystal(pl, players.get(pl), mob);
 					}

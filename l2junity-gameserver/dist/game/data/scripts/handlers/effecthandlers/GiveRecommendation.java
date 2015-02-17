@@ -19,7 +19,7 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -56,7 +56,7 @@ public final class GiveRecommendation extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		L2PcInstance target = info.getEffected() instanceof L2PcInstance ? (L2PcInstance) info.getEffected() : null;
+		PlayerInstance target = info.getEffected() instanceof PlayerInstance ? (PlayerInstance) info.getEffected() : null;
 		if (target != null)
 		{
 			int recommendationsGiven = _amount;
@@ -78,7 +78,7 @@ public final class GiveRecommendation extends AbstractEffect
 			}
 			else
 			{
-				L2PcInstance player = info.getEffector() instanceof L2PcInstance ? (L2PcInstance) info.getEffector() : null;
+				PlayerInstance player = info.getEffector() instanceof PlayerInstance ? (PlayerInstance) info.getEffector() : null;
 				if (player != null)
 				{
 					player.sendPacket(SystemMessageId.NOTHING_HAPPENED);

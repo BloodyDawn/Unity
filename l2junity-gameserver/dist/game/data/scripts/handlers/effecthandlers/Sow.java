@@ -25,7 +25,7 @@ import org.l2junity.gameserver.model.L2Seed;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -57,7 +57,7 @@ public final class Sow extends AbstractEffect
 			return;
 		}
 		
-		final L2PcInstance player = info.getEffector().getActingPlayer();
+		final PlayerInstance player = info.getEffector().getActingPlayer();
 		final L2MonsterInstance target = (L2MonsterInstance) info.getEffected();
 		
 		if (target.isDead() || (!target.getTemplate().canBeSown()) || target.isSeeded() || (target.getSeederId() != player.getObjectId()))

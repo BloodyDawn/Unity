@@ -23,7 +23,7 @@ import org.l2junity.gameserver.datatables.SpawnTable;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.network.serverpackets.PlaySound;
 import org.l2junity.gameserver.network.serverpackets.SpecialCamera;
@@ -51,7 +51,7 @@ public final class DrChaos extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		switch (event)
 		{
@@ -117,7 +117,7 @@ public final class DrChaos extends Quest
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		if (npc.getId() == DR_CHAOS)
 		{

@@ -48,7 +48,7 @@ import org.l2junity.gameserver.instancemanager.tasks.FourSepulchersChangeWarmUpT
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2SepulcherMonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.L2SepulcherNpcInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -125,7 +125,7 @@ public final class FourSepulchersManager
 	
 	protected Map<Integer, Boolean> _archonSpawned = new FastMap<>();
 	protected Map<Integer, Boolean> _hallInUse = new FastMap<>();
-	protected Map<Integer, L2PcInstance> _challengers = new FastMap<>();
+	protected Map<Integer, PlayerInstance> _challengers = new FastMap<>();
 	protected Map<Integer, int[]> _startHallSpawns = new HashMap<>();
 	protected Map<Integer, Integer> _hallGateKeepers = new HashMap<>();
 	protected Map<Integer, Integer> _keyBoxNpc = new HashMap<>();
@@ -846,7 +846,7 @@ public final class FourSepulchersManager
 		_inWarmUpTime = isWarmUpTime;
 	}
 	
-	public synchronized void tryEntry(Npc npc, L2PcInstance player)
+	public synchronized void tryEntry(Npc npc, PlayerInstance player)
 	{
 		Quest hostQuest = QuestManager.getInstance().getQuest(QUEST_ID);
 		if (hostQuest == null)
@@ -893,7 +893,7 @@ public final class FourSepulchersManager
 				return;
 			}
 			
-			for (L2PcInstance mem : player.getParty().getMembers())
+			for (PlayerInstance mem : player.getParty().getMembers())
 			{
 				QuestState qs = mem.getQuestState(hostQuest.getName());
 				if ((qs == null) || (!qs.isStarted() && !qs.isCompleted()))
@@ -921,7 +921,7 @@ public final class FourSepulchersManager
 				showHtmlFile(player, npcId + "-NL.htm", npc, null);
 				return;
 			}
-			for (L2PcInstance mem : player.getParty().getMembers())
+			for (PlayerInstance mem : player.getParty().getMembers())
 			{
 				QuestState qs = mem.getQuestState(hostQuest.getName());
 				if ((qs == null) || (!qs.isStarted() && !qs.isCompleted()))
@@ -974,7 +974,7 @@ public final class FourSepulchersManager
 		entry(npcId, player);
 	}
 	
-	private void entry(int npcId, L2PcInstance player)
+	private void entry(int npcId, PlayerInstance player)
 	{
 		int[] Location = _startHallSpawns.get(npcId);
 		int driftx;
@@ -982,8 +982,8 @@ public final class FourSepulchersManager
 		
 		if (Config.FS_PARTY_MEMBER_COUNT > 1)
 		{
-			final List<L2PcInstance> members = new LinkedList<>();
-			for (L2PcInstance mem : player.getParty().getMembers())
+			final List<PlayerInstance> members = new LinkedList<>();
+			for (PlayerInstance mem : player.getParty().getMembers())
 			{
 				if (!mem.isDead() && Util.checkIfInRange(700, player, mem, true))
 				{
@@ -991,7 +991,7 @@ public final class FourSepulchersManager
 				}
 			}
 			
-			for (L2PcInstance mem : members)
+			for (PlayerInstance mem : members)
 			{
 				GrandBossManager.getInstance().getZone(Location[0], Location[1], Location[2]).allowPlayerEntry(mem, 30);
 				driftx = Rnd.get(-80, 80);
@@ -1016,8 +1016,8 @@ public final class FourSepulchersManager
 		}
 		if ((Config.FS_PARTY_MEMBER_COUNT <= 1) && player.isInParty())
 		{
-			List<L2PcInstance> members = new FastList<>();
-			for (L2PcInstance mem : player.getParty().getMembers())
+			List<PlayerInstance> members = new FastList<>();
+			for (PlayerInstance mem : player.getParty().getMembers())
 			{
 				if (!mem.isDead() && Util.checkIfInRange(700, player, mem, true))
 				{
@@ -1025,7 +1025,7 @@ public final class FourSepulchersManager
 				}
 			}
 			
-			for (L2PcInstance mem : members)
+			for (PlayerInstance mem : members)
 			{
 				GrandBossManager.getInstance().getZone(Location[0], Location[1], Location[2]).allowPlayerEntry(mem, 30);
 				driftx = Rnd.get(-80, 80);
@@ -1567,7 +1567,7 @@ public final class FourSepulchersManager
 		return _hallGateKeepers;
 	}
 	
-	public void showHtmlFile(L2PcInstance player, String file, Npc npc, L2PcInstance member)
+	public void showHtmlFile(PlayerInstance player, String file, Npc npc, PlayerInstance member)
 	{
 		final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
 		html.setFile(player.getHtmlPrefix(), "data/html/SepulcherNpc/" + file);

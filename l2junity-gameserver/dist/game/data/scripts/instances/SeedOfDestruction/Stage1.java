@@ -49,7 +49,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2TrapInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
@@ -456,7 +456,7 @@ public final class Stage1 extends AbstractInstance
 	}
 	
 	@Override
-	protected boolean checkConditions(L2PcInstance player)
+	protected boolean checkConditions(PlayerInstance player)
 	{
 		final Party party = player.getParty();
 		if (party == null)
@@ -480,7 +480,7 @@ public final class Stage1 extends AbstractInstance
 			player.sendPacket(SystemMessageId.YOU_CANNOT_ENTER_DUE_TO_THE_PARTY_HAVING_EXCEEDED_THE_LIMIT);
 			return false;
 		}
-		for (L2PcInstance partyMember : channel.getMembers())
+		for (PlayerInstance partyMember : channel.getMembers())
 		{
 			if (partyMember.getLevel() < 75)
 			{
@@ -509,7 +509,7 @@ public final class Stage1 extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
+	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
 	{
 		if (firstEntrance)
 		{
@@ -530,7 +530,7 @@ public final class Stage1 extends AbstractInstance
 			}
 			else
 			{
-				for (L2PcInstance channelMember : player.getParty().getCommandChannel().getMembers())
+				for (PlayerInstance channelMember : player.getParty().getCommandChannel().getMembers())
 				{
 					teleportPlayer(channelMember, ENTER_TELEPORT_1, world.getInstanceId(), false);
 					world.addAllowed(channelMember.getObjectId());
@@ -748,7 +748,7 @@ public final class Stage1 extends AbstractInstance
 		// set instance reenter time for all allowed players
 		for (int objectId : world.getAllowed())
 		{
-			L2PcInstance player = World.getInstance().getPlayer(objectId);
+			PlayerInstance player = World.getInstance().getPlayer(objectId);
 			InstanceManager.getInstance().setInstanceTime(objectId, INSTANCEID, reenter.getTimeInMillis());
 			if ((player != null) && player.isOnline())
 			{
@@ -761,7 +761,7 @@ public final class Stage1 extends AbstractInstance
 	{
 		for (int objId : world.getAllowed())
 		{
-			L2PcInstance player = World.getInstance().getPlayer(objId);
+			PlayerInstance player = World.getInstance().getPlayer(objId);
 			if (player != null)
 			{
 				player.sendPacket(message);
@@ -784,7 +784,7 @@ public final class Stage1 extends AbstractInstance
 	}
 	
 	@Override
-	public String onAggroRangeEnter(Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAggroRangeEnter(Npc npc, PlayerInstance player, boolean isSummon)
 	{
 		if ((isSummon == false) && (player != null))
 		{
@@ -798,7 +798,7 @@ public final class Stage1 extends AbstractInstance
 					{
 						for (int objId : world.getAllowed())
 						{
-							L2PcInstance pl = World.getInstance().getPlayer(objId);
+							PlayerInstance pl = World.getInstance().getPlayer(objId);
 							if (pl != null)
 							{
 								pl.showQuestMovie(5);
@@ -813,7 +813,7 @@ public final class Stage1 extends AbstractInstance
 	}
 	
 	@Override
-	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpworld instanceof SOD1World)
@@ -845,7 +845,7 @@ public final class Stage1 extends AbstractInstance
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpworld instanceof SOD1World)
@@ -853,7 +853,7 @@ public final class Stage1 extends AbstractInstance
 			SOD1World world = (SOD1World) tmpworld;
 			if (event.equalsIgnoreCase("Spawn"))
 			{
-				L2PcInstance target = World.getInstance().getPlayer(world.getAllowed().get(getRandom(world.getAllowed().size())));
+				PlayerInstance target = World.getInstance().getPlayer(world.getAllowed().get(getRandom(world.getAllowed().size())));
 				if ((world.deviceSpawnedMobCount < MAX_DEVICESPAWNEDMOBCOUNT) && (target != null) && (target.getInstanceId() == npc.getInstanceId()) && !target.isDead())
 				{
 					Attackable mob = (Attackable) addSpawn(SPAWN_MOB_IDS[getRandom(SPAWN_MOB_IDS.length)], npc.getSpawn().getLocation(), false, 0, false, world.getInstanceId());
@@ -914,7 +914,7 @@ public final class Stage1 extends AbstractInstance
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
 		if (npc.getId() == SPAWN_DEVICE)
 		{
@@ -964,7 +964,7 @@ public final class Stage1 extends AbstractInstance
 					world.incStatus();
 					for (int objId : world.getAllowed())
 					{
-						L2PcInstance pl = World.getInstance().getPlayer(objId);
+						PlayerInstance pl = World.getInstance().getPlayer(objId);
 						if (pl != null)
 						{
 							pl.showQuestMovie(6);
@@ -987,7 +987,7 @@ public final class Stage1 extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		int npcId = npc.getId();
 		getQuestState(player, true);

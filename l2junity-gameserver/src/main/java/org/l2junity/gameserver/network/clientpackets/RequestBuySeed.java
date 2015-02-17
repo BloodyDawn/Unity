@@ -32,7 +32,7 @@ import org.l2junity.gameserver.instancemanager.CastleManorManager;
 import org.l2junity.gameserver.model.SeedProduction;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.items.L2Item;
@@ -76,7 +76,7 @@ public class RequestBuySeed extends L2GameClientPacket
 	@Override
 	protected final void runImpl()
 	{
-		final L2PcInstance player = getActiveChar();
+		final PlayerInstance player = getActiveChar();
 		if (player == null)
 		{
 			return;

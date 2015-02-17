@@ -21,7 +21,7 @@ package org.l2junity.gameserver.network.serverpackets;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 
 /**
@@ -32,7 +32,7 @@ public class ExOlympiadSpelledInfo extends L2GameServerPacket
 	private final int _playerId;
 	private final List<BuffInfo> _effects = new ArrayList<>();
 	
-	public ExOlympiadSpelledInfo(L2PcInstance player)
+	public ExOlympiadSpelledInfo(PlayerInstance player)
 	{
 		_playerId = player.getObjectId();
 	}

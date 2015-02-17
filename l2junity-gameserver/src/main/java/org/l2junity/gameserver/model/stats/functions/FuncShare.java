@@ -20,7 +20,7 @@ package org.l2junity.gameserver.model.stats.functions;
 
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -43,7 +43,7 @@ public class FuncShare extends AbstractFunction
 			if ((effector != null) && effector.isServitor())
 			{
 				final Summon summon = (Summon) effector;
-				final L2PcInstance player = summon.getOwner();
+				final PlayerInstance player = summon.getOwner();
 				if (player != null)
 				{
 					return initVal + (getBaseValue(getStat(), player) * getValue());
@@ -53,7 +53,7 @@ public class FuncShare extends AbstractFunction
 		return initVal;
 	}
 	
-	public static double getBaseValue(Stats stat, L2PcInstance player)
+	public static double getBaseValue(Stats stat, PlayerInstance player)
 	{
 		switch (stat)
 		{

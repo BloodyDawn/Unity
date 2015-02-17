@@ -25,7 +25,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.util.Util;
@@ -42,8 +42,8 @@ public class PartyNotMe implements ITargetTypeHandler
 		final int radius = skill.getAffectRange();
 		if (activeChar.getParty() != null)
 		{
-			final List<L2PcInstance> partyList = activeChar.getParty().getMembers();
-			for (L2PcInstance partyMember : partyList)
+			final List<PlayerInstance> partyList = activeChar.getParty().getMembers();
+			for (PlayerInstance partyMember : partyList)
 			{
 				if (partyMember == activeChar)
 				{

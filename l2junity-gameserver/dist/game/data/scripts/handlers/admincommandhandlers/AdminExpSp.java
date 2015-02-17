@@ -25,7 +25,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.ClassListData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 
@@ -46,7 +46,7 @@ public class AdminExpSp implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		if (command.startsWith("admin_add_exp_sp"))
 		{
@@ -88,13 +88,13 @@ public class AdminExpSp implements IAdminCommandHandler
 		return ADMIN_COMMANDS;
 	}
 	
-	private void addExpSp(L2PcInstance activeChar)
+	private void addExpSp(PlayerInstance activeChar)
 	{
 		WorldObject target = activeChar.getTarget();
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance)
+		PlayerInstance player = null;
+		if (target instanceof PlayerInstance)
 		{
-			player = (L2PcInstance) target;
+			player = (PlayerInstance) target;
 		}
 		else
 		{
@@ -111,13 +111,13 @@ public class AdminExpSp implements IAdminCommandHandler
 		activeChar.sendPacket(adminReply);
 	}
 	
-	private boolean adminAddExpSp(L2PcInstance activeChar, String ExpSp)
+	private boolean adminAddExpSp(PlayerInstance activeChar, String ExpSp)
 	{
 		WorldObject target = activeChar.getTarget();
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance)
+		PlayerInstance player = null;
+		if (target instanceof PlayerInstance)
 		{
-			player = (L2PcInstance) target;
+			player = (PlayerInstance) target;
 		}
 		else
 		{
@@ -158,13 +158,13 @@ public class AdminExpSp implements IAdminCommandHandler
 		return true;
 	}
 	
-	private boolean adminRemoveExpSP(L2PcInstance activeChar, String ExpSp)
+	private boolean adminRemoveExpSP(PlayerInstance activeChar, String ExpSp)
 	{
 		WorldObject target = activeChar.getTarget();
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance)
+		PlayerInstance player = null;
+		if (target instanceof PlayerInstance)
 		{
-			player = (L2PcInstance) target;
+			player = (PlayerInstance) target;
 		}
 		else
 		{

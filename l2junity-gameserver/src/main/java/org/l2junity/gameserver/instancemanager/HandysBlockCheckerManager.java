@@ -29,7 +29,7 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.Team;
 import org.l2junity.gameserver.instancemanager.tasks.PenaltyRemoveTask;
 import org.l2junity.gameserver.model.ArenaParticipantsHolder;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.PcInventory;
 import org.l2junity.gameserver.model.olympiad.OlympiadManager;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -147,7 +147,7 @@ public final class HandysBlockCheckerManager
 	 * @param arenaId
 	 * @return
 	 */
-	public boolean addPlayerToArena(L2PcInstance player, int arenaId)
+	public boolean addPlayerToArena(PlayerInstance player, int arenaId)
 	{
 		ArenaParticipantsHolder holder = _arenaPlayers[arenaId];
 		
@@ -222,7 +222,7 @@ public final class HandysBlockCheckerManager
 	 * @param arenaId
 	 * @param team
 	 */
-	public void removePlayer(L2PcInstance player, int arenaId, int team)
+	public void removePlayer(PlayerInstance player, int arenaId, int team)
 	{
 		ArenaParticipantsHolder holder = _arenaPlayers[arenaId];
 		synchronized (holder)
@@ -250,7 +250,7 @@ public final class HandysBlockCheckerManager
 	 * @param arena
 	 * @param team
 	 */
-	public void changePlayerToTeam(L2PcInstance player, int arena, int team)
+	public void changePlayerToTeam(PlayerInstance player, int arena, int team)
 	{
 		ArenaParticipantsHolder holder = _arenaPlayers[arena];
 		
@@ -329,7 +329,7 @@ public final class HandysBlockCheckerManager
 	 * Called when played logs out while participating in Block Checker Event
 	 * @param player
 	 */
-	public void onDisconnect(L2PcInstance player)
+	public void onDisconnect(PlayerInstance player)
 	{
 		int arena = player.getBlockCheckerArena();
 		int team = getHolder(arena).getPlayerTeam(player);

@@ -21,7 +21,7 @@ package org.l2junity.gameserver.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public final class EnchantSkillGroup
 {
@@ -95,7 +95,7 @@ public final class EnchantSkillGroup
 			return _adenaCost;
 		}
 		
-		public byte getRate(L2PcInstance ply)
+		public byte getRate(PlayerInstance ply)
 		{
 			if (ply.getLevel() < 76)
 			{

@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.events.impl.events;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.TvTEventTeam;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.IBaseEvent;
@@ -28,23 +28,23 @@ import org.l2junity.gameserver.model.events.impl.IBaseEvent;
  */
 public class OnTvTEventKill implements IBaseEvent
 {
-	private final L2PcInstance _killer;
-	private final L2PcInstance _victim;
+	private final PlayerInstance _killer;
+	private final PlayerInstance _victim;
 	private final TvTEventTeam _killerTeam;
 	
-	public OnTvTEventKill(L2PcInstance killer, L2PcInstance victim, TvTEventTeam killerTeam)
+	public OnTvTEventKill(PlayerInstance killer, PlayerInstance victim, TvTEventTeam killerTeam)
 	{
 		_killer = killer;
 		_victim = victim;
 		_killerTeam = killerTeam;
 	}
 	
-	public L2PcInstance getKiller()
+	public PlayerInstance getKiller()
 	{
 		return _killer;
 	}
 	
-	public L2PcInstance getVictim()
+	public PlayerInstance getVictim()
 	{
 		return _victim;
 	}

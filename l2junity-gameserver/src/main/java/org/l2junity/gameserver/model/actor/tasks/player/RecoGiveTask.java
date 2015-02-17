@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.actor.tasks.player;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.network.serverpackets.UserInfo;
@@ -29,9 +29,9 @@ import org.l2junity.gameserver.network.serverpackets.UserInfo;
  */
 public class RecoGiveTask implements Runnable
 {
-	private final L2PcInstance _player;
+	private final PlayerInstance _player;
 	
-	public RecoGiveTask(L2PcInstance player)
+	public RecoGiveTask(PlayerInstance player)
 	{
 		_player = player;
 	}

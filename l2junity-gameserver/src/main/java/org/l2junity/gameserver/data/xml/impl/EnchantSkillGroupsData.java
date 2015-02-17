@@ -28,7 +28,7 @@ import org.l2junity.gameserver.model.EnchantSkillGroup;
 import org.l2junity.gameserver.model.EnchantSkillLearn;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.EnchantSkillGroup.EnchantSkillHolder;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
@@ -226,7 +226,7 @@ public class EnchantSkillGroupsData implements IXmlReader
 	 * @param skill the skill
 	 * @return the enchant skill rate
 	 */
-	public byte getEnchantSkillRate(L2PcInstance player, Skill skill)
+	public byte getEnchantSkillRate(PlayerInstance player, Skill skill)
 	{
 		final EnchantSkillLearn enchantSkillLearn = _enchantSkillTrees.get(skill.getId());
 		if (enchantSkillLearn != null)

@@ -22,7 +22,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.l2junity.gameserver.model.Elementals;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 /**
@@ -36,7 +36,7 @@ public class ExChooseInventoryAttributeItem extends L2GameServerPacket
 	private final int _level;
 	private final Set<Integer> _items = new HashSet<>();
 	
-	public ExChooseInventoryAttributeItem(L2PcInstance activeChar, ItemInstance stone)
+	public ExChooseInventoryAttributeItem(PlayerInstance activeChar, ItemInstance stone)
 	{
 		_itemId = stone.getDisplayId();
 		_count = stone.getCount();

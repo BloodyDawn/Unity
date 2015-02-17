@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.actor.request;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 /**
@@ -29,7 +29,7 @@ public class CompoundRequest extends AbstractRequest
 	private int _itemOne;
 	private int _itemTwo;
 	
-	public CompoundRequest(L2PcInstance activeChar)
+	public CompoundRequest(PlayerInstance activeChar)
 	{
 		super(activeChar);
 	}

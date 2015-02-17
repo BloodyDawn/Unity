@@ -24,7 +24,7 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public class AttackableKnownList extends NpcKnownList
 {
@@ -47,7 +47,7 @@ public class AttackableKnownList extends NpcKnownList
 			getActiveChar().getAggroList().remove(object);
 		}
 		// Set the L2Attackable Intention to AI_INTENTION_IDLE
-		final Collection<L2PcInstance> known = getKnownPlayers().values();
+		final Collection<PlayerInstance> known = getKnownPlayers().values();
 		
 		// FIXME: This is a temporary solution && support for Walking Manager
 		if (getActiveChar().hasAI() && ((known == null) || known.isEmpty()) && !getActiveChar().isWalker())

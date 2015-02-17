@@ -19,7 +19,7 @@
 package ai.npc.RemembranceTower;
 
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.OnEventTrigger;
 
 import ai.npc.AbstractNpcAI;
@@ -44,7 +44,7 @@ public final class RemembranceTower extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if (event.equals("action") && npc.isScriptValue(0))
 		{

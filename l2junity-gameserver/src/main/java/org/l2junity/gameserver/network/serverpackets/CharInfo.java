@@ -24,14 +24,14 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.actor.Decoy;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.skills.AbnormalVisualEffect;
 import org.l2junity.gameserver.model.zone.ZoneId;
 
 public class CharInfo extends L2GameServerPacket
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private int _objId;
 	private int _x, _y, _z, _heading;
 	private final int _mAtkSpd, _pAtkSpd;
@@ -64,7 +64,7 @@ public class CharInfo extends L2GameServerPacket
 		Inventory.PAPERDOLL_HAIR2
 	};
 	
-	public CharInfo(L2PcInstance cha)
+	public CharInfo(PlayerInstance cha)
 	{
 		_activeChar = cha;
 		_objId = cha.getObjectId();
@@ -115,7 +115,7 @@ public class CharInfo extends L2GameServerPacket
 		
 		if (isInvisible())
 		{
-			final L2PcInstance activeChar = getClient().getActiveChar();
+			final PlayerInstance activeChar = getClient().getActiveChar();
 			if ((activeChar != null) && activeChar.canOverrideCond(PcCondOverride.SEE_ALL_PLAYERS))
 			{
 				gmSeeInvis = true;

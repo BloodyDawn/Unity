@@ -22,7 +22,7 @@ import org.l2junity.gameserver.enums.CastleSide;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.entity.Castle;
@@ -57,7 +57,7 @@ public final class TakeCastle extends AbstractEffect
 			return;
 		}
 		
-		final L2PcInstance effector = info.getEffector().getActingPlayer();
+		final PlayerInstance effector = info.getEffector().getActingPlayer();
 		final Castle castle = CastleManager.getInstance().getCastle(effector);
 		final Creature effected = info.getEffected();
 		

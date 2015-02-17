@@ -21,7 +21,7 @@ package org.l2junity.gameserver.network.serverpackets;
 import java.util.List;
 
 import org.l2junity.gameserver.data.xml.impl.HennaData;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.Henna;
 
 /**
@@ -29,16 +29,16 @@ import org.l2junity.gameserver.model.items.Henna;
  */
 public class HennaEquipList extends L2GameServerPacket
 {
-	private final L2PcInstance _player;
+	private final PlayerInstance _player;
 	private final List<Henna> _hennaEquipList;
 	
-	public HennaEquipList(L2PcInstance player)
+	public HennaEquipList(PlayerInstance player)
 	{
 		_player = player;
 		_hennaEquipList = HennaData.getInstance().getHennaList(player.getClassId());
 	}
 	
-	public HennaEquipList(L2PcInstance player, List<Henna> list)
+	public HennaEquipList(PlayerInstance player, List<Henna> list)
 	{
 		_player = player;
 		_hennaEquipList = list;

@@ -19,7 +19,7 @@
 package village_master.Alliance;
 
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 
 /**
@@ -53,7 +53,7 @@ public final class Alliance extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if (!"9001-01.htm".equals(event) && (player.getClan() == null))
 		{
@@ -63,7 +63,7 @@ public final class Alliance extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance talker)
+	public String onTalk(Npc npc, PlayerInstance talker)
 	{
 		return "9001-01.htm";
 	}

@@ -26,7 +26,7 @@ import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.instancemanager.MailManager;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Message;
 import org.l2junity.gameserver.model.itemcontainer.ItemContainer;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -62,7 +62,7 @@ public final class RequestPostAttachment extends L2GameClientPacket
 			return;
 		}
 		
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -242,7 +242,7 @@ public final class RequestPostAttachment extends L2GameClientPacket
 		activeChar.sendPacket(new ExUserInfoInvenWeight(activeChar));
 		
 		SystemMessage sm;
-		final L2PcInstance sender = World.getInstance().getPlayer(msg.getSenderId());
+		final PlayerInstance sender = World.getInstance().getPlayer(msg.getSenderId());
 		if (adena > 0)
 		{
 			if (sender != null)

@@ -21,7 +21,7 @@ package org.l2junity.gameserver.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.ArmorsetSkillHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
@@ -174,7 +174,7 @@ public final class ArmorSet
 		_int = val;
 	}
 	
-	public int getPiecesCount(L2PcInstance player)
+	public int getPiecesCount(PlayerInstance player)
 	{
 		final Inventory inv = player.getInventory();
 		
@@ -272,7 +272,7 @@ public final class ArmorSet
 		return _skills;
 	}
 	
-	public boolean containShield(L2PcInstance player)
+	public boolean containShield(PlayerInstance player)
 	{
 		Inventory inv = player.getInventory();
 		
@@ -304,7 +304,7 @@ public final class ArmorSet
 	 * @param player
 	 * @return true if all parts of set are enchanted to +6 or more
 	 */
-	public int getLowestSetEnchant(L2PcInstance player)
+	public int getLowestSetEnchant(PlayerInstance player)
 	{
 		// Player don't have full set
 		if (getPiecesCount(player) < getMinimumPieces())
@@ -340,7 +340,7 @@ public final class ArmorSet
 		
 	}
 	
-	public int getVisualPiecesCount(L2PcInstance player)
+	public int getVisualPiecesCount(PlayerInstance player)
 	{
 		final Inventory inv = player.getInventory();
 		

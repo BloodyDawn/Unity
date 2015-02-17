@@ -21,7 +21,7 @@ package org.l2junity.gameserver.model.zone.type;
 import org.l2junity.gameserver.GameServer;
 import org.l2junity.gameserver.model.TeleportWhereType;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.ZoneId;
 
@@ -94,7 +94,7 @@ public class NoRestartZone extends ZoneType
 	}
 	
 	@Override
-	public void onPlayerLoginInside(L2PcInstance player)
+	public void onPlayerLoginInside(PlayerInstance player)
 	{
 		if (!_enabled)
 		{

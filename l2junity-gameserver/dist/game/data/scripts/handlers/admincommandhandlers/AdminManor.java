@@ -21,7 +21,7 @@ package handlers.admincommandhandlers;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.CastleManorManager;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.util.Util;
@@ -32,7 +32,7 @@ import org.l2junity.gameserver.util.Util;
 public final class AdminManor implements IAdminCommandHandler
 {
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		final CastleManorManager manor = CastleManorManager.getInstance();
 		final NpcHtmlMessage msg = new NpcHtmlMessage(0, 1);

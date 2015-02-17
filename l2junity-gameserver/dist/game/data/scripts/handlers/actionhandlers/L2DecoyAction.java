@@ -21,13 +21,13 @@ package handlers.actionhandlers;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.handler.IActionHandler;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 
 public class L2DecoyAction implements IActionHandler
 {
 	@Override
-	public boolean action(L2PcInstance activeChar, WorldObject target, boolean interact)
+	public boolean action(PlayerInstance activeChar, WorldObject target, boolean interact)
 	{
 		// Aggression target lock effect
 		if (activeChar.isLockedTarget() && (activeChar.getLockedTarget() != target))

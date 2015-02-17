@@ -20,7 +20,7 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2ControllableAirShipInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * MyTargetSelected server packet implementation.
@@ -35,7 +35,7 @@ public class MyTargetSelected extends L2GameServerPacket
 	 * @param player
 	 * @param target
 	 */
-	public MyTargetSelected(L2PcInstance player, Creature target)
+	public MyTargetSelected(PlayerInstance player, Creature target)
 	{
 		_objectId = (target instanceof L2ControllableAirShipInstance) ? ((L2ControllableAirShipInstance) target).getHelmObjectId() : target.getObjectId();
 		_color = target.isAutoAttackable(player) ? (player.getLevel() - target.getLevel()) : 0;

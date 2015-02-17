@@ -37,7 +37,7 @@ import org.l2junity.gameserver.instancemanager.ItemsOnGroundManager;
 import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.instancemanager.RaidBossSpawnManager;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Hero;
 import org.l2junity.gameserver.model.olympiad.Olympiad;
 import org.l2junity.gameserver.network.L2GameClient;
@@ -320,7 +320,7 @@ public class Shutdown extends Thread
 	 * @param seconds seconds until shutdown
 	 * @param restart true if the server will restart after shutdown
 	 */
-	public void startShutdown(L2PcInstance activeChar, int seconds, boolean restart)
+	public void startShutdown(PlayerInstance activeChar, int seconds, boolean restart)
 	{
 		if (restart)
 		{
@@ -373,7 +373,7 @@ public class Shutdown extends Thread
 	 * This function aborts a running countdown.
 	 * @param activeChar GM who issued the abort command
 	 */
-	public void abort(L2PcInstance activeChar)
+	public void abort(PlayerInstance activeChar)
 	{
 		_log.warning("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") issued shutdown ABORT. " + MODE_TEXT[_shutdownMode] + " has been stopped!");
 		if (_counterInstance != null)
@@ -572,7 +572,7 @@ public class Shutdown extends Thread
 	 */
 	private void disconnectAllCharacters()
 	{
-		for (L2PcInstance player : World.getInstance().getPlayers())
+		for (PlayerInstance player : World.getInstance().getPlayers())
 		{
 			// Logout Character
 			try

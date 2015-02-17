@@ -23,7 +23,7 @@ import java.util.List;
 
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.PartyMatchWaitingList;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 
 /**
@@ -31,15 +31,15 @@ import org.l2junity.gameserver.model.instancezone.InstanceWorld;
  */
 public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	// private final int _page;
 	private final int _minlvl;
 	private final int _maxlvl;
 	private final int _mode;
 	private final int _currentTemplateId;
-	private final List<L2PcInstance> _members;
+	private final List<PlayerInstance> _members;
 	
-	public ExListPartyMatchingWaitingRoom(L2PcInstance player, int page, int minlvl, int maxlvl, int mode)
+	public ExListPartyMatchingWaitingRoom(PlayerInstance player, int page, int minlvl, int maxlvl, int mode)
 	{
 		_activeChar = player;
 		// _page = page;
@@ -63,7 +63,7 @@ public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket
 			return;
 		}
 		
-		for (L2PcInstance cha : PartyMatchWaitingList.getInstance().getPlayers())
+		for (PlayerInstance cha : PartyMatchWaitingList.getInstance().getPlayers())
 		{
 			if ((cha == null) || (cha == _activeChar))
 			{
@@ -86,7 +86,7 @@ public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket
 		
 		writeD(0x01); // Page?
 		writeD(_members.size());
-		for (L2PcInstance member : _members)
+		for (PlayerInstance member : _members)
 		{
 			writeS(member.getName());
 			writeD(member.getActiveClass());

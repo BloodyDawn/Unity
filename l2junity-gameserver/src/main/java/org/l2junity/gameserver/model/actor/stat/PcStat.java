@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.PetLevelData;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2ClassMasterInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.transform.TransformTemplate;
 import org.l2junity.gameserver.model.events.EventDispatcher;
@@ -68,7 +68,7 @@ public class PcStat extends PlayableStat
 	public static final int MIN_VITALITY_POINTS = 1;
 	public static String VITALITY_VARIABLE = "vitality_points";
 	
-	public PcStat(L2PcInstance activeChar)
+	public PcStat(PlayerInstance activeChar)
 	{
 		super(activeChar);
 	}
@@ -76,7 +76,7 @@ public class PcStat extends PlayableStat
 	@Override
 	public boolean addExp(long value)
 	{
-		L2PcInstance activeChar = getActiveChar();
+		PlayerInstance activeChar = getActiveChar();
 		
 		// Allowed to gain exp?
 		if (!getActiveChar().getAccessLevel().canGainExp())
@@ -109,7 +109,7 @@ public class PcStat extends PlayableStat
 	
 	public boolean addExpAndSp(long addToExp, long addToSp, boolean useBonuses)
 	{
-		L2PcInstance activeChar = getActiveChar();
+		PlayerInstance activeChar = getActiveChar();
 		
 		// Allowed to gain exp/sp?
 		if (!activeChar.getAccessLevel().canGainExp())
@@ -343,9 +343,9 @@ public class PcStat extends PlayableStat
 	}
 	
 	@Override
-	public final L2PcInstance getActiveChar()
+	public final PlayerInstance getActiveChar()
 	{
-		return (L2PcInstance) super.getActiveChar();
+		return (PlayerInstance) super.getActiveChar();
 	}
 	
 	@Override
@@ -559,7 +559,7 @@ public class PcStat extends PlayableStat
 	@Override
 	public double getBaseMoveSpeed(MoveType type)
 	{
-		final L2PcInstance player = getActiveChar();
+		final PlayerInstance player = getActiveChar();
 		if (player.isTransformed())
 		{
 			final TransformTemplate template = player.getTransformation().getTemplate(player);
@@ -693,7 +693,7 @@ public class PcStat extends PlayableStat
 			getActiveChar().sendPacket(SystemMessageId.YOUR_VITALITY_IS_AT_MAXIMUM);
 		}
 		
-		final L2PcInstance player = getActiveChar();
+		final PlayerInstance player = getActiveChar();
 		player.sendPacket(new ExVitalityPointInfo(getVitalityPoints()));
 		if (player.isInParty())
 		{

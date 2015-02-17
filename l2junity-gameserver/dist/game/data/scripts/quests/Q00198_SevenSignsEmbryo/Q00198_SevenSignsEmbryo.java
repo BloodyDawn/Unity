@@ -22,7 +22,7 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.quest.Quest;
@@ -64,7 +64,7 @@ public final class Q00198_SevenSignsEmbryo extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if ((npc.getId() == SHILENS_EVIL_THOUGHTS) && "despawn".equals(event))
 		{
@@ -166,15 +166,15 @@ public final class Q00198_SevenSignsEmbryo extends Quest
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		return "32617-01.html";
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
-		final L2PcInstance partyMember = getRandomPartyMember(player, 1);
+		final PlayerInstance partyMember = getRandomPartyMember(player, 1);
 		if (partyMember == null)
 		{
 			return null;
@@ -197,7 +197,7 @@ public final class Q00198_SevenSignsEmbryo extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);

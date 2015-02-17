@@ -23,7 +23,7 @@ import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.NpcStringId;
 
 import ai.npc.AbstractNpcAI;
@@ -78,7 +78,7 @@ public final class WarriorFishingBlock extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		switch (event)
 		{
@@ -91,7 +91,7 @@ public final class WarriorFishingBlock extends AbstractNpcAI
 				}
 				else
 				{
-					final L2PcInstance target = obj.getActingPlayer();
+					final PlayerInstance target = obj.getActingPlayer();
 					broadcastNpcSay(npc, ChatType.NPC_GENERAL, NPC_STRINGS_ON_SPAWN[getRandom(NPC_STRINGS_ON_SPAWN.length)], target.getName());
 					((Attackable) npc).addDamageHate(target, 0, 2000);
 					npc.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, target);
@@ -111,7 +111,7 @@ public final class WarriorFishingBlock extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon)
 	{
 		if (getRandom(100) < CHANCE_TO_SHOUT_ON_ATTACK)
 		{
@@ -121,7 +121,7 @@ public final class WarriorFishingBlock extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		broadcastNpcSay(npc, ChatType.NPC_GENERAL, NPC_STRINGS_ON_KILL[getRandom(NPC_STRINGS_ON_KILL.length)]);
 		cancelQuestTimer("DESPAWN", npc, killer);

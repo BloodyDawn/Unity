@@ -36,7 +36,7 @@ public final class L2ObservationInstance extends Npc
 	}
 	
 	@Override
-	public void showChatWindow(L2PcInstance player, int val)
+	public void showChatWindow(PlayerInstance player, int val)
 	{
 		String filename = null;
 		

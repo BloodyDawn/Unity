@@ -37,7 +37,7 @@ import org.l2junity.gameserver.instancemanager.GrandBossManager;
 import org.l2junity.gameserver.instancemanager.SiegeManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.L2Event;
 import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.model.skills.AbnormalVisualEffect;
@@ -64,7 +64,7 @@ public class Wedding implements IVoicedCommandHandler
 	};
 	
 	@Override
-	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params)
+	public boolean useVoicedCommand(String command, PlayerInstance activeChar, String params)
 	{
 		if (activeChar == null)
 		{
@@ -85,7 +85,7 @@ public class Wedding implements IVoicedCommandHandler
 		return false;
 	}
 	
-	public boolean divorce(L2PcInstance activeChar)
+	public boolean divorce(PlayerInstance activeChar)
 	{
 		if (activeChar.getPartnerId() == 0)
 		{
@@ -109,7 +109,7 @@ public class Wedding implements IVoicedCommandHandler
 			activeChar.sendMessage("You have broken up as a couple.");
 		}
 		
-		final L2PcInstance partner = World.getInstance().getPlayer(_partnerId);
+		final PlayerInstance partner = World.getInstance().getPlayer(_partnerId);
 		if (partner != null)
 		{
 			partner.setPartnerId(0);
@@ -132,14 +132,14 @@ public class Wedding implements IVoicedCommandHandler
 		return true;
 	}
 	
-	public boolean engage(L2PcInstance activeChar)
+	public boolean engage(PlayerInstance activeChar)
 	{
 		if (activeChar.getTarget() == null)
 		{
 			activeChar.sendMessage("You have no one targeted.");
 			return false;
 		}
-		else if (!(activeChar.getTarget() instanceof L2PcInstance))
+		else if (!(activeChar.getTarget() instanceof PlayerInstance))
 		{
 			activeChar.sendMessage("You can only ask another player to engage you.");
 			return false;
@@ -177,7 +177,7 @@ public class Wedding implements IVoicedCommandHandler
 			}
 			return false;
 		}
-		final L2PcInstance ptarget = (L2PcInstance) activeChar.getTarget();
+		final PlayerInstance ptarget = (PlayerInstance) activeChar.getTarget();
 		// check if player target himself
 		if (ptarget.getObjectId() == activeChar.getObjectId())
 		{
@@ -247,7 +247,7 @@ public class Wedding implements IVoicedCommandHandler
 		return true;
 	}
 	
-	public boolean goToLove(L2PcInstance activeChar)
+	public boolean goToLove(PlayerInstance activeChar)
 	{
 		if (!activeChar.isMarried())
 		{
@@ -335,7 +335,7 @@ public class Wedding implements IVoicedCommandHandler
 			return false;
 		}
 		
-		final L2PcInstance partner = World.getInstance().getPlayer(activeChar.getPartnerId());
+		final PlayerInstance partner = World.getInstance().getPlayer(activeChar.getPartnerId());
 		if ((partner == null) || !partner.isOnline())
 		{
 			activeChar.sendMessage("Your partner is not online.");
@@ -432,10 +432,10 @@ public class Wedding implements IVoicedCommandHandler
 	
 	static class EscapeFinalizer implements Runnable
 	{
-		private final L2PcInstance _activeChar;
+		private final PlayerInstance _activeChar;
 		private final Location _partnerLoc;
 		
-		EscapeFinalizer(L2PcInstance activeChar, Location loc)
+		EscapeFinalizer(PlayerInstance activeChar, Location loc)
 		{
 			_activeChar = activeChar;
 			_partnerLoc = loc;

@@ -32,7 +32,7 @@ import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.knownlist.ObjectKnownList;
 import org.l2junity.gameserver.model.actor.poly.ObjectPoly;
 import org.l2junity.gameserver.model.entity.Instance;
@@ -117,12 +117,12 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 		return _instanceType.isTypes(instanceTypes);
 	}
 	
-	public final void onAction(L2PcInstance player)
+	public final void onAction(PlayerInstance player)
 	{
 		onAction(player, true);
 	}
 	
-	public void onAction(L2PcInstance player, boolean interact)
+	public void onAction(PlayerInstance player, boolean interact)
 	{
 		IActionHandler handler = ActionHandler.getInstance().getHandler(getInstanceType());
 		if (handler != null)
@@ -133,7 +133,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
-	public void onActionShift(L2PcInstance player)
+	public void onActionShift(PlayerInstance player)
 	{
 		IActionShiftHandler handler = ActionShiftHandler.getInstance().getHandler(getInstanceType());
 		if (handler != null)
@@ -144,7 +144,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
-	public void onForcedAttack(L2PcInstance player)
+	public void onForcedAttack(PlayerInstance player)
 	{
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
@@ -330,7 +330,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 		return (poly == null) ? addScript(new ObjectPoly(this)) : poly;
 	}
 	
-	public abstract void sendInfo(L2PcInstance activeChar);
+	public abstract void sendInfo(PlayerInstance activeChar);
 	
 	public void sendPacket(L2GameServerPacket mov)
 	{
@@ -340,7 +340,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	{
 	}
 	
-	public L2PcInstance getActingPlayer()
+	public PlayerInstance getActingPlayer()
 	{
 		return null;
 	}
@@ -818,7 +818,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 		
 		if (isPlayer())
 		{
-			final L2PcInstance player = getActingPlayer();
+			final PlayerInstance player = getActingPlayer();
 			if ((getInstanceId() > 0) && (oldI != null))
 			{
 				oldI.removePlayer(getObjectId());
@@ -968,7 +968,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 			{
 				if ((obj != null) && obj.isPlayer())
 				{
-					final L2PcInstance player = obj.getActingPlayer();
+					final PlayerInstance player = obj.getActingPlayer();
 					if (!isVisibleFor(player))
 					{
 						obj.sendPacket(deletePacket);
@@ -985,7 +985,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	 * @param player
 	 * @return {@code true} if player can see an invisible object if it's invisible, {@code false} otherwise.
 	 */
-	public boolean isVisibleFor(L2PcInstance player)
+	public boolean isVisibleFor(PlayerInstance player)
 	{
 		return !isInvisible() || player.canOverrideCond(PcCondOverride.SEE_ALL_PLAYERS);
 	}

@@ -26,7 +26,7 @@ import org.l2junity.gameserver.instancemanager.CastleManorManager;
 import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.CropProcure;
 import org.l2junity.gameserver.model.L2Seed;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author l3x
@@ -84,7 +84,7 @@ public final class RequestSetCrop extends L2GameClientPacket
 		}
 		
 		// Check player privileges
-		final L2PcInstance player = getActiveChar();
+		final PlayerInstance player = getActiveChar();
 		if ((player == null) || (player.getClan() == null) || (player.getClan().getCastleId() != _manorId) || !player.hasClanPrivilege(ClanPrivilege.CS_MANOR_ADMIN) || !player.getLastFolkNPC().canInteract(player))
 		{
 			sendActionFailed();

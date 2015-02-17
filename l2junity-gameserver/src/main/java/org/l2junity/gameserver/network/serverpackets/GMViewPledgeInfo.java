@@ -20,14 +20,14 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.ClanMember;
 import org.l2junity.gameserver.model.L2Clan;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public class GMViewPledgeInfo extends L2GameServerPacket
 {
 	private final L2Clan _clan;
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	
-	public GMViewPledgeInfo(L2Clan clan, L2PcInstance activeChar)
+	public GMViewPledgeInfo(L2Clan clan, PlayerInstance activeChar)
 	{
 		_clan = clan;
 		_activeChar = activeChar;

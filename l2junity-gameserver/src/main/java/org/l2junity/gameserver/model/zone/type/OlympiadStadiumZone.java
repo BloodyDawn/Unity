@@ -32,7 +32,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2OlympiadManagerInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.olympiad.OlympiadGameTask;
 import org.l2junity.gameserver.model.zone.AbstractZoneSettings;
 import org.l2junity.gameserver.model.zone.L2ZoneRespawn;
@@ -142,10 +142,10 @@ public class OlympiadStadiumZone extends L2ZoneRespawn
 		}
 	}
 	
-	public final void broadcastStatusUpdate(L2PcInstance player)
+	public final void broadcastStatusUpdate(PlayerInstance player)
 	{
 		final ExOlympiadUserInfo packet = new ExOlympiadUserInfo(player);
-		for (L2PcInstance target : getPlayersInside())
+		for (PlayerInstance target : getPlayersInside())
 		{
 			if ((target != null) && (target.inObserverMode() || (target.getOlympiadSide() != player.getOlympiadSide())))
 			{
@@ -183,7 +183,7 @@ public class OlympiadStadiumZone extends L2ZoneRespawn
 		
 		if (character.isPlayable())
 		{
-			final L2PcInstance player = character.getActingPlayer();
+			final PlayerInstance player = character.getActingPlayer();
 			if (player != null)
 			{
 				// only participants, observers and GMs allowed
@@ -268,9 +268,9 @@ public class OlympiadStadiumZone extends L2ZoneRespawn
 	
 	private static final class KickPlayer implements Runnable
 	{
-		private L2PcInstance _player;
+		private PlayerInstance _player;
 		
-		public KickPlayer(L2PcInstance player)
+		public KickPlayer(PlayerInstance player)
 		{
 			_player = player;
 		}

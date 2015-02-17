@@ -39,7 +39,7 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	
 	private final int _ownerId;
 	private int _helmId;
-	private L2PcInstance _captain = null;
+	private PlayerInstance _captain = null;
 	
 	private Future<?> _consumeFuelTask;
 	private Future<?> _checkTask;
@@ -71,7 +71,7 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	}
 	
 	@Override
-	public boolean isOwner(L2PcInstance player)
+	public boolean isOwner(PlayerInstance player)
 	{
 		if (_ownerId == 0)
 		{
@@ -88,7 +88,7 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	}
 	
 	@Override
-	public boolean isCaptain(L2PcInstance player)
+	public boolean isCaptain(PlayerInstance player)
 	{
 		return (_captain != null) && (player == _captain);
 	}
@@ -112,7 +112,7 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	}
 	
 	@Override
-	public boolean setCaptain(L2PcInstance player)
+	public boolean setCaptain(PlayerInstance player)
 	{
 		if (player == null)
 		{
@@ -240,7 +240,7 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	}
 	
 	@Override
-	public void oustPlayer(L2PcInstance player)
+	public void oustPlayer(PlayerInstance player)
 	{
 		if (player == _captain)
 		{
@@ -290,7 +290,7 @@ public class L2ControllableAirShipInstance extends L2AirShipInstance
 	}
 	
 	@Override
-	public void sendInfo(L2PcInstance activeChar)
+	public void sendInfo(PlayerInstance activeChar)
 	{
 		super.sendInfo(activeChar);
 		if (_captain != null)

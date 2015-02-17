@@ -22,7 +22,7 @@ import org.l2junity.gameserver.data.xml.impl.TransformData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
 import org.l2junity.gameserver.network.serverpackets.SetupGauge;
@@ -44,7 +44,7 @@ public class AdminPolymorph implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		if (command.equals("admin_transform_menu"))
 		{
@@ -72,7 +72,7 @@ public class AdminPolymorph implements IAdminCommandHandler
 				return false;
 			}
 			
-			final L2PcInstance player = obj.getActingPlayer();
+			final PlayerInstance player = obj.getActingPlayer();
 			if (activeChar.isSitting())
 			{
 				activeChar.sendPacket(SystemMessageId.YOU_CANNOT_TRANSFORM_WHILE_SITTING);
@@ -155,7 +155,7 @@ public class AdminPolymorph implements IAdminCommandHandler
 	 * @param id the polymorph ID
 	 * @param type the polymorph type
 	 */
-	private static void doPolymorph(L2PcInstance activeChar, WorldObject obj, String id, String type)
+	private static void doPolymorph(PlayerInstance activeChar, WorldObject obj, String id, String type)
 	{
 		if (obj != null)
 		{
@@ -185,7 +185,7 @@ public class AdminPolymorph implements IAdminCommandHandler
 	 * @param activeChar the active Game Master
 	 * @param target the target
 	 */
-	private static void doUnPolymorph(L2PcInstance activeChar, WorldObject target)
+	private static void doUnPolymorph(PlayerInstance activeChar, WorldObject target)
 	{
 		if (target != null)
 		{

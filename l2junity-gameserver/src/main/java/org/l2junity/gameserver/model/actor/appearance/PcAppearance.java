@@ -19,13 +19,13 @@
 package org.l2junity.gameserver.model.actor.appearance;
 
 import org.l2junity.gameserver.enums.Sex;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public class PcAppearance
 {
 	public static final int DEFAULT_TITLE_COLOR = 0xECF9A2;
 	
-	private L2PcInstance _owner;
+	private PlayerInstance _owner;
 	
 	private byte _face;
 	
@@ -214,7 +214,7 @@ public class PcAppearance
 	/**
 	 * @param owner The owner to set.
 	 */
-	public void setOwner(L2PcInstance owner)
+	public void setOwner(PlayerInstance owner)
 	{
 		_owner = owner;
 	}
@@ -222,7 +222,7 @@ public class PcAppearance
 	/**
 	 * @return Returns the owner.
 	 */
-	public L2PcInstance getOwner()
+	public PlayerInstance getOwner()
 	{
 		return _owner;
 	}

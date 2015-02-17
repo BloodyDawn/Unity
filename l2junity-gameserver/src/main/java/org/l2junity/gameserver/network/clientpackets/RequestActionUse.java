@@ -38,7 +38,7 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2BabyPetInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.L2SiegeFlagInstance;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
@@ -91,7 +91,7 @@ public final class RequestActionUse extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -988,7 +988,7 @@ public final class RequestActionUse extends L2GameClientPacket
 	 * @param target the target to sit, throne, bench or chair
 	 * @return {@code true} if the player can sit, {@code false} otherwise
 	 */
-	protected boolean useSit(L2PcInstance activeChar, WorldObject target)
+	protected boolean useSit(PlayerInstance activeChar, WorldObject target)
 	{
 		if (activeChar.getMountType() != MountType.NONE)
 		{
@@ -1028,7 +1028,7 @@ public final class RequestActionUse extends L2GameClientPacket
 	 */
 	private void useSkill(int skillId, WorldObject target, boolean pet)
 	{
-		final L2PcInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -1096,7 +1096,7 @@ public final class RequestActionUse extends L2GameClientPacket
 	 */
 	private void useSkill(int skillId, boolean pet)
 	{
-		final L2PcInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -1112,7 +1112,7 @@ public final class RequestActionUse extends L2GameClientPacket
 	 */
 	private void useServitorsSkill(int skillId)
 	{
-		final L2PcInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -1175,7 +1175,7 @@ public final class RequestActionUse extends L2GameClientPacket
 	 */
 	private void tryBroadcastSocial(int id)
 	{
-		final L2PcInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -1198,7 +1198,7 @@ public final class RequestActionUse extends L2GameClientPacket
 	 */
 	private void useCoupleSocial(final int id)
 	{
-		final L2PcInstance requester = getActiveChar();
+		final PlayerInstance requester = getActiveChar();
 		if (requester == null)
 		{
 			return;
@@ -1297,7 +1297,7 @@ public final class RequestActionUse extends L2GameClientPacket
 		}
 		
 		// Checks for partner.
-		final L2PcInstance partner = target.getActingPlayer();
+		final PlayerInstance partner = target.getActingPlayer();
 		if (partner.isInStoreMode() || partner.isInCraftMode())
 		{
 			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_PRIVATE_STORE_MODE_OR_IN_A_BATTLE_AND_CANNOT_BE_REQUESTED_FOR_A_COUPLE_ACTION);

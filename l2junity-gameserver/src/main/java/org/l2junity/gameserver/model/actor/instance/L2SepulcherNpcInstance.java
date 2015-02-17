@@ -106,7 +106,7 @@ public class L2SepulcherNpcInstance extends Npc
 	}
 	
 	@Override
-	public void onAction(L2PcInstance player, boolean interact)
+	public void onAction(PlayerInstance player, boolean interact)
 	{
 		if (!canTarget(player))
 		{
@@ -173,7 +173,7 @@ public class L2SepulcherNpcInstance extends Npc
 		}
 	}
 	
-	private void doAction(L2PcInstance player)
+	private void doAction(PlayerInstance player)
 	{
 		if (isDead())
 		{
@@ -271,7 +271,7 @@ public class L2SepulcherNpcInstance extends Npc
 	}
 	
 	@Override
-	public void showChatWindow(L2PcInstance player, int val)
+	public void showChatWindow(PlayerInstance player, int val)
 	{
 		String filename = getHtmlPath(getId(), val);
 		final NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
@@ -282,7 +282,7 @@ public class L2SepulcherNpcInstance extends Npc
 	}
 	
 	@Override
-	public void onBypassFeedback(L2PcInstance player, String command)
+	public void onBypassFeedback(PlayerInstance player, String command)
 	{
 		if (isBusy())
 		{
@@ -329,7 +329,7 @@ public class L2SepulcherNpcInstance extends Npc
 						openNextDoor(getId());
 						if (player.getParty() != null)
 						{
-							for (L2PcInstance mem : player.getParty().getMembers())
+							for (PlayerInstance mem : player.getParty().getMembers())
 							{
 								if ((mem != null) && (mem.getInventory().getItemByItemId(HALLS_KEY) != null))
 								{
@@ -434,7 +434,7 @@ public class L2SepulcherNpcInstance extends Npc
 		}
 		
 		final CreatureSay creatureSay = new CreatureSay(0, ChatType.NPC_SHOUT, getName(), msg);
-		for (L2PcInstance player : World.getInstance().getPlayers())
+		for (PlayerInstance player : World.getInstance().getPlayers())
 		{
 			if (Util.checkIfInRange(15000, player, this, true))
 			{
@@ -443,7 +443,7 @@ public class L2SepulcherNpcInstance extends Npc
 		}
 	}
 	
-	public void showHtmlFile(L2PcInstance player, String file)
+	public void showHtmlFile(PlayerInstance player, String file)
 	{
 		final NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 		html.setFile(player.getHtmlPrefix(), "data/html/SepulcherNpc/" + file);

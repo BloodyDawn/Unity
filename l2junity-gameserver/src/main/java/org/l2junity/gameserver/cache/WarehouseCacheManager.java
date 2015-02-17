@@ -23,14 +23,14 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.ThreadPoolManager;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author -Nemesiss-
  */
 public class WarehouseCacheManager
 {
-	protected final Map<L2PcInstance, Long> _cachedWh = new ConcurrentHashMap<>();
+	protected final Map<PlayerInstance, Long> _cachedWh = new ConcurrentHashMap<>();
 	protected final long _cacheTime = Config.WAREHOUSE_CACHE_TIME * 60000L;
 	
 	protected WarehouseCacheManager()
@@ -38,12 +38,12 @@ public class WarehouseCacheManager
 		ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new CacheScheduler(), 120000, 60000);
 	}
 	
-	public void addCacheTask(L2PcInstance pc)
+	public void addCacheTask(PlayerInstance pc)
 	{
 		_cachedWh.put(pc, System.currentTimeMillis());
 	}
 	
-	public void remCacheTask(L2PcInstance pc)
+	public void remCacheTask(PlayerInstance pc)
 	{
 		_cachedWh.remove(pc);
 	}
@@ -54,7 +54,7 @@ public class WarehouseCacheManager
 		public void run()
 		{
 			long cTime = System.currentTimeMillis();
-			for (L2PcInstance pc : _cachedWh.keySet())
+			for (PlayerInstance pc : _cachedWh.keySet())
 			{
 				if ((cTime - _cachedWh.get(pc)) > _cacheTime)
 				{

@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.model.actor.tasks.player;
 
 import org.l2junity.gameserver.ai.CtrlIntention;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * Task dedicated to put player to stand up.
@@ -27,9 +27,9 @@ import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
  */
 public class StandUpTask implements Runnable
 {
-	private final L2PcInstance _player;
+	private final PlayerInstance _player;
 	
-	public StandUpTask(L2PcInstance player)
+	public StandUpTask(PlayerInstance player)
 	{
 		_player = player;
 	}

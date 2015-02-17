@@ -24,7 +24,7 @@ import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.L2FriendSay;
@@ -51,7 +51,7 @@ public final class RequestSendFriendMsg extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -62,7 +62,7 @@ public final class RequestSendFriendMsg extends L2GameClientPacket
 			return;
 		}
 		
-		final L2PcInstance targetPlayer = World.getInstance().getPlayer(_reciever);
+		final PlayerInstance targetPlayer = World.getInstance().getPlayer(_reciever);
 		if ((targetPlayer == null) || !targetPlayer.getFriendList().contains(activeChar.getObjectId()))
 		{
 			activeChar.sendPacket(SystemMessageId.THAT_PLAYER_IS_NOT_ONLINE);

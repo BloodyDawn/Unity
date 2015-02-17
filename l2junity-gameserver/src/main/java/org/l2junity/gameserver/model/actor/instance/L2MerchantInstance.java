@@ -74,12 +74,12 @@ public class L2MerchantInstance extends L2NpcInstance
 		return _mpc;
 	}
 	
-	public final void showBuyWindow(L2PcInstance player, int val)
+	public final void showBuyWindow(PlayerInstance player, int val)
 	{
 		showBuyWindow(player, val, true);
 	}
 	
-	public final void showBuyWindow(L2PcInstance player, int val, boolean applyTax)
+	public final void showBuyWindow(PlayerInstance player, int val, boolean applyTax)
 	{
 		final L2BuyList buyList = BuyListData.getInstance().getBuyList(val);
 		if (buyList == null)

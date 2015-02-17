@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExAskJoinPartyRoom;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
@@ -41,14 +41,14 @@ public class RequestAskJoinPartyRoom extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance player = getActiveChar();
+		final PlayerInstance player = getActiveChar();
 		if (player == null)
 		{
 			return;
 		}
 		
 		// Send PartyRoom invite request (with activeChar) name to the target
-		final L2PcInstance target = World.getInstance().getPlayer(_name);
+		final PlayerInstance target = World.getInstance().getPlayer(_name);
 		if (target != null)
 		{
 			if (!target.isProcessingRequest())

@@ -19,7 +19,7 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -46,7 +46,7 @@ public final class UnsummonAgathion extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		final L2PcInstance player = info.getEffector().getActingPlayer();
+		final PlayerInstance player = info.getEffector().getActingPlayer();
 		if (player != null)
 		{
 			player.setAgathionId(0);

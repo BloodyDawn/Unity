@@ -42,7 +42,7 @@ import org.l2junity.gameserver.instancemanager.AntiFeedManager;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.PlayerEventHolder;
 import org.l2junity.gameserver.network.serverpackets.CharInfo;
 import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
@@ -61,11 +61,11 @@ public class L2Event
 	public static String _eventInfo = "";
 	public static int _teamsNumber = 0;
 	public static final Map<Integer, String> _teamNames = new FastMap<>();
-	public static final List<L2PcInstance> _registeredPlayers = new FastList<>();
-	public static final Map<Integer, List<L2PcInstance>> _teams = new FastMap<>();
+	public static final List<PlayerInstance> _registeredPlayers = new FastList<>();
+	public static final Map<Integer, List<PlayerInstance>> _teams = new FastMap<>();
 	public static int _npcId = 0;
 	// public static final List<L2Npc> _npcs = new FastList<L2Npc>();
-	private static final Map<L2PcInstance, PlayerEventHolder> _connectionLossData = new FastMap<>();
+	private static final Map<PlayerInstance, PlayerEventHolder> _connectionLossData = new FastMap<>();
 	
 	public enum EventState
 	{
@@ -78,14 +78,14 @@ public class L2Event
 	 * @param player
 	 * @return The team ID where the player is in, or -1 if player is null or team not found.
 	 */
-	public static int getPlayerTeamId(L2PcInstance player)
+	public static int getPlayerTeamId(PlayerInstance player)
 	{
 		if (player == null)
 		{
 			return -1;
 		}
 		
-		for (Entry<Integer, List<L2PcInstance>> team : _teams.entrySet())
+		for (Entry<Integer, List<PlayerInstance>> team : _teams.entrySet())
 		{
 			if (team.getValue().contains(player))
 			{
@@ -96,12 +96,12 @@ public class L2Event
 		return -1;
 	}
 	
-	public static List<L2PcInstance> getTopNKillers(int n)
+	public static List<PlayerInstance> getTopNKillers(int n)
 	{
-		final Map<L2PcInstance, Integer> tmp = new HashMap<>();
-		for (List<L2PcInstance> teamList : _teams.values())
+		final Map<PlayerInstance, Integer> tmp = new HashMap<>();
+		for (List<PlayerInstance> teamList : _teams.values())
 		{
-			for (L2PcInstance player : teamList)
+			for (PlayerInstance player : teamList)
 			{
 				if (player.getEventStatus() == null)
 				{
@@ -119,11 +119,11 @@ public class L2Event
 			return new ArrayList<>(tmp.keySet());
 		}
 		
-		final List<L2PcInstance> toReturn = new ArrayList<>(tmp.keySet());
+		final List<PlayerInstance> toReturn = new ArrayList<>(tmp.keySet());
 		return toReturn.subList(1, n);
 	}
 	
-	public static void showEventHtml(L2PcInstance player, String objectid)
+	public static void showEventHtml(PlayerInstance player, String objectid)
 	{
 		// TODO: work on this
 		if (eventState == EventState.STANDBY)
@@ -164,7 +164,7 @@ public class L2Event
 	 * Spawns an event participation NPC near the player. The npc id used to spawning is L2Event._npcId
 	 * @param target
 	 */
-	public static void spawnEventNpc(L2PcInstance target)
+	public static void spawnEventNpc(PlayerInstance target)
 	{
 		try
 		{
@@ -219,7 +219,7 @@ public class L2Event
 	 * @param player
 	 * @return False: If player is null, his event status is null or the event state is off. True: if the player is inside the _registeredPlayers list while the event state is STANDBY. If the event state is ON, it will check if the player is inside in one of the teams.
 	 */
-	public static boolean isParticipant(L2PcInstance player)
+	public static boolean isParticipant(PlayerInstance player)
 	{
 		if ((player == null) || (player.getEventStatus() == null))
 		{
@@ -233,7 +233,7 @@ public class L2Event
 			case STANDBY:
 				return _registeredPlayers.contains(player);
 			case ON:
-				for (List<L2PcInstance> teamList : _teams.values())
+				for (List<PlayerInstance> teamList : _teams.values())
 				{
 					if (teamList.contains(player))
 					{
@@ -249,7 +249,7 @@ public class L2Event
 	 * Adds the player to the list of participants. If the event state is NOT STANDBY, the player wont be registered.
 	 * @param player
 	 */
-	public static void registerPlayer(L2PcInstance player)
+	public static void registerPlayer(PlayerInstance player)
 	{
 		if (eventState != EventState.STANDBY)
 		{
@@ -273,7 +273,7 @@ public class L2Event
 	 * Removes the player from the participating players and the teams and restores his init stats before he registered at the event (loc, pvp, pk, title etc)
 	 * @param player
 	 */
-	public static void removeAndResetPlayer(L2PcInstance player)
+	public static void removeAndResetPlayer(PlayerInstance player)
 	{
 		
 		try
@@ -323,7 +323,7 @@ public class L2Event
 	 * The player's event status will be saved at _connectionLossData
 	 * @param player
 	 */
-	public static void savePlayerEventStatus(L2PcInstance player)
+	public static void savePlayerEventStatus(PlayerInstance player)
 	{
 		_connectionLossData.put(player, player.getEventStatus());
 	}
@@ -332,7 +332,7 @@ public class L2Event
 	 * If _connectionLossData contains the player, it will restore the player's event status. Also it will remove the player from the _connectionLossData.
 	 * @param player
 	 */
-	public static void restorePlayerEventStatus(L2PcInstance player)
+	public static void restorePlayerEventStatus(PlayerInstance player)
 	{
 		if (_connectionLossData.containsKey(player))
 		{
@@ -381,8 +381,8 @@ public class L2Event
 				_eventInfo = br.readLine();
 			}
 			
-			List<L2PcInstance> temp = new FastList<>();
-			for (L2PcInstance player : World.getInstance().getPlayers())
+			List<PlayerInstance> temp = new FastList<>();
+			for (PlayerInstance player : World.getInstance().getPlayers())
 			{
 				if (!player.isOnline())
 				{
@@ -394,7 +394,7 @@ public class L2Event
 					spawnEventNpc(player);
 					temp.add(player);
 				}
-				for (L2PcInstance playertemp : player.getKnownList().getKnownPlayers().values())
+				for (PlayerInstance playertemp : player.getKnownList().getKnownPlayers().values())
 				{
 					if ((Math.abs(playertemp.getX() - player.getX()) < 1000) && (Math.abs(playertemp.getY() - player.getY()) < 1000) && (Math.abs(playertemp.getZ() - player.getZ()) < 1000))
 					{
@@ -439,7 +439,7 @@ public class L2Event
 			// Insert empty lists at _teams.
 			for (int i = 0; i < _teamsNumber; i++)
 			{
-				_teams.put(i + 1, new FastList<L2PcInstance>());
+				_teams.put(i + 1, new FastList<PlayerInstance>());
 			}
 			
 			int i = 0;
@@ -447,8 +447,8 @@ public class L2Event
 			{
 				// Get the player with the biggest level
 				int max = 0;
-				L2PcInstance biggestLvlPlayer = null;
-				for (L2PcInstance player : _registeredPlayers)
+				PlayerInstance biggestLvlPlayer = null;
+				for (PlayerInstance player : _registeredPlayers)
 				{
 					if (player == null)
 					{
@@ -494,7 +494,7 @@ public class L2Event
 			case OFF:
 				return "Cannot finish event, it is already off.";
 			case STANDBY:
-				for (L2PcInstance player : _registeredPlayers)
+				for (PlayerInstance player : _registeredPlayers)
 				{
 					removeAndResetPlayer(player);
 				}
@@ -509,9 +509,9 @@ public class L2Event
 				eventState = EventState.OFF;
 				return "The event has been stopped at STANDBY mode, all players unregistered and all event npcs unspawned.";
 			case ON:
-				for (List<L2PcInstance> teamList : _teams.values())
+				for (List<PlayerInstance> teamList : _teams.values())
 				{
-					for (L2PcInstance player : teamList)
+					for (PlayerInstance player : teamList)
 					{
 						removeAndResetPlayer(player);
 					}
@@ -535,14 +535,14 @@ public class L2Event
 		return "The event has been successfully finished.";
 	}
 	
-	private static final Map<L2PcInstance, Integer> sortByValue(Map<L2PcInstance, Integer> unsortMap)
+	private static final Map<PlayerInstance, Integer> sortByValue(Map<PlayerInstance, Integer> unsortMap)
 	{
-		final List<Entry<L2PcInstance, Integer>> list = new LinkedList<>(unsortMap.entrySet());
+		final List<Entry<PlayerInstance, Integer>> list = new LinkedList<>(unsortMap.entrySet());
 		
 		list.sort(Comparator.comparing(Entry::getValue));
 		
-		final Map<L2PcInstance, Integer> sortedMap = new LinkedHashMap<>();
-		for (Entry<L2PcInstance, Integer> entry : list)
+		final Map<PlayerInstance, Integer> sortedMap = new LinkedHashMap<>();
+		for (Entry<PlayerInstance, Integer> entry : list)
 		{
 			sortedMap.put(entry.getKey(), entry.getValue());
 		}

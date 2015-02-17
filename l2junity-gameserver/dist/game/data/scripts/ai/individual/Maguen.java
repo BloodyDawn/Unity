@@ -22,7 +22,7 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -83,7 +83,7 @@ public final class Maguen extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if ((npc == null) || (player == null))
 		{
@@ -170,7 +170,7 @@ public final class Maguen extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpellFinished(Npc npc, L2PcInstance player, Skill skill)
+	public String onSpellFinished(Npc npc, PlayerInstance player, Skill skill)
 	{
 		final BuffInfo b_info = player.getEffectList().getBuffInfoByAbnormalType(B_PLASMA1.getSkill().getAbnormalType());
 		final BuffInfo c_info = player.getEffectList().getBuffInfoByAbnormalType(C_PLASMA1.getSkill().getAbnormalType());
@@ -254,9 +254,9 @@ public final class Maguen extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSkillSee(Npc npc, L2PcInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public String onSkillSee(Npc npc, PlayerInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
-		if ((skill == MACHINE.getSkill()) && (caster == npc.getVariables().getObject("SUMMON_PLAYER", L2PcInstance.class)))
+		if ((skill == MACHINE.getSkill()) && (caster == npc.getVariables().getObject("SUMMON_PLAYER", PlayerInstance.class)))
 		{
 			if ((npc.getVariables().getInt("NPC_EFFECT") != 0) && (npc.getVariables().getInt("BLOCKED_SKILLSEE") == 0))
 			{
@@ -341,11 +341,11 @@ public final class Maguen extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		if (killer.isInParty())
 		{
-			final L2PcInstance partyMember = getRandomPartyMember(killer);
+			final PlayerInstance partyMember = getRandomPartyMember(killer);
 			final int i0 = 10 + (10 * killer.getParty().getMemberCount());
 			
 			if ((getRandom(1000) < i0) && (npc.calculateDistance(killer, true, false) < 2000) && (npc.calculateDistance(partyMember, true, false) < 2000))
@@ -356,7 +356,7 @@ public final class Maguen extends AbstractNpcAI
 		return super.onKill(npc, killer, isSummon);
 	}
 	
-	private void maguenPetChance(L2PcInstance player)
+	private void maguenPetChance(PlayerInstance player)
 	{
 		final int chance1 = getRandom(10000);
 		final int chance2 = getRandom(20);

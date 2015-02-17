@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.ExListPartyMatchingWaitingRoom;
 
 /**
@@ -44,7 +44,7 @@ public class RequestListPartyMatchingWaitingRoom extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance _activeChar = getClient().getActiveChar();
+		PlayerInstance _activeChar = getClient().getActiveChar();
 		
 		if (_activeChar == null)
 		{

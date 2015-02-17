@@ -21,7 +21,7 @@ package ai.individual;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 import ai.npc.AbstractNpcAI;
 
@@ -43,9 +43,9 @@ public final class Gordon extends AbstractNpcAI
 	@Override
 	public String onSeeCreature(Npc npc, Creature creature, boolean isSummon)
 	{
-		if (creature.isPlayer() && ((L2PcInstance) creature).isCursedWeaponEquipped())
+		if (creature.isPlayer() && ((PlayerInstance) creature).isCursedWeaponEquipped())
 		{
-			addAttackPlayerDesire(npc, (L2PcInstance) creature);
+			addAttackPlayerDesire(npc, (PlayerInstance) creature);
 		}
 		return super.onSeeCreature(npc, creature, isSummon);
 	}

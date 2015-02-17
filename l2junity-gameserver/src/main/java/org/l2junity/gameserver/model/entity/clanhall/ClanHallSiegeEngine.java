@@ -45,7 +45,7 @@ import org.l2junity.gameserver.model.SiegeClan;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Siegable;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.network.NpcStringId;
@@ -264,12 +264,12 @@ public abstract class ClanHallSiegeEngine extends Quest implements Siegable
 	}
 	
 	@Override
-	public List<L2PcInstance> getAttackersInZone()
+	public List<PlayerInstance> getAttackersInZone()
 	{
-		final Collection<L2PcInstance> list = _hall.getSiegeZone().getPlayersInside();
-		List<L2PcInstance> attackers = new FastList<>();
+		final Collection<PlayerInstance> list = _hall.getSiegeZone().getPlayersInside();
+		List<PlayerInstance> attackers = new FastList<>();
 		
-		for (L2PcInstance pc : list)
+		for (PlayerInstance pc : list)
 		{
 			final L2Clan clan = pc.getClan();
 			if ((clan != null) && getAttackers().containsKey(clan.getId()))
@@ -349,7 +349,7 @@ public abstract class ClanHallSiegeEngine extends Quest implements Siegable
 				continue;
 			}
 			
-			for (L2PcInstance pc : clan.getOnlineMembers(0))
+			for (PlayerInstance pc : clan.getOnlineMembers(0))
 			{
 				if (pc != null)
 				{
@@ -405,7 +405,7 @@ public abstract class ClanHallSiegeEngine extends Quest implements Siegable
 				continue;
 			}
 			
-			for (L2PcInstance player : clan.getOnlineMembers(0))
+			for (PlayerInstance player : clan.getOnlineMembers(0))
 			{
 				player.setSiegeState(state);
 				player.broadcastUserInfo();
@@ -481,7 +481,7 @@ public abstract class ClanHallSiegeEngine extends Quest implements Siegable
 	{
 		final NpcSay npcSay = new NpcSay(npc.getObjectId(), type, npc.getId(), messageId);
 		final int sourceRegion = MapRegionManager.getInstance().getMapRegionLocId(npc);
-		for (L2PcInstance pc : World.getInstance().getPlayers())
+		for (PlayerInstance pc : World.getInstance().getPlayers())
 		{
 			if ((pc != null) && (MapRegionManager.getInstance().getMapRegionLocId(pc) == sourceRegion))
 			{
@@ -491,7 +491,7 @@ public abstract class ClanHallSiegeEngine extends Quest implements Siegable
 	}
 	
 	// XXX Siege task and abstract methods -------------------
-	public Location getInnerSpawnLoc(L2PcInstance player)
+	public Location getInnerSpawnLoc(PlayerInstance player)
 	{
 		return null;
 	}

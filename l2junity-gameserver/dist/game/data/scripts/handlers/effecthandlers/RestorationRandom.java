@@ -26,7 +26,7 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.ExtractableProductItem;
 import org.l2junity.gameserver.model.ExtractableSkill;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.holders.ItemHolder;
@@ -97,7 +97,7 @@ public final class RestorationRandom extends AbstractEffect
 			chanceFrom += chance;
 		}
 		
-		final L2PcInstance player = info.getEffected().getActingPlayer();
+		final PlayerInstance player = info.getEffected().getActingPlayer();
 		if (creationList.isEmpty())
 		{
 			player.sendPacket(SystemMessageId.THERE_WAS_NOTHING_FOUND_INSIDE);

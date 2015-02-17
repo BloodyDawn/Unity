@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.PartyMatchRoom;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author Gnacik
@@ -29,7 +29,7 @@ public class ExPartyRoomMember extends L2GameServerPacket
 	private final PartyMatchRoom _room;
 	private final int _mode;
 	
-	public ExPartyRoomMember(L2PcInstance player, PartyMatchRoom room, int mode)
+	public ExPartyRoomMember(PlayerInstance player, PartyMatchRoom room, int mode)
 	{
 		_room = room;
 		_mode = mode;
@@ -42,7 +42,7 @@ public class ExPartyRoomMember extends L2GameServerPacket
 		writeH(0x08);
 		writeD(_mode);
 		writeD(_room.getMembers());
-		for (L2PcInstance member : _room.getPartyMembers())
+		for (PlayerInstance member : _room.getPartyMembers())
 		{
 			writeD(member.getObjectId());
 			writeS(member.getName());

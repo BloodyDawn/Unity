@@ -40,7 +40,7 @@ import org.l2junity.gameserver.enums.HtmlActionScope;
 import org.l2junity.gameserver.enums.IllegalActionPunishmentType;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.tasks.player.IllegalPlayerActionTask;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.network.serverpackets.AbstractHtmlPacket;
@@ -55,7 +55,7 @@ public final class Util
 	private static final Logger LOGGER = Logger.getLogger(Util.class.getName());
 	private static final NumberFormat ADENA_FORMATTER = NumberFormat.getIntegerInstance(Locale.ENGLISH);
 	
-	public static void handleIllegalPlayerAction(L2PcInstance actor, String message, IllegalActionPunishmentType punishment)
+	public static void handleIllegalPlayerAction(PlayerInstance actor, String message, IllegalActionPunishmentType punishment)
 	{
 		ThreadPoolManager.getInstance().scheduleGeneral(new IllegalPlayerActionTask(actor, message, punishment), 5000);
 	}
@@ -435,7 +435,7 @@ public final class Util
 		return dateFormat.format(date.getTime());
 	}
 	
-	private static final void buildHtmlBypassCache(L2PcInstance player, HtmlActionScope scope, String html)
+	private static final void buildHtmlBypassCache(PlayerInstance player, HtmlActionScope scope, String html)
 	{
 		String htmlLower = html.toLowerCase(Locale.ENGLISH);
 		int bypassEnd = 0;
@@ -476,7 +476,7 @@ public final class Util
 		}
 	}
 	
-	private static final void buildHtmlLinkCache(L2PcInstance player, HtmlActionScope scope, String html)
+	private static final void buildHtmlLinkCache(PlayerInstance player, HtmlActionScope scope, String html)
 	{
 		String htmlLower = html.toLowerCase(Locale.ENGLISH);
 		int linkEnd = 0;
@@ -523,7 +523,7 @@ public final class Util
 	 * @param npcObjId the npc object id the html actions are cached for
 	 * @param html the html code to parse
 	 */
-	public static void buildHtmlActionCache(L2PcInstance player, HtmlActionScope scope, int npcObjId, String html)
+	public static void buildHtmlActionCache(PlayerInstance player, HtmlActionScope scope, int npcObjId, String html)
 	{
 		if ((player == null) || (scope == null) || (npcObjId < 0) || (html == null))
 		{
@@ -544,7 +544,7 @@ public final class Util
 	 * @param activeChar the player to send the html content to
 	 * @param html the html content
 	 */
-	public static void sendHtml(L2PcInstance activeChar, String html)
+	public static void sendHtml(PlayerInstance activeChar, String html)
 	{
 		final NpcHtmlMessage npcHtml = new NpcHtmlMessage();
 		npcHtml.setHtml(html);
@@ -558,7 +558,7 @@ public final class Util
 	 * @param activeChar the player
 	 * @param html the html content
 	 */
-	public static void sendCBHtml(L2PcInstance activeChar, String html)
+	public static void sendCBHtml(PlayerInstance activeChar, String html)
 	{
 		sendCBHtml(activeChar, html, 0);
 	}
@@ -572,7 +572,7 @@ public final class Util
 	 * @param html the html content
 	 * @param npcObjId bypass origin to use
 	 */
-	public static void sendCBHtml(L2PcInstance activeChar, String html, int npcObjId)
+	public static void sendCBHtml(PlayerInstance activeChar, String html, int npcObjId)
 	{
 		sendCBHtml(activeChar, html, null, npcObjId);
 	}
@@ -586,7 +586,7 @@ public final class Util
 	 * @param html the html content
 	 * @param fillMultiEdit text to fill the multiedit field with(may be null)
 	 */
-	public static void sendCBHtml(L2PcInstance activeChar, String html, String fillMultiEdit)
+	public static void sendCBHtml(PlayerInstance activeChar, String html, String fillMultiEdit)
 	{
 		sendCBHtml(activeChar, html, fillMultiEdit, 0);
 	}
@@ -602,7 +602,7 @@ public final class Util
 	 * @param fillMultiEdit text to fill the multiedit field with(may be null)
 	 * @param npcObjId bypass origin to use
 	 */
-	public static void sendCBHtml(L2PcInstance activeChar, String html, String fillMultiEdit, int npcObjId)
+	public static void sendCBHtml(PlayerInstance activeChar, String html, String fillMultiEdit, int npcObjId)
 	{
 		if ((activeChar == null) || (html == null))
 		{
@@ -655,7 +655,7 @@ public final class Util
 	 * @param activeChar
 	 * @param text
 	 */
-	public static void fillMultiEditContent(L2PcInstance activeChar, String text)
+	public static void fillMultiEditContent(PlayerInstance activeChar, String text)
 	{
 		activeChar.sendPacket(new ShowBoard(Arrays.asList("0", "0", "0", "0", "0", "0", activeChar.getName(), Integer.toString(activeChar.getObjectId()), activeChar.getAccountName(), "9", " ", " ", text.replaceAll("<br>", System.lineSeparator()), "0", "0", "0", "0")));
 	}

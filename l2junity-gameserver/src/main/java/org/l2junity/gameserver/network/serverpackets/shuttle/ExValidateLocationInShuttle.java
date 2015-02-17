@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.serverpackets.shuttle;
 
 import org.l2junity.gameserver.model.Location;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
 
 /**
@@ -27,11 +27,11 @@ import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
  */
 public class ExValidateLocationInShuttle extends L2GameServerPacket
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final int _shipId, _heading;
 	private final Location _loc;
 	
-	public ExValidateLocationInShuttle(L2PcInstance player)
+	public ExValidateLocationInShuttle(PlayerInstance player)
 	{
 		_activeChar = player;
 		_shipId = _activeChar.getShuttle().getObjectId();

@@ -24,7 +24,7 @@ import org.l2junity.gameserver.model.ClanMember;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.L2Clan.SubPledge;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public class PledgeShowMemberListAll extends L2GameServerPacket
 {
@@ -46,7 +46,7 @@ public class PledgeShowMemberListAll extends L2GameServerPacket
 		
 		for (SubPledge subPledge : _clan.getAllSubPledges())
 		{
-			L2PcInstance pLeader = World.getInstance().getPlayer(subPledge.getLeaderId());
+			PlayerInstance pLeader = World.getInstance().getPlayer(subPledge.getLeaderId());
 			writePledge(subPledge, (pLeader == null ? "" : pLeader.getName()));
 		}
 	}
@@ -89,7 +89,7 @@ public class PledgeShowMemberListAll extends L2GameServerPacket
 			writeS(m.getName());
 			writeD(m.getLevel());
 			writeD(m.getClassId());
-			L2PcInstance player = m.getPlayerInstance();
+			PlayerInstance player = m.getPlayerInstance();
 			if (player != null)
 			{
 				writeD(player.getAppearance().getSex() ? 1 : 0); // no visible effect

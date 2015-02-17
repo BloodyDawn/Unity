@@ -28,7 +28,7 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 
 /**
@@ -45,7 +45,7 @@ public class AdminScan implements IAdminCommandHandler
 	private static final int DEFAULT_RADIUS = 500;
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		final StringTokenizer st = new StringTokenizer(command, " ");
 		final String actualCommand = st.nextToken();
@@ -122,7 +122,7 @@ public class AdminScan implements IAdminCommandHandler
 		return true;
 	}
 	
-	private void sendNpcList(L2PcInstance activeChar, int radius)
+	private void sendNpcList(PlayerInstance activeChar, int radius)
 	{
 		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/scan.htm");

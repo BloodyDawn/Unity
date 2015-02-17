@@ -20,7 +20,7 @@ package org.l2junity.gameserver.model.actor;
 
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ai.CtrlIntention;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 
@@ -47,11 +47,11 @@ public abstract class Tower extends Npc
 	public boolean isAutoAttackable(Creature attacker)
 	{
 		// Attackable during siege by attacker only
-		return ((attacker != null) && attacker.isPlayer() && (getCastle() != null) && (getCastle().getResidenceId() > 0) && getCastle().getSiege().isInProgress() && getCastle().getSiege().checkIsAttacker(((L2PcInstance) attacker).getClan()));
+		return ((attacker != null) && attacker.isPlayer() && (getCastle() != null) && (getCastle().getResidenceId() > 0) && getCastle().getSiege().isInProgress() && getCastle().getSiege().checkIsAttacker(((PlayerInstance) attacker).getClan()));
 	}
 	
 	@Override
-	public void onAction(L2PcInstance player, boolean interact)
+	public void onAction(PlayerInstance player, boolean interact)
 	{
 		if (!canTarget(player))
 		{
@@ -76,7 +76,7 @@ public abstract class Tower extends Npc
 	}
 	
 	@Override
-	public void onForcedAttack(L2PcInstance player)
+	public void onForcedAttack(PlayerInstance player)
 	{
 		onAction(player);
 	}

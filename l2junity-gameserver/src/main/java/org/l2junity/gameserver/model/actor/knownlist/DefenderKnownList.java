@@ -21,7 +21,7 @@ package org.l2junity.gameserver.model.actor.knownlist;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.L2DefenderInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
@@ -47,7 +47,7 @@ public class DefenderKnownList extends AttackableKnownList
 		// Check if siege is in progress
 		if (((fortress != null) && fortress.getZone().isActive()) || ((castle != null) && castle.getZone().isActive()) || ((hall != null) && hall.getSiegeZone().isActive()))
 		{
-			L2PcInstance player = null;
+			PlayerInstance player = null;
 			if (object.isPlayable())
 			{
 				player = object.getActingPlayer();

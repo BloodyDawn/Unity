@@ -27,7 +27,7 @@ import org.l2junity.gameserver.instancemanager.CastleManorManager;
 import org.l2junity.gameserver.model.CropProcure;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.UniqueItemHolder;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -76,7 +76,7 @@ public class RequestProcureCropList extends L2GameClientPacket
 			return;
 		}
 		
-		final L2PcInstance player = getActiveChar();
+		final PlayerInstance player = getActiveChar();
 		if (player == null)
 		{
 			return;

@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExVoteSystemInfo;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
@@ -40,7 +40,7 @@ public final class RequestVoteNew extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -48,7 +48,7 @@ public final class RequestVoteNew extends L2GameClientPacket
 		
 		WorldObject object = activeChar.getTarget();
 		
-		if (!(object instanceof L2PcInstance))
+		if (!(object instanceof PlayerInstance))
 		{
 			if (object == null)
 			{
@@ -61,7 +61,7 @@ public final class RequestVoteNew extends L2GameClientPacket
 			return;
 		}
 		
-		L2PcInstance target = (L2PcInstance) object;
+		PlayerInstance target = (PlayerInstance) object;
 		
 		if (target.getObjectId() != _targetId)
 		{

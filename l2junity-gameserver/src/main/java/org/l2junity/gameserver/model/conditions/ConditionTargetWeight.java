@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.model.conditions;
 
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.skills.Skill;
 
@@ -45,7 +45,7 @@ public class ConditionTargetWeight extends Condition
 	{
 		if ((effected != null) && effected.isPlayer())
 		{
-			final L2PcInstance target = effected.getActingPlayer();
+			final PlayerInstance target = effected.getActingPlayer();
 			if (!target.getDietMode() && (target.getMaxLoad() > 0))
 			{
 				int weightproc = (((target.getCurrentLoad() - target.getBonusWeightPenalty()) * 100) / target.getMaxLoad());

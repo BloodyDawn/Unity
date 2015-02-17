@@ -29,7 +29,7 @@ import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2QuestGuardInstance;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.quest.QuestState;
@@ -88,7 +88,7 @@ public final class MuseumDungeon extends AbstractInstance
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if (event.equals("enter_instance"))
 		{
@@ -160,7 +160,7 @@ public final class MuseumDungeon extends AbstractInstance
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
 		final QuestState qs = player.getQuestState(Q10327_IntruderWhoWantsTheBookOfGiants.class.getSimpleName());
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -182,7 +182,7 @@ public final class MuseumDungeon extends AbstractInstance
 	}
 	
 	@Override
-	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		final MDWorld world = (MDWorld) tmpworld;
@@ -202,7 +202,7 @@ public final class MuseumDungeon extends AbstractInstance
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		final QuestState qs = player.getQuestState(Q10327_IntruderWhoWantsTheBookOfGiants.class.getSimpleName());
@@ -236,7 +236,7 @@ public final class MuseumDungeon extends AbstractInstance
 		return htmltext;
 	}
 	
-	protected void spawnToyron(L2PcInstance player, MDWorld world)
+	protected void spawnToyron(PlayerInstance player, MDWorld world)
 	{
 		if (world.toyron != null)
 		{
@@ -247,7 +247,7 @@ public final class MuseumDungeon extends AbstractInstance
 		world.toyron.setCanReturnToSpawnPoint(false);
 	}
 	
-	protected void checkStage(L2PcInstance player, MDWorld world)
+	protected void checkStage(PlayerInstance player, MDWorld world)
 	{
 		final QuestState qs = player.getQuestState(Q10327_IntruderWhoWantsTheBookOfGiants.class.getSimpleName());
 		
@@ -272,14 +272,14 @@ public final class MuseumDungeon extends AbstractInstance
 		}
 	}
 	
-	protected void spawnDesks(L2PcInstance player, MDWorld world)
+	protected void spawnDesks(PlayerInstance player, MDWorld world)
 	{
 		final List<Npc> desks = spawnGroup("desks", world.getInstanceId());
 		world.bookDesk = desks.get(getRandom(desks.size()));
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
+	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
 	{
 		if (firstEntrance)
 		{

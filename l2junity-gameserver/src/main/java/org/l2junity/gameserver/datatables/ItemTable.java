@@ -41,7 +41,7 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.instance.L2EventMonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.item.OnItemCreate;
 import org.l2junity.gameserver.model.items.Armor;
@@ -212,7 +212,7 @@ public class ItemTable
 	 * @param reference : Object Object referencing current action like NPC selling item or previous item in transformation
 	 * @return L2ItemInstance corresponding to the new item
 	 */
-	public ItemInstance createItem(String process, int itemId, long count, L2PcInstance actor, Object reference)
+	public ItemInstance createItem(String process, int itemId, long count, PlayerInstance actor, Object reference)
 	{
 		// Create and Init the L2ItemInstance corresponding to the Item Identifier
 		ItemInstance item = new ItemInstance(IdFactory.getInstance().getNextId(), itemId);
@@ -295,7 +295,7 @@ public class ItemTable
 		return item;
 	}
 	
-	public ItemInstance createItem(String process, int itemId, int count, L2PcInstance actor)
+	public ItemInstance createItem(String process, int itemId, int count, PlayerInstance actor)
 	{
 		return createItem(process, itemId, count, actor, null);
 	}
@@ -313,7 +313,7 @@ public class ItemTable
 	 * @param actor the player requesting the item destroy.
 	 * @param reference the object referencing current action like NPC selling item or previous item in transformation.
 	 */
-	public void destroyItem(String process, ItemInstance item, L2PcInstance actor, Object reference)
+	public void destroyItem(String process, ItemInstance item, PlayerInstance actor, Object reference)
 	{
 		synchronized (item)
 		{

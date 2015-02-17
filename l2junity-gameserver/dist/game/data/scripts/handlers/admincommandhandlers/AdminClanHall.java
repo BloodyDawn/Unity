@@ -26,7 +26,7 @@ import org.l2junity.gameserver.instancemanager.AuctionManager;
 import org.l2junity.gameserver.instancemanager.CHSiegeManager;
 import org.l2junity.gameserver.instancemanager.ClanHallManager;
 import org.l2junity.gameserver.model.L2Clan;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.model.zone.type.ClanHallZone;
@@ -51,7 +51,7 @@ public class AdminClanHall implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		final StringTokenizer st = new StringTokenizer(command, " ");
 		command = st.nextToken(); // Get actual command
@@ -59,7 +59,7 @@ public class AdminClanHall implements IAdminCommandHandler
 		ClanHall clanhall = null;
 		if (st.hasMoreTokens())
 		{
-			L2PcInstance player = null;
+			PlayerInstance player = null;
 			if ((activeChar.getTarget() != null) && activeChar.getTarget().isPlayer())
 			{
 				player = activeChar.getTarget().getActingPlayer();
@@ -175,7 +175,7 @@ public class AdminClanHall implements IAdminCommandHandler
 	 * Show clan hall select page.
 	 * @param activeChar the active char
 	 */
-	private void showClanHallSelectPage(L2PcInstance activeChar)
+	private void showClanHallSelectPage(PlayerInstance activeChar)
 	{
 		int i = 0;
 		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
@@ -247,7 +247,7 @@ public class AdminClanHall implements IAdminCommandHandler
 	 * @param activeChar the active char
 	 * @param clanhall the clan hall
 	 */
-	private void showClanHallPage(L2PcInstance activeChar, ClanHall clanhall)
+	private void showClanHallPage(PlayerInstance activeChar, ClanHall clanhall)
 	{
 		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		adminReply.setFile(activeChar.getHtmlPrefix(), "data/html/admin/clanhall.htm");
@@ -263,7 +263,7 @@ public class AdminClanHall implements IAdminCommandHandler
 	 * @param activeChar the active char
 	 * @param hall the siegable hall
 	 */
-	private void showSiegableHallPage(L2PcInstance activeChar, SiegableHall hall)
+	private void showSiegableHallPage(PlayerInstance activeChar, SiegableHall hall)
 	{
 		final NpcHtmlMessage msg = new NpcHtmlMessage(0, 1);
 		msg.setFile(null, "data/html/admin/siegablehall.htm");

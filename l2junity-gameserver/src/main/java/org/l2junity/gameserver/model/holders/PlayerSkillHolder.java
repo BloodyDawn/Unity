@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.interfaces.ISkillsHolder;
 import org.l2junity.gameserver.model.skills.Skill;
 
@@ -33,7 +33,7 @@ public class PlayerSkillHolder implements ISkillsHolder
 {
 	private final Map<Integer, Skill> _skills = new HashMap<>();
 	
-	public PlayerSkillHolder(L2PcInstance player)
+	public PlayerSkillHolder(PlayerInstance player)
 	{
 		for (Skill skill : player.getSkills().values())
 		{

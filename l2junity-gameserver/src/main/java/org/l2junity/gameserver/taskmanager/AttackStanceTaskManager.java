@@ -29,7 +29,7 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2CubicInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.AutoAttackStop;
 
 /**
@@ -60,7 +60,7 @@ public class AttackStanceTaskManager
 		{
 			if (actor.isPlayable())
 			{
-				final L2PcInstance player = actor.getActingPlayer();
+				final PlayerInstance player = actor.getActingPlayer();
 				for (L2CubicInstance cubic : player.getCubics().values())
 				{
 					if (cubic.getId() != L2CubicInstance.LIFE_CUBIC)

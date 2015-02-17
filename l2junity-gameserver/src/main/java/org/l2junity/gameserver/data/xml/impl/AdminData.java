@@ -31,7 +31,7 @@ import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.AccessLevel;
 import org.l2junity.gameserver.model.AdminCommandAccessRight;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
@@ -47,7 +47,7 @@ public final class AdminData implements IXmlReader
 {
 	private final Map<Integer, AccessLevel> _accessLevels = new HashMap<>();
 	private final Map<String, AdminCommandAccessRight> _adminCommandAccessRights = new HashMap<>();
-	private final Map<L2PcInstance, Boolean> _gmList = new FastMap<L2PcInstance, Boolean>().shared();
+	private final Map<PlayerInstance, Boolean> _gmList = new FastMap<PlayerInstance, Boolean>().shared();
 	private int _highestLevel = 0;
 	
 	protected AdminData()
@@ -198,10 +198,10 @@ public final class AdminData implements IXmlReader
 	 * @param includeHidden the include hidden
 	 * @return the all GMs
 	 */
-	public List<L2PcInstance> getAllGms(boolean includeHidden)
+	public List<PlayerInstance> getAllGms(boolean includeHidden)
 	{
-		final List<L2PcInstance> tmpGmList = new ArrayList<>();
-		for (Entry<L2PcInstance, Boolean> entry : _gmList.entrySet())
+		final List<PlayerInstance> tmpGmList = new ArrayList<>();
+		for (Entry<PlayerInstance, Boolean> entry : _gmList.entrySet())
 		{
 			if (includeHidden || !entry.getValue())
 			{
@@ -219,7 +219,7 @@ public final class AdminData implements IXmlReader
 	public List<String> getAllGmNames(boolean includeHidden)
 	{
 		final List<String> tmpGmList = new ArrayList<>();
-		for (Entry<L2PcInstance, Boolean> entry : _gmList.entrySet())
+		for (Entry<PlayerInstance, Boolean> entry : _gmList.entrySet())
 		{
 			if (!entry.getValue())
 			{
@@ -238,7 +238,7 @@ public final class AdminData implements IXmlReader
 	 * @param player the player
 	 * @param hidden the hidden
 	 */
-	public void addGm(L2PcInstance player, boolean hidden)
+	public void addGm(PlayerInstance player, boolean hidden)
 	{
 		_gmList.put(player, hidden);
 	}
@@ -247,7 +247,7 @@ public final class AdminData implements IXmlReader
 	 * Delete a GM.
 	 * @param player the player
 	 */
-	public void deleteGm(L2PcInstance player)
+	public void deleteGm(PlayerInstance player)
 	{
 		_gmList.remove(player);
 	}
@@ -256,7 +256,7 @@ public final class AdminData implements IXmlReader
 	 * GM will be displayed on clients GM list.
 	 * @param player the player
 	 */
-	public void showGm(L2PcInstance player)
+	public void showGm(PlayerInstance player)
 	{
 		if (_gmList.containsKey(player))
 		{
@@ -268,7 +268,7 @@ public final class AdminData implements IXmlReader
 	 * GM will no longer be displayed on clients GM list.
 	 * @param player the player
 	 */
-	public void hideGm(L2PcInstance player)
+	public void hideGm(PlayerInstance player)
 	{
 		if (_gmList.containsKey(player))
 		{
@@ -283,7 +283,7 @@ public final class AdminData implements IXmlReader
 	 */
 	public boolean isGmOnline(boolean includeHidden)
 	{
-		for (Entry<L2PcInstance, Boolean> entry : _gmList.entrySet())
+		for (Entry<PlayerInstance, Boolean> entry : _gmList.entrySet())
 		{
 			if (includeHidden || !entry.getValue())
 			{
@@ -297,7 +297,7 @@ public final class AdminData implements IXmlReader
 	 * Send list to player.
 	 * @param player the player
 	 */
-	public void sendListToPlayer(L2PcInstance player)
+	public void sendListToPlayer(PlayerInstance player)
 	{
 		if (isGmOnline(player.isGM()))
 		{
@@ -322,7 +322,7 @@ public final class AdminData implements IXmlReader
 	 */
 	public void broadcastToGMs(L2GameServerPacket packet)
 	{
-		for (L2PcInstance gm : getAllGms(true))
+		for (PlayerInstance gm : getAllGms(true))
 		{
 			gm.sendPacket(packet);
 		}
@@ -334,7 +334,7 @@ public final class AdminData implements IXmlReader
 	 */
 	public void broadcastMessageToGMs(String message)
 	{
-		for (L2PcInstance gm : getAllGms(true))
+		for (PlayerInstance gm : getAllGms(true))
 		{
 			gm.sendMessage(message);
 		}

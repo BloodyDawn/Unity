@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.EnchantItemRequest;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.serverpackets.ExRemoveEnchantSupportItemResult;
@@ -39,7 +39,7 @@ public class RequestExRemoveEnchantSupportItem extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -54,7 +54,7 @@ public class RequestExRemoveEnchantSupportItem extends L2GameClientPacket
 		final ItemInstance supportItem = request.getSupportItem();
 		if ((supportItem == null) || (supportItem.getCount() < 1))
 		{
-			request.setSupportItem(L2PcInstance.ID_NONE);
+			request.setSupportItem(PlayerInstance.ID_NONE);
 		}
 		
 		request.setTimestamp(System.currentTimeMillis());

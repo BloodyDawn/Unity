@@ -20,7 +20,7 @@ package org.l2junity.gameserver.ai;
 
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.L2AirShipInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.ExMoveToLocationAirShip;
 import org.l2junity.gameserver.network.serverpackets.ExStopMoveAirShip;
 
@@ -61,7 +61,7 @@ public class AirShipAI extends VehicleAI
 	}
 	
 	@Override
-	public void describeStateToPlayer(L2PcInstance player)
+	public void describeStateToPlayer(PlayerInstance player)
 	{
 		if (_clientMoving)
 		{

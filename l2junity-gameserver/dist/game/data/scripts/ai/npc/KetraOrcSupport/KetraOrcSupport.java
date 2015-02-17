@@ -23,7 +23,7 @@ import java.util.Map;
 
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.util.Util;
 
@@ -98,7 +98,7 @@ public final class KetraOrcSupport extends AbstractNpcAI
 		addStartNpc(KURFA, JAFF);
 	}
 	
-	private int getAllianceLevel(L2PcInstance player)
+	private int getAllianceLevel(PlayerInstance player)
 	{
 		for (int i = 0; i < KETRA_MARKS.length; i++)
 		{
@@ -111,7 +111,7 @@ public final class KetraOrcSupport extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String htmltext = null;
 		if (Util.isDigit(event) && BUFF.containsKey(Integer.parseInt(event)))
@@ -145,7 +145,7 @@ public final class KetraOrcSupport extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
 		final int AllianceLevel = getAllianceLevel(player);

@@ -25,7 +25,7 @@ import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.model.CursedWeapon;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 
@@ -49,7 +49,7 @@ public class AdminCursedWeapons implements IAdminCommandHandler
 	private int itemId;
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		
 		CursedWeaponsManager cwm = CursedWeaponsManager.getInstance();
@@ -68,7 +68,7 @@ public class AdminCursedWeapons implements IAdminCommandHandler
 					activeChar.sendMessage("> " + cw.getName() + " (" + cw.getItemId() + ")");
 					if (cw.isActivated())
 					{
-						L2PcInstance pl = cw.getPlayer();
+						PlayerInstance pl = cw.getPlayer();
 						activeChar.sendMessage("  Player holding: " + (pl == null ? "null" : pl.getName()));
 						activeChar.sendMessage("    Player karma: " + cw.getPlayerKarma());
 						activeChar.sendMessage("    Time Remaining: " + (cw.getTimeLeft() / 60000) + " min.");
@@ -103,7 +103,7 @@ public class AdminCursedWeapons implements IAdminCommandHandler
 					
 					if (cw.isActivated())
 					{
-						L2PcInstance pl = cw.getPlayer();
+						PlayerInstance pl = cw.getPlayer();
 						replyMSG.append("<tr><td>Weilder:</td><td>");
 						replyMSG.append(pl == null ? "null" : pl.getName());
 						replyMSG.append("</td></tr>");
@@ -206,9 +206,9 @@ public class AdminCursedWeapons implements IAdminCommandHandler
 				else
 				{
 					WorldObject target = activeChar.getTarget();
-					if (target instanceof L2PcInstance)
+					if (target instanceof PlayerInstance)
 					{
-						((L2PcInstance) target).addItem("AdminCursedWeaponAdd", id, 1, target, true);
+						((PlayerInstance) target).addItem("AdminCursedWeaponAdd", id, 1, target, true);
 					}
 					else
 					{

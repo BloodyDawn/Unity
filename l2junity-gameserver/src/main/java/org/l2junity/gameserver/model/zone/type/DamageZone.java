@@ -23,7 +23,7 @@ import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.zone.AbstractZoneSettings;
@@ -110,7 +110,7 @@ public class DamageZone extends ZoneType
 	{
 		if ((getSettings().getTask() == null) && ((_damageHPPerSec != 0) || (_damageMPPerSec != 0)))
 		{
-			L2PcInstance player = character.getActingPlayer();
+			PlayerInstance player = character.getActingPlayer();
 			if (getCastle() != null) // Castle zone
 			{
 				if (!(getCastle().getSiege().isInProgress() && (player != null) && (player.getSiegeState() != 2))) // Siege and no defender
@@ -197,7 +197,7 @@ public class DamageZone extends ZoneType
 					if (siege)
 					{
 						// during siege defenders not affected
-						final L2PcInstance player = temp.getActingPlayer();
+						final PlayerInstance player = temp.getActingPlayer();
 						if ((player != null) && player.isInSiege() && (player.getSiegeState() == 2))
 						{
 							continue;

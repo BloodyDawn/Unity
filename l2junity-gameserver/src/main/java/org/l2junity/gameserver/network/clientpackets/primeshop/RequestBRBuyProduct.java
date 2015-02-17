@@ -22,7 +22,7 @@ import java.util.Calendar;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.PrimeShopData;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.PrimeShopRequest;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.primeshop.PrimeShopGroup;
@@ -53,7 +53,7 @@ public final class RequestBRBuyProduct extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -114,7 +114,7 @@ public final class RequestBRBuyProduct extends L2GameClientPacket
 	 * @param player
 	 * @return
 	 */
-	private static boolean validatePlayer(PrimeShopGroup item, int count, L2PcInstance player)
+	private static boolean validatePlayer(PrimeShopGroup item, int count, PlayerInstance player)
 	{
 		final long currentTime = System.currentTimeMillis() / 1000;
 		if (item == null)
@@ -185,7 +185,7 @@ public final class RequestBRBuyProduct extends L2GameClientPacket
 		return true;
 	}
 	
-	private static int validatePaymentId(L2PcInstance player, PrimeShopGroup item, long amount)
+	private static int validatePaymentId(PlayerInstance player, PrimeShopGroup item, long amount)
 	{
 		switch (item.getPaymentType())
 		{

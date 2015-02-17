@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.TradeItem;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public class PrivateStoreListSell extends AbstractItemPacket
 {
@@ -28,7 +28,7 @@ public class PrivateStoreListSell extends AbstractItemPacket
 	private final boolean _packageSale;
 	private final TradeItem[] _items;
 	
-	public PrivateStoreListSell(L2PcInstance player, L2PcInstance storePlayer)
+	public PrivateStoreListSell(PlayerInstance player, PlayerInstance storePlayer)
 	{
 		_objId = storePlayer.getObjectId();
 		_playerAdena = player.getAdena();

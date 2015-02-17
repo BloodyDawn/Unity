@@ -63,7 +63,7 @@ public final class L2ClassMasterInstance extends L2MerchantInstance
 	}
 	
 	@Override
-	public void onBypassFeedback(L2PcInstance player, String command)
+	public void onBypassFeedback(PlayerInstance player, String command)
 	{
 		if (command.startsWith("1stClass"))
 		{
@@ -129,7 +129,7 @@ public final class L2ClassMasterInstance extends L2MerchantInstance
 		}
 	}
 	
-	public static final void onTutorialLink(L2PcInstance player, String request)
+	public static final void onTutorialLink(PlayerInstance player, String request)
 	{
 		if (!Config.ALTERNATE_CLASS_MASTER || (request == null) || !request.startsWith("CO"))
 		{
@@ -152,7 +152,7 @@ public final class L2ClassMasterInstance extends L2MerchantInstance
 		player.sendPacket(TutorialCloseHtml.STATIC_PACKET);
 	}
 	
-	public static final void onTutorialQuestionMark(L2PcInstance player, int number)
+	public static final void onTutorialQuestionMark(PlayerInstance player, int number)
 	{
 		if (!Config.ALTERNATE_CLASS_MASTER || (number != 1001))
 		{
@@ -162,7 +162,7 @@ public final class L2ClassMasterInstance extends L2MerchantInstance
 		showTutorialHtml(player);
 	}
 	
-	public static final void showQuestionMark(L2PcInstance player)
+	public static final void showQuestionMark(PlayerInstance player)
 	{
 		if (!Config.ALTERNATE_CLASS_MASTER)
 		{
@@ -183,7 +183,7 @@ public final class L2ClassMasterInstance extends L2MerchantInstance
 		player.sendPacket(new TutorialShowQuestionMark(1001));
 	}
 	
-	private static final void showHtmlMenu(L2PcInstance player, int objectId, int level)
+	private static final void showHtmlMenu(PlayerInstance player, int objectId, int level)
 	{
 		final NpcHtmlMessage html = new NpcHtmlMessage(objectId);
 		
@@ -304,7 +304,7 @@ public final class L2ClassMasterInstance extends L2MerchantInstance
 		player.sendPacket(html);
 	}
 	
-	private static final void showTutorialHtml(L2PcInstance player)
+	private static final void showTutorialHtml(PlayerInstance player)
 	{
 		final ClassId currentClassId = player.getClassId();
 		if ((getMinLevel(currentClassId.level()) > player.getLevel()) && !Config.ALLOW_ENTIRE_TREE)
@@ -333,7 +333,7 @@ public final class L2ClassMasterInstance extends L2MerchantInstance
 		player.sendPacket(new TutorialShowHtml(msg));
 	}
 	
-	private static final boolean checkAndChangeClass(L2PcInstance player, int val)
+	private static final boolean checkAndChangeClass(PlayerInstance player, int val)
 	{
 		final ClassId currentClassId = player.getClassId();
 		if ((getMinLevel(currentClassId.level()) > player.getLevel()) && !Config.ALLOW_ENTIRE_TREE)

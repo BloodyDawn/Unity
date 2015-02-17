@@ -28,7 +28,7 @@ import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
@@ -46,7 +46,7 @@ public class CorpseClan implements ITargetTypeHandler
 		List<WorldObject> targetList = new ArrayList<>();
 		if (activeChar.isPlayable())
 		{
-			final L2PcInstance player = activeChar.getActingPlayer();
+			final PlayerInstance player = activeChar.getActingPlayer();
 			if (player == null)
 			{
 				return EMPTY_TARGET_LIST;
@@ -67,7 +67,7 @@ public class CorpseClan implements ITargetTypeHandler
 				final int maxTargets = skill.getAffectLimit();
 				for (ClanMember member : clan.getMembers())
 				{
-					final L2PcInstance obj = member.getPlayerInstance();
+					final PlayerInstance obj = member.getPlayerInstance();
 					if ((obj == null) || (obj == player))
 					{
 						continue;

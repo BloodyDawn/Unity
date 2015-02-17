@@ -53,7 +53,7 @@ import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2ServitorInstance;
 import org.l2junity.gameserver.model.actor.knownlist.AttackableKnownList;
 import org.l2junity.gameserver.model.actor.status.AttackableStatus;
@@ -391,9 +391,9 @@ public class Attackable extends Npc
 			}
 			
 			// NOTE: Concurrent-safe map is used because while iterating to verify all conditions sometimes an entry must be removed.
-			final Map<L2PcInstance, DamageDoneInfo> rewards = new ConcurrentHashMap<>();
+			final Map<PlayerInstance, DamageDoneInfo> rewards = new ConcurrentHashMap<>();
 			
-			L2PcInstance maxDealer = null;
+			PlayerInstance maxDealer = null;
 			int maxDamage = 0;
 			long totalDamage = 0;
 			// While Iterating over This Map Removing Object is Not Allowed
@@ -406,7 +406,7 @@ public class Attackable extends Npc
 				}
 				
 				// Get the L2Character corresponding to this attacker
-				final L2PcInstance attacker = info.getAttacker().getActingPlayer();
+				final PlayerInstance attacker = info.getAttacker().getActingPlayer();
 				if (attacker != null)
 				{
 					// Get damages done by this attacker
@@ -457,7 +457,7 @@ public class Attackable extends Npc
 					}
 					
 					// Attacker to be rewarded
-					final L2PcInstance attacker = reward.getAttacker();
+					final PlayerInstance attacker = reward.getAttacker();
 					
 					// Total amount of damage done
 					final int damage = reward.getDamage();
@@ -530,10 +530,10 @@ public class Attackable extends Npc
 						int partyLvl = 0;
 						
 						// Get all L2Character that can be rewarded in the party
-						final List<L2PcInstance> rewardedMembers = new ArrayList<>();
+						final List<PlayerInstance> rewardedMembers = new ArrayList<>();
 						// Go through all L2PcInstance in the party
-						final List<L2PcInstance> groupMembers = attackerParty.isInCommandChannel() ? attackerParty.getCommandChannel().getMembers() : attackerParty.getMembers();
-						for (L2PcInstance partyPlayer : groupMembers)
+						final List<PlayerInstance> groupMembers = attackerParty.isInCommandChannel() ? attackerParty.getCommandChannel().getMembers() : attackerParty.getMembers();
+						for (PlayerInstance partyPlayer : groupMembers)
 						{
 							if ((partyPlayer == null) || partyPlayer.isDead())
 							{
@@ -671,7 +671,7 @@ public class Attackable extends Npc
 				getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, attacker);
 				addDamageHate(attacker, damage, (damage * 100) / (getLevel() + 7));
 				
-				final L2PcInstance player = attacker.getActingPlayer();
+				final PlayerInstance player = attacker.getActingPlayer();
 				if (player != null)
 				{
 					EventDispatcher.getInstance().notifyEventAsync(new OnAttackableAttack(player, this, damage, skill, attacker.isSummon()), this);
@@ -697,7 +697,7 @@ public class Attackable extends Npc
 			return;
 		}
 		
-		final L2PcInstance targetPlayer = attacker.getActingPlayer();
+		final PlayerInstance targetPlayer = attacker.getActingPlayer();
 		// Get the AggroInfo of the attacker L2Character from the _aggroList of the L2Attackable
 		final AggroInfo ai = getAggroList().computeIfAbsent(attacker, AggroInfo::new);
 		ai.addDamage(damage);
@@ -924,9 +924,9 @@ public class Attackable extends Npc
 			return 0;
 		}
 		
-		if (ai.getAttacker() instanceof L2PcInstance)
+		if (ai.getAttacker() instanceof PlayerInstance)
 		{
-			L2PcInstance act = (L2PcInstance) ai.getAttacker();
+			PlayerInstance act = (PlayerInstance) ai.getAttacker();
 			if (act.isInvisible() || ai.getAttacker().isInvul() || act.isSpawnProtected())
 			{
 				// Remove Object Should Use This Method and Can be Blocked While Interacting
@@ -978,7 +978,7 @@ public class Attackable extends Npc
 			return;
 		}
 		
-		L2PcInstance player = mainDamageDealer.getActingPlayer();
+		PlayerInstance player = mainDamageDealer.getActingPlayer();
 		
 		// Don't drop anything if the last attacker or owner isn't L2PcInstance
 		if (player == null)
@@ -1073,7 +1073,7 @@ public class Attackable extends Npc
 			return;
 		}
 		
-		L2PcInstance player = lastAttacker.getActingPlayer();
+		PlayerInstance player = lastAttacker.getActingPlayer();
 		
 		// Don't drop anything if the last attacker or owner isn't L2PcInstance
 		if (player == null)
@@ -1184,7 +1184,7 @@ public class Attackable extends Npc
 	 * @param sendMessage if {@code true} will send a message of corpse too old
 	 * @return {@code true} if the corpse is too old
 	 */
-	public boolean isOldCorpse(L2PcInstance attacker, int remainingTime, boolean sendMessage)
+	public boolean isOldCorpse(PlayerInstance attacker, int remainingTime, boolean sendMessage)
 	{
 		if (isDead() && (DecayTaskManager.getInstance().getRemainingTime(this) < remainingTime))
 		{
@@ -1202,7 +1202,7 @@ public class Attackable extends Npc
 	 * @param sendMessage sendMessage if {@code true} will send a message of sweep not allowed.
 	 * @return {@code true} if is the spoiler or is in the spoiler party.
 	 */
-	public boolean checkSpoilOwner(L2PcInstance sweeper, boolean sendMessage)
+	public boolean checkSpoilOwner(PlayerInstance sweeper, boolean sendMessage)
 	{
 		if ((sweeper.getObjectId() != getSpoilerObjectId()) && !sweeper.isInLooterParty(getSpoilerObjectId()))
 		{
@@ -1294,7 +1294,7 @@ public class Attackable extends Npc
 	 * Adds an attacker that successfully absorbed the soul of this L2Attackable into the _absorbersList.
 	 * @param attacker
 	 */
-	public void addAbsorber(L2PcInstance attacker)
+	public void addAbsorber(PlayerInstance attacker)
 	{
 		// If we have no _absorbersList initiated, do it
 		final AbsorberInfo ai = _absorbersList.get(attacker.getObjectId());
@@ -1472,7 +1472,7 @@ public class Attackable extends Npc
 	 * Sets state of the mob to seeded. Parameters needed to be set before.
 	 * @param seeder
 	 */
-	public final void setSeeded(L2PcInstance seeder)
+	public final void setSeeded(PlayerInstance seeder)
 	{
 		if ((_seed != null) && (_seederObjId == seeder.getObjectId()))
 		{
@@ -1525,7 +1525,7 @@ public class Attackable extends Npc
 	 * @param seed - instance {@link L2Seed} of used seed
 	 * @param seeder - player who sows the seed
 	 */
-	public final void setSeeded(L2Seed seed, L2PcInstance seeder)
+	public final void setSeeded(L2Seed seed, PlayerInstance seeder)
 	{
 		if (!_seeded)
 		{

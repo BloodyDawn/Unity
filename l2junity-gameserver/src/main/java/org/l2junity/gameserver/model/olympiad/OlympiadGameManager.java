@@ -24,7 +24,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.l2junity.gameserver.instancemanager.ZoneManager;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.type.OlympiadStadiumZone;
 
 /**
@@ -186,7 +186,7 @@ public class OlympiadGameManager implements Runnable
 		return _tasks.length;
 	}
 	
-	public final void notifyCompetitorDamage(L2PcInstance player, int damage)
+	public final void notifyCompetitorDamage(PlayerInstance player, int damage)
 	{
 		if (player == null)
 		{

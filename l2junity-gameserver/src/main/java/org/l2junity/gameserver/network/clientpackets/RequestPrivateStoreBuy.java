@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.ItemRequest;
 import org.l2junity.gameserver.model.TradeList;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.util.Util;
 
@@ -76,7 +76,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance player = getActiveChar();
+		PlayerInstance player = getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -105,7 +105,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 			return;
 		}
 		
-		L2PcInstance storePlayer = (L2PcInstance) object;
+		PlayerInstance storePlayer = (PlayerInstance) object;
 		if (!player.isInsideRadius(storePlayer, INTERACTION_DISTANCE, true, false))
 		{
 			return;

@@ -27,7 +27,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.handler.IBypassHandler;
 import org.l2junity.gameserver.instancemanager.ItemAuctionManager;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemauction.ItemAuction;
 import org.l2junity.gameserver.model.itemauction.ItemAuctionInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -43,7 +43,7 @@ public class ItemAuctionLink implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, Creature target)
+	public boolean useBypass(String command, PlayerInstance activeChar, Creature target)
 	{
 		if (!target.isNpc())
 		{

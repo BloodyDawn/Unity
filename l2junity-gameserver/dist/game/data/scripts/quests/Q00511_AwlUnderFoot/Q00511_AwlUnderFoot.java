@@ -28,7 +28,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2RaidBossInstance;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.Instance;
@@ -192,7 +192,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 		}
 	}
 	
-	private String checkConditions(L2PcInstance player)
+	private String checkConditions(PlayerInstance player)
 	{
 		if (debug)
 		{
@@ -207,7 +207,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 		{
 			return getHtm(player.getHtmlPrefix(), "FortressWarden-04.htm").replace("%leader%", party.getLeader().getName());
 		}
-		for (L2PcInstance partyMember : party.getMembers())
+		for (PlayerInstance partyMember : party.getMembers())
 		{
 			final QuestState st = getQuestState(partyMember, false);
 			if ((st == null) || (st.getInt("cond") < 1))
@@ -222,7 +222,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 		return null;
 	}
 	
-	private String checkFortCondition(L2PcInstance player, Npc npc, boolean isEnter)
+	private String checkFortCondition(PlayerInstance player, Npc npc, boolean isEnter)
 	{
 		Fort fortress = npc.getFort();
 		FortDungeon dungeon = _fortDungeons.get(npc.getId());
@@ -252,7 +252,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 		{
 			return "FortressWarden-03.htm";
 		}
-		for (L2PcInstance partyMember : party.getMembers())
+		for (PlayerInstance partyMember : party.getMembers())
 		{
 			if ((partyMember.getClan() == null) || (partyMember.getClan().getFortId() == 0) || (partyMember.getClan().getFortId() != fortress.getResidenceId()))
 			{
@@ -262,7 +262,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 		return null;
 	}
 	
-	protected String enterInstance(L2PcInstance player, String template, int[] coords, FortDungeon dungeon, String ret)
+	protected String enterInstance(PlayerInstance player, String template, int[] coords, FortDungeon dungeon, String ret)
 	{
 		// check for existing instances for this player
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
@@ -308,7 +308,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 		}
 		else
 		{
-			for (L2PcInstance partyMember : party.getMembers())
+			for (PlayerInstance partyMember : party.getMembers())
 			{
 				teleportPlayer(partyMember, coords, instanceId);
 				world.addAllowed(partyMember.getObjectId());
@@ -319,7 +319,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String htmltext = event;
 		if (event.equalsIgnoreCase("enter"))
@@ -347,7 +347,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 	}
 	
 	@Override
-	public String onAttack(Npc npc, L2PcInstance player, int damage, boolean isSummon)
+	public String onAttack(Npc npc, PlayerInstance player, int damage, boolean isSummon)
 	{
 		Playable attacker = (isSummon ? player.getServitors().values().stream().findFirst().orElse(player.getPet()) : player);
 		if ((attacker.getLevel() - npc.getLevel()) >= 9)
@@ -359,7 +359,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 			}
 			else if (player.getParty() != null)
 			{
-				for (L2PcInstance pmember : player.getParty().getMembers())
+				for (PlayerInstance pmember : player.getParty().getMembers())
 				{
 					if ((pmember.getBuffCount() > 0) || (pmember.getDanceCount() > 0))
 					{
@@ -373,7 +373,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance player, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpworld instanceof FAUWorld)
@@ -383,7 +383,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 			{
 				if (player.getParty() != null)
 				{
-					for (L2PcInstance pl : player.getParty().getMembers())
+					for (PlayerInstance pl : player.getParty().getMembers())
 					{
 						rewardPlayer(pl);
 					}
@@ -407,7 +407,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		String htmltext = Quest.getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
@@ -458,7 +458,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 		return htmltext;
 	}
 	
-	private void rewardPlayer(L2PcInstance player)
+	private void rewardPlayer(PlayerInstance player)
 	{
 		QuestState st = getQuestState(player, false);
 		if (st.isCond(1))
@@ -468,7 +468,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 		}
 	}
 	
-	private void teleportPlayer(L2PcInstance player, int[] coords, int instanceId)
+	private void teleportPlayer(PlayerInstance player, int[] coords, int instanceId)
 	{
 		player.setInstanceId(instanceId);
 		player.teleToLocation(coords[0], coords[1], coords[2]);

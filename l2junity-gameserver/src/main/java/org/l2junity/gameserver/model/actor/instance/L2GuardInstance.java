@@ -143,7 +143,7 @@ public class L2GuardInstance extends Attackable
 	 * @param player The L2PcInstance that start an action on the L2GuardInstance
 	 */
 	@Override
-	public void onAction(L2PcInstance player, boolean interact)
+	public void onAction(PlayerInstance player, boolean interact)
 	{
 		if (!canTarget(player))
 		{

@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.Location;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author Maktakien
@@ -31,7 +31,7 @@ public class StopMoveInVehicle extends L2GameServerPacket
 	private final Location _pos;
 	private final int _heading;
 	
-	public StopMoveInVehicle(L2PcInstance player, int boatId)
+	public StopMoveInVehicle(PlayerInstance player, int boatId)
 	{
 		_charObjId = player.getObjectId();
 		_boatId = boatId;

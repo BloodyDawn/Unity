@@ -21,7 +21,7 @@ package quests.Q00120_PavelsLastResearch;
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
@@ -66,7 +66,7 @@ public final class Q00120_PavelsLastResearch extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
 		if (qs == null)
@@ -1142,7 +1142,7 @@ public final class Q00120_PavelsLastResearch extends Quest
 	}
 	
 	@Override
-	public String onSkillSee(Npc npc, L2PcInstance player, Skill skill, WorldObject[] targets, boolean isSummon)
+	public String onSkillSee(Npc npc, PlayerInstance player, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(player, false);
 		if ((qs != null) && qs.isStarted())
@@ -1155,7 +1155,7 @@ public final class Q00120_PavelsLastResearch extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		final QuestState qs = getQuestState(player, true);
 		String html = getNoQuestMsg(player);
@@ -1532,7 +1532,7 @@ public final class Q00120_PavelsLastResearch extends Quest
 		return html;
 	}
 	
-	private static boolean checkQ114(L2PcInstance player)
+	private static boolean checkQ114(PlayerInstance player)
 	{
 		final QuestState q114 = player.getQuestState(Q00114_ResurrectionOfAnOldManager.class.getSimpleName());
 		return ((q114 != null) && q114.isCompleted());

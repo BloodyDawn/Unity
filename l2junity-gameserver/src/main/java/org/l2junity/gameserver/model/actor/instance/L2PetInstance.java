@@ -216,7 +216,7 @@ public class L2PetInstance extends Summon
 		}
 	}
 	
-	public synchronized static L2PetInstance spawnPet(L2NpcTemplate template, L2PcInstance owner, ItemInstance control)
+	public synchronized static L2PetInstance spawnPet(L2NpcTemplate template, PlayerInstance owner, ItemInstance control)
 	{
 		if (World.getInstance().getPet(owner.getObjectId()) != null)
 		{
@@ -245,7 +245,7 @@ public class L2PetInstance extends Summon
 	 * @param owner
 	 * @param control
 	 */
-	public L2PetInstance(L2NpcTemplate template, L2PcInstance owner, ItemInstance control)
+	public L2PetInstance(L2NpcTemplate template, PlayerInstance owner, ItemInstance control)
 	{
 		this(template, owner, control, (byte) (template.getDisplayId() == 12564 ? owner.getLevel() : template.getLevel()));
 	}
@@ -257,7 +257,7 @@ public class L2PetInstance extends Summon
 	 * @param control
 	 * @param level
 	 */
-	public L2PetInstance(L2NpcTemplate template, L2PcInstance owner, ItemInstance control, byte level)
+	public L2PetInstance(L2NpcTemplate template, PlayerInstance owner, ItemInstance control, byte level)
 	{
 		super(template, owner);
 		setInstanceType(InstanceType.L2PetInstance);
@@ -642,7 +642,7 @@ public class L2PetInstance extends Summon
 	}
 	
 	@Override
-	public void deleteMe(L2PcInstance owner)
+	public void deleteMe(PlayerInstance owner)
 	{
 		getInventory().transferItemsToOwner();
 		super.deleteMe(owner);
@@ -653,7 +653,7 @@ public class L2PetInstance extends Summon
 	@Override
 	public boolean doDie(Creature killer)
 	{
-		L2PcInstance owner = getOwner();
+		PlayerInstance owner = getOwner();
 		if ((owner != null) && !owner.isInDuel() && (!isInsideZone(ZoneId.PVP) || isInsideZone(ZoneId.SIEGE)))
 		{
 			deathPenalty();
@@ -705,7 +705,7 @@ public class L2PetInstance extends Summon
 	 * @param reference Object referencing current action like NPC selling item or previous item in transformation
 	 * @return L2ItemInstance corresponding to the new item or the updated item in inventory
 	 */
-	public ItemInstance transferItem(String process, int objectId, long count, Inventory target, L2PcInstance actor, WorldObject reference)
+	public ItemInstance transferItem(String process, int objectId, long count, Inventory target, PlayerInstance actor, WorldObject reference)
 	{
 		ItemInstance oldItem = getInventory().getItemByObjectId(objectId);
 		ItemInstance playerOldItem = target.getItemByItemId(oldItem.getId());
@@ -750,7 +750,7 @@ public class L2PetInstance extends Summon
 	 * @param owner The owner from whose inventory we should delete the item
 	 * @param evolve
 	 */
-	public void destroyControlItem(L2PcInstance owner, boolean evolve)
+	public void destroyControlItem(PlayerInstance owner, boolean evolve)
 	{
 		// remove the pet instance from world
 		World.getInstance().removePet(owner.getObjectId());
@@ -852,7 +852,7 @@ public class L2PetInstance extends Summon
 		return _mountable;
 	}
 	
-	private static L2PetInstance restore(ItemInstance control, L2NpcTemplate template, L2PcInstance owner)
+	private static L2PetInstance restore(ItemInstance control, L2NpcTemplate template, PlayerInstance owner)
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("SELECT item_obj_id, name, level, curHp, curMp, exp, sp, fed FROM pets WHERE item_obj_id=?"))
@@ -1164,7 +1164,7 @@ public class L2PetInstance extends Summon
 	}
 	
 	@Override
-	public synchronized void unSummon(L2PcInstance owner)
+	public synchronized void unSummon(PlayerInstance owner)
 	{
 		stopFeed();
 		stopHpMpRegeneration();
@@ -1278,7 +1278,7 @@ public class L2PetInstance extends Summon
 		return lvl > 70 ? 7 + ((lvl - 70) / 5) : lvl / 10;
 	}
 	
-	public void updateRefOwner(L2PcInstance owner)
+	public void updateRefOwner(PlayerInstance owner)
 	{
 		int oldOwnerId = getOwner().getObjectId();
 		

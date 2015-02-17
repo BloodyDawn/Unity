@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * ExVoteSystemInfo packet implementation.
@@ -32,7 +32,7 @@ public class ExVoteSystemInfo extends L2GameServerPacket
 	private final int _bonusVal;
 	private final int _bonusType;
 	
-	public ExVoteSystemInfo(L2PcInstance player)
+	public ExVoteSystemInfo(PlayerInstance player)
 	{
 		_recomLeft = player.getRecomLeft();
 		_recomHave = player.getRecomHave();

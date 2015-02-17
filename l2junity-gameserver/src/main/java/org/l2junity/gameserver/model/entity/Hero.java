@@ -47,7 +47,7 @@ import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -445,7 +445,7 @@ public class Hero
 		_heroMessage.clear();
 	}
 	
-	public void showHeroDiary(L2PcInstance activeChar, int heroclass, int charid, int page)
+	public void showHeroDiary(PlayerInstance activeChar, int heroclass, int charid, int page)
 	{
 		final int perpage = 10;
 		
@@ -530,7 +530,7 @@ public class Hero
 		}
 	}
 	
-	public void showHeroFights(L2PcInstance activeChar, int heroclass, int charid, int page)
+	public void showHeroFights(PlayerInstance activeChar, int heroclass, int charid, int page)
 	{
 		final int perpage = 20;
 		int _win = 0;
@@ -629,7 +629,7 @@ public class Hero
 		
 		for (Integer objectId : _heroes.keySet())
 		{
-			final L2PcInstance player = World.getInstance().getPlayer(objectId);
+			final PlayerInstance player = World.getInstance().getPlayer(objectId);
 			if (player == null)
 			{
 				continue;
@@ -871,7 +871,7 @@ public class Hero
 	 * @param player the player instance
 	 * @param message String to set
 	 */
-	public void setHeroMessage(L2PcInstance player, String message)
+	public void setHeroMessage(PlayerInstance player, String message)
 	{
 		_heroMessage.put(player.getObjectId(), message);
 	}
@@ -949,7 +949,7 @@ public class Hero
 	 * Claims the hero status for the given player.
 	 * @param player the player to become hero
 	 */
-	public void claimHero(L2PcInstance player)
+	public void claimHero(PlayerInstance player)
 	{
 		StatsSet hero = _heroes.get(player.getObjectId());
 		if (hero == null)

@@ -20,7 +20,7 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExAskJoinMPCC;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
@@ -44,13 +44,13 @@ public final class RequestExAskJoinMPCC extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
-		final L2PcInstance player = World.getInstance().getPlayer(_name);
+		final PlayerInstance player = World.getInstance().getPlayer(_name);
 		if (player == null)
 		{
 			return;
@@ -134,7 +134,7 @@ public final class RequestExAskJoinMPCC extends L2GameClientPacket
 		}
 	}
 	
-	private void askJoinMPCC(L2PcInstance requestor, L2PcInstance target)
+	private void askJoinMPCC(PlayerInstance requestor, PlayerInstance target)
 	{
 		boolean hasRight = false;
 		if (requestor.isClanLeader() && (requestor.getClan().getLevel() >= 5))
@@ -161,7 +161,7 @@ public final class RequestExAskJoinMPCC extends L2GameClientPacket
 		}
 		
 		// Get the target's party leader, and do whole actions on him.
-		final L2PcInstance targetLeader = target.getParty().getLeader();
+		final PlayerInstance targetLeader = target.getParty().getLeader();
 		SystemMessage sm;
 		if (!targetLeader.isProcessingRequest())
 		{

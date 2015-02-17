@@ -20,7 +20,7 @@ package org.l2junity.gameserver.model;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.datatables.ItemTable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
@@ -31,7 +31,7 @@ public class CombatFlag
 {
 	// private static final Logger _log = Logger.getLogger(CombatFlag.class.getName());
 	
-	private L2PcInstance _player = null;
+	private PlayerInstance _player = null;
 	private int _playerId = 0;
 	private ItemInstance _item = null;
 	private ItemInstance _itemInstance;
@@ -66,7 +66,7 @@ public class CombatFlag
 		}
 	}
 	
-	public boolean activate(L2PcInstance player, ItemInstance item)
+	public boolean activate(PlayerInstance player, ItemInstance item)
 	{
 		if (player.isMounted())
 		{

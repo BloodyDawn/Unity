@@ -29,7 +29,7 @@ import javolution.util.FastList;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.L2Spawn;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
 
 public final class SiegeGuardManager
@@ -49,7 +49,7 @@ public final class SiegeGuardManager
 	 * @param activeChar
 	 * @param npcId
 	 */
-	public void addSiegeGuard(L2PcInstance activeChar, int npcId)
+	public void addSiegeGuard(PlayerInstance activeChar, int npcId)
 	{
 		if (activeChar == null)
 		{
@@ -76,7 +76,7 @@ public final class SiegeGuardManager
 	 * @param activeChar
 	 * @param npcId
 	 */
-	public void hireMerc(L2PcInstance activeChar, int npcId)
+	public void hireMerc(PlayerInstance activeChar, int npcId)
 	{
 		if (activeChar == null)
 		{

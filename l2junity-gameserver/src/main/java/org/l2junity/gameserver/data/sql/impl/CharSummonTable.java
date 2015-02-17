@@ -34,7 +34,7 @@ import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.data.xml.impl.PetDataTable;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.model.PetData;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.L2ServitorInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
@@ -105,7 +105,7 @@ public class CharSummonTable
 		}
 	}
 	
-	public void removeServitor(L2PcInstance activeChar, int summonObjectId)
+	public void removeServitor(PlayerInstance activeChar, int summonObjectId)
 	{
 		_servitors.computeIfPresent(activeChar.getObjectId(), (k, v) ->
 		{
@@ -126,7 +126,7 @@ public class CharSummonTable
 		}
 	}
 	
-	public void restorePet(L2PcInstance activeChar)
+	public void restorePet(PlayerInstance activeChar)
 	{
 		final ItemInstance item = activeChar.getInventory().getItemByObjectId(_pets.get(activeChar.getObjectId()));
 		if (item == null)
@@ -181,7 +181,7 @@ public class CharSummonTable
 		pet.broadcastStatusUpdate();
 	}
 	
-	public void restoreServitor(L2PcInstance activeChar)
+	public void restoreServitor(PlayerInstance activeChar)
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement(LOAD_SUMMON))

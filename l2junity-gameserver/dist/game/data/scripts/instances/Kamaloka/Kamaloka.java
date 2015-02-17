@@ -37,7 +37,7 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -1227,7 +1227,7 @@ public final class Kamaloka extends AbstractInstance
 	 * @param index (0-18) index of the kamaloka in arrays
 	 * @return true if party allowed to enter
 	 */
-	private static final boolean checkConditions(L2PcInstance player, int index)
+	private static final boolean checkConditions(PlayerInstance player, int index)
 	{
 		final Party party = player.getParty();
 		// player must be in party
@@ -1256,7 +1256,7 @@ public final class Kamaloka extends AbstractInstance
 		
 		Map<Integer, Long> instanceTimes;
 		// for each party member
-		for (L2PcInstance partyMember : party.getMembers())
+		for (PlayerInstance partyMember : party.getMembers())
 		{
 			// player level must be in range
 			if (Math.abs(partyMember.getLevel() - level) > MAX_LEVEL_DIFFERENCE)
@@ -1334,7 +1334,7 @@ public final class Kamaloka extends AbstractInstance
 	 * @param player party leader
 	 * @param index (0-18) kamaloka index in arrays
 	 */
-	private final synchronized void enterInstance(L2PcInstance player, int index)
+	private final synchronized void enterInstance(PlayerInstance player, int index)
 	{
 		int templateId;
 		try
@@ -1406,7 +1406,7 @@ public final class Kamaloka extends AbstractInstance
 		
 		// and finally teleport party into instance
 		final Party party = player.getParty();
-		for (L2PcInstance partyMember : party.getMembers())
+		for (PlayerInstance partyMember : party.getMembers())
 		{
 			world.addAllowed(partyMember.getObjectId());
 			removeBuffs(partyMember);
@@ -1439,7 +1439,7 @@ public final class Kamaloka extends AbstractInstance
 			// set instance reenter time for all allowed players
 			for (int objectId : world.getAllowed())
 			{
-				L2PcInstance obj = World.getInstance().getPlayer(objectId);
+				PlayerInstance obj = World.getInstance().getPlayer(objectId);
 				if ((obj != null) && obj.isOnline())
 				{
 					InstanceManager.getInstance().setInstanceTime(objectId, world.getTemplateId(), reenter.getTimeInMillis());
@@ -1532,7 +1532,7 @@ public final class Kamaloka extends AbstractInstance
 	 * Handles only player's enter, single parameter - integer kamaloka index
 	 */
 	@Override
-	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if (npc == null)
 		{
@@ -1554,7 +1554,7 @@ public final class Kamaloka extends AbstractInstance
 	 * Talk with captains and using of the escape teleporter
 	 */
 	@Override
-	public final String onTalk(Npc npc, L2PcInstance player)
+	public final String onTalk(Npc npc, PlayerInstance player)
 	{
 		final int npcId = npc.getId();
 		
@@ -1573,7 +1573,7 @@ public final class Kamaloka extends AbstractInstance
 						Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
 						
 						// teleports entire party away
-						for (L2PcInstance partyMember : party.getMembers())
+						for (PlayerInstance partyMember : party.getMembers())
 						{
 							if ((partyMember != null) && (partyMember.getInstanceId() == world.getInstanceId()))
 							{
@@ -1596,7 +1596,7 @@ public final class Kamaloka extends AbstractInstance
 	 * Only escape teleporters first talk handled
 	 */
 	@Override
-	public final String onFirstTalk(Npc npc, L2PcInstance player)
+	public final String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		if (npc.getId() == TELEPORTER)
 		{
@@ -1610,7 +1610,7 @@ public final class Kamaloka extends AbstractInstance
 	}
 	
 	@Override
-	public final String onKill(Npc npc, L2PcInstance player, boolean isSummon)
+	public final String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
 		final InstanceWorld tmpWorld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		if (tmpWorld instanceof KamaWorld)
@@ -1728,7 +1728,7 @@ public final class Kamaloka extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
+	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
 	{
 		
 	}

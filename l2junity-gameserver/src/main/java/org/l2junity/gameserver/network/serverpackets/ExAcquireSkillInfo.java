@@ -23,7 +23,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 import org.l2junity.gameserver.model.SkillLearn;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.skills.Skill;
 
@@ -46,7 +46,7 @@ public class ExAcquireSkillInfo extends L2GameServerPacket
 	 * @param skillLearn the skill learn.
 	 * @param sp the custom SP amount.
 	 */
-	public ExAcquireSkillInfo(L2PcInstance player, SkillLearn skillLearn, int sp)
+	public ExAcquireSkillInfo(PlayerInstance player, SkillLearn skillLearn, int sp)
 	{
 		_id = skillLearn.getSkillId();
 		_level = skillLearn.getSkillLevel();

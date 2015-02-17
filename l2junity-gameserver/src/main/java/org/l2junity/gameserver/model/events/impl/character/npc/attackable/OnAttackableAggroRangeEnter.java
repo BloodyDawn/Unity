@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.model.events.impl.character.npc.attackable;
 
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.IBaseEvent;
 
@@ -29,10 +29,10 @@ import org.l2junity.gameserver.model.events.impl.IBaseEvent;
 public class OnAttackableAggroRangeEnter implements IBaseEvent
 {
 	private final Npc _npc;
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final boolean _isSummon;
 	
-	public OnAttackableAggroRangeEnter(Npc npc, L2PcInstance attacker, boolean isSummon)
+	public OnAttackableAggroRangeEnter(Npc npc, PlayerInstance attacker, boolean isSummon)
 	{
 		_npc = npc;
 		_activeChar = attacker;
@@ -44,7 +44,7 @@ public class OnAttackableAggroRangeEnter implements IBaseEvent
 		return _npc;
 	}
 	
-	public L2PcInstance getActiveChar()
+	public PlayerInstance getActiveChar()
 	{
 		return _activeChar;
 	}

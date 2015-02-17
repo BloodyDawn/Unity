@@ -18,13 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public final class PartySmallWindowDelete extends L2GameServerPacket
 {
-	private final L2PcInstance _member;
+	private final PlayerInstance _member;
 	
-	public PartySmallWindowDelete(L2PcInstance member)
+	public PartySmallWindowDelete(PlayerInstance member)
 	{
 		_member = member;
 	}

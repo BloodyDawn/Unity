@@ -33,7 +33,7 @@ import org.l2junity.gameserver.model.SkillLearn;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2FishermanInstance;
 import org.l2junity.gameserver.model.actor.instance.L2NpcInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2VillageMasterInstance;
 import org.l2junity.gameserver.model.base.AcquireSkillType;
 import org.l2junity.gameserver.model.events.EventDispatcher;
@@ -97,7 +97,7 @@ public final class RequestAcquireSkill extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -503,7 +503,7 @@ public final class RequestAcquireSkill extends L2GameClientPacket
 		}
 	}
 	
-	public static void showSubUnitSkillList(L2PcInstance activeChar)
+	public static void showSubUnitSkillList(PlayerInstance activeChar)
 	{
 		final List<SkillLearn> skills = SkillTreesData.getInstance().getAvailableSubPledgeSkills(activeChar.getClan());
 		
@@ -517,7 +517,7 @@ public final class RequestAcquireSkill extends L2GameClientPacket
 		}
 	}
 	
-	public final static void showSubSkillList(L2PcInstance activeChar)
+	public final static void showSubSkillList(PlayerInstance activeChar)
 	{
 		final List<SkillLearn> skills = SkillTreesData.getInstance().getAvailableSubClassSkills(activeChar);
 		if (!skills.isEmpty())
@@ -530,7 +530,7 @@ public final class RequestAcquireSkill extends L2GameClientPacket
 		}
 	}
 	
-	public final static void showDualSkillList(L2PcInstance activeChar)
+	public final static void showDualSkillList(PlayerInstance activeChar)
 	{
 		final List<SkillLearn> skills = SkillTreesData.getInstance().getAvailableDualClassSkills(activeChar);
 		if (!skills.isEmpty())
@@ -552,7 +552,7 @@ public final class RequestAcquireSkill extends L2GameClientPacket
 	 * @param s the skill to be learn.
 	 * @return {@code true} if all requirements are meet, {@code false} otherwise.
 	 */
-	private boolean checkPlayerSkill(L2PcInstance player, Npc trainer, SkillLearn s)
+	private boolean checkPlayerSkill(PlayerInstance player, Npc trainer, SkillLearn s)
 	{
 		if (s != null)
 		{
@@ -661,7 +661,7 @@ public final class RequestAcquireSkill extends L2GameClientPacket
 	 * @param trainer the Npc teaching a skill.
 	 * @param skill the skill to be learn.
 	 */
-	private void giveSkill(L2PcInstance player, Npc trainer, Skill skill)
+	private void giveSkill(PlayerInstance player, Npc trainer, Skill skill)
 	{
 		giveSkill(player, trainer, skill, true);
 	}
@@ -673,7 +673,7 @@ public final class RequestAcquireSkill extends L2GameClientPacket
 	 * @param skill the skill to be learn.
 	 * @param store
 	 */
-	private void giveSkill(L2PcInstance player, Npc trainer, Skill skill, boolean store)
+	private void giveSkill(PlayerInstance player, Npc trainer, Skill skill, boolean store)
 	{
 		// Send message.
 		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_EARNED_S12);
@@ -712,7 +712,7 @@ public final class RequestAcquireSkill extends L2GameClientPacket
 	 * @param trainer the Npc which the {@code player} is interacting
 	 * @param player the active character
 	 */
-	private void showSkillList(Npc trainer, L2PcInstance player)
+	private void showSkillList(Npc trainer, PlayerInstance player)
 	{
 		if ((_skillType == AcquireSkillType.TRANSFORM) || (_skillType == AcquireSkillType.TRANSFER))
 		{
@@ -743,7 +743,7 @@ public final class RequestAcquireSkill extends L2GameClientPacket
 	 * @param player the player to verify
 	 * @return {@code true} if the player meets the required conditions to learn a transformation, {@code false} otherwise
 	 */
-	public static boolean canTransform(L2PcInstance player)
+	public static boolean canTransform(PlayerInstance player)
 	{
 		if (Config.ALLOW_TRANSFORM_WITHOUT_QUEST)
 		{

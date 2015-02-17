@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.events.impl.character.player;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.IBaseEvent;
 import org.l2junity.gameserver.network.L2GameClient;
@@ -28,12 +28,12 @@ import org.l2junity.gameserver.network.L2GameClient;
  */
 public class OnPlayerSelect implements IBaseEvent
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final int _objectId;
 	private final String _name;
 	private final L2GameClient _client;
 	
-	public OnPlayerSelect(L2PcInstance activeChar, int objectId, String name, L2GameClient client)
+	public OnPlayerSelect(PlayerInstance activeChar, int objectId, String name, L2GameClient client)
 	{
 		_activeChar = activeChar;
 		_objectId = objectId;
@@ -41,7 +41,7 @@ public class OnPlayerSelect implements IBaseEvent
 		_client = client;
 	}
 	
-	public L2PcInstance getActiveChar()
+	public PlayerInstance getActiveChar()
 	{
 		return _activeChar;
 	}

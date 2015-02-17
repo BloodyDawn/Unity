@@ -21,7 +21,7 @@ package org.l2junity.gameserver.network.clientpackets.commission;
 import java.util.function.Predicate;
 
 import org.l2junity.gameserver.instancemanager.CommissionManager;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.commission.CommissionItemType;
 import org.l2junity.gameserver.model.commission.CommissionTreeType;
 import org.l2junity.gameserver.model.items.L2Item;
@@ -53,7 +53,7 @@ public class RequestCommissionList extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance player = getActiveChar();
+		final PlayerInstance player = getActiveChar();
 		if (player == null)
 		{
 			return;

@@ -19,7 +19,7 @@
 package ai.npc.FortressArcherCaptain;
 
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 import ai.npc.AbstractNpcAI;
 
@@ -63,7 +63,7 @@ public final class FortressArcherCaptain extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		final int fortOwner = npc.getFort().getOwnerClan() == null ? 0 : npc.getFort().getOwnerClan().getId();
 		return ((player.getClan() != null) && (player.getClanId() == fortOwner)) ? "FortressArcherCaptain.html" : "FortressArcherCaptain-01.html";

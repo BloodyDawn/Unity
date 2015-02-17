@@ -23,7 +23,7 @@ import java.nio.BufferUnderflowException;
 import org.l2junity.Config;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.Location;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerMoveRequest;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
@@ -67,7 +67,7 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 		{
 			if (Config.L2WALKER_PROTECTION)
 			{
-				L2PcInstance activeChar = getClient().getActiveChar();
+				PlayerInstance activeChar = getClient().getActiveChar();
 				Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " is trying to use L2Walker and got kicked.", Config.DEFAULT_PUNISH);
 			}
 		}
@@ -76,7 +76,7 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;

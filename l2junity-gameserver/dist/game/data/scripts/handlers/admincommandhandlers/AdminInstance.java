@@ -24,7 +24,7 @@ import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Instance;
 
 /**
@@ -43,7 +43,7 @@ public class AdminInstance implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		StringTokenizer st = new StringTokenizer(command);
 		st.nextToken();
@@ -103,9 +103,9 @@ public class AdminInstance implements IAdminCommandHandler
 					return false;
 				}
 				target.setInstanceId(val);
-				if (target instanceof L2PcInstance)
+				if (target instanceof PlayerInstance)
 				{
-					L2PcInstance player = (L2PcInstance) target;
+					PlayerInstance player = (PlayerInstance) target;
 					player.sendMessage("Admin set your instance to:" + val);
 					player.teleToLocation(player.getLocation());
 				}

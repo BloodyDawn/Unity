@@ -36,7 +36,7 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.tasks.MessageDeletionTask;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Message;
 import org.l2junity.gameserver.network.serverpackets.ExNoticePostArrived;
 import org.l2junity.gameserver.network.serverpackets.ExUnReadMailCount;
@@ -101,7 +101,7 @@ public final class MailManager
 		return _messages.values();
 	}
 	
-	public final boolean hasUnreadPost(L2PcInstance player)
+	public final boolean hasUnreadPost(PlayerInstance player)
 	{
 		final int objectId = player.getObjectId();
 		for (Message msg : getMessages())
@@ -153,7 +153,7 @@ public final class MailManager
 		return inbox;
 	}
 	
-	public final long getUnreadCount(L2PcInstance player)
+	public final long getUnreadCount(PlayerInstance player)
 	{
 		return getInbox(player.getObjectId()).stream().filter(Message::isUnread).count();
 	}
@@ -184,7 +184,7 @@ public final class MailManager
 			_log.log(Level.WARNING, getClass().getSimpleName() + ": Error saving message:" + e.getMessage(), e);
 		}
 		
-		final L2PcInstance receiver = World.getInstance().getPlayer(msg.getReceiverId());
+		final PlayerInstance receiver = World.getInstance().getPlayer(msg.getReceiverId());
 		if (receiver != null)
 		{
 			receiver.sendPacket(ExNoticePostArrived.valueOf(true));

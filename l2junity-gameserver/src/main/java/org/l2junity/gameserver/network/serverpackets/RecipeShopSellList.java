@@ -19,13 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.ManufactureItem;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public class RecipeShopSellList extends L2GameServerPacket
 {
-	private final L2PcInstance _buyer, _manufacturer;
+	private final PlayerInstance _buyer, _manufacturer;
 	
-	public RecipeShopSellList(L2PcInstance buyer, L2PcInstance manufacturer)
+	public RecipeShopSellList(PlayerInstance buyer, PlayerInstance manufacturer)
 	{
 		_buyer = buyer;
 		_manufacturer = manufacturer;

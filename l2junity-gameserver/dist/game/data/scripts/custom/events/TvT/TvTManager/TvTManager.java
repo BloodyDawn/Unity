@@ -23,7 +23,7 @@ import org.l2junity.gameserver.handler.IVoicedCommandHandler;
 import org.l2junity.gameserver.handler.VoicedCommandHandler;
 import org.l2junity.gameserver.instancemanager.AntiFeedManager;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.model.olympiad.OlympiadManager;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -58,7 +58,7 @@ public final class TvTManager extends AbstractNpcAI implements IVoicedCommandHan
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if ((player == null) || !TvTEvent.isParticipating())
 		{
@@ -133,7 +133,7 @@ public final class TvTManager extends AbstractNpcAI implements IVoicedCommandHan
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		String htmltext = null;
 		if (TvTEvent.isParticipating())
@@ -161,7 +161,7 @@ public final class TvTManager extends AbstractNpcAI implements IVoicedCommandHan
 	}
 	
 	@Override
-	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params)
+	public boolean useVoicedCommand(String command, PlayerInstance activeChar, String params)
 	{
 		String html = null;
 		switch (command)
@@ -197,7 +197,7 @@ public final class TvTManager extends AbstractNpcAI implements IVoicedCommandHan
 		return true;
 	}
 	
-	private String getTvTStatus(L2PcInstance player)
+	private String getTvTStatus(PlayerInstance player)
 	{
 		int[] teamsPlayerCounts = TvTEvent.getTeamsPlayerCounts();
 		int[] teamsPointsCounts = TvTEvent.getTeamsPoints();

@@ -22,7 +22,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
 import org.l2junity.gameserver.model.EnchantSkillLearn;
 import org.l2junity.gameserver.model.EnchantSkillGroup.EnchantSkillHolder;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 
 /**
@@ -45,7 +45,7 @@ public class ExEnchantSkillInfoDetail extends L2GameServerPacket
 	private int _sp;
 	private final int _adenacount;
 	
-	public ExEnchantSkillInfoDetail(int type, int skillid, int skilllvl, L2PcInstance ply)
+	public ExEnchantSkillInfoDetail(int type, int skillid, int skilllvl, PlayerInstance ply)
 	{
 		
 		EnchantSkillLearn enchantLearn = EnchantSkillGroupsData.getInstance().getSkillEnchantmentBySkillId(skillid);

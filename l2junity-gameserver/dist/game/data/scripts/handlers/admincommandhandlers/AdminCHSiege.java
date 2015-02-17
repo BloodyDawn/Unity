@@ -26,7 +26,7 @@ import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.instancemanager.CHSiegeManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -57,7 +57,7 @@ public final class AdminCHSiege implements IAdminCommandHandler
 	}
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		final String[] split = command.split(" ");
 		SiegableHall hall = null;
@@ -190,16 +190,16 @@ public final class AdminCHSiege implements IAdminCommandHandler
 			if (split.length < 3)
 			{
 				WorldObject rawTarget = activeChar.getTarget();
-				L2PcInstance target = null;
+				PlayerInstance target = null;
 				if (rawTarget == null)
 				{
 					activeChar.sendMessage("You must target a clan member of the attacker!");
 				}
-				else if (!(rawTarget instanceof L2PcInstance))
+				else if (!(rawTarget instanceof PlayerInstance))
 				{
 					activeChar.sendMessage("You must target a player with clan!");
 				}
-				else if ((target = (L2PcInstance) rawTarget).getClan() == null)
+				else if ((target = (PlayerInstance) rawTarget).getClan() == null)
 				{
 					activeChar.sendMessage("Your target does not have any clan!");
 				}
@@ -245,16 +245,16 @@ public final class AdminCHSiege implements IAdminCommandHandler
 			if (split.length < 3)
 			{
 				WorldObject rawTarget = activeChar.getTarget();
-				L2PcInstance target = null;
+				PlayerInstance target = null;
 				if (rawTarget == null)
 				{
 					activeChar.sendMessage("You must target a clan member of the attacker!");
 				}
-				else if (!(rawTarget instanceof L2PcInstance))
+				else if (!(rawTarget instanceof PlayerInstance))
 				{
 					activeChar.sendMessage("You must target a player with clan!");
 				}
-				else if ((target = (L2PcInstance) rawTarget).getClan() == null)
+				else if ((target = (PlayerInstance) rawTarget).getClan() == null)
 				{
 					activeChar.sendMessage("Your target does not have any clan!");
 				}
@@ -322,7 +322,7 @@ public final class AdminCHSiege implements IAdminCommandHandler
 		return false;
 	}
 	
-	private SiegableHall getHall(String id, L2PcInstance gm)
+	private SiegableHall getHall(String id, PlayerInstance gm)
 	{
 		int ch = parseInt(id);
 		if (ch == 0)
@@ -355,7 +355,7 @@ public final class AdminCHSiege implements IAdminCommandHandler
 		return val;
 	}
 	
-	private void sendSiegableHallPage(L2PcInstance activeChar, String hallId, SiegableHall hall)
+	private void sendSiegableHallPage(PlayerInstance activeChar, String hallId, SiegableHall hall)
 	{
 		final NpcHtmlMessage msg = new NpcHtmlMessage(0, 1);
 		msg.setFile(null, "data/html/admin/siegablehall.htm");

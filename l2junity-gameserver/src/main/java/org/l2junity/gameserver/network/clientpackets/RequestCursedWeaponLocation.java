@@ -18,16 +18,15 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.model.CursedWeapon;
 import org.l2junity.gameserver.model.Location;
-import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.ExCursedWeaponLocation;
 import org.l2junity.gameserver.network.serverpackets.ExCursedWeaponLocation.CursedWeaponInfo;
-
-import javolution.util.FastList;
 
 /**
  * Format: (ch)
@@ -46,13 +45,13 @@ public final class RequestCursedWeaponLocation extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		Creature activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
-		List<CursedWeaponInfo> list = new FastList<>();
+		final List<CursedWeaponInfo> list = new LinkedList<>();
 		for (CursedWeapon cw : CursedWeaponsManager.getInstance().getCursedWeapons())
 		{
 			if (!cw.isActive())

@@ -21,7 +21,7 @@ package events.FreyaCelebration;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.event.LongTimeEvent;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -75,7 +75,7 @@ public final class FreyaCelebration extends LongTimeEvent
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if (event.equalsIgnoreCase("give_potion"))
 		{
@@ -115,7 +115,7 @@ public final class FreyaCelebration extends LongTimeEvent
 	}
 	
 	@Override
-	public String onSkillSee(Npc npc, L2PcInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public String onSkillSee(Npc npc, PlayerInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
 		if ((caster == null) || (npc == null))
 		{
@@ -145,7 +145,7 @@ public final class FreyaCelebration extends LongTimeEvent
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		return "13296.htm";
 	}

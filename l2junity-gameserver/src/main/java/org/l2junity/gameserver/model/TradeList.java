@@ -28,7 +28,7 @@ import javolution.util.FastList;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.datatables.ItemTable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.itemcontainer.PcInventory;
 import org.l2junity.gameserver.model.items.L2Item;
@@ -48,8 +48,8 @@ public class TradeList
 {
 	private static final Logger _log = Logger.getLogger(TradeList.class.getName());
 	
-	private final L2PcInstance _owner;
-	private L2PcInstance _partner;
+	private final PlayerInstance _owner;
+	private PlayerInstance _partner;
 	private final List<TradeItem> _items;
 	private String _title;
 	private boolean _packaged;
@@ -57,23 +57,23 @@ public class TradeList
 	private boolean _confirmed = false;
 	private boolean _locked = false;
 	
-	public TradeList(L2PcInstance owner)
+	public TradeList(PlayerInstance owner)
 	{
 		_items = new FastList<>();
 		_owner = owner;
 	}
 	
-	public L2PcInstance getOwner()
+	public PlayerInstance getOwner()
 	{
 		return _owner;
 	}
 	
-	public void setPartner(L2PcInstance partner)
+	public void setPartner(PlayerInstance partner)
 	{
 		_partner = partner;
 	}
 	
-	public L2PcInstance getPartner()
+	public PlayerInstance getPartner()
 	{
 		return _partner;
 	}
@@ -509,7 +509,7 @@ public class TradeList
 	 * @param partnerIU
 	 * @return
 	 */
-	private boolean TransferItems(L2PcInstance partner, InventoryUpdate ownerIU, InventoryUpdate partnerIU)
+	private boolean TransferItems(PlayerInstance partner, InventoryUpdate ownerIU, InventoryUpdate partnerIU)
 	{
 		for (TradeItem titem : _items)
 		{
@@ -556,7 +556,7 @@ public class TradeList
 	 * @param partner
 	 * @return items slots count
 	 */
-	public int countItemsSlots(L2PcInstance partner)
+	public int countItemsSlots(PlayerInstance partner)
 	{
 		int slots = 0;
 		
@@ -675,7 +675,7 @@ public class TradeList
 	 * @param items
 	 * @return int: result of trading. 0 - ok, 1 - canceled (no adena), 2 - failed (item error)
 	 */
-	public synchronized int privateStoreBuy(L2PcInstance player, Set<ItemRequest> items)
+	public synchronized int privateStoreBuy(PlayerInstance player, Set<ItemRequest> items)
 	{
 		if (_locked)
 		{
@@ -898,7 +898,7 @@ public class TradeList
 	 * @param items
 	 * @return : boolean true if success
 	 */
-	public synchronized boolean privateStoreSell(L2PcInstance player, ItemRequest[] items)
+	public synchronized boolean privateStoreSell(PlayerInstance player, ItemRequest[] items)
 	{
 		if (_locked)
 		{

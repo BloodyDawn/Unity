@@ -20,7 +20,7 @@ package handlers.voicedcommandhandlers;
 
 import org.l2junity.gameserver.handler.IVoicedCommandHandler;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.util.Util;
 
 /**
@@ -36,7 +36,7 @@ public class SetVCmd implements IVoicedCommandHandler
 	};
 	
 	@Override
-	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params)
+	public boolean useVoicedCommand(String command, PlayerInstance activeChar, String params)
 	{
 		if (command.equals("set"))
 		{
@@ -46,7 +46,7 @@ public class SetVCmd implements IVoicedCommandHandler
 				return false;
 			}
 			
-			final L2PcInstance player = activeChar.getTarget().getActingPlayer();
+			final PlayerInstance player = activeChar.getTarget().getActingPlayer();
 			if ((activeChar.getClan() == null) || (player.getClan() == null) || (activeChar.getClan().getId() != player.getClan().getId()))
 			{
 				return false;

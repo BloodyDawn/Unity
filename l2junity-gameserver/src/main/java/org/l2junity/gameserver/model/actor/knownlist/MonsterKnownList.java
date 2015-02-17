@@ -24,7 +24,7 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public class MonsterKnownList extends AttackableKnownList
 {
@@ -44,7 +44,7 @@ public class MonsterKnownList extends AttackableKnownList
 		final CharacterAI ai = getActiveChar().getAI(); // force AI creation
 		
 		// Set the L2MonsterInstance Intention to AI_INTENTION_ACTIVE if the state was AI_INTENTION_IDLE
-		if ((object instanceof L2PcInstance) && (ai != null) && (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE))
+		if ((object instanceof PlayerInstance) && (ai != null) && (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE))
 		{
 			ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
 		}

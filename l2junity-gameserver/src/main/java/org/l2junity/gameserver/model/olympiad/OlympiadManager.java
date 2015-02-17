@@ -28,7 +28,7 @@ import org.l2junity.gameserver.instancemanager.AntiFeedManager;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
@@ -108,12 +108,12 @@ public class OlympiadManager
 		AntiFeedManager.getInstance().clear(AntiFeedManager.OLYMPIAD_ID);
 	}
 	
-	public final boolean isRegistered(L2PcInstance noble)
+	public final boolean isRegistered(PlayerInstance noble)
 	{
 		return isRegistered(noble, noble, false);
 	}
 	
-	private final boolean isRegistered(L2PcInstance noble, L2PcInstance player, boolean showMessage)
+	private final boolean isRegistered(PlayerInstance noble, PlayerInstance player, boolean showMessage)
 	{
 		final Integer objId = Integer.valueOf(noble.getObjectId());
 		// party may be already dispersed
@@ -157,12 +157,12 @@ public class OlympiadManager
 		return false;
 	}
 	
-	public final boolean isRegisteredInComp(L2PcInstance noble)
+	public final boolean isRegisteredInComp(PlayerInstance noble)
 	{
 		return isRegistered(noble, noble, false) || isInCompetition(noble, noble, false);
 	}
 	
-	private final boolean isInCompetition(L2PcInstance noble, L2PcInstance player, boolean showMessage)
+	private final boolean isInCompetition(PlayerInstance noble, PlayerInstance player, boolean showMessage)
 	{
 		if (!Olympiad._inCompPeriod)
 		{
@@ -215,7 +215,7 @@ public class OlympiadManager
 		return false;
 	}
 	
-	public final boolean registerNoble(L2PcInstance player, CompetitionType type)
+	public final boolean registerNoble(PlayerInstance player, CompetitionType type)
 	{
 		if (!Olympiad._inCompPeriod)
 		{
@@ -299,14 +299,14 @@ public class OlympiadManager
 				
 				int teamPoints = 0;
 				ArrayList<Integer> team = new ArrayList<>(party.getMemberCount());
-				for (L2PcInstance noble : party.getMembers())
+				for (PlayerInstance noble : party.getMembers())
 				{
 					if (!checkNoble(noble, player))
 					{
 						// remove previously registered party members
 						if (Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
 						{
-							for (L2PcInstance unreg : party.getMembers())
+							for (PlayerInstance unreg : party.getMembers())
 							{
 								if (unreg == noble)
 								{
@@ -334,7 +334,7 @@ public class OlympiadManager
 					// remove previously registered party members
 					if (Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
 					{
-						for (L2PcInstance unreg : party.getMembers())
+						for (PlayerInstance unreg : party.getMembers())
 						{
 							AntiFeedManager.getInstance().removePlayer(AntiFeedManager.OLYMPIAD_ID, unreg);
 						}
@@ -350,7 +350,7 @@ public class OlympiadManager
 		return true;
 	}
 	
-	public final boolean unRegisterNoble(L2PcInstance noble)
+	public final boolean unRegisterNoble(PlayerInstance noble)
 	{
 		if (!Olympiad._inCompPeriod)
 		{
@@ -416,7 +416,7 @@ public class OlympiadManager
 		return false;
 	}
 	
-	public final void removeDisconnectedCompetitor(L2PcInstance player)
+	public final void removeDisconnectedCompetitor(PlayerInstance player)
 	{
 		final OlympiadGameTask task = OlympiadGameManager.getInstance().getOlympiadTask(player.getOlympiadGameId());
 		if ((task != null) && task.isGameStarted())
@@ -453,7 +453,7 @@ public class OlympiadManager
 	 * @return true if all requirements are met
 	 */
 	// TODO: move to the bypass handler after reworking points system
-	private final boolean checkNoble(L2PcInstance noble, L2PcInstance player)
+	private final boolean checkNoble(PlayerInstance noble, PlayerInstance player)
 	{
 		SystemMessage sm;
 		if (!noble.isNoble())
@@ -562,7 +562,7 @@ public class OlympiadManager
 			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_BEEN_REMOVED_FROM_THE_OLYMPIAD_WAITING_LIST);
 			for (int objectId : _team)
 			{
-				L2PcInstance teamMember = World.getInstance().getPlayer(objectId);
+				PlayerInstance teamMember = World.getInstance().getPlayer(objectId);
 				if (teamMember != null)
 				{
 					teamMember.sendPacket(sm);

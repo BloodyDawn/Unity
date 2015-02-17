@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExRotation;
 import org.l2junity.gameserver.network.serverpackets.SocialAction;
@@ -48,8 +48,8 @@ public class AnswerCoupleAction extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance activeChar = getActiveChar();
-		L2PcInstance target = World.getInstance().getPlayer(_charObjId);
+		PlayerInstance activeChar = getActiveChar();
+		PlayerInstance target = World.getInstance().getPlayer(_charObjId);
 		if ((activeChar == null) || (target == null))
 		{
 			return;

@@ -22,7 +22,7 @@ import java.util.List;
 
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
 
 import javolution.util.FastList;
@@ -54,13 +54,13 @@ public class L2FriendList extends L2GameServerPacket
 		}
 	}
 	
-	public L2FriendList(L2PcInstance player)
+	public L2FriendList(PlayerInstance player)
 	{
 		_info = new FastList<>(player.getFriendList().size());
 		for (int objId : player.getFriendList())
 		{
 			String name = CharNameTable.getInstance().getNameById(objId);
-			L2PcInstance player1 = World.getInstance().getPlayer(objId);
+			PlayerInstance player1 = World.getInstance().getPlayer(objId);
 			boolean online = false;
 			int level = 0;
 			int classId = 0;

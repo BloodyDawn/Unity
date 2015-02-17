@@ -26,7 +26,7 @@ import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -48,7 +48,7 @@ public class BeastSoulShot implements IItemHandler
 			return false;
 		}
 		
-		final L2PcInstance activeOwner = playable.getActingPlayer();
+		final PlayerInstance activeOwner = playable.getActingPlayer();
 		if (!activeOwner.hasSummon())
 		{
 			activeOwner.sendPacket(SystemMessageId.PETS_AND_SERVITORS_ARE_NOT_AVAILABLE_AT_THIS_TIME);

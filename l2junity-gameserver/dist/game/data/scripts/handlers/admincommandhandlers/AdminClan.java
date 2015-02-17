@@ -30,7 +30,7 @@ import org.l2junity.gameserver.model.ClanMember;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.util.Util;
@@ -49,7 +49,7 @@ public class AdminClan implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		final StringTokenizer st = new StringTokenizer(command);
 		final String cmd = st.nextToken();
@@ -57,7 +57,7 @@ public class AdminClan implements IAdminCommandHandler
 		{
 			case "admin_clan_info":
 			{
-				final L2PcInstance player = getPlayer(activeChar, st);
+				final PlayerInstance player = getPlayer(activeChar, st);
 				if (player == null)
 				{
 					break;
@@ -88,7 +88,7 @@ public class AdminClan implements IAdminCommandHandler
 			}
 			case "admin_clan_changeleader":
 			{
-				final L2PcInstance player = getPlayer(activeChar, st);
+				final PlayerInstance player = getPlayer(activeChar, st);
 				if (player == null)
 				{
 					break;
@@ -172,10 +172,10 @@ public class AdminClan implements IAdminCommandHandler
 	 * @param st
 	 * @return
 	 */
-	private L2PcInstance getPlayer(L2PcInstance activeChar, StringTokenizer st)
+	private PlayerInstance getPlayer(PlayerInstance activeChar, StringTokenizer st)
 	{
 		String val;
-		L2PcInstance player = null;
+		PlayerInstance player = null;
 		if (st.hasMoreTokens())
 		{
 			val = st.nextToken();
@@ -202,7 +202,7 @@ public class AdminClan implements IAdminCommandHandler
 		else
 		{
 			WorldObject targetObj = activeChar.getTarget();
-			if (targetObj instanceof L2PcInstance)
+			if (targetObj instanceof PlayerInstance)
 			{
 				player = targetObj.getActingPlayer();
 			}

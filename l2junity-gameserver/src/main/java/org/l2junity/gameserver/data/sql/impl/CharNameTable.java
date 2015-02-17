@@ -31,7 +31,7 @@ import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * Loads name and access level for all players.
@@ -52,7 +52,7 @@ public class CharNameTable
 		}
 	}
 	
-	public final void addName(L2PcInstance player)
+	public final void addName(PlayerInstance player)
 	{
 		if (player != null)
 		{

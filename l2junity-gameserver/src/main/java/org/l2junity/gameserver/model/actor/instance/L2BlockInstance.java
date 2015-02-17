@@ -48,7 +48,7 @@ public class L2BlockInstance extends L2MonsterInstance
 	 * @param holder
 	 * @param team
 	 */
-	public void changeColor(L2PcInstance attacker, ArenaParticipantsHolder holder, int team)
+	public void changeColor(PlayerInstance attacker, ArenaParticipantsHolder holder, int team)
 	{
 		// Do not update color while sending old info
 		synchronized (this)
@@ -105,7 +105,7 @@ public class L2BlockInstance extends L2MonsterInstance
 	@Override
 	public boolean isAutoAttackable(Creature attacker)
 	{
-		if (attacker instanceof L2PcInstance)
+		if (attacker instanceof PlayerInstance)
 		{
 			return (attacker.getActingPlayer() != null) && (attacker.getActingPlayer().getBlockCheckerArena() > -1);
 		}
@@ -119,7 +119,7 @@ public class L2BlockInstance extends L2MonsterInstance
 	}
 	
 	@Override
-	public void onAction(L2PcInstance player, boolean interact)
+	public void onAction(PlayerInstance player, boolean interact)
 	{
 		if (!canTarget(player))
 		{
@@ -139,7 +139,7 @@ public class L2BlockInstance extends L2MonsterInstance
 		}
 	}
 	
-	private void increaseTeamPointsAndSend(L2PcInstance player, int team, BlockCheckerEngine eng)
+	private void increaseTeamPointsAndSend(PlayerInstance player, int team, BlockCheckerEngine eng)
 	{
 		eng.increasePlayerPoints(player, team);
 		
@@ -153,7 +153,7 @@ public class L2BlockInstance extends L2MonsterInstance
 		eng.getHolder().broadCastPacketToTeam(secretPoints);
 	}
 	
-	private void dropItem(int id, BlockCheckerEngine eng, L2PcInstance player)
+	private void dropItem(int id, BlockCheckerEngine eng, PlayerInstance player)
 	{
 		ItemInstance drop = ItemTable.getInstance().createItem("Loot", id, 1, player, this);
 		int x = getX() + Rnd.get(50);

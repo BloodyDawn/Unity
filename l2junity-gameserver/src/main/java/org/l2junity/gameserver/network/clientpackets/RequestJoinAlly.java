@@ -20,7 +20,7 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.AskJoinAlly;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
@@ -44,13 +44,13 @@ public final class RequestJoinAlly extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
-		L2PcInstance ob = World.getInstance().getPlayer(_id);
+		PlayerInstance ob = World.getInstance().getPlayer(_id);
 		
 		if (ob == null)
 		{
@@ -64,7 +64,7 @@ public final class RequestJoinAlly extends L2GameClientPacket
 			return;
 		}
 		
-		L2PcInstance target = ob;
+		PlayerInstance target = ob;
 		L2Clan clan = activeChar.getClan();
 		if (!clan.checkAllyJoinCondition(activeChar, target))
 		{

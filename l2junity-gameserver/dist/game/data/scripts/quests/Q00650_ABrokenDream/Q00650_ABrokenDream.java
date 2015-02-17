@@ -25,7 +25,7 @@ import java.util.Map;
 
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
@@ -64,7 +64,7 @@ public final class Q00650_ABrokenDream extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
@@ -107,7 +107,7 @@ public final class Q00650_ABrokenDream extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
@@ -141,9 +141,9 @@ public final class Q00650_ABrokenDream extends Quest
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
-		final List<L2PcInstance> randomList = new ArrayList<>();
+		final List<PlayerInstance> randomList = new ArrayList<>();
 		final QuestState st = getQuestState(killer, false);
 		if ((st != null) && st.isStarted())
 		{
@@ -154,7 +154,7 @@ public final class Q00650_ABrokenDream extends Quest
 		final int monsterChance = MONSTER_DROP_CHANCES.get(npc.getId());
 		if (killer.isInParty())
 		{
-			for (L2PcInstance member : killer.getParty().getMembers())
+			for (PlayerInstance member : killer.getParty().getMembers())
 			{
 				final QuestState qs = getQuestState(member, false);
 				if ((qs != null) && qs.isStarted())
@@ -166,7 +166,7 @@ public final class Q00650_ABrokenDream extends Quest
 		
 		if (!randomList.isEmpty())
 		{
-			final L2PcInstance player = randomList.get(getRandom(randomList.size()));
+			final PlayerInstance player = randomList.get(getRandom(randomList.size()));
 			if ((getRandom(1000) < monsterChance) && Util.checkIfInRange(1500, npc, player, true))
 			{
 				giveItems(player, REMNANTS_OF_OLD_DWARVES_DREAMS, 1);

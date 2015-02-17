@@ -31,7 +31,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 
 /**
@@ -57,7 +57,7 @@ public class AdminMenu implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		if (command.equals("admin_char_manage"))
 		{
@@ -69,7 +69,7 @@ public class AdminMenu implements IAdminCommandHandler
 			if (data.length == 5)
 			{
 				String playerName = data[1];
-				L2PcInstance player = World.getInstance().getPlayer(playerName);
+				PlayerInstance player = World.getInstance().getPlayer(playerName);
 				if (player != null)
 				{
 					teleportCharacter(player, new Location(Integer.parseInt(data[2]), Integer.parseInt(data[3]), Integer.parseInt(data[4])), activeChar, "Admin is teleporting you.");
@@ -82,7 +82,7 @@ public class AdminMenu implements IAdminCommandHandler
 			try
 			{
 				String targetName = command.substring(23);
-				L2PcInstance player = World.getInstance().getPlayer(targetName);
+				PlayerInstance player = World.getInstance().getPlayer(targetName);
 				teleportCharacter(player, activeChar.getLocation(), activeChar, "Admin is teleporting you.");
 			}
 			catch (StringIndexOutOfBoundsException e)
@@ -94,7 +94,7 @@ public class AdminMenu implements IAdminCommandHandler
 			try
 			{
 				String targetName = command.substring(24);
-				L2PcInstance player = World.getInstance().getPlayer(targetName);
+				PlayerInstance player = World.getInstance().getPlayer(targetName);
 				if (player == null)
 				{
 					activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
@@ -106,7 +106,7 @@ public class AdminMenu implements IAdminCommandHandler
 					teleportCharacter(player, activeChar.getLocation(), activeChar, "Admin is teleporting you.");
 					return true;
 				}
-				for (L2PcInstance pm : player.getParty().getMembers())
+				for (PlayerInstance pm : player.getParty().getMembers())
 				{
 					teleportCharacter(pm, activeChar.getLocation(), activeChar, "Your party is being teleported by an Admin.");
 				}
@@ -121,7 +121,7 @@ public class AdminMenu implements IAdminCommandHandler
 			try
 			{
 				String targetName = command.substring(23);
-				L2PcInstance player = World.getInstance().getPlayer(targetName);
+				PlayerInstance player = World.getInstance().getPlayer(targetName);
 				if (player == null)
 				{
 					activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
@@ -135,7 +135,7 @@ public class AdminMenu implements IAdminCommandHandler
 					return true;
 				}
 				
-				for (L2PcInstance member : clan.getOnlineMembers(0))
+				for (PlayerInstance member : clan.getOnlineMembers(0))
 				{
 					teleportCharacter(member, activeChar.getLocation(), activeChar, "Your clan is being teleported by an Admin.");
 				}
@@ -150,7 +150,7 @@ public class AdminMenu implements IAdminCommandHandler
 			try
 			{
 				String targetName = command.substring(21);
-				L2PcInstance player = World.getInstance().getPlayer(targetName);
+				PlayerInstance player = World.getInstance().getPlayer(targetName);
 				activeChar.setInstanceId(player.getInstanceId());
 				teleportToCharacter(activeChar, player);
 			}
@@ -169,7 +169,7 @@ public class AdminMenu implements IAdminCommandHandler
 			{
 				st.nextToken();
 				String player = st.nextToken();
-				L2PcInstance plyr = World.getInstance().getPlayer(player);
+				PlayerInstance plyr = World.getInstance().getPlayer(player);
 				String text;
 				if (plyr != null)
 				{
@@ -227,19 +227,19 @@ public class AdminMenu implements IAdminCommandHandler
 		return ADMIN_COMMANDS;
 	}
 	
-	private void handleKill(L2PcInstance activeChar)
+	private void handleKill(PlayerInstance activeChar)
 	{
 		handleKill(activeChar, null);
 	}
 	
-	private void handleKill(L2PcInstance activeChar, String player)
+	private void handleKill(PlayerInstance activeChar, String player)
 	{
 		WorldObject obj = activeChar.getTarget();
 		Creature target = (Creature) obj;
 		String filename = "main_menu.htm";
 		if (player != null)
 		{
-			L2PcInstance plyr = World.getInstance().getPlayer(player);
+			PlayerInstance plyr = World.getInstance().getPlayer(player);
 			if (plyr != null)
 			{
 				target = plyr;
@@ -248,7 +248,7 @@ public class AdminMenu implements IAdminCommandHandler
 		}
 		if (target != null)
 		{
-			if (target instanceof L2PcInstance)
+			if (target instanceof PlayerInstance)
 			{
 				target.reduceCurrentHp(target.getMaxHp() + target.getMaxCp() + 1, activeChar, null);
 				filename = "charmanage.htm";
@@ -269,7 +269,7 @@ public class AdminMenu implements IAdminCommandHandler
 		AdminHtml.showAdminHtml(activeChar, filename);
 	}
 	
-	private void teleportCharacter(L2PcInstance player, Location loc, L2PcInstance activeChar, String message)
+	private void teleportCharacter(PlayerInstance player, Location loc, PlayerInstance activeChar, String message)
 	{
 		if (player != null)
 		{
@@ -279,12 +279,12 @@ public class AdminMenu implements IAdminCommandHandler
 		showMainPage(activeChar);
 	}
 	
-	private void teleportToCharacter(L2PcInstance activeChar, WorldObject target)
+	private void teleportToCharacter(PlayerInstance activeChar, WorldObject target)
 	{
-		L2PcInstance player = null;
-		if (target instanceof L2PcInstance)
+		PlayerInstance player = null;
+		if (target instanceof PlayerInstance)
 		{
-			player = (L2PcInstance) target;
+			player = (PlayerInstance) target;
 		}
 		else
 		{
@@ -307,7 +307,7 @@ public class AdminMenu implements IAdminCommandHandler
 	/**
 	 * @param activeChar
 	 */
-	private void showMainPage(L2PcInstance activeChar)
+	private void showMainPage(PlayerInstance activeChar)
 	{
 		AdminHtml.showAdminHtml(activeChar, "charmanage.htm");
 	}

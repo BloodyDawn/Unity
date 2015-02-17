@@ -26,7 +26,7 @@ import org.l2junity.gameserver.handler.IBypassHandler;
 import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.listeners.AbstractEventListener;
 import org.l2junity.gameserver.model.quest.Quest;
@@ -43,7 +43,7 @@ public class QuestLink implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, Creature target)
+	public boolean useBypass(String command, PlayerInstance activeChar, Creature target)
 	{
 		String quest = "";
 		try
@@ -80,7 +80,7 @@ public class QuestLink implements IBypassHandler
 	 * @param npc The table containing quests of the L2NpcInstance
 	 * @param quests
 	 */
-	public static void showQuestChooseWindow(L2PcInstance player, Npc npc, Collection<Quest> quests)
+	public static void showQuestChooseWindow(PlayerInstance player, Npc npc, Collection<Quest> quests)
 	{
 		final StringBuilder sb = new StringBuilder(128);
 		sb.append("<html><body>");
@@ -152,7 +152,7 @@ public class QuestLink implements IBypassHandler
 	 * @param npc the L2NpcInstance that chats with the {@code player}
 	 * @param questId the Id of the quest to display the message
 	 */
-	public static void showQuestWindow(L2PcInstance player, Npc npc, String questId)
+	public static void showQuestWindow(PlayerInstance player, Npc npc, String questId)
 	{
 		String content = null;
 		
@@ -206,7 +206,7 @@ public class QuestLink implements IBypassHandler
 	 * @param player the L2PcInstance that talk with the {@code npc}.
 	 * @param npc the L2NpcInstance that chats with the {@code player}.
 	 */
-	private static void showQuestWindow(final L2PcInstance player, Npc npc)
+	private static void showQuestWindow(final PlayerInstance player, Npc npc)
 	{
 		//@formatter:off
 		final Set<Quest> quests = npc.getListeners(EventType.ON_NPC_TALK).stream()

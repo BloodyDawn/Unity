@@ -22,7 +22,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.instancemanager.CoupleManager;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Couple;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.CommonSkill;
@@ -53,14 +53,14 @@ public final class Wedding extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if (player.getPartnerId() == 0)
 		{
 			return "NoPartner.html";
 		}
 		
-		final L2PcInstance partner = World.getInstance().getPlayer(player.getPartnerId());
+		final PlayerInstance partner = World.getInstance().getPlayer(player.getPartnerId());
 		if ((partner == null) || !partner.isOnline())
 		{
 			return "NotFound.html";
@@ -177,13 +177,13 @@ public final class Wedding extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		final String htmltext = getHtm(player.getHtmlPrefix(), "Start.html");
 		return htmltext.replaceAll("%fee%", String.valueOf(Config.L2JMOD_WEDDING_PRICE));
 	}
 	
-	private String sendHtml(L2PcInstance player, String fileName, String regex, String replacement)
+	private String sendHtml(PlayerInstance player, String fileName, String regex, String replacement)
 	{
 		String html = getHtm(player.getHtmlPrefix(), fileName);
 		if ((regex != null) && (replacement != null))
@@ -194,7 +194,7 @@ public final class Wedding extends AbstractNpcAI
 		return html;
 	}
 	
-	private static boolean isWearingFormalWear(L2PcInstance player)
+	private static boolean isWearingFormalWear(PlayerInstance player)
 	{
 		if (Config.L2JMOD_WEDDING_FORMALWEAR)
 		{

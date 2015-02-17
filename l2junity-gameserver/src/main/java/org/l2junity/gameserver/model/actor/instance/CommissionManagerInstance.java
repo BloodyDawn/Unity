@@ -35,7 +35,7 @@ public class CommissionManagerInstance extends Npc
 	}
 	
 	@Override
-	public void onBypassFeedback(L2PcInstance player, String command)
+	public void onBypassFeedback(PlayerInstance player, String command)
 	{
 		if (command.equalsIgnoreCase("show_commission"))
 		{

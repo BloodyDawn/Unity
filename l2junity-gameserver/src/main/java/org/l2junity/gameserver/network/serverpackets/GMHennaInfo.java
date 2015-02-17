@@ -21,7 +21,7 @@ package org.l2junity.gameserver.network.serverpackets;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.Henna;
 
 /**
@@ -30,10 +30,10 @@ import org.l2junity.gameserver.model.items.Henna;
  */
 public final class GMHennaInfo extends L2GameServerPacket
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final List<Henna> _hennas = new ArrayList<>();
 	
-	public GMHennaInfo(L2PcInstance player)
+	public GMHennaInfo(PlayerInstance player)
 	{
 		_activeChar = player;
 		for (Henna henna : _activeChar.getHennaList())

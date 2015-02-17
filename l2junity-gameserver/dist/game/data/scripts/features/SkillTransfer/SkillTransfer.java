@@ -24,7 +24,7 @@ import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.enums.IllegalActionPunishmentType;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.SkillLearn;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerProfessionChange;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -58,7 +58,7 @@ public final class SkillTransfer extends AbstractNpcAI
 	
 	public void onProfessionChange(OnPlayerProfessionChange event)
 	{
-		final L2PcInstance player = event.getActiveChar();
+		final PlayerInstance player = event.getActiveChar();
 		final int index = getTransferClassIndex(player);
 		if (index < 0)
 		{
@@ -74,7 +74,7 @@ public final class SkillTransfer extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onEnterWorld(L2PcInstance player)
+	public String onEnterWorld(PlayerInstance player)
 	{
 		if (!player.canOverrideCond(PcCondOverride.SKILL_CONDITIONS) || Config.SKILL_CHECK_GM)
 		{
@@ -113,7 +113,7 @@ public final class SkillTransfer extends AbstractNpcAI
 		return super.onEnterWorld(player);
 	}
 	
-	private static int getTransferClassIndex(L2PcInstance player)
+	private static int getTransferClassIndex(PlayerInstance player)
 	{
 		switch (player.getClassId())
 		{

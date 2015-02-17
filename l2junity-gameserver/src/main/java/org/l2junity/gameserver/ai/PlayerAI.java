@@ -30,7 +30,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Creature.AIAccessor;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
@@ -246,9 +246,9 @@ public class PlayerAI extends PlayableAI
 	private void thinkCast()
 	{
 		Creature target = getCastTarget();
-		if ((_skill.getTargetType() == L2TargetType.GROUND) && (_actor instanceof L2PcInstance))
+		if ((_skill.getTargetType() == L2TargetType.GROUND) && (_actor instanceof PlayerInstance))
 		{
-			if (maybeMoveToPosition(((L2PcInstance) _actor).getCurrentSkillWorldPosition(), _actor.getMagicalAttackRange(_skill)))
+			if (maybeMoveToPosition(((PlayerInstance) _actor).getCurrentSkillWorldPosition(), _actor.getMagicalAttackRange(_skill)))
 			{
 				_actor.setIsCastingNow(false);
 				return;
@@ -297,7 +297,7 @@ public class PlayerAI extends PlayableAI
 			return;
 		}
 		setIntention(AI_INTENTION_IDLE);
-		((L2PcInstance.AIAccessor) _accessor).doPickupItem(target);
+		((PlayerInstance.AIAccessor) _accessor).doPickupItem(target);
 	}
 	
 	private void thinkInteract()
@@ -317,7 +317,7 @@ public class PlayerAI extends PlayableAI
 		}
 		if (!(target instanceof L2StaticObjectInstance))
 		{
-			((L2PcInstance.AIAccessor) _accessor).doInteract((Creature) target);
+			((PlayerInstance.AIAccessor) _accessor).doInteract((Creature) target);
 		}
 		setIntention(AI_INTENTION_IDLE);
 	}

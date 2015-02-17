@@ -22,7 +22,7 @@ import org.l2junity.gameserver.data.xml.impl.RecipeData;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.model.RecipeList;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
@@ -41,7 +41,7 @@ public class Recipes implements IItemHandler
 			return false;
 		}
 		
-		final L2PcInstance activeChar = playable.getActingPlayer();
+		final PlayerInstance activeChar = playable.getActingPlayer();
 		if (activeChar.isInCraftMode())
 		{
 			activeChar.sendPacket(SystemMessageId.YOU_MAY_NOT_ALTER_YOUR_RECIPE_BOOK_WHILE_ENGAGED_IN_MANUFACTURING);

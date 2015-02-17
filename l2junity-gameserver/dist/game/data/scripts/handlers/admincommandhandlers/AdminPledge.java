@@ -25,7 +25,7 @@ import org.l2junity.gameserver.enums.UserInfoType;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.GMViewPledgeInfo;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
@@ -47,12 +47,12 @@ public class AdminPledge implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		final StringTokenizer st = new StringTokenizer(command);
 		final String cmd = st.nextToken();
 		final WorldObject target = activeChar.getTarget();
-		final L2PcInstance targetPlayer = target instanceof L2PcInstance ? (L2PcInstance) target : null;
+		final PlayerInstance targetPlayer = target instanceof PlayerInstance ? (PlayerInstance) target : null;
 		L2Clan clan = targetPlayer != null ? targetPlayer.getClan() : null;
 		if (targetPlayer == null)
 		{
@@ -158,7 +158,7 @@ public class AdminPledge implements IAdminCommandHandler
 						if ((level >= 0) && (level < 12))
 						{
 							clan.changeLevel(level);
-							for (L2PcInstance member : clan.getOnlineMembers(0))
+							for (PlayerInstance member : clan.getOnlineMembers(0))
 							{
 								member.broadcastUserInfo(UserInfoType.RELATION, UserInfoType.CLAN);
 							}
@@ -210,7 +210,7 @@ public class AdminPledge implements IAdminCommandHandler
 		return ADMIN_COMMANDS;
 	}
 	
-	private void showMainPage(L2PcInstance activeChar)
+	private void showMainPage(PlayerInstance activeChar)
 	{
 		AdminHtml.showAdminHtml(activeChar, "game_menu.htm");
 	}

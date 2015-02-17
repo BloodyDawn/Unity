@@ -28,7 +28,7 @@ import org.l2junity.gameserver.handler.ChatHandler;
 import org.l2junity.gameserver.handler.IChatHandler;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerChat;
@@ -106,7 +106,7 @@ public final class Say2 extends L2GameClientPacket
 			_log.info("Say2: Msg Type = '" + _type + "' Text = '" + _text + "'.");
 		}
 		
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -258,7 +258,7 @@ public final class Say2 extends L2GameClientPacket
 		_text = filteredText;
 	}
 	
-	private boolean parseAndPublishItem(L2PcInstance owner)
+	private boolean parseAndPublishItem(PlayerInstance owner)
 	{
 		int pos1 = -1;
 		while ((pos1 = _text.indexOf(8, pos1)) > -1)

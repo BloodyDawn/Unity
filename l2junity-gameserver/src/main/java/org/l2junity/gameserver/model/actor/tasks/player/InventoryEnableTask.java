@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.actor.tasks.player;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * Task dedicated to enable player's inventory.
@@ -26,9 +26,9 @@ import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
  */
 public class InventoryEnableTask implements Runnable
 {
-	private final L2PcInstance _player;
+	private final PlayerInstance _player;
 	
-	public InventoryEnableTask(L2PcInstance player)
+	public InventoryEnableTask(PlayerInstance player)
 	{
 		_player = player;
 	}

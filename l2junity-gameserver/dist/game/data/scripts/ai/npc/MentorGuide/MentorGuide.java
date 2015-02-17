@@ -32,7 +32,7 @@ import org.l2junity.gameserver.instancemanager.MailManager;
 import org.l2junity.gameserver.instancemanager.MentorManager;
 import org.l2junity.gameserver.model.Mentee;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassLevel;
 import org.l2junity.gameserver.model.entity.Message;
 import org.l2junity.gameserver.model.events.EventType;
@@ -150,7 +150,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String htmltext = event;
 		
@@ -181,7 +181,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		return "33587-01.htm";
 	}
@@ -219,7 +219,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void OnPlayerMenteeStatus(OnPlayerMenteeStatus event)
 	{
-		final L2PcInstance player = event.getMentee();
+		final PlayerInstance player = event.getMentee();
 		
 		if (event.isMenteeOnline())
 		{
@@ -277,7 +277,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void OnPlayerMentorStatus(OnPlayerMentorStatus event)
 	{
-		final L2PcInstance player = event.getMentor();
+		final PlayerInstance player = event.getMentor();
 		
 		if (event.isMentorOnline())
 		{
@@ -336,7 +336,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void onProfessionChange(OnPlayerProfessionChange event)
 	{
-		final L2PcInstance player = event.getActiveChar();
+		final PlayerInstance player = event.getActiveChar();
 		
 		if (player.isMentor())
 		{
@@ -363,7 +363,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void onLevelIncreased(OnPlayerLevelChanged event)
 	{
-		final L2PcInstance player = event.getActiveChar();
+		final PlayerInstance player = event.getActiveChar();
 		
 		// Not a mentee
 		if (!player.isMentee())
@@ -391,8 +391,8 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void onMenteeLeft(OnPlayerMenteeLeft event)
 	{
-		final L2PcInstance player = event.getMentee();
-		final L2PcInstance mentor = event.getMentor().getPlayerInstance();
+		final PlayerInstance player = event.getMentee();
+		final PlayerInstance mentor = event.getMentor().getPlayerInstance();
 		// Remove the mentee skills
 		player.removeSkill(MENTEE_MENTOR_SUMMON.getSkill(), true);
 		
@@ -416,8 +416,8 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 	public void onMenteeRemove(OnPlayerMenteeRemove event)
 	{
 		final Mentee mentee = event.getMentee();
-		final L2PcInstance mentor = event.getMentor();
-		final L2PcInstance player = mentee.getPlayerInstance();
+		final PlayerInstance mentor = event.getMentor();
+		final PlayerInstance player = mentee.getPlayerInstance();
 		
 		if (player != null)
 		{
@@ -440,7 +440,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 		event.getMentor().sendPacket(new ExMentorList(mentor));
 	}
 	
-	private void handleMenteeSkills(L2PcInstance player)
+	private void handleMenteeSkills(PlayerInstance player)
 	{
 		// Give mentee's buffs only if he didn't had them.
 		if (player.getKnownSkill(MENTEE_MENTOR_SUMMON.getSkillId()) == null)
@@ -450,7 +450,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 		}
 	}
 	
-	private void handleMentorSkills(L2PcInstance player)
+	private void handleMentorSkills(PlayerInstance player)
 	{
 		// Give mentor's buffs only if he didn't had them.
 		if (player.getKnownSkill(MENTOR_KNIGHTS_HARMONY.getSkillId()) == null)
@@ -462,7 +462,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 		}
 	}
 	
-	private void handleGraduateMentee(L2PcInstance player)
+	private void handleGraduateMentee(PlayerInstance player)
 	{
 		MentorManager.getInstance().cancelMentoringBuffs(player);
 		final Mentee mentor = MentorManager.getInstance().getMentor(player.getObjectId());
@@ -498,7 +498,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 	 * Verifies if player is mentee and if his current level should reward his mentor and if so sends a mail with reward.
 	 * @param player
 	 */
-	private void checkLevelForReward(L2PcInstance player)
+	private void checkLevelForReward(PlayerInstance player)
 	{
 		if (!MENTEE_COINS.containsKey(player.getLevel()))
 		{
@@ -518,12 +518,12 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 		}
 	}
 	
-	private void sendMail(L2PcInstance player, String title, String body, int itemId, long amount)
+	private void sendMail(PlayerInstance player, String title, String body, int itemId, long amount)
 	{
 		sendMail(player.getObjectId(), player, title, body, itemId, amount);
 	}
 	
-	private void sendMail(int objectId, L2PcInstance player, String title, String body, int itemId, long amount)
+	private void sendMail(int objectId, PlayerInstance player, String title, String body, int itemId, long amount)
 	{
 		final Message msg = new Message(MENTOR_GUIDE, objectId, title, body, MailType.MENTOR_NPC);
 		msg.createAttachments().addItem(getName(), itemId, amount, null, player);

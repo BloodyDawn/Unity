@@ -24,7 +24,7 @@ import java.util.List;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
@@ -39,7 +39,7 @@ public class Ground implements ITargetTypeHandler
 	public WorldObject[] getTargetList(Skill skill, Creature activeChar, boolean onlyFirst, Creature target)
 	{
 		final List<Creature> targetList = new ArrayList<>();
-		final L2PcInstance player = (L2PcInstance) activeChar;
+		final PlayerInstance player = (PlayerInstance) activeChar;
 		final int maxTargets = skill.getAffectLimit();
 		final boolean srcInArena = (activeChar.isInsideZone(ZoneId.PVP) && !activeChar.isInsideZone(ZoneId.SIEGE));
 		

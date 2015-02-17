@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.events.impl.character.player.mentoring;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.IBaseEvent;
 
@@ -27,16 +27,16 @@ import org.l2junity.gameserver.model.events.impl.IBaseEvent;
  */
 public class OnPlayerMenteeStatus implements IBaseEvent
 {
-	private final L2PcInstance _mentee;
+	private final PlayerInstance _mentee;
 	private final boolean _isOnline;
 	
-	public OnPlayerMenteeStatus(L2PcInstance mentee, boolean isOnline)
+	public OnPlayerMenteeStatus(PlayerInstance mentee, boolean isOnline)
 	{
 		_mentee = mentee;
 		_isOnline = isOnline;
 	}
 	
-	public L2PcInstance getMentee()
+	public PlayerInstance getMentee()
 	{
 		return _mentee;
 	}

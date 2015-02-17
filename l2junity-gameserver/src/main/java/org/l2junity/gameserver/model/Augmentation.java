@@ -24,7 +24,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.l2junity.gameserver.data.xml.impl.OptionData;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.options.Options;
 
 /**
@@ -69,7 +69,7 @@ public final class Augmentation
 			}
 		}
 		
-		public void applyBonus(L2PcInstance player)
+		public void applyBonus(PlayerInstance player)
 		{
 			// make sure the bonuses are not applied twice..
 			if (_active)
@@ -85,7 +85,7 @@ public final class Augmentation
 			_active = true;
 		}
 		
-		public void removeBonus(L2PcInstance player)
+		public void removeBonus(PlayerInstance player)
 		{
 			// make sure the bonuses are not removed twice
 			if (!_active)
@@ -120,7 +120,7 @@ public final class Augmentation
 	 * Applies the bonuses to the player.
 	 * @param player
 	 */
-	public void applyBonus(L2PcInstance player)
+	public void applyBonus(PlayerInstance player)
 	{
 		_boni.applyBonus(player);
 	}
@@ -129,7 +129,7 @@ public final class Augmentation
 	 * Removes the augmentation bonuses from the player.
 	 * @param player
 	 */
-	public void removeBonus(L2PcInstance player)
+	public void removeBonus(PlayerInstance player)
 	{
 		_boni.removeBonus(player);
 	}

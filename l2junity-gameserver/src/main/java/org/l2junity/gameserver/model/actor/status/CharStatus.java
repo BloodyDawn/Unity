@@ -28,7 +28,7 @@ import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.stat.CharStat;
 import org.l2junity.gameserver.model.stats.Formulas;
 
@@ -148,7 +148,7 @@ public class CharStatus
 		
 		if (attacker != null)
 		{
-			final L2PcInstance attackerPlayer = attacker.getActingPlayer();
+			final PlayerInstance attackerPlayer = attacker.getActingPlayer();
 			if ((attackerPlayer != null) && attackerPlayer.isGM() && !attackerPlayer.getAccessLevel().canGiveDamage())
 			{
 				return;

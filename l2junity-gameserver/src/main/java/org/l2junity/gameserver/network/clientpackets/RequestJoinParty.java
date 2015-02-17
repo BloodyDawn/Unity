@@ -22,7 +22,7 @@ import org.l2junity.gameserver.enums.PartyDistributionType;
 import org.l2junity.gameserver.model.BlockList;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.PartyRequest;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
@@ -50,8 +50,8 @@ public final class RequestJoinParty extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance requestor = getClient().getActiveChar();
-		L2PcInstance target = World.getInstance().getPlayer(_name);
+		PlayerInstance requestor = getClient().getActiveChar();
+		PlayerInstance target = World.getInstance().getPlayer(_name);
 		
 		if (requestor == null)
 		{
@@ -153,7 +153,7 @@ public final class RequestJoinParty extends L2GameClientPacket
 	 * @param target
 	 * @param requestor
 	 */
-	private void addTargetToParty(L2PcInstance target, L2PcInstance requestor)
+	private void addTargetToParty(PlayerInstance target, PlayerInstance requestor)
 	{
 		final Party party = requestor.getParty();
 		
@@ -191,7 +191,7 @@ public final class RequestJoinParty extends L2GameClientPacket
 	 * @param target
 	 * @param requestor
 	 */
-	private void createNewParty(L2PcInstance target, L2PcInstance requestor)
+	private void createNewParty(PlayerInstance target, PlayerInstance requestor)
 	{
 		final PartyDistributionType partyDistributionType = PartyDistributionType.findById(_partyDistributionTypeId);
 		if (partyDistributionType == null)

@@ -24,7 +24,7 @@ import java.sql.PreparedStatement;
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.ExWorldChatCnt;
 import org.l2junity.gameserver.taskmanager.Task;
 import org.l2junity.gameserver.taskmanager.TaskManager;
@@ -49,7 +49,7 @@ public class TaskDailyWorldChatPointReset extends Task
 			PreparedStatement ps = con.prepareStatement("UPDATE character_variables SET val = ? WHERE var = ?"))
 		{
 			ps.setInt(1, Config.WORLD_CHAT_POINTS_PER_DAY);
-			ps.setString(2, L2PcInstance.WORLD_CHAT_VARIABLE_NAME);
+			ps.setString(2, PlayerInstance.WORLD_CHAT_VARIABLE_NAME);
 			ps.executeUpdate();
 		}
 		catch (Exception e)

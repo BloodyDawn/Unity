@@ -20,7 +20,7 @@ package org.l2junity.gameserver.ai;
 
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.L2BoatInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.VehicleDeparture;
 import org.l2junity.gameserver.network.serverpackets.VehicleInfo;
 import org.l2junity.gameserver.network.serverpackets.VehicleStarted;
@@ -68,7 +68,7 @@ public class BoatAI extends VehicleAI
 	}
 	
 	@Override
-	public void describeStateToPlayer(L2PcInstance player)
+	public void describeStateToPlayer(PlayerInstance player)
 	{
 		if (_clientMoving)
 		{

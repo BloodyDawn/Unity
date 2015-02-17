@@ -28,7 +28,7 @@ import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.model.EnchantSkillLearn;
 import org.l2junity.gameserver.model.EnchantSkillGroup.EnchantSkillHolder;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -66,7 +66,7 @@ public final class RequestExEnchantSkillRouteChange extends L2GameClientPacket
 			return;
 		}
 		
-		L2PcInstance player = getClient().getActiveChar();
+		PlayerInstance player = getClient().getActiveChar();
 		if (player == null)
 		{
 			return;

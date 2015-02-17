@@ -21,14 +21,14 @@ package handlers.actionshifthandlers;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.handler.IActionShiftHandler;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 
 public class L2ItemInstanceActionShift implements IActionShiftHandler
 {
 	@Override
-	public boolean action(L2PcInstance activeChar, WorldObject target, boolean interact)
+	public boolean action(PlayerInstance activeChar, WorldObject target, boolean interact)
 	{
 		if (activeChar.isGM())
 		{

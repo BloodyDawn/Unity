@@ -26,7 +26,7 @@ import java.util.logging.Level;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 /**
@@ -50,7 +50,7 @@ public class Mail extends ItemContainer
 	}
 	
 	@Override
-	public L2PcInstance getOwner()
+	public PlayerInstance getOwner()
 	{
 		return null;
 	}

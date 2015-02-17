@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.actor.request;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 /**
@@ -30,7 +30,7 @@ public final class EnchantItemRequest extends AbstractRequest
 	private volatile int _enchantingScrollObjectId;
 	private volatile int _supportItemObjectId;
 	
-	public EnchantItemRequest(L2PcInstance activeChar, int enchantingScrollObjectId)
+	public EnchantItemRequest(PlayerInstance activeChar, int enchantingScrollObjectId)
 	{
 		super(activeChar);
 		_enchantingScrollObjectId = enchantingScrollObjectId;

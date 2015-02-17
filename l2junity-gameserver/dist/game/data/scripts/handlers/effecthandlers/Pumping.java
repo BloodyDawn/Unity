@@ -22,7 +22,7 @@ import org.l2junity.gameserver.data.xml.impl.FishingRodsData;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
@@ -75,7 +75,7 @@ public final class Pumping extends AbstractEffect
 			return;
 		}
 		
-		final L2PcInstance player = activeChar.getActingPlayer();
+		final PlayerInstance player = activeChar.getActingPlayer();
 		final L2Fishing fish = player.getFishCombat();
 		if (fish == null)
 		{

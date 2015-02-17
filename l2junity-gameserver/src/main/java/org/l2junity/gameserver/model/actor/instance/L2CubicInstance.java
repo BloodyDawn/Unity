@@ -77,7 +77,7 @@ public final class L2CubicInstance implements IIdentifiable
 	public static final int SKILL_CUBIC_HEAL = 4051;
 	public static final int SKILL_CUBIC_CURE = 5579;
 	
-	private final L2PcInstance _owner;
+	private final PlayerInstance _owner;
 	private Creature _target;
 	
 	private final int _cubicId;
@@ -93,7 +93,7 @@ public final class L2CubicInstance implements IIdentifiable
 	private Future<?> _disappearTask;
 	private Future<?> _actionTask;
 	
-	public L2CubicInstance(L2PcInstance owner, int cubicId, int level, int cubicPower, int cubicDelay, int cubicSkillChance, int cubicMaxCount, int cubicDuration, boolean givenByOther)
+	public L2CubicInstance(PlayerInstance owner, int cubicId, int level, int cubicPower, int cubicDelay, int cubicSkillChance, int cubicMaxCount, int cubicDuration, boolean givenByOther)
 	{
 		_owner = owner;
 		_cubicId = cubicId;
@@ -198,7 +198,7 @@ public final class L2CubicInstance implements IIdentifiable
 		return _cubicId;
 	}
 	
-	public L2PcInstance getOwner()
+	public PlayerInstance getOwner()
 	{
 		return _owner;
 	}
@@ -266,7 +266,7 @@ public final class L2CubicInstance implements IIdentifiable
 				
 				if (ownerTarget.getActingPlayer() != null)
 				{
-					L2PcInstance target = ownerTarget.getActingPlayer();
+					PlayerInstance target = ownerTarget.getActingPlayer();
 					if (enemyTeam.containsPlayer(target.getObjectId()) && !(target.isDead()))
 					{
 						_target = (Creature) ownerTarget;
@@ -277,8 +277,8 @@ public final class L2CubicInstance implements IIdentifiable
 			// Duel targeting
 			if (_owner.isInDuel())
 			{
-				L2PcInstance PlayerA = DuelManager.getInstance().getDuel(_owner.getDuelId()).getPlayerA();
-				L2PcInstance PlayerB = DuelManager.getInstance().getDuel(_owner.getDuelId()).getPlayerB();
+				PlayerInstance PlayerA = DuelManager.getInstance().getDuel(_owner.getDuelId()).getPlayerA();
+				PlayerInstance PlayerB = DuelManager.getInstance().getDuel(_owner.getDuelId()).getPlayerB();
 				
 				if (DuelManager.getInstance().getDuel(_owner.getDuelId()).isPartyDuel())
 				{
@@ -358,7 +358,7 @@ public final class L2CubicInstance implements IIdentifiable
 				{
 					if (ownerTarget instanceof Playable)
 					{
-						final L2PcInstance targetPlayer = ownerTarget.getActingPlayer();
+						final PlayerInstance targetPlayer = ownerTarget.getActingPlayer();
 						if ((targetPlayer != null) && (targetPlayer.getOlympiadGameId() == _owner.getOlympiadGameId()) && (targetPlayer.getOlympiadSide() != _owner.getOlympiadSide()))
 						{
 							_target = (Creature) ownerTarget;
@@ -398,7 +398,7 @@ public final class L2CubicInstance implements IIdentifiable
 				}
 				
 				// get target in pvp or in siege
-				L2PcInstance enemy = null;
+				PlayerInstance enemy = null;
 				
 				if (((_owner.getPvpFlag() > 0) && !_owner.isInsideZone(ZoneId.PEACE)) || _owner.isInsideZone(ZoneId.PVP))
 				{
@@ -586,7 +586,7 @@ public final class L2CubicInstance implements IIdentifiable
 			
 			// TODO: Unhardcode fixed value
 			double hpAdd = (0.4 * damage);
-			L2PcInstance owner = activeCubic.getOwner();
+			PlayerInstance owner = activeCubic.getOwner();
 			double hp = ((owner.getCurrentHp() + hpAdd) > owner.getMaxHp() ? owner.getMaxHp() : (owner.getCurrentHp() + hpAdd));
 			
 			owner.setCurrentHp(hp);

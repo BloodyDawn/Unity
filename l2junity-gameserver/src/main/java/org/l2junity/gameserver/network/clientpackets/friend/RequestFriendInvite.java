@@ -20,7 +20,7 @@ package org.l2junity.gameserver.network.clientpackets.friend;
 
 import org.l2junity.gameserver.model.BlockList;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
@@ -41,14 +41,14 @@ public final class RequestFriendInvite extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = getActiveChar();
 		
 		if (activeChar == null)
 		{
 			return;
 		}
 		
-		final L2PcInstance friend = World.getInstance().getPlayer(_name);
+		final PlayerInstance friend = World.getInstance().getPlayer(_name);
 		
 		// Target is not found in the game.
 		if ((friend == null) || !friend.isOnline() || friend.isInvisible())

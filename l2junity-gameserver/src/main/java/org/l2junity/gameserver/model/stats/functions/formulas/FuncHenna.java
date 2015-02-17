@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
@@ -51,7 +51,7 @@ public class FuncHenna extends AbstractFunction
 	@Override
 	public double calc(Creature effector, Creature effected, Skill skill, double initVal)
 	{
-		L2PcInstance pc = effector.getActingPlayer();
+		PlayerInstance pc = effector.getActingPlayer();
 		double value = initVal;
 		if (pc != null)
 		{

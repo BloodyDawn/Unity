@@ -18,20 +18,20 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author Sdw
  */
 public class ExShowBeautyMenu extends L2GameServerPacket
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final int _type;
 	
 	public final static int MODIFY_APPEARANCE = 0;
 	public final static int RESTORE_APPEARANCE = 1;
 	
-	public ExShowBeautyMenu(L2PcInstance activeChar, int type)
+	public ExShowBeautyMenu(PlayerInstance activeChar, int type)
 	{
 		_activeChar = activeChar;
 		_type = type;

@@ -21,7 +21,7 @@ package handlers.itemhandlers;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -40,7 +40,7 @@ public class RollingDice implements IItemHandler
 			return false;
 		}
 		
-		L2PcInstance activeChar = playable.getActingPlayer();
+		PlayerInstance activeChar = playable.getActingPlayer();
 		int itemId = item.getId();
 		
 		if (activeChar.isInOlympiadMode())
@@ -79,7 +79,7 @@ public class RollingDice implements IItemHandler
 	 * @param player
 	 * @return
 	 */
-	private int rollDice(L2PcInstance player)
+	private int rollDice(PlayerInstance player)
 	{
 		// Check if the dice is ready
 		if (!player.getFloodProtectors().getRollDice().tryPerformAction("roll dice"))

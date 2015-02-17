@@ -23,7 +23,7 @@ import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.handler.IChatHandler;
 import org.l2junity.gameserver.model.PartyMatchRoom;
 import org.l2junity.gameserver.model.PartyMatchRoomList;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.CreatureSay;
 
@@ -39,7 +39,7 @@ public class ChatPartyMatchRoom implements IChatHandler
 	};
 	
 	@Override
-	public void handleChat(ChatType type, L2PcInstance activeChar, String target, String text)
+	public void handleChat(ChatType type, PlayerInstance activeChar, String target, String text)
 	{
 		if (activeChar.isInPartyMatchRoom())
 		{
@@ -53,7 +53,7 @@ public class ChatPartyMatchRoom implements IChatHandler
 				}
 				
 				final CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getName(), text);
-				for (L2PcInstance _member : _room.getPartyMembers())
+				for (PlayerInstance _member : _room.getPartyMembers())
 				{
 					_member.sendPacket(cs);
 				}

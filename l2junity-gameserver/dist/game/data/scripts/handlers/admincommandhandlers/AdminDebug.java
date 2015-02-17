@@ -22,7 +22,7 @@ import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 
 public class AdminDebug implements IAdminCommandHandler
@@ -33,7 +33,7 @@ public class AdminDebug implements IAdminCommandHandler
 	};
 	
 	@Override
-	public final boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public final boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		String[] commandSplit = command.split(" ");
 		if (ADMIN_COMMANDS[0].equalsIgnoreCase(commandSplit[0]))
@@ -71,7 +71,7 @@ public class AdminDebug implements IAdminCommandHandler
 		return ADMIN_COMMANDS;
 	}
 	
-	private final void setDebug(L2PcInstance activeChar, Creature target)
+	private final void setDebug(PlayerInstance activeChar, Creature target)
 	{
 		if (target.isDebug())
 		{

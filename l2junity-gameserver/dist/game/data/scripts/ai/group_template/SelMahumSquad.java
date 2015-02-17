@@ -26,7 +26,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.util.Util;
@@ -87,7 +87,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		switch (event)
 		{
@@ -189,7 +189,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
 		if ((npc.getId() == CHEF) && (npc.getVariables().getInt("BUSY_STATE") == 0))
 		{
@@ -211,7 +211,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFactionCall(Npc npc, Npc caller, L2PcInstance attacker, boolean isSummon)
+	public String onFactionCall(Npc npc, Npc caller, PlayerInstance attacker, boolean isSummon)
 	{
 		handlePreAttackMotion(npc);
 		return super.onFactionCall(npc, caller, attacker, isSummon);
@@ -299,7 +299,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		if (npc.isMonster() && (npc.getVariables().getInt("REWARD_TIME_GONE") == 0))
 		{
@@ -330,7 +330,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSkillSee(Npc npc, L2PcInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public String onSkillSee(Npc npc, PlayerInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
 		if ((npc.getId() == STOVE) && (skill.getId() == 9075) && Util.contains(targets, npc))
 		{
@@ -360,7 +360,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpellFinished(Npc npc, L2PcInstance player, Skill skill)
+	public String onSpellFinished(Npc npc, PlayerInstance player, Skill skill)
 	{
 		if ((skill != null) && (skill.getId() == 6330))
 		{
@@ -369,7 +369,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 		return super.onSpellFinished(npc, player, skill);
 	}
 	
-	private void healPlayer(Npc npc, L2PcInstance player)
+	private void healPlayer(Npc npc, PlayerInstance player)
 	{
 		if ((player != null) && !player.isDead() && (npc.getVariables().getInt("INVUL_REMOVE_TIMER_STARTED") != 1) && ((npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK) || (npc.getAI().getIntention() == CtrlIntention.AI_INTENTION_CAST)))
 		{

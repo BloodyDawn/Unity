@@ -28,7 +28,7 @@ import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.AccessLevel;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 
 /**
@@ -42,7 +42,7 @@ public final class AdminChangeAccessLevel implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		String[] parts = command.split(" ");
 		if (parts.length == 2)
@@ -50,9 +50,9 @@ public final class AdminChangeAccessLevel implements IAdminCommandHandler
 			try
 			{
 				int lvl = Integer.parseInt(parts[1]);
-				if (activeChar.getTarget() instanceof L2PcInstance)
+				if (activeChar.getTarget() instanceof PlayerInstance)
 				{
-					onlineChange(activeChar, (L2PcInstance) activeChar.getTarget(), lvl);
+					onlineChange(activeChar, (PlayerInstance) activeChar.getTarget(), lvl);
 				}
 				else
 				{
@@ -68,7 +68,7 @@ public final class AdminChangeAccessLevel implements IAdminCommandHandler
 		{
 			String name = parts[1];
 			int lvl = Integer.parseInt(parts[2]);
-			L2PcInstance player = World.getInstance().getPlayer(name);
+			PlayerInstance player = World.getInstance().getPlayer(name);
 			if (player != null)
 			{
 				onlineChange(activeChar, player, lvl);
@@ -116,7 +116,7 @@ public final class AdminChangeAccessLevel implements IAdminCommandHandler
 	 * @param player the online target
 	 * @param lvl the access level
 	 */
-	private static void onlineChange(L2PcInstance activeChar, L2PcInstance player, int lvl)
+	private static void onlineChange(PlayerInstance activeChar, PlayerInstance player, int lvl)
 	{
 		if (lvl >= 0)
 		{

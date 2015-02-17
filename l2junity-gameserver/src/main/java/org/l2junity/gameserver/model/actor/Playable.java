@@ -21,7 +21,7 @@ package org.l2junity.gameserver.model.actor;
 import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.knownlist.PlayableKnownList;
 import org.l2junity.gameserver.model.actor.stat.PlayableStat;
 import org.l2junity.gameserver.model.actor.status.PlayableStatus;
@@ -47,7 +47,7 @@ import org.l2junity.gameserver.network.serverpackets.EtcStatusUpdate;
 public abstract class Playable extends Creature
 {
 	private Creature _lockedTarget = null;
-	private L2PcInstance transferDmgTo = null;
+	private PlayerInstance transferDmgTo = null;
 	
 	/**
 	 * Constructor of L2Playable.<br>
@@ -152,7 +152,7 @@ public abstract class Playable extends Creature
 		}
 		if (isPlayer())
 		{
-			L2PcInstance activeChar = getActingPlayer();
+			PlayerInstance activeChar = getActingPlayer();
 			
 			if (activeChar.hasCharmOfCourage())
 			{
@@ -179,7 +179,7 @@ public abstract class Playable extends Creature
 		}
 		
 		// Notify Quest of L2Playable's death
-		L2PcInstance actingPlayer = getActingPlayer();
+		PlayerInstance actingPlayer = getActingPlayer();
 		
 		if (!actingPlayer.isNotifyQuestOfDeathEmpty())
 		{
@@ -200,7 +200,7 @@ public abstract class Playable extends Creature
 		
 		if (killer != null)
 		{
-			L2PcInstance player = killer.getActingPlayer();
+			PlayerInstance player = killer.getActingPlayer();
 			
 			if (player != null)
 			{
@@ -229,7 +229,7 @@ public abstract class Playable extends Creature
 			return false; // Target is not a L2Playable
 		}
 		
-		final L2PcInstance player = getActingPlayer();
+		final PlayerInstance player = getActingPlayer();
 		if (player == null)
 		{
 			return false; // Active player is null
@@ -240,7 +240,7 @@ public abstract class Playable extends Creature
 			return false; // Active player has karma
 		}
 		
-		final L2PcInstance targetPlayer = target.getActingPlayer();
+		final PlayerInstance targetPlayer = target.getActingPlayer();
 		if (targetPlayer == null)
 		{
 			return false; // Target player is null
@@ -337,12 +337,12 @@ public abstract class Playable extends Creature
 		_lockedTarget = cha;
 	}
 	
-	public void setTransferDamageTo(L2PcInstance val)
+	public void setTransferDamageTo(PlayerInstance val)
 	{
 		transferDmgTo = val;
 	}
 	
-	public L2PcInstance getTransferingDamageTo()
+	public PlayerInstance getTransferingDamageTo()
 	{
 		return transferDmgTo;
 	}

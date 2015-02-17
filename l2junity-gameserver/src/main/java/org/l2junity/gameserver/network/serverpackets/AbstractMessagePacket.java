@@ -35,7 +35,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.items.L2Item;
@@ -225,7 +225,7 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 		return addString(cha.getName());
 	}
 	
-	public final T addPcName(final L2PcInstance pc)
+	public final T addPcName(final PlayerInstance pc)
 	{
 		append(new SMParam(TYPE_PLAYER_NAME, pc.getAppearance().getVisibleName()));
 		return (T) this;

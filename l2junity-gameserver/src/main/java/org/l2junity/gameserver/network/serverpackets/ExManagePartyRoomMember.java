@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.PartyMatchRoom;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * Mode:
@@ -32,11 +32,11 @@ import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExManagePartyRoomMember extends L2GameServerPacket
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final PartyMatchRoom _room;
 	private final int _mode;
 	
-	public ExManagePartyRoomMember(L2PcInstance player, PartyMatchRoom room, int mode)
+	public ExManagePartyRoomMember(PlayerInstance player, PartyMatchRoom room, int mode)
 	{
 		_activeChar = player;
 		_room = room;

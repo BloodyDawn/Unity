@@ -24,7 +24,7 @@ import org.l2junity.gameserver.instancemanager.RaidBossSpawnManager;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * This class handles following admin commands: - delete = deletes target
@@ -38,7 +38,7 @@ public class AdminDelete implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		if (command.equals("admin_delete"))
 		{
@@ -54,7 +54,7 @@ public class AdminDelete implements IAdminCommandHandler
 	}
 	
 	// TODO: add possibility to delete any L2Object (except L2PcInstance)
-	private void handleDelete(L2PcInstance activeChar)
+	private void handleDelete(PlayerInstance activeChar)
 	{
 		WorldObject obj = activeChar.getTarget();
 		if (obj instanceof Npc)

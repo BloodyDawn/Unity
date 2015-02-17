@@ -18,14 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author mrTJO
  */
 public class ExCubeGameRemovePlayer extends L2GameServerPacket
 {
-	L2PcInstance _player;
+	PlayerInstance _player;
 	boolean _isRedTeam;
 	
 	/**
@@ -33,7 +33,7 @@ public class ExCubeGameRemovePlayer extends L2GameServerPacket
 	 * @param player Player to Remove
 	 * @param isRedTeam Is Player from Red Team?
 	 */
-	public ExCubeGameRemovePlayer(L2PcInstance player, boolean isRedTeam)
+	public ExCubeGameRemovePlayer(PlayerInstance player, boolean isRedTeam)
 	{
 		_player = player;
 		_isRedTeam = isRedTeam;

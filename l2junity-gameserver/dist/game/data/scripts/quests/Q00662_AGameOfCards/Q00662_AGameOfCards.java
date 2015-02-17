@@ -26,7 +26,7 @@ import java.util.Map;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
@@ -100,7 +100,7 @@ public final class Q00662_AGameOfCards extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState st = getQuestState(player, false);
 		String htmltext = null;
@@ -609,7 +609,7 @@ public final class Q00662_AGameOfCards extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
@@ -708,15 +708,15 @@ public final class Q00662_AGameOfCards extends Quest
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
-		final List<L2PcInstance> players = new ArrayList<>();
+		final List<PlayerInstance> players = new ArrayList<>();
 		players.add(killer);
 		players.add(killer);
 		
 		if (killer.isInParty())
 		{
-			for (L2PcInstance member : killer.getParty().getMembers())
+			for (PlayerInstance member : killer.getParty().getMembers())
 			{
 				if (getQuestState(member, false) != null)
 				{
@@ -725,7 +725,7 @@ public final class Q00662_AGameOfCards extends Quest
 			}
 		}
 		
-		final L2PcInstance player = players.get(Rnd.get(players.size()));
+		final PlayerInstance player = players.get(Rnd.get(players.size()));
 		if ((player != null) && Util.checkIfInRange(1500, npc, player, false))
 		{
 			if (MONSTERS.get(npc.getId()) < getRandom(1000))

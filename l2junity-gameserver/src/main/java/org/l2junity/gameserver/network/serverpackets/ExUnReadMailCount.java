@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.instancemanager.MailManager;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author Sdw
@@ -28,7 +28,7 @@ public class ExUnReadMailCount extends L2GameServerPacket
 {
 	private final int _mailUnreadCount;
 	
-	public ExUnReadMailCount(L2PcInstance player)
+	public ExUnReadMailCount(PlayerInstance player)
 	{
 		_mailUnreadCount = (int) MailManager.getInstance().getUnreadCount(player);
 	}

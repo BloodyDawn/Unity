@@ -25,7 +25,7 @@ import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.handler.CommunityBoardHandler;
 import org.l2junity.gameserver.handler.IWriteBoardHandler;
 import org.l2junity.gameserver.model.L2Clan;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
 
@@ -49,7 +49,7 @@ public class ClanBoard implements IWriteBoardHandler
 	}
 	
 	@Override
-	public boolean parseCommunityBoardCommand(String command, L2PcInstance activeChar)
+	public boolean parseCommunityBoardCommand(String command, PlayerInstance activeChar)
 	{
 		if (command.equals("_bbsclan"))
 		{
@@ -139,7 +139,7 @@ public class ClanBoard implements IWriteBoardHandler
 		return true;
 	}
 	
-	private void clanNotice(L2PcInstance activeChar, int clanId)
+	private void clanNotice(PlayerInstance activeChar, int clanId)
 	{
 		final L2Clan cl = ClanTable.getInstance().getClan(clanId);
 		if (cl != null)
@@ -186,7 +186,7 @@ public class ClanBoard implements IWriteBoardHandler
 		}
 	}
 	
-	private void clanList(L2PcInstance activeChar, int index)
+	private void clanList(PlayerInstance activeChar, int index)
 	{
 		if (index < 1)
 		{
@@ -277,12 +277,12 @@ public class ClanBoard implements IWriteBoardHandler
 		CommunityBoardHandler.separateAndSend(html.toString(), activeChar);
 	}
 	
-	private void clanHome(L2PcInstance activeChar)
+	private void clanHome(PlayerInstance activeChar)
 	{
 		clanHome(activeChar, activeChar.getClan().getId());
 	}
 	
-	private void clanHome(L2PcInstance activeChar, int clanId)
+	private void clanHome(PlayerInstance activeChar, int clanId)
 	{
 		L2Clan cl = ClanTable.getInstance().getClan(clanId);
 		if (cl != null)
@@ -309,7 +309,7 @@ public class ClanBoard implements IWriteBoardHandler
 	}
 	
 	@Override
-	public boolean writeCommunityBoardCommand(L2PcInstance activeChar, String arg1, String arg2, String arg3, String arg4, String arg5)
+	public boolean writeCommunityBoardCommand(PlayerInstance activeChar, String arg1, String arg2, String arg3, String arg4, String arg5)
 	{
 		// TODO: Implement.
 		return false;

@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.actor.tasks.player;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * Task dedicated to reset player's current souls.
@@ -26,9 +26,9 @@ import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ResetSoulsTask implements Runnable
 {
-	private final L2PcInstance _player;
+	private final PlayerInstance _player;
 	
-	public ResetSoulsTask(L2PcInstance player)
+	public ResetSoulsTask(PlayerInstance player)
 	{
 		_player = player;
 	}

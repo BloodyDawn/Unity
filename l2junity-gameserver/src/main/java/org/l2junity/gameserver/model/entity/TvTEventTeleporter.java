@@ -23,12 +23,12 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.Team;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public class TvTEventTeleporter implements Runnable
 {
 	/** The instance of the player to teleport */
-	private L2PcInstance _playerInstance = null;
+	private PlayerInstance _playerInstance = null;
 	/** Coordinates of the spot to teleport to */
 	private int[] _coordinates = new int[3];
 	/** Admin removed this player from event */
@@ -41,7 +41,7 @@ public class TvTEventTeleporter implements Runnable
 	 * @param fastSchedule
 	 * @param adminRemove
 	 */
-	public TvTEventTeleporter(L2PcInstance playerInstance, int[] coordinates, boolean fastSchedule, boolean adminRemove)
+	public TvTEventTeleporter(PlayerInstance playerInstance, int[] coordinates, boolean fastSchedule, boolean adminRemove)
 	{
 		_playerInstance = playerInstance;
 		_coordinates = coordinates;

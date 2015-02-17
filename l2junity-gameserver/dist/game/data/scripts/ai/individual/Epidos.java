@@ -25,7 +25,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.util.MinionList;
 
 import ai.npc.AbstractNpcAI;
@@ -69,7 +69,7 @@ public final class Epidos extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if (event.equalsIgnoreCase("check_minions"))
 		{
@@ -117,7 +117,7 @@ public final class Epidos extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		if (npc.isInsideRadius(-45474, 247450, -13994, 2000, true, false))
 		{

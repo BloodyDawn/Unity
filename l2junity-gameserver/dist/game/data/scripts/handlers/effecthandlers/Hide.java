@@ -21,7 +21,7 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -42,7 +42,7 @@ public final class Hide extends AbstractEffect
 	{
 		if (info.getEffected().isPlayer())
 		{
-			L2PcInstance activeChar = info.getEffected().getActingPlayer();
+			PlayerInstance activeChar = info.getEffected().getActingPlayer();
 			if (!activeChar.inObserverMode())
 			{
 				activeChar.setInvisible(false);
@@ -55,7 +55,7 @@ public final class Hide extends AbstractEffect
 	{
 		if (info.getEffected().isPlayer())
 		{
-			L2PcInstance activeChar = info.getEffected().getActingPlayer();
+			PlayerInstance activeChar = info.getEffected().getActingPlayer();
 			activeChar.setInvisible(true);
 			
 			if ((activeChar.getAI().getNextIntention() != null) && (activeChar.getAI().getNextIntention().getCtrlIntention() == CtrlIntention.AI_INTENTION_ATTACK))

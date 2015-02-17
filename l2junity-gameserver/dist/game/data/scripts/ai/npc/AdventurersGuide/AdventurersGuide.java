@@ -19,7 +19,7 @@
 package ai.npc.AdventurersGuide;
 
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.Skill;
 
@@ -60,7 +60,7 @@ public final class AdventurersGuide extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String htmltext = null;
 		
@@ -106,12 +106,12 @@ public final class AdventurersGuide extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		return "guide.html";
 	}
 	
-	private String applyBuffs(Npc npc, L2PcInstance player, Skill skill)
+	private String applyBuffs(Npc npc, PlayerInstance player, Skill skill)
 	{
 		if (player.getLevel() > 90)
 		{

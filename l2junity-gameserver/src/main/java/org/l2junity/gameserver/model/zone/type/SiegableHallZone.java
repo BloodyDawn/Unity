@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.l2junity.gameserver.model.Location;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author BiggBoss
@@ -60,7 +60,7 @@ public final class SiegableHallZone extends ClanHallZone
 	
 	public void banishNonSiegeParticipants()
 	{
-		for (L2PcInstance player : getPlayersInside())
+		for (PlayerInstance player : getPlayersInside())
 		{
 			if ((player != null) && player.isInHideoutSiege())
 			{

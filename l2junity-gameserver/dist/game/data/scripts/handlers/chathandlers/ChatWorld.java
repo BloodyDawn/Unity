@@ -27,7 +27,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.handler.IChatHandler;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.CreatureSay;
 import org.l2junity.gameserver.network.serverpackets.ExWorldChatCnt;
@@ -47,7 +47,7 @@ public final class ChatWorld implements IChatHandler
 	};
 	
 	@Override
-	public void handleChat(ChatType type, L2PcInstance activeChar, String target, String text)
+	public void handleChat(ChatType type, PlayerInstance activeChar, String target, String text)
 	{
 		final Instant now = Instant.now();
 		if (!REUSE.isEmpty())

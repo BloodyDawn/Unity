@@ -57,7 +57,7 @@ public final class L2TrapInstance extends Npc
 	private boolean _isInArena = false;
 	private boolean _isTriggered;
 	private final int _lifeTime;
-	private L2PcInstance _owner;
+	private PlayerInstance _owner;
 	private final List<Integer> _playersWhoDetectedMe = new ArrayList<>();
 	private final SkillHolder _skill;
 	private int _remainingTime;
@@ -84,7 +84,7 @@ public final class L2TrapInstance extends Npc
 		}
 	}
 	
-	public L2TrapInstance(L2NpcTemplate template, L2PcInstance owner, int lifeTime)
+	public L2TrapInstance(L2NpcTemplate template, PlayerInstance owner, int lifeTime)
 	{
 		this(template, owner.getInstanceId(), lifeTime);
 		_owner = owner;
@@ -93,7 +93,7 @@ public final class L2TrapInstance extends Npc
 	@Override
 	public void broadcastPacket(L2GameServerPacket mov)
 	{
-		for (L2PcInstance player : getKnownList().getKnownPlayers().values())
+		for (PlayerInstance player : getKnownList().getKnownPlayers().values())
 		{
 			if ((player != null) && (_isTriggered || canBeSeen(player)))
 			{
@@ -105,7 +105,7 @@ public final class L2TrapInstance extends Npc
 	@Override
 	public void broadcastPacket(L2GameServerPacket mov, int radiusInKnownlist)
 	{
-		for (L2PcInstance player : getKnownList().getKnownPlayers().values())
+		for (PlayerInstance player : getKnownList().getKnownPlayers().values())
 		{
 			if ((player != null) && isInsideRadius(player, radiusInKnownlist, false, false) && (_isTriggered || canBeSeen(player)))
 			{
@@ -135,16 +135,16 @@ public final class L2TrapInstance extends Npc
 			return true;
 		}
 		
-		if (cha instanceof L2PcInstance)
+		if (cha instanceof PlayerInstance)
 		{
 			// observers can't see trap
-			if (((L2PcInstance) cha).inObserverMode())
+			if (((PlayerInstance) cha).inObserverMode())
 			{
 				return false;
 			}
 			
 			// olympiad competitors can't see trap
-			if (_owner.isInOlympiadMode() && ((L2PcInstance) cha).isInOlympiadMode() && (((L2PcInstance) cha).getOlympiadSide() != _owner.getOlympiadSide()))
+			if (_owner.isInOlympiadMode() && ((PlayerInstance) cha).isInOlympiadMode() && (((PlayerInstance) cha).getOlympiadSide() != _owner.getOlympiadSide()))
 			{
 				return false;
 			}
@@ -175,7 +175,7 @@ public final class L2TrapInstance extends Npc
 		}
 		
 		// observers
-		if ((target instanceof L2PcInstance) && ((L2PcInstance) target).inObserverMode())
+		if ((target instanceof PlayerInstance) && ((PlayerInstance) target).inObserverMode())
 		{
 			return false;
 		}
@@ -183,7 +183,7 @@ public final class L2TrapInstance extends Npc
 		// olympiad own team and their summons not attacked
 		if ((_owner != null) && _owner.isInOlympiadMode())
 		{
-			final L2PcInstance player = target.getActingPlayer();
+			final PlayerInstance player = target.getActingPlayer();
 			if ((player != null) && player.isInOlympiadMode() && (player.getOlympiadSide() == _owner.getOlympiadSide()))
 			{
 				return false;
@@ -203,7 +203,7 @@ public final class L2TrapInstance extends Npc
 				return true;
 			}
 			
-			final L2PcInstance player = target.getActingPlayer();
+			final PlayerInstance player = target.getActingPlayer();
 			if ((player == null) || ((player.getPvpFlag() == 0) && (player.getKarma() == 0)))
 			{
 				return false;
@@ -224,7 +224,7 @@ public final class L2TrapInstance extends Npc
 	}
 	
 	@Override
-	public L2PcInstance getActingPlayer()
+	public PlayerInstance getActingPlayer()
 	{
 		return _owner;
 	}
@@ -250,7 +250,7 @@ public final class L2TrapInstance extends Npc
 	 * Get the owner of this trap.
 	 * @return the owner
 	 */
-	public L2PcInstance getOwner()
+	public PlayerInstance getOwner()
 	{
 		return _owner;
 	}
@@ -320,7 +320,7 @@ public final class L2TrapInstance extends Npc
 			return;
 		}
 		
-		if (_owner.isInOlympiadMode() && (target instanceof L2PcInstance) && ((L2PcInstance) target).isInOlympiadMode() && (((L2PcInstance) target).getOlympiadGameId() == _owner.getOlympiadGameId()))
+		if (_owner.isInOlympiadMode() && (target instanceof PlayerInstance) && ((PlayerInstance) target).isInOlympiadMode() && (((PlayerInstance) target).getOlympiadGameId() == _owner.getOlympiadGameId()))
 		{
 			OlympiadGameManager.getInstance().notifyCompetitorDamage(getOwner(), damage);
 		}
@@ -341,7 +341,7 @@ public final class L2TrapInstance extends Npc
 	}
 	
 	@Override
-	public void sendInfo(L2PcInstance activeChar)
+	public void sendInfo(PlayerInstance activeChar)
 	{
 		if (_isTriggered || canBeSeen(activeChar))
 		{

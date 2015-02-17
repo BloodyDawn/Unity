@@ -69,7 +69,7 @@ public final class L2TeleporterInstance extends Npc
 	}
 	
 	@Override
-	public void onBypassFeedback(L2PcInstance player, String command)
+	public void onBypassFeedback(PlayerInstance player, String command)
 	{
 		final StringTokenizer st = new StringTokenizer(command, " ");
 		final String cmd = st.nextToken();
@@ -221,7 +221,7 @@ public final class L2TeleporterInstance extends Npc
 	 * @param loc
 	 * @return
 	 */
-	private long calculateFee(L2PcInstance player, TeleportType type, TeleportLocation loc)
+	private long calculateFee(PlayerInstance player, TeleportType type, TeleportLocation loc)
 	{
 		if (type == TeleportType.NORMAL)
 		{
@@ -241,7 +241,7 @@ public final class L2TeleporterInstance extends Npc
 		return loc.getFeeCount();
 	}
 	
-	protected boolean shouldPayFee(L2PcInstance player, TeleportType type, TeleportLocation loc)
+	protected boolean shouldPayFee(PlayerInstance player, TeleportType type, TeleportLocation loc)
 	{
 		return (type != TeleportType.NORMAL) || (!Config.ALT_GAME_FREE_TELEPORT && ((player.getLevel() > 76) || player.isSubClassActive()) && ((loc.getFeeId() != 0) && (loc.getFeeCount() > 0)));
 	}
@@ -313,7 +313,7 @@ public final class L2TeleporterInstance extends Npc
 		return "Unknown item: " + itemId;
 	}
 	
-	private void processLegacyBypass(L2PcInstance player, String command)
+	private void processLegacyBypass(PlayerInstance player, String command)
 	{
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 		
@@ -428,7 +428,7 @@ public final class L2TeleporterInstance extends Npc
 		return "data/html/teleporter/" + pom + ".htm";
 	}
 	
-	private void showNewbieHtml(L2PcInstance player)
+	private void showNewbieHtml(PlayerInstance player)
 	{
 		if (player == null)
 		{
@@ -449,7 +449,7 @@ public final class L2TeleporterInstance extends Npc
 		player.sendPacket(html);
 	}
 	
-	private void showHalfPriceHtml(L2PcInstance player)
+	private void showHalfPriceHtml(PlayerInstance player)
 	{
 		if (player == null)
 		{
@@ -471,7 +471,7 @@ public final class L2TeleporterInstance extends Npc
 	}
 	
 	@Override
-	public void showChatWindow(L2PcInstance player)
+	public void showChatWindow(PlayerInstance player)
 	{
 		String filename = "data/html/teleporter/castleteleporter-no.htm";
 		
@@ -500,7 +500,7 @@ public final class L2TeleporterInstance extends Npc
 		player.sendPacket(html);
 	}
 	
-	private void doTeleport(L2PcInstance player, int val)
+	private void doTeleport(PlayerInstance player, int val)
 	{
 		L2TeleportLocation list = TeleportLocationTable.getInstance().getTemplate(val);
 		if (list != null)
@@ -574,7 +574,7 @@ public final class L2TeleporterInstance extends Npc
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
-	private int validateCondition(L2PcInstance player)
+	private int validateCondition(PlayerInstance player)
 	{
 		// Teleporter isn't on castle ground
 		if (CastleManager.getInstance().getCastleIndex(this) < 0)

@@ -19,7 +19,7 @@
 package hellbound.AI.NPC.Solomon;
 
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 import hellbound.HellboundEngine;
 import ai.npc.AbstractNpcAI;
@@ -40,7 +40,7 @@ public final class Solomon extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onFirstTalk(Npc npc, L2PcInstance player)
+	public final String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		if (HellboundEngine.getInstance().getLevel() == 5)
 		{

@@ -57,7 +57,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2ControlTowerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2FlameTowerInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.sieges.castle.OnCastleSiegeFinish;
 import org.l2junity.gameserver.model.events.impl.sieges.castle.OnCastleSiegeOwnerChange;
@@ -275,7 +275,7 @@ public class Siege implements Siegable
 					{
 						if (member != null)
 						{
-							L2PcInstance player = member.getPlayerInstance();
+							PlayerInstance player = member.getPlayerInstance();
 							if ((player != null) && player.isNoble())
 							{
 								Hero.getInstance().setCastleTaken(player.getObjectId(), getCastle().getResidenceId());
@@ -299,7 +299,7 @@ public class Siege implements Siegable
 					continue;
 				}
 				
-				for (L2PcInstance member : clan.getOnlineMembers(0))
+				for (PlayerInstance member : clan.getOnlineMembers(0))
 				{
 					member.checkItemRestriction();
 				}
@@ -316,7 +316,7 @@ public class Siege implements Siegable
 					continue;
 				}
 				
-				for (L2PcInstance member : clan.getOnlineMembers(0))
+				for (PlayerInstance member : clan.getOnlineMembers(0))
 				{
 					member.checkItemRestriction();
 				}
@@ -550,7 +550,7 @@ public class Siege implements Siegable
 		for (SiegeClan siegeClans : getDefenderClans())
 		{
 			L2Clan clan = ClanTable.getInstance().getClan(siegeClans.getClanId());
-			for (L2PcInstance member : clan.getOnlineMembers(0))
+			for (PlayerInstance member : clan.getOnlineMembers(0))
 			{
 				if (member != null)
 				{
@@ -564,7 +564,7 @@ public class Siege implements Siegable
 			for (SiegeClan siegeClans : getAttackerClans())
 			{
 				L2Clan clan = ClanTable.getInstance().getClan(siegeClans.getClanId());
-				for (L2PcInstance member : clan.getOnlineMembers(0))
+				for (PlayerInstance member : clan.getOnlineMembers(0))
 				{
 					if (member != null)
 					{
@@ -586,7 +586,7 @@ public class Siege implements Siegable
 			}
 			
 			clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
-			for (L2PcInstance member : clan.getOnlineMembers(0))
+			for (PlayerInstance member : clan.getOnlineMembers(0))
 			{
 				if (member == null)
 				{
@@ -611,9 +611,9 @@ public class Siege implements Siegable
 					}
 				}
 				member.sendPacket(new UserInfo(member));
-				final Collection<L2PcInstance> plrs = member.getKnownList().getKnownPlayers().values();
+				final Collection<PlayerInstance> plrs = member.getKnownList().getKnownPlayers().values();
 				
-				for (L2PcInstance player : plrs)
+				for (PlayerInstance player : plrs)
 				{
 					if ((player == null) || !member.isVisibleFor(player))
 					{
@@ -652,7 +652,7 @@ public class Siege implements Siegable
 			}
 			
 			clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
-			for (L2PcInstance member : clan.getOnlineMembers(0))
+			for (PlayerInstance member : clan.getOnlineMembers(0))
 			{
 				if (member == null)
 				{
@@ -678,9 +678,9 @@ public class Siege implements Siegable
 				}
 				member.sendPacket(new UserInfo(member));
 				
-				final Collection<L2PcInstance> plrs = member.getKnownList().getKnownPlayers().values();
+				final Collection<PlayerInstance> plrs = member.getKnownList().getKnownPlayers().values();
 				
-				for (L2PcInstance player : plrs)
+				for (PlayerInstance player : plrs)
 				{
 					if ((player == null) || !member.isVisibleFor(player))
 					{
@@ -826,14 +826,14 @@ public class Siege implements Siegable
 	
 	/** Return list of L2PcInstance registered as attacker in the zone. */
 	@Override
-	public List<L2PcInstance> getAttackersInZone()
+	public List<PlayerInstance> getAttackersInZone()
 	{
-		List<L2PcInstance> players = new ArrayList<>();
+		List<PlayerInstance> players = new ArrayList<>();
 		L2Clan clan;
 		for (SiegeClan siegeclan : getAttackerClans())
 		{
 			clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
-			for (L2PcInstance player : clan.getOnlineMembers(0))
+			for (PlayerInstance player : clan.getOnlineMembers(0))
 			{
 				if (player == null)
 				{
@@ -852,7 +852,7 @@ public class Siege implements Siegable
 	/**
 	 * @return list of L2PcInstance in the zone.
 	 */
-	public List<L2PcInstance> getPlayersInZone()
+	public List<PlayerInstance> getPlayersInZone()
 	{
 		return getCastle().getZone().getPlayersInside();
 	}
@@ -860,9 +860,9 @@ public class Siege implements Siegable
 	/**
 	 * @return list of L2PcInstance owning the castle in the zone.
 	 */
-	public List<L2PcInstance> getOwnersInZone()
+	public List<PlayerInstance> getOwnersInZone()
 	{
-		List<L2PcInstance> players = new ArrayList<>();
+		List<PlayerInstance> players = new ArrayList<>();
 		L2Clan clan;
 		for (SiegeClan siegeclan : getDefenderClans())
 		{
@@ -871,7 +871,7 @@ public class Siege implements Siegable
 			{
 				continue;
 			}
-			for (L2PcInstance player : clan.getOnlineMembers(0))
+			for (PlayerInstance player : clan.getOnlineMembers(0))
 			{
 				if (player == null)
 				{
@@ -890,11 +890,11 @@ public class Siege implements Siegable
 	/**
 	 * @return list of L2PcInstance not registered as attacker or defender in the zone.
 	 */
-	public List<L2PcInstance> getSpectatorsInZone()
+	public List<PlayerInstance> getSpectatorsInZone()
 	{
-		List<L2PcInstance> players = new ArrayList<>();
+		List<PlayerInstance> players = new ArrayList<>();
 		
-		for (L2PcInstance player : getCastle().getZone().getPlayersInside())
+		for (PlayerInstance player : getCastle().getZone().getPlayersInside())
 		{
 			if (player == null)
 			{
@@ -945,7 +945,7 @@ public class Siege implements Siegable
 	 * Display list of registered clans
 	 * @param player
 	 */
-	public void listRegisterClan(L2PcInstance player)
+	public void listRegisterClan(PlayerInstance player)
 	{
 		player.sendPacket(new SiegeInfo(getCastle()));
 	}
@@ -955,12 +955,12 @@ public class Siege implements Siegable
 	 * <BR>
 	 * @param player The L2PcInstance of the player trying to register
 	 */
-	public void registerAttacker(L2PcInstance player)
+	public void registerAttacker(PlayerInstance player)
 	{
 		registerAttacker(player, false);
 	}
 	
-	public void registerAttacker(L2PcInstance player, boolean force)
+	public void registerAttacker(PlayerInstance player, boolean force)
 	{
 		if (player.getClan() == null)
 		{
@@ -1003,12 +1003,12 @@ public class Siege implements Siegable
 	 * Register a clan as defender.
 	 * @param player the player to register
 	 */
-	public void registerDefender(L2PcInstance player)
+	public void registerDefender(PlayerInstance player)
 	{
 		registerDefender(player, false);
 	}
 	
-	public void registerDefender(L2PcInstance player, boolean force)
+	public void registerDefender(PlayerInstance player, boolean force)
 	{
 		if (getCastle().getOwnerId() <= 0)
 		{
@@ -1081,7 +1081,7 @@ public class Siege implements Siegable
 	 * <BR>
 	 * @param player The L2PcInstance of player/clan being removed
 	 */
-	public void removeSiegeClan(L2PcInstance player)
+	public void removeSiegeClan(PlayerInstance player)
 	{
 		removeSiegeClan(player.getClan());
 	}
@@ -1113,7 +1113,7 @@ public class Siege implements Siegable
 	 */
 	public void teleportPlayer(SiegeTeleportWhoType teleportWho, TeleportWhereType teleportWhere)
 	{
-		final List<L2PcInstance> players;
+		final List<PlayerInstance> players;
 		switch (teleportWho)
 		{
 			case Owner:
@@ -1124,10 +1124,10 @@ public class Siege implements Siegable
 			case NotOwner:
 			{
 				players = getPlayersInZone();
-				final Iterator<L2PcInstance> it = players.iterator();
+				final Iterator<PlayerInstance> it = players.iterator();
 				while (it.hasNext())
 				{
-					final L2PcInstance player = it.next();
+					final PlayerInstance player = it.next();
 					if ((player == null) || player.inObserverMode() || ((player.getClanId() > 0) && (player.getClanId() == getCastle().getOwnerId())))
 					{
 						it.remove();
@@ -1147,11 +1147,11 @@ public class Siege implements Siegable
 			}
 			default:
 			{
-				players = Collections.<L2PcInstance> emptyList();
+				players = Collections.<PlayerInstance> emptyList();
 			}
 		}
 		
-		for (L2PcInstance player : players)
+		for (PlayerInstance player : players)
 		{
 			if (player.canOverrideCond(PcCondOverride.CASTLE_CONDITIONS) || player.isJailed())
 			{
@@ -1208,7 +1208,7 @@ public class Siege implements Siegable
 	 * @param typeId -1 = owner 0 = defender, 1 = attacker, 2 = defender waiting
 	 * @return true if the player can register.
 	 */
-	private boolean checkIfCanRegister(L2PcInstance player, byte typeId)
+	private boolean checkIfCanRegister(PlayerInstance player, byte typeId)
 	{
 		if (getIsRegistrationOver())
 		{

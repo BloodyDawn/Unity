@@ -22,7 +22,7 @@ import java.util.List;
 
 import org.l2junity.gameserver.model.CommandChannel;
 import org.l2junity.gameserver.model.Party;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.AdenaDistributionRequest;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
@@ -42,7 +42,7 @@ public class RequestDivideAdenaStart extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance player = getClient().getActiveChar();
+		final PlayerInstance player = getClient().getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -69,7 +69,7 @@ public class RequestDivideAdenaStart extends L2GameClientPacket
 			return;
 		}
 		
-		final List<L2PcInstance> targets = commandChannel != null ? commandChannel.getMembers() : party.getMembers();
+		final List<PlayerInstance> targets = commandChannel != null ? commandChannel.getMembers() : party.getMembers();
 		
 		if (player.getAdena() < targets.size())
 		{

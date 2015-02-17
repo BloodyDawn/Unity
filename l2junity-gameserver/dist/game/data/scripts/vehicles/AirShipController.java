@@ -33,7 +33,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2AirShipInstance;
 import org.l2junity.gameserver.model.actor.instance.L2ControllableAirShipInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.type.ScriptZone;
@@ -118,7 +118,7 @@ public abstract class AirShipController extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if ("summon".equalsIgnoreCase(event))
 		{
@@ -300,7 +300,7 @@ public abstract class AirShipController extends Quest
 				{
 					if (_movieId != 0)
 					{
-						for (L2PcInstance passenger : _dockedShip.getPassengers())
+						for (PlayerInstance passenger : _dockedShip.getPassengers())
 						{
 							if (passenger != null)
 							{
@@ -342,7 +342,7 @@ public abstract class AirShipController extends Quest
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		return npc.getId() + ".htm";
 	}

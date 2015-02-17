@@ -23,7 +23,7 @@ import java.util.logging.Level;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -43,7 +43,7 @@ public class BlessedSpiritShot implements IItemHandler
 			return false;
 		}
 		
-		L2PcInstance activeChar = (L2PcInstance) playable;
+		PlayerInstance activeChar = (PlayerInstance) playable;
 		ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
 		Weapon weaponItem = activeChar.getActiveWeaponItem();
 		final SkillHolder[] skills = item.getItem().getSkills();

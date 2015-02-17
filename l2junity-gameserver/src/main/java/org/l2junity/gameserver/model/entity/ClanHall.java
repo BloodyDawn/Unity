@@ -32,7 +32,7 @@ import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.zone.type.ClanHallZone;
 import org.l2junity.gameserver.network.serverpackets.PledgeShowInfoUpdate;
@@ -380,7 +380,7 @@ public abstract class ClanHall
 	 * @param doorId
 	 * @param open
 	 */
-	public void openCloseDoor(L2PcInstance activeChar, int doorId, boolean open)
+	public void openCloseDoor(PlayerInstance activeChar, int doorId, boolean open)
 	{
 		if ((activeChar != null) && (activeChar.getClanId() == getOwnerId()))
 		{
@@ -408,7 +408,7 @@ public abstract class ClanHall
 		}
 	}
 	
-	public void openCloseDoors(L2PcInstance activeChar, boolean open)
+	public void openCloseDoors(PlayerInstance activeChar, boolean open)
 	{
 		if ((activeChar != null) && (activeChar.getClanId() == getOwnerId()))
 		{
@@ -488,7 +488,7 @@ public abstract class ClanHall
 		}
 	}
 	
-	public boolean updateFunctions(L2PcInstance player, int type, int lvl, int lease, long rate, boolean addNew)
+	public boolean updateFunctions(PlayerInstance player, int type, int lvl, int lease, long rate, boolean addNew)
 	{
 		if (player == null)
 		{

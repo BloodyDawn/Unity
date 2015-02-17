@@ -22,7 +22,7 @@ import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.PartyMatchRoom;
 import org.l2junity.gameserver.model.PartyMatchRoomList;
 import org.l2junity.gameserver.model.Party.messageType;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.ExClosePartyRoom;
 import org.l2junity.gameserver.network.serverpackets.ExPartyRoomMember;
 import org.l2junity.gameserver.network.serverpackets.PartyMatchDetail;
@@ -44,7 +44,7 @@ public final class RequestWithDrawalParty extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance player = getClient().getActiveChar();
+		PlayerInstance player = getClient().getActiveChar();
 		if (player == null)
 		{
 			return;

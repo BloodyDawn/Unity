@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.l2junity.gameserver.model.TimeStamp;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * Skill Cool Time server packet implementation.
@@ -33,7 +33,7 @@ public class SkillCoolTime extends L2GameServerPacket
 {
 	private final List<TimeStamp> _skillReuseTimeStamps = new ArrayList<>();
 	
-	public SkillCoolTime(L2PcInstance player)
+	public SkillCoolTime(PlayerInstance player)
 	{
 		final Map<Integer, TimeStamp> skillReuseTimeStamps = player.getSkillReuseTimeStamps();
 		if (skillReuseTimeStamps != null)

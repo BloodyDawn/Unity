@@ -20,7 +20,7 @@ package org.l2junity.gameserver.model.zone.type;
 
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -87,7 +87,7 @@ public class SwampZone extends ZoneType
 			}
 			
 			// defenders not affected
-			final L2PcInstance player = character.getActingPlayer();
+			final PlayerInstance player = character.getActingPlayer();
 			if ((player != null) && player.isInSiege() && (player.getSiegeState() == 2))
 			{
 				return;

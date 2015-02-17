@@ -25,7 +25,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.BuyListData;
 import org.l2junity.gameserver.handler.IBypassHandler;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.buylist.L2BuyList;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.ShopPreviewList;
@@ -38,7 +38,7 @@ public class Wear implements IBypassHandler
 	};
 	
 	@Override
-	public boolean useBypass(String command, L2PcInstance activeChar, Creature target)
+	public boolean useBypass(String command, PlayerInstance activeChar, Creature target)
 	{
 		if (!target.isNpc())
 		{
@@ -70,7 +70,7 @@ public class Wear implements IBypassHandler
 		return false;
 	}
 	
-	private static final void showWearWindow(L2PcInstance player, int val)
+	private static final void showWearWindow(PlayerInstance player, int val)
 	{
 		final L2BuyList buyList = BuyListData.getInstance().getBuyList(val);
 		if (buyList == null)

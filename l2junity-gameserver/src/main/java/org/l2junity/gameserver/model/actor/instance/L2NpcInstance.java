@@ -67,7 +67,7 @@ public class L2NpcInstance extends Npc
 	 * @param npc the last folk.
 	 * @param classId player's active class id.
 	 */
-	public static void showSkillList(L2PcInstance player, Npc npc, ClassId classId)
+	public static void showSkillList(PlayerInstance player, Npc npc, ClassId classId)
 	{
 		if (Config.DEBUG)
 		{

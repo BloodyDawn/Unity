@@ -26,7 +26,7 @@ import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 
 /**
@@ -42,7 +42,7 @@ public class AdminHeal implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		
 		if (command.equals("admin_heal"))
@@ -74,18 +74,18 @@ public class AdminHeal implements IAdminCommandHandler
 		return ADMIN_COMMANDS;
 	}
 	
-	private void handleHeal(L2PcInstance activeChar)
+	private void handleHeal(PlayerInstance activeChar)
 	{
 		handleHeal(activeChar, null);
 	}
 	
-	private void handleHeal(L2PcInstance activeChar, String player)
+	private void handleHeal(PlayerInstance activeChar, String player)
 	{
 		
 		WorldObject obj = activeChar.getTarget();
 		if (player != null)
 		{
-			L2PcInstance plyr = World.getInstance().getPlayer(player);
+			PlayerInstance plyr = World.getInstance().getPlayer(player);
 			
 			if (plyr != null)
 			{
@@ -103,7 +103,7 @@ public class AdminHeal implements IAdminCommandHandler
 						{
 							Creature character = (Creature) object;
 							character.setCurrentHpMp(character.getMaxHp(), character.getMaxMp());
-							if (object instanceof L2PcInstance)
+							if (object instanceof PlayerInstance)
 							{
 								character.setCurrentCp(character.getMaxCp());
 							}
@@ -126,7 +126,7 @@ public class AdminHeal implements IAdminCommandHandler
 		{
 			Creature target = (Creature) obj;
 			target.setCurrentHpMp(target.getMaxHp(), target.getMaxMp());
-			if (target instanceof L2PcInstance)
+			if (target instanceof PlayerInstance)
 			{
 				target.setCurrentCp(target.getMaxCp());
 			}

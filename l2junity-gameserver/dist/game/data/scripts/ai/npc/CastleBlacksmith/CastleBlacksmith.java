@@ -21,7 +21,7 @@ package ai.npc.CastleBlacksmith;
 import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 import ai.npc.AbstractNpcAI;
 
@@ -53,19 +53,19 @@ public final class CastleBlacksmith extends AbstractNpcAI
 		addFirstTalkId(NPCS);
 	}
 	
-	private boolean hasRights(L2PcInstance player, Npc npc)
+	private boolean hasRights(PlayerInstance player, Npc npc)
 	{
 		return player.canOverrideCond(PcCondOverride.CASTLE_CONDITIONS) || npc.isMyLord(player) || ((player.getClanId() == npc.getCastle().getOwnerId()) && player.hasClanPrivilege(ClanPrivilege.CS_MANOR_ADMIN));
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		return (event.equalsIgnoreCase(npc.getId() + "-02.html") && hasRights(player, npc)) ? event : null;
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		return (hasRights(player, npc)) ? npc.getId() + "-01.html" : "no.html";
 	}

@@ -20,7 +20,7 @@ package org.l2junity.gameserver.model.actor.tasks.player;
 
 import java.util.concurrent.TimeUnit;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
@@ -30,9 +30,9 @@ import org.l2junity.gameserver.network.serverpackets.SystemMessage;
  */
 public final class WarnUserTakeBreakTask implements Runnable
 {
-	private final L2PcInstance _player;
+	private final PlayerInstance _player;
 	
-	public WarnUserTakeBreakTask(L2PcInstance player)
+	public WarnUserTakeBreakTask(PlayerInstance player)
 	{
 		_player = player;
 	}

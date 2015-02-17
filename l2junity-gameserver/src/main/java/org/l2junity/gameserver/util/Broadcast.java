@@ -26,7 +26,7 @@ import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.CharInfo;
 import org.l2junity.gameserver.network.serverpackets.CreatureSay;
 import org.l2junity.gameserver.network.serverpackets.ExShowScreenMessage;
@@ -52,8 +52,8 @@ public final class Broadcast
 	 */
 	public static void toPlayersTargettingMyself(Creature character, L2GameServerPacket mov)
 	{
-		Collection<L2PcInstance> plrs = character.getKnownList().getKnownPlayers().values();
-		for (L2PcInstance player : plrs)
+		Collection<PlayerInstance> plrs = character.getKnownList().getKnownPlayers().values();
+		for (PlayerInstance player : plrs)
 		{
 			if (player.getTarget() != character)
 			{
@@ -76,8 +76,8 @@ public final class Broadcast
 	 */
 	public static void toKnownPlayers(Creature character, L2GameServerPacket mov)
 	{
-		final Collection<L2PcInstance> plrs = character.getKnownList().getKnownPlayers().values();
-		for (L2PcInstance player : plrs)
+		final Collection<PlayerInstance> plrs = character.getKnownList().getKnownPlayers().values();
+		for (PlayerInstance player : plrs)
 		{
 			if (player == null)
 			{
@@ -88,12 +88,12 @@ public final class Broadcast
 				player.sendPacket(mov);
 				if ((mov instanceof CharInfo) && (character.isPlayer()))
 				{
-					int relation = ((L2PcInstance) character).getRelation(player);
+					int relation = ((PlayerInstance) character).getRelation(player);
 					Integer oldrelation = character.getKnownList().getKnownRelations().get(player.getObjectId());
 					if ((oldrelation != null) && (oldrelation != relation))
 					{
 						final RelationChanged rc = new RelationChanged();
-						rc.addRelation((L2PcInstance) character, relation, character.isAutoAttackable(player));
+						rc.addRelation((PlayerInstance) character, relation, character.isAutoAttackable(player));
 						if (character.hasSummon())
 						{
 							final Summon pet = character.getPet();
@@ -136,8 +136,8 @@ public final class Broadcast
 			radius = 1500;
 		}
 		
-		Collection<L2PcInstance> plrs = character.getKnownList().getKnownPlayers().values();
-		for (L2PcInstance player : plrs)
+		Collection<PlayerInstance> plrs = character.getKnownList().getKnownPlayers().values();
+		for (PlayerInstance player : plrs)
 		{
 			if (character.isInsideRadius(player, radius, false, false))
 			{
@@ -156,7 +156,7 @@ public final class Broadcast
 	 */
 	public static void toSelfAndKnownPlayers(Creature character, L2GameServerPacket mov)
 	{
-		if (character instanceof L2PcInstance)
+		if (character instanceof PlayerInstance)
 		{
 			character.sendPacket(mov);
 		}
@@ -172,13 +172,13 @@ public final class Broadcast
 			radius = 600;
 		}
 		
-		if (character instanceof L2PcInstance)
+		if (character instanceof PlayerInstance)
 		{
 			character.sendPacket(mov);
 		}
 		
-		Collection<L2PcInstance> plrs = character.getKnownList().getKnownPlayers().values();
-		for (L2PcInstance player : plrs)
+		Collection<PlayerInstance> plrs = character.getKnownList().getKnownPlayers().values();
+		for (PlayerInstance player : plrs)
 		{
 			if ((player != null) && Util.checkIfInRange(radius, character, player, false))
 			{
@@ -196,7 +196,7 @@ public final class Broadcast
 	 */
 	public static void toAllOnlinePlayers(L2GameServerPacket packet)
 	{
-		for (L2PcInstance player : World.getInstance().getPlayers())
+		for (PlayerInstance player : World.getInstance().getPlayers())
 		{
 			if (player.isOnline())
 			{
@@ -217,7 +217,7 @@ public final class Broadcast
 	
 	public static void toPlayersInInstance(L2GameServerPacket packet, int instanceId)
 	{
-		for (L2PcInstance player : World.getInstance().getPlayers())
+		for (PlayerInstance player : World.getInstance().getPlayers())
 		{
 			if (player.isOnline() && (player.getInstanceId() == instanceId))
 			{

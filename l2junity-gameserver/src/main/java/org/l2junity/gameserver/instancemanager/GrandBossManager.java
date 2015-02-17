@@ -44,7 +44,7 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.interfaces.IStorable;
 import org.l2junity.gameserver.model.zone.type.BossZone;
 
@@ -240,7 +240,7 @@ public final class GrandBossManager implements IStorable
 		return temp.getName().equalsIgnoreCase(zoneType);
 	}
 	
-	public boolean checkIfInZone(L2PcInstance player)
+	public boolean checkIfInZone(PlayerInstance player)
 	{
 		if (player == null)
 		{

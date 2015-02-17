@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.clientpackets.mentoring;
 
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
@@ -41,13 +41,13 @@ public class RequestMenteeAdd extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance mentor = getClient().getActiveChar();
+		final PlayerInstance mentor = getClient().getActiveChar();
 		if (mentor == null)
 		{
 			return;
 		}
 		
-		final L2PcInstance mentee = World.getInstance().getPlayer(_target);
+		final PlayerInstance mentee = World.getInstance().getPlayer(_target);
 		if (mentee == null)
 		{
 			return;

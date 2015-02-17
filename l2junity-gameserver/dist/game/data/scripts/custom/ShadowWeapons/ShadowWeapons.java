@@ -19,7 +19,7 @@
 package custom.ShadowWeapons;
 
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 
 /**
@@ -52,7 +52,7 @@ public final class ShadowWeapons extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		String htmltext;
 		boolean has_d = hasQuestItems(player, 8869); // Shadow Item Exchange Coupon (D-Grade)

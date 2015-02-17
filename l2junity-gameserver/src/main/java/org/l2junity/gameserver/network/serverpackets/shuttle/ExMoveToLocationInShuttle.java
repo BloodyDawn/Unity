@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.serverpackets.shuttle;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
 
 /**
@@ -31,7 +31,7 @@ public class ExMoveToLocationInShuttle extends L2GameServerPacket
 	private final int _targetX, _targetY, _targetZ;
 	private final int _fromX, _fromY, _fromZ;
 	
-	public ExMoveToLocationInShuttle(L2PcInstance player, int fromX, int fromY, int fromZ)
+	public ExMoveToLocationInShuttle(PlayerInstance player, int fromX, int fromY, int fromZ)
 	{
 		_charObjId = player.getObjectId();
 		_airShipId = player.getShuttle().getObjectId();

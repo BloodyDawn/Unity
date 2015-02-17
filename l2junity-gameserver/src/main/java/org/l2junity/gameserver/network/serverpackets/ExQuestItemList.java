@@ -21,7 +21,7 @@ package org.l2junity.gameserver.network.serverpackets;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 /**
@@ -29,10 +29,10 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
  */
 public class ExQuestItemList extends AbstractItemPacket
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final List<ItemInstance> _items = new ArrayList<>();
 	
-	public ExQuestItemList(L2PcInstance activeChar)
+	public ExQuestItemList(PlayerInstance activeChar)
 	{
 		_activeChar = activeChar;
 		for (ItemInstance item : activeChar.getInventory().getItems())

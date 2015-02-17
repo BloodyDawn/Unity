@@ -21,7 +21,7 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.gameserver.model.PartyMatchRoom;
 import org.l2junity.gameserver.model.PartyMatchRoomList;
 import org.l2junity.gameserver.model.PartyMatchWaitingList;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExPartyRoomMember;
 import org.l2junity.gameserver.network.serverpackets.PartyMatchDetail;
@@ -54,7 +54,7 @@ public class RequestPartyMatchList extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance _activeChar = getClient().getActiveChar();
+		PlayerInstance _activeChar = getClient().getActiveChar();
 		
 		if (_activeChar == null)
 		{
@@ -73,7 +73,7 @@ public class RequestPartyMatchList extends L2GameClientPacket
 				_room.setLootType(_loot);
 				_room.setTitle(_roomtitle);
 				
-				for (L2PcInstance _member : _room.getPartyMembers())
+				for (PlayerInstance _member : _room.getPartyMembers())
 				{
 					if (_member == null)
 					{
@@ -99,7 +99,7 @@ public class RequestPartyMatchList extends L2GameClientPacket
 			
 			if (_activeChar.isInParty())
 			{
-				for (L2PcInstance ptmember : _activeChar.getParty().getMembers())
+				for (PlayerInstance ptmember : _activeChar.getParty().getMembers())
 				{
 					if (ptmember == null)
 					{

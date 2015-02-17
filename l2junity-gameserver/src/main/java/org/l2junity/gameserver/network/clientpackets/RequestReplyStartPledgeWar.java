@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 
 /**
@@ -43,12 +43,12 @@ public final class RequestReplyStartPledgeWar extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
-		L2PcInstance requestor = activeChar.getActiveRequester();
+		PlayerInstance requestor = activeChar.getActiveRequester();
 		if (requestor == null)
 		{
 			return;

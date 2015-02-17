@@ -27,7 +27,7 @@ import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.taskmanager.DecayTaskManager;
 
@@ -65,7 +65,7 @@ public final class Slaves extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public final String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		if (((L2MonsterInstance) npc).getMinionList() != null)
 		{

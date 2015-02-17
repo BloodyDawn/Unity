@@ -21,7 +21,7 @@ package handlers.admincommandhandlers;
 import org.l2junity.Config;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.model.entity.TvTEventTeleporter;
 import org.l2junity.gameserver.model.entity.TvTManager;
@@ -39,31 +39,31 @@ public class AdminTvTEvent implements IAdminCommandHandler
 	};
 	
 	@Override
-	public boolean useAdminCommand(String command, L2PcInstance activeChar)
+	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
 		if (command.equals("admin_tvt_add"))
 		{
 			WorldObject target = activeChar.getTarget();
 			
-			if (!(target instanceof L2PcInstance))
+			if (!(target instanceof PlayerInstance))
 			{
 				activeChar.sendMessage("You should select a player!");
 				return true;
 			}
 			
-			add(activeChar, (L2PcInstance) target);
+			add(activeChar, (PlayerInstance) target);
 		}
 		else if (command.equals("admin_tvt_remove"))
 		{
 			WorldObject target = activeChar.getTarget();
 			
-			if (!(target instanceof L2PcInstance))
+			if (!(target instanceof PlayerInstance))
 			{
 				activeChar.sendMessage("You should select a player!");
 				return true;
 			}
 			
-			remove(activeChar, (L2PcInstance) target);
+			remove(activeChar, (PlayerInstance) target);
 		}
 		else if (command.equals("admin_tvt_advance"))
 		{
@@ -79,7 +79,7 @@ public class AdminTvTEvent implements IAdminCommandHandler
 		return ADMIN_COMMANDS;
 	}
 	
-	private void add(L2PcInstance activeChar, L2PcInstance playerInstance)
+	private void add(PlayerInstance activeChar, PlayerInstance playerInstance)
 	{
 		if (playerInstance.isOnEvent())
 		{
@@ -99,7 +99,7 @@ public class AdminTvTEvent implements IAdminCommandHandler
 		}
 	}
 	
-	private void remove(L2PcInstance activeChar, L2PcInstance playerInstance)
+	private void remove(PlayerInstance activeChar, PlayerInstance playerInstance)
 	{
 		if (!TvTEvent.removeParticipant(playerInstance.getObjectId()))
 		{

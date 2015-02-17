@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.PartyMatchWaitingList;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author Gnacik
@@ -36,7 +36,7 @@ public final class RequestExitPartyMatchingWaitingRoom extends L2GameClientPacke
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance _activeChar = getClient().getActiveChar();
+		PlayerInstance _activeChar = getClient().getActiveChar();
 		
 		if (_activeChar == null)
 		{

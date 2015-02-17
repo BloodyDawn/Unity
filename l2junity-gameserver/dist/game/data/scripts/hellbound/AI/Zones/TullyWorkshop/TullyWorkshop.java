@@ -39,7 +39,7 @@ import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneType;
@@ -539,7 +539,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onFirstTalk(Npc npc, L2PcInstance player)
+	public final String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		final ClassId classId = player.getClassId();
 		final int npcId = npc.getId();
@@ -631,7 +631,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		if (npc.getId() == TOMBSTONE)
 		{
@@ -650,7 +650,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 				false
 			};
 			// For teleportation party should have all 5 medals
-			for (L2PcInstance pl : party.getMembers())
+			for (PlayerInstance pl : party.getMembers())
 			{
 				if (pl == null)
 				{
@@ -685,7 +685,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 				return "32344-02.htm";
 			}
 			
-			for (L2PcInstance pl : party.getMembers())
+			for (PlayerInstance pl : party.getMembers())
 			{
 				if ((pl != null) && Util.checkIfInRange(6000, pl, npc, false))
 				{
@@ -697,7 +697,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String htmltext = event;
 		
@@ -769,7 +769,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 		}
 		else if (event.equalsIgnoreCase("despawn_agent_7"))
 		{
-			for (L2PcInstance pl : npc.getKnownList().getKnownPlayersInRadius(300))
+			for (PlayerInstance pl : npc.getKnownList().getKnownPlayersInRadius(300))
 			{
 				if (pl != null)
 				{
@@ -783,7 +783,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 		}
 		else if (event.equalsIgnoreCase("cube_68_despawn"))
 		{
-			for (L2PcInstance pl : npc.getKnownList().getKnownPlayersInRadius(500))
+			for (PlayerInstance pl : npc.getKnownList().getKnownPlayersInRadius(500))
 			{
 				if (pl != null)
 				{
@@ -806,7 +806,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 			
 			if ((party != null) && (party.getLeaderObjectId() == player.getObjectId()))
 			{
-				for (L2PcInstance partyMember : party.getMembers())
+				for (PlayerInstance partyMember : party.getMembers())
 				{
 					if (!Util.checkIfInRange(300, partyMember, npc, true))
 					{
@@ -814,7 +814,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 					}
 				}
 				
-				for (L2PcInstance partyMember : party.getMembers())
+				for (PlayerInstance partyMember : party.getMembers())
 				{
 					partyMember.teleToLocation(-13400, 272827, -15300, true);
 				}
@@ -862,7 +862,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 			else
 			{
 				final Location loc = TELE_COORDS.get(npcId)[direction];
-				for (L2PcInstance partyMember : party.getMembers())
+				for (PlayerInstance partyMember : party.getMembers())
 				{
 					if (Util.checkIfInRange(4000, partyMember, npc, true))
 					{
@@ -950,7 +950,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 					}
 					else
 					{
-						for (L2PcInstance partyMember : party.getMembers())
+						for (PlayerInstance partyMember : party.getMembers())
 						{
 							if (Util.checkIfInRange(6000, partyMember, npc, true))
 							{
@@ -989,7 +989,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 				}
 				else
 				{
-					for (L2PcInstance partyMember : party.getMembers())
+					for (PlayerInstance partyMember : party.getMembers())
 					{
 						if (!Util.checkIfInRange(400, partyMember, npc, true))
 						{
@@ -997,7 +997,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 						}
 					}
 					
-					for (L2PcInstance partyMember : party.getMembers())
+					for (PlayerInstance partyMember : party.getMembers())
 					{
 						npc.setTarget(partyMember);
 						npc.doCast(SkillData.getInstance().getSkill(5526, 1));
@@ -1021,7 +1021,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 							MinionList.spawnMinion(monster, 25596);
 						}
 						
-						L2PcInstance target = player.getParty() == null ? player : player.getParty().getMembers().get(getRandom(player.getParty().getMembers().size()));
+						PlayerInstance target = player.getParty() == null ? player : player.getParty().getMembers().get(getRandom(player.getParty().getMembers().size()));
 						
 						if ((target != null) && !target.isDead())
 						{
@@ -1054,7 +1054,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 					return null;
 				}
 				
-				for (L2PcInstance partyMember : party.getMembers())
+				for (PlayerInstance partyMember : party.getMembers())
 				{
 					if (!Util.checkIfInRange(3000, partyMember, npc, true))
 					{
@@ -1062,7 +1062,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 					}
 				}
 				
-				for (L2PcInstance partyMember : party.getMembers())
+				for (PlayerInstance partyMember : party.getMembers())
 				{
 					if (Util.checkIfInRange(6000, partyMember, npc, true))
 					{
@@ -1089,7 +1089,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 				}
 				else
 				{
-					for (L2PcInstance partyMember : party.getMembers())
+					for (PlayerInstance partyMember : party.getMembers())
 					{
 						if (Util.checkIfInRange(6000, partyMember, npc, true))
 						{
@@ -1107,7 +1107,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
 		final int npcId = npc.getId();
 		if (Arrays.binarySearch(TELEPORTING_MONSTERS, npcId) >= 0)
@@ -1165,7 +1165,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFactionCall(Npc npc, Npc caller, L2PcInstance attacker, boolean isSummon)
+	public String onFactionCall(Npc npc, Npc caller, PlayerInstance attacker, boolean isSummon)
 	{
 		int npcId = npc.getId();
 		if ((npcId == TEMENIR) || (npcId == DRAXIUS) || (npcId == KIRETCENAH))
@@ -1193,7 +1193,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		final int npcId = npc.getId();
 		
@@ -1428,7 +1428,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onSpellFinished(Npc npc, L2PcInstance player, Skill skill)
+	public String onSpellFinished(Npc npc, PlayerInstance player, Skill skill)
 	{
 		final int npcId = npc.getId();
 		final int skillId = skill.getId();

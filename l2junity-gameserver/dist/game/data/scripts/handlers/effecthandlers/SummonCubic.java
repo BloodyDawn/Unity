@@ -21,7 +21,7 @@ package handlers.effecthandlers;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.L2CubicInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -80,7 +80,7 @@ public final class SummonCubic extends AbstractEffect
 			return;
 		}
 		
-		final L2PcInstance player = info.getEffected().getActingPlayer();
+		final PlayerInstance player = info.getEffected().getActingPlayer();
 		if (player.inObserverMode() || player.isMounted())
 		{
 			return;

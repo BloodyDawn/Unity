@@ -22,15 +22,15 @@ package org.l2junity.gameserver.network.serverpackets;
 import java.util.Collection;
 
 import org.l2junity.gameserver.datatables.SkillData;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 
 public class GMViewSkillInfo extends L2GameServerPacket
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final Collection<Skill> _skills;
 	
-	public GMViewSkillInfo(L2PcInstance cha)
+	public GMViewSkillInfo(PlayerInstance cha)
 	{
 		_activeChar = cha;
 		_skills = _activeChar.getAllSkills();

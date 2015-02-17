@@ -21,7 +21,7 @@ package org.l2junity.gameserver.network.clientpackets.primeshop;
 import java.util.logging.Level;
 
 import org.l2junity.gameserver.data.xml.impl.PrimeShopData;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.primeshop.ExBRProductList;
 
@@ -41,7 +41,7 @@ public final class RequestBRProductList extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance player = getClient().getActiveChar();
+		final PlayerInstance player = getClient().getActiveChar();
 		if (player != null)
 		{
 			

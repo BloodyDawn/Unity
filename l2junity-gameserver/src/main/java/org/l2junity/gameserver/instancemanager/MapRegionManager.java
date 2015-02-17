@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.TeleportWhereType;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.entity.Fort;
@@ -246,7 +246,7 @@ public final class MapRegionManager implements IXmlReader
 		
 		if (activeChar.isPlayer())
 		{
-			final L2PcInstance player = activeChar.getActingPlayer();
+			final PlayerInstance player = activeChar.getActingPlayer();
 			
 			Castle castle = null;
 			Fort fort = null;
@@ -375,7 +375,7 @@ public final class MapRegionManager implements IXmlReader
 					RespawnZone zone = ZoneManager.getInstance().getZone(player, RespawnZone.class);
 					if (zone != null)
 					{
-						return getRestartRegion(activeChar, zone.getRespawnPoint((L2PcInstance) activeChar)).getChaoticSpawnLoc();
+						return getRestartRegion(activeChar, zone.getRespawnPoint((PlayerInstance) activeChar)).getChaoticSpawnLoc();
 					}
 					return getMapRegion(activeChar).getChaoticSpawnLoc();
 				}
@@ -424,7 +424,7 @@ public final class MapRegionManager implements IXmlReader
 			RespawnZone zone = ZoneManager.getInstance().getZone(activeChar, RespawnZone.class);
 			if (zone != null)
 			{
-				return getRestartRegion(activeChar, zone.getRespawnPoint((L2PcInstance) activeChar)).getSpawnLoc();
+				return getRestartRegion(activeChar, zone.getRespawnPoint((PlayerInstance) activeChar)).getSpawnLoc();
 			}
 			return getMapRegion(activeChar).getSpawnLoc();
 		}
@@ -444,7 +444,7 @@ public final class MapRegionManager implements IXmlReader
 	{
 		try
 		{
-			L2PcInstance player = ((L2PcInstance) activeChar);
+			PlayerInstance player = ((PlayerInstance) activeChar);
 			MapRegion region = _regions.get(point);
 			
 			if (region.getBannedRace().containsKey(player.getRace()))

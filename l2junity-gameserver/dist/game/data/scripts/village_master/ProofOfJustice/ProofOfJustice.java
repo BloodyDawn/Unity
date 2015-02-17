@@ -25,7 +25,7 @@ import java.util.Map;
 
 import org.l2junity.gameserver.data.xml.impl.MultisellData;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassId;
 
 import ai.npc.AbstractNpcAI;
@@ -58,7 +58,7 @@ public final class ProofOfJustice extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance talker)
+	public String onTalk(Npc npc, PlayerInstance talker)
 	{
 		if (talker.getClassId().level() < 2)
 		{

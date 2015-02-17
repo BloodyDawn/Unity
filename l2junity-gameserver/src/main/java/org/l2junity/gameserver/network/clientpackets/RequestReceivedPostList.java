@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.ExShowReceivedPostList;
 
 /**
@@ -38,7 +38,7 @@ public final class RequestReceivedPostList extends L2GameClientPacket
 	@Override
 	public void runImpl()
 	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getClient().getActiveChar();
 		if ((activeChar == null) || !Config.ALLOW_MAIL)
 		{
 			return;

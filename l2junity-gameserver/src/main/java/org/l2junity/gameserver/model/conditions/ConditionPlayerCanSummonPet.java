@@ -21,7 +21,7 @@ package org.l2junity.gameserver.model.conditions;
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.sql.impl.CharSummonTable;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -42,7 +42,7 @@ public class ConditionPlayerCanSummonPet extends Condition
 	@Override
 	public boolean testImpl(Creature effector, Creature effected, Skill skill, L2Item item)
 	{
-		final L2PcInstance player = effector.getActingPlayer();
+		final PlayerInstance player = effector.getActingPlayer();
 		if (player == null)
 		{
 			return false;

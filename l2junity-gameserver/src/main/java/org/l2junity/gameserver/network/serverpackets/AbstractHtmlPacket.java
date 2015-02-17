@@ -22,7 +22,7 @@ import java.util.logging.Level;
 
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.enums.HtmlActionScope;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.util.Util;
 
 /**
@@ -136,7 +136,7 @@ public abstract class AbstractHtmlPacket extends L2GameServerPacket
 	@Override
 	public final void runImpl()
 	{
-		L2PcInstance player = getClient().getActiveChar();
+		PlayerInstance player = getClient().getActiveChar();
 		player.clearHtmlActions(getScope());
 		
 		if (_disabledValidation)

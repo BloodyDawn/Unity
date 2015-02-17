@@ -25,7 +25,7 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.handler.IUserCommandHandler;
 import org.l2junity.gameserver.model.TeleportWhereType;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -45,7 +45,7 @@ public class Unstuck implements IUserCommandHandler
 	};
 	
 	@Override
-	public boolean useUserCommand(int id, L2PcInstance activeChar)
+	public boolean useUserCommand(int id, PlayerInstance activeChar)
 	{
 		// Thanks nbd
 		if (!TvTEvent.onEscapeUse(activeChar.getObjectId()))
@@ -120,9 +120,9 @@ public class Unstuck implements IUserCommandHandler
 	
 	private static class EscapeFinalizer implements Runnable
 	{
-		private final L2PcInstance _activeChar;
+		private final PlayerInstance _activeChar;
 		
-		protected EscapeFinalizer(L2PcInstance activeChar)
+		protected EscapeFinalizer(PlayerInstance activeChar)
 		{
 			_activeChar = activeChar;
 		}

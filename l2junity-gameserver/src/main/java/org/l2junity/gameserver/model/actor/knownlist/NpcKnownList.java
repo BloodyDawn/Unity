@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcCreatureSee;
 
@@ -118,10 +118,10 @@ public class NpcKnownList extends CharKnownList
 				final Attackable monster = (Attackable) getActiveChar();
 				if (monster.getAI().getIntention() == CtrlIntention.AI_INTENTION_MOVE_TO)
 				{
-					final Collection<L2PcInstance> players = getKnownPlayers().values();
+					final Collection<PlayerInstance> players = getKnownPlayers().values();
 					if (players != null)
 					{
-						for (L2PcInstance pl : players)
+						for (PlayerInstance pl : players)
 						{
 							if (!pl.isDead() && !pl.isInvul() && pl.isInsideRadius(monster, monster.getAggroRange(), true, false) && (monster.isMonster() || (monster.isInstanceTypes(InstanceType.L2GuardInstance) && (pl.getKarma() > 0))))
 							{

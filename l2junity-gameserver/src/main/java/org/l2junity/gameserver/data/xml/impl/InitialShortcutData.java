@@ -29,7 +29,7 @@ import org.l2junity.gameserver.enums.ShortcutType;
 import org.l2junity.gameserver.model.Macro;
 import org.l2junity.gameserver.model.MacroCmd;
 import org.l2junity.gameserver.model.Shortcut;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.serverpackets.ShortCutRegister;
@@ -258,7 +258,7 @@ public final class InitialShortcutData implements IXmlReader
 	 * Register all the available shortcuts for the given player.
 	 * @param player the player
 	 */
-	public void registerAllShortcuts(L2PcInstance player)
+	public void registerAllShortcuts(PlayerInstance player)
 	{
 		if (player == null)
 		{

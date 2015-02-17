@@ -42,7 +42,7 @@ import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.enums.MailType;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.CommissionManagerInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.commission.CommissionItem;
 import org.l2junity.gameserver.model.entity.Message;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
@@ -140,7 +140,7 @@ public final class CommissionManager
 	 * @param player the player
 	 * @param filter the filter
 	 */
-	public void showAuctions(L2PcInstance player, Predicate<L2Item> filter)
+	public void showAuctions(PlayerInstance player, Predicate<L2Item> filter)
 	{
 		//@formatter:off
 		final List<CommissionItem> commissionItems = _commissionItems.values().stream()
@@ -171,7 +171,7 @@ public final class CommissionManager
 	 * Shows the player his auctions.
 	 * @param player the player
 	 */
-	public void showPlayerAuctions(L2PcInstance player)
+	public void showPlayerAuctions(PlayerInstance player)
 	{
 		//@formatter:off
 		final List<CommissionItem> commissionItems = _commissionItems.values().stream()
@@ -198,7 +198,7 @@ public final class CommissionManager
 	 * @param pricePerUnit the price per unit
 	 * @param durationInDays the duration in days
 	 */
-	public void registerItem(L2PcInstance player, int itemObjectId, long itemCount, long pricePerUnit, byte durationInDays)
+	public void registerItem(PlayerInstance player, int itemObjectId, long itemCount, long pricePerUnit, byte durationInDays)
 	{
 		if (itemCount < 1)
 		{
@@ -292,7 +292,7 @@ public final class CommissionManager
 	 * @param player the player
 	 * @param commissionId the commission id
 	 */
-	public void deleteItem(L2PcInstance player, long commissionId)
+	public void deleteItem(PlayerInstance player, long commissionId)
 	{
 		final CommissionItem commissionItem = getCommissionItem(commissionId);
 		if (commissionItem == null)
@@ -341,7 +341,7 @@ public final class CommissionManager
 	 * @param player the player
 	 * @param commissionId the commission id
 	 */
-	public void buyItem(L2PcInstance player, long commissionId)
+	public void buyItem(PlayerInstance player, long commissionId)
 	{
 		final CommissionItem commissionItem = getCommissionItem(commissionId);
 		if (commissionItem == null)
@@ -452,7 +452,7 @@ public final class CommissionManager
 	 * @param player the player
 	 * @return {@code true} if the player is allowed to interact, {@code false} otherwise
 	 */
-	public static boolean isPlayerAllowedToInteract(L2PcInstance player)
+	public static boolean isPlayerAllowedToInteract(PlayerInstance player)
 	{
 		final Npc npc = player.getLastFolkNPC();
 		if ((npc != null) && (npc instanceof CommissionManagerInstance))

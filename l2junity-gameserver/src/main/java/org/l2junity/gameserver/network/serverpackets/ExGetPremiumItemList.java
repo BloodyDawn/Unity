@@ -22,18 +22,18 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.l2junity.gameserver.model.PremiumItem;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author Gnacik
  */
 public class ExGetPremiumItemList extends L2GameServerPacket
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	
 	private final Map<Integer, PremiumItem> _map;
 	
-	public ExGetPremiumItemList(L2PcInstance activeChar)
+	public ExGetPremiumItemList(PlayerInstance activeChar)
 	{
 		_activeChar = activeChar;
 		_map = _activeChar.getPremiumItemList();

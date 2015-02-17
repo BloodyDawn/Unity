@@ -63,7 +63,7 @@ public class L2FortLogisticsInstance extends L2MerchantInstance
 	}
 	
 	@Override
-	public void onBypassFeedback(L2PcInstance player, String command)
+	public void onBypassFeedback(PlayerInstance player, String command)
 	{
 		if (player.getLastFolkNPC().getObjectId() != getObjectId())
 		{
@@ -178,12 +178,12 @@ public class L2FortLogisticsInstance extends L2MerchantInstance
 	}
 	
 	@Override
-	public void showChatWindow(L2PcInstance player)
+	public void showChatWindow(PlayerInstance player)
 	{
 		showMessageWindow(player, 0);
 	}
 	
-	private void showMessageWindow(L2PcInstance player, int val)
+	private void showMessageWindow(PlayerInstance player, int val)
 	{
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 		

@@ -22,7 +22,7 @@ import java.util.StringTokenizer;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.handler.IVoicedCommandHandler;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 
 public class Lang implements IVoicedCommandHandler
@@ -33,7 +33,7 @@ public class Lang implements IVoicedCommandHandler
 	};
 	
 	@Override
-	public boolean useVoicedCommand(String command, L2PcInstance activeChar, String params)
+	public boolean useVoicedCommand(String command, PlayerInstance activeChar, String params)
 	{
 		if (!Config.L2JMOD_MULTILANG_ENABLE || !Config.L2JMOD_MULTILANG_VOICED_ALLOW)
 		{

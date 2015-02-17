@@ -20,7 +20,7 @@ package org.l2junity.gameserver.model.conditions;
 
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -51,7 +51,7 @@ public class ConditionPlayerCanResurrect extends Condition
 		
 		if (effected.isPlayer())
 		{
-			final L2PcInstance player = effected.getActingPlayer();
+			final PlayerInstance player = effected.getActingPlayer();
 			if (!player.isDead())
 			{
 				canResurrect = false;
@@ -82,7 +82,7 @@ public class ConditionPlayerCanResurrect extends Condition
 		else if (effected.isSummon())
 		{
 			final Summon summon = (Summon) effected;
-			final L2PcInstance player = summon.getOwner();
+			final PlayerInstance player = summon.getOwner();
 			if (!summon.isDead())
 			{
 				canResurrect = false;

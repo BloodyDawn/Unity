@@ -20,7 +20,7 @@ package quests.Q00998_FallenAngelSelect;
 
 import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
@@ -50,7 +50,7 @@ public class Q00998_FallenAngelSelect extends Quest
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState st = getQuestState(player, false);
 		if (st == null)
@@ -74,7 +74,7 @@ public class Q00998_FallenAngelSelect extends Quest
 		return null;
 	}
 	
-	private void startQuest(String name, L2PcInstance player)
+	private void startQuest(String name, PlayerInstance player)
 	{
 		final Quest q = QuestManager.getInstance().getQuest(name);
 		if (q != null)
@@ -86,7 +86,7 @@ public class Q00998_FallenAngelSelect extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		final QuestState st = getQuestState(player, true);
 		final QuestState qs = player.getQuestState(Q00141_ShadowFoxPart3.class.getSimpleName());

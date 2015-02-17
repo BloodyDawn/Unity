@@ -43,7 +43,7 @@ public class L2SiegeFlagInstance extends Npc
 	private final boolean _isAdvanced;
 	private boolean _canTalk;
 	
-	public L2SiegeFlagInstance(L2PcInstance player, L2NpcTemplate template, boolean advanced, boolean outPost)
+	public L2SiegeFlagInstance(PlayerInstance player, L2NpcTemplate template, boolean advanced, boolean outPost)
 	{
 		super(template);
 		setInstanceType(InstanceType.L2SiegeFlagInstance);
@@ -107,13 +107,13 @@ public class L2SiegeFlagInstance extends Npc
 	}
 	
 	@Override
-	public void onForcedAttack(L2PcInstance player)
+	public void onForcedAttack(PlayerInstance player)
 	{
 		onAction(player);
 	}
 	
 	@Override
-	public void onAction(L2PcInstance player, boolean interact)
+	public void onAction(PlayerInstance player, boolean interact)
 	{
 		if ((player == null) || !canTarget(player))
 		{

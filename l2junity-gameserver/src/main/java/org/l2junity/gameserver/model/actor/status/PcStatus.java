@@ -26,7 +26,7 @@ import org.l2junity.gameserver.instancemanager.DuelManager;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.stat.PcStat;
 import org.l2junity.gameserver.model.entity.Duel;
 import org.l2junity.gameserver.model.stats.Formulas;
@@ -40,7 +40,7 @@ public class PcStatus extends PlayableStatus
 {
 	private double _currentCp = 0; // Current CP of the L2PcInstance
 	
-	public PcStatus(L2PcInstance activeChar)
+	public PcStatus(PlayerInstance activeChar)
 	{
 		super(activeChar);
 	}
@@ -118,7 +118,7 @@ public class PcStatus extends PlayableStatus
 		
 		if ((attacker != null) && (attacker != getActiveChar()))
 		{
-			final L2PcInstance attackerPlayer = attacker.getActingPlayer();
+			final PlayerInstance attackerPlayer = attacker.getActingPlayer();
 			
 			if (attackerPlayer != null)
 			{
@@ -184,7 +184,7 @@ public class PcStatus extends PlayableStatus
 				}
 			}
 			
-			final L2PcInstance caster = getActiveChar().getTransferingDamageTo();
+			final PlayerInstance caster = getActiveChar().getTransferingDamageTo();
 			if ((caster != null) && (getActiveChar().getParty() != null) && Util.checkIfInRange(1000, getActiveChar(), caster, true) && !caster.isDead() && (getActiveChar() != caster) && getActiveChar().getParty().getMembers().contains(caster))
 			{
 				int transferDmg = 0;
@@ -194,7 +194,7 @@ public class PcStatus extends PlayableStatus
 				if (transferDmg > 0)
 				{
 					int membersInRange = 0;
-					for (L2PcInstance member : caster.getParty().getMembers())
+					for (PlayerInstance member : caster.getParty().getMembers())
 					{
 						if (Util.checkIfInRange(1000, member, caster, false) && (member != caster))
 						{
@@ -403,8 +403,8 @@ public class PcStatus extends PlayableStatus
 	}
 	
 	@Override
-	public L2PcInstance getActiveChar()
+	public PlayerInstance getActiveChar()
 	{
-		return (L2PcInstance) super.getActiveChar();
+		return (PlayerInstance) super.getActiveChar();
 	}
 }

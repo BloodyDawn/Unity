@@ -20,7 +20,7 @@ package org.l2junity.gameserver.model;
 
 import java.util.Map;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExClosePartyRoom;
 
@@ -47,7 +47,7 @@ public class PartyMatchRoomList
 	
 	public void deleteRoom(int id)
 	{
-		for (L2PcInstance _member : getRoom(id).getPartyMembers())
+		for (PlayerInstance _member : getRoom(id).getPartyMembers())
 		{
 			if (_member == null)
 			{
@@ -84,11 +84,11 @@ public class PartyMatchRoomList
 		return _maxid;
 	}
 	
-	public PartyMatchRoom getPlayerRoom(L2PcInstance player)
+	public PartyMatchRoom getPlayerRoom(PlayerInstance player)
 	{
 		for (PartyMatchRoom _room : _rooms.values())
 		{
-			for (L2PcInstance member : _room.getPartyMembers())
+			for (PlayerInstance member : _room.getPartyMembers())
 			{
 				if (member.equals(player))
 				{
@@ -99,11 +99,11 @@ public class PartyMatchRoomList
 		return null;
 	}
 	
-	public int getPlayerRoomId(L2PcInstance player)
+	public int getPlayerRoomId(PlayerInstance player)
 	{
 		for (PartyMatchRoom _room : _rooms.values())
 		{
-			for (L2PcInstance member : _room.getPartyMembers())
+			for (PlayerInstance member : _room.getPartyMembers())
 			{
 				if (member.equals(player))
 				{

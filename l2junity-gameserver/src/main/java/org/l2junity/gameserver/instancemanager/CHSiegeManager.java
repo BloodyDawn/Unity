@@ -29,7 +29,7 @@ import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.model.zone.type.ClanHallZone;
@@ -127,7 +127,7 @@ public final class CHSiegeManager
 		return hall.getSiege();
 	}
 	
-	public final void registerClan(L2Clan clan, SiegableHall hall, L2PcInstance player)
+	public final void registerClan(L2Clan clan, SiegableHall hall, PlayerInstance player)
 	{
 		if (clan.getLevel() < Config.CHS_CLAN_MINLEVEL)
 		{

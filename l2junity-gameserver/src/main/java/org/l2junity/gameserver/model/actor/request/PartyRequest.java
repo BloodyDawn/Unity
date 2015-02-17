@@ -20,23 +20,23 @@ package org.l2junity.gameserver.model.actor.request;
 
 import java.util.Objects;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author UnAfraid
  */
 public class PartyRequest extends AbstractRequest
 {
-	private final L2PcInstance _targetPlayer;
+	private final PlayerInstance _targetPlayer;
 	
-	public PartyRequest(L2PcInstance activeChar, L2PcInstance targetPlayer)
+	public PartyRequest(PlayerInstance activeChar, PlayerInstance targetPlayer)
 	{
 		super(activeChar);
 		Objects.requireNonNull(targetPlayer);
 		_targetPlayer = targetPlayer;
 	}
 	
-	public L2PcInstance getTargetPlayer()
+	public PlayerInstance getTargetPlayer()
 	{
 		return _targetPlayer;
 	}

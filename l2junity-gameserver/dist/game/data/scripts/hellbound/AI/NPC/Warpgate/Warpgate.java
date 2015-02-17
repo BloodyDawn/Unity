@@ -22,7 +22,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.ZoneType;
 
 import hellbound.HellboundEngine;
@@ -62,7 +62,7 @@ public final class Warpgate extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if (event.equals("enter"))
 		{
@@ -83,7 +83,7 @@ public final class Warpgate extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		return HellboundEngine.getInstance().isLocked() ? "Warpgate-01.html" : "Warpgate-02.html";
 	}
@@ -93,7 +93,7 @@ public final class Warpgate extends AbstractNpcAI
 	{
 		if (character.isPlayer())
 		{
-			final L2PcInstance player = character.getActingPlayer();
+			final PlayerInstance player = character.getActingPlayer();
 			
 			if (!canEnter(player) && !player.canOverrideCond(PcCondOverride.ZONE_CONDITIONS) && !player.isOnEvent())
 			{
@@ -107,7 +107,7 @@ public final class Warpgate extends AbstractNpcAI
 		return super.onEnterZone(character, zone);
 	}
 	
-	private static boolean canEnter(L2PcInstance player)
+	private static boolean canEnter(PlayerInstance player)
 	{
 		return !player.isFlying();
 	}

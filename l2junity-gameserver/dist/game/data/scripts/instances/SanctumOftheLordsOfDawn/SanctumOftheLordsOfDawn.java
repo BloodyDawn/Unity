@@ -30,7 +30,7 @@ import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.quest.QuestState;
@@ -95,7 +95,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		switch (event)
 		{
@@ -148,7 +148,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
+	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
 	{
 		if (firstEntrance)
 		{
@@ -163,7 +163,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance talker)
+	public String onTalk(Npc npc, PlayerInstance talker)
 	{
 		switch (npc.getId())
 		{
@@ -201,7 +201,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 							npc.decayMe();
 							for (int objId : world.getAllowed())
 							{
-								final L2PcInstance pl = World.getInstance().getPlayer(objId);
+								final PlayerInstance pl = World.getInstance().getPlayer(objId);
 								if (pl != null)
 								{
 									pl.showQuestMovie(11);
@@ -245,7 +245,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 	}
 	
 	@Override
-	public String onAggroRangeEnter(Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAggroRangeEnter(Npc npc, PlayerInstance player, boolean isSummon)
 	{
 		npc.broadcastPacket(new MagicSkillUse(npc, player, GUARD_SKILL.getSkillId(), 1, 2000, 1));
 		startQuestTimer("teleportPlayer", 2000, npc, player);

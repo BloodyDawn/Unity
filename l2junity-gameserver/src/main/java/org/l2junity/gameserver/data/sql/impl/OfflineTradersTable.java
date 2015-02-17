@@ -33,7 +33,7 @@ import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.model.ManufactureItem;
 import org.l2junity.gameserver.model.TradeItem;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.L2GameClient.GameClientState;
 
@@ -61,7 +61,7 @@ public class OfflineTradersTable
 			stm2.execute();
 			con.setAutoCommit(false); // avoid halfway done
 			
-			for (L2PcInstance pc : World.getInstance().getPlayers())
+			for (PlayerInstance pc : World.getInstance().getPlayers())
 			{
 				try
 				{
@@ -176,13 +176,13 @@ public class OfflineTradersTable
 					continue;
 				}
 				
-				L2PcInstance player = null;
+				PlayerInstance player = null;
 				
 				try
 				{
 					L2GameClient client = new L2GameClient(null);
 					client.setDetached(true);
-					player = L2PcInstance.load(rs.getInt("charId"));
+					player = PlayerInstance.load(rs.getInt("charId"));
 					client.setActiveChar(player);
 					player.setOnlineStatus(true, false);
 					client.setAccountName(player.getAccountNamePlayer());

@@ -45,7 +45,7 @@ import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.instancemanager.ItemAuctionManager;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
@@ -493,7 +493,7 @@ public final class ItemAuctionInstance
 		if (bid != null)
 		{
 			final ItemInstance item = auction.createNewItemInstance();
-			final L2PcInstance player = bid.getPlayer();
+			final PlayerInstance player = bid.getPlayer();
 			if (player != null)
 			{
 				player.getWarehouse().addItem("ItemAuction", item, null, null);

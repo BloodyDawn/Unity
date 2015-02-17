@@ -20,7 +20,7 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.util.Util;
 
@@ -42,7 +42,7 @@ public final class RequestLinkHtml extends L2GameClientPacket
 	@Override
 	public void runImpl()
 	{
-		L2PcInstance actor = getClient().getActiveChar();
+		PlayerInstance actor = getClient().getActiveChar();
 		if (actor == null)
 		{
 			return;

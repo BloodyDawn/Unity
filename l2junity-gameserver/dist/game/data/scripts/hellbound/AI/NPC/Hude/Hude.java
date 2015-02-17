@@ -20,7 +20,7 @@ package hellbound.AI.NPC.Hude;
 
 import org.l2junity.gameserver.data.xml.impl.MultisellData;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 import hellbound.HellboundEngine;
 import ai.npc.AbstractNpcAI;
@@ -52,7 +52,7 @@ public final class Hude extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		switch (event)
 		{
@@ -108,7 +108,7 @@ public final class Hude extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onFirstTalk(Npc npc, L2PcInstance player)
+	public final String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		String htmltext = null;
 		if (!hasAtLeastOneQuestItem(player, BASIC_CERT, STANDART_CERT, PREMIUM_CERT))

@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.quest.QuestState;
@@ -100,7 +100,7 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		String htmltext = null;
@@ -171,7 +171,7 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 	}
 	
 	@Override
-	public final String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public final String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		
@@ -259,7 +259,7 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 	}
 	
 	@Override
-	public final String onKill(Npc npc, L2PcInstance player, boolean isSummon)
+	public final String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		
@@ -283,12 +283,12 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 	@Override
 	public String onEnterZone(Creature character, ZoneType zone)
 	{
-		if ((character.isPlayer()) && !character.isDead() && !character.isTeleporting() && ((L2PcInstance) character).isOnline())
+		if ((character.isPlayer()) && !character.isDead() && !character.isTeleporting() && ((PlayerInstance) character).isOnline())
 		{
 			final InstanceWorld world = InstanceManager.getInstance().getWorld(character.getInstanceId());
 			if ((world != null) && (world.getTemplateId() == TEMPLATE_ID))
 			{
-				startQuestTimer("TELEPORT", 1000, ((DIWorld) world)._lematanNpc, (L2PcInstance) character);
+				startQuestTimer("TELEPORT", 1000, ((DIWorld) world)._lematanNpc, (PlayerInstance) character);
 			}
 		}
 		return super.onEnterZone(character, zone);
@@ -305,7 +305,7 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
+	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
 	{
 		if (firstEntrance)
 		{

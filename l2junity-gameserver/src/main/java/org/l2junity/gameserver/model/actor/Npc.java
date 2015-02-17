@@ -58,7 +58,7 @@ import org.l2junity.gameserver.model.actor.instance.L2ClanHallManagerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2DoormenInstance;
 import org.l2junity.gameserver.model.actor.instance.L2FishermanInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2TeleporterInstance;
 import org.l2junity.gameserver.model.actor.instance.L2TrainerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2WarehouseInstance;
@@ -555,8 +555,8 @@ public class Npc extends Creature
 	public void updateAbnormalVisualEffects()
 	{
 		// Send a Server->Client packet NpcInfo with state of abnormal effect to all L2PcInstance in the _KnownPlayers of the L2NpcInstance
-		Collection<L2PcInstance> plrs = getKnownList().getKnownPlayers().values();
-		for (L2PcInstance player : plrs)
+		Collection<PlayerInstance> plrs = getKnownList().getKnownPlayers().values();
+		for (PlayerInstance player : plrs)
 		{
 			if ((player == null) || !isVisibleFor(player))
 			{
@@ -655,7 +655,7 @@ public class Npc extends Creature
 		return false;
 	}
 	
-	public boolean canTarget(L2PcInstance player)
+	public boolean canTarget(PlayerInstance player)
 	{
 		if (player.isOutOfControl())
 		{
@@ -673,7 +673,7 @@ public class Npc extends Creature
 		return true;
 	}
 	
-	public boolean canInteract(L2PcInstance player)
+	public boolean canInteract(PlayerInstance player)
 	{
 		if (player.isCastingNow() || player.isCastingSimultaneouslyNow())
 		{
@@ -744,7 +744,7 @@ public class Npc extends Creature
 	 * @param player the player to check
 	 * @return {@code true} if the player is clan leader and owner of a castle of fort that this NPC belongs to, {@code false} otherwise
 	 */
-	public boolean isMyLord(L2PcInstance player)
+	public boolean isMyLord(PlayerInstance player)
 	{
 		if (player.isClanLeader())
 		{
@@ -841,7 +841,7 @@ public class Npc extends Creature
 	 * @param player
 	 * @param command The command string received from client
 	 */
-	public void onBypassFeedback(L2PcInstance player, String command)
+	public void onBypassFeedback(PlayerInstance player, String command)
 	{
 		// if (canInteract(player))
 		{
@@ -943,7 +943,7 @@ public class Npc extends Creature
 	 * @param player The L2PcInstance who talks with the L2NpcInstance
 	 * @param content The text of the L2NpcMessage
 	 */
-	public void insertObjectIdAndShowChatWindow(L2PcInstance player, String content)
+	public void insertObjectIdAndShowChatWindow(PlayerInstance player, String content)
 	{
 		// Send a Server->Client packet NpcHtmlMessage to the L2PcInstance in order to display the message of the L2NpcInstance
 		content = content.replaceAll("%objectId%", String.valueOf(getObjectId()));
@@ -996,7 +996,7 @@ public class Npc extends Creature
 		return "data/html/npcdefault.htm";
 	}
 	
-	public void showChatWindow(L2PcInstance player)
+	public void showChatWindow(PlayerInstance player)
 	{
 		showChatWindow(player, 0);
 	}
@@ -1007,7 +1007,7 @@ public class Npc extends Creature
 	 * @param type
 	 * @return boolean
 	 */
-	private boolean showPkDenyChatWindow(L2PcInstance player, String type)
+	private boolean showPkDenyChatWindow(PlayerInstance player, String type)
 	{
 		final String html = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "data/html/" + type + "/" + getId() + "-pk.htm");
 		if (html != null)
@@ -1030,7 +1030,7 @@ public class Npc extends Creature
 	 * @param player The L2PcInstance that talk with the L2NpcInstance
 	 * @param val The number of the page of the L2NpcInstance to display
 	 */
-	public void showChatWindow(L2PcInstance player, int val)
+	public void showChatWindow(PlayerInstance player, int val)
 	{
 		if (!isTalkable())
 		{
@@ -1162,7 +1162,7 @@ public class Npc extends Creature
 	 * @param player The L2PcInstance that talk with the L2NpcInstance
 	 * @param filename The filename that contains the text to send
 	 */
-	public void showChatWindow(L2PcInstance player, String filename)
+	public void showChatWindow(PlayerInstance player, String filename)
 	{
 		// Send a Server->Client NpcHtmlMessage containing the text of the L2NpcInstance to the L2PcInstance
 		final NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
@@ -1447,7 +1447,7 @@ public class Npc extends Creature
 	}
 	
 	@Override
-	public void sendInfo(L2PcInstance activeChar)
+	public void sendInfo(PlayerInstance activeChar)
 	{
 		if (isVisibleFor(activeChar))
 		{
@@ -1467,7 +1467,7 @@ public class Npc extends Creature
 		}
 	}
 	
-	public void showNoTeachHtml(L2PcInstance player)
+	public void showNoTeachHtml(PlayerInstance player)
 	{
 		int npcId = getId();
 		String html = "";
@@ -1767,7 +1767,7 @@ public class Npc extends Creature
 	 * @param itemCount the item count
 	 * @return the dropped item
 	 */
-	public ItemInstance dropItem(L2PcInstance player, int itemId, long itemCount)
+	public ItemInstance dropItem(PlayerInstance player, int itemId, long itemCount)
 	{
 		ItemInstance item = null;
 		for (int i = 0; i < itemCount; i++)
@@ -1816,12 +1816,12 @@ public class Npc extends Creature
 	}
 	
 	/**
-	 * Method overload for {@link Attackable#dropItem(L2PcInstance, int, long)}
+	 * Method overload for {@link Attackable#dropItem(PlayerInstance, int, long)}
 	 * @param player the last attacker or main damage dealer
 	 * @param item the item holder
 	 * @return the dropped item
 	 */
-	public ItemInstance dropItem(L2PcInstance player, ItemHolder item)
+	public ItemInstance dropItem(PlayerInstance player, ItemHolder item)
 	{
 		return dropItem(player, item.getId(), item.getCount());
 	}
@@ -1833,7 +1833,7 @@ public class Npc extends Creature
 	}
 	
 	@Override
-	public boolean isVisibleFor(L2PcInstance player)
+	public boolean isVisibleFor(PlayerInstance player)
 	{
 		if (hasListener(EventType.ON_NPC_CAN_BE_SEEN))
 		{

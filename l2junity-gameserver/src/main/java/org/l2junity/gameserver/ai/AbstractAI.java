@@ -31,7 +31,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.AutoAttackStart;
@@ -490,7 +490,7 @@ public abstract class AbstractAI implements Ctrl
 	 */
 	protected void clientActionFailed()
 	{
-		if (_actor instanceof L2PcInstance)
+		if (_actor instanceof PlayerInstance)
 		{
 			_actor.sendPacket(ActionFailed.STATIC_PACKET);
 		}
@@ -719,7 +719,7 @@ public abstract class AbstractAI implements Ctrl
 			}
 			return;
 		}
-		if (_actor instanceof L2PcInstance)
+		if (_actor instanceof PlayerInstance)
 		{
 			if (!AttackStanceTaskManager.getInstance().hasAttackStanceTask(_actor) && isAutoAttacking())
 			{
@@ -758,7 +758,7 @@ public abstract class AbstractAI implements Ctrl
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : Low level function, used by AI subclasses</B></FONT>
 	 * @param player The L2PcIstance to notify with state of this L2Character
 	 */
-	public void describeStateToPlayer(L2PcInstance player)
+	public void describeStateToPlayer(PlayerInstance player)
 	{
 		if (getActor().isVisibleFor(player))
 		{

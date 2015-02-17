@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.serverpackets.friend;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
 
 /**
@@ -39,7 +39,7 @@ public class L2FriendStatus extends L2GameServerPacket
 	private final int _level;
 	private final String _name;
 	
-	public L2FriendStatus(L2PcInstance player, int type)
+	public L2FriendStatus(PlayerInstance player, int type)
 	{
 		_objectId = player.getObjectId();
 		_classId = player.getActiveClass();

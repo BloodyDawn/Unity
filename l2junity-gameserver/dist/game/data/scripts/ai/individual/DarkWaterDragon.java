@@ -27,7 +27,7 @@ import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 import ai.npc.AbstractNpcAI;
 
@@ -44,7 +44,7 @@ public final class DarkWaterDragon extends AbstractNpcAI
 	private static final int DETRACTOR2 = 22271;
 	private static Set<Integer> SECOND_SPAWN = ConcurrentHashMap.newKeySet(); // Used to track if second Shades were already spawned
 	private static Set<Integer> MY_TRACKING_SET = ConcurrentHashMap.newKeySet(); // Used to track instances of npcs
-	private static Map<Integer, L2PcInstance> ID_MAP = new ConcurrentHashMap<>(); // Used to track instances of npcs
+	private static Map<Integer, PlayerInstance> ID_MAP = new ConcurrentHashMap<>(); // Used to track instances of npcs
 	
 	private DarkWaterDragon()
 	{
@@ -66,7 +66,7 @@ public final class DarkWaterDragon extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if (npc != null)
 		{
@@ -142,7 +142,7 @@ public final class DarkWaterDragon extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon)
 	{
 		int npcId = npc.getId();
 		int npcObjId = npc.getObjectId();
@@ -173,7 +173,7 @@ public final class DarkWaterDragon extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		int npcId = npc.getId();
 		int npcObjId = npc.getObjectId();

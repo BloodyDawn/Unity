@@ -21,7 +21,7 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.GMHennaInfo;
 import org.l2junity.gameserver.network.serverpackets.GMViewCharacterInfo;
 import org.l2junity.gameserver.network.serverpackets.GMViewItemList;
@@ -58,7 +58,7 @@ public final class RequestGMCommand extends L2GameClientPacket
 			return;
 		}
 		
-		L2PcInstance player = World.getInstance().getPlayer(_targetName);
+		PlayerInstance player = World.getInstance().getPlayer(_targetName);
 		
 		L2Clan clan = ClanTable.getInstance().getClanByName(_targetName);
 		

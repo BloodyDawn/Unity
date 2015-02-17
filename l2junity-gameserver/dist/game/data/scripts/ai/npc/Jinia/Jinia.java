@@ -19,7 +19,7 @@
 package ai.npc.Jinia;
 
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.QuestState;
 
 import quests.Q10286_ReunionWithSirra.Q10286_ReunionWithSirra;
@@ -48,7 +48,7 @@ public final class Jinia extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String htmltext = event;
 		switch (event)
@@ -85,7 +85,7 @@ public final class Jinia extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		final QuestState st = player.getQuestState(Q10286_ReunionWithSirra.class.getSimpleName());
 		if ((st != null) && (player.getLevel() >= MIN_LEVEL))

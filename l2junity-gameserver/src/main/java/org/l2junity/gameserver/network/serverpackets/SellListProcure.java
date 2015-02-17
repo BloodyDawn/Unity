@@ -23,7 +23,7 @@ import java.util.Map;
 
 import org.l2junity.gameserver.instancemanager.CastleManorManager;
 import org.l2junity.gameserver.model.CropProcure;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 public class SellListProcure extends L2GameServerPacket
@@ -31,7 +31,7 @@ public class SellListProcure extends L2GameServerPacket
 	private final long _money;
 	private final Map<ItemInstance, Long> _sellList = new HashMap<>();
 	
-	public SellListProcure(L2PcInstance player, int castleId)
+	public SellListProcure(PlayerInstance player, int castleId)
 	{
 		_money = player.getAdena();
 		for (CropProcure c : CastleManorManager.getInstance().getCropProcure(castleId, false))

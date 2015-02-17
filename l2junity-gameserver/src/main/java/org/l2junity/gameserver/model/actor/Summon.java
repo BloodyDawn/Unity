@@ -36,7 +36,7 @@ import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.WorldRegion;
 import org.l2junity.gameserver.model.actor.instance.L2NpcInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.knownlist.SummonKnownList;
 import org.l2junity.gameserver.model.actor.stat.SummonStat;
 import org.l2junity.gameserver.model.actor.status.SummonStatus;
@@ -73,7 +73,7 @@ import org.l2junity.gameserver.util.Util;
 
 public abstract class Summon extends Playable
 {
-	private L2PcInstance _owner;
+	private PlayerInstance _owner;
 	private int _attackRange = 36; // Melee range
 	private boolean _follow = true;
 	private boolean _previousFollowStatus = true;
@@ -108,7 +108,7 @@ public abstract class Summon extends Playable
 		}
 	}
 	
-	public Summon(L2NpcTemplate template, L2PcInstance owner)
+	public Summon(L2NpcTemplate template, PlayerInstance owner)
 	{
 		super(template);
 		setInstanceType(InstanceType.L2Summon);
@@ -133,7 +133,7 @@ public abstract class Summon extends Playable
 		setFollowStatus(true);
 		updateAndBroadcastStatus(0);
 		sendPacket(new RelationChanged(this, getOwner().getRelation(getOwner()), false));
-		for (L2PcInstance player : getOwner().getKnownList().getKnownPlayersInRadius(800))
+		for (PlayerInstance player : getOwner().getKnownList().getKnownPlayersInRadius(800))
 		{
 			player.sendPacket(new RelationChanged(this, getOwner().getRelation(player), isAutoAttackable(player)));
 		}
@@ -218,7 +218,7 @@ public abstract class Summon extends Playable
 	@Override
 	public void updateAbnormalVisualEffects()
 	{
-		for (L2PcInstance player : getKnownList().getKnownPlayers().values())
+		for (PlayerInstance player : getKnownList().getKnownPlayers().values())
 		{
 			if (isPet())
 			{
@@ -275,7 +275,7 @@ public abstract class Summon extends Playable
 		return getOwner() != null ? getOwner().getTeam() : Team.NONE;
 	}
 	
-	public final L2PcInstance getOwner()
+	public final PlayerInstance getOwner()
 	{
 		return _owner;
 	}
@@ -331,7 +331,7 @@ public abstract class Summon extends Playable
 			return false;
 		}
 		
-		final L2PcInstance owner = getOwner();
+		final PlayerInstance owner = getOwner();
 		if (owner != null)
 		{
 			for (Creature TgMob : getKnownList().getKnownCharacters())
@@ -388,7 +388,7 @@ public abstract class Summon extends Playable
 		updateAndBroadcastStatus(1);
 	}
 	
-	public void deleteMe(L2PcInstance owner)
+	public void deleteMe(PlayerInstance owner)
 	{
 		if (owner != null)
 		{
@@ -414,7 +414,7 @@ public abstract class Summon extends Playable
 		super.deleteMe();
 	}
 	
-	public void unSummon(L2PcInstance owner)
+	public void unSummon(PlayerInstance owner)
 	{
 		if (isVisible() && !isDead())
 		{
@@ -770,7 +770,7 @@ public abstract class Summon extends Playable
 		}
 	}
 	
-	public void setOwner(L2PcInstance newOwner)
+	public void setOwner(PlayerInstance newOwner)
 	{
 		_owner = newOwner;
 	}
@@ -798,7 +798,7 @@ public abstract class Summon extends Playable
 				}
 			}
 			
-			if (getOwner().isInOlympiadMode() && (target instanceof L2PcInstance) && ((L2PcInstance) target).isInOlympiadMode() && (((L2PcInstance) target).getOlympiadGameId() == getOwner().getOlympiadGameId()))
+			if (getOwner().isInOlympiadMode() && (target instanceof PlayerInstance) && ((PlayerInstance) target).isInOlympiadMode() && (((PlayerInstance) target).getOlympiadGameId() == getOwner().getOlympiadGameId()))
 			{
 				OlympiadGameManager.getInstance().notifyCompetitorDamage(getOwner(), damage);
 			}
@@ -839,7 +839,7 @@ public abstract class Summon extends Playable
 	@Override
 	public void doCast(Skill skill)
 	{
-		final L2PcInstance actingPlayer = getActingPlayer();
+		final PlayerInstance actingPlayer = getActingPlayer();
 		if (!actingPlayer.checkPvpSkill(getTarget(), skill) && !actingPlayer.getAccessLevel().allowPeaceAttack())
 		{
 			// Send a System Message to the L2PcInstance
@@ -860,7 +860,7 @@ public abstract class Summon extends Playable
 	}
 	
 	@Override
-	public L2PcInstance getActingPlayer()
+	public PlayerInstance getActingPlayer()
 	{
 		return getOwner();
 	}
@@ -908,7 +908,7 @@ public abstract class Summon extends Playable
 	
 	public void broadcastNpcInfo(int val)
 	{
-		for (L2PcInstance player : getKnownList().getKnownPlayers().values())
+		for (PlayerInstance player : getKnownList().getKnownPlayers().values())
 		{
 			if ((player == null) || (player == getOwner()))
 			{
@@ -942,7 +942,7 @@ public abstract class Summon extends Playable
 	}
 	
 	@Override
-	public void sendInfo(L2PcInstance activeChar)
+	public void sendInfo(PlayerInstance activeChar)
 	{
 		// Check if the L2PcInstance is the owner of the Pet
 		if (activeChar == getOwner())

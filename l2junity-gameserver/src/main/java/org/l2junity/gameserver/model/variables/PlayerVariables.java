@@ -28,7 +28,7 @@ import java.util.logging.Logger;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author UnAfraid
@@ -144,7 +144,7 @@ public class PlayerVariables extends AbstractVariables
 		return true;
 	}
 	
-	public L2PcInstance getPlayer()
+	public PlayerInstance getPlayer()
 	{
 		return World.getInstance().getPlayer(_objectId);
 	}

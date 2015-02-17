@@ -33,7 +33,7 @@ import java.util.logging.Logger;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.Mentee;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.variables.PlayerVariables;
@@ -130,7 +130,7 @@ public class MentorManager
 		return _menteeData;
 	}
 	
-	public void cancelMentoringBuffs(L2PcInstance player)
+	public void cancelMentoringBuffs(PlayerInstance player)
 	{
 		if (player == null)
 		{
@@ -148,14 +148,14 @@ public class MentorManager
 	
 	public void setPenalty(int mentorId, long penalty)
 	{
-		final L2PcInstance player = World.getInstance().getPlayer(mentorId);
+		final PlayerInstance player = World.getInstance().getPlayer(mentorId);
 		final PlayerVariables vars = player != null ? player.getVariables() : new PlayerVariables(mentorId);
 		vars.set("Mentor-Penalty-" + mentorId, String.valueOf(System.currentTimeMillis() + penalty));
 	}
 	
 	public long getMentorPenalty(int mentorId)
 	{
-		final L2PcInstance player = World.getInstance().getPlayer(mentorId);
+		final PlayerInstance player = World.getInstance().getPlayer(mentorId);
 		final PlayerVariables vars = player != null ? player.getVariables() : new PlayerVariables(mentorId);
 		return vars.getLong("Mentor-Penalty-" + mentorId, 0);
 	}

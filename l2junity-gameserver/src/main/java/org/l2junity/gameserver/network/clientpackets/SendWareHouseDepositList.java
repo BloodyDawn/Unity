@@ -25,7 +25,7 @@ import java.util.List;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.itemcontainer.ItemContainer;
 import org.l2junity.gameserver.model.itemcontainer.PcWarehouse;
@@ -78,7 +78,7 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 			return;
 		}
 		
-		final L2PcInstance player = getClient().getActiveChar();
+		final PlayerInstance player = getClient().getActiveChar();
 		if (player == null)
 		{
 			return;

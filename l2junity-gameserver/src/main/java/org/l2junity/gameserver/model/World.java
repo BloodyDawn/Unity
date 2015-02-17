@@ -32,7 +32,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.util.Util;
 
@@ -71,7 +71,7 @@ public final class World
 	private static final int REGIONS_Y = (MAP_MAX_Y >> SHIFT_BY) + OFFSET_Y;
 	
 	/** Map containing all the players in game. */
-	private final Map<Integer, L2PcInstance> _allPlayers = new ConcurrentHashMap<>();
+	private final Map<Integer, PlayerInstance> _allPlayers = new ConcurrentHashMap<>();
 	/** Map containing all visible objects. */
 	private final Map<Integer, WorldObject> _allObjects = new ConcurrentHashMap<>();
 	/** Map used for debug. */
@@ -155,12 +155,12 @@ public final class World
 		return _allObjects.size();
 	}
 	
-	public List<L2PcInstance> getAllGMs()
+	public List<PlayerInstance> getAllGMs()
 	{
 		return AdminData.getInstance().getAllGms(true);
 	}
 	
-	public Collection<L2PcInstance> getPlayers()
+	public Collection<PlayerInstance> getPlayers()
 	{
 		return _allPlayers.values();
 	}
@@ -170,9 +170,9 @@ public final class World
 	 * @param comparator the comparator
 	 * @return the players sorted by the comparator
 	 */
-	public L2PcInstance[] getPlayersSortedBy(Comparator<L2PcInstance> comparator)
+	public PlayerInstance[] getPlayersSortedBy(Comparator<PlayerInstance> comparator)
 	{
-		final L2PcInstance[] players = _allPlayers.values().toArray(new L2PcInstance[_allPlayers.values().size()]);
+		final PlayerInstance[] players = _allPlayers.values().toArray(new PlayerInstance[_allPlayers.values().size()]);
 		Arrays.sort(players, comparator);
 		return players;
 	}
@@ -191,7 +191,7 @@ public final class World
 	 * @param name Name of the player to get Instance
 	 * @return the player instance corresponding to the given name.
 	 */
-	public L2PcInstance getPlayer(String name)
+	public PlayerInstance getPlayer(String name)
 	{
 		return getPlayer(CharNameTable.getInstance().getIdByName(name));
 	}
@@ -200,7 +200,7 @@ public final class World
 	 * @param objectId of the player to get Instance
 	 * @return the player instance corresponding to the given object ID.
 	 */
-	public L2PcInstance getPlayer(int objectId)
+	public PlayerInstance getPlayer(int objectId)
 	{
 		return _allPlayers.get(objectId);
 	}
@@ -259,10 +259,10 @@ public final class World
 		// TODO: this code should be obsoleted by protection in putObject func...
 		if (object.isPlayer())
 		{
-			L2PcInstance player = object.getActingPlayer();
+			PlayerInstance player = object.getActingPlayer();
 			if (!player.isTeleporting())
 			{
-				final L2PcInstance old = getPlayer(player.getObjectId());
+				final PlayerInstance old = getPlayer(player.getObjectId());
 				if (old != null)
 				{
 					_log.warning("Duplicate character!? Closing both characters (" + player.getName() + ")");
@@ -312,7 +312,7 @@ public final class World
 	 * Adds the player to the world.
 	 * @param player the player to add
 	 */
-	public void addPlayerToWorld(L2PcInstance player)
+	public void addPlayerToWorld(PlayerInstance player)
 	{
 		_allPlayers.put(player.getObjectId(), player);
 	}
@@ -321,7 +321,7 @@ public final class World
 	 * Remove the player from the world.
 	 * @param player the player to remove
 	 */
-	public void removeFromAllPlayers(L2PcInstance player)
+	public void removeFromAllPlayers(PlayerInstance player)
 	{
 		_allPlayers.remove(player.getObjectId());
 	}
@@ -369,7 +369,7 @@ public final class World
 			// If selected L2Object is a L2PcIntance, remove it from L2ObjectHashSet(L2PcInstance) _allPlayers of L2World
 			if (object.isPlayer())
 			{
-				final L2PcInstance player = object.getActingPlayer();
+				final PlayerInstance player = object.getActingPlayer();
 				if (!player.isTeleporting())
 				{
 					removeFromAllPlayers(player);

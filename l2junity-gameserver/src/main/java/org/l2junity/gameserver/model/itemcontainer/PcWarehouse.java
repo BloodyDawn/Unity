@@ -19,15 +19,15 @@
 package org.l2junity.gameserver.model.itemcontainer;
 
 import org.l2junity.gameserver.enums.ItemLocation;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public class PcWarehouse extends Warehouse
 {
 	// private static final Logger _log = Logger.getLogger(PcWarehouse.class.getName());
 	
-	private final L2PcInstance _owner;
+	private final PlayerInstance _owner;
 	
-	public PcWarehouse(L2PcInstance owner)
+	public PcWarehouse(PlayerInstance owner)
 	{
 		_owner = owner;
 	}
@@ -39,7 +39,7 @@ public class PcWarehouse extends Warehouse
 	}
 	
 	@Override
-	public L2PcInstance getOwner()
+	public PlayerInstance getOwner()
 	{
 		return _owner;
 	}

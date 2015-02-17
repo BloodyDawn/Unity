@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public final class RequestReplySurrenderPledgeWar extends L2GameClientPacket
 {
@@ -38,12 +38,12 @@ public final class RequestReplySurrenderPledgeWar extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
-		final L2PcInstance requestor = activeChar.getActiveRequester();
+		final PlayerInstance requestor = activeChar.getActiveRequester();
 		if (requestor == null)
 		{
 			return;

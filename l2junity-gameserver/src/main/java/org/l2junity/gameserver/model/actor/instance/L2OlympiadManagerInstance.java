@@ -35,7 +35,7 @@ public class L2OlympiadManagerInstance extends Npc
 		setInstanceType(InstanceType.L2OlympiadManagerInstance);
 	}
 	
-	public void showChatWindow(L2PcInstance player, int val, String suffix)
+	public void showChatWindow(PlayerInstance player, int val, String suffix)
 	{
 		String filename = Olympiad.OLYMPIAD_HTML_PATH;
 		

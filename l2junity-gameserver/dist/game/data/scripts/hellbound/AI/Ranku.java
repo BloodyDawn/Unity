@@ -24,7 +24,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.util.MinionList;
@@ -52,7 +52,7 @@ public final class Ranku extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		if (event.equalsIgnoreCase("checkup") && (npc.getId() == RANKU) && !npc.isDead())
 		{
@@ -60,8 +60,8 @@ public final class Ranku extends AbstractNpcAI
 			{
 				if ((minion != null) && !minion.isDead() && MY_TRACKING_SET.contains(minion.getObjectId()))
 				{
-					final L2PcInstance[] players = minion.getKnownList().getKnownPlayers().values().toArray(new L2PcInstance[minion.getKnownList().getKnownPlayers().size()]);
-					final L2PcInstance killer = players[getRandom(players.length)];
+					final PlayerInstance[] players = minion.getKnownList().getKnownPlayers().values().toArray(new PlayerInstance[minion.getKnownList().getKnownPlayers().size()]);
+					final PlayerInstance killer = players[getRandom(players.length)];
 					minion.reduceCurrentHp(minion.getMaxHp() / 100, killer, null);
 				}
 			}
@@ -71,7 +71,7 @@ public final class Ranku extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAttack(Npc npc, L2PcInstance attacker, int damage, boolean isSummon, Skill skill)
+	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
 		if (npc.getId() == RANKU)
 		{
@@ -88,7 +88,7 @@ public final class Ranku extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		if (npc.getId() == MINION)
 		{

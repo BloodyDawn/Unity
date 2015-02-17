@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.Henna;
 
 /**
@@ -26,10 +26,10 @@ import org.l2junity.gameserver.model.items.Henna;
  */
 public class HennaItemDrawInfo extends L2GameServerPacket
 {
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final Henna _henna;
 	
-	public HennaItemDrawInfo(Henna henna, L2PcInstance player)
+	public HennaItemDrawInfo(Henna henna, PlayerInstance player)
 	{
 		_henna = henna;
 		_activeChar = player;

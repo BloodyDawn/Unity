@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.Location;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public final class Ride extends L2GameServerPacket
 {
@@ -29,7 +29,7 @@ public final class Ride extends L2GameServerPacket
 	private final int _rideNpcId;
 	private final Location _loc;
 	
-	public Ride(L2PcInstance player)
+	public Ride(PlayerInstance player)
 	{
 		_objectId = player.getObjectId();
 		_mounted = player.isMounted() ? 1 : 0;

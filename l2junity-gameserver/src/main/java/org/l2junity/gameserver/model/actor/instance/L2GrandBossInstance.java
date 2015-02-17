@@ -69,11 +69,11 @@ public final class L2GrandBossInstance extends L2MonsterInstance
 		{
 			return false;
 		}
-		L2PcInstance player = null;
+		PlayerInstance player = null;
 		
-		if (killer instanceof L2PcInstance)
+		if (killer instanceof PlayerInstance)
 		{
-			player = (L2PcInstance) killer;
+			player = (PlayerInstance) killer;
 		}
 		else if (killer instanceof Summon)
 		{
@@ -85,7 +85,7 @@ public final class L2GrandBossInstance extends L2MonsterInstance
 			broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.CONGRATULATIONS_YOUR_RAID_WAS_SUCCESSFUL));
 			if (player.getParty() != null)
 			{
-				for (L2PcInstance member : player.getParty().getMembers())
+				for (PlayerInstance member : player.getParty().getMembers())
 				{
 					RaidBossPointsManager.getInstance().addPoints(member, getId(), (getLevel() / 2) + Rnd.get(-5, 5));
 					if (member.isNoble())

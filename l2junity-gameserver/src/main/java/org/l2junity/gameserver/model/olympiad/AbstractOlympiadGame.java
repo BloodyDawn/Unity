@@ -32,7 +32,7 @@ import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.Party.messageType;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -110,7 +110,7 @@ public abstract class AbstractOlympiadGame
 	 * @param player
 	 * @return
 	 */
-	protected static SystemMessage checkDefaulted(L2PcInstance player)
+	protected static SystemMessage checkDefaulted(PlayerInstance player)
 	{
 		if ((player == null) || !player.isOnline())
 		{
@@ -164,7 +164,7 @@ public abstract class AbstractOlympiadGame
 	
 	protected static final boolean portPlayerToArena(Participant par, Location loc, int id)
 	{
-		final L2PcInstance player = par.getPlayer();
+		final PlayerInstance player = par.getPlayer();
 		if ((player == null) || !player.isOnline())
 		{
 			return false;
@@ -196,7 +196,7 @@ public abstract class AbstractOlympiadGame
 		return true;
 	}
 	
-	protected static final void removals(L2PcInstance player, boolean removeParty)
+	protected static final void removals(PlayerInstance player, boolean removeParty)
 	{
 		try
 		{
@@ -299,7 +299,7 @@ public abstract class AbstractOlympiadGame
 		}
 	}
 	
-	protected static final void cleanEffects(L2PcInstance player)
+	protected static final void cleanEffects(PlayerInstance player)
 	{
 		try
 		{
@@ -352,7 +352,7 @@ public abstract class AbstractOlympiadGame
 		}
 	}
 	
-	protected static final void playerStatusBack(L2PcInstance player)
+	protected static final void playerStatusBack(PlayerInstance player)
 	{
 		try
 		{
@@ -399,7 +399,7 @@ public abstract class AbstractOlympiadGame
 		}
 	}
 	
-	protected static final void portPlayerBack(L2PcInstance player)
+	protected static final void portPlayerBack(PlayerInstance player)
 	{
 		if (player == null)
 		{
@@ -416,7 +416,7 @@ public abstract class AbstractOlympiadGame
 		player.unsetLastLocation();
 	}
 	
-	public static final void rewardParticipant(L2PcInstance player, int[][] reward)
+	public static final void rewardParticipant(PlayerInstance player, int[][] reward)
 	{
 		if ((player == null) || !player.isOnline() || (reward == null))
 		{
@@ -483,11 +483,11 @@ public abstract class AbstractOlympiadGame
 	
 	protected abstract void clearPlayers();
 	
-	protected abstract void handleDisconnect(L2PcInstance player);
+	protected abstract void handleDisconnect(PlayerInstance player);
 	
 	protected abstract void resetDamage();
 	
-	protected abstract void addDamage(L2PcInstance player, int damage);
+	protected abstract void addDamage(PlayerInstance player, int damage);
 	
 	protected abstract boolean checkBattleStatus();
 	

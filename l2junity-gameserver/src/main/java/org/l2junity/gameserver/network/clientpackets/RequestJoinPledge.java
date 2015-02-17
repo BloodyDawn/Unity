@@ -20,7 +20,7 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.AskJoinPledge;
 
@@ -45,7 +45,7 @@ public final class RequestJoinPledge extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -57,7 +57,7 @@ public final class RequestJoinPledge extends L2GameClientPacket
 			return;
 		}
 		
-		final L2PcInstance target = World.getInstance().getPlayer(_target);
+		final PlayerInstance target = World.getInstance().getPlayer(_target);
 		if (target == null)
 		{
 			activeChar.sendPacket(SystemMessageId.YOU_HAVE_INVITED_THE_WRONG_TARGET);

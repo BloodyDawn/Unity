@@ -23,7 +23,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
@@ -73,7 +73,7 @@ public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient>
 			 */
 			if (triggersOnActionRequest())
 			{
-				final L2PcInstance actor = getClient().getActiveChar();
+				final PlayerInstance actor = getClient().getActiveChar();
 				if ((actor != null) && (actor.isSpawnProtected() || actor.isInvul()))
 				{
 					actor.onActionRequest();
@@ -135,7 +135,7 @@ public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient>
 	/**
 	 * @return the active player if exist, otherwise null.
 	 */
-	protected final L2PcInstance getActiveChar()
+	protected final PlayerInstance getActiveChar()
 	{
 		return getClient().getActiveChar();
 	}

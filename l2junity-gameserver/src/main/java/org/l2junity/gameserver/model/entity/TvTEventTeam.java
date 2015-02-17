@@ -20,7 +20,7 @@ package org.l2junity.gameserver.model.entity;
 
 import java.util.Map;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 import javolution.util.FastMap;
 
@@ -36,7 +36,7 @@ public class TvTEventTeam
 	/** The points of the team<br> */
 	private short _points;
 	/** Name and instance of all participated players in FastMap<br> */
-	private Map<Integer, L2PcInstance> _participatedPlayers = new FastMap<>();
+	private Map<Integer, PlayerInstance> _participatedPlayers = new FastMap<>();
 	
 	/**
 	 * C'tor initialize the team<br>
@@ -57,7 +57,7 @@ public class TvTEventTeam
 	 * @param playerInstance as L2PcInstance<br>
 	 * @return boolean: true if success, otherwise false<br>
 	 */
-	public boolean addPlayer(L2PcInstance playerInstance)
+	public boolean addPlayer(PlayerInstance playerInstance)
 	{
 		if (playerInstance == null)
 		{
@@ -154,9 +154,9 @@ public class TvTEventTeam
 	 * <br>
 	 * @return Map<String, L2PcInstance>: map of players in this team<br>
 	 */
-	public Map<Integer, L2PcInstance> getParticipatedPlayers()
+	public Map<Integer, PlayerInstance> getParticipatedPlayers()
 	{
-		Map<Integer, L2PcInstance> participatedPlayers = null;
+		Map<Integer, PlayerInstance> participatedPlayers = null;
 		
 		synchronized (_participatedPlayers)
 		{

@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.events.impl.item;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.IBaseEvent;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -30,10 +30,10 @@ public class OnItemCreate implements IBaseEvent
 {
 	private final String _process;
 	private final ItemInstance _item;
-	private final L2PcInstance _activeChar;
+	private final PlayerInstance _activeChar;
 	private final Object _reference;
 	
-	public OnItemCreate(String process, ItemInstance item, L2PcInstance actor, Object reference)
+	public OnItemCreate(String process, ItemInstance item, PlayerInstance actor, Object reference)
 	{
 		_process = process;
 		_item = item;
@@ -51,7 +51,7 @@ public class OnItemCreate implements IBaseEvent
 		return _item;
 	}
 	
-	public L2PcInstance getActiveChar()
+	public PlayerInstance getActiveChar()
 	{
 		return _activeChar;
 	}

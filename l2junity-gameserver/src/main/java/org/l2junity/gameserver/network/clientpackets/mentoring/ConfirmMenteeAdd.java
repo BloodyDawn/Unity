@@ -26,7 +26,7 @@ import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.instancemanager.MentorManager;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.mentoring.OnPlayerMenteeAdd;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -54,13 +54,13 @@ public class ConfirmMenteeAdd extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final L2PcInstance mentee = getClient().getActiveChar();
+		final PlayerInstance mentee = getClient().getActiveChar();
 		if (mentee == null)
 		{
 			return;
 		}
 		
-		final L2PcInstance mentor = World.getInstance().getPlayer(_mentor);
+		final PlayerInstance mentor = World.getInstance().getPlayer(_mentor);
 		if (mentor == null)
 		{
 			return;
@@ -106,7 +106,7 @@ public class ConfirmMenteeAdd extends L2GameClientPacket
 	 * @param mentee
 	 * @return
 	 */
-	public static boolean validate(L2PcInstance mentor, L2PcInstance mentee)
+	public static boolean validate(PlayerInstance mentor, PlayerInstance mentee)
 	{
 		if ((mentor == null) || (mentee == null))
 		{

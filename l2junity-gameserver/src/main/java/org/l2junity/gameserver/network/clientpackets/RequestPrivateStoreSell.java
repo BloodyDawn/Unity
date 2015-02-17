@@ -25,7 +25,7 @@ import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.model.ItemRequest;
 import org.l2junity.gameserver.model.TradeList;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 
 /**
@@ -73,7 +73,7 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance player = getClient().getActiveChar();
+		PlayerInstance player = getClient().getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -91,13 +91,13 @@ public final class RequestPrivateStoreSell extends L2GameClientPacket
 			return;
 		}
 		
-		L2PcInstance object = World.getInstance().getPlayer(_storePlayerId);
+		PlayerInstance object = World.getInstance().getPlayer(_storePlayerId);
 		if (object == null)
 		{
 			return;
 		}
 		
-		L2PcInstance storePlayer = object;
+		PlayerInstance storePlayer = object;
 		if (!player.isInsideRadius(storePlayer, INTERACTION_DISTANCE, true, false))
 		{
 			return;

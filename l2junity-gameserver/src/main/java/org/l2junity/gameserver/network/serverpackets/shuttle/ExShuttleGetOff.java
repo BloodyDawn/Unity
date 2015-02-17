@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.serverpackets.shuttle;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2ShuttleInstance;
 import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
 
@@ -33,7 +33,7 @@ public class ExShuttleGetOff extends L2GameServerPacket
 	private final int _y;
 	private final int _z;
 	
-	public ExShuttleGetOff(L2PcInstance player, L2ShuttleInstance shuttle, int x, int y, int z)
+	public ExShuttleGetOff(PlayerInstance player, L2ShuttleInstance shuttle, int x, int y, int z)
 	{
 		_playerObjectId = player.getObjectId();
 		_shuttleObjectId = shuttle.getObjectId();

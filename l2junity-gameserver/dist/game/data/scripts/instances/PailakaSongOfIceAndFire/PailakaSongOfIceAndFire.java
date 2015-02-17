@@ -25,7 +25,7 @@ import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.NpcStringId;
@@ -66,7 +66,7 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
+	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
 	{
 		if (firstEntrance)
 		{
@@ -76,7 +76,7 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 	}
 	
 	@Override
-	public final String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public final String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		switch (event)
 		{
@@ -119,7 +119,7 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 	}
 	
 	@Override
-	public final String onAttack(Npc npc, L2PcInstance player, int damage, boolean isSummon)
+	public final String onAttack(Npc npc, PlayerInstance player, int damage, boolean isSummon)
 	{
 		if ((damage > 0) && npc.isScriptValue(0))
 		{
@@ -161,7 +161,7 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 	}
 	
 	@Override
-	public final String onKill(Npc npc, L2PcInstance player, boolean isSummon)
+	public final String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
 		npc.dropItem(player, getRandomBoolean() ? SHIELD_POTION : HEAL_POTION, getRandom(1, 7));
 		return super.onKill(npc, player, isSummon);
@@ -170,7 +170,7 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 	@Override
 	public String onExitZone(Creature character, ZoneType zone)
 	{
-		if ((character.isPlayer()) && !character.isDead() && !character.isTeleporting() && ((L2PcInstance) character).isOnline())
+		if ((character.isPlayer()) && !character.isDead() && !character.isTeleporting() && ((PlayerInstance) character).isOnline())
 		{
 			final InstanceWorld world = InstanceManager.getInstance().getWorld(character.getInstanceId());
 			if ((world != null) && (world.getTemplateId() == TEMPLATE_ID))

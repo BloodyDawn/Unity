@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.model.stats.functions.formulas;
 
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.BaseStats;
@@ -49,7 +49,7 @@ public class FuncMDefMod extends AbstractFunction
 		double value = initVal;
 		if (effector.isPlayer())
 		{
-			L2PcInstance p = effector.getActingPlayer();
+			PlayerInstance p = effector.getActingPlayer();
 			if (!p.getInventory().isPaperdollSlotEmpty(Inventory.PAPERDOLL_LFINGER))
 			{
 				value -= p.getTemplate().getBaseDefBySlot(p.isTransformed() ? p.getTransformation().getBaseDefBySlot(p, Inventory.PAPERDOLL_LFINGER) : Inventory.PAPERDOLL_LFINGER);

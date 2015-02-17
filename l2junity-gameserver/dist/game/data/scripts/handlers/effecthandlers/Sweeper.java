@@ -22,7 +22,7 @@ import java.util.Collection;
 
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.holders.ItemHolder;
@@ -53,7 +53,7 @@ public final class Sweeper extends AbstractEffect
 			return;
 		}
 		
-		final L2PcInstance player = info.getEffector().getActingPlayer();
+		final PlayerInstance player = info.getEffector().getActingPlayer();
 		final Attackable monster = (Attackable) info.getEffected();
 		if (!monster.checkSpoilOwner(player, false))
 		{

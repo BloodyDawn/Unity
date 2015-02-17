@@ -25,7 +25,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.enums.MacroType;
 import org.l2junity.gameserver.model.Macro;
 import org.l2junity.gameserver.model.MacroCmd;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 
 public final class RequestMakeMacro extends L2GameClientPacket
@@ -73,7 +73,7 @@ public final class RequestMakeMacro extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance player = getClient().getActiveChar();
+		PlayerInstance player = getClient().getActiveChar();
 		if (player == null)
 		{
 			return;

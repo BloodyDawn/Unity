@@ -23,7 +23,7 @@ import org.l2junity.gameserver.instancemanager.CastleManorManager;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.ListenerRegisterType;
 import org.l2junity.gameserver.model.events.annotations.Id;
@@ -74,7 +74,7 @@ public final class ManorManager extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String htmltext = null;
 		switch (event)
@@ -89,7 +89,7 @@ public final class ManorManager extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		if (Config.ALLOW_MANOR)
 		{
@@ -110,7 +110,7 @@ public final class ManorManager extends AbstractNpcAI
 	// @formatter:on
 	public final void onNpcManorBypass(OnNpcManorBypass evt)
 	{
-		final L2PcInstance player = evt.getActiveChar();
+		final PlayerInstance player = evt.getActiveChar();
 		if (CastleManorManager.getInstance().isUnderMaintenance())
 		{
 			player.sendPacket(SystemMessageId.THE_MANOR_SYSTEM_IS_CURRENTLY_UNDER_MAINTENANCE);

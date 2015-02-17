@@ -24,7 +24,7 @@ import java.util.List;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 
@@ -48,7 +48,7 @@ public class Party implements ITargetTypeHandler
 		targetList.add(activeChar);
 		
 		final int radius = skill.getAffectRange();
-		L2PcInstance player = activeChar.getActingPlayer();
+		PlayerInstance player = activeChar.getActingPlayer();
 		if (activeChar.isSummon())
 		{
 			if (Skill.addCharacter(activeChar, player, radius, false))
@@ -75,7 +75,7 @@ public class Party implements ITargetTypeHandler
 		if (activeChar.isInParty())
 		{
 			// Get a list of Party Members
-			for (L2PcInstance partyMember : activeChar.getParty().getMembers())
+			for (PlayerInstance partyMember : activeChar.getParty().getMembers())
 			{
 				if ((partyMember == null) || (partyMember == player))
 				{

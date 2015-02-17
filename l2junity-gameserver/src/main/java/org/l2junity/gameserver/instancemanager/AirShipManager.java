@@ -34,7 +34,7 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.VehiclePathPoint;
 import org.l2junity.gameserver.model.actor.instance.L2AirShipInstance;
 import org.l2junity.gameserver.model.actor.instance.L2ControllableAirShipInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
 import org.l2junity.gameserver.network.serverpackets.ExAirShipTeleportList;
 
@@ -210,7 +210,7 @@ public class AirShipManager
 		_teleports.put(dockId, new AirShipTeleportList(locationId, fuelConsumption, tp));
 	}
 	
-	public void sendAirShipTeleportList(L2PcInstance player)
+	public void sendAirShipTeleportList(PlayerInstance player)
 	{
 		if ((player == null) || !player.isInAirShip())
 		{

@@ -20,7 +20,7 @@ package org.l2junity.log.formatter;
 
 import java.util.logging.LogRecord;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 
@@ -44,9 +44,9 @@ public class EnchantFormatter extends AbstractFormatter
 				
 				output.append(", ");
 				
-				if (p instanceof L2PcInstance)
+				if (p instanceof PlayerInstance)
 				{
-					L2PcInstance player = (L2PcInstance) p;
+					PlayerInstance player = (PlayerInstance) p;
 					output.append("Character:");
 					output.append(player.getName());
 					output.append(" [");

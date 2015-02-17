@@ -20,7 +20,7 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExDuelAskStart;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
@@ -46,8 +46,8 @@ public final class RequestDuelStart extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance activeChar = getClient().getActiveChar();
-		L2PcInstance targetChar = World.getInstance().getPlayer(_player);
+		PlayerInstance activeChar = getClient().getActiveChar();
+		PlayerInstance targetChar = World.getInstance().getPlayer(_player);
 		if (activeChar == null)
 		{
 			return;
@@ -106,7 +106,7 @@ public final class RequestDuelStart extends L2GameClientPacket
 			}
 			
 			// Check if every player is ready for a duel
-			for (L2PcInstance temp : activeChar.getParty().getMembers())
+			for (PlayerInstance temp : activeChar.getParty().getMembers())
 			{
 				if (!temp.canDuel())
 				{
@@ -114,8 +114,8 @@ public final class RequestDuelStart extends L2GameClientPacket
 					return;
 				}
 			}
-			L2PcInstance partyLeader = null; // snatch party leader of targetChar's party
-			for (L2PcInstance temp : targetChar.getParty().getMembers())
+			PlayerInstance partyLeader = null; // snatch party leader of targetChar's party
+			for (PlayerInstance temp : targetChar.getParty().getMembers())
 			{
 				if (partyLeader == null)
 				{

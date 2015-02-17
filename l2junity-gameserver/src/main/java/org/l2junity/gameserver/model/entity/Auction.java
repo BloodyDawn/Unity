@@ -38,7 +38,7 @@ import org.l2junity.gameserver.instancemanager.AuctionManager;
 import org.l2junity.gameserver.instancemanager.ClanHallManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 
 import javolution.util.FastMap;
@@ -266,7 +266,7 @@ public class Auction
 	 * @param bidder
 	 * @param bid
 	 */
-	public synchronized void setBid(L2PcInstance bidder, long bid)
+	public synchronized void setBid(PlayerInstance bidder, long bid)
 	{
 		long requiredAdena = bid;
 		if (getHighestBidderName().equals(bidder.getClan().getLeaderName()))
@@ -314,7 +314,7 @@ public class Auction
 	 * @param quantity
 	 * @return
 	 */
-	private boolean takeItem(L2PcInstance bidder, long quantity)
+	private boolean takeItem(PlayerInstance bidder, long quantity)
 	{
 		if ((bidder.getClan() != null) && (bidder.getClan().getWarehouse().getAdena() >= quantity))
 		{
@@ -330,7 +330,7 @@ public class Auction
 	 * @param bidder
 	 * @param bid
 	 */
-	private void updateInDB(L2PcInstance bidder, long bid)
+	private void updateInDB(PlayerInstance bidder, long bid)
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection())
 		{

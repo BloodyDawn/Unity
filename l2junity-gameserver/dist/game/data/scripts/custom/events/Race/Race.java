@@ -28,7 +28,7 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Event;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.skills.AbnormalType;
@@ -47,7 +47,7 @@ public final class Race extends Event
 	// Npc
 	private Npc _npc;
 	// Player list
-	private List<L2PcInstance> _players;
+	private List<PlayerInstance> _players;
 	// Event Task
 	ScheduledFuture<?> _eventTask = null;
 	// Event state
@@ -114,7 +114,7 @@ public final class Race extends Event
 	}
 	
 	@Override
-	public boolean eventStart(L2PcInstance eventMaker)
+	public boolean eventStart(PlayerInstance eventMaker)
 	{
 		// Don't start event if its active
 		if (_isactive)
@@ -166,7 +166,7 @@ public final class Race extends Event
 		// And spawn NPC
 		recordSpawn(_stop_npc, _randspawn[0], _randspawn[1], _randspawn[2], _randspawn[3], false, 0);
 		// Transform players and send message
-		for (L2PcInstance player : _players)
+		for (PlayerInstance player : _players)
 		{
 			if ((player != null) && player.isOnline())
 			{
@@ -208,7 +208,7 @@ public final class Race extends Event
 		}
 		// Untransform players
 		// Teleport to event start point
-		for (L2PcInstance player : _players)
+		for (PlayerInstance player : _players)
 		{
 			if ((player != null) && player.isOnline())
 			{
@@ -233,7 +233,7 @@ public final class Race extends Event
 	}
 	
 	@Override
-	public boolean eventBypass(L2PcInstance activeChar, String bypass)
+	public boolean eventBypass(PlayerInstance activeChar, String bypass)
 	{
 		if (bypass.startsWith("skill"))
 		{
@@ -274,7 +274,7 @@ public final class Race extends Event
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String htmltext = event;
 		QuestState st = getQuestState(player, false);
@@ -329,7 +329,7 @@ public final class Race extends Event
 	}
 	
 	@Override
-	public String onFirstTalk(Npc npc, L2PcInstance player)
+	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
 		getQuestState(player, true);
 		
@@ -348,7 +348,7 @@ public final class Race extends Event
 		return npc.getId() + ".htm";
 	}
 	
-	private int isRacing(L2PcInstance player)
+	private int isRacing(PlayerInstance player)
 	{
 		return _players.contains(player) ? 1 : 0;
 	}
@@ -363,7 +363,7 @@ public final class Race extends Event
 		return npc;
 	}
 	
-	private void transformPlayer(L2PcInstance player)
+	private void transformPlayer(PlayerInstance player)
 	{
 		if (player.isTransformed() || player.isInStance())
 		{
@@ -380,12 +380,12 @@ public final class Race extends Event
 		SkillData.getInstance().getSkill(_skill, 1).applyEffects(player, player);
 	}
 	
-	private void sendMessage(L2PcInstance player, String text)
+	private void sendMessage(PlayerInstance player, String text)
 	{
 		player.sendPacket(new CreatureSay(_npc.getObjectId(), ChatType.MPCC_ROOM, _npc.getName(), text));
 	}
 	
-	private void showMenu(L2PcInstance activeChar)
+	private void showMenu(PlayerInstance activeChar)
 	{
 		final NpcHtmlMessage html = new NpcHtmlMessage();
 		String content = getHtm(activeChar.getHtmlPrefix(), "admin_menu.htm");
@@ -399,7 +399,7 @@ public final class Race extends Event
 		eventStop();
 	}
 	
-	private void winRace(L2PcInstance player)
+	private void winRace(PlayerInstance player)
 	{
 		int[] _reward = _rewards[getRandom(_rewards.length - 1)];
 		player.addItem("eventModRace", _reward[0], _reward[1], _npc, true);

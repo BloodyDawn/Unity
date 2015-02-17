@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.model.actor.tasks.attackable;
 
 import org.l2junity.gameserver.model.actor.Attackable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 
 /**
@@ -29,10 +29,10 @@ public final class OnKillNotifyTask implements Runnable
 {
 	private final Attackable _attackable;
 	private final Quest _quest;
-	private final L2PcInstance _killer;
+	private final PlayerInstance _killer;
 	private final boolean _isSummon;
 	
-	public OnKillNotifyTask(Attackable attackable, Quest quest, L2PcInstance killer, boolean isSummon)
+	public OnKillNotifyTask(Attackable attackable, Quest quest, PlayerInstance killer, boolean isSummon)
 	{
 		_attackable = attackable;
 		_quest = quest;

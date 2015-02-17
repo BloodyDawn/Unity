@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.Location;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public class ExMoveToLocationInAirShip extends L2GameServerPacket
 {
@@ -31,7 +31,7 @@ public class ExMoveToLocationInAirShip extends L2GameServerPacket
 	/**
 	 * @param player
 	 */
-	public ExMoveToLocationInAirShip(L2PcInstance player)
+	public ExMoveToLocationInAirShip(PlayerInstance player)
 	{
 		_charObjId = player.getObjectId();
 		_airShipId = player.getAirShip().getObjectId();

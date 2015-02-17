@@ -19,7 +19,7 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
@@ -49,7 +49,7 @@ public final class CallParty extends AbstractEffect
 			return;
 		}
 		
-		for (L2PcInstance partyMember : info.getEffector().getParty().getMembers())
+		for (PlayerInstance partyMember : info.getEffector().getParty().getMembers())
 		{
 			if (CallPc.checkSummonTargetStatus(partyMember, info.getEffector().getActingPlayer()))
 			{

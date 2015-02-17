@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.instancemanager.ItemAuctionManager;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemauction.ItemAuction;
 import org.l2junity.gameserver.model.itemauction.ItemAuctionInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
@@ -44,7 +44,7 @@ public final class RequestBidItemAuction extends L2GameClientPacket
 	@Override
 	protected final void runImpl()
 	{
-		final L2PcInstance activeChar = super.getClient().getActiveChar();
+		final PlayerInstance activeChar = super.getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;

@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.model.entity;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.interfaces.IEventListener;
 
 /**
@@ -26,9 +26,9 @@ import org.l2junity.gameserver.model.interfaces.IEventListener;
  */
 public final class TvTEventListener implements IEventListener
 {
-	private final L2PcInstance _player;
+	private final PlayerInstance _player;
 	
-	protected TvTEventListener(L2PcInstance player)
+	protected TvTEventListener(PlayerInstance player)
 	{
 		_player = player;
 	}
@@ -58,7 +58,7 @@ public final class TvTEventListener implements IEventListener
 	}
 	
 	@Override
-	public L2PcInstance getPlayer()
+	public PlayerInstance getPlayer()
 	{
 		return _player;
 	}

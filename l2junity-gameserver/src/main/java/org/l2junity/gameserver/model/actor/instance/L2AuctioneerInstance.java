@@ -56,7 +56,7 @@ public final class L2AuctioneerInstance extends Npc
 	}
 	
 	@Override
-	public void onBypassFeedback(L2PcInstance player, String command)
+	public void onBypassFeedback(PlayerInstance player, String command)
 	{
 		int condition = validateCondition(player);
 		if (condition <= COND_ALL_FALSE)
@@ -654,7 +654,7 @@ public final class L2AuctioneerInstance extends Npc
 	}
 	
 	@Override
-	public void showChatWindow(L2PcInstance player)
+	public void showChatWindow(PlayerInstance player)
 	{
 		String filename = "data/html/auction/auction-no.htm";
 		
@@ -676,7 +676,7 @@ public final class L2AuctioneerInstance extends Npc
 		player.sendPacket(html);
 	}
 	
-	private int validateCondition(L2PcInstance player)
+	private int validateCondition(PlayerInstance player)
 	{
 		if ((getCastle() != null) && (getCastle().getResidenceId() > 0))
 		{
@@ -690,7 +690,7 @@ public final class L2AuctioneerInstance extends Npc
 		return COND_ALL_FALSE;
 	}
 	
-	private String getPictureName(L2PcInstance plyr)
+	private String getPictureName(PlayerInstance plyr)
 	{
 		int nearestTownId = MapRegionManager.getInstance().getMapRegionLocId(plyr);
 		String nearestTown;

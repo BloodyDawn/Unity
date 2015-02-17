@@ -20,7 +20,7 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.ClanMember;
 import org.l2junity.gameserver.model.L2Clan;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author -Wooden-
@@ -37,7 +37,7 @@ public final class PledgeShowMemberListUpdate extends L2GameServerPacket
 	private final int _race;
 	private final int _sex;
 	
-	public PledgeShowMemberListUpdate(L2PcInstance player)
+	public PledgeShowMemberListUpdate(PlayerInstance player)
 	{
 		_pledgeType = player.getPledgeType();
 		if (_pledgeType == L2Clan.SUBUNIT_ACADEMY)

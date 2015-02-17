@@ -25,7 +25,7 @@ import org.l2junity.gameserver.data.xml.impl.PetDataTable;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -81,7 +81,7 @@ public class PetFood implements IItemHandler
 			}
 			else if (activeChar.isPlayer())
 			{
-				final L2PcInstance player = activeChar.getActingPlayer();
+				final PlayerInstance player = activeChar.getActingPlayer();
 				if (player.isMounted())
 				{
 					final List<Integer> foodIds = PetDataTable.getInstance().getPetData(player.getMountNpcId()).getFood();

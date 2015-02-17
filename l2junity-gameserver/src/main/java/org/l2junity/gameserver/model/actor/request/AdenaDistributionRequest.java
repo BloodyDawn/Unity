@@ -20,7 +20,7 @@ package org.l2junity.gameserver.model.actor.request;
 
 import java.util.List;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.adenadistribution.ExDivideAdenaCancel;
 
 /**
@@ -28,12 +28,12 @@ import org.l2junity.gameserver.network.serverpackets.adenadistribution.ExDivideA
  */
 public class AdenaDistributionRequest extends AbstractRequest
 {
-	private final L2PcInstance _distributor;
-	private final List<L2PcInstance> _players;
+	private final PlayerInstance _distributor;
+	private final List<PlayerInstance> _players;
 	private final int _adenaObjectId;
 	private final long _adenaCount;
 	
-	public AdenaDistributionRequest(L2PcInstance activeChar, L2PcInstance distributor, List<L2PcInstance> players, int adenaObjectId, long adenaCount)
+	public AdenaDistributionRequest(PlayerInstance activeChar, PlayerInstance distributor, List<PlayerInstance> players, int adenaObjectId, long adenaCount)
 	{
 		super(activeChar);
 		_distributor = distributor;
@@ -42,12 +42,12 @@ public class AdenaDistributionRequest extends AbstractRequest
 		_adenaCount = adenaCount;
 	}
 	
-	public L2PcInstance getDistributor()
+	public PlayerInstance getDistributor()
 	{
 		return _distributor;
 	}
 	
-	public List<L2PcInstance> getPlayers()
+	public List<PlayerInstance> getPlayers()
 	{
 		return _players;
 	}

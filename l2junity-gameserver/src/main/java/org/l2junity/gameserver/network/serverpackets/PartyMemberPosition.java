@@ -23,7 +23,7 @@ import java.util.Map;
 
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.Party;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author zabbix
@@ -40,7 +40,7 @@ public class PartyMemberPosition extends L2GameServerPacket
 	public void reuse(Party party)
 	{
 		locations.clear();
-		for (L2PcInstance member : party.getMembers())
+		for (PlayerInstance member : party.getMembers())
 		{
 			if (member == null)
 			{

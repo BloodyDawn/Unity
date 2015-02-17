@@ -33,7 +33,7 @@ import org.l2junity.gameserver.InstanceListManager;
 import org.l2junity.gameserver.model.ClanMember;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
@@ -230,7 +230,7 @@ public final class CastleManager implements InstanceListManager
 		{
 			return;
 		}
-		L2PcInstance player = member.getPlayerInstance();
+		PlayerInstance player = member.getPlayerInstance();
 		int circletId = getCircletByCastleId(castleId);
 		
 		if (circletId != 0)

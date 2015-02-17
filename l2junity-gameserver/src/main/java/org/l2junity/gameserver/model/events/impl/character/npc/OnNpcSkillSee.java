@@ -20,7 +20,7 @@ package org.l2junity.gameserver.model.events.impl.character.npc;
 
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.IBaseEvent;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -31,12 +31,12 @@ import org.l2junity.gameserver.model.skills.Skill;
 public class OnNpcSkillSee implements IBaseEvent
 {
 	private final Npc _npc;
-	private final L2PcInstance _caster;
+	private final PlayerInstance _caster;
 	private final Skill _skill;
 	private final WorldObject[] _targets;
 	private final boolean _isSummon;
 	
-	public OnNpcSkillSee(Npc npc, L2PcInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
+	public OnNpcSkillSee(Npc npc, PlayerInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
 		_npc = npc;
 		_caster = caster;
@@ -50,7 +50,7 @@ public class OnNpcSkillSee implements IBaseEvent
 		return _npc;
 	}
 	
-	public L2PcInstance getCaster()
+	public PlayerInstance getCaster()
 	{
 		return _caster;
 	}

@@ -21,7 +21,7 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.events.EventType;
@@ -60,7 +60,7 @@ public final class SoulEating extends AbstractEffect
 		// TODO: Verify logic.
 		if (playable.isPlayer() && (exp >= _expNeeded))
 		{
-			final L2PcInstance player = playable.getActingPlayer();
+			final PlayerInstance player = playable.getActingPlayer();
 			final int maxSouls = (int) player.calcStat(Stats.MAX_SOULS, 0, null, null);
 			if (player.getChargedSouls() >= maxSouls)
 			{

@@ -19,14 +19,14 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.Party;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public final class PartySmallWindowAdd extends L2GameServerPacket
 {
-	private final L2PcInstance _member;
+	private final PlayerInstance _member;
 	private final Party _party;
 	
-	public PartySmallWindowAdd(L2PcInstance member, Party party)
+	public PartySmallWindowAdd(PlayerInstance member, Party party)
 	{
 		_member = member;
 		_party = party;

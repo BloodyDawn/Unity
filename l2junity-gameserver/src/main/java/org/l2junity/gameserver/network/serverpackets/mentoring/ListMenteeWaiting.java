@@ -23,7 +23,7 @@ import java.util.List;
 
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
 
 /**
@@ -32,13 +32,13 @@ import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
 public class ListMenteeWaiting extends L2GameServerPacket
 {
 	private final int PLAYERS_PER_PAGE = 64;
-	private final List<L2PcInstance> _possibleCandiates = new ArrayList<>();
+	private final List<PlayerInstance> _possibleCandiates = new ArrayList<>();
 	private final int _page;
 	
 	public ListMenteeWaiting(int page, int minLevel, int maxLevel)
 	{
 		_page = page;
-		for (L2PcInstance player : World.getInstance().getPlayers())
+		for (PlayerInstance player : World.getInstance().getPlayers())
 		{
 			if ((player.getLevel() >= minLevel) && (player.getLevel() <= maxLevel) && !player.isMentee() && !player.isMentor() && !player.isInCategory(CategoryType.AWAKEN_GROUP))
 			{
@@ -64,7 +64,7 @@ public class ListMenteeWaiting extends L2GameServerPacket
 		writeD(_possibleCandiates.size());
 		writeD(_possibleCandiates.size() % PLAYERS_PER_PAGE);
 		
-		for (L2PcInstance player : _possibleCandiates)
+		for (PlayerInstance player : _possibleCandiates)
 		{
 			if ((1 <= (PLAYERS_PER_PAGE * _page)) && (1 > (PLAYERS_PER_PAGE * (_page - 1))))
 			{

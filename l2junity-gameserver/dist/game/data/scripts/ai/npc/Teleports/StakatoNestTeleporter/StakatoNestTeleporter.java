@@ -20,7 +20,7 @@ package ai.npc.Teleports.StakatoNestTeleporter;
 
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.QuestState;
 
 import quests.Q00240_ImTheOnlyOneYouCanTrust.Q00240_ImTheOnlyOneYouCanTrust;
@@ -52,7 +52,7 @@ public final class StakatoNestTeleporter extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
+	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		int index = Integer.parseInt(event) - 1;
 		
@@ -62,7 +62,7 @@ public final class StakatoNestTeleporter extends AbstractNpcAI
 			
 			if (player.getParty() != null)
 			{
-				for (L2PcInstance partyMember : player.getParty().getMembers())
+				for (PlayerInstance partyMember : player.getParty().getMembers())
 				{
 					if (partyMember.isInsideRadius(player, 1000, true, true))
 					{
@@ -76,7 +76,7 @@ public final class StakatoNestTeleporter extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(Npc npc, L2PcInstance player)
+	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		QuestState accessQuest = player.getQuestState(Q00240_ImTheOnlyOneYouCanTrust.class.getSimpleName());
 		return (((accessQuest != null) && accessQuest.isCompleted()) ? "32640.htm" : "32640-no.htm");

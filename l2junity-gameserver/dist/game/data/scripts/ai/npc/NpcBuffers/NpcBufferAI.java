@@ -22,7 +22,7 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2TamedBeastInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -56,7 +56,7 @@ public class NpcBufferAI implements Runnable
 		}
 		
 		final Skill skill = _skillData.getSkill();
-		final L2PcInstance player = _npc.getSummoner().getActingPlayer();
+		final PlayerInstance player = _npc.getSummoner().getActingPlayer();
 		
 		switch (_skillData.getAffectScope())
 		{
@@ -64,7 +64,7 @@ public class NpcBufferAI implements Runnable
 			{
 				if (player.isInParty())
 				{
-					for (L2PcInstance member : player.getParty().getMembers())
+					for (PlayerInstance member : player.getParty().getMembers())
 					{
 						if (Util.checkIfInRange(skill.getAffectRange(), _npc, member, true) && !member.isDead())
 						{
@@ -122,11 +122,11 @@ public class NpcBufferAI implements Runnable
 	 * @param target the target
 	 * @return {@code true} if target can be affected by positive effect, {@code false} otherwise
 	 */
-	private boolean isFriendly(L2PcInstance player, Creature target)
+	private boolean isFriendly(PlayerInstance player, Creature target)
 	{
 		if (target.isPlayable())
 		{
-			final L2PcInstance targetPlayer = target.getActingPlayer();
+			final PlayerInstance targetPlayer = target.getActingPlayer();
 			
 			if (player == targetPlayer)
 			{
@@ -172,7 +172,7 @@ public class NpcBufferAI implements Runnable
 	 * @param target the target
 	 * @return {@code true} if target can be affected by negative effect, {@code false} otherwise
 	 */
-	private boolean isEnemy(L2PcInstance player, Creature target)
+	private boolean isEnemy(PlayerInstance player, Creature target)
 	{
 		if (isFriendly(player, target))
 		{
@@ -191,7 +191,7 @@ public class NpcBufferAI implements Runnable
 		
 		if (target.isPlayable())
 		{
-			final L2PcInstance targetPlayer = target.getActingPlayer();
+			final PlayerInstance targetPlayer = target.getActingPlayer();
 			
 			if (!isFriendly(player, targetPlayer))
 			{

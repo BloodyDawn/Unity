@@ -391,7 +391,7 @@ public class L2DoorInstance extends Creature
 			return false;
 		}
 		
-		L2PcInstance actingPlayer = attacker.getActingPlayer();
+		PlayerInstance actingPlayer = attacker.getActingPlayer();
 		
 		if (getClanHall() != null)
 		{
@@ -460,7 +460,7 @@ public class L2DoorInstance extends Creature
 	@Override
 	public void broadcastStatusUpdate()
 	{
-		Collection<L2PcInstance> knownPlayers = getKnownList().getKnownPlayers().values();
+		Collection<PlayerInstance> knownPlayers = getKnownList().getKnownPlayers().values();
 		if ((knownPlayers == null) || knownPlayers.isEmpty())
 		{
 			return;
@@ -475,7 +475,7 @@ public class L2DoorInstance extends Creature
 			oe = new OnEventTrigger(getEmitter(), getOpen());
 		}
 		
-		for (L2PcInstance player : knownPlayers)
+		for (PlayerInstance player : knownPlayers)
 		{
 			if ((player == null) || !isVisibleFor(player))
 			{
@@ -698,7 +698,7 @@ public class L2DoorInstance extends Creature
 	}
 	
 	@Override
-	public void sendInfo(L2PcInstance activeChar)
+	public void sendInfo(PlayerInstance activeChar)
 	{
 		if (isVisibleFor(activeChar))
 		{

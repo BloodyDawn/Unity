@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.handler;
 
 import org.l2junity.gameserver.enums.ChatType;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * Interface for chat handlers
@@ -34,7 +34,7 @@ public interface IChatHandler
 	 * @param target
 	 * @param text
 	 */
-	public void handleChat(ChatType type, L2PcInstance activeChar, String target, String text);
+	public void handleChat(ChatType type, PlayerInstance activeChar, String target, String text);
 	
 	/**
 	 * Returns a list of all chat types registered to this handler

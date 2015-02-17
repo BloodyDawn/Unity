@@ -38,7 +38,7 @@ public class L2DecoyInstance extends Decoy
 	private Future<?> _DecoyLifeTask;
 	private Future<?> _HateSpam;
 	
-	public L2DecoyInstance(L2NpcTemplate template, L2PcInstance owner, int totalLifeTime)
+	public L2DecoyInstance(L2NpcTemplate template, PlayerInstance owner, int totalLifeTime)
 	{
 		super(template, owner);
 		setInstanceType(InstanceType.L2DecoyInstance);
@@ -80,11 +80,11 @@ public class L2DecoyInstance extends Decoy
 	
 	static class DecoyLifetime implements Runnable
 	{
-		private final L2PcInstance _activeChar;
+		private final PlayerInstance _activeChar;
 		
 		private final L2DecoyInstance _Decoy;
 		
-		DecoyLifetime(L2PcInstance activeChar, L2DecoyInstance Decoy)
+		DecoyLifetime(PlayerInstance activeChar, L2DecoyInstance Decoy)
 		{
 			_activeChar = activeChar;
 			_Decoy = Decoy;
@@ -136,7 +136,7 @@ public class L2DecoyInstance extends Decoy
 	}
 	
 	@Override
-	public void unSummon(L2PcInstance owner)
+	public void unSummon(PlayerInstance owner)
 	{
 		if (_DecoyLifeTask != null)
 		{

@@ -26,7 +26,7 @@ import org.l2junity.gameserver.datatables.SpawnTable;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2EventMonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Event;
 import org.l2junity.gameserver.util.Broadcast;
 
@@ -75,13 +75,13 @@ public final class Elpies extends Event
 	}
 	
 	@Override
-	public boolean eventBypass(L2PcInstance activeChar, String bypass)
+	public boolean eventBypass(PlayerInstance activeChar, String bypass)
 	{
 		return false;
 	}
 	
 	@Override
-	public boolean eventStart(L2PcInstance eventMaker)
+	public boolean eventStart(PlayerInstance eventMaker)
 	{
 		if (EVENT_ACTIVE)
 		{
@@ -154,7 +154,7 @@ public final class Elpies extends Event
 	}
 	
 	@Override
-	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		if (EVENT_ACTIVE)
 		{
@@ -226,7 +226,7 @@ public final class Elpies extends Event
 		}
 	}
 	
-	private static final void dropItem(Npc mob, L2PcInstance player, int[][] droplist)
+	private static final void dropItem(Npc mob, PlayerInstance player, int[][] droplist)
 	{
 		final int chance = getRandom(100);
 		

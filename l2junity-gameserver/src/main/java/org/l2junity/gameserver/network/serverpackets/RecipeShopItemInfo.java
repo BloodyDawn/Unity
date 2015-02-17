@@ -18,14 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public class RecipeShopItemInfo extends L2GameServerPacket
 {
-	private final L2PcInstance _player;
+	private final PlayerInstance _player;
 	private final int _recipeId;
 	
-	public RecipeShopItemInfo(L2PcInstance player, int recipeId)
+	public RecipeShopItemInfo(PlayerInstance player, int recipeId)
 	{
 		_player = player;
 		_recipeId = recipeId;

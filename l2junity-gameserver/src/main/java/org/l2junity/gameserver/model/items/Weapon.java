@@ -23,7 +23,7 @@ import java.util.Objects;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.conditions.ConditionGameChance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
@@ -434,7 +434,7 @@ public final class Weapon extends L2Item
 		onMagicSkill.activateSkill(caster, targets);
 		
 		// notify quests of a skill use
-		if (caster instanceof L2PcInstance)
+		if (caster instanceof PlayerInstance)
 		{
 			//@formatter:off
 			caster.getKnownList().getKnownObjects().values().stream()
