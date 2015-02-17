@@ -26,7 +26,6 @@ import ai.npc.AbstractNpcAI;
 
 /**
  * Fortune Telling AI.<br>
- * Original Jython script by Kerberos.
  * @author Nyaran
  */
 public final class FortuneTelling extends AbstractNpcAI

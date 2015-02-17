@@ -24,7 +24,6 @@ import org.l2junity.gameserver.model.quest.Quest;
 
 /**
  * Shadow Weapons AI.<br>
- * Original Jython script by DrLecter.
  * @author Nyaran, jurchiks
  */
 public final class ShadowWeapons extends Quest

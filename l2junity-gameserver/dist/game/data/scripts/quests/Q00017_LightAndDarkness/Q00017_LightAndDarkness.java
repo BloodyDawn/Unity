@@ -27,8 +27,7 @@ import org.l2junity.gameserver.model.quest.State;
 import quests.Q00015_SweetWhispers.Q00015_SweetWhispers;
 
 /**
- * Light And Darkness (17)<br>
- * Original jython script by disKret, Skeleton & DrLecter.
+ * Light And Darkness (17)
  * @author nonom
  */
 public class Q00017_LightAndDarkness extends Quest

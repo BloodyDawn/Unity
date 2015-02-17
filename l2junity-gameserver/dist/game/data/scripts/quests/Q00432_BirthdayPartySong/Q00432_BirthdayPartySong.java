@@ -26,8 +26,7 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 
 /**
- * Birthday Party Song (432)<br>
- * Original Jython script by CubicVirtuoso.
+ * Birthday Party Song (432)
  * @author malyelfik
  */
 public class Q00432_BirthdayPartySong extends Quest

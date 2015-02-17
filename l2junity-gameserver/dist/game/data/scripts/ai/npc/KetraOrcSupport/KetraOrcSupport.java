@@ -31,7 +31,6 @@ import ai.npc.AbstractNpcAI;
 
 /**
  * Ketra Orc Support AI.<br>
- * Original Jython script by Emperorc and Kerberos_20.
  * @authors Nyaran
  */
 public final class KetraOrcSupport extends AbstractNpcAI

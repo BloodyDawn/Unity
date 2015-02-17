@@ -34,8 +34,7 @@ import org.l2junity.gameserver.network.serverpackets.NpcSay;
 import quests.Q00121_PavelTheGiant.Q00121_PavelTheGiant;
 
 /**
- * Resurrection of an Old Manager (114)<br>
- * Original Jython script by Kerberos
+ * Resurrection of an Old Manager (114)
  * @author malyelfik
  */
 public class Q00114_ResurrectionOfAnOldManager extends Quest

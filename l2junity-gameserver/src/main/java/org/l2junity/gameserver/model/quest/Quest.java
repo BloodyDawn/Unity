@@ -52,8 +52,8 @@ import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2TrapInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.AcquireSkillType;
 import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.events.AbstractScript;
@@ -1810,7 +1810,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 		return DEFAULT_ALREADY_COMPLETED_MSG;
 	}
 	
-	// TODO: Remove after all Jython scripts are replaced with Java versions.
+	// TODO: Clean up these methods
 	public void addStartNpc(int npcId)
 	{
 		setNpcQuestStartId(npcId);

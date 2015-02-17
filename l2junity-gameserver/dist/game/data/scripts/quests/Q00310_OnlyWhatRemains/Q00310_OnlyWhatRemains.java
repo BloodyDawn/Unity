@@ -31,8 +31,7 @@ import org.l2junity.gameserver.model.quest.State;
 import quests.Q00240_ImTheOnlyOneYouCanTrust.Q00240_ImTheOnlyOneYouCanTrust;
 
 /**
- * Only What Remains (310)<br>
- * Original Jython script by Gnacik
+ * Only What Remains (310)
  * @author malyelfik
  */
 public class Q00310_OnlyWhatRemains extends Quest

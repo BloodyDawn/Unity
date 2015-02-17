@@ -36,8 +36,7 @@ import org.l2junity.gameserver.network.serverpackets.RadarControl;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
 /**
- * A Clan's Reputation (508)<br>
- * Original Jython script by chris_00, @katmai and DrLecter.
+ * A Clan's Reputation (508)
  * @author Adry_85
  */
 public class Q00508_AClansReputation extends Quest

@@ -27,8 +27,7 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 
 /**
- * Lucien's Altar (451)<br>
- * Original Jython script by Bloodshed.
+ * Lucien's Altar (451)
  * @author malyelfik
  */
 public class Q00451_LuciensAltar extends Quest

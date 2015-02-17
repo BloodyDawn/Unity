@@ -30,8 +30,7 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 
 /**
- * A Dark Twilight (626)<br>
- * Original Jython script by disKret.
+ * A Dark Twilight (626)
  * @author Citizen
  */
 public class Q00626_ADarkTwilight extends Quest

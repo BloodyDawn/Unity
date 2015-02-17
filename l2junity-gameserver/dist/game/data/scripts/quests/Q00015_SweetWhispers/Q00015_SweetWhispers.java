@@ -25,8 +25,7 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 
 /**
- * Sweet Whisper (15)<br>
- * Original jython script by disKret.
+ * Sweet Whisper (15)
  * @author nonom
  */
 public class Q00015_SweetWhispers extends Quest

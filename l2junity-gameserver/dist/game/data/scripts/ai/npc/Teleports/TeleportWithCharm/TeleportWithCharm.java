@@ -26,7 +26,6 @@ import ai.npc.AbstractNpcAI;
 
 /**
  * Charm teleport AI.<br>
- * Original Jython script by DraX.
  * @author Plim
  */
 public final class TeleportWithCharm extends AbstractNpcAI

@@ -30,8 +30,7 @@ import org.l2junity.gameserver.model.quest.State;
 import org.l2junity.gameserver.util.Util;
 
 /**
- * Containing the Attribute Power (10275)<br>
- * Original Jython script by Kerberos v1.0 on 2009/05/03.
+ * Containing the Attribute Power (10275)
  * @author nonom
  */
 public class Q10275_ContainingTheAttributePower extends Quest

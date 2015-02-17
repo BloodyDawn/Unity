@@ -25,7 +25,6 @@ import ai.npc.AbstractNpcAI;
 
 /**
  * Strongholds teleport AI.<br>
- * Original Jython script by Kerberos.
  * @author Plim
  */
 public final class StrongholdsTeleports extends AbstractNpcAI

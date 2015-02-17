@@ -26,8 +26,7 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 
 /**
- * Help The Uncle! (42)<br>
- * Original Jython script by zerghase.
+ * Help The Uncle! (42)
  * @author malyelfik
  */
 public class Q00042_HelpTheUncle extends Quest

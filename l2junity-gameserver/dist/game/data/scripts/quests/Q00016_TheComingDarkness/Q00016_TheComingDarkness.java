@@ -27,9 +27,7 @@ import org.l2junity.gameserver.model.quest.State;
 import quests.Q00017_LightAndDarkness.Q00017_LightAndDarkness;
 
 /**
- * The Coming Darkness (16)<br>
- * Original jython script by disKret.<br>
- * TODO: Zoey76: This quest is still not retail like, Altars AI is incomplete.
+ * The Coming Darkness (16) TODO: Zoey76: This quest is still not retail like, Altars AI is incomplete.
  * @author nonom
  */
 public class Q00016_TheComingDarkness extends Quest

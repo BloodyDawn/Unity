@@ -30,8 +30,7 @@ import org.l2junity.gameserver.model.skills.Skill;
 import quests.Q10273_GoodDayToFly.Q10273_GoodDayToFly;
 
 /**
- * Collecting in the Air (10274)<br>
- * Original Jython script by Kerberos v1.0 on 2009/04/26.
+ * Collecting in the Air (10274)
  * @author nonom
  */
 public class Q10274_CollectingInTheAir extends Quest

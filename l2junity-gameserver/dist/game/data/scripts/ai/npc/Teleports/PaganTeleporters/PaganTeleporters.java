@@ -29,7 +29,6 @@ import ai.npc.AbstractNpcAI;
 
 /**
  * Pagan Temple teleport AI.<br>
- * Original Jython script by BiTi.
  * @author Plim
  */
 public final class PaganTeleporters extends AbstractNpcAI

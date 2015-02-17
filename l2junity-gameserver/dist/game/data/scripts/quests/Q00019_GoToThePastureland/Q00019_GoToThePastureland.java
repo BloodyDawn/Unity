@@ -25,8 +25,7 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 
 /**
- * Go to the Pastureland (19)<br>
- * Original Jython script by disKret.
+ * Go to the Pastureland (19)
  * @author malyelfik
  */
 public class Q00019_GoToThePastureland extends Quest

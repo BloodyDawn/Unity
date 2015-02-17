@@ -31,7 +31,6 @@ import ai.npc.AbstractNpcAI;
 
 /**
  * Varka Silenos Support AI.<br>
- * Original Jython script by Emperorc and Kerberos_20.
  * @author Nyaran
  */
 public final class VarkaSilenosSupport extends AbstractNpcAI

@@ -25,7 +25,6 @@ import ai.npc.AbstractNpcAI;
 
 /**
  * Noblesse teleport AI.<br>
- * Original Jython script by Ham Wong.
  * @author Plim
  */
 public final class NoblesseTeleport extends AbstractNpcAI

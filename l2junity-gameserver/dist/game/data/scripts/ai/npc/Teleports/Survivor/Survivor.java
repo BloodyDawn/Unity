@@ -27,7 +27,6 @@ import ai.npc.AbstractNpcAI;
 
 /**
  * Gracia Survivor teleport AI.<br>
- * Original Jython script by Kerberos.
  * @author Plim
  */
 public final class Survivor extends AbstractNpcAI

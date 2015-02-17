@@ -26,8 +26,7 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 
 /**
- * Help The Son! (44)<br>
- * Original Jython script by zerghase.
+ * Help The Son! (44)
  * @author malyelfik
  */
 public class Q00044_HelpTheSon extends Quest

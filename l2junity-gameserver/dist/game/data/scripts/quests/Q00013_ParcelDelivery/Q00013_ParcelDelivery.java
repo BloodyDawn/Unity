@@ -26,7 +26,6 @@ import org.l2junity.gameserver.model.quest.State;
 
 /**
  * Parcel Delivery (13)<br>
- * Original Jython script by Emperorc.
  * @author nonom
  */
 public class Q00013_ParcelDelivery extends Quest

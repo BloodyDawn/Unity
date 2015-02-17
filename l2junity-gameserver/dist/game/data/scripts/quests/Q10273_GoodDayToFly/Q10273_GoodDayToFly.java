@@ -27,8 +27,7 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 
 /**
- * Good Day to Fly (10273)<br>
- * Original Jython script by Kerberos v1.0 on 2009/04/25
+ * Good Day to Fly (10273)
  * @author nonom
  */
 public class Q10273_GoodDayToFly extends Quest

@@ -27,8 +27,7 @@ import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 
 /**
- * Exploration of the Giants' Cave Part 2 (377)<br>
- * Original Jython script by Gnacik.
+ * Exploration of the Giants' Cave Part 2 (377)
  * @author nonom
  */
 public class Q00377_ExplorationOfTheGiantsCavePart2 extends Quest

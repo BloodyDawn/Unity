@@ -26,8 +26,7 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 
 /**
- * Wedding March (431)<br>
- * Original Jython script by CubicVirtuoso.
+ * Wedding March (431)
  * @author eyjine
  */
 public class Q00431_WeddingMarch extends Quest

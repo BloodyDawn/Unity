@@ -20,18 +20,18 @@ package ai.npc.Teleports.NewbieTravelToken;
 
 import java.util.Map;
 
+import javolution.util.FastMap;
+
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
 
-import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
 
 /**
  * Newbie Travel Token AI.<br>
- * Original Jython script by DrLecter.
  * @author Plim
  */
 public final class NewbieTravelToken extends AbstractNpcAI

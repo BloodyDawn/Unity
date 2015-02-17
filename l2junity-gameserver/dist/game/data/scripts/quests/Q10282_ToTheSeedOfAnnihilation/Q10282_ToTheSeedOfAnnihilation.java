@@ -25,8 +25,7 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 
 /**
- * To the Seed of Destruction (10269)<br>
- * Original Jython script by Gnacik 2010-08-13 Based on Freya PTS.
+ * To the Seed of Destruction (10269)
  * @author nonom
  */
 public class Q10282_ToTheSeedOfAnnihilation extends Quest

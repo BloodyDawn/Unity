@@ -25,8 +25,7 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 
 /**
- * Status of the Beacon Tower (113)<br>
- * Original Jython script by Kerberos.
+ * Status of the Beacon Tower (113)
  * @author malyelfik
  */
 public class Q00113_StatusOfTheBeaconTower extends Quest

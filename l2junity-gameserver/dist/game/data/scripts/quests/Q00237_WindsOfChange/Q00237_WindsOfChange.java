@@ -28,8 +28,7 @@ import quests.Q00238_SuccessFailureOfBusiness.Q00238_SuccessFailureOfBusiness;
 import quests.Q00239_WontYouJoinUs.Q00239_WontYouJoinUs;
 
 /**
- * Winds of Change (237)<br>
- * Original Jython script by Bloodshed.
+ * Winds of Change (237)
  * @author Joxit
  */
 public class Q00237_WindsOfChange extends Quest
