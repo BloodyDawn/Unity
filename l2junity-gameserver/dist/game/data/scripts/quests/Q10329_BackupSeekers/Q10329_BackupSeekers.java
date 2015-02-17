@@ -142,7 +142,7 @@ public class Q10329_BackupSeekers extends Quest
 							{
 								if (loc_index == 5)
 								{
-									npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getTemplate().getDisplayId(), NpcStringId.TALK_TO_THAT_APPRENTICE_AND_GET_ON_KUKURI));
+									npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getId(), NpcStringId.TALK_TO_THAT_APPRENTICE_AND_GET_ON_KUKURI));
 									startQuestTimer("DELETE_NPC", 2000, npc, owner);
 									break;
 								}
@@ -153,7 +153,7 @@ public class Q10329_BackupSeekers extends Quest
 							{
 								if (loc_index == 11)
 								{
-									npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getTemplate().getDisplayId(), NpcStringId.THIS_IS_IT_FOR_ME));
+									npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getId(), NpcStringId.THIS_IS_IT_FOR_ME));
 									startQuestTimer("DELETE_NPC", 2000, npc, owner);
 									break;
 								}
@@ -177,7 +177,7 @@ public class Q10329_BackupSeekers extends Quest
 						
 						if (getRandom(100) < 10)
 						{
-							npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getTemplate().getDisplayId(), NpcStringId.HEY_KID_HURRY_UP_AND_FOLLOW_ME));
+							npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getId(), NpcStringId.HEY_KID_HURRY_UP_AND_FOLLOW_ME));
 						}
 					}
 				}
@@ -196,6 +196,8 @@ public class Q10329_BackupSeekers extends Quest
 					npc.broadcastInfo();
 					addMoveToDesire(npc, BART_LOC_1[0], 0);
 					npc.getVariables().set("MOVE_INDEX", 0);
+					npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getId(), NpcStringId.YOU_MUST_BE_THE_ONE_KAKAI_TALKED_ABOUT));
+					npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getId(), NpcStringId.YOU_SHOULD_RIDE_KUKURI_TO_GO_TO_YE_SAGIRA));
 					break;
 				}
 				else if (qs.isMemoState(2))
@@ -205,7 +207,8 @@ public class Q10329_BackupSeekers extends Quest
 					npc.broadcastInfo();
 					addMoveToDesire(npc, BART_LOC_2[0], 0);
 					npc.getVariables().set("MOVE_INDEX", 0);
-					npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getTemplate().getDisplayId(), NpcStringId.OPEN_YOUR_MAP_WHEN_YOU_ARRIVE_AT_YE_SAGIRA));
+					npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getId(), NpcStringId.OPEN_YOUR_MAP_WHEN_YOU_ARRIVE_AT_YE_SAGIRA));
+					npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getId(), NpcStringId.IT_S_HARD_TO_TELL_WHERE_YOU_ARE_AT_WITHOUT_A_MAP_IN_YE_SAGIRA));
 					break;
 				}
 				break;
@@ -246,7 +249,7 @@ public class Q10329_BackupSeekers extends Quest
 		{
 			npc.setHeading(Util.calculateHeadingFrom(npc, owner));
 			npc.broadcastPacket(new ExRotation(npc.getObjectId(), npc.getHeading()));
-			npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getTemplate().getDisplayId(), NpcStringId.HEY_KID_HURRY_UP_AND_FOLLOW_ME));
+			npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getId(), NpcStringId.HEY_KID_HURRY_UP_AND_FOLLOW_ME));
 			startQuestTimer("CHECK_PLAYER", 1200, npc, owner);
 		}
 	}
