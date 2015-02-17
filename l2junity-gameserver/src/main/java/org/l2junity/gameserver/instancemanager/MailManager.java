@@ -24,6 +24,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -39,8 +40,6 @@ import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.entity.Message;
 import org.l2junity.gameserver.network.serverpackets.ExNoticePostArrived;
 import org.l2junity.gameserver.network.serverpackets.ExUnReadMailCount;
-
-import javolution.util.FastList;
 
 /**
  * @author Migi, DS
@@ -143,7 +142,7 @@ public final class MailManager
 	
 	public final List<Message> getInbox(int objectId)
 	{
-		final List<Message> inbox = new FastList<>();
+		final List<Message> inbox = new LinkedList<>();
 		for (Message msg : getMessages())
 		{
 			if ((msg != null) && (msg.getReceiverId() == objectId) && !msg.isDeletedByReceiver())
@@ -161,7 +160,7 @@ public final class MailManager
 	
 	public final List<Message> getOutbox(int objectId)
 	{
-		final List<Message> outbox = new FastList<>();
+		final List<Message> outbox = new LinkedList<>();
 		for (Message msg : getMessages())
 		{
 			if ((msg != null) && (msg.getSenderId() == objectId) && !msg.isDeletedBySender())
