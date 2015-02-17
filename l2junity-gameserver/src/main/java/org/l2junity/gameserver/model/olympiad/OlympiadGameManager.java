@@ -25,7 +25,7 @@ import java.util.logging.Logger;
 
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
-import org.l2junity.gameserver.model.zone.type.L2OlympiadStadiumZone;
+import org.l2junity.gameserver.model.zone.type.OlympiadStadiumZone;
 
 /**
  * @author GodKratos, DS
@@ -39,7 +39,7 @@ public class OlympiadGameManager implements Runnable
 	
 	protected OlympiadGameManager()
 	{
-		final Collection<L2OlympiadStadiumZone> zones = ZoneManager.getInstance().getAllZones(L2OlympiadStadiumZone.class);
+		final Collection<OlympiadStadiumZone> zones = ZoneManager.getInstance().getAllZones(OlympiadStadiumZone.class);
 		if ((zones == null) || zones.isEmpty())
 		{
 			throw new Error("No olympiad stadium zones defined !");
@@ -47,7 +47,7 @@ public class OlympiadGameManager implements Runnable
 		
 		_tasks = new OlympiadGameTask[zones.size()];
 		int i = 0;
-		for (L2OlympiadStadiumZone zone : zones)
+		for (OlympiadStadiumZone zone : zones)
 		{
 			_tasks[i++] = new OlympiadGameTask(zone);
 		}

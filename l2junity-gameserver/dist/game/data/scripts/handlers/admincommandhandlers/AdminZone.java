@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.TeleportWhereType;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldRegion;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
-import org.l2junity.gameserver.model.zone.L2ZoneType;
+import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.model.zone.type.NpcSpawnTerritory;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -86,7 +86,7 @@ public class AdminZone implements IAdminCommandHandler
 			String next = st.nextToken();
 			if (next.equalsIgnoreCase("all"))
 			{
-				for (L2ZoneType zone : ZoneManager.getInstance().getZones(activeChar))
+				for (ZoneType zone : ZoneManager.getInstance().getZones(activeChar))
 				{
 					zone.visualizeZone(activeChar.getZ());
 				}
@@ -133,7 +133,7 @@ public class AdminZone implements IAdminCommandHandler
 		adminReply.replace("%SCRIPT%", (activeChar.isInsideZone(ZoneId.SCRIPT) ? "<font color=\"LEVEL\">YES</font>" : "NO"));
 		StringBuilder zones = new StringBuilder(100);
 		WorldRegion region = World.getInstance().getRegion(activeChar.getX(), activeChar.getY());
-		for (L2ZoneType zone : region.getZones())
+		for (ZoneType zone : region.getZones())
 		{
 			if (zone.isCharacterInZone(activeChar))
 			{

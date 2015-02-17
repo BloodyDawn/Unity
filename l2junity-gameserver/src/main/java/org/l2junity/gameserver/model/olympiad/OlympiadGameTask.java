@@ -23,7 +23,7 @@ import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.ThreadPoolManager;
-import org.l2junity.gameserver.model.zone.type.L2OlympiadStadiumZone;
+import org.l2junity.gameserver.model.zone.type.OlympiadStadiumZone;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
@@ -83,7 +83,7 @@ public final class OlympiadGameTask implements Runnable
 		0
 	};
 	
-	private final L2OlympiadStadiumZone _zone;
+	private final OlympiadStadiumZone _zone;
 	private AbstractOlympiadGame _game;
 	private GameState _state = GameState.IDLE;
 	private boolean _needAnnounce = false;
@@ -104,7 +104,7 @@ public final class OlympiadGameTask implements Runnable
 		IDLE
 	}
 	
-	public OlympiadGameTask(L2OlympiadStadiumZone zone)
+	public OlympiadGameTask(OlympiadStadiumZone zone)
 	{
 		_zone = zone;
 		zone.registerTask(this);
@@ -140,7 +140,7 @@ public final class OlympiadGameTask implements Runnable
 		return false;
 	}
 	
-	public final L2OlympiadStadiumZone getZone()
+	public final OlympiadStadiumZone getZone()
 	{
 		return _zone;
 	}

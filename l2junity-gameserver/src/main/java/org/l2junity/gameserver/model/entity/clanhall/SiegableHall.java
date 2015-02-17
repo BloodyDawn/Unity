@@ -31,8 +31,8 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.entity.ClanHall;
-import org.l2junity.gameserver.model.zone.type.L2SiegableHallZone;
-import org.l2junity.gameserver.model.zone.type.L2SiegeZone;
+import org.l2junity.gameserver.model.zone.type.SiegableHallZone;
+import org.l2junity.gameserver.model.zone.type.SiegeZone;
 import org.l2junity.gameserver.network.serverpackets.SiegeInfo;
 
 /**
@@ -54,7 +54,7 @@ public final class SiegableHall extends ClanHall
 	};
 	
 	private SiegeStatus _status = SiegeStatus.REGISTERING;
-	private L2SiegeZone _siegeZone;
+	private SiegeZone _siegeZone;
 	
 	private ClanHallSiegeEngine _siege;
 	
@@ -240,12 +240,12 @@ public final class SiegableHall extends ClanHall
 		_status = status;
 	}
 	
-	public final L2SiegeZone getSiegeZone()
+	public final SiegeZone getSiegeZone()
 	{
 		return _siegeZone;
 	}
 	
-	public final void setSiegeZone(L2SiegeZone zone)
+	public final void setSiegeZone(SiegeZone zone)
 	{
 		_siegeZone = zone;
 	}
@@ -267,8 +267,8 @@ public final class SiegableHall extends ClanHall
 	}
 	
 	@Override
-	public L2SiegableHallZone getZone()
+	public SiegableHallZone getZone()
 	{
-		return (L2SiegableHallZone) super.getZone();
+		return (SiegableHallZone) super.getZone();
 	}
 }

@@ -35,10 +35,10 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.EtcItemType;
 import org.l2junity.gameserver.model.items.type.WeaponType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
-import org.l2junity.gameserver.model.zone.L2ZoneType;
+import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.ZoneId;
-import org.l2junity.gameserver.model.zone.type.L2FishingZone;
-import org.l2junity.gameserver.model.zone.type.L2WaterZone;
+import org.l2junity.gameserver.model.zone.type.FishingZone;
+import org.l2junity.gameserver.model.zone.type.WaterZone;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
 
@@ -147,17 +147,17 @@ public final class Fishing extends AbstractEffect
 		int baitY = (int) (player.getY() + (sin * distance));
 		
 		// search for fishing and water zone
-		L2FishingZone fishingZone = null;
-		L2WaterZone waterZone = null;
-		for (final L2ZoneType zone : ZoneManager.getInstance().getZones(baitX, baitY))
+		FishingZone fishingZone = null;
+		WaterZone waterZone = null;
+		for (final ZoneType zone : ZoneManager.getInstance().getZones(baitX, baitY))
 		{
-			if (zone instanceof L2FishingZone)
+			if (zone instanceof FishingZone)
 			{
-				fishingZone = (L2FishingZone) zone;
+				fishingZone = (FishingZone) zone;
 			}
-			else if (zone instanceof L2WaterZone)
+			else if (zone instanceof WaterZone)
 			{
-				waterZone = (L2WaterZone) zone;
+				waterZone = (WaterZone) zone;
 			}
 			
 			if ((fishingZone != null) && (waterZone != null))
@@ -177,15 +177,15 @@ public final class Fishing extends AbstractEffect
 				// search for fishing and water zone again
 				fishingZone = null;
 				waterZone = null;
-				for (final L2ZoneType zone : ZoneManager.getInstance().getZones(baitX, baitY))
+				for (final ZoneType zone : ZoneManager.getInstance().getZones(baitX, baitY))
 				{
-					if (zone instanceof L2FishingZone)
+					if (zone instanceof FishingZone)
 					{
-						fishingZone = (L2FishingZone) zone;
+						fishingZone = (FishingZone) zone;
 					}
-					else if (zone instanceof L2WaterZone)
+					else if (zone instanceof WaterZone)
 					{
-						waterZone = (L2WaterZone) zone;
+						waterZone = (WaterZone) zone;
 					}
 					
 					if ((fishingZone != null) && (waterZone != null))
@@ -234,7 +234,7 @@ public final class Fishing extends AbstractEffect
 	 * @param waterZone the water zone
 	 * @return the bait z or {@link Integer#MIN_VALUE} when you cannot fish here
 	 */
-	private static int computeBaitZ(final L2PcInstance player, final int baitX, final int baitY, final L2FishingZone fishingZone, final L2WaterZone waterZone)
+	private static int computeBaitZ(final L2PcInstance player, final int baitX, final int baitY, final FishingZone fishingZone, final WaterZone waterZone)
 	{
 		if ((fishingZone == null))
 		{

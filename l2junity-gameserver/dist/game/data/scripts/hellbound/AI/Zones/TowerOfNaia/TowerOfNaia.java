@@ -37,7 +37,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.zone.L2ZoneType;
+import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.util.MinionList;
@@ -635,7 +635,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 		{
 			int managerId = 0;
 			
-			for (L2ZoneType zone : ZoneManager.getInstance().getZones(npc.getX(), npc.getY(), npc.getZ()))
+			for (ZoneType zone : ZoneManager.getInstance().getZones(npc.getX(), npc.getY(), npc.getZ()))
 			{
 				if (ZONES.containsValue(zone.getId()))
 				{
@@ -919,7 +919,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 	{
 		if ((party != null) && ZONES.containsKey(managerId) && (ZoneManager.getInstance().getZoneById(ZONES.get(managerId)) != null))
 		{
-			L2ZoneType zone = ZoneManager.getInstance().getZoneById(ZONES.get(managerId));
+			ZoneType zone = ZoneManager.getInstance().getZoneById(ZONES.get(managerId));
 			for (L2PcInstance player : zone.getPlayersInside())
 			{
 				if (player != null)
@@ -938,7 +938,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 	{
 		if (ZONES.containsKey(managerId) && (ZoneManager.getInstance().getZoneById(ZONES.get(managerId)) != null))
 		{
-			L2ZoneType zone = ZoneManager.getInstance().getZoneById(ZONES.get(managerId));
+			ZoneType zone = ZoneManager.getInstance().getZoneById(ZONES.get(managerId));
 			for (L2PcInstance player : zone.getPlayersInside())
 			{
 				if (player != null)

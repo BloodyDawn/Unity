@@ -34,7 +34,7 @@ import org.l2junity.gameserver.model.entity.Auction;
 import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.entity.clanhall.AuctionableHall;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
-import org.l2junity.gameserver.model.zone.type.L2ClanHallZone;
+import org.l2junity.gameserver.model.zone.type.ClanHallZone;
 
 import javolution.util.FastMap;
 
@@ -234,7 +234,7 @@ public final class ClanHallManager
 	
 	public final AuctionableHall getNearbyClanHall(int x, int y, int maxDist)
 	{
-		L2ClanHallZone zone = null;
+		ClanHallZone zone = null;
 		
 		for (Map.Entry<Integer, AuctionableHall> ch : _clanHall.entrySet())
 		{
@@ -257,7 +257,7 @@ public final class ClanHallManager
 	
 	public final ClanHall getNearbyAbstractHall(int x, int y, int maxDist)
 	{
-		L2ClanHallZone zone = null;
+		ClanHallZone zone = null;
 		for (Map.Entry<Integer, ClanHall> ch : _allClanHalls.entrySet())
 		{
 			zone = ch.getValue().getZone();

@@ -31,7 +31,7 @@ import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.zone.L2ZoneType;
+import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.util.Util;
@@ -463,7 +463,7 @@ public final class NornilsGarden extends AbstractInstance
 	}
 	
 	@Override
-	public String onEnterZone(Creature character, L2ZoneType zone)
+	public String onEnterZone(Creature character, ZoneType zone)
 	{
 		if ((character instanceof L2PcInstance) && !character.isDead() && !character.isTeleporting() && ((L2PcInstance) character).isOnline())
 		{

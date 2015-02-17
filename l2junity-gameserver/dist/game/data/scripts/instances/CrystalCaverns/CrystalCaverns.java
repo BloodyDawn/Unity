@@ -48,7 +48,7 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
-import org.l2junity.gameserver.model.zone.L2ZoneType;
+import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
@@ -1984,7 +1984,7 @@ public final class CrystalCaverns extends AbstractInstance
 	}
 	
 	@Override
-	public String onEnterZone(Creature character, L2ZoneType zone)
+	public String onEnterZone(Creature character, ZoneType zone)
 	{
 		if (character instanceof L2PcInstance)
 		{
@@ -2043,7 +2043,7 @@ public final class CrystalCaverns extends AbstractInstance
 	}
 	
 	@Override
-	public String onExitZone(Creature character, L2ZoneType zone)
+	public String onExitZone(Creature character, ZoneType zone)
 	{
 		if (character instanceof L2PcInstance)
 		{

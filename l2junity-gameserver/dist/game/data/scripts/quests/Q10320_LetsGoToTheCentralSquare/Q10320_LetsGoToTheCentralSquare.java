@@ -31,7 +31,7 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerCreate
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
-import org.l2junity.gameserver.model.zone.L2ZoneType;
+import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.serverpackets.NpcSay;
 import org.l2junity.gameserver.network.serverpackets.TutorialShowHtml;
@@ -131,7 +131,7 @@ public final class Q10320_LetsGoToTheCentralSquare extends Quest
 	}
 	
 	@Override
-	public String onEnterZone(Creature character, L2ZoneType zone)
+	public String onEnterZone(Creature character, ZoneType zone)
 	{
 		if (character.isPlayer())
 		{

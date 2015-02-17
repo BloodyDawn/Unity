@@ -26,7 +26,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
-import org.l2junity.gameserver.model.zone.type.L2BossZone;
+import org.l2junity.gameserver.model.zone.type.BossZone;
 
 import ai.npc.AbstractNpcAI;
 
@@ -69,7 +69,7 @@ public final class SteelCitadelTeleport extends AbstractNpcAI
 			return "32376-02a.htm";
 		}
 		
-		final L2BossZone zone = (L2BossZone) ZoneManager.getInstance().getZoneById(12018);
+		final BossZone zone = (BossZone) ZoneManager.getInstance().getZoneById(12018);
 		if (zone != null)
 		{
 			GrandBossManager.getInstance().setBossStatus(BELETH, 1);

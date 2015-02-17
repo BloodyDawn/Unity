@@ -26,7 +26,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.zone.type.L2EffectZone;
+import org.l2junity.gameserver.model.zone.type.EffectZone;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.util.Util;
@@ -119,7 +119,7 @@ public final class DenOfEvil extends AbstractNpcAI
 	{
 		npc.disableCoreAI(true);
 		npc.setIsImmobilized(true);
-		L2EffectZone zone = ZoneManager.getInstance().getZone(npc, L2EffectZone.class);
+		EffectZone zone = ZoneManager.getInstance().getZone(npc, EffectZone.class);
 		if (zone == null)
 		{
 			_log.warning("NPC " + npc + " spawned outside of L2EffectZone, check your zone coords! X:" + npc.getX() + " Y:" + npc.getY() + " Z:" + npc.getZ());
@@ -144,7 +144,7 @@ public final class DenOfEvil extends AbstractNpcAI
 	public String onKill(Npc npc, L2PcInstance killer, boolean isSummon)
 	{
 		ThreadPoolManager.getInstance().scheduleAi(new RespawnNewEye(npc.getLocation()), 15000);
-		L2EffectZone zone = ZoneManager.getInstance().getZone(npc, L2EffectZone.class);
+		EffectZone zone = ZoneManager.getInstance().getZone(npc, EffectZone.class);
 		if (zone == null)
 		{
 			_log.warning("NPC " + npc + " killed outside of L2EffectZone, check your zone coords! X:" + npc.getX() + " Y:" + npc.getY() + " Z:" + npc.getZ());
@@ -174,9 +174,9 @@ public final class DenOfEvil extends AbstractNpcAI
 	
 	private class KashaDestruction implements Runnable
 	{
-		L2EffectZone _zone;
+		EffectZone _zone;
 		
-		public KashaDestruction(L2EffectZone zone)
+		public KashaDestruction(EffectZone zone)
 		{
 			_zone = zone;
 		}

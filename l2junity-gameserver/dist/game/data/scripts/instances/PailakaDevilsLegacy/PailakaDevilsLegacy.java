@@ -33,7 +33,7 @@ import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.quest.QuestState;
-import org.l2junity.gameserver.model.zone.L2ZoneType;
+import org.l2junity.gameserver.model.zone.ZoneType;
 
 import quests.Q00129_PailakaDevilsLegacy.Q00129_PailakaDevilsLegacy;
 
@@ -281,7 +281,7 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 	}
 	
 	@Override
-	public String onEnterZone(Creature character, L2ZoneType zone)
+	public String onEnterZone(Creature character, ZoneType zone)
 	{
 		if ((character.isPlayer()) && !character.isDead() && !character.isTeleporting() && ((L2PcInstance) character).isOnline())
 		{

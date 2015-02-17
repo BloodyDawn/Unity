@@ -30,7 +30,7 @@ import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.quest.Quest;
-import org.l2junity.gameserver.model.zone.type.L2NoRestartZone;
+import org.l2junity.gameserver.model.zone.type.NoRestartZone;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 
 import ai.individual.Antharas.Antharas;
@@ -207,7 +207,7 @@ public class AdminGrandBoss implements IAdminCommandHandler
 		if (Arrays.asList(ANTHARAS, VALAKAS, BAIUM, QUEENANT, ORFEN, CORE).contains(grandBossId))
 		{
 			final int bossStatus = GrandBossManager.getInstance().getBossStatus(grandBossId);
-			L2NoRestartZone bossZone = null;
+			NoRestartZone bossZone = null;
 			String textColor = null;
 			String text = null;
 			String htmlPatch = null;
@@ -217,7 +217,7 @@ public class AdminGrandBoss implements IAdminCommandHandler
 			{
 				case ANTHARAS:
 				{
-					bossZone = ZoneManager.getInstance().getZoneById(ANTHARAS_ZONE, L2NoRestartZone.class);
+					bossZone = ZoneManager.getInstance().getZoneById(ANTHARAS_ZONE, NoRestartZone.class);
 					htmlPatch = "data/html/admin/grandboss_antharas.htm";
 					break;
 				}
@@ -228,7 +228,7 @@ public class AdminGrandBoss implements IAdminCommandHandler
 				}
 				case BAIUM:
 				{
-					bossZone = ZoneManager.getInstance().getZoneById(BAIUM_ZONE, L2NoRestartZone.class);
+					bossZone = ZoneManager.getInstance().getZoneById(BAIUM_ZONE, NoRestartZone.class);
 					htmlPatch = "data/html/admin/grandboss_baium.htm";
 					break;
 				}

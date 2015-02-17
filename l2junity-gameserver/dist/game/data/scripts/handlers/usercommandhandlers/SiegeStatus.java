@@ -23,7 +23,7 @@ import org.l2junity.gameserver.instancemanager.SiegeManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.entity.Siege;
-import org.l2junity.gameserver.model.zone.type.L2SiegeZone;
+import org.l2junity.gameserver.model.zone.type.SiegeZone;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 
@@ -67,7 +67,7 @@ public class SiegeStatus implements IUserCommandHandler
 				continue;
 			}
 			
-			final L2SiegeZone siegeZone = siege.getCastle().getZone();
+			final SiegeZone siegeZone = siege.getCastle().getZone();
 			final StringBuilder sb = new StringBuilder();
 			for (L2PcInstance member : clan.getOnlineMembers(0))
 			{

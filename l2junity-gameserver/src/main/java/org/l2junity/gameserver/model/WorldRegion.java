@@ -22,8 +22,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Logger;
+
+import javolution.util.FastList;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -34,32 +37,27 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.Vehicle;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.zone.L2ZoneType;
-import org.l2junity.gameserver.model.zone.type.L2PeaceZone;
-
-import javolution.util.FastList;
-import javolution.util.FastMap;
+import org.l2junity.gameserver.model.zone.ZoneType;
+import org.l2junity.gameserver.model.zone.type.PeaceZone;
 
 public final class WorldRegion
 {
 	private static final Logger _log = Logger.getLogger(WorldRegion.class.getName());
 	
 	/** Map containing all playable characters in game in this world region. */
-	private final Map<Integer, Playable> _allPlayable;
+	private final Map<Integer, Playable> _allPlayable = new ConcurrentHashMap<>();
 	
 	/** Map containing visible objects in this world region. */
-	private final Map<Integer, WorldObject> _visibleObjects;
+	private final Map<Integer, WorldObject> _visibleObjects = new ConcurrentHashMap<>();
 	
 	private final List<WorldRegion> _surroundingRegions;
 	private final int _tileX, _tileY;
 	private boolean _active = false;
 	private ScheduledFuture<?> _neighborsTask = null;
-	private final List<L2ZoneType> _zones;
+	private final List<ZoneType> _zones = new FastList<>();
 	
 	public WorldRegion(int pTileX, int pTileY)
 	{
-		_allPlayable = new FastMap<Integer, Playable>().shared();
-		_visibleObjects = new FastMap<Integer, WorldObject>().shared();
 		_surroundingRegions = new ArrayList<>();
 		
 		_tileX = pTileX;
@@ -67,20 +65,19 @@ public final class WorldRegion
 		
 		// default a newly initialized region to inactive, unless always on is specified
 		_active = Config.GRIDS_ALWAYS_ON;
-		_zones = new FastList<>();
 	}
 	
-	public List<L2ZoneType> getZones()
+	public List<ZoneType> getZones()
 	{
 		return _zones;
 	}
 	
-	public void addZone(L2ZoneType zone)
+	public void addZone(ZoneType zone)
 	{
 		_zones.add(zone);
 	}
 	
-	public void removeZone(L2ZoneType zone)
+	public void removeZone(ZoneType zone)
 	{
 		_zones.remove(zone);
 	}
@@ -95,7 +92,7 @@ public final class WorldRegion
 			return;
 		}
 		
-		for (L2ZoneType z : getZones())
+		for (ZoneType z : getZones())
 		{
 			if (z != null)
 			{
@@ -106,7 +103,7 @@ public final class WorldRegion
 	
 	public void removeFromZones(Creature character)
 	{
-		for (L2ZoneType z : getZones())
+		for (ZoneType z : getZones())
 		{
 			if (z != null)
 			{
@@ -117,7 +114,7 @@ public final class WorldRegion
 	
 	public boolean containsZone(int zoneId)
 	{
-		for (L2ZoneType z : getZones())
+		for (ZoneType z : getZones())
 		{
 			if (z.getId() == zoneId)
 			{
@@ -135,9 +132,9 @@ public final class WorldRegion
 		final int left = x + range;
 		final int right = x - range;
 		
-		for (L2ZoneType e : getZones())
+		for (ZoneType e : getZones())
 		{
-			if (e instanceof L2PeaceZone)
+			if (e instanceof PeaceZone)
 			{
 				if (e.isInsideZone(x, up, z))
 				{
@@ -170,7 +167,7 @@ public final class WorldRegion
 	
 	public void onDeath(Creature character)
 	{
-		for (L2ZoneType z : getZones())
+		for (ZoneType z : getZones())
 		{
 			if (z != null)
 			{
@@ -181,7 +178,7 @@ public final class WorldRegion
 	
 	public void onRevive(Creature character)
 	{
-		for (L2ZoneType z : getZones())
+		for (ZoneType z : getZones())
 		{
 			if (z != null)
 			{

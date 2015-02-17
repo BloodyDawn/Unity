@@ -23,7 +23,7 @@ import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
-import org.l2junity.gameserver.model.zone.type.L2EffectZone;
+import org.l2junity.gameserver.model.zone.type.EffectZone;
 import org.l2junity.gameserver.network.NpcStringId;
 
 import ai.npc.AbstractNpcAI;
@@ -43,9 +43,9 @@ public final class QueenShyeed extends AbstractNpcAI
 	private static final int RANDOM_RESPAWN = 43200000; // 12 h
 	
 	// Zones
-	private static final L2EffectZone MOB_BUFF_ZONE = ZoneManager.getInstance().getZoneById(200103, L2EffectZone.class);
-	private static final L2EffectZone MOB_BUFF_DISPLAY_ZONE = ZoneManager.getInstance().getZoneById(200104, L2EffectZone.class);
-	private static final L2EffectZone PC_BUFF_ZONE = ZoneManager.getInstance().getZoneById(200105, L2EffectZone.class);
+	private static final EffectZone MOB_BUFF_ZONE = ZoneManager.getInstance().getZoneById(200103, EffectZone.class);
+	private static final EffectZone MOB_BUFF_DISPLAY_ZONE = ZoneManager.getInstance().getZoneById(200104, EffectZone.class);
+	private static final EffectZone PC_BUFF_ZONE = ZoneManager.getInstance().getZoneById(200105, EffectZone.class);
 	
 	@Override
 	public String onAdvEvent(String event, Npc npc, L2PcInstance player)

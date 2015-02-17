@@ -18,9 +18,9 @@
  */
 package org.l2junity.gameserver.model.actor.knownlist;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -30,8 +30,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.util.Util;
-
-import javolution.util.FastList;
 
 public class CharKnownList extends ObjectKnownList
 {
@@ -208,10 +206,8 @@ public class CharKnownList extends ObjectKnownList
 	
 	public Collection<Creature> getKnownCharacters()
 	{
-		FastList<Creature> result = new FastList<>();
-		
-		final Collection<WorldObject> objs = getKnownObjects().values();
-		for (WorldObject obj : objs)
+		final List<Creature> result = new LinkedList<>();
+		for (WorldObject obj : getKnownObjects().values())
 		{
 			if (obj instanceof Creature)
 			{
@@ -223,10 +219,8 @@ public class CharKnownList extends ObjectKnownList
 	
 	public Collection<Creature> getKnownCharactersInRadius(long radius)
 	{
-		List<Creature> result = new ArrayList<>();
-		
-		final Collection<WorldObject> objs = getKnownObjects().values();
-		for (WorldObject obj : objs)
+		final List<Creature> result = new LinkedList<>();
+		for (WorldObject obj : getKnownObjects().values())
 		{
 			if (obj instanceof Creature)
 			{
@@ -269,10 +263,8 @@ public class CharKnownList extends ObjectKnownList
 	
 	public final Collection<L2PcInstance> getKnownPlayersInRadius(long radius)
 	{
-		List<L2PcInstance> result = new ArrayList<>();
-		
-		final Collection<L2PcInstance> plrs = getKnownPlayers().values();
-		for (L2PcInstance player : plrs)
+		final List<L2PcInstance> result = new LinkedList<>();
+		for (L2PcInstance player : getKnownPlayers().values())
 		{
 			if (Util.checkIfInRange((int) radius, getActiveChar(), player, true))
 			{

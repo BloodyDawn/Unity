@@ -36,7 +36,7 @@ import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.zone.type.L2BossZone;
+import org.l2junity.gameserver.model.zone.type.BossZone;
 import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
 import org.l2junity.gameserver.network.serverpackets.PlaySound;
 
@@ -75,7 +75,7 @@ public final class QueenAnt extends AbstractNpcAI
 	private static final byte ALIVE = 0; // Queen Ant is spawned.
 	private static final byte DEAD = 1; // Queen Ant has been killed.
 	
-	private static L2BossZone _zone;
+	private static BossZone _zone;
 	
 	private static SkillHolder HEAL1 = new SkillHolder(4020, 1);
 	private static SkillHolder HEAL2 = new SkillHolder(4024, 1);

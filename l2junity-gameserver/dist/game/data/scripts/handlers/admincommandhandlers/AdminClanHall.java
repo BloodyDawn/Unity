@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
-import org.l2junity.gameserver.model.zone.type.L2ClanHallZone;
+import org.l2junity.gameserver.model.zone.type.ClanHallZone;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.util.Util;
@@ -144,7 +144,7 @@ public class AdminClanHall implements IAdminCommandHandler
 							clanhall.openCloseDoors(false);
 							break;
 						case "admin_clanhallteleportself":
-							final L2ClanHallZone zone = clanhall.getZone();
+							final ClanHallZone zone = clanhall.getZone();
 							if (zone != null)
 							{
 								activeChar.teleToLocation(zone.getSpawnLoc(), true);

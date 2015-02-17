@@ -57,8 +57,8 @@ import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
-import org.l2junity.gameserver.model.zone.type.L2FortZone;
-import org.l2junity.gameserver.model.zone.type.L2SiegeZone;
+import org.l2junity.gameserver.model.zone.type.FortZone;
+import org.l2junity.gameserver.model.zone.type.SiegeZone;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.PlaySound;
 import org.l2junity.gameserver.network.serverpackets.PledgeShowInfoUpdate;
@@ -73,7 +73,7 @@ public final class Fort extends AbstractResidence
 	private volatile FortSiege _siege = null;
 	private Calendar _siegeDate;
 	private Calendar _lastOwnedTime;
-	private L2SiegeZone _zone;
+	private SiegeZone _zone;
 	private L2Clan _fortOwner = null;
 	private int _fortType = 0;
 	private int _state = 0;
@@ -303,11 +303,11 @@ public final class Fort extends AbstractResidence
 		return getZone().isInsideZone(x, y, z);
 	}
 	
-	public L2SiegeZone getZone()
+	public SiegeZone getZone()
 	{
 		if (_zone == null)
 		{
-			for (L2SiegeZone zone : ZoneManager.getInstance().getAllZones(L2SiegeZone.class))
+			for (SiegeZone zone : ZoneManager.getInstance().getAllZones(SiegeZone.class))
 			{
 				if (zone.getSiegeObjectId() == getResidenceId())
 				{
@@ -320,9 +320,9 @@ public final class Fort extends AbstractResidence
 	}
 	
 	@Override
-	public L2FortZone getResidenceZone()
+	public FortZone getResidenceZone()
 	{
-		return (L2FortZone) super.getResidenceZone();
+		return (FortZone) super.getResidenceZone();
 	}
 	
 	/**
@@ -1288,7 +1288,7 @@ public final class Fort extends AbstractResidence
 	@Override
 	protected void initResidenceZone()
 	{
-		for (L2FortZone zone : ZoneManager.getInstance().getAllZones(L2FortZone.class))
+		for (FortZone zone : ZoneManager.getInstance().getAllZones(FortZone.class))
 		{
 			if (zone.getResidenceId() == getResidenceId())
 			{

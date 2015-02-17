@@ -35,8 +35,8 @@ import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
-import org.l2junity.gameserver.model.zone.type.L2ClanHallZone;
-import org.l2junity.gameserver.model.zone.type.L2RespawnZone;
+import org.l2junity.gameserver.model.zone.type.ClanHallZone;
+import org.l2junity.gameserver.model.zone.type.RespawnZone;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -260,7 +260,7 @@ public final class MapRegionManager implements IXmlReader
 					clanhall = ClanHallManager.getInstance().getAbstractHallByOwner(player.getClan());
 					if (clanhall != null)
 					{
-						L2ClanHallZone zone = clanhall.getZone();
+						ClanHallZone zone = clanhall.getZone();
 						if ((zone != null) && !player.isFlyingMounted())
 						{
 							if (player.getKarma() > 0)
@@ -372,7 +372,7 @@ public final class MapRegionManager implements IXmlReader
 			{
 				try
 				{
-					L2RespawnZone zone = ZoneManager.getInstance().getZone(player, L2RespawnZone.class);
+					RespawnZone zone = ZoneManager.getInstance().getZone(player, RespawnZone.class);
 					if (zone != null)
 					{
 						return getRestartRegion(activeChar, zone.getRespawnPoint((L2PcInstance) activeChar)).getChaoticSpawnLoc();
@@ -421,7 +421,7 @@ public final class MapRegionManager implements IXmlReader
 		// Get the nearest town
 		try
 		{
-			L2RespawnZone zone = ZoneManager.getInstance().getZone(activeChar, L2RespawnZone.class);
+			RespawnZone zone = ZoneManager.getInstance().getZone(activeChar, RespawnZone.class);
 			if (zone != null)
 			{
 				return getRestartRegion(activeChar, zone.getRespawnPoint((L2PcInstance) activeChar)).getSpawnLoc();

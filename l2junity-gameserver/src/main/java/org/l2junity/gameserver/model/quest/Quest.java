@@ -67,7 +67,7 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.olympiad.CompetitionType;
 import org.l2junity.gameserver.model.olympiad.Participant;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.zone.L2ZoneType;
+import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.ExQuestNpcLogList;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -863,7 +863,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 * @param character
 	 * @param zone
 	 */
-	public final void notifyEnterZone(Creature character, L2ZoneType zone)
+	public final void notifyEnterZone(Creature character, ZoneType zone)
 	{
 		L2PcInstance player = character.getActingPlayer();
 		String res = null;
@@ -889,7 +889,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 * @param character
 	 * @param zone
 	 */
-	public final void notifyExitZone(Creature character, L2ZoneType zone)
+	public final void notifyExitZone(Creature character, ZoneType zone)
 	{
 		L2PcInstance player = character.getActingPlayer();
 		String res = null;
@@ -1311,7 +1311,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 * @param zone this parameter contains a reference to the zone.
 	 * @return
 	 */
-	public String onEnterZone(Creature character, L2ZoneType zone)
+	public String onEnterZone(Creature character, ZoneType zone)
 	{
 		return null;
 	}
@@ -1322,7 +1322,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 * @param zone this parameter contains a reference to the zone.
 	 * @return
 	 */
-	public String onExitZone(Creature character, L2ZoneType zone)
+	public String onExitZone(Creature character, ZoneType zone)
 	{
 		return null;
 	}

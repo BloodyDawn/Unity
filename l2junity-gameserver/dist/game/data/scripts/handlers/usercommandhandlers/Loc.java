@@ -23,7 +23,7 @@ import org.l2junity.gameserver.handler.IUserCommandHandler;
 import org.l2junity.gameserver.instancemanager.MapRegionManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
-import org.l2junity.gameserver.model.zone.type.L2RespawnZone;
+import org.l2junity.gameserver.model.zone.type.RespawnZone;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
@@ -41,7 +41,7 @@ public class Loc implements IUserCommandHandler
 	public boolean useUserCommand(int id, L2PcInstance activeChar)
 	{
 		int region;
-		L2RespawnZone zone = ZoneManager.getInstance().getZone(activeChar, L2RespawnZone.class);
+		RespawnZone zone = ZoneManager.getInstance().getZone(activeChar, RespawnZone.class);
 		if (zone != null)
 		{
 			region = MapRegionManager.getInstance().getRestartRegion(activeChar, zone.getAllRespawnPoints().get(Race.HUMAN)).getLocId();

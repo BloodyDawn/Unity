@@ -254,9 +254,9 @@ import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.variables.AccountVariables;
 import org.l2junity.gameserver.model.variables.PlayerVariables;
-import org.l2junity.gameserver.model.zone.L2ZoneType;
+import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.ZoneId;
-import org.l2junity.gameserver.model.zone.type.L2BossZone;
+import org.l2junity.gameserver.model.zone.type.BossZone;
 import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.AbstractHtmlPacket;
@@ -10671,7 +10671,7 @@ public final class L2PcInstance extends Playable
 		
 		try
 		{
-			for (L2ZoneType zone : ZoneManager.getInstance().getZones(this))
+			for (ZoneType zone : ZoneManager.getInstance().getZones(this))
 			{
 				zone.onPlayerLoginInside(this);
 			}
@@ -11319,7 +11319,7 @@ public final class L2PcInstance extends Playable
 		
 		try
 		{
-			for (L2ZoneType zone : ZoneManager.getInstance().getZones(this))
+			for (ZoneType zone : ZoneManager.getInstance().getZones(this))
 			{
 				zone.onPlayerLogoutInside(this);
 			}
@@ -13783,7 +13783,7 @@ public final class L2PcInstance extends Playable
 	{
 		try
 		{
-			for (L2BossZone _zone : GrandBossManager.getInstance().getZones())
+			for (BossZone _zone : GrandBossManager.getInstance().getZones())
 			{
 				_zone.removePlayer(this);
 			}

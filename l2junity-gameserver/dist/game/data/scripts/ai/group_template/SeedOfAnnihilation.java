@@ -30,8 +30,8 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
-import org.l2junity.gameserver.model.zone.L2ZoneType;
-import org.l2junity.gameserver.model.zone.type.L2EffectZone;
+import org.l2junity.gameserver.model.zone.ZoneType;
+import org.l2junity.gameserver.model.zone.type.EffectZone;
 import org.l2junity.gameserver.util.Util;
 
 import ai.npc.AbstractNpcAI;
@@ -271,7 +271,7 @@ public final class SeedOfAnnihilation extends AbstractNpcAI
 				_regionsData[i].af_npcs[j] = addSpawn(ANNIHILATION_FURNACE, _regionsData[i].af_spawns[j][0], _regionsData[i].af_spawns[j][1], _regionsData[i].af_spawns[j][2], _regionsData[i].af_spawns[j][3], false, 0);
 				_regionsData[i].af_npcs[j].setState(_regionsData[i].activeBuff);
 			}
-			ZoneManager.getInstance().getZoneById(_regionsData[i].buff_zone, L2EffectZone.class).addSkill(ZONE_BUFFS[_regionsData[i].activeBuff], 1);
+			ZoneManager.getInstance().getZoneById(_regionsData[i].buff_zone, EffectZone.class).addSkill(ZONE_BUFFS[_regionsData[i].activeBuff], 1);
 		}
 		startQuestTimer("ChangeSeedsStatus", _seedsNextStatusChange - System.currentTimeMillis(), null, null);
 	}
@@ -315,7 +315,7 @@ public final class SeedOfAnnihilation extends AbstractNpcAI
 					af.setState(_regionsData[i].activeBuff);
 				}
 				
-				L2EffectZone zone = ZoneManager.getInstance().getZoneById(_regionsData[i].buff_zone, L2EffectZone.class);
+				EffectZone zone = ZoneManager.getInstance().getZoneById(_regionsData[i].buff_zone, EffectZone.class);
 				zone.clearSkills();
 				zone.addSkill(ZONE_BUFFS[_regionsData[i].activeBuff], 1);
 			}
@@ -339,7 +339,7 @@ public final class SeedOfAnnihilation extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onEnterZone(Creature character, L2ZoneType zone)
+	public String onEnterZone(Creature character, ZoneType zone)
 	{
 		if (_teleportZones.containsKey(zone.getId()))
 		{

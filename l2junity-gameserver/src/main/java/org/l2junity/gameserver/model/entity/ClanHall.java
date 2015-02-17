@@ -34,7 +34,7 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
-import org.l2junity.gameserver.model.zone.type.L2ClanHallZone;
+import org.l2junity.gameserver.model.zone.type.ClanHallZone;
 import org.l2junity.gameserver.network.serverpackets.PledgeShowInfoUpdate;
 
 import javolution.util.FastMap;
@@ -49,7 +49,7 @@ public abstract class ClanHall
 	private int _ownerId;
 	private final String _desc;
 	private final String _location;
-	private L2ClanHallZone _zone;
+	private ClanHallZone _zone;
 	protected boolean _isFree = true;
 	private final Map<Integer, ClanHallFunction> _functions;
 	
@@ -318,7 +318,7 @@ public abstract class ClanHall
 	 * Sets this clan halls zone
 	 * @param zone
 	 */
-	public void setZone(L2ClanHallZone zone)
+	public void setZone(ClanHallZone zone)
 	{
 		_zone = zone;
 	}
@@ -337,7 +337,7 @@ public abstract class ClanHall
 	/**
 	 * @return the zone of this clan hall
 	 */
-	public L2ClanHallZone getZone()
+	public ClanHallZone getZone()
 	{
 		return _zone;
 	}

@@ -85,7 +85,7 @@ import org.l2junity.gameserver.model.olympiad.Olympiad;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.variables.NpcVariables;
-import org.l2junity.gameserver.model.zone.type.L2TownZone;
+import org.l2junity.gameserver.model.zone.type.TownZone;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.ExChangeNpcState;
@@ -714,7 +714,7 @@ public class Npc extends Creature
 		// Get castle this NPC belongs to (excluding L2Attackable)
 		if (_castleIndex < 0)
 		{
-			L2TownZone town = TownManager.getTown(getX(), getY(), getZ());
+			TownZone town = TownManager.getTown(getX(), getY(), getZ());
 			
 			if (town != null)
 			{

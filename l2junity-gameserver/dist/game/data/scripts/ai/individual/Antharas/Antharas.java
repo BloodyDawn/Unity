@@ -37,7 +37,7 @@ import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.zone.type.L2NoRestartZone;
+import org.l2junity.gameserver.model.zone.type.NoRestartZone;
 import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.serverpackets.Earthquake;
 import org.l2junity.gameserver.network.serverpackets.ExShowScreenMessage;
@@ -104,7 +104,7 @@ public final class Antharas extends AbstractNpcAI
 	private static final SkillHolder ANTH_FEAR_SHORT = new SkillHolder(5092, 1); // Antharas Terror
 	private static final SkillHolder ANTH_METEOR = new SkillHolder(5093, 1); // Antharas Meteor
 	// Zone
-	private static final L2NoRestartZone zone = ZoneManager.getInstance().getZoneById(70050, L2NoRestartZone.class); // Antharas Nest zone
+	private static final NoRestartZone zone = ZoneManager.getInstance().getZoneById(70050, NoRestartZone.class); // Antharas Nest zone
 	// Status
 	private static final int ALIVE = 0;
 	private static final int WAITING = 1;

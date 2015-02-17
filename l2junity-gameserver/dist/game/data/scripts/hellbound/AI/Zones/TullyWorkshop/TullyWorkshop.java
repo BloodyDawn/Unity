@@ -42,7 +42,7 @@ import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.zone.L2ZoneType;
+import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.util.MinionList;
@@ -703,7 +703,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 		
 		if (event.equalsIgnoreCase("disable_zone"))
 		{
-			final L2ZoneType dmgZone = ZoneManager.getInstance().getZoneById(200011);
+			final ZoneType dmgZone = ZoneManager.getInstance().getZoneById(200011);
 			if (dmgZone != null)
 			{
 				dmgZone.setEnabled(false);
@@ -1246,7 +1246,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 					brokenContraptions.clear();
 					rewardedContraptions.clear();
 					talkedContraptions.clear();
-					final L2ZoneType dmgZone = ZoneManager.getInstance().getZoneById(200011);
+					final ZoneType dmgZone = ZoneManager.getInstance().getZoneById(200011);
 					if (dmgZone != null)
 					{
 						dmgZone.setEnabled(true);
@@ -1467,7 +1467,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 			int x = spawn.getX();
 			int y = spawn.getY();
 			int z = spawn.getZ();
-			for (L2ZoneType zone : ZoneManager.getInstance().getZones(x, y, z))
+			for (ZoneType zone : ZoneManager.getInstance().getZones(x, y, z))
 			{
 				for (int i = 0; i < 2; i++)
 				{

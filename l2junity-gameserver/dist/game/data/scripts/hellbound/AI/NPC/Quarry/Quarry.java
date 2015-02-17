@@ -28,7 +28,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.actor.instance.L2QuestGuardInstance;
 import org.l2junity.gameserver.model.holders.ItemChanceHolder;
-import org.l2junity.gameserver.model.zone.L2ZoneType;
+import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.NpcStringId;
 
 import hellbound.HellboundEngine;
@@ -91,7 +91,7 @@ public final class Quarry extends AbstractNpcAI
 			}
 			case "TIME_LIMIT":
 			{
-				for (L2ZoneType zone : ZoneManager.getInstance().getZones(npc))
+				for (ZoneType zone : ZoneManager.getInstance().getZones(npc))
 				{
 					if (zone.getId() == 40108)
 					{
@@ -162,7 +162,7 @@ public final class Quarry extends AbstractNpcAI
 	}
 	
 	@Override
-	public final String onEnterZone(Creature character, L2ZoneType zone)
+	public final String onEnterZone(Creature character, ZoneType zone)
 	{
 		if (character.isAttackable())
 		{

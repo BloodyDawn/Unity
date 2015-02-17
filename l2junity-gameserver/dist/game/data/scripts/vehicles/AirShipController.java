@@ -35,8 +35,8 @@ import org.l2junity.gameserver.model.actor.instance.L2AirShipInstance;
 import org.l2junity.gameserver.model.actor.instance.L2ControllableAirShipInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.quest.Quest;
-import org.l2junity.gameserver.model.zone.L2ZoneType;
-import org.l2junity.gameserver.model.zone.type.L2ScriptZone;
+import org.l2junity.gameserver.model.zone.ZoneType;
+import org.l2junity.gameserver.model.zone.type.ScriptZone;
 import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.NpcSay;
@@ -285,7 +285,7 @@ public abstract class AirShipController extends Quest
 	}
 	
 	@Override
-	public String onEnterZone(Creature character, L2ZoneType zone)
+	public String onEnterZone(Creature character, ZoneType zone)
 	{
 		if (character instanceof L2ControllableAirShipInstance)
 		{
@@ -321,7 +321,7 @@ public abstract class AirShipController extends Quest
 	}
 	
 	@Override
-	public String onExitZone(Creature character, L2ZoneType zone)
+	public String onExitZone(Creature character, ZoneType zone)
 	{
 		if (character instanceof L2ControllableAirShipInstance)
 		{
@@ -349,7 +349,7 @@ public abstract class AirShipController extends Quest
 	
 	protected void validityCheck()
 	{
-		L2ScriptZone zone = ZoneManager.getInstance().getZoneById(_dockZone, L2ScriptZone.class);
+		ScriptZone zone = ZoneManager.getInstance().getZoneById(_dockZone, ScriptZone.class);
 		if (zone == null)
 		{
 			_log.log(Level.WARNING, getName() + ": Invalid zone " + _dockZone + ", controller disabled");
@@ -377,7 +377,7 @@ public abstract class AirShipController extends Quest
 		}
 		if (_arrivalPath == null)
 		{
-			if (!ZoneManager.getInstance().getZoneById(_dockZone, L2ScriptZone.class).isInsideZone(_shipSpawnX, _shipSpawnY, _shipSpawnZ))
+			if (!ZoneManager.getInstance().getZoneById(_dockZone, ScriptZone.class).isInsideZone(_shipSpawnX, _shipSpawnY, _shipSpawnZ))
 			{
 				_log.log(Level.WARNING, getName() + ": Arrival path is null and spawn point not in zone " + _dockZone + ", controller disabled");
 				_isBusy = true;

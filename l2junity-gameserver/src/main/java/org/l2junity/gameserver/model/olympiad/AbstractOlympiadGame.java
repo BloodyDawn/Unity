@@ -36,7 +36,7 @@ import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.zone.type.L2OlympiadStadiumZone;
+import org.l2junity.gameserver.model.zone.type.OlympiadStadiumZone;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExOlympiadMode;
 import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
@@ -463,7 +463,7 @@ public abstract class AbstractOlympiadGame
 	
 	public abstract void sendOlympiadInfo(Creature player);
 	
-	public abstract void broadcastOlympiadInfo(L2OlympiadStadiumZone stadium);
+	public abstract void broadcastOlympiadInfo(OlympiadStadiumZone stadium);
 	
 	protected abstract void broadcastPacket(L2GameServerPacket packet);
 	
@@ -493,7 +493,7 @@ public abstract class AbstractOlympiadGame
 	
 	protected abstract boolean haveWinner();
 	
-	protected abstract void validateWinner(L2OlympiadStadiumZone stadium);
+	protected abstract void validateWinner(OlympiadStadiumZone stadium);
 	
 	protected abstract int getDivider();
 	

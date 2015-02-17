@@ -47,7 +47,7 @@ import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.entity.Siegable;
 import org.l2junity.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
 import org.l2junity.gameserver.model.entity.clanhall.SiegeStatus;
-import org.l2junity.gameserver.model.zone.type.L2ResidenceHallTeleportZone;
+import org.l2junity.gameserver.model.zone.type.ResidenceHallTeleportZone;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
@@ -87,7 +87,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	protected static int[] INNER_DOORS_TO_OPEN = new int[2];
 	protected static Location[] FLAG_COORDS = new Location[7];
 	
-	protected static L2ResidenceHallTeleportZone[] TELE_ZONES = new L2ResidenceHallTeleportZone[6];
+	protected static ResidenceHallTeleportZone[] TELE_ZONES = new ResidenceHallTeleportZone[6];
 	
 	protected static int QUEST_REWARD;
 	

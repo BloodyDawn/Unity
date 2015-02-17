@@ -32,7 +32,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
-import org.l2junity.gameserver.model.zone.type.L2ClanHallZone;
+import org.l2junity.gameserver.model.zone.type.ClanHallZone;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
@@ -104,7 +104,7 @@ public final class CHSiegeManager
 	
 	public final SiegableHall getNearbyClanHall(int x, int y, int maxDist)
 	{
-		L2ClanHallZone zone = null;
+		ClanHallZone zone = null;
 		
 		for (Map.Entry<Integer, SiegableHall> ch : _siegableHalls.entrySet())
 		{

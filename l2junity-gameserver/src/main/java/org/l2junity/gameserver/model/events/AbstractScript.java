@@ -122,7 +122,7 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.olympiad.Olympiad;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.model.zone.L2ZoneType;
+import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExAdenaInvenCount;
@@ -912,7 +912,7 @@ public abstract class AbstractScript extends ManagedScript
 	// ---------------------------------------------------------------------------------------------------------------------------
 	
 	/**
-	 * Provides instant callback operation when {@link org.l2junity.gameserver.model.actor.Creature} Enters on a {@link L2ZoneType}.
+	 * Provides instant callback operation when {@link org.l2junity.gameserver.model.actor.Creature} Enters on a {@link ZoneType}.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -923,7 +923,7 @@ public abstract class AbstractScript extends ManagedScript
 	}
 	
 	/**
-	 * Provides instant callback operation when {@link org.l2junity.gameserver.model.actor.Creature} Enters on a {@link L2ZoneType}.
+	 * Provides instant callback operation when {@link org.l2junity.gameserver.model.actor.Creature} Enters on a {@link ZoneType}.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -936,7 +936,7 @@ public abstract class AbstractScript extends ManagedScript
 	// ---------------------------------------------------------------------------------------------------------------------------
 	
 	/**
-	 * Provides instant callback operation when {@link org.l2junity.gameserver.model.actor.Creature} Exits on a {@link L2ZoneType}.
+	 * Provides instant callback operation when {@link org.l2junity.gameserver.model.actor.Creature} Exits on a {@link ZoneType}.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -947,7 +947,7 @@ public abstract class AbstractScript extends ManagedScript
 	}
 	
 	/**
-	 * Provides instant callback operation when {@link org.l2junity.gameserver.model.actor.Creature} Exits on a {@link L2ZoneType}.
+	 * Provides instant callback operation when {@link org.l2junity.gameserver.model.actor.Creature} Exits on a {@link ZoneType}.
 	 * @param callback
 	 * @param npcIds
 	 * @return
@@ -1290,7 +1290,7 @@ public abstract class AbstractScript extends ManagedScript
 					}
 					case ZONE:
 					{
-						final L2ZoneType template = ZoneManager.getInstance().getZoneById(id);
+						final ZoneType template = ZoneManager.getInstance().getZoneById(id);
 						if (template != null)
 						{
 							listeners.add(template.addListener(action.apply(template)));
@@ -1401,7 +1401,7 @@ public abstract class AbstractScript extends ManagedScript
 					}
 					case ZONE:
 					{
-						final L2ZoneType template = ZoneManager.getInstance().getZoneById(id);
+						final ZoneType template = ZoneManager.getInstance().getZoneById(id);
 						if (template != null)
 						{
 							listeners.add(template.addListener(action.apply(template)));

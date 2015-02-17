@@ -37,7 +37,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.zone.type.L2BossZone;
+import org.l2junity.gameserver.model.zone.type.BossZone;
 import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.serverpackets.NpcSay;
 import org.l2junity.gameserver.network.serverpackets.PlaySound;
@@ -74,7 +74,7 @@ public final class Orfen extends AbstractNpcAI
 	
 	private static boolean _IsTeleported;
 	private static List<Attackable> _Minions = new FastList<>();
-	private static L2BossZone ZONE;
+	private static BossZone ZONE;
 	
 	private static final byte ALIVE = 0;
 	private static final byte DEAD = 1;

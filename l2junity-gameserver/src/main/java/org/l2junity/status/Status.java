@@ -28,11 +28,11 @@ import java.util.List;
 import java.util.Properties;
 import java.util.logging.Logger;
 
+import javolution.util.FastList;
+
 import org.l2junity.Config;
 import org.l2junity.Server;
 import org.l2junity.commons.util.Rnd;
-
-import javolution.util.FastList;
 
 public class Status extends Thread
 {
@@ -154,14 +154,9 @@ public class Status extends Thread
 	
 	public void sendMessageToTelnets(String msg)
 	{
-		List<LoginStatusThread> lsToRemove = new FastList<>();
 		for (LoginStatusThread ls : _loginStatus)
 		{
-			if (ls.isInterrupted())
-			{
-				lsToRemove.add(ls);
-			}
-			else
+			if (!ls.isInterrupted())
 			{
 				ls.printToTelnet(msg);
 			}

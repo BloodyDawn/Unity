@@ -25,7 +25,7 @@ import org.l2junity.gameserver.instancemanager.TownManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
-import org.l2junity.gameserver.model.zone.type.L2TownZone;
+import org.l2junity.gameserver.model.zone.type.TownZone;
 
 import ai.npc.AbstractNpcAI;
 
@@ -80,7 +80,7 @@ public final class DelusionTeleport extends AbstractNpcAI
 	{
 		if (npc.getId() == NPCS[0]) // Pathfinder Worker
 		{
-			final L2TownZone town = TownManager.getTown(npc.getX(), npc.getY(), npc.getZ());
+			final TownZone town = TownManager.getTown(npc.getX(), npc.getY(), npc.getZ());
 			final int townId = ((town == null) ? 0 : town.getTownId());
 			player.getVariables().set(DELUSION_RETURN, townId);
 			player.teleToLocation(HALL_LOCATIONS[getRandom(HALL_LOCATIONS.length)], false);

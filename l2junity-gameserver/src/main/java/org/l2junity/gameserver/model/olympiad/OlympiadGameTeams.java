@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
-import org.l2junity.gameserver.model.zone.type.L2OlympiadStadiumZone;
+import org.l2junity.gameserver.model.zone.type.OlympiadStadiumZone;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExOlympiadMatchResult;
 import org.l2junity.gameserver.network.serverpackets.ExOlympiadUserInfo;
@@ -251,7 +251,7 @@ public class OlympiadGameTeams extends AbstractOlympiadGame
 	}
 	
 	@Override
-	public final void broadcastOlympiadInfo(L2OlympiadStadiumZone stadium)
+	public final void broadcastOlympiadInfo(OlympiadStadiumZone stadium)
 	{
 		for (int i = 0; i < MAX_TEAM_SIZE; i++)
 		{
@@ -553,7 +553,7 @@ public class OlympiadGameTeams extends AbstractOlympiadGame
 	}
 	
 	@Override
-	protected void validateWinner(L2OlympiadStadiumZone stadium)
+	protected void validateWinner(OlympiadStadiumZone stadium)
 	{
 		if (_aborted)
 		{

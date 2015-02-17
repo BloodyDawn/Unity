@@ -26,7 +26,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.actor.instance.L2RaidBossInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
-import org.l2junity.gameserver.model.zone.type.L2NoRestartZone;
+import org.l2junity.gameserver.model.zone.type.NoRestartZone;
 import org.l2junity.gameserver.network.serverpackets.SpecialCamera;
 
 import ai.npc.AbstractNpcAI;
@@ -50,7 +50,7 @@ public final class Sailren extends AbstractNpcAI
 	// Skill
 	private static final SkillHolder ANIMATION = new SkillHolder(5090, 1);
 	// Zone
-	private static final L2NoRestartZone zone = ZoneManager.getInstance().getZoneById(70049, L2NoRestartZone.class);
+	private static final NoRestartZone zone = ZoneManager.getInstance().getZoneById(70049, NoRestartZone.class);
 	// Misc
 	private static final int RESPAWN = 1; // Respawn time (in hours)
 	private static final int MAX_TIME = 3200; // Max time for Sailren fight (in minutes)

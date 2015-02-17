@@ -25,7 +25,7 @@ import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Tower;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
-import org.l2junity.gameserver.model.zone.L2ZoneType;
+import org.l2junity.gameserver.model.zone.ZoneType;
 
 /**
  * Class for Flame Control Tower instance.
@@ -63,7 +63,7 @@ public class L2FlameTowerInstance extends Tower
 			final int maxIndex = _upgradeLevel * 2;
 			for (int i = 0; i < maxIndex; i++)
 			{
-				final L2ZoneType zone = ZoneManager.getInstance().getZoneById(_zoneList.get(i));
+				final ZoneType zone = ZoneManager.getInstance().getZoneById(_zoneList.get(i));
 				if (zone != null)
 				{
 					zone.setEnabled(state);

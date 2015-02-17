@@ -37,7 +37,7 @@ import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.zone.type.L2BossZone;
+import org.l2junity.gameserver.model.zone.type.BossZone;
 import org.l2junity.gameserver.network.serverpackets.PlaySound;
 import org.l2junity.gameserver.network.serverpackets.SocialAction;
 import org.l2junity.gameserver.network.serverpackets.SpecialCamera;
@@ -115,7 +115,7 @@ public final class Valakas extends AbstractNpcAI
 	// Misc
 	private long _timeTracker = 0; // Time tracker for last attack on Valakas.
 	private Playable _actualVictim; // Actual target of Valakas.
-	private static L2BossZone ZONE;
+	private static BossZone ZONE;
 	
 	private Valakas()
 	{

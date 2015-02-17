@@ -27,7 +27,7 @@ import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.events.ListenersContainer;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.interfaces.INamable;
-import org.l2junity.gameserver.model.zone.type.L2ResidenceZone;
+import org.l2junity.gameserver.model.zone.type.ResidenceZone;
 
 /**
  * @author xban1x
@@ -37,7 +37,7 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 	private final int _residenceId;
 	private String _name;
 	
-	private L2ResidenceZone _zone = null;
+	private ResidenceZone _zone = null;
 	private final List<SkillHolder> _residentialSkills = new ArrayList<>();
 	
 	public AbstractResidence(int residenceId)
@@ -76,12 +76,12 @@ public abstract class AbstractResidence extends ListenersContainer implements IN
 		_name = name;
 	}
 	
-	public L2ResidenceZone getResidenceZone()
+	public ResidenceZone getResidenceZone()
 	{
 		return _zone;
 	}
 	
-	protected void setResidenceZone(L2ResidenceZone zone)
+	protected void setResidenceZone(ResidenceZone zone)
 	{
 		_zone = zone;
 	}

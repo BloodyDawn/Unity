@@ -41,7 +41,7 @@ import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.zone.L2ZoneType;
+import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.SystemMessageId.SMLocalisation;
 
@@ -623,7 +623,7 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 				case TYPE_ZONE_NAME:
 				{
 					final int[] array = param.getIntArrayValue();
-					final L2ZoneType zone = ZoneManager.getInstance().getZone(array[0], array[1], array[2], L2ZoneType.class);
+					final ZoneType zone = ZoneManager.getInstance().getZone(array[0], array[1], array[2], ZoneType.class);
 					params[i] = zone == null ? "Unknown ZONE-N-" + Arrays.toString(array) : zone.getName();
 					break;
 				}

@@ -37,13 +37,13 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.zone.AbstractZoneSettings;
 import org.l2junity.gameserver.model.zone.L2ZoneForm;
 import org.l2junity.gameserver.model.zone.L2ZoneRespawn;
-import org.l2junity.gameserver.model.zone.L2ZoneType;
+import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.form.ZoneCuboid;
 import org.l2junity.gameserver.model.zone.form.ZoneCylinder;
 import org.l2junity.gameserver.model.zone.form.ZoneNPoly;
-import org.l2junity.gameserver.model.zone.type.L2ArenaZone;
-import org.l2junity.gameserver.model.zone.type.L2OlympiadStadiumZone;
-import org.l2junity.gameserver.model.zone.type.L2RespawnZone;
+import org.l2junity.gameserver.model.zone.type.ArenaZone;
+import org.l2junity.gameserver.model.zone.type.OlympiadStadiumZone;
+import org.l2junity.gameserver.model.zone.type.RespawnZone;
 import org.l2junity.gameserver.model.zone.type.NpcSpawnTerritory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
@@ -57,7 +57,7 @@ public final class ZoneManager implements IXmlReader
 {
 	private static final Map<String, AbstractZoneSettings> _settings = new HashMap<>();
 	
-	private final Map<Class<? extends L2ZoneType>, Map<Integer, ? extends L2ZoneType>> _classZones = new HashMap<>();
+	private final Map<Class<? extends ZoneType>, Map<Integer, ? extends ZoneType>> _classZones = new HashMap<>();
 	private final Map<String, NpcSpawnTerritory> _spawnTerritories = new HashMap<>();
 	private int _lastDynamicId = 300000;
 	private List<ItemInstance> _debugItems;
@@ -80,9 +80,9 @@ public final class ZoneManager implements IXmlReader
 		final WorldRegion[][] worldRegions = World.getInstance().getWorldRegions();
 		
 		// Backup old zone settings
-		for (Map<Integer, ? extends L2ZoneType> map : _classZones.values())
+		for (Map<Integer, ? extends ZoneType> map : _classZones.values())
 		{
-			for (L2ZoneType zone : map.values())
+			for (ZoneType zone : map.values())
 			{
 				if (zone.getSettings() != null)
 				{
@@ -298,12 +298,12 @@ public final class ZoneManager implements IXmlReader
 						// Create the zone
 						Class<?> newZone = null;
 						Constructor<?> zoneConstructor = null;
-						L2ZoneType temp;
+						ZoneType temp;
 						try
 						{
-							newZone = Class.forName("org.l2junity.gameserver.model.zone.type.L2" + zoneType);
+							newZone = Class.forName("org.l2junity.gameserver.model.zone.type." + zoneType);
 							zoneConstructor = newZone.getConstructor(int.class);
-							temp = (L2ZoneType) zoneConstructor.newInstance(zoneId);
+							temp = (ZoneType) zoneConstructor.newInstance(zoneId);
 							temp.setZone(zoneForm);
 						}
 						catch (Exception e)
@@ -332,13 +332,13 @@ public final class ZoneManager implements IXmlReader
 								Node val = attrs.getNamedItem("type");
 								((L2ZoneRespawn) temp).parseLoc(spawnX, spawnY, spawnZ, val == null ? null : val.getNodeValue());
 							}
-							else if ("race".equalsIgnoreCase(cd.getNodeName()) && (temp instanceof L2RespawnZone))
+							else if ("race".equalsIgnoreCase(cd.getNodeName()) && (temp instanceof RespawnZone))
 							{
 								attrs = cd.getAttributes();
 								String race = attrs.getNamedItem("name").getNodeValue();
 								String point = attrs.getNamedItem("point").getNodeValue();
 								
-								((L2RespawnZone) temp).addRaceRespawnPoint(race, point);
+								((RespawnZone) temp).addRaceRespawnPoint(race, point);
 							}
 						}
 						if (checkId(zoneId))
@@ -396,7 +396,7 @@ public final class ZoneManager implements IXmlReader
 	public int getSize()
 	{
 		int i = 0;
-		for (Map<Integer, ? extends L2ZoneType> map : _classZones.values())
+		for (Map<Integer, ? extends ZoneType> map : _classZones.values())
 		{
 			i += map.size();
 		}
@@ -410,7 +410,7 @@ public final class ZoneManager implements IXmlReader
 	 */
 	public boolean checkId(int id)
 	{
-		for (Map<Integer, ? extends L2ZoneType> map : _classZones.values())
+		for (Map<Integer, ? extends ZoneType> map : _classZones.values())
 		{
 			if (map.containsKey(id))
 			{
@@ -427,7 +427,7 @@ public final class ZoneManager implements IXmlReader
 	 * @param zone the zone
 	 */
 	@SuppressWarnings("unchecked")
-	public <T extends L2ZoneType> void addZone(Integer id, T zone)
+	public <T extends ZoneType> void addZone(Integer id, T zone)
 	{
 		Map<Integer, T> map = (Map<Integer, T>) _classZones.get(zone.getClass());
 		if (map == null)
@@ -448,10 +448,10 @@ public final class ZoneManager implements IXmlReader
 	 * @see #getAllZones(Class)
 	 */
 	@Deprecated
-	public Collection<L2ZoneType> getAllZones()
+	public Collection<ZoneType> getAllZones()
 	{
-		final List<L2ZoneType> zones = new ArrayList<>();
-		for (Map<Integer, ? extends L2ZoneType> map : _classZones.values())
+		final List<ZoneType> zones = new ArrayList<>();
+		for (Map<Integer, ? extends ZoneType> map : _classZones.values())
 		{
 			zones.addAll(map.values());
 		}
@@ -465,7 +465,7 @@ public final class ZoneManager implements IXmlReader
 	 * @return Collection of zones
 	 */
 	@SuppressWarnings("unchecked")
-	public <T extends L2ZoneType> Collection<T> getAllZones(Class<T> zoneType)
+	public <T extends ZoneType> Collection<T> getAllZones(Class<T> zoneType)
 	{
 		return (Collection<T>) _classZones.get(zoneType).values();
 	}
@@ -476,9 +476,9 @@ public final class ZoneManager implements IXmlReader
 	 * @return the zone by id
 	 * @see #getZoneById(int, Class)
 	 */
-	public L2ZoneType getZoneById(int id)
+	public ZoneType getZoneById(int id)
 	{
-		for (Map<Integer, ? extends L2ZoneType> map : _classZones.values())
+		for (Map<Integer, ? extends ZoneType> map : _classZones.values())
 		{
 			if (map.containsKey(id))
 			{
@@ -496,7 +496,7 @@ public final class ZoneManager implements IXmlReader
 	 * @return zone
 	 */
 	@SuppressWarnings("unchecked")
-	public <T extends L2ZoneType> T getZoneById(int id, Class<T> zoneType)
+	public <T extends ZoneType> T getZoneById(int id, Class<T> zoneType)
 	{
 		return (T) _classZones.get(zoneType).get(id);
 	}
@@ -506,7 +506,7 @@ public final class ZoneManager implements IXmlReader
 	 * @param object the object
 	 * @return zones
 	 */
-	public List<L2ZoneType> getZones(WorldObject object)
+	public List<ZoneType> getZones(WorldObject object)
 	{
 		return getZones(object.getX(), object.getY(), object.getZ());
 	}
@@ -518,7 +518,7 @@ public final class ZoneManager implements IXmlReader
 	 * @param type the type
 	 * @return zone from where the object is located by type
 	 */
-	public <T extends L2ZoneType> T getZone(WorldObject object, Class<T> type)
+	public <T extends ZoneType> T getZone(WorldObject object, Class<T> type)
 	{
 		if (object == null)
 		{
@@ -533,11 +533,11 @@ public final class ZoneManager implements IXmlReader
 	 * @param y the y
 	 * @return zones
 	 */
-	public List<L2ZoneType> getZones(int x, int y)
+	public List<ZoneType> getZones(int x, int y)
 	{
 		final WorldRegion region = World.getInstance().getRegion(x, y);
-		final List<L2ZoneType> temp = new ArrayList<>();
-		for (L2ZoneType zone : region.getZones())
+		final List<ZoneType> temp = new ArrayList<>();
+		for (ZoneType zone : region.getZones())
 		{
 			if (zone.isInsideZone(x, y))
 			{
@@ -554,11 +554,11 @@ public final class ZoneManager implements IXmlReader
 	 * @param z the z
 	 * @return zones
 	 */
-	public List<L2ZoneType> getZones(int x, int y, int z)
+	public List<ZoneType> getZones(int x, int y, int z)
 	{
 		final WorldRegion region = World.getInstance().getRegion(x, y);
-		final List<L2ZoneType> temp = new ArrayList<>();
-		for (L2ZoneType zone : region.getZones())
+		final List<ZoneType> temp = new ArrayList<>();
+		for (ZoneType zone : region.getZones())
 		{
 			if (zone.isInsideZone(x, y, z))
 			{
@@ -578,10 +578,10 @@ public final class ZoneManager implements IXmlReader
 	 * @return zone from given coordinates
 	 */
 	@SuppressWarnings("unchecked")
-	public <T extends L2ZoneType> T getZone(int x, int y, int z, Class<T> type)
+	public <T extends ZoneType> T getZone(int x, int y, int z, Class<T> type)
 	{
 		final WorldRegion region = World.getInstance().getRegion(x, y);
-		for (L2ZoneType zone : region.getZones())
+		for (ZoneType zone : region.getZones())
 		{
 			if (zone.isInsideZone(x, y, z) && type.isInstance(zone))
 			{
@@ -625,18 +625,18 @@ public final class ZoneManager implements IXmlReader
 	 * @param character the character
 	 * @return the arena
 	 */
-	public final L2ArenaZone getArena(Creature character)
+	public final ArenaZone getArena(Creature character)
 	{
 		if (character == null)
 		{
 			return null;
 		}
 		
-		for (L2ZoneType temp : ZoneManager.getInstance().getZones(character.getX(), character.getY(), character.getZ()))
+		for (ZoneType temp : ZoneManager.getInstance().getZones(character.getX(), character.getY(), character.getZ()))
 		{
-			if ((temp instanceof L2ArenaZone) && temp.isCharacterInZone(character))
+			if ((temp instanceof ArenaZone) && temp.isCharacterInZone(character))
 			{
-				return ((L2ArenaZone) temp);
+				return ((ArenaZone) temp);
 			}
 		}
 		
@@ -648,18 +648,18 @@ public final class ZoneManager implements IXmlReader
 	 * @param character the character
 	 * @return the olympiad stadium
 	 */
-	public final L2OlympiadStadiumZone getOlympiadStadium(Creature character)
+	public final OlympiadStadiumZone getOlympiadStadium(Creature character)
 	{
 		if (character == null)
 		{
 			return null;
 		}
 		
-		for (L2ZoneType temp : ZoneManager.getInstance().getZones(character.getX(), character.getY(), character.getZ()))
+		for (ZoneType temp : ZoneManager.getInstance().getZones(character.getX(), character.getY(), character.getZ()))
 		{
-			if ((temp instanceof L2OlympiadStadiumZone) && temp.isCharacterInZone(character))
+			if ((temp instanceof OlympiadStadiumZone) && temp.isCharacterInZone(character))
 			{
-				return ((L2OlympiadStadiumZone) temp);
+				return ((OlympiadStadiumZone) temp);
 			}
 		}
 		return null;
@@ -673,7 +673,7 @@ public final class ZoneManager implements IXmlReader
 	 * @return the closest zone
 	 */
 	@SuppressWarnings("unchecked")
-	public <T extends L2ZoneType> T getClosestZone(WorldObject obj, Class<T> type)
+	public <T extends ZoneType> T getClosestZone(WorldObject obj, Class<T> type)
 	{
 		T zone = getZone(obj, type);
 		if (zone == null)

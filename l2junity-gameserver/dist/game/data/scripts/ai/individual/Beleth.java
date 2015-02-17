@@ -41,7 +41,7 @@ import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.zone.L2ZoneType;
+import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.serverpackets.CreatureSay;
 import org.l2junity.gameserver.network.serverpackets.DoorStatusUpdate;
 import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
@@ -65,7 +65,7 @@ public final class Beleth extends AbstractNpcAI
 	protected static Npc CAMERA4;
 	protected static Npc BELETH;
 	protected static Npc PRIEST;
-	protected static L2ZoneType ZONE = null;
+	protected static ZoneType ZONE = null;
 	private static L2PcInstance BELETH_KILLER;
 	private static boolean DEBUG = false;
 	protected static boolean MOVIE = false;
@@ -389,7 +389,7 @@ public final class Beleth extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onEnterZone(Creature character, L2ZoneType zone)
+	public String onEnterZone(Creature character, ZoneType zone)
 	{
 		if (((character.isPlayer()) && (GrandBossManager.getInstance().getBossStatus(29118) == 1)) || (DEBUG && (GrandBossManager.getInstance().getBossStatus(29118) != 2) && (character.isPlayer())))
 		{

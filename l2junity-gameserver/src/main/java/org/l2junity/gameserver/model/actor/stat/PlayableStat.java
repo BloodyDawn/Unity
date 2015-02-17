@@ -32,7 +32,7 @@ import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.playable.OnPlayableExpChanged;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.zone.ZoneId;
-import org.l2junity.gameserver.model.zone.type.L2SwampZone;
+import org.l2junity.gameserver.model.zone.type.SwampZone;
 import org.l2junity.gameserver.network.serverpackets.ExNewSkillToLearnByLevelUp;
 
 public class PlayableStat extends CharStat
@@ -233,7 +233,7 @@ public class PlayableStat extends CharStat
 	{
 		if (getActiveChar().isInsideZone(ZoneId.SWAMP))
 		{
-			final L2SwampZone zone = ZoneManager.getInstance().getZone(getActiveChar(), L2SwampZone.class);
+			final SwampZone zone = ZoneManager.getInstance().getZone(getActiveChar(), SwampZone.class);
 			if (zone != null)
 			{
 				return super.getRunSpeed() * zone.getMoveBonus();
@@ -247,7 +247,7 @@ public class PlayableStat extends CharStat
 	{
 		if (getActiveChar().isInsideZone(ZoneId.SWAMP))
 		{
-			final L2SwampZone zone = ZoneManager.getInstance().getZone(getActiveChar(), L2SwampZone.class);
+			final SwampZone zone = ZoneManager.getInstance().getZone(getActiveChar(), SwampZone.class);
 			if (zone != null)
 			{
 				return super.getWalkSpeed() * zone.getMoveBonus();

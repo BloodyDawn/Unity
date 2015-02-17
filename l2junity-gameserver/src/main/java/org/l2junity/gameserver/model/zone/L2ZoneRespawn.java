@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.Location;
  * Abstract zone with spawn locations
  * @author DS, Nyaran (rework 10/07/2011)
  */
-public abstract class L2ZoneRespawn extends L2ZoneType
+public abstract class L2ZoneRespawn extends ZoneType
 {
 	private List<Location> _spawnLocs = null;
 	private List<Location> _otherSpawnLocs = null;

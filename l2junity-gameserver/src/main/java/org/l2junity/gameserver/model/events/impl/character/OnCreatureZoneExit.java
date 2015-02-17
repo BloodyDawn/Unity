@@ -21,7 +21,7 @@ package org.l2junity.gameserver.model.events.impl.character;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.IBaseEvent;
-import org.l2junity.gameserver.model.zone.L2ZoneType;
+import org.l2junity.gameserver.model.zone.ZoneType;
 
 /**
  * @author UnAfraid
@@ -29,9 +29,9 @@ import org.l2junity.gameserver.model.zone.L2ZoneType;
 public class OnCreatureZoneExit implements IBaseEvent
 {
 	private final Creature _creature;
-	private final L2ZoneType _zone;
+	private final ZoneType _zone;
 	
-	public OnCreatureZoneExit(Creature creature, L2ZoneType zone)
+	public OnCreatureZoneExit(Creature creature, ZoneType zone)
 	{
 		_creature = creature;
 		_zone = zone;
@@ -42,7 +42,7 @@ public class OnCreatureZoneExit implements IBaseEvent
 		return _creature;
 	}
 	
-	public L2ZoneType getZone()
+	public ZoneType getZone()
 	{
 		return _zone;
 	}

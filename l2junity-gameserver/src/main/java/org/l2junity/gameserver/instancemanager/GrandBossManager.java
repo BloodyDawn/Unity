@@ -46,7 +46,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PcInstance;
 import org.l2junity.gameserver.model.interfaces.IStorable;
-import org.l2junity.gameserver.model.zone.type.L2BossZone;
+import org.l2junity.gameserver.model.zone.type.BossZone;
 
 /**
  * Grand Boss manager.
@@ -68,7 +68,7 @@ public final class GrandBossManager implements IStorable
 	
 	private final Map<Integer, Integer> _bossStatus = new HashMap<>();
 	
-	private final List<L2BossZone> _zones = new FastList<>();
+	private final List<BossZone> _zones = new FastList<>();
 	
 	protected GrandBossManager()
 	{
@@ -129,7 +129,7 @@ public final class GrandBossManager implements IStorable
 			return;
 		}
 		
-		for (L2BossZone zone : _zones)
+		for (BossZone zone : _zones)
 		{
 			if (zone == null)
 			{
@@ -159,7 +159,7 @@ public final class GrandBossManager implements IStorable
 			_log.log(Level.WARNING, "Error while initializing GrandBoss zones: " + e.getMessage(), e);
 		}
 		
-		for (L2BossZone zone : _zones)
+		for (BossZone zone : _zones)
 		{
 			if (zone == null)
 			{
@@ -171,7 +171,7 @@ public final class GrandBossManager implements IStorable
 		zones.clear();
 	}
 	
-	public void addZone(L2BossZone zone)
+	public void addZone(BossZone zone)
 	{
 		if (_zones != null)
 		{
@@ -179,11 +179,11 @@ public final class GrandBossManager implements IStorable
 		}
 	}
 	
-	public final L2BossZone getZone(int zoneId)
+	public final BossZone getZone(int zoneId)
 	{
 		if (_zones != null)
 		{
-			for (L2BossZone temp : _zones)
+			for (BossZone temp : _zones)
 			{
 				if (temp.getId() == zoneId)
 				{
@@ -194,11 +194,11 @@ public final class GrandBossManager implements IStorable
 		return null;
 	}
 	
-	public final L2BossZone getZone(Creature character)
+	public final BossZone getZone(Creature character)
 	{
 		if (_zones != null)
 		{
-			for (L2BossZone temp : _zones)
+			for (BossZone temp : _zones)
 			{
 				if (temp.isCharacterInZone(character))
 				{
@@ -209,16 +209,16 @@ public final class GrandBossManager implements IStorable
 		return null;
 	}
 	
-	public final L2BossZone getZone(Location loc)
+	public final BossZone getZone(Location loc)
 	{
 		return getZone(loc.getX(), loc.getY(), loc.getZ());
 	}
 	
-	public final L2BossZone getZone(int x, int y, int z)
+	public final BossZone getZone(int x, int y, int z)
 	{
 		if (_zones != null)
 		{
-			for (L2BossZone temp : _zones)
+			for (BossZone temp : _zones)
 			{
 				if (temp.isInsideZone(x, y, z))
 				{
@@ -231,7 +231,7 @@ public final class GrandBossManager implements IStorable
 	
 	public boolean checkIfInZone(String zoneType, WorldObject obj)
 	{
-		L2BossZone temp = getZone(obj.getX(), obj.getY(), obj.getZ());
+		BossZone temp = getZone(obj.getX(), obj.getY(), obj.getZ());
 		if (temp == null)
 		{
 			return false;
@@ -246,7 +246,7 @@ public final class GrandBossManager implements IStorable
 		{
 			return false;
 		}
-		L2BossZone temp = getZone(player.getX(), player.getY(), player.getZ());
+		BossZone temp = getZone(player.getX(), player.getY(), player.getZ());
 		if (temp == null)
 		{
 			return false;
@@ -305,7 +305,7 @@ public final class GrandBossManager implements IStorable
 			
 			try (PreparedStatement insert = con.prepareStatement(INSERT_GRAND_BOSS_LIST))
 			{
-				for (L2BossZone zone : _zones)
+				for (BossZone zone : _zones)
 				{
 					if (zone == null)
 					{
@@ -433,7 +433,7 @@ public final class GrandBossManager implements IStorable
 		_zones.clear();
 	}
 	
-	public List<L2BossZone> getZones()
+	public List<BossZone> getZones()
 	{
 		return _zones;
 	}
