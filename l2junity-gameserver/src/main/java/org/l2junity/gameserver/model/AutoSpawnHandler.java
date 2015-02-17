@@ -22,12 +22,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
@@ -681,16 +683,9 @@ public class AutoSpawnHandler
 			return ret;
 		}
 		
-		public L2Spawn[] getSpawns()
+		public Collection<L2Spawn> getSpawns()
 		{
-			List<L2Spawn> npcSpawns = new FastList<>();
-			
-			for (Npc npcInst : _npcList)
-			{
-				npcSpawns.add(npcInst.getSpawn());
-			}
-			
-			return npcSpawns.toArray(new L2Spawn[npcSpawns.size()]);
+			return _npcList.stream().map(Npc::getSpawn).collect(Collectors.toList());
 		}
 		
 		public void setSpawnCount(int spawnCount)

@@ -215,7 +215,7 @@ public final class Util
 			radius += ((Creature) obj2).getTemplate().getCollisionRadius();
 		}
 		
-		return calculateDistance(obj1, obj2, includeZAxis, true) <= (range + radius);
+		return calculateDistance(obj1, obj2, includeZAxis, false) <= (range + radius);
 	}
 	
 	/**
@@ -237,7 +237,7 @@ public final class Util
 			return true; // not limited
 		}
 		
-		return calculateDistance(obj1, obj2, includeZAxis, true) <= range;
+		return calculateDistance(obj1, obj2, includeZAxis, false) <= range;
 	}
 	
 	/**
