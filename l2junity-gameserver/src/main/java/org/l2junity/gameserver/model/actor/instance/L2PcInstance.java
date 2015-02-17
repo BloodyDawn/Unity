@@ -285,6 +285,7 @@ import org.l2junity.gameserver.network.serverpackets.ExSubjobInfo;
 import org.l2junity.gameserver.network.serverpackets.ExUseSharedGroupItem;
 import org.l2junity.gameserver.network.serverpackets.ExUserInfoAbnormalVisualEffect;
 import org.l2junity.gameserver.network.serverpackets.ExUserInfoCubic;
+import org.l2junity.gameserver.network.serverpackets.ExUserInfoFishing;
 import org.l2junity.gameserver.network.serverpackets.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.serverpackets.GameGuardQuery;
@@ -10705,6 +10706,7 @@ public final class L2PcInstance extends Playable
 		super.doRevive();
 		updateEffectIcons();
 		sendPacket(new EtcStatusUpdate(this));
+		_revivePet = false;
 		_reviveRequested = 0;
 		_revivePower = 0;
 		
@@ -11765,7 +11767,7 @@ public final class L2PcInstance extends Playable
 		_fishx = _x;
 		_fishy = _y;
 		_fishz = _z;
-		// broadcastUserInfo();
+		
 		// Starts fishing
 		int lvl = getRandomFishLvl();
 		int grade = getRandomFishGrade();
@@ -11785,8 +11787,8 @@ public final class L2PcInstance extends Playable
 		{
 			_fish.setFishGroup(-1);
 		}
-		// sendMessage("Hook x,y: " + _x + "," + _y + " - Water Z, Player Z:" + _z + ", " + getZ()); //debug line, uncoment to show coordinates used in fishing.
 		broadcastPacket(new ExFishingStart(this, _fish.getFishGroup(), _x, _y, _z, _lure.isNightLure()));
+		sendPacket(new ExUserInfoFishing(this));
 		sendPacket(new PlaySound(1, "SF_P_01", 0, 0, 0, 0, 0));
 		startLookingForFishTask();
 	}

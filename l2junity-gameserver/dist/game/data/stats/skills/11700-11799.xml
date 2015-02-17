@@ -44,12 +44,30 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<skill id="11751" levels="1" name="Superior Magic Weapon Mastery">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11751" levels="1" name="Superior Magic Weapon Mastery" enchantGroup1="10">
 		<!-- Increases INT by 2, M. Atk. by 103, P. Atk. by 82, and M. Critical Rate by 6%. Skill Cooldown may reset or abnormal status may last up to twice as long depending on your INT. -->
+		<table name="#ench1pAtk">87 93 98 104 109 115 120 126 131 137</table>
+		<table name="#ench1mAtk">109 116 123 130 137 144 151 158 165 172</table>
+		<table name="#ench1magicLevel">87 88 89 90 91 92 93 94 95 96</table>
+		<set name="magicLevel" val="87" />
+		<set name="targetType" val="SELF" />
 		<set name="icon" val="icon.skill11251" />
 		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<enchant1 name="magicLevel" val="#ench1magicLevel" />
+		<enchant1for>
+			<effect name="Buff">
+				<add stat="INT" val="2" />
+				<add stat="mAtk" val="#ench1mAtk" />
+				<add stat="pAtk" val="#ench1pAtk" />
+			</effect>
+		</enchant1for>
+		<for>
+			<effect name="Buff">
+				<add stat="INT" val="2" />
+				<add stat="mAtk" val="103" />
+				<add stat="pAtk" val="82" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11752" levels="8" name="Sustain">
 		<!-- AUTO GENERATED SKILL -->
@@ -72,19 +90,69 @@
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="4" />
 	</skill>
-	<skill id="11754" levels="5" name="Fairy of Life">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11754" levels="5" name="Fairy of Life" enchantGroup1="10">
 		<!-- Summons a fairy that follows and periodically heals the selected party member for 60 seconds. Has a chance of recovering HP when attacked. -->
-		<table name="#mpConsumes"> 43 46 48 52 55 </table>
-		<set name="icon" val="icon.skill11754" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="600" />
+		<table name="#mpConsume"> 34 37 38 42 44 </table>
+		<table name="#mpInitialConsume"> 9 9 10 10 11 </table>
+		<table name="#magicLvl"> 85 88 91 94 97 </table>
+		<table name="#effectLvl"> 1 2 3 4 5 </table>
+		<table name="#abnormalLvl"> 2 3 4 5 6 </table>
+		<table name="#ench1triggeredLevel"> 101 102 103 104 105 106 107 108 109 110 </table>
+		<table name="#ench2abnormalTime"> 66 72 78 84 90 96 104 110 116 120 </table>
+		<table name="#ench2summonTotalLifeTime"> 660 720 780 840 900 960 1040 1100 1160 1200 </table>
+		<set name="abnormalTime" val="60" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="hitTime" val="2200" />
 		<set name="coolTime" val="300" />
+		<set name="castRange" val="600" />
 		<set name="reuseDelay" val="15000" />
-		<set name="isMagic" val="1" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpInitialConsume" val="#mpInitialConsume" />
+		<set name="isMagic" val="2" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="operateType" val="A2" />
+		<set name="icon" val="icon.skill11754" />
+		<set name="targetType" val="PARTY_MEMBER" />
+		<enchant2 name="abnormalTime" val="#ench2abnormalTime" />
+		<for>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="5" />
+				<param skillId="11807" skillLevel="#effectLvl" />
+				<param targetType="SELF" />
+			</effect>
+			<effect name="SummonCubic">
+				<param cubicId="17" cubicDelay="5" cubicDuration="60" cubicMaxCount="20" cubicSkillChance="0" />
+				<param cubicSkill1Chance="33" />
+			</effect>
+		</for>
+		<enchant1for>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="5" />
+				<param skillId="11807" skillLevel="#ench1triggeredLevel" />
+				<param targetType="SELF" />
+			</effect>
+			<effect name="SummonCubic">
+				<param cubicId="17" cubicDelay="5" cubicDuration="60" cubicMaxCount="20" cubicSkillChance="0" />
+				<param cubicSkill1Chance="33" />
+			</effect>
+		</enchant1for>
+		<enchant2for>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="5" />
+				<param skillId="11807" skillLevel="5" />
+				<param targetType="SELF" />
+			</effect>
+			<effect name="SummonCubic">
+				<param cubicId="17" cubicDelay="5" cubicDuration="#ench2summonTotalLifeTime" cubicMaxCount="20" cubicSkillChance="0" />
+				<param cubicSkill1Chance="33" />
+			</effect>
+		</enchant2for>
 	</skill>
 	<skill id="11755" levels="8" name="Radiant Heal" enchantGroup1="10">
 		<!-- Heals target with 1488 Power added to M. Atk. If HP is full, CP is restored. -->
@@ -481,19 +549,34 @@
 		</enchant2for>
 	</skill>
 	<skill id="11769" levels="6" name="Dark Backfire">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 sec., target's MP Consumption + 50%, and Casting Spd. and Atk. Spd. - 20%. -->
-		<table name="#mpConsumes"> 35 36 38 41 43 46 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 </table>
+		<table name="#mpInitialConsume"> 7 7 8 8 9 9 </table>
+		<table name="#mpConsume"> 28 29 30 33 34 37 </table>
+		<table name="#MpConsumeRate"> 1.5 2.5 3 3.5 3.5 4 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="30" />
+		<set name="abnormalType" val="MP_COST_UP" />
 		<set name="icon" val="icon.skill11769" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
 		<set name="isMagic" val="1" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="MagicalMpConsumeRate" val="#MpConsumeRate" />
+				<mul stat="PhysicalMpConsumeRate" val="#MpConsumeRate" />
+				<mul stat="DanceMpConsumeRate" val="#MpConsumeRate" />
+				<mul stat="pAtkSpd" val="0.8" />
+				<mul stat="mAtkSpd" val="0.8" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11770" levels="1" name="Dissolve">
 		<!-- AUTO GENERATED SKILL -->
@@ -734,40 +817,167 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="isMagic" val="1" />
 	</skill>
-	<skill id="11787" levels="1" name="Superior Armor Mastery">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11787" levels="1" name="Superior Armor Mastery" enchantGroup1="10">
 		<!-- INT + 2. Max HP + 4299 and M. Def. + 610 when equipped with Light Armor or a Robe. P. Def. + 1126 when equipped with a Robe, and P. Def. + 809 when equipped with Light Armor. Additional HP Recovery Bonus + 2.8 and MP Recovery Bonus + 3.6. -->
+		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
+		<table name="#enchMdef"> 633 656 679 702 725 748 771 794 817 840 </table>
+		<table name="#enchPdefLight"> 813 817 821 825 829 833 837 841 845 850 </table>
+		<table name="#enchPdefRobe"> 1159 1192 1225 1258 1291 1324 1357 1390 1423 1456 </table>
 		<set name="icon" val="icon.skill11787" />
 		<set name="operateType" val="P" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
+		<enchant1 name="magicLvl" val="#enchMagicLvl" />
+		<for>
+			<effect name="Buff">
+				<add stat="INT" val="2" />
+				<add stat="maxHp" val="4299">
+					<using kind="LIGHT, MAGIC" />
+				</add>
+				<add stat="mDef" val="610">
+					<using kind="LIGHT, MAGIC" />
+				</add>
+				<add stat="pDef" val="1126">
+					<using kind="MAGIC" />
+				</add>
+				<add stat="pDef" val="809">
+					<using kind="LIGHT" />
+				</add>
+				<add stat="regHp" val="2.8" />
+				<add stat="regMp" val="3.6" />
+			</effect>
+		</for>
+		<enchant1for>
+			<effect name="Buff">
+				<add stat="INT" val="2" />
+				<add stat="maxHp" val="4299">
+					<using kind="LIGHT, MAGIC" />
+				</add>
+				<add stat="mDef" val="#enchMdef">
+					<using kind="LIGHT, MAGIC" />
+				</add>
+				<add stat="pDef" val="#enchPdefRobe">
+					<using kind="MAGIC" />
+				</add>
+				<add stat="pDef" val="#enchPdefLight">
+					<using kind="LIGHT" />
+				</add>
+				<add stat="regHp" val="2.8" />
+				<add stat="regMp" val="3.6" />
+			</effect>
+		</enchant1for>
 	</skill>
-	<skill id="11788" levels="1" name="Superior Casting Mastery">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11788" levels="1" name="Superior Casting Mastery" enchantGroup1="10">
 		<!-- INT + 2. Max MP + 313, Casting Spd. + 23%, MP Consumption for magic skills - 15%, and Cooldown - 25%. -->
+		<table name="#enchMaxMp"> 333 353 374 394 415 435 455 476 496 517 </table>
+		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
 		<set name="icon" val="icon.skill11788" />
 		<set name="operateType" val="P" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
+		<enchant1 name="magicLvl" val="#enchMagicLvl" />
+		<for>
+			<effect name="Buff">
+				<add stat="INT" val="2" />
+				<add stat="maxMp" val="313" />
+				<mul stat="mAtkSpd" val="1.23" />
+				<mul stat="MagicalMpConsumeRate" val="0.85" />
+				<mul stat="mReuse" val="0.75" />
+			</effect>
+		</for>
+		<enchant1for>
+			<effect name="Buff">
+				<add stat="INT" val="2" />
+				<add stat="maxMp" val="#enchMaxMp" />
+				<mul stat="mAtkSpd" val="1.23" />
+				<mul stat="MagicalMpConsumeRate" val="0.85" />
+				<mul stat="mReuse" val="0.75" />
+			</effect>
+		</enchant1for>
 	</skill>
-	<skill id="11789" levels="1" name="Superior Anti Magic">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11789" levels="1" name="Superior Anti Magic" enchantGroup1="10">
 		<!-- INT + 2, M. Def. + 139 and Attack Magic Resistance + 35%. When receiving damage, has a chance of increasing M. Def. and Attribute Resistance for 10 seconds. -->
+		<table name="#ench1mDef"> 146 154 162 170 178 186 194 202 210 218 </table>
+		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
 		<set name="icon" val="icon.skill10004" />
 		<set name="operateType" val="P" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
+		<enchant1 name="magicLvl" val="#enchMagicLvl" />
+		<for>
+			<effect name="Buff">
+				<add stat="INT" val="2" />
+				<add stat="mDef" val="139" />
+				<mul stat="magicSuccRes" val="1.35" />
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="20" />
+				<param skillId="10058" skillLevel="1" />
+				<param targetType="SELF" />
+			</effect>
+		</for>
+		<enchant1for>
+			<effect name="Buff">
+				<add stat="INT" val="2" />
+				<add stat="mDef" val="#ench1mDef" />
+				<mul stat="magicSuccRes" val="1.35" />
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="20" />
+				<param skillId="10058" skillLevel="1" />
+				<param targetType="SELF" />
+			</effect>
+		</enchant1for>
 	</skill>
-	<skill id="11790" levels="1" name="Superior Elemental Resistance">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11790" levels="1" name="Superior Elemental Resistance" enchantGroup1="10">
 		<!-- INT + 2. Increases Fire/Water/Wind/Earth Resistance by 20. -->
+		<table name="#enchRes"> 21 22 23 24 25 26 27 28 29 30 </table>
+		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
 		<set name="icon" val="icon.skill10044" />
 		<set name="operateType" val="P" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
+		<enchant1 name="magicLvl" val="#enchMagicLvl" />
+		<for>
+			<effect name="Buff">
+				<add stat="INT" val="2" />
+				<add stat="fireRes" val="20" />
+				<add stat="windRes" val="20" />
+				<add stat="waterRes" val="20" />
+				<add stat="earthRes" val="20" />
+			</effect>
+		</for>
+		<enchant1for>
+			<effect name="Buff">
+				<add stat="INT" val="2" />
+				<add stat="fireRes" val="#enchRes" />
+				<add stat="windRes" val="#enchRes" />
+				<add stat="waterRes" val="#enchRes" />
+				<add stat="earthRes" val="#enchRes" />
+			</effect>
+		</enchant1for>
 	</skill>
 	<skill id="11791" levels="1" name="Superior Sigil Mastery">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- INT + 2. Increases MP Recovery Bonus by 20 and power of recovery skills by 40 when equipped with a Sigil. -->
 		<set name="icon" val="icon.skill11791" />
 		<set name="operateType" val="P" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="INT" val="2">
+					<using kind="SIGIL" />
+				</add>
+				<add stat="regMp" val="20">
+					<using kind="SIGIL" />
+				</add>
+				<!-- power of recovery skills by 40 -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11792" levels="1" name="Superior Mental Attack Resistance">
 		<!-- AUTO GENERATED SKILL -->

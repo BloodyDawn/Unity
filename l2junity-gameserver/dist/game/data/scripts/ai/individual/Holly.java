@@ -57,6 +57,7 @@ public final class Holly extends AbstractNpcAI
 	@Override
 	public String onSpawn(Npc npc)
 	{
+		npc.setRandomAnimationEnabled(false);
 		startQuestTimer("SPAM_TEXT", 10000, npc, null, true);
 		startQuestTimer("SOCIAL_ACTION", 2000, npc, null, true);
 		return super.onSpawn(npc);

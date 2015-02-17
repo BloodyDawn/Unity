@@ -336,12 +336,16 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="30031" levels="1" name="Magic Potential">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases Max. M. Critical Rate to 550. -->
 		<set name="icon" val="icon.skill30025" />
 		<set name="operateType" val="P" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
-		<set name="castRange" val="0" />
+		<for>
+			<effect name="Buff">
+				<set stat="mCritRate" val="550" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="30040" levels="11" name="Eminent Blunt Weapon Mastery">
 		<!-- AUTO GENERATED SKILL -->

@@ -44,6 +44,7 @@ import instances.Kamaloka.Kamaloka;
 import instances.LibraryOfSages.LibraryOfSages;
 import instances.MithrilMine.MithrilMine;
 import instances.MonasteryOfSilence1.MonasteryOfSilence1;
+import instances.MuseumDungeon.MuseumDungeon;
 import instances.NornilsGarden.NornilsGarden;
 import instances.PailakaDevilsLegacy.PailakaDevilsLegacy;
 import instances.PailakaSongOfIceAndFire.PailakaSongOfIceAndFire;
@@ -90,6 +91,7 @@ public final class InstanceLoader
 		LibraryOfSages.class,
 		MithrilMine.class,
 		MonasteryOfSilence1.class,
+		MuseumDungeon.class,
 		NornilsGarden.class,
 		PailakaDevilsLegacy.class,
 		PailakaSongOfIceAndFire.class,

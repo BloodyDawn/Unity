@@ -18,6 +18,8 @@
  */
 package instances.FaeronTrainingGrounds1;
 
+import instances.AbstractInstance;
+
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -27,7 +29,6 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.serverpackets.ExShowScreenMessage;
 
-import instances.AbstractInstance;
 import quests.Q10735_ASpecialPower.Q10735_ASpecialPower;
 
 /**
@@ -45,10 +46,6 @@ public final class FaeronTrainingGrounds1 extends AbstractInstance
 	// Misc
 	private static final int TEMPLATE_ID = 251;
 	
-	protected class FTGWorld extends InstanceWorld
-	{
-	}
-	
 	@Override
 	public String onAdvEvent(String event, Npc npc, L2PcInstance player)
 	{
@@ -60,7 +57,7 @@ public final class FaeronTrainingGrounds1 extends AbstractInstance
 		
 		if (event.equals("enter_instance"))
 		{
-			enterInstance(player, new FTGWorld(), "FaeronTrainingGrounds1.xml", TEMPLATE_ID);
+			enterInstance(player, "FaeronTrainingGrounds1.xml", TEMPLATE_ID);
 			
 		}
 		else if (event.equals("exit_instance"))

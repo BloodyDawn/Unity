@@ -31,11 +31,6 @@ import org.l2junity.gameserver.model.instancezone.InstanceWorld;
  */
 public final class SecretArea extends AbstractInstance
 {
-	protected class SAWorld extends InstanceWorld
-	{
-		
-	}
-	
 	// NPCs
 	private static final int GINBY = 32566;
 	private static final int LELRIKIA = 32567;
@@ -74,7 +69,7 @@ public final class SecretArea extends AbstractInstance
 		String htmltext = getNoQuestMsg(player);
 		if ((npc.getId() == GINBY) && event.equalsIgnoreCase("enter"))
 		{
-			enterInstance(player, new SAWorld(), "SecretArea.xml", TEMPLATE_ID);
+			enterInstance(player, "SecretArea.xml", TEMPLATE_ID);
 			return "32566-01.html";
 		}
 		else if ((npc.getId() == LELRIKIA) && event.equalsIgnoreCase("exit"))

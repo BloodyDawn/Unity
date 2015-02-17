@@ -18,6 +18,8 @@
  */
 package instances.PailakaSongOfIceAndFire;
 
+import instances.AbstractInstance;
+
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
@@ -28,19 +30,12 @@ import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.zone.L2ZoneType;
 import org.l2junity.gameserver.network.NpcStringId;
 
-import instances.AbstractInstance;
-
 /**
  * Pailaka Song of Ice and Fire Instance zone.
  * @author Gnacik, St3eT
  */
 public final class PailakaSongOfIceAndFire extends AbstractInstance
 {
-	protected class PSoIWorld extends InstanceWorld
-	{
-		
-	}
-	
 	// NPCs
 	private static final int ADLER1 = 32497;
 	private static final int GARGOS = 18607;
@@ -87,7 +82,7 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 		{
 			case "enter":
 			{
-				enterInstance(player, new PSoIWorld(), "PailakaSongOfIceAndFire.xml", TEMPLATE_ID);
+				enterInstance(player, "PailakaSongOfIceAndFire.xml", TEMPLATE_ID);
 				break;
 			}
 			case "GARGOS_LAUGH":
@@ -180,7 +175,7 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 			final InstanceWorld world = InstanceManager.getInstance().getWorld(character.getInstanceId());
 			if ((world != null) && (world.getTemplateId() == TEMPLATE_ID))
 			{
-				startQuestTimer("TELEPORT", 1000, null, (L2PcInstance) character);
+				startQuestTimer("TELEPORT", 1000, null, character.getActingPlayer());
 			}
 		}
 		return super.onExitZone(character, zone);
