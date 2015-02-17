@@ -40,7 +40,6 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import javolution.util.FastList;
 import javolution.util.FastMap;
 import javolution.util.WeakFastSet;
 
@@ -5604,9 +5603,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		if ((targets.length > 0) && (escapeRange > 0))
 		{
 			int _skiprange = 0;
-			int _skipgeo = 0;
 			int _skippeace = 0;
-			List<Creature> targetList = new FastList<>(targets.length);
+			List<Creature> targetList = new ArrayList<>(targets.length);
 			for (WorldObject target : targets)
 			{
 				if (target instanceof Creature)
@@ -5616,11 +5614,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 						_skiprange++;
 						continue;
 					}
-					if ((escapeRange > 0) && !GeoData.getInstance().canSeeTarget(this, target))
-					{
-						_skipgeo++;
-						continue;
-					}
+					
 					if (skill.isBad())
 					{
 						if (isPlayer())
@@ -5650,10 +5644,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					if (_skiprange > 0)
 					{
 						sendPacket(SystemMessageId.THE_DISTANCE_IS_TOO_FAR_AND_SO_THE_CASTING_HAS_BEEN_STOPPED);
-					}
-					else if (_skipgeo > 0)
-					{
-						sendPacket(SystemMessageId.CANNOT_SEE_TARGET);
 					}
 					else if (_skippeace > 0)
 					{
