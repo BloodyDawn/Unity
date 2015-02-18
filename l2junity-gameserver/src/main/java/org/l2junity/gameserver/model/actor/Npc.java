@@ -1968,7 +1968,7 @@ public class Npc extends Creature
 	 */
 	public void broadcastSay(ChatType chatType, String text)
 	{
-		Broadcast.toKnownPlayers(this, new NpcSay(getObjectId(), chatType, getId(), text));
+		Broadcast.toKnownPlayers(this, new NpcSay(this, chatType, text));
 	}
 	
 	/**
@@ -1979,15 +1979,18 @@ public class Npc extends Creature
 	 */
 	public void broadcastSay(ChatType chatType, NpcStringId npcStringId, String... parameters)
 	{
-		final NpcSay say = new NpcSay(getObjectId(), chatType, getId(), npcStringId);
+		final NpcSay npcSay = new NpcSay(this, chatType, npcStringId);
 		if (parameters != null)
 		{
 			for (String parameter : parameters)
 			{
-				say.addStringParameter(parameter);
+				if (parameter != null)
+				{
+					npcSay.addStringParameter(parameter);
+				}
 			}
 		}
-		Broadcast.toKnownPlayers(this, say);
+		Broadcast.toKnownPlayers(this, npcSay);
 	}
 	
 	/**
@@ -1998,7 +2001,7 @@ public class Npc extends Creature
 	 */
 	public void broadcastSay(ChatType chatType, String text, int radius)
 	{
-		Broadcast.toKnownPlayersInRadius(this, new NpcSay(getObjectId(), chatType, getId(), text), radius);
+		Broadcast.toKnownPlayersInRadius(this, new NpcSay(this, chatType, text), radius);
 	}
 	
 	/**
@@ -2009,6 +2012,6 @@ public class Npc extends Creature
 	 */
 	public void broadcastSay(ChatType chatType, NpcStringId npcStringId, int radius)
 	{
-		Broadcast.toKnownPlayersInRadius(this, new NpcSay(getObjectId(), chatType, getId(), npcStringId), radius);
+		Broadcast.toKnownPlayersInRadius(this, new NpcSay(this, chatType, npcStringId), radius);
 	}
 }

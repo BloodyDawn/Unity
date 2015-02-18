@@ -43,7 +43,6 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.Earthquake;
-import org.l2junity.gameserver.network.serverpackets.NpcSay;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.util.Util;
 
@@ -345,7 +344,7 @@ public abstract class Chamber extends AbstractInstance
 			{
 				if (npc.getId() == ROOM_GATEKEEPER_LAST)
 				{
-					npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getId(), NpcStringId.MINUTES_ARE_ADDED_TO_THE_REMAINING_TIME_IN_THE_INSTANT_ZONE));
+					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.MINUTES_ARE_ADDED_TO_THE_REMAINING_TIME_IN_THE_INSTANT_ZONE);
 				}
 			}
 		}

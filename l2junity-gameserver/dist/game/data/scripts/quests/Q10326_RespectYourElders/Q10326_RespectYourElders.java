@@ -27,7 +27,6 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.serverpackets.ExRotation;
-import org.l2junity.gameserver.network.serverpackets.NpcSay;
 import org.l2junity.gameserver.util.Util;
 
 import quests.Q10325_SearchingForNewPower.Q10325_SearchingForNewPower;
@@ -115,7 +114,7 @@ public class Q10326_RespectYourElders extends Quest
 						{
 							if (loc_index == 9)
 							{
-								npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getTemplate().getDisplayId(), NpcStringId.GO_GO_GO_CREEK));
+								npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.GO_GO_GO_CREEK);
 								startQuestTimer("DELETE_NPC", 2000, npc, owner);
 								break;
 							}
@@ -138,7 +137,7 @@ public class Q10326_RespectYourElders extends Quest
 						
 						if (getRandom(100) < 10)
 						{
-							npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getTemplate().getDisplayId(), NpcStringId.COME_ON_CREEK));
+							npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.COME_ON_CREEK);
 						}
 					}
 				}
@@ -170,7 +169,7 @@ public class Q10326_RespectYourElders extends Quest
 	@Override
 	public void onMoveFinished(Npc npc)
 	{
-		npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getTemplate().getDisplayId(), NpcStringId.COME_ON_CREEK));
+		npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.COME_ON_CREEK);
 		final PlayerInstance owner = npc.getVariables().getObject("OWNER", PlayerInstance.class);
 		
 		if (owner != null)

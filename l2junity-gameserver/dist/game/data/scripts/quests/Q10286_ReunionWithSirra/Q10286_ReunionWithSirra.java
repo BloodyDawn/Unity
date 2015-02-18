@@ -28,7 +28,6 @@ import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 import org.l2junity.gameserver.network.NpcStringId;
-import org.l2junity.gameserver.network.serverpackets.NpcSay;
 
 import quests.Q10285_MeetingSirra.Q10285_MeetingSirra;
 
@@ -93,7 +92,7 @@ public final class Q10286_ReunionWithSirra extends Quest
 				if (st.isMemoState(1))
 				{
 					final Npc sirra = addSpawn(SIRRA, -23905, -8790, -5384, 56238, false, 0, false, npc.getInstanceId());
-					sirra.broadcastPacket(new NpcSay(sirra.getObjectId(), ChatType.NPC_GENERAL, sirra.getId(), NpcStringId.YOU_ADVANCED_BRAVELY_BUT_GOT_SUCH_A_TINY_RESULT_HOHOHO));
+					sirra.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.YOU_ADVANCED_BRAVELY_BUT_GOT_SUCH_A_TINY_RESULT_HOHOHO);
 					st.set("ex", 1);
 					st.setCond(3, true);
 					htmltext = event;

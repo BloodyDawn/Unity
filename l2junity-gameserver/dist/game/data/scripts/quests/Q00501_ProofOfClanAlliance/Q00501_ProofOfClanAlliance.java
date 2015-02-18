@@ -35,7 +35,6 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.network.NpcStringId;
-import org.l2junity.gameserver.network.serverpackets.NpcSay;
 import org.l2junity.gameserver.util.Util;
 
 /**
@@ -289,29 +288,29 @@ public final class Q00501_ProofOfClanAlliance extends Quest
 						if ((lqs.getInt("flag") == 3) && arthea.isScriptValue(15))
 						{
 							lqs.set("flag", lqs.getInt("flag") + 1);
-							npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.BINGO));
+							npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.BINGO);
 						}
 						else if ((lqs.getInt("flag") == 2) && arthea.isScriptValue(14))
 						{
 							lqs.set("flag", lqs.getInt("flag") + 1);
-							npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.BINGO));
+							npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.BINGO);
 						}
 						else if ((lqs.getInt("flag") == 1) && arthea.isScriptValue(13))
 						{
 							lqs.set("flag", lqs.getInt("flag") + 1);
-							npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.BINGO));
+							npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.BINGO);
 						}
 						else if ((lqs.getInt("flag") == 0) && arthea.isScriptValue(12))
 						{
 							lqs.set("flag", lqs.getInt("flag") + 1);
-							npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.BINGO));
+							npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.BINGO);
 						}
 						else if (lqs.getInt("flag") < 4)
 						{
 							if (getRandom(4) == 0)
 							{
 								lqs.set("flag", lqs.getInt("flag") + 1);
-								npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.BINGO));
+								npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.BINGO);
 							}
 						}
 						arthea.setScriptValue(arthea.getScriptValue() + 1);

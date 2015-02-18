@@ -30,7 +30,6 @@ import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 import org.l2junity.gameserver.network.NpcStringId;
-import org.l2junity.gameserver.network.serverpackets.NpcSay;
 
 /**
  * I Must Be a Genius (463)<br>
@@ -187,11 +186,7 @@ public class Q00463_IMustBeaGenius extends Quest
 			
 			if (msg)
 			{
-				final NpcSay ns = new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getId(), NpcStringId.ATT_ATTACK_S1_RO_ROGUE_S2);
-				ns.addStringParameter(player.getName());
-				ns.addStringParameter(String.valueOf(number));
-				npc.broadcastPacket(ns);
-				
+				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.ATT_ATTACK_S1_RO_ROGUE_S2, player.getName(), String.valueOf(number));
 				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				if (st.getQuestItemsCount(CORPSE_LOG) == st.getInt("number"))
 				{

@@ -39,7 +39,6 @@ import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.type.ScriptZone;
 import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.NpcSay;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
 public abstract class AirShipController extends Quest
@@ -103,7 +102,6 @@ public abstract class AirShipController extends Quest
 	
 	private Future<?> _departSchedule = null;
 	
-	private NpcSay _arrivalMessage = null;
 	private static final int DEPART_INTERVAL = 300000; // 5 min
 	private static final int LICENSE = 13559;
 	
@@ -166,12 +164,7 @@ public abstract class AirShipController extends Quest
 					ship.executePath(_arrivalPath);
 				}
 				
-				if (_arrivalMessage == null)
-				{
-					_arrivalMessage = new NpcSay(npc.getObjectId(), ChatType.NPC_SHOUT, npc.getId(), NpcStringId.THE_AIRSHIP_HAS_BEEN_SUMMONED_IT_WILL_AUTOMATICALLY_DEPART_IN_5_MINUTES);
-				}
-				
-				npc.broadcastPacket(_arrivalMessage);
+				npc.broadcastSay(ChatType.NPC_SHOUT, NpcStringId.THE_AIRSHIP_HAS_BEEN_SUMMONED_IT_WILL_AUTOMATICALLY_DEPART_IN_5_MINUTES);
 			}
 			else
 			{

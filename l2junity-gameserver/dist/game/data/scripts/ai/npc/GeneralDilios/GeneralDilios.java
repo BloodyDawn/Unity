@@ -27,7 +27,6 @@ import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.NpcStringId;
-import org.l2junity.gameserver.network.serverpackets.NpcSay;
 
 import ai.npc.AbstractNpcAI;
 
@@ -70,13 +69,13 @@ public final class GeneralDilios extends AbstractNpcAI
 			int value = Integer.parseInt(event.substring(8));
 			if (value < 6)
 			{
-				_general.broadcastPacket(new NpcSay(_general.getObjectId(), ChatType.NPC_GENERAL, GENERAL_ID, NpcStringId.STABBING_THREE_TIMES));
+				_general.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.STABBING_THREE_TIMES);
 				startQuestTimer("guard_animation_0", 3400, null, null);
 			}
 			else
 			{
 				value = -1;
-				_general.broadcastPacket(new NpcSay(_general.getObjectId(), ChatType.NPC_SHOUT, GENERAL_ID, DILIOS_TEXT[getRandom(DILIOS_TEXT.length)]));
+				_general.broadcastSay(ChatType.NPC_SHOUT, DILIOS_TEXT[getRandom(DILIOS_TEXT.length)]);
 			}
 			startQuestTimer("command_" + (value + 1), 60000, null, null);
 		}

@@ -27,7 +27,6 @@ import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.network.NpcStringId;
-import org.l2junity.gameserver.network.serverpackets.NpcSay;
 import org.l2junity.gameserver.util.Util;
 
 /**
@@ -163,7 +162,7 @@ public final class Q00625_TheFinestIngredientsPart2 extends Quest
 			{
 				if (isBumbalumpSpawned())
 				{
-					npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getTemplate().getDisplayId(), NpcStringId.OOOH));
+					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.OOOH);
 				}
 				break;
 			}
