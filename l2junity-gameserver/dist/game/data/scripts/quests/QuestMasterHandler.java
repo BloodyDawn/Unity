@@ -188,7 +188,9 @@ import quests.Q10326_RespectYourElders.Q10326_RespectYourElders;
 import quests.Q10327_IntruderWhoWantsTheBookOfGiants.Q10327_IntruderWhoWantsTheBookOfGiants;
 import quests.Q10328_RequestToSealTheEvilFragment.Q10328_RequestToSealTheEvilFragment;
 import quests.Q10329_BackupSeekers.Q10329_BackupSeekers;
+import quests.Q10330_ToTheRuinsOfYeSagira.Q10330_ToTheRuinsOfYeSagira;
 import quests.Q10338_SeizeYourDestiny.Q10338_SeizeYourDestiny;
+import quests.Q10361_RolesOfTheSeeker.Q10361_RolesOfTheSeeker;
 import quests.Q10501_ZakenEmbroideredSoulCloak.Q10501_ZakenEmbroideredSoulCloak;
 import quests.Q10502_FreyaEmbroideredSoulCloak.Q10502_FreyaEmbroideredSoulCloak;
 import quests.Q10503_FrintezzaEmbroideredSoulCloak.Q10503_FrintezzaEmbroideredSoulCloak;
@@ -384,7 +386,9 @@ public class QuestMasterHandler
 		Q10327_IntruderWhoWantsTheBookOfGiants.class,
 		Q10328_RequestToSealTheEvilFragment.class,
 		Q10329_BackupSeekers.class,
+		Q10330_ToTheRuinsOfYeSagira.class,
 		Q10338_SeizeYourDestiny.class,
+		Q10361_RolesOfTheSeeker.class,
 		Q10501_ZakenEmbroideredSoulCloak.class,
 		Q10502_FreyaEmbroideredSoulCloak.class,
 		Q10503_FrintezzaEmbroideredSoulCloak.class,
