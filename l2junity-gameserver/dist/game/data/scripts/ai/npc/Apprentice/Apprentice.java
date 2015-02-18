@@ -19,11 +19,15 @@
 package ai.npc.Apprentice;
 
 import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.l2junity.gameserver.model.quest.Quest;
+import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.network.NpcStringId;
 
+import quests.Q10329_BackupSeekers.Q10329_BackupSeekers;
 import ai.npc.AbstractNpcAI;
 
 /**
@@ -54,6 +58,16 @@ public final class Apprentice extends AbstractNpcAI
 			if (!player.isTransformed())
 			{
 				KUKURU.getSkill().applyEffects(npc, player);
+				
+				final QuestState st = player.getQuestState(Q10329_BackupSeekers.class.getSimpleName());
+				if ((st != null) && st.isStarted())
+				{
+					final Quest quest_10329 = QuestManager.getInstance().getQuest(Q10329_BackupSeekers.class.getSimpleName());
+					if (quest_10329 != null)
+					{
+						quest_10329.notifyEvent("RESPAWN_BART", null, player);
+					}
+				}
 			}
 			else
 			{
