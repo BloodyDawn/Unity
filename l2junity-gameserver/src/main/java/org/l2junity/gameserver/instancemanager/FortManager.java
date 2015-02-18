@@ -25,13 +25,13 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javolution.util.FastList;
+
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.InstanceListManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.entity.Fort;
-
-import javolution.util.FastList;
 
 public final class FortManager implements InstanceListManager
 {
@@ -179,7 +179,7 @@ public final class FortManager implements InstanceListManager
 			_log.info(getClass().getSimpleName() + ": Loaded: " + getForts().size() + " fortress");
 			for (Fort fort : getForts())
 			{
-				fort.getSiege().getSiegeGuardManager().loadSiegeGuard();
+				fort.getSiege().loadSiegeGuard();
 			}
 		}
 		catch (Exception e)
