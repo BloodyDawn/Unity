@@ -90,11 +90,14 @@ public final class Q10320_LetsGoToTheCentralSquare extends Quest
 			}
 			case "32975-02.htm":
 			{
-				giveAdena(player, 30, true);
-				addExpAndSp(player, 30, 5);
-				qs.exitQuest(false, true);
-				htmltext = event;
-				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.WAIT_WAIT_A_MINUTE_I_STILL_HAVE_TIME);
+				if (qs.isStarted())
+				{
+					giveAdena(player, 30, true);
+					addExpAndSp(player, 30, 5);
+					qs.exitQuest(false, true);
+					htmltext = event;
+					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.WAIT_WAIT_A_MINUTE_I_STILL_HAVE_TIME);
+				}
 				break;
 			}
 		}

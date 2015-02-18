@@ -78,10 +78,13 @@ public final class Q10328_RequestToSealTheEvilFragment extends Quest
 			}
 			case "30565-03.htm":
 			{
-				giveAdena(player, 20000, true);
-				addExpAndSp(player, 13000, 5);
-				qs.exitQuest(false, true);
-				htmltext = event;
+				if (qs.isStarted())
+				{
+					giveAdena(player, 20000, true);
+					addExpAndSp(player, 13000, 5);
+					qs.exitQuest(false, true);
+					htmltext = event;
+				}
 				break;
 			}
 		}
