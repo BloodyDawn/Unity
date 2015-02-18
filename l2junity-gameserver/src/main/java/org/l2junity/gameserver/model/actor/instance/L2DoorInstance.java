@@ -19,11 +19,11 @@
 package org.l2junity.gameserver.model.actor.instance;
 
 import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.Future;
 import java.util.logging.Level;
-
-import javolution.util.FastList;
 
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -608,17 +608,14 @@ public class L2DoorInstance extends Creature
 	
 	public Collection<L2DefenderInstance> getKnownDefenders()
 	{
-		FastList<L2DefenderInstance> result = new FastList<>();
-		
-		Collection<WorldObject> objs = getKnownList().getKnownObjects().values();
-		for (WorldObject obj : objs)
+		final List<L2DefenderInstance> result = new LinkedList<>();
+		for (WorldObject obj : getKnownList().getKnownObjects().values())
 		{
 			if (obj instanceof L2DefenderInstance)
 			{
 				result.add((L2DefenderInstance) obj);
 			}
 		}
-		
 		return result;
 	}
 	

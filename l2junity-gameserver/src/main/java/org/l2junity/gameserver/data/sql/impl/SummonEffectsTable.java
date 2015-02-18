@@ -60,7 +60,7 @@ public class SummonEffectsTable
 		return _petEffects;
 	}
 	
-	public class SummonEffect
+	public static class SummonEffect
 	{
 		Skill _skill;
 		int _effectCurTime;

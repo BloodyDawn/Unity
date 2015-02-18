@@ -22,7 +22,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.Future;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -1025,7 +1027,7 @@ public class L2PetInstance extends Summon
 			
 			int buff_index = 0;
 			
-			final List<Integer> storedSkills = new FastList<>();
+			final Set<Integer> storedSkills = new HashSet<>();
 			
 			// Store all effect data along with calculated remaining
 			if (storeEffects)
@@ -1055,12 +1057,10 @@ public class L2PetInstance extends Summon
 						continue;
 					}
 					
-					if (storedSkills.contains(skill.getReuseHashCode()))
+					if (!storedSkills.add(skill.getReuseHashCode()))
 					{
 						continue;
 					}
-					
-					storedSkills.add(skill.getReuseHashCode());
 					
 					ps2.setInt(1, getControlObjectId());
 					ps2.setInt(2, skill.getId());
@@ -1069,12 +1069,7 @@ public class L2PetInstance extends Summon
 					ps2.setInt(5, ++buff_index);
 					ps2.execute();
 					
-					if (!SummonEffectsTable.getInstance().getPetEffects().containsKey(getControlObjectId()))
-					{
-						SummonEffectsTable.getInstance().getPetEffects().put(getControlObjectId(), new FastList<SummonEffect>());
-					}
-					
-					SummonEffectsTable.getInstance().getPetEffects().get(getControlObjectId()).add(SummonEffectsTable.getInstance().new SummonEffect(skill, info.getTime()));
+					SummonEffectsTable.getInstance().getPetEffects().computeIfAbsent(getControlObjectId(), k -> new FastList<>()).add(new SummonEffect(skill, info.getTime()));
 				}
 			}
 		}
@@ -1108,12 +1103,7 @@ public class L2PetInstance extends Summon
 						
 						if (skill.hasEffects(EffectScope.GENERAL))
 						{
-							if (!SummonEffectsTable.getInstance().getPetEffects().containsKey(getControlObjectId()))
-							{
-								SummonEffectsTable.getInstance().getPetEffects().put(getControlObjectId(), new FastList<SummonEffect>());
-							}
-							
-							SummonEffectsTable.getInstance().getPetEffects().get(getControlObjectId()).add(SummonEffectsTable.getInstance().new SummonEffect(skill, effectCurTime));
+							SummonEffectsTable.getInstance().getPetEffects().computeIfAbsent(getControlObjectId(), k -> new FastList<>()).add(new SummonEffect(skill, effectCurTime));
 						}
 					}
 				}
