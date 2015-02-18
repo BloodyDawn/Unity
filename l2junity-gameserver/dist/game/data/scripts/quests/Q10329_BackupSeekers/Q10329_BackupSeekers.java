@@ -113,13 +113,16 @@ public final class Q10329_BackupSeekers extends Quest
 			}
 			case "33448-02.htm":
 			{
-				showOnScreenMsg(player, NpcStringId.ACCESSORIES_HAVE_BEEN_ADDED_TO_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 4500);
-				giveAdena(player, 25000, true);
-				giveItems(player, RING_OF_KNOWLEDGE, 2);
-				giveItems(player, NECKLACE_OF_KNOWLEDGE, 1);
-				addExpAndSp(player, 16900, 5);
-				qs.exitQuest(false, true);
-				htmltext = event;
+				if (qs.isStarted())
+				{
+					showOnScreenMsg(player, NpcStringId.ACCESSORIES_HAVE_BEEN_ADDED_TO_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 4500);
+					giveAdena(player, 25000, true);
+					giveItems(player, RING_OF_KNOWLEDGE, 2);
+					giveItems(player, NECKLACE_OF_KNOWLEDGE, 1);
+					addExpAndSp(player, 16900, 5);
+					qs.exitQuest(false, true);
+					htmltext = event;
+				}
 				break;
 			}
 			case "CHECK_PLAYER":

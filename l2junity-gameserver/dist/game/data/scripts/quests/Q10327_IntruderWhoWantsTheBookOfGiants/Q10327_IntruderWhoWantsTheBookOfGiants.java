@@ -77,11 +77,14 @@ public class Q10327_IntruderWhoWantsTheBookOfGiants extends Quest
 			}
 			case "32972-07.htm":
 			{
-				showOnScreenMsg(player, NpcStringId.ACCESSORIES_HAVE_BEEN_ADDED_TO_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 4500);
-				giveAdena(player, 160, true);
-				giveItems(player, APPRENTICE_EARRING, 2);
-				addExpAndSp(player, 7800, 5);
-				qs.exitQuest(false, true);
+				if (qs.isCond(3))
+				{
+					showOnScreenMsg(player, NpcStringId.ACCESSORIES_HAVE_BEEN_ADDED_TO_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 4500);
+					giveAdena(player, 160, true);
+					giveItems(player, APPRENTICE_EARRING, 2);
+					addExpAndSp(player, 7800, 5);
+					qs.exitQuest(false, true);
+				}
 				break;
 			}
 		}

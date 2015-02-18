@@ -78,11 +78,14 @@ public final class Q10321_QualificationsOfTheSeeker extends Quest
 			}
 			case "32974-02.htm":
 			{
-				giveAdena(player, 50, true);
-				addExpAndSp(player, 40, 5);
-				qs.exitQuest(false, true);
-				Broadcast.toKnownPlayers(npc, new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getTemplate().getDisplayId(), NpcStringId.HM_DON_T_JUST_GO_I_STILL_HAVE_TONS_TO_TEACH_YOU));
-				htmltext = event;
+				if (qs.isStarted())
+				{
+					giveAdena(player, 50, true);
+					addExpAndSp(player, 40, 5);
+					qs.exitQuest(false, true);
+					Broadcast.toKnownPlayers(npc, new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getTemplate().getDisplayId(), NpcStringId.HM_DON_T_JUST_GO_I_STILL_HAVE_TONS_TO_TEACH_YOU));
+					htmltext = event;
+				}
 				break;
 			}
 		}
