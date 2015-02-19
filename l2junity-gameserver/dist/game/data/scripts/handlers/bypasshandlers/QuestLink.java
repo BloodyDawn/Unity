@@ -99,7 +99,7 @@ public class QuestLink implements IBypassHandler
 		for (Quest quest : quests)
 		{
 			final QuestState qs = player.getQuestState(quest.getScriptName());
-			if ((qs == null) || qs.isCreated())
+			if ((qs == null) || qs.isCreated() || (qs.isCompleted() && qs.isNowAvailable()))
 			{
 				state = quest.isCustomQuest() ? "" : "01";
 				if (startingQuests.contains(quest) && quest.canStartQuest(player))

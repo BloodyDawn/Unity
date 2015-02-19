@@ -70,7 +70,7 @@ public final class Q10282_ToTheSeedOfAnnihilation extends Quest
 			{
 				giveAdena(player, 212182, true);
 				giveItems(player, EAR, 5);
-				st.addExpAndSp(1148480, 275);
+				addExpAndSp(player, 1148480, 275);
 				st.exitQuest(false);
 				break;
 			}
@@ -105,7 +105,10 @@ public final class Q10282_ToTheSeedOfAnnihilation extends Quest
 			}
 			case State.CREATED:
 			{
-				htmltext = "32733-01.htm";
+				if (npcId == KBALDIR)
+				{
+					htmltext = "32733-01.htm";
+				}
 				break;
 			}
 			case State.STARTED:

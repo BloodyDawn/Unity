@@ -18,14 +18,17 @@
  */
 package quests.Q00453_NotStrongEnoughAlone;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.enums.QuestType;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.holders.NpcLogListHolder;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
-import org.l2junity.gameserver.network.serverpackets.ExQuestNpcLogList;
 import org.l2junity.gameserver.util.Util;
 
 import quests.Q10282_ToTheSeedOfAnnihilation.Q10282_ToTheSeedOfAnnihilation;
@@ -34,9 +37,9 @@ import quests.Q10282_ToTheSeedOfAnnihilation.Q10282_ToTheSeedOfAnnihilation;
  * Not Strong Enough Alone (453)
  * @author malyelfik
  */
-public class Q00453_NotStrongEnoughAlone extends Quest
+public final class Q00453_NotStrongEnoughAlone extends Quest
 {
-	// NPC
+	// NPCs
 	private static final int KLEMIS = 32734;
 	private static final int[] MONSTER1 =
 	{
@@ -67,37 +70,23 @@ public class Q00453_NotStrongEnoughAlone extends Quest
 		22764,
 		22765
 	};
-	
 	// Reward
-	private static final int[][] REWARD =
+	private static final int POUCH = 34861; // Ingredient and Hardener Pouch (R-grade)
+	private static final int EWR = 17526; // Scroll: Enchant Weapon (R-Grade)
+	private static final int EAR = 17527; // Scroll: Enchant Armor (R-Grade)
+	// @formatter:off
+	private static final int[] ATT_STONES =
 	{
-		{
-			15815,
-			15816,
-			15817,
-			15818,
-			15819,
-			15820,
-			15821,
-			15822,
-			15823,
-			15824,
-			15825
-		},
-		{
-			15634,
-			15635,
-			15636,
-			15637,
-			15638,
-			15639,
-			15640,
-			15641,
-			15642,
-			15643,
-			15644
-		}
+		9546, 9547, 9548, 9549, 9550, 9551,
 	};
+	private static final int[] ATT_CRYSTALS =
+	{
+		9552, 9553, 9554, 9555, 5956, 9557,
+	};
+	// @formatter:on
+	
+	// Misc
+	private static final int MIN_LV = 85;
 	
 	public Q00453_NotStrongEnoughAlone()
 	{
@@ -107,12 +96,13 @@ public class Q00453_NotStrongEnoughAlone extends Quest
 		addKillId(MONSTER1);
 		addKillId(MONSTER2);
 		addKillId(MONSTER3);
+		addCondCompletedQuest(Q10282_ToTheSeedOfAnnihilation.class.getSimpleName(), "32734-03.html");
+		addCondMinLevel(MIN_LV, "32734-03.html");
 	}
 	
 	private void increaseKill(PlayerInstance player, Npc npc)
 	{
-		QuestState st = getQuestState(player, false);
-		
+		final QuestState st = getQuestState(player, false);
 		if (st == null)
 		{
 			return;
@@ -122,8 +112,6 @@ public class Q00453_NotStrongEnoughAlone extends Quest
 		
 		if (Util.checkIfInRange(1500, npc, player, false))
 		{
-			final ExQuestNpcLogList log = new ExQuestNpcLogList(getId());
-			
 			if (Util.contains(MONSTER1, npcId) && st.isCond(2))
 			{
 				if (npcId == MONSTER1[4])
@@ -143,19 +131,13 @@ public class Q00453_NotStrongEnoughAlone extends Quest
 					npcId = MONSTER1[3];
 				}
 				
-				int i = st.getInt(String.valueOf(npcId));
-				if (i < 15)
+				final int currValue = st.getInt("count_" + npcId);
+				if (currValue < 15)
 				{
-					st.set(Integer.toString(npcId), Integer.toString(i + 1));
+					st.set("count_" + npcId, currValue + 1);
 					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
-				
 				checkProgress(st, 15, MONSTER1[0], MONSTER1[1], MONSTER1[2], MONSTER1[3]);
-				
-				log.addNpc(MONSTER1[0], st.getInt(String.valueOf(MONSTER1[0])));
-				log.addNpc(MONSTER1[1], st.getInt(String.valueOf(MONSTER1[1])));
-				log.addNpc(MONSTER1[2], st.getInt(String.valueOf(MONSTER1[2])));
-				log.addNpc(MONSTER1[3], st.getInt(String.valueOf(MONSTER1[3])));
 			}
 			else if (Util.contains(MONSTER2, npcId) && st.isCond(3))
 			{
@@ -172,18 +154,13 @@ public class Q00453_NotStrongEnoughAlone extends Quest
 					npcId = MONSTER2[2];
 				}
 				
-				int i = st.getInt(String.valueOf(npcId));
-				if (i < 20)
+				final int currValue = st.getInt("count_" + npcId);
+				if (currValue < 20)
 				{
-					st.set(Integer.toString(npcId), Integer.toString(i + 1));
+					st.set("count_" + npcId, currValue + 1);
 					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
-				
 				checkProgress(st, 20, MONSTER2[0], MONSTER2[1], MONSTER2[2]);
-				
-				log.addNpc(MONSTER2[0], st.getInt(String.valueOf(MONSTER2[0])));
-				log.addNpc(MONSTER2[1], st.getInt(String.valueOf(MONSTER2[1])));
-				log.addNpc(MONSTER2[2], st.getInt(String.valueOf(MONSTER2[2])));
 			}
 			else if (Util.contains(MONSTER3, npcId) && st.isCond(4))
 			{
@@ -200,49 +177,53 @@ public class Q00453_NotStrongEnoughAlone extends Quest
 					npcId = MONSTER3[2];
 				}
 				
-				int i = st.getInt(String.valueOf(npcId));
-				if (i < 20)
+				final int currValue = st.getInt("count_" + npcId);
+				if (currValue < 20)
 				{
-					st.set(Integer.toString(npcId), Integer.toString(i + 1));
+					st.set("count_" + npcId, currValue + 1);
 					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
-				
 				checkProgress(st, 20, MONSTER3[0], MONSTER3[1], MONSTER3[2]);
-				
-				log.addNpc(MONSTER3[0], st.getInt(String.valueOf(MONSTER3[0])));
-				log.addNpc(MONSTER3[1], st.getInt(String.valueOf(MONSTER3[1])));
-				log.addNpc(MONSTER3[2], st.getInt(String.valueOf(MONSTER3[2])));
 			}
-			player.sendPacket(log);
 		}
+		sendNpcLogList(player);
 	}
 	
 	@Override
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		String htmltext = event;
-		QuestState st = getQuestState(player, false);
-		
+		final QuestState st = getQuestState(player, false);
 		if (st == null)
 		{
-			return htmltext;
+			return null;
 		}
 		
-		if (event.equalsIgnoreCase("32734-06.htm"))
+		switch (event)
 		{
-			st.startQuest();
-		}
-		else if (event.equalsIgnoreCase("32734-07.html"))
-		{
-			st.setCond(2, true);
-		}
-		else if (event.equalsIgnoreCase("32734-08.html"))
-		{
-			st.setCond(3, true);
-		}
-		else if (event.equalsIgnoreCase("32734-09.html"))
-		{
-			st.setCond(4, true);
+			case "32734-06.htm":
+			{
+				st.startQuest();
+				break;
+			}
+			case "32734-07.html":
+			{
+				st.setCond(2, true);
+				sendNpcLogList(player);
+				break;
+			}
+			case "32734-08.html":
+			{
+				st.setCond(3, true);
+				sendNpcLogList(player);
+				break;
+			}
+			case "32734-09.html":
+			{
+				st.setCond(4, true);
+				sendNpcLogList(player);
+				break;
+			}
 		}
 		return htmltext;
 	}
@@ -269,7 +250,6 @@ public class Q00453_NotStrongEnoughAlone extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		final QuestState st = getQuestState(player, true);
-		QuestState prev = player.getQuestState(Q10282_ToTheSeedOfAnnihilation.class.getSimpleName());
 		if (st == null)
 		{
 			return htmltext;
@@ -278,16 +258,12 @@ public class Q00453_NotStrongEnoughAlone extends Quest
 		switch (st.getState())
 		{
 			case State.CREATED:
-				if ((player.getLevel() >= 84) && (prev != null) && prev.isCompleted())
-				{
-					htmltext = "32734-01.htm";
-				}
-				else
-				{
-					htmltext = "32734-03.html";
-				}
+			{
+				htmltext = "32734-01.htm";
 				break;
+			}
 			case State.STARTED:
+			{
 				switch (st.getCond())
 				{
 					case 1:
@@ -312,31 +288,40 @@ public class Q00453_NotStrongEnoughAlone extends Quest
 					}
 					case 5:
 					{
-						st.giveItems(REWARD[getRandom(REWARD.length)][getRandom(REWARD[0].length)], 1);
+						final int random = getRandom(100);
+						if (random < 10)
+						{
+							giveItems(player, POUCH, getRandom(1, 4));
+						}
+						else if (random < 20)
+						{
+							giveItems(player, (getRandom(100) < 25 ? EWR : EAR), 1);
+						}
+						else
+						{
+							giveItems(player, (getRandom(100) < 15 ? ATT_CRYSTALS[getRandom(ATT_CRYSTALS.length)] : ATT_STONES[getRandom(ATT_STONES.length)]), 1);
+						}
+						
 						st.exitQuest(QuestType.DAILY, true);
 						htmltext = "32734-14.html";
 						break;
 					}
 				}
 				break;
+			}
 			case State.COMPLETED:
-				if (!st.isNowAvailable())
+			{
+				if (st.isNowAvailable())
 				{
-					htmltext = "32734-02.htm";
+					st.setState(State.CREATED);
+					htmltext = "32734-01.htm";
 				}
 				else
 				{
-					st.setState(State.CREATED);
-					if ((player.getLevel() >= 84) && (prev != null) && (prev.getState() == State.COMPLETED))
-					{
-						htmltext = "32734-01.htm";
-					}
-					else
-					{
-						htmltext = "32734-03.html";
-					}
+					htmltext = "32734-02.htm";
 				}
 				break;
+			}
 		}
 		return htmltext;
 	}
@@ -345,11 +330,49 @@ public class Q00453_NotStrongEnoughAlone extends Quest
 	{
 		for (int mob : mobs)
 		{
-			if (st.getInt(String.valueOf(mob)) < count)
+			if (st.getInt("count_" + mob) < count)
 			{
 				return;
 			}
 		}
 		st.setCond(5, true);
+	}
+	
+	@Override
+	public Set<NpcLogListHolder> getNpcLogList(PlayerInstance activeChar)
+	{
+		final QuestState qs = getQuestState(activeChar, false);
+		final Set<NpcLogListHolder> npcLogList = new HashSet<>(3);
+		
+		if (qs != null)
+		{
+			switch (qs.getCond())
+			{
+				case 2:
+				{
+					npcLogList.add(new NpcLogListHolder(MONSTER1[0], false, qs.getInt("count_" + MONSTER1[0])));
+					npcLogList.add(new NpcLogListHolder(MONSTER1[1], false, qs.getInt("count_" + MONSTER1[1])));
+					npcLogList.add(new NpcLogListHolder(MONSTER1[2], false, qs.getInt("count_" + MONSTER1[2])));
+					npcLogList.add(new NpcLogListHolder(MONSTER1[3], false, qs.getInt("count_" + MONSTER1[3])));
+					break;
+				}
+				case 3:
+				{
+					npcLogList.add(new NpcLogListHolder(MONSTER2[0], false, qs.getInt("count_" + MONSTER2[0])));
+					npcLogList.add(new NpcLogListHolder(MONSTER2[1], false, qs.getInt("count_" + MONSTER2[1])));
+					npcLogList.add(new NpcLogListHolder(MONSTER2[2], false, qs.getInt("count_" + MONSTER2[2])));
+					break;
+				}
+				case 4:
+				{
+					npcLogList.add(new NpcLogListHolder(MONSTER3[0], false, qs.getInt("count_" + MONSTER3[0])));
+					npcLogList.add(new NpcLogListHolder(MONSTER3[1], false, qs.getInt("count_" + MONSTER3[1])));
+					npcLogList.add(new NpcLogListHolder(MONSTER3[2], false, qs.getInt("count_" + MONSTER3[2])));
+					break;
+				}
+			}
+			return npcLogList;
+		}
+		return super.getNpcLogList(activeChar);
 	}
 }

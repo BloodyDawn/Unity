@@ -220,7 +220,7 @@ public final class Q10329_BackupSeekers extends Quest
 			{
 				qs.setMemoState(2);
 				final Npc bart = addSpawn(BART, BART_SPAWN_2, false, 300000);
-				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.I_WILL_GUIDE_YOU_FOLLOW_ME);
+				bart.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.I_WILL_GUIDE_YOU_FOLLOW_ME);
 				startQuestTimer("MOVE_DELAY", 500, bart, player);
 				break;
 			}
