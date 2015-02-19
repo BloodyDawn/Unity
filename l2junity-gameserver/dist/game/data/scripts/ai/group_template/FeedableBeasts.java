@@ -20,19 +20,19 @@ package ai.group_template;
 
 import java.util.Map;
 
+import javolution.util.FastMap;
+
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2TamedBeastInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.NpcStringId;
-import org.l2junity.gameserver.network.serverpackets.NpcSay;
 import org.l2junity.gameserver.util.Util;
 
-import javolution.util.FastMap;
 import quests.Q00020_BringUpWithLove.Q00020_BringUpWithLove;
 import quests.Q00655_AGrandPlanForTamingWildBeasts.Q00655_AGrandPlanForTamingWildBeasts;
 import ai.npc.AbstractNpcAI;
@@ -442,12 +442,7 @@ public final class FeedableBeasts extends AbstractNpcAI
 			if (getRandom(20) == 0)
 			{
 				NpcStringId message = NpcStringId.getNpcStringId(getRandom(2024, 2029));
-				NpcSay packet = new NpcSay(nextNpc, ChatType.NPC_GENERAL, message);
-				if (message.getParamCount() > 0) // player name, $s1
-				{
-					packet.addStringParameter(player.getName());
-				}
-				npc.broadcastPacket(packet);
+				npc.broadcastSay(ChatType.NPC_GENERAL, message, message.getParamCount() > 0 ? player.getName() : null);
 			}
 			// @formatter:off
 			/*
@@ -571,12 +566,7 @@ public final class FeedableBeasts extends AbstractNpcAI
 			if (getRandom(20) == 0)
 			{
 				NpcStringId message = TEXT[growthLevel][getRandom(TEXT[growthLevel].length)];
-				NpcSay packet = new NpcSay(npc, ChatType.NPC_GENERAL, message);
-				if (message.getParamCount() > 0) // player name, $s1
-				{
-					packet.addStringParameter(caster.getName());
-				}
-				npc.broadcastPacket(packet);
+				npc.broadcastSay(ChatType.NPC_GENERAL, message, message.getParamCount() > 0 ? caster.getName() : null);
 			}
 			
 			if ((growthLevel > 0) && (_FeedInfo.get(objectId) != caster.getObjectId()))
@@ -599,12 +589,7 @@ public final class FeedableBeasts extends AbstractNpcAI
 			{
 				beast.onReceiveFood();
 				NpcStringId message = TAMED_TEXT[getRandom(TAMED_TEXT.length)];
-				NpcSay packet = new NpcSay(npc, ChatType.NPC_GENERAL, message);
-				if (message.getParamCount() > 0)
-				{
-					packet.addStringParameter(caster.getName());
-				}
-				beast.broadcastPacket(packet);
+				npc.broadcastSay(ChatType.NPC_GENERAL, message, message.getParamCount() > 0 ? caster.getName() : null);
 			}
 		}
 		return super.onSkillSee(npc, caster, skill, targets, isSummon);

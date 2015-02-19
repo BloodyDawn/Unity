@@ -25,7 +25,6 @@ import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.network.NpcStringId;
-import org.l2junity.gameserver.network.serverpackets.NpcSay;
 
 /**
  * @author DS
@@ -72,16 +71,12 @@ public final class OlympiadAnnouncer implements Runnable
 						continue;
 				}
 				
-				Npc manager;
-				NpcSay packet;
 				for (L2Spawn spawn : _managers)
 				{
-					manager = spawn.getLastSpawn();
+					final Npc manager = spawn.getLastSpawn();
 					if (manager != null)
 					{
-						packet = new NpcSay(manager.getObjectId(), ChatType.NPC_SHOUT, manager.getId(), npcString);
-						packet.addStringParameter(arenaId);
-						manager.broadcastPacket(packet);
+						manager.broadcastSay(ChatType.NPC_SHOUT, npcString, arenaId);
 					}
 				}
 				break;

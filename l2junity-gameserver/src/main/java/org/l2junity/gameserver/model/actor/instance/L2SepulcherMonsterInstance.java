@@ -28,7 +28,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.quest.QuestState;
-import org.l2junity.gameserver.network.serverpackets.NpcSay;
 
 /**
  * @author sandman
@@ -360,7 +359,7 @@ public class L2SepulcherMonsterInstance extends L2MonsterInstance
 				return;
 			}
 			
-			broadcastPacket(new NpcSay(getObjectId(), ChatType.NPC_GENERAL, getId(), "forgive me!!"));
+			broadcastSay(ChatType.NPC_GENERAL, "forgive me!!");
 		}
 	}
 	
@@ -387,7 +386,7 @@ public class L2SepulcherMonsterInstance extends L2MonsterInstance
 			}
 			
 			FourSepulchersManager.getInstance().spawnKeyBox(_activeChar);
-			broadcastPacket(new NpcSay(getObjectId(), ChatType.NPC_GENERAL, getId(), "Many thanks for rescue me."));
+			broadcastSay(ChatType.NPC_GENERAL, "Many thanks for rescue me.");
 			if (_victimShout != null)
 			{
 				_victimShout.cancel(true);

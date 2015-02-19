@@ -477,7 +477,7 @@ public abstract class ClanHallSiegeEngine extends Quest implements Siegable
 	
 	public final void broadcastNpcSay(final Npc npc, final ChatType type, final NpcStringId messageId)
 	{
-		final NpcSay npcSay = new NpcSay(npc.getObjectId(), type, npc.getId(), messageId);
+		final NpcSay npcSay = new NpcSay(npc, type, messageId);
 		final int sourceRegion = MapRegionManager.getInstance().getMapRegionLocId(npc);
 		for (PlayerInstance pc : World.getInstance().getPlayers())
 		{

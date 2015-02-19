@@ -39,8 +39,6 @@ import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcMoveNodeArrived;
 import org.l2junity.gameserver.model.holders.NpcRoutesHolder;
 import org.l2junity.gameserver.network.NpcStringId;
-import org.l2junity.gameserver.network.serverpackets.NpcSay;
-import org.l2junity.gameserver.util.Broadcast;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -426,11 +424,11 @@ public final class WalkingManager implements IXmlReader
 					
 					if (node.getNpcString() != null)
 					{
-						Broadcast.toKnownPlayers(npc, new NpcSay(npc, ChatType.NPC_GENERAL, node.getNpcString()));
+						npc.broadcastSay(ChatType.NPC_GENERAL, node.getNpcString());
 					}
 					else if (!node.getChatText().isEmpty())
 					{
-						Broadcast.toKnownPlayers(npc, new NpcSay(npc, ChatType.NPC_GENERAL, node.getChatText()));
+						npc.broadcastSay(ChatType.NPC_GENERAL, node.getChatText());
 					}
 					
 					if (npc.isDebug())

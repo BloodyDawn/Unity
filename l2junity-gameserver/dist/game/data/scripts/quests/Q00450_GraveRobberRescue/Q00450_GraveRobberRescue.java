@@ -30,7 +30,6 @@ import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 import org.l2junity.gameserver.network.NpcStringId;
-import org.l2junity.gameserver.network.serverpackets.NpcSay;
 
 /**
  * Grave Robber Rescue (450)
@@ -153,11 +152,11 @@ public class Q00450_GraveRobberRescue extends Quest
 			{
 				if (getRandom(100) < 50)
 				{
-					npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getId(), NpcStringId.GRUNT_OH));
+					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.GRUNT_OH);
 				}
 				else
 				{
-					npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getId(), NpcStringId.GRUNT_WHAT_S_WRONG_WITH_ME));
+					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.GRUNT_WHAT_S_WRONG_WITH_ME);
 				}
 				npc.deleteMe();
 				htmltext = null;

@@ -26,8 +26,10 @@ import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ScheduledFuture;
 
 import org.l2junity.Config;
@@ -55,7 +57,6 @@ import org.l2junity.gameserver.model.entity.clanhall.SiegeStatus;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.serverpackets.NpcSay;
 import org.l2junity.gameserver.util.Broadcast;
 import org.l2junity.gameserver.util.Util;
 
@@ -263,7 +264,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 	
 	protected static Map<Integer, Long> _warDecreesCount = new HashMap<>();
 	protected static List<L2Clan> _acceptedClans = new ArrayList<>(4);
-	private static Map<String, ArrayList<L2Clan>> _usedTextPassages = new HashMap<>();
+	private static Map<String, Set<L2Clan>> _usedTextPassages = new HashMap<>();
 	private static Map<L2Clan, Integer> _pendingItemToGet = new HashMap<>();
 	
 	protected static SiegableHall _rainbow;
@@ -538,7 +539,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 			
 			if (_usedTextPassages.containsKey(passage))
 			{
-				ArrayList<L2Clan> list = _usedTextPassages.get(passage);
+				Set<L2Clan> list = _usedTextPassages.get(passage);
 				
 				if (list.contains(clan))
 				{
@@ -809,9 +810,8 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 		}
 		else
 		{
-			_usedTextPassages.put(message, new ArrayList<L2Clan>());
-			final NpcSay say = new NpcSay(npc.getObjectId(), ChatType.NPC_SHOUT, npc.getId(), message);
-			npc.broadcastPacket(say);
+			_usedTextPassages.put(message, new HashSet<>());
+			npc.broadcastSay(ChatType.NPC_SHOUT, message);
 		}
 	}
 	

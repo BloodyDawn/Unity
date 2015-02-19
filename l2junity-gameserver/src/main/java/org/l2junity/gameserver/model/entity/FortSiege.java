@@ -57,7 +57,6 @@ import org.l2junity.gameserver.model.events.impl.sieges.fort.OnFortSiegeFinish;
 import org.l2junity.gameserver.model.events.impl.sieges.fort.OnFortSiegeStart;
 import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.NpcSay;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
 public class FortSiege implements Siegable
@@ -644,7 +643,7 @@ public class FortSiege implements Siegable
 						}
 						if (npcString != null)
 						{
-							instance.broadcastPacket(new NpcSay(instance.getObjectId(), ChatType.NPC_SHOUT, instance.getId(), npcString));
+							instance.broadcastSay(ChatType.NPC_SHOUT, npcString);
 						}
 					}
 				}
