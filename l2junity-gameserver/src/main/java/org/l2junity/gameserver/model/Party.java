@@ -42,8 +42,8 @@ import org.l2junity.gameserver.instancemanager.DuelManager;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2ServitorInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -97,6 +97,14 @@ public class Party extends AbstractPlayerGroup
 	protected PartyMemberPosition _positionPacket;
 	private boolean _disbanding = false;
 	private static Map<Integer, Creature> _tacticalSigns = null;
+	private static final int[] TACTICAL_SYS_STRINGS =
+	{
+		0,
+		2664,
+		2665,
+		2666,
+		2667
+	};
 	
 	/**
 	 * The message type send to the party members.
@@ -401,7 +409,7 @@ public class Party extends AbstractPlayerGroup
 		_tacticalSigns.entrySet().forEach(entry -> player.sendPacket(new ExTacticalSign(entry.getValue(), remove ? 0 : entry.getKey())));
 	}
 	
-	public void addTacticalSign(int tacticalSignId, Creature target)
+	public void addTacticalSign(PlayerInstance activeChar, int tacticalSignId, Creature target)
 	{
 		final Creature tacticalTarget = getTacticalSigns().get(tacticalSignId);
 		
@@ -412,27 +420,41 @@ public class Party extends AbstractPlayerGroup
 			
 			// Add the new sign
 			_tacticalSigns.put(tacticalSignId, target);
-			getMembers().forEach(m -> m.sendPacket(new ExTacticalSign(target, tacticalSignId)));
+			
+			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_USED_S3_ON_C2);
+			sm.addPcName(activeChar);
+			sm.addCharName(target);
+			sm.addSystemString(TACTICAL_SYS_STRINGS[tacticalSignId]);
+			
+			getMembers().forEach(m ->
+			{
+				m.sendPacket(new ExTacticalSign(target, tacticalSignId));
+				m.sendPacket(sm);
+			});
 		}
-		else
+		else if (tacticalTarget == target)
 		{
 			// Sign already assigned
 			// If the sign is applied on the same target, remove it
-			if (tacticalTarget == target)
+			_tacticalSigns.remove(tacticalSignId);
+			getMembers().forEach(m -> m.sendPacket(new ExTacticalSign(tacticalTarget, 0)));
+		}
+		else
+		{
+			// Otherwise, delete the old sign, and apply it to the new target
+			_tacticalSigns.replace(tacticalSignId, target);
+			
+			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_USED_S3_ON_C2);
+			sm.addPcName(activeChar);
+			sm.addCharName(target);
+			sm.addSystemString(TACTICAL_SYS_STRINGS[tacticalSignId]);
+			
+			getMembers().forEach(m ->
 			{
-				_tacticalSigns.remove(tacticalSignId);
-				getMembers().forEach(m -> m.sendPacket(new ExTacticalSign(tacticalTarget, 0)));
-			}
-			else
-			{
-				// Otherwise, delete the old sign, and apply it to the new target
-				_tacticalSigns.replace(tacticalSignId, target);
-				getMembers().forEach(m ->
-				{
-					m.sendPacket(new ExTacticalSign(tacticalTarget, 0));
-					m.sendPacket(new ExTacticalSign(target, tacticalSignId));
-				});
-			}
+				m.sendPacket(new ExTacticalSign(tacticalTarget, 0));
+				m.sendPacket(new ExTacticalSign(target, tacticalSignId));
+				m.sendPacket(sm);
+			});
 		}
 	}
 	
