@@ -27,7 +27,6 @@ import java.util.logging.Level;
 import java.util.stream.Stream;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.data.sql.impl.TeleportLocationTable;
 import org.l2junity.gameserver.data.xml.impl.MultisellData;
 import org.l2junity.gameserver.data.xml.impl.TeleportersData;
@@ -384,7 +383,6 @@ public final class L2TeleporterInstance extends Npc
 		}
 		else if (command.startsWith("Chat"))
 		{
-			Calendar cal = Calendar.getInstance();
 			int val = 0;
 			try
 			{
@@ -395,17 +393,6 @@ public final class L2TeleporterInstance extends Npc
 			}
 			catch (NumberFormatException nfe)
 			{
-			}
-			
-			if ((val == 1) && (player.getLevel() < 41))
-			{
-				showNewbieHtml(player);
-				return;
-			}
-			else if ((val == 1) && (cal.get(Calendar.HOUR_OF_DAY) >= 20) && (cal.get(Calendar.HOUR_OF_DAY) <= 23) && ((cal.get(Calendar.DAY_OF_WEEK) == 1) || (cal.get(Calendar.DAY_OF_WEEK) == 7)))
-			{
-				showHalfPriceHtml(player);
-				return;
 			}
 			showChatWindow(player, val);
 		}
@@ -426,48 +413,6 @@ public final class L2TeleporterInstance extends Npc
 		}
 		
 		return "data/html/teleporter/" + pom + ".htm";
-	}
-	
-	private void showNewbieHtml(PlayerInstance player)
-	{
-		if (player == null)
-		{
-			return;
-		}
-		
-		final NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-		
-		String filename = "data/html/teleporter/free/" + getTemplate().getId() + ".htm";
-		if (!HtmCache.getInstance().isLoadable(filename))
-		{
-			filename = "data/html/teleporter/" + getTemplate().getId() + "-1.htm";
-		}
-		
-		html.setFile(player.getHtmlPrefix(), filename);
-		html.replace("%objectId%", String.valueOf(getObjectId()));
-		html.replace("%npcname%", getName());
-		player.sendPacket(html);
-	}
-	
-	private void showHalfPriceHtml(PlayerInstance player)
-	{
-		if (player == null)
-		{
-			return;
-		}
-		
-		final NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-		
-		String filename = "data/html/teleporter/half/" + getId() + ".htm";
-		if (!HtmCache.getInstance().isLoadable(filename))
-		{
-			filename = "data/html/teleporter/" + getId() + "-1.htm";
-		}
-		
-		html.setFile(player.getHtmlPrefix(), filename);
-		html.replace("%objectId%", String.valueOf(getObjectId()));
-		html.replace("%npcname%", getName());
-		player.sendPacket(html);
 	}
 	
 	@Override
