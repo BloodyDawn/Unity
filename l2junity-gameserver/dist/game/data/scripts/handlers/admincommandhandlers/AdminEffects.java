@@ -345,18 +345,24 @@ public class AdminEffects implements IAdminCommandHandler
 		{
 			try
 			{
-				int val = Integer.parseInt(st.nextToken());
-				boolean sendMessage = activeChar.isAffectedBySkill(7029);
+				final int val = Integer.parseInt(st.nextToken());
+				final boolean sendMessage = activeChar.isAffectedBySkill(7029);
 				activeChar.stopSkillEffects((val == 0) && sendMessage, 7029);
 				if ((val >= 1) && (val <= 4))
 				{
-					Skill gmSpeedSkill = SkillData.getInstance().getSkill(7029, val);
-					activeChar.doSimultaneousCast(gmSpeedSkill);
+					int time = 0;
+					if (st.hasMoreTokens())
+					{
+						time = Integer.parseInt(st.nextToken());
+					}
+					
+					final Skill gmSpeedSkill = SkillData.getInstance().getSkill(7029, val);
+					gmSpeedSkill.applyEffects(activeChar, activeChar, true, time);
 				}
 			}
 			catch (Exception e)
 			{
-				activeChar.sendMessage("Usage: //gmspeed <value> (0=off...4=max)");
+				activeChar.sendMessage("Usage: //gmspeed <Effect level (0-4)> <Time in seconds>");
 			}
 			if (command.contains("_menu"))
 			{
