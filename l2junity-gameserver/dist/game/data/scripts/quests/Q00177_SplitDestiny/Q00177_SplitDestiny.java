@@ -33,28 +33,14 @@ import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.util.Util;
 
 /**
+ * Split of Destiny (177)
  * @author Sdw
  */
-public class Q00177_SplitDestiny extends Quest
+public final class Q00177_SplitDestiny extends Quest
 {
 	// NPCs
 	private static final int HADEL = 33344;
 	private static final int ISHUMA = 32615;
-	// Items
-	private static final ItemHolder PETRIFIED_GIANTS_HAND = new ItemHolder(17718, 2);
-	private static final ItemHolder PETRIFIED_GIANTS_FOOT = new ItemHolder(17719, 2);
-	private static final int PETRIFIED_GIANTS_HAND_PIECE = 17720;
-	private static final int PETRIFIED_GIANTS_FOOT_PIECE = 17721;
-	// Rewards
-	private static final ItemHolder RECIPE_TWILIGHT_NECKLACE = new ItemHolder(36791, 1);
-	private static final ItemHolder CRYSTAL_R = new ItemHolder(17371, 1);
-	private static final ItemHolder RED_SOUL_CRYSTAL_15 = new ItemHolder(10480, 1);
-	private static final ItemHolder BLUE_SOUL_CRYSTAL_15 = new ItemHolder(10481, 1);
-	private static final ItemHolder GREEN_SOUL_CRYSTAL_15 = new ItemHolder(10482, 1);
-	// Variable
-	private static final String VAR_SUB_INDEX = "split_destiny_sub_id";
-	
-	// Mobs
 	private static final int[] GIANTS_HAND_MONSTERS =
 	{
 		21549, // Corrupted Guard
@@ -63,7 +49,6 @@ public class Q00177_SplitDestiny extends Quest
 		21548, // Resurrected Knight
 		21587, // Vampire Warrior
 	};
-	
 	private static final int[] GIANTS_FOOT_MONSTERS =
 	{
 		22257, // Island Guardian
@@ -71,6 +56,19 @@ public class Q00177_SplitDestiny extends Quest
 		22259, // Muddy Coral
 		22260, // Kleopora
 	};
+	// Items
+	private static final ItemHolder PETRIFIED_GIANTS_HAND = new ItemHolder(17718, 2);
+	private static final ItemHolder PETRIFIED_GIANTS_FOOT = new ItemHolder(17719, 2);
+	private static final int PETRIFIED_GIANTS_HAND_PIECE = 17720;
+	private static final int PETRIFIED_GIANTS_FOOT_PIECE = 17721;
+	// Rewards
+	private static final ItemHolder RECIPE_TWILIGHT_NECKLACE = new ItemHolder(36791, 1);
+	private static final ItemHolder CRYSTAL_R = new ItemHolder(17371, 5);
+	private static final ItemHolder RED_SOUL_CRYSTAL_15 = new ItemHolder(10480, 1);
+	private static final ItemHolder BLUE_SOUL_CRYSTAL_15 = new ItemHolder(10481, 1);
+	private static final ItemHolder GREEN_SOUL_CRYSTAL_15 = new ItemHolder(10482, 1);
+	// Variable
+	private static final String VAR_SUB_INDEX = "SPLIT_DESTINY_SUB_ID";
 	
 	public Q00177_SplitDestiny()
 	{
@@ -193,7 +191,6 @@ public class Q00177_SplitDestiny extends Quest
 				break;
 			}
 		}
-		
 		return htmltext;
 	}
 	
@@ -331,7 +328,6 @@ public class Q00177_SplitDestiny extends Quest
 				}
 			}
 		}
-		
 		return htmltext;
 	}
 	
@@ -386,7 +382,6 @@ public class Q00177_SplitDestiny extends Quest
 				}
 			}
 		}
-		
 		return super.onKill(npc, killer, isSummon);
 	}
 }
