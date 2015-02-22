@@ -191,6 +191,7 @@ import quests.Q10329_BackupSeekers.Q10329_BackupSeekers;
 import quests.Q10330_ToTheRuinsOfYeSagira.Q10330_ToTheRuinsOfYeSagira;
 import quests.Q10338_SeizeYourDestiny.Q10338_SeizeYourDestiny;
 import quests.Q10361_RolesOfTheSeeker.Q10361_RolesOfTheSeeker;
+import quests.Q10362_CertificationOfTheSeeker.Q10362_CertificationOfTheSeeker;
 import quests.Q10501_ZakenEmbroideredSoulCloak.Q10501_ZakenEmbroideredSoulCloak;
 import quests.Q10502_FreyaEmbroideredSoulCloak.Q10502_FreyaEmbroideredSoulCloak;
 import quests.Q10503_FrintezzaEmbroideredSoulCloak.Q10503_FrintezzaEmbroideredSoulCloak;
@@ -389,6 +390,7 @@ public class QuestMasterHandler
 		Q10330_ToTheRuinsOfYeSagira.class,
 		Q10338_SeizeYourDestiny.class,
 		Q10361_RolesOfTheSeeker.class,
+		Q10362_CertificationOfTheSeeker.class,
 		Q10501_ZakenEmbroideredSoulCloak.class,
 		Q10502_FreyaEmbroideredSoulCloak.class,
 		Q10503_FrintezzaEmbroideredSoulCloak.class,
