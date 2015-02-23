@@ -19,9 +19,9 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.Party;
+import org.l2junity.gameserver.model.Party.MessageType;
 import org.l2junity.gameserver.model.PartyMatchRoom;
 import org.l2junity.gameserver.model.PartyMatchRoomList;
-import org.l2junity.gameserver.model.Party.messageType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.ExClosePartyRoom;
 import org.l2junity.gameserver.network.serverpackets.ExPartyRoomMember;
@@ -44,28 +44,27 @@ public final class RequestWithDrawalParty extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = getClient().getActiveChar();
 		if (player == null)
 		{
 			return;
 		}
 		
-		Party party = player.getParty();
-		
+		final Party party = player.getParty();
 		if (party != null)
 		{
-			party.removePartyMember(player, messageType.Left);
+			party.removePartyMember(player, MessageType.LEFT);
 			
 			if (player.isInPartyMatchRoom())
 			{
-				PartyMatchRoom _room = PartyMatchRoomList.getInstance().getPlayerRoom(player);
-				if (_room != null)
+				final PartyMatchRoom room = PartyMatchRoomList.getInstance().getPlayerRoom(player);
+				if (room != null)
 				{
-					player.sendPacket(new PartyMatchDetail(player, _room));
-					player.sendPacket(new ExPartyRoomMember(player, _room, 0));
+					player.sendPacket(new PartyMatchDetail(player, room));
+					player.sendPacket(new ExPartyRoomMember(player, room, 0));
 					player.sendPacket(new ExClosePartyRoom());
 					
-					_room.deleteMember(player);
+					room.deleteMember(player);
 				}
 				player.setPartyRoom(0);
 				// player.setPartyMatching(0);

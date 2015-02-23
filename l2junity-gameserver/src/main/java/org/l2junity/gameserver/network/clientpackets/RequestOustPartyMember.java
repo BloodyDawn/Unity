@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
-import org.l2junity.gameserver.model.Party.messageType;
+import org.l2junity.gameserver.model.Party.MessageType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
@@ -40,7 +40,7 @@ public final class RequestOustPartyMember extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -48,7 +48,7 @@ public final class RequestOustPartyMember extends L2GameClientPacket
 		
 		if (activeChar.isInParty() && activeChar.getParty().isLeader(activeChar))
 		{
-			activeChar.getParty().removePartyMember(_name, messageType.Expelled);
+			activeChar.getParty().removePartyMember(_name, MessageType.EXPELLED);
 		}
 	}
 	
