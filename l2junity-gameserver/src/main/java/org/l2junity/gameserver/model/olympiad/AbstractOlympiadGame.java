@@ -29,7 +29,7 @@ import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.Party;
-import org.l2junity.gameserver.model.Party.messageType;
+import org.l2junity.gameserver.model.Party.MessageType;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -259,7 +259,7 @@ public abstract class AbstractOlympiadGame
 				final Party party = player.getParty();
 				if (party != null)
 				{
-					party.removePartyMember(player, messageType.Expelled);
+					party.removePartyMember(player, MessageType.EXPELLED);
 				}
 			}
 			// Remove Agathion

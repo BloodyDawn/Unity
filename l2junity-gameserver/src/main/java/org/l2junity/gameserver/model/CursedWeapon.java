@@ -32,7 +32,7 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.impl.TransformData;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
-import org.l2junity.gameserver.model.Party.messageType;
+import org.l2junity.gameserver.model.Party.MessageType;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -432,7 +432,7 @@ public class CursedWeapon implements INamable
 		_player.setPkKills(0);
 		if (_player.isInParty())
 		{
-			_player.getParty().removePartyMember(_player, messageType.Expelled);
+			_player.getParty().removePartyMember(_player, MessageType.EXPELLED);
 		}
 		
 		// Disable All Skills

@@ -172,7 +172,7 @@ public final class RequestJoinParty extends L2GameClientPacket
 		}
 		else if (!target.hasRequest(PartyRequest.class))
 		{
-			final PartyRequest request = new PartyRequest(requestor, target);
+			final PartyRequest request = new PartyRequest(requestor, target, party);
 			request.scheduleTimeout(30 * 1000);
 			requestor.addRequest(request);
 			target.addRequest(request);
@@ -201,13 +201,13 @@ public final class RequestJoinParty extends L2GameClientPacket
 		
 		if (!target.hasRequest(PartyRequest.class))
 		{
-			final PartyRequest request = new PartyRequest(requestor, target);
+			final Party party = new Party(requestor, partyDistributionType);
+			party.setPendingInvitation(true);
+			final PartyRequest request = new PartyRequest(requestor, target, party);
 			request.scheduleTimeout(30 * 1000);
 			requestor.addRequest(request);
 			target.addRequest(request);
 			target.sendPacket(new AskJoinParty(requestor.getName(), partyDistributionType));
-			requestor.setParty(new Party(requestor, partyDistributionType));
-			requestor.getParty().setPendingInvitation(true);
 		}
 		else
 		{

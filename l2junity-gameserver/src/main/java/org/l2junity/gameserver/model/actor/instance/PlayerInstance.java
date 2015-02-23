@@ -133,7 +133,7 @@ import org.l2junity.gameserver.model.Macro;
 import org.l2junity.gameserver.model.MacroList;
 import org.l2junity.gameserver.model.ManufactureItem;
 import org.l2junity.gameserver.model.Party;
-import org.l2junity.gameserver.model.Party.messageType;
+import org.l2junity.gameserver.model.Party.MessageType;
 import org.l2junity.gameserver.model.PartyMatchRoom;
 import org.l2junity.gameserver.model.PartyMatchRoomList;
 import org.l2junity.gameserver.model.PartyMatchWaitingList;
@@ -6614,7 +6614,7 @@ public final class PlayerInstance extends Playable
 	{
 		if (isInParty())
 		{
-			_party.removePartyMember(this, messageType.Disconnected);
+			_party.removePartyMember(this, MessageType.DISCONNECTED);
 			_party = null;
 		}
 	}
@@ -9611,7 +9611,7 @@ public final class PlayerInstance extends Playable
 		
 		if (getParty() != null)
 		{
-			getParty().removePartyMember(this, messageType.Expelled);
+			getParty().removePartyMember(this, MessageType.EXPELLED);
 		}
 		
 		_olympiadGameId = id;
