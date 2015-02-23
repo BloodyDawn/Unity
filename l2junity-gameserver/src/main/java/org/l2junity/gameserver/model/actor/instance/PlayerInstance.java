@@ -13242,7 +13242,7 @@ public final class PlayerInstance extends Playable
 		int relation1 = getRelation(activeChar);
 		int relation2 = activeChar.getRelation(this);
 		Integer oldrelation = getKnownList().getKnownRelations().get(activeChar.getObjectId());
-		if ((oldrelation != null) && (oldrelation != relation1))
+		if ((oldrelation != null) && (oldrelation != relation1) && isVisibleFor(activeChar))
 		{
 			final RelationChanged rc = new RelationChanged();
 			rc.addRelation(this, relation1, isAutoAttackable(activeChar));
@@ -13261,7 +13261,7 @@ public final class PlayerInstance extends Playable
 			activeChar.sendPacket(rc);
 		}
 		oldrelation = activeChar.getKnownList().getKnownRelations().get(getObjectId());
-		if ((oldrelation != null) && (oldrelation != relation2))
+		if ((oldrelation != null) && (oldrelation != relation2) && activeChar.isVisibleFor(this))
 		{
 			final RelationChanged rc = new RelationChanged();
 			rc.addRelation(activeChar, relation2, activeChar.isAutoAttackable(this));
