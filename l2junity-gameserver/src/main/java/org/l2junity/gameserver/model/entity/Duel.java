@@ -20,8 +20,11 @@ package org.l2junity.gameserver.model.entity;
 
 import java.util.Calendar;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import javolution.util.FastList;
 
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CtrlIntention;
@@ -43,8 +46,6 @@ import org.l2junity.gameserver.network.serverpackets.PlaySound;
 import org.l2junity.gameserver.network.serverpackets.SocialAction;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
-import javolution.util.FastList;
-
 public class Duel
 {
 	protected static final Logger _log = Logger.getLogger(Duel.class.getName());
@@ -55,6 +56,8 @@ public class Duel
 	public static final int DUELSTATE_WINNER = 3;
 	public static final int DUELSTATE_INTERRUPTED = 4;
 	
+	private static final PlaySound B04_S01 = new PlaySound(1, "B04_S01", 0, 0, 0, 0, 0);
+	
 	private final int _duelId;
 	private PlayerInstance _playerA;
 	private PlayerInstance _playerB;
@@ -64,7 +67,7 @@ public class Duel
 	private int _countdown = 4;
 	private boolean _finished = false;
 	
-	private List<PlayerCondition> _playerConditions;
+	private final List<PlayerCondition> _playerConditions = new CopyOnWriteArrayList<>();
 	
 	public Duel(PlayerInstance playerA, PlayerInstance playerB, int partyDuel, int duelId)
 	{
@@ -83,15 +86,13 @@ public class Duel
 			_duelEndTime.add(Calendar.SECOND, 120);
 		}
 		
-		_playerConditions = new FastList<>();
-		
 		setFinished(false);
 		
 		if (_partyDuel)
 		{
 			// increase countdown so that start task can teleport players
 			_countdown++;
-			// inform players that they will be portet shortly
+			// inform players that they will be ported shortly
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.IN_A_MOMENT_YOU_WILL_BE_TRANSPORTED_TO_THE_SITE_WHERE_THE_DUEL_WILL_TAKE_PLACE);
 			broadcastToTeam1(sm);
 			broadcastToTeam2(sm);
@@ -359,9 +360,7 @@ public class Duel
 		
 		if ((_playerA == null) || (_playerB == null) || _playerA.isInDuel() || _playerB.isInDuel())
 		{
-			// clean up
 			_playerConditions.clear();
-			_playerConditions = null;
 			DuelManager.getInstance().removeDuel(this);
 			return;
 		}
@@ -421,9 +420,8 @@ public class Duel
 		}
 		
 		// play sound
-		PlaySound ps = new PlaySound(1, "B04_S01", 0, 0, 0, 0, 0);
-		broadcastToTeam1(ps);
-		broadcastToTeam2(ps);
+		broadcastToTeam1(B04_S01);
+		broadcastToTeam2(B04_S01);
 		
 		// start duelling task
 		ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleDuelTask(this), 1000);
@@ -436,13 +434,13 @@ public class Duel
 	{
 		if (_partyDuel)
 		{
-			for (PlayerInstance temp : _playerA.getParty().getMembers())
+			for (PlayerInstance player : _playerA.getParty().getMembers())
 			{
-				_playerConditions.add(new PlayerCondition(temp, _partyDuel));
+				_playerConditions.add(new PlayerCondition(player, _partyDuel));
 			}
-			for (PlayerInstance temp : _playerB.getParty().getMembers())
+			for (PlayerInstance player : _playerB.getParty().getMembers())
 			{
-				_playerConditions.add(new PlayerCondition(temp, _partyDuel));
+				_playerConditions.add(new PlayerCondition(player, _partyDuel));
 			}
 		}
 		else
@@ -491,10 +489,7 @@ public class Duel
 		}
 		
 		// restore player conditions
-		for (PlayerCondition cond : _playerConditions)
-		{
-			cond.restoreCondition();
-		}
+		_playerConditions.forEach(c -> c.restoreCondition());
 	}
 	
 	/**
@@ -736,7 +731,6 @@ public class Duel
 		{
 			// clean up
 			_playerConditions.clear();
-			_playerConditions = null;
 			DuelManager.getInstance().removeDuel(this);
 			return;
 		}
@@ -781,7 +775,7 @@ public class Duel
 				break;
 			case Canceled:
 				stopFighting();
-				// dont restore hp, mp, cp
+				// Don't restore hp, mp, cp
 				restorePlayerConditions(true);
 				// TODO: is there no other message for a canceled duel?
 				// send SystemMessage
@@ -818,7 +812,6 @@ public class Duel
 		
 		// clean up
 		_playerConditions.clear();
-		_playerConditions = null;
 		DuelManager.getInstance().removeDuel(this);
 	}
 	
@@ -899,7 +892,7 @@ public class Duel
 	 */
 	public void doSurrender(PlayerInstance player)
 	{
-		// already recived a surrender request
+		// already received a surrender request
 		if (_surrenderRequest != 0)
 		{
 			return;
@@ -1013,14 +1006,14 @@ public class Duel
 	 */
 	public void onRemoveFromParty(PlayerInstance player)
 	{
-		// if it isnt a party duel ignore this
+		// if it isn't a party duel ignore this
 		if (!_partyDuel)
 		{
 			return;
 		}
 		
 		// this player is leaving his party during party duel
-		// if hes either playerA or playerB cancel the duel and port the players back
+		// if he's either playerA or playerB cancel the duel and port the players back
 		if ((player == _playerA) || (player == _playerB))
 		{
 			for (PlayerCondition cond : _playerConditions)
@@ -1035,14 +1028,11 @@ public class Duel
 		else
 		// teleport the player back & delete his PlayerCondition record
 		{
-			for (PlayerCondition cond : _playerConditions)
+			final PlayerCondition cond = _playerConditions.stream().filter(c -> c.getPlayer() == player).findFirst().orElse(null);
+			if (cond != null)
 			{
-				if (cond.getPlayer() == player)
-				{
-					cond.teleportBack();
-					_playerConditions.remove(cond);
-					break;
-				}
+				cond.teleportBack();
+				_playerConditions.remove(cond);
 			}
 			player.setIsInDuel(0);
 		}
@@ -1050,13 +1040,10 @@ public class Duel
 	
 	public void onBuff(PlayerInstance player, Skill debuff)
 	{
-		for (PlayerCondition cond : _playerConditions)
+		final PlayerCondition cond = _playerConditions.stream().filter(c -> c.getPlayer() == player).findFirst().orElse(null);
+		if (cond != null)
 		{
-			if (cond.getPlayer() == player)
-			{
-				cond.registerDebuff(debuff);
-				return;
-			}
+			cond.registerDebuff(debuff);
 		}
 	}
 }
