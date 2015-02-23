@@ -81,7 +81,7 @@ public class Q00551_OlympiadStarter extends Quest
 			}
 			else
 			{
-				htmltext = super.getNoQuestMsg(player); // missing items
+				htmltext = getNoQuestMsg(player);
 			}
 		}
 		return htmltext;
@@ -221,10 +221,7 @@ public class Q00551_OlympiadStarter extends Quest
 			if (st.isNowAvailable())
 			{
 				st.setState(State.CREATED);
-				if ((player.getLevel() < 75) || !player.isNoble())
-				{
-					htmltext = "31688-00.htm";
-				}
+				htmltext = (player.getLevel() < 75) || !player.isNoble() ? "31688-00.htm" : "31688-01.htm";
 			}
 			else
 			{

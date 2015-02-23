@@ -205,10 +205,7 @@ public class Q00552_OlympiadVeteran extends Quest
 			if (st.isNowAvailable())
 			{
 				st.setState(State.CREATED);
-				if ((player.getLevel() < 75) || !player.isNoble())
-				{
-					htmltext = "31688-00.htm";
-				}
+				htmltext = (player.getLevel() < 75) || !player.isNoble() ? "31688-00.htm" : "31688-01.htm";
 			}
 			else
 			{
