@@ -254,8 +254,8 @@ import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.variables.AccountVariables;
 import org.l2junity.gameserver.model.variables.PlayerVariables;
-import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.type.BossZone;
 import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -6946,6 +6946,9 @@ public final class PlayerInstance extends Playable
 					player.setPledgeType(rset.getInt("subpledge"));
 					// player.setApprentice(rset.getInt("apprentice"));
 					
+					// Set Hero status if it applies
+					player.setHero(Hero.getInstance().isHero(objectId));
+					
 					if (clanId > 0)
 					{
 						player.setClan(ClanTable.getInstance().getClan(clanId));
@@ -7073,12 +7076,6 @@ public final class PlayerInstance extends Playable
 			if (player == null)
 			{
 				return null;
-			}
-			
-			// Set Hero status if it applies
-			if (Hero.getInstance().isHero(objectId))
-			{
-				player.setHero(true);
 			}
 			
 			// Retrieve from the database all items of this L2PcInstance and add them to _inventory
