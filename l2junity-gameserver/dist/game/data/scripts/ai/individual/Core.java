@@ -19,8 +19,7 @@
 package ai.individual;
 
 import java.util.List;
-
-import javolution.util.FastList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.enums.ChatType;
@@ -36,8 +35,8 @@ import org.l2junity.gameserver.network.serverpackets.PlaySound;
 import ai.npc.AbstractNpcAI;
 
 /**
- * Core AI
- * @author DrLecter Revised By Emperorc
+ * Core AI.
+ * @author DrLecter, Emperorc
  */
 public final class Core extends AbstractNpcAI
 {
@@ -50,20 +49,20 @@ public final class Core extends AbstractNpcAI
 	// private static final int PERUM = 29012;
 	// private static final int PREMO = 29013;
 	
-	// CORE Status Tracking :
+	// Core Status Tracking :
 	private static final byte ALIVE = 0; // Core is spawned.
 	private static final byte DEAD = 1; // Core has been killed.
 	
-	private static boolean _FirstAttacked;
+	private static boolean _firstAttacked;
 	
-	private final List<Attackable> Minions = new FastList<>();
+	private final List<Attackable> _minions = new CopyOnWriteArrayList<>();
 	
 	private Core()
 	{
 		super(Core.class.getSimpleName(), "ai/individual");
 		registerMobs(CORE, DEATH_KNIGHT, DOOM_WRAITH, SUSCEPTOR);
 		
-		_FirstAttacked = false;
+		_firstAttacked = false;
 		final StatsSet info = GrandBossManager.getInstance().getStatsSet(CORE);
 		final int status = GrandBossManager.getInstance().getBossStatus(CORE);
 		if (status == DEAD)
@@ -89,7 +88,7 @@ public final class Core extends AbstractNpcAI
 			final String test = loadGlobalQuestVar("Core_Attacked");
 			if (test.equalsIgnoreCase("true"))
 			{
-				_FirstAttacked = true;
+				_firstAttacked = true;
 			}
 			final int loc_x = info.getInt("loc_x");
 			final int loc_y = info.getInt("loc_y");
@@ -106,7 +105,7 @@ public final class Core extends AbstractNpcAI
 	@Override
 	public void onSave()
 	{
-		saveGlobalQuestVar("Core_Attacked", Boolean.toString(_FirstAttacked));
+		saveGlobalQuestVar("Core_Attacked", Boolean.toString(_firstAttacked));
 	}
 	
 	public void spawnBoss(L2GrandBossInstance npc)
@@ -120,21 +119,21 @@ public final class Core extends AbstractNpcAI
 			final int x = 16800 + (i * 360);
 			mob = (Attackable) addSpawn(DEATH_KNIGHT, x, 110000, npc.getZ(), 280 + getRandom(40), false, 0);
 			mob.setIsRaidMinion(true);
-			Minions.add(mob);
+			_minions.add(mob);
 			mob = (Attackable) addSpawn(DEATH_KNIGHT, x, 109000, npc.getZ(), 280 + getRandom(40), false, 0);
 			mob.setIsRaidMinion(true);
-			Minions.add(mob);
+			_minions.add(mob);
 			final int x2 = 16800 + (i * 600);
 			mob = (Attackable) addSpawn(DOOM_WRAITH, x2, 109300, npc.getZ(), 280 + getRandom(40), false, 0);
 			mob.setIsRaidMinion(true);
-			Minions.add(mob);
+			_minions.add(mob);
 		}
 		for (int i = 0; i < 4; i++)
 		{
 			int x = 16800 + (i * 450);
 			mob = (Attackable) addSpawn(SUSCEPTOR, x, 110300, npc.getZ(), 280 + getRandom(40), false, 0);
 			mob.setIsRaidMinion(true);
-			Minions.add(mob);
+			_minions.add(mob);
 		}
 	}
 	
@@ -151,19 +150,12 @@ public final class Core extends AbstractNpcAI
 		{
 			Attackable mob = (Attackable) addSpawn(npc.getId(), npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0);
 			mob.setIsRaidMinion(true);
-			Minions.add(mob);
+			_minions.add(mob);
 		}
 		else if (event.equalsIgnoreCase("despawn_minions"))
 		{
-			for (int i = 0; i < Minions.size(); i++)
-			{
-				Attackable mob = Minions.get(i);
-				if (mob != null)
-				{
-					mob.decayMe();
-				}
-			}
-			Minions.clear();
+			_minions.forEach(Attackable::decayMe);
+			_minions.clear();
 		}
 		return super.onAdvEvent(event, npc, player);
 	}
@@ -173,7 +165,7 @@ public final class Core extends AbstractNpcAI
 	{
 		if (npc.getId() == CORE)
 		{
-			if (_FirstAttacked)
+			if (_firstAttacked)
 			{
 				if (getRandom(100) == 0)
 				{
@@ -182,7 +174,7 @@ public final class Core extends AbstractNpcAI
 			}
 			else
 			{
-				_FirstAttacked = true;
+				_firstAttacked = true;
 				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.A_NON_PERMITTED_TARGET_HAS_BEEN_DISCOVERED);
 				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.INTRUDER_REMOVAL_SYSTEM_INITIATED);
 			}
@@ -200,10 +192,10 @@ public final class Core extends AbstractNpcAI
 			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.A_FATAL_ERROR_HAS_OCCURRED);
 			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.SYSTEM_IS_BEING_SHUT_DOWN);
 			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.EMPTY);
-			_FirstAttacked = false;
+			_firstAttacked = false;
 			GrandBossManager.getInstance().setBossStatus(CORE, DEAD);
 			// Calculate Min and Max respawn times randomly.
-			long respawnTime = Config.CORE_SPAWN_INTERVAL + getRandom(-Config.CORE_SPAWN_RANDOM, Config.CORE_SPAWN_RANDOM);
+			long respawnTime = (Config.CORE_SPAWN_INTERVAL + getRandom(-Config.CORE_SPAWN_RANDOM, Config.CORE_SPAWN_RANDOM)) * 3600000;
 			respawnTime *= 3600000;
 			
 			startQuestTimer("core_unlock", respawnTime, null, null);
@@ -214,12 +206,22 @@ public final class Core extends AbstractNpcAI
 			startQuestTimer("despawn_minions", 20000, null, null);
 			cancelQuestTimers("spawn_minion");
 		}
-		else if ((GrandBossManager.getInstance().getBossStatus(CORE) == ALIVE) && (Minions != null) && Minions.contains(npc))
+		else if ((GrandBossManager.getInstance().getBossStatus(CORE) == ALIVE) && (_minions != null) && _minions.contains(npc))
 		{
-			Minions.remove(npc);
+			_minions.remove(npc);
 			startQuestTimer("spawn_minion", 60000, npc, null);
 		}
 		return super.onKill(npc, killer, isSummon);
+	}
+	
+	@Override
+	public String onSpawn(Npc npc)
+	{
+		if (npc.getId() == CORE)
+		{
+			npc.setIsImmobilized(true);
+		}
+		return super.onSpawn(npc);
 	}
 	
 	public static void main(String[] args)
