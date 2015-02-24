@@ -18,11 +18,13 @@
  */
 package handlers.effecthandlers;
 
+import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 
 /**
  * Call Skill effect implementation.
@@ -31,12 +33,14 @@ import org.l2junity.gameserver.model.skills.BuffInfo;
 public final class CallSkill extends AbstractEffect
 {
 	private final SkillHolder _skill;
+	private final int _skillLevelScaleTo;
 	
 	public CallSkill(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
 		_skill = new SkillHolder(params.getInt("skillId"), params.getInt("skillLevel", 1));
+		_skillLevelScaleTo = params.getInt("skillLevelScaleTo", 0);
 	}
 	
 	@Override
@@ -48,6 +52,32 @@ public final class CallSkill extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		info.getEffector().makeTriggerCast(_skill.getSkill(), info.getEffected(), true);
+		final Skill skill;
+		if (_skillLevelScaleTo <= 0)
+		{
+			skill = _skill.getSkill();
+		}
+		else
+		{
+			final BuffInfo buffInfo = info.getEffected().getEffectList().getBuffInfoBySkillId(_skill.getSkillId());
+			if (buffInfo != null)
+			{
+				skill = SkillData.getInstance().getSkill(_skill.getSkillId(), Math.min(_skillLevelScaleTo, buffInfo.getSkill().getLevel() + 1));
+			}
+			else
+			{
+				skill = _skill.getSkill();
+			}
+			
+		}
+		
+		if (skill != null)
+		{
+			info.getEffector().makeTriggerCast(skill, info.getEffected(), true);
+		}
+		else
+		{
+			_log.warning(getClass().getSimpleName() + ": Skill not found effect called from " + info.getSkill());
+		}
 	}
 }

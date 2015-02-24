@@ -117,6 +117,9 @@ public final class Heal extends AbstractEffect
 			}
 		}
 		
+		// Adding healer's heal power
+		amount = activeChar.calcStat(Stats.HEAL_POWER, amount, null, null);
+		
 		// Prevents overheal and negative amount
 		amount = Math.max(Math.min(amount, target.getMaxRecoverableHp() - target.getCurrentHp()), 0);
 		if (amount != 0)
