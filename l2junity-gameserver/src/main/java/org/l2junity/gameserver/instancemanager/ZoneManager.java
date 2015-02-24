@@ -74,9 +74,9 @@ public final class ZoneManager implements IXmlReader
 	 */
 	protected ZoneManager()
 	{
-		for (int x = 0; x <= _zoneRegions.length; x++)
+		for (int x = 0; x < _zoneRegions.length; x++)
 		{
-			for (int y = 0; y <= _zoneRegions[x].length; y++)
+			for (int y = 0; y < _zoneRegions[x].length; y++)
 			{
 				_zoneRegions[x][y] = new ZoneRegion(x, y);
 			}
