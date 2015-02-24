@@ -166,18 +166,16 @@ public final class CrestTable
 	 */
 	public Crest createCrest(byte[] data, CrestType crestType)
 	{
-		try (Connection con = DatabaseFactory.getInstance().getConnection())
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement("INSERT INTO `crests`(`crest_id`, `data`, `type`) VALUES(?, ?, ?)"))
 		{
-			try (PreparedStatement statement = con.prepareStatement("INSERT INTO `crests`(`crest_id`, `data`, `type`) VALUES(?, ?, ?)"))
-			{
-				final Crest crest = new Crest(getNextId(), data, crestType);
-				statement.setInt(1, crest.getId());
-				statement.setBytes(2, crest.getData());
-				statement.setInt(3, crest.getType().getId());
-				statement.executeUpdate();
-				_crests.put(crest.getId(), crest);
-				return crest;
-			}
+			final Crest crest = new Crest(getNextId(), data, crestType);
+			statement.setInt(1, crest.getId());
+			statement.setBytes(2, crest.getData());
+			statement.setInt(3, crest.getType().getId());
+			statement.executeUpdate();
+			_crests.put(crest.getId(), crest);
+			return crest;
 		}
 		catch (SQLException e)
 		{

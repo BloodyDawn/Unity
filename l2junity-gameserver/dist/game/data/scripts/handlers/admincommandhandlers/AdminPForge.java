@@ -90,7 +90,7 @@ public final class AdminPForge implements IAdminCommandHandler
 			long opCodeLong;
 			try
 			{
-				opCodeLong = Long.parseLong(opCode);
+				opCodeLong = Long.decode(opCode);
 			}
 			catch (Exception e)
 			{

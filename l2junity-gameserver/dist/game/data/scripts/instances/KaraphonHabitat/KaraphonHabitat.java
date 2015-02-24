@@ -42,7 +42,7 @@ public class KaraphonHabitat extends AbstractInstance
 	// Instance
 	private static final int TEMPLATE_ID = 253;
 	
-	private KaraphonHabitat()
+	public KaraphonHabitat()
 	{
 		super(KaraphonHabitat.class.getSimpleName(), "instances");
 		addStartNpc(DOLKIN);
@@ -84,10 +84,5 @@ public class KaraphonHabitat extends AbstractInstance
 			world.addAllowed(player.getObjectId());
 		}
 		teleportPlayer(player, START_LOC, world.getInstanceId());
-	}
-	
-	public static void main(String[] args)
-	{
-		new KaraphonHabitat();
 	}
 }
