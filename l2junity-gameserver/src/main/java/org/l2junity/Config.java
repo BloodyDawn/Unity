@@ -644,7 +644,6 @@ public final class Config
 	public static boolean ENABLE_BLOCK_CHECKER_EVENT;
 	public static int MIN_BLOCK_CHECKER_TEAM_MEMBERS;
 	public static boolean HBCE_FAIR_PLAY;
-	public static boolean HELLBOUND_WITHOUT_QUEST;
 	public static int PLAYER_MOVEMENT_BLOCK_TIME;
 	public static int ABILITY_MAX_POINTS;
 	public static long ABILITY_POINTS_RESET_ADENA;
@@ -736,7 +735,6 @@ public final class Config
 	public static boolean L2JMOD_WEDDING_SAMESEX;
 	public static boolean L2JMOD_WEDDING_FORMALWEAR;
 	public static int L2JMOD_WEDDING_DIVORCE_COSTS;
-	public static boolean L2JMOD_HELLBOUND_STATUS;
 	public static boolean BANKING_SYSTEM_ENABLED;
 	public static int BANKING_SYSTEM_GOLDBARS;
 	public static int BANKING_SYSTEM_ADENA;
@@ -1921,7 +1919,6 @@ public final class Config
 				MIN_BLOCK_CHECKER_TEAM_MEMBERS = 6;
 			}
 			HBCE_FAIR_PLAY = General.getBoolean("HBCEFairPlay", false);
-			HELLBOUND_WITHOUT_QUEST = General.getBoolean("HellboundWithoutQuest", false);
 			
 			NORMAL_ENCHANT_COST_MULTIPLIER = General.getInt("NormalEnchantCostMultipiler", 1);
 			SAFE_ENCHANT_COST_MULTIPLIER = General.getInt("SafeEnchantCostMultipiler", 5);
@@ -2411,7 +2408,6 @@ public final class Config
 				_log.warning("MultiLang[Config.load()]: default language: " + L2JMOD_MULTILANG_DEFAULT + " is not in allowed list !");
 			}
 			
-			L2JMOD_HELLBOUND_STATUS = L2JModSettings.getBoolean("HellboundStatus", false);
 			L2JMOD_MULTILANG_VOICED_ALLOW = L2JModSettings.getBoolean("MultiLangVoiceCommand", true);
 			L2JMOD_MULTILANG_SM_ENABLE = L2JModSettings.getBoolean("MultiLangSystemMessageEnable", false);
 			allowed = L2JModSettings.getString("MultiLangSystemMessageAllowed", "").split(";");

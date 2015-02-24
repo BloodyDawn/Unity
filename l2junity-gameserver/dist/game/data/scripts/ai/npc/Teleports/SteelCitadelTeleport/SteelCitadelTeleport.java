@@ -20,13 +20,11 @@ package ai.npc.Teleports.SteelCitadelTeleport;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.instancemanager.GrandBossManager;
-import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.CommandChannel;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.zone.type.BossZone;
 
 import ai.npc.AbstractNpcAI;
 
@@ -69,8 +67,8 @@ public final class SteelCitadelTeleport extends AbstractNpcAI
 			return "32376-02a.htm";
 		}
 		
-		final BossZone zone = (BossZone) ZoneManager.getInstance().getZoneById(12018);
-		if (zone != null)
+		// final BossZone zone = (BossZone) ZoneManager.getInstance().getZoneById(12018);
+		// if (zone != null)
 		{
 			GrandBossManager.getInstance().setBossStatus(BELETH, 1);
 			
@@ -85,7 +83,7 @@ public final class SteelCitadelTeleport extends AbstractNpcAI
 				{
 					if (pl.isInsideRadius(npc.getX(), npc.getY(), npc.getZ(), 3000, true, false))
 					{
-						zone.allowPlayerEntry(pl, 30);
+						// zone.allowPlayerEntry(pl, 30);
 						pl.teleToLocation(TELEPORT_CITADEL, true);
 					}
 				}
