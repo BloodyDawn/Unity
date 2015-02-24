@@ -22,6 +22,7 @@ import java.util.List;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
+import org.l2junity.gameserver.model.holders.ItemHolder;
 
 /**
  * @author DS
@@ -46,7 +47,7 @@ public class OlympiadGameClassed extends OlympiadGameNormal
 	}
 	
 	@Override
-	protected final int[][] getReward()
+	protected final List<ItemHolder> getReward()
 	{
 		return Config.ALT_OLY_CLASSED_REWARD;
 	}

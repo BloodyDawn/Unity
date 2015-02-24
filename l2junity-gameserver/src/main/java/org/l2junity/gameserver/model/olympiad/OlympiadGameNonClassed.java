@@ -21,13 +21,14 @@ package org.l2junity.gameserver.model.olympiad;
 import java.util.List;
 
 import org.l2junity.Config;
+import org.l2junity.gameserver.model.holders.ItemHolder;
 
 /**
  * @author DS
  */
 public class OlympiadGameNonClassed extends OlympiadGameNormal
 {
-	private OlympiadGameNonClassed(int id, Participant[] opponents)
+	public OlympiadGameNonClassed(int id, Participant[] opponents)
 	{
 		super(id, opponents);
 	}
@@ -45,7 +46,7 @@ public class OlympiadGameNonClassed extends OlympiadGameNormal
 	}
 	
 	@Override
-	protected final int[][] getReward()
+	protected final List<ItemHolder> getReward()
 	{
 		return Config.ALT_OLY_NONCLASSED_REWARD;
 	}

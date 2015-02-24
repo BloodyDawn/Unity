@@ -1,0 +1,208 @@
+/*
+ * Copyright (C) 2004-2015 L2J Server
+ * 
+ * This file is part of L2J Server.
+ * 
+ * L2J Server is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * L2J Server is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+package org.l2junity.gameserver.model.olympiad;
+
+import java.util.List;
+import java.util.Objects;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.stream.Collectors;
+
+import org.l2junity.commons.util.Rnd;
+import org.l2junity.gameserver.instancemanager.InstanceManager;
+import org.l2junity.gameserver.model.L2Spawn;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.entity.Instance;
+import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.model.zone.type.OlympiadStadiumZone;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.ExOlympiadMatchEnd;
+import org.l2junity.gameserver.network.serverpackets.ExOlympiadUserInfo;
+import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+
+/**
+ * @author JIV
+ */
+public class OlympiadStadium
+{
+	private static final Logger LOGGER = Logger.getLogger(OlympiadStadium.class.getName());
+	private final OlympiadStadiumZone _zone;
+	private final Instance _instance;
+	private final List<L2Spawn> _buffers;
+	private OlympiadGameTask _task = null;
+	
+	protected OlympiadStadium(OlympiadStadiumZone olyzone, int stadium)
+	{
+		final int id = InstanceManager.getInstance().createDynamicInstance(olyzone.getInstanceTemplate());
+		_zone = olyzone;
+		_instance = InstanceManager.getInstance().getInstance(id);
+		_instance.setName("Olympiad " + stadium + " - Arena " + (stadium % 4));
+		_buffers = _instance.getNpcs().stream().map(Npc::getSpawn).collect(Collectors.toList());
+		_buffers.stream().map(L2Spawn::getLastSpawn).forEach(Npc::decayMe);
+	}
+	
+	public OlympiadStadiumZone getZone()
+	{
+		return _zone;
+	}
+	
+	public final void registerTask(OlympiadGameTask task)
+	{
+		_task = task;
+	}
+	
+	public OlympiadGameTask getTask()
+	{
+		return _task;
+	}
+	
+	public int getInstanceId()
+	{
+		return _instance.getId();
+	}
+	
+	public final void openDoors()
+	{
+		_instance.getDoors().forEach(L2DoorInstance::openMe);
+	}
+	
+	public final void closeDoors()
+	{
+		_instance.getDoors().forEach(L2DoorInstance::closeMe);
+	}
+	
+	public final void spawnBuffers()
+	{
+		_buffers.forEach(L2Spawn::doSpawn);
+	}
+	
+	public final void deleteBuffers()
+	{
+		_buffers.stream().map(L2Spawn::getLastSpawn).filter(Objects::nonNull).forEach(Npc::deleteMe);
+	}
+	
+	public final void broadcastStatusUpdate(PlayerInstance player)
+	{
+		final ExOlympiadUserInfo packet = new ExOlympiadUserInfo(player);
+		_instance.getPlayers().stream().filter(Objects::nonNull).forEach(id ->
+		{
+			final PlayerInstance target = World.getInstance().getPlayer(id);
+			if ((target != null) && (target.inObserverMode() || (target.getOlympiadSide() != player.getOlympiadSide())))
+			{
+				target.sendPacket(packet);
+			}
+		});
+	}
+	
+	public final void broadcastPacket(L2GameServerPacket packet)
+	{
+		_instance.getPlayers().stream().filter(Objects::nonNull).forEach(id ->
+		{
+			final PlayerInstance target = World.getInstance().getPlayer(id);
+			if (target != null)
+			{
+				target.sendPacket(packet);
+			}
+		});
+	}
+	
+	public final void broadcastPacketToObservers(L2GameServerPacket packet)
+	{
+		_instance.getPlayers().stream().filter(Objects::nonNull).forEach(id ->
+		{
+			final PlayerInstance target = World.getInstance().getPlayer(id);
+			if ((target != null) && (target.inObserverMode()))
+			{
+				target.sendPacket(packet);
+			}
+		});
+	}
+	
+	public final void updateZoneStatusForCharactersInside()
+	{
+		if (_task == null)
+		{
+			return;
+		}
+		
+		final boolean battleStarted = _task.isBattleStarted();
+		final SystemMessage sm;
+		if (battleStarted)
+		{
+			sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_ENTERED_A_COMBAT_ZONE);
+		}
+		else
+		{
+			sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_LEFT_A_COMBAT_ZONE);
+		}
+		
+		_instance.getPlayers().stream().filter(Objects::nonNull).forEach(id ->
+		{
+			final PlayerInstance player = World.getInstance().getPlayer(id);
+			if ((player == null) || player.inObserverMode())
+			{
+				return;
+			}
+			
+			if (battleStarted)
+			{
+				player.setInsideZone(ZoneId.PVP, true);
+				player.sendPacket(sm);
+			}
+			else
+			{
+				player.setInsideZone(ZoneId.PVP, false);
+				player.sendPacket(sm);
+				player.sendPacket(ExOlympiadMatchEnd.STATIC_PACKET);
+			}
+		});
+	}
+	
+	public final void updateZoneInfoForObservers()
+	{
+		if (_task == null)
+		{
+			return;
+		}
+		
+		_instance.getPlayers().stream().filter(Objects::nonNull).forEach(id ->
+		{
+			final PlayerInstance player = World.getInstance().getPlayer(id);
+			if ((player == null) || !player.inObserverMode())
+			{
+				return;
+			}
+			
+			final OlympiadGameTask nextArena = OlympiadGameManager.getInstance().getOlympiadTask(player.getOlympiadGameId());
+			final List<Location> spectatorSpawns = nextArena.getStadium().getZone().getSpectatorSpawns();
+			if (spectatorSpawns.isEmpty())
+			{
+				LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Zone: " + nextArena.getStadium().getZone() + " doesn't have specatator spawns defined!");
+				return;
+			}
+			final Location loc = spectatorSpawns.get(Rnd.get(spectatorSpawns.size()));
+			player.enterOlympiadObserverMode(loc, player.getOlympiadGameId());
+		});
+	}
+}

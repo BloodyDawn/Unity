@@ -120,16 +120,6 @@ public class Q00552_OlympiadVeteran extends Quest
 						}
 						break;
 					}
-					case TEAMS:
-					{
-						matches = st.getInt("teams") + 1;
-						st.set("teams", String.valueOf(matches));
-						if ((matches == 5) && !st.hasQuestItems(TEAM_EVENT_CERTIFICATE))
-						{
-							st.giveItems(TEAM_EVENT_CERTIFICATE, 1);
-						}
-						break;
-					}
 				}
 			}
 		}
@@ -164,16 +154,6 @@ public class Q00552_OlympiadVeteran extends Quest
 						if (matches == 5)
 						{
 							st.giveItems(CLASS_FREE_BATTLE_CERTIFICATE, 1);
-						}
-						break;
-					}
-					case TEAMS:
-					{
-						matches = st.getInt("teams") + 1;
-						st.set("teams", String.valueOf(matches));
-						if (matches == 5)
-						{
-							st.giveItems(TEAM_EVENT_CERTIFICATE, 1);
 						}
 						break;
 					}

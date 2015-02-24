@@ -31,6 +31,8 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.logging.Logger;
 
+import javolution.util.FastMap;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
@@ -49,8 +51,6 @@ import org.l2junity.gameserver.network.serverpackets.ExAbnormalStatusUpdateFromT
 import org.l2junity.gameserver.network.serverpackets.ExOlympiadSpelledInfo;
 import org.l2junity.gameserver.network.serverpackets.PartySpelled;
 import org.l2junity.gameserver.network.serverpackets.ShortBuffStatusUpdate;
-
-import javolution.util.FastMap;
 
 /**
  * Effect lists.<br>
@@ -1514,7 +1514,7 @@ public final class CharEffectList
 			final OlympiadGameTask game = OlympiadGameManager.getInstance().getOlympiadTask(_owner.getActingPlayer().getOlympiadGameId());
 			if ((game != null) && game.isBattleStarted())
 			{
-				game.getZone().broadcastPacketToObservers(os);
+				game.getStadium().broadcastPacketToObservers(os);
 			}
 		}
 	}

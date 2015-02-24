@@ -563,11 +563,10 @@ public final class Config
 	public static int ALT_OLY_WEEKLY_POINTS;
 	public static int ALT_OLY_CLASSED;
 	public static int ALT_OLY_NONCLASSED;
-	public static int ALT_OLY_TEAMS;
 	public static int ALT_OLY_REG_DISPLAY;
-	public static int[][] ALT_OLY_CLASSED_REWARD;
-	public static int[][] ALT_OLY_NONCLASSED_REWARD;
-	public static int[][] ALT_OLY_TEAM_REWARD;
+	public static List<ItemHolder> ALT_OLY_CLASSED_REWARD;
+	public static List<ItemHolder> ALT_OLY_NONCLASSED_REWARD;
+	public static List<ItemHolder> ALT_OLY_TEAM_REWARD;
 	public static int ALT_OLY_COMP_RITEM;
 	public static int ALT_OLY_MIN_MATCHES;
 	public static int ALT_OLY_GP_PER_POINT;
@@ -2511,7 +2510,6 @@ public final class Config
 			ALT_OLY_WEEKLY_POINTS = Olympiad.getInt("AltOlyWeeklyPoints", 10);
 			ALT_OLY_CLASSED = Olympiad.getInt("AltOlyClassedParticipants", 11);
 			ALT_OLY_NONCLASSED = Olympiad.getInt("AltOlyNonClassedParticipants", 11);
-			ALT_OLY_TEAMS = Olympiad.getInt("AltOlyTeamsParticipants", 6);
 			ALT_OLY_REG_DISPLAY = Olympiad.getInt("AltOlyRegistrationDisplayNumber", 100);
 			ALT_OLY_CLASSED_REWARD = parseItemsList(Olympiad.getString("AltOlyClassedReward", "13722,50"));
 			ALT_OLY_NONCLASSED_REWARD = parseItemsList(Olympiad.getString("AltOlyNonClassedReward", "13722,40"));
@@ -2542,7 +2540,7 @@ public final class Config
 				LIST_OLY_RESTRICTED_ITEMS.add(Integer.parseInt(id));
 			}
 			ALT_OLY_ENCHANT_LIMIT = Olympiad.getInt("AltOlyEnchantLimit", -1);
-			ALT_OLY_WAIT_TIME = Olympiad.getInt("AltOlyWaitTime", 120);
+			ALT_OLY_WAIT_TIME = Olympiad.getInt("AltOlyWaitTime", 60);
 			
 			final File hexIdFile = new File(HEXID_FILE);
 			if (hexIdFile.exists())
@@ -3774,7 +3772,7 @@ public final class Config
 	 * @param line the value of the parameter to parse
 	 * @return the parsed list or {@code null} if nothing was parsed
 	 */
-	private static int[][] parseItemsList(String line)
+	private static List<ItemHolder> parseItemsList(String line)
 	{
 		final String[] propertySplit = line.split(";");
 		if (propertySplit.length == 0)
@@ -3783,10 +3781,8 @@ public final class Config
 			return null;
 		}
 		
-		int i = 0;
 		String[] valueSplit;
-		final int[][] result = new int[propertySplit.length][];
-		int[] tmp;
+		final List<ItemHolder> result = new ArrayList<>(propertySplit.length);
 		for (String value : propertySplit)
 		{
 			valueSplit = value.split(",");
@@ -3796,26 +3792,30 @@ public final class Config
 				continue;
 			}
 			
-			tmp = new int[2];
+			int itemId = -1;
 			try
 			{
-				tmp[0] = Integer.parseInt(valueSplit[0]);
+				itemId = Integer.parseInt(valueSplit[0]);
 			}
 			catch (NumberFormatException e)
 			{
 				_log.warning("parseItemsList[Config.load()]: invalid itemId -> \"" + valueSplit[0] + "\", value must be an integer. Skipping to the next entry in the list.");
 				continue;
 			}
+			int count = -1;
 			try
 			{
-				tmp[1] = Integer.parseInt(valueSplit[1]);
+				count = Integer.parseInt(valueSplit[1]);
 			}
 			catch (NumberFormatException e)
 			{
 				_log.warning("parseItemsList[Config.load()]: invalid item number -> \"" + valueSplit[1] + "\", value must be an integer. Skipping to the next entry in the list.");
 				continue;
 			}
-			result[i++] = tmp;
+			if ((itemId > 0) && (count > 0))
+			{
+				result.add(new ItemHolder(itemId, count));
+			}
 		}
 		return result;
 	}

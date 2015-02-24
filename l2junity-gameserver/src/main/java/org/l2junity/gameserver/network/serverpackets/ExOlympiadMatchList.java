@@ -26,7 +26,6 @@ import org.l2junity.gameserver.model.olympiad.OlympiadGameClassed;
 import org.l2junity.gameserver.model.olympiad.OlympiadGameManager;
 import org.l2junity.gameserver.model.olympiad.OlympiadGameNonClassed;
 import org.l2junity.gameserver.model.olympiad.OlympiadGameTask;
-import org.l2junity.gameserver.model.olympiad.OlympiadGameTeams;
 
 /**
  * @author mrTJO
@@ -76,10 +75,6 @@ public class ExOlympiadMatchList extends L2GameServerPacket
 				else if (game instanceof OlympiadGameClassed)
 				{
 					writeD(2);
-				}
-				else if (game instanceof OlympiadGameTeams)
-				{
-					writeD(-1);
 				}
 				else
 				{

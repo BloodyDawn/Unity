@@ -64,9 +64,6 @@ public final class OlympiadAnnouncer implements Runnable
 					case CLASSED:
 						npcString = NpcStringId.OLYMPIAD_CLASS_INDIVIDUAL_MATCH_IS_GOING_TO_BEGIN_IN_ARENA_S1_IN_A_MOMENT;
 						break;
-					case TEAMS:
-						npcString = NpcStringId.OLYMPIAD_ALL_CLASS_BATTLE_IS_GOING_TO_BEGIN_IN_ARENA_S1_IN_A_MOMENT;
-						break;
 					default:
 						continue;
 				}

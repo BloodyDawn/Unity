@@ -36,6 +36,9 @@ import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
+import javolution.util.FastList;
+import javolution.util.FastMap;
+
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -48,9 +51,6 @@ import org.l2junity.gameserver.model.events.ListenersContainer;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.util.Broadcast;
-
-import javolution.util.FastList;
-import javolution.util.FastMap;
 
 /**
  * @author godson
@@ -125,7 +125,7 @@ public class Olympiad extends ListenersContainer
 	protected static final long WEEKLY_PERIOD = Config.ALT_OLY_WPERIOD; // 1 week
 	protected static final long VALIDATION_PERIOD = Config.ALT_OLY_VPERIOD; // 24 hours
 	
-	protected static final int DEFAULT_POINTS = Config.ALT_OLY_START_POINTS;
+	public static final int DEFAULT_POINTS = Config.ALT_OLY_START_POINTS;
 	protected static final int WEEKLY_POINTS = Config.ALT_OLY_WEEKLY_POINTS;
 	
 	public static final String CHAR_ID = "charId";
@@ -447,7 +447,7 @@ public class Olympiad extends ListenersContainer
 		return _nobles.size();
 	}
 	
-	protected static StatsSet getNobleStats(int playerId)
+	public static StatsSet getNobleStats(int playerId)
 	{
 		return _nobles.get(playerId);
 	}
@@ -1251,7 +1251,7 @@ public class Olympiad extends ListenersContainer
 	 * @param data the stats set data to add.
 	 * @return the old stats set if the noble is already present, null otherwise.
 	 */
-	protected static StatsSet addNobleStats(int charId, StatsSet data)
+	public static StatsSet addNobleStats(int charId, StatsSet data)
 	{
 		return _nobles.put(Integer.valueOf(charId), data);
 	}

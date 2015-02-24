@@ -34,9 +34,9 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.TvTEvent;
+import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.zone.type.OlympiadStadiumZone;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExOlympiadMode;
 import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
@@ -64,11 +64,11 @@ public abstract class AbstractOlympiadGame
 	
 	protected long _startTime = 0;
 	protected boolean _aborted = false;
-	protected final int _stadiumID;
+	protected final int _stadiumId;
 	
 	protected AbstractOlympiadGame(int id)
 	{
-		_stadiumID = id;
+		_stadiumId = id;
 	}
 	
 	public final boolean isAborted()
@@ -78,7 +78,7 @@ public abstract class AbstractOlympiadGame
 	
 	public final int getStadiumId()
 	{
-		return _stadiumID;
+		return _stadiumId;
 	}
 	
 	protected boolean makeCompetitionStart()
@@ -162,7 +162,7 @@ public abstract class AbstractOlympiadGame
 		return null;
 	}
 	
-	protected static final boolean portPlayerToArena(Participant par, Location loc, int id)
+	protected static final boolean portPlayerToArena(Participant par, Location loc, int id, int instanceId)
 	{
 		final PlayerInstance player = par.getPlayer();
 		if ((player == null) || !player.isOnline())
@@ -184,7 +184,7 @@ public abstract class AbstractOlympiadGame
 			player.setIsOlympiadStart(false);
 			player.setOlympiadSide(par.getSide());
 			player.setOlympiadBuffCount(Config.ALT_OLY_MAX_BUFFS);
-			loc.setInstanceId(OlympiadGameManager.getInstance().getOlympiadTask(id).getZone().getInstanceId());
+			player.setInstanceId(instanceId);
 			player.teleToLocation(loc, false);
 			player.sendPacket(new ExOlympiadMode(2));
 		}
@@ -395,7 +395,7 @@ public abstract class AbstractOlympiadGame
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "portPlayersToArena()", e);
+			_log.log(Level.WARNING, "playerStatusBack()", e);
 		}
 	}
 	
@@ -416,37 +416,30 @@ public abstract class AbstractOlympiadGame
 		player.unsetLastLocation();
 	}
 	
-	public static final void rewardParticipant(PlayerInstance player, int[][] reward)
+	public static final void rewardParticipant(PlayerInstance player, List<ItemHolder> list)
 	{
-		if ((player == null) || !player.isOnline() || (reward == null))
+		if ((player == null) || !player.isOnline() || (list == null))
 		{
 			return;
 		}
 		
 		try
 		{
-			SystemMessage sm;
-			ItemInstance item;
 			final InventoryUpdate iu = new InventoryUpdate();
-			for (int[] it : reward)
+			list.forEach(holder ->
 			{
-				if ((it == null) || (it.length != 2))
-				{
-					continue;
-				}
-				
-				item = player.getInventory().addItem("Olympiad", it[0], it[1], player, null);
+				final ItemInstance item = player.getInventory().addItem("Olympiad", holder.getId(), holder.getCount(), player, null);
 				if (item == null)
 				{
-					continue;
+					return;
 				}
 				
 				iu.addModifiedItem(item);
-				sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_EARNED_S2_S1_S);
-				sm.addItemName(it[0]);
-				sm.addInt(it[1]);
+				final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_EARNED_S2_S1_S);
+				sm.addItemName(item);
+				sm.addLong(holder.getCount());
 				player.sendPacket(sm);
-			}
+			});
 			player.sendPacket(iu);
 		}
 		catch (Exception e)
@@ -463,7 +456,7 @@ public abstract class AbstractOlympiadGame
 	
 	public abstract void sendOlympiadInfo(Creature player);
 	
-	public abstract void broadcastOlympiadInfo(OlympiadStadiumZone stadium);
+	public abstract void broadcastOlympiadInfo(OlympiadStadium _stadium);
 	
 	protected abstract void broadcastPacket(L2GameServerPacket packet);
 	
@@ -473,7 +466,7 @@ public abstract class AbstractOlympiadGame
 	
 	protected abstract void removals();
 	
-	protected abstract boolean portPlayersToArena(List<Location> spawns);
+	protected abstract boolean portPlayersToArena(List<Location> spawns, int instanceId);
 	
 	protected abstract void cleanEffects();
 	
@@ -493,11 +486,15 @@ public abstract class AbstractOlympiadGame
 	
 	protected abstract boolean haveWinner();
 	
-	protected abstract void validateWinner(OlympiadStadiumZone stadium);
+	protected abstract void validateWinner(OlympiadStadium stadium);
 	
 	protected abstract int getDivider();
 	
-	protected abstract int[][] getReward();
+	protected abstract List<ItemHolder> getReward();
 	
 	protected abstract String getWeeklyMatchType();
+	
+	protected abstract void healPlayers();
+	
+	protected abstract void untransformPlayers();
 }

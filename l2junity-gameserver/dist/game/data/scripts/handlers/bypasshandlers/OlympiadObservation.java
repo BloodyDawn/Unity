@@ -18,9 +18,12 @@
  */
 package handlers.bypasshandlers;
 
+import java.util.List;
 import java.util.logging.Level;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.handler.IBypassHandler;
+import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2OlympiadManagerInstance;
@@ -94,8 +97,14 @@ public class OlympiadObservation implements IBypassHandler
 				final OlympiadGameTask nextArena = OlympiadGameManager.getInstance().getOlympiadTask(arenaId);
 				if (nextArena != null)
 				{
-					activeChar.enterOlympiadObserverMode(nextArena.getZone().getSpectatorSpawns().get(0), arenaId);
-					activeChar.setInstanceId(OlympiadGameManager.getInstance().getOlympiadTask(arenaId).getZone().getInstanceId());
+					final List<Location> spectatorSpawns = nextArena.getStadium().getZone().getSpectatorSpawns();
+					if (spectatorSpawns.isEmpty())
+					{
+						_log.log(Level.WARNING, getClass().getSimpleName() + ": Zone: " + nextArena.getStadium().getZone() + " doesn't have specatator spawns defined!");
+						return false;
+					}
+					final Location loc = spectatorSpawns.get(Rnd.get(spectatorSpawns.size()));
+					activeChar.enterOlympiadObserverMode(loc, arenaId);
 				}
 			}
 			return true;

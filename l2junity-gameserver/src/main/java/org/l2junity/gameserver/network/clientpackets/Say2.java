@@ -34,6 +34,7 @@ import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerChat;
 import org.l2junity.gameserver.model.events.returns.ChatFilterReturn;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.model.olympiad.OlympiadManager;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.util.Util;
@@ -163,6 +164,12 @@ public final class Say2 extends L2GameClientPacket
 					activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED_IF_YOU_TRY_TO_CHAT_BEFORE_THE_PROHIBITION_IS_REMOVED_THE_PROHIBITION_TIME_WILL_INCREASE_EVEN_FURTHER);
 				}
 			}
+			return;
+		}
+		
+		if (activeChar.isInOlympiadMode() || OlympiadManager.getInstance().isRegistered(activeChar))
+		{
+			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_CHAT_WHILE_PARTICIPATING_IN_THE_OLYMPIAD);
 			return;
 		}
 		

@@ -35,7 +35,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.olympiad.OnOlympiadMatchResult;
-import org.l2junity.gameserver.model.zone.type.OlympiadStadiumZone;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExOlympiadMatchResult;
 import org.l2junity.gameserver.network.serverpackets.ExOlympiadUserInfo;
@@ -114,7 +113,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 	}
 	
 	@Override
-	public final void broadcastOlympiadInfo(OlympiadStadiumZone stadium)
+	public final void broadcastOlympiadInfo(OlympiadStadium stadium)
 	{
 		stadium.broadcastPacket(new ExOlympiadUserInfo(_playerOne));
 		stadium.broadcastPacket(new ExOlympiadUserInfo(_playerTwo));
@@ -135,13 +134,13 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 	}
 	
 	@Override
-	protected final boolean portPlayersToArena(List<Location> spawns)
+	protected final boolean portPlayersToArena(List<Location> spawns, int instanceId)
 	{
 		boolean result = true;
 		try
 		{
-			result &= portPlayerToArena(_playerOne, spawns.get(0), _stadiumID);
-			result &= portPlayerToArena(_playerTwo, spawns.get(spawns.size() / 2), _stadiumID);
+			result &= portPlayerToArena(_playerOne, spawns.get(0), _stadiumId, instanceId);
+			result &= portPlayerToArena(_playerTwo, spawns.get(spawns.size() / 2), _stadiumId, instanceId);
 		}
 		catch (Exception e)
 		{
@@ -192,12 +191,12 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 	@Override
 	protected final void cleanEffects()
 	{
-		if ((_playerOne.getPlayer() != null) && !_playerOne.isDefaulted() && !_playerOne.isDisconnected() && (_playerOne.getPlayer().getOlympiadGameId() == _stadiumID))
+		if ((_playerOne.getPlayer() != null) && !_playerOne.isDefaulted() && !_playerOne.isDisconnected() && (_playerOne.getPlayer().getOlympiadGameId() == _stadiumId))
 		{
 			cleanEffects(_playerOne.getPlayer());
 		}
 		
-		if ((_playerTwo.getPlayer() != null) && !_playerTwo.isDefaulted() && !_playerTwo.isDisconnected() && (_playerTwo.getPlayer().getOlympiadGameId() == _stadiumID))
+		if ((_playerTwo.getPlayer() != null) && !_playerTwo.isDefaulted() && !_playerTwo.isDisconnected() && (_playerTwo.getPlayer().getOlympiadGameId() == _stadiumId))
 		{
 			cleanEffects(_playerTwo.getPlayer());
 		}
@@ -219,12 +218,12 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 	@Override
 	protected final void playersStatusBack()
 	{
-		if ((_playerOne.getPlayer() != null) && !_playerOne.isDefaulted() && !_playerOne.isDisconnected() && (_playerOne.getPlayer().getOlympiadGameId() == _stadiumID))
+		if ((_playerOne.getPlayer() != null) && !_playerOne.isDefaulted() && !_playerOne.isDisconnected() && (_playerOne.getPlayer().getOlympiadGameId() == _stadiumId))
 		{
 			playerStatusBack(_playerOne.getPlayer());
 		}
 		
-		if ((_playerTwo.getPlayer() != null) && !_playerTwo.isDefaulted() && !_playerTwo.isDisconnected() && (_playerTwo.getPlayer().getOlympiadGameId() == _stadiumID))
+		if ((_playerTwo.getPlayer() != null) && !_playerTwo.isDefaulted() && !_playerTwo.isDisconnected() && (_playerTwo.getPlayer().getOlympiadGameId() == _stadiumId))
 		{
 			playerStatusBack(_playerTwo.getPlayer());
 		}
@@ -284,7 +283,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 		boolean playerOneLost = true;
 		try
 		{
-			if (_playerOne.getPlayer().getOlympiadGameId() == _stadiumID)
+			if (_playerOne.getPlayer().getOlympiadGameId() == _stadiumId)
 			{
 				playerOneLost = _playerOne.getPlayer().isDead();
 			}
@@ -297,7 +296,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 		boolean playerTwoLost = true;
 		try
 		{
-			if (_playerTwo.getPlayer().getOlympiadGameId() == _stadiumID)
+			if (_playerTwo.getPlayer().getOlympiadGameId() == _stadiumId)
 			{
 				playerTwoLost = _playerTwo.getPlayer().isDead();
 			}
@@ -311,7 +310,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 	}
 	
 	@Override
-	protected void validateWinner(OlympiadStadiumZone stadium)
+	protected void validateWinner(OlympiadStadium stadium)
 	{
 		if (_aborted)
 		{
@@ -812,6 +811,42 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 			{
 				_log.log(Level.SEVERE, "SQL exception while saving olympiad fight.", e);
 			}
+		}
+	}
+	
+	@Override
+	protected void healPlayers()
+	{
+		final PlayerInstance player1 = _playerOne.getPlayer();
+		if (player1 != null)
+		{
+			player1.setCurrentCp(player1.getMaxCp());
+			player1.setCurrentHp(player1.getMaxHp());
+			player1.setCurrentMp(player1.getMaxMp());
+		}
+		
+		final PlayerInstance player2 = _playerTwo.getPlayer();
+		if (player2 != null)
+		{
+			player2.setCurrentCp(player2.getMaxCp());
+			player2.setCurrentHp(player2.getMaxHp());
+			player2.setCurrentMp(player2.getMaxMp());
+		}
+	}
+	
+	@Override
+	protected void untransformPlayers()
+	{
+		final PlayerInstance player1 = _playerOne.getPlayer();
+		if ((player1 != null) && player1.isTransformed())
+		{
+			player1.stopTransformation(true);
+		}
+		
+		final PlayerInstance player2 = _playerTwo.getPlayer();
+		if ((player2 != null) && player2.isTransformed())
+		{
+			player2.stopTransformation(true);
 		}
 	}
 }

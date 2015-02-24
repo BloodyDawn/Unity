@@ -143,7 +143,6 @@ public class OlympiadManagerLink implements IBypassHandler
 						break;
 					case 2: // show waiting list | TODO: cleanup (not used anymore)
 						final int nonClassed = OlympiadManager.getInstance().getRegisteredNonClassBased().size();
-						final int teams = OlympiadManager.getInstance().getRegisteredTeamsBased().size();
 						final Collection<List<Integer>> allClassed = OlympiadManager.getInstance().getRegisteredClassBased().values();
 						int classed = 0;
 						if (!allClassed.isEmpty())
@@ -160,13 +159,13 @@ public class OlympiadManagerLink implements IBypassHandler
 						if (Config.ALT_OLY_REG_DISPLAY > 0)
 						{
 							html.replace("%listClassed%", classed < Config.ALT_OLY_REG_DISPLAY ? FEWER_THAN : MORE_THAN);
-							html.replace("%listNonClassedTeam%", teams < Config.ALT_OLY_REG_DISPLAY ? FEWER_THAN : MORE_THAN);
+							html.replace("%listNonClassedTeam%", FEWER_THAN); // TODO: Cleanup
 							html.replace("%listNonClassed%", nonClassed < Config.ALT_OLY_REG_DISPLAY ? FEWER_THAN : MORE_THAN);
 						}
 						else
 						{
 							html.replace("%listClassed%", String.valueOf(classed));
-							html.replace("%listNonClassedTeam%", String.valueOf(teams));
+							html.replace("%listNonClassedTeam%", String.valueOf(0)); // TODO: Cleanup
 							html.replace("%listNonClassed%", String.valueOf(nonClassed));
 						}
 						html.replace("%objectId%", String.valueOf(target.getObjectId()));
@@ -228,9 +227,6 @@ public class OlympiadManagerLink implements IBypassHandler
 							sm.addItemName(item);
 							activeChar.sendPacket(sm);
 						}
-						break;
-					case 11: // register team
-						OlympiadManager.getInstance().registerNoble(activeChar, CompetitionType.TEAMS);
 						break;
 					default:
 						_log.warning("Olympiad System: Couldnt send packet for request " + val);

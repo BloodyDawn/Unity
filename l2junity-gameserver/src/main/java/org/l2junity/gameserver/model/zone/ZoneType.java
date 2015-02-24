@@ -28,7 +28,6 @@ import java.util.logging.Logger;
 import javolution.util.FastMap;
 
 import org.l2junity.gameserver.enums.InstanceType;
-import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.TeleportWhereType;
 import org.l2junity.gameserver.model.WorldObject;
@@ -56,8 +55,6 @@ public abstract class ZoneType extends ListenersContainer
 	/** Parameters to affect specific characters */
 	private boolean _checkAffected = false;
 	private String _name = null;
-	private int _instanceId = -1;
-	private String _instanceTemplate = "";
 	private int _minLvl;
 	private int _maxLvl;
 	private int[] _race;
@@ -106,15 +103,6 @@ public abstract class ZoneType extends ListenersContainer
 		if (name.equals("name"))
 		{
 			_name = value;
-		}
-		else if (name.equals("instanceId"))
-		{
-			_instanceId = Integer.parseInt(value);
-		}
-		else if (name.equals("instanceTemplate"))
-		{
-			_instanceTemplate = value;
-			_instanceId = InstanceManager.getInstance().createDynamicInstance(value);
 		}
 		// Minimum level
 		else if (name.equals("affectedLvlMin"))
@@ -324,33 +312,6 @@ public abstract class ZoneType extends ListenersContainer
 	}
 	
 	/**
-	 * Set the zone instanceId.
-	 * @param instanceId
-	 */
-	public void setInstanceId(int instanceId)
-	{
-		_instanceId = instanceId;
-	}
-	
-	/**
-	 * Returns zone instanceId
-	 * @return
-	 */
-	public int getInstanceId()
-	{
-		return _instanceId;
-	}
-	
-	/**
-	 * Returns zone instanceTemplate
-	 * @return
-	 */
-	public String getInstanceTemplate()
-	{
-		return _instanceTemplate;
-	}
-	
-	/**
 	 * Checks if the given coordinates are within zone's plane
 	 * @param x
 	 * @param y
@@ -384,33 +345,13 @@ public abstract class ZoneType extends ListenersContainer
 	}
 	
 	/**
-	 * Checks if the given coordinates are within the zone and the instanceId used matched the zone's instanceId
-	 * @param x
-	 * @param y
-	 * @param z
-	 * @param instanceId
-	 * @return
-	 */
-	public boolean isInsideZone(int x, int y, int z, int instanceId)
-	{
-		// It will check if coords are within the zone if the given instanceId or
-		// the zone's _instanceId are in the multiverse or they match
-		if ((_instanceId == -1) || (instanceId == -1) || (_instanceId == instanceId))
-		{
-			return _zone.isInsideZone(x, y, z);
-		}
-		
-		return false;
-	}
-	
-	/**
 	 * Checks if the given object is inside the zone.
 	 * @param object
 	 * @return
 	 */
 	public boolean isInsideZone(WorldObject object)
 	{
-		return isInsideZone(object.getX(), object.getY(), object.getZ(), object.getInstanceId());
+		return isInsideZone(object.getX(), object.getY(), object.getZ());
 	}
 	
 	public double getDistanceToZone(int x, int y)

@@ -37,6 +37,7 @@ import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.datatables.NpcPersonalAIData;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2NpcInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.interfaces.ILocational;
@@ -474,7 +475,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 	}
 	
 	/**
-	 * Create a L2NpcInstance in this L2Spawn.
+	 * Create a {@link L2NpcInstance} in this L2Spawn.
 	 * @param val
 	 * @return
 	 */
@@ -783,6 +784,11 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		}
 		
 		return null;
+	}
+	
+	public boolean deleteLastNpc()
+	{
+		return !_spawnedNpcs.isEmpty() && _spawnedNpcs.getLast().deleteMe();
 	}
 	
 	public final FastList<Npc> getSpawnedNpcs()

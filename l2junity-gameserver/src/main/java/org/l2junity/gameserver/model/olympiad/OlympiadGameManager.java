@@ -18,14 +18,18 @@
  */
 package org.l2junity.gameserver.model.olympiad;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.l2junity.gameserver.instancemanager.ZoneManager;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.type.OlympiadStadiumZone;
+import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * @author GodKratos, DS
@@ -33,9 +37,11 @@ import org.l2junity.gameserver.model.zone.type.OlympiadStadiumZone;
 public class OlympiadGameManager implements Runnable
 {
 	private static final Logger _log = Logger.getLogger(OlympiadGameManager.class.getName());
+	private static final int STADIUM_COUNT = 80; // TODO dynamic
 	
 	private volatile boolean _battleStarted = false;
-	private final OlympiadGameTask[] _tasks;
+	private final List<OlympiadStadium> _tasks;
+	private int _delay = 0;
 	
 	protected OlympiadGameManager()
 	{
@@ -45,14 +51,18 @@ public class OlympiadGameManager implements Runnable
 			throw new Error("No olympiad stadium zones defined !");
 		}
 		
-		_tasks = new OlympiadGameTask[zones.size()];
-		int i = 0;
-		for (OlympiadStadiumZone zone : zones)
+		final OlympiadStadiumZone[] array = zones.toArray(new OlympiadStadiumZone[zones.size()]);
+		_tasks = new ArrayList<>(STADIUM_COUNT);
+		
+		final int zonesCount = array.length;
+		for (int i = 0; i < STADIUM_COUNT; i++)
 		{
-			_tasks[i++] = new OlympiadGameTask(zone);
+			final OlympiadStadium stadium = new OlympiadStadium(array[i % zonesCount], i);
+			stadium.registerTask(new OlympiadGameTask(stadium));
+			_tasks.add(stadium);
 		}
 		
-		_log.log(Level.INFO, "Olympiad System: Loaded " + _tasks.length + " stadiums.");
+		_log.log(Level.INFO, "Olympiad System: Loaded " + _tasks.size() + " stadiums.");
 	}
 	
 	public static final OlympiadGameManager getInstance()
@@ -80,49 +90,35 @@ public class OlympiadGameManager implements Runnable
 		
 		if (Olympiad.getInstance().inCompPeriod())
 		{
-			OlympiadGameTask task;
 			AbstractOlympiadGame newGame;
 			
 			List<List<Integer>> readyClassed = OlympiadManager.getInstance().hasEnoughRegisteredClassed();
 			boolean readyNonClassed = OlympiadManager.getInstance().hasEnoughRegisteredNonClassed();
-			boolean readyTeams = OlympiadManager.getInstance().hasEnoughRegisteredTeams();
 			
-			if ((readyClassed != null) || readyNonClassed || readyTeams)
+			if ((readyClassed != null) || readyNonClassed)
 			{
+				// reset delay broadcast
+				_delay = 0;
+				
 				// set up the games queue
-				for (int i = 0; i < _tasks.length; i++)
+				for (int i = 0; i < _tasks.size(); i++)
 				{
-					task = _tasks[i];
+					OlympiadGameTask task = _tasks.get(i).getTask();
 					synchronized (task)
 					{
 						if (!task.isRunning())
 						{
 							// Fair arena distribution
 							// 0,2,4,6,8.. arenas checked for classed or teams first
-							if (((readyClassed != null) || readyTeams) && ((i % 2) == 0))
+							if (readyClassed != null)
 							{
-								// 0,4,8.. arenas checked for teams first
-								if (readyTeams && ((i % 4) == 0))
+								newGame = OlympiadGameClassed.createGame(i, readyClassed);
+								if (newGame != null)
 								{
-									newGame = OlympiadGameTeams.createGame(i, OlympiadManager.getInstance().getRegisteredTeamsBased());
-									if (newGame != null)
-									{
-										task.attachGame(newGame);
-										continue;
-									}
-									readyTeams = false;
+									task.attachGame(newGame);
+									continue;
 								}
-								// if no ready teams found check for classed
-								if (readyClassed != null)
-								{
-									newGame = OlympiadGameClassed.createGame(i, readyClassed);
-									if (newGame != null)
-									{
-										task.attachGame(newGame);
-										continue;
-									}
-									readyClassed = null;
-								}
+								readyClassed = null;
 							}
 							// 1,3,5,7,9.. arenas used for non-classed
 							// also other arenas will be used for non-classed if no classed or teams available
@@ -140,10 +136,50 @@ public class OlympiadGameManager implements Runnable
 					}
 					
 					// stop generating games if no more participants
-					if ((readyClassed == null) && !readyNonClassed && !readyTeams)
+					if ((readyClassed == null) && !readyNonClassed)
 					{
 						break;
 					}
+				}
+			}
+			// olympiad is delayed
+			else
+			{
+				_delay++;
+				if (_delay >= 10) // 5min
+				{
+					for (Integer id : OlympiadManager.getInstance().getRegisteredNonClassBased())
+					{
+						if (id == null)
+						{
+							continue;
+						}
+						
+						PlayerInstance noble = World.getInstance().getPlayer(id);
+						if (noble != null)
+						{
+							noble.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_GAMES_MAY_BE_DELAYED_DUE_TO_AN_INSUFFICIENT_NUMBER_OF_PLAYERS_WAITING));
+						}
+					}
+					
+					for (List<Integer> list : OlympiadManager.getInstance().getRegisteredClassBased().values())
+					{
+						for (Integer id : list)
+						{
+							if (id == null)
+							{
+								continue;
+							}
+							
+							PlayerInstance noble = World.getInstance().getPlayer(id);
+							if (noble != null)
+							{
+								noble.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_GAMES_MAY_BE_DELAYED_DUE_TO_AN_INSUFFICIENT_NUMBER_OF_PLAYERS_WAITING));
+							}
+						}
+					}
+					
+					_delay = 0;
 				}
 			}
 		}
@@ -161,8 +197,9 @@ public class OlympiadGameManager implements Runnable
 	
 	public final boolean isAllTasksFinished()
 	{
-		for (OlympiadGameTask task : _tasks)
+		for (OlympiadStadium stadium : _tasks)
 		{
+			OlympiadGameTask task = stadium.getTask();
 			if (task.isRunning())
 			{
 				return false;
@@ -173,41 +210,49 @@ public class OlympiadGameManager implements Runnable
 	
 	public final OlympiadGameTask getOlympiadTask(int id)
 	{
-		if ((id < 0) || (id >= _tasks.length))
+		if ((id < 0) || (id >= _tasks.size()))
 		{
 			return null;
 		}
 		
-		return _tasks[id];
+		return _tasks.get(id).getTask();
 	}
 	
 	public final int getNumberOfStadiums()
 	{
-		return _tasks.length;
+		return _tasks.size();
 	}
 	
-	public final void notifyCompetitorDamage(PlayerInstance player, int damage)
+	public final void notifyCompetitorDamage(PlayerInstance attacker, int damage)
 	{
-		if (player == null)
+		if (attacker == null)
 		{
 			return;
 		}
 		
-		final int id = player.getOlympiadGameId();
-		if ((id < 0) || (id >= _tasks.length))
+		final int id = attacker.getOlympiadGameId();
+		if ((id < 0) || (id >= _tasks.size()))
 		{
 			return;
 		}
 		
-		final AbstractOlympiadGame game = _tasks[id].getGame();
+		final AbstractOlympiadGame game = _tasks.get(id).getTask().getGame();
 		if (game != null)
 		{
-			game.addDamage(player, damage);
+			game.addDamage(attacker, damage);
 		}
 	}
 	
 	private static class SingletonHolder
 	{
 		protected static final OlympiadGameManager _instance = new OlympiadGameManager();
+	}
+	
+	/**
+	 * @return the _tasks
+	 */
+	public List<OlympiadStadium> getTasks()
+	{
+		return _tasks;
 	}
 }

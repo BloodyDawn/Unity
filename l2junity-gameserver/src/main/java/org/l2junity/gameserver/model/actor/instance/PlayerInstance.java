@@ -4216,7 +4216,7 @@ public final class PlayerInstance extends Playable
 			final OlympiadGameTask game = OlympiadGameManager.getInstance().getOlympiadTask(getOlympiadGameId());
 			if ((game != null) && game.isBattleStarted())
 			{
-				game.getZone().broadcastStatusUpdate(this);
+				game.getStadium().broadcastStatusUpdate(this);
 			}
 		}
 		
@@ -9626,6 +9626,7 @@ public final class PlayerInstance extends Playable
 		setTarget(null);
 		setIsInvul(true);
 		setInvisible(true);
+		setInstanceId(OlympiadGameManager.getInstance().getOlympiadTask(id).getStadium().getInstanceId());
 		teleToLocation(loc, false);
 		sendPacket(new ExOlympiadMode(3));
 		
@@ -9636,6 +9637,7 @@ public final class PlayerInstance extends Playable
 	{
 		setTarget(null);
 		
+		setInstanceId(0);
 		teleToLocation(_lastLoc, false);
 		unsetLastLocation();
 		sendPacket(new ObservationReturn(getLocation()));
