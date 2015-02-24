@@ -31,10 +31,10 @@ import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.enums.Team;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.handler.ItemHandler;
+import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.AggroInfo;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.WorldRegion;
 import org.l2junity.gameserver.model.actor.instance.L2NpcInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.knownlist.SummonKnownList;
@@ -53,6 +53,7 @@ import org.l2junity.gameserver.model.olympiad.OlympiadGameManager;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.model.zone.ZoneRegion;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.ExPartyPetWindowAdd;
@@ -461,12 +462,9 @@ public abstract class Summon extends Playable
 			}
 			
 			stopAllEffects();
-			WorldRegion oldRegion = getWorldRegion();
+			ZoneRegion oldRegion = ZoneManager.getInstance().getRegion(this);
 			decayMe();
-			if (oldRegion != null)
-			{
-				oldRegion.removeFromZones(this);
-			}
+			oldRegion.removeFromZones(this);
 			getKnownList().removeAllKnownObjects();
 			setTarget(null);
 			if (owner != null)

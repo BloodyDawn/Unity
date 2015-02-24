@@ -21,6 +21,8 @@ package org.l2junity.gameserver.model;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import javolution.util.FastMap;
+
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.handler.ActionHandler;
@@ -51,8 +53,6 @@ import org.l2junity.gameserver.network.serverpackets.DeleteObject;
 import org.l2junity.gameserver.network.serverpackets.ExSendUIEvent;
 import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
 import org.l2junity.gameserver.util.Util;
-
-import javolution.util.FastMap;
 
 /**
  * Base class for all interactive objects.
@@ -642,18 +642,6 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	
 	public void setWorldRegion(WorldRegion value)
 	{
-		if ((getWorldRegion() != null) && isCharacter()) // confirm revalidation of old region's zones
-		{
-			if (value != null)
-			{
-				getWorldRegion().revalidateZones((Creature) this); // at world region change
-			}
-			else
-			{
-				getWorldRegion().removeFromZones((Creature) this); // at world region change
-			}
-		}
-		
 		_worldRegion = value;
 	}
 	
@@ -754,7 +742,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	 * @param newZ the Z coordinate
 	 */
 	@Override
-	public final void setXYZ(int newX, int newY, int newZ)
+	public void setXYZ(int newX, int newY, int newZ)
 	{
 		assert getWorldRegion() != null;
 		

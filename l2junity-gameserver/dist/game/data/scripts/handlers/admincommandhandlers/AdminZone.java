@@ -26,11 +26,9 @@ import org.l2junity.gameserver.instancemanager.MapRegionManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.TeleportWhereType;
-import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.WorldRegion;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.type.NpcSpawnTerritory;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 
@@ -131,9 +129,8 @@ public class AdminZone implements IAdminCommandHandler
 		adminReply.replace("%DANGER%", (activeChar.isInsideZone(ZoneId.DANGER_AREA) ? "<font color=\"LEVEL\">YES</font>" : "NO"));
 		adminReply.replace("%NOSTORE%", (activeChar.isInsideZone(ZoneId.NO_STORE) ? "<font color=\"LEVEL\">YES</font>" : "NO"));
 		adminReply.replace("%SCRIPT%", (activeChar.isInsideZone(ZoneId.SCRIPT) ? "<font color=\"LEVEL\">YES</font>" : "NO"));
-		StringBuilder zones = new StringBuilder(100);
-		WorldRegion region = World.getInstance().getRegion(activeChar.getX(), activeChar.getY());
-		for (ZoneType zone : region.getZones())
+		final StringBuilder zones = new StringBuilder(100);
+		for (ZoneType zone : ZoneManager.getInstance().getRegion(activeChar).getZones().values())
 		{
 			if (zone.isCharacterInZone(activeChar))
 			{

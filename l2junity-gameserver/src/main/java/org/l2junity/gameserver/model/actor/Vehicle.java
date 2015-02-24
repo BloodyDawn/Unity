@@ -31,11 +31,11 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.instancemanager.MapRegionManager;
+import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.TeleportWhereType;
 import org.l2junity.gameserver.model.VehiclePathPoint;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.WorldRegion;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.knownlist.VehicleKnownList;
 import org.l2junity.gameserver.model.actor.stat.VehicleStat;
@@ -43,6 +43,7 @@ import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.model.zone.ZoneRegion;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
@@ -434,7 +435,7 @@ public abstract class Vehicle extends Creature
 			_log.log(Level.SEVERE, "Failed oustPlayers().", e);
 		}
 		
-		final WorldRegion oldRegion = getWorldRegion();
+		final ZoneRegion oldRegion = ZoneManager.getInstance().getRegion(this);
 		
 		try
 		{
@@ -445,10 +446,7 @@ public abstract class Vehicle extends Creature
 			_log.log(Level.SEVERE, "Failed decayMe().", e);
 		}
 		
-		if (oldRegion != null)
-		{
-			oldRegion.removeFromZones(this);
-		}
+		oldRegion.removeFromZones(this);
 		
 		try
 		{

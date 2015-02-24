@@ -31,12 +31,13 @@ import java.util.logging.Level;
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.WorldRegion;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.zone.AbstractZoneSettings;
 import org.l2junity.gameserver.model.zone.L2ZoneForm;
 import org.l2junity.gameserver.model.zone.L2ZoneRespawn;
+import org.l2junity.gameserver.model.zone.ZoneRegion;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.form.ZoneCuboid;
 import org.l2junity.gameserver.model.zone.form.ZoneCylinder;
@@ -57,16 +58,31 @@ public final class ZoneManager implements IXmlReader
 {
 	private static final Map<String, AbstractZoneSettings> _settings = new HashMap<>();
 	
+	public static final int SHIFT_BY = 15;
+	public static final int OFFSET_X = Math.abs(World.MAP_MIN_X >> SHIFT_BY);
+	public static final int OFFSET_Y = Math.abs(World.MAP_MIN_Y >> SHIFT_BY);
+	
 	private final Map<Class<? extends ZoneType>, Map<Integer, ? extends ZoneType>> _classZones = new HashMap<>();
 	private final Map<String, NpcSpawnTerritory> _spawnTerritories = new HashMap<>();
 	private int _lastDynamicId = 300000;
 	private List<ItemInstance> _debugItems;
+	
+	private final ZoneRegion[][] _zoneRegions = new ZoneRegion[(World.MAP_MAX_X >> SHIFT_BY) + OFFSET_X + 1][(World.MAP_MAX_Y >> SHIFT_BY) + OFFSET_Y + 1];
 	
 	/**
 	 * Instantiates a new zone manager.
 	 */
 	protected ZoneManager()
 	{
+		for (int x = 0; x <= _zoneRegions.length; x++)
+		{
+			for (int y = 0; y <= _zoneRegions[x].length; y++)
+			{
+				_zoneRegions[x][y] = new ZoneRegion(x, y);
+			}
+		}
+		LOGGER.info(ZoneManager.class.getSimpleName() + ": (" + _zoneRegions.length + " by " + _zoneRegions[0].length + ") Zone Region Grid set up.");
+		
 		load();
 	}
 	
@@ -77,7 +93,6 @@ public final class ZoneManager implements IXmlReader
 	{
 		// Get the world regions
 		int count = 0;
-		final WorldRegion[][] worldRegions = World.getInstance().getWorldRegions();
 		
 		// Backup old zone settings
 		for (Map<Integer, ? extends ZoneType> map : _classZones.values())
@@ -92,11 +107,11 @@ public final class ZoneManager implements IXmlReader
 		}
 		
 		// Clear zones
-		for (WorldRegion[] worldRegion : worldRegions)
+		for (ZoneRegion[] zoneRegions : _zoneRegions)
 		{
-			for (WorldRegion element : worldRegion)
+			for (ZoneRegion zoneRegion : zoneRegions)
 			{
-				element.getZones().clear();
+				zoneRegion.getZones().clear();
 				count++;
 			}
 		}
@@ -119,8 +134,6 @@ public final class ZoneManager implements IXmlReader
 	@Override
 	public void parseDocument(Document doc, File f)
 	{
-		// Get the world regions
-		final WorldRegion[][] worldRegions = World.getInstance().getWorldRegions();
 		NamedNodeMap attrs;
 		Node attribute;
 		String zoneName;
@@ -355,19 +368,19 @@ public final class ZoneManager implements IXmlReader
 						// Register the zone into any world region it
 						// intersects with...
 						// currently 11136 test for each zone :>
-						int ax, ay, bx, by;
-						for (int x = 0; x < worldRegions.length; x++)
+						for (int x = 0; x < _zoneRegions.length; x++)
 						{
-							for (int y = 0; y < worldRegions[x].length; y++)
+							for (int y = 0; y < _zoneRegions[x].length; y++)
 							{
-								ax = (x - World.OFFSET_X) << World.SHIFT_BY;
-								bx = ((x + 1) - World.OFFSET_X) << World.SHIFT_BY;
-								ay = (y - World.OFFSET_Y) << World.SHIFT_BY;
-								by = ((y + 1) - World.OFFSET_Y) << World.SHIFT_BY;
+								
+								int ax = (x - OFFSET_X) << SHIFT_BY;
+								int bx = ((x + 1) - OFFSET_X) << SHIFT_BY;
+								int ay = (y - OFFSET_Y) << SHIFT_BY;
+								int by = ((y + 1) - OFFSET_Y) << SHIFT_BY;
 								
 								if (temp.getZone().intersectsRectangle(ax, bx, ay, by))
 								{
-									worldRegions[x][y].addZone(temp);
+									_zoneRegions[x][y].getZones().put(temp.getId(), temp);
 								}
 							}
 						}
@@ -442,22 +455,6 @@ public final class ZoneManager implements IXmlReader
 	}
 	
 	/**
-	 * Returns all zones registered with the ZoneManager. To minimize iteration processing retrieve zones from L2WorldRegion for a specific location instead.
-	 * @return zones
-	 * @see #getAllZones(Class)
-	 */
-	@Deprecated
-	public Collection<ZoneType> getAllZones()
-	{
-		final List<ZoneType> zones = new ArrayList<>();
-		for (Map<Integer, ? extends ZoneType> map : _classZones.values())
-		{
-			zones.addAll(map.values());
-		}
-		return zones;
-	}
-	
-	/**
 	 * Return all zones by class type.
 	 * @param <T> the generic type
 	 * @param zoneType Zone class
@@ -502,28 +499,28 @@ public final class ZoneManager implements IXmlReader
 	
 	/**
 	 * Returns all zones from where the object is located.
-	 * @param object the object
+	 * @param locational the locational
 	 * @return zones
 	 */
-	public List<ZoneType> getZones(WorldObject object)
+	public List<ZoneType> getZones(ILocational locational)
 	{
-		return getZones(object.getX(), object.getY(), object.getZ());
+		return getZones(locational.getX(), locational.getY(), locational.getZ());
 	}
 	
 	/**
 	 * Gets the zone.
 	 * @param <T> the generic type
-	 * @param object the object
+	 * @param locational the locational
 	 * @param type the type
 	 * @return zone from where the object is located by type
 	 */
-	public <T extends ZoneType> T getZone(WorldObject object, Class<T> type)
+	public <T extends ZoneType> T getZone(ILocational locational, Class<T> type)
 	{
-		if (object == null)
+		if (locational == null)
 		{
 			return null;
 		}
-		return getZone(object.getX(), object.getY(), object.getZ(), type);
+		return getZone(locational.getX(), locational.getY(), locational.getZ(), type);
 	}
 	
 	/**
@@ -534,9 +531,8 @@ public final class ZoneManager implements IXmlReader
 	 */
 	public List<ZoneType> getZones(int x, int y)
 	{
-		final WorldRegion region = World.getInstance().getRegion(x, y);
 		final List<ZoneType> temp = new ArrayList<>();
-		for (ZoneType zone : region.getZones())
+		for (ZoneType zone : getRegion(x, y).getZones().values())
 		{
 			if (zone.isInsideZone(x, y))
 			{
@@ -555,9 +551,8 @@ public final class ZoneManager implements IXmlReader
 	 */
 	public List<ZoneType> getZones(int x, int y, int z)
 	{
-		final WorldRegion region = World.getInstance().getRegion(x, y);
 		final List<ZoneType> temp = new ArrayList<>();
-		for (ZoneType zone : region.getZones())
+		for (ZoneType zone : getRegion(x, y).getZones().values())
 		{
 			if (zone.isInsideZone(x, y, z))
 			{
@@ -579,8 +574,7 @@ public final class ZoneManager implements IXmlReader
 	@SuppressWarnings("unchecked")
 	public <T extends ZoneType> T getZone(int x, int y, int z, Class<T> type)
 	{
-		final WorldRegion region = World.getInstance().getRegion(x, y);
-		for (ZoneType zone : region.getZones())
+		for (ZoneType zone : getRegion(x, y).getZones().values())
 		{
 			if (zone.isInsideZone(x, y, z) && type.isInstance(zone))
 			{
@@ -722,6 +716,16 @@ public final class ZoneManager implements IXmlReader
 				it.remove();
 			}
 		}
+	}
+	
+	public ZoneRegion getRegion(int x, int y)
+	{
+		return _zoneRegions[(x >> SHIFT_BY) + OFFSET_X][(y >> SHIFT_BY) + OFFSET_Y];
+	}
+	
+	public ZoneRegion getRegion(ILocational point)
+	{
+		return getRegion(point.getX(), point.getY());
 	}
 	
 	/**
