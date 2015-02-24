@@ -18,69 +18,50 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
-import org.l2junity.gameserver.model.PartyMatchRoom;
-import org.l2junity.gameserver.model.PartyMatchRoomList;
+import org.l2junity.gameserver.enums.MatchingRoomType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.ExClosePartyRoom;
+import org.l2junity.gameserver.model.matching.MatchingRoom;
 
 /**
  * @author Gnacik
  */
 public final class RequestWithdrawPartyRoom extends L2GameClientPacket
 {
-	private static final String _C__D0_0B_REQUESTWITHDRAWPARTYROOM = "[C] D0:0B RequestWithdrawPartyRoom";
-	
-	private int _roomid;
-	@SuppressWarnings("unused")
-	private int _unk1;
+	private int _roomId;
 	
 	@Override
 	protected void readImpl()
 	{
-		_roomid = readD();
-		_unk1 = readD();
+		_roomId = readD();
 	}
 	
 	@Override
 	protected void runImpl()
 	{
-		final PlayerInstance _activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getActiveChar();
 		
-		if (_activeChar == null)
+		if (activeChar == null)
 		{
 			return;
 		}
 		
-		PartyMatchRoom _room = PartyMatchRoomList.getInstance().getRoom(_roomid);
-		if (_room == null)
+		final MatchingRoom room = activeChar.getMatchingRoom();
+		if (room == null)
 		{
 			return;
 		}
 		
-		if ((_activeChar.isInParty() && _room.getOwner().isInParty()) && (_activeChar.getParty().getLeaderObjectId() == _room.getOwner().getParty().getLeaderObjectId()))
+		if ((room.getId() != _roomId) || (room.getRoomType() != MatchingRoomType.PARTY))
 		{
-			// If user is in party with Room Owner
-			// is not removed from Room
-			
-			// _activeChar.setPartyMatching(0);
-			_activeChar.broadcastUserInfo();
+			return;
 		}
-		else
-		{
-			_room.deleteMember(_activeChar);
-			
-			_activeChar.setPartyRoom(0);
-			// _activeChar.setPartyMatching(0);
-			
-			_activeChar.sendPacket(new ExClosePartyRoom());
-			_activeChar.sendPacket(SystemMessageId.YOU_HAVE_EXITED_THE_PARTY_ROOM);
-		}
+		
+		room.deleteMember(activeChar, false);
 	}
 	
 	@Override
 	public String getType()
 	{
-		return _C__D0_0B_REQUESTWITHDRAWPARTYROOM;
+		return getClass().getSimpleName();
 	}
 }

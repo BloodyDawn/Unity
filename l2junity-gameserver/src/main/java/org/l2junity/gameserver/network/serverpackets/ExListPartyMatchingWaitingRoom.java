@@ -18,12 +18,16 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.concurrent.TimeUnit;
 
 import org.l2junity.gameserver.instancemanager.InstanceManager;
-import org.l2junity.gameserver.model.PartyMatchWaitingList;
+import org.l2junity.gameserver.instancemanager.MatchingRoomManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 
 /**
@@ -31,24 +35,25 @@ import org.l2junity.gameserver.model.instancezone.InstanceWorld;
  */
 public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket
 {
-	private final PlayerInstance _activeChar;
-	// private final int _page;
-	private final int _minlvl;
-	private final int _maxlvl;
-	private final int _mode;
-	private final int _currentTemplateId;
-	private final List<PlayerInstance> _members;
+	private static final int NUM_PER_PAGE = 64;
+	private final int _size;
+	private final List<PlayerInstance> _players = new LinkedList<>();
 	
-	public ExListPartyMatchingWaitingRoom(PlayerInstance player, int page, int minlvl, int maxlvl, int mode)
+	public ExListPartyMatchingWaitingRoom(PlayerInstance player, int page, int minLevel, int maxLevel, List<ClassId> classIds, String query)
 	{
-		_activeChar = player;
-		// _page = page;
-		_minlvl = minlvl;
-		_maxlvl = maxlvl;
-		_mode = mode;
-		_members = new ArrayList<>();
-		final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-		_currentTemplateId = (world != null) && (world.getTemplateId() >= 0) ? world.getTemplateId() : -1;
+		final List<PlayerInstance> players = MatchingRoomManager.getInstance().getPlayerInWaitingList(minLevel, maxLevel, classIds, query);
+		
+		_size = players.size();
+		final int startIndex = (page - 1) * NUM_PER_PAGE;
+		int chunkSize = _size - startIndex;
+		if (chunkSize > NUM_PER_PAGE)
+		{
+			chunkSize = NUM_PER_PAGE;
+		}
+		for (int i = startIndex; i < (startIndex + chunkSize); i++)
+		{
+			_players.add(players.get(i));
+		}
 	}
 	
 	@Override
@@ -56,44 +61,24 @@ public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket
 	{
 		writeC(0xFE);
 		writeH(0x36);
-		if (_mode == 0)
-		{
-			writeD(0);
-			writeD(0);
-			return;
-		}
 		
-		for (PlayerInstance cha : PartyMatchWaitingList.getInstance().getPlayers())
+		writeD(_size);
+		writeD(_players.size());
+		for (PlayerInstance player : _players)
 		{
-			if ((cha == null) || (cha == _activeChar))
+			writeS(player.getName());
+			writeD(player.getClassId().getId());
+			writeD(player.getLevel());
+			final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
+			writeD((world != null) && (world.getTemplateId() >= 0) ? world.getTemplateId() : -1);
+			final Map<Integer, Long> _instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(player.getObjectId());
+			writeD(_instanceTimes.size());
+			for (Entry<Integer, Long> entry : _instanceTimes.entrySet())
 			{
-				continue;
+				final long instanceTime = TimeUnit.MILLISECONDS.toSeconds(entry.getValue() - System.currentTimeMillis());
+				writeD(entry.getKey());
+				writeD((int) instanceTime);
 			}
-			
-			if (!cha.isPartyWaiting())
-			{
-				PartyMatchWaitingList.getInstance().removePlayer(cha);
-				continue;
-			}
-			
-			else if ((cha.getLevel() < _minlvl) || (cha.getLevel() > _maxlvl))
-			{
-				continue;
-			}
-			
-			_members.add(cha);
-		}
-		
-		writeD(0x01); // Page?
-		writeD(_members.size());
-		for (PlayerInstance member : _members)
-		{
-			writeS(member.getName());
-			writeD(member.getActiveClass());
-			writeD(member.getLevel());
-			writeD(_currentTemplateId);
-			writeD(0x00); // TODO: Instance ID reuse size
-			// TODO: Loop for instanceId
 		}
 	}
 }

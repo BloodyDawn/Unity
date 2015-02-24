@@ -18,7 +18,11 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.network.serverpackets.ExListPartyMatchingWaitingRoom;
 
 /**
@@ -26,38 +30,50 @@ import org.l2junity.gameserver.network.serverpackets.ExListPartyMatchingWaitingR
  */
 public class RequestListPartyMatchingWaitingRoom extends L2GameClientPacket
 {
-	private static final String _C__D0_31_REQUESTLISTPARTYMATCHINGWAITINGROOM = "[C] D0:31 RequestListPartyMatchingWaitingRoom";
 	private int _page;
-	private int _minlvl;
-	private int _maxlvl;
-	private int _mode; // 1 - waitlist 0 - room waitlist
+	private int _minLevel;
+	private int _maxLevel;
+	private List<ClassId> _classId; // 1 - waitlist 0 - room waitlist
+	private String _query;
 	
 	@Override
 	protected void readImpl()
 	{
 		_page = readD();
-		_minlvl = readD();
-		_maxlvl = readD();
-		_mode = readD();
+		_minLevel = readD();
+		_maxLevel = readD();
+		final int size = readD();
+		
+		if ((size > 0) && (size < 128))
+		{
+			_classId = new LinkedList<>();
+			for (int i = 0; i < size; i++)
+			{
+				_classId.add(ClassId.getClassId(readD()));
+			}
+		}
+		if (_buf.hasRemaining())
+		{
+			_query = readS();
+		}
 	}
 	
 	@Override
 	protected void runImpl()
 	{
-		PlayerInstance _activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getActiveChar();
 		
-		if (_activeChar == null)
+		if (activeChar == null)
 		{
 			return;
 		}
 		
-		_activeChar.sendPacket(new ExListPartyMatchingWaitingRoom(_activeChar, _page, _minlvl, _maxlvl, _mode));
+		activeChar.sendPacket(new ExListPartyMatchingWaitingRoom(activeChar, _page, _minLevel, _maxLevel, _classId, _query));
 	}
 	
 	@Override
 	public String getType()
 	{
-		return _C__D0_31_REQUESTLISTPARTYMATCHINGWAITINGROOM;
+		return getClass().getSimpleName();
 	}
-	
 }

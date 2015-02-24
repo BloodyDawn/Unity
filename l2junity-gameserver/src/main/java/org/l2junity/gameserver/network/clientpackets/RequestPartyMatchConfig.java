@@ -18,88 +18,64 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
-import org.l2junity.gameserver.model.PartyMatchRoom;
-import org.l2junity.gameserver.model.PartyMatchRoomList;
-import org.l2junity.gameserver.model.PartyMatchWaitingList;
+import org.l2junity.gameserver.instancemanager.MatchingRoomManager;
+import org.l2junity.gameserver.model.CommandChannel;
+import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.matching.CommandChannelMatchingRoom;
 import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.ActionFailed;
-import org.l2junity.gameserver.network.serverpackets.ExPartyRoomMember;
-import org.l2junity.gameserver.network.serverpackets.ListPartyWating;
-import org.l2junity.gameserver.network.serverpackets.PartyMatchDetail;
+import org.l2junity.gameserver.network.serverpackets.ListPartyWaiting;
 
-/**
- * This class ...
- * @version $Revision: 1.1.4.2 $ $Date: 2005/03/27 15:29:30 $
- */
 public final class RequestPartyMatchConfig extends L2GameClientPacket
 {
-	private static final String _C__7F_REQUESTPARTYMATCHCONFIG = "[C] 7F RequestPartyMatchConfig";
-	
-	private int _auto, _loc, _lvl;
+	private int _page, _location, _level;
 	
 	@Override
 	protected void readImpl()
 	{
-		_auto = readD(); //
-		_loc = readD(); // Location
-		_lvl = readD(); // my level
+		_page = readD();
+		_location = readD();
+		_level = readD();
 	}
 	
 	@Override
 	protected void runImpl()
 	{
-		PlayerInstance _activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getActiveChar();
 		
-		if (_activeChar == null)
+		if (activeChar == null)
 		{
 			return;
 		}
 		
-		if (!_activeChar.isInPartyMatchRoom() && (_activeChar.getParty() != null) && (_activeChar.getParty().getLeader() != _activeChar))
-		{
-			_activeChar.sendPacket(SystemMessageId.THE_LIST_OF_PARTY_ROOMS_CAN_ONLY_BE_VIEWED_BY_A_PERSON_WHO_IS_NOT_PART_OF_A_PARTY);
-			_activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
+		final Party party = activeChar.getParty();
+		final CommandChannel cc = party == null ? null : party.getCommandChannel();
 		
-		if (_activeChar.isInPartyMatchRoom())
+		if ((party != null) && (cc != null) && (cc.getLeader() == activeChar))
 		{
-			// If Player is in Room show him room, not list
-			PartyMatchRoomList _list = PartyMatchRoomList.getInstance();
-			if (_list == null)
+			if (activeChar.getMatchingRoom() == null)
 			{
-				return;
+				activeChar.setMatchingRoom(new CommandChannelMatchingRoom(activeChar.getName(), party.getDistributionType().ordinal(), 1, activeChar.getLevel(), 50, activeChar));
 			}
-			
-			PartyMatchRoom _room = _list.getPlayerRoom(_activeChar);
-			if (_room == null)
-			{
-				return;
-			}
-			
-			_activeChar.sendPacket(new PartyMatchDetail(_activeChar, _room));
-			_activeChar.sendPacket(new ExPartyRoomMember(_activeChar, _room, 2));
-			
-			_activeChar.setPartyRoom(_room.getId());
-			// _activeChar.setPartyMatching(1);
-			_activeChar.broadcastUserInfo();
+		}
+		else if ((cc != null) && (cc.getLeader() != activeChar))
+		{
+			activeChar.sendPacket(SystemMessageId.THE_COMMAND_CHANNEL_AFFILIATED_PARTY_S_PARTY_MEMBER_CANNOT_USE_THE_MATCHING_SCREEN);
+		}
+		else if ((party != null) && (party.getLeader() != activeChar))
+		{
+			activeChar.sendPacket(SystemMessageId.THE_LIST_OF_PARTY_ROOMS_CAN_ONLY_BE_VIEWED_BY_A_PERSON_WHO_IS_NOT_PART_OF_A_PARTY);
 		}
 		else
 		{
-			// Add to waiting list
-			PartyMatchWaitingList.getInstance().addPlayer(_activeChar);
-			
-			// Send Room list
-			ListPartyWating matchList = new ListPartyWating(_activeChar, _auto, _loc, _lvl);
-			
-			_activeChar.sendPacket(matchList);
+			MatchingRoomManager.getInstance().addToWaitingList(activeChar);
+			activeChar.sendPacket(new ListPartyWaiting(_level, _location, _page));
 		}
 	}
 	
 	@Override
 	public String getType()
 	{
-		return _C__7F_REQUESTPARTYMATCHCONFIG;
+		return getClass().getSimpleName();
 	}
 }

@@ -18,14 +18,12 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
-import org.l2junity.gameserver.model.PartyMatchRoom;
-import org.l2junity.gameserver.model.PartyMatchRoomList;
-import org.l2junity.gameserver.model.PartyMatchWaitingList;
+import org.l2junity.gameserver.enums.MatchingRoomType;
+import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.matching.MatchingRoom;
 import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.ExClosePartyRoom;
-import org.l2junity.gameserver.network.serverpackets.ListPartyWating;
 
 /**
  * format (ch) d
@@ -33,14 +31,12 @@ import org.l2junity.gameserver.network.serverpackets.ListPartyWating;
  */
 public final class RequestOustFromPartyRoom extends L2GameClientPacket
 {
-	private static final String _C__D0_09_REQUESTOUSTFROMPARTYROOM = "[C] D0:09 RequestOustFromPartyRoom";
-	
-	private int _charid;
+	private int _charObjId;
 	
 	@Override
 	protected void readImpl()
 	{
-		_charid = readD();
+		_charObjId = readD();
 	}
 	
 	@Override
@@ -52,47 +48,34 @@ public final class RequestOustFromPartyRoom extends L2GameClientPacket
 			return;
 		}
 		
-		PlayerInstance member = World.getInstance().getPlayer(_charid);
+		PlayerInstance member = World.getInstance().getPlayer(_charObjId);
 		if (member == null)
 		{
 			return;
 		}
 		
-		PartyMatchRoom room = PartyMatchRoomList.getInstance().getPlayerRoom(member);
-		if ((room == null) || (room.getOwner() != player))
+		final MatchingRoom room = player.getMatchingRoom();
+		if ((room == null) || (room.getRoomType() != MatchingRoomType.PARTY) || (room.getLeader() != player) || (player == member))
 		{
 			return;
 		}
 		
-		if (player.isInParty() && member.isInParty() && (player.getParty().getLeaderObjectId() == member.getParty().getLeaderObjectId()))
+		final Party playerParty = player.getParty();
+		final Party memberParty = player.getParty();
+		
+		if ((playerParty != null) && (memberParty != null) && (playerParty.getLeaderObjectId() == memberParty.getLeaderObjectId()))
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_DISMISS_A_PARTY_MEMBER_BY_FORCE);
 		}
 		else
 		{
-			// Remove member from party room
-			room.deleteMember(member);
-			member.setPartyRoom(0);
-			
-			// Close the PartyRoom window
-			member.sendPacket(new ExClosePartyRoom());
-			
-			// Add player back on waiting list
-			PartyMatchWaitingList.getInstance().addPlayer(member);
-			
-			// Send Room list
-			int loc = 0; // TODO: Closes town
-			member.sendPacket(new ListPartyWating(member, 0, loc, member.getLevel()));
-			
-			// Clean player's LFP title
-			member.broadcastUserInfo();
-			member.sendPacket(SystemMessageId.YOU_HAVE_BEEN_OUSTED_FROM_THE_PARTY_ROOM);
+			room.deleteMember(member, true);
 		}
 	}
 	
 	@Override
 	public String getType()
 	{
-		return _C__D0_09_REQUESTOUSTFROMPARTYROOM;
+		return getClass().getSimpleName();
 	}
 }

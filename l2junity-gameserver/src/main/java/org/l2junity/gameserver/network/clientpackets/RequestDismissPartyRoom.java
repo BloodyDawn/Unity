@@ -18,9 +18,9 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
-import org.l2junity.gameserver.model.PartyMatchRoom;
-import org.l2junity.gameserver.model.PartyMatchRoomList;
+import org.l2junity.gameserver.enums.MatchingRoomType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.matching.MatchingRoom;
 
 /**
  * @author Gnacik
@@ -30,34 +30,31 @@ public class RequestDismissPartyRoom extends L2GameClientPacket
 	private static final String _C__D0_0A_REQUESTDISMISSPARTYROOM = "[C] D0:0A RequestDismissPartyRoom";
 	
 	private int _roomid;
-	@SuppressWarnings("unused")
-	private int _data2;
 	
 	@Override
 	protected void readImpl()
 	{
 		_roomid = readD();
-		_data2 = readD();
 	}
 	
 	@Override
 	protected void runImpl()
 	{
-		final PlayerInstance _activeChar = getClient().getActiveChar();
+		final PlayerInstance player = getActiveChar();
 		
-		if (_activeChar == null)
+		if (player == null)
 		{
 			return;
 		}
 		
-		PartyMatchRoom _room = PartyMatchRoomList.getInstance().getRoom(_roomid);
+		final MatchingRoom room = player.getMatchingRoom();
 		
-		if (_room == null)
+		if ((room == null) || (room.getId() != _roomid) || (room.getRoomType() != MatchingRoomType.PARTY) || (room.getLeader() != player))
 		{
 			return;
 		}
 		
-		PartyMatchRoomList.getInstance().deleteRoom(_roomid);
+		room.disbandRoom();
 	}
 	
 	@Override

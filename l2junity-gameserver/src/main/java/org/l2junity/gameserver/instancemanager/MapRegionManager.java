@@ -35,6 +35,7 @@ import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
+import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.zone.type.ClanHallZone;
 import org.l2junity.gameserver.model.zone.type.RespawnZone;
 import org.w3c.dom.Document;
@@ -466,6 +467,12 @@ public final class MapRegionManager implements IXmlReader
 	public MapRegion getMapRegionByName(String regionName)
 	{
 		return _regions.get(regionName);
+	}
+	
+	public int getBBs(ILocational loc)
+	{
+		final MapRegion region = getMapRegion(loc.getX(), loc.getY());
+		return region != null ? region.getBbs() : _regions.get(defaultRespawn).getBbs();
 	}
 	
 	/**
