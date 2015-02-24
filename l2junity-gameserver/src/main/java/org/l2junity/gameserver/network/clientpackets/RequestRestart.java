@@ -27,8 +27,8 @@ import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.instancemanager.AntiFeedManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.L2GameClient;
-import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.L2GameClient.GameClientState;
+import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.CharSelectionInfo;
 import org.l2junity.gameserver.network.serverpackets.RestartResponse;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
@@ -94,9 +94,6 @@ public final class RequestRestart extends L2GameClientPacket
 			sendPacket(RestartResponse.valueOf(false));
 			return;
 		}
-		
-		// Remove player from Boss Zone
-		player.removeFromBossZone();
 		
 		final L2GameClient client = getClient();
 		

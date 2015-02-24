@@ -33,7 +33,6 @@ import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.PlayerAction;
 import org.l2junity.gameserver.handler.IVoicedCommandHandler;
 import org.l2junity.gameserver.instancemanager.CoupleManager;
-import org.l2junity.gameserver.instancemanager.GrandBossManager;
 import org.l2junity.gameserver.instancemanager.SiegeManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
@@ -262,9 +261,9 @@ public class Wedding implements IVoicedCommandHandler
 			return false;
 		}
 		
-		if (GrandBossManager.getInstance().getZone(activeChar) != null)
+		if (activeChar.isInsideZone(ZoneId.NO_RESTART))
 		{
-			activeChar.sendMessage("You are inside a Boss Zone.");
+			activeChar.sendMessage("You are inside a No Restart Zone.");
 			return false;
 		}
 		
@@ -280,9 +279,9 @@ public class Wedding implements IVoicedCommandHandler
 			return false;
 		}
 		
-		if (GrandBossManager.getInstance().getZone(activeChar) != null)
+		if (activeChar.isInsideZone(ZoneId.NO_RESTART))
 		{
-			activeChar.sendMessage("You are inside a Boss Zone.");
+			activeChar.sendMessage("You are inside a No Restart Zone.");
 			return false;
 		}
 		
@@ -360,9 +359,9 @@ public class Wedding implements IVoicedCommandHandler
 			return false;
 		}
 		
-		if (GrandBossManager.getInstance().getZone(partner) != null)
+		if (partner.isInsideZone(ZoneId.NO_RESTART))
 		{
-			activeChar.sendMessage("Your partner is inside a Boss Zone.");
+			activeChar.sendMessage("Your partner is inside a No Restart Zone.");
 			return false;
 		}
 		

@@ -22,10 +22,15 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.logging.Logger;
+
+import javolution.util.FastMap;
 
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
+import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.TeleportWhereType;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -35,8 +40,6 @@ import org.l2junity.gameserver.model.events.impl.character.OnCreatureZoneEnter;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureZoneExit;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
-
-import javolution.util.FastMap;
 
 /**
  * Abstract base class for any zone type handles basic operations.
@@ -596,5 +599,40 @@ public abstract class ZoneType extends ListenersContainer
 	public boolean isEnabled()
 	{
 		return _enabled;
+	}
+	
+	public void oustAllPlayers()
+	{
+		//@formatter:off
+		_characterList.values().stream()
+			.filter(Objects::nonNull)
+			.filter(WorldObject::isPlayer)
+			.map(WorldObject::getActingPlayer)
+			.filter(PlayerInstance::isOnline)
+			.forEach(player -> player.teleToLocation(TeleportWhereType.TOWN));
+		//@formatter:off
+	}
+
+	/**
+	 * @param loc
+	 */
+	public void movePlayersTo(Location loc)
+	{
+		if (_characterList.isEmpty())
+		{
+			return;
+		}
+		
+		for (Creature character : getCharactersInside())
+		{
+			if ((character != null) && character.isPlayer())
+			{
+				PlayerInstance player = character.getActingPlayer();
+				if (player.isOnline())
+				{
+					player.teleToLocation(loc);
+				}
+			}
+		}
 	}
 }

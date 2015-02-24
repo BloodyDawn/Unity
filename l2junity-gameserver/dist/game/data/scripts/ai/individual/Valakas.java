@@ -27,6 +27,7 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.MountType;
 import org.l2junity.gameserver.instancemanager.GrandBossManager;
+import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -37,7 +38,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.zone.type.BossZone;
+import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.serverpackets.PlaySound;
 import org.l2junity.gameserver.network.serverpackets.SocialAction;
 import org.l2junity.gameserver.network.serverpackets.SpecialCamera;
@@ -115,14 +116,14 @@ public final class Valakas extends AbstractNpcAI
 	// Misc
 	private long _timeTracker = 0; // Time tracker for last attack on Valakas.
 	private Playable _actualVictim; // Actual target of Valakas.
-	private static BossZone ZONE;
+	private static ZoneType ZONE;
 	
 	private Valakas()
 	{
 		super(Valakas.class.getSimpleName(), "ai/individual");
 		registerMobs(VALAKAS);
 		
-		ZONE = GrandBossManager.getInstance().getZone(212852, -114842, -1632);
+		ZONE = ZoneManager.getInstance().getZoneById(12010);
 		final StatsSet info = GrandBossManager.getInstance().getStatsSet(VALAKAS);
 		final int status = GrandBossManager.getInstance().getBossStatus(VALAKAS);
 		

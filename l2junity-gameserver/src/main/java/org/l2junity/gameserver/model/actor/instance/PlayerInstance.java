@@ -110,7 +110,6 @@ import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.instancemanager.DuelManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.FortSiegeManager;
-import org.l2junity.gameserver.instancemanager.GrandBossManager;
 import org.l2junity.gameserver.instancemanager.HandysBlockCheckerManager;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.instancemanager.ItemsOnGroundManager;
@@ -256,7 +255,6 @@ import org.l2junity.gameserver.model.variables.AccountVariables;
 import org.l2junity.gameserver.model.variables.PlayerVariables;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.model.zone.ZoneType;
-import org.l2junity.gameserver.model.zone.type.BossZone;
 import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.AbstractHtmlPacket;
@@ -13771,24 +13769,6 @@ public final class PlayerInstance extends Playable
 	public void setOfflineStartTime(long time)
 	{
 		_offlineShopStart = time;
-	}
-	
-	/**
-	 * Remove player from BossZones (used on char logout/exit)
-	 */
-	public void removeFromBossZone()
-	{
-		try
-		{
-			for (BossZone _zone : GrandBossManager.getInstance().getZones())
-			{
-				_zone.removePlayer(this);
-			}
-		}
-		catch (Exception e)
-		{
-			_log.log(Level.WARNING, "Exception on removeFromBossZone(): " + e.getMessage(), e);
-		}
 	}
 	
 	/**

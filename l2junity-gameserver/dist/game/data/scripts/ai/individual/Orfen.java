@@ -27,6 +27,7 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.instancemanager.GrandBossManager;
+import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
@@ -37,7 +38,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.zone.type.BossZone;
+import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.serverpackets.PlaySound;
 
@@ -73,7 +74,7 @@ public final class Orfen extends AbstractNpcAI
 	
 	private static boolean _IsTeleported;
 	private static List<Attackable> _Minions = new FastList<>();
-	private static BossZone ZONE;
+	private static ZoneType ZONE;
 	
 	private static final byte ALIVE = 0;
 	private static final byte DEAD = 1;
@@ -89,7 +90,7 @@ public final class Orfen extends AbstractNpcAI
 		};
 		registerMobs(mobs);
 		_IsTeleported = false;
-		ZONE = GrandBossManager.getInstance().getZone(POS[0]);
+		ZONE = ZoneManager.getInstance().getZoneById(12013);
 		StatsSet info = GrandBossManager.getInstance().getStatsSet(ORFEN);
 		int status = GrandBossManager.getInstance().getBossStatus(ORFEN);
 		if (status == DEAD)

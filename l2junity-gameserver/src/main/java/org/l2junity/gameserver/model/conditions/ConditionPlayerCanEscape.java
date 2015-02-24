@@ -18,8 +18,6 @@
  */
 package org.l2junity.gameserver.model.conditions;
 
-import org.l2junity.gameserver.instancemanager.GrandBossManager;
-import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.TvTEvent;
@@ -69,10 +67,6 @@ public class ConditionPlayerCanEscape extends Condition
 			canTeleport = false;
 		}
 		else if (player.isInOlympiadMode())
-		{
-			canTeleport = false;
-		}
-		else if ((GrandBossManager.getInstance().getZone(player) != null) && !player.canOverrideCond(PcCondOverride.SKILL_CONDITIONS))
 		{
 			canTeleport = false;
 		}

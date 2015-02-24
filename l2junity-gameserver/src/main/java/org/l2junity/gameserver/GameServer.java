@@ -284,7 +284,7 @@ public class GameServer
 		ItemAuctionManager.getInstance();
 		CastleManager.getInstance().loadInstances();
 		NpcBufferTable.getInstance();
-		GrandBossManager.getInstance().initZones();
+		GrandBossManager.getInstance();
 		EventDroplist.getInstance();
 		
 		printSection("Olympiad");

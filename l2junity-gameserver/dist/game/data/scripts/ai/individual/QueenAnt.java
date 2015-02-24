@@ -25,6 +25,7 @@ import javolution.util.FastList;
 import org.l2junity.Config;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.instancemanager.GrandBossManager;
+import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
@@ -36,7 +37,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.zone.type.BossZone;
+import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
 import org.l2junity.gameserver.network.serverpackets.PlaySound;
 
@@ -75,7 +76,7 @@ public final class QueenAnt extends AbstractNpcAI
 	private static final byte ALIVE = 0; // Queen Ant is spawned.
 	private static final byte DEAD = 1; // Queen Ant has been killed.
 	
-	private static BossZone _zone;
+	private static ZoneType _zone;
 	
 	private static SkillHolder HEAL1 = new SkillHolder(4020, 1);
 	private static SkillHolder HEAL2 = new SkillHolder(4024, 1);
@@ -92,7 +93,7 @@ public final class QueenAnt extends AbstractNpcAI
 		addAggroRangeEnterId(MOBS);
 		addFactionCallId(NURSE);
 		
-		_zone = GrandBossManager.getInstance().getZone(QUEEN_X, QUEEN_Y, QUEEN_Z);
+		_zone = ZoneManager.getInstance().getZoneById(12012);
 		StatsSet info = GrandBossManager.getInstance().getStatsSet(QUEEN);
 		int status = GrandBossManager.getInstance().getBossStatus(QUEEN);
 		if (status == DEAD)

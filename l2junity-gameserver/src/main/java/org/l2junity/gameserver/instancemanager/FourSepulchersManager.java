@@ -247,14 +247,7 @@ public final class FourSepulchersManager
 	
 	public void clean()
 	{
-		for (int i = 31921; i < 31925; i++)
-		{
-			int[] Location = _startHallSpawns.get(i);
-			GrandBossManager.getInstance().getZone(Location[0], Location[1], Location[2]).oustAllPlayers();
-		}
-		
 		deleteAllMobs();
-		
 		closeAllDoors();
 		
 		_hallInUse.clear();
@@ -993,7 +986,6 @@ public final class FourSepulchersManager
 			
 			for (PlayerInstance mem : members)
 			{
-				GrandBossManager.getInstance().getZone(Location[0], Location[1], Location[2]).allowPlayerEntry(mem, 30);
 				driftx = Rnd.get(-80, 80);
 				drifty = Rnd.get(-80, 80);
 				mem.teleToLocation(Location[0] + driftx, Location[1] + drifty, Location[2]);
@@ -1027,7 +1019,6 @@ public final class FourSepulchersManager
 			
 			for (PlayerInstance mem : members)
 			{
-				GrandBossManager.getInstance().getZone(Location[0], Location[1], Location[2]).allowPlayerEntry(mem, 30);
 				driftx = Rnd.get(-80, 80);
 				drifty = Rnd.get(-80, 80);
 				mem.teleToLocation(Location[0] + driftx, Location[1] + drifty, Location[2]);
@@ -1050,7 +1041,6 @@ public final class FourSepulchersManager
 		}
 		else
 		{
-			GrandBossManager.getInstance().getZone(Location[0], Location[1], Location[2]).allowPlayerEntry(player, 30);
 			driftx = Rnd.get(-80, 80);
 			drifty = Rnd.get(-80, 80);
 			player.teleToLocation(Location[0] + driftx, Location[1] + drifty, Location[2]);

@@ -28,7 +28,6 @@ import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
-import org.l2junity.gameserver.model.zone.type.BossZone;
 
 import ai.individual.Valakas;
 import ai.npc.AbstractNpcAI;
@@ -106,13 +105,6 @@ public final class GrandBossTeleporters extends AbstractNpcAI
 						else if (st.getInt("allowEnter") == 1)
 						{
 							st.unset("allowEnter");
-							BossZone zone = GrandBossManager.getInstance().getZone(212852, -114842, -1632);
-							
-							if (zone != null)
-							{
-								zone.allowPlayerEntry(player, 30);
-							}
-							
 							player.teleToLocation(TELEPORT_INTO_VALAKAS_LAIR.getX() + getRandom(600), TELEPORT_INTO_VALAKAS_LAIR.getY() + getRandom(600), TELEPORT_INTO_VALAKAS_LAIR.getZ());
 							
 							playerCount++;
