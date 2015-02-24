@@ -113,6 +113,7 @@ import org.l2junity.gameserver.instancemanager.FortSiegeManager;
 import org.l2junity.gameserver.instancemanager.HandysBlockCheckerManager;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.instancemanager.ItemsOnGroundManager;
+import org.l2junity.gameserver.instancemanager.MatchingRoomManager;
 import org.l2junity.gameserver.instancemanager.MentorManager;
 import org.l2junity.gameserver.instancemanager.PunishmentManager;
 import org.l2junity.gameserver.instancemanager.QuestManager;
@@ -133,9 +134,6 @@ import org.l2junity.gameserver.model.MacroList;
 import org.l2junity.gameserver.model.ManufactureItem;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.Party.MessageType;
-import org.l2junity.gameserver.model.PartyMatchRoom;
-import org.l2junity.gameserver.model.PartyMatchRoomList;
-import org.l2junity.gameserver.model.PartyMatchWaitingList;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.PetData;
 import org.l2junity.gameserver.model.PetLevelData;
@@ -235,6 +233,7 @@ import org.l2junity.gameserver.model.items.type.ActionType;
 import org.l2junity.gameserver.model.items.type.ArmorType;
 import org.l2junity.gameserver.model.items.type.EtcItemType;
 import org.l2junity.gameserver.model.items.type.WeaponType;
+import org.l2junity.gameserver.model.matching.MatchingRoom;
 import org.l2junity.gameserver.model.multisell.PreparedListContainer;
 import org.l2junity.gameserver.model.olympiad.OlympiadGameManager;
 import org.l2junity.gameserver.model.olympiad.OlympiadGameTask;
@@ -644,10 +643,7 @@ public final class PlayerInstance extends Playable
 	// TODO: This needs to be better integrated and saved/loaded
 	private final Radar _radar;
 	
-	// Party matching
-	// private int _partymatching = 0;
-	private int _partyroom = 0;
-	// private int _partywait = 0;
+	private MatchingRoom _matchingRoom;
 	
 	// Clan related attributes
 	/** The Clan Identifier of the L2PcInstance */
@@ -5681,26 +5677,6 @@ public final class PlayerInstance extends Playable
 		setExpBeforeDeath(getExp());
 		
 		getStat().addExp(-lostExp);
-	}
-	
-	public boolean isPartyWaiting()
-	{
-		return PartyMatchWaitingList.getInstance().getPlayers().contains(this);
-	}
-	
-	public void setPartyRoom(int id)
-	{
-		_partyroom = id;
-	}
-	
-	public int getPartyRoom()
-	{
-		return _partyroom;
-	}
-	
-	public boolean isInPartyMatchRoom()
-	{
-		return _partyroom > 0;
 	}
 	
 	/**
@@ -11389,15 +11365,11 @@ public final class PlayerInstance extends Playable
 		
 		try
 		{
-			PartyMatchWaitingList.getInstance().removePlayer(this);
-			if (_partyroom != 0)
+			if (_matchingRoom != null)
 			{
-				PartyMatchRoom room = PartyMatchRoomList.getInstance().getRoom(_partyroom);
-				if (room != null)
-				{
-					room.deleteMember(this);
-				}
+				_matchingRoom.deleteMember(this, false);
 			}
+			MatchingRoomManager.getInstance().removeFromWaitingList(this);
 		}
 		catch (Exception e)
 		{
@@ -14703,5 +14675,20 @@ public final class PlayerInstance extends Playable
 	public Set<Integer> getWhisperers()
 	{
 		return _whisperers;
+	}
+	
+	public MatchingRoom getMatchingRoom()
+	{
+		return _matchingRoom;
+	}
+	
+	public void setMatchingRoom(MatchingRoom matchingRoom)
+	{
+		_matchingRoom = matchingRoom;
+	}
+	
+	public boolean isInMatchingRoom()
+	{
+		return _matchingRoom != null;
 	}
 }

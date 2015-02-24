@@ -2830,6 +2830,15 @@ public class Quest extends AbstractScript implements IIdentifiable
 		return Collections.emptySet();
 	}
 	
+	public <T> boolean isTarget(int[] ids, WorldObject target, Class<T> clazz)
+	{
+		if ((target != null) && clazz.isInstance(target))
+		{
+			return org.l2junity.gameserver.util.Util.contains(ids, target.getId());
+		}
+		return false;
+	}
+	
 	public void sendNpcLogList(PlayerInstance activeChar)
 	{
 		final QuestState qs = activeChar.getQuestState(getName());

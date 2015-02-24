@@ -18,53 +18,53 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import org.l2junity.gameserver.model.PartyMatchRoom;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.concurrent.TimeUnit;
+
+import org.l2junity.gameserver.enums.MatchingMemberType;
+import org.l2junity.gameserver.instancemanager.InstanceManager;
+import org.l2junity.gameserver.instancemanager.MapRegionManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.matching.PartyMatchingRoom;
 
 /**
  * @author Gnacik
  */
 public class ExPartyRoomMember extends L2GameServerPacket
 {
-	private final PartyMatchRoom _room;
-	private final int _mode;
+	private final PartyMatchingRoom _room;
+	private final MatchingMemberType _type;
 	
-	public ExPartyRoomMember(PlayerInstance player, PartyMatchRoom room, int mode)
+	public ExPartyRoomMember(PlayerInstance player, PartyMatchingRoom room)
 	{
 		_room = room;
-		_mode = mode;
+		_type = room.getMemberType(player);
 	}
 	
 	@Override
 	protected void writeImpl()
 	{
-		writeC(0xfe);
+		writeC(0xFE);
 		writeH(0x08);
-		writeD(_mode);
-		writeD(_room.getMembers());
-		for (PlayerInstance member : _room.getPartyMembers())
+		writeD(_type.ordinal());
+		writeD(_room.getMembersCount());
+		for (PlayerInstance member : _room.getMembers())
 		{
 			writeD(member.getObjectId());
 			writeS(member.getName());
 			writeD(member.getActiveClass());
 			writeD(member.getLevel());
-			writeD(0x00); // TODO: Closes town
-			if (_room.getOwner().equals(member))
+			writeD(MapRegionManager.getInstance().getBBs(member.getLocation()));
+			writeD(_room.getMemberType(member).ordinal());
+			final Map<Integer, Long> _instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(member.getObjectId());
+			writeD(_instanceTimes.size());
+			for (Entry<Integer, Long> entry : _instanceTimes.entrySet())
 			{
-				writeD(0x01);
+				final long instanceTime = TimeUnit.MILLISECONDS.toSeconds(entry.getValue() - System.currentTimeMillis());
+				writeD(entry.getKey());
+				writeD((int) instanceTime);
 			}
-			else
-			{
-				if ((_room.getOwner().isInParty() && member.isInParty()) && (_room.getOwner().getParty().getLeaderObjectId() == member.getParty().getLeaderObjectId()))
-				{
-					writeD(0x02);
-				}
-				else
-				{
-					writeD(0x00);
-				}
-			}
-			writeD(0x00); // TODO: Instance datas there is more if that is not 0!
 		}
 	}
 }

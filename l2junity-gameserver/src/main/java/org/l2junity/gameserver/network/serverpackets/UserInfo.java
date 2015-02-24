@@ -286,7 +286,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			writeD(_activeChar.getClanPrivileges().getBitmask());
 			writeD(_activeChar.getAllyId());
 			writeD(_activeChar.getAllyCrestId());
-			writeC(_activeChar.isInPartyMatchRoom() ? 0x01 : 0x00);
+			writeC(_activeChar.isInMatchingRoom() ? 0x01 : 0x00);
 		}
 		
 		if (containsMask(UserInfoType.SOCIAL))

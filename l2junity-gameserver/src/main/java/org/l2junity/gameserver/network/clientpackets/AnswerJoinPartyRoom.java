@@ -18,16 +18,9 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
-import org.l2junity.gameserver.model.PartyMatchRoom;
-import org.l2junity.gameserver.model.PartyMatchRoomList;
-import org.l2junity.gameserver.model.PartyMatchWaitingList;
-import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.matching.MatchingRoom;
 import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.ExManagePartyRoomMember;
-import org.l2junity.gameserver.network.serverpackets.ExPartyRoomMember;
-import org.l2junity.gameserver.network.serverpackets.PartyMatchDetail;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * Format: (ch) d
@@ -35,13 +28,12 @@ import org.l2junity.gameserver.network.serverpackets.SystemMessage;
  */
 public final class AnswerJoinPartyRoom extends L2GameClientPacket
 {
-	private static final String _C__D0_30_ANSWERJOINPARTYROOM = "[C] D0:30 AnswerJoinPartyRoom";
-	private int _answer; // 1 or 0
+	private boolean _answer;
 	
 	@Override
 	protected void readImpl()
 	{
-		_answer = readD();
+		_answer = readD() == 1;
 	}
 	
 	@Override
@@ -56,57 +48,20 @@ public final class AnswerJoinPartyRoom extends L2GameClientPacket
 		PlayerInstance partner = player.getActiveRequester();
 		if (partner == null)
 		{
-			// Partner hasn't been found, cancel the invitation
-			player.sendPacket(SystemMessageId.THAT_PLAYER_IS_NOT_ONLINE);
-			player.setActiveRequester(null);
-			return;
-		}
-		else if (World.getInstance().getPlayer(partner.getObjectId()) == null)
-		{
-			// Partner hasn't been found, cancel the invitation
 			player.sendPacket(SystemMessageId.THAT_PLAYER_IS_NOT_ONLINE);
 			player.setActiveRequester(null);
 			return;
 		}
 		
-		// If answer is positive, join the requester's PartyRoom.
-		if ((_answer == 1) && !partner.isRequestExpired())
+		if (_answer && !partner.isRequestExpired())
 		{
-			PartyMatchRoom room = PartyMatchRoomList.getInstance().getRoom(partner.getPartyRoom());
+			final MatchingRoom room = partner.getMatchingRoom();
 			if (room == null)
 			{
 				return;
 			}
 			
-			if ((player.getLevel() >= room.getMinLvl()) && (player.getLevel() <= room.getMaxLvl()))
-			{
-				// Remove from waiting list
-				PartyMatchWaitingList.getInstance().removePlayer(player);
-				
-				player.setPartyRoom(partner.getPartyRoom());
-				
-				player.sendPacket(new PartyMatchDetail(player, room));
-				player.sendPacket(new ExPartyRoomMember(player, room, 0));
-				
-				for (PlayerInstance member : room.getPartyMembers())
-				{
-					if (member == null)
-					{
-						continue;
-					}
-					
-					member.sendPacket(new ExManagePartyRoomMember(player, room, 0));
-					member.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_ENTERED_THE_PARTY_ROOM).addPcName(player));
-				}
-				room.addMember(player);
-				
-				// Info Broadcast
-				player.broadcastUserInfo();
-			}
-			else
-			{
-				player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIREMENTS_TO_ENTER_THAT_PARTY_ROOM);
-			}
+			room.addMember(player);
 		}
 		else
 		{
@@ -121,6 +76,6 @@ public final class AnswerJoinPartyRoom extends L2GameClientPacket
 	@Override
 	public String getType()
 	{
-		return _C__D0_30_ANSWERJOINPARTYROOM;
+		return AnswerJoinPartyRoom.class.getSimpleName();
 	}
 }

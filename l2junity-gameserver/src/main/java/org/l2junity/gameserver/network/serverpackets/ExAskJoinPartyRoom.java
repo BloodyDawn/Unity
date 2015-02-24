@@ -18,7 +18,6 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import org.l2junity.gameserver.model.PartyMatchRoomList;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
@@ -32,7 +31,7 @@ public class ExAskJoinPartyRoom extends L2GameServerPacket
 	public ExAskJoinPartyRoom(PlayerInstance player)
 	{
 		_charName = player.getName();
-		_roomName = PartyMatchRoomList.getInstance().getPlayerRoom(player).getTitle();
+		_roomName = player.getMatchingRoom().getTitle();
 	}
 	
 	@Override

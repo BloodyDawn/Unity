@@ -20,12 +20,10 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.Party.MessageType;
-import org.l2junity.gameserver.model.PartyMatchRoom;
-import org.l2junity.gameserver.model.PartyMatchRoomList;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.PartyRequest;
+import org.l2junity.gameserver.model.matching.MatchingRoom;
 import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.ExManagePartyRoomMember;
 import org.l2junity.gameserver.network.serverpackets.JoinParty;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
@@ -72,7 +70,7 @@ public final class RequestAnswerJoinParty extends L2GameClientPacket
 		
 		if (_response == 1)
 		{
-			if (party.getMemberCount() >= 9)
+			if (party.getMemberCount() >= 7)
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THE_PARTY_IS_FULL);
 				player.sendPacket(sm);
@@ -88,33 +86,11 @@ public final class RequestAnswerJoinParty extends L2GameClientPacket
 			
 			player.joinParty(party);
 			
-			if (requestor.isInPartyMatchRoom())
+			final MatchingRoom requestorRoom = requestor.getMatchingRoom();
+			
+			if (requestorRoom != null)
 			{
-				final PartyMatchRoomList list = PartyMatchRoomList.getInstance();
-				if (player.isInPartyMatchRoom())
-				{
-					if (list.getPlayerRoomId(requestor) == list.getPlayerRoomId(player))
-					{
-						final PartyMatchRoom room = list.getPlayerRoom(requestor);
-						if (room != null)
-						{
-							final ExManagePartyRoomMember packet = new ExManagePartyRoomMember(player, room, 1);
-							room.getPartyMembers().forEach(packet::sendTo);
-						}
-					}
-				}
-				else
-				{
-					final PartyMatchRoom room = list.getPlayerRoom(requestor);
-					if (room != null)
-					{
-						room.addMember(player);
-						final ExManagePartyRoomMember packet = new ExManagePartyRoomMember(player, room, 1);
-						room.getPartyMembers().forEach(packet::sendTo);
-						player.setPartyRoom(room.getId());
-						player.broadcastUserInfo();
-					}
-				}
+				requestorRoom.addMember(player);
 			}
 		}
 		else if (_response == -1)

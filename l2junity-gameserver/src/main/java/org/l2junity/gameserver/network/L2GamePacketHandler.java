@@ -750,6 +750,7 @@ public final class L2GamePacketHandler implements IPacketHandler<L2GameClient>, 
 							}
 							break;
 						}
+						
 						switch (id2)
 						{
 							case 0x00:
@@ -1070,28 +1071,28 @@ public final class L2GamePacketHandler implements IPacketHandler<L2GameClient>, 
 								msg = new RequestExCubeGameReadyAnswer();
 								break;
 							case 0x5A:
-								// @TODO:msg = new RequestExListMpccWaiting();
+								msg = new RequestExListMpccWaiting();
 								break;
 							case 0x5B:
-								// @TODO:msg = new RequestExManageMpccRoom();
+								msg = new RequestExManageMpccRoom();
 								break;
 							case 0x5C:
-								// @TODO:msg = new RequestExJoinMpccRoom();
+								msg = new RequestExJoinMpccRoom();
 								break;
 							case 0x5D:
-								// TODO:: RequestExOustFromMpccRoom chddd
+								msg = new RequestExOustFromMpccRoom();
 								break;
 							case 0x5E:
-								// TODO:: RequestExDismissMpccRoom chdddddS
+								msg = new RequestExDismissMpccRoom();
 								break;
 							case 0x5F:
-								// TODO:: RequestExWithdrawMpccRoom chdd
+								msg = new RequestExWithdrawMpccRoom();
 								break;
 							case 0x60:
 								msg = new RequestSeedPhase();
 								break;
 							case 0x61:
-								// TODO:: msg = new RequestExMpccPartymasterList();
+								msg = new RequestExMpccPartymasterList();
 								break;
 							case 0x62:
 								msg = new RequestPostItemList();

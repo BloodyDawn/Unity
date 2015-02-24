@@ -662,11 +662,6 @@ public class Party extends AbstractPlayerGroup
 						msg.addString(_commandChannel.getLeader().getName());
 						_commandChannel.broadcastPacket(msg);
 					}
-					if (player.isInPartyMatchRoom())
-					{
-						PartyMatchRoom room = PartyMatchRoomList.getInstance().getPlayerRoom(player);
-						room.changeLeader(player);
-					}
 				}
 			}
 			else
