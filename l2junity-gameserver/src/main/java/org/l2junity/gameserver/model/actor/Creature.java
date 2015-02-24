@@ -65,6 +65,7 @@ import org.l2junity.gameserver.enums.UserInfoType;
 import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.instancemanager.MapRegionManager;
+import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.AccessLevel;
 import org.l2junity.gameserver.model.CharEffectList;
 import org.l2junity.gameserver.model.L2Clan;
@@ -76,8 +77,8 @@ import org.l2junity.gameserver.model.TimeStamp;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.WorldRegion;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.knownlist.CharKnownList;
 import org.l2junity.gameserver.model.actor.stat.CharStat;
 import org.l2junity.gameserver.model.actor.status.CharStatus;
@@ -135,6 +136,7 @@ import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.model.zone.ZoneRegion;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.Attack;
@@ -528,12 +530,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public void onDecay()
 	{
 		decayMe();
-		
-		final WorldRegion reg = getWorldRegion();
-		if (reg != null)
-		{
-			reg.removeFromZones(this);
-		}
+		ZoneManager.getInstance().getRegion(this).removeFromZones(this);
 	}
 	
 	@Override
@@ -2113,21 +2110,17 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		// prevent casting signets to peace zone
 		if (skill.isChanneling() && (skill.getChannelingSkillId() > 0))
 		{
-			WorldRegion region = getWorldRegion();
-			if (region == null)
-			{
-				return false;
-			}
+			final ZoneRegion zoneRegion = ZoneManager.getInstance().getRegion(this);
 			boolean canCast = true;
 			if ((skill.getTargetType() == L2TargetType.GROUND) && isPlayer())
 			{
 				Location wp = getActingPlayer().getCurrentSkillWorldPosition();
-				if (!region.checkEffectRangeInsidePeaceZone(skill, wp.getX(), wp.getY(), wp.getZ()))
+				if (!zoneRegion.checkEffectRangeInsidePeaceZone(skill, wp.getX(), wp.getY(), wp.getZ()))
 				{
 					canCast = false;
 				}
 			}
-			else if (!region.checkEffectRangeInsidePeaceZone(skill, getX(), getY(), getZ()))
+			else if (!zoneRegion.checkEffectRangeInsidePeaceZone(skill, getX(), getY(), getZ()))
 			{
 				canCast = false;
 			}
@@ -2541,10 +2534,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			getAI().notifyEvent(CtrlEvent.EVT_DEAD);
 		}
 		
-		if (getWorldRegion() != null)
-		{
-			getWorldRegion().onDeath(this);
-		}
+		ZoneManager.getInstance().getRegion(this).onDeath(this);
 		
 		getAttackByList().clear();
 		
@@ -2598,10 +2588,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			
 			// Start broadcast status
 			broadcastPacket(new Revive(this));
-			if (getWorldRegion() != null)
-			{
-				getWorldRegion().onRevive(this);
-			}
+			ZoneManager.getInstance().getRegion(this).onRevive(this);
 		}
 		else
 		{
@@ -4365,7 +4352,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			}
 		}
 		
-		getWorldRegion().revalidateZones(this);
+		ZoneManager.getInstance().getRegion(this).revalidateZones(this);
 	}
 	
 	/**
@@ -7090,5 +7077,26 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public Race getRace()
 	{
 		return getTemplate().getRace();
+	}
+	
+	@Override
+	public final void setXYZ(int newX, int newY, int newZ)
+	{
+		try
+		{
+			final ZoneRegion oldZoneRegion = ZoneManager.getInstance().getRegion(this);
+			final ZoneRegion newZoneRegion = ZoneManager.getInstance().getRegion(newX, newY);
+			if (isCharacter() && (oldZoneRegion != newZoneRegion))
+			{
+				oldZoneRegion.removeFromZones(this);
+				newZoneRegion.revalidateZones(this);
+			}
+		}
+		catch (Exception e)
+		{
+			badCoords();
+		}
+		
+		super.setXYZ(newX, newY, newZ);
 	}
 }

@@ -21,6 +21,7 @@ package org.l2junity.gameserver.model.actor;
 import java.util.Collection;
 
 import org.l2junity.gameserver.enums.InstanceType;
+import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
@@ -130,10 +131,7 @@ public abstract class Decoy extends Creature
 		
 		if (isVisible() && !isDead())
 		{
-			if (getWorldRegion() != null)
-			{
-				getWorldRegion().removeFromZones(this);
-			}
+			ZoneManager.getInstance().getRegion(this).removeFromZones(this);
 			owner.setDecoy(null);
 			decayMe();
 			getKnownList().removeAllKnownObjects();

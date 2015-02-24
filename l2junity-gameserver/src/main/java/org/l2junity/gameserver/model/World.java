@@ -32,8 +32,8 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.util.Util;
 
 public final class World

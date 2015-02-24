@@ -26,19 +26,13 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Logger;
 
-import javolution.util.FastList;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.datatables.SpawnTable;
 import org.l2junity.gameserver.model.actor.Attackable;
-import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.Vehicle;
-import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.model.zone.ZoneType;
-import org.l2junity.gameserver.model.zone.type.PeaceZone;
 
 public final class WorldRegion
 {
@@ -54,7 +48,6 @@ public final class WorldRegion
 	private final int _tileX, _tileY;
 	private boolean _active = false;
 	private ScheduledFuture<?> _neighborsTask = null;
-	private final List<ZoneType> _zones = new FastList<>();
 	
 	public WorldRegion(int pTileX, int pTileY)
 	{
@@ -65,126 +58,6 @@ public final class WorldRegion
 		
 		// default a newly initialized region to inactive, unless always on is specified
 		_active = Config.GRIDS_ALWAYS_ON;
-	}
-	
-	public List<ZoneType> getZones()
-	{
-		return _zones;
-	}
-	
-	public void addZone(ZoneType zone)
-	{
-		_zones.add(zone);
-	}
-	
-	public void removeZone(ZoneType zone)
-	{
-		_zones.remove(zone);
-	}
-	
-	public void revalidateZones(Creature character)
-	{
-		// do NOT update the world region while the character is still in the process of teleporting
-		// Once the teleport is COMPLETED, revalidation occurs safely, at that time.
-		
-		if (character.isTeleporting())
-		{
-			return;
-		}
-		
-		for (ZoneType z : getZones())
-		{
-			if (z != null)
-			{
-				z.revalidateInZone(character);
-			}
-		}
-	}
-	
-	public void removeFromZones(Creature character)
-	{
-		for (ZoneType z : getZones())
-		{
-			if (z != null)
-			{
-				z.removeCharacter(character);
-			}
-		}
-	}
-	
-	public boolean containsZone(int zoneId)
-	{
-		for (ZoneType z : getZones())
-		{
-			if (z.getId() == zoneId)
-			{
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	public boolean checkEffectRangeInsidePeaceZone(Skill skill, final int x, final int y, final int z)
-	{
-		final int range = skill.getEffectRange();
-		final int up = y + range;
-		final int down = y - range;
-		final int left = x + range;
-		final int right = x - range;
-		
-		for (ZoneType e : getZones())
-		{
-			if (e instanceof PeaceZone)
-			{
-				if (e.isInsideZone(x, up, z))
-				{
-					return false;
-				}
-				
-				if (e.isInsideZone(x, down, z))
-				{
-					return false;
-				}
-				
-				if (e.isInsideZone(left, y, z))
-				{
-					return false;
-				}
-				
-				if (e.isInsideZone(right, y, z))
-				{
-					return false;
-				}
-				
-				if (e.isInsideZone(x, y, z))
-				{
-					return false;
-				}
-			}
-		}
-		return true;
-	}
-	
-	public void onDeath(Creature character)
-	{
-		for (ZoneType z : getZones())
-		{
-			if (z != null)
-			{
-				z.onDieInside(character);
-			}
-		}
-	}
-	
-	public void onRevive(Creature character)
-	{
-		for (ZoneType z : getZones())
-		{
-			if (z != null)
-			{
-				z.onReviveInside(character);
-			}
-		}
 	}
 	
 	/** Task of AI notification */

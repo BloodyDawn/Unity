@@ -25,6 +25,7 @@ import java.util.concurrent.ScheduledFuture;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.enums.TrapAction;
+import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -418,10 +419,7 @@ public final class L2TrapInstance extends Npc
 		
 		if (isVisible() && !isDead())
 		{
-			if (getWorldRegion() != null)
-			{
-				getWorldRegion().removeFromZones(this);
-			}
+			ZoneManager.getInstance().getRegion(this).removeFromZones(this);
 			
 			deleteMe();
 		}

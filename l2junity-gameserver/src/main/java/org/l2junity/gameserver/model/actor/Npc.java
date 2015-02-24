@@ -50,11 +50,11 @@ import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.TownManager;
 import org.l2junity.gameserver.instancemanager.WalkingManager;
+import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.WorldRegion;
 import org.l2junity.gameserver.model.actor.instance.L2ClanHallManagerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2DoormenInstance;
 import org.l2junity.gameserver.model.actor.instance.L2FishermanInstance;
@@ -1331,11 +1331,7 @@ public class Npc extends Creature
 			getSkillChannelized().abortChannelization();
 		}
 		
-		final WorldRegion oldRegion = getWorldRegion();
-		if (oldRegion != null)
-		{
-			oldRegion.removeFromZones(this);
-		}
+		ZoneManager.getInstance().getRegion(this).removeFromZones(this);
 		
 		// Remove all L2Object from _knownObjects and _knownPlayer of the L2Character then cancel Attack or Cast and notify AI
 		try

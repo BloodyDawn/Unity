@@ -21,6 +21,7 @@ package org.l2junity.gameserver.model.actor;
 import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
+import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.knownlist.PlayableKnownList;
 import org.l2junity.gameserver.model.actor.stat.PlayableStat;
@@ -173,10 +174,7 @@ public abstract class Playable extends Creature
 		// Send the Server->Client packet StatusUpdate with current HP and MP to all other L2PcInstance to inform
 		broadcastStatusUpdate();
 		
-		if (getWorldRegion() != null)
-		{
-			getWorldRegion().onDeath(this);
-		}
+		ZoneManager.getInstance().getRegion(this).onDeath(this);
 		
 		// Notify Quest of L2Playable's death
 		PlayerInstance actingPlayer = getActingPlayer();

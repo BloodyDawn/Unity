@@ -153,7 +153,6 @@ import org.l2junity.gameserver.model.TradeList;
 import org.l2junity.gameserver.model.UIKeysSettings;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.WorldRegion;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Decoy;
@@ -254,8 +253,8 @@ import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.variables.AccountVariables;
 import org.l2junity.gameserver.model.variables.PlayerVariables;
-import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.type.BossZone;
 import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -1782,7 +1781,7 @@ public final class PlayerInstance extends Playable
 			}
 		}
 		
-		getWorldRegion().revalidateZones(this);
+		ZoneManager.getInstance().getRegion(this).revalidateZones(this);
 		
 		if (Config.ALLOW_WATER)
 		{
@@ -11477,11 +11476,7 @@ public final class PlayerInstance extends Playable
 		getEffectList().stopAllToggles();
 		
 		// Remove from world regions zones
-		final WorldRegion oldRegion = getWorldRegion();
-		if (oldRegion != null)
-		{
-			oldRegion.removeFromZones(this);
-		}
+		ZoneManager.getInstance().getRegion(this).removeFromZones(this);
 		
 		// Remove the L2PcInstance from the world
 		try

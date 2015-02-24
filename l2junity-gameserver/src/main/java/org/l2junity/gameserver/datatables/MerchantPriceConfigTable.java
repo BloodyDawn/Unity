@@ -32,6 +32,7 @@ import javolution.util.FastMap;
 import org.l2junity.Config;
 import org.l2junity.gameserver.InstanceListManager;
 import org.l2junity.gameserver.instancemanager.CastleManager;
+import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.w3c.dom.Document;
@@ -60,7 +61,7 @@ public class MerchantPriceConfigTable implements InstanceListManager
 	{
 		for (MerchantPriceConfig mpc : _mpcs.values())
 		{
-			if ((npc.getWorldRegion() != null) && npc.getWorldRegion().containsZone(mpc.getZoneId()))
+			if (ZoneManager.getInstance().getRegion(npc).getZones().containsKey(mpc.getZoneId()))
 			{
 				return mpc;
 			}
