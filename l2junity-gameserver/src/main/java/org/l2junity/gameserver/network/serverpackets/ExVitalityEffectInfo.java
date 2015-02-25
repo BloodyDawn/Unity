@@ -35,7 +35,7 @@ public class ExVitalityEffectInfo extends L2GameServerPacket
 	{
 		_points = cha.getVitalityPoints();
 		_vitalityBonus = (int) Math.round(cha.calcStat(Stats.VITALITY_EXP_BONUS, Config.RATE_VITALITY_EXP_MULTIPLIER) * 100);
-		_vitalityItemsRemaining = cha.getVariables().getInt("VITALITY_ITEMS_USED", 0) - Config.VITALITY_MAX_ITEMS_ALLOWED;
+		_vitalityItemsRemaining = cha.getVitalityItemsUsed() - Config.VITALITY_MAX_ITEMS_ALLOWED;
 	}
 	
 	@Override
