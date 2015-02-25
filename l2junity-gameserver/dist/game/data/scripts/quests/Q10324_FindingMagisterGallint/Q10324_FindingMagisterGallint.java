@@ -97,42 +97,15 @@ public final class Q10324_FindingMagisterGallint extends Quest
 		{
 			case State.CREATED:
 			{
-				if (npc.getId() == SHANNON)
-				{
-					htmltext = "32974-01.htm";
-					break;
-				}
-				else if (npc.getId() == GALLINT)
-				{
-					htmltext = "32980-04.htm";
-					break;
-				}
+				htmltext = npc.getId() == SHANNON ? "32974-01.htm" : "32980-04.htm";
 			}
 			case State.STARTED:
 			{
-				if (npc.getId() == SHANNON)
-				{
-					htmltext = "32974-04.htm";
-					break;
-				}
-				else if (npc.getId() == GALLINT)
-				{
-					htmltext = "32980-01.htm";
-					break;
-				}
+				htmltext = npc.getId() == SHANNON ? "32974-04.htm" : "32980-01.htm";
 			}
 			case State.COMPLETED:
 			{
-				if (npc.getId() == SHANNON)
-				{
-					htmltext = "32974-05.htm";
-					break;
-				}
-				else if (npc.getId() == GALLINT)
-				{
-					htmltext = "32980-03.htm";
-					break;
-				}
+				htmltext = npc.getId() == SHANNON ? "32974-05.htm" : "32980-03.htm";
 			}
 		}
 		return htmltext;

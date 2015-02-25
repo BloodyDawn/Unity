@@ -35,14 +35,13 @@ import quests.Q10325_SearchingForNewPower.Q10325_SearchingForNewPower;
  * Respect Your Elders (10326)
  * @author Gladicek, St3eT, Neanrakyr
  */
-public class Q10326_RespectYourElders extends Quest
+public final class Q10326_RespectYourElders extends Quest
 {
-	// Npcs
+	// NPCs
 	private static final int GALLINT = 32980;
 	private static final int PANTHEON = 32972;
 	private static final int HANDERMONKEY = 32971;
-	// Misc
-	private static final int MAX_LEVEL = 20;
+	// Locations
 	private static final Location HANDERMONKEY_SPAWN = new Location(-116617, 255497, -1432);
 	private final static Location[] HANDERMONKEY_LOC =
 	{
@@ -56,6 +55,8 @@ public class Q10326_RespectYourElders extends Quest
 		new Location(-114637, 257349, -1142),
 		new Location(-114414, 257318, -1136),
 	};
+	// Misc
+	private static final int MAX_LEVEL = 20;
 	
 	public Q10326_RespectYourElders()
 	{

@@ -44,15 +44,13 @@ public final class Q10320_LetsGoToTheCentralSquare extends Quest
 	// NPCs
 	private static final int PANTHEON = 32972;
 	private static final int THEODORE = 32975;
-	// Misc
-	private static final int MAX_LEVEL = 20;
 	// Zone
 	private static final int TALKING_ISLAND_PRESENTATION_MOVIE_ZONE = 200034;
-	// Variables names
-	private static final String MOVIE_VAR = "TI_presentation_movie";
-	// Movies
+	// Misc
+	private static final int MAX_LEVEL = 20;
 	public static final int SCENE_SI_ILLUSION_01_QUE = 101;
 	public static final int SCENE_SI_ILLUSION_02_QUE = 102;
+	private static final String MOVIE_VAR = "TI_presentation_movie";
 	
 	public Q10320_LetsGoToTheCentralSquare()
 	{

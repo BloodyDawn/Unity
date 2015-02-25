@@ -58,8 +58,7 @@ public final class Q10362_CertificationOfTheSeeker extends Quest
 		addStartNpc(CHESHA);
 		addTalkId(CHESHA, NAGEL);
 		addKillId(STALKER, CRAWLER);
-		addCondMinLevel(MIN_LEVEL, "33449-07.htm");
-		addCondMaxLevel(MAX_LEVEL, "33449-07.htm");
+		addCondLevel(MIN_LEVEL, MAX_LEVEL, "33449-07.htm");
 		addCondCompletedQuest(Q10361_RolesOfTheSeeker.class.getSimpleName(), "33449-07.htm");
 	}
 	

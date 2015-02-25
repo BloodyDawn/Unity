@@ -32,9 +32,9 @@ import quests.Q10329_BackupSeekers.Q10329_BackupSeekers;
  * To the Ruins of Ye Sagira (10330)
  * @author Gladicek
  */
-public class Q10330_ToTheRuinsOfYeSagira extends Quest
+public final class Q10330_ToTheRuinsOfYeSagira extends Quest
 {
-	// Npcs
+	// NPCs
 	private static final int ATRAN = 33448;
 	private static final int LAKCIS = 32977;
 	// Items
@@ -49,8 +49,7 @@ public class Q10330_ToTheRuinsOfYeSagira extends Quest
 		super(10330, Q10330_ToTheRuinsOfYeSagira.class.getSimpleName(), "To the Ruins of Ye Sagira");
 		addStartNpc(ATRAN);
 		addTalkId(ATRAN, LAKCIS);
-		addCondMinLevel(MIN_LEVEL, "33448-05.htm");
-		addCondMaxLevel(MAX_LEVEL, "33448-05.htm");
+		addCondLevel(MIN_LEVEL, MAX_LEVEL, "33448-05.htm");
 		addCondCompletedQuest(Q10329_BackupSeekers.class.getSimpleName(), "33448-05.htm");
 	}
 	

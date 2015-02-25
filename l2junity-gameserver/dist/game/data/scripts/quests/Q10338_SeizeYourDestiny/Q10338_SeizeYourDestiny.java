@@ -30,9 +30,10 @@ import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.serverpackets.ExShowScreenMessage;
 
 /**
+ * Seize Your Destiny (10338)
  * @author Sdw
  */
-public class Q10338_SeizeYourDestiny extends Quest
+public final class Q10338_SeizeYourDestiny extends Quest
 {
 	// NPCs
 	private static final int CELLPHINE = 33477;
@@ -43,10 +44,11 @@ public class Q10338_SeizeYourDestiny extends Quest
 	// Items
 	private static final ItemHolder SCROLL_OF_AFTERLIFE = new ItemHolder(17600, 1);
 	private static final ItemHolder STEEL_DOOR_GUILD_COIN = new ItemHolder(37045, 400);
-	// Teleport
+	// Locations
 	private static final Location RELIQUARY_OF_THE_GIANT = new Location(-114962, 226564, -2864);
-	// Movie
+	// Misc
 	private static final int RELIQUARY_OF_THE_GIANT_SCENE = 55;
+	private static final int MIN_LV = 85;
 	
 	public Q10338_SeizeYourDestiny()
 	{
@@ -56,7 +58,7 @@ public class Q10338_SeizeYourDestiny extends Quest
 		addKillId(HARNAKS_WRAITH);
 		addCondNotClassId(ClassId.JUDICATOR, "33477-04.htm");
 		addCondIsNotSubClassActive("33477-04.htm");
-		addCondMinLevel(85, "33477-04.htm");
+		addCondMinLevel(MIN_LV, "33477-04.htm");
 		addCondInCategory(CategoryType.FOURTH_CLASS_GROUP, "33477-04.htm");
 	}
 	

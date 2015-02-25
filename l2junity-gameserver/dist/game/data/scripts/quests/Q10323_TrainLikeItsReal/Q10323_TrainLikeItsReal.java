@@ -36,21 +36,22 @@ import org.l2junity.gameserver.network.serverpackets.TutorialShowHtml;
 import quests.Q10322_SearchingForTheMysteriousPower.Q10322_SearchingForTheMysteriousPower;
 
 /**
+ * Train Like Its Real (10323)
  * @author Sdw, Gladicek
  */
-public class Q10323_TrainLikeItsReal extends Quest
+public final class Q10323_TrainLikeItsReal extends Quest
 {
-	// NPC's
+	// NPCs
 	private static final int EVAIN = 33464;
 	private static final int HOLDEN = 33194;
 	private static final int SHANNON = 32974;
 	// Mobs
 	private static final int TRAINING_GOLEM = 27532;
-	// Misc
-	private static final int MAX_LEVEL = 20;
 	// Items
 	private static final ItemHolder SPIRITSHOTS = new ItemHolder(2509, 500);
 	private static final ItemHolder SOULSHOTS = new ItemHolder(1835, 500);
+	// Misc
+	private static final int MAX_LEVEL = 20;
 	
 	public Q10323_TrainLikeItsReal()
 	{
@@ -291,16 +292,17 @@ public class Q10323_TrainLikeItsReal extends Quest
 	public Set<NpcLogListHolder> getNpcLogList(PlayerInstance activeChar)
 	{
 		final QuestState qs = getQuestState(activeChar, false);
-		final Set<NpcLogListHolder> npcLogList = new HashSet<>(1);
-		
 		if ((qs != null) && (qs.isCond(2)))
 		{
-			npcLogList.add(new NpcLogListHolder(NpcStringId.ELIMINATE_THE_TRAINING_GOLEM, qs.getMemoState()));
-			return npcLogList;
-		}
-		else if ((qs != null) && (qs.isCond(6) || qs.isCond(7)))
-		{
-			npcLogList.add(new NpcLogListHolder(NpcStringId.ELIMINATE_THE_TRAINING_GOLEM2, qs.getMemoState()));
+			final Set<NpcLogListHolder> npcLogList = new HashSet<>(1);
+			if (qs.isCond(2))
+			{
+				npcLogList.add(new NpcLogListHolder(NpcStringId.ELIMINATE_THE_TRAINING_GOLEM, qs.getMemoState()));
+			}
+			else if (qs.isCond(6) || qs.isCond(7))
+			{
+				npcLogList.add(new NpcLogListHolder(NpcStringId.ELIMINATE_THE_TRAINING_GOLEM2, qs.getMemoState()));
+			}
 			return npcLogList;
 		}
 		return super.getNpcLogList(activeChar);

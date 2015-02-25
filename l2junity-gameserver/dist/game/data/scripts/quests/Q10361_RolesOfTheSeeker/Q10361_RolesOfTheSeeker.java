@@ -30,9 +30,9 @@ import org.l2junity.gameserver.network.serverpackets.ExShowScreenMessage;
  * Roles of the Seeker (10361)
  * @author Gladicek
  */
-public class Q10361_RolesOfTheSeeker extends Quest
+public final class Q10361_RolesOfTheSeeker extends Quest
 {
-	// Npcs
+	// NPCs
 	private static final int LAKCIS = 32977;
 	private static final int CHESHA = 33449;
 	// Misc
@@ -44,8 +44,7 @@ public class Q10361_RolesOfTheSeeker extends Quest
 		super(10361, Q10361_RolesOfTheSeeker.class.getSimpleName(), "Roles of the Seeker");
 		addStartNpc(LAKCIS);
 		addTalkId(LAKCIS, CHESHA);
-		addCondMinLevel(MIN_LEVEL, "32977-05.htm");
-		addCondMaxLevel(MAX_LEVEL, "32977-05.htm");
+		addCondLevel(MIN_LEVEL, MAX_LEVEL, "32977-05.htm");
 	}
 	
 	@Override

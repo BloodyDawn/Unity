@@ -68,8 +68,7 @@ public final class Q10363_RequestOfTheSeeker extends Quest
 		addStartNpc(NAGEL);
 		addTalkId(NAGEL, CELIN);
 		addSpawnId(CORPSES);
-		addCondMinLevel(MIN_LEVEL, "33450-07.htm");
-		addCondMaxLevel(MAX_LEVEL, "33450-07.htm");
+		addCondLevel(MIN_LEVEL, MAX_LEVEL, "33450-07.htm");
 		addCondCompletedQuest(Q10362_CertificationOfTheSeeker.class.getSimpleName(), "33450-07.htm");
 	}
 	
@@ -202,82 +201,71 @@ public final class Q10363_RequestOfTheSeeker extends Quest
 		if ((target != null) && target.isNpc() && Util.contains(CORPSES, target.getId()))
 		{
 			final Npc npc = (Npc) player.getTarget();
-			NpcStringId npcStringId = null;
 			
-			if (player.isInsideRadius(npc, 120, true, true))
+			if (!player.isInsideRadius(npc, 120, true, true))
 			{
-				if (event.getSocialActionId() == SOCIAL_SORROW)
-				{
-					if ((qs != null) && !qs.isCompleted())
-					{
-						switch (qs.getCond())
-						{
-							case 1:
-							{
-								npcStringId = NpcStringId.YOU_VE_SHOWN_YOUR_CONDOLENCES_TO_ONE_CORPSE;
-								qs.setCond(2, true);
-								break;
-							}
-							case 2:
-							{
-								npcStringId = NpcStringId.YOU_VE_SHOWN_YOUR_CONDOLENCES_TO_A_SECOND_CORPSE;
-								qs.setCond(3, true);
-								break;
-							}
-							case 3:
-							{
-								npcStringId = NpcStringId.YOU_VE_SHOWN_YOUR_CONDOLENCES_TO_A_THIRD_CORPSE;
-								qs.setCond(4, true);
-								break;
-							}
-							case 4:
-							{
-								npcStringId = NpcStringId.YOU_VE_SHOWN_YOUR_CONDOLENCES_TO_A_FOURTH_CORPSE;
-								qs.setCond(5, true);
-								break;
-							}
-							case 5:
-							{
-								npcStringId = NpcStringId.YOU_VE_SHOWN_YOUR_CONDOLENCES_TO_A_FIFTH_CORPSE;
-								qs.setCond(6, true);
-								break;
-							}
-							case 6:
-							case 7:
-							{
-								npcStringId = NpcStringId.GRUDGE_OF_YE_SAGIRA_VICTIMS_HAVE_BEEN_RELIEVED_WITH_YOUR_TEARS;
-								break;
-							}
-						}
-						npc.deleteMe();
-					}
-					else
-					{
-						npcStringId = NpcStringId.GRUDGE_OF_YE_SAGIRA_VICTIMS_HAVE_BEEN_RELIEVED_WITH_YOUR_TEARS;
-						npc.deleteMe();
-					}
-				}
-				else
-				{
-					if (getRandom(100) > 50)
-					{
-						addSpawn(CRAWLER, npc.getLocation(), false, 0, true);
-					}
-					else
-					{
-						addSpawn(STALKER, npc.getLocation(), false, 0, true);
-					}
-					npc.deleteMe();
-				}
+				showOnScreenMsg(player, NpcStringId.YOU_ARE_TOO_FAR_FROM_THE_CORPSE, ExShowScreenMessage.TOP_CENTER, 4500);
+				npc.deleteMe();
+			}
+			else if (event.getSocialActionId() != SOCIAL_SORROW)
+			{
+				addSpawn((getRandomBoolean() ? CRAWLER : STALKER), npc, false, 0, true);
+				npc.deleteMe();
+			}
+			else if ((qs == null) || qs.isCompleted())
+			{
+				showOnScreenMsg(player, NpcStringId.GRUDGE_OF_YE_SAGIRA_VICTIMS_HAVE_BEEN_RELIEVED_WITH_YOUR_TEARS, ExShowScreenMessage.TOP_CENTER, 4500);
+				npc.deleteMe();
 			}
 			else
 			{
-				npcStringId = NpcStringId.YOU_ARE_TOO_FAR_FROM_THE_CORPSE;
+				NpcStringId npcStringId = null;
+				
+				switch (qs.getCond())
+				{
+					case 1:
+					{
+						npcStringId = NpcStringId.YOU_VE_SHOWN_YOUR_CONDOLENCES_TO_ONE_CORPSE;
+						qs.setCond(2, true);
+						break;
+					}
+					case 2:
+					{
+						npcStringId = NpcStringId.YOU_VE_SHOWN_YOUR_CONDOLENCES_TO_A_SECOND_CORPSE;
+						qs.setCond(3, true);
+						break;
+					}
+					case 3:
+					{
+						npcStringId = NpcStringId.YOU_VE_SHOWN_YOUR_CONDOLENCES_TO_A_THIRD_CORPSE;
+						qs.setCond(4, true);
+						break;
+					}
+					case 4:
+					{
+						npcStringId = NpcStringId.YOU_VE_SHOWN_YOUR_CONDOLENCES_TO_A_FOURTH_CORPSE;
+						qs.setCond(5, true);
+						break;
+					}
+					case 5:
+					{
+						npcStringId = NpcStringId.YOU_VE_SHOWN_YOUR_CONDOLENCES_TO_A_FIFTH_CORPSE;
+						qs.setCond(6, true);
+						break;
+					}
+					case 6:
+					case 7:
+					{
+						npcStringId = NpcStringId.GRUDGE_OF_YE_SAGIRA_VICTIMS_HAVE_BEEN_RELIEVED_WITH_YOUR_TEARS;
+						break;
+					}
+				}
 				npc.deleteMe();
-			}
-			if (npcStringId != null)
-			{
-				showOnScreenMsg(player, npcStringId, ExShowScreenMessage.TOP_CENTER, 4500);
+				
+				if (npcStringId != null)
+				{
+					showOnScreenMsg(player, npcStringId, ExShowScreenMessage.TOP_CENTER, 4500);
+				}
 			}
 		}
 	}
