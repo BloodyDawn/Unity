@@ -39,8 +39,10 @@ import org.l2junity.gameserver.model.olympiad.CompetitionType;
 import org.l2junity.gameserver.model.olympiad.Olympiad;
 import org.l2junity.gameserver.model.olympiad.OlympiadManager;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExHeroList;
+import org.l2junity.gameserver.network.serverpackets.ExShowScreenMessage;
 import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -348,6 +350,7 @@ public class OlympiadManagerLink implements IBypassHandler
 						{
 							Hero.getInstance().claimHero(activeChar);
 							reply.setFile(activeChar.getHtmlPrefix(), Olympiad.OLYMPIAD_HTML_PATH + "hero_receive.htm");
+							activeChar.sendPacket(new ExShowScreenMessage(NpcStringId.getNpcStringId(13357 + activeChar.getClassId().getId()), 5000, ExShowScreenMessage.TOP_CENTER, activeChar.getName()));
 						}
 						else
 						{
