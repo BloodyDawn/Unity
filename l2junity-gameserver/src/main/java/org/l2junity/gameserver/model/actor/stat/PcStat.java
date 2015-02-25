@@ -63,10 +63,10 @@ public class PcStat extends PlayableStat
 	/** Player's maximum talisman count. */
 	private final AtomicInteger _talismanSlots = new AtomicInteger();
 	private boolean _cloakSlot = false;
+	private int _vitalityPoints = 0;
 	
 	public static final int MAX_VITALITY_POINTS = 140000;
 	public static final int MIN_VITALITY_POINTS = 1;
-	public static String VITALITY_VARIABLE = "vitality_points";
 	
 	public PcStat(PlayerInstance activeChar)
 	{
@@ -654,7 +654,16 @@ public class PcStat extends PlayableStat
 	 */
 	public int getVitalityPoints()
 	{
-		return getActiveChar().getAccountVariables().getInt(VITALITY_VARIABLE, Config.STARTING_VITALITY_POINTS);
+		if (getActiveChar().isSubClassActive())
+		{
+			return getActiveChar().getSubClasses().get(getActiveChar().getClassIndex()).getVitalityPoints();
+		}
+		return _vitalityPoints;
+	}
+	
+	public int getBaseVitalityPoints()
+	{
+		return _vitalityPoints;
 	}
 	
 	public double getVitalityExpBonus()
@@ -662,9 +671,14 @@ public class PcStat extends PlayableStat
 		return calcStat(Stats.VITALITY_EXP_BONUS, Config.RATE_VITALITY_EXP_MULTIPLIER);
 	}
 	
-	public void setVitalityPoints(int points)
+	public void setVitalityPoints(int value)
 	{
-		getActiveChar().getAccountVariables().set(VITALITY_VARIABLE, points);
+		if (getActiveChar().isSubClassActive())
+		{
+			getActiveChar().getSubClasses().get(getActiveChar().getClassIndex()).setVitalityPoints(value);
+			return;
+		}
+		_vitalityPoints = value;
 	}
 	
 	/*
@@ -700,6 +714,7 @@ public class PcStat extends PlayableStat
 		
 		final PlayerInstance player = getActiveChar();
 		player.sendPacket(new ExVitalityPointInfo(getVitalityPoints()));
+		player.broadcastUserInfo(UserInfoType.VITA_FAME);
 		if (player.isInParty())
 		{
 			final PartySmallWindowUpdate partyWindow = new PartySmallWindowUpdate(player, false);

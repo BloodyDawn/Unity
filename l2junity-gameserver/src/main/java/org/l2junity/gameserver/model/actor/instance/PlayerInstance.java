@@ -361,7 +361,7 @@ public final class PlayerInstance extends Playable
 	private static final String DELETE_ITEM_REUSE_SAVE = "DELETE FROM character_item_reuse_save WHERE charId=?";
 	
 	// Character Character SQL String Definitions:
-	private static final String INSERT_CHARACTER = "INSERT INTO characters (account_name,charId,char_name,level,maxHp,curHp,maxCp,curCp,maxMp,curMp,face,hairStyle,hairColor,sex,exp,sp,karma,fame,pvpkills,pkkills,clanid,race,classid,deletetime,cancraft,title,title_color,accesslevel,online,isin7sdungeon,clan_privs,wantspeace,base_class,newbie,nobless,power_grade,createDate) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	private static final String INSERT_CHARACTER = "INSERT INTO characters (account_name,charId,char_name,level,maxHp,curHp,maxCp,curCp,maxMp,curMp,face,hairStyle,hairColor,sex,exp,sp,karma,fame,pvpkills,pkkills,clanid,race,classid,deletetime,cancraft,title,title_color,accesslevel,online,isin7sdungeon,clan_privs,wantspeace,base_class,newbie,nobless,power_grade,vitality_points,createDate) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	private static final String UPDATE_CHARACTER = "UPDATE characters SET level=?,maxHp=?,curHp=?,maxCp=?,curCp=?,maxMp=?,curMp=?,face=?,hairStyle=?,hairColor=?,sex=?,heading=?,x=?,y=?,z=?,exp=?,expBeforeDeath=?,sp=?,karma=?,fame=?,pvpkills=?,pkkills=?,clanid=?,race=?,classid=?,deletetime=?,title=?,title_color=?,accesslevel=?,online=?,isin7sdungeon=?,clan_privs=?,wantspeace=?,base_class=?,onlinetime=?,newbie=?,nobless=?,power_grade=?,subpledge=?,lvl_joined_academy=?,apprentice=?,sponsor=?,clan_join_expiry_time=?,clan_create_expiry_time=?,char_name=?,death_penalty_level=?,bookmarkslot=?,vitality_points=?,language=? WHERE charId=?";
 	private static final String RESTORE_CHARACTER = "SELECT * FROM characters WHERE charId=?";
 	
@@ -372,9 +372,9 @@ public final class PlayerInstance extends Playable
 	private static final String DELETE_TP_BOOKMARK = "DELETE FROM character_tpbookmark WHERE charId=? AND Id=?";
 	
 	// Character Subclass SQL String Definitions:
-	private static final String RESTORE_CHAR_SUBCLASSES = "SELECT class_id,exp,sp,level,class_index,dual_class FROM character_subclasses WHERE charId=? ORDER BY class_index ASC";
-	private static final String ADD_CHAR_SUBCLASS = "INSERT INTO character_subclasses (charId,class_id,exp,sp,level,class_index,dual_class) VALUES (?,?,?,?,?,?,?)";
-	private static final String UPDATE_CHAR_SUBCLASS = "UPDATE character_subclasses SET exp=?,sp=?,level=?,class_id=?,dual_class=? WHERE charId=? AND class_index =?";
+	private static final String RESTORE_CHAR_SUBCLASSES = "SELECT class_id,exp,sp,level,vitality_points,class_index,dual_class FROM character_subclasses WHERE charId=? ORDER BY class_index ASC";
+	private static final String ADD_CHAR_SUBCLASS = "INSERT INTO character_subclasses (charId,class_id,exp,sp,level,vitality_points,class_index,dual_class) VALUES (?,?,?,?,?,?,?,?)";
+	private static final String UPDATE_CHAR_SUBCLASS = "UPDATE character_subclasses SET exp=?,sp=?,level=?,vitality_points=?,class_id=?,dual_class=? WHERE charId=? AND class_index =?";
 	private static final String DELETE_CHAR_SUBCLASS = "DELETE FROM character_subclasses WHERE charId=? AND class_index=?";
 	
 	// Character Henna SQL String Definitions:
@@ -6844,7 +6844,8 @@ public final class PlayerInstance extends Playable
 			statement.setInt(34, 0); // Unused
 			statement.setInt(35, isNoble() ? 1 : 0);
 			statement.setLong(36, 0);
-			statement.setDate(37, new Date(getCreateDate().getTimeInMillis()));
+			statement.setInt(37, PcStat.MIN_VITALITY_POINTS);
+			statement.setDate(38, new Date(getCreateDate().getTimeInMillis()));
 			statement.executeUpdate();
 		}
 		catch (Exception e)
@@ -6914,6 +6915,7 @@ public final class PlayerInstance extends Playable
 					
 					int clanId = rset.getInt("clanid");
 					player.setPowerGrade(rset.getInt("power_grade"));
+					player.getStat().setVitalityPoints(rset.getInt("vitality_points"));
 					player.setPledgeType(rset.getInt("subpledge"));
 					// player.setApprentice(rset.getInt("apprentice"));
 					
@@ -7196,6 +7198,7 @@ public final class PlayerInstance extends Playable
 					SubClass subClass = new SubClass();
 					subClass.setClassId(rset.getInt("class_id"));
 					subClass.setIsDualClass(rset.getBoolean("dual_class"));
+					subClass.setVitalityPoints(rset.getInt("vitality_points"));
 					subClass.setLevel(rset.getByte("level"));
 					subClass.setExp(rset.getLong("exp"));
 					subClass.setSp(rset.getLong("sp"));
@@ -7474,7 +7477,7 @@ public final class PlayerInstance extends Playable
 			statement.setString(45, getName());
 			statement.setLong(46, 0); // unset
 			statement.setInt(47, getBookMarkSlot());
-			statement.setInt(48, 0); // unset
+			statement.setInt(48, getStat().getBaseVitalityPoints());
 			statement.setString(49, getLang());
 			statement.setInt(50, getObjectId());
 			
@@ -7501,10 +7504,11 @@ public final class PlayerInstance extends Playable
 				statement.setLong(1, subClass.getExp());
 				statement.setLong(2, subClass.getSp());
 				statement.setInt(3, subClass.getLevel());
-				statement.setInt(4, subClass.getClassId());
-				statement.setBoolean(5, subClass.isDualClass());
-				statement.setInt(6, getObjectId());
-				statement.setInt(7, subClass.getClassIndex());
+				statement.setInt(4, subClass.getVitalityPoints());
+				statement.setInt(5, subClass.getClassId());
+				statement.setBoolean(6, subClass.isDualClass());
+				statement.setInt(7, getObjectId());
+				statement.setInt(8, subClass.getClassIndex());
 				statement.execute();
 				statement.clearParameters();
 			}
@@ -10145,6 +10149,7 @@ public final class PlayerInstance extends Playable
 			final SubClass newClass = new SubClass();
 			newClass.setClassId(classId);
 			newClass.setClassIndex(classIndex);
+			newClass.setVitalityPoints(PcStat.MAX_VITALITY_POINTS);
 			if (isDualClass)
 			{
 				newClass.setIsDualClass(true);
@@ -10161,8 +10166,9 @@ public final class PlayerInstance extends Playable
 				statement.setLong(3, newClass.getExp());
 				statement.setLong(4, newClass.getSp());
 				statement.setInt(5, newClass.getLevel());
-				statement.setInt(6, newClass.getClassIndex());
-				statement.setBoolean(7, newClass.isDualClass());
+				statement.setInt(6, newClass.getVitalityPoints());
+				statement.setInt(7, newClass.getClassIndex());
+				statement.setBoolean(8, newClass.isDualClass());
 				statement.execute();
 			}
 			catch (Exception e)

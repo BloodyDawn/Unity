@@ -28,10 +28,11 @@ import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.stat.PcStat;
+import org.l2junity.gameserver.model.base.SubClass;
 import org.l2junity.gameserver.taskmanager.Task;
 import org.l2junity.gameserver.taskmanager.TaskManager;
-import org.l2junity.gameserver.taskmanager.TaskTypes;
 import org.l2junity.gameserver.taskmanager.TaskManager.ExecutedTask;
+import org.l2junity.gameserver.taskmanager.TaskTypes;
 
 /**
  * @author UnAfraid
@@ -55,13 +56,22 @@ public class TaskVitalityReset extends Task
 			for (PlayerInstance player : World.getInstance().getPlayers())
 			{
 				player.setVitalityPoints(PcStat.MAX_VITALITY_POINTS, false);
+				
+				for (SubClass subclass : player.getSubClasses().values())
+				{
+					subclass.setVitalityPoints(PcStat.MAX_VITALITY_POINTS);
+				}
 			}
 			
 			try (Connection con = DatabaseFactory.getInstance().getConnection();
-				PreparedStatement st = con.prepareStatement("DELETE FROM account_gsdata WHERE var = ?"))
+				PreparedStatement st = con.prepareStatement("UPDATE character_subclasses SET vitality_points = ?");
+				PreparedStatement st2 = con.prepareStatement("UPDATE characters SET vitality_points = ?"))
 			{
-				st.setString(1, PcStat.VITALITY_VARIABLE);
+				st.setInt(1, PcStat.MAX_VITALITY_POINTS);
 				st.execute();
+				
+				st2.setInt(1, PcStat.MAX_VITALITY_POINTS);
+				st2.execute();
 			}
 			catch (Exception e)
 			{
