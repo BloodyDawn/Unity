@@ -778,9 +778,7 @@ public final class Raina extends AbstractNpcAI
 		if ((pClass.getLevel() == ClassLevel.THIRD) || (pClass.getLevel() == ClassLevel.FOURTH))
 		{
 			subclasses = EnumSet.copyOf(mainSubclassSet);
-			
-			subclasses.remove(this);
-			
+			subclasses.remove(pClass);
 			subclasses.removeAll(PlayerClass.getSet(Race.ERTHEIA, THIRD));
 			
 			if (player.getRace() == Race.KAMAEL)
@@ -805,11 +803,25 @@ public final class Raina extends AbstractNpcAI
 				subclasses.removeAll(PlayerClass.getSet(Race.KAMAEL, THIRD));
 			}
 			
-			Set<PlayerClass> unavailableClasses = subclassSetMap.get(this);
+			Set<PlayerClass> unavailableClasses = subclassSetMap.get(pClass);
 			
 			if (unavailableClasses != null)
 			{
 				subclasses.removeAll(unavailableClasses);
+			}
+		}
+		
+		if (subclasses != null)
+		{
+			final ClassId currClassId = ClassId.getClassId(player.getClassId().getId());
+			for (PlayerClass tempClass : subclasses)
+			{
+				final ClassId tempClassId = ClassId.getClassId(tempClass.ordinal());
+				
+				if (currClassId.equalsOrChildOf(tempClassId))
+				{
+					subclasses.remove(tempClass);
+				}
 			}
 		}
 		return subclasses;
