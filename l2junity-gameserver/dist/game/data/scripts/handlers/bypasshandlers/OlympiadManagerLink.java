@@ -26,6 +26,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.data.sql.impl.NpcBufferTable;
 import org.l2junity.gameserver.data.sql.impl.NpcBufferTable.NpcBufferData;
 import org.l2junity.gameserver.data.xml.impl.MultisellData;
+import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.handler.IBypassHandler;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -65,16 +66,15 @@ public class OlympiadManagerLink implements IBypassHandler
 	
 	private static final int[] BUFFS =
 	{
-		4357, // Haste Lv2
-		4342, // Wind Walk Lv2
-		4356, // Empower Lv3
-		4355, // Acumen Lv3
-		4351, // Concentration Lv6
-		4345, // Might Lv3
-		4358, // Guidance Lv3
-		4359, // Focus Lv3
-		4360, // Death Whisper Lv3
-		4352, // Berserker Spirit Lv2
+		14738, // Olympiad - Horn Melody
+		14739, // Olympiad - Drum Melody
+		14740, // Olympiad - Pipe Organ Melody
+		14741, // Olympiad - Guitar Melody
+		14742, // Olympiad - Harp Melody
+		14743, // Olympiad - Lute Melody
+		14744, // Olympiad - Knight's Harmony
+		14745, // Olympiad - Warrior's Harmony
+		14746, // Olympiad - Wizard's Harmony
 	};
 	
 	@Override
@@ -109,7 +109,7 @@ public class OlympiadManagerLink implements IBypassHandler
 					activeChar.sendPacket(html);
 					return false;
 				}
-				if (!activeChar.isNoble() || (activeChar.getClassId().level() < 3))
+				if (!activeChar.isNoble() || !activeChar.isInCategory(CategoryType.AWAKEN_GROUP))
 				{
 					html.setFile(activeChar.getHtmlPrefix(), Olympiad.OLYMPIAD_HTML_PATH + "noble_thirdclass.htm");
 					html.replace("%objectId%", String.valueOf(target.getObjectId()));

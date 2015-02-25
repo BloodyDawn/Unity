@@ -31,6 +31,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
+import java.util.Set;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
@@ -42,6 +43,8 @@ import javolution.util.FastMap;
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
+import org.l2junity.gameserver.data.xml.impl.CategoryData;
+import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.instancemanager.AntiFeedManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.StatsSet;
@@ -80,44 +83,8 @@ public class Olympiad extends ListenersContainer
 	private static final String OLYMPIAD_DELETE_ALL = "TRUNCATE olympiad_nobles";
 	private static final String OLYMPIAD_MONTH_CLEAR = "TRUNCATE olympiad_nobles_eom";
 	private static final String OLYMPIAD_MONTH_CREATE = "INSERT INTO olympiad_nobles_eom SELECT charId, class_id, olympiad_points, competitions_done, competitions_won, competitions_lost, competitions_drawn FROM olympiad_nobles";
-	private static final int[] HERO_IDS =
-	{
-		88,
-		89,
-		90,
-		91,
-		92,
-		93,
-		94,
-		95,
-		96,
-		97,
-		98,
-		99,
-		100,
-		101,
-		102,
-		103,
-		104,
-		105,
-		106,
-		107,
-		108,
-		109,
-		110,
-		111,
-		112,
-		113,
-		114,
-		115,
-		116,
-		117,
-		118,
-		131,
-		132,
-		133,
-		134
-	};
+	
+	private static final Set<Integer> HERO_IDS = CategoryData.getInstance().getCategoryByType(CategoryType.AWAKEN_GROUP);
 	
 	private static final int COMP_START = Config.ALT_OLY_START_TIME; // 6PM
 	private static final int COMP_MIN = Config.ALT_OLY_MIN; // 00 mins
@@ -883,7 +850,6 @@ public class Olympiad extends ListenersContainer
 			PreparedStatement statement = con.prepareStatement(OLYMPIAD_GET_HEROS))
 		{
 			StatsSet hero;
-			List<StatsSet> soulHounds = new ArrayList<>();
 			for (int element : HERO_IDS)
 			{
 				statement.setInt(1, element);
@@ -897,108 +863,15 @@ public class Olympiad extends ListenersContainer
 						hero.set(CHAR_ID, rset.getInt(CHAR_ID));
 						hero.set(CHAR_NAME, rset.getString(CHAR_NAME));
 						
-						if ((element == 132) || (element == 133)) // Male & Female Soulhounds rank as one hero class
+						record = new LogRecord(Level.INFO, "Hero " + hero.getString(CHAR_NAME));
+						record.setParameters(new Object[]
 						{
-							hero = _nobles.get(hero.getInt(CHAR_ID));
-							hero.set(CHAR_ID, rset.getInt(CHAR_ID));
-							soulHounds.add(hero);
-						}
-						else
-						{
-							record = new LogRecord(Level.INFO, "Hero " + hero.getString(CHAR_NAME));
-							record.setParameters(new Object[]
-							{
-								hero.getInt(CHAR_ID),
-								hero.getInt(CLASS_ID)
-							});
-							_logResults.log(record);
-							_heroesToBe.add(hero);
-						}
+							hero.getInt(CHAR_ID),
+							hero.getInt(CLASS_ID)
+						});
+						_logResults.log(record);
+						_heroesToBe.add(hero);
 					}
-				}
-			}
-			
-			switch (soulHounds.size())
-			{
-				case 0:
-				{
-					break;
-				}
-				case 1:
-				{
-					hero = new StatsSet();
-					StatsSet winner = soulHounds.get(0);
-					hero.set(CLASS_ID, winner.getInt(CLASS_ID));
-					hero.set(CHAR_ID, winner.getInt(CHAR_ID));
-					hero.set(CHAR_NAME, winner.getString(CHAR_NAME));
-					
-					record = new LogRecord(Level.INFO, "Hero " + hero.getString(CHAR_NAME));
-					record.setParameters(new Object[]
-					{
-						hero.getInt(CHAR_ID),
-						hero.getInt(CLASS_ID)
-					});
-					_logResults.log(record);
-					_heroesToBe.add(hero);
-					break;
-				}
-				case 2:
-				{
-					hero = new StatsSet();
-					StatsSet winner;
-					StatsSet hero1 = soulHounds.get(0);
-					StatsSet hero2 = soulHounds.get(1);
-					int hero1Points = hero1.getInt(POINTS);
-					int hero2Points = hero2.getInt(POINTS);
-					int hero1Comps = hero1.getInt(COMP_DONE);
-					int hero2Comps = hero2.getInt(COMP_DONE);
-					int hero1Wins = hero1.getInt(COMP_WON);
-					int hero2Wins = hero2.getInt(COMP_WON);
-					
-					if (hero1Points > hero2Points)
-					{
-						winner = hero1;
-					}
-					else if (hero2Points > hero1Points)
-					{
-						winner = hero2;
-					}
-					else
-					{
-						if (hero1Comps > hero2Comps)
-						{
-							winner = hero1;
-						}
-						else if (hero2Comps > hero1Comps)
-						{
-							winner = hero2;
-						}
-						else
-						{
-							if (hero1Wins > hero2Wins)
-							{
-								winner = hero1;
-							}
-							else
-							{
-								winner = hero2;
-							}
-						}
-					}
-					
-					hero.set(CLASS_ID, winner.getInt(CLASS_ID));
-					hero.set(CHAR_ID, winner.getInt(CHAR_ID));
-					hero.set(CHAR_NAME, winner.getString(CHAR_NAME));
-					
-					record = new LogRecord(Level.INFO, "Hero " + hero.getString(CHAR_NAME));
-					record.setParameters(new Object[]
-					{
-						hero.getInt(CHAR_ID),
-						hero.getInt(CLASS_ID)
-					});
-					_logResults.log(record);
-					_heroesToBe.add(hero);
-					break;
 				}
 			}
 		}
