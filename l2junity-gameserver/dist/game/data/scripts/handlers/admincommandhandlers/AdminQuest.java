@@ -142,7 +142,7 @@ public class AdminQuest implements IAdminCommandHandler
 			{
 				activeChar.sendMessage("Get a target first.");
 			}
-			else if (!activeChar.getTarget().isCharacter())
+			else if (!activeChar.getTarget().isCreature())
 			{
 				activeChar.sendMessage("Invalid Target.");
 			}

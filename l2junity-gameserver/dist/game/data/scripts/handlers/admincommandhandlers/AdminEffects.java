@@ -140,7 +140,7 @@ public class AdminEffects implements IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_setinvis"))
 		{
-			if ((activeChar.getTarget() == null) || !activeChar.getTarget().isCharacter())
+			if ((activeChar.getTarget() == null) || !activeChar.getTarget().isCreature())
 			{
 				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 				return false;
@@ -687,7 +687,7 @@ public class AdminEffects implements IAdminCommandHandler
 	{
 		try
 		{
-			if (target.isCharacter())
+			if (target.isCreature())
 			{
 				if (target instanceof L2ChestInstance)
 				{

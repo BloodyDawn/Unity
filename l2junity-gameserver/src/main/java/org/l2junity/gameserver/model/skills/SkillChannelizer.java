@@ -162,7 +162,7 @@ public class SkillChannelizer implements Runnable
 				
 				for (WorldObject chars : _skill.getTargetList(_channelizer))
 				{
-					if (chars.isCharacter())
+					if (chars.isCreature())
 					{
 						targetList.add((Creature) chars);
 						((Creature) chars).getSkillChannelized().addChannelizer(_skill.getChannelingSkillId(), getChannelizer());

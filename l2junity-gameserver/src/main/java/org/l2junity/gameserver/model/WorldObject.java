@@ -358,7 +358,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	 * Verify if object is instance of L2Character.
 	 * @return {@code true} if object is instance of L2Character, {@code false} otherwise
 	 */
-	public boolean isCharacter()
+	public boolean isCreature()
 	{
 		return false;
 	}
@@ -576,7 +576,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	
 	protected void badCoords()
 	{
-		if (isCharacter())
+		if (isCreature())
 		{
 			decayMe();
 		}

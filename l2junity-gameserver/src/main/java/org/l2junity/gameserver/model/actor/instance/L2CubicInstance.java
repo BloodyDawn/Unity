@@ -369,7 +369,7 @@ public final class L2CubicInstance implements IIdentifiable
 			}
 			// test owners target if it is valid then use it
 			final Summon pet = _owner.getPet();
-			if (ownerTarget.isCharacter() && (ownerTarget != pet) && !_owner.hasServitor(ownerTarget.getObjectId()) && (ownerTarget != _owner))
+			if (ownerTarget.isCreature() && (ownerTarget != pet) && !_owner.hasServitor(ownerTarget.getObjectId()) && (ownerTarget != _owner))
 			{
 				// target mob which has aggro on you or your summon
 				if (ownerTarget instanceof Attackable)

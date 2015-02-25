@@ -40,7 +40,7 @@ public class AdminCamera implements IAdminCommandHandler
 	@Override
 	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
-		if ((activeChar.getTarget() == null) || !activeChar.getTarget().isCharacter())
+		if ((activeChar.getTarget() == null) || !activeChar.getTarget().isCreature())
 		{
 			activeChar.sendPacket(SystemMessageId.YOUR_TARGET_CANNOT_BE_FOUND);
 			return false;

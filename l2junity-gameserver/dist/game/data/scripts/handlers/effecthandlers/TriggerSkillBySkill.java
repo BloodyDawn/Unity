@@ -91,7 +91,7 @@ public final class TriggerSkillBySkill extends AbstractEffect
 		
 		for (WorldObject triggerTarget : targets)
 		{
-			if ((triggerTarget == null) || !triggerTarget.isCharacter())
+			if ((triggerTarget == null) || !triggerTarget.isCreature())
 			{
 				continue;
 			}

@@ -420,7 +420,7 @@ public final class RequestActionUse extends L2GameClientPacket
 			case 79:
 			case 80:
 			case 81:
-				if ((activeChar.getParty() != null) && (activeChar.getTarget() != null) && (activeChar.getTarget().isCharacter()))
+				if ((activeChar.getParty() != null) && (activeChar.getTarget() != null) && (activeChar.getTarget().isCreature()))
 				{
 					activeChar.getParty().addTacticalSign(activeChar, _actionId - 77, (Creature) activeChar.getTarget());
 				}

@@ -80,7 +80,7 @@ public class AdminBuffs implements IAdminCommandHandler
 				activeChar.sendMessage("The player " + playername + " is not online.");
 				return false;
 			}
-			else if ((activeChar.getTarget() != null) && activeChar.getTarget().isCharacter())
+			else if ((activeChar.getTarget() != null) && activeChar.getTarget().isCreature())
 			{
 				showBuffs(activeChar, (Creature) activeChar.getTarget(), 1, command.endsWith("_ps"));
 				return true;

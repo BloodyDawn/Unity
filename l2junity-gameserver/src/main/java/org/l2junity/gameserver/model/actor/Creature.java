@@ -5900,7 +5900,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// Initial checks
 			for (WorldObject obj : targets)
 			{
-				if ((obj == null) || !obj.isCharacter())
+				if ((obj == null) || !obj.isCreature())
 				{
 					continue;
 				}
@@ -6777,7 +6777,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				
 				for (WorldObject obj : targets)
 				{
-					if ((obj != null) && obj.isCharacter())
+					if ((obj != null) && obj.isCreature())
 					{
 						target = (Creature) obj;
 						break;
@@ -6958,7 +6958,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	}
 	
 	@Override
-	public boolean isCharacter()
+	public boolean isCreature()
 	{
 		return true;
 	}
@@ -7086,7 +7086,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		{
 			final ZoneRegion oldZoneRegion = ZoneManager.getInstance().getRegion(this);
 			final ZoneRegion newZoneRegion = ZoneManager.getInstance().getRegion(newX, newY);
-			if (isCharacter() && (oldZoneRegion != newZoneRegion))
+			if (isCreature() && (oldZoneRegion != newZoneRegion))
 			{
 				oldZoneRegion.removeFromZones(this);
 				newZoneRegion.revalidateZones(this);

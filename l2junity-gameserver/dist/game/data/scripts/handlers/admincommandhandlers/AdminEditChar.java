@@ -812,7 +812,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			try
 			{
 				final WorldObject target = activeChar.getTarget();
-				if ((target == null) || !target.isCharacter())
+				if ((target == null) || !target.isCreature())
 				{
 					activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 					return false;
@@ -830,7 +830,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			try
 			{
 				final WorldObject target = activeChar.getTarget();
-				if ((target == null) || !target.isCharacter())
+				if ((target == null) || !target.isCreature())
 				{
 					activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 					return false;
@@ -848,7 +848,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			try
 			{
 				final WorldObject target = activeChar.getTarget();
-				if ((target == null) || !target.isCharacter())
+				if ((target == null) || !target.isCreature())
 				{
 					activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 					return false;

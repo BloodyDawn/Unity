@@ -95,7 +95,7 @@ public final class TriggerSkillByDamage extends AbstractEffect
 		final WorldObject[] targets = targetHandler.getTargetList(triggerSkill, event.getTarget(), false, event.getAttacker());
 		for (WorldObject triggerTarget : targets)
 		{
-			if ((triggerTarget == null) || !triggerTarget.isCharacter())
+			if ((triggerTarget == null) || !triggerTarget.isCreature())
 			{
 				continue;
 			}
