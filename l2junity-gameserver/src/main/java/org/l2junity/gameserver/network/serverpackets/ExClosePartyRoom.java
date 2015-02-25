@@ -23,14 +23,16 @@ package org.l2junity.gameserver.network.serverpackets;
  */
 public class ExClosePartyRoom extends L2GameServerPacket
 {
-	public ExClosePartyRoom()
+	public static final ExClosePartyRoom STATIC_PACKET = new ExClosePartyRoom();
+	
+	private ExClosePartyRoom()
 	{
 	}
 	
 	@Override
 	protected void writeImpl()
 	{
-		writeC(0xfe);
+		writeC(0xFE);
 		writeH(0x09);
 	}
 }

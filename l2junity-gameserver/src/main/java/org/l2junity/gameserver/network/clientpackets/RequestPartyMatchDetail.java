@@ -18,94 +18,52 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
-import org.l2junity.gameserver.model.PartyMatchRoom;
-import org.l2junity.gameserver.model.PartyMatchRoomList;
-import org.l2junity.gameserver.model.PartyMatchWaitingList;
+import org.l2junity.gameserver.instancemanager.MatchingRoomManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.ExManagePartyRoomMember;
-import org.l2junity.gameserver.network.serverpackets.ExPartyRoomMember;
-import org.l2junity.gameserver.network.serverpackets.PartyMatchDetail;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.model.matching.MatchingRoom;
 
 /**
  * @author Gnacik
  */
 public final class RequestPartyMatchDetail extends L2GameClientPacket
 {
-	private static final String _C__81_REQUESTPARTYMATCHDETAIL = "[C] 81 RequestPartyMatchDetail";
-	
-	private int _roomid;
-	@SuppressWarnings("unused")
-	private int _unk1;
-	@SuppressWarnings("unused")
-	private int _unk2;
-	@SuppressWarnings("unused")
-	private int _unk3;
+	private int _roomId;
+	private int _location;
+	private int _level;
 	
 	@Override
 	protected void readImpl()
 	{
-		_roomid = readD();
-		// If player click on Room all unk are 0
-		// If player click AutoJoin values are -1 1 1
-		_unk1 = readD();
-		_unk2 = readD();
-		_unk3 = readD();
+		_roomId = readD();
+		_location = readD();
+		_level = readD();
 	}
 	
 	@Override
 	protected void runImpl()
 	{
-		PlayerInstance _activeChar = getClient().getActiveChar();
-		if (_activeChar == null)
+		final PlayerInstance activeChar = getActiveChar();
+		if (activeChar == null)
 		{
 			return;
 		}
 		
-		PartyMatchRoom _room = PartyMatchRoomList.getInstance().getRoom(_roomid);
-		if (_room == null)
+		if (activeChar.isInMatchingRoom())
 		{
 			return;
 		}
 		
-		if ((_activeChar.getLevel() >= _room.getMinLvl()) && (_activeChar.getLevel() <= _room.getMaxLvl()))
+		final MatchingRoom room = _roomId > 0 ? MatchingRoomManager.getInstance().getPartyMathchingRoom(_roomId) : MatchingRoomManager.getInstance().getPartyMathchingRoom(_location, _level);
+		
+		if (room != null)
 		{
-			// Remove from waiting list
-			PartyMatchWaitingList.getInstance().removePlayer(_activeChar);
-			
-			_activeChar.setPartyRoom(_roomid);
-			
-			_activeChar.sendPacket(new PartyMatchDetail(_activeChar, _room));
-			_activeChar.sendPacket(new ExPartyRoomMember(_activeChar, _room, 0));
-			
-			for (PlayerInstance _member : _room.getPartyMembers())
-			{
-				if (_member == null)
-				{
-					continue;
-				}
-				
-				_member.sendPacket(new ExManagePartyRoomMember(_activeChar, _room, 0));
-				
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_ENTERED_THE_PARTY_ROOM);
-				sm.addCharName(_activeChar);
-				_member.sendPacket(sm);
-			}
-			_room.addMember(_activeChar);
-			
-			// Info Broadcast
-			_activeChar.broadcastUserInfo();
-		}
-		else
-		{
-			_activeChar.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_REQUIREMENTS_TO_ENTER_THAT_PARTY_ROOM);
+			room.addMember(activeChar);
 		}
 	}
 	
 	@Override
 	public String getType()
 	{
-		return _C__81_REQUESTPARTYMATCHDETAIL;
+		return getClass().getSimpleName();
 	}
 }

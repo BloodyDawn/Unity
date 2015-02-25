@@ -18,118 +18,69 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
-import org.l2junity.gameserver.model.PartyMatchRoom;
-import org.l2junity.gameserver.model.PartyMatchRoomList;
-import org.l2junity.gameserver.model.PartyMatchWaitingList;
+import org.l2junity.gameserver.enums.MatchingRoomType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.ExPartyRoomMember;
-import org.l2junity.gameserver.network.serverpackets.PartyMatchDetail;
+import org.l2junity.gameserver.model.matching.MatchingRoom;
+import org.l2junity.gameserver.model.matching.PartyMatchingRoom;
+import org.l2junity.gameserver.network.serverpackets.PartyRoomInfo;
 
 /**
  * author: Gnacik
  */
 public class RequestPartyMatchList extends L2GameClientPacket
 {
-	private static final String _C__80_REQUESTPARTYMATCHLIST = "[C] 80 RequestPartyMatchList";
-	
-	private int _roomid;
-	private int _membersmax;
-	private int _lvlmin;
-	private int _lvlmax;
-	private int _loot;
-	private String _roomtitle;
+	private int _roomId;
+	private int _maxMembers;
+	private int _minLevel;
+	private int _maxLevel;
+	private int _lootType;
+	private String _roomTitle;
 	
 	@Override
 	protected void readImpl()
 	{
-		_roomid = readD();
-		_membersmax = readD();
-		_lvlmin = readD();
-		_lvlmax = readD();
-		_loot = readD();
-		_roomtitle = readS();
+		_roomId = readD();
+		_maxMembers = readD();
+		_minLevel = readD();
+		_maxLevel = readD();
+		_lootType = readD();
+		_roomTitle = readS();
 	}
 	
 	@Override
 	protected void runImpl()
 	{
-		PlayerInstance _activeChar = getClient().getActiveChar();
-		
-		if (_activeChar == null)
+		final PlayerInstance activeChar = getActiveChar();
+		if (activeChar == null)
 		{
 			return;
 		}
 		
-		if (_roomid > 0)
+		if (_roomId <= 0)
 		{
-			PartyMatchRoom _room = PartyMatchRoomList.getInstance().getRoom(_roomid);
-			if (_room != null)
-			{
-				_log.info("PartyMatchRoom #" + _room.getId() + " changed by " + _activeChar.getName());
-				_room.setMaxMembers(_membersmax);
-				_room.setMinLvl(_lvlmin);
-				_room.setMaxLvl(_lvlmax);
-				_room.setLootType(_loot);
-				_room.setTitle(_roomtitle);
-				
-				for (PlayerInstance _member : _room.getPartyMembers())
-				{
-					if (_member == null)
-					{
-						continue;
-					}
-					
-					_member.sendPacket(new PartyMatchDetail(_activeChar, _room));
-					_member.sendPacket(SystemMessageId.THE_PARTY_ROOM_S_INFORMATION_HAS_BEEN_REVISED);
-				}
-			}
+			final PartyMatchingRoom room = new PartyMatchingRoom(_roomTitle, _lootType, _minLevel, _maxLevel, _maxMembers, activeChar);
+			activeChar.setMatchingRoom(room);
 		}
 		else
 		{
-			int _maxid = PartyMatchRoomList.getInstance().getMaxId();
-			
-			PartyMatchRoom _room = new PartyMatchRoom(_maxid, _roomtitle, _loot, _lvlmin, _lvlmax, _membersmax, _activeChar);
-			
-			_log.info("PartyMatchRoom #" + _maxid + " created by " + _activeChar.getName());
-			// Remove from waiting list
-			PartyMatchWaitingList.getInstance().removePlayer(_activeChar);
-			
-			PartyMatchRoomList.getInstance().addPartyMatchRoom(_maxid, _room);
-			
-			if (_activeChar.isInParty())
+			final MatchingRoom room = activeChar.getMatchingRoom();
+			if ((room.getId() == _roomId) && (room.getRoomType() == MatchingRoomType.PARTY) && room.isLeader(activeChar))
 			{
-				for (PlayerInstance ptmember : _activeChar.getParty().getMembers())
-				{
-					if (ptmember == null)
-					{
-						continue;
-					}
-					if (ptmember == _activeChar)
-					{
-						continue;
-					}
-					
-					ptmember.setPartyRoom(_maxid);
-					// ptmember.setPartyMatching(1);
-					
-					_room.addMember(ptmember);
-				}
+				room.setLootType(_lootType);
+				room.setMinLvl(_minLevel);
+				room.setMaxLvl(_maxLevel);
+				room.setMaxMembers(_maxMembers);
+				room.setTitle(_roomTitle);
+				
+				final PartyRoomInfo packet = new PartyRoomInfo((PartyMatchingRoom) room);
+				room.getMembers().forEach(packet::sendTo);
 			}
-			_activeChar.sendPacket(new PartyMatchDetail(_activeChar, _room));
-			_activeChar.sendPacket(new ExPartyRoomMember(_activeChar, _room, 1));
-			
-			_activeChar.sendPacket(SystemMessageId.YOU_HAVE_CREATED_A_PARTY_ROOM);
-			
-			_activeChar.setPartyRoom(_maxid);
-			// _activeChar.setPartyMatching(1);
-			_activeChar.broadcastUserInfo();
 		}
 	}
 	
 	@Override
 	public String getType()
 	{
-		return _C__80_REQUESTPARTYMATCHLIST;
+		return getClass().getSimpleName();
 	}
 }

@@ -70,6 +70,6 @@ public class RequestAskJoinPartyRoom extends L2GameClientPacket
 	@Override
 	public String getType()
 	{
-		return "[C] D0:14 RequestAskJoinPartyRoom";
+		return getClass().getSimpleName();
 	}
 }

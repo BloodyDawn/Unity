@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
-import org.l2junity.gameserver.model.PartyMatchWaitingList;
+import org.l2junity.gameserver.instancemanager.MatchingRoomManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
@@ -26,8 +26,6 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
  */
 public final class RequestExitPartyMatchingWaitingRoom extends L2GameClientPacket
 {
-	private static final String _C__D0_25_REQUESTEXITPARTYMATCHINGWAITINGROOM = "[C] D0:25 RequestExitPartyMatchingWaitingRoom";
-	
 	@Override
 	protected void readImpl()
 	{
@@ -36,19 +34,19 @@ public final class RequestExitPartyMatchingWaitingRoom extends L2GameClientPacke
 	@Override
 	protected void runImpl()
 	{
-		PlayerInstance _activeChar = getClient().getActiveChar();
+		final PlayerInstance player = getActiveChar();
 		
-		if (_activeChar == null)
+		if (player == null)
 		{
 			return;
 		}
 		
-		PartyMatchWaitingList.getInstance().removePlayer(_activeChar);
+		MatchingRoomManager.getInstance().removeFromWaitingList(player);
 	}
 	
 	@Override
 	public String getType()
 	{
-		return _C__D0_25_REQUESTEXITPARTYMATCHINGWAITINGROOM;
+		return getClass().getSimpleName();
 	}
 }

@@ -20,12 +20,8 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.Party.MessageType;
-import org.l2junity.gameserver.model.PartyMatchRoom;
-import org.l2junity.gameserver.model.PartyMatchRoomList;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.ExClosePartyRoom;
-import org.l2junity.gameserver.network.serverpackets.ExPartyRoomMember;
-import org.l2junity.gameserver.network.serverpackets.PartyMatchDetail;
+import org.l2junity.gameserver.model.matching.MatchingRoom;
 
 /**
  * This class ...
@@ -33,8 +29,6 @@ import org.l2junity.gameserver.network.serverpackets.PartyMatchDetail;
  */
 public final class RequestWithDrawalParty extends L2GameClientPacket
 {
-	private static final String _C__44_REQUESTWITHDRAWALPARTY = "[C] 44 RequestWithDrawalParty";
-	
 	@Override
 	protected void readImpl()
 	{
@@ -44,7 +38,7 @@ public final class RequestWithDrawalParty extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		final PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -55,20 +49,10 @@ public final class RequestWithDrawalParty extends L2GameClientPacket
 		{
 			party.removePartyMember(player, MessageType.LEFT);
 			
-			if (player.isInPartyMatchRoom())
+			final MatchingRoom room = player.getMatchingRoom();
+			if (room != null)
 			{
-				final PartyMatchRoom room = PartyMatchRoomList.getInstance().getPlayerRoom(player);
-				if (room != null)
-				{
-					player.sendPacket(new PartyMatchDetail(player, room));
-					player.sendPacket(new ExPartyRoomMember(player, room, 0));
-					player.sendPacket(new ExClosePartyRoom());
-					
-					room.deleteMember(player);
-				}
-				player.setPartyRoom(0);
-				// player.setPartyMatching(0);
-				player.broadcastUserInfo();
+				room.deleteMember(player, false);
 			}
 		}
 	}
@@ -76,6 +60,6 @@ public final class RequestWithDrawalParty extends L2GameClientPacket
 	@Override
 	public String getType()
 	{
-		return _C__44_REQUESTWITHDRAWALPARTY;
+		return getClass().getSimpleName();
 	}
 }

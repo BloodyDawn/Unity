@@ -23,9 +23,7 @@ package org.l2junity.gameserver.network.serverpackets;
  */
 public class ExShowQuestInfo extends L2GameServerPacket
 {
-	public static final ExShowQuestInfo STATIC_PACKET = new ExShowQuestInfo();
-	
-	private ExShowQuestInfo()
+	public ExShowQuestInfo()
 	{
 	}
 	

@@ -44,6 +44,8 @@ import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
+import org.l2junity.gameserver.model.events.EventDispatcher;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSocialAction;
 import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.network.NpcStringId;
@@ -1189,6 +1191,9 @@ public final class RequestActionUse extends L2GameClientPacket
 		if (activeChar.canMakeSocialAction())
 		{
 			activeChar.broadcastPacket(new SocialAction(activeChar.getObjectId(), id));
+			
+			// Notify to scripts
+			EventDispatcher.getInstance().notifyEventAsync(new OnPlayerSocialAction(activeChar, id), activeChar);
 		}
 	}
 	

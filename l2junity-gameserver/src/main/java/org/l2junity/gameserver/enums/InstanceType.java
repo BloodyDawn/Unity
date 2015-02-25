@@ -77,7 +77,6 @@ public enum InstanceType
 	L2FortLogisticsInstance(L2MerchantInstance),
 	L2FortManagerInstance(L2MerchantInstance),
 	// City NPCs
-	L2AdventurerInstance(L2NpcInstance),
 	L2AuctioneerInstance(L2Npc),
 	L2ClanHallManagerInstance(L2MerchantInstance),
 	L2FishermanInstance(L2MerchantInstance),

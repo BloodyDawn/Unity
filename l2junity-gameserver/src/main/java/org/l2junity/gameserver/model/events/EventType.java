@@ -71,6 +71,7 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPvPKil
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerRestore;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSelect;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSkillLearn;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSocialAction;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSubChange;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSummonSpawn;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSummonTalk;
@@ -227,6 +228,7 @@ public enum EventType
 	ON_PLAYER_PVP_KILL(OnPlayerPvPKill.class, void.class),
 	ON_PLAYER_RESTORE(OnPlayerRestore.class, void.class),
 	ON_PLAYER_SELECT(OnPlayerSelect.class, void.class, TerminateReturn.class),
+	ON_PLAYER_SOCIAL_ACTION(OnPlayerSocialAction.class, void.class),
 	ON_PLAYER_SKILL_LEARN(OnPlayerSkillLearn.class, void.class),
 	ON_PLAYER_SUMMON_SPAWN(OnPlayerSummonSpawn.class, void.class),
 	ON_PLAYER_SUMMON_TALK(OnPlayerSummonTalk.class, void.class),
