@@ -25,6 +25,8 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javolution.util.FastList;
+
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
@@ -34,8 +36,6 @@ import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.entity.Hero;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.network.L2GameClient;
-
-import javolution.util.FastList;
 
 public class CharSelectionInfo extends L2GameServerPacket
 {
@@ -201,12 +201,11 @@ public class CharSelectionInfo extends L2GameServerPacket
 			writeF(0x00); // max Hp
 			writeF(0x00); // cur Hp
 			
-			// High Five by Vistall:
 			writeD(charInfoPackage.getVitalityPoints()); // H5 Vitality
-			writeD(0x00); // Vitality Exp Bonus
-			writeD(0x00); // Vitality items used, such as potion
+			writeD((int) Config.RATE_VITALITY_EXP_MULTIPLIER * 100); // Vitality Exp Bonus
+			writeD(charInfoPackage.getVitalityItemsUsed()); // Vitality items used, such as potion
 			writeD(charInfoPackage.getAccessLevel() == -100 ? 0x00 : 0x01); // Char is active or not
-			writeC(0x00); // is noble
+			writeC(charInfoPackage.isNoble() ? 0x01 : 0x00);
 			writeC(Hero.getInstance().isHero(charInfoPackage.getObjectId()) ? 0x01 : 0x00); // hero glow
 			writeC(charInfoPackage.isHairAccessoryEnabled() ? 0x01 : 0x00); // show hair accessory if enabled
 		}
@@ -373,6 +372,7 @@ public class CharSelectionInfo extends L2GameServerPacket
 		
 		charInfopackage.setDeleteTimer(deletetime);
 		charInfopackage.setLastAccess(chardata.getLong("lastAccess"));
+		charInfopackage.setNoble(chardata.getInt("nobless") == 1);
 		return charInfopackage;
 	}
 	

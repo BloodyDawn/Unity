@@ -203,7 +203,10 @@ public enum Stats
 	BROOCH_JEWELS("broochJewels"),
 	
 	// Summon Points
-	MAX_SUMMON_POINTS("summonPoints");
+	MAX_SUMMON_POINTS("summonPoints"),
+	
+	// Exp bonus applied to vitality
+	VITALITY_EXP_BONUS("vitalityExpBonus");
 	
 	public static final int NUM_STATS = values().length;
 	

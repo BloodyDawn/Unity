@@ -42,6 +42,11 @@ public class PlayerVariables extends AbstractVariables
 	private static final String DELETE_QUERY = "DELETE FROM character_variables WHERE charId = ?";
 	private static final String INSERT_QUERY = "INSERT INTO character_variables (charId, var, val) VALUES (?, ?, ?)";
 	
+	// Public variable names
+	public static final String HAIR_ACCESSORY_VARIABLE_NAME = "HAIR_ACCESSORY_ENABLED";
+	public static final String WORLD_CHAT_VARIABLE_NAME = "WORLD_CHAT_POINTS";
+	public static final String VITALITY_ITEMS_USED_VARIABLE_NAME = "VITALITY_ITEMS_USED";
+	
 	private final int _objectId;
 	
 	public PlayerVariables(int objectId)

@@ -59,6 +59,7 @@ public class CharSelectInfoPackage
 	private String _htmlPrefix = null;
 	private int _vitalityPoints = 0;
 	private int _accessLevel = 0;
+	private boolean _isNoble;
 	private final PlayerVariables _vars;
 	
 	/**
@@ -395,6 +396,21 @@ public class CharSelectInfoPackage
 	
 	public boolean isHairAccessoryEnabled()
 	{
-		return _vars.getBoolean("hairAccessoryEnabled", true);
+		return _vars.getBoolean(PlayerVariables.HAIR_ACCESSORY_VARIABLE_NAME, true);
+	}
+	
+	public int getVitalityItemsUsed()
+	{
+		return _vars.getInt(PlayerVariables.VITALITY_ITEMS_USED_VARIABLE_NAME, 0);
+	}
+	
+	public boolean isNoble()
+	{
+		return _isNoble;
+	}
+	
+	public void setNoble(boolean noble)
+	{
+		_isNoble = noble;
 	}
 }

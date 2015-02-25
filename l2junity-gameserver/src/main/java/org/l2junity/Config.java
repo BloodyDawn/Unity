@@ -934,6 +934,7 @@ public final class Config
 	public static String ALT_VITALITY_HOUR_RESET;
 	
 	public static float RATE_VITALITY_EXP_MULTIPLIER;
+	public static int VITALITY_MAX_ITEMS_ALLOWED;
 	public static float RATE_DROP_VITALITY_HERBS;
 	public static float RATE_VITALITY_LOST;
 	public static float RATE_VITALITY_GAIN;
@@ -2033,6 +2034,7 @@ public final class Config
 			RATE_HB_TRUST_DECREASE = RatesSettings.getFloat("RateHellboundTrustDecrease", 1);
 			
 			RATE_VITALITY_EXP_MULTIPLIER = RatesSettings.getFloat("RateVitalityExpMultiplier", 2);
+			VITALITY_MAX_ITEMS_ALLOWED = RatesSettings.getInt("VitalityMaxItemsAllowed", 999);
 			RATE_VITALITY_LOST = RatesSettings.getFloat("RateVitalityLost", 1);
 			RATE_VITALITY_GAIN = RatesSettings.getFloat("RateVitalityGain", 1);
 			RATE_KARMA_LOST = RatesSettings.getFloat("RateKarmaLost", -1);

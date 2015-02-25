@@ -399,8 +399,6 @@ public final class PlayerInstance extends Playable
 	
 	public static final int REQUEST_TIMEOUT = 15;
 	
-	public static final String WORLD_CHAT_VARIABLE_NAME = "WORLD_CHAT_POINTS";
-	
 	private final List<IEventListener> _eventListeners = new FastList<IEventListener>().shared();
 	
 	public class AIAccessor extends Creature.AIAccessor
@@ -1168,12 +1166,12 @@ public final class PlayerInstance extends Playable
 	
 	public final boolean isHairAccessoryEnabled()
 	{
-		return getVariables().getBoolean("hairAccessoryEnabled", true);
+		return getVariables().getBoolean(PlayerVariables.HAIR_ACCESSORY_VARIABLE_NAME, true);
 	}
 	
 	public final void setHairAccessoryEnabled(boolean enabled)
 	{
-		getVariables().set("hairAccessoryEnabled", enabled);
+		getVariables().set(PlayerVariables.HAIR_ACCESSORY_VARIABLE_NAME, enabled);
 	}
 	
 	/**
@@ -14474,7 +14472,7 @@ public final class PlayerInstance extends Playable
 	 */
 	public int getWorldChatPoints()
 	{
-		return getVariables().getInt(WORLD_CHAT_VARIABLE_NAME, 1);
+		return getVariables().getInt(PlayerVariables.WORLD_CHAT_VARIABLE_NAME, 1);
 	}
 	
 	/**
@@ -14483,7 +14481,7 @@ public final class PlayerInstance extends Playable
 	 */
 	public void setWorldChatPoints(int points)
 	{
-		getVariables().set(WORLD_CHAT_VARIABLE_NAME, points);
+		getVariables().set(PlayerVariables.WORLD_CHAT_VARIABLE_NAME, points);
 	}
 	
 	/**
@@ -14690,5 +14688,17 @@ public final class PlayerInstance extends Playable
 	public boolean isInMatchingRoom()
 	{
 		return _matchingRoom != null;
+	}
+	
+	public int getVitalityItemsUsed()
+	{
+		return getVariables().getInt(PlayerVariables.VITALITY_ITEMS_USED_VARIABLE_NAME, 0);
+	}
+	
+	public void setVitalityItemsUsed(int used)
+	{
+		final PlayerVariables vars = getVariables();
+		vars.set(PlayerVariables.VITALITY_ITEMS_USED_VARIABLE_NAME, used);
+		vars.storeMe();
 	}
 }

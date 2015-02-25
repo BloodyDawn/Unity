@@ -20,26 +20,22 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.actor.stat.PcStat;
-import org.l2junity.gameserver.model.variables.AccountVariables;
-import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.gameserver.model.stats.Stats;
 
 /**
  * @author Sdw
  */
 public class ExVitalityEffectInfo extends L2GameServerPacket
 {
+	private final int _vitalityBonus;
+	private final int _vitalityItemsRemaining;
 	private final int _points;
 	
 	public ExVitalityEffectInfo(PlayerInstance cha)
 	{
 		_points = cha.getVitalityPoints();
-	}
-	
-	public ExVitalityEffectInfo(L2GameClient client)
-	{
-		final AccountVariables vars = new AccountVariables(client.getAccountName());
-		_points = vars.getInt(PcStat.VITALITY_VARIABLE, Config.STARTING_VITALITY_POINTS);
+		_vitalityBonus = (int) Math.round(cha.calcStat(Stats.VITALITY_EXP_BONUS, Config.RATE_VITALITY_EXP_MULTIPLIER) * 100);
+		_vitalityItemsRemaining = cha.getVariables().getInt("VITALITY_ITEMS_USED", 0) - Config.VITALITY_MAX_ITEMS_ALLOWED;
 	}
 	
 	@Override
@@ -49,8 +45,8 @@ public class ExVitalityEffectInfo extends L2GameServerPacket
 		writeH(0x118);
 		
 		writeD(_points);
-		writeD((int) (Config.RATE_VITALITY_EXP_MULTIPLIER * 100)); // Vitality Bonus
-		writeH(0x05); // How much vitality items remaining for use
-		writeH(0x05); // Max number of items for use
+		writeD(_vitalityBonus); // Vitality Bonus
+		writeH(_vitalityItemsRemaining); // How much vitality items remaining for use
+		writeH(Config.VITALITY_MAX_ITEMS_ALLOWED); // Max number of items for use
 	}
 }

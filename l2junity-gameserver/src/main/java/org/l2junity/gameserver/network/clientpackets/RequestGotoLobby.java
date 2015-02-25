@@ -20,7 +20,6 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.CharSelectionInfo;
-import org.l2junity.gameserver.network.serverpackets.ExLoginVitalityEffectInfo;
 
 /**
  * (ch)
@@ -39,8 +38,7 @@ public class RequestGotoLobby extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2GameClient client = getClient();
-		client.sendPacket(new ExLoginVitalityEffectInfo(client));
+		final L2GameClient client = getClient();
 		client.sendPacket(new CharSelectionInfo(client.getAccountName(), client.getSessionId().playOkID1));
 	}
 	
