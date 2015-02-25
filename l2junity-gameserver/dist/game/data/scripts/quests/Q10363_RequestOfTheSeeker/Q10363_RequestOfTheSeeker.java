@@ -204,9 +204,9 @@ public final class Q10363_RequestOfTheSeeker extends Quest
 			final Npc npc = (Npc) player.getTarget();
 			NpcStringId npcStringId = null;
 			
-			if (event.getSocialActionId() == SOCIAL_SORROW)
+			if (player.isInsideRadius(npc, 120, true, true))
 			{
-				if (player.isInsideRadius(npc, 120, true, true))
+				if (event.getSocialActionId() == SOCIAL_SORROW)
 				{
 					if ((qs != null) && !qs.isCompleted())
 					{
