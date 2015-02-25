@@ -1454,8 +1454,8 @@ public final class Config
 				ALT_VITALITY_DATE_RESET = 3;
 			}
 			ALT_VITALITY_HOUR_RESET = Character.getString("AltVitalityHourReset", "06:30:00");
-			MAX_BONUS_EXP = Character.getDouble("MaxExpBonus", 3.5);
-			MAX_BONUS_SP = Character.getDouble("MaxSpBonus", 3.5);
+			MAX_BONUS_EXP = Character.getDouble("MaxExpBonus", 0);
+			MAX_BONUS_SP = Character.getDouble("MaxSpBonus", 0);
 			MAX_RUN_SPEED = Character.getInt("MaxRunSpeed", 300);
 			MAX_PCRIT_RATE = Character.getInt("MaxPCritRate", 500);
 			MAX_MCRIT_RATE = Character.getInt("MaxMCritRate", 200);

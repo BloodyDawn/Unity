@@ -29,8 +29,8 @@ import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.PetLevelData;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2ClassMasterInstance;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.transform.TransformTemplate;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLevelChanged;
@@ -657,6 +657,11 @@ public class PcStat extends PlayableStat
 		return getActiveChar().getAccountVariables().getInt(VITALITY_VARIABLE, Config.STARTING_VITALITY_POINTS);
 	}
 	
+	public double getVitalityExpBonus()
+	{
+		return calcStat(Stats.VITALITY_EXP_BONUS, Config.RATE_VITALITY_EXP_MULTIPLIER);
+	}
+	
 	public void setVitalityPoints(int points)
 	{
 		getActiveChar().getAccountVariables().set(VITALITY_VARIABLE, points);
@@ -760,11 +765,6 @@ public class PcStat extends PlayableStat
 		setVitalityPoints(points);
 	}
 	
-	public double getVitalityMultiplier()
-	{
-		return Config.ENABLE_VITALITY ? Config.RATE_VITALITY_EXP_MULTIPLIER : 1;
-	}
-	
 	public double getExpBonusMultiplier()
 	{
 		double bonus = 1.0;
@@ -772,7 +772,7 @@ public class PcStat extends PlayableStat
 		double bonusExp = 1.0;
 		
 		// Bonus from Vitality System
-		vitality = getVitalityMultiplier();
+		vitality = getVitalityExpBonus();
 		
 		// Bonus exp from skills
 		bonusExp = 1 + (calcStat(Stats.BONUS_EXP, 0, null, null) / 100);
@@ -789,7 +789,10 @@ public class PcStat extends PlayableStat
 		
 		// Check for abnormal bonuses
 		bonus = Math.max(bonus, 1);
-		bonus = Math.min(bonus, Config.MAX_BONUS_EXP);
+		if (Config.MAX_BONUS_EXP > 0)
+		{
+			bonus = Math.min(bonus, Config.MAX_BONUS_EXP);
+		}
 		
 		return bonus;
 	}
@@ -801,7 +804,7 @@ public class PcStat extends PlayableStat
 		double bonusSp = 1.0;
 		
 		// Bonus from Vitality System
-		vitality = getVitalityMultiplier();
+		vitality = getVitalityExpBonus();
 		
 		// Bonus sp from skills
 		bonusSp = 1 + (calcStat(Stats.BONUS_SP, 0, null, null) / 100);
@@ -818,7 +821,10 @@ public class PcStat extends PlayableStat
 		
 		// Check for abnormal bonuses
 		bonus = Math.max(bonus, 1);
-		bonus = Math.min(bonus, Config.MAX_BONUS_SP);
+		if (Config.MAX_BONUS_SP > 0)
+		{
+			bonus = Math.min(bonus, Config.MAX_BONUS_SP);
+		}
 		
 		return bonus;
 	}

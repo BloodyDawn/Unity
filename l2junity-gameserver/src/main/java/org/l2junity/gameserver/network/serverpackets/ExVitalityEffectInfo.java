@@ -20,7 +20,6 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.stats.Stats;
 
 /**
  * @author Sdw
@@ -34,7 +33,7 @@ public class ExVitalityEffectInfo extends L2GameServerPacket
 	public ExVitalityEffectInfo(PlayerInstance cha)
 	{
 		_points = cha.getVitalityPoints();
-		_vitalityBonus = (int) Math.round(cha.calcStat(Stats.VITALITY_EXP_BONUS, Config.RATE_VITALITY_EXP_MULTIPLIER) * 100);
+		_vitalityBonus = (int) cha.getStat().getVitalityExpBonus() * 100;
 		_vitalityItemsRemaining = cha.getVitalityItemsUsed() - Config.VITALITY_MAX_ITEMS_ALLOWED;
 	}
 	
