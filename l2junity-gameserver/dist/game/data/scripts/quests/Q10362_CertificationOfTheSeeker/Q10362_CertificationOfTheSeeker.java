@@ -112,26 +112,35 @@ public final class Q10362_CertificationOfTheSeeker extends Quest
 	{
 		final QuestState qs = getQuestState(killer, false);
 		
-		if ((qs != null) && qs.isStarted())
+		if ((qs != null) && qs.isCond(1))
 		{
 			int killedStalker = qs.getMemoStateEx(STALKER);
 			int killedCrawler = qs.getMemoStateEx(CRAWLER);
 			
-			if (qs.isCond(1))
+			if (npc.getId() == STALKER)
 			{
 				killedStalker++;
-				killedCrawler++;
-				
-				if ((killedStalker >= 10) && (killedCrawler >= 5))
+				if (killedStalker <= 10)
 				{
-					qs.setCond(2, true);
-				}
-				else
-				{
-					qs.setMemoStateEx(npc.getId(), (npc.getId() == STALKER ? killedStalker : killedCrawler));
+					qs.setMemoStateEx(STALKER, killedStalker);
 					sendNpcLogList(killer);
 					playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
+			}
+			else if (npc.getId() == CRAWLER)
+			{
+				killedCrawler++;
+				if (killedCrawler <= 5)
+				{
+					qs.setMemoStateEx(CRAWLER, killedCrawler);
+					sendNpcLogList(killer);
+					playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+			}
+			
+			if ((killedStalker == 10) && (killedCrawler == 5))
+			{
+				qs.setCond(2, true);
 			}
 		}
 		return super.onKill(npc, killer, isSummon);
