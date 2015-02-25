@@ -126,7 +126,6 @@ import handlers.bypasshandlers.OlympiadObservation;
 import handlers.bypasshandlers.PlayerHelp;
 import handlers.bypasshandlers.PrivateWarehouse;
 import handlers.bypasshandlers.QuestLink;
-import handlers.bypasshandlers.QuestList;
 import handlers.bypasshandlers.ReceivePremium;
 import handlers.bypasshandlers.ReleaseAttribute;
 import handlers.bypasshandlers.RentPet;
@@ -421,7 +420,6 @@ public class MasterHandler
 			QuestLink.class,
 			PlayerHelp.class,
 			PrivateWarehouse.class,
-			QuestList.class,
 			ReceivePremium.class,
 			ReleaseAttribute.class,
 			RentPet.class,
