@@ -34,7 +34,7 @@ public final class AdventureGuildsman extends AbstractNpcAI
 	// @formatter:off
 	private static final int[] ADVENTURERS_GUILDSMAN =
 	{
-		31787, 31788, 31789,
+		31797, 31788, 31789,
 		31790, 31791, 31792,
 		31793, 31794, 31795,
 		31796, 31797, 31798,
@@ -47,8 +47,8 @@ public final class AdventureGuildsman extends AbstractNpcAI
 		31830, 31831, 31832,
 		31833, 31834, 31835,
 		31837, 31838, 31840,
-		31841, 31891, 31892,
-		31893, 31895, 33946,
+		31841, 31991, 31992,
+		31993, 31995, 33946,
 	};
 	// @formatter:on
 	// Skills
