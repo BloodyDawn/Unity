@@ -53,6 +53,7 @@ public final class YeSegiraTeleportDevice extends AbstractNpcAI
 		33189,
 		33190,
 		33191,
+		33205,
 		33192,
 		33197,
 	};
@@ -61,6 +62,7 @@ public final class YeSegiraTeleportDevice extends AbstractNpcAI
 	static
 	{
 		LOCATIONS.put("village", new Location(-114413, 252159, -1592));
+		LOCATIONS.put("village2", new Location(-112529, 256741, -1456));
 		LOCATIONS.put("observatory", new Location(-114675, 230171, -1648));
 		LOCATIONS.put("easten_exit", new Location(-109294, 237397, -2928));
 		LOCATIONS.put("western_exit", new Location(-122189, 241009, -2328));
