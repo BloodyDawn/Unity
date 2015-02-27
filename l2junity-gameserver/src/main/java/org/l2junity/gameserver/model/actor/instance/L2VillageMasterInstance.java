@@ -375,7 +375,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 		clan.updateClanInDB();
 		
 		// The clan leader should take the XP penalty of a full death.
-		player.calculateDeathExpPenalty(null, false);
+		player.calculateDeathExpPenalty(null);
 		ClanTable.getInstance().scheduleRemoveClan(clan.getId());
 	}
 	

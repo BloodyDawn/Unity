@@ -5275,7 +5275,7 @@ public final class PlayerInstance extends Playable
 					// If player is Lucky shouldn't get penalized.
 					if (!isLucky() && !insidePvpZone)
 					{
-						calculateDeathExpPenalty(killer, atWarWith(pk));
+						calculateDeathExpPenalty(killer);
 					}
 				}
 			}
@@ -5627,7 +5627,7 @@ public final class PlayerInstance extends Playable
 	 * @param killer
 	 * @param atWar
 	 */
-	public void calculateDeathExpPenalty(Creature killer, boolean atWar)
+	public void calculateDeathExpPenalty(Creature killer)
 	{
 		final int lvl = getLevel();
 		double percentLost = PlayerXpPercentLostData.getInstance().getXpPercent(getLevel());
@@ -5665,11 +5665,6 @@ public final class PlayerInstance extends Playable
 			{
 				lostExp = Math.round(((getStat().getExpForLevel(ExperienceData.getInstance().getMaxLevel()) - getStat().getExpForLevel(ExperienceData.getInstance().getMaxLevel() - 1)) * percentLost) / 100);
 			}
-		}
-		
-		if (atWar)
-		{
-			lostExp /= 4.0;
 		}
 		
 		setExpBeforeDeath(getExp());

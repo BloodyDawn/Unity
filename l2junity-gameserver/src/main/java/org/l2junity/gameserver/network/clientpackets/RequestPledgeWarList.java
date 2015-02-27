@@ -27,40 +27,31 @@ import org.l2junity.gameserver.network.serverpackets.PledgeReceiveWarList;
  */
 public final class RequestPledgeWarList extends L2GameClientPacket
 {
-	private static final String _C__D0_17_REQUESTPLEDGEWARLIST = "[C] D0:17 RequestPledgeWarList";
 	@SuppressWarnings("unused")
-	private int _unk1;
+	private int _page;
 	private int _tab;
 	
 	@Override
 	protected void readImpl()
 	{
-		_unk1 = readD();
+		_page = readD();
 		_tab = readD();
 	}
 	
 	@Override
 	protected void runImpl()
 	{
-		// _log.info("C5: RequestPledgeWarList d:"+_unk1);
-		// _log.info("C5: RequestPledgeWarList d:"+_tab);
-		PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
+		
 		if (activeChar.getClan() == null)
 		{
 			return;
 		}
 		
-		// do we need powers to do that??
 		activeChar.sendPacket(new PledgeReceiveWarList(activeChar.getClan(), _tab));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_17_REQUESTPLEDGEWARLIST;
 	}
 }

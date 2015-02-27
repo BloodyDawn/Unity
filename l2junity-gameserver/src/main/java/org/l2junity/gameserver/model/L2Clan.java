@@ -29,6 +29,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javolution.util.FastList;
+import javolution.util.FastMap;
+
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.communitybbs.BB.Forum;
@@ -64,15 +67,12 @@ import org.l2junity.gameserver.network.serverpackets.PledgeShowMemberListAll;
 import org.l2junity.gameserver.network.serverpackets.PledgeShowMemberListDeleteAll;
 import org.l2junity.gameserver.network.serverpackets.PledgeShowMemberListUpdate;
 import org.l2junity.gameserver.network.serverpackets.PledgeSkillList;
+import org.l2junity.gameserver.network.serverpackets.PledgeSkillList.SubPledgeSkill;
 import org.l2junity.gameserver.network.serverpackets.PledgeSkillListAdd;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.network.serverpackets.UserInfo;
-import org.l2junity.gameserver.network.serverpackets.PledgeSkillList.SubPledgeSkill;
 import org.l2junity.gameserver.util.Util;
 import org.l2junity.util.EnumIntBitmask;
-
-import javolution.util.FastList;
-import javolution.util.FastMap;
 
 public class L2Clan implements IIdentifiable, INamable
 {
@@ -1597,14 +1597,7 @@ public class L2Clan implements IIdentifiable, INamable
 	
 	public boolean isAtWarWith(Integer id)
 	{
-		if (!_atWarWith.isEmpty())
-		{
-			if (_atWarWith.contains(id))
-			{
-				return true;
-			}
-		}
-		return false;
+		return _atWarWith.contains(id);
 	}
 	
 	public boolean isAtWarWith(L2Clan clan)
@@ -1613,26 +1606,12 @@ public class L2Clan implements IIdentifiable, INamable
 		{
 			return false;
 		}
-		if (!_atWarWith.isEmpty())
-		{
-			if (_atWarWith.contains(clan.getId()))
-			{
-				return true;
-			}
-		}
-		return false;
+		return _atWarWith.contains(clan.getId());
 	}
 	
 	public boolean isAtWarAttacker(Integer id)
 	{
-		if ((_atWarAttackers != null) && !_atWarAttackers.isEmpty())
-		{
-			if (_atWarAttackers.contains(id))
-			{
-				return true;
-			}
-		}
-		return false;
+		return _atWarAttackers.contains(id);
 	}
 	
 	public void setEnemyClan(L2Clan clan)
@@ -1681,11 +1660,7 @@ public class L2Clan implements IIdentifiable, INamable
 	
 	public boolean isAtWar()
 	{
-		if ((_atWarWith != null) && !_atWarWith.isEmpty())
-		{
-			return true;
-		}
-		return false;
+		return !_atWarWith.isEmpty();
 	}
 	
 	public List<Integer> getWarList()
@@ -3050,5 +3025,10 @@ public class L2Clan implements IIdentifiable, INamable
 	public void clearSiegeDeaths()
 	{
 		_siegeDeaths.set(0);
+	}
+	
+	public int getWarCount()
+	{
+		return _atWarWith.size();
 	}
 }
