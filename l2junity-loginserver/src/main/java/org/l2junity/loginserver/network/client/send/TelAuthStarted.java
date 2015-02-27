@@ -16,15 +16,25 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.network;
+package org.l2junity.loginserver.network.client.send;
+
+import org.l2junity.network.IOutgoingPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Nos
- * @param <T>
  */
-public interface IIncomingPackets<T extends IIncomingPacket<?>> extends IConnectionState
+public class TelAuthStarted implements IOutgoingPacket
 {
-	public int getPacketId();
-	
-	public T newIncomingPacket();
+	/*
+	 * (non-Javadoc)
+	 * @see com.l2jserver.commons.network.IOutgoingPacket#write(com.l2jserver.commons.network.PacketWriter)
+	 */
+	@Override
+	public boolean write(PacketWriter packet)
+	{
+		packet.writeC(0x0F);
+		packet.writeD(0); // Unused by client
+		return true;
+	}
 }

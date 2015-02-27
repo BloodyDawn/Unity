@@ -24,6 +24,7 @@ import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 
 import java.nio.ByteOrder;
 
+import org.l2junity.network.IConnectionState;
 import org.l2junity.network.IIncomingPacket;
 import org.l2junity.network.IIncomingPackets;
 import org.l2junity.network.PacketReader;
@@ -73,12 +74,12 @@ public class PacketDecoder extends LengthFieldBasedFrameDecoder
 			return null;
 		}
 		
-		// Attribute<IConnectionState> attribute = ctx.channel().attr(CONNECTION_STATE);
-		// if ((attribute.get() == null) || (attribute.get().getState() != incomingPacket.getState()))
-		// {
-		// System.out.println(" Connection at invalid state: " + attribute.get() + " Required State: " + incomingPacket.getState());
-		// return null;
-		// }
+		final IConnectionState connectionState = ctx.channel().attr(IConnectionState.ATTRIBUTE_KEY).get();
+		if ((connectionState == null) || (connectionState.getState() != incomingPacket.getState()))
+		{
+			System.out.println(" Connection at invalid state: " + connectionState + " Required State: " + incomingPacket.getState());
+			return null;
+		}
 		
 		System.out.println(" Handler: " + incomingPacket);
 		IIncomingPacket<?> packet = incomingPacket.newIncomingPacket();

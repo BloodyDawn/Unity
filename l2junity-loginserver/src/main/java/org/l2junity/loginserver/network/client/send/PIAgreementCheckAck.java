@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J Server
+ * Copyright (C) 2004-2015 L2J Server
  * 
  * This file is part of L2J Server.
  * 
@@ -16,15 +16,28 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.network;
+package org.l2junity.loginserver.network.client.send;
+
+import org.l2junity.network.IOutgoingPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Nos
- * @param <T>
  */
-public interface IIncomingPackets<T extends IIncomingPacket<?>> extends IConnectionState
+public class PIAgreementCheckAck implements IOutgoingPacket
 {
-	public int getPacketId();
 	
-	public T newIncomingPacket();
+	/*
+	 * (non-Javadoc)
+	 * @see org.l2junity.network.IOutgoingPacket#write(org.l2junity.network.PacketWriter)
+	 */
+	@Override
+	public boolean write(PacketWriter packet)
+	{
+		packet.writeC(0x11);
+		packet.writeD(0); // Unused by client
+		packet.writeC(0); // 0 - EULA, 1 - PIAgreement
+		return true;
+	}
+	
 }

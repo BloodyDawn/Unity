@@ -18,10 +18,14 @@
  */
 package org.l2junity.network;
 
+import io.netty.util.AttributeKey;
+
 /**
  * @author Nos
  */
 public interface IConnectionState
 {
+	public static final AttributeKey<IConnectionState> ATTRIBUTE_KEY = AttributeKey.valueOf(IConnectionState.class, "");
+	
 	public IConnectionState getState();
 }

@@ -1,30 +1,58 @@
 /*
  * Copyright (C) 2004-2014 L2J Server
- * 
+ *
  * This file is part of L2J Server.
- * 
+ *
  * L2J Server is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * L2J Server is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.network;
+package org.l2junity.loginserver.datatables;
+
+import java.net.InetAddress;
+
+import org.l2junity.loginserver.model.Ban;
 
 /**
- * @author Nos
- * @param <T>
+ * @author UnAfraid
  */
-public interface IIncomingPackets<T extends IIncomingPacket<?>> extends IConnectionState
+public class BansTable
 {
-	public int getPacketId();
+	protected BansTable()
+	{
+	}
 	
-	public T newIncomingPacket();
+	public Ban getBan(InetAddress address)
+	{
+		return null;
+	}
+	
+	public boolean storeBan(Ban ban)
+	{
+		return true;
+	}
+	
+	public boolean deleteBan(Ban ban)
+	{
+		return true;
+	}
+	
+	public static BansTable getInstance()
+	{
+		return SingletonHolder._instance;
+	}
+	
+	private static final class SingletonHolder
+	{
+		protected static final BansTable _instance = new BansTable();
+	}
 }

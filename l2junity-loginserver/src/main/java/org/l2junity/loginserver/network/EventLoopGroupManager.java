@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J Server
+ * Copyright (C) 2004-2015 L2J Server
  * 
  * This file is part of L2J Server.
  * 
@@ -16,15 +16,35 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.network;
+package org.l2junity.loginserver.network;
+
+import io.netty.channel.nio.NioEventLoopGroup;
 
 /**
  * @author Nos
- * @param <T>
  */
-public interface IIncomingPackets<T extends IIncomingPacket<?>> extends IConnectionState
+public class EventLoopGroupManager
 {
-	public int getPacketId();
+	private final NioEventLoopGroup _bossGroup = new NioEventLoopGroup();
+	private final NioEventLoopGroup _workerGroup = new NioEventLoopGroup();
 	
-	public T newIncomingPacket();
+	public NioEventLoopGroup getBossGroup()
+	{
+		return _bossGroup;
+	}
+	
+	public NioEventLoopGroup getWorkerGroup()
+	{
+		return _workerGroup;
+	}
+	
+	public static EventLoopGroupManager getInstance()
+	{
+		return SingletonHolder._instance;
+	}
+	
+	private static class SingletonHolder
+	{
+		protected static final EventLoopGroupManager _instance = new EventLoopGroupManager();
+	}
 }

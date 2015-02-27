@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J Server
+ * Copyright (C) 2004-2015 L2J Server
  * 
  * This file is part of L2J Server.
  * 
@@ -18,13 +18,31 @@
  */
 package org.l2junity.network;
 
+import io.netty.channel.Channel;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.SimpleChannelInboundHandler;
+
 /**
  * @author Nos
  * @param <T>
  */
-public interface IIncomingPackets<T extends IIncomingPacket<?>> extends IConnectionState
+public abstract class ChannelInboundHandler<T extends ChannelInboundHandler<?>> extends SimpleChannelInboundHandler<IIncomingPacket<T>>
 {
-	public int getPacketId();
+	private Channel _channel;
 	
-	public T newIncomingPacket();
+	@Override
+	public void channelActive(ChannelHandlerContext ctx)
+	{
+		_channel = ctx.channel();
+	}
+	
+	public void setConnectionState(IConnectionState connectionState)
+	{
+		_channel.attr(IConnectionState.ATTRIBUTE_KEY).set(connectionState);
+	}
+	
+	public IConnectionState getConnectionState()
+	{
+		return _channel.attr(IConnectionState.ATTRIBUTE_KEY).get();
+	}
 }

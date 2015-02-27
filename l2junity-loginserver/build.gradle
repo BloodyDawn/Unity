@@ -1,0 +1,29 @@
+apply plugin: 'java'
+
+defaultTasks('build')
+
+sourceCompatibility = '1.8'
+
+
+dependencies {
+	compile(fileTree(dir: 'dist/libs', include: '*.jar'))
+	compile project(':l2junity-commons')
+	compile project(':l2junity-network')
+	
+	compile(group: 'com.mchange', name: 'c3p0', version: '0.9.5-pre10')
+	compile(group: 'com.sun.mail', name: 'javax.mail', version: '1.5.2')
+	compile(group: 'org.bitlet', name: 'weupnp', version: '0.1.2')
+	compile(group: 'org.jdbi', name: 'jdbi', version: '2.59')
+	
+	runtime(group: 'mysql', name: 'mysql-connector-java', version: '5.1.34')
+}
+
+
+jar {
+	manifest {
+		attributes('Built-By': System.getProperty('user.name'),
+				'Built-Date': new Date(),
+				'Implementation-URL': 'http://www.l2junity.org/',
+			)
+	}
+}
