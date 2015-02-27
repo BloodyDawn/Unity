@@ -5625,7 +5625,6 @@ public final class PlayerInstance extends Playable
 	 * Reduce the Experience (and level if necessary) of the L2PcInstance in function of the calculated Death Penalty.<BR>
 	 * <B><U> Actions</U> :</B> <li>Calculate the Experience loss</li> <li>Set the value of _expBeforeDeath</li> <li>Set the new Experience value of the L2PcInstance and Decrease its level if necessary</li> <li>Send a Server->Client StatusUpdate packet with its new Experience</li>
 	 * @param killer
-	 * @param atWar
 	 */
 	public void calculateDeathExpPenalty(Creature killer)
 	{
