@@ -70,6 +70,11 @@ public class RequestAcquireAbilityList extends L2GameClientPacket
 			activeChar.sendPacket(SystemMessageId.ABILITIES_CAN_BE_USED_BY_NOBLESSE_EXALTED_LV_99_OR_ABOVE);
 			return;
 		}
+		else if (activeChar.isInOlympiadMode()) // TODO: Add Ceremony of Chaos when done.
+		{
+			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_USE_OR_RESET_ABILITY_POINTS_WHILE_PARTICIPATING_IN_THE_OLYMPIAD_OR_CEREMONY_OF_CHAOS);
+			return;
+		}
 		
 		for (SkillHolder holder : _skills)
 		{
