@@ -160,6 +160,7 @@ import org.l2junity.gameserver.model.actor.Vehicle;
 import org.l2junity.gameserver.model.actor.appearance.PcAppearance;
 import org.l2junity.gameserver.model.actor.knownlist.PcKnownList;
 import org.l2junity.gameserver.model.actor.request.AbstractRequest;
+import org.l2junity.gameserver.model.actor.request.SayuneRequest;
 import org.l2junity.gameserver.model.actor.stat.PcStat;
 import org.l2junity.gameserver.model.actor.status.PcStatus;
 import org.l2junity.gameserver.model.actor.tasks.player.DismountTask;
@@ -10637,6 +10638,19 @@ public final class PlayerInstance extends Playable
 		if (!canOverrideCond(PcCondOverride.SKILL_CONDITIONS) && Config.DECREASE_SKILL_LEVEL)
 		{
 			checkPlayerSkills();
+		}
+		
+		try
+		{
+			final SayuneRequest sayune = getRequest(SayuneRequest.class);
+			if (sayune != null)
+			{
+				sayune.onLogout();
+			}
+		}
+		catch (Exception e)
+		{
+			_log.log(Level.SEVERE, "deleteMe()", e);
 		}
 		
 		try

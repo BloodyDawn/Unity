@@ -37,6 +37,7 @@ import org.l2junity.gameserver.data.xml.impl.EnchantItemGroupsData;
 import org.l2junity.gameserver.data.xml.impl.ItemCrystalizationData;
 import org.l2junity.gameserver.data.xml.impl.MultisellData;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
+import org.l2junity.gameserver.data.xml.impl.SayuneData;
 import org.l2junity.gameserver.data.xml.impl.TeleportersData;
 import org.l2junity.gameserver.data.xml.impl.TransformData;
 import org.l2junity.gameserver.datatables.ItemTable;
@@ -268,6 +269,12 @@ public class AdminReload implements IAdminCommandHandler
 				{
 					AppearanceItemData.getInstance().load();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded appearance item data.");
+					break;
+				}
+				case "sayune":
+				{
+					SayuneData.getInstance().load();
+					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Sayune data.");
 					break;
 				}
 				default:

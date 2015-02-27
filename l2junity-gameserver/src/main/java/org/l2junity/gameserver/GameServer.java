@@ -78,6 +78,7 @@ import org.l2junity.gameserver.data.xml.impl.PlayerTemplateData;
 import org.l2junity.gameserver.data.xml.impl.PlayerXpPercentLostData;
 import org.l2junity.gameserver.data.xml.impl.PrimeShopData;
 import org.l2junity.gameserver.data.xml.impl.RecipeData;
+import org.l2junity.gameserver.data.xml.impl.SayuneData;
 import org.l2junity.gameserver.data.xml.impl.SecondaryAuthData;
 import org.l2junity.gameserver.data.xml.impl.ShuttleData;
 import org.l2junity.gameserver.data.xml.impl.SiegeScheduleData;
@@ -213,6 +214,7 @@ public class GameServer
 		CategoryData.getInstance();
 		SecondaryAuthData.getInstance();
 		AbilityPointsData.getInstance();
+		SayuneData.getInstance();
 		
 		printSection("Skills");
 		EffectHandler.getInstance().executeScript();

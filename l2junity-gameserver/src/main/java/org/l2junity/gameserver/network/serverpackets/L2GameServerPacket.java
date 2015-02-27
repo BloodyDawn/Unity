@@ -22,7 +22,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.interfaces.IPositionable;
+import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.interfaces.IUpdateTypeComponent;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.network.L2GameClient;
@@ -117,7 +117,7 @@ public abstract class L2GameServerPacket extends SendablePacket<L2GameClient>
 	 * Writes 3 D (int32) with current location x, y, z
 	 * @param loc
 	 */
-	protected void writeLoc(IPositionable loc)
+	protected void writeLoc(ILocational loc)
 	{
 		writeD(loc.getX());
 		writeD(loc.getY());

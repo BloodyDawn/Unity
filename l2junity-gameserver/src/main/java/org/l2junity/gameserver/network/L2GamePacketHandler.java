@@ -63,6 +63,8 @@ import org.l2junity.gameserver.network.clientpackets.primeshop.RequestBRGamePoin
 import org.l2junity.gameserver.network.clientpackets.primeshop.RequestBRProductInfo;
 import org.l2junity.gameserver.network.clientpackets.primeshop.RequestBRProductList;
 import org.l2junity.gameserver.network.clientpackets.primeshop.RequestBRRecentProductList;
+import org.l2junity.gameserver.network.clientpackets.sayune.RequestFlyMove;
+import org.l2junity.gameserver.network.clientpackets.sayune.RequestFlyMoveStart;
 import org.l2junity.gameserver.network.clientpackets.shuttle.CannotMoveAnymoreInShuttle;
 import org.l2junity.gameserver.network.clientpackets.shuttle.MoveToLocationInShuttle;
 import org.l2junity.gameserver.network.clientpackets.shuttle.RequestShuttleGetOff;
@@ -1329,7 +1331,7 @@ public final class L2GamePacketHandler implements IPacketHandler<L2GameClient>, 
 								// @ msg = new RequestExEscapeScene();
 								break;
 							case 0x91:
-								// msg = new RequestFlyMove();
+								msg = new RequestFlyMove();
 								break;
 							case 0x92:
 								// msg = new RequestSurrenderPledgeWarEX(); (chS)
@@ -1419,7 +1421,7 @@ public final class L2GamePacketHandler implements IPacketHandler<L2GameClient>, 
 								// msg = new RequestFirstPlayStart();
 								break;
 							case 0xAD:
-								// msg = new RequestFlyMoveStart();
+								msg = new RequestFlyMoveStart();
 								break;
 							case 0xAE:
 							case 0xAF:
