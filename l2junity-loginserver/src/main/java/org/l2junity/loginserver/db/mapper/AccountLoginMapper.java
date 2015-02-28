@@ -33,6 +33,6 @@ public class AccountLoginMapper implements ResultSetMapper<AccountLogin>
 	@Override
 	public AccountLogin map(int index, ResultSet r, StatementContext ctx) throws SQLException
 	{
-		return null;
+		return new AccountLogin(r.getLong("id"), r.getLong("account_id"), r.getShort("server_id"), r.getString("ip"), r.getTimestamp("logged_in_at").toInstant());
 	}
 }

@@ -18,11 +18,100 @@
  */
 package org.l2junity.loginserver.db.dto;
 
+import java.time.Instant;
+import java.util.StringJoiner;
+
 /**
  * @author Nos
- *
  */
 public class AccountLogin
 {
+	private final long _id;
+	private final long _accountId;
+	private short _serverId;
+	private final String _ip;
+	private final Instant _loggedInAt;
 	
+	/**
+	 * Creates an account login instance.
+	 * @param id the id
+	 * @param accountId the account id
+	 * @param serverId the server id
+	 * @param ip the ip
+	 * @param loggedInAt the logged in at
+	 */
+	public AccountLogin(long id, long accountId, short serverId, String ip, Instant loggedInAt)
+	{
+		_id = id;
+		_accountId = accountId;
+		_serverId = serverId;
+		_ip = ip;
+		_loggedInAt = loggedInAt;
+	}
+	
+	/**
+	 * Gets the id.
+	 * @return the id
+	 */
+	public long getId()
+	{
+		return _id;
+	}
+	
+	/**
+	 * Gets the account id
+	 * @return the account id
+	 */
+	public long getAccountId()
+	{
+		return _accountId;
+	}
+	
+	/**
+	 * Gets the server id.
+	 * @return the server id
+	 */
+	public short getServerId()
+	{
+		return _serverId;
+	}
+	
+	/**
+	 * Sets the server id
+	 * @param serverId the server id to set
+	 */
+	public void setServerId(short serverId)
+	{
+		_serverId = serverId;
+	}
+	
+	/**
+	 * Gets the IP.
+	 * @return the IP
+	 */
+	public String getIp()
+	{
+		return _ip;
+	}
+	
+	/**
+	 * Gets the logged in at.
+	 * @return the logged in at
+	 */
+	public Instant getLoggedInAt()
+	{
+		return _loggedInAt;
+	}
+	
+	@Override
+	public String toString()
+	{
+		final StringJoiner sj = new StringJoiner(", ", "AccountLogin[", "]");
+		sj.add("id: " + _id);
+		sj.add("account id: " + _accountId);
+		sj.add("server id: " + _serverId);
+		sj.add("ip: " + _ip);
+		sj.add("logged in at: " + _loggedInAt);
+		return sj.toString();
+	}
 }

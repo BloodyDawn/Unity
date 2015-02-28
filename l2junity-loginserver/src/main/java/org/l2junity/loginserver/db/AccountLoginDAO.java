@@ -19,11 +19,29 @@
 package org.l2junity.loginserver.db;
 
 import java.io.Closeable;
+import java.util.List;
+
+import org.l2junity.loginserver.db.dto.AccountLogin;
+import org.l2junity.loginserver.db.mapper.AccountLoginMapper;
+import org.skife.jdbi.v2.sqlobject.Bind;
+import org.skife.jdbi.v2.sqlobject.GetGeneratedKeys;
+import org.skife.jdbi.v2.sqlobject.SqlQuery;
+import org.skife.jdbi.v2.sqlobject.SqlUpdate;
+import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapper;
 
 /**
  * @author Nos
  */
+@RegisterMapper(AccountLoginMapper.class)
 public interface AccountLoginDAO extends Closeable
 {
+	@SqlUpdate("INSERT INTO `account_logins`(`account_id`, `ip`) VALUES(:accountId, :ip)")
+	@GetGeneratedKeys
+	public long insert(@Bind("accountId") long accountId, @Bind("ip") String ip);
 	
+	@SqlUpdate("UPDATE `account_logins` SET `serverId` = :serverId WHERE `id` = :id")
+	public int updateServerId(@Bind("id") long id, @Bind("serverId") short serverid);
+	
+	@SqlQuery("SELECT * FROM `account_logins` WHERE `account_id` = :accountId")
+	public List<AccountLogin> findByAccountId(@Bind("accountId") long accountId);
 }

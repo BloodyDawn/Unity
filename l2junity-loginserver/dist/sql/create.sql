@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `account_otps` (
 CREATE TABLE IF NOT EXISTS `account_logins` (
   `id` BIGINT AUTO_INCREMENT,
   `account_id` BIGINT,
-  `server_id` TINYINT UNSIGNED,
+  `server_id` TINYINT UNSIGNED DEFAULT 0,
   `ip` VARCHAR(45),
   `logged_in_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY(`id`),

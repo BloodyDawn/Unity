@@ -23,6 +23,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.l2junity.loginserver.db.AccountDAO;
+import org.l2junity.loginserver.db.AccountLoginDAO;
 import org.l2junity.loginserver.db.AccountOTPDAO;
 import org.l2junity.loginserver.db.dto.Account;
 import org.skife.jdbi.v2.DBI;
@@ -110,16 +111,20 @@ public class DatabaseFactory
 				
 				// System.out.println(dao.insert("nos6", "password"));
 				System.out.println(dao.updateLastServerId(new Account(12, null, null, (short) 15, null)));
-				System.out.println(dao.findById(12));
+				System.out.println(dao.findById(1));
 				System.out.println(dao.findByName("nos6"));
 				
 				AccountOTPDAO dao2 = _dbi.open(AccountOTPDAO.class);
-				dao2.insert(12, "tablet", "abc");
-				dao2.insert(12, "mobile", "def");
+				dao2.insert(1, "tablet", "abc");
+				dao2.insert(1, "mobile", "def");
 				System.out.println(dao2.findByAccountId(12));
 				dao2.delete(1);
-				dao2.delete(2);
-				System.out.println(dao2.findByAccountId(12));
+				System.out.println(dao2.findByAccountId(dao.findById(1)));
+				
+				AccountLoginDAO dao3 = _dbi.open(AccountLoginDAO.class);
+				dao3.insert(1, "127.0.0.1");
+				
+				System.out.println(dao3.findByAccountId(1));
 				
 				System.exit(0);
 			}
