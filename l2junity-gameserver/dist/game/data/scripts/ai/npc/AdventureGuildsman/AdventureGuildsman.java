@@ -34,7 +34,7 @@ public final class AdventureGuildsman extends AbstractNpcAI
 	// @formatter:off
 	private static final int[] ADVENTURERS_GUILDSMAN =
 	{
-		31797, 31788, 31789,
+		31787, 31788, 31789,
 		31790, 31791, 31792,
 		31793, 31794, 31795,
 		31796, 31797, 31798,
