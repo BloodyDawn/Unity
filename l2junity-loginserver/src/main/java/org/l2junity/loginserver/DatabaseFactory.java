@@ -18,10 +18,16 @@
  */
 package org.l2junity.loginserver;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import org.l2junity.loginserver.db.AccountDAO;
+import org.l2junity.loginserver.db.dto.Account;
+import org.skife.jdbi.v2.DBI;
+import org.skife.jdbi.v2.Handle;
+import org.skife.jdbi.v2.exceptions.UnableToObtainConnectionException;
+import org.skife.jdbi.v2.tweak.HandleCallback;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
@@ -33,7 +39,9 @@ public class DatabaseFactory
 	private static final Logger _log = Logger.getLogger(DatabaseFactory.class.getName());
 	
 	private static DatabaseFactory _instance;
-	private ComboPooledDataSource _source = new ComboPooledDataSource();
+	
+	private final ComboPooledDataSource _source = new ComboPooledDataSource();
+	private final DBI _dbi;
 	
 	/**
 	 * Creates a database factory instance.
@@ -92,6 +100,26 @@ public class DatabaseFactory
 			
 			/* Test the connection */
 			_source.getConnection().close();
+			
+			_dbi = new DBI(_source);
+			
+			try
+			{
+				AccountDAO dao = _dbi.open(AccountDAO.class);
+				
+				// System.out.println(dao.insert("nos6", "password"));
+				System.out.println(dao.updateLastServerId(new Account(12, null, null, (short) 15, null)));
+				System.out.println(dao.findById(12));
+				System.out.println(dao.findByName("nos6"));
+				
+				System.exit(0);
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+				System.out.println(e.getClass().getSimpleName());
+				System.exit(0);
+			}
 		}
 		catch (SQLException x)
 		{
@@ -117,14 +145,6 @@ public class DatabaseFactory
 		{
 			_log.log(Level.INFO, "", e);
 		}
-		try
-		{
-			_source = null;
-		}
-		catch (Exception e)
-		{
-			_log.log(Level.INFO, "", e);
-		}
 	}
 	
 	/**
@@ -145,24 +165,29 @@ public class DatabaseFactory
 	}
 	
 	/**
-	 * Gets the connection.
-	 * @return the connection
+	 * Gets the handle.
+	 * @return the handle
 	 */
-	public Connection getConnection()
+	public Handle getHandle()
 	{
-		Connection con = null;
+		Handle con = null;
 		while (con == null)
 		{
 			try
 			{
-				con = _source.getConnection();
+				con = _dbi.open();
 			}
-			catch (SQLException e)
+			catch (UnableToObtainConnectionException e)
 			{
-				_log.log(Level.WARNING, "L2DatabaseFactory: getConnection() failed, trying again " + e.getMessage(), e);
+				_log.log(Level.WARNING, getClass().getSimpleName() + ": getHandle() failed, trying again", e);
 			}
 		}
-		return con;
+		return _dbi.open();
+	}
+	
+	public <R> R withHandle(HandleCallback<R> callback)
+	{
+		return _dbi.withHandle(callback);
 	}
 	
 	/**

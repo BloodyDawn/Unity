@@ -93,7 +93,7 @@ public final class Config
 		try
 		{
 			final PropertiesParser databaseSettings = new PropertiesParser(new File(ROOT_DIRECTORY, DATABASE_CONFIGURATION_FILE));
-			DATABASE_URL = databaseSettings.getString("URL", "jdbc:mysql://localhost/l2jls");
+			DATABASE_URL = databaseSettings.getString("URL", "jdbc:mysql://localhost/l2jls2");
 			DATABASE_LOGIN = databaseSettings.getString("Login", "root");
 			DATABASE_PASSWORD = databaseSettings.getString("Password", "");
 			DATABASE_MAX_CONNECTIONS = databaseSettings.getInt("MaximumDbConnections", 10);
