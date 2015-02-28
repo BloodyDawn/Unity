@@ -18,23 +18,12 @@
  */
 package org.l2junity.loginserver.controllers;
 
-import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
-import java.util.Arrays;
-import java.util.Base64;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2junity.commons.util.Rnd;
-import org.l2junity.loginserver.Config;
-import org.l2junity.loginserver.datatables.AccountsTable;
-import org.l2junity.loginserver.model.Account;
 import org.l2junity.loginserver.network.client.ClientHandler;
-import org.l2junity.loginserver.network.client.ConnectionState;
-import org.l2junity.loginserver.network.client.send.LoginFail2;
-import org.l2junity.loginserver.network.client.send.LoginOk;
-import org.l2junity.loginserver.network.client.send.ServerList;
 
 /**
  * @author UnAfraid
@@ -43,6 +32,7 @@ public class LoginClientController
 {
 	private final Logger _log = Logger.getLogger(LoginClientController.class.getName());
 	
+	@SuppressWarnings("unused")
 	private MessageDigest _passwordHashCrypt;
 	private final AtomicInteger _connectionId = new AtomicInteger();
 	
@@ -64,63 +54,6 @@ public class LoginClientController
 	 */
 	public void tryGameLogin(byte serverId, ClientHandler client)
 	{
-	}
-	
-	/**
-	 * @param account
-	 * @param password
-	 * @param client
-	 */
-	public void tryAuthLogin(String account, String password, ClientHandler client)
-	{
-		Account acc = AccountsTable.getInstance().getAccount(account);
-		boolean autoCreated = acc == null;
-		if (acc == null)
-		{
-			if (!Config.AUTO_CREATE_ACCOUNTS)
-			{
-				client.sendPacket(LoginFail2.THE_USERNAME_AND_PASSWORD_DO_NOT_MATCH_PLEASE_CHECK_YOUR_ACCOUNT_INFORMATION_AND_TRY_LOGGING_IN_AGAIN2);
-				return;
-			}
-			acc = new Account(account, password);
-			acc.setLastServer(-1);
-			acc.setLastAddress(client.getInetAddress());
-			AccountsTable.getInstance().insertAccount(acc);
-			_log.info("Creating account for: " + account);
-		}
-		else
-		{
-			// TODO: Add more checks
-			
-			final byte[] decodePW = Base64.getDecoder().decode(acc.getPassword());
-			final byte[] cryptPW = _passwordHashCrypt.digest(password.getBytes(StandardCharsets.UTF_8));
-			if (!Arrays.equals(decodePW, cryptPW))
-			{
-				client.sendPacket(LoginFail2.THE_USERNAME_AND_PASSWORD_DO_NOT_MATCH_PLEASE_CHECK_YOUR_ACCOUNT_INFORMATION_AND_TRY_LOGGING_IN_AGAIN2);
-				return;
-			}
-		}
-		
-		if (Config.SHOW_LICENCE)
-		{
-			final long loginSessionId = Rnd.nextLong();
-			client.setLoginSessionId(loginSessionId);
-			client.setConnectionState(ConnectionState.AUTHED_LICENCE);
-			client.sendPacket(new LoginOk(loginSessionId));
-		}
-		else
-		{
-			client.setConnectionState(ConnectionState.AUTHED_SERVER_LIST);
-			client.sendPacket(new ServerList(client));
-		}
-		
-		// Update last access and IP
-		if (!autoCreated)
-		{
-			acc.setLastAccess(System.currentTimeMillis());
-			acc.setLastAddress(client.getInetAddress());
-			AccountsTable.getInstance().updateAccount(acc);
-		}
 	}
 	
 	/**
