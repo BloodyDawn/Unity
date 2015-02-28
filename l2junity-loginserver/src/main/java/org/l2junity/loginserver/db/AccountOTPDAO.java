@@ -19,11 +19,29 @@
 package org.l2junity.loginserver.db;
 
 import java.io.Closeable;
+import java.util.List;
+
+import org.l2junity.loginserver.db.dto.AccountOTP;
+import org.l2junity.loginserver.db.mapper.AccountOTPMapper;
+import org.skife.jdbi.v2.sqlobject.Bind;
+import org.skife.jdbi.v2.sqlobject.GetGeneratedKeys;
+import org.skife.jdbi.v2.sqlobject.SqlQuery;
+import org.skife.jdbi.v2.sqlobject.SqlUpdate;
+import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapper;
 
 /**
  * @author Nos
  */
+@RegisterMapper(AccountOTPMapper.class)
 public interface AccountOTPDAO extends Closeable
 {
+	@SqlUpdate("INSERT INTO `account_otps`(`account_id`, `name`, `code`) VALUES(:accountId, :name, :code)")
+	@GetGeneratedKeys
+	public long insert(@Bind("accountId") long accountId, @Bind("name") String name, @Bind("code") String code);
 	
+	@SqlUpdate("DELETE FROM `account_otps` WHERE `id` = :id")
+	public int delete(@Bind("id") long id);
+	
+	@SqlQuery("SELECT * FROM `account_otps` WHERE `account_id` = :id")
+	public List<AccountOTP> findByAccountId(@Bind("id") long id);
 }

@@ -33,6 +33,6 @@ public class AccountOTPMapper implements ResultSetMapper<AccountOTP>
 	@Override
 	public AccountOTP map(int index, ResultSet r, StatementContext ctx) throws SQLException
 	{
-		return null;
+		return new AccountOTP(r.getLong("id"), r.getLong("account_id"), r.getString("name"), r.getString("code"));
 	}
 }

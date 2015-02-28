@@ -18,11 +18,77 @@
  */
 package org.l2junity.loginserver.db.dto;
 
+import java.util.StringJoiner;
+
 /**
  * @author Nos
- *
  */
 public class AccountOTP
 {
+	private final long _id;
+	private final long _accountId;
+	private final String _name;
+	private final String _code;
 	
+	/**
+	 * Creates an account OTP instance.
+	 * @param id the id
+	 * @param accountId the account id
+	 * @param name the name
+	 * @param code the code
+	 */
+	public AccountOTP(long id, long accountId, String name, String code)
+	{
+		_id = id;
+		_accountId = accountId;
+		_name = name;
+		_code = code;
+	}
+	
+	/**
+	 * Gets the id.
+	 * @return the id
+	 */
+	public long getId()
+	{
+		return _id;
+	}
+	
+	/**
+	 * Gets the account id.
+	 * @return the account id
+	 */
+	public long getAccountId()
+	{
+		return _accountId;
+	}
+	
+	/**
+	 * Gets the name.
+	 * @return the name
+	 */
+	public String getName()
+	{
+		return _name;
+	}
+	
+	/**
+	 * Gets the code.
+	 * @return the code
+	 */
+	public String getCode()
+	{
+		return _code;
+	}
+	
+	@Override
+	public String toString()
+	{
+		final StringJoiner sj = new StringJoiner(", ", "AccountOTP[", "]");
+		sj.add("id: " + _id);
+		sj.add("account id: " + _accountId);
+		sj.add("name: " + _name);
+		sj.add("code: " + _code);
+		return sj.toString();
+	}
 }

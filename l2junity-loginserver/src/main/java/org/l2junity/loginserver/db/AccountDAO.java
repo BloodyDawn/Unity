@@ -39,21 +39,21 @@ public interface AccountDAO extends Closeable
 	@GetGeneratedKeys
 	public long insert(@Bind("name") String name, @Bind("password") String password);
 	
-	@SqlUpdate("UPDATE `accounts` SET password = :password WHERE id = :id")
+	@SqlUpdate("UPDATE `accounts` SET `password` = :password WHERE `id` = :id")
 	public int updatePassword(@Bind("id") long id, @Bind("password") String password);
 	
-	@SqlUpdate("UPDATE `accounts` SET password = :password WHERE id = :id")
+	@SqlUpdate("UPDATE `accounts` SET `password` = :password WHERE `id` = :id")
 	public int updatePassword(@BindBean Account account);
 	
-	@SqlUpdate("UPDATE `accounts` SET last_server_id = :lastServerId WHERE id = :id")
+	@SqlUpdate("UPDATE `accounts` SET `last_server_id` = :lastServerId WHERE `id` = :id")
 	public int updateLastServerId(@Bind("id") long id, @Bind("lastServerId") short lastServerId);
 	
-	@SqlUpdate("UPDATE `accounts` SET last_server_id = :lastServerId WHERE id = :id")
+	@SqlUpdate("UPDATE `accounts` SET `last_server_id` = :lastServerId WHERE `id` = :id")
 	public int updateLastServerId(@BindBean Account account);
 	
-	@SqlQuery("SELECT * FROM `accounts` WHERE id = :id")
+	@SqlQuery("SELECT * FROM `accounts` WHERE `id` = :id")
 	public Account findById(@Bind("id") long id);
 	
-	@SqlQuery("SELECT * FROM `accounts` WHERE name = :name")
+	@SqlQuery("SELECT * FROM `accounts` WHERE `name` = :name")
 	public Account findByName(@Bind("name") String name);
 }
