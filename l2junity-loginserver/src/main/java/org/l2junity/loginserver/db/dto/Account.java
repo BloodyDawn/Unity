@@ -26,8 +26,8 @@ import java.util.StringJoiner;
  */
 public class Account
 {
-	private long _id;
-	private String _name;
+	private final long _id;
+	private final String _name;
 	private String _password;
 	private short _lastServerId;
 	private final Instant _createdAt;
@@ -59,30 +59,12 @@ public class Account
 	}
 	
 	/**
-	 * Sets the id
-	 * @param id the id to set
-	 */
-	public void setId(int id)
-	{
-		_id = id;
-	}
-	
-	/**
 	 * Gets the name.
 	 * @return the name
 	 */
 	public String getName()
 	{
 		return _name;
-	}
-	
-	/**
-	 * Sets the name.
-	 * @param name the name to set
-	 */
-	public void setName(String name)
-	{
-		_name = name;
 	}
 	
 	/**

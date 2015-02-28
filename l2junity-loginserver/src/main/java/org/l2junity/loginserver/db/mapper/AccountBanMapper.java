@@ -33,6 +33,6 @@ public class AccountBanMapper implements ResultSetMapper<AccountBan>
 	@Override
 	public AccountBan map(int index, ResultSet r, StatementContext ctx) throws SQLException
 	{
-		return null;
+		return new AccountBan(r.getLong("id"), r.getLong("account_id"), r.getBoolean("active"), r.getTimestamp("started_at").toInstant(), r.getTimestamp("expires_at").toInstant(), r.getString("reason"));
 	}
 }
