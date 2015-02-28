@@ -99,7 +99,7 @@ public class MultiSellChoose extends L2GameClientPacket
 		}
 		
 		final Npc npc = player.getLastFolkNPC();
-		if (((npc != null) && (!list.isNpcAllowed(npc.getId()) || (npc.getInstanceId() != player.getInstanceId()) || !player.isInsideRadius(npc, Npc.INTERACTION_DISTANCE, true, false))) || ((npc == null) && list.isNpcOnly()))
+		if (!isAllowedToUse(player, npc, list))
 		{
 			player.setMultiSell(null);
 			return;
@@ -468,6 +468,32 @@ public class MultiSellChoose extends L2GameClientPacket
 				break;
 			}
 		}
+	}
+	
+	/**
+	 * @param player
+	 * @param npc
+	 * @param list
+	 * @return {@code true} if player can buy stuff from the multisell, {@code false} otherwise.
+	 */
+	private boolean isAllowedToUse(PlayerInstance player, Npc npc, PreparedListContainer list)
+	{
+		if (npc != null)
+		{
+			if (!list.isNpcAllowed(npc.getId()))
+			{
+				return false;
+			}
+			else if (list.isNpcOnly() && ((npc.getInstanceId() != player.getInstanceId()) || !player.isInsideRadius(npc, Npc.INTERACTION_DISTANCE, true, false)))
+			{
+				return false;
+			}
+		}
+		else if (list.isNpcOnly())
+		{
+			return false;
+		}
+		return true;
 	}
 	
 	@Override
