@@ -50,6 +50,6 @@ public class RequestServerLogin implements IIncomingPacket<ClientHandler>
 			return;
 		}
 		
-		LoginClientController.getInstance().tryGameLogin(_serverId, client);
+		LoginClientController.getInstance().tryServerLogin(client, _serverId);
 	}
 }

@@ -133,7 +133,7 @@ public class LoginClientController
 	 * @param serverId
 	 * @param client
 	 */
-	public void tryGameLogin(byte serverId, ClientHandler client)
+	public void tryServerLogin(ClientHandler client, byte serverId)
 	{
 		try (AccountLoginsDAO accountLoginsDAO = DatabaseFactory.getInstance().getAccountLoginsDAO())
 		{
