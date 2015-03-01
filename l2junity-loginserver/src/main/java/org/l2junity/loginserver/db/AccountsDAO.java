@@ -19,11 +19,9 @@
 package org.l2junity.loginserver.db;
 
 import java.io.Closeable;
-import java.util.List;
 
 import org.l2junity.loginserver.db.dto.Account;
-import org.l2junity.loginserver.db.dto.AccountLogin;
-import org.l2junity.loginserver.db.mapper.AccountLoginMapper;
+import org.l2junity.loginserver.db.mapper.AccountMapper;
 import org.skife.jdbi.v2.sqlobject.Bind;
 import org.skife.jdbi.v2.sqlobject.BindBean;
 import org.skife.jdbi.v2.sqlobject.GetGeneratedKeys;
@@ -34,19 +32,28 @@ import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapper;
 /**
  * @author Nos
  */
-@RegisterMapper(AccountLoginMapper.class)
-public interface AccountLoginDAO extends Closeable
+@RegisterMapper(AccountMapper.class)
+public interface AccountsDAO extends Closeable
 {
-	@SqlUpdate("INSERT INTO `account_logins`(`account_id`, `ip`) VALUES(:accountId, :ip)")
+	@SqlUpdate("INSERT INTO `accounts`(`name`, `password`) VALUES(:name, :password)")
 	@GetGeneratedKeys
-	public long insert(@Bind("accountId") long accountId, @Bind("ip") String ip);
+	public long insert(@Bind("name") String name, @Bind("password") String password);
 	
-	@SqlUpdate("UPDATE `account_logins` SET `server_id` = :serverId WHERE `id` = :id")
-	public int updateServerId(@Bind("id") long id, @Bind("serverId") short serverid);
+	@SqlUpdate("UPDATE `accounts` SET `password` = :password WHERE `id` = :id")
+	public int updatePassword(@Bind("id") long id, @Bind("password") String password);
 	
-	@SqlQuery("SELECT * FROM `account_logins` WHERE `account_id` = :accountId")
-	public List<AccountLogin> findByAccountId(@Bind("accountId") long accountId);
+	@SqlUpdate("UPDATE `accounts` SET `password` = :password WHERE `id` = :id")
+	public int updatePassword(@BindBean Account account);
 	
-	@SqlQuery("SELECT * FROM `account_logins` WHERE `account_id` = :id")
-	public List<AccountLogin> findByAccountId(@BindBean Account account);
+	@SqlUpdate("UPDATE `accounts` SET `last_server_id` = :lastServerId WHERE `id` = :id")
+	public int updateLastServerId(@Bind("id") long id, @Bind("lastServerId") short lastServerId);
+	
+	@SqlUpdate("UPDATE `accounts` SET `last_server_id` = :lastServerId WHERE `id` = :id")
+	public int updateLastServerId(@BindBean Account account);
+	
+	@SqlQuery("SELECT * FROM `accounts` WHERE `id` = :id")
+	public Account findById(@Bind("id") long id);
+	
+	@SqlQuery("SELECT * FROM `accounts` WHERE `name` = :name")
+	public Account findByName(@Bind("name") String name);
 }

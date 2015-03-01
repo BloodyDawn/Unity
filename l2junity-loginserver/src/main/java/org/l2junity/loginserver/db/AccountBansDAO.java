@@ -35,7 +35,7 @@ import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapper;
  * @author Nos
  */
 @RegisterMapper(AccountBanMapper.class)
-public interface AccountBanDAO extends Closeable
+public interface AccountBansDAO extends Closeable
 {
 	@SqlUpdate("INSERT INTO `account_bans`(`account_id`, `expires_at`, `reason`) VALUES(:accountId, :expiresAt, :reason)")
 	public long insert(@Bind("accountId") long accountId, @Bind("expiresAt") Timestamp expiresAt, @Bind("reason") String reason);

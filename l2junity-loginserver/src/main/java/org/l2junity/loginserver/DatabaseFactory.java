@@ -22,10 +22,10 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.l2junity.loginserver.db.AccountBanDAO;
-import org.l2junity.loginserver.db.AccountDAO;
-import org.l2junity.loginserver.db.AccountLoginDAO;
-import org.l2junity.loginserver.db.AccountOTPDAO;
+import org.l2junity.loginserver.db.AccountBansDAO;
+import org.l2junity.loginserver.db.AccountLoginsDAO;
+import org.l2junity.loginserver.db.AccountOTPsDAO;
+import org.l2junity.loginserver.db.AccountsDAO;
 import org.skife.jdbi.v2.DBI;
 import org.skife.jdbi.v2.Handle;
 import org.skife.jdbi.v2.exceptions.UnableToObtainConnectionException;
@@ -174,24 +174,24 @@ public class DatabaseFactory
 		return _dbi.withHandle(callback);
 	}
 	
-	public AccountDAO getAccountDAO()
+	public AccountsDAO getAccountsDAO()
 	{
-		return _dbi.open(AccountDAO.class);
+		return _dbi.open(AccountsDAO.class);
 	}
 	
-	public AccountOTPDAO getAccountOTPDAO()
+	public AccountOTPsDAO getAccountOTPsDAO()
 	{
-		return _dbi.open(AccountOTPDAO.class);
+		return _dbi.open(AccountOTPsDAO.class);
 	}
 	
-	public AccountBanDAO getAccountBanDAO()
+	public AccountBansDAO getAccountBansDAO()
 	{
-		return _dbi.open(AccountBanDAO.class);
+		return _dbi.open(AccountBansDAO.class);
 	}
 	
-	public AccountLoginDAO getAccountLoginDAO()
+	public AccountLoginsDAO getAccountLoginsDAO()
 	{
-		return _dbi.open(AccountLoginDAO.class);
+		return _dbi.open(AccountLoginsDAO.class);
 	}
 	
 	/**

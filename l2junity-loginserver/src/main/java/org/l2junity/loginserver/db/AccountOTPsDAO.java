@@ -19,9 +19,11 @@
 package org.l2junity.loginserver.db;
 
 import java.io.Closeable;
+import java.util.List;
 
 import org.l2junity.loginserver.db.dto.Account;
-import org.l2junity.loginserver.db.mapper.AccountMapper;
+import org.l2junity.loginserver.db.dto.AccountOTP;
+import org.l2junity.loginserver.db.mapper.AccountOTPMapper;
 import org.skife.jdbi.v2.sqlobject.Bind;
 import org.skife.jdbi.v2.sqlobject.BindBean;
 import org.skife.jdbi.v2.sqlobject.GetGeneratedKeys;
@@ -32,28 +34,22 @@ import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapper;
 /**
  * @author Nos
  */
-@RegisterMapper(AccountMapper.class)
-public interface AccountDAO extends Closeable
+@RegisterMapper(AccountOTPMapper.class)
+public interface AccountOTPsDAO extends Closeable
 {
-	@SqlUpdate("INSERT INTO `accounts`(`name`, `password`) VALUES(:name, :password)")
+	@SqlUpdate("INSERT INTO `account_otps`(`account_id`, `name`, `code`) VALUES(:accountId, :name, :code)")
 	@GetGeneratedKeys
-	public long insert(@Bind("name") String name, @Bind("password") String password);
+	public long insert(@Bind("accountId") long accountId, @Bind("name") String name, @Bind("code") String code);
 	
-	@SqlUpdate("UPDATE `accounts` SET `password` = :password WHERE `id` = :id")
-	public int updatePassword(@Bind("id") long id, @Bind("password") String password);
+	@SqlUpdate("DELETE FROM `account_otps` WHERE `id` = :id")
+	public int delete(@Bind("id") long id);
 	
-	@SqlUpdate("UPDATE `accounts` SET `password` = :password WHERE `id` = :id")
-	public int updatePassword(@BindBean Account account);
+	@SqlUpdate("DELETE FROM `account_otps` WHERE `id` = :id")
+	public int delete(@BindBean AccountOTP accountOTP);
 	
-	@SqlUpdate("UPDATE `accounts` SET `last_server_id` = :lastServerId WHERE `id` = :id")
-	public int updateLastServerId(@Bind("id") long id, @Bind("lastServerId") short lastServerId);
+	@SqlQuery("SELECT * FROM `account_otps` WHERE `account_id` = :accountId")
+	public List<AccountOTP> findByAccountId(@Bind("accountId") long accountId);
 	
-	@SqlUpdate("UPDATE `accounts` SET `last_server_id` = :lastServerId WHERE `id` = :id")
-	public int updateLastServerId(@BindBean Account account);
-	
-	@SqlQuery("SELECT * FROM `accounts` WHERE `id` = :id")
-	public Account findById(@Bind("id") long id);
-	
-	@SqlQuery("SELECT * FROM `accounts` WHERE `name` = :name")
-	public Account findByName(@Bind("name") String name);
+	@SqlQuery("SELECT * FROM `account_otps` WHERE `account_id` = :id")
+	public List<AccountOTP> findByAccountId(@BindBean Account account);
 }
