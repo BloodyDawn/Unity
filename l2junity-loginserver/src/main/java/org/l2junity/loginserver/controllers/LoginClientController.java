@@ -108,7 +108,7 @@ public class LoginClientController
 			
 			try (AccountLoginsDAO accountLoginsDAO = DatabaseFactory.getInstance().getAccountLoginsDAO())
 			{
-				client.setAccountLoginsId(accountLoginsDAO.insert(account, client.getInetAddress().toString()));
+				client.setAccountLoginsId(accountLoginsDAO.insert(account, client.getInetAddress().getHostAddress()));
 			}
 			
 			if (Config.SHOW_LICENCE)
