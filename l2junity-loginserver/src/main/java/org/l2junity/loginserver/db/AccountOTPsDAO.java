@@ -52,4 +52,7 @@ public interface AccountOTPsDAO extends Closeable
 	
 	@SqlQuery("SELECT * FROM `account_otps` WHERE `account_id` = :id")
 	public List<AccountOTP> findByAccountId(@BindBean Account account);
+	
+	@Override
+	public void close();
 }

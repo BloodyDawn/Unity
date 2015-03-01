@@ -50,6 +50,7 @@ public class ClientHandler extends ChannelInboundHandler<ClientHandler>
 	private long _sessionId;
 	private Channel _channel;
 	private byte[] _gameGuard;
+	private long _accountLoginsId;
 	
 	public ClientHandler(SecretKey blowfishKey)
 	{
@@ -106,6 +107,7 @@ public class ClientHandler extends ChannelInboundHandler<ClientHandler>
 	
 	public void close(IOutgoingPacket packet)
 	{
+		setConnectionState(ConnectionState.CLOSED);
 		_channel.writeAndFlush(packet);
 		_channel.close();
 	}
@@ -185,5 +187,15 @@ public class ClientHandler extends ChannelInboundHandler<ClientHandler>
 	public InetAddress getInetAddress()
 	{
 		return _address;
+	}
+	
+	public long getAccountLoginsId()
+	{
+		return _accountLoginsId;
+	}
+	
+	public void setAccountLoginsId(long accountLoginsId)
+	{
+		_accountLoginsId = accountLoginsId;
 	}
 }

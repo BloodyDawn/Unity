@@ -49,9 +49,12 @@ public interface AccountBansDAO extends Closeable
 	@SqlQuery("SELECT * FROM `account_bans` WHERE `account_id` = :id")
 	public List<AccountBan> findByAccountId(@BindBean Account account);
 	
-	@SqlQuery("SELECT * FROM `account_bans` WHERE `active` = TRUE AND `account_id` = :accountId")
+	@SqlQuery("SELECT * FROM `account_bans` WHERE `active` = TRUE AND `expires_at` < CURRENT_TIMESTAMP AND `account_id` = :accountId")
 	public List<AccountBan> findActiveByAccountId(@Bind("accountId") long accountId);
 	
-	@SqlQuery("SELECT * FROM `account_bans` WHERE `active` = TRUE AND `account_id` = :id")
+	@SqlQuery("SELECT * FROM `account_bans` WHERE `active` = TRUE AND `expires_at` < CURRENT_TIMESTAMP AND `account_id` = :id")
 	public List<AccountBan> findActiveByAccountId(@BindBean Account account);
+	
+	@Override
+	public void close();
 }

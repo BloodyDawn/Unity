@@ -28,6 +28,7 @@ import org.l2junity.loginserver.db.AccountOTPsDAO;
 import org.l2junity.loginserver.db.AccountsDAO;
 import org.skife.jdbi.v2.DBI;
 import org.skife.jdbi.v2.Handle;
+import org.skife.jdbi.v2.exceptions.DBIException;
 import org.skife.jdbi.v2.exceptions.UnableToObtainConnectionException;
 import org.skife.jdbi.v2.tweak.HandleCallback;
 
@@ -40,16 +41,13 @@ public class DatabaseFactory
 {
 	private static final Logger _log = Logger.getLogger(DatabaseFactory.class.getName());
 	
-	private static DatabaseFactory _instance;
-	
 	private final ComboPooledDataSource _source = new ComboPooledDataSource();
 	private final DBI _dbi;
 	
 	/**
 	 * Creates a database factory instance.
-	 * @throws SQLException the SQL exception
 	 */
-	public DatabaseFactory() throws SQLException
+	public DatabaseFactory()
 	{
 		try
 		{
@@ -102,17 +100,15 @@ public class DatabaseFactory
 			
 			/* Test the connection */
 			_source.getConnection().close();
-			
-			_dbi = new DBI(_source);
-		}
-		catch (SQLException x)
-		{
-			// re-throw the exception
-			throw x;
 		}
 		catch (Exception e)
 		{
-			throw new SQLException("Could not init DB connection:" + e.getMessage());
+			_log.log(Level.SEVERE, "Could not init DB connection:", e);
+			System.exit(0);
+		}
+		finally
+		{
+			_dbi = new DBI(_source);
 		}
 	}
 	
@@ -132,27 +128,11 @@ public class DatabaseFactory
 	}
 	
 	/**
-	 * Gets the single instance of L2DatabaseFactory.
-	 * @return single instance of L2DatabaseFactory
-	 * @throws SQLException the SQL exception
-	 */
-	public static DatabaseFactory getInstance() throws SQLException
-	{
-		synchronized (DatabaseFactory.class)
-		{
-			if (_instance == null)
-			{
-				_instance = new DatabaseFactory();
-			}
-		}
-		return _instance;
-	}
-	
-	/**
 	 * Gets the handle.
 	 * @return the handle
+	 * @throws DBIException
 	 */
-	public Handle getHandle()
+	public Handle getHandle() throws DBIException
 	{
 		Handle con = null;
 		while (con == null)
@@ -169,27 +149,27 @@ public class DatabaseFactory
 		return _dbi.open();
 	}
 	
-	public <R> R withHandle(HandleCallback<R> callback)
+	public <R> R withHandle(HandleCallback<R> callback) throws DBIException
 	{
 		return _dbi.withHandle(callback);
 	}
 	
-	public AccountsDAO getAccountsDAO()
+	public AccountsDAO getAccountsDAO() throws DBIException
 	{
 		return _dbi.open(AccountsDAO.class);
 	}
 	
-	public AccountOTPsDAO getAccountOTPsDAO()
+	public AccountOTPsDAO getAccountOTPsDAO() throws DBIException
 	{
 		return _dbi.open(AccountOTPsDAO.class);
 	}
 	
-	public AccountBansDAO getAccountBansDAO()
+	public AccountBansDAO getAccountBansDAO() throws DBIException
 	{
 		return _dbi.open(AccountBansDAO.class);
 	}
 	
-	public AccountLoginsDAO getAccountLoginsDAO()
+	public AccountLoginsDAO getAccountLoginsDAO() throws DBIException
 	{
 		return _dbi.open(AccountLoginsDAO.class);
 	}
@@ -212,5 +192,15 @@ public class DatabaseFactory
 	public int getIdleConnectionCount() throws SQLException
 	{
 		return _source.getNumIdleConnectionsDefaultUser();
+	}
+	
+	public static DatabaseFactory getInstance()
+	{
+		return SingletonHolder._instance;
+	}
+	
+	private static final class SingletonHolder
+	{
+		protected static final DatabaseFactory _instance = new DatabaseFactory();
 	}
 }

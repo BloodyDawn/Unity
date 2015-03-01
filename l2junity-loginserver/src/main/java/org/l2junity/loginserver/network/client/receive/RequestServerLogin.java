@@ -21,7 +21,6 @@ package org.l2junity.loginserver.network.client.receive;
 import org.l2junity.loginserver.Config;
 import org.l2junity.loginserver.controllers.LoginClientController;
 import org.l2junity.loginserver.network.client.ClientHandler;
-import org.l2junity.loginserver.network.client.ConnectionState;
 import org.l2junity.loginserver.network.client.send.LoginFail2;
 import org.l2junity.network.IIncomingPacket;
 import org.l2junity.network.PacketReader;
@@ -45,21 +44,10 @@ public class RequestServerLogin implements IIncomingPacket<ClientHandler>
 	@Override
 	public void run(ClientHandler client)
 	{
-		if (Config.SHOW_LICENCE)
+		if (Config.SHOW_LICENCE && (client.getLoginSessionId() != _loginSessionId))
 		{
-			if ((client.getLoginSessionId() != _loginSessionId) || (client.getConnectionState() != ConnectionState.AUTHED_LICENCE))
-			{
-				client.close(LoginFail2.ACCESS_FAILED_PLEASE_TRY_AGAIN_LATER);
-				return;
-			}
-		}
-		else
-		{
-			if (client.getConnectionState() != ConnectionState.AUTHED_SERVER_LIST)
-			{
-				client.close(LoginFail2.ACCESS_FAILED_PLEASE_TRY_AGAIN_LATER);
-				return;
-			}
+			client.close(LoginFail2.ACCESS_FAILED_PLEASE_TRY_AGAIN_LATER);
+			return;
 		}
 		
 		LoginClientController.getInstance().tryGameLogin(_serverId, client);

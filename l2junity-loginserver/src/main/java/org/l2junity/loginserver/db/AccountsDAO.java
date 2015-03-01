@@ -56,4 +56,7 @@ public interface AccountsDAO extends Closeable
 	
 	@SqlQuery("SELECT * FROM `accounts` WHERE `name` = :name")
 	public Account findByName(@Bind("name") String name);
+	
+	@Override
+	public void close();
 }

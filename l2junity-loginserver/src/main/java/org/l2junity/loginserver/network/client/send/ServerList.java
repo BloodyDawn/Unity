@@ -18,7 +18,6 @@
  */
 package org.l2junity.loginserver.network.client.send;
 
-import org.l2junity.loginserver.network.client.ClientHandler;
 import org.l2junity.network.IOutgoingPacket;
 import org.l2junity.network.PacketWriter;
 
@@ -29,7 +28,7 @@ public class ServerList implements IOutgoingPacket
 {
 	// private final ClientHandler _client;
 	
-	public ServerList(ClientHandler client)
+	public ServerList()
 	{
 		// _client = client;
 	}

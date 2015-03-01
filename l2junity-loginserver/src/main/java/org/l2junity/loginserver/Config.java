@@ -78,10 +78,10 @@ public final class Config
 			GAME_SERVER_LOGIN_HOST = ServerSettings.getString("ServerLoginHostname", "127.0.0.1");
 			GAME_SERVER_LOGIN_PORT = ServerSettings.getInt("ServerLoginPort", 2104);
 			
-			GAME_CLIENT_LOGIN_HOST = ServerSettings.getString("ClientLoginHostname", "*");
+			GAME_CLIENT_LOGIN_HOST = ServerSettings.getString("ClientLoginHostname", "0.0.0.0");
 			GAME_CLIENT_LOGIN_PORT = ServerSettings.getInt("ClientLoginPort", 2106);
 			
-			AUTO_CREATE_ACCOUNTS = ServerSettings.getBoolean("AutoCreateAccounts", false);
+			AUTO_CREATE_ACCOUNTS = ServerSettings.getBoolean("AutoCreateAccounts", true);
 			
 			SHOW_LICENCE = ServerSettings.getBoolean("ShowLicense", true);
 		}

@@ -22,10 +22,10 @@ import java.security.GeneralSecurityException;
 
 import javax.crypto.Cipher;
 
+import org.l2junity.loginserver.controllers.LoginClientController;
 import org.l2junity.loginserver.network.client.ClientHandler;
+import org.l2junity.loginserver.network.client.ConnectionState;
 import org.l2junity.loginserver.network.client.send.LoginFail2;
-import org.l2junity.loginserver.network.client.send.SCCheckReq;
-import org.l2junity.loginserver.util.Util;
 import org.l2junity.network.IIncomingPacket;
 import org.l2junity.network.PacketReader;
 
@@ -67,7 +67,8 @@ public class RequestAuthLogin implements IIncomingPacket<ClientHandler>
 	@Override
 	public void run(ClientHandler client)
 	{
-		System.out.println("C:" + _connectionId + " C:" + client.getConnectionId());
+		client.setConnectionState(ConnectionState.AUTHING);
+		
 		if (_connectionId != client.getConnectionId())
 		{
 			client.close(LoginFail2.ACCESS_FAILED_PLEASE_TRY_AGAIN_LATER);
@@ -97,28 +98,22 @@ public class RequestAuthLogin implements IIncomingPacket<ClientHandler>
 			return;
 		}
 		
-		System.out.println(Util.printData(decrypted));
-		
-		final String account;
+		final String name;
 		final String password;
 		final int ncotp;
 		if (_newAuth)
 		{
-			account = new String(decrypted, 0x4E, 50).trim() + new String(decrypted, 0xCE, 14).trim();
+			name = new String(decrypted, 0x4E, 50).trim() + new String(decrypted, 0xCE, 14).trim();
 			password = new String(decrypted, 0xDC, 16).trim();
 			ncotp = (decrypted[0xFC] & 0xFF) | ((decrypted[0xFD] & 0xFF) << 8) | ((decrypted[0xFE] & 0xFF) << 16) | ((decrypted[0xFF] & 0xFF) << 24);
 		}
 		else
 		{
-			account = new String(decrypted, 0x5E, 14).trim();
+			name = new String(decrypted, 0x5E, 14).trim();
 			password = new String(decrypted, 0x6C, 16).trim();
 			ncotp = (decrypted[0x7C] & 0xFF) | ((decrypted[0x7D] & 0xFF) << 8) | ((decrypted[0x7E] & 0xFF) << 16) | ((decrypted[0x7F] & 0xFF) << 24);
 		}
 		
-		System.out.println("Account: " + account + " Password: " + password + " NCOTP:" + ncotp);
-		
-		// LoginClientController.getInstance().tryAuthLogin(account, password, client);
-		
-		client.sendPacket(new SCCheckReq());
+		LoginClientController.getInstance().tryAuthLogin(client, name, password, ncotp);
 	}
 }

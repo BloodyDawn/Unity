@@ -35,9 +35,9 @@ import org.l2junity.network.IIncomingPackets;
  */
 enum IncomingPackets implements IIncomingPackets<IIncomingPacket<ClientHandler>>
 {
-	REQUEST_AUTH_LOGIN(0x00, RequestAuthLogin::new, ConnectionState.CONNECTED),
-	REQUEST_SERVER_LOGIN(0x02, RequestServerLogin::new, ConnectionState.AUTHED_GG),
-	REQUEST_SERVER_LIST(0x05, RequestServerList::new, ConnectionState.AUTHED_SERVER_LIST),
+	REQUEST_AUTH_LOGIN(0x00, RequestAuthLogin::new, ConnectionState.AUTHED_GG),
+	REQUEST_SERVER_LOGIN(0x02, RequestServerLogin::new, ConnectionState.AUTHED_SERVER_LIST),
+	REQUEST_SERVER_LIST(0x05, RequestServerList::new, ConnectionState.AUTHED_LICENCE),
 	REQUEST_SC_CHECK(0x06, RequestSCCheck::new, ConnectionState.AUTHED_GG),
 	RESPONSE_AUTH_GAMEGUARD(0x07, ResponseAuthGameGuard::new, ConnectionState.CONNECTED);
 	

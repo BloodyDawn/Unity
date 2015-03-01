@@ -41,6 +41,10 @@ public interface AccountLoginsDAO extends Closeable
 	@GetGeneratedKeys
 	public long insert(@Bind("accountId") long accountId, @Bind("ip") String ip);
 	
+	@SqlUpdate("INSERT INTO `account_logins`(`account_id`, `ip`) VALUES(:id, :ip)")
+	@GetGeneratedKeys
+	public long insert(@BindBean Account account, @Bind("ip") String ip);
+	
 	@SqlUpdate("UPDATE `account_logins` SET `server_id` = :serverId WHERE `id` = :id")
 	public int updateServerId(@Bind("id") long id, @Bind("serverId") short serverid);
 	
@@ -49,4 +53,7 @@ public interface AccountLoginsDAO extends Closeable
 	
 	@SqlQuery("SELECT * FROM `account_logins` WHERE `account_id` = :id")
 	public List<AccountLogin> findByAccountId(@BindBean Account account);
+	
+	@Override
+	public void close();
 }

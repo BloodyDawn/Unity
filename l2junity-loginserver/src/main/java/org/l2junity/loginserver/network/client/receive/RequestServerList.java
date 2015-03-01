@@ -19,6 +19,7 @@
 package org.l2junity.loginserver.network.client.receive;
 
 import org.l2junity.loginserver.network.client.ClientHandler;
+import org.l2junity.loginserver.network.client.ConnectionState;
 import org.l2junity.loginserver.network.client.send.LoginFail2;
 import org.l2junity.loginserver.network.client.send.ServerList;
 import org.l2junity.network.IIncomingPacket;
@@ -44,7 +45,8 @@ public class RequestServerList implements IIncomingPacket<ClientHandler>
 	{
 		if (client.getLoginSessionId() == _loginSessionId)
 		{
-			client.sendPacket(new ServerList(client));
+			client.setConnectionState(ConnectionState.AUTHED_SERVER_LIST);
+			client.sendPacket(new ServerList());
 		}
 		else
 		{

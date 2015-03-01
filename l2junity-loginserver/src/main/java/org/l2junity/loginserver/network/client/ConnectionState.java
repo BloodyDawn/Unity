@@ -26,12 +26,11 @@ import org.l2junity.network.IConnectionState;
 public enum ConnectionState implements IConnectionState
 {
 	CONNECTED,
-	DISCONNECTED,
-	CLOSING,
+	CLOSED,
 	AUTHED_GG,
 	AUTHED_LICENCE,
 	AUTHED_SERVER_LIST,
-	AUTHED_PENDING;
+	AUTHING;
 	
 	@Override
 	public IConnectionState getState()
