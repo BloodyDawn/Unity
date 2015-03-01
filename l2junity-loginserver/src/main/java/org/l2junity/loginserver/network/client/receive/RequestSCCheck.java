@@ -24,7 +24,6 @@ import javax.crypto.Cipher;
 
 import org.l2junity.loginserver.network.client.ClientHandler;
 import org.l2junity.loginserver.network.client.send.LoginFail2;
-import org.l2junity.loginserver.util.Util;
 import org.l2junity.network.IIncomingPacket;
 import org.l2junity.network.PacketReader;
 
@@ -68,7 +67,6 @@ public class RequestSCCheck implements IIncomingPacket<ClientHandler>
 		}
 		
 		System.out.println(_unk1);
-		System.out.println(Util.printData(decrypted));
 		int num = (decrypted[0x7C] & 0xFF) | ((decrypted[0x7D] & 0xFF) << 8) | ((decrypted[0x7E] & 0xFF) << 16) | ((decrypted[0x7F] & 0xFF) << 24);
 		System.out.println(num);
 		client.close(LoginFail2.ACCESS_FAILED);
