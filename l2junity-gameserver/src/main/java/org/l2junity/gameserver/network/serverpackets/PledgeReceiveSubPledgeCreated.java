@@ -20,19 +20,17 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.L2Clan.SubPledge;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author -Wooden-
  */
-public class PledgeReceiveSubPledgeCreated extends L2GameServerPacket
+public class PledgeReceiveSubPledgeCreated implements IGameServerPacket
 {
 	private final SubPledge _subPledge;
 	private final L2Clan _clan;
 	
-	/**
-	 * @param subPledge
-	 * @param clan
-	 */
 	public PledgeReceiveSubPledgeCreated(SubPledge subPledge, L2Clan clan)
 	{
 		_subPledge = subPledge;
@@ -40,15 +38,15 @@ public class PledgeReceiveSubPledgeCreated extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x41);
+		OutgoingPackets.PLEDGE_RECEIVE_SUB_PLEDGE_CREATED.writeId(packet);
 		
-		writeD(0x01);
-		writeD(_subPledge.getId());
-		writeS(_subPledge.getName());
-		writeS(getLeaderName());
+		packet.writeD(0x01);
+		packet.writeD(_subPledge.getId());
+		packet.writeS(_subPledge.getName());
+		packet.writeS(getLeaderName());
+		return true;
 	}
 	
 	private String getLeaderName()

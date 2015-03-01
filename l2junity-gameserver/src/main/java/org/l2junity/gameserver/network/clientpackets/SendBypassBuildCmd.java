@@ -23,35 +23,36 @@ import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.handler.AdminCommandHandler;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.util.GMAudit;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class handles all GM commands triggered by //command
  * @version $Revision: 1.3.4.2 $ $Date: 2005/03/27 15:29:29 $
  */
-public final class SendBypassBuildCmd extends L2GameClientPacket
+public final class SendBypassBuildCmd implements IGameClientPacket
 {
-	private static final String _C__74_SENDBYPASSBUILDCMD = "[C] 74 SendBypassBuildCmd";
-	
 	public static final int GM_MESSAGE = 9;
 	public static final int ANNOUNCEMENT = 10;
 	
 	private String _command;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_command = readS();
+		_command = packet.readS();
 		if (_command != null)
 		{
 			_command = _command.trim();
 		}
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -85,11 +86,5 @@ public final class SendBypassBuildCmd extends L2GameClientPacket
 		}
 		
 		ach.useAdminCommand("admin_" + _command, activeChar);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__74_SENDBYPASSBUILDCMD;
 	}
 }

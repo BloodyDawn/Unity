@@ -19,40 +19,37 @@
 package org.l2junity.gameserver.network.clientpackets.mentoring;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.mentoring.ListMenteeWaiting;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author UnAfraid
  */
-public class RequestMenteeWaitingList extends L2GameClientPacket
+public class RequestMenteeWaitingList implements IGameClientPacket
 {
 	private int _page;
 	private int _minLevel;
 	private int _maxLevel;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_page = readD();
-		_minLevel = readD();
-		_maxLevel = readD();
+		_page = packet.readD();
+		_minLevel = packet.readD();
+		_maxLevel = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
-		activeChar.sendPacket(new ListMenteeWaiting(_page, _minLevel, _maxLevel));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
+		client.sendPacket(new ListMenteeWaiting(_page, _minLevel, _maxLevel));
 	}
 }

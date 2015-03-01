@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author UnAfraid
  */
-public class ExCloseAPListWnd extends L2GameServerPacket
+public class ExCloseAPListWnd implements IGameServerPacket
 {
 	public static ExCloseAPListWnd STATIC_PACKET = new ExCloseAPListWnd();
 	
@@ -30,9 +33,10 @@ public class ExCloseAPListWnd extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x167);
+		OutgoingPackets.EX_CLOSE_AP_LIST_WND.writeId(packet);
+		
+		return true;
 	}
 }

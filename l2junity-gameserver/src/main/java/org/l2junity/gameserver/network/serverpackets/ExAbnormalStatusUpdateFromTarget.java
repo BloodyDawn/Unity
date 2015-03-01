@@ -24,8 +24,10 @@ import java.util.List;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class ExAbnormalStatusUpdateFromTarget extends L2GameServerPacket
+public class ExAbnormalStatusUpdateFromTarget implements IGameServerPacket
 {
 	private final Creature _character;
 	private List<Effect> _effects = new ArrayList<>();
@@ -75,21 +77,21 @@ public class ExAbnormalStatusUpdateFromTarget extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xE6);
+		OutgoingPackets.EX_ABNORMAL_STATUS_UPDATE_FROM_TARGET.writeId(packet);
 		
-		writeD(_character.getObjectId());
-		writeH(_effects.size());
+		packet.writeD(_character.getObjectId());
+		packet.writeH(_effects.size());
 		
 		for (Effect info : _effects)
 		{
-			writeD(info._skillId);
-			writeH(info._level);
-			writeH(0x00); // Combo abnormal ?
-			writeH(info._duration);
-			writeD(info._caster);
+			packet.writeD(info._skillId);
+			packet.writeH(info._level);
+			packet.writeH(0x00); // Combo abnormal ?
+			packet.writeH(info._duration);
+			packet.writeD(info._caster);
 		}
+		return true;
 	}
 }

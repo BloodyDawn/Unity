@@ -20,11 +20,13 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author KenM
  */
-public class ExSpawnEmitter extends L2GameServerPacket
+public class ExSpawnEmitter implements IGameServerPacket
 {
 	private final int _playerObjectId;
 	private final int _npcObjectId;
@@ -41,13 +43,13 @@ public class ExSpawnEmitter extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x5E);
+		OutgoingPackets.EX_SPAWN_EMITTER.writeId(packet);
 		
-		writeD(_npcObjectId);
-		writeD(_playerObjectId);
-		writeD(0x00); // ?
+		packet.writeD(_npcObjectId);
+		packet.writeD(_playerObjectId);
+		packet.writeD(0x00); // ?
+		return true;
 	}
 }

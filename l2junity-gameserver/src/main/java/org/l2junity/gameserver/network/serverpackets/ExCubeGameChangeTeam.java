@@ -19,11 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author mrTJO
  */
-public class ExCubeGameChangeTeam extends L2GameServerPacket
+public class ExCubeGameChangeTeam implements IGameServerPacket
 {
 	PlayerInstance _player;
 	boolean _fromRedTeam;
@@ -40,14 +42,15 @@ public class ExCubeGameChangeTeam extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x98);
-		writeD(0x05);
+		OutgoingPackets.EX_BLOCK_UP_SET_LIST.writeId(packet);
 		
-		writeD(_player.getObjectId());
-		writeD(_fromRedTeam ? 0x01 : 0x00);
-		writeD(_fromRedTeam ? 0x00 : 0x01);
+		packet.writeD(0x05);
+		
+		packet.writeD(_player.getObjectId());
+		packet.writeD(_fromRedTeam ? 0x01 : 0x00);
+		packet.writeD(_fromRedTeam ? 0x00 : 0x01);
+		return true;
 	}
 }

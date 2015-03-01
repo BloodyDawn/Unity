@@ -42,6 +42,8 @@ import org.l2junity.gameserver.model.entity.Hero;
 import org.l2junity.gameserver.model.olympiad.Olympiad;
 import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.client.ClientNetworkManager;
+import org.l2junity.gameserver.network.client.EventLoopGroupManager;
 import org.l2junity.gameserver.network.gameserverpackets.ServerStatus;
 import org.l2junity.gameserver.network.serverpackets.ServerClose;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
@@ -260,7 +262,8 @@ public class Shutdown extends Thread
 			// saveData sends messages to exit players, so shutdown selector after it
 			try
 			{
-				GameServer.gameServer.getSelectorThread().shutdown();
+				ClientNetworkManager.getInstance().stop();
+				EventLoopGroupManager.getInstance().shutdown();
 				_log.info("Game Server: Selector thread has been shut down(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 			}
 			catch (Throwable t)

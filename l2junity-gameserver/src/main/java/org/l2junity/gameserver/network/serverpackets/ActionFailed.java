@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public final class ActionFailed extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public final class ActionFailed implements IGameServerPacket
 {
 	public static final ActionFailed STATIC_PACKET = new ActionFailed();
 	
@@ -27,9 +30,11 @@ public final class ActionFailed extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x1F);
-		writeD(0x00); // TODO: Find me!
+		OutgoingPackets.ACTION_FAIL.writeId(packet);
+		
+		packet.writeD(0x00); // TODO: Find me!
+		return true;
 	}
 }

@@ -23,6 +23,8 @@ import java.util.Collection;
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.buylist.L2BuyList;
 import org.l2junity.gameserver.model.buylist.Product;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 public final class BuyList extends AbstractItemPacket
 {
@@ -40,31 +42,32 @@ public final class BuyList extends AbstractItemPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xB8);
-		writeD(0x00);
-		writeQ(_money); // current money
-		writeD(_listId);
-		writeD(0x00); // TODO: Find me
-		writeH(_list.size());
+		OutgoingPackets.EX_BUY_SELL_LIST.writeId(packet);
+		
+		packet.writeD(0x00);
+		packet.writeQ(_money); // current money
+		packet.writeD(_listId);
+		packet.writeD(0x00); // TODO: Find me
+		packet.writeH(_list.size());
 		
 		for (Product product : _list)
 		{
 			if ((product.getCount() > 0) || !product.hasLimitedStock())
 			{
-				writeItem(product);
+				writeItem(packet, product);
 				
 				if ((product.getItemId() >= 3960) && (product.getItemId() <= 4026))
 				{
-					writeQ((long) (product.getPrice() * Config.RATE_SIEGE_GUARDS_PRICE * (1 + _taxRate)));
+					packet.writeQ((long) (product.getPrice() * Config.RATE_SIEGE_GUARDS_PRICE * (1 + _taxRate)));
 				}
 				else
 				{
-					writeQ((long) (product.getPrice() * (1 + _taxRate)));
+					packet.writeQ((long) (product.getPrice() * (1 + _taxRate)));
 				}
 			}
 		}
+		return true;
 	}
 }

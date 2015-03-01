@@ -21,46 +21,39 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.gameserver.instancemanager.ClanEntryManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.clan.entry.PledgeRecruitInfo;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExPledgeRecruitBoardDetail;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Sdw
  */
-public class RequestPledgeRecruitBoardDetail extends L2GameClientPacket
+public class RequestPledgeRecruitBoardDetail implements IGameClientPacket
 {
-	private static final String _C__D0_D6_REQUESTPLEDGERECRUITBOARDDETAIL = "[C] D0;D6 RequestPledgeRecruitBoardDetail";
-	
 	private int _clanId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_clanId = readD();
+		_clanId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
-		
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
 		final PledgeRecruitInfo pledgeRecruitInfo = ClanEntryManager.getInstance().getClanById(_clanId);
-		
 		if (pledgeRecruitInfo == null)
 		{
 			return;
 		}
 		
-		activeChar.sendPacket(new ExPledgeRecruitBoardDetail(pledgeRecruitInfo));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_D6_REQUESTPLEDGERECRUITBOARDDETAIL;
+		client.sendPacket(new ExPledgeRecruitBoardDetail(pledgeRecruitInfo));
 	}
 }

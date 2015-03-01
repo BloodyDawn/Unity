@@ -166,7 +166,7 @@ public class AdminPolymorph implements IAdminCommandHandler
 				Creature Char = (Creature) obj;
 				MagicSkillUse msk = new MagicSkillUse(Char, 1008, 1, 4000, 0);
 				Char.broadcastPacket(msk);
-				SetupGauge sg = new SetupGauge(0, 4000);
+				SetupGauge sg = new SetupGauge(activeChar.getObjectId(), 0, 4000);
 				Char.sendPacket(sg);
 			}
 			// end of animation

@@ -24,11 +24,13 @@ import java.util.List;
 import org.l2junity.gameserver.instancemanager.MatchingRoomManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.matching.MatchingRoom;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Gnacik
  */
-public class ListPartyWaiting extends L2GameServerPacket
+public class ListPartyWaiting implements IGameServerPacket
 {
 	private final List<MatchingRoom> _rooms = new LinkedList<>();
 	private final int _size;
@@ -53,26 +55,28 @@ public class ListPartyWaiting extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x9C);
-		writeD(_size);
-		writeD(_rooms.size());
+		OutgoingPackets.LIST_PARTY_WATING.writeId(packet);
+		
+		packet.writeD(_size);
+		packet.writeD(_rooms.size());
 		for (MatchingRoom room : _rooms)
 		{
-			writeD(room.getId());
-			writeS(room.getTitle());
-			writeD(room.getLocation());
-			writeD(room.getMinLvl());
-			writeD(room.getMaxLvl());
-			writeD(room.getMaxMembers());
-			writeS(room.getLeader().getName());
-			writeD(room.getMembersCount());
+			packet.writeD(room.getId());
+			packet.writeS(room.getTitle());
+			packet.writeD(room.getLocation());
+			packet.writeD(room.getMinLvl());
+			packet.writeD(room.getMaxLvl());
+			packet.writeD(room.getMaxMembers());
+			packet.writeS(room.getLeader().getName());
+			packet.writeD(room.getMembersCount());
 			for (PlayerInstance member : room.getMembers())
 			{
-				writeD(member.getClassId().getId());
-				writeS(member.getName());
+				packet.writeD(member.getClassId().getId());
+				packet.writeS(member.getName());
 			}
 		}
+		return true;
 	}
 }

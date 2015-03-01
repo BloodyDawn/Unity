@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author KenM
  */
-public class ExUseSharedGroupItem extends L2GameServerPacket
+public class ExUseSharedGroupItem implements IGameServerPacket
 {
 	private final int _itemId;
 	private final int _grpId;
@@ -37,14 +40,14 @@ public class ExUseSharedGroupItem extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x4B);
+		OutgoingPackets.EX_USE_SHARED_GROUP_ITEM.writeId(packet);
 		
-		writeD(_itemId);
-		writeD(_grpId);
-		writeD(_remainingTime);
-		writeD(_totalTime);
+		packet.writeD(_itemId);
+		packet.writeD(_grpId);
+		packet.writeD(_remainingTime);
+		packet.writeD(_totalTime);
+		return true;
 	}
 }

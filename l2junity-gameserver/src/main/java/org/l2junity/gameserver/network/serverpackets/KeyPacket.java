@@ -19,31 +19,35 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.Config;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public final class KeyPacket extends L2GameServerPacket
+public final class KeyPacket implements IGameServerPacket
 {
 	private final byte[] _key;
-	private final int _id;
+	private final int _result;
 	
-	public KeyPacket(byte[] key, int id)
+	public KeyPacket(byte[] key, int result)
 	{
 		_key = key;
-		_id = id;
+		_result = result;
 	}
 	
 	@Override
-	public void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x2e);
-		writeC(_id); // 0 - wrong protocol, 1 - protocol ok
+		OutgoingPackets.VERSION_CHECK.writeId(packet);
+		
+		packet.writeC(_result); // 0 - wrong protocol, 1 - protocol ok
 		for (int i = 0; i < 8; i++)
 		{
-			writeC(_key[i]); // key
+			packet.writeC(_key[i]); // key
 		}
-		writeD(0x01);
-		writeD(Config.SERVER_ID); // server id
-		writeC(0x01);
-		writeD(0x00); // obfuscation key
-		writeC((Config.SERVER_LIST_TYPE & 0x400) == 0x400 ? 0x01 : 0x00); // isClassic
+		packet.writeD(0x01);
+		packet.writeD(Config.SERVER_ID); // server id
+		packet.writeC(0x01);
+		packet.writeD(0x00); // obfuscation key
+		packet.writeC((Config.SERVER_LIST_TYPE & 0x400) == 0x400 ? 0x01 : 0x00); // isClassic
+		return true;
 	}
 }

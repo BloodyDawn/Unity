@@ -28,6 +28,7 @@ import org.l2junity.gameserver.model.entity.Message;
 import org.l2junity.gameserver.model.itemcontainer.ItemContainer;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExChangePostState;
 import org.l2junity.gameserver.network.serverpackets.ExUserInfoInvenWeight;
@@ -35,32 +36,32 @@ import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2junity.gameserver.network.serverpackets.ItemList;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Migi, DS
  */
-public final class RequestCancelPostAttachment extends L2GameClientPacket
+public final class RequestCancelPostAttachment implements IGameClientPacket
 {
-	private static final String _C__D0_6F_REQUESTCANCELPOSTATTACHMENT = "[C] D0:6F RequestCancelPostAttachment";
-	
 	private int _msgId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_msgId = readD();
+		_msgId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	public void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if ((activeChar == null) || !Config.ALLOW_MAIL || !Config.ALLOW_ATTACHMENTS)
 		{
 			return;
 		}
 		
-		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("cancelpost"))
+		if (!client.getFloodProtectors().getTransaction().tryPerformAction("cancelpost"))
 		{
 			return;
 		}
@@ -225,17 +226,5 @@ public final class RequestCancelPostAttachment extends L2GameClientPacket
 		
 		activeChar.sendPacket(new ExChangePostState(false, _msgId, Message.DELETED));
 		activeChar.sendPacket(SystemMessageId.MAIL_SUCCESSFULLY_CANCELLED);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_6F_REQUESTCANCELPOSTATTACHMENT;
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
 	}
 }

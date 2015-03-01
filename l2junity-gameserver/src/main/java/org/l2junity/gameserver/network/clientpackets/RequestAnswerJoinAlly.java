@@ -20,30 +20,31 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.network.PacketReader;
 
-public final class RequestAnswerJoinAlly extends L2GameClientPacket
+public final class RequestAnswerJoinAlly implements IGameClientPacket
 {
-	private static final String _C__8D_REQUESTANSWERJOINALLY = "[C] 8D RequestAnswerJoinAlly";
-	
 	private int _response;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_response = readD();
+		_response = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
-		PlayerInstance requestor = activeChar.getRequest().getPartner();
+		final PlayerInstance requestor = activeChar.getRequest().getPartner();
 		if (requestor == null)
 		{
 			return;
@@ -61,7 +62,7 @@ public final class RequestAnswerJoinAlly extends L2GameClientPacket
 				return; // hax
 			}
 			
-			L2Clan clan = requestor.getClan();
+			final L2Clan clan = requestor.getClan();
 			// we must double check this cause of hack
 			if (clan.checkAllyJoinCondition(requestor, activeChar))
 			{
@@ -78,11 +79,5 @@ public final class RequestAnswerJoinAlly extends L2GameClientPacket
 		}
 		
 		activeChar.getRequest().onRequestResponse();
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__8D_REQUESTANSWERJOINALLY;
 	}
 }

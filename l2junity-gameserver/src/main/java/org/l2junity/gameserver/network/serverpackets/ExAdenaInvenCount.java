@@ -19,11 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class ExAdenaInvenCount extends L2GameServerPacket
+public class ExAdenaInvenCount implements IGameServerPacket
 {
 	private final PlayerInstance _activeChar;
 	
@@ -33,12 +35,12 @@ public class ExAdenaInvenCount extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x13E);
+		OutgoingPackets.EX_ADENA_INVEN_COUNT.writeId(packet);
 		
-		writeQ(_activeChar.getAdena());
-		writeH(_activeChar.getInventory().getSize());
+		packet.writeQ(_activeChar.getAdena());
+		packet.writeH(_activeChar.getInventory().getSize());
+		return true;
 	}
 }

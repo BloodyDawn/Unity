@@ -26,34 +26,37 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.mentoring.OnPlayerMenteeLeft;
 import org.l2junity.gameserver.model.events.impl.character.player.mentoring.OnPlayerMenteeRemove;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author UnAfraid
  */
-public class RequestMentorCancel extends L2GameClientPacket
+public class RequestMentorCancel implements IGameClientPacket
 {
 	private int _confirmed;
 	private String _name;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_confirmed = readD();
-		_name = readS();
+		_confirmed = packet.readD();
+		_name = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		if (_confirmed != 1)
 		{
 			return;
 		}
 		
-		PlayerInstance player = getClient().getActiveChar();
+		PlayerInstance player = client.getActiveChar();
 		int objectId = CharNameTable.getInstance().getIdByName(_name);
 		if (player != null)
 		{
@@ -100,11 +103,5 @@ public class RequestMentorCancel extends L2GameClientPacket
 				}
 			}
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
 	}
 }

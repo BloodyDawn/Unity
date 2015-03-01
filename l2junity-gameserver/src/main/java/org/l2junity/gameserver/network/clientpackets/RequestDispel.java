@@ -24,34 +24,35 @@ import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author KenM
  */
-public class RequestDispel extends L2GameClientPacket
+public class RequestDispel implements IGameClientPacket
 {
-	private static final String _C_D0_4B_REQUESTDISPEL = "[C] D0:4B RequestDispel";
-	
 	private int _objectId;
 	private int _skillId;
 	private int _skillLevel;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_objectId = readD();
-		_skillId = readD();
-		_skillLevel = readD();
+		_objectId = packet.readD();
+		_skillId = packet.readD();
+		_skillLevel = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		if ((_skillId <= 0) || (_skillLevel <= 0))
 		{
 			return;
 		}
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -90,11 +91,5 @@ public class RequestDispel extends L2GameClientPacket
 				activeChar.removeServitor(_objectId);
 			}
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C_D0_4B_REQUESTDISPEL;
 	}
 }

@@ -19,39 +19,35 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExListMpccWaiting;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Sdw
  */
-public class RequestExListMpccWaiting extends L2GameClientPacket
+public class RequestExListMpccWaiting implements IGameClientPacket
 {
 	private int _page, _location, _level;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_page = readD();
-		_location = readD();
-		_level = readD();
+		_page = packet.readD();
+		_location = packet.readD();
+		_level = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getActiveChar();
-		
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
 		activeChar.sendPacket(new ExListMpccWaiting(_page, _location, _level));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
 	}
 }

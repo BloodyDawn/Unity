@@ -20,11 +20,13 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author KenM
  */
-public class StaticObject extends L2GameServerPacket
+public class StaticObject implements IGameServerPacket
 {
 	private final int _staticObjectId;
 	private final int _objectId;
@@ -69,19 +71,21 @@ public class StaticObject extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x9f);
-		writeD(_staticObjectId);
-		writeD(_objectId);
-		writeD(_type);
-		writeD(_isTargetable ? 1 : 0);
-		writeD(_meshIndex);
-		writeD(_isClosed ? 1 : 0);
-		writeD(_isEnemy ? 1 : 0);
-		writeD(_currentHp);
-		writeD(_maxHp);
-		writeD(_showHp ? 1 : 0);
-		writeD(_damageGrade);
+		OutgoingPackets.STATIC_OBJECT.writeId(packet);
+		
+		packet.writeD(_staticObjectId);
+		packet.writeD(_objectId);
+		packet.writeD(_type);
+		packet.writeD(_isTargetable ? 1 : 0);
+		packet.writeD(_meshIndex);
+		packet.writeD(_isClosed ? 1 : 0);
+		packet.writeD(_isEnemy ? 1 : 0);
+		packet.writeD(_currentHp);
+		packet.writeD(_maxHp);
+		packet.writeD(_showHp ? 1 : 0);
+		packet.writeD(_damageGrade);
+		return true;
 	}
 }

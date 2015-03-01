@@ -19,11 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class ExResponseBeautyRegistReset extends L2GameServerPacket
+public class ExResponseBeautyRegistReset implements IGameServerPacket
 {
 	private final PlayerInstance _activeChar;
 	private final int _type;
@@ -43,17 +45,17 @@ public class ExResponseBeautyRegistReset extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x136);
+		OutgoingPackets.EX_RESPONSE_BEAUTY_REGIST_RESET.writeId(packet);
 		
-		writeQ(_activeChar.getAdena());
-		writeQ(_activeChar.getBeautyTickets());
-		writeD(_type);
-		writeD(_result);
-		writeD(_activeChar.getVisualHair());
-		writeD(_activeChar.getVisualFace());
-		writeD(_activeChar.getVisualHairColor());
+		packet.writeQ(_activeChar.getAdena());
+		packet.writeQ(_activeChar.getBeautyTickets());
+		packet.writeD(_type);
+		packet.writeD(_result);
+		packet.writeD(_activeChar.getVisualHair());
+		packet.writeD(_activeChar.getVisualFace());
+		packet.writeD(_activeChar.getVisualHairColor());
+		return true;
 	}
 }

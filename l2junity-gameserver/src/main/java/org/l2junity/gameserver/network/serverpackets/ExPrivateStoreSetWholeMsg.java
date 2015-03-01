@@ -19,11 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author KenM
  */
-public class ExPrivateStoreSetWholeMsg extends L2GameServerPacket
+public class ExPrivateStoreSetWholeMsg implements IGameServerPacket
 {
 	private final int _objectId;
 	private final String _msg;
@@ -40,11 +42,12 @@ public class ExPrivateStoreSetWholeMsg extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x81);
-		writeD(_objectId);
-		writeS(_msg);
+		OutgoingPackets.EX_PRIVATE_STORE_WHOLE_MSG.writeId(packet);
+		
+		packet.writeD(_objectId);
+		packet.writeS(_msg);
+		return true;
 	}
 }

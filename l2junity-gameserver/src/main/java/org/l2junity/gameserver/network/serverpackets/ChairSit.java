@@ -19,8 +19,10 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class ChairSit extends L2GameServerPacket
+public class ChairSit implements IGameServerPacket
 {
 	private final PlayerInstance _activeChar;
 	private final int _staticObjectId;
@@ -36,10 +38,12 @@ public class ChairSit extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xed);
-		writeD(_activeChar.getObjectId());
-		writeD(_staticObjectId);
+		OutgoingPackets.CHAIR_SIT.writeId(packet);
+		
+		packet.writeD(_activeChar.getObjectId());
+		packet.writeD(_staticObjectId);
+		return true;
 	}
 }

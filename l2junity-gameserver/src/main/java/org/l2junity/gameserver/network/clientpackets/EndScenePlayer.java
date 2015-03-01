@@ -19,26 +19,27 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author JIV
  */
-public final class EndScenePlayer extends L2GameClientPacket
+public final class EndScenePlayer implements IGameClientPacket
 {
-	private static final String _C__D0_5B_ENDSCENEPLAYER = "[C] D0:5B EndScenePlayer";
-	
 	private int _movieId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_movieId = readD();
+		_movieId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -49,7 +50,7 @@ public final class EndScenePlayer extends L2GameClientPacket
 		}
 		if (activeChar.getMovieId() != _movieId)
 		{
-			_log.warning("Player " + getClient() + " sent EndScenePlayer with wrong movie id: " + _movieId);
+			_log.warning("Player " + client + " sent EndScenePlayer with wrong movie id: " + _movieId);
 			return;
 		}
 		activeChar.setMovieId(0);
@@ -57,11 +58,5 @@ public final class EndScenePlayer extends L2GameClientPacket
 		activeChar.decayMe();
 		activeChar.spawnMe(activeChar.getX(), activeChar.getY(), activeChar.getZ());
 		activeChar.setIsTeleporting(false, false);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_5B_ENDSCENEPLAYER;
 	}
 }

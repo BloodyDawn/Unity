@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author KenM
  */
-public class ExRedSky extends L2GameServerPacket
+public class ExRedSky implements IGameServerPacket
 {
 	private final int _duration;
 	
@@ -31,10 +34,11 @@ public class ExRedSky extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x42);
-		writeD(_duration);
+		OutgoingPackets.EX_RED_SKY.writeId(packet);
+		
+		packet.writeD(_duration);
+		return true;
 	}
 }

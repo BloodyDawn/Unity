@@ -19,32 +19,33 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.matching.PartyMatchingRoom;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Gnacik
  */
-public class PartyRoomInfo extends L2GameServerPacket
+public class PartyRoomInfo implements IGameServerPacket
 {
 	private final PartyMatchingRoom _room;
 	
-	/**
-	 * @param room
-	 */
 	public PartyRoomInfo(PartyMatchingRoom room)
 	{
 		_room = room;
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x9D);
-		writeD(_room.getId());
-		writeD(_room.getMaxMembers());
-		writeD(_room.getMinLvl());
-		writeD(_room.getMaxLvl());
-		writeD(_room.getLootType());
-		writeD(_room.getLocation());
-		writeS(_room.getTitle());
+		OutgoingPackets.PARTY_ROOM_INFO.writeId(packet);
+		
+		packet.writeD(_room.getId());
+		packet.writeD(_room.getMaxMembers());
+		packet.writeD(_room.getMinLvl());
+		packet.writeD(_room.getMaxLvl());
+		packet.writeD(_room.getLootType());
+		packet.writeD(_room.getLocation());
+		packet.writeS(_room.getTitle());
+		return true;
 	}
 }

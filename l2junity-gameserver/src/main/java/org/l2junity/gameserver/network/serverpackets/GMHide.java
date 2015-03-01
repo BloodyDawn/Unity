@@ -18,11 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author Kerberos
  */
 @Deprecated
-public class GMHide extends L2GameServerPacket
+public class GMHide implements IGameServerPacket
 {
 	private final int _mode;
 	
@@ -35,9 +38,11 @@ public class GMHide extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x93);
-		writeD(_mode);
+		OutgoingPackets.GM_HIDE.writeId(packet);
+		
+		packet.writeD(_mode);
+		return true;
 	}
 }

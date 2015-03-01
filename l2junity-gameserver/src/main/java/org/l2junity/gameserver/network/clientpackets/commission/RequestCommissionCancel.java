@@ -18,27 +18,24 @@
  */
 package org.l2junity.gameserver.network.clientpackets.commission;
 
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
+import org.l2junity.network.PacketReader;
 
 /**
  * This Packet doesn't seem to be doing anything.
  * @author NosBit
  */
-public class RequestCommissionCancel extends L2GameClientPacket
+public class RequestCommissionCancel implements IGameClientPacket
 {
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
+		return false;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
 	}
 }

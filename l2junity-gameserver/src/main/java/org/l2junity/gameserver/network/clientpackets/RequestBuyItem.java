@@ -33,55 +33,56 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.buylist.L2BuyList;
 import org.l2junity.gameserver.model.buylist.Product;
 import org.l2junity.gameserver.model.holders.ItemHolder;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.ExBuySellList;
 import org.l2junity.gameserver.network.serverpackets.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
-public final class RequestBuyItem extends L2GameClientPacket
+public final class RequestBuyItem implements IGameClientPacket
 {
-	private static final String _C__40_REQUESTBUYITEM = "[C] 40 RequestBuyItem";
-	
 	private static final int BATCH_LENGTH = 12;
 	private int _listId;
 	private List<ItemHolder> _items = null;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_listId = readD();
-		int size = readD();
-		if ((size <= 0) || (size > Config.MAX_ITEM_IN_PACKET) || ((size * BATCH_LENGTH) != _buf.remaining()))
+		_listId = packet.readD();
+		int size = packet.readD();
+		if ((size <= 0) || (size > Config.MAX_ITEM_IN_PACKET) || ((size * BATCH_LENGTH) != packet.getReadableBytes()))
 		{
-			return;
+			return false;
 		}
 		
 		_items = new ArrayList<>(size);
 		for (int i = 0; i < size; i++)
 		{
-			int itemId = readD();
-			long count = readQ();
+			int itemId = packet.readD();
+			long count = packet.readQ();
 			if ((itemId < 1) || (count < 1))
 			{
 				_items = null;
-				return;
+				return false;
 			}
 			_items.add(new ItemHolder(itemId, count));
 		}
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
 		}
 		
-		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("buy"))
+		if (!client.getFloodProtectors().getTransaction().tryPerformAction("buy"))
 		{
 			player.sendMessage("You are buying too fast.");
 			return;
@@ -89,14 +90,14 @@ public final class RequestBuyItem extends L2GameClientPacket
 		
 		if (_items == null)
 		{
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
 		// Alt game - Karma punishment
 		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && (player.getKarma() > 0))
 		{
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
@@ -106,7 +107,7 @@ public final class RequestBuyItem extends L2GameClientPacket
 		{
 			if (!(target instanceof L2MerchantInstance) || (!player.isInsideRadius(target, INTERACTION_DISTANCE, true, false)) || (player.getInstanceId() != target.getInstanceId()))
 			{
-				sendPacket(ActionFailed.STATIC_PACKET);
+				client.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
 			merchant = (Creature) target;
@@ -117,7 +118,7 @@ public final class RequestBuyItem extends L2GameClientPacket
 		
 		if ((merchant == null) && !player.isGM())
 		{
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
@@ -132,7 +133,7 @@ public final class RequestBuyItem extends L2GameClientPacket
 		{
 			if (!buyList.isNpcAllowed(merchant.getId()))
 			{
-				sendPacket(ActionFailed.STATIC_PACKET);
+				client.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
 			
@@ -166,7 +167,7 @@ public final class RequestBuyItem extends L2GameClientPacket
 			if (!product.getItem().isStackable() && (i.getCount() > 1))
 			{
 				Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " tried to purchase invalid quantity of items at the same time.", Config.DEFAULT_PUNISH);
-				sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_EXCEEDED_THE_QUANTITY_THAT_CAN_BE_INPUTTED));
+				client.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_EXCEEDED_THE_QUANTITY_THAT_CAN_BE_INPUTTED));
 				return;
 			}
 			
@@ -179,7 +180,7 @@ public final class RequestBuyItem extends L2GameClientPacket
 			if (price < 0)
 			{
 				_log.warning("ERROR, no price found .. wrong buylist ??");
-				sendPacket(ActionFailed.STATIC_PACKET);
+				client.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
 			
@@ -195,7 +196,7 @@ public final class RequestBuyItem extends L2GameClientPacket
 				// trying to buy more then available
 				if (i.getCount() > product.getCount())
 				{
-					sendPacket(ActionFailed.STATIC_PACKET);
+					client.sendPacket(ActionFailed.STATIC_PACKET);
 					return;
 				}
 			}
@@ -223,23 +224,23 @@ public final class RequestBuyItem extends L2GameClientPacket
 		
 		if (!player.isGM() && ((weight > Integer.MAX_VALUE) || (weight < 0) || !player.getInventory().validateWeight((int) weight)))
 		{
-			player.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_WEIGHT_LIMIT);
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_WEIGHT_LIMIT);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
 		if (!player.isGM() && ((slots > Integer.MAX_VALUE) || (slots < 0) || !player.getInventory().validateCapacity((int) slots)))
 		{
-			player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL);
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
 		// Charge buyer and add tax to castle treasury if not owned by npc clan
 		if ((subTotal < 0) || !player.reduceAdena("Buy", subTotal, player.getLastFolkNPC(), false))
 		{
-			player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA);
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
@@ -272,13 +273,7 @@ public final class RequestBuyItem extends L2GameClientPacket
 			((L2MerchantInstance) merchant).getCastle().addToTreasury((long) (subTotal * castleTaxRate));
 		}
 		
-		player.sendPacket(new ExUserInfoInvenWeight(player));
-		player.sendPacket(new ExBuySellList(player, true));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__40_REQUESTBUYITEM;
+		client.sendPacket(new ExUserInfoInvenWeight(player));
+		client.sendPacket(new ExBuySellList(player, true));
 	}
 }

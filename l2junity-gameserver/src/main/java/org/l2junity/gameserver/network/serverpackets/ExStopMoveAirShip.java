@@ -19,11 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author kerberos
  */
-public class ExStopMoveAirShip extends L2GameServerPacket
+public class ExStopMoveAirShip implements IGameServerPacket
 {
 	private final int _objectId, _x, _y, _z, _heading;
 	
@@ -37,14 +39,15 @@ public class ExStopMoveAirShip extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x67);
-		writeD(_objectId);
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
-		writeD(_heading);
+		OutgoingPackets.EX_STOP_MOVE_AIR_SHIP.writeId(packet);
+		
+		packet.writeD(_objectId);
+		packet.writeD(_x);
+		packet.writeD(_y);
+		packet.writeD(_z);
+		packet.writeD(_heading);
+		return true;
 	}
 }

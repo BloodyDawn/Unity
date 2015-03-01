@@ -30,6 +30,7 @@ import org.l2junity.gameserver.model.punishment.PunishmentAffect;
 import org.l2junity.gameserver.model.punishment.PunishmentTask;
 import org.l2junity.gameserver.model.punishment.PunishmentType;
 import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.gameserver.network.client.ConnectionState;
 
 /**
  * Flood protector implementation.
@@ -200,14 +201,15 @@ public final class FloodProtectorAction
 		{
 			if (!_client.isDetached())
 			{
-				address = _client.getConnection().getInetAddress().getHostAddress();
+				address = _client.getConnectionAddress().getHostAddress();
 			}
 		}
 		catch (Exception e)
 		{
 		}
 		
-		switch (_client.getState())
+		final ConnectionState state = (ConnectionState) _client.getConnectionState();
+		switch (state)
 		{
 			case IN_GAME:
 				if (_client.getActiveChar() != null)
@@ -218,7 +220,7 @@ public final class FloodProtectorAction
 					output.append(") ");
 				}
 				break;
-			case AUTHED:
+			case AUTHENTICATED:
 				if (_client.getAccountName() != null)
 				{
 					output.append(_client.getAccountName());

@@ -18,12 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets.compound;
 
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class ExEnchantTwoFail extends L2GameServerPacket
+public class ExEnchantTwoFail implements IGameServerPacket
 {
 	public static final ExEnchantTwoFail STATIC_PACKET = new ExEnchantTwoFail();
 	
@@ -32,9 +34,9 @@ public class ExEnchantTwoFail extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x16D);
+		OutgoingPackets.EX_ENCHANT_TWO_FAIL.writeId(packet);
+		return true;
 	}
 }

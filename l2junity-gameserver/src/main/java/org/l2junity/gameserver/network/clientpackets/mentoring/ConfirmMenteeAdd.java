@@ -29,15 +29,17 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.mentoring.OnPlayerMenteeAdd;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.network.serverpackets.mentoring.ExMentorList;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Gnacik, UnAfraid
  */
-public class ConfirmMenteeAdd extends L2GameClientPacket
+public class ConfirmMenteeAdd implements IGameClientPacket
 {
 	// public final static int MENTEE_CERT = 33800;
 	
@@ -45,16 +47,17 @@ public class ConfirmMenteeAdd extends L2GameClientPacket
 	private String _mentor;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_confirmed = readD();
-		_mentor = readS();
+		_confirmed = packet.readD();
+		_mentor = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance mentee = getClient().getActiveChar();
+		final PlayerInstance mentee = client.getActiveChar();
 		if (mentee == null)
 		{
 			return;
@@ -169,11 +172,5 @@ public class ConfirmMenteeAdd extends L2GameClientPacket
 			return false;
 		}
 		return true;
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
 	}
 }

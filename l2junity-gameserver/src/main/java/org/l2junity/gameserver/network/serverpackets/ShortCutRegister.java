@@ -19,8 +19,10 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.Shortcut;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public final class ShortCutRegister extends L2GameServerPacket
+public final class ShortCutRegister implements IGameServerPacket
 {
 	private final Shortcut _shortcut;
 	
@@ -34,33 +36,34 @@ public final class ShortCutRegister extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x44);
-		writeD(_shortcut.getType().ordinal());
-		writeD(_shortcut.getSlot() + (_shortcut.getPage() * 12)); // C4 Client
+		OutgoingPackets.SHORT_CUT_REGISTER.writeId(packet);
+		
+		packet.writeD(_shortcut.getType().ordinal());
+		packet.writeD(_shortcut.getSlot() + (_shortcut.getPage() * 12)); // C4 Client
 		switch (_shortcut.getType())
 		{
 			case ITEM:
 			{
-				writeD(_shortcut.getId());
-				writeD(_shortcut.getCharacterType());
-				writeD(_shortcut.getSharedReuseGroup());
-				writeD(0x00); // unknown
-				writeD(0x00); // unknown
-				writeD(0x00); // item augment id
-				writeD(0x00); // TODO: Find me, item visual id ?
+				packet.writeD(_shortcut.getId());
+				packet.writeD(_shortcut.getCharacterType());
+				packet.writeD(_shortcut.getSharedReuseGroup());
+				packet.writeD(0x00); // unknown
+				packet.writeD(0x00); // unknown
+				packet.writeD(0x00); // item augment id
+				packet.writeD(0x00); // TODO: Find me, item visual id ?
 				break;
 			}
 			case SKILL:
 			{
-				writeD(_shortcut.getId());
-				writeD(_shortcut.getLevel());
-				writeD(_shortcut.getSharedReuseGroup());
-				writeC(0x00); // C5
-				writeD(_shortcut.getCharacterType());
-				writeD(0x00); // TODO: Find me
-				writeD(0x00); // TODO: Find me
+				packet.writeD(_shortcut.getId());
+				packet.writeD(_shortcut.getLevel());
+				packet.writeD(_shortcut.getSharedReuseGroup());
+				packet.writeC(0x00); // C5
+				packet.writeD(_shortcut.getCharacterType());
+				packet.writeD(0x00); // TODO: Find me
+				packet.writeD(0x00); // TODO: Find me
 				break;
 			}
 			case ACTION:
@@ -68,9 +71,10 @@ public final class ShortCutRegister extends L2GameServerPacket
 			case RECIPE:
 			case BOOKMARK:
 			{
-				writeD(_shortcut.getId());
-				writeD(_shortcut.getCharacterType());
+				packet.writeD(_shortcut.getId());
+				packet.writeD(_shortcut.getCharacterType());
 			}
 		}
+		return true;
 	}
 }

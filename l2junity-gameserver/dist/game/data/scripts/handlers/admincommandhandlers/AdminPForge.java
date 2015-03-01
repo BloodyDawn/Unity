@@ -24,8 +24,6 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 
-import org.l2junity.gameserver.GameServer;
-import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.WorldObject;
@@ -33,10 +31,8 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.L2BoatInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.AdminForgePacket;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
-import org.mmocore.network.NioNetStringBuffer;
 
 /**
  * This class handles commands for gm to forge packets
@@ -548,7 +544,9 @@ public final class AdminPForge implements IAdminCommandHandler
 				}
 				else if (bb != null)
 				{
-					bb.flip();
+					// TODO: Implement me!
+					// @formatter:off
+					/*bb.flip();
 					L2GameClientPacket p = (L2GameClientPacket) GameServer.gameServer.getL2GamePacketHandler().handlePacket(bb, activeChar.getClient());
 					if (p != null)
 					{
@@ -557,7 +555,9 @@ public final class AdminPForge implements IAdminCommandHandler
 						{
 							ThreadPoolManager.getInstance().executePacket(p);
 						}
-					}
+					}*/
+					// @formatter:on
+					throw new UnsupportedOperationException("Not implemented yet!");
 				}
 				
 				showValuesPage(activeChar, opCodes, format);

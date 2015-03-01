@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author -Wooden-
  */
-public class ShowPCCafeCouponShowUI extends L2GameServerPacket
+public class ShowPCCafeCouponShowUI implements IGameServerPacket
 {
 	public static final ShowPCCafeCouponShowUI STATIC_PACKET = new ShowPCCafeCouponShowUI();
 	
@@ -30,9 +33,10 @@ public class ShowPCCafeCouponShowUI extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x45);
+		OutgoingPackets.SHOW_PCCAFE_COUPON_SHOW_UI.writeId(packet);
+		
+		return true;
 	}
 }

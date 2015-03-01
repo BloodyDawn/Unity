@@ -23,12 +23,14 @@ import java.util.List;
 
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * MagicSkillLaunched server packet implementation.
  * @author UnAfraid
  */
-public class MagicSkillLaunched extends L2GameServerPacket
+public class MagicSkillLaunched implements IGameServerPacket
 {
 	private final int _charObjId;
 	private final int _skillId;
@@ -56,17 +58,19 @@ public class MagicSkillLaunched extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x54);
-		writeD(0x00); // TODO: Find me!
-		writeD(_charObjId);
-		writeD(_skillId);
-		writeD(_skillLevel);
-		writeD(_targets.size());
+		OutgoingPackets.MAGIC_SKILL_LAUNCHED.writeId(packet);
+		
+		packet.writeD(0x00); // TODO: Find me!
+		packet.writeD(_charObjId);
+		packet.writeD(_skillId);
+		packet.writeD(_skillLevel);
+		packet.writeD(_targets.size());
 		for (WorldObject target : _targets)
 		{
-			writeD(target.getObjectId());
+			packet.writeD(target.getObjectId());
 		}
+		return true;
 	}
 }

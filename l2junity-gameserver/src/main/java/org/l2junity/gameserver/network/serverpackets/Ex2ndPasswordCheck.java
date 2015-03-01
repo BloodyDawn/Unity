@@ -18,11 +18,15 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author mrTJO
  */
-public class Ex2ndPasswordCheck extends L2GameServerPacket
+public class Ex2ndPasswordCheck implements IGameServerPacket
 {
+	// TODO: Enum
 	public static final int PASSWORD_NEW = 0x00;
 	public static final int PASSWORD_PROMPT = 0x01;
 	public static final int PASSWORD_OK = 0x02;
@@ -35,12 +39,12 @@ public class Ex2ndPasswordCheck extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x105);
+		OutgoingPackets.EX_2ND_PASSWORD_CHECK.writeId(packet);
 		
-		writeD(_windowType);
-		writeD(0x00);
+		packet.writeD(_windowType);
+		packet.writeD(0x00);
+		return true;
 	}
 }

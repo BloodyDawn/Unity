@@ -23,35 +23,36 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.L2BoatInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.GetOnVehicle;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.1.4.3 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestGetOnVehicle extends L2GameClientPacket
+public final class RequestGetOnVehicle implements IGameClientPacket
 {
-	private static final String _C__53_GETONVEHICLE = "[C] 53 GetOnVehicle";
-	
 	private int _boatId;
 	private Location _pos;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
 		int x, y, z;
-		_boatId = readD();
-		x = readD();
-		y = readD();
-		z = readD();
+		_boatId = packet.readD();
+		x = packet.readD();
+		y = packet.readD();
+		z = packet.readD();
 		_pos = new Location(x, y, z);
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -63,7 +64,7 @@ public final class RequestGetOnVehicle extends L2GameClientPacket
 			boat = activeChar.getBoat();
 			if (boat.getObjectId() != _boatId)
 			{
-				sendPacket(ActionFailed.STATIC_PACKET);
+				client.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
 		}
@@ -72,7 +73,7 @@ public final class RequestGetOnVehicle extends L2GameClientPacket
 			boat = BoatManager.getInstance().getBoat(_boatId);
 			if ((boat == null) || boat.isMoving() || !activeChar.isInsideRadius(boat, 1000, true, false))
 			{
-				sendPacket(ActionFailed.STATIC_PACKET);
+				client.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
 		}
@@ -84,11 +85,5 @@ public final class RequestGetOnVehicle extends L2GameClientPacket
 		activeChar.setXYZ(boat.getX(), boat.getY(), boat.getZ());
 		activeChar.setInsideZone(ZoneId.PEACE, true);
 		activeChar.revalidateZone(true);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__53_GETONVEHICLE;
 	}
 }

@@ -22,24 +22,27 @@ import org.l2junity.gameserver.enums.MatchingRoomType;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.matching.MatchingRoom;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author jeremy
  */
-public class RequestExOustFromMpccRoom extends L2GameClientPacket
+public class RequestExOustFromMpccRoom implements IGameClientPacket
 {
 	private int _objectId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_objectId = readD();
+		_objectId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		
 		if (activeChar == null)
 		{
@@ -57,11 +60,5 @@ public class RequestExOustFromMpccRoom extends L2GameClientPacket
 				room.deleteMember(player, true);
 			}
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
 	}
 }

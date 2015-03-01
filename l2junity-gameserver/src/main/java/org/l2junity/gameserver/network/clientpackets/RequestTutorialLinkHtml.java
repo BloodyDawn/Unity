@@ -22,23 +22,24 @@ import org.l2junity.gameserver.handler.BypassHandler;
 import org.l2junity.gameserver.handler.IBypassHandler;
 import org.l2junity.gameserver.model.actor.instance.L2ClassMasterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
-public class RequestTutorialLinkHtml extends L2GameClientPacket
+public class RequestTutorialLinkHtml implements IGameClientPacket
 {
-	private static final String _C__85_REQUESTTUTORIALLINKHTML = "[C] 85 RequestTutorialLinkHtml";
-	
 	private String _bypass;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_bypass = readS();
+		_bypass = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -53,11 +54,5 @@ public class RequestTutorialLinkHtml extends L2GameClientPacket
 		{
 			L2ClassMasterInstance.onTutorialLink(player, _bypass);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__85_REQUESTTUTORIALLINKHTML;
 	}
 }

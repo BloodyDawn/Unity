@@ -19,7 +19,9 @@
 package org.l2junity.gameserver.network.serverpackets.commission;
 
 import org.l2junity.gameserver.model.commission.CommissionItem;
+import org.l2junity.gameserver.network.OutgoingPackets;
 import org.l2junity.gameserver.network.serverpackets.AbstractItemPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author NosBit
@@ -36,17 +38,18 @@ public class ExResponseCommissionBuyInfo extends AbstractItemPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xF8);
-		writeD(_commissionItem != null ? 1 : 0);
+		OutgoingPackets.EX_RESPONSE_COMMISSION_BUY_INFO.writeId(packet);
+		
+		packet.writeD(_commissionItem != null ? 1 : 0);
 		if (_commissionItem != null)
 		{
-			writeQ(_commissionItem.getPricePerUnit());
-			writeQ(_commissionItem.getCommissionId());
-			writeD(0); // CommissionItemType seems client does not really need it.
-			writeCommissionItem(_commissionItem.getItemInfo());
+			packet.writeQ(_commissionItem.getPricePerUnit());
+			packet.writeQ(_commissionItem.getCommissionId());
+			packet.writeD(0); // CommissionItemType seems client does not really need it.
+			writeCommissionItem(packet, _commissionItem.getItemInfo());
 		}
+		return true;
 	}
 }

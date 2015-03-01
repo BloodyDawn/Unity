@@ -20,6 +20,8 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.TradeItem;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author daemon
@@ -36,11 +38,13 @@ public class TradeUpdate extends AbstractItemPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x81);
-		writeH(1);
-		writeH((_newCount > 0) && _item.getItem().isStackable() ? 3 : 2);
-		writeTradeItem(_item);
+		OutgoingPackets.TRADE_UPDATE.writeId(packet);
+		
+		packet.writeH(1);
+		packet.writeH((_newCount > 0) && _item.getItem().isStackable() ? 3 : 2);
+		writeTradeItem(packet, _item);
+		return true;
 	}
 }

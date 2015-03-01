@@ -23,29 +23,30 @@ import org.l2junity.gameserver.instancemanager.MailManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Message;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExReplySentPost;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Migi, DS
  */
-public final class RequestSentPost extends L2GameClientPacket
+public final class RequestSentPost implements IGameClientPacket
 {
-	private static final String _C__D0_6E_REQUESTSENTPOST = "[C] D0:6E RequestSentPost";
-	
 	private int _msgId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_msgId = readD();
+		_msgId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	public void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if ((activeChar == null) || !Config.ALLOW_MAIL)
 		{
 			return;
@@ -59,7 +60,7 @@ public final class RequestSentPost extends L2GameClientPacket
 		
 		if (!activeChar.isInsideZone(ZoneId.PEACE) && msg.hasAttachments())
 		{
-			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_RECEIVE_OR_SEND_MAIL_WITH_ATTACHED_ITEMS_IN_NON_PEACE_ZONE_REGIONS);
+			client.sendPacket(SystemMessageId.YOU_CANNOT_RECEIVE_OR_SEND_MAIL_WITH_ATTACHED_ITEMS_IN_NON_PEACE_ZONE_REGIONS);
 			return;
 		}
 		
@@ -74,18 +75,6 @@ public final class RequestSentPost extends L2GameClientPacket
 			return;
 		}
 		
-		activeChar.sendPacket(new ExReplySentPost(msg));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_6E_REQUESTSENTPOST;
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
+		client.sendPacket(new ExReplySentPost(msg));
 	}
 }

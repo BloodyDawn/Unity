@@ -20,16 +20,16 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.instancemanager.ClanEntryManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExPledgeDraftListSearch;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Sdw
  */
-public class RequestPledgeDraftListSearch extends L2GameClientPacket
+public class RequestPledgeDraftListSearch implements IGameClientPacket
 {
-	private static final String _C__D0_DC_REQUESTPLEDGEDRAFTLISTSEARCH = "[C] D0;DC RequestPledgeDraftListSearch";
-	
 	private int _levelMin;
 	private int _levelMax;
 	private int _classId;
@@ -38,20 +38,21 @@ public class RequestPledgeDraftListSearch extends L2GameClientPacket
 	private boolean _descending;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_levelMin = Util.constrain(readD(), 0, 99);
-		_levelMax = Util.constrain(readD(), 0, 99);
-		_classId = readD();
-		_query = readS();
-		_sortBy = readD();
-		_descending = readD() == 2;
+		_levelMin = Util.constrain(packet.readD(), 0, 99);
+		_levelMax = Util.constrain(packet.readD(), 0, 99);
+		_classId = packet.readD();
+		_query = packet.readS();
+		_sortBy = packet.readD();
+		_descending = packet.readD() == 2;
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		
 		if (activeChar == null)
 		{
@@ -60,18 +61,11 @@ public class RequestPledgeDraftListSearch extends L2GameClientPacket
 		
 		if (_query.isEmpty())
 		{
-			activeChar.sendPacket(new ExPledgeDraftListSearch(ClanEntryManager.getInstance().getSortedWaitingList(_levelMin, _levelMax, _classId, _sortBy, _descending)));
+			client.sendPacket(new ExPledgeDraftListSearch(ClanEntryManager.getInstance().getSortedWaitingList(_levelMin, _levelMax, _classId, _sortBy, _descending)));
 		}
 		else
 		{
-			activeChar.sendPacket(new ExPledgeDraftListSearch(ClanEntryManager.getInstance().queryWaitingListByName(_query.toLowerCase())));
+			client.sendPacket(new ExPledgeDraftListSearch(ClanEntryManager.getInstance().queryWaitingListByName(_query.toLowerCase())));
 		}
 	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_DC_REQUESTPLEDGEDRAFTLISTSEARCH;
-	}
-	
 }

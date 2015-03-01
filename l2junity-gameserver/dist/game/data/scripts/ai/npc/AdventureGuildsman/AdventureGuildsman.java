@@ -88,7 +88,7 @@ public final class AdventureGuildsman extends AbstractNpcAI
 			}
 			case "questList":
 			{
-				player.sendPacket(new ExShowQuestInfo());
+				player.sendPacket(ExShowQuestInfo.STATIC_PACKET);
 			}
 		}
 		return htmltext;

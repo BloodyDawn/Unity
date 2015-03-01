@@ -21,25 +21,27 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.network.PacketReader;
 
-public final class AllyLeave extends L2GameClientPacket
+public final class AllyLeave implements IGameClientPacket
 {
-	private static final String _C__8E_ALLYLEAVE = "[C] 8E AllyLeave";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
 		}
+		
 		if (player.getClan() == null)
 		{
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_A_CLAN_MEMBER_AND_CANNOT_PERFORM_THIS_ACTION);
@@ -70,11 +72,5 @@ public final class AllyLeave extends L2GameClientPacket
 		clan.updateClanInDB();
 		
 		player.sendPacket(SystemMessageId.YOU_HAVE_WITHDRAWN_FROM_THE_ALLIANCE);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__8E_ALLYLEAVE;
 	}
 }

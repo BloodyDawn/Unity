@@ -19,11 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.Summon;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author KenM
  */
-public class ExPartyPetWindowUpdate extends L2GameServerPacket
+public class ExPartyPetWindowUpdate implements IGameServerPacket
 {
 	private final Summon _summon;
 	
@@ -33,17 +35,18 @@ public class ExPartyPetWindowUpdate extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x19);
-		writeD(_summon.getObjectId());
-		writeD(_summon.getTemplate().getDisplayId() + 1000000);
-		writeC(_summon.getSummonType());
-		writeD(_summon.getOwner().getObjectId());
-		writeD((int) _summon.getCurrentHp());
-		writeD(_summon.getMaxHp());
-		writeD((int) _summon.getCurrentMp());
-		writeD(_summon.getMaxMp());
+		OutgoingPackets.EX_PARTY_PET_WINDOW_UPDATE.writeId(packet);
+		
+		packet.writeD(_summon.getObjectId());
+		packet.writeD(_summon.getTemplate().getDisplayId() + 1000000);
+		packet.writeC(_summon.getSummonType());
+		packet.writeD(_summon.getOwner().getObjectId());
+		packet.writeD((int) _summon.getCurrentHp());
+		packet.writeD(_summon.getMaxHp());
+		packet.writeD((int) _summon.getCurrentMp());
+		packet.writeD(_summon.getMaxMp());
+		return true;
 	}
 }

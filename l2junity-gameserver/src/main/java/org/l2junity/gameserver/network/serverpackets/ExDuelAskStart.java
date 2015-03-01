@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author KenM
  */
-public class ExDuelAskStart extends L2GameServerPacket
+public class ExDuelAskStart implements IGameServerPacket
 {
 	private final String _requestorName;
 	private final int _partyDuel;
@@ -33,12 +36,12 @@ public class ExDuelAskStart extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x4D);
+		OutgoingPackets.EX_DUEL_ASK_START.writeId(packet);
 		
-		writeS(_requestorName);
-		writeD(_partyDuel);
+		packet.writeS(_requestorName);
+		packet.writeD(_partyDuel);
+		return true;
 	}
 }

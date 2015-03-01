@@ -18,14 +18,16 @@
  */
 package org.l2junity.gameserver.network.serverpackets.shuttle;
 
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2ShuttleInstance;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class ExShuttleGetOff extends L2GameServerPacket
+public class ExShuttleGetOff implements IGameServerPacket
 {
 	private final int _playerObjectId;
 	private final int _shuttleObjectId;
@@ -43,14 +45,15 @@ public class ExShuttleGetOff extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xCD);
-		writeD(_playerObjectId);
-		writeD(_shuttleObjectId);
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
+		OutgoingPackets.EX_SUTTLE_GET_OFF.writeId(packet);
+		
+		packet.writeD(_playerObjectId);
+		packet.writeD(_shuttleObjectId);
+		packet.writeD(_x);
+		packet.writeD(_y);
+		packet.writeD(_z);
+		return true;
 	}
 }

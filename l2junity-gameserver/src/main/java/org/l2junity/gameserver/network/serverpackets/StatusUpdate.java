@@ -21,9 +21,12 @@ package org.l2junity.gameserver.network.serverpackets;
 import java.util.ArrayList;
 
 import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public final class StatusUpdate extends L2GameServerPacket
+public final class StatusUpdate implements IGameServerPacket
 {
+	// TODO: Enum
 	public static final int LEVEL = 0x01;
 	public static final int EXP = 0x02;
 	public static final int STR = 0x03;
@@ -100,17 +103,19 @@ public final class StatusUpdate extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x18);
-		writeD(_objectId); // casterId
-		writeD(0x00);
-		writeC(0x00);
-		writeC(_attributes.size());
+		OutgoingPackets.STATUS_UPDATE.writeId(packet);
+		
+		packet.writeD(_objectId); // casterId
+		packet.writeD(0x00);
+		packet.writeC(0x00);
+		packet.writeC(_attributes.size());
 		for (Attribute temp : _attributes)
 		{
-			writeC(temp.id);
-			writeD(temp.value);
+			packet.writeC(temp.id);
+			packet.writeD(temp.value);
 		}
+		return true;
 	}
 }

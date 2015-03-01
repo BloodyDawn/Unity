@@ -18,33 +18,24 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExSendManorList;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author l3x
  */
-public class RequestManorList extends L2GameClientPacket
+public class RequestManorList implements IGameClientPacket
 {
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		sendPacket(new ExSendManorList());
-	}
-	
-	@Override
-	public String getType()
-	{
-		return "[C] D0:01 RequestManorList";
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
+		client.sendPacket(ExSendManorList.STATIC_PACKET);
 	}
 }

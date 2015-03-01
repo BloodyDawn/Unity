@@ -21,37 +21,33 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.gameserver.handler.BypassHandler;
 import org.l2junity.gameserver.handler.IBypassHandler;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
-public class RequestTutorialPassCmdToServer extends L2GameClientPacket
+public class RequestTutorialPassCmdToServer implements IGameClientPacket
 {
-	private static final String _C__86_REQUESTTUTORIALPASSCMDTOSERVER = "[C] 86 RequestTutorialPassCmdToServer";
-	
 	private String _bypass = null;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_bypass = readS();
+		_bypass = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
 		}
+		
 		final IBypassHandler handler = BypassHandler.getInstance().getHandler(_bypass);
 		if (handler != null)
 		{
 			handler.useBypass(_bypass, player, null);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__86_REQUESTTUTORIALPASSCMDTOSERVER;
 	}
 }

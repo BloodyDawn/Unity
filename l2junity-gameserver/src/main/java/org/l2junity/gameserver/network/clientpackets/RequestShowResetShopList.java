@@ -22,31 +22,32 @@ import org.l2junity.gameserver.data.xml.impl.BeautyShopData;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.beautyshop.BeautyData;
 import org.l2junity.gameserver.model.beautyshop.BeautyItem;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExResponseBeautyRegistReset;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Sdw
  */
-public class RequestShowResetShopList extends L2GameClientPacket
+public class RequestShowResetShopList implements IGameClientPacket
 {
-	private static final String _C__D0_CD_REQUESTSHOWRESETSHOPLIST = "[C] D0;CD RequestShowResetShopList";
-	
 	private int _hairId;
 	private int _faceId;
 	private int _colorId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_hairId = readD();
-		_faceId = readD();
-		_colorId = readD();
+		_hairId = packet.readD();
+		_faceId = packet.readD();
+		_colorId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -111,11 +112,5 @@ public class RequestShowResetShopList extends L2GameClientPacket
 		player.getVariables().remove("visualFaceId");
 		
 		player.sendPacket(new ExResponseBeautyRegistReset(player, ExResponseBeautyRegistReset.RESTORE, ExResponseBeautyRegistReset.SUCCESS));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_CD_REQUESTSHOWRESETSHOPLIST;
 	}
 }

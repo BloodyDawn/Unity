@@ -19,12 +19,14 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * ExVoteSystemInfo packet implementation.
  * @author Gnacik
  */
-public class ExVoteSystemInfo extends L2GameServerPacket
+public class ExVoteSystemInfo implements IGameServerPacket
 {
 	private final int _recomLeft;
 	private final int _recomHave;
@@ -42,14 +44,15 @@ public class ExVoteSystemInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xCA);
-		writeD(_recomLeft);
-		writeD(_recomHave);
-		writeD(_bonusTime);
-		writeD(_bonusVal);
-		writeD(_bonusType);
+		OutgoingPackets.EX_VOTE_SYSTEM_INFO.writeId(packet);
+		
+		packet.writeD(_recomLeft);
+		packet.writeD(_recomHave);
+		packet.writeD(_bonusTime);
+		packet.writeD(_bonusVal);
+		packet.writeD(_bonusType);
+		return true;
 	}
 }

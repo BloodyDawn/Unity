@@ -33,64 +33,59 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.buylist.L2BuyList;
 import org.l2junity.gameserver.model.holders.UniqueItemHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.ExBuySellList;
 import org.l2junity.gameserver.network.serverpackets.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * RequestSellItem client packet class.
  */
-public final class RequestSellItem extends L2GameClientPacket
+public final class RequestSellItem implements IGameClientPacket
 {
-	private static final String _C__37_REQUESTSELLITEM = "[C] 37 RequestSellItem";
-	
 	private static final int BATCH_LENGTH = 16;
 	
 	private int _listId;
 	private List<UniqueItemHolder> _items = null;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_listId = readD();
-		int size = readD();
-		if ((size <= 0) || (size > Config.MAX_ITEM_IN_PACKET) || ((size * BATCH_LENGTH) != _buf.remaining()))
+		_listId = packet.readD();
+		int size = packet.readD();
+		if ((size <= 0) || (size > Config.MAX_ITEM_IN_PACKET) || ((size * BATCH_LENGTH) != packet.getReadableBytes()))
 		{
-			return;
+			return false;
 		}
 		
 		_items = new ArrayList<>(size);
 		for (int i = 0; i < size; i++)
 		{
-			int objectId = readD();
-			int itemId = readD();
-			long count = readQ();
+			int objectId = packet.readD();
+			int itemId = packet.readD();
+			long count = packet.readQ();
 			if ((objectId < 1) || (itemId < 1) || (count < 1))
 			{
 				_items = null;
-				return;
+				return false;
 			}
 			_items.add(new UniqueItemHolder(itemId, objectId, count));
 		}
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		processSell();
-	}
-	
-	protected void processSell()
-	{
-		PlayerInstance player = getClient().getActiveChar();
-		
+		PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
 		}
 		
-		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("buy"))
+		if (!client.getFloodProtectors().getTransaction().tryPerformAction("buy"))
 		{
 			player.sendMessage("You are buying too fast.");
 			return;
@@ -98,14 +93,14 @@ public final class RequestSellItem extends L2GameClientPacket
 		
 		if (_items == null)
 		{
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
 		// Alt game - Karma punishment
 		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && (player.getKarma() > 0))
 		{
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
@@ -115,7 +110,7 @@ public final class RequestSellItem extends L2GameClientPacket
 		{
 			if ((target == null) || (!player.isInsideRadius(target, INTERACTION_DISTANCE, true, false)) || (player.getInstanceId() != target.getInstanceId()))
 			{
-				sendPacket(ActionFailed.STATIC_PACKET);
+				client.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
 			if (target instanceof L2MerchantInstance)
@@ -124,14 +119,14 @@ public final class RequestSellItem extends L2GameClientPacket
 			}
 			else
 			{
-				sendPacket(ActionFailed.STATIC_PACKET);
+				client.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
 		}
 		
 		if ((merchant == null) && !player.isGM())
 		{
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
@@ -146,7 +141,7 @@ public final class RequestSellItem extends L2GameClientPacket
 		{
 			if (!buyList.isNpcAllowed(merchant.getId()))
 			{
-				sendPacket(ActionFailed.STATIC_PACKET);
+				client.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
 		}
@@ -178,16 +173,11 @@ public final class RequestSellItem extends L2GameClientPacket
 				item = player.getInventory().destroyItem("Sell", i.getObjectId(), i.getCount(), player, merchant);
 			}
 		}
+		
 		player.addAdena("Sell", totalPrice, merchant, false);
 		
 		// Update current load as well
-		player.sendPacket(new ExUserInfoInvenWeight(player));
-		player.sendPacket(new ExBuySellList(player, true));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__37_REQUESTSELLITEM;
+		client.sendPacket(new ExUserInfoInvenWeight(player));
+		client.sendPacket(new ExBuySellList(player, true));
 	}
 }

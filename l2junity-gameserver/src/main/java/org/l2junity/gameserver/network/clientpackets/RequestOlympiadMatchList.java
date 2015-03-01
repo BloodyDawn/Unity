@@ -21,41 +21,36 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.gameserver.handler.BypassHandler;
 import org.l2junity.gameserver.handler.IBypassHandler;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * format ch c: (id) 0xD0 h: (subid) 0x13
  * @author -Wooden-
  */
-public final class RequestOlympiadMatchList extends L2GameClientPacket
+public final class RequestOlympiadMatchList implements IGameClientPacket
 {
-	private static final String _C__D0_2E_REQUESTOLYMPIADMATCHLIST = "[C] D0:2E RequestOlympiadMatchList";
 	private static final String COMMAND = "arenalist";
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// trigger packet
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if ((activeChar == null) || !activeChar.inObserverMode())
 		{
 			return;
 		}
 		
-		IBypassHandler handler = BypassHandler.getInstance().getHandler(COMMAND);
+		final IBypassHandler handler = BypassHandler.getInstance().getHandler(COMMAND);
 		if (handler != null)
 		{
 			handler.useBypass(COMMAND, activeChar, null);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_2E_REQUESTOLYMPIADMATCHLIST;
 	}
 }

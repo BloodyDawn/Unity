@@ -19,29 +19,32 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.PledgeReceiveWarList;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format: (ch) dd
  * @author -Wooden-
  */
-public final class RequestPledgeWarList extends L2GameClientPacket
+public final class RequestPledgeWarList implements IGameClientPacket
 {
 	@SuppressWarnings("unused")
 	private int _page;
 	private int _tab;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_page = readD();
-		_tab = readD();
+		_page = packet.readD();
+		_tab = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;

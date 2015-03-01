@@ -23,9 +23,11 @@ import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.instancemanager.PetitionManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.CreatureSay;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.network.PacketReader;
 
 /**
  * <p>
@@ -36,22 +38,22 @@ import org.l2junity.gameserver.network.serverpackets.SystemMessage;
  * </p>
  * @author -Wooden-, TempyIncursion
  */
-public final class RequestPetitionCancel extends L2GameClientPacket
+public final class RequestPetitionCancel implements IGameClientPacket
 {
-	private static final String _C__8A_REQUEST_PETITIONCANCEL = "[C] 8A RequestPetitionCancel";
 	
 	// private int _unknown;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// _unknown = readD(); This is pretty much a trigger packet.
+		// _unknown = packet.readD(); This is pretty much a trigger packet.
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -94,11 +96,5 @@ public final class RequestPetitionCancel extends L2GameClientPacket
 				activeChar.sendPacket(SystemMessageId.YOU_HAVE_NOT_SUBMITTED_A_PETITION);
 			}
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__8A_REQUEST_PETITIONCANCEL;
 	}
 }

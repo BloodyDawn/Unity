@@ -18,12 +18,15 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * Special event info packet.
  * @author Kerberos
  * @author mrTJO
  */
-public class ExBrBroadcastEventState extends L2GameServerPacket
+public class ExBrBroadcastEventState implements IGameServerPacket
 {
 	private final int _eventId;
 	private final int _eventState;
@@ -61,18 +64,19 @@ public class ExBrBroadcastEventState extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xBD);
-		writeD(_eventId);
-		writeD(_eventState);
-		writeD(_param0);
-		writeD(_param1);
-		writeD(_param2);
-		writeD(_param3);
-		writeD(_param4);
-		writeS(_param5);
-		writeS(_param6);
+		OutgoingPackets.EX_BR_BROADCAST_EVENT_STATE.writeId(packet);
+		
+		packet.writeD(_eventId);
+		packet.writeD(_eventState);
+		packet.writeD(_param0);
+		packet.writeD(_param1);
+		packet.writeD(_param2);
+		packet.writeD(_param3);
+		packet.writeD(_param4);
+		packet.writeS(_param5);
+		packet.writeS(_param6);
+		return true;
 	}
 }

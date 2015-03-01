@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author devScarlet, mrTJO
  */
-public class ExPlayScene extends L2GameServerPacket
+public class ExPlayScene implements IGameServerPacket
 {
 	public static final ExPlayScene STATIC_PACKET = new ExPlayScene();
 	
@@ -30,9 +33,10 @@ public class ExPlayScene extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x5D);
+		OutgoingPackets.EX_PLAY_SCENE.writeId(packet);
+		
+		return true;
 	}
 }

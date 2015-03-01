@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author Gnacik
  */
-public class ExRequestChangeNicknameColor extends L2GameServerPacket
+public class ExRequestChangeNicknameColor implements IGameServerPacket
 {
 	private final int _itemObjectId;
 	
@@ -31,10 +34,11 @@ public class ExRequestChangeNicknameColor extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x84);
-		writeD(_itemObjectId);
+		OutgoingPackets.EX_CHANGE_NICKNAME_NCOLOR.writeId(packet);
+		
+		packet.writeD(_itemObjectId);
+		return true;
 	}
 }

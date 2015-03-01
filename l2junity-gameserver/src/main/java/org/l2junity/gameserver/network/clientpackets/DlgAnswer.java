@@ -29,31 +29,33 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerDlgAns
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.holders.DoorRequestHolder;
 import org.l2junity.gameserver.model.holders.SummonRequestHolder;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.util.GMAudit;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Dezmond_snz
  */
-public final class DlgAnswer extends L2GameClientPacket
+public final class DlgAnswer implements IGameClientPacket
 {
-	private static final String _C__C6_DLGANSWER = "[C] C6 DlgAnswer";
 	private int _messageId;
 	private int _answer;
 	private int _requesterId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_messageId = readD();
-		_answer = readD();
-		_requesterId = readD();
+		_messageId = packet.readD();
+		_answer = packet.readD();
+		_requesterId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	public void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -122,11 +124,5 @@ public final class DlgAnswer extends L2GameClientPacket
 				holder.getDoor().closeMe();
 			}
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__C6_DLGANSWER;
 	}
 }

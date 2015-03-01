@@ -20,26 +20,27 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * This packet is received from client when a party leader requests to change the leadership to another player in his party.
  */
-public final class RequestChangePartyLeader extends L2GameClientPacket
+public final class RequestChangePartyLeader implements IGameClientPacket
 {
-	private static final String _C__D0_0C_REQUESTCHANGEPARTYLEADER = "[C] D0:0C RequestChangePartyLeader";
-	
 	private String _name;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_name = readS();
+		_name = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -50,11 +51,5 @@ public final class RequestChangePartyLeader extends L2GameClientPacket
 		{
 			party.changePartyLeader(_name);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_0C_REQUESTCHANGEPARTYLEADER;
 	}
 }

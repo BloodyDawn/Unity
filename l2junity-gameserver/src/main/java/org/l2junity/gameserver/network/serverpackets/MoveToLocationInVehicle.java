@@ -20,11 +20,13 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Maktakien
  */
-public class MoveToLocationInVehicle extends L2GameServerPacket
+public class MoveToLocationInVehicle implements IGameServerPacket
 {
 	private final int _charObjId;
 	private final int _boatId;
@@ -45,16 +47,18 @@ public class MoveToLocationInVehicle extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x7e);
-		writeD(_charObjId);
-		writeD(_boatId);
-		writeD(_destination.getX());
-		writeD(_destination.getY());
-		writeD(_destination.getZ());
-		writeD(_origin.getX());
-		writeD(_origin.getY());
-		writeD(_origin.getZ());
+		OutgoingPackets.MOVE_TO_LOCATION_IN_VEHICLE.writeId(packet);
+		
+		packet.writeD(_charObjId);
+		packet.writeD(_boatId);
+		packet.writeD(_destination.getX());
+		packet.writeD(_destination.getY());
+		packet.writeD(_destination.getZ());
+		packet.writeD(_origin.getX());
+		packet.writeD(_origin.getY());
+		packet.writeD(_origin.getZ());
+		return true;
 	}
 }

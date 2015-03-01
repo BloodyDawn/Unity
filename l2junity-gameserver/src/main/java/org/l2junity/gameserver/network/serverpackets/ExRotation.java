@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author JIV
  */
-public class ExRotation extends L2GameServerPacket
+public class ExRotation implements IGameServerPacket
 {
 	private final int _charId, _heading;
 	
@@ -32,11 +35,12 @@ public class ExRotation extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xC2);
-		writeD(_charId);
-		writeD(_heading);
+		OutgoingPackets.EX_ROTATION.writeId(packet);
+		
+		packet.writeD(_charId);
+		packet.writeD(_heading);
+		return true;
 	}
 }

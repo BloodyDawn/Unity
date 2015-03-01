@@ -22,26 +22,29 @@ import java.util.logging.Level;
 
 import org.l2junity.gameserver.data.xml.impl.PrimeShopData;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.primeshop.ExBRProductList;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Gnacik, UnAfraid
  */
-public final class RequestBRProductList extends L2GameClientPacket
+public final class RequestBRProductList implements IGameClientPacket
 {
 	private int _type;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_type = readD();
+		_type = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player != null)
 		{
 			
@@ -67,11 +70,5 @@ public final class RequestBRProductList extends L2GameClientPacket
 				}
 			}
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
 	}
 }

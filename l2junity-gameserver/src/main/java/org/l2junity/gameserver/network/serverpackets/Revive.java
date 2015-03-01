@@ -19,8 +19,10 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public final class Revive extends L2GameServerPacket
+public final class Revive implements IGameServerPacket
 {
 	private final int _objectId;
 	
@@ -30,9 +32,11 @@ public final class Revive extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x01);
-		writeD(_objectId);
+		OutgoingPackets.REVIVE.writeId(packet);
+		
+		packet.writeD(_objectId);
+		return true;
 	}
 }

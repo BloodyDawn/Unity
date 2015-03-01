@@ -43,7 +43,7 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.AbstractNpcInfo.TrapInfo;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.taskmanager.DecayTaskManager;
 
@@ -92,7 +92,7 @@ public final class L2TrapInstance extends Npc
 	}
 	
 	@Override
-	public void broadcastPacket(L2GameServerPacket mov)
+	public void broadcastPacket(IGameServerPacket mov)
 	{
 		for (PlayerInstance player : getKnownList().getKnownPlayers().values())
 		{
@@ -104,7 +104,7 @@ public final class L2TrapInstance extends Npc
 	}
 	
 	@Override
-	public void broadcastPacket(L2GameServerPacket mov, int radiusInKnownlist)
+	public void broadcastPacket(IGameServerPacket mov, int radiusInKnownlist)
 	{
 		for (PlayerInstance player : getKnownList().getKnownPlayers().values())
 		{

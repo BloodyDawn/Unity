@@ -21,8 +21,10 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.CrystalType;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExPutIntensiveResultForVariationMake;
+import org.l2junity.network.PacketReader;
 
 /**
  * Fromat(ch) dd
@@ -30,22 +32,21 @@ import org.l2junity.gameserver.network.serverpackets.ExPutIntensiveResultForVari
  */
 public class RequestConfirmRefinerItem extends AbstractRefinePacket
 {
-	private static final String _C__D0_27_REQUESTCONFIRMREFINERITEM = "[C] D0:27 RequestConfirmRefinerItem";
-	
 	private int _targetItemObjId;
 	private int _refinerItemObjId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_targetItemObjId = readD();
-		_refinerItemObjId = readD();
+		_targetItemObjId = packet.readD();
+		_refinerItemObjId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -77,11 +78,4 @@ public class RequestConfirmRefinerItem extends AbstractRefinePacket
 		
 		activeChar.sendPacket(new ExPutIntensiveResultForVariationMake(_refinerItemObjId, refinerItemId, gemStoneId, gemStoneCount));
 	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_27_REQUESTCONFIRMREFINERITEM;
-	}
-	
 }

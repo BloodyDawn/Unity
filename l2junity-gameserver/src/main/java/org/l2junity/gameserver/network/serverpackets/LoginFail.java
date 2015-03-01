@@ -18,8 +18,12 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class LoginFail extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class LoginFail implements IGameServerPacket
 {
+	// TODO: Enum
 	public static final int NO_TEXT = 0;
 	public static final int SYSTEM_ERROR_LOGIN_LATER = 1;
 	public static final int PASSWORD_DOES_NOT_MATCH_THIS_ACCOUNT = 2;
@@ -43,9 +47,11 @@ public class LoginFail extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x0A);
-		writeD(_reason);
+		OutgoingPackets.LOGIN_FAIL.writeId(packet);
+		
+		packet.writeD(_reason);
+		return true;
 	}
 }

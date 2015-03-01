@@ -25,63 +25,64 @@ import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.model.TradeList;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.PrivateStoreManageListBuy;
 import org.l2junity.gameserver.network.serverpackets.PrivateStoreMsgBuy;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.2.2.1.2.5 $ $Date: 2005/03/27 15:29:30 $ CPU Disasm Packets: ddhhQQ cddb
  */
-public final class SetPrivateStoreListBuy extends L2GameClientPacket
+public final class SetPrivateStoreListBuy implements IGameClientPacket
 {
-	private static final String _C__9A_SETPRIVATESTORELISTBUY = "[C] 9A SetPrivateStoreListBuy";
-	
 	private static final int BATCH_LENGTH = 44; // length of the one item
 	
 	private Item[] _items = null;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		int count = readD();
-		if ((count < 1) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
+		int count = packet.readD();
+		if ((count < 1) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != packet.getReadableBytes()))
 		{
-			return;
+			return false;
 		}
 		
 		_items = new Item[count];
 		for (int i = 0; i < count; i++)
 		{
-			int itemId = readD();
+			int itemId = packet.readD();
 			
-			readH(); // TODO analyse this
-			readH(); // TODO analyse this
+			packet.readH(); // TODO analyse this
+			packet.readH(); // TODO analyse this
 			
-			long cnt = readQ();
-			long price = readQ();
+			long cnt = packet.readQ();
+			long price = packet.readQ();
 			
 			if ((itemId < 1) || (cnt < 1) || (price < 0))
 			{
 				_items = null;
-				return;
+				return false;
 			}
-			readD(); // Unk
-			readD(); // Unk
-			readD(); // Unk
-			readD(); // Unk
+			packet.readD(); // Unk
+			packet.readD(); // Unk
+			packet.readD(); // Unk
+			packet.readD(); // Unk
 			
 			_items[i] = new Item(itemId, cnt, price);
 		}
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance player = getClient().getActiveChar();
+		PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -186,11 +187,5 @@ public final class SetPrivateStoreListBuy extends L2GameClientPacket
 		{
 			return _count * _price;
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__9A_SETPRIVATESTORELISTBUY;
 	}
 }

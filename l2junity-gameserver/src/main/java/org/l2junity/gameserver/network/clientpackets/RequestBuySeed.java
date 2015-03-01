@@ -36,80 +36,84 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.items.L2Item;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author l3x
  */
-public class RequestBuySeed extends L2GameClientPacket
+public class RequestBuySeed implements IGameClientPacket
 {
 	private static final int BATCH_LENGTH = 12; // length of the one item
 	private int _manorId;
 	private List<ItemHolder> _items = null;
 	
 	@Override
-	protected final void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_manorId = readD();
-		final int count = readD();
-		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
+		_manorId = packet.readD();
+		final int count = packet.readD();
+		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != packet.getReadableBytes()))
 		{
-			return;
+			return false;
 		}
 		
 		_items = new ArrayList<>(count);
 		for (int i = 0; i < count; i++)
 		{
-			final int itemId = readD();
-			final long cnt = readQ();
+			final int itemId = packet.readD();
+			final long cnt = packet.readQ();
 			if ((cnt < 1) || (itemId < 1))
 			{
 				_items = null;
-				return;
+				return false;
 			}
 			_items.add(new ItemHolder(itemId, cnt));
 		}
+		return true;
 	}
 	
 	@Override
-	protected final void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
 		}
-		else if (!getClient().getFloodProtectors().getManor().tryPerformAction("BuySeed"))
+		else if (!client.getFloodProtectors().getManor().tryPerformAction("BuySeed"))
 		{
 			player.sendMessage("You are buying seeds too fast!");
 			return;
 		}
 		else if (_items == null)
 		{
-			sendActionFailed();
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
 		final CastleManorManager manor = CastleManorManager.getInstance();
 		if (manor.isUnderMaintenance())
 		{
-			sendActionFailed();
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
 		final Castle castle = CastleManager.getInstance().getCastleById(_manorId);
 		if (castle == null)
 		{
-			sendActionFailed();
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
 		final Npc manager = player.getLastFolkNPC();
 		if (!(manager instanceof L2MerchantInstance) || !manager.canInteract(player) || (manager.getTemplate().getParameters().getInt("manor_id", -1) != _manorId))
 		{
-			sendActionFailed();
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
@@ -123,7 +127,7 @@ public class RequestBuySeed extends L2GameClientPacket
 			final SeedProduction sp = manor.getSeedProduct(_manorId, ih.getId(), false);
 			if ((sp == null) || (sp.getPrice() <= 0) || (sp.getAmount() < ih.getCount()) || ((MAX_ADENA / ih.getCount()) < sp.getPrice()))
 			{
-				sendActionFailed();
+				client.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
 			
@@ -132,7 +136,7 @@ public class RequestBuySeed extends L2GameClientPacket
 			if (totalPrice > MAX_ADENA)
 			{
 				Util.handleIllegalPlayerAction(player, "Warning!! Character " + player.getName() + " of account " + player.getAccountName() + " tried to purchase over " + MAX_ADENA + " adena worth of goods.", Config.DEFAULT_PUNISH);
-				sendActionFailed();
+				client.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
 			
@@ -200,11 +204,5 @@ public class RequestBuySeed extends L2GameClientPacket
 				manor.updateCurrentProduction(_manorId, _productInfo.values());
 			}
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return "[C] C5 RequestBuySeed";
 	}
 }

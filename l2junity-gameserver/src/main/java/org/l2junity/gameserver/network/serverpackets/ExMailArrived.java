@@ -18,11 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * (just a trigger)
  * @author -Wooden-
  */
-public class ExMailArrived extends L2GameServerPacket
+public class ExMailArrived implements IGameServerPacket
 {
 	public static final ExMailArrived STATIC_PACKET = new ExMailArrived();
 	
@@ -31,9 +34,10 @@ public class ExMailArrived extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x2E);
+		OutgoingPackets.EX_MAIL_ARRIVED.writeId(packet);
+		
+		return true;
 	}
 }

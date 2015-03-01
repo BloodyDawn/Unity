@@ -23,6 +23,8 @@ import java.util.List;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 public final class WareHouseDepositList extends AbstractItemPacket
 {
@@ -65,25 +67,27 @@ public final class WareHouseDepositList extends AbstractItemPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x41);
-		writeH(_whType);
-		writeQ(_playerAdena);
-		writeD(_invSize);
-		writeH(_itemsStackable.size());
+		OutgoingPackets.WAREHOUSE_DEPOSIT_LIST.writeId(packet);
+		
+		packet.writeH(_whType);
+		packet.writeQ(_playerAdena);
+		packet.writeD(_invSize);
+		packet.writeH(_itemsStackable.size());
 		
 		for (int itemId : _itemsStackable)
 		{
-			writeD(itemId);
+			packet.writeD(itemId);
 		}
 		
-		writeH(_items.size());
+		packet.writeH(_items.size());
 		
 		for (ItemInstance item : _items)
 		{
-			writeItem(item);
-			writeD(item.getObjectId());
+			writeItem(packet, item);
+			packet.writeD(item.getObjectId());
 		}
+		return true;
 	}
 }

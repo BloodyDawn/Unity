@@ -29,51 +29,52 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.buylist.L2BuyList;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.ExBuySellList;
 import org.l2junity.gameserver.network.serverpackets.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * RequestRefundItem client packet class.
  */
-public final class RequestRefundItem extends L2GameClientPacket
+public final class RequestRefundItem implements IGameClientPacket
 {
-	private static final String _C__D0_75_REQUESTREFUNDITEM = "[C] D0:75 RequestRefundItem";
-	
 	private static final int BATCH_LENGTH = 4; // length of the one item
 	
 	private int _listId;
 	private int[] _items = null;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_listId = readD();
-		final int count = readD();
-		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
+		_listId = packet.readD();
+		final int count = packet.readD();
+		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != packet.getReadableBytes()))
 		{
-			return;
+			return false;
 		}
 		
 		_items = new int[count];
 		for (int i = 0; i < count; i++)
 		{
-			_items[i] = readD();
+			_items[i] = packet.readD();
 		}
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
 		}
 		
-		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("refund"))
+		if (!client.getFloodProtectors().getTransaction().tryPerformAction("refund"))
 		{
 			player.sendMessage("You are using refund too fast.");
 			return;
@@ -81,20 +82,20 @@ public final class RequestRefundItem extends L2GameClientPacket
 		
 		if (_items == null)
 		{
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
 		if (!player.hasRefund())
 		{
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
 		WorldObject target = player.getTarget();
 		if (!player.isGM() && ((target == null) || !(target instanceof L2MerchantInstance) || (player.getInstanceId() != target.getInstanceId()) || !player.isInsideRadius(target, INTERACTION_DISTANCE, true, false)))
 		{
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
@@ -105,13 +106,13 @@ public final class RequestRefundItem extends L2GameClientPacket
 		}
 		else if (!player.isGM())
 		{
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
 		if (merchant == null)
 		{
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
@@ -124,7 +125,7 @@ public final class RequestRefundItem extends L2GameClientPacket
 		
 		if (!buyList.isNpcAllowed(merchant.getId()))
 		{
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
@@ -183,22 +184,22 @@ public final class RequestRefundItem extends L2GameClientPacket
 		
 		if ((weight > Integer.MAX_VALUE) || (weight < 0) || !player.getInventory().validateWeight((int) weight))
 		{
-			player.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_WEIGHT_LIMIT);
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_WEIGHT_LIMIT);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
 		if ((slots > Integer.MAX_VALUE) || (slots < 0) || !player.getInventory().validateCapacity((int) slots))
 		{
-			player.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL);
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(SystemMessageId.YOUR_INVENTORY_IS_FULL);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
 		if ((adena < 0) || !player.reduceAdena("Refund", adena, player.getLastFolkNPC(), false))
 		{
-			player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA);
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
@@ -213,13 +214,7 @@ public final class RequestRefundItem extends L2GameClientPacket
 		}
 		
 		// Update current load status on player
-		player.sendPacket(new ExUserInfoInvenWeight(player));
-		player.sendPacket(new ExBuySellList(player, true));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_75_REQUESTREFUNDITEM;
+		client.sendPacket(new ExUserInfoInvenWeight(player));
+		client.sendPacket(new ExBuySellList(player, true));
 	}
 }

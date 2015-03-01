@@ -18,26 +18,23 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
+
 /**
  * @author zabbix Lets drink to code!
  */
-public final class DummyPacket extends L2GameClientPacket
+public final class DummyPacket implements IGameClientPacket
 {
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		
+		return false;
 	}
 	
 	@Override
-	public void runImpl()
+	public void run(L2GameClient client)
 	{
 		
-	}
-	
-	@Override
-	public String getType()
-	{
-		return "DummyPacket";
 	}
 }

@@ -19,11 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class ExTacticalSign extends L2GameServerPacket
+public class ExTacticalSign implements IGameServerPacket
 {
 	private final Creature _target;
 	private final int _tokenId;
@@ -35,11 +37,12 @@ public class ExTacticalSign extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x100);
-		writeD(_target.getObjectId());
-		writeD(_tokenId);
+		OutgoingPackets.EX_TACTICAL_SIGN.writeId(packet);
+		
+		packet.writeD(_target.getObjectId());
+		packet.writeD(_tokenId);
+		return true;
 	}
 }

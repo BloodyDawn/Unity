@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public final class TutorialShowQuestionMark extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public final class TutorialShowQuestionMark implements IGameServerPacket
 {
 	private final int _markId;
 	
@@ -28,10 +31,11 @@ public final class TutorialShowQuestionMark extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xA7);
-		writeD(_markId);
+		OutgoingPackets.TUTORIAL_SHOW_QUESTION_MARK.writeId(packet);
 		
+		packet.writeD(_markId);
+		return true;
 	}
 }

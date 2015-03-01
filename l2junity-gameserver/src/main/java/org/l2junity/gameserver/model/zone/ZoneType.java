@@ -38,7 +38,7 @@ import org.l2junity.gameserver.model.events.ListenersContainer;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureZoneEnter;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureZoneExit;
 import org.l2junity.gameserver.model.interfaces.ILocational;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
 
 /**
  * Abstract base class for any zone type handles basic operations.
@@ -489,7 +489,7 @@ public abstract class ZoneType extends ListenersContainer
 	 * Broadcasts packet to all players inside the zone
 	 * @param packet
 	 */
-	public void broadcastPacket(L2GameServerPacket packet)
+	public void broadcastPacket(IGameServerPacket packet)
 	{
 		if (_characterList.isEmpty())
 		{

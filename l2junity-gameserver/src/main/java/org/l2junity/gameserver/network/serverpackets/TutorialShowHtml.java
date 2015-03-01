@@ -19,6 +19,8 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.enums.HtmlActionScope;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * TutorialShowHtml server packet implementation.
@@ -26,6 +28,7 @@ import org.l2junity.gameserver.enums.HtmlActionScope;
  */
 public final class TutorialShowHtml extends AbstractHtmlPacket
 {
+	// TODO: Enum
 	public static final int NORMAL_WINDOW = 1;
 	public static final int LARGE_WINDOW = 2;
 	
@@ -56,11 +59,13 @@ public final class TutorialShowHtml extends AbstractHtmlPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xA6);
-		writeD(_type);
-		writeS(getHtml());
+		OutgoingPackets.TUTORIAL_SHOW_HTML.writeId(packet);
+		
+		packet.writeD(_type);
+		packet.writeS(getHtml());
+		return true;
 	}
 	
 	@Override

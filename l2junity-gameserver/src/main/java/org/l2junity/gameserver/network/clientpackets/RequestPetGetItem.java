@@ -24,64 +24,60 @@ import org.l2junity.gameserver.instancemanager.MercTicketManager;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
+import org.l2junity.network.PacketReader;
 
-public final class RequestPetGetItem extends L2GameClientPacket
+public final class RequestPetGetItem implements IGameClientPacket
 {
-	private static final String _C__98_REQUESTPETGETITEM = "[C] 98 RequestPetGetItem";
-	
 	private int _objectId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_objectId = readD();
+		_objectId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		World world = World.getInstance();
 		ItemInstance item = (ItemInstance) world.findObject(_objectId);
-		if ((item == null) || (getActiveChar() == null) || !getActiveChar().hasPet())
+		if ((item == null) || (client.getActiveChar() == null) || !client.getActiveChar().hasPet())
 		{
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
 		final int castleId = MercTicketManager.getInstance().getTicketCastleId(item.getId());
 		if (castleId > 0)
 		{
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
 		if (FortSiegeManager.getInstance().isCombat(item.getId()))
 		{
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
-		final L2PetInstance pet = (L2PetInstance) getClient().getActiveChar().getPet();
+		final L2PetInstance pet = (L2PetInstance) client.getActiveChar().getPet();
 		if (pet.isDead() || pet.isOutOfControl())
 		{
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
 		if (pet.isUncontrollable())
 		{
-			sendPacket(SystemMessageId.WHEN_YOUR_PET_S_HUNGER_GAUGE_IS_AT_0_YOU_CANNOT_USE_YOUR_PET);
+			client.sendPacket(SystemMessageId.WHEN_YOUR_PET_S_HUNGER_GAUGE_IS_AT_0_YOU_CANNOT_USE_YOUR_PET);
 			return;
 		}
 		
 		pet.getAI().setIntention(CtrlIntention.AI_INTENTION_PICK_UP, item);
 	}
 	
-	@Override
-	public String getType()
-	{
-		return _C__98_REQUESTPETGETITEM;
-	}
 }

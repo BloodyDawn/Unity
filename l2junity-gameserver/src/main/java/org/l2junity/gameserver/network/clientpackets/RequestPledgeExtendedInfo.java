@@ -18,32 +18,28 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
+
 /**
  * Format: (c) S S: pledge name?
  * @author -Wooden-
  */
-public class RequestPledgeExtendedInfo extends L2GameClientPacket
+public class RequestPledgeExtendedInfo implements IGameClientPacket
 {
-	private static final String _C__67_REQUESTPLEDGECREST = "[C] 67 RequestPledgeExtendedInfo";
-	
 	@SuppressWarnings("unused")
 	private String _name;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_name = readS();
+		_name = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		// TODO: Implement
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__67_REQUESTPLEDGECREST;
 	}
 }

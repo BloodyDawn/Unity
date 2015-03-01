@@ -22,6 +22,7 @@ import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.GMHennaInfo;
 import org.l2junity.gameserver.network.serverpackets.GMViewCharacterInfo;
 import org.l2junity.gameserver.network.serverpackets.GMViewItemList;
@@ -29,31 +30,31 @@ import org.l2junity.gameserver.network.serverpackets.GMViewPledgeInfo;
 import org.l2junity.gameserver.network.serverpackets.GMViewSkillInfo;
 import org.l2junity.gameserver.network.serverpackets.GMViewWarehouseWithdrawList;
 import org.l2junity.gameserver.network.serverpackets.GmViewQuestInfo;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.1.2.2.2.2 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestGMCommand extends L2GameClientPacket
+public final class RequestGMCommand implements IGameClientPacket
 {
-	private static final String _C__7E_REQUESTGMCOMMAND = "[C] 7E RequestGMCommand";
-	
 	private String _targetName;
 	private int _command;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_targetName = readS();
-		_command = readD();
-		// _unknown = readD();
+		_targetName = packet.readS();
+		_command = packet.readD();
+		// _unknown = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		// prevent non gm or low level GMs from vieweing player stuff
-		if (!getClient().getActiveChar().isGM() || !getClient().getActiveChar().getAccessLevel().allowAltG())
+		if (!client.getActiveChar().isGM() || !client.getActiveChar().getAccessLevel().allowAltG())
 		{
 			return;
 		}
@@ -72,32 +73,32 @@ public final class RequestGMCommand extends L2GameClientPacket
 		{
 			case 1: // player status
 			{
-				sendPacket(new GMViewCharacterInfo(player));
-				sendPacket(new GMHennaInfo(player));
+				client.sendPacket(new GMViewCharacterInfo(player));
+				client.sendPacket(new GMHennaInfo(player));
 				break;
 			}
 			case 2: // player clan
 			{
 				if ((player != null) && (player.getClan() != null))
 				{
-					sendPacket(new GMViewPledgeInfo(player.getClan(), player));
+					client.sendPacket(new GMViewPledgeInfo(player.getClan(), player));
 				}
 				break;
 			}
 			case 3: // player skills
 			{
-				sendPacket(new GMViewSkillInfo(player));
+				client.sendPacket(new GMViewSkillInfo(player));
 				break;
 			}
 			case 4: // player quests
 			{
-				sendPacket(new GmViewQuestInfo(player));
+				client.sendPacket(new GmViewQuestInfo(player));
 				break;
 			}
 			case 5: // player inventory
 			{
-				sendPacket(new GMViewItemList(player));
-				sendPacket(new GMHennaInfo(player));
+				client.sendPacket(new GMViewItemList(player));
+				client.sendPacket(new GMHennaInfo(player));
 				break;
 			}
 			case 6: // player warehouse
@@ -105,22 +106,16 @@ public final class RequestGMCommand extends L2GameClientPacket
 				// gm warehouse view to be implemented
 				if (player != null)
 				{
-					sendPacket(new GMViewWarehouseWithdrawList(player));
+					client.sendPacket(new GMViewWarehouseWithdrawList(player));
 					// clan warehouse
 				}
 				else
 				{
-					sendPacket(new GMViewWarehouseWithdrawList(clan));
+					client.sendPacket(new GMViewWarehouseWithdrawList(clan));
 				}
 				break;
 			}
 			
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__7E_REQUESTGMCOMMAND;
 	}
 }

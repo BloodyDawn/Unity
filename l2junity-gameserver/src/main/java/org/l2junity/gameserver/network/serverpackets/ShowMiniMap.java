@@ -18,23 +18,25 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class ShowMiniMap extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class ShowMiniMap implements IGameServerPacket
 {
 	private final int _mapId;
 	
-	/**
-	 * @param mapId
-	 */
 	public ShowMiniMap(int mapId)
 	{
 		_mapId = mapId;
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xa3);
-		writeD(_mapId);
-		writeC(0x00); // Seven Signs state
+		OutgoingPackets.SHOW_MINIMAP.writeId(packet);
+		
+		packet.writeD(_mapId);
+		packet.writeC(0x00); // Seven Signs state
+		return true;
 	}
 }

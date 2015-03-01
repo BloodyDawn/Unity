@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class TradeOtherDone extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class TradeOtherDone implements IGameServerPacket
 {
 	public static final TradeOtherDone STATIC_PACKET = new TradeOtherDone();
 	
@@ -27,8 +30,9 @@ public class TradeOtherDone extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x82);
+		OutgoingPackets.TRADE_PRESS_OTHER_OK.writeId(packet);
+		return true;
 	}
 }

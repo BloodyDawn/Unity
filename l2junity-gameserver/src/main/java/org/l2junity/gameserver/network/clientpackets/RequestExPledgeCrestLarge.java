@@ -20,27 +20,28 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.data.sql.impl.CrestTable;
 import org.l2junity.gameserver.model.Crest;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExPledgeEmblem;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author -Wooden-, Sdw
  */
-public final class RequestExPledgeCrestLarge extends L2GameClientPacket
+public final class RequestExPledgeCrestLarge implements IGameClientPacket
 {
-	private static final String _C__D0_10_REQUESTEXPLEDGECRESTLARGE = "[C] D0:10 RequestExPledgeCrestLarge";
-	
 	private int _crestId;
 	private int _clanId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_crestId = readD();
-		_clanId = readD();
+		_crestId = packet.readD();
+		_clanId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		final Crest crest = CrestTable.getInstance().getCrest(_crestId);
 		final byte[] data = crest != null ? crest.getData() : null;
@@ -52,27 +53,15 @@ public final class RequestExPledgeCrestLarge extends L2GameClientPacket
 				{
 					final byte[] fullChunk = new byte[14336];
 					System.arraycopy(data, (14336 * i), fullChunk, 0, 14336);
-					sendPacket(new ExPledgeEmblem(_crestId, fullChunk, _clanId, i));
+					client.sendPacket(new ExPledgeEmblem(_crestId, fullChunk, _clanId, i));
 				}
 				else
 				{
 					final byte[] lastChunk = new byte[8320];
 					System.arraycopy(data, (14336 * i), lastChunk, 0, 8320);
-					sendPacket(new ExPledgeEmblem(_crestId, lastChunk, _clanId, i));
+					client.sendPacket(new ExPledgeEmblem(_crestId, lastChunk, _clanId, i));
 				}
 			}
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_10_REQUESTEXPLEDGECRESTLARGE;
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
 	}
 }

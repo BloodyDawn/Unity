@@ -19,40 +19,35 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author ShanSoft
  * @structure chdSdS
  */
-public final class RequestSaveBookMarkSlot extends L2GameClientPacket
+public final class RequestSaveBookMarkSlot implements IGameClientPacket
 {
-	private static final String _C__D0_51_01_REQUESTSAVEBOOKMARKSLOT = "[C] D0:51:01 RequestSaveBookMarkSlot";
-	
 	private int icon;
 	private String name, tag;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		name = readS();
-		icon = readD();
-		tag = readS();
+		name = packet.readS();
+		icon = packet.readD();
+		tag = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		activeChar.teleportBookmarkAdd(activeChar.getX(), activeChar.getY(), activeChar.getZ(), icon, tag, name);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_51_01_REQUESTSAVEBOOKMARKSLOT;
 	}
 }

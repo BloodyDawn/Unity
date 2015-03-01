@@ -20,39 +20,28 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.handler.CommunityBoardHandler;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * RequestShowBoard client packet implementation.
  * @author Zoey76
  */
-public final class RequestShowBoard extends L2GameClientPacket
+public final class RequestShowBoard implements IGameClientPacket
 {
-	private static final String _C__5E_REQUESTSHOWBOARD = "[C] 5E RequestShowBoard";
-	
 	@SuppressWarnings("unused")
 	private int _unknown;
 	
 	@Override
-	protected final void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_unknown = readD();
+		_unknown = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		CommunityBoardHandler.getInstance().handleParseCommand(Config.BBS_DEFAULT, getActiveChar());
-	}
-	
-	@Override
-	public final String getType()
-	{
-		return _C__5E_REQUESTSHOWBOARD;
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
+		CommunityBoardHandler.getInstance().handleParseCommand(Config.BBS_DEFAULT, client.getActiveChar());
 	}
 }

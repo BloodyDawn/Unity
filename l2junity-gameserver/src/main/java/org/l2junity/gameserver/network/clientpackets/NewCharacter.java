@@ -18,32 +18,26 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
-import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.PlayerTemplateData;
 import org.l2junity.gameserver.model.base.ClassId;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.NewCharacterSuccess;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Zoey76
  */
-public final class NewCharacter extends L2GameClientPacket
+public final class NewCharacter implements IGameClientPacket
 {
-	private static final String _C__13_NEWCHARACTER = "[C] 13 NewCharacter";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		if (Config.DEBUG)
-		{
-			_log.fine(_C__13_NEWCHARACTER);
-		}
-		
 		final NewCharacterSuccess ct = new NewCharacterSuccess();
 		ct.addChar(PlayerTemplateData.getInstance().getTemplate(ClassId.FIGHTER)); // Human Figther
 		ct.addChar(PlayerTemplateData.getInstance().getTemplate(ClassId.MAGE)); // Human Mystic
@@ -58,12 +52,6 @@ public final class NewCharacter extends L2GameClientPacket
 		ct.addChar(PlayerTemplateData.getInstance().getTemplate(ClassId.FEMALE_SOLDIER)); // Female Kamael Soldier
 		ct.addChar(PlayerTemplateData.getInstance().getTemplate(ClassId.ERTHEIA_FIGHTER)); // Ertheia Fighter
 		ct.addChar(PlayerTemplateData.getInstance().getTemplate(ClassId.ERTHEIA_WIZARD)); // Ertheia Wizard
-		sendPacket(ct);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__13_NEWCHARACTER;
+		client.sendPacket(ct);
 	}
 }

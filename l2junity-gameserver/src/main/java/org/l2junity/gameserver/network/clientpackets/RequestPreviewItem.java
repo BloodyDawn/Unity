@@ -21,6 +21,8 @@ package org.l2junity.gameserver.network.clientpackets;
 import java.util.Map;
 import java.util.logging.Level;
 
+import javolution.util.FastMap;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.impl.BuyListData;
@@ -36,21 +38,19 @@ import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.type.ArmorType;
 import org.l2junity.gameserver.model.items.type.WeaponType;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.ExUserInfoEquipSlot;
 import org.l2junity.gameserver.network.serverpackets.ShopPreviewInfo;
 import org.l2junity.gameserver.util.Util;
-
-import javolution.util.FastMap;
+import org.l2junity.network.PacketReader;
 
 /**
  ** @author Gnacik
  */
-public final class RequestPreviewItem extends L2GameClientPacket
+public final class RequestPreviewItem implements IGameClientPacket
 {
-	private static final String _C__C7_REQUESTPREVIEWITEM = "[C] C7 RequestPreviewItem";
-	
 	@SuppressWarnings("unused")
 	private int _unk;
 	private int _listId;
@@ -82,11 +82,11 @@ public final class RequestPreviewItem extends L2GameClientPacket
 	}
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_unk = readD();
-		_listId = readD();
-		_count = readD();
+		_unk = packet.readD();
+		_listId = packet.readD();
+		_count = packet.readD();
 		
 		if (_count < 0)
 		{
@@ -94,7 +94,7 @@ public final class RequestPreviewItem extends L2GameClientPacket
 		}
 		if (_count > 100)
 		{
-			return; // prevent too long lists
+			return false; // prevent too long lists
 		}
 		
 		// Create _items table that will contain all ItemID to Wear
@@ -103,12 +103,13 @@ public final class RequestPreviewItem extends L2GameClientPacket
 		// Fill _items table with all ItemID to Wear
 		for (int i = 0; i < _count; i++)
 		{
-			_items[i] = readD();
+			_items[i] = packet.readD();
 		}
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		if (_items == null)
 		{
@@ -116,13 +117,13 @@ public final class RequestPreviewItem extends L2GameClientPacket
 		}
 		
 		// Get the current player and return if null
-		PlayerInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
-		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("buy"))
+		if (!client.getFloodProtectors().getTransaction().tryPerformAction("buy"))
 		{
 			activeChar.sendMessage("You are buying too fast.");
 			return;
@@ -146,7 +147,7 @@ public final class RequestPreviewItem extends L2GameClientPacket
 		
 		if ((_count < 1) || (_listId >= 4000000))
 		{
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
@@ -246,9 +247,4 @@ public final class RequestPreviewItem extends L2GameClientPacket
 		}
 	}
 	
-	@Override
-	public String getType()
-	{
-		return _C__C7_REQUESTPREVIEWITEM;
-	}
 }

@@ -23,33 +23,33 @@ import org.l2junity.gameserver.instancemanager.ClanEntryManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.JoinPledge;
 import org.l2junity.gameserver.network.serverpackets.UserInfo;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Sdw
  */
-public class RequestPledgeWaitingUserAccept extends L2GameClientPacket
+public class RequestPledgeWaitingUserAccept implements IGameClientPacket
 {
-	private static final String _C__D0_DB_REQUESTPLEDGEDWAITINGUSERACCEPT = "[C] D0;DB RequestPledgeWaitingUserAccept";
-	
 	private boolean _acceptRequest;
 	private int _playerId;
 	private int _clanId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_acceptRequest = readD() == 1;
-		_playerId = readD();
-		_clanId = readD();
+		_acceptRequest = packet.readD() == 1;
+		_playerId = packet.readD();
+		_clanId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
-		
+		final PlayerInstance activeChar = client.getActiveChar();
 		if ((activeChar == null) || (activeChar.getClan() == null))
 		{
 			return;
@@ -75,12 +75,5 @@ public class RequestPledgeWaitingUserAccept extends L2GameClientPacket
 		{
 			ClanEntryManager.getInstance().removePlayerApplication(activeChar.getClanId(), _playerId);
 		}
-		
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_DB_REQUESTPLEDGEDWAITINGUSERACCEPT;
 	}
 }

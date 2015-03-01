@@ -21,34 +21,34 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.gameserver.handler.IUserCommandHandler;
 import org.l2junity.gameserver.handler.UserCommandHandler;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.1.2.1.2.2 $ $Date: 2005/03/27 15:29:30 $
  */
-public class BypassUserCmd extends L2GameClientPacket
+public class BypassUserCmd implements IGameClientPacket
 {
-	private static final String _C__B3_BYPASSUSERCMD = "[C] B3 BypassUserCmd";
-	
 	private int _command;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_command = readD();
+		_command = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance player = getClient().getActiveChar();
+		PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
 		}
 		
-		IUserCommandHandler handler = UserCommandHandler.getInstance().getHandler(_command);
-		
+		final IUserCommandHandler handler = UserCommandHandler.getInstance().getHandler(_command);
 		if (handler == null)
 		{
 			if (player.isGM())
@@ -58,13 +58,7 @@ public class BypassUserCmd extends L2GameClientPacket
 		}
 		else
 		{
-			handler.useUserCommand(_command, getClient().getActiveChar());
+			handler.useUserCommand(_command, client.getActiveChar());
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__B3_BYPASSUSERCMD;
 	}
 }

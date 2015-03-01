@@ -20,28 +20,31 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExAskJoinPartyRoom;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format: (ch) S
  * @author -Wooden-, Tryskell
  */
-public class RequestAskJoinPartyRoom extends L2GameClientPacket
+public class RequestAskJoinPartyRoom implements IGameClientPacket
 {
 	private String _name;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_name = readS();
+		_name = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -65,11 +68,5 @@ public class RequestAskJoinPartyRoom extends L2GameClientPacket
 		{
 			player.sendPacket(SystemMessageId.THAT_PLAYER_IS_NOT_ONLINE);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
 	}
 }

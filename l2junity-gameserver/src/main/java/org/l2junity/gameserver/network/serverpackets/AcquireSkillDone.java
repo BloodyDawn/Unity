@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author Kerberos
  */
-public class AcquireSkillDone extends L2GameServerPacket
+public class AcquireSkillDone implements IGameServerPacket
 {
 	public AcquireSkillDone()
 	{
@@ -29,8 +32,9 @@ public class AcquireSkillDone extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x94);
+		OutgoingPackets.ACQUIRE_SKILL_DONE.writeId(packet);
+		return true;
 	}
 }

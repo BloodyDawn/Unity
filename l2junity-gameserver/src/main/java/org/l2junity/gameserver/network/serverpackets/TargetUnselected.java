@@ -19,8 +19,10 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class TargetUnselected extends L2GameServerPacket
+public class TargetUnselected implements IGameServerPacket
 {
 	private final int _targetObjId;
 	private final int _x;
@@ -39,13 +41,15 @@ public class TargetUnselected extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x24);
-		writeD(_targetObjId);
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
-		writeD(0x00); // ??
+		OutgoingPackets.TARGET_UNSELECTED.writeId(packet);
+		
+		packet.writeD(_targetObjId);
+		packet.writeD(_x);
+		packet.writeD(_y);
+		packet.writeD(_z);
+		packet.writeD(0x00); // ??
+		return true;
 	}
 }

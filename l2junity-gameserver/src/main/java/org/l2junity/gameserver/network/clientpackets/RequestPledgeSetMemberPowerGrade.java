@@ -22,28 +22,30 @@ import org.l2junity.gameserver.model.ClanMember;
 import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format: (ch) Sd
  * @author -Wooden-
  */
-public final class RequestPledgeSetMemberPowerGrade extends L2GameClientPacket
+public final class RequestPledgeSetMemberPowerGrade implements IGameClientPacket
 {
-	private static final String _C__D0_15_REQUESTPLEDGESETMEMBERPOWERGRADE = "[C] D0:15 RequestPledgeSetMemberPowerGrade";
 	private String _member;
 	private int _powerGrade;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_member = readS();
-		_powerGrade = readD();
+		_member = packet.readS();
+		_powerGrade = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -82,9 +84,4 @@ public final class RequestPledgeSetMemberPowerGrade extends L2GameClientPacket
 		clan.broadcastClanStatus();
 	}
 	
-	@Override
-	public String getType()
-	{
-		return _C__D0_15_REQUESTPLEDGESETMEMBERPOWERGRADE;
-	}
 }

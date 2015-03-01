@@ -19,8 +19,10 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.L2Clan.RankPrivs;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class PledgePowerGradeList extends L2GameServerPacket
+public class PledgePowerGradeList implements IGameServerPacket
 {
 	private final RankPrivs[] _privs;
 	
@@ -30,15 +32,16 @@ public class PledgePowerGradeList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x3D);
-		writeD(_privs.length);
+		OutgoingPackets.PLEDGE_POWER_GRADE_LIST.writeId(packet);
+		
+		packet.writeD(_privs.length);
 		for (RankPrivs temp : _privs)
 		{
-			writeD(temp.getRank());
-			writeD(temp.getParty());
+			packet.writeD(temp.getRank());
+			packet.writeD(temp.getParty());
 		}
+		return true;
 	}
 }

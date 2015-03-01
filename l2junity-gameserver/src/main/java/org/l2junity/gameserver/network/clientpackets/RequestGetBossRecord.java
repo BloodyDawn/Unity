@@ -22,27 +22,29 @@ import java.util.Map;
 
 import org.l2junity.gameserver.instancemanager.RaidBossPointsManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExGetBossRecord;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format: (ch) d
  * @author -Wooden-
  */
-public class RequestGetBossRecord extends L2GameClientPacket
+public class RequestGetBossRecord implements IGameClientPacket
 {
-	private static final String _C__D0_40_REQUESTGETBOSSRECORD = "[C] D0:40 RequestGetBossRecord";
 	private int _bossId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_bossId = readD();
+		_bossId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -60,17 +62,5 @@ public class RequestGetBossRecord extends L2GameClientPacket
 		
 		// trigger packet
 		activeChar.sendPacket(new ExGetBossRecord(ranking, points, list));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_40_REQUESTGETBOSSRECORD;
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
 	}
 }

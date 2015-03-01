@@ -21,38 +21,38 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.gameserver.data.sql.impl.CrestTable;
 import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.Crest;
-import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.Crest.CrestType;
+import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.network.PacketReader;
 
 /**
  * Client packet for setting/deleting clan crest.
  */
-public final class RequestSetPledgeCrest extends L2GameClientPacket
+public final class RequestSetPledgeCrest implements IGameClientPacket
 {
-	private static final String _C__09_REQUESTSETPLEDGECREST = "[C] 09 RequestSetPledgeCrest";
-	
 	private int _length;
 	private byte[] _data = null;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_length = readD();
+		_length = packet.readD();
 		if (_length > 256)
 		{
-			return;
+			return false;
 		}
 		
-		_data = new byte[_length];
-		readB(_data);
+		_data = packet.readB(_length);
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -113,9 +113,4 @@ public final class RequestSetPledgeCrest extends L2GameClientPacket
 		}
 	}
 	
-	@Override
-	public String getType()
-	{
-		return _C__09_REQUESTSETPLEDGECREST;
-	}
 }

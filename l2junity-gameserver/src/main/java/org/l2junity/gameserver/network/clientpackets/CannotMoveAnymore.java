@@ -22,33 +22,34 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.1.2.1.2.4 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class CannotMoveAnymore extends L2GameClientPacket
+public final class CannotMoveAnymore implements IGameClientPacket
 {
-	private static final String _C__47_STOPMOVE = "[C] 47 CannotMoveAnymore";
-	
 	private int _x;
 	private int _y;
 	private int _z;
 	private int _heading;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_x = readD();
-		_y = readD();
-		_z = readD();
-		_heading = readD();
+		_x = packet.readD();
+		_y = packet.readD();
+		_z = packet.readD();
+		_heading = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance player = getClient().getActiveChar();
+		PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -72,18 +73,12 @@ public final class CannotMoveAnymore extends L2GameClientPacket
 		// _log.fine("client: x:"+_x+" y:"+_y+" z:"+_z+
 		// " server x:"+player.getX()+" y:"+player.getZ()+" z:"+player.getZ());
 		// StopMove smwl = new StopMove(player);
-		// getClient().getActiveChar().sendPacket(smwl);
-		// getClient().getActiveChar().broadcastPacket(smwl);
+		// client.getActiveChar().sendPacket(smwl);
+		// client.getActiveChar().broadcastPacket(smwl);
 		//
-		// StopRotation sr = new StopRotation(getClient().getActiveChar(),
+		// StopRotation sr = new StopRotation(client.getActiveChar(),
 		// _heading);
-		// getClient().getActiveChar().sendPacket(sr);
-		// getClient().getActiveChar().broadcastPacket(sr);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__47_STOPMOVE;
+		// client.getActiveChar().sendPacket(sr);
+		// client.getActiveChar().broadcastPacket(sr);
 	}
 }

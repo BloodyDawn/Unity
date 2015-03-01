@@ -21,6 +21,8 @@ package org.l2junity.gameserver.network.serverpackets;
 import org.l2junity.gameserver.model.itemauction.ItemAuction;
 import org.l2junity.gameserver.model.itemauction.ItemAuctionBid;
 import org.l2junity.gameserver.model.itemauction.ItemAuctionState;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Forsaiken
@@ -54,24 +56,25 @@ public final class ExItemAuctionInfoPacket extends AbstractItemPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x69);
-		writeC(_refresh ? 0x00 : 0x01);
-		writeD(_currentAuction.getInstanceId());
+		OutgoingPackets.EX_ITEM_AUCTION_INFO.writeId(packet);
+		
+		packet.writeC(_refresh ? 0x00 : 0x01);
+		packet.writeD(_currentAuction.getInstanceId());
 		
 		final ItemAuctionBid highestBid = _currentAuction.getHighestBid();
-		writeQ(highestBid != null ? highestBid.getLastBid() : _currentAuction.getAuctionInitBid());
+		packet.writeQ(highestBid != null ? highestBid.getLastBid() : _currentAuction.getAuctionInitBid());
 		
-		writeD(_timeRemaining);
-		writeItem(_currentAuction.getItemInfo());
+		packet.writeD(_timeRemaining);
+		writeItem(packet, _currentAuction.getItemInfo());
 		
 		if (_nextAuction != null)
 		{
-			writeQ(_nextAuction.getAuctionInitBid());
-			writeD((int) (_nextAuction.getStartingTime() / 1000)); // unix time in seconds
-			writeItem(_nextAuction.getItemInfo());
+			packet.writeQ(_nextAuction.getAuctionInitBid());
+			packet.writeD((int) (_nextAuction.getStartingTime() / 1000)); // unix time in seconds
+			writeItem(packet, _nextAuction.getItemInfo());
 		}
+		return true;
 	}
 }

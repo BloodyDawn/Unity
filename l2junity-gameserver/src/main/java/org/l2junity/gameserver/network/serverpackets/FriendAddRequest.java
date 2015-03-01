@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class FriendAddRequest extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class FriendAddRequest implements IGameServerPacket
 {
 	private final String _requestorName;
 	
@@ -31,10 +34,12 @@ public class FriendAddRequest extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x83);
-		writeS(_requestorName);
-		writeD(0x00);
+		OutgoingPackets.FRIEND_ADD_REQUEST.writeId(packet);
+		
+		packet.writeS(_requestorName);
+		packet.writeD(0x00);
+		return true;
 	}
 }

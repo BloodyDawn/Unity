@@ -18,28 +18,23 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
+
 /**
  * @author ShanSoft Packets Structure: chddd
  */
-public final class RequestChangeBookMarkSlot extends L2GameClientPacket
+public final class RequestChangeBookMarkSlot implements IGameClientPacket
 {
-	private static final String _C__D0_51_05_REQUESCHANGEBOOKMARKSLOT = "[C] D0:51:05 RequestChangeBookMarkSlot";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// There is nothing to read.
+		return false;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_51_05_REQUESCHANGEBOOKMARKSLOT;
 	}
 }

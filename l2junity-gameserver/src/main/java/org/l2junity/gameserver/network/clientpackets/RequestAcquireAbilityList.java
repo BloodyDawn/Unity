@@ -26,34 +26,38 @@ import org.l2junity.gameserver.model.SkillLearn;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.ExAcquireAPSkillList;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author UnAfraid
  */
-public class RequestAcquireAbilityList extends L2GameClientPacket
+public class RequestAcquireAbilityList implements IGameClientPacket
 {
 	private final List<SkillHolder> _skills = new ArrayList<>();
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		readD(); // Total size
+		packet.readD(); // Total size
 		for (int i = 0; i < 3; i++)
 		{
-			int size = readD();
+			int size = packet.readD();
 			for (int j = 0; j < size; j++)
 			{
-				_skills.add(new SkillHolder(readD(), readD()));
+				_skills.add(new SkillHolder(packet.readD(), packet.readD()));
 			}
 		}
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -82,7 +86,7 @@ public class RequestAcquireAbilityList extends L2GameClientPacket
 			if (learn == null)
 			{
 				_log.warning(getClass().getSimpleName() + ": SkillLearn " + holder.getSkillId() + "(" + holder.getSkillLvl() + ") not found!");
-				sendActionFailed();
+				client.sendPacket(ActionFailed.STATIC_PACKET);
 				break;
 			}
 			
@@ -90,7 +94,7 @@ public class RequestAcquireAbilityList extends L2GameClientPacket
 			if (skill == null)
 			{
 				_log.warning(getClass().getSimpleName() + ": SkillLearn " + holder.getSkillId() + "(" + holder.getSkillLvl() + ") not found!");
-				sendActionFailed();
+				client.sendPacket(ActionFailed.STATIC_PACKET);
 				break;
 			}
 			final int points;
@@ -107,7 +111,7 @@ public class RequestAcquireAbilityList extends L2GameClientPacket
 			if ((activeChar.getAbilityPoints() - activeChar.getAbilityPointsUsed()) < points)
 			{
 				_log.warning(getClass().getSimpleName() + ": Player " + activeChar + " is trying to learn ability without ability points!");
-				sendActionFailed();
+				client.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
 			
@@ -115,11 +119,5 @@ public class RequestAcquireAbilityList extends L2GameClientPacket
 			activeChar.setAbilityPointsUsed(activeChar.getAbilityPointsUsed() + points);
 		}
 		activeChar.sendPacket(new ExAcquireAPSkillList(activeChar));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
 	}
 }

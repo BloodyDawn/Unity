@@ -145,7 +145,7 @@ import org.l2junity.gameserver.network.serverpackets.ChangeWaitType;
 import org.l2junity.gameserver.network.serverpackets.CharInfo;
 import org.l2junity.gameserver.network.serverpackets.ExRotation;
 import org.l2junity.gameserver.network.serverpackets.ExTeleportToLocationActivate;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
 import org.l2junity.gameserver.network.serverpackets.MagicSkillCanceld;
 import org.l2junity.gameserver.network.serverpackets.MagicSkillLaunched;
 import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
@@ -386,7 +386,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * Send debug packet.
 	 * @param pkt
 	 */
-	public void sendDebugPacket(L2GameServerPacket pkt)
+	public void sendDebugPacket(IGameServerPacket pkt)
 	{
 		if (_debugger != null)
 		{
@@ -578,13 +578,12 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * In order to inform other players of state modification on the L2Character, server just need to go through _knownPlayers to send Server->Client Packet
 	 * @param mov
 	 */
-	public void broadcastPacket(L2GameServerPacket mov)
+	public void broadcastPacket(IGameServerPacket mov)
 	{
-		mov.setInvisible(isInvisible());
 		Collection<PlayerInstance> plrs = getKnownList().getKnownPlayers().values();
 		for (PlayerInstance player : plrs)
 		{
-			if (player != null)
+			if ((player != null) && (!isInvisible() || (isVisibleFor(player) || player.canOverrideCond(PcCondOverride.SEE_ALL_PLAYERS))))
 			{
 				player.sendPacket(mov);
 			}
@@ -599,13 +598,12 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * @param mov
 	 * @param radiusInKnownlist
 	 */
-	public void broadcastPacket(L2GameServerPacket mov, int radiusInKnownlist)
+	public void broadcastPacket(IGameServerPacket mov, int radiusInKnownlist)
 	{
-		mov.setInvisible(isInvisible());
-		Collection<PlayerInstance> plrs = getKnownList().getKnownPlayers().values();
+		final Collection<PlayerInstance> plrs = getKnownList().getKnownPlayers().values();
 		for (PlayerInstance player : plrs)
 		{
-			if ((player != null) && isInsideRadius(player, radiusInKnownlist, false, false))
+			if ((player != null) && isInsideRadius(player, radiusInKnownlist, false, false) && (!isInvisible() || (isVisibleFor(player) || player.canOverrideCond(PcCondOverride.SEE_ALL_PLAYERS))))
 			{
 				player.sendPacket(mov);
 			}
@@ -1258,7 +1256,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		// Check if the L2Character is a L2PcInstance
 		if (isPlayer())
 		{
-			sendPacket(new SetupGauge(SetupGauge.RED, sAtk + reuse));
+			sendPacket(new SetupGauge(getObjectId(), SetupGauge.RED, sAtk + reuse));
 		}
 		
 		// Create a new hit task with Medium priority
@@ -1327,7 +1325,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			sendPacket(SystemMessageId.YOUR_CROSSBOW_IS_PREPARING_TO_FIRE);
 			
 			// Send a Server->Client packet SetupGauge
-			SetupGauge sg = new SetupGauge(SetupGauge.RED, sAtk + reuse);
+			SetupGauge sg = new SetupGauge(getObjectId(), SetupGauge.RED, sAtk + reuse);
 			sendPacket(sg);
 		}
 		
@@ -2004,7 +2002,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// Send a Server->Client packet SetupGauge with the color of the gauge and the casting time
 			if (isPlayer() && !simultaneously)
 			{
-				sendPacket(new SetupGauge(SetupGauge.BLUE, skillTime));
+				sendPacket(new SetupGauge(getObjectId(), SetupGauge.BLUE, skillTime));
 			}
 			
 			if (skill.isChanneling() && (skill.getChannelingSkillId() > 0))

@@ -23,47 +23,40 @@ import org.l2junity.gameserver.instancemanager.CHSiegeManager;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.SiegeAttackerList;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.3.4.2 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestSiegeAttackerList extends L2GameClientPacket
+public final class RequestSiegeAttackerList implements IGameClientPacket
 {
-	private static final String _C__AB_RequestSiegeAttackerList = "[C] AB RequestSiegeAttackerList";
-	
 	private int _castleId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_castleId = readD();
+		_castleId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		Castle castle = CastleManager.getInstance().getCastleById(_castleId);
+		final Castle castle = CastleManager.getInstance().getCastleById(_castleId);
 		if (castle != null)
 		{
-			SiegeAttackerList sal = new SiegeAttackerList(castle);
-			sendPacket(sal);
+			client.sendPacket(new SiegeAttackerList(castle));
 		}
 		else
 		{
 			SiegableHall hall = CHSiegeManager.getInstance().getSiegableHall(_castleId);
 			if (hall != null)
 			{
-				SiegeAttackerList sal = new SiegeAttackerList(hall);
-				sendPacket(sal);
+				client.sendPacket(new SiegeAttackerList(hall));
 			}
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__AB_RequestSiegeAttackerList;
 	}
 }

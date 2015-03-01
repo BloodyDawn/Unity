@@ -20,32 +20,32 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.instancemanager.HandysBlockCheckerManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format: chddd d: Arena d: Answer
  * @author mrTJO
  */
-public final class RequestExCubeGameReadyAnswer extends L2GameClientPacket
+public final class RequestExCubeGameReadyAnswer implements IGameClientPacket
 {
-	private static final String _C__D0_5C_REQUESTEXCUBEGAMEREADYANSWER = "[C] D0:5C RequestExCubeGameReadyAnswer";
-	
 	private int _arena;
 	private int _answer;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
 		// client sends -1,0,1,2 for arena parameter
-		_arena = readD() + 1;
+		_arena = packet.readD() + 1;
 		// client sends 1 if clicked confirm on not clicked, 0 if clicked cancel
-		_answer = readD();
+		_answer = packet.readD();
+		return true;
 	}
 	
 	@Override
-	public void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance player = getClient().getActiveChar();
-		
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -64,11 +64,5 @@ public final class RequestExCubeGameReadyAnswer extends L2GameClientPacket
 				_log.warning("Unknown Cube Game Answer ID: " + _answer);
 				break;
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_5C_REQUESTEXCUBEGAMEREADYANSWER;
 	}
 }

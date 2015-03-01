@@ -22,6 +22,7 @@ import java.util.logging.LogRecord;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.gameserver.network.client.ConnectionState;
 
 public class AccountingFormatter extends AbstractFormatter
 {
@@ -51,7 +52,7 @@ public class AccountingFormatter extends AbstractFormatter
 					{
 						if (!client.isDetached())
 						{
-							address = client.getConnection().getInetAddress().getHostAddress();
+							address = client.getConnectionAddress().getHostAddress();
 						}
 					}
 					catch (Exception e)
@@ -59,7 +60,8 @@ public class AccountingFormatter extends AbstractFormatter
 						
 					}
 					
-					switch (client.getState())
+					final ConnectionState state = (ConnectionState) client.getConnectionState();
+					switch (state)
 					{
 						case IN_GAME:
 							if (client.getActiveChar() != null)
@@ -69,7 +71,7 @@ public class AccountingFormatter extends AbstractFormatter
 								output.append(client.getActiveChar().getObjectId());
 								output.append(") ");
 							}
-						case AUTHED:
+						case AUTHENTICATED:
 							if (client.getAccountName() != null)
 							{
 								output.append(client.getAccountName());

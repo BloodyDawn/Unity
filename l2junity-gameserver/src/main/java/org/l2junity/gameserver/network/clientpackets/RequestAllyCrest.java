@@ -18,39 +18,28 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.AllyCrest;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.3.4.4 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestAllyCrest extends L2GameClientPacket
+public final class RequestAllyCrest implements IGameClientPacket
 {
-	private static final String _C__92_REQUESTALLYCREST = "[C] 92 RequestAllyCrest";
-	
 	private int _crestId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_crestId = readD();
+		_crestId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		sendPacket(new AllyCrest(_crestId));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__92_REQUESTALLYCREST;
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
+		client.sendPacket(new AllyCrest(_crestId));
 	}
 }

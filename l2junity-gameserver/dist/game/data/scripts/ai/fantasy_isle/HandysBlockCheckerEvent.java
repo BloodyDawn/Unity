@@ -84,7 +84,7 @@ public class HandysBlockCheckerEvent extends Quest
 			if ((countBlue >= minMembers) && (countRed >= minMembers))
 			{
 				holder.updateEvent();
-				holder.broadCastPacketToTeam(new ExCubeGameRequestReady());
+				holder.broadCastPacketToTeam(ExCubeGameRequestReady.STATIC_PACKET);
 				holder.broadCastPacketToTeam(new ExCubeGameChangeTimeToStart(10));
 			}
 		}

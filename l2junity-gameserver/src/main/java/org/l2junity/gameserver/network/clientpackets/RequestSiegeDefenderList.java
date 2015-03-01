@@ -21,39 +21,33 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.model.entity.Castle;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.SiegeDefenderList;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.3.4.2 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestSiegeDefenderList extends L2GameClientPacket
+public final class RequestSiegeDefenderList implements IGameClientPacket
 {
-	private static final String _C__AC_REQUESTSIEGEDEFENDERLIST = "[C] AC RequestSiegeDefenderList";
-	
 	private int _castleId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_castleId = readD();
+		_castleId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		Castle castle = CastleManager.getInstance().getCastleById(_castleId);
+		final Castle castle = CastleManager.getInstance().getCastleById(_castleId);
 		if (castle == null)
 		{
 			return;
 		}
-		SiegeDefenderList sdl = new SiegeDefenderList(castle);
-		sendPacket(sdl);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__AC_REQUESTSIEGEDEFENDERLIST;
+		client.sendPacket(new SiegeDefenderList(castle));
 	}
 }

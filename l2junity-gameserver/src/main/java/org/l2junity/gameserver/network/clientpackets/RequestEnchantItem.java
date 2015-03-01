@@ -35,6 +35,7 @@ import org.l2junity.gameserver.model.items.enchant.EnchantSupportItem;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.EnchantResult;
 import org.l2junity.gameserver.network.serverpackets.ExAdenaInvenCount;
@@ -44,27 +45,27 @@ import org.l2junity.gameserver.network.serverpackets.ItemList;
 import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
-public final class RequestEnchantItem extends L2GameClientPacket
+public final class RequestEnchantItem implements IGameClientPacket
 {
 	protected static final Logger _logEnchant = Logger.getLogger("enchant");
-	
-	private static final String _C__5F_REQUESTENCHANTITEM = "[C] 5F RequestEnchantItem";
 	
 	private int _objectId;
 	private int _supportId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_objectId = readD();
-		_supportId = readD();
+		_objectId = packet.readD();
+		_supportId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -79,7 +80,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 		request.setEnchantingItem(_objectId);
 		request.setProcessing(true);
 		
-		if (!activeChar.isOnline() || getClient().isDetached())
+		if (!activeChar.isOnline() || client.isDetached())
 		{
 			activeChar.removeRequest(request.getClass());
 			return;
@@ -87,7 +88,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 		
 		if (activeChar.isProcessingTransaction() || activeChar.isInStoreMode())
 		{
-			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_ENCHANT_WHILE_OPERATING_A_PRIVATE_STORE_OR_PRIVATE_WORKSHOP);
+			client.sendPacket(SystemMessageId.YOU_CANNOT_ENCHANT_WHILE_OPERATING_A_PRIVATE_STORE_OR_PRIVATE_WORKSHOP);
 			activeChar.removeRequest(request.getClass());
 			return;
 		}
@@ -123,9 +124,9 @@ public final class RequestEnchantItem extends L2GameClientPacket
 		// first validation check
 		if (!scrollTemplate.isValid(item, supportTemplate))
 		{
-			activeChar.sendPacket(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITIONS);
+			client.sendPacket(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITIONS);
 			activeChar.removeRequest(request.getClass());
-			activeChar.sendPacket(new EnchantResult(EnchantResult.ERROR, 0, 0));
+			client.sendPacket(new EnchantResult(EnchantResult.ERROR, 0, 0));
 			return;
 		}
 		
@@ -134,17 +135,17 @@ public final class RequestEnchantItem extends L2GameClientPacket
 		{
 			Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " use autoenchant program ", Config.DEFAULT_PUNISH);
 			activeChar.removeRequest(request.getClass());
-			activeChar.sendPacket(new EnchantResult(EnchantResult.ERROR, 0, 0));
+			client.sendPacket(new EnchantResult(EnchantResult.ERROR, 0, 0));
 			return;
 		}
 		
 		// attempting to destroy scroll
 		if (activeChar.getInventory().destroyItem("Enchant", scroll.getObjectId(), 1, activeChar, item) == null)
 		{
-			activeChar.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT2);
+			client.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT2);
 			Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " tried to enchant with a scroll he doesn't have", Config.DEFAULT_PUNISH);
 			activeChar.removeRequest(request.getClass());
-			activeChar.sendPacket(new EnchantResult(EnchantResult.ERROR, 0, 0));
+			client.sendPacket(new EnchantResult(EnchantResult.ERROR, 0, 0));
 			return;
 		}
 		
@@ -153,10 +154,10 @@ public final class RequestEnchantItem extends L2GameClientPacket
 		{
 			if (activeChar.getInventory().destroyItem("Enchant", support.getObjectId(), 1, activeChar, item) == null)
 			{
-				activeChar.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT2);
+				client.sendPacket(SystemMessageId.INCORRECT_ITEM_COUNT2);
 				Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " tried to enchant with a support item he doesn't have", Config.DEFAULT_PUNISH);
 				activeChar.removeRequest(request.getClass());
-				activeChar.sendPacket(new EnchantResult(EnchantResult.ERROR, 0, 0));
+				client.sendPacket(new EnchantResult(EnchantResult.ERROR, 0, 0));
 				return;
 			}
 		}
@@ -167,9 +168,9 @@ public final class RequestEnchantItem extends L2GameClientPacket
 			// last validation check
 			if ((item.getOwnerId() != activeChar.getObjectId()) || (item.isEnchantable() == 0))
 			{
-				activeChar.sendPacket(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITIONS);
+				client.sendPacket(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITIONS);
 				activeChar.removeRequest(request.getClass());
-				activeChar.sendPacket(new EnchantResult(EnchantResult.ERROR, 0, 0));
+				client.sendPacket(new EnchantResult(EnchantResult.ERROR, 0, 0));
 				return;
 			}
 			
@@ -178,9 +179,9 @@ public final class RequestEnchantItem extends L2GameClientPacket
 			{
 				case ERROR:
 				{
-					activeChar.sendPacket(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITIONS);
+					client.sendPacket(SystemMessageId.INAPPROPRIATE_ENCHANT_CONDITIONS);
 					activeChar.removeRequest(request.getClass());
-					activeChar.sendPacket(new EnchantResult(EnchantResult.ERROR, 0, 0));
+					client.sendPacket(new EnchantResult(EnchantResult.ERROR, 0, 0));
 					break;
 				}
 				case SUCCESS:
@@ -193,7 +194,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 						item.setEnchantLevel(item.getEnchantLevel() + 1);
 						item.updateDatabase();
 					}
-					activeChar.sendPacket(new EnchantResult(EnchantResult.SUCCESS, item));
+					client.sendPacket(new EnchantResult(EnchantResult.SUCCESS, item));
 					
 					if (Config.LOG_ITEM_ENCHANTS)
 					{
@@ -244,8 +245,8 @@ public final class RequestEnchantItem extends L2GameClientPacket
 					if (scrollTemplate.isSafe())
 					{
 						// safe enchant - remain old value
-						activeChar.sendPacket(SystemMessageId.ENCHANT_FAILED_THE_ENCHANT_SKILL_FOR_THE_CORRESPONDING_ITEM_WILL_BE_EXACTLY_RETAINED);
-						activeChar.sendPacket(new EnchantResult(EnchantResult.SAFE_FAIL, item));
+						client.sendPacket(SystemMessageId.ENCHANT_FAILED_THE_ENCHANT_SKILL_FOR_THE_CORRESPONDING_ITEM_WILL_BE_EXACTLY_RETAINED);
+						client.sendPacket(new EnchantResult(EnchantResult.SAFE_FAIL, item));
 						
 						if (Config.LOG_ITEM_ENCHANTS)
 						{
@@ -271,13 +272,13 @@ public final class RequestEnchantItem extends L2GameClientPacket
 								SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THE_EQUIPMENT_S1_S2_HAS_BEEN_REMOVED);
 								sm.addInt(item.getEnchantLevel());
 								sm.addItemName(item);
-								activeChar.sendPacket(sm);
+								client.sendPacket(sm);
 							}
 							else
 							{
 								SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HAS_BEEN_UNEQUIPPED);
 								sm.addItemName(item);
-								activeChar.sendPacket(sm);
+								client.sendPacket(sm);
 							}
 							
 							ItemInstance[] unequiped = activeChar.getInventory().unEquipItemInSlotAndRecord(item.getLocationSlot());
@@ -286,18 +287,18 @@ public final class RequestEnchantItem extends L2GameClientPacket
 								iu.addModifiedItem(itm);
 							}
 							
-							activeChar.sendPacket(iu);
+							client.sendPacket(iu);
 							activeChar.broadcastUserInfo();
 						}
 						
 						if (scrollTemplate.isBlessed())
 						{
 							// blessed enchant - clear enchant value
-							activeChar.sendPacket(SystemMessageId.THE_BLESSED_ENCHANT_FAILED_THE_ENCHANT_VALUE_OF_THE_ITEM_BECAME_0);
+							client.sendPacket(SystemMessageId.THE_BLESSED_ENCHANT_FAILED_THE_ENCHANT_VALUE_OF_THE_ITEM_BECAME_0);
 							
 							item.setEnchantLevel(0);
 							item.updateDatabase();
-							activeChar.sendPacket(new EnchantResult(EnchantResult.BLESSED_FAIL, 0, 0));
+							client.sendPacket(new EnchantResult(EnchantResult.BLESSED_FAIL, 0, 0));
 							
 							if (Config.LOG_ITEM_ENCHANTS)
 							{
@@ -328,7 +329,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 								// unable to destroy item, cheater ?
 								Util.handleIllegalPlayerAction(activeChar, "Unable to delete item on enchant failure from player " + activeChar.getName() + ", possible cheater !", Config.DEFAULT_PUNISH);
 								activeChar.removeRequest(request.getClass());
-								activeChar.sendPacket(new EnchantResult(EnchantResult.ERROR, 0, 0));
+								client.sendPacket(new EnchantResult(EnchantResult.ERROR, 0, 0));
 								
 								if (Config.LOG_ITEM_ENCHANTS)
 								{
@@ -355,7 +356,7 @@ public final class RequestEnchantItem extends L2GameClientPacket
 								SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_EARNED_S2_S1_S);
 								sm.addItemName(crystals);
 								sm.addLong(count);
-								activeChar.sendPacket(sm);
+								client.sendPacket(sm);
 							}
 							
 							if (!Config.FORCE_INVENTORY_UPDATE)
@@ -368,11 +369,11 @@ public final class RequestEnchantItem extends L2GameClientPacket
 							
 							if (crystalId == 0)
 							{
-								activeChar.sendPacket(new EnchantResult(EnchantResult.NO_CRYSTAL, 0, 0));
+								client.sendPacket(new EnchantResult(EnchantResult.NO_CRYSTAL, 0, 0));
 							}
 							else
 							{
-								activeChar.sendPacket(new EnchantResult(EnchantResult.FAIL, crystalId, count));
+								client.sendPacket(new EnchantResult(EnchantResult.FAIL, crystalId, count));
 							}
 							
 							if (Config.LOG_ITEM_ENCHANTS)
@@ -426,23 +427,17 @@ public final class RequestEnchantItem extends L2GameClientPacket
 					}
 				}
 				
-				activeChar.sendPacket(iu);
+				client.sendPacket(iu);
 			}
 			else
 			{
-				activeChar.sendPacket(new ItemList(activeChar, true));
+				client.sendPacket(new ItemList(activeChar, true));
 			}
 			
 			request.setProcessing(false);
 			activeChar.broadcastUserInfo(UserInfoType.ENCHANTLEVEL);
-			activeChar.sendPacket(new ExUserInfoInvenWeight(activeChar));
-			activeChar.sendPacket(new ExAdenaInvenCount(activeChar));
+			client.sendPacket(new ExUserInfoInvenWeight(activeChar));
+			client.sendPacket(new ExAdenaInvenCount(activeChar));
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__5F_REQUESTENCHANTITEM;
 	}
 }

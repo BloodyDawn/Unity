@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author Migi
  */
-public class ExNoticePostArrived extends L2GameServerPacket
+public class ExNoticePostArrived implements IGameServerPacket
 {
 	private static final ExNoticePostArrived STATIC_PACKET_TRUE = new ExNoticePostArrived(true);
 	private static final ExNoticePostArrived STATIC_PACKET_FALSE = new ExNoticePostArrived(false);
@@ -39,10 +42,11 @@ public class ExNoticePostArrived extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xAA);
-		writeD(_showAnim ? 0x01 : 0x00);
+		OutgoingPackets.EX_NOTICE_POST_ARRIVED.writeId(packet);
+		
+		packet.writeD(_showAnim ? 0x01 : 0x00);
+		return true;
 	}
 }

@@ -18,21 +18,25 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author Sdw
  */
-public class ExShowAPListWnd extends L2GameServerPacket
+public class ExShowAPListWnd implements IGameServerPacket
 {
-	public static ExShowAPListWnd STATIC_PACKET = new ExShowAPListWnd();
+	public static final ExShowAPListWnd STATIC_PACKET = new ExShowAPListWnd();
 	
 	private ExShowAPListWnd()
 	{
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x165);
+		OutgoingPackets.EX_SHOW_AP_LIST_WND.writeId(packet);
+		
+		return true;
 	}
 }

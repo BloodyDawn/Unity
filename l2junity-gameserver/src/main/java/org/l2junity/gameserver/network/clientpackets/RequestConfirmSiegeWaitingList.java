@@ -23,32 +23,33 @@ import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.SiegeDefenderList;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.3.4.2 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestConfirmSiegeWaitingList extends L2GameClientPacket
+public final class RequestConfirmSiegeWaitingList implements IGameClientPacket
 {
-	private static final String _C__AE_RequestConfirmSiegeWaitingList = "[C] AE RequestConfirmSiegeWaitingList";
-	
 	private int _approved;
 	private int _castleId;
 	private int _clanId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_castleId = readD();
-		_clanId = readD();
-		_approved = readD();
+		_castleId = packet.readD();
+		_clanId = packet.readD();
+		_approved = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -101,13 +102,6 @@ public final class RequestConfirmSiegeWaitingList extends L2GameClientPacket
 		}
 		
 		// Update the defender list
-		activeChar.sendPacket(new SiegeDefenderList(castle));
-		
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__AE_RequestConfirmSiegeWaitingList;
+		client.sendPacket(new SiegeDefenderList(castle));
 	}
 }

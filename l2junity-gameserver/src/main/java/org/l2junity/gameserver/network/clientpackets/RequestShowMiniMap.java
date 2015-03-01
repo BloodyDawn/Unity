@@ -19,42 +19,31 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ShowMiniMap;
+import org.l2junity.network.PacketReader;
 
 /**
  * sample format d
  * @version $Revision: 1 $ $Date: 2005/04/10 00:17:44 $
  */
-public final class RequestShowMiniMap extends L2GameClientPacket
+public final class RequestShowMiniMap implements IGameClientPacket
 {
-	private static final String _C__6C_REQUESTSHOWMINIMAP = "[C] 6C RequestShowMiniMap";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// trigger
+		return true;
 	}
 	
 	@Override
-	protected final void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
-		activeChar.sendPacket(new ShowMiniMap(1665));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__6C_REQUESTSHOWMINIMAP;
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
+		// TODO: Unhardcode maybe?
+		client.sendPacket(new ShowMiniMap(1665));
 	}
 }

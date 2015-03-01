@@ -19,8 +19,10 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public final class PartySmallWindowDelete extends L2GameServerPacket
+public final class PartySmallWindowDelete implements IGameServerPacket
 {
 	private final PlayerInstance _member;
 	
@@ -30,10 +32,12 @@ public final class PartySmallWindowDelete extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x51);
-		writeD(_member.getObjectId());
-		writeS(_member.getName());
+		OutgoingPackets.PARTY_SMALL_WINDOW_DELETE.writeId(packet);
+		
+		packet.writeD(_member.getObjectId());
+		packet.writeS(_member.getName());
+		return true;
 	}
 }

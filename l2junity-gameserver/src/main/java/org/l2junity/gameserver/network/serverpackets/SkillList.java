@@ -21,7 +21,10 @@ package org.l2junity.gameserver.network.serverpackets;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class SkillList extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public final class SkillList implements IGameServerPacket
 {
 	private final List<Skill> _skills = new ArrayList<>();
 	private int _lastLearnedSkillId = 0;
@@ -55,20 +58,21 @@ public final class SkillList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x5F);
-		writeD(_skills.size());
+		OutgoingPackets.SKILL_LIST.writeId(packet);
 		
+		packet.writeD(_skills.size());
 		for (Skill temp : _skills)
 		{
-			writeD(temp.passive ? 1 : 0);
-			writeD(temp.level);
-			writeD(temp.id);
-			writeD(-1); // GOD ReuseDelayShareGroupID
-			writeC(temp.disabled ? 1 : 0); // iSkillDisabled
-			writeC(temp.enchanted ? 1 : 0); // CanEnchant
+			packet.writeD(temp.passive ? 1 : 0);
+			packet.writeD(temp.level);
+			packet.writeD(temp.id);
+			packet.writeD(-1); // GOD ReuseDelayShareGroupID
+			packet.writeC(temp.disabled ? 1 : 0); // iSkillDisabled
+			packet.writeC(temp.enchanted ? 1 : 0); // CanEnchant
 		}
-		writeD(_lastLearnedSkillId);
+		packet.writeD(_lastLearnedSkillId);
+		return true;
 	}
 }

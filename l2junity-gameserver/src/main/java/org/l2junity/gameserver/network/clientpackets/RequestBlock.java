@@ -21,12 +21,12 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.model.BlockList;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.network.PacketReader;
 
-public final class RequestBlock extends L2GameClientPacket
+public final class RequestBlock implements IGameClientPacket
 {
-	private static final String _C__A9_REQUESTBLOCK = "[C] A9 RequestBlock";
-	
 	private static final int BLOCK = 0;
 	private static final int UNBLOCK = 1;
 	private static final int BLOCKLIST = 2;
@@ -37,20 +37,20 @@ public final class RequestBlock extends L2GameClientPacket
 	private Integer _type;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_type = readD(); // 0x00 - block, 0x01 - unblock, 0x03 - allblock, 0x04 - allunblock
-		
+		_type = packet.readD(); // 0x00 - block, 0x01 - unblock, 0x03 - allblock, 0x04 - allunblock
 		if ((_type == BLOCK) || (_type == UNBLOCK))
 		{
-			_name = readS();
+			_name = packet.readS();
 		}
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		final int targetId = CharNameTable.getInstance().getIdByName(_name);
 		final int targetAL = CharNameTable.getInstance().getAccessLevelById(targetId);
 		
@@ -106,11 +106,5 @@ public final class RequestBlock extends L2GameClientPacket
 			default:
 				_log.info("Unknown 0xA9 block type: " + _type);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__A9_REQUESTBLOCK;
 	}
 }

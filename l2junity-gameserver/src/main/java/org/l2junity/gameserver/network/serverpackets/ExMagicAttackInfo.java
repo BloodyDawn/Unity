@@ -18,11 +18,15 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author Sdw
  */
-public class ExMagicAttackInfo extends L2GameServerPacket
+public class ExMagicAttackInfo implements IGameServerPacket
 {
+	// TODO: Enum
 	public final static int CRITICAL = 1;
 	public final static int CRITICAL_HEAL = 2;
 	public final static int OVERHIT = 3;
@@ -43,12 +47,13 @@ public class ExMagicAttackInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xFB);
-		writeD(_caster);
-		writeD(_target);
-		writeD(_type);
+		OutgoingPackets.EX_MAGIC_ATTACK_INFO.writeId(packet);
+		
+		packet.writeD(_caster);
+		packet.writeD(_target);
+		packet.writeD(_type);
+		return true;
 	}
 }

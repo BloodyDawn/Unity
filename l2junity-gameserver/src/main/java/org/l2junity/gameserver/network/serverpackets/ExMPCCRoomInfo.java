@@ -19,11 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.matching.CommandChannelMatchingRoom;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class ExMPCCRoomInfo extends L2GameServerPacket
+public class ExMPCCRoomInfo implements IGameServerPacket
 {
 	private final CommandChannelMatchingRoom _room;
 	
@@ -33,17 +35,17 @@ public class ExMPCCRoomInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x9C);
+		OutgoingPackets.EX_MPCC_ROOM_INFO.writeId(packet);
 		
-		writeD(_room.getId());
-		writeD(_room.getMaxMembers());
-		writeD(_room.getMinLvl());
-		writeD(_room.getMaxLvl());
-		writeD(_room.getLootType());
-		writeD(_room.getLocation());
-		writeS(_room.getTitle());
+		packet.writeD(_room.getId());
+		packet.writeD(_room.getMaxMembers());
+		packet.writeD(_room.getMinLvl());
+		packet.writeD(_room.getMaxLvl());
+		packet.writeD(_room.getLootType());
+		packet.writeD(_room.getLocation());
+		packet.writeS(_room.getTitle());
+		return true;
 	}
 }

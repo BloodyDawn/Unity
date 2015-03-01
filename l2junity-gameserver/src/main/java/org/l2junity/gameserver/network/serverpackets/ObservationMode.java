@@ -19,8 +19,10 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class ObservationMode extends L2GameServerPacket
+public class ObservationMode implements IGameServerPacket
 {
 	private final Location _loc;
 	
@@ -30,11 +32,15 @@ public class ObservationMode extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xEB);
-		writeLoc(_loc);
-		writeD(0x00); // TODO: Find me
-		writeD(0xc0); // TODO: Find me
+		OutgoingPackets.OBSERVER_START.writeId(packet);
+		
+		packet.writeD(_loc.getX());
+		packet.writeD(_loc.getY());
+		packet.writeD(_loc.getZ());
+		packet.writeD(0x00); // TODO: Find me
+		packet.writeD(0xc0); // TODO: Find me
+		return true;
 	}
 }

@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author mochitto
  */
-public class ExNevitAdventEffect extends L2GameServerPacket
+public class ExNevitAdventEffect implements IGameServerPacket
 {
 	private final int _timeLeft;
 	
@@ -31,10 +34,11 @@ public class ExNevitAdventEffect extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xE0);
-		writeD(_timeLeft);
+		OutgoingPackets.EX_SHOW_CHANNELING_EFFECT.writeId(packet);
+		
+		packet.writeD(_timeLeft);
+		return true;
 	}
 }

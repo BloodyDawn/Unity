@@ -18,19 +18,25 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author Luca Baldi
  */
-public class ExShowQuestInfo extends L2GameServerPacket
+public class ExShowQuestInfo implements IGameServerPacket
 {
-	public ExShowQuestInfo()
+	public static final ExShowQuestInfo STATIC_PACKET = new ExShowQuestInfo();
+	
+	private ExShowQuestInfo()
 	{
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xfe);
-		writeH(0x20);
+		OutgoingPackets.EX_SHOW_QUEST_INFO.writeId(packet);
+		
+		return true;
 	}
 }

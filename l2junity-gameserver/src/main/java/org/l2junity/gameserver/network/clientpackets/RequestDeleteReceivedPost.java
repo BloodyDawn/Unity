@@ -23,41 +23,42 @@ import org.l2junity.gameserver.instancemanager.MailManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Message;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExChangePostState;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Migi, DS
  */
-public final class RequestDeleteReceivedPost extends L2GameClientPacket
+public final class RequestDeleteReceivedPost implements IGameClientPacket
 {
-	private static final String _C__D0_68_REQUESTDELETERECEIVEDPOST = "[C] D0:68 RequestDeleteReceivedPost";
-	
 	private static final int BATCH_LENGTH = 4; // length of the one item
 	
 	int[] _msgIds = null;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		int count = readD();
-		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
+		int count = packet.readD();
+		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != packet.getReadableBytes()))
 		{
-			return;
+			return false;
 		}
 		
 		_msgIds = new int[count];
 		for (int i = 0; i < count; i++)
 		{
-			_msgIds[i] = readD();
+			_msgIds[i] = packet.readD();
 		}
+		return true;
 	}
 	
 	@Override
-	public void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if ((activeChar == null) || (_msgIds == null) || !Config.ALLOW_MAIL)
 		{
 			return;
@@ -65,7 +66,7 @@ public final class RequestDeleteReceivedPost extends L2GameClientPacket
 		
 		if (!activeChar.isInsideZone(ZoneId.PEACE))
 		{
-			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_RECEIVE_OR_SEND_MAIL_WITH_ATTACHED_ITEMS_IN_NON_PEACE_ZONE_REGIONS);
+			client.sendPacket(SystemMessageId.YOU_CANNOT_RECEIVE_OR_SEND_MAIL_WITH_ATTACHED_ITEMS_IN_NON_PEACE_ZONE_REGIONS);
 			return;
 		}
 		
@@ -89,18 +90,6 @@ public final class RequestDeleteReceivedPost extends L2GameClientPacket
 			
 			msg.setDeletedByReceiver();
 		}
-		activeChar.sendPacket(new ExChangePostState(true, _msgIds, Message.DELETED));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_68_REQUESTDELETERECEIVEDPOST;
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
+		client.sendPacket(new ExChangePostState(true, _msgIds, Message.DELETED));
 	}
 }

@@ -23,12 +23,14 @@ import java.util.List;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.L2ShuttleInstance;
 import org.l2junity.gameserver.model.shuttle.L2ShuttleStop;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class ExShuttleInfo extends L2GameServerPacket
+public class ExShuttleInfo implements IGameServerPacket
 {
 	private final L2ShuttleInstance _shuttle;
 	private final List<L2ShuttleStop> _stops;
@@ -40,29 +42,29 @@ public class ExShuttleInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xCB);
+		OutgoingPackets.EX_SHUTTLE_INFO.writeId(packet);
 		
-		writeD(_shuttle.getObjectId());
-		writeD(_shuttle.getX());
-		writeD(_shuttle.getY());
-		writeD(_shuttle.getZ());
-		writeD(_shuttle.getHeading());
-		writeD(_shuttle.getId());
-		writeD(_stops.size());
+		packet.writeD(_shuttle.getObjectId());
+		packet.writeD(_shuttle.getX());
+		packet.writeD(_shuttle.getY());
+		packet.writeD(_shuttle.getZ());
+		packet.writeD(_shuttle.getHeading());
+		packet.writeD(_shuttle.getId());
+		packet.writeD(_stops.size());
 		for (L2ShuttleStop stop : _stops)
 		{
-			writeD(stop.getId());
+			packet.writeD(stop.getId());
 			for (Location loc : stop.getDimensions())
 			{
-				writeD(loc.getX());
-				writeD(loc.getY());
-				writeD(loc.getZ());
+				packet.writeD(loc.getX());
+				packet.writeD(loc.getY());
+				packet.writeD(loc.getZ());
 			}
-			writeD(stop.isDoorOpen() ? 0x01 : 0x00);
-			writeD(stop.hasDoorChanged() ? 0x01 : 0x00);
+			packet.writeD(stop.isDoorOpen() ? 0x01 : 0x00);
+			packet.writeD(stop.hasDoorChanged() ? 0x01 : 0x00);
 		}
+		return true;
 	}
 }

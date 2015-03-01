@@ -19,12 +19,14 @@
 package org.l2junity.gameserver.network.serverpackets.shuttle;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class ExMoveToLocationInShuttle extends L2GameServerPacket
+public class ExMoveToLocationInShuttle implements IGameServerPacket
 {
 	private final int _charObjId;
 	private final int _airShipId;
@@ -44,17 +46,18 @@ public class ExMoveToLocationInShuttle extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xCF);
-		writeD(_charObjId);
-		writeD(_airShipId);
-		writeD(_targetX);
-		writeD(_targetY);
-		writeD(_targetZ);
-		writeD(_fromX);
-		writeD(_fromY);
-		writeD(_fromZ);
+		OutgoingPackets.EX_MOVE_TO_LOCATION_IN_SUTTLE.writeId(packet);
+		
+		packet.writeD(_charObjId);
+		packet.writeD(_airShipId);
+		packet.writeD(_targetX);
+		packet.writeD(_targetY);
+		packet.writeD(_targetZ);
+		packet.writeD(_fromX);
+		packet.writeD(_fromY);
+		packet.writeD(_fromZ);
+		return true;
 	}
 }

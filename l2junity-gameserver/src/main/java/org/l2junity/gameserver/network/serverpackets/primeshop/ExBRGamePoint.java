@@ -19,12 +19,14 @@
 package org.l2junity.gameserver.network.serverpackets.primeshop;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Gnacik, UnAfraid
  */
-public class ExBRGamePoint extends L2GameServerPacket
+public class ExBRGamePoint implements IGameServerPacket
 {
 	private final int _charId;
 	private final int _charPoints;
@@ -36,12 +38,13 @@ public class ExBRGamePoint extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xD6);
-		writeD(_charId);
-		writeQ(_charPoints);
-		writeD(0x00);
+		OutgoingPackets.EX_BR_GAME_POINT.writeId(packet);
+		
+		packet.writeD(_charId);
+		packet.writeQ(_charPoints);
+		packet.writeD(0x00);
+		return true;
 	}
 }

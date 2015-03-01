@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author Sdw
  */
-public class ExDissmissMPCCRoom extends L2GameServerPacket
+public class ExDissmissMPCCRoom implements IGameServerPacket
 {
 	public static final ExDissmissMPCCRoom STATIC_PACKET = new ExDissmissMPCCRoom();
 	
@@ -30,9 +33,10 @@ public class ExDissmissMPCCRoom extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x9E);
+		OutgoingPackets.EX_DISSMISS_MPCC_ROOM.writeId(packet);
+		
+		return true;
 	}
 }

@@ -20,15 +20,18 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import java.util.List;
 
-import org.l2junity.gameserver.model.actor.Playable;
-
 import javolution.util.FastList;
+
+import org.l2junity.gameserver.model.actor.Playable;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Luca Baldi
  */
-public final class RelationChanged extends L2GameServerPacket
+public final class RelationChanged implements IGameServerPacket
 {
+	// TODO: Enum
 	public static final int RELATION_PARTY1 = 0x00001; // party member
 	public static final int RELATION_PARTY2 = 0x00002; // party member
 	public static final int RELATION_PARTY3 = 0x00004; // party member
@@ -71,7 +74,6 @@ public final class RelationChanged extends L2GameServerPacket
 		_singled._autoAttackable = autoattackable ? 1 : 0;
 		_singled._karma = activeChar.getKarma();
 		_singled._pvpFlag = activeChar.getPvpFlag();
-		setInvisible(activeChar.isInvisible());
 	}
 	
 	public RelationChanged()
@@ -97,35 +99,37 @@ public final class RelationChanged extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xCE);
-		writeC(_mask);
+		OutgoingPackets.RELATION_CHANGED.writeId(packet);
+		
+		packet.writeC(_mask);
 		if (_multi == null)
 		{
-			writeRelation(_singled);
+			writeRelation(packet, _singled);
 		}
 		else
 		{
-			writeH(_multi.size());
+			packet.writeH(_multi.size());
 			for (Relation r : _multi)
 			{
-				writeRelation(r);
+				writeRelation(packet, r);
 			}
 			FastList.recycle((FastList<?>) _multi);
 		}
+		return true;
 	}
 	
-	private void writeRelation(Relation relation)
+	private void writeRelation(PacketWriter packet, Relation relation)
 	{
-		writeD(relation._objId);
+		packet.writeD(relation._objId);
 		
 		if ((_mask & SEND_DEFAULT) == 0)
 		{
-			writeD(relation._relation);
-			writeC(relation._autoAttackable);
-			writeD(relation._karma);
-			writeC(relation._pvpFlag);
+			packet.writeD(relation._relation);
+			packet.writeC(relation._autoAttackable);
+			packet.writeD(relation._karma);
+			packet.writeC(relation._pvpFlag);
 		}
 	}
 }

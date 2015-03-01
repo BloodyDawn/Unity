@@ -22,8 +22,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class AbnormalStatusUpdate extends L2GameServerPacket
+public class AbnormalStatusUpdate implements IGameServerPacket
 {
 	private final List<BuffInfo> _effects = new ArrayList<>();
 	
@@ -36,19 +38,21 @@ public class AbnormalStatusUpdate extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x85);
-		writeH(_effects.size());
+		OutgoingPackets.ABNORMAL_STATUS_UPDATE.writeId(packet);
+		
+		packet.writeH(_effects.size());
 		for (BuffInfo info : _effects)
 		{
 			if ((info != null) && info.isInUse())
 			{
-				writeD(info.getSkill().getDisplayId());
-				writeH(info.getSkill().getDisplayLevel());
-				writeD(0x00);
-				writeH(info.getTime());
+				packet.writeD(info.getSkill().getDisplayId());
+				packet.writeH(info.getSkill().getDisplayLevel());
+				packet.writeD(0x00);
+				packet.writeH(info.getTime());
 			}
 		}
+		return true;
 	}
 }

@@ -22,32 +22,33 @@ import org.l2junity.gameserver.data.xml.impl.BeautyShopData;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.beautyshop.BeautyData;
 import org.l2junity.gameserver.model.beautyshop.BeautyItem;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExResponseBeautyList;
 import org.l2junity.gameserver.network.serverpackets.ExResponseBeautyRegistReset;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Sdw
  */
-public class RequestRegistBeauty extends L2GameClientPacket
+public class RequestRegistBeauty implements IGameClientPacket
 {
-	private static final String _C__D0_CB_REQUESTREGISTBEAUTY = "[C] D0;CB RequestRegistBeauty";
-	
 	private int _hairId;
 	private int _faceId;
 	private int _colorId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_hairId = readD();
-		_faceId = readD();
-		_colorId = readD();
+		_hairId = packet.readD();
+		_faceId = packet.readD();
+		_colorId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -147,9 +148,4 @@ public class RequestRegistBeauty extends L2GameClientPacket
 		player.sendPacket(new ExResponseBeautyRegistReset(player, ExResponseBeautyRegistReset.CHANGE, ExResponseBeautyRegistReset.SUCCESS));
 	}
 	
-	@Override
-	public String getType()
-	{
-		return _C__D0_CB_REQUESTREGISTBEAUTY;
-	}
 }

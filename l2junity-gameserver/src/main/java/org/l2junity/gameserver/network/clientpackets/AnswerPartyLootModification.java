@@ -20,40 +20,36 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author JIV
  */
-public class AnswerPartyLootModification extends L2GameClientPacket
+public class AnswerPartyLootModification implements IGameClientPacket
 {
-	private static final String _C__D0_79_ANSWERPARTYLOOTMODIFICATION = "[C] D0:79 AnswerPartyLootModification";
-	
 	public int _answer;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_answer = readD();
+		_answer = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
-		Party party = activeChar.getParty();
+		
+		final Party party = activeChar.getParty();
 		if (party != null)
 		{
 			party.answerLootChangeRequest(activeChar, _answer == 1);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_79_ANSWERPARTYLOOTMODIFICATION;
 	}
 }

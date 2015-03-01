@@ -21,6 +21,8 @@ package org.l2junity.gameserver.network.serverpackets;
 import java.util.Collection;
 
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 public class PetItemList extends AbstractItemPacket
 {
@@ -32,13 +34,15 @@ public class PetItemList extends AbstractItemPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xB3);
-		writeH(_items.size());
+		OutgoingPackets.PET_ITEM_LIST.writeId(packet);
+		
+		packet.writeH(_items.size());
 		for (ItemInstance item : _items)
 		{
-			writeItem(item);
+			writeItem(packet, item);
 		}
+		return true;
 	}
 }

@@ -25,31 +25,32 @@ import org.l2junity.gameserver.model.Elementals;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.EnchantItemAttributeRequest;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExAttributeEnchantResult;
 import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.network.serverpackets.UserInfo;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
-public class RequestExEnchantItemAttribute extends L2GameClientPacket
+public class RequestExEnchantItemAttribute implements IGameClientPacket
 {
-	private static final String _C__D0_35_REQUESTEXENCHANTITEMATTRIBUTE = "[C] D0:35 RequestExEnchantItemAttribute";
-	
 	private int _objectId;
 	private long _count;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_objectId = readD();
-		_count = readQ();
+		_objectId = packet.readD();
+		_count = packet.readQ();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -67,7 +68,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 		{
 			// Player canceled enchant
 			player.removeRequest(request.getClass());
-			player.sendPacket(SystemMessageId.ATTRIBUTE_ITEM_USAGE_HAS_BEEN_CANCELLED);
+			client.sendPacket(SystemMessageId.ATTRIBUTE_ITEM_USAGE_HAS_BEEN_CANCELLED);
 			return;
 		}
 		
@@ -79,7 +80,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 		
 		if (player.getPrivateStoreType() != PrivateStoreType.NONE)
 		{
-			player.sendPacket(SystemMessageId.YOU_CANNOT_ADD_ELEMENTAL_POWER_WHILE_OPERATING_A_PRIVATE_STORE_OR_PRIVATE_WORKSHOP);
+			client.sendPacket(SystemMessageId.YOU_CANNOT_ADD_ELEMENTAL_POWER_WHILE_OPERATING_A_PRIVATE_STORE_OR_PRIVATE_WORKSHOP);
 			player.removeRequest(request.getClass());
 			return;
 		}
@@ -90,7 +91,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 			// Cancel trade
 			player.cancelActiveTrade();
 			player.removeRequest(request.getClass());
-			player.sendPacket(SystemMessageId.YOU_CANNOT_DO_THAT_WHILE_TRADING);
+			client.sendPacket(SystemMessageId.YOU_CANNOT_DO_THAT_WHILE_TRADING);
 			return;
 		}
 		
@@ -99,13 +100,13 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 		if ((item == null) || (stone == null))
 		{
 			player.removeRequest(request.getClass());
-			player.sendPacket(SystemMessageId.ATTRIBUTE_ITEM_USAGE_HAS_BEEN_CANCELLED);
+			client.sendPacket(SystemMessageId.ATTRIBUTE_ITEM_USAGE_HAS_BEEN_CANCELLED);
 			return;
 		}
 		
 		if (!item.isElementable())
 		{
-			player.sendPacket(SystemMessageId.ELEMENTAL_POWER_ENHANCER_USAGE_REQUIREMENT_IS_NOT_SUFFICIENT);
+			client.sendPacket(SystemMessageId.ELEMENTAL_POWER_ENHANCER_USAGE_REQUIREMENT_IS_NOT_SUFFICIENT);
 			player.removeRequest(request.getClass());
 			return;
 		}
@@ -147,7 +148,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 		
 		if ((item.isWeapon() && (oldElement != null) && (oldElement.getElement() != elementToAdd) && (oldElement.getElement() != -2)) || (item.isArmor() && (item.getElemental(elementToAdd) == null) && (item.getElementals() != null) && (item.getElementals().length >= 3)))
 		{
-			player.sendPacket(SystemMessageId.ANOTHER_ELEMENTAL_POWER_HAS_ALREADY_BEEN_ADDED_THIS_ELEMENTAL_POWER_CANNOT_BE_ADDED);
+			client.sendPacket(SystemMessageId.ANOTHER_ELEMENTAL_POWER_HAS_ALREADY_BEEN_ADDED_THIS_ELEMENTAL_POWER_CANNOT_BE_ADDED);
 			player.removeRequest(request.getClass());
 			return;
 		}
@@ -175,7 +176,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 		
 		if (powerToAdd <= 0)
 		{
-			player.sendPacket(SystemMessageId.ATTRIBUTE_ITEM_USAGE_HAS_BEEN_CANCELLED);
+			client.sendPacket(SystemMessageId.ATTRIBUTE_ITEM_USAGE_HAS_BEEN_CANCELLED);
 			player.removeRequest(request.getClass());
 			return;
 		}
@@ -256,7 +257,7 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 		}
 		else
 		{
-			player.sendPacket(SystemMessageId.YOU_HAVE_FAILED_TO_ADD_ELEMENTAL_POWER);
+			client.sendPacket(SystemMessageId.YOU_HAVE_FAILED_TO_ADD_ELEMENTAL_POWER);
 		}
 		
 		int result = 0;
@@ -277,9 +278,9 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 		}
 		
 		player.removeRequest(request.getClass());
-		player.sendPacket(new ExAttributeEnchantResult(result, item.isWeapon(), elementToAdd, elementValue, newValue, successfulAttempts, failedAttempts));
-		player.sendPacket(new UserInfo(player));
-		player.sendPacket(iu);
+		client.sendPacket(new ExAttributeEnchantResult(result, item.isWeapon(), elementToAdd, elementValue, newValue, successfulAttempts, failedAttempts));
+		client.sendPacket(new UserInfo(player));
+		client.sendPacket(iu);
 	}
 	
 	private int addElement(final PlayerInstance player, final ItemInstance stone, final ItemInstance item, byte elementToAdd)
@@ -379,11 +380,5 @@ public class RequestExEnchantItemAttribute extends L2GameClientPacket
 			}
 		}
 		return 0;
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_35_REQUESTEXENCHANTITEMATTRIBUTE;
 	}
 }

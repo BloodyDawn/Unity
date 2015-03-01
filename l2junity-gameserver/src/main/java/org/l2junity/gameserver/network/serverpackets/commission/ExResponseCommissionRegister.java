@@ -18,12 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets.commission;
 
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author NosBit
  */
-public class ExResponseCommissionRegister extends L2GameServerPacket
+public class ExResponseCommissionRegister implements IGameServerPacket
 {
 	public static final ExResponseCommissionRegister SUCCEED = new ExResponseCommissionRegister(1);
 	public static final ExResponseCommissionRegister FAILED = new ExResponseCommissionRegister(0);
@@ -36,10 +38,11 @@ public class ExResponseCommissionRegister extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xF5);
-		writeD(_result);
+		OutgoingPackets.EX_RESPONSE_COMMISSION_REGISTER.writeId(packet);
+		
+		packet.writeD(_result);
+		return true;
 	}
 }

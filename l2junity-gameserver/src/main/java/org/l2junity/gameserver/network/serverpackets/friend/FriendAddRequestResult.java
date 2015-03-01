@@ -19,12 +19,14 @@
 package org.l2junity.gameserver.network.serverpackets.friend;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class FriendAddRequestResult extends L2GameServerPacket
+public class FriendAddRequestResult implements IGameServerPacket
 {
 	private final int _result;
 	private final int _charId;
@@ -46,16 +48,18 @@ public class FriendAddRequestResult extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x55);
-		writeD(_result);
-		writeD(_charId);
-		writeS(_charName);
-		writeD(_isOnline);
-		writeD(_charObjectId);
-		writeD(_charLevel);
-		writeD(_charClassId);
-		writeH(0x00); // Always 0 on retail
+		OutgoingPackets.FRIEND_ADD_REQUEST_RESULT.writeId(packet);
+		
+		packet.writeD(_result);
+		packet.writeD(_charId);
+		packet.writeS(_charName);
+		packet.writeD(_isOnline);
+		packet.writeD(_charObjectId);
+		packet.writeD(_charLevel);
+		packet.writeD(_charClassId);
+		packet.writeH(0x00); // Always 0 on retail
+		return true;
 	}
 }

@@ -27,7 +27,7 @@ import org.l2junity.gameserver.instancemanager.PetitionManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.CreatureSay;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
 import org.l2junity.gameserver.network.serverpackets.PetitionVotePacket;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
@@ -139,7 +139,7 @@ public final class Petition
 		return _type.toString().replace("_", " ");
 	}
 	
-	public void sendPetitionerPacket(L2GameServerPacket responsePacket)
+	public void sendPetitionerPacket(IGameServerPacket responsePacket)
 	{
 		if ((getPetitioner() == null) || !getPetitioner().isOnline())
 		{
@@ -153,7 +153,7 @@ public final class Petition
 		getPetitioner().sendPacket(responsePacket);
 	}
 	
-	public void sendResponderPacket(L2GameServerPacket responsePacket)
+	public void sendResponderPacket(IGameServerPacket responsePacket)
 	{
 		if ((getResponder() == null) || !getResponder().isOnline())
 		{

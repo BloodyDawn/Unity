@@ -22,12 +22,14 @@ import java.util.Calendar;
 
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class ExFriendDetailInfo extends L2GameServerPacket
+public class ExFriendDetailInfo implements IGameServerPacket
 {
 	private final int _objectId;
 	private final PlayerInstance _friend;
@@ -43,47 +45,47 @@ public class ExFriendDetailInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xEC);
+		OutgoingPackets.EX_FRIEND_DETAIL_INFO.writeId(packet);
 		
-		writeD(_objectId);
+		packet.writeD(_objectId);
 		
 		if (_friend == null)
 		{
-			writeS(_name);
-			writeD(0);
-			writeD(0);
-			writeH(0);
-			writeH(0);
-			writeD(0);
-			writeD(0);
-			writeS("");
-			writeD(0);
-			writeD(0);
-			writeS("");
-			writeD(1);
-			writeS(""); // memo
+			packet.writeS(_name);
+			packet.writeD(0);
+			packet.writeD(0);
+			packet.writeH(0);
+			packet.writeH(0);
+			packet.writeD(0);
+			packet.writeD(0);
+			packet.writeS("");
+			packet.writeD(0);
+			packet.writeD(0);
+			packet.writeS("");
+			packet.writeD(1);
+			packet.writeS(""); // memo
 		}
 		else
 		{
-			writeS(_friend.getName());
-			writeD(_friend.isOnlineInt());
-			writeD(_friend.getObjectId());
-			writeH(_friend.getLevel());
-			writeH(_friend.getClassId().getId());
-			writeD(_friend.getClanId());
-			writeD(_friend.getClanCrestId());
-			writeS(_friend.getClan() != null ? _friend.getClan().getName() : "");
-			writeD(_friend.getAllyId());
-			writeD(_friend.getAllyCrestId());
-			writeS(_friend.getClan() != null ? _friend.getClan().getAllyName() : "");
+			packet.writeS(_friend.getName());
+			packet.writeD(_friend.isOnlineInt());
+			packet.writeD(_friend.getObjectId());
+			packet.writeH(_friend.getLevel());
+			packet.writeH(_friend.getClassId().getId());
+			packet.writeD(_friend.getClanId());
+			packet.writeD(_friend.getClanCrestId());
+			packet.writeS(_friend.getClan() != null ? _friend.getClan().getName() : "");
+			packet.writeD(_friend.getAllyId());
+			packet.writeD(_friend.getAllyCrestId());
+			packet.writeS(_friend.getClan() != null ? _friend.getClan().getAllyName() : "");
 			Calendar createDate = _friend.getCreateDate();
-			writeC(createDate.get(Calendar.MONTH) + 1);
-			writeC(createDate.get(Calendar.DAY_OF_MONTH));
-			writeD(_lastAccess);
-			writeS(""); // memo
+			packet.writeC(createDate.get(Calendar.MONTH) + 1);
+			packet.writeC(createDate.get(Calendar.DAY_OF_MONTH));
+			packet.writeD(_lastAccess);
+			packet.writeS(""); // memo
 		}
+		return true;
 	}
 }

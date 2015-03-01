@@ -25,8 +25,10 @@ import org.l2junity.gameserver.instancemanager.CastleManorManager;
 import org.l2junity.gameserver.model.CropProcure;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class SellListProcure extends L2GameServerPacket
+public class SellListProcure implements IGameServerPacket
 {
 	private final long _money;
 	private final Map<ItemInstance, Long> _sellList = new HashMap<>();
@@ -45,22 +47,24 @@ public class SellListProcure extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xEF);
-		writeQ(_money); // money
-		writeD(0x00); // lease ?
-		writeH(_sellList.size()); // list size
+		OutgoingPackets.SELL_LIST_PROCURE.writeId(packet);
+		
+		packet.writeQ(_money); // money
+		packet.writeD(0x00); // lease ?
+		packet.writeH(_sellList.size()); // list size
 		
 		for (ItemInstance item : _sellList.keySet())
 		{
-			writeH(item.getItem().getType1());
-			writeD(item.getObjectId());
-			writeD(item.getDisplayId());
-			writeQ(_sellList.get(item)); // count
-			writeH(item.getItem().getType2());
-			writeH(0); // unknown
-			writeQ(0); // price, u shouldnt get any adena for crops, only raw materials
+			packet.writeH(item.getItem().getType1());
+			packet.writeD(item.getObjectId());
+			packet.writeD(item.getDisplayId());
+			packet.writeQ(_sellList.get(item)); // count
+			packet.writeH(item.getItem().getType2());
+			packet.writeH(0); // unknown
+			packet.writeQ(0); // price, u shouldnt get any adena for crops, only raw materials
 		}
+		return true;
 	}
 }

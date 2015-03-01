@@ -18,22 +18,24 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class ShowCalculator extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class ShowCalculator implements IGameServerPacket
 {
 	private final int _calculatorId;
 	
-	/**
-	 * @param calculatorId
-	 */
 	public ShowCalculator(int calculatorId)
 	{
 		_calculatorId = calculatorId;
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xe2);
-		writeD(_calculatorId);
+		OutgoingPackets.SHOW_CALC.writeId(packet);
+		
+		packet.writeD(_calculatorId);
+		return true;
 	}
 }

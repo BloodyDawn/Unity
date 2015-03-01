@@ -22,6 +22,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.data.xml.impl.ClassListData;
 import org.l2junity.gameserver.datatables.ItemTable;
+import org.l2junity.gameserver.enums.HtmlActionScope;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.base.ClassId;
@@ -150,6 +151,7 @@ public final class L2ClassMasterInstance extends L2MerchantInstance
 		{
 		}
 		player.sendPacket(TutorialCloseHtml.STATIC_PACKET);
+		player.clearHtmlActions(HtmlActionScope.TUTORIAL_HTML);
 	}
 	
 	public static final void onTutorialQuestionMark(PlayerInstance player, int number)

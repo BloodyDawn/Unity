@@ -26,72 +26,67 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.UIData;
 import org.l2junity.gameserver.model.ActionKey;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.L2GameClient.GameClientState;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.gameserver.network.client.ConnectionState;
+import org.l2junity.network.PacketReader;
 
 /**
  * Request Save Key Mapping client packet.
  * @author mrTJO, Zoey76
  */
-public class RequestSaveKeyMapping extends L2GameClientPacket
+public class RequestSaveKeyMapping implements IGameClientPacket
 {
-	private static final String _C__D0_22_REQUESTSAVEKEYMAPPING = "[C] D0:22 RequestSaveKeyMapping";
-	
 	private final Map<Integer, List<ActionKey>> _keyMap = new HashMap<>();
 	private final Map<Integer, List<Integer>> _catMap = new HashMap<>();
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
 		int category = 0;
 		
-		readD(); // Unknown
-		readD(); // Unknown
-		final int _tabNum = readD();
+		packet.readD(); // Unknown
+		packet.readD(); // Unknown
+		final int _tabNum = packet.readD();
 		for (int i = 0; i < _tabNum; i++)
 		{
-			int cmd1Size = readC();
+			int cmd1Size = packet.readC();
 			for (int j = 0; j < cmd1Size; j++)
 			{
-				UIData.addCategory(_catMap, category, readC());
+				UIData.addCategory(_catMap, category, packet.readC());
 			}
 			category++;
 			
-			int cmd2Size = readC();
+			int cmd2Size = packet.readC();
 			for (int j = 0; j < cmd2Size; j++)
 			{
-				UIData.addCategory(_catMap, category, readC());
+				UIData.addCategory(_catMap, category, packet.readC());
 			}
 			category++;
 			
-			int cmdSize = readD();
+			int cmdSize = packet.readD();
 			for (int j = 0; j < cmdSize; j++)
 			{
-				int cmd = readD();
-				int key = readD();
-				int tgKey1 = readD();
-				int tgKey2 = readD();
-				int show = readD();
+				int cmd = packet.readD();
+				int key = packet.readD();
+				int tgKey1 = packet.readD();
+				int tgKey2 = packet.readD();
+				int show = packet.readD();
 				UIData.addKey(_keyMap, i, new ActionKey(i, cmd, key, tgKey1, tgKey2, show));
 			}
 		}
-		readD();
-		readD();
+		packet.readD();
+		packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getActiveChar();
-		if (!Config.STORE_UI_SETTINGS || (player == null) || (getClient().getState() != GameClientState.IN_GAME))
+		final PlayerInstance player = client.getActiveChar();
+		if (!Config.STORE_UI_SETTINGS || (player == null) || (client.getConnectionState() != ConnectionState.IN_GAME))
 		{
 			return;
 		}
 		player.getUISettings().storeAll(_catMap, _keyMap);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_22_REQUESTSAVEKEYMAPPING;
 	}
 }

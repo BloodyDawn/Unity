@@ -19,8 +19,10 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public final class DoorStatusUpdate extends L2GameServerPacket
+public final class DoorStatusUpdate implements IGameServerPacket
 {
 	private final L2DoorInstance _door;
 	
@@ -30,15 +32,17 @@ public final class DoorStatusUpdate extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x4d);
-		writeD(_door.getObjectId());
-		writeD(_door.getOpen() ? 0 : 1);
-		writeD(_door.getDamage());
-		writeD(_door.isEnemy() ? 1 : 0);
-		writeD(_door.getId());
-		writeD((int) _door.getCurrentHp());
-		writeD(_door.getMaxHp());
+		OutgoingPackets.DOOR_STATUS_UPDATE.writeId(packet);
+		
+		packet.writeD(_door.getObjectId());
+		packet.writeD(_door.getOpen() ? 0 : 1);
+		packet.writeD(_door.getDamage());
+		packet.writeD(_door.isEnemy() ? 1 : 0);
+		packet.writeD(_door.getId());
+		packet.writeD((int) _door.getCurrentHp());
+		packet.writeD(_door.getMaxHp());
+		return true;
 	}
 }

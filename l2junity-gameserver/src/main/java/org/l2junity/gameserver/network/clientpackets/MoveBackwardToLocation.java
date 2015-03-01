@@ -27,19 +27,19 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerMoveRequest;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.StopMove;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.11.2.4.2.4 $ $Date: 2005/03/27 15:29:30 $
  */
-public class MoveBackwardToLocation extends L2GameClientPacket
+public class MoveBackwardToLocation implements IGameClientPacket
 {
-	private static final String _C__0F_MOVEBACKWARDTOLOC = "[C] 0F MoveBackwardToLoc";
-	
 	// cdddddd
 	private int _targetX;
 	private int _targetY;
@@ -49,36 +49,40 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 	private int _originZ;
 	
 	private int _moveMovement;
+	boolean _punishPlayer;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_targetX = readD();
-		_targetY = readD();
-		_targetZ = readD();
-		_originX = readD();
-		_originY = readD();
-		_originZ = readD();
+		_targetX = packet.readD();
+		_targetY = packet.readD();
+		_targetZ = packet.readD();
+		_originX = packet.readD();
+		_originY = packet.readD();
+		_originZ = packet.readD();
 		try
 		{
-			_moveMovement = readD(); // is 0 if cursor keys are used 1 if mouse is used
+			_moveMovement = packet.readD(); // is 0 if cursor keys are used 1 if mouse is used
 		}
 		catch (BufferUnderflowException e)
 		{
-			if (Config.L2WALKER_PROTECTION)
-			{
-				PlayerInstance activeChar = getClient().getActiveChar();
-				Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " is trying to use L2Walker and got kicked.", Config.DEFAULT_PUNISH);
-			}
+			_punishPlayer = Config.L2WALKER_PROTECTION;
 		}
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
+			return;
+		}
+		
+		if (_punishPlayer)
+		{
+			Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " is trying to use L2Walker and got kicked.", Config.DEFAULT_PUNISH);
 			return;
 		}
 		
@@ -133,11 +137,5 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 			return;
 		}
 		activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(_targetX, _targetY, _targetZ));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__0F_MOVEBACKWARDTOLOC;
 	}
 }

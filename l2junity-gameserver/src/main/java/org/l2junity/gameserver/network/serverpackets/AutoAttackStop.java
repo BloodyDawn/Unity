@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class AutoAttackStop extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class AutoAttackStop implements IGameServerPacket
 {
 	private final int _targetObjId;
 	
@@ -31,9 +34,11 @@ public class AutoAttackStop extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x26);
-		writeD(_targetObjId);
+		OutgoingPackets.AUTO_ATTACK_STOP.writeId(packet);
+		
+		packet.writeD(_targetObjId);
+		return true;
 	}
 }

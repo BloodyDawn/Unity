@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author JIV
  */
-public class ExStartScenePlayer extends L2GameServerPacket
+public class ExStartScenePlayer implements IGameServerPacket
 {
 	private final int _movieId;
 	
@@ -31,10 +34,11 @@ public class ExStartScenePlayer extends L2GameServerPacket
 	}
 	
 	@Override
-	public void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x9A);
-		writeD(_movieId);
+		OutgoingPackets.EX_START_SCENE_PLAYER.writeId(packet);
+		
+		packet.writeD(_movieId);
+		return true;
 	}
 }

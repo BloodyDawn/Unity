@@ -18,37 +18,34 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
-import java.util.Collection;
-
-import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.PackageSendableList;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author -Wooden-
  * @author UnAfraid Thanks mrTJO
  */
-public class RequestPackageSendableItemList extends L2GameClientPacket
+public class RequestPackageSendableItemList implements IGameClientPacket
 {
-	
-	private static final String _C_A7_REQUESTPACKAGESENDABLEITEMLIST = "[C] A7 RequestPackageSendableItemList";
-	private int _objectID;
+	private int _objectId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_objectID = readD();
+		_objectId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	public void runImpl()
+	public void run(L2GameClient client)
 	{
-		Collection<ItemInstance> items = getClient().getActiveChar().getInventory().getAvailableItems(true, true, true);
-		sendPacket(new PackageSendableList(items, _objectID));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C_A7_REQUESTPACKAGESENDABLEITEMLIST;
+		final PlayerInstance activeChar = client.getActiveChar();
+		if (activeChar == null)
+		{
+			return;
+		}
+		client.sendPacket(new PackageSendableList(activeChar, _objectId));
 	}
 }

@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author Gnacik
  */
-public class ExClosePartyRoom extends L2GameServerPacket
+public class ExClosePartyRoom implements IGameServerPacket
 {
 	public static final ExClosePartyRoom STATIC_PACKET = new ExClosePartyRoom();
 	
@@ -30,9 +33,10 @@ public class ExClosePartyRoom extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x09);
+		OutgoingPackets.EX_CLOSE_PARTY_ROOM.writeId(packet);
+		
+		return true;
 	}
 }

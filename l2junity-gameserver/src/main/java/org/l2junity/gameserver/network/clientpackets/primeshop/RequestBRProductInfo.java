@@ -20,34 +20,31 @@ package org.l2junity.gameserver.network.clientpackets.primeshop;
 
 import org.l2junity.gameserver.data.xml.impl.PrimeShopData;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Gnacik, UnAfraid
  */
-public final class RequestBRProductInfo extends L2GameClientPacket
+public final class RequestBRProductInfo implements IGameClientPacket
 {
 	private int _brId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_brId = readD();
+		_brId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player != null)
 		{
 			PrimeShopData.getInstance().showProductInfo(player, _brId);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
 	}
 }

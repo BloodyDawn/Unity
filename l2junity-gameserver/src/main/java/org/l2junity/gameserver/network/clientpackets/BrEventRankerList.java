@@ -18,41 +18,36 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExBrLoadEventTopRankers;
+import org.l2junity.network.PacketReader;
 
 /**
  * Halloween rank list client packet. Format: (ch)ddd
  */
-public class BrEventRankerList extends L2GameClientPacket
+public class BrEventRankerList implements IGameClientPacket
 {
-	private static final String _C__D0_7B_BREVENTRANKERLIST = "[C] D0:7B BrEventRankerList";
-	
 	private int _eventId;
 	private int _day;
 	@SuppressWarnings("unused")
 	private int _ranking;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_eventId = readD();
-		_day = readD(); // 0 - current, 1 - previous
-		_ranking = readD();
+		_eventId = packet.readD();
+		_day = packet.readD(); // 0 - current, 1 - previous
+		_ranking = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		// TODO count, bestScore, myScore
 		int count = 0;
 		int bestScore = 0;
 		int myScore = 0;
-		getClient().sendPacket(new ExBrLoadEventTopRankers(_eventId, _day, count, bestScore, myScore));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_7B_BREVENTRANKERLIST;
+		client.sendPacket(new ExBrLoadEventTopRankers(_eventId, _day, count, bestScore, myScore));
 	}
 }

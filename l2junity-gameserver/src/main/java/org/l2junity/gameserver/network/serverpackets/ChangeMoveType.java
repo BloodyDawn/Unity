@@ -19,8 +19,10 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class ChangeMoveType extends L2GameServerPacket
+public class ChangeMoveType implements IGameServerPacket
 {
 	public static final int WALK = 0;
 	public static final int RUN = 1;
@@ -35,11 +37,13 @@ public class ChangeMoveType extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x28);
-		writeD(_charObjId);
-		writeD(_running ? RUN : WALK);
-		writeD(0); // c2
+		OutgoingPackets.CHANGE_MOVE_TYPE.writeId(packet);
+		
+		packet.writeD(_charObjId);
+		packet.writeD(_running ? RUN : WALK);
+		packet.writeD(0); // c2
+		return true;
 	}
 }

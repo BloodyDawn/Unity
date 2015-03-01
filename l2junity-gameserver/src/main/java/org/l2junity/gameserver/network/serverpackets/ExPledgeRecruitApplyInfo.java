@@ -19,13 +19,15 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.enums.ClanEntryStatus;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class ExPledgeRecruitApplyInfo extends L2GameServerPacket
+public class ExPledgeRecruitApplyInfo implements IGameServerPacket
 {
-	final ClanEntryStatus _status;
+	private final ClanEntryStatus _status;
 	
 	public ExPledgeRecruitApplyInfo(ClanEntryStatus status)
 	{
@@ -33,11 +35,11 @@ public class ExPledgeRecruitApplyInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x140);
+		OutgoingPackets.EX_PLEDGE_RECRUIT_APPLY_INFO.writeId(packet);
 		
-		writeD(_status.ordinal());
+		packet.writeD(_status.ordinal());
+		return true;
 	}
 }

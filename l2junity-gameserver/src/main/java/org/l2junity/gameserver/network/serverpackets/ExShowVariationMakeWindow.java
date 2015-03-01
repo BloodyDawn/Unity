@@ -18,11 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * Trigger packet
  * @author KenM
  */
-public class ExShowVariationMakeWindow extends L2GameServerPacket
+public class ExShowVariationMakeWindow implements IGameServerPacket
 {
 	public static final ExShowVariationMakeWindow STATIC_PACKET = new ExShowVariationMakeWindow();
 	
@@ -31,9 +34,10 @@ public class ExShowVariationMakeWindow extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x52);
+		OutgoingPackets.EX_SHOW_VARIATION_MAKE_WINDOW.writeId(packet);
+		
+		return true;
 	}
 }

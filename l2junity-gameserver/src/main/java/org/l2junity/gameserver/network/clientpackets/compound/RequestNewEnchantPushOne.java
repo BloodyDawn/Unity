@@ -21,49 +21,52 @@ package org.l2junity.gameserver.network.clientpackets.compound;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.CompoundRequest;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.compound.ExEnchantOneFail;
 import org.l2junity.gameserver.network.serverpackets.compound.ExEnchantOneOK;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author UnAfraid
  */
-public class RequestNewEnchantPushOne extends L2GameClientPacket
+public class RequestNewEnchantPushOne implements IGameClientPacket
 {
 	private int _objectId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_objectId = readD();
+		_objectId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		else if (activeChar.isInStoreMode())
 		{
-			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_DO_THAT_WHILE_IN_A_PRIVATE_STORE_OR_PRIVATE_WORKSHOP);
-			activeChar.sendPacket(ExEnchantOneFail.STATIC_PACKET);
+			client.sendPacket(SystemMessageId.YOU_CANNOT_DO_THAT_WHILE_IN_A_PRIVATE_STORE_OR_PRIVATE_WORKSHOP);
+			client.sendPacket(ExEnchantOneFail.STATIC_PACKET);
 			return;
 		}
 		else if (activeChar.isProcessingTransaction() || activeChar.isProcessingRequest())
 		{
-			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_USE_THIS_SYSTEM_DURING_TRADING_PRIVATE_STORE_AND_WORKSHOP_SETUP);
-			activeChar.sendPacket(ExEnchantOneFail.STATIC_PACKET);
+			client.sendPacket(SystemMessageId.YOU_CANNOT_USE_THIS_SYSTEM_DURING_TRADING_PRIVATE_STORE_AND_WORKSHOP_SETUP);
+			client.sendPacket(ExEnchantOneFail.STATIC_PACKET);
 			return;
 		}
 		
 		final CompoundRequest request = new CompoundRequest(activeChar);
 		if (!activeChar.addRequest(request))
 		{
-			activeChar.sendPacket(ExEnchantOneFail.STATIC_PACKET);
+			client.sendPacket(ExEnchantOneFail.STATIC_PACKET);
 			return;
 		}
 		
@@ -72,7 +75,7 @@ public class RequestNewEnchantPushOne extends L2GameClientPacket
 		final ItemInstance itemOne = request.getItemOne();
 		if (itemOne == null)
 		{
-			activeChar.sendPacket(ExEnchantOneFail.STATIC_PACKET);
+			client.sendPacket(ExEnchantOneFail.STATIC_PACKET);
 			activeChar.removeRequest(request.getClass());
 			return;
 		}
@@ -80,11 +83,11 @@ public class RequestNewEnchantPushOne extends L2GameClientPacket
 		// Not implemented or not able to merge!
 		if ((itemOne.getItem().getCompoundItem() == 0) || (itemOne.getItem().getCompoundChance() == 0))
 		{
-			activeChar.sendPacket(ExEnchantOneOK.STATIC_PACKET);
+			client.sendPacket(ExEnchantOneOK.STATIC_PACKET);
 			activeChar.removeRequest(request.getClass());
 			return;
 		}
 		
-		activeChar.sendPacket(ExEnchantOneOK.STATIC_PACKET);
+		client.sendPacket(ExEnchantOneOK.STATIC_PACKET);
 	}
 }

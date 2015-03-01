@@ -18,24 +18,27 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author KenM
  */
-public class ExDuelReady extends L2GameServerPacket
+public class ExDuelReady implements IGameServerPacket
 {
-	private final int _unk1;
+	private final int _result;
 	
-	public ExDuelReady(int unk1)
+	public ExDuelReady(int result)
 	{
-		_unk1 = unk1;
+		_result = result;
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x4E);
+		OutgoingPackets.EX_DUEL_READY.writeId(packet);
 		
-		writeD(_unk1);
+		packet.writeD(_result);
+		return true;
 	}
 }

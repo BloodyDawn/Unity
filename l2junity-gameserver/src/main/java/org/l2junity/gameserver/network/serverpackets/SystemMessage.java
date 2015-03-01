@@ -18,7 +18,9 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
 import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Forsaiken, UnAfraid
@@ -81,10 +83,12 @@ public final class SystemMessage extends AbstractMessagePacket<SystemMessage>
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x62);
-		writeH(getId());
-		writeMe();
+		OutgoingPackets.SYSTEM_MESSAGE.writeId(packet);
+		
+		packet.writeH(getId());
+		writeMe(packet);
+		return true;
 	}
 }

@@ -25,30 +25,33 @@ import org.l2junity.gameserver.model.CommandChannel;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.AdenaDistributionRequest;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.adenadistribution.ExDivideAdenaCancel;
 import org.l2junity.gameserver.network.serverpackets.adenadistribution.ExDivideAdenaDone;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Sdw
  */
-public class RequestDivideAdena extends L2GameClientPacket
+public class RequestDivideAdena implements IGameClientPacket
 {
 	private int _adenaObjId;
 	private long _adenaCount;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_adenaObjId = readD();
-		_adenaCount = readQ();
+		_adenaObjId = packet.readD();
+		_adenaCount = packet.readQ();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -143,12 +146,6 @@ public class RequestDivideAdena extends L2GameClientPacket
 		{
 			cancelDistribution(request);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
 	}
 	
 	private void cancelDistribution(AdenaDistributionRequest request)

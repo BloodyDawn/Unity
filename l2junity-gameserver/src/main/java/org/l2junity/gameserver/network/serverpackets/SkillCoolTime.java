@@ -24,12 +24,14 @@ import java.util.Map;
 
 import org.l2junity.gameserver.model.TimeStamp;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * Skill Cool Time server packet implementation.
  * @author KenM, Zoey76
  */
-public class SkillCoolTime extends L2GameServerPacket
+public class SkillCoolTime implements IGameServerPacket
 {
 	private final List<TimeStamp> _skillReuseTimeStamps = new ArrayList<>();
 	
@@ -49,16 +51,18 @@ public class SkillCoolTime extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xC7);
-		writeD(_skillReuseTimeStamps.size());
+		OutgoingPackets.SKILL_COOL_TIME.writeId(packet);
+		
+		packet.writeD(_skillReuseTimeStamps.size());
 		for (TimeStamp ts : _skillReuseTimeStamps)
 		{
-			writeD(ts.getSkillId());
-			writeD(0x00); // ?
-			writeD((int) ts.getReuse() / 1000);
-			writeD((int) ts.getRemaining() / 1000);
+			packet.writeD(ts.getSkillId());
+			packet.writeD(0x00); // ?
+			packet.writeD((int) ts.getReuse() / 1000);
+			packet.writeD((int) ts.getRemaining() / 1000);
 		}
+		return true;
 	}
 }

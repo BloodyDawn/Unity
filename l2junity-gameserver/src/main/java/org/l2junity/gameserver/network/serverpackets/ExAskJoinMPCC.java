@@ -18,11 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * Asks the player to join a CC
  * @author chris_00
  */
-public class ExAskJoinMPCC extends L2GameServerPacket
+public class ExAskJoinMPCC implements IGameServerPacket
 {
 	private final String _requestorName;
 	
@@ -35,11 +38,12 @@ public class ExAskJoinMPCC extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x1a);
-		writeS(_requestorName); // name of CCLeader
-		writeD(0x00); // TODO: Find me
+		OutgoingPackets.EX_ASK_JOIN_MPCC.writeId(packet);
+		
+		packet.writeS(_requestorName); // name of CCLeader
+		packet.writeD(0x00); // TODO: Find me
+		return true;
 	}
 }

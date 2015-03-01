@@ -19,11 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author -Wooden-
  */
-public class ExFishingStartCombat extends L2GameServerPacket
+public class ExFishingStartCombat implements IGameServerPacket
 {
 	private final Creature _activeChar;
 	private final int _time, _hp;
@@ -40,16 +42,16 @@ public class ExFishingStartCombat extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x27);
+		OutgoingPackets.EX_FISHING_START_COMBAT.writeId(packet);
 		
-		writeD(_activeChar.getObjectId());
-		writeD(_time);
-		writeD(_hp);
-		writeC(_mode); // mode: 0 = resting, 1 = fighting
-		writeC(_lureType); // 0 = newbie lure, 1 = normal lure, 2 = night lure
-		writeC(_deceptiveMode); // Fish Deceptive Mode: 0 = no, 1 = yes
+		packet.writeD(_activeChar.getObjectId());
+		packet.writeD(_time);
+		packet.writeD(_hp);
+		packet.writeC(_mode); // mode: 0 = resting, 1 = fighting
+		packet.writeC(_lureType); // 0 = newbie lure, 1 = normal lure, 2 = night lure
+		packet.writeC(_deceptiveMode); // Fish Deceptive Mode: 0 = no, 1 = yes
+		return true;
 	}
 }

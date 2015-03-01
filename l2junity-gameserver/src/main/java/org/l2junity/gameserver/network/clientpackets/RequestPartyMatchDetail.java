@@ -21,28 +21,31 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.gameserver.instancemanager.MatchingRoomManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.matching.MatchingRoom;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Gnacik
  */
-public final class RequestPartyMatchDetail extends L2GameClientPacket
+public final class RequestPartyMatchDetail implements IGameClientPacket
 {
 	private int _roomId;
 	private int _location;
 	private int _level;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_roomId = readD();
-		_location = readD();
-		_level = readD();
+		_roomId = packet.readD();
+		_location = packet.readD();
+		_level = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -61,9 +64,4 @@ public final class RequestPartyMatchDetail extends L2GameClientPacket
 		}
 	}
 	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
-	}
 }

@@ -23,11 +23,13 @@ import java.util.Map.Entry;
 
 import org.l2junity.gameserver.model.PremiumItem;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Gnacik
  */
-public class ExGetPremiumItemList extends L2GameServerPacket
+public class ExGetPremiumItemList implements IGameServerPacket
 {
 	private final PlayerInstance _activeChar;
 	
@@ -40,19 +42,20 @@ public class ExGetPremiumItemList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x87);
-		writeD(_map.size());
+		OutgoingPackets.EX_GET_PREMIUM_ITEM_LIST.writeId(packet);
+		
+		packet.writeD(_map.size());
 		for (Entry<Integer, PremiumItem> entry : _map.entrySet())
 		{
 			PremiumItem item = entry.getValue();
-			writeQ(entry.getKey());
-			writeD(item.getItemId());
-			writeQ(item.getCount());
-			writeD(0x00); // ?
-			writeS(item.getSender());
+			packet.writeQ(entry.getKey());
+			packet.writeD(item.getItemId());
+			packet.writeQ(item.getCount());
+			packet.writeD(0x00); // ?
+			packet.writeS(item.getSender());
 		}
+		return true;
 	}
 }

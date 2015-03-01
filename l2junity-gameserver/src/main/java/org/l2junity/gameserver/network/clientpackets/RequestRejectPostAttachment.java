@@ -25,48 +25,49 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Message;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExChangePostState;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Migi, DS
  */
-public final class RequestRejectPostAttachment extends L2GameClientPacket
+public final class RequestRejectPostAttachment implements IGameClientPacket
 {
-	private static final String _C__D0_6B_REQUESTREJECTPOSTATTACHMENT = "[C] D0:6B RequestRejectPostAttachment";
-	
 	private int _msgId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_msgId = readD();
+		_msgId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	public void runImpl()
+	public void run(L2GameClient client)
 	{
 		if (!Config.ALLOW_MAIL || !Config.ALLOW_ATTACHMENTS)
 		{
 			return;
 		}
 		
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
-		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("rejectattach"))
+		if (!client.getFloodProtectors().getTransaction().tryPerformAction("rejectattach"))
 		{
 			return;
 		}
 		
 		if (!activeChar.isInsideZone(ZoneId.PEACE))
 		{
-			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_RECEIVE_OR_SEND_MAIL_WITH_ATTACHED_ITEMS_IN_NON_PEACE_ZONE_REGIONS);
+			client.sendPacket(SystemMessageId.YOU_CANNOT_RECEIVE_OR_SEND_MAIL_WITH_ATTACHED_ITEMS_IN_NON_PEACE_ZONE_REGIONS);
 			return;
 		}
 		
@@ -89,8 +90,8 @@ public final class RequestRejectPostAttachment extends L2GameClientPacket
 		
 		MailManager.getInstance().sendMessage(new Message(msg));
 		
-		activeChar.sendPacket(SystemMessageId.MAIL_SUCCESSFULLY_RETURNED);
-		activeChar.sendPacket(new ExChangePostState(true, _msgId, Message.REJECTED));
+		client.sendPacket(SystemMessageId.MAIL_SUCCESSFULLY_RETURNED);
+		client.sendPacket(new ExChangePostState(true, _msgId, Message.REJECTED));
 		
 		final PlayerInstance sender = World.getInstance().getPlayer(msg.getSenderId());
 		if (sender != null)
@@ -99,11 +100,5 @@ public final class RequestRejectPostAttachment extends L2GameClientPacket
 			sm.addCharName(activeChar);
 			sender.sendPacket(sm);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_6B_REQUESTREJECTPOSTATTACHMENT;
 	}
 }

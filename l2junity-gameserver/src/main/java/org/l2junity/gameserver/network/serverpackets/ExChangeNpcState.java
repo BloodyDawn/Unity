@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author JIV
  */
-public class ExChangeNpcState extends L2GameServerPacket
+public class ExChangeNpcState implements IGameServerPacket
 {
 	private final int _objId;
 	private final int _state;
@@ -33,11 +36,12 @@ public class ExChangeNpcState extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xBF);
-		writeD(_objId);
-		writeD(_state);
+		OutgoingPackets.EX_CHANGE_NPC_STATE.writeId(packet);
+		
+		packet.writeD(_objId);
+		packet.writeD(_state);
+		return true;
 	}
 }

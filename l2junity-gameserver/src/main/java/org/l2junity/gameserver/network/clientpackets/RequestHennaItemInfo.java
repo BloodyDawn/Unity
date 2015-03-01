@@ -21,27 +21,29 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.gameserver.data.xml.impl.HennaData;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.Henna;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.HennaItemDrawInfo;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Zoey76
  */
-public final class RequestHennaItemInfo extends L2GameClientPacket
+public final class RequestHennaItemInfo implements IGameClientPacket
 {
-	private static final String _C__C4_REQUESTHENNAITEMINFO = "[C] C4 RequestHennaItemInfo";
-	
 	private int _symbolId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_symbolId = readD();
+		_symbolId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -54,15 +56,9 @@ public final class RequestHennaItemInfo extends L2GameClientPacket
 			{
 				_log.warning(getClass().getSimpleName() + ": Invalid Henna Id: " + _symbolId + " from player " + activeChar);
 			}
-			sendActionFailed();
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		activeChar.sendPacket(new HennaItemDrawInfo(henna, activeChar));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__C4_REQUESTHENNAITEMINFO;
+		client.sendPacket(new HennaItemDrawInfo(henna, activeChar));
 	}
 }

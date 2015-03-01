@@ -25,11 +25,13 @@ import org.l2junity.gameserver.enums.SubclassInfoType;
 import org.l2junity.gameserver.enums.SubclassType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.SubClass;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class ExSubjobInfo extends L2GameServerPacket
+public class ExSubjobInfo implements IGameServerPacket
 {
 	private final int _currClassId;
 	private final int _currRace;
@@ -96,20 +98,21 @@ public class ExSubjobInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xEA);
-		writeC(_type);
-		writeD(_currClassId);
-		writeD(_currRace);
-		writeD(_subs.size());
+		OutgoingPackets.EX_SUBJOB_INFO.writeId(packet);
+		
+		packet.writeC(_type);
+		packet.writeD(_currClassId);
+		packet.writeD(_currRace);
+		packet.writeD(_subs.size());
 		for (SubInfo sub : _subs)
 		{
-			writeD(sub.getIndex());
-			writeD(sub.getClassId());
-			writeD(sub.getLevel());
-			writeC(sub.getType());
+			packet.writeD(sub.getIndex());
+			packet.writeD(sub.getClassId());
+			packet.writeD(sub.getLevel());
+			packet.writeC(sub.getType());
 		}
+		return true;
 	}
 }

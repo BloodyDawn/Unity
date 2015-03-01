@@ -22,11 +22,13 @@ import org.l2junity.gameserver.enums.MatchingMemberType;
 import org.l2junity.gameserver.instancemanager.MapRegionManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.matching.CommandChannelMatchingRoom;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class ExMPCCRoomMember extends L2GameServerPacket
+public class ExMPCCRoomMember implements IGameServerPacket
 {
 	private final CommandChannelMatchingRoom _room;
 	private final MatchingMemberType _type;
@@ -38,21 +40,21 @@ public class ExMPCCRoomMember extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xA0);
+		OutgoingPackets.EX_MPCC_ROOM_MEMBER.writeId(packet);
 		
-		writeD(_type.ordinal());
-		writeD(_room.getMembersCount());
+		packet.writeD(_type.ordinal());
+		packet.writeD(_room.getMembersCount());
 		for (PlayerInstance member : _room.getMembers())
 		{
-			writeD(member.getObjectId());
-			writeS(member.getName());
-			writeD(member.getLevel());
-			writeD(member.getClassId().getId());
-			writeD(MapRegionManager.getInstance().getBBs(member.getLocation()));
-			writeD(_room.getMemberType(member).ordinal());
+			packet.writeD(member.getObjectId());
+			packet.writeS(member.getName());
+			packet.writeD(member.getLevel());
+			packet.writeD(member.getClassId().getId());
+			packet.writeD(MapRegionManager.getInstance().getBBs(member.getLocation()));
+			packet.writeD(_room.getMemberType(member).ordinal());
 		}
+		return true;
 	}
 }

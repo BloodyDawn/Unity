@@ -24,27 +24,28 @@ import java.util.logging.Level;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.network.serverpackets.friend.FriendAddRequestResult;
+import org.l2junity.network.PacketReader;
 
-public final class RequestAnswerFriendInvite extends L2GameClientPacket
+public final class RequestAnswerFriendInvite implements IGameClientPacket
 {
-	private static final String _C__78_REQUESTANSWERFRIENDINVITE = "[C] 78 RequestAnswerFriendInvite";
-	
 	private int _response;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_response = readC();
+		_response = packet.readC();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance player = getClient().getActiveChar();
+		PlayerInstance player = client.getActiveChar();
 		if (player != null)
 		{
 			PlayerInstance requestor = player.getActiveRequester();
@@ -98,11 +99,5 @@ public final class RequestAnswerFriendInvite extends L2GameClientPacket
 			player.setActiveRequester(null);
 			requestor.onTransactionResponse();
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__78_REQUESTANSWERFRIENDINVITE;
 	}
 }

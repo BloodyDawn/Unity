@@ -19,12 +19,14 @@
 package org.l2junity.gameserver.network.serverpackets.primeshop;
 
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Gnacik, UnAfraid
  */
-public class ExBRBuyProduct extends L2GameServerPacket
+public class ExBRBuyProduct implements IGameServerPacket
 {
 	public enum ExBrProductReplyType implements IIdentifiable
 	{
@@ -65,10 +67,11 @@ public class ExBRBuyProduct extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xD9);
-		writeD(_reply);
+		OutgoingPackets.EX_BR_BUY_PRODUCT.writeId(packet);
+		
+		packet.writeD(_reply);
+		return true;
 	}
 }

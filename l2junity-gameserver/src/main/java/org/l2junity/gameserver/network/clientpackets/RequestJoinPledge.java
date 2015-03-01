@@ -21,31 +21,32 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.AskJoinPledge;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.3.4.4 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestJoinPledge extends L2GameClientPacket
+public final class RequestJoinPledge implements IGameClientPacket
 {
-	private static final String _C__26_REQUESTJOINPLEDGE = "[C] 26 RequestJoinPledge";
-	
 	private int _target;
 	private int _pledgeType;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_target = readD();
-		_pledgeType = readD();
+		_target = packet.readD();
+		_pledgeType = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -82,11 +83,5 @@ public final class RequestJoinPledge extends L2GameClientPacket
 	public int getPledgeType()
 	{
 		return _pledgeType;
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__26_REQUESTJOINPLEDGE;
 	}
 }

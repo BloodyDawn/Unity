@@ -22,18 +22,18 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.L2AirShipInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.type.WeaponType;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.ExMoveToLocationInAirShip;
 import org.l2junity.gameserver.network.serverpackets.StopMoveInVehicle;
+import org.l2junity.network.PacketReader;
 
 /**
  * format: ddddddd X:%d Y:%d Z:%d OriginX:%d OriginY:%d OriginZ:%d
  * @author GodKratos
  */
-public class MoveToLocationInAirShip extends L2GameClientPacket
+public class MoveToLocationInAirShip implements IGameClientPacket
 {
-	private static final String _C__D0_20_MOVETOLOCATIONINAIRSHIP = "[C] D0:20 MoveToLocationInAirShip";
-	
 	private int _shipId;
 	private int _targetX;
 	private int _targetY;
@@ -43,21 +43,22 @@ public class MoveToLocationInAirShip extends L2GameClientPacket
 	private int _originZ;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_shipId = readD();
-		_targetX = readD();
-		_targetY = readD();
-		_targetZ = readD();
-		_originX = readD();
-		_originY = readD();
-		_originZ = readD();
+		_shipId = packet.readD();
+		_targetX = packet.readD();
+		_targetY = packet.readD();
+		_targetZ = packet.readD();
+		_originX = packet.readD();
+		_originY = packet.readD();
+		_originZ = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -96,11 +97,5 @@ public class MoveToLocationInAirShip extends L2GameClientPacket
 		
 		activeChar.setInVehiclePosition(new Location(_targetX, _targetY, _targetZ));
 		activeChar.broadcastPacket(new ExMoveToLocationInAirShip(activeChar));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_20_MOVETOLOCATIONINAIRSHIP;
 	}
 }

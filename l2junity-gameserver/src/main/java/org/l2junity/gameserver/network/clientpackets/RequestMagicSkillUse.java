@@ -27,30 +27,31 @@ import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
+import org.l2junity.network.PacketReader;
 
-public final class RequestMagicSkillUse extends L2GameClientPacket
+public final class RequestMagicSkillUse implements IGameClientPacket
 {
-	private static final String _C__39_REQUESTMAGICSKILLUSE = "[C] 39 RequestMagicSkillUse";
-	
 	private int _magicId;
 	private boolean _ctrlPressed;
 	private boolean _shiftPressed;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_magicId = readD(); // Identifier of the used skill
-		_ctrlPressed = readD() != 0; // True if it's a ForceAttack : Ctrl pressed
-		_shiftPressed = readC() != 0; // True if Shift pressed
+		_magicId = packet.readD(); // Identifier of the used skill
+		_ctrlPressed = packet.readD() != 0; // True if it's a ForceAttack : Ctrl pressed
+		_shiftPressed = packet.readC() != 0; // True if Shift pressed
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		// Get the current L2PcInstance of the player
-		final PlayerInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -110,11 +111,5 @@ public final class RequestMagicSkillUse extends L2GameClientPacket
 		}
 		
 		activeChar.useMagic(skill, _ctrlPressed, _shiftPressed);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__39_REQUESTMAGICSKILLUSE;
 	}
 }

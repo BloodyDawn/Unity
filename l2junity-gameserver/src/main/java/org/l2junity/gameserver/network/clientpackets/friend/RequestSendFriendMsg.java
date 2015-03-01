@@ -25,33 +25,35 @@ import java.util.logging.Logger;
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.L2FriendSay;
+import org.l2junity.network.PacketReader;
 
 /**
  * Recieve Private (Friend) Message - 0xCC Format: c SS S: Message S: Receiving Player
  * @author Tempy
  */
-public final class RequestSendFriendMsg extends L2GameClientPacket
+public final class RequestSendFriendMsg implements IGameClientPacket
 {
-	private static final String _C__6B_REQUESTSENDMSG = "[C] 6B RequestSendFriendMsg";
 	private static Logger _logChat = Logger.getLogger("chat");
 	
 	private String _message;
 	private String _reciever;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_message = readS();
-		_reciever = readS();
+		_message = packet.readS();
+		_reciever = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -83,11 +85,5 @@ public final class RequestSendFriendMsg extends L2GameClientPacket
 		}
 		
 		targetPlayer.sendPacket(new L2FriendSay(activeChar.getName(), _reciever, _message));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__6B_REQUESTSENDMSG;
 	}
 }

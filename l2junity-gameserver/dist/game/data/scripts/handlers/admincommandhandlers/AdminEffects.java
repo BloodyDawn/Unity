@@ -37,7 +37,7 @@ import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.CharInfo;
 import org.l2junity.gameserver.network.serverpackets.Earthquake;
 import org.l2junity.gameserver.network.serverpackets.ExRedSky;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
 import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.network.serverpackets.PlaySound;
@@ -726,7 +726,7 @@ public class AdminEffects implements IAdminCommandHandler
 	 */
 	private void adminAtmosphere(String type, String state, int duration, PlayerInstance activeChar)
 	{
-		L2GameServerPacket packet = null;
+		IGameServerPacket packet = null;
 		
 		if (type.equals("sky"))
 		{

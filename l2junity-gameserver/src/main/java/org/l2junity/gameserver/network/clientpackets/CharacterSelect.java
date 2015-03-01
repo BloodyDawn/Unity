@@ -36,18 +36,18 @@ import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.punishment.PunishmentAffect;
 import org.l2junity.gameserver.model.punishment.PunishmentType;
 import org.l2junity.gameserver.network.L2GameClient;
-import org.l2junity.gameserver.network.L2GameClient.GameClientState;
+import org.l2junity.gameserver.network.client.ConnectionState;
 import org.l2junity.gameserver.network.serverpackets.CharSelected;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.network.serverpackets.ServerClose;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.5.2.1.2.5 $ $Date: 2005/03/27 15:29:30 $
  */
-public class CharacterSelect extends L2GameClientPacket
+public class CharacterSelect implements IGameClientPacket
 {
-	private static final String _C__12_CHARACTERSELECT = "[C] 12 CharacterSelect";
 	protected static final Logger _logAccounting = Logger.getLogger("accounting");
 	
 	// cd
@@ -63,19 +63,19 @@ public class CharacterSelect extends L2GameClientPacket
 	private int _unk4; // new in C4
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_charSlot = readD();
-		_unk1 = readH();
-		_unk2 = readD();
-		_unk3 = readD();
-		_unk4 = readD();
+		_charSlot = packet.readD();
+		_unk1 = packet.readH();
+		_unk2 = packet.readD();
+		_unk3 = packet.readD();
+		_unk4 = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final L2GameClient client = getClient();
 		if (!client.getFloodProtectors().getCharacterSelect().tryPerformAction("CharacterSelect"))
 		{
 			return;
@@ -145,15 +145,15 @@ public class CharacterSelect extends L2GameClientPacket
 					client.setActiveChar(cha);
 					cha.setOnlineStatus(true, true);
 					
-					final TerminateReturn terminate = EventDispatcher.getInstance().notifyEvent(new OnPlayerSelect(cha, cha.getObjectId(), cha.getName(), getClient()), Containers.Players(), TerminateReturn.class);
+					final TerminateReturn terminate = EventDispatcher.getInstance().notifyEvent(new OnPlayerSelect(cha, cha.getObjectId(), cha.getName(), client), Containers.Players(), TerminateReturn.class);
 					if ((terminate != null) && terminate.terminate())
 					{
 						cha.deleteMe();
 						return;
 					}
 					
-					client.setState(GameClientState.IN_GAME);
-					sendPacket(new CharSelected(cha, client.getSessionId().playOkID1));
+					client.setConnectionState(ConnectionState.IN_GAME);
+					client.sendPacket(new CharSelected(cha, client.getSessionId().playOkID1));
 				}
 			}
 			finally
@@ -168,11 +168,5 @@ public class CharacterSelect extends L2GameClientPacket
 			});
 			_logAccounting.log(record);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__12_CHARACTERSELECT;
 	}
 }

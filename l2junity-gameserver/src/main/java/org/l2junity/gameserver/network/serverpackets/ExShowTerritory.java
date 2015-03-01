@@ -22,12 +22,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.l2junity.gameserver.model.interfaces.ILocational;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * Note: <b>There is known issue with this packet, it cannot be removed unless game client is restarted!</b>
  * @author UnAfraid
  */
-public class ExShowTerritory extends L2GameServerPacket
+public class ExShowTerritory implements IGameServerPacket
 {
 	private final int _minZ;
 	private final int _maxZ;
@@ -45,17 +47,18 @@ public class ExShowTerritory extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x8D);
-		writeD(_vertices.size());
-		writeD(_minZ);
-		writeD(_maxZ);
+		OutgoingPackets.EX_SHOW_TERRITORY.writeId(packet);
+		
+		packet.writeD(_vertices.size());
+		packet.writeD(_minZ);
+		packet.writeD(_maxZ);
 		for (ILocational loc : _vertices)
 		{
-			writeD(loc.getX());
-			writeD(loc.getY());
+			packet.writeD(loc.getX());
+			packet.writeD(loc.getY());
 		}
+		return true;
 	}
 }

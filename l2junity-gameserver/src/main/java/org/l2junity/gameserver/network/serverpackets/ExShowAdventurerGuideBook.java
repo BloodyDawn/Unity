@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author KenM
  */
-public class ExShowAdventurerGuideBook extends L2GameServerPacket
+public class ExShowAdventurerGuideBook implements IGameServerPacket
 {
 	public static final ExShowAdventurerGuideBook STATIC_PACKET = new ExShowAdventurerGuideBook();
 	
@@ -30,9 +33,10 @@ public class ExShowAdventurerGuideBook extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x38);
+		OutgoingPackets.EX_SHOW_ADVENTURER_GUIDE_BOOK.writeId(packet);
+		
+		return true;
 	}
 }

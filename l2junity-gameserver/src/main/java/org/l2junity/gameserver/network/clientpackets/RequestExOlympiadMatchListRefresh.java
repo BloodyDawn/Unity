@@ -19,37 +19,31 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExOlympiadMatchList;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format: (ch)d d: unknown (always 0?)
  * @author mrTJO
  */
-public class RequestExOlympiadMatchListRefresh extends L2GameClientPacket
+public class RequestExOlympiadMatchListRefresh implements IGameClientPacket
 {
-	private static final String _C__D0_88_REQUESTEXOLYMPIADMATCHLISTREFRESH = "[C] D0:88 RequestExOlympiadMatchListRefresh";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
 		activeChar.sendPacket(new ExOlympiadMatchList());
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_88_REQUESTEXOLYMPIADMATCHLISTREFRESH;
 	}
 }

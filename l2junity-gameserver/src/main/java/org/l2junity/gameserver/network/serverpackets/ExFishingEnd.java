@@ -20,11 +20,13 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author -Wooden-
  */
-public class ExFishingEnd extends L2GameServerPacket
+public class ExFishingEnd implements IGameServerPacket
 {
 	private final boolean _win;
 	private final Creature _activeChar;
@@ -36,11 +38,12 @@ public class ExFishingEnd extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x1F);
-		writeD(_activeChar.getObjectId());
-		writeC(_win ? 1 : 0);
+		OutgoingPackets.EX_FISHING_END.writeId(packet);
+		
+		packet.writeD(_activeChar.getObjectId());
+		packet.writeC(_win ? 1 : 0);
+		return true;
 	}
 }

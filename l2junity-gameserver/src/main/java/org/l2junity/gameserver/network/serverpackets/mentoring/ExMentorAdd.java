@@ -19,12 +19,14 @@
 package org.l2junity.gameserver.network.serverpackets.mentoring;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Gnacik, UnAfraid
  */
-public class ExMentorAdd extends L2GameServerPacket
+public class ExMentorAdd implements IGameServerPacket
 {
 	final PlayerInstance _mentor;
 	
@@ -34,12 +36,13 @@ public class ExMentorAdd extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x11C);
-		writeS(_mentor.getName());
-		writeD(_mentor.getActiveClass());
-		writeD(_mentor.getLevel());
+		OutgoingPackets.EX_MENTOR_ADD.writeId(packet);
+		
+		packet.writeS(_mentor.getName());
+		packet.writeD(_mentor.getActiveClass());
+		packet.writeD(_mentor.getLevel());
+		return true;
 	}
 }

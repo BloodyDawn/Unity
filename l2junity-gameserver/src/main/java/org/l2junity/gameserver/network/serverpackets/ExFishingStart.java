@@ -19,11 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author -Wooden-
  */
-public class ExFishingStart extends L2GameServerPacket
+public class ExFishingStart implements IGameServerPacket
 {
 	private final Creature _activeChar;
 	private final int _x, _y, _z, _fishType;
@@ -40,15 +42,16 @@ public class ExFishingStart extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x1E);
-		writeD(_activeChar.getObjectId());
-		writeC(_fishType); // fish type
-		writeD(_x); // x position
-		writeD(_y); // y position
-		writeD(_z); // z position
-		writeC(_isNightLure ? 0x01 : 0x00); // night lure
+		OutgoingPackets.EX_FISHING_START.writeId(packet);
+		
+		packet.writeD(_activeChar.getObjectId());
+		packet.writeC(_fishType); // fish type
+		packet.writeD(_x); // x position
+		packet.writeD(_y); // y position
+		packet.writeD(_z); // z position
+		packet.writeC(_isNightLure ? 0x01 : 0x00); // night lure
+		return true;
 	}
 }

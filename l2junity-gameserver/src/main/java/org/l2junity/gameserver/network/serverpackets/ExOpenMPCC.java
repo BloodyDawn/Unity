@@ -18,11 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * Opens the CommandChannel Information window
  * @author chris_00
  */
-public class ExOpenMPCC extends L2GameServerPacket
+public class ExOpenMPCC implements IGameServerPacket
 {
 	public static final ExOpenMPCC STATIC_PACKET = new ExOpenMPCC();
 	
@@ -31,9 +34,10 @@ public class ExOpenMPCC extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xfe);
-		writeH(0x12);
+		OutgoingPackets.EX_OPEN_MPCC.writeId(packet);
+		
+		return true;
 	}
 }

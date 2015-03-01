@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class AskJoinAlly extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class AskJoinAlly implements IGameServerPacket
 {
 	private final String _requestorName;
 	private final int _requestorObjId;
@@ -34,12 +37,14 @@ public class AskJoinAlly extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xbb);
-		writeD(_requestorObjId);
-		writeS(null); // Ally Name ?
-		writeS(null); // TODO: Find me!
-		writeS(_requestorName);
+		OutgoingPackets.ASK_JOIN_ALLIANCE.writeId(packet);
+		
+		packet.writeD(_requestorObjId);
+		packet.writeS(null); // Ally Name ?
+		packet.writeS(null); // TODO: Find me!
+		packet.writeS(_requestorName);
+		return true;
 	}
 }

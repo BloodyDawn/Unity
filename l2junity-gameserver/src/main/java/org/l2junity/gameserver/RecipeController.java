@@ -23,6 +23,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Logger;
 
+import javolution.util.FastMap;
+
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.impl.RecipeData;
@@ -52,8 +54,6 @@ import org.l2junity.gameserver.network.serverpackets.SetupGauge;
 import org.l2junity.gameserver.network.serverpackets.StatusUpdate;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.util.Util;
-
-import javolution.util.FastMap;
 
 public class RecipeController
 {
@@ -356,13 +356,13 @@ public class RecipeController
 					MagicSkillUse msk = new MagicSkillUse(_player, _skillId, _skillLevel, _delay, 0);
 					_player.broadcastPacket(msk);
 					
-					_player.sendPacket(new SetupGauge(0, _delay));
+					_player.sendPacket(new SetupGauge(_player.getObjectId(), 0, _delay));
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 100 + _delay);
 				}
 				else
 				{
 					// for alt mode, sleep delay msec before finishing
-					_player.sendPacket(new SetupGauge(0, _delay));
+					_player.sendPacket(new SetupGauge(_player.getObjectId(), 0, _delay));
 					
 					try
 					{
@@ -551,7 +551,7 @@ public class RecipeController
 						// rest (wait for HP)
 						if (Config.ALT_GAME_CREATION && isWait)
 						{
-							_player.sendPacket(new SetupGauge(0, _delay));
+							_player.sendPacket(new SetupGauge(_player.getObjectId(), 0, _delay));
 							ThreadPoolManager.getInstance().scheduleGeneral(this, 100 + _delay);
 						}
 						else
@@ -573,7 +573,7 @@ public class RecipeController
 						// rest (wait for MP)
 						if (Config.ALT_GAME_CREATION && isWait)
 						{
-							_player.sendPacket(new SetupGauge(0, _delay));
+							_player.sendPacket(new SetupGauge(_player.getObjectId(), 0, _delay));
 							ThreadPoolManager.getInstance().scheduleGeneral(this, 100 + _delay);
 						}
 						else

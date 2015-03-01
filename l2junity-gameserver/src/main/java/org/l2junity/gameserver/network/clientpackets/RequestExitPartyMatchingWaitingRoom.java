@@ -20,33 +20,29 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.instancemanager.MatchingRoomManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Gnacik
  */
-public final class RequestExitPartyMatchingWaitingRoom extends L2GameClientPacket
+public final class RequestExitPartyMatchingWaitingRoom implements IGameClientPacket
 {
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getActiveChar();
-		
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
 		}
 		
 		MatchingRoomManager.getInstance().removeFromWaitingList(player);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
 	}
 }

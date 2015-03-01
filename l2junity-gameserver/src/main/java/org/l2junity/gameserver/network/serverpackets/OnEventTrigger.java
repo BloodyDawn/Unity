@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author Gnacik, UnAfraid
  */
-public class OnEventTrigger extends L2GameServerPacket
+public class OnEventTrigger implements IGameServerPacket
 {
 	private final int _emitterId;
 	private final int _enabled;
@@ -33,10 +36,12 @@ public class OnEventTrigger extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xCF);
-		writeD(_emitterId);
-		writeC(_enabled);
+		OutgoingPackets.EVENT_TRIGGER.writeId(packet);
+		
+		packet.writeD(_emitterId);
+		packet.writeC(_enabled);
+		return true;
 	}
 }

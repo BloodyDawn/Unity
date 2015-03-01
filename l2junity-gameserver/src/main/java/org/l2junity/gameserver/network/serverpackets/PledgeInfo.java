@@ -20,8 +20,10 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.L2Clan;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class PledgeInfo extends L2GameServerPacket
+public class PledgeInfo implements IGameServerPacket
 {
 	private final L2Clan _clan;
 	
@@ -31,12 +33,14 @@ public class PledgeInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x89);
-		writeD(Config.SERVER_ID);
-		writeD(_clan.getId());
-		writeS(_clan.getName());
-		writeS(_clan.getAllyName());
+		OutgoingPackets.PLEDGE_INFO.writeId(packet);
+		
+		packet.writeD(Config.SERVER_ID);
+		packet.writeD(_clan.getId());
+		packet.writeS(_clan.getName());
+		packet.writeS(_clan.getAllyName());
+		return true;
 	}
 }

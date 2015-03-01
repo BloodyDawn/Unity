@@ -20,11 +20,13 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Luca Baldi
  */
-public class EtcStatusUpdate extends L2GameServerPacket
+public class EtcStatusUpdate implements IGameServerPacket
 {
 	private final PlayerInstance _activeChar;
 	private int _mask;
@@ -38,15 +40,17 @@ public class EtcStatusUpdate extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xF9); // several icons to a separate line (0 = disabled)
-		writeC(_activeChar.getCharges()); // 1-7 increase force, lvl
-		writeD(_activeChar.getWeightPenalty()); // 1-4 weight penalty, lvl (1=50%, 2=66.6%, 3=80%, 4=100%)
-		writeC(_activeChar.getExpertiseWeaponPenalty()); // Weapon Grade Penalty [1-4]
-		writeC(_activeChar.getExpertiseArmorPenalty()); // Armor Grade Penalty [1-4]
-		writeC(0); // Death Penalty [1-15, 0 = disabled)], not used anymore in Ertheia
-		writeC(_activeChar.getChargedSouls());
-		writeC(_mask);
+		OutgoingPackets.ETC_STATUS_UPDATE.writeId(packet);
+		
+		packet.writeC(_activeChar.getCharges()); // 1-7 increase force, lvl
+		packet.writeD(_activeChar.getWeightPenalty()); // 1-4 weight penalty, lvl (1=50%, 2=66.6%, 3=80%, 4=100%)
+		packet.writeC(_activeChar.getExpertiseWeaponPenalty()); // Weapon Grade Penalty [1-4]
+		packet.writeC(_activeChar.getExpertiseArmorPenalty()); // Armor Grade Penalty [1-4]
+		packet.writeC(0); // Death Penalty [1-15, 0 = disabled)], not used anymore in Ertheia
+		packet.writeC(_activeChar.getChargedSouls());
+		packet.writeC(_mask);
+		return true;
 	}
 }

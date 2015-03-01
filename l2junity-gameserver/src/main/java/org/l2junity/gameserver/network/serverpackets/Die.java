@@ -31,11 +31,13 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid, Nos
  */
-public class Die extends L2GameServerPacket
+public class Die implements IGameServerPacket
 {
 	private final int _objectId;
 	private boolean _toVillage;
@@ -117,25 +119,24 @@ public class Die extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x00);
-		writeD(_objectId);
-		writeD(_toVillage ? 0x01 : 0x00);
-		writeD(_toClanHall ? 0x01 : 0x00);
-		writeD(_toCastle ? 0x01 : 0x00);
-		writeD(_toOutpost ? 0x01 : 0x00);
-		writeD(_isSweepable ? 0x01 : 0x00);
-		writeD(_useFeather ? 0x01 : 0x00);
-		writeD(_toFortress ? 0x01 : 0x00);
-		writeC(_hideAnimation ? 0x01 : 0x00);
+		OutgoingPackets.DIE.writeId(packet);
 		
-		writeD(getItems().size());
-		for (int itemId : getItems())
-		{
-			writeD(itemId);
-		}
+		packet.writeD(_objectId);
+		packet.writeD(_toVillage ? 0x01 : 0x00);
+		packet.writeD(_toClanHall ? 0x01 : 0x00);
+		packet.writeD(_toCastle ? 0x01 : 0x00);
+		packet.writeD(_toOutpost ? 0x01 : 0x00);
+		packet.writeD(_isSweepable ? 0x01 : 0x00);
+		packet.writeD(_useFeather ? 0x01 : 0x00);
+		packet.writeD(_toFortress ? 0x01 : 0x00);
+		packet.writeC(_hideAnimation ? 0x01 : 0x00);
 		
-		writeD(_itemsEnabled ? 0x01 : 0x00);
+		packet.writeD(getItems().size());
+		getItems().forEach(packet::writeD);
+		
+		packet.writeD(_itemsEnabled ? 0x01 : 0x00);
+		return true;
 	}
 }

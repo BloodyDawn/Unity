@@ -23,12 +23,14 @@ import java.util.List;
 import org.l2junity.gameserver.enums.MailType;
 import org.l2junity.gameserver.instancemanager.MailManager;
 import org.l2junity.gameserver.model.entity.Message;
+import org.l2junity.gameserver.network.OutgoingPackets;
 import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Migi, DS
  */
-public class ExShowReceivedPostList extends L2GameServerPacket
+public class ExShowReceivedPostList implements IGameServerPacket
 {
 	private final List<Message> _inbox;
 	
@@ -38,42 +40,43 @@ public class ExShowReceivedPostList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xAB);
-		writeD((int) (System.currentTimeMillis() / 1000));
+		OutgoingPackets.EX_SHOW_RECEIVED_POST_LIST.writeId(packet);
+		
+		packet.writeD((int) (System.currentTimeMillis() / 1000));
 		if ((_inbox != null) && (_inbox.size() > 0))
 		{
-			writeD(_inbox.size());
+			packet.writeD(_inbox.size());
 			for (Message msg : _inbox)
 			{
-				writeD(msg.getMailType().ordinal());
+				packet.writeD(msg.getMailType().ordinal());
 				if (msg.getMailType() == MailType.COMMISSION_ITEM_SOLD)
 				{
-					writeD(SystemMessageId.THE_ITEM_YOU_REGISTERED_HAS_BEEN_SOLD.getId());
+					packet.writeD(SystemMessageId.THE_ITEM_YOU_REGISTERED_HAS_BEEN_SOLD.getId());
 				}
 				else if (msg.getMailType() == MailType.COMMISSION_ITEM_RETURNED)
 				{
-					writeD(SystemMessageId.THE_REGISTRATION_PERIOD_FOR_THE_ITEM_YOU_REGISTERED_HAS_EXPIRED.getId());
+					packet.writeD(SystemMessageId.THE_REGISTRATION_PERIOD_FOR_THE_ITEM_YOU_REGISTERED_HAS_EXPIRED.getId());
 				}
-				writeD(msg.getId());
-				writeS(msg.getSubject());
-				writeS(msg.getSenderName());
-				writeD(msg.isLocked() ? 0x01 : 0x00);
-				writeD(msg.getExpirationSeconds());
-				writeD(msg.isUnread() ? 0x01 : 0x00);
-				writeD(((msg.getMailType() == MailType.COMMISSION_ITEM_SOLD) || (msg.getMailType() == MailType.COMMISSION_ITEM_RETURNED)) ? 0 : 1);
-				writeD(msg.hasAttachments() ? 0x01 : 0x00);
-				writeD(msg.isReturned() ? 0x01 : 0x00);
-				writeD(0x00); // SysString in some case it seems
+				packet.writeD(msg.getId());
+				packet.writeS(msg.getSubject());
+				packet.writeS(msg.getSenderName());
+				packet.writeD(msg.isLocked() ? 0x01 : 0x00);
+				packet.writeD(msg.getExpirationSeconds());
+				packet.writeD(msg.isUnread() ? 0x01 : 0x00);
+				packet.writeD(((msg.getMailType() == MailType.COMMISSION_ITEM_SOLD) || (msg.getMailType() == MailType.COMMISSION_ITEM_RETURNED)) ? 0 : 1);
+				packet.writeD(msg.hasAttachments() ? 0x01 : 0x00);
+				packet.writeD(msg.isReturned() ? 0x01 : 0x00);
+				packet.writeD(0x00); // SysString in some case it seems
 			}
 		}
 		else
 		{
-			writeD(0x00);
+			packet.writeD(0x00);
 		}
-		writeD(100); // TODO: Find me
-		writeD(1000); // TODO: Find me
+		packet.writeD(100); // TODO: Find me
+		packet.writeD(1000); // TODO: Find me
+		return true;
 	}
 }

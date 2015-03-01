@@ -18,19 +18,25 @@
  */
 package org.l2junity.gameserver.network.serverpackets.adenadistribution;
 
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class ExDivideAdenaStart extends L2GameServerPacket
+public class ExDivideAdenaStart implements IGameServerPacket
 {
 	public static final ExDivideAdenaStart STATIC_PACKET = new ExDivideAdenaStart();
 	
-	@Override
-	protected void writeImpl()
+	private ExDivideAdenaStart()
 	{
-		writeC(0xFE);
-		writeH(0x15B);
+	}
+	
+	@Override
+	public boolean write(PacketWriter packet)
+	{
+		OutgoingPackets.EX_DIVIDE_ADENA_START.writeId(packet);
+		return true;
 	}
 }

@@ -27,6 +27,8 @@ import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.ClanHall;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * Shows the Siege Info<BR>
@@ -44,48 +46,46 @@ import org.l2junity.gameserver.model.entity.ClanHall;
  * d = (UNKNOW) Siege Time Select Related?
  * @author KenM
  */
-public class SiegeInfo extends L2GameServerPacket
+public class SiegeInfo implements IGameServerPacket
 {
 	private Castle _castle;
 	private ClanHall _hall;
+	private final PlayerInstance _player;
 	
-	public SiegeInfo(Castle castle)
+	public SiegeInfo(Castle castle, PlayerInstance player)
 	{
 		_castle = castle;
+		_player = player;
 	}
 	
-	public SiegeInfo(ClanHall hall)
+	public SiegeInfo(ClanHall hall, PlayerInstance player)
 	{
 		_hall = hall;
+		_player = player;
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
-			return;
-		}
+		OutgoingPackets.CASTLE_SIEGE_INFO.writeId(packet);
 		
-		writeC(0xc9);
 		if (_castle != null)
 		{
-			writeD(_castle.getResidenceId());
+			packet.writeD(_castle.getResidenceId());
 			
 			final int ownerId = _castle.getOwnerId();
 			
-			writeD(((ownerId == activeChar.getClanId()) && (activeChar.isClanLeader())) ? 0x01 : 0x00);
-			writeD(ownerId);
+			packet.writeD(((ownerId == _player.getClanId()) && (_player.isClanLeader())) ? 0x01 : 0x00);
+			packet.writeD(ownerId);
 			if (ownerId > 0)
 			{
 				L2Clan owner = ClanTable.getInstance().getClan(ownerId);
 				if (owner != null)
 				{
-					writeS(owner.getName()); // Clan Name
-					writeS(owner.getLeaderName()); // Clan Leader Name
-					writeD(owner.getAllyId()); // Ally ID
-					writeS(owner.getAllyName()); // Ally Name
+					packet.writeS(owner.getName()); // Clan Name
+					packet.writeS(owner.getLeaderName()); // Clan Leader Name
+					packet.writeD(owner.getAllyId()); // Ally ID
+					packet.writeS(owner.getAllyName()); // Ally Name
 				}
 				else
 				{
@@ -94,51 +94,51 @@ public class SiegeInfo extends L2GameServerPacket
 			}
 			else
 			{
-				writeS(""); // Clan Name
-				writeS(""); // Clan Leader Name
-				writeD(0); // Ally ID
-				writeS(""); // Ally Name
+				packet.writeS(""); // Clan Name
+				packet.writeS(""); // Clan Leader Name
+				packet.writeD(0); // Ally ID
+				packet.writeS(""); // Ally Name
 			}
 			
-			writeD((int) (System.currentTimeMillis() / 1000));
-			if (!_castle.getIsTimeRegistrationOver() && activeChar.isClanLeader() && (activeChar.getClanId() == _castle.getOwnerId()))
+			packet.writeD((int) (System.currentTimeMillis() / 1000));
+			if (!_castle.getIsTimeRegistrationOver() && _player.isClanLeader() && (_player.getClanId() == _castle.getOwnerId()))
 			{
 				Calendar cal = Calendar.getInstance();
 				cal.setTimeInMillis(_castle.getSiegeDate().getTimeInMillis());
 				cal.set(Calendar.MINUTE, 0);
 				cal.set(Calendar.SECOND, 0);
 				
-				writeD(0x00);
-				writeD(Config.SIEGE_HOUR_LIST.size());
+				packet.writeD(0x00);
+				packet.writeD(Config.SIEGE_HOUR_LIST.size());
 				for (int hour : Config.SIEGE_HOUR_LIST)
 				{
 					cal.set(Calendar.HOUR_OF_DAY, hour);
-					writeD((int) (cal.getTimeInMillis() / 1000));
+					packet.writeD((int) (cal.getTimeInMillis() / 1000));
 				}
 			}
 			else
 			{
-				writeD((int) (_castle.getSiegeDate().getTimeInMillis() / 1000));
-				writeD(0x00);
+				packet.writeD((int) (_castle.getSiegeDate().getTimeInMillis() / 1000));
+				packet.writeD(0x00);
 			}
 		}
 		else
 		{
-			writeD(_hall.getId());
+			packet.writeD(_hall.getId());
 			
 			final int ownerId = _hall.getOwnerId();
 			
-			writeD(((ownerId == activeChar.getClanId()) && (activeChar.isClanLeader())) ? 0x01 : 0x00);
-			writeD(ownerId);
+			packet.writeD(((ownerId == _player.getClanId()) && (_player.isClanLeader())) ? 0x01 : 0x00);
+			packet.writeD(ownerId);
 			if (ownerId > 0)
 			{
 				L2Clan owner = ClanTable.getInstance().getClan(ownerId);
 				if (owner != null)
 				{
-					writeS(owner.getName()); // Clan Name
-					writeS(owner.getLeaderName()); // Clan Leader Name
-					writeD(owner.getAllyId()); // Ally ID
-					writeS(owner.getAllyName()); // Ally Name
+					packet.writeS(owner.getName()); // Clan Name
+					packet.writeS(owner.getLeaderName()); // Clan Leader Name
+					packet.writeD(owner.getAllyId()); // Ally ID
+					packet.writeS(owner.getAllyName()); // Ally Name
 				}
 				else
 				{
@@ -147,15 +147,16 @@ public class SiegeInfo extends L2GameServerPacket
 			}
 			else
 			{
-				writeS(""); // Clan Name
-				writeS(""); // Clan Leader Name
-				writeD(0); // Ally ID
-				writeS(""); // Ally Name
+				packet.writeS(""); // Clan Name
+				packet.writeS(""); // Clan Leader Name
+				packet.writeD(0); // Ally ID
+				packet.writeS(""); // Ally Name
 			}
 			
-			writeD((int) (Calendar.getInstance().getTimeInMillis() / 1000));
-			writeD((int) ((CHSiegeManager.getInstance().getSiegableHall(_hall.getId()).getNextSiegeTime()) / 1000));
-			writeD(0x00); // number of choices?
+			packet.writeD((int) (Calendar.getInstance().getTimeInMillis() / 1000));
+			packet.writeD((int) ((CHSiegeManager.getInstance().getSiegableHall(_hall.getId()).getNextSiegeTime()) / 1000));
+			packet.writeD(0x00); // number of choices?
 		}
+		return true;
 	}
 }

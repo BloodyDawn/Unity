@@ -26,7 +26,7 @@ import java.util.logging.Logger;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
 
 /**
  * @author UnAfraid
@@ -127,7 +127,7 @@ public class Mentee
 		return isOnline() ? getPlayerInstance().isOnlineInt() : 0;
 	}
 	
-	public void sendPacket(L2GameServerPacket packet)
+	public void sendPacket(IGameServerPacket packet)
 	{
 		if (isOnline())
 		{

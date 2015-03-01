@@ -21,25 +21,25 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.EnchantItemRequest;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExRemoveEnchantSupportItemResult;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Sdw
  */
-public class RequestExRemoveEnchantSupportItem extends L2GameClientPacket
+public class RequestExRemoveEnchantSupportItem implements IGameClientPacket
 {
-	private static final String _C__D0_E4_REQUESTEXREMOVEENCHANTSUPPORTITEM = "[C] D0:E4 RequestExRemoveEnchantSupportItem";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -59,11 +59,5 @@ public class RequestExRemoveEnchantSupportItem extends L2GameClientPacket
 		
 		request.setTimestamp(System.currentTimeMillis());
 		activeChar.sendPacket(ExRemoveEnchantSupportItemResult.STATIC_PACKET);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_E4_REQUESTEXREMOVEENCHANTSUPPORTITEM;
 	}
 }

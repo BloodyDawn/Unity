@@ -19,8 +19,10 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public final class MoveToLocation extends L2GameServerPacket
+public final class MoveToLocation implements IGameServerPacket
 {
 	private final int _charObjId, _x, _y, _z, _xDst, _yDst, _zDst;
 	
@@ -36,18 +38,19 @@ public final class MoveToLocation extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x2f);
+		OutgoingPackets.MOVE_TO_LOCATION.writeId(packet);
 		
-		writeD(_charObjId);
+		packet.writeD(_charObjId);
 		
-		writeD(_xDst);
-		writeD(_yDst);
-		writeD(_zDst);
+		packet.writeD(_xDst);
+		packet.writeD(_yDst);
+		packet.writeD(_zDst);
 		
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
+		packet.writeD(_x);
+		packet.writeD(_y);
+		packet.writeD(_z);
+		return true;
 	}
 }

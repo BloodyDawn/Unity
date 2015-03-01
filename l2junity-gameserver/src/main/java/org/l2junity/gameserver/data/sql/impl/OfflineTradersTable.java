@@ -35,7 +35,7 @@ import org.l2junity.gameserver.model.TradeItem;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.L2GameClient;
-import org.l2junity.gameserver.network.L2GameClient.GameClientState;
+import org.l2junity.gameserver.network.client.ConnectionState;
 
 public class OfflineTradersTable
 {
@@ -180,13 +180,13 @@ public class OfflineTradersTable
 				
 				try
 				{
-					L2GameClient client = new L2GameClient(null);
+					L2GameClient client = new L2GameClient();
 					client.setDetached(true);
 					player = PlayerInstance.load(rs.getInt("charId"));
 					client.setActiveChar(player);
 					player.setOnlineStatus(true, false);
 					client.setAccountName(player.getAccountNamePlayer());
-					client.setState(GameClientState.IN_GAME);
+					client.setConnectionState(ConnectionState.IN_GAME);
 					player.setClient(client);
 					player.setOfflineStartTime(time);
 					player.spawnMe(player.getX(), player.getY(), player.getZ());

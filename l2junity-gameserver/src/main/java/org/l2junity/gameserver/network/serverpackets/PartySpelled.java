@@ -23,8 +23,10 @@ import java.util.List;
 
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class PartySpelled extends L2GameServerPacket
+public class PartySpelled implements IGameServerPacket
 {
 	private final List<BuffInfo> _effects = new ArrayList<>();
 	private final Creature _activeChar;
@@ -40,21 +42,23 @@ public class PartySpelled extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xF4);
-		writeD(_activeChar.isServitor() ? 2 : _activeChar.isPet() ? 1 : 0);
-		writeD(_activeChar.getObjectId());
-		writeD(_effects.size());
+		OutgoingPackets.PARTY_SPELLED.writeId(packet);
+		
+		packet.writeD(_activeChar.isServitor() ? 2 : _activeChar.isPet() ? 1 : 0);
+		packet.writeD(_activeChar.getObjectId());
+		packet.writeD(_effects.size());
 		for (BuffInfo info : _effects)
 		{
 			if ((info != null) && info.isInUse())
 			{
-				writeD(info.getSkill().getId());
-				writeH(info.getSkill().getLevel());
-				writeD(0x00);
-				writeH(info.getTime());
+				packet.writeD(info.getSkill().getId());
+				packet.writeH(info.getSkill().getLevel());
+				packet.writeD(0x00);
+				packet.writeH(info.getTime());
 			}
 		}
+		return true;
 	}
 }

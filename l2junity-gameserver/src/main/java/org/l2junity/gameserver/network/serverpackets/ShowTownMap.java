@@ -18,17 +18,15 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class ShowTownMap extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class ShowTownMap implements IGameServerPacket
 {
 	private final String _texture;
 	private final int _x;
 	private final int _y;
 	
-	/**
-	 * @param texture
-	 * @param x
-	 * @param y
-	 */
 	public ShowTownMap(String texture, int x, int y)
 	{
 		_texture = texture;
@@ -37,11 +35,12 @@ public class ShowTownMap extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xea);
-		writeS(_texture);
-		writeD(_x);
-		writeD(_y);
+		OutgoingPackets.SHOW_TOWN_MAP.writeId(packet);
+		packet.writeS(_texture);
+		packet.writeD(_x);
+		packet.writeD(_y);
+		return true;
 	}
 }

@@ -18,29 +18,25 @@
  */
 package org.l2junity.gameserver.network.clientpackets.primeshop;
 
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Gnacik, UnAfraid
  */
-public final class RequestBRRecentProductList extends L2GameClientPacket
+public final class RequestBRRecentProductList implements IGameClientPacket
 {
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// Nothing to read
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		// L2PcInstance player = getClient().getActiveChar();
+		// L2PcInstance player = client.getActiveChar();
 		// TODO: Implement it.
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
 	}
 }

@@ -27,62 +27,63 @@ import org.l2junity.gameserver.model.itemcontainer.ClanWarehouse;
 import org.l2junity.gameserver.model.itemcontainer.ItemContainer;
 import org.l2junity.gameserver.model.itemcontainer.PcWarehouse;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2junity.gameserver.network.serverpackets.ItemList;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ... 32 SendWareHouseWithDrawList cd (dd) WootenGil rox :P
  * @version $Revision: 1.2.2.1.2.4 $ $Date: 2005/03/29 23:15:16 $
  */
-public final class SendWareHouseWithDrawList extends L2GameClientPacket
+public final class SendWareHouseWithDrawList implements IGameClientPacket
 {
-	private static final String _C__32_SENDWAREHOUSEWITHDRAWLIST = "[C] 3C SendWareHouseWithDrawList";
-	
 	private static final int BATCH_LENGTH = 12; // length of the one item
 	
 	private ItemHolder _items[] = null;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		final int count = readD();
-		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
+		final int count = packet.readD();
+		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != packet.getReadableBytes()))
 		{
-			return;
+			return false;
 		}
 		
 		_items = new ItemHolder[count];
 		for (int i = 0; i < count; i++)
 		{
-			int objId = readD();
-			long cnt = readQ();
+			int objId = packet.readD();
+			long cnt = packet.readQ();
 			if ((objId < 1) || (cnt < 0))
 			{
 				_items = null;
-				return;
+				return false;
 			}
 			_items[i] = new ItemHolder(objId, cnt);
 		}
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		if (_items == null)
 		{
 			return;
 		}
 		
-		final PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
 		}
 		
-		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("withdraw"))
+		if (!client.getFloodProtectors().getTransaction().tryPerformAction("withdraw"))
 		{
 			player.sendMessage("You are withdrawing items too fast.");
 			return;
@@ -210,9 +211,4 @@ public final class SendWareHouseWithDrawList extends L2GameClientPacket
 		player.sendPacket(new ExUserInfoInvenWeight(player));
 	}
 	
-	@Override
-	public String getType()
-	{
-		return _C__32_SENDWAREHOUSEWITHDRAWLIST;
-	}
 }

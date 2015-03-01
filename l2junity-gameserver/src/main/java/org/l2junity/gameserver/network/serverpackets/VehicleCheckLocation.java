@@ -19,30 +19,31 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Maktakien
  */
-public class VehicleCheckLocation extends L2GameServerPacket
+public class VehicleCheckLocation implements IGameServerPacket
 {
 	private final Creature _boat;
 	
-	/**
-	 * @param boat
-	 */
 	public VehicleCheckLocation(Creature boat)
 	{
 		_boat = boat;
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x6d);
-		writeD(_boat.getObjectId());
-		writeD(_boat.getX());
-		writeD(_boat.getY());
-		writeD(_boat.getZ());
-		writeD(_boat.getHeading());
+		OutgoingPackets.VEHICLE_CHECK_LOCATION.writeId(packet);
+		
+		packet.writeD(_boat.getObjectId());
+		packet.writeD(_boat.getX());
+		packet.writeD(_boat.getY());
+		packet.writeD(_boat.getZ());
+		packet.writeD(_boat.getHeading());
+		return true;
 	}
 }

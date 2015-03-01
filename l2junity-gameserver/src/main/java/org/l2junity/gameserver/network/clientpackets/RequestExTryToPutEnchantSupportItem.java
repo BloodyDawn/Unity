@@ -24,30 +24,31 @@ import org.l2junity.gameserver.model.actor.request.EnchantItemRequest;
 import org.l2junity.gameserver.model.items.enchant.EnchantScroll;
 import org.l2junity.gameserver.model.items.enchant.EnchantSupportItem;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExPutEnchantSupportItemResult;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author KenM
  */
-public class RequestExTryToPutEnchantSupportItem extends L2GameClientPacket
+public class RequestExTryToPutEnchantSupportItem implements IGameClientPacket
 {
-	private static final String _C__D0_4D_REQUESTEXTRYTOPUTENCHANTSUPPORTITEM = "[C] D0:4D RequestExTryToPutEnchantSupportItem";
-	
 	private int _supportObjectId;
 	private int _enchantObjectId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_supportObjectId = readD();
-		_enchantObjectId = readD();
+		_supportObjectId = packet.readD();
+		_enchantObjectId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -88,11 +89,5 @@ public class RequestExTryToPutEnchantSupportItem extends L2GameClientPacket
 		request.setSupportItem(support.getObjectId());
 		request.setTimestamp(System.currentTimeMillis());
 		activeChar.sendPacket(new ExPutEnchantSupportItemResult(_supportObjectId));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_4D_REQUESTEXTRYTOPUTENCHANTSUPPORTITEM;
 	}
 }

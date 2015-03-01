@@ -21,6 +21,8 @@ package org.l2junity.gameserver.model;
 import java.util.List;
 import java.util.function.Function;
 
+import javolution.util.FastList;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -29,8 +31,6 @@ import org.l2junity.gameserver.network.serverpackets.ExCloseMPCC;
 import org.l2junity.gameserver.network.serverpackets.ExMPCCPartyInfoUpdate;
 import org.l2junity.gameserver.network.serverpackets.ExOpenMPCC;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
-
-import javolution.util.FastList;
 
 /**
  * This class serves as a container for command channels.
@@ -102,7 +102,7 @@ public class CommandChannel extends AbstractPlayerGroup
 			}
 		}
 		party.setCommandChannel(null);
-		party.broadcastPacket(new ExCloseMPCC());
+		party.broadcastPacket(ExCloseMPCC.STATIC_PACKET);
 		if (_parties.size() < 2)
 		{
 			broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_COMMAND_CHANNEL_HAS_BEEN_DISBANDED));

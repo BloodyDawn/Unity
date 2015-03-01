@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public final class SetSummonRemainTime extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public final class SetSummonRemainTime implements IGameServerPacket
 {
 	private final int _maxTime;
 	private final int _remainingTime;
@@ -30,10 +33,12 @@ public final class SetSummonRemainTime extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xd1);
-		writeD(_maxTime);
-		writeD(_remainingTime);
+		OutgoingPackets.SET_SUMMON_REMAIN_TIME.writeId(packet);
+		
+		packet.writeD(_maxTime);
+		packet.writeD(_remainingTime);
+		return true;
 	}
 }

@@ -20,28 +20,31 @@ package org.l2junity.gameserver.network.clientpackets.mentoring;
 
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.network.serverpackets.mentoring.ExMentorAdd;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Gnacik, UnAfraid
  */
-public class RequestMenteeAdd extends L2GameClientPacket
+public class RequestMenteeAdd implements IGameClientPacket
 {
 	private String _target;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_target = readS();
+		_target = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance mentor = getClient().getActiveChar();
+		final PlayerInstance mentor = client.getActiveChar();
 		if (mentor == null)
 		{
 			return;
@@ -58,11 +61,5 @@ public class RequestMenteeAdd extends L2GameClientPacket
 			mentor.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_OFFERED_TO_BECOME_S1_S_MENTOR).addCharName(mentee));
 			mentee.sendPacket(new ExMentorAdd(mentor));
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
 	}
 }

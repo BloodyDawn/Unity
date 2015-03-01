@@ -20,11 +20,13 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.instancemanager.MailManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class ExUnReadMailCount extends L2GameServerPacket
+public class ExUnReadMailCount implements IGameServerPacket
 {
 	private final int _mailUnreadCount;
 	
@@ -34,11 +36,11 @@ public class ExUnReadMailCount extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x13C);
+		OutgoingPackets.EX_UN_READ_MAIL_COUNT.writeId(packet);
 		
-		writeD(_mailUnreadCount);
+		packet.writeD(_mailUnreadCount);
+		return true;
 	}
 }

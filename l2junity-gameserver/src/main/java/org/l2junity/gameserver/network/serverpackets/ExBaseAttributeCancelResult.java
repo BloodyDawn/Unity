@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author JIV
  */
-public class ExBaseAttributeCancelResult extends L2GameServerPacket
+public class ExBaseAttributeCancelResult implements IGameServerPacket
 {
 	private final int _objId;
 	private final byte _attribute;
@@ -33,12 +36,13 @@ public class ExBaseAttributeCancelResult extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x76);
-		writeD(0x01); // result
-		writeD(_objId);
-		writeD(_attribute);
+		OutgoingPackets.EX_BASE_ATTRIBUTE_CANCEL_RESULT.writeId(packet);
+		
+		packet.writeD(0x01); // result
+		packet.writeD(_objId);
+		packet.writeD(_attribute);
+		return true;
 	}
 }

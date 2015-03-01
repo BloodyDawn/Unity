@@ -23,12 +23,14 @@ import java.util.List;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.Henna;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * This server packet sends the player's henna information using the Game Master's UI.
  * @author KenM, Zoey76
  */
-public final class GMHennaInfo extends L2GameServerPacket
+public final class GMHennaInfo implements IGameServerPacket
 {
 	private final PlayerInstance _activeChar;
 	private final List<Henna> _hennas = new ArrayList<>();
@@ -46,26 +48,28 @@ public final class GMHennaInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xF0);
-		writeC(_activeChar.getHennaStatINT()); // equip INT
-		writeC(_activeChar.getHennaStatSTR()); // equip STR
-		writeC(_activeChar.getHennaStatCON()); // equip CON
-		writeC(_activeChar.getHennaStatMEN()); // equip MEN
-		writeC(_activeChar.getHennaStatDEX()); // equip DEX
-		writeC(_activeChar.getHennaStatWIT()); // equip WIT
-		writeC(0x00); // equip LUC
-		writeC(0x00); // equip CHA
-		writeD(3); // Slots
-		writeD(_hennas.size()); // Size
+		OutgoingPackets.GMHENNA_INFO.writeId(packet);
+		
+		packet.writeC(_activeChar.getHennaStatINT()); // equip INT
+		packet.writeC(_activeChar.getHennaStatSTR()); // equip STR
+		packet.writeC(_activeChar.getHennaStatCON()); // equip CON
+		packet.writeC(_activeChar.getHennaStatMEN()); // equip MEN
+		packet.writeC(_activeChar.getHennaStatDEX()); // equip DEX
+		packet.writeC(_activeChar.getHennaStatWIT()); // equip WIT
+		packet.writeC(0x00); // equip LUC
+		packet.writeC(0x00); // equip CHA
+		packet.writeD(3); // Slots
+		packet.writeD(_hennas.size()); // Size
 		for (Henna henna : _hennas)
 		{
-			writeD(henna.getDyeId());
-			writeD(0x01);
+			packet.writeD(henna.getDyeId());
+			packet.writeD(0x01);
 		}
-		writeD(0x00);
-		writeD(0x00);
-		writeD(0x00);
+		packet.writeD(0x00);
+		packet.writeD(0x00);
+		packet.writeD(0x00);
+		return true;
 	}
 }

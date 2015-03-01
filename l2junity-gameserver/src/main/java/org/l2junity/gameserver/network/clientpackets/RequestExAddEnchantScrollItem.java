@@ -23,30 +23,31 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.EnchantItemRequest;
 import org.l2junity.gameserver.model.items.enchant.EnchantScroll;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExPutEnchantScrollItemResult;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Sdw
  */
-public class RequestExAddEnchantScrollItem extends L2GameClientPacket
+public class RequestExAddEnchantScrollItem implements IGameClientPacket
 {
-	private static final String _C__D0_E8_REQUESTEXADDENCHANTSCROLLITEM = "[C] D0:E8 RequestExAddEnchantScrollItem";
-	
 	private int _scrollObjectId;
 	private int _enchantObjectId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_scrollObjectId = readD();
-		_enchantObjectId = readD();
+		_scrollObjectId = packet.readD();
+		_enchantObjectId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -85,11 +86,5 @@ public class RequestExAddEnchantScrollItem extends L2GameClientPacket
 		
 		request.setTimestamp(System.currentTimeMillis());
 		activeChar.sendPacket(new ExPutEnchantScrollItemResult(_scrollObjectId));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_E8_REQUESTEXADDENCHANTSCROLLITEM;
 	}
 }

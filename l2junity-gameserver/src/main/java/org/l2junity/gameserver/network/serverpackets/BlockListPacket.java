@@ -21,11 +21,13 @@ package org.l2junity.gameserver.network.serverpackets;
 import java.util.List;
 
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class BlockListPacket extends L2GameServerPacket
+public class BlockListPacket implements IGameServerPacket
 {
 	private final List<Integer> _playersId;
 	
@@ -35,14 +37,16 @@ public class BlockListPacket extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xD5);
-		writeD(_playersId.size());
+		OutgoingPackets.BLOCK_LIST.writeId(packet);
+		
+		packet.writeD(_playersId.size());
 		for (int playerId : _playersId)
 		{
-			writeS(CharNameTable.getInstance().getNameById(playerId));
-			writeS(""); // memo ?
+			packet.writeS(CharNameTable.getInstance().getNameById(playerId));
+			packet.writeS(""); // memo ?
 		}
+		return true;
 	}
 }

@@ -150,4 +150,16 @@ public final class PacketReader
 		_buf.readBytes(result);
 		return result;
 	}
+	
+	/**
+	 * Reads a byte array.
+	 * @param data
+	 * @param offset
+	 * @param index
+	 * @throws IndexOutOfBoundsException if {@code readableBytes} is less than {@code length}
+	 */
+	public void readB(byte[] data, int offset, int index)
+	{
+		_buf.readBytes(data, offset, index);
+	}
 }

@@ -19,8 +19,10 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public final class GetItem extends L2GameServerPacket
+public final class GetItem implements IGameServerPacket
 {
 	private final ItemInstance _item;
 	private final int _playerId;
@@ -32,14 +34,16 @@ public final class GetItem extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x17);
-		writeD(_playerId);
-		writeD(_item.getObjectId());
+		OutgoingPackets.GET_ITEM.writeId(packet);
 		
-		writeD(_item.getX());
-		writeD(_item.getY());
-		writeD(_item.getZ());
+		packet.writeD(_playerId);
+		packet.writeD(_item.getObjectId());
+		
+		packet.writeD(_item.getX());
+		packet.writeD(_item.getY());
+		packet.writeD(_item.getZ());
+		return true;
 	}
 }

@@ -21,7 +21,7 @@ package org.l2junity.gameserver.model;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
 /**
@@ -36,7 +36,7 @@ public class L2Request
 	protected PlayerInstance _partner;
 	protected boolean _isRequestor;
 	protected boolean _isAnswerer;
-	protected L2GameClientPacket _requestPacket;
+	protected IGameClientPacket _requestPacket;
 	
 	public L2Request(PlayerInstance player)
 	{
@@ -72,7 +72,7 @@ public class L2Request
 	 * Set the packet incomed from requester.
 	 * @param packet
 	 */
-	private synchronized void setRequestPacket(L2GameClientPacket packet)
+	private synchronized void setRequestPacket(IGameClientPacket packet)
 	{
 		_requestPacket = packet;
 	}
@@ -81,7 +81,7 @@ public class L2Request
 	 * Return the packet originally incomed from requester.
 	 * @return
 	 */
-	public L2GameClientPacket getRequestPacket()
+	public IGameClientPacket getRequestPacket()
 	{
 		return _requestPacket;
 	}
@@ -92,7 +92,7 @@ public class L2Request
 	 * @param packet
 	 * @return
 	 */
-	public synchronized boolean setRequest(PlayerInstance partner, L2GameClientPacket packet)
+	public synchronized boolean setRequest(PlayerInstance partner, IGameClientPacket packet)
 	{
 		if (partner == null)
 		{

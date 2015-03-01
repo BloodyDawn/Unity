@@ -21,34 +21,33 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.gameserver.enums.MatchingRoomType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.matching.MatchingRoom;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Gnacik
  */
-public class RequestDismissPartyRoom extends L2GameClientPacket
+public class RequestDismissPartyRoom implements IGameClientPacket
 {
-	private static final String _C__D0_0A_REQUESTDISMISSPARTYROOM = "[C] D0:0A RequestDismissPartyRoom";
-	
 	private int _roomid;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_roomid = readD();
+		_roomid = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getActiveChar();
-		
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
 		}
 		
 		final MatchingRoom room = player.getMatchingRoom();
-		
 		if ((room == null) || (room.getId() != _roomid) || (room.getRoomType() != MatchingRoomType.PARTY) || (room.getLeader() != player))
 		{
 			return;
@@ -56,11 +55,4 @@ public class RequestDismissPartyRoom extends L2GameClientPacket
 		
 		room.disbandRoom();
 	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_0A_REQUESTDISMISSPARTYROOM;
-	}
-	
 }

@@ -22,10 +22,12 @@ import org.l2junity.gameserver.datatables.AugmentationData;
 import org.l2junity.gameserver.model.Augmentation;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.serverpackets.ExVariationResult;
 import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format:(ch) dddd
@@ -33,25 +35,25 @@ import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
  */
 public final class RequestRefine extends AbstractRefinePacket
 {
-	private static final String _C__D0_41_REQUESTREFINE = "[C] D0:41 RequestRefine";
 	private int _targetItemObjId;
 	private int _refinerItemObjId;
 	private int _gemStoneItemObjId;
 	private long _gemStoneCount;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_targetItemObjId = readD();
-		_refinerItemObjId = readD();
-		_gemStoneItemObjId = readD();
-		_gemStoneCount = readQ();
+		_targetItemObjId = packet.readD();
+		_refinerItemObjId = packet.readD();
+		_gemStoneItemObjId = packet.readD();
+		_gemStoneCount = packet.readQ();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -133,9 +135,4 @@ public final class RequestRefine extends AbstractRefinePacket
 		activeChar.sendPacket(new ExUserInfoInvenWeight(activeChar));
 	}
 	
-	@Override
-	public String getType()
-	{
-		return _C__D0_41_REQUESTREFINE;
-	}
 }

@@ -25,28 +25,29 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.EnchantItemRequest;
 import org.l2junity.gameserver.model.items.enchant.EnchantScroll;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExPutEnchantTargetItemResult;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author KenM
  */
-public class RequestExTryToPutEnchantTargetItem extends L2GameClientPacket
+public class RequestExTryToPutEnchantTargetItem implements IGameClientPacket
 {
-	private static final String _C__D0_4C_REQUESTEXTRYTOPUTENCHANTTARGETITEM = "[C] D0:4C RequestExTryToPutEnchantTargetItem";
-	
 	private int _objectId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_objectId = readD();
+		_objectId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -70,9 +71,9 @@ public class RequestExTryToPutEnchantTargetItem extends L2GameClientPacket
 		final EnchantScroll scrollTemplate = EnchantItemData.getInstance().getEnchantScroll(scroll);
 		if ((scrollTemplate == null) || !scrollTemplate.isValid(item, null))
 		{
-			activeChar.sendPacket(SystemMessageId.DOES_NOT_FIT_STRENGTHENING_CONDITIONS_OF_THE_SCROLL);
+			client.sendPacket(SystemMessageId.DOES_NOT_FIT_STRENGTHENING_CONDITIONS_OF_THE_SCROLL);
 			activeChar.removeRequest(request.getClass());
-			activeChar.sendPacket(new ExPutEnchantTargetItemResult(0));
+			client.sendPacket(new ExPutEnchantTargetItemResult(0));
 			if (scrollTemplate == null)
 			{
 				_log.log(Level.WARNING, getClass().getSimpleName() + ": Undefined scroll have been used id: " + scroll.getId());
@@ -80,12 +81,6 @@ public class RequestExTryToPutEnchantTargetItem extends L2GameClientPacket
 			return;
 		}
 		request.setTimestamp(System.currentTimeMillis());
-		activeChar.sendPacket(new ExPutEnchantTargetItemResult(_objectId));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_4C_REQUESTEXTRYTOPUTENCHANTTARGETITEM;
+		client.sendPacket(new ExPutEnchantTargetItemResult(_objectId));
 	}
 }

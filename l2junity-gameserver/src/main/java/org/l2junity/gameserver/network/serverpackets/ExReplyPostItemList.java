@@ -22,6 +22,8 @@ import java.util.Collection;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Migi, DS
@@ -39,14 +41,15 @@ public class ExReplyPostItemList extends AbstractItemPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xB3);
-		writeD(_itemList.size());
+		OutgoingPackets.EX_REPLY_POST_ITEM_LIST.writeId(packet);
+		
+		packet.writeD(_itemList.size());
 		for (ItemInstance item : _itemList)
 		{
-			writeItem(item);
+			writeItem(packet, item);
 		}
+		return true;
 	}
 }

@@ -23,11 +23,13 @@ import java.util.List;
 import org.l2junity.gameserver.instancemanager.CastleManorManager;
 import org.l2junity.gameserver.model.L2Seed;
 import org.l2junity.gameserver.model.SeedProduction;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author l3x
  */
-public class ExShowSeedInfo extends L2GameServerPacket
+public class ExShowSeedInfo implements IGameServerPacket
 {
 	private final List<SeedProduction> _seeds;
 	private final int _manorId;
@@ -43,42 +45,44 @@ public class ExShowSeedInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE); // Id
-		writeH(0x23); // SubId
-		writeC(_hideButtons ? 0x01 : 0x00); // Hide "Seed Purchase" button
-		writeD(_manorId); // Manor ID
-		writeD(0x00); // Unknown
+		OutgoingPackets.EX_SHOW_SEED_INFO.writeId(packet);
+		
+		packet.writeC(_hideButtons ? 0x01 : 0x00); // Hide "Seed Purchase" button
+		packet.writeD(_manorId); // Manor ID
+		packet.writeD(0x00); // Unknown
 		if (_seeds == null)
 		{
-			writeD(0);
-			return;
+			packet.writeD(0);
+			return true;
 		}
-		writeD(_seeds.size());
+		
+		packet.writeD(_seeds.size());
 		for (SeedProduction seed : _seeds)
 		{
-			writeD(seed.getId()); // Seed id
-			writeQ(seed.getAmount()); // Left to buy
-			writeQ(seed.getStartAmount()); // Started amount
-			writeQ(seed.getPrice()); // Sell Price
+			packet.writeD(seed.getId()); // Seed id
+			packet.writeQ(seed.getAmount()); // Left to buy
+			packet.writeQ(seed.getStartAmount()); // Started amount
+			packet.writeQ(seed.getPrice()); // Sell Price
 			final L2Seed s = CastleManorManager.getInstance().getSeed(seed.getId());
 			if (s == null)
 			{
-				writeD(0); // Seed level
-				writeC(0x01); // Reward 1
-				writeD(0); // Reward 1 - item id
-				writeC(0x01); // Reward 2
-				writeD(0); // Reward 2 - item id
+				packet.writeD(0); // Seed level
+				packet.writeC(0x01); // Reward 1
+				packet.writeD(0); // Reward 1 - item id
+				packet.writeC(0x01); // Reward 2
+				packet.writeD(0); // Reward 2 - item id
 			}
 			else
 			{
-				writeD(s.getLevel()); // Seed level
-				writeC(0x01); // Reward 1
-				writeD(s.getReward(1)); // Reward 1 - item id
-				writeC(0x01); // Reward 2
-				writeD(s.getReward(2)); // Reward 2 - item id
+				packet.writeD(s.getLevel()); // Seed level
+				packet.writeC(0x01); // Reward 1
+				packet.writeD(s.getReward(1)); // Reward 1 - item id
+				packet.writeC(0x01); // Reward 2
+				packet.writeD(s.getReward(2)); // Reward 2 - item id
 			}
 		}
+		return true;
 	}
 }

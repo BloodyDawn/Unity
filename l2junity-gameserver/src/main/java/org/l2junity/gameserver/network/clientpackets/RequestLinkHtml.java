@@ -21,28 +21,30 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * Lets drink to code!
  * @author zabbix, HorridoJoho
  */
-public final class RequestLinkHtml extends L2GameClientPacket
+public final class RequestLinkHtml implements IGameClientPacket
 {
-	private static final String _C__22_REQUESTLINKHTML = "[C] 22 RequestLinkHtml";
 	private String _link;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_link = readS();
+		_link = packet.readS();
+		return true;
 	}
 	
 	@Override
-	public void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance actor = getClient().getActiveChar();
+		PlayerInstance actor = client.getActiveChar();
 		if (actor == null)
 		{
 			return;
@@ -76,12 +78,6 @@ public final class RequestLinkHtml extends L2GameClientPacket
 		String filename = "data/html/" + _link;
 		final NpcHtmlMessage msg = new NpcHtmlMessage(htmlObjectId);
 		msg.setFile(actor.getHtmlPrefix(), filename);
-		sendPacket(msg);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__22_REQUESTLINKHTML;
+		client.sendPacket(msg);
 	}
 }

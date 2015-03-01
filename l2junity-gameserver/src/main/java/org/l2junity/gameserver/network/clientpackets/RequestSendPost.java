@@ -33,20 +33,20 @@ import org.l2junity.gameserver.model.entity.Message;
 import org.l2junity.gameserver.model.itemcontainer.Mail;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExNoticePostSent;
 import org.l2junity.gameserver.network.serverpackets.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2junity.gameserver.network.serverpackets.ItemList;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Migi, DS
  */
-public final class RequestSendPost extends L2GameClientPacket
+public final class RequestSendPost implements IGameClientPacket
 {
-	private static final String _C__D0_66_REQUESTSENDPOST = "[C] D0:66 RequestSendPost";
-	
 	private static final int BATCH_LENGTH = 12; // length of the one item
 	
 	private static final int MAX_RECV_LENGTH = 16;
@@ -71,17 +71,17 @@ public final class RequestSendPost extends L2GameClientPacket
 	}
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_receiver = readS();
-		_isCod = readD() == 0 ? false : true;
-		_subject = readS();
-		_text = readS();
+		_receiver = packet.readS();
+		_isCod = packet.readD() != 0;
+		_subject = packet.readS();
+		_text = packet.readS();
 		
-		int attachCount = readD();
-		if ((attachCount < 0) || (attachCount > Config.MAX_ITEM_IN_PACKET) || (((attachCount * BATCH_LENGTH) + 8) != _buf.remaining()))
+		int attachCount = packet.readD();
+		if ((attachCount < 0) || (attachCount > Config.MAX_ITEM_IN_PACKET) || (((attachCount * BATCH_LENGTH) + 8) != packet.getReadableBytes()))
 		{
-			return;
+			return false;
 		}
 		
 		if (attachCount > 0)
@@ -89,29 +89,30 @@ public final class RequestSendPost extends L2GameClientPacket
 			_items = new AttachmentItem[attachCount];
 			for (int i = 0; i < attachCount; i++)
 			{
-				int objectId = readD();
-				long count = readQ();
+				int objectId = packet.readD();
+				long count = packet.readQ();
 				if ((objectId < 1) || (count < 0))
 				{
 					_items = null;
-					return;
+					return false;
 				}
 				_items[i] = new AttachmentItem(objectId, count);
 			}
 		}
 		
-		_reqAdena = readQ();
+		_reqAdena = packet.readQ();
+		return true;
 	}
 	
 	@Override
-	public void runImpl()
+	public void run(L2GameClient client)
 	{
 		if (!Config.ALLOW_MAIL)
 		{
 			return;
 		}
 		
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -248,7 +249,7 @@ public final class RequestSendPost extends L2GameClientPacket
 			return;
 		}
 		
-		if (!getClient().getFloodProtectors().getSendMail().tryPerformAction("sendmail"))
+		if (!client.getFloodProtectors().getSendMail().tryPerformAction("sendmail"))
 		{
 			activeChar.sendPacket(SystemMessageId.THE_PREVIOUS_MAIL_WAS_FORWARDED_LESS_THAN_1_MINUTE_AGO_AND_THIS_CANNOT_BE_FORWARDED);
 			return;
@@ -382,17 +383,5 @@ public final class RequestSendPost extends L2GameClientPacket
 		{
 			return _count;
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_66_REQUESTSENDPOST;
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
 	}
 }

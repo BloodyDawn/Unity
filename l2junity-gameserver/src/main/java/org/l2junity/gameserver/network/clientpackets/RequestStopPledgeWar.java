@@ -23,26 +23,27 @@ import org.l2junity.gameserver.model.ClanMember;
 import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
+import org.l2junity.network.PacketReader;
 
-public final class RequestStopPledgeWar extends L2GameClientPacket
+public final class RequestStopPledgeWar implements IGameClientPacket
 {
-	private static final String _C__05_REQUESTSTOPPLEDGEWAR = "[C] 05 RequestStopPledgeWar";
-	
 	private String _pledgeName;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_pledgeName = readS();
+		_pledgeName = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance player = getClient().getActiveChar();
+		PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -119,11 +120,5 @@ public final class RequestStopPledgeWar extends L2GameClientPacket
 		{
 			member.broadcastUserInfo();
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__05_REQUESTSTOPPLEDGEWAR;
 	}
 }

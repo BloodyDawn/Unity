@@ -23,36 +23,36 @@ import java.util.Collection;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.SpawnItem;
 import org.l2junity.gameserver.network.serverpackets.UserInfo;
+import org.l2junity.network.PacketReader;
 
-public class RequestRecordInfo extends L2GameClientPacket
+public class RequestRecordInfo implements IGameClientPacket
 {
-	private static final String _C__6E_REQUEST_RECORD_INFO = "[C] 6E RequestRecordInfo";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// trigger
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
-		activeChar.sendPacket(new UserInfo(activeChar));
+		client.sendPacket(new UserInfo(activeChar));
 		
 		Collection<WorldObject> objs = activeChar.getKnownList().getKnownObjects().values();
 		for (WorldObject object : objs)
 		{
 			if (object.getPoly().isMorphed() && object.getPoly().getPolyType().equals("item"))
 			{
-				activeChar.sendPacket(new SpawnItem(object));
+				client.sendPacket(new SpawnItem(object));
 			}
 			else
 			{
@@ -75,11 +75,5 @@ public class RequestRecordInfo extends L2GameClientPacket
 				}
 			}
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__6E_REQUEST_RECORD_INFO;
 	}
 }

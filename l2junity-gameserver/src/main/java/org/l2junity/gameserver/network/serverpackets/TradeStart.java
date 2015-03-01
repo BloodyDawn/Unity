@@ -25,6 +25,8 @@ import org.l2junity.gameserver.instancemanager.MentorManager;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 public final class TradeStart extends AbstractItemPacket
 {
@@ -67,24 +69,25 @@ public final class TradeStart extends AbstractItemPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
 		if ((_activeChar.getActiveTradeList() == null) || (_partner == null))
 		{
-			return;
+			return false;
 		}
 		
-		writeC(0x14);
-		writeD(_partner.getObjectId());
-		writeC(_mask); // some kind of mask
+		OutgoingPackets.TRADE_START.writeId(packet);
+		packet.writeD(_partner.getObjectId());
+		packet.writeC(_mask); // some kind of mask
 		if ((_mask & 0x10) == 0)
 		{
-			writeC(_partner.getLevel());
+			packet.writeC(_partner.getLevel());
 		}
-		writeH(_itemList.size());
+		packet.writeH(_itemList.size());
 		for (ItemInstance item : _itemList)
 		{
-			writeItem(item);
+			writeItem(packet, item);
 		}
+		return true;
 	}
 }

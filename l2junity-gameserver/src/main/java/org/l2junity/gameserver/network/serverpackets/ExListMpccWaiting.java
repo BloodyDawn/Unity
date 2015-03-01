@@ -23,11 +23,13 @@ import java.util.List;
 
 import org.l2junity.gameserver.instancemanager.MatchingRoomManager;
 import org.l2junity.gameserver.model.matching.MatchingRoom;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class ExListMpccWaiting extends L2GameServerPacket
+public class ExListMpccWaiting implements IGameServerPacket
 {
 	private static final int NUM_PER_PAGE = 64;
 	private final int _size;
@@ -51,23 +53,23 @@ public class ExListMpccWaiting extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x9D);
+		OutgoingPackets.EX_LIST_MPCC_WAITING.writeId(packet);
 		
-		writeD(_size);
-		writeD(_rooms.size());
+		packet.writeD(_size);
+		packet.writeD(_rooms.size());
 		for (MatchingRoom room : _rooms)
 		{
-			writeD(room.getId());
-			writeS(room.getTitle());
-			writeD(room.getMembersCount());
-			writeD(room.getMinLvl());
-			writeD(room.getMaxLvl());
-			writeD(room.getLocation());
-			writeD(room.getMaxMembers());
-			writeS(room.getLeader().getName());
+			packet.writeD(room.getId());
+			packet.writeS(room.getTitle());
+			packet.writeD(room.getMembersCount());
+			packet.writeD(room.getMinLvl());
+			packet.writeD(room.getMaxLvl());
+			packet.writeD(room.getLocation());
+			packet.writeD(room.getMaxMembers());
+			packet.writeS(room.getLeader().getName());
 		}
+		return true;
 	}
 }

@@ -20,55 +20,50 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.GetOffVehicle;
 import org.l2junity.gameserver.network.serverpackets.StopMoveInVehicle;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Maktakien
  */
-public final class RequestGetOffVehicle extends L2GameClientPacket
+public final class RequestGetOffVehicle implements IGameClientPacket
 {
-	private static final String _C__54_GETOFFVEHICLE = "[S] 54 GetOffVehicle";
-	
 	private int _boatId, _x, _y, _z;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_boatId = readD();
-		_x = readD();
-		_y = readD();
-		_z = readD();
+		_boatId = packet.readD();
+		_x = packet.readD();
+		_y = packet.readD();
+		_z = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		if (!activeChar.isInBoat() || (activeChar.getBoat().getObjectId() != _boatId) || activeChar.getBoat().isMoving() || !activeChar.isInsideRadius(_x, _y, _z, 1000, true, false))
 		{
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
 		activeChar.broadcastPacket(new StopMoveInVehicle(activeChar, _boatId));
 		activeChar.setVehicle(null);
 		activeChar.setInVehiclePosition(null);
-		sendPacket(ActionFailed.STATIC_PACKET);
+		client.sendPacket(ActionFailed.STATIC_PACKET);
 		activeChar.broadcastPacket(new GetOffVehicle(activeChar.getObjectId(), _boatId, _x, _y, _z));
 		activeChar.setXYZ(_x, _y, _z);
 		activeChar.setInsideZone(ZoneId.PEACE, false);
 		activeChar.revalidateZone(true);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__54_GETOFFVEHICLE;
 	}
 }

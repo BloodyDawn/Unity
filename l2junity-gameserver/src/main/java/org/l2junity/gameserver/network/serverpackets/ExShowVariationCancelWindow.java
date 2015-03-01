@@ -18,22 +18,25 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author KenM
  */
-public class ExShowVariationCancelWindow extends L2GameServerPacket
+public class ExShowVariationCancelWindow implements IGameServerPacket
 {
 	public static final ExShowVariationCancelWindow STATIC_PACKET = new ExShowVariationCancelWindow();
 	
 	private ExShowVariationCancelWindow()
 	{
-		
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x53);
+		OutgoingPackets.EX_SHOW_VARIATION_CANCEL_WINDOW.writeId(packet);
+		
+		return true;
 	}
 }

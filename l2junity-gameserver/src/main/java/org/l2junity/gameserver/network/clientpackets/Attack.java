@@ -26,16 +26,16 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
+import org.l2junity.network.PacketReader;
 
 /**
  * TODO: This class is a copy of AttackRequest, we should get proper structure for both.
  */
-public final class Attack extends L2GameClientPacket
+public final class Attack implements IGameClientPacket
 {
-	private static final String _C__01_ATTACK = "[C] 01 Attack";
-	
 	// cddddc
 	private int _objectId;
 	@SuppressWarnings("unused")
@@ -48,19 +48,20 @@ public final class Attack extends L2GameClientPacket
 	private int _attackId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_objectId = readD();
-		_originX = readD();
-		_originY = readD();
-		_originZ = readD();
-		_attackId = readC(); // 0 for simple click 1 for shift-click
+		_objectId = packet.readD();
+		_originX = packet.readD();
+		_originY = packet.readD();
+		_originZ = packet.readD();
+		_attackId = packet.readC(); // 0 for simple click 1 for shift-click
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -140,11 +141,5 @@ public final class Attack extends L2GameClientPacket
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			}
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__01_ATTACK;
 	}
 }

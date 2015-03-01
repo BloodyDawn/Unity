@@ -20,12 +20,14 @@ package org.l2junity.gameserver.network.serverpackets.primeshop;
 
 import org.l2junity.gameserver.model.primeshop.PrimeShopGroup;
 import org.l2junity.gameserver.model.primeshop.PrimeShopItem;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Gnacik
  */
-public class ExBRProductInfo extends L2GameServerPacket
+public class ExBRProductInfo implements IGameServerPacket
 {
 	private final PrimeShopGroup _item;
 	
@@ -35,19 +37,20 @@ public class ExBRProductInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xD8);
-		writeD(_item.getBrId());
-		writeD(_item.getPrice());
-		writeD(_item.getItems().size());
+		OutgoingPackets.EX_BR_PRODUCT_INFO.writeId(packet);
+		
+		packet.writeD(_item.getBrId());
+		packet.writeD(_item.getPrice());
+		packet.writeD(_item.getItems().size());
 		for (PrimeShopItem item : _item.getItems())
 		{
-			writeD(item.getId());
-			writeD((int) item.getCount());
-			writeD(item.getWeight());
-			writeD(item.isTradable());
+			packet.writeD(item.getId());
+			packet.writeD((int) item.getCount());
+			packet.writeD(item.getWeight());
+			packet.writeD(item.isTradable());
 		}
+		return true;
 	}
 }

@@ -19,6 +19,8 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author KenM
@@ -33,10 +35,11 @@ public final class ExRpItemLink extends AbstractItemPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x6D);
-		writeItem(_item);
+		OutgoingPackets.EX_RP_ITEM_LINK.writeId(packet);
+		
+		writeItem(packet, _item);
+		return true;
 	}
 }

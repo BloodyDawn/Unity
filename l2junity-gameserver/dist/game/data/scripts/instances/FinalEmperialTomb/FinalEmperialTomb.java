@@ -61,7 +61,7 @@ import org.l2junity.gameserver.network.NpcStringId;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.Earthquake;
 import org.l2junity.gameserver.network.serverpackets.ExShowScreenMessage;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
 import org.l2junity.gameserver.network.serverpackets.MagicSkillCanceld;
 import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
 import org.l2junity.gameserver.network.serverpackets.NpcInfo;
@@ -1236,7 +1236,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 			}
 		}
 		
-		private void sendPacketX(L2GameServerPacket packet1, L2GameServerPacket packet2, int x)
+		private void sendPacketX(IGameServerPacket packet1, IGameServerPacket packet2, int x)
 		{
 			for (int objId : _world.getAllowed())
 			{
@@ -1333,7 +1333,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 		}
 	}
 	
-	protected void broadCastPacket(FETWorld world, L2GameServerPacket packet)
+	protected void broadCastPacket(FETWorld world, IGameServerPacket packet)
 	{
 		for (int objId : world.getAllowed())
 		{

@@ -20,37 +20,31 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.EnchantItemRequest;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.EnchantResult;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author KenM
  */
-public class RequestExCancelEnchantItem extends L2GameClientPacket
+public class RequestExCancelEnchantItem implements IGameClientPacket
 {
-	private static final String _C__D0_4E_REQUESTEXCANCELENCHANTITEM = "[C] D0:4E RequestExCancelEnchantItem";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// nothing (trigger)
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
-		activeChar.sendPacket(new EnchantResult(2, 0, 0));
+		client.sendPacket(new EnchantResult(2, 0, 0));
 		activeChar.removeRequest(EnchantItemRequest.class);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_4E_REQUESTEXCANCELENCHANTITEM;
 	}
 }

@@ -33,8 +33,8 @@ import org.l2junity.gameserver.model.SkillLearn;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2FishermanInstance;
 import org.l2junity.gameserver.model.actor.instance.L2NpcInstance;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2VillageMasterInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.AcquireSkillType;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSkillLearn;
@@ -44,6 +44,7 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.variables.PlayerVariables;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.AcquireSkillDone;
 import org.l2junity.gameserver.network.serverpackets.AcquireSkillList;
@@ -57,14 +58,14 @@ import org.l2junity.gameserver.network.serverpackets.ShortCutInit;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.network.serverpackets.UserInfo;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * Request Acquire Skill client packet implementation.
  * @author Zoey76
  */
-public final class RequestAcquireSkill extends L2GameClientPacket
+public final class RequestAcquireSkill implements IGameClientPacket
 {
-	private static final String _C__7C_REQUESTACQUIRESKILL = "[C] 7C RequestAcquireSkill";
 	private static final String[] REVELATION_VAR_NAMES =
 	{
 		"RevelationSkill1",
@@ -83,21 +84,22 @@ public final class RequestAcquireSkill extends L2GameClientPacket
 	private int _subType;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_id = readD();
-		_level = readD();
-		_skillType = AcquireSkillType.getAcquireSkillType(readD());
+		_id = packet.readD();
+		_level = packet.readD();
+		_skillType = AcquireSkillType.getAcquireSkillType(packet.readD());
 		if (_skillType == AcquireSkillType.SUBPLEDGE)
 		{
-			_subType = readD();
+			_subType = packet.readD();
 		}
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -739,6 +741,7 @@ public final class RequestAcquireSkill extends L2GameClientPacket
 	}
 	
 	/**
+	 * TODO: CHECK & REMOVE THIS SHIT!!!!!!!!!!!!!!<br>
 	 * Verify if the player can transform.
 	 * @param player the player to verify
 	 * @return {@code true} if the player meets the required conditions to learn a transformation, {@code false} otherwise
@@ -751,11 +754,5 @@ public final class RequestAcquireSkill extends L2GameClientPacket
 		}
 		final QuestState st = player.getQuestState("Q00136_MoreThanMeetsTheEye");
 		return (st != null) && st.isCompleted();
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__7C_REQUESTACQUIRESKILL;
 	}
 }

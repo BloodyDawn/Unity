@@ -18,40 +18,29 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.PledgeCrest;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.4.4.4 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestPledgeCrest extends L2GameClientPacket
+public final class RequestPledgeCrest implements IGameClientPacket
 {
-	private static final String _C__68_REQUESTPLEDGECREST = "[C] 68 RequestPledgeCrest";
-	
 	private int _crestId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_crestId = readD();
-		readD(); // clanId
+		_crestId = packet.readD();
+		packet.readD(); // clanId
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		sendPacket(new PledgeCrest(_crestId));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__68_REQUESTPLEDGECREST;
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
+		client.sendPacket(new PledgeCrest(_crestId));
 	}
 }

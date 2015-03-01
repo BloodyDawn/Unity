@@ -19,11 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author KenM
  */
-public class ExAskJoinPartyRoom extends L2GameServerPacket
+public class ExAskJoinPartyRoom implements IGameServerPacket
 {
 	private final String _charName;
 	private final String _roomName;
@@ -35,11 +37,12 @@ public class ExAskJoinPartyRoom extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x35);
-		writeS(_charName);
-		writeS(_roomName);
+		OutgoingPackets.EX_ASK_JOIN_PARTY_ROOM.writeId(packet);
+		
+		packet.writeS(_charName);
+		packet.writeS(_roomName);
+		return true;
 	}
 }

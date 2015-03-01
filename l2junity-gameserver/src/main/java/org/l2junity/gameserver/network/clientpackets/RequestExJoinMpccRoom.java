@@ -21,47 +21,36 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.gameserver.instancemanager.MatchingRoomManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.matching.MatchingRoom;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Sdw
  */
-public class RequestExJoinMpccRoom extends L2GameClientPacket
+public class RequestExJoinMpccRoom implements IGameClientPacket
 {
 	private int _roomId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_roomId = readD();
+		_roomId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getActiveChar();
-		
-		if (activeChar == null)
-		{
-			return;
-		}
-		
-		if (activeChar.getMatchingRoom() != null)
+		final PlayerInstance activeChar = client.getActiveChar();
+		if ((activeChar == null) || (activeChar.getMatchingRoom() != null))
 		{
 			return;
 		}
 		
 		final MatchingRoom room = MatchingRoomManager.getInstance().getCCMatchingRoom(_roomId);
-		
 		if (room != null)
 		{
 			room.addMember(activeChar);
 		}
-		
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
 	}
 }

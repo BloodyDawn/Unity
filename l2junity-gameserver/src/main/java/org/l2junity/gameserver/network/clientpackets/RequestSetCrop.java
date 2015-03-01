@@ -27,11 +27,14 @@ import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.CropProcure;
 import org.l2junity.gameserver.model.L2Seed;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.gameserver.network.serverpackets.ActionFailed;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author l3x
  */
-public final class RequestSetCrop extends L2GameClientPacket
+public final class RequestSetCrop implements IGameClientPacket
 {
 	private static final int BATCH_LENGTH = 21; // length of the one item
 	
@@ -39,26 +42,26 @@ public final class RequestSetCrop extends L2GameClientPacket
 	private List<CropProcure> _items;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_manorId = readD();
-		final int count = readD();
-		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
+		_manorId = packet.readD();
+		final int count = packet.readD();
+		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != packet.getReadableBytes()))
 		{
-			return;
+			return false;
 		}
 		
 		_items = new ArrayList<>(count);
 		for (int i = 0; i < count; i++)
 		{
-			final int itemId = readD();
-			final long sales = readQ();
-			final long price = readQ();
-			final int type = readC();
+			final int itemId = packet.readD();
+			final long sales = packet.readQ();
+			final long price = packet.readQ();
+			final int type = packet.readC();
 			if ((itemId < 1) || (sales < 0) || (price < 0))
 			{
 				_items.clear();
-				return;
+				return false;
 			}
 			
 			if (sales > 0)
@@ -66,10 +69,11 @@ public final class RequestSetCrop extends L2GameClientPacket
 				_items.add(new CropProcure(itemId, sales, type, sales, price));
 			}
 		}
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		if (_items.isEmpty())
 		{
@@ -79,15 +83,15 @@ public final class RequestSetCrop extends L2GameClientPacket
 		final CastleManorManager manor = CastleManorManager.getInstance();
 		if (!manor.isModifiablePeriod())
 		{
-			sendActionFailed();
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
 		// Check player privileges
-		final PlayerInstance player = getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if ((player == null) || (player.getClan() == null) || (player.getClan().getCastleId() != _manorId) || !player.hasClanPrivilege(ClanPrivilege.CS_MANOR_ADMIN) || !player.getLastFolkNPC().canInteract(player))
 		{
-			sendActionFailed();
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
@@ -104,11 +108,5 @@ public final class RequestSetCrop extends L2GameClientPacket
 		
 		// Save crop list
 		manor.setNextCropProcure(list, _manorId);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return "[C] D0:04 RequestSetCrop";
 	}
 }

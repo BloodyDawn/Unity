@@ -23,8 +23,10 @@ import java.util.List;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.NpcStringId;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class ExSendUIEvent extends L2GameServerPacket
+public class ExSendUIEvent implements IGameServerPacket
 {
 	private final int _objectId;
 	private final boolean _type;
@@ -82,27 +84,28 @@ public class ExSendUIEvent extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x8F);
-		writeD(_objectId);
-		writeD(_type ? 1 : 0); // 0 = show, 1 = hide (there is 2 = pause and 3 = resume also but they don't work well you can only pause count down and you cannot resume it because resume hides the counter).
-		writeD(0);// unknown
-		writeD(0);// unknown
-		writeS(_countUp ? "1" : "0"); // 0 = count down, 1 = count up
+		OutgoingPackets.EX_SEND_UIEVENT.writeId(packet);
+		
+		packet.writeD(_objectId);
+		packet.writeD(_type ? 1 : 0); // 0 = show, 1 = hide (there is 2 = pause and 3 = resume also but they don't work well you can only pause count down and you cannot resume it because resume hides the counter).
+		packet.writeD(0);// unknown
+		packet.writeD(0);// unknown
+		packet.writeS(_countUp ? "1" : "0"); // 0 = count down, 1 = count up
 		// timer always disappears 10 seconds before end
-		writeS(String.valueOf(_startTime / 60));
-		writeS(String.valueOf(_startTime % 60));
-		writeS(String.valueOf(_endTime / 60));
-		writeS(String.valueOf(_endTime % 60));
-		writeD(_npcstringId);
+		packet.writeS(String.valueOf(_startTime / 60));
+		packet.writeS(String.valueOf(_startTime % 60));
+		packet.writeS(String.valueOf(_endTime / 60));
+		packet.writeS(String.valueOf(_endTime % 60));
+		packet.writeD(_npcstringId);
 		if (_params != null)
 		{
 			for (String param : _params)
 			{
-				writeS(param);
+				packet.writeS(param);
 			}
 		}
+		return true;
 	}
 }

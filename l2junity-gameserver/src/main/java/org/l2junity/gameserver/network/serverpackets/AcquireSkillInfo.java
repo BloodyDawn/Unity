@@ -26,12 +26,14 @@ import org.l2junity.gameserver.model.SkillLearn;
 import org.l2junity.gameserver.model.base.AcquireSkillType;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.skills.CommonSkill;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * Acquire Skill Info server packet implementation.
  * @author Zoey76
  */
-public class AcquireSkillInfo extends L2GameServerPacket
+public class AcquireSkillInfo implements IGameServerPacket
 {
 	private final AcquireSkillType _type;
 	private final int _id;
@@ -110,20 +112,22 @@ public class AcquireSkillInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x91);
-		writeD(_id);
-		writeD(_level);
-		writeQ(_spCost);
-		writeD(_type.getId());
-		writeD(_reqs.size());
+		OutgoingPackets.ACQUIRE_SKILL_INFO.writeId(packet);
+		
+		packet.writeD(_id);
+		packet.writeD(_level);
+		packet.writeQ(_spCost);
+		packet.writeD(_type.getId());
+		packet.writeD(_reqs.size());
 		for (Req temp : _reqs)
 		{
-			writeD(temp.type);
-			writeD(temp.itemId);
-			writeQ(temp.count);
-			writeD(temp.unk);
+			packet.writeD(temp.type);
+			packet.writeD(temp.itemId);
+			packet.writeQ(temp.count);
+			packet.writeD(temp.unk);
 		}
+		return true;
 	}
 }

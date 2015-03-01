@@ -23,12 +23,14 @@ import java.util.List;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassId;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExListPartyMatchingWaitingRoom;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Gnacik
  */
-public class RequestListPartyMatchingWaitingRoom extends L2GameClientPacket
+public class RequestListPartyMatchingWaitingRoom implements IGameClientPacket
 {
 	private int _page;
 	private int _minLevel;
@@ -37,43 +39,37 @@ public class RequestListPartyMatchingWaitingRoom extends L2GameClientPacket
 	private String _query;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_page = readD();
-		_minLevel = readD();
-		_maxLevel = readD();
-		final int size = readD();
+		_page = packet.readD();
+		_minLevel = packet.readD();
+		_maxLevel = packet.readD();
+		final int size = packet.readD();
 		
 		if ((size > 0) && (size < 128))
 		{
 			_classId = new LinkedList<>();
 			for (int i = 0; i < size; i++)
 			{
-				_classId.add(ClassId.getClassId(readD()));
+				_classId.add(ClassId.getClassId(packet.readD()));
 			}
 		}
-		if (_buf.hasRemaining())
+		if (packet.getReadableBytes() > 0)
 		{
-			_query = readS();
+			_query = packet.readS();
 		}
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getActiveChar();
-		
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
-		activeChar.sendPacket(new ExListPartyMatchingWaitingRoom(activeChar, _page, _minLevel, _maxLevel, _classId, _query));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
+		client.sendPacket(new ExListPartyMatchingWaitingRoom(activeChar, _page, _minLevel, _maxLevel, _classId, _query));
 	}
 }

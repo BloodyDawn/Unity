@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author Plim
  */
-public class PetitionVotePacket extends L2GameServerPacket
+public class PetitionVotePacket implements IGameServerPacket
 {
 	public static final PetitionVotePacket STATIC_PACKET = new PetitionVotePacket();
 	
@@ -30,8 +33,9 @@ public class PetitionVotePacket extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFC);
+		OutgoingPackets.PETITION_VOTE.writeId(packet);
+		return true;
 	}
 }

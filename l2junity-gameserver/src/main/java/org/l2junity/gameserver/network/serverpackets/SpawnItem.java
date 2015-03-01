@@ -20,8 +20,10 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public final class SpawnItem extends L2GameServerPacket
+public final class SpawnItem implements IGameServerPacket
 {
 	private final int _objectId;
 	private int _itemId;
@@ -52,18 +54,20 @@ public final class SpawnItem extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x05);
-		writeD(_objectId);
-		writeD(_itemId);
+		OutgoingPackets.SPAWN_ITEM.writeId(packet);
 		
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
+		packet.writeD(_objectId);
+		packet.writeD(_itemId);
+		
+		packet.writeD(_x);
+		packet.writeD(_y);
+		packet.writeD(_z);
 		// only show item count if it is a stackable item
-		writeD(_stackable);
-		writeQ(_count);
-		writeD(0x00); // c2
+		packet.writeD(_stackable);
+		packet.writeQ(_count);
+		packet.writeD(0x00); // c2
+		return true;
 	}
 }

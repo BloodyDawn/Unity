@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class Earthquake extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class Earthquake implements IGameServerPacket
 {
 	private final int _x;
 	private final int _y;
@@ -43,14 +46,16 @@ public class Earthquake extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xD3);
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
-		writeD(_intensity);
-		writeD(_duration);
-		writeD(0x00); // Unknown
+		OutgoingPackets.EARTHQUAKE.writeId(packet);
+		
+		packet.writeD(_x);
+		packet.writeD(_y);
+		packet.writeD(_z);
+		packet.writeD(_intensity);
+		packet.writeD(_duration);
+		packet.writeD(0x00); // Unknown
+		return true;
 	}
 }

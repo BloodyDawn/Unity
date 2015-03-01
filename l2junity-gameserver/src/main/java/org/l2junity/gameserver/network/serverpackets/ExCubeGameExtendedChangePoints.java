@@ -19,11 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author mrTJO
  */
-public class ExCubeGameExtendedChangePoints extends L2GameServerPacket
+public class ExCubeGameExtendedChangePoints implements IGameServerPacket
 {
 	int _timeLeft;
 	int _bluePoints;
@@ -52,18 +54,19 @@ public class ExCubeGameExtendedChangePoints extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x99);
-		writeD(0x00);
+		OutgoingPackets.EX_BLOCK_UP_SET_STATE.writeId(packet);
 		
-		writeD(_timeLeft);
-		writeD(_bluePoints);
-		writeD(_redPoints);
+		packet.writeD(0x00);
 		
-		writeD(_isRedTeam ? 0x01 : 0x00);
-		writeD(_player.getObjectId());
-		writeD(_playerPoints);
+		packet.writeD(_timeLeft);
+		packet.writeD(_bluePoints);
+		packet.writeD(_redPoints);
+		
+		packet.writeD(_isRedTeam ? 0x01 : 0x00);
+		packet.writeD(_player.getObjectId());
+		packet.writeD(_playerPoints);
+		return true;
 	}
 }

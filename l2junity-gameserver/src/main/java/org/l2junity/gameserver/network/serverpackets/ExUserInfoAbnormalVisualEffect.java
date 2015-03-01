@@ -22,11 +22,13 @@ import java.util.Set;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.AbnormalVisualEffect;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class ExUserInfoAbnormalVisualEffect extends L2GameServerPacket
+public class ExUserInfoAbnormalVisualEffect implements IGameServerPacket
 {
 	private final PlayerInstance _activeChar;
 	
@@ -36,19 +38,19 @@ public class ExUserInfoAbnormalVisualEffect extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x158);
+		OutgoingPackets.EX_USER_INFO_ABNORMAL_VISUAL_EFFECT.writeId(packet);
 		
-		writeD(_activeChar.getObjectId());
-		writeD(_activeChar.getTransformationId());
+		packet.writeD(_activeChar.getObjectId());
+		packet.writeD(_activeChar.getTransformationId());
 		
 		final Set<AbnormalVisualEffect> abnormalVisualEffects = _activeChar.getCurrentAbnormalVisualEffects();
-		writeD(abnormalVisualEffects.size());
+		packet.writeD(abnormalVisualEffects.size());
 		for (AbnormalVisualEffect abnormalVisualEffect : abnormalVisualEffects)
 		{
-			writeH(abnormalVisualEffect.getClientId());
+			packet.writeH(abnormalVisualEffect.getClientId());
 		}
+		return true;
 	}
 }

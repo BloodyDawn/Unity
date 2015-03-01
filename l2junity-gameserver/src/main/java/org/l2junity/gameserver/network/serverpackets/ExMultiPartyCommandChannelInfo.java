@@ -18,42 +18,42 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import java.util.Objects;
+
 import org.l2junity.gameserver.model.CommandChannel;
 import org.l2junity.gameserver.model.Party;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author chris_00
  */
-public class ExMultiPartyCommandChannelInfo extends L2GameServerPacket
+public class ExMultiPartyCommandChannelInfo implements IGameServerPacket
 {
 	private final CommandChannel _channel;
 	
 	public ExMultiPartyCommandChannelInfo(CommandChannel channel)
 	{
+		Objects.requireNonNull(channel);
 		_channel = channel;
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		if (_channel == null)
-		{
-			return;
-		}
+		OutgoingPackets.EX_MULTI_PARTY_COMMAND_CHANNEL_INFO.writeId(packet);
 		
-		writeC(0xFE);
-		writeH(0x31);
+		packet.writeS(_channel.getLeader().getName());
+		packet.writeD(0x00); // Channel loot 0 or 1
+		packet.writeD(_channel.getMemberCount());
 		
-		writeS(_channel.getLeader().getName());
-		writeD(0x00); // Channel loot 0 or 1
-		writeD(_channel.getMemberCount());
-		
-		writeD(_channel.getPartys().size());
+		packet.writeD(_channel.getPartys().size());
 		for (Party p : _channel.getPartys())
 		{
-			writeS(p.getLeader().getName());
-			writeD(p.getLeaderObjectId());
-			writeD(p.getMemberCount());
+			packet.writeS(p.getLeader().getName());
+			packet.writeD(p.getLeaderObjectId());
+			packet.writeD(p.getMemberCount());
 		}
+		return true;
 	}
 }

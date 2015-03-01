@@ -20,6 +20,8 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.TradeItem;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * This class ...
@@ -40,22 +42,24 @@ public class PrivateStoreListBuy extends AbstractItemPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xbe);
-		writeD(_objId);
-		writeQ(_playerAdena);
-		writeD(0x00); // unk
-		writeD(_items.length);
+		OutgoingPackets.PRIVATE_STORE_BUY_LIST.writeId(packet);
+		
+		packet.writeD(_objId);
+		packet.writeQ(_playerAdena);
+		packet.writeD(0x00); // unk
+		packet.writeD(_items.length);
 		
 		for (TradeItem item : _items)
 		{
-			writeItem(item);
-			// writeD(item.getObjectId());
-			writeD(0x00); // unk
-			writeQ(item.getPrice());
-			writeQ(item.getItem().getReferencePrice() * 2);
-			writeQ(item.getStoreCount());
+			writeItem(packet, item);
+			// packet.writeD(item.getObjectId());
+			packet.writeD(0x00); // unk
+			packet.writeQ(item.getPrice());
+			packet.writeQ(item.getItem().getReferencePrice() * 2);
+			packet.writeQ(item.getStoreCount());
 		}
+		return true;
 	}
 }

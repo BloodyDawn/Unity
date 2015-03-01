@@ -19,8 +19,10 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class EnchantResult extends L2GameServerPacket
+public class EnchantResult implements IGameServerPacket
 {
 	public static int SUCCESS = 0;
 	public static int FAIL = 1;
@@ -54,16 +56,18 @@ public class EnchantResult extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x87);
-		writeD(_result);
-		writeD(_crystal);
-		writeQ(_count);
-		writeD(_enchantLevel);
+		OutgoingPackets.ENCHANT_RESULT.writeId(packet);
+		
+		packet.writeD(_result);
+		packet.writeD(_crystal);
+		packet.writeQ(_count);
+		packet.writeD(_enchantLevel);
 		for (int option : _enchantOptions)
 		{
-			writeH(option);
+			packet.writeH(option);
 		}
+		return true;
 	}
 }

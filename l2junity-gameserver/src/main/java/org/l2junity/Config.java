@@ -473,15 +473,6 @@ public final class Config
 	public static int GENERAL_THREAD_CORE_SIZE;
 	public static int AI_MAX_THREAD;
 	public static int EVENT_MAX_THREAD;
-	public static int CLIENT_PACKET_QUEUE_SIZE;
-	public static int CLIENT_PACKET_QUEUE_MAX_BURST_SIZE;
-	public static int CLIENT_PACKET_QUEUE_MAX_PACKETS_PER_SECOND;
-	public static int CLIENT_PACKET_QUEUE_MEASURE_INTERVAL;
-	public static int CLIENT_PACKET_QUEUE_MAX_AVERAGE_PACKETS_PER_SECOND;
-	public static int CLIENT_PACKET_QUEUE_MAX_FLOODS_PER_MIN;
-	public static int CLIENT_PACKET_QUEUE_MAX_OVERFLOWS_PER_MIN;
-	public static int CLIENT_PACKET_QUEUE_MAX_UNDERFLOWS_PER_MIN;
-	public static int CLIENT_PACKET_QUEUE_MAX_UNKNOWN_PER_MIN;
 	public static boolean DEADLOCK_DETECTOR;
 	public static int DEADLOCK_CHECK_INTERVAL;
 	public static boolean RESTART_ON_DEADLOCK;
@@ -1735,23 +1726,6 @@ public final class Config
 			GENERAL_THREAD_CORE_SIZE = General.getInt("GeneralThreadCoreSize", 4);
 			AI_MAX_THREAD = General.getInt("AiMaxThread", 6);
 			EVENT_MAX_THREAD = General.getInt("EventsMaxThread", 5);
-			CLIENT_PACKET_QUEUE_SIZE = General.getInt("ClientPacketQueueSize", 0);
-			if (CLIENT_PACKET_QUEUE_SIZE == 0)
-			{
-				CLIENT_PACKET_QUEUE_SIZE = MMO_MAX_READ_PER_PASS + 2;
-			}
-			CLIENT_PACKET_QUEUE_MAX_BURST_SIZE = General.getInt("ClientPacketQueueMaxBurstSize", 0);
-			if (CLIENT_PACKET_QUEUE_MAX_BURST_SIZE == 0)
-			{
-				CLIENT_PACKET_QUEUE_MAX_BURST_SIZE = MMO_MAX_READ_PER_PASS + 1;
-			}
-			CLIENT_PACKET_QUEUE_MAX_PACKETS_PER_SECOND = General.getInt("ClientPacketQueueMaxPacketsPerSecond", 80);
-			CLIENT_PACKET_QUEUE_MEASURE_INTERVAL = General.getInt("ClientPacketQueueMeasureInterval", 5);
-			CLIENT_PACKET_QUEUE_MAX_AVERAGE_PACKETS_PER_SECOND = General.getInt("ClientPacketQueueMaxAveragePacketsPerSecond", 40);
-			CLIENT_PACKET_QUEUE_MAX_FLOODS_PER_MIN = General.getInt("ClientPacketQueueMaxFloodsPerMin", 2);
-			CLIENT_PACKET_QUEUE_MAX_OVERFLOWS_PER_MIN = General.getInt("ClientPacketQueueMaxOverflowsPerMin", 1);
-			CLIENT_PACKET_QUEUE_MAX_UNDERFLOWS_PER_MIN = General.getInt("ClientPacketQueueMaxUnderflowsPerMin", 1);
-			CLIENT_PACKET_QUEUE_MAX_UNKNOWN_PER_MIN = General.getInt("ClientPacketQueueMaxUnknownPerMin", 5);
 			DEADLOCK_DETECTOR = General.getBoolean("DeadLockDetector", true);
 			DEADLOCK_CHECK_INTERVAL = General.getInt("DeadLockCheckInterval", 20);
 			RESTART_ON_DEADLOCK = General.getBoolean("RestartOnDeadlock", false);
@@ -2935,41 +2909,6 @@ public final class Config
 				break;
 			case "deletecharafterdays":
 				DELETE_DAYS = Integer.parseInt(pValue);
-				break;
-			case "clientpacketqueuesize":
-				CLIENT_PACKET_QUEUE_SIZE = Integer.parseInt(pValue);
-				if (CLIENT_PACKET_QUEUE_SIZE == 0)
-				{
-					CLIENT_PACKET_QUEUE_SIZE = MMO_MAX_READ_PER_PASS + 1;
-				}
-				break;
-			case "clientpacketqueuemaxburstsize":
-				CLIENT_PACKET_QUEUE_MAX_BURST_SIZE = Integer.parseInt(pValue);
-				if (CLIENT_PACKET_QUEUE_MAX_BURST_SIZE == 0)
-				{
-					CLIENT_PACKET_QUEUE_MAX_BURST_SIZE = MMO_MAX_READ_PER_PASS;
-				}
-				break;
-			case "clientpacketqueuemaxpacketspersecond":
-				CLIENT_PACKET_QUEUE_MAX_PACKETS_PER_SECOND = Integer.parseInt(pValue);
-				break;
-			case "clientpacketqueuemeasureinterval":
-				CLIENT_PACKET_QUEUE_MEASURE_INTERVAL = Integer.parseInt(pValue);
-				break;
-			case "clientpacketqueuemaxaveragepacketspersecond":
-				CLIENT_PACKET_QUEUE_MAX_AVERAGE_PACKETS_PER_SECOND = Integer.parseInt(pValue);
-				break;
-			case "clientpacketqueuemaxfloodspermin":
-				CLIENT_PACKET_QUEUE_MAX_FLOODS_PER_MIN = Integer.parseInt(pValue);
-				break;
-			case "clientpacketqueuemaxoverflowspermin":
-				CLIENT_PACKET_QUEUE_MAX_OVERFLOWS_PER_MIN = Integer.parseInt(pValue);
-				break;
-			case "clientpacketqueuemaxunderflowspermin":
-				CLIENT_PACKET_QUEUE_MAX_UNDERFLOWS_PER_MIN = Integer.parseInt(pValue);
-				break;
-			case "clientpacketqueuemaxunknownpermin":
-				CLIENT_PACKET_QUEUE_MAX_UNKNOWN_PER_MIN = Integer.parseInt(pValue);
 				break;
 			case "allowdiscarditem":
 				ALLOW_DISCARDITEM = Boolean.parseBoolean(pValue);

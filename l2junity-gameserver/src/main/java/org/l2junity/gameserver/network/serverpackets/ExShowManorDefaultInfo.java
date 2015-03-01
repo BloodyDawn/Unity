@@ -22,11 +22,13 @@ import java.util.List;
 
 import org.l2junity.gameserver.instancemanager.CastleManorManager;
 import org.l2junity.gameserver.model.L2Seed;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author l3x
  */
-public final class ExShowManorDefaultInfo extends L2GameServerPacket
+public final class ExShowManorDefaultInfo implements IGameServerPacket
 {
 	private final List<L2Seed> _crops;
 	private final boolean _hideButtons;
@@ -38,22 +40,23 @@ public final class ExShowManorDefaultInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x25);
-		writeC(_hideButtons ? 0x01 : 0x00); // Hide "Seed Purchase" and "Crop Sales" buttons
-		writeD(_crops.size());
+		OutgoingPackets.EX_SHOW_MANOR_DEFAULT_INFO.writeId(packet);
+		
+		packet.writeC(_hideButtons ? 0x01 : 0x00); // Hide "Seed Purchase" and "Crop Sales" buttons
+		packet.writeD(_crops.size());
 		for (L2Seed crop : _crops)
 		{
-			writeD(crop.getCropId()); // crop Id
-			writeD(crop.getLevel()); // level
-			writeD(crop.getSeedReferencePrice()); // seed price
-			writeD(crop.getCropReferencePrice()); // crop price
-			writeC(1); // Reward 1 type
-			writeD(crop.getReward(1)); // Reward 1 itemId
-			writeC(1); // Reward 2 type
-			writeD(crop.getReward(2)); // Reward 2 itemId
+			packet.writeD(crop.getCropId()); // crop Id
+			packet.writeD(crop.getLevel()); // level
+			packet.writeD(crop.getSeedReferencePrice()); // seed price
+			packet.writeD(crop.getCropReferencePrice()); // crop price
+			packet.writeC(1); // Reward 1 type
+			packet.writeD(crop.getReward(1)); // Reward 1 itemId
+			packet.writeC(1); // Reward 2 type
+			packet.writeD(crop.getReward(2)); // Reward 2 itemId
 		}
+		return true;
 	}
 }

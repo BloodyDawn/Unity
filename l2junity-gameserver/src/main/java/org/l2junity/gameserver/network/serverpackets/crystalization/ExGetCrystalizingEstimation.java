@@ -21,12 +21,14 @@ package org.l2junity.gameserver.network.serverpackets.crystalization;
 import java.util.List;
 
 import org.l2junity.gameserver.model.holders.ItemChanceHolder;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class ExGetCrystalizingEstimation extends L2GameServerPacket
+public class ExGetCrystalizingEstimation implements IGameServerPacket
 {
 	private final List<ItemChanceHolder> _items;
 	
@@ -36,16 +38,17 @@ public class ExGetCrystalizingEstimation extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xE1);
-		writeD(_items.size());
+		OutgoingPackets.EX_GET_CRYSTALIZING_ESTIMATION.writeId(packet);
+		
+		packet.writeD(_items.size());
 		for (ItemChanceHolder holder : _items)
 		{
-			writeD(holder.getId());
-			writeQ(holder.getCount());
-			writeF(holder.getChance());
+			packet.writeD(holder.getId());
+			packet.writeQ(holder.getCount());
+			packet.writeF(holder.getChance());
 		}
+		return true;
 	}
 }

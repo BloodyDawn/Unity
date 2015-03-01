@@ -19,25 +19,27 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExAcquireAPSkillList;
 import org.l2junity.gameserver.network.serverpackets.ExCloseAPListWnd;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author UnAfraid
  */
-public class RequestAbilityWndClose extends L2GameClientPacket
+public class RequestAbilityWndClose implements IGameClientPacket
 {
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// Nothing to read
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -51,11 +53,5 @@ public class RequestAbilityWndClose extends L2GameClientPacket
 		
 		activeChar.sendPacket(ExCloseAPListWnd.STATIC_PACKET);
 		activeChar.sendPacket(new ExAcquireAPSkillList(activeChar));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
 	}
 }

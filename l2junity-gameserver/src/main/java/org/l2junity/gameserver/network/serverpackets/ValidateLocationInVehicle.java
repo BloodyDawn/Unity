@@ -20,17 +20,16 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class ValidateLocationInVehicle extends L2GameServerPacket
+public class ValidateLocationInVehicle implements IGameServerPacket
 {
 	private final int _charObjId;
 	private final int _boatObjId;
 	private final int _heading;
 	private final Location _pos;
 	
-	/**
-	 * @param player
-	 */
 	public ValidateLocationInVehicle(PlayerInstance player)
 	{
 		_charObjId = player.getObjectId();
@@ -40,14 +39,16 @@ public class ValidateLocationInVehicle extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x80);
-		writeD(_charObjId);
-		writeD(_boatObjId);
-		writeD(_pos.getX());
-		writeD(_pos.getY());
-		writeD(_pos.getZ());
-		writeD(_heading);
+		OutgoingPackets.VALIDATE_LOCATION_IN_VEHICLE.writeId(packet);
+		
+		packet.writeD(_charObjId);
+		packet.writeD(_boatObjId);
+		packet.writeD(_pos.getX());
+		packet.writeD(_pos.getY());
+		packet.writeD(_pos.getZ());
+		packet.writeD(_heading);
+		return true;
 	}
 }

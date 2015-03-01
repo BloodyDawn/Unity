@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class StartPledgeWar extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class StartPledgeWar implements IGameServerPacket
 {
 	private final String _pledgeName;
 	private final String _playerName;
@@ -30,10 +33,12 @@ public class StartPledgeWar extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x63);
-		writeS(_playerName);
-		writeS(_pledgeName);
+		OutgoingPackets.START_PLEDGE_WAR.writeId(packet);
+		
+		packet.writeS(_playerName);
+		packet.writeS(_pledgeName);
+		return true;
 	}
 }

@@ -24,33 +24,34 @@ import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.PartyRequest;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.AskJoinParty;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.network.PacketReader;
 
 /**
  * sample 29 42 00 00 10 01 00 00 00 format cdd
  * @version $Revision: 1.7.4.4 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestJoinParty extends L2GameClientPacket
+public final class RequestJoinParty implements IGameClientPacket
 {
-	private static final String _C__42_REQUESTJOINPARTY = "[C] 42 RequestJoinParty";
-	
 	private String _name;
 	private int _partyDistributionTypeId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_name = readS();
-		_partyDistributionTypeId = readD();
+		_name = packet.readS();
+		_partyDistributionTypeId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance requestor = getClient().getActiveChar();
+		PlayerInstance requestor = client.getActiveChar();
 		PlayerInstance target = World.getInstance().getPlayer(_name);
 		
 		if (requestor == null)
@@ -213,11 +214,5 @@ public final class RequestJoinParty extends L2GameClientPacket
 		{
 			requestor.sendPacket(SystemMessageId.WAITING_FOR_ANOTHER_REPLY);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__42_REQUESTJOINPARTY;
 	}
 }

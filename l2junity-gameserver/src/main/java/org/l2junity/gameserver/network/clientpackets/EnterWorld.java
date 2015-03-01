@@ -57,6 +57,7 @@ import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.AcquireSkillList;
 import org.l2junity.gameserver.network.serverpackets.Die;
@@ -94,6 +95,7 @@ import org.l2junity.gameserver.network.serverpackets.SkillCoolTime;
 import org.l2junity.gameserver.network.serverpackets.SkillList;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.network.serverpackets.friend.L2FriendList;
+import org.l2junity.network.PacketReader;
 
 /**
  * Enter World Packet Handler
@@ -104,39 +106,38 @@ import org.l2junity.gameserver.network.serverpackets.friend.L2FriendList;
  * packet format rev87 bddddbdcccccccccccccccccccc
  * <p>
  */
-public class EnterWorld extends L2GameClientPacket
+public class EnterWorld implements IGameClientPacket
 {
-	private static final String _C__11_ENTERWORLD = "[C] 11 EnterWorld";
-	
 	private final int[][] tracert = new int[5][4];
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		readB(new byte[32]); // Unknown Byte Array
-		readD(); // Unknown Value
-		readD(); // Unknown Value
-		readD(); // Unknown Value
-		readD(); // Unknown Value
-		readB(new byte[32]); // Unknown Byte Array
-		readD(); // Unknown Value
+		packet.readB(32); // Unknown Byte Array
+		packet.readD(); // Unknown Value
+		packet.readD(); // Unknown Value
+		packet.readD(); // Unknown Value
+		packet.readD(); // Unknown Value
+		packet.readB(32); // Unknown Byte Array
+		packet.readD(); // Unknown Value
 		for (int i = 0; i < 5; i++)
 		{
 			for (int o = 0; o < 4; o++)
 			{
-				tracert[i][o] = readC();
+				tracert[i][o] = packet.readC();
 			}
 		}
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			_log.warning("EnterWorld failed! activeChar returned 'null'.");
-			getClient().closeNow();
+			client.closeNow();
 			return;
 		}
 		
@@ -148,7 +149,7 @@ public class EnterWorld extends L2GameClientPacket
 		
 		LoginServerThread.getInstance().sendClientTracert(activeChar.getAccountName(), adress);
 		
-		getClient().setClientTracert(tracert);
+		client.setClientTracert(tracert);
 		
 		// Restore to instanced area if enabled
 		if (Config.RESTORE_PLAYER_INSTANCE)
@@ -319,13 +320,13 @@ public class EnterWorld extends L2GameClientPacket
 		activeChar.getMacros().sendAllMacros();
 		
 		// Send Teleport Bookmark List
-		sendPacket(new ExGetBookMarkInfoPacket(activeChar));
+		client.sendPacket(new ExGetBookMarkInfoPacket(activeChar));
 		
 		// Send Item List
-		sendPacket(new ItemList(activeChar, false));
+		client.sendPacket(new ItemList(activeChar, false));
 		
 		// Send Shortcuts
-		sendPacket(new ShortCutInit(activeChar));
+		client.sendPacket(new ShortCutInit(activeChar));
 		
 		// Send Action list
 		activeChar.sendPacket(ExBasicActionList.STATIC_PACKET);
@@ -359,7 +360,7 @@ public class EnterWorld extends L2GameClientPacket
 		{
 			final L2Clan clan = activeChar.getClan();
 			clan.broadcastToOnlineMembers(new PledgeShowMemberListUpdate(activeChar));
-			sendPacket(new PledgeShowMemberListAll(clan));
+			client.sendPacket(new PledgeShowMemberListAll(clan));
 			clan.broadcastToOnlineMembers(new ExPledgeCount(clan));
 			activeChar.sendPacket(new PledgeSkillList(clan));
 		}
@@ -391,7 +392,7 @@ public class EnterWorld extends L2GameClientPacket
 		Quest.playerEnter(activeChar);
 		
 		// Send Quest List
-		activeChar.sendPacket(new QuestList());
+		activeChar.sendPacket(new QuestList(activeChar));
 		
 		if (Config.PLAYER_SPAWN_PROTECTION > 0)
 		{
@@ -425,7 +426,7 @@ public class EnterWorld extends L2GameClientPacket
 		activeChar.sendPacket(new ExStorageMaxCount(activeChar));
 		
 		// Friend list
-		sendPacket(new L2FriendList(activeChar));
+		client.sendPacket(new L2FriendList(activeChar));
 		
 		if (Config.SHOW_GOD_VIDEO_INTRO && activeChar.getVariables().getBoolean("intro_god_video", false))
 		{
@@ -462,14 +463,14 @@ public class EnterWorld extends L2GameClientPacket
 			notice.replace("%clan_name%", activeChar.getClan().getName());
 			notice.replace("%notice_text%", activeChar.getClan().getNotice());
 			notice.disableValidation();
-			sendPacket(notice);
+			client.sendPacket(notice);
 		}
 		else if (Config.SERVER_NEWS)
 		{
 			String serverNews = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/servnews.htm");
 			if (serverNews != null)
 			{
-				sendPacket(new NpcHtmlMessage(serverNews));
+				client.sendPacket(new NpcHtmlMessage(serverNews));
 			}
 		}
 		
@@ -481,13 +482,13 @@ public class EnterWorld extends L2GameClientPacket
 		if (activeChar.isAlikeDead()) // dead or fake dead
 		{
 			// no broadcast needed since the player will already spawn dead to others
-			sendPacket(new Die(activeChar));
+			client.sendPacket(new Die(activeChar));
 		}
 		
 		activeChar.onPlayerEnter();
 		
-		sendPacket(new SkillCoolTime(activeChar));
-		sendPacket(new ExVoteSystemInfo(activeChar));
+		client.sendPacket(new SkillCoolTime(activeChar));
+		client.sendPacket(new ExVoteSystemInfo(activeChar));
 		
 		for (ItemInstance i : activeChar.getInventory().getItems())
 		{
@@ -541,7 +542,7 @@ public class EnterWorld extends L2GameClientPacket
 		{
 			if (MailManager.getInstance().hasUnreadPost(activeChar))
 			{
-				sendPacket(ExNoticePostArrived.valueOf(false));
+				client.sendPacket(ExNoticePostArrived.valueOf(false));
 			}
 		}
 		
@@ -677,17 +678,5 @@ public class EnterWorld extends L2GameClientPacket
 				apprentice.sendPacket(msg);
 			}
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__11_ENTERWORLD;
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
 	}
 }

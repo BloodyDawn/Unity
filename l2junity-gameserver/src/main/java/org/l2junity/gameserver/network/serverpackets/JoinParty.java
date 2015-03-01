@@ -18,23 +18,25 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public final class JoinParty extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public final class JoinParty implements IGameServerPacket
 {
 	private final int _response;
 	
-	/**
-	 * @param response
-	 */
 	public JoinParty(int response)
 	{
 		_response = response;
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x3a);
-		writeD(_response);
-		writeD(0x00); // TODO: Find me!
+		OutgoingPackets.JOIN_PARTY.writeId(packet);
+		
+		packet.writeD(_response);
+		packet.writeD(0x00); // TODO: Find me!
+		return true;
 	}
 }

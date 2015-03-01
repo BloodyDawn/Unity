@@ -23,34 +23,35 @@ import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.clan.entry.PledgeRecruitInfo;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Sdw
  */
-public class RequestPledgeRecruitBoardAccess extends L2GameClientPacket
+public class RequestPledgeRecruitBoardAccess implements IGameClientPacket
 {
-	private static final String _C__D0_D5_REQUESTPLEDGERECRUITBOARDACCESS = "[C] D0;D5 RequestPledgeRecruitBoardAccess";
-	
 	private int _applyType;
 	private int _karma;
 	private String _information;
 	private String _datailedInformation;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_applyType = readD();
-		_karma = readD();
-		_information = readS();
-		_datailedInformation = readS();
+		_applyType = packet.readD();
+		_karma = packet.readD();
+		_information = packet.readS();
+		_datailedInformation = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		
 		if (activeChar == null)
 		{
@@ -111,9 +112,4 @@ public class RequestPledgeRecruitBoardAccess extends L2GameClientPacket
 		}
 	}
 	
-	@Override
-	public String getType()
-	{
-		return _C__D0_D5_REQUESTPLEDGERECRUITBOARDACCESS;
-	}
 }

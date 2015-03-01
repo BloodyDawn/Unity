@@ -20,35 +20,36 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.instancemanager.HandysBlockCheckerManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format: chdd d: Arena d: Team
  * @author mrTJO
  */
-public final class RequestExCubeGameChangeTeam extends L2GameClientPacket
+public final class RequestExCubeGameChangeTeam implements IGameClientPacket
 {
-	private static final String _C__D0_5A_REQUESTEXCUBEGAMECHANGETEAM = "[C] D0:5A RequestExCubeGameChangeTeam";
-	
 	private int _arena;
 	private int _team;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
 		// client sends -1,0,1,2 for arena parameter
-		_arena = readD() + 1;
-		_team = readD();
+		_arena = packet.readD() + 1;
+		_team = packet.readD();
+		return true;
 	}
 	
 	@Override
-	public void runImpl()
+	public void run(L2GameClient client)
 	{
 		// do not remove players after start
 		if (HandysBlockCheckerManager.getInstance().arenaIsBeingUsed(_arena))
 		{
 			return;
 		}
-		PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		
 		switch (_team)
 		{
@@ -73,11 +74,5 @@ public final class RequestExCubeGameChangeTeam extends L2GameClientPacket
 				_log.warning("Wrong Cube Game Team ID: " + _team);
 				break;
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_5A_REQUESTEXCUBEGAMECHANGETEAM;
 	}
 }

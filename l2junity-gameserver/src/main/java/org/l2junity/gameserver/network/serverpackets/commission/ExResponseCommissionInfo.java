@@ -18,12 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets.commission;
 
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author NosBit
  */
-public class ExResponseCommissionInfo extends L2GameServerPacket
+public class ExResponseCommissionInfo implements IGameServerPacket
 {
 	public static final ExResponseCommissionInfo EMPTY = new ExResponseCommissionInfo();
 	
@@ -52,14 +54,15 @@ public class ExResponseCommissionInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xF4);
-		writeD(_result);
-		writeD(_itemId);
-		writeQ(_presetPricePerUnit);
-		writeQ(_presetAmount);
-		writeD(_presetDurationType);
+		OutgoingPackets.EX_RESPONSE_COMMISSION_INFO.writeId(packet);
+		
+		packet.writeD(_result);
+		packet.writeD(_itemId);
+		packet.writeQ(_presetPricePerUnit);
+		packet.writeQ(_presetAmount);
+		packet.writeD(_presetDurationType);
+		return true;
 	}
 }

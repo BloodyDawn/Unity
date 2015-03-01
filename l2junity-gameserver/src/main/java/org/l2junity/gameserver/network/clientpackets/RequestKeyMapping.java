@@ -20,25 +20,25 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExUISetting;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author KenM / mrTJO
  */
-public class RequestKeyMapping extends L2GameClientPacket
+public class RequestKeyMapping implements IGameClientPacket
 {
-	private static final String _C__D0_21_REQUESTKEYMAPPING = "[C] D0:21 RequestKeyMapping";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// trigger (no data)
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -46,19 +46,7 @@ public class RequestKeyMapping extends L2GameClientPacket
 		
 		if (Config.STORE_UI_SETTINGS)
 		{
-			activeChar.sendPacket(new ExUISetting(activeChar));
+			client.sendPacket(new ExUISetting(activeChar));
 		}
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_21_REQUESTKEYMAPPING;
 	}
 }

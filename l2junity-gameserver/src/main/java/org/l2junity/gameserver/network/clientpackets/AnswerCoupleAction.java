@@ -20,36 +20,37 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExRotation;
 import org.l2junity.gameserver.network.serverpackets.SocialAction;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author JIV
  */
-public class AnswerCoupleAction extends L2GameClientPacket
+public class AnswerCoupleAction implements IGameClientPacket
 {
-	private static final String _C__D0_7A_ANSWERCOUPLEACTION = "[C] D0:7A AnswerCoupleAction";
-	
 	private int _charObjId;
 	private int _actionId;
 	private int _answer;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_actionId = readD();
-		_answer = readD();
-		_charObjId = readD();
+		_actionId = packet.readD();
+		_answer = packet.readD();
+		_charObjId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getActiveChar();
-		PlayerInstance target = World.getInstance().getPlayer(_charObjId);
+		final PlayerInstance activeChar = client.getActiveChar();
+		final PlayerInstance target = World.getInstance().getPlayer(_charObjId);
 		if ((activeChar == null) || (target == null))
 		{
 			return;
@@ -67,7 +68,7 @@ public class AnswerCoupleAction extends L2GameClientPacket
 			final int distance = (int) activeChar.calculateDistance(target, false, false);
 			if ((distance > 125) || (distance < 15) || (activeChar.getObjectId() == target.getObjectId()))
 			{
-				sendPacket(SystemMessageId.THE_REQUEST_CANNOT_BE_COMPLETED_BECAUSE_THE_TARGET_DOES_NOT_MEET_LOCATION_REQUIREMENTS);
+				client.sendPacket(SystemMessageId.THE_REQUEST_CANNOT_BE_COMPLETED_BECAUSE_THE_TARGET_DOES_NOT_MEET_LOCATION_REQUIREMENTS);
 				target.sendPacket(SystemMessageId.THE_REQUEST_CANNOT_BE_COMPLETED_BECAUSE_THE_TARGET_DOES_NOT_MEET_LOCATION_REQUIREMENTS);
 				return;
 			}
@@ -87,11 +88,5 @@ public class AnswerCoupleAction extends L2GameClientPacket
 			target.sendPacket(sm);
 		}
 		target.setMultiSocialAction(0, 0);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_7A_ANSWERCOUPLEACTION;
 	}
 }

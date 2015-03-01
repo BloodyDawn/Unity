@@ -18,12 +18,23 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class CharCreateOk extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class CharCreateOk implements IGameServerPacket
 {
-	@Override
-	protected final void writeImpl()
+	public static final CharCreateOk STATIC_PACKET = new CharCreateOk();
+	
+	private CharCreateOk()
 	{
-		writeC(0x0f);
-		writeD(0x01);
+	}
+	
+	@Override
+	public boolean write(PacketWriter packet)
+	{
+		OutgoingPackets.CHARACTER_CREATE_SUCCESS.writeId(packet);
+		
+		packet.writeD(0x01);
+		return true;
 	}
 }

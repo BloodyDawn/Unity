@@ -20,33 +20,35 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.instancemanager.DuelManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format:(ch) ddd
  * @author -Wooden-
  */
-public final class RequestDuelAnswerStart extends L2GameClientPacket
+public final class RequestDuelAnswerStart implements IGameClientPacket
 {
-	private static final String _C__D0_1C_REQUESTDUELANSWERSTART = "[C] D0:1C RequestDuelAnswerStart";
 	private int _partyDuel;
 	@SuppressWarnings("unused")
 	private int _unk1;
 	private int _response;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_partyDuel = readD();
-		_unk1 = readD();
-		_response = readD();
+		_partyDuel = packet.readD();
+		_unk1 = packet.readD();
+		_response = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -119,11 +121,5 @@ public final class RequestDuelAnswerStart extends L2GameClientPacket
 		
 		player.setActiveRequester(null);
 		requestor.onTransactionResponse();
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_1C_REQUESTDUELANSWERSTART;
 	}
 }

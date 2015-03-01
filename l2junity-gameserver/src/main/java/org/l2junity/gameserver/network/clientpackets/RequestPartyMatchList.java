@@ -22,12 +22,14 @@ import org.l2junity.gameserver.enums.MatchingRoomType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.matching.MatchingRoom;
 import org.l2junity.gameserver.model.matching.PartyMatchingRoom;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.PartyRoomInfo;
+import org.l2junity.network.PacketReader;
 
 /**
  * author: Gnacik
  */
-public class RequestPartyMatchList extends L2GameClientPacket
+public class RequestPartyMatchList implements IGameClientPacket
 {
 	private int _roomId;
 	private int _maxMembers;
@@ -37,20 +39,21 @@ public class RequestPartyMatchList extends L2GameClientPacket
 	private String _roomTitle;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_roomId = readD();
-		_maxMembers = readD();
-		_minLevel = readD();
-		_maxLevel = readD();
-		_lootType = readD();
-		_roomTitle = readS();
+		_roomId = packet.readD();
+		_maxMembers = packet.readD();
+		_minLevel = packet.readD();
+		_maxLevel = packet.readD();
+		_lootType = packet.readD();
+		_roomTitle = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -78,9 +81,4 @@ public class RequestPartyMatchList extends L2GameClientPacket
 		}
 	}
 	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
-	}
 }

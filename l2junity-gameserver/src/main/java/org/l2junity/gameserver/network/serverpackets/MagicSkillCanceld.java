@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public final class MagicSkillCanceld extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public final class MagicSkillCanceld implements IGameServerPacket
 {
 	private final int _objectId;
 	
@@ -28,9 +31,11 @@ public final class MagicSkillCanceld extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x49);
-		writeD(_objectId);
+		OutgoingPackets.MAGIC_SKILL_CANCELED.writeId(packet);
+		
+		packet.writeD(_objectId);
+		return true;
 	}
 }

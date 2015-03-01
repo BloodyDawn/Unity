@@ -18,67 +18,48 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
-import org.l2junity.Config;
 import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.QuestList;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.3.4.2 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestQuestAbort extends L2GameClientPacket
+public final class RequestQuestAbort implements IGameClientPacket
 {
-	private static final String _C__63_REQUESTQUESTABORT = "[C] 63 RequestQuestAbort";
-	
 	private int _questId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_questId = readD();
+		_questId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
-		Quest qe = QuestManager.getInstance().getQuest(_questId);
+		final Quest qe = QuestManager.getInstance().getQuest(_questId);
 		if (qe != null)
 		{
-			QuestState qs = activeChar.getQuestState(qe.getName());
+			final QuestState qs = activeChar.getQuestState(qe.getName());
 			if (qs != null)
 			{
 				qs.exitQuest(true);
-				activeChar.sendPacket(new QuestList());
-			}
-			else
-			{
-				if (Config.DEBUG)
-				{
-					_log.info("Player '" + activeChar.getName() + "' try to abort quest " + qe.getName() + " but he didn't have it started.");
-				}
-			}
-		}
-		else
-		{
-			if (Config.DEBUG)
-			{
-				_log.warning("Quest (id='" + _questId + "') not found.");
+				activeChar.sendPacket(new QuestList(activeChar));
 			}
 		}
 	}
 	
-	@Override
-	public String getType()
-	{
-		return _C__63_REQUESTQUESTABORT;
-	}
 }

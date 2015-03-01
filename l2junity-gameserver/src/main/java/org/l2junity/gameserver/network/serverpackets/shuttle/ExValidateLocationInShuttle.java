@@ -20,12 +20,14 @@ package org.l2junity.gameserver.network.serverpackets.shuttle;
 
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class ExValidateLocationInShuttle extends L2GameServerPacket
+public class ExValidateLocationInShuttle implements IGameServerPacket
 {
 	private final PlayerInstance _activeChar;
 	private final int _shipId, _heading;
@@ -40,13 +42,16 @@ public class ExValidateLocationInShuttle extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xD1);
-		writeD(_activeChar.getObjectId());
-		writeD(_shipId);
-		writeLoc(_loc);
-		writeD(_heading);
+		OutgoingPackets.EX_VALIDATE_LOCATION_IN_SHUTTLE.writeId(packet);
+		
+		packet.writeD(_activeChar.getObjectId());
+		packet.writeD(_shipId);
+		packet.writeD(_loc.getX());
+		packet.writeD(_loc.getY());
+		packet.writeD(_loc.getZ());
+		packet.writeD(_heading);
+		return true;
 	}
 }

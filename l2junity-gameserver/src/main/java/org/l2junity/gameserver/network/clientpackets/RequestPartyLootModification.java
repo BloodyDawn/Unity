@@ -21,26 +21,27 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.gameserver.enums.PartyDistributionType;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author JIV
  */
-public class RequestPartyLootModification extends L2GameClientPacket
+public class RequestPartyLootModification implements IGameClientPacket
 {
-	private static final String _C__D0_78_REQUESTPARTYLOOTMODIFICATION = "[C] D0:78 RequestPartyLootModification";
-	
 	private int _partyDistributionTypeId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_partyDistributionTypeId = readD();
+		_partyDistributionTypeId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -60,9 +61,4 @@ public class RequestPartyLootModification extends L2GameClientPacket
 		party.requestLootChange(partyDistributionType);
 	}
 	
-	@Override
-	public String getType()
-	{
-		return _C__D0_78_REQUESTPARTYLOOTMODIFICATION;
-	}
 }

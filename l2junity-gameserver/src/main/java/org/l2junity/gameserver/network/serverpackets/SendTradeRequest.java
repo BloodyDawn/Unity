@@ -18,19 +18,24 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class SendTradeRequest extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class SendTradeRequest implements IGameServerPacket
 {
-	private final int _senderID;
+	private final int _senderId;
 	
-	public SendTradeRequest(int senderID)
+	public SendTradeRequest(int senderId)
 	{
-		_senderID = senderID;
+		_senderId = senderId;
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x70);
-		writeD(_senderID);
+		OutgoingPackets.TRADE_REQUEST.writeId(packet);
+		
+		packet.writeD(_senderId);
+		return true;
 	}
 }

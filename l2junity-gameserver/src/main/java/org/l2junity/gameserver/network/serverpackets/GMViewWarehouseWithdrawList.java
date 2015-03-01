@@ -23,6 +23,8 @@ import java.util.Collection;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 public class GMViewWarehouseWithdrawList extends AbstractItemPacket
 {
@@ -45,16 +47,17 @@ public class GMViewWarehouseWithdrawList extends AbstractItemPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x9b);
-		writeS(_playerName);
-		writeQ(_money);
-		writeH(_items.size());
+		OutgoingPackets.GM_VIEW_WAREHOUSE_WITHDRAW_LIST.writeId(packet);
+		packet.writeS(_playerName);
+		packet.writeQ(_money);
+		packet.writeH(_items.size());
 		for (ItemInstance item : _items)
 		{
-			writeItem(item);
-			writeD(item.getObjectId());
+			writeItem(packet, item);
+			packet.writeD(item.getObjectId());
 		}
+		return true;
 	}
 }

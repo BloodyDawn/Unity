@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class ExVariationCancelResult extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class ExVariationCancelResult implements IGameServerPacket
 {
 	private final int _result;
 	
@@ -28,10 +31,11 @@ public class ExVariationCancelResult extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x59);
-		writeD(_result);
+		OutgoingPackets.EX_VARIATION_CANCEL_RESULT.writeId(packet);
+		
+		packet.writeD(_result);
+		return true;
 	}
 }

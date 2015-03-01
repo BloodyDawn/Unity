@@ -29,11 +29,13 @@ import org.l2junity.gameserver.instancemanager.MatchingRoomManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Gnacik
  */
-public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket
+public class ExListPartyMatchingWaitingRoom implements IGameServerPacket
 {
 	private static final int NUM_PER_PAGE = 64;
 	private final int _size;
@@ -57,28 +59,28 @@ public class ExListPartyMatchingWaitingRoom extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x36);
+		OutgoingPackets.EX_LIST_PARTY_MATCHING_WAITING_ROOM.writeId(packet);
 		
-		writeD(_size);
-		writeD(_players.size());
+		packet.writeD(_size);
+		packet.writeD(_players.size());
 		for (PlayerInstance player : _players)
 		{
-			writeS(player.getName());
-			writeD(player.getClassId().getId());
-			writeD(player.getLevel());
+			packet.writeS(player.getName());
+			packet.writeD(player.getClassId().getId());
+			packet.writeD(player.getLevel());
 			final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-			writeD((world != null) && (world.getTemplateId() >= 0) ? world.getTemplateId() : -1);
+			packet.writeD((world != null) && (world.getTemplateId() >= 0) ? world.getTemplateId() : -1);
 			final Map<Integer, Long> _instanceTimes = InstanceManager.getInstance().getAllInstanceTimes(player.getObjectId());
-			writeD(_instanceTimes.size());
+			packet.writeD(_instanceTimes.size());
 			for (Entry<Integer, Long> entry : _instanceTimes.entrySet())
 			{
 				final long instanceTime = TimeUnit.MILLISECONDS.toSeconds(entry.getValue() - System.currentTimeMillis());
-				writeD(entry.getKey());
-				writeD((int) instanceTime);
+				packet.writeD(entry.getKey());
+				packet.writeD((int) instanceTime);
 			}
 		}
+		return true;
 	}
 }

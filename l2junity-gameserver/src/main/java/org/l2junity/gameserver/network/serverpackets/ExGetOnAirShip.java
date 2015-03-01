@@ -21,8 +21,10 @@ package org.l2junity.gameserver.network.serverpackets;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class ExGetOnAirShip extends L2GameServerPacket
+public class ExGetOnAirShip implements IGameServerPacket
 {
 	private final int _playerId, _airShipId;
 	private final Location _pos;
@@ -35,15 +37,15 @@ public class ExGetOnAirShip extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x64);
+		OutgoingPackets.EX_GET_ON_AIR_SHIP.writeId(packet);
 		
-		writeD(_playerId);
-		writeD(_airShipId);
-		writeD(_pos.getX());
-		writeD(_pos.getY());
-		writeD(_pos.getZ());
+		packet.writeD(_playerId);
+		packet.writeD(_airShipId);
+		packet.writeD(_pos.getX());
+		packet.writeD(_pos.getY());
+		packet.writeD(_pos.getZ());
+		return true;
 	}
 }

@@ -19,6 +19,8 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.TradeItem;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Yme
@@ -33,10 +35,11 @@ public final class TradeOwnAdd extends AbstractItemPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x1A);
-		writeH(1); // items added count
-		writeTradeItem(_item);
+		OutgoingPackets.TRADE_OWN_ADD.writeId(packet);
+		packet.writeH(1); // items added count
+		writeTradeItem(packet, _item);
+		return true;
 	}
 }

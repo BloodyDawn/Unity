@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class ShortBuffStatusUpdate extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class ShortBuffStatusUpdate implements IGameServerPacket
 {
 	public static final ShortBuffStatusUpdate RESET_SHORT_BUFF = new ShortBuffStatusUpdate(0, 0, 0);
 	
@@ -34,11 +37,13 @@ public class ShortBuffStatusUpdate extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xfa);
-		writeD(_skillId);
-		writeD(_skillLvl);
-		writeD(_duration);
+		OutgoingPackets.SHORT_BUFF_STATUS_UPDATE.writeId(packet);
+		
+		packet.writeD(_skillId);
+		packet.writeD(_skillLvl);
+		packet.writeD(_duration);
+		return true;
 	}
 }

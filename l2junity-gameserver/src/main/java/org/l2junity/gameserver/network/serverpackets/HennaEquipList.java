@@ -23,11 +23,13 @@ import java.util.List;
 import org.l2junity.gameserver.data.xml.impl.HennaData;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.Henna;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Zoey76
  */
-public class HennaEquipList extends L2GameServerPacket
+public class HennaEquipList implements IGameServerPacket
 {
 	private final PlayerInstance _player;
 	private final List<Henna> _hennaEquipList;
@@ -45,12 +47,12 @@ public class HennaEquipList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xEE);
-		writeQ(_player.getAdena()); // activeChar current amount of Adena
-		writeD(3); // available equip slot
-		writeD(_hennaEquipList.size());
+		OutgoingPackets.HENNA_EQUIP_LIST.writeId(packet);
+		packet.writeQ(_player.getAdena()); // activeChar current amount of Adena
+		packet.writeD(3); // available equip slot
+		packet.writeD(_hennaEquipList.size());
 		
 		for (Henna henna : _hennaEquipList)
 		{
@@ -58,13 +60,14 @@ public class HennaEquipList extends L2GameServerPacket
 			// to be able to see the Henna that can be applied with it.
 			if ((_player.getInventory().getItemByItemId(henna.getDyeItemId())) != null)
 			{
-				writeD(henna.getDyeId()); // dye Id
-				writeD(henna.getDyeItemId()); // item Id of the dye
-				writeQ(henna.getWearCount()); // amount of dyes required
-				writeQ(henna.getWearFee()); // amount of Adena required
-				writeD(henna.isAllowedClass(_player.getClassId()) ? 0x01 : 0x00); // meet the requirement or not
-				writeD(0x00); // TODO: Find me!
+				packet.writeD(henna.getDyeId()); // dye Id
+				packet.writeD(henna.getDyeItemId()); // item Id of the dye
+				packet.writeQ(henna.getWearCount()); // amount of dyes required
+				packet.writeQ(henna.getWearFee()); // amount of Adena required
+				packet.writeD(henna.isAllowedClass(_player.getClassId()) ? 0x01 : 0x00); // meet the requirement or not
+				packet.writeD(0x00); // TODO: Find me!
 			}
 		}
+		return true;
 	}
 }

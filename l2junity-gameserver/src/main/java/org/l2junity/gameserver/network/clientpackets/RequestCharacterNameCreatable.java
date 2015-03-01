@@ -20,13 +20,15 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExIsCharNameCreatable;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author UnAfraid
  */
-public class RequestCharacterNameCreatable extends L2GameClientPacket
+public class RequestCharacterNameCreatable implements IGameClientPacket
 {
 	private String _name;
 	private int result;
@@ -38,13 +40,14 @@ public class RequestCharacterNameCreatable extends L2GameClientPacket
 	public static int CANNOT_CREATE_SERVER = 5;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_name = readS();
+		_name = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		final int charId = CharNameTable.getInstance().getIdByName(_name);
 		
@@ -65,13 +68,7 @@ public class RequestCharacterNameCreatable extends L2GameClientPacket
 			result = -1;
 		}
 		
-		sendPacket(new ExIsCharNameCreatable(result));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return "[C] D0:B0 RequestCharacterNameCreatable";
+		client.sendPacket(new ExIsCharNameCreatable(result));
 	}
 	
 	private boolean isValidName(String text)

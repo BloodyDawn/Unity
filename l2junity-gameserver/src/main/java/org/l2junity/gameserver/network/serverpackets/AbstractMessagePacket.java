@@ -44,13 +44,14 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.SystemMessageId.SMLocalisation;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  * @param <T>
  */
 @SuppressWarnings("unchecked")
-public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> extends L2GameServerPacket
+public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> implements IGameServerPacket
 {
 	private static final SMParam[] EMPTY_PARAM_ARRAY = new SMParam[0];
 	
@@ -379,37 +380,37 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 		return (T) this;
 	}
 	
-	protected void writeParamsSize(int size)
+	protected void writeParamsSize(PacketWriter packet, int size)
 	{
-		writeC(size);
+		packet.writeC(size);
 	}
 	
-	protected void writeParamType(int type)
+	protected void writeParamType(PacketWriter packet, int type)
 	{
-		writeC(type);
+		packet.writeC(type);
 	}
 	
-	protected final void writeMe()
+	protected final void writeMe(PacketWriter packet)
 	{
-		writeParamsSize(_params.length);
+		writeParamsSize(packet, _params.length);
 		SMParam param;
 		for (int i = 0; i < _paramIndex; i++)
 		{
 			param = _params[i];
 			
-			writeParamType(param.getType());
+			writeParamType(packet, param.getType());
 			switch (param.getType())
 			{
 				case TYPE_TEXT:
 				case TYPE_PLAYER_NAME:
 				{
-					writeS(param.getStringValue());
+					packet.writeS(param.getStringValue());
 					break;
 				}
 				
 				case TYPE_LONG_NUMBER:
 				{
-					writeQ(param.getLongValue());
+					packet.writeQ(param.getLongValue());
 					break;
 				}
 				
@@ -422,15 +423,15 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 				case TYPE_INSTANCE_NAME:
 				case TYPE_DOOR_NAME:
 				{
-					writeD(param.getIntValue());
+					packet.writeD(param.getIntValue());
 					break;
 				}
 				
 				case TYPE_SKILL_NAME:
 				{
 					final int[] array = param.getIntArrayValue();
-					writeD(array[0]); // SkillId
-					writeH(array[1]); // SkillLevel
+					packet.writeD(array[0]); // SkillId
+					packet.writeH(array[1]); // SkillLevel
 					break;
 				}
 				
@@ -438,14 +439,14 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 				case TYPE_ZONE_NAME:
 				{
 					final int[] array = param.getIntArrayValue();
-					writeD(array[0]); // x
-					writeD(array[1]); // y
-					writeD(array[2]); // z
+					packet.writeD(array[0]); // x
+					packet.writeD(array[1]); // y
+					packet.writeD(array[2]); // z
 					break;
 				}
 				case TYPE_CLASS_ID:
 				{
-					writeH(param.getIntValue());
+					packet.writeH(param.getIntValue());
 					break;
 				}
 			}
@@ -588,13 +589,13 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 				
 				case TYPE_SYSTEM_STRING:
 				{
-					params[i] = "SYS-S-" + param.getIntValue(); // writeD(param.getIntValue());
+					params[i] = "SYS-S-" + param.getIntValue(); // packet.writeD(param.getIntValue());
 					break;
 				}
 				
 				case TYPE_CLASS_ID:
 				{
-					params[i] = "CLASS_ID-N-" + param.getIntValue(); // writeD(param.getIntValue());
+					params[i] = "CLASS_ID-N-" + param.getIntValue(); // packet.writeD(param.getIntValue());
 					break;
 				}
 				

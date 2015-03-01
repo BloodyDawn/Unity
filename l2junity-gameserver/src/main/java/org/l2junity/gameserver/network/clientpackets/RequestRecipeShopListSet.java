@@ -30,51 +30,52 @@ import org.l2junity.gameserver.model.ManufactureItem;
 import org.l2junity.gameserver.model.RecipeList;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.RecipeShopMsg;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
 import org.l2junity.gameserver.util.Broadcast;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * RequestRecipeShopListSet client packet class.
  */
-public final class RequestRecipeShopListSet extends L2GameClientPacket
+public final class RequestRecipeShopListSet implements IGameClientPacket
 {
-	private static final String _C__BB_RequestRecipeShopListSet = "[C] BB RequestRecipeShopListSet";
-	
 	private static final int BATCH_LENGTH = 12;
 	
 	private ManufactureItem[] _items = null;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		int count = readD();
-		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != _buf.remaining()))
+		int count = packet.readD();
+		if ((count <= 0) || (count > Config.MAX_ITEM_IN_PACKET) || ((count * BATCH_LENGTH) != packet.getReadableBytes()))
 		{
-			return;
+			return false;
 		}
 		
 		_items = new ManufactureItem[count];
 		for (int i = 0; i < count; i++)
 		{
-			int id = readD();
-			long cost = readQ();
+			int id = packet.readD();
+			long cost = packet.readQ();
 			if (cost < 0)
 			{
 				_items = null;
-				return;
+				return false;
 			}
 			_items[i] = new ManufactureItem(id, cost);
 		}
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -89,15 +90,15 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket
 		
 		if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(player) || player.isInDuel())
 		{
-			player.sendPacket(SystemMessageId.WHILE_YOU_ARE_ENGAGED_IN_COMBAT_YOU_CANNOT_OPERATE_A_PRIVATE_STORE_OR_PRIVATE_WORKSHOP);
-			player.sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(SystemMessageId.WHILE_YOU_ARE_ENGAGED_IN_COMBAT_YOU_CANNOT_OPERATE_A_PRIVATE_STORE_OR_PRIVATE_WORKSHOP);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
 		if (player.isInsideZone(ZoneId.NO_STORE))
 		{
-			player.sendPacket(SystemMessageId.YOU_CANNOT_OPEN_A_PRIVATE_WORKSHOP_HERE);
-			player.sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(SystemMessageId.YOU_CANNOT_OPEN_A_PRIVATE_WORKSHOP_HERE);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
@@ -129,11 +130,5 @@ public final class RequestRecipeShopListSet extends L2GameClientPacket
 		player.sitDown();
 		player.broadcastUserInfo();
 		Broadcast.toSelfAndKnownPlayers(player, new RecipeShopMsg(player));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__BB_RequestRecipeShopListSet;
 	}
 }

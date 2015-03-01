@@ -28,7 +28,7 @@ import org.l2junity.gameserver.util.Util;
 /**
  * @author HorridoJoho
  */
-public abstract class AbstractHtmlPacket extends L2GameServerPacket
+public abstract class AbstractHtmlPacket implements IGameServerPacket
 {
 	public static final char VAR_PARAM_START_CHAR = '$';
 	
@@ -134,17 +134,22 @@ public abstract class AbstractHtmlPacket extends L2GameServerPacket
 	}
 	
 	@Override
-	public final void runImpl()
+	public final void runImpl(PlayerInstance player)
 	{
-		PlayerInstance player = getClient().getActiveChar();
-		player.clearHtmlActions(getScope());
+		if (player != null)
+		{
+			player.clearHtmlActions(getScope());
+		}
 		
 		if (_disabledValidation)
 		{
 			return;
 		}
 		
-		Util.buildHtmlActionCache(player, getScope(), _npcObjId, _html);
+		if (player != null)
+		{
+			Util.buildHtmlActionCache(player, getScope(), _npcObjId, _html);
+		}
 	}
 	
 	public final int getNpcObjId()

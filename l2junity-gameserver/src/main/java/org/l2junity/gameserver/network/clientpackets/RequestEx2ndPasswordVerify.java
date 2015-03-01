@@ -19,37 +19,32 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.data.xml.impl.SecondaryAuthData;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format: (ch)S S: numerical password
  * @author mrTJO
  */
-public class RequestEx2ndPasswordVerify extends L2GameClientPacket
+public class RequestEx2ndPasswordVerify implements IGameClientPacket
 {
-	private static final String _C__D0_AE_REQUESTEX2NDPASSWORDVERIFY = "[C] D0:AE RequestEx2ndPasswordVerify";
-	
 	private String _password;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_password = readS();
+		_password = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		if (!SecondaryAuthData.getInstance().isEnabled())
 		{
 			return;
 		}
 		
-		getClient().getSecondaryAuth().checkPassword(_password, false);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_AE_REQUESTEX2NDPASSWORDVERIFY;
+		client.getSecondaryAuth().checkPassword(_password, false);
 	}
 }

@@ -20,15 +20,17 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
-import org.l2junity.gameserver.model.EnchantSkillLearn;
 import org.l2junity.gameserver.model.EnchantSkillGroup.EnchantSkillHolder;
+import org.l2junity.gameserver.model.EnchantSkillLearn;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author KenM
  */
-public class ExEnchantSkillInfoDetail extends L2GameServerPacket
+public class ExEnchantSkillInfoDetail implements IGameServerPacket
 {
 	private static final int TYPE_NORMAL_ENCHANT = 0;
 	private static final int TYPE_SAFE_ENCHANT = 1;
@@ -116,20 +118,20 @@ public class ExEnchantSkillInfoDetail extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x5F);
+		OutgoingPackets.EX_ENCHANT_SKILL_INFO_DETAIL.writeId(packet);
 		
-		writeD(_type);
-		writeD(_skillid);
-		writeD(_skilllvl);
-		writeQ(_sp * multi); // sp
-		writeD(_chance); // exp
-		writeD(0x02); // items count?
-		writeD(Inventory.ADENA_ID); // Adena
-		writeD(_adenacount); // Adena count
-		writeD(bookId); // ItemId Required
-		writeD(reqCount);
+		packet.writeD(_type);
+		packet.writeD(_skillid);
+		packet.writeD(_skilllvl);
+		packet.writeQ(_sp * multi); // sp
+		packet.writeD(_chance); // exp
+		packet.writeD(0x02); // items count?
+		packet.writeD(Inventory.ADENA_ID); // Adena
+		packet.writeD(_adenacount); // Adena count
+		packet.writeD(bookId); // ItemId Required
+		packet.writeD(reqCount);
+		return true;
 	}
 }

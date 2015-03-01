@@ -22,35 +22,36 @@ import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExEnchantSkillInfo;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format (ch) dd c: (id) 0xD0 h: (subid) 0x06 d: skill id d: skill lvl
  * @author -Wooden-
  */
-public final class RequestExEnchantSkillInfo extends L2GameClientPacket
+public final class RequestExEnchantSkillInfo implements IGameClientPacket
 {
-	private static final String _C__D0_0E_REQUESTEXENCHANTSKILLINFO = "[C] D0:0E RequestExEnchantSkillInfo";
-	
 	private int _skillId;
 	private int _skillLvl;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_skillId = readD();
-		_skillLvl = readD();
+		_skillId = packet.readD();
+		_skillLvl = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		if ((_skillId <= 0) || (_skillLvl <= 0))
 		{
 			return;
 		}
 		
-		PlayerInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = client.getActiveChar();
 		
 		if (activeChar == null)
 		{
@@ -79,12 +80,6 @@ public final class RequestExEnchantSkillInfo extends L2GameClientPacket
 			return;
 		}
 		
-		activeChar.sendPacket(new ExEnchantSkillInfo(_skillId, _skillLvl));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_0E_REQUESTEXENCHANTSKILLINFO;
+		client.sendPacket(new ExEnchantSkillInfo(_skillId, _skillLvl));
 	}
 }

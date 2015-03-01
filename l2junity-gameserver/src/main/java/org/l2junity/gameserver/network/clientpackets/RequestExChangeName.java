@@ -18,38 +18,32 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExNeedToChangeName;
+import org.l2junity.network.PacketReader;
 
 /**
  * Reply for {@link ExNeedToChangeName}
  * @author JIV
  */
-public class RequestExChangeName extends L2GameClientPacket
+public class RequestExChangeName implements IGameClientPacket
 {
-	private static final String _C__D0_3B_REQUESTEXCHANGENAME = "[C] D0:3B RequestExChangeName";
-	
 	private String _newName;
 	private int _type;
 	private int _charSlot;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_type = readD();
-		_newName = readS();
-		_charSlot = readD();
+		_type = packet.readD();
+		_newName = packet.readS();
+		_charSlot = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		_log.info("Recieved " + getType() + " name: " + _newName + " type: " + _type + " CharSlot: " + _charSlot);
-		
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_3B_REQUESTEXCHANGENAME;
+		_log.info("Recieved " + getClass().getSimpleName() + " name: " + _newName + " type: " + _type + " CharSlot: " + _charSlot);
 	}
 }

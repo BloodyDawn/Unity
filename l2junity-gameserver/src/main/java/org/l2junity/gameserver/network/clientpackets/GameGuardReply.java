@@ -24,15 +24,14 @@ import java.util.Arrays;
 import java.util.logging.Level;
 
 import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format: c dddd
  * @author KenM
  */
-public class GameGuardReply extends L2GameClientPacket
+public class GameGuardReply implements IGameClientPacket
 {
-	private static final String _C__CB_GAMEGUARDREPLY = "[C] CB GameGuardReply";
-	
 	private static final byte[] VALID =
 	{
 		(byte) 0x88,
@@ -60,21 +59,21 @@ public class GameGuardReply extends L2GameClientPacket
 	private final byte[] _reply = new byte[8];
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		readB(_reply, 0, 4);
-		readD();
-		readB(_reply, 4, 4);
+		packet.readB(_reply, 0, 4);
+		packet.readD();
+		packet.readB(_reply, 4, 4);
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		L2GameClient client = getClient();
 		try
 		{
-			MessageDigest md = MessageDigest.getInstance("SHA");
-			byte[] result = md.digest(_reply);
+			final MessageDigest md = MessageDigest.getInstance("SHA");
+			final byte[] result = md.digest(_reply);
 			if (Arrays.equals(result, VALID))
 			{
 				client.setGameGuardOk(true);
@@ -84,17 +83,5 @@ public class GameGuardReply extends L2GameClientPacket
 		{
 			_log.log(Level.WARNING, "", e);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__CB_GAMEGUARDREPLY;
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
 	}
 }

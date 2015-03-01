@@ -22,31 +22,34 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.model.TradeList;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.network.PacketReader;
 
 /**
  * This packet manages the trade response.
  */
-public final class TradeDone extends L2GameClientPacket
+public final class TradeDone implements IGameClientPacket
 {
 	private int _response;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_response = readD();
+		_response = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
 		}
 		
-		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("trade"))
+		if (!client.getFloodProtectors().getTransaction().tryPerformAction("trade"))
 		{
 			player.sendMessage("You are trading too fast.");
 			return;
@@ -57,7 +60,7 @@ public final class TradeDone extends L2GameClientPacket
 		{
 			if (Config.DEBUG)
 			{
-				_log.warning("player.getTradeList == null in " + getType() + " for player " + player.getName());
+				_log.warning("player.getTradeList == null in " + getClass().getSimpleName() + " for player " + player.getName());
 			}
 			return;
 		}
@@ -106,11 +109,5 @@ public final class TradeDone extends L2GameClientPacket
 		{
 			player.cancelActiveTrade();
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return "[C] 1C TradeDone";
 	}
 }

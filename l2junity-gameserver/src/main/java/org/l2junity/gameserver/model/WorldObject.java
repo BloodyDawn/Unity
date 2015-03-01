@@ -51,7 +51,7 @@ import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.DeleteObject;
 import org.l2junity.gameserver.network.serverpackets.ExSendUIEvent;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
 import org.l2junity.gameserver.util.Util;
 
 /**
@@ -332,7 +332,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	
 	public abstract void sendInfo(PlayerInstance activeChar);
 	
-	public void sendPacket(L2GameServerPacket mov)
+	public void sendPacket(IGameServerPacket mov)
 	{
 	}
 	

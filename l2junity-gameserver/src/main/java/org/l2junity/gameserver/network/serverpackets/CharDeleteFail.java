@@ -18,8 +18,12 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class CharDeleteFail extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class CharDeleteFail implements IGameServerPacket
 {
+	// TODO: Enum
 	public static final int REASON_DELETION_FAILED = 0x01;
 	public static final int REASON_YOU_MAY_NOT_DELETE_CLAN_MEMBER = 0x02;
 	public static final int REASON_CLAN_LEADERS_MAY_NOT_BE_DELETED = 0x03;
@@ -32,9 +36,11 @@ public class CharDeleteFail extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x1e);
-		writeD(_error);
+		OutgoingPackets.CHARACTER_DELETE_FAIL.writeId(packet);
+		
+		packet.writeD(_error);
+		return true;
 	}
 }

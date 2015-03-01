@@ -22,13 +22,15 @@ import org.l2junity.gameserver.enums.MatchingRoomType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.matching.CommandChannelMatchingRoom;
 import org.l2junity.gameserver.model.matching.MatchingRoom;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExMPCCRoomInfo;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Sdw
  */
-public class RequestExManageMpccRoom extends L2GameClientPacket
+public class RequestExManageMpccRoom implements IGameClientPacket
 {
 	private int _roomId;
 	private int _maxMembers;
@@ -37,28 +39,27 @@ public class RequestExManageMpccRoom extends L2GameClientPacket
 	private String _title;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_roomId = readD();
-		_maxMembers = readD();
-		_minLevel = readD();
-		_maxLevel = readD();
-		readD(); // TODO: Find me
-		_title = readS();
+		_roomId = packet.readD();
+		_maxMembers = packet.readD();
+		_minLevel = packet.readD();
+		_maxLevel = packet.readD();
+		packet.readD(); // TODO: Find me
+		_title = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getActiveChar();
-		
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
 		final MatchingRoom room = activeChar.getMatchingRoom();
-		
 		if ((room == null) || (room.getId() != _roomId) || (room.getRoomType() != MatchingRoomType.COMMAND_CHANNEL) || (room.getLeader() != activeChar))
 		{
 			return;
@@ -69,17 +70,8 @@ public class RequestExManageMpccRoom extends L2GameClientPacket
 		room.setMinLvl(_minLevel);
 		room.setMaxLvl(_maxLevel);
 		
-		room.getMembers().forEach(p ->
-		{
-			p.sendPacket(new ExMPCCRoomInfo((CommandChannelMatchingRoom) room));
-		});
+		room.getMembers().forEach(p -> p.sendPacket(new ExMPCCRoomInfo((CommandChannelMatchingRoom) room)));
 		
 		activeChar.sendPacket(SystemMessageId.THE_COMMAND_CHANNEL_MATCHING_ROOM_INFORMATION_WAS_EDITED);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
 	}
 }

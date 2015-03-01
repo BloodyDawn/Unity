@@ -19,11 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.Summon;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Yme
  */
-public class PetStatusShow extends L2GameServerPacket
+public class PetStatusShow implements IGameServerPacket
 {
 	private final int _summonType;
 	private final int _summonObjectId;
@@ -35,10 +37,12 @@ public class PetStatusShow extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xb1);
-		writeD(_summonType);
-		writeD(_summonObjectId);
+		OutgoingPackets.PET_STATUS_SHOW.writeId(packet);
+		
+		packet.writeD(_summonType);
+		packet.writeD(_summonObjectId);
+		return true;
 	}
 }

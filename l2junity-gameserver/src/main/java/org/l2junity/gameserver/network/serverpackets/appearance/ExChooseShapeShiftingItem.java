@@ -21,14 +21,15 @@ package org.l2junity.gameserver.network.serverpackets.appearance;
 import org.l2junity.gameserver.model.items.appearance.AppearanceStone;
 import org.l2junity.gameserver.model.items.appearance.AppearanceTargetType;
 import org.l2junity.gameserver.model.items.appearance.AppearanceType;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class ExChooseShapeShiftingItem extends L2GameServerPacket
+public class ExChooseShapeShiftingItem implements IGameServerPacket
 {
-	
 	private final AppearanceType _type;
 	private final AppearanceTargetType _targetType;
 	private final int _itemId;
@@ -41,12 +42,13 @@ public class ExChooseShapeShiftingItem extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x129);
-		writeD(_targetType != null ? _targetType.ordinal() : 0);
-		writeD(_type != null ? _type.ordinal() : 0);
-		writeD(_itemId);
+		OutgoingPackets.EX_CHOOSE_SHAPE_SHIFTING_ITEM.writeId(packet);
+		
+		packet.writeD(_targetType != null ? _targetType.ordinal() : 0);
+		packet.writeD(_type != null ? _type.ordinal() : 0);
+		packet.writeD(_itemId);
+		return true;
 	}
 }

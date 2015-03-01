@@ -24,30 +24,32 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.ActionType;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExAutoSoulShot;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Unknown, UnAfraid
  */
-public final class RequestAutoSoulShot extends L2GameClientPacket
+public final class RequestAutoSoulShot implements IGameClientPacket
 {
-	// format cd
 	private int _itemId;
 	private int _type; // 1 = on : 0 = off;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_itemId = readD();
-		_type = readD();
+		_itemId = packet.readD();
+		_type = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -89,7 +91,7 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 							}
 							if (soulshotCount > item.getCount())
 							{
-								activeChar.sendPacket(SystemMessageId.YOU_DON_T_HAVE_ENOUGH_SOULSHOTS_NEEDED_FOR_A_PET_SERVITOR);
+								client.sendPacket(SystemMessageId.YOU_DON_T_HAVE_ENOUGH_SOULSHOTS_NEEDED_FOR_A_PET_SERVITOR);
 								return;
 							}
 						}
@@ -107,19 +109,19 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 							}
 							if (spiritshotCount > item.getCount())
 							{
-								activeChar.sendPacket(SystemMessageId.YOU_DON_T_HAVE_ENOUGH_SOULSHOTS_NEEDED_FOR_A_PET_SERVITOR);
+								client.sendPacket(SystemMessageId.YOU_DON_T_HAVE_ENOUGH_SOULSHOTS_NEEDED_FOR_A_PET_SERVITOR);
 								return;
 							}
 						}
 						
 						// Activate shots
 						activeChar.addAutoSoulShot(_itemId);
-						activeChar.sendPacket(new ExAutoSoulShot(_itemId, _type));
+						client.sendPacket(new ExAutoSoulShot(_itemId, _type));
 						
 						// Send message
 						final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THE_AUTOMATIC_USE_OF_S1_HAS_BEEN_ACTIVATED);
 						sm.addItemName(item);
-						activeChar.sendPacket(sm);
+						client.sendPacket(sm);
 						
 						// Recharge summon's shots
 						final Summon pet = activeChar.getPet();
@@ -134,7 +136,7 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 					}
 					else
 					{
-						activeChar.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_A_SERVITOR_OR_PET_AND_THEREFORE_CANNOT_USE_THE_AUTOMATIC_USE_FUNCTION);
+						client.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_A_SERVITOR_OR_PET_AND_THEREFORE_CANNOT_USE_THE_AUTOMATIC_USE_FUNCTION);
 					}
 				}
 				else if (isPlayerShot(item.getItem()))
@@ -143,18 +145,18 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 					final boolean isSpiritshot = item.getEtcItem().getDefaultAction() == ActionType.SPIRITSHOT;
 					if ((activeChar.getActiveWeaponItem() == activeChar.getFistsWeaponItem()) || (item.getItem().getCrystalType() != activeChar.getActiveWeaponItem().getCrystalTypePlus()))
 					{
-						activeChar.sendPacket(isSoulshot ? SystemMessageId.THE_SOULSHOT_YOU_ARE_ATTEMPTING_TO_USE_DOES_NOT_MATCH_THE_GRADE_OF_YOUR_EQUIPPED_WEAPON : SystemMessageId.YOUR_SPIRITSHOT_DOES_NOT_MATCH_THE_WEAPON_S_GRADE);
+						client.sendPacket(isSoulshot ? SystemMessageId.THE_SOULSHOT_YOU_ARE_ATTEMPTING_TO_USE_DOES_NOT_MATCH_THE_GRADE_OF_YOUR_EQUIPPED_WEAPON : SystemMessageId.YOUR_SPIRITSHOT_DOES_NOT_MATCH_THE_WEAPON_S_GRADE);
 						return;
 					}
 					
 					// Activate shots
 					activeChar.addAutoSoulShot(_itemId);
-					activeChar.sendPacket(new ExAutoSoulShot(_itemId, _type));
+					client.sendPacket(new ExAutoSoulShot(_itemId, _type));
 					
 					// Send message
 					final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THE_AUTOMATIC_USE_OF_S1_HAS_BEEN_ACTIVATED);
 					sm.addItemName(item);
-					activeChar.sendPacket(sm);
+					client.sendPacket(sm);
 					
 					// Recharge player's shots
 					activeChar.rechargeShots(isSoulshot, isSpiritshot);
@@ -164,20 +166,14 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 			{
 				// Cancel auto shots
 				activeChar.removeAutoSoulShot(_itemId);
-				activeChar.sendPacket(new ExAutoSoulShot(_itemId, _type));
+				client.sendPacket(new ExAutoSoulShot(_itemId, _type));
 				
 				// Send message
 				final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THE_AUTOMATIC_USE_OF_S1_HAS_BEEN_DEACTIVATED);
 				sm.addItemName(item);
-				activeChar.sendPacket(sm);
+				client.sendPacket(sm);
 			}
 		}
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
 	}
 	
 	public static boolean isPlayerShot(L2Item item)
@@ -203,11 +199,5 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 			default:
 				return false;
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
 	}
 }

@@ -18,12 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets.sayune;
 
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class ExNotifyFlyMoveStart extends L2GameServerPacket
+public class ExNotifyFlyMoveStart implements IGameServerPacket
 {
 	public static final ExNotifyFlyMoveStart STATIC_PACKET = new ExNotifyFlyMoveStart();
 	
@@ -32,9 +34,10 @@ public class ExNotifyFlyMoveStart extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x110);
+		OutgoingPackets.EX_NOTIFY_FLY_MOVE_START.writeId(packet);
+		
+		return true;
 	}
 }

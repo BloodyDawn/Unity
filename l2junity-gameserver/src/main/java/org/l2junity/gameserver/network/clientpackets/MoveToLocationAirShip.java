@@ -25,12 +25,12 @@ import org.l2junity.gameserver.model.VehiclePathPoint;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.L2AirShipInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.network.PacketReader;
 
-public class MoveToLocationAirShip extends L2GameClientPacket
+public class MoveToLocationAirShip implements IGameClientPacket
 {
-	private static final String _C__D0_38_MOVETOLOCATIONAIRSHIP = "[C] D0:38 MoveToLocationAirShip";
-	
 	public static final int MIN_Z = -895;
 	public static final int MAX_Z = 6105;
 	public static final int STEP = 300;
@@ -40,20 +40,21 @@ public class MoveToLocationAirShip extends L2GameClientPacket
 	private int _param2 = 0;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_command = readD();
-		_param1 = readD();
-		if (_buf.remaining() > 0)
+		_command = packet.readD();
+		_param1 = packet.readD();
+		if (packet.getReadableBytes() > 0)
 		{
-			_param2 = readD();
+			_param2 = packet.readD();
 		}
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -140,11 +141,5 @@ public class MoveToLocationAirShip extends L2GameClientPacket
 				ship.executePath(dst);
 				break;
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_38_MOVETOLOCATIONAIRSHIP;
 	}
 }

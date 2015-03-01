@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class ExRegenMax extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class ExRegenMax implements IGameServerPacket
 {
 	private final int _time;
 	private final int _tickInterval;
@@ -32,13 +35,14 @@ public class ExRegenMax extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xfe);
-		writeH(0x01);
-		writeD(1);
-		writeD(_time);
-		writeD(_tickInterval);
-		writeF(_amountPerTick);
+		OutgoingPackets.EX_REGEN_MAX.writeId(packet);
+		
+		packet.writeD(1);
+		packet.writeD(_time);
+		packet.writeD(_tickInterval);
+		packet.writeF(_amountPerTick);
+		return true;
 	}
 }

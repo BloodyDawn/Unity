@@ -18,12 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets.adenadistribution;
 
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class ExDivideAdenaDone extends L2GameServerPacket
+public class ExDivideAdenaDone implements IGameServerPacket
 {
 	private final long _adenaCount;
 	private final long _distributedAdenaCount;
@@ -39,16 +41,16 @@ public class ExDivideAdenaDone extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x15D);
+		OutgoingPackets.EX_DIVIDE_ADENA_DONE.writeId(packet);
 		
-		writeC(0x00); // TODO: Find me / type ??
-		writeC(0x00); // TODO: Find me
-		writeD(_memberCount);
-		writeQ(_distributedAdenaCount);
-		writeQ(_adenaCount);
-		writeS(_distributorName);
+		packet.writeC(0x00); // TODO: Find me / type ??
+		packet.writeC(0x00); // TODO: Find me
+		packet.writeD(_memberCount);
+		packet.writeQ(_distributedAdenaCount);
+		packet.writeQ(_adenaCount);
+		packet.writeS(_distributorName);
+		return true;
 	}
 }

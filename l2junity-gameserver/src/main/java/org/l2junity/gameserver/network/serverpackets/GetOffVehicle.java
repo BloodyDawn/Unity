@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author Maktakien
  */
-public class GetOffVehicle extends L2GameServerPacket
+public class GetOffVehicle implements IGameServerPacket
 {
 	private final int _charObjId, _boatObjId, _x, _y, _z;
 	
@@ -42,13 +45,15 @@ public class GetOffVehicle extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x6f);
-		writeD(_charObjId);
-		writeD(_boatObjId);
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
+		OutgoingPackets.GET_OFF_VEHICLE.writeId(packet);
+		
+		packet.writeD(_charObjId);
+		packet.writeD(_boatObjId);
+		packet.writeD(_x);
+		packet.writeD(_y);
+		packet.writeD(_z);
+		return true;
 	}
 }

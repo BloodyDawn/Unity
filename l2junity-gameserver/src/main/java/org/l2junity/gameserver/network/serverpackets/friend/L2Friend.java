@@ -20,14 +20,16 @@ package org.l2junity.gameserver.network.serverpackets.friend;
 
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * Support for "Chat with Friends" dialog. <br />
  * Add new friend or delete.
  * @author JIV
  */
-public class L2Friend extends L2GameServerPacket
+public class L2Friend implements IGameServerPacket
 {
 	private final boolean _action, _online;
 	private final int _objid;
@@ -46,14 +48,15 @@ public class L2Friend extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x76);
-		writeD(_action ? 1 : 3); // 1-add 3-remove
-		writeD(_objid);
-		writeS(_name);
-		writeD(_online ? 1 : 0);
-		writeD(_online ? _objid : 0);
+		OutgoingPackets.L2_FRIEND.writeId(packet);
 		
+		packet.writeD(_action ? 1 : 3); // 1-add 3-remove
+		packet.writeD(_objid);
+		packet.writeS(_name);
+		packet.writeD(_online ? 1 : 0);
+		packet.writeD(_online ? _objid : 0);
+		return true;
 	}
 }

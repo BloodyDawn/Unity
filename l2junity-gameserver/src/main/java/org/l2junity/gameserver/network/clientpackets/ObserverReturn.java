@@ -19,38 +19,34 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.7.4.4 $ $Date: 2005/03/27 18:46:19 $
  */
-public final class ObserverReturn extends L2GameClientPacket
+public final class ObserverReturn implements IGameClientPacket
 {
-	private static final String __C__C1_OBSERVERRETURN = "[C] C1 ObserverReturn";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
+		
 		if (activeChar.inObserverMode())
 		{
 			activeChar.leaveObserverMode();
 			// activeChar.teleToLocation(activeChar.getObsX(), activeChar.getObsY(), activeChar.getObsZ());
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return __C__C1_OBSERVERRETURN;
 	}
 }

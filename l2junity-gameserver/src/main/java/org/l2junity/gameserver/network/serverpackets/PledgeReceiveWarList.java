@@ -22,11 +22,13 @@ import java.util.List;
 
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.model.L2Clan;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author -Wooden-
  */
-public class PledgeReceiveWarList extends L2GameServerPacket
+public class PledgeReceiveWarList implements IGameServerPacket
 {
 	private final L2Clan _clan;
 	private final int _tab;
@@ -40,13 +42,12 @@ public class PledgeReceiveWarList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x40);
+		OutgoingPackets.PLEDGE_RECEIVE_WAR_LIST.writeId(packet);
 		
-		writeD(_tab); // page
-		writeD(_clanList.size());
+		packet.writeD(_tab); // page
+		packet.writeD(_clanList.size());
 		for (Integer clanId : _clanList)
 		{
 			final L2Clan clan = ClanTable.getInstance().getClan(clanId);
@@ -56,12 +57,13 @@ public class PledgeReceiveWarList extends L2GameServerPacket
 				continue;
 			}
 			
-			writeS(clan.getName());
-			writeD(0x00); // type: 0 = Declaration, 1 = Blood Declaration, 2 = In War, 3 = Victory, 4 = Defeat, 5 = Tie, 6 = Error
-			writeD(0x00); // Time if friends to start remaining
-			writeD(0x00); // Score
-			writeD(0x00); // Recent change in points
-			writeD(0x00); // Friends to start war left
+			packet.writeS(clan.getName());
+			packet.writeD(0x00); // type: 0 = Declaration, 1 = Blood Declaration, 2 = In War, 3 = Victory, 4 = Defeat, 5 = Tie, 6 = Error
+			packet.writeD(0x00); // Time if friends to start remaining
+			packet.writeD(0x00); // Score
+			packet.writeD(0x00); // Recent change in points
+			packet.writeD(0x00); // Friends to start war left
 		}
+		return true;
 	}
 }

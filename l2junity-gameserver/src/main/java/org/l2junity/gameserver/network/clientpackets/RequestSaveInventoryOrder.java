@@ -25,38 +25,39 @@ import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format:(ch) d[dd]
  * @author -Wooden-
  */
-public final class RequestSaveInventoryOrder extends L2GameClientPacket
+public final class RequestSaveInventoryOrder implements IGameClientPacket
 {
-	private static final String _C__D0_24_REQUESTSAVEINVENTORYORDER = "[C] D0:24 RequestSaveInventoryOrder";
-	
 	private List<InventoryOrder> _order;
 	
 	/** client limit */
 	private static final int LIMIT = 125;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		int sz = readD();
+		int sz = packet.readD();
 		sz = Math.min(sz, LIMIT);
 		_order = new ArrayList<>(sz);
 		for (int i = 0; i < sz; i++)
 		{
-			int objectId = readD();
-			int order = readD();
+			int objectId = packet.readD();
+			int order = packet.readD();
 			_order.add(new InventoryOrder(objectId, order));
 		}
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance player = getClient().getActiveChar();
+		PlayerInstance player = client.getActiveChar();
 		if (player != null)
 		{
 			Inventory inventory = player.getInventory();
@@ -82,17 +83,5 @@ public final class RequestSaveInventoryOrder extends L2GameClientPacket
 			objectID = id;
 			order = ord;
 		}
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_24_REQUESTSAVEINVENTORYORDER;
 	}
 }

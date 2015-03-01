@@ -18,29 +18,24 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
+
 /**
  * Format: (c) (no data, trigger)
  * @author -Wooden-
  */
-public class RequestSiegeInfo extends L2GameClientPacket
+public class RequestSiegeInfo implements IGameClientPacket
 {
-	private static final String _C__58_REQUESTSIEGEINFO = "[C] 58 RequestSiegeInfo";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// trigger
+		return false;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		// TODO this
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__58_REQUESTSIEGEINFO;
 	}
 }

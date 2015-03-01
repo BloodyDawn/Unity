@@ -18,13 +18,14 @@
  */
 package org.l2junity.gameserver.network;
 
+import io.netty.channel.Channel;
+import io.netty.channel.ChannelHandlerContext;
+
 import java.net.InetAddress;
-import java.net.UnknownHostException;
-import java.nio.ByteBuffer;
+import java.net.InetSocketAddress;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Future;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ScheduledFuture;
@@ -44,49 +45,37 @@ import org.l2junity.gameserver.data.xml.impl.SecondaryAuthData;
 import org.l2junity.gameserver.instancemanager.AntiFeedManager;
 import org.l2junity.gameserver.model.CharSelectInfoPackage;
 import org.l2junity.gameserver.model.L2Clan;
-import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.L2Event;
 import org.l2junity.gameserver.model.olympiad.OlympiadManager;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.network.client.ConnectionState;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
 import org.l2junity.gameserver.network.serverpackets.ServerClose;
+import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.security.SecondaryPasswordAuth;
 import org.l2junity.gameserver.util.FloodProtectors;
 import org.l2junity.gameserver.util.Util;
-import org.mmocore.network.MMOClient;
-import org.mmocore.network.MMOConnection;
-import org.mmocore.network.ReceivablePacket;
+import org.l2junity.network.ChannelInboundHandler;
+import org.l2junity.network.ICrypt;
+import org.l2junity.network.IIncomingPacket;
+import org.l2junity.network.IOutgoingPacket;
 
 /**
  * Represents a client connected on Game Server.
  * @author KenM
  */
-public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> implements Runnable
+public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 {
 	protected static final Logger _log = Logger.getLogger(L2GameClient.class.getName());
 	protected static final Logger _logAccounting = Logger.getLogger("accounting");
 	
-	/**
-	 * @author KenM
-	 */
-	public static enum GameClientState
-	{
-		/** Client has just connected . */
-		CONNECTED,
-		/** Client has authed but doesn't has character attached to it yet. */
-		AUTHED,
-		/** Client has selected a char and is in game. */
-		IN_GAME
-	}
-	
-	private GameClientState _state;
-	
 	// Info
-	private final InetAddress _addr;
+	private InetAddress _addr;
+	private Channel _channel;
 	private String _accountName;
 	private SessionKey _sessionId;
 	private PlayerInstance _activeChar;
@@ -104,31 +93,19 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	protected final ScheduledFuture<?> _autoSaveInDB;
 	protected ScheduledFuture<?> _cleanupTask = null;
 	
-	private L2GameServerPacket _aditionalClosePacket;
-	
 	// Crypt
 	private final GameCrypt _crypt;
-	
-	private final ClientStats _stats;
 	
 	private boolean _isDetached = false;
 	
 	private boolean _protocol;
 	
-	private final ArrayBlockingQueue<ReceivablePacket<L2GameClient>> _packetQueue;
-	private final ReentrantLock _queueLock = new ReentrantLock();
-	
 	private int[][] trace;
 	
-	public L2GameClient(MMOConnection<L2GameClient> con)
+	public L2GameClient()
 	{
-		super(con);
-		_state = GameClientState.CONNECTED;
 		_connectionStartTime = System.currentTimeMillis();
 		_crypt = new GameCrypt();
-		_stats = new ClientStats();
-		
-		_packetQueue = new ArrayBlockingQueue<>(Config.CLIENT_PACKET_QUEUE_SIZE);
 		
 		if (Config.CHAR_STORE_INTERVAL > 0)
 		{
@@ -138,15 +115,60 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		{
 			_autoSaveInDB = null;
 		}
+	}
+	
+	@Override
+	public void channelActive(ChannelHandlerContext ctx)
+	{
+		super.channelActive(ctx);
 		
+		setConnectionState(ConnectionState.CONNECTED);
+		final InetSocketAddress address = (InetSocketAddress) ctx.channel().remoteAddress();
+		_addr = address.getAddress();
+		_channel = ctx.channel();
+		
+		_log.info("Client Connected: " + ctx.channel());
+	}
+	
+	@Override
+	public void channelInactive(ChannelHandlerContext ctx)
+	{
+		_log.info("Client Disconnected: " + ctx.channel());
+		
+		// no long running tasks here, do it async
 		try
 		{
-			_addr = con != null ? con.getInetAddress() : InetAddress.getLocalHost();
+			ThreadPoolManager.getInstance().executeGeneral(new DisconnectTask());
 		}
-		catch (UnknownHostException e)
+		catch (RejectedExecutionException e)
 		{
-			throw new Error("Unable to determine localhost address.");
+			// server is closing
 		}
+	}
+	
+	@Override
+	protected void messageReceived(ChannelHandlerContext ctx, IIncomingPacket<L2GameClient> packet)
+	{
+		_log.info(packet.getClass().getSimpleName() + " packet from: " + ctx.channel());
+		try
+		{
+			packet.run(this);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause)
+	{
+		cause.printStackTrace();
+	}
+	
+	public Channel getChannel()
+	{
+		return _channel;
 	}
 	
 	public byte[] enableCrypt()
@@ -154,25 +176,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		byte[] key = BlowFishKeygen.getRandomKey();
 		_crypt.setKey(key);
 		return key;
-	}
-	
-	public GameClientState getState()
-	{
-		return _state;
-	}
-	
-	public void setState(GameClientState pState)
-	{
-		if (_state != pState)
-		{
-			_state = pState;
-			_packetQueue.clear();
-		}
-	}
-	
-	public ClientStats getStats()
-	{
-		return _stats;
 	}
 	
 	/**
@@ -189,21 +192,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		return _connectionStartTime;
 	}
 	
-	@Override
-	public boolean decrypt(ByteBuffer buf, int size)
-	{
-		_crypt.decrypt(buf.array(), buf.position(), size);
-		return true;
-	}
-	
-	@Override
-	public boolean encrypt(final ByteBuffer buf, final int size)
-	{
-		_crypt.encrypt(buf.array(), buf.position(), size);
-		buf.position(buf.position() + size);
-		return true;
-	}
-	
 	public PlayerInstance getActiveChar()
 	{
 		return _activeChar;
@@ -212,10 +200,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	public void setActiveChar(PlayerInstance pActiveChar)
 	{
 		_activeChar = pActiveChar;
-		// JIV remove - done on spawn
-		/*
-		 * if (_activeChar != null) { L2World.getInstance().storeObject(getActiveChar()); }
-		 */
 	}
 	
 	public ReentrantLock getActiveCharLock()
@@ -263,21 +247,26 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		return _sessionId;
 	}
 	
-	public void sendPacket(L2GameServerPacket gsp)
+	public void sendPacket(IGameServerPacket packet)
 	{
-		if (_isDetached || (gsp == null))
+		if (_isDetached || (packet == null))
 		{
 			return;
 		}
 		
-		// Packets from invisible chars sends only to GMs
-		if (gsp.isInvisible() && (getActiveChar() != null) && !getActiveChar().canOverrideCond(PcCondOverride.SEE_ALL_PLAYERS))
-		{
-			return;
-		}
+		// Write into the channel.
+		_channel.writeAndFlush(packet);
 		
-		getConnection().sendPacket(gsp);
-		gsp.runImpl();
+		// Run packet implementation.
+		packet.runImpl(getActiveChar());
+	}
+	
+	/**
+	 * @param smId
+	 */
+	public void sendPacket(SystemMessageId smId)
+	{
+		sendPacket(SystemMessage.getSystemMessage(smId));
 	}
 	
 	public boolean isDetached()
@@ -645,33 +634,10 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		return _secondaryAuth;
 	}
 	
-	public void close(L2GameServerPacket gsp)
+	public void close(IOutgoingPacket packet)
 	{
-		if (getConnection() == null)
-		{
-			return; // ofline shop
-		}
-		if (_aditionalClosePacket != null)
-		{
-			getConnection().close(new L2GameServerPacket[]
-			{
-				_aditionalClosePacket,
-				gsp
-			});
-		}
-		else
-		{
-			getConnection().close(gsp);
-		}
-	}
-	
-	public void close(L2GameServerPacket[] gspArray)
-	{
-		if (getConnection() == null)
-		{
-			return; // ofline shop
-		}
-		getConnection().close(gspArray);
+		_channel.writeAndFlush(packet);
+		_channel.close();
 	}
 	
 	/**
@@ -687,31 +653,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 			return -1;
 		}
 		return info.getObjectId();
-	}
-	
-	@Override
-	protected void onForcedDisconnection()
-	{
-		LogRecord record = new LogRecord(Level.WARNING, "Disconnected abnormally");
-		record.setParameters(new Object[]
-		{
-			this
-		});
-		_logAccounting.log(record);
-	}
-	
-	@Override
-	protected void onDisconnection()
-	{
-		// no long running tasks here, do it async
-		try
-		{
-			ThreadPoolManager.getInstance().executeGeneral(new DisconnectTask());
-		}
-		catch (RejectedExecutionException e)
-		{
-			// server is closing
-		}
 	}
 	
 	/**
@@ -739,12 +680,13 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	{
 		try
 		{
-			final InetAddress address = getConnection().getInetAddress();
-			switch (getState())
+			final InetAddress address = _addr;
+			ConnectionState state = (ConnectionState) getConnectionState();
+			switch (state)
 			{
 				case CONNECTED:
 					return "[IP: " + (address == null ? "disconnected" : address.getHostAddress()) + "]";
-				case AUTHED:
+				case AUTHENTICATED:
 					return "[Account: " + getAccountName() + " - IP: " + (address == null ? "disconnected" : address.getHostAddress()) + "]";
 				case IN_GAME:
 					return "[Character: " + (getActiveChar() == null ? "disconnected" : getActiveChar().getName() + "[" + getActiveChar().getObjectId() + "]") + " - Account: " + getAccountName() + " - IP: " + (address == null ? "disconnected" : address.getHostAddress()) + "]";
@@ -982,179 +924,6 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		return false;
 	}
 	
-	/**
-	 * True if detached, or flood detected, or queue overflow detected and queue still not empty.
-	 * @return false if client can receive packets.
-	 */
-	public boolean dropPacket()
-	{
-		if (_isDetached)
-		{
-			return true;
-		}
-		
-		// flood protection
-		if (getStats().countPacket(_packetQueue.size()))
-		{
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return true;
-		}
-		
-		return getStats().dropPacket();
-	}
-	
-	/**
-	 * Counts buffer underflow exceptions.
-	 */
-	public void onBufferUnderflow()
-	{
-		if (getStats().countUnderflowException())
-		{
-			_log.severe("Client " + toString() + " - Disconnected: Too many buffer underflow exceptions.");
-			closeNow();
-			return;
-		}
-		if (_state == GameClientState.CONNECTED) // in CONNECTED state kick client immediately
-		{
-			if (Config.PACKET_HANDLER_DEBUG)
-			{
-				_log.severe("Client " + toString() + " - Disconnected, too many buffer underflows in non-authed state.");
-			}
-			closeNow();
-		}
-	}
-	
-	/**
-	 * Counts unknown packets
-	 */
-	public void onUnknownPacket()
-	{
-		if (getStats().countUnknownPacket())
-		{
-			_log.severe("Client " + toString() + " - Disconnected: Too many unknown packets.");
-			closeNow();
-			return;
-		}
-		if (_state == GameClientState.CONNECTED) // in CONNECTED state kick client immediately
-		{
-			if (Config.PACKET_HANDLER_DEBUG)
-			{
-				_log.severe("Client " + toString() + " - Disconnected, too many unknown packets in non-authed state.");
-			}
-			closeNow();
-		}
-	}
-	
-	/**
-	 * Add packet to the queue and start worker thread if needed
-	 * @param packet
-	 */
-	public void execute(ReceivablePacket<L2GameClient> packet)
-	{
-		if (getStats().countFloods())
-		{
-			_log.severe("Client " + toString() + " - Disconnected, too many floods:" + getStats().longFloods + " long and " + getStats().shortFloods + " short.");
-			closeNow();
-			return;
-		}
-		
-		if (!_packetQueue.offer(packet))
-		{
-			if (getStats().countQueueOverflow())
-			{
-				_log.severe("Client " + toString() + " - Disconnected, too many queue overflows.");
-				closeNow();
-			}
-			else
-			{
-				sendPacket(ActionFailed.STATIC_PACKET);
-			}
-			return;
-		}
-		
-		if (_queueLock.isLocked())
-		{
-			return;
-		}
-		
-		try
-		{
-			if (_state == GameClientState.CONNECTED)
-			{
-				if (getStats().processedPackets > 3)
-				{
-					if (Config.PACKET_HANDLER_DEBUG)
-					{
-						_log.severe("Client " + toString() + " - Disconnected, too many packets in non-authed state.");
-					}
-					closeNow();
-					return;
-				}
-				ThreadPoolManager.getInstance().executeIOPacket(this);
-			}
-			else
-			{
-				ThreadPoolManager.getInstance().executePacket(this);
-			}
-		}
-		catch (RejectedExecutionException e)
-		{
-			// if the server is shutdown we ignore
-			if (!ThreadPoolManager.getInstance().isShutdown())
-			{
-				_log.severe("Failed executing: " + packet.getClass().getSimpleName() + " for Client: " + toString());
-			}
-		}
-	}
-	
-	@Override
-	public void run()
-	{
-		if (!_queueLock.tryLock())
-		{
-			return;
-		}
-		
-		try
-		{
-			int count = 0;
-			ReceivablePacket<L2GameClient> packet;
-			while (true)
-			{
-				packet = _packetQueue.poll();
-				if (packet == null)
-				{
-					return;
-				}
-				
-				if (_isDetached) // clear queue immediately after detach
-				{
-					_packetQueue.clear();
-					return;
-				}
-				
-				try
-				{
-					packet.run();
-				}
-				catch (Exception e)
-				{
-					_log.severe("Exception during execution " + packet.getClass().getSimpleName() + ", client: " + toString() + "," + e.getMessage());
-				}
-				
-				count++;
-				if (getStats().countBurst(count))
-				{
-					return;
-				}
-			}
-		}
-		finally
-		{
-			_queueLock.unlock();
-		}
-	}
-	
 	public void setClientTracert(int[][] tracert)
 	{
 		trace = tracert;
@@ -1176,8 +945,13 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		return false;
 	}
 	
-	public void setAditionalClosePacket(L2GameServerPacket aditionalClosePacket)
+	public void sendActionFailed()
 	{
-		_aditionalClosePacket = aditionalClosePacket;
+		sendPacket(ActionFailed.STATIC_PACKET);
+	}
+	
+	public ICrypt getCrypt()
+	{
+		return _crypt;
 	}
 }

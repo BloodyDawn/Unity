@@ -20,27 +20,28 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.Party.MessageType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.3.4.2 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestOustPartyMember extends L2GameClientPacket
+public final class RequestOustPartyMember implements IGameClientPacket
 {
-	private static final String _C__45_REQUESTOUSTPARTYMEMBER = "[C] 45 RequestOustPartyMember";
-	
 	private String _name;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_name = readS();
+		_name = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -50,11 +51,5 @@ public final class RequestOustPartyMember extends L2GameClientPacket
 		{
 			activeChar.getParty().removePartyMember(_name, MessageType.EXPELLED);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__45_REQUESTOUSTPARTYMEMBER;
 	}
 }

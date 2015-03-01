@@ -19,8 +19,10 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.enums.PartyDistributionType;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class AskJoinParty extends L2GameServerPacket
+public class AskJoinParty implements IGameServerPacket
 {
 	private final String _requestorName;
 	private final PartyDistributionType _partyDistributionType;
@@ -36,10 +38,12 @@ public class AskJoinParty extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x39);
-		writeS(_requestorName);
-		writeD(_partyDistributionType.getId());
+		OutgoingPackets.ASK_JOIN_PARTY.writeId(packet);
+		
+		packet.writeS(_requestorName);
+		packet.writeD(_partyDistributionType.getId());
+		return true;
 	}
 }

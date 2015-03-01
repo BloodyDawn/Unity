@@ -38,7 +38,7 @@ import org.l2junity.gameserver.model.events.impl.olympiad.OnOlympiadMatchResult;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExOlympiadMatchResult;
 import org.l2junity.gameserver.network.serverpackets.ExOlympiadUserInfo;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
 /**
@@ -120,7 +120,7 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 	}
 	
 	@Override
-	protected final void broadcastPacket(L2GameServerPacket packet)
+	protected final void broadcastPacket(IGameServerPacket packet)
 	{
 		if (_playerOne.updatePlayer())
 		{

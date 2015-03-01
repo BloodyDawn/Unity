@@ -26,33 +26,34 @@ import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.network.serverpackets.friend.FriendRemove;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.3.4.2 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestFriendDel extends L2GameClientPacket
+public final class RequestFriendDel implements IGameClientPacket
 {
-	private static final String _C__7A_REQUESTFRIENDDEL = "[C] 7A RequestFriendDel";
-	
 	private String _name;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_name = readS();
+		_name = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		SystemMessage sm;
 		
-		PlayerInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -104,11 +105,5 @@ public final class RequestFriendDel extends L2GameClientPacket
 		{
 			_log.log(Level.WARNING, "could not del friend objectid: ", e);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__7A_REQUESTFRIENDDEL;
 	}
 }

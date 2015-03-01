@@ -23,12 +23,14 @@ import java.util.List;
 import org.l2junity.gameserver.enums.SayuneType;
 import org.l2junity.gameserver.model.SayuneEntry;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class ExFlyMove extends L2GameServerPacket
+public class ExFlyMove implements IGameServerPacket
 {
 	private final int _objectId;
 	private final SayuneType _type;
@@ -44,22 +46,25 @@ public class ExFlyMove extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xE8);
-		writeD(_objectId);
+		OutgoingPackets.EX_FLY_MOVE.writeId(packet);
 		
-		writeD(_type.ordinal());
-		writeD(0x00); // ??
-		writeD(_mapId);
+		packet.writeD(_objectId);
 		
-		writeD(_locations.size());
+		packet.writeD(_type.ordinal());
+		packet.writeD(0x00); // ??
+		packet.writeD(_mapId);
+		
+		packet.writeD(_locations.size());
 		for (SayuneEntry loc : _locations)
 		{
-			writeD(loc.getId());
-			writeD(0x00); // ??
-			writeLoc(loc);
+			packet.writeD(loc.getId());
+			packet.writeD(0x00); // ??
+			packet.writeD(loc.getX());
+			packet.writeD(loc.getY());
+			packet.writeD(loc.getZ());
 		}
+		return true;
 	}
 }

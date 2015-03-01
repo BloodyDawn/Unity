@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.L2BoatInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
 
 public class BoatManager
 {
@@ -160,7 +160,7 @@ public class BoatManager
 	 * @param point2
 	 * @param packet
 	 */
-	public void broadcastPacket(VehiclePathPoint point1, VehiclePathPoint point2, L2GameServerPacket packet)
+	public void broadcastPacket(VehiclePathPoint point1, VehiclePathPoint point2, IGameServerPacket packet)
 	{
 		broadcastPacketsToPlayers(point1, point2, packet);
 	}
@@ -171,12 +171,12 @@ public class BoatManager
 	 * @param point2
 	 * @param packets
 	 */
-	public void broadcastPackets(VehiclePathPoint point1, VehiclePathPoint point2, L2GameServerPacket... packets)
+	public void broadcastPackets(VehiclePathPoint point1, VehiclePathPoint point2, IGameServerPacket... packets)
 	{
 		broadcastPacketsToPlayers(point1, point2, packets);
 	}
 	
-	private void broadcastPacketsToPlayers(VehiclePathPoint point1, VehiclePathPoint point2, L2GameServerPacket... packets)
+	private void broadcastPacketsToPlayers(VehiclePathPoint point1, VehiclePathPoint point2, IGameServerPacket... packets)
 	{
 		for (PlayerInstance player : World.getInstance().getPlayers())
 		{
@@ -184,7 +184,7 @@ public class BoatManager
 			double dy = (double) player.getY() - point1.getY();
 			if (Math.sqrt((dx * dx) + (dy * dy)) < Config.BOAT_BROADCAST_RADIUS)
 			{
-				for (L2GameServerPacket p : packets)
+				for (IGameServerPacket p : packets)
 				{
 					player.sendPacket(p);
 				}
@@ -195,7 +195,7 @@ public class BoatManager
 				dy = (double) player.getY() - point2.getY();
 				if (Math.sqrt((dx * dx) + (dy * dy)) < Config.BOAT_BROADCAST_RADIUS)
 				{
-					for (L2GameServerPacket p : packets)
+					for (IGameServerPacket p : packets)
 					{
 						player.sendPacket(p);
 					}

@@ -23,20 +23,22 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.List;
 
+import javolution.util.FastList;
+
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
-
-import javolution.util.FastList;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * Support for "Chat with Friends" dialog. <br />
  * This packet is sent only at login.
  * @author mrTJO, UnAfraid
  */
-public class FriendList extends L2GameServerPacket
+public class FriendList implements IGameServerPacket
 {
 	private final List<FriendInfo> _info;
 	
@@ -104,18 +106,20 @@ public class FriendList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x58);
-		writeD(_info.size());
+		OutgoingPackets.FRIEND_LIST.writeId(packet);
+		
+		packet.writeD(_info.size());
 		for (FriendInfo info : _info)
 		{
-			writeD(info._objId); // character id
-			writeS(info._name);
-			writeD(info._online ? 0x01 : 0x00); // online
-			writeD(info._online ? info._objId : 0x00); // object id if online
-			writeD(info._classid);
-			writeD(info._level);
+			packet.writeD(info._objId); // character id
+			packet.writeS(info._name);
+			packet.writeD(info._online ? 0x01 : 0x00); // online
+			packet.writeD(info._online ? info._objId : 0x00); // object id if online
+			packet.writeD(info._classid);
+			packet.writeD(info._level);
 		}
+		return true;
 	}
 }

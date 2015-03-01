@@ -30,7 +30,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.serverpackets.CharInfo;
 import org.l2junity.gameserver.network.serverpackets.CreatureSay;
 import org.l2junity.gameserver.network.serverpackets.ExShowScreenMessage;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
 import org.l2junity.gameserver.network.serverpackets.RelationChanged;
 
 /**
@@ -50,7 +50,7 @@ public final class Broadcast
 	 * @param character
 	 * @param mov
 	 */
-	public static void toPlayersTargettingMyself(Creature character, L2GameServerPacket mov)
+	public static void toPlayersTargettingMyself(Creature character, IGameServerPacket mov)
 	{
 		Collection<PlayerInstance> plrs = character.getKnownList().getKnownPlayers().values();
 		for (PlayerInstance player : plrs)
@@ -74,7 +74,7 @@ public final class Broadcast
 	 * @param character
 	 * @param mov
 	 */
-	public static void toKnownPlayers(Creature character, L2GameServerPacket mov)
+	public static void toKnownPlayers(Creature character, IGameServerPacket mov)
 	{
 		final Collection<PlayerInstance> plrs = character.getKnownList().getKnownPlayers().values();
 		for (PlayerInstance player : plrs)
@@ -129,7 +129,7 @@ public final class Broadcast
 	 * @param mov
 	 * @param radius
 	 */
-	public static void toKnownPlayersInRadius(Creature character, L2GameServerPacket mov, int radius)
+	public static void toKnownPlayersInRadius(Creature character, IGameServerPacket mov, int radius)
 	{
 		if (radius < 0)
 		{
@@ -154,7 +154,7 @@ public final class Broadcast
 	 * @param character
 	 * @param mov
 	 */
-	public static void toSelfAndKnownPlayers(Creature character, L2GameServerPacket mov)
+	public static void toSelfAndKnownPlayers(Creature character, IGameServerPacket mov)
 	{
 		if (character instanceof PlayerInstance)
 		{
@@ -165,7 +165,7 @@ public final class Broadcast
 	}
 	
 	// To improve performance we are comparing values of radius^2 instead of calculating sqrt all the time
-	public static void toSelfAndKnownPlayersInRadius(Creature character, L2GameServerPacket mov, int radius)
+	public static void toSelfAndKnownPlayersInRadius(Creature character, IGameServerPacket mov, int radius)
 	{
 		if (radius < 0)
 		{
@@ -194,7 +194,7 @@ public final class Broadcast
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method DOESN'T SEND Server->Client packet to this L2Character (to do this use method toSelfAndKnownPlayers)</B></FONT><BR>
 	 * @param packet
 	 */
-	public static void toAllOnlinePlayers(L2GameServerPacket packet)
+	public static void toAllOnlinePlayers(IGameServerPacket packet)
 	{
 		for (PlayerInstance player : World.getInstance().getPlayers())
 		{
@@ -215,7 +215,7 @@ public final class Broadcast
 		toAllOnlinePlayers(new CreatureSay(0, isCritical ? ChatType.CRITICAL_ANNOUNCE : ChatType.ANNOUNCEMENT, "", text));
 	}
 	
-	public static void toPlayersInInstance(L2GameServerPacket packet, int instanceId)
+	public static void toPlayersInInstance(IGameServerPacket packet, int instanceId)
 	{
 		for (PlayerInstance player : World.getInstance().getPlayers())
 		{

@@ -18,12 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets.compound;
 
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class ExEnchantOneRemoveFail extends L2GameServerPacket
+public class ExEnchantOneRemoveFail implements IGameServerPacket
 {
 	public static final ExEnchantOneRemoveFail STATIC_PACKET = new ExEnchantOneRemoveFail();
 	
@@ -32,9 +34,9 @@ public class ExEnchantOneRemoveFail extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x16B);
+		OutgoingPackets.EX_ENCHANT_ONE_REMOVE_FAIL.writeId(packet);
+		return true;
 	}
 }

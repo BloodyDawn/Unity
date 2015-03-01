@@ -19,11 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.enums.PartyDistributionType;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author JIV
  */
-public class ExSetPartyLooting extends L2GameServerPacket
+public class ExSetPartyLooting implements IGameServerPacket
 {
 	private final int _result;
 	private final PartyDistributionType _partyDistributionType;
@@ -35,11 +37,12 @@ public class ExSetPartyLooting extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xC1);
-		writeD(_result);
-		writeD(_partyDistributionType.getId());
+		OutgoingPackets.EX_SET_PARTY_LOOTING.writeId(packet);
+		
+		packet.writeD(_result);
+		packet.writeD(_partyDistributionType.getId());
+		return true;
 	}
 }

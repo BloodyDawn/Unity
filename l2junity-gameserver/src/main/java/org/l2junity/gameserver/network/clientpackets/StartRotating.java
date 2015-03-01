@@ -19,51 +19,43 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.StartRotation;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.1.4.3 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class StartRotating extends L2GameClientPacket
+public final class StartRotating implements IGameClientPacket
 {
-	private static final String _C__5B_STARTROTATING = "[C] 5B StartRotating";
-	
 	private int _degree;
 	private int _side;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_degree = readD();
-		_side = readD();
+		_degree = packet.readD();
+		_side = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
-		final StartRotation br;
 		if (activeChar.isInAirShip() && activeChar.getAirShip().isCaptain(activeChar))
 		{
-			br = new StartRotation(activeChar.getAirShip().getObjectId(), _degree, _side, 0);
-			activeChar.getAirShip().broadcastPacket(br);
+			activeChar.getAirShip().broadcastPacket(new StartRotation(activeChar.getAirShip().getObjectId(), _degree, _side, 0));
 		}
 		else
 		{
-			br = new StartRotation(activeChar.getObjectId(), _degree, _side, 0);
-			activeChar.broadcastPacket(br);
+			activeChar.broadcastPacket(new StartRotation(activeChar.getObjectId(), _degree, _side, 0));
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__5B_STARTROTATING;
 	}
 }

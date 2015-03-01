@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author -Wooden-
  */
-public class ExRestartClient extends L2GameServerPacket
+public class ExRestartClient implements IGameServerPacket
 {
 	public static final ExRestartClient STATIC_PACKET = new ExRestartClient();
 	
@@ -30,9 +33,10 @@ public class ExRestartClient extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x49);
+		OutgoingPackets.EX_RESTART_CLIENT.writeId(packet);
+		
+		return true;
 	}
 }

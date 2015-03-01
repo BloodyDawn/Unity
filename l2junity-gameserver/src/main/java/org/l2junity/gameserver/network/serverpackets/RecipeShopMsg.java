@@ -19,8 +19,10 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class RecipeShopMsg extends L2GameServerPacket
+public class RecipeShopMsg implements IGameServerPacket
 {
 	private final PlayerInstance _activeChar;
 	
@@ -30,10 +32,12 @@ public class RecipeShopMsg extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xE1);
-		writeD(_activeChar.getObjectId());
-		writeS(_activeChar.getStoreName());
+		OutgoingPackets.RECIPE_SHOP_MSG.writeId(packet);
+		
+		packet.writeD(_activeChar.getObjectId());
+		packet.writeS(_activeChar.getStoreName());
+		return true;
 	}
 }

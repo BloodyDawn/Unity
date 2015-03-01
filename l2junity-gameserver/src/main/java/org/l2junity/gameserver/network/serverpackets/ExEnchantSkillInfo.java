@@ -24,8 +24,10 @@ import java.util.List;
 import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
 import org.l2junity.gameserver.model.EnchantSkillGroup.EnchantSkillHolder;
 import org.l2junity.gameserver.model.EnchantSkillLearn;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public final class ExEnchantSkillInfo extends L2GameServerPacket
+public final class ExEnchantSkillInfo implements IGameServerPacket
 {
 	private final List<Integer> _routes = new LinkedList<>(); // skill lvls for each route
 	
@@ -83,18 +85,16 @@ public final class ExEnchantSkillInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x2A);
-		writeD(_id);
-		writeD(_lvl);
-		writeD(_maxEnchanted ? 0 : 1);
-		writeD(_lvl > 100 ? 1 : 0); // enchanted?
-		writeD(_routes.size());
-		for (int level : _routes)
-		{
-			writeD(level);
-		}
+		OutgoingPackets.EX_ENCHANT_SKILL_INFO.writeId(packet);
+		
+		packet.writeD(_id);
+		packet.writeD(_lvl);
+		packet.writeD(_maxEnchanted ? 0 : 1);
+		packet.writeD(_lvl > 100 ? 1 : 0); // enchanted?
+		packet.writeD(_routes.size());
+		_routes.forEach(packet::writeD);
+		return true;
 	}
 }

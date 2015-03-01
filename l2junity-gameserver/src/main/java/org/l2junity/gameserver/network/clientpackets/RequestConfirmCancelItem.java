@@ -21,29 +21,31 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExPutItemResultForVariationCancel;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format(ch) d
  * @author -Wooden-
  */
-public final class RequestConfirmCancelItem extends L2GameClientPacket
+public final class RequestConfirmCancelItem implements IGameClientPacket
 {
-	private static final String _C__D0_42_REQUESTCONFIRMCANCELITEM = "[C] D0:42 RequestConfirmCancelItem";
 	private int _objectId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_objectId = readD();
+		_objectId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -56,7 +58,7 @@ public final class RequestConfirmCancelItem extends L2GameClientPacket
 		
 		if (item.getOwnerId() != activeChar.getObjectId())
 		{
-			Util.handleIllegalPlayerAction(getClient().getActiveChar(), "Warning!! Character " + getClient().getActiveChar().getName() + " of account " + getClient().getActiveChar().getAccountName() + " tryied to destroy augment on item that doesn't own.", Config.DEFAULT_PUNISH);
+			Util.handleIllegalPlayerAction(client.getActiveChar(), "Warning!! Character " + client.getActiveChar().getName() + " of account " + client.getActiveChar().getAccountName() + " tryied to destroy augment on item that doesn't own.", Config.DEFAULT_PUNISH);
 			return;
 		}
 		
@@ -127,11 +129,5 @@ public final class RequestConfirmCancelItem extends L2GameClientPacket
 		}
 		
 		activeChar.sendPacket(new ExPutItemResultForVariationCancel(item, price));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_42_REQUESTCONFIRMCANCELITEM;
 	}
 }

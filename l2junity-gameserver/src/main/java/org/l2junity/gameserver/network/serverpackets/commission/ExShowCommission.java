@@ -18,12 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets.commission;
 
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author NosBit
  */
-public class ExShowCommission extends L2GameServerPacket
+public class ExShowCommission implements IGameServerPacket
 {
 	public static final ExShowCommission STATIC_PACKET = new ExShowCommission();
 	
@@ -32,10 +34,11 @@ public class ExShowCommission extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xF2);
-		writeD(1);
+		OutgoingPackets.EX_SHOW_COMMISSION.writeId(packet);
+		
+		packet.writeD(0x01);
+		return true;
 	}
 }

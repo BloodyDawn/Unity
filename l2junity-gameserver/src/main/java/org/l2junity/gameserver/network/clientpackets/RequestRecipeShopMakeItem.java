@@ -22,38 +22,39 @@ import org.l2junity.gameserver.RecipeController;
 import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Administrator
  */
-public final class RequestRecipeShopMakeItem extends L2GameClientPacket
+public final class RequestRecipeShopMakeItem implements IGameClientPacket
 {
-	private static final String _C__BF_REQUESTRECIPESHOPMAKEITEM = "[C] BF RequestRecipeShopMakeItem";
-	
 	private int _id;
 	private int _recipeId;
 	@SuppressWarnings("unused")
 	private long _unknown;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_id = readD();
-		_recipeId = readD();
-		_unknown = readQ();
+		_id = packet.readD();
+		_recipeId = packet.readD();
+		_unknown = packet.readQ();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
-		if (!getClient().getFloodProtectors().getManufacture().tryPerformAction("RecipeShopMake"))
+		if (!client.getFloodProtectors().getManufacture().tryPerformAction("RecipeShopMake"))
 		{
 			return;
 		}
@@ -89,11 +90,5 @@ public final class RequestRecipeShopMakeItem extends L2GameClientPacket
 		{
 			RecipeController.getInstance().requestManufactureItem(manufacturer, _recipeId, activeChar);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__BF_REQUESTRECIPESHOPMAKEITEM;
 	}
 }

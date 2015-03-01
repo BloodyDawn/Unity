@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author mochitto
  */
-public class ExNevitAdventPointInfoPacket extends L2GameServerPacket
+public class ExNevitAdventPointInfoPacket implements IGameServerPacket
 {
 	private final int _points;
 	
@@ -31,10 +34,11 @@ public class ExNevitAdventPointInfoPacket extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xDF);
-		writeD(_points); // 72 = 1%, max 7200 = 100%
+		OutgoingPackets.EX_BR_AGATHION_ENERGY_INFO.writeId(packet);
+		
+		packet.writeD(_points); // 72 = 1%, max 7200 = 100%
+		return true;
 	}
 }

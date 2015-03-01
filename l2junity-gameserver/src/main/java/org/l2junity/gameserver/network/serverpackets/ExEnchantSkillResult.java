@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author JIV
  */
-public class ExEnchantSkillResult extends L2GameServerPacket
+public class ExEnchantSkillResult implements IGameServerPacket
 {
 	private static final ExEnchantSkillResult STATIC_PACKET_TRUE = new ExEnchantSkillResult(true);
 	private static final ExEnchantSkillResult STATIC_PACKET_FALSE = new ExEnchantSkillResult(false);
@@ -39,10 +42,11 @@ public class ExEnchantSkillResult extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xA8);
-		writeD(_enchanted ? 1 : 0);
+		OutgoingPackets.EX_ENCHANT_SKILL_RESULT.writeId(packet);
+		
+		packet.writeD(_enchanted ? 1 : 0);
+		return true;
 	}
 }

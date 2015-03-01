@@ -18,21 +18,25 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author Sdw
  */
-public class ExRemoveEnchantSupportItemResult extends L2GameServerPacket
+public class ExRemoveEnchantSupportItemResult implements IGameServerPacket
 {
 	public static final ExRemoveEnchantSupportItemResult STATIC_PACKET = new ExRemoveEnchantSupportItemResult();
 	
-	public ExRemoveEnchantSupportItemResult()
+	private ExRemoveEnchantSupportItemResult()
 	{
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x153);
+		OutgoingPackets.EX_REMOVE_ENCHANT_SUPPORT_ITEM_RESULT.writeId(packet);
+		
+		return true;
 	}
 }

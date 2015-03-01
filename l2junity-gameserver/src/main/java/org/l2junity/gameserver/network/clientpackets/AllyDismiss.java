@@ -22,28 +22,30 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.network.PacketReader;
 
-public final class AllyDismiss extends L2GameClientPacket
+public final class AllyDismiss implements IGameClientPacket
 {
-	private static final String _C__8F_ALLYDISMISS = "[C] 8F AllyDismiss";
-	
 	private String _clanName;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_clanName = readS();
+		_clanName = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		if (_clanName == null)
 		{
 			return;
 		}
-		PlayerInstance player = getClient().getActiveChar();
+		
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -53,7 +55,7 @@ public final class AllyDismiss extends L2GameClientPacket
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_A_CLAN_MEMBER_AND_CANNOT_PERFORM_THIS_ACTION);
 			return;
 		}
-		L2Clan leaderClan = player.getClan();
+		final L2Clan leaderClan = player.getClan();
 		if (leaderClan.getAllyId() == 0)
 		{
 			player.sendPacket(SystemMessageId.YOU_ARE_NOT_CURRENTLY_ALLIED_WITH_ANY_CLANS);
@@ -92,11 +94,5 @@ public final class AllyDismiss extends L2GameClientPacket
 		clan.updateClanInDB();
 		
 		player.sendPacket(SystemMessageId.YOU_HAVE_SUCCEEDED_IN_EXPELLING_THE_CLAN);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__8F_ALLYDISMISS;
 	}
 }

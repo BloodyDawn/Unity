@@ -35,7 +35,7 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.CrystalType;
 import org.l2junity.gameserver.network.SystemMessageId;
 
-public abstract class AbstractRefinePacket extends L2GameClientPacket
+public abstract class AbstractRefinePacket implements IGameClientPacket
 {
 	public static final int GRADE_NONE = 0;
 	public static final int GRADE_MID = 1;

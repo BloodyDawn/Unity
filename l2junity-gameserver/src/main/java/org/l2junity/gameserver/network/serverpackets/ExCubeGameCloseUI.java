@@ -18,24 +18,27 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
+ * Close Minigame Waiting List
  * @author mrTJO
  */
-public class ExCubeGameCloseUI extends L2GameServerPacket
+public class ExCubeGameCloseUI implements IGameServerPacket
 {
-	/**
-	 * Close Minigame Waiting List
-	 */
-	public ExCubeGameCloseUI()
+	public static final ExCubeGameCloseUI STATIC_PACKET = new ExCubeGameCloseUI();
+	
+	private ExCubeGameCloseUI()
 	{
-		
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x98);
-		writeD(0xffffffff);
+		OutgoingPackets.EX_BLOCK_UP_SET_LIST.writeId(packet);
+		
+		packet.writeD(0xffffffff);
+		return true;
 	}
 }

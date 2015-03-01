@@ -26,13 +26,15 @@ import org.l2junity.gameserver.model.commission.CommissionItemType;
 import org.l2junity.gameserver.model.commission.CommissionTreeType;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.type.CrystalType;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.commission.ExCloseCommission;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author NosBit
  */
-public class RequestCommissionList extends L2GameClientPacket
+public class RequestCommissionList implements IGameClientPacket
 {
 	private int _treeViewDepth;
 	private int _itemType;
@@ -41,19 +43,20 @@ public class RequestCommissionList extends L2GameClientPacket
 	private String _query;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_treeViewDepth = readD();
-		_itemType = readD();
-		_type = readD();
-		_grade = readD();
-		_query = readS();
+		_treeViewDepth = packet.readD();
+		_itemType = packet.readD();
+		_type = packet.readD();
+		_grade = packet.readD();
+		_query = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -61,7 +64,7 @@ public class RequestCommissionList extends L2GameClientPacket
 		
 		if (!CommissionManager.isPlayerAllowedToInteract(player))
 		{
-			player.sendPacket(ExCloseCommission.STATIC_PACKET);
+			client.sendPacket(ExCloseCommission.STATIC_PACKET);
 			return;
 		}
 		
@@ -131,11 +134,5 @@ public class RequestCommissionList extends L2GameClientPacket
 		filter = filter.and(i -> _query.isEmpty() || i.getName().toLowerCase().contains(_query.toLowerCase()));
 		
 		CommissionManager.getInstance().showAuctions(player, filter);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
 	}
 }

@@ -34,34 +34,35 @@ import org.l2junity.gameserver.model.itemcontainer.PcInventory;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.CrystalType;
 import org.l2junity.gameserver.model.skills.CommonSkill;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.2.2.3.2.5 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestCrystallizeItem extends L2GameClientPacket
+public final class RequestCrystallizeItem implements IGameClientPacket
 {
-	private static final String _C__2F_REQUESTDCRYSTALLIZEITEM = "[C] 2F RequestCrystallizeItem";
-	
 	private int _objectId;
 	private long _count;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_objectId = readD();
-		_count = readQ();
+		_objectId = packet.readD();
+		_count = packet.readQ();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = client.getActiveChar();
 		
 		if (activeChar == null)
 		{
@@ -69,7 +70,7 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 			return;
 		}
 		
-		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("crystallize"))
+		if (!client.getFloodProtectors().getTransaction().tryPerformAction("crystallize"))
 		{
 			activeChar.sendMessage("You are crystallizing too fast.");
 			return;
@@ -83,18 +84,18 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 		
 		if ((activeChar.getPrivateStoreType() != PrivateStoreType.NONE) || !activeChar.isInCrystallize())
 		{
-			activeChar.sendPacket(SystemMessageId.WHILE_OPERATING_A_PRIVATE_STORE_OR_WORKSHOP_YOU_CANNOT_DISCARD_DESTROY_OR_TRADE_AN_ITEM);
+			client.sendPacket(SystemMessageId.WHILE_OPERATING_A_PRIVATE_STORE_OR_WORKSHOP_YOU_CANNOT_DISCARD_DESTROY_OR_TRADE_AN_ITEM);
 			return;
 		}
 		
 		int skillLevel = activeChar.getSkillLevel(CommonSkill.CRYSTALLIZE.getId());
 		if (skillLevel <= 0)
 		{
-			activeChar.sendPacket(SystemMessageId.YOU_MAY_NOT_CRYSTALLIZE_THIS_ITEM_YOUR_CRYSTALLIZATION_SKILL_LEVEL_IS_TOO_LOW);
-			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(SystemMessageId.YOU_MAY_NOT_CRYSTALLIZE_THIS_ITEM_YOUR_CRYSTALLIZATION_SKILL_LEVEL_IS_TOO_LOW);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			if ((activeChar.getRace() != Race.DWARF) && (activeChar.getClassId().ordinal() != 117) && (activeChar.getClassId().ordinal() != 55))
 			{
-				_log.info("Player " + activeChar.getClient() + " used crystalize with classid: " + activeChar.getClassId().ordinal());
+				_log.info("Player " + activeChar + " used crystalize with classid: " + activeChar.getClassId().ordinal());
 			}
 			return;
 		}
@@ -105,7 +106,7 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 			ItemInstance item = inventory.getItemByObjectId(_objectId);
 			if (item == null)
 			{
-				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+				client.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
 			
@@ -195,8 +196,8 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 		
 		if (!canCrystallize)
 		{
-			activeChar.sendPacket(SystemMessageId.YOU_MAY_NOT_CRYSTALLIZE_THIS_ITEM_YOUR_CRYSTALLIZATION_SKILL_LEVEL_IS_TOO_LOW);
-			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(SystemMessageId.YOU_MAY_NOT_CRYSTALLIZE_THIS_ITEM_YOUR_CRYSTALLIZATION_SKILL_LEVEL_IS_TOO_LOW);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
@@ -212,7 +213,7 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 			{
 				iu.addModifiedItem(item);
 			}
-			activeChar.sendPacket(iu);
+			client.sendPacket(iu);
 			
 			if (itemToRemove.getEnchantLevel() > 0)
 			{
@@ -225,7 +226,7 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HAS_BEEN_UNEQUIPPED);
 				sm.addItemName(itemToRemove);
 			}
-			activeChar.sendPacket(sm);
+			client.sendPacket(sm);
 		}
 		
 		// remove from inventory
@@ -233,7 +234,7 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 		
 		final InventoryUpdate iu = new InventoryUpdate();
 		iu.addRemovedItem(removedItem);
-		activeChar.sendPacket(iu);
+		client.sendPacket(iu);
 		
 		final int crystalId = itemToRemove.getItem().getCrystalItemId();
 		final int crystalAmount = itemToRemove.getCrystalCount();
@@ -258,24 +259,18 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 				sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_EARNED_S2_S1_S);
 				sm.addItemName(createdItem);
 				sm.addLong(holder.getCount());
-				activeChar.sendPacket(sm);
+				client.sendPacket(sm);
 			}
 		}
 		
 		sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HAS_BEEN_CRYSTALLIZED);
 		sm.addItemName(removedItem);
-		activeChar.sendPacket(sm);
+		client.sendPacket(sm);
 		
 		activeChar.broadcastUserInfo();
 		
 		World.getInstance().removeObject(removedItem);
 		
 		activeChar.setInCrystallize(false);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__2F_REQUESTDCRYSTALLIZEITEM;
 	}
 }

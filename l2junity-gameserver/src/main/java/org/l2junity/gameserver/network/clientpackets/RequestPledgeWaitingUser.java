@@ -21,51 +21,44 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.gameserver.instancemanager.ClanEntryManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.clan.entry.PledgeApplicantInfo;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExPledgeWaitingList;
 import org.l2junity.gameserver.network.serverpackets.ExPledgeWaitingUser;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Sdw
  */
-public class RequestPledgeWaitingUser extends L2GameClientPacket
+public class RequestPledgeWaitingUser implements IGameClientPacket
 {
-	private static final String _C__D0_DA_REQUESTPLEDGEDWAITINGUSER = "[C] D0;DA RequestPledgeWaitingUser";
-	
 	private int _clanId;
 	private int _playerId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_clanId = readD();
-		_playerId = readD();
+		_clanId = packet.readD();
+		_playerId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
-		
+		final PlayerInstance activeChar = client.getActiveChar();
 		if ((activeChar == null) || (activeChar.getClanId() != _clanId))
 		{
 			return;
 		}
 		
 		final PledgeApplicantInfo infos = ClanEntryManager.getInstance().getPlayerApplication(_clanId, _playerId);
-		
 		if (infos == null)
 		{
-			activeChar.sendPacket(new ExPledgeWaitingList(_clanId));
+			client.sendPacket(new ExPledgeWaitingList(_clanId));
 		}
 		else
 		{
-			activeChar.sendPacket(new ExPledgeWaitingUser(infos));
+			client.sendPacket(new ExPledgeWaitingUser(infos));
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_DA_REQUESTPLEDGEDWAITINGUSER;
 	}
 }

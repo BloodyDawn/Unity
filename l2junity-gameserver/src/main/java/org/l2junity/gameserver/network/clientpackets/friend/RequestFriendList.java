@@ -21,29 +21,28 @@ package org.l2junity.gameserver.network.clientpackets.friend;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.3.4.3 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestFriendList extends L2GameClientPacket
+public final class RequestFriendList implements IGameClientPacket
 {
-	private static final String _C__79_REQUESTFRIENDLIST = "[C] 79 RequestFriendList";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// trigger
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
-		
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -85,11 +84,5 @@ public final class RequestFriendList extends L2GameClientPacket
 		
 		// =========================
 		activeChar.sendPacket(SystemMessageId.EMPTY3);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__79_REQUESTFRIENDLIST;
 	}
 }

@@ -27,11 +27,13 @@ import org.l2junity.gameserver.model.SkillLearn;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class AcquireSkillList extends L2GameServerPacket
+public class AcquireSkillList implements IGameServerPacket
 {
 	final PlayerInstance _activeChar;
 	final List<SkillLearn> _learnable;
@@ -44,32 +46,34 @@ public class AcquireSkillList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x90);
-		writeH(_learnable.size());
+		OutgoingPackets.ACQUIRE_SKILL_LIST.writeId(packet);
+		
+		packet.writeH(_learnable.size());
 		for (SkillLearn skill : _learnable)
 		{
-			writeD(skill.getSkillId());
-			writeH(skill.getSkillLevel());
-			writeQ(skill.getLevelUpSp());
-			writeC(skill.getGetLevel());
-			writeC(0x00); // Dual Class Level Required
-			writeC(skill.getRequiredItems().size());
+			packet.writeD(skill.getSkillId());
+			packet.writeH(skill.getSkillLevel());
+			packet.writeQ(skill.getLevelUpSp());
+			packet.writeC(skill.getGetLevel());
+			packet.writeC(0x00); // Dual Class Level Required
+			packet.writeC(skill.getRequiredItems().size());
 			for (ItemHolder item : skill.getRequiredItems())
 			{
-				writeD(item.getId());
-				writeQ(item.getCount());
+				packet.writeD(item.getId());
+				packet.writeQ(item.getCount());
 			}
 			
 			final List<Skill> skillRem = skill.getRemoveSkills().stream().map(_activeChar::getKnownSkill).filter(Objects::nonNull).collect(Collectors.toList());
 			
-			writeC(skillRem.size());
+			packet.writeC(skillRem.size());
 			for (Skill skillRemove : skillRem)
 			{
-				writeD(skillRemove.getId());
-				writeH(skillRemove.getLevel());
+				packet.writeD(skillRemove.getId());
+				packet.writeH(skillRemove.getLevel());
 			}
 		}
+		return true;
 	}
 }

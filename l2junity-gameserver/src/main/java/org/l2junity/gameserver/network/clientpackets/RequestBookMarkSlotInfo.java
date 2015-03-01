@@ -19,31 +19,28 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExGetBookMarkInfoPacket;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author ShanSoft Packets Structure: chddd
  */
-public final class RequestBookMarkSlotInfo extends L2GameClientPacket
+public final class RequestBookMarkSlotInfo implements IGameClientPacket
 {
-	private static final String _C__D0_51_00_REQUESTBOOKMARKSLOTINFO = "[C] D0:51:00 RequestBookMarkSlotInfo";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// There is nothing to read.
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance player = getClient().getActiveChar();
-		player.sendPacket(new ExGetBookMarkInfoPacket(player));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_51_00_REQUESTBOOKMARKSLOTINFO;
+		final PlayerInstance player = client.getActiveChar();
+		if (player != null)
+		{
+			player.sendPacket(new ExGetBookMarkInfoPacket(player));
+		}
 	}
 }

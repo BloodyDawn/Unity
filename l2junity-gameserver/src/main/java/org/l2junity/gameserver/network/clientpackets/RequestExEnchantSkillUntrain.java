@@ -25,47 +25,49 @@ import java.util.logging.Logger;
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
 import org.l2junity.gameserver.datatables.SkillData;
-import org.l2junity.gameserver.model.EnchantSkillLearn;
 import org.l2junity.gameserver.model.EnchantSkillGroup.EnchantSkillHolder;
+import org.l2junity.gameserver.model.EnchantSkillLearn;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExEnchantSkillInfo;
 import org.l2junity.gameserver.network.serverpackets.ExEnchantSkillInfoDetail;
 import org.l2junity.gameserver.network.serverpackets.ExEnchantSkillResult;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.network.serverpackets.UserInfo;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format (ch) dd c: (id) 0xD0 h: (subid) 0x33 d: skill id d: skill lvl
  * @author -Wooden-
  */
-public final class RequestExEnchantSkillUntrain extends L2GameClientPacket
+public final class RequestExEnchantSkillUntrain implements IGameClientPacket
 {
-	private static final String _C__D0_33_REQUESTEXENCHANTSKILLUNTRAIN = "[C] D0:33 RequestExEnchantSkillUntrain";
 	private static final Logger _logEnchant = Logger.getLogger("enchant");
 	
 	private int _skillId;
 	private int _skillLvl;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_skillId = readD();
-		_skillLvl = readD();
+		_skillId = packet.readD();
+		_skillLvl = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		if ((_skillId <= 0) || (_skillLvl <= 0))
 		{
 			return;
 		}
 		
-		PlayerInstance player = getClient().getActiveChar();
+		PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -73,19 +75,19 @@ public final class RequestExEnchantSkillUntrain extends L2GameClientPacket
 		
 		if (player.getClassId().level() < 3) // requires to have 3rd class quest completed
 		{
-			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THE_SKILL_ENHANCING_FUNCTION_IN_THIS_CLASS_YOU_CAN_USE_CORRESPONDING_FUNCTION_WHEN_COMPLETING_THE_THIRD_CLASS_CHANGE);
+			client.sendPacket(SystemMessageId.YOU_CANNOT_USE_THE_SKILL_ENHANCING_FUNCTION_IN_THIS_CLASS_YOU_CAN_USE_CORRESPONDING_FUNCTION_WHEN_COMPLETING_THE_THIRD_CLASS_CHANGE);
 			return;
 		}
 		
 		if (player.getLevel() < 76)
 		{
-			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THE_SKILL_ENHANCING_FUNCTION_ON_THIS_LEVEL_YOU_CAN_USE_THE_CORRESPONDING_FUNCTION_ON_LEVELS_HIGHER_THAN_LV_76);
+			client.sendPacket(SystemMessageId.YOU_CANNOT_USE_THE_SKILL_ENHANCING_FUNCTION_ON_THIS_LEVEL_YOU_CAN_USE_THE_CORRESPONDING_FUNCTION_ON_LEVELS_HIGHER_THAN_LV_76);
 			return;
 		}
 		
 		if (!player.isAllowedToEnchantSkills())
 		{
-			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THE_SKILL_ENHANCING_FUNCTION_IN_THIS_STATE_YOU_CAN_ENHANCE_SKILLS_WHEN_NOT_IN_BATTLE_AND_CANNOT_USE_THE_FUNCTION_WHILE_TRANSFORMED_IN_BATTLE_ON_A_MOUNT_OR_WHILE_THE_SKILL_IS_ON_COOLDOWN);
+			client.sendPacket(SystemMessageId.YOU_CANNOT_USE_THE_SKILL_ENHANCING_FUNCTION_IN_THIS_STATE_YOU_CAN_ENHANCE_SKILLS_WHEN_NOT_IN_BATTLE_AND_CANNOT_USE_THE_FUNCTION_WHILE_TRANSFORMED_IN_BATTLE_ON_A_MOUNT_OR_WHILE_THE_SKILL_IS_ON_COOLDOWN);
 			return;
 		}
 		
@@ -124,14 +126,14 @@ public final class RequestExEnchantSkillUntrain extends L2GameClientPacket
 		{
 			if (spb == null) // Haven't spellbook
 			{
-				player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ALL_OF_THE_ITEMS_NEEDED_TO_ENCHANT_THAT_SKILL);
+				client.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ALL_OF_THE_ITEMS_NEEDED_TO_ENCHANT_THAT_SKILL);
 				return;
 			}
 		}
 		
 		if (player.getInventory().getAdena() < requireditems)
 		{
-			player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ALL_OF_THE_ITEMS_NEEDED_TO_ENCHANT_THAT_SKILL);
+			client.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ALL_OF_THE_ITEMS_NEEDED_TO_ENCHANT_THAT_SKILL);
 			return;
 		}
 		
@@ -145,7 +147,7 @@ public final class RequestExEnchantSkillUntrain extends L2GameClientPacket
 		
 		if (!check)
 		{
-			player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ALL_OF_THE_ITEMS_NEEDED_TO_ENCHANT_THAT_SKILL);
+			client.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ALL_OF_THE_ITEMS_NEEDED_TO_ENCHANT_THAT_SKILL);
 			return;
 		}
 		
@@ -165,37 +167,31 @@ public final class RequestExEnchantSkillUntrain extends L2GameClientPacket
 		}
 		
 		player.addSkill(skill, true);
-		player.sendPacket(ExEnchantSkillResult.valueOf(true));
+		client.sendPacket(ExEnchantSkillResult.valueOf(true));
 		
 		if (Config.DEBUG)
 		{
 			_log.fine("Learned skill ID: " + _skillId + " Level: " + _skillLvl + " for " + requiredSp + " SP, " + requireditems + " Adena.");
 		}
 		
-		player.sendPacket(new UserInfo(player));
+		client.sendPacket(new UserInfo(player));
 		
 		if (_skillLvl > 100)
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.UNTRAIN_OF_ENCHANT_SKILL_WAS_SUCCESSFUL_CURRENT_LEVEL_OF_ENCHANT_SKILL_S1_HAS_BEEN_DECREASED_BY_1);
 			sm.addSkillName(_skillId);
-			player.sendPacket(sm);
+			client.sendPacket(sm);
 		}
 		else
 		{
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.UNTRAIN_OF_ENCHANT_SKILL_WAS_SUCCESSFUL_CURRENT_LEVEL_OF_ENCHANT_SKILL_S1_BECAME_0_AND_ENCHANT_SKILL_WILL_BE_INITIALIZED);
 			sm.addSkillName(_skillId);
-			player.sendPacket(sm);
+			client.sendPacket(sm);
 		}
 		player.sendSkillList();
 		final int afterUntrainSkillLevel = player.getSkillLevel(_skillId);
-		player.sendPacket(new ExEnchantSkillInfo(_skillId, afterUntrainSkillLevel));
-		player.sendPacket(new ExEnchantSkillInfoDetail(2, _skillId, afterUntrainSkillLevel - 1, player));
+		client.sendPacket(new ExEnchantSkillInfo(_skillId, afterUntrainSkillLevel));
+		client.sendPacket(new ExEnchantSkillInfoDetail(2, _skillId, afterUntrainSkillLevel - 1, player));
 		player.updateShortCuts(_skillId, afterUntrainSkillLevel);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_33_REQUESTEXENCHANTSKILLUNTRAIN;
 	}
 }

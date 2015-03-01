@@ -20,8 +20,10 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.enums.PartySmallWindowUpdateType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public final class PartySmallWindowUpdate extends L2GameServerPacket
+public final class PartySmallWindowUpdate implements IGameServerPacket
 {
 	private final PlayerInstance _member;
 	private int _flags = 0;
@@ -44,46 +46,48 @@ public final class PartySmallWindowUpdate extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x52);
-		writeD(_member.getObjectId());
-		writeH(_flags);
-		if (containsMask(_flags, PartySmallWindowUpdateType.CURRENT_CP))
+		OutgoingPackets.PARTY_SMALL_WINDOW_UPDATE.writeId(packet);
+		
+		packet.writeD(_member.getObjectId());
+		packet.writeH(_flags);
+		if (IGameServerPacket.containsMask(_flags, PartySmallWindowUpdateType.CURRENT_CP))
 		{
-			writeD((int) _member.getCurrentCp()); // c4
+			packet.writeD((int) _member.getCurrentCp()); // c4
 		}
-		if (containsMask(_flags, PartySmallWindowUpdateType.MAX_CP))
+		if (IGameServerPacket.containsMask(_flags, PartySmallWindowUpdateType.MAX_CP))
 		{
-			writeD(_member.getMaxCp()); // c4
+			packet.writeD(_member.getMaxCp()); // c4
 		}
-		if (containsMask(_flags, PartySmallWindowUpdateType.CURRENT_HP))
+		if (IGameServerPacket.containsMask(_flags, PartySmallWindowUpdateType.CURRENT_HP))
 		{
-			writeD((int) _member.getCurrentHp());
+			packet.writeD((int) _member.getCurrentHp());
 		}
-		if (containsMask(_flags, PartySmallWindowUpdateType.MAX_HP))
+		if (IGameServerPacket.containsMask(_flags, PartySmallWindowUpdateType.MAX_HP))
 		{
-			writeD(_member.getMaxHp());
+			packet.writeD(_member.getMaxHp());
 		}
-		if (containsMask(_flags, PartySmallWindowUpdateType.CURRENT_MP))
+		if (IGameServerPacket.containsMask(_flags, PartySmallWindowUpdateType.CURRENT_MP))
 		{
-			writeD((int) _member.getCurrentMp());
+			packet.writeD((int) _member.getCurrentMp());
 		}
-		if (containsMask(_flags, PartySmallWindowUpdateType.MAX_MP))
+		if (IGameServerPacket.containsMask(_flags, PartySmallWindowUpdateType.MAX_MP))
 		{
-			writeD(_member.getMaxMp());
+			packet.writeD(_member.getMaxMp());
 		}
-		if (containsMask(_flags, PartySmallWindowUpdateType.LEVEL))
+		if (IGameServerPacket.containsMask(_flags, PartySmallWindowUpdateType.LEVEL))
 		{
-			writeC(_member.getLevel());
+			packet.writeC(_member.getLevel());
 		}
-		if (containsMask(_flags, PartySmallWindowUpdateType.CLASS_ID))
+		if (IGameServerPacket.containsMask(_flags, PartySmallWindowUpdateType.CLASS_ID))
 		{
-			writeH(_member.getClassId().getId());
+			packet.writeH(_member.getClassId().getId());
 		}
-		if (containsMask(_flags, PartySmallWindowUpdateType.VITALITY_POINTS))
+		if (IGameServerPacket.containsMask(_flags, PartySmallWindowUpdateType.VITALITY_POINTS))
 		{
-			writeD(_member.getVitalityPoints());
+			packet.writeD(_member.getVitalityPoints());
 		}
+		return true;
 	}
 }

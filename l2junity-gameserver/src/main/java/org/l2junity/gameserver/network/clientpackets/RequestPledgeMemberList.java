@@ -20,42 +20,35 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.PledgeShowMemberListAll;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.5.4.2 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestPledgeMemberList extends L2GameClientPacket
+public final class RequestPledgeMemberList implements IGameClientPacket
 {
-	private static final String _C__4D_REQUESTPLEDGEMEMBERLIST = "[C] 4D RequestPledgeMemberList";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// trigger
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
-		L2Clan clan = activeChar.getClan();
+		final L2Clan clan = activeChar.getClan();
 		if (clan != null)
 		{
-			PledgeShowMemberListAll pm = new PledgeShowMemberListAll(clan);
-			activeChar.sendPacket(pm);
+			activeChar.sendPacket(new PledgeShowMemberListAll(clan));
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__4D_REQUESTPLEDGEMEMBERLIST;
 	}
 }

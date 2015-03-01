@@ -21,9 +21,11 @@ package org.l2junity.gameserver.network.serverpackets;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 public class GMViewItemList extends AbstractItemPacket
 {
@@ -52,16 +54,18 @@ public class GMViewItemList extends AbstractItemPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x9a);
-		writeS(_playerName);
-		writeD(_limit); // inventory limit
-		writeH(0x01); // show window ??
-		writeH(_items.size());
+		OutgoingPackets.GM_VIEW_ITEM_LIST.writeId(packet);
+		
+		packet.writeS(_playerName);
+		packet.writeD(_limit); // inventory limit
+		packet.writeH(0x01); // show window ??
+		packet.writeH(_items.size());
 		for (ItemInstance item : _items)
 		{
-			writeItem(item);
+			writeItem(packet, item);
 		}
+		return true;
 	}
 }

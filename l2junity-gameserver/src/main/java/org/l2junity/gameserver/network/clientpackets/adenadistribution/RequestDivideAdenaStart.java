@@ -24,25 +24,27 @@ import org.l2junity.gameserver.model.CommandChannel;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.AdenaDistributionRequest;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.adenadistribution.ExDivideAdenaStart;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Sdw
  */
-public class RequestDivideAdenaStart extends L2GameClientPacket
+public class RequestDivideAdenaStart implements IGameClientPacket
 {
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// Nothing to read
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -92,11 +94,5 @@ public class RequestDivideAdenaStart extends L2GameClientPacket
 		});
 		
 		player.sendPacket(ExDivideAdenaStart.STATIC_PACKET);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
 	}
 }

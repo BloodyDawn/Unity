@@ -23,25 +23,28 @@ import org.l2junity.gameserver.model.CommandChannel;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.matching.CommandChannelMatchingRoom;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ListPartyWaiting;
+import org.l2junity.network.PacketReader;
 
-public final class RequestPartyMatchConfig extends L2GameClientPacket
+public final class RequestPartyMatchConfig implements IGameClientPacket
 {
 	private int _page, _location, _level;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_page = readD();
-		_location = readD();
-		_level = readD();
+		_page = packet.readD();
+		_location = packet.readD();
+		_level = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		
 		if (activeChar == null)
 		{
@@ -73,9 +76,4 @@ public final class RequestPartyMatchConfig extends L2GameClientPacket
 		}
 	}
 	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
-	}
 }

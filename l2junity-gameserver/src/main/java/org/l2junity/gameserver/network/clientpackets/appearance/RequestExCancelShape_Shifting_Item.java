@@ -20,35 +20,32 @@ package org.l2junity.gameserver.network.clientpackets.appearance;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.ShapeShiftingItemRequest;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.appearance.ExShapeShiftingResult;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author UnAfraid
  */
-public class RequestExCancelShape_Shifting_Item extends L2GameClientPacket
+public class RequestExCancelShape_Shifting_Item implements IGameClientPacket
 {
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
 		}
 		
 		player.removeRequest(ShapeShiftingItemRequest.class);
-		player.sendPacket(ExShapeShiftingResult.FAILED);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
+		client.sendPacket(ExShapeShiftingResult.FAILED);
 	}
 }

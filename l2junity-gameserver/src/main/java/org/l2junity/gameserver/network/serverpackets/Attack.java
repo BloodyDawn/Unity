@@ -25,8 +25,10 @@ import java.util.List;
 import org.l2junity.gameserver.model.Hit;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class Attack extends L2GameServerPacket
+public class Attack implements IGameServerPacket
 {
 	private final int _attackerObjId;
 	private final boolean _soulshot;
@@ -81,37 +83,43 @@ public class Attack extends L2GameServerPacket
 	
 	/**
 	 * Writes current hit
+	 * @param packet
 	 * @param hit
 	 */
-	private void writeHit(Hit hit)
+	private void writeHit(PacketWriter packet, Hit hit)
 	{
-		writeD(hit.getTargetId());
-		writeD(hit.getDamage());
-		writeD(hit.getFlags());
-		writeD(hit.getGrade()); // GOD
+		packet.writeD(hit.getTargetId());
+		packet.writeD(hit.getDamage());
+		packet.writeD(hit.getFlags());
+		packet.writeD(hit.getGrade()); // GOD
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
 		final Iterator<Hit> it = _hits.iterator();
 		final Hit firstHit = it.next();
-		writeC(0x33);
+		OutgoingPackets.ATTACK.writeId(packet);
 		
-		writeD(_attackerObjId);
-		writeD(firstHit.getTargetId());
-		writeD(0x00); // Ertheia Unknown
-		writeD(firstHit.getDamage());
-		writeD(firstHit.getFlags());
-		writeD(firstHit.getGrade()); // GOD
-		writeLoc(_attackerLoc);
+		packet.writeD(_attackerObjId);
+		packet.writeD(firstHit.getTargetId());
+		packet.writeD(0x00); // Ertheia Unknown
+		packet.writeD(firstHit.getDamage());
+		packet.writeD(firstHit.getFlags());
+		packet.writeD(firstHit.getGrade()); // GOD
+		packet.writeD(_attackerLoc.getX());
+		packet.writeD(_attackerLoc.getY());
+		packet.writeD(_attackerLoc.getZ());
 		
-		writeH(_hits.size() - 1);
+		packet.writeH(_hits.size() - 1);
 		while (it.hasNext())
 		{
-			writeHit(it.next());
+			writeHit(packet, it.next());
 		}
 		
-		writeLoc(_targetLoc);
+		packet.writeD(_targetLoc.getX());
+		packet.writeD(_targetLoc.getY());
+		packet.writeD(_targetLoc.getZ());
+		return true;
 	}
 }

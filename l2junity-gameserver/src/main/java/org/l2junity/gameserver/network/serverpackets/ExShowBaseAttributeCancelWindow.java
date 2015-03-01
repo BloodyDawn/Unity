@@ -22,8 +22,10 @@ import java.util.Collection;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class ExShowBaseAttributeCancelWindow extends L2GameServerPacket
+public class ExShowBaseAttributeCancelWindow implements IGameServerPacket
 {
 	private final Collection<ItemInstance> _items;
 	private long _price;
@@ -34,20 +36,21 @@ public class ExShowBaseAttributeCancelWindow extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x75);
-		writeD(_items.size());
+		OutgoingPackets.EX_SHOW_BASE_ATTRIBUTE_CANCEL_WINDOW.writeId(packet);
+		
+		packet.writeD(_items.size());
 		for (ItemInstance item : _items)
 		{
-			writeD(item.getObjectId());
-			writeQ(getPrice(item));
+			packet.writeD(item.getObjectId());
+			packet.writeQ(getPrice(item));
 		}
+		return true;
 	}
 	
 	/**
-	 * TODO: Update prices for Top/Mid/Low S80/S84
+	 * TODO: Unhardcode! Update prices for Top/Mid/Low S80/S84
 	 * @param item
 	 * @return
 	 */

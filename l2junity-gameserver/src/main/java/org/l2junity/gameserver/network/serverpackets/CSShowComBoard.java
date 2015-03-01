@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public final class CSShowComBoard extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public final class CSShowComBoard implements IGameServerPacket
 {
 	private final byte[] _html;
 	
@@ -28,10 +31,12 @@ public final class CSShowComBoard extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x7b);
-		writeC(0x01); // c4 1 to show community 00 to hide
-		writeB(_html);
+		OutgoingPackets.SHOW_BOARD.writeId(packet);
+		
+		packet.writeC(0x01); // c4 1 to show community 00 to hide
+		packet.writeB(_html);
+		return true;
 	}
 }

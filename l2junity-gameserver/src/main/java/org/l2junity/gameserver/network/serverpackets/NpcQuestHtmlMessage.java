@@ -19,6 +19,8 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.enums.HtmlActionScope;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * NpcQuestHtmlMessage server packet implementation.
@@ -35,13 +37,14 @@ public final class NpcQuestHtmlMessage extends AbstractHtmlPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x8E);
-		writeD(getNpcObjId());
-		writeS(getHtml());
-		writeD(_questId);
+		OutgoingPackets.EX_NPC_QUEST_HTML_MESSAGE.writeId(packet);
+		
+		packet.writeD(getNpcObjId());
+		packet.writeS(getHtml());
+		packet.writeD(_questId);
+		return true;
 	}
 	
 	@Override

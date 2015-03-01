@@ -18,24 +18,25 @@
  */
 package org.l2junity.gameserver.network.serverpackets.friend;
 
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
-public class FriendAddRequest extends L2GameServerPacket
+public class FriendAddRequest implements IGameServerPacket
 {
 	private final String _requestorName;
 	
-	/**
-	 * @param requestorName
-	 */
 	public FriendAddRequest(String requestorName)
 	{
 		_requestorName = requestorName;
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x83);
-		writeS(_requestorName);
+		OutgoingPackets.FRIEND_ADD_REQUEST.writeId(packet);
+		
+		packet.writeS(_requestorName);
+		return true;
 	}
 }

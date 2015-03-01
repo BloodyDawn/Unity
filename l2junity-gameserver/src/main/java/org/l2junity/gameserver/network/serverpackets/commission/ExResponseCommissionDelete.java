@@ -18,12 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets.commission;
 
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author NosBit
  */
-public class ExResponseCommissionDelete extends L2GameServerPacket
+public class ExResponseCommissionDelete implements IGameServerPacket
 {
 	public static final ExResponseCommissionDelete SUCCEED = new ExResponseCommissionDelete(1);
 	public static final ExResponseCommissionDelete FAILED = new ExResponseCommissionDelete(0);
@@ -36,10 +38,11 @@ public class ExResponseCommissionDelete extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xF6);
-		writeD(_result);
+		OutgoingPackets.EX_RESPONSE_COMMISSION_DELETE.writeId(packet);
+		
+		packet.writeD(_result);
+		return true;
 	}
 }

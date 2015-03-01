@@ -18,26 +18,21 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.interfaces.IUpdateTypeComponent;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
-import org.l2junity.gameserver.network.L2GameClient;
-import org.mmocore.network.SendablePacket;
+import org.l2junity.network.IOutgoingPacket;
 
 /**
  * @author KenM
  */
-public abstract class L2GameServerPacket extends SendablePacket<L2GameClient>
+public interface IGameServerPacket extends IOutgoingPacket
 {
-	protected static final Logger _log = Logger.getLogger(L2GameServerPacket.class.getName());
+	static final Logger _log = Logger.getLogger(IGameServerPacket.class.getName());
 	
-	private boolean _invisible = false;
-	
-	private static final int[] PAPERDOLL_ORDER = new int[]
+	static final int[] PAPERDOLL_ORDER = new int[]
 	{
 		Inventory.PAPERDOLL_UNDER,
 		Inventory.PAPERDOLL_REAR,
@@ -75,14 +70,14 @@ public abstract class L2GameServerPacket extends SendablePacket<L2GameClient>
 	
 	};
 	
-	private static final int[] PAPERDOLL_ORDER_AUGMENT = new int[]
+	static final int[] PAPERDOLL_ORDER_AUGMENT = new int[]
 	{
 		Inventory.PAPERDOLL_RHAND,
 		Inventory.PAPERDOLL_LHAND,
 		Inventory.PAPERDOLL_RHAND
 	};
 	
-	private static final int[] PAPERDOLL_ORDER_VISUAL_ID = new int[]
+	static final int[] PAPERDOLL_ORDER_VISUAL_ID = new int[]
 	{
 		Inventory.PAPERDOLL_RHAND,
 		Inventory.PAPERDOLL_LHAND,
@@ -95,95 +90,27 @@ public abstract class L2GameServerPacket extends SendablePacket<L2GameClient>
 		Inventory.PAPERDOLL_HAIR2
 	};
 	
-	/**
-	 * @return True if packet originated from invisible character.
-	 */
-	public boolean isInvisible()
-	{
-		return _invisible;
-	}
-	
-	/**
-	 * Set "invisible" boolean flag in the packet.<br>
-	 * Packets from invisible characters will not be broadcasted to players.
-	 * @param b
-	 */
-	public void setInvisible(boolean b)
-	{
-		_invisible = b;
-	}
-	
-	/**
-	 * Writes 3 D (int32) with current location x, y, z
-	 * @param loc
-	 */
-	protected void writeLoc(ILocational loc)
-	{
-		writeD(loc.getX());
-		writeD(loc.getY());
-		writeD(loc.getZ());
-	}
-	
-	/**
-	 * Write String
-	 * @param str
-	 */
-	protected void writeString(String str)
-	{
-		if ((str == null) || str.isEmpty())
-		{
-			writeH(0x00);
-			return;
-		}
-		final char[] chars = str.toCharArray();
-		writeH(chars.length);
-		for (char ch : chars)
-		{
-			_buf.putChar(ch);
-		}
-	}
-	
-	protected int[] getPaperdollOrder()
+	default int[] getPaperdollOrder()
 	{
 		return PAPERDOLL_ORDER;
 	}
 	
-	protected int[] getPaperdollOrderAugument()
+	default int[] getPaperdollOrderAugument()
 	{
 		return PAPERDOLL_ORDER_AUGMENT;
 	}
 	
-	protected int[] getPaperdollOrderVisualId()
+	default int[] getPaperdollOrderVisualId()
 	{
 		return PAPERDOLL_ORDER_VISUAL_ID;
 	}
-	
-	@Override
-	protected void write()
-	{
-		try
-		{
-			writeImpl();
-		}
-		catch (Exception e)
-		{
-			_log.log(Level.SEVERE, "Client: " + getClient().toString() + " - Failed writing: " + getClass().getSimpleName() + " ; " + e.getMessage(), e);
-		}
-	}
-	
-	public void runImpl()
-	{
-		
-	}
-	
-	protected abstract void writeImpl();
 	
 	/**
 	 * @param masks
 	 * @param type
 	 * @return {@code true} if the mask contains the current update component type
 	 */
-	protected static boolean containsMask(int masks, IUpdateTypeComponent type)
+	public static boolean containsMask(int masks, IUpdateTypeComponent type)
 	{
 		return (masks & type.getMask()) == type.getMask();
 	}
@@ -193,8 +120,13 @@ public abstract class L2GameServerPacket extends SendablePacket<L2GameClient>
 	 * {@code L2World.getInstance().getPlayers().forEach(packet::sendTo)}
 	 * @param player
 	 */
-	public void sendTo(PlayerInstance player)
+	public default void sendTo(PlayerInstance player)
 	{
 		player.sendPacket(this);
+	}
+	
+	public default void runImpl(PlayerInstance player)
+	{
+		
 	}
 }

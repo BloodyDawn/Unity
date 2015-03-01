@@ -40,7 +40,7 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExOlympiadMode;
 import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
 import org.l2junity.gameserver.network.serverpackets.SkillCoolTime;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
@@ -458,7 +458,7 @@ public abstract class AbstractOlympiadGame
 	
 	public abstract void broadcastOlympiadInfo(OlympiadStadium _stadium);
 	
-	protected abstract void broadcastPacket(L2GameServerPacket packet);
+	protected abstract void broadcastPacket(IGameServerPacket packet);
 	
 	protected abstract boolean needBuffers();
 	

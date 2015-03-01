@@ -497,7 +497,7 @@ public class AdminMobGroup implements IAdminCommandHandler
 	private void doAnimation(PlayerInstance activeChar)
 	{
 		Broadcast.toSelfAndKnownPlayersInRadius(activeChar, new MagicSkillUse(activeChar, 1008, 1, 4000, 0), 1500);
-		activeChar.sendPacket(new SetupGauge(0, 4000));
+		activeChar.sendPacket(new SetupGauge(activeChar.getObjectId(), 0, 4000));
 	}
 	
 	private void attackGrp(String command, PlayerInstance activeChar)

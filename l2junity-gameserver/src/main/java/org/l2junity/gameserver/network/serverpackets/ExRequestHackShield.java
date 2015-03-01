@@ -18,11 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * Trigger packet
  * @author KenM
  */
-public class ExRequestHackShield extends L2GameServerPacket
+public class ExRequestHackShield implements IGameServerPacket
 {
 	public static final ExRequestHackShield STATIC_PACKET = new ExRequestHackShield();
 	
@@ -31,9 +34,10 @@ public class ExRequestHackShield extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x4A);
+		OutgoingPackets.EX_REQUEST_HACK_SHIELD.writeId(packet);
+		
+		return true;
 	}
 }

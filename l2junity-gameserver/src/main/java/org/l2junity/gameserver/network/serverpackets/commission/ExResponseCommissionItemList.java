@@ -21,7 +21,9 @@ package org.l2junity.gameserver.network.serverpackets.commission;
 import java.util.Collection;
 
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
 import org.l2junity.gameserver.network.serverpackets.AbstractItemPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author NosBit
@@ -36,14 +38,15 @@ public class ExResponseCommissionItemList extends AbstractItemPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xF3);
-		writeD(_items.size());
+		OutgoingPackets.EX_RESPONSE_COMMISSION_ITEM_LIST.writeId(packet);
+		
+		packet.writeD(_items.size());
 		for (ItemInstance itemInstance : _items)
 		{
-			writeItem(itemInstance);
+			writeItem(packet, itemInstance);
 		}
+		return true;
 	}
 }

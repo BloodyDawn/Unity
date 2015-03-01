@@ -41,8 +41,8 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
@@ -968,7 +968,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		}
 		else
 		{
-			ip = client.getConnection().getInetAddress().getHostAddress();
+			ip = client.getConnectionAddress().getHostAddress();
 		}
 		
 		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
@@ -1188,7 +1188,7 @@ public class AdminEditChar implements IAdminCommandHandler
 					continue;
 				}
 				
-				ip = client.getConnection().getInetAddress().getHostAddress();
+				ip = client.getConnectionAddress().getHostAddress();
 				if (!ip.equals(IpAdress))
 				{
 					continue;
@@ -1283,7 +1283,7 @@ public class AdminEditChar implements IAdminCommandHandler
 				continue;
 			}
 			
-			ip = client.getConnection().getInetAddress().getHostAddress();
+			ip = client.getConnectionAddress().getHostAddress();
 			if (ipMap.get(ip) == null)
 			{
 				ipMap.put(ip, new ArrayList<PlayerInstance>());
@@ -1335,7 +1335,7 @@ public class AdminEditChar implements IAdminCommandHandler
 				continue;
 			}
 			
-			IpPack pack = new IpPack(client.getConnection().getInetAddress().getHostAddress(), client.getTrace());
+			IpPack pack = new IpPack(client.getConnectionAddress().getHostAddress(), client.getTrace());
 			if (ipMap.get(pack) == null)
 			{
 				ipMap.put(pack, new ArrayList<PlayerInstance>());

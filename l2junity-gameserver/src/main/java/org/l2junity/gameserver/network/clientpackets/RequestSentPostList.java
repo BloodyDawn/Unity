@@ -20,25 +20,25 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExShowSentPostList;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Migi, DS
  */
-public final class RequestSentPostList extends L2GameClientPacket
+public final class RequestSentPostList implements IGameClientPacket
 {
-	private static final String _C__D0_6C_REQUESTSENTPOSTLIST = "[C] D0:6C RequestSentPostList";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// trigger packet
+		return true;
 	}
 	
 	@Override
-	public void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if ((activeChar == null) || !Config.ALLOW_MAIL)
 		{
 			return;
@@ -50,18 +50,6 @@ public final class RequestSentPostList extends L2GameClientPacket
 		// return;
 		// }
 		
-		activeChar.sendPacket(new ExShowSentPostList(activeChar.getObjectId()));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_6C_REQUESTSENTPOSTLIST;
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
+		client.sendPacket(new ExShowSentPostList(activeChar.getObjectId()));
 	}
 }

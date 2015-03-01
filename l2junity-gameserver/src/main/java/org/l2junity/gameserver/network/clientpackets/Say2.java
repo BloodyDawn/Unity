@@ -35,17 +35,18 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerChat;
 import org.l2junity.gameserver.model.events.returns.ChatFilterReturn;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.olympiad.OlympiadManager;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.16.2.12.2.7 $ $Date: 2005/04/11 10:06:11 $
  */
-public final class Say2 extends L2GameClientPacket
+public final class Say2 implements IGameClientPacket
 {
-	private static final String _C__49_SAY2 = "[C] 49 Say2";
 	private static Logger _logChat = Logger.getLogger("chat");
 	
 	private static final String[] WALKER_COMMAND_LIST =
@@ -92,22 +93,23 @@ public final class Say2 extends L2GameClientPacket
 	private String _target;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_text = readS();
-		_type = readD();
-		_target = (_type == ChatType.WHISPER.getClientId()) ? readS() : null;
+		_text = packet.readS();
+		_type = packet.readD();
+		_target = (_type == ChatType.WHISPER.getClientId()) ? packet.readS() : null;
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		if (Config.DEBUG)
 		{
 			_log.info("Say2: Msg Type = '" + _type + "' Text = '" + _text + "'.");
 		}
 		
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -214,7 +216,7 @@ public final class Say2 extends L2GameClientPacket
 		
 		if (_text.indexOf(8) >= 0)
 		{
-			if (!parseAndPublishItem(activeChar))
+			if (!parseAndPublishItem(client, activeChar))
 			{
 				return;
 			}
@@ -239,7 +241,7 @@ public final class Say2 extends L2GameClientPacket
 		}
 		else
 		{
-			_log.info("No handler registered for ChatType: " + _type + " Player: " + getClient());
+			_log.info("No handler registered for ChatType: " + _type + " Player: " + client);
 		}
 	}
 	
@@ -265,7 +267,7 @@ public final class Say2 extends L2GameClientPacket
 		_text = filteredText;
 	}
 	
-	private boolean parseAndPublishItem(PlayerInstance owner)
+	private boolean parseAndPublishItem(L2GameClient client, PlayerInstance owner)
 	{
 		int pos1 = -1;
 		while ((pos1 = _text.indexOf(8, pos1)) > -1)
@@ -287,35 +289,23 @@ public final class Say2 extends L2GameClientPacket
 			{
 				if (owner.getInventory().getItemByObjectId(id) == null)
 				{
-					_log.info(getClient() + " trying publish item which doesnt own! ID:" + id);
+					_log.info(client + " trying publish item which doesnt own! ID:" + id);
 					return false;
 				}
 				((ItemInstance) item).publish();
 			}
 			else
 			{
-				_log.info(getClient() + " trying publish object which is not item! Object:" + item);
+				_log.info(client + " trying publish object which is not item! Object:" + item);
 				return false;
 			}
 			pos1 = _text.indexOf(8, pos) + 1;
 			if (pos1 == 0) // missing ending tag
 			{
-				_log.info(getClient() + " sent invalid publish item msg! ID:" + id);
+				_log.info(client + " sent invalid publish item msg! ID:" + id);
 				return false;
 			}
 		}
 		return true;
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__49_SAY2;
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
 	}
 }

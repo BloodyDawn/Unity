@@ -20,15 +20,15 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.StopMoveInVehicle;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Maktakien
  */
-public final class CannotMoveAnymoreInVehicle extends L2GameClientPacket
+public final class CannotMoveAnymoreInVehicle implements IGameClientPacket
 {
-	private static final String _C__76_CANNOTMOVEANYMOREINVEHICLE = "[C] 76 CannotMoveAnymoreInVehicle";
-	
 	private int _x;
 	private int _y;
 	private int _z;
@@ -36,19 +36,20 @@ public final class CannotMoveAnymoreInVehicle extends L2GameClientPacket
 	private int _boatId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_boatId = readD();
-		_x = readD();
-		_y = readD();
-		_z = readD();
-		_heading = readD();
+		_boatId = packet.readD();
+		_x = packet.readD();
+		_y = packet.readD();
+		_z = packet.readD();
+		_heading = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance player = getClient().getActiveChar();
+		PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -63,11 +64,5 @@ public final class CannotMoveAnymoreInVehicle extends L2GameClientPacket
 				player.broadcastPacket(msg);
 			}
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__76_CANNOTMOVEANYMOREINVEHICLE;
 	}
 }

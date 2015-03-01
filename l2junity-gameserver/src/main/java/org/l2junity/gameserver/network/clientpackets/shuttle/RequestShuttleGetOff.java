@@ -19,30 +19,33 @@
 package org.l2junity.gameserver.network.clientpackets.shuttle;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author UnAfraid
  */
-public class RequestShuttleGetOff extends L2GameClientPacket
+public class RequestShuttleGetOff implements IGameClientPacket
 {
 	private int _x;
 	private int _y;
 	private int _z;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		readD(); // charId
-		_x = readD();
-		_y = readD();
-		_z = readD();
+		packet.readD(); // charId
+		_x = packet.readD();
+		_y = packet.readD();
+		_z = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -52,11 +55,5 @@ public class RequestShuttleGetOff extends L2GameClientPacket
 		{
 			activeChar.getShuttle().removePassenger(activeChar, _x, _y, _z);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
 	}
 }

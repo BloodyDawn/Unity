@@ -24,24 +24,26 @@ import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.model.SkillLearn;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExAcquireAPSkillList;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author UnAfraid
  */
-public class RequestResetAbilityPoint extends L2GameClientPacket
+public class RequestResetAbilityPoint implements IGameClientPacket
 {
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// Nothing to read
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -53,12 +55,12 @@ public class RequestResetAbilityPoint extends L2GameClientPacket
 		}
 		else if ((activeChar.getLevel() < 99) || !activeChar.isNoble())
 		{
-			activeChar.sendPacket(SystemMessageId.ABILITIES_CAN_BE_USED_BY_NOBLESSE_EXALTED_LV_99_OR_ABOVE);
+			client.sendPacket(SystemMessageId.ABILITIES_CAN_BE_USED_BY_NOBLESSE_EXALTED_LV_99_OR_ABOVE);
 			return;
 		}
 		else if (activeChar.isInOlympiadMode()) // TODO: Add Ceremony of Chaos when done.
 		{
-			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_USE_OR_RESET_ABILITY_POINTS_WHILE_PARTICIPATING_IN_THE_OLYMPIAD_OR_CEREMONY_OF_CHAOS);
+			client.sendPacket(SystemMessageId.YOU_CANNOT_USE_OR_RESET_ABILITY_POINTS_WHILE_PARTICIPATING_IN_THE_OLYMPIAD_OR_CEREMONY_OF_CHAOS);
 			return;
 		}
 		else if (activeChar.getAbilityPoints() == 0)
@@ -73,7 +75,7 @@ public class RequestResetAbilityPoint extends L2GameClientPacket
 		}
 		else if (activeChar.getAdena() < Config.ABILITY_POINTS_RESET_ADENA)
 		{
-			activeChar.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA);
+			client.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA);
 			return;
 		}
 		
@@ -88,13 +90,8 @@ public class RequestResetAbilityPoint extends L2GameClientPacket
 				}
 			}
 			activeChar.setAbilityPointsUsed(0);
-			activeChar.sendPacket(new ExAcquireAPSkillList(activeChar));
+			client.sendPacket(new ExAcquireAPSkillList(activeChar));
 		}
 	}
 	
-	@Override
-	public String getType()
-	{
-		return null;
-	}
 }

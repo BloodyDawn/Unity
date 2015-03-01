@@ -20,8 +20,10 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class ValidateLocation extends L2GameServerPacket
+public class ValidateLocation implements IGameServerPacket
 {
 	private final int _charObjId;
 	private final Location _loc;
@@ -33,12 +35,16 @@ public class ValidateLocation extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x79);
-		writeD(_charObjId);
-		writeLoc(_loc);
-		writeD(_loc.getHeading());
-		writeC(0xFF); // TODO: Find me!
+		OutgoingPackets.VALIDATE_LOCATION.writeId(packet);
+		
+		packet.writeD(_charObjId);
+		packet.writeD(_loc.getX());
+		packet.writeD(_loc.getY());
+		packet.writeD(_loc.getZ());
+		packet.writeD(_loc.getHeading());
+		packet.writeC(0xFF); // TODO: Find me!
+		return true;
 	}
 }

@@ -60,7 +60,7 @@ import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.CreatureSay;
 import org.l2junity.gameserver.network.serverpackets.ExSubPledgeSkillAdd;
 import org.l2junity.gameserver.network.serverpackets.ItemList;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
 import org.l2junity.gameserver.network.serverpackets.PledgeReceiveSubPledgeCreated;
 import org.l2junity.gameserver.network.serverpackets.PledgeShowInfoUpdate;
 import org.l2junity.gameserver.network.serverpackets.PledgeShowMemberListAll;
@@ -1543,7 +1543,7 @@ public class L2Clan implements IIdentifiable, INamable
 		}
 	}
 	
-	public void broadcastToOnlineAllyMembers(L2GameServerPacket packet)
+	public void broadcastToOnlineAllyMembers(IGameServerPacket packet)
 	{
 		for (L2Clan clan : ClanTable.getInstance().getClanAllies(getAllyId()))
 		{
@@ -1551,7 +1551,7 @@ public class L2Clan implements IIdentifiable, INamable
 		}
 	}
 	
-	public void broadcastToOnlineMembers(L2GameServerPacket packet)
+	public void broadcastToOnlineMembers(IGameServerPacket packet)
 	{
 		for (ClanMember member : _members.values())
 		{
@@ -1573,7 +1573,7 @@ public class L2Clan implements IIdentifiable, INamable
 		}
 	}
 	
-	public void broadcastToOtherOnlineMembers(L2GameServerPacket packet, PlayerInstance player)
+	public void broadcastToOtherOnlineMembers(IGameServerPacket packet, PlayerInstance player)
 	{
 		for (ClanMember member : _members.values())
 		{

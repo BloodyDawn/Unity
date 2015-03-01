@@ -21,11 +21,13 @@ package org.l2junity.gameserver.network.serverpackets;
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.stats.Stats;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author -Wooden-, KenM
  */
-public class ExStorageMaxCount extends L2GameServerPacket
+public class ExStorageMaxCount implements IGameServerPacket
 {
 	private final int _inventory;
 	private final int _warehouse;
@@ -53,22 +55,22 @@ public class ExStorageMaxCount extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x2F);
+		OutgoingPackets.EX_STORAGE_MAX_COUNT.writeId(packet);
 		
-		writeD(_inventory);
-		writeD(_warehouse);
-		writeD(_freight);
-		writeD(_clan);
-		writeD(_privateSell);
-		writeD(_privateBuy);
-		writeD(_receipeD);
-		writeD(_recipe);
-		writeD(_inventoryExtraSlots); // Belt inventory slots increase count
-		writeD(_inventoryQuestItems);
-		writeD(40); // TODO: Find me!
-		writeD(40); // TODO: Find me!
+		packet.writeD(_inventory);
+		packet.writeD(_warehouse);
+		packet.writeD(_freight);
+		packet.writeD(_clan);
+		packet.writeD(_privateSell);
+		packet.writeD(_privateBuy);
+		packet.writeD(_receipeD);
+		packet.writeD(_recipe);
+		packet.writeD(_inventoryExtraSlots); // Belt inventory slots increase count
+		packet.writeD(_inventoryQuestItems);
+		packet.writeD(40); // TODO: Find me!
+		packet.writeD(40); // TODO: Find me!
+		return true;
 	}
 }

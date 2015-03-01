@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class PetDelete extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class PetDelete implements IGameServerPacket
 {
 	private final int _petType;
 	private final int _petObjId;
@@ -30,10 +33,12 @@ public class PetDelete extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xB7);
-		writeD(_petType);
-		writeD(_petObjId);
+		OutgoingPackets.PET_DELETE.writeId(packet);
+		
+		packet.writeD(_petType);
+		packet.writeD(_petObjId);
+		return true;
 	}
 }

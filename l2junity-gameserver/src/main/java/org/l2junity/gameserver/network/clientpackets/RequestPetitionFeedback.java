@@ -25,14 +25,14 @@ import java.util.logging.Level;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Plim
  */
-public class RequestPetitionFeedback extends L2GameClientPacket
+public class RequestPetitionFeedback implements IGameClientPacket
 {
-	private static final String _C__C9_REQUESTPETITIONFEEDBACK = "[C] C9 RequestPetitionFeedback";
-	
 	private static final String INSERT_FEEDBACK = "INSERT INTO petition_feedback VALUES (?,?,?,?,?)";
 	
 	// cdds
@@ -41,18 +41,19 @@ public class RequestPetitionFeedback extends L2GameClientPacket
 	private String _message;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
 		// _unknown =
-		readD(); // unknown
-		_rate = readD();
-		_message = readS();
+		packet.readD(); // unknown
+		_rate = packet.readD();
+		_message = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance player = getClient().getActiveChar();
+		PlayerInstance player = client.getActiveChar();
 		
 		if ((player == null) || (player.getLastPetitionGmName() == null))
 		{
@@ -80,9 +81,4 @@ public class RequestPetitionFeedback extends L2GameClientPacket
 		}
 	}
 	
-	@Override
-	public String getType()
-	{
-		return _C__C9_REQUESTPETITIONFEEDBACK;
-	}
 }

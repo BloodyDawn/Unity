@@ -18,26 +18,27 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author nBd
  */
-public class ExPutEnchantSupportItemResult extends L2GameServerPacket
+public class ExPutEnchantSupportItemResult implements IGameServerPacket
 {
 	private final int _result;
 	
-	/**
-	 * @param result
-	 */
 	public ExPutEnchantSupportItemResult(int result)
 	{
 		_result = result;
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x83);
-		writeD(_result);
+		OutgoingPackets.EX_PUT_ENCHANT_SUPPORT_ITEM_RESULT.writeId(packet);
+		
+		packet.writeD(_result);
+		return true;
 	}
 }

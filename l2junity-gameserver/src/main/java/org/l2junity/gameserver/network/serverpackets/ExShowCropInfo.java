@@ -23,11 +23,13 @@ import java.util.List;
 import org.l2junity.gameserver.instancemanager.CastleManorManager;
 import org.l2junity.gameserver.model.CropProcure;
 import org.l2junity.gameserver.model.L2Seed;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author l3x
  */
-public class ExShowCropInfo extends L2GameServerPacket
+public class ExShowCropInfo implements IGameServerPacket
 {
 	private final List<CropProcure> _crops;
 	private final int _manorId;
@@ -43,43 +45,42 @@ public class ExShowCropInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE); // Id
-		writeH(0x24); // SubId
-		writeC(_hideButtons ? 0x01 : 0x00); // Hide "Crop Sales" button
-		writeD(_manorId); // Manor ID
-		writeD(0x00);
-		if (_crops == null)
+		OutgoingPackets.EX_SHOW_CROP_INFO.writeId(packet);
+		
+		packet.writeC(_hideButtons ? 0x01 : 0x00); // Hide "Crop Sales" button
+		packet.writeD(_manorId); // Manor ID
+		packet.writeD(0x00);
+		if (_crops != null)
 		{
-			writeD(0);
-			return;
-		}
-		writeD(_crops.size());
-		for (CropProcure crop : _crops)
-		{
-			writeD(crop.getId()); // Crop id
-			writeQ(crop.getAmount()); // Buy residual
-			writeQ(crop.getStartAmount()); // Buy
-			writeQ(crop.getPrice()); // Buy price
-			writeC(crop.getReward()); // Reward
-			final L2Seed seed = CastleManorManager.getInstance().getSeedByCrop(crop.getId());
-			if (seed == null)
+			packet.writeD(_crops.size());
+			for (CropProcure crop : _crops)
 			{
-				writeD(0); // Seed level
-				writeC(0x01); // Reward 1
-				writeD(0); // Reward 1 - item id
-				writeC(0x01); // Reward 2
-				writeD(0); // Reward 2 - item id
-			}
-			else
-			{
-				writeD(seed.getLevel()); // Seed level
-				writeC(0x01); // Reward 1
-				writeD(seed.getReward(1)); // Reward 1 - item id
-				writeC(0x01); // Reward 2
-				writeD(seed.getReward(2)); // Reward 2 - item id
+				packet.writeD(crop.getId()); // Crop id
+				packet.writeQ(crop.getAmount()); // Buy residual
+				packet.writeQ(crop.getStartAmount()); // Buy
+				packet.writeQ(crop.getPrice()); // Buy price
+				packet.writeC(crop.getReward()); // Reward
+				final L2Seed seed = CastleManorManager.getInstance().getSeedByCrop(crop.getId());
+				if (seed == null)
+				{
+					packet.writeD(0); // Seed level
+					packet.writeC(0x01); // Reward 1
+					packet.writeD(0); // Reward 1 - item id
+					packet.writeC(0x01); // Reward 2
+					packet.writeD(0); // Reward 2 - item id
+				}
+				else
+				{
+					packet.writeD(seed.getLevel()); // Seed level
+					packet.writeC(0x01); // Reward 1
+					packet.writeD(seed.getReward(1)); // Reward 1 - item id
+					packet.writeC(0x01); // Reward 2
+					packet.writeD(seed.getReward(2)); // Reward 2 - item id
+				}
 			}
 		}
+		return true;
 	}
 }

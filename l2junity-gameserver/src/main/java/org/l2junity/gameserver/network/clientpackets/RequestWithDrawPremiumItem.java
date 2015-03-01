@@ -21,33 +21,34 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.PremiumItem;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExGetPremiumItemList;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Gnacik
  */
-public final class RequestWithDrawPremiumItem extends L2GameClientPacket
+public final class RequestWithDrawPremiumItem implements IGameClientPacket
 {
-	private static final String _C__D0_52_REQUESTWITHDRAWPREMIUMITEM = "[C] D0:52 RequestWithDrawPremiumItem";
-	
 	private int _itemNum;
 	private int _charId;
 	private long _itemCount;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_itemNum = readD();
-		_charId = readD();
-		_itemCount = readQ();
+		_itemNum = packet.readD();
+		_charId = packet.readD();
+		_itemCount = packet.readQ();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		
 		if (activeChar == null)
 		{
@@ -69,12 +70,12 @@ public final class RequestWithDrawPremiumItem extends L2GameClientPacket
 		}
 		else if ((activeChar.getWeightPenalty() >= 3) || !activeChar.isInventoryUnder90(false))
 		{
-			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_RECEIVE_THE_DIMENSIONAL_ITEM_BECAUSE_YOU_HAVE_EXCEED_YOUR_INVENTORY_WEIGHT_QUANTITY_LIMIT);
+			client.sendPacket(SystemMessageId.YOU_CANNOT_RECEIVE_THE_DIMENSIONAL_ITEM_BECAUSE_YOU_HAVE_EXCEED_YOUR_INVENTORY_WEIGHT_QUANTITY_LIMIT);
 			return;
 		}
 		else if (activeChar.isProcessingTransaction())
 		{
-			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_RECEIVE_A_DIMENSIONAL_ITEM_DURING_AN_EXCHANGE);
+			client.sendPacket(SystemMessageId.YOU_CANNOT_RECEIVE_A_DIMENSIONAL_ITEM_DURING_AN_EXCHANGE);
 			return;
 		}
 		
@@ -105,17 +106,11 @@ public final class RequestWithDrawPremiumItem extends L2GameClientPacket
 		
 		if (activeChar.getPremiumItemList().isEmpty())
 		{
-			activeChar.sendPacket(SystemMessageId.THERE_ARE_NO_MORE_DIMENSIONAL_ITEMS_TO_BE_FOUND);
+			client.sendPacket(SystemMessageId.THERE_ARE_NO_MORE_DIMENSIONAL_ITEMS_TO_BE_FOUND);
 		}
 		else
 		{
-			activeChar.sendPacket(new ExGetPremiumItemList(activeChar));
+			client.sendPacket(new ExGetPremiumItemList(activeChar));
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_52_REQUESTWITHDRAWPREMIUMITEM;
 	}
 }

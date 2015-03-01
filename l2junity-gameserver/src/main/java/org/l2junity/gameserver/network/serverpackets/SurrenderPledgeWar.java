@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public final class SurrenderPledgeWar extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public final class SurrenderPledgeWar implements IGameServerPacket
 {
 	private final String _pledgeName;
 	private final String _playerName;
@@ -30,10 +33,12 @@ public final class SurrenderPledgeWar extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x67);
-		writeS(_pledgeName);
-		writeS(_playerName);
+		OutgoingPackets.SURRENDER_PLEDGE_WAR.writeId(packet);
+		
+		packet.writeS(_pledgeName);
+		packet.writeS(_playerName);
+		return true;
 	}
 }

@@ -19,8 +19,10 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public final class DoorInfo extends L2GameServerPacket
+public final class DoorInfo implements IGameServerPacket
 {
 	private final L2DoorInstance _door;
 	
@@ -30,10 +32,12 @@ public final class DoorInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x4c);
-		writeD(_door.getObjectId());
-		writeD(_door.getId());
+		OutgoingPackets.DOOR_INFO.writeId(packet);
+		
+		packet.writeD(_door.getObjectId());
+		packet.writeD(_door.getId());
+		return true;
 	}
 }

@@ -41,13 +41,16 @@ import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
+import javolution.util.FastList;
+import javolution.util.FastMap;
+
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.L2GameClient.GameClientState;
+import org.l2junity.gameserver.network.client.ConnectionState;
 import org.l2junity.gameserver.network.gameserverpackets.AuthRequest;
 import org.l2junity.gameserver.network.gameserverpackets.BlowFishKey;
 import org.l2junity.gameserver.network.gameserverpackets.ChangeAccessLevel;
@@ -73,9 +76,6 @@ import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.util.Util;
 import org.l2junity.util.crypt.NewCrypt;
 import org.l2junity.util.network.BaseSendablePacket;
-
-import javolution.util.FastList;
-import javolution.util.FastMap;
 
 public class LoginServerThread extends Thread
 {
@@ -313,10 +313,10 @@ public class LoginServerThread extends Thread
 								{
 									PlayerInGame pig = new PlayerInGame(par.getAccount());
 									sendPacket(pig);
-									wcToRemove.gameClient.setState(GameClientState.AUTHED);
+									wcToRemove.gameClient.setConnectionState(ConnectionState.AUTHENTICATED);
 									wcToRemove.gameClient.setSessionId(wcToRemove.session);
 									CharSelectionInfo cl = new CharSelectionInfo(wcToRemove.account, wcToRemove.gameClient.getSessionId().playOkID1);
-									wcToRemove.gameClient.getConnection().sendPacket(cl);
+									wcToRemove.gameClient.sendPacket(cl);
 									wcToRemove.gameClient.setCharSelection(cl.getCharInfo());
 								}
 								else
@@ -559,8 +559,7 @@ public class LoginServerThread extends Thread
 				client
 			});
 			_logAccounting.log(record);
-			client.setAditionalClosePacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_LOGGED_IN_TO_TWO_PLACES_IF_YOU_SUSPECT_ACCOUNT_THEFT_WE_RECOMMEND_CHANGING_YOUR_PASSWORD_SCANNING_YOUR_COMPUTER_FOR_VIRUSES_AND_USING_AN_ANTI_VIRUS_SOFTWARE));
-			client.closeNow();
+			client.close(SystemMessage.getSystemMessage(SystemMessageId.YOU_ARE_LOGGED_IN_TO_TWO_PLACES_IF_YOU_SUSPECT_ACCOUNT_THEFT_WE_RECOMMEND_CHANGING_YOUR_PASSWORD_SCANNING_YOUR_COMPUTER_FOR_VIRUSES_AND_USING_AN_ANTI_VIRUS_SOFTWARE));
 		}
 	}
 	

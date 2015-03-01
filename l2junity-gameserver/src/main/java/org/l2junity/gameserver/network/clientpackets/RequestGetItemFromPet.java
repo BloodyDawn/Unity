@@ -19,42 +19,43 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.3.4.4 $ $Date: 2005/03/29 23:15:33 $
  */
-public final class RequestGetItemFromPet extends L2GameClientPacket
+public final class RequestGetItemFromPet implements IGameClientPacket
 {
-	private static final String _C__2C_REQUESTGETITEMFROMPET = "[C] 2C RequestGetItemFromPet";
-	
 	private int _objectId;
 	private long _amount;
 	@SuppressWarnings("unused")
 	private int _unknown;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_objectId = readD();
-		_amount = readQ();
-		_unknown = readD();// = 0 for most trades
+		_objectId = packet.readD();
+		_amount = packet.readQ();
+		_unknown = packet.readD();// = 0 for most trades
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if ((_amount <= 0) || (player == null) || !player.hasPet())
 		{
 			return;
 		}
 		
-		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("getfrompet"))
+		if (!client.getFloodProtectors().getTransaction().tryPerformAction("getfrompet"))
 		{
 			player.sendMessage("You get items from pet too fast.");
 			return;
@@ -82,11 +83,5 @@ public final class RequestGetItemFromPet extends L2GameClientPacket
 		{
 			_log.warning("Invalid item transfer request: " + pet.getName() + "(pet) --> " + player.getName());
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__2C_REQUESTGETITEMFROMPET;
 	}
 }

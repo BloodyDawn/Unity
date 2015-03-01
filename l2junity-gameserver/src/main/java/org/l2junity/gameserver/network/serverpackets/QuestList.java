@@ -21,29 +21,22 @@ package org.l2junity.gameserver.network.serverpackets;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class QuestList extends L2GameServerPacket
+public class QuestList implements IGameServerPacket
 {
-	private Quest[] _quests;
-	private PlayerInstance _activeChar;
+	private final Quest[] _quests;
+	private final PlayerInstance _activeChar;
 	
-	public QuestList()
+	public QuestList(PlayerInstance player)
 	{
-		
+		_activeChar = player;
+		_quests = player.getAllActiveQuests();
 	}
 	
 	@Override
-	public void runImpl()
-	{
-		if ((getClient() != null) && (getClient().getActiveChar() != null))
-		{
-			_activeChar = getClient().getActiveChar();
-			_quests = _activeChar.getAllActiveQuests();
-		}
-	}
-	
-	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
 		/**
 		 * <pre>
@@ -78,36 +71,37 @@ public class QuestList extends L2GameServerPacket
 		 * </pre>
 		 */
 		
-		writeC(0x86);
+		OutgoingPackets.QUEST_LIST.writeId(packet);
 		if (_quests != null)
 		{
-			writeH(_quests.length);
+			packet.writeH(_quests.length);
 			for (Quest q : _quests)
 			{
-				writeD(q.getId());
+				packet.writeD(q.getId());
 				QuestState qs = _activeChar.getQuestState(q.getName());
 				if (qs == null)
 				{
-					writeD(0);
+					packet.writeD(0);
 					continue;
 				}
 				
 				int states = qs.getInt("__compltdStateFlags");
 				if (states != 0)
 				{
-					writeD(states);
+					packet.writeD(states);
 				}
 				else
 				{
-					writeD(qs.getInt("cond"));
+					packet.writeD(qs.getInt("cond"));
 				}
 			}
 		}
 		else
 		{
 			// write empty size
-			writeH(0x00);
+			packet.writeH(0x00);
 		}
-		writeB(new byte[128]);
+		packet.writeB(new byte[128]);
+		return true;
 	}
 }

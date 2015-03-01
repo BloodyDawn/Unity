@@ -20,11 +20,13 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class ExVitalityEffectInfo extends L2GameServerPacket
+public class ExVitalityEffectInfo implements IGameServerPacket
 {
 	private final int _vitalityBonus;
 	private final int _vitalityItemsRemaining;
@@ -38,14 +40,14 @@ public class ExVitalityEffectInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x118);
+		OutgoingPackets.EX_VITALITY_EFFECT_INFO.writeId(packet);
 		
-		writeD(_points);
-		writeD(_vitalityBonus); // Vitality Bonus
-		writeH(_vitalityItemsRemaining); // How much vitality items remaining for use
-		writeH(Config.VITALITY_MAX_ITEMS_ALLOWED); // Max number of items for use
+		packet.writeD(_points);
+		packet.writeD(_vitalityBonus); // Vitality Bonus
+		packet.writeH(_vitalityItemsRemaining); // How much vitality items remaining for use
+		packet.writeH(Config.VITALITY_MAX_ITEMS_ALLOWED); // Max number of items for use
+		return true;
 	}
 }

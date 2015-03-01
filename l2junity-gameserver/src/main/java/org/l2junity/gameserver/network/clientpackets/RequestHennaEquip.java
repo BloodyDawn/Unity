@@ -23,34 +23,37 @@ import org.l2junity.gameserver.data.xml.impl.HennaData;
 import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.Henna;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Zoey76
  */
-public final class RequestHennaEquip extends L2GameClientPacket
+public final class RequestHennaEquip implements IGameClientPacket
 {
-	private static final String _C__6F_REQUESTHENNAEQUIP = "[C] 6F RequestHennaEquip";
 	private int _symbolId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_symbolId = readD();
+		_symbolId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
-		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("HennaEquip"))
+		if (!client.getFloodProtectors().getTransaction().tryPerformAction("HennaEquip"))
 		{
 			return;
 		}
@@ -58,7 +61,7 @@ public final class RequestHennaEquip extends L2GameClientPacket
 		if (activeChar.getHennaEmptySlots() == 0)
 		{
 			activeChar.sendPacket(SystemMessageId.NO_SLOT_EXISTS_TO_DRAW_THE_SYMBOL);
-			sendActionFailed();
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
@@ -66,7 +69,7 @@ public final class RequestHennaEquip extends L2GameClientPacket
 		if (henna == null)
 		{
 			_log.warning(getClass().getName() + ": Invalid Henna Id: " + _symbolId + " from player " + activeChar);
-			sendActionFailed();
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
@@ -87,13 +90,7 @@ public final class RequestHennaEquip extends L2GameClientPacket
 			{
 				Util.handleIllegalPlayerAction(activeChar, "Exploit attempt: Character " + activeChar.getName() + " of account " + activeChar.getAccountName() + " tryed to add a forbidden henna.", Config.DEFAULT_PUNISH);
 			}
-			sendActionFailed();
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__6F_REQUESTHENNAEQUIP;
 	}
 }

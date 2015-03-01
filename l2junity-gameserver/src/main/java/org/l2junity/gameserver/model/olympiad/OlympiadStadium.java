@@ -38,7 +38,7 @@ import org.l2junity.gameserver.model.zone.type.OlympiadStadiumZone;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExOlympiadMatchEnd;
 import org.l2junity.gameserver.network.serverpackets.ExOlympiadUserInfo;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
 /**
@@ -115,7 +115,7 @@ public class OlympiadStadium
 		});
 	}
 	
-	public final void broadcastPacket(L2GameServerPacket packet)
+	public final void broadcastPacket(IGameServerPacket packet)
 	{
 		_instance.getPlayers().stream().filter(Objects::nonNull).forEach(id ->
 		{
@@ -127,7 +127,7 @@ public class OlympiadStadium
 		});
 	}
 	
-	public final void broadcastPacketToObservers(L2GameServerPacket packet)
+	public final void broadcastPacketToObservers(IGameServerPacket packet)
 	{
 		_instance.getPlayers().stream().filter(Objects::nonNull).forEach(id ->
 		{

@@ -23,6 +23,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.logging.Logger;
 
+import javolution.text.TextBuilder;
+
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.instancemanager.QuestManager;
@@ -36,8 +38,6 @@ import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExShowQuestMark;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.network.serverpackets.QuestList;
-
-import javolution.text.TextBuilder;
 
 /**
  * TODO: Rework and cleanup.
@@ -338,7 +338,7 @@ public class AdminShowQuests implements IAdminCommandHandler
 				{
 					Quest.deleteQuestInDb(qs, true);
 					qs.exitQuest(true);
-					target.sendPacket(new QuestList());
+					target.sendPacket(new QuestList(target));
 					target.sendPacket(new ExShowQuestMark(qs.getQuest().getId(), qs.getCond()));
 					break;
 				}
@@ -347,7 +347,7 @@ public class AdminShowQuests implements IAdminCommandHandler
 					qs = QuestManager.getInstance().getQuest(Integer.parseInt(val[0])).newQuestState(target);
 					qs.setState(State.STARTED);
 					qs.set("cond", "1");
-					target.sendPacket(new QuestList());
+					target.sendPacket(new QuestList(target));
 					target.sendPacket(new ExShowQuestMark(qs.getQuest().getId(), qs.getCond()));
 					val[0] = qs.getQuest().getName();
 					break;
@@ -356,7 +356,7 @@ public class AdminShowQuests implements IAdminCommandHandler
 				{
 					qs = QuestManager.getInstance().getQuest(Integer.parseInt(val[0])).newQuestState(target);
 					qs.exitQuest(false);
-					target.sendPacket(new QuestList());
+					target.sendPacket(new QuestList(target));
 					target.sendPacket(new ExShowQuestMark(qs.getQuest().getId(), qs.getCond()));
 					val[0] = qs.getQuest().getName();
 					break;
@@ -373,7 +373,7 @@ public class AdminShowQuests implements IAdminCommandHandler
 			{
 				qs.set(val[1], val[2]);
 			}
-			target.sendPacket(new QuestList());
+			target.sendPacket(new QuestList(target));
 			target.sendPacket(new ExShowQuestMark(qs.getQuest().getId(), qs.getCond()));
 		}
 		actor.sendMessage("");

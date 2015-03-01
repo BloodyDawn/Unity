@@ -18,17 +18,21 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author Gnacik
  */
-public class ExNotifyPremiumItem extends L2GameServerPacket
+public class ExNotifyPremiumItem implements IGameServerPacket
 {
 	public static final ExNotifyPremiumItem STATIC_PACKET = new ExNotifyPremiumItem();
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x86);
+		OutgoingPackets.EX_NOTIFY_PREMIUM_ITEM.writeId(packet);
+		
+		return true;
 	}
 }

@@ -23,11 +23,13 @@ import java.util.Map;
 import org.l2junity.gameserver.data.xml.impl.BeautyShopData;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.beautyshop.BeautyItem;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class ExResponseBeautyList extends L2GameServerPacket
+public class ExResponseBeautyList implements IGameServerPacket
 {
 	private final PlayerInstance _activeChar;
 	private final int _type;
@@ -51,20 +53,20 @@ public class ExResponseBeautyList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x135);
+		OutgoingPackets.EX_RESPONSE_BEAUTY_LIST.writeId(packet);
 		
-		writeQ(_activeChar.getAdena());
-		writeQ(_activeChar.getBeautyTickets());
-		writeD(_type);
-		writeD(_beautyItem.size());
+		packet.writeQ(_activeChar.getAdena());
+		packet.writeQ(_activeChar.getBeautyTickets());
+		packet.writeD(_type);
+		packet.writeD(_beautyItem.size());
 		for (BeautyItem item : _beautyItem.values())
 		{
-			writeD(item.getId());
-			writeD(1); // Limit
+			packet.writeD(item.getId());
+			packet.writeD(1); // Limit
 		}
-		writeD(0);
+		packet.writeD(0);
+		return true;
 	}
 }

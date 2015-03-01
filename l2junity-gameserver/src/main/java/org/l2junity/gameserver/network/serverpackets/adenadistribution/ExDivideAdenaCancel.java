@@ -18,21 +18,27 @@
  */
 package org.l2junity.gameserver.network.serverpackets.adenadistribution;
 
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class ExDivideAdenaCancel extends L2GameServerPacket
+public class ExDivideAdenaCancel implements IGameServerPacket
 {
 	public static final ExDivideAdenaCancel STATIC_PACKET = new ExDivideAdenaCancel();
 	
-	@Override
-	protected void writeImpl()
+	private ExDivideAdenaCancel()
 	{
-		writeC(0xFE);
-		writeH(0x15C);
+	}
+	
+	@Override
+	public boolean write(PacketWriter packet)
+	{
+		OutgoingPackets.EX_DIVIDE_ADENA_CANCEL.writeId(packet);
 		
-		writeC(0x00); // TODO: Find me
+		packet.writeC(0x00); // TODO: Find me
+		return true;
 	}
 }

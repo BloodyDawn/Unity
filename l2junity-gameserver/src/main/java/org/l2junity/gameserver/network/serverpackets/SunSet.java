@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class SunSet extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class SunSet implements IGameServerPacket
 {
 	public static final SunSet STATIC_PACKET = new SunSet();
 	
@@ -27,8 +30,9 @@ public class SunSet extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x13);
+		OutgoingPackets.SUN_SET.writeId(packet);
+		return true;
 	}
 }

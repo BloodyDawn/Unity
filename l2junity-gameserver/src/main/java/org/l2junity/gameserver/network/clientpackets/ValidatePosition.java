@@ -22,17 +22,17 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.GetOnVehicle;
 import org.l2junity.gameserver.network.serverpackets.ValidateLocation;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.13.4.7 $ $Date: 2005/03/27 15:29:30 $
  */
-public class ValidatePosition extends L2GameClientPacket
+public class ValidatePosition implements IGameClientPacket
 {
-	private static final String _C__59_VALIDATEPOSITION = "[C] 59 ValidatePosition";
-	
 	private int _x;
 	private int _y;
 	private int _z;
@@ -40,19 +40,20 @@ public class ValidatePosition extends L2GameClientPacket
 	private int _data; // vehicle id
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_x = readD();
-		_y = readD();
-		_z = readD();
-		_heading = readD();
-		_data = readD();
+		_x = packet.readD();
+		_y = packet.readD();
+		_z = packet.readD();
+		_heading = packet.readD();
+		_data = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if ((activeChar == null) || activeChar.isTeleporting() || activeChar.inObserverMode())
 		{
 			return;
@@ -89,7 +90,7 @@ public class ValidatePosition extends L2GameClientPacket
 				diffSq = ((dx * dx) + (dy * dy));
 				if (diffSq > 250000)
 				{
-					sendPacket(new GetOnVehicle(activeChar.getObjectId(), _data, activeChar.getInVehiclePosition()));
+					client.sendPacket(new GetOnVehicle(activeChar.getObjectId(), _data, activeChar.getInVehiclePosition()));
 				}
 			}
 			return;
@@ -204,11 +205,5 @@ public class ValidatePosition extends L2GameClientPacket
 		activeChar.setClientZ(_z);
 		activeChar.setClientHeading(_heading); // No real need to validate heading.
 		activeChar.setLastServerPosition(realX, realY, realZ);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__59_VALIDATEPOSITION;
 	}
 }

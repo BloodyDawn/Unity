@@ -21,8 +21,10 @@ package org.l2junity.gameserver.network.serverpackets;
 import org.l2junity.gameserver.data.xml.impl.RecipeData;
 import org.l2junity.gameserver.model.RecipeList;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class RecipeItemMakeInfo extends L2GameServerPacket
+public class RecipeItemMakeInfo implements IGameServerPacket
 {
 	private final int _id;
 	private final PlayerInstance _activeChar;
@@ -43,21 +45,20 @@ public class RecipeItemMakeInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
 		final RecipeList recipe = RecipeData.getInstance().getRecipeList(_id);
 		if (recipe != null)
 		{
-			writeC(0xDD);
-			writeD(_id);
-			writeD(recipe.isDwarvenRecipe() ? 0 : 1); // 0 = Dwarven - 1 = Common
-			writeD((int) _activeChar.getCurrentMp());
-			writeD(_activeChar.getMaxMp());
-			writeD(_success ? 1 : 0); // item creation success/failed
+			OutgoingPackets.RECIPE_ITEM_MAKE_INFO.writeId(packet);
+			packet.writeD(_id);
+			packet.writeD(recipe.isDwarvenRecipe() ? 0 : 1); // 0 = Dwarven - 1 = Common
+			packet.writeD((int) _activeChar.getCurrentMp());
+			packet.writeD(_activeChar.getMaxMp());
+			packet.writeD(_success ? 1 : 0); // item creation success/failed
+			return true;
 		}
-		else
-		{
-			_log.info("Character: " + getClient().getActiveChar() + ": Requested unexisting recipe with id = " + _id);
-		}
+		_log.info("Character: " + _activeChar + ": Requested unexisting recipe with id = " + _id);
+		return false;
 	}
 }

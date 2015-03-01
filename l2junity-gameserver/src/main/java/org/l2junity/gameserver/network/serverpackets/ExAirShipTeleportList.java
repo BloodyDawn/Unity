@@ -19,8 +19,10 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.VehiclePathPoint;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class ExAirShipTeleportList extends L2GameServerPacket
+public class ExAirShipTeleportList implements IGameServerPacket
 {
 	private final int _dockId;
 	private final VehiclePathPoint[][] _teleports;
@@ -34,32 +36,30 @@ public class ExAirShipTeleportList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x9B);
+		OutgoingPackets.EX_AIR_SHIP_TELEPORT_LIST.writeId(packet);
 		
-		writeD(_dockId);
+		packet.writeD(_dockId);
 		if (_teleports != null)
 		{
-			writeD(_teleports.length);
+			packet.writeD(_teleports.length);
 			
-			VehiclePathPoint[] path;
-			VehiclePathPoint dst;
 			for (int i = 0; i < _teleports.length; i++)
 			{
-				writeD(i - 1);
-				writeD(_fuelConsumption[i]);
-				path = _teleports[i];
-				dst = path[path.length - 1];
-				writeD(dst.getX());
-				writeD(dst.getY());
-				writeD(dst.getZ());
+				packet.writeD(i - 1);
+				packet.writeD(_fuelConsumption[i]);
+				final VehiclePathPoint[] path = _teleports[i];
+				final VehiclePathPoint dst = path[path.length - 1];
+				packet.writeD(dst.getX());
+				packet.writeD(dst.getY());
+				packet.writeD(dst.getZ());
 			}
 		}
 		else
 		{
-			writeD(0);
+			packet.writeD(0);
 		}
+		return true;
 	}
 }

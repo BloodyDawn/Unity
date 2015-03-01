@@ -21,12 +21,14 @@ package org.l2junity.gameserver.network.serverpackets;
 import java.util.List;
 
 import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * Format: (ch) d[ddddd]
  * @author -Wooden-
  */
-public class ExCursedWeaponLocation extends L2GameServerPacket
+public class ExCursedWeaponLocation implements IGameServerPacket
 {
 	private final List<CursedWeaponInfo> _cursedWeaponInfo;
 	
@@ -36,28 +38,28 @@ public class ExCursedWeaponLocation extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x48);
+		OutgoingPackets.EX_CURSED_WEAPON_LOCATION.writeId(packet);
 		
 		if (!_cursedWeaponInfo.isEmpty())
 		{
-			writeD(_cursedWeaponInfo.size());
+			packet.writeD(_cursedWeaponInfo.size());
 			for (CursedWeaponInfo w : _cursedWeaponInfo)
 			{
-				writeD(w.id);
-				writeD(w.activated);
+				packet.writeD(w.id);
+				packet.writeD(w.activated);
 				
-				writeD(w.pos.getX());
-				writeD(w.pos.getY());
-				writeD(w.pos.getZ());
+				packet.writeD(w.pos.getX());
+				packet.writeD(w.pos.getY());
+				packet.writeD(w.pos.getZ());
 			}
 		}
 		else
 		{
-			writeD(0);
+			packet.writeD(0);
 		}
+		return true;
 	}
 	
 	public static class CursedWeaponInfo

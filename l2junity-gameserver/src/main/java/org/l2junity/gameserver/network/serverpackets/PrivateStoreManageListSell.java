@@ -22,6 +22,8 @@ import java.util.Collection;
 
 import org.l2junity.gameserver.model.TradeItem;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 public class PrivateStoreManageListSell extends AbstractItemPacket
 {
@@ -42,28 +44,28 @@ public class PrivateStoreManageListSell extends AbstractItemPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xA0);
-		// section 1
-		writeD(_objId);
-		writeD(_packageSale ? 1 : 0); // Package sell
-		writeQ(_playerAdena);
+		OutgoingPackets.PRIVATE_STORE_MANAGE_LIST.writeId(packet);
 		
-		// section2
-		writeD(_itemList.size()); // for potential sells
+		packet.writeD(_objId);
+		packet.writeD(_packageSale ? 1 : 0); // Package sell
+		packet.writeQ(_playerAdena);
+		
+		packet.writeD(_itemList.size()); // for potential sells
 		for (TradeItem item : _itemList)
 		{
-			writeItem(item);
-			writeQ(item.getItem().getReferencePrice() * 2);
+			writeItem(packet, item);
+			packet.writeQ(item.getItem().getReferencePrice() * 2);
 		}
-		// section 3
-		writeD(_sellList.length); // count for any items already added for sell
+		
+		packet.writeD(_sellList.length); // count for any items already added for sell
 		for (TradeItem item : _sellList)
 		{
-			writeItem(item);
-			writeQ(item.getPrice());
-			writeQ(item.getItem().getReferencePrice() * 2);
+			writeItem(packet, item);
+			packet.writeQ(item.getPrice());
+			packet.writeQ(item.getItem().getReferencePrice() * 2);
 		}
+		return true;
 	}
 }

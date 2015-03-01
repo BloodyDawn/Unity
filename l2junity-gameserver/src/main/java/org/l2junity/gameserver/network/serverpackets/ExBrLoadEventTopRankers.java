@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * Halloween rank list server packet.
  */
-public class ExBrLoadEventTopRankers extends L2GameServerPacket
+public class ExBrLoadEventTopRankers implements IGameServerPacket
 {
 	private final int _eventId;
 	private final int _day;
@@ -39,15 +42,15 @@ public class ExBrLoadEventTopRankers extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xBE);
-		writeD(_eventId);
-		writeD(_day);
-		writeD(_count);
-		writeD(_bestScore);
-		writeD(_myScore);
+		OutgoingPackets.EX_BR_LOAD_EVENT_TOP_RANKERS.writeId(packet);
 		
+		packet.writeD(_eventId);
+		packet.writeD(_day);
+		packet.writeD(_count);
+		packet.writeD(_bestScore);
+		packet.writeD(_myScore);
+		return true;
 	}
 }

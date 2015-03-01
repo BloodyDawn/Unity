@@ -25,29 +25,30 @@ import java.util.logging.Logger;
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.L2Event;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.9.4.3 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class Logout extends L2GameClientPacket
+public final class Logout implements IGameClientPacket
 {
-	private static final String _C__00_LOGOUT = "[C] 00 Logout";
 	protected static final Logger _logAccounting = Logger.getLogger("accounting");
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -89,16 +90,10 @@ public final class Logout extends L2GameClientPacket
 		LogRecord record = new LogRecord(Level.INFO, "Disconnected");
 		record.setParameters(new Object[]
 		{
-			getClient()
+			client
 		});
 		_logAccounting.log(record);
 		
 		player.logout();
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__00_LOGOUT;
 	}
 }

@@ -18,14 +18,15 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
+
 /**
  * Format: (c) ddd d: dx d: dy d: dz
  * @author -Wooden-
  */
-public class MoveWithDelta extends L2GameClientPacket
+public class MoveWithDelta implements IGameClientPacket
 {
-	private static final String _C__52_MOVEWITHDELTA = "[C] 52 MoveWithDelta";
-	
 	@SuppressWarnings("unused")
 	private int _dx;
 	@SuppressWarnings("unused")
@@ -34,22 +35,17 @@ public class MoveWithDelta extends L2GameClientPacket
 	private int _dz;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_dx = readD();
-		_dy = readD();
-		_dz = readD();
+		_dx = packet.readD();
+		_dy = packet.readD();
+		_dz = packet.readD();
+		return false;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		// TODO this
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__52_MOVEWITHDELTA;
 	}
 }

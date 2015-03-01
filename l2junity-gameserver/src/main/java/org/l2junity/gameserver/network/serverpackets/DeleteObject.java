@@ -19,8 +19,10 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public final class DeleteObject extends L2GameServerPacket
+public final class DeleteObject implements IGameServerPacket
 {
 	private final int _objectId;
 	
@@ -35,10 +37,12 @@ public final class DeleteObject extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x08);
-		writeD(_objectId);
-		writeC(0x00); // c2
+		OutgoingPackets.DELETE_OBJECT.writeId(packet);
+		
+		packet.writeD(_objectId);
+		packet.writeC(0x00); // c2
+		return true;
 	}
 }

@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class TutorialEnableClientEvent extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class TutorialEnableClientEvent implements IGameServerPacket
 {
 	private int _eventId = 0;
 	
@@ -28,9 +31,11 @@ public class TutorialEnableClientEvent extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xA8);
-		writeD(_eventId);
+		OutgoingPackets.TUTORIAL_ENABLE_CLIENT_EVENT.writeId(packet);
+		
+		packet.writeD(_eventId);
+		return true;
 	}
 }

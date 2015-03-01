@@ -21,11 +21,13 @@ package org.l2junity.gameserver.network.serverpackets;
 import java.util.List;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid, mrTJO
  */
-public class ExShowContactList extends L2GameServerPacket
+public class ExShowContactList implements IGameServerPacket
 {
 	private final List<String> _contacts;
 	
@@ -35,14 +37,12 @@ public class ExShowContactList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xD3);
-		writeD(_contacts.size());
-		for (String name : _contacts)
-		{
-			writeS(name);
-		}
+		OutgoingPackets.EX_CONFIRM_ADDING_POST_FRIEND.writeId(packet);
+		
+		packet.writeD(_contacts.size());
+		_contacts.forEach(packet::writeS);
+		return true;
 	}
 }

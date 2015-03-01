@@ -27,31 +27,31 @@ import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.instancemanager.AntiFeedManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.L2GameClient;
-import org.l2junity.gameserver.network.L2GameClient.GameClientState;
 import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.client.ConnectionState;
 import org.l2junity.gameserver.network.serverpackets.CharSelectionInfo;
 import org.l2junity.gameserver.network.serverpackets.RestartResponse;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.11.2.1.2.4 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestRestart extends L2GameClientPacket
+public final class RequestRestart implements IGameClientPacket
 {
-	private static final String _C__57_REQUESTRESTART = "[C] 57 RequestRestart";
 	protected static final Logger _logAccounting = Logger.getLogger("accounting");
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// trigger
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -59,21 +59,21 @@ public final class RequestRestart extends L2GameClientPacket
 		
 		if (player.hasItemRequest())
 		{
-			sendPacket(RestartResponse.valueOf(false));
+			client.sendPacket(RestartResponse.valueOf(false));
 			return;
 		}
 		
 		if (player.isLocked())
 		{
 			_log.warning("Player " + player.getName() + " tried to restart during class change.");
-			sendPacket(RestartResponse.valueOf(false));
+			client.sendPacket(RestartResponse.valueOf(false));
 			return;
 		}
 		
 		if (player.getPrivateStoreType() != PrivateStoreType.NONE)
 		{
 			player.sendMessage("Cannot restart while trading");
-			sendPacket(RestartResponse.valueOf(false));
+			client.sendPacket(RestartResponse.valueOf(false));
 			return;
 		}
 		
@@ -85,17 +85,15 @@ public final class RequestRestart extends L2GameClientPacket
 			}
 			
 			player.sendPacket(SystemMessageId.YOU_CANNOT_RESTART_WHILE_IN_COMBAT);
-			sendPacket(RestartResponse.valueOf(false));
+			client.sendPacket(RestartResponse.valueOf(false));
 			return;
 		}
 		
 		if (player.isBlockedFromExit())
 		{
-			sendPacket(RestartResponse.valueOf(false));
+			client.sendPacket(RestartResponse.valueOf(false));
 			return;
 		}
-		
-		final L2GameClient client = getClient();
 		
 		LogRecord record = new LogRecord(Level.INFO, "Logged out");
 		record.setParameters(new Object[]
@@ -113,19 +111,13 @@ public final class RequestRestart extends L2GameClientPacket
 		AntiFeedManager.getInstance().onDisconnect(client);
 		
 		// return the client to the authed status
-		client.setState(GameClientState.AUTHED);
+		client.setConnectionState(ConnectionState.AUTHENTICATED);
 		
-		sendPacket(RestartResponse.valueOf(true));
+		client.sendPacket(RestartResponse.valueOf(true));
 		
 		// send char list
 		final CharSelectionInfo cl = new CharSelectionInfo(client.getAccountName(), client.getSessionId().playOkID1);
-		sendPacket(cl);
+		client.sendPacket(cl);
 		client.setCharSelection(cl.getCharInfo());
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__57_REQUESTRESTART;
 	}
 }

@@ -22,19 +22,19 @@ import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.ValidateLocation;
 import org.l2junity.gameserver.util.Broadcast;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * Fromat:(ch) dddddc
  * @author -Wooden-
  */
-public final class RequestExMagicSkillUseGround extends L2GameClientPacket
+public final class RequestExMagicSkillUseGround implements IGameClientPacket
 {
-	private static final String _C__D0_44_REQUESTEXMAGICSKILLUSEGROUND = "[C] D0:44 RequestExMagicSkillUseGround";
-	
 	private int _x;
 	private int _y;
 	private int _z;
@@ -43,21 +43,22 @@ public final class RequestExMagicSkillUseGround extends L2GameClientPacket
 	private boolean _shiftPressed;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_x = readD();
-		_y = readD();
-		_z = readD();
-		_skillId = readD();
-		_ctrlPressed = readD() != 0;
-		_shiftPressed = readC() != 0;
+		_x = packet.readD();
+		_y = packet.readD();
+		_z = packet.readD();
+		_skillId = packet.readD();
+		_ctrlPressed = packet.readD() != 0;
+		_shiftPressed = packet.readC() != 0;
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		// Get the current L2PcInstance of the player
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -67,7 +68,7 @@ public final class RequestExMagicSkillUseGround extends L2GameClientPacket
 		int level = activeChar.getSkillLevel(_skillId);
 		if (level <= 0)
 		{
-			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
@@ -87,14 +88,8 @@ public final class RequestExMagicSkillUseGround extends L2GameClientPacket
 		}
 		else
 		{
-			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			_log.warning("No skill found with id " + _skillId + " and level " + level + " !!");
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_44_REQUESTEXMAGICSKILLUSEGROUND;
 	}
 }

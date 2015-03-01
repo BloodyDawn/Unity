@@ -18,32 +18,25 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.QuestList;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.3.4.2 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestQuestList extends L2GameClientPacket
+public final class RequestQuestList implements IGameClientPacket
 {
-	private static final String _C__62_REQUESTQUESTLIST = "[C] 62 RequestQuestList";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// trigger
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		QuestList ql = new QuestList();
-		sendPacket(ql);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__62_REQUESTQUESTLIST;
+		client.sendPacket(new QuestList(client.getActiveChar()));
 	}
 }

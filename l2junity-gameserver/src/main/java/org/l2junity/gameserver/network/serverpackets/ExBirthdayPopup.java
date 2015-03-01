@@ -18,20 +18,25 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-/**
- * @author Gnat
- **/
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class ExBirthdayPopup extends L2GameServerPacket
+/**
+ * @author Gnacik
+ **/
+public class ExBirthdayPopup implements IGameServerPacket
 {
-	public ExBirthdayPopup()
+	public static final ExBirthdayPopup STATIC_PACKET = new ExBirthdayPopup();
+	
+	private ExBirthdayPopup()
 	{
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x90);
+		OutgoingPackets.EX_NOTIFY_BIRTH_DAY.writeId(packet);
+		
+		return true;
 	}
 }

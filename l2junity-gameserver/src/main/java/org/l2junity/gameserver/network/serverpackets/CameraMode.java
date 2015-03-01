@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class CameraMode extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class CameraMode implements IGameServerPacket
 {
 	private final int _mode;
 	
@@ -32,9 +35,11 @@ public class CameraMode extends L2GameServerPacket
 	}
 	
 	@Override
-	public void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xf7);
-		writeD(_mode);
+		OutgoingPackets.CAMERA_MODE.writeId(packet);
+		
+		packet.writeD(_mode);
+		return true;
 	}
 }

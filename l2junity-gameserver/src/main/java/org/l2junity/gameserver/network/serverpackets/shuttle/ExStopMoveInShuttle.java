@@ -20,12 +20,14 @@ package org.l2junity.gameserver.network.serverpackets.shuttle;
 
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class ExStopMoveInShuttle extends L2GameServerPacket
+public class ExStopMoveInShuttle implements IGameServerPacket
 {
 	private final int _charObjId;
 	private final int _boatId;
@@ -41,14 +43,16 @@ public class ExStopMoveInShuttle extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xD0);
+		OutgoingPackets.EX_STOP_MOVE_IN_SHUTTLE.writeId(packet);
 		
-		writeD(_charObjId);
-		writeD(_boatId);
-		writeLoc(_pos);
-		writeD(_heading);
+		packet.writeD(_charObjId);
+		packet.writeD(_boatId);
+		packet.writeD(_pos.getX());
+		packet.writeD(_pos.getY());
+		packet.writeD(_pos.getZ());
+		packet.writeD(_heading);
+		return true;
 	}
 }

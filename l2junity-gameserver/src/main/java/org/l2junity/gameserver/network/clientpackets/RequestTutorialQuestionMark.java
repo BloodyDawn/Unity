@@ -20,35 +20,29 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.instance.L2ClassMasterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
-public class RequestTutorialQuestionMark extends L2GameClientPacket
+public class RequestTutorialQuestionMark implements IGameClientPacket
 {
-	private static final String _C__87_REQUESTTUTORIALQUESTIONMARK = "[C] 87 RequestTutorialQuestionMark";
-	
 	private int _number = 0;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_number = readD();
+		_number = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance player = getClient().getActiveChar();
-		
+		PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
 		}
 		
 		L2ClassMasterInstance.onTutorialQuestionMark(player, _number);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__87_REQUESTTUTORIALQUESTIONMARK;
 	}
 }

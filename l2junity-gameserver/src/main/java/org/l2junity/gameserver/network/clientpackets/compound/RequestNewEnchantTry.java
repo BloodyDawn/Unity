@@ -22,51 +22,53 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.CompoundRequest;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.ExAdenaInvenCount;
 import org.l2junity.gameserver.network.serverpackets.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2junity.gameserver.network.serverpackets.compound.ExEnchantFail;
 import org.l2junity.gameserver.network.serverpackets.compound.ExEnchantOneFail;
 import org.l2junity.gameserver.network.serverpackets.compound.ExEnchantSucess;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author UnAfraid
  */
-public class RequestNewEnchantTry extends L2GameClientPacket
+public class RequestNewEnchantTry implements IGameClientPacket
 {
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		else if (activeChar.isInStoreMode())
 		{
-			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_DO_THAT_WHILE_IN_A_PRIVATE_STORE_OR_PRIVATE_WORKSHOP);
-			activeChar.sendPacket(ExEnchantOneFail.STATIC_PACKET);
+			client.sendPacket(SystemMessageId.YOU_CANNOT_DO_THAT_WHILE_IN_A_PRIVATE_STORE_OR_PRIVATE_WORKSHOP);
+			client.sendPacket(ExEnchantOneFail.STATIC_PACKET);
 			return;
 		}
 		else if (activeChar.isProcessingTransaction() || activeChar.isProcessingRequest())
 		{
-			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_USE_THIS_SYSTEM_DURING_TRADING_PRIVATE_STORE_AND_WORKSHOP_SETUP);
-			activeChar.sendPacket(ExEnchantOneFail.STATIC_PACKET);
+			client.sendPacket(SystemMessageId.YOU_CANNOT_USE_THIS_SYSTEM_DURING_TRADING_PRIVATE_STORE_AND_WORKSHOP_SETUP);
+			client.sendPacket(ExEnchantOneFail.STATIC_PACKET);
 			return;
 		}
 		
 		final CompoundRequest request = activeChar.getRequest(CompoundRequest.class);
 		if ((request == null) || request.isProcessing())
 		{
-			activeChar.sendPacket(ExEnchantFail.STATIC_PACKET);
+			client.sendPacket(ExEnchantFail.STATIC_PACKET);
 			return;
 		}
 		
@@ -76,7 +78,7 @@ public class RequestNewEnchantTry extends L2GameClientPacket
 		final ItemInstance itemTwo = request.getItemTwo();
 		if ((itemOne == null) || (itemTwo == null))
 		{
-			activeChar.sendPacket(ExEnchantFail.STATIC_PACKET);
+			client.sendPacket(ExEnchantFail.STATIC_PACKET);
 			activeChar.removeRequest(request.getClass());
 			return;
 		}
@@ -84,7 +86,7 @@ public class RequestNewEnchantTry extends L2GameClientPacket
 		// Lets prevent using same item twice
 		if (itemOne.getObjectId() == itemTwo.getObjectId())
 		{
-			activeChar.sendPacket(new ExEnchantFail(itemOne.getItem().getId(), itemTwo.getItem().getId()));
+			client.sendPacket(new ExEnchantFail(itemOne.getItem().getId(), itemTwo.getItem().getId()));
 			activeChar.removeRequest(request.getClass());
 			return;
 		}
@@ -92,7 +94,7 @@ public class RequestNewEnchantTry extends L2GameClientPacket
 		// Combining only same items!
 		if (itemOne.getItem().getId() != itemTwo.getItem().getId())
 		{
-			activeChar.sendPacket(new ExEnchantFail(itemOne.getItem().getId(), itemTwo.getItem().getId()));
+			client.sendPacket(new ExEnchantFail(itemOne.getItem().getId(), itemTwo.getItem().getId()));
 			activeChar.removeRequest(request.getClass());
 			return;
 		}
@@ -100,7 +102,7 @@ public class RequestNewEnchantTry extends L2GameClientPacket
 		// Not implemented or not able to merge!
 		if ((itemOne.getItem().getCompoundItem() == 0) || (itemOne.getItem().getCompoundChance() == 0))
 		{
-			activeChar.sendPacket(new ExEnchantFail(itemOne.getItem().getId(), itemTwo.getItem().getId()));
+			client.sendPacket(new ExEnchantFail(itemOne.getItem().getId(), itemTwo.getItem().getId()));
 			activeChar.removeRequest(request.getClass());
 			return;
 		}
@@ -117,7 +119,7 @@ public class RequestNewEnchantTry extends L2GameClientPacket
 			if (activeChar.destroyItem("Compound-Item-One", itemOne, null, true) && activeChar.destroyItem("Compound-Item-Two", itemTwo, null, true))
 			{
 				final ItemInstance item = activeChar.addItem("Compound-Result", itemOne.getItem().getCompoundItem(), 1, null, true);
-				activeChar.sendPacket(new ExEnchantSucess(item.getItem().getId()));
+				client.sendPacket(new ExEnchantSucess(item.getItem().getId()));
 			}
 		}
 		else
@@ -127,13 +129,13 @@ public class RequestNewEnchantTry extends L2GameClientPacket
 			// Upon fail we destroy the second item.
 			if (activeChar.destroyItem("Compound-Item-Two-Fail", itemTwo, null, true))
 			{
-				activeChar.sendPacket(new ExEnchantFail(itemOne.getItem().getId(), itemTwo.getItem().getId()));
+				client.sendPacket(new ExEnchantFail(itemOne.getItem().getId(), itemTwo.getItem().getId()));
 			}
 		}
 		
-		activeChar.sendPacket(iu);
-		activeChar.sendPacket(new ExAdenaInvenCount(activeChar));
-		activeChar.sendPacket(new ExUserInfoInvenWeight(activeChar));
+		client.sendPacket(iu);
+		client.sendPacket(new ExAdenaInvenCount(activeChar));
+		client.sendPacket(new ExUserInfoInvenWeight(activeChar));
 		activeChar.removeRequest(request.getClass());
 	}
 }

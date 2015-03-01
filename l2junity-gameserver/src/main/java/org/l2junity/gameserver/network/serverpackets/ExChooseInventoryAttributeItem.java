@@ -24,11 +24,13 @@ import java.util.Set;
 import org.l2junity.gameserver.model.Elementals;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Kerberos
  */
-public class ExChooseInventoryAttributeItem extends L2GameServerPacket
+public class ExChooseInventoryAttributeItem implements IGameServerPacket
 {
 	private final int _itemId;
 	private final long _count;
@@ -58,20 +60,21 @@ public class ExChooseInventoryAttributeItem extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x63);
-		writeD(_itemId);
-		writeQ(_count);
-		writeD(_atribute == Elementals.FIRE ? 1 : 0); // Fire
-		writeD(_atribute == Elementals.WATER ? 1 : 0); // Water
-		writeD(_atribute == Elementals.WIND ? 1 : 0); // Wind
-		writeD(_atribute == Elementals.EARTH ? 1 : 0); // Earth
-		writeD(_atribute == Elementals.HOLY ? 1 : 0); // Holy
-		writeD(_atribute == Elementals.DARK ? 1 : 0); // Unholy
-		writeD(_level); // Item max attribute level
-		writeD(_items.size());
-		_items.forEach(this::writeD);
+		OutgoingPackets.EX_CHOOSE_INVENTORY_ATTRIBUTE_ITEM.writeId(packet);
+		
+		packet.writeD(_itemId);
+		packet.writeQ(_count);
+		packet.writeD(_atribute == Elementals.FIRE ? 1 : 0); // Fire
+		packet.writeD(_atribute == Elementals.WATER ? 1 : 0); // Water
+		packet.writeD(_atribute == Elementals.WIND ? 1 : 0); // Wind
+		packet.writeD(_atribute == Elementals.EARTH ? 1 : 0); // Earth
+		packet.writeD(_atribute == Elementals.HOLY ? 1 : 0); // Holy
+		packet.writeD(_atribute == Elementals.DARK ? 1 : 0); // Unholy
+		packet.writeD(_level); // Item max attribute level
+		packet.writeD(_items.size());
+		_items.forEach(packet::writeD);
+		return true;
 	}
 }

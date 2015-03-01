@@ -26,11 +26,13 @@ import org.l2junity.gameserver.model.olympiad.OlympiadGameClassed;
 import org.l2junity.gameserver.model.olympiad.OlympiadGameManager;
 import org.l2junity.gameserver.model.olympiad.OlympiadGameNonClassed;
 import org.l2junity.gameserver.model.olympiad.OlympiadGameTask;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author mrTJO
  */
-public class ExOlympiadMatchList extends L2GameServerPacket
+public class ExOlympiadMatchList implements IGameServerPacket
 {
 	private final List<OlympiadGameTask> _games = new ArrayList<>();
 	
@@ -52,39 +54,40 @@ public class ExOlympiadMatchList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xD5);
-		writeD(0x00); // Type 0 = Match List, 1 = Match Result
+		OutgoingPackets.EX_RECEIVE_OLYMPIAD.writeId(packet);
 		
-		writeD(_games.size());
-		writeD(0x00);
+		packet.writeD(0x00); // Type 0 = Match List, 1 = Match Result
+		
+		packet.writeD(_games.size());
+		packet.writeD(0x00);
 		
 		for (OlympiadGameTask curGame : _games)
 		{
 			AbstractOlympiadGame game = curGame.getGame();
 			if (game != null)
 			{
-				writeD(game.getStadiumId()); // Stadium Id (Arena 1 = 0)
+				packet.writeD(game.getStadiumId()); // Stadium Id (Arena 1 = 0)
 				
 				if (game instanceof OlympiadGameNonClassed)
 				{
-					writeD(1);
+					packet.writeD(1);
 				}
 				else if (game instanceof OlympiadGameClassed)
 				{
-					writeD(2);
+					packet.writeD(2);
 				}
 				else
 				{
-					writeD(0);
+					packet.writeD(0);
 				}
 				
-				writeD(curGame.isRunning() ? 0x02 : 0x01); // (1 = Standby, 2 = Playing)
-				writeS(game.getPlayerNames()[0]); // Player 1 Name
-				writeS(game.getPlayerNames()[1]); // Player 2 Name
+				packet.writeD(curGame.isRunning() ? 0x02 : 0x01); // (1 = Standby, 2 = Playing)
+				packet.writeS(game.getPlayerNames()[0]); // Player 1 Name
+				packet.writeS(game.getPlayerNames()[1]); // Player 2 Name
 			}
 		}
+		return true;
 	}
 }

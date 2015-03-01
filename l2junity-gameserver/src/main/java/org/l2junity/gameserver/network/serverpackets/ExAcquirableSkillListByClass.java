@@ -22,11 +22,13 @@ import java.util.List;
 
 import org.l2junity.gameserver.model.SkillLearn;
 import org.l2junity.gameserver.model.base.AcquireSkillType;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class ExAcquirableSkillListByClass extends L2GameServerPacket
+public class ExAcquirableSkillListByClass implements IGameServerPacket
 {
 	final List<SkillLearn> _learnable;
 	final AcquireSkillType _type;
@@ -38,24 +40,25 @@ public class ExAcquirableSkillListByClass extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xFA);
-		writeH(_type.getId());
-		writeH(_learnable.size());
+		OutgoingPackets.EX_ACQUIRABLE_SKILL_LIST_BY_CLASS.writeId(packet);
+		
+		packet.writeH(_type.getId());
+		packet.writeH(_learnable.size());
 		for (SkillLearn skill : _learnable)
 		{
-			writeD(skill.getSkillId());
-			writeH(skill.getSkillLevel());
-			writeH(skill.getSkillLevel());
-			writeC(skill.getGetLevel());
-			writeQ(skill.getLevelUpSp());
-			writeC(skill.getRequiredItems().size());
+			packet.writeD(skill.getSkillId());
+			packet.writeH(skill.getSkillLevel());
+			packet.writeH(skill.getSkillLevel());
+			packet.writeC(skill.getGetLevel());
+			packet.writeQ(skill.getLevelUpSp());
+			packet.writeC(skill.getRequiredItems().size());
 			if (_type == AcquireSkillType.SUBPLEDGE)
 			{
-				writeH(0x00);
+				packet.writeH(0x00);
 			}
 		}
+		return true;
 	}
 }

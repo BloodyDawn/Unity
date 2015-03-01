@@ -41,7 +41,7 @@ import org.l2junity.gameserver.network.serverpackets.ExDuelEnd;
 import org.l2junity.gameserver.network.serverpackets.ExDuelReady;
 import org.l2junity.gameserver.network.serverpackets.ExDuelStart;
 import org.l2junity.gameserver.network.serverpackets.ExDuelUpdateUserInfo;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
 import org.l2junity.gameserver.network.serverpackets.PlaySound;
 import org.l2junity.gameserver.network.serverpackets.SocialAction;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
@@ -579,7 +579,7 @@ public class Duel
 	 * Broadcast a packet to the challenger team
 	 * @param packet
 	 */
-	public void broadcastToTeam1(L2GameServerPacket packet)
+	public void broadcastToTeam1(IGameServerPacket packet)
 	{
 		if (_playerA == null)
 		{
@@ -603,7 +603,7 @@ public class Duel
 	 * Broadcast a packet to the challenged team
 	 * @param packet
 	 */
-	public void broadcastToTeam2(L2GameServerPacket packet)
+	public void broadcastToTeam2(IGameServerPacket packet)
 	{
 		if (_playerB == null)
 		{

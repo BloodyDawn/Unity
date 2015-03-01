@@ -20,27 +20,28 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Hero;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format chS c (id) 0xD0 h (subid) 0x0C S the hero's words :)
  * @author -Wooden-
  */
-public final class RequestWriteHeroWords extends L2GameClientPacket
+public final class RequestWriteHeroWords implements IGameClientPacket
 {
-	private static final String _C__D0_05_REQUESTWRITEHEROWORDS = "[C] D0:05 RequestWriteHeroWords";
-	
 	private String _heroWords;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_heroWords = readS();
+		_heroWords = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if ((player == null) || !player.isHero())
 		{
 			return;
@@ -52,11 +53,5 @@ public final class RequestWriteHeroWords extends L2GameClientPacket
 		}
 		
 		Hero.getInstance().setHeroMessage(player, _heroWords);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_05_REQUESTWRITEHEROWORDS;
 	}
 }

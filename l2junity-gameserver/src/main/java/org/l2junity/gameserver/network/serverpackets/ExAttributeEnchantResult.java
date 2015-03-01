@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class ExAttributeEnchantResult extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class ExAttributeEnchantResult implements IGameServerPacket
 {
 	private final int _result;
 	private final int _isWeapon;
@@ -40,17 +43,17 @@ public class ExAttributeEnchantResult extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x62);
+		OutgoingPackets.EX_ATTRIBUTE_ENCHANT_RESULT.writeId(packet);
 		
-		writeD(_result);
-		writeC(_isWeapon);
-		writeH(_type);
-		writeH(_before);
-		writeH(_after);
-		writeH(_successCount);
-		writeH(_failedCount);
+		packet.writeD(_result);
+		packet.writeC(_isWeapon);
+		packet.writeH(_type);
+		packet.writeH(_before);
+		packet.writeH(_after);
+		packet.writeH(_successCount);
+		packet.writeH(_failedCount);
+		return true;
 	}
 }

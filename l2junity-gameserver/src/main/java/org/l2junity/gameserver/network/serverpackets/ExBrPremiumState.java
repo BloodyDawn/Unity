@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author GodKratos
  */
-public class ExBrPremiumState extends L2GameServerPacket
+public class ExBrPremiumState implements IGameServerPacket
 {
 	private final int _objId;
 	private final int _state;
@@ -33,11 +36,12 @@ public class ExBrPremiumState extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xDA);
-		writeD(_objId);
-		writeC(_state);
+		OutgoingPackets.EX_BR_PREMIUM_STATE.writeId(packet);
+		
+		packet.writeD(_objId);
+		packet.writeC(_state);
+		return true;
 	}
 }

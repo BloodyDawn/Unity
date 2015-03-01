@@ -24,11 +24,13 @@ import java.util.List;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class ExAlchemySkillList extends L2GameServerPacket
+public class ExAlchemySkillList implements IGameServerPacket
 {
 	private final List<Skill> _skills = new ArrayList<>();
 	
@@ -45,17 +47,18 @@ public class ExAlchemySkillList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x174);
-		writeD(_skills.size());
+		OutgoingPackets.EX_ALCHEMY_SKILL_LIST.writeId(packet);
+		
+		packet.writeD(_skills.size());
 		for (Skill skill : _skills)
 		{
-			writeD(skill.getId());
-			writeD(skill.getLevel());
-			writeQ(0x00); // Always 0 on Naia, SP i guess?
-			writeC(0x01); // Always 1 on Naia
+			packet.writeD(skill.getId());
+			packet.writeD(skill.getLevel());
+			packet.writeQ(0x00); // Always 0 on Naia, SP i guess?
+			packet.writeC(0x01); // Always 1 on Naia
 		}
+		return true;
 	}
 }

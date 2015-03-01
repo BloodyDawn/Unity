@@ -20,46 +20,41 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.model.entity.Fort;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.ExShowFortressMapInfo;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author KenM
  */
-public class RequestFortressMapInfo extends L2GameClientPacket
+public class RequestFortressMapInfo implements IGameClientPacket
 {
-	private static final String _C_D0_48_REQUESTFORTRESSMAPINFO = "[C] D0:48 RequestFortressMapInfo";
 	private int _fortressId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_fortressId = readD();
+		_fortressId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		Fort fort = FortManager.getInstance().getFortById(_fortressId);
-		
+		final Fort fort = FortManager.getInstance().getFortById(_fortressId);
 		if (fort == null)
 		{
-			_log.warning("Fort is not found with id (" + _fortressId + ") in all forts with size of (" + FortManager.getInstance().getForts().size() + ") called by player (" + getActiveChar() + ")");
+			_log.warning("Fort is not found with id (" + _fortressId + ") in all forts with size of (" + FortManager.getInstance().getForts().size() + ") called by player (" + client.getActiveChar() + ")");
 			
-			if (getActiveChar() == null)
+			if (client.getActiveChar() == null)
 			{
 				return;
 			}
 			
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		sendPacket(new ExShowFortressMapInfo(fort));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C_D0_48_REQUESTFORTRESSMAPINFO;
+		client.sendPacket(new ExShowFortressMapInfo(fort));
 	}
 }

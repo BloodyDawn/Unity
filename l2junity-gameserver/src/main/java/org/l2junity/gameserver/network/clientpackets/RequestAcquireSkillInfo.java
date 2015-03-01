@@ -29,31 +29,32 @@ import org.l2junity.gameserver.model.actor.instance.L2NpcInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.AcquireSkillType;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.AcquireSkillInfo;
 import org.l2junity.gameserver.network.serverpackets.ExAcquireSkillInfo;
+import org.l2junity.network.PacketReader;
 
 /**
  * Request Acquire Skill Info client packet implementation.
  * @author Zoey76
  */
-public final class RequestAcquireSkillInfo extends L2GameClientPacket
+public final class RequestAcquireSkillInfo implements IGameClientPacket
 {
-	private static final String _C__73_REQUESTACQUIRESKILLINFO = "[C] 73 RequestAcquireSkillInfo";
-	
 	private int _id;
 	private int _level;
 	private AcquireSkillType _skillType;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_id = readD();
-		_level = readD();
-		_skillType = AcquireSkillType.getAcquireSkillType(readD());
+		_id = packet.readD();
+		_level = packet.readD();
+		_skillType = AcquireSkillType.getAcquireSkillType(packet.readD());
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		if ((_id <= 0) || (_level <= 0))
 		{
@@ -61,7 +62,7 @@ public final class RequestAcquireSkillInfo extends L2GameClientPacket
 			return;
 		}
 		
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -114,13 +115,13 @@ public final class RequestAcquireSkillInfo extends L2GameClientPacket
 			case TRANSFER:
 			case DUALCLASS:
 			{
-				sendPacket(new AcquireSkillInfo(_skillType, s));
+				client.sendPacket(new AcquireSkillInfo(_skillType, s));
 				break;
 			}
 			case CLASS:
 			{
 				final int customSp = s.getCalculatedLevelUpSp(activeChar.getClassId(), activeChar.getLearningClass());
-				sendPacket(new ExAcquireSkillInfo(activeChar, s, customSp));
+				client.sendPacket(new ExAcquireSkillInfo(activeChar, s, customSp));
 				break;
 			}
 			case PLEDGE:
@@ -129,7 +130,7 @@ public final class RequestAcquireSkillInfo extends L2GameClientPacket
 				{
 					return;
 				}
-				sendPacket(new AcquireSkillInfo(_skillType, s));
+				client.sendPacket(new AcquireSkillInfo(_skillType, s));
 				break;
 			}
 			case SUBPLEDGE:
@@ -138,7 +139,7 @@ public final class RequestAcquireSkillInfo extends L2GameClientPacket
 				{
 					return;
 				}
-				sendPacket(new AcquireSkillInfo(_skillType, s));
+				client.sendPacket(new AcquireSkillInfo(_skillType, s));
 				break;
 			}
 			case ALCHEMY:
@@ -147,7 +148,7 @@ public final class RequestAcquireSkillInfo extends L2GameClientPacket
 				{
 					return;
 				}
-				sendPacket(new AcquireSkillInfo(_skillType, s));
+				client.sendPacket(new AcquireSkillInfo(_skillType, s));
 				break;
 			}
 			case REVELATION:
@@ -156,7 +157,7 @@ public final class RequestAcquireSkillInfo extends L2GameClientPacket
 				{
 					return;
 				}
-				sendPacket(new AcquireSkillInfo(_skillType, s));
+				client.sendPacket(new AcquireSkillInfo(_skillType, s));
 				break;
 			}
 			case REVELATION_DUALCLASS:
@@ -165,15 +166,9 @@ public final class RequestAcquireSkillInfo extends L2GameClientPacket
 				{
 					return;
 				}
-				sendPacket(new AcquireSkillInfo(_skillType, s));
+				client.sendPacket(new AcquireSkillInfo(_skillType, s));
 				break;
 			}
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__73_REQUESTACQUIRESKILLINFO;
 	}
 }

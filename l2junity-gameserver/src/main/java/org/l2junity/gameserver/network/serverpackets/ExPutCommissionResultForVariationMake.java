@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class ExPutCommissionResultForVariationMake extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class ExPutCommissionResultForVariationMake implements IGameServerPacket
 {
 	private final int _gemstoneObjId;
 	private final int _itemId;
@@ -33,18 +36,18 @@ public class ExPutCommissionResultForVariationMake extends L2GameServerPacket
 		_gemstoneCount = count;
 		_unk1 = 0;
 		_unk2 = 1;
-		
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x56);
-		writeD(_gemstoneObjId);
-		writeD(_itemId);
-		writeQ(_gemstoneCount);
-		writeQ(_unk1);
-		writeD(_unk2);
+		OutgoingPackets.EX_PUT_COMMISSION_RESULT_FOR_VARIATION_MAKE.writeId(packet);
+		
+		packet.writeD(_gemstoneObjId);
+		packet.writeD(_itemId);
+		packet.writeQ(_gemstoneCount);
+		packet.writeQ(_unk1);
+		packet.writeD(_unk2);
+		return true;
 	}
 }

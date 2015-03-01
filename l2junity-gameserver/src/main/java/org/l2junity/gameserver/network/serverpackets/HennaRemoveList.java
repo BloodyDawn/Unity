@@ -20,11 +20,13 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.Henna;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Zoey76
  */
-public class HennaRemoveList extends L2GameServerPacket
+public class HennaRemoveList implements IGameServerPacket
 {
 	private final PlayerInstance _player;
 	
@@ -34,24 +36,26 @@ public class HennaRemoveList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xE6);
-		writeQ(_player.getAdena());
-		writeD(0x03); // seems to be max size
-		writeD(3 - _player.getHennaEmptySlots());
+		OutgoingPackets.HENNA_UNEQUIP_LIST.writeId(packet);
+		
+		packet.writeQ(_player.getAdena());
+		packet.writeD(0x03); // seems to be max size
+		packet.writeD(3 - _player.getHennaEmptySlots());
 		
 		for (Henna henna : _player.getHennaList())
 		{
 			if (henna != null)
 			{
-				writeD(henna.getDyeId());
-				writeD(henna.getDyeItemId());
-				writeQ(henna.getCancelCount());
-				writeQ(henna.getCancelFee());
-				writeD(0x00);
-				writeD(0x00);
+				packet.writeD(henna.getDyeId());
+				packet.writeD(henna.getDyeItemId());
+				packet.writeQ(henna.getCancelCount());
+				packet.writeQ(henna.getCancelFee());
+				packet.writeD(0x00);
+				packet.writeD(0x00);
 			}
 		}
+		return true;
 	}
 }

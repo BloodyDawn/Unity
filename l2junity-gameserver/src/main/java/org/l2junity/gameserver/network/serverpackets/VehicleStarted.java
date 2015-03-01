@@ -19,11 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Kerberos
  */
-public class VehicleStarted extends L2GameServerPacket
+public class VehicleStarted implements IGameServerPacket
 {
 	private final int _objectId;
 	private final int _state;
@@ -39,10 +41,12 @@ public class VehicleStarted extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xC0);
-		writeD(_objectId);
-		writeD(_state);
+		OutgoingPackets.VEHICLE_START.writeId(packet);
+		
+		packet.writeD(_objectId);
+		packet.writeD(_state);
+		return true;
 	}
 }

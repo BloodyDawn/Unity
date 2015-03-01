@@ -20,11 +20,13 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class ExTeleportToLocationActivate extends L2GameServerPacket
+public class ExTeleportToLocationActivate implements IGameServerPacket
 {
 	private final int _objectId;
 	private final Location _loc;
@@ -36,14 +38,17 @@ public class ExTeleportToLocationActivate extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x14A);
-		writeD(_objectId);
-		writeLoc(_loc);
-		writeD(_loc.getInstanceId());
-		writeD(_loc.getHeading());
-		writeD(0); // Unknown
+		OutgoingPackets.EX_TELEPORT_TO_LOCATION_ACTIVATE.writeId(packet);
+		
+		packet.writeD(_objectId);
+		packet.writeD(_loc.getX());
+		packet.writeD(_loc.getY());
+		packet.writeD(_loc.getZ());
+		packet.writeD(_loc.getInstanceId());
+		packet.writeD(_loc.getHeading());
+		packet.writeD(0); // Unknown
+		return true;
 	}
 }

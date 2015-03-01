@@ -25,11 +25,13 @@ import java.util.concurrent.TimeUnit;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class ExInzoneWaiting extends L2GameServerPacket
+public class ExInzoneWaiting implements IGameServerPacket
 {
 	private final int _currentTemplateId;
 	private final Map<Integer, Long> _instanceTimes;
@@ -42,17 +44,18 @@ public class ExInzoneWaiting extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x11E);
-		writeD(_currentTemplateId);
-		writeD(_instanceTimes.size());
+		OutgoingPackets.EX_INZONE_WAITING_INFO.writeId(packet);
+		
+		packet.writeD(_currentTemplateId);
+		packet.writeD(_instanceTimes.size());
 		for (Entry<Integer, Long> entry : _instanceTimes.entrySet())
 		{
 			final long instanceTime = TimeUnit.MILLISECONDS.toSeconds(entry.getValue() - System.currentTimeMillis());
-			writeD(entry.getKey());
-			writeD((int) instanceTime);
+			packet.writeD(entry.getKey());
+			packet.writeD((int) instanceTime);
 		}
+		return true;
 	}
 }

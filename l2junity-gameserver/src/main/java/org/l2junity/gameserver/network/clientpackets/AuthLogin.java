@@ -22,15 +22,15 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.LoginServerThread;
 import org.l2junity.gameserver.LoginServerThread.SessionKey;
 import org.l2junity.gameserver.network.L2GameClient;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.9.2.3.2.4 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class AuthLogin extends L2GameClientPacket
+public final class AuthLogin implements IGameClientPacket
 {
-	private static final String _C__2B_AUTHLOGIN = "[C] 2B AuthLogin";
 	
 	// loginName + keys must match what the loginserver used.
 	private String _loginName;
@@ -43,24 +43,25 @@ public final class AuthLogin extends L2GameClientPacket
 	private int _loginKey2;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_loginName = readS().toLowerCase();
-		_playKey2 = readD();
-		_playKey1 = readD();
-		_loginKey1 = readD();
-		_loginKey2 = readD();
+		_loginName = packet.readS().toLowerCase();
+		_playKey2 = packet.readD();
+		_playKey1 = packet.readD();
+		_loginKey1 = packet.readD();
+		_loginKey2 = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final L2GameClient client = getClient();
 		if (_loginName.isEmpty() || !client.isProtocolOk())
 		{
-			client.close((L2GameServerPacket) null);
+			client.close((IGameServerPacket) null);
 			return;
 		}
+		
 		SessionKey key = new SessionKey(_loginKey1, _loginKey2, _playKey1, _playKey2);
 		if (Config.DEBUG)
 		{
@@ -79,14 +80,8 @@ public final class AuthLogin extends L2GameClientPacket
 			}
 			else
 			{
-				client.close((L2GameServerPacket) null);
+				client.close((IGameServerPacket) null);
 			}
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__2B_AUTHLOGIN;
 	}
 }

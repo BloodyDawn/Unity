@@ -21,46 +21,40 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExPledgeRecruitInfo;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Sdw
  */
-public class RequestPledgeRecruitInfo extends L2GameClientPacket
+public class RequestPledgeRecruitInfo implements IGameClientPacket
 {
-	private static final String _C__D0_D3_REQUESTPLEDGERECRUITINFO = "[C] D0;D3 RequestPledgeRecruitInfo";
-	
 	private int _clanId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_clanId = readD();
+		_clanId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
-		
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
 		final L2Clan clan = ClanTable.getInstance().getClan(_clanId);
-		
 		if (clan == null)
 		{
 			return;
 		}
 		
-		activeChar.sendPacket(new ExPledgeRecruitInfo(_clanId));
+		client.sendPacket(new ExPledgeRecruitInfo(_clanId));
 	}
 	
-	@Override
-	public String getType()
-	{
-		return _C__D0_D3_REQUESTPLEDGERECRUITINFO;
-	}
 }

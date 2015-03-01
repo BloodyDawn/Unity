@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author mochitto
  */
-public class ExNevitAdventTimeChange extends L2GameServerPacket
+public class ExNevitAdventTimeChange implements IGameServerPacket
 {
 	private final boolean _paused;
 	private final int _time;
@@ -33,13 +36,14 @@ public class ExNevitAdventTimeChange extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xE1);
+		OutgoingPackets.EX_GET_CRYSTALIZING_ESTIMATION.writeId(packet);
+		
 		// state 0 - pause 1 - started
-		writeC(_paused ? 0x00 : 0x01);
+		packet.writeC(_paused ? 0x00 : 0x01);
 		// left time in ms max is 16000 its 4m and state is automatically changed to quit
-		writeD(_time);
+		packet.writeD(_time);
+		return true;
 	}
 }

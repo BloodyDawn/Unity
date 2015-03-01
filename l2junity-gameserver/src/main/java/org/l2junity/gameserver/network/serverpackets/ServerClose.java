@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author devScarlet, mrTJO
  */
-public class ServerClose extends L2GameServerPacket
+public class ServerClose implements IGameServerPacket
 {
 	public static final ServerClose STATIC_PACKET = new ServerClose();
 	
@@ -30,8 +33,9 @@ public class ServerClose extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x20);
+		OutgoingPackets.SEVER_CLOSE.writeId(packet);
+		return true;
 	}
 }

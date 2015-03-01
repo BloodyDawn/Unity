@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class RadarControl extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class RadarControl implements IGameServerPacket
 {
 	private final int _showRadar;
 	private final int _type;
@@ -26,13 +29,6 @@ public class RadarControl extends L2GameServerPacket
 	private final int _y;
 	private final int _z;
 	
-	/**
-	 * @param showRadar
-	 * @param type
-	 * @param x
-	 * @param y
-	 * @param z
-	 */
 	public RadarControl(int showRadar, int type, int x, int y, int z)
 	{
 		_showRadar = showRadar; // showRader?? 0 = showradar; 1 = delete radar;
@@ -43,13 +39,15 @@ public class RadarControl extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xF1);
-		writeD(_showRadar);
-		writeD(_type); // maybe type
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
+		OutgoingPackets.RADAR_CONTROL.writeId(packet);
+		
+		packet.writeD(_showRadar);
+		packet.writeD(_type); // maybe type
+		packet.writeD(_x);
+		packet.writeD(_y);
+		packet.writeD(_z);
+		return true;
 	}
 }

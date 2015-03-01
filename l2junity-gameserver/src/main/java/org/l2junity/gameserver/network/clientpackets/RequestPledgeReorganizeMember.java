@@ -22,38 +22,39 @@ import org.l2junity.gameserver.model.ClanMember;
 import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format: (ch) dSdS
  * @author -Wooden-
  */
-public final class RequestPledgeReorganizeMember extends L2GameClientPacket
+public final class RequestPledgeReorganizeMember implements IGameClientPacket
 {
-	private static final String _C__D0_2C_REQUESTPLEDGEREORGANIZEMEMBER = "[C] D0:2C RequestPledgeReorganizeMember";
-	
 	private int _isMemberSelected;
 	private String _memberName;
 	private int _newPledgeType;
 	private String _selectedMember;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_isMemberSelected = readD();
-		_memberName = readS();
-		_newPledgeType = readD();
-		_selectedMember = readS();
+		_isMemberSelected = packet.readD();
+		_memberName = packet.readS();
+		_newPledgeType = packet.readD();
+		_selectedMember = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		if (_isMemberSelected == 0)
 		{
 			return;
 		}
 		
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -93,9 +94,4 @@ public final class RequestPledgeReorganizeMember extends L2GameClientPacket
 		clan.broadcastClanStatus();
 	}
 	
-	@Override
-	public String getType()
-	{
-		return _C__D0_2C_REQUESTPLEDGEREORGANIZEMEMBER;
-	}
 }

@@ -21,8 +21,10 @@ package org.l2junity.gameserver.network.serverpackets;
 import org.l2junity.gameserver.enums.MacroUpdateType;
 import org.l2junity.gameserver.model.Macro;
 import org.l2junity.gameserver.model.MacroCmd;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class SendMacroList extends L2GameServerPacket
+public class SendMacroList implements IGameServerPacket
 {
 	private final int _count;
 	private final Macro _macro;
@@ -36,34 +38,35 @@ public class SendMacroList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xE8);
+		OutgoingPackets.MACRO_LIST.writeId(packet);
 		
-		writeC(_updateType.getId());
-		writeD(_updateType != MacroUpdateType.LIST ? _macro.getId() : 0x00); // modified, created or deleted macro's id
-		writeC(_count); // count of Macros
-		writeC(_macro != null ? 1 : 0); // unknown
+		packet.writeC(_updateType.getId());
+		packet.writeD(_updateType != MacroUpdateType.LIST ? _macro.getId() : 0x00); // modified, created or deleted macro's id
+		packet.writeC(_count); // count of Macros
+		packet.writeC(_macro != null ? 1 : 0); // unknown
 		
 		if ((_macro != null) && (_updateType != MacroUpdateType.DELETE))
 		{
-			writeD(_macro.getId()); // Macro ID
-			writeS(_macro.getName()); // Macro Name
-			writeS(_macro.getDescr()); // Desc
-			writeS(_macro.getAcronym()); // acronym
-			writeC(_macro.getIcon()); // icon
+			packet.writeD(_macro.getId()); // Macro ID
+			packet.writeS(_macro.getName()); // Macro Name
+			packet.writeS(_macro.getDescr()); // Desc
+			packet.writeS(_macro.getAcronym()); // acronym
+			packet.writeC(_macro.getIcon()); // icon
 			
-			writeC(_macro.getCommands().size()); // count
+			packet.writeC(_macro.getCommands().size()); // count
 			
 			int i = 1;
 			for (MacroCmd cmd : _macro.getCommands())
 			{
-				writeC(i++); // command count
-				writeC(cmd.getType().ordinal()); // type 1 = skill, 3 = action, 4 = shortcut
-				writeD(cmd.getD1()); // skill id
-				writeC(cmd.getD2()); // shortcut id
-				writeS(cmd.getCmd()); // command name
+				packet.writeC(i++); // command count
+				packet.writeC(cmd.getType().ordinal()); // type 1 = skill, 3 = action, 4 = shortcut
+				packet.writeD(cmd.getD1()); // skill id
+				packet.writeC(cmd.getD2()); // shortcut id
+				packet.writeS(cmd.getCmd()); // command name
 			}
 		}
+		return true;
 	}
 }

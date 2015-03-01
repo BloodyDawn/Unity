@@ -35,7 +35,7 @@ import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.DeleteObject;
 import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
 import org.l2junity.gameserver.network.serverpackets.MonRaceInfo;
 import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2junity.gameserver.network.serverpackets.PlaySound;
@@ -215,7 +215,7 @@ public class L2RaceManagerInstance extends Npc
 		}
 	}
 	
-	protected void broadcast(L2GameServerPacket pkt)
+	protected void broadcast(IGameServerPacket pkt)
 	{
 		for (L2RaceManagerInstance manager : _managers)
 		{

@@ -19,14 +19,16 @@
 package org.l2junity.gameserver.network.serverpackets.friend;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * Support for "Chat with Friends" dialog. <br />
  * Inform player about friend online status change
  * @author JIV
  */
-public class L2FriendStatus extends L2GameServerPacket
+public class L2FriendStatus implements IGameServerPacket
 {
 	public static final int MODE_OFFLINE = 0;
 	public static final int MODE_ONLINE = 1;
@@ -49,28 +51,30 @@ public class L2FriendStatus extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x59);
-		writeD(_type);
-		writeS(_name);
+		OutgoingPackets.FRIEND_STATUS.writeId(packet);
+		
+		packet.writeD(_type);
+		packet.writeS(_name);
 		switch (_type)
 		{
 			case MODE_OFFLINE:
 			{
-				writeD(_objectId);
+				packet.writeD(_objectId);
 				break;
 			}
 			case MODE_LEVEL:
 			{
-				writeD(_level);
+				packet.writeD(_level);
 				break;
 			}
 			case MODE_CLASS:
 			{
-				writeD(_classId);
+				packet.writeD(_classId);
 				break;
 			}
 		}
+		return true;
 	}
 }

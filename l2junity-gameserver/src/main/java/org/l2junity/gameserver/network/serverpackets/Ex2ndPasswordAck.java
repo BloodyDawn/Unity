@@ -18,14 +18,18 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author mrTJO
  */
-public class Ex2ndPasswordAck extends L2GameServerPacket
+public class Ex2ndPasswordAck implements IGameServerPacket
 {
 	private final int _status;
 	private final int _response;
 	
+	// TODO: Enum
 	public static int SUCCESS = 0x00;
 	public static int WRONG_PATTERN = 0x01;
 	
@@ -36,12 +40,13 @@ public class Ex2ndPasswordAck extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x107);
-		writeC(_status);
-		writeD(_response == WRONG_PATTERN ? 0x01 : 0x00);
-		writeD(0x00);
+		OutgoingPackets.EX_2ND_PASSWORD_ACK.writeId(packet);
+		
+		packet.writeC(_status);
+		packet.writeD(_response == WRONG_PATTERN ? 0x01 : 0x00);
+		packet.writeD(0x00);
+		return true;
 	}
 }

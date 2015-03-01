@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author Luca Baldi
  */
-public class ExShowQuestMark extends L2GameServerPacket
+public class ExShowQuestMark implements IGameServerPacket
 {
 	private final int _questId;
 	private final int _questState;
@@ -33,11 +36,12 @@ public class ExShowQuestMark extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x21);
-		writeD(_questId);
-		writeD(_questState);
+		OutgoingPackets.EX_SHOW_QUEST_MARK.writeId(packet);
+		
+		packet.writeD(_questId);
+		packet.writeD(_questState);
+		return true;
 	}
 }

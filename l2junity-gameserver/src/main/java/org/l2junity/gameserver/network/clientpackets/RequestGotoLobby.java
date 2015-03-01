@@ -20,31 +20,23 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.CharSelectionInfo;
+import org.l2junity.network.PacketReader;
 
 /**
  * (ch)
  * @author KenM
  */
-public class RequestGotoLobby extends L2GameClientPacket
+public class RequestGotoLobby implements IGameClientPacket
 {
-	private static final String _C__D0_38_REQUESTGOTOLOBBY = "[C] D0:38 RequestGotoLobby";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// trigger
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final L2GameClient client = getClient();
 		client.sendPacket(new CharSelectionInfo(client.getAccountName(), client.getSessionId().playOkID1));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_38_REQUESTGOTOLOBBY;
 	}
 }

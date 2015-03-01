@@ -22,42 +22,34 @@ import java.util.OptionalInt;
 
 import org.l2junity.gameserver.instancemanager.ClanEntryManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExPledgeWaitingListApplied;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Sdw
  */
-public class RequestPledgeWaitingApplied extends L2GameClientPacket
+public class RequestPledgeWaitingApplied implements IGameClientPacket
 {
-	private static final String _C__D0_D8_REQUESTPLEDGEWAITINGAPPLIED = "[C] D0;D8 RequestPledgeWaitingApplied";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// Nothing to read
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
-		
+		final PlayerInstance activeChar = client.getActiveChar();
 		if ((activeChar == null) || (activeChar.getClan() == null))
 		{
 			return;
 		}
 		
-		OptionalInt clanId = ClanEntryManager.getInstance().getClanIdForPlayerApplication(activeChar.getObjectId());
-		
+		final OptionalInt clanId = ClanEntryManager.getInstance().getClanIdForPlayerApplication(activeChar.getObjectId());
 		if (clanId.isPresent())
 		{
 			activeChar.sendPacket(new ExPledgeWaitingListApplied(clanId.getAsInt(), activeChar.getObjectId()));
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_D8_REQUESTPLEDGEWAITINGAPPLIED;
 	}
 }

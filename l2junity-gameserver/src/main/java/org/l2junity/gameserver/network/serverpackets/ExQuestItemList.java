@@ -23,6 +23,8 @@ import java.util.List;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author JIV
@@ -45,15 +47,16 @@ public class ExQuestItemList extends AbstractItemPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xC7);
-		writeH(_items.size());
+		OutgoingPackets.EX_QUEST_ITEM_LIST.writeId(packet);
+		
+		packet.writeH(_items.size());
 		for (ItemInstance item : _items)
 		{
-			writeItem(item);
+			writeItem(packet, item);
 		}
-		writeInventoryBlock(_activeChar.getInventory());
+		writeInventoryBlock(packet, _activeChar.getInventory());
+		return true;
 	}
 }

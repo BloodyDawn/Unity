@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class StopRotation extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class StopRotation implements IGameServerPacket
 {
 	private final int _charObjId, _degree, _speed;
 	
@@ -30,12 +33,14 @@ public class StopRotation extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x61);
-		writeD(_charObjId);
-		writeD(_degree);
-		writeD(_speed);
-		writeD(0); // ?
+		OutgoingPackets.FINISH_ROTATING.writeId(packet);
+		
+		packet.writeD(_charObjId);
+		packet.writeD(_degree);
+		packet.writeD(_speed);
+		packet.writeD(0); // ?
+		return true;
 	}
 }

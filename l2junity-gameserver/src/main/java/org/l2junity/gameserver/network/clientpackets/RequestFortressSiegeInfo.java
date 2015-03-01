@@ -22,45 +22,28 @@ import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExShowFortressSiegeInfo;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author KenM
  */
-public class RequestFortressSiegeInfo extends L2GameClientPacket
+public class RequestFortressSiegeInfo implements IGameClientPacket
 {
-	private static final String _C__D0_3F_REQUESTFORTRESSSIEGEINFO = "[C] D0:3F RequestFortressSiegeInfo";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// trigger
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		L2GameClient client = getClient();
-		if (client != null)
+		for (Fort fort : FortManager.getInstance().getForts())
 		{
-			for (Fort fort : FortManager.getInstance().getForts())
+			if ((fort != null) && fort.getSiege().isInProgress())
 			{
-				if ((fort != null) && fort.getSiege().isInProgress())
-				{
-					client.sendPacket(new ExShowFortressSiegeInfo(fort));
-				}
+				client.sendPacket(new ExShowFortressSiegeInfo(fort));
 			}
 		}
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_3F_REQUESTFORTRESSSIEGEINFO;
 	}
 }

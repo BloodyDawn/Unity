@@ -288,9 +288,9 @@ import org.l2junity.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.serverpackets.GameGuardQuery;
 import org.l2junity.gameserver.network.serverpackets.GetOnVehicle;
 import org.l2junity.gameserver.network.serverpackets.HennaInfo;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
 import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2junity.gameserver.network.serverpackets.ItemList;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
 import org.l2junity.gameserver.network.serverpackets.LeaveWorld;
 import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
 import org.l2junity.gameserver.network.serverpackets.MyTargetSelected;
@@ -4026,7 +4026,7 @@ public final class PlayerInstance extends Playable
 			}
 			else
 			{
-				if (!client.getConnection().isClosed())
+				if (client.getChannel().isActive())
 				{
 					if (closeClient)
 					{
@@ -4258,22 +4258,21 @@ public final class PlayerInstance extends Playable
 	}
 	
 	@Override
-	public final void broadcastPacket(L2GameServerPacket mov)
+	public final void broadcastPacket(IGameServerPacket mov)
 	{
 		if (!(mov instanceof CharInfo))
 		{
 			sendPacket(mov);
 		}
 		
-		mov.setInvisible(isInvisible());
-		
 		final Collection<PlayerInstance> plrs = getKnownList().getKnownPlayers().values();
 		for (PlayerInstance player : plrs)
 		{
-			if ((player == null) || !isVisibleFor(player))
+			if ((player == null) || (isInvisible() && (!isVisibleFor(player) && !player.canOverrideCond(PcCondOverride.SEE_ALL_PLAYERS))))
 			{
 				continue;
 			}
+			
 			player.sendPacket(mov);
 			final int relation = getRelation(player);
 			Integer oldrelation = getKnownList().getKnownRelations().get(player.getObjectId());
@@ -4300,19 +4299,17 @@ public final class PlayerInstance extends Playable
 	}
 	
 	@Override
-	public void broadcastPacket(L2GameServerPacket mov, int radiusInKnownlist)
+	public void broadcastPacket(IGameServerPacket mov, int radiusInKnownlist)
 	{
 		if (!(mov instanceof CharInfo))
 		{
 			sendPacket(mov);
 		}
 		
-		mov.setInvisible(isInvisible());
-		
 		final Collection<PlayerInstance> plrs = getKnownList().getKnownPlayersInRadius(radiusInKnownlist);
 		for (PlayerInstance player : plrs)
 		{
-			if ((player == null) || !isVisibleFor(player))
+			if ((player == null) || (isInvisible() && (!isVisibleFor(player) && !player.canOverrideCond(PcCondOverride.SEE_ALL_PLAYERS))))
 			{
 				continue;
 			}
@@ -4387,7 +4384,7 @@ public final class PlayerInstance extends Playable
 	 * Send a Server->Client packet StatusUpdate to the L2PcInstance.
 	 */
 	@Override
-	public void sendPacket(L2GameServerPacket packet)
+	public void sendPacket(IGameServerPacket packet)
 	{
 		if (_client != null)
 		{
@@ -10561,7 +10558,7 @@ public final class PlayerInstance extends Playable
 		{
 			_taskWater.cancel(false);
 			_taskWater = null;
-			sendPacket(new SetupGauge(2, 0));
+			sendPacket(new SetupGauge(getObjectId(), 2, 0));
 		}
 	}
 	
@@ -10571,7 +10568,7 @@ public final class PlayerInstance extends Playable
 		{
 			int timeinwater = (int) calcStat(Stats.BREATH, 60000, this, null);
 			
-			sendPacket(new SetupGauge(2, timeinwater));
+			sendPacket(new SetupGauge(getObjectId(), 2, timeinwater));
 			_taskWater = ThreadPoolManager.getInstance().scheduleEffectAtFixedRate(new WaterTask(this), timeinwater, 1000);
 		}
 	}

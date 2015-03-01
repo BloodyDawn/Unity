@@ -23,12 +23,14 @@ import java.util.List;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.Henna;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * This server packet sends the player's henna information.
  * @author Zoey76
  */
-public final class HennaInfo extends L2GameServerPacket
+public final class HennaInfo implements IGameServerPacket
 {
 	private final PlayerInstance _activeChar;
 	private final List<Henna> _hennas = new ArrayList<>();
@@ -46,26 +48,28 @@ public final class HennaInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xE5);
-		writeC(_activeChar.getHennaStatINT()); // equip INT
-		writeC(_activeChar.getHennaStatSTR()); // equip STR
-		writeC(_activeChar.getHennaStatCON()); // equip CON
-		writeC(_activeChar.getHennaStatMEN()); // equip MEN
-		writeC(_activeChar.getHennaStatDEX()); // equip DEX
-		writeC(_activeChar.getHennaStatWIT()); // equip WIT
-		writeC(_activeChar.getHennaStatLUC()); // equip LUC
-		writeC(_activeChar.getHennaStatCHA()); // equip CHA
-		writeD(3 - _activeChar.getHennaEmptySlots()); // Slots
-		writeD(_hennas.size()); // Size
+		OutgoingPackets.HENNA_INFO.writeId(packet);
+		
+		packet.writeC(_activeChar.getHennaStatINT()); // equip INT
+		packet.writeC(_activeChar.getHennaStatSTR()); // equip STR
+		packet.writeC(_activeChar.getHennaStatCON()); // equip CON
+		packet.writeC(_activeChar.getHennaStatMEN()); // equip MEN
+		packet.writeC(_activeChar.getHennaStatDEX()); // equip DEX
+		packet.writeC(_activeChar.getHennaStatWIT()); // equip WIT
+		packet.writeC(_activeChar.getHennaStatLUC()); // equip LUC
+		packet.writeC(_activeChar.getHennaStatCHA()); // equip CHA
+		packet.writeD(3 - _activeChar.getHennaEmptySlots()); // Slots
+		packet.writeD(_hennas.size()); // Size
 		for (Henna henna : _hennas)
 		{
-			writeD(henna.getDyeId());
-			writeD(henna.isAllowedClass(_activeChar.getClassId()) ? 0x01 : 0x00);
+			packet.writeD(henna.getDyeId());
+			packet.writeD(henna.isAllowedClass(_activeChar.getClassId()) ? 0x01 : 0x00);
 		}
-		writeD(0x00); // Unknown
-		writeD(0x00); // Unknown
-		writeD(0x00); // Unknown
+		packet.writeD(0x00); // Unknown
+		packet.writeD(0x00); // Unknown
+		packet.writeD(0x00); // Unknown
+		return true;
 	}
 }

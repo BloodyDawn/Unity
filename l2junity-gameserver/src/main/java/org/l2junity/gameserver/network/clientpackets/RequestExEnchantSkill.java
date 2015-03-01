@@ -26,47 +26,49 @@ import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
 import org.l2junity.gameserver.datatables.SkillData;
-import org.l2junity.gameserver.model.EnchantSkillLearn;
 import org.l2junity.gameserver.model.EnchantSkillGroup.EnchantSkillHolder;
+import org.l2junity.gameserver.model.EnchantSkillLearn;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExEnchantSkillInfo;
 import org.l2junity.gameserver.network.serverpackets.ExEnchantSkillInfoDetail;
 import org.l2junity.gameserver.network.serverpackets.ExEnchantSkillResult;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.network.serverpackets.UserInfo;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format (ch) dd c: (id) 0xD0 h: (subid) 0x06 d: skill id d: skill lvl
  * @author -Wooden-
  */
-public final class RequestExEnchantSkill extends L2GameClientPacket
+public final class RequestExEnchantSkill implements IGameClientPacket
 {
-	private static final String _C__D0_0F_REQUESTEXENCHANTSKILL = "[C] D0:0F RequestExEnchantSkill";
 	private static final Logger _logEnchant = Logger.getLogger("enchant");
 	
 	private int _skillId;
 	private int _skillLvl;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_skillId = readD();
-		_skillLvl = readD();
+		_skillId = packet.readD();
+		_skillLvl = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		if ((_skillId <= 0) || (_skillLvl <= 0))
 		{
 			return;
 		}
 		
-		final PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -74,19 +76,19 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 		
 		if (player.getClassId().level() < 3) // requires to have 3rd class quest completed
 		{
-			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THE_SKILL_ENHANCING_FUNCTION_IN_THIS_CLASS_YOU_CAN_USE_CORRESPONDING_FUNCTION_WHEN_COMPLETING_THE_THIRD_CLASS_CHANGE);
+			client.sendPacket(SystemMessageId.YOU_CANNOT_USE_THE_SKILL_ENHANCING_FUNCTION_IN_THIS_CLASS_YOU_CAN_USE_CORRESPONDING_FUNCTION_WHEN_COMPLETING_THE_THIRD_CLASS_CHANGE);
 			return;
 		}
 		
 		if (player.getLevel() < 76)
 		{
-			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THE_SKILL_ENHANCING_FUNCTION_ON_THIS_LEVEL_YOU_CAN_USE_THE_CORRESPONDING_FUNCTION_ON_LEVELS_HIGHER_THAN_LV_76);
+			client.sendPacket(SystemMessageId.YOU_CANNOT_USE_THE_SKILL_ENHANCING_FUNCTION_ON_THIS_LEVEL_YOU_CAN_USE_THE_CORRESPONDING_FUNCTION_ON_LEVELS_HIGHER_THAN_LV_76);
 			return;
 		}
 		
 		if (!player.isAllowedToEnchantSkills())
 		{
-			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_THE_SKILL_ENHANCING_FUNCTION_IN_THIS_STATE_YOU_CAN_ENHANCE_SKILLS_WHEN_NOT_IN_BATTLE_AND_CANNOT_USE_THE_FUNCTION_WHILE_TRANSFORMED_IN_BATTLE_ON_A_MOUNT_OR_WHILE_THE_SKILL_IS_ON_COOLDOWN);
+			client.sendPacket(SystemMessageId.YOU_CANNOT_USE_THE_SKILL_ENHANCING_FUNCTION_IN_THIS_STATE_YOU_CAN_ENHANCE_SKILLS_WHEN_NOT_IN_BATTLE_AND_CANNOT_USE_THE_FUNCTION_WHILE_TRANSFORMED_IN_BATTLE_ON_A_MOUNT_OR_WHILE_THE_SKILL_IS_ON_COOLDOWN);
 			return;
 		}
 		
@@ -119,14 +121,14 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 			
 			if (Config.ES_SP_BOOK_NEEDED && usesBook && (spb == null)) // Haven't spellbook
 			{
-				player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ALL_OF_THE_ITEMS_NEEDED_TO_ENCHANT_THAT_SKILL);
+				client.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ALL_OF_THE_ITEMS_NEEDED_TO_ENCHANT_THAT_SKILL);
 				return;
 			}
 			
 			final int requiredAdena = (esd.getAdenaCost() * costMultiplier);
 			if (player.getInventory().getAdena() < requiredAdena)
 			{
-				player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ALL_OF_THE_ITEMS_NEEDED_TO_ENCHANT_THAT_SKILL);
+				client.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ALL_OF_THE_ITEMS_NEEDED_TO_ENCHANT_THAT_SKILL);
 				return;
 			}
 			
@@ -139,7 +141,7 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 			check &= player.destroyItemByItemId("Consume", Inventory.ADENA_ID, requiredAdena, player, true);
 			if (!check)
 			{
-				player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ALL_OF_THE_ITEMS_NEEDED_TO_ENCHANT_THAT_SKILL);
+				client.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ALL_OF_THE_ITEMS_NEEDED_TO_ENCHANT_THAT_SKILL);
 				return;
 			}
 			
@@ -162,11 +164,11 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 				}
 				
 				player.addSkill(skill, true);
-				player.sendPacket(ExEnchantSkillResult.valueOf(true));
+				client.sendPacket(ExEnchantSkillResult.valueOf(true));
 				
 				final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.SKILL_ENCHANT_WAS_SUCCESSFUL_S1_HAS_BEEN_ENCHANTED);
 				sm.addSkillName(_skillId);
-				player.sendPacket(sm);
+				client.sendPacket(sm);
 				
 				if (Config.DEBUG)
 				{
@@ -176,8 +178,8 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 			else
 			{
 				player.addSkill(SkillData.getInstance().getSkill(_skillId, s.getBaseLevel()), true);
-				player.sendPacket(SystemMessageId.SKILL_ENCHANT_FAILED_THE_SKILL_WILL_BE_INITIALIZED);
-				player.sendPacket(ExEnchantSkillResult.valueOf(false));
+				client.sendPacket(SystemMessageId.SKILL_ENCHANT_FAILED_THE_SKILL_WILL_BE_INITIALIZED);
+				client.sendPacket(ExEnchantSkillResult.valueOf(false));
 				
 				if (Config.LOG_SKILL_ENCHANTS)
 				{
@@ -194,22 +196,16 @@ public final class RequestExEnchantSkill extends L2GameClientPacket
 				}
 			}
 			
-			player.sendPacket(new UserInfo(player));
+			client.sendPacket(new UserInfo(player));
 			player.sendSkillList();
 			final int afterEnchantSkillLevel = player.getSkillLevel(_skillId);
-			player.sendPacket(new ExEnchantSkillInfo(_skillId, afterEnchantSkillLevel));
-			player.sendPacket(new ExEnchantSkillInfoDetail(0, _skillId, afterEnchantSkillLevel + 1, player));
+			client.sendPacket(new ExEnchantSkillInfo(_skillId, afterEnchantSkillLevel));
+			client.sendPacket(new ExEnchantSkillInfoDetail(0, _skillId, afterEnchantSkillLevel + 1, player));
 			player.updateShortCuts(_skillId, afterEnchantSkillLevel);
 		}
 		else
 		{
-			player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_SP_TO_ENCHANT_THAT_SKILL);
+			client.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_SP_TO_ENCHANT_THAT_SKILL);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_0F_REQUESTEXENCHANTSKILL;
 	}
 }

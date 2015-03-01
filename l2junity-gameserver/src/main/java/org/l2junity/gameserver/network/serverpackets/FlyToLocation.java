@@ -20,11 +20,13 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.interfaces.ILocational;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author KenM
  */
-public final class FlyToLocation extends L2GameServerPacket
+public final class FlyToLocation implements IGameServerPacket
 {
 	private final int _destX, _destY, _destZ;
 	private final int _chaObjId, _chaX, _chaY, _chaZ;
@@ -85,19 +87,21 @@ public final class FlyToLocation extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xD4);
-		writeD(_chaObjId);
-		writeD(_destX);
-		writeD(_destY);
-		writeD(_destZ);
-		writeD(_chaX);
-		writeD(_chaY);
-		writeD(_chaZ);
-		writeD(_type.ordinal());
-		writeD(_flySpeed);
-		writeD(_flyDelay);
-		writeD(_animationSpeed);
+		OutgoingPackets.FLY_TO_LOCATION.writeId(packet);
+		
+		packet.writeD(_chaObjId);
+		packet.writeD(_destX);
+		packet.writeD(_destY);
+		packet.writeD(_destZ);
+		packet.writeD(_chaX);
+		packet.writeD(_chaY);
+		packet.writeD(_chaZ);
+		packet.writeD(_type.ordinal());
+		packet.writeD(_flySpeed);
+		packet.writeD(_flyDelay);
+		packet.writeD(_animationSpeed);
+		return true;
 	}
 }

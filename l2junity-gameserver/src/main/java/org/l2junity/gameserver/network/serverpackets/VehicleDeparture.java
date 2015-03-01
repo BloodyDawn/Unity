@@ -19,17 +19,16 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.instance.L2BoatInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Maktakien
  */
-public class VehicleDeparture extends L2GameServerPacket
+public class VehicleDeparture implements IGameServerPacket
 {
 	private final int _objId, _x, _y, _z, _moveSpeed, _rotationSpeed;
 	
-	/**
-	 * @param boat
-	 */
 	public VehicleDeparture(L2BoatInstance boat)
 	{
 		_objId = boat.getObjectId();
@@ -41,15 +40,16 @@ public class VehicleDeparture extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x6C);
-		writeD(_objId);
-		writeD(_moveSpeed);
-		writeD(_rotationSpeed);
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
+		OutgoingPackets.VEHICLE_DEPARTURE.writeId(packet);
 		
+		packet.writeD(_objId);
+		packet.writeD(_moveSpeed);
+		packet.writeD(_rotationSpeed);
+		packet.writeD(_x);
+		packet.writeD(_y);
+		packet.writeD(_z);
+		return true;
 	}
 }

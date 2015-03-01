@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class ExPutItemResultForVariationMake extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class ExPutItemResultForVariationMake implements IGameServerPacket
 {
 	private final int _itemObjId;
 	private final int _itemId;
@@ -30,12 +33,13 @@ public class ExPutItemResultForVariationMake extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x54);
-		writeD(_itemObjId);
-		writeD(_itemId);
-		writeD(0x01);
+		OutgoingPackets.EX_PUT_ITEM_RESULT_FOR_VARIATION_MAKE.writeId(packet);
+		
+		packet.writeD(_itemObjId);
+		packet.writeD(_itemId);
+		packet.writeD(0x01);
+		return true;
 	}
 }

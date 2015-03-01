@@ -24,11 +24,13 @@ import java.util.Map;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author zabbix
  */
-public class PartyMemberPosition extends L2GameServerPacket
+public class PartyMemberPosition implements IGameServerPacket
 {
 	private final Map<Integer, Location> locations = new HashMap<>();
 	
@@ -51,17 +53,19 @@ public class PartyMemberPosition extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xba);
-		writeD(locations.size());
+		OutgoingPackets.PARTY_MEMBER_POSITION.writeId(packet);
+		
+		packet.writeD(locations.size());
 		for (Map.Entry<Integer, Location> entry : locations.entrySet())
 		{
 			Location loc = entry.getValue();
-			writeD(entry.getKey());
-			writeD(loc.getX());
-			writeD(loc.getY());
-			writeD(loc.getZ());
+			packet.writeD(entry.getKey());
+			packet.writeD(loc.getX());
+			packet.writeD(loc.getY());
+			packet.writeD(loc.getZ());
 		}
+		return true;
 	}
 }

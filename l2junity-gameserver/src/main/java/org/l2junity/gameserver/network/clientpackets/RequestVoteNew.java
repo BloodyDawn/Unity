@@ -20,27 +20,28 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExVoteSystemInfo;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.network.serverpackets.UserInfo;
+import org.l2junity.network.PacketReader;
 
-public final class RequestVoteNew extends L2GameClientPacket
+public final class RequestVoteNew implements IGameClientPacket
 {
-	private static final String _C__D0_7E_REQUESTVOTENEW = "[C] D0:7E RequestVoteNew";
-	
 	private int _targetId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_targetId = readD();
+		_targetId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -52,11 +53,11 @@ public final class RequestVoteNew extends L2GameClientPacket
 		{
 			if (object == null)
 			{
-				activeChar.sendPacket(SystemMessageId.SELECT_TARGET);
+				client.sendPacket(SystemMessageId.SELECT_TARGET);
 			}
 			else
 			{
-				activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
+				client.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
 			}
 			return;
 		}
@@ -70,19 +71,19 @@ public final class RequestVoteNew extends L2GameClientPacket
 		
 		if (target == activeChar)
 		{
-			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_RECOMMEND_YOURSELF);
+			client.sendPacket(SystemMessageId.YOU_CANNOT_RECOMMEND_YOURSELF);
 			return;
 		}
 		
 		if (activeChar.getRecomLeft() <= 0)
 		{
-			activeChar.sendPacket(SystemMessageId.YOU_ARE_OUT_OF_RECOMMENDATIONS_TRY_AGAIN_LATER);
+			client.sendPacket(SystemMessageId.YOU_ARE_OUT_OF_RECOMMENDATIONS_TRY_AGAIN_LATER);
 			return;
 		}
 		
 		if (target.getRecomHave() >= 255)
 		{
-			activeChar.sendPacket(SystemMessageId.YOUR_SELECTED_TARGET_CAN_NO_LONGER_RECEIVE_A_RECOMMENDATION);
+			client.sendPacket(SystemMessageId.YOUR_SELECTED_TARGET_CAN_NO_LONGER_RECEIVE_A_RECOMMENDATION);
 			return;
 		}
 		
@@ -91,22 +92,16 @@ public final class RequestVoteNew extends L2GameClientPacket
 		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_RECOMMENDED_C1_YOU_HAVE_S2_RECOMMENDATIONS_LEFT);
 		sm.addPcName(target);
 		sm.addInt(activeChar.getRecomLeft());
-		activeChar.sendPacket(sm);
+		client.sendPacket(sm);
 		
 		sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_BEEN_RECOMMENDED_BY_C1);
 		sm.addPcName(activeChar);
 		target.sendPacket(sm);
 		
-		activeChar.sendPacket(new UserInfo(activeChar));
+		client.sendPacket(new UserInfo(activeChar));
 		target.broadcastUserInfo();
 		
-		activeChar.sendPacket(new ExVoteSystemInfo(activeChar));
+		client.sendPacket(new ExVoteSystemInfo(activeChar));
 		target.sendPacket(new ExVoteSystemInfo(target));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_7E_REQUESTVOTENEW;
 	}
 }

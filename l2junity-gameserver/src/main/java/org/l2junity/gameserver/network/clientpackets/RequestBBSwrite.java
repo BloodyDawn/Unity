@@ -19,14 +19,15 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.handler.CommunityBoardHandler;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * RequestBBSwrite client packet implementation.
  * @author -Wooden-, Zoey76
  */
-public final class RequestBBSwrite extends L2GameClientPacket
+public final class RequestBBSwrite implements IGameClientPacket
 {
-	private static final String _C__24_REQUESTBBSWRITE = "[C] 24 RequestBBSwrite";
 	private String _url;
 	private String _arg1;
 	private String _arg2;
@@ -35,25 +36,20 @@ public final class RequestBBSwrite extends L2GameClientPacket
 	private String _arg5;
 	
 	@Override
-	protected final void readImpl()
+	public final boolean read(PacketReader packet)
 	{
-		_url = readS();
-		_arg1 = readS();
-		_arg2 = readS();
-		_arg3 = readS();
-		_arg4 = readS();
-		_arg5 = readS();
+		_url = packet.readS();
+		_arg1 = packet.readS();
+		_arg2 = packet.readS();
+		_arg3 = packet.readS();
+		_arg4 = packet.readS();
+		_arg5 = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected final void runImpl()
+	public final void run(L2GameClient client)
 	{
-		CommunityBoardHandler.getInstance().handleWriteCommand(getActiveChar(), _url, _arg1, _arg2, _arg3, _arg4, _arg5);
-	}
-	
-	@Override
-	public final String getType()
-	{
-		return _C__24_REQUESTBBSWRITE;
+		CommunityBoardHandler.getInstance().handleWriteCommand(client.getActiveChar(), _url, _arg1, _arg2, _arg3, _arg4, _arg5);
 	}
 }

@@ -23,11 +23,13 @@ import java.util.List;
 
 import org.l2junity.gameserver.model.holders.NpcLogListHolder;
 import org.l2junity.gameserver.network.NpcStringId;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class ExQuestNpcLogList extends L2GameServerPacket
+public class ExQuestNpcLogList implements IGameServerPacket
 {
 	private final int _questId;
 	private final List<NpcLogListHolder> _npcLogList = new ArrayList<>();
@@ -53,17 +55,18 @@ public class ExQuestNpcLogList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xC6);
-		writeD(_questId);
-		writeC(_npcLogList.size());
+		OutgoingPackets.EX_QUEST_NPC_LOG_LIST.writeId(packet);
+		
+		packet.writeD(_questId);
+		packet.writeC(_npcLogList.size());
 		for (NpcLogListHolder holder : _npcLogList)
 		{
-			writeD(holder.isNpcString() ? holder.getId() : holder.getId() + 1000000);
-			writeC(holder.isNpcString() ? 0x01 : 0x00);
-			writeD(holder.getCount());
+			packet.writeD(holder.isNpcString() ? holder.getId() : holder.getId() + 1000000);
+			packet.writeC(holder.isNpcString() ? 0x01 : 0x00);
+			packet.writeD(holder.getCount());
 		}
+		return true;
 	}
 }

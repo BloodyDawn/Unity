@@ -19,8 +19,10 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class PrivateStoreMsgBuy extends L2GameServerPacket
+public class PrivateStoreMsgBuy implements IGameServerPacket
 {
 	private final int _objId;
 	private String _storeMsg;
@@ -35,10 +37,12 @@ public class PrivateStoreMsgBuy extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xBF);
-		writeD(_objId);
-		writeS(_storeMsg);
+		OutgoingPackets.PRIVATE_STORE_BUY_MSG.writeId(packet);
+		
+		packet.writeD(_objId);
+		packet.writeS(_storeMsg);
+		return true;
 	}
 }

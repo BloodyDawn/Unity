@@ -20,13 +20,15 @@ package org.l2junity.gameserver.network.clientpackets.shuttle;
 
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.shuttle.ExStopMoveInShuttle;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author UnAfraid
  */
-public class CannotMoveAnymoreInShuttle extends L2GameClientPacket
+public class CannotMoveAnymoreInShuttle implements IGameClientPacket
 {
 	private int _x;
 	private int _y;
@@ -35,19 +37,20 @@ public class CannotMoveAnymoreInShuttle extends L2GameClientPacket
 	private int _boatId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_boatId = readD();
-		_x = readD();
-		_y = readD();
-		_z = readD();
-		_heading = readD();
+		_boatId = packet.readD();
+		_x = packet.readD();
+		_y = packet.readD();
+		_z = packet.readD();
+		_heading = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -63,11 +66,4 @@ public class CannotMoveAnymoreInShuttle extends L2GameClientPacket
 			}
 		}
 	}
-	
-	@Override
-	public String getType()
-	{
-		return "[C] 5D CannotMoveAnymoreInVehicle";
-	}
-	
 }

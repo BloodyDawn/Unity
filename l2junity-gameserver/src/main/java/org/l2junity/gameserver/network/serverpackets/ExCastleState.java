@@ -20,11 +20,13 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.enums.CastleSide;
 import org.l2junity.gameserver.model.entity.Castle;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class ExCastleState extends L2GameServerPacket
+public class ExCastleState implements IGameServerPacket
 {
 	private final int _castleId;
 	private final CastleSide _castleSide;
@@ -36,11 +38,12 @@ public class ExCastleState extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x12D);
-		writeD(_castleId);
-		writeD(_castleSide.ordinal());
+		OutgoingPackets.EX_CASTLE_STATE.writeId(packet);
+		
+		packet.writeD(_castleId);
+		packet.writeD(_castleSide.ordinal());
+		return true;
 	}
 }

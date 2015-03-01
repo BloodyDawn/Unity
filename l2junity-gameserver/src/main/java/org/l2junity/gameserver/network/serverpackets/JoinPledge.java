@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public final class JoinPledge extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public final class JoinPledge implements IGameServerPacket
 {
 	private final int _pledgeId;
 	
@@ -28,9 +31,11 @@ public final class JoinPledge extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x2D);
-		writeD(_pledgeId);
+		OutgoingPackets.JOIN_PLEDGE.writeId(packet);
+		
+		packet.writeD(_pledgeId);
+		return true;
 	}
 }

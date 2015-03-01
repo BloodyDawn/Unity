@@ -24,8 +24,10 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.model.buylist.L2BuyList;
 import org.l2junity.gameserver.model.buylist.Product;
 import org.l2junity.gameserver.model.items.L2Item;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class ShopPreviewList extends L2GameServerPacket
+public class ShopPreviewList implements IGameServerPacket
 {
 	private final int _listId;
 	private final Collection<Product> _list;
@@ -48,12 +50,13 @@ public class ShopPreviewList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xF5);
-		writeD(5056);
-		writeQ(_money); // current money
-		writeD(_listId);
+		OutgoingPackets.SHOP_PREVIEW_LIST.writeId(packet);
+		
+		packet.writeD(5056);
+		packet.writeQ(_money); // current money
+		packet.writeD(_listId);
 		
 		int newlength = 0;
 		for (Product product : _list)
@@ -63,26 +66,27 @@ public class ShopPreviewList extends L2GameServerPacket
 				newlength++;
 			}
 		}
-		writeH(newlength);
+		packet.writeH(newlength);
 		
 		for (Product product : _list)
 		{
 			if ((product.getItem().getCrystalType().getId() <= _expertise) && product.getItem().isEquipable())
 			{
-				writeD(product.getItemId());
-				writeH(product.getItem().getType2()); // item type2
+				packet.writeD(product.getItemId());
+				packet.writeH(product.getItem().getType2()); // item type2
 				
 				if (product.getItem().getType1() != L2Item.TYPE1_ITEM_QUESTITEM_ADENA)
 				{
-					writeQ(product.getItem().getBodyPart()); // rev 415 slot 0006-lr.ear 0008-neck 0030-lr.finger 0040-head 0080-?? 0100-l.hand 0200-gloves 0400-chest 0800-pants 1000-feet 2000-?? 4000-r.hand 8000-r.hand
+					packet.writeQ(product.getItem().getBodyPart()); // rev 415 slot 0006-lr.ear 0008-neck 0030-lr.finger 0040-head 0080-?? 0100-l.hand 0200-gloves 0400-chest 0800-pants 1000-feet 2000-?? 4000-r.hand 8000-r.hand
 				}
 				else
 				{
-					writeQ(0x00); // rev 415 slot 0006-lr.ear 0008-neck 0030-lr.finger 0040-head 0080-?? 0100-l.hand 0200-gloves 0400-chest 0800-pants 1000-feet 2000-?? 4000-r.hand 8000-r.hand
+					packet.writeQ(0x00); // rev 415 slot 0006-lr.ear 0008-neck 0030-lr.finger 0040-head 0080-?? 0100-l.hand 0200-gloves 0400-chest 0800-pants 1000-feet 2000-?? 4000-r.hand 8000-r.hand
 				}
 				
-				writeQ(Config.WEAR_PRICE);
+				packet.writeQ(Config.WEAR_PRICE);
 			}
 		}
+		return true;
 	}
 }

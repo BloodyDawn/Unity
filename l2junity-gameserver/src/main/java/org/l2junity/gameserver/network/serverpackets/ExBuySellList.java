@@ -22,6 +22,8 @@ import java.util.Collection;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author ShanSoft
@@ -43,43 +45,44 @@ public class ExBuySellList extends AbstractItemPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xB8);
-		writeD(0x01);
-		writeD(0x00); // TODO: Find me
+		OutgoingPackets.EX_BUY_SELL_LIST.writeId(packet);
+		
+		packet.writeD(0x01);
+		packet.writeD(0x00); // TODO: Find me
 		
 		if ((_sellList != null))
 		{
-			writeH(_sellList.size());
+			packet.writeH(_sellList.size());
 			for (ItemInstance item : _sellList)
 			{
-				writeItem(item);
-				writeQ(item.getItem().getReferencePrice() / 2);
+				writeItem(packet, item);
+				packet.writeQ(item.getItem().getReferencePrice() / 2);
 			}
 		}
 		else
 		{
-			writeH(0x00);
+			packet.writeH(0x00);
 		}
 		
 		if ((_refundList != null) && !_refundList.isEmpty())
 		{
-			writeH(_refundList.size());
+			packet.writeH(_refundList.size());
 			int i = 0;
 			for (ItemInstance item : _refundList)
 			{
-				writeItem(item);
-				writeD(i++);
-				writeQ((item.getItem().getReferencePrice() / 2) * item.getCount());
+				writeItem(packet, item);
+				packet.writeD(i++);
+				packet.writeQ((item.getItem().getReferencePrice() / 2) * item.getCount());
 			}
 		}
 		else
 		{
-			writeH(0x00);
+			packet.writeH(0x00);
 		}
 		
-		writeC(_done ? 0x01 : 0x00);
+		packet.writeC(_done ? 0x01 : 0x00);
+		return true;
 	}
 }

@@ -19,11 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.clan.entry.PledgeApplicantInfo;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class ExPledgeWaitingUser extends L2GameServerPacket
+public class ExPledgeWaitingUser implements IGameServerPacket
 {
 	private final PledgeApplicantInfo _pledgeRecruitInfo;
 	
@@ -33,12 +35,12 @@ public class ExPledgeWaitingUser extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x145);
+		OutgoingPackets.EX_PLEDGE_WAITING_USER.writeId(packet);
 		
-		writeD(_pledgeRecruitInfo.getPlayerId());
-		writeS(_pledgeRecruitInfo.getMessage());
+		packet.writeD(_pledgeRecruitInfo.getPlayerId());
+		packet.writeS(_pledgeRecruitInfo.getMessage());
+		return true;
 	}
 }

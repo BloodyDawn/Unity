@@ -21,12 +21,14 @@ package org.l2junity.gameserver.network.serverpackets;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2ControllableAirShipInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * MyTargetSelected server packet implementation.
  * @author UnAfraid
  */
-public class MyTargetSelected extends L2GameServerPacket
+public class MyTargetSelected implements IGameServerPacket
 {
 	private final int _objectId;
 	private final int _color;
@@ -42,11 +44,13 @@ public class MyTargetSelected extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xB9);
-		writeD(_objectId);
-		writeH(_color);
-		writeD(0x00);
+		OutgoingPackets.MY_TARGET_SELECTED.writeId(packet);
+		
+		packet.writeD(_objectId);
+		packet.writeH(_color);
+		packet.writeD(0x00);
+		return true;
 	}
 }

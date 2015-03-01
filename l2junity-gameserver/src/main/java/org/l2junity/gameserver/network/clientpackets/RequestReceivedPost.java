@@ -23,30 +23,31 @@ import org.l2junity.gameserver.instancemanager.MailManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Message;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExChangePostState;
 import org.l2junity.gameserver.network.serverpackets.ExReplyReceivedPost;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Migi, DS
  */
-public final class RequestReceivedPost extends L2GameClientPacket
+public final class RequestReceivedPost implements IGameClientPacket
 {
-	private static final String _C__D0_69_REQUESTRECEIVEDPOST = "[C] D0:69 RequestReceivedPost";
-	
 	private int _msgId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_msgId = readD();
+		_msgId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	public void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if ((activeChar == null) || !Config.ALLOW_MAIL)
 		{
 			return;
@@ -60,7 +61,7 @@ public final class RequestReceivedPost extends L2GameClientPacket
 		
 		if (!activeChar.isInsideZone(ZoneId.PEACE) && msg.hasAttachments())
 		{
-			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_RECEIVE_OR_SEND_MAIL_WITH_ATTACHED_ITEMS_IN_NON_PEACE_ZONE_REGIONS);
+			client.sendPacket(SystemMessageId.YOU_CANNOT_RECEIVE_OR_SEND_MAIL_WITH_ATTACHED_ITEMS_IN_NON_PEACE_ZONE_REGIONS);
 			return;
 		}
 		
@@ -75,20 +76,8 @@ public final class RequestReceivedPost extends L2GameClientPacket
 			return;
 		}
 		
-		activeChar.sendPacket(new ExReplyReceivedPost(msg));
-		activeChar.sendPacket(new ExChangePostState(true, _msgId, Message.READED));
+		client.sendPacket(new ExReplyReceivedPost(msg));
+		client.sendPacket(new ExChangePostState(true, _msgId, Message.READED));
 		msg.markAsRead();
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_69_REQUESTRECEIVEDPOST;
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
 	}
 }

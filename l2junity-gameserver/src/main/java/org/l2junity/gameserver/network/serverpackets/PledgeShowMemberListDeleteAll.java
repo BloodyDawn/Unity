@@ -18,18 +18,21 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class PledgeShowMemberListDeleteAll extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class PledgeShowMemberListDeleteAll implements IGameServerPacket
 {
 	public static final PledgeShowMemberListDeleteAll STATIC_PACKET = new PledgeShowMemberListDeleteAll();
 	
 	private PledgeShowMemberListDeleteAll()
 	{
-		
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x88);
+		OutgoingPackets.PLEDGE_SHOW_MEMBER_LIST_DELETE_ALL.writeId(packet);
+		return true;
 	}
 }

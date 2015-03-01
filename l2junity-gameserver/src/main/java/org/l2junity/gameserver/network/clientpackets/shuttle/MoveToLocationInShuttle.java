@@ -21,18 +21,18 @@ package org.l2junity.gameserver.network.clientpackets.shuttle;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.type.WeaponType;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.shuttle.ExMoveToLocationInShuttle;
 import org.l2junity.gameserver.network.serverpackets.shuttle.ExStopMoveInShuttle;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author UnAfraid
  */
-public final class MoveToLocationInShuttle extends L2GameClientPacket
+public final class MoveToLocationInShuttle implements IGameClientPacket
 {
-	private static final String _C__75_MOVETOLOCATIONINVEHICLE = "[C] 81 MoveToLocationInVehicle";
-	
 	private int _boatId;
 	private int _targetX;
 	private int _targetY;
@@ -42,21 +42,22 @@ public final class MoveToLocationInShuttle extends L2GameClientPacket
 	private int _originZ;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_boatId = readD(); // objectId of boat
-		_targetX = readD();
-		_targetY = readD();
-		_targetZ = readD();
-		_originX = readD();
-		_originY = readD();
-		_originZ = readD();
+		_boatId = packet.readD(); // objectId of boat
+		_targetX = packet.readD();
+		_targetY = packet.readD();
+		_targetZ = packet.readD();
+		_originX = packet.readD();
+		_originY = packet.readD();
+		_originZ = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -82,11 +83,5 @@ public final class MoveToLocationInShuttle extends L2GameClientPacket
 		
 		activeChar.setInVehiclePosition(new Location(_targetX, _targetY, _targetZ));
 		activeChar.broadcastPacket(new ExMoveToLocationInShuttle(activeChar, _originX, _originY, _originZ));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__75_MOVETOLOCATIONINVEHICLE;
 	}
 }

@@ -46,7 +46,7 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.zone.ZoneRegion;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
 import org.l2junity.gameserver.util.Util;
 
 /**
@@ -289,7 +289,7 @@ public abstract class Vehicle extends Creature
 		return _passengers;
 	}
 	
-	public void broadcastToPassengers(L2GameServerPacket sm)
+	public void broadcastToPassengers(IGameServerPacket sm)
 	{
 		for (PlayerInstance player : _passengers)
 		{

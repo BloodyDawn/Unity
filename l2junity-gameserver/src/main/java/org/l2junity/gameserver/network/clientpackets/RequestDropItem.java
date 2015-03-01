@@ -28,20 +28,20 @@ import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.EtcItemType;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2junity.gameserver.network.serverpackets.ItemList;
 import org.l2junity.gameserver.util.GMAudit;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.11.2.1.2.7 $ $Date: 2005/04/02 21:25:21 $
  */
-public final class RequestDropItem extends L2GameClientPacket
+public final class RequestDropItem implements IGameClientPacket
 {
-	private static final String _C__17_REQUESTDROPITEM = "[C] 17 RequestDropItem";
-	
 	private int _objectId;
 	private long _count;
 	private int _x;
@@ -49,25 +49,26 @@ public final class RequestDropItem extends L2GameClientPacket
 	private int _z;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_objectId = readD();
-		_count = readQ();
-		_x = readD();
-		_y = readD();
-		_z = readD();
+		_objectId = packet.readD();
+		_count = packet.readQ();
+		_x = packet.readD();
+		_y = packet.readD();
+		_z = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = client.getActiveChar();
 		if ((activeChar == null) || activeChar.isDead())
 		{
 			return;
 		}
 		// Flood protect drop to avoid packet lag
-		if (!getClient().getFloodProtectors().getDropItem().tryPerformAction("drop item"))
+		if (!client.getFloodProtectors().getDropItem().tryPerformAction("drop item"))
 		{
 			return;
 		}
@@ -225,17 +226,5 @@ public final class RequestDropItem extends L2GameClientPacket
 			_log.warning(msg);
 			AdminData.getInstance().broadcastMessageToGMs(msg);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__17_REQUESTDROPITEM;
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
 	}
 }

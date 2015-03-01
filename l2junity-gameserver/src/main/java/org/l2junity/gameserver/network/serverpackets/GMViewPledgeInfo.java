@@ -21,8 +21,10 @@ package org.l2junity.gameserver.network.serverpackets;
 import org.l2junity.gameserver.model.ClanMember;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class GMViewPledgeInfo extends L2GameServerPacket
+public class GMViewPledgeInfo implements IGameServerPacket
 {
 	private final L2Clan _clan;
 	private final PlayerInstance _activeChar;
@@ -34,45 +36,47 @@ public class GMViewPledgeInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x96);
-		writeD(0x00);
-		writeS(_activeChar.getName());
-		writeD(_clan.getId());
-		writeD(0x00);
-		writeS(_clan.getName());
-		writeS(_clan.getLeaderName());
+		OutgoingPackets.GM_VIEW_PLEDGE_INFO.writeId(packet);
 		
-		writeD(_clan.getCrestId()); // -> no, it's no longer used (nuocnam) fix by game
-		writeD(_clan.getLevel());
-		writeD(_clan.getCastleId());
-		writeD(_clan.getHideoutId());
-		writeD(_clan.getFortId());
-		writeD(_clan.getRank());
-		writeD(_clan.getReputationScore());
-		writeD(0x00);
-		writeD(0x00);
-		writeD(0x00);
-		writeD(_clan.getAllyId()); // c2
-		writeS(_clan.getAllyName()); // c2
-		writeD(_clan.getAllyCrestId()); // c2
-		writeD(_clan.isAtWar() ? 1 : 0); // c3
-		writeD(0x00); // T3 Unknown
+		packet.writeD(0x00);
+		packet.writeS(_activeChar.getName());
+		packet.writeD(_clan.getId());
+		packet.writeD(0x00);
+		packet.writeS(_clan.getName());
+		packet.writeS(_clan.getLeaderName());
 		
-		writeD(_clan.getMembers().size());
+		packet.writeD(_clan.getCrestId()); // -> no, it's no longer used (nuocnam) fix by game
+		packet.writeD(_clan.getLevel());
+		packet.writeD(_clan.getCastleId());
+		packet.writeD(_clan.getHideoutId());
+		packet.writeD(_clan.getFortId());
+		packet.writeD(_clan.getRank());
+		packet.writeD(_clan.getReputationScore());
+		packet.writeD(0x00);
+		packet.writeD(0x00);
+		packet.writeD(0x00);
+		packet.writeD(_clan.getAllyId()); // c2
+		packet.writeS(_clan.getAllyName()); // c2
+		packet.writeD(_clan.getAllyCrestId()); // c2
+		packet.writeD(_clan.isAtWar() ? 1 : 0); // c3
+		packet.writeD(0x00); // T3 Unknown
+		
+		packet.writeD(_clan.getMembers().size());
 		for (ClanMember member : _clan.getMembers())
 		{
 			if (member != null)
 			{
-				writeS(member.getName());
-				writeD(member.getLevel());
-				writeD(member.getClassId());
-				writeD(member.getSex() ? 1 : 0);
-				writeD(member.getRaceOrdinal());
-				writeD(member.isOnline() ? member.getObjectId() : 0);
-				writeD(member.getSponsor() != 0 ? 1 : 0);
+				packet.writeS(member.getName());
+				packet.writeD(member.getLevel());
+				packet.writeD(member.getClassId());
+				packet.writeD(member.getSex() ? 1 : 0);
+				packet.writeD(member.getRaceOrdinal());
+				packet.writeD(member.isOnline() ? member.getObjectId() : 0);
+				packet.writeD(member.getSponsor() != 0 ? 1 : 0);
 			}
 		}
+		return true;
 	}
 }

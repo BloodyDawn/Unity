@@ -18,12 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets.appearance;
 
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class ExPutShapeShiftingExtractionItemResult extends L2GameServerPacket
+public class ExPutShapeShiftingExtractionItemResult implements IGameServerPacket
 {
 	public static ExPutShapeShiftingExtractionItemResult FAILED = new ExPutShapeShiftingExtractionItemResult(0x00);
 	public static ExPutShapeShiftingExtractionItemResult SUCCESS = new ExPutShapeShiftingExtractionItemResult(0x01);
@@ -36,10 +38,11 @@ public class ExPutShapeShiftingExtractionItemResult extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x12B);
-		writeD(_result);
+		OutgoingPackets.EX_PUT_SHAPE_SHIFTING_EXTRACTION_ITEM_RESULT.writeId(packet);
+		
+		packet.writeD(_result);
+		return true;
 	}
 }

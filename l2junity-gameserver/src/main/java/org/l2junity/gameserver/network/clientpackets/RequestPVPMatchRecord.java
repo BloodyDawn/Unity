@@ -18,28 +18,23 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
+
 /**
  * @author KenM
  */
-public class RequestPVPMatchRecord extends L2GameClientPacket
+public class RequestPVPMatchRecord implements IGameClientPacket
 {
-	private static final String _C__D0_49_REQUESTPVPMATCHRECORD = "[C] D0:49 RequestPVPMatchRecord";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// trigger, no data
+		return false;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_49_REQUESTPVPMATCHRECORD;
+		// TODO: Implement me
 	}
 }

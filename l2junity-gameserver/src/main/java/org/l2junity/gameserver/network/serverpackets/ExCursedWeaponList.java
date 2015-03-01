@@ -20,10 +20,13 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import java.util.List;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author -Wooden-
  */
-public class ExCursedWeaponList extends L2GameServerPacket
+public class ExCursedWeaponList implements IGameServerPacket
 {
 	private final List<Integer> _cursedWeaponIds;
 	
@@ -33,15 +36,12 @@ public class ExCursedWeaponList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x47);
+		OutgoingPackets.EX_CURSED_WEAPON_LIST.writeId(packet);
 		
-		writeD(_cursedWeaponIds.size());
-		for (int i : _cursedWeaponIds)
-		{
-			writeD(i);
-		}
+		packet.writeD(_cursedWeaponIds.size());
+		_cursedWeaponIds.forEach(packet::writeD);
+		return true;
 	}
 }

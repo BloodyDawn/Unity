@@ -22,16 +22,16 @@ import org.l2junity.gameserver.model.Elementals;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExBaseAttributeCancelResult;
 import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.network.serverpackets.UserInfo;
+import org.l2junity.network.PacketReader;
 
-public class RequestExRemoveItemAttribute extends L2GameClientPacket
+public class RequestExRemoveItemAttribute implements IGameClientPacket
 {
-	private static final String _C__D0_23_REQUESTEXREMOVEITEMATTRIBUTE = "[C] D0:23 RequestExRemoveItemAttribute";
-	
 	private int _objectId;
 	private long _price;
 	private byte _element;
@@ -41,16 +41,17 @@ public class RequestExRemoveItemAttribute extends L2GameClientPacket
 	}
 	
 	@Override
-	public void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_objectId = readD();
-		_element = (byte) readD();
+		_objectId = packet.readD();
+		_element = (byte) packet.readD();
+		return true;
 	}
 	
 	@Override
-	public void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -75,11 +76,11 @@ public class RequestExRemoveItemAttribute extends L2GameClientPacket
 				targetItem.getElemental(_element).removeBonus(activeChar);
 			}
 			targetItem.clearElementAttr(_element);
-			activeChar.sendPacket(new UserInfo(activeChar));
+			client.sendPacket(new UserInfo(activeChar));
 			
 			InventoryUpdate iu = new InventoryUpdate();
 			iu.addModifiedItem(targetItem);
-			activeChar.sendPacket(iu);
+			client.sendPacket(iu);
 			SystemMessage sm;
 			byte realElement = targetItem.isArmor() ? Elementals.getOppositeElement(_element) : _element;
 			if (targetItem.getEnchantLevel() > 0)
@@ -117,12 +118,12 @@ public class RequestExRemoveItemAttribute extends L2GameClientPacket
 					sm.addElemental(Elementals.getOppositeElement(realElement));
 				}
 			}
-			activeChar.sendPacket(sm);
-			activeChar.sendPacket(new ExBaseAttributeCancelResult(targetItem.getObjectId(), _element));
+			client.sendPacket(sm);
+			client.sendPacket(new ExBaseAttributeCancelResult(targetItem.getObjectId(), _element));
 		}
 		else
 		{
-			activeChar.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_FUNDS_TO_CANCEL_THIS_ATTRIBUTE);
+			client.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_FUNDS_TO_CANCEL_THIS_ATTRIBUTE);
 		}
 	}
 	
@@ -163,11 +164,5 @@ public class RequestExRemoveItemAttribute extends L2GameClientPacket
 		}
 		
 		return _price;
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_23_REQUESTEXREMOVEITEMATTRIBUTE;
 	}
 }

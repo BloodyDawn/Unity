@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public final class TargetSelected extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public final class TargetSelected implements IGameServerPacket
 {
 	private final int _objectId;
 	private final int _targetObjId;
@@ -43,14 +46,16 @@ public final class TargetSelected extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x23);
-		writeD(_objectId);
-		writeD(_targetObjId);
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
-		writeD(0x00); // ?
+		OutgoingPackets.TARGET_SELECTED.writeId(packet);
+		
+		packet.writeD(_objectId);
+		packet.writeD(_targetObjId);
+		packet.writeD(_x);
+		packet.writeD(_y);
+		packet.writeD(_z);
+		packet.writeD(0x00); // ?
+		return true;
 	}
 }

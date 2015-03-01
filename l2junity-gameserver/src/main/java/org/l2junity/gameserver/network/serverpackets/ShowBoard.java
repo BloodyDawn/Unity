@@ -20,7 +20,10 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import java.util.List;
 
-public class ShowBoard extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class ShowBoard implements IGameServerPacket
 {
 	private final String _content;
 	
@@ -40,18 +43,20 @@ public class ShowBoard extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x7B);
-		writeC(0x01); // c4 1 to show community 00 to hide
-		writeS("bypass _bbshome"); // top
-		writeS("bypass _bbsgetfav"); // favorite
-		writeS("bypass _bbsloc"); // region
-		writeS("bypass _bbsclan"); // clan
-		writeS("bypass _bbsmemo"); // memo
-		writeS("bypass _bbsmail"); // mail
-		writeS("bypass _bbsfriends"); // friends
-		writeS("bypass bbs_add_fav"); // add fav.
-		writeS(_content);
+		OutgoingPackets.SHOW_BOARD.writeId(packet);
+		
+		packet.writeC(0x01); // c4 1 to show community 00 to hide
+		packet.writeS("bypass _bbshome"); // top
+		packet.writeS("bypass _bbsgetfav"); // favorite
+		packet.writeS("bypass _bbsloc"); // region
+		packet.writeS("bypass _bbsclan"); // clan
+		packet.writeS("bypass _bbsmemo"); // memo
+		packet.writeS("bypass _bbsmail"); // mail
+		packet.writeS("bypass _bbsfriends"); // friends
+		packet.writeS("bypass bbs_add_fav"); // add fav.
+		packet.writeS(_content);
+		return true;
 	}
 }

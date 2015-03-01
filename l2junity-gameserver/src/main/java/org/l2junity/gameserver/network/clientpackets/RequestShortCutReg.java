@@ -20,12 +20,12 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.enums.ShortcutType;
 import org.l2junity.gameserver.model.Shortcut;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ShortCutRegister;
+import org.l2junity.network.PacketReader;
 
-public final class RequestShortCutReg extends L2GameClientPacket
+public final class RequestShortCutReg implements IGameClientPacket
 {
-	private static final String _C__3D_REQUESTSHORTCUTREG = "[C] 3D RequestShortCutReg";
-	
 	private ShortcutType _type;
 	private int _id;
 	private int _slot;
@@ -34,40 +34,29 @@ public final class RequestShortCutReg extends L2GameClientPacket
 	private int _characterType; // 1 - player, 2 - pet
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		final int typeId = readD();
+		final int typeId = packet.readD();
 		_type = ShortcutType.values()[(typeId < 1) || (typeId > 6) ? 0 : typeId];
-		final int slot = readD();
+		final int slot = packet.readD();
 		_slot = slot % 12;
 		_page = slot / 12;
-		_id = readD();
-		_lvl = readD();
-		_characterType = readD();
+		_id = packet.readD();
+		_lvl = packet.readD();
+		_characterType = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		if ((getActiveChar() == null) || (_page > 10) || (_page < 0))
+		if ((client.getActiveChar() == null) || (_page > 10) || (_page < 0))
 		{
 			return;
 		}
 		
 		final Shortcut sc = new Shortcut(_slot, _page, _type, _id, _lvl, _characterType);
-		getActiveChar().registerShortCut(sc);
-		sendPacket(new ShortCutRegister(sc));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__3D_REQUESTSHORTCUTREG;
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
+		client.getActiveChar().registerShortCut(sc);
+		client.sendPacket(new ShortCutRegister(sc));
 	}
 }

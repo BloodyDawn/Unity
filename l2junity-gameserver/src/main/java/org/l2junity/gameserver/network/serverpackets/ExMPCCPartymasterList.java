@@ -20,10 +20,13 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import java.util.Set;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author Sdw
  */
-public class ExMPCCPartymasterList extends L2GameServerPacket
+public class ExMPCCPartymasterList implements IGameServerPacket
 {
 	private final Set<String> _leadersName;
 	
@@ -33,12 +36,12 @@ public class ExMPCCPartymasterList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xA3);
+		OutgoingPackets.EX_MPCC_PARTYMASTER_LIST.writeId(packet);
 		
-		writeD(_leadersName.size());
-		_leadersName.forEach(this::writeS);
+		packet.writeD(_leadersName.size());
+		_leadersName.forEach(packet::writeS);
+		return true;
 	}
 }

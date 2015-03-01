@@ -20,18 +20,20 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import java.util.List;
 
+import javolution.util.FastList;
+
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-
-import javolution.util.FastList;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * This class ...
  * @version $Revision: 1.4.2.3.2.4 $ $Date: 2005/03/27 15:29:39 $
  */
-public class SellList extends L2GameServerPacket
+public class SellList implements IGameServerPacket
 {
 	private final PlayerInstance _activeChar;
 	private final L2MerchantInstance _lease;
@@ -70,38 +72,40 @@ public class SellList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x06);
-		writeQ(_money);
-		writeD(_lease == null ? 0x00 : 1000000 + _lease.getTemplate().getId());
-		writeH(_selllist.size());
+		OutgoingPackets.SELL_LIST.writeId(packet);
+		
+		packet.writeQ(_money);
+		packet.writeD(_lease == null ? 0x00 : 1000000 + _lease.getTemplate().getId());
+		packet.writeH(_selllist.size());
 		
 		for (ItemInstance item : _selllist)
 		{
-			writeH(item.getItem().getType1());
-			writeD(item.getObjectId());
-			writeD(item.getDisplayId());
-			writeQ(item.getCount());
-			writeH(item.getItem().getType2());
-			writeH(item.isEquipped() ? 0x01 : 0x00);
-			writeD(item.getItem().getBodyPart());
-			writeH(item.getEnchantLevel());
-			writeH(0x00); // TODO: Verify me
-			writeH(item.getCustomType2());
-			writeQ(item.getItem().getReferencePrice() / 2);
+			packet.writeH(item.getItem().getType1());
+			packet.writeD(item.getObjectId());
+			packet.writeD(item.getDisplayId());
+			packet.writeQ(item.getCount());
+			packet.writeH(item.getItem().getType2());
+			packet.writeH(item.isEquipped() ? 0x01 : 0x00);
+			packet.writeD(item.getItem().getBodyPart());
+			packet.writeH(item.getEnchantLevel());
+			packet.writeH(0x00); // TODO: Verify me
+			packet.writeH(item.getCustomType2());
+			packet.writeQ(item.getItem().getReferencePrice() / 2);
 			// T1
-			writeH(item.getAttackElementType());
-			writeH(item.getAttackElementPower());
+			packet.writeH(item.getAttackElementType());
+			packet.writeH(item.getAttackElementPower());
 			for (byte i = 0; i < 6; i++)
 			{
-				writeH(item.getElementDefAttr(i));
+				packet.writeH(item.getElementDefAttr(i));
 			}
 			// Enchant Effects
 			for (int op : item.getEnchantOptions())
 			{
-				writeH(op);
+				packet.writeH(op);
 			}
 		}
+		return true;
 	}
 }

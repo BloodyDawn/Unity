@@ -19,33 +19,27 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ItemList;
+import org.l2junity.network.PacketReader;
 
-public class RequestBuySellUIClose extends L2GameClientPacket
+public class RequestBuySellUIClose implements IGameClientPacket
 {
-	private static final String _C__D0_76_REQUESTBUYSELLUICLOSE = "[C] D0:76 RequestBuySellUIClose";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// trigger
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if ((activeChar == null) || activeChar.isInventoryDisabled())
 		{
 			return;
 		}
 		
 		activeChar.sendPacket(new ItemList(activeChar, true));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_76_REQUESTBUYSELLUICLOSE;
 	}
 }

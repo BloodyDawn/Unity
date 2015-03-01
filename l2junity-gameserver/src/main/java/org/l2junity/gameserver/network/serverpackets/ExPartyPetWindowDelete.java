@@ -19,11 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.Summon;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author KenM
  */
-public class ExPartyPetWindowDelete extends L2GameServerPacket
+public class ExPartyPetWindowDelete implements IGameServerPacket
 {
 	private final Summon _summon;
 	
@@ -33,15 +35,13 @@ public class ExPartyPetWindowDelete extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		/**
-		 * dcd
-		 */
-		writeC(0xFE);
-		writeH(0x6B);
-		writeD(_summon.getObjectId());
-		writeC(_summon.getSummonType());
-		writeD(_summon.getOwner().getObjectId());
+		OutgoingPackets.EX_PARTY_PET_WINDOW_DELETE.writeId(packet);
+		
+		packet.writeD(_summon.getObjectId());
+		packet.writeC(_summon.getSummonType());
+		packet.writeD(_summon.getOwner().getObjectId());
+		return true;
 	}
 }

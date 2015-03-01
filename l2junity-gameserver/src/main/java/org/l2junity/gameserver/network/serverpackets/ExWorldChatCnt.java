@@ -20,11 +20,13 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class ExWorldChatCnt extends L2GameServerPacket
+public class ExWorldChatCnt implements IGameServerPacket
 {
 	private final int _points;
 	
@@ -34,10 +36,11 @@ public class ExWorldChatCnt extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x173);
-		writeD(_points);
+		OutgoingPackets.EX_WORLD_CHAT_CNT.writeId(packet);
+		
+		packet.writeD(_points);
+		return true;
 	}
 }

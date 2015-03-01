@@ -19,38 +19,33 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * format ch c: (id) 0xD0 h: (subid) 0x12
  * @author -Wooden-
  */
-public final class RequestOlympiadObserverEnd extends L2GameClientPacket
+public final class RequestOlympiadObserverEnd implements IGameClientPacket
 {
-	private static final String _C__D0_29_REQUESTOLYMPIADOBSERVEREND = "[C] D0:29 RequestOlympiadObserverEnd";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// trigger
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
+		
 		if (activeChar.inObserverMode())
 		{
 			activeChar.leaveOlympiadObserverMode();
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_29_REQUESTOLYMPIADOBSERVEREND;
 	}
 }

@@ -20,33 +20,22 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExShowAgitInfo;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author KenM
  */
-public class RequestAllAgitInfo extends L2GameClientPacket
+public class RequestAllAgitInfo implements IGameClientPacket
 {
-	private static final String _C__D0_3E_REQUESTALLAGITINFO = "[C] D0:3E RequestAllAgitInfo";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final L2GameClient client = getClient();
-		if (client != null)
-		{
-			client.sendPacket(new ExShowAgitInfo());
-		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_3E_REQUESTALLAGITINFO;
+		client.sendPacket(ExShowAgitInfo.STATIC_PACKET);
 	}
 }

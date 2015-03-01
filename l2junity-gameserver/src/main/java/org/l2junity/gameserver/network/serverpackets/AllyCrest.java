@@ -21,8 +21,10 @@ package org.l2junity.gameserver.network.serverpackets;
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.sql.impl.CrestTable;
 import org.l2junity.gameserver.model.Crest;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class AllyCrest extends L2GameServerPacket
+public class AllyCrest implements IGameServerPacket
 {
 	private final int _crestId;
 	private final byte[] _data;
@@ -41,19 +43,21 @@ public class AllyCrest extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xAF);
-		writeD(Config.SERVER_ID);
-		writeD(_crestId);
+		OutgoingPackets.ALLIANCE_CREST.writeId(packet);
+		
+		packet.writeD(Config.SERVER_ID);
+		packet.writeD(_crestId);
 		if (_data != null)
 		{
-			writeD(_data.length);
-			writeB(_data);
+			packet.writeD(_data.length);
+			packet.writeB(_data);
 		}
 		else
 		{
-			writeD(0);
+			packet.writeD(0);
 		}
+		return true;
 	}
 }

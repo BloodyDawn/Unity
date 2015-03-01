@@ -20,31 +20,33 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author -Wooden-
  */
-public final class SnoopQuit extends L2GameClientPacket
+public final class SnoopQuit implements IGameClientPacket
 {
-	private static final String _C__B4_SNOOPQUIT = "[C] B4 SnoopQuit";
-	
 	private int _snoopID;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_snoopID = readD();
+		_snoopID = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance player = World.getInstance().getPlayer(_snoopID);
+		final PlayerInstance player = World.getInstance().getPlayer(_snoopID);
 		if (player == null)
 		{
 			return;
 		}
-		PlayerInstance activeChar = getClient().getActiveChar();
+		
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -53,11 +55,5 @@ public final class SnoopQuit extends L2GameClientPacket
 		player.removeSnooper(activeChar);
 		activeChar.removeSnooped(player);
 		
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__B4_SNOOPQUIT;
 	}
 }

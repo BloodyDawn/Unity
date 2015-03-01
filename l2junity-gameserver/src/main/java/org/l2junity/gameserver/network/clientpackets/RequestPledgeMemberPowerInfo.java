@@ -21,54 +21,49 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.gameserver.model.ClanMember;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.PledgeReceivePowerInfo;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format: (ch) dS
  * @author -Wooden-
  */
-public final class RequestPledgeMemberPowerInfo extends L2GameClientPacket
+public final class RequestPledgeMemberPowerInfo implements IGameClientPacket
 {
-	private static final String _C__D0_14_REQUESTPLEDGEMEMBERPOWERINFO = "[C] D0:14 RequestPledgeMemberPowerInfo";
-	
 	@SuppressWarnings("unused")
 	private int _unk1;
 	private String _player;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_unk1 = readD();
-		_player = readS();
+		_unk1 = packet.readD();
+		_player = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		// _log.info("C5: RequestPledgeMemberPowerInfo d:"+_unk1);
-		// _log.info("C5: RequestPledgeMemberPowerInfo S:"+_player);
-		PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
+		
 		// do we need powers to do that??
-		L2Clan clan = activeChar.getClan();
+		final L2Clan clan = activeChar.getClan();
 		if (clan == null)
 		{
 			return;
 		}
-		ClanMember member = clan.getClanMember(_player);
+		
+		final ClanMember member = clan.getClanMember(_player);
 		if (member == null)
 		{
 			return;
 		}
 		activeChar.sendPacket(new PledgeReceivePowerInfo(member));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_14_REQUESTPLEDGEMEMBERPOWERINFO;
 	}
 }

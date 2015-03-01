@@ -20,31 +20,32 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.PrivateStoreMsgSell;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.2.4.2 $ $Date: 2005/03/27 15:29:30 $
  */
-public class SetPrivateStoreMsgSell extends L2GameClientPacket
+public class SetPrivateStoreMsgSell implements IGameClientPacket
 {
-	private static final String _C__97_SETPRIVATESTOREMSGSELL = "[C] 97 SetPrivateStoreMsgSell";
-	
 	private static final int MAX_MSG_LENGTH = 29;
 	
 	private String _storeMsg;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_storeMsg = readS();
+		_storeMsg = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if ((player == null) || (player.getSellList() == null))
 		{
 			return;
@@ -57,12 +58,6 @@ public class SetPrivateStoreMsgSell extends L2GameClientPacket
 		}
 		
 		player.getSellList().setTitle(_storeMsg);
-		sendPacket(new PrivateStoreMsgSell(player));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__97_SETPRIVATESTOREMSGSELL;
+		client.sendPacket(new PrivateStoreMsgSell(player));
 	}
 }

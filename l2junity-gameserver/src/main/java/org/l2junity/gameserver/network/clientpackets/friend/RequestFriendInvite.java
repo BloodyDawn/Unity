@@ -21,28 +21,28 @@ package org.l2junity.gameserver.network.clientpackets.friend;
 import org.l2junity.gameserver.model.BlockList;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.network.serverpackets.friend.FriendAddRequest;
+import org.l2junity.network.PacketReader;
 
-public final class RequestFriendInvite extends L2GameClientPacket
+public final class RequestFriendInvite implements IGameClientPacket
 {
-	private static final String _C__77_REQUESTFRIENDINVITE = "[C] 77 RequestFriendInvite";
-	
 	private String _name;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_name = readS();
+		_name = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getActiveChar();
-		
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -106,11 +106,5 @@ public final class RequestFriendInvite extends L2GameClientPacket
 		sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_VE_REQUESTED_C1_TO_BE_ON_YOUR_FRIENDS_LIST);
 		sm.addString(_name);
 		activeChar.sendPacket(sm);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__77_REQUESTFRIENDINVITE;
 	}
 }

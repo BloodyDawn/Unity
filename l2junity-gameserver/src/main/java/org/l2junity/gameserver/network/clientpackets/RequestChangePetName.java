@@ -21,28 +21,29 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.gameserver.data.sql.impl.PetNameTable;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.3.4.4 $ $Date: 2005/04/06 16:13:48 $
  */
-public final class RequestChangePetName extends L2GameClientPacket
+public final class RequestChangePetName implements IGameClientPacket
 {
-	private static final String _C__93_REQUESTCHANGEPETNAME = "[C] 93 RequestChangePetName";
-	
 	private String _name;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_name = readS();
+		_name = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -87,11 +88,5 @@ public final class RequestChangePetName extends L2GameClientPacket
 		
 		pet.setName(_name);
 		pet.updateAndBroadcastStatus(1);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__93_REQUESTCHANGEPETNAME;
 	}
 }

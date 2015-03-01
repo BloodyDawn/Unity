@@ -18,11 +18,15 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class CharDeleteSuccess extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class CharDeleteSuccess implements IGameServerPacket
 {
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x1d);
+		OutgoingPackets.CHARACTER_DELETE_SUCCESS.writeId(packet);
+		return true;
 	}
 }

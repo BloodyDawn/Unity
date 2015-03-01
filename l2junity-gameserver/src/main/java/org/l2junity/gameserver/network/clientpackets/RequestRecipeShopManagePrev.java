@@ -19,43 +19,37 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.RecipeShopSellList;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.1.2.1.2.2 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestRecipeShopManagePrev extends L2GameClientPacket
+public final class RequestRecipeShopManagePrev implements IGameClientPacket
 {
-	private static final String _C__C0_RequestRecipeShopPrev = "[C] C0 RequestRecipeShopPrev";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// trigger
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if ((player == null))
 		{
 			return;
 		}
 		else if (player.isAlikeDead() || (player.getTarget() == null) || !player.getTarget().isPlayer())
 		{
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
 		player.sendPacket(new RecipeShopSellList(player, player.getTarget().getActingPlayer()));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__C0_RequestRecipeShopPrev;
 	}
 }

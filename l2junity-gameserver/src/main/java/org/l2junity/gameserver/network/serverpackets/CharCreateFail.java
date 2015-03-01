@@ -18,8 +18,12 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class CharCreateFail extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class CharCreateFail implements IGameServerPacket
 {
+	// TODO: Enum
 	public static final int REASON_CREATION_FAILED = 0x00; // "Your character creation has failed."
 	public static final int REASON_TOO_MANY_CHARACTERS = 0x01; // "You cannot create another character. Please delete the existing character and try again." Removes all settings that were selected (race, class, etc).
 	public static final int REASON_NAME_ALREADY_EXISTS = 0x02; // "This name already exists."
@@ -36,9 +40,11 @@ public class CharCreateFail extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x10);
-		writeD(_error);
+		OutgoingPackets.CHARACTER_CREATE_FAIL.writeId(packet);
+		
+		packet.writeD(_error);
+		return true;
 	}
 }

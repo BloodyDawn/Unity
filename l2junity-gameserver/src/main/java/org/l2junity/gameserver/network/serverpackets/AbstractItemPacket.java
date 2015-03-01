@@ -25,6 +25,7 @@ import org.l2junity.gameserver.model.buylist.Product;
 import org.l2junity.gameserver.model.itemcontainer.PcInventory;
 import org.l2junity.gameserver.model.items.WarehouseItem;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
@@ -47,73 +48,73 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 	{
 	}
 	
-	protected void writeItem(TradeItem item)
+	protected void writeItem(PacketWriter packet, TradeItem item)
 	{
-		writeItem(new ItemInfo(item));
+		writeItem(packet, new ItemInfo(item));
 	}
 	
-	protected void writeItem(WarehouseItem item)
+	protected void writeItem(PacketWriter packet, WarehouseItem item)
 	{
-		writeItem(new ItemInfo(item));
+		writeItem(packet, new ItemInfo(item));
 	}
 	
-	protected void writeItem(ItemInstance item)
+	protected void writeItem(PacketWriter packet, ItemInstance item)
 	{
-		writeItem(new ItemInfo(item));
+		writeItem(packet, new ItemInfo(item));
 	}
 	
-	protected void writeItem(Product item)
+	protected void writeItem(PacketWriter packet, Product item)
 	{
-		writeItem(new ItemInfo(item));
+		writeItem(packet, new ItemInfo(item));
 	}
 	
-	protected void writeTradeItem(TradeItem item)
+	protected void writeTradeItem(PacketWriter packet, TradeItem item)
 	{
-		writeH(item.getItem().getType1());
-		writeD(item.getObjectId()); // ObjectId
-		writeD(item.getItem().getDisplayId()); // ItemId
-		writeQ(item.getCount()); // Quantity
-		writeC(item.getItem().getType2()); // Item Type 2 : 00-weapon, 01-shield/armor, 02-ring/earring/necklace, 03-questitem, 04-adena, 05-item
-		writeC(item.getCustomType1()); // Filler (always 0)
-		writeQ(item.getItem().getBodyPart()); // Slot : 0006-lr.ear, 0008-neck, 0030-lr.finger, 0040-head, 0100-l.hand, 0200-gloves, 0400-chest, 0800-pants, 1000-feet, 4000-r.hand, 8000-r.hand
-		writeH(item.getEnchant()); // Enchant level (pet level shown in control item)
-		writeH(0x00); // Equipped : 00-No, 01-yes
-		writeH(item.getCustomType2());
-		writeItemElementalAndEnchant(new ItemInfo(item));
+		packet.writeH(item.getItem().getType1());
+		packet.writeD(item.getObjectId()); // ObjectId
+		packet.writeD(item.getItem().getDisplayId()); // ItemId
+		packet.writeQ(item.getCount()); // Quantity
+		packet.writeC(item.getItem().getType2()); // Item Type 2 : 00-weapon, 01-shield/armor, 02-ring/earring/necklace, 03-questitem, 04-adena, 05-item
+		packet.writeC(item.getCustomType1()); // Filler (always 0)
+		packet.writeQ(item.getItem().getBodyPart()); // Slot : 0006-lr.ear, 0008-neck, 0030-lr.finger, 0040-head, 0100-l.hand, 0200-gloves, 0400-chest, 0800-pants, 1000-feet, 4000-r.hand, 8000-r.hand
+		packet.writeH(item.getEnchant()); // Enchant level (pet level shown in control item)
+		packet.writeH(0x00); // Equipped : 00-No, 01-yes
+		packet.writeH(item.getCustomType2());
+		writeItemElementalAndEnchant(packet, new ItemInfo(item));
 	}
 	
-	protected void writeItem(ItemInfo item)
+	protected void writeItem(PacketWriter packet, ItemInfo item)
 	{
 		final int mask = calculateMask(item);
 		// cddcQcchQccddc
-		writeC(mask);
-		writeD(item.getObjectId()); // ObjectId
-		writeD(item.getItem().getDisplayId()); // ItemId
-		writeC(item.getEquipped() == 0 ? item.getLocation() : 0xFF); // T1
-		writeQ(item.getCount()); // Quantity
-		writeC(item.getItem().getType2()); // Item Type 2 : 00-weapon, 01-shield/armor, 02-ring/earring/necklace, 03-questitem, 04-adena, 05-item
-		writeC(item.getCustomType1()); // Filler (always 0)
-		writeH(item.getEquipped()); // Equipped : 00-No, 01-yes
-		writeQ(item.getItem().getBodyPart()); // Slot : 0006-lr.ear, 0008-neck, 0030-lr.finger, 0040-head, 0100-l.hand, 0200-gloves, 0400-chest, 0800-pants, 1000-feet, 4000-r.hand, 8000-r.hand
-		writeH(item.getEnchant()); // Enchant level (pet level shown in control item)
-		writeD(item.getMana());
-		writeD(item.getTime());
-		writeC(0x01); // GOD Item enabled = 1 disabled (red) = 0
+		packet.writeC(mask);
+		packet.writeD(item.getObjectId()); // ObjectId
+		packet.writeD(item.getItem().getDisplayId()); // ItemId
+		packet.writeC(item.getEquipped() == 0 ? item.getLocation() : 0xFF); // T1
+		packet.writeQ(item.getCount()); // Quantity
+		packet.writeC(item.getItem().getType2()); // Item Type 2 : 00-weapon, 01-shield/armor, 02-ring/earring/necklace, 03-questitem, 04-adena, 05-item
+		packet.writeC(item.getCustomType1()); // Filler (always 0)
+		packet.writeH(item.getEquipped()); // Equipped : 00-No, 01-yes
+		packet.writeQ(item.getItem().getBodyPart()); // Slot : 0006-lr.ear, 0008-neck, 0030-lr.finger, 0040-head, 0100-l.hand, 0200-gloves, 0400-chest, 0800-pants, 1000-feet, 4000-r.hand, 8000-r.hand
+		packet.writeH(item.getEnchant()); // Enchant level (pet level shown in control item)
+		packet.writeD(item.getMana());
+		packet.writeD(item.getTime());
+		packet.writeC(0x01); // GOD Item enabled = 1 disabled (red) = 0
 		if (containsMask(mask, ItemListType.AUGMENT_BONUS))
 		{
-			writeD(item.getAugmentationBonus());
+			packet.writeD(item.getAugmentationBonus());
 		}
 		if (containsMask(mask, ItemListType.ELEMENTAL_ATTRIBUTE))
 		{
-			writeItemElemental(item);
+			writeItemElemental(packet, item);
 		}
 		if (containsMask(mask, ItemListType.ENCHANT_EFFECT))
 		{
-			writeItemEnchantEffect(item);
+			writeItemEnchantEffect(packet, item);
 		}
 		if (containsMask(mask, ItemListType.VISUAL_ID))
 		{
-			writeD(item.getVisualId()); // Item remodel visual ID
+			packet.writeD(item.getVisualId()); // Item remodel visual ID
 		}
 	}
 	
@@ -160,58 +161,58 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 		return mask;
 	}
 	
-	protected void writeItemElementalAndEnchant(ItemInfo item)
+	protected void writeItemElementalAndEnchant(PacketWriter packet, ItemInfo item)
 	{
-		writeItemElemental(item);
-		writeItemEnchantEffect(item);
+		writeItemElemental(packet, item);
+		writeItemEnchantEffect(packet, item);
 	}
 	
-	protected void writeItemElemental(ItemInfo item)
+	protected void writeItemElemental(PacketWriter packet, ItemInfo item)
 	{
-		writeH(item.getAttackElementType());
-		writeH(item.getAttackElementPower());
+		packet.writeH(item.getAttackElementType());
+		packet.writeH(item.getAttackElementPower());
 		for (byte i = 0; i < 6; i++)
 		{
-			writeH(item.getElementDefAttr(i));
+			packet.writeH(item.getElementDefAttr(i));
 		}
 	}
 	
-	protected void writeItemEnchantEffect(ItemInfo item)
+	protected void writeItemEnchantEffect(PacketWriter packet, ItemInfo item)
 	{
 		// Enchant Effects
 		for (int op : item.getEnchantOptions())
 		{
-			writeH(op);
+			packet.writeH(op);
 		}
 	}
 	
-	protected void writeInventoryBlock(PcInventory inventory)
+	protected void writeInventoryBlock(PacketWriter packet, PcInventory inventory)
 	{
 		if (inventory.hasInventoryBlock())
 		{
-			writeH(inventory.getBlockItems().length);
-			writeC(inventory.getBlockMode());
+			packet.writeH(inventory.getBlockItems().length);
+			packet.writeC(inventory.getBlockMode());
 			for (int i : inventory.getBlockItems())
 			{
-				writeD(i);
+				packet.writeD(i);
 			}
 		}
 		else
 		{
-			writeH(0x00);
+			packet.writeH(0x00);
 		}
 	}
 	
-	protected void writeCommissionItem(ItemInfo item)
+	protected void writeCommissionItem(PacketWriter packet, ItemInfo item)
 	{
-		writeD(0); // Always 0
-		writeD(item.getItem().getId());
-		writeQ(item.getCount());
-		writeH(item.getItem().getType2());
-		writeQ(item.getItem().getBodyPart());
-		writeH(item.getEnchant());
-		writeH(item.getCustomType2());
-		writeItemElementalAndEnchant(item);
-		writeD(item.getVisualId());
+		packet.writeD(0); // Always 0
+		packet.writeD(item.getItem().getId());
+		packet.writeQ(item.getCount());
+		packet.writeH(item.getItem().getType2());
+		packet.writeQ(item.getItem().getBodyPart());
+		packet.writeH(item.getEnchant());
+		packet.writeH(item.getCustomType2());
+		writeItemElementalAndEnchant(packet, item);
+		packet.writeD(item.getVisualId());
 	}
 }

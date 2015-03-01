@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author GodKratos
  */
-public class ExVitalityPointInfo extends L2GameServerPacket
+public class ExVitalityPointInfo implements IGameServerPacket
 {
 	private final int _vitalityPoints;
 	
@@ -31,10 +34,11 @@ public class ExVitalityPointInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xA1);
-		writeD(_vitalityPoints);
+		OutgoingPackets.EX_VITALITY_POINT_INFO.writeId(packet);
+		
+		packet.writeD(_vitalityPoints);
+		return true;
 	}
 }

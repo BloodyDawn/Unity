@@ -22,35 +22,36 @@ import org.l2junity.gameserver.model.TradeItem;
 import org.l2junity.gameserver.model.TradeList;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.TradeOtherAdd;
 import org.l2junity.gameserver.network.serverpackets.TradeOwnAdd;
 import org.l2junity.gameserver.network.serverpackets.TradeUpdate;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.5.2.2.2.5 $ $Date: 2005/03/27 15:29:29 $
  */
-public final class AddTradeItem extends L2GameClientPacket
+public final class AddTradeItem implements IGameClientPacket
 {
-	private static final String _C__1B_ADDTRADEITEM = "[C] 1B AddTradeItem";
-	
 	private int _tradeId;
 	private int _objectId;
 	private long _count;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_tradeId = readD();
-		_objectId = readD();
-		_count = readQ();
+		_tradeId = packet.readD();
+		_objectId = packet.readD();
+		_count = packet.readQ();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -102,11 +103,5 @@ public final class AddTradeItem extends L2GameClientPacket
 			player.sendPacket(new TradeUpdate(player, item));
 			partner.sendPacket(new TradeOtherAdd(item));
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__1B_ADDTRADEITEM;
 	}
 }

@@ -26,12 +26,14 @@ import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.instancemanager.MentorManager;
 import org.l2junity.gameserver.model.Mentee;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class ExMentorList extends L2GameServerPacket
+public class ExMentorList implements IGameServerPacket
 {
 	private final int _type;
 	private final Collection<Mentee> _mentees;
@@ -61,20 +63,21 @@ public class ExMentorList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x11B);
-		writeD(_type);
-		writeD(0x00);
-		writeD(_mentees.size());
+		OutgoingPackets.EX_MENTOR_LIST.writeId(packet);
+		
+		packet.writeD(_type);
+		packet.writeD(0x00);
+		packet.writeD(_mentees.size());
 		for (Mentee mentee : _mentees)
 		{
-			writeD(mentee.getObjectId());
-			writeS(mentee.getName());
-			writeD(mentee.getClassId());
-			writeD(mentee.getLevel());
-			writeD(mentee.isOnlineInt());
+			packet.writeD(mentee.getObjectId());
+			packet.writeS(mentee.getName());
+			packet.writeD(mentee.getClassId());
+			packet.writeD(mentee.getLevel());
+			packet.writeD(mentee.isOnlineInt());
 		}
+		return true;
 	}
 }

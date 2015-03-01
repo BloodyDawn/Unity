@@ -19,24 +19,24 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author KenM
  */
-public class RequestResetNickname extends L2GameClientPacket
+public class RequestResetNickname implements IGameClientPacket
 {
-	private static final String _C__D0_50_REQUESTRESETNICKNAME = "[C] D0:50 RequestResetNickname";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// nothing (trigger)
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -45,11 +45,5 @@ public class RequestResetNickname extends L2GameClientPacket
 		activeChar.getAppearance().setTitleColor(0xFFFF77);
 		activeChar.setTitle("");
 		activeChar.broadcastTitleInfo();
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_50_REQUESTRESETNICKNAME;
 	}
 }

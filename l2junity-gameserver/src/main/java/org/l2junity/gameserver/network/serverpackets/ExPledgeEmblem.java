@@ -19,11 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.Config;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author -Wooden-, Sdw
  */
-public class ExPledgeEmblem extends L2GameServerPacket
+public class ExPledgeEmblem implements IGameServerPacket
 {
 	private final int _crestId;
 	private final int _clanId;
@@ -40,23 +42,24 @@ public class ExPledgeEmblem extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x1B);
-		writeD(Config.SERVER_ID);
-		writeD(_clanId);
-		writeD(_crestId);
-		writeD(_chunkId);
-		writeD(TOTAL_SIZE);
+		OutgoingPackets.EX_PLEDGE_EMBLEM.writeId(packet);
+		
+		packet.writeD(Config.SERVER_ID);
+		packet.writeD(_clanId);
+		packet.writeD(_crestId);
+		packet.writeD(_chunkId);
+		packet.writeD(TOTAL_SIZE);
 		if (_data != null)
 		{
-			writeD(_data.length);
-			writeB(_data);
+			packet.writeD(_data.length);
+			packet.writeB(_data);
 		}
 		else
 		{
-			writeD(0);
+			packet.writeD(0);
 		}
+		return true;
 	}
 }

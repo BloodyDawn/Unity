@@ -18,12 +18,15 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author KenM
  */
-public class ExSetCompassZoneCode extends L2GameServerPacket
+public class ExSetCompassZoneCode implements IGameServerPacket
 {
-	
+	// TODO: Enum
 	public static final int ALTEREDZONE = 0x08;
 	public static final int SIEGEWARZONE1 = 0x0A;
 	public static final int SIEGEWARZONE2 = 0x0B;
@@ -40,10 +43,11 @@ public class ExSetCompassZoneCode extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x33);
-		writeD(_zoneType);
+		OutgoingPackets.EX_SET_COMPASS_ZONE_CODE.writeId(packet);
+		
+		packet.writeD(_zoneType);
+		return true;
 	}
 }

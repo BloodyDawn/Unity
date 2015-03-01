@@ -19,40 +19,27 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * @version 1.4
  */
-public final class RequestSkillList extends L2GameClientPacket
+public final class RequestSkillList implements IGameClientPacket
 {
-	private static final String _C__50_REQUESTSKILLLIST = "[C] 50 RequestSkillList";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// Trigger skill.
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance cha = getClient().getActiveChar();
-		
+		final PlayerInstance cha = client.getActiveChar();
 		if (cha != null)
 		{
 			cha.sendSkillList();
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__50_REQUESTSKILLLIST;
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
 	}
 }

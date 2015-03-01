@@ -32,22 +32,23 @@ import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.7.2.3.2.6 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestRestartPoint extends L2GameClientPacket
+public final class RequestRestartPoint implements IGameClientPacket
 {
-	private static final String _C__7D_REQUESTRESTARTPOINT = "[C] 7D RequestRestartPoint";
-	
 	protected int _requestedPointType;
 	protected boolean _continuation;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_requestedPointType = readD();
+		_requestedPointType = packet.readD();
+		return true;
 	}
 	
 	class DeathTask implements Runnable
@@ -67,9 +68,9 @@ public final class RequestRestartPoint extends L2GameClientPacket
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = client.getActiveChar();
 		
 		if (activeChar == null)
 		{
@@ -276,9 +277,4 @@ public final class RequestRestartPoint extends L2GameClientPacket
 		}
 	}
 	
-	@Override
-	public String getType()
-	{
-		return _C__7D_REQUESTRESTARTPOINT;
-	}
 }

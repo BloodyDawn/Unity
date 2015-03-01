@@ -20,23 +20,26 @@ package org.l2junity.gameserver.network.clientpackets.commission;
 
 import org.l2junity.gameserver.instancemanager.CommissionManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.commission.ExCloseCommission;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author NosBit
  */
-public class RequestCommissionRegisteredItem extends L2GameClientPacket
+public class RequestCommissionRegisteredItem implements IGameClientPacket
 {
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -44,17 +47,10 @@ public class RequestCommissionRegisteredItem extends L2GameClientPacket
 		
 		if (!CommissionManager.isPlayerAllowedToInteract(player))
 		{
-			player.sendPacket(ExCloseCommission.STATIC_PACKET);
+			client.sendPacket(ExCloseCommission.STATIC_PACKET);
 			return;
 		}
 		
 		CommissionManager.getInstance().showPlayerAuctions(player);
 	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
-	}
-	
 }

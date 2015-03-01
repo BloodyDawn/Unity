@@ -27,11 +27,13 @@ import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.model.SkillLearn;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class ExAcquireAPSkillList extends L2GameServerPacket
+public class ExAcquireAPSkillList implements IGameServerPacket
 {
 	private final int _abilityPoints, _usedAbilityPoints;
 	private final long _price;
@@ -58,22 +60,22 @@ public class ExAcquireAPSkillList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x15F);
+		OutgoingPackets.EX_ACQUIRE_AP_SKILL_LIST.writeId(packet);
 		
-		writeD(_enable ? 1 : 0);
-		writeQ(Config.ABILITY_POINTS_RESET_ADENA);
-		writeQ(_price);
-		writeD(Config.ABILITY_MAX_POINTS);
-		writeD(_abilityPoints);
-		writeD(_usedAbilityPoints);
-		writeD(_skills.size());
+		packet.writeD(_enable ? 1 : 0);
+		packet.writeQ(Config.ABILITY_POINTS_RESET_ADENA);
+		packet.writeQ(_price);
+		packet.writeD(Config.ABILITY_MAX_POINTS);
+		packet.writeD(_abilityPoints);
+		packet.writeD(_usedAbilityPoints);
+		packet.writeD(_skills.size());
 		for (Skill skill : _skills)
 		{
-			writeD(skill.getId());
-			writeD(skill.getLevel());
+			packet.writeD(skill.getId());
+			packet.writeD(skill.getLevel());
 		}
+		return true;
 	}
 }

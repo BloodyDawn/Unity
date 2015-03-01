@@ -18,17 +18,21 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author Sdw
  */
-public class ExPledgeWaitingListAlarm extends L2GameServerPacket
+public class ExPledgeWaitingListAlarm implements IGameServerPacket
 {
 	public static final ExPledgeWaitingListAlarm STATIC_PACKET = new ExPledgeWaitingListAlarm();
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x147);
+		OutgoingPackets.EX_PLEDGE_WAITING_LIST_ALARM.writeId(packet);
+		
+		return true;
 	}
 }

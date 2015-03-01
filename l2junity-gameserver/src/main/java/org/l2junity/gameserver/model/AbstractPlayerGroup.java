@@ -26,7 +26,7 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.CreatureSay;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 
 /**
@@ -99,7 +99,7 @@ public abstract class AbstractPlayerGroup
 	 * Broadcast a packet to every member of this group.
 	 * @param packet the packet to broadcast
 	 */
-	public void broadcastPacket(final L2GameServerPacket packet)
+	public void broadcastPacket(final IGameServerPacket packet)
 	{
 		forEachMember(m ->
 		{

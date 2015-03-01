@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author -Wooden-
  */
-public class PledgeSkillListAdd extends L2GameServerPacket
+public class PledgeSkillListAdd implements IGameServerPacket
 {
 	private final int _id;
 	private final int _lvl;
@@ -33,12 +36,12 @@ public class PledgeSkillListAdd extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x3B);
+		OutgoingPackets.PLEDGE_SKILL_LIST_ADD.writeId(packet);
 		
-		writeD(_id);
-		writeD(_lvl);
+		packet.writeD(_id);
+		packet.writeD(_lvl);
+		return true;
 	}
 }

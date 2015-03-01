@@ -19,11 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class ExUserInfoFishing extends L2GameServerPacket
+public class ExUserInfoFishing implements IGameServerPacket
 {
 	private final PlayerInstance _activeChar;
 	
@@ -33,14 +35,15 @@ public class ExUserInfoFishing extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x159);
-		writeD(_activeChar.getObjectId());
-		writeC(_activeChar.isFishing() ? 1 : 0);
-		writeD(_activeChar.getFishx());
-		writeD(_activeChar.getFishy());
-		writeD(_activeChar.getFishz());
+		OutgoingPackets.EX_USER_INFO_FISHING.writeId(packet);
+		
+		packet.writeD(_activeChar.getObjectId());
+		packet.writeC(_activeChar.isFishing() ? 1 : 0);
+		packet.writeD(_activeChar.getFishx());
+		packet.writeD(_activeChar.getFishy());
+		packet.writeD(_activeChar.getFishz());
+		return true;
 	}
 }

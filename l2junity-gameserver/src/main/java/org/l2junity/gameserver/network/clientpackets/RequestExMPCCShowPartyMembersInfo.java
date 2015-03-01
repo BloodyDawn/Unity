@@ -20,41 +20,38 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExMPCCShowPartyMemberInfo;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format:(ch) d
  * @author chris_00
  */
-public final class RequestExMPCCShowPartyMembersInfo extends L2GameClientPacket
+public final class RequestExMPCCShowPartyMembersInfo implements IGameClientPacket
 {
-	private static final String _C__D0_2D_REQUESTMPCCSHOWPARTYMEMBERINFO = "[C] D0:2D RequestExMPCCShowPartyMembersInfo";
 	private int _partyLeaderId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_partyLeaderId = readD();
+		_partyLeaderId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
+		
 		final PlayerInstance player = World.getInstance().getPlayer(_partyLeaderId);
 		if ((player != null) && (player.getParty() != null))
 		{
-			activeChar.sendPacket(new ExMPCCShowPartyMemberInfo(player.getParty()));
+			client.sendPacket(new ExMPCCShowPartyMemberInfo(player.getParty()));
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_2D_REQUESTMPCCSHOWPARTYMEMBERINFO;
 	}
 }

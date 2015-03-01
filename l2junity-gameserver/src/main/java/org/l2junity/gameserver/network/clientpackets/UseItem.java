@@ -42,16 +42,16 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.ArmorType;
 import org.l2junity.gameserver.model.items.type.WeaponType;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.ExUseSharedGroupItem;
 import org.l2junity.gameserver.network.serverpackets.ItemList;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.network.PacketReader;
 
-public final class UseItem extends L2GameClientPacket
+public final class UseItem implements IGameClientPacket
 {
-	private static final String _C__19_USEITEM = "[C] 19 UseItem";
-	
 	private int _objectId;
 	private boolean _ctrlPressed;
 	private int _itemId;
@@ -83,28 +83,24 @@ public final class UseItem extends L2GameClientPacket
 	}
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_objectId = readD();
-		_ctrlPressed = readD() != 0;
+		_objectId = packet.readD();
+		_ctrlPressed = packet.readD() != 0;
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
-		if (Config.DEBUG)
-		{
-			_log.log(Level.INFO, activeChar + ": use item " + _objectId);
-		}
-		
 		// Flood protect UseItem
-		if (!getClient().getFloodProtectors().getUseItem().tryPerformAction("use item"))
+		if (!client.getFloodProtectors().getUseItem().tryPerformAction("use item"))
 		{
 			return;
 		}
@@ -367,7 +363,7 @@ public final class UseItem extends L2GameClientPacket
 				activeChar.getInventory().setPaperdollItem(Inventory.PAPERDOLL_LHAND, item);
 				activeChar.broadcastUserInfo();
 				// Send a Server->Client packet ItemList to this L2PcINstance to update left hand equipment.
-				sendPacket(new ItemList(activeChar, false));
+				client.sendPacket(new ItemList(activeChar, false));
 				return;
 			}
 			
@@ -433,17 +429,5 @@ public final class UseItem extends L2GameClientPacket
 		{
 			activeChar.sendPacket(new ExUseSharedGroupItem(_itemId, group, remaining, reuse));
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__19_USEITEM;
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return !Config.SPAWN_PROTECTION_ALLOWED_ITEMS.contains(_itemId);
 	}
 }

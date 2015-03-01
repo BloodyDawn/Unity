@@ -56,7 +56,7 @@ import org.l2junity.gameserver.network.serverpackets.ExPartyPetWindowAdd;
 import org.l2junity.gameserver.network.serverpackets.ExPartyPetWindowDelete;
 import org.l2junity.gameserver.network.serverpackets.ExSetPartyLooting;
 import org.l2junity.gameserver.network.serverpackets.ExTacticalSign;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
 import org.l2junity.gameserver.network.serverpackets.PartyMemberPosition;
 import org.l2junity.gameserver.network.serverpackets.PartySmallWindowAdd;
 import org.l2junity.gameserver.network.serverpackets.PartySmallWindowAll;
@@ -270,7 +270,7 @@ public class Party extends AbstractPlayerGroup
 	 * @param player
 	 * @param msg
 	 */
-	public void broadcastToPartyMembers(PlayerInstance player, L2GameServerPacket msg)
+	public void broadcastToPartyMembers(PlayerInstance player, IGameServerPacket msg)
 	{
 		for (PlayerInstance member : getMembers())
 		{
@@ -556,7 +556,7 @@ public class Party extends AbstractPlayerGroup
 			// Close the CCInfoWindow
 			if (isInCommandChannel())
 			{
-				player.sendPacket(new ExCloseMPCC());
+				player.sendPacket(ExCloseMPCC.STATIC_PACKET);
 			}
 			if (isLeader && (getMembers().size() > 1) && (Config.ALT_LEAVE_PARTY_LEADER || (type == MessageType.DISCONNECTED)))
 			{

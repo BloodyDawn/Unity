@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author GodKratos
  */
-public class ExOlympiadMatchEnd extends L2GameServerPacket
+public class ExOlympiadMatchEnd implements IGameServerPacket
 {
 	public static final ExOlympiadMatchEnd STATIC_PACKET = new ExOlympiadMatchEnd();
 	
@@ -30,9 +33,10 @@ public class ExOlympiadMatchEnd extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x2D);
+		OutgoingPackets.EX_OLYMPIAD_MATCH_END.writeId(packet);
+		
+		return true;
 	}
 }

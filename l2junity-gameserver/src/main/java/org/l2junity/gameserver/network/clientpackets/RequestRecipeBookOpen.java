@@ -18,31 +18,27 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
-import org.l2junity.Config;
 import org.l2junity.gameserver.RecipeController;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.network.PacketReader;
 
-public final class RequestRecipeBookOpen extends L2GameClientPacket
+public final class RequestRecipeBookOpen implements IGameClientPacket
 {
-	private static final String _C__B5_REQUESTRECIPEBOOKOPEN = "[C] B5 RequestRecipeBookOpen";
-	
 	private boolean _isDwarvenCraft;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_isDwarvenCraft = (readD() == 0);
-		if (Config.DEBUG)
-		{
-			_log.info("RequestRecipeBookOpen : " + (_isDwarvenCraft ? "dwarvenCraft" : "commonCraft"));
-		}
+		_isDwarvenCraft = (packet.readD() == 0);
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -50,7 +46,7 @@ public final class RequestRecipeBookOpen extends L2GameClientPacket
 		
 		if (activeChar.isCastingNow() || activeChar.isCastingSimultaneouslyNow())
 		{
-			activeChar.sendPacket(SystemMessageId.YOUR_RECIPE_BOOK_MAY_NOT_BE_ACCESSED_WHILE_USING_A_SKILL);
+			client.sendPacket(SystemMessageId.YOUR_RECIPE_BOOK_MAY_NOT_BE_ACCESSED_WHILE_USING_A_SKILL);
 			return;
 		}
 		
@@ -61,11 +57,5 @@ public final class RequestRecipeBookOpen extends L2GameClientPacket
 		}
 		
 		RecipeController.getInstance().requestBookOpen(activeChar, _isDwarvenCraft);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__B5_REQUESTRECIPEBOOKOPEN;
 	}
 }

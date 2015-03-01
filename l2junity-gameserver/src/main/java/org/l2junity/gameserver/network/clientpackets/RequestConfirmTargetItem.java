@@ -20,8 +20,10 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExPutItemResultForVariationMake;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format:(ch) d
@@ -29,19 +31,19 @@ import org.l2junity.gameserver.network.serverpackets.ExPutItemResultForVariation
  */
 public final class RequestConfirmTargetItem extends AbstractRefinePacket
 {
-	private static final String _C__D0_26_REQUESTCONFIRMTARGETITEM = "[C] D0:26 RequestConfirmTargetItem";
 	private int _itemObjId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_itemObjId = readD();
+		_itemObjId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -58,20 +60,14 @@ public final class RequestConfirmTargetItem extends AbstractRefinePacket
 			// Different system message here
 			if (item.isAugmented())
 			{
-				activeChar.sendPacket(SystemMessageId.ONCE_AN_ITEM_IS_AUGMENTED_IT_CANNOT_BE_AUGMENTED_AGAIN);
+				client.sendPacket(SystemMessageId.ONCE_AN_ITEM_IS_AUGMENTED_IT_CANNOT_BE_AUGMENTED_AGAIN);
 				return;
 			}
 			
-			activeChar.sendPacket(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM);
+			client.sendPacket(SystemMessageId.THIS_IS_NOT_A_SUITABLE_ITEM);
 			return;
 		}
 		
-		activeChar.sendPacket(new ExPutItemResultForVariationMake(_itemObjId, item.getId()));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_26_REQUESTCONFIRMTARGETITEM;
+		client.sendPacket(new ExPutItemResultForVariationMake(_itemObjId, item.getId()));
 	}
 }

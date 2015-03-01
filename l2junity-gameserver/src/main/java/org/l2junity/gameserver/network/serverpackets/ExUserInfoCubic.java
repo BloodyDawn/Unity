@@ -19,11 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class ExUserInfoCubic extends L2GameServerPacket
+public class ExUserInfoCubic implements IGameServerPacket
 {
 	private final PlayerInstance _activeChar;
 	
@@ -33,16 +35,16 @@ public class ExUserInfoCubic extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x157);
+		OutgoingPackets.EX_USER_INFO_CUBIC.writeId(packet);
 		
-		writeD(_activeChar.getObjectId());
-		writeH(_activeChar.getCubics().size());
+		packet.writeD(_activeChar.getObjectId());
+		packet.writeH(_activeChar.getCubics().size());
 		
-		_activeChar.getCubics().keySet().forEach(this::writeH);
+		_activeChar.getCubics().keySet().forEach(packet::writeH);
 		
-		writeD(_activeChar.getAgathionId());
+		packet.writeD(_activeChar.getAgathionId());
+		return true;
 	}
 }

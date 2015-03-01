@@ -19,11 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class ExUserInfoInvenWeight extends L2GameServerPacket
+public class ExUserInfoInvenWeight implements IGameServerPacket
 {
 	private final PlayerInstance _activeChar;
 	
@@ -33,13 +35,13 @@ public class ExUserInfoInvenWeight extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x166);
+		OutgoingPackets.EX_USER_INFO_INVEN_WEIGHT.writeId(packet);
 		
-		writeD(_activeChar.getObjectId());
-		writeD(_activeChar.getCurrentLoad());
-		writeD(_activeChar.getMaxLoad());
+		packet.writeD(_activeChar.getObjectId());
+		packet.writeD(_activeChar.getCurrentLoad());
+		packet.writeD(_activeChar.getMaxLoad());
+		return true;
 	}
 }

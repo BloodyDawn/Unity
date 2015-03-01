@@ -20,8 +20,10 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public final class PartySmallWindowAdd extends L2GameServerPacket
+public final class PartySmallWindowAdd implements IGameServerPacket
 {
 	private final PlayerInstance _member;
 	private final Party _party;
@@ -33,24 +35,26 @@ public final class PartySmallWindowAdd extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x4F);
-		writeD(_party.getLeaderObjectId()); // c3
-		writeD(_party.getDistributionType().getId());// writeD(0x04); ?? //c3
-		writeD(_member.getObjectId());
-		writeS(_member.getName());
+		OutgoingPackets.PARTY_SMALL_WINDOW_ADD.writeId(packet);
 		
-		writeD((int) _member.getCurrentCp()); // c4
-		writeD(_member.getMaxCp()); // c4
-		writeD((int) _member.getCurrentHp());
-		writeD(_member.getMaxHp());
-		writeD((int) _member.getCurrentMp());
-		writeD(_member.getMaxMp());
-		writeD(_member.getVitalityPoints());
-		writeC(_member.getLevel());
-		writeH(_member.getClassId().getId());
-		writeC(0x00);
-		writeH(_member.getRace().ordinal());
+		packet.writeD(_party.getLeaderObjectId()); // c3
+		packet.writeD(_party.getDistributionType().getId()); // c3
+		packet.writeD(_member.getObjectId());
+		packet.writeS(_member.getName());
+		
+		packet.writeD((int) _member.getCurrentCp()); // c4
+		packet.writeD(_member.getMaxCp()); // c4
+		packet.writeD((int) _member.getCurrentHp());
+		packet.writeD(_member.getMaxHp());
+		packet.writeD((int) _member.getCurrentMp());
+		packet.writeD(_member.getMaxMp());
+		packet.writeD(_member.getVitalityPoints());
+		packet.writeC(_member.getLevel());
+		packet.writeH(_member.getClassId().getId());
+		packet.writeC(0x00);
+		packet.writeH(_member.getRace().ordinal());
+		return true;
 	}
 }

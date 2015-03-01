@@ -24,8 +24,10 @@ import java.util.Collection;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class GMViewSkillInfo extends L2GameServerPacket
+public class GMViewSkillInfo implements IGameServerPacket
 {
 	private final PlayerInstance _activeChar;
 	private final Collection<Skill> _skills;
@@ -37,22 +39,24 @@ public class GMViewSkillInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x97);
-		writeS(_activeChar.getName());
-		writeD(_skills.size());
+		OutgoingPackets.GM_VIEW_SKILL_INFO.writeId(packet);
+		
+		packet.writeS(_activeChar.getName());
+		packet.writeD(_skills.size());
 		
 		boolean isDisabled = (_activeChar.getClan() != null) ? (_activeChar.getClan().getReputationScore() < 0) : false;
 		
 		for (Skill skill : _skills)
 		{
-			writeD(skill.isPassive() ? 1 : 0);
-			writeD(skill.getDisplayLevel());
-			writeD(skill.getDisplayId());
-			writeD(0x00);
-			writeC(isDisabled && skill.isClanSkill() ? 1 : 0);
-			writeC(SkillData.getInstance().isEnchantable(skill.getDisplayId()) ? 1 : 0);
+			packet.writeD(skill.isPassive() ? 1 : 0);
+			packet.writeD(skill.getDisplayLevel());
+			packet.writeD(skill.getDisplayId());
+			packet.writeD(0x00);
+			packet.writeC(isDisabled && skill.isClanSkill() ? 1 : 0);
+			packet.writeC(SkillData.getInstance().isEnchantable(skill.getDisplayId()) ? 1 : 0);
 		}
+		return true;
 	}
 }

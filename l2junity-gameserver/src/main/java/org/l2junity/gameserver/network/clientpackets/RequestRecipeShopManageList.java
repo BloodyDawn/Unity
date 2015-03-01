@@ -20,23 +20,23 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ActionFailed;
 import org.l2junity.gameserver.network.serverpackets.RecipeShopManageList;
+import org.l2junity.network.PacketReader;
 
-public final class RequestRecipeShopManageList extends L2GameClientPacket
+public final class RequestRecipeShopManageList implements IGameClientPacket
 {
-	private static final String _C__B9_RequestRecipeShopManageList = "[C] B9 RequestRecipeShopManageList";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// trigger
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance player = getActiveChar();
+		PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -45,7 +45,7 @@ public final class RequestRecipeShopManageList extends L2GameClientPacket
 		// Player shouldn't be able to set stores if he/she is alike dead (dead or fake death)
 		if (player.isAlikeDead())
 		{
-			sendPacket(ActionFailed.STATIC_PACKET);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		if (player.getPrivateStoreType() != PrivateStoreType.NONE)
@@ -58,12 +58,6 @@ public final class RequestRecipeShopManageList extends L2GameClientPacket
 			}
 		}
 		
-		player.sendPacket(new RecipeShopManageList(player, true));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__B9_RequestRecipeShopManageList;
+		client.sendPacket(new RecipeShopManageList(player, true));
 	}
 }

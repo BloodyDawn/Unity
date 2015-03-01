@@ -19,36 +19,31 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author ShanSoft Packets Structure: chdd
  */
-public final class RequestTeleportBookMark extends L2GameClientPacket
+public final class RequestTeleportBookMark implements IGameClientPacket
 {
-	private static final String _C__D0_51_04_REQUESTTELEPORTBOOKMARK = "[C] D0:51:04 RequestTeleportBookMark";
-	
-	private int id;
+	private int _id;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		id = readD();
+		_id = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
-		activeChar.teleportBookmarkGo(id);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_51_04_REQUESTTELEPORTBOOKMARK;
+		activeChar.teleportBookmarkGo(_id);
 	}
 }

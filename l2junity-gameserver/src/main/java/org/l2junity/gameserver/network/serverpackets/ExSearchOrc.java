@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author -Wooden-
  */
-public class ExSearchOrc extends L2GameServerPacket
+public class ExSearchOrc implements IGameServerPacket
 {
 	public static final ExSearchOrc STATIC_PACKET = new ExSearchOrc();
 	
@@ -30,9 +33,10 @@ public class ExSearchOrc extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x46);
+		OutgoingPackets.EX_SEARCH_ORC.writeId(packet);
+		
+		return true;
 	}
 }

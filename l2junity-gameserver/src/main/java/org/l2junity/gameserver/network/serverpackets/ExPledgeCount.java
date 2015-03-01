@@ -19,11 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.L2Clan;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class ExPledgeCount extends L2GameServerPacket
+public class ExPledgeCount implements IGameServerPacket
 {
 	private final int _count;
 	
@@ -33,10 +35,11 @@ public class ExPledgeCount extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x13D);
-		writeD(_count);
+		OutgoingPackets.EX_PLEDGE_COUNT.writeId(packet);
+		
+		packet.writeD(_count);
+		return true;
 	}
 }

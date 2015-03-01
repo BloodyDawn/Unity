@@ -20,13 +20,15 @@ package org.l2junity.gameserver.network.clientpackets.commission;
 
 import org.l2junity.gameserver.instancemanager.CommissionManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.commission.ExCloseCommission;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author NosBit
  */
-public class RequestCommissionRegister extends L2GameClientPacket
+public class RequestCommissionRegister implements IGameClientPacket
 {
 	private int _itemObjectId;
 	private long _pricePerUnit;
@@ -34,21 +36,22 @@ public class RequestCommissionRegister extends L2GameClientPacket
 	private int _durationType; // -1 = None, 0 = 1 Day, 1 = 3 Days, 2 = 5 Days, 3 = 7 Days
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_itemObjectId = readD();
-		readS(); // Item Name they use it for search we will use server side available names.
-		_pricePerUnit = readQ();
-		_itemCount = readQ();
-		_durationType = readD();
-		// readD(); // Unknown
-		// readD(); // Unknown
+		_itemObjectId = packet.readD();
+		packet.readS(); // Item Name they use it for search we will use server side available names.
+		_pricePerUnit = packet.readQ();
+		_itemCount = packet.readQ();
+		_durationType = packet.readD();
+		// packet.readD(); // Unknown
+		// packet.readD(); // Unknown
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -62,17 +65,10 @@ public class RequestCommissionRegister extends L2GameClientPacket
 		
 		if (!CommissionManager.isPlayerAllowedToInteract(player))
 		{
-			player.sendPacket(ExCloseCommission.STATIC_PACKET);
+			client.sendPacket(ExCloseCommission.STATIC_PACKET);
 			return;
 		}
 		
 		CommissionManager.getInstance().registerItem(player, _itemObjectId, _itemCount, _pricePerUnit, (byte) ((_durationType * 2) + 1));
 	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
-	}
-	
 }

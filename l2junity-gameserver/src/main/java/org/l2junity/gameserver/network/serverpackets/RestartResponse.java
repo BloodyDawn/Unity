@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public final class RestartResponse extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public final class RestartResponse implements IGameServerPacket
 {
 	private static final RestartResponse STATIC_PACKET_TRUE = new RestartResponse(true);
 	private static final RestartResponse STATIC_PACKET_FALSE = new RestartResponse(false);
@@ -36,9 +39,10 @@ public final class RestartResponse extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x71);
-		writeD(_result ? 1 : 0);
+		OutgoingPackets.RESTART_RESPONSE.writeId(packet);
+		packet.writeD(_result ? 1 : 0);
+		return true;
 	}
 }

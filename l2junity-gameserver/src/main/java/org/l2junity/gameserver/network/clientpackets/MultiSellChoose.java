@@ -35,51 +35,52 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.multisell.Entry;
 import org.l2junity.gameserver.model.multisell.Ingredient;
 import org.l2junity.gameserver.model.multisell.PreparedListContainer;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.serverpackets.ItemList;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.network.PacketReader;
 
 /**
  * The Class MultiSellChoose.
  */
-public class MultiSellChoose extends L2GameClientPacket
+public class MultiSellChoose implements IGameClientPacket
 {
-	private static final String _C__B0_MULTISELLCHOOSE = "[C] B0 MultiSellChoose";
-	
 	private int _listId;
 	private int _entryId;
 	private long _amount;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_listId = readD();
-		_entryId = readD();
-		_amount = readQ();
-		// _unk1 = readH();
-		// _unk2 = readD();
-		// _unk3 = readD();
-		// _unk4 = readH(); // elemental attributes
-		// _unk5 = readH(); // elemental attributes
-		// _unk6 = readH(); // elemental attributes
-		// _unk7 = readH(); // elemental attributes
-		// _unk8 = readH(); // elemental attributes
-		// _unk9 = readH(); // elemental attributes
-		// _unk10 = readH(); // elemental attributes
-		// _unk11 = readH(); // elemental attributes
+		_listId = packet.readD();
+		_entryId = packet.readD();
+		_amount = packet.readQ();
+		// _unk1 = packet.readH();
+		// _unk2 = packet.readD();
+		// _unk3 = packet.readD();
+		// _unk4 = packet.readH(); // elemental attributes
+		// _unk5 = packet.readH(); // elemental attributes
+		// _unk6 = packet.readH(); // elemental attributes
+		// _unk7 = packet.readH(); // elemental attributes
+		// _unk8 = packet.readH(); // elemental attributes
+		// _unk9 = packet.readH(); // elemental attributes
+		// _unk10 = packet.readH(); // elemental attributes
+		// _unk11 = packet.readH(); // elemental attributes
+		return true;
 	}
 	
 	@Override
-	public void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
 		}
 		
-		if (!getClient().getFloodProtectors().getMultiSell().tryPerformAction("multisell choose"))
+		if (!client.getFloodProtectors().getMultiSell().tryPerformAction("multisell choose"))
 		{
 			player.setMultiSell(null);
 			return;
@@ -494,11 +495,5 @@ public class MultiSellChoose extends L2GameClientPacket
 			return false;
 		}
 		return true;
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__B0_MULTISELLCHOOSE;
 	}
 }

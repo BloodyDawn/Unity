@@ -18,26 +18,27 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author nBd
  */
-public class RequestEnchant extends L2GameServerPacket
+public class RequestEnchant implements IGameServerPacket
 {
-	private final int _unk;
+	private final int _result;
 	
-	/**
-	 * @param value
-	 */
-	public RequestEnchant(int value)
+	public RequestEnchant(int result)
 	{
-		_unk = value;
+		_result = result;
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x81);
-		writeD(_unk);
+		OutgoingPackets.EX_PRIVATE_STORE_WHOLE_MSG.writeId(packet);
+		
+		packet.writeD(_result);
+		return true;
 	}
 }

@@ -19,11 +19,13 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author devScarlet
  */
-public class NicknameChanged extends L2GameServerPacket
+public class NicknameChanged implements IGameServerPacket
 {
 	private final String _title;
 	private final int _objectId;
@@ -35,10 +37,12 @@ public class NicknameChanged extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xcc);
-		writeD(_objectId);
-		writeS(_title);
+		OutgoingPackets.NICK_NAME_CHANGED.writeId(packet);
+		
+		packet.writeD(_objectId);
+		packet.writeS(_title);
+		return true;
 	}
 }

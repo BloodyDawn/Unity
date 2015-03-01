@@ -18,11 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * *
  * @author mrTJO
  */
-public class ExCubeGameEnd extends L2GameServerPacket
+public class ExCubeGameEnd implements IGameServerPacket
 {
 	boolean _isRedTeamWin;
 	
@@ -36,13 +39,14 @@ public class ExCubeGameEnd extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x99);
-		writeD(0x01);
+		OutgoingPackets.EX_BLOCK_UP_SET_STATE.writeId(packet);
 		
-		writeD(_isRedTeamWin ? 0x01 : 0x00);
-		writeD(0x00); // TODO: Find me!
+		packet.writeD(0x01);
+		
+		packet.writeD(_isRedTeamWin ? 0x01 : 0x00);
+		packet.writeD(0x00); // TODO: Find me!
+		return true;
 	}
 }

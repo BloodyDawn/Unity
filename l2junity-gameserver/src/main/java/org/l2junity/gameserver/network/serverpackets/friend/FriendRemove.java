@@ -18,12 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets.friend;
 
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class FriendRemove extends L2GameServerPacket
+public class FriendRemove implements IGameServerPacket
 {
 	private final int _responce;
 	private final String _charName;
@@ -35,10 +37,12 @@ public class FriendRemove extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x57);
-		writeD(_responce);
-		writeS(_charName);
+		OutgoingPackets.FRIEND_REMOVE.writeId(packet);
+		
+		packet.writeD(_responce);
+		packet.writeS(_charName);
+		return true;
 	}
 }

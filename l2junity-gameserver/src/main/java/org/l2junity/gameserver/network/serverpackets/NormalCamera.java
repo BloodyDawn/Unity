@@ -18,7 +18,10 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class NormalCamera extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class NormalCamera implements IGameServerPacket
 {
 	public static final NormalCamera STATIC_PACKET = new NormalCamera();
 	
@@ -27,8 +30,9 @@ public class NormalCamera extends L2GameServerPacket
 	}
 	
 	@Override
-	public void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xd7);
+		OutgoingPackets.NORMAL_CAMERA.writeId(packet);
+		return true;
 	}
 }

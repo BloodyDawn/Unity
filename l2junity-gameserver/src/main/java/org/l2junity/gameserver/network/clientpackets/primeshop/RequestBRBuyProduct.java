@@ -27,16 +27,18 @@ import org.l2junity.gameserver.model.actor.request.PrimeShopRequest;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.primeshop.PrimeShopGroup;
 import org.l2junity.gameserver.model.primeshop.PrimeShopItem;
-import org.l2junity.gameserver.network.clientpackets.L2GameClientPacket;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
 import org.l2junity.gameserver.network.serverpackets.primeshop.ExBRBuyProduct;
-import org.l2junity.gameserver.network.serverpackets.primeshop.ExBRGamePoint;
 import org.l2junity.gameserver.network.serverpackets.primeshop.ExBRBuyProduct.ExBrProductReplyType;
+import org.l2junity.gameserver.network.serverpackets.primeshop.ExBRGamePoint;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Gnacik, UnAfraid
  */
-public final class RequestBRBuyProduct extends L2GameClientPacket
+public final class RequestBRBuyProduct implements IGameClientPacket
 {
 	private static final int HERO_COINS = 23805;
 	
@@ -44,16 +46,17 @@ public final class RequestBRBuyProduct extends L2GameClientPacket
 	private int _count;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_brId = readD();
-		_count = readD();
+		_brId = packet.readD();
+		_count = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -204,11 +207,5 @@ public final class RequestBRBuyProduct extends L2GameClientPacket
 		}
 		
 		return -1;
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
 	}
 }

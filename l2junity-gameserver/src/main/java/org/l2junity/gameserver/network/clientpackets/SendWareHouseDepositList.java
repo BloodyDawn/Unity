@@ -30,61 +30,62 @@ import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.itemcontainer.ItemContainer;
 import org.l2junity.gameserver.model.itemcontainer.PcWarehouse;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExUserInfoInvenWeight;
 import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
 import org.l2junity.gameserver.network.serverpackets.ItemList;
 import org.l2junity.gameserver.util.Util;
+import org.l2junity.network.PacketReader;
 
 /**
  * SendWareHouseDepositList client packet class.
  */
-public final class SendWareHouseDepositList extends L2GameClientPacket
+public final class SendWareHouseDepositList implements IGameClientPacket
 {
-	private static final String _C__3B_SENDWAREHOUSEDEPOSITLIST = "[C] 3B SendWareHouseDepositList";
-	
 	private static final int BATCH_LENGTH = 12;
 	
 	private List<ItemHolder> _items = null;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		final int size = readD();
-		if ((size <= 0) || (size > Config.MAX_ITEM_IN_PACKET) || ((size * BATCH_LENGTH) != _buf.remaining()))
+		final int size = packet.readD();
+		if ((size <= 0) || (size > Config.MAX_ITEM_IN_PACKET) || ((size * BATCH_LENGTH) != packet.getReadableBytes()))
 		{
-			return;
+			return false;
 		}
 		
 		_items = new ArrayList<>(size);
 		for (int i = 0; i < size; i++)
 		{
-			int objId = readD();
-			long count = readQ();
+			int objId = packet.readD();
+			long count = packet.readQ();
 			if ((objId < 1) || (count < 0))
 			{
 				_items = null;
-				return;
+				return false;
 			}
 			_items.add(new ItemHolder(objId, count));
 		}
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		if (_items == null)
 		{
 			return;
 		}
 		
-		final PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
 		}
 		
-		if (!getClient().getFloodProtectors().getTransaction().tryPerformAction("deposit"))
+		if (!client.getFloodProtectors().getTransaction().tryPerformAction("deposit"))
 		{
 			player.sendMessage("You are depositing items too fast.");
 			return;
@@ -153,14 +154,14 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 		// Item Max Limit Check
 		if (!warehouse.validateCapacity(slots))
 		{
-			player.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_QUANTITY_THAT_CAN_BE_INPUTTED);
+			client.sendPacket(SystemMessageId.YOU_HAVE_EXCEEDED_THE_QUANTITY_THAT_CAN_BE_INPUTTED);
 			return;
 		}
 		
 		// Check if enough adena and charge the fee
 		if ((currentAdena < fee) || !player.reduceAdena(warehouse.getName(), fee, manager, false))
 		{
-			player.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA);
+			client.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_ENOUGH_ADENA);
 			return;
 		}
 		
@@ -210,20 +211,14 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 		// Send updated item list to the player
 		if (playerIU != null)
 		{
-			player.sendPacket(playerIU);
+			client.sendPacket(playerIU);
 		}
 		else
 		{
-			player.sendPacket(new ItemList(player, false));
+			client.sendPacket(new ItemList(player, false));
 		}
 		
 		// Update current load status on player
-		player.sendPacket(new ExUserInfoInvenWeight(player));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__3B_SENDWAREHOUSEDEPOSITLIST;
+		client.sendPacket(new ExUserInfoInvenWeight(player));
 	}
 }

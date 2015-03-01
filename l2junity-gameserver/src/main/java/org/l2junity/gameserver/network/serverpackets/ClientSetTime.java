@@ -19,8 +19,10 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.GameTimeController;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class ClientSetTime extends L2GameServerPacket
+public class ClientSetTime implements IGameServerPacket
 {
 	public static final ClientSetTime STATIC_PACKET = new ClientSetTime();
 	
@@ -29,10 +31,12 @@ public class ClientSetTime extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xf2);
-		writeD(GameTimeController.getInstance().getGameTime()); // time in client minutes
-		writeD(6); // constant to match the server time( this determines the speed of the client clock)
+		OutgoingPackets.CLIENT_SET_TIME.writeId(packet);
+		
+		packet.writeD(GameTimeController.getInstance().getGameTime()); // time in client minutes
+		packet.writeD(6); // constant to match the server time( this determines the speed of the client clock)
+		return true;
 	}
 }

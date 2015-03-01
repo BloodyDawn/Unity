@@ -21,10 +21,7 @@ package org.l2junity.gameserver;
 import java.awt.Toolkit;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.time.Duration;
 import java.util.Calendar;
 import java.util.logging.Level;
@@ -137,8 +134,7 @@ import org.l2junity.gameserver.model.entity.Hero;
 import org.l2junity.gameserver.model.entity.TvTManager;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.olympiad.Olympiad;
-import org.l2junity.gameserver.network.L2GameClient;
-import org.l2junity.gameserver.network.L2GamePacketHandler;
+import org.l2junity.gameserver.network.client.ClientNetworkManager;
 import org.l2junity.gameserver.pathfinding.PathFinding;
 import org.l2junity.gameserver.script.faenor.FaenorScriptEngine;
 import org.l2junity.gameserver.scripting.ScriptEngineManager;
@@ -146,16 +142,11 @@ import org.l2junity.gameserver.taskmanager.KnownListUpdateTaskManager;
 import org.l2junity.gameserver.taskmanager.TaskManager;
 import org.l2junity.gameserver.util.Broadcast;
 import org.l2junity.status.Status;
-import org.l2junity.util.IPv4Filter;
-import org.mmocore.network.SelectorConfig;
-import org.mmocore.network.SelectorThread;
 
 public class GameServer
 {
 	private static final Logger _log = Logger.getLogger(GameServer.class.getName());
 	
-	private final SelectorThread<L2GameClient> _selectorThread;
-	private final L2GamePacketHandler _gamePacketHandler;
 	private final DeadLockDetector _deadDetectThread;
 	public static GameServer gameServer;
 	public static final Calendar dateTimeServerStarted = Calendar.getInstance();
@@ -163,16 +154,6 @@ public class GameServer
 	public long getUsedMemoryMB()
 	{
 		return (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / 1048576;
-	}
-	
-	public SelectorThread<L2GameClient> getSelectorThread()
-	{
-		return _selectorThread;
-	}
-	
-	public L2GamePacketHandler getL2GamePacketHandler()
-	{
-		return _gamePacketHandler;
 	}
 	
 	public DeadLockDetector getDeadLockDetectorThread()
@@ -413,40 +394,8 @@ public class GameServer
 		Toolkit.getDefaultToolkit().beep();
 		LoginServerThread.getInstance().start();
 		
-		final SelectorConfig sc = new SelectorConfig();
-		sc.MAX_READ_PER_PASS = Config.MMO_MAX_READ_PER_PASS;
-		sc.MAX_SEND_PER_PASS = Config.MMO_MAX_SEND_PER_PASS;
-		sc.SLEEP_TIME = Config.MMO_SELECTOR_SLEEP_TIME;
-		sc.HELPER_BUFFER_COUNT = Config.MMO_HELPER_BUFFER_COUNT;
-		sc.TCP_NODELAY = Config.MMO_TCP_NODELAY;
-		
-		_gamePacketHandler = new L2GamePacketHandler();
-		_selectorThread = new SelectorThread<>(sc, _gamePacketHandler, _gamePacketHandler, _gamePacketHandler, new IPv4Filter());
-		
-		InetAddress bindAddress = null;
-		if (!Config.GAMESERVER_HOSTNAME.equals("*"))
-		{
-			try
-			{
-				bindAddress = InetAddress.getByName(Config.GAMESERVER_HOSTNAME);
-			}
-			catch (UnknownHostException e1)
-			{
-				_log.log(Level.SEVERE, getClass().getSimpleName() + ": WARNING: The GameServer bind address is invalid, using all avaliable IPs. Reason: " + e1.getMessage(), e1);
-			}
-		}
-		
-		try
-		{
-			_selectorThread.openServerSocket(bindAddress, Config.PORT_GAME);
-			_selectorThread.start();
-			_log.log(Level.INFO, getClass().getSimpleName() + ": is now listening on: " + Config.GAMESERVER_HOSTNAME + ":" + Config.PORT_GAME);
-		}
-		catch (IOException e)
-		{
-			_log.log(Level.SEVERE, getClass().getSimpleName() + ": FATAL: Failed to open server socket. Reason: " + e.getMessage(), e);
-			System.exit(1);
-		}
+		ClientNetworkManager.getInstance().start();
+		_log.log(Level.INFO, getClass().getSimpleName() + ": is now listening on: " + Config.GAMESERVER_HOSTNAME + ":" + Config.PORT_GAME);
 		
 		_log.log(Level.INFO, getClass().getSimpleName() + ": Maximum numbers of connected players: " + Config.MAXIMUM_ONLINE_USERS);
 		_log.log(Level.INFO, getClass().getSimpleName() + ": Server loaded in " + ((System.currentTimeMillis() - serverLoadStart) / 1000) + " seconds.");

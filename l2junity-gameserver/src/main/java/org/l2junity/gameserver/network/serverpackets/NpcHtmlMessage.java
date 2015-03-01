@@ -19,6 +19,8 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.enums.HtmlActionScope;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * NpcHtmlMessage server packet implementation.
@@ -76,14 +78,15 @@ public final class NpcHtmlMessage extends AbstractHtmlPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x19);
+		OutgoingPackets.NPC_HTML_MESSAGE.writeId(packet);
 		
-		writeD(getNpcObjId());
-		writeS(getHtml());
-		writeD(_itemId);
-		writeD(0x00); // TODO: Find me!
+		packet.writeD(getNpcObjId());
+		packet.writeS(getHtml());
+		packet.writeD(_itemId);
+		packet.writeD(0x00); // TODO: Find me!
+		return true;
 	}
 	
 	@Override

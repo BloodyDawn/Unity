@@ -20,8 +20,10 @@ package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.ManufactureItem;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class RecipeShopSellList extends L2GameServerPacket
+public class RecipeShopSellList implements IGameServerPacket
 {
 	private final PlayerInstance _buyer, _manufacturer;
 	
@@ -32,26 +34,28 @@ public class RecipeShopSellList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xDF);
-		writeD(_manufacturer.getObjectId());
-		writeD((int) _manufacturer.getCurrentMp());// Creator's MP
-		writeD(_manufacturer.getMaxMp());// Creator's MP
-		writeQ(_buyer.getAdena());// Buyer Adena
+		OutgoingPackets.RECIPE_SHOP_SELL_LIST.writeId(packet);
+		
+		packet.writeD(_manufacturer.getObjectId());
+		packet.writeD((int) _manufacturer.getCurrentMp());// Creator's MP
+		packet.writeD(_manufacturer.getMaxMp());// Creator's MP
+		packet.writeQ(_buyer.getAdena());// Buyer Adena
 		if (!_manufacturer.hasManufactureShop())
 		{
-			writeD(0x00);
+			packet.writeD(0x00);
 		}
 		else
 		{
-			writeD(_manufacturer.getManufactureItems().size());
+			packet.writeD(_manufacturer.getManufactureItems().size());
 			for (ManufactureItem temp : _manufacturer.getManufactureItems().values())
 			{
-				writeD(temp.getRecipeId());
-				writeD(0x00); // unknown
-				writeQ(temp.getCost());
+				packet.writeD(temp.getRecipeId());
+				packet.writeD(0x00); // unknown
+				packet.writeQ(temp.getCost());
 			}
 		}
+		return true;
 	}
 }

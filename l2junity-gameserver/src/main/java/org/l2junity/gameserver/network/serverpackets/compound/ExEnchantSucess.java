@@ -18,12 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets.compound;
 
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class ExEnchantSucess extends L2GameServerPacket
+public class ExEnchantSucess implements IGameServerPacket
 {
 	private final int _itemId;
 	
@@ -33,10 +35,11 @@ public class ExEnchantSucess extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x170);
-		writeD(_itemId);
+		OutgoingPackets.EX_ENCHANT_SUCESS.writeId(packet);
+		
+		packet.writeD(_itemId);
+		return true;
 	}
 }

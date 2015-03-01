@@ -24,9 +24,11 @@ import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.L2ServitorInstance;
 import org.l2junity.gameserver.model.skills.AbnormalVisualEffect;
+import org.l2junity.gameserver.network.OutgoingPackets;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
+import org.l2junity.network.PacketWriter;
 
-public class PetInfo extends L2GameServerPacket
+public class PetInfo implements IGameServerPacket
 {
 	private final Summon _summon;
 	private final int _val;
@@ -80,111 +82,113 @@ public class PetInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xB2);
-		writeC(_summon.getSummonType());
-		writeD(_summon.getObjectId());
-		writeD(_summon.getTemplate().getDisplayId() + 1000000);
+		OutgoingPackets.PET_INFO.writeId(packet);
 		
-		writeD(_summon.getX());
-		writeD(_summon.getY());
-		writeD(_summon.getZ());
-		writeD(_summon.getHeading());
+		packet.writeC(_summon.getSummonType());
+		packet.writeD(_summon.getObjectId());
+		packet.writeD(_summon.getTemplate().getDisplayId() + 1000000);
 		
-		writeD(_summon.getStat().getMAtkSpd());
-		writeD(_summon.getStat().getPAtkSpd());
+		packet.writeD(_summon.getX());
+		packet.writeD(_summon.getY());
+		packet.writeD(_summon.getZ());
+		packet.writeD(_summon.getHeading());
 		
-		writeH(_runSpd);
-		writeH(_walkSpd);
-		writeH(_swimRunSpd);
-		writeH(_swimWalkSpd);
-		writeH(_flRunSpd);
-		writeH(_flWalkSpd);
-		writeH(_flyRunSpd);
-		writeH(_flyWalkSpd);
+		packet.writeD(_summon.getStat().getMAtkSpd());
+		packet.writeD(_summon.getStat().getPAtkSpd());
 		
-		writeF(_moveMultiplier);
-		writeF(_summon.getAttackSpeedMultiplier()); // attack speed multiplier
-		writeF(_summon.getTemplate().getfCollisionRadius());
-		writeF(_summon.getTemplate().getfCollisionHeight());
+		packet.writeH(_runSpd);
+		packet.writeH(_walkSpd);
+		packet.writeH(_swimRunSpd);
+		packet.writeH(_swimWalkSpd);
+		packet.writeH(_flRunSpd);
+		packet.writeH(_flWalkSpd);
+		packet.writeH(_flyRunSpd);
+		packet.writeH(_flyWalkSpd);
 		
-		writeD(_summon.getWeapon()); // right hand weapon
-		writeD(_summon.getArmor()); // body armor
-		writeD(0x00); // left hand weapon
+		packet.writeF(_moveMultiplier);
+		packet.writeF(_summon.getAttackSpeedMultiplier()); // attack speed multiplier
+		packet.writeF(_summon.getTemplate().getfCollisionRadius());
+		packet.writeF(_summon.getTemplate().getfCollisionHeight());
 		
-		writeC(_summon.isShowSummonAnimation() ? 0x02 : _val); // 0=teleported 1=default 2=summoned
-		writeD(-1); // High Five NPCString ID
+		packet.writeD(_summon.getWeapon()); // right hand weapon
+		packet.writeD(_summon.getArmor()); // body armor
+		packet.writeD(0x00); // left hand weapon
+		
+		packet.writeC(_summon.isShowSummonAnimation() ? 0x02 : _val); // 0=teleported 1=default 2=summoned
+		packet.writeD(-1); // High Five NPCString ID
 		if (_summon.isPet())
 		{
-			writeS(_summon.getName()); // Pet name.
+			packet.writeS(_summon.getName()); // Pet name.
 		}
 		else
 		{
-			writeS(_summon.getTemplate().isUsingServerSideName() ? _summon.getName() : ""); // Summon name.
+			packet.writeS(_summon.getTemplate().isUsingServerSideName() ? _summon.getName() : ""); // Summon name.
 		}
-		writeD(-1); // High Five NPCString ID
-		writeS(_summon.getTitle()); // owner name
+		packet.writeD(-1); // High Five NPCString ID
+		packet.writeS(_summon.getTitle()); // owner name
 		
-		writeC(_summon.getPvpFlag()); // confirmed
-		writeD(_summon.getKarma()); // confirmed
+		packet.writeC(_summon.getPvpFlag()); // confirmed
+		packet.writeD(_summon.getKarma()); // confirmed
 		
-		writeD(_curFed); // how fed it is
-		writeD(_maxFed); // max fed it can be
-		writeD((int) _summon.getCurrentHp());// current hp
-		writeD(_summon.getMaxHp());// max hp
-		writeD((int) _summon.getCurrentMp());// current mp
-		writeD(_summon.getMaxMp());// max mp
+		packet.writeD(_curFed); // how fed it is
+		packet.writeD(_maxFed); // max fed it can be
+		packet.writeD((int) _summon.getCurrentHp());// current hp
+		packet.writeD(_summon.getMaxHp());// max hp
+		packet.writeD((int) _summon.getCurrentMp());// current mp
+		packet.writeD(_summon.getMaxMp());// max mp
 		
-		writeQ(_summon.getStat().getSp()); // sp
-		writeC(_summon.getLevel());// lvl
-		writeQ(_summon.getStat().getExp());
+		packet.writeQ(_summon.getStat().getSp()); // sp
+		packet.writeC(_summon.getLevel());// lvl
+		packet.writeQ(_summon.getStat().getExp());
 		
 		if (_summon.getExpForThisLevel() > _summon.getStat().getExp())
 		{
-			writeQ(_summon.getStat().getExp());// 0% absolute value
+			packet.writeQ(_summon.getStat().getExp());// 0% absolute value
 		}
 		else
 		{
-			writeQ(_summon.getExpForThisLevel());// 0% absolute value
+			packet.writeQ(_summon.getExpForThisLevel());// 0% absolute value
 		}
 		
-		writeQ(_summon.getExpForNextLevel());// 100% absoulte value
+		packet.writeQ(_summon.getExpForNextLevel());// 100% absoulte value
 		
-		writeD(_summon.isPet() ? _summon.getInventory().getTotalWeight() : 0);// weight
-		writeD(_summon.getMaxLoad());// max weight it can carry
-		writeD(_summon.getPAtk(null));// patk
-		writeD(_summon.getPDef(null));// pdef
-		writeD(_summon.getAccuracy());// accuracy
-		writeD(_summon.getEvasionRate(null));// evasion
-		writeD(_summon.getCriticalHit(null, null));// critical
-		writeD(_summon.getMAtk(null, null));// matk
-		writeD(_summon.getMDef(null, null));// mdef
-		writeD(_summon.getMagicAccuracy()); // magic accuracy
-		writeD(_summon.getMagicEvasionRate(null)); // magic evasion
-		writeD(_summon.getMCriticalHit(null, null)); // mcritical
-		writeD((int) _summon.getStat().getMoveSpeed());// speed
-		writeD(_summon.getPAtkSpd());// atkspeed
-		writeD(_summon.getMAtkSpd());// casting speed
+		packet.writeD(_summon.isPet() ? _summon.getInventory().getTotalWeight() : 0);// weight
+		packet.writeD(_summon.getMaxLoad());// max weight it can carry
+		packet.writeD(_summon.getPAtk(null));// patk
+		packet.writeD(_summon.getPDef(null));// pdef
+		packet.writeD(_summon.getAccuracy());// accuracy
+		packet.writeD(_summon.getEvasionRate(null));// evasion
+		packet.writeD(_summon.getCriticalHit(null, null));// critical
+		packet.writeD(_summon.getMAtk(null, null));// matk
+		packet.writeD(_summon.getMDef(null, null));// mdef
+		packet.writeD(_summon.getMagicAccuracy()); // magic accuracy
+		packet.writeD(_summon.getMagicEvasionRate(null)); // magic evasion
+		packet.writeD(_summon.getMCriticalHit(null, null)); // mcritical
+		packet.writeD((int) _summon.getStat().getMoveSpeed());// speed
+		packet.writeD(_summon.getPAtkSpd());// atkspeed
+		packet.writeD(_summon.getMAtkSpd());// casting speed
 		
-		writeC(0); // TODO: Check me, might be ride status
-		writeC(_summon.getTeam().getId()); // Confirmed
-		writeC(_summon.getSoulShotsPerHit()); // How many soulshots this servitor uses per hit - Confirmed
-		writeC(_summon.getSpiritShotsPerHit()); // How many spiritshots this servitor uses per hit - - Confirmed
+		packet.writeC(0); // TODO: Check me, might be ride status
+		packet.writeC(_summon.getTeam().getId()); // Confirmed
+		packet.writeC(_summon.getSoulShotsPerHit()); // How many soulshots this servitor uses per hit - Confirmed
+		packet.writeC(_summon.getSpiritShotsPerHit()); // How many spiritshots this servitor uses per hit - - Confirmed
 		
-		writeD(0x00); // TODO: Find me
-		writeD(_summon.getFormId()); // Transformation ID - Confirmed
+		packet.writeD(0x00); // TODO: Find me
+		packet.writeD(_summon.getFormId()); // Transformation ID - Confirmed
 		
-		writeC(_summon.getOwner().getSummonPoints()); // Used Summon Points
-		writeC(_summon.getOwner().getMaxSummonPoints()); // Maximum Summon Points
+		packet.writeC(_summon.getOwner().getSummonPoints()); // Used Summon Points
+		packet.writeC(_summon.getOwner().getMaxSummonPoints()); // Maximum Summon Points
 		
 		final Set<AbnormalVisualEffect> aves = _summon.getCurrentAbnormalVisualEffects();
-		writeH(aves.size()); // Confirmed
+		packet.writeH(aves.size()); // Confirmed
 		for (AbnormalVisualEffect ave : aves)
 		{
-			writeH(ave.getClientId()); // Confirmed
+			packet.writeH(ave.getClientId()); // Confirmed
 		}
 		
-		writeC(_statusMask);
+		packet.writeC(_statusMask);
+		return true;
 	}
 }

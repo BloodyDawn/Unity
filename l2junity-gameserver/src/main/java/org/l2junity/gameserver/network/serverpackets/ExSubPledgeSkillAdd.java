@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author VISTALL
  */
-public class ExSubPledgeSkillAdd extends L2GameServerPacket
+public class ExSubPledgeSkillAdd implements IGameServerPacket
 {
 	private final int _type;
 	private final int _skillId;
@@ -35,12 +38,13 @@ public class ExSubPledgeSkillAdd extends L2GameServerPacket
 	}
 	
 	@Override
-	public void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x77);
-		writeD(_type);
-		writeD(_skillId);
-		writeD(_skillLevel);
+		OutgoingPackets.EX_SUB_PLEDGET_SKILL_ADD.writeId(packet);
+		
+		packet.writeD(_type);
+		packet.writeD(_skillId);
+		packet.writeD(_skillLevel);
+		return true;
 	}
 }

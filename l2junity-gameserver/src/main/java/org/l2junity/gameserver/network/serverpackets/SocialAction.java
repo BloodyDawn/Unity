@@ -18,17 +18,17 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
-public class SocialAction extends L2GameServerPacket
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
+public class SocialAction implements IGameServerPacket
 {
+	// TODO: Enum
 	public static final int LEVEL_UP = 2122;
 	
 	private final int _charObjId;
 	private final int _actionId;
 	
-	/**
-	 * @param objectId
-	 * @param actionId
-	 */
 	public SocialAction(int objectId, int actionId)
 	{
 		_charObjId = objectId;
@@ -36,11 +36,13 @@ public class SocialAction extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x27);
-		writeD(_charObjId);
-		writeD(_actionId);
-		writeD(0x00); // TODO: Find me!
+		OutgoingPackets.SOCIAL_ACTION.writeId(packet);
+		
+		packet.writeD(_charObjId);
+		packet.writeD(_actionId);
+		packet.writeD(0x00); // TODO: Find me!
+		return true;
 	}
 }

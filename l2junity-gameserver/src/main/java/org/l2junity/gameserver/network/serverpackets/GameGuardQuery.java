@@ -18,11 +18,14 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * Lets drink to code!
  * @author zabbix
  */
-public class GameGuardQuery extends L2GameServerPacket
+public class GameGuardQuery implements IGameServerPacket
 {
 	public static final GameGuardQuery STATIC_PACKET = new GameGuardQuery();
 	
@@ -32,12 +35,14 @@ public class GameGuardQuery extends L2GameServerPacket
 	}
 	
 	@Override
-	public void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x74);
-		writeD(0x27533DD9);
-		writeD(0x2E72A51D);
-		writeD(0x2017038B);
-		writeD(0xC35B1EA3);
+		OutgoingPackets.GAME_GUARD_QUERY.writeId(packet);
+		
+		packet.writeD(0x27533DD9);
+		packet.writeD(0x2E72A51D);
+		packet.writeD(0x2017038B);
+		packet.writeD(0xC35B1EA3);
+		return true;
 	}
 }

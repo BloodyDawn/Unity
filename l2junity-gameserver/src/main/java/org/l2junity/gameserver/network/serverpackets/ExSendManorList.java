@@ -23,24 +23,33 @@ import java.util.List;
 
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.model.entity.Castle;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author l3x
  */
-public final class ExSendManorList extends L2GameServerPacket
+public final class ExSendManorList implements IGameServerPacket
 {
+	public static final ExSendManorList STATIC_PACKET = new ExSendManorList();
+	
+	private ExSendManorList()
+	{
+	}
+	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
 		final List<Castle> castles = CastleManager.getInstance().getCastles();
 		castles.sort(Comparator.comparing(Castle::getResidenceId));
 		
-		writeC(0xFE);
-		writeH(0x22);
-		writeD(castles.size());
+		OutgoingPackets.EX_SEND_MANOR_LIST.writeId(packet);
+		
+		packet.writeD(castles.size());
 		for (Castle castle : castles)
 		{
-			writeD(castle.getResidenceId());
+			packet.writeD(castle.getResidenceId());
 		}
+		return true;
 	}
 }

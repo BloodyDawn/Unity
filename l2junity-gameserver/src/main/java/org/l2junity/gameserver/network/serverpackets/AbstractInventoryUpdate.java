@@ -25,6 +25,7 @@ import java.util.concurrent.ConcurrentSkipListMap;
 
 import org.l2junity.gameserver.model.ItemInfo;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
@@ -83,13 +84,13 @@ public abstract class AbstractInventoryUpdate extends AbstractItemPacket
 		return _items.values();
 	}
 	
-	protected final void writeItems()
+	protected final void writeItems(PacketWriter packet)
 	{
-		writeH(_items.size());
+		packet.writeH(_items.size());
 		for (ItemInfo item : _items.values())
 		{
-			writeH(item.getChange()); // Update type : 01-add, 02-modify, 03-remove
-			writeItem(item);
+			packet.writeH(item.getChange()); // Update type : 01-add, 02-modify, 03-remove
+			writeItem(packet, item);
 		}
 	}
 }

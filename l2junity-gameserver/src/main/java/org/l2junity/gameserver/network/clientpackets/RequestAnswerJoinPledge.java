@@ -22,6 +22,7 @@ import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.serverpackets.ExPledgeCount;
 import org.l2junity.gameserver.network.serverpackets.JoinPledge;
@@ -29,27 +30,27 @@ import org.l2junity.gameserver.network.serverpackets.PledgeShowInfoUpdate;
 import org.l2junity.gameserver.network.serverpackets.PledgeShowMemberListAdd;
 import org.l2junity.gameserver.network.serverpackets.PledgeShowMemberListAll;
 import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class ...
  * @version $Revision: 1.4.2.1.2.3 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestAnswerJoinPledge extends L2GameClientPacket
+public final class RequestAnswerJoinPledge implements IGameClientPacket
 {
-	private static final String _C__27_REQUESTANSWERJOINPLEDGE = "[C] 27 RequestAnswerJoinPledge";
-	
 	private int _answer;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_answer = readD();
+		_answer = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -125,11 +126,5 @@ public final class RequestAnswerJoinPledge extends L2GameClientPacket
 		}
 		
 		activeChar.getRequest().onRequestResponse();
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__27_REQUESTANSWERJOINPLEDGE;
 	}
 }

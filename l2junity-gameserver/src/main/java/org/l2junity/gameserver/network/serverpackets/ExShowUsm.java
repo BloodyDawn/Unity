@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author Sdw
  */
-public class ExShowUsm extends L2GameServerPacket
+public class ExShowUsm implements IGameServerPacket
 {
 	public static final ExShowUsm GOD_INTRO = new ExShowUsm(2);
 	public static final ExShowUsm AWAKENING_END = new ExShowUsm(10);
@@ -37,11 +40,11 @@ public class ExShowUsm extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x109);
+		OutgoingPackets.EX_SHOW_USM.writeId(packet);
 		
-		writeD(_videoId);
+		packet.writeD(_videoId);
+		return true;
 	}
 }

@@ -19,8 +19,10 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class ObservationReturn extends L2GameServerPacket
+public class ObservationReturn implements IGameServerPacket
 {
 	private final Location _loc;
 	
@@ -30,11 +32,13 @@ public class ObservationReturn extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xEC);
-		writeD(_loc.getX());
-		writeD(_loc.getY());
-		writeD(_loc.getZ());
+		OutgoingPackets.OBSERVER_END.writeId(packet);
+		
+		packet.writeD(_loc.getX());
+		packet.writeD(_loc.getY());
+		packet.writeD(_loc.getZ());
+		return true;
 	}
 }

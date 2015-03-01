@@ -26,11 +26,13 @@ import org.l2junity.gameserver.model.SkillLearn;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author UnAfraid
  */
-public class ExAcquireSkillInfo extends L2GameServerPacket
+public class ExAcquireSkillInfo implements IGameServerPacket
 {
 	private final int _id;
 	private final int _level;
@@ -57,28 +59,28 @@ public class ExAcquireSkillInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xFC);
+		OutgoingPackets.EX_ACQUIRE_SKILL_INFO.writeId(packet);
 		
-		writeD(_id);
-		writeD(_level);
-		writeQ(_spCost);
-		writeH(_minLevel);
-		writeH(0x00); // Dual Class Level Required
-		writeD(_itemReq.size());
+		packet.writeD(_id);
+		packet.writeD(_level);
+		packet.writeQ(_spCost);
+		packet.writeH(_minLevel);
+		packet.writeH(0x00); // Dual Class Level Required
+		packet.writeD(_itemReq.size());
 		for (ItemHolder holder : _itemReq)
 		{
-			writeD(holder.getId());
-			writeQ(holder.getCount());
+			packet.writeD(holder.getId());
+			packet.writeQ(holder.getCount());
 		}
 		
-		writeD(_skillRem.size());
+		packet.writeD(_skillRem.size());
 		for (Skill skill : _skillRem)
 		{
-			writeD(skill.getId());
-			writeD(skill.getLevel());
+			packet.writeD(skill.getId());
+			packet.writeD(skill.getLevel());
 		}
+		return true;
 	}
 }

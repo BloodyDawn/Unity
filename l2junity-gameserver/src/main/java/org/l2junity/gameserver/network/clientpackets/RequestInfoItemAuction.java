@@ -22,33 +22,34 @@ import org.l2junity.gameserver.instancemanager.ItemAuctionManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemauction.ItemAuction;
 import org.l2junity.gameserver.model.itemauction.ItemAuctionInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExItemAuctionInfoPacket;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Forsaiken
  */
-public final class RequestInfoItemAuction extends L2GameClientPacket
+public final class RequestInfoItemAuction implements IGameClientPacket
 {
-	private static final String _C__D0_3A_REQUESTINFOITEMAUCTION = "[C] D0:3A RequestInfoItemAuction";
-	
 	private int _instanceId;
 	
 	@Override
-	protected final void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_instanceId = super.readD();
+		_instanceId = packet.readD();
+		return true;
 	}
 	
 	@Override
-	protected final void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = super.getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
-		if (!getClient().getFloodProtectors().getItemAuction().tryPerformAction("RequestInfoItemAuction"))
+		if (!client.getFloodProtectors().getItemAuction().tryPerformAction("RequestInfoItemAuction"))
 		{
 			return;
 		}
@@ -66,12 +67,6 @@ public final class RequestInfoItemAuction extends L2GameClientPacket
 		}
 		
 		activeChar.updateLastItemAuctionRequest();
-		activeChar.sendPacket(new ExItemAuctionInfoPacket(true, auction, instance.getNextAuction()));
-	}
-	
-	@Override
-	public final String getType()
-	{
-		return _C__D0_3A_REQUESTINFOITEMAUCTION;
+		client.sendPacket(new ExItemAuctionInfoPacket(true, auction, instance.getNextAuction()));
 	}
 }

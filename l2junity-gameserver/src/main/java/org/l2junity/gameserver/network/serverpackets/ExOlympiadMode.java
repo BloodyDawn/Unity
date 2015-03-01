@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author godson
  */
-public class ExOlympiadMode extends L2GameServerPacket
+public class ExOlympiadMode implements IGameServerPacket
 {
 	private final int _mode;
 	
@@ -34,10 +37,11 @@ public class ExOlympiadMode extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x7D);
-		writeC(_mode);
+		OutgoingPackets.EX_OLYMPIAD_MODE.writeId(packet);
+		
+		packet.writeC(_mode);
+		return true;
 	}
 }

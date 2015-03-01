@@ -19,34 +19,31 @@
 package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.data.xml.impl.AdminData;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * This class handles RequestGmLista packet triggered by /gmlist command
  * @version $Revision: 1.1.4.2 $ $Date: 2005/03/27 15:29:30 $
  */
-public final class RequestGmList extends L2GameClientPacket
+public final class RequestGmList implements IGameClientPacket
 {
-	private static final String _C__8B_REQUESTGMLIST = "[C] 8B RequestGmList";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		if (getClient().getActiveChar() == null)
+		final PlayerInstance activeChar = client.getActiveChar();
+		if (activeChar == null)
 		{
 			return;
 		}
-		AdminData.getInstance().sendListToPlayer(getClient().getActiveChar());
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__8B_REQUESTGMLIST;
+		
+		AdminData.getInstance().sendListToPlayer(activeChar);
 	}
 }

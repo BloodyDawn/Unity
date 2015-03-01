@@ -25,7 +25,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Duel;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.serverpackets.L2GameServerPacket;
+import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
 
 public final class DuelManager
 {
@@ -172,7 +172,7 @@ public final class DuelManager
 	 * @param player
 	 * @param packet
 	 */
-	public void broadcastToOppositTeam(PlayerInstance player, L2GameServerPacket packet)
+	public void broadcastToOppositTeam(PlayerInstance player, IGameServerPacket packet)
 	{
 		if ((player == null) || !player.isInDuel())
 		{

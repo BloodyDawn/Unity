@@ -20,30 +20,30 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import java.util.List;
 
+import javolution.util.FastList;
+
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExCursedWeaponList;
-
-import javolution.util.FastList;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format: (ch)
  * @author -Wooden-
  */
-public class RequestCursedWeaponList extends L2GameClientPacket
+public class RequestCursedWeaponList implements IGameClientPacket
 {
-	private static final String _C__D0_2A_REQUESTCURSEDWEAPONLIST = "[C] D0:2A RequestCursedWeaponList";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// nothing to read it's just a trigger
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		Creature activeChar = getClient().getActiveChar();
+		Creature activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -56,18 +56,6 @@ public class RequestCursedWeaponList extends L2GameClientPacket
 			list.add(id);
 		}
 		
-		activeChar.sendPacket(new ExCursedWeaponList(list));
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_2A_REQUESTCURSEDWEAPONLIST;
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
+		client.sendPacket(new ExCursedWeaponList(list));
 	}
 }

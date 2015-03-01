@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author mrTJO & UnAfraid
  */
-public class ExConfirmAddingContact extends L2GameServerPacket
+public class ExConfirmAddingContact implements IGameServerPacket
 {
 	private final String _charName;
 	private final boolean _added;
@@ -33,11 +36,12 @@ public class ExConfirmAddingContact extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0xD2);
-		writeS(_charName);
-		writeD(_added ? 0x01 : 0x00);
+		OutgoingPackets.EX_AGIT_AUCTION_CMD.writeId(packet);
+		
+		packet.writeS(_charName);
+		packet.writeD(_added ? 0x01 : 0x00);
+		return true;
 	}
 }

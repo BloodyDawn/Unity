@@ -18,10 +18,13 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
+
 /**
  * @author KenM
  */
-public final class ExBasicActionList extends L2GameServerPacket
+public final class ExBasicActionList implements IGameServerPacket
 {
 	//@formatter:off
 	public static final int[] ACTIONS_ON_TRANSFORM =
@@ -143,14 +146,15 @@ public final class ExBasicActionList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x60);
-		writeD(_actionIds.length);
+		OutgoingPackets.EX_BASIC_ACTION_LIST.writeId(packet);
+		
+		packet.writeD(_actionIds.length);
 		for (int _actionId : _actionIds)
 		{
-			writeD(_actionId);
+			packet.writeD(_actionId);
 		}
+		return true;
 	}
 }

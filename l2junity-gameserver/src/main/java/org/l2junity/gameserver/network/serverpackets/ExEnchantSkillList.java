@@ -22,8 +22,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class ExEnchantSkillList extends L2GameServerPacket
+public class ExEnchantSkillList implements IGameServerPacket
 {
 	public enum EnchantSkillType
 	{
@@ -47,17 +49,17 @@ public class ExEnchantSkillList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x29);
+		OutgoingPackets.EX_ENCHANT_SKILL_LIST.writeId(packet);
 		
-		writeD(_type.ordinal());
-		writeD(_skills.size());
+		packet.writeD(_type.ordinal());
+		packet.writeD(_skills.size());
 		for (Skill skill : _skills)
 		{
-			writeD(skill.getId());
-			writeD(skill.getLevel());
+			packet.writeD(skill.getId());
+			packet.writeD(skill.getLevel());
 		}
+		return true;
 	}
 }

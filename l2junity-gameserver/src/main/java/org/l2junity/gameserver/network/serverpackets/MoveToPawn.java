@@ -19,8 +19,10 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public class MoveToPawn extends L2GameServerPacket
+public class MoveToPawn implements IGameServerPacket
 {
 	private final int _charObjId;
 	private final int _targetId;
@@ -41,19 +43,20 @@ public class MoveToPawn extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x72);
+		OutgoingPackets.MOVE_TO_PAWN.writeId(packet);
 		
-		writeD(_charObjId);
-		writeD(_targetId);
-		writeD(_distance);
+		packet.writeD(_charObjId);
+		packet.writeD(_targetId);
+		packet.writeD(_distance);
 		
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
-		writeD(_tx);
-		writeD(_ty);
-		writeD(_tz);
+		packet.writeD(_x);
+		packet.writeD(_y);
+		packet.writeD(_z);
+		packet.writeD(_tx);
+		packet.writeD(_ty);
+		packet.writeD(_tz);
+		return true;
 	}
 }

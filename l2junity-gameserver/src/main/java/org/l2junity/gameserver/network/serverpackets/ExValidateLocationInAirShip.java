@@ -18,37 +18,40 @@
  */
 package org.l2junity.gameserver.network.serverpackets;
 
+import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * update 27.8.10
  * @author kerberos JIV
  */
-public class ExValidateLocationInAirShip extends L2GameServerPacket
+public class ExValidateLocationInAirShip implements IGameServerPacket
 {
 	private final PlayerInstance _activeChar;
-	private final int shipId, x, y, z, h;
+	private final int _shipId, _heading;
+	private final Location _loc;
 	
 	public ExValidateLocationInAirShip(PlayerInstance player)
 	{
 		_activeChar = player;
-		shipId = _activeChar.getAirShip().getObjectId();
-		x = player.getInVehiclePosition().getX();
-		y = player.getInVehiclePosition().getY();
-		z = player.getInVehiclePosition().getZ();
-		h = player.getHeading();
+		_shipId = _activeChar.getAirShip().getObjectId();
+		_loc = player.getInVehiclePosition();
+		_heading = player.getHeading();
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x70);
-		writeD(_activeChar.getObjectId());
-		writeD(shipId);
-		writeD(x);
-		writeD(y);
-		writeD(z);
-		writeD(h);
+		OutgoingPackets.EX_VALIDATE_LOCATION_IN_AIR_SHIP.writeId(packet);
+		
+		packet.writeD(_activeChar.getObjectId());
+		packet.writeD(_shipId);
+		packet.writeD(_loc.getX());
+		packet.writeD(_loc.getY());
+		packet.writeD(_loc.getZ());
+		packet.writeD(_heading);
+		return true;
 	}
 }

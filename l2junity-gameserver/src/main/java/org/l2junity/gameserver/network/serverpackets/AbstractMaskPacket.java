@@ -24,7 +24,7 @@ import org.l2junity.gameserver.model.interfaces.IUpdateTypeComponent;
  * @author UnAfraid
  * @param <T>
  */
-public abstract class AbstractMaskPacket<T extends IUpdateTypeComponent> extends L2GameServerPacket
+public abstract class AbstractMaskPacket<T extends IUpdateTypeComponent> implements IGameServerPacket
 {
 	protected static final byte[] DEFAULT_FLAG_ARRAY =
 	{
@@ -63,5 +63,15 @@ public abstract class AbstractMaskPacket<T extends IUpdateTypeComponent> extends
 	public boolean containsMask(int mask)
 	{
 		return (getMasks()[mask >> 3] & DEFAULT_FLAG_ARRAY[mask & 7]) != 0;
+	}
+	
+	/**
+	 * @param masks
+	 * @param type
+	 * @return {@code true} if the mask contains the current update component type
+	 */
+	public boolean containsMask(int masks, T type)
+	{
+		return (masks & type.getMask()) == type.getMask();
 	}
 }

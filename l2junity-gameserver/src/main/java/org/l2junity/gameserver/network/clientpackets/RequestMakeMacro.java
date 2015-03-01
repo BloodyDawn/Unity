@@ -21,59 +21,54 @@ package org.l2junity.gameserver.network.clientpackets;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2junity.Config;
 import org.l2junity.gameserver.enums.MacroType;
 import org.l2junity.gameserver.model.Macro;
 import org.l2junity.gameserver.model.MacroCmd;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.network.PacketReader;
 
-public final class RequestMakeMacro extends L2GameClientPacket
+public final class RequestMakeMacro implements IGameClientPacket
 {
-	private static final String _C__CD_REQUESTMAKEMACRO = "[C] CD RequestMakeMacro";
-	
 	private Macro _macro;
 	private int _commandsLenght = 0;
 	
 	private static final int MAX_MACRO_LENGTH = 12;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		int _id = readD();
-		String _name = readS();
-		String _desc = readS();
-		String _acronym = readS();
-		int _icon = readC();
-		int _count = readC();
-		if (_count > MAX_MACRO_LENGTH)
+		int _id = packet.readD();
+		String _name = packet.readS();
+		String _desc = packet.readS();
+		String _acronym = packet.readS();
+		int icon = packet.readC();
+		int count = packet.readC();
+		if (count > MAX_MACRO_LENGTH)
 		{
-			_count = MAX_MACRO_LENGTH;
+			count = MAX_MACRO_LENGTH;
 		}
 		
-		if (Config.DEBUG)
+		final List<MacroCmd> commands = new ArrayList<>(count);
+		for (int i = 0; i < count; i++)
 		{
-			_log.info("Make macro id:" + _id + "\tname:" + _name + "\tdesc:" + _desc + "\tacronym:" + _acronym + "\ticon:" + _icon + "\tcount:" + _count);
-		}
-		
-		final List<MacroCmd> commands = new ArrayList<>(_count);
-		for (int i = 0; i < _count; i++)
-		{
-			int entry = readC();
-			int type = readC(); // 1 = skill, 3 = action, 4 = shortcut
-			int d1 = readD(); // skill or page number for shortcuts
-			int d2 = readC();
-			String command = readS();
+			int entry = packet.readC();
+			int type = packet.readC(); // 1 = skill, 3 = action, 4 = shortcut
+			int d1 = packet.readD(); // skill or page number for shortcuts
+			int d2 = packet.readC();
+			String command = packet.readS();
 			_commandsLenght += command.length();
 			commands.add(new MacroCmd(entry, MacroType.values()[(type < 1) || (type > 6) ? 0 : type], d1, d2, command));
 		}
-		_macro = new Macro(_id, _icon, _name, _desc, _acronym, commands);
+		_macro = new Macro(_id, icon, _name, _desc, _acronym, commands);
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		PlayerInstance player = getClient().getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -103,11 +98,5 @@ public final class RequestMakeMacro extends L2GameClientPacket
 			return;
 		}
 		player.registerMacro(_macro);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__CD_REQUESTMAKEMACRO;
 	}
 }

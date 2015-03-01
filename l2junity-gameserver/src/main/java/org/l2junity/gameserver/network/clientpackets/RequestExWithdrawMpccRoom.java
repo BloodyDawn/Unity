@@ -21,39 +21,33 @@ package org.l2junity.gameserver.network.clientpackets;
 import org.l2junity.gameserver.enums.MatchingRoomType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.matching.MatchingRoom;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * @author Sdw
  */
-public class RequestExWithdrawMpccRoom extends L2GameClientPacket
+public class RequestExWithdrawMpccRoom implements IGameClientPacket
 {
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// Nothing to read
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getActiveChar();
-		
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
 		final MatchingRoom room = activeChar.getMatchingRoom();
-		
 		if ((room != null) && (room.getRoomType() == MatchingRoomType.COMMAND_CHANNEL))
 		{
 			room.deleteMember(activeChar, false);
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return getClass().getSimpleName();
 	}
 }

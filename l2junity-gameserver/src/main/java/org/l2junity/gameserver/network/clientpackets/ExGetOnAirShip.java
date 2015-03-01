@@ -18,40 +18,36 @@
  */
 package org.l2junity.gameserver.network.clientpackets;
 
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
+
 /**
  * Format: (c) dddd d: dx d: dy d: dz d: AirShip id ??
  * @author -Wooden-
  */
-public class ExGetOnAirShip extends L2GameClientPacket
+public class ExGetOnAirShip implements IGameClientPacket
 {
-	private static final String _C__D0_36_EXGETONAIRSHIP = "[C] D0:36 ExGetOnAirShip";
-	
 	private int _x;
 	private int _y;
 	private int _z;
 	private int _shipId;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_x = readD();
-		_y = readD();
-		_z = readD();
-		_shipId = readD();
+		_x = packet.readD();
+		_y = packet.readD();
+		_z = packet.readD();
+		_shipId = packet.readD();
+		return false;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		_log.info("[T1:ExGetOnAirShip] x: " + _x);
 		_log.info("[T1:ExGetOnAirShip] y: " + _y);
 		_log.info("[T1:ExGetOnAirShip] z: " + _z);
 		_log.info("[T1:ExGetOnAirShip] ship ID: " + _shipId);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_36_EXGETONAIRSHIP;
 	}
 }

@@ -25,27 +25,27 @@ import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.model.CursedWeapon;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.serverpackets.ExCursedWeaponLocation;
 import org.l2junity.gameserver.network.serverpackets.ExCursedWeaponLocation.CursedWeaponInfo;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format: (ch)
  * @author -Wooden-
  */
-public final class RequestCursedWeaponLocation extends L2GameClientPacket
+public final class RequestCursedWeaponLocation implements IGameClientPacket
 {
-	private static final String _C__D0_2B_REQUESTCURSEDWEAPONLOCATION = "[C] D0:2B RequestCursedWeaponLocation";
-	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		// nothing to read it's just a trigger
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
@@ -69,19 +69,7 @@ public final class RequestCursedWeaponLocation extends L2GameClientPacket
 		// send the ExCursedWeaponLocation
 		if (!list.isEmpty())
 		{
-			activeChar.sendPacket(new ExCursedWeaponLocation(list));
+			client.sendPacket(new ExCursedWeaponLocation(list));
 		}
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_2B_REQUESTCURSEDWEAPONLOCATION;
-	}
-	
-	@Override
-	protected boolean triggersOnActionRequest()
-	{
-		return false;
 	}
 }

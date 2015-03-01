@@ -19,8 +19,10 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
-public final class TeleportToLocation extends L2GameServerPacket
+public final class TeleportToLocation implements IGameServerPacket
 {
 	private final int _targetObjId;
 	private final int _x;
@@ -38,14 +40,16 @@ public final class TeleportToLocation extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x22);
-		writeD(_targetObjId);
-		writeD(_x);
-		writeD(_y);
-		writeD(_z);
-		writeD(0x00); // isValidation ??
-		writeD(_heading); // nYaw
+		OutgoingPackets.TELEPORT_TO_LOCATION.writeId(packet);
+		
+		packet.writeD(_targetObjId);
+		packet.writeD(_x);
+		packet.writeD(_y);
+		packet.writeD(_z);
+		packet.writeD(0x00); // isValidation ??
+		packet.writeD(_heading); // nYaw
+		return true;
 	}
 }

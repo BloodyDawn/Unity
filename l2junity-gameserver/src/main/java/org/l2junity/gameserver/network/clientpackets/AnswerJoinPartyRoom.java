@@ -20,26 +20,29 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.matching.MatchingRoom;
+import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format: (ch) d
  * @author -Wooden-, Tryskell
  */
-public final class AnswerJoinPartyRoom extends L2GameClientPacket
+public final class AnswerJoinPartyRoom implements IGameClientPacket
 {
 	private boolean _answer;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_answer = readD() == 1;
+		_answer = packet.readD() == 1;
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
-		final PlayerInstance player = getActiveChar();
+		final PlayerInstance player = client.getActiveChar();
 		if (player == null)
 		{
 			return;
@@ -71,11 +74,5 @@ public final class AnswerJoinPartyRoom extends L2GameClientPacket
 		// reset transaction timers
 		player.setActiveRequester(null);
 		partner.onTransactionResponse();
-	}
-	
-	@Override
-	public String getType()
-	{
-		return AnswerJoinPartyRoom.class.getSimpleName();
 	}
 }

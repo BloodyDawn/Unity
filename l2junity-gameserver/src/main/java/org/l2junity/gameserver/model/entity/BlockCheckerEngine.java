@@ -330,7 +330,7 @@ public final class BlockCheckerEngine
 		// In event used skills
 		private final Skill _freeze, _transformationRed, _transformationBlue;
 		// Common and unparametizer packet
-		private final ExCubeGameCloseUI _closeUserInterface = new ExCubeGameCloseUI();
+		private final ExCubeGameCloseUI _closeUserInterface = ExCubeGameCloseUI.STATIC_PACKET;
 		
 		public StartEvent()
 		{

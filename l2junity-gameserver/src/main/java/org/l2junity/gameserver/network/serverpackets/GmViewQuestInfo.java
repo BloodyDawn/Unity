@@ -21,11 +21,13 @@ package org.l2junity.gameserver.network.serverpackets;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Tempy
  */
-public class GmViewQuestInfo extends L2GameServerPacket
+public class GmViewQuestInfo implements IGameServerPacket
 {
 	
 	private final PlayerInstance _activeChar;
@@ -36,23 +38,25 @@ public class GmViewQuestInfo extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x99);
-		writeS(_activeChar.getName());
+		OutgoingPackets.GM_VIEW_QUEST_INFO.writeId(packet);
+		
+		packet.writeS(_activeChar.getName());
 		
 		Quest[] questList = _activeChar.getAllActiveQuests();
 		
-		writeH(questList.length); // quest count
+		packet.writeH(questList.length); // quest count
 		
 		for (Quest q : questList)
 		{
 			final QuestState qs = _activeChar.getQuestState(q.getName());
 			
-			writeD(q.getId());
-			writeD(qs == null ? 0 : qs.getInt("cond"));
+			packet.writeD(q.getId());
+			packet.writeD(qs == null ? 0 : qs.getCond());
 		}
-		writeH(0x00); // some size
+		packet.writeH(0x00); // some size
 		// for size; ddQQ
+		return true;
 	}
 }

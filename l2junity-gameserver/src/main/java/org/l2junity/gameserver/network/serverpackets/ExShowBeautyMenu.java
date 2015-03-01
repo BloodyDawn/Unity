@@ -19,15 +19,18 @@
 package org.l2junity.gameserver.network.serverpackets;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * @author Sdw
  */
-public class ExShowBeautyMenu extends L2GameServerPacket
+public class ExShowBeautyMenu implements IGameServerPacket
 {
 	private final PlayerInstance _activeChar;
 	private final int _type;
 	
+	// TODO: Enum
 	public final static int MODIFY_APPEARANCE = 0;
 	public final static int RESTORE_APPEARANCE = 1;
 	
@@ -38,14 +41,14 @@ public class ExShowBeautyMenu extends L2GameServerPacket
 	}
 	
 	@Override
-	protected void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xFE);
-		writeH(0x134);
+		OutgoingPackets.EX_SHOW_BEAUTY_MENU.writeId(packet);
 		
-		writeD(_type);
-		writeD(_activeChar.getVisualHair());
-		writeD(_activeChar.getVisualHairColor());
-		writeD(_activeChar.getVisualFace());
+		packet.writeD(_type);
+		packet.writeD(_activeChar.getVisualHair());
+		packet.writeD(_activeChar.getVisualHairColor());
+		packet.writeD(_activeChar.getVisualFace());
+		return true;
 	}
 }

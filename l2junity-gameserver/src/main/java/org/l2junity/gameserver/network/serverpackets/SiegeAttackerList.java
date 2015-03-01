@@ -25,6 +25,8 @@ import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.SiegeClan;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 /**
  * Populates the Siege Attacker List in the SiegeInfo Window<BR>
@@ -48,7 +50,7 @@ import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
  * d = AllyCrestID<BR>
  * @author KenM
  */
-public final class SiegeAttackerList extends L2GameServerPacket
+public final class SiegeAttackerList implements IGameServerPacket
 {
 	private Castle _castle;
 	private SiegableHall _hall;
@@ -64,23 +66,23 @@ public final class SiegeAttackerList extends L2GameServerPacket
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0xca);
+		OutgoingPackets.CASTLE_SIEGE_ATTACKER_LIST.writeId(packet);
 		
 		if (_castle != null)
 		{
-			writeD(_castle.getResidenceId());
-			writeD(0x00); // 0
-			writeD(0x01); // 1
-			writeD(0x00); // 0
+			packet.writeD(_castle.getResidenceId());
+			packet.writeD(0x00); // 0
+			packet.writeD(0x01); // 1
+			packet.writeD(0x00); // 0
 			int size = _castle.getSiege().getAttackerClans().size();
 			if (size > 0)
 			{
 				L2Clan clan;
 				
-				writeD(size);
-				writeD(size);
+				packet.writeD(size);
+				packet.writeD(size);
 				for (SiegeClan siegeclan : _castle.getSiege().getAttackerClans())
 				{
 					clan = ClanTable.getInstance().getClan(siegeclan.getClanId());
@@ -89,35 +91,35 @@ public final class SiegeAttackerList extends L2GameServerPacket
 						continue;
 					}
 					
-					writeD(clan.getId());
-					writeS(clan.getName());
-					writeS(clan.getLeaderName());
-					writeD(clan.getCrestId());
-					writeD(0x00); // signed time (seconds) (not storated by L2J)
-					writeD(clan.getAllyId());
-					writeS(clan.getAllyName());
-					writeS(""); // AllyLeaderName
-					writeD(clan.getAllyCrestId());
+					packet.writeD(clan.getId());
+					packet.writeS(clan.getName());
+					packet.writeS(clan.getLeaderName());
+					packet.writeD(clan.getCrestId());
+					packet.writeD(0x00); // signed time (seconds) (not storated by L2J)
+					packet.writeD(clan.getAllyId());
+					packet.writeS(clan.getAllyName());
+					packet.writeS(""); // AllyLeaderName
+					packet.writeD(clan.getAllyCrestId());
 				}
 			}
 			else
 			{
-				writeD(0x00);
-				writeD(0x00);
+				packet.writeD(0x00);
+				packet.writeD(0x00);
 			}
 		}
 		else
 		{
-			writeD(_hall.getId());
-			writeD(0x00); // 0
-			writeD(0x01); // 1
-			writeD(0x00); // 0
+			packet.writeD(_hall.getId());
+			packet.writeD(0x00); // 0
+			packet.writeD(0x01); // 1
+			packet.writeD(0x00); // 0
 			final Collection<SiegeClan> attackers = _hall.getSiege().getAttackerClans();
 			final int size = attackers.size();
 			if (size > 0)
 			{
-				writeD(size);
-				writeD(size);
+				packet.writeD(size);
+				packet.writeD(size);
 				for (SiegeClan sClan : attackers)
 				{
 					final L2Clan clan = ClanTable.getInstance().getClan(sClan.getClanId());
@@ -126,22 +128,23 @@ public final class SiegeAttackerList extends L2GameServerPacket
 						continue;
 					}
 					
-					writeD(clan.getId());
-					writeS(clan.getName());
-					writeS(clan.getLeaderName());
-					writeD(clan.getCrestId());
-					writeD(0x00); // signed time (seconds) (not storated by L2J)
-					writeD(clan.getAllyId());
-					writeS(clan.getAllyName());
-					writeS(""); // AllyLeaderName
-					writeD(clan.getAllyCrestId());
+					packet.writeD(clan.getId());
+					packet.writeS(clan.getName());
+					packet.writeS(clan.getLeaderName());
+					packet.writeD(clan.getCrestId());
+					packet.writeD(0x00); // signed time (seconds) (not storated by L2J)
+					packet.writeD(clan.getAllyId());
+					packet.writeS(clan.getAllyName());
+					packet.writeS(""); // AllyLeaderName
+					packet.writeD(clan.getAllyCrestId());
 				}
 			}
 			else
 			{
-				writeD(0x00);
-				writeD(0x00);
+				packet.writeD(0x00);
+				packet.writeD(0x00);
 			}
 		}
+		return true;
 	}
 }

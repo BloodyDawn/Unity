@@ -23,6 +23,8 @@ import java.util.List;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.OutgoingPackets;
+import org.l2junity.network.PacketWriter;
 
 public final class ItemList extends AbstractItemPacket
 {
@@ -42,25 +44,23 @@ public final class ItemList extends AbstractItemPacket
 				_items.add(item);
 			}
 		}
+		
+		activeChar.sendPacket(new ExQuestItemList(activeChar));
+		activeChar.sendPacket(new ExAdenaInvenCount(activeChar));
 	}
 	
 	@Override
-	protected final void writeImpl()
+	public boolean write(PacketWriter packet)
 	{
-		writeC(0x11);
-		writeH(_showWindow ? 0x01 : 0x00);
-		writeH(_items.size());
+		OutgoingPackets.ITEM_LIST.writeId(packet);
+		
+		packet.writeH(_showWindow ? 0x01 : 0x00);
+		packet.writeH(_items.size());
 		for (ItemInstance item : _items)
 		{
-			writeItem(item);
+			writeItem(packet, item);
 		}
-		writeInventoryBlock(_activeChar.getInventory());
-	}
-	
-	@Override
-	public void runImpl()
-	{
-		getClient().sendPacket(new ExQuestItemList(_activeChar));
-		getClient().sendPacket(new ExAdenaInvenCount(_activeChar));
+		writeInventoryBlock(packet, _activeChar.getInventory());
+		return true;
 	}
 }

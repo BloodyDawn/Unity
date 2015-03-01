@@ -20,24 +20,26 @@ package org.l2junity.gameserver.network.clientpackets;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.network.PacketReader;
 
 /**
  * Format: (ch)S S: Character Name
  * @author UnAfraid & mrTJO
  */
-public class RequestExDeleteContactFromContactList extends L2GameClientPacket
+public class RequestExDeleteContactFromContactList implements IGameClientPacket
 {
-	private static final String _C__D0_85_REQUESTEXDELETECONTACTFROMCONTACTLIST = "[C] D0:85 RequestExDeleteContactFromContactList";
 	private String _name;
 	
 	@Override
-	protected void readImpl()
+	public boolean read(PacketReader packet)
 	{
-		_name = readS();
+		_name = packet.readS();
+		return true;
 	}
 	
 	@Override
-	protected void runImpl()
+	public void run(L2GameClient client)
 	{
 		if (!Config.ALLOW_MAIL)
 		{
@@ -49,18 +51,12 @@ public class RequestExDeleteContactFromContactList extends L2GameClientPacket
 			return;
 		}
 		
-		final PlayerInstance activeChar = getClient().getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
 		activeChar.getContactList().remove(_name);
-	}
-	
-	@Override
-	public String getType()
-	{
-		return _C__D0_85_REQUESTEXDELETECONTACTFROMCONTACTLIST;
 	}
 }
