@@ -52,7 +52,6 @@ public class GameServer
 		_name = name;
 		_showing = showing;
 		_ageLimit = ageLimit;
-		
 		_serverTypes = serverTypes;
 	}
 	
