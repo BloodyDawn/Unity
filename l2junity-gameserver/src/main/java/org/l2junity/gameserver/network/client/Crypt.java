@@ -23,9 +23,9 @@ import io.netty.buffer.ByteBuf;
 import org.l2junity.network.ICrypt;
 
 /**
- * @author KenM
+ * @author UnAfraid, Nos
  */
-public class GameCrypt implements ICrypt
+public class Crypt implements ICrypt
 {
 	private final byte[] _inKey = new byte[16];
 	private final byte[] _outKey = new byte[16];
@@ -55,7 +55,7 @@ public class GameCrypt implements ICrypt
 			buf.setByte(buf.readerIndex() - 1, a);
 		}
 		
-		shifKey(_outKey, buf.writerIndex());
+		shiftKey(_outKey, buf.writerIndex());
 	}
 	
 	@Override
@@ -75,10 +75,10 @@ public class GameCrypt implements ICrypt
 			a = b;
 		}
 		
-		shifKey(_inKey, buf.writerIndex());
+		shiftKey(_inKey, buf.writerIndex());
 	}
 	
-	private void shifKey(byte[] key, int size)
+	private void shiftKey(byte[] key, int size)
 	{
 		int old = key[8] & 0xff;
 		old |= (key[9] << 8) & 0xff00;

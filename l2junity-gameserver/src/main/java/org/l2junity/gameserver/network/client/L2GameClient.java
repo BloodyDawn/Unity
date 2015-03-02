@@ -93,7 +93,7 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 	protected ScheduledFuture<?> _cleanupTask = null;
 	
 	// Crypt
-	private final GameCrypt _crypt;
+	private final Crypt _crypt;
 	
 	private boolean _isDetached = false;
 	
@@ -104,7 +104,7 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 	public L2GameClient()
 	{
 		_connectionStartTime = System.currentTimeMillis();
-		_crypt = new GameCrypt();
+		_crypt = new Crypt();
 		
 		if (Config.CHAR_STORE_INTERVAL > 0)
 		{

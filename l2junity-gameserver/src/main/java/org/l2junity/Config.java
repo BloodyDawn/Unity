@@ -1098,7 +1098,7 @@ public final class Config
 			final PropertiesParser serverSettings = new PropertiesParser(CONFIGURATION_FILE);
 			
 			ENABLE_UPNP = serverSettings.getBoolean("EnableUPnP", true);
-			GAMESERVER_HOSTNAME = serverSettings.getString("GameserverHostname", "*");
+			GAMESERVER_HOSTNAME = serverSettings.getString("GameserverHostname", "0.0.0.0");
 			PORT_GAME = serverSettings.getInt("GameserverPort", 7777);
 			
 			GAME_SERVER_LOGIN_PORT = serverSettings.getInt("LoginPort", 9014);

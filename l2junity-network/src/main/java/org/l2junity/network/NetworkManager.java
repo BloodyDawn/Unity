@@ -72,7 +72,7 @@ public class NetworkManager
 		}
 		
 		_channelFuture = _serverBootstrap.bind(_host, _port).sync();
-		_log.log(Level.INFO, getClass().getSimpleName() + ": Listening on *:" + _port);
+		_log.log(Level.INFO, getClass().getSimpleName() + ": Listening on " + _host + ":" + _port);
 	}
 	
 	public void stop() throws InterruptedException
