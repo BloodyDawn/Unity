@@ -24,7 +24,7 @@ import org.l2junity.loginserver.network.client.ClientInitializer;
 import org.l2junity.network.NetworkManager;
 
 /**
- * @author UnAfraid
+ * @author Nos
  */
 public class GameServerNetworkManager extends NetworkManager
 {

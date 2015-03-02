@@ -50,8 +50,8 @@ public class LoginServer
 			
 			printSection("Network");
 			KeyManager.getInstance();
+			GameServerNetworkManager.getInstance().start();
 			ClientNetworkManager.getInstance().start();
-			GameServerNetworkManager.getInstance();
 		}
 		catch (Exception e)
 		{

@@ -25,9 +25,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * @author UnAfraid
+ * @author Nos
  */
-public class GameServerHandler extends SimpleChannelInboundHandler<Object>
+public class GameServerHandler extends SimpleChannelInboundHandler<GameServerHandler>
 {
 	private static final Logger _log = Logger.getLogger(GameServerHandler.class.getName());
 	
@@ -37,7 +37,7 @@ public class GameServerHandler extends SimpleChannelInboundHandler<Object>
 	}
 	
 	@Override
-	protected void messageReceived(ChannelHandlerContext ctx, Object msg)
+	protected void messageReceived(ChannelHandlerContext ctx, GameServerHandler msg)
 	{
 		// TODO Auto-generated method stub
 		
