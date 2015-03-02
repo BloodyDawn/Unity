@@ -20,7 +20,6 @@ package org.l2junity;
 
 import java.io.IOException;
 import java.net.InetAddress;
-import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -61,26 +60,17 @@ public class UPnPService
 		}
 		
 		_log.log(Level.INFO, "Looking for UPnP Gateway Devices...");
+		_gatewayDiscover.discover();
 		
-		final Map<InetAddress, GatewayDevice> gateways = _gatewayDiscover.discover();
-		if (gateways.isEmpty())
-		{
-			_log.log(Level.INFO, "No UPnP gateways found");
-			return;
-		}
-		
-		// choose the first active gateway for the tests
+		// Choose the first active gateway for the tests
 		_activeGW = _gatewayDiscover.getValidGateway();
-		if (_activeGW != null)
-		{
-			_log.log(Level.INFO, "Using UPnP gateway: " + _activeGW.getFriendlyName());
-		}
-		else
+		if (_activeGW == null)
 		{
 			_log.log(Level.INFO, "No active UPnP gateway found");
 			return;
 		}
 		
+		_log.log(Level.INFO, "Using UPnP gateway: " + _activeGW.getFriendlyName());
 		_log.log(Level.INFO, "Using local address: " + _activeGW.getLocalAddress().getHostAddress() + " External address: " + _activeGW.getExternalIPAddress());
 		
 		if (Server.serverMode == Server.MODE_GAMESERVER)
