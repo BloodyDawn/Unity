@@ -22,6 +22,7 @@ import instances.AbstractInstance;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import javolution.util.FastList;
 
@@ -50,7 +51,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	{
 		protected final FastList<Npc> anakimGroup = new FastList<>();
 		protected final FastList<Npc> lilithGroup = new FastList<>();
-		protected int countKill = 0;
+		protected AtomicInteger countKill = new AtomicInteger();
 	}
 	
 	// NPCs
@@ -150,7 +151,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	
 	private synchronized void checkDoors(Npc npc, DNPWorld world)
 	{
-		switch (world.countKill)
+		switch (world.countKill.get())
 		{
 			case 4:
 				openDoor(DOOR_1, world.getInstanceId());
@@ -380,7 +381,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 		if (tmpworld instanceof DNPWorld)
 		{
 			final DNPWorld world = (DNPWorld) tmpworld;
-			world.countKill++;
+			world.countKill.incrementAndGet();
 			checkDoors(npc, world);
 		}
 		
