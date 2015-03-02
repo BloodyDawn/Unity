@@ -18,6 +18,8 @@
  */
 package org.l2junity.network;
 
+import java.util.Set;
+
 /**
  * @author Nos
  * @param <T>
@@ -27,4 +29,6 @@ public interface IIncomingPackets<T extends IIncomingPacket<?>> extends IConnect
 	public int getPacketId();
 	
 	public T newIncomingPacket();
+	
+	public Set<IConnectionState> getConnectionStates();
 }

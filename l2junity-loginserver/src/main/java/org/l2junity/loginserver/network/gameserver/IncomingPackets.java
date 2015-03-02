@@ -19,6 +19,8 @@
 package org.l2junity.loginserver.network.gameserver;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.function.Supplier;
 
 import org.l2junity.network.IConnectionState;
@@ -30,7 +32,7 @@ import org.l2junity.network.IIncomingPackets;
  */
 enum IncomingPackets implements IIncomingPackets<IIncomingPacket<GameServerHandler>>
 {
-	NONE(0, null, null);
+	NONE(0, null, null, null);
 	
 	public static final IncomingPackets[] PACKET_ARRAY;
 	
@@ -46,9 +48,9 @@ enum IncomingPackets implements IIncomingPackets<IIncomingPacket<GameServerHandl
 	
 	private short _packetId;
 	private Supplier<IIncomingPacket<GameServerHandler>> _incomingPacketFactory;
-	private IConnectionState _connectionState;
+	private Set<IConnectionState> _connectionStates;
 	
-	private IncomingPackets(int packetId, Supplier<IIncomingPacket<GameServerHandler>> incomingPacketFactory, IConnectionState connectionState)
+	private IncomingPackets(int packetId, Supplier<IIncomingPacket<GameServerHandler>> incomingPacketFactory, IConnectionState... connectionStates)
 	{
 		// packetId is an unsigned byte
 		if (packetId > 0xFF)
@@ -58,7 +60,7 @@ enum IncomingPackets implements IIncomingPackets<IIncomingPacket<GameServerHandl
 		
 		_packetId = (short) packetId;
 		_incomingPacketFactory = incomingPacketFactory;
-		_connectionState = connectionState;
+		_connectionStates = new HashSet<>(Arrays.asList(connectionStates));
 	}
 	
 	@Override
@@ -68,14 +70,14 @@ enum IncomingPackets implements IIncomingPackets<IIncomingPacket<GameServerHandl
 	}
 	
 	@Override
-	public IConnectionState getState()
-	{
-		return _connectionState;
-	}
-	
-	@Override
 	public IIncomingPacket<GameServerHandler> newIncomingPacket()
 	{
 		return _incomingPacketFactory.get();
+	}
+	
+	@Override
+	public Set<IConnectionState> getConnectionStates()
+	{
+		return _connectionStates;
 	}
 }

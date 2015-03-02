@@ -19,6 +19,8 @@
 package org.l2junity.loginserver.network.client;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.function.Supplier;
 
 import org.l2junity.loginserver.network.client.receive.RequestAuthLogin;
@@ -55,9 +57,9 @@ enum IncomingPackets implements IIncomingPackets<IIncomingPacket<ClientHandler>>
 	
 	private short _packetId;
 	private Supplier<IIncomingPacket<ClientHandler>> _incomingPacketFactory;
-	private IConnectionState _connectionState;
+	private Set<IConnectionState> _connectionStates;
 	
-	private IncomingPackets(int packetId, Supplier<IIncomingPacket<ClientHandler>> incomingPacketFactory, IConnectionState connectionState)
+	private IncomingPackets(int packetId, Supplier<IIncomingPacket<ClientHandler>> incomingPacketFactory, IConnectionState... connectionStates)
 	{
 		// packetId is an unsigned byte
 		if (packetId > 0xFF)
@@ -67,7 +69,7 @@ enum IncomingPackets implements IIncomingPackets<IIncomingPacket<ClientHandler>>
 		
 		_packetId = (short) packetId;
 		_incomingPacketFactory = incomingPacketFactory;
-		_connectionState = connectionState;
+		_connectionStates = new HashSet<>(Arrays.asList(connectionStates));
 	}
 	
 	@Override
@@ -77,14 +79,14 @@ enum IncomingPackets implements IIncomingPackets<IIncomingPacket<ClientHandler>>
 	}
 	
 	@Override
-	public IConnectionState getState()
-	{
-		return _connectionState;
-	}
-	
-	@Override
 	public IIncomingPacket<ClientHandler> newIncomingPacket()
 	{
 		return _incomingPacketFactory.get();
+	}
+	
+	@Override
+	public Set<IConnectionState> getConnectionStates()
+	{
+		return _connectionStates;
 	}
 }

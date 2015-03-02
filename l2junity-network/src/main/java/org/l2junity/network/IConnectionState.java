@@ -26,6 +26,4 @@ import io.netty.util.AttributeKey;
 public interface IConnectionState
 {
 	public static final AttributeKey<IConnectionState> ATTRIBUTE_KEY = AttributeKey.valueOf(IConnectionState.class, "");
-	
-	public IConnectionState getState();
 }

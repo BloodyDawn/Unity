@@ -75,9 +75,9 @@ public class PacketDecoder extends LengthFieldBasedFrameDecoder
 		}
 		
 		final IConnectionState connectionState = ctx.channel().attr(IConnectionState.ATTRIBUTE_KEY).get();
-		if ((connectionState == null) || (connectionState.getState() != incomingPacket.getState()))
+		if ((connectionState == null) || !incomingPacket.getConnectionStates().contains(connectionState))
 		{
-			System.out.println(" Connection at invalid state: " + connectionState + " Required State: " + incomingPacket.getState());
+			System.out.println(" Connection at invalid state: " + connectionState + " Required State: " + incomingPacket.getConnectionStates());
 			return null;
 		}
 		

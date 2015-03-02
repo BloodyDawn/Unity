@@ -30,10 +30,4 @@ public enum ConnectionState implements IConnectionState
 	CLOSING,
 	AUTHENTICATED,
 	IN_GAME;
-	
-	@Override
-	public IConnectionState getState()
-	{
-		return this;
-	}
 }

@@ -31,10 +31,4 @@ public enum ConnectionState implements IConnectionState
 	AUTHED_LICENCE,
 	AUTHED_SERVER_LIST,
 	AUTHING;
-	
-	@Override
-	public IConnectionState getState()
-	{
-		return this;
-	}
 }

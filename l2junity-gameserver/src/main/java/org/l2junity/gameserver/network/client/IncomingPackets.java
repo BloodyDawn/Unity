@@ -19,6 +19,8 @@
 package org.l2junity.gameserver.network.client;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.function.Supplier;
 
 import org.l2junity.gameserver.network.client.recv.*;
@@ -37,7 +39,7 @@ enum IncomingPackets implements IIncomingPackets<IIncomingPacket<L2GameClient>>
 {
 	PROTOCOL_VERSION(0x0E, ProtocolVersion::new, ConnectionState.CONNECTED),
 	AUTH_LOGIN(0x2B, AuthLogin::new, ConnectionState.CONNECTED),
-	LOGOUT(0x00, Logout::new, ConnectionState.AUTHENTICATED), // ConnectionState.IN_GAME
+	LOGOUT(0x00, Logout::new, ConnectionState.AUTHENTICATED, ConnectionState.IN_GAME),
 	CHARACTER_CREATE(0x0C, CharacterCreate::new, ConnectionState.AUTHENTICATED),
 	CHARACTER_DELETE(0x0D, CharacterDelete::new, ConnectionState.AUTHENTICATED),
 	CHARACTER_SELECT(0x12, CharacterSelect::new, ConnectionState.AUTHENTICATED),
@@ -205,9 +207,9 @@ enum IncomingPackets implements IIncomingPackets<IIncomingPacket<L2GameClient>>
 	
 	private short _packetId;
 	private Supplier<IIncomingPacket<L2GameClient>> _incomingPacketFactory;
-	private IConnectionState _connectionState;
+	private Set<IConnectionState> _connectionStates;
 	
-	private IncomingPackets(int packetId, Supplier<IIncomingPacket<L2GameClient>> incomingPacketFactory, IConnectionState connectionState)
+	private IncomingPackets(int packetId, Supplier<IIncomingPacket<L2GameClient>> incomingPacketFactory, IConnectionState... connectionStates)
 	{
 		// packetId is an unsigned byte
 		if (packetId > 0xFF)
@@ -217,7 +219,7 @@ enum IncomingPackets implements IIncomingPackets<IIncomingPacket<L2GameClient>>
 		
 		_packetId = (short) packetId;
 		_incomingPacketFactory = incomingPacketFactory;
-		_connectionState = connectionState;
+		_connectionStates = new HashSet<>(Arrays.asList(connectionStates));
 	}
 	
 	@Override
@@ -227,14 +229,14 @@ enum IncomingPackets implements IIncomingPackets<IIncomingPacket<L2GameClient>>
 	}
 	
 	@Override
-	public IConnectionState getState()
-	{
-		return _connectionState;
-	}
-	
-	@Override
 	public IIncomingPacket<L2GameClient> newIncomingPacket()
 	{
 		return _incomingPacketFactory.get();
+	}
+	
+	@Override
+	public Set<IConnectionState> getConnectionStates()
+	{
+		return _connectionStates;
 	}
 }
