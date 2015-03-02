@@ -134,19 +134,19 @@ public class DatabaseFactory
 	 */
 	public Handle getHandle() throws DBIException
 	{
-		Handle con = null;
-		while (con == null)
+		Handle handle = null;
+		while (handle == null)
 		{
 			try
 			{
-				con = _dbi.open();
+				handle = _dbi.open();
 			}
 			catch (UnableToObtainConnectionException e)
 			{
 				_log.log(Level.WARNING, getClass().getSimpleName() + ": getHandle() failed, trying again", e);
 			}
 		}
-		return _dbi.open();
+		return handle;
 	}
 	
 	public <R> R withHandle(HandleCallback<R> callback) throws DBIException
