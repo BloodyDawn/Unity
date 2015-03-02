@@ -107,6 +107,6 @@ public class GameServer
 	 */
 	public int getServerTypesMask()
 	{
-		return _serverTypes.stream().mapToInt(s -> s.getMask()).reduce((r, e) -> r | e).orElse(0);
+		return _serverTypes.stream().mapToInt(ServerType::getMask).reduce((r, e) -> r | e).orElse(0);
 	}
 }
