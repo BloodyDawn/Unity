@@ -43,6 +43,6 @@ public abstract class ChannelInboundHandler<T extends ChannelInboundHandler<?>> 
 	
 	public IConnectionState getConnectionState()
 	{
-		return _channel.attr(IConnectionState.ATTRIBUTE_KEY).get();
+		return _channel != null ? _channel.attr(IConnectionState.ATTRIBUTE_KEY).get() : null;
 	}
 }

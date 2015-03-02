@@ -127,7 +127,7 @@ enum IncomingPackets implements IIncomingPackets<IIncomingPacket<L2GameClient>>
 	REQUEST_FRIEND_DEL(0x7A, RequestFriendDel::new, ConnectionState.IN_GAME),
 	REQUEST_ACQUIRE_SKILL(0x7C, RequestAcquireSkill::new, ConnectionState.IN_GAME),
 	REQUEST_RESTART_POINT(0x7D, RequestRestartPoint::new, ConnectionState.IN_GAME),
-	REQUEST_G_M_COMMAND(0x7E, RequestGMCommand::new, ConnectionState.IN_GAME),
+	REQUEST_GM_COMMAND(0x7E, RequestGMCommand::new, ConnectionState.IN_GAME),
 	REQUEST_PARTY_MATCH_CONFIG(0x7F, RequestPartyMatchConfig::new, ConnectionState.IN_GAME),
 	REQUEST_PARTY_MATCH_LIST(0x80, RequestPartyMatchList::new, ConnectionState.IN_GAME),
 	REQUEST_PARTY_MATCH_DETAIL(0x81, RequestPartyMatchDetail::new, ConnectionState.IN_GAME),
