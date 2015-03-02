@@ -22,8 +22,8 @@ import java.util.StringTokenizer;
 
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
-import org.l2junity.gameserver.network.serverpackets.ActionFailed;
-import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
+import org.l2junity.gameserver.network.client.send.ActionFailed;
+import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 
 public class L2FortDoormenInstance extends L2DoormenInstance
 {

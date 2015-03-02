@@ -28,10 +28,10 @@ import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.handler.IChatHandler;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.CreatureSay;
-import org.l2junity.gameserver.network.serverpackets.ExWorldChatCnt;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.CreatureSay;
+import org.l2junity.gameserver.network.client.send.ExWorldChatCnt;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 
 /**
  * World chat handler.

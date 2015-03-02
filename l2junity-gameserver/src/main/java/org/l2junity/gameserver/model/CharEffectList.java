@@ -46,11 +46,11 @@ import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.EffectScope;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.serverpackets.AbnormalStatusUpdate;
-import org.l2junity.gameserver.network.serverpackets.ExAbnormalStatusUpdateFromTarget;
-import org.l2junity.gameserver.network.serverpackets.ExOlympiadSpelledInfo;
-import org.l2junity.gameserver.network.serverpackets.PartySpelled;
-import org.l2junity.gameserver.network.serverpackets.ShortBuffStatusUpdate;
+import org.l2junity.gameserver.network.client.send.AbnormalStatusUpdate;
+import org.l2junity.gameserver.network.client.send.ExAbnormalStatusUpdateFromTarget;
+import org.l2junity.gameserver.network.client.send.ExOlympiadSpelledInfo;
+import org.l2junity.gameserver.network.client.send.PartySpelled;
+import org.l2junity.gameserver.network.client.send.ShortBuffStatusUpdate;
 
 /**
  * Effect lists.<br>

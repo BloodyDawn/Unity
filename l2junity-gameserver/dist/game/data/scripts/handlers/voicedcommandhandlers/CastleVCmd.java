@@ -23,7 +23,7 @@ import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
-import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.client.SystemMessageId;
 
 /**
  * @author Zoey76

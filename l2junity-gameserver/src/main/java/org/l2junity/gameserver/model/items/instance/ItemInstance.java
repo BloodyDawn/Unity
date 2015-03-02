@@ -78,15 +78,15 @@ import org.l2junity.gameserver.model.options.EnchantOptions;
 import org.l2junity.gameserver.model.options.Options;
 import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 import org.l2junity.gameserver.model.variables.ItemVariables;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.DropItem;
-import org.l2junity.gameserver.network.serverpackets.ExAdenaInvenCount;
-import org.l2junity.gameserver.network.serverpackets.ExUserInfoEquipSlot;
-import org.l2junity.gameserver.network.serverpackets.ExUserInfoInvenWeight;
-import org.l2junity.gameserver.network.serverpackets.GetItem;
-import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
-import org.l2junity.gameserver.network.serverpackets.SpawnItem;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.DropItem;
+import org.l2junity.gameserver.network.client.send.ExAdenaInvenCount;
+import org.l2junity.gameserver.network.client.send.ExUserInfoEquipSlot;
+import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
+import org.l2junity.gameserver.network.client.send.GetItem;
+import org.l2junity.gameserver.network.client.send.InventoryUpdate;
+import org.l2junity.gameserver.network.client.send.SpawnItem;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.util.GMAudit;
 
 /**

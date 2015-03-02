@@ -26,7 +26,7 @@ import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.MinionHolder;
 import org.l2junity.gameserver.model.quest.Quest;
-import org.l2junity.gameserver.network.serverpackets.SocialAction;
+import org.l2junity.gameserver.network.client.send.SocialAction;
 import org.l2junity.gameserver.util.Broadcast;
 
 /**

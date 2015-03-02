@@ -27,8 +27,8 @@ import org.l2junity.gameserver.handler.IBypassHandler;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.buylist.L2BuyList;
-import org.l2junity.gameserver.network.serverpackets.ActionFailed;
-import org.l2junity.gameserver.network.serverpackets.ShopPreviewList;
+import org.l2junity.gameserver.network.client.send.ActionFailed;
+import org.l2junity.gameserver.network.client.send.ShopPreviewList;
 
 public class Wear implements IBypassHandler
 {

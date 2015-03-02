@@ -38,8 +38,8 @@ import org.l2junity.gameserver.instancemanager.tasks.MessageDeletionTask;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Message;
-import org.l2junity.gameserver.network.serverpackets.ExNoticePostArrived;
-import org.l2junity.gameserver.network.serverpackets.ExUnReadMailCount;
+import org.l2junity.gameserver.network.client.send.ExNoticePostArrived;
+import org.l2junity.gameserver.network.client.send.ExUnReadMailCount;
 
 /**
  * @author Migi, DS

@@ -31,10 +31,10 @@ import java.util.logging.Logger;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.LoginServerThread;
 import org.l2junity.gameserver.data.xml.impl.SecondaryAuthData;
-import org.l2junity.gameserver.network.L2GameClient;
-import org.l2junity.gameserver.network.serverpackets.Ex2ndPasswordAck;
-import org.l2junity.gameserver.network.serverpackets.Ex2ndPasswordCheck;
-import org.l2junity.gameserver.network.serverpackets.Ex2ndPasswordVerify;
+import org.l2junity.gameserver.network.client.L2GameClient;
+import org.l2junity.gameserver.network.client.send.Ex2ndPasswordAck;
+import org.l2junity.gameserver.network.client.send.Ex2ndPasswordCheck;
+import org.l2junity.gameserver.network.client.send.Ex2ndPasswordVerify;
 import org.l2junity.gameserver.util.Util;
 
 /**

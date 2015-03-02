@@ -25,7 +25,7 @@ import org.l2junity.gameserver.LoginServerThread;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.handler.IVoicedCommandHandler;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
+import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 
 /**
  * @author Nik

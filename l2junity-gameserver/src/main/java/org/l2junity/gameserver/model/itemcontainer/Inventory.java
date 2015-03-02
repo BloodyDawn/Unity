@@ -45,8 +45,8 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.EtcItemType;
 import org.l2junity.gameserver.model.items.type.WeaponType;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.serverpackets.ExUserInfoEquipSlot;
-import org.l2junity.gameserver.network.serverpackets.SkillCoolTime;
+import org.l2junity.gameserver.network.client.send.ExUserInfoEquipSlot;
+import org.l2junity.gameserver.network.client.send.SkillCoolTime;
 import org.l2junity.util.Util;
 
 /**

@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.model;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.RadarControl;
+import org.l2junity.gameserver.network.client.send.RadarControl;
 
 import javolution.util.FastList;
 

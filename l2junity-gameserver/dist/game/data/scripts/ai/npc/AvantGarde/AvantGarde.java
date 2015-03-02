@@ -27,10 +27,10 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.AcquireSkillType;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.clientpackets.RequestAcquireSkill;
-import org.l2junity.gameserver.network.serverpackets.ExAcquirableSkillListByClass;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.recv.RequestAcquireSkill;
+import org.l2junity.gameserver.network.client.send.ExAcquirableSkillListByClass;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 
 import ai.npc.AbstractNpcAI;
 

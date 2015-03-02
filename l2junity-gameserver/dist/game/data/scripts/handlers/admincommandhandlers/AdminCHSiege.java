@@ -29,8 +29,8 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
-import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
-import org.l2junity.gameserver.network.serverpackets.SiegeInfo;
+import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
+import org.l2junity.gameserver.network.client.send.SiegeInfo;
 
 /**
  * @author BiggBoss

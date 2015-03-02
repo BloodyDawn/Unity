@@ -21,8 +21,8 @@ package org.l2junity.gameserver.ai;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.L2AirShipInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.ExMoveToLocationAirShip;
-import org.l2junity.gameserver.network.serverpackets.ExStopMoveAirShip;
+import org.l2junity.gameserver.network.client.send.ExMoveToLocationAirShip;
+import org.l2junity.gameserver.network.client.send.ExStopMoveAirShip;
 
 /**
  * @author DS

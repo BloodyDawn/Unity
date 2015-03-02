@@ -25,7 +25,7 @@ import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Event;
 import org.l2junity.gameserver.model.quest.Quest;
-import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
+import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 
 public class AdminEvents implements IAdminCommandHandler
 {

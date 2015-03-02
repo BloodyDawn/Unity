@@ -37,7 +37,7 @@ import org.l2junity.gameserver.enums.MacroUpdateType;
 import org.l2junity.gameserver.enums.ShortcutType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.interfaces.IRestorable;
-import org.l2junity.gameserver.network.serverpackets.SendMacroList;
+import org.l2junity.gameserver.network.client.send.SendMacroList;
 
 public class MacroList implements IRestorable
 {

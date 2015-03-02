@@ -21,8 +21,8 @@ package org.l2junity.gameserver.model.actor.tasks.player;
 import java.util.concurrent.TimeUnit;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 
 /**
  * Task dedicated to warn user to take a break.

@@ -21,9 +21,9 @@ package org.l2junity.gameserver.ai;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.L2BoatInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.VehicleDeparture;
-import org.l2junity.gameserver.network.serverpackets.VehicleInfo;
-import org.l2junity.gameserver.network.serverpackets.VehicleStarted;
+import org.l2junity.gameserver.network.client.send.VehicleDeparture;
+import org.l2junity.gameserver.network.client.send.VehicleInfo;
+import org.l2junity.gameserver.network.client.send.VehicleStarted;
 
 /**
  * @author DS

@@ -57,17 +57,17 @@ import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.NpcStringId;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.Earthquake;
-import org.l2junity.gameserver.network.serverpackets.ExShowScreenMessage;
-import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
-import org.l2junity.gameserver.network.serverpackets.MagicSkillCanceld;
-import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
-import org.l2junity.gameserver.network.serverpackets.NpcInfo;
-import org.l2junity.gameserver.network.serverpackets.SocialAction;
-import org.l2junity.gameserver.network.serverpackets.SpecialCamera;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.network.client.NpcStringId;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.Earthquake;
+import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
+import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
+import org.l2junity.gameserver.network.client.send.MagicSkillCanceld;
+import org.l2junity.gameserver.network.client.send.MagicSkillUse;
+import org.l2junity.gameserver.network.client.send.NpcInfo;
+import org.l2junity.gameserver.network.client.send.SocialAction;
+import org.l2junity.gameserver.network.client.send.SpecialCamera;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.util.Util;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
@@ -1236,7 +1236,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 			}
 		}
 		
-		private void sendPacketX(IGameServerPacket packet1, IGameServerPacket packet2, int x)
+		private void sendPacketX(IClientOutgoingPacket packet1, IClientOutgoingPacket packet2, int x)
 		{
 			for (int objId : _world.getAllowed())
 			{
@@ -1333,7 +1333,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 		}
 	}
 	
-	protected void broadCastPacket(FETWorld world, IGameServerPacket packet)
+	protected void broadCastPacket(FETWorld world, IClientOutgoingPacket packet)
 	{
 		for (int objId : world.getAllowed())
 		{

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.ShowBoard;
+import org.l2junity.gameserver.network.client.send.ShowBoard;
 
 public abstract class BaseBBSManager
 {

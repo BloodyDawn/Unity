@@ -23,7 +23,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.AbnormalType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
-import org.l2junity.gameserver.network.serverpackets.ExRegenMax;
+import org.l2junity.gameserver.network.client.send.ExRegenMax;
 
 /**
  * Heal Over Time effect implementation.

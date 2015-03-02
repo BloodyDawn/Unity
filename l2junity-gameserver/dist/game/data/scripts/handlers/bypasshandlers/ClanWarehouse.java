@@ -28,10 +28,10 @@ import org.l2junity.gameserver.model.actor.instance.L2ClanHallManagerInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2WarehouseInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.ActionFailed;
-import org.l2junity.gameserver.network.serverpackets.WareHouseDepositList;
-import org.l2junity.gameserver.network.serverpackets.WareHouseWithdrawalList;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.ActionFailed;
+import org.l2junity.gameserver.network.client.send.WareHouseDepositList;
+import org.l2junity.gameserver.network.client.send.WareHouseWithdrawalList;
 
 public class ClanWarehouse implements IBypassHandler
 {

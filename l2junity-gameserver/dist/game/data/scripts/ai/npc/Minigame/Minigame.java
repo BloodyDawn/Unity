@@ -32,7 +32,7 @@ import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureSkillUse;
 import org.l2junity.gameserver.model.events.listeners.ConsumerEventListener;
 import org.l2junity.gameserver.model.holders.SkillHolder;
-import org.l2junity.gameserver.network.NpcStringId;
+import org.l2junity.gameserver.network.client.NpcStringId;
 import org.l2junity.gameserver.util.Util;
 
 import ai.npc.AbstractNpcAI;

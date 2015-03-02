@@ -32,9 +32,9 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.interfaces.IRestorable;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.EtcItemType;
-import org.l2junity.gameserver.network.serverpackets.ExAutoSoulShot;
-import org.l2junity.gameserver.network.serverpackets.ShortCutInit;
-import org.l2junity.gameserver.network.serverpackets.ShortCutRegister;
+import org.l2junity.gameserver.network.client.send.ExAutoSoulShot;
+import org.l2junity.gameserver.network.client.send.ShortCutInit;
+import org.l2junity.gameserver.network.client.send.ShortCutRegister;
 
 public class ShortCuts implements IRestorable
 {

@@ -21,7 +21,7 @@ package org.l2junity.gameserver.enums;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2junity.gameserver.network.serverpackets.PlaySound;
+import org.l2junity.gameserver.network.client.send.PlaySound;
 
 /**
  * This enum contains known sound effects used by quests.<br>

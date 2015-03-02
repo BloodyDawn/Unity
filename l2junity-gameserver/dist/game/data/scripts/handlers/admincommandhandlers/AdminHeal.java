@@ -27,7 +27,7 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.client.SystemMessageId;
 
 /**
  * This class handles following admin commands: - heal = restores HP/MP/CP on target, name or radius

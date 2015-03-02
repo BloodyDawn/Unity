@@ -45,15 +45,15 @@ import org.l2junity.gameserver.model.itemcontainer.PcInventory;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneId;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.ActionFailed;
-import org.l2junity.gameserver.network.serverpackets.ExBasicActionList;
-import org.l2junity.gameserver.network.serverpackets.ExCubeGameChangePoints;
-import org.l2junity.gameserver.network.serverpackets.ExCubeGameCloseUI;
-import org.l2junity.gameserver.network.serverpackets.ExCubeGameEnd;
-import org.l2junity.gameserver.network.serverpackets.ExCubeGameExtendedChangePoints;
-import org.l2junity.gameserver.network.serverpackets.RelationChanged;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.ActionFailed;
+import org.l2junity.gameserver.network.client.send.ExBasicActionList;
+import org.l2junity.gameserver.network.client.send.ExCubeGameChangePoints;
+import org.l2junity.gameserver.network.client.send.ExCubeGameCloseUI;
+import org.l2junity.gameserver.network.client.send.ExCubeGameEnd;
+import org.l2junity.gameserver.network.client.send.ExCubeGameExtendedChangePoints;
+import org.l2junity.gameserver.network.client.send.RelationChanged;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 
 /**
  * @author BiggBoss

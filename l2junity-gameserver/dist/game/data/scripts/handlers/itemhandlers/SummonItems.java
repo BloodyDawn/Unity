@@ -25,7 +25,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.model.holders.PetItemHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.client.SystemMessageId;
 
 /**
  * @author HorridoJoho, UnAfraid

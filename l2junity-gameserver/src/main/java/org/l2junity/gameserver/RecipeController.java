@@ -42,17 +42,17 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.ActionFailed;
-import org.l2junity.gameserver.network.serverpackets.ExUserInfoInvenWeight;
-import org.l2junity.gameserver.network.serverpackets.ItemList;
-import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
-import org.l2junity.gameserver.network.serverpackets.RecipeBookItemList;
-import org.l2junity.gameserver.network.serverpackets.RecipeItemMakeInfo;
-import org.l2junity.gameserver.network.serverpackets.RecipeShopItemInfo;
-import org.l2junity.gameserver.network.serverpackets.SetupGauge;
-import org.l2junity.gameserver.network.serverpackets.StatusUpdate;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.ActionFailed;
+import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
+import org.l2junity.gameserver.network.client.send.ItemList;
+import org.l2junity.gameserver.network.client.send.MagicSkillUse;
+import org.l2junity.gameserver.network.client.send.RecipeBookItemList;
+import org.l2junity.gameserver.network.client.send.RecipeItemMakeInfo;
+import org.l2junity.gameserver.network.client.send.RecipeShopItemInfo;
+import org.l2junity.gameserver.network.client.send.SetupGauge;
+import org.l2junity.gameserver.network.client.send.StatusUpdate;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.util.Util;
 
 public class RecipeController

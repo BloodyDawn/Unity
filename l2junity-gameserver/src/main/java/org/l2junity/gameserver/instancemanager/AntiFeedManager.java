@@ -25,7 +25,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.gameserver.network.client.L2GameClient;
 
 public final class AntiFeedManager
 {

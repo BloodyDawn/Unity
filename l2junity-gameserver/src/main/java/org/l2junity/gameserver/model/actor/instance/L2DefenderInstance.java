@@ -35,7 +35,7 @@ import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
-import org.l2junity.gameserver.network.serverpackets.ActionFailed;
+import org.l2junity.gameserver.network.client.send.ActionFailed;
 
 public class L2DefenderInstance extends Attackable
 {

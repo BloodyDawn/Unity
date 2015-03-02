@@ -29,8 +29,8 @@ import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.serverpackets.ShowTownMap;
-import org.l2junity.gameserver.network.serverpackets.StaticObject;
+import org.l2junity.gameserver.network.client.send.ShowTownMap;
+import org.l2junity.gameserver.network.client.send.StaticObject;
 
 /**
  * Static Object instance.

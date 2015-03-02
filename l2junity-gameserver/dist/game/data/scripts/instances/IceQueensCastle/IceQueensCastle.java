@@ -32,8 +32,8 @@ import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.NpcStringId;
-import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.client.NpcStringId;
+import org.l2junity.gameserver.network.client.SystemMessageId;
 
 import quests.Q10285_MeetingSirra.Q10285_MeetingSirra;
 

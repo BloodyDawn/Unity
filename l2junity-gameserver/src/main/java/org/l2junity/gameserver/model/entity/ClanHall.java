@@ -35,7 +35,7 @@ import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.zone.type.ClanHallZone;
-import org.l2junity.gameserver.network.serverpackets.PledgeShowInfoUpdate;
+import org.l2junity.gameserver.network.client.send.PledgeShowInfoUpdate;
 
 import javolution.util.FastMap;
 

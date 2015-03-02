@@ -26,7 +26,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
-import org.l2junity.gameserver.network.serverpackets.ExQuestNpcLogList;
+import org.l2junity.gameserver.network.client.send.ExQuestNpcLogList;
 
 /**
  * Perfect Form (458)

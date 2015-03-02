@@ -24,7 +24,7 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.SayuneRequest;
 import org.l2junity.gameserver.model.zone.ZoneType;
-import org.l2junity.gameserver.network.serverpackets.sayune.ExNotifyFlyMoveStart;
+import org.l2junity.gameserver.network.client.send.sayune.ExNotifyFlyMoveStart;
 
 /**
  * @author UnAfraid

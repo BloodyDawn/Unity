@@ -33,11 +33,11 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.PcInventory;
 import org.l2junity.gameserver.model.olympiad.OlympiadManager;
 import org.l2junity.gameserver.model.zone.ZoneId;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.ExCubeGameAddPlayer;
-import org.l2junity.gameserver.network.serverpackets.ExCubeGameChangeTeam;
-import org.l2junity.gameserver.network.serverpackets.ExCubeGameRemovePlayer;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.ExCubeGameAddPlayer;
+import org.l2junity.gameserver.network.client.send.ExCubeGameChangeTeam;
+import org.l2junity.gameserver.network.client.send.ExCubeGameRemovePlayer;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 
 /**
  * This class manage the player add/remove, team change and event arena status,<br>

@@ -254,83 +254,83 @@ import org.l2junity.gameserver.model.variables.AccountVariables;
 import org.l2junity.gameserver.model.variables.PlayerVariables;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.model.zone.ZoneType;
-import org.l2junity.gameserver.network.L2GameClient;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.AbstractHtmlPacket;
-import org.l2junity.gameserver.network.serverpackets.ActionFailed;
-import org.l2junity.gameserver.network.serverpackets.ChangeWaitType;
-import org.l2junity.gameserver.network.serverpackets.CharInfo;
-import org.l2junity.gameserver.network.serverpackets.ConfirmDlg;
-import org.l2junity.gameserver.network.serverpackets.EtcStatusUpdate;
-import org.l2junity.gameserver.network.serverpackets.ExAbnormalStatusUpdateFromTarget;
-import org.l2junity.gameserver.network.serverpackets.ExAcquireAPSkillList;
-import org.l2junity.gameserver.network.serverpackets.ExAdenaInvenCount;
-import org.l2junity.gameserver.network.serverpackets.ExAutoSoulShot;
-import org.l2junity.gameserver.network.serverpackets.ExDuelUpdateUserInfo;
-import org.l2junity.gameserver.network.serverpackets.ExFishingEnd;
-import org.l2junity.gameserver.network.serverpackets.ExFishingStart;
-import org.l2junity.gameserver.network.serverpackets.ExGetBookMarkInfoPacket;
-import org.l2junity.gameserver.network.serverpackets.ExGetOnAirShip;
-import org.l2junity.gameserver.network.serverpackets.ExMagicAttackInfo;
-import org.l2junity.gameserver.network.serverpackets.ExOlympiadMode;
-import org.l2junity.gameserver.network.serverpackets.ExPledgeCount;
-import org.l2junity.gameserver.network.serverpackets.ExPrivateStoreSetWholeMsg;
-import org.l2junity.gameserver.network.serverpackets.ExSetCompassZoneCode;
-import org.l2junity.gameserver.network.serverpackets.ExStartScenePlayer;
-import org.l2junity.gameserver.network.serverpackets.ExStorageMaxCount;
-import org.l2junity.gameserver.network.serverpackets.ExSubjobInfo;
-import org.l2junity.gameserver.network.serverpackets.ExUseSharedGroupItem;
-import org.l2junity.gameserver.network.serverpackets.ExUserInfoAbnormalVisualEffect;
-import org.l2junity.gameserver.network.serverpackets.ExUserInfoCubic;
-import org.l2junity.gameserver.network.serverpackets.ExUserInfoFishing;
-import org.l2junity.gameserver.network.serverpackets.ExUserInfoInvenWeight;
-import org.l2junity.gameserver.network.serverpackets.FlyToLocation.FlyType;
-import org.l2junity.gameserver.network.serverpackets.GameGuardQuery;
-import org.l2junity.gameserver.network.serverpackets.GetOnVehicle;
-import org.l2junity.gameserver.network.serverpackets.HennaInfo;
-import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
-import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
-import org.l2junity.gameserver.network.serverpackets.ItemList;
-import org.l2junity.gameserver.network.serverpackets.LeaveWorld;
-import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
-import org.l2junity.gameserver.network.serverpackets.MyTargetSelected;
-import org.l2junity.gameserver.network.serverpackets.NicknameChanged;
-import org.l2junity.gameserver.network.serverpackets.ObservationMode;
-import org.l2junity.gameserver.network.serverpackets.ObservationReturn;
-import org.l2junity.gameserver.network.serverpackets.PartySmallWindowUpdate;
-import org.l2junity.gameserver.network.serverpackets.PetInventoryUpdate;
-import org.l2junity.gameserver.network.serverpackets.PlaySound;
-import org.l2junity.gameserver.network.serverpackets.PledgeShowMemberListDelete;
-import org.l2junity.gameserver.network.serverpackets.PledgeShowMemberListUpdate;
-import org.l2junity.gameserver.network.serverpackets.PrivateStoreListBuy;
-import org.l2junity.gameserver.network.serverpackets.PrivateStoreListSell;
-import org.l2junity.gameserver.network.serverpackets.PrivateStoreManageListBuy;
-import org.l2junity.gameserver.network.serverpackets.PrivateStoreManageListSell;
-import org.l2junity.gameserver.network.serverpackets.PrivateStoreMsgBuy;
-import org.l2junity.gameserver.network.serverpackets.PrivateStoreMsgSell;
-import org.l2junity.gameserver.network.serverpackets.RecipeShopMsg;
-import org.l2junity.gameserver.network.serverpackets.RecipeShopSellList;
-import org.l2junity.gameserver.network.serverpackets.RelationChanged;
-import org.l2junity.gameserver.network.serverpackets.Ride;
-import org.l2junity.gameserver.network.serverpackets.ServerClose;
-import org.l2junity.gameserver.network.serverpackets.SetupGauge;
-import org.l2junity.gameserver.network.serverpackets.ShortCutInit;
-import org.l2junity.gameserver.network.serverpackets.SkillCoolTime;
-import org.l2junity.gameserver.network.serverpackets.SkillList;
-import org.l2junity.gameserver.network.serverpackets.Snoop;
-import org.l2junity.gameserver.network.serverpackets.SocialAction;
-import org.l2junity.gameserver.network.serverpackets.StatusUpdate;
-import org.l2junity.gameserver.network.serverpackets.StopMove;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
-import org.l2junity.gameserver.network.serverpackets.TargetSelected;
-import org.l2junity.gameserver.network.serverpackets.TargetUnselected;
-import org.l2junity.gameserver.network.serverpackets.TradeDone;
-import org.l2junity.gameserver.network.serverpackets.TradeOtherDone;
-import org.l2junity.gameserver.network.serverpackets.TradeStart;
-import org.l2junity.gameserver.network.serverpackets.UserInfo;
-import org.l2junity.gameserver.network.serverpackets.ValidateLocation;
-import org.l2junity.gameserver.network.serverpackets.commission.ExResponseCommissionInfo;
-import org.l2junity.gameserver.network.serverpackets.friend.L2FriendStatus;
+import org.l2junity.gameserver.network.client.L2GameClient;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.AbstractHtmlPacket;
+import org.l2junity.gameserver.network.client.send.ActionFailed;
+import org.l2junity.gameserver.network.client.send.ChangeWaitType;
+import org.l2junity.gameserver.network.client.send.CharInfo;
+import org.l2junity.gameserver.network.client.send.ConfirmDlg;
+import org.l2junity.gameserver.network.client.send.EtcStatusUpdate;
+import org.l2junity.gameserver.network.client.send.ExAbnormalStatusUpdateFromTarget;
+import org.l2junity.gameserver.network.client.send.ExAcquireAPSkillList;
+import org.l2junity.gameserver.network.client.send.ExAdenaInvenCount;
+import org.l2junity.gameserver.network.client.send.ExAutoSoulShot;
+import org.l2junity.gameserver.network.client.send.ExDuelUpdateUserInfo;
+import org.l2junity.gameserver.network.client.send.ExFishingEnd;
+import org.l2junity.gameserver.network.client.send.ExFishingStart;
+import org.l2junity.gameserver.network.client.send.ExGetBookMarkInfoPacket;
+import org.l2junity.gameserver.network.client.send.ExGetOnAirShip;
+import org.l2junity.gameserver.network.client.send.ExMagicAttackInfo;
+import org.l2junity.gameserver.network.client.send.ExOlympiadMode;
+import org.l2junity.gameserver.network.client.send.ExPledgeCount;
+import org.l2junity.gameserver.network.client.send.ExPrivateStoreSetWholeMsg;
+import org.l2junity.gameserver.network.client.send.ExSetCompassZoneCode;
+import org.l2junity.gameserver.network.client.send.ExStartScenePlayer;
+import org.l2junity.gameserver.network.client.send.ExStorageMaxCount;
+import org.l2junity.gameserver.network.client.send.ExSubjobInfo;
+import org.l2junity.gameserver.network.client.send.ExUseSharedGroupItem;
+import org.l2junity.gameserver.network.client.send.ExUserInfoAbnormalVisualEffect;
+import org.l2junity.gameserver.network.client.send.ExUserInfoCubic;
+import org.l2junity.gameserver.network.client.send.ExUserInfoFishing;
+import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
+import org.l2junity.gameserver.network.client.send.GameGuardQuery;
+import org.l2junity.gameserver.network.client.send.GetOnVehicle;
+import org.l2junity.gameserver.network.client.send.HennaInfo;
+import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
+import org.l2junity.gameserver.network.client.send.InventoryUpdate;
+import org.l2junity.gameserver.network.client.send.ItemList;
+import org.l2junity.gameserver.network.client.send.LeaveWorld;
+import org.l2junity.gameserver.network.client.send.MagicSkillUse;
+import org.l2junity.gameserver.network.client.send.MyTargetSelected;
+import org.l2junity.gameserver.network.client.send.NicknameChanged;
+import org.l2junity.gameserver.network.client.send.ObservationMode;
+import org.l2junity.gameserver.network.client.send.ObservationReturn;
+import org.l2junity.gameserver.network.client.send.PartySmallWindowUpdate;
+import org.l2junity.gameserver.network.client.send.PetInventoryUpdate;
+import org.l2junity.gameserver.network.client.send.PlaySound;
+import org.l2junity.gameserver.network.client.send.PledgeShowMemberListDelete;
+import org.l2junity.gameserver.network.client.send.PledgeShowMemberListUpdate;
+import org.l2junity.gameserver.network.client.send.PrivateStoreListBuy;
+import org.l2junity.gameserver.network.client.send.PrivateStoreListSell;
+import org.l2junity.gameserver.network.client.send.PrivateStoreManageListBuy;
+import org.l2junity.gameserver.network.client.send.PrivateStoreManageListSell;
+import org.l2junity.gameserver.network.client.send.PrivateStoreMsgBuy;
+import org.l2junity.gameserver.network.client.send.PrivateStoreMsgSell;
+import org.l2junity.gameserver.network.client.send.RecipeShopMsg;
+import org.l2junity.gameserver.network.client.send.RecipeShopSellList;
+import org.l2junity.gameserver.network.client.send.RelationChanged;
+import org.l2junity.gameserver.network.client.send.Ride;
+import org.l2junity.gameserver.network.client.send.ServerClose;
+import org.l2junity.gameserver.network.client.send.SetupGauge;
+import org.l2junity.gameserver.network.client.send.ShortCutInit;
+import org.l2junity.gameserver.network.client.send.SkillCoolTime;
+import org.l2junity.gameserver.network.client.send.SkillList;
+import org.l2junity.gameserver.network.client.send.Snoop;
+import org.l2junity.gameserver.network.client.send.SocialAction;
+import org.l2junity.gameserver.network.client.send.StatusUpdate;
+import org.l2junity.gameserver.network.client.send.StopMove;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.TargetSelected;
+import org.l2junity.gameserver.network.client.send.TargetUnselected;
+import org.l2junity.gameserver.network.client.send.TradeDone;
+import org.l2junity.gameserver.network.client.send.TradeOtherDone;
+import org.l2junity.gameserver.network.client.send.TradeStart;
+import org.l2junity.gameserver.network.client.send.UserInfo;
+import org.l2junity.gameserver.network.client.send.ValidateLocation;
+import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
+import org.l2junity.gameserver.network.client.send.commission.ExResponseCommissionInfo;
+import org.l2junity.gameserver.network.client.send.friend.L2FriendStatus;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
 import org.l2junity.gameserver.util.Broadcast;
 import org.l2junity.gameserver.util.FloodProtectors;
@@ -4258,7 +4258,7 @@ public final class PlayerInstance extends Playable
 	}
 	
 	@Override
-	public final void broadcastPacket(IGameServerPacket mov)
+	public final void broadcastPacket(IClientOutgoingPacket mov)
 	{
 		if (!(mov instanceof CharInfo))
 		{
@@ -4299,7 +4299,7 @@ public final class PlayerInstance extends Playable
 	}
 	
 	@Override
-	public void broadcastPacket(IGameServerPacket mov, int radiusInKnownlist)
+	public void broadcastPacket(IClientOutgoingPacket mov, int radiusInKnownlist)
 	{
 		if (!(mov instanceof CharInfo))
 		{
@@ -4384,7 +4384,7 @@ public final class PlayerInstance extends Playable
 	 * Send a Server->Client packet StatusUpdate to the L2PcInstance.
 	 */
 	@Override
-	public void sendPacket(IGameServerPacket packet)
+	public void sendPacket(IClientOutgoingPacket packet)
 	{
 		if (_client != null)
 		{

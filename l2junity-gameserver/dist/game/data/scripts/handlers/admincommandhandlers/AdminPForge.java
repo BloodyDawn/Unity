@@ -31,8 +31,8 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.L2BoatInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.AdminForgePacket;
-import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
+import org.l2junity.gameserver.network.client.send.AdminForgePacket;
+import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 
 /**
  * This class handles commands for gm to forge packets

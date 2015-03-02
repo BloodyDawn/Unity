@@ -22,7 +22,7 @@ import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.handler.IActionHandler;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.client.SystemMessageId;
 
 public class L2DecoyAction implements IActionHandler
 {

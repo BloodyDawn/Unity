@@ -55,9 +55,9 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.sieges.fort.OnFortSiegeFinish;
 import org.l2junity.gameserver.model.events.impl.sieges.fort.OnFortSiegeStart;
-import org.l2junity.gameserver.network.NpcStringId;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.network.client.NpcStringId;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 
 public class FortSiege implements Siegable
 {

@@ -20,9 +20,9 @@ package org.l2junity.gameserver.model;
 
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.clientpackets.IGameClientPacket;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.recv.IClientIncomingPacket;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 
 /**
  * This class manages requests (transactions) between two L2PcInstance.
@@ -36,7 +36,7 @@ public class L2Request
 	protected PlayerInstance _partner;
 	protected boolean _isRequestor;
 	protected boolean _isAnswerer;
-	protected IGameClientPacket _requestPacket;
+	protected IClientIncomingPacket _requestPacket;
 	
 	public L2Request(PlayerInstance player)
 	{
@@ -72,7 +72,7 @@ public class L2Request
 	 * Set the packet incomed from requester.
 	 * @param packet
 	 */
-	private synchronized void setRequestPacket(IGameClientPacket packet)
+	private synchronized void setRequestPacket(IClientIncomingPacket packet)
 	{
 		_requestPacket = packet;
 	}
@@ -81,7 +81,7 @@ public class L2Request
 	 * Return the packet originally incomed from requester.
 	 * @return
 	 */
-	public IGameClientPacket getRequestPacket()
+	public IClientIncomingPacket getRequestPacket()
 	{
 		return _requestPacket;
 	}
@@ -92,7 +92,7 @@ public class L2Request
 	 * @param packet
 	 * @return
 	 */
-	public synchronized boolean setRequest(PlayerInstance partner, IGameClientPacket packet)
+	public synchronized boolean setRequest(PlayerInstance partner, IClientIncomingPacket packet)
 	{
 		if (partner == null)
 		{

@@ -25,8 +25,8 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
-import org.l2junity.gameserver.network.serverpackets.PlaySound;
-import org.l2junity.gameserver.network.serverpackets.SpecialCamera;
+import org.l2junity.gameserver.network.client.send.PlaySound;
+import org.l2junity.gameserver.network.client.send.SpecialCamera;
 
 /**
  * DrChaos' AI.

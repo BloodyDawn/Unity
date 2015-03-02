@@ -20,7 +20,7 @@ package ai.npc.AdventureGuildsman;
 
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.ExShowQuestInfo;
+import org.l2junity.gameserver.network.client.send.ExShowQuestInfo;
 
 import ai.npc.AbstractNpcAI;
 

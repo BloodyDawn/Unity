@@ -22,7 +22,7 @@ import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
-import org.l2junity.gameserver.network.serverpackets.ActionFailed;
+import org.l2junity.gameserver.network.client.send.ActionFailed;
 
 /**
  * This class is a super-class for L2ControlTowerInstance and L2FlameTowerInstance.

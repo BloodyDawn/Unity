@@ -28,9 +28,9 @@ import org.l2junity.gameserver.model.actor.Vehicle;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
 import org.l2junity.gameserver.model.shuttle.L2ShuttleData;
 import org.l2junity.gameserver.model.shuttle.L2ShuttleStop;
-import org.l2junity.gameserver.network.serverpackets.shuttle.ExShuttleGetOff;
-import org.l2junity.gameserver.network.serverpackets.shuttle.ExShuttleGetOn;
-import org.l2junity.gameserver.network.serverpackets.shuttle.ExShuttleInfo;
+import org.l2junity.gameserver.network.client.send.shuttle.ExShuttleGetOff;
+import org.l2junity.gameserver.network.client.send.shuttle.ExShuttleGetOn;
+import org.l2junity.gameserver.network.client.send.shuttle.ExShuttleInfo;
 
 /**
  * @author UnAfraid

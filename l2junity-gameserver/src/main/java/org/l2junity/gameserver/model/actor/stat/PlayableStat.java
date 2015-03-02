@@ -33,7 +33,7 @@ import org.l2junity.gameserver.model.events.impl.character.playable.OnPlayableEx
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.model.zone.type.SwampZone;
-import org.l2junity.gameserver.network.serverpackets.ExNewSkillToLearnByLevelUp;
+import org.l2junity.gameserver.network.client.send.ExNewSkillToLearnByLevelUp;
 
 public class PlayableStat extends CharStat
 {

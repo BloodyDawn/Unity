@@ -40,13 +40,13 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Hero;
 import org.l2junity.gameserver.model.olympiad.Olympiad;
-import org.l2junity.gameserver.network.L2GameClient;
-import org.l2junity.gameserver.network.SystemMessageId;
 import org.l2junity.gameserver.network.client.ClientNetworkManager;
 import org.l2junity.gameserver.network.client.EventLoopGroupManager;
+import org.l2junity.gameserver.network.client.L2GameClient;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.ServerClose;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.gameserverpackets.ServerStatus;
-import org.l2junity.gameserver.network.serverpackets.ServerClose;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
 import org.l2junity.gameserver.util.Broadcast;
 
 /**

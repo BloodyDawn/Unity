@@ -20,7 +20,7 @@ package handlers.usercommandhandlers;
 
 import org.l2junity.gameserver.handler.IUserCommandHandler;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.ExInzoneWaiting;
+import org.l2junity.gameserver.network.client.send.ExInzoneWaiting;
 
 /**
  * Instance Zone user command.

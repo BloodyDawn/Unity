@@ -49,13 +49,13 @@ import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.itemcontainer.Mail;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.commission.ExResponseCommissionBuyItem;
-import org.l2junity.gameserver.network.serverpackets.commission.ExResponseCommissionDelete;
-import org.l2junity.gameserver.network.serverpackets.commission.ExResponseCommissionInfo;
-import org.l2junity.gameserver.network.serverpackets.commission.ExResponseCommissionList;
-import org.l2junity.gameserver.network.serverpackets.commission.ExResponseCommissionRegister;
-import org.l2junity.gameserver.network.serverpackets.commission.ExResponseCommissionList.CommissionListReplyType;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.commission.ExResponseCommissionBuyItem;
+import org.l2junity.gameserver.network.client.send.commission.ExResponseCommissionDelete;
+import org.l2junity.gameserver.network.client.send.commission.ExResponseCommissionInfo;
+import org.l2junity.gameserver.network.client.send.commission.ExResponseCommissionList;
+import org.l2junity.gameserver.network.client.send.commission.ExResponseCommissionRegister;
+import org.l2junity.gameserver.network.client.send.commission.ExResponseCommissionList.CommissionListReplyType;
 
 /**
  * @author NosBit

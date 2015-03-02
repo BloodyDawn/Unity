@@ -43,9 +43,9 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.tasks.player.IllegalPlayerActionTask;
 import org.l2junity.gameserver.model.interfaces.ILocational;
-import org.l2junity.gameserver.network.serverpackets.AbstractHtmlPacket;
-import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
-import org.l2junity.gameserver.network.serverpackets.ShowBoard;
+import org.l2junity.gameserver.network.client.send.AbstractHtmlPacket;
+import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
+import org.l2junity.gameserver.network.client.send.ShowBoard;
 
 /**
  * General Utility functions related to game server.

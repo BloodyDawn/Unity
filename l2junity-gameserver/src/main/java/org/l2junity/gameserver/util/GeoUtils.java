@@ -22,7 +22,7 @@ import java.awt.Color;
 
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.ExServerPrimitive;
+import org.l2junity.gameserver.network.client.send.ExServerPrimitive;
 import org.l2junity.geodriver.Cell;
 
 /**

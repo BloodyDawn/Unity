@@ -21,8 +21,8 @@ package org.l2junity.log.formatter;
 import java.util.logging.LogRecord;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.client.ConnectionState;
+import org.l2junity.gameserver.network.client.L2GameClient;
 
 public class AccountingFormatter extends AbstractFormatter
 {

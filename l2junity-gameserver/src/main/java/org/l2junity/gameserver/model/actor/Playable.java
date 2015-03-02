@@ -35,7 +35,7 @@ import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.serverpackets.EtcStatusUpdate;
+import org.l2junity.gameserver.network.client.send.EtcStatusUpdate;
 
 /**
  * This class represents all Playable characters in the world.<br>

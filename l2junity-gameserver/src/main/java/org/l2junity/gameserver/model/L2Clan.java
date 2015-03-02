@@ -56,21 +56,21 @@ import org.l2junity.gameserver.model.itemcontainer.ClanWarehouse;
 import org.l2junity.gameserver.model.itemcontainer.ItemContainer;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneId;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.CreatureSay;
-import org.l2junity.gameserver.network.serverpackets.ExSubPledgeSkillAdd;
-import org.l2junity.gameserver.network.serverpackets.ItemList;
-import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
-import org.l2junity.gameserver.network.serverpackets.PledgeReceiveSubPledgeCreated;
-import org.l2junity.gameserver.network.serverpackets.PledgeShowInfoUpdate;
-import org.l2junity.gameserver.network.serverpackets.PledgeShowMemberListAll;
-import org.l2junity.gameserver.network.serverpackets.PledgeShowMemberListDeleteAll;
-import org.l2junity.gameserver.network.serverpackets.PledgeShowMemberListUpdate;
-import org.l2junity.gameserver.network.serverpackets.PledgeSkillList;
-import org.l2junity.gameserver.network.serverpackets.PledgeSkillList.SubPledgeSkill;
-import org.l2junity.gameserver.network.serverpackets.PledgeSkillListAdd;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
-import org.l2junity.gameserver.network.serverpackets.UserInfo;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.CreatureSay;
+import org.l2junity.gameserver.network.client.send.ExSubPledgeSkillAdd;
+import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
+import org.l2junity.gameserver.network.client.send.ItemList;
+import org.l2junity.gameserver.network.client.send.PledgeReceiveSubPledgeCreated;
+import org.l2junity.gameserver.network.client.send.PledgeShowInfoUpdate;
+import org.l2junity.gameserver.network.client.send.PledgeShowMemberListAll;
+import org.l2junity.gameserver.network.client.send.PledgeShowMemberListDeleteAll;
+import org.l2junity.gameserver.network.client.send.PledgeShowMemberListUpdate;
+import org.l2junity.gameserver.network.client.send.PledgeSkillList;
+import org.l2junity.gameserver.network.client.send.PledgeSkillListAdd;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.UserInfo;
+import org.l2junity.gameserver.network.client.send.PledgeSkillList.SubPledgeSkill;
 import org.l2junity.gameserver.util.Util;
 import org.l2junity.util.EnumIntBitmask;
 
@@ -1543,7 +1543,7 @@ public class L2Clan implements IIdentifiable, INamable
 		}
 	}
 	
-	public void broadcastToOnlineAllyMembers(IGameServerPacket packet)
+	public void broadcastToOnlineAllyMembers(IClientOutgoingPacket packet)
 	{
 		for (L2Clan clan : ClanTable.getInstance().getClanAllies(getAllyId()))
 		{
@@ -1551,7 +1551,7 @@ public class L2Clan implements IIdentifiable, INamable
 		}
 	}
 	
-	public void broadcastToOnlineMembers(IGameServerPacket packet)
+	public void broadcastToOnlineMembers(IClientOutgoingPacket packet)
 	{
 		for (ClanMember member : _members.values())
 		{
@@ -1573,7 +1573,7 @@ public class L2Clan implements IIdentifiable, INamable
 		}
 	}
 	
-	public void broadcastToOtherOnlineMembers(IGameServerPacket packet, PlayerInstance player)
+	public void broadcastToOtherOnlineMembers(IClientOutgoingPacket packet, PlayerInstance player)
 	{
 		for (ClanMember member : _members.values())
 		{

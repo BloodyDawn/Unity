@@ -34,7 +34,7 @@ import org.l2junity.gameserver.model.announce.Announcement;
 import org.l2junity.gameserver.model.announce.AnnouncementType;
 import org.l2junity.gameserver.model.announce.AutoAnnouncement;
 import org.l2junity.gameserver.model.announce.IAnnouncement;
-import org.l2junity.gameserver.network.serverpackets.CreatureSay;
+import org.l2junity.gameserver.network.client.send.CreatureSay;
 
 /**
  * Loads announcements from database.

@@ -36,7 +36,7 @@ import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.options.Options;
-import org.l2junity.gameserver.network.clientpackets.AbstractRefinePacket;
+import org.l2junity.gameserver.network.client.recv.AbstractRefinePacket;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;

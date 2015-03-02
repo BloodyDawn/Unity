@@ -23,8 +23,8 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
-import org.l2junity.gameserver.network.serverpackets.ExShowUsm;
-import org.l2junity.gameserver.network.serverpackets.TutorialShowHtml;
+import org.l2junity.gameserver.network.client.send.ExShowUsm;
+import org.l2junity.gameserver.network.client.send.TutorialShowHtml;
 
 /**
  * @author Sdw

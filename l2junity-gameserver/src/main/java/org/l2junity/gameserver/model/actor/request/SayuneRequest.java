@@ -28,8 +28,8 @@ import org.l2junity.gameserver.data.xml.impl.SayuneData;
 import org.l2junity.gameserver.enums.SayuneType;
 import org.l2junity.gameserver.model.SayuneEntry;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.sayune.ExFlyMove;
-import org.l2junity.gameserver.network.serverpackets.sayune.ExFlyMoveBroadcast;
+import org.l2junity.gameserver.network.client.send.sayune.ExFlyMove;
+import org.l2junity.gameserver.network.client.send.sayune.ExFlyMoveBroadcast;
 import org.l2junity.gameserver.util.Broadcast;
 
 /**

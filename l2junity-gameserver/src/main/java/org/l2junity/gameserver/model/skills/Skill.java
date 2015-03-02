@@ -65,9 +65,9 @@ import org.l2junity.gameserver.model.stats.TraitType;
 import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
 import org.l2junity.gameserver.model.zone.ZoneId;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
-import org.l2junity.gameserver.network.serverpackets.FlyToLocation.FlyType;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.util.Util;
 
 public final class Skill implements IIdentifiable

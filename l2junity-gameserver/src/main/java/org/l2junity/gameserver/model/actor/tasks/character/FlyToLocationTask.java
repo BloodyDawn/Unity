@@ -21,7 +21,7 @@ package org.l2junity.gameserver.model.actor.tasks.character;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.serverpackets.FlyToLocation;
+import org.l2junity.gameserver.network.client.send.FlyToLocation;
 
 /**
  * Task dedicated to fly a player to the location

@@ -25,7 +25,6 @@ import io.netty.handler.logging.LoggingHandler;
 
 import java.nio.ByteOrder;
 
-import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.network.codecs.CryptCodec;
 import org.l2junity.network.codecs.PacketDecoder;
 import org.l2junity.network.codecs.PacketEncoder;

@@ -25,9 +25,9 @@ import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Vehicle;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
-import org.l2junity.gameserver.network.serverpackets.VehicleDeparture;
-import org.l2junity.gameserver.network.serverpackets.VehicleInfo;
-import org.l2junity.gameserver.network.serverpackets.VehicleStarted;
+import org.l2junity.gameserver.network.client.send.VehicleDeparture;
+import org.l2junity.gameserver.network.client.send.VehicleInfo;
+import org.l2junity.gameserver.network.client.send.VehicleStarted;
 
 /**
  * @author Maktakien, DS

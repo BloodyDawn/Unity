@@ -29,8 +29,8 @@ import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.punishment.PunishmentAffect;
 import org.l2junity.gameserver.model.punishment.PunishmentTask;
 import org.l2junity.gameserver.model.punishment.PunishmentType;
-import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.client.ConnectionState;
+import org.l2junity.gameserver.network.client.L2GameClient;
 
 /**
  * Flood protector implementation.

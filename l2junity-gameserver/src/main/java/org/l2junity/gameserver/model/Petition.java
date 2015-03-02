@@ -25,11 +25,11 @@ import org.l2junity.gameserver.enums.PetitionType;
 import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.PetitionManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.CreatureSay;
-import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
-import org.l2junity.gameserver.network.serverpackets.PetitionVotePacket;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.CreatureSay;
+import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
+import org.l2junity.gameserver.network.client.send.PetitionVotePacket;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 
 import javolution.util.FastList;
 
@@ -139,7 +139,7 @@ public final class Petition
 		return _type.toString().replace("_", " ");
 	}
 	
-	public void sendPetitionerPacket(IGameServerPacket responsePacket)
+	public void sendPetitionerPacket(IClientOutgoingPacket responsePacket)
 	{
 		if ((getPetitioner() == null) || !getPetitioner().isOnline())
 		{
@@ -153,7 +153,7 @@ public final class Petition
 		getPetitioner().sendPacket(responsePacket);
 	}
 	
-	public void sendResponderPacket(IGameServerPacket responsePacket)
+	public void sendResponderPacket(IClientOutgoingPacket responsePacket)
 	{
 		if ((getResponder() == null) || !getResponder().isOnline())
 		{

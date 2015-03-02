@@ -24,8 +24,8 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2AirShipInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.DeleteObject;
-import org.l2junity.gameserver.network.serverpackets.SpawnItem;
+import org.l2junity.gameserver.network.client.send.DeleteObject;
+import org.l2junity.gameserver.network.client.send.SpawnItem;
 
 public class PcKnownList extends PlayableKnownList
 {

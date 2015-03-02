@@ -24,7 +24,7 @@ import org.l2junity.gameserver.datatables.SpawnTable;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.network.NpcStringId;
+import org.l2junity.gameserver.network.client.NpcStringId;
 
 /**
  * @author DS

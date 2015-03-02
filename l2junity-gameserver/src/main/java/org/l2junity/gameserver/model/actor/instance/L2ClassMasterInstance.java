@@ -27,12 +27,12 @@ import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.holders.ItemHolder;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
-import org.l2junity.gameserver.network.serverpackets.TutorialCloseHtml;
-import org.l2junity.gameserver.network.serverpackets.TutorialShowHtml;
-import org.l2junity.gameserver.network.serverpackets.TutorialShowQuestionMark;
-import org.l2junity.gameserver.network.serverpackets.UserInfo;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
+import org.l2junity.gameserver.network.client.send.TutorialCloseHtml;
+import org.l2junity.gameserver.network.client.send.TutorialShowHtml;
+import org.l2junity.gameserver.network.client.send.TutorialShowQuestionMark;
+import org.l2junity.gameserver.network.client.send.UserInfo;
 
 /**
  * This class ...

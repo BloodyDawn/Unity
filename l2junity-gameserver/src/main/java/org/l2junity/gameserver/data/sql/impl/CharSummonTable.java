@@ -40,7 +40,7 @@ import org.l2junity.gameserver.model.actor.instance.L2ServitorInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.serverpackets.PetItemList;
+import org.l2junity.gameserver.network.client.send.PetItemList;
 
 /**
  * @author Nyaran

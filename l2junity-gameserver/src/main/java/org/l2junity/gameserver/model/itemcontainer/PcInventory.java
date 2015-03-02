@@ -44,11 +44,11 @@ import org.l2junity.gameserver.model.events.impl.character.player.inventory.OnPl
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.variables.ItemVariables;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.ExAdenaInvenCount;
-import org.l2junity.gameserver.network.serverpackets.ExUserInfoInvenWeight;
-import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
-import org.l2junity.gameserver.network.serverpackets.ItemList;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.ExAdenaInvenCount;
+import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
+import org.l2junity.gameserver.network.client.send.InventoryUpdate;
+import org.l2junity.gameserver.network.client.send.ItemList;
 import org.l2junity.gameserver.util.Util;
 
 public class PcInventory extends Inventory

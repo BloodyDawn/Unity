@@ -24,8 +24,8 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.LoginServerThread;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.gameserverpackets.ServerStatus;
-import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
 
 /**
  * This class handles the admin commands that acts on the login

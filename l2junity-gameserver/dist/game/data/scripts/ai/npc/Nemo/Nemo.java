@@ -23,7 +23,7 @@ import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
-import org.l2junity.gameserver.network.NpcStringId;
+import org.l2junity.gameserver.network.client.NpcStringId;
 
 import ai.individual.Maguen;
 import ai.npc.AbstractNpcAI;

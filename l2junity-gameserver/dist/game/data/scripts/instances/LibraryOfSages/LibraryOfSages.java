@@ -26,7 +26,7 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
-import org.l2junity.gameserver.network.NpcStringId;
+import org.l2junity.gameserver.network.client.NpcStringId;
 
 /**
  * Library of Sages instance zone.

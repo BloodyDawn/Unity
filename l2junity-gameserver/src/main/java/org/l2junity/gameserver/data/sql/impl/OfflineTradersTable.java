@@ -34,8 +34,8 @@ import org.l2junity.gameserver.model.ManufactureItem;
 import org.l2junity.gameserver.model.TradeItem;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.L2GameClient;
 import org.l2junity.gameserver.network.client.ConnectionState;
+import org.l2junity.gameserver.network.client.L2GameClient;
 
 public class OfflineTradersTable
 {

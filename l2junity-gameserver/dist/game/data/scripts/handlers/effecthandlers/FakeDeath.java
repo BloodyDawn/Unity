@@ -23,9 +23,9 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.ChangeWaitType;
-import org.l2junity.gameserver.network.serverpackets.Revive;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.ChangeWaitType;
+import org.l2junity.gameserver.network.client.send.Revive;
 
 /**
  * Fake Death effect implementation.

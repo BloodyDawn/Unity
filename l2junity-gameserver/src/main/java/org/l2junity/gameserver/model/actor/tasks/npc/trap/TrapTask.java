@@ -22,7 +22,7 @@ import java.util.logging.Logger;
 
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2TrapInstance;
-import org.l2junity.gameserver.network.serverpackets.SocialAction;
+import org.l2junity.gameserver.network.client.send.SocialAction;
 
 /**
  * Trap task.

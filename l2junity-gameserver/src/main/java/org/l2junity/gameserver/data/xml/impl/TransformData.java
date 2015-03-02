@@ -31,7 +31,7 @@ import org.l2junity.gameserver.model.actor.transform.TransformTemplate;
 import org.l2junity.gameserver.model.holders.AdditionalItemHolder;
 import org.l2junity.gameserver.model.holders.AdditionalSkillHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
-import org.l2junity.gameserver.network.serverpackets.ExBasicActionList;
+import org.l2junity.gameserver.network.client.send.ExBasicActionList;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;

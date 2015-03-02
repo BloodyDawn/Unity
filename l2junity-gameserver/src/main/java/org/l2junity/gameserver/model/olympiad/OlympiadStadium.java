@@ -35,11 +35,11 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.model.zone.type.OlympiadStadiumZone;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.ExOlympiadMatchEnd;
-import org.l2junity.gameserver.network.serverpackets.ExOlympiadUserInfo;
-import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.ExOlympiadMatchEnd;
+import org.l2junity.gameserver.network.client.send.ExOlympiadUserInfo;
+import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 
 /**
  * @author JIV
@@ -115,7 +115,7 @@ public class OlympiadStadium
 		});
 	}
 	
-	public final void broadcastPacket(IGameServerPacket packet)
+	public final void broadcastPacket(IClientOutgoingPacket packet)
 	{
 		_instance.getPlayers().stream().filter(Objects::nonNull).forEach(id ->
 		{
@@ -127,7 +127,7 @@ public class OlympiadStadium
 		});
 	}
 	
-	public final void broadcastPacketToObservers(IGameServerPacket packet)
+	public final void broadcastPacketToObservers(IClientOutgoingPacket packet)
 	{
 		_instance.getPlayers().stream().filter(Objects::nonNull).forEach(id ->
 		{

@@ -37,11 +37,11 @@ import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.variables.NpcVariables;
 import org.l2junity.gameserver.model.zone.type.NoRestartZone;
-import org.l2junity.gameserver.network.NpcStringId;
-import org.l2junity.gameserver.network.serverpackets.Earthquake;
-import org.l2junity.gameserver.network.serverpackets.ExShowScreenMessage;
-import org.l2junity.gameserver.network.serverpackets.PlaySound;
-import org.l2junity.gameserver.network.serverpackets.SocialAction;
+import org.l2junity.gameserver.network.client.NpcStringId;
+import org.l2junity.gameserver.network.client.send.Earthquake;
+import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
+import org.l2junity.gameserver.network.client.send.PlaySound;
+import org.l2junity.gameserver.network.client.send.SocialAction;
 import org.l2junity.gameserver.util.Util;
 
 import ai.npc.AbstractNpcAI;

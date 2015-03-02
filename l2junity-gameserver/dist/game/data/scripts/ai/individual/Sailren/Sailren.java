@@ -27,7 +27,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2RaidBossInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.zone.type.NoRestartZone;
-import org.l2junity.gameserver.network.serverpackets.SpecialCamera;
+import org.l2junity.gameserver.network.client.send.SpecialCamera;
 
 import ai.npc.AbstractNpcAI;
 

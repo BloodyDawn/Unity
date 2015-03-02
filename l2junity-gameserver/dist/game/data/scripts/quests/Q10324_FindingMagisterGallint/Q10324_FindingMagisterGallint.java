@@ -23,7 +23,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
-import org.l2junity.gameserver.network.serverpackets.TutorialShowHtml;
+import org.l2junity.gameserver.network.client.send.TutorialShowHtml;
 
 import quests.Q10323_TrainLikeItsReal.Q10323_TrainLikeItsReal;
 

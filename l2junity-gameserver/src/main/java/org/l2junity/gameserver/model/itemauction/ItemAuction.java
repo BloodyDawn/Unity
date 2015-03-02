@@ -34,9 +34,9 @@ import org.l2junity.gameserver.model.ItemInfo;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 
 /**
  * @author Forsaiken
@@ -401,12 +401,12 @@ public final class ItemAuction
 		}
 	}
 	
-	public final void broadcastToAllBidders(final IGameServerPacket packet)
+	public final void broadcastToAllBidders(final IClientOutgoingPacket packet)
 	{
 		ThreadPoolManager.getInstance().executeGeneral(() -> broadcastToAllBiddersInternal(packet));
 	}
 	
-	public final void broadcastToAllBiddersInternal(final IGameServerPacket packet)
+	public final void broadcastToAllBiddersInternal(final IClientOutgoingPacket packet)
 	{
 		for (int i = _auctionBids.size(); i-- > 0;)
 		{

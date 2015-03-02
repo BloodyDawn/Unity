@@ -33,7 +33,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.zone.type.SiegableHallZone;
 import org.l2junity.gameserver.model.zone.type.SiegeZone;
-import org.l2junity.gameserver.network.serverpackets.SiegeInfo;
+import org.l2junity.gameserver.network.client.send.SiegeInfo;
 
 /**
  * @author BiggBoss

@@ -26,12 +26,12 @@ import org.l2junity.gameserver.instancemanager.MatchingRoomManager;
 import org.l2junity.gameserver.model.CommandChannel;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.ExDissmissMPCCRoom;
-import org.l2junity.gameserver.network.serverpackets.ExMPCCRoomInfo;
-import org.l2junity.gameserver.network.serverpackets.ExMPCCRoomMember;
-import org.l2junity.gameserver.network.serverpackets.ExManageMpccRoomMember;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.ExDissmissMPCCRoom;
+import org.l2junity.gameserver.network.client.send.ExMPCCRoomInfo;
+import org.l2junity.gameserver.network.client.send.ExMPCCRoomMember;
+import org.l2junity.gameserver.network.client.send.ExManageMpccRoomMember;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 
 /**
  * @author Sdw

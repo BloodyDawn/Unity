@@ -22,8 +22,8 @@ import java.util.logging.Logger;
 
 import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.L2GameClient;
-import org.l2junity.gameserver.network.serverpackets.LeaveWorld;
+import org.l2junity.gameserver.network.client.L2GameClient;
+import org.l2junity.gameserver.network.client.send.LeaveWorld;
 
 /**
  * Task dedicated to verify client's game guard.

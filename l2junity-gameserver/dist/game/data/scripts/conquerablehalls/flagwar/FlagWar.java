@@ -48,9 +48,9 @@ import org.l2junity.gameserver.model.entity.Siegable;
 import org.l2junity.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
 import org.l2junity.gameserver.model.entity.clanhall.SiegeStatus;
 import org.l2junity.gameserver.model.zone.type.ResidenceHallTeleportZone;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.util.Broadcast;
 
 /**

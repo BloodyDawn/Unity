@@ -22,11 +22,11 @@ import org.l2junity.gameserver.MonsterRace;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.DeleteObject;
-import org.l2junity.gameserver.network.serverpackets.MonRaceInfo;
-import org.l2junity.gameserver.network.serverpackets.PlaySound;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.DeleteObject;
+import org.l2junity.gameserver.network.client.send.MonRaceInfo;
+import org.l2junity.gameserver.network.client.send.PlaySound;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 
 /**
  * This class handles following admin commands: - invul = turns invulnerability on/off

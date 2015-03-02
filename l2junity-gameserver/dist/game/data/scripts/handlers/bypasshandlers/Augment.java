@@ -23,8 +23,8 @@ import java.util.logging.Level;
 import org.l2junity.gameserver.handler.IBypassHandler;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.ExShowVariationCancelWindow;
-import org.l2junity.gameserver.network.serverpackets.ExShowVariationMakeWindow;
+import org.l2junity.gameserver.network.client.send.ExShowVariationCancelWindow;
+import org.l2junity.gameserver.network.client.send.ExShowVariationMakeWindow;
 
 public class Augment implements IBypassHandler
 {

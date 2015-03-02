@@ -24,9 +24,9 @@ import java.util.List;
 import org.l2junity.gameserver.instancemanager.HandysBlockCheckerManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.BlockCheckerEngine;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 
 /**
  * @author xban1x
@@ -114,7 +114,7 @@ public final class ArenaParticipantsHolder
 		return _bluePlayers.size();
 	}
 	
-	public void broadCastPacketToTeam(IGameServerPacket packet)
+	public void broadCastPacketToTeam(IClientOutgoingPacket packet)
 	{
 		for (PlayerInstance p : _redPlayers)
 		{

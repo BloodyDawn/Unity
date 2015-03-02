@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
-import org.l2junity.gameserver.network.serverpackets.SkillCoolTime;
+import org.l2junity.gameserver.network.client.send.SkillCoolTime;
 
 /**
  * @author UnAfraid

@@ -137,29 +137,29 @@ import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.model.zone.ZoneRegion;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.ActionFailed;
-import org.l2junity.gameserver.network.serverpackets.Attack;
-import org.l2junity.gameserver.network.serverpackets.ChangeMoveType;
-import org.l2junity.gameserver.network.serverpackets.ChangeWaitType;
-import org.l2junity.gameserver.network.serverpackets.CharInfo;
-import org.l2junity.gameserver.network.serverpackets.ExRotation;
-import org.l2junity.gameserver.network.serverpackets.ExTeleportToLocationActivate;
-import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
-import org.l2junity.gameserver.network.serverpackets.MagicSkillCanceld;
-import org.l2junity.gameserver.network.serverpackets.MagicSkillLaunched;
-import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
-import org.l2junity.gameserver.network.serverpackets.MoveToLocation;
-import org.l2junity.gameserver.network.serverpackets.NpcInfo;
-import org.l2junity.gameserver.network.serverpackets.Revive;
-import org.l2junity.gameserver.network.serverpackets.ServerObjectInfo;
-import org.l2junity.gameserver.network.serverpackets.SetupGauge;
-import org.l2junity.gameserver.network.serverpackets.SocialAction;
-import org.l2junity.gameserver.network.serverpackets.StatusUpdate;
-import org.l2junity.gameserver.network.serverpackets.StopMove;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
-import org.l2junity.gameserver.network.serverpackets.TeleportToLocation;
-import org.l2junity.gameserver.network.serverpackets.UserInfo;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.ActionFailed;
+import org.l2junity.gameserver.network.client.send.Attack;
+import org.l2junity.gameserver.network.client.send.ChangeMoveType;
+import org.l2junity.gameserver.network.client.send.ChangeWaitType;
+import org.l2junity.gameserver.network.client.send.CharInfo;
+import org.l2junity.gameserver.network.client.send.ExRotation;
+import org.l2junity.gameserver.network.client.send.ExTeleportToLocationActivate;
+import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
+import org.l2junity.gameserver.network.client.send.MagicSkillCanceld;
+import org.l2junity.gameserver.network.client.send.MagicSkillLaunched;
+import org.l2junity.gameserver.network.client.send.MagicSkillUse;
+import org.l2junity.gameserver.network.client.send.MoveToLocation;
+import org.l2junity.gameserver.network.client.send.NpcInfo;
+import org.l2junity.gameserver.network.client.send.Revive;
+import org.l2junity.gameserver.network.client.send.ServerObjectInfo;
+import org.l2junity.gameserver.network.client.send.SetupGauge;
+import org.l2junity.gameserver.network.client.send.SocialAction;
+import org.l2junity.gameserver.network.client.send.StatusUpdate;
+import org.l2junity.gameserver.network.client.send.StopMove;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.TeleportToLocation;
+import org.l2junity.gameserver.network.client.send.UserInfo;
 import org.l2junity.gameserver.pathfinding.AbstractNodeLoc;
 import org.l2junity.gameserver.pathfinding.PathFinding;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
@@ -386,7 +386,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * Send debug packet.
 	 * @param pkt
 	 */
-	public void sendDebugPacket(IGameServerPacket pkt)
+	public void sendDebugPacket(IClientOutgoingPacket pkt)
 	{
 		if (_debugger != null)
 		{
@@ -578,7 +578,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * In order to inform other players of state modification on the L2Character, server just need to go through _knownPlayers to send Server->Client Packet
 	 * @param mov
 	 */
-	public void broadcastPacket(IGameServerPacket mov)
+	public void broadcastPacket(IClientOutgoingPacket mov)
 	{
 		Collection<PlayerInstance> plrs = getKnownList().getKnownPlayers().values();
 		for (PlayerInstance player : plrs)
@@ -598,7 +598,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * @param mov
 	 * @param radiusInKnownlist
 	 */
-	public void broadcastPacket(IGameServerPacket mov, int radiusInKnownlist)
+	public void broadcastPacket(IClientOutgoingPacket mov, int radiusInKnownlist)
 	{
 		final Collection<PlayerInstance> plrs = getKnownList().getKnownPlayers().values();
 		for (PlayerInstance player : plrs)

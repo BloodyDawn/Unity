@@ -26,7 +26,7 @@ import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.QuestState;
-import org.l2junity.gameserver.network.serverpackets.RadarControl;
+import org.l2junity.gameserver.network.client.send.RadarControl;
 
 import quests.Q10273_GoodDayToFly.Q10273_GoodDayToFly;
 import ai.npc.AbstractNpcAI;

@@ -24,10 +24,10 @@ import org.l2junity.gameserver.model.ArenaParticipantsHolder;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.ExCubeGameChangeTimeToStart;
-import org.l2junity.gameserver.network.serverpackets.ExCubeGameRequestReady;
-import org.l2junity.gameserver.network.serverpackets.ExCubeGameTeamList;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.ExCubeGameChangeTimeToStart;
+import org.l2junity.gameserver.network.client.send.ExCubeGameRequestReady;
+import org.l2junity.gameserver.network.client.send.ExCubeGameTeamList;
 
 /**
  * Handys Block Checker Event AI.

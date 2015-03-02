@@ -21,7 +21,7 @@ package org.l2junity.gameserver.model.actor.instance;
 import org.l2junity.Config;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
-import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
+import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.util.Evolve;
 
 public class L2PetManagerInstance extends L2MerchantInstance

@@ -59,11 +59,11 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.type.CastleZone;
 import org.l2junity.gameserver.model.zone.type.ResidenceTeleportZone;
 import org.l2junity.gameserver.model.zone.type.SiegeZone;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.ExCastleState;
-import org.l2junity.gameserver.network.serverpackets.PlaySound;
-import org.l2junity.gameserver.network.serverpackets.PledgeShowInfoUpdate;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.ExCastleState;
+import org.l2junity.gameserver.network.client.send.PlaySound;
+import org.l2junity.gameserver.network.client.send.PledgeShowInfoUpdate;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.util.Broadcast;
 
 public final class Castle extends AbstractResidence

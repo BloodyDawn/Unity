@@ -21,10 +21,9 @@ package org.l2junity.gameserver.network.client;
 import java.util.Arrays;
 import java.util.function.Supplier;
 
-import org.l2junity.gameserver.network.L2GameClient;
-import org.l2junity.gameserver.network.clientpackets.AuthLogin;
-import org.l2junity.gameserver.network.clientpackets.CharacterSelect;
-import org.l2junity.gameserver.network.clientpackets.ProtocolVersion;
+import org.l2junity.gameserver.network.client.recv.AuthLogin;
+import org.l2junity.gameserver.network.client.recv.CharacterSelect;
+import org.l2junity.gameserver.network.client.recv.ProtocolVersion;
 import org.l2junity.network.IConnectionState;
 import org.l2junity.network.IIncomingPacket;
 import org.l2junity.network.IIncomingPackets;

@@ -21,7 +21,7 @@ package ai.individual;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.NpcStringId;
+import org.l2junity.gameserver.network.client.NpcStringId;
 
 import ai.npc.AbstractNpcAI;
 

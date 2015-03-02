@@ -27,9 +27,9 @@ import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.CharInfo;
-import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.CharInfo;
+import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 import org.l2junity.gameserver.taskmanager.DecayTaskManager;
 
 public abstract class Decoy extends Creature
@@ -162,7 +162,7 @@ public abstract class Decoy extends Creature
 	}
 	
 	@Override
-	public void sendPacket(IGameServerPacket mov)
+	public void sendPacket(IClientOutgoingPacket mov)
 	{
 		if (getOwner() != null)
 		{

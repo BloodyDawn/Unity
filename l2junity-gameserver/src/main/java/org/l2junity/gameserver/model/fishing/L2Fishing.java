@@ -26,11 +26,11 @@ import org.l2junity.gameserver.data.xml.impl.FishingMonstersData;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.AbstractScript;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.ExFishingHpRegen;
-import org.l2junity.gameserver.network.serverpackets.ExFishingStartCombat;
-import org.l2junity.gameserver.network.serverpackets.PlaySound;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.ExFishingHpRegen;
+import org.l2junity.gameserver.network.client.send.ExFishingStartCombat;
+import org.l2junity.gameserver.network.client.send.PlaySound;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 
 public class L2Fishing implements Runnable
 {

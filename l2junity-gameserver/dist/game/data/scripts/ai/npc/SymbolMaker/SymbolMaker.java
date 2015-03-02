@@ -20,8 +20,8 @@ package ai.npc.SymbolMaker;
 
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.HennaEquipList;
-import org.l2junity.gameserver.network.serverpackets.HennaRemoveList;
+import org.l2junity.gameserver.network.client.send.HennaEquipList;
+import org.l2junity.gameserver.network.client.send.HennaRemoveList;
 
 import ai.npc.AbstractNpcAI;
 

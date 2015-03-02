@@ -20,7 +20,7 @@ package ai.npc.RemembranceTower;
 
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.OnEventTrigger;
+import org.l2junity.gameserver.network.client.send.OnEventTrigger;
 
 import ai.npc.AbstractNpcAI;
 

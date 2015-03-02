@@ -24,9 +24,9 @@ import org.l2junity.gameserver.data.xml.impl.BuyListData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.buylist.L2BuyList;
-import org.l2junity.gameserver.network.serverpackets.ActionFailed;
-import org.l2junity.gameserver.network.serverpackets.BuyList;
-import org.l2junity.gameserver.network.serverpackets.ExBuySellList;
+import org.l2junity.gameserver.network.client.send.ActionFailed;
+import org.l2junity.gameserver.network.client.send.BuyList;
+import org.l2junity.gameserver.network.client.send.ExBuySellList;
 
 /**
  * This class handles following admin commands:

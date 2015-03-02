@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
+import org.l2junity.gameserver.network.client.send.MagicSkillUse;
 
 /**
  * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $

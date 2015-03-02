@@ -24,9 +24,9 @@ import org.l2junity.gameserver.datatables.MerchantPriceConfigTable.MerchantPrice
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.buylist.L2BuyList;
-import org.l2junity.gameserver.network.serverpackets.ActionFailed;
-import org.l2junity.gameserver.network.serverpackets.BuyList;
-import org.l2junity.gameserver.network.serverpackets.ExBuySellList;
+import org.l2junity.gameserver.network.client.send.ActionFailed;
+import org.l2junity.gameserver.network.client.send.BuyList;
+import org.l2junity.gameserver.network.client.send.ExBuySellList;
 
 /**
  * This class ...

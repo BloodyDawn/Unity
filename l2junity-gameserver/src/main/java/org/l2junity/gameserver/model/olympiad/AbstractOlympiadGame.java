@@ -37,12 +37,12 @@ import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.ExOlympiadMode;
-import org.l2junity.gameserver.network.serverpackets.InventoryUpdate;
-import org.l2junity.gameserver.network.serverpackets.IGameServerPacket;
-import org.l2junity.gameserver.network.serverpackets.SkillCoolTime;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.ExOlympiadMode;
+import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
+import org.l2junity.gameserver.network.client.send.InventoryUpdate;
+import org.l2junity.gameserver.network.client.send.SkillCoolTime;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 
 /**
  * @author godson, GodKratos, Pere, DS
@@ -458,7 +458,7 @@ public abstract class AbstractOlympiadGame
 	
 	public abstract void broadcastOlympiadInfo(OlympiadStadium _stadium);
 	
-	protected abstract void broadcastPacket(IGameServerPacket packet);
+	protected abstract void broadcastPacket(IClientOutgoingPacket packet);
 	
 	protected abstract boolean needBuffers();
 	

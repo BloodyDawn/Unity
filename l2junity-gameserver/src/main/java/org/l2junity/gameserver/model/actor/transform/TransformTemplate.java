@@ -33,7 +33,7 @@ import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.type.WeaponType;
 import org.l2junity.gameserver.model.stats.MoveType;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.network.serverpackets.ExBasicActionList;
+import org.l2junity.gameserver.network.client.send.ExBasicActionList;
 
 /**
  * @author UnAfraid

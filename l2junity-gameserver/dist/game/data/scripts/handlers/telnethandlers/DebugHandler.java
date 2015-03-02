@@ -47,7 +47,7 @@ import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-import org.l2junity.gameserver.network.serverpackets.AdminForgePacket;
+import org.l2junity.gameserver.network.client.send.AdminForgePacket;
 import org.l2junity.gameserver.taskmanager.DecayTaskManager;
 
 import javolution.util.FastComparator;

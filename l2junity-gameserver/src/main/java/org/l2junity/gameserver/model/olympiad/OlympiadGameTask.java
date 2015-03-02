@@ -23,8 +23,8 @@ import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.ThreadPoolManager;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 
 /**
  * @author DS

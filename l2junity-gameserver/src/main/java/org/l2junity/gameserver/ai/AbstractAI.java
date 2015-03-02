@@ -33,14 +33,14 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.serverpackets.ActionFailed;
-import org.l2junity.gameserver.network.serverpackets.AutoAttackStart;
-import org.l2junity.gameserver.network.serverpackets.AutoAttackStop;
-import org.l2junity.gameserver.network.serverpackets.Die;
-import org.l2junity.gameserver.network.serverpackets.MoveToLocation;
-import org.l2junity.gameserver.network.serverpackets.MoveToPawn;
-import org.l2junity.gameserver.network.serverpackets.StopMove;
-import org.l2junity.gameserver.network.serverpackets.StopRotation;
+import org.l2junity.gameserver.network.client.send.ActionFailed;
+import org.l2junity.gameserver.network.client.send.AutoAttackStart;
+import org.l2junity.gameserver.network.client.send.AutoAttackStop;
+import org.l2junity.gameserver.network.client.send.Die;
+import org.l2junity.gameserver.network.client.send.MoveToLocation;
+import org.l2junity.gameserver.network.client.send.MoveToPawn;
+import org.l2junity.gameserver.network.client.send.StopMove;
+import org.l2junity.gameserver.network.client.send.StopRotation;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
 
 /**

@@ -21,7 +21,7 @@ package org.l2junity.gameserver.model.actor.knownlist;
 import org.l2junity.gameserver.MonsterRace;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.L2RaceManagerInstance;
-import org.l2junity.gameserver.network.serverpackets.DeleteObject;
+import org.l2junity.gameserver.network.client.send.DeleteObject;
 
 public class RaceManagerKnownList extends NpcKnownList
 {

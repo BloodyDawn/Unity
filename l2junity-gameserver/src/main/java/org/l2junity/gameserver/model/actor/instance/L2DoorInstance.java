@@ -53,11 +53,11 @@ import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.DoorStatusUpdate;
-import org.l2junity.gameserver.network.serverpackets.OnEventTrigger;
-import org.l2junity.gameserver.network.serverpackets.StaticObject;
-import org.l2junity.gameserver.network.serverpackets.SystemMessage;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.DoorStatusUpdate;
+import org.l2junity.gameserver.network.client.send.OnEventTrigger;
+import org.l2junity.gameserver.network.client.send.StaticObject;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 
 public class L2DoorInstance extends Creature
 {

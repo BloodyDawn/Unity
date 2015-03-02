@@ -51,10 +51,10 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerMoveRe
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.form.ZoneNPoly;
-import org.l2junity.gameserver.network.serverpackets.ConfirmDlg;
-import org.l2junity.gameserver.network.serverpackets.ExServerPrimitive;
-import org.l2junity.gameserver.network.serverpackets.ExShowTerritory;
-import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
+import org.l2junity.gameserver.network.client.send.ConfirmDlg;
+import org.l2junity.gameserver.network.client.send.ExServerPrimitive;
+import org.l2junity.gameserver.network.client.send.ExShowTerritory;
+import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.util.HtmlUtil;
 import org.l2junity.gameserver.util.Util;
 

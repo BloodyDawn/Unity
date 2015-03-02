@@ -30,7 +30,7 @@ import org.l2junity.gameserver.model.actor.instance.L2CubicInstance;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.serverpackets.MagicSkillUse;
+import org.l2junity.gameserver.network.client.send.MagicSkillUse;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
 
 /**

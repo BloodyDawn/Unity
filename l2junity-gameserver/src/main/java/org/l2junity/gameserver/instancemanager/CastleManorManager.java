@@ -48,7 +48,7 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.interfaces.IStorable;
 import org.l2junity.gameserver.model.itemcontainer.ItemContainer;
-import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;

@@ -21,7 +21,7 @@ package ai.npc.SupportUnitCaptain;
 import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.clientpackets.RequestAcquireSkill;
+import org.l2junity.gameserver.network.client.recv.RequestAcquireSkill;
 
 import ai.npc.AbstractNpcAI;
 

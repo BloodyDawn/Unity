@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.util;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.network.L2GameClient;
+import org.l2junity.gameserver.network.client.L2GameClient;
 
 /**
  * Collection of flood protectors for single player.

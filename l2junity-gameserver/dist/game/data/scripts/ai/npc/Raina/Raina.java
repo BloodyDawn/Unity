@@ -51,10 +51,10 @@ import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
 import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcMenuSelect;
 import org.l2junity.gameserver.model.quest.QuestState;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.AcquireSkillList;
-import org.l2junity.gameserver.network.serverpackets.ExSubjobInfo;
-import org.l2junity.gameserver.network.serverpackets.NpcHtmlMessage;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.AcquireSkillList;
+import org.l2junity.gameserver.network.client.send.ExSubjobInfo;
+import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 
 import ai.npc.AbstractNpcAI;
 

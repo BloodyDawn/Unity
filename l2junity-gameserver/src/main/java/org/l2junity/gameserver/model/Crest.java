@@ -21,9 +21,9 @@ package org.l2junity.gameserver.model;
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
-import org.l2junity.gameserver.network.serverpackets.AllyCrest;
-import org.l2junity.gameserver.network.serverpackets.ExPledgeEmblem;
-import org.l2junity.gameserver.network.serverpackets.PledgeCrest;
+import org.l2junity.gameserver.network.client.send.AllyCrest;
+import org.l2junity.gameserver.network.client.send.ExPledgeEmblem;
+import org.l2junity.gameserver.network.client.send.PledgeCrest;
 
 /**
  * @author NosBit

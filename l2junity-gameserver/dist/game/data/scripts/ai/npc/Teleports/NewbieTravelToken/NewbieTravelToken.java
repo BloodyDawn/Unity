@@ -25,7 +25,7 @@ import javolution.util.FastMap;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.SystemMessageId;
+import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
 
 import ai.npc.AbstractNpcAI;

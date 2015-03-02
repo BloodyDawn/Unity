@@ -33,12 +33,12 @@ import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerChangeToAwakenedClass;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.quest.QuestState;
-import org.l2junity.gameserver.network.SystemMessageId;
-import org.l2junity.gameserver.network.serverpackets.AcquireSkillList;
-import org.l2junity.gameserver.network.serverpackets.ExChangeToAwakenedClass;
-import org.l2junity.gameserver.network.serverpackets.ExShowUsm;
-import org.l2junity.gameserver.network.serverpackets.SocialAction;
-import org.l2junity.gameserver.network.serverpackets.UserInfo;
+import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.AcquireSkillList;
+import org.l2junity.gameserver.network.client.send.ExChangeToAwakenedClass;
+import org.l2junity.gameserver.network.client.send.ExShowUsm;
+import org.l2junity.gameserver.network.client.send.SocialAction;
+import org.l2junity.gameserver.network.client.send.UserInfo;
 
 import quests.Q10338_SeizeYourDestiny.Q10338_SeizeYourDestiny;
 import ai.npc.AbstractNpcAI;

@@ -22,7 +22,7 @@ import org.l2junity.gameserver.enums.HtmlActionScope;
 import org.l2junity.gameserver.handler.IBypassHandler;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.serverpackets.TutorialCloseHtml;
+import org.l2junity.gameserver.network.client.send.TutorialCloseHtml;
 
 /**
  * @author UnAfraid

@@ -23,7 +23,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.entity.clanhall.AuctionableHall;
 import org.l2junity.gameserver.model.zone.ZoneId;
-import org.l2junity.gameserver.network.serverpackets.AgitDecoInfo;
+import org.l2junity.gameserver.network.client.send.AgitDecoInfo;
 
 /**
  * A clan hall zone

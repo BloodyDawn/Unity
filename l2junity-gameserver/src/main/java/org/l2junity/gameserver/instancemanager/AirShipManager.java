@@ -36,7 +36,7 @@ import org.l2junity.gameserver.model.actor.instance.L2AirShipInstance;
 import org.l2junity.gameserver.model.actor.instance.L2ControllableAirShipInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
-import org.l2junity.gameserver.network.serverpackets.ExAirShipTeleportList;
+import org.l2junity.gameserver.network.client.send.ExAirShipTeleportList;
 
 public class AirShipManager
 {

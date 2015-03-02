@@ -31,7 +31,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2TamedBeastInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.serverpackets.NpcInfo;
+import org.l2junity.gameserver.network.client.send.NpcInfo;
 import org.l2junity.gameserver.util.Util;
 
 import javolution.util.FastMap;

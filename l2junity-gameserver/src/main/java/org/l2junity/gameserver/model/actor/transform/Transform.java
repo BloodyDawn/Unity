@@ -31,7 +31,7 @@ import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.network.serverpackets.ExBasicActionList;
+import org.l2junity.gameserver.network.client.send.ExBasicActionList;
 
 /**
  * @author UnAfraid
