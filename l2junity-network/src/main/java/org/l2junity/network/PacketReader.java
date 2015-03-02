@@ -153,13 +153,13 @@ public final class PacketReader
 	
 	/**
 	 * Reads a byte array.
-	 * @param data
-	 * @param offset
-	 * @param index
-	 * @throws IndexOutOfBoundsException if {@code readableBytes} is less than {@code length}
+	 * @param dst the destination
+	 * @param dstIndex the destination index to start writing the bytes from
+	 * @param length the length
+	 * @throws IndexOutOfBoundsException if {@code readableBytes} is less than {@code length}, if the specified dstIndex is less than 0 or if {@code dstIndex + length} is greater than {@code dst.length}
 	 */
-	public void readB(byte[] data, int offset, int index)
+	public void readB(byte[] dst, int dstIndex, int length)
 	{
-		_buf.readBytes(data, offset, index);
+		_buf.readBytes(dst, dstIndex, length);
 	}
 }
