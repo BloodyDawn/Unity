@@ -18,6 +18,14 @@
  */
 package org.l2junity.loginserver.network.client.send;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
+import org.l2junity.loginserver.model.GameServer;
+import org.l2junity.loginserver.model.enums.AgeLimit;
+import org.l2junity.loginserver.model.enums.ServerType;
+import org.l2junity.loginserver.network.client.ClientHandler;
 import org.l2junity.network.IOutgoingPacket;
 import org.l2junity.network.PacketWriter;
 
@@ -26,11 +34,11 @@ import org.l2junity.network.PacketWriter;
  */
 public class ServerList implements IOutgoingPacket
 {
-	// private final ClientHandler _client;
+	private final ClientHandler _client;
 	
-	public ServerList()
+	public ServerList(ClientHandler client)
 	{
-		// _client = client;
+		_client = client;
 	}
 	
 	@Override
@@ -39,13 +47,15 @@ public class ServerList implements IOutgoingPacket
 		// TODO: Implement me
 		packet.writeC(0x04);
 		
-		packet.writeC(60); // Server Count
-		packet.writeC(2); // Last Server ID
+		Set<GameServer> gameservers = new HashSet<>();
+		gameservers.add(new GameServer((short) 1, "1", true, AgeLimit.EIGHTEEN, new HashSet<>(Arrays.asList(ServerType.FREE))));
+		gameservers.add(new GameServer((short) 2, "2", true, AgeLimit.EIGHTEEN, new HashSet<>(Arrays.asList(ServerType.FREE))));
+		packet.writeC(gameservers.size());
+		packet.writeC(_client.getAccount().getLastServerId());
 		
-		for (int i = 1; i <= 60; i++)
+		for (GameServer gameServer : gameservers)
 		{
-			// [cddcchhcdc]
-			packet.writeC(i); // Server ID
+			packet.writeC(gameServer.getId());
 			
 			packet.writeC(127); // IP
 			packet.writeC(0); // IP
@@ -53,24 +63,24 @@ public class ServerList implements IOutgoingPacket
 			packet.writeC(1); // IP
 			packet.writeD(7777); // Port
 			
-			packet.writeC(0); // AgeLimit.NONE(0), FIFTEEN(15), EIGHTEEN(18)
-			packet.writeC(0); // PK Enabled
+			packet.writeC(gameServer.getAgeLimit().getAge());
+			packet.writeC(0); // PK Enabled - Unused by client
 			packet.writeH(1); // Player Count
 			packet.writeH(1); // Player Limit
 			packet.writeC(0); // ServerState.OFFLINE(0), ONLINE(1)
-			packet.writeD(0); // ServerType.RELAX(0x02), TEST(0x04), BROAD(0x08), CREATE_RESTRICT(0x10), EVENT(0x20), FREE(0x40), WORLD_RAID(0x100), NEW(0x200), CLASSIC(0x400)
-			packet.writeC(0); // Puts [NULL] in front of name due to missing file in NA client i think its region
+			packet.writeD(gameServer.getServerTypesMask());
+			packet.writeC(0); // Puts [NULL] in front of name due to missing file in NA client
 		}
 		
 		packet.writeH(0); // Unused by client
 		
-		packet.writeC(5);
-		for (int i = 1; i <= 5; i++)
+		packet.writeC(2);
+		for (int i = 1; i <= 2; i++)
 		{
 			packet.writeC(i); // Server ID
 			packet.writeC(127); // Character Count
-			packet.writeC(50); // Deleted Character Count
-			for (int j = 1; j <= 50; j++)
+			packet.writeC(2); // Deleted Character Count
+			for (int j = 1; j <= 2; j++)
 			{
 				packet.writeD(j);
 			}

@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.l2junity.loginserver.controllers;
+package org.l2junity.loginserver.manager;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -41,16 +41,16 @@ import org.l2junity.loginserver.network.client.send.ServerList;
 import org.skife.jdbi.v2.exceptions.DBIException;
 
 /**
- * @author UnAfraid
+ * @author Nos
  */
-public class LoginClientController
+public class LoginManager
 {
-	private final Logger _log = Logger.getLogger(LoginClientController.class.getName());
+	private final Logger _log = Logger.getLogger(LoginManager.class.getName());
 	
 	private MessageDigest _passwordHashCrypt;
 	private final AtomicInteger _connectionId = new AtomicInteger();
 	
-	protected LoginClientController()
+	protected LoginManager()
 	{
 		try
 		{
@@ -111,6 +111,7 @@ public class LoginClientController
 				client.setAccountLoginsId(accountLoginsDAO.insert(account, client.getInetAddress().getHostAddress()));
 			}
 			
+			client.setAccount(account);
 			if (Config.SHOW_LICENCE)
 			{
 				client.setConnectionState(ConnectionState.AUTHED_LICENCE);
@@ -119,7 +120,7 @@ public class LoginClientController
 			else
 			{
 				client.setConnectionState(ConnectionState.AUTHED_SERVER_LIST);
-				client.sendPacket(new ServerList());
+				client.sendPacket(new ServerList(client));
 			}
 		}
 		catch (DBIException e)
@@ -133,8 +134,15 @@ public class LoginClientController
 	 * @param serverId
 	 * @param client
 	 */
-	public void tryServerLogin(ClientHandler client, byte serverId)
+	public void tryServerLogin(ClientHandler client, short serverId)
 	{
+		final Account account = client.getAccount();
+		client.getAccount().setLastServerId(serverId);
+		try (AccountsDAO accountsDAO = DatabaseFactory.getInstance().getAccountsDAO())
+		{
+			accountsDAO.updateLastServerId(account);
+		}
+		
 		try (AccountLoginsDAO accountLoginsDAO = DatabaseFactory.getInstance().getAccountLoginsDAO())
 		{
 			accountLoginsDAO.updateServerId(client.getAccountLoginsId(), (short) (serverId & 0xFF));
@@ -149,13 +157,13 @@ public class LoginClientController
 		return _connectionId.getAndIncrement();
 	}
 	
-	public static LoginClientController getInstance()
+	public static LoginManager getInstance()
 	{
 		return SingletonHolder._instance;
 	}
 	
 	private static final class SingletonHolder
 	{
-		protected static final LoginClientController _instance = new LoginClientController();
+		protected static final LoginManager _instance = new LoginManager();
 	}
 }

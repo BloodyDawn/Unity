@@ -46,7 +46,7 @@ public class RequestServerList implements IIncomingPacket<ClientHandler>
 		if (client.getLoginSessionId() == _loginSessionId)
 		{
 			client.setConnectionState(ConnectionState.AUTHED_SERVER_LIST);
-			client.sendPacket(new ServerList());
+			client.sendPacket(new ServerList(client));
 		}
 		else
 		{

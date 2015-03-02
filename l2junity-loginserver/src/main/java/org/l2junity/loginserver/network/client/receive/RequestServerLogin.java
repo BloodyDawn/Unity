@@ -19,7 +19,7 @@
 package org.l2junity.loginserver.network.client.receive;
 
 import org.l2junity.loginserver.Config;
-import org.l2junity.loginserver.controllers.LoginClientController;
+import org.l2junity.loginserver.manager.LoginManager;
 import org.l2junity.loginserver.network.client.ClientHandler;
 import org.l2junity.loginserver.network.client.send.LoginFail2;
 import org.l2junity.network.IIncomingPacket;
@@ -31,13 +31,13 @@ import org.l2junity.network.PacketReader;
 public class RequestServerLogin implements IIncomingPacket<ClientHandler>
 {
 	private long _loginSessionId;
-	private byte _serverId;
+	private short _serverId;
 	
 	@Override
 	public boolean read(PacketReader packet)
 	{
 		_loginSessionId = packet.readQ();
-		_serverId = (byte) packet.readC();
+		_serverId = packet.readC();
 		return true;
 	}
 	
@@ -50,6 +50,6 @@ public class RequestServerLogin implements IIncomingPacket<ClientHandler>
 			return;
 		}
 		
-		LoginClientController.getInstance().tryServerLogin(client, _serverId);
+		LoginManager.getInstance().tryServerLogin(client, _serverId);
 	}
 }

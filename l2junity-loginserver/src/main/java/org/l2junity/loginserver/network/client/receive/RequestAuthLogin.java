@@ -22,7 +22,7 @@ import java.security.GeneralSecurityException;
 
 import javax.crypto.Cipher;
 
-import org.l2junity.loginserver.controllers.LoginClientController;
+import org.l2junity.loginserver.manager.LoginManager;
 import org.l2junity.loginserver.network.client.ClientHandler;
 import org.l2junity.loginserver.network.client.ConnectionState;
 import org.l2junity.loginserver.network.client.send.LoginFail2;
@@ -114,6 +114,6 @@ public class RequestAuthLogin implements IIncomingPacket<ClientHandler>
 			ncotp = (decrypted[0x7C] & 0xFF) | ((decrypted[0x7D] & 0xFF) << 8) | ((decrypted[0x7E] & 0xFF) << 16) | ((decrypted[0x7F] & 0xFF) << 24);
 		}
 		
-		LoginClientController.getInstance().tryAuthLogin(client, name, password, ncotp);
+		LoginManager.getInstance().tryAuthLogin(client, name, password, ncotp);
 	}
 }

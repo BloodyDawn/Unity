@@ -18,20 +18,95 @@
  */
 package org.l2junity.loginserver.model;
 
+import java.util.Set;
+
+import org.l2junity.loginserver.model.enums.AgeLimit;
+import org.l2junity.loginserver.model.enums.ServerType;
+
 /**
- * @author UnAfraid
+ * @author Nos
  */
 public class GameServer
 {
-	private final int _id;
+	private final short _id;
+	private final String _name;
+	private final boolean _showing;
+	private final AgeLimit _ageLimit;
+	private final Set<ServerType> _serverTypes;
 	
-	public GameServer(int id)
+	/**
+	 * Creates a new game server instance.
+	 * @param id the id
+	 * @param name the name
+	 * @param showing the showing
+	 * @param ageLimit the age limit
+	 * @param serverTypes the server types
+	 */
+	public GameServer(short id, String name, boolean showing, AgeLimit ageLimit, Set<ServerType> serverTypes)
 	{
+		if ((id < 0) && (id > 0xFF))
+		{
+			throw new IllegalStateException("GameServer id should be between 0 and 255");
+		}
 		_id = id;
+		_name = name;
+		_showing = showing;
+		_ageLimit = ageLimit;
+		
+		_serverTypes = serverTypes;
 	}
 	
-	public int getId()
+	/**
+	 * Gets the id.
+	 * @return the id
+	 */
+	public short getId()
 	{
 		return _id;
+	}
+	
+	/**
+	 * Gets the name.
+	 * @return the name
+	 */
+	public String getName()
+	{
+		return _name;
+	}
+	
+	/**
+	 * Checks if is showing.
+	 * @return the showing
+	 */
+	public boolean isShowing()
+	{
+		return _showing;
+	}
+	
+	/**
+	 * Gets the age limit.
+	 * @return the age limit
+	 */
+	public AgeLimit getAgeLimit()
+	{
+		return _ageLimit;
+	}
+	
+	/**
+	 * Gets the server types.
+	 * @return the server types
+	 */
+	public Set<ServerType> getServerTypes()
+	{
+		return _serverTypes;
+	}
+	
+	/**
+	 * Gets the server types mask.
+	 * @return the server types mask
+	 */
+	public int getServerTypesMask()
+	{
+		return _serverTypes.stream().mapToInt(s -> s.getMask()).reduce((r, e) -> r | e).orElse(0);
 	}
 }

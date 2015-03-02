@@ -28,7 +28,8 @@ import java.util.logging.Logger;
 
 import javax.crypto.SecretKey;
 
-import org.l2junity.loginserver.controllers.LoginClientController;
+import org.l2junity.loginserver.db.dto.Account;
+import org.l2junity.loginserver.manager.LoginManager;
 import org.l2junity.loginserver.network.client.crypt.KeyManager;
 import org.l2junity.loginserver.network.client.crypt.ScrambledRSAKeyPair;
 import org.l2junity.loginserver.network.client.send.Init;
@@ -50,6 +51,7 @@ public class ClientHandler extends ChannelInboundHandler<ClientHandler>
 	private long _sessionId;
 	private Channel _channel;
 	private byte[] _gameGuard;
+	private Account _account;
 	private long _accountLoginsId;
 	
 	public ClientHandler(SecretKey blowfishKey)
@@ -68,7 +70,7 @@ public class ClientHandler extends ChannelInboundHandler<ClientHandler>
 		InetSocketAddress address = (InetSocketAddress) ctx.channel().remoteAddress();
 		_address = address.getAddress();
 		_channel = ctx.channel();
-		_connectionId = LoginClientController.getInstance().getNextConnectionId();
+		_connectionId = LoginManager.getInstance().getNextConnectionId();
 		sendPacket(new Init(_connectionId, _scrambledRSAKeyPair, _blowfishKey));
 		
 		_log.info("Client Connected: " + ctx.channel());
@@ -189,6 +191,16 @@ public class ClientHandler extends ChannelInboundHandler<ClientHandler>
 		return _address;
 	}
 	
+	public Account getAccount()
+	{
+		return _account;
+	}
+	
+	public void setAccount(Account account)
+	{
+		_account = account;
+	}
+	
 	public long getAccountLoginsId()
 	{
 		return _accountLoginsId;
@@ -198,4 +210,5 @@ public class ClientHandler extends ChannelInboundHandler<ClientHandler>
 	{
 		_accountLoginsId = accountLoginsId;
 	}
+	
 }
