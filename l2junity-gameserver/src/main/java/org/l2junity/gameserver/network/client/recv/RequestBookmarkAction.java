@@ -66,6 +66,10 @@ public class RequestBookmarkAction implements IClientIncomingPacket
 				_bookmarkPacket = new RequestChangeBookMarkSlot();
 				break;
 			}
+			default:
+			{
+				return false;
+			}
 		}
 		return true;
 	}
