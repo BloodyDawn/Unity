@@ -663,10 +663,15 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 			}
 		}
 		
+		// Reset targetable state
+		mob.setTargetable(mob.getTemplate().isTargetable());
+		
 		// Reset summoner
 		mob.setSummoner(null);
+		
 		// Reset summoned list
 		mob.resetSummonedNpcs();
+		
 		// Link the L2NpcInstance to this L2Spawn
 		mob.setSpawn(this);
 		
