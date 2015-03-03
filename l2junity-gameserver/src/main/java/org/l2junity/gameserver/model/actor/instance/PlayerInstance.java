@@ -284,6 +284,7 @@ import org.l2junity.gameserver.network.client.send.ExUserInfoAbnormalVisualEffec
 import org.l2junity.gameserver.network.client.send.ExUserInfoCubic;
 import org.l2junity.gameserver.network.client.send.ExUserInfoFishing;
 import org.l2junity.gameserver.network.client.send.ExUserInfoInvenWeight;
+import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.GameGuardQuery;
 import org.l2junity.gameserver.network.client.send.GetOnVehicle;
 import org.l2junity.gameserver.network.client.send.HennaInfo;
@@ -328,7 +329,6 @@ import org.l2junity.gameserver.network.client.send.TradeOtherDone;
 import org.l2junity.gameserver.network.client.send.TradeStart;
 import org.l2junity.gameserver.network.client.send.UserInfo;
 import org.l2junity.gameserver.network.client.send.ValidateLocation;
-import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.commission.ExResponseCommissionInfo;
 import org.l2junity.gameserver.network.client.send.friend.L2FriendStatus;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;

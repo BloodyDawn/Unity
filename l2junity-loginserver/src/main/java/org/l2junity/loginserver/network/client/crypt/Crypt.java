@@ -80,8 +80,6 @@ public class Crypt implements ICrypt
 			buf = buf.order(ByteOrder.LITTLE_ENDIAN);
 		}
 		
-		buf.readerIndex(2); // set the reader index after packet size
-		
 		// Checksum & XOR Key or Checksum only
 		buf.writeZero(_static ? 8 : 4);
 		
@@ -103,7 +101,7 @@ public class Crypt implements ICrypt
 			}
 			buf.setInt(buf.readerIndex(), key);
 			
-			buf.readerIndex(2); // set the reader index after packet size
+			buf.resetReaderIndex();
 			
 			final byte[] block = new byte[8];
 			while (buf.isReadable(8))
@@ -122,7 +120,7 @@ public class Crypt implements ICrypt
 			}
 			buf.setInt(buf.readerIndex(), checksum);
 			
-			buf.readerIndex(2); // set the reader index after packet size
+			buf.resetReaderIndex();
 			
 			final byte[] block = new byte[8];
 			while (buf.isReadable(8))
@@ -132,9 +130,6 @@ public class Crypt implements ICrypt
 				buf.setBytes(buf.readerIndex() - block.length, block);
 			}
 		}
-		
-		// Update packet size for Checksum/XOR Key/Padding
-		buf.setShort(0, buf.writerIndex());
 	}
 	
 	/*
@@ -144,8 +139,6 @@ public class Crypt implements ICrypt
 	@Override
 	public void decrypt(ByteBuf buf)
 	{
-		buf.readerIndex(2); // set the reader index after packet size
-		
 		// Packet size must be multiple of 8
 		if ((buf.readableBytes() % 8) != 0)
 		{

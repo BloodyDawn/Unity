@@ -191,7 +191,8 @@ enum IncomingPackets implements IIncomingPackets<IIncomingPacket<L2GameClient>>
 	GAME_GUARD_REPLY(0xCB, GameGuardReply::new, ConnectionState.IN_GAME),
 	REQUEST_PLEDGE_POWER(0xCC, RequestPledgePower::new, ConnectionState.IN_GAME),
 	REQUEST_MAKE_MACRO(0xCD, RequestMakeMacro::new, ConnectionState.IN_GAME),
-	REQUEST_DELETE_MACRO(0xCE, RequestDeleteMacro::new, ConnectionState.IN_GAME);
+	REQUEST_DELETE_MACRO(0xCE, RequestDeleteMacro::new, ConnectionState.IN_GAME),
+	EX_PACKET(0xD0, ExPacket::new, ConnectionState.values()); // This packet has its own connection state checking so we allow all of them
 	
 	public static final IncomingPackets[] PACKET_ARRAY;
 	

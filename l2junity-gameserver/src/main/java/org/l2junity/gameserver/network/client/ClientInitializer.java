@@ -20,12 +20,12 @@ package org.l2junity.gameserver.network.client;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;
-import io.netty.handler.logging.LogLevel;
-import io.netty.handler.logging.LoggingHandler;
+import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 
 import java.nio.ByteOrder;
 
 import org.l2junity.network.codecs.CryptCodec;
+import org.l2junity.network.codecs.LengthFieldBasedFrameEncoder;
 import org.l2junity.network.codecs.PacketDecoder;
 import org.l2junity.network.codecs.PacketEncoder;
 
@@ -34,16 +34,19 @@ import org.l2junity.network.codecs.PacketEncoder;
  */
 public class ClientInitializer extends ChannelInitializer<SocketChannel>
 {
-	private static final PacketEncoder packetEncoder = new PacketEncoder(ByteOrder.LITTLE_ENDIAN, 0x8000);
+	private static final LengthFieldBasedFrameEncoder LENGTH_ENCODER = new LengthFieldBasedFrameEncoder();
+	private static final PacketEncoder PACKET_ENCODER = new PacketEncoder(ByteOrder.LITTLE_ENDIAN, 0x8000);
 	
 	@Override
 	protected void initChannel(SocketChannel ch)
 	{
 		final L2GameClient client = new L2GameClient();
+		ch.pipeline().addLast("length-decoder", new LengthFieldBasedFrameDecoder(ByteOrder.LITTLE_ENDIAN, 0x8000, 0, 2, -2, 2, false));
+		ch.pipeline().addLast("length-encoder", LENGTH_ENCODER);
 		ch.pipeline().addLast("crypt-codec", new CryptCodec(client.getCrypt()));
-		ch.pipeline().addLast(new LoggingHandler(LogLevel.INFO));
-		ch.pipeline().addLast("packet-decoder", new PacketDecoder(ByteOrder.LITTLE_ENDIAN, 0x8000, IncomingPackets.PACKET_ARRAY));
-		ch.pipeline().addLast("packet-encoder", packetEncoder);
+		// ch.pipeline().addLast(new LoggingHandler(LogLevel.INFO));
+		ch.pipeline().addLast("packet-decoder", new PacketDecoder(ByteOrder.LITTLE_ENDIAN, IncomingPackets.PACKET_ARRAY));
+		ch.pipeline().addLast("packet-encoder", PACKET_ENCODER);
 		ch.pipeline().addLast(client);
 	}
 }

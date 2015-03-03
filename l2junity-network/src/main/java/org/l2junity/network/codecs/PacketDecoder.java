@@ -20,9 +20,10 @@ package org.l2junity.network.codecs;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
+import io.netty.handler.codec.ByteToMessageDecoder;
 
 import java.nio.ByteOrder;
+import java.util.List;
 
 import org.l2junity.network.IConnectionState;
 import org.l2junity.network.IIncomingPacket;
@@ -32,63 +33,66 @@ import org.l2junity.network.PacketReader;
 /**
  * @author Nos
  */
-public class PacketDecoder extends LengthFieldBasedFrameDecoder
+public class PacketDecoder extends ByteToMessageDecoder
 {
 	private final ByteOrder _byteOrder;
 	private final IIncomingPackets<?>[] _incomingPackets;
 	
-	public <T extends IIncomingPackets<?>> PacketDecoder(ByteOrder byteOrder, int maxPacketSize, IIncomingPackets<?>[] incomingPackets)
+	public <T extends IIncomingPackets<?>> PacketDecoder(ByteOrder byteOrder, IIncomingPackets<?>[] incomingPackets)
 	{
-		super(byteOrder, maxPacketSize, 0, 2, -2, 2, false);
 		_byteOrder = byteOrder;
 		_incomingPackets = incomingPackets;
 	}
 	
 	@Override
-	protected Object decode(ChannelHandlerContext ctx, ByteBuf in) throws Exception
+	protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out)
 	{
-		ByteBuf frame = (ByteBuf) super.decode(ctx, in);
-		if ((frame == null) || !frame.isReadable())
+		if ((in == null) || !in.isReadable())
 		{
-			return null;
+			return;
 		}
 		
-		if (frame.order() != _byteOrder)
+		if (in.order() != _byteOrder)
 		{
-			frame = frame.order(_byteOrder);
+			in = in.order(_byteOrder);
 		}
 		
-		final short packetId = frame.readUnsignedByte();
-		if (packetId >= _incomingPackets.length)
+		try
 		{
-			System.out.format("Invalid Packet: 0x%02X", packetId);
-			return null;
+			final short packetId = in.readUnsignedByte();
+			if (packetId >= _incomingPackets.length)
+			{
+				System.out.format("Invalid Packet: 0x%02X", packetId);
+				return;
+			}
+			
+			System.out.format("Incoming Packet: 0x%02X ", packetId);
+			
+			final IIncomingPackets<?> incomingPacket = _incomingPackets[packetId];
+			if (incomingPacket == null)
+			{
+				System.out.println();
+				return;
+			}
+			
+			final IConnectionState connectionState = ctx.channel().attr(IConnectionState.ATTRIBUTE_KEY).get();
+			if ((connectionState == null) || !incomingPacket.getConnectionStates().contains(connectionState))
+			{
+				System.out.println(" Connection at invalid state: " + connectionState + " Required State: " + incomingPacket.getConnectionStates());
+				return;
+			}
+			
+			System.out.println(" Handler: " + incomingPacket);
+			final IIncomingPacket<?> packet = incomingPacket.newIncomingPacket();
+			if ((packet != null) && packet.read(new PacketReader(in)))
+			{
+				out.add(packet);
+			}
 		}
-		
-		System.out.format("Incoming Packet: 0x%02X ", packetId);
-		
-		final IIncomingPackets<?> incomingPacket = _incomingPackets[packetId];
-		if (incomingPacket == null)
+		finally
 		{
-			System.out.println();
-			return null;
+			// We always consider that we read whole packet.
+			in.readerIndex(in.writerIndex());
 		}
-		
-		final IConnectionState connectionState = ctx.channel().attr(IConnectionState.ATTRIBUTE_KEY).get();
-		if ((connectionState == null) || !incomingPacket.getConnectionStates().contains(connectionState))
-		{
-			System.out.println(" Connection at invalid state: " + connectionState + " Required State: " + incomingPacket.getConnectionStates());
-			return null;
-		}
-		
-		System.out.println(" Handler: " + incomingPacket);
-		IIncomingPacket<?> packet = incomingPacket.newIncomingPacket();
-		return (packet != null) && packet.read(new PacketReader(frame)) ? packet : null;
-	}
-	
-	@Override
-	protected ByteBuf extractFrame(ChannelHandlerContext ctx, ByteBuf buffer, int index, int length)
-	{
-		return buffer.slice(index, length);
 	}
 }

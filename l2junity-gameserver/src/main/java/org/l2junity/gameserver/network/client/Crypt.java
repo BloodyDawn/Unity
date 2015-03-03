@@ -46,12 +46,11 @@ public class Crypt implements ICrypt
 			return;
 		}
 		
-		buf.readerIndex(2);
 		int a = 0;
 		while (buf.isReadable())
 		{
 			final int b = buf.readByte() & 0xFF;
-			a = b ^ _outKey[(buf.readerIndex() - 3) & 15] ^ a;
+			a = b ^ _outKey[(buf.readerIndex() - 1) & 15] ^ a;
 			buf.setByte(buf.readerIndex() - 1, a);
 		}
 		
@@ -66,12 +65,11 @@ public class Crypt implements ICrypt
 			return;
 		}
 		
-		buf.readerIndex(2);
 		int a = 0;
 		while (buf.isReadable())
 		{
 			final int b = buf.readByte() & 0xFF;
-			buf.setByte(buf.readerIndex() - 1, b ^ _inKey[(buf.readerIndex() - 3) & 15] ^ a);
+			buf.setByte(buf.readerIndex() - 1, b ^ _inKey[(buf.readerIndex() - 1) & 15] ^ a);
 			a = b;
 		}
 		

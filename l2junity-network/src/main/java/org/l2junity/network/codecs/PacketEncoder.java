@@ -56,8 +56,6 @@ public class PacketEncoder extends MessageToByteEncoder<IOutgoingPacket>
 			out = out.order(_byteOrder);
 		}
 		
-		// Reserve 2 bytes for packet size
-		out.writeShort(0);
 		if (packet.write(new PacketWriter(out)))
 		{
 			if (out.writerIndex() > _maxPacketSize)
@@ -65,11 +63,6 @@ public class PacketEncoder extends MessageToByteEncoder<IOutgoingPacket>
 				_log.log(Level.WARNING, "", new IllegalStateException("Packet (" + packet + ") size (" + out.writerIndex() + ") is bigger than the limit (" + _maxPacketSize + ")"));
 				// Avoid sending the packet
 				out.clear();
-			}
-			else
-			{
-				// Set the reserved bytes to packet size
-				out.setShort(0, out.writerIndex());
 			}
 		}
 		else
