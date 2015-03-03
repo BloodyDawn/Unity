@@ -27,9 +27,9 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2ObservationInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.ItemList;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 public class Observation implements IBypassHandler
 {

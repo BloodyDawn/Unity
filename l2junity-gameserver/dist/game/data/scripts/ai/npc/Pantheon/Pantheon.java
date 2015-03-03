@@ -23,8 +23,8 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.QuestState;
-import org.l2junity.gameserver.network.client.NpcStringId;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 import quests.Q10320_LetsGoToTheCentralSquare.Q10320_LetsGoToTheCentralSquare;
 import ai.npc.AbstractNpcAI;

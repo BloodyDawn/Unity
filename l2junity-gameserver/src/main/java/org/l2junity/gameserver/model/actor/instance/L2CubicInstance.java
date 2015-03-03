@@ -47,7 +47,7 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.zone.ZoneId;
-import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 public final class L2CubicInstance implements IIdentifiable
 {

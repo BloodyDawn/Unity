@@ -26,7 +26,7 @@ import org.l2junity.gameserver.model.Macro;
 import org.l2junity.gameserver.model.MacroCmd;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
-import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.network.PacketReader;
 
 public final class RequestMakeMacro implements IClientIncomingPacket

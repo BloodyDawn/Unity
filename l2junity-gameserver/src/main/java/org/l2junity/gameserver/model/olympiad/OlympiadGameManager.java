@@ -28,8 +28,8 @@ import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.type.OlympiadStadiumZone;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * @author GodKratos, DS

@@ -29,7 +29,7 @@ import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.AccessLevel;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * Change access level command handler.

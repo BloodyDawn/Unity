@@ -47,11 +47,11 @@ import org.l2junity.gameserver.model.interfaces.IPositionable;
 import org.l2junity.gameserver.model.interfaces.ISpawnable;
 import org.l2junity.gameserver.model.interfaces.IUniqueId;
 import org.l2junity.gameserver.model.zone.ZoneId;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.DeleteObject;
 import org.l2junity.gameserver.network.client.send.ExSendUIEvent;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
 
 /**

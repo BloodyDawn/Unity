@@ -38,7 +38,7 @@ import org.l2junity.gameserver.model.actor.tasks.npc.walker.ArrivedTask;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcMoveNodeArrived;
 import org.l2junity.gameserver.model.holders.NpcRoutesHolder;
-import org.l2junity.gameserver.network.client.NpcStringId;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;

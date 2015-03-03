@@ -62,11 +62,11 @@ import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.sieges.castle.OnCastleSiegeFinish;
 import org.l2junity.gameserver.model.events.impl.sieges.castle.OnCastleSiegeOwnerChange;
 import org.l2junity.gameserver.model.events.impl.sieges.castle.OnCastleSiegeStart;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.RelationChanged;
 import org.l2junity.gameserver.network.client.send.SiegeInfo;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.UserInfo;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Broadcast;
 
 public class Siege implements Siegable

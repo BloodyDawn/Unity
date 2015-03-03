@@ -30,7 +30,7 @@ import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.holders.DoorRequestHolder;
 import org.l2junity.gameserver.model.holders.SummonRequestHolder;
 import org.l2junity.gameserver.network.client.L2GameClient;
-import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.GMAudit;
 import org.l2junity.network.PacketReader;
 

@@ -87,8 +87,6 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.variables.NpcVariables;
 import org.l2junity.gameserver.model.zone.type.TownZone;
-import org.l2junity.gameserver.network.client.NpcStringId;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.ExChangeNpcState;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
@@ -98,6 +96,8 @@ import org.l2junity.gameserver.network.client.send.NpcInfoAbnormalVisualEffect;
 import org.l2junity.gameserver.network.client.send.NpcSay;
 import org.l2junity.gameserver.network.client.send.ServerObjectInfo;
 import org.l2junity.gameserver.network.client.send.SocialAction;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.taskmanager.DecayTaskManager;
 import org.l2junity.gameserver.util.Broadcast;
 

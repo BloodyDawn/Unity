@@ -30,7 +30,6 @@ import org.l2junity.gameserver.model.events.annotations.Id;
 import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
 import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcManorBypass;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.BuyListSeed;
 import org.l2junity.gameserver.network.client.send.ExShowCropInfo;
 import org.l2junity.gameserver.network.client.send.ExShowManorDefaultInfo;
@@ -38,6 +37,7 @@ import org.l2junity.gameserver.network.client.send.ExShowProcureCropDetail;
 import org.l2junity.gameserver.network.client.send.ExShowSeedInfo;
 import org.l2junity.gameserver.network.client.send.ExShowSellCropList;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 import ai.npc.AbstractNpcAI;
 

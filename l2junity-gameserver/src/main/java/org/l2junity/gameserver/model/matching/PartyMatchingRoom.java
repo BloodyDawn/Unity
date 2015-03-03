@@ -24,12 +24,12 @@ import org.l2junity.gameserver.enums.UserInfoType;
 import org.l2junity.gameserver.instancemanager.MatchingRoomManager;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.ExClosePartyRoom;
 import org.l2junity.gameserver.network.client.send.ExPartyRoomMember;
 import org.l2junity.gameserver.network.client.send.ListPartyWaiting;
 import org.l2junity.gameserver.network.client.send.PartyRoomInfo;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * @author Sdw

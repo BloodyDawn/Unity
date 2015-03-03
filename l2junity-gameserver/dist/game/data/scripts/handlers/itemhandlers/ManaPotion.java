@@ -21,7 +21,7 @@ package handlers.itemhandlers;
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 public class ManaPotion extends ItemSkills
 {

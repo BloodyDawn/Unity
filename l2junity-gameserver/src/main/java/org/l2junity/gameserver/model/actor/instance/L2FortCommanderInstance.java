@@ -32,7 +32,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.client.NpcStringId;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 public class L2FortCommanderInstance extends L2DefenderInstance
 {

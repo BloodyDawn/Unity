@@ -24,8 +24,8 @@ import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Siege;
 import org.l2junity.gameserver.model.zone.type.SiegeZone;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * @author Tryskell

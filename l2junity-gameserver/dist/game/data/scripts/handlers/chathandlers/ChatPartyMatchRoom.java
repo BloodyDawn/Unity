@@ -23,8 +23,8 @@ import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.handler.IChatHandler;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.matching.MatchingRoom;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.CreatureSay;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * Party Match Room chat handler.

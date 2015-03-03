@@ -45,7 +45,6 @@ import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.network.client.L2GameClient;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.AcquireSkillList;
 import org.l2junity.gameserver.network.client.send.ExVoteSystemInfo;
 import org.l2junity.gameserver.network.client.send.GMViewItemList;
@@ -54,6 +53,7 @@ import org.l2junity.gameserver.network.client.send.PartySmallWindowAll;
 import org.l2junity.gameserver.network.client.send.PartySmallWindowDeleteAll;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.UserInfo;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.HtmlUtil;
 import org.l2junity.gameserver.util.Util;
 

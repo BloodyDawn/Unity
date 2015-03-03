@@ -31,9 +31,9 @@ import org.l2junity.gameserver.model.actor.stat.PcStat;
 import org.l2junity.gameserver.model.entity.Duel;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
 
 public class PcStatus extends PlayableStatus

@@ -32,9 +32,9 @@ import org.l2junity.gameserver.model.actor.status.SiegeFlagStatus;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.entity.Siegable;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 public class L2SiegeFlagInstance extends Npc
 {

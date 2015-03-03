@@ -76,8 +76,8 @@ import org.l2junity.gameserver.model.zone.type.ClanHallZone;
 import org.l2junity.gameserver.model.zone.type.FortZone;
 import org.l2junity.gameserver.model.zone.type.MotherTreeZone;
 import org.l2junity.gameserver.network.Debug;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
 
 /**

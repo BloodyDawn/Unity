@@ -19,8 +19,8 @@
 package org.l2junity.gameserver.model.actor.tasks.player;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * Task dedicated to make damage to the player while drowning.

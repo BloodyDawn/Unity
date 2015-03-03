@@ -24,8 +24,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.entity.Instance;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 import javolution.util.FastList;
 

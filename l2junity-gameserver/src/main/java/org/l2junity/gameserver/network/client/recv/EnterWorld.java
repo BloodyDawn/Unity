@@ -58,7 +58,6 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.L2GameClient;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.AcquireSkillList;
 import org.l2junity.gameserver.network.client.send.Die;
 import org.l2junity.gameserver.network.client.send.EtcStatusUpdate;
@@ -95,6 +94,7 @@ import org.l2junity.gameserver.network.client.send.SkillCoolTime;
 import org.l2junity.gameserver.network.client.send.SkillList;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.friend.L2FriendList;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.network.PacketReader;
 
 /**

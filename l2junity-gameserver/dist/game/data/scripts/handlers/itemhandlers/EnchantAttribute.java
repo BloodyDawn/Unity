@@ -23,8 +23,8 @@ import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.EnchantItemAttributeRequest;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.ExChooseInventoryAttributeItem;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 public class EnchantAttribute implements IItemHandler
 {

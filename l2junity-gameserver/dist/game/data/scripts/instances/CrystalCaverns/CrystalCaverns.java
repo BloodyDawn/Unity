@@ -49,8 +49,6 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.zone.ZoneType;
-import org.l2junity.gameserver.network.client.NpcStringId;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.CreatureSay;
 import org.l2junity.gameserver.network.client.send.FlyToLocation;
@@ -60,6 +58,8 @@ import org.l2junity.gameserver.network.client.send.SpecialCamera;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.ValidateLocation;
 import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
 
 import javolution.util.FastList;

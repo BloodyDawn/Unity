@@ -43,9 +43,9 @@ import org.l2junity.gameserver.model.olympiad.Olympiad;
 import org.l2junity.gameserver.network.client.ClientNetworkManager;
 import org.l2junity.gameserver.network.client.EventLoopGroupManager;
 import org.l2junity.gameserver.network.client.L2GameClient;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.ServerClose;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.network.gameserverpackets.ServerStatus;
 import org.l2junity.gameserver.util.Broadcast;
 

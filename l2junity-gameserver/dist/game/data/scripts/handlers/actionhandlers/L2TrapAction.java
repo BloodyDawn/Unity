@@ -22,7 +22,7 @@ import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.handler.IActionHandler;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 public class L2TrapAction implements IActionHandler
 {

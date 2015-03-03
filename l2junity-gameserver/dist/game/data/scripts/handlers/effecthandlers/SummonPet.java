@@ -33,8 +33,8 @@ import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.holders.PetItemHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.PetItemList;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * Summon Pet effect implementation.

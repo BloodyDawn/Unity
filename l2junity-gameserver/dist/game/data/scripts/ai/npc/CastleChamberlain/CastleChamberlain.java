@@ -50,13 +50,13 @@ import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcManorBypass;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.ExShowCropInfo;
 import org.l2junity.gameserver.network.client.send.ExShowCropSetting;
 import org.l2junity.gameserver.network.client.send.ExShowManorDefaultInfo;
 import org.l2junity.gameserver.network.client.send.ExShowSeedInfo;
 import org.l2junity.gameserver.network.client.send.ExShowSeedSetting;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
 
 import ai.npc.AbstractNpcAI;

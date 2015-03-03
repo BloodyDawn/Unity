@@ -54,11 +54,11 @@ import org.l2junity.gameserver.model.events.impl.character.player.clan.OnPlayerC
 import org.l2junity.gameserver.model.events.impl.character.player.clan.OnPlayerClanDestroy;
 import org.l2junity.gameserver.model.events.impl.clan.OnClanWarFinish;
 import org.l2junity.gameserver.model.events.impl.clan.OnClanWarStart;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.PledgeShowInfoUpdate;
 import org.l2junity.gameserver.network.client.send.PledgeShowMemberListAll;
 import org.l2junity.gameserver.network.client.send.PledgeShowMemberListUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
 import org.l2junity.util.EnumIntBitmask;
 

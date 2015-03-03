@@ -32,8 +32,8 @@ import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 import org.l2junity.gameserver.model.zone.ZoneType;
-import org.l2junity.gameserver.network.client.NpcStringId;
 import org.l2junity.gameserver.network.client.send.TutorialShowHtml;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 /**
  * Let's Go To The Central Square (10320)

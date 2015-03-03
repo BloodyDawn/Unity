@@ -23,10 +23,10 @@ import org.l2junity.gameserver.model.TradeList;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.TradeOtherAdd;
 import org.l2junity.gameserver.network.client.send.TradeOwnAdd;
 import org.l2junity.gameserver.network.client.send.TradeUpdate;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.network.PacketReader;
 
 /**

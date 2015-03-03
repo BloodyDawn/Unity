@@ -21,8 +21,8 @@ package handlers.itemhandlers;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.ShowMiniMap;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * This class provides handling for items that should display a map when double clicked.

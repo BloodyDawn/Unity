@@ -55,6 +55,7 @@ import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 import org.l2junity.gameserver.network.client.send.ServerClose;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.security.SecondaryPasswordAuth;
 import org.l2junity.gameserver.util.FloodProtectors;
 import org.l2junity.gameserver.util.Util;

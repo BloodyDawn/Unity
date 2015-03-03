@@ -22,8 +22,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.l2junity.gameserver.model.holders.NpcLogListHolder;
-import org.l2junity.gameserver.network.client.NpcStringId;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.network.PacketWriter;
 
 /**

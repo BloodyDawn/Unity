@@ -31,7 +31,6 @@ import org.l2junity.gameserver.model.actor.knownlist.RaceManagerKnownList;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.DeleteObject;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
@@ -40,6 +39,7 @@ import org.l2junity.gameserver.network.client.send.MonRaceInfo;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.PlaySound;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Broadcast;
 
 public class L2RaceManagerInstance extends Npc

@@ -27,7 +27,7 @@ import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneId;
-import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * Player Can Create Outpost condition implementation.

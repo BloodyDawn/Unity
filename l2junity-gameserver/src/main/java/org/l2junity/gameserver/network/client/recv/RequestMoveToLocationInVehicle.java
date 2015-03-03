@@ -25,10 +25,10 @@ import org.l2junity.gameserver.model.actor.instance.L2BoatInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.type.WeaponType;
 import org.l2junity.gameserver.network.client.L2GameClient;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.MoveToLocationInVehicle;
 import org.l2junity.gameserver.network.client.send.StopMoveInVehicle;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.network.PacketReader;
 
 public final class RequestMoveToLocationInVehicle implements IClientIncomingPacket

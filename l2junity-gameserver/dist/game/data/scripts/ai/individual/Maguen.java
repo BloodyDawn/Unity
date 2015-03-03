@@ -27,7 +27,7 @@ import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.client.NpcStringId;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 import ai.npc.AbstractNpcAI;
 import ai.npc.Nemo.Nemo;

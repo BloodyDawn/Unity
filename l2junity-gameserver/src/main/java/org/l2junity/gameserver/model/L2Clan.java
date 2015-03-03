@@ -56,7 +56,6 @@ import org.l2junity.gameserver.model.itemcontainer.ClanWarehouse;
 import org.l2junity.gameserver.model.itemcontainer.ItemContainer;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneId;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.CreatureSay;
 import org.l2junity.gameserver.network.client.send.ExSubPledgeSkillAdd;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
@@ -71,6 +70,7 @@ import org.l2junity.gameserver.network.client.send.PledgeSkillListAdd;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.UserInfo;
 import org.l2junity.gameserver.network.client.send.PledgeSkillList.SubPledgeSkill;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
 import org.l2junity.util.EnumIntBitmask;
 

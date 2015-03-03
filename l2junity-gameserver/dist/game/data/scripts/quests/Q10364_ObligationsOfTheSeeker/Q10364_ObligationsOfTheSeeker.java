@@ -23,8 +23,8 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
-import org.l2junity.gameserver.network.client.NpcStringId;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 import quests.Q10363_RequestOfTheSeeker.Q10363_RequestOfTheSeeker;
 

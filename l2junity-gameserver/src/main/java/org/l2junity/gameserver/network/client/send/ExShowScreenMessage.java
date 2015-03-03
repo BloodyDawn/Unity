@@ -21,9 +21,9 @@ package org.l2junity.gameserver.network.client.send;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.l2junity.gameserver.network.client.NpcStringId;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
-import org.l2junity.gameserver.network.client.SystemMessageId;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.network.PacketWriter;
 
 /**

@@ -25,8 +25,8 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.handler.IUserCommandHandler;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * Time user command.

@@ -21,7 +21,7 @@ package org.l2junity.gameserver.model.teleporter;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
-import org.l2junity.gameserver.network.client.NpcStringId;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 /**
  * @author UnAfraid

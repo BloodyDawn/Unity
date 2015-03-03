@@ -39,8 +39,8 @@ import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneType;
-import org.l2junity.gameserver.network.client.NpcStringId;
 import org.l2junity.gameserver.network.client.send.PlaySound;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 import ai.npc.AbstractNpcAI;
 

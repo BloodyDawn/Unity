@@ -21,8 +21,8 @@ package handlers.usercommandhandlers;
 import org.l2junity.gameserver.handler.IUserCommandHandler;
 import org.l2junity.gameserver.model.CommandChannel;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.client.SystemMessageId;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * Channel Delete user command.
