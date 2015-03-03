@@ -148,7 +148,6 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 	@Override
 	protected void messageReceived(ChannelHandlerContext ctx, IIncomingPacket<L2GameClient> packet)
 	{
-		_log.info(packet.getClass().getSimpleName() + " packet from: " + ctx.channel());
 		try
 		{
 			packet.run(this);
