@@ -34,13 +34,18 @@ public class ExPacket implements IIncomingPacket<L2GameClient>
 	public boolean read(PacketReader packet)
 	{
 		int exPacketId = packet.readH() & 0xFFFF;
-		
 		if ((exPacketId < 0) || (exPacketId >= ExIncomingPackets.PACKET_ARRAY.length))
 		{
 			return false;
 		}
 		
-		_exPacket = ExIncomingPackets.PACKET_ARRAY[exPacketId].newIncomingPacket();
+		final ExIncomingPackets packetFactory = ExIncomingPackets.PACKET_ARRAY[exPacketId];
+		if (packetFactory == null)
+		{
+			return false;
+		}
+		
+		_exPacket = packetFactory.newIncomingPacket();
 		return (_exPacket != null) && _exPacket.read(packet);
 	}
 	
