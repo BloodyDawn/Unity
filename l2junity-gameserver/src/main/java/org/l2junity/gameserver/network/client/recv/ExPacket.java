@@ -18,6 +18,8 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
+import java.util.logging.Logger;
+
 import org.l2junity.gameserver.network.client.ExIncomingPackets;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.network.IIncomingPacket;
@@ -28,6 +30,9 @@ import org.l2junity.network.PacketReader;
  */
 public class ExPacket implements IIncomingPacket<L2GameClient>
 {
+	private static final Logger LOGGER = Logger.getLogger(ExPacket.class.getName());
+	
+	private ExIncomingPackets _exIncomingPacket;
 	private IIncomingPacket<L2GameClient> _exPacket;
 	
 	@Override
@@ -39,19 +44,25 @@ public class ExPacket implements IIncomingPacket<L2GameClient>
 			return false;
 		}
 		
-		final ExIncomingPackets packetFactory = ExIncomingPackets.PACKET_ARRAY[exPacketId];
-		if (packetFactory == null)
+		_exIncomingPacket = ExIncomingPackets.PACKET_ARRAY[exPacketId];
+		if (_exIncomingPacket == null)
 		{
+			LOGGER.fine(getClass().getSimpleName() + ": Unknown packet: " + Integer.toHexString(exPacketId));
 			return false;
 		}
 		
-		_exPacket = packetFactory.newIncomingPacket();
+		_exPacket = _exIncomingPacket.newIncomingPacket();
 		return (_exPacket != null) && _exPacket.read(packet);
 	}
 	
 	@Override
 	public void run(L2GameClient client) throws Exception
 	{
+		if (!_exIncomingPacket.getConnectionStates().contains(client.getConnectionState()))
+		{
+			LOGGER.warning(" Connection at invalid state: " + client.getConnectionState() + " Required State: " + _exIncomingPacket.getConnectionStates());
+			return;
+		}
 		_exPacket.run(client);
 	}
 }
