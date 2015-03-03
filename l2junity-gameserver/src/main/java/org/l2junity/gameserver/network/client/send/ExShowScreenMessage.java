@@ -131,6 +131,34 @@ public class ExShowScreenMessage implements IClientOutgoingPacket
 	}
 	
 	/**
+	 * Display a NPC String on the screen for a given position and time.
+	 * @param npcString the NPC String Id
+	 * @param position the position on the screen
+	 * @param time the display time
+	 * @param showEffect upper effect
+	 * @param params the String parameters
+	 */
+	public ExShowScreenMessage(NpcStringId npcString, int position, int time, boolean showEffect, String... params)
+	{
+		_type = 2;
+		_sysMessageId = -1;
+		_unk1 = 0x00;
+		_unk2 = 0x00;
+		_unk3 = 0x00;
+		_fade = false;
+		_position = position;
+		_text = null;
+		_time = time;
+		_size = 0x00;
+		_effect = showEffect;
+		_npcString = npcString.getId();
+		if (params != null)
+		{
+			addStringParameter(params);
+		}
+	}
+	
+	/**
 	 * Display a Text, System Message or a NPC String on the screen for the given parameters.
 	 * @param type 0 - System Message, 1 - Text, 2 - NPC String
 	 * @param messageId the System Message Id

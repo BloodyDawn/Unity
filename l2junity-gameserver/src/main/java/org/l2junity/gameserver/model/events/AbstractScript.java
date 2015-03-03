@@ -55,8 +55,8 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2TrapInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.Fort;
@@ -1520,6 +1520,20 @@ public abstract class AbstractScript extends ManagedScript
 	public static void showOnScreenMsg(PlayerInstance player, NpcStringId npcString, int position, int time, String... params)
 	{
 		player.sendPacket(new ExShowScreenMessage(npcString, position, time, params));
+	}
+	
+	/**
+	 * Show an on screen message to the player.
+	 * @param player the player to display the message to
+	 * @param npcString the NPC string to display
+	 * @param position the position of the message on the screen
+	 * @param time the duration of the message in milliseconds
+	 * @param showEffect the upper effect
+	 * @param params values of parameters to replace in the NPC String (like S1, C1 etc.)
+	 */
+	public static void showOnScreenMsg(PlayerInstance player, NpcStringId npcString, int position, int time, boolean showEffect, String... params)
+	{
+		player.sendPacket(new ExShowScreenMessage(npcString, position, time, showEffect, params));
 	}
 	
 	/**
