@@ -1478,7 +1478,7 @@ public final class ItemInstance extends WorldObject
 		ItemLocation loc;
 		try
 		{
-			objectId = rs.getInt(1);
+			objectId = rs.getInt("object_id");
 			item_id = rs.getInt("item_id");
 			count = rs.getLong("count");
 			loc = ItemLocation.valueOf(rs.getString("loc"));
