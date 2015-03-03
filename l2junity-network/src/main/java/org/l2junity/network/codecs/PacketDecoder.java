@@ -66,12 +66,10 @@ public class PacketDecoder extends ByteToMessageDecoder
 				return;
 			}
 			
-			System.out.format("Incoming Packet: 0x%02X ", packetId);
-			
 			final IIncomingPackets<?> incomingPacket = _incomingPackets[packetId];
 			if (incomingPacket == null)
 			{
-				System.out.println();
+				System.out.format("Unknown Packet: 0x%02X", packetId);
 				return;
 			}
 			
@@ -82,7 +80,6 @@ public class PacketDecoder extends ByteToMessageDecoder
 				return;
 			}
 			
-			System.out.println(" Handler: " + incomingPacket);
 			final IIncomingPacket<?> packet = incomingPacket.newIncomingPacket();
 			if ((packet != null) && packet.read(new PacketReader(in)))
 			{
