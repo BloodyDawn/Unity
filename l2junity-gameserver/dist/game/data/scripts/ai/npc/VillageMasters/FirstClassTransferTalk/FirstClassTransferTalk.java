@@ -23,9 +23,9 @@ import java.util.Map;
 
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2VillageMasterFighterInstance;
 import org.l2junity.gameserver.model.actor.instance.L2VillageMasterPriestInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 import ai.npc.AbstractNpcAI;
 
@@ -41,7 +41,6 @@ public final class FirstClassTransferTalk extends AbstractNpcAI
 	{
 		MASTERS.put(30026, Race.HUMAN); // Blitz, TI Fighter Guild Head Master
 		MASTERS.put(30031, Race.HUMAN); // Biotin, TI Einhasad Temple High Priest
-		MASTERS.put(30154, Race.ELF); // Asterios, Elven Village Tetrarch
 		MASTERS.put(30358, Race.DARK_ELF); // Thifiell, Dark Elf Village Tetrarch
 		MASTERS.put(30565, Race.ORC); // Kakai, Orc Village Flame Lord
 		MASTERS.put(30520, Race.DWARF); // Reed, Dwarven Village Warehouse Chief
