@@ -18,6 +18,7 @@
  */
 package vehicles.SoIController;
 
+import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.VehiclePathPoint;
 
@@ -84,7 +85,7 @@ public final class SoIController extends AirShipController
 		_teleportsTable = TELEPORTS;
 		_fuelTable = FUEL;
 		
-		_movieId = 1002;
+		_movie = Movie.LAND_UNDEAD_A;
 		
 		validityCheck();
 	}

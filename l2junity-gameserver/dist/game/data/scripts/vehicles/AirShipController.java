@@ -24,6 +24,7 @@ import java.util.logging.Logger;
 
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.instancemanager.AirShipManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.ClanPrivilege;
@@ -92,7 +93,7 @@ public abstract class AirShipController extends Quest
 	
 	protected int[] _fuelTable = null;
 	
-	protected int _movieId = 0;
+	protected Movie _movie = null;
 	
 	protected boolean _isBusy = false;
 	protected L2ControllableAirShipInstance _dockedShip = null;
@@ -291,13 +292,13 @@ public abstract class AirShipController extends Quest
 				// Ship is not empty - display movie to passengers and dock
 				if (!_dockedShip.isEmpty())
 				{
-					if (_movieId != 0)
+					if (_movie != null)
 					{
 						for (PlayerInstance passenger : _dockedShip.getPassengers())
 						{
 							if (passenger != null)
 							{
-								passenger.showQuestMovie(_movieId);
+								passenger.playMovie(_movie);
 							}
 						}
 					}

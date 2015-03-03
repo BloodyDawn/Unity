@@ -18,6 +18,7 @@
  */
 package vehicles.KeucereusNorthController;
 
+import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.VehiclePathPoint;
 
@@ -90,7 +91,7 @@ public final class KeucereusNorthController extends AirShipController
 		_teleportsTable = TELEPORTS;
 		_fuelTable = FUEL;
 		
-		_movieId = 1001;
+		_movie = Movie.LAND_KSERTH_B;
 		
 		validityCheck();
 	}

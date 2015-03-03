@@ -18,6 +18,7 @@
  */
 package vehicles.KeucereusSouthController;
 
+import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.VehiclePathPoint;
 
@@ -90,7 +91,7 @@ public final class KeucereusSouthController extends AirShipController
 		
 		_oustLoc = new Location(-186148, 246296, 1360);
 		
-		_movieId = 1000;
+		_movie = Movie.LAND_KSERTH_A;
 		
 		validityCheck();
 	}

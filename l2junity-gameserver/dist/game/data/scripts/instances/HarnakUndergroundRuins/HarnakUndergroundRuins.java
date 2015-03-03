@@ -27,6 +27,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -93,9 +94,6 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 	private static final int TEMPLATE_ID = 195;
 	private static final int ZONE_ROOM_2 = 200032;
 	private static final int ZONE_ROOM_3 = 200033;
-	private static final int LAST_ROOM_OPENING = 46;
-	private static final int SUCCES_ENDING = 47;
-	private static final int FAILED_ENDING = 48;
 	private static final int DOOR_ONE = 16240100;
 	private static final int DOOR_TWO = 16240102;
 	
@@ -236,7 +234,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 			}
 			case "show_movie_opening":
 			{
-				player.showQuestMovie(LAST_ROOM_OPENING);
+				player.playMovie(Movie.SC_AWAKENING_BOSS_OPENING);
 				startQuestTimer("spawn_npc3", 29950, npc, player);
 				break;
 			}
@@ -376,7 +374,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 			case "fail_instance":
 			{
 				InstanceManager.getInstance().getInstance(player.getInstanceId()).removeSpawnedNpcs();
-				player.showQuestMovie(FAILED_ENDING);
+				player.playMovie(Movie.SC_AWAKENING_BOSS_ENDING_B);
 				startQuestTimer("exit", 13500, npc, player);
 				break;
 			}
@@ -421,7 +419,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 						{
 							cancelQuestTimer("fail_instance", null, player);
 							InstanceManager.getInstance().getInstance(world.getInstanceId()).removeSpawnedNpcs();
-							player.showQuestMovie(SUCCES_ENDING);
+							player.playMovie(Movie.SC_AWAKENING_BOSS_ENDING_A);
 							startQuestTimer("spawn_hermuncus", 25050, npc, player);
 						}
 					}
@@ -680,7 +678,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 			{
 				cancelQuestTimer("fail_instance", null, killer);
 				InstanceManager.getInstance().getInstance(world.getInstanceId()).removeSpawnedNpcs();
-				killer.showQuestMovie(SUCCES_ENDING);
+				killer.playMovie(Movie.SC_AWAKENING_BOSS_ENDING_A);
 				startQuestTimer("spawn_hermuncus", 25050, npc, killer);
 			}
 		}

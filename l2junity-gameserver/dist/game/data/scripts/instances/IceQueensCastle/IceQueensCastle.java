@@ -22,6 +22,7 @@ import instances.AbstractInstance;
 
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Attackable;
@@ -115,7 +116,7 @@ public final class IceQueensCastle extends AbstractInstance
 			{
 				if (npc != null)
 				{
-					player.showQuestMovie(21);
+					player.playMovie(Movie.SC_BOSS_FREYA_FORCED_DEFEAT);
 					npc.deleteMe();
 					startQuestTimer("TIMER_PC_LEAVE", 24000, npc, player);
 				}

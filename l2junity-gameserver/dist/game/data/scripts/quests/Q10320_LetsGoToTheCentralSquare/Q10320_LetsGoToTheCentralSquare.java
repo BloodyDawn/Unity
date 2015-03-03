@@ -19,6 +19,7 @@
 package quests.Q10320_LetsGoToTheCentralSquare;
 
 import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -48,8 +49,6 @@ public final class Q10320_LetsGoToTheCentralSquare extends Quest
 	private static final int TALKING_ISLAND_PRESENTATION_MOVIE_ZONE = 200034;
 	// Misc
 	private static final int MAX_LEVEL = 20;
-	public static final int SCENE_SI_ILLUSION_01_QUE = 101;
-	public static final int SCENE_SI_ILLUSION_02_QUE = 102;
 	private static final String MOVIE_VAR = "TI_presentation_movie";
 	
 	public Q10320_LetsGoToTheCentralSquare()
@@ -141,7 +140,7 @@ public final class Q10320_LetsGoToTheCentralSquare extends Quest
 				if (player.getLevel() <= MAX_LEVEL)
 				{
 					final QuestState qs = getQuestState(player, false);
-					player.showQuestMovie(((qs != null) && qs.isStarted()) ? SCENE_SI_ILLUSION_02_QUE : SCENE_SI_ILLUSION_01_QUE);
+					player.playMovie(((qs != null) && qs.isStarted()) ? Movie.SI_ILLUSION_02_QUE : Movie.SI_ILLUSION_01_QUE);
 				}
 				player.getVariables().remove(MOVIE_VAR);
 			}

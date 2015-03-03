@@ -28,6 +28,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.MountType;
+import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.CommandChannel;
 import org.l2junity.gameserver.model.Location;
@@ -261,7 +262,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						}
 						world.supp_Kegor.deleteMe();
 						world.freya.decayMe();
-						manageMovie(world, 20);
+						manageMovie(world, Movie.SC_BOSS_FREYA_ENDING_B);
 						cancelQuestTimer("FINISH_WORLD", world.controller, null);
 						startQuestTimer("FINISH_WORLD", 58500, world.controller, null);
 						break;
@@ -274,7 +275,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					{
 						closeDoor(DOOR_ID, world.getInstanceId());
 						world.setStatus(1);
-						manageMovie(world, 15);
+						manageMovie(world, Movie.SC_BOSS_FREYA_OPENING);
 						startQuestTimer("STAGE_1_START", 53500, world.controller, null);
 						break;
 					}
@@ -297,7 +298,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						world.freya.deleteMe();
 						world.freya = null;
 						manageDespawnMinions(world);
-						manageMovie(world, 16);
+						manageMovie(world, Movie.SC_BOSS_FREYA_PHASECH_A);
 						startQuestTimer("STAGE_1_PAUSE", 24100 - 1000, world.controller, null);
 						break;
 					}
@@ -327,7 +328,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					}
 					case "STAGE_2_MOVIE":
 					{
-						manageMovie(world, 23);
+						manageMovie(world, Movie.SC_ICE_HEAVYKNIGHT_SPAWN);
 						startQuestTimer("STAGE_2_GLAKIAS", 7000, world.controller, null);
 						break;
 					}
@@ -354,7 +355,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					}
 					case "STAGE_2_FAILED":
 					{
-						manageMovie(world, 22);
+						manageMovie(world, Movie.SC_BOSS_FREYA_DEFEAT);
 						startQuestTimer("STAGE_2_FAILED2", 22000, npc, null);
 						break;
 					}
@@ -365,7 +366,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					}
 					case "STAGE_3_MOVIE":
 					{
-						manageMovie(world, 17);
+						manageMovie(world, Movie.SC_BOSS_FREYA_PHASECH_B);
 						startQuestTimer("STAGE_3_START", 21500, world.controller, null);
 						break;
 					}
@@ -890,7 +891,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							players.setIsInvul(true);
 							players.abortAttack();
 						}
-						manageMovie(world, 18);
+						manageMovie(world, Movie.SC_BOSS_KEGOR_INTRUSION);
 						startQuestTimer("SPAWN_SUPPORT", 27000, world.controller, null);
 					}
 					
@@ -1153,7 +1154,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 				case FREYA_STAND_HARD:
 				{
 					world.isSupportActive = false;
-					manageMovie(world, 19);
+					manageMovie(world, Movie.SC_BOSS_FREYA_ENDING_A);
 					manageDespawnMinions(world);
 					finishInstance(world);
 					DecayTaskManager.getInstance().cancel(world.freya);
@@ -1392,13 +1393,13 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 		}
 	}
 	
-	private void manageMovie(IQCNBWorld world, int movie)
+	private void manageMovie(IQCNBWorld world, Movie movie)
 	{
 		for (PlayerInstance players : world.playersInside)
 		{
 			if ((players != null) && (players.getInstanceId() == world.getInstanceId()))
 			{
-				players.showQuestMovie(movie);
+				players.playMovie(movie);
 			}
 		}
 	}

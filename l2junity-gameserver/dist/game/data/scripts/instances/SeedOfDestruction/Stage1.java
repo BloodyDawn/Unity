@@ -36,6 +36,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.InstanceType;
+import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.enums.TrapAction;
 import org.l2junity.gameserver.instancemanager.GraciaSeedsManager;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
@@ -49,8 +50,8 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2TrapInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -801,7 +802,7 @@ public final class Stage1 extends AbstractInstance
 							PlayerInstance pl = World.getInstance().getPlayer(objId);
 							if (pl != null)
 							{
-								pl.showQuestMovie(5);
+								pl.playMovie(Movie.SC_BOSS_TIAT_OPENING);
 							}
 						}
 						npc.deleteMe();
@@ -967,7 +968,7 @@ public final class Stage1 extends AbstractInstance
 						PlayerInstance pl = World.getInstance().getPlayer(objId);
 						if (pl != null)
 						{
-							pl.showQuestMovie(6);
+							pl.playMovie(Movie.SC_BOSS_TIAT_ENDING_SUCCES);
 						}
 					}
 					for (Npc mob : InstanceManager.getInstance().getInstance(world.getInstanceId()).getNpcs())

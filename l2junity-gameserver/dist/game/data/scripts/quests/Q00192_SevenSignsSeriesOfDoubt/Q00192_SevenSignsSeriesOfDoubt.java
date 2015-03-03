@@ -18,6 +18,7 @@
  */
 package quests.Q00192_SevenSignsSeriesOfDoubt;
 
+import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
@@ -79,7 +80,7 @@ public final class Q00192_SevenSignsSeriesOfDoubt extends Quest
 				if (st.isCond(1))
 				{
 					st.setCond(2, true);
-					player.showQuestMovie(8);
+					player.playMovie(Movie.SSQ_SUSPICIOUS_DEATHS);
 					startQuestTimer("back", 32000, npc, player);
 					return "";
 				}

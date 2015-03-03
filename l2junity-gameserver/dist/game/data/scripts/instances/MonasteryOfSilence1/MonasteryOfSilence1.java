@@ -21,6 +21,7 @@ package instances.MonasteryOfSilence1;
 import instances.AbstractInstance;
 
 import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -126,7 +127,7 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 			}
 			case "START_MOVIE":
 			{
-				player.showQuestMovie(24);
+				player.playMovie(Movie.SSQ2_HOLY_BURIAL_GROUND_OPENING);
 				break;
 			}
 			case "BACK":

@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
@@ -204,7 +205,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 								final PlayerInstance pl = World.getInstance().getPlayer(objId);
 								if (pl != null)
 								{
-									pl.showQuestMovie(11);
+									pl.playMovie(Movie.SSQ_RITUAL_OF_PRIEST);
 									startQuestTimer("spawn", 35000, null, talker);
 								}
 							}

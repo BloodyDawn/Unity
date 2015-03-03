@@ -40,20 +40,17 @@ public final class EndScenePlayer implements IClientIncomingPacket
 	public void run(L2GameClient client)
 	{
 		final PlayerInstance activeChar = client.getActiveChar();
-		if (activeChar == null)
+		if ((activeChar == null) || (_movieId == 0))
 		{
 			return;
 		}
-		if (_movieId == 0)
-		{
-			return;
-		}
-		if (activeChar.getMovieId() != _movieId)
+		
+		if (activeChar.getMovie().getClientId() != _movieId)
 		{
 			_log.warning("Player " + client + " sent EndScenePlayer with wrong movie id: " + _movieId);
 			return;
 		}
-		activeChar.setMovieId(0);
+		activeChar.setMovie(null);
 		activeChar.setIsTeleporting(true, false); // avoid to get player removed from L2World
 		activeChar.decayMe();
 		activeChar.spawnMe(activeChar.getX(), activeChar.getY(), activeChar.getZ());

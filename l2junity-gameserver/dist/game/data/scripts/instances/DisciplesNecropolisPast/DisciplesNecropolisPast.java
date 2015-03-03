@@ -27,6 +27,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import javolution.util.FastList;
 
 import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -204,7 +205,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 				{
 					if (getQuestItemsCount(player, SEAL_OF_BINDING) >= 4)
 					{
-						player.showQuestMovie(13);
+						player.playMovie(Movie.SSQ_SEALING_EMPEROR_2ND);
 						startQuestTimer("TELEPORT", 27000, null, player);
 					}
 					break;
@@ -458,7 +459,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 					{
 						DNPWorld world = (DNPWorld) tmpworld;
 						openDoor(DISCIPLES_NECROPOLIS_DOOR, world.getInstanceId());
-						talker.showQuestMovie(12);
+						talker.playMovie(Movie.SSQ_SEALING_EMPEROR_1ST);
 						startQuestTimer("FIGHT", 1000, null, talker);
 					}
 				}

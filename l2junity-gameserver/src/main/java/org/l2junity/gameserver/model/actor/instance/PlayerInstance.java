@@ -89,6 +89,7 @@ import org.l2junity.gameserver.enums.HtmlActionScope;
 import org.l2junity.gameserver.enums.IllegalActionPunishmentType;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.enums.MountType;
+import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.enums.PartyDistributionType;
 import org.l2junity.gameserver.enums.PartySmallWindowUpdateType;
 import org.l2junity.gameserver.enums.PlayerAction;
@@ -822,7 +823,7 @@ public final class PlayerInstance extends Playable
 	private int _multiSocialTarget = 0;
 	private int _multiSociaAction = 0;
 	
-	private int _movieId = 0;
+	private Movie _movie = null;
 	
 	private String _adminConfirmCmd = null;
 	
@@ -13270,17 +13271,17 @@ public final class PlayerInstance extends Playable
 		}
 	}
 	
-	public void showQuestMovie(int id)
+	public void playMovie(Movie movie)
 	{
-		if (_movieId > 0)
+		if (getMovie() != null)
 		{
 			return;
 		}
 		abortAttack();
 		abortCast();
 		stopMove(null);
-		_movieId = id;
-		sendPacket(new ExStartScenePlayer(id));
+		setMovie(movie);
+		sendPacket(new ExStartScenePlayer(movie));
 	}
 	
 	public boolean isAllowedToEnchantSkills()
@@ -13640,16 +13641,16 @@ public final class PlayerInstance extends Playable
 	}
 	
 	/**
-	 * @return the _movieId
+	 * @return the _movie
 	 */
-	public int getMovieId()
+	public Movie getMovie()
 	{
-		return _movieId;
+		return _movie;
 	}
 	
-	public void setMovieId(int id)
+	public void setMovie(Movie movie)
 	{
-		_movieId = id;
+		_movie = movie;
 	}
 	
 	/**
@@ -13672,7 +13673,7 @@ public final class PlayerInstance extends Playable
 	@Override
 	public boolean isMovementDisabled()
 	{
-		return super.isMovementDisabled() || (_movieId > 0);
+		return super.isMovementDisabled() || (getMovie() != null);
 	}
 	
 	private void restoreUISettings()

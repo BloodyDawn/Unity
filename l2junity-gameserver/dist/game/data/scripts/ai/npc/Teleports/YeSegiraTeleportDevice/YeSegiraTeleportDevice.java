@@ -21,6 +21,7 @@ package ai.npc.Teleports.YeSegiraTeleportDevice;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -73,7 +74,6 @@ public final class YeSegiraTeleportDevice extends AbstractNpcAI
 		LOCATIONS.put("5_exploration_zone", new Location(-110980, 233774, -3200));
 	}
 	// Misc
-	private static final int MOVIE_ID = 103;
 	private static final String MOVIE_VAR = "TI_YESEGIRA_MOVIE";
 	
 	private YeSegiraTeleportDevice()
@@ -93,7 +93,7 @@ public final class YeSegiraTeleportDevice extends AbstractNpcAI
 			
 			if (event.equals("observatory") && player.getVariables().getBoolean(MOVIE_VAR, false))
 			{
-				player.showQuestMovie(MOVIE_ID);
+				player.playMovie(Movie.SI_ILLUSION_03_QUE);
 				player.getVariables().remove(MOVIE_VAR);
 			}
 		}

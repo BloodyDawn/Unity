@@ -19,6 +19,7 @@
 package quests.Q10338_SeizeYourDestiny;
 
 import org.l2junity.gameserver.enums.CategoryType;
+import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -47,7 +48,6 @@ public final class Q10338_SeizeYourDestiny extends Quest
 	// Locations
 	private static final Location RELIQUARY_OF_THE_GIANT = new Location(-114962, 226564, -2864);
 	// Misc
-	private static final int RELIQUARY_OF_THE_GIANT_SCENE = 55;
 	private static final int MIN_LV = 85;
 	
 	public Q10338_SeizeYourDestiny()
@@ -83,7 +83,7 @@ public final class Q10338_SeizeYourDestiny extends Quest
 					break;
 				}
 				teleportPlayer(player, RELIQUARY_OF_THE_GIANT, 0);
-				player.showQuestMovie(RELIQUARY_OF_THE_GIANT_SCENE);
+				player.playMovie(Movie.SC_AWAKENING_VIEW);
 				break;
 			}
 			case "33477-03.htm":

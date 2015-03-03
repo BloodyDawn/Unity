@@ -18,6 +18,7 @@
  */
 package vehicles.SoDController;
 
+import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.VehiclePathPoint;
 
@@ -80,7 +81,7 @@ public final class SoDController extends AirShipController
 		_teleportsTable = TELEPORTS;
 		_fuelTable = FUEL;
 		
-		_movieId = 1003;
+		_movie = Movie.LAND_DISTRUCTION_A;
 		
 		validityCheck();
 	}

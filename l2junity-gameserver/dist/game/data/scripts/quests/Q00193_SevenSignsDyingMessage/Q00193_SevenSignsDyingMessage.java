@@ -20,6 +20,7 @@ package quests.Q00193_SevenSignsDyingMessage;
 
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
@@ -119,7 +120,7 @@ public final class Q00193_SevenSignsDyingMessage extends Quest
 				{
 					st.takeItems(DEADMANS_HERB, -1);
 					st.setCond(4, true);
-					player.showQuestMovie(9);
+					player.playMovie(Movie.SSQ_DYING_MASSAGE);
 					return "";
 				}
 				break;
