@@ -62,14 +62,14 @@ public class PacketDecoder extends ByteToMessageDecoder
 			final short packetId = in.readUnsignedByte();
 			if (packetId >= _incomingPackets.length)
 			{
-				System.out.format("Invalid Packet: 0x%02X", packetId);
+				System.out.println(String.format("Invalid Packet: 0x%02X", packetId));
 				return;
 			}
 			
 			final IIncomingPackets<?> incomingPacket = _incomingPackets[packetId];
 			if (incomingPacket == null)
 			{
-				System.out.format("Unknown Packet: 0x%02X", packetId);
+				SSystem.out.println(String.format("Unknown Packet: 0x%02X", packetId));
 				return;
 			}
 			
