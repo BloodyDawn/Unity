@@ -37,14 +37,7 @@ import org.l2junity.network.IIncomingPackets;
  */
 enum IncomingPackets implements IIncomingPackets<IIncomingPacket<L2GameClient>>
 {
-	PROTOCOL_VERSION(0x0E, ProtocolVersion::new, ConnectionState.CONNECTED),
-	AUTH_LOGIN(0x2B, AuthLogin::new, ConnectionState.CONNECTED),
 	LOGOUT(0x00, Logout::new, ConnectionState.AUTHENTICATED, ConnectionState.IN_GAME),
-	CHARACTER_CREATE(0x0C, CharacterCreate::new, ConnectionState.AUTHENTICATED),
-	CHARACTER_DELETE(0x0D, CharacterDelete::new, ConnectionState.AUTHENTICATED),
-	CHARACTER_SELECT(0x12, CharacterSelect::new, ConnectionState.AUTHENTICATED),
-	NEW_CHARACTER(0x13, NewCharacter::new, ConnectionState.AUTHENTICATED),
-	CHARACTER_RESTORE(0x7B, CharacterRestore::new, ConnectionState.AUTHENTICATED),
 	ATTACK(0x01, Attack::new, ConnectionState.IN_GAME),
 	REQUEST_START_PLEDGE_WAR(0x03, RequestStartPledgeWar::new, ConnectionState.IN_GAME),
 	REQUEST_REPLY_START_PLEDGE(0x04, RequestReplyStartPledgeWar::new, ConnectionState.IN_GAME),
@@ -54,8 +47,13 @@ enum IncomingPackets implements IIncomingPackets<IIncomingPacket<L2GameClient>>
 	REQUEST_REPLY_SURRENDER_PLEDGE_WAR(0x08, RequestReplySurrenderPledgeWar::new, ConnectionState.IN_GAME),
 	REQUEST_SET_PLEDGE_CREST(0x09, RequestSetPledgeCrest::new, ConnectionState.IN_GAME),
 	REQUEST_GIVE_NICK_NAME(0x0B, RequestGiveNickName::new, ConnectionState.IN_GAME),
+	CHARACTER_CREATE(0x0C, CharacterCreate::new, ConnectionState.AUTHENTICATED),
+	CHARACTER_DELETE(0x0D, CharacterDelete::new, ConnectionState.AUTHENTICATED),
+	PROTOCOL_VERSION(0x0E, ProtocolVersion::new, ConnectionState.CONNECTED),
 	MOVE_BACKWARD_TO_LOCATION(0x0F, MoveBackwardToLocation::new, ConnectionState.IN_GAME),
 	ENTER_WORLD(0x11, EnterWorld::new, ConnectionState.IN_GAME),
+	CHARACTER_SELECT(0x12, CharacterSelect::new, ConnectionState.AUTHENTICATED),
+	NEW_CHARACTER(0x13, NewCharacter::new, ConnectionState.AUTHENTICATED),
 	REQUEST_ITEM_LIST(0x14, RequestItemList::new, ConnectionState.IN_GAME),
 	REQUEST_UN_EQUIP_ITEM(0x16, RequestUnEquipItem::new, ConnectionState.IN_GAME),
 	REQUEST_DROP_ITEM(0x17, RequestDropItem::new, ConnectionState.IN_GAME),
@@ -71,6 +69,7 @@ enum IncomingPackets implements IIncomingPackets<IIncomingPacket<L2GameClient>>
 	REQUEST_ANSWER_JOIN_PLEDGE(0x27, RequestAnswerJoinPledge::new, ConnectionState.IN_GAME),
 	REQUEST_WITHDRAWAL_PLEDGE(0x28, RequestWithdrawalPledge::new, ConnectionState.IN_GAME),
 	REQUEST_OUST_PLEDGE_MEMBER(0x29, RequestOustPledgeMember::new, ConnectionState.IN_GAME),
+	AUTH_LOGIN(0x2B, AuthLogin::new, ConnectionState.CONNECTED),
 	REQUEST_GET_ITEM_FROM_PET(0x2C, RequestGetItemFromPet::new, ConnectionState.IN_GAME),
 	REQUEST_ALLY_INFO(0x2E, RequestAllyInfo::new, ConnectionState.IN_GAME),
 	REQUEST_CRYSTALLIZE_ITEM(0x2F, RequestCrystallizeItem::new, ConnectionState.IN_GAME),
@@ -93,7 +92,7 @@ enum IncomingPackets implements IIncomingPackets<IIncomingPacket<L2GameClient>>
 	REQUEST_TARGET_CANCELD(0x48, RequestTargetCanceld::new, ConnectionState.IN_GAME),
 	SAY2(0x49, Say2::new, ConnectionState.IN_GAME),
 	REQUEST_PLEDGE_MEMBER_LIST(0x4D, RequestPledgeMemberList::new, ConnectionState.IN_GAME),
-	REQUEST_MAGIC_LIST(0x4F, null, ConnectionState.IN_GAME), // TODO: Implement me?
+	REQUEST_MAGIC_LIST(0x4F, null, ConnectionState.IN_GAME),
 	REQUEST_SKILL_LIST(0x50, RequestSkillList::new, ConnectionState.IN_GAME),
 	MOVE_WITH_DELTA(0x52, MoveWithDelta::new, ConnectionState.IN_GAME),
 	REQUEST_GET_ON_VEHICLE(0x53, RequestGetOnVehicle::new, ConnectionState.IN_GAME),
@@ -128,6 +127,7 @@ enum IncomingPackets implements IIncomingPackets<IIncomingPacket<L2GameClient>>
 	REQUEST_ANSWER_FRIEND_INVITE(0x78, RequestAnswerFriendInvite::new, ConnectionState.IN_GAME),
 	REQUEST_FRIEND_LIST(0x79, RequestFriendList::new, ConnectionState.IN_GAME),
 	REQUEST_FRIEND_DEL(0x7A, RequestFriendDel::new, ConnectionState.IN_GAME),
+	CHARACTER_RESTORE(0x7B, CharacterRestore::new, ConnectionState.AUTHENTICATED),
 	REQUEST_ACQUIRE_SKILL(0x7C, RequestAcquireSkill::new, ConnectionState.IN_GAME),
 	REQUEST_RESTART_POINT(0x7D, RequestRestartPoint::new, ConnectionState.IN_GAME),
 	REQUEST_GM_COMMAND(0x7E, RequestGMCommand::new, ConnectionState.IN_GAME),
@@ -160,8 +160,8 @@ enum IncomingPackets implements IIncomingPackets<IIncomingPacket<L2GameClient>>
 	REQUEST_PRIVATE_STORE_QUIT_BUY(0x9C, RequestPrivateStoreQuitBuy::new, ConnectionState.IN_GAME),
 	SET_PRIVATE_STORE_MSG_BUY(0x9D, SetPrivateStoreMsgBuy::new, ConnectionState.IN_GAME),
 	REQUEST_PRIVATE_STORE_SELL(0x9F, RequestPrivateStoreSell::new, ConnectionState.IN_GAME),
-	SEND_TIME_CHECK_PACKET(0xA0, null, ConnectionState.IN_GAME), // TODO: Implement?
-	REQUEST_SKILL_COOL_TIME(0xA6, null, ConnectionState.IN_GAME), // TODO: Implement?
+	SEND_TIME_CHECK_PACKET(0xA0, null, ConnectionState.IN_GAME),
+	REQUEST_SKILL_COOL_TIME(0xA6, null, ConnectionState.IN_GAME),
 	REQUEST_PACKAGE_SENDABLE_ITEM_LIST(0xA7, RequestPackageSendableItemList::new, ConnectionState.IN_GAME),
 	REQUEST_PACKAGE_SEND(0xA8, RequestPackageSend::new, ConnectionState.IN_GAME),
 	REQUEST_BLOCK(0xA9, RequestBlock::new, ConnectionState.IN_GAME),
@@ -172,36 +172,36 @@ enum IncomingPackets implements IIncomingPackets<IIncomingPacket<L2GameClient>>
 	REQUEST_CONFIRM_SIEGE_WAITING_LIST(0xAE, RequestConfirmSiegeWaitingList::new, ConnectionState.IN_GAME),
 	REQUEST_SET_CASTLE_SIEGE_TIME(0xAF, RequestSetCastleSiegeTime::new, ConnectionState.IN_GAME),
 	MULTI_SELL_CHOOSE(0xB0, MultiSellChoose::new, ConnectionState.IN_GAME),
-	NET_PING(0xB1, null, ConnectionState.IN_GAME), // TODO: Implement?
-	REQUEST_REMAIN_TIME(0xB2, null, ConnectionState.IN_GAME), // TODO: Implement?
+	NET_PING(0xB1, null, ConnectionState.IN_GAME),
+	REQUEST_REMAIN_TIME(0xB2, null, ConnectionState.IN_GAME),
 	BYPASS_USER_CMD(0xB3, BypassUserCmd::new, ConnectionState.IN_GAME),
 	SNOOP_QUIT(0xB4, SnoopQuit::new, ConnectionState.IN_GAME),
 	REQUEST_RECIPE_BOOK_OPEN(0xB5, RequestRecipeBookOpen::new, ConnectionState.IN_GAME),
 	REQUEST_RECIPE_BOOK_DESTROY(0xB6, RequestRecipeBookDestroy::new, ConnectionState.IN_GAME),
 	REQUEST_RECIPE_ITEM_MAKE_INFO(0xB7, RequestRecipeItemMakeInfo::new, ConnectionState.IN_GAME),
 	REQUEST_RECIPE_ITEM_MAKE_SELF(0xB8, RequestRecipeItemMakeSelf::new, ConnectionState.IN_GAME),
-	REQUEST_RECIPE_SHOP_MANAGE_LIST(0xB9, null, ConnectionState.IN_GAME), // TODO: Implement me?
+	REQUEST_RECIPE_SHOP_MANAGE_LIST(0xB9, null, ConnectionState.IN_GAME),
 	REQUEST_RECIPE_SHOP_MESSAGE_SET(0xBA, RequestRecipeShopMessageSet::new, ConnectionState.IN_GAME),
 	REQUEST_RECIPE_SHOP_LIST_SET(0xBB, RequestRecipeShopListSet::new, ConnectionState.IN_GAME),
 	REQUEST_RECIPE_SHOP_MANAGE_QUIT(0xBC, RequestRecipeShopManageQuit::new, ConnectionState.IN_GAME),
-	REQUEST_RECIPE_SHOP_MANAGE_CANCEL(0xBD, null, ConnectionState.IN_GAME), // TODO: Implement me?
+	REQUEST_RECIPE_SHOP_MANAGE_CANCEL(0xBD, null, ConnectionState.IN_GAME),
 	REQUEST_RECIPE_SHOP_MAKE_INFO(0xBE, RequestRecipeShopMakeInfo::new, ConnectionState.IN_GAME),
 	REQUEST_RECIPE_SHOP_MAKE_ITEM(0xBF, RequestRecipeShopMakeItem::new, ConnectionState.IN_GAME),
 	REQUEST_RECIPE_SHOP_MANAGE_PREV(0xC0, RequestRecipeShopManagePrev::new, ConnectionState.IN_GAME),
 	OBSERVER_RETURN(0xC1, ObserverReturn::new, ConnectionState.IN_GAME),
-	REQUEST_EVALUATE(0xC2, null, ConnectionState.IN_GAME), // TODO: Implement me?
+	REQUEST_EVALUATE(0xC2, null, ConnectionState.IN_GAME),
 	REQUEST_HENNA_ITEM_LIST(0xC3, RequestHennaItemList::new, ConnectionState.IN_GAME),
 	REQUEST_HENNA_ITEM_INFO(0xC4, RequestHennaItemInfo::new, ConnectionState.IN_GAME),
 	REQUEST_BUY_SEED(0xC5, RequestBuySeed::new, ConnectionState.IN_GAME),
 	DLG_ANSWER(0xC6, DlgAnswer::new, ConnectionState.IN_GAME),
 	REQUEST_PREVIEW_ITEM(0xC7, RequestPreviewItem::new, ConnectionState.IN_GAME),
-	REQUEST_SSQ_STATUS(0xC8, null, ConnectionState.IN_GAME), // TODO: Implement me?
+	REQUEST_SSQ_STATUS(0xC8, null, ConnectionState.IN_GAME),
 	REQUEST_PETITION_FEEDBACK(0xC9, RequestPetitionFeedback::new, ConnectionState.IN_GAME),
 	GAME_GUARD_REPLY(0xCB, GameGuardReply::new, ConnectionState.IN_GAME),
 	REQUEST_PLEDGE_POWER(0xCC, RequestPledgePower::new, ConnectionState.IN_GAME),
 	REQUEST_MAKE_MACRO(0xCD, RequestMakeMacro::new, ConnectionState.IN_GAME),
 	REQUEST_DELETE_MACRO(0xCE, RequestDeleteMacro::new, ConnectionState.IN_GAME),
-	REQUEST_BUY_PROCURE(0xCF, null, ConnectionState.IN_GAME), // TODO: Implement me?
+	REQUEST_BUY_PROCURE(0xCF, null, ConnectionState.IN_GAME),
 	EX_PACKET(0xD0, ExPacket::new, ConnectionState.values()); // This packet has its own connection state checking so we allow all of them
 	
 	public static final IncomingPackets[] PACKET_ARRAY;
@@ -229,7 +229,7 @@ enum IncomingPackets implements IIncomingPackets<IIncomingPacket<L2GameClient>>
 		}
 		
 		_packetId = (short) packetId;
-		_incomingPacketFactory = incomingPacketFactory;
+		_incomingPacketFactory = incomingPacketFactory != null ? incomingPacketFactory : () -> null;
 		_connectionStates = new HashSet<>(Arrays.asList(connectionStates));
 	}
 	
@@ -242,7 +242,7 @@ enum IncomingPackets implements IIncomingPackets<IIncomingPacket<L2GameClient>>
 	@Override
 	public IIncomingPacket<L2GameClient> newIncomingPacket()
 	{
-		return _incomingPacketFactory != null ? _incomingPacketFactory.get() : null;
+		return _incomingPacketFactory.get();
 	}
 	
 	@Override
