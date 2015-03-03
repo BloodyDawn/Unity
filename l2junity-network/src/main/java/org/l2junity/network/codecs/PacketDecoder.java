@@ -69,7 +69,7 @@ public class PacketDecoder extends ByteToMessageDecoder
 			final IIncomingPackets<?> incomingPacket = _incomingPackets[packetId];
 			if (incomingPacket == null)
 			{
-				SSystem.out.println(String.format("Unknown Packet: 0x%02X", packetId));
+				System.out.println(String.format("Unknown Packet: 0x%02X", packetId));
 				return;
 			}
 			
