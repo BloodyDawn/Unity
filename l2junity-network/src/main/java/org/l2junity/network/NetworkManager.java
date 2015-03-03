@@ -26,8 +26,6 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.handler.logging.LogLevel;
-import io.netty.handler.logging.LoggingHandler;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -51,7 +49,6 @@ public class NetworkManager
 		_serverBootstrap = new ServerBootstrap()
 			.group(bossGroup, workerGroup)
 			.channel(NioServerSocketChannel.class)
-			.handler(new LoggingHandler(LogLevel.INFO))
 			.childHandler(clientInitializer)
 			.childOption(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT);
 		// @formatter:on
