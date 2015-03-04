@@ -100,7 +100,6 @@ enum IncomingPackets implements IIncomingPackets<IIncomingPacket<L2GameClient>>
 	ANSWER_TRADE_REQUEST(0x55, AnswerTradeRequest::new, ConnectionState.IN_GAME),
 	REQUEST_ACTION_USE(0x56, RequestActionUse::new, ConnectionState.IN_GAME),
 	REQUEST_RESTART(0x57, RequestRestart::new, ConnectionState.IN_GAME),
-	REQUEST_SIEGE_INFO(0x58, RequestSiegeInfo::new, ConnectionState.IN_GAME), // TODO: CHECK
 	VALIDATE_POSITION(0x59, ValidatePosition::new, ConnectionState.IN_GAME),
 	START_ROTATING(0x5B, StartRotating::new, ConnectionState.IN_GAME),
 	FINISH_ROTATING(0x5C, FinishRotating::new, ConnectionState.IN_GAME),
@@ -165,7 +164,7 @@ enum IncomingPackets implements IIncomingPackets<IIncomingPacket<L2GameClient>>
 	REQUEST_PACKAGE_SENDABLE_ITEM_LIST(0xA7, RequestPackageSendableItemList::new, ConnectionState.IN_GAME),
 	REQUEST_PACKAGE_SEND(0xA8, RequestPackageSend::new, ConnectionState.IN_GAME),
 	REQUEST_BLOCK(0xA9, RequestBlock::new, ConnectionState.IN_GAME),
-	REQUEST_SIEGE_INFO2(0xAA, RequestSiegeInfo::new, ConnectionState.IN_GAME), // TODO: CHECK
+	REQUEST_SIEGE_INFO(0xAA, RequestSiegeInfo::new, ConnectionState.IN_GAME), // TODO: CHECK
 	REQUEST_SIEGE_ATTACKER_LIST(0xAB, RequestSiegeAttackerList::new, ConnectionState.IN_GAME),
 	REQUEST_SIEGE_DEFENDER_LIST(0xAC, RequestSiegeDefenderList::new, ConnectionState.IN_GAME),
 	REQUEST_JOIN_SIEGE(0xAD, RequestJoinSiege::new, ConnectionState.IN_GAME),

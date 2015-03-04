@@ -18,8 +18,6 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
-import java.nio.BufferUnderflowException;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.Location;
@@ -31,7 +29,6 @@ import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.StopMove;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
-import org.l2junity.gameserver.util.Util;
 import org.l2junity.network.PacketReader;
 
 /**
@@ -47,9 +44,7 @@ public class MoveBackwardToLocation implements IClientIncomingPacket
 	private int _originX;
 	private int _originY;
 	private int _originZ;
-	
 	private int _moveMovement;
-	boolean _punishPlayer;
 	
 	@Override
 	public boolean read(PacketReader packet)
@@ -60,14 +55,7 @@ public class MoveBackwardToLocation implements IClientIncomingPacket
 		_originX = packet.readD();
 		_originY = packet.readD();
 		_originZ = packet.readD();
-		try
-		{
-			_moveMovement = packet.readD(); // is 0 if cursor keys are used 1 if mouse is used
-		}
-		catch (BufferUnderflowException e)
-		{
-			_punishPlayer = Config.L2WALKER_PROTECTION;
-		}
+		_moveMovement = packet.readD(); // is 0 if cursor keys are used 1 if mouse is used
 		return true;
 	}
 	
@@ -77,12 +65,6 @@ public class MoveBackwardToLocation implements IClientIncomingPacket
 		PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
-			return;
-		}
-		
-		if (_punishPlayer)
-		{
-			Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " is trying to use L2Walker and got kicked.", Config.DEFAULT_PUNISH);
 			return;
 		}
 		
