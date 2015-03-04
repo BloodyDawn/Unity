@@ -2690,7 +2690,7 @@
 			<height normal="43.5" />
 		</collision>
 	</npc>
-	<npc id="18468" level="18" type="L2Npc" name="Doorman">
+	<npc id="18468" level="18" type="L2Monster" name="Doorman">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="show_created" value="1" />
@@ -2704,15 +2704,15 @@
 		<race>ETC</race>
 		<sex>ETC</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="301.66622" hpRegen="2.5" mp="174.64" mpRegen="1.2" />
+			<vitals hp="15685" hpRegen="2.5" mp="2280" mpRegen="1.2" />
 			<attack physical="37.82932" magical="25.83252" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="81.34791" magical="59.52687" />
 			<attribute>
 				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
 			</attribute>
 			<speed>
-				<walk ground="50" />
-				<run ground="1" />
+				<walk ground="30" />
+				<run ground="180" />
 			</speed>
 		</stats>
 		<status undying="false" canMove="false" />
@@ -2730,11 +2730,11 @@
 		<ex_crt_effect>false</ex_crt_effect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" />
 		<collision>
-			<radius normal="9" />
-			<height normal="33.5" />
+			<radius normal="8" />
+			<height normal="19.1" />
 		</collision>
 	</npc>
-	<npc id="18469" level="83" type="L2Npc" name="Hall Guard">
+	<npc id="18469" level="83" type="L2Monster" name="Hall Guard">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
@@ -2794,7 +2794,7 @@
 			<height normal="43.2" />
 		</collision>
 	</npc>
-	<npc id="18470" level="83" type="L2Npc" name="Hall Guard">
+	<npc id="18470" level="83" type="L2Monster" name="Hall Guard">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
@@ -2849,7 +2849,7 @@
 			<height normal="45.5" />
 		</collision>
 	</npc>
-	<npc id="18471" level="83" type="L2Npc" name="Hall Guard">
+	<npc id="18471" level="83" type="L2Monster" name="Hall Guard">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="150" />
@@ -2920,7 +2920,7 @@
 			<height normal="41" />
 		</collision>
 	</npc>
-	<npc id="18472" level="83" type="L2Npc" name="Hall Guard">
+	<npc id="18472" level="83" type="L2Monster" name="Hall Guard">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="150" />
@@ -2975,7 +2975,7 @@
 			<height normal="41" />
 		</collision>
 	</npc>
-	<npc id="18473" level="83" type="L2Npc" name="Hall Captain">
+	<npc id="18473" level="83" type="L2Monster" name="Hall Captain">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="80" />
@@ -2998,7 +2998,7 @@
 		<sex>MALE</sex>
 		<acquire expRate="105.160285353462" sp="78237" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="336949.124088359" hpRegen="190.745373183435" mp="1777.4" mpRegen="3" />
+			<vitals hp="266876" hpRegen="190.745373183435" mp="1777.4" mpRegen="3" />
 			<attack physical="7733.38415855685" magical="5280.89888515151" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="566.178304" magical="621.45708" />
 			<attribute>
@@ -3042,7 +3042,7 @@
 		<race>ETC</race>
 		<sex>ETC</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2985.1835" hpRegen="8.5" mp="1777.4" mpRegen="3" />
+			<vitals hp="30000" hpRegen="8.5" mp="1777.4" mpRegen="3" />
 			<attack physical="949.52401" magical="648.40181" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="353.86144" magical="258.94045" />
 			<attribute>
@@ -3076,7 +3076,7 @@
 			<height normal="33.5" />
 		</collision>
 	</npc>
-	<npc id="18475" level="83" type="L2Npc" name="Hall Guard">
+	<npc id="18475" level="83" type="L2Monster" name="Hall Guard">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -3145,7 +3145,7 @@
 			<height normal="27" />
 		</collision>
 	</npc>
-	<npc id="18476" level="83" type="L2Npc" name="Hall Guard">
+	<npc id="18476" level="83" type="L2Monster" name="Hall Guard">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -3316,7 +3316,7 @@
 			<height normal="21.5" />
 		</collision>
 	</npc>
-	<npc id="18479" level="81" type="L2Npc" name="Inner Castle Sentry">
+	<npc id="18479" level="81" type="L2Monster" name="Inner Castle Sentry">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
@@ -3371,7 +3371,7 @@
 			<height normal="26" />
 		</collision>
 	</npc>
-	<npc id="18480" level="81" type="L2Npc" name="Inner Castle Guard">
+	<npc id="18480" level="81" type="L2Monster" name="Inner Castle Guard">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="110" />
@@ -3427,7 +3427,7 @@
 			<height normal="43.5" />
 		</collision>
 	</npc>
-	<npc id="18481" level="81" type="L2Npc" name="Inner Castle Seer">
+	<npc id="18481" level="81" type="L2Monster" name="Inner Castle Seer">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="110" />
@@ -3496,7 +3496,7 @@
 		<race>DRAGON</race>
 		<sex>FEMALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2951.85588" hpRegen="8.5" mp="1743.0" mpRegen="3" />
+			<vitals hp="3643" hpRegen="8.5" mp="1743.0" mpRegen="3" />
 			<attack physical="931.81944" magical="636.31188" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="349.77477" magical="255.95" />
 			<attribute>
@@ -3828,7 +3828,7 @@
 		<sex>FEMALE</sex>
 		<acquire expRate="8.92032426837329" sp="6876" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="18540.1170337556" hpRegen="185.679969089944" mp="1881.8" mpRegen="3" />
+			<vitals hp="14684" hpRegen="185.679969089944" mp="1881.8" mpRegen="3" />
 			<attack physical="10366.899777119" magical="7079.24864306088" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="584.99232" magical="642.108" />
 			<attribute>

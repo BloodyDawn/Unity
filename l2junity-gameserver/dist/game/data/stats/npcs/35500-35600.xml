@@ -519,8 +519,8 @@
 		<ex_crt_effect>true</ex_crt_effect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
-			<radius normal="9.5" />
-			<height normal="22.5" />
+			<radius normal="8.5" />
+			<height normal="23.5" />
 		</collision>
 	</npc>
 	<npc id="35510" level="75" type="L2Npc" name="Titus" title="Wyvern Manager">
@@ -539,7 +539,7 @@
 				<defence fire="40" water="40" wind="40" earth="40" holy="40" dark="40" />
 			</attribute>
 			<speed>
-				<walk ground="50" />
+				<walk ground="40" />
 				<run ground="120" />
 			</speed>
 		</stats>
@@ -579,7 +579,7 @@
 				<defence fire="40" water="40" wind="40" earth="40" holy="40" dark="40" />
 			</attribute>
 			<speed>
-				<walk ground="50" />
+				<walk ground="62" />
 				<run ground="120" />
 			</speed>
 		</stats>
@@ -641,7 +641,7 @@
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="9.5" />
-			<height normal="22.5" />
+			<height normal="19" />
 		</collision>
 	</npc>
 	<npc id="35513" level="75" type="L2Npc" name="Sherman" title="Herald from Rune">
@@ -763,7 +763,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="142" /> <!-- rhand: Keshanberk -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="34617.7253215841" hpRegen="8.5" mp="5126.4" mpRegen="3" />
+			<vitals hp="96145" hpRegen="8.5" mp="2205" mpRegen="3" />
 			<attack physical="3036.96805390282" magical="691.285164307598" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="345.61127" magical="252.90333" />
 			<attribute>
@@ -806,7 +806,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="79" /> <!-- rhand: Sword of Damascus -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="38355.9060587002" hpRegen="8.5" mp="5332.2" mpRegen="3" />
+			<vitals hp="101851" hpRegen="8.5" mp="2280" mpRegen="3" />
 			<attack physical="3298.27085008098" magical="750.763809564873" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="353.86144" magical="258.94045" />
 			<attribute>
@@ -849,7 +849,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="76" lhand="2497" /> <!-- rhand: Sword of Delusion lhand: Full Plate Shield -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3127.82459333517" hpRegen="8.5" mp="1641.0" mpRegen="3" />
+			<vitals hp="14467" hpRegen="8.5" mp="2132" mpRegen="3" />
 			<attack physical="929.930814318487" magical="635.022195830619" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="337.07008" magical="246.65326" />
 			<attribute>
@@ -895,7 +895,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="325" /> <!-- rhand: Horn of Glory -->
 		<stats str="22" int="41" dex="21" wit="20" con="27" men="20">
-			<vitals hp="2856.7687256316" hpRegen="8.5" mp="1574.0" mpRegen="3" />
+			<vitals hp="14136" hpRegen="8.5" mp="2059" mpRegen="3" />
 			<attack physical="856.44055895414" magical="584.837886935576" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="328.27073" magical="240.21427" />
 			<attribute>
@@ -930,7 +930,7 @@
 		</ai>
 		<collision>
 			<radius normal="8" />
-			<height normal="22.5" />
+			<height normal="23.5" />
 		</collision>
 	</npc>
 	<npc id="35520" level="77" type="L2Defender" name="Royal Wizard" title="Schuttgart">
@@ -942,7 +942,7 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="193" /> <!-- rhand: Stick of Faith -->
 		<stats str="22" int="41" dex="21" wit="20" con="27" men="20">
-			<vitals hp="2856.7687256316" hpRegen="8.5" mp="1574.0" mpRegen="3" />
+			<vitals hp="14136" hpRegen="8.5" mp="2059" mpRegen="3" />
 			<attack physical="856.44055895414" magical="584.837886935576" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="328.27073" magical="240.21427" />
 			<attribute>
@@ -986,7 +986,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="1376" /> <!-- rhand: Guard Spear -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2856.7687256316" hpRegen="8.5" mp="1574.0" mpRegen="3" />
+			<vitals hp="14136" hpRegen="8.5" mp="2059" mpRegen="3" />
 			<attack physical="856.44055895414" magical="584.837886935576" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="328.27073" magical="240.21427" />
 			<attribute>
@@ -1029,7 +1029,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="21738" /> <!-- rhand: Winged Spear - Event -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
+			<vitals hp="13812" hpRegen="8.5" mp="1988" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="319.24623" magical="233.61053" />
 			<attribute>
@@ -1072,7 +1072,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="2" /> <!-- rhand: Long Sword -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
+			<vitals hp="13812" hpRegen="8.5" mp="1988" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="319.24623" magical="233.61053" />
 			<attribute>
@@ -1115,7 +1115,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="14" /> <!-- rhand: Bow -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
+			<vitals hp="13812" hpRegen="8.5" mp="1988" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="319.24623" magical="233.61053" />
 			<attribute>
@@ -1158,7 +1158,7 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="16" /> <!-- rhand: Great Spear -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
+			<vitals hp="13812" hpRegen="8.5" mp="1988" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="319.24623" magical="233.61053" />
 			<attribute>
@@ -1201,7 +1201,7 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="2" /> <!-- rhand: Long Sword -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
+			<vitals hp="13812" hpRegen="8.5" mp="1988" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="319.24623" magical="233.61053" />
 			<attribute>
@@ -1244,7 +1244,7 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="14" /> <!-- rhand: Bow -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
+			<vitals hp="13812" hpRegen="8.5" mp="1988" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="319.24623" magical="233.61053" />
 			<attribute>
@@ -1287,7 +1287,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="16" /> <!-- rhand: Great Spear -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
+			<vitals hp="13812" hpRegen="8.5" mp="1988" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="319.24623" magical="233.61053" />
 			<attribute>
@@ -1330,7 +1330,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="2" /> <!-- rhand: Long Sword -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
+			<vitals hp="13812" hpRegen="8.5" mp="1988" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="319.24623" magical="233.61053" />
 			<attribute>
@@ -1373,7 +1373,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="280" /> <!-- rhand: Light Crossbow -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
+			<vitals hp="13812" hpRegen="8.5" mp="1988" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="319.24623" magical="233.61053" />
 			<attribute>
@@ -1416,7 +1416,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="76" lhand="2497" /> <!-- rhand: Sword of Delusion lhand: Full Plate Shield -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3127.82459333517" hpRegen="8.5" mp="1641.0" mpRegen="3" />
+			<vitals hp="14467" hpRegen="8.5" mp="2132" mpRegen="3" />
 			<attack physical="929.930814318487" magical="635.022195830619" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="337.07008" magical="246.65326" />
 			<attribute>
@@ -1462,7 +1462,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="325" /> <!-- rhand: Horn of Glory -->
 		<stats str="22" int="41" dex="21" wit="20" con="27" men="20">
-			<vitals hp="2856.7687256316" hpRegen="8.5" mp="1574.0" mpRegen="3" />
+			<vitals hp="14136" hpRegen="8.5" mp="2059" mpRegen="3" />
 			<attack physical="856.44055895414" magical="584.837886935576" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="328.27073" magical="240.21427" />
 			<attribute>
@@ -1497,7 +1497,7 @@
 		</ai>
 		<collision>
 			<radius normal="8" />
-			<height normal="22.5" />
+			<height normal="23.5" />
 		</collision>
 	</npc>
 	<npc id="35533" level="77" type="L2Defender" name="Royal Wizard" title="Schuttgart">
@@ -1509,7 +1509,7 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="193" /> <!-- rhand: Stick of Faith -->
 		<stats str="22" int="41" dex="21" wit="20" con="27" men="20">
-			<vitals hp="2856.7687256316" hpRegen="8.5" mp="1574.0" mpRegen="3" />
+			<vitals hp="14136" hpRegen="8.5" mp="2059" mpRegen="3" />
 			<attack physical="856.44055895414" magical="584.837886935576" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="328.27073" magical="240.21427" />
 			<attribute>
@@ -1553,7 +1553,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="1376" /> <!-- rhand: Guard Spear -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2856.7687256316" hpRegen="8.5" mp="1574.0" mpRegen="3" />
+			<vitals hp="14136" hpRegen="8.5" mp="2059" mpRegen="3" />
 			<attack physical="856.44055895414" magical="584.837886935576" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="328.27073" magical="240.21427" />
 			<attribute>
@@ -1596,7 +1596,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="21738" /> <!-- rhand: Winged Spear - Event -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
+			<vitals hp="13812" hpRegen="8.5" mp="1988" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="319.24623" magical="233.61053" />
 			<attribute>
@@ -1639,7 +1639,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="2" /> <!-- rhand: Long Sword -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
+			<vitals hp="13812" hpRegen="8.5" mp="1988" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="319.24623" magical="233.61053" />
 			<attribute>
@@ -1682,7 +1682,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="14" /> <!-- rhand: Bow -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
+			<vitals hp="13812" hpRegen="8.5" mp="1988" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="319.24623" magical="233.61053" />
 			<attribute>
@@ -1725,7 +1725,7 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="16" /> <!-- rhand: Great Spear -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
+			<vitals hp="13812" hpRegen="8.5" mp="1988" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="319.24623" magical="233.61053" />
 			<attribute>
@@ -1768,7 +1768,7 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="2" /> <!-- rhand: Long Sword -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
+			<vitals hp="13812" hpRegen="8.5" mp="1988" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="319.24623" magical="233.61053" />
 			<attribute>
@@ -1811,7 +1811,7 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="14" /> <!-- rhand: Bow -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
+			<vitals hp="13812" hpRegen="8.5" mp="1988" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="319.24623" magical="233.61053" />
 			<attribute>
@@ -1854,7 +1854,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="16" /> <!-- rhand: Great Spear -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
+			<vitals hp="13812" hpRegen="8.5" mp="1988" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="319.24623" magical="233.61053" />
 			<attribute>
@@ -1897,7 +1897,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="76" /> <!-- rhand: Sword of Delusion -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
+			<vitals hp="13812" hpRegen="8.5" mp="1988" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="319.24623" magical="233.61053" />
 			<attribute>
@@ -1940,7 +1940,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="280" /> <!-- rhand: Light Crossbow -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
+			<vitals hp="13812" hpRegen="8.5" mp="1988" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="319.24623" magical="233.61053" />
 			<attribute>
@@ -2583,8 +2583,8 @@
 		<ex_crt_effect>true</ex_crt_effect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
-			<radius normal="9.5" />
-			<height normal="22.5" />
+			<radius normal="8.5" />
+			<height normal="23.5" />
 		</collision>
 	</npc>
 	<npc id="35556" level="75" type="L2Npc" name="Gallic" title="Wyvern Manager">
@@ -2603,7 +2603,7 @@
 				<defence fire="40" water="40" wind="40" earth="40" holy="40" dark="40" />
 			</attribute>
 			<speed>
-				<walk ground="50" />
+				<walk ground="62" />
 				<run ground="120" />
 			</speed>
 		</stats>
@@ -2643,7 +2643,7 @@
 				<defence fire="40" water="40" wind="40" earth="40" holy="40" dark="40" />
 			</attribute>
 			<speed>
-				<walk ground="50" />
+				<walk ground="62" />
 				<run ground="120" />
 			</speed>
 		</stats>
@@ -2705,7 +2705,7 @@
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="9.5" />
-			<height normal="22.5" />
+			<height normal="19" />
 		</collision>
 	</npc>
 	<npc id="35559" level="75" type="L2Npc" name="Daguerre" title="Herald from Schuttgart">
@@ -4123,7 +4123,7 @@
 			<height normal="17.7" />
 		</collision>
 	</npc>
-	<npc id="35588" level="56" type="L2Npc" name="Hot Springs Gourd">
+	<npc id="35588" level="56" type="L2Monster" name="Hot Springs Gourd">
 		<!-- Confirmed CT2.5 -->
 		<race>ETC</race>
 		<sex>ETC</sex>
@@ -4163,7 +4163,7 @@
 			<height normal="40" />
 		</collision>
 	</npc>
-	<npc id="35589" level="56" type="L2Npc" name="Hot Springs Gourd">
+	<npc id="35589" level="56" type="L2Monster" name="Hot Springs Gourd">
 		<!-- Confirmed CT2.5 -->
 		<race>ETC</race>
 		<sex>ETC</sex>
@@ -4203,7 +4203,7 @@
 			<height normal="40" />
 		</collision>
 	</npc>
-	<npc id="35590" level="56" type="L2Npc" name="Hot Springs Gourd">
+	<npc id="35590" level="56" type="L2Monster" name="Hot Springs Gourd">
 		<!-- Confirmed CT2.5 -->
 		<race>ETC</race>
 		<sex>ETC</sex>
@@ -4243,7 +4243,7 @@
 			<height normal="40" />
 		</collision>
 	</npc>
-	<npc id="35591" level="56" type="L2Npc" name="Hot Springs Gourd">
+	<npc id="35591" level="56" type="L2Monster" name="Hot Springs Gourd">
 		<!-- Confirmed CT2.5 -->
 		<race>ETC</race>
 		<sex>ETC</sex>
@@ -4283,7 +4283,7 @@
 			<height normal="40" />
 		</collision>
 	</npc>
-	<npc id="35592" level="56" type="L2Npc" name="Enraged Yeti">
+	<npc id="35592" level="56" type="L2Monster" name="Enraged Yeti">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="80" />
@@ -4324,7 +4324,7 @@
 			<height normal="27.5" />
 		</collision>
 	</npc>
-	<npc id="35593" level="52" type="L2Npc" name="Treasure Chest">
+	<npc id="35593" level="52" type="L2Monster" name="Treasure Chest">
 		<!-- Confirmed CT2.5 -->
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
@@ -4360,7 +4360,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="35594" level="52" type="L2Npc" name="Treasure Chest">
+	<npc id="35594" level="52" type="L2Monster" name="Treasure Chest">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<skill name="DDMagic" id="4992" level="1" /> <!-- Stun -->
@@ -4400,7 +4400,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="35595" level="52" type="L2Npc" name="Treasure Chest">
+	<npc id="35595" level="52" type="L2Monster" name="Treasure Chest">
 		<!-- Confirmed CT2.5 -->
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>

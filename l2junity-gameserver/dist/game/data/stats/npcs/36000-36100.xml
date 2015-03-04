@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
-	<npc id="36000" level="80" type="L2Npc" name="Mercenary Captain">
+	<npc id="36000" level="80" type="L2Monster" name="Mercenary Captain">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="80" />
@@ -88,7 +88,7 @@
 			<height normal="24.5" />
 		</collision>
 	</npc>
-	<npc id="36001" level="75" type="L2Npc" name="Mercenary Private">
+	<npc id="36001" level="75" type="L2Monster" name="Mercenary Private">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -108,7 +108,7 @@
 				<defence fire="40" water="40" wind="40" earth="40" holy="40" dark="40" />
 			</attribute>
 			<speed>
-				<walk ground="50" />
+				<walk ground="35" />
 				<run ground="120" />
 			</speed>
 		</stats>
@@ -232,8 +232,8 @@
 				<defence fire="40" water="40" wind="40" earth="40" holy="40" dark="40" />
 			</attribute>
 			<speed>
-				<walk ground="50" />
-				<run ground="100" />
+				<walk ground="35" />
+				<run ground="50" />
 			</speed>
 		</stats>
 		<status attackable="false" />
@@ -478,8 +478,8 @@
 		<ex_crt_effect>true</ex_crt_effect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
-			<radius normal="8" />
-			<height normal="17.5" />
+			<radius normal="11" />
+			<height normal="17" />
 		</collision>
 	</npc>
 	<npc id="36010" level="80" type="L2Npc" name="Supply Box">
@@ -487,7 +487,7 @@
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<vitals hp="6891" hpRegen="8.5" mp="2205" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="341.375" magical="249.80341" />
 			<attribute>
@@ -727,7 +727,7 @@
 		<equipment rhand="2500" lhand="6377" /> <!-- rhand: Dark Legion's Edge lhand: Imperial Crusader Shield -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="679374.315371996" hpRegen="391.417777464402" mp="1674.8" mpRegen="3" />
+			<vitals hp="1037827" hpRegen="391.417777464402" mp="43380" mpRegen="3" />
 			<attack physical="7476.5080117304" magical="5105.4857482389" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="546.2" magical="599.528184" />
 			<attribute>
@@ -795,7 +795,7 @@
 		<sex>MALE</sex>
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
+			<vitals hp="13886" hpRegen="8.5" mp="2023" mpRegen="3" />
 			<attack physical="824.422073095" magical="562.9734023" random="10" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
 			<attribute>
@@ -856,7 +856,7 @@
 		<equipment rhand="97" /> <!-- rhand: Lance -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
+			<vitals hp="13812" hpRegen="8.5" mp="1988" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="319.24623" magical="233.61053" />
 			<attribute>
@@ -917,7 +917,7 @@
 		<equipment rhand="98" /> <!-- rhand: Halberd -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2540.15331" hpRegen="8.5" mp="1410.0" mpRegen="3" />
+			<vitals hp="13256" hpRegen="8.5" mp="1881" mpRegen="3" />
 			<attack physical="731.52506" magical="499.53679" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="305.35947" magical="223.44881" />
 			<attribute>
@@ -979,7 +979,7 @@
 		<equipment rhand="287" /> <!-- rhand: Bow of Peril -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2540.15331" hpRegen="8.5" mp="1410.0" mpRegen="3" />
+			<vitals hp="13256" hpRegen="8.5" mp="1881" mpRegen="3" />
 			<attack physical="731.52506" magical="499.53679" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="305.35947" magical="223.44881" />
 			<attribute>
@@ -1082,7 +1082,7 @@
 		<sex>MALE</sex>
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
+			<vitals hp="13886" hpRegen="8.5" mp="2023" mpRegen="3" />
 			<attack physical="824.422073095" magical="562.9734023" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="323.78455" magical="236.93149" />
 			<attribute>
@@ -1157,7 +1157,7 @@
 		<equipment rhand="80" lhand="641" /> <!-- rhand: Tallum Blade lhand: Dark Crystal Shield -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="681761.551881449" hpRegen="397.49728048556" mp="1607.4" mpRegen="3" />
+			<vitals hp="981460" hpRegen="397.49728048556" mp="41920" mpRegen="3" />
 			<attack physical="7149.40063947237" magical="4882.11390959346" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="532.320976" magical="584.294088" />
 			<attribute>
@@ -1227,7 +1227,7 @@
 		<equipment rhand="75" /> <!-- rhand: Caliburs -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
+			<vitals hp="13886" hpRegen="8.5" mp="2023" mpRegen="3" />
 			<attack physical="824.422073095" magical="562.9734023" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
 			<attribute>
@@ -1283,7 +1283,7 @@
 		<equipment rhand="75" /> <!-- rhand: Caliburs -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
+			<vitals hp="13886" hpRegen="8.5" mp="2023" mpRegen="3" />
 			<attack physical="824.422073095" magical="562.9734023" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
 			<attribute>
@@ -1358,7 +1358,7 @@
 		<sex>FEMALE</sex>
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="681761.551881449" hpRegen="397.49728048556" mp="1607.4" mpRegen="3" />
+			<vitals hp="981460" hpRegen="397.49728048556" mp="41920" mpRegen="3" />
 			<attack physical="7149.40063947237" magical="4882.11390959346" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="532.320976" magical="584.294088" />
 			<attribute>
@@ -1431,7 +1431,7 @@
 		<equipment rhand="325" /> <!-- rhand: Horn of Glory -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
+			<vitals hp="13886" hpRegen="8.5" mp="2023" mpRegen="3" />
 			<attack physical="824.422073095" magical="562.9734023" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
 			<attribute>
@@ -1476,7 +1476,7 @@
 		</drop_lists>
 		<collision>
 			<radius normal="8" />
-			<height normal="22.5" />
+			<height normal="23.5" />
 		</collision>
 	</npc>
 	<npc id="36027" level="76" type="L2Defender" name="Healer" title="Support Unit">
@@ -1501,7 +1501,7 @@
 		<equipment rhand="92" /> <!-- rhand: Sprite's Staff -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
+			<vitals hp="13886" hpRegen="8.5" mp="2023" mpRegen="3" />
 			<attack physical="824.422073095" magical="562.9734023" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
 			<attribute>
@@ -1570,7 +1570,7 @@
 		<equipment rhand="10212" /> <!-- rhand: For NPC (Bow) -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="681761.551881449" hpRegen="397.49728048556" mp="1607.4" mpRegen="3" />
+			<vitals hp="981460" hpRegen="397.49728048556" mp="41920" mpRegen="3" />
 			<attack physical="7149.40063947237" magical="4882.11390959346" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="532.320976" magical="584.294088" />
 			<attribute>
@@ -1635,7 +1635,7 @@
 		<equipment rhand="287" /> <!-- rhand: Bow of Peril -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
+			<vitals hp="13886" hpRegen="8.5" mp="2023" mpRegen="3" />
 			<attack physical="824.422073095" magical="562.9734023" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="323.78455" magical="236.93149" />
 			<attribute>
@@ -1718,7 +1718,7 @@
 			<height normal="59" />
 		</collision>
 	</npc>
-	<npc id="36031" level="80" type="L2Npc" name="Mercenary Captain">
+	<npc id="36031" level="80" type="L2Monster" name="Mercenary Captain">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="80" />
@@ -1806,7 +1806,7 @@
 			<height normal="24.5" />
 		</collision>
 	</npc>
-	<npc id="36032" level="75" type="L2Npc" name="Mercenary Private">
+	<npc id="36032" level="75" type="L2Monster" name="Mercenary Private">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -1826,7 +1826,7 @@
 				<defence fire="40" water="40" wind="40" earth="40" holy="40" dark="40" />
 			</attribute>
 			<speed>
-				<walk ground="50" />
+				<walk ground="35" />
 				<run ground="120" />
 			</speed>
 		</stats>
@@ -1949,8 +1949,8 @@
 				<defence fire="40" water="40" wind="40" earth="40" holy="40" dark="40" />
 			</attribute>
 			<speed>
-				<walk ground="50" />
-				<run ground="100" />
+				<walk ground="35" />
+				<run ground="50" />
 			</speed>
 		</stats>
 		<status attackable="false" />
@@ -2236,8 +2236,8 @@
 		<ex_crt_effect>true</ex_crt_effect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
-			<radius normal="8" />
-			<height normal="17.5" />
+			<radius normal="11" />
+			<height normal="17" />
 		</collision>
 	</npc>
 	<npc id="36042" level="80" type="L2Npc" name="Supply Box">
@@ -2245,7 +2245,7 @@
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<vitals hp="6891" hpRegen="8.5" mp="2205" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="341.375" magical="249.80341" />
 			<attribute>
@@ -2482,7 +2482,7 @@
 		<equipment rhand="2500" lhand="6377" /> <!-- rhand: Dark Legion's Edge lhand: Imperial Crusader Shield -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="679374.315371996" hpRegen="391.417777464402" mp="1674.8" mpRegen="3" />
+			<vitals hp="1037827" hpRegen="391.417777464402" mp="43380" mpRegen="3" />
 			<attack physical="7476.5080117304" magical="5105.4857482389" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="546.2" magical="599.528184" />
 			<attribute>
@@ -2550,7 +2550,7 @@
 		<sex>MALE</sex>
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
+			<vitals hp="13886" hpRegen="8.5" mp="2023" mpRegen="3" />
 			<attack physical="824.422073095" magical="562.9734023" random="10" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
 			<attribute>
@@ -2611,7 +2611,7 @@
 		<equipment rhand="97" /> <!-- rhand: Lance -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
+			<vitals hp="13812" hpRegen="8.5" mp="1988" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="319.24623" magical="233.61053" />
 			<attribute>
@@ -2672,7 +2672,7 @@
 		<equipment rhand="98" /> <!-- rhand: Halberd -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2540.15331" hpRegen="8.5" mp="1410.0" mpRegen="3" />
+			<vitals hp="13256" hpRegen="8.5" mp="1881" mpRegen="3" />
 			<attack physical="731.52506" magical="499.53679" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="305.35947" magical="223.44881" />
 			<attribute>
@@ -2734,7 +2734,7 @@
 		<equipment rhand="287" /> <!-- rhand: Bow of Peril -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2540.15331" hpRegen="8.5" mp="1410.0" mpRegen="3" />
+			<vitals hp="13256" hpRegen="8.5" mp="1881" mpRegen="3" />
 			<attack physical="731.52506" magical="499.53679" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="305.35947" magical="223.44881" />
 			<attribute>
@@ -2981,7 +2981,7 @@
 		<sex>MALE</sex>
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
+			<vitals hp="13886" hpRegen="8.5" mp="2023" mpRegen="3" />
 			<attack physical="824.422073095" magical="562.9734023" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="323.78455" magical="236.93149" />
 			<attribute>
@@ -3043,7 +3043,7 @@
 		<sex>MALE</sex>
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2632.19636" hpRegen="8.5" mp="1475.0" mpRegen="3" />
+			<vitals hp="13568" hpRegen="8.5" mp="1952" mpRegen="3" />
 			<attack physical="773.81598" magical="528.41601" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="314.65987" magical="230.25444" />
 			<attribute>
@@ -3116,7 +3116,7 @@
 		<equipment rhand="80" lhand="641" /> <!-- rhand: Tallum Blade lhand: Dark Crystal Shield -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="681761.551881449" hpRegen="397.49728048556" mp="1607.4" mpRegen="3" />
+			<vitals hp="981460" hpRegen="397.49728048556" mp="41920" mpRegen="3" />
 			<attack physical="7149.40063947237" magical="4882.11390959346" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="532.320976" magical="584.294088" />
 			<attribute>
@@ -3186,7 +3186,7 @@
 		<equipment rhand="75" /> <!-- rhand: Caliburs -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
+			<vitals hp="13886" hpRegen="8.5" mp="2023" mpRegen="3" />
 			<attack physical="824.422073095" magical="562.9734023" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
 			<attribute>
@@ -3242,7 +3242,7 @@
 		<equipment rhand="75" /> <!-- rhand: Caliburs -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
+			<vitals hp="13886" hpRegen="8.5" mp="2023" mpRegen="3" />
 			<attack physical="824.422073095" magical="562.9734023" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
 			<attribute>
@@ -3317,7 +3317,7 @@
 		<sex>FEMALE</sex>
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="681761.551881449" hpRegen="397.49728048556" mp="1607.4" mpRegen="3" />
+			<vitals hp="981460" hpRegen="397.49728048556" mp="41920" mpRegen="3" />
 			<attack physical="7149.40063947237" magical="4882.11390959346" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="532.320976" magical="584.294088" />
 			<attribute>
@@ -3390,7 +3390,7 @@
 		<equipment rhand="325" /> <!-- rhand: Horn of Glory -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
+			<vitals hp="13886" hpRegen="8.5" mp="2023" mpRegen="3" />
 			<attack physical="824.422073095" magical="562.9734023" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
 			<attribute>
@@ -3435,7 +3435,7 @@
 		</drop_lists>
 		<collision>
 			<radius normal="8" />
-			<height normal="22.5" />
+			<height normal="23.5" />
 		</collision>
 	</npc>
 	<npc id="36063" level="76" type="L2Defender" name="Healer" title="Support Unit">
@@ -3460,7 +3460,7 @@
 		<equipment rhand="92" /> <!-- rhand: Sprite's Staff -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
+			<vitals hp="13886" hpRegen="8.5" mp="2023" mpRegen="3" />
 			<attack physical="824.422073095" magical="562.9734023" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
 			<attribute>
@@ -3529,7 +3529,7 @@
 		<equipment rhand="10212" /> <!-- rhand: For NPC (Bow) -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="681761.551881449" hpRegen="397.49728048556" mp="1607.4" mpRegen="3" />
+			<vitals hp="981460" hpRegen="397.49728048556" mp="41920" mpRegen="3" />
 			<attack physical="7149.40063947237" magical="4882.11390959346" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="532.320976" magical="584.294088" />
 			<attribute>
@@ -3594,7 +3594,7 @@
 		<equipment rhand="287" /> <!-- rhand: Bow of Peril -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
+			<vitals hp="13886" hpRegen="8.5" mp="2023" mpRegen="3" />
 			<attack physical="824.422073095" magical="562.9734023" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="323.78455" magical="236.93149" />
 			<attribute>
@@ -3662,7 +3662,7 @@
 		<equipment rhand="9813" lhand="9813" /> <!-- rhand: Orc Officer lhand: Orc Officer -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="681761.551881449" hpRegen="397.49728048556" mp="1607.4" mpRegen="3" />
+			<vitals hp="981460" hpRegen="397.49728048556" mp="41920" mpRegen="3" />
 			<attack physical="7149.40063947237" magical="4882.11390959346" random="30" critical="4" accuracy="5" attackSpeed="253" type="DUAL" range="40" distance="80" width="120" />
 			<defence physical="532.320976" magical="584.294088" />
 			<attribute>
@@ -3729,7 +3729,7 @@
 		<equipment rhand="7895" /> <!-- rhand: Flaming Dragon Skull -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="681761.551881449" hpRegen="397.49728048556" mp="1607.4" mpRegen="3" />
+			<vitals hp="981460" hpRegen="397.49728048556" mp="41920" mpRegen="3" />
 			<attack physical="7149.40063947237" magical="4882.11390959346" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="532.320976" magical="584.294088" />
 			<attribute>
@@ -3813,7 +3813,7 @@
 			<height normal="59" />
 		</collision>
 	</npc>
-	<npc id="36069" level="80" type="L2Npc" name="Mercenary Captain">
+	<npc id="36069" level="80" type="L2Monster" name="Mercenary Captain">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="80" />
@@ -3901,7 +3901,7 @@
 			<height normal="24.5" />
 		</collision>
 	</npc>
-	<npc id="36070" level="75" type="L2Npc" name="Mercenary Private">
+	<npc id="36070" level="75" type="L2Monster" name="Mercenary Private">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -3921,7 +3921,7 @@
 				<defence fire="40" water="40" wind="40" earth="40" holy="40" dark="40" />
 			</attribute>
 			<speed>
-				<walk ground="50" />
+				<walk ground="35" />
 				<run ground="120" />
 			</speed>
 		</stats>
@@ -4044,8 +4044,8 @@
 				<defence fire="40" water="40" wind="40" earth="40" holy="40" dark="40" />
 			</attribute>
 			<speed>
-				<walk ground="50" />
-				<run ground="100" />
+				<walk ground="35" />
+				<run ground="50" />
 			</speed>
 		</stats>
 		<status attackable="false" />
@@ -4331,8 +4331,8 @@
 		<ex_crt_effect>true</ex_crt_effect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
-			<radius normal="8" />
-			<height normal="17.5" />
+			<radius normal="11" />
+			<height normal="17" />
 		</collision>
 	</npc>
 	<npc id="36080" level="80" type="L2Npc" name="Supply Box">
@@ -4340,7 +4340,7 @@
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<vitals hp="6891" hpRegen="8.5" mp="2205" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="341.375" magical="249.80341" />
 			<attribute>
@@ -4577,7 +4577,7 @@
 		<equipment rhand="2500" lhand="6377" /> <!-- rhand: Dark Legion's Edge lhand: Imperial Crusader Shield -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="679374.315371996" hpRegen="391.417777464402" mp="1674.8" mpRegen="3" />
+			<vitals hp="1037827" hpRegen="391.417777464402" mp="43380" mpRegen="3" />
 			<attack physical="7476.5080117304" magical="5105.4857482389" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="546.2" magical="599.528184" />
 			<attribute>
@@ -4645,7 +4645,7 @@
 		<sex>MALE</sex>
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
+			<vitals hp="13886" hpRegen="8.5" mp="2023" mpRegen="3" />
 			<attack physical="824.422073095" magical="562.9734023" random="10" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
 			<attribute>
@@ -4706,7 +4706,7 @@
 		<equipment rhand="97" /> <!-- rhand: Lance -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
+			<vitals hp="13812" hpRegen="8.5" mp="1988" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="319.24623" magical="233.61053" />
 			<attribute>
@@ -4767,7 +4767,7 @@
 		<equipment rhand="98" /> <!-- rhand: Halberd -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2540.15331" hpRegen="8.5" mp="1410.0" mpRegen="3" />
+			<vitals hp="13256" hpRegen="8.5" mp="1881" mpRegen="3" />
 			<attack physical="731.52506" magical="499.53679" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
 			<defence physical="305.35947" magical="223.44881" />
 			<attribute>
@@ -4829,7 +4829,7 @@
 		<equipment rhand="287" /> <!-- rhand: Bow of Peril -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2540.15331" hpRegen="8.5" mp="1410.0" mpRegen="3" />
+			<vitals hp="13256" hpRegen="8.5" mp="1881" mpRegen="3" />
 			<attack physical="731.52506" magical="499.53679" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="305.35947" magical="223.44881" />
 			<attribute>
@@ -5076,7 +5076,7 @@
 		<sex>MALE</sex>
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
+			<vitals hp="13886" hpRegen="8.5" mp="2023" mpRegen="3" />
 			<attack physical="824.422073095" magical="562.9734023" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="323.78455" magical="236.93149" />
 			<attribute>
@@ -5138,7 +5138,7 @@
 		<sex>MALE</sex>
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2632.19636" hpRegen="8.5" mp="1475.0" mpRegen="3" />
+			<vitals hp="13568" hpRegen="8.5" mp="1952" mpRegen="3" />
 			<attack physical="773.81598" magical="528.41601" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="314.65987" magical="230.25444" />
 			<attribute>
@@ -5211,7 +5211,7 @@
 		<equipment rhand="80" lhand="641" /> <!-- rhand: Tallum Blade lhand: Dark Crystal Shield -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="681761.551881449" hpRegen="397.49728048556" mp="1607.4" mpRegen="3" />
+			<vitals hp="981460" hpRegen="397.49728048556" mp="41920" mpRegen="3" />
 			<attack physical="7149.40063947237" magical="4882.11390959346" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="532.320976" magical="584.294088" />
 			<attribute>
@@ -5281,7 +5281,7 @@
 		<equipment rhand="75" /> <!-- rhand: Caliburs -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
+			<vitals hp="13886" hpRegen="8.5" mp="2023" mpRegen="3" />
 			<attack physical="824.422073095" magical="562.9734023" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
 			<attribute>
@@ -5337,7 +5337,7 @@
 		<equipment rhand="75" /> <!-- rhand: Caliburs -->
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
+			<vitals hp="13886" hpRegen="8.5" mp="2023" mpRegen="3" />
 			<attack physical="824.422073095" magical="562.9734023" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
 			<attribute>
@@ -5412,7 +5412,7 @@
 		<sex>FEMALE</sex>
 		<acquire expRate="0.5" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="681761.551881449" hpRegen="397.49728048556" mp="1607.4" mpRegen="3" />
+			<vitals hp="981460" hpRegen="397.49728048556" mp="41920" mpRegen="3" />
 			<attack physical="7149.40063947237" magical="4882.11390959346" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="532.320976" magical="584.294088" />
 			<attribute>

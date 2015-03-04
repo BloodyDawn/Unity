@@ -276,7 +276,7 @@
 		<ex_crt_effect>true</ex_crt_effect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
-			<radius normal="8" />
+			<radius normal="12" />
 			<height normal="21.5" />
 		</collision>
 	</npc>
@@ -356,7 +356,7 @@
 		<ex_crt_effect>true</ex_crt_effect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
-			<radius normal="8" />
+			<radius normal="12" />
 			<height normal="21.5" />
 		</collision>
 	</npc>
@@ -642,7 +642,7 @@
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="7" />
-			<height normal="23" />
+			<height normal="23.5" />
 		</collision>
 	</npc>
 	<npc id="30416" level="70" type="L2Npc" name="Triskel">
@@ -682,7 +682,7 @@
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="7" />
-			<height normal="23" />
+			<height normal="23.5" />
 		</collision>
 	</npc>
 	<npc id="30417" level="70" type="L2Npc" name="Sir Klaus Vasper">
@@ -1087,7 +1087,7 @@
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
-			<height normal="23" />
+			<height normal="21" />
 		</collision>
 	</npc>
 	<npc id="30427" level="70" type="L2Teleporter" name="Siff" title="Gatekeeper">
@@ -1126,8 +1126,8 @@
 		<ex_crt_effect>true</ex_crt_effect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
-			<radius normal="8" />
-			<height normal="25" />
+			<radius normal="13" />
+			<height normal="23" />
 		</collision>
 	</npc>
 	<npc id="30428" level="70" type="L2Npc" name="Perrin">
@@ -1206,8 +1206,8 @@
 		<ex_crt_effect>true</ex_crt_effect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
-			<radius normal="8" />
-			<height normal="25" />
+			<radius normal="13" />
+			<height normal="23" />
 		</collision>
 	</npc>
 	<npc id="30430" level="80" type="L2Guard" name="Trionell" title="Sentinel">
@@ -1220,7 +1220,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="130" /> <!-- rhand: Elven Sword -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<vitals hp="49042" hpRegen="8.5" mp="23550" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="341.375" magical="249.80341" />
 			<attribute>
@@ -1261,7 +1261,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="130" /> <!-- rhand: Elven Sword -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<vitals hp="49042" hpRegen="8.5" mp="23550" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="341.375" magical="249.80341" />
 			<attribute>
@@ -1302,7 +1302,7 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="132" /> <!-- rhand: Sword of Limit -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<vitals hp="49042" hpRegen="8.5" mp="23550" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="341.375" magical="249.80341" />
 			<attribute>
@@ -1343,7 +1343,7 @@
 		<sex>FEMALE</sex>
 		<equipment rhand="132" /> <!-- rhand: Sword of Limit -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<vitals hp="49042" hpRegen="8.5" mp="23550" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="341.375" magical="249.80341" />
 			<attribute>
@@ -1411,7 +1411,7 @@
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
-			<height normal="23" />
+			<height normal="21" />
 		</collision>
 	</npc>
 	<npc id="30435" level="70" type="L2Npc" name="Leopold">
@@ -1430,7 +1430,7 @@
 				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
 			</attribute>
 			<speed>
-				<walk ground="50" />
+				<walk ground="40" />
 				<run ground="120" />
 			</speed>
 		</stats>
@@ -1470,7 +1470,7 @@
 				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
 			</attribute>
 			<speed>
-				<walk ground="50" />
+				<walk ground="70" />
 				<run ground="120" />
 			</speed>
 		</stats>
@@ -1510,7 +1510,7 @@
 				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
 			</attribute>
 			<speed>
-				<walk ground="50" />
+				<walk ground="20" />
 				<run ground="120" />
 			</speed>
 		</stats>
@@ -1544,7 +1544,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="2" lhand="20" /> <!-- rhand: Long Sword lhand: Buckler -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<vitals hp="356248" hpRegen="8.5" mp="23550" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="341.375" magical="249.80341" shield="148" shieldRate="20" />
 			<attribute>
@@ -1812,7 +1812,7 @@
 		<ex_crt_effect>true</ex_crt_effect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
-			<radius normal="8" />
+			<radius normal="12" />
 			<height normal="23" />
 		</collision>
 	</npc>
@@ -1868,7 +1868,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="275" /> <!-- rhand: Long Bow -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<vitals hp="49042" hpRegen="8.5" mp="23550" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="341.375" magical="249.80341" />
 			<attribute>
@@ -1909,7 +1909,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="2" lhand="20" /> <!-- rhand: Long Sword lhand: Buckler -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<vitals hp="49042" hpRegen="8.5" mp="23550" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="341.375" magical="249.80341" shield="148" shieldRate="20" />
 			<attribute>
@@ -2223,7 +2223,7 @@
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
-			<height normal="23" />
+			<height normal="26" />
 		</collision>
 	</npc>
 	<npc id="30477" level="70" type="L2Npc" name="Sir Ortho Lancer">
@@ -2276,7 +2276,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="275" /> <!-- rhand: Long Bow -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<vitals hp="49042" hpRegen="8.5" mp="23550" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="341.375" magical="249.80341" />
 			<attribute>
@@ -2323,7 +2323,7 @@
 				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
 			</attribute>
 			<speed>
-				<walk ground="50" />
+				<walk ground="40" />
 				<run ground="120" />
 			</speed>
 		</stats>
@@ -2344,7 +2344,7 @@
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
-			<height normal="25" />
+			<height normal="23" />
 		</collision>
 	</npc>
 	<npc id="30484" level="70" type="L2Teleporter" name="Janssen" title="Ivory Tower Wizard">
@@ -2369,7 +2369,7 @@
 				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
 			</attribute>
 			<speed>
-				<walk ground="50" />
+				<walk ground="40" />
 				<run ground="120" />
 			</speed>
 		</stats>
@@ -2390,7 +2390,7 @@
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
-			<height normal="25" />
+			<height normal="23" />
 		</collision>
 	</npc>
 	<npc id="30485" level="70" type="L2Teleporter" name="Belkadhi" title="Ivory Tower Wizard">
@@ -2415,7 +2415,7 @@
 				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
 			</attribute>
 			<speed>
-				<walk ground="50" />
+				<walk ground="40" />
 				<run ground="120" />
 			</speed>
 		</stats>
@@ -2436,7 +2436,7 @@
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
-			<height normal="25" />
+			<height normal="23" />
 		</collision>
 	</npc>
 	<npc id="30486" level="70" type="L2Teleporter" name="Ian" title="Ivory Tower Wizard">
@@ -2455,7 +2455,7 @@
 				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
 			</attribute>
 			<speed>
-				<walk ground="50" />
+				<walk ground="40" />
 				<run ground="120" />
 			</speed>
 		</stats>
@@ -2476,7 +2476,7 @@
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
-			<height normal="25" />
+			<height normal="23" />
 		</collision>
 	</npc>
 	<npc id="30487" level="70" type="L2Teleporter" name="Rombel" title="Ivory Tower Wizard">
@@ -2501,7 +2501,7 @@
 				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
 			</attribute>
 			<speed>
-				<walk ground="50" />
+				<walk ground="40" />
 				<run ground="120" />
 			</speed>
 		</stats>
@@ -2522,7 +2522,7 @@
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
-			<height normal="25" />
+			<height normal="23" />
 		</collision>
 	</npc>
 	<npc id="30497" level="70" type="L2Npc" name="Edmond">

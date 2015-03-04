@@ -6,7 +6,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="2" /> <!-- rhand: Long Sword -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<vitals hp="49042" hpRegen="8.5" mp="23550" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="341.375" magical="249.80341" />
 			<attribute>
@@ -43,7 +43,7 @@
 		<sex>MALE</sex>
 		<equipment rhand="14" /> <!-- rhand: Bow -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<vitals hp="49042" hpRegen="8.5" mp="23550" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="341.375" magical="249.80341" />
 			<attribute>
@@ -650,7 +650,7 @@
 				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
 			</attribute>
 			<speed>
-				<walk ground="50" />
+				<walk ground="63" />
 				<run ground="120" />
 			</speed>
 		</stats>
@@ -671,7 +671,7 @@
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
-			<height normal="25" />
+			<height normal="23.5" />
 		</collision>
 	</npc>
 	<npc id="31419" level="70" type="L2Merchant" name="Lorel" title="Spellbook Seller">
@@ -850,7 +850,7 @@
 				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
 			</attribute>
 			<speed>
-				<walk ground="50" />
+				<walk ground="63" />
 				<run ground="120" />
 			</speed>
 		</stats>
@@ -871,7 +871,7 @@
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
-			<height normal="25" />
+			<height normal="23.5" />
 		</collision>
 	</npc>
 	<npc id="31424" level="70" type="L2Merchant" name="Shantra" title="Amulet Seller">
@@ -1510,8 +1510,8 @@
 		<ex_crt_effect>true</ex_crt_effect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
-			<radius normal="8" />
-			<height normal="17.5" />
+			<radius normal="11" />
+			<height normal="17" />
 		</collision>
 	</npc>
 	<npc id="31440" level="70" type="L2Merchant" name="Lanna" title="Mineral Trader">
@@ -1670,8 +1670,8 @@
 		<ex_crt_effect>true</ex_crt_effect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
-			<radius normal="8" />
-			<height normal="17.5" />
+			<radius normal="11" />
+			<height normal="17" />
 		</collision>
 	</npc>
 	<npc id="31444" level="70" type="L2Merchant" name="Cona" title="Mineral Trader">
@@ -1730,7 +1730,7 @@
 				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
 			</attribute>
 			<speed>
-				<walk ground="50" />
+				<walk ground="20" />
 				<run ground="120" />
 			</speed>
 		</stats>
