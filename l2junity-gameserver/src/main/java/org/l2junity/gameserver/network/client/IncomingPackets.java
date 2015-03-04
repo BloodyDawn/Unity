@@ -164,7 +164,7 @@ enum IncomingPackets implements IIncomingPackets<IIncomingPacket<L2GameClient>>
 	REQUEST_PACKAGE_SENDABLE_ITEM_LIST(0xA7, RequestPackageSendableItemList::new, ConnectionState.IN_GAME),
 	REQUEST_PACKAGE_SEND(0xA8, RequestPackageSend::new, ConnectionState.IN_GAME),
 	REQUEST_BLOCK(0xA9, RequestBlock::new, ConnectionState.IN_GAME),
-	REQUEST_SIEGE_INFO(0xAA, RequestSiegeInfo::new, ConnectionState.IN_GAME), // TODO: CHECK
+	REQUEST_SIEGE_INFO(0xAA, RequestSiegeInfo::new, ConnectionState.IN_GAME),
 	REQUEST_SIEGE_ATTACKER_LIST(0xAB, RequestSiegeAttackerList::new, ConnectionState.IN_GAME),
 	REQUEST_SIEGE_DEFENDER_LIST(0xAC, RequestSiegeDefenderList::new, ConnectionState.IN_GAME),
 	REQUEST_JOIN_SIEGE(0xAD, RequestJoinSiege::new, ConnectionState.IN_GAME),
