@@ -32,6 +32,7 @@ public class RequestTutorialLinkHtml implements IClientIncomingPacket
 	@Override
 	public boolean read(PacketReader packet)
 	{
+		packet.readD();
 		_bypass = packet.readS();
 		return true;
 	}
