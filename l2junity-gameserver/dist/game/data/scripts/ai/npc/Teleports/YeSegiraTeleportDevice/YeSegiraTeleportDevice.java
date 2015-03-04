@@ -23,6 +23,7 @@ import java.util.Map;
 
 import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.enums.Race;
+import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -31,7 +32,10 @@ import org.l2junity.gameserver.model.events.ListenerRegisterType;
 import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
 import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerCreate;
+import org.l2junity.gameserver.model.quest.Quest;
+import org.l2junity.gameserver.model.quest.QuestState;
 
+import quests.Q10365_SeekerEscort.Q10365_SeekerEscort;
 import ai.npc.AbstractNpcAI;
 
 /**
@@ -95,6 +99,18 @@ public final class YeSegiraTeleportDevice extends AbstractNpcAI
 			{
 				player.playMovie(Movie.SI_ILLUSION_03_QUE);
 				player.getVariables().remove(MOVIE_VAR);
+			}
+			else if (event.equals("5_exploration_zone"))
+			{
+				final QuestState st = player.getQuestState(Q10365_SeekerEscort.class.getSimpleName());
+				if ((st != null) && st.isStarted() && st.isCond(1))
+				{
+					final Quest quest_10365 = QuestManager.getInstance().getQuest(Q10365_SeekerEscort.class.getSimpleName());
+					if (quest_10365 != null)
+					{
+						quest_10365.notifyEvent("TELEPORT_TO_NEXT_STAGE", null, player);
+					}
+				}
 			}
 		}
 		return super.onAdvEvent(event, npc, player);

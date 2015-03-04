@@ -232,6 +232,7 @@ public final class Q10365_SeekerEscort extends Quest
 				player.teleToLocation(BLOODHOUND_SPAWN_2);
 				final Npc bloodhound = addSpawn(BLOODHOUND, BLOODHOUND_SPAWN_2, false, 300000);
 				bloodhound.setTitle(player.getName());
+				bloodhound.setSummoner(player);
 				startQuestTimer("MOVE_DELAY", 500, bloodhound, player);
 				break;
 			}
@@ -240,6 +241,7 @@ public final class Q10365_SeekerEscort extends Quest
 				qs.setMemoState(1);
 				final Npc bloodhound = addSpawn(BLOODHOUND, BLOODHOUND_SPAWN_1, false, 300000);
 				bloodhound.setTitle(player.getName());
+				bloodhound.setSummoner(player);
 				startQuestTimer("MOVE_DELAY", 500, bloodhound, player);
 				break;
 			}
@@ -285,14 +287,7 @@ public final class Q10365_SeekerEscort extends Quest
 					if (qs.isCond(1))
 					{
 						// Use maybe something else than memostate to check if npc is spawned?!
-						if (qs.isMemoState(0))
-						{
-							htmltext = "33453-04.htm";
-						}
-						else
-						{
-							htmltext = "33453-05.htm";
-						}
+						htmltext = qs.isMemoState(0) ? "33453-04.htm" : "33453-05.htm";
 						break;
 					}
 					break;

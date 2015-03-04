@@ -98,14 +98,17 @@ public final class Q10324_FindingMagisterGallint extends Quest
 			case State.CREATED:
 			{
 				htmltext = npc.getId() == SHANNON ? "32974-01.htm" : "32980-04.htm";
+				break;
 			}
 			case State.STARTED:
 			{
 				htmltext = npc.getId() == SHANNON ? "32974-04.htm" : "32980-01.htm";
+				break;
 			}
 			case State.COMPLETED:
 			{
 				htmltext = npc.getId() == SHANNON ? "32974-05.htm" : "32980-03.htm";
+				break;
 			}
 		}
 		return htmltext;
