@@ -153,7 +153,7 @@ public enum ExIncomingPackets implements IIncomingPackets<IIncomingPacket<L2Game
 	REQUEST_EX_CANCEL_ENCHANT_ITEM(0x4B, RequestExCancelEnchantItem::new, ConnectionState.IN_GAME),
 	REQUEST_CHANGE_NICKNAME_COLOR(0x4C, RequestChangeNicknameColor::new, ConnectionState.IN_GAME),
 	REQUEST_RESET_NICKNAME(0x4D, RequestResetNickname::new, ConnectionState.IN_GAME),
-	REQUEST_BOOKMARK_ACTION(0x4E, RequestBookmarkAction::new, ConnectionState.IN_GAME),
+	REQUEST_BOOKMARK_ACTION(0x4E, ExBookmarkPacket::new, ConnectionState.IN_GAME),
 	REQUEST_WITHDRAW_PREMIUM_ITEM(0x4F, RequestWithDrawPremiumItem::new, ConnectionState.IN_GAME),
 	REQUEST_EX_JUMP(0x50, null, ConnectionState.IN_GAME),
 	REQUEST_EX_START_SHOW_CRATAE_CUBE_RANK(0x51, null, ConnectionState.IN_GAME),

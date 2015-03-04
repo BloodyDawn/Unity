@@ -25,9 +25,9 @@ import org.l2junity.network.PacketReader;
 /**
  * @author Sdw
  */
-public class RequestBookmarkAction implements IClientIncomingPacket
+public class ExBookmarkPacket implements IClientIncomingPacket
 {
-	private IIncomingPacket<L2GameClient> _bookmarkPacket;
+	private IIncomingPacket<L2GameClient> _exBookmarkPacket;
 	
 	@Override
 	public boolean read(PacketReader packet)
@@ -38,45 +38,41 @@ public class RequestBookmarkAction implements IClientIncomingPacket
 		{
 			case 0:
 			{
-				_bookmarkPacket = new RequestBookMarkSlotInfo();
+				_exBookmarkPacket = new RequestBookMarkSlotInfo();
 				break;
 			}
 			case 1:
 			{
-				_bookmarkPacket = new RequestSaveBookMarkSlot();
+				_exBookmarkPacket = new RequestSaveBookMarkSlot();
 				break;
 			}
 			case 2:
 			{
-				_bookmarkPacket = new RequestModifyBookMarkSlot();
+				_exBookmarkPacket = new RequestModifyBookMarkSlot();
 				break;
 			}
 			case 3:
 			{
-				_bookmarkPacket = new RequestDeleteBookMarkSlot();
+				_exBookmarkPacket = new RequestDeleteBookMarkSlot();
 				break;
 			}
 			case 4:
 			{
-				_bookmarkPacket = new RequestTeleportBookMark();
+				_exBookmarkPacket = new RequestTeleportBookMark();
 				break;
 			}
 			case 5:
 			{
-				_bookmarkPacket = new RequestChangeBookMarkSlot();
+				_exBookmarkPacket = new RequestChangeBookMarkSlot();
 				break;
 			}
-			default:
-			{
-				return false;
-			}
 		}
-		return true;
+		return (_exBookmarkPacket != null) && _exBookmarkPacket.read(packet);
 	}
 	
 	@Override
 	public void run(L2GameClient client) throws Exception
 	{
-		_bookmarkPacket.run(client);
+		_exBookmarkPacket.run(client);
 	}
 }
