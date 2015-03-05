@@ -60,7 +60,7 @@ public class ExPacket implements IIncomingPacket<L2GameClient>
 	{
 		if (!_exIncomingPacket.getConnectionStates().contains(client.getConnectionState()))
 		{
-			LOGGER.warning(" Connection at invalid state: " + client.getConnectionState() + " Required State: " + _exIncomingPacket.getConnectionStates());
+			LOGGER.warning(_exIncomingPacket + ": Connection at invalid state: " + client.getConnectionState() + " Required State: " + _exIncomingPacket.getConnectionStates());
 			return;
 		}
 		_exPacket.run(client);
