@@ -112,6 +112,7 @@
 				<xs:attribute type="xs:string" name="race" use="optional" />
 				<xs:attribute type="xs:string" name="npcId" use="optional" />
 				<xs:attribute type="xs:string" name="npcType" use="optional" />
+				<xs:attribute type="xs:string" name="playable" use="optional" />
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -162,7 +163,7 @@
 				<xs:attribute type="xs:string" name="charge" use="optional" />
 				<xs:attribute type="xs:byte" name="cubicId" use="optional" />
 				<xs:attribute type="xs:byte" name="cubicDelay" use="optional" />
-				<xs:attribute type="xs:short" name="cubicDuration" use="optional" />
+				<xs:attribute type="xs:string" name="cubicDuration" use="optional" />
 				<xs:attribute type="xs:short" name="cubicMaxCount" use="optional" />
 				<xs:attribute type="xs:byte" name="cubicSkillChance" use="optional" />
 				<xs:attribute type="xs:string" name="cubicPower" use="optional" />
@@ -376,6 +377,7 @@
 			<xs:enumeration value="waterRes" />
 			<xs:enumeration value="windRes" />
 			<xs:enumeration value="magicSuccRes" />
+			<xs:enumeration value="healPower" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="addType" mixed="true">
