@@ -49,7 +49,7 @@ public abstract class Decoy extends Creature
 	public void onSpawn()
 	{
 		super.onSpawn();
-		sendPacket(new CharInfo(this));
+		sendPacket(new CharInfo(this, getOwner()));
 	}
 	
 	@Override
@@ -61,7 +61,7 @@ public abstract class Decoy extends Creature
 		{
 			if (player != null)
 			{
-				player.sendPacket(new CharInfo(this));
+				player.sendPacket(new CharInfo(this, player));
 			}
 		}
 	}
@@ -158,7 +158,7 @@ public abstract class Decoy extends Creature
 	@Override
 	public void sendInfo(PlayerInstance activeChar)
 	{
-		activeChar.sendPacket(new CharInfo(this));
+		activeChar.sendPacket(new CharInfo(this, activeChar));
 	}
 	
 	@Override

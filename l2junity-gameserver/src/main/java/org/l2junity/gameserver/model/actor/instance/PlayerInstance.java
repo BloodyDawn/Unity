@@ -2098,7 +2098,7 @@ public final class PlayerInstance extends Playable
 					setIsOverloaded(false);
 				}
 				sendPacket(new EtcStatusUpdate(this));
-				broadcastPacket(new CharInfo(this));
+				broadcastUserInfo();
 			}
 		}
 	}
@@ -4229,22 +4229,34 @@ public final class PlayerInstance extends Playable
 	 */
 	public final void broadcastUserInfo()
 	{
-		// Send a Server->Client packet UserInfo to this L2PcInstance
+		// Send user info to the current player
 		sendPacket(new UserInfo(this));
 		
-		// Send a Server->Client packet CharInfo to all L2PcInstance in _KnownPlayers of the L2PcInstance
-		broadcastPacket(new CharInfo(this));
+		// Broadcast char info to known players
+		broadcastCharInfo();
 	}
 	
 	public final void broadcastUserInfo(UserInfoType... types)
 	{
-		// Send a Server->Client packet UserInfo to this L2PcInstance
+		// Send user info to the current player
 		UserInfo ui = new UserInfo(this, false);
 		ui.addComponentType(types);
 		sendPacket(ui);
 		
-		// Send a Server->Client packet CharInfo to all L2PcInstance in _KnownPlayers of the L2PcInstance
-		broadcastPacket(new CharInfo(this));
+		// Broadcast char info to all known players
+		broadcastCharInfo();
+	}
+	
+	public final void broadcastCharInfo()
+	{
+		// Broadcast char info to all known players.
+		for (PlayerInstance player : getKnownList().getKnownPlayers().values())
+		{
+			if (player != null)
+			{
+				player.sendPacket(new CharInfo(this, player));
+			}
+		}
 	}
 	
 	public final void broadcastTitleInfo()
@@ -9217,7 +9229,7 @@ public final class PlayerInstance extends Playable
 			}
 			_cubics.clear();
 			sendPacket(new ExUserInfoCubic(this));
-			broadcastPacket(new CharInfo(this));
+			broadcastCharInfo();
 		}
 	}
 	
@@ -9239,7 +9251,7 @@ public final class PlayerInstance extends Playable
 			if (broadcast)
 			{
 				sendPacket(new ExUserInfoCubic(this));
-				broadcastPacket(new CharInfo(this));
+				broadcastUserInfo();
 			}
 		}
 	}
@@ -9260,7 +9272,7 @@ public final class PlayerInstance extends Playable
 	public void updateAbnormalVisualEffects()
 	{
 		sendPacket(new ExUserInfoAbnormalVisualEffect(this));
-		broadcastPacket(new CharInfo(this));
+		broadcastCharInfo();
 	}
 	
 	/**
@@ -13199,18 +13211,18 @@ public final class PlayerInstance extends Playable
 		{
 			setXYZ(getBoat().getLocation());
 			
-			activeChar.sendPacket(new CharInfo(this));
+			activeChar.sendPacket(new CharInfo(this, activeChar));
 			activeChar.sendPacket(new GetOnVehicle(getObjectId(), getBoat().getObjectId(), getInVehiclePosition()));
 		}
 		else if (isInAirShip())
 		{
 			setXYZ(getAirShip().getLocation());
-			activeChar.sendPacket(new CharInfo(this));
+			activeChar.sendPacket(new CharInfo(this, activeChar));
 			activeChar.sendPacket(new ExGetOnAirShip(this, getAirShip()));
 		}
 		else
 		{
-			activeChar.sendPacket(new CharInfo(this));
+			activeChar.sendPacket(new CharInfo(this, activeChar));
 		}
 		
 		int relation1 = getRelation(activeChar);

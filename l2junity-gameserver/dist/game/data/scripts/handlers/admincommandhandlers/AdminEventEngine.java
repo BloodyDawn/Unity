@@ -37,10 +37,8 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.L2Event;
 import org.l2junity.gameserver.model.entity.L2Event.EventState;
-import org.l2junity.gameserver.network.client.send.CharInfo;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.PlaySound;
-import org.l2junity.gameserver.network.client.send.UserInfo;
 import org.l2junity.gameserver.util.Broadcast;
 
 /**
@@ -325,10 +323,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 				{
 					player.getPoly().setPolyInfo("npc", polyIds[Rnd.get(polyIds.length)]);
 					player.teleToLocation(player.getLocation(), true);
-					CharInfo info1 = new CharInfo(player);
-					player.broadcastPacket(info1);
-					UserInfo info2 = new UserInfo(player);
-					player.sendPacket(info2);
+					player.broadcastUserInfo();
 				}
 				showEventControl(activeChar);
 			}
@@ -341,10 +336,7 @@ public class AdminEventEngine implements IAdminCommandHandler
 						player.getPoly().setPolyInfo(null, "1");
 						player.decayMe();
 						player.spawnMe(player.getX(), player.getY(), player.getZ());
-						CharInfo info1 = new CharInfo(player);
-						player.broadcastPacket(info1);
-						UserInfo info2 = new UserInfo(player);
-						player.sendPacket(info2);
+						player.broadcastUserInfo();
 					}
 				}
 				showEventControl(activeChar);

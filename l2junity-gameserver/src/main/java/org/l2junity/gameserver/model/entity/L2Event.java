@@ -44,10 +44,8 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.PlayerEventHolder;
-import org.l2junity.gameserver.network.client.send.CharInfo;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
-import org.l2junity.gameserver.network.client.send.UserInfo;
 
 /**
  * @since $Revision: 1.3.4.1 $ $Date: 2005/03/27 15:29:32 $ This ancient thingie got reworked by Nik at $Date: 2011/05/17 21:51:39 $ Yeah, for 6 years no one bothered reworking this buggy event engine.
@@ -291,10 +289,7 @@ public class L2Event
 				player.getPoly().setPolyInfo(null, "1");
 				player.decayMe();
 				player.spawnMe(player.getX(), player.getY(), player.getZ());
-				CharInfo info1 = new CharInfo(player);
-				player.broadcastPacket(info1);
-				UserInfo info2 = new UserInfo(player);
-				player.sendPacket(info2);
+				player.broadcastUserInfo();
 				
 				player.stopTransformation(true);
 			}

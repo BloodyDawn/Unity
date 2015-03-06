@@ -22,7 +22,6 @@ import java.util.Set;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
-import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.actor.Decoy;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
@@ -34,6 +33,7 @@ import org.l2junity.network.PacketWriter;
 public class CharInfo implements IClientOutgoingPacket
 {
 	private final PlayerInstance _activeChar;
+	private final PlayerInstance _receiver;
 	private int _objId;
 	private int _x, _y, _z, _heading;
 	private final int _mAtkSpd, _pAtkSpd;
@@ -66,9 +66,10 @@ public class CharInfo implements IClientOutgoingPacket
 		Inventory.PAPERDOLL_HAIR2
 	};
 	
-	public CharInfo(PlayerInstance cha)
+	public CharInfo(PlayerInstance cha, PlayerInstance receiver)
 	{
 		_activeChar = cha;
+		_receiver = receiver;
 		_objId = cha.getObjectId();
 		if ((_activeChar.getVehicle() != null) && (_activeChar.getInVehiclePosition() != null))
 		{
@@ -98,9 +99,9 @@ public class CharInfo implements IClientOutgoingPacket
 		_armorEnchant = cha.getInventory().getArmorMinEnchant();
 	}
 	
-	public CharInfo(Decoy decoy)
+	public CharInfo(Decoy decoy, PlayerInstance receiver)
 	{
-		this(decoy.getActingPlayer()); // init
+		this(decoy.getActingPlayer(), receiver); // init
 		_objId = decoy.getObjectId();
 		_x = decoy.getX();
 		_y = decoy.getY();
@@ -111,7 +112,7 @@ public class CharInfo implements IClientOutgoingPacket
 	@Override
 	public boolean write(PacketWriter packet)
 	{
-		final boolean gmSeeInvis = _activeChar.isInvisible() && _activeChar.canOverrideCond(PcCondOverride.SEE_ALL_PLAYERS);
+		final boolean gmSeeInvis = _activeChar.isInvisible() && _activeChar.isVisibleFor(_receiver);
 		
 		OutgoingPackets.CHAR_INFO.writeId(packet);
 		

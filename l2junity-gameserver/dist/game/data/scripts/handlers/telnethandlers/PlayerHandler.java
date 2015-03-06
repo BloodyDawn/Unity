@@ -34,10 +34,8 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.punishment.PunishmentAffect;
 import org.l2junity.gameserver.model.punishment.PunishmentTask;
 import org.l2junity.gameserver.model.punishment.PunishmentType;
-import org.l2junity.gameserver.network.client.send.CharInfo;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
-import org.l2junity.gameserver.network.client.send.UserInfo;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.GMAudit;
 import org.l2junity.gameserver.util.Util;
@@ -318,8 +316,7 @@ public class PlayerHandler implements ITelnetHandler
 			InventoryUpdate iu = new InventoryUpdate();
 			iu.addModifiedItem(itemInstance);
 			activeChar.sendPacket(iu);
-			activeChar.broadcastPacket(new CharInfo(activeChar));
-			activeChar.sendPacket(new UserInfo(activeChar));
+			activeChar.broadcastUserInfo();
 			
 			// informations
 			activeChar.sendMessage("Changed enchantment of " + activeChar.getName() + "'s " + itemInstance.getItem().getName() + " from " + curEnchant + " to " + ench + ".");

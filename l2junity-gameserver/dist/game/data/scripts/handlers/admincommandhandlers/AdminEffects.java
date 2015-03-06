@@ -33,7 +33,6 @@ import org.l2junity.gameserver.model.actor.instance.L2ChestInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.AbnormalVisualEffect;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.client.send.CharInfo;
 import org.l2junity.gameserver.network.client.send.Earthquake;
 import org.l2junity.gameserver.network.client.send.ExRedSky;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
@@ -43,7 +42,6 @@ import org.l2junity.gameserver.network.client.send.PlaySound;
 import org.l2junity.gameserver.network.client.send.SocialAction;
 import org.l2junity.gameserver.network.client.send.SunRise;
 import org.l2junity.gameserver.network.client.send.SunSet;
-import org.l2junity.gameserver.network.client.send.UserInfo;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Broadcast;
 import org.l2junity.gameserver.util.Util;
@@ -377,10 +375,7 @@ public class AdminEffects implements IAdminCommandHandler
 				String id = st.nextToken();
 				activeChar.getPoly().setPolyInfo("npc", id);
 				activeChar.teleToLocation(activeChar.getLocation());
-				CharInfo info1 = new CharInfo(activeChar);
-				activeChar.broadcastPacket(info1);
-				UserInfo info2 = new UserInfo(activeChar);
-				activeChar.sendPacket(info2);
+				activeChar.broadcastUserInfo();
 			}
 			catch (Exception e)
 			{
@@ -392,10 +387,7 @@ public class AdminEffects implements IAdminCommandHandler
 			activeChar.getPoly().setPolyInfo(null, "1");
 			activeChar.decayMe();
 			activeChar.spawnMe(activeChar.getX(), activeChar.getY(), activeChar.getZ());
-			CharInfo info1 = new CharInfo(activeChar);
-			activeChar.broadcastPacket(info1);
-			UserInfo info2 = new UserInfo(activeChar);
-			activeChar.sendPacket(info2);
+			activeChar.broadcastUserInfo();
 		}
 		else if (command.equals("admin_clearteams"))
 		{

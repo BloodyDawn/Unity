@@ -25,7 +25,6 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
-import org.l2junity.gameserver.network.client.send.CharInfo;
 import org.l2junity.gameserver.network.client.send.ExUserInfoCubic;
 
 /**
@@ -124,6 +123,6 @@ public final class SummonCubic extends AbstractEffect
 		// Adding a new cubic.
 		player.addCubic(_cubicId, _cubicSkillLevel, _cubicPower, _cubicDelay, _cubicSkillChance, _cubicMaxCount, _cubicDuration, info.getEffected() != info.getEffector());
 		player.sendPacket(new ExUserInfoCubic(player));
-		player.broadcastPacket(new CharInfo(player));
+		player.broadcastCharInfo();
 	}
 }

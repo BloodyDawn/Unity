@@ -141,7 +141,6 @@ import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.Attack;
 import org.l2junity.gameserver.network.client.send.ChangeMoveType;
 import org.l2junity.gameserver.network.client.send.ChangeWaitType;
-import org.l2junity.gameserver.network.client.send.CharInfo;
 import org.l2junity.gameserver.network.client.send.ExRotation;
 import org.l2junity.gameserver.network.client.send.ExTeleportToLocationActivate;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
@@ -3945,7 +3944,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				
 				if (broadcastFull)
 				{
-					player.broadcastPacket(new CharInfo(player));
+					player.broadcastUserInfo();
 				}
 				else
 				{
