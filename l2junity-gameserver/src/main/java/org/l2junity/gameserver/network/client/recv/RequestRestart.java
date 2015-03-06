@@ -23,7 +23,6 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 import org.l2junity.Config;
-import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.instancemanager.AntiFeedManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.ConnectionState;
@@ -59,21 +58,14 @@ public final class RequestRestart implements IClientIncomingPacket
 		
 		if (player.hasItemRequest())
 		{
-			client.sendPacket(RestartResponse.valueOf(false));
+			client.sendPacket(RestartResponse.FALSE);
 			return;
 		}
 		
 		if (player.isLocked())
 		{
 			_log.warning("Player " + player.getName() + " tried to restart during class change.");
-			client.sendPacket(RestartResponse.valueOf(false));
-			return;
-		}
-		
-		if (player.getPrivateStoreType() != PrivateStoreType.NONE)
-		{
-			player.sendMessage("Cannot restart while trading");
-			client.sendPacket(RestartResponse.valueOf(false));
+			client.sendPacket(RestartResponse.FALSE);
 			return;
 		}
 		
@@ -85,13 +77,13 @@ public final class RequestRestart implements IClientIncomingPacket
 			}
 			
 			player.sendPacket(SystemMessageId.YOU_CANNOT_RESTART_WHILE_IN_COMBAT);
-			client.sendPacket(RestartResponse.valueOf(false));
+			client.sendPacket(RestartResponse.FALSE);
 			return;
 		}
 		
 		if (player.isBlockedFromExit())
 		{
-			client.sendPacket(RestartResponse.valueOf(false));
+			client.sendPacket(RestartResponse.FALSE);
 			return;
 		}
 		
@@ -113,7 +105,7 @@ public final class RequestRestart implements IClientIncomingPacket
 		// return the client to the authed status
 		client.setConnectionState(ConnectionState.AUTHENTICATED);
 		
-		client.sendPacket(RestartResponse.valueOf(true));
+		client.sendPacket(RestartResponse.TRUE);
 		
 		// send char list
 		final CharSelectionInfo cl = new CharSelectionInfo(client.getAccountName(), client.getSessionId().playOkID1);

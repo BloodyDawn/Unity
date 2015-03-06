@@ -23,17 +23,12 @@ import org.l2junity.network.PacketWriter;
 
 public final class RestartResponse implements IClientOutgoingPacket
 {
-	private static final RestartResponse STATIC_PACKET_TRUE = new RestartResponse(true);
-	private static final RestartResponse STATIC_PACKET_FALSE = new RestartResponse(false);
-	
-	public static final RestartResponse valueOf(boolean result)
-	{
-		return result ? STATIC_PACKET_TRUE : STATIC_PACKET_FALSE;
-	}
+	public static final RestartResponse TRUE = new RestartResponse(true);
+	public static final RestartResponse FALSE = new RestartResponse(false);
 	
 	private final boolean _result;
 	
-	public RestartResponse(boolean result)
+	private RestartResponse(boolean result)
 	{
 		_result = result;
 	}
