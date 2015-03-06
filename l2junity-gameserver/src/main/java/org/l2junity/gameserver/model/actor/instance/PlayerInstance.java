@@ -14742,4 +14742,10 @@ public final class PlayerInstance extends Playable
 		vars.set(PlayerVariables.VITALITY_ITEMS_USED_VARIABLE_NAME, used);
 		vars.storeMe();
 	}
+	
+	@Override
+	public boolean isVisibleFor(PlayerInstance player)
+	{
+		return (super.isVisibleFor(player) || (player.getParty() == getParty()));
+	}
 }
