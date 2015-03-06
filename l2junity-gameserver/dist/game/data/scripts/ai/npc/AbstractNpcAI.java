@@ -18,8 +18,6 @@
  */
 package ai.npc;
 
-import java.util.logging.Logger;
-
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
@@ -28,6 +26,8 @@ import org.l2junity.gameserver.model.holders.MinionHolder;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.network.client.send.SocialAction;
 import org.l2junity.gameserver.util.Broadcast;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Abstract NPC AI class for datapack based AIs.
@@ -35,7 +35,7 @@ import org.l2junity.gameserver.util.Broadcast;
  */
 public abstract class AbstractNpcAI extends Quest
 {
-	public final Logger _log = Logger.getLogger(getClass().getSimpleName());
+	protected final Logger _log = LoggerFactory.getLogger(getClass());
 	
 	public AbstractNpcAI(String name, String descr)
 	{

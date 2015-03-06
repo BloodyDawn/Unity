@@ -21,10 +21,12 @@ dependencies {
 	compile project(':l2junity-network')
 	compile project(':l2junity-mmocore')
 	
+	compile(group: 'org.slf4j', name: 'slf4j-api', version: '1.7.10')
 	compile(group: 'com.mchange', name: 'c3p0', version: '0.9.5')
 	compile(group: 'com.sun.mail', name: 'javax.mail', version: '1.5.2')
 	compile(group: 'org.bitlet', name: 'weupnp', version: '0.1.2')
 	
+	runtime(group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.10')
 	runtime(group: 'org.eclipse.jdt.core.compiler', name: 'ecj', version: '4.4')
 	runtime(group: 'mysql', name: 'mysql-connector-java', version: '5.1.34')
 }

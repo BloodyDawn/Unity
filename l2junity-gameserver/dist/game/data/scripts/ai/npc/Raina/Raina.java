@@ -28,7 +28,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.logging.Level;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.cache.HtmCache;
@@ -314,7 +313,7 @@ public final class Raina extends AbstractNpcAI
 				
 				if (cType == null)
 				{
-					_log.log(Level.WARNING, getClass().getSimpleName() + ": Cannot parse CategoryType, event: " + event);
+					_log.warn(getClass().getSimpleName() + ": Cannot parse CategoryType, event: " + event);
 				}
 				
 				final StringBuilder sb = new StringBuilder();
@@ -398,7 +397,7 @@ public final class Raina extends AbstractNpcAI
 				
 				if (cType == null)
 				{
-					_log.log(Level.WARNING, getClass().getSimpleName() + ": Cannot parse CategoryType, event: " + event);
+					_log.warn(getClass().getSimpleName() + ": Cannot parse CategoryType, event: " + event);
 				}
 				
 				final StringBuilder sb = new StringBuilder();

@@ -40,8 +40,8 @@ import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
-import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.Castle.CastleFunction;
+import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.ListenerRegisterType;
 import org.l2junity.gameserver.model.events.annotations.Id;
@@ -1168,7 +1168,7 @@ public final class CastleChamberlain extends AbstractNpcAI
 					player.sendPacket(new ExShowCropSetting(castleId));
 					break;
 				default:
-					_log.warning(getClass().getSimpleName() + ": Player " + player.getName() + " (" + player.getObjectId() + ") send unknown request id " + evt.getRequest() + "!");
+					_log.warn(getClass().getSimpleName() + ": Player " + player.getName() + " (" + player.getObjectId() + ") send unknown request id " + evt.getRequest() + "!");
 			}
 		}
 	}

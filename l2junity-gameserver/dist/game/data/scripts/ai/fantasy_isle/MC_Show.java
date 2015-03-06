@@ -364,7 +364,7 @@ public class MC_Show extends AbstractNpcAI
 	{
 		if ((event == null) || event.isEmpty())
 		{
-			_log.warning("MC_Show: Null/Empty event for npc " + npc + " and player " + player + "!");
+			_log.warn("MC_Show: Null/Empty event for npc " + npc + " and player " + player + "!");
 			return null;
 		}
 		

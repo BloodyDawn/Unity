@@ -151,7 +151,7 @@ public final class ManorManager extends AbstractNpcAI
 				player.sendPacket(new ExShowProcureCropDetail(evt.getManorId()));
 				break;
 			default:
-				_log.warning(getClass().getSimpleName() + ": Player " + player.getName() + " (" + player.getObjectId() + ") send unknown request id " + evt.getRequest() + "!");
+				_log.warn(getClass().getSimpleName() + ": Player " + player.getName() + " (" + player.getObjectId() + ") send unknown request id " + evt.getRequest() + "!");
 		}
 	}
 	

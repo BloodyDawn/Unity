@@ -50,7 +50,6 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 import java.util.stream.Collectors;
@@ -65,6 +64,8 @@ import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.util.FloodProtectorConfig;
 import org.l2junity.gameserver.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -76,7 +77,7 @@ import org.w3c.dom.Node;
  */
 public final class Config
 {
-	private static final Logger _log = Logger.getLogger(Config.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(Config.class);
 	
 	// --------------------------------------------------
 	// L2J Property File Definitions
@@ -1120,7 +1121,7 @@ public final class Config
 			}
 			catch (IOException e)
 			{
-				_log.log(Level.WARNING, "Error setting datapack root!", e);
+				LOGGER.warn("Error setting datapack root!", e);
 				DATAPACK_ROOT = new File(".");
 			}
 			
@@ -1132,7 +1133,7 @@ public final class Config
 			}
 			catch (PatternSyntaxException e)
 			{
-				_log.log(Level.WARNING, "Character name pattern is invalid!", e);
+				LOGGER.warn("Character name pattern is invalid!", e);
 				charNamePattern = Pattern.compile(".*");
 			}
 			
@@ -1154,7 +1155,7 @@ public final class Config
 				}
 				catch (NumberFormatException e)
 				{
-					_log.log(Level.WARNING, "Wrong config protocol version: " + protocol + ". Skipped.");
+					LOGGER.warn("Wrong config protocol version: {}. Skipped.", protocol);
 				}
 			}
 			
@@ -1350,7 +1351,7 @@ public final class Config
 					String[] skillSplit = skill.split(",");
 					if (skillSplit.length != 2)
 					{
-						_log.warning("[SkillDurationList]: invalid config property -> SkillDurationList \"" + skill + "\"");
+						LOGGER.warn("[SkillDurationList]: invalid config property -> SkillDurationList \"{}\"", skill);
 					}
 					else
 					{
@@ -1362,7 +1363,7 @@ public final class Config
 						{
 							if (!skill.isEmpty())
 							{
-								_log.warning("[SkillDurationList]: invalid config property -> SkillList \"" + skillSplit[0] + "\"" + skillSplit[1]);
+								LOGGER.warn("[SkillDurationList]: invalid config property -> SkillList \"{}\" \"{}\"", skillSplit[0], skillSplit[1]);
 							}
 						}
 					}
@@ -1379,7 +1380,7 @@ public final class Config
 					String[] skillSplit = skill.split(",");
 					if (skillSplit.length != 2)
 					{
-						_log.warning("[SkillReuseList]: invalid config property -> SkillReuseList \"" + skill + "\"");
+						LOGGER.warn("[SkillReuseList]: invalid config property -> SkillReuseList \"{}\"", skill);
 					}
 					else
 					{
@@ -1391,7 +1392,7 @@ public final class Config
 						{
 							if (!skill.isEmpty())
 							{
-								_log.warning("[SkillReuseList]: invalid config property -> SkillList \"" + skillSplit[0] + "\"" + skillSplit[1]);
+								LOGGER.warn("[SkillReuseList]: invalid config property -> SkillList \"{}\" \"{}\"", skillSplit[0], skillSplit[1]);
 							}
 						}
 					}
@@ -1441,7 +1442,7 @@ public final class Config
 			ALT_VITALITY_DATE_RESET = Character.getInt("AltVitalityDateReset", 4);
 			if ((ALT_VITALITY_DATE_RESET < 1) || (ALT_VITALITY_DATE_RESET > 7))
 			{
-				_log.log(Level.WARNING, "Wrong value specified for AltVitalityDateReset: " + ALT_VITALITY_DATE_RESET);
+				LOGGER.warn("Wrong value specified for AltVitalityDateReset: {}", ALT_VITALITY_DATE_RESET);
 				ALT_VITALITY_DATE_RESET = 3;
 			}
 			ALT_VITALITY_HOUR_RESET = Character.getString("AltVitalityHourReset", "06:30:00");
@@ -1560,7 +1561,7 @@ public final class Config
 			ALT_CLAN_LEADER_DATE_CHANGE = Character.getInt("AltClanLeaderDateChange", 3);
 			if ((ALT_CLAN_LEADER_DATE_CHANGE < 1) || (ALT_CLAN_LEADER_DATE_CHANGE > 7))
 			{
-				_log.log(Level.WARNING, "Wrong value specified for AltClanLeaderDateChange: " + ALT_CLAN_LEADER_DATE_CHANGE);
+				LOGGER.warn("Wrong value specified for AltClanLeaderDateChange: {}", ALT_CLAN_LEADER_DATE_CHANGE);
 				ALT_CLAN_LEADER_DATE_CHANGE = 3;
 			}
 			ALT_CLAN_LEADER_HOUR_CHANGE = Character.getString("AltClanLeaderHourChange", "00:00:00");
@@ -1606,8 +1607,7 @@ public final class Config
 				}
 				catch (NumberFormatException nfe)
 				{
-					_log.warning("Player Spawn Protection: Wrong ItemId passed: " + item);
-					_log.warning(nfe.getMessage());
+					LOGGER.warn("Player Spawn Protection: Wrong ItemId passed: {}", item, nfe);
 				}
 				if (itm != 0)
 				{
@@ -1805,7 +1805,7 @@ public final class Config
 			}
 			catch (NumberFormatException nfe)
 			{
-				_log.log(Level.WARNING, nfe.getMessage(), nfe);
+				LOGGER.warn("There was an error while parsing ban chat channels: ", nfe);
 			}
 			WORLD_CHAT_MIN_LEVEL = General.getInt("WorldChatMinLevel", 95);
 			WORLD_CHAT_POINTS_PER_DAY = General.getInt("WorldChatPointsPerDay", 10);
@@ -1953,7 +1953,7 @@ public final class Config
 				String[] propSplit = prop.split(",");
 				if (propSplit.length != 2)
 				{
-					_log.warning("[CustomMinionsRespawnTime]: invalid config property -> CustomMinionsRespawnTime \"" + prop + "\"");
+					LOGGER.warn("[CustomMinionsRespawnTime]: invalid config property -> CustomMinionsRespawnTime \"{}\"", prop);
 				}
 				
 				try
@@ -1964,7 +1964,7 @@ public final class Config
 				{
 					if (!prop.isEmpty())
 					{
-						_log.warning("[CustomMinionsRespawnTime]: invalid config property -> CustomMinionsRespawnTime \"" + propSplit[0] + "\"" + propSplit[1]);
+						LOGGER.warn("[CustomMinionsRespawnTime]: invalid config property -> CustomMinionsRespawnTime \"{}\" \"{}\"", propSplit[0], propSplit[1]);
 					}
 				}
 			}
@@ -2047,7 +2047,7 @@ public final class Config
 					String[] itemSplit = item.split(",");
 					if (itemSplit.length != 2)
 					{
-						_log.warning("Config.load(): invalid config property -> RateDropItemsById \"" + item + "\"");
+						LOGGER.warn("Config.load(): invalid config property -> RateDropItemsById \"{}\"", item);
 					}
 					else
 					{
@@ -2059,7 +2059,7 @@ public final class Config
 						{
 							if (!item.isEmpty())
 							{
-								_log.warning("Config.load(): invalid config property -> RateDropItemsById \"" + item + "\"");
+								LOGGER.warn("Config.load(): invalid config property -> RateDropItemsById \"{}\"", item);
 							}
 						}
 					}
@@ -2075,7 +2075,7 @@ public final class Config
 					String[] itemSplit = item.split(",");
 					if (itemSplit.length != 2)
 					{
-						_log.warning("Config.load(): invalid config property -> RateDropItemsById \"" + item + "\"");
+						LOGGER.warn("Config.load(): invalid config property -> RateDropItemsById \"{}\"", item);
 					}
 					else
 					{
@@ -2087,7 +2087,7 @@ public final class Config
 						{
 							if (!item.isEmpty())
 							{
-								_log.warning("Config.load(): invalid config property -> RateDropItemsById \"" + item + "\"");
+								LOGGER.warn("Config.load(): invalid config property -> RateDropItemsById \"{}\"", item);
 							}
 						}
 					}
@@ -2139,7 +2139,7 @@ public final class Config
 			if (TVT_EVENT_PARTICIPATION_NPC_ID == 0)
 			{
 				TVT_EVENT_ENABLED = false;
-				_log.warning("TvTEventEngine[Config.load()]: invalid config property -> TvTEventParticipationNpcId");
+				LOGGER.warn("TvTEventEngine[Config.load()]: invalid config property -> TvTEventParticipationNpcId");
 			}
 			else
 			{
@@ -2147,7 +2147,7 @@ public final class Config
 				if (tvtNpcCoords.length < 3)
 				{
 					TVT_EVENT_ENABLED = false;
-					_log.warning("TvTEventEngine[Config.load()]: invalid config property -> TvTEventParticipationNpcCoordinates");
+					LOGGER.warn("TvTEventEngine[Config.load()]: invalid config property -> TvTEventParticipationNpcCoordinates");
 				}
 				else
 				{
@@ -2178,7 +2178,7 @@ public final class Config
 					if (tvtNpcCoords.length < 3)
 					{
 						TVT_EVENT_ENABLED = false;
-						_log.warning("TvTEventEngine[Config.load()]: invalid config property -> TvTEventTeam1Coordinates");
+						LOGGER.warn("TvTEventEngine[Config.load()]: invalid config property -> TvTEventTeam1Coordinates");
 					}
 					else
 					{
@@ -2190,7 +2190,7 @@ public final class Config
 						if (tvtNpcCoords.length < 3)
 						{
 							TVT_EVENT_ENABLED = false;
-							_log.warning("TvTEventEngine[Config.load()]: invalid config property -> TvTEventTeam2Coordinates");
+							LOGGER.warn("TvTEventEngine[Config.load()]: invalid config property -> TvTEventTeam2Coordinates");
 						}
 						else
 						{
@@ -2207,7 +2207,7 @@ public final class Config
 							{
 								if (tvtNpcCoords.length > 0)
 								{
-									_log.warning("TvTEventEngine[Config.load()]: invalid config property -> TvTEventParticipationFee");
+									LOGGER.warn("TvTEventEngine[Config.load()]: invalid config property -> TvTEventParticipationFee");
 								}
 							}
 							tvtNpcCoords = L2JModSettings.getString("TvTEventReward", "57,100000").split(";");
@@ -2216,7 +2216,7 @@ public final class Config
 								String[] rewardSplit = reward.split(",");
 								if (rewardSplit.length != 2)
 								{
-									_log.warning("TvTEventEngine[Config.load()]: invalid config property -> TvTEventReward \"" + reward + "\"");
+									LOGGER.warn("TvTEventEngine[Config.load()]: invalid config property -> TvTEventReward \"{}\"", reward);
 								}
 								else
 								{
@@ -2232,7 +2232,7 @@ public final class Config
 									{
 										if (!reward.isEmpty())
 										{
-											_log.warning("TvTEventEngine[Config.load()]: invalid config property -> TvTEventReward \"" + reward + "\"");
+											LOGGER.warn("TvTEventEngine[Config.load()]: invalid config property -> TvTEventReward \"{}\"", reward);
 										}
 									}
 								}
@@ -2254,7 +2254,7 @@ public final class Config
 								{
 									if (!door.isEmpty())
 									{
-										_log.warning("TvTEventEngine[Config.load()]: invalid config property -> TvTDoorsToOpen \"" + door + "\"");
+										LOGGER.warn("TvTEventEngine[Config.load()]: invalid config property -> TvTDoorsToOpen \"{}\"", door);
 									}
 								}
 							}
@@ -2270,7 +2270,7 @@ public final class Config
 								{
 									if (!door.isEmpty())
 									{
-										_log.warning("TvTEventEngine[Config.load()]: invalid config property -> TvTDoorsToClose \"" + door + "\"");
+										LOGGER.warn("TvTEventEngine[Config.load()]: invalid config property -> TvTDoorsToClose \"{}\"", door);
 									}
 								}
 							}
@@ -2284,7 +2284,7 @@ public final class Config
 									String[] skillSplit = skill.split(",");
 									if (skillSplit.length != 2)
 									{
-										_log.warning("TvTEventEngine[Config.load()]: invalid config property -> TvTEventFighterBuffs \"" + skill + "\"");
+										LOGGER.warn("TvTEventEngine[Config.load()]: invalid config property -> TvTEventFighterBuffs \"{}\"", skill);
 									}
 									else
 									{
@@ -2296,7 +2296,7 @@ public final class Config
 										{
 											if (!skill.isEmpty())
 											{
-												_log.warning("TvTEventEngine[Config.load()]: invalid config property -> TvTEventFighterBuffs \"" + skill + "\"");
+												LOGGER.warn("TvTEventEngine[Config.load()]: invalid config property -> TvTEventFighterBuffs \"{}\"", skill);
 											}
 										}
 									}
@@ -2312,7 +2312,7 @@ public final class Config
 									String[] skillSplit = skill.split(",");
 									if (skillSplit.length != 2)
 									{
-										_log.warning("TvTEventEngine[Config.load()]: invalid config property -> TvTEventMageBuffs \"" + skill + "\"");
+										LOGGER.warn("TvTEventEngine[Config.load()]: invalid config property -> TvTEventMageBuffs \"{}\"", skill);
 									}
 									else
 									{
@@ -2324,7 +2324,7 @@ public final class Config
 										{
 											if (!skill.isEmpty())
 											{
-												_log.warning("TvTEventEngine[Config.load()]: invalid config property -> TvTEventMageBuffs \"" + skill + "\"");
+												LOGGER.warn("TvTEventEngine[Config.load()]: invalid config property -> TvTEventMageBuffs \"{}\"", skill);
 											}
 										}
 									}
@@ -2380,7 +2380,7 @@ public final class Config
 			
 			if (!L2JMOD_MULTILANG_ALLOWED.contains(L2JMOD_MULTILANG_DEFAULT))
 			{
-				_log.warning("MultiLang[Config.load()]: default language: " + L2JMOD_MULTILANG_DEFAULT + " is not in allowed list !");
+				LOGGER.warn("MultiLang[Config.load()]: default language: {} is not in allowed list !", L2JMOD_MULTILANG_DEFAULT);
 			}
 			
 			L2JMOD_MULTILANG_VOICED_ALLOW = L2JModSettings.getBoolean("MultiLangVoiceCommand", true);
@@ -2418,7 +2418,7 @@ public final class Config
 				String[] entrySplit = entry.split(",");
 				if (entrySplit.length != 2)
 				{
-					_log.warning("DualboxCheck[Config.load()]: invalid config property -> DualboxCheckWhitelist \"" + entry + "\"");
+					LOGGER.warn("DualboxCheck[Config.load()]: invalid config property -> DualboxCheckWhitelist \"{}\"", entry);
 				}
 				else
 				{
@@ -2430,11 +2430,11 @@ public final class Config
 					}
 					catch (UnknownHostException e)
 					{
-						_log.warning("DualboxCheck[Config.load()]: invalid address -> DualboxCheckWhitelist \"" + entrySplit[0] + "\"");
+						LOGGER.warn("DualboxCheck[Config.load()]: invalid address -> DualboxCheckWhitelist \"{}\"", entrySplit[0]);
 					}
 					catch (NumberFormatException e)
 					{
-						_log.warning("DualboxCheck[Config.load()]: invalid number -> DualboxCheckWhitelist \"" + entrySplit[1] + "\"");
+						LOGGER.warn("DualboxCheck[Config.load()]: invalid number -> DualboxCheckWhitelist \"{}\"", entrySplit[1]);
 					}
 				}
 			}
@@ -2532,17 +2532,14 @@ public final class Config
 					}
 					catch (Exception e)
 					{
-						_log.warning("Could not load HexID file (" + HEXID_FILE + "). Hopefully login will give us one.");
+						LOGGER.warn("HexID file format is invalid!", e);
 					}
 				}
-				else
-				{
-					_log.warning("Could not load HexID file (" + HEXID_FILE + "). Hopefully login will give us one.");
-				}
 			}
-			else
+			
+			if (HEX_ID == null)
 			{
-				_log.warning("Could not load HexID file (" + HEXID_FILE + "). Hopefully login will give us one.");
+				LOGGER.warn("Could not load HexID file ({}). Hopefully login will give us one.", HEXID_FILE);
 			}
 			
 			// Grand bosses
@@ -2587,11 +2584,11 @@ public final class Config
 					.filter(line -> (!line.isEmpty() && (line.charAt(0) != '#')))
 					.collect(Collectors.toList());
 				//@formatter:on
-				_log.info("Loaded " + FILTER_LIST.size() + " Filter Words.");
+				LOGGER.info("Loaded " + FILTER_LIST.size() + " Filter Words.");
 			}
-			catch (IOException ioe)
+			catch (IOException e)
 			{
-				_log.log(Level.WARNING, "Error while loading chat filter words!", ioe);
+				LOGGER.warn("Error while loading chat filter words!", e);
 			}
 			
 			final PropertiesParser ClanHallSiege = new PropertiesParser(CH_SIEGE_FILE);
@@ -2611,7 +2608,7 @@ public final class Config
 			}
 			catch (IOException e)
 			{
-				_log.log(Level.WARNING, "Error setting pathnode directory!", e);
+				LOGGER.warn("Error setting pathnode directory!", e);
 				PATHNODE_DIR = new File("data/pathnode");
 			}
 			
@@ -2658,7 +2655,7 @@ public final class Config
 			}
 			catch (IOException e)
 			{
-				_log.log(Level.WARNING, "Error setting datapack root!", e);
+				LOGGER.warn("Error setting datapack root!", e);
 				DATAPACK_ROOT = new File(".");
 			}
 			
@@ -2724,7 +2721,7 @@ public final class Config
 		}
 		else
 		{
-			_log.severe("Could not Load Config: server mode was not set!");
+			LOGGER.error("Could not Load Config: server mode was not set!");
 		}
 	}
 	
@@ -3480,7 +3477,7 @@ public final class Config
 				}
 				catch (Exception e)
 				{
-					_log.log(Level.WARNING, "", e);
+					LOGGER.warn("", e);
 					return false;
 				}
 		}
@@ -3521,8 +3518,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			_log.warning("Failed to save hex id to " + fileName + " File.");
-			_log.warning("Config: " + e.getMessage());
+			LOGGER.warn("Failed to save hex id to {} File.", fileName, e);
 		}
 	}
 	
@@ -3729,7 +3725,7 @@ public final class Config
 			valueSplit = value.split(",");
 			if (valueSplit.length != 2)
 			{
-				_log.warning("parseItemsList[Config.load()]: invalid entry -> \"" + valueSplit[0] + "\", should be itemId,itemNumber. Skipping to the next entry in the list.");
+				LOGGER.warn("parseItemsList[Config.load()]: invalid entry -> \"{}\", should be itemId,itemNumber. Skipping to the next entry in the list.", valueSplit[0]);
 				continue;
 			}
 			
@@ -3740,7 +3736,7 @@ public final class Config
 			}
 			catch (NumberFormatException e)
 			{
-				_log.warning("parseItemsList[Config.load()]: invalid itemId -> \"" + valueSplit[0] + "\", value must be an integer. Skipping to the next entry in the list.");
+				LOGGER.warn("parseItemsList[Config.load()]: invalid itemId -> \"{}\", value must be an integer. Skipping to the next entry in the list.", valueSplit[0]);
 				continue;
 			}
 			int count = -1;
@@ -3750,7 +3746,7 @@ public final class Config
 			}
 			catch (NumberFormatException e)
 			{
-				_log.warning("parseItemsList[Config.load()]: invalid item number -> \"" + valueSplit[1] + "\", value must be an integer. Skipping to the next entry in the list.");
+				LOGGER.warn("parseItemsList[Config.load()]: invalid item number -> \"{}\", value must be an integer. Skipping to the next entry in the list.", valueSplit[1]);
 				continue;
 			}
 			if ((itemId > 0) && (count > 0))
@@ -3831,7 +3827,7 @@ public final class Config
 			String externalIp = "127.0.0.1";
 			try
 			{
-				URL autoIp = new URL("http://ip1.dynupdate.no-ip.com:8245/");
+				URL autoIp = new URL("http://ipconfig.l2junity.org/");
 				try (BufferedReader in = new BufferedReader(new InputStreamReader(autoIp.openStream())))
 				{
 					externalIp = in.readLine();
@@ -3839,7 +3835,7 @@ public final class Config
 			}
 			catch (IOException e)
 			{
-				LOGGER.log(Level.INFO, "Network Config: Failed to connect to api.externalip.net please check your internet connection using 127.0.0.1!");
+				LOGGER.log(Level.INFO, "Network Config: Failed to connect to ipconfig.l2junity.org please check your internet connection using 127.0.0.1!");
 				externalIp = "127.0.0.1";
 			}
 			
