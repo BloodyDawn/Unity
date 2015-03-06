@@ -14746,6 +14746,6 @@ public final class PlayerInstance extends Playable
 	@Override
 	public boolean isVisibleFor(PlayerInstance player)
 	{
-		return (super.isVisibleFor(player) || (player.getParty() == getParty()));
+		return (super.isVisibleFor(player) || ((player.getParty() != null) && (player.getParty() == getParty())));
 	}
 }
