@@ -33,7 +33,6 @@ import org.l2junity.network.PacketWriter;
 public class CharInfo implements IClientOutgoingPacket
 {
 	private final PlayerInstance _activeChar;
-	private final PlayerInstance _receiver;
 	private int _objId;
 	private int _x, _y, _z, _heading;
 	private final int _mAtkSpd, _pAtkSpd;
@@ -47,8 +46,8 @@ public class CharInfo implements IClientOutgoingPacket
 	private final float _attackSpeedMultiplier;
 	private int _enchantLevel = 0;
 	private int _armorEnchant = 0;
-	
 	private int _vehicleId = 0;
+	private final boolean _gmSeeInvis;
 	
 	private static final int[] PAPERDOLL_ORDER = new int[]
 	{
@@ -69,7 +68,6 @@ public class CharInfo implements IClientOutgoingPacket
 	public CharInfo(PlayerInstance cha, PlayerInstance receiver)
 	{
 		_activeChar = cha;
-		_receiver = receiver;
 		_objId = cha.getObjectId();
 		if ((_activeChar.getVehicle() != null) && (_activeChar.getInVehiclePosition() != null))
 		{
@@ -97,6 +95,7 @@ public class CharInfo implements IClientOutgoingPacket
 		_flyWalkSpd = cha.isFlying() ? _walkSpd : 0;
 		_enchantLevel = cha.getInventory().getWeaponEnchant();
 		_armorEnchant = cha.getInventory().getArmorMinEnchant();
+		_gmSeeInvis = _activeChar.isInvisible() && _activeChar.isVisibleFor(receiver);
 	}
 	
 	public CharInfo(Decoy decoy, PlayerInstance receiver)
@@ -112,8 +111,6 @@ public class CharInfo implements IClientOutgoingPacket
 	@Override
 	public boolean write(PacketWriter packet)
 	{
-		final boolean gmSeeInvis = _activeChar.isInvisible() && _activeChar.isVisibleFor(_receiver);
-		
 		OutgoingPackets.CHAR_INFO.writeId(packet);
 		
 		packet.writeD(_x); // Confirmed
@@ -167,7 +164,7 @@ public class CharInfo implements IClientOutgoingPacket
 		packet.writeD(_activeChar.getVisualHairColor());
 		packet.writeD(_activeChar.getVisualFace());
 		
-		packet.writeS(gmSeeInvis ? "Invisible" : _activeChar.getAppearance().getVisibleTitle());
+		packet.writeS(_gmSeeInvis ? "Invisible" : _activeChar.getAppearance().getVisibleTitle());
 		
 		if (!_activeChar.isCursedWeaponEquipped())
 		{
@@ -190,7 +187,7 @@ public class CharInfo implements IClientOutgoingPacket
 		
 		packet.writeC(!_activeChar.isInOlympiadMode() && _activeChar.isAlikeDead() ? 0x01 : 0x00); // Confirmed
 		
-		packet.writeC(!gmSeeInvis /* && isInvisible() */? 0x01 : 0x00); // TODO: Find me!
+		packet.writeC(!_gmSeeInvis && _activeChar.isInvisible() ? 0x01 : 0x00); // TODO: Find me!
 		
 		packet.writeC(_activeChar.getMountType().ordinal()); // 1-on Strider, 2-on Wyvern, 3-on Great Wolf, 0-no mount
 		packet.writeC(_activeChar.getPrivateStoreType().getId()); // Confirmed
