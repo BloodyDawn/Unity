@@ -4250,22 +4250,27 @@ public final class PlayerInstance extends Playable
 	public final void broadcastCharInfo()
 	{
 		// Broadcast char info to all known players.
-		CharInfo sharedInstance = null;
+		CharInfo sharedInstanceInvis = null;
+		CharInfo sharedInstanceVis = null;
 		for (PlayerInstance player : getKnownList().getKnownPlayers().values())
 		{
-			if (player != null)
+			if ((player != null) && isVisibleFor(player))
 			{
-				if (isInvisible() && isVisibleFor(player))
+				if (isInvisible())
 				{
-					player.sendPacket(new CharInfo(this, true));
+					if (sharedInstanceInvis == null)
+					{
+						sharedInstanceInvis = new CharInfo(this, true);
+					}
+					player.sendPacket(sharedInstanceInvis);
 				}
 				else
 				{
-					if (sharedInstance == null)
+					if (sharedInstanceVis == null)
 					{
-						sharedInstance = new CharInfo(this, false);
+						sharedInstanceVis = new CharInfo(this, false);
 					}
-					player.sendPacket(sharedInstance);
+					player.sendPacket(sharedInstanceVis);
 				}
 			}
 		}
