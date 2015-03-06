@@ -49,7 +49,7 @@ public abstract class Decoy extends Creature
 	public void onSpawn()
 	{
 		super.onSpawn();
-		sendPacket(new CharInfo(this, getOwner()));
+		sendPacket(new CharInfo(this, isInvisible()));
 	}
 	
 	@Override
@@ -59,9 +59,9 @@ public abstract class Decoy extends Creature
 		
 		for (PlayerInstance player : plrs)
 		{
-			if (player != null)
+			if ((player != null) && isVisibleFor(player))
 			{
-				player.sendPacket(new CharInfo(this, player));
+				player.sendPacket(new CharInfo(this, isInvisible()));
 			}
 		}
 	}
@@ -158,7 +158,7 @@ public abstract class Decoy extends Creature
 	@Override
 	public void sendInfo(PlayerInstance activeChar)
 	{
-		activeChar.sendPacket(new CharInfo(this, activeChar));
+		activeChar.sendPacket(new CharInfo(this, isInvisible()));
 	}
 	
 	@Override

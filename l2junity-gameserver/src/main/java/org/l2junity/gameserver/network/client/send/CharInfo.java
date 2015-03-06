@@ -65,7 +65,7 @@ public class CharInfo implements IClientOutgoingPacket
 		Inventory.PAPERDOLL_HAIR2
 	};
 	
-	public CharInfo(PlayerInstance cha, PlayerInstance receiver)
+	public CharInfo(PlayerInstance cha, boolean gmSeeInvis)
 	{
 		_activeChar = cha;
 		_objId = cha.getObjectId();
@@ -95,12 +95,12 @@ public class CharInfo implements IClientOutgoingPacket
 		_flyWalkSpd = cha.isFlying() ? _walkSpd : 0;
 		_enchantLevel = cha.getInventory().getWeaponEnchant();
 		_armorEnchant = cha.getInventory().getArmorMinEnchant();
-		_gmSeeInvis = _activeChar.isInvisible() && _activeChar.isVisibleFor(receiver);
+		_gmSeeInvis = gmSeeInvis;
 	}
 	
-	public CharInfo(Decoy decoy, PlayerInstance receiver)
+	public CharInfo(Decoy decoy, boolean gmSeeInvis)
 	{
-		this(decoy.getActingPlayer(), receiver); // init
+		this(decoy.getActingPlayer(), gmSeeInvis); // init
 		_objId = decoy.getObjectId();
 		_x = decoy.getX();
 		_y = decoy.getY();

@@ -4257,13 +4257,13 @@ public final class PlayerInstance extends Playable
 			{
 				if (isInvisible() && isVisibleFor(player))
 				{
-					player.sendPacket(new CharInfo(this, player));
+					player.sendPacket(new CharInfo(this, true));
 				}
 				else
 				{
 					if (sharedInstance == null)
 					{
-						sharedInstance = new CharInfo(this, player);
+						sharedInstance = new CharInfo(this, false);
 					}
 					player.sendPacket(sharedInstance);
 				}
@@ -13223,18 +13223,18 @@ public final class PlayerInstance extends Playable
 		{
 			setXYZ(getBoat().getLocation());
 			
-			activeChar.sendPacket(new CharInfo(this, activeChar));
+			activeChar.sendPacket(new CharInfo(this, isInvisible()));
 			activeChar.sendPacket(new GetOnVehicle(getObjectId(), getBoat().getObjectId(), getInVehiclePosition()));
 		}
 		else if (isInAirShip())
 		{
 			setXYZ(getAirShip().getLocation());
-			activeChar.sendPacket(new CharInfo(this, activeChar));
+			activeChar.sendPacket(new CharInfo(this, isInvisible()));
 			activeChar.sendPacket(new ExGetOnAirShip(this, getAirShip()));
 		}
 		else
 		{
-			activeChar.sendPacket(new CharInfo(this, activeChar));
+			activeChar.sendPacket(new CharInfo(this, isInvisible()));
 		}
 		
 		int relation1 = getRelation(activeChar);
