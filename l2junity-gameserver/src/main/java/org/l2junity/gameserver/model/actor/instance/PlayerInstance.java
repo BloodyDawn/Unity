@@ -4256,7 +4256,7 @@ public final class PlayerInstance extends Playable
 		{
 			if ((player != null) && isVisibleFor(player))
 			{
-				if (isInvisible())
+				if (isInvisible() && player.canOverrideCond(PcCondOverride.SEE_ALL_PLAYERS))
 				{
 					if (sharedInstanceInvis == null)
 					{
@@ -13228,24 +13228,24 @@ public final class PlayerInstance extends Playable
 		{
 			setXYZ(getBoat().getLocation());
 			
-			activeChar.sendPacket(new CharInfo(this, isInvisible()));
+			activeChar.sendPacket(new CharInfo(this, isInvisible() && activeChar.canOverrideCond(PcCondOverride.SEE_ALL_PLAYERS)));
 			activeChar.sendPacket(new GetOnVehicle(getObjectId(), getBoat().getObjectId(), getInVehiclePosition()));
 		}
 		else if (isInAirShip())
 		{
 			setXYZ(getAirShip().getLocation());
-			activeChar.sendPacket(new CharInfo(this, isInvisible()));
+			activeChar.sendPacket(new CharInfo(this, isInvisible() && activeChar.canOverrideCond(PcCondOverride.SEE_ALL_PLAYERS)));
 			activeChar.sendPacket(new ExGetOnAirShip(this, getAirShip()));
 		}
 		else
 		{
-			activeChar.sendPacket(new CharInfo(this, isInvisible()));
+			activeChar.sendPacket(new CharInfo(this, isInvisible() && activeChar.canOverrideCond(PcCondOverride.SEE_ALL_PLAYERS)));
 		}
 		
 		int relation1 = getRelation(activeChar);
 		int relation2 = activeChar.getRelation(this);
 		Integer oldrelation = getKnownList().getKnownRelations().get(activeChar.getObjectId());
-		if ((oldrelation != null) && (oldrelation != relation1) && isVisibleFor(activeChar))
+		if ((oldrelation != null) && (oldrelation != relation1))
 		{
 			final RelationChanged rc = new RelationChanged();
 			rc.addRelation(this, relation1, isAutoAttackable(activeChar));
@@ -14741,5 +14741,11 @@ public final class PlayerInstance extends Playable
 		final PlayerVariables vars = getVariables();
 		vars.set(PlayerVariables.VITALITY_ITEMS_USED_VARIABLE_NAME, used);
 		vars.storeMe();
+	}
+	
+	@Override
+	public boolean isVisibleFor(PlayerInstance player)
+	{
+		return (super.isVisibleFor(player) || ((player.getParty() != null) && (player.getParty() == getParty())));
 	}
 }

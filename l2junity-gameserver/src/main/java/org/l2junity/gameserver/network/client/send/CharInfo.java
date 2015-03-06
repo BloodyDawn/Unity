@@ -187,7 +187,7 @@ public class CharInfo implements IClientOutgoingPacket
 		
 		packet.writeC(!_activeChar.isInOlympiadMode() && _activeChar.isAlikeDead() ? 0x01 : 0x00); // Confirmed
 		
-		packet.writeC(!_gmSeeInvis && _activeChar.isInvisible() ? 0x01 : 0x00); // TODO: Find me!
+		packet.writeC(_activeChar.isInvisible() ? 0x01 : 0x00); // TODO: Find me!
 		
 		packet.writeC(_activeChar.getMountType().ordinal()); // 1-on Strider, 2-on Wyvern, 3-on Great Wolf, 0-no mount
 		packet.writeC(_activeChar.getPrivateStoreType().getId()); // Confirmed
