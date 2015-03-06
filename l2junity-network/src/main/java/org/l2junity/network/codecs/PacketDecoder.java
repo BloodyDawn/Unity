@@ -78,7 +78,7 @@ public class PacketDecoder extends ByteToMessageDecoder
 			final IConnectionState connectionState = ctx.channel().attr(IConnectionState.ATTRIBUTE_KEY).get();
 			if ((connectionState == null) || !incomingPacket.getConnectionStates().contains(connectionState))
 			{
-				LOGGER.warning(" Connection at invalid state: " + connectionState + " Required State: " + incomingPacket.getConnectionStates());
+				LOGGER.warning(incomingPacket + ": Connection at invalid state: " + connectionState + " Required State: " + incomingPacket.getConnectionStates());
 				return;
 			}
 			
