@@ -582,7 +582,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		Collection<PlayerInstance> plrs = getKnownList().getKnownPlayers().values();
 		for (PlayerInstance player : plrs)
 		{
-			if ((player != null) && (!isInvisible() || (isVisibleFor(player) || player.canOverrideCond(PcCondOverride.SEE_ALL_PLAYERS))))
+			if ((player != null) && isVisibleFor(player))
 			{
 				player.sendPacket(mov);
 			}
@@ -602,7 +602,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		final Collection<PlayerInstance> plrs = getKnownList().getKnownPlayers().values();
 		for (PlayerInstance player : plrs)
 		{
-			if ((player != null) && isInsideRadius(player, radiusInKnownlist, false, false) && (!isInvisible() || (isVisibleFor(player) || player.canOverrideCond(PcCondOverride.SEE_ALL_PLAYERS))))
+			if ((player != null) && isInsideRadius(player, radiusInKnownlist, false, false) && isVisibleFor(player))
 			{
 				player.sendPacket(mov);
 			}

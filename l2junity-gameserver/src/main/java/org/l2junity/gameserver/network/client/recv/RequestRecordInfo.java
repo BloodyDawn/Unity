@@ -56,7 +56,7 @@ public class RequestRecordInfo implements IClientIncomingPacket
 			}
 			else
 			{
-				if (!object.isVisibleFor(activeChar))
+				if (object.isVisibleFor(activeChar))
 				{
 					object.sendInfo(activeChar);
 					

@@ -4281,7 +4281,7 @@ public final class PlayerInstance extends Playable
 		final Collection<PlayerInstance> plrs = getKnownList().getKnownPlayers().values();
 		for (PlayerInstance player : plrs)
 		{
-			if ((player == null) || (isInvisible() && (!isVisibleFor(player) && !player.canOverrideCond(PcCondOverride.SEE_ALL_PLAYERS))))
+			if ((player == null) || !isVisibleFor(player))
 			{
 				continue;
 			}
@@ -4322,7 +4322,7 @@ public final class PlayerInstance extends Playable
 		final Collection<PlayerInstance> plrs = getKnownList().getKnownPlayersInRadius(radiusInKnownlist);
 		for (PlayerInstance player : plrs)
 		{
-			if ((player == null) || (isInvisible() && (!isVisibleFor(player) && !player.canOverrideCond(PcCondOverride.SEE_ALL_PLAYERS))))
+			if ((player == null) || !isVisibleFor(player))
 			{
 				continue;
 			}
