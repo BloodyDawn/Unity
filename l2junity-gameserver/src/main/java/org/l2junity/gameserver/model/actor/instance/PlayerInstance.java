@@ -4252,7 +4252,7 @@ public final class PlayerInstance extends Playable
 		// Broadcast char info to all known players.
 		for (PlayerInstance player : getKnownList().getKnownPlayers().values())
 		{
-			if (player != null)
+			if ((player != null) && isVisibleFor(player))
 			{
 				player.sendPacket(new CharInfo(this, player));
 			}

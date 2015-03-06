@@ -3944,7 +3944,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				
 				if (broadcastFull)
 				{
-					player.broadcastUserInfo();
+					player.broadcastCharInfo();
 				}
 				else
 				{
