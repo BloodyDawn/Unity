@@ -22,6 +22,7 @@ import java.util.Collection;
 
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
+import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
@@ -49,7 +50,7 @@ public abstract class Decoy extends Creature
 	public void onSpawn()
 	{
 		super.onSpawn();
-		sendPacket(new CharInfo(this, isInvisible()));
+		sendPacket(new CharInfo(this, false));
 	}
 	
 	@Override
@@ -61,7 +62,7 @@ public abstract class Decoy extends Creature
 		{
 			if ((player != null) && isVisibleFor(player))
 			{
-				player.sendPacket(new CharInfo(this, isInvisible()));
+				player.sendPacket(new CharInfo(this, isInvisible() && player.canOverrideCond(PcCondOverride.SEE_ALL_PLAYERS)));
 			}
 		}
 	}
@@ -158,7 +159,7 @@ public abstract class Decoy extends Creature
 	@Override
 	public void sendInfo(PlayerInstance activeChar)
 	{
-		activeChar.sendPacket(new CharInfo(this, isInvisible()));
+		activeChar.sendPacket(new CharInfo(this, isInvisible() && activeChar.canOverrideCond(PcCondOverride.SEE_ALL_PLAYERS)));
 	}
 	
 	@Override
