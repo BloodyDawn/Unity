@@ -20,12 +20,12 @@ package org.l2junity.gameserver.model.variables;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import javolution.util.FastMap;
+
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.interfaces.IDeletable;
 import org.l2junity.gameserver.model.interfaces.IRestorable;
 import org.l2junity.gameserver.model.interfaces.IStorable;
-
-import javolution.util.FastMap;
 
 /**
  * @author UnAfraid

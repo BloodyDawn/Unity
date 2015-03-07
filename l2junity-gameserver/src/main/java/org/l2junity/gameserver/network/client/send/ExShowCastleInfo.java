@@ -56,7 +56,7 @@ public class ExShowCastleInfo implements IClientOutgoingPacket
 				}
 				else
 				{
-					_log.warning("Castle owner with no name! Castle: " + castle.getName() + " has an OwnerId = " + castle.getOwnerId() + " who does not have a  name!");
+					_log.warn("Castle owner with no name! Castle: " + castle.getName() + " has an OwnerId = " + castle.getOwnerId() + " who does not have a  name!");
 					packet.writeS("");
 				}
 			}

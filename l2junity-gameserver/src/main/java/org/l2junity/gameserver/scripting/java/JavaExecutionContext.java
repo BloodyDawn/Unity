@@ -28,20 +28,21 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.logging.Logger;
 
 import javax.tools.Diagnostic;
 import javax.tools.DiagnosticCollector;
 import javax.tools.JavaFileObject;
 
 import org.l2junity.gameserver.scripting.AbstractExecutionContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author HorridoJoho
  */
 public final class JavaExecutionContext extends AbstractExecutionContext<JavaScriptingEngine>
 {
-	private static final Logger LOGGER = Logger.getLogger(JavaExecutionContext.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(JavaExecutionContext.class.getName());
 	
 	JavaExecutionContext(final JavaScriptingEngine engine)
 	{
@@ -215,7 +216,7 @@ public final class JavaExecutionContext extends AbstractExecutionContext<JavaScr
 				
 				if (!found)
 				{
-					LOGGER.severe("Compilation successfull, but class coresponding to " + sourcePath.toString() + " not found!");
+					LOGGER.error("Compilation successfull, but class coresponding to " + sourcePath.toString() + " not found!");
 				}
 			}
 			

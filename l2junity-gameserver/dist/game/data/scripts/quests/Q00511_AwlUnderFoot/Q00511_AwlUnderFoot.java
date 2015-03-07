@@ -28,8 +28,8 @@ import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2RaidBossInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
@@ -112,7 +112,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 			}
 			catch (Exception e)
 			{
-				_log.warning("Fortress AwlUnderFoot Raid Spawn error: " + e);
+				_log.warn("Fortress AwlUnderFoot Raid Spawn error: " + e);
 			}
 		}
 	}

@@ -22,8 +22,8 @@ import org.l2junity.gameserver.data.xml.impl.ExperienceData;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2ServitorInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
@@ -90,7 +90,7 @@ public final class Summon extends AbstractEffect
 		if (summon.getLevel() >= ExperienceData.getInstance().getMaxPetLevel())
 		{
 			summon.getStat().setExp(ExperienceData.getInstance().getExpForLevel(ExperienceData.getInstance().getMaxPetLevel() - 1));
-			_log.warning(Summon.class.getSimpleName() + ": (" + summon.getName() + ") NpcID: " + summon.getId() + " has a level above " + ExperienceData.getInstance().getMaxPetLevel() + ". Please rectify.");
+			_log.warn(Summon.class.getSimpleName() + ": (" + summon.getName() + ") NpcID: " + summon.getId() + " has a level above " + ExperienceData.getInstance().getMaxPetLevel() + ". Please rectify.");
 		}
 		else
 		{

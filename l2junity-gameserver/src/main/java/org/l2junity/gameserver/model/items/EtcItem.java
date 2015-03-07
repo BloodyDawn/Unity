@@ -115,7 +115,7 @@ public final class EtcItem extends L2Item
 			// check for handler
 			if (_handler == null)
 			{
-				_log.warning("Item " + this + " define capsuled_items but missing handler.");
+				_log.warn("Item " + this + " define capsuled_items but missing handler.");
 				_handler = "ExtractableItems";
 			}
 		}

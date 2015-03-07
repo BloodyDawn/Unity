@@ -23,7 +23,6 @@ import java.util.Calendar;
 import java.util.Collection;
 import java.util.List;
 import java.util.StringTokenizer;
-import java.util.logging.Level;
 import java.util.stream.Stream;
 
 import org.l2junity.Config;
@@ -87,14 +86,14 @@ public final class L2TeleporterInstance extends Npc
 				final TeleportType type = parseTeleportType(st);
 				if (((type == TeleportType.NOBLES_TOKEN) || (type == TeleportType.NOBLES_ADENA)) && !player.isNoble())
 				{
-					_log.log(Level.WARNING, player + " attempted to use nobles teleport without being nobles!");
+					_log.warn(player + " attempted to use nobles teleport without being nobles!");
 					break;
 				}
 				
 				final TeleportHolder holder = TeleportersData.getInstance().getHolder(getId());
 				if (holder == null)
 				{
-					_log.log(Level.WARNING, player + " requested show teleports for npc with no teleport data " + toString());
+					_log.warn(player + " requested show teleports for npc with no teleport data " + toString());
 					break;
 				}
 				
@@ -139,14 +138,14 @@ public final class L2TeleporterInstance extends Npc
 				final int typeId = parseNextInt(st, -1);
 				if ((typeId < 0) || (typeId > TeleportType.values().length))
 				{
-					_log.log(Level.WARNING, player + " attempted to use incorrect teleport type: " + typeId);
+					_log.warn(player + " attempted to use incorrect teleport type: " + typeId);
 					return;
 				}
 				
 				final TeleportType type = TeleportType.values()[typeId];
 				if (((type == TeleportType.NOBLES_TOKEN) || (type == TeleportType.NOBLES_ADENA)) && !player.isNoble())
 				{
-					_log.log(Level.WARNING, player + " attempted to use nobles teleport without being nobles!");
+					_log.warn(player + " attempted to use nobles teleport without being nobles!");
 					break;
 				}
 				
@@ -154,13 +153,13 @@ public final class L2TeleporterInstance extends Npc
 				final TeleportHolder holder = TeleportersData.getInstance().getHolder(getId());
 				if (holder == null)
 				{
-					_log.log(Level.WARNING, player + " requested show teleports for npc with no teleport data " + toString());
+					_log.warn(player + " requested show teleports for npc with no teleport data " + toString());
 					break;
 				}
 				final TeleportLocation loc = holder.getLocation(type, locId);
 				if (loc == null)
 				{
-					_log.log(Level.WARNING, player + " attempted to use not existing teleport location id: " + locId);
+					_log.warn(player + " attempted to use not existing teleport location id: " + locId);
 					return;
 				}
 				
@@ -513,7 +512,7 @@ public final class L2TeleporterInstance extends Npc
 		}
 		else
 		{
-			_log.warning("No teleport destination with id:" + val);
+			_log.warn("No teleport destination with id:" + val);
 		}
 		
 		player.sendPacket(ActionFailed.STATIC_PACKET);

@@ -18,13 +18,12 @@
  */
 package org.l2junity.gameserver;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Class managing periodical events with castle
@@ -32,7 +31,7 @@ import org.l2junity.gameserver.model.itemcontainer.Inventory;
  */
 public class FortUpdater implements Runnable
 {
-	protected static Logger _log = Logger.getLogger(FortUpdater.class.getName());
+	protected static Logger _log = LoggerFactory.getLogger(FortUpdater.class.getName());
 	private final L2Clan _clan;
 	private final Fort _fort;
 	private int _runCount;
@@ -98,7 +97,7 @@ public class FortUpdater implements Runnable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "", e);
+			_log.warn("", e);
 		}
 	}
 	

@@ -19,13 +19,13 @@
 package org.l2junity.gameserver.model.events.listeners;
 
 import java.lang.reflect.Method;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.ListenersContainer;
 import org.l2junity.gameserver.model.events.impl.IBaseEvent;
 import org.l2junity.gameserver.model.events.returns.AbstractEventReturn;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Annotation event listener provides dynamically attached callback to any method operation with or without any return object.
@@ -33,7 +33,7 @@ import org.l2junity.gameserver.model.events.returns.AbstractEventReturn;
  */
 public class AnnotationEventListener extends AbstractEventListener
 {
-	private static final Logger _log = Logger.getLogger(AnnotationEventListener.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(AnnotationEventListener.class.getName());
 	private final Method _callback;
 	
 	public AnnotationEventListener(ListenersContainer container, EventType type, Method callback, Object owner, int priority)
@@ -56,7 +56,7 @@ public class AnnotationEventListener extends AbstractEventListener
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Error while invoking " + _callback.getName() + " on " + getOwner(), e);
+			_log.warn(getClass().getSimpleName() + ": Error while invoking " + _callback.getName() + " on " + getOwner(), e);
 		}
 		return null;
 	}

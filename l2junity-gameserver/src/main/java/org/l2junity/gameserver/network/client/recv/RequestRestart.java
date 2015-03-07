@@ -18,10 +18,6 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.instancemanager.AntiFeedManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -32,6 +28,8 @@ import org.l2junity.gameserver.network.client.send.RestartResponse;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
 import org.l2junity.network.PacketReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class ...
@@ -39,7 +37,7 @@ import org.l2junity.network.PacketReader;
  */
 public final class RequestRestart implements IClientIncomingPacket
 {
-	protected static final Logger _logAccounting = Logger.getLogger("accounting");
+	protected static final Logger _logAccounting = LoggerFactory.getLogger("accounting");
 	
 	@Override
 	public boolean read(PacketReader packet)
@@ -64,7 +62,7 @@ public final class RequestRestart implements IClientIncomingPacket
 		
 		if (player.isLocked())
 		{
-			_log.warning("Player " + player.getName() + " tried to restart during class change.");
+			_log.warn("Player " + player.getName() + " tried to restart during class change.");
 			client.sendPacket(RestartResponse.FALSE);
 			return;
 		}
@@ -73,7 +71,7 @@ public final class RequestRestart implements IClientIncomingPacket
 		{
 			if (Config.DEBUG)
 			{
-				_log.fine("Player " + player.getName() + " tried to logout while fighting.");
+				_log.debug("Player " + player.getName() + " tried to logout while fighting.");
 			}
 			
 			player.sendPacket(SystemMessageId.YOU_CANNOT_RESTART_WHILE_IN_COMBAT);
@@ -87,12 +85,7 @@ public final class RequestRestart implements IClientIncomingPacket
 			return;
 		}
 		
-		LogRecord record = new LogRecord(Level.INFO, "Logged out");
-		record.setParameters(new Object[]
-		{
-			client
-		});
-		_logAccounting.log(record);
+		_logAccounting.info("Logged out, {}", client);
 		
 		// detach the client from the char so that the connection isnt closed in the deleteMe
 		player.setClient(null);

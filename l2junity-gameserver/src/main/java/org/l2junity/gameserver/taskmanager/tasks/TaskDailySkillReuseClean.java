@@ -24,8 +24,8 @@ import java.sql.PreparedStatement;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.taskmanager.Task;
 import org.l2junity.gameserver.taskmanager.TaskManager;
-import org.l2junity.gameserver.taskmanager.TaskTypes;
 import org.l2junity.gameserver.taskmanager.TaskManager.ExecutedTask;
+import org.l2junity.gameserver.taskmanager.TaskTypes;
 
 public class TaskDailySkillReuseClean extends Task
 {
@@ -59,7 +59,7 @@ public class TaskDailySkillReuseClean extends Task
 		}
 		catch (Exception e)
 		{
-			_log.severe(getClass().getSimpleName() + ": Could not reset daily skill reuse: " + e);
+			_log.error(getClass().getSimpleName() + ": Could not reset daily skill reuse: " + e);
 		}
 		_log.info("Daily skill reuse cleaned.");
 	}

@@ -23,7 +23,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.handler.EffectHandler;
@@ -34,6 +33,8 @@ import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Abstract effect implementation.<br>
@@ -44,7 +45,7 @@ import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
  */
 public abstract class AbstractEffect
 {
-	protected static final Logger _log = Logger.getLogger(AbstractEffect.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(AbstractEffect.class.getName());
 	
 	// Conditions
 	/** Attach condition. */
@@ -86,7 +87,7 @@ public abstract class AbstractEffect
 		final Class<? extends AbstractEffect> handler = EffectHandler.getInstance().getHandler(name);
 		if (handler == null)
 		{
-			_log.warning(AbstractEffect.class.getSimpleName() + ": Requested unexistent effect handler: " + name);
+			_log.warn(AbstractEffect.class.getSimpleName() + ": Requested unexistent effect handler: " + name);
 			return null;
 		}
 		
@@ -97,7 +98,7 @@ public abstract class AbstractEffect
 		}
 		catch (NoSuchMethodException | SecurityException e)
 		{
-			_log.warning(AbstractEffect.class.getSimpleName() + ": Requested unexistent constructor for effect handler: " + name + ": " + e.getMessage());
+			_log.warn(AbstractEffect.class.getSimpleName() + ": Requested unexistent constructor for effect handler: " + name + ": " + e.getMessage());
 			return null;
 		}
 		
@@ -107,7 +108,7 @@ public abstract class AbstractEffect
 		}
 		catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
 		{
-			_log.warning(AbstractEffect.class.getSimpleName() + ": Unable to initialize effect handler: " + name + ": " + e.getMessage());
+			_log.warn(AbstractEffect.class.getSimpleName() + ": Unable to initialize effect handler: " + name + ": " + e.getMessage());
 		}
 		return null;
 	}

@@ -59,7 +59,7 @@ public class RequestCommissionRegister implements IClientIncomingPacket
 		
 		if ((_durationType < 0) || (_durationType > 3))
 		{
-			_log.warning("Player " + player + " sent incorrect commission duration type: " + _durationType + ".");
+			_log.warn("Player " + player + " sent incorrect commission duration type: " + _durationType + ".");
 			return;
 		}
 		

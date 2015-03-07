@@ -19,16 +19,17 @@
 package org.l2junity.gameserver.instancemanager;
 
 import java.util.Calendar;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.instancemanager.tasks.UpdateSoDStateTask;
 import org.l2junity.gameserver.model.quest.Quest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class GraciaSeedsManager
 {
-	private static final Logger _log = Logger.getLogger(GraciaSeedsManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(GraciaSeedsManager.class.getName());
 	
 	public static String ENERGY_SEEDS = "EnergySeeds";
 	
@@ -65,7 +66,7 @@ public final class GraciaSeedsManager
 				// Seed of Annihilation
 				break;
 			default:
-				_log.warning(getClass().getSimpleName() + ": Unknown SeedType in SaveData: " + seedType);
+				_log.warn(getClass().getSimpleName() + ": Unknown SeedType in SaveData: " + seedType);
 				break;
 		}
 	}
@@ -111,7 +112,7 @@ public final class GraciaSeedsManager
 				setSoDState(1, true);
 				break;
 			default:
-				_log.warning(getClass().getSimpleName() + ": Unknown Seed of Destruction state(" + _SoDState + ")! ");
+				_log.warn(getClass().getSimpleName() + ": Unknown Seed of Destruction state(" + _SoDState + ")! ");
 		}
 	}
 	
@@ -120,7 +121,7 @@ public final class GraciaSeedsManager
 		final Quest quest = QuestManager.getInstance().getQuest(ENERGY_SEEDS);
 		if (quest == null)
 		{
-			_log.warning(getClass().getSimpleName() + ": missing EnergySeeds Quest!");
+			_log.warn(getClass().getSimpleName() + ": missing EnergySeeds Quest!");
 		}
 		else
 		{
@@ -141,7 +142,7 @@ public final class GraciaSeedsManager
 			Quest esQuest = QuestManager.getInstance().getQuest(ENERGY_SEEDS);
 			if (esQuest == null)
 			{
-				_log.warning(getClass().getSimpleName() + ": missing EnergySeeds Quest!");
+				_log.warn(getClass().getSimpleName() + ": missing EnergySeeds Quest!");
 			}
 			else
 			{

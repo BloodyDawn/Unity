@@ -18,9 +18,6 @@
  */
 package vehicles;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.instancemanager.BoatManager;
@@ -29,13 +26,15 @@ import org.l2junity.gameserver.model.actor.instance.L2BoatInstance;
 import org.l2junity.gameserver.network.client.send.CreatureSay;
 import org.l2junity.gameserver.network.client.send.PlaySound;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author DS
  */
 public class BoatRunePrimeval implements Runnable
 {
-	private static final Logger _log = Logger.getLogger(BoatRunePrimeval.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(BoatRunePrimeval.class.getName());
 	
 	// Time: 239s
 	private static final VehiclePathPoint[] RUNE_TO_PRIMEVAL =
@@ -161,7 +160,7 @@ public class BoatRunePrimeval implements Runnable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, e.getMessage());
+			_log.warn(e.getMessage());
 		}
 	}
 	

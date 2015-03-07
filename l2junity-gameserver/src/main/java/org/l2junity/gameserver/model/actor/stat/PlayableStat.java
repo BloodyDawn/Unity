@@ -18,26 +18,26 @@
  */
 package org.l2junity.gameserver.model.actor.stat;
 
-import java.util.logging.Logger;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.ExperienceData;
 import org.l2junity.gameserver.data.xml.impl.PetDataTable;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.playable.OnPlayableExpChanged;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.model.zone.type.SwampZone;
 import org.l2junity.gameserver.network.client.send.ExNewSkillToLearnByLevelUp;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class PlayableStat extends CharStat
 {
-	protected static final Logger _log = Logger.getLogger(PlayableStat.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(PlayableStat.class.getName());
 	
 	public PlayableStat(Playable activeChar)
 	{
@@ -194,7 +194,7 @@ public class PlayableStat extends CharStat
 	{
 		if (value < 0)
 		{
-			_log.warning("wrong usage");
+			_log.warn("wrong usage");
 			return false;
 		}
 		long currentSp = getSp();

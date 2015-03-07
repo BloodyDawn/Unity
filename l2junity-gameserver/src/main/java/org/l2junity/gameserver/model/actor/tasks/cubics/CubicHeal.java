@@ -18,13 +18,12 @@
  */
 package org.l2junity.gameserver.model.actor.tasks.cubics;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2CubicInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Cubic heal task.
@@ -32,7 +31,7 @@ import org.l2junity.gameserver.network.client.send.MagicSkillUse;
  */
 public class CubicHeal implements Runnable
 {
-	private static final Logger _log = Logger.getLogger(CubicHeal.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(CubicHeal.class.getName());
 	private final L2CubicInstance _cubic;
 	
 	public CubicHeal(L2CubicInstance cubic)
@@ -90,7 +89,7 @@ public class CubicHeal implements Runnable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "", e);
+			_log.error("", e);
 		}
 	}
 }

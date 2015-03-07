@@ -20,7 +20,6 @@ package org.l2junity.gameserver.network.client.recv.friend;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.logging.Level;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
@@ -103,7 +102,7 @@ public final class RequestFriendDel implements IClientIncomingPacket
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "could not del friend objectid: ", e);
+			_log.warn("could not del friend objectid: ", e);
 		}
 	}
 }

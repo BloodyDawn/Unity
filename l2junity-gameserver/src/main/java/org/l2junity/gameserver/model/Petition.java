@@ -20,6 +20,8 @@ package org.l2junity.gameserver.model;
 
 import java.util.List;
 
+import javolution.util.FastList;
+
 import org.l2junity.gameserver.enums.PetitionState;
 import org.l2junity.gameserver.enums.PetitionType;
 import org.l2junity.gameserver.idfactory.IdFactory;
@@ -30,8 +32,6 @@ import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 import org.l2junity.gameserver.network.client.send.PetitionVotePacket;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
-
-import javolution.util.FastList;
 
 /**
  * Petition

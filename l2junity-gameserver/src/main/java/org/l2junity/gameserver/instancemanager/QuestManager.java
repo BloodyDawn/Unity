@@ -20,13 +20,12 @@ package org.l2junity.gameserver.instancemanager;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.scripting.ScriptEngineManager;
 import org.l2junity.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Quests and scripts manager.
@@ -34,7 +33,7 @@ import org.l2junity.util.Util;
  */
 public final class QuestManager
 {
-	protected static final Logger _log = Logger.getLogger(QuestManager.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(QuestManager.class.getName());
 	
 	/** Map containing all the quests. */
 	private final Map<String, Quest> _quests = new ConcurrentHashMap<>();
@@ -104,7 +103,7 @@ public final class QuestManager
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, getClass().getSimpleName() + ": Failed loading scripts.cfg, no script going to be loaded!", e);
+			_log.error(getClass().getSimpleName() + ": Failed loading scripts.cfg, no script going to be loaded!", e);
 		}
 		
 		QuestManager.getInstance().report();

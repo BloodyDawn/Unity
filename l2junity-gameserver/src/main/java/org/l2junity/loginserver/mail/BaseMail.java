@@ -23,7 +23,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Properties;
-import java.util.logging.Logger;
 
 import javax.mail.Authenticator;
 import javax.mail.Message;
@@ -37,13 +36,15 @@ import javax.mail.internet.MimeMessage;
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.loginserver.mail.MailSystem.MailContent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author mrTJO
  */
 public class BaseMail implements Runnable
 {
-	private static final Logger _log = Logger.getLogger(BaseMail.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(BaseMail.class.getName());
 	
 	private MimeMessage _messageMime = null;
 	
@@ -101,14 +102,14 @@ public class BaseMail implements Runnable
 			}
 			catch (UnsupportedEncodingException e)
 			{
-				_log.warning("Sender Address not Valid!");
+				_log.warn("Sender Address not Valid!");
 			}
 			_messageMime.setContent(message, "text/html");
 			_messageMime.setRecipient(Message.RecipientType.TO, new InternetAddress(mailAddr));
 		}
 		catch (MessagingException e)
 		{
-			_log.warning(getClass().getSimpleName() + ": " + e.getMessage());
+			_log.warn(getClass().getSimpleName() + ": " + e.getMessage());
 		}
 	}
 	
@@ -142,7 +143,7 @@ public class BaseMail implements Runnable
 		}
 		catch (Exception e)
 		{
-			_log.warning("Cannot select user mail: Exception");
+			_log.warn("Cannot select user mail: Exception");
 		}
 		return null;
 	}
@@ -159,7 +160,7 @@ public class BaseMail implements Runnable
 		}
 		catch (MessagingException e)
 		{
-			_log.warning("Error encounterd while sending email");
+			_log.warn("Error encounterd while sending email");
 		}
 	}
 }

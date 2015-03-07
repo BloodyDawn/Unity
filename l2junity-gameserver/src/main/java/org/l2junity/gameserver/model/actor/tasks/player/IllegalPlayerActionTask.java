@@ -18,10 +18,6 @@
  */
 package org.l2junity.gameserver.model.actor.tasks.player;
 
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.enums.IllegalActionPunishmentType;
@@ -30,13 +26,15 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.punishment.PunishmentAffect;
 import org.l2junity.gameserver.model.punishment.PunishmentTask;
 import org.l2junity.gameserver.model.punishment.PunishmentType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Task that handles illegal player actions.
  */
 public final class IllegalPlayerActionTask implements Runnable
 {
-	private static final Logger _log = Logger.getLogger("audit");
+	private static final Logger _log = LoggerFactory.getLogger("audit");
 	
 	private final String _message;
 	private final IllegalActionPunishmentType _punishment;
@@ -77,12 +75,7 @@ public final class IllegalPlayerActionTask implements Runnable
 	@Override
 	public void run()
 	{
-		LogRecord record = new LogRecord(Level.INFO, "AUDIT:" + _message);
-		record.setLoggerName("audit");
-		//@formatter:off
-		record.setParameters(new Object[] { _actor, _punishment	});
-		//@formatter:on
-		_log.log(record);
+		_log.info("AUDIT, {}, {}, {}", _message, _actor, _punishment);
 		
 		AdminData.getInstance().broadcastMessageToGMs(_message);
 		if (!_actor.isGM())

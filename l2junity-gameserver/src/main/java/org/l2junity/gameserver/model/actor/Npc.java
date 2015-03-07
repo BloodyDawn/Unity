@@ -26,8 +26,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
-
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ItemsAutoDestroy;
@@ -388,7 +386,7 @@ public class Npc extends Creature
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "", e);
+				_log.error("", e);
 			}
 		}
 	}
@@ -1324,7 +1322,7 @@ public class Npc extends Creature
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Failed decayMe().", e);
+			_log.error("Failed decayMe().", e);
 		}
 		
 		if (isChannelized())
@@ -1341,7 +1339,7 @@ public class Npc extends Creature
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Failed removing cleaning knownlist.", e);
+			_log.error("Failed removing cleaning knownlist.", e);
 		}
 		
 		// Remove L2Object object from _allObjects of L2World
@@ -1494,7 +1492,7 @@ public class Npc extends Creature
 		final NpcHtmlMessage noTeachMsg = new NpcHtmlMessage(getObjectId());
 		if (html == null)
 		{
-			_log.warning("Npc " + npcId + " missing noTeach html!");
+			_log.warn("Npc " + npcId + " missing noTeach html!");
 			noTeachMsg.setHtml("<html><body>I cannot teach you any skills.<br>You must find your current class teachers.</body></html>");
 		}
 		else
@@ -1784,7 +1782,7 @@ public class Npc extends Creature
 			
 			if (ItemTable.getInstance().getTemplate(itemId) == null)
 			{
-				_log.log(Level.SEVERE, "Item doesn't exist so cannot be dropped. Item ID: " + itemId + " Quest: " + getName());
+				_log.error("Item doesn't exist so cannot be dropped. Item ID: " + itemId + " Quest: " + getName());
 				return null;
 			}
 			

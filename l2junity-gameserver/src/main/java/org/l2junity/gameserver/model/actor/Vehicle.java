@@ -21,8 +21,6 @@ package org.l2junity.gameserver.model.actor;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import java.util.logging.Level;
-
 import javolution.util.FastList;
 
 import org.l2junity.Config;
@@ -423,7 +421,7 @@ public abstract class Vehicle extends Creature
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Failed stopMove().", e);
+			_log.error("Failed stopMove().", e);
 		}
 		
 		try
@@ -432,7 +430,7 @@ public abstract class Vehicle extends Creature
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Failed oustPlayers().", e);
+			_log.error("Failed oustPlayers().", e);
 		}
 		
 		final ZoneRegion oldRegion = ZoneManager.getInstance().getRegion(this);
@@ -443,7 +441,7 @@ public abstract class Vehicle extends Creature
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Failed decayMe().", e);
+			_log.error("Failed decayMe().", e);
 		}
 		
 		oldRegion.removeFromZones(this);
@@ -454,7 +452,7 @@ public abstract class Vehicle extends Creature
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Failed cleaning knownlist.", e);
+			_log.error("Failed cleaning knownlist.", e);
 		}
 		
 		// Remove L2Object object from _allObjects of L2World

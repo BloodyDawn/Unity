@@ -253,7 +253,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 					}
 					catch (Exception e)
 					{
-						_log.warning(getName() + "->select_clan_npc->Wrong mahum warrior id: " + var[1]);
+						_log.warn(getName() + "->select_clan_npc->Wrong mahum warrior id: " + var[1]);
 					}
 					if ((id > 0) && ((html = getAllyHtml(id)) != null))
 					{
@@ -263,7 +263,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 				}
 				else
 				{
-					_log.warning(getName() + " Siege: Not enough parameters to save clan npc for clan: " + clan.getName());
+					_log.warn(getName() + " Siege: Not enough parameters to save clan npc for clan: " + clan.getName());
 				}
 			}
 		}
@@ -548,7 +548,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 			catch (Exception e)
 			{
 				endSiege();
-				_log.warning(getName() + ": Problems in siege initialization!");
+				_log.warn(getName() + ": Problems in siege initialization!");
 				e.printStackTrace();
 			}
 		}
@@ -634,12 +634,12 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 			
 			if (flagTemplate == null)
 			{
-				_log.warning(getName() + ": Flag L2NpcTemplate[" + data.flag + "] does not exist!");
+				_log.warn(getName() + ": Flag L2NpcTemplate[" + data.flag + "] does not exist!");
 				throw new NullPointerException();
 			}
 			else if (mahumTemplate == null)
 			{
-				_log.warning(getName() + ": Ally L2NpcTemplate[" + data.npc + "] does not exist!");
+				_log.warn(getName() + ": Ally L2NpcTemplate[" + data.npc + "] does not exist!");
 				throw new NullPointerException();
 			}
 			
@@ -669,7 +669,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		}
 		catch (Exception e)
 		{
-			_log.warning(getName() + ": Couldnt make clan spawns: " + e.getMessage());
+			_log.warn(getName() + ": Couldnt make clan spawns: " + e.getMessage());
 			e.printStackTrace();
 		}
 	}
@@ -791,7 +791,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 				
 				if (ClanTable.getInstance().getClan(clanId) == null)
 				{
-					_log.warning(getName() + ": Loaded an unexistent clan as attacker! Clan ID: " + clanId);
+					_log.warn(getName() + ": Loaded an unexistent clan as attacker! Clan ID: " + clanId);
 					continue;
 				}
 				
@@ -807,7 +807,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		}
 		catch (Exception e)
 		{
-			_log.warning(getName() + ".loadAttackers()->" + e.getMessage());
+			_log.warn(getName() + ".loadAttackers()->" + e.getMessage());
 			e.printStackTrace();
 		}
 	}
@@ -820,7 +820,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 			
 			if (listInstance == null)
 			{
-				_log.warning(getName() + ": Tried to load unregistered clan with ID " + clanId);
+				_log.warn(getName() + ": Tried to load unregistered clan with ID " + clanId);
 				return;
 			}
 			
@@ -837,7 +837,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		}
 		catch (Exception e)
 		{
-			_log.warning(getName() + ".loadAttackerMembers()->" + e.getMessage());
+			_log.warn(getName() + ".loadAttackerMembers()->" + e.getMessage());
 			e.printStackTrace();
 		}
 	}
@@ -856,7 +856,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		}
 		catch (Exception e)
 		{
-			_log.warning(getName() + ".saveClan()->" + e.getMessage());
+			_log.warn(getName() + ".saveClan()->" + e.getMessage());
 			e.printStackTrace();
 		}
 	}
@@ -873,7 +873,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		}
 		catch (Exception e)
 		{
-			_log.warning(getName() + ".saveNpc()->" + e.getMessage());
+			_log.warn(getName() + ".saveNpc()->" + e.getMessage());
 			e.printStackTrace();
 		}
 	}
@@ -891,7 +891,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		}
 		catch (Exception e)
 		{
-			_log.warning(getName() + ".saveMember()->" + e.getMessage());
+			_log.warn(getName() + ".saveMember()->" + e.getMessage());
 			e.printStackTrace();
 		}
 	}
@@ -912,7 +912,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		}
 		catch (Exception e)
 		{
-			_log.warning(getName() + ".clearTables()->" + e.getMessage());
+			_log.warn(getName() + ".clearTables()->" + e.getMessage());
 		}
 	}
 	

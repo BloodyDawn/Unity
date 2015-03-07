@@ -28,13 +28,13 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.Crest;
 import org.l2junity.gameserver.model.Crest.CrestType;
 import org.l2junity.gameserver.model.L2Clan;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Loads and saves crests from database.
@@ -42,7 +42,7 @@ import org.l2junity.gameserver.model.L2Clan;
  */
 public final class CrestTable
 {
-	private static final Logger LOGGER = Logger.getLogger(CrestTable.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(CrestTable.class.getName());
 	
 	private final Map<Integer, Crest> _crests = new ConcurrentHashMap<>();
 	private final AtomicInteger _nextId = new AtomicInteger(1);
@@ -103,14 +103,14 @@ public final class CrestTable
 				}
 				else
 				{
-					LOGGER.warning("Unknown crest type found in database. Type:" + rs.getInt("type"));
+					LOGGER.warn("Unknown crest type found in database. Type:" + rs.getInt("type"));
 				}
 			}
 			
 		}
 		catch (SQLException e)
 		{
-			LOGGER.log(Level.WARNING, "There was an error while loading crests from database:", e);
+			LOGGER.warn("There was an error while loading crests from database:", e);
 		}
 		
 		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _crests.size() + " Crests.");
@@ -179,7 +179,7 @@ public final class CrestTable
 		}
 		catch (SQLException e)
 		{
-			LOGGER.log(Level.WARNING, "There was an error while saving crest in database:", e);
+			LOGGER.warn("There was an error while saving crest in database:", e);
 		}
 		return null;
 	}
@@ -207,7 +207,7 @@ public final class CrestTable
 		}
 		catch (SQLException e)
 		{
-			LOGGER.log(Level.WARNING, "There was an error while deleting crest from database:", e);
+			LOGGER.warn("There was an error while deleting crest from database:", e);
 		}
 	}
 	

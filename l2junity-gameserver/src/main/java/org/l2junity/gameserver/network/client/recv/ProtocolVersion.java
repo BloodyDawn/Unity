@@ -18,15 +18,13 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 import org.l2junity.gameserver.network.client.send.KeyPacket;
 import org.l2junity.network.PacketReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class ...
@@ -34,7 +32,7 @@ import org.l2junity.network.PacketReader;
  */
 public final class ProtocolVersion implements IClientIncomingPacket
 {
-	private static final Logger _logAccounting = Logger.getLogger("accounting");
+	private static final Logger _logAccounting = LoggerFactory.getLogger("accounting");
 	
 	private int _version;
 	
@@ -56,13 +54,7 @@ public final class ProtocolVersion implements IClientIncomingPacket
 		}
 		else if (!Config.PROTOCOL_LIST.contains(_version))
 		{
-			final LogRecord record = new LogRecord(Level.WARNING, "Wrong protocol");
-			record.setParameters(new Object[]
-			{
-				_version,
-				client
-			});
-			_logAccounting.log(record);
+			_logAccounting.warn("Wrong protocol version {}, {}", _version, client);
 			client.setProtocolOk(false);
 			client.close(new KeyPacket(client.enableCrypt(), 0));
 		}

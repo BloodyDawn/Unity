@@ -18,15 +18,15 @@
  */
 package org.l2junity.gameserver.handler;
 
-import java.util.logging.Logger;
-
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public interface IActionHandler
 {
-	public static Logger _log = Logger.getLogger(IActionHandler.class.getName());
+	public static Logger _log = LoggerFactory.getLogger(IActionHandler.class.getName());
 	
 	public boolean action(PlayerInstance activeChar, WorldObject target, boolean interact);
 	

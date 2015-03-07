@@ -30,9 +30,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import javolution.util.FastList;
 import javolution.util.FastMap;
 
@@ -54,8 +51,8 @@ import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.zone.type.FortZone;
 import org.l2junity.gameserver.model.zone.type.SiegeZone;
@@ -63,10 +60,12 @@ import org.l2junity.gameserver.network.client.send.PlaySound;
 import org.l2junity.gameserver.network.client.send.PledgeShowInfoUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class Fort extends AbstractResidence
 {
-	protected static final Logger _log = Logger.getLogger(Fort.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(Fort.class.getName());
 	
 	private final List<L2DoorInstance> _doors = new ArrayList<>();
 	private L2StaticObjectInstance _flagPole = null;
@@ -235,7 +234,7 @@ public final class Fort extends AbstractResidence
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "Exception: Fort.updateFunctions(int type, int lvl, int lease, long rate, long time, boolean addNew): " + e.getMessage(), e);
+				_log.error("Exception: Fort.updateFunctions(int type, int lvl, int lease, long rate, long time, boolean addNew): " + e.getMessage(), e);
 			}
 		}
 	}
@@ -382,7 +381,7 @@ public final class Fort extends AbstractResidence
 	{
 		if (clan == null)
 		{
-			_log.warning(getClass().getSimpleName() + ": Updating Fort owner with null clan!!!");
+			_log.warn(getClass().getSimpleName() + ": Updating Fort owner with null clan!!!");
 			return false;
 		}
 		
@@ -408,7 +407,7 @@ public final class Fort extends AbstractResidence
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "Exception in setOwner: " + e.getMessage(), e);
+				_log.warn("Exception in setOwner: " + e.getMessage(), e);
 			}
 			removeOwner(true);
 		}
@@ -508,7 +507,7 @@ public final class Fort extends AbstractResidence
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception: saveFortVariables(): " + e.getMessage(), e);
+			_log.warn("Exception: saveFortVariables(): " + e.getMessage(), e);
 		}
 	}
 	
@@ -621,7 +620,7 @@ public final class Fort extends AbstractResidence
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception: loadFortData(): " + e.getMessage(), e);
+			_log.warn("Exception: loadFortData(): " + e.getMessage(), e);
 		}
 	}
 	
@@ -642,7 +641,7 @@ public final class Fort extends AbstractResidence
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Exception: Fort.loadFunctions(): " + e.getMessage(), e);
+			_log.error("Exception: Fort.loadFunctions(): " + e.getMessage(), e);
 		}
 	}
 	
@@ -662,7 +661,7 @@ public final class Fort extends AbstractResidence
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Exception: Fort.removeFunctions(int functionType): " + e.getMessage(), e);
+			_log.error("Exception: Fort.removeFunctions(int functionType): " + e.getMessage(), e);
 		}
 	}
 	
@@ -769,7 +768,7 @@ public final class Fort extends AbstractResidence
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception: loadFortDoorUpgrade(): " + e.getMessage(), e);
+			_log.warn("Exception: loadFortDoorUpgrade(): " + e.getMessage(), e);
 		}
 	}
 	
@@ -783,7 +782,7 @@ public final class Fort extends AbstractResidence
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception: removeDoorUpgrade(): " + e.getMessage(), e);
+			_log.warn("Exception: removeDoorUpgrade(): " + e.getMessage(), e);
 		}
 	}
 	
@@ -800,7 +799,7 @@ public final class Fort extends AbstractResidence
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception: saveDoorUpgrade(int doorId, int hp, int pDef, int mDef): " + e.getMessage(), e);
+			_log.warn("Exception: saveDoorUpgrade(int doorId, int hp, int pDef, int mDef): " + e.getMessage(), e);
 		}
 	}
 	
@@ -869,7 +868,7 @@ public final class Fort extends AbstractResidence
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception: updateOwnerInDB(L2Clan clan): " + e.getMessage(), e);
+			_log.warn("Exception: updateOwnerInDB(L2Clan clan): " + e.getMessage(), e);
 		}
 	}
 	
@@ -1000,7 +999,7 @@ public final class Fort extends AbstractResidence
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "Exception in endFortressSiege " + e.getMessage(), e);
+				_log.warn("Exception in endFortressSiege " + e.getMessage(), e);
 			}
 		}
 		
@@ -1040,7 +1039,7 @@ public final class Fort extends AbstractResidence
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception: setFortState(int state, int castleId): " + e.getMessage(), e);
+			_log.warn("Exception: setFortState(int state, int castleId): " + e.getMessage(), e);
 		}
 	}
 	
@@ -1186,7 +1185,7 @@ public final class Fort extends AbstractResidence
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Fort " + getResidenceId() + " initNpcs: Spawn could not be initialized: " + e.getMessage(), e);
+			_log.warn("Fort " + getResidenceId() + " initNpcs: Spawn could not be initialized: " + e.getMessage(), e);
 		}
 	}
 	
@@ -1215,7 +1214,7 @@ public final class Fort extends AbstractResidence
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Fort " + getResidenceId() + " initSiegeNpcs: Spawn could not be initialized: " + e.getMessage(), e);
+			_log.warn("Fort " + getResidenceId() + " initSiegeNpcs: Spawn could not be initialized: " + e.getMessage(), e);
 		}
 	}
 	
@@ -1245,7 +1244,7 @@ public final class Fort extends AbstractResidence
 		catch (Exception e)
 		{
 			// problem with initializing spawn, go to next one
-			_log.log(Level.WARNING, "Fort " + getResidenceId() + " initNpcCommanders: Spawn could not be initialized: " + e.getMessage(), e);
+			_log.warn("Fort " + getResidenceId() + " initNpcCommanders: Spawn could not be initialized: " + e.getMessage(), e);
 		}
 	}
 	
@@ -1281,7 +1280,7 @@ public final class Fort extends AbstractResidence
 		catch (Exception e)
 		{
 			// problem with initializing spawn, go to next one
-			_log.log(Level.WARNING, "Fort " + getResidenceId() + " initSpecialEnvoys: Spawn could not be initialized: " + e.getMessage(), e);
+			_log.warn("Fort " + getResidenceId() + " initSpecialEnvoys: Spawn could not be initialized: " + e.getMessage(), e);
 		}
 	}
 	

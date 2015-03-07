@@ -19,7 +19,6 @@
 package handlers.bypasshandlers;
 
 import java.util.List;
-import java.util.logging.Level;
 
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.handler.IBypassHandler;
@@ -100,7 +99,7 @@ public class OlympiadObservation implements IBypassHandler
 					final List<Location> spectatorSpawns = nextArena.getStadium().getZone().getSpectatorSpawns();
 					if (spectatorSpawns.isEmpty())
 					{
-						_log.log(Level.WARNING, getClass().getSimpleName() + ": Zone: " + nextArena.getStadium().getZone() + " doesn't have specatator spawns defined!");
+						_log.warn(getClass().getSimpleName() + ": Zone: " + nextArena.getStadium().getZone() + " doesn't have specatator spawns defined!");
 						return false;
 					}
 					final Location loc = spectatorSpawns.get(Rnd.get(spectatorSpawns.size()));
@@ -112,7 +111,7 @@ public class OlympiadObservation implements IBypassHandler
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception in " + getClass().getSimpleName(), e);
+			_log.warn("Exception in " + getClass().getSimpleName(), e);
 		}
 		return false;
 	}

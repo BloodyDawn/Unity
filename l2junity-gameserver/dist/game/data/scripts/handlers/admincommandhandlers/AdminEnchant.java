@@ -18,8 +18,6 @@
  */
 package handlers.admincommandhandlers;
 
-import java.util.logging.Logger;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.WorldObject;
@@ -28,6 +26,8 @@ import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class handles following admin commands: - enchant_armor
@@ -35,7 +35,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public class AdminEnchant implements IAdminCommandHandler
 {
-	private static Logger _log = Logger.getLogger(AdminEnchant.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(AdminEnchant.class.getName());
 	
 	private static final String[] ADMIN_COMMANDS =
 	{
@@ -149,7 +149,7 @@ public class AdminEnchant implements IAdminCommandHandler
 				{
 					if (Config.DEVELOPER)
 					{
-						_log.warning("Set enchant error: " + e);
+						_log.warn("Set enchant error: " + e);
 					}
 					activeChar.sendMessage("Please specify a new enchant value.");
 				}
@@ -157,7 +157,7 @@ public class AdminEnchant implements IAdminCommandHandler
 				{
 					if (Config.DEVELOPER)
 					{
-						_log.warning("Set enchant error: " + e);
+						_log.warn("Set enchant error: " + e);
 					}
 					activeChar.sendMessage("Please specify a valid new enchant value.");
 				}

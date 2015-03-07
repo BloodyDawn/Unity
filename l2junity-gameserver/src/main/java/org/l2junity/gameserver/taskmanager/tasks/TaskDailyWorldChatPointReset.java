@@ -54,7 +54,7 @@ public class TaskDailyWorldChatPointReset extends Task
 		}
 		catch (Exception e)
 		{
-			_log.severe(getClass().getSimpleName() + ": Could not reset daily world chat points: " + e);
+			_log.error(getClass().getSimpleName() + ": Could not reset daily world chat points: " + e);
 		}
 		
 		// Update data for online players.

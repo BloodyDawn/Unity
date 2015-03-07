@@ -18,18 +18,18 @@
  */
 package org.l2junity.loginserver.network.gameserverpackets;
 
-import java.util.logging.Logger;
-
 import org.l2junity.Config;
 import org.l2junity.loginserver.LoginController;
 import org.l2junity.util.network.BaseRecievePacket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author mrTJO
  */
 public class PlayerTracert extends BaseRecievePacket
 {
-	protected static Logger _log = Logger.getLogger(PlayerTracert.class.getName());
+	protected static Logger _log = LoggerFactory.getLogger(PlayerTracert.class.getName());
 	
 	/**
 	 * @param decrypt

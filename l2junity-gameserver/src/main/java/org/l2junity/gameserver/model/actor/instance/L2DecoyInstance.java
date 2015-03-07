@@ -19,8 +19,6 @@
 package org.l2junity.gameserver.model.actor.instance;
 
 import java.util.concurrent.Future;
-import java.util.logging.Level;
-
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.InstanceType;
@@ -104,7 +102,7 @@ public class L2DecoyInstance extends Decoy
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "Decoy Error: ", e);
+				_log.error("Decoy Error: ", e);
 			}
 		}
 	}
@@ -130,7 +128,7 @@ public class L2DecoyInstance extends Decoy
 			}
 			catch (Throwable e)
 			{
-				_log.log(Level.SEVERE, "Decoy Error: ", e);
+				_log.error("Decoy Error: ", e);
 			}
 		}
 	}

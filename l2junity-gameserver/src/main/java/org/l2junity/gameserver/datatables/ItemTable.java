@@ -28,7 +28,8 @@ import java.util.Set;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
-import java.util.logging.Logger;
+
+import javolution.util.FastMap;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -50,16 +51,16 @@ import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.util.GMAudit;
-
-import javolution.util.FastMap;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class serves as a container for all item templates in the game.
  */
 public class ItemTable
 {
-	private static Logger LOGGER = Logger.getLogger(ItemTable.class.getName());
-	private static Logger LOGGER_ITEMS = Logger.getLogger("item");
+	private static Logger LOGGER = LoggerFactory.getLogger(ItemTable.class.getName());
+	private static Logger LOGGER_ITEMS = LoggerFactory.getLogger("item");
 	
 	public static final Map<String, Integer> _slots = new FastMap<>();
 	
@@ -152,10 +153,10 @@ public class ItemTable
 			}
 		}
 		buildFastLookupTable(highest);
-		LOGGER.log(Level.INFO, getClass().getSimpleName() + ": Loaded: " + _etcItems.size() + " Etc Items");
-		LOGGER.log(Level.INFO, getClass().getSimpleName() + ": Loaded: " + _armors.size() + " Armor Items");
-		LOGGER.log(Level.INFO, getClass().getSimpleName() + ": Loaded: " + _weapons.size() + " Weapon Items");
-		LOGGER.log(Level.INFO, getClass().getSimpleName() + ": Loaded: " + (_etcItems.size() + _armors.size() + _weapons.size()) + " Items in total.");
+		LOGGER.info(getClass().getSimpleName() + ": Loaded: " + _etcItems.size() + " Etc Items");
+		LOGGER.info(getClass().getSimpleName() + ": Loaded: " + _armors.size() + " Armor Items");
+		LOGGER.info(getClass().getSimpleName() + ": Loaded: " + _weapons.size() + " Weapon Items");
+		LOGGER.info(getClass().getSimpleName() + ": Loaded: " + (_etcItems.size() + _armors.size() + _weapons.size()) + " Items in total.");
 	}
 	
 	/**
@@ -241,7 +242,7 @@ public class ItemTable
 		
 		if (Config.DEBUG)
 		{
-			LOGGER.fine(getClass().getSimpleName() + ": Item created  oid:" + item.getObjectId() + " itemid:" + itemId);
+			LOGGER.debug(getClass().getSimpleName() + ": Item created  oid:" + item.getObjectId() + " itemid:" + itemId);
 		}
 		
 		// Add the L2ItemInstance object to _allObjects of L2world
@@ -376,7 +377,7 @@ public class ItemTable
 				}
 				catch (Exception e)
 				{
-					LOGGER.log(Level.WARNING, "could not delete pet objectid:", e);
+					LOGGER.warn("could not delete pet objectid:", e);
 				}
 			}
 		}

@@ -26,8 +26,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
@@ -65,14 +63,16 @@ import org.l2junity.gameserver.model.stats.TraitType;
 import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
 import org.l2junity.gameserver.model.zone.ZoneId;
-import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
+import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class Skill implements IIdentifiable
 {
-	private static final Logger _log = Logger.getLogger(Skill.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(Skill.class.getName());
 	
 	private static final WorldObject[] EMPTY_TARGET_LIST = new WorldObject[0];
 	
@@ -302,7 +302,7 @@ public final class Skill implements IIdentifiable
 					}
 					catch (Exception e)
 					{
-						_log.warning("Bad data in rideState for skill " + this + " !\n" + e);
+						_log.warn("Bad data in rideState for skill " + this + " !\n" + e);
 					}
 				}
 			}
@@ -378,7 +378,7 @@ public final class Skill implements IIdentifiable
 		{
 			if (capsuled_items.isEmpty())
 			{
-				_log.warning("Empty Extractable Item Skill data in Skill Id: " + _id);
+				_log.warn("Empty Extractable Item Skill data in Skill Id: " + _id);
 			}
 			
 			_extractableItems = parseExtractableSkill(_id, _level, capsuled_items);
@@ -1078,7 +1078,7 @@ public final class Skill implements IIdentifiable
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "Exception in L2Skill.getTargetList(): " + e.getMessage(), e);
+				_log.warn("Exception in L2Skill.getTargetList(): " + e.getMessage(), e);
 			}
 		}
 		activeChar.sendMessage("Target type of skill is not currently handled.");
@@ -1648,7 +1648,7 @@ public final class Skill implements IIdentifiable
 			prodData = prodList.split(",");
 			if (prodData.length < 3)
 			{
-				_log.warning("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " -> wrong seperator!");
+				_log.warn("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " -> wrong seperator!");
 			}
 			List<ItemHolder> items = null;
 			double chance = 0;
@@ -1662,7 +1662,7 @@ public final class Skill implements IIdentifiable
 					final int quantity = Integer.parseInt(prodData[j + 1]);
 					if ((prodId <= 0) || (quantity <= 0))
 					{
-						_log.warning("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " wrong production Id: " + prodId + " or wrond quantity: " + quantity + "!");
+						_log.warn("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " wrong production Id: " + prodId + " or wrond quantity: " + quantity + "!");
 					}
 					items.add(new ItemHolder(prodId, quantity));
 				}
@@ -1670,14 +1670,14 @@ public final class Skill implements IIdentifiable
 			}
 			catch (Exception e)
 			{
-				_log.warning("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " -> incomplete/invalid production data or wrong seperator!");
+				_log.warn("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " -> incomplete/invalid production data or wrong seperator!");
 			}
 			products.add(new ExtractableProductItem(items, chance));
 		}
 		
 		if (products.isEmpty())
 		{
-			_log.warning("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " -> There are no production items!");
+			_log.warn("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " -> There are no production items!");
 		}
 		return new ExtractableSkill(SkillData.getSkillHashCode(skillId, skillLvl), products);
 	}
@@ -1701,7 +1701,7 @@ public final class Skill implements IIdentifiable
 				}
 				else
 				{
-					_log.warning("Invalid AbnormalVisualEffect(" + aveString + ") found for Skill(" + this + ")");
+					_log.warn("Invalid AbnormalVisualEffect(" + aveString + ") found for Skill(" + this + ")");
 				}
 			}
 			

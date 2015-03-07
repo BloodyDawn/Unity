@@ -18,9 +18,9 @@
  */
 package org.l2junity.gameserver.handler;
 
-import java.util.logging.Logger;
-
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Community Board interface.
@@ -28,7 +28,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
  */
 public interface IParseBoardHandler
 {
-	public static final Logger LOG = Logger.getLogger(IParseBoardHandler.class.getName());
+	public static final Logger LOG = LoggerFactory.getLogger(IParseBoardHandler.class.getName());
 	
 	/**
 	 * Parses a community board command.

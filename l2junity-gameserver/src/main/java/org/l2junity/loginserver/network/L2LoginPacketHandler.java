@@ -19,7 +19,6 @@
 package org.l2junity.loginserver.network;
 
 import java.nio.ByteBuffer;
-import java.util.logging.Logger;
 
 import org.l2junity.loginserver.network.L2LoginClient.LoginClientState;
 import org.l2junity.loginserver.network.clientpackets.AuthGameGuard;
@@ -28,6 +27,8 @@ import org.l2junity.loginserver.network.clientpackets.RequestServerList;
 import org.l2junity.loginserver.network.clientpackets.RequestServerLogin;
 import org.mmocore.network.IPacketHandler;
 import org.mmocore.network.ReceivablePacket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Handler for packets received by Login Server
@@ -35,7 +36,7 @@ import org.mmocore.network.ReceivablePacket;
  */
 public final class L2LoginPacketHandler implements IPacketHandler<L2LoginClient>
 {
-	protected static final Logger _log = Logger.getLogger(L2LoginPacketHandler.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(L2LoginPacketHandler.class.getName());
 	
 	@Override
 	public ReceivablePacket<L2LoginClient> handlePacket(ByteBuffer buf, L2LoginClient client)

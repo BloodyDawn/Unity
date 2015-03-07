@@ -30,8 +30,8 @@ import org.l2junity.gameserver.model.primeshop.PrimeShopItem;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.recv.IClientIncomingPacket;
 import org.l2junity.gameserver.network.client.send.primeshop.ExBRBuyProduct;
-import org.l2junity.gameserver.network.client.send.primeshop.ExBRGamePoint;
 import org.l2junity.gameserver.network.client.send.primeshop.ExBRBuyProduct.ExBrProductReplyType;
+import org.l2junity.gameserver.network.client.send.primeshop.ExBRGamePoint;
 import org.l2junity.gameserver.util.Util;
 import org.l2junity.network.PacketReader;
 

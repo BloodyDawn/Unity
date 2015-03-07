@@ -134,7 +134,7 @@ public final class InstanceManager implements IXmlReader
 		}
 		catch (Exception e)
 		{
-			LOGGER.warning(getClass().getSimpleName() + ": Could not insert character instance time data: " + e.getMessage());
+			LOGGER.warn(getClass().getSimpleName() + ": Could not insert character instance time data: " + e.getMessage());
 		}
 	}
 	
@@ -154,7 +154,7 @@ public final class InstanceManager implements IXmlReader
 		}
 		catch (Exception e)
 		{
-			LOGGER.warning(getClass().getSimpleName() + ": Could not delete character instance time data: " + e.getMessage());
+			LOGGER.warn(getClass().getSimpleName() + ": Could not delete character instance time data: " + e.getMessage());
 		}
 	}
 	
@@ -191,7 +191,7 @@ public final class InstanceManager implements IXmlReader
 		}
 		catch (Exception e)
 		{
-			LOGGER.warning(getClass().getSimpleName() + ": Could not delete character instance time data: " + e.getMessage());
+			LOGGER.warn(getClass().getSimpleName() + ": Could not delete character instance time data: " + e.getMessage());
 		}
 	}
 	
@@ -371,7 +371,7 @@ public final class InstanceManager implements IXmlReader
 			_dynamic++;
 			if (_dynamic == Integer.MAX_VALUE)
 			{
-				LOGGER.warning(getClass().getSimpleName() + ": More then " + (Integer.MAX_VALUE - 300000) + " instances created");
+				LOGGER.warn(getClass().getSimpleName() + ": More then " + (Integer.MAX_VALUE - 300000) + " instances created");
 				_dynamic = 300000;
 			}
 		}

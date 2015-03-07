@@ -25,14 +25,13 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.clientstrings.Builder;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -43,7 +42,7 @@ import org.w3c.dom.Node;
  */
 public final class NpcStringId
 {
-	private static final Logger _log = Logger.getLogger(NpcStringId.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(NpcStringId.class.getName());
 	private static final NSLocalisation[] EMPTY_NSL_ARRAY = new NSLocalisation[0];
 	public static final NpcStringId[] EMPTY_ARRAY = new NpcStringId[0];
 	
@@ -33119,7 +33118,7 @@ public final class NpcStringId
 				}
 				catch (final Exception e)
 				{
-					_log.log(Level.WARNING, "NpcStringId: Failed field access for '" + field.getName() + "'", e);
+					_log.warn("NpcStringId: Failed field access for '" + field.getName() + "'", e);
 				}
 			}
 		}
@@ -33185,7 +33184,7 @@ public final class NpcStringId
 		
 		if (!Config.L2JMOD_MULTILANG_NS_ENABLE)
 		{
-			_log.log(Level.INFO, "NpcStringId: MultiLanguage disabled.");
+			_log.info("NpcStringId: MultiLanguage disabled.");
 			return;
 		}
 		
@@ -33208,7 +33207,7 @@ public final class NpcStringId
 				continue;
 			}
 			
-			_log.log(Level.INFO, "NpcStringId: Loading localisation for '" + lang + "'");
+			_log.info("NpcStringId: Loading localisation for '" + lang + "'");
 			
 			try
 			{
@@ -33228,7 +33227,7 @@ public final class NpcStringId
 									nsId = getNpcStringId(Integer.parseInt(node.getNodeValue()));
 									if (nsId == null)
 									{
-										_log.log(Level.WARNING, "NpcStringId: Unknown NSID '" + node.getNodeValue() + "', lang '" + lang + "'.");
+										_log.warn("NpcStringId: Unknown NSID '" + node.getNodeValue() + "', lang '" + lang + "'.");
 										continue;
 									}
 								}
@@ -33238,7 +33237,7 @@ public final class NpcStringId
 									nsId = getNpcStringId(node.getNodeValue());
 									if (nsId == null)
 									{
-										_log.log(Level.WARNING, "NpcStringId: Unknown NSID '" + node.getNodeValue() + "', lang '" + lang + "'.");
+										_log.warn("NpcStringId: Unknown NSID '" + node.getNodeValue() + "', lang '" + lang + "'.");
 										continue;
 									}
 								}
@@ -33246,14 +33245,14 @@ public final class NpcStringId
 								node = nnmb.getNamedItem("text");
 								if (node == null)
 								{
-									_log.log(Level.WARNING, "NpcStringId: No text defined for NSID '" + nsId + "', lang '" + lang + "'.");
+									_log.warn("NpcStringId: No text defined for NSID '" + nsId + "', lang '" + lang + "'.");
 									continue;
 								}
 								
 								text = node.getNodeValue();
 								if (text.isEmpty() || (text.length() > 255))
 								{
-									_log.log(Level.WARNING, "NpcStringId: Invalid text defined for NSID '" + nsId + "' (to long or empty), lang '" + lang + "'.");
+									_log.warn("NpcStringId: Invalid text defined for NSID '" + nsId + "' (to long or empty), lang '" + lang + "'.");
 									continue;
 								}
 								
@@ -33265,7 +33264,7 @@ public final class NpcStringId
 			}
 			catch (final Exception e)
 			{
-				_log.log(Level.SEVERE, "NpcStringId: Failed loading '" + file + "'", e);
+				_log.error("NpcStringId: Failed loading '" + file + "'", e);
 			}
 		}
 	}

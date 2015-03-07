@@ -22,7 +22,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.enums.InstanceReenterType;
@@ -37,6 +36,8 @@ import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import ai.npc.AbstractNpcAI;
 
@@ -46,7 +47,7 @@ import ai.npc.AbstractNpcAI;
  */
 public abstract class AbstractInstance extends AbstractNpcAI
 {
-	public final Logger _log = Logger.getLogger(getClass().getSimpleName());
+	public final Logger _log = LoggerFactory.getLogger(getClass().getSimpleName());
 	
 	public AbstractInstance(String name, String desc)
 	{

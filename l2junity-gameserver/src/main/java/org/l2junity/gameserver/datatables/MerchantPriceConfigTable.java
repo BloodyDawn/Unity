@@ -21,9 +21,6 @@ package org.l2junity.gameserver.datatables;
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
@@ -35,6 +32,8 @@ import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
 import org.l2junity.gameserver.model.entity.Castle;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
@@ -45,7 +44,7 @@ import org.xml.sax.SAXException;
 public class MerchantPriceConfigTable implements InstanceListManager
 {
 	// Zoey76: TODO: Implement using IXmlReader.
-	private static Logger LOGGER = Logger.getLogger(MerchantPriceConfigTable.class.getName());
+	private static Logger LOGGER = LoggerFactory.getLogger(MerchantPriceConfigTable.class.getName());
 	
 	public static MerchantPriceConfigTable getInstance()
 	{
@@ -170,7 +169,7 @@ public class MerchantPriceConfigTable implements InstanceListManager
 		}
 		catch (Exception e)
 		{
-			LOGGER.log(Level.SEVERE, getClass().getSimpleName() + ": Failed loading MerchantPriceConfigTable. Reason: " + e.getMessage(), e);
+			LOGGER.error(getClass().getSimpleName() + ": Failed loading MerchantPriceConfigTable. Reason: " + e.getMessage(), e);
 		}
 	}
 	

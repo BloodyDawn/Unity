@@ -23,8 +23,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.enums.ShortcutType;
@@ -35,10 +33,12 @@ import org.l2junity.gameserver.model.items.type.EtcItemType;
 import org.l2junity.gameserver.network.client.send.ExAutoSoulShot;
 import org.l2junity.gameserver.network.client.send.ShortCutInit;
 import org.l2junity.gameserver.network.client.send.ShortCutRegister;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ShortCuts implements IRestorable
 {
-	private static Logger _log = Logger.getLogger(ShortCuts.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(ShortCuts.class.getName());
 	private static final int MAX_SHORTCUTS_PER_BAR = 12;
 	private final PlayerInstance _owner;
 	private final Map<Integer, Shortcut> _shortCuts = new TreeMap<>();
@@ -105,7 +105,7 @@ public class ShortCuts implements IRestorable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not store character shortcut: " + e.getMessage(), e);
+			_log.warn("Could not store character shortcut: " + e.getMessage(), e);
 		}
 	}
 	
@@ -170,7 +170,7 @@ public class ShortCuts implements IRestorable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not delete character shortcut: " + e.getMessage(), e);
+			_log.warn("Could not delete character shortcut: " + e.getMessage(), e);
 		}
 	}
 	
@@ -200,7 +200,7 @@ public class ShortCuts implements IRestorable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not restore character shortcuts: " + e.getMessage(), e);
+			_log.warn("Could not restore character shortcuts: " + e.getMessage(), e);
 			return false;
 		}
 		

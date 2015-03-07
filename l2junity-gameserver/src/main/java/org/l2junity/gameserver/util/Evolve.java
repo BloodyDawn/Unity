@@ -20,8 +20,6 @@ package org.l2junity.gameserver.util;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -32,8 +30,8 @@ import org.l2junity.gameserver.model.PetData;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.send.ExAdenaInvenCount;
@@ -43,13 +41,15 @@ import org.l2junity.gameserver.network.client.send.MagicSkillLaunched;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * UnAfraid: TODO: MOVE IT TO DP AI
  */
 public final class Evolve
 {
-	protected static final Logger _log = Logger.getLogger(Evolve.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(Evolve.class.getName());
 	
 	public static final boolean doEvolve(PlayerInstance player, Npc npc, int itemIdtake, int itemIdgive, int petminlvl)
 	{
@@ -300,7 +300,7 @@ public final class Evolve
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "", e);
+				_log.warn("", e);
 			}
 		}
 	}
@@ -327,7 +327,7 @@ public final class Evolve
 			}
 			catch (Throwable e)
 			{
-				_log.log(Level.WARNING, "", e);
+				_log.warn("", e);
 			}
 		}
 	}

@@ -136,7 +136,7 @@ public final class FishData implements IXmlReader
 			}
 			default:
 			{
-				LOGGER.warning(getClass().getSimpleName() + ": Unmanaged fish grade!");
+				LOGGER.warn(getClass().getSimpleName() + ": Unmanaged fish grade!");
 				return result;
 			}
 		}
@@ -152,7 +152,7 @@ public final class FishData implements IXmlReader
 		
 		if (result.isEmpty())
 		{
-			LOGGER.warning(getClass().getSimpleName() + ": Cannot find any fish for level: " + level + " group: " + group + " and grade: " + grade + "!");
+			LOGGER.warn(getClass().getSimpleName() + ": Cannot find any fish for level: " + level + " group: " + group + " and grade: " + grade + "!");
 		}
 		return result;
 	}

@@ -21,8 +21,8 @@ package org.l2junity.gameserver.model;
 import java.util.concurrent.ScheduledFuture;
 
 import org.l2junity.gameserver.ThreadPoolManager;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author DrHouse

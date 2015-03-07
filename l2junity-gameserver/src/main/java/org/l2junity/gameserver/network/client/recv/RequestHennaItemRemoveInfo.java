@@ -52,7 +52,7 @@ public final class RequestHennaItemRemoveInfo implements IClientIncomingPacket
 		final Henna henna = HennaData.getInstance().getHenna(_symbolId);
 		if (henna == null)
 		{
-			_log.warning(getClass().getName() + ": Invalid Henna Id: " + _symbolId + " from player " + activeChar);
+			_log.warn(getClass().getName() + ": Invalid Henna Id: " + _symbolId + " from player " + activeChar);
 			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}

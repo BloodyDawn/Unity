@@ -162,7 +162,7 @@ public final class RequestDropItem implements IClientIncomingPacket
 		{
 			if (Config.DEBUG)
 			{
-				_log.finest(activeChar.getObjectId() + ":player tried to drop quest item");
+				_log.trace(activeChar.getObjectId() + ":player tried to drop quest item");
 			}
 			activeChar.sendPacket(SystemMessageId.THAT_ITEM_CANNOT_BE_DISCARDED_OR_EXCHANGED);
 			return;
@@ -172,7 +172,7 @@ public final class RequestDropItem implements IClientIncomingPacket
 		{
 			if (Config.DEBUG)
 			{
-				_log.finest(activeChar.getObjectId() + ": trying to drop too far away");
+				_log.trace(activeChar.getObjectId() + ": trying to drop too far away");
 			}
 			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_DISCARD_SOMETHING_THAT_FAR_AWAY_FROM_YOU);
 			return;
@@ -186,7 +186,7 @@ public final class RequestDropItem implements IClientIncomingPacket
 		
 		if (Config.DEBUG)
 		{
-			_log.fine("requested drop item " + _objectId + "(" + item.getCount() + ") at " + _x + "/" + _y + "/" + _z);
+			_log.debug("requested drop item " + _objectId + "(" + item.getCount() + ") at " + _x + "/" + _y + "/" + _z);
 		}
 		
 		if (item.isEquipped())
@@ -209,7 +209,7 @@ public final class RequestDropItem implements IClientIncomingPacket
 		
 		if (Config.DEBUG)
 		{
-			_log.fine("dropping " + _objectId + " item(" + _count + ") at: " + _x + " " + _y + " " + _z);
+			_log.debug("dropping " + _objectId + " item(" + _count + ") at: " + _x + " " + _y + " " + _z);
 		}
 		
 		// activeChar.broadcastUserInfo();
@@ -223,7 +223,7 @@ public final class RequestDropItem implements IClientIncomingPacket
 		if ((dropedItem != null) && (dropedItem.getId() == Inventory.ADENA_ID) && (dropedItem.getCount() >= 1000000))
 		{
 			String msg = "Character (" + activeChar.getName() + ") has dropped (" + dropedItem.getCount() + ")adena at (" + _x + "," + _y + "," + _z + ")";
-			_log.warning(msg);
+			_log.warn(msg);
 			AdminData.getInstance().broadcastMessageToGMs(msg);
 		}
 	}

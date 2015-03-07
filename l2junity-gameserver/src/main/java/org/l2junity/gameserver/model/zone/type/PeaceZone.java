@@ -21,8 +21,8 @@ package org.l2junity.gameserver.model.zone.type;
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.model.zone.ZoneType;
 
 /**
  * A Peace Zone

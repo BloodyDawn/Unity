@@ -19,9 +19,6 @@
 package org.l2junity.gameserver.network.client.recv;
 
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
@@ -49,11 +46,13 @@ import org.l2junity.gameserver.network.client.send.CharCreateOk;
 import org.l2junity.gameserver.network.client.send.CharSelectionInfo;
 import org.l2junity.gameserver.util.Util;
 import org.l2junity.network.PacketReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("unused")
 public final class CharacterCreate implements IClientIncomingPacket
 {
-	protected static final Logger _logAccounting = Logger.getLogger("accounting");
+	protected static final Logger _logAccounting = LoggerFactory.getLogger("accounting");
 	
 	// cSdddddddddddd
 	private String _name;
@@ -97,7 +96,7 @@ public final class CharacterCreate implements IClientIncomingPacket
 		{
 			if (Config.DEBUG)
 			{
-				_log.fine("Character Creation Failure: Character name " + _name + " is invalid. Message generated: Your title cannot exceed 16 characters in length. Please try again.");
+				_log.debug("Character Creation Failure: Character name " + _name + " is invalid. Message generated: Your title cannot exceed 16 characters in length. Please try again.");
 			}
 			
 			client.sendPacket(new CharCreateFail(CharCreateFail.REASON_16_ENG_CHARS));
@@ -121,7 +120,7 @@ public final class CharacterCreate implements IClientIncomingPacket
 		{
 			if (Config.DEBUG)
 			{
-				_log.fine("Character Creation Failure: Character name " + _name + " is invalid. Message generated: Incorrect name. Please try again.");
+				_log.debug("Character Creation Failure: Character name " + _name + " is invalid. Message generated: Incorrect name. Please try again.");
 			}
 			
 			client.sendPacket(new CharCreateFail(CharCreateFail.REASON_INCORRECT_NAME));
@@ -130,7 +129,7 @@ public final class CharacterCreate implements IClientIncomingPacket
 		
 		if ((_face > 2) || (_face < 0))
 		{
-			_log.warning("Character Creation Failure: Character face " + _face + " is invalid. Possible client hack. " + client);
+			_log.warn("Character Creation Failure: Character face " + _face + " is invalid. Possible client hack. " + client);
 			
 			client.sendPacket(new CharCreateFail(CharCreateFail.REASON_CREATION_FAILED));
 			return;
@@ -138,7 +137,7 @@ public final class CharacterCreate implements IClientIncomingPacket
 		
 		if ((_hairStyle < 0) || ((_sex == 0) && (_hairStyle > 4)) || ((_sex != 0) && (_hairStyle > 6)))
 		{
-			_log.warning("Character Creation Failure: Character hair style " + _hairStyle + " is invalid. Possible client hack. " + client);
+			_log.warn("Character Creation Failure: Character hair style " + _hairStyle + " is invalid. Possible client hack. " + client);
 			
 			client.sendPacket(new CharCreateFail(CharCreateFail.REASON_CREATION_FAILED));
 			return;
@@ -146,7 +145,7 @@ public final class CharacterCreate implements IClientIncomingPacket
 		
 		if ((_hairColor > 3) || (_hairColor < 0))
 		{
-			_log.warning("Character Creation Failure: Character hair color " + _hairColor + " is invalid. Possible client hack. " + client);
+			_log.warn("Character Creation Failure: Character hair color " + _hairColor + " is invalid. Possible client hack. " + client);
 			
 			client.sendPacket(new CharCreateFail(CharCreateFail.REASON_CREATION_FAILED));
 			return;
@@ -164,7 +163,7 @@ public final class CharacterCreate implements IClientIncomingPacket
 			{
 				if (Config.DEBUG)
 				{
-					_log.fine("Max number of characters reached. Creation failed.");
+					_log.debug("Max number of characters reached. Creation failed.");
 				}
 				
 				client.sendPacket(new CharCreateFail(CharCreateFail.REASON_TOO_MANY_CHARACTERS));
@@ -174,7 +173,7 @@ public final class CharacterCreate implements IClientIncomingPacket
 			{
 				if (Config.DEBUG)
 				{
-					_log.fine("Character Creation Failure: Message generated: You cannot create another character. Please delete the existing character and try again.");
+					_log.debug("Character Creation Failure: Message generated: You cannot create another character. Please delete the existing character and try again.");
 				}
 				
 				client.sendPacket(new CharCreateFail(CharCreateFail.REASON_NAME_ALREADY_EXISTS));
@@ -186,7 +185,7 @@ public final class CharacterCreate implements IClientIncomingPacket
 			{
 				if (Config.DEBUG)
 				{
-					_log.fine("Character Creation Failure: " + _name + " classId: " + _classId + " Template: " + template + " Message generated: Your character creation has failed.");
+					_log.debug("Character Creation Failure: " + _name + " classId: " + _classId + " Template: " + template + " Message generated: Your character creation has failed.");
 				}
 				
 				client.sendPacket(new CharCreateFail(CharCreateFail.REASON_CREATION_FAILED));
@@ -205,13 +204,7 @@ public final class CharacterCreate implements IClientIncomingPacket
 		
 		initNewChar(client, newChar);
 		
-		LogRecord record = new LogRecord(Level.INFO, "Created new character");
-		record.setParameters(new Object[]
-		{
-			newChar,
-			client
-		});
-		_logAccounting.log(record);
+		_logAccounting.info("Created new character, {}, {}", newChar, client);
 	}
 	
 	private static boolean isValidName(String text)
@@ -223,7 +216,7 @@ public final class CharacterCreate implements IClientIncomingPacket
 	{
 		if (Config.DEBUG)
 		{
-			_log.fine("Character init start");
+			_log.debug("Character init start");
 		}
 		
 		World.getInstance().storeObject(newChar);
@@ -259,7 +252,7 @@ public final class CharacterCreate implements IClientIncomingPacket
 				final ItemInstance item = newChar.getInventory().addItem("Init", ie.getId(), ie.getCount(), newChar, null);
 				if (item == null)
 				{
-					_log.warning("Could not create item during char creation: itemId " + ie.getId() + ", amount " + ie.getCount() + ".");
+					_log.warn("Could not create item during char creation: itemId " + ie.getId() + ", amount " + ie.getCount() + ".");
 					continue;
 				}
 				
@@ -279,7 +272,7 @@ public final class CharacterCreate implements IClientIncomingPacket
 		{
 			if (Config.DEBUG)
 			{
-				_log.fine("Adding starter skill:" + skill.getSkillId() + " / " + skill.getSkillLevel());
+				_log.debug("Adding starter skill:" + skill.getSkillId() + " / " + skill.getSkillLevel());
 			}
 			
 			newChar.addSkill(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()), true);
@@ -302,7 +295,7 @@ public final class CharacterCreate implements IClientIncomingPacket
 		
 		if (Config.DEBUG)
 		{
-			_log.fine("Character init end");
+			_log.debug("Character init end");
 		}
 	}
 }

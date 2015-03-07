@@ -21,8 +21,8 @@ package org.l2junity.gameserver.taskmanager.tasks;
 import org.l2junity.gameserver.instancemanager.GlobalVariablesManager;
 import org.l2junity.gameserver.taskmanager.Task;
 import org.l2junity.gameserver.taskmanager.TaskManager;
-import org.l2junity.gameserver.taskmanager.TaskTypes;
 import org.l2junity.gameserver.taskmanager.TaskManager.ExecutedTask;
+import org.l2junity.gameserver.taskmanager.TaskTypes;
 
 /**
  * @author Gigiikun

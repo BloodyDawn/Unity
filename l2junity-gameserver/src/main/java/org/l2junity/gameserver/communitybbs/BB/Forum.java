@@ -23,19 +23,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import org.l2junity.DatabaseFactory;
-import org.l2junity.gameserver.communitybbs.Manager.ForumsBBSManager;
-import org.l2junity.gameserver.communitybbs.Manager.TopicBBSManager;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
 
+import org.l2junity.DatabaseFactory;
+import org.l2junity.gameserver.communitybbs.Manager.ForumsBBSManager;
+import org.l2junity.gameserver.communitybbs.Manager.TopicBBSManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Forum
 {
-	private static final Logger _log = Logger.getLogger(Forum.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(Forum.class.getName());
 	
 	// type
 	public static final int ROOT = 0;
@@ -116,7 +116,7 @@ public class Forum
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Data error on Forum " + _forumId + " : " + e.getMessage(), e);
+			_log.warn("Data error on Forum " + _forumId + " : " + e.getMessage(), e);
 		}
 		
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
@@ -138,7 +138,7 @@ public class Forum
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Data error on Forum " + _forumId + " : " + e.getMessage(), e);
+			_log.warn("Data error on Forum " + _forumId + " : " + e.getMessage(), e);
 		}
 	}
 	
@@ -160,7 +160,7 @@ public class Forum
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Data error on Forum (children): " + e.getMessage(), e);
+			_log.warn("Data error on Forum (children): " + e.getMessage(), e);
 		}
 	}
 	
@@ -244,7 +244,7 @@ public class Forum
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Error while saving new Forum to db " + e.getMessage(), e);
+			_log.warn("Error while saving new Forum to db " + e.getMessage(), e);
 		}
 	}
 	

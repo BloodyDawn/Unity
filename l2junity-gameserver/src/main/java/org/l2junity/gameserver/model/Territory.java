@@ -20,9 +20,10 @@ package org.l2junity.gameserver.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
 import org.l2junity.commons.util.Rnd;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @version 0.1, 2005-03-12
@@ -30,7 +31,7 @@ import org.l2junity.commons.util.Rnd;
  */
 public class Territory
 {
-	private static Logger _log = Logger.getLogger(Territory.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(Territory.class.getName());
 	
 	protected static class Point
 	{
@@ -189,7 +190,7 @@ public class Territory
 				return new Location(x, y, Rnd.get(zmin, _zMax));
 			}
 		}
-		_log.warning("Can't make point for territory " + _terr);
+		_log.warn("Can't make point for territory " + _terr);
 		return null;
 	}
 	

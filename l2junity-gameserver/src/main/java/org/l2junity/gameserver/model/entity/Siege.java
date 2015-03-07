@@ -28,9 +28,6 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ScheduledFuture;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import javolution.util.FastList;
 
 import org.l2junity.Config;
@@ -68,10 +65,12 @@ import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.UserInfo;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Broadcast;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Siege implements Siegable
 {
-	protected static final Logger _log = Logger.getLogger(Siege.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(Siege.class.getName());
 	
 	// typeId's
 	public static final byte OWNER = -1;
@@ -143,7 +142,7 @@ public class Siege implements Siegable
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "", e);
+				_log.error("", e);
 			}
 		}
 	}
@@ -216,7 +215,7 @@ public class Siege implements Siegable
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "", e);
+				_log.error("", e);
 			}
 		}
 	}
@@ -803,7 +802,7 @@ public class Siege implements Siegable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception: clearSiegeClan(): " + e.getMessage(), e);
+			_log.warn("Exception: clearSiegeClan(): " + e.getMessage(), e);
 		}
 	}
 	
@@ -820,7 +819,7 @@ public class Siege implements Siegable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception: clearSiegeWaitingClan(): " + e.getMessage(), e);
+			_log.warn("Exception: clearSiegeWaitingClan(): " + e.getMessage(), e);
 		}
 	}
 	
@@ -1058,7 +1057,7 @@ public class Siege implements Siegable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception: removeSiegeClan(): " + e.getMessage(), e);
+			_log.warn("Exception: removeSiegeClan(): " + e.getMessage(), e);
 		}
 	}
 	
@@ -1350,7 +1349,7 @@ public class Siege implements Siegable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception: loadSiegeClan(): " + e.getMessage(), e);
+			_log.warn("Exception: loadSiegeClan(): " + e.getMessage(), e);
 		}
 	}
 	
@@ -1435,7 +1434,7 @@ public class Siege implements Siegable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception: saveSiegeDate(): " + e.getMessage(), e);
+			_log.warn("Exception: saveSiegeDate(): " + e.getMessage(), e);
 		}
 	}
 	
@@ -1506,7 +1505,7 @@ public class Siege implements Siegable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception: saveSiegeClan(L2Clan clan, int typeId, boolean isUpdateRegistration): " + e.getMessage(), e);
+			_log.warn("Exception: saveSiegeClan(L2Clan clan, int typeId, boolean isUpdateRegistration): " + e.getMessage(), e);
 		}
 	}
 	
@@ -1559,7 +1558,7 @@ public class Siege implements Siegable
 			}
 			catch (Exception e)
 			{
-				_log.warning(getClass().getName() + ": Cannot spawn control tower! " + e);
+				_log.warn(getClass().getName() + ": Cannot spawn control tower! " + e);
 			}
 		}
 		_controlTowerCount = _controlTowers.size();
@@ -1583,7 +1582,7 @@ public class Siege implements Siegable
 			}
 			catch (Exception e)
 			{
-				_log.warning(getClass().getName() + ": Cannot spawn flame tower! " + e);
+				_log.warn(getClass().getName() + ": Cannot spawn flame tower! " + e);
 			}
 		}
 	}

@@ -21,9 +21,9 @@ package org.l2junity.loginserver.network.clientpackets;
 import org.l2junity.Config;
 import org.l2junity.loginserver.LoginController;
 import org.l2junity.loginserver.SessionKey;
-import org.l2junity.loginserver.network.serverpackets.PlayOk;
 import org.l2junity.loginserver.network.serverpackets.LoginFail.LoginFailReason;
 import org.l2junity.loginserver.network.serverpackets.PlayFail.PlayFailReason;
+import org.l2junity.loginserver.network.serverpackets.PlayOk;
 
 /**
  * <pre>

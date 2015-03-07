@@ -35,8 +35,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.locks.ReentrantLock;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -163,6 +161,8 @@ import org.l2junity.gameserver.pathfinding.AbstractNodeLoc;
 import org.l2junity.gameserver.pathfinding.PathFinding;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
 import org.l2junity.gameserver.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Mother class of all character objects of the world (PC, NPC...)<br>
@@ -186,7 +186,7 @@ import org.l2junity.gameserver.util.Util;
  */
 public abstract class Creature extends WorldObject implements ISkillsHolder, IDeletable
 {
-	public static final Logger _log = Logger.getLogger(Creature.class.getName());
+	public static final Logger _log = LoggerFactory.getLogger(Creature.class.getName());
 	
 	private volatile Set<Creature> _attackByList;
 	private volatile boolean _isCastingNow = false;
@@ -4279,7 +4279,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			distFraction = distPassed / delta;
 		}
 		
-		// if (Config.DEVELOPER) _log.warning("Move Ticks:" + (gameTicks - m._moveTimestamp) + ", distPassed:" + distPassed + ", distFraction:" + distFraction);
+		// if (Config.DEVELOPER) _log.warn("Move Ticks:" + (gameTicks - m._moveTimestamp) + ", distPassed:" + distPassed + ", distFraction:" + distFraction);
 		
 		if (distFraction > 1)
 		{
@@ -4314,7 +4314,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				}
 				catch (final Throwable e)
 				{
-					_log.log(Level.WARNING, "", e);
+					_log.warn("", e);
 				}
 			});
 			
@@ -4621,7 +4621,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				if ((curX < World.MAP_MIN_X) || (curX > World.MAP_MAX_X) || (curY < World.MAP_MIN_Y) || (curY > World.MAP_MAX_Y))
 				{
 					// Temporary fix for character outside world region errors
-					_log.warning("Character " + getName() + " outside world area, in coordinates x:" + curX + " y:" + curY);
+					_log.warn("Character " + getName() + " outside world area, in coordinates x:" + curX + " y:" + curY);
 					getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 					if (isPlayer())
 					{
@@ -5023,7 +5023,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				}
 				else
 				{
-					_log.warning("Skill 4515 at level 1 is missing in DP.");
+					_log.warn("Skill 4515 at level 1 is missing in DP.");
 				}
 				
 				damage = 0; // prevents messing up drop calculation
@@ -5774,7 +5774,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		}
 		catch (NullPointerException e)
 		{
-			_log.log(Level.WARNING, "", e);
+			_log.warn("", e);
 		}
 		
 		if (mut.getSkillTime() > 0)
@@ -5925,7 +5925,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					}
 					else
 					{
-						_log.warning("Skill ID " + curse.getId() + " level " + curse.getLevel() + " is missing in DP!");
+						_log.warn("Skill ID " + curse.getId() + " level " + curse.getLevel() + " is missing in DP!");
 					}
 					return;
 				}
@@ -6111,7 +6111,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": callSkill() failed.", e);
+			_log.warn(getClass().getSimpleName() + ": callSkill() failed.", e);
 		}
 	}
 	
@@ -6799,7 +6799,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "", e);
+			_log.warn("", e);
 		}
 	}
 	

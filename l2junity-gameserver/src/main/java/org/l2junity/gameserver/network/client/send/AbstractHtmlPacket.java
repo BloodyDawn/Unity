@@ -18,8 +18,6 @@
  */
 package org.l2junity.gameserver.network.client.send;
 
-import java.util.logging.Level;
-
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.enums.HtmlActionScope;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -77,7 +75,7 @@ public abstract class AbstractHtmlPacket implements IClientOutgoingPacket
 	{
 		if (html.length() > 17200)
 		{
-			_log.log(Level.WARNING, "Html is too long! this will crash the client!", new Throwable());
+			_log.warn("Html is too long! this will crash the client!", new Throwable());
 			_html = html.substring(0, 17200);
 		}
 		
@@ -95,7 +93,7 @@ public abstract class AbstractHtmlPacket implements IClientOutgoingPacket
 		if (content == null)
 		{
 			setHtml("<html><body>My Text is missing:<br>" + path + "</body></html>");
-			_log.warning("missing html page " + path);
+			_log.warn("missing html page " + path);
 			return false;
 		}
 		

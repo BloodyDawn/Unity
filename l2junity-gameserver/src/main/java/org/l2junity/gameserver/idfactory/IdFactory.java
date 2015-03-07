@@ -26,11 +26,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class ...
@@ -38,7 +38,7 @@ import org.l2junity.DatabaseFactory;
  */
 public abstract class IdFactory
 {
-	protected final Logger _log = Logger.getLogger(getClass().getName());
+	protected final Logger _log = LoggerFactory.getLogger(getClass().getName());
 	
 	@Deprecated
 	protected static final String[] ID_UPDATES =
@@ -183,7 +183,7 @@ public abstract class IdFactory
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, "Could not update characters online status: " + e.getMessage(), e);
+			_log.warn("Could not update characters online status: " + e.getMessage(), e);
 		}
 	}
 	
@@ -299,7 +299,7 @@ public abstract class IdFactory
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, "Could not clean up database: " + e.getMessage(), e);
+			_log.warn("Could not clean up database: " + e.getMessage(), e);
 		}
 	}
 	
@@ -314,7 +314,7 @@ public abstract class IdFactory
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, "Could not clean up invalid Weddings: " + e.getMessage(), e);
+			_log.warn("Could not clean up invalid Weddings: " + e.getMessage(), e);
 		}
 	}
 	

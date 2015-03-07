@@ -22,7 +22,6 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.nio.file.Paths;
 import java.util.StringTokenizer;
-import java.util.logging.Level;
 
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.data.sql.impl.TeleportLocationTable;
@@ -126,7 +125,7 @@ public class ReloadHandler implements ITelnetHandler
 						}
 						catch (Exception e)
 						{
-							_log.log(Level.WARNING, "Failed to execute script!", e);
+							_log.warn("Failed to execute script!", e);
 						}
 					}
 					catch (StringIndexOutOfBoundsException e)

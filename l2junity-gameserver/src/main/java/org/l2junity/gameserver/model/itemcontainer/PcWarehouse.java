@@ -23,7 +23,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public class PcWarehouse extends Warehouse
 {
-	// private static final Logger _log = Logger.getLogger(PcWarehouse.class.getName());
+	// private static final Logger _log = LoggerFactory.getLogger(PcWarehouse.class.getName());
 	
 	private final PlayerInstance _owner;
 	

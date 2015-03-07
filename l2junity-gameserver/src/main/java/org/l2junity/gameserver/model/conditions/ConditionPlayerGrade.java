@@ -18,11 +18,11 @@
  */
 package org.l2junity.gameserver.model.conditions;
 
-import java.util.logging.Logger;
-
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The Class ConditionPlayerGrade.
@@ -30,7 +30,7 @@ import org.l2junity.gameserver.model.skills.Skill;
  */
 public final class ConditionPlayerGrade extends Condition
 {
-	protected static final Logger _log = Logger.getLogger(ConditionPlayerGrade.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(ConditionPlayerGrade.class.getName());
 	// conditional values
 	public static final int COND_NO_GRADE = 0x0001;
 	public static final int COND_D_GRADE = 0x0002;

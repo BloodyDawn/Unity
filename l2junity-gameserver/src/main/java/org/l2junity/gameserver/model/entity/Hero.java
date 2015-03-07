@@ -30,9 +30,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import javolution.util.FastList;
 import javolution.util.FastMap;
 
@@ -58,6 +55,8 @@ import org.l2junity.gameserver.network.client.send.SocialAction;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.UserInfo;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Hero entity.
@@ -65,7 +64,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public class Hero
 {
-	private static final Logger _log = Logger.getLogger(Hero.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(Hero.class.getName());
 	
 	private static final String GET_HEROES = "SELECT heroes.charId, characters.char_name, heroes.class_id, heroes.count, heroes.played, heroes.claimed FROM heroes, characters WHERE characters.charId = heroes.charId AND heroes.played = 1";
 	private static final String GET_ALL_HEROES = "SELECT heroes.charId, characters.char_name, heroes.class_id, heroes.count, heroes.played, heroes.claimed FROM heroes, characters WHERE characters.charId = heroes.charId";
@@ -159,7 +158,7 @@ public class Hero
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, "Hero System: Couldnt load Heroes", e);
+			_log.warn("Hero System: Couldnt load Heroes", e);
 		}
 		
 		_log.info("Hero System: Loaded " + _heroes.size() + " Heroes.");
@@ -228,7 +227,7 @@ public class Hero
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, "Hero System: Couldnt load Hero Message for CharId: " + charId, e);
+			_log.warn("Hero System: Couldnt load Hero Message for CharId: " + charId, e);
 		}
 	}
 	
@@ -283,7 +282,7 @@ public class Hero
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, "Hero System: Couldnt load Hero Diary for CharId: " + charId, e);
+			_log.warn("Hero System: Couldnt load Hero Diary for CharId: " + charId, e);
 		}
 	}
 	
@@ -416,7 +415,7 @@ public class Hero
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, "Hero System: Couldnt load Hero fights history for CharId: " + charId, e);
+			_log.warn("Hero System: Couldnt load Hero fights history for CharId: " + charId, e);
 		}
 	}
 	
@@ -793,7 +792,7 @@ public class Hero
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, "Hero System: Couldnt update Heroes", e);
+			_log.warn("Hero System: Couldnt update Heroes", e);
 		}
 	}
 	
@@ -862,7 +861,7 @@ public class Hero
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.SEVERE, "SQL exception while saving DiaryData.", e);
+			_log.error("SQL exception while saving DiaryData.", e);
 		}
 	}
 	
@@ -896,7 +895,7 @@ public class Hero
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.SEVERE, "SQL exception while saving HeroMessage.", e);
+			_log.error("SQL exception while saving HeroMessage.", e);
 		}
 	}
 	
@@ -909,7 +908,7 @@ public class Hero
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, "", e);
+			_log.warn("", e);
 		}
 	}
 	

@@ -23,7 +23,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -39,11 +38,13 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2RaidBossInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class handles following admin commands: - show_moves - show_teleport - teleport_to_character - move_to - teleport_character
@@ -51,7 +52,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public class AdminTeleport implements IAdminCommandHandler
 {
-	private static final Logger _log = Logger.getLogger(AdminTeleport.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(AdminTeleport.class.getName());
 	
 	private static final String[] ADMIN_COMMANDS =
 	{
@@ -548,7 +549,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			if (template1 == null)
 			{
 				activeChar.sendMessage("Incorrect monster template.");
-				_log.warning("ERROR: NPC " + target.getObjectId() + " has a 'null' template.");
+				_log.warn("ERROR: NPC " + target.getObjectId() + " has a 'null' template.");
 				return;
 			}
 			
@@ -556,7 +557,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			if (spawn == null)
 			{
 				activeChar.sendMessage("Incorrect monster spawn.");
-				_log.warning("ERROR: NPC " + target.getObjectId() + " has a 'null' spawn.");
+				_log.warn("ERROR: NPC " + target.getObjectId() + " has a 'null' spawn.");
 				return;
 			}
 			int respawnTime = spawn.getRespawnDelay() / 1000;
@@ -595,8 +596,8 @@ public class AdminTeleport implements IAdminCommandHandler
 				
 				if (Config.DEBUG)
 				{
-					_log.fine("Spawn at X=" + spawn.getX() + " Y=" + spawn.getY() + " Z=" + spawn.getZ());
-					_log.warning("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") moved NPC " + target.getObjectId());
+					_log.debug("Spawn at X=" + spawn.getX() + " Y=" + spawn.getY() + " Z=" + spawn.getZ());
+					_log.warn("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") moved NPC " + target.getObjectId());
 				}
 			}
 			catch (Exception e)
@@ -614,7 +615,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			if (spawn == null)
 			{
 				activeChar.sendMessage("Incorrect raid spawn.");
-				_log.warning("ERROR: NPC Id" + target.getId() + " has a 'null' spawn.");
+				_log.warn("ERROR: NPC Id" + target.getId() + " has a 'null' spawn.");
 				return;
 			}
 			RaidBossSpawnManager.getInstance().deleteSpawn(spawn, true);

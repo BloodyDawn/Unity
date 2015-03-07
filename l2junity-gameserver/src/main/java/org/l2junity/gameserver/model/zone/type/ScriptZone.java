@@ -19,8 +19,8 @@
 package org.l2junity.gameserver.model.zone.type;
 
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.model.zone.ZoneType;
 
 /**
  * A scripted zone... Creation of such a zone should require somekind of script reference which can handle onEnter() / onExit()

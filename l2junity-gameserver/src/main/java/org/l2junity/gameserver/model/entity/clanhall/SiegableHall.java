@@ -21,7 +21,6 @@ package org.l2junity.gameserver.model.entity.clanhall;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.Calendar;
-import java.util.logging.Level;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.enums.SiegeClanType;
@@ -73,13 +72,13 @@ public final class SiegableHall extends ClanHall
 				}
 				catch (Exception e)
 				{
-					_log.warning("SiegableHall - " + getName() + ": Wrong schedule_config parameters!");
+					_log.warn("SiegableHall - " + getName() + ": Wrong schedule_config parameters!");
 				}
 			}
 		}
 		else
 		{
-			_log.warning(getName() + ": Wrong schedule_config value in siegable_halls table, using default (7 days)");
+			_log.warn(getName() + ": Wrong schedule_config value in siegable_halls table, using default (7 days)");
 		}
 		
 		_nextSiege = Calendar.getInstance();
@@ -136,7 +135,7 @@ public final class SiegableHall extends ClanHall
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception: SiegableHall.updateDb(): " + e.getMessage(), e);
+			_log.warn("Exception: SiegableHall.updateDb(): " + e.getMessage(), e);
 		}
 	}
 	

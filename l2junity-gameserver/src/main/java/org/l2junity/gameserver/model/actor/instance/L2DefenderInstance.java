@@ -150,7 +150,7 @@ public class L2DefenderInstance extends Attackable
 		_hall = getConquerableHall();
 		if ((_fort == null) && (_castle == null) && (_hall == null))
 		{
-			_log.warning("L2DefenderInstance spawned outside of Fortress, Castle or Siegable hall Zone! NpcId: " + getId() + " x=" + getX() + " y=" + getY() + " z=" + getZ());
+			_log.warn("L2DefenderInstance spawned outside of Fortress, Castle or Siegable hall Zone! NpcId: " + getId() + " x=" + getX() + " y=" + getY() + " z=" + getZ());
 		}
 	}
 	

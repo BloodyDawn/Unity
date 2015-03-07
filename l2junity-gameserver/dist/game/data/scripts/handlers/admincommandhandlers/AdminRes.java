@@ -18,8 +18,6 @@
  */
 package handlers.admincommandhandlers;
 
-import java.util.logging.Logger;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.World;
@@ -29,6 +27,8 @@ import org.l2junity.gameserver.model.actor.instance.L2ControllableMobInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.taskmanager.DecayTaskManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class handles following admin commands: - res = resurrects target L2Character
@@ -36,7 +36,7 @@ import org.l2junity.gameserver.taskmanager.DecayTaskManager;
  */
 public class AdminRes implements IAdminCommandHandler
 {
-	private static Logger _log = Logger.getLogger(AdminRes.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(AdminRes.class.getName());
 	private static final String[] ADMIN_COMMANDS =
 	{
 		"admin_res",
@@ -128,7 +128,7 @@ public class AdminRes implements IAdminCommandHandler
 		
 		if (Config.DEBUG)
 		{
-			_log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") resurrected character " + obj.getObjectId());
+			_log.debug("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") resurrected character " + obj.getObjectId());
 		}
 	}
 	

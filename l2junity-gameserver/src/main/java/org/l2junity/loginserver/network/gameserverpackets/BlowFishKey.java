@@ -19,9 +19,6 @@
 package org.l2junity.loginserver.network.gameserverpackets;
 
 import java.security.GeneralSecurityException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import javax.crypto.Cipher;
 
 import org.l2junity.Config;
@@ -29,13 +26,15 @@ import org.l2junity.loginserver.GameServerThread;
 import org.l2junity.loginserver.network.L2JGameServerPacketHandler.GameServerState;
 import org.l2junity.util.crypt.NewCrypt;
 import org.l2junity.util.network.BaseRecievePacket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author -Wooden-
  */
 public class BlowFishKey extends BaseRecievePacket
 {
-	protected static final Logger _log = Logger.getLogger(BlowFishKey.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(BlowFishKey.class.getName());
 	
 	/**
 	 * @param decrypt
@@ -74,7 +73,7 @@ public class BlowFishKey extends BaseRecievePacket
 		}
 		catch (GeneralSecurityException e)
 		{
-			_log.log(Level.SEVERE, "Error While decrypting blowfish key (RSA): " + e.getMessage(), e);
+			_log.error("Error While decrypting blowfish key (RSA): " + e.getMessage(), e);
 		}
 	}
 }

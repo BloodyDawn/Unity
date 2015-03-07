@@ -21,8 +21,8 @@ package handlers.actionshifthandlers;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.handler.IActionShiftHandler;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.StaticObject;
 

@@ -20,8 +20,8 @@ package org.l2junity.gameserver.model.zone.type;
 
 import org.l2junity.gameserver.enums.MountType;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**

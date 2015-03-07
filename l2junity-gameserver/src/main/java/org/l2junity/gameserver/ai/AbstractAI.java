@@ -23,7 +23,6 @@ import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_FOLLOW;
 import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
 
 import java.util.concurrent.Future;
-import java.util.logging.Logger;
 
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -42,6 +41,8 @@ import org.l2junity.gameserver.network.client.send.MoveToPawn;
 import org.l2junity.gameserver.network.client.send.StopMove;
 import org.l2junity.gameserver.network.client.send.StopRotation;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Mother class of all objects AI in the world.<br>
@@ -50,7 +51,7 @@ import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
  */
 public abstract class AbstractAI implements Ctrl
 {
-	protected final Logger _log = Logger.getLogger(getClass().getName());
+	protected final Logger _log = LoggerFactory.getLogger(getClass().getName());
 	
 	private NextAction _nextAction;
 	
@@ -123,7 +124,7 @@ public abstract class AbstractAI implements Ctrl
 			}
 			catch (Exception e)
 			{
-				_log.warning(getClass().getSimpleName() + ": Error: " + e.getMessage());
+				_log.warn(getClass().getSimpleName() + ": Error: " + e.getMessage());
 			}
 		}
 	}

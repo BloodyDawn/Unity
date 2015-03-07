@@ -26,8 +26,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Predicate;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 import javolution.util.FastList;
@@ -42,13 +40,15 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author Advi
  */
 public abstract class ItemContainer
 {
-	protected static final Logger _log = Logger.getLogger(ItemContainer.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(ItemContainer.class.getName());
 	
 	protected final List<ItemInstance> _items = new FastList<ItemInstance>().shared();
 	
@@ -291,7 +291,7 @@ public abstract class ItemContainer
 				L2Item template = ItemTable.getInstance().getTemplate(itemId);
 				if (template == null)
 				{
-					_log.log(Level.WARNING, (actor != null ? "[" + actor.getName() + "] " : "") + "Invalid ItemId requested: ", itemId);
+					_log.warn((actor != null ? "[" + actor.getName() + "] " : "") + "Invalid ItemId requested: ", itemId);
 					return null;
 				}
 				
@@ -720,7 +720,7 @@ public abstract class ItemContainer
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "could not restore container:", e);
+			_log.warn("could not restore container:", e);
 		}
 	}
 	

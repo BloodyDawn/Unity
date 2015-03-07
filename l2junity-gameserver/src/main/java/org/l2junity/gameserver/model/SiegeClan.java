@@ -20,10 +20,10 @@ package org.l2junity.gameserver.model;
 
 import java.util.List;
 
+import javolution.util.FastList;
+
 import org.l2junity.gameserver.enums.SiegeClanType;
 import org.l2junity.gameserver.model.actor.Npc;
-
-import javolution.util.FastList;
 
 public class SiegeClan
 {

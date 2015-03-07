@@ -19,15 +19,14 @@
 package org.l2junity.gameserver.model.actor.tasks.player;
 
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.handler.ItemHandler;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Task dedicated for feeding player's pet.
@@ -35,7 +34,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public class PetFeedTask implements Runnable
 {
-	private static final Logger _log = Logger.getLogger(PetFeedTask.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(PetFeedTask.class.getName());
 	
 	private final PlayerInstance _player;
 	
@@ -101,7 +100,7 @@ public class PetFeedTask implements Runnable
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "Mounted Pet [NpcId: " + _player.getMountNpcId() + "] a feed task error has occurred", e);
+				_log.error("Mounted Pet [NpcId: " + _player.getMountNpcId() + "] a feed task error has occurred", e);
 			}
 		}
 	}

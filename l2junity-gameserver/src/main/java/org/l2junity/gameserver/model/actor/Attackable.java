@@ -26,8 +26,6 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.logging.Level;
-
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -53,8 +51,8 @@ import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2ServitorInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.knownlist.AttackableKnownList;
 import org.l2junity.gameserver.model.actor.status.AttackableStatus;
 import org.l2junity.gameserver.model.actor.tasks.attackable.CommandChannelTimer;
@@ -630,7 +628,7 @@ public class Attackable extends Npc
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "", e);
+			_log.error("", e);
 		}
 	}
 	
@@ -679,7 +677,7 @@ public class Attackable extends Npc
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "", e);
+				_log.error("", e);
 			}
 		}
 	}

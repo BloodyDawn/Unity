@@ -19,16 +19,15 @@
 package org.l2junity.gameserver.model.quest;
 
 import java.util.concurrent.ScheduledFuture;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class QuestTimer
 {
-	protected static final Logger _log = Logger.getLogger(QuestTimer.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(QuestTimer.class.getName());
 	
 	public class ScheduleTimerTask implements Runnable
 	{
@@ -50,7 +49,7 @@ public class QuestTimer
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "", e);
+				_log.error("", e);
 			}
 		}
 	}

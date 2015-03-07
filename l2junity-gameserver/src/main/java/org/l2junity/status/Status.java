@@ -26,17 +26,18 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.List;
 import java.util.Properties;
-import java.util.logging.Logger;
 
 import javolution.util.FastList;
 
 import org.l2junity.Config;
 import org.l2junity.Server;
 import org.l2junity.commons.util.Rnd;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Status extends Thread
 {
-	protected static final Logger _log = Logger.getLogger(Status.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(Status.class.getName());
 	
 	private final ServerSocket statusServerSocket;
 	
@@ -75,7 +76,7 @@ public class Status extends Thread
 					}
 					catch (IOException io)
 					{
-						_log.warning(getClass().getSimpleName() + ": " + io.getMessage());
+						_log.warn(getClass().getSimpleName() + ": " + io.getMessage());
 					}
 					break;
 				}
@@ -90,7 +91,7 @@ public class Status extends Thread
 					}
 					catch (IOException io)
 					{
-						_log.warning(getClass().getSimpleName() + ": " + io.getMessage());
+						_log.warn(getClass().getSimpleName() + ": " + io.getMessage());
 					}
 					break;
 				}

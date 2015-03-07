@@ -18,12 +18,12 @@
  */
 package org.l2junity.gameserver.model.actor.tasks.player;
 
-import java.util.logging.Logger;
-
 import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.LeaveWorld;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Task dedicated to verify client's game guard.
@@ -31,7 +31,7 @@ import org.l2junity.gameserver.network.client.send.LeaveWorld;
  */
 public class GameGuardCheckTask implements Runnable
 {
-	private static final Logger _log = Logger.getLogger(GameGuardCheckTask.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(GameGuardCheckTask.class.getName());
 	
 	private final PlayerInstance _player;
 	

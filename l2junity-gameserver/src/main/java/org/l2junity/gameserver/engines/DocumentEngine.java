@@ -22,7 +22,6 @@ import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Logger;
 
 import javolution.util.FastList;
 
@@ -33,13 +32,15 @@ import org.l2junity.gameserver.engines.items.DocumentItem;
 import org.l2junity.gameserver.engines.skills.DocumentSkill;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author mkizub
  */
 public class DocumentEngine
 {
-	private static final Logger _log = Logger.getLogger(DocumentEngine.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(DocumentEngine.class.getName());
 	
 	private final List<File> _itemFiles = new FastList<>();
 	private final List<File> _skillFiles = new FastList<>();
@@ -68,7 +69,7 @@ public class DocumentEngine
 		File dir = new File(Config.DATAPACK_ROOT, dirname);
 		if (!dir.exists())
 		{
-			_log.warning("Dir " + dir.getAbsolutePath() + " not exists");
+			_log.warn("Dir " + dir.getAbsolutePath() + " not exists");
 			return;
 		}
 		File[] files = dir.listFiles(new XMLFilter());
@@ -82,7 +83,7 @@ public class DocumentEngine
 	{
 		if (file == null)
 		{
-			_log.warning("Skill file not found.");
+			_log.warn("Skill file not found.");
 			return null;
 		}
 		DocumentSkill doc = new DocumentSkill(file);

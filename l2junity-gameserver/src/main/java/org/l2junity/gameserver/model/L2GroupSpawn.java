@@ -18,8 +18,6 @@
  */
 package org.l2junity.gameserver.model;
 
-import java.util.logging.Level;
-
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.sql.impl.TerritoryTable;
@@ -95,14 +93,14 @@ public class L2GroupSpawn extends L2Spawn
 			
 			if (Config.DEBUG)
 			{
-				_log.finest("Spawned Mob Id: " + _template.getId() + " ,at: X: " + mob.getX() + " Y: " + mob.getY() + " Z: " + mob.getZ());
+				_log.trace("Spawned Mob Id: " + _template.getId() + " ,at: X: " + mob.getX() + " Y: " + mob.getY() + " Z: " + mob.getZ());
 			}
 			return mob;
 			
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "NPC class not found: " + e.getMessage(), e);
+			_log.warn("NPC class not found: " + e.getMessage(), e);
 			return null;
 		}
 	}

@@ -35,7 +35,7 @@ import org.l2junity.gameserver.util.Util;
  */
 public class AdminShutdown implements IAdminCommandHandler
 {
-	// private static Logger _log = Logger.getLogger(AdminShutdown.class.getName());
+	// private static Logger _log = LoggerFactory.getLogger(AdminShutdown.class.getName());
 	
 	private static final String[] ADMIN_COMMANDS =
 	{

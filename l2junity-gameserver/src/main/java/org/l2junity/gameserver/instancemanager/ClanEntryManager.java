@@ -31,8 +31,6 @@ import java.util.OptionalInt;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 import org.l2junity.DatabaseFactory;
@@ -41,13 +39,15 @@ import org.l2junity.gameserver.model.clan.entry.PledgeApplicantInfo;
 import org.l2junity.gameserver.model.clan.entry.PledgeRecruitInfo;
 import org.l2junity.gameserver.model.clan.entry.PledgeWaitingInfo;
 import org.l2junity.gameserver.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author Sdw
  */
 public class ClanEntryManager
 {
-	protected static final Logger _log = Logger.getLogger(ClanEntryManager.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(ClanEntryManager.class.getName());
 	
 	private static final Map<Integer, PledgeWaitingInfo> _waitingList = new ConcurrentHashMap<>();
 	private static final Map<Integer, PledgeRecruitInfo> _clanList = new ConcurrentHashMap<>();
@@ -105,7 +105,7 @@ public class ClanEntryManager
 		}
 		catch (Exception e)
 		{
-			_log.warning(getClass().getSimpleName() + ": Exception: ClanEntryManager.load(): " + e.getMessage());
+			_log.warn(getClass().getSimpleName() + ": Exception: ClanEntryManager.load(): " + e.getMessage());
 		}
 		
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
@@ -121,7 +121,7 @@ public class ClanEntryManager
 		}
 		catch (Exception e)
 		{
-			_log.warning(getClass().getSimpleName() + ": Exception: ClanEntryManager.load(): " + e.getMessage());
+			_log.warn(getClass().getSimpleName() + ": Exception: ClanEntryManager.load(): " + e.getMessage());
 		}
 		
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
@@ -137,7 +137,7 @@ public class ClanEntryManager
 		}
 		catch (Exception e)
 		{
-			_log.warning(getClass().getSimpleName() + ": Exception: ClanEntryManager.load(): " + e.getMessage());
+			_log.warn(getClass().getSimpleName() + ": Exception: ClanEntryManager.load(): " + e.getMessage());
 		}
 	}
 	
@@ -179,7 +179,7 @@ public class ClanEntryManager
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, e.getMessage(), e);
+			_log.warn(e.getMessage(), e);
 		}
 		
 		return (clanApplicantList != null) && (clanApplicantList.remove(playerId) != null);
@@ -202,7 +202,7 @@ public class ClanEntryManager
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, e.getMessage(), e);
+				_log.warn(e.getMessage(), e);
 			}
 			return true;
 		}
@@ -227,7 +227,7 @@ public class ClanEntryManager
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, e.getMessage(), e);
+				_log.warn(e.getMessage(), e);
 			}
 			
 			return _waitingList.put(playerId, info) != null;
@@ -247,7 +247,7 @@ public class ClanEntryManager
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, e.getMessage(), e);
+				_log.warn(e.getMessage(), e);
 			}
 			_waitingList.remove(playerId);
 			lockPlayer(playerId);
@@ -271,7 +271,7 @@ public class ClanEntryManager
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, e.getMessage(), e);
+				_log.warn(e.getMessage(), e);
 			}
 			return _clanList.put(clanId, info) != null;
 		}
@@ -293,7 +293,7 @@ public class ClanEntryManager
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, e.getMessage(), e);
+				_log.warn(e.getMessage(), e);
 			}
 			return _clanList.replace(clanId, info) != null;
 		}
@@ -312,7 +312,7 @@ public class ClanEntryManager
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, e.getMessage(), e);
+				_log.warn(e.getMessage(), e);
 			}
 			_clanList.remove(clanId);
 			lockClan(clanId);

@@ -24,7 +24,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -33,10 +32,12 @@ import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.Vehicle;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class WorldRegion
 {
-	private static final Logger _log = Logger.getLogger(WorldRegion.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(WorldRegion.class.getName());
 	
 	/** Map containing all playable characters in game in this world region. */
 	private final Map<Integer, Playable> _allPlayable = new ConcurrentHashMap<>();
@@ -140,7 +141,7 @@ public final class WorldRegion
 				}
 			}
 			
-			_log.fine(c + " mobs were turned off");
+			_log.debug(c + " mobs were turned off");
 		}
 		else
 		{
@@ -160,7 +161,7 @@ public final class WorldRegion
 				}
 			}
 			
-			_log.fine(c + " mobs were turned on");
+			_log.debug(c + " mobs were turned on");
 			
 		}
 		
@@ -214,11 +215,11 @@ public final class WorldRegion
 		// turn the geodata on or off to match the region's activation.
 		if (value)
 		{
-			_log.fine("Starting Grid " + _tileX + "," + _tileY);
+			_log.debug("Starting Grid " + _tileX + "," + _tileY);
 		}
 		else
 		{
-			_log.fine("Stoping Grid " + _tileX + "," + _tileY);
+			_log.debug("Stoping Grid " + _tileX + "," + _tileY);
 		}
 	}
 	
@@ -353,7 +354,7 @@ public final class WorldRegion
 	 */
 	public void deleteVisibleNpcSpawns()
 	{
-		_log.fine("Deleting all visible NPC's in Region: " + getName());
+		_log.debug("Deleting all visible NPC's in Region: " + getName());
 		Collection<WorldObject> vNPC = _visibleObjects.values();
 		for (WorldObject obj : vNPC)
 		{
@@ -367,7 +368,7 @@ public final class WorldRegion
 					spawn.stopRespawn();
 					SpawnTable.getInstance().deleteSpawn(spawn, false);
 				}
-				_log.finest("Removed NPC " + target.getObjectId());
+				_log.trace("Removed NPC " + target.getObjectId());
 			}
 		}
 		_log.info("All visible NPC's deleted in Region: " + getName());

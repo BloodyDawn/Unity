@@ -20,7 +20,6 @@ package org.l2junity.gameserver.network.client.recv;
 
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.EnchantItemData;
@@ -46,10 +45,12 @@ import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
 import org.l2junity.network.PacketReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class RequestEnchantItem implements IClientIncomingPacket
 {
-	protected static final Logger _logEnchant = Logger.getLogger("enchant");
+	protected static final Logger _logEnchant = LoggerFactory.getLogger("enchant");
 	
 	private int _objectId;
 	private int _supportId;

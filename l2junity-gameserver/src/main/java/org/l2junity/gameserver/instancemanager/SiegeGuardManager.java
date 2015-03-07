@@ -22,19 +22,18 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import javolution.util.FastList;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class SiegeGuardManager
 {
-	private static Logger _log = Logger.getLogger(SiegeGuardManager.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(SiegeGuardManager.class.getName());
 	
 	private final Castle _castle;
 	private final List<L2Spawn> _siegeGuardSpawn = new FastList<>();
@@ -118,7 +117,7 @@ public final class SiegeGuardManager
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Error deleting hired siege guard at " + x + ',' + y + ',' + z + ": " + e.getMessage(), e);
+			_log.warn(getClass().getSimpleName() + ": Error deleting hired siege guard at " + x + ',' + y + ',' + z + ": " + e.getMessage(), e);
 		}
 	}
 	
@@ -135,7 +134,7 @@ public final class SiegeGuardManager
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Error deleting hired siege guard for castle " + getCastle().getName() + ": " + e.getMessage(), e);
+			_log.warn(getClass().getSimpleName() + ": Error deleting hired siege guard for castle " + getCastle().getName() + ": " + e.getMessage(), e);
 		}
 	}
 	
@@ -167,7 +166,7 @@ public final class SiegeGuardManager
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, getClass().getSimpleName() + ": Error spawning siege guards for castle " + getCastle().getName(), e);
+			_log.error(getClass().getSimpleName() + ": Error spawning siege guards for castle " + getCastle().getName(), e);
 		}
 	}
 	
@@ -224,7 +223,7 @@ public final class SiegeGuardManager
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Error loading siege guard for castle " + getCastle().getName() + ": " + e.getMessage(), e);
+			_log.warn(getClass().getSimpleName() + ": Error loading siege guard for castle " + getCastle().getName() + ": " + e.getMessage(), e);
 		}
 	}
 	
@@ -254,7 +253,7 @@ public final class SiegeGuardManager
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Error adding siege guard for castle " + getCastle().getName() + ": " + e.getMessage(), e);
+			_log.warn(getClass().getSimpleName() + ": Error adding siege guard for castle " + getCastle().getName() + ": " + e.getMessage(), e);
 		}
 	}
 	

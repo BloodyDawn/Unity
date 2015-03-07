@@ -19,8 +19,6 @@
 package org.l2junity.gameserver.util;
 
 import java.util.Collection;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.World;
@@ -32,6 +30,8 @@ import org.l2junity.gameserver.network.client.send.CreatureSay;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 import org.l2junity.gameserver.network.client.send.RelationChanged;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class ...
@@ -39,7 +39,7 @@ import org.l2junity.gameserver.network.client.send.RelationChanged;
  */
 public final class Broadcast
 {
-	private static Logger _log = Logger.getLogger(Broadcast.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(Broadcast.class.getName());
 	
 	/**
 	 * Send a packet to all L2PcInstance in the _KnownPlayers of the L2Character that have the Character targeted.<BR>
@@ -113,7 +113,7 @@ public final class Broadcast
 			}
 			catch (NullPointerException e)
 			{
-				_log.log(Level.WARNING, e.getMessage(), e);
+				_log.warn(e.getMessage(), e);
 			}
 		}
 		

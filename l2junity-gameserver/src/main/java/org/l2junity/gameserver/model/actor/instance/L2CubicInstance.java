@@ -21,9 +21,6 @@ package org.l2junity.gameserver.model.actor.instance;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Future;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -48,10 +45,12 @@ import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class L2CubicInstance implements IIdentifiable
 {
-	private static final Logger _log = Logger.getLogger(L2CubicInstance.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(L2CubicInstance.class.getName());
 	
 	// Type of Cubics
 	public static final int STORM_CUBIC = 1;
@@ -467,7 +466,7 @@ public final class L2CubicInstance implements IIdentifiable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "", e);
+			_log.error("", e);
 		}
 	}
 	

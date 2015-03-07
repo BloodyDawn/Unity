@@ -60,7 +60,7 @@ public final class TradeDone implements IClientIncomingPacket
 		{
 			if (Config.DEBUG)
 			{
-				_log.warning("player.getTradeList == null in " + getClass().getSimpleName() + " for player " + player.getName());
+				_log.warn("player.getTradeList == null in " + getClass().getSimpleName() + " for player " + player.getName());
 			}
 			return;
 		}

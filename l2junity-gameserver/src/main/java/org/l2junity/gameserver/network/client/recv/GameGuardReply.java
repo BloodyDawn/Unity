@@ -21,7 +21,6 @@ package org.l2junity.gameserver.network.client.recv;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
-import java.util.logging.Level;
 
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.network.PacketReader;
@@ -81,7 +80,7 @@ public class GameGuardReply implements IClientIncomingPacket
 		}
 		catch (NoSuchAlgorithmException e)
 		{
-			_log.log(Level.WARNING, "", e);
+			_log.warn("", e);
 		}
 	}
 }

@@ -19,7 +19,6 @@
 package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
@@ -29,6 +28,8 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2ControllableMobInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class handles following admin commands: - kill = kills target L2Character - kill_monster = kills target non-player - kill <radius> = If radius is specified, then ALL players only in that radius will be killed. - kill_monster <radius> = If radius is specified, then ALL non-players only in
@@ -37,7 +38,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public class AdminKill implements IAdminCommandHandler
 {
-	private static Logger _log = Logger.getLogger(AdminKill.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(AdminKill.class.getName());
 	private static final String[] ADMIN_COMMANDS =
 	{
 		"admin_kill",
@@ -157,7 +158,7 @@ public class AdminKill implements IAdminCommandHandler
 		}
 		if (Config.DEBUG)
 		{
-			_log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ")" + " killed character " + target.getObjectId());
+			_log.debug("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ")" + " killed character " + target.getObjectId());
 		}
 	}
 	

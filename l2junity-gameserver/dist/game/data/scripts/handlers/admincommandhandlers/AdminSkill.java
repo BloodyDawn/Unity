@@ -20,8 +20,6 @@ package handlers.admincommandhandlers;
 
 import java.util.Map;
 import java.util.StringTokenizer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.ClassListData;
@@ -38,6 +36,8 @@ import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.PledgeSkillList;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class handles following admin commands:
@@ -61,7 +61,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public class AdminSkill implements IAdminCommandHandler
 {
-	private static Logger _log = Logger.getLogger(AdminSkill.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(AdminSkill.class.getName());
 	
 	private static final String[] ADMIN_COMMANDS =
 	{
@@ -467,7 +467,7 @@ public class AdminSkill implements IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "", e);
+				_log.warn("", e);
 			}
 			if (skill != null)
 			{
@@ -480,7 +480,7 @@ public class AdminSkill implements IAdminCommandHandler
 				activeChar.sendMessage("You gave the skill " + name + " to " + player.getName() + ".");
 				if (Config.DEBUG)
 				{
-					_log.fine("[GM]" + activeChar.getName() + " gave skill " + name + " to " + player.getName() + ".");
+					_log.debug("[GM]" + activeChar.getName() + " gave skill " + name + " to " + player.getName() + ".");
 				}
 				activeChar.sendSkillList();
 			}
@@ -515,7 +515,7 @@ public class AdminSkill implements IAdminCommandHandler
 			activeChar.sendMessage("You removed the skill " + skillname + " from " + player.getName() + ".");
 			if (Config.DEBUG)
 			{
-				_log.fine("[GM]" + activeChar.getName() + " removed skill " + skillname + " from " + player.getName() + ".");
+				_log.debug("[GM]" + activeChar.getName() + " removed skill " + skillname + " from " + player.getName() + ".");
 			}
 			activeChar.sendSkillList();
 		}

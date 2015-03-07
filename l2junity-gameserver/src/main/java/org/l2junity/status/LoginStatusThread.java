@@ -29,17 +29,18 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.util.Map;
 import java.util.Properties;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.loginserver.GameServerTable;
+import org.l2junity.loginserver.GameServerTable.GameServerInfo;
 import org.l2junity.loginserver.L2LoginServer;
 import org.l2junity.loginserver.LoginController;
-import org.l2junity.loginserver.GameServerTable.GameServerInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class LoginStatusThread extends Thread
 {
-	private static final Logger _log = Logger.getLogger(LoginStatusThread.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(LoginStatusThread.class.getName());
 	
 	private final Socket _cSocket;
 	
@@ -242,7 +243,7 @@ public class LoginStatusThread extends Thread
 						_usrCommand = _usrCommand.substring(8);
 						if (LoginController.getInstance().removeBanForAddress(_usrCommand))
 						{
-							_log.warning("IP removed via TELNET by host: " + _cSocket.getInetAddress().getHostAddress());
+							_log.warn("IP removed via TELNET by host: " + _cSocket.getInetAddress().getHostAddress());
 							_print.println("The IP " + _usrCommand + " has been removed from the hack protection list!");
 						}
 						else
@@ -296,7 +297,7 @@ public class LoginStatusThread extends Thread
 		}
 		catch (IOException e)
 		{
-			_log.warning(getClass().getSimpleName() + ": " + e.getMessage());
+			_log.warn(getClass().getSimpleName() + ": " + e.getMessage());
 		}
 	}
 	

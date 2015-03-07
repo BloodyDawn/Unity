@@ -22,18 +22,18 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import javolution.util.FastList;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.communitybbs.BB.Forum;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-
-import javolution.util.FastList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ForumsBBSManager extends BaseBBSManager
 {
-	private static Logger _log = Logger.getLogger(ForumsBBSManager.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(ForumsBBSManager.class.getName());
 	private final List<Forum> _table;
 	private int _lastid = 1;
 	
@@ -56,7 +56,7 @@ public class ForumsBBSManager extends BaseBBSManager
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Data error on Forum (root): " + e.getMessage(), e);
+			_log.warn("Data error on Forum (root): " + e.getMessage(), e);
 		}
 	}
 	

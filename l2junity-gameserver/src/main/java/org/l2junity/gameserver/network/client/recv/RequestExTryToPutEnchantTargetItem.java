@@ -18,8 +18,6 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
-import java.util.logging.Level;
-
 import org.l2junity.gameserver.data.xml.impl.EnchantItemData;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.request.EnchantItemRequest;
@@ -76,7 +74,7 @@ public class RequestExTryToPutEnchantTargetItem implements IClientIncomingPacket
 			client.sendPacket(new ExPutEnchantTargetItemResult(0));
 			if (scrollTemplate == null)
 			{
-				_log.log(Level.WARNING, getClass().getSimpleName() + ": Undefined scroll have been used id: " + scroll.getId());
+				_log.warn(getClass().getSimpleName() + ": Undefined scroll have been used id: " + scroll.getId());
 			}
 			return;
 		}

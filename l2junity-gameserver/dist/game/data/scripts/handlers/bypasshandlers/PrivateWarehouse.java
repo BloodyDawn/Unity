@@ -18,8 +18,6 @@
  */
 package handlers.bypasshandlers;
 
-import java.util.logging.Level;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.handler.IBypassHandler;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -70,7 +68,7 @@ public class PrivateWarehouse implements IBypassHandler
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception in " + getClass().getSimpleName(), e);
+			_log.warn("Exception in " + getClass().getSimpleName(), e);
 		}
 		return false;
 	}
@@ -90,7 +88,7 @@ public class PrivateWarehouse implements IBypassHandler
 		
 		if (Config.DEBUG)
 		{
-			_log.fine("Source: L2WarehouseInstance.java; Player: " + player.getName() + "; Command: showRetrieveWindow; Message: Showing stored items.");
+			_log.debug("Source: L2WarehouseInstance.java; Player: " + player.getName() + "; Command: showRetrieveWindow; Message: Showing stored items.");
 		}
 	}
 	

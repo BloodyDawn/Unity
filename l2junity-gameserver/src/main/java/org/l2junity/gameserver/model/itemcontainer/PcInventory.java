@@ -25,8 +25,6 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 import org.l2junity.Config;
@@ -50,10 +48,12 @@ import org.l2junity.gameserver.network.client.send.InventoryUpdate;
 import org.l2junity.gameserver.network.client.send.ItemList;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class PcInventory extends Inventory
 {
-	private static final Logger _log = Logger.getLogger(PcInventory.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(PcInventory.class.getName());
 	
 	private final PlayerInstance _owner;
 	private ItemInstance _adena;
@@ -778,7 +778,7 @@ public class PcInventory extends Inventory
 				if (_questSlots < 0)
 				{
 					_questSlots = 0;
-					_log.warning(this + ": QuestInventory size < 0!");
+					_log.warn(this + ": QuestInventory size < 0!");
 				}
 			}
 		}
@@ -829,7 +829,7 @@ public class PcInventory extends Inventory
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not restore inventory: " + e.getMessage(), e);
+			_log.warn("Could not restore inventory: " + e.getMessage(), e);
 		}
 		return paperdoll;
 	}

@@ -22,7 +22,6 @@ import java.io.File;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-import java.util.logging.Level;
 
 import javolution.util.FastList;
 
@@ -88,7 +87,7 @@ public final class DocumentItem extends DocumentBase
 						}
 						catch (Exception e)
 						{
-							_log.log(Level.WARNING, "Cannot create item " + _currentItem.id, e);
+							_log.warn("Cannot create item " + _currentItem.id, e);
 						}
 					}
 				}

@@ -19,17 +19,17 @@
 package org.l2junity.gameserver;
 
 import java.lang.reflect.Constructor;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class MonsterRace
 {
-	protected static final Logger _log = Logger.getLogger(MonsterRace.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(MonsterRace.class.getName());
 	
 	private final Npc[] _monsters;
 	private int[][] _speeds;
@@ -76,7 +76,7 @@ public class MonsterRace
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "", e);
+				_log.warn("", e);
 			}
 			// _log.info("Monster "+i+" is id: "+(id+random));
 		}

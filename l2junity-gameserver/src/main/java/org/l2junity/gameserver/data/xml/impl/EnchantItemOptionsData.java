@@ -20,8 +20,6 @@ package org.l2junity.gameserver.data.xml.impl;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
-
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.options.EnchantOptions;
@@ -89,7 +87,7 @@ public class EnchantItemOptionsData implements IXmlReader
 				}
 			}
 		}
-		LOGGER.log(Level.INFO, getClass().getSimpleName() + ": Loaded: " + _data.size() + " Items and " + counter + " Options.");
+		LOGGER.info(getClass().getSimpleName() + ": Loaded: " + _data.size() + " Items and " + counter + " Options.");
 	}
 	
 	/**

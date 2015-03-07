@@ -23,17 +23,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Map.Entry;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.DatabaseFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author UnAfraid
  */
 public class ItemVariables extends AbstractVariables
 {
-	private static final Logger _log = Logger.getLogger(ItemVariables.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(ItemVariables.class.getName());
 	
 	// SQL Queries.
 	private static final String SELECT_QUERY = "SELECT * FROM item_variables WHERE id = ?";
@@ -71,7 +71,7 @@ public class ItemVariables extends AbstractVariables
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, ItemVariables.class.getSimpleName() + ": Couldn't select variables count for: " + objectId, e);
+			_log.warn(ItemVariables.class.getSimpleName() + ": Couldn't select variables count for: " + objectId, e);
 			return false;
 		}
 		return true;
@@ -95,7 +95,7 @@ public class ItemVariables extends AbstractVariables
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't restore variables for: " + _objectId, e);
+			_log.warn(getClass().getSimpleName() + ": Couldn't restore variables for: " + _objectId, e);
 			return false;
 		}
 		finally
@@ -138,7 +138,7 @@ public class ItemVariables extends AbstractVariables
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't update variables for: " + _objectId, e);
+			_log.warn(getClass().getSimpleName() + ": Couldn't update variables for: " + _objectId, e);
 			return false;
 		}
 		finally
@@ -165,7 +165,7 @@ public class ItemVariables extends AbstractVariables
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't delete variables for: " + _objectId, e);
+			_log.warn(getClass().getSimpleName() + ": Couldn't delete variables for: " + _objectId, e);
 			return false;
 		}
 		return true;

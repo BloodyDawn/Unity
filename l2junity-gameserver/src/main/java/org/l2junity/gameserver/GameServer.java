@@ -24,9 +24,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.time.Duration;
 import java.util.Calendar;
-import java.util.logging.Level;
 import java.util.logging.LogManager;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -142,10 +140,12 @@ import org.l2junity.gameserver.taskmanager.KnownListUpdateTaskManager;
 import org.l2junity.gameserver.taskmanager.TaskManager;
 import org.l2junity.gameserver.util.Broadcast;
 import org.l2junity.status.Status;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class GameServer
 {
-	private static final Logger _log = Logger.getLogger(GameServer.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(GameServer.class.getName());
 	
 	private final DeadLockDetector _deadDetectThread;
 	public static GameServer gameServer;
@@ -169,7 +169,7 @@ public class GameServer
 		
 		if (!IdFactory.getInstance().isInitialized())
 		{
-			_log.severe(getClass().getSimpleName() + ": Could not read object IDs from DB. Please check your data.");
+			_log.error(getClass().getSimpleName() + ": Could not read object IDs from DB. Please check your data.");
 			throw new Exception("Could not initialize the ID factory");
 		}
 		
@@ -301,7 +301,7 @@ public class GameServer
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Failed to execute script list!", e);
+			_log.warn("Failed to execute script list!", e);
 		}
 		
 		SpawnTable.getInstance().load();
@@ -396,8 +396,8 @@ public class GameServer
 		
 		ClientNetworkManager.getInstance().start();
 		
-		_log.log(Level.INFO, getClass().getSimpleName() + ": Maximum numbers of connected players: " + Config.MAXIMUM_ONLINE_USERS);
-		_log.log(Level.INFO, getClass().getSimpleName() + ": Server loaded in " + ((System.currentTimeMillis() - serverLoadStart) / 1000) + " seconds.");
+		_log.info(getClass().getSimpleName() + ": Maximum numbers of connected players: " + Config.MAXIMUM_ONLINE_USERS);
+		_log.info(getClass().getSimpleName() + ": Server loaded in " + ((System.currentTimeMillis() - serverLoadStart) / 1000) + " seconds.");
 		
 		printSection("UPnP");
 		UPnPService.getInstance();

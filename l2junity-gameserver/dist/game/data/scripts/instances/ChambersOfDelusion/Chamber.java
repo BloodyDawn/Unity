@@ -22,7 +22,6 @@ import instances.AbstractInstance;
 
 import java.util.Calendar;
 import java.util.concurrent.ScheduledFuture;
-import java.util.logging.Level;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -134,7 +133,7 @@ public abstract class Chamber extends AbstractInstance
 				}
 				catch (Exception e)
 				{
-					_log.log(Level.WARNING, getClass().getSimpleName() + " ChangeRoomTask exception : " + e.getMessage(), e);
+					_log.warn(getClass().getSimpleName() + " ChangeRoomTask exception : " + e.getMessage(), e);
 				}
 			}
 		}

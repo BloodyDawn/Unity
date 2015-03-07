@@ -89,7 +89,7 @@ public class SiegeInfo implements IClientOutgoingPacket
 				}
 				else
 				{
-					_log.warning("Null owner for castle: " + _castle.getName());
+					_log.warn("Null owner for castle: " + _castle.getName());
 				}
 			}
 			else
@@ -142,7 +142,7 @@ public class SiegeInfo implements IClientOutgoingPacket
 				}
 				else
 				{
-					_log.warning("Null owner for siegable hall: " + _hall.getName());
+					_log.warn("Null owner for siegable hall: " + _hall.getName());
 				}
 			}
 			else

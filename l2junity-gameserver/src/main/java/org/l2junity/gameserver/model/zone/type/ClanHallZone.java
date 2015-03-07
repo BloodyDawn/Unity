@@ -46,7 +46,7 @@ public class ClanHallZone extends ResidenceZone
 			ClanHall hall = ClanHallManager.getInstance().getClanHallById(getResidenceId());
 			if (hall == null)
 			{
-				_log.warning("L2ClanHallZone: Clan hall with id " + getResidenceId() + " does not exist!");
+				_log.warn("L2ClanHallZone: Clan hall with id " + getResidenceId() + " does not exist!");
 			}
 			else
 			{

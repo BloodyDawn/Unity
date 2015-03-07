@@ -18,10 +18,6 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.data.xml.impl.SecondaryAuthData;
@@ -41,6 +37,8 @@ import org.l2junity.gameserver.network.client.send.CharSelected;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.ServerClose;
 import org.l2junity.network.PacketReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class ...
@@ -48,7 +46,7 @@ import org.l2junity.network.PacketReader;
  */
 public class CharacterSelect implements IClientIncomingPacket
 {
-	protected static final Logger _logAccounting = Logger.getLogger("accounting");
+	protected static final Logger _logAccounting = LoggerFactory.getLogger("accounting");
 	
 	// cd
 	private int _charSlot;
@@ -129,7 +127,7 @@ public class CharacterSelect implements IClientIncomingPacket
 					// The L2PcInstance must be created here, so that it can be attached to the L2GameClient
 					if (Config.DEBUG)
 					{
-						_log.fine("selected slot:" + _charSlot);
+						_log.debug("selected slot:" + _charSlot);
 					}
 					
 					// load up character from disk
@@ -161,12 +159,7 @@ public class CharacterSelect implements IClientIncomingPacket
 				client.getActiveCharLock().unlock();
 			}
 			
-			LogRecord record = new LogRecord(Level.INFO, "Logged in");
-			record.setParameters(new Object[]
-			{
-				client
-			});
-			_logAccounting.log(record);
+			_logAccounting.info("Logged in, {}", client);
 		}
 	}
 }

@@ -24,8 +24,6 @@ import java.sql.Statement;
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentSkipListMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.enums.ChatType;
@@ -35,6 +33,8 @@ import org.l2junity.gameserver.model.announce.AnnouncementType;
 import org.l2junity.gameserver.model.announce.AutoAnnouncement;
 import org.l2junity.gameserver.model.announce.IAnnouncement;
 import org.l2junity.gameserver.network.client.send.CreatureSay;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Loads announcements from database.
@@ -42,7 +42,7 @@ import org.l2junity.gameserver.network.client.send.CreatureSay;
  */
 public final class AnnouncementsTable
 {
-	private static Logger LOGGER = Logger.getLogger(AnnouncementsTable.class.getName());
+	private static Logger LOGGER = LoggerFactory.getLogger(AnnouncementsTable.class.getName());
 	
 	private final Map<Integer, IAnnouncement> _announcements = new ConcurrentSkipListMap<>();
 	
@@ -86,7 +86,7 @@ public final class AnnouncementsTable
 		}
 		catch (Exception e)
 		{
-			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Failed loading announcements:", e);
+			LOGGER.warn(getClass().getSimpleName() + ": Failed loading announcements:", e);
 		}
 	}
 	

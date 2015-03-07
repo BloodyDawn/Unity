@@ -24,21 +24,21 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.engines.DocumentEngine;
 import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Skill data.
  */
 public final class SkillData
 {
-	private static Logger LOGGER = Logger.getLogger(SkillData.class.getName());
+	private static Logger LOGGER = LoggerFactory.getLogger(SkillData.class.getName());
 	
 	private final Map<Integer, Skill> _skills = new HashMap<>();
 	private final Map<Integer, Integer> _skillMaxLevel = new HashMap<>();
@@ -124,12 +124,12 @@ public final class SkillData
 		{
 			if (Config.DEBUG)
 			{
-				LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": call to unexisting skill level id: " + skillId + " requested level: " + level + " max level: " + maxLvl, new Throwable());
+				LOGGER.warn(getClass().getSimpleName() + ": call to unexisting skill level id: " + skillId + " requested level: " + level + " max level: " + maxLvl, new Throwable());
 			}
 			return _skills.get(getSkillHashCode(skillId, maxLvl));
 		}
 		
-		LOGGER.warning(getClass().getSimpleName() + ": No skill info found for skill id " + skillId + " and skill level " + level + ".");
+		LOGGER.warn(getClass().getSimpleName() + ": No skill info found for skill id " + skillId + " and skill level " + level + ".");
 		return null;
 	}
 	

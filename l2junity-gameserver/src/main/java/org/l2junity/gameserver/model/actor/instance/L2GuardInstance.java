@@ -18,8 +18,6 @@
  */
 package org.l2junity.gameserver.model.actor.instance;
 
-import java.util.logging.Logger;
-
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ai.CtrlIntention;
@@ -35,13 +33,15 @@ import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcFirstTalk;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.SocialAction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class manages all Guards in the world. It inherits all methods from L2Attackable and adds some more such as tracking PK and aggressive L2MonsterInstance.
  */
 public class L2GuardInstance extends Attackable
 {
-	private static Logger _log = Logger.getLogger(L2GuardInstance.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(L2GuardInstance.class.getName());
 	
 	/**
 	 * Constructor of L2GuardInstance (use L2Character and L2NpcInstance constructor).<br>
@@ -163,7 +163,7 @@ public class L2GuardInstance extends Attackable
 			{
 				if (Config.DEBUG)
 				{
-					_log.fine(player.getObjectId() + ": Attacked guard " + getObjectId());
+					_log.debug(player.getObjectId() + ": Attacked guard " + getObjectId());
 				}
 				
 				// Set the L2PcInstance Intention to AI_INTENTION_ATTACK

@@ -29,8 +29,6 @@ import java.util.StringJoiner;
 import java.util.StringTokenizer;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
@@ -57,6 +55,8 @@ import org.l2junity.gameserver.network.client.send.ExShowTerritory;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.util.HtmlUtil;
 import org.l2junity.gameserver.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import ai.npc.AbstractNpcAI;
 
@@ -65,7 +65,7 @@ import ai.npc.AbstractNpcAI;
  */
 public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 {
-	private static final Logger _log = Logger.getLogger(AdminPathNode.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(AdminPathNode.class.getName());
 	private final Map<Integer, ZoneNodeHolder> _zones = new ConcurrentHashMap<>();
 	
 	private static final String[] COMMANDS =
@@ -436,7 +436,7 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 			catch (Exception e)
 			{
 				activeChar.sendMessage("Failed writing the dump: " + e.getMessage());
-				_log.log(Level.WARNING, "Failed writing point picking dump for " + activeChar.getName() + ":" + e.getMessage(), e);
+				_log.warn("Failed writing point picking dump for " + activeChar.getName() + ":" + e.getMessage(), e);
 			}
 		}
 	}

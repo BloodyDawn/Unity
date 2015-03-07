@@ -19,7 +19,8 @@
 package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
-import java.util.logging.Logger;
+
+import javolution.text.TextBuilder;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.AdminData;
@@ -35,8 +36,8 @@ import org.l2junity.gameserver.network.client.send.ExWorldChatCnt;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
-
-import javolution.text.TextBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class handles following admin commands: - admin|admin1/admin2/admin3/admin4/admin5 = slots for the 5 starting admin menus - gmliston/gmlistoff = includes/excludes active character from /gmlist results - silence = toggles private messages acceptance mode - diet = toggles weight penalty mode -
@@ -45,7 +46,7 @@ import javolution.text.TextBuilder;
  */
 public class AdminAdmin implements IAdminCommandHandler
 {
-	private static final Logger _log = Logger.getLogger(AdminAdmin.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(AdminAdmin.class.getName());
 	
 	private static final String[] ADMIN_COMMANDS =
 	{
@@ -124,7 +125,7 @@ public class AdminAdmin implements IAdminCommandHandler
 			}
 			catch (Exception e)
 			{
-				_log.warning("An error occured while ending olympiad: " + e);
+				_log.warn("An error occured while ending olympiad: " + e);
 			}
 			activeChar.sendMessage("Heroes formed.");
 		}

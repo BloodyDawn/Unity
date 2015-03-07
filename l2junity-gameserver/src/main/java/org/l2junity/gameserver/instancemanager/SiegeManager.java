@@ -26,8 +26,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import javolution.util.FastList;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -42,12 +42,12 @@ import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.Siege;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.skills.Skill;
-
-import javolution.util.FastList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class SiegeManager
 {
-	private static final Logger _log = Logger.getLogger(SiegeManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(SiegeManager.class.getName());
 	
 	private final Map<Integer, List<TowerSpawn>> _controlTowers = new HashMap<>();
 	private final Map<Integer, List<TowerSpawn>> _flameTowers = new HashMap<>();
@@ -107,7 +107,7 @@ public final class SiegeManager
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Exception: checkIsRegistered(): " + e.getMessage(), e);
+			_log.warn(getClass().getSimpleName() + ": Exception: checkIsRegistered(): " + e.getMessage(), e);
 		}
 		return register;
 	}
@@ -156,7 +156,7 @@ public final class SiegeManager
 				}
 				catch (Exception e)
 				{
-					_log.warning(getClass().getSimpleName() + ": Error while loading control tower(s) for " + castle.getName() + " castle.");
+					_log.warn(getClass().getSimpleName() + ": Error while loading control tower(s) for " + castle.getName() + " castle.");
 				}
 			}
 			
@@ -187,7 +187,7 @@ public final class SiegeManager
 				}
 				catch (Exception e)
 				{
-					_log.warning(getClass().getSimpleName() + ": Error while loading flame tower(s) for " + castle.getName() + " castle.");
+					_log.warn(getClass().getSimpleName() + ": Error while loading flame tower(s) for " + castle.getName() + " castle.");
 				}
 			}
 			_controlTowers.put(castle.getResidenceId(), controlTowers);
@@ -294,7 +294,7 @@ public final class SiegeManager
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception: loadTrapUpgrade(): " + e.getMessage(), e);
+			_log.warn("Exception: loadTrapUpgrade(): " + e.getMessage(), e);
 		}
 	}
 	

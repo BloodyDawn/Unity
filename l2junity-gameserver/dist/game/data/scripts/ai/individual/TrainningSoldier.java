@@ -22,8 +22,8 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2QuestGuardInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 import ai.npc.AbstractNpcAI;
 

@@ -295,7 +295,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 			}
 			else
 			{
-				_log.warning("CHSiegeManager: No Date setted for RainBow Springs Chateau Clan hall siege!. SIEGE CANCELED!");
+				_log.warn("CHSiegeManager: No Date setted for RainBow Springs Chateau Clan hall siege!. SIEGE CANCELED!");
 			}
 		}
 	}
@@ -685,7 +685,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 	{
 		if ((arena < 0) || (arena > 3))
 		{
-			_log.warning("RainbowSptringChateau siege: Wrong arena id passed: " + arena);
+			_log.warn("RainbowSptringChateau siege: Wrong arena id passed: " + arena);
 			return;
 		}
 		for (PlayerInstance pc : leader.getParty().getMembers())

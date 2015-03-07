@@ -18,8 +18,6 @@
  */
 package handlers.bypasshandlers;
 
-import java.util.logging.Level;
-
 import org.l2junity.gameserver.handler.IBypassHandler;
 import org.l2junity.gameserver.instancemanager.SiegeManager;
 import org.l2junity.gameserver.model.Location;
@@ -116,7 +114,7 @@ public class Observation implements IBypassHandler
 		}
 		catch (NumberFormatException nfe)
 		{
-			_log.log(Level.WARNING, "Exception in " + getClass().getSimpleName(), nfe);
+			_log.warn("Exception in " + getClass().getSimpleName(), nfe);
 			return false;
 		}
 		

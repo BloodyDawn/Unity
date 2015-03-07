@@ -20,8 +20,8 @@ package org.l2junity.gameserver.ai;
 
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.Creature.AIAccessor;
+import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;

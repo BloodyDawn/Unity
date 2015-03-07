@@ -67,7 +67,7 @@ public class StackIDFactory extends IdFactory
 		}
 		catch (Exception e)
 		{
-			_log.severe(getClass().getSimpleName() + ": Could not be initialized properly:" + e.getMessage());
+			_log.error(getClass().getSimpleName() + ": Could not be initialized properly:" + e.getMessage());
 		}
 	}
 	
@@ -94,7 +94,7 @@ public class StackIDFactory extends IdFactory
 						while (rs.next())
 						{
 							int badId = rs.getInt(1);
-							_log.severe("Bad ID " + badId + " in DB found by: " + check);
+							_log.error("Bad ID " + badId + " in DB found by: " + check);
 							throw new RuntimeException();
 						}
 					}

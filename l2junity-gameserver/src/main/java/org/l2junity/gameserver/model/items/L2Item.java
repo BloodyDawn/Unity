@@ -22,7 +22,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.datatables.ItemTable;
@@ -50,6 +49,8 @@ import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class contains all informations concerning the item (weapon, armor, etc).<BR>
@@ -62,7 +63,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public abstract class L2Item extends ListenersContainer implements IIdentifiable
 {
-	protected static final Logger _log = Logger.getLogger(L2Item.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(L2Item.class.getName());
 	
 	public static final int TYPE1_WEAPON_RING_EARRING_NECKLACE = 0;
 	public static final int TYPE1_SHIELD_ARMOR = 1;
@@ -249,7 +250,7 @@ public abstract class L2Item extends ListenersContainer implements IIdentifiable
 				}
 				catch (Exception e)
 				{
-					_log.warning("Failed to parse item_skill(" + element + ") for item " + this + "! Format: SkillId0-SkillLevel0[;SkillIdN-SkillLevelN]");
+					_log.warn("Failed to parse item_skill(" + element + ") for item " + this + "! Format: SkillId0-SkillLevel0[;SkillIdN-SkillLevelN]");
 				}
 			}
 			

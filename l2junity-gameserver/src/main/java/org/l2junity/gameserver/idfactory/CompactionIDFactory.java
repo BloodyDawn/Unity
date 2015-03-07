@@ -56,7 +56,7 @@ public class CompactionIDFactory extends IdFactory
 		}
 		catch (Exception e)
 		{
-			_log.severe(getClass().getSimpleName() + ": Could not initialize properly: " + e.getMessage());
+			_log.error(getClass().getSimpleName() + ": Could not initialize properly: " + e.getMessage());
 		}
 	}
 	
@@ -82,7 +82,7 @@ public class CompactionIDFactory extends IdFactory
 						while (rs.next())
 						{
 							int badId = rs.getInt(1);
-							_log.severe(getClass().getSimpleName() + ": Bad ID " + badId + " in DB found by: " + check);
+							_log.error(getClass().getSimpleName() + ": Bad ID " + badId + " in DB found by: " + check);
 							throw new RuntimeException();
 						}
 					}

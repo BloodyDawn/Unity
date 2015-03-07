@@ -23,15 +23,15 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Audits Game Master's actions.
  */
 public class GMAudit
 {
-	private static final Logger _log = Logger.getLogger(GMAudit.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(GMAudit.class.getName());
 	
 	static
 	{
@@ -62,7 +62,7 @@ public class GMAudit
 		}
 		catch (IOException e)
 		{
-			_log.log(Level.SEVERE, "GMAudit for GM " + gmName + " could not be saved: ", e);
+			_log.error("GMAudit for GM " + gmName + " could not be saved: ", e);
 		}
 	}
 	

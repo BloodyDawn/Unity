@@ -24,13 +24,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.l2junity.commons.util.TimeUtil;
 import org.l2junity.gameserver.model.holders.MinionHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.interfaces.IParserAdvUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class is meant to hold a set of (key,value) pairs.<br>
@@ -39,7 +38,7 @@ import org.l2junity.gameserver.model.interfaces.IParserAdvUtils;
  */
 public class StatsSet implements IParserAdvUtils
 {
-	private static final Logger _log = Logger.getLogger(StatsSet.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(StatsSet.class.getName());
 	/** Static empty immutable map, used to avoid multiple null checks over the source. */
 	public static final StatsSet EMPTY_STATSET = new StatsSet(Collections.emptyMap());
 	
@@ -680,7 +679,7 @@ public class StatsSet implements IParserAdvUtils
 		assert !(((min <= max) && ((value < min) || (value >= max))));
 		if ((min <= max) && ((value < min) || (value >= max)))
 		{
-			_log.log(Level.SEVERE, "Incorrect value: " + value + "for: " + key + "Ref: " + reference);
+			_log.error("Incorrect value: " + value + "for: " + key + "Ref: " + reference);
 		}
 		
 		set(key, value);

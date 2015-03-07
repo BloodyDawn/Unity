@@ -65,8 +65,8 @@ public class ValidatePosition implements IClientIncomingPacket
 		
 		if (Config.DEVELOPER)
 		{
-			_log.fine("client pos: " + _x + " " + _y + " " + _z + " head " + _heading);
-			_log.fine("server pos: " + realX + " " + realY + " " + realZ + " head " + activeChar.getHeading());
+			_log.debug("client pos: " + _x + " " + _y + " " + _z + " head " + _heading);
+			_log.debug("server pos: " + realX + " " + realY + " " + realZ + " head " + activeChar.getHeading());
 		}
 		
 		if ((_x == 0) && (_y == 0))

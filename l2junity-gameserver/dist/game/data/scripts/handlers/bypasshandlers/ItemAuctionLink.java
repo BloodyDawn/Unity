@@ -21,7 +21,6 @@ package handlers.bypasshandlers;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.StringTokenizer;
-import java.util.logging.Level;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.handler.IBypassHandler;
@@ -123,7 +122,7 @@ public class ItemAuctionLink implements IBypassHandler
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception in " + getClass().getSimpleName(), e);
+			_log.warn("Exception in " + getClass().getSimpleName(), e);
 		}
 		
 		return true;

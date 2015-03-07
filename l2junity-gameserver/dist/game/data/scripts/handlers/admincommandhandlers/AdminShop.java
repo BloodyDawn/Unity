@@ -18,8 +18,6 @@
  */
 package handlers.admincommandhandlers;
 
-import java.util.logging.Logger;
-
 import org.l2junity.gameserver.data.xml.impl.BuyListData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -27,6 +25,8 @@ import org.l2junity.gameserver.model.buylist.L2BuyList;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.BuyList;
 import org.l2junity.gameserver.network.client.send.ExBuySellList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class handles following admin commands:
@@ -37,7 +37,7 @@ import org.l2junity.gameserver.network.client.send.ExBuySellList;
  */
 public class AdminShop implements IAdminCommandHandler
 {
-	private static final Logger _log = Logger.getLogger(AdminShop.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(AdminShop.class.getName());
 	
 	private static final String[] ADMIN_COMMANDS =
 	{
@@ -81,7 +81,7 @@ public class AdminShop implements IAdminCommandHandler
 		}
 		catch (Exception e)
 		{
-			_log.warning("admin buylist failed:" + command);
+			_log.warn("admin buylist failed:" + command);
 		}
 		
 		L2BuyList buyList = BuyListData.getInstance().getBuyList(val);
@@ -93,7 +93,7 @@ public class AdminShop implements IAdminCommandHandler
 		}
 		else
 		{
-			_log.warning("no buylist with id:" + val);
+			_log.warn("no buylist with id:" + val);
 		}
 		activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 	}

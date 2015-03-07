@@ -200,7 +200,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 						}
 						else
 						{
-							LOGGER.warning(getClass().getSimpleName() + ": Unknown seed id: " + seedId + "!");
+							LOGGER.warn(getClass().getSimpleName() + ": Unknown seed id: " + seedId + "!");
 						}
 					}
 				}
@@ -231,7 +231,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 						}
 						else
 						{
-							LOGGER.warning(getClass().getSimpleName() + ": Unknown crop id: " + cropId + "!");
+							LOGGER.warn(getClass().getSimpleName() + ": Unknown crop id: " + cropId + "!");
 						}
 					}
 				}
@@ -242,7 +242,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 		}
 		catch (Exception e)
 		{
-			LOGGER.warning(getClass().getSimpleName() + ": Unable to load manor data! " + e.getMessage());
+			LOGGER.warn(getClass().getSimpleName() + ": Unable to load manor data! " + e.getMessage());
 		}
 	}
 	
@@ -463,7 +463,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 			}
 			catch (Exception e)
 			{
-				LOGGER.severe(getClass().getSimpleName() + ": Unable to store manor data! " + e.getMessage());
+				LOGGER.error(getClass().getSimpleName() + ": Unable to store manor data! " + e.getMessage());
 			}
 		}
 	}
@@ -500,7 +500,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 			}
 			catch (Exception e)
 			{
-				LOGGER.severe(getClass().getSimpleName() + ": Unable to store manor data! " + e.getMessage());
+				LOGGER.error(getClass().getSimpleName() + ": Unable to store manor data! " + e.getMessage());
 			}
 		}
 	}
@@ -684,7 +684,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 		}
 		catch (Exception e)
 		{
-			LOGGER.severe(getClass().getSimpleName() + ": Unable to store manor data! " + e.getMessage());
+			LOGGER.error(getClass().getSimpleName() + ": Unable to store manor data! " + e.getMessage());
 			return false;
 		}
 	}
@@ -712,7 +712,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 			}
 			catch (Exception e)
 			{
-				LOGGER.severe(getClass().getSimpleName() + ": Unable to store manor data! " + e.getMessage());
+				LOGGER.error(getClass().getSimpleName() + ": Unable to store manor data! " + e.getMessage());
 			}
 		}
 	}

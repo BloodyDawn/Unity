@@ -30,6 +30,8 @@ import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_REST;
 
 import java.util.List;
 
+import javolution.util.FastList;
+
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.GeoData;
@@ -58,8 +60,6 @@ import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.AutoAttackStop;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
-
-import javolution.util.FastList;
 
 /**
  * This class manages AI of L2Character.<br>
@@ -482,7 +482,7 @@ public class CharacterAI extends AbstractAI
 		setTarget(object);
 		if ((object.getX() == 0) && (object.getY() == 0)) // TODO: Find the drop&spawn bug
 		{
-			_log.warning("Object in coords 0,0 - using a temporary fix");
+			_log.warn("Object in coords 0,0 - using a temporary fix");
 			object.setXYZ(getActor().getX(), getActor().getY(), getActor().getZ() + 5);
 		}
 		
@@ -960,7 +960,7 @@ public class CharacterAI extends AbstractAI
 	{
 		if (worldPosition == null)
 		{
-			_log.warning("maybeMoveToPosition: worldPosition == NULL!");
+			_log.warn("maybeMoveToPosition: worldPosition == NULL!");
 			return false;
 		}
 		
@@ -1032,7 +1032,7 @@ public class CharacterAI extends AbstractAI
 		// Get the distance between the current position of the L2Character and the target (x,y)
 		if (target == null)
 		{
-			_log.warning("maybeMoveToPawn: target == NULL!");
+			_log.warn("maybeMoveToPawn: target == NULL!");
 			return false;
 		}
 		if (offset < 0)

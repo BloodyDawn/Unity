@@ -21,8 +21,6 @@ package org.l2junity.gameserver.engines.skills;
 import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.logging.Level;
-
 import javolution.util.FastList;
 
 import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
@@ -91,7 +89,7 @@ public class DocumentSkill extends DocumentBase
 		}
 		catch (RuntimeException e)
 		{
-			_log.log(Level.SEVERE, "Error in table: " + name + " of Skill Id " + _currentSkill.id, e);
+			_log.error("Error in table: " + name + " of Skill Id " + _currentSkill.id, e);
 			return "";
 		}
 	}
@@ -105,7 +103,7 @@ public class DocumentSkill extends DocumentBase
 		}
 		catch (RuntimeException e)
 		{
-			_log.log(Level.SEVERE, "wrong level count in skill Id " + _currentSkill.id + " name: " + name + " index : " + idx, e);
+			_log.error("wrong level count in skill Id " + _currentSkill.id + " name: " + name + " index : " + idx, e);
 			return "";
 		}
 	}
@@ -1503,7 +1501,7 @@ public class DocumentSkill extends DocumentBase
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "Skill id=" + set.getInt("skill_id") + "level" + set.getInt("level"), e);
+				_log.error("Skill id=" + set.getInt("skill_id") + "level" + set.getInt("level"), e);
 			}
 		}
 		int _count = count;
@@ -1517,7 +1515,7 @@ public class DocumentSkill extends DocumentBase
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "Skill id=" + set.getInt("skill_id") + "level" + set.getInt("level"), e);
+				_log.error("Skill id=" + set.getInt("skill_id") + "level" + set.getInt("level"), e);
 			}
 		}
 		_count = count;
@@ -1531,7 +1529,7 @@ public class DocumentSkill extends DocumentBase
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "Skill id=" + set.getInt("skill_id") + "level" + set.getInt("level"), e);
+				_log.error("Skill id=" + set.getInt("skill_id") + "level" + set.getInt("level"), e);
 			}
 		}
 		_count = count;
@@ -1545,7 +1543,7 @@ public class DocumentSkill extends DocumentBase
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "Skill id=" + set.getInt("skill_id") + "level" + set.getInt("level"), e);
+				_log.error("Skill id=" + set.getInt("skill_id") + "level" + set.getInt("level"), e);
 			}
 		}
 		_count = count;
@@ -1559,7 +1557,7 @@ public class DocumentSkill extends DocumentBase
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "Skill id=" + set.getInt("skill_id") + "level" + set.getInt("level"), e);
+				_log.error("Skill id=" + set.getInt("skill_id") + "level" + set.getInt("level"), e);
 			}
 		}
 		_count = count;
@@ -1573,7 +1571,7 @@ public class DocumentSkill extends DocumentBase
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "Skill id=" + set.getInt("skill_id") + "level" + set.getInt("level"), e);
+				_log.error("Skill id=" + set.getInt("skill_id") + "level" + set.getInt("level"), e);
 			}
 		}
 		_count = count;
@@ -1587,7 +1585,7 @@ public class DocumentSkill extends DocumentBase
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "Skill id=" + set.getInt("skill_id") + "level" + set.getInt("level"), e);
+				_log.error("Skill id=" + set.getInt("skill_id") + "level" + set.getInt("level"), e);
 			}
 		}
 		_count = count;
@@ -1601,7 +1599,7 @@ public class DocumentSkill extends DocumentBase
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "Skill id=" + set.getInt("skill_id") + "level" + set.getInt("level"), e);
+				_log.error("Skill id=" + set.getInt("skill_id") + "level" + set.getInt("level"), e);
 			}
 		}
 		_count = count;
@@ -1615,7 +1613,7 @@ public class DocumentSkill extends DocumentBase
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "Skill id=" + set.getInt("skill_id") + "level" + set.getInt("level"), e);
+				_log.error("Skill id=" + set.getInt("skill_id") + "level" + set.getInt("level"), e);
 			}
 		}
 	}

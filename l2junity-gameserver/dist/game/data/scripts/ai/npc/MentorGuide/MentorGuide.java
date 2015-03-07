@@ -21,9 +21,6 @@ package ai.npc.MentorGuide;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.enums.CategoryType;
@@ -53,6 +50,8 @@ import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.mentoring.ExMentorList;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
@@ -64,7 +63,7 @@ import ai.npc.AbstractNpcAI;
  */
 public class MentorGuide extends AbstractNpcAI implements IXmlReader
 {
-	private static final Logger LOGGER = Logger.getLogger(MentorGuide.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(MentorGuide.class.getName());
 	
 	// NPCs
 	private static final int MENTOR_GUIDE = 33587;
@@ -115,7 +114,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 	public void load()
 	{
 		parseDatapackFile("config/MentorCoins.xml");
-		LOGGER.log(Level.INFO, getClass().getSimpleName() + ": Loaded: " + MENTEE_COINS.size() + " mentee coins");
+		LOGGER.info(getClass().getSimpleName() + ": Loaded: " + MENTEE_COINS.size() + " mentee coins");
 	}
 	
 	@Override

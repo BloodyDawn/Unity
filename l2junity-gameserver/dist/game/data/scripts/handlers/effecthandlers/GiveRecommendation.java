@@ -43,7 +43,7 @@ public final class GiveRecommendation extends AbstractEffect
 		_amount = params.getInt("amount", 0);
 		if (_amount == 0)
 		{
-			_log.warning(getClass().getSimpleName() + ": amount parameter is missing or set to 0. id:" + set.getInt("id", -1));
+			_log.warn(getClass().getSimpleName() + ": amount parameter is missing or set to 0. id:" + set.getInt("id", -1));
 		}
 	}
 	

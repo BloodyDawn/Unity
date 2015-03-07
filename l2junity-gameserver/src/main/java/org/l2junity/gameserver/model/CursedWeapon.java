@@ -22,9 +22,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.concurrent.ScheduledFuture;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.commons.util.Rnd;
@@ -50,10 +47,12 @@ import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.UserInfo;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Broadcast;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class CursedWeapon implements INamable
 {
-	private static final Logger _log = Logger.getLogger(CursedWeapon.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(CursedWeapon.class.getName());
 	
 	// _name is the name of the cursed weapon associated with its ID.
 	private final String _name;
@@ -149,7 +148,7 @@ public class CursedWeapon implements INamable
 					del.setInt(2, _itemId);
 					if (del.executeUpdate() != 1)
 					{
-						_log.warning("Error while deleting itemId " + _itemId + " from userId " + _playerId);
+						_log.warn("Error while deleting itemId " + _itemId + " from userId " + _playerId);
 					}
 					
 					// Restore the karma
@@ -158,12 +157,12 @@ public class CursedWeapon implements INamable
 					ps.setInt(3, _playerId);
 					if (ps.executeUpdate() != 1)
 					{
-						_log.warning("Error while updating karma & pkkills for userId " + _playerId);
+						_log.warn("Error while updating karma & pkkills for userId " + _playerId);
 					}
 				}
 				catch (Exception e)
 				{
-					_log.log(Level.WARNING, "Could not delete : " + e.getMessage(), e);
+					_log.warn("Could not delete : " + e.getMessage(), e);
 				}
 			}
 		}
@@ -507,7 +506,7 @@ public class CursedWeapon implements INamable
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.SEVERE, "CursedWeapon: Failed to save data.", e);
+			_log.error("CursedWeapon: Failed to save data.", e);
 		}
 	}
 	

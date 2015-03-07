@@ -27,8 +27,8 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Objects;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import javolution.util.FastMap;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.Mentee;
@@ -37,15 +37,15 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.variables.PlayerVariables;
-
-import javolution.util.FastMap;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author UnAfraid
  */
 public class MentorManager
 {
-	private static final Logger _log = Logger.getLogger(MentorManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(MentorManager.class.getName());
 	
 	private final Map<Integer, Map<Integer, Mentee>> _menteeData = new FastMap<Integer, Map<Integer, Mentee>>().shared();
 	private final Map<Integer, Mentee> _mentors = new FastMap<Integer, Mentee>().shared();
@@ -68,7 +68,7 @@ public class MentorManager
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, e.getMessage(), e);
+			_log.warn(e.getMessage(), e);
 		}
 	}
 	
@@ -88,7 +88,7 @@ public class MentorManager
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, e.getMessage(), e);
+			_log.warn(e.getMessage(), e);
 		}
 	}
 	
@@ -107,7 +107,7 @@ public class MentorManager
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, e.getMessage(), e);
+			_log.warn(e.getMessage(), e);
 		}
 		finally
 		{

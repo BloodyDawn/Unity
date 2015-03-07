@@ -23,8 +23,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javolution.util.FastList;
 
@@ -48,6 +46,8 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.ExUserInfoEquipSlot;
 import org.l2junity.gameserver.network.client.send.SkillCoolTime;
 import org.l2junity.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class manages inventory
@@ -55,7 +55,7 @@ import org.l2junity.util.Util;
  */
 public abstract class Inventory extends ItemContainer
 {
-	protected static final Logger _log = Logger.getLogger(Inventory.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(Inventory.class.getName());
 	
 	public interface PaperdollListener
 	{
@@ -336,7 +336,7 @@ public abstract class Inventory extends ItemContainer
 					}
 					else
 					{
-						_log.warning("Inventory.ItemSkillsListener.Weapon: Incorrect skill: " + skillInfo + ".");
+						_log.warn("Inventory.ItemSkillsListener.Weapon: Incorrect skill: " + skillInfo + ".");
 					}
 				}
 			}
@@ -475,7 +475,7 @@ public abstract class Inventory extends ItemContainer
 					}
 					else
 					{
-						_log.warning("Inventory.ItemSkillsListener.Weapon: Incorrect skill: " + skillInfo + ".");
+						_log.warn("Inventory.ItemSkillsListener.Weapon: Incorrect skill: " + skillInfo + ".");
 					}
 				}
 			}
@@ -536,7 +536,7 @@ public abstract class Inventory extends ItemContainer
 					}
 					else
 					{
-						_log.warning("Inventory.ArmorSetListener.addSkills: Incorrect skill: " + holder + ".");
+						_log.warn("Inventory.ArmorSetListener.addSkills: Incorrect skill: " + holder + ".");
 					}
 				}
 			}
@@ -559,7 +559,7 @@ public abstract class Inventory extends ItemContainer
 				}
 				else
 				{
-					_log.warning("Inventory.ArmorSetListener.addShieldSkills: Incorrect skill: " + holder + ".");
+					_log.warn("Inventory.ArmorSetListener.addShieldSkills: Incorrect skill: " + holder + ".");
 				}
 			}
 			return update;
@@ -582,7 +582,7 @@ public abstract class Inventory extends ItemContainer
 				}
 				else
 				{
-					_log.warning("Inventory.ArmorSetListener.addEnchantSkills: Incorrect skill: " + holder + ".");
+					_log.warn("Inventory.ArmorSetListener.addEnchantSkills: Incorrect skill: " + holder + ".");
 				}
 			}
 			return update;
@@ -674,7 +674,7 @@ public abstract class Inventory extends ItemContainer
 					}
 					else
 					{
-						_log.warning("Inventory.ArmorSetListener.removeShieldSkills: Incorrect skill: " + holder + ".");
+						_log.warn("Inventory.ArmorSetListener.removeShieldSkills: Incorrect skill: " + holder + ".");
 					}
 				}
 				return true;
@@ -784,7 +784,7 @@ public abstract class Inventory extends ItemContainer
 				}
 				else
 				{
-					_log.warning("Inventory.ArmorSetListener: Incorrect skill: " + holder + ".");
+					_log.warn("Inventory.ArmorSetListener: Incorrect skill: " + holder + ".");
 				}
 			}
 		}
@@ -800,7 +800,7 @@ public abstract class Inventory extends ItemContainer
 				}
 				else
 				{
-					_log.warning("Inventory.ArmorSetListener: Incorrect skill: " + holder + ".");
+					_log.warn("Inventory.ArmorSetListener: Incorrect skill: " + holder + ".");
 				}
 			}
 		}
@@ -816,7 +816,7 @@ public abstract class Inventory extends ItemContainer
 				}
 				else
 				{
-					_log.warning("Inventory.ArmorSetListener: Incorrect skill: " + holder + ".");
+					_log.warn("Inventory.ArmorSetListener: Incorrect skill: " + holder + ".");
 				}
 			}
 		}
@@ -1737,7 +1737,7 @@ public abstract class Inventory extends ItemContainer
 				equipBroochJewel(item);
 				break;
 			default:
-				_log.warning("Unknown body slot " + targetSlot + " for Item ID:" + item.getId());
+				_log.warn("Unknown body slot " + targetSlot + " for Item ID:" + item.getId());
 		}
 	}
 	
@@ -1866,7 +1866,7 @@ public abstract class Inventory extends ItemContainer
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not restore inventory: " + e.getMessage(), e);
+			_log.warn("Could not restore inventory: " + e.getMessage(), e);
 		}
 	}
 	

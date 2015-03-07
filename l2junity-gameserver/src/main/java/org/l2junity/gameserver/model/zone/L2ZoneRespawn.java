@@ -61,7 +61,7 @@ public abstract class L2ZoneRespawn extends ZoneType
 					addBanishSpawn(x, y, z);
 					break;
 				default:
-					_log.warning(getClass().getSimpleName() + ": Unknown location type: " + type);
+					_log.warn(getClass().getSimpleName() + ": Unknown location type: " + type);
 			}
 		}
 	}

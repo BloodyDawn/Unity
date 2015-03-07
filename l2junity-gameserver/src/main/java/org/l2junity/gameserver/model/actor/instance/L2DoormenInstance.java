@@ -153,7 +153,7 @@ public class L2DoormenInstance extends L2NpcInstance
 		}
 		else
 		{
-			_log.warning("No teleport destination with id:" + whereTo);
+			_log.warn("No teleport destination with id:" + whereTo);
 		}
 		
 		player.sendPacket(ActionFailed.STATIC_PACKET);

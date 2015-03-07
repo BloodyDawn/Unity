@@ -27,8 +27,8 @@ import org.l2junity.gameserver.instancemanager.RaidBossPointsManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.taskmanager.Task;
 import org.l2junity.gameserver.taskmanager.TaskManager;
-import org.l2junity.gameserver.taskmanager.TaskTypes;
 import org.l2junity.gameserver.taskmanager.TaskManager.ExecutedTask;
+import org.l2junity.gameserver.taskmanager.TaskTypes;
 
 public class TaskRaidPointsReset extends Task
 {

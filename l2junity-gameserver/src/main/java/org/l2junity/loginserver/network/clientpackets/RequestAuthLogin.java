@@ -20,23 +20,22 @@ package org.l2junity.loginserver.network.clientpackets;
 
 import java.net.InetAddress;
 import java.security.GeneralSecurityException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import javax.crypto.Cipher;
 
 import org.l2junity.Config;
-import org.l2junity.loginserver.LoginController;
 import org.l2junity.loginserver.GameServerTable.GameServerInfo;
+import org.l2junity.loginserver.LoginController;
 import org.l2junity.loginserver.LoginController.AuthLoginResult;
 import org.l2junity.loginserver.model.data.AccountInfo;
 import org.l2junity.loginserver.network.L2LoginClient;
 import org.l2junity.loginserver.network.L2LoginClient.LoginClientState;
 import org.l2junity.loginserver.network.serverpackets.AccountKicked;
-import org.l2junity.loginserver.network.serverpackets.LoginOk;
-import org.l2junity.loginserver.network.serverpackets.ServerList;
 import org.l2junity.loginserver.network.serverpackets.AccountKicked.AccountKickedReason;
 import org.l2junity.loginserver.network.serverpackets.LoginFail.LoginFailReason;
+import org.l2junity.loginserver.network.serverpackets.LoginOk;
+import org.l2junity.loginserver.network.serverpackets.ServerList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <pre>
@@ -48,7 +47,7 @@ import org.l2junity.loginserver.network.serverpackets.LoginFail.LoginFailReason;
  */
 public class RequestAuthLogin extends L2LoginClientPacket
 {
-	private static Logger _log = Logger.getLogger(RequestAuthLogin.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(RequestAuthLogin.class.getName());
 	
 	private final byte[] _raw1 = new byte[128];
 	private final byte[] _raw2 = new byte[128];
@@ -115,7 +114,7 @@ public class RequestAuthLogin extends L2LoginClientPacket
 		}
 		catch (GeneralSecurityException e)
 		{
-			_log.log(Level.INFO, "", e);
+			_log.info("", e);
 			return;
 		}
 		
@@ -138,7 +137,7 @@ public class RequestAuthLogin extends L2LoginClientPacket
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "", e);
+			_log.warn("", e);
 			return;
 		}
 		

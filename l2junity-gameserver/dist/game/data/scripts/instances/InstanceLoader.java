@@ -53,8 +53,8 @@ import instances.SanctumOftheLordsOfDawn.SanctumOftheLordsOfDawn;
 import instances.SecretArea.SecretArea;
 import instances.SeedOfDestruction.Stage1;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Instance class-loader.
@@ -62,7 +62,7 @@ import java.util.logging.Logger;
  */
 public final class InstanceLoader
 {
-	private static final Logger _log = Logger.getLogger(InstanceLoader.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(InstanceLoader.class.getName());
 	
 	private static final Class<?>[] SCRIPTS =
 	{
@@ -113,7 +113,7 @@ public final class InstanceLoader
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, InstanceLoader.class.getSimpleName() + ": Failed loading " + script.getSimpleName() + ":", e);
+				_log.error(InstanceLoader.class.getSimpleName() + ": Failed loading " + script.getSimpleName() + ":", e);
 			}
 		}
 	}

@@ -21,9 +21,6 @@ package org.l2junity.gameserver.model.entity;
 import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import javolution.util.FastList;
 
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -45,10 +42,12 @@ import org.l2junity.gameserver.network.client.send.PlaySound;
 import org.l2junity.gameserver.network.client.send.SocialAction;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Duel
 {
-	protected static final Logger _log = Logger.getLogger(Duel.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(Duel.class.getName());
 	
 	public static final int DUELSTATE_NODUEL = 0;
 	public static final int DUELSTATE_DUELLING = 1;
@@ -216,7 +215,7 @@ public class Duel
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "", e);
+				_log.error("", e);
 			}
 		}
 	}
@@ -259,7 +258,7 @@ public class Duel
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "", e);
+				_log.error("", e);
 			}
 		}
 	}
@@ -284,7 +283,7 @@ public class Duel
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "", e);
+				_log.error("", e);
 			}
 		}
 	}
@@ -986,7 +985,7 @@ public class Duel
 		{
 			if ((player != _playerA) && (player != _playerB))
 			{
-				_log.warning("Error in onPlayerDefeat(): player is not part of this 1vs1 duel");
+				_log.warn("Error in onPlayerDefeat(): player is not part of this 1vs1 duel");
 			}
 			
 			if (_playerA == player)

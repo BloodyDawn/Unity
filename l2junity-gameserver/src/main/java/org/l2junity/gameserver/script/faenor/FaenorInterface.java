@@ -19,20 +19,21 @@
 package org.l2junity.gameserver.script.faenor;
 
 import java.util.List;
-import java.util.logging.Logger;
 
 import org.l2junity.gameserver.data.sql.impl.AnnouncementsTable;
 import org.l2junity.gameserver.datatables.EventDroplist;
 import org.l2junity.gameserver.model.announce.EventAnnouncement;
 import org.l2junity.gameserver.script.DateRange;
 import org.l2junity.gameserver.script.EngineInterface;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author Luis Arias
  */
 public class FaenorInterface implements EngineInterface
 {
-	protected static final Logger _log = Logger.getLogger(FaenorInterface.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(FaenorInterface.class.getName());
 	
 	public static FaenorInterface getInstance()
 	{

@@ -23,8 +23,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.logging.Level;
-
 import javolution.util.FastMap;
 
 import org.l2junity.gameserver.data.xml.IXmlReader;
@@ -61,9 +59,9 @@ public final class AdminData implements IXmlReader
 		_accessLevels.clear();
 		_adminCommandAccessRights.clear();
 		parseDatapackFile("config/accessLevels.xml");
-		LOGGER.log(Level.INFO, getClass().getSimpleName() + ": Loaded: " + _accessLevels.size() + " Access Levels.");
+		LOGGER.info(getClass().getSimpleName() + ": Loaded: " + _accessLevels.size() + " Access Levels.");
 		parseDatapackFile("config/adminCommands.xml");
-		LOGGER.log(Level.INFO, getClass().getSimpleName() + ": Loaded: " + _adminCommandAccessRights.size() + " Access Commands.");
+		LOGGER.info(getClass().getSimpleName() + ": Loaded: " + _adminCommandAccessRights.size() + " Access Commands.");
 	}
 	
 	@Override

@@ -32,8 +32,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.concurrent.ScheduledFuture;
 import java.util.function.Predicate;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 import org.l2junity.DatabaseFactory;
@@ -53,16 +51,18 @@ import org.l2junity.gameserver.network.client.send.commission.ExResponseCommissi
 import org.l2junity.gameserver.network.client.send.commission.ExResponseCommissionDelete;
 import org.l2junity.gameserver.network.client.send.commission.ExResponseCommissionInfo;
 import org.l2junity.gameserver.network.client.send.commission.ExResponseCommissionList;
-import org.l2junity.gameserver.network.client.send.commission.ExResponseCommissionRegister;
 import org.l2junity.gameserver.network.client.send.commission.ExResponseCommissionList.CommissionListReplyType;
+import org.l2junity.gameserver.network.client.send.commission.ExResponseCommissionRegister;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author NosBit
  */
 public final class CommissionManager
 {
-	private static final Logger _log = Logger.getLogger(CommissionManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(CommissionManager.class.getName());
 	
 	private static final int INTERACTION_DISTANCE = 250;
 	private static final int ITEMS_LIMIT_PER_REQUEST = 999;
@@ -95,7 +95,7 @@ public final class CommissionManager
 						final ItemInstance itemInstance = ItemInstance.restoreFromDb(itemOwnerId, rs);
 						if (itemInstance == null)
 						{
-							_log.warning(getClass().getSimpleName() + ": Failed loading item instance with item object id " + itemObjectId + " and owner id " + itemOwnerId + ".");
+							_log.warn(getClass().getSimpleName() + ": Failed loading item instance with item object id " + itemObjectId + " and owner id " + itemOwnerId + ".");
 							continue;
 						}
 						
@@ -113,7 +113,7 @@ public final class CommissionManager
 					final ItemInstance itemInstance = itemInstances.get(rs.getInt("item_object_id"));
 					if (itemInstance == null)
 					{
-						_log.warning(getClass().getSimpleName() + ": Failed loading commission item with commission id " + commissionId + " because item instance does not exist or failed to load.");
+						_log.warn(getClass().getSimpleName() + ": Failed loading commission item with commission id " + commissionId + " because item instance does not exist or failed to load.");
 						continue;
 					}
 					final CommissionItem commissionItem = new CommissionItem(commissionId, itemInstance, rs.getLong("price_per_unit"), rs.getTimestamp("start_time").toInstant(), rs.getByte("duration_in_days"));
@@ -131,7 +131,7 @@ public final class CommissionManager
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Failed loading commission items.", e);
+			_log.warn(getClass().getSimpleName() + ": Failed loading commission items.", e);
 		}
 	}
 	
@@ -280,7 +280,7 @@ public final class CommissionManager
 			}
 			catch (SQLException e)
 			{
-				_log.log(Level.WARNING, getClass().getSimpleName() + ": Failed inserting commission item. ItemInstance: " + itemInstance, e);
+				_log.warn(getClass().getSimpleName() + ": Failed inserting commission item. ItemInstance: " + itemInstance, e);
 				player.sendPacket(SystemMessageId.THE_ITEM_HAS_FAILED_TO_BE_REGISTERED);
 				player.sendPacket(ExResponseCommissionRegister.FAILED);
 			}
@@ -419,7 +419,7 @@ public final class CommissionManager
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Failed deleting commission item. Commission ID: " + commissionId, e);
+			_log.warn(getClass().getSimpleName() + ": Failed deleting commission item. Commission ID: " + commissionId, e);
 		}
 		return false;
 	}

@@ -24,19 +24,19 @@ import java.io.FileInputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.file.filter.HTMLFilter;
 import org.l2junity.gameserver.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author Layane
  */
 public class HtmCache
 {
-	private static final Logger _log = Logger.getLogger(HtmCache.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(HtmCache.class.getName());
 	
 	private static final HTMLFilter htmlFilter = new HTMLFilter();
 	
@@ -136,7 +136,7 @@ public class HtmCache
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Problem with htm file " + e.getMessage(), e);
+			_log.warn("Problem with htm file " + e.getMessage(), e);
 		}
 		return content;
 	}
@@ -147,7 +147,7 @@ public class HtmCache
 		if (content == null)
 		{
 			content = "<html><body>My text is missing:<br>" + path + "</body></html>";
-			_log.warning("Cache[HTML]: Missing HTML page: " + path);
+			_log.warn("Cache[HTML]: Missing HTML page: " + path);
 		}
 		return content;
 	}

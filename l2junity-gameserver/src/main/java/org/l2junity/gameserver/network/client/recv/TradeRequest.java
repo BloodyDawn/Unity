@@ -154,7 +154,7 @@ public final class TradeRequest implements IClientIncomingPacket
 		{
 			if (Config.DEBUG)
 			{
-				_log.fine("Already trading with someone else.");
+				_log.debug("Already trading with someone else.");
 			}
 			client.sendPacket(SystemMessageId.YOU_ARE_ALREADY_TRADING_WITH_SOMEONE);
 			return;

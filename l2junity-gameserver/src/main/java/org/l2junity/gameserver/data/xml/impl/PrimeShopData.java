@@ -100,7 +100,7 @@ public class PrimeShopData implements IXmlReader
 									final L2Item item = ItemTable.getInstance().getTemplate(itemId);
 									if (item == null)
 									{
-										LOGGER.severe(getClass().getSimpleName() + ": Item template null for itemId: " + itemId + " brId: " + set.getInt("id"));
+										LOGGER.error(getClass().getSimpleName() + ": Item template null for itemId: " + itemId + " brId: " + set.getInt("id"));
 										return;
 									}
 									

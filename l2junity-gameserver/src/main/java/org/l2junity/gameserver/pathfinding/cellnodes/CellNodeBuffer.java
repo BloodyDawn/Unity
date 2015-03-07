@@ -20,9 +20,9 @@ package org.l2junity.gameserver.pathfinding.cellnodes;
 
 import java.util.concurrent.locks.ReentrantLock;
 
-import org.l2junity.Config;
-
 import javolution.util.FastList;
+
+import org.l2junity.Config;
 
 /**
  * @author DS Credits to Diamond

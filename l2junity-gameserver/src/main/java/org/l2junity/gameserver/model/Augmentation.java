@@ -20,12 +20,12 @@ package org.l2junity.gameserver.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.gameserver.data.xml.impl.OptionData;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.options.Options;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Used to store an augmentation and its bonuses.
@@ -44,7 +44,7 @@ public final class Augmentation
 	
 	public static class AugmentationStatBoni
 	{
-		private static final Logger _log = Logger.getLogger(AugmentationStatBoni.class.getName());
+		private static final Logger _log = LoggerFactory.getLogger(AugmentationStatBoni.class.getName());
 		private final List<Options> _options = new ArrayList<>();
 		private boolean _active;
 		
@@ -64,7 +64,7 @@ public final class Augmentation
 				}
 				else
 				{
-					_log.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't find option: " + stat);
+					_log.warn(getClass().getSimpleName() + ": Couldn't find option: " + stat);
 				}
 			}
 		}

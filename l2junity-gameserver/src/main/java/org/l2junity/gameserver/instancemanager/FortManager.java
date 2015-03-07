@@ -22,8 +22,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javolution.util.FastList;
 
@@ -32,10 +30,12 @@ import org.l2junity.gameserver.InstanceListManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.entity.Fort;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class FortManager implements InstanceListManager
 {
-	protected static final Logger _log = Logger.getLogger(FortManager.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(FortManager.class.getName());
 	
 	private List<Fort> _forts;
 	
@@ -184,7 +184,7 @@ public final class FortManager implements InstanceListManager
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception: loadFortData(): " + e.getMessage(), e);
+			_log.warn("Exception: loadFortData(): " + e.getMessage(), e);
 		}
 	}
 	

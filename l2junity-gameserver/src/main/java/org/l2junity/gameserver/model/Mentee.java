@@ -21,19 +21,19 @@ package org.l2junity.gameserver.model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author UnAfraid
  */
 public class Mentee
 {
-	private static final Logger _log = Logger.getLogger(Mentee.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(Mentee.class.getName());
 	
 	private final int _objectId;
 	private String _name;
@@ -67,7 +67,7 @@ public class Mentee
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, e.getMessage(), e);
+				_log.warn(e.getMessage(), e);
 			}
 		}
 		else

@@ -18,20 +18,19 @@
  */
 package org.l2junity.gameserver.model.shuttle;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.instance.L2ShuttleInstance;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author UnAfraid
  */
 public class L2ShuttleEngine implements Runnable
 {
-	private static final Logger _log = Logger.getLogger(L2ShuttleEngine.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(L2ShuttleEngine.class.getName());
 	
 	private static final int DELAY = 15 * 1000;
 	
@@ -107,7 +106,7 @@ public class L2ShuttleEngine implements Runnable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.INFO, e.getMessage(), e);
+			_log.info(e.getMessage(), e);
 		}
 	}
 }

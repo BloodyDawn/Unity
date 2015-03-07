@@ -20,7 +20,6 @@ package org.l2junity.gameserver.network.client.recv;
 
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
@@ -39,6 +38,8 @@ import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.UserInfo;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.network.PacketReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Format (ch) dd c: (id) 0xD0 h: (subid) 0x33 d: skill id d: skill lvl
@@ -46,7 +47,7 @@ import org.l2junity.network.PacketReader;
  */
 public final class RequestExEnchantSkillUntrain implements IClientIncomingPacket
 {
-	private static final Logger _logEnchant = Logger.getLogger("enchant");
+	private static final Logger _logEnchant = LoggerFactory.getLogger("enchant");
 	
 	private int _skillId;
 	private int _skillLvl;
@@ -171,7 +172,7 @@ public final class RequestExEnchantSkillUntrain implements IClientIncomingPacket
 		
 		if (Config.DEBUG)
 		{
-			_log.fine("Learned skill ID: " + _skillId + " Level: " + _skillLvl + " for " + requiredSp + " SP, " + requireditems + " Adena.");
+			_log.debug("Learned skill ID: " + _skillId + " Level: " + _skillLvl + " for " + requiredSp + " SP, " + requireditems + " Adena.");
 		}
 		
 		client.sendPacket(new UserInfo(player));

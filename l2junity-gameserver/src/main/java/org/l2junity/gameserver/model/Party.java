@@ -27,8 +27,6 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Future;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javolution.util.FastList;
 
@@ -64,6 +62,8 @@ import org.l2junity.gameserver.network.client.send.PartySmallWindowDeleteAll;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class serves as a container for player parties.
@@ -71,7 +71,7 @@ import org.l2junity.gameserver.util.Util;
  */
 public class Party extends AbstractPlayerGroup
 {
-	private static final Logger _log = Logger.getLogger(Party.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(Party.class.getName());
 	
 	// @formatter:off
 	private static final double[] BONUS_EXP_SP =
@@ -523,7 +523,7 @@ public class Party extends AbstractPlayerGroup
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "", e);
+				_log.warn("", e);
 			}
 			
 			SystemMessage msg;

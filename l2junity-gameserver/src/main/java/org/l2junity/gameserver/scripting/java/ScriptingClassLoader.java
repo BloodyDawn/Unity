@@ -18,14 +18,15 @@
  */
 package org.l2junity.gameserver.scripting.java;
 
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author HorridoJoho
  */
 public final class ScriptingClassLoader extends ClassLoader
 {
-	public static final Logger LOGGER = Logger.getLogger(ScriptingClassLoader.class.getName());
+	public static final Logger LOGGER = LoggerFactory.getLogger(ScriptingClassLoader.class.getName());
 	
 	private Iterable<ScriptingOutputFileObject> _compiledClasses;
 	

@@ -19,7 +19,6 @@
 package handlers.itemhandlers;
 
 import java.util.List;
-import java.util.logging.Level;
 import java.util.stream.Collectors;
 
 import org.l2junity.gameserver.enums.ShotType;
@@ -92,7 +91,7 @@ public class BeastSoulShot implements IItemHandler
 		
 		if (skills == null)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": is missing skills!");
+			_log.warn(getClass().getSimpleName() + ": is missing skills!");
 			return false;
 		}
 		

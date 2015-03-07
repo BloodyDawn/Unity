@@ -20,8 +20,8 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2TrapInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
@@ -60,7 +60,7 @@ public final class SummonTrap extends AbstractEffect
 		
 		if (_npcId <= 0)
 		{
-			_log.warning(SummonTrap.class.getSimpleName() + ": Invalid NPC ID:" + _npcId + " in skill ID: " + info.getSkill().getId());
+			_log.warn(SummonTrap.class.getSimpleName() + ": Invalid NPC ID:" + _npcId + " in skill ID: " + info.getSkill().getId());
 			return;
 		}
 		
@@ -79,7 +79,7 @@ public final class SummonTrap extends AbstractEffect
 		final L2NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(_npcId);
 		if (npcTemplate == null)
 		{
-			_log.warning(SummonTrap.class.getSimpleName() + ": Spawn of the non-existing Trap ID: " + _npcId + " in skill ID:" + info.getSkill().getId());
+			_log.warn(SummonTrap.class.getSimpleName() + ": Spawn of the non-existing Trap ID: " + _npcId + " in skill ID:" + info.getSkill().getId());
 			return;
 		}
 		

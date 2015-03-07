@@ -28,8 +28,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -40,6 +38,8 @@ import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -50,7 +50,7 @@ import org.w3c.dom.Node;
  */
 public final class SpawnTable implements IXmlReader
 {
-	private static final Logger LOGGER = Logger.getLogger(SpawnTable.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(SpawnTable.class.getName());
 	// SQL
 	private static final String SELECT_SPAWNS = "SELECT count, npc_templateid, locx, locy, locz, heading, respawn_delay, respawn_random, loc_id, periodOfDay FROM spawnlist";
 	private static final String SELECT_CUSTOM_SPAWNS = "SELECT count, npc_templateid, locx, locy, locz, heading, respawn_delay, respawn_random, loc_id, periodOfDay FROM custom_spawnlist";
@@ -87,7 +87,7 @@ public final class SpawnTable implements IXmlReader
 		L2NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(npcId);
 		if (npcTemplate == null)
 		{
-			LOGGER.warning(getClass().getSimpleName() + ": Data missing in NPC table for ID: " + npcId + ".");
+			LOGGER.warn(getClass().getSimpleName() + ": Data missing in NPC table for ID: " + npcId + ".");
 			return false;
 		}
 		
@@ -188,7 +188,7 @@ public final class SpawnTable implements IXmlReader
 								
 								if ((x == 0) && (y == 0) && (territoryName == null)) // Both coordinates and zone are unspecified
 								{
-									LOGGER.warning("XML Spawnlist: Spawn could not be initialized, both coordinates and zone are unspecified for ID " + templateId);
+									LOGGER.warn("XML Spawnlist: Spawn could not be initialized, both coordinates and zone are unspecified for ID " + templateId);
 									continue;
 								}
 								
@@ -279,7 +279,7 @@ public final class SpawnTable implements IXmlReader
 		}
 		catch (Exception e)
 		{
-			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Spawn could not be initialized: " + e.getMessage(), e);
+			LOGGER.warn(getClass().getSimpleName() + ": Spawn could not be initialized: " + e.getMessage(), e);
 		}
 		return npcSpawnCount;
 	}
@@ -337,7 +337,7 @@ public final class SpawnTable implements IXmlReader
 		catch (Exception e)
 		{
 			// problem with initializing spawn, go to next one
-			LOGGER.log(Level.WARNING, "Spawn could not be initialized: " + e.getMessage(), e);
+			LOGGER.warn("Spawn could not be initialized: " + e.getMessage(), e);
 		}
 		
 		return ret;
@@ -420,7 +420,7 @@ public final class SpawnTable implements IXmlReader
 			}
 			catch (Exception e)
 			{
-				LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Could not store spawn in the DB:" + e.getMessage(), e);
+				LOGGER.warn(getClass().getSimpleName() + ": Could not store spawn in the DB:" + e.getMessage(), e);
 			}
 		}
 	}
@@ -451,7 +451,7 @@ public final class SpawnTable implements IXmlReader
 			}
 			catch (Exception e)
 			{
-				LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Spawn " + spawn + " could not be removed from DB: " + e.getMessage(), e);
+				LOGGER.warn(getClass().getSimpleName() + ": Spawn " + spawn + " could not be removed from DB: " + e.getMessage(), e);
 			}
 		}
 	}

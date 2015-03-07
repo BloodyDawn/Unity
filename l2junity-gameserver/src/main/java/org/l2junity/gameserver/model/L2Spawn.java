@@ -23,8 +23,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javolution.util.FastList;
 
@@ -44,6 +42,8 @@ import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.interfaces.INamable;
 import org.l2junity.gameserver.model.interfaces.IPositionable;
 import org.l2junity.gameserver.model.zone.type.NpcSpawnTerritory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class manages the spawn and respawn of a group of L2NpcInstance that are in the same are and have the same type.<br>
@@ -54,7 +54,7 @@ import org.l2junity.gameserver.model.zone.type.NpcSpawnTerritory;
  */
 public class L2Spawn implements IPositionable, IIdentifiable, INamable
 {
-	protected static final Logger _log = Logger.getLogger(L2Spawn.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(L2Spawn.class.getName());
 	
 	/** String identifier of this spawn */
 	private String _name;
@@ -107,7 +107,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "", e);
+				_log.warn("", e);
 			}
 			
 			_scheduledCount--;
@@ -564,7 +564,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "NPC " + _template.getId() + " class not found", e);
+			_log.warn("NPC " + _template.getId() + " class not found", e);
 		}
 		return null;
 	}
@@ -688,7 +688,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		
 		if (Config.DEBUG)
 		{
-			_log.finest("Spawned Mob Id: " + _template.getId() + " , at: X: " + mob.getX() + " Y: " + mob.getY() + " Z: " + mob.getZ());
+			_log.trace("Spawned Mob Id: " + _template.getId() + " , at: X: " + mob.getX() + " Y: " + mob.getY() + " Z: " + mob.getZ());
 		}
 		// Increase the current number of L2NpcInstance managed by this L2Spawn
 		_currentCount++;
@@ -733,7 +733,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		{
 			if (delay < 0)
 			{
-				_log.warning("respawn delay is negative for spawn:" + this);
+				_log.warn("respawn delay is negative for spawn:" + this);
 			}
 			
 			int minDelay = delay - randomInterval;

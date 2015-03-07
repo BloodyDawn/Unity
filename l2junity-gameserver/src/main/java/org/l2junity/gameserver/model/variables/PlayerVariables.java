@@ -23,19 +23,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Map.Entry;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author UnAfraid
  */
 public class PlayerVariables extends AbstractVariables
 {
-	private static final Logger _log = Logger.getLogger(PlayerVariables.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(PlayerVariables.class.getName());
 	
 	// SQL Queries.
 	private static final String SELECT_QUERY = "SELECT * FROM character_variables WHERE charId = ?";
@@ -73,7 +73,7 @@ public class PlayerVariables extends AbstractVariables
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't restore variables for: " + getPlayer(), e);
+			_log.warn(getClass().getSimpleName() + ": Couldn't restore variables for: " + getPlayer(), e);
 			return false;
 		}
 		finally
@@ -116,7 +116,7 @@ public class PlayerVariables extends AbstractVariables
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't update variables for: " + getPlayer(), e);
+			_log.warn(getClass().getSimpleName() + ": Couldn't update variables for: " + getPlayer(), e);
 			return false;
 		}
 		finally
@@ -143,7 +143,7 @@ public class PlayerVariables extends AbstractVariables
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't delete variables for: " + getPlayer(), e);
+			_log.warn(getClass().getSimpleName() + ": Couldn't delete variables for: " + getPlayer(), e);
 			return false;
 		}
 		return true;

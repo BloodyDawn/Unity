@@ -65,7 +65,7 @@ public class RequestAcquireAbilityList implements IClientIncomingPacket
 		
 		if ((activeChar.getAbilityPoints() == 0) || (activeChar.getAbilityPoints() == activeChar.getAbilityPointsUsed()))
 		{
-			_log.warning(getClass().getSimpleName() + ": Player " + activeChar + " is trying to learn ability without ability points!");
+			_log.warn(getClass().getSimpleName() + ": Player " + activeChar + " is trying to learn ability without ability points!");
 			return;
 		}
 		
@@ -85,7 +85,7 @@ public class RequestAcquireAbilityList implements IClientIncomingPacket
 			final SkillLearn learn = SkillTreesData.getInstance().getAbilitySkill(holder.getSkillId(), holder.getSkillLvl());
 			if (learn == null)
 			{
-				_log.warning(getClass().getSimpleName() + ": SkillLearn " + holder.getSkillId() + "(" + holder.getSkillLvl() + ") not found!");
+				_log.warn(getClass().getSimpleName() + ": SkillLearn " + holder.getSkillId() + "(" + holder.getSkillLvl() + ") not found!");
 				client.sendPacket(ActionFailed.STATIC_PACKET);
 				break;
 			}
@@ -93,7 +93,7 @@ public class RequestAcquireAbilityList implements IClientIncomingPacket
 			final Skill skill = holder.getSkill();
 			if (skill == null)
 			{
-				_log.warning(getClass().getSimpleName() + ": SkillLearn " + holder.getSkillId() + "(" + holder.getSkillLvl() + ") not found!");
+				_log.warn(getClass().getSimpleName() + ": SkillLearn " + holder.getSkillId() + "(" + holder.getSkillLvl() + ") not found!");
 				client.sendPacket(ActionFailed.STATIC_PACKET);
 				break;
 			}
@@ -110,7 +110,7 @@ public class RequestAcquireAbilityList implements IClientIncomingPacket
 			
 			if ((activeChar.getAbilityPoints() - activeChar.getAbilityPointsUsed()) < points)
 			{
-				_log.warning(getClass().getSimpleName() + ": Player " + activeChar + " is trying to learn ability without ability points!");
+				_log.warn(getClass().getSimpleName() + ": Player " + activeChar + " is trying to learn ability without ability points!");
 				client.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}

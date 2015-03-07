@@ -18,17 +18,17 @@
  */
 package org.l2junity.gameserver.model.actor.knownlist;
 
-import java.util.logging.Logger;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.L2GuardInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class GuardKnownList extends AttackableKnownList
 {
-	private static final Logger _log = Logger.getLogger(GuardKnownList.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(GuardKnownList.class.getName());
 	
 	public GuardKnownList(L2GuardInstance activeChar)
 	{
@@ -50,7 +50,7 @@ public class GuardKnownList extends AttackableKnownList
 			{
 				if (Config.DEBUG)
 				{
-					_log.fine(getActiveChar().getObjectId() + ": PK " + object.getObjectId() + " entered scan range");
+					_log.debug(getActiveChar().getObjectId() + ": PK " + object.getObjectId() + " entered scan range");
 				}
 				
 				// Set the L2GuardInstance Intention to AI_INTENTION_ACTIVE
@@ -67,7 +67,7 @@ public class GuardKnownList extends AttackableKnownList
 			{
 				if (Config.DEBUG)
 				{
-					_log.fine(getActiveChar().getObjectId() + ": Aggressive mob " + object.getObjectId() + " entered scan range");
+					_log.debug(getActiveChar().getObjectId() + ": Aggressive mob " + object.getObjectId() + " entered scan range");
 				}
 				
 				// Set the L2GuardInstance Intention to AI_INTENTION_ACTIVE

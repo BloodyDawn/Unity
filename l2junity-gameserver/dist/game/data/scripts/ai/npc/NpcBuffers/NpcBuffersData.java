@@ -22,8 +22,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-import java.util.logging.Level;
-
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.StatsSet;
 import org.w3c.dom.Document;
@@ -46,7 +44,7 @@ public class NpcBuffersData implements IXmlReader
 	public void load()
 	{
 		parseDatapackFile("data/scripts/ai/npc/NpcBuffers/NpcBuffersData.xml");
-		LOGGER.log(Level.INFO, getClass().getSimpleName() + ": Loaded: " + _npcBuffers.size() + " buffers data.");
+		LOGGER.info(getClass().getSimpleName() + ": Loaded: " + _npcBuffers.size() + " buffers data.");
 	}
 	
 	@Override

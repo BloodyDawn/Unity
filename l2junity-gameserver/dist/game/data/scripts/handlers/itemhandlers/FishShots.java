@@ -18,8 +18,6 @@
  */
 package handlers.itemhandlers;
 
-import java.util.logging.Level;
-
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.model.WorldObject;
@@ -67,7 +65,7 @@ public class FishShots implements IItemHandler
 		
 		if (skills == null)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": is missing skills!");
+			_log.warn(getClass().getSimpleName() + ": is missing skills!");
 			return false;
 		}
 		

@@ -22,8 +22,8 @@ import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
-import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.model.zone.ZoneType;
 
 /**
  * another type of zone where your speed is changed

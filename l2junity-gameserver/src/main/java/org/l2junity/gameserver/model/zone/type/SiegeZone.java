@@ -35,8 +35,8 @@ import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.AbstractZoneSettings;
-import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
@@ -142,7 +142,7 @@ public class SiegeZone extends ZoneType
 			SiegableHall hall = CHSiegeManager.getInstance().getConquerableHalls().get(getSettings().getSiegeableId());
 			if (hall == null)
 			{
-				_log.warning("L2SiegeZone: Siegable clan hall with id " + value + " does not exist!");
+				_log.warn("L2SiegeZone: Siegable clan hall with id " + value + " does not exist!");
 			}
 			else
 			{

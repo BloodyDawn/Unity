@@ -18,9 +18,6 @@
  */
 package org.l2junity.gameserver;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.UPnPService;
@@ -48,6 +45,8 @@ import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.network.gameserverpackets.ServerStatus;
 import org.l2junity.gameserver.util.Broadcast;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class provides the functions for shutting down and restarting the server.<br>
@@ -56,7 +55,7 @@ import org.l2junity.gameserver.util.Broadcast;
  */
 public class Shutdown extends Thread
 {
-	private static final Logger _log = Logger.getLogger(Shutdown.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(Shutdown.class.getName());
 	private static Shutdown _counterInstance = null;
 	
 	private int _secondsShut;
@@ -86,7 +85,7 @@ public class Shutdown extends Thread
 	
 	public void startTelnetShutdown(String IP, int seconds, boolean restart)
 	{
-		_log.warning("IP: " + IP + " issued shutdown command. " + MODE_TEXT[_shutdownMode] + " in " + seconds + " seconds!");
+		_log.warn("IP: " + IP + " issued shutdown command. " + MODE_TEXT[_shutdownMode] + " in " + seconds + " seconds!");
 		
 		if (restart)
 		{
@@ -137,7 +136,7 @@ public class Shutdown extends Thread
 	 */
 	public void telnetAbort(String IP)
 	{
-		_log.warning("IP: " + IP + " issued shutdown ABORT. " + MODE_TEXT[_shutdownMode] + " has been stopped!");
+		_log.warn("IP: " + IP + " issued shutdown ABORT. " + MODE_TEXT[_shutdownMode] + " has been stopped!");
 		
 		if (_counterInstance != null)
 		{
@@ -197,7 +196,7 @@ public class Shutdown extends Thread
 			}
 			catch (Throwable t)
 			{
-				_log.log(Level.WARNING, "Error while removing UPnP port mappings: ", t);
+				_log.warn("Error while removing UPnP port mappings: ", t);
 			}
 			
 			try
@@ -210,7 +209,7 @@ public class Shutdown extends Thread
 			}
 			catch (Throwable t)
 			{
-				_log.log(Level.WARNING, "Error saving offline shops.", t);
+				_log.warn("Error saving offline shops.", t);
 			}
 			
 			try
@@ -299,7 +298,7 @@ public class Shutdown extends Thread
 			// gm shutdown: send warnings and then call exit to start shutdown sequence
 			countdown();
 			// last point where logging is operational :(
-			_log.warning("GM shutdown countdown is over. " + MODE_TEXT[_shutdownMode] + " NOW!");
+			_log.warn("GM shutdown countdown is over. " + MODE_TEXT[_shutdownMode] + " NOW!");
 			switch (_shutdownMode)
 			{
 				case GM_SHUTDOWN:
@@ -334,7 +333,7 @@ public class Shutdown extends Thread
 			_shutdownMode = GM_SHUTDOWN;
 		}
 		
-		_log.warning("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") issued shutdown command. " + MODE_TEXT[_shutdownMode] + " in " + seconds + " seconds!");
+		_log.warn("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") issued shutdown command. " + MODE_TEXT[_shutdownMode] + " in " + seconds + " seconds!");
 		
 		if (_shutdownMode > 0)
 		{
@@ -378,7 +377,7 @@ public class Shutdown extends Thread
 	 */
 	public void abort(PlayerInstance activeChar)
 	{
-		_log.warning("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") issued shutdown ABORT. " + MODE_TEXT[_shutdownMode] + " has been stopped!");
+		_log.warn("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") issued shutdown ABORT. " + MODE_TEXT[_shutdownMode] + " has been stopped!");
 		if (_counterInstance != null)
 		{
 			_counterInstance._abort();
@@ -591,7 +590,7 @@ public class Shutdown extends Thread
 			}
 			catch (Throwable t)
 			{
-				_log.log(Level.WARNING, "Failed logour char " + player, t);
+				_log.warn("Failed logour char " + player, t);
 			}
 		}
 	}

@@ -18,17 +18,17 @@
  */
 package org.l2junity.gameserver.handler;
 
-import java.util.logging.Logger;
-
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Mother class of all Item Handlers.
  */
 public interface IItemHandler
 {
-	public static final Logger _log = Logger.getLogger(IItemHandler.class.getName());
+	public static final Logger _log = LoggerFactory.getLogger(IItemHandler.class.getName());
 	
 	/**
 	 * Launch task associated to the item.

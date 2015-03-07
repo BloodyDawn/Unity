@@ -89,7 +89,7 @@ public final class RequestExMagicSkillUseGround implements IClientIncomingPacket
 		else
 		{
 			client.sendPacket(ActionFailed.STATIC_PACKET);
-			_log.warning("No skill found with id " + _skillId + " and level " + level + " !!");
+			_log.warn("No skill found with id " + _skillId + " and level " + level + " !!");
 		}
 	}
 }

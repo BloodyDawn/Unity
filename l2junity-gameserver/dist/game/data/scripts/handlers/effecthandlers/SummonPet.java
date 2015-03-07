@@ -18,14 +18,12 @@
  */
 package handlers.effecthandlers;
 
-import java.util.logging.Level;
-
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.data.xml.impl.PetDataTable;
 import org.l2junity.gameserver.model.PetData;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
@@ -78,14 +76,14 @@ public final class SummonPet extends AbstractEffect
 		final PetItemHolder holder = player.removeScript(PetItemHolder.class);
 		if (holder == null)
 		{
-			_log.log(Level.WARNING, "Summoning pet without attaching PetItemHandler!", new Throwable());
+			_log.warn("Summoning pet without attaching PetItemHandler!", new Throwable());
 			return;
 		}
 		
 		final ItemInstance item = holder.getItem();
 		if (player.getInventory().getItemByObjectId(item.getObjectId()) != item)
 		{
-			_log.log(Level.WARNING, "Player: " + player + " is trying to summon pet from item that he doesn't owns.");
+			_log.warn("Player: " + player + " is trying to summon pet from item that he doesn't owns.");
 			return;
 		}
 		

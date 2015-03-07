@@ -25,14 +25,13 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.clientstrings.Builder;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -42,7 +41,7 @@ import org.w3c.dom.Node;
  */
 public final class SystemMessageId
 {
-	private static final Logger _log = Logger.getLogger(SystemMessageId.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(SystemMessageId.class.getName());
 	private static final SMLocalisation[] EMPTY_SML_ARRAY = new SMLocalisation[0];
 	public static final SystemMessageId[] EMPTY_ARRAY = new SystemMessageId[0];
 	
@@ -13900,7 +13899,7 @@ public final class SystemMessageId
 				}
 				catch (final Exception e)
 				{
-					_log.log(Level.WARNING, "SystemMessageId: Failed field access for '" + field.getName() + "'", e);
+					_log.warn("SystemMessageId: Failed field access for '" + field.getName() + "'", e);
 				}
 			}
 		}
@@ -13961,7 +13960,7 @@ public final class SystemMessageId
 		
 		if (!Config.L2JMOD_MULTILANG_SM_ENABLE)
 		{
-			_log.log(Level.INFO, "SystemMessageId: MultiLanguage disabled.");
+			_log.info("SystemMessageId: MultiLanguage disabled.");
 			return;
 		}
 		
@@ -13984,7 +13983,7 @@ public final class SystemMessageId
 				continue;
 			}
 			
-			_log.log(Level.INFO, "SystemMessageId: Loading localisation for '" + lang + "'");
+			_log.info("SystemMessageId: Loading localisation for '" + lang + "'");
 			
 			try
 			{
@@ -14004,7 +14003,7 @@ public final class SystemMessageId
 									smId = getSystemMessageId(Integer.parseInt(node.getNodeValue()));
 									if (smId == null)
 									{
-										_log.log(Level.WARNING, "SystemMessageId: Unknown SMID '" + node.getNodeValue() + "', lang '" + lang + "'.");
+										_log.warn("SystemMessageId: Unknown SMID '" + node.getNodeValue() + "', lang '" + lang + "'.");
 										continue;
 									}
 								}
@@ -14014,7 +14013,7 @@ public final class SystemMessageId
 									smId = getSystemMessageId(node.getNodeValue());
 									if (smId == null)
 									{
-										_log.log(Level.WARNING, "SystemMessageId: Unknown SMID '" + node.getNodeValue() + "', lang '" + lang + "'.");
+										_log.warn("SystemMessageId: Unknown SMID '" + node.getNodeValue() + "', lang '" + lang + "'.");
 										continue;
 									}
 								}
@@ -14022,14 +14021,14 @@ public final class SystemMessageId
 								node = nnmb.getNamedItem("text");
 								if (node == null)
 								{
-									_log.log(Level.WARNING, "SystemMessageId: No text defined for SMID '" + smId + "', lang '" + lang + "'.");
+									_log.warn("SystemMessageId: No text defined for SMID '" + smId + "', lang '" + lang + "'.");
 									continue;
 								}
 								
 								text = node.getNodeValue();
 								if (text.isEmpty() || (text.length() > 255))
 								{
-									_log.log(Level.WARNING, "SystemMessageId: Invalid text defined for SMID '" + smId + "' (to long or empty), lang '" + lang + "'.");
+									_log.warn("SystemMessageId: Invalid text defined for SMID '" + smId + "' (to long or empty), lang '" + lang + "'.");
 									continue;
 								}
 								
@@ -14041,7 +14040,7 @@ public final class SystemMessageId
 			}
 			catch (final Exception e)
 			{
-				_log.log(Level.SEVERE, "SystemMessageId: Failed loading '" + file + "'", e);
+				_log.error("SystemMessageId: Failed loading '" + file + "'", e);
 			}
 		}
 	}

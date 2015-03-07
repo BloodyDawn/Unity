@@ -20,18 +20,19 @@ package org.l2junity.gameserver.model.entity;
 
 import java.util.Calendar;
 import java.util.concurrent.ScheduledFuture;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.util.Broadcast;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author HorridoJoho
  */
 public class TvTManager
 {
-	protected static final Logger _log = Logger.getLogger(TvTManager.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(TvTManager.class.getName());
 	
 	/** Task for event cycles<br> */
 	private TvTStartTask _task;
@@ -101,7 +102,7 @@ public class TvTManager
 		}
 		catch (Exception e)
 		{
-			_log.warning("TvTEventEngine[TvTManager.scheduleEventStart()]: Error figuring out a start time. Check TvTEventInterval in config file.");
+			_log.warn("TvTEventEngine[TvTManager.scheduleEventStart()]: Error figuring out a start time. Check TvTEventInterval in config file.");
 		}
 	}
 	
@@ -113,7 +114,7 @@ public class TvTManager
 		if (!TvTEvent.startParticipation())
 		{
 			Broadcast.toAllOnlinePlayers("TvT Event: Event was cancelled.");
-			_log.warning("TvTEventEngine[TvTManager.run()]: Error spawning event npc for participation.");
+			_log.warn("TvTEventEngine[TvTManager.run()]: Error spawning event npc for participation.");
 			
 			scheduleEventStart();
 		}

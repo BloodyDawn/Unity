@@ -21,8 +21,6 @@ package handlers.usercommandhandlers;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.handler.IUserCommandHandler;
@@ -30,6 +28,8 @@ import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Clan War Start, Under Attack List, War List user commands.
@@ -37,7 +37,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public class ClanWarsList implements IUserCommandHandler
 {
-	private static final Logger _log = Logger.getLogger(ClanWarsList.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(ClanWarsList.class.getName());
 	private static final int[] COMMAND_IDS =
 	{
 		88,
@@ -121,7 +121,7 @@ public class ClanWarsList implements IUserCommandHandler
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "", e);
+			_log.warn("", e);
 		}
 		return true;
 	}

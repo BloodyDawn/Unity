@@ -29,7 +29,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 public class CombatFlag
 {
-	// private static final Logger _log = Logger.getLogger(CombatFlag.class.getName());
+	// private static final Logger _log = LoggerFactory.getLogger(CombatFlag.class.getName());
 	
 	private PlayerInstance _player = null;
 	private int _playerId = 0;

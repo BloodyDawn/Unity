@@ -26,8 +26,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javolution.util.FastList;
 
@@ -51,13 +49,15 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.SetSummonRemainTime;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author UnAfraid
  */
 public class L2ServitorInstance extends Summon implements Runnable
 {
-	protected static final Logger log = Logger.getLogger(L2ServitorInstance.class.getName());
+	protected static final Logger log = LoggerFactory.getLogger(L2ServitorInstance.class.getName());
 	
 	private static final String ADD_SKILL_SAVE = "INSERT INTO character_summon_skills_save (ownerId,ownerClassIndex,summonSkillId,skill_id,skill_level,remaining_time,buff_index) VALUES (?,?,?,?,?,?,?)";
 	private static final String RESTORE_SKILL_SAVE = "SELECT skill_id,skill_level,remaining_time,buff_index FROM character_summon_skills_save WHERE ownerId=? AND ownerClassIndex=? AND summonSkillId=? ORDER BY buff_index ASC";
@@ -369,7 +369,7 @@ public class L2ServitorInstance extends Summon implements Runnable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not store summon effect data: ", e);
+			_log.warn("Could not store summon effect data: ", e);
 		}
 	}
 	
@@ -435,7 +435,7 @@ public class L2ServitorInstance extends Summon implements Runnable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not restore " + this + " active effect data: " + e.getMessage(), e);
+			_log.warn("Could not restore " + this + " active effect data: " + e.getMessage(), e);
 		}
 		finally
 		{

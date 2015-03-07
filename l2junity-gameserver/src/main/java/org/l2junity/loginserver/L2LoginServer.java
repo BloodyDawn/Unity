@@ -28,9 +28,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.security.GeneralSecurityException;
 import java.sql.SQLException;
-import java.util.logging.Level;
 import java.util.logging.LogManager;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -42,13 +40,15 @@ import org.l2junity.loginserver.network.L2LoginPacketHandler;
 import org.l2junity.status.Status;
 import org.mmocore.network.SelectorConfig;
 import org.mmocore.network.SelectorThread;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author KenM
  */
 public final class L2LoginServer
 {
-	private final Logger _log = Logger.getLogger(L2LoginServer.class.getName());
+	private final Logger _log = LoggerFactory.getLogger(L2LoginServer.class.getName());
 	
 	public static final int PROTOCOL_REV = 0x0106;
 	private static L2LoginServer _instance;
@@ -88,7 +88,7 @@ public final class L2LoginServer
 		}
 		catch (IOException e)
 		{
-			_log.warning(getClass().getSimpleName() + ": " + e.getMessage());
+			_log.warn(getClass().getSimpleName() + ": " + e.getMessage());
 		}
 		
 		// Load Config
@@ -101,7 +101,7 @@ public final class L2LoginServer
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.SEVERE, "FATAL: Failed initializing database. Reason: " + e.getMessage(), e);
+			_log.error("FATAL: Failed initializing database. Reason: " + e.getMessage(), e);
 			System.exit(1);
 		}
 		
@@ -111,7 +111,7 @@ public final class L2LoginServer
 		}
 		catch (GeneralSecurityException e)
 		{
-			_log.log(Level.SEVERE, "FATAL: Failed initializing LoginController. Reason: " + e.getMessage(), e);
+			_log.error("FATAL: Failed initializing LoginController. Reason: " + e.getMessage(), e);
 			System.exit(1);
 		}
 		
@@ -133,7 +133,7 @@ public final class L2LoginServer
 			}
 			catch (UnknownHostException e)
 			{
-				_log.log(Level.WARNING, "WARNING: The LoginServer bind address is invalid, using all avaliable IPs. Reason: " + e.getMessage(), e);
+				_log.warn("WARNING: The LoginServer bind address is invalid, using all avaliable IPs. Reason: " + e.getMessage(), e);
 			}
 		}
 		
@@ -151,7 +151,7 @@ public final class L2LoginServer
 		}
 		catch (IOException e)
 		{
-			_log.log(Level.SEVERE, "FATAL: Failed to open Selector. Reason: " + e.getMessage(), e);
+			_log.error("FATAL: Failed to open Selector. Reason: " + e.getMessage(), e);
 			System.exit(1);
 		}
 		
@@ -163,7 +163,7 @@ public final class L2LoginServer
 		}
 		catch (IOException e)
 		{
-			_log.log(Level.SEVERE, "FATAL: Failed to start the Game Server Listener. Reason: " + e.getMessage(), e);
+			_log.error("FATAL: Failed to start the Game Server Listener. Reason: " + e.getMessage(), e);
 			System.exit(1);
 		}
 		
@@ -176,7 +176,7 @@ public final class L2LoginServer
 			}
 			catch (IOException e)
 			{
-				_log.log(Level.WARNING, "Failed to start the Telnet Server. Reason: " + e.getMessage(), e);
+				_log.warn("Failed to start the Telnet Server. Reason: " + e.getMessage(), e);
 			}
 		}
 		else
@@ -188,11 +188,11 @@ public final class L2LoginServer
 		{
 			_selectorThread.openServerSocket(bindAddress, Config.PORT_LOGIN);
 			_selectorThread.start();
-			_log.log(Level.INFO, getClass().getSimpleName() + ": is now listening on: " + Config.LOGIN_BIND_ADDRESS + ":" + Config.PORT_LOGIN);
+			_log.info(getClass().getSimpleName() + ": is now listening on: " + Config.LOGIN_BIND_ADDRESS + ":" + Config.PORT_LOGIN);
 		}
 		catch (IOException e)
 		{
-			_log.log(Level.SEVERE, "FATAL: Failed to open server socket. Reason: " + e.getMessage(), e);
+			_log.error("FATAL: Failed to open server socket. Reason: " + e.getMessage(), e);
 			System.exit(1);
 		}
 		
@@ -237,7 +237,7 @@ public final class L2LoginServer
 							}
 							catch (NumberFormatException nfe)
 							{
-								_log.warning("Skipped: Incorrect ban duration (" + parts[1] + ") on (" + bannedFile.getName() + "). Line: " + lnr.getLineNumber());
+								_log.warn("Skipped: Incorrect ban duration (" + parts[1] + ") on (" + bannedFile.getName() + "). Line: " + lnr.getLineNumber());
 								return;
 							}
 						}
@@ -248,20 +248,20 @@ public final class L2LoginServer
 						}
 						catch (UnknownHostException e)
 						{
-							_log.warning("Skipped: Invalid address (" + address + ") on (" + bannedFile.getName() + "). Line: " + lnr.getLineNumber());
+							_log.warn("Skipped: Invalid address (" + address + ") on (" + bannedFile.getName() + "). Line: " + lnr.getLineNumber());
 						}
 					});
 				//@formatter:on
 			}
 			catch (IOException e)
 			{
-				_log.log(Level.WARNING, "Error while reading the bans file (" + bannedFile.getName() + "). Details: " + e.getMessage(), e);
+				_log.warn("Error while reading the bans file (" + bannedFile.getName() + "). Details: " + e.getMessage(), e);
 			}
 			_log.info("Loaded " + LoginController.getInstance().getBannedIps().size() + " IP Bans.");
 		}
 		else
 		{
-			_log.warning("IP Bans file (" + bannedFile.getName() + ") is missing or is a directory, skipped.");
+			_log.warn("IP Bans file (" + bannedFile.getName() + ") is missing or is a directory, skipped.");
 		}
 		
 		if (Config.LOGIN_SERVER_SCHEDULE_RESTART)

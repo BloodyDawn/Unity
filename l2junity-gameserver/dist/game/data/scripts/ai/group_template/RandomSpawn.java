@@ -20,11 +20,12 @@ package ai.group_template;
 
 import java.util.Map;
 
+import javolution.util.FastMap;
+
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
 
-import javolution.util.FastMap;
 import ai.npc.AbstractNpcAI;
 
 /**

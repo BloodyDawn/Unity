@@ -20,8 +20,6 @@ package org.l2junity.gameserver.data.xml.impl;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
-
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.CrystalizationData;
 import org.l2junity.gameserver.model.holders.ItemChanceHolder;
@@ -45,7 +43,7 @@ public final class ItemCrystalizationData implements IXmlReader
 	public void load()
 	{
 		parseDatapackFile("data/CrystalizableItems.xml");
-		LOGGER.log(Level.INFO, getClass().getSimpleName() + ": Loaded: " + _items.size() + " Items");
+		LOGGER.info(getClass().getSimpleName() + ": Loaded: " + _items.size() + " Items");
 	}
 	
 	@Override

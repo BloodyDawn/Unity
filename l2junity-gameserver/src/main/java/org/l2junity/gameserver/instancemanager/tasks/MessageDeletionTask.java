@@ -18,15 +18,14 @@
  */
 package org.l2junity.gameserver.instancemanager.tasks;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.l2junity.gameserver.instancemanager.MailManager;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Message;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Message deletion task.
@@ -34,7 +33,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class MessageDeletionTask implements Runnable
 {
-	private static final Logger _log = Logger.getLogger(MessageDeletionTask.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(MessageDeletionTask.class.getName());
 	
 	final int _msgId;
 	
@@ -80,7 +79,7 @@ public final class MessageDeletionTask implements Runnable
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, getClass().getSimpleName() + ": Error returning items:" + e.getMessage(), e);
+				_log.warn(getClass().getSimpleName() + ": Error returning items:" + e.getMessage(), e);
 			}
 		}
 		MailManager.getInstance().deleteMessageInDb(msg.getId());

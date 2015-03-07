@@ -18,8 +18,8 @@
  */
 package org.l2junity.gameserver.model.announce;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author UnAfraid
@@ -31,7 +31,7 @@ public enum AnnouncementType
 	EVENT,
 	AUTO_NORMAL,
 	AUTO_CRITICAL;
-	private static final Logger _log = Logger.getLogger(AnnouncementType.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(AnnouncementType.class.getName());
 	
 	public static AnnouncementType findById(int id)
 	{
@@ -42,7 +42,7 @@ public enum AnnouncementType
 				return type;
 			}
 		}
-		_log.log(Level.WARNING, AnnouncementType.class.getSimpleName() + ": Unexistent id specified: " + id + "!", new IllegalStateException());
+		_log.warn(AnnouncementType.class.getSimpleName() + ": Unexistent id specified: " + id + "!", new IllegalStateException());
 		return NORMAL;
 	}
 	
@@ -55,7 +55,7 @@ public enum AnnouncementType
 				return type;
 			}
 		}
-		_log.log(Level.WARNING, AnnouncementType.class.getSimpleName() + ": Unexistent name specified: " + name + "!", new IllegalStateException());
+		_log.warn(AnnouncementType.class.getSimpleName() + ": Unexistent name specified: " + name + "!", new IllegalStateException());
 		return NORMAL;
 	}
 }

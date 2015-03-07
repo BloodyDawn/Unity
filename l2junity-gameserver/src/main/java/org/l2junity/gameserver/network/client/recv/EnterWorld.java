@@ -136,7 +136,7 @@ public class EnterWorld implements IClientIncomingPacket
 		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
-			_log.warning("EnterWorld failed! activeChar returned 'null'.");
+			_log.warn("EnterWorld failed! activeChar returned 'null'.");
 			client.closeNow();
 			return;
 		}
@@ -169,7 +169,7 @@ public class EnterWorld implements IClientIncomingPacket
 		{
 			if (Config.DEBUG)
 			{
-				_log.warning("User already exists in Object ID map! User " + activeChar.getName() + " is a character clone.");
+				_log.warn("User already exists in Object ID map! User " + activeChar.getName() + " is a character clone.");
 			}
 		}
 		

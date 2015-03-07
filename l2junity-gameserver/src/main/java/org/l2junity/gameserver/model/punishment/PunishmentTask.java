@@ -24,21 +24,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.concurrent.ScheduledFuture;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.handler.IPunishmentHandler;
 import org.l2junity.gameserver.handler.PunishmentHandler;
 import org.l2junity.gameserver.instancemanager.PunishmentManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author UnAfraid
  */
 public class PunishmentTask implements Runnable
 {
-	protected static final Logger _log = Logger.getLogger(PunishmentTask.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(PunishmentTask.class.getName());
 	
 	private static final String INSERT_QUERY = "INSERT INTO punishments (`key`, `affect`, `type`, `expiration`, `reason`, `punishedBy`) VALUES (?, ?, ?, ?, ?, ?)";
 	private static final String UPDATE_QUERY = "UPDATE punishments SET expiration = ? WHERE id = ?";
@@ -205,7 +205,7 @@ public class PunishmentTask implements Runnable
 			}
 			catch (SQLException e)
 			{
-				_log.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't store punishment task for: " + _affect + " " + _key, e);
+				_log.warn(getClass().getSimpleName() + ": Couldn't store punishment task for: " + _affect + " " + _key, e);
 			}
 		}
 		
@@ -232,7 +232,7 @@ public class PunishmentTask implements Runnable
 			}
 			catch (SQLException e)
 			{
-				_log.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't update punishment task for: " + _affect + " " + _key + " id: " + _id, e);
+				_log.warn(getClass().getSimpleName() + ": Couldn't update punishment task for: " + _affect + " " + _key + " id: " + _id, e);
 			}
 		}
 		

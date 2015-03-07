@@ -18,19 +18,19 @@
  */
 package org.l2junity.loginserver.network.gameserverpackets;
 
-import java.util.logging.Logger;
-
 import org.l2junity.loginserver.GameServerTable;
-import org.l2junity.loginserver.GameServerThread;
 import org.l2junity.loginserver.GameServerTable.GameServerInfo;
+import org.l2junity.loginserver.GameServerThread;
 import org.l2junity.util.network.BaseRecievePacket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author -Wooden-
  */
 public class ServerStatus extends BaseRecievePacket
 {
-	protected static Logger _log = Logger.getLogger(ServerStatus.class.getName());
+	protected static Logger _log = LoggerFactory.getLogger(ServerStatus.class.getName());
 	
 	public static final int SERVER_LIST_STATUS = 0x01;
 	public static final int SERVER_TYPE = 0x02;

@@ -21,22 +21,21 @@ package org.l2junity.gameserver.model.olympiad;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.type.OlympiadStadiumZone;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author GodKratos, DS
  */
 public class OlympiadGameManager implements Runnable
 {
-	private static final Logger _log = Logger.getLogger(OlympiadGameManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(OlympiadGameManager.class.getName());
 	private static final int STADIUM_COUNT = 80; // TODO dynamic
 	
 	private volatile boolean _battleStarted = false;
@@ -62,7 +61,7 @@ public class OlympiadGameManager implements Runnable
 			_tasks.add(stadium);
 		}
 		
-		_log.log(Level.INFO, "Olympiad System: Loaded " + _tasks.size() + " stadiums.");
+		_log.info("Olympiad System: Loaded " + _tasks.size() + " stadiums.");
 	}
 	
 	public static final OlympiadGameManager getInstance()
@@ -190,7 +189,7 @@ public class OlympiadGameManager implements Runnable
 			{
 				OlympiadManager.getInstance().clearRegistered();
 				_battleStarted = false;
-				_log.log(Level.INFO, "Olympiad System: All current games finished.");
+				_log.info("Olympiad System: All current games finished.");
 			}
 		}
 	}

@@ -21,9 +21,6 @@ package handlers.voicedcommandhandlers;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.GameTimeController;
@@ -47,6 +44,8 @@ import org.l2junity.gameserver.network.client.send.ConfirmDlg;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
 import org.l2junity.gameserver.network.client.send.SetupGauge;
 import org.l2junity.gameserver.util.Broadcast;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Wedding voiced commands handler.
@@ -54,7 +53,7 @@ import org.l2junity.gameserver.util.Broadcast;
  */
 public class Wedding implements IVoicedCommandHandler
 {
-	static final Logger _log = Logger.getLogger(Wedding.class.getName());
+	static final Logger _log = LoggerFactory.getLogger(Wedding.class.getName());
 	private static final String[] _voicedCommands =
 	{
 		"divorce",
@@ -228,7 +227,7 @@ public class Wedding implements IVoicedCommandHandler
 		}
 		catch (Exception e)
 		{
-			_log.warning("could not read friend data:" + e);
+			_log.warn("could not read friend data:" + e);
 		}
 		
 		if (!FoundOnFriendList)
@@ -257,7 +256,7 @@ public class Wedding implements IVoicedCommandHandler
 		if (activeChar.getPartnerId() == 0)
 		{
 			activeChar.sendMessage("Couldn't find your fiance in the Database - Inform a Gamemaster.");
-			_log.severe("Married but couldn't find parter for " + activeChar.getName());
+			_log.error("Married but couldn't find parter for " + activeChar.getName());
 			return false;
 		}
 		
@@ -463,7 +462,7 @@ public class Wedding implements IVoicedCommandHandler
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "", e);
+				_log.error("", e);
 			}
 		}
 	}

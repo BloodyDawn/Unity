@@ -23,16 +23,15 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.L2TeleportLocation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class TeleportLocationTable
 {
-	private static Logger LOGGER = Logger.getLogger(TeleportLocationTable.class.getName());
+	private static Logger LOGGER = LoggerFactory.getLogger(TeleportLocationTable.class.getName());
 	
 	private final Map<Integer, L2TeleportLocation> _teleports = new HashMap<>();
 	
@@ -67,7 +66,7 @@ public class TeleportLocationTable
 		}
 		catch (Exception e)
 		{
-			LOGGER.log(Level.SEVERE, getClass().getSimpleName() + ": Error loading Teleport Table.", e);
+			LOGGER.error(getClass().getSimpleName() + ": Error loading Teleport Table.", e);
 		}
 		
 		if (Config.CUSTOM_TELEPORT_TABLE)
@@ -99,7 +98,7 @@ public class TeleportLocationTable
 			}
 			catch (Exception e)
 			{
-				LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Error while creating custom teleport table " + e.getMessage(), e);
+				LOGGER.warn(getClass().getSimpleName() + ": Error while creating custom teleport table " + e.getMessage(), e);
 			}
 		}
 	}

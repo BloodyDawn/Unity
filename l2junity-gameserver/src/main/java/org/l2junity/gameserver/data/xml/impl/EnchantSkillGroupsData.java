@@ -20,14 +20,12 @@ package org.l2junity.gameserver.data.xml.impl;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.EnchantSkillGroup;
+import org.l2junity.gameserver.model.EnchantSkillGroup.EnchantSkillHolder;
 import org.l2junity.gameserver.model.EnchantSkillLearn;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.EnchantSkillGroup.EnchantSkillHolder;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.w3c.dom.Document;
@@ -142,7 +140,7 @@ public class EnchantSkillGroupsData implements IXmlReader
 			
 			return _enchantSkillGroups.get(group).getEnchantGroupDetails().size();
 		}
-		LOGGER.log(Level.SEVERE, getClass().getSimpleName() + ": Error while loading generating enchant skill id: " + skillId + "; route: " + route + "; missing group: " + group);
+		LOGGER.error(getClass().getSimpleName() + ": Error while loading generating enchant skill id: " + skillId + "; route: " + route + "; missing group: " + group);
 		return 0;
 	}
 	

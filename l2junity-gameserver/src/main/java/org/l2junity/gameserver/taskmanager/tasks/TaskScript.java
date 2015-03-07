@@ -19,7 +19,6 @@
 package org.l2junity.gameserver.taskmanager.tasks;
 
 import java.nio.file.Paths;
-import java.util.logging.Level;
 
 import org.l2junity.gameserver.scripting.ScriptEngineManager;
 import org.l2junity.gameserver.taskmanager.Task;
@@ -47,7 +46,7 @@ public class TaskScript extends Task
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Script execution failed!", e);
+			_log.warn("Script execution failed!", e);
 		}
 	}
 }

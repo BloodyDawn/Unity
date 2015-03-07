@@ -49,7 +49,6 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 import java.util.StringTokenizer;
-import java.util.logging.Level;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 import java.util.stream.Collectors;
@@ -1077,6 +1076,7 @@ public final class Config
 	 */
 	public static void load()
 	{
+		LOGGER.error("test", new Exception("ex"));
 		if (Server.serverMode == Server.MODE_GAMESERVER)
 		{
 			FLOOD_PROTECTOR_USE_ITEM = new FloodProtectorConfig("UseItemFloodProtector");
@@ -3773,13 +3773,13 @@ public final class Config
 			File f = new File(IP_CONFIG_FILE);
 			if (f.exists())
 			{
-				LOGGER.log(Level.INFO, "Network Config: ipconfig.xml exists using manual configuration...");
+				LOGGER.info("Network Config: ipconfig.xml exists using manual configuration...");
 				parseFile(new File(IP_CONFIG_FILE));
 			}
 			else
 			// Auto configuration...
 			{
-				LOGGER.log(Level.INFO, "Network Config: ipconfig.xml doesn't exists using automatic configuration...");
+				LOGGER.info("Network Config: ipconfig.xml doesn't exists using automatic configuration...");
 				autoIpConfig();
 			}
 		}
@@ -3802,7 +3802,7 @@ public final class Config
 							
 							if (_hosts.size() != _subnets.size())
 							{
-								LOGGER.log(Level.WARNING, "Failed to Load " + IP_CONFIG_FILE + " File - subnets does not match server addresses.");
+								LOGGER.warn("Failed to Load " + IP_CONFIG_FILE + " File - subnets does not match server addresses.");
 							}
 						}
 					}
@@ -3810,7 +3810,7 @@ public final class Config
 					Node att = n.getAttributes().getNamedItem("address");
 					if (att == null)
 					{
-						LOGGER.log(Level.WARNING, "Failed to load " + IP_CONFIG_FILE + " file - default server address is missing.");
+						LOGGER.warn("Failed to load " + IP_CONFIG_FILE + " file - default server address is missing.");
 						_hosts.add("127.0.0.1");
 					}
 					else
@@ -3835,7 +3835,7 @@ public final class Config
 			}
 			catch (IOException e)
 			{
-				LOGGER.log(Level.INFO, "Network Config: Failed to connect to ipconfig.l2junity.org please check your internet connection using 127.0.0.1!");
+				LOGGER.info("Network Config: Failed to connect to ipconfig.l2junity.org please check your internet connection using 127.0.0.1!");
 				externalIp = "127.0.0.1";
 			}
 			
@@ -3875,7 +3875,7 @@ public final class Config
 						{
 							_subnets.add(subnet);
 							_hosts.add(hostAddress);
-							LOGGER.log(Level.INFO, "Network Config: Adding new subnet: " + subnet + " address: " + hostAddress);
+							LOGGER.info("Network Config: Adding new subnet: " + subnet + " address: " + hostAddress);
 						}
 					}
 				}
@@ -3883,11 +3883,11 @@ public final class Config
 				// External host and subnet
 				_hosts.add(externalIp);
 				_subnets.add("0.0.0.0/0");
-				LOGGER.log(Level.INFO, "Network Config: Adding new subnet: 0.0.0.0/0 address: " + externalIp);
+				LOGGER.info("Network Config: Adding new subnet: 0.0.0.0/0 address: " + externalIp);
 			}
 			catch (SocketException e)
 			{
-				LOGGER.log(Level.INFO, "Network Config: Configuration failed please configure manually using ipconfig.xml", e);
+				LOGGER.info("Network Config: Configuration failed please configure manually using ipconfig.xml", e);
 				System.exit(0);
 			}
 		}

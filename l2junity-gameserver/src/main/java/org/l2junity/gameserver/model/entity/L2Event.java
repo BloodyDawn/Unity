@@ -28,8 +28,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
@@ -46,13 +44,15 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.PlayerEventHolder;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @since $Revision: 1.3.4.1 $ $Date: 2005/03/27 15:29:32 $ This ancient thingie got reworked by Nik at $Date: 2011/05/17 21:51:39 $ Yeah, for 6 years no one bothered reworking this buggy event engine.
  */
 public class L2Event
 {
-	protected static final Logger _log = Logger.getLogger(L2Event.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(L2Event.class.getName());
 	public static EventState eventState = EventState.OFF;
 	public static String _eventName = "";
 	public static String _eventCreator = "";
@@ -153,7 +153,7 @@ public class L2Event
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "Exception on showEventHtml(): " + e.getMessage(), e);
+				_log.warn("Exception on showEventHtml(): " + e.getMessage(), e);
 			}
 		}
 	}
@@ -190,7 +190,7 @@ public class L2Event
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception on spawn(): " + e.getMessage(), e);
+			_log.warn("Exception on spawn(): " + e.getMessage(), e);
 		}
 		
 	}
@@ -310,7 +310,7 @@ public class L2Event
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Error at unregisterAndResetPlayer in the event:" + e.getMessage(), e);
+			_log.warn("Error at unregisterAndResetPlayer in the event:" + e.getMessage(), e);
 		}
 	}
 	
@@ -400,7 +400,7 @@ public class L2Event
 		}
 		catch (Exception e)
 		{
-			_log.warning("L2Event: " + e.getMessage());
+			_log.warn("L2Event: " + e.getMessage());
 			return "Cannot start event participation, an error has occured.";
 		}
 		
@@ -471,7 +471,7 @@ public class L2Event
 		}
 		catch (Exception e)
 		{
-			_log.warning("L2Event: " + e.getMessage());
+			_log.warn("L2Event: " + e.getMessage());
 			return "Cannot start event, an error has occured.";
 		}
 		

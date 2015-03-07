@@ -20,8 +20,6 @@ package org.l2junity.gameserver.model.olympiad;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 import org.l2junity.commons.util.Rnd;
@@ -40,13 +38,15 @@ import org.l2junity.gameserver.network.client.send.ExOlympiadUserInfo;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author JIV
  */
 public class OlympiadStadium
 {
-	private static final Logger LOGGER = Logger.getLogger(OlympiadStadium.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(OlympiadStadium.class.getName());
 	private final OlympiadStadiumZone _zone;
 	private final Instance _instance;
 	private final List<L2Spawn> _buffers;
@@ -198,7 +198,7 @@ public class OlympiadStadium
 			final List<Location> spectatorSpawns = nextArena.getStadium().getZone().getSpectatorSpawns();
 			if (spectatorSpawns.isEmpty())
 			{
-				LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Zone: " + nextArena.getStadium().getZone() + " doesn't have specatator spawns defined!");
+				LOGGER.warn(getClass().getSimpleName() + ": Zone: " + nextArena.getStadium().getZone() + " doesn't have specatator spawns defined!");
 				return;
 			}
 			final Location loc = spectatorSpawns.get(Rnd.get(spectatorSpawns.size()));

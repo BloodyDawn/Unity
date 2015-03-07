@@ -29,8 +29,8 @@ import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.Creature.AIAccessor;
+import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.skills.Skill;
 
 public class SummonAI extends PlayableAI implements Runnable

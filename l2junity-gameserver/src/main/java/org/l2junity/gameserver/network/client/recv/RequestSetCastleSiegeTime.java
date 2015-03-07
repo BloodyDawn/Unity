@@ -20,7 +20,6 @@ package org.l2junity.gameserver.network.client.recv;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.logging.Level;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.instancemanager.CastleManager;
@@ -57,17 +56,17 @@ public class RequestSetCastleSiegeTime implements IClientIncomingPacket
 		final Castle castle = CastleManager.getInstance().getCastleById(_castleId);
 		if ((activeChar == null) || (castle == null))
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": activeChar: " + activeChar + " castle: " + castle + " castleId: " + _castleId);
+			_log.warn(getClass().getSimpleName() + ": activeChar: " + activeChar + " castle: " + castle + " castleId: " + _castleId);
 			return;
 		}
 		if ((castle.getOwnerId() > 0) && (castle.getOwnerId() != activeChar.getClanId()))
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": activeChar: " + activeChar + " castle: " + castle + " castleId: " + _castleId + " is trying to change siege date of not his own castle!");
+			_log.warn(getClass().getSimpleName() + ": activeChar: " + activeChar + " castle: " + castle + " castleId: " + _castleId + " is trying to change siege date of not his own castle!");
 			return;
 		}
 		else if (!activeChar.isClanLeader())
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": activeChar: " + activeChar + " castle: " + castle + " castleId: " + _castleId + " is trying to change siege date but is not clan leader!");
+			_log.warn(getClass().getSimpleName() + ": activeChar: " + activeChar + " castle: " + castle + " castleId: " + _castleId + " is trying to change siege date but is not clan leader!");
 			return;
 		}
 		else if (!castle.getIsTimeRegistrationOver() && !castle.getIsTimeRegistrationOver())
@@ -84,12 +83,12 @@ public class RequestSetCastleSiegeTime implements IClientIncomingPacket
 			}
 			else
 			{
-				_log.log(Level.WARNING, getClass().getSimpleName() + ": activeChar: " + activeChar + " castle: " + castle + " castleId: " + _castleId + " is trying to an invalid time (" + new Date(_time) + " !");
+				_log.warn(getClass().getSimpleName() + ": activeChar: " + activeChar + " castle: " + castle + " castleId: " + _castleId + " is trying to an invalid time (" + new Date(_time) + " !");
 			}
 		}
 		else
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": activeChar: " + activeChar + " castle: " + castle + " castleId: " + _castleId + " is trying to change siege date but currently not possible!");
+			_log.warn(getClass().getSimpleName() + ": activeChar: " + activeChar + " castle: " + castle + " castleId: " + _castleId + " is trying to change siege date but currently not possible!");
 		}
 	}
 	

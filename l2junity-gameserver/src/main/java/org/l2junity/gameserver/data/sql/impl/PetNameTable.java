@@ -22,8 +22,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
@@ -31,10 +29,12 @@ import java.util.regex.PatternSyntaxException;
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.xml.impl.PetDataTable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class PetNameTable
 {
-	private static Logger LOGGER = Logger.getLogger(PetNameTable.class.getName());
+	private static Logger LOGGER = LoggerFactory.getLogger(PetNameTable.class.getName());
 	
 	public static PetNameTable getInstance()
 	{
@@ -63,7 +63,7 @@ public class PetNameTable
 		}
 		catch (SQLException e)
 		{
-			LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Could not check existing petname:" + e.getMessage(), e);
+			LOGGER.warn(getClass().getSimpleName() + ": Could not check existing petname:" + e.getMessage(), e);
 		}
 		return result;
 	}
@@ -84,7 +84,7 @@ public class PetNameTable
 		}
 		catch (PatternSyntaxException e) // case of illegal pattern
 		{
-			LOGGER.warning(getClass().getSimpleName() + ": Pet name pattern of config is wrong!");
+			LOGGER.warn(getClass().getSimpleName() + ": Pet name pattern of config is wrong!");
 			pattern = Pattern.compile(".*");
 		}
 		Matcher regexp = pattern.matcher(name);

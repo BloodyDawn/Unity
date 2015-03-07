@@ -359,7 +359,7 @@ public final class SkillTreesData implements IXmlReader
 									}
 									default:
 									{
-										LOGGER.warning(getClass().getSimpleName() + ": Unknown Skill Tree type: " + type + "!");
+										LOGGER.warn(getClass().getSimpleName() + ": Unknown Skill Tree type: " + type + "!");
 									}
 								}
 							}
@@ -656,7 +656,7 @@ public final class SkillTreesData implements IXmlReader
 		if (skills.isEmpty())
 		{
 			// The Skill Tree for this class is undefined.
-			LOGGER.warning(getClass().getSimpleName() + ": Skilltree for class " + classId + " is not defined!");
+			LOGGER.warn(getClass().getSimpleName() + ": Skilltree for class " + classId + " is not defined!");
 			return result;
 		}
 		
@@ -726,7 +726,7 @@ public final class SkillTreesData implements IXmlReader
 		if (skills.isEmpty())
 		{
 			// The Skill Tree for this class is undefined, so we return an empty list.
-			LOGGER.warning(getClass().getSimpleName() + ": Skill Tree for this class Id(" + player.getClassId() + ") is not defined!");
+			LOGGER.warn(getClass().getSimpleName() + ": Skill Tree for this class Id(" + player.getClassId() + ") is not defined!");
 			return result;
 		}
 		
@@ -1322,7 +1322,7 @@ public final class SkillTreesData implements IXmlReader
 		int minLevel = 0;
 		if (skillTree.isEmpty())
 		{
-			LOGGER.warning(getClass().getSimpleName() + ": SkillTree is not defined for getMinLevelForNewSkill!");
+			LOGGER.warn(getClass().getSimpleName() + ": SkillTree is not defined for getMinLevelForNewSkill!");
 		}
 		else
 		{

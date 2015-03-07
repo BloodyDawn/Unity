@@ -18,8 +18,6 @@
  */
 package org.l2junity.gameserver.network.client.recv.sayune;
 
-import java.util.logging.Level;
-
 import org.l2junity.gameserver.data.xml.impl.SayuneData;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
@@ -75,7 +73,7 @@ public class RequestFlyMoveStart implements IClientIncomingPacket
 		if (zone.getMapId() == -1)
 		{
 			activeChar.sendMessage("That zone is not supported yet!");
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": " + activeChar + " Requested sayune on zone with no map id set");
+			_log.warn(getClass().getSimpleName() + ": " + activeChar + " Requested sayune on zone with no map id set");
 			return;
 		}
 		
@@ -83,7 +81,7 @@ public class RequestFlyMoveStart implements IClientIncomingPacket
 		if (map == null)
 		{
 			activeChar.sendMessage("This zone is not handled yet!!");
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": " + activeChar + " Requested sayune on unhandled map zone " + zone.getName());
+			_log.warn(getClass().getSimpleName() + ": " + activeChar + " Requested sayune on unhandled map zone " + zone.getName());
 			return;
 		}
 		

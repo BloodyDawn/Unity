@@ -257,9 +257,6 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.handler.ActionHandler;
 import org.l2junity.gameserver.handler.ActionShiftHandler;
@@ -274,6 +271,8 @@ import org.l2junity.gameserver.handler.TargetHandler;
 import org.l2junity.gameserver.handler.TelnetHandler;
 import org.l2junity.gameserver.handler.UserCommandHandler;
 import org.l2junity.gameserver.handler.VoicedCommandHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Master handler.
@@ -281,7 +280,7 @@ import org.l2junity.gameserver.handler.VoicedCommandHandler;
  */
 public class MasterHandler
 {
-	private static final Logger _log = Logger.getLogger(MasterHandler.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(MasterHandler.class.getName());
 	
 	private static final IHandler<?, ?>[] LOAD_INSTANCES =
 	{
@@ -578,7 +577,7 @@ public class MasterHandler
 	
 	public static void main(String[] args)
 	{
-		_log.log(Level.INFO, "Loading Handlers...");
+		_log.info("Loading Handlers...");
 		
 		Map<IHandler<?, ?>, Method> registerHandlerMethods = new HashMap<>();
 		for (IHandler<?, ?> loadInstance : LOAD_INSTANCES)
@@ -595,7 +594,7 @@ public class MasterHandler
 		
 		registerHandlerMethods.entrySet().stream().filter(e -> e.getValue() == null).forEach(e ->
 		{
-			_log.log(Level.WARNING, "Failed loading handlers of: " + e.getKey().getClass().getSimpleName() + " seems registerHandler function does not exist.");
+			_log.warn("Failed loading handlers of: " + e.getKey().getClass().getSimpleName() + " seems registerHandler function does not exist.");
 		});
 		
 		for (Class<?> classes[] : HANDLERS)
@@ -620,7 +619,7 @@ public class MasterHandler
 				}
 				catch (Exception e)
 				{
-					_log.log(Level.WARNING, "Failed loading handler: " + c.getSimpleName(), e);
+					_log.warn("Failed loading handler: " + c.getSimpleName(), e);
 					continue;
 				}
 			}
@@ -628,9 +627,9 @@ public class MasterHandler
 		
 		for (IHandler<?, ?> loadInstance : LOAD_INSTANCES)
 		{
-			_log.log(Level.INFO, loadInstance.getClass().getSimpleName() + ": Loaded " + loadInstance.size() + " Handlers");
+			_log.info(loadInstance.getClass().getSimpleName() + ": Loaded " + loadInstance.size() + " Handlers");
 		}
 		
-		_log.log(Level.INFO, "Handlers Loaded...");
+		_log.info("Handlers Loaded...");
 	}
 }

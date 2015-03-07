@@ -30,7 +30,6 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.StringJoiner;
 import java.util.StringTokenizer;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.file.filter.ExtFilter;
@@ -46,13 +45,15 @@ import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.network.client.send.AbstractHtmlPacket;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.ShowBoard;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * General Utility functions related to game server.
  */
 public final class Util
 {
-	private static final Logger LOGGER = Logger.getLogger(Util.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(Util.class.getName());
 	private static final NumberFormat ADENA_FORMATTER = NumberFormat.getIntegerInstance(Locale.ENGLISH);
 	
 	public static void handleIllegalPlayerAction(PlayerInstance actor, String message, IllegalActionPunishmentType punishment)
@@ -494,13 +495,13 @@ public final class Util
 			String htmlLink = html.substring(linkStartEnd, linkEnd).trim();
 			if (htmlLink.isEmpty())
 			{
-				LOGGER.warning("Html link path is empty!");
+				LOGGER.warn("Html link path is empty!");
 				continue;
 			}
 			
 			if (htmlLink.contains(".."))
 			{
-				LOGGER.warning("Html link path is invalid: " + htmlLink);
+				LOGGER.warn("Html link path is invalid: " + htmlLink);
 				continue;
 			}
 			

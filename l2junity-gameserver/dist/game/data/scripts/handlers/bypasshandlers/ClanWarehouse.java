@@ -18,15 +18,13 @@
  */
 package handlers.bypasshandlers;
 
-import java.util.logging.Level;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.handler.IBypassHandler;
 import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2ClanHallManagerInstance;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2WarehouseInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.WareHouseDepositList;
@@ -98,7 +96,7 @@ public class ClanWarehouse implements IBypassHandler
 				
 				if (Config.DEBUG)
 				{
-					_log.fine("Source: L2WarehouseInstance.java; Player: " + activeChar + "; Command: showRetrieveWindowClan; Message: Showing stored items.");
+					_log.debug("Source: L2WarehouseInstance.java; Player: " + activeChar + "; Command: showRetrieveWindowClan; Message: Showing stored items.");
 				}
 				return true;
 			}
@@ -110,7 +108,7 @@ public class ClanWarehouse implements IBypassHandler
 				
 				if (Config.DEBUG)
 				{
-					_log.fine("Source: L2WarehouseInstance.java; Player: " + activeChar.getName() + "; Command: showDepositWindowClan; Message: Showing items to deposit.");
+					_log.debug("Source: L2WarehouseInstance.java; Player: " + activeChar.getName() + "; Command: showDepositWindowClan; Message: Showing items to deposit.");
 				}
 				
 				activeChar.sendPacket(new WareHouseDepositList(activeChar, WareHouseDepositList.CLAN));
@@ -121,7 +119,7 @@ public class ClanWarehouse implements IBypassHandler
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception in " + getClass().getSimpleName(), e);
+			_log.warn("Exception in " + getClass().getSimpleName(), e);
 		}
 		return false;
 	}

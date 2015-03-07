@@ -18,8 +18,6 @@
  */
 package org.l2junity.gameserver.network.client.recv.shuttle;
 
-import java.util.logging.Level;
-
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.L2ShuttleInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -67,7 +65,7 @@ public class RequestShuttleGetOn implements IClientIncomingPacket
 					activeChar.getInVehiclePosition().setXYZ(_x, _y, _z);
 					break;
 				}
-				_log.log(Level.INFO, getClass().getSimpleName() + ": range between char and shuttle: " + shuttle.calculateDistance(activeChar, false, false));
+				_log.info(getClass().getSimpleName() + ": range between char and shuttle: " + shuttle.calculateDistance(activeChar, false, false));
 			}
 		}
 	}

@@ -33,9 +33,6 @@ import java.util.Map;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.commons.util.Rnd;
@@ -49,12 +46,14 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
 public final class ItemAuctionInstance
 {
-	protected static final Logger _log = Logger.getLogger(ItemAuctionInstance.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(ItemAuctionInstance.class.getName());
 	private final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("HH:mm:ss dd.MM.yy");
 	
 	private static final long START_TIME_SPACE = TimeUnit.MILLISECONDS.convert(1, TimeUnit.MINUTES);
@@ -153,7 +152,7 @@ public final class ItemAuctionInstance
 			}
 			catch (final IllegalArgumentException e)
 			{
-				_log.log(Level.WARNING, getClass().getSimpleName() + ": Failed loading auction item", e);
+				_log.warn(getClass().getSimpleName() + ": Failed loading auction item", e);
 			}
 		}
 		
@@ -185,18 +184,18 @@ public final class ItemAuctionInstance
 					}
 					catch (final SQLException e)
 					{
-						_log.log(Level.WARNING, getClass().getSimpleName() + ": Failed loading auction: " + auctionId, e);
+						_log.warn(getClass().getSimpleName() + ": Failed loading auction: " + auctionId, e);
 					}
 				}
 			}
 		}
 		catch (final SQLException e)
 		{
-			_log.log(Level.SEVERE, getClass().getSimpleName() + ": Failed loading auctions.", e);
+			_log.error(getClass().getSimpleName() + ": Failed loading auctions.", e);
 			return;
 		}
 		
-		_log.log(Level.INFO, getClass().getSimpleName() + ": Loaded " + _items.size() + " item(s) and registered " + _auctions.size() + " auction(s) for instance " + _instanceId + ".");
+		_log.info(getClass().getSimpleName() + ": Loaded " + _items.size() + " item(s) and registered " + _auctions.size() + " auction(s) for instance " + _instanceId + ".");
 		checkAndSetCurrentAndNextAuction();
 	}
 	
@@ -338,12 +337,12 @@ public final class ItemAuctionInstance
 			{
 				setStateTask(ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleAuctionTask(currentAuction), Math.max(currentAuction.getStartingTime() - System.currentTimeMillis(), 0L)));
 			}
-			_log.log(Level.INFO, getClass().getSimpleName() + ": Schedule current auction " + currentAuction.getAuctionId() + " for instance " + _instanceId);
+			_log.info(getClass().getSimpleName() + ": Schedule current auction " + currentAuction.getAuctionId() + " for instance " + _instanceId);
 		}
 		else
 		{
 			setStateTask(ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleAuctionTask(nextAuction), Math.max(nextAuction.getStartingTime() - System.currentTimeMillis(), 0L)));
-			_log.log(Level.INFO, getClass().getSimpleName() + ": Schedule next auction " + nextAuction.getAuctionId() + " on " + DATE_FORMAT.format(new Date(nextAuction.getStartingTime())) + " for instance " + _instanceId);
+			_log.info(getClass().getSimpleName() + ": Schedule next auction " + nextAuction.getAuctionId() + " on " + DATE_FORMAT.format(new Date(nextAuction.getStartingTime())) + " for instance " + _instanceId);
 		}
 	}
 	
@@ -400,7 +399,7 @@ public final class ItemAuctionInstance
 			}
 			catch (final Exception e)
 			{
-				_log.log(Level.SEVERE, getClass().getSimpleName() + ": Failed scheduling auction " + _auction.getAuctionId(), e);
+				_log.error(getClass().getSimpleName() + ": Failed scheduling auction " + _auction.getAuctionId(), e);
 			}
 		}
 		
@@ -416,7 +415,7 @@ public final class ItemAuctionInstance
 						throw new IllegalStateException("Could not set auction state: " + ItemAuctionState.STARTED.toString() + ", expected: " + state.toString());
 					}
 					
-					_log.log(Level.INFO, getClass().getSimpleName() + ": Auction " + _auction.getAuctionId() + " has started for instance " + _auction.getInstanceId());
+					_log.info(getClass().getSimpleName() + ": Auction " + _auction.getAuctionId() + " has started for instance " + _auction.getInstanceId());
 					checkAndSetCurrentAndNextAuction();
 					break;
 				}
@@ -499,7 +498,7 @@ public final class ItemAuctionInstance
 				player.getWarehouse().addItem("ItemAuction", item, null, null);
 				player.sendPacket(SystemMessageId.YOU_HAVE_BID_THE_HIGHEST_PRICE_AND_HAVE_WON_THE_ITEM_THE_ITEM_CAN_BE_FOUND_IN_YOUR_PERSONAL_WAREHOUSE);
 				
-				_log.log(Level.INFO, getClass().getSimpleName() + ": Auction " + auction.getAuctionId() + " has finished. Highest bid by " + player.getName() + " for instance " + _instanceId);
+				_log.info(getClass().getSimpleName() + ": Auction " + auction.getAuctionId() + " has finished. Highest bid by " + player.getName() + " for instance " + _instanceId);
 			}
 			else
 			{
@@ -508,7 +507,7 @@ public final class ItemAuctionInstance
 				item.updateDatabase();
 				World.getInstance().removeObject(item);
 				
-				_log.log(Level.INFO, getClass().getSimpleName() + ": Auction " + auction.getAuctionId() + " has finished. Highest bid by " + CharNameTable.getInstance().getNameById(bid.getPlayerObjId()) + " for instance " + _instanceId);
+				_log.info(getClass().getSimpleName() + ": Auction " + auction.getAuctionId() + " has finished. Highest bid by " + CharNameTable.getInstance().getNameById(bid.getPlayerObjId()) + " for instance " + _instanceId);
 			}
 			
 			// Clean all canceled bids
@@ -516,7 +515,7 @@ public final class ItemAuctionInstance
 		}
 		else
 		{
-			_log.log(Level.INFO, getClass().getSimpleName() + ": Auction " + auction.getAuctionId() + " has finished. There have not been any bid for instance " + _instanceId);
+			_log.info(getClass().getSimpleName() + ": Auction " + auction.getAuctionId() + " has finished. There have not been any bid for instance " + _instanceId);
 		}
 	}
 	
@@ -556,7 +555,7 @@ public final class ItemAuctionInstance
 				{
 					if (!rset.next())
 					{
-						_log.log(Level.WARNING, getClass().getSimpleName() + ": Auction data not found for auction: " + auctionId);
+						_log.warn(getClass().getSimpleName() + ": Auction data not found for auction: " + auctionId);
 						return null;
 					}
 					auctionItemId = rset.getInt(1);
@@ -568,27 +567,27 @@ public final class ItemAuctionInstance
 			
 			if (startingTime >= endingTime)
 			{
-				_log.log(Level.WARNING, getClass().getSimpleName() + ": Invalid starting/ending paramaters for auction: " + auctionId);
+				_log.warn(getClass().getSimpleName() + ": Invalid starting/ending paramaters for auction: " + auctionId);
 				return null;
 			}
 			
 			final AuctionItem auctionItem = getAuctionItem(auctionItemId);
 			if (auctionItem == null)
 			{
-				_log.log(Level.WARNING, getClass().getSimpleName() + ": AuctionItem: " + auctionItemId + ", not found for auction: " + auctionId);
+				_log.warn(getClass().getSimpleName() + ": AuctionItem: " + auctionItemId + ", not found for auction: " + auctionId);
 				return null;
 			}
 			
 			final ItemAuctionState auctionState = ItemAuctionState.stateForStateId(auctionStateId);
 			if (auctionState == null)
 			{
-				_log.log(Level.WARNING, getClass().getSimpleName() + ": Invalid auctionStateId: " + auctionStateId + ", for auction: " + auctionId);
+				_log.warn(getClass().getSimpleName() + ": Invalid auctionStateId: " + auctionStateId + ", for auction: " + auctionId);
 				return null;
 			}
 			
 			if ((auctionState == ItemAuctionState.FINISHED) && (startingTime < (System.currentTimeMillis() - TimeUnit.MILLISECONDS.convert(Config.ALT_ITEM_AUCTION_EXPIRED_AFTER, TimeUnit.DAYS))))
 			{
-				_log.log(Level.INFO, getClass().getSimpleName() + ": Clearing expired auction: " + auctionId);
+				_log.info(getClass().getSimpleName() + ": Clearing expired auction: " + auctionId);
 				try (PreparedStatement ps = con.prepareStatement(DELETE_AUCTION_INFO_BY_AUCTION_ID))
 				{
 					ps.setInt(1, auctionId);

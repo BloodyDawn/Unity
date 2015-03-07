@@ -339,7 +339,7 @@ public class NpcData implements IXmlReader
 											}
 											else
 											{
-												LOGGER.warning("[" + f.getName() + "] skill not found. NPC ID: " + npcId + " Skill ID:" + skillId + " Skill Level: " + skillLevel);
+												LOGGER.warn("[" + f.getName() + "] skill not found. NPC ID: " + npcId + " Skill ID:" + skillId + " Skill Level: " + skillLevel);
 											}
 										}
 									}
@@ -647,7 +647,7 @@ public class NpcData implements IXmlReader
 						}
 						else
 						{
-							LOGGER.warning("[" + f + "] grouped general drop item supports only general drop item.");
+							LOGGER.warn("[" + f + "] grouped general drop item supports only general drop item.");
 						}
 					}
 					dropItem.setItems(items);

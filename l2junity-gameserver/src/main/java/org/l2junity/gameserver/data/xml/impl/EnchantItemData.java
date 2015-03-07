@@ -20,7 +20,6 @@ package org.l2junity.gameserver.data.xml.impl;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
 
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.StatsSet;
@@ -94,11 +93,11 @@ public class EnchantItemData implements IXmlReader
 						}
 						catch (NullPointerException e)
 						{
-							LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Unexistent enchant scroll: " + set.getString("id") + " defined in enchant data!");
+							LOGGER.warn(getClass().getSimpleName() + ": Unexistent enchant scroll: " + set.getString("id") + " defined in enchant data!");
 						}
 						catch (IllegalAccessError e)
 						{
-							LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Wrong enchant scroll item type: " + set.getString("id") + " defined in enchant data!");
+							LOGGER.warn(getClass().getSimpleName() + ": Wrong enchant scroll item type: " + set.getString("id") + " defined in enchant data!");
 						}
 					}
 					else if ("support".equalsIgnoreCase(d.getNodeName()))
@@ -118,11 +117,11 @@ public class EnchantItemData implements IXmlReader
 						}
 						catch (NullPointerException e)
 						{
-							LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Unexistent enchant support item: " + set.getString("id") + " defined in enchant data!");
+							LOGGER.warn(getClass().getSimpleName() + ": Unexistent enchant support item: " + set.getString("id") + " defined in enchant data!");
 						}
 						catch (IllegalAccessError e)
 						{
-							LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Wrong enchant support item type: " + set.getString("id") + " defined in enchant data!");
+							LOGGER.warn(getClass().getSimpleName() + ": Wrong enchant support item type: " + set.getString("id") + " defined in enchant data!");
 						}
 					}
 				}

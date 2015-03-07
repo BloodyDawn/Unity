@@ -19,7 +19,6 @@
 package handlers.chathandlers;
 
 import java.util.StringTokenizer;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.enums.ChatType;
@@ -32,6 +31,8 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.CreatureSay;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * General Chat Handler.
@@ -39,7 +40,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class ChatGeneral implements IChatHandler
 {
-	private static Logger _log = Logger.getLogger(ChatGeneral.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(ChatGeneral.class.getName());
 	
 	private static final ChatType[] CHAT_TYPES =
 	{
@@ -80,7 +81,7 @@ public final class ChatGeneral implements IChatHandler
 			{
 				if (Config.DEBUG)
 				{
-					_log.warning("No handler registered for bypass '" + command + "'");
+					_log.warn("No handler registered for bypass '" + command + "'");
 				}
 				vcd_used = false;
 			}

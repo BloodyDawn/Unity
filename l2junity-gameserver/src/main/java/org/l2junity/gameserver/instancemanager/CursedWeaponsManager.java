@@ -28,9 +28,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.l2junity.Config;
@@ -48,6 +45,8 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Broadcast;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -58,7 +57,7 @@ import org.w3c.dom.Node;
  */
 public final class CursedWeaponsManager
 {
-	private static final Logger _log = Logger.getLogger(CursedWeaponsManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(CursedWeaponsManager.class.getName());
 	
 	private Map<Integer, CursedWeapon> _cursedWeapons;
 	
@@ -98,7 +97,7 @@ public final class CursedWeaponsManager
 			File file = new File(Config.DATAPACK_ROOT + "/data/cursedWeapons.xml");
 			if (!file.exists())
 			{
-				_log.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't find data/" + file.getName());
+				_log.warn(getClass().getSimpleName() + ": Couldn't find data/" + file.getName());
 				return;
 			}
 			
@@ -163,7 +162,7 @@ public final class CursedWeaponsManager
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Error parsing cursed weapons file.", e);
+			_log.error("Error parsing cursed weapons file.", e);
 			
 			return;
 		}
@@ -190,7 +189,7 @@ public final class CursedWeaponsManager
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not restore CursedWeapons data: " + e.getMessage(), e);
+			_log.warn("Could not restore CursedWeapons data: " + e.getMessage(), e);
 		}
 	}
 	
@@ -230,7 +229,7 @@ public final class CursedWeaponsManager
 							delete.setInt(2, itemId);
 							if (delete.executeUpdate() != 1)
 							{
-								_log.warning("Error while deleting cursed weapon " + itemId + " from userId " + playerId);
+								_log.warn("Error while deleting cursed weapon " + itemId + " from userId " + playerId);
 							}
 						}
 						
@@ -242,7 +241,7 @@ public final class CursedWeaponsManager
 							update.setInt(3, playerId);
 							if (update.executeUpdate() != 1)
 							{
-								_log.warning("Error while updating karma & pkkills for userId " + cw.getPlayerId());
+								_log.warn("Error while updating karma & pkkills for userId " + cw.getPlayerId());
 							}
 						}
 						// clean up the cursed weapons table.
@@ -253,7 +252,7 @@ public final class CursedWeaponsManager
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not check CursedWeapons data: " + e.getMessage(), e);
+			_log.warn("Could not check CursedWeapons data: " + e.getMessage(), e);
 		}
 	}
 	
@@ -375,7 +374,7 @@ public final class CursedWeaponsManager
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.SEVERE, "CursedWeaponsManager: Failed to remove data: " + e.getMessage(), e);
+			_log.error("CursedWeaponsManager: Failed to remove data: " + e.getMessage(), e);
 		}
 	}
 	

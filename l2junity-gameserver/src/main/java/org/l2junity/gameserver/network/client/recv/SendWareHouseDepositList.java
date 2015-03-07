@@ -132,7 +132,7 @@ public final class SendWareHouseDepositList implements IClientIncomingPacket
 			ItemInstance item = player.checkItemManipulation(i.getId(), i.getCount(), "deposit");
 			if (item == null)
 			{
-				_log.warning("Error depositing a warehouse object for char " + player.getName() + " (validity check)");
+				_log.warn("Error depositing a warehouse object for char " + player.getName() + " (validity check)");
 				return;
 			}
 			
@@ -179,7 +179,7 @@ public final class SendWareHouseDepositList implements IClientIncomingPacket
 			ItemInstance oldItem = player.checkItemManipulation(i.getId(), i.getCount(), "deposit");
 			if (oldItem == null)
 			{
-				_log.warning("Error depositing a warehouse object for char " + player.getName() + " (olditem == null)");
+				_log.warn("Error depositing a warehouse object for char " + player.getName() + " (olditem == null)");
 				return;
 			}
 			
@@ -191,7 +191,7 @@ public final class SendWareHouseDepositList implements IClientIncomingPacket
 			final ItemInstance newItem = player.getInventory().transferItem(warehouse.getName(), i.getId(), i.getCount(), warehouse, player, manager);
 			if (newItem == null)
 			{
-				_log.warning("Error depositing a warehouse object for char " + player.getName() + " (newitem == null)");
+				_log.warn("Error depositing a warehouse object for char " + player.getName() + " (newitem == null)");
 				continue;
 			}
 			

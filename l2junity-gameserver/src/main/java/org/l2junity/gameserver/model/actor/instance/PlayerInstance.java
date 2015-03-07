@@ -44,8 +44,6 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
-import java.util.logging.Level;
-
 import javolution.util.FastList;
 import javolution.util.FastMap;
 
@@ -1281,7 +1279,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception on logout(): " + e.getMessage(), e);
+			_log.warn("Exception on logout(): " + e.getMessage(), e);
 		}
 	}
 	
@@ -1356,7 +1354,7 @@ public final class PlayerInstance extends Playable
 		}
 		else
 		{
-			_log.warning("Attempted to remove unknown RecipeList: " + recipeId);
+			_log.warn("Attempted to remove unknown RecipeList: " + recipeId);
 		}
 		
 		for (Shortcut sc : getAllShortCuts())
@@ -1381,7 +1379,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, "SQL exception while inserting recipe: " + recipeId + " from character " + getObjectId(), e);
+			_log.warn("SQL exception while inserting recipe: " + recipeId + " from character " + getObjectId(), e);
 		}
 	}
 	
@@ -1397,7 +1395,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, "SQL exception while deleting recipe: " + recipeId + " from character " + getObjectId(), e);
+			_log.warn("SQL exception while deleting recipe: " + recipeId + " from character " + getObjectId(), e);
 		}
 	}
 	
@@ -2630,7 +2628,7 @@ public final class PlayerInstance extends Playable
 			}
 			else
 			{
-				_log.warning("Skipping null auto-get skill for player: " + toString());
+				_log.warn("Skipping null auto-get skill for player: " + toString());
 			}
 		}
 	}
@@ -3294,7 +3292,7 @@ public final class PlayerInstance extends Playable
 			final L2Item item = ItemTable.getInstance().getTemplate(itemId);
 			if (item == null)
 			{
-				_log.log(Level.SEVERE, "Item doesn't exist so cannot be added. Item ID: " + itemId);
+				_log.error("Item doesn't exist so cannot be added. Item ID: " + itemId);
 				return null;
 			}
 			// Sends message to client if requested
@@ -3340,7 +3338,7 @@ public final class PlayerInstance extends Playable
 				final IItemHandler handler = ItemHandler.getInstance().getHandler(item instanceof EtcItem ? (EtcItem) item : null);
 				if (handler == null)
 				{
-					_log.warning("No item handler registered for Herb ID " + item.getId() + "!");
+					_log.warn("No item handler registered for Herb ID " + item.getId() + "!");
 				}
 				else
 				{
@@ -3881,7 +3879,7 @@ public final class PlayerInstance extends Playable
 		// TODO: if we remove objects that are not visisble from the L2World, we'll have to remove this check
 		if (World.getInstance().findObject(objectId) == null)
 		{
-			_log.finest(getObjectId() + ": player tried to " + action + " item not available in L2World");
+			_log.trace(getObjectId() + ": player tried to " + action + " item not available in L2World");
 			return null;
 		}
 		
@@ -3889,19 +3887,19 @@ public final class PlayerInstance extends Playable
 		
 		if ((item == null) || (item.getOwnerId() != getObjectId()))
 		{
-			_log.finest(getObjectId() + ": player tried to " + action + " item he is not owner of");
+			_log.trace(getObjectId() + ": player tried to " + action + " item he is not owner of");
 			return null;
 		}
 		
 		if ((count < 0) || ((count > 1) && !item.isStackable()))
 		{
-			_log.finest(getObjectId() + ": player tried to " + action + " item with invalid count: " + count);
+			_log.trace(getObjectId() + ": player tried to " + action + " item with invalid count: " + count);
 			return null;
 		}
 		
 		if (count > item.getCount())
 		{
-			_log.finest(getObjectId() + ": player tried to " + action + " more items than he owns");
+			_log.trace(getObjectId() + ": player tried to " + action + " more items than he owns");
 			return null;
 		}
 		
@@ -3911,7 +3909,7 @@ public final class PlayerInstance extends Playable
 		{
 			if (Config.DEBUG)
 			{
-				_log.finest(getObjectId() + ": player tried to " + action + " item controling pet");
+				_log.trace(getObjectId() + ": player tried to " + action + " item controling pet");
 			}
 			
 			return null;
@@ -3921,7 +3919,7 @@ public final class PlayerInstance extends Playable
 		{
 			if (Config.DEBUG)
 			{
-				_log.finest(getObjectId() + ":player tried to " + action + " an enchant scroll he was using");
+				_log.trace(getObjectId() + ":player tried to " + action + " an enchant scroll he was using");
 			}
 			return null;
 		}
@@ -3943,7 +3941,7 @@ public final class PlayerInstance extends Playable
 	{
 		if (Config.DEVELOPER && (protect || (_protectEndTime > 0)))
 		{
-			_log.warning(getName() + ": Protection " + (protect ? "ON " + (GameTimeController.getInstance().getGameTicks() + (Config.PLAYER_SPAWN_PROTECTION * GameTimeController.TICKS_PER_SECOND)) : "OFF") + " (currently " + GameTimeController.getInstance().getGameTicks() + ")");
+			_log.warn(getName() + ": Protection " + (protect ? "ON " + (GameTimeController.getInstance().getGameTicks() + (Config.PLAYER_SPAWN_PROTECTION * GameTimeController.TICKS_PER_SECOND)) : "OFF") + " (currently " + GameTimeController.getInstance().getGameTicks() + ")");
 		}
 		
 		_protectEndTime = protect ? GameTimeController.getInstance().getGameTicks() + (Config.PLAYER_SPAWN_PROTECTION * GameTimeController.TICKS_PER_SECOND) : 0;
@@ -3953,7 +3951,7 @@ public final class PlayerInstance extends Playable
 	{
 		if (Config.DEVELOPER && (protect || (_teleportProtectEndTime > 0)))
 		{
-			_log.warning(getName() + ": Tele Protection " + (protect ? "ON " + (GameTimeController.getInstance().getGameTicks() + (Config.PLAYER_TELEPORT_PROTECTION * GameTimeController.TICKS_PER_SECOND)) : "OFF") + " (currently " + GameTimeController.getInstance().getGameTicks() + ")");
+			_log.warn(getName() + ": Tele Protection " + (protect ? "ON " + (GameTimeController.getInstance().getGameTicks() + (Config.PLAYER_TELEPORT_PROTECTION * GameTimeController.TICKS_PER_SECOND)) : "OFF") + " (currently " + GameTimeController.getInstance().getGameTicks() + ")");
 		}
 		
 		_teleportProtectEndTime = protect ? GameTimeController.getInstance().getGameTicks() + (Config.PLAYER_TELEPORT_PROTECTION * GameTimeController.TICKS_PER_SECOND) : 0;
@@ -4527,7 +4525,7 @@ public final class PlayerInstance extends Playable
 		if (!(object instanceof ItemInstance))
 		{
 			// dont try to pickup anything that is not an item :)
-			_log.warning(this + " trying to pickup wrong target." + getTarget());
+			_log.warn(this + " trying to pickup wrong target." + getTarget());
 			return;
 		}
 		
@@ -4627,7 +4625,7 @@ public final class PlayerInstance extends Playable
 			IItemHandler handler = ItemHandler.getInstance().getHandler(target.getEtcItem());
 			if (handler == null)
 			{
-				_log.warning("No item handler registered for item ID: " + target.getId() + ".");
+				_log.warn("No item handler registered for item ID: " + target.getId() + ".");
 			}
 			else
 			{
@@ -5445,11 +5443,11 @@ public final class PlayerInstance extends Playable
 						
 						if (isKarmaDrop)
 						{
-							_log.warning(getName() + " has karma and dropped id = " + itemDrop.getId() + ", count = " + itemDrop.getCount());
+							_log.warn(getName() + " has karma and dropped id = " + itemDrop.getId() + ", count = " + itemDrop.getCount());
 						}
 						else
 						{
-							_log.warning(getName() + " dropped id = " + itemDrop.getId() + ", count = " + itemDrop.getCount());
+							_log.warn(getName() + " dropped id = " + itemDrop.getId() + ", count = " + itemDrop.getCount());
 						}
 						
 						if (++dropCount >= dropLimit)
@@ -6650,11 +6648,11 @@ public final class PlayerInstance extends Playable
 		
 		if (!AdminData.getInstance().hasAccessLevel(level))
 		{
-			_log.warning("Tryed to set unregistered access level " + level + " for " + toString() + ". Setting access level without privileges!");
+			_log.warn("Tryed to set unregistered access level " + level + " for " + toString() + ". Setting access level without privileges!");
 		}
 		else if (level > 0)
 		{
-			_log.warning(_accessLevel.getName() + " access level set for character " + getName() + "! Just a warning to be careful ;)");
+			_log.warn(_accessLevel.getName() + " access level set for character " + getName() + "! Just a warning to be careful ;)");
 		}
 	}
 	
@@ -6817,7 +6815,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Failed updating character online status.", e);
+			_log.error("Failed updating character online status.", e);
 		}
 	}
 	
@@ -6872,7 +6870,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Could not insert char data: " + e.getMessage(), e);
+			_log.error("Could not insert char data: " + e.getMessage(), e);
 			return false;
 		}
 		return true;
@@ -7027,7 +7025,7 @@ public final class PlayerInstance extends Playable
 						// a possible restart-while-modifysubclass cheat has been attempted.
 						// Switching to use base class
 						player.setClassId(player.getBaseClass());
-						_log.warning("Player " + player.getName() + " reverted to base class. Possibly has tried a relogin exploit while subclassing.");
+						_log.warn("Player " + player.getName() + " reverted to base class. Possibly has tried a relogin exploit while subclassing.");
 					}
 					else
 					{
@@ -7143,7 +7141,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Failed loading character.", e);
+			_log.error("Failed loading character.", e);
 		}
 		return player;
 	}
@@ -7233,7 +7231,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not restore classes for " + player.getName() + ": " + e.getMessage(), e);
+			_log.warn("Could not restore classes for " + player.getName() + ": " + e.getMessage(), e);
 		}
 		return true;
 	}
@@ -7333,7 +7331,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Could not restore recipe book data:" + e.getMessage(), e);
+			_log.error("Could not restore recipe book data:" + e.getMessage(), e);
 		}
 	}
 	
@@ -7363,7 +7361,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Could not restore premium items: " + e.getMessage(), e);
+			_log.error("Could not restore premium items: " + e.getMessage(), e);
 		}
 	}
 	
@@ -7379,7 +7377,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Could not update premium items: " + e.getMessage(), e);
+			_log.error("Could not update premium items: " + e.getMessage(), e);
 		}
 	}
 	
@@ -7394,7 +7392,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Could not delete premium item: " + e);
+			_log.error("Could not delete premium item: " + e);
 		}
 	}
 	
@@ -7507,7 +7505,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not store char base data: " + this + " - " + e.getMessage(), e);
+			_log.warn("Could not store char base data: " + this + " - " + e.getMessage(), e);
 		}
 	}
 	
@@ -7537,7 +7535,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not store sub class data for " + getName() + ": " + e.getMessage(), e);
+			_log.warn("Could not store sub class data for " + getName() + ": " + e.getMessage(), e);
 		}
 	}
 	
@@ -7646,7 +7644,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not store char effect data: ", e);
+			_log.warn("Could not store char effect data: ", e);
 		}
 	}
 	
@@ -7678,7 +7676,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not store char item reuse data: ", e);
+			_log.warn("Could not store char item reuse data: ", e);
 		}
 	}
 	
@@ -7762,7 +7760,7 @@ public final class PlayerInstance extends Playable
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "Error could not delete skill: " + e.getMessage(), e);
+				_log.warn("Error could not delete skill: " + e.getMessage(), e);
 			}
 		}
 		
@@ -7820,12 +7818,12 @@ public final class PlayerInstance extends Playable
 			}
 			else
 			{
-				_log.warning("Could not store new skill, it's null!");
+				_log.warn("Could not store new skill, it's null!");
 			}
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Error could not store char skills: " + e.getMessage(), e);
+			_log.warn("Error could not store char skills: " + e.getMessage(), e);
 		}
 	}
 	
@@ -7860,7 +7858,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, "Error could not store char skills: " + e.getMessage(), e);
+			_log.warn("Error could not store char skills: " + e.getMessage(), e);
 		}
 	}
 	
@@ -7887,7 +7885,7 @@ public final class PlayerInstance extends Playable
 					
 					if (skill == null)
 					{
-						_log.warning("Skipped null skill Id: " + id + " Level: " + level + " while restoring player skills for playerObjId: " + getObjectId());
+						_log.warn("Skipped null skill Id: " + id + " Level: " + level + " while restoring player skills for playerObjId: " + getObjectId());
 						continue;
 					}
 					
@@ -7910,7 +7908,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not restore character " + this + " skills: " + e.getMessage(), e);
+			_log.warn("Could not restore character " + this + " skills: " + e.getMessage(), e);
 		}
 	}
 	
@@ -7968,7 +7966,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not restore " + this + " active effect data: " + e.getMessage(), e);
+			_log.warn("Could not restore " + this + " active effect data: " + e.getMessage(), e);
 		}
 	}
 	
@@ -8034,7 +8032,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not restore " + this + " Item Reuse data: " + e.getMessage(), e);
+			_log.warn("Could not restore " + this + " Item Reuse data: " + e.getMessage(), e);
 		}
 	}
 	
@@ -8076,7 +8074,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Failed restoing character " + this + " hennas.", e);
+			_log.error("Failed restoing character " + this + " hennas.", e);
 		}
 		
 		// Calculate henna modifiers of this player.
@@ -8146,7 +8144,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Failed remocing character henna.", e);
+			_log.error("Failed remocing character henna.", e);
 		}
 		
 		// Calculate Henna modifiers of this L2PcInstance
@@ -8201,7 +8199,7 @@ public final class PlayerInstance extends Playable
 				}
 				catch (Exception e)
 				{
-					_log.log(Level.SEVERE, "Failed saving character henna.", e);
+					_log.error("Failed saving character henna.", e);
 				}
 				
 				// Send Server->Client HennaInfo packet to this L2PcInstance
@@ -10195,7 +10193,7 @@ public final class PlayerInstance extends Playable
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "WARNING: Could not add character sub class for " + getName() + ": " + e.getMessage(), e);
+				_log.warn("WARNING: Could not add character sub class for " + getName() + ": " + e.getMessage(), e);
 				return false;
 			}
 			
@@ -10281,7 +10279,7 @@ public final class PlayerInstance extends Playable
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "Could not modify sub class for " + getName() + " to class index " + classIndex + ": " + e.getMessage(), e);
+				_log.warn("Could not modify sub class for " + getName() + " to class index " + classIndex + ": " + e.getMessage(), e);
 				
 				// This must be done in order to maintain data consistency.
 				getSubClasses().remove(classIndex);
@@ -10357,7 +10355,7 @@ public final class PlayerInstance extends Playable
 		final L2PcTemplate pcTemplate = PlayerTemplateData.getInstance().getTemplate(classId);
 		if (pcTemplate == null)
 		{
-			_log.severe("Missing template for classId: " + classId);
+			_log.error("Missing template for classId: " + classId);
 			throw new Error();
 		}
 		// Set the template of the L2PcInstance
@@ -10435,7 +10433,7 @@ public final class PlayerInstance extends Playable
 				}
 				catch (Exception e)
 				{
-					_log.log(Level.WARNING, "Could not switch " + getName() + "'s sub class to class index " + classIndex + ": " + e.getMessage(), e);
+					_log.warn("Could not switch " + getName() + "'s sub class to class index " + classIndex + ": " + e.getMessage(), e);
 					return false;
 				}
 			}
@@ -10677,7 +10675,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "deleteMe()", e);
+			_log.error("deleteMe()", e);
 		}
 		
 		try
@@ -10689,7 +10687,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "", e);
+			_log.error("", e);
 		}
 		
 		EventDispatcher.getInstance().notifyEventAsync(new OnPlayerLogin(this), this);
@@ -11182,7 +11180,7 @@ public final class PlayerInstance extends Playable
 		
 		if ((item == null) || (item.getOwnerId() != getObjectId()))
 		{
-			_log.finest(getObjectId() + ": player tried to " + action + " item he is not owner of");
+			_log.trace(getObjectId() + ": player tried to " + action + " item he is not owner of");
 			return false;
 		}
 		
@@ -11192,7 +11190,7 @@ public final class PlayerInstance extends Playable
 		{
 			if (Config.DEBUG)
 			{
-				_log.finest(getObjectId() + ": player tried to " + action + " item controling pet");
+				_log.trace(getObjectId() + ": player tried to " + action + " item controling pet");
 			}
 			
 			return false;
@@ -11202,7 +11200,7 @@ public final class PlayerInstance extends Playable
 		{
 			if (Config.DEBUG)
 			{
-				_log.finest(getObjectId() + ":player tried to " + action + " an enchant scroll he was using");
+				_log.trace(getObjectId() + ":player tried to " + action + " an enchant scroll he was using");
 			}
 			return false;
 		}
@@ -11337,7 +11335,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "deleteMe()", e);
+			_log.error("deleteMe()", e);
 		}
 		
 		// Set the online Flag to True or False and update the characters table of the database with online status and lastAccess (called when login and logout)
@@ -11345,13 +11343,13 @@ public final class PlayerInstance extends Playable
 		{
 			if (!isOnline())
 			{
-				_log.log(Level.SEVERE, "deleteMe() called on offline character " + this, new RuntimeException());
+				_log.error("deleteMe() called on offline character " + this, new RuntimeException());
 			}
 			setOnlineStatus(false, true);
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "deleteMe()", e);
+			_log.error("deleteMe()", e);
 		}
 		
 		try
@@ -11363,7 +11361,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "deleteMe()", e);
+			_log.error("deleteMe()", e);
 		}
 		
 		try
@@ -11376,7 +11374,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "deleteMe()", e);
+			_log.error("deleteMe()", e);
 		}
 		
 		// remove combat flag
@@ -11399,7 +11397,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "deleteMe()", e);
+			_log.error("deleteMe()", e);
 		}
 		
 		try
@@ -11412,7 +11410,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "deleteMe()", e);
+			_log.error("deleteMe()", e);
 		}
 		
 		try
@@ -11424,7 +11422,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "deleteMe()", e);
+			_log.error("deleteMe()", e);
 		}
 		
 		// Recommendations must be saved before task (timer) is canceled
@@ -11434,7 +11432,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "deleteMe()", e);
+			_log.error("deleteMe()", e);
 		}
 		// Stop the HP/MP/CP Regeneration task (scheduled tasks)
 		try
@@ -11443,7 +11441,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "deleteMe()", e);
+			_log.error("deleteMe()", e);
 		}
 		
 		try
@@ -11452,7 +11450,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "deleteMe()", e);
+			_log.error("deleteMe()", e);
 		}
 		
 		// Stop crafting, if in progress
@@ -11462,7 +11460,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "deleteMe()", e);
+			_log.error("deleteMe()", e);
 		}
 		
 		// Cancel Attak or Cast
@@ -11472,7 +11470,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "deleteMe()", e);
+			_log.error("deleteMe()", e);
 		}
 		
 		if (isChannelized())
@@ -11493,7 +11491,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "deleteMe()", e);
+			_log.error("deleteMe()", e);
 		}
 		
 		// If a Party is in progress, leave it (and festival party)
@@ -11505,7 +11503,7 @@ public final class PlayerInstance extends Playable
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "deleteMe()", e);
+				_log.error("deleteMe()", e);
 			}
 		}
 		
@@ -11540,7 +11538,7 @@ public final class PlayerInstance extends Playable
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "deleteMe()", e);
+				_log.error("deleteMe()", e);
 			}// returns pet to control item
 		}
 		
@@ -11558,7 +11556,7 @@ public final class PlayerInstance extends Playable
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "deleteMe()", e);
+				_log.error("deleteMe()", e);
 			}
 		}
 		
@@ -11578,7 +11576,7 @@ public final class PlayerInstance extends Playable
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "deleteMe()", e);
+				_log.error("deleteMe()", e);
 			}
 		}
 		
@@ -11598,7 +11596,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "deleteMe()", e);
+			_log.error("deleteMe()", e);
 		}
 		
 		// remove player from instance and set spawn location if any
@@ -11629,7 +11627,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "deleteMe()", e);
+			_log.error("deleteMe()", e);
 		}
 		
 		// TvT Event removal
@@ -11639,7 +11637,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "deleteMe()", e);
+			_log.error("deleteMe()", e);
 		}
 		
 		// Update database with items in its inventory and remove them from the world
@@ -11649,7 +11647,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "deleteMe()", e);
+			_log.error("deleteMe()", e);
 		}
 		
 		// Update database with items in its warehouse and remove them from the world
@@ -11659,7 +11657,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "deleteMe()", e);
+			_log.error("deleteMe()", e);
 		}
 		if (Config.WAREHOUSE_CACHE)
 		{
@@ -11672,7 +11670,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "deleteMe()", e);
+			_log.error("deleteMe()", e);
 		}
 		
 		try
@@ -11681,7 +11679,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "deleteMe()", e);
+			_log.error("deleteMe()", e);
 		}
 		
 		if (isCursedWeaponEquipped())
@@ -11692,7 +11690,7 @@ public final class PlayerInstance extends Playable
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "deleteMe()", e);
+				_log.error("deleteMe()", e);
 			}
 		}
 		
@@ -11703,7 +11701,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "deleteMe()", e);
+			_log.error("deleteMe()", e);
 		}
 		
 		if (getClanId() > 0)
@@ -11745,7 +11743,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception on deleteMe() notifyFriends: " + e.getMessage(), e);
+			_log.warn("Exception on deleteMe() notifyFriends: " + e.getMessage(), e);
 		}
 	}
 	
@@ -12516,7 +12514,7 @@ public final class PlayerInstance extends Playable
 	{
 		if (killer == null)
 		{
-			_log.warning(this + " called calculateShilensBreathDebuffLevel with killer null!");
+			_log.warn(this + " called calculateShilensBreathDebuffLevel with killer null!");
 			return;
 		}
 		
@@ -12878,7 +12876,7 @@ public final class PlayerInstance extends Playable
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "Failed to store Pet [NpcId: " + petId + "] data", e);
+				_log.error("Failed to store Pet [NpcId: " + petId + "] data", e);
 			}
 		}
 	}
@@ -13027,7 +13025,7 @@ public final class PlayerInstance extends Playable
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "Could not update character teleport bookmark data: " + e.getMessage(), e);
+				_log.warn("Could not update character teleport bookmark data: " + e.getMessage(), e);
 			}
 		}
 		
@@ -13047,7 +13045,7 @@ public final class PlayerInstance extends Playable
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "Could not delete character teleport bookmark data: " + e.getMessage(), e);
+				_log.warn("Could not delete character teleport bookmark data: " + e.getMessage(), e);
 			}
 			
 			sendPacket(new ExGetBookMarkInfoPacket(this));
@@ -13196,7 +13194,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not insert character teleport bookmark data: " + e.getMessage(), e);
+			_log.warn("Could not insert character teleport bookmark data: " + e.getMessage(), e);
 		}
 		sendPacket(new ExGetBookMarkInfoPacket(this));
 	}
@@ -13217,7 +13215,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Failed restoing character teleport bookmark.", e);
+			_log.error("Failed restoing character teleport bookmark.", e);
 		}
 	}
 	
@@ -13426,7 +13424,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Error found in " + getName() + "'s FriendList: " + e.getMessage(), e);
+			_log.warn("Error found in " + getName() + "'s FriendList: " + e.getMessage(), e);
 		}
 	}
 	
@@ -13523,7 +13521,7 @@ public final class PlayerInstance extends Playable
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "Could not store recipe shop for playerId " + getObjectId() + ": ", e);
+				_log.error("Could not store recipe shop for playerId " + getObjectId() + ": ", e);
 			}
 		}
 	}
@@ -13549,7 +13547,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Could not restore recipe shop list data for playerId: " + getObjectId(), e);
+			_log.error("Could not restore recipe shop list data for playerId: " + getObjectId(), e);
 		}
 	}
 	
@@ -13962,7 +13960,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Could not check Items in Pet Inventory for playerId: " + getObjectId(), e);
+			_log.error("Could not check Items in Pet Inventory for playerId: " + getObjectId(), e);
 		}
 	}
 	
@@ -14006,7 +14004,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Could not restore Recommendations for player: " + getObjectId(), e);
+			_log.error("Could not restore Recommendations for player: " + getObjectId(), e);
 		}
 	}
 	
@@ -14030,7 +14028,7 @@ public final class PlayerInstance extends Playable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Could not update Recommendations for player: " + getObjectId(), e);
+			_log.error("Could not update Recommendations for player: " + getObjectId(), e);
 		}
 	}
 	

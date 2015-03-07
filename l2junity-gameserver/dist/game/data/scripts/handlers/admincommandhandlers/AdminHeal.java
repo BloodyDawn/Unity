@@ -19,7 +19,6 @@
 package handlers.admincommandhandlers;
 
 import java.util.Collection;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
@@ -28,6 +27,8 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class handles following admin commands: - heal = restores HP/MP/CP on target, name or radius
@@ -35,7 +36,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public class AdminHeal implements IAdminCommandHandler
 {
-	private static Logger _log = Logger.getLogger(AdminRes.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(AdminRes.class.getName());
 	private static final String[] ADMIN_COMMANDS =
 	{
 		"admin_heal"
@@ -60,7 +61,7 @@ public class AdminHeal implements IAdminCommandHandler
 			{
 				if (Config.DEVELOPER)
 				{
-					_log.warning("Heal error: " + e);
+					_log.warn("Heal error: " + e);
 				}
 				activeChar.sendMessage("Incorrect target/radius specified.");
 			}
@@ -132,7 +133,7 @@ public class AdminHeal implements IAdminCommandHandler
 			}
 			if (Config.DEBUG)
 			{
-				_log.fine("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") healed character " + target.getName());
+				_log.debug("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") healed character " + target.getName());
 			}
 		}
 		else

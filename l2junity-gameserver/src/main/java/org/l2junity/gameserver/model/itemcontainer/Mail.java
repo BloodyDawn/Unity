@@ -21,7 +21,6 @@ package org.l2junity.gameserver.model.itemcontainer;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.logging.Level;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.enums.ItemLocation;
@@ -159,7 +158,7 @@ public class Mail extends ItemContainer
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "could not restore container:", e);
+			_log.warn("could not restore container:", e);
 		}
 	}
 	

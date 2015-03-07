@@ -19,16 +19,17 @@
 package org.l2junity.loginserver.network.gameserverpackets;
 
 import java.util.Arrays;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.loginserver.GameServerTable;
-import org.l2junity.loginserver.GameServerThread;
 import org.l2junity.loginserver.GameServerTable.GameServerInfo;
+import org.l2junity.loginserver.GameServerThread;
 import org.l2junity.loginserver.network.L2JGameServerPacketHandler.GameServerState;
 import org.l2junity.loginserver.network.loginserverpackets.AuthResponse;
 import org.l2junity.loginserver.network.loginserverpackets.LoginServerFail;
 import org.l2junity.util.network.BaseRecievePacket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <pre>
@@ -46,7 +47,7 @@ import org.l2junity.util.network.BaseRecievePacket;
  */
 public class GameServerAuth extends BaseRecievePacket
 {
-	protected static Logger _log = Logger.getLogger(GameServerAuth.class.getName());
+	protected static Logger _log = LoggerFactory.getLogger(GameServerAuth.class.getName());
 	GameServerThread _server;
 	private final byte[] _hexId;
 	private final int _desiredId;

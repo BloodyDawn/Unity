@@ -20,7 +20,6 @@ package org.l2junity.gameserver.network.client.recv.friend;
 
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.World;
@@ -30,6 +29,8 @@ import org.l2junity.gameserver.network.client.recv.IClientIncomingPacket;
 import org.l2junity.gameserver.network.client.send.L2FriendSay;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.network.PacketReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Recieve Private (Friend) Message - 0xCC Format: c SS S: Message S: Receiving Player
@@ -37,7 +38,7 @@ import org.l2junity.network.PacketReader;
  */
 public final class RequestSendFriendMsg implements IClientIncomingPacket
 {
-	private static Logger _logChat = Logger.getLogger("chat");
+	private static Logger _logChat = LoggerFactory.getLogger("chat");
 	
 	private String _message;
 	private String _reciever;
@@ -81,7 +82,7 @@ public final class RequestSendFriendMsg implements IClientIncomingPacket
 				"[" + activeChar.getName() + " to " + _reciever + "]"
 			});
 			
-			_logChat.log(record);
+			_logChat.info("PRIV_MSG [{} to {}] {}", activeChar, targetPlayer, _message);
 		}
 		
 		targetPlayer.sendPacket(new L2FriendSay(activeChar.getName(), _reciever, _message));

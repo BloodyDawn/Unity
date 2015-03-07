@@ -18,8 +18,6 @@
  */
 package org.l2junity.gameserver.model.items.enchant;
 
-import java.util.logging.Logger;
-
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.items.L2Item;
@@ -28,13 +26,15 @@ import org.l2junity.gameserver.model.items.type.CrystalType;
 import org.l2junity.gameserver.model.items.type.EtcItemType;
 import org.l2junity.gameserver.model.items.type.ItemType;
 import org.l2junity.gameserver.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author UnAfraid
  */
 public abstract class AbstractEnchantItem
 {
-	protected static final Logger _log = Logger.getLogger(AbstractEnchantItem.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(AbstractEnchantItem.class.getName());
 	
 	private static final ItemType[] ENCHANT_TYPES = new ItemType[]
 	{

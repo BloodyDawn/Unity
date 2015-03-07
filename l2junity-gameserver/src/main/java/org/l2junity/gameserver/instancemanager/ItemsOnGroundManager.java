@@ -24,8 +24,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javolution.util.FastList;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -33,8 +32,8 @@ import org.l2junity.gameserver.ItemsAutoDestroy;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-
-import javolution.util.FastList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class manage all items on ground.
@@ -42,7 +41,7 @@ import javolution.util.FastList;
  */
 public final class ItemsOnGroundManager implements Runnable
 {
-	private static final Logger _log = Logger.getLogger(ItemsOnGroundManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(ItemsOnGroundManager.class.getName());
 	
 	private final List<ItemInstance> _items = new FastList<ItemInstance>().shared();
 	
@@ -91,7 +90,7 @@ public final class ItemsOnGroundManager implements Runnable
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, getClass().getSimpleName() + ": Error while updating table ItemsOnGround " + e.getMessage(), e);
+				_log.error(getClass().getSimpleName() + ": Error while updating table ItemsOnGround " + e.getMessage(), e);
 			}
 		}
 		
@@ -144,7 +143,7 @@ public final class ItemsOnGroundManager implements Runnable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, getClass().getSimpleName() + ": Error while loading ItemsOnGround " + e.getMessage(), e);
+			_log.error(getClass().getSimpleName() + ": Error while loading ItemsOnGround " + e.getMessage(), e);
 		}
 		
 		if (Config.EMPTY_DROPPED_ITEM_TABLE_AFTER_LOAD)
@@ -189,7 +188,7 @@ public final class ItemsOnGroundManager implements Runnable
 		}
 		catch (Exception e1)
 		{
-			_log.log(Level.SEVERE, getClass().getSimpleName() + ": Error while cleaning table ItemsOnGround " + e1.getMessage(), e1);
+			_log.error(getClass().getSimpleName() + ": Error while cleaning table ItemsOnGround " + e1.getMessage(), e1);
 		}
 	}
 	
@@ -239,13 +238,13 @@ public final class ItemsOnGroundManager implements Runnable
 				}
 				catch (Exception e)
 				{
-					_log.log(Level.SEVERE, getClass().getSimpleName() + ": Error while inserting into table ItemsOnGround: " + e.getMessage(), e);
+					_log.error(getClass().getSimpleName() + ": Error while inserting into table ItemsOnGround: " + e.getMessage(), e);
 				}
 			}
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.SEVERE, getClass().getSimpleName() + ": SQL error while storing items on ground: " + e.getMessage(), e);
+			_log.error(getClass().getSimpleName() + ": SQL error while storing items on ground: " + e.getMessage(), e);
 		}
 	}
 	

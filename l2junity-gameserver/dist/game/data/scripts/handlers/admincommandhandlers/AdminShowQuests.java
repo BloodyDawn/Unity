@@ -21,7 +21,6 @@ package handlers.admincommandhandlers;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.logging.Logger;
 
 import javolution.text.TextBuilder;
 
@@ -38,6 +37,8 @@ import org.l2junity.gameserver.network.client.send.ExShowQuestMark;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.QuestList;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * TODO: Rework and cleanup.
@@ -45,7 +46,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public class AdminShowQuests implements IAdminCommandHandler
 {
-	private static final Logger _log = Logger.getLogger(AdminShowQuests.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(AdminShowQuests.class.getName());
 	
 	private static final String[] ADMIN_COMMANDS =
 	{
@@ -316,7 +317,7 @@ public class AdminShowQuests implements IAdminCommandHandler
 		catch (Exception e)
 		{
 			actor.sendMessage("There was an error.");
-			_log.warning(AdminShowQuests.class.getSimpleName() + ": " + e.getMessage());
+			_log.warn(AdminShowQuests.class.getSimpleName() + ": " + e.getMessage());
 		}
 	}
 	

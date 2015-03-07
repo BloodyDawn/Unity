@@ -20,7 +20,6 @@ package org.l2junity.gameserver.network.client.recv;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.logging.Level;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -164,7 +163,7 @@ public final class RequestDestroyItem implements IClientIncomingPacket
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "could not delete pet objectid: ", e);
+				_log.warn("could not delete pet objectid: ", e);
 			}
 		}
 		if (itemToRemove.isTimeLimitedItem())

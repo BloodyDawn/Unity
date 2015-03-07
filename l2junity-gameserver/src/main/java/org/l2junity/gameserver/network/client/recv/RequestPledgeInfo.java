@@ -52,7 +52,7 @@ public final class RequestPledgeInfo implements IClientIncomingPacket
 		{
 			if (Config.DEBUG)
 			{
-				_log.warning(getClass().getSimpleName() + ": Clan data for clanId " + _clanId + " is missing for player " + activeChar);
+				_log.warn(getClass().getSimpleName() + ": Clan data for clanId " + _clanId + " is missing for player " + activeChar);
 			}
 			return; // we have no clan data ?!? should not happen
 		}

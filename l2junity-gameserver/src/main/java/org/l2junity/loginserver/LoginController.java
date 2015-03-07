@@ -35,10 +35,10 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.crypto.Cipher;
+
+import javolution.util.FastMap;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -49,12 +49,12 @@ import org.l2junity.loginserver.network.L2LoginClient;
 import org.l2junity.loginserver.network.gameserverpackets.ServerStatus;
 import org.l2junity.loginserver.network.serverpackets.LoginFail.LoginFailReason;
 import org.l2junity.util.crypt.ScrambledKeyPair;
-
-import javolution.util.FastMap;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class LoginController
 {
-	protected static final Logger _log = Logger.getLogger(LoginController.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(LoginController.class.getName());
 	
 	private static LoginController _instance;
 	
@@ -199,7 +199,7 @@ public class LoginController
 			addBanForAddress(addr, Config.LOGIN_BLOCK_AFTER_BAN * 1000);
 			// we need to clear the failed login attempts here, so after the ip ban is over the client has another 5 attempts
 			clearFailedLoginAttemps(addr);
-			_log.warning("Added banned address " + addr.getHostAddress() + "! Too many login attemps.");
+			_log.warn("Added banned address " + addr.getHostAddress() + "! Too many login attemps.");
 		}
 	}
 	
@@ -230,7 +230,7 @@ public class LoginController
 					{
 						if (Config.DEBUG)
 						{
-							_log.fine("Account '" + login + "' exists.");
+							_log.debug("Account '" + login + "' exists.");
 						}
 						
 						AccountInfo info = new AccountInfo(rset.getString("login"), rset.getString("password"), rset.getInt("accessLevel"), rset.getInt("lastServer"));
@@ -266,7 +266,7 @@ public class LoginController
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "Exception while auto creating account for '" + login + "'!", e);
+				_log.warn("Exception while auto creating account for '" + login + "'!", e);
 				return null;
 			}
 			
@@ -275,7 +275,7 @@ public class LoginController
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception while retriving account info for '" + login + "'!", e);
+			_log.warn("Exception while retriving account info for '" + login + "'!", e);
 			return null;
 		}
 	}
@@ -463,7 +463,7 @@ public class LoginController
 				}
 				catch (Exception e)
 				{
-					_log.log(Level.WARNING, "Could not set lastServer: " + e.getMessage(), e);
+					_log.warn("Could not set lastServer: " + e.getMessage(), e);
 				}
 			}
 			return loginOk;
@@ -482,7 +482,7 @@ public class LoginController
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not set accessLevel: " + e.getMessage(), e);
+			_log.warn("Could not set accessLevel: " + e.getMessage(), e);
 		}
 	}
 	
@@ -501,7 +501,7 @@ public class LoginController
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not set last tracert: " + e.getMessage(), e);
+			_log.warn("Could not set last tracert: " + e.getMessage(), e);
 		}
 	}
 	
@@ -581,13 +581,13 @@ public class LoginController
 			{
 				if (!ipWhiteList.isEmpty() && !ipWhiteList.contains(address))
 				{
-					_log.warning("Account checkin attemp from address(" + address.getHostAddress() + ") not present on whitelist for account '" + info.getLogin() + "'.");
+					_log.warn("Account checkin attemp from address(" + address.getHostAddress() + ") not present on whitelist for account '" + info.getLogin() + "'.");
 					return false;
 				}
 				
 				if (!ipBlackList.isEmpty() && ipBlackList.contains(address))
 				{
-					_log.warning("Account checkin attemp from address(" + address.getHostAddress() + ") on blacklist for account '" + info.getLogin() + "'.");
+					_log.warn("Account checkin attemp from address(" + address.getHostAddress() + ") on blacklist for account '" + info.getLogin() + "'.");
 					return false;
 				}
 			}
@@ -607,7 +607,7 @@ public class LoginController
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not finish login process!", e);
+			_log.warn("Could not finish login process!", e);
 			return false;
 		}
 	}

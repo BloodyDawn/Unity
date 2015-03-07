@@ -30,9 +30,6 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Consumer;
 import java.util.function.Function;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import javolution.util.FastList;
 
 import org.l2junity.Config;
@@ -133,13 +130,15 @@ import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.scripting.ManagedScript;
 import org.l2junity.gameserver.util.MinionList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author UnAfraid
  */
 public abstract class AbstractScript extends ManagedScript
 {
-	protected static final Logger _log = Logger.getLogger(AbstractScript.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(AbstractScript.class.getName());
 	private final Map<ListenerRegisterType, Set<Integer>> _registeredIds = new ConcurrentHashMap<>();
 	private final List<AbstractEventListener> _listeners = new FastList<AbstractEventListener>().shared();
 	
@@ -162,17 +161,17 @@ public abstract class AbstractScript extends ManagedScript
 				final EventType eventType = listener.value();
 				if (method.getParameterCount() != 1)
 				{
-					_log.log(Level.WARNING, getClass().getSimpleName() + ": Non properly defined annotation listener on method: " + method.getName() + " expected parameter count is 1 but found: " + method.getParameterCount());
+					_log.warn(getClass().getSimpleName() + ": Non properly defined annotation listener on method: " + method.getName() + " expected parameter count is 1 but found: " + method.getParameterCount());
 					continue;
 				}
 				else if (!eventType.isEventClass(method.getParameterTypes()[0]))
 				{
-					_log.log(Level.WARNING, getClass().getSimpleName() + ": Non properly defined annotation listener on method: " + method.getName() + " expected parameter to be type of: " + eventType.getEventClass().getSimpleName() + " but found: " + method.getParameterTypes()[0].getSimpleName());
+					_log.warn(getClass().getSimpleName() + ": Non properly defined annotation listener on method: " + method.getName() + " expected parameter to be type of: " + eventType.getEventClass().getSimpleName() + " but found: " + method.getParameterTypes()[0].getSimpleName());
 					continue;
 				}
 				else if (!eventType.isReturnClass(method.getReturnType()))
 				{
-					_log.log(Level.WARNING, getClass().getSimpleName() + ": Non properly defined annotation listener on method: " + method.getName() + " expected return type to be one of: " + Arrays.toString(eventType.getReturnClasses()) + " but found: " + method.getReturnType().getSimpleName());
+					_log.warn(getClass().getSimpleName() + ": Non properly defined annotation listener on method: " + method.getName() + " expected return type to be one of: " + Arrays.toString(eventType.getReturnClasses()) + " but found: " + method.getReturnType().getSimpleName());
 					continue;
 				}
 				
@@ -208,7 +207,7 @@ public abstract class AbstractScript extends ManagedScript
 						final Range range = (Range) annotation;
 						if (range.from() > range.to())
 						{
-							_log.log(Level.WARNING, getClass().getSimpleName() + ": Wrong " + annotation.getClass().getSimpleName() + " from is higher then to!");
+							_log.warn(getClass().getSimpleName() + ": Wrong " + annotation.getClass().getSimpleName() + " from is higher then to!");
 							continue;
 						}
 						
@@ -224,7 +223,7 @@ public abstract class AbstractScript extends ManagedScript
 						{
 							if (range.from() > range.to())
 							{
-								_log.log(Level.WARNING, getClass().getSimpleName() + ": Wrong " + annotation.getClass().getSimpleName() + " from is higher then to!");
+								_log.warn(getClass().getSimpleName() + ": Wrong " + annotation.getClass().getSimpleName() + " from is higher then to!");
 								continue;
 							}
 							
@@ -239,12 +238,12 @@ public abstract class AbstractScript extends ManagedScript
 						final NpcLevelRange range = (NpcLevelRange) annotation;
 						if (range.from() > range.to())
 						{
-							_log.log(Level.WARNING, getClass().getSimpleName() + ": Wrong " + annotation.getClass().getSimpleName() + " from is higher then to!");
+							_log.warn(getClass().getSimpleName() + ": Wrong " + annotation.getClass().getSimpleName() + " from is higher then to!");
 							continue;
 						}
 						else if (type != ListenerRegisterType.NPC)
 						{
-							_log.log(Level.WARNING, getClass().getSimpleName() + ": ListenerRegisterType " + type + " for " + annotation.getClass().getSimpleName() + " NPC is expected!");
+							_log.warn(getClass().getSimpleName() + ": ListenerRegisterType " + type + " for " + annotation.getClass().getSimpleName() + " NPC is expected!");
 							continue;
 						}
 						
@@ -262,12 +261,12 @@ public abstract class AbstractScript extends ManagedScript
 						{
 							if (range.from() > range.to())
 							{
-								_log.log(Level.WARNING, getClass().getSimpleName() + ": Wrong " + annotation.getClass().getSimpleName() + " from is higher then to!");
+								_log.warn(getClass().getSimpleName() + ": Wrong " + annotation.getClass().getSimpleName() + " from is higher then to!");
 								continue;
 							}
 							else if (type != ListenerRegisterType.NPC)
 							{
-								_log.log(Level.WARNING, getClass().getSimpleName() + ": ListenerRegisterType " + type + " for " + annotation.getClass().getSimpleName() + " NPC is expected!");
+								_log.warn(getClass().getSimpleName() + ": ListenerRegisterType " + type + " for " + annotation.getClass().getSimpleName() + " NPC is expected!");
 								continue;
 							}
 							
@@ -1326,7 +1325,7 @@ public abstract class AbstractScript extends ManagedScript
 					}
 					default:
 					{
-						_log.log(Level.WARNING, getClass().getSimpleName() + ": Unhandled register type: " + registerType);
+						_log.warn(getClass().getSimpleName() + ": Unhandled register type: " + registerType);
 					}
 				}
 				
@@ -1437,7 +1436,7 @@ public abstract class AbstractScript extends ManagedScript
 					}
 					default:
 					{
-						_log.log(Level.WARNING, getClass().getSimpleName() + ": Unhandled register type: " + registerType);
+						_log.warn(getClass().getSimpleName() + ": Unhandled register type: " + registerType);
 					}
 				}
 			}
@@ -1724,7 +1723,7 @@ public abstract class AbstractScript extends ManagedScript
 			
 			if ((x == 0) && (y == 0))
 			{
-				_log.log(Level.SEVERE, "addSpawn(): invalid spawn coordinates for NPC #" + npcId + "!");
+				_log.error("addSpawn(): invalid spawn coordinates for NPC #" + npcId + "!");
 				return null;
 			}
 			
@@ -1766,7 +1765,7 @@ public abstract class AbstractScript extends ManagedScript
 		}
 		catch (Exception e)
 		{
-			_log.warning("Could not spawn NPC #" + npcId + "; error: " + e.getMessage());
+			_log.warn("Could not spawn NPC #" + npcId + "; error: " + e.getMessage());
 		}
 		
 		return null;
@@ -2545,7 +2544,7 @@ public abstract class AbstractScript extends ManagedScript
 		final L2DoorInstance door = getDoor(doorId, instanceId);
 		if (door == null)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": called openDoor(" + doorId + ", " + instanceId + "); but door wasnt found!", new NullPointerException());
+			_log.warn(getClass().getSimpleName() + ": called openDoor(" + doorId + ", " + instanceId + "); but door wasnt found!", new NullPointerException());
 		}
 		else if (!door.getOpen())
 		{
@@ -2563,7 +2562,7 @@ public abstract class AbstractScript extends ManagedScript
 		final L2DoorInstance door = getDoor(doorId, instanceId);
 		if (door == null)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": called closeDoor(" + doorId + ", " + instanceId + "); but door wasnt found!", new NullPointerException());
+			_log.warn(getClass().getSimpleName() + ": called closeDoor(" + doorId + ", " + instanceId + "); but door wasnt found!", new NullPointerException());
 		}
 		else if (door.getOpen())
 		{

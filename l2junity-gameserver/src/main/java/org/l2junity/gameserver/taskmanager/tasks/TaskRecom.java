@@ -24,8 +24,8 @@ import java.sql.PreparedStatement;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.taskmanager.Task;
 import org.l2junity.gameserver.taskmanager.TaskManager;
-import org.l2junity.gameserver.taskmanager.TaskTypes;
 import org.l2junity.gameserver.taskmanager.TaskManager.ExecutedTask;
+import org.l2junity.gameserver.taskmanager.TaskTypes;
 
 /**
  * @author Layane
@@ -61,7 +61,7 @@ public class TaskRecom extends Task
 		}
 		catch (Exception e)
 		{
-			_log.severe(getClass().getSimpleName() + ": Could not reset Recommendations System: " + e);
+			_log.error(getClass().getSimpleName() + ": Could not reset Recommendations System: " + e);
 		}
 		_log.info("Recommendations System reseted");
 	}

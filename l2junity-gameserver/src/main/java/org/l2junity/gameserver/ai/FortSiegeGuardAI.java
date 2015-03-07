@@ -193,7 +193,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 	{
 		if (Config.DEBUG)
 		{
-			_log.warning(getClass().getSimpleName() + ": changeIntention(" + intention + ", " + arg0 + ", " + arg1 + ")");
+			_log.warn(getClass().getSimpleName() + ": changeIntention(" + intention + ", " + arg0 + ", " + arg1 + ")");
 		}
 		
 		if (intention == AI_INTENTION_IDLE /* || intention == AI_INTENTION_ACTIVE */) // active becomes idle if only a summon is present
@@ -370,7 +370,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 	{
 		if (Config.DEBUG)
 		{
-			_log.warning(getClass().getSimpleName() + ": thinkAttack(); timeout=" + (_attackTimeout - GameTimeController.getInstance().getGameTicks()));
+			_log.warn(getClass().getSimpleName() + ": thinkAttack(); timeout=" + (_attackTimeout - GameTimeController.getInstance().getGameTicks()));
 		}
 		
 		if (_attackTimeout < GameTimeController.getInstance().getGameTicks())
@@ -568,7 +568,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 		}
 		catch (NullPointerException e)
 		{
-			// _log.warning("AttackableAI: Attack target is NULL.");
+			// _log.warn("AttackableAI: Attack target is NULL.");
 			_actor.setTarget(null);
 			setIntention(AI_INTENTION_IDLE, null, null);
 			return;

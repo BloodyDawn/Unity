@@ -23,17 +23,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.DatabaseFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author UnAfraid
  */
 public class Announcement implements IAnnouncement
 {
-	protected static final Logger _log = Logger.getLogger(Announcement.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(Announcement.class.getName());
 	
 	private static final String INSERT_QUERY = "INSERT INTO announcements (type, content, author) VALUES (?, ?, ?)";
 	private static final String UPDATE_QUERY = "UPDATE announcements SET type = ?, content = ?, author = ? WHERE id = ?";
@@ -127,7 +127,7 @@ public class Announcement implements IAnnouncement
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't store announcement: ", e);
+			_log.warn(getClass().getSimpleName() + ": Couldn't store announcement: ", e);
 			return false;
 		}
 		return true;
@@ -147,7 +147,7 @@ public class Announcement implements IAnnouncement
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't store announcement: ", e);
+			_log.warn(getClass().getSimpleName() + ": Couldn't store announcement: ", e);
 			return false;
 		}
 		return true;
@@ -164,7 +164,7 @@ public class Announcement implements IAnnouncement
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't remove announcement: ", e);
+			_log.warn(getClass().getSimpleName() + ": Couldn't remove announcement: ", e);
 			return false;
 		}
 		return true;

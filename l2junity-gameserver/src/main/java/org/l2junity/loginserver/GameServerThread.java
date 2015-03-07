@@ -28,7 +28,6 @@ import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.loginserver.GameServerTable.GameServerInfo;
@@ -42,6 +41,8 @@ import org.l2junity.loginserver.network.loginserverpackets.RequestCharacters;
 import org.l2junity.util.Util;
 import org.l2junity.util.crypt.NewCrypt;
 import org.l2junity.util.network.BaseSendablePacket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author -Wooden-
@@ -49,7 +50,7 @@ import org.l2junity.util.network.BaseSendablePacket;
  */
 public class GameServerThread extends Thread
 {
-	protected static final Logger _log = Logger.getLogger(GameServerThread.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(GameServerThread.class.getName());
 	private final Socket _connection;
 	private InputStream _in;
 	private OutputStream _out;
@@ -96,7 +97,7 @@ public class GameServerThread extends Thread
 				
 				if ((lengthHi < 0) || _connection.isClosed())
 				{
-					_log.finer("LoginServerThread: Login terminated the connection.");
+					_log.debug("LoginServerThread: Login terminated the connection.");
 					break;
 				}
 				
@@ -114,7 +115,7 @@ public class GameServerThread extends Thread
 				
 				if (receivedBytes != (length - 2))
 				{
-					_log.warning("Incomplete Packet is sent to the server, closing connection.(LS)");
+					_log.warn("Incomplete Packet is sent to the server, closing connection.(LS)");
 					break;
 				}
 				
@@ -123,13 +124,13 @@ public class GameServerThread extends Thread
 				checksumOk = NewCrypt.verifyChecksum(data);
 				if (!checksumOk)
 				{
-					_log.warning("Incorrect packet checksum, closing connection (LS)");
+					_log.warn("Incorrect packet checksum, closing connection (LS)");
 					return;
 				}
 				
 				if (Config.DEBUG)
 				{
-					_log.warning("[C]" + System.lineSeparator() + Util.printData(data));
+					_log.warn("[C]" + System.lineSeparator() + Util.printData(data));
 				}
 				
 				L2JGameServerPacketHandler.handlePacket(data, this);
@@ -195,7 +196,7 @@ public class GameServerThread extends Thread
 		}
 		catch (IOException e)
 		{
-			_log.finer("GameServerThread: Failed disconnecting banned server, server already disconnected.");
+			_log.debug("GameServerThread: Failed disconnecting banned server, server already disconnected.");
 		}
 	}
 	
@@ -219,7 +220,7 @@ public class GameServerThread extends Thread
 		}
 		catch (IOException e)
 		{
-			_log.warning(getClass().getSimpleName() + ": " + e.getMessage());
+			_log.warn(getClass().getSimpleName() + ": " + e.getMessage());
 		}
 		KeyPair pair = GameServerTable.getInstance().getKeyPair();
 		_privateKey = (RSAPrivateKey) pair.getPrivate();
@@ -240,7 +241,7 @@ public class GameServerThread extends Thread
 			NewCrypt.appendChecksum(data);
 			if (Config.DEBUG)
 			{
-				_log.finest("[S] " + sl.getClass().getSimpleName() + ":" + System.lineSeparator() + Util.printData(data));
+				_log.trace("[S] " + sl.getClass().getSimpleName() + ":" + System.lineSeparator() + Util.printData(data));
 			}
 			_blowfish.crypt(data, 0, data.length);
 			
@@ -255,7 +256,7 @@ public class GameServerThread extends Thread
 		}
 		catch (IOException e)
 		{
-			_log.severe("IOException while sending packet " + sl.getClass().getSimpleName());
+			_log.error("IOException while sending packet " + sl.getClass().getSimpleName());
 		}
 	}
 	
@@ -298,7 +299,7 @@ public class GameServerThread extends Thread
 			}
 			catch (Exception e)
 			{
-				_log.warning("Couldn't resolve hostname \"" + e + "\"");
+				_log.warn("Couldn't resolve hostname \"" + e + "\"");
 			}
 		}
 		

@@ -20,14 +20,16 @@ package org.l2junity.gameserver.handler;
 
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.util.logging.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author UnAfraid
  */
 public interface ITelnetHandler
 {
-	public static Logger _log = Logger.getLogger(ITelnetHandler.class.getName());
+	public static Logger _log = LoggerFactory.getLogger(ITelnetHandler.class.getName());
 	
 	/**
 	 * this is the worker method that is called when someone uses an bypass command

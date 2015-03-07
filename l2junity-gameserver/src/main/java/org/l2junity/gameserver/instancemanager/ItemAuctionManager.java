@@ -27,14 +27,13 @@ import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.itemauction.ItemAuctionInstance;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -44,7 +43,7 @@ import org.w3c.dom.Node;
  */
 public final class ItemAuctionManager
 {
-	private static final Logger _log = Logger.getLogger(ItemAuctionManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(ItemAuctionManager.class.getName());
 	
 	private final Map<Integer, ItemAuctionInstance> _managerInstances = new HashMap<>();
 	private final AtomicInteger _auctionIds;
@@ -55,7 +54,7 @@ public final class ItemAuctionManager
 		
 		if (!Config.ALT_ITEM_AUCTION_ENABLED)
 		{
-			_log.log(Level.INFO, getClass().getSimpleName() + ": Disabled by config.");
+			_log.info(getClass().getSimpleName() + ": Disabled by config.");
 			return;
 		}
 		
@@ -70,13 +69,13 @@ public final class ItemAuctionManager
 		}
 		catch (final SQLException e)
 		{
-			_log.log(Level.SEVERE, getClass().getSimpleName() + ": Failed loading auctions.", e);
+			_log.error(getClass().getSimpleName() + ": Failed loading auctions.", e);
 		}
 		
 		final File file = new File(Config.DATAPACK_ROOT + "/data/ItemAuctions.xml");
 		if (!file.exists())
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Missing ItemAuctions.xml!");
+			_log.warn(getClass().getSimpleName() + ": Missing ItemAuctions.xml!");
 			return;
 		}
 		
@@ -109,11 +108,11 @@ public final class ItemAuctionManager
 					}
 				}
 			}
-			_log.log(Level.INFO, getClass().getSimpleName() + ": Loaded " + _managerInstances.size() + " instance(s).");
+			_log.info(getClass().getSimpleName() + ": Loaded " + _managerInstances.size() + " instance(s).");
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, getClass().getSimpleName() + ": Failed loading auctions from xml.", e);
+			_log.error(getClass().getSimpleName() + ": Failed loading auctions from xml.", e);
 		}
 	}
 	
@@ -153,7 +152,7 @@ public final class ItemAuctionManager
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.SEVERE, "L2ItemAuctionManagerInstance: Failed deleting auction: " + auctionId, e);
+			_log.error("L2ItemAuctionManagerInstance: Failed deleting auction: " + auctionId, e);
 		}
 	}
 	

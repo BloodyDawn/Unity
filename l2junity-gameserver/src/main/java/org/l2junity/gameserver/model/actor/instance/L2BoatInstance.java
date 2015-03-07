@@ -18,8 +18,6 @@
  */
 package org.l2junity.gameserver.model.actor.instance;
 
-import java.util.logging.Logger;
-
 import org.l2junity.gameserver.ai.BoatAI;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.Location;
@@ -28,13 +26,15 @@ import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
 import org.l2junity.gameserver.network.client.send.VehicleDeparture;
 import org.l2junity.gameserver.network.client.send.VehicleInfo;
 import org.l2junity.gameserver.network.client.send.VehicleStarted;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author Maktakien, DS
  */
 public class L2BoatInstance extends Vehicle
 {
-	protected static final Logger _logBoat = Logger.getLogger(L2BoatInstance.class.getName());
+	protected static final Logger _logBoat = LoggerFactory.getLogger(L2BoatInstance.class.getName());
 	
 	public L2BoatInstance(L2CharTemplate template)
 	{

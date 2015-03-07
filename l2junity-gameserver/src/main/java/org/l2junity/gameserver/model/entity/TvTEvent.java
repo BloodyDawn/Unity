@@ -22,8 +22,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javolution.util.FastMap;
 
@@ -43,9 +41,9 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.L2ServitorInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.events.OnTvTEventFinish;
 import org.l2junity.gameserver.model.events.impl.events.OnTvTEventKill;
@@ -59,6 +57,8 @@ import org.l2junity.gameserver.network.client.send.MagicSkillUse;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author HorridoJoho
@@ -75,7 +75,7 @@ public class TvTEvent
 		REWARDING
 	}
 	
-	protected static final Logger _log = Logger.getLogger(TvTEvent.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(TvTEvent.class.getName());
 	/** html path **/
 	private static final String htmlPath = "data/scripts/custom/events/TvT/TvTManager/";
 	/** The teams of the TvTEvent<br> */
@@ -138,7 +138,7 @@ public class TvTEvent
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "TvTEventEngine[TvTEvent.startParticipation()]: exception: " + e.getMessage(), e);
+			_log.warn("TvTEventEngine[TvTEvent.startParticipation()]: exception: " + e.getMessage(), e);
 			return false;
 		}
 		
@@ -278,7 +278,7 @@ public class TvTEvent
 			catch (Exception e)
 			{
 				_TvTEventInstance = 0;
-				_log.log(Level.WARNING, "TvTEventEngine[TvTEvent.createDynamicInstance]: exception: " + e.getMessage(), e);
+				_log.warn("TvTEventEngine[TvTEvent.createDynamicInstance]: exception: " + e.getMessage(), e);
 			}
 		}
 		

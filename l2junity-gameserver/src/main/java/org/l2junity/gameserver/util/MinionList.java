@@ -20,7 +20,6 @@ package org.l2junity.gameserver.util;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
@@ -31,13 +30,15 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.holders.MinionHolder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author luisantonioa, DS
  */
 public class MinionList
 {
-	private static final Logger _log = Logger.getLogger(MinionList.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(MinionList.class.getName());
 	
 	protected final L2MonsterInstance _master;
 	/** List containing the current spawned minions */

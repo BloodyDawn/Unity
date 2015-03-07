@@ -20,8 +20,6 @@ package handlers.admincommandhandlers;
 
 import java.io.File;
 import java.util.StringTokenizer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.cache.HtmCache;
@@ -50,13 +48,15 @@ import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.scripting.ScriptEngineManager;
 import org.l2junity.gameserver.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author NosBit
  */
 public class AdminReload implements IAdminCommandHandler
 {
-	private static final Logger LOGGER = Logger.getLogger(AdminReload.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(AdminReload.class.getName());
 	
 	private static final String[] ADMIN_COMMANDS =
 	{
@@ -221,7 +221,7 @@ public class AdminReload implements IAdminCommandHandler
 					}
 					catch (Exception e)
 					{
-						LOGGER.log(Level.WARNING, "Failed executing effect master handler!", e);
+						LOGGER.warn("Failed executing effect master handler!", e);
 						activeChar.sendMessage("Error reloading effect master handler!");
 					}
 					break;
@@ -235,7 +235,7 @@ public class AdminReload implements IAdminCommandHandler
 					}
 					catch (Exception e)
 					{
-						LOGGER.log(Level.WARNING, "Failed executing master handler!", e);
+						LOGGER.warn("Failed executing master handler!", e);
 						activeChar.sendMessage("Error reloading master handler!");
 					}
 					break;

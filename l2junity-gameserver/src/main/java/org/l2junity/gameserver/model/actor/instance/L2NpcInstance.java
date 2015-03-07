@@ -71,7 +71,7 @@ public class L2NpcInstance extends Npc
 	{
 		if (Config.DEBUG)
 		{
-			_log.fine("SkillList activated on: " + npc.getObjectId());
+			_log.debug("SkillList activated on: " + npc.getObjectId());
 		}
 		
 		final int npcId = npc.getTemplate().getId();

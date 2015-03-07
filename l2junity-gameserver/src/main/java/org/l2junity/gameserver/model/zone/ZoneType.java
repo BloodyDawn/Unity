@@ -23,7 +23,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.logging.Logger;
 
 import javolution.util.FastMap;
 
@@ -39,6 +38,8 @@ import org.l2junity.gameserver.model.events.impl.character.OnCreatureZoneEnter;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureZoneExit;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Abstract base class for any zone type handles basic operations.
@@ -46,7 +47,7 @@ import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
  */
 public abstract class ZoneType extends ListenersContainer
 {
-	protected static final Logger _log = Logger.getLogger(ZoneType.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(ZoneType.class.getName());
 	
 	private final int _id;
 	protected L2ZoneForm _zone;

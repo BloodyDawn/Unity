@@ -23,8 +23,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.TreeSet;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.instancemanager.QuestManager;
@@ -38,10 +36,12 @@ import org.l2junity.gameserver.model.quest.QuestTimer;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.scripting.ScriptEngineManager;
 import org.l2junity.gameserver.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class AdminQuest implements IAdminCommandHandler
 {
-	public static final Logger LOGGER = Logger.getLogger(AdminQuest.class.getName());
+	public static final Logger LOGGER = LoggerFactory.getLogger(AdminQuest.class.getName());
 	
 	private static final String[] ADMIN_COMMANDS =
 	{
@@ -111,7 +111,7 @@ public class AdminQuest implements IAdminCommandHandler
 			catch (Exception e)
 			{
 				activeChar.sendMessage("Failed to load script!");
-				LOGGER.log(Level.WARNING, "Failed to load script " + script + "!", e);
+				LOGGER.warn("Failed to load script " + script + "!", e);
 			}
 		}
 		else if (command.startsWith("admin_script_unload"))

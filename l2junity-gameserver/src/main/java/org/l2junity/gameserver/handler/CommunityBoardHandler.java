@@ -21,12 +21,13 @@ package org.l2junity.gameserver.handler;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Community Board handler.
@@ -34,7 +35,7 @@ import org.l2junity.gameserver.util.Util;
  */
 public final class CommunityBoardHandler implements IHandler<IParseBoardHandler, String>
 {
-	private static final Logger LOG = Logger.getLogger(CommunityBoardHandler.class.getName());
+	private static final Logger LOG = LoggerFactory.getLogger(CommunityBoardHandler.class.getName());
 	/** The registered handlers. */
 	private final Map<String, IParseBoardHandler> _datatable = new HashMap<>();
 	/** The bypasses used by the players. */
@@ -116,7 +117,7 @@ public final class CommunityBoardHandler implements IHandler<IParseBoardHandler,
 		final IParseBoardHandler cb = getHandler(command);
 		if (cb == null)
 		{
-			LOG.warning(CommunityBoardHandler.class.getSimpleName() + ": Couldn't find parse handler for command " + command + "!");
+			LOG.warn(CommunityBoardHandler.class.getSimpleName() + ": Couldn't find parse handler for command " + command + "!");
 			return;
 		}
 		
@@ -179,13 +180,13 @@ public final class CommunityBoardHandler implements IHandler<IParseBoardHandler,
 		final IParseBoardHandler cb = getHandler(cmd);
 		if (cb == null)
 		{
-			LOG.warning(CommunityBoardHandler.class.getSimpleName() + ": Couldn't find write handler for command " + cmd + "!");
+			LOG.warn(CommunityBoardHandler.class.getSimpleName() + ": Couldn't find write handler for command " + cmd + "!");
 			return;
 		}
 		
 		if (!(cb instanceof IWriteBoardHandler))
 		{
-			LOG.warning(CommunityBoardHandler.class.getSimpleName() + ": " + cb.getClass().getSimpleName() + " doesn't implement write!");
+			LOG.warn(CommunityBoardHandler.class.getSimpleName() + ": " + cb.getClass().getSimpleName() + " doesn't implement write!");
 			return;
 		}
 		((IWriteBoardHandler) cb).writeCommunityBoardCommand(player, arg1, arg2, arg3, arg4, arg5);

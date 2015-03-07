@@ -22,8 +22,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import javolution.util.FastMap;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
@@ -35,15 +35,15 @@ import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.entity.clanhall.AuctionableHall;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.model.zone.type.ClanHallZone;
-
-import javolution.util.FastMap;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author Steuf
  */
 public final class ClanHallManager
 {
-	protected static final Logger _log = Logger.getLogger(ClanHallManager.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(ClanHallManager.class.getName());
 	
 	private final Map<Integer, AuctionableHall> _clanHall;
 	private final Map<Integer, AuctionableHall> _freeClanHall;
@@ -112,7 +112,7 @@ public final class ClanHallManager
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception: ClanHallManager.load(): " + e.getMessage(), e);
+			_log.warn("Exception: ClanHallManager.load(): " + e.getMessage(), e);
 		}
 	}
 	

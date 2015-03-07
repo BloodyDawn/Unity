@@ -18,17 +18,17 @@
  */
 package org.l2junity.gameserver.handler;
 
-import java.util.logging.Logger;
-
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author nBd
  */
 public interface IBypassHandler
 {
-	public static Logger _log = Logger.getLogger(IBypassHandler.class.getName());
+	public static Logger _log = LoggerFactory.getLogger(IBypassHandler.class.getName());
 	
 	/**
 	 * This is the worker method that is called when someone uses an bypass command.

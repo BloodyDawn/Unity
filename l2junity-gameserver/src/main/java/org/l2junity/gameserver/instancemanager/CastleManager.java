@@ -25,8 +25,8 @@ import java.sql.Statement;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import javolution.util.FastList;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.InstanceListManager;
@@ -36,12 +36,12 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-
-import javolution.util.FastList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class CastleManager implements InstanceListManager
 {
-	private static final Logger _log = Logger.getLogger(CastleManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(CastleManager.class.getName());
 	
 	private List<Castle> _castles;
 	
@@ -266,7 +266,7 @@ public final class CastleManager implements InstanceListManager
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "Failed to remove castle circlets offline for player " + member.getName() + ": " + e.getMessage(), e);
+				_log.warn("Failed to remove castle circlets offline for player " + member.getName() + ": " + e.getMessage(), e);
 			}
 		}
 	}
@@ -286,7 +286,7 @@ public final class CastleManager implements InstanceListManager
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception: loadCastleData(): " + e.getMessage(), e);
+			_log.warn("Exception: loadCastleData(): " + e.getMessage(), e);
 		}
 	}
 	

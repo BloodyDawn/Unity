@@ -20,8 +20,8 @@ package org.l2junity.gameserver.model.drops;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author NosBit
@@ -31,7 +31,7 @@ public enum DropListScope
 	DEATH(DeathDropItem.class, GroupedDeathDropItem.class),
 	CORPSE(CorpseDropItem.class, GroupedCorpseDropItem.class);
 	
-	private static final Logger _log = Logger.getLogger(DropListScope.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(DropListScope.class.getName());
 	
 	private final Class<? extends GeneralDropItem> _dropItemClass;
 	private final Class<? extends GroupedGeneralDropItem> _groupedDropItemClass;
@@ -51,7 +51,7 @@ public enum DropListScope
 		}
 		catch (NoSuchMethodException | SecurityException e)
 		{
-			_log.log(Level.SEVERE, "Constructor(int, long, long, double) not found for " + _dropItemClass.getSimpleName(), e);
+			_log.error("Constructor(int, long, long, double) not found for " + _dropItemClass.getSimpleName(), e);
 			return null;
 		}
 		
@@ -61,7 +61,7 @@ public enum DropListScope
 		}
 		catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
 		{
-			_log.log(Level.SEVERE, "", e);
+			_log.error("", e);
 			return null;
 		}
 	}
@@ -75,7 +75,7 @@ public enum DropListScope
 		}
 		catch (NoSuchMethodException | SecurityException e)
 		{
-			_log.log(Level.SEVERE, "Constructor(double) not found for " + _groupedDropItemClass.getSimpleName(), e);
+			_log.error("Constructor(double) not found for " + _groupedDropItemClass.getSimpleName(), e);
 			return null;
 		}
 		
@@ -85,7 +85,7 @@ public enum DropListScope
 		}
 		catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
 		{
-			_log.log(Level.SEVERE, "", e);
+			_log.error("", e);
 			return null;
 		}
 	}

@@ -28,7 +28,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 import java.util.StringTokenizer;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -56,13 +55,15 @@ import org.l2junity.gameserver.network.client.send.UserInfo;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.HtmlUtil;
 import org.l2junity.gameserver.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * EditChar admin command implementation.
  */
 public class AdminEditChar implements IAdminCommandHandler
 {
-	private static Logger _log = Logger.getLogger(AdminEditChar.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(AdminEditChar.class.getName());
 	
 	private static final String[] ADMIN_COMMANDS =
 	{
@@ -216,7 +217,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			{
 				if (Config.DEVELOPER)
 				{
-					_log.warning("Set karma error: " + e);
+					_log.warn("Set karma error: " + e);
 				}
 				activeChar.sendMessage("Usage: //setkarma <new_karma_value>");
 			}
@@ -246,7 +247,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			{
 				if (Config.DEVELOPER)
 				{
-					_log.warning("Set pk error: " + e);
+					_log.warn("Set pk error: " + e);
 				}
 				activeChar.sendMessage("Usage: //setpk <pk_count>");
 			}
@@ -276,7 +277,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			{
 				if (Config.DEVELOPER)
 				{
-					_log.warning("Set pvp error: " + e);
+					_log.warn("Set pvp error: " + e);
 				}
 				activeChar.sendMessage("Usage: //setpvp <pvp_count>");
 			}
@@ -306,7 +307,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			{
 				if (Config.DEVELOPER)
 				{
-					_log.warning("Set Fame error: " + e);
+					_log.warn("Set Fame error: " + e);
 				}
 				activeChar.sendMessage("Usage: //setfame <new_fame_value>");
 			}
@@ -1045,7 +1046,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			activeChar.sendMessage("Successfully Changed karma for " + player.getName() + " from (" + oldKarma + ") to (" + newKarma + ").");
 			if (Config.DEBUG)
 			{
-				_log.fine("[SET KARMA] [GM]" + activeChar.getName() + " Changed karma for " + player.getName() + " from (" + oldKarma + ") to (" + newKarma + ").");
+				_log.debug("[SET KARMA] [GM]" + activeChar.getName() + " Changed karma for " + player.getName() + " from (" + oldKarma + ") to (" + newKarma + ").");
 			}
 		}
 		else
@@ -1054,7 +1055,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			activeChar.sendMessage("You must enter a value for karma greater than or equal to 0.");
 			if (Config.DEBUG)
 			{
-				_log.fine("[SET KARMA] ERROR: [GM]" + activeChar.getName() + " entered an incorrect value for new karma: " + newKarma + " for " + player.getName() + ".");
+				_log.debug("[SET KARMA] ERROR: [GM]" + activeChar.getName() + " entered an incorrect value for new karma: " + newKarma + " for " + player.getName() + ".");
 			}
 		}
 	}

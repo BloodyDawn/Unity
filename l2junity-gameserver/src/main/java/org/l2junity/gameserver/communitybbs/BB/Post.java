@@ -22,20 +22,20 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import javolution.util.FastList;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.communitybbs.Manager.PostBBSManager;
-
-import javolution.util.FastList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author Maktakien
  */
 public class Post
 {
-	private static Logger _log = Logger.getLogger(Post.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(Post.class.getName());
 	
 	public static class CPost
 	{
@@ -90,7 +90,7 @@ public class Post
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Error while saving new Post to db " + e.getMessage(), e);
+			_log.warn("Error while saving new Post to db " + e.getMessage(), e);
 		}
 	}
 	
@@ -125,7 +125,7 @@ public class Post
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Error while deleting post: " + e.getMessage(), e);
+			_log.warn("Error while deleting post: " + e.getMessage(), e);
 		}
 	}
 	
@@ -157,7 +157,7 @@ public class Post
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Data error on Post " + t.getForumID() + "/" + t.getID() + " : " + e.getMessage(), e);
+			_log.warn("Data error on Post " + t.getForumID() + "/" + t.getID() + " : " + e.getMessage(), e);
 		}
 	}
 	
@@ -178,7 +178,7 @@ public class Post
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Error while saving new Post to db " + e.getMessage(), e);
+			_log.warn("Error while saving new Post to db " + e.getMessage(), e);
 		}
 	}
 }

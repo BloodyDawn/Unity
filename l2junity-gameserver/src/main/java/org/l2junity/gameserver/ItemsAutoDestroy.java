@@ -20,13 +20,13 @@ package org.l2junity.gameserver;
 
 import java.util.List;
 
+import javolution.util.FastList;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.instancemanager.ItemsOnGroundManager;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-
-import javolution.util.FastList;
 
 public final class ItemsAutoDestroy
 {

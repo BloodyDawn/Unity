@@ -20,7 +20,9 @@ package org.l2junity.util.network;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.util.logging.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class ...
@@ -28,7 +30,7 @@ import java.util.logging.Logger;
  */
 public abstract class BaseSendablePacket
 {
-	private static final Logger _log = Logger.getLogger(BaseSendablePacket.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(BaseSendablePacket.class.getName());
 	
 	private final ByteArrayOutputStream _bao;
 	
@@ -80,7 +82,7 @@ public abstract class BaseSendablePacket
 		}
 		catch (Exception e)
 		{
-			_log.warning(getClass().getSimpleName() + ": " + e.getMessage());
+			_log.warn(getClass().getSimpleName() + ": " + e.getMessage());
 		}
 		
 		_bao.write(0);
@@ -95,7 +97,7 @@ public abstract class BaseSendablePacket
 		}
 		catch (IOException e)
 		{
-			_log.warning(getClass().getSimpleName() + ": " + e.getMessage());
+			_log.warn(getClass().getSimpleName() + ": " + e.getMessage());
 		}
 	}
 	

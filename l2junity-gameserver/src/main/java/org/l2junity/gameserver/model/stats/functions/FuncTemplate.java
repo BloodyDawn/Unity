@@ -19,7 +19,6 @@
 package org.l2junity.gameserver.model.stats.functions;
 
 import java.lang.reflect.Constructor;
-import java.util.logging.Logger;
 
 import org.l2junity.gameserver.enums.StatFunction;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -27,6 +26,8 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Stats;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Function template.
@@ -34,7 +35,7 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public final class FuncTemplate
 {
-	private static final Logger LOG = Logger.getLogger(FuncTemplate.class.getName());
+	private static final Logger LOG = LoggerFactory.getLogger(FuncTemplate.class.getName());
 	
 	private final Condition _attachCond;
 	private final Condition _applayCond;
@@ -150,7 +151,7 @@ public final class FuncTemplate
 		}
 		catch (Exception e)
 		{
-			LOG.warning(FuncTemplate.class.getSimpleName() + ": " + e.getMessage());
+			LOG.warn(FuncTemplate.class.getSimpleName() + ": " + e.getMessage());
 		}
 		return null;
 	}

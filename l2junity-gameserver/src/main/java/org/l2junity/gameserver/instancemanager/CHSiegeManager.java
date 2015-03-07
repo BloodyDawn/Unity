@@ -22,7 +22,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Map;
-import java.util.logging.Logger;
+
+import javolution.util.FastMap;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -35,15 +36,15 @@ import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.model.zone.type.ClanHallZone;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
-
-import javolution.util.FastMap;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author BiggBoss
  */
 public final class CHSiegeManager
 {
-	private static final Logger _log = Logger.getLogger(CHSiegeManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(CHSiegeManager.class.getName());
 	private static final String SQL_LOAD_HALLS = "SELECT * FROM siegable_clanhall";
 	
 	private final FastMap<Integer, SiegableHall> _siegableHalls = new FastMap<>();
@@ -83,7 +84,7 @@ public final class CHSiegeManager
 		}
 		catch (Exception e)
 		{
-			_log.warning("CHSiegeManager: Could not load siegable clan halls!:" + e.getMessage());
+			_log.warn("CHSiegeManager: Could not load siegable clan halls!:" + e.getMessage());
 		}
 	}
 	

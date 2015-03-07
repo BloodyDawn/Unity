@@ -20,8 +20,6 @@ package org.l2junity.gameserver.data.xml.impl;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
-
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.teleporter.TeleportHolder;
@@ -48,7 +46,7 @@ public class TeleportersData implements IXmlReader
 	{
 		_teleporters.clear();
 		parseDatapackDirectory("data/teleporters", true);
-		LOGGER.log(Level.INFO, "Loaded: " + _teleporters.size() + " npc teleporters.");
+		LOGGER.info("Loaded: " + _teleporters.size() + " npc teleporters.");
 	}
 	
 	@Override

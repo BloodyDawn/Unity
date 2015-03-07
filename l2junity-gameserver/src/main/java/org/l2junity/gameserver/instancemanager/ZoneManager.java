@@ -26,7 +26,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
 
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.World;
@@ -166,7 +165,7 @@ public final class ZoneManager implements IXmlReader
 						}
 						else
 						{
-							LOGGER.warning("ZoneData: Missing type for zone in file: " + f.getName());
+							LOGGER.warn("ZoneData: Missing type for zone in file: " + f.getName());
 							continue;
 						}
 						
@@ -195,12 +194,12 @@ public final class ZoneManager implements IXmlReader
 						{
 							if (zoneName == null)
 							{
-								LOGGER.warning("ZoneData: Missing name for NpcSpawnTerritory in file: " + f.getName() + ", skipping zone");
+								LOGGER.warn("ZoneData: Missing name for NpcSpawnTerritory in file: " + f.getName() + ", skipping zone");
 								continue;
 							}
 							else if (_spawnTerritories.containsKey(zoneName))
 							{
-								LOGGER.warning("ZoneData: Name " + zoneName + " already used for another zone, check file: " + f.getName() + ". Skipping zone");
+								LOGGER.warn("ZoneData: Name " + zoneName + " already used for another zone, check file: " + f.getName() + ". Skipping zone");
 								continue;
 							}
 						}
@@ -232,7 +231,7 @@ public final class ZoneManager implements IXmlReader
 							
 							if ((coords == null) || (coords.length == 0))
 							{
-								LOGGER.warning(getClass().getSimpleName() + ": ZoneData: missing data for zone: " + zoneId + " XML file: " + f.getName());
+								LOGGER.warn(getClass().getSimpleName() + ": ZoneData: missing data for zone: " + zoneId + " XML file: " + f.getName());
 								continue;
 							}
 							
@@ -249,7 +248,7 @@ public final class ZoneManager implements IXmlReader
 								}
 								else
 								{
-									LOGGER.warning(getClass().getSimpleName() + ": ZoneData: Missing cuboid vertex in sql data for zone: " + zoneId + " in file: " + f.getName());
+									LOGGER.warn(getClass().getSimpleName() + ": ZoneData: Missing cuboid vertex in sql data for zone: " + zoneId + " in file: " + f.getName());
 									continue;
 								}
 							}
@@ -269,7 +268,7 @@ public final class ZoneManager implements IXmlReader
 								}
 								else
 								{
-									LOGGER.warning(getClass().getSimpleName() + ": ZoneData: Bad data for zone: " + zoneId + " in file: " + f.getName());
+									LOGGER.warn(getClass().getSimpleName() + ": ZoneData: Bad data for zone: " + zoneId + " in file: " + f.getName());
 									continue;
 								}
 							}
@@ -285,19 +284,19 @@ public final class ZoneManager implements IXmlReader
 								}
 								else
 								{
-									LOGGER.warning(getClass().getSimpleName() + ": ZoneData: Bad data for zone: " + zoneId + " in file: " + f.getName());
+									LOGGER.warn(getClass().getSimpleName() + ": ZoneData: Bad data for zone: " + zoneId + " in file: " + f.getName());
 									continue;
 								}
 							}
 							else
 							{
-								LOGGER.warning(getClass().getSimpleName() + ": ZoneData: Unknown shape: \"" + zoneShape + "\"  for zone: " + zoneId + " in file: " + f.getName());
+								LOGGER.warn(getClass().getSimpleName() + ": ZoneData: Unknown shape: \"" + zoneShape + "\"  for zone: " + zoneId + " in file: " + f.getName());
 								continue;
 							}
 						}
 						catch (Exception e)
 						{
-							LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": ZoneData: Failed to load zone " + zoneId + " coordinates: " + e.getMessage(), e);
+							LOGGER.warn(getClass().getSimpleName() + ": ZoneData: Failed to load zone " + zoneId + " coordinates: " + e.getMessage(), e);
 						}
 						
 						// No further parameters needed, if NpcSpawnTerritory is loading
@@ -320,7 +319,7 @@ public final class ZoneManager implements IXmlReader
 						}
 						catch (Exception e)
 						{
-							LOGGER.warning(getClass().getSimpleName() + ": ZoneData: No such zone type: " + zoneType + " in file: " + f.getName());
+							LOGGER.warn(getClass().getSimpleName() + ": ZoneData: No such zone type: " + zoneType + " in file: " + f.getName());
 							continue;
 						}
 						
@@ -355,7 +354,7 @@ public final class ZoneManager implements IXmlReader
 						}
 						if (checkId(zoneId))
 						{
-							LOGGER.config(getClass().getSimpleName() + ": Caution: Zone (" + zoneId + ") from file: " + f.getName() + " overrides previos definition.");
+							LOGGER.info(getClass().getSimpleName() + ": Caution: Zone (" + zoneId + ") from file: " + f.getName() + " overrides previos definition.");
 						}
 						
 						if ((zoneName != null) && !zoneName.isEmpty())

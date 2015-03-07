@@ -18,8 +18,6 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
-import java.util.logging.Level;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CtrlEvent;
@@ -373,11 +371,11 @@ public final class UseItem implements IClientIncomingPacket
 			{
 				if ((etcItem != null) && (etcItem.getHandlerName() != null))
 				{
-					_log.log(Level.WARNING, "Unmanaged Item handler: " + etcItem.getHandlerName() + " for Item Id: " + _itemId + "!");
+					_log.warn("Unmanaged Item handler: " + etcItem.getHandlerName() + " for Item Id: " + _itemId + "!");
 				}
 				else if (Config.DEBUG)
 				{
-					_log.log(Level.WARNING, "No Item handler registered for Item Id: " + _itemId + "!");
+					_log.warn("No Item handler registered for Item Id: " + _itemId + "!");
 				}
 				return;
 			}

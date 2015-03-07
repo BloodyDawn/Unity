@@ -22,7 +22,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.AdminData;
@@ -34,6 +33,8 @@ import org.l2junity.gameserver.network.client.send.CreatureSay;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Petition Manager
@@ -41,7 +42,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class PetitionManager
 {
-	protected static final Logger _log = Logger.getLogger(PetitionManager.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(PetitionManager.class.getName());
 	
 	private final Map<Integer, Petition> _pendingPetitions;
 	private final Map<Integer, Petition> _completedPetitions;

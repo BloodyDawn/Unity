@@ -62,12 +62,12 @@ import javax.swing.SwingUtilities;
 import javax.swing.ToolTipManager;
 import javax.swing.UIManager;
 
+import javolution.util.FastList;
+
 import org.l2junity.tools.configurator.ConfigUserInterface.ConfigFile.ConfigComment;
 import org.l2junity.tools.configurator.ConfigUserInterface.ConfigFile.ConfigProperty;
 import org.l2junity.tools.i18n.LanguageControl;
 import org.l2junity.tools.images.ImagesTable;
-
-import javolution.util.FastList;
 
 /**
  * @author KenM

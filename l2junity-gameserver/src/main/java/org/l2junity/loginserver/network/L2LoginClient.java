@@ -24,7 +24,6 @@ import java.nio.ByteBuffer;
 import java.security.interfaces.RSAPrivateKey;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
@@ -32,14 +31,16 @@ import org.l2junity.loginserver.LoginController;
 import org.l2junity.loginserver.SessionKey;
 import org.l2junity.loginserver.network.serverpackets.L2LoginServerPacket;
 import org.l2junity.loginserver.network.serverpackets.LoginFail;
-import org.l2junity.loginserver.network.serverpackets.PlayFail;
 import org.l2junity.loginserver.network.serverpackets.LoginFail.LoginFailReason;
+import org.l2junity.loginserver.network.serverpackets.PlayFail;
 import org.l2junity.loginserver.network.serverpackets.PlayFail.PlayFailReason;
 import org.l2junity.util.crypt.LoginCrypt;
 import org.l2junity.util.crypt.ScrambledKeyPair;
 import org.mmocore.network.MMOClient;
 import org.mmocore.network.MMOConnection;
 import org.mmocore.network.SendablePacket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Represents a client connected into the LoginServer
@@ -47,7 +48,7 @@ import org.mmocore.network.SendablePacket;
  */
 public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 {
-	private static final Logger _log = Logger.getLogger(L2LoginClient.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(L2LoginClient.class.getName());
 	
 	public static enum LoginClientState
 	{
@@ -98,7 +99,7 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 			isChecksumValid = _loginCrypt.decrypt(buf.array(), buf.position(), size);
 			if (!isChecksumValid)
 			{
-				_log.warning("Wrong checksum from client: " + toString());
+				_log.warn("Wrong checksum from client: " + toString());
 				super.getConnection().close((SendablePacket<L2LoginClient>) null);
 				return false;
 			}
@@ -106,7 +107,7 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 		}
 		catch (IOException e)
 		{
-			_log.warning(getClass().getSimpleName() + ": " + e.getMessage());
+			_log.warn(getClass().getSimpleName() + ": " + e.getMessage());
 			super.getConnection().close((SendablePacket<L2LoginClient>) null);
 			return false;
 		}
@@ -122,7 +123,7 @@ public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 		}
 		catch (IOException e)
 		{
-			_log.warning(getClass().getSimpleName() + ": " + e.getMessage());
+			_log.warn(getClass().getSimpleName() + ": " + e.getMessage());
 			return false;
 		}
 		buf.position(offset + size);

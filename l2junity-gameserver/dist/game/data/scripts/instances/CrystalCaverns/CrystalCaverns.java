@@ -23,6 +23,9 @@ import instances.AbstractInstance;
 import java.util.List;
 import java.util.Map;
 
+import javolution.util.FastList;
+import javolution.util.FastMap;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ai.CtrlIntention;
@@ -40,8 +43,8 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2TrapInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -52,18 +55,15 @@ import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.CreatureSay;
 import org.l2junity.gameserver.network.client.send.FlyToLocation;
+import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
 import org.l2junity.gameserver.network.client.send.PlaySound;
 import org.l2junity.gameserver.network.client.send.SpecialCamera;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.ValidateLocation;
-import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
-
-import javolution.util.FastList;
-import javolution.util.FastMap;
 
 /**
  * Crystal Caverns instance zone.<br>
@@ -1711,7 +1711,7 @@ public final class CrystalCaverns extends AbstractInstance
 							startQuestTimer("checkKechiAttack", 1000, kechi, null);
 							return "";
 						default:
-							_log.warning("CrystalCavern-SteamCorridor: status " + world.getStatus() + " error. OracleOrder not found in " + world.getInstanceId());
+							_log.warn("CrystalCavern-SteamCorridor: status " + world.getStatus() + " error. OracleOrder not found in " + world.getInstanceId());
 							return "";
 					}
 					runSteamOracles(world, oracleOrder);

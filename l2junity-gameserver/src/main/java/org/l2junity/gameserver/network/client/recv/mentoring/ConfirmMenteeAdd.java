@@ -20,7 +20,6 @@ package org.l2junity.gameserver.network.client.recv.mentoring;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.logging.Level;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.enums.CategoryType;
@@ -98,7 +97,7 @@ public class ConfirmMenteeAdd implements IClientIncomingPacket
 				}
 				catch (Exception e)
 				{
-					_log.log(Level.WARNING, e.getMessage(), e);
+					_log.warn(e.getMessage(), e);
 				}
 			}
 		}

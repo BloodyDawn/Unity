@@ -21,7 +21,6 @@ package org.l2junity.gameserver.taskmanager.tasks;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.Calendar;
-import java.util.logging.Level;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -75,7 +74,7 @@ public class TaskVitalityReset extends Task
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "", e);
+				_log.warn("", e);
 			}
 			_log.info(getClass().getSimpleName() + ": launched.");
 		}

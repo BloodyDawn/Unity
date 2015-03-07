@@ -415,7 +415,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 									int fee;
 									if (Config.DEBUG)
 									{
-										_log.warning("Mp editing invoked");
+										_log.warn("Mp editing invoked");
 									}
 									val = st.nextToken();
 									final NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
@@ -497,7 +497,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 									int fee;
 									if (Config.DEBUG)
 									{
-										_log.warning("Mp editing invoked");
+										_log.warn("Mp editing invoked");
 									}
 									val = st.nextToken();
 									final NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
@@ -555,7 +555,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 									int fee;
 									if (Config.DEBUG)
 									{
-										_log.warning("Exp editing invoked");
+										_log.warn("Exp editing invoked");
 									}
 									val = st.nextToken();
 									final NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
@@ -890,7 +890,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 									}
 									if (Config.DEBUG)
 									{
-										_log.warning("Item editing invoked");
+										_log.warn("Item editing invoked");
 									}
 									val = st.nextToken();
 									final NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
@@ -943,7 +943,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 									int fee;
 									if (Config.DEBUG)
 									{
-										_log.warning("Tele editing invoked");
+										_log.warn("Tele editing invoked");
 									}
 									val = st.nextToken();
 									final NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
@@ -992,7 +992,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 									int fee;
 									if (Config.DEBUG)
 									{
-										_log.warning("Support editing invoked");
+										_log.warn("Support editing invoked");
 									}
 									val = st.nextToken();
 									final NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
@@ -1208,7 +1208,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 									int fee;
 									if (Config.DEBUG)
 									{
-										_log.warning("Deco curtains editing invoked");
+										_log.warn("Deco curtains editing invoked");
 									}
 									val = st.nextToken();
 									final NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
@@ -1257,7 +1257,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 									int fee;
 									if (Config.DEBUG)
 									{
-										_log.warning("Deco fixtures editing invoked");
+										_log.warn("Deco fixtures editing invoked");
 									}
 									val = st.nextToken();
 									final NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
@@ -1540,7 +1540,7 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 	{
 		if (Config.DEBUG)
 		{
-			_log.warning("doTeleport(L2PcInstance player, int val) is called");
+			_log.warn("doTeleport(L2PcInstance player, int val) is called");
 		}
 		L2TeleportLocation list = TeleportLocationTable.getInstance().getTemplate(val);
 		if (list != null)
@@ -1554,14 +1554,14 @@ public class L2ClanHallManagerInstance extends L2MerchantInstance
 			{
 				if (Config.DEBUG)
 				{
-					_log.warning("Teleporting player " + player.getName() + " for CH to new location: " + list.getLocX() + ":" + list.getLocY() + ":" + list.getLocZ());
+					_log.warn("Teleporting player " + player.getName() + " for CH to new location: " + list.getLocX() + ":" + list.getLocY() + ":" + list.getLocZ());
 				}
 				player.teleToLocation(list.getLocX(), list.getLocY(), list.getLocZ());
 			}
 		}
 		else
 		{
-			_log.warning("No teleport destination with id:" + val);
+			_log.warn("No teleport destination with id:" + val);
 		}
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}

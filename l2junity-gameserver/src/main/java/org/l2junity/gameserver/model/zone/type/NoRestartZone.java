@@ -22,8 +22,8 @@ import org.l2junity.gameserver.GameServer;
 import org.l2junity.gameserver.model.TeleportWhereType;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.model.zone.ZoneType;
 
 /**
  * A simple no restart zone

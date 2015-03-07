@@ -18,10 +18,6 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.handler.ChatHandler;
@@ -40,6 +36,8 @@ import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
 import org.l2junity.network.PacketReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class ...
@@ -47,7 +45,7 @@ import org.l2junity.network.PacketReader;
  */
 public final class Say2 implements IClientIncomingPacket
 {
-	private static Logger _logChat = Logger.getLogger("chat");
+	private static Logger _logChat = LoggerFactory.getLogger("chat");
 	
 	private static final String[] WALKER_COMMAND_LIST =
 	{
@@ -118,7 +116,7 @@ public final class Say2 implements IClientIncomingPacket
 		ChatType chatType = ChatType.findByClientId(_type);
 		if (chatType == null)
 		{
-			_log.warning("Say2: Invalid type: " + _type + " Player : " + activeChar.getName() + " text: " + String.valueOf(_text));
+			_log.warn("Say2: Invalid type: " + _type + " Player : " + activeChar.getName() + " text: " + String.valueOf(_text));
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			activeChar.logout();
 			return;
@@ -126,7 +124,7 @@ public final class Say2 implements IClientIncomingPacket
 		
 		if (_text.isEmpty())
 		{
-			_log.warning(activeChar.getName() + ": sending empty text. Possible packet hack!");
+			_log.warn(activeChar.getName() + ": sending empty text. Possible packet hack!");
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			activeChar.logout();
 			return;
@@ -191,27 +189,15 @@ public final class Say2 implements IClientIncomingPacket
 		
 		if (Config.LOG_CHAT)
 		{
-			final LogRecord record = new LogRecord(Level.INFO, _text);
-			record.setLoggerName("chat");
-			
 			if (chatType == ChatType.WHISPER)
 			{
-				record.setParameters(new Object[]
-				{
-					chatType.name(),
-					"[" + activeChar.getName() + " to " + _target + "]"
-				});
+				_logChat.info("{} [{} to {}] {}", chatType.name(), activeChar, _target, _text);
 			}
 			else
 			{
-				record.setParameters(new Object[]
-				{
-					chatType.name(),
-					"[" + activeChar.getName() + "]"
-				});
+				_logChat.info("{} [{}] {}", chatType.name(), activeChar, _text);
 			}
 			
-			_logChat.log(record);
 		}
 		
 		if (_text.indexOf(8) >= 0)

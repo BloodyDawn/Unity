@@ -20,11 +20,11 @@ package org.l2junity.gameserver.model.holders;
 
 import java.util.List;
 
+import javolution.util.FastList;
+
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-
-import javolution.util.FastList;
 
 /**
  * Player event holder, meant for restoring player after event has finished.<br>

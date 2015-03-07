@@ -25,9 +25,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Base64;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.LoginServerThread;
 import org.l2junity.gameserver.data.xml.impl.SecondaryAuthData;
@@ -36,13 +33,15 @@ import org.l2junity.gameserver.network.client.send.Ex2ndPasswordAck;
 import org.l2junity.gameserver.network.client.send.Ex2ndPasswordCheck;
 import org.l2junity.gameserver.network.client.send.Ex2ndPasswordVerify;
 import org.l2junity.gameserver.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author mrTJO
  */
 public class SecondaryPasswordAuth
 {
-	private final Logger _log = Logger.getLogger(SecondaryPasswordAuth.class.getName());
+	private final Logger _log = LoggerFactory.getLogger(SecondaryPasswordAuth.class.getName());
 	private final L2GameClient _activeClient;
 	
 	private String _password;
@@ -97,7 +96,7 @@ public class SecondaryPasswordAuth
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Error while reading password.", e);
+			_log.error("Error while reading password.", e);
 		}
 	}
 	
@@ -105,7 +104,7 @@ public class SecondaryPasswordAuth
 	{
 		if (passwordExist())
 		{
-			_log.warning("[SecondaryPasswordAuth]" + _activeClient.getAccountName() + " forced savePassword");
+			_log.warn("[SecondaryPasswordAuth]" + _activeClient.getAccountName() + " forced savePassword");
 			_activeClient.closeNow();
 			return false;
 		}
@@ -128,7 +127,7 @@ public class SecondaryPasswordAuth
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Error while writing password.", e);
+			_log.error("Error while writing password.", e);
 			return false;
 		}
 		_password = password;
@@ -148,7 +147,7 @@ public class SecondaryPasswordAuth
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Error while writing wrong attempts.", e);
+			_log.error("Error while writing wrong attempts.", e);
 			return false;
 		}
 		return true;
@@ -158,7 +157,7 @@ public class SecondaryPasswordAuth
 	{
 		if (!passwordExist())
 		{
-			_log.warning("[SecondaryPasswordAuth]" + _activeClient.getAccountName() + " forced changePassword");
+			_log.warn("[SecondaryPasswordAuth]" + _activeClient.getAccountName() + " forced changePassword");
 			_activeClient.closeNow();
 			return false;
 		}
@@ -186,7 +185,7 @@ public class SecondaryPasswordAuth
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Error while reading password.", e);
+			_log.error("Error while reading password.", e);
 			return false;
 		}
 		
@@ -211,7 +210,7 @@ public class SecondaryPasswordAuth
 			{
 				LoginServerThread.getInstance().sendTempBan(_activeClient.getAccountName(), _activeClient.getConnectionAddress().getHostAddress(), SecondaryAuthData.getInstance().getBanTime());
 				LoginServerThread.getInstance().sendMail(_activeClient.getAccountName(), "SATempBan", _activeClient.getConnectionAddress().getHostAddress(), Integer.toString(SecondaryAuthData.getInstance().getMaxAttempts()), Long.toString(SecondaryAuthData.getInstance().getBanTime()), SecondaryAuthData.getInstance().getRecoveryLink());
-				_log.warning(_activeClient.getAccountName() + " - (" + _activeClient.getConnectionAddress().getHostAddress() + ") has inputted the wrong password " + _wrongAttempts + " times in row.");
+				_log.warn(_activeClient.getAccountName() + " - (" + _activeClient.getConnectionAddress().getHostAddress() + ") has inputted the wrong password " + _wrongAttempts + " times in row.");
 				insertWrongAttempt(0);
 				_activeClient.close(new Ex2ndPasswordVerify(Ex2ndPasswordVerify.PASSWORD_BAN, SecondaryAuthData.getInstance().getMaxAttempts()));
 			}
@@ -259,11 +258,11 @@ public class SecondaryPasswordAuth
 		}
 		catch (NoSuchAlgorithmException e)
 		{
-			_log.severe("[SecondaryPasswordAuth]Unsupported Algorythm");
+			_log.error("[SecondaryPasswordAuth]Unsupported Algorythm");
 		}
 		catch (UnsupportedEncodingException e)
 		{
-			_log.severe("[SecondaryPasswordAuth]Unsupported Encoding");
+			_log.error("[SecondaryPasswordAuth]Unsupported Encoding");
 		}
 		return null;
 	}

@@ -21,7 +21,6 @@ package org.l2junity.gameserver.data.xml.impl;
 import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.logging.Level;
 
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.w3c.dom.Document;
@@ -94,7 +93,7 @@ public class SecondaryAuthData implements IXmlReader
 		}
 		catch (Exception e)
 		{
-			LOGGER.log(Level.WARNING, "Failed to load secondary auth data from xml.", e);
+			LOGGER.warn("Failed to load secondary auth data from xml.", e);
 		}
 	}
 	

@@ -19,7 +19,6 @@
 package org.l2junity.gameserver.model.actor.instance;
 
 import java.util.List;
-import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
@@ -50,6 +49,8 @@ import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.UserInfo;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class ...
@@ -57,7 +58,7 @@ import org.l2junity.gameserver.util.Util;
  */
 public class L2VillageMasterInstance extends L2NpcInstance
 {
-	private static Logger _log = Logger.getLogger(L2VillageMasterInstance.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(L2VillageMasterInstance.class.getName());
 	
 	public L2VillageMasterInstance(L2NpcTemplate template)
 	{
@@ -648,7 +649,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 		}
 		catch (PatternSyntaxException e)
 		{
-			_log.warning("ERROR: Wrong pattern for clan name!");
+			_log.warn("ERROR: Wrong pattern for clan name!");
 			pattern = Pattern.compile(".*");
 		}
 		return pattern.matcher(name).matches();

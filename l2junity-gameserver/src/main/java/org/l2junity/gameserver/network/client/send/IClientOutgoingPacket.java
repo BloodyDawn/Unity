@@ -18,19 +18,19 @@
  */
 package org.l2junity.gameserver.network.client.send;
 
-import java.util.logging.Logger;
-
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.interfaces.IUpdateTypeComponent;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.network.IOutgoingPacket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author KenM
  */
 public interface IClientOutgoingPacket extends IOutgoingPacket
 {
-	static final Logger _log = Logger.getLogger(IClientOutgoingPacket.class.getName());
+	static final Logger _log = LoggerFactory.getLogger(IClientOutgoingPacket.class.getName());
 	
 	static final int[] PAPERDOLL_ORDER = new int[]
 	{

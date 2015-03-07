@@ -20,9 +20,9 @@ package org.l2junity.gameserver.model.entity;
 
 import java.util.Map;
 
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-
 import javolution.util.FastMap;
+
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 /**
  * @author HorridoJoho

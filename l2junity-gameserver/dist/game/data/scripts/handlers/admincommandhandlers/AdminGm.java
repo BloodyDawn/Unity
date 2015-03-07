@@ -18,11 +18,11 @@
  */
 package handlers.admincommandhandlers;
 
-import java.util.logging.Logger;
-
 import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class handles following admin commands: - gm = turns gm mode off
@@ -30,7 +30,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
  */
 public class AdminGm implements IAdminCommandHandler
 {
-	private static Logger _log = Logger.getLogger(AdminGm.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(AdminGm.class.getName());
 	private static final String[] ADMIN_COMMANDS =
 	{
 		"admin_gm"

@@ -24,7 +24,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.concurrent.ScheduledFuture;
-import java.util.logging.Level;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -115,7 +114,7 @@ public final class AutoAnnouncement extends Announcement implements Runnable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't store announcement: ", e);
+			_log.warn(getClass().getSimpleName() + ": Couldn't store announcement: ", e);
 			return false;
 		}
 		return true;
@@ -138,7 +137,7 @@ public final class AutoAnnouncement extends Announcement implements Runnable
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't update announcement: ", e);
+			_log.warn(getClass().getSimpleName() + ": Couldn't update announcement: ", e);
 			return false;
 		}
 		return true;

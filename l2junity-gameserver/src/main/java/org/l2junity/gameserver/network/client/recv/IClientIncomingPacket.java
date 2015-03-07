@@ -18,10 +18,10 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
-import java.util.logging.Logger;
-
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.network.IIncomingPacket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Packets received by the game server from clients
@@ -29,7 +29,7 @@ import org.l2junity.network.IIncomingPacket;
  */
 public interface IClientIncomingPacket extends IIncomingPacket<L2GameClient>
 {
-	static final Logger _log = Logger.getLogger(IClientIncomingPacket.class.getName());
+	static final Logger _log = LoggerFactory.getLogger(IClientIncomingPacket.class.getName());
 	
 	/**
 	 * Overridden with true value on some packets that should disable spawn protection (RequestItemList and UseItem only)

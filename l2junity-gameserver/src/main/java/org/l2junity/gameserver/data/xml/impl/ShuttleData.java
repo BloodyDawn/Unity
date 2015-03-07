@@ -22,8 +22,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
@@ -63,7 +61,7 @@ public final class ShuttleData implements IXmlReader
 		}
 		parseDatapackFile("data/shuttledata.xml");
 		init();
-		LOGGER.log(Level.INFO, getClass().getSimpleName() + ": Loaded: " + _shuttles.size() + " Shuttles.");
+		LOGGER.info(getClass().getSimpleName() + ": Loaded: " + _shuttles.size() + " Shuttles.");
 	}
 	
 	@Override

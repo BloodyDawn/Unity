@@ -22,19 +22,19 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.instancemanager.SiegeManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class holds the clan members data.
  */
 public class ClanMember
 {
-	private static final Logger _log = Logger.getLogger(ClanMember.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(ClanMember.class.getName());
 	
 	private final L2Clan _clan;
 	private int _objectId;
@@ -279,7 +279,7 @@ public class ClanMember
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not update pledge type: " + e.getMessage(), e);
+			_log.warn("Could not update pledge type: " + e.getMessage(), e);
 		}
 	}
 	
@@ -328,7 +328,7 @@ public class ClanMember
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not update power _grade: " + e.getMessage(), e);
+			_log.warn("Could not update power _grade: " + e.getMessage(), e);
 		}
 	}
 	
@@ -758,7 +758,7 @@ public class ClanMember
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, "Could not save apprentice/sponsor: " + e.getMessage(), e);
+			_log.warn("Could not save apprentice/sponsor: " + e.getMessage(), e);
 		}
 	}
 }

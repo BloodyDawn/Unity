@@ -18,8 +18,8 @@
  */
 package org.l2junity.loginserver.network.clientpackets;
 
-import org.l2junity.loginserver.network.serverpackets.ServerList;
 import org.l2junity.loginserver.network.serverpackets.LoginFail.LoginFailReason;
+import org.l2junity.loginserver.network.serverpackets.ServerList;
 
 /**
  * <pre>

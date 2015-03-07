@@ -45,7 +45,7 @@ public class RequestFortressMapInfo implements IClientIncomingPacket
 		final Fort fort = FortManager.getInstance().getFortById(_fortressId);
 		if (fort == null)
 		{
-			_log.warning("Fort is not found with id (" + _fortressId + ") in all forts with size of (" + FortManager.getInstance().getForts().size() + ") called by player (" + client.getActiveChar() + ")");
+			_log.warn("Fort is not found with id (" + _fortressId + ") in all forts with size of (" + FortManager.getInstance().getForts().size() + ") called by player (" + client.getActiveChar() + ")");
 			
 			if (client.getActiveChar() == null)
 			{

@@ -23,19 +23,19 @@ import java.sql.PreparedStatement;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.items.L2Item;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author NosBit
  */
 public final class Product
 {
-	private static final Logger _log = Logger.getLogger(Product.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(Product.class.getName());
 	
 	private final int _buyListId;
 	private final L2Item _item;
@@ -183,7 +183,7 @@ public final class Product
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Failed to save Product buylist_id:" + getBuyListId() + " item_id:" + getItemId(), e);
+			_log.warn("Failed to save Product buylist_id:" + getBuyListId() + " item_id:" + getItemId(), e);
 		}
 	}
 }

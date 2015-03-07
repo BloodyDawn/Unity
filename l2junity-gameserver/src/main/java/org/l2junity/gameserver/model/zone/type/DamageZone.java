@@ -27,8 +27,8 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.zone.AbstractZoneSettings;
-import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.TaskZoneSettings;
+import org.l2junity.gameserver.model.zone.ZoneType;
 
 /**
  * A damage zone

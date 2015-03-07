@@ -66,7 +66,7 @@ public final class RequestCrystallizeItem implements IClientIncomingPacket
 		
 		if (activeChar == null)
 		{
-			_log.fine("RequestCrystalizeItem: activeChar was null");
+			_log.debug("RequestCrystalizeItem: activeChar was null");
 			return;
 		}
 		
@@ -129,7 +129,7 @@ public final class RequestCrystallizeItem implements IClientIncomingPacket
 		
 		if (!itemToRemove.getItem().isCrystallizable() || (itemToRemove.getItem().getCrystalCount() <= 0) || (itemToRemove.getItem().getCrystalType() == CrystalType.NONE))
 		{
-			_log.warning(activeChar.getName() + " (" + activeChar.getObjectId() + ") tried to crystallize " + itemToRemove.getItem().getId());
+			_log.warn(activeChar.getName() + " (" + activeChar.getObjectId() + ") tried to crystallize " + itemToRemove.getItem().getId());
 			return;
 		}
 		

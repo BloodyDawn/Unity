@@ -30,9 +30,9 @@ import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.AbstractZoneSettings;
-import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.TaskZoneSettings;
 import org.l2junity.gameserver.model.zone.ZoneId;
+import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.client.send.EtcStatusUpdate;
 
 /**
@@ -103,7 +103,7 @@ public class EffectZone extends ZoneType
 				String[] skillSplit = skill.split("-");
 				if (skillSplit.length != 2)
 				{
-					_log.warning(getClass().getSimpleName() + ": invalid config property -> skillsIdLvl \"" + skill + "\"");
+					_log.warn(getClass().getSimpleName() + ": invalid config property -> skillsIdLvl \"" + skill + "\"");
 				}
 				else
 				{
@@ -115,7 +115,7 @@ public class EffectZone extends ZoneType
 					{
 						if (!skill.isEmpty())
 						{
-							_log.warning(getClass().getSimpleName() + ": invalid config property -> skillsIdLvl \"" + skillSplit[0] + "\"" + skillSplit[1]);
+							_log.warn(getClass().getSimpleName() + ": invalid config property -> skillsIdLvl \"" + skillSplit[0] + "\"" + skillSplit[1]);
 						}
 					}
 				}

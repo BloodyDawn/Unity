@@ -18,7 +18,8 @@
  */
 package org.l2junity.util.network;
 
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class ...
@@ -26,7 +27,7 @@ import java.util.logging.Logger;
  */
 public abstract class BaseRecievePacket
 {
-	private static final Logger _log = Logger.getLogger(BaseRecievePacket.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(BaseRecievePacket.class.getName());
 	
 	private final byte[] _decrypt;
 	private int _off;
@@ -83,7 +84,7 @@ public abstract class BaseRecievePacket
 		}
 		catch (Exception e)
 		{
-			_log.warning(getClass().getSimpleName() + ": " + e.getMessage());
+			_log.warn(getClass().getSimpleName() + ": " + e.getMessage());
 		}
 		
 		return result;

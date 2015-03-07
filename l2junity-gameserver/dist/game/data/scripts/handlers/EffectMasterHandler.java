@@ -20,11 +20,10 @@ package handlers;
 
 import handlers.effecthandlers.*;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.l2junity.gameserver.handler.EffectHandler;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Effect Master handler.
@@ -32,7 +31,7 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
  */
 public final class EffectMasterHandler
 {
-	private static final Logger _log = Logger.getLogger(EffectMasterHandler.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(EffectMasterHandler.class.getName());
 	
 	private static final Class<?>[] EFFECTS =
 	{
@@ -213,11 +212,11 @@ public final class EffectMasterHandler
 		// And lets try get size
 		try
 		{
-			_log.log(Level.INFO, EffectMasterHandler.class.getSimpleName() + ": Loaded " + EffectHandler.getInstance().size() + " effect handlers.");
+			_log.info(EffectMasterHandler.class.getSimpleName() + ": Loaded " + EffectHandler.getInstance().size() + " effect handlers.");
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Failed invoking size method for handler: " + EffectMasterHandler.class.getSimpleName(), e);
+			_log.warn("Failed invoking size method for handler: " + EffectMasterHandler.class.getSimpleName(), e);
 		}
 	}
 }

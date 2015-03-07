@@ -20,9 +20,6 @@ package org.l2junity.gameserver;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.model.Location;
@@ -32,16 +29,17 @@ import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.util.GeoUtils;
 import org.l2junity.gameserver.util.LinePointIterator;
 import org.l2junity.gameserver.util.LinePointIterator3D;
-
 import org.l2junity.geodriver.Cell;
 import org.l2junity.geodriver.GeoDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author -Nemesiss-, HorridoJoho
  */
 public class GeoData
 {
-	private static final Logger LOGGER = Logger.getLogger(GeoData.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(GeoData.class.getName());
 	private static final String FILE_NAME_FORMAT = "%d_%d.l2j";
 	private static final int ELEVATED_SEE_OVER_DISTANCE = 2;
 	private static final int MAX_SEE_OVER_HEIGHT = 48;
@@ -79,7 +77,7 @@ public class GeoData
 						}
 						catch (Exception e)
 						{
-							LOGGER.log(Level.WARNING, getClass().getSimpleName() + ": Failed to load " + geoFilePath.getFileName() + "!", e);
+							LOGGER.warn(getClass().getSimpleName() + ": Failed to load " + geoFilePath.getFileName() + "!", e);
 						}
 					}
 				}
@@ -87,7 +85,7 @@ public class GeoData
 		}
 		catch (Exception e)
 		{
-			LOGGER.log(Level.SEVERE, getClass().getSimpleName() + ": Failed to load geodata!", e);
+			LOGGER.error(getClass().getSimpleName() + ": Failed to load geodata!", e);
 			System.exit(1);
 		}
 		

@@ -48,9 +48,9 @@ import org.l2junity.gameserver.model.actor.instance.L2FriendlyMobInstance;
 import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
 import org.l2junity.gameserver.model.actor.instance.L2GuardInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2RaidBossInstance;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
+import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.events.EventDispatcher;
@@ -749,7 +749,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			}
 			catch (NullPointerException e)
 			{
-				_log.warning(getClass().getSimpleName() + ": thinkAttack() faction call failed: " + e.getMessage());
+				_log.warn(getClass().getSimpleName() + ": thinkAttack() faction call failed: " + e.getMessage());
 			}
 		}
 		
@@ -1967,7 +1967,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		catch (NullPointerException e)
 		{
 			setIntention(AI_INTENTION_ACTIVE);
-			_log.warning(getClass().getSimpleName() + ": " + this + " - failed executing movementDisable(): " + e.getMessage());
+			_log.warn(getClass().getSimpleName() + ": " + this + " - failed executing movementDisable(): " + e.getMessage());
 			return;
 		}
 	}
@@ -2531,7 +2531,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		}
 		catch (Exception e)
 		{
-			_log.warning(getClass().getSimpleName() + ": " + this + " -  onEvtThink() failed: " + e.getMessage());
+			_log.warn(getClass().getSimpleName() + ": " + this + " -  onEvtThink() failed: " + e.getMessage());
 		}
 		finally
 		{

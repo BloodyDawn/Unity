@@ -18,8 +18,8 @@
  */
 package quests;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import quests.Q00013_ParcelDelivery.Q00013_ParcelDelivery;
 import quests.Q00015_SweetWhispers.Q00015_SweetWhispers;
@@ -222,7 +222,7 @@ import quests.Q10746_SeeTheWorld.Q10746_SeeTheWorld;
  */
 public class QuestMasterHandler
 {
-	private static final Logger _log = Logger.getLogger(QuestMasterHandler.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(QuestMasterHandler.class.getName());
 	
 	private static final Class<?>[] QUESTS =
 	{
@@ -433,7 +433,7 @@ public class QuestMasterHandler
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, QuestMasterHandler.class.getSimpleName() + ": Failed loading " + quest.getSimpleName() + ":", e);
+				_log.error(QuestMasterHandler.class.getSimpleName() + ": Failed loading " + quest.getSimpleName() + ":", e);
 			}
 		}
 	}

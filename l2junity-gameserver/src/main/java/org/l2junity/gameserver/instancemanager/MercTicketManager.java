@@ -23,8 +23,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Iterator;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javolution.util.FastList;
 
@@ -38,6 +36,8 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class is similar to the SiegeGuardManager, except it handles the loading of the mercenary tickets that are dropped on castle floors by the castle lords.<br>
@@ -48,7 +48,7 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
  */
 public final class MercTicketManager
 {
-	private static final Logger _log = Logger.getLogger(MercTicketManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(MercTicketManager.class.getName());
 	
 	private static final FastList<ItemInstance> _droppedTickets = new FastList<>();
 	
@@ -209,7 +209,7 @@ public final class MercTicketManager
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception: loadMercenaryData(): " + e.getMessage(), e);
+			_log.warn("Exception: loadMercenaryData(): " + e.getMessage(), e);
 		}
 	}
 	

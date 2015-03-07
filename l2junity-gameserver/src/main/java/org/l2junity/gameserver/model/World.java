@@ -25,8 +25,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
@@ -35,10 +33,12 @@ import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class World
 {
-	private static final Logger _log = Logger.getLogger(World.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(World.class.getName());
 	/** Gracia border Flying objects not allowed to the east of it. */
 	public static final int GRACIA_MAX_X = -166168;
 	public static final int GRACIA_MAX_Z = 6105;
@@ -100,11 +100,11 @@ public final class World
 	{
 		if (_allObjects.containsKey(object.getObjectId()))
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Current object: " + object + " already exist in OID map!");
-			_log.log(Level.WARNING, Util.getTraceString(Thread.currentThread().getStackTrace()));
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Previous object: " + _allObjects.get(object.getObjectId()) + " already exist in OID map!");
-			_log.log(Level.WARNING, _allObjectsDebug.get(object.getObjectId()));
-			_log.log(Level.WARNING, "---------------------- End ---------------------");
+			_log.warn(getClass().getSimpleName() + ": Current object: " + object + " already exist in OID map!");
+			_log.warn(Util.getTraceString(Thread.currentThread().getStackTrace()));
+			_log.warn(getClass().getSimpleName() + ": Previous object: " + _allObjects.get(object.getObjectId()) + " already exist in OID map!");
+			_log.warn(_allObjectsDebug.get(object.getObjectId()));
+			_log.warn("---------------------- End ---------------------");
 			return;
 		}
 		
@@ -265,7 +265,7 @@ public final class World
 				final PlayerInstance old = getPlayer(player.getObjectId());
 				if (old != null)
 				{
-					_log.warning("Duplicate character!? Closing both characters (" + player.getName() + ")");
+					_log.warn("Duplicate character!? Closing both characters (" + player.getName() + ")");
 					player.logout();
 					old.logout();
 					return;
@@ -283,7 +283,7 @@ public final class World
 		List<WorldObject> visibles = getVisibleObjects(object, 2000);
 		if (Config.DEBUG)
 		{
-			_log.finest("objects in range:" + visibles.size());
+			_log.trace("objects in range:" + visibles.size());
 		}
 		
 		// tell the player about the surroundings

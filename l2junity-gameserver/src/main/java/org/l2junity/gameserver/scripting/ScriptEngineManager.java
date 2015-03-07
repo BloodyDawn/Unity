@@ -33,11 +33,11 @@ import java.util.Objects;
 import java.util.Properties;
 import java.util.ServiceLoader;
 import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.scripting.java.JavaScriptingEngine;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Caches script engines and provides functionality for executing and managing scripts.
@@ -45,7 +45,7 @@ import org.l2junity.gameserver.scripting.java.JavaScriptingEngine;
  */
 public final class ScriptEngineManager
 {
-	private static final Logger _log = Logger.getLogger(ScriptEngineManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(ScriptEngineManager.class.getName());
 	public static final Path SCRIPT_LIST_FILE = Paths.get(Config.DATAPACK_ROOT.getAbsolutePath(), "data", "scripts.cfg");
 	public static final Path SCRIPT_FOLDER = Paths.get(Config.DATAPACK_ROOT.getAbsolutePath(), "data", "scripts");
 	public static final Path MASTER_HANDLER_FILE = Paths.get(SCRIPT_FOLDER.toString(), "handlers", "MasterHandler.java");
@@ -76,7 +76,7 @@ public final class ScriptEngineManager
 		catch (Exception e)
 		{
 			props = null;
-			_log.warning("Couldn't load ScriptEngines.properties: " + e.getMessage());
+			_log.warn("Couldn't load ScriptEngines.properties: " + e.getMessage());
 		}
 		return props;
 	}
@@ -191,7 +191,7 @@ public final class ScriptEngineManager
 			}
 			catch (Exception e)
 			{
-				_log.warning(e.getMessage());
+				_log.warn(e.getMessage());
 				return;
 			}
 			
@@ -199,7 +199,7 @@ public final class ScriptEngineManager
 			final String ext = getFileExtension(sourceFile);
 			if (ext == null)
 			{
-				_log.warning("ScriptFile: " + sourceFile + " does not have an extension to determine the script engine!");
+				_log.warn("ScriptFile: " + sourceFile + " does not have an extension to determine the script engine!");
 				return;
 			}
 			
@@ -208,7 +208,7 @@ public final class ScriptEngineManager
 			{
 				if (extWithoutEngine.add(ext))
 				{
-					_log.warning("ScriptEngine: No engine registered for extension " + ext + "!");
+					_log.warn("ScriptEngine: No engine registered for extension " + ext + "!");
 				}
 				return;
 			}
@@ -224,7 +224,7 @@ public final class ScriptEngineManager
 				Map<Path, Throwable> invokationErrors = entry.getKey().executeScripts(entry.getValue());
 				for (Entry<Path, Throwable> entry2 : invokationErrors.entrySet())
 				{
-					_log.log(Level.WARNING, "ScriptEngine: " + entry2.getKey() + " failed execution!", entry2.getValue());
+					_log.warn("ScriptEngine: " + entry2.getKey() + " failed execution!", entry2.getValue());
 				}
 			}
 			finally

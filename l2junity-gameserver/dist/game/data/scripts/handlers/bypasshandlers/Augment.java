@@ -18,8 +18,6 @@
  */
 package handlers.bypasshandlers;
 
-import java.util.logging.Level;
-
 import org.l2junity.gameserver.handler.IBypassHandler;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -55,7 +53,7 @@ public class Augment implements IBypassHandler
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception in " + getClass().getSimpleName(), e);
+			_log.warn("Exception in " + getClass().getSimpleName(), e);
 		}
 		return false;
 	}

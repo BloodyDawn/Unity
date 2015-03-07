@@ -21,8 +21,6 @@ package org.l2junity.gameserver.data.xml.impl;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.holders.RangeAbilityPointsHolder;
 import org.w3c.dom.Document;
@@ -46,7 +44,7 @@ public final class AbilityPointsData implements IXmlReader
 	{
 		_points.clear();
 		parseFile(new File("config/AbilityPoints.xml"));
-		LOGGER.log(Level.INFO, getClass().getSimpleName() + ": Loaded: " + _points.size() + " range fees.");
+		LOGGER.info(getClass().getSimpleName() + ": Loaded: " + _points.size() + " range fees.");
 	}
 	
 	@Override

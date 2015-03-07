@@ -23,7 +23,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.Future;
-import java.util.logging.Level;
 
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -284,7 +283,7 @@ public class L2DoorInstance extends Creature
 			}
 			else
 			{
-				_log.log(Level.WARNING, getClass().getSimpleName() + ": cannot find child id: " + getChildId());
+				_log.warn(getClass().getSimpleName() + ": cannot find child id: " + getChildId());
 			}
 		}
 	}

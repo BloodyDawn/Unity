@@ -21,9 +21,6 @@ package org.l2junity.gameserver.model.actor.status;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Future;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -31,10 +28,12 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.stat.CharStat;
 import org.l2junity.gameserver.model.stats.Formulas;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class CharStatus
 {
-	protected static final Logger _log = Logger.getLogger(CharStatus.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(CharStatus.class.getName());
 	
 	private final Creature _activeChar;
 	
@@ -176,7 +175,7 @@ public class CharStatus
 			
 			if (Config.DEBUG)
 			{
-				_log.fine("char is dead.");
+				_log.debug("char is dead.");
 			}
 			
 			getActiveChar().doDie(attacker);
@@ -202,7 +201,7 @@ public class CharStatus
 		{
 			if (Config.DEBUG)
 			{
-				_log.fine("HP/MP regen started");
+				_log.debug("HP/MP regen started");
 			}
 			
 			// Get the Regeneration period
@@ -227,7 +226,7 @@ public class CharStatus
 		{
 			if (Config.DEBUG)
 			{
-				_log.fine("HP/MP regen stop");
+				_log.debug("HP/MP regen stop");
 			}
 			
 			// Stop the HP/MP/CP Regeneration task
@@ -429,7 +428,7 @@ public class CharStatus
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "", e);
+				_log.error("", e);
 			}
 		}
 	}

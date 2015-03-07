@@ -22,13 +22,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Logger;
 
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.templates.L2PcTemplate;
 import org.l2junity.gameserver.model.base.ClassId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -39,7 +40,7 @@ import org.w3c.dom.Node;
  */
 public final class PlayerTemplateData implements IXmlReader
 {
-	private static final Logger LOGGER = Logger.getLogger(PlayerTemplateData.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(PlayerTemplateData.class.getName());
 	
 	private final Map<ClassId, L2PcTemplate> _playerTemplates = new HashMap<>();
 	

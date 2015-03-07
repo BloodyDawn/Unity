@@ -19,8 +19,6 @@
 package org.l2junity.gameserver.model.olympiad;
 
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.ai.CtrlIntention;
@@ -43,14 +41,16 @@ import org.l2junity.gameserver.network.client.send.InventoryUpdate;
 import org.l2junity.gameserver.network.client.send.SkillCoolTime;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author godson, GodKratos, Pere, DS
  */
 public abstract class AbstractOlympiadGame
 {
-	protected static final Logger _log = Logger.getLogger(AbstractOlympiadGame.class.getName());
-	protected static final Logger _logResults = Logger.getLogger("olympiad");
+	protected static final Logger _log = LoggerFactory.getLogger(AbstractOlympiadGame.class.getName());
+	protected static final Logger _logResults = LoggerFactory.getLogger("olympiad");
 	
 	protected static final String POINTS = "olympiad_points";
 	protected static final String COMP_DONE = "competitions_done";
@@ -190,7 +190,7 @@ public abstract class AbstractOlympiadGame
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, e.getMessage(), e);
+			_log.warn(e.getMessage(), e);
 			return false;
 		}
 		return true;
@@ -295,7 +295,7 @@ public abstract class AbstractOlympiadGame
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, e.getMessage(), e);
+			_log.warn(e.getMessage(), e);
 		}
 	}
 	
@@ -348,7 +348,7 @@ public abstract class AbstractOlympiadGame
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, e.getMessage(), e);
+			_log.warn(e.getMessage(), e);
 		}
 	}
 	
@@ -395,7 +395,7 @@ public abstract class AbstractOlympiadGame
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "playerStatusBack()", e);
+			_log.warn("playerStatusBack()", e);
 		}
 	}
 	
@@ -444,7 +444,7 @@ public abstract class AbstractOlympiadGame
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, e.getMessage(), e);
+			_log.warn(e.getMessage(), e);
 		}
 	}
 	

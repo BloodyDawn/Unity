@@ -20,9 +20,6 @@ package org.l2junity.gameserver.model.entity.clanhall;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
@@ -34,6 +31,8 @@ import org.l2junity.gameserver.model.entity.ClanHall;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class AuctionableHall extends ClanHall
 {
@@ -135,7 +134,7 @@ public final class AuctionableHall extends ClanHall
 	/** Fee Task */
 	protected class FeeTask implements Runnable
 	{
-		private final Logger _log = Logger.getLogger(FeeTask.class.getName());
+		private final Logger _log = LoggerFactory.getLogger(FeeTask.class.getName());
 		
 		@Override
 		public void run()
@@ -210,7 +209,7 @@ public final class AuctionableHall extends ClanHall
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "", e);
+				_log.error("", e);
 			}
 		}
 	}
@@ -229,7 +228,7 @@ public final class AuctionableHall extends ClanHall
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Exception: updateOwnerInDB(L2Clan clan): " + e.getMessage(), e);
+			_log.warn("Exception: updateOwnerInDB(L2Clan clan): " + e.getMessage(), e);
 		}
 	}
 }

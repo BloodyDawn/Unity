@@ -22,8 +22,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.script.ScriptContext;
 
@@ -33,6 +31,8 @@ import org.l2junity.gameserver.script.Parser;
 import org.l2junity.gameserver.script.ParserNotCreatedException;
 import org.l2junity.gameserver.script.ScriptDocument;
 import org.l2junity.gameserver.script.ScriptEngine;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Node;
 
 /**
@@ -40,7 +40,7 @@ import org.w3c.dom.Node;
  */
 public class FaenorScriptEngine extends ScriptEngine
 {
-	private static final Logger _log = Logger.getLogger(FaenorScriptEngine.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(FaenorScriptEngine.class.getName());
 	public static final String PACKAGE_DIRECTORY = "data/faenor/";
 	
 	protected FaenorScriptEngine()
@@ -55,7 +55,7 @@ public class FaenorScriptEngine extends ScriptEngine
 			}
 			catch (IOException e)
 			{
-				_log.log(Level.WARNING, e.getMessage(), e);
+				_log.warn(e.getMessage(), e);
 			}
 		}
 	}
@@ -72,12 +72,12 @@ public class FaenorScriptEngine extends ScriptEngine
 		}
 		catch (ParserNotCreatedException e)
 		{
-			_log.log(Level.WARNING, "ERROR: No parser registered for Script: " + parserClass + ": " + e.getMessage(), e);
+			_log.warn("ERROR: No parser registered for Script: " + parserClass + ": " + e.getMessage(), e);
 		}
 		
 		if (parser == null)
 		{
-			_log.warning("Unknown Script Type: " + script.getName());
+			_log.warn("Unknown Script Type: " + script.getName());
 			return;
 		}
 		
@@ -88,7 +88,7 @@ public class FaenorScriptEngine extends ScriptEngine
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Script Parsing Failed: " + e.getMessage(), e);
+			_log.warn("Script Parsing Failed: " + e.getMessage(), e);
 		}
 	}
 	

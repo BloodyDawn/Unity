@@ -18,8 +18,6 @@
  */
 package org.l2junity.gameserver.network.client.recv.primeshop;
 
-import java.util.logging.Level;
-
 import org.l2junity.gameserver.data.xml.impl.PrimeShopData;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
@@ -65,7 +63,7 @@ public final class RequestBRProductList implements IClientIncomingPacket
 				}
 				default:
 				{
-					_log.log(Level.WARNING, player + " send unhandled product list type: " + _type);
+					_log.warn(player + " send unhandled product list type: " + _type);
 					break;
 				}
 			}

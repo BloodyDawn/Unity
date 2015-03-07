@@ -21,8 +21,6 @@ package org.l2junity.gameserver.data.xml.impl;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import java.util.logging.Level;
-
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.SiegeScheduleDate;
 import org.l2junity.gameserver.model.StatsSet;
@@ -48,11 +46,11 @@ public class SiegeScheduleData implements IXmlReader
 	{
 		_scheduleData.clear();
 		parseDatapackFile("config/SiegeSchedule.xml");
-		LOGGER.log(Level.INFO, getClass().getSimpleName() + ": Loaded: " + _scheduleData.size() + " siege schedulers.");
+		LOGGER.info(getClass().getSimpleName() + ": Loaded: " + _scheduleData.size() + " siege schedulers.");
 		if (_scheduleData.isEmpty())
 		{
 			_scheduleData.add(new SiegeScheduleDate(new StatsSet()));
-			LOGGER.log(Level.INFO, getClass().getSimpleName() + ": Emergency Loaded: " + _scheduleData.size() + " default siege schedulers.");
+			LOGGER.info(getClass().getSimpleName() + ": Emergency Loaded: " + _scheduleData.size() + " default siege schedulers.");
 		}
 	}
 	
@@ -102,7 +100,7 @@ public class SiegeScheduleData implements IXmlReader
 		}
 		catch (Exception e)
 		{
-			LOGGER.log(Level.WARNING, "", e);
+			LOGGER.warn("", e);
 			return -1;
 		}
 	}

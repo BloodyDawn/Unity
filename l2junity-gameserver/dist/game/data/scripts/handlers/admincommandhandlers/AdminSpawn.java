@@ -21,7 +21,6 @@ package handlers.admincommandhandlers;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
-import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -46,6 +45,8 @@ import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Broadcast;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class handles following admin commands: - show_spawns = shows menu - spawn_index lvl = shows menu for monsters with respective level - spawn_monster id = spawns monster id on target
@@ -53,7 +54,7 @@ import org.l2junity.gameserver.util.Broadcast;
  */
 public class AdminSpawn implements IAdminCommandHandler
 {
-	private static final Logger _log = Logger.getLogger(AdminSpawn.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(AdminSpawn.class.getName());
 	
 	private static final String[] ADMIN_COMMANDS =
 	{

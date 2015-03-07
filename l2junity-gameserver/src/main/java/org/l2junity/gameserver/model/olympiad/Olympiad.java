@@ -33,9 +33,6 @@ import java.util.Map.Entry;
 import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.ScheduledFuture;
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
 
 import javolution.util.FastList;
 import javolution.util.FastMap;
@@ -54,14 +51,16 @@ import org.l2junity.gameserver.model.events.ListenersContainer;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Broadcast;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author godson
  */
 public class Olympiad extends ListenersContainer
 {
-	protected static final Logger _log = Logger.getLogger(Olympiad.class.getName());
-	protected static final Logger _logResults = Logger.getLogger("olympiad");
+	protected static final Logger _log = LoggerFactory.getLogger(Olympiad.class.getName());
+	protected static final Logger _logResults = LoggerFactory.getLogger("olympiad");
 	
 	private static final Map<Integer, StatsSet> _nobles = new FastMap<>();
 	protected static List<StatsSet> _heroesToBe;
@@ -162,12 +161,12 @@ public class Olympiad extends ListenersContainer
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Olympiad System: Error loading olympiad data from database: ", e);
+			_log.warn("Olympiad System: Error loading olympiad data from database: ", e);
 		}
 		
 		if (!loaded)
 		{
-			_log.log(Level.INFO, "Olympiad System: failed to load data from database, trying to load from file.");
+			_log.info("Olympiad System: failed to load data from database, trying to load from file.");
 			
 			Properties OlympiadProperties = new Properties();
 			try (InputStream is = new FileInputStream(Config.OLYMPIAD_CONFIG_FILE))
@@ -177,7 +176,7 @@ public class Olympiad extends ListenersContainer
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.SEVERE, "Olympiad System: Error loading olympiad properties: ", e);
+				_log.error("Olympiad System: Error loading olympiad properties: ", e);
 				return;
 			}
 			
@@ -215,7 +214,7 @@ public class Olympiad extends ListenersContainer
 				}
 				break;
 			default:
-				_log.warning("Olympiad System: Omg something went wrong in loading!! Period = " + _period);
+				_log.warn("Olympiad System: Omg something went wrong in loading!! Period = " + _period);
 				return;
 		}
 		
@@ -245,7 +244,7 @@ public class Olympiad extends ListenersContainer
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Olympiad System: Error loading noblesse data from database: ", e);
+			_log.warn("Olympiad System: Error loading noblesse data from database: ", e);
 		}
 		
 		synchronized (this)
@@ -300,7 +299,7 @@ public class Olympiad extends ListenersContainer
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Olympiad System: Error loading noblesse data from database for Ranking: ", e);
+			_log.warn("Olympiad System: Error loading noblesse data from database for Ranking: ", e);
 		}
 		
 		int rank1 = (int) Math.round(tmpPlace.size() * 0.01);
@@ -741,7 +740,7 @@ public class Olympiad extends ListenersContainer
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.SEVERE, "Olympiad System: Failed to save noblesse data to database: ", e);
+			_log.error("Olympiad System: Failed to save noblesse data to database: ", e);
 		}
 	}
 	
@@ -769,7 +768,7 @@ public class Olympiad extends ListenersContainer
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.SEVERE, "Olympiad System: Failed to save olympiad data to database: ", e);
+			_log.error("Olympiad System: Failed to save olympiad data to database: ", e);
 		}
 		//@formatter:off
 		/*
@@ -785,7 +784,7 @@ public class Olympiad extends ListenersContainer
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Olympiad System: Unable to save olympiad properties to file: ", e);
+			_log.warn("Olympiad System: Unable to save olympiad properties to file: ", e);
 		}
 		*/
 		//@formatter:on
@@ -802,7 +801,7 @@ public class Olympiad extends ListenersContainer
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.SEVERE, "Olympiad System: Failed to update monthly noblese data: ", e);
+			_log.error("Olympiad System: Failed to update monthly noblese data: ", e);
 		}
 	}
 	
@@ -813,7 +812,6 @@ public class Olympiad extends ListenersContainer
 			return;
 		}
 		
-		LogRecord record;
 		if (_nobles != null)
 		{
 			_logResults.info("Noble,charid,classid,compDone,points");
@@ -832,15 +830,7 @@ public class Olympiad extends ListenersContainer
 				int points = nobleInfo.getInt(POINTS);
 				int compDone = nobleInfo.getInt(COMP_DONE);
 				
-				record = new LogRecord(Level.INFO, charName);
-				record.setParameters(new Object[]
-				{
-					charId,
-					classId,
-					compDone,
-					points
-				});
-				_logResults.log(record);
+				_logResults.info("{},{},{},{},{}", charName, charId, classId, compDone, points);
 			}
 		}
 		
@@ -863,13 +853,7 @@ public class Olympiad extends ListenersContainer
 						hero.set(CHAR_ID, rset.getInt(CHAR_ID));
 						hero.set(CHAR_NAME, rset.getString(CHAR_NAME));
 						
-						record = new LogRecord(Level.INFO, "Hero " + hero.getString(CHAR_NAME));
-						record.setParameters(new Object[]
-						{
-							hero.getInt(CHAR_ID),
-							hero.getInt(CLASS_ID)
-						});
-						_logResults.log(record);
+						_logResults.info("Hero {},{},{}", hero.getString(CHAR_NAME), hero.getInt(CHAR_ID), hero.getInt(CLASS_ID));
 						_heroesToBe.add(hero);
 					}
 				}
@@ -877,7 +861,7 @@ public class Olympiad extends ListenersContainer
 		}
 		catch (SQLException e)
 		{
-			_log.warning("Olympiad System: Couldnt load heros from DB");
+			_log.warn("Olympiad System: Couldnt load heros from DB");
 		}
 	}
 	
@@ -899,7 +883,7 @@ public class Olympiad extends ListenersContainer
 		}
 		catch (SQLException e)
 		{
-			_log.warning("Olympiad System: Couldn't load olympiad leaders from DB!");
+			_log.warn("Olympiad System: Couldn't load olympiad leaders from DB!");
 		}
 		return names;
 	}
@@ -977,7 +961,7 @@ public class Olympiad extends ListenersContainer
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Could not load last olympiad points:", e);
+			_log.warn("Could not load last olympiad points:", e);
 		}
 		return result;
 	}
@@ -1114,7 +1098,7 @@ public class Olympiad extends ListenersContainer
 		}
 		catch (SQLException e)
 		{
-			_log.warning("Olympiad System: Couldn't delete nobles from DB!");
+			_log.warn("Olympiad System: Couldn't delete nobles from DB!");
 		}
 		_nobles.clear();
 	}

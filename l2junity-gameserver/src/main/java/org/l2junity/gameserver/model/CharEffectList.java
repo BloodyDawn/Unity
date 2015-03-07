@@ -29,7 +29,6 @@ import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
 import java.util.function.Function;
-import java.util.logging.Logger;
 
 import javolution.util.FastMap;
 
@@ -51,6 +50,8 @@ import org.l2junity.gameserver.network.client.send.ExAbnormalStatusUpdateFromTar
 import org.l2junity.gameserver.network.client.send.ExOlympiadSpelledInfo;
 import org.l2junity.gameserver.network.client.send.PartySpelled;
 import org.l2junity.gameserver.network.client.send.ShortBuffStatusUpdate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Effect lists.<br>
@@ -63,7 +64,7 @@ import org.l2junity.gameserver.network.client.send.ShortBuffStatusUpdate;
  */
 public final class CharEffectList
 {
-	private static final Logger _log = Logger.getLogger(CharEffectList.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(CharEffectList.class.getName());
 	/** Map containing all effects from buffs for this effect list. */
 	private volatile FastMap<Integer, BuffInfo> _buffs;
 	/** Map containing all triggered skills for this effect list. */
@@ -1235,7 +1236,7 @@ public final class CharEffectList
 			// Passive effects don't need stack type!
 			if (!skill.getAbnormalType().isNone())
 			{
-				_log.warning("Passive " + skill + " with abnormal type: " + skill.getAbnormalType() + "!");
+				_log.warn("Passive " + skill + " with abnormal type: " + skill.getAbnormalType() + "!");
 			}
 			
 			// Check for passive skill conditions.

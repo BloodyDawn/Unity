@@ -20,8 +20,6 @@ package org.l2junity.gameserver.data.xml.impl;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
-
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.enums.Race;
@@ -49,7 +47,7 @@ public class AppearanceItemData implements IXmlReader
 	public void load()
 	{
 		parseDatapackFile("data/AppearanceStones.xml");
-		LOGGER.log(Level.INFO, getClass().getSimpleName() + ": Loaded: " + _stones.size() + " Stones");
+		LOGGER.info(getClass().getSimpleName() + ": Loaded: " + _stones.size() + " Stones");
 		
 		//@formatter:off
 		/*

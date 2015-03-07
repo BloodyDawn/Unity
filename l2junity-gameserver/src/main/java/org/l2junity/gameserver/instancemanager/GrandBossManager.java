@@ -27,8 +27,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javolution.util.FastMap;
 
@@ -39,6 +37,8 @@ import org.l2junity.gameserver.instancemanager.tasks.GrandBossManagerStoreTask;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
 import org.l2junity.gameserver.model.interfaces.IStorable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Grand Boss manager.
@@ -50,7 +50,7 @@ public final class GrandBossManager implements IStorable
 	private static final String UPDATE_GRAND_BOSS_DATA = "UPDATE grandboss_data set loc_x = ?, loc_y = ?, loc_z = ?, heading = ?, respawn_time = ?, currentHP = ?, currentMP = ?, status = ? where boss_id = ?";
 	private static final String UPDATE_GRAND_BOSS_DATA2 = "UPDATE grandboss_data set status = ? where boss_id = ?";
 	
-	protected static Logger _log = Logger.getLogger(GrandBossManager.class.getName());
+	protected static Logger _log = LoggerFactory.getLogger(GrandBossManager.class.getName());
 	
 	protected static Map<Integer, L2GrandBossInstance> _bosses = new FastMap<>();
 	
@@ -95,11 +95,11 @@ public final class GrandBossManager implements IStorable
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Could not load grandboss_data table: " + e.getMessage(), e);
+			_log.warn(getClass().getSimpleName() + ": Could not load grandboss_data table: " + e.getMessage(), e);
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, "Error while initializing GrandBossManager: " + e.getMessage(), e);
+			_log.warn("Error while initializing GrandBossManager: " + e.getMessage(), e);
 		}
 		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new GrandBossManagerStoreTask(), 5 * 60 * 1000, 5 * 60 * 1000);
 	}
@@ -191,7 +191,7 @@ public final class GrandBossManager implements IStorable
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't store grandbosses to database:" + e.getMessage(), e);
+			_log.warn(getClass().getSimpleName() + ": Couldn't store grandbosses to database:" + e.getMessage(), e);
 			return false;
 		}
 		return true;
@@ -239,7 +239,7 @@ public final class GrandBossManager implements IStorable
 		}
 		catch (SQLException e)
 		{
-			_log.log(Level.WARNING, getClass().getSimpleName() + ": Couldn't update grandbosses to database:" + e.getMessage(), e);
+			_log.warn(getClass().getSimpleName() + ": Couldn't update grandbosses to database:" + e.getMessage(), e);
 		}
 	}
 	

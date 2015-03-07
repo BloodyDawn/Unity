@@ -22,8 +22,6 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -31,6 +29,8 @@ import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2CubicInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.AutoAttackStop;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Attack stance task manager.
@@ -38,7 +38,7 @@ import org.l2junity.gameserver.network.client.send.AutoAttackStop;
  */
 public class AttackStanceTaskManager
 {
-	protected static final Logger _log = Logger.getLogger(AttackStanceTaskManager.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(AttackStanceTaskManager.class.getName());
 	
 	protected static final Map<Creature, Long> _attackStanceTasks = new ConcurrentHashMap<>();
 	
@@ -145,7 +145,7 @@ public class AttackStanceTaskManager
 			catch (Exception e)
 			{
 				// Unless caught here, players remain in attack positions.
-				_log.log(Level.WARNING, "Error in FightModeScheduler: " + e.getMessage(), e);
+				_log.warn("Error in FightModeScheduler: " + e.getMessage(), e);
 			}
 		}
 	}
