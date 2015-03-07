@@ -21,9 +21,8 @@ package org.l2junity.gameserver.network.client.send;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.LinkedList;
 import java.util.List;
-
-import javolution.util.FastList;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -219,7 +218,7 @@ public class CharSelectionInfo implements IClientOutgoingPacket
 	private static CharSelectInfoPackage[] loadCharacterSelectInfo(String loginName)
 	{
 		CharSelectInfoPackage charInfopackage;
-		List<CharSelectInfoPackage> characterList = new FastList<>();
+		List<CharSelectInfoPackage> characterList = new LinkedList<>();
 		
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("SELECT * FROM characters WHERE account_name=? ORDER BY createDate"))

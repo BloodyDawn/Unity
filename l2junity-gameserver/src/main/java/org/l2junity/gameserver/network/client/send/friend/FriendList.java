@@ -21,9 +21,8 @@ package org.l2junity.gameserver.network.client.send.friend;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.LinkedList;
 import java.util.List;
-
-import javolution.util.FastList;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
@@ -40,7 +39,7 @@ import org.l2junity.network.PacketWriter;
  */
 public class FriendList implements IClientOutgoingPacket
 {
-	private final List<FriendInfo> _info;
+	private final List<FriendInfo> _info = new LinkedList<>();
 	
 	private static class FriendInfo
 	{
@@ -62,7 +61,6 @@ public class FriendList implements IClientOutgoingPacket
 	
 	public FriendList(PlayerInstance player)
 	{
-		_info = new FastList<>(player.getFriendList().size());
 		for (int objId : player.getFriendList())
 		{
 			String name = CharNameTable.getInstance().getNameById(objId);

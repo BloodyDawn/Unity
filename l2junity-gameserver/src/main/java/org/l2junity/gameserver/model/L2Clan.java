@@ -23,10 +23,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
-import javolution.util.FastList;
+
 import javolution.util.FastMap;
 
 import org.l2junity.Config;
@@ -130,8 +133,8 @@ public class L2Clan implements IIdentifiable, INamable
 	private int _bloodOathCount;
 	
 	private final ItemContainer _warehouse = new ClanWarehouse(this);
-	private final List<Integer> _atWarWith = new FastList<>();
-	private final List<Integer> _atWarAttackers = new FastList<>();
+	private final Set<Integer> _atWarWith = ConcurrentHashMap.newKeySet();
+	private final Set<Integer> _atWarAttackers = ConcurrentHashMap.newKeySet();
 	
 	private Forum _forum;
 	
@@ -609,9 +612,9 @@ public class L2Clan implements IIdentifiable, INamable
 	 * @param exclude the object Id to exclude from list.
 	 * @return all online members excluding the one with object id {code exclude}.
 	 */
-	public FastList<PlayerInstance> getOnlineMembers(int exclude)
+	public List<PlayerInstance> getOnlineMembers(int exclude)
 	{
-		final FastList<PlayerInstance> onlineMembers = new FastList<>();
+		final List<PlayerInstance> onlineMembers = new LinkedList<>();
 		for (ClanMember temp : _members.values())
 		{
 			if ((temp != null) && temp.isOnline() && (temp.getObjectId() != exclude))
@@ -1662,12 +1665,12 @@ public class L2Clan implements IIdentifiable, INamable
 		return !_atWarWith.isEmpty();
 	}
 	
-	public List<Integer> getWarList()
+	public Set<Integer> getWarList()
 	{
 		return _atWarWith;
 	}
 	
-	public List<Integer> getAttackerList()
+	public Set<Integer> getAttackerList()
 	{
 		return _atWarAttackers;
 	}
@@ -2955,7 +2958,7 @@ public class L2Clan implements IIdentifiable, INamable
 	
 	public SubPledgeSkill[] getAllSubSkills()
 	{
-		FastList<SubPledgeSkill> list = FastList.newInstance();
+		List<SubPledgeSkill> list = new LinkedList<>();
 		for (Skill skill : _subPledgeSkills.values())
 		{
 			list.add(new SubPledgeSkill(0, skill.getId(), skill.getLevel()));
@@ -2968,7 +2971,6 @@ public class L2Clan implements IIdentifiable, INamable
 			}
 		}
 		SubPledgeSkill[] result = list.toArray(new SubPledgeSkill[list.size()]);
-		FastList.recycle(list);
 		return result;
 	}
 	

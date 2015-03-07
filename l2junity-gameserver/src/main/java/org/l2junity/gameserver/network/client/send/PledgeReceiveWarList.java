@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.client.send;
 
-import java.util.List;
+import java.util.Set;
 
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.model.L2Clan;
@@ -32,7 +32,7 @@ public class PledgeReceiveWarList implements IClientOutgoingPacket
 {
 	private final L2Clan _clan;
 	private final int _tab;
-	private final List<Integer> _clanList;
+	private final Set<Integer> _clanList;
 	
 	public PledgeReceiveWarList(L2Clan clan, int tab)
 	{
