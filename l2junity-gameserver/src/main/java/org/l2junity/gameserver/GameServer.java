@@ -19,7 +19,6 @@
 package org.l2junity.gameserver;
 
 import java.awt.Toolkit;
-import java.io.File;
 import java.time.Duration;
 import java.util.Calendar;
 
@@ -172,8 +171,6 @@ public class GameServer
 		
 		ThreadPoolManager.getInstance();
 		EventDispatcher.getInstance();
-		
-		new File("log/game").mkdirs();
 		
 		// load script engines
 		printSection("Scripting Engines");

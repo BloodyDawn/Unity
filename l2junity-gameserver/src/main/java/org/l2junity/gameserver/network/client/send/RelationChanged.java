@@ -18,9 +18,8 @@
  */
 package org.l2junity.gameserver.network.client.send;
 
+import java.util.LinkedList;
 import java.util.List;
-
-import javolution.util.FastList;
 
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
@@ -61,7 +60,7 @@ public final class RelationChanged implements IClientOutgoingPacket
 	}
 	
 	private Relation _singled;
-	private List<Relation> _multi;
+	private final List<Relation> _multi;
 	private byte _mask = (byte) 0x00;
 	
 	public RelationChanged(Playable activeChar, int relation, boolean autoattackable)
@@ -74,13 +73,13 @@ public final class RelationChanged implements IClientOutgoingPacket
 		_singled._autoAttackable = autoattackable ? 1 : 0;
 		_singled._karma = activeChar.getKarma();
 		_singled._pvpFlag = activeChar.getPvpFlag();
+		_multi = null;
 	}
 	
 	public RelationChanged()
 	{
 		_mask |= SEND_MULTI;
-		
-		_multi = FastList.newInstance();
+		_multi = new LinkedList<>();
 	}
 	
 	public void addRelation(Playable activeChar, int relation, boolean autoattackable)
@@ -115,7 +114,6 @@ public final class RelationChanged implements IClientOutgoingPacket
 			{
 				writeRelation(packet, r);
 			}
-			FastList.recycle((FastList<?>) _multi);
 		}
 		return true;
 	}

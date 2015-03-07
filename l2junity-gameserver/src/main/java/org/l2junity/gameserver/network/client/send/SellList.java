@@ -18,9 +18,9 @@
  */
 package org.l2junity.gameserver.network.client.send;
 
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
-
-import javolution.util.FastList;
 
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
@@ -29,23 +29,16 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
-/**
- * This class ...
- * @version $Revision: 1.4.2.3.2.4 $ $Date: 2005/03/27 15:29:39 $
- */
 public class SellList implements IClientOutgoingPacket
 {
 	private final PlayerInstance _activeChar;
 	private final L2MerchantInstance _lease;
 	private final long _money;
-	private final List<ItemInstance> _selllist = new FastList<>();
+	private final List<ItemInstance> _sellList;
 	
 	public SellList(PlayerInstance player)
 	{
-		_activeChar = player;
-		_lease = null;
-		_money = _activeChar.getAdena();
-		doLease();
+		this(player, null);
 	}
 	
 	public SellList(PlayerInstance player, L2MerchantInstance lease)
@@ -53,21 +46,22 @@ public class SellList implements IClientOutgoingPacket
 		_activeChar = player;
 		_lease = lease;
 		_money = _activeChar.getAdena();
-		doLease();
-	}
-	
-	private void doLease()
-	{
+		
 		if (_lease == null)
 		{
+			_sellList = new LinkedList<>();
 			final Summon pet = _activeChar.getPet();
 			for (ItemInstance item : _activeChar.getInventory().getItems())
 			{
 				if (!item.isEquipped() && item.isSellable() && ((pet == null) || (item.getObjectId() != pet.getControlObjectId()))) // Pet is summoned and not the item that summoned the pet
 				{
-					_selllist.add(item);
+					_sellList.add(item);
 				}
 			}
+		}
+		else
+		{
+			_sellList = Collections.emptyList();
 		}
 	}
 	
@@ -78,9 +72,9 @@ public class SellList implements IClientOutgoingPacket
 		
 		packet.writeQ(_money);
 		packet.writeD(_lease == null ? 0x00 : 1000000 + _lease.getTemplate().getId());
-		packet.writeH(_selllist.size());
+		packet.writeH(_sellList.size());
 		
-		for (ItemInstance item : _selllist)
+		for (ItemInstance item : _sellList)
 		{
 			packet.writeH(item.getItem().getType1());
 			packet.writeD(item.getObjectId());

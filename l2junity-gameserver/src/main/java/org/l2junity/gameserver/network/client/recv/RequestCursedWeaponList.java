@@ -18,11 +18,6 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
-import java.util.List;
-
-import javolution.util.FastList;
-
-import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.ExCursedWeaponList;
@@ -49,13 +44,6 @@ public class RequestCursedWeaponList implements IClientIncomingPacket
 			return;
 		}
 		
-		// send a ExCursedWeaponList :p
-		List<Integer> list = new FastList<>();
-		for (int id : CursedWeaponsManager.getInstance().getCursedWeaponsIds())
-		{
-			list.add(id);
-		}
-		
-		client.sendPacket(new ExCursedWeaponList(list));
+		client.sendPacket(new ExCursedWeaponList());
 	}
 }

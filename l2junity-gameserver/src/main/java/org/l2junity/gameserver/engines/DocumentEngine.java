@@ -23,8 +23,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import javolution.util.FastList;
-
 import org.l2junity.Config;
 import org.l2junity.commons.util.file.filter.XMLFilter;
 import org.l2junity.gameserver.datatables.SkillData;
@@ -42,8 +40,8 @@ public class DocumentEngine
 {
 	private static final Logger _log = LoggerFactory.getLogger(DocumentEngine.class.getName());
 	
-	private final List<File> _itemFiles = new FastList<>();
-	private final List<File> _skillFiles = new FastList<>();
+	private final List<File> _itemFiles = new LinkedList<>();
+	private final List<File> _skillFiles = new LinkedList<>();
 	
 	public static DocumentEngine getInstance()
 	{

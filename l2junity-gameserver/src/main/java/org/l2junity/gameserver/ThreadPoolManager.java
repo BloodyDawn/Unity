@@ -28,10 +28,6 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import javolution.util.FastList;
-import javolution.util.FastMap;
-import javolution.util.FastSet;
-
 import org.l2junity.Config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -520,11 +516,6 @@ public class ThreadPoolManager
 			" |- PoolSize:        " + _eventThreadPool.getPoolSize(),
 			" |- CompletedTasks:  " + _eventThreadPool.getCompletedTaskCount(),
 			" |- QueuedTasks:     " + _eventThreadPool.getQueue().size(),
-			" | -------",
-			" + Javolution stats:",
-			" |- FastList:        " + FastList.report(),
-			" |- FastMap:        " + FastMap.report(),
-			" |- FastSet:        " + FastSet.report(),
 			" | -------"
 		};
 	}

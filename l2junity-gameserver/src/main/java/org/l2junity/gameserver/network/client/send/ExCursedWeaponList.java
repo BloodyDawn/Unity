@@ -18,8 +18,9 @@
  */
 package org.l2junity.gameserver.network.client.send;
 
-import java.util.List;
+import java.util.Set;
 
+import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
@@ -28,20 +29,14 @@ import org.l2junity.network.PacketWriter;
  */
 public class ExCursedWeaponList implements IClientOutgoingPacket
 {
-	private final List<Integer> _cursedWeaponIds;
-	
-	public ExCursedWeaponList(List<Integer> cursedWeaponIds)
-	{
-		_cursedWeaponIds = cursedWeaponIds;
-	}
-	
 	@Override
 	public boolean write(PacketWriter packet)
 	{
 		OutgoingPackets.EX_CURSED_WEAPON_LIST.writeId(packet);
 		
-		packet.writeD(_cursedWeaponIds.size());
-		_cursedWeaponIds.forEach(packet::writeD);
+		final Set<Integer> ids = CursedWeaponsManager.getInstance().getCursedWeaponsIds();
+		packet.writeD(ids.size());
+		ids.forEach(packet::writeD);
 		return true;
 	}
 }
