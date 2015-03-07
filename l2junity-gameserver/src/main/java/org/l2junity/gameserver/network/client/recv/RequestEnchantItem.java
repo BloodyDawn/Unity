@@ -47,7 +47,7 @@ import org.slf4j.LoggerFactory;
 
 public final class RequestEnchantItem implements IClientIncomingPacket
 {
-	protected static final Logger _logEnchant = LoggerFactory.getLogger("enchant");
+	protected static final Logger _logEnchant = LoggerFactory.getLogger("enchant.items");
 	
 	private int _objectId;
 	private int _supportId;
