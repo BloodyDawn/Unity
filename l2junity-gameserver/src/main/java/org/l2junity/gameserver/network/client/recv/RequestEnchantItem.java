@@ -18,9 +18,6 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.EnchantItemData;
 import org.l2junity.gameserver.enums.UserInfoType;
@@ -199,16 +196,28 @@ public final class RequestEnchantItem implements IClientIncomingPacket
 					
 					if (Config.LOG_ITEM_ENCHANTS)
 					{
-						LogRecord record = new LogRecord(Level.INFO, "Success");
-						record.setParameters(new Object[]
+						if (item.getEnchantLevel() > 0)
 						{
-							activeChar,
-							item,
-							scroll,
-							support,
-						});
-						record.setLoggerName("item");
-						_logEnchant.log(record);
+							if (support == null)
+							{
+								_logEnchant.info("Success, Character:{} [{}] Account:{} IP:{}, +{} {}({}) [{}], {}({}) [{}]", activeChar.getName(), activeChar.getObjectId(), activeChar.getAccountName(), activeChar.getIPAddress(), item.getEnchantLevel(), item.getName(), item.getCount(), item.getObjectId(), scroll.getName(), scroll.getCount(), scroll.getObjectId());
+							}
+							else
+							{
+								_logEnchant.info("Success, Character:{} [{}] Account:{} IP:{}, +{} {}({}) [{}], {}({}) [{}], {}({}) [{}]", activeChar.getName(), activeChar.getObjectId(), activeChar.getAccountName(), activeChar.getIPAddress(), item.getEnchantLevel(), item.getName(), item.getCount(), item.getObjectId(), scroll.getName(), scroll.getCount(), scroll.getObjectId(), support.getName(), support.getCount(), support.getObjectId());
+							}
+						}
+						else
+						{
+							if (support == null)
+							{
+								_logEnchant.info("Success, Character:{} [{}] Account:{} IP:{}, {}({}) [{}], {}({}) [{}]", activeChar.getName(), activeChar.getObjectId(), activeChar.getAccountName(), activeChar.getIPAddress(), item.getName(), item.getCount(), item.getObjectId(), scroll.getName(), scroll.getCount(), scroll.getObjectId());
+							}
+							else
+							{
+								_logEnchant.info("Success, Character:{} [{}] Account:{} IP:{}, {}({}) [{}], {}({}) [{}], {}({}) [{}]", activeChar.getName(), activeChar.getObjectId(), activeChar.getAccountName(), activeChar.getIPAddress(), item.getName(), item.getCount(), item.getObjectId(), scroll.getName(), scroll.getCount(), scroll.getObjectId(), support.getName(), support.getCount(), support.getObjectId());
+							}
+						}
 					}
 					
 					// announce the success
@@ -251,16 +260,28 @@ public final class RequestEnchantItem implements IClientIncomingPacket
 						
 						if (Config.LOG_ITEM_ENCHANTS)
 						{
-							LogRecord record = new LogRecord(Level.INFO, "Safe Fail");
-							record.setParameters(new Object[]
+							if (item.getEnchantLevel() > 0)
 							{
-								activeChar,
-								item,
-								scroll,
-								support,
-							});
-							record.setLoggerName("item");
-							_logEnchant.log(record);
+								if (support == null)
+								{
+									_logEnchant.info("Safe Fail, Character:{} [{}] Account:{} IP:{}, +{} {}({}) [{}], {}({}) [{}]", activeChar.getName(), activeChar.getObjectId(), activeChar.getAccountName(), activeChar.getIPAddress(), item.getEnchantLevel(), item.getName(), item.getCount(), item.getObjectId(), scroll.getName(), scroll.getCount(), scroll.getObjectId());
+								}
+								else
+								{
+									_logEnchant.info("Safe Fail, Character:{} [{}] Account:{} IP:{}, +{} {}({}) [{}], {}({}) [{}], {}({}) [{}]", activeChar.getName(), activeChar.getObjectId(), activeChar.getAccountName(), activeChar.getIPAddress(), item.getEnchantLevel(), item.getName(), item.getCount(), item.getObjectId(), scroll.getName(), scroll.getCount(), scroll.getObjectId(), support.getName(), support.getCount(), support.getObjectId());
+								}
+							}
+							else
+							{
+								if (support == null)
+								{
+									_logEnchant.info("Safe Fail, Character:{} [{}] Account:{} IP:{}, {}({}) [{}], {}({}) [{}]", activeChar.getName(), activeChar.getObjectId(), activeChar.getAccountName(), activeChar.getIPAddress(), item.getName(), item.getCount(), item.getObjectId(), scroll.getName(), scroll.getCount(), scroll.getObjectId());
+								}
+								else
+								{
+									_logEnchant.info("Safe Fail, Character:{} [{}] Account:{} IP:{}, {}({}) [{}], {}({}) [{}], {}({}) [{}]", activeChar.getName(), activeChar.getObjectId(), activeChar.getAccountName(), activeChar.getIPAddress(), item.getName(), item.getCount(), item.getObjectId(), scroll.getName(), scroll.getCount(), scroll.getObjectId(), support.getName(), support.getCount(), support.getObjectId());
+								}
+							}
 						}
 					}
 					else
@@ -303,16 +324,28 @@ public final class RequestEnchantItem implements IClientIncomingPacket
 							
 							if (Config.LOG_ITEM_ENCHANTS)
 							{
-								LogRecord record = new LogRecord(Level.INFO, "Blessed Fail");
-								record.setParameters(new Object[]
+								if (item.getEnchantLevel() > 0)
 								{
-									activeChar,
-									item,
-									scroll,
-									support,
-								});
-								record.setLoggerName("item");
-								_logEnchant.log(record);
+									if (support == null)
+									{
+										_logEnchant.info("Blessed Fail, Character:{} [{}] Account:{} IP:{}, +{} {}({}) [{}], {}({}) [{}]", activeChar.getName(), activeChar.getObjectId(), activeChar.getAccountName(), activeChar.getIPAddress(), item.getEnchantLevel(), item.getName(), item.getCount(), item.getObjectId(), scroll.getName(), scroll.getCount(), scroll.getObjectId());
+									}
+									else
+									{
+										_logEnchant.info("Blessed Fail, Character:{} [{}] Account:{} IP:{}, +{} {}({}) [{}], {}({}) [{}], {}({}) [{}]", activeChar.getName(), activeChar.getObjectId(), activeChar.getAccountName(), activeChar.getIPAddress(), item.getEnchantLevel(), item.getName(), item.getCount(), item.getObjectId(), scroll.getName(), scroll.getCount(), scroll.getObjectId(), support.getName(), support.getCount(), support.getObjectId());
+									}
+								}
+								else
+								{
+									if (support == null)
+									{
+										_logEnchant.info("Blessed Fail, Character:{} [{}] Account:{} IP:{}, {}({}) [{}], {}({}) [{}]", activeChar.getName(), activeChar.getObjectId(), activeChar.getAccountName(), activeChar.getIPAddress(), item.getName(), item.getCount(), item.getObjectId(), scroll.getName(), scroll.getCount(), scroll.getObjectId());
+									}
+									else
+									{
+										_logEnchant.info("Blessed Fail, Character:{} [{}] Account:{} IP:{}, {}({}) [{}], {}({}) [{}], {}({}) [{}]", activeChar.getName(), activeChar.getObjectId(), activeChar.getAccountName(), activeChar.getIPAddress(), item.getName(), item.getCount(), item.getObjectId(), scroll.getName(), scroll.getCount(), scroll.getObjectId(), support.getName(), support.getCount(), support.getObjectId());
+									}
+								}
 							}
 						}
 						else
@@ -334,16 +367,28 @@ public final class RequestEnchantItem implements IClientIncomingPacket
 								
 								if (Config.LOG_ITEM_ENCHANTS)
 								{
-									LogRecord record = new LogRecord(Level.INFO, "Unable to destroy");
-									record.setParameters(new Object[]
+									if (item.getEnchantLevel() > 0)
 									{
-										activeChar,
-										item,
-										scroll,
-										support,
-									});
-									record.setLoggerName("item");
-									_logEnchant.log(record);
+										if (support == null)
+										{
+											_logEnchant.info("Unable to destroy, Character:{} [{}] Account:{} IP:{}, +{} {}({}) [{}], {}({}) [{}]", activeChar.getName(), activeChar.getObjectId(), activeChar.getAccountName(), activeChar.getIPAddress(), item.getEnchantLevel(), item.getName(), item.getCount(), item.getObjectId(), scroll.getName(), scroll.getCount(), scroll.getObjectId());
+										}
+										else
+										{
+											_logEnchant.info("Unable to destroy, Character:{} [{}] Account:{} IP:{}, +{} {}({}) [{}], {}({}) [{}], {}({}) [{}]", activeChar.getName(), activeChar.getObjectId(), activeChar.getAccountName(), activeChar.getIPAddress(), item.getEnchantLevel(), item.getName(), item.getCount(), item.getObjectId(), scroll.getName(), scroll.getCount(), scroll.getObjectId(), support.getName(), support.getCount(), support.getObjectId());
+										}
+									}
+									else
+									{
+										if (support == null)
+										{
+											_logEnchant.info("Unable to destroy, Character:{} [{}] Account:{} IP:{}, {}({}) [{}], {}({}) [{}]", activeChar.getName(), activeChar.getObjectId(), activeChar.getAccountName(), activeChar.getIPAddress(), item.getName(), item.getCount(), item.getObjectId(), scroll.getName(), scroll.getCount(), scroll.getObjectId());
+										}
+										else
+										{
+											_logEnchant.info("Unable to destroy, Character:{} [{}] Account:{} IP:{}, {}({}) [{}], {}({}) [{}], {}({}) [{}]", activeChar.getName(), activeChar.getObjectId(), activeChar.getAccountName(), activeChar.getIPAddress(), item.getName(), item.getCount(), item.getObjectId(), scroll.getName(), scroll.getCount(), scroll.getObjectId(), support.getName(), support.getCount(), support.getObjectId());
+										}
+									}
 								}
 								return;
 							}
@@ -379,16 +424,28 @@ public final class RequestEnchantItem implements IClientIncomingPacket
 							
 							if (Config.LOG_ITEM_ENCHANTS)
 							{
-								LogRecord record = new LogRecord(Level.INFO, "Fail");
-								record.setParameters(new Object[]
+								if (item.getEnchantLevel() > 0)
 								{
-									activeChar,
-									item,
-									scroll,
-									support,
-								});
-								record.setLoggerName("item");
-								_logEnchant.log(record);
+									if (support == null)
+									{
+										_logEnchant.info("Fail, Character:{} [{}] Account:{} IP:{}, +{} {}({}) [{}], {}({}) [{}]", activeChar.getName(), activeChar.getObjectId(), activeChar.getAccountName(), activeChar.getIPAddress(), item.getEnchantLevel(), item.getName(), item.getCount(), item.getObjectId(), scroll.getName(), scroll.getCount(), scroll.getObjectId());
+									}
+									else
+									{
+										_logEnchant.info("Fail, Character:{} [{}] Account:{} IP:{}, +{} {}({}) [{}], {}({}) [{}], {}({}) [{}]", activeChar.getName(), activeChar.getObjectId(), activeChar.getAccountName(), activeChar.getIPAddress(), item.getEnchantLevel(), item.getName(), item.getCount(), item.getObjectId(), scroll.getName(), scroll.getCount(), scroll.getObjectId(), support.getName(), support.getCount(), support.getObjectId());
+									}
+								}
+								else
+								{
+									if (support == null)
+									{
+										_logEnchant.info("Fail, Character:{} [{}] Account:{} IP:{}, {}({}) [{}], {}({}) [{}]", activeChar.getName(), activeChar.getObjectId(), activeChar.getAccountName(), activeChar.getIPAddress(), item.getName(), item.getCount(), item.getObjectId(), scroll.getName(), scroll.getCount(), scroll.getObjectId());
+									}
+									else
+									{
+										_logEnchant.info("Fail, Character:{} [{}] Account:{} IP:{}, {}({}) [{}], {}({}) [{}], {}({}) [{}]", activeChar.getName(), activeChar.getObjectId(), activeChar.getAccountName(), activeChar.getIPAddress(), item.getName(), item.getCount(), item.getObjectId(), scroll.getName(), scroll.getCount(), scroll.getObjectId(), support.getName(), support.getCount(), support.getObjectId());
+									}
+								}
 							}
 						}
 					}
