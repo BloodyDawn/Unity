@@ -19,8 +19,11 @@
 package instances.DarkCloudMansion;
 
 import instances.AbstractInstance;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import javolution.util.FastList;
-import javolution.util.FastMap;
 
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
@@ -44,7 +47,7 @@ public final class DarkCloudMansion extends AbstractInstance
 {
 	protected class DMCWorld extends InstanceWorld
 	{
-		protected FastMap<String, DMCRoom> rooms = new FastMap<>();
+		protected Map<String, DMCRoom> rooms = new HashMap<>();
 	}
 	
 	// NPCs

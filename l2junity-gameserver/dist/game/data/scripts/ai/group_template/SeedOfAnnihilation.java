@@ -19,9 +19,8 @@
 package ai.group_template;
 
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.Map;
-
-import javolution.util.FastMap;
 
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
@@ -42,7 +41,15 @@ import ai.npc.AbstractNpcAI;
  */
 public final class SeedOfAnnihilation extends AbstractNpcAI
 {
-	private static final Map<Integer, Location> _teleportZones = new FastMap<>();
+	private static final Map<Integer, Location> TELEPORT_ZONES = new HashMap<>();
+	static
+	{
+		TELEPORT_ZONES.put(60002, new Location(-213175, 182648, -10992));
+		TELEPORT_ZONES.put(60003, new Location(-181217, 186711, -10528));
+		TELEPORT_ZONES.put(60004, new Location(-180211, 182984, -15152));
+		TELEPORT_ZONES.put(60005, new Location(-179275, 186802, -10720));
+	}
+	
 	private static final int ANNIHILATION_FURNACE = 18928;
 	
 	// Strength, Agility, Wisdom
@@ -70,19 +77,11 @@ public final class SeedOfAnnihilation extends AbstractNpcAI
 	private final SeedRegion[] _regionsData = new SeedRegion[3];
 	private Long _seedsNextStatusChange;
 	
-	static
-	{
-		_teleportZones.put(60002, new Location(-213175, 182648, -10992));
-		_teleportZones.put(60003, new Location(-181217, 186711, -10528));
-		_teleportZones.put(60004, new Location(-180211, 182984, -15152));
-		_teleportZones.put(60005, new Location(-179275, 186802, -10720));
-	}
-	
 	public SeedOfAnnihilation()
 	{
 		super(SeedOfAnnihilation.class.getSimpleName(), "ai/group_template");
 		loadSeedRegionData();
-		for (int i : _teleportZones.keySet())
+		for (int i : TELEPORT_ZONES.keySet())
 		{
 			addEnterZoneId(i);
 		}
@@ -341,9 +340,9 @@ public final class SeedOfAnnihilation extends AbstractNpcAI
 	@Override
 	public String onEnterZone(Creature character, ZoneType zone)
 	{
-		if (_teleportZones.containsKey(zone.getId()))
+		if (TELEPORT_ZONES.containsKey(zone.getId()))
 		{
-			Location teleLoc = _teleportZones.get(zone.getId());
+			Location teleLoc = TELEPORT_ZONES.get(zone.getId());
 			character.teleToLocation(teleLoc, false);
 		}
 		return super.onEnterZone(character, zone);
