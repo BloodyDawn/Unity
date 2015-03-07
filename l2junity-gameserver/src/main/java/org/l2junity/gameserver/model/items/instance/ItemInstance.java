@@ -29,8 +29,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.locks.ReentrantLock;
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -311,15 +309,14 @@ public final class ItemInstance extends WorldObject
 		{
 			if (!Config.LOG_ITEMS_SMALL_LOG || (Config.LOG_ITEMS_SMALL_LOG && (getItem().isEquipable() || (getItem().getId() == ADENA_ID))))
 			{
-				LogRecord record = new LogRecord(Level.INFO, "SETOWNER:" + process);
-				record.setLoggerName("item");
-				record.setParameters(new Object[]
+				if (getEnchantLevel() > 0)
 				{
-					this,
-					creator,
-					reference
-				});
-				_logItems.log(record);
+					_logItems.info("SETOWNER:{}, item {}:+{} {}({}), {}, {}", process, getObjectId(), getEnchantLevel(), getItem().getName(), getCount(), creator, reference);
+				}
+				else
+				{
+					_logItems.info("SETOWNER:{}, item {}:{}({}), {}, {}", process, getObjectId(), getItem().getName(), getCount(), creator, reference);
+				}
 			}
 		}
 		
@@ -478,16 +475,14 @@ public final class ItemInstance extends WorldObject
 		{
 			if (!Config.LOG_ITEMS_SMALL_LOG || (Config.LOG_ITEMS_SMALL_LOG && (_item.isEquipable() || (_item.getId() == ADENA_ID))))
 			{
-				LogRecord record = new LogRecord(Level.INFO, "CHANGE:" + process);
-				record.setLoggerName("item");
-				record.setParameters(new Object[]
+				if (getEnchantLevel() > 0)
 				{
-					this,
-					"PrevCount(" + old + ")",
-					creator,
-					reference
-				});
-				_logItems.log(record);
+					_logItems.info("CHANGE:{}, item {}:+{} {}({}), PrevCount({}), {}, {}", process, getObjectId(), getEnchantLevel(), getItem().getName(), getCount(), old, creator, reference);
+				}
+				else
+				{
+					_logItems.info("CHANGE:{}, item {}:{}({}), PrevCount({}), {}, {}", process, getObjectId(), getItem().getName(), getCount(), old, creator, reference);
+				}
 			}
 		}
 		

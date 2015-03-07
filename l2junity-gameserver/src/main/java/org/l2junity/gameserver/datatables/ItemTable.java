@@ -26,8 +26,6 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ScheduledFuture;
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
 
 import javolution.util.FastMap;
 
@@ -258,15 +256,14 @@ public class ItemTable
 		{
 			if (!Config.LOG_ITEMS_SMALL_LOG || (Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || (item.getId() == ADENA_ID))))
 			{
-				LogRecord record = new LogRecord(Level.INFO, "CREATE:" + process);
-				record.setLoggerName("item");
-				record.setParameters(new Object[]
+				if (item.getEnchantLevel() > 0)
 				{
-					item,
-					actor,
-					reference
-				});
-				LOGGER_ITEMS.log(record);
+					LOGGER_ITEMS.info("CREATE:{}, item {}:+{} {}({}), {}, {}", process, item.getObjectId(), item.getEnchantLevel(), item.getItem().getName(), item.getCount(), actor, reference);
+				}
+				else
+				{
+					LOGGER_ITEMS.info("CREATE:{}, item {}:{}({}), {}, {}", process, item.getObjectId(), item.getItem().getName(), item.getCount(), actor, reference);
+				}
 			}
 		}
 		
@@ -331,16 +328,14 @@ public class ItemTable
 			{
 				if (!Config.LOG_ITEMS_SMALL_LOG || (Config.LOG_ITEMS_SMALL_LOG && (item.isEquipable() || (item.getId() == ADENA_ID))))
 				{
-					LogRecord record = new LogRecord(Level.INFO, "DELETE:" + process);
-					record.setLoggerName("item");
-					record.setParameters(new Object[]
+					if (item.getEnchantLevel() > 0)
 					{
-						item,
-						"PrevCount(" + old + ")",
-						actor,
-						reference
-					});
-					LOGGER_ITEMS.log(record);
+						LOGGER_ITEMS.info("DELETE:{}, item {}:+{} {}({}), PrevCount({}), {}, {}", process, item.getObjectId(), item.getEnchantLevel(), item.getItem().getName(), item.getCount(), old, actor, reference);
+					}
+					else
+					{
+						LOGGER_ITEMS.info("DELETE:{}, item {}:{}({}), PrevCount({}), {}, {}", process, item.getObjectId(), item.getItem().getName(), item.getCount(), old, actor, reference);
+					}
 				}
 			}
 			
