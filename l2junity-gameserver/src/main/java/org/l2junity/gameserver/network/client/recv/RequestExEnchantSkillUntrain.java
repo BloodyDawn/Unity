@@ -18,9 +18,6 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
 import org.l2junity.gameserver.datatables.SkillData;
@@ -156,15 +153,14 @@ public final class RequestExEnchantSkillUntrain implements IClientIncomingPacket
 		
 		if (Config.LOG_SKILL_ENCHANTS)
 		{
-			LogRecord record = new LogRecord(Level.INFO, "Untrain");
-			record.setParameters(new Object[]
+			if (skill.getLevel() > 100)
 			{
-				player,
-				skill,
-				spb
-			});
-			record.setLoggerName("skill");
-			_logEnchant.log(record);
+				_logEnchant.info("Untrain, Character:{} [{}] Account:{} IP:{}, +{} {}({}), {}({}) [{}], {}({}) [{}]", player.getName(), player.getObjectId(), player.getAccountName(), player.getIPAddress(), skill.getLevel() % 100, skill.getName(), skill.getId(), spb.getName(), spb.getCount(), spb.getObjectId());
+			}
+			else
+			{
+				_logEnchant.info("Untrain, Character:{} [{}] Account:{} IP:{}, {}({}), {}({}) [{}], {}({}) [{}]", player.getName(), player.getObjectId(), player.getAccountName(), player.getIPAddress(), skill.getName(), skill.getId(), spb.getName(), spb.getCount(), spb.getObjectId());
+			}
 		}
 		
 		player.addSkill(skill, true);
