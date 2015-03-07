@@ -45,7 +45,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class RequestExEnchantSkillRouteChange implements IClientIncomingPacket
 {
-	private static final Logger _logEnchant = LoggerFactory.getLogger("enchant");
+	private static final Logger _logEnchant = LoggerFactory.getLogger("enchant.skills");
 	
 	private int _skillId;
 	private int _skillLvl;
