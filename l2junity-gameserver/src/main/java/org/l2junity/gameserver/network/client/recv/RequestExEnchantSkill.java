@@ -151,11 +151,25 @@ public final class RequestExEnchantSkill implements IClientIncomingPacket
 				{
 					if (skill.getLevel() > 100)
 					{
-						_logEnchant.info("Success, Character:{} [{}] Account:{} IP:{}, +{} {}({}), {}({}) [{}], {}({}) [{}], {}", player.getName(), player.getObjectId(), player.getAccountName(), player.getIPAddress(), skill.getLevel() % 100, skill.getName(), skill.getId(), spb.getName(), spb.getCount(), spb.getObjectId(), rate);
+						if (spb != null)
+						{
+							_logEnchant.info("Success, Character:{} [{}] Account:{} IP:{}, +{} {}({}), {}({}) [{}], {}({}) [{}], {}", player.getName(), player.getObjectId(), player.getAccountName(), player.getIPAddress(), skill.getLevel() % 100, skill.getName(), skill.getId(), spb.getName(), spb.getCount(), spb.getObjectId(), rate);
+						}
+						else
+						{
+							_logEnchant.info("Success, Character:{} [{}] Account:{} IP:{}, +{} {}({}), {}({}) [{}], {}", player.getName(), player.getObjectId(), player.getAccountName(), player.getIPAddress(), skill.getLevel() % 100, skill.getName(), skill.getId(), rate);
+						}
 					}
 					else
 					{
-						_logEnchant.info("Success, Character:{} [{}] Account:{} IP:{}, {}({}), {}({}) [{}], {}({}) [{}], {}", player.getName(), player.getObjectId(), player.getAccountName(), player.getIPAddress(), skill.getName(), skill.getId(), spb.getName(), spb.getCount(), spb.getObjectId(), rate);
+						if (spb != null)
+						{
+							_logEnchant.info("Success, Character:{} [{}] Account:{} IP:{}, {}({}), {}({}) [{}], {}({}) [{}], {}", player.getName(), player.getObjectId(), player.getAccountName(), player.getIPAddress(), skill.getName(), skill.getId(), spb.getName(), spb.getCount(), spb.getObjectId(), rate);
+						}
+						else
+						{
+							_logEnchant.info("Success, Character:{} [{}] Account:{} IP:{}, {}({}), {}({}) [{}], {}", player.getName(), player.getObjectId(), player.getAccountName(), player.getIPAddress(), skill.getName(), skill.getId(), rate);
+						}
 					}
 				}
 				
@@ -181,11 +195,25 @@ public final class RequestExEnchantSkill implements IClientIncomingPacket
 				{
 					if (skill.getLevel() > 100)
 					{
-						_logEnchant.info("Fail, Character:{} [{}] Account:{} IP:{}, +{} {}({}), {}({}) [{}], {}({}) [{}], {}", player.getName(), player.getObjectId(), player.getAccountName(), player.getIPAddress(), skill.getLevel() % 100, skill.getName(), skill.getId(), spb.getName(), spb.getCount(), spb.getObjectId(), rate);
+						if (spb != null)
+						{
+							_logEnchant.info("Fail, Character:{} [{}] Account:{} IP:{}, +{} {}({}), {}({}) [{}], {}({}) [{}], {}", player.getName(), player.getObjectId(), player.getAccountName(), player.getIPAddress(), skill.getLevel() % 100, skill.getName(), skill.getId(), spb.getName(), spb.getCount(), spb.getObjectId(), rate);
+						}
+						else
+						{
+							_logEnchant.info("Fail, Character:{} [{}] Account:{} IP:{}, +{} {}({}), {}({}) [{}], {}", player.getName(), player.getObjectId(), player.getAccountName(), player.getIPAddress(), skill.getLevel() % 100, skill.getName(), skill.getId(), rate);
+						}
 					}
 					else
 					{
-						_logEnchant.info("Fail, Character:{} [{}] Account:{} IP:{}, {}({}), {}({}) [{}], {}({}) [{}], {}", player.getName(), player.getObjectId(), player.getAccountName(), player.getIPAddress(), skill.getName(), skill.getId(), spb.getName(), spb.getCount(), spb.getObjectId(), rate);
+						if (spb != null)
+						{
+							_logEnchant.info("Fail, Character:{} [{}] Account:{} IP:{}, {}({}), {}({}) [{}], {}({}) [{}], {}", player.getName(), player.getObjectId(), player.getAccountName(), player.getIPAddress(), skill.getName(), skill.getId(), spb.getName(), spb.getCount(), spb.getObjectId(), rate);
+						}
+						else
+						{
+							_logEnchant.info("Fail, Character:{} [{}] Account:{} IP:{}, {}({}), {}({}) [{}], {}", player.getName(), player.getObjectId(), player.getAccountName(), player.getIPAddress(), skill.getName(), skill.getId(), rate);
+						}
 					}
 				}
 			}
