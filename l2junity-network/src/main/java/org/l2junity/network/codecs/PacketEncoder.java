@@ -24,11 +24,11 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
 
 import java.nio.ByteOrder;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.network.IOutgoingPacket;
 import org.l2junity.network.PacketWriter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author Nos
@@ -36,7 +36,7 @@ import org.l2junity.network.PacketWriter;
 @Sharable
 public class PacketEncoder extends MessageToByteEncoder<IOutgoingPacket>
 {
-	private static final Logger _log = Logger.getLogger(PacketEncoder.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(PacketEncoder.class.getName());
 	
 	private final ByteOrder _byteOrder;
 	private final int _maxPacketSize;
@@ -60,7 +60,7 @@ public class PacketEncoder extends MessageToByteEncoder<IOutgoingPacket>
 		{
 			if (out.writerIndex() > _maxPacketSize)
 			{
-				_log.log(Level.WARNING, "", new IllegalStateException("Packet (" + packet + ") size (" + out.writerIndex() + ") is bigger than the limit (" + _maxPacketSize + ")"));
+				LOGGER.warn("", new IllegalStateException("Packet (" + packet + ") size (" + out.writerIndex() + ") is bigger than the limit (" + _maxPacketSize + ")"));
 				// Avoid sending the packet
 				out.clear();
 			}

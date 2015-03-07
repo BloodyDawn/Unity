@@ -1076,7 +1076,6 @@ public final class Config
 	 */
 	public static void load()
 	{
-		LOGGER.error("test", new Exception("ex"));
 		if (Server.serverMode == Server.MODE_GAMESERVER)
 		{
 			FLOOD_PROTECTOR_USE_ITEM = new FloodProtectorConfig("UseItemFloodProtector");

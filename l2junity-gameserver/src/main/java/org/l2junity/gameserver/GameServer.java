@@ -20,11 +20,8 @@ package org.l2junity.gameserver;
 
 import java.awt.Toolkit;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
 import java.time.Duration;
 import java.util.Calendar;
-import java.util.logging.LogManager;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -406,21 +403,6 @@ public class GameServer
 	public static void main(String[] args) throws Exception
 	{
 		Server.serverMode = Server.MODE_GAMESERVER;
-		// Local Constants
-		final String LOG_FOLDER = "log"; // Name of folder for log file
-		final String LOG_NAME = "./log.cfg"; // Name of log file
-		
-		/*** Main ***/
-		// Create log folder
-		File logFolder = new File(Config.DATAPACK_ROOT, LOG_FOLDER);
-		logFolder.mkdir();
-		
-		// Create input stream for log file -- or store file data into memory
-		try (InputStream is = new FileInputStream(new File(LOG_NAME)))
-		{
-			LogManager.getLogManager().readConfiguration(is);
-		}
-		
 		// Initialize config
 		Config.load();
 		printSection("Database");

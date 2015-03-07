@@ -27,15 +27,15 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author Nos
  */
 public class NetworkManager
 {
-	protected final Logger _log = Logger.getLogger(getClass().getName());
+	protected final Logger _log = LoggerFactory.getLogger(getClass());
 	
 	private final ServerBootstrap _serverBootstrap;
 	private final String _host;
@@ -69,7 +69,7 @@ public class NetworkManager
 		}
 		
 		_channelFuture = _serverBootstrap.bind(_host, _port).sync();
-		_log.log(Level.INFO, getClass().getSimpleName() + ": Listening on " + _host + ":" + _port);
+		_log.info("Listening on {}:{}", _host, _port);
 	}
 	
 	public void stop() throws InterruptedException

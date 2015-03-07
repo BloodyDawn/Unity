@@ -24,19 +24,20 @@ import io.netty.handler.codec.ByteToMessageDecoder;
 
 import java.nio.ByteOrder;
 import java.util.List;
-import java.util.logging.Logger;
 
 import org.l2junity.network.IConnectionState;
 import org.l2junity.network.IIncomingPacket;
 import org.l2junity.network.IIncomingPackets;
 import org.l2junity.network.PacketReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author Nos
  */
 public class PacketDecoder extends ByteToMessageDecoder
 {
-	private static final Logger LOGGER = Logger.getLogger(PacketDecoder.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(PacketDecoder.class);
 	
 	private final ByteOrder _byteOrder;
 	private final IIncomingPackets<?>[] _incomingPackets;
@@ -71,14 +72,14 @@ public class PacketDecoder extends ByteToMessageDecoder
 			final IIncomingPackets<?> incomingPacket = _incomingPackets[packetId];
 			if (incomingPacket == null)
 			{
-				LOGGER.fine(getClass().getSimpleName() + ": Unknown packet: " + Integer.toHexString(packetId));
+				LOGGER.debug(getClass().getSimpleName() + ": Unknown packet: " + Integer.toHexString(packetId));
 				return;
 			}
 			
 			final IConnectionState connectionState = ctx.channel().attr(IConnectionState.ATTRIBUTE_KEY).get();
 			if ((connectionState == null) || !incomingPacket.getConnectionStates().contains(connectionState))
 			{
-				LOGGER.warning(incomingPacket + ": Connection at invalid state: " + connectionState + " Required State: " + incomingPacket.getConnectionStates());
+				LOGGER.warn(incomingPacket + ": Connection at invalid state: " + connectionState + " Required State: " + incomingPacket.getConnectionStates());
 				return;
 			}
 			
