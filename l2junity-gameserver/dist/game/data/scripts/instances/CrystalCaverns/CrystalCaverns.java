@@ -20,11 +20,9 @@ package instances.CrystalCaverns;
 
 import instances.AbstractInstance;
 
-import java.util.List;
 import java.util.Map;
-
-import javolution.util.FastList;
-import javolution.util.FastMap;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.GeoData;
@@ -84,15 +82,15 @@ public final class CrystalCaverns extends AbstractInstance
 	
 	private class CCWorld extends InstanceWorld
 	{
-		public Map<Npc, Boolean> npcList1 = new FastMap<>();
+		public Map<Npc, Boolean> npcList1 = new ConcurrentHashMap<>();
 		public Npc tears;
 		public boolean isUsedInvulSkill = false;
 		public long dragonScaleStart = 0;
 		public int dragonScaleNeed = 0;
 		public int cleanedRooms = 0;
 		public long endTime = 0;
-		public List<Npc> copys = new FastList<>();
-		public Map<Npc, CrystalGolem> crystalGolems = new FastMap<>();
+		public Set<Npc> copys = ConcurrentHashMap.newKeySet();
+		public Map<Npc, CrystalGolem> crystalGolems = new ConcurrentHashMap<>();
 		public int correctGolems = 0;
 		public boolean[] OracleTriggered =
 		{
@@ -108,18 +106,17 @@ public final class CrystalCaverns extends AbstractInstance
 			0,
 			0
 		}; // 0: not spawned, 1: spawned, 2: cleared
-		public Map<L2DoorInstance, PlayerInstance> openedDoors = new FastMap<>();
-		public Map<Integer, Map<Npc, Boolean>> npcList2 = new FastMap<>();
-		public Map<Npc, Npc> oracles = new FastMap<>();
-		public List<Npc> keyKeepers = new FastList<>();
-		public List<Npc> guards = new FastList<>();
-		public List<Npc> oracle = new FastList<>();
+		public Map<L2DoorInstance, PlayerInstance> openedDoors = new ConcurrentHashMap<>();
+		public Map<Integer, Map<Npc, Boolean>> npcList2 = new ConcurrentHashMap<>();
+		public Map<Npc, Npc> oracles = new ConcurrentHashMap<>();
+		public Set<Npc> keyKeepers = ConcurrentHashMap.newKeySet();
+		public Set<Npc> oracle = ConcurrentHashMap.newKeySet();
 		// baylor variables
-		protected final List<PlayerInstance> _raiders = new FastList<>();
+		protected final Set<PlayerInstance> _raiders = ConcurrentHashMap.newKeySet();
 		protected int _raidStatus = 0;
 		protected long _dragonClawStart = 0;
 		protected int _dragonClawNeed = 0;
-		protected final List<Npc> _animationMobs = new FastList<>();
+		protected final Set<Npc> _animationMobs = ConcurrentHashMap.newKeySet();
 		protected Npc _camera = null;
 		protected Npc _baylor = null;
 		protected Npc _alarm = null;
@@ -800,7 +797,7 @@ public final class CrystalCaverns extends AbstractInstance
 	{
 		world.setStatus(3);
 		
-		Map<Npc, Boolean> spawnList = new FastMap<>();
+		Map<Npc, Boolean> spawnList = new ConcurrentHashMap<>();
 		for (int[] spawn : EMERALD_SPAWNS)
 		{
 			Npc mob = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4], false, 0, false, world.getInstanceId());
@@ -811,7 +808,7 @@ public final class CrystalCaverns extends AbstractInstance
 	
 	protected void runEmeraldRooms(CCWorld world, int[][] spawnList, int room)
 	{
-		Map<Npc, Boolean> spawned = new FastMap<>();
+		Map<Npc, Boolean> spawned = new ConcurrentHashMap<>();
 		for (int[] spawn : spawnList)
 		{
 			Npc mob = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4], false, 0, false, world.getInstanceId());
@@ -839,7 +836,7 @@ public final class CrystalCaverns extends AbstractInstance
 	{
 		world.setStatus(status);
 		
-		Map<Npc, Boolean> spawned = new FastMap<>();
+		Map<Npc, Boolean> spawned = new ConcurrentHashMap<>();
 		for (int[] spawn : spawnList)
 		{
 			Npc mob = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4], false, 0, false, world.getInstanceId());
@@ -1069,10 +1066,7 @@ public final class CrystalCaverns extends AbstractInstance
 					}
 					if (notAOE)
 					{
-						for (Npc copy : world.copys)
-						{
-							copy.onDecay();
-						}
+						world.copys.forEach(Npc::onDecay);
 						world.copys.clear();
 					}
 					return "";
@@ -1184,15 +1178,15 @@ public final class CrystalCaverns extends AbstractInstance
 			else if (event.equalsIgnoreCase("spawnGuards"))
 			{
 				world.kechisHenchmanSpawn++;
-				world.guards.add(addSpawn(KECHIGUARD, 153622, 149699, -12131, 56890, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153609, 149622, -12131, 64023, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153606, 149428, -12131, 64541, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153601, 149534, -12131, 64901, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153620, 149354, -12131, 1164, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153637, 149776, -12131, 61733, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153638, 149292, -12131, 64071, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153647, 149857, -12131, 59402, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153661, 149227, -12131, 65275, false, 0, false, world.getInstanceId()));
+				addSpawn(KECHIGUARD, 153622, 149699, -12131, 56890, false, 0, false, world.getInstanceId());
+				addSpawn(KECHIGUARD, 153609, 149622, -12131, 64023, false, 0, false, world.getInstanceId());
+				addSpawn(KECHIGUARD, 153606, 149428, -12131, 64541, false, 0, false, world.getInstanceId());
+				addSpawn(KECHIGUARD, 153601, 149534, -12131, 64901, false, 0, false, world.getInstanceId());
+				addSpawn(KECHIGUARD, 153620, 149354, -12131, 1164, false, 0, false, world.getInstanceId());
+				addSpawn(KECHIGUARD, 153637, 149776, -12131, 61733, false, 0, false, world.getInstanceId());
+				addSpawn(KECHIGUARD, 153638, 149292, -12131, 64071, false, 0, false, world.getInstanceId());
+				addSpawn(KECHIGUARD, 153647, 149857, -12131, 59402, false, 0, false, world.getInstanceId());
+				addSpawn(KECHIGUARD, 153661, 149227, -12131, 65275, false, 0, false, world.getInstanceId());
 				if (world.kechisHenchmanSpawn <= 5)
 				{
 					startQuestTimer("spawnGuards", SPAWN[world.kechisHenchmanSpawn], npc, null);
@@ -1275,16 +1269,10 @@ public final class CrystalCaverns extends AbstractInstance
 					{
 						Throw(npc, p.getPet());
 					}
-					p.getServitors().values().forEach(s ->
-					{
-						Throw(npc, s);
-					});
+					p.getServitors().values().forEach(s -> Throw(npc, s));
 				}
 				world._raidStatus = 0;
-				for (Npc mob : world._animationMobs)
-				{
-					mob.doDie(mob);
-				}
+				world._animationMobs.forEach(n -> n.doDie(n));
 				world._animationMobs.clear();
 				startQuestTimer("baylor_despawn", 60000, npc, null, true);
 				startQuestTimer("checkBaylorAttack", 1000, npc, null);
@@ -1348,8 +1336,17 @@ public final class CrystalCaverns extends AbstractInstance
 					}
 					else if (rand < 33)
 					{
-						npc.setTarget(world._raiders.get(getRandom(world._raiders.size())));
-						npc.doCast(SkillData.getInstance().getSkill(5229, 1));
+						int rnd = getRandom(world._raiders.size());
+						int i = 0;
+						for (PlayerInstance rndPlayer : world._raiders)
+						{
+							if (rnd == i++)
+							{
+								npc.setTarget(rndPlayer);
+								npc.doCast(SkillData.getInstance().getSkill(5229, 1));
+								break;
+							}
+						}
 					}
 				}
 			}
@@ -1380,26 +1377,22 @@ public final class CrystalCaverns extends AbstractInstance
 					return "";
 				}
 				CrystalGolem cryGolem = world.crystalGolems.get(npc);
-				List<WorldObject> crystals = new FastList<>();
+				int minDist = 300000;
 				for (WorldObject object : World.getInstance().getVisibleObjects(npc, 300))
 				{
 					if ((object instanceof ItemInstance) && (object.getId() == CRYSTALFOOD))
 					{
-						crystals.add(object);
+						int dx = npc.getX() - object.getX();
+						int dy = npc.getY() - object.getY();
+						int d = (dx * dx) + (dy * dy);
+						if (d < minDist)
+						{
+							minDist = d;
+							cryGolem.foodItem = (ItemInstance) object;
+						}
 					}
 				}
-				int minDist = 300000;
-				for (WorldObject crystal : crystals)
-				{
-					int dx = npc.getX() - crystal.getX();
-					int dy = npc.getY() - crystal.getY();
-					int d = (dx * dx) + (dy * dy);
-					if (d < minDist)
-					{
-						minDist = d;
-						cryGolem.foodItem = (ItemInstance) crystal;
-					}
-				}
+				
 				if (minDist != 300000)
 				{
 					startQuestTimer("getFood", 2000, npc, null);

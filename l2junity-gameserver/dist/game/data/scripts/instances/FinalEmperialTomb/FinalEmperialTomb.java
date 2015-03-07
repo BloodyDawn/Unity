@@ -21,17 +21,18 @@ package instances.FinalEmperialTomb;
 import instances.AbstractInstance;
 
 import java.io.File;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 import javax.xml.parsers.DocumentBuilderFactory;
-
-import javolution.util.FastList;
-import javolution.util.FastMap;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.GeoData;
@@ -84,7 +85,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 	private class FETWorld extends InstanceWorld
 	{
 		protected Lock lock = new ReentrantLock();
-		protected FastList<Npc> npcList = new FastList<>();
+		protected Set<Npc> npcList = ConcurrentHashMap.newKeySet();
 		protected int darkChoirPlayerCount = 0;
 		protected FrintezzaSong OnSong = null;
 		protected ScheduledFuture<?> songTask = null;
@@ -97,8 +98,8 @@ public final class FinalEmperialTomb extends AbstractInstance
 		protected Npc scarletDummy = null;
 		protected L2GrandBossInstance frintezza = null;
 		protected L2GrandBossInstance activeScarlet = null;
-		protected List<L2MonsterInstance> demons = new FastList<>();
-		protected Map<L2MonsterInstance, Integer> portraits = new FastMap<>();
+		protected List<L2MonsterInstance> demons = Collections.synchronizedList(new LinkedList<>());
+		protected Map<L2MonsterInstance, Integer> portraits = new ConcurrentHashMap<>();
 		protected int scarlet_x = 0;
 		protected int scarlet_y = 0;
 		protected int scarlet_z = 0;
@@ -107,7 +108,6 @@ public final class FinalEmperialTomb extends AbstractInstance
 		
 		protected FETWorld()
 		{
-			npcList.shared();
 		}
 	}
 	
@@ -194,7 +194,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 	private static final boolean debug = false;
 	private final Map<Integer, Territory> _spawnZoneList = new HashMap<>();
 	private final Map<Integer, List<FETSpawn>> _spawnList = new HashMap<>();
-	private final List<Integer> _mustKillMobsId = new FastList<>();
+	private final Set<Integer> _mustKillMobsId = ConcurrentHashMap.newKeySet();
 	protected static final int[] FIRST_ROOM_DOORS =
 	{
 		17130051,
@@ -301,7 +301,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 								int flag = Integer.parseInt(attrs.getNamedItem("flag").getNodeValue());
 								if (!_spawnList.containsKey(flag))
 								{
-									_spawnList.put(flag, new FastList<FETSpawn>());
+									_spawnList.put(flag, new LinkedList<FETSpawn>());
 								}
 								
 								for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
@@ -848,7 +848,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 					
 					if ((_world.frintezza != null) && !_world.frintezza.isDead() && (_world.activeScarlet != null) && !_world.activeScarlet.isDead())
 					{
-						List<Creature> targetList = new FastList<>();
+						List<Creature> targetList = new LinkedList<>();
 						if (skill.hasEffectType(L2EffectType.STUN) || skill.isDebuff())
 						{
 							for (int objId : _world.getAllowed())
