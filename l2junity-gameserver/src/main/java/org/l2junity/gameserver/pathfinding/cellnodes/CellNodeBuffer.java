@@ -22,8 +22,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.locks.ReentrantLock;
 
-import javolution.util.FastList;
-
 import org.l2junity.Config;
 
 /**
@@ -115,7 +113,7 @@ public class CellNodeBuffer
 		return _lastElapsedTime;
 	}
 	
-	public final FastList<CellNode> debugPath()
+	public final List<CellNode> debugPath()
 	{
 		List<CellNode> result = new LinkedList<>();
 		

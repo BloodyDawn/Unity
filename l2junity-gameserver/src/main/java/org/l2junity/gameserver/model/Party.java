@@ -84,7 +84,7 @@ public class Party extends AbstractPlayerGroup
 	private static final Duration PARTY_POSITION_BROADCAST_INTERVAL = Duration.ofSeconds(12);
 	private static final Duration PARTY_DISTRIBUTION_TYPE_REQUEST_TIMEOUT = Duration.ofSeconds(15);
 	
-	private final List<PlayerInstance> _members;
+	private final FastList<PlayerInstance> _members;
 	private boolean _pendingInvitation = false;
 	private long _pendingInviteTimeout;
 	private int _partyLvl = 0;

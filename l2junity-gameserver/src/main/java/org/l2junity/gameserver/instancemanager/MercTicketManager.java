@@ -50,7 +50,7 @@ public final class MercTicketManager
 {
 	private static final Logger _log = LoggerFactory.getLogger(MercTicketManager.class.getName());
 	
-	private static final List<ItemInstance> _droppedTickets = new FastList<>();
+	private static final FastList<ItemInstance> _droppedTickets = new FastList<>();
 	
 	// TODO: move all these values into siege.properties
 	// max tickets per merc type = 10 + (castleid * 2)?
