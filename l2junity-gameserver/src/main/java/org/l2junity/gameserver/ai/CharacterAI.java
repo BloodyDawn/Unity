@@ -28,9 +28,8 @@ import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_MOVE_TO;
 import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_PICK_UP;
 import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_REST;
 
-import java.util.List;
-
-import javolution.util.FastList;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GameTimeController;
@@ -1205,19 +1204,18 @@ public class CharacterAI extends AbstractAI
 		public boolean isHealer = false;
 		public boolean isFighter = false;
 		public boolean cannotMoveOnLand = false;
-		public List<Skill> generalSkills = new FastList<>();
-		public List<Skill> buffSkills = new FastList<>();
+		public Set<Skill> generalSkills = ConcurrentHashMap.newKeySet();
+		public Set<Skill> buffSkills = ConcurrentHashMap.newKeySet();
 		public int lastBuffTick = 0;
-		public List<Skill> debuffSkills = new FastList<>();
+		public Set<Skill> debuffSkills = ConcurrentHashMap.newKeySet();
 		public int lastDebuffTick = 0;
-		public List<Skill> cancelSkills = new FastList<>();
-		public List<Skill> healSkills = new FastList<>();
-		// public List<L2Skill> trickSkills = new FastList<>();
-		public List<Skill> generalDisablers = new FastList<>();
-		public List<Skill> sleepSkills = new FastList<>();
-		public List<Skill> rootSkills = new FastList<>();
-		public List<Skill> muteSkills = new FastList<>();
-		public List<Skill> resurrectSkills = new FastList<>();
+		public Set<Skill> cancelSkills = ConcurrentHashMap.newKeySet();
+		public Set<Skill> healSkills = ConcurrentHashMap.newKeySet();
+		public Set<Skill> generalDisablers = ConcurrentHashMap.newKeySet();
+		public Set<Skill> sleepSkills = ConcurrentHashMap.newKeySet();
+		public Set<Skill> rootSkills = ConcurrentHashMap.newKeySet();
+		public Set<Skill> muteSkills = ConcurrentHashMap.newKeySet();
+		public Set<Skill> resurrectSkills = ConcurrentHashMap.newKeySet();
 		public boolean hasHealOrResurrect = false;
 		public boolean hasLongRangeSkills = false;
 		public boolean hasLongRangeDamageSkills = false;

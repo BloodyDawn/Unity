@@ -24,10 +24,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.List;
 import java.util.Properties;
-
-import javolution.util.FastList;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.Config;
 import org.l2junity.Server;
@@ -44,7 +43,7 @@ public class Status extends Thread
 	private final int _uptime;
 	private String _statusPw;
 	private final int _mode;
-	private final List<LoginStatusThread> _loginStatus;
+	private final Set<LoginStatusThread> _loginStatus = ConcurrentHashMap.newKeySet();
 	
 	@Override
 	public void run()
@@ -124,7 +123,6 @@ public class Status extends Thread
 		}
 		statusServerSocket = new ServerSocket(statusPort);
 		_uptime = (int) System.currentTimeMillis();
-		_loginStatus = new FastList<>();
 	}
 	
 	private String rndPW(int length)

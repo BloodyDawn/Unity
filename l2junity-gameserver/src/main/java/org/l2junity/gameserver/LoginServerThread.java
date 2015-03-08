@@ -37,9 +37,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import javolution.util.FastList;
-import javolution.util.FastMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -104,8 +104,8 @@ public class LoginServerThread extends Thread
 	private int _requestID;
 	private final boolean _reserveHost;
 	private int _maxPlayer;
-	private final List<WaitingClient> _waitingClients;
-	private final FastMap<String, L2GameClient> _accountsInGameServer = new FastMap<>();
+	private final Set<WaitingClient> _waitingClients = ConcurrentHashMap.newKeySet();
+	private final Map<String, L2GameClient> _accountsInGameServer = new ConcurrentHashMap<>();
 	private int _status;
 	private String _serverName;
 	private final List<String> _subnets;
@@ -134,8 +134,6 @@ public class LoginServerThread extends Thread
 		_reserveHost = Config.RESERVE_HOST_ON_LOGIN;
 		_subnets = Config.GAME_SERVER_SUBNETS;
 		_hosts = Config.GAME_SERVER_HOSTS;
-		_waitingClients = new FastList<>();
-		_accountsInGameServer.shared();
 		_maxPlayer = Config.MAXIMUM_ONLINE_USERS;
 	}
 	
