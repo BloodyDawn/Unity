@@ -1645,7 +1645,7 @@ public final class Config
 			}
 			EXPERTISE_PENALTY = Character.getBoolean("ExpertisePenalty", true);
 			STORE_RECIPE_SHOPLIST = Character.getBoolean("StoreRecipeShopList", false);
-			STORE_UI_SETTINGS = Character.getBoolean("StoreCharUiSettings", false);
+			STORE_UI_SETTINGS = Character.getBoolean("StoreCharUiSettings", true);
 			FORBIDDEN_NAMES = Character.getString("ForbiddenNames", "").split(",");
 			SILENCE_MODE_EXCLUDE = Character.getBoolean("SilenceModeExclude", false);
 			ALT_VALIDATE_TRIGGER_SKILLS = Character.getBoolean("AltValidateTriggerSkills", false);
