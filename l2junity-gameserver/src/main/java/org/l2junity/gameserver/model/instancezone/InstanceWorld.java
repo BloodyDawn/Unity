@@ -18,10 +18,9 @@
  */
 package org.l2junity.gameserver.model.instancezone;
 
-import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
-
-import javolution.util.FastList;
 
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -37,17 +36,17 @@ public class InstanceWorld
 {
 	private int _instanceId;
 	private int _templateId = -1;
-	private final List<Integer> _allowed = new FastList<>();
+	private final Set<Integer> _allowed = ConcurrentHashMap.newKeySet();
 	private final AtomicInteger _status = new AtomicInteger();
 	
-	public List<Integer> getAllowed()
+	public Set<Integer> getAllowed()
 	{
 		return _allowed;
 	}
 	
 	public void removeAllowed(int id)
 	{
-		_allowed.remove(_allowed.indexOf(Integer.valueOf(id)));
+		_allowed.remove(id);
 	}
 	
 	public void addAllowed(int id)

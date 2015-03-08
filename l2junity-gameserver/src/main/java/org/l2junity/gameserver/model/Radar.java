@@ -18,7 +18,8 @@
  */
 package org.l2junity.gameserver.model;
 
-import javolution.util.FastList;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.RadarControl;
@@ -29,12 +30,11 @@ import org.l2junity.gameserver.network.client.send.RadarControl;
 public final class Radar
 {
 	private final PlayerInstance _player;
-	private final FastList<RadarMarker> _markers;
+	private final Set<RadarMarker> _markers = ConcurrentHashMap.newKeySet();
 	
 	public Radar(PlayerInstance player)
 	{
 		_player = player;
-		_markers = new FastList<>();
 	}
 	
 	// Add a marker to player's radar
@@ -50,9 +50,13 @@ public final class Radar
 	// Remove a marker from player's radar
 	public void removeMarker(int x, int y, int z)
 	{
-		RadarMarker newMarker = new RadarMarker(x, y, z);
-		
-		_markers.remove(newMarker);
+		for (RadarMarker rm : _markers)
+		{
+			if ((rm._x == x) && (rm._y == y) && (rm._z == z))
+			{
+				_markers.remove(rm);
+			}
+		}
 		_player.sendPacket(new RadarControl(1, 1, x, y, z));
 	}
 	

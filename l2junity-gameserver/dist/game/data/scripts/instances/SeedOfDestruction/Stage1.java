@@ -853,7 +853,7 @@ public final class Stage1 extends AbstractInstance
 			SOD1World world = (SOD1World) tmpworld;
 			if (event.equalsIgnoreCase("Spawn"))
 			{
-				PlayerInstance target = World.getInstance().getPlayer(world.getAllowed().get(getRandom(world.getAllowed().size())));
+				PlayerInstance target = World.getInstance().getPlayer(world.getAllowed().toArray(new Integer[0])[getRandom(world.getAllowed().size())]);
 				if ((world.deviceSpawnedMobCount < MAX_DEVICESPAWNEDMOBCOUNT) && (target != null) && (target.getInstanceId() == npc.getInstanceId()) && !target.isDead())
 				{
 					Attackable mob = (Attackable) addSpawn(SPAWN_MOB_IDS[getRandom(SPAWN_MOB_IDS.length)], npc.getSpawn().getLocation(), false, 0, false, world.getInstanceId());

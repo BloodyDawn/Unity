@@ -21,6 +21,7 @@ package org.l2junity.gameserver.model;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
@@ -786,31 +787,29 @@ public class Party extends AbstractPlayerGroup
 		
 		// Check the number of party members that must be rewarded
 		// (The party member must be in range to receive its reward)
-		List<PlayerInstance> ToReward = FastList.newInstance();
+		List<PlayerInstance> toReward = new LinkedList<>();
 		for (PlayerInstance member : membersList)
 		{
 			if (!Util.checkIfInRange(Config.ALT_PARTY_RANGE2, target, member, true))
 			{
 				continue;
 			}
-			ToReward.add(member);
+			toReward.add(member);
 		}
 		
 		// Avoid null exceptions, if any
-		if (ToReward.isEmpty())
+		if (toReward.isEmpty())
 		{
 			return;
 		}
 		
 		// Now we can actually distribute the adena reward
 		// (Total adena splitted by the number of party members that are in range and must be rewarded)
-		long count = adena / ToReward.size();
-		for (PlayerInstance member : ToReward)
+		long count = adena / toReward.size();
+		for (PlayerInstance member : toReward)
 		{
 			member.addAdena("Party", count, player, true);
 		}
-		
-		FastList.recycle((FastList<?>) ToReward);
 	}
 	
 	/**

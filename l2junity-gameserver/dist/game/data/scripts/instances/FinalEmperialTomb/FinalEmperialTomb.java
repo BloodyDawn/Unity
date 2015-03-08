@@ -1303,7 +1303,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 		
 		private void addAggroToMobs()
 		{
-			PlayerInstance target = World.getInstance().getPlayer(_world.getAllowed().get(getRandom(_world.getAllowed().size())));
+			PlayerInstance target = World.getInstance().getPlayer(_world.getAllowed().toArray(new Integer[0])[getRandom(_world.getAllowed().size())]);
 			if ((target == null) || (target.getInstanceId() != _world.getInstanceId()) || target.isDead() || target.isFakeDeath())
 			{
 				for (int objId : _world.getAllowed())

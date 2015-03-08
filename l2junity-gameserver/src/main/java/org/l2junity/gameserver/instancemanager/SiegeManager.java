@@ -23,11 +23,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
-
-import javolution.util.FastList;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -270,7 +269,7 @@ public final class SiegeManager
 	
 	public final List<Siege> getSieges()
 	{
-		FastList<Siege> sieges = new FastList<>();
+		List<Siege> sieges = new LinkedList<>();
 		for (Castle castle : CastleManager.getInstance().getCastles())
 		{
 			sieges.add(castle.getSiege());

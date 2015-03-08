@@ -19,8 +19,7 @@
 package org.l2junity.gameserver.model;
 
 import java.util.List;
-
-import javolution.util.FastList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.l2junity.gameserver.enums.PetitionState;
 import org.l2junity.gameserver.enums.PetitionType;
@@ -44,7 +43,7 @@ public final class Petition
 	private final PetitionType _type;
 	private PetitionState _state = PetitionState.PENDING;
 	private final String _content;
-	private final List<CreatureSay> _messageLog = new FastList<>();
+	private final List<CreatureSay> _messageLog = new CopyOnWriteArrayList<>();
 	private final PlayerInstance _petitioner;
 	private PlayerInstance _responder;
 	
