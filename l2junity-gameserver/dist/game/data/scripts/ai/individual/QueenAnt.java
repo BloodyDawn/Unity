@@ -18,9 +18,8 @@
  */
 package ai.individual;
 
-import java.util.List;
-
-import javolution.util.FastList;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.ai.CtrlIntention;
@@ -83,7 +82,7 @@ public final class QueenAnt extends AbstractNpcAI
 	
 	private L2MonsterInstance _queen = null;
 	private L2MonsterInstance _larva = null;
-	private final List<L2MonsterInstance> _nurses = new FastList<>(5);
+	private final Set<L2MonsterInstance> _nurses = ConcurrentHashMap.newKeySet();
 	
 	private QueenAnt()
 	{

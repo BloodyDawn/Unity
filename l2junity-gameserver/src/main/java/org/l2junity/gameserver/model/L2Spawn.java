@@ -19,12 +19,12 @@
 package org.l2junity.gameserver.model;
 
 import java.lang.reflect.Constructor;
-import java.util.List;
+import java.util.Deque;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-
-import javolution.util.FastList;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
@@ -82,8 +82,8 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 	private boolean _doRespawn;
 	/** If true then spawn is custom */
 	private boolean _customSpawn;
-	private static List<SpawnListener> _spawnListeners = new FastList<>();
-	private final FastList<Npc> _spawnedNpcs = new FastList<>();
+	private static Set<SpawnListener> _spawnListeners = ConcurrentHashMap.newKeySet();
+	private final Deque<Npc> _spawnedNpcs = new ConcurrentLinkedDeque<>();
 	private Map<Integer, Location> _lastSpawnPoints;
 	private boolean _isNoRndWalk = false; // Is no random walk
 	
@@ -796,7 +796,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		return !_spawnedNpcs.isEmpty() && _spawnedNpcs.getLast().deleteMe();
 	}
 	
-	public final FastList<Npc> getSpawnedNpcs()
+	public final Deque<Npc> getSpawnedNpcs()
 	{
 		return _spawnedNpcs;
 	}

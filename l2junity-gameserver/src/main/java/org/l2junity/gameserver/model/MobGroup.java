@@ -18,9 +18,8 @@
  */
 package org.l2junity.gameserver.model;
 
-import java.util.List;
-
-import javolution.util.FastList;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ai.ControllableMobAI;
@@ -40,7 +39,7 @@ public final class MobGroup
 	private final int _groupId;
 	private final int _maxMobCount;
 	
-	private List<L2ControllableMobInstance> _mobs;
+	private Set<L2ControllableMobInstance> _mobs;
 	
 	public MobGroup(int groupId, L2NpcTemplate npcTemplate, int maxMobCount)
 	{
@@ -64,11 +63,11 @@ public final class MobGroup
 		return _maxMobCount;
 	}
 	
-	public List<L2ControllableMobInstance> getMobs()
+	public Set<L2ControllableMobInstance> getMobs()
 	{
 		if (_mobs == null)
 		{
-			_mobs = new FastList<>();
+			_mobs = ConcurrentHashMap.newKeySet();
 		}
 		
 		return _mobs;
@@ -78,7 +77,7 @@ public final class MobGroup
 	{
 		try
 		{
-			ControllableMobAI mobGroupAI = (ControllableMobAI) getMobs().get(0).getAI();
+			ControllableMobAI mobGroupAI = (ControllableMobAI) getMobs().stream().findFirst().get().getAI();
 			
 			switch (mobGroupAI.getAlternateAI())
 			{
@@ -198,7 +197,14 @@ public final class MobGroup
 		}
 		
 		int choice = Rnd.nextInt(getActiveMobCount());
-		return getMobs().get(choice);
+		for (L2ControllableMobInstance mob : getMobs())
+		{
+			if (--choice == 0)
+			{
+				return mob;
+			}
+		}
+		return null;
 	}
 	
 	public void unspawnGroup()
@@ -370,17 +376,7 @@ public final class MobGroup
 	
 	protected void removeDead()
 	{
-		List<L2ControllableMobInstance> deadMobs = new FastList<>();
-		
-		for (L2ControllableMobInstance mobInst : getMobs())
-		{
-			if ((mobInst != null) && mobInst.isDead())
-			{
-				deadMobs.add(mobInst);
-			}
-		}
-		
-		getMobs().removeAll(deadMobs);
+		getMobs().removeIf(Creature::isDead);
 	}
 	
 	public void setInvul(boolean invulState)

@@ -22,9 +22,9 @@ import instances.AbstractInstance;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
-
-import javolution.util.FastList;
 
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.Movie;
@@ -50,8 +50,8 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 {
 	protected class DNPWorld extends InstanceWorld
 	{
-		protected final FastList<Npc> anakimGroup = new FastList<>();
-		protected final FastList<Npc> lilithGroup = new FastList<>();
+		protected final Set<Npc> anakimGroup = ConcurrentHashMap.newKeySet();
+		protected final Set<Npc> lilithGroup = ConcurrentHashMap.newKeySet();
 		protected AtomicInteger countKill = new AtomicInteger();
 	}
 	
@@ -183,9 +183,9 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 		teleportPlayer(player, ENTER, world.getInstanceId());
 	}
 	
-	private void makeCast(Npc npc, FastList<Npc> targets)
+	private void makeCast(Npc npc, Set<Npc> targets)
 	{
-		npc.setTarget(targets.get(getRandom(targets.size())));
+		npc.setTarget(targets.toArray(new Npc[0])[getRandom(targets.size())]);
 		if (SKILLS.containsKey(npc.getId()))
 		{
 			npc.doCast(SKILLS.get(npc.getId()).getSkill());

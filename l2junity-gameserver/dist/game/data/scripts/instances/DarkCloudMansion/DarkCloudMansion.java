@@ -22,8 +22,8 @@ import instances.AbstractInstance;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import javolution.util.FastList;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
@@ -231,7 +231,7 @@ public final class DarkCloudMansion extends AbstractInstance
 	
 	protected static class DMCRoom
 	{
-		public FastList<DMCNpc> npcList = new FastList<>();
+		public Set<DMCNpc> npcList = ConcurrentHashMap.newKeySet();
 		public int counter = 0;
 		public int reset = 0;
 		public int founded = 0;

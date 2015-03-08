@@ -20,6 +20,8 @@ package org.l2junity.gameserver.model;
 
 import static org.l2junity.gameserver.model.itemcontainer.Inventory.MAX_ADENA;
 
+import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -122,18 +124,16 @@ public class TradeList
 	 * @param inventory
 	 * @return L2ItemInstance : items in inventory
 	 */
-	public TradeItem[] getAvailableItems(PcInventory inventory)
+	public Collection<TradeItem> getAvailableItems(PcInventory inventory)
 	{
-		FastList<TradeItem> list = FastList.newInstance();
+		List<TradeItem> list = new LinkedList<>();
 		for (TradeItem item : _items)
 		{
 			item = new TradeItem(item, item.getCount(), item.getPrice());
 			inventory.adjustAvailableItem(item);
 			list.add(item);
 		}
-		TradeItem[] result = list.toArray(new TradeItem[list.size()]);
-		FastList.recycle(list);
-		return result;
+		return list;
 	}
 	
 	/**

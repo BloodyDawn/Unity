@@ -20,8 +20,9 @@ package org.l2junity.gameserver.model.entity;
 
 import java.util.Calendar;
 import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
-import javolution.util.FastList;
 
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CtrlIntention;
@@ -108,7 +109,7 @@ public class Duel
 		private double _cp;
 		private boolean _paDuel;
 		private int _x, _y, _z;
-		private FastList<Skill> _debuffs;
+		private Set<Skill> _debuffs;
 		
 		public PlayerCondition(PlayerInstance player, boolean partyDuel)
 		{
@@ -160,7 +161,7 @@ public class Duel
 		{
 			if (_debuffs == null)
 			{
-				_debuffs = new FastList<>();
+				_debuffs = ConcurrentHashMap.newKeySet();
 			}
 			
 			_debuffs.add(debuff);
