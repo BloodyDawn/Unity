@@ -28,11 +28,11 @@ import java.nio.channels.FileChannel;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import javolution.util.FastList;
 import javolution.util.FastMap;
 
 import org.l2junity.Config;
@@ -226,7 +226,7 @@ public class GeoPathFinding extends PathFinding
 		short regoffset = getRegionOffset(getRegionX(node_x), getRegionY(node_y));
 		ByteBuffer pn = _pathNodes.get(regoffset);
 		
-		List<AbstractNode> Neighbors = new FastList<>(8);
+		List<AbstractNode> Neighbors = new ArrayList<>(8);
 		GeoNode newNode;
 		short new_node_x, new_node_y;
 		

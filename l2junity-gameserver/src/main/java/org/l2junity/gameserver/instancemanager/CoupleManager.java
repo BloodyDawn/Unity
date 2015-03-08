@@ -21,7 +21,8 @@ package org.l2junity.gameserver.instancemanager;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import javolution.util.FastList;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.World;
@@ -37,7 +38,7 @@ public final class CoupleManager
 {
 	private static final Logger _log = LoggerFactory.getLogger(CoupleManager.class.getName());
 	
-	private FastList<Couple> _couples;
+	private volatile Map<Integer, Couple> _couples;
 	
 	protected CoupleManager()
 	{
@@ -58,7 +59,8 @@ public final class CoupleManager
 		{
 			while (rs.next())
 			{
-				getCouples().add(new Couple(rs.getInt("id")));
+				final int coupleId = rs.getInt("id");
+				getCouples().put(coupleId, new Couple(coupleId));
 			}
 			_log.info(getClass().getSimpleName() + ": Loaded: " + getCouples().size() + " couples(s)");
 		}
@@ -70,12 +72,7 @@ public final class CoupleManager
 	
 	public final Couple getCouple(int coupleId)
 	{
-		int index = getCoupleIndex(coupleId);
-		if (index >= 0)
-		{
-			return getCouples().get(index);
-		}
-		return null;
+		return getCouples().get(coupleId);
 	}
 	
 	public void createCouple(PlayerInstance player1, PlayerInstance player2)
@@ -88,7 +85,7 @@ public final class CoupleManager
 				int _player2id = player2.getObjectId();
 				
 				Couple _new = new Couple(player1, player2);
-				getCouples().add(_new);
+				getCouples().put(_new.getId(), _new);
 				player1.setPartnerId(_player2id);
 				player2.setPartnerId(_player1id);
 				player1.setCoupleId(_new.getId());
@@ -99,8 +96,7 @@ public final class CoupleManager
 	
 	public void deleteCouple(int coupleId)
 	{
-		int index = getCoupleIndex(coupleId);
-		Couple couple = getCouples().get(index);
+		Couple couple = getCouples().get(coupleId);
 		if (couple != null)
 		{
 			PlayerInstance player1 = World.getInstance().getPlayer(couple.getPlayer1Id());
@@ -120,29 +116,22 @@ public final class CoupleManager
 				
 			}
 			couple.divorce();
-			getCouples().remove(index);
+			getCouples().remove(coupleId);
 		}
 	}
 	
-	public final int getCoupleIndex(int coupleId)
+	public final Map<Integer, Couple> getCouples()
 	{
-		int i = 0;
-		for (Couple temp : getCouples())
-		{
-			if ((temp != null) && (temp.getId() == coupleId))
-			{
-				return i;
-			}
-			i++;
-		}
-		return -1;
-	}
-	
-	public final FastList<Couple> getCouples()
-	{
+		
 		if (_couples == null)
 		{
-			_couples = new FastList<>();
+			synchronized (this)
+			{
+				if (_couples == null)
+				{
+					_couples = new ConcurrentHashMap<>();
+				}
+			}
 		}
 		return _couples;
 	}

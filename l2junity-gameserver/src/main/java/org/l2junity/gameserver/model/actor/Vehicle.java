@@ -20,8 +20,8 @@ package org.l2junity.gameserver.model.actor;
 
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.List;
-import javolution.util.FastList;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.GameTimeController;
@@ -53,7 +53,7 @@ import org.l2junity.gameserver.util.Util;
 public abstract class Vehicle extends Creature
 {
 	protected int _dockId = 0;
-	protected final FastList<PlayerInstance> _passengers = new FastList<>();
+	protected final Set<PlayerInstance> _passengers = ConcurrentHashMap.newKeySet();
 	protected Location _oustLoc = null;
 	private Runnable _engine = null;
 	
@@ -282,7 +282,7 @@ public abstract class Vehicle extends Creature
 		return _passengers.isEmpty();
 	}
 	
-	public List<PlayerInstance> getPassengers()
+	public Set<PlayerInstance> getPassengers()
 	{
 		return _passengers;
 	}

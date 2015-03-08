@@ -18,6 +18,8 @@
  */
 package org.l2junity.gameserver.pathfinding.cellnodes;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.locks.ReentrantLock;
 
 import javolution.util.FastList;
@@ -115,7 +117,7 @@ public class CellNodeBuffer
 	
 	public final FastList<CellNode> debugPath()
 	{
-		FastList<CellNode> result = new FastList<>();
+		List<CellNode> result = new LinkedList<>();
 		
 		for (CellNode n = _current; n.getParent() != null; n = (CellNode) n.getParent())
 		{

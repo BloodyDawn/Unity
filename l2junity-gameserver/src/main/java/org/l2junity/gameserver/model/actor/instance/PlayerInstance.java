@@ -44,7 +44,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
-import javolution.util.FastList;
+
 import javolution.util.FastMap;
 
 import org.l2junity.Config;
@@ -399,7 +399,7 @@ public final class PlayerInstance extends Playable
 	
 	public static final int REQUEST_TIMEOUT = 15;
 	
-	private final List<IEventListener> _eventListeners = new FastList<IEventListener>().shared();
+	private final Set<IEventListener> _eventListeners = ConcurrentHashMap.newKeySet();
 	
 	public class AIAccessor extends Creature.AIAccessor
 	{
@@ -607,8 +607,8 @@ public final class PlayerInstance extends Playable
 	/** The list containing all macros of this player. */
 	private final MacroList _macros = new MacroList(this);
 	
-	private final List<PlayerInstance> _snoopListener = new FastList<>();
-	private final List<PlayerInstance> _snoopedPlayer = new FastList<>();
+	private final Set<PlayerInstance> _snoopListener = ConcurrentHashMap.newKeySet();
+	private final Set<PlayerInstance> _snoopedPlayer = ConcurrentHashMap.newKeySet();
 	
 	// hennas
 	private final Henna[] _henna = new Henna[3];
@@ -633,7 +633,7 @@ public final class PlayerInstance extends Playable
 	private int _agathionId = 0;
 	// apparently, a L2PcInstance CAN have both a summon AND a tamed beast at the same time!!
 	// after Freya players can control more than one tamed beast
-	private List<L2TamedBeastInstance> _tamedBeast = null;
+	private volatile Set<L2TamedBeastInstance> _tamedBeast = null;
 	
 	private boolean _minimapAllowed = false;
 	
@@ -1500,7 +1500,7 @@ public final class PlayerInstance extends Playable
 	}
 	
 	/** List of all QuestState instance that needs to be notified of this L2PcInstance's or its pet's death */
-	private volatile List<QuestState> _notifyQuestOfDeathList;
+	private volatile Set<QuestState> _notifyQuestOfDeathList;
 	
 	/**
 	 * Add QuestState instance that is to be notified of L2PcInstance's death.
@@ -1536,7 +1536,7 @@ public final class PlayerInstance extends Playable
 	/**
 	 * @return a list of QuestStates which registered for notify of death of this L2PcInstance.
 	 */
-	public final List<QuestState> getNotifyQuestOfDeath()
+	public final Set<QuestState> getNotifyQuestOfDeath()
 	{
 		if (_notifyQuestOfDeathList == null)
 		{
@@ -1544,7 +1544,7 @@ public final class PlayerInstance extends Playable
 			{
 				if (_notifyQuestOfDeathList == null)
 				{
-					_notifyQuestOfDeathList = new FastList<>();
+					_notifyQuestOfDeathList = ConcurrentHashMap.newKeySet();
 				}
 			}
 		}
@@ -5800,7 +5800,7 @@ public final class PlayerInstance extends Playable
 	/**
 	 * @return the L2Summon of the L2PcInstance or null.
 	 */
-	public List<L2TamedBeastInstance> getTrainedBeasts()
+	public Set<L2TamedBeastInstance> getTrainedBeasts()
 	{
 		return _tamedBeast;
 	}
@@ -5813,7 +5813,13 @@ public final class PlayerInstance extends Playable
 	{
 		if (_tamedBeast == null)
 		{
-			_tamedBeast = new FastList<>();
+			synchronized (this)
+			{
+				if (_tamedBeast == null)
+				{
+					_tamedBeast = ConcurrentHashMap.newKeySet();
+				}
+			}
 		}
 		_tamedBeast.add(tamedBeast);
 	}
@@ -13393,9 +13399,9 @@ public final class PlayerInstance extends Playable
 	/**
 	 * list of character friends
 	 */
-	private final List<Integer> _friendList = new FastList<>();
+	private final Set<Integer> _friendList = ConcurrentHashMap.newKeySet();
 	
-	public List<Integer> getFriendList()
+	public Set<Integer> getFriendList()
 	{
 		return _friendList;
 	}

@@ -27,9 +27,11 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+
 import javolution.util.FastList;
 import javolution.util.FastMap;
 
@@ -462,7 +464,7 @@ public class Hero
 				
 				if (!_mainlist.isEmpty())
 				{
-					FastList<StatsSet> _list = FastList.newInstance();
+					List<StatsSet> _list = new LinkedList<>();
 					_list.addAll(_mainlist);
 					Collections.reverse(_list);
 					
@@ -514,8 +516,6 @@ public class Hero
 					}
 					
 					DiaryReply.replace("%list%", fList.toString());
-					
-					FastList.recycle(_list);
 				}
 				else
 				{

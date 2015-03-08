@@ -18,9 +18,8 @@
  */
 package org.l2junity.gameserver.model.actor.instance;
 
-import java.util.List;
-
-import javolution.util.FastList;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.L2Spawn;
@@ -33,7 +32,7 @@ import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
  */
 public class L2ControlTowerInstance extends Tower
 {
-	private volatile List<L2Spawn> _guards;
+	private volatile Set<L2Spawn> _guards;
 	
 	public L2ControlTowerInstance(L2NpcTemplate template)
 	{
@@ -77,7 +76,7 @@ public class L2ControlTowerInstance extends Tower
 		getGuards().add(guard);
 	}
 	
-	private final List<L2Spawn> getGuards()
+	private final Set<L2Spawn> getGuards()
 	{
 		if (_guards == null)
 		{
@@ -85,7 +84,7 @@ public class L2ControlTowerInstance extends Tower
 			{
 				if (_guards == null)
 				{
-					_guards = new FastList<>();
+					_guards = ConcurrentHashMap.newKeySet();
 				}
 			}
 		}

@@ -596,7 +596,7 @@ public class EnterWorld implements IClientIncomingPacket
 	{
 		int chaId = cha.getObjectId();
 		
-		for (Couple cl : CoupleManager.getInstance().getCouples())
+		for (Couple cl : CoupleManager.getInstance().getCouples().values())
 		{
 			if ((cl.getPlayer1Id() == chaId) || (cl.getPlayer2Id() == chaId))
 			{

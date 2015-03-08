@@ -144,8 +144,8 @@ public final class FortSiegeManager
 		
 		for (Fort fort : FortManager.getInstance().getForts())
 		{
-			FastList<FortSiegeSpawn> _commanderSpawns = new FastList<>();
-			FastList<CombatFlag> _flagSpawns = new FastList<>();
+			List<FortSiegeSpawn> _commanderSpawns = new FastList<>();
+			List<CombatFlag> _flagSpawns = new FastList<>();
 			for (int i = 1; i < 5; i++)
 			{
 				final String _spawnParams = siegeSettings.getProperty(fort.getName().replace(" ", "") + "Commander" + i, "");

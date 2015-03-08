@@ -30,6 +30,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
+
 import javolution.util.FastList;
 import javolution.util.FastMap;
 
@@ -83,9 +84,9 @@ public final class Fort extends AbstractResidence
 	
 	// Spawn Data
 	private boolean _isSuspiciousMerchantSpawned = false;
-	private final FastList<L2Spawn> _siegeNpcs = new FastList<>();
-	private final FastList<L2Spawn> _npcCommanders = new FastList<>();
-	private final FastList<L2Spawn> _specialEnvoys = new FastList<>();
+	private final List<L2Spawn> _siegeNpcs = new FastList<>();
+	private final List<L2Spawn> _npcCommanders = new FastList<>();
+	private final List<L2Spawn> _specialEnvoys = new FastList<>();
 	
 	private final Map<Integer, Integer> _envoyCastles = new HashMap<>(2);
 	private final Set<Integer> _availableCastles = new HashSet<>(1);
