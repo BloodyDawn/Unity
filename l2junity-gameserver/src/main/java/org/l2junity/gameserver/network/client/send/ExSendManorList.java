@@ -18,8 +18,7 @@
  */
 package org.l2junity.gameserver.network.client.send;
 
-import java.util.Comparator;
-import java.util.List;
+import java.util.Collection;
 
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.model.entity.Castle;
@@ -40,11 +39,9 @@ public final class ExSendManorList implements IClientOutgoingPacket
 	@Override
 	public boolean write(PacketWriter packet)
 	{
-		final List<Castle> castles = CastleManager.getInstance().getCastles();
-		castles.sort(Comparator.comparing(Castle::getResidenceId));
-		
 		OutgoingPackets.EX_SEND_MANOR_LIST.writeId(packet);
 		
+		final Collection<Castle> castles = CastleManager.getInstance().getCastles();
 		packet.writeD(castles.size());
 		for (Castle castle : castles)
 		{

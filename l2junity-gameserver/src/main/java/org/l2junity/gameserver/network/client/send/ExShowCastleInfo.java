@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.client.send;
 
-import java.util.List;
+import java.util.Collection;
 
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.instancemanager.CastleManager;
@@ -43,7 +43,7 @@ public class ExShowCastleInfo implements IClientOutgoingPacket
 	{
 		OutgoingPackets.EX_SHOW_CASTLE_INFO.writeId(packet);
 		
-		final List<Castle> castles = CastleManager.getInstance().getCastles();
+		final Collection<Castle> castles = CastleManager.getInstance().getCastles();
 		packet.writeD(castles.size());
 		for (Castle castle : castles)
 		{

@@ -22,11 +22,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.List;
+import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
-import javolution.util.FastList;
+import java.util.concurrent.ConcurrentSkipListMap;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.InstanceListManager;
@@ -41,10 +40,9 @@ import org.slf4j.LoggerFactory;
 
 public final class CastleManager implements InstanceListManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(CastleManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(CastleManager.class);
 	
-	private List<Castle> _castles;
-	
+	private final Map<Integer, Castle> _castles = new ConcurrentSkipListMap<>();
 	private final Map<Integer, Long> _castleSiegeDate = new ConcurrentHashMap<>();
 	
 	private static final int _castleCirclets[] =
@@ -61,46 +59,33 @@ public final class CastleManager implements InstanceListManager
 		8183
 	};
 	
-	public final int findNearestCastleIndex(WorldObject obj)
+	public final Castle findNearestCastle(WorldObject obj)
 	{
-		return findNearestCastleIndex(obj, Long.MAX_VALUE);
+		return findNearestCastle(obj, Long.MAX_VALUE);
 	}
 	
-	public final int findNearestCastleIndex(WorldObject obj, long maxDistance)
+	public final Castle findNearestCastle(WorldObject obj, long maxDistance)
 	{
-		int index = getCastleIndex(obj);
-		if (index < 0)
+		Castle nearestCastle = getCastle(obj);
+		if (nearestCastle == null)
 		{
 			double distance;
-			Castle castle;
-			for (int i = 0; i < getCastles().size(); i++)
+			for (Castle castle : getCastles())
 			{
-				castle = getCastles().get(i);
-				if (castle == null)
-				{
-					continue;
-				}
 				distance = castle.getDistance(obj);
 				if (maxDistance > distance)
 				{
 					maxDistance = (long) distance;
-					index = i;
+					nearestCastle = castle;
 				}
 			}
 		}
-		return index;
+		return nearestCastle;
 	}
 	
 	public final Castle getCastleById(int castleId)
 	{
-		for (Castle temp : getCastles())
-		{
-			if (temp.getResidenceId() == castleId)
-			{
-				return temp;
-			}
-		}
-		return null;
+		return _castles.get(castleId);
 	}
 	
 	public final Castle getCastleByOwner(L2Clan clan)
@@ -144,46 +129,9 @@ public final class CastleManager implements InstanceListManager
 		return getCastle(activeObject.getX(), activeObject.getY(), activeObject.getZ());
 	}
 	
-	public final int getCastleIndex(int castleId)
+	public final Collection<Castle> getCastles()
 	{
-		Castle castle;
-		for (int i = 0; i < getCastles().size(); i++)
-		{
-			castle = getCastles().get(i);
-			if ((castle != null) && (castle.getResidenceId() == castleId))
-			{
-				return i;
-			}
-		}
-		return -1;
-	}
-	
-	public final int getCastleIndex(WorldObject activeObject)
-	{
-		return getCastleIndex(activeObject.getX(), activeObject.getY(), activeObject.getZ());
-	}
-	
-	public final int getCastleIndex(int x, int y, int z)
-	{
-		Castle castle;
-		for (int i = 0; i < getCastles().size(); i++)
-		{
-			castle = getCastles().get(i);
-			if ((castle != null) && castle.checkIfInZone(x, y, z))
-			{
-				return i;
-			}
-		}
-		return -1;
-	}
-	
-	public final List<Castle> getCastles()
-	{
-		if (_castles == null)
-		{
-			_castles = new FastList<>();
-		}
-		return _castles;
+		return _castles.values();
 	}
 	
 	public boolean hasOwnedCastle()
@@ -280,7 +228,8 @@ public final class CastleManager implements InstanceListManager
 		{
 			while (rs.next())
 			{
-				getCastles().add(new Castle(rs.getInt("id")));
+				final int castleId = rs.getInt("id");
+				_castles.put(castleId, new Castle(castleId));
 			}
 			_log.info(getClass().getSimpleName() + ": Loaded: " + getCastles().size() + " castles");
 		}
@@ -298,7 +247,7 @@ public final class CastleManager implements InstanceListManager
 	@Override
 	public void activateInstances()
 	{
-		for (final Castle castle : _castles)
+		for (final Castle castle : getCastles())
 		{
 			castle.activateInstance();
 		}

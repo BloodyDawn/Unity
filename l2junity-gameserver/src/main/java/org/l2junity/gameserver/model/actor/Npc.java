@@ -26,6 +26,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ItemsAutoDestroy;
@@ -84,7 +85,6 @@ import org.l2junity.gameserver.model.olympiad.Olympiad;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.variables.NpcVariables;
-import org.l2junity.gameserver.model.zone.type.TownZone;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.ExChangeNpcState;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
@@ -118,12 +118,7 @@ public class Npc extends Creature
 	private String _busyMessage = "";
 	/** True if endDecayTask has already been called */
 	private volatile boolean _isDecayed = false;
-	/** The castle index in the array of L2Castle this L2NpcInstance belongs to */
-	private int _castleIndex = -2;
-	/** The fortress index in the array of L2Fort this L2NpcInstance belongs to */
-	private int _fortIndex = -2;
 	private boolean _eventMob = false;
-	private boolean _isInTown = false;
 	/** True if this L2Npc is autoattackable **/
 	private boolean _isAutoAttackable = false;
 	/** Time of last social packet broadcast */
@@ -713,32 +708,7 @@ public class Npc extends Creature
 	 */
 	public final Castle getCastle()
 	{
-		// Get castle this NPC belongs to (excluding L2Attackable)
-		if (_castleIndex < 0)
-		{
-			TownZone town = TownManager.getTown(getX(), getY(), getZ());
-			
-			if (town != null)
-			{
-				_castleIndex = CastleManager.getInstance().getCastleIndex(town.getTaxById());
-			}
-			
-			if (_castleIndex < 0)
-			{
-				_castleIndex = CastleManager.getInstance().findNearestCastleIndex(this);
-			}
-			else
-			{
-				_isInTown = true; // Npc was spawned in town
-			}
-		}
-		
-		if (_castleIndex < 0)
-		{
-			return null;
-		}
-		
-		return CastleManager.getInstance().getCastles().get(_castleIndex);
+		return CastleManager.getInstance().findNearestCastle(this);
 	}
 	
 	/**
@@ -769,14 +739,7 @@ public class Npc extends Creature
 	 */
 	public final Castle getCastle(long maxDistance)
 	{
-		int index = CastleManager.getInstance().findNearestCastleIndex(this, maxDistance);
-		
-		if (index < 0)
-		{
-			return null;
-		}
-		
-		return CastleManager.getInstance().getCastles().get(index);
+		return CastleManager.getInstance().findNearestCastle(this, maxDistance);
 	}
 	
 	/**
@@ -784,27 +747,7 @@ public class Npc extends Creature
 	 */
 	public final Fort getFort()
 	{
-		// Get Fort this NPC belongs to (excluding L2Attackable)
-		if (_fortIndex < 0)
-		{
-			Fort fort = FortManager.getInstance().getFort(getX(), getY(), getZ());
-			if (fort != null)
-			{
-				_fortIndex = FortManager.getInstance().getFortIndex(fort.getResidenceId());
-			}
-			
-			if (_fortIndex < 0)
-			{
-				_fortIndex = FortManager.getInstance().findNearestFortIndex(this);
-			}
-		}
-		
-		if (_fortIndex < 0)
-		{
-			return null;
-		}
-		
-		return FortManager.getInstance().getForts().get(_fortIndex);
+		return FortManager.getInstance().findNearestFort(this);
 	}
 	
 	/**
@@ -814,24 +757,12 @@ public class Npc extends Creature
 	 */
 	public final Fort getFort(long maxDistance)
 	{
-		int index = FortManager.getInstance().findNearestFortIndex(this, maxDistance);
-		
-		if (index < 0)
-		{
-			return null;
-		}
-		
-		return FortManager.getInstance().getForts().get(index);
+		return FortManager.getInstance().findNearestFort(this, maxDistance);
 	}
 	
-	public final boolean getIsInTown()
+	public final boolean isInTown()
 	{
-		if (_castleIndex < 0)
-		{
-			getCastle();
-		}
-		
-		return _isInTown;
+		return TownManager.getTown(getX(), getY(), getZ()) != null;
 	}
 	
 	/**

@@ -521,7 +521,7 @@ public final class L2TeleporterInstance extends Npc
 	private int validateCondition(PlayerInstance player)
 	{
 		// Teleporter isn't on castle ground
-		if (CastleManager.getInstance().getCastleIndex(this) < 0)
+		if (CastleManager.getInstance().getCastle(this) == null)
 		{
 			return COND_REGULAR; // Regular access
 		}

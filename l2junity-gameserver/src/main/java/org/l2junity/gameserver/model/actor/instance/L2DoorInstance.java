@@ -66,10 +66,6 @@ public class L2DoorInstance extends Creature
 	public static final byte OPEN_BY_SKILL = 8;
 	public static final byte OPEN_BY_CYCLE = 16;
 	
-	/** The castle index in the array of L2Castle this L2NpcInstance belongs to */
-	private int _castleIndex = -2;
-	/** The fort index in the array of L2Fort this L2NpcInstance belongs to */
-	private int _fortIndex = -2;
 	private ClanHall _clanHall;
 	private boolean _open = false;
 	private boolean _isAttackableDoor = false;
@@ -317,32 +313,14 @@ public class L2DoorInstance extends Creature
 		return dmg;
 	}
 	
-	// TODO: Replace index with the castle id itself.
 	public final Castle getCastle()
 	{
-		if (_castleIndex < 0)
-		{
-			_castleIndex = CastleManager.getInstance().getCastleIndex(this);
-		}
-		if (_castleIndex < 0)
-		{
-			return null;
-		}
-		return CastleManager.getInstance().getCastles().get(_castleIndex);
+		return CastleManager.getInstance().getCastle(this);
 	}
 	
-	// TODO: Replace index with the fort id itself.
 	public final Fort getFort()
 	{
-		if (_fortIndex < 0)
-		{
-			_fortIndex = FortManager.getInstance().getFortIndex(this);
-		}
-		if (_fortIndex < 0)
-		{
-			return null;
-		}
-		return FortManager.getInstance().getForts().get(_fortIndex);
+		return FortManager.getInstance().getFort(this);
 	}
 	
 	public void setClanHall(ClanHall clanhall)

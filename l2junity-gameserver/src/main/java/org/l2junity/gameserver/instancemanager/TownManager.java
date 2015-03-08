@@ -53,11 +53,10 @@ public final class TownManager
 	
 	public static final boolean townHasCastleInSiege(int townId)
 	{
-		int castleIndex = getTownCastle(townId);
-		
-		if (castleIndex > 0)
+		final int castleId = getTownCastle(townId);
+		if (castleId > 0)
 		{
-			Castle castle = CastleManager.getInstance().getCastles().get(CastleManager.getInstance().getCastleIndex(castleIndex));
+			Castle castle = CastleManager.getInstance().getCastleById(castleId);
 			if (castle != null)
 			{
 				return castle.getSiege().isInProgress();

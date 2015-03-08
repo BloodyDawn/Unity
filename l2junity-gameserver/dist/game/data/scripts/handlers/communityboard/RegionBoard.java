@@ -18,8 +18,6 @@
  */
 package handlers.communityboard;
 
-import java.util.List;
-
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.handler.CommunityBoardHandler;
@@ -60,10 +58,9 @@ public class RegionBoard implements IWriteBoardHandler
 			
 			final String list = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/CommunityBoard/region_list.html");
 			final StringBuilder sb = new StringBuilder();
-			final List<Castle> castles = CastleManager.getInstance().getCastles();
 			for (int i = 0; i < REGIONS.length; i++)
 			{
-				final Castle castle = castles.get(i);
+				final Castle castle = CastleManager.getInstance().getCastleById(i + 1);
 				final L2Clan clan = ClanTable.getInstance().getClan(castle.getOwnerId());
 				String link = list.replaceAll("%region_id%", String.valueOf(i));
 				link = link.replace("%region_name%", String.valueOf(REGIONS[i]));
