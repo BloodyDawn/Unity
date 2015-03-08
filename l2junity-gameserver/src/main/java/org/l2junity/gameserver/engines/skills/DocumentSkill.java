@@ -21,7 +21,6 @@ package org.l2junity.gameserver.engines.skills;
 import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
-import javolution.util.FastList;
 
 import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
 import org.l2junity.gameserver.engines.DocumentBase;
@@ -1489,7 +1488,7 @@ public class DocumentSkill extends DocumentBase
 	private void makeSkills()
 	{
 		int count = 0;
-		_currentSkill.currentSkills = new FastList<>(_currentSkill.sets.length + _currentSkill.enchsets1.length + _currentSkill.enchsets2.length + _currentSkill.enchsets3.length + _currentSkill.enchsets4.length + _currentSkill.enchsets5.length + _currentSkill.enchsets6.length + _currentSkill.enchsets7.length + _currentSkill.enchsets8.length);
+		_currentSkill.currentSkills = new LinkedList<>();
 		StatsSet set;
 		for (int i = 0; i < _currentSkill.sets.length; i++)
 		{

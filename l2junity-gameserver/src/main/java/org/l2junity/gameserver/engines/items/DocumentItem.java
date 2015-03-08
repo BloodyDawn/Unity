@@ -21,9 +21,8 @@ package org.l2junity.gameserver.engines.items;
 import java.io.File;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.LinkedList;
 import java.util.List;
-
-import javolution.util.FastList;
 
 import org.l2junity.gameserver.engines.DocumentBase;
 import org.l2junity.gameserver.model.StatsSet;
@@ -38,7 +37,7 @@ import org.w3c.dom.Node;
 public final class DocumentItem extends DocumentBase
 {
 	private Item _currentItem = null;
-	private final List<L2Item> _itemsInFile = new FastList<>();
+	private final List<L2Item> _itemsInFile = new LinkedList<>();
 	
 	/**
 	 * @param file
