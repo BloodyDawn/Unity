@@ -60,33 +60,33 @@
 		</RollingFile>
 	</Appenders>
 	<Loggers>
-		<Logger name="accounting" level="all">
+		<Logger name="accounting" level="all" additivity="false">
 			<AppenderRef ref="AccountingFile" />
 		</Logger>
-		<Logger name="audit" level="all">
+		<Logger name="audit" level="all" additivity="false">
 			<AppenderRef ref="AuditFile" />
 		</Logger>
-		<Logger name="chat" level="all">
+		<Logger name="chat" level="all" additivity="false">
 			<AppenderRef ref="ChatFile" />
 		</Logger>
-		<Logger name="enchant.item" level="all">
+		<Logger name="enchant.item" level="all" additivity="false">
 			<AppenderRef ref="EnchantItemFile" />
 		</Logger>
-		<Logger name="enchant.skill" level="all">
+		<Logger name="enchant.skill" level="all" additivity="false">
 			<AppenderRef ref="EnchantSkillFile" />
 		</Logger>
-		<Logger name="gmaudit" level="all">
+		<Logger name="gmaudit" level="all" additivity="false">
 			<AppenderRef ref="GMAuditFile" />
 		</Logger>
-		<Logger name="item" level="all">
+		<Logger name="item" level="all" additivity="false">
 			<AppenderRef ref="ItemFile" />
 		</Logger>
-		<Logger name="olympiad" level="all">
+		<Logger name="olympiad" level="all" additivity="false">
 			<AppenderRef ref="OlympiadFile" />
 		</Logger>
 		<Logger name="com.mchange" level="warn" />
 		<Logger name="io.netty" level="warn" />
-		<Root level="all">
+		<Root level="info">
 			<AppenderRef ref="Console" />
 			<AppenderRef ref="ConsoleFile" />
 		</Root>
