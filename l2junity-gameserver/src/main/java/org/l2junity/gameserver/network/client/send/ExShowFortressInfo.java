@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.client.send;
 
-import java.util.List;
+import java.util.Collection;
 
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.model.L2Clan;
@@ -43,7 +43,7 @@ public class ExShowFortressInfo implements IClientOutgoingPacket
 	{
 		OutgoingPackets.EX_SHOW_FORTRESS_INFO.writeId(packet);
 		
-		final List<Fort> forts = FortManager.getInstance().getForts();
+		final Collection<Fort> forts = FortManager.getInstance().getForts();
 		packet.writeD(forts.size());
 		for (Fort fort : forts)
 		{

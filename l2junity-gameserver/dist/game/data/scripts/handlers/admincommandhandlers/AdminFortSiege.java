@@ -18,7 +18,7 @@
  */
 package handlers.admincommandhandlers;
 
-import java.util.List;
+import java.util.Collection;
 import java.util.StringTokenizer;
 
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
@@ -155,7 +155,7 @@ public class AdminFortSiege implements IAdminCommandHandler
 		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		adminReply.setFile(activeChar.getHtmlPrefix(), "data/html/admin/forts.htm");
 		
-		final List<Fort> forts = FortManager.getInstance().getForts();
+		final Collection<Fort> forts = FortManager.getInstance().getForts();
 		final StringBuilder cList = new StringBuilder(forts.size() * 100);
 		
 		for (Fort fort : forts)

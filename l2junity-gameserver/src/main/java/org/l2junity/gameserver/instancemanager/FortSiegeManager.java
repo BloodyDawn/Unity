@@ -25,6 +25,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.util.StringTokenizer;
 
@@ -54,8 +55,8 @@ public final class FortSiegeManager
 	private int _attackerMaxClans = 500; // Max number of clans
 	
 	// Fort Siege settings
-	private FastMap<Integer, FastList<FortSiegeSpawn>> _commanderSpawnList;
-	private FastMap<Integer, FastList<CombatFlag>> _flagList;
+	private Map<Integer, List<FortSiegeSpawn>> _commanderSpawnList;
+	private Map<Integer, List<CombatFlag>> _flagList;
 	private boolean _justToTerritory = true; // Changeable in fortsiege.properties
 	private int _flagMaxCount = 1; // Changeable in fortsiege.properties
 	private int _siegeClanMinLevel = 4; // Changeable in fortsiege.properties
@@ -199,22 +200,14 @@ public final class FortSiegeManager
 		}
 	}
 	
-	public final FastList<FortSiegeSpawn> getCommanderSpawnList(int _fortId)
+	public final List<FortSiegeSpawn> getCommanderSpawnList(int _fortId)
 	{
-		if (_commanderSpawnList.containsKey(_fortId))
-		{
-			return _commanderSpawnList.get(_fortId);
-		}
-		return null;
+		return _commanderSpawnList.get(_fortId);
 	}
 	
-	public final FastList<CombatFlag> getFlagList(int _fortId)
+	public final List<CombatFlag> getFlagList(int _fortId)
 	{
-		if (_flagList.containsKey(_fortId))
-		{
-			return _flagList.get(_fortId);
-		}
-		return null;
+		return _flagList.get(_fortId);
 	}
 	
 	public final int getAttackerMaxClans()
@@ -301,7 +294,7 @@ public final class FortSiegeManager
 		
 		final Fort fort = FortManager.getInstance().getFort(player);
 		
-		final FastList<CombatFlag> fcf = _flagList.get(fort.getResidenceId());
+		final List<CombatFlag> fcf = _flagList.get(fort.getResidenceId());
 		for (CombatFlag cf : fcf)
 		{
 			if (cf.getCombatFlagInstance() == item)
@@ -348,9 +341,7 @@ public final class FortSiegeManager
 	public void dropCombatFlag(PlayerInstance player, int fortId)
 	{
 		final Fort fort = FortManager.getInstance().getFortById(fortId);
-		
-		final FastList<CombatFlag> fcf = _flagList.get(fort.getResidenceId());
-		
+		final List<CombatFlag> fcf = _flagList.get(fort.getResidenceId());
 		for (CombatFlag cf : fcf)
 		{
 			if (cf.getPlayerObjectId() == player.getObjectId())

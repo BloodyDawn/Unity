@@ -21,9 +21,9 @@ package org.l2junity.gameserver.instancemanager;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.List;
-
-import javolution.util.FastList;
+import java.util.Collection;
+import java.util.Map;
+import java.util.concurrent.ConcurrentSkipListMap;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.InstanceListManager;
@@ -37,7 +37,7 @@ public final class FortManager implements InstanceListManager
 {
 	protected static final Logger _log = LoggerFactory.getLogger(FortManager.class.getName());
 	
-	private List<Fort> _forts;
+	private final Map<Integer, Fort> _forts = new ConcurrentSkipListMap<>();
 	
 	public final Fort findNearestFort(WorldObject obj)
 	{
@@ -115,46 +115,9 @@ public final class FortManager implements InstanceListManager
 		return getFort(activeObject.getX(), activeObject.getY(), activeObject.getZ());
 	}
 	
-	public final int getFortIndex(int fortId)
+	public final Collection<Fort> getForts()
 	{
-		Fort fort;
-		for (int i = 0; i < getForts().size(); i++)
-		{
-			fort = getForts().get(i);
-			if ((fort != null) && (fort.getResidenceId() == fortId))
-			{
-				return i;
-			}
-		}
-		return -1;
-	}
-	
-	public final int getFortIndex(WorldObject activeObject)
-	{
-		return getFortIndex(activeObject.getX(), activeObject.getY(), activeObject.getZ());
-	}
-	
-	public final int getFortIndex(int x, int y, int z)
-	{
-		Fort fort;
-		for (int i = 0; i < getForts().size(); i++)
-		{
-			fort = getForts().get(i);
-			if ((fort != null) && fort.checkIfInZone(x, y, z))
-			{
-				return i;
-			}
-		}
-		return -1;
-	}
-	
-	public final List<Fort> getForts()
-	{
-		if (_forts == null)
-		{
-			_forts = new FastList<>();
-		}
-		return _forts;
+		return _forts.values();
 	}
 	
 	@Override
@@ -166,7 +129,8 @@ public final class FortManager implements InstanceListManager
 		{
 			while (rs.next())
 			{
-				getForts().add(new Fort(rs.getInt("id")));
+				final int fortId = rs.getInt("id");
+				_forts.put(fortId, new Fort(fortId));
 			}
 			
 			_log.info(getClass().getSimpleName() + ": Loaded: " + getForts().size() + " fortress");
@@ -189,7 +153,7 @@ public final class FortManager implements InstanceListManager
 	@Override
 	public void activateInstances()
 	{
-		for (final Fort fort : _forts)
+		for (final Fort fort : getForts())
 		{
 			fort.activateInstance();
 		}
