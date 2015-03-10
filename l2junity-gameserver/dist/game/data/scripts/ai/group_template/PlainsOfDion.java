@@ -81,7 +81,7 @@ public final class PlainsOfDion extends AbstractNpcAI
 			
 			World.getInstance().forEachVisibleObjectInRange(npc, L2MonsterInstance.class, npc.getTemplate().getClanHelpRange(), obj ->
 			{
-				if (obj.isMonster() && Util.contains(DELU_LIZARDMEN, obj.getId()) && !obj.isAttackingNow() && !obj.isDead() && GeoData.getInstance().canSeeTarget(npc, obj))
+				if (Util.contains(DELU_LIZARDMEN, obj.getId()) && !obj.isAttackingNow() && !obj.isDead() && GeoData.getInstance().canSeeTarget(npc, obj))
 				{
 					addAttackPlayerDesire(obj, player);
 					obj.broadcastSay(ChatType.NPC_GENERAL, MONSTERS_ASSIST_MSG[getRandom(3)]);
