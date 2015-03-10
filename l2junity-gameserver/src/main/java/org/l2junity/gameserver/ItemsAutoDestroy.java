@@ -18,9 +18,9 @@
  */
 package org.l2junity.gameserver;
 
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
-
-import javolution.util.FastList;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.enums.ItemLocation;
@@ -30,7 +30,7 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 public final class ItemsAutoDestroy
 {
-	private final List<ItemInstance> _items = new FastList<>();
+	private final List<ItemInstance> _items = new LinkedList<>();
 	
 	protected ItemsAutoDestroy()
 	{
@@ -56,55 +56,41 @@ public final class ItemsAutoDestroy
 		}
 		
 		long curtime = System.currentTimeMillis();
-		for (ItemInstance item : _items)
+		Iterator<ItemInstance> itemIterator = _items.iterator();
+		while (itemIterator.hasNext())
 		{
-			if ((item == null) || (item.getDropTime() == 0) || (item.getItemLocation() != ItemLocation.VOID))
+			final ItemInstance item = itemIterator.next();
+			if ((item.getDropTime() == 0) || (item.getItemLocation() != ItemLocation.VOID))
 			{
-				_items.remove(item);
+				itemIterator.remove();
 			}
 			else
 			{
+				final long autoDestroyTime;
 				if (item.getItem().getAutoDestroyTime() > 0)
 				{
-					if ((curtime - item.getDropTime()) > item.getItem().getAutoDestroyTime())
-					{
-						World.getInstance().removeVisibleObject(item, item.getWorldRegion());
-						World.getInstance().removeObject(item);
-						_items.remove(item);
-						if (Config.SAVE_DROPPED_ITEM)
-						{
-							ItemsOnGroundManager.getInstance().removeObject(item);
-						}
-					}
+					autoDestroyTime = item.getItem().getAutoDestroyTime();
 				}
 				else if (item.getItem().hasExImmediateEffect())
 				{
-					if ((curtime - item.getDropTime()) > Config.HERB_AUTO_DESTROY_TIME)
-					{
-						World.getInstance().removeVisibleObject(item, item.getWorldRegion());
-						World.getInstance().removeObject(item);
-						_items.remove(item);
-						if (Config.SAVE_DROPPED_ITEM)
-						{
-							ItemsOnGroundManager.getInstance().removeObject(item);
-						}
-					}
+					autoDestroyTime = Config.HERB_AUTO_DESTROY_TIME;
 				}
 				else
 				{
-					final long sleep = ((Config.AUTODESTROY_ITEM_AFTER == 0) ? 3600000 : Config.AUTODESTROY_ITEM_AFTER * 1000);
-					
-					if ((curtime - item.getDropTime()) > sleep)
+					autoDestroyTime = ((Config.AUTODESTROY_ITEM_AFTER == 0) ? 3600000 : Config.AUTODESTROY_ITEM_AFTER * 1000);
+				}
+				
+				if ((curtime - item.getDropTime()) > autoDestroyTime)
+				{
+					World.getInstance().removeVisibleObject(item, item.getWorldRegion());
+					World.getInstance().removeObject(item);
+					itemIterator.remove();
+					if (Config.SAVE_DROPPED_ITEM)
 					{
-						World.getInstance().removeVisibleObject(item, item.getWorldRegion());
-						World.getInstance().removeObject(item);
-						_items.remove(item);
-						if (Config.SAVE_DROPPED_ITEM)
-						{
-							ItemsOnGroundManager.getInstance().removeObject(item);
-						}
+						ItemsOnGroundManager.getInstance().removeObject(item);
 					}
 				}
+				
 			}
 		}
 	}
