@@ -233,12 +233,10 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 			}
 			if (z > World.MAP_MAX_Z)
 			{
-				System.out.println("Im out of bounds " + this + " z: " + z);
 				z = World.MAP_MAX_Z - 1000;
 			}
 			if (z < World.MAP_MIN_Z)
 			{
-				System.out.println("Im out of bounds " + this + " z: " + z);
 				z = World.MAP_MIN_Z + 1000;
 			}
 			

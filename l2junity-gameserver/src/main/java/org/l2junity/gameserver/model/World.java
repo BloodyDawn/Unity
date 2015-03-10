@@ -28,6 +28,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Consumer;
 
+import org.l2junity.gameserver.ai.CharacterAI;
+import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -301,20 +303,39 @@ public final class World
 			return;
 		}
 		
-		forEachVisibleObject(object, Creature.class, 1, w ->
+		forEachVisibleObject(object, WorldObject.class, 1, wo ->
 		{
 			if (object.isPlayer())
 			{
-				w.sendInfo((PlayerInstance) object);
-				w.getAI().describeStateToPlayer((PlayerInstance) object);
+				wo.sendInfo((PlayerInstance) object);
+				if (wo.isCreature())
+				{
+					final CharacterAI ai = ((Creature) wo).getAI();
+					ai.describeStateToPlayer((PlayerInstance) object);
+					if (wo.isMonster())
+					{
+						if (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
+						{
+							ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+						}
+					}
+				}
 			}
 			
-			if (w.isPlayer())
+			if (wo.isPlayer())
 			{
-				object.sendInfo((PlayerInstance) w);
+				object.sendInfo((PlayerInstance) wo);
 				if (object.isCreature())
 				{
-					((Creature) object).getAI().describeStateToPlayer((PlayerInstance) w);
+					final CharacterAI ai = ((Creature) object).getAI();
+					ai.describeStateToPlayer((PlayerInstance) wo);
+					if (object.isMonster())
+					{
+						if (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
+						{
+							ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+						}
+					}
 				}
 			}
 		});
@@ -404,9 +425,14 @@ public final class World
 						continue;
 					}
 					
-					if (wo instanceof PlayerInstance)
+					if (object.isPlayer())
 					{
 						object.sendPacket(new DeleteObject(wo));
+					}
+					
+					if (wo.isPlayer())
+					{
+						wo.sendPacket(new DeleteObject(object));
 					}
 				}
 			}
@@ -429,7 +455,15 @@ public final class World
 						wo.sendInfo((PlayerInstance) object);
 						if (wo.isCreature())
 						{
-							((Creature) wo).getAI().describeStateToPlayer((PlayerInstance) object);
+							final CharacterAI ai = ((Creature) wo).getAI();
+							ai.describeStateToPlayer((PlayerInstance) object);
+							if (wo.isMonster())
+							{
+								if (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
+								{
+									ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+								}
+							}
 						}
 					}
 					
@@ -438,10 +472,17 @@ public final class World
 						object.sendInfo((PlayerInstance) wo);
 						if (object.isCreature())
 						{
-							((Creature) object).getAI().describeStateToPlayer((PlayerInstance) wo);
+							final CharacterAI ai = ((Creature) object).getAI();
+							ai.describeStateToPlayer((PlayerInstance) wo);
+							if (object.isMonster())
+							{
+								if (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
+								{
+									ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+								}
+							}
 						}
 					}
-					
 				}
 			}
 			return true;
