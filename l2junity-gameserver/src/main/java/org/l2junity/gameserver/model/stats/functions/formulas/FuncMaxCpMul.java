@@ -44,6 +44,7 @@ public class FuncMaxCpMul extends AbstractFunction
 	@Override
 	public double calc(Creature effector, Creature effected, Skill skill, double initVal)
 	{
-		return initVal * BaseStats.CON.calcBonus(effector) * BaseStats.CHA.calcBonus(effector);
+		final double chaBonus = effector.isPlayer() ? BaseStats.CHA.calcBonus(effector) : 1.;
+		return initVal * BaseStats.CON.calcBonus(effector) * chaBonus;
 	}
 }
