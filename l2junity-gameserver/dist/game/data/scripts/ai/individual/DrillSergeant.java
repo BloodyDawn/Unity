@@ -18,7 +18,7 @@
  */
 package ai.individual;
 
-import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
@@ -52,16 +52,14 @@ public final class DrillSergeant extends AbstractNpcAI
 			final int socialActionId = SOCIAL_ACTIONS[getRandom(SOCIAL_ACTIONS.length)];
 			npc.broadcastSocialAction(socialActionId);
 			
-			for (Creature chars : npc.getKnownList().getKnownCharactersInRadius(500))
+			World.getInstance().forEachVisibleObject(npc, Npc.class, 500, chars ->
 			{
-				if (chars.isNpc() && (chars.getId() == GUARD))
+				if (chars.getId() == GUARD)
 				{
-					final Npc guard = (Npc) chars;
-					guard.getVariables().set("SOCIAL_ACTION_ID", socialActionId);
-					startQuestTimer("SOCIAL_ACTION", getRandom(500, 1500), guard, null);
-					
+					chars.getVariables().set("SOCIAL_ACTION_ID", socialActionId);
+					startQuestTimer("SOCIAL_ACTION", getRandom(500, 1500), chars, null);
 				}
-			}
+			});
 		}
 		else if (event.equals("SOCIAL_ACTION"))
 		{

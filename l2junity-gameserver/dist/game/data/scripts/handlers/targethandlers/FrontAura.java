@@ -19,10 +19,10 @@
 package handlers.targethandlers;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -39,9 +39,8 @@ public class FrontAura implements ITargetTypeHandler
 	{
 		List<Creature> targetList = new ArrayList<>();
 		final boolean srcInArena = (activeChar.isInsideZone(ZoneId.PVP) && !activeChar.isInsideZone(ZoneId.SIEGE));
-		final Collection<Creature> objs = activeChar.getKnownList().getKnownCharactersInRadius(skill.getAffectRange());
 		int maxTargets = skill.getAffectLimit();
-		for (Creature obj : objs)
+		for (Creature obj : World.getInstance().getVisibleObjects(activeChar, Creature.class, skill.getAffectRange()))
 		{
 			if (obj.isAttackable() || obj.isPlayable())
 			{

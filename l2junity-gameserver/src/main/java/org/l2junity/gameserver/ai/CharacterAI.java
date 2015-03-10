@@ -38,6 +38,7 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.instancemanager.WalkingManager;
 import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -1456,7 +1457,7 @@ public class CharacterAI extends AbstractAI
 	{
 		if ((sk.getTargetType() == L2TargetType.AURA) || (sk.getTargetType() == L2TargetType.BEHIND_AURA) || (sk.getTargetType() == L2TargetType.FRONT_AURA) || (sk.getTargetType() == L2TargetType.AURA_CORPSE_MOB))
 		{
-			for (WorldObject target : _actor.getKnownList().getKnownCharactersInRadius(sk.getAffectRange()))
+			for (WorldObject target : World.getInstance().getVisibleObjects(_actor, Creature.class, sk.getAffectRange()))
 			{
 				if (target == getAttackTarget())
 				{
@@ -1474,7 +1475,7 @@ public class CharacterAI extends AbstractAI
 			if ((sk.getTargetType() == L2TargetType.AURA) || (sk.getTargetType() == L2TargetType.BEHIND_AURA) || (sk.getTargetType() == L2TargetType.FRONT_AURA) || (sk.getTargetType() == L2TargetType.AURA_CORPSE_MOB))
 			{
 				boolean cancast = true;
-				for (Creature target : _actor.getKnownList().getKnownCharactersInRadius(sk.getAffectRange()))
+				for (Creature target : World.getInstance().getVisibleObjects(_actor, Creature.class, sk.getAffectRange()))
 				{
 					if (!GeoData.getInstance().canSeeTarget(_actor, target))
 					{
@@ -1503,7 +1504,7 @@ public class CharacterAI extends AbstractAI
 			else if ((sk.getTargetType() == L2TargetType.AREA) || (sk.getTargetType() == L2TargetType.BEHIND_AREA) || (sk.getTargetType() == L2TargetType.FRONT_AREA))
 			{
 				boolean cancast = true;
-				for (Creature target : getAttackTarget().getKnownList().getKnownCharactersInRadius(sk.getAffectRange()))
+				for (Creature target : World.getInstance().getVisibleObjects(getAttackTarget(), Creature.class, sk.getAffectRange()))
 				{
 					if (!GeoData.getInstance().canSeeTarget(_actor, target) || (target == null))
 					{
@@ -1535,7 +1536,7 @@ public class CharacterAI extends AbstractAI
 			if ((sk.getTargetType() == L2TargetType.AURA) || (sk.getTargetType() == L2TargetType.BEHIND_AURA) || (sk.getTargetType() == L2TargetType.FRONT_AURA) || (sk.getTargetType() == L2TargetType.AURA_CORPSE_MOB))
 			{
 				boolean cancast = false;
-				for (Creature target : _actor.getKnownList().getKnownCharactersInRadius(sk.getAffectRange()))
+				for (Creature target : World.getInstance().getVisibleObjects(_actor, Creature.class, sk.getAffectRange()))
 				{
 					if (!GeoData.getInstance().canSeeTarget(_actor, target))
 					{
@@ -1564,7 +1565,7 @@ public class CharacterAI extends AbstractAI
 			else if ((sk.getTargetType() == L2TargetType.AREA) || (sk.getTargetType() == L2TargetType.BEHIND_AREA) || (sk.getTargetType() == L2TargetType.FRONT_AREA))
 			{
 				boolean cancast = true;
-				for (Creature target : getAttackTarget().getKnownList().getKnownCharactersInRadius(sk.getAffectRange()))
+				for (Creature target : World.getInstance().getVisibleObjects(getAttackTarget(), Creature.class, sk.getAffectRange()))
 				{
 					if (!GeoData.getInstance().canSeeTarget(_actor, target))
 					{
@@ -1600,13 +1601,13 @@ public class CharacterAI extends AbstractAI
 		{
 			int count = 0;
 			int ccount = 0;
-			for (Creature target : _actor.getKnownList().getKnownCharactersInRadius(sk.getAffectRange()))
+			for (Attackable target : World.getInstance().getVisibleObjects(_actor, Attackable.class, sk.getAffectRange()))
 			{
-				if (!(target instanceof Attackable) || !GeoData.getInstance().canSeeTarget(_actor, target))
+				if (!GeoData.getInstance().canSeeTarget(_actor, target))
 				{
 					continue;
 				}
-				Npc targets = ((Npc) target);
+				Npc targets = (target);
 				Npc actors = ((Npc) _actor);
 				if (targets.isInMyClan(actors))
 				{

@@ -20,6 +20,7 @@ package ai.npc.NpcBuffers;
 
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.Party;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2TamedBeastInstance;
@@ -83,7 +84,7 @@ public class NpcBufferAI implements Runnable
 			}
 			case RANGE:
 			{
-				for (Creature target : _npc.getKnownList().getKnownCharactersInRadius(skill.getAffectRange()))
+				World.getInstance().forEachVisibleObjectInRange(_npc, Creature.class, skill.getAffectRange(), target ->
 				{
 					switch (_skillData.getAffectObject())
 					{
@@ -109,7 +110,7 @@ public class NpcBufferAI implements Runnable
 							break;
 						}
 					}
-				}
+				});
 				break;
 			}
 		}

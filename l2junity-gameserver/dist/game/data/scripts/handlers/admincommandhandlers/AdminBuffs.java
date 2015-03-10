@@ -137,13 +137,7 @@ public class AdminBuffs implements IAdminCommandHandler
 			{
 				int radius = Integer.parseInt(val);
 				
-				for (Creature knownChar : activeChar.getKnownList().getKnownCharactersInRadius(radius))
-				{
-					if (knownChar.isPlayer() && !knownChar.equals(activeChar))
-					{
-						knownChar.stopAllEffects();
-					}
-				}
+				World.getInstance().forEachVisibleObject(activeChar, PlayerInstance.class, radius, Creature::stopAllEffects);
 				
 				activeChar.sendMessage("All effects canceled within radius " + radius);
 				return true;

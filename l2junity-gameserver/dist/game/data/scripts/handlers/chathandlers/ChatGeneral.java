@@ -27,6 +27,7 @@ import org.l2junity.gameserver.handler.IVoicedCommandHandler;
 import org.l2junity.gameserver.handler.VoicedCommandHandler;
 import org.l2junity.gameserver.model.BlockList;
 import org.l2junity.gameserver.model.PcCondOverride;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.CreatureSay;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -102,13 +103,13 @@ public final class ChatGeneral implements IChatHandler
 			}
 			
 			final CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getAppearance().getVisibleName(), text);
-			for (PlayerInstance player : activeChar.getKnownList().getKnownPlayers().values())
+			World.getInstance().forEachVisibleObjectInRange(activeChar, PlayerInstance.class, 1250, player ->
 			{
-				if ((player != null) && activeChar.isInsideRadius(player, 1250, false, true) && !BlockList.isBlocked(player, activeChar))
+				if (!BlockList.isBlocked(player, activeChar))
 				{
 					player.sendPacket(cs);
 				}
-			}
+			});
 			activeChar.sendPacket(cs);
 		}
 	}

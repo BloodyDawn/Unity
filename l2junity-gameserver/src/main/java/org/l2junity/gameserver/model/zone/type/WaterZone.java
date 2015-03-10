@@ -18,8 +18,7 @@
  */
 package org.l2junity.gameserver.model.zone.type;
 
-import java.util.Collection;
-
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -55,9 +54,7 @@ public class WaterZone extends ZoneType
 		}
 		else if (character.isNpc())
 		{
-			Collection<PlayerInstance> plrs = character.getKnownList().getKnownPlayers().values();
-			
-			for (PlayerInstance player : plrs)
+			World.getInstance().forEachVisibleObject(character, PlayerInstance.class, player ->
 			{
 				if (character.getRunSpeed() == 0)
 				{
@@ -67,7 +64,7 @@ public class WaterZone extends ZoneType
 				{
 					player.sendPacket(new NpcInfo((Npc) character));
 				}
-			}
+			});
 		}
 	}
 	
@@ -83,8 +80,7 @@ public class WaterZone extends ZoneType
 		}
 		else if (character.isNpc())
 		{
-			Collection<PlayerInstance> plrs = character.getKnownList().getKnownPlayers().values();
-			for (PlayerInstance player : plrs)
+			World.getInstance().forEachVisibleObject(character, PlayerInstance.class, player ->
 			{
 				if (character.getRunSpeed() == 0)
 				{
@@ -94,7 +90,7 @@ public class WaterZone extends ZoneType
 				{
 					player.sendPacket(new NpcInfo((Npc) character));
 				}
-			}
+			});
 		}
 	}
 	

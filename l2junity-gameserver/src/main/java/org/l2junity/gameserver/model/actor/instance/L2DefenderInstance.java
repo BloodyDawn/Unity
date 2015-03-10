@@ -30,7 +30,6 @@ import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.knownlist.DefenderKnownList;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.Fort;
@@ -47,18 +46,6 @@ public class L2DefenderInstance extends Attackable
 	{
 		super(template);
 		setInstanceType(InstanceType.L2DefenderInstance);
-	}
-	
-	@Override
-	public DefenderKnownList getKnownList()
-	{
-		return (DefenderKnownList) super.getKnownList();
-	}
-	
-	@Override
-	public void initKnownList()
-	{
-		setKnownList(new DefenderKnownList(this));
 	}
 	
 	@Override

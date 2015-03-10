@@ -18,7 +18,6 @@
  */
 package handlers.admincommandhandlers;
 
-import java.util.Collection;
 import java.util.StringTokenizer;
 
 import org.l2junity.Config;
@@ -210,37 +209,24 @@ public class AdminEffects implements IAdminCommandHandler
 		}
 		else if (command.equals("admin_para_all"))
 		{
-			try
+			World.getInstance().forEachVisibleObject(activeChar, PlayerInstance.class, player ->
 			{
-				Collection<PlayerInstance> plrs = activeChar.getKnownList().getKnownPlayers().values();
-				for (PlayerInstance player : plrs)
+				if (!player.isGM())
 				{
-					if (!player.isGM())
-					{
-						player.startAbnormalVisualEffect(AbnormalVisualEffect.PARALYZE);
-						player.setIsParalyzed(true);
-						player.startParalyze();
-					}
+					player.startAbnormalVisualEffect(AbnormalVisualEffect.PARALYZE);
+					player.setIsParalyzed(true);
+					player.startParalyze();
 				}
-			}
-			catch (Exception e)
-			{
-			}
+			});
 		}
 		else if (command.equals("admin_unpara_all"))
 		{
-			try
+			World.getInstance().forEachVisibleObject(activeChar, PlayerInstance.class, player ->
 			{
-				Collection<PlayerInstance> plrs = activeChar.getKnownList().getKnownPlayers().values();
-				for (PlayerInstance player : plrs)
-				{
-					player.stopAbnormalVisualEffect(AbnormalVisualEffect.PARALYZE);
-					player.setIsParalyzed(false);
-				}
-			}
-			catch (Exception e)
-			{
-			}
+				player.stopAbnormalVisualEffect(AbnormalVisualEffect.PARALYZE);
+				player.setIsParalyzed(false);
+				
+			});
 		}
 		else if (command.startsWith("admin_para")) // || command.startsWith("admin_para_menu"))
 		{
@@ -391,18 +377,11 @@ public class AdminEffects implements IAdminCommandHandler
 		}
 		else if (command.equals("admin_clearteams"))
 		{
-			try
+			World.getInstance().forEachVisibleObject(activeChar, PlayerInstance.class, player ->
 			{
-				Collection<PlayerInstance> plrs = activeChar.getKnownList().getKnownPlayers().values();
-				for (PlayerInstance player : plrs)
-				{
-					player.setTeam(Team.NONE);
-					player.broadcastUserInfo();
-				}
-			}
-			catch (Exception e)
-			{
-			}
+				player.setTeam(Team.NONE);
+				player.broadcastUserInfo();
+			});
 		}
 		else if (command.startsWith("admin_setteam_close"))
 		{
@@ -415,12 +394,8 @@ public class AdminEffects implements IAdminCommandHandler
 					radius = Integer.parseInt(st.nextToken());
 				}
 				Team team = Team.valueOf(val.toUpperCase());
-				Collection<Creature> plrs = activeChar.getKnownList().getKnownCharactersInRadius(radius);
 				
-				for (Creature player : plrs)
-				{
-					player.setTeam(team);
-				}
+				World.getInstance().forEachVisibleObject(activeChar, PlayerInstance.class, radius, player -> player.setTeam(team));
 			}
 			catch (Exception e)
 			{
@@ -473,14 +448,7 @@ public class AdminEffects implements IAdminCommandHandler
 							try
 							{
 								int radius = Integer.parseInt(target);
-								Collection<WorldObject> objs = activeChar.getKnownList().getKnownObjects().values();
-								for (WorldObject object : objs)
-								{
-									if (activeChar.isInsideRadius(object, radius, false, false))
-									{
-										performSocial(social, object, activeChar);
-									}
-								}
+								World.getInstance().forEachVisibleObjectInRange(activeChar, WorldObject.class, radius, object -> performSocial(social, object, activeChar));
 								activeChar.sendMessage(radius + " units radius affected by your request.");
 							}
 							catch (NumberFormatException nbe)
@@ -550,13 +518,7 @@ public class AdminEffects implements IAdminCommandHandler
 				
 				if (radius > 0)
 				{
-					for (WorldObject object : activeChar.getKnownList().getKnownObjects().values())
-					{
-						if (activeChar.isInsideRadius(object, radius, false, false))
-						{
-							performAbnormalVisualEffect(ave, object);
-						}
-					}
+					World.getInstance().forEachVisibleObjectInRange(activeChar, WorldObject.class, radius, object -> performAbnormalVisualEffect(ave, object));
 					activeChar.sendMessage("Affected all characters in radius " + param2 + " by " + param1 + " abnormal visual effect.");
 				}
 				else

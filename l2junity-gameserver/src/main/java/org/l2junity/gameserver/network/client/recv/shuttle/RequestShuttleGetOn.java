@@ -18,7 +18,7 @@
  */
 package org.l2junity.gameserver.network.client.recv.shuttle;
 
-import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.L2ShuttleInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
@@ -54,19 +54,15 @@ public class RequestShuttleGetOn implements IClientIncomingPacket
 		}
 		
 		// TODO: better way?
-		for (WorldObject obj : activeChar.getKnownList().getKnownObjects().values())
+		for (L2ShuttleInstance shuttle : World.getInstance().getVisibleObjects(activeChar, L2ShuttleInstance.class))
 		{
-			if ((obj instanceof L2ShuttleInstance))
+			if (shuttle.calculateDistance(activeChar, true, false) < 1000)
 			{
-				L2ShuttleInstance shuttle = (L2ShuttleInstance) obj;
-				if (shuttle.calculateDistance(activeChar, false, false) < 1000)
-				{
-					shuttle.addPassenger(activeChar);
-					activeChar.getInVehiclePosition().setXYZ(_x, _y, _z);
-					break;
-				}
-				_log.info(getClass().getSimpleName() + ": range between char and shuttle: " + shuttle.calculateDistance(activeChar, false, false));
+				shuttle.addPassenger(activeChar);
+				activeChar.getInVehiclePosition().setXYZ(_x, _y, _z);
+				break;
 			}
+			_log.info(getClass().getSimpleName() + ": range between char and shuttle: " + shuttle.calculateDistance(activeChar, true, false));
 		}
 	}
 }

@@ -24,6 +24,7 @@ import java.util.GregorianCalendar;
 import org.l2junity.gameserver.datatables.SpawnTable;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.Movie;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
@@ -82,13 +83,13 @@ public final class Lindvior extends AbstractNpcAI
 			{
 				if (npc != null)
 				{
-					for (PlayerInstance pl : npc.getKnownList().getKnownPlayersInRadius(4000))
+					World.getInstance().forEachVisibleObjectInRange(npc, PlayerInstance.class, 4000, pl ->
 					{
 						if ((pl.getZ() >= 1100) && (pl.getZ() <= 3100))
 						{
 							pl.playMovie(Movie.SC_LINDVIOR);
 						}
-					}
+					});
 				}
 				break;
 			}

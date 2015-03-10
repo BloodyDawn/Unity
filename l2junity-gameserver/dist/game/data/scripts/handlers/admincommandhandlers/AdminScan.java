@@ -26,7 +26,6 @@ import org.l2junity.gameserver.instancemanager.RaidBossSpawnManager;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
@@ -127,19 +126,16 @@ public class AdminScan implements IAdminCommandHandler
 		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/scan.htm");
 		final StringBuilder sb = new StringBuilder();
-		for (Creature character : activeChar.getKnownList().getKnownCharactersInRadius(radius))
+		World.getInstance().forEachVisibleObjectInRange(activeChar, Npc.class, radius, character ->
 		{
-			if (character.isNpc())
-			{
-				sb.append("<tr>");
-				sb.append("<td width=\"54\">" + character.getId() + "</td>");
-				sb.append("<td width=\"54\">" + character.getName() + "</td>");
-				sb.append("<td width=\"54\">" + Math.round(activeChar.calculateDistance(character, false, false)) + "</td>");
-				sb.append("<td width=\"54\"><a action=\"bypass -h admin_deleteNpcByObjectId " + character.getObjectId() + "\"><font color=\"LEVEL\">Delete</font></a></td>");
-				sb.append("<td width=\"54\"><a action=\"bypass -h admin_move_to " + character.getX() + " " + character.getY() + " " + character.getZ() + "\"><font color=\"LEVEL\">Go to</font></a></td>");
-				sb.append("</tr>");
-			}
-		}
+			sb.append("<tr>");
+			sb.append("<td width=\"54\">" + character.getId() + "</td>");
+			sb.append("<td width=\"54\">" + character.getName() + "</td>");
+			sb.append("<td width=\"54\">" + Math.round(activeChar.calculateDistance(character, false, false)) + "</td>");
+			sb.append("<td width=\"54\"><a action=\"bypass -h admin_deleteNpcByObjectId " + character.getObjectId() + "\"><font color=\"LEVEL\">Delete</font></a></td>");
+			sb.append("<td width=\"54\"><a action=\"bypass -h admin_move_to " + character.getX() + " " + character.getY() + " " + character.getZ() + "\"><font color=\"LEVEL\">Go to</font></a></td>");
+			sb.append("</tr>");
+		});
 		html.replace("%data%", sb.toString());
 		activeChar.sendPacket(html);
 	}

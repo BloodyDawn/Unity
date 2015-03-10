@@ -23,7 +23,6 @@ import java.util.StringTokenizer;
 import org.l2junity.Config;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.xml.impl.AdminData;
-import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.enums.PlayerAction;
 import org.l2junity.gameserver.handler.AdminCommandHandler;
 import org.l2junity.gameserver.handler.BypassHandler;
@@ -293,8 +292,8 @@ public final class RequestBypassToServer implements IClientIncomingPacket
 				{
 					if (bypassOriginId > 0)
 					{
-						WorldObject bypassOrigin = activeChar.getKnownList().getKnownObjects().get(bypassOriginId);
-						if ((bypassOrigin != null) && bypassOrigin.isInstanceTypes(InstanceType.L2Character))
+						WorldObject bypassOrigin = World.getInstance().findObject(bypassOriginId);
+						if ((bypassOrigin != null) && bypassOrigin.isCreature())
 						{
 							handler.useBypass(_command, activeChar, (Creature) bypassOrigin);
 						}

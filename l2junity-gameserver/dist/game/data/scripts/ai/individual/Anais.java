@@ -19,10 +19,10 @@
 package ai.individual;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -90,13 +90,8 @@ public final class Anais extends AbstractNpcAI
 				}
 				if ((_current != null) || (_pot < 4))
 				{
-					final Map<Integer, PlayerInstance> players = npc.getKnownList().getKnownPlayers();
-					final PlayerInstance target = players.get(getRandom(players.size() - 1));
-					_nextTarget = target;
-					if (_nextTarget == null)
-					{
-						_nextTarget = (PlayerInstance) npc.getTarget();
-					}
+					final WorldObject target = npc.getTarget();
+					_nextTarget = target instanceof PlayerInstance ? (PlayerInstance) target : null;
 					final Npc b = _divineBurners.get(_pot);
 					_pot = _pot + 1;
 					b.setState(1);

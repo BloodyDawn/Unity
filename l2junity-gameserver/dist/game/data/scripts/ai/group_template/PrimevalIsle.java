@@ -24,6 +24,7 @@ import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.handler.ItemHandler;
 import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -327,14 +328,13 @@ public final class PrimevalIsle extends AbstractNpcAI
 			{
 				npc.setScriptValue(1);
 				final Playable playable = isSummon ? attacker.getServitors().values().stream().findFirst().orElse(attacker.getPet()) : attacker;
-				for (Creature characters : npc.getKnownList().getKnownCharactersInRadius(500))
+				World.getInstance().forEachVisibleObjectInRange(npc, Attackable.class, 500, monster ->
 				{
-					if ((characters != null) && (characters.isAttackable()) && (getRandomBoolean()))
+					if ((getRandomBoolean()))
 					{
-						Attackable monster = (Attackable) characters;
 						addAttackPlayerDesire(monster, playable);
 					}
-				}
+				});
 			}
 		}
 		else if (Util.contains(TREX, npc.getId()))

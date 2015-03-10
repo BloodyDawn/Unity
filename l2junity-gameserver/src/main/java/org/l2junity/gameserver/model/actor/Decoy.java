@@ -18,11 +18,10 @@
  */
 package org.l2junity.gameserver.model.actor;
 
-import java.util.Collection;
-
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.PcCondOverride;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
@@ -56,15 +55,13 @@ public abstract class Decoy extends Creature
 	@Override
 	public void updateAbnormalVisualEffects()
 	{
-		Collection<PlayerInstance> plrs = getKnownList().getKnownPlayers().values();
-		
-		for (PlayerInstance player : plrs)
+		World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
 		{
-			if ((player != null) && isVisibleFor(player))
+			if (isVisibleFor(player))
 			{
 				player.sendPacket(new CharInfo(this, isInvisible() && player.canOverrideCond(PcCondOverride.SEE_ALL_PLAYERS)));
 			}
-		}
+		});
 	}
 	
 	public void stopDecay()
@@ -123,7 +120,6 @@ public abstract class Decoy extends Creature
 	public void deleteMe(PlayerInstance owner)
 	{
 		decayMe();
-		getKnownList().removeAllKnownObjects();
 		owner.setDecoy(null);
 	}
 	
@@ -135,7 +131,6 @@ public abstract class Decoy extends Creature
 			ZoneManager.getInstance().getRegion(this).removeFromZones(this);
 			owner.setDecoy(null);
 			decayMe();
-			getKnownList().removeAllKnownObjects();
 		}
 	}
 	

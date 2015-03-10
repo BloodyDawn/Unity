@@ -389,13 +389,14 @@ public class L2Event
 					spawnEventNpc(player);
 					temp.add(player);
 				}
-				for (PlayerInstance playertemp : player.getKnownList().getKnownPlayers().values())
+				
+				World.getInstance().forEachVisibleObject(player, PlayerInstance.class, playertemp ->
 				{
 					if ((Math.abs(playertemp.getX() - player.getX()) < 1000) && (Math.abs(playertemp.getY() - player.getY()) < 1000) && (Math.abs(playertemp.getZ() - player.getZ()) < 1000))
 					{
 						temp.add(playertemp);
 					}
-				}
+				});
 			}
 		}
 		catch (Exception e)

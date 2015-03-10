@@ -21,6 +21,7 @@ package handlers.itemhandlers;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.instancemanager.HandysBlockCheckerManager;
 import org.l2junity.gameserver.model.ArenaParticipantsHolder;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.L2BlockInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -87,14 +88,14 @@ public class EventItem implements IItemHandler
 		if (holder != null)
 		{
 			final int team = holder.getPlayerTeam(castor);
-			for (final PlayerInstance pc : block.getKnownList().getKnownPlayersInRadius(sk.getEffectRange()))
+			World.getInstance().forEachVisibleObjectInRange(block, PlayerInstance.class, sk.getEffectRange(), pc ->
 			{
 				final int enemyTeam = holder.getPlayerTeam(pc);
 				if ((enemyTeam != -1) && (enemyTeam != team))
 				{
 					sk.applyEffects(castor, pc);
 				}
-			}
+			});
 			return true;
 		}
 		_log.warn("Char: " + castor.getName() + "[" + castor.getObjectId() + "] has unknown block checker arena");

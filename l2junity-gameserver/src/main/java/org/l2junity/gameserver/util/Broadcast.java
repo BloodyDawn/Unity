@@ -18,8 +18,6 @@
  */
 package org.l2junity.gameserver.util;
 
-import java.util.Collection;
-
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -52,16 +50,13 @@ public final class Broadcast
 	 */
 	public static void toPlayersTargettingMyself(Creature character, IClientOutgoingPacket mov)
 	{
-		Collection<PlayerInstance> plrs = character.getKnownList().getKnownPlayers().values();
-		for (PlayerInstance player : plrs)
+		World.getInstance().forEachVisibleObject(character, PlayerInstance.class, player ->
 		{
-			if (player.getTarget() != character)
+			if (player.getTarget() == character)
 			{
-				continue;
+				player.sendPacket(mov);
 			}
-			
-			player.sendPacket(mov);
-		}
+		});
 		
 	}
 	
@@ -76,20 +71,15 @@ public final class Broadcast
 	 */
 	public static void toKnownPlayers(Creature character, IClientOutgoingPacket mov)
 	{
-		final Collection<PlayerInstance> plrs = character.getKnownList().getKnownPlayers().values();
-		for (PlayerInstance player : plrs)
+		World.getInstance().forEachVisibleObject(character, PlayerInstance.class, player ->
 		{
-			if (player == null)
-			{
-				continue;
-			}
 			try
 			{
 				player.sendPacket(mov);
 				if ((mov instanceof CharInfo) && (character.isPlayer()))
 				{
 					int relation = ((PlayerInstance) character).getRelation(player);
-					Integer oldrelation = character.getKnownList().getKnownRelations().get(player.getObjectId());
+					Integer oldrelation = character.getKnownRelations().get(player.getObjectId());
 					if ((oldrelation != null) && (oldrelation != relation))
 					{
 						final RelationChanged rc = new RelationChanged();
@@ -107,7 +97,7 @@ public final class Broadcast
 							}
 						}
 						player.sendPacket(rc);
-						character.getKnownList().getKnownRelations().put(player.getObjectId(), relation);
+						character.getKnownRelations().put(player.getObjectId(), relation);
 					}
 				}
 			}
@@ -115,8 +105,7 @@ public final class Broadcast
 			{
 				_log.warn(e.getMessage(), e);
 			}
-		}
-		
+		});
 	}
 	
 	/**
@@ -136,14 +125,7 @@ public final class Broadcast
 			radius = 1500;
 		}
 		
-		Collection<PlayerInstance> plrs = character.getKnownList().getKnownPlayers().values();
-		for (PlayerInstance player : plrs)
-		{
-			if (character.isInsideRadius(player, radius, false, false))
-			{
-				player.sendPacket(mov);
-			}
-		}
+		World.getInstance().forEachVisibleObjectInRange(character, PlayerInstance.class, radius, mov::sendTo);
 	}
 	
 	/**
@@ -177,14 +159,7 @@ public final class Broadcast
 			character.sendPacket(mov);
 		}
 		
-		Collection<PlayerInstance> plrs = character.getKnownList().getKnownPlayers().values();
-		for (PlayerInstance player : plrs)
-		{
-			if ((player != null) && Util.checkIfInRange(radius, character, player, false))
-			{
-				player.sendPacket(mov);
-			}
-		}
+		World.getInstance().forEachVisibleObjectInRange(character, PlayerInstance.class, radius, mov::sendTo);
 	}
 	
 	/**

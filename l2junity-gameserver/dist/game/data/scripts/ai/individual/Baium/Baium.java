@@ -27,6 +27,7 @@ import org.l2junity.gameserver.instancemanager.GrandBossManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -302,9 +303,9 @@ public final class Baium extends AbstractNpcAI
 				}
 				else
 				{
-					for (Creature creature : npc.getKnownList().getKnownCharactersInRadius(2000))
+					for (Creature creature : World.getInstance().getVisibleObjects(npc, PlayerInstance.class, 2000))
 					{
-						if ((creature != null) && creature.isPlayer() && zone.isInsideZone(creature) && !creature.isDead())
+						if (zone.isInsideZone(creature) && !creature.isDead())
 						{
 							addAttackPlayerDesire(npc, (Playable) creature);
 							break;
@@ -337,15 +338,15 @@ public final class Baium extends AbstractNpcAI
 					else
 					{
 						boolean found = false;
-						for (Creature creature : mob.getKnownList().getKnownCharactersInRadius(1000))
+						for (Playable creature : World.getInstance().getVisibleObjects(mob, Playable.class, 1000))
 						{
-							if ((creature != null) && creature.isPlayable() && zone.isInsideZone(creature) && !creature.isDead())
+							if (zone.isInsideZone(creature) && !creature.isDead())
 							{
 								if (mob.getTarget() != creature)
 								{
 									mob.clearAggroList();
 								}
-								addAttackPlayerDesire(mob, (Playable) creature);
+								addAttackPlayerDesire(mob, creature);
 								found = true;
 								break;
 							}

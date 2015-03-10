@@ -20,8 +20,9 @@ package ai.group_template;
 
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.enums.ChatType;
-import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.util.Util;
@@ -78,15 +79,14 @@ public final class PlainsOfDion extends AbstractNpcAI
 				npc.broadcastSay(ChatType.NPC_GENERAL, MONSTERS_MSG[i]);
 			}
 			
-			for (Creature obj : npc.getKnownList().getKnownCharactersInRadius(npc.getTemplate().getClanHelpRange()))
+			World.getInstance().forEachVisibleObjectInRange(npc, L2MonsterInstance.class, npc.getTemplate().getClanHelpRange(), obj ->
 			{
 				if (obj.isMonster() && Util.contains(DELU_LIZARDMEN, obj.getId()) && !obj.isAttackingNow() && !obj.isDead() && GeoData.getInstance().canSeeTarget(npc, obj))
 				{
-					final Npc monster = (Npc) obj;
-					addAttackPlayerDesire(monster, player);
-					monster.broadcastSay(ChatType.NPC_GENERAL, MONSTERS_ASSIST_MSG[getRandom(3)]);
+					addAttackPlayerDesire(obj, player);
+					obj.broadcastSay(ChatType.NPC_GENERAL, MONSTERS_ASSIST_MSG[getRandom(3)]);
 				}
-			}
+			});
 			npc.setScriptValue(1);
 		}
 		return super.onAttack(npc, player, damage, isSummon);

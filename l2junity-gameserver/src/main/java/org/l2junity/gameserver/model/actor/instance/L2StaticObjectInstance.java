@@ -22,7 +22,6 @@ import org.l2junity.gameserver.ai.CharacterAI;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.knownlist.StaticObjectKnownList;
 import org.l2junity.gameserver.model.actor.stat.StaticObjStat;
 import org.l2junity.gameserver.model.actor.status.StaticObjStatus;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
@@ -106,18 +105,6 @@ public final class L2StaticObjectInstance extends Creature
 		super(template);
 		setInstanceType(InstanceType.L2StaticObjectInstance);
 		_staticObjectId = staticId;
-	}
-	
-	@Override
-	public final StaticObjectKnownList getKnownList()
-	{
-		return (StaticObjectKnownList) super.getKnownList();
-	}
-	
-	@Override
-	public void initKnownList()
-	{
-		setKnownList(new StaticObjectKnownList(this));
 	}
 	
 	@Override

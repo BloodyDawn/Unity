@@ -92,7 +92,6 @@ public class L2ShuttleInstance extends Vehicle
 		player.setVehicle(this);
 		player.setInVehiclePosition(new Location(0, 0, 0));
 		player.broadcastPacket(new ExShuttleGetOn(player, this));
-		player.getKnownList().removeAllKnownObjects();
 		player.setXYZ(getX(), getY(), getZ());
 		player.revalidateZone(true);
 		return true;
@@ -104,7 +103,6 @@ public class L2ShuttleInstance extends Vehicle
 		if (player.isOnline())
 		{
 			player.broadcastPacket(new ExShuttleGetOff(player, this, x, y, z));
-			player.getKnownList().removeAllKnownObjects();
 			player.setXYZ(x, y, z);
 			player.revalidateZone(true);
 		}

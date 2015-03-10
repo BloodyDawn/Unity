@@ -24,6 +24,7 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -112,9 +113,9 @@ public final class MithrilMine extends AbstractInstance
 			}
 			case "FINISH":
 			{
-				for (Creature knownChar : npc.getKnownList().getKnownCharacters())
+				World.getInstance().forEachVisibleObject(npc, Creature.class, knownChar ->
 				{
-					if ((knownChar != null) && (knownChar.getId() == KEGOR))
+					if (knownChar.getId() == KEGOR)
 					{
 						final Npc kegor = (Npc) knownChar;
 						kegor.setScriptValue(2);
@@ -123,7 +124,7 @@ public final class MithrilMine extends AbstractInstance
 						kegor.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, player);
 						kegor.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.I_CAN_FINALLY_TAKE_A_BREATHER_BY_THE_WAY_WHO_ARE_YOU_HMM_I_THINK_I_KNOW_WHO_SENT_YOU);
 					}
-				}
+				});
 				InstanceManager.getInstance().getInstance(world.getInstanceId()).setDuration(3000);
 				break;
 			}

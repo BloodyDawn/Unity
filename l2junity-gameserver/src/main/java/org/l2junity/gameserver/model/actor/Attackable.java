@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicReference;
+
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -53,7 +54,6 @@ import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.L2ServitorInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.actor.knownlist.AttackableKnownList;
 import org.l2junity.gameserver.model.actor.status.AttackableStatus;
 import org.l2junity.gameserver.model.actor.tasks.attackable.CommandChannelTimer;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
@@ -121,18 +121,6 @@ public class Attackable extends Npc
 		setInstanceType(InstanceType.L2Attackable);
 		setIsInvul(false);
 		_mustGiveExpSp = true;
-	}
-	
-	@Override
-	public AttackableKnownList getKnownList()
-	{
-		return (AttackableKnownList) super.getKnownList();
-	}
-	
-	@Override
-	public void initKnownList()
-	{
-		setKnownList(new AttackableKnownList(this));
 	}
 	
 	@Override
@@ -478,7 +466,7 @@ public class Attackable extends Npc
 					if (attackerParty == null)
 					{
 						// Calculate Exp and SP rewards
-						if (attacker.getKnownList().knowsObject(this))
+						if (isInSurroundingRegion(attacker))
 						{
 							// Calculate the difference of level between this attacker (player or servitor owner) and the L2Attackable
 							// mob = 24, atk = 10, diff = -14 (full xp)

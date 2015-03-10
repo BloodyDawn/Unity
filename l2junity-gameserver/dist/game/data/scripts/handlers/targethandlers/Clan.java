@@ -19,12 +19,12 @@
 package handlers.targethandlers;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.model.ClanMember;
 import org.l2junity.gameserver.model.L2Clan;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -32,7 +32,6 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
-import org.l2junity.gameserver.util.Util;
 
 /**
  * @author UnAfraid
@@ -166,23 +165,17 @@ public class Clan implements ITargetTypeHandler
 			
 			targetList.add(activeChar);
 			
-			final Collection<WorldObject> objs = activeChar.getKnownList().getKnownObjects().values();
-			int maxTargets = skill.getAffectLimit();
-			for (WorldObject newTarget : objs)
+			for (Npc newTarget : World.getInstance().getVisibleObjects(activeChar, Npc.class, skill.getCastRange()))
 			{
-				if (newTarget.isNpc() && npc.isInMyClan((Npc) newTarget))
+				if (npc.isInMyClan(newTarget))
 				{
-					if (!Util.checkIfInRange(skill.getCastRange(), activeChar, newTarget, true))
-					{
-						continue;
-					}
-					
+					final int maxTargets = skill.getAffectLimit();
 					if ((maxTargets > 0) && (targetList.size() >= maxTargets))
 					{
 						break;
 					}
 					
-					targetList.add((Npc) newTarget);
+					targetList.add(newTarget);
 				}
 			}
 		}

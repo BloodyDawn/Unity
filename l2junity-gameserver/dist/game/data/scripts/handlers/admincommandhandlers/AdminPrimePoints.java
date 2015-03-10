@@ -131,7 +131,7 @@ public final class AdminPrimePoints implements IAdminCommandHandler
 						}
 						else if (range > 0)
 						{
-							final int count = increaseForAll(activeChar.getKnownList().getKnownPlayers().values(), value);
+							final int count = increaseForAll(World.getInstance().getVisibleObjects(activeChar, PlayerInstance.class, range), value);
 							activeChar.sendMessage("You increased Prime Point(s) of all players (" + count + ") in range " + range + " by " + value + ".");
 						}
 						break;

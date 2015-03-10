@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.model.actor.tasks.npc.trap;
 
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2TrapInstance;
 import org.l2junity.gameserver.network.client.send.SocialAction;
@@ -73,7 +74,7 @@ public class TrapTask implements Runnable
 					}
 				}
 				
-				for (Creature target : _trap.getKnownList().getKnownCharacters())
+				for (Creature target : World.getInstance().getVisibleObjects(_trap, Creature.class))
 				{
 					if (_trap.checkTarget(target))
 					{

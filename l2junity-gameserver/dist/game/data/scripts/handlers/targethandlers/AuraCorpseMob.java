@@ -19,11 +19,12 @@
 package handlers.targethandlers;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
@@ -38,11 +39,10 @@ public class AuraCorpseMob implements ITargetTypeHandler
 	{
 		List<Creature> targetList = new ArrayList<>();
 		// Go through the L2Character _knownList
-		final Collection<Creature> objs = activeChar.getKnownList().getKnownCharactersInRadius(skill.getAffectRange());
 		int maxTargets = skill.getAffectLimit();
-		for (Creature obj : objs)
+		for (Attackable obj : World.getInstance().getVisibleObjects(activeChar, Attackable.class, skill.getAffectRange()))
 		{
-			if (obj.isAttackable() && obj.isDead())
+			if (obj.isDead())
 			{
 				if (onlyFirst)
 				{

@@ -34,6 +34,7 @@ import org.l2junity.gameserver.model.CommandChannel;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.PcCondOverride;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -660,13 +661,10 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						final Attackable mob = (Attackable) npc;
 						mob.clearAggroList();
 						
-						for (Creature characters : npc.getKnownList().getKnownPlayersInRadius(1000))
+						World.getInstance().forEachVisibleObjectInRange(npc, PlayerInstance.class, 1000, characters ->
 						{
-							if ((characters != null))
-							{
-								mob.addDamageHate(characters, 0, getRandom(10000, 20000));
-							}
-						}
+							mob.addDamageHate(characters, 0, getRandom(10000, 20000));
+						});
 						startQuestTimer("LEADER_RANDOMIZE", 25000, npc, null);
 						break;
 					}

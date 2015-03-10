@@ -19,16 +19,15 @@
 package handlers.targethandlers;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
-import org.l2junity.gameserver.util.Util;
 
 /**
  * @author UnAfraid
@@ -50,20 +49,11 @@ public class ClanMember implements ITargetTypeHandler
 					activeChar
 				};
 			}
-			final Collection<WorldObject> objs = activeChar.getKnownList().getKnownObjects().values();
-			for (WorldObject newTarget : objs)
+			for (Npc newTarget : World.getInstance().getVisibleObjects(activeChar, Npc.class, skill.getCastRange()))
 			{
-				if (newTarget.isNpc() && npc.isInMyClan((Npc) newTarget))
+				if (npc.isInMyClan(newTarget) && !newTarget.isAffectedBySkill(skill.getId()))
 				{
-					if (!Util.checkIfInRange(skill.getCastRange(), activeChar, newTarget, true))
-					{
-						continue;
-					}
-					if (((Npc) newTarget).isAffectedBySkill(skill.getId()))
-					{
-						continue;
-					}
-					targetList.add((Npc) newTarget);
+					targetList.add(newTarget);
 					break;
 				}
 			}

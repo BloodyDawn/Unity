@@ -400,7 +400,6 @@ public final class Instance
 					region.removeVisibleObject(door);
 				}
 				
-				door.getKnownList().removeAllKnownObjects();
 				World.getInstance().removeObject(door);
 			}
 		}

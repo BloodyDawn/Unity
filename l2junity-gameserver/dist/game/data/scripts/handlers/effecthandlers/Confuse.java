@@ -25,7 +25,7 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
@@ -82,13 +82,8 @@ public final class Confuse extends AbstractEffect
 		
 		final List<Creature> targetList = new ArrayList<>();
 		// Getting the possible targets
-		for (WorldObject obj : info.getEffected().getKnownList().getKnownObjects().values())
-		{
-			if (((info.getEffected().isMonster() && obj.isAttackable()) || (obj instanceof Creature)) && (obj != info.getEffected()))
-			{
-				targetList.add((Creature) obj);
-			}
-		}
+		
+		World.getInstance().forEachVisibleObject(info.getEffected(), Creature.class, targetList::add);
 		
 		// if there is no target, exit function
 		if (!targetList.isEmpty())

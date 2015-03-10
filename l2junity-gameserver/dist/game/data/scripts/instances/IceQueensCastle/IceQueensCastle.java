@@ -25,6 +25,7 @@ import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -84,7 +85,7 @@ public final class IceQueensCastle extends AbstractInstance
 		{
 			case "ATTACK_KNIGHT":
 			{
-				for (Creature character : npc.getKnownList().getKnownCharacters())
+				World.getInstance().forEachVisibleObject(npc, Creature.class, character ->
 				{
 					if ((character.getId() == ARCHERY_KNIGHT) && !character.isDead() && !((Attackable) character).isDecayed())
 					{
@@ -92,7 +93,7 @@ public final class IceQueensCastle extends AbstractInstance
 						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, character);
 						((Attackable) npc).addDamageHate(character, 0, 999999);
 					}
-				}
+				});
 				startQuestTimer("ATTACK_KNIGHT", 3000, npc, null);
 				break;
 			}
@@ -145,7 +146,7 @@ public final class IceQueensCastle extends AbstractInstance
 	{
 		if (creature.isPlayer() && npc.isScriptValue(0))
 		{
-			for (Creature character : npc.getKnownList().getKnownCharacters())
+			World.getInstance().forEachVisibleObject(npc, Creature.class, character ->
 			{
 				if ((character.getId() == ARCHERY_KNIGHT) && !character.isDead() && !((Attackable) character).isDecayed())
 				{
@@ -155,7 +156,7 @@ public final class IceQueensCastle extends AbstractInstance
 					npc.setScriptValue(1);
 					startQuestTimer("ATTACK_KNIGHT", 5000, npc, null);
 				}
-			}
+			});
 			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.S1_MAY_THE_PROTECTION_OF_THE_GODS_BE_UPON_YOU, creature.getName());
 		}
 		return super.onSeeCreature(npc, creature, isSummon);

@@ -34,10 +34,10 @@ import org.l2junity.gameserver.handler.ItemHandler;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.AggroInfo;
 import org.l2junity.gameserver.model.Party;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.L2NpcInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.actor.knownlist.SummonKnownList;
 import org.l2junity.gameserver.model.actor.stat.SummonStat;
 import org.l2junity.gameserver.model.actor.status.SummonStatus;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
@@ -134,10 +134,10 @@ public abstract class Summon extends Playable
 		setFollowStatus(true);
 		updateAndBroadcastStatus(0);
 		sendPacket(new RelationChanged(this, getOwner().getRelation(getOwner()), false));
-		for (PlayerInstance player : getOwner().getKnownList().getKnownPlayersInRadius(800))
+		World.getInstance().forEachVisibleObjectInRange(getOwner(), PlayerInstance.class, 800, player ->
 		{
 			player.sendPacket(new RelationChanged(this, getOwner().getRelation(player), isAutoAttackable(player)));
-		}
+		});
 		Party party = getOwner().getParty();
 		if (party != null)
 		{
@@ -149,18 +149,6 @@ public abstract class Summon extends Playable
 		
 		// Notify to scripts
 		EventDispatcher.getInstance().notifyEventAsync(new OnPlayerSummonSpawn(this), this);
-	}
-	
-	@Override
-	public final SummonKnownList getKnownList()
-	{
-		return (SummonKnownList) super.getKnownList();
-	}
-	
-	@Override
-	public void initKnownList()
-	{
-		setKnownList(new SummonKnownList(this));
 	}
 	
 	@Override
@@ -219,7 +207,7 @@ public abstract class Summon extends Playable
 	@Override
 	public void updateAbnormalVisualEffects()
 	{
-		for (PlayerInstance player : getKnownList().getKnownPlayers().values())
+		World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
 		{
 			if (isPet())
 			{
@@ -229,7 +217,7 @@ public abstract class Summon extends Playable
 			{
 				player.sendPacket(new SummonInfo(this, player, 1));
 			}
-		}
+		});
 	}
 	
 	/**
@@ -335,23 +323,19 @@ public abstract class Summon extends Playable
 		final PlayerInstance owner = getOwner();
 		if (owner != null)
 		{
-			for (Creature TgMob : getKnownList().getKnownCharacters())
+			World.getInstance().forEachVisibleObject(this, Attackable.class, TgMob ->
 			{
-				// get the mobs which have aggro on the this instance
-				if (TgMob instanceof Attackable)
+				if (TgMob.isDead())
 				{
-					if (TgMob.isDead())
-					{
-						continue;
-					}
-					
-					AggroInfo info = ((Attackable) TgMob).getAggroList().get(this);
-					if (info != null)
-					{
-						((Attackable) TgMob).addDamageHate(owner, info.getDamage(), info.getHate());
-					}
+					return;
 				}
-			}
+				
+				AggroInfo info = TgMob.getAggroList().get(this);
+				if (info != null)
+				{
+					TgMob.addDamageHate(owner, info.getDamage(), info.getHate());
+				}
+			});
 		}
 		
 		DecayTaskManager.getInstance().add(this);
@@ -407,7 +391,6 @@ public abstract class Summon extends Playable
 			getInventory().destroyAllItems("pet deleted", getOwner(), this);
 		}
 		decayMe();
-		getKnownList().removeAllKnownObjects();
 		if (owner != null)
 		{
 			owner.setPet(null);
@@ -462,10 +445,11 @@ public abstract class Summon extends Playable
 			}
 			
 			stopAllEffects();
-			ZoneRegion oldRegion = ZoneManager.getInstance().getRegion(this);
+			
+			final ZoneRegion oldRegion = ZoneManager.getInstance().getRegion(this);
 			decayMe();
 			oldRegion.removeFromZones(this);
-			getKnownList().removeAllKnownObjects();
+			
 			setTarget(null);
 			if (owner != null)
 			{
@@ -886,12 +870,13 @@ public abstract class Summon extends Playable
 	
 	public void broadcastNpcInfo(int val)
 	{
-		for (PlayerInstance player : getKnownList().getKnownPlayers().values())
+		World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
 		{
-			if ((player == null) || (player == getOwner()))
+			if ((player == getOwner()))
 			{
-				continue;
+				return;
 			}
+			
 			if (isPet())
 			{
 				player.sendPacket(new ExPetInfo(this, player, val));
@@ -900,8 +885,7 @@ public abstract class Summon extends Playable
 			{
 				player.sendPacket(new SummonInfo(this, player, val));
 			}
-			
-		}
+		});
 	}
 	
 	public boolean isHungry()

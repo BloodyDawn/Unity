@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
@@ -40,7 +41,7 @@ public class Aura implements ITargetTypeHandler
 	{
 		final List<Creature> targetList = new ArrayList<>();
 		final boolean srcInArena = (activeChar.isInsideZone(ZoneId.PVP) && !activeChar.isInsideZone(ZoneId.SIEGE));
-		for (Creature obj : activeChar.getKnownList().getKnownCharactersInRadius(skill.getAffectRange()))
+		for (Creature obj : World.getInstance().getVisibleObjects(activeChar, Creature.class, skill.getAffectRange()))
 		{
 			if (obj.isDoor() || obj.isAttackable() || obj.isPlayable())
 			{

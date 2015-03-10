@@ -157,7 +157,6 @@ import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.Vehicle;
 import org.l2junity.gameserver.model.actor.appearance.PcAppearance;
-import org.l2junity.gameserver.model.actor.knownlist.PcKnownList;
 import org.l2junity.gameserver.model.actor.request.AbstractRequest;
 import org.l2junity.gameserver.model.actor.request.SayuneRequest;
 import org.l2junity.gameserver.model.actor.stat.PcStat;
@@ -1124,18 +1123,6 @@ public final class PlayerInstance extends Playable
 	}
 	
 	@Override
-	public final PcKnownList getKnownList()
-	{
-		return (PcKnownList) super.getKnownList();
-	}
-	
-	@Override
-	public void initKnownList()
-	{
-		setKnownList(new PcKnownList(this));
-	}
-	
-	@Override
 	public final PcStat getStat()
 	{
 		return (PcStat) super.getStat();
@@ -1713,17 +1700,15 @@ public final class PlayerInstance extends Playable
 			sendPacket(rc);
 		}
 		
-		final Collection<PlayerInstance> plrs = getKnownList().getKnownPlayers().values();
-		
-		for (PlayerInstance player : plrs)
+		World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
 		{
-			if ((player == null) || !isVisibleFor(player))
+			if (!isVisibleFor(player))
 			{
-				continue;
+				return;
 			}
 			
 			final int relation = getRelation(player);
-			Integer oldrelation = getKnownList().getKnownRelations().get(player.getObjectId());
+			Integer oldrelation = getKnownRelations().get(player.getObjectId());
 			if ((oldrelation == null) || (oldrelation != relation))
 			{
 				final RelationChanged rc = new RelationChanged();
@@ -1741,9 +1726,9 @@ public final class PlayerInstance extends Playable
 					}
 				}
 				player.sendPacket(rc);
-				getKnownList().getKnownRelations().put(player.getObjectId(), relation);
+				getKnownRelations().put(player.getObjectId(), relation);
 			}
-		}
+		});
 	}
 	
 	@Override
@@ -1997,20 +1982,13 @@ public final class PlayerInstance extends Playable
 		}
 		if ((_karma == 0) && (karma > 0))
 		{
-			Collection<WorldObject> objs = getKnownList().getKnownObjects().values();
-			
-			for (WorldObject object : objs)
+			World.getInstance().forEachVisibleObject(this, L2GuardInstance.class, object ->
 			{
-				if (!(object instanceof L2GuardInstance))
+				if (object.getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE)
 				{
-					continue;
+					object.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
 				}
-				
-				if (((L2GuardInstance) object).getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE)
-				{
-					((L2GuardInstance) object).getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
-				}
-			}
+			});
 		}
 		else if ((_karma > 0) && (karma == 0))
 		{
@@ -4247,31 +4225,21 @@ public final class PlayerInstance extends Playable
 	
 	public final void broadcastCharInfo()
 	{
-		// Broadcast char info to all known players.
-		CharInfo sharedInstanceInvis = null;
-		CharInfo sharedInstanceVis = null;
-		for (PlayerInstance player : getKnownList().getKnownPlayers().values())
+		final CharInfo charInfo = new CharInfo(this, false);
+		World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
 		{
-			if ((player != null) && isVisibleFor(player))
+			if (isVisibleFor(player))
 			{
 				if (isInvisible() && player.canOverrideCond(PcCondOverride.SEE_ALL_PLAYERS))
 				{
-					if (sharedInstanceInvis == null)
-					{
-						sharedInstanceInvis = new CharInfo(this, true);
-					}
-					player.sendPacket(sharedInstanceInvis);
+					player.sendPacket(new CharInfo(this, true));
 				}
 				else
 				{
-					if (sharedInstanceVis == null)
-					{
-						sharedInstanceVis = new CharInfo(this, false);
-					}
-					player.sendPacket(sharedInstanceVis);
+					player.sendPacket(charInfo);
 				}
 			}
-		}
+		});
 	}
 	
 	public final void broadcastTitleInfo()
@@ -4293,17 +4261,16 @@ public final class PlayerInstance extends Playable
 			sendPacket(mov);
 		}
 		
-		final Collection<PlayerInstance> plrs = getKnownList().getKnownPlayers().values();
-		for (PlayerInstance player : plrs)
+		World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
 		{
-			if ((player == null) || !isVisibleFor(player))
+			if (!isVisibleFor(player))
 			{
-				continue;
+				return;
 			}
 			
 			player.sendPacket(mov);
 			final int relation = getRelation(player);
-			Integer oldrelation = getKnownList().getKnownRelations().get(player.getObjectId());
+			Integer oldrelation = getKnownRelations().get(player.getObjectId());
 			if ((oldrelation == null) || (oldrelation != relation))
 			{
 				final RelationChanged rc = new RelationChanged();
@@ -4321,9 +4288,9 @@ public final class PlayerInstance extends Playable
 					}
 				}
 				player.sendPacket(rc);
-				getKnownList().getKnownRelations().put(player.getObjectId(), relation);
+				getKnownRelations().put(player.getObjectId(), relation);
 			}
-		}
+		});
 	}
 	
 	@Override
@@ -4334,18 +4301,17 @@ public final class PlayerInstance extends Playable
 			sendPacket(mov);
 		}
 		
-		final Collection<PlayerInstance> plrs = getKnownList().getKnownPlayersInRadius(radiusInKnownlist);
-		for (PlayerInstance player : plrs)
+		World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
 		{
-			if ((player == null) || !isVisibleFor(player))
+			if (!isVisibleFor(player) || (calculateDistance(player, true, false) >= radiusInKnownlist))
 			{
-				continue;
+				return;
 			}
 			player.sendPacket(mov);
 			if (mov instanceof CharInfo)
 			{
 				final int relation = getRelation(player);
-				Integer oldrelation = getKnownList().getKnownRelations().get(player.getObjectId());
+				Integer oldrelation = getKnownRelations().get(player.getObjectId());
 				if ((oldrelation == null) || (oldrelation != relation))
 				{
 					final RelationChanged rc = new RelationChanged();
@@ -4363,10 +4329,10 @@ public final class PlayerInstance extends Playable
 						}
 					}
 					player.sendPacket(rc);
-					getKnownList().getKnownRelations().put(player.getObjectId(), relation);
+					getKnownRelations().put(player.getObjectId(), relation);
 				}
 			}
-		}
+		});
 	}
 	
 	/**
@@ -6714,16 +6680,15 @@ public final class PlayerInstance extends Playable
 		su.addAttribute(StatusUpdate.PVP_FLAG, getKarma());
 		sendPacket(su);
 		
-		final Collection<PlayerInstance> plrs = getKnownList().getKnownPlayers().values();
-		for (PlayerInstance player : plrs)
+		World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
 		{
-			if ((player == null) || !isVisibleFor(player))
+			if (!isVisibleFor(player))
 			{
-				continue;
+				return;
 			}
 			
 			final int relation = getRelation(player);
-			Integer oldrelation = getKnownList().getKnownRelations().get(player.getObjectId());
+			Integer oldrelation = getKnownRelations().get(player.getObjectId());
 			if ((oldrelation == null) || (oldrelation != relation))
 			{
 				final RelationChanged rc = new RelationChanged();
@@ -6741,9 +6706,9 @@ public final class PlayerInstance extends Playable
 					}
 				}
 				player.sendPacket(rc);
-				getKnownList().getKnownRelations().put(player.getObjectId(), relation);
+				getKnownRelations().put(player.getObjectId(), relation);
 			}
-		}
+		});
 	}
 	
 	/**
@@ -6755,16 +6720,15 @@ public final class PlayerInstance extends Playable
 		su.addAttribute(StatusUpdate.KARMA, getKarma());
 		sendPacket(su);
 		
-		final Collection<PlayerInstance> plrs = getKnownList().getKnownPlayers().values();
-		for (PlayerInstance player : plrs)
+		World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
 		{
-			if ((player == null) || !isVisibleFor(player))
+			if (!isVisibleFor(player))
 			{
-				continue;
+				return;
 			}
 			
 			final int relation = getRelation(player);
-			Integer oldrelation = getKnownList().getKnownRelations().get(player.getObjectId());
+			Integer oldrelation = getKnownRelations().get(player.getObjectId());
 			if ((oldrelation == null) || (oldrelation != relation))
 			{
 				final RelationChanged rc = new RelationChanged();
@@ -6782,9 +6746,9 @@ public final class PlayerInstance extends Playable
 					}
 				}
 				player.sendPacket(rc);
-				getKnownList().getKnownRelations().put(player.getObjectId(), relation);
+				getKnownRelations().put(player.getObjectId(), relation);
 			}
-		}
+		});
 	}
 	
 	/**
@@ -11700,16 +11664,6 @@ public final class PlayerInstance extends Playable
 			}
 		}
 		
-		// Remove all L2Object from _knownObjects and _knownPlayer of the L2Character then cancel Attak or Cast and notify AI
-		try
-		{
-			getKnownList().removeAllKnownObjects();
-		}
-		catch (Exception e)
-		{
-			_log.error("deleteMe()", e);
-		}
-		
 		if (getClanId() > 0)
 		{
 			getClan().broadcastToOtherOnlineMembers(new PledgeShowMemberListUpdate(this), this);
@@ -13248,7 +13202,7 @@ public final class PlayerInstance extends Playable
 		
 		int relation1 = getRelation(activeChar);
 		int relation2 = activeChar.getRelation(this);
-		Integer oldrelation = getKnownList().getKnownRelations().get(activeChar.getObjectId());
+		Integer oldrelation = getKnownRelations().get(activeChar.getObjectId());
 		if ((oldrelation != null) && (oldrelation != relation1))
 		{
 			final RelationChanged rc = new RelationChanged();
@@ -13267,7 +13221,7 @@ public final class PlayerInstance extends Playable
 			}
 			activeChar.sendPacket(rc);
 		}
-		oldrelation = activeChar.getKnownList().getKnownRelations().get(getObjectId());
+		oldrelation = activeChar.getKnownRelations().get(getObjectId());
 		if ((oldrelation != null) && (oldrelation != relation2) && activeChar.isVisibleFor(this))
 		{
 			final RelationChanged rc = new RelationChanged();

@@ -23,6 +23,7 @@ import java.util.List;
 
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
@@ -66,19 +67,19 @@ public final class RandomizeHate extends AbstractEffect
 		
 		Attackable effectedMob = (Attackable) info.getEffected();
 		final List<Creature> targetList = new ArrayList<>();
-		for (Creature cha : info.getEffected().getKnownList().getKnownCharacters())
+		World.getInstance().forEachVisibleObject(info.getEffected(), Creature.class, cha ->
 		{
-			if ((cha != null) && (cha != effectedMob) && (cha != info.getEffector()))
+			if ((cha != effectedMob) && (cha != info.getEffector()))
 			{
 				// Aggro cannot be transfered to a mob of the same faction.
 				if (cha.isAttackable() && ((Attackable) cha).isInMyClan(effectedMob))
 				{
-					continue;
+					return;
 				}
 				
 				targetList.add(cha);
 			}
-		}
+		});
 		// if there is no target, exit function
 		if (targetList.isEmpty())
 		{

@@ -61,7 +61,7 @@ import org.slf4j.LoggerFactory;
  * <li>{@link #_generalPacketsThreadPool GeneralPackets} where most packets handler are executed.</li>
  * <li>{@link #_ioPacketsThreadPool I/O Packets} where all the i/o packets are executed.</li>
  * <li>There will be an AI ThreadPool where AI events should be executed</li>
- * <li>A general ThreadPool where everything else that needs to run asynchronously with no delay should be executed ({@link org.l2junity.gameserver.model.actor.knownlist KnownList} updates, SQL updates/inserts...)?</li>
+ * <li>A general ThreadPool where everything else that needs to run asynchronously with no delay should be executed updates, SQL updates/inserts...)?</li>
  * </ul>
  * </p>
  * @author -Wooden-

@@ -19,7 +19,7 @@
 package ai.individual;
 
 import org.l2junity.gameserver.ai.CtrlIntention;
-import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2QuestGuardInstance;
@@ -51,9 +51,8 @@ public final class TrainningSoldier extends AbstractNpcAI
 			final L2QuestGuardInstance soldier = (L2QuestGuardInstance) npc;
 			
 			//@formatter:off
-			final Npc dummy = (Npc) soldier.getKnownList().getKnownCharactersInRadius(150)
+			final Npc dummy = World.getInstance().getVisibleObjects(soldier, Npc.class, 150)
 				.stream()
-				.filter(WorldObject::isNpc)
 				.filter(obj -> (obj.getId() == DUMMY))
 				.findFirst()
 				.orElse(null);

@@ -27,7 +27,6 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.knownlist.RaceManagerKnownList;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -128,18 +127,6 @@ public class L2RaceManagerInstance extends Npc
 			// */
 		}
 		_managers.add(this);
-	}
-	
-	@Override
-	public final RaceManagerKnownList getKnownList()
-	{
-		return (RaceManagerKnownList) super.getKnownList();
-	}
-	
-	@Override
-	public void initKnownList()
-	{
-		setKnownList(new RaceManagerKnownList(this));
 	}
 	
 	class Announcement implements Runnable

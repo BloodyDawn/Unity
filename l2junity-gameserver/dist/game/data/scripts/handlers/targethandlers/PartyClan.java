@@ -19,10 +19,10 @@
 package handlers.targethandlers;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -80,13 +80,12 @@ public class PartyClan implements ITargetTypeHandler
 		}
 		
 		// Get all visible objects in a spherical area near the L2Character
-		final Collection<PlayerInstance> objs = activeChar.getKnownList().getKnownPlayersInRadius(radius);
 		int maxTargets = skill.getAffectLimit();
-		for (PlayerInstance obj : objs)
+		World.getInstance().forEachVisibleObjectInRange(activeChar, PlayerInstance.class, radius, obj ->
 		{
 			if (obj == null)
 			{
-				continue;
+				return;
 			}
 			
 			// olympiad mode - adding only own side
@@ -94,15 +93,15 @@ public class PartyClan implements ITargetTypeHandler
 			{
 				if (!obj.isInOlympiadMode())
 				{
-					continue;
+					return;
 				}
 				if (player.getOlympiadGameId() != obj.getOlympiadGameId())
 				{
-					continue;
+					return;
 				}
 				if (player.getOlympiadSide() != obj.getOlympiadSide())
 				{
-					continue;
+					return;
 				}
 			}
 			
@@ -110,30 +109,30 @@ public class PartyClan implements ITargetTypeHandler
 			{
 				if (player.getDuelId() != obj.getDuelId())
 				{
-					continue;
+					return;
 				}
 				
 				if (hasParty && obj.isInParty() && (player.getParty().getLeaderObjectId() != obj.getParty().getLeaderObjectId()))
 				{
-					continue;
+					return;
 				}
 			}
 			
 			if (!((hasClan && (obj.getClanId() == player.getClanId())) || (hasParty && obj.isInParty() && (player.getParty().getLeaderObjectId() == obj.getParty().getLeaderObjectId()))))
 			{
-				continue;
+				return;
 			}
 			
 			// Don't add this target if this is a Pc->Pc pvp
 			// casting and pvp condition not met
 			if (!player.checkPvpSkill(obj, skill))
 			{
-				continue;
+				return;
 			}
 			
 			if (!TvTEvent.checkForTvTSkill(player, obj, skill))
 			{
-				continue;
+				return;
 			}
 			
 			if (Skill.addPet(activeChar, obj, radius, false))
@@ -151,16 +150,16 @@ public class PartyClan implements ITargetTypeHandler
 			
 			if (!Skill.addCharacter(activeChar, obj, radius, false))
 			{
-				continue;
+				return;
 			}
 			
 			if ((maxTargets > 0) && (targetList.size() >= maxTargets))
 			{
-				break;
+				return;
 			}
 			
 			targetList.add(obj);
-		}
+		});
 		return targetList.toArray(new Creature[targetList.size()]);
 	}
 	

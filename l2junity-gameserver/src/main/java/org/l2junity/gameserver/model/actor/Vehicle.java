@@ -18,12 +18,10 @@
  */
 package org.l2junity.gameserver.model.actor;
 
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.l2junity.Config;
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CtrlIntention;
@@ -35,7 +33,6 @@ import org.l2junity.gameserver.model.TeleportWhereType;
 import org.l2junity.gameserver.model.VehiclePathPoint;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.actor.knownlist.VehicleKnownList;
 import org.l2junity.gameserver.model.actor.stat.VehicleStat;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
 import org.l2junity.gameserver.model.interfaces.ILocational;
@@ -183,12 +180,6 @@ public abstract class Vehicle extends Creature
 	}
 	
 	@Override
-	public void initKnownList()
-	{
-		setKnownList(new VehicleKnownList(this));
-	}
-	
-	@Override
 	public VehicleStat getStat()
 	{
 		return (VehicleStat) super.getStat();
@@ -308,36 +299,26 @@ public abstract class Vehicle extends Creature
 	 */
 	public void payForRide(int itemId, int count, int oustX, int oustY, int oustZ)
 	{
-		final Collection<PlayerInstance> passengers = getKnownList().getKnownPlayersInRadius(1000);
-		if ((passengers != null) && !passengers.isEmpty())
+		World.getInstance().forEachVisibleObjectInRange(this, PlayerInstance.class, 1000, player ->
 		{
-			ItemInstance ticket;
-			InventoryUpdate iu;
-			for (PlayerInstance player : passengers)
+			if (player.isInBoat() && (player.getBoat() == this))
 			{
-				if (player == null)
+				if (itemId > 0)
 				{
-					continue;
-				}
-				if (player.isInBoat() && (player.getBoat() == this))
-				{
-					if (itemId > 0)
+					ItemInstance ticket = player.getInventory().getItemByItemId(itemId);
+					if ((ticket == null) || (player.getInventory().destroyItem("Boat", ticket, count, player, this) == null))
 					{
-						ticket = player.getInventory().getItemByItemId(itemId);
-						if ((ticket == null) || (player.getInventory().destroyItem("Boat", ticket, count, player, this) == null))
-						{
-							player.sendPacket(SystemMessageId.YOU_DO_NOT_POSSESS_THE_CORRECT_TICKET_TO_BOARD_THE_BOAT);
-							player.teleToLocation(new Location(oustX, oustY, oustZ), true);
-							continue;
-						}
-						iu = new InventoryUpdate();
-						iu.addModifiedItem(ticket);
-						player.sendPacket(iu);
+						player.sendPacket(SystemMessageId.YOU_DO_NOT_POSSESS_THE_CORRECT_TICKET_TO_BOARD_THE_BOAT);
+						player.teleToLocation(new Location(oustX, oustY, oustZ), true);
+						return;
 					}
-					addPassenger(player);
+					InventoryUpdate iu = new InventoryUpdate();
+					iu.addModifiedItem(ticket);
+					player.sendPacket(iu);
 				}
+				addPassenger(player);
 			}
-		}
+		});
 	}
 	
 	@Override
@@ -362,7 +343,7 @@ public abstract class Vehicle extends Creature
 	{
 		if (isMoving())
 		{
-			stopMove(null, false);
+			stopMove(null);
 		}
 		
 		setIsTeleporting(true);
@@ -378,7 +359,7 @@ public abstract class Vehicle extends Creature
 		}
 		
 		decayMe();
-		setXYZ(loc.getX(), loc.getY(), loc.getZ());
+		setXYZ(loc);
 		
 		// temporary fix for heading on teleports
 		if (loc.getHeading() != 0)
@@ -391,20 +372,16 @@ public abstract class Vehicle extends Creature
 	}
 	
 	@Override
-	public void stopMove(Location loc, boolean updateKnownObjects)
+	public void stopMove(Location loc)
 	{
 		_move = null;
 		if (loc != null)
 		{
-			setXYZ(loc.getX(), loc.getY(), loc.getZ());
+			setXYZ(loc);
 			setHeading(loc.getHeading());
 			revalidateZone(true);
 		}
 		
-		if (Config.MOVE_BASED_KNOWNLIST && updateKnownObjects)
-		{
-			getKnownList().findObjects();
-		}
 	}
 	
 	@Override
@@ -433,7 +410,7 @@ public abstract class Vehicle extends Creature
 			_log.error("Failed oustPlayers().", e);
 		}
 		
-		final ZoneRegion oldRegion = ZoneManager.getInstance().getRegion(this);
+		final ZoneRegion oldZoneRegion = ZoneManager.getInstance().getRegion(this);
 		
 		try
 		{
@@ -444,18 +421,9 @@ public abstract class Vehicle extends Creature
 			_log.error("Failed decayMe().", e);
 		}
 		
-		oldRegion.removeFromZones(this);
+		oldZoneRegion.removeFromZones(this);
 		
-		try
-		{
-			getKnownList().removeAllKnownObjects();
-		}
-		catch (Exception e)
-		{
-			_log.error("Failed cleaning knownlist.", e);
-		}
-		
-		// Remove L2Object object from _allObjects of L2World
+		// Remove L2Object object from _allObjects of World
 		World.getInstance().removeObject(this);
 		
 		return super.deleteMe();

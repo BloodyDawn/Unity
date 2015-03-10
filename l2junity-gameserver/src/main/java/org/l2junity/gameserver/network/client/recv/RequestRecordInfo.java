@@ -18,8 +18,7 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
-import java.util.Collection;
-
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -47,8 +46,7 @@ public class RequestRecordInfo implements IClientIncomingPacket
 		
 		client.sendPacket(new UserInfo(activeChar));
 		
-		Collection<WorldObject> objs = activeChar.getKnownList().getKnownObjects().values();
-		for (WorldObject object : objs)
+		World.getInstance().forEachVisibleObject(activeChar, WorldObject.class, object ->
 		{
 			if (object.getPoly().isMorphed() && object.getPoly().getPolyType().equals("item"))
 			{
@@ -74,6 +72,6 @@ public class RequestRecordInfo implements IClientIncomingPacket
 					}
 				}
 			}
-		}
+		});
 	}
 }

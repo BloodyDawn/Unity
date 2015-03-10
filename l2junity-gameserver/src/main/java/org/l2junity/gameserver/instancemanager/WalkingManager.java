@@ -281,8 +281,6 @@ public final class WalkingManager implements IXmlReader
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, node);
 					walk.setWalkCheckTask(ThreadPoolManager.getInstance().scheduleAiAtFixedRate(new StartMovingTask(npc, routeName), 60000, 60000)); // start walk check task, for resuming walk after fight
 					
-					npc.getKnownList().startTrackingTask();
-					
 					_activeRoutes.put(npc.getObjectId(), walk); // register route
 				}
 				else
@@ -335,7 +333,6 @@ public final class WalkingManager implements IXmlReader
 		if (walk != null)
 		{
 			walk.getWalkCheckTask().cancel(true);
-			npc.getKnownList().stopTrackingTask();
 		}
 	}
 	

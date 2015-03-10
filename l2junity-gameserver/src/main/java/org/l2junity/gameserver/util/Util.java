@@ -25,7 +25,6 @@ import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Date;
 import java.util.Locale;
 import java.util.StringJoiner;
@@ -33,10 +32,10 @@ import java.util.StringTokenizer;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.file.filter.ExtFilter;
-import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.HtmlActionScope;
 import org.l2junity.gameserver.enums.IllegalActionPunishmentType;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -661,56 +660,10 @@ public final class Util
 		activeChar.sendPacket(new ShowBoard(Arrays.asList("0", "0", "0", "0", "0", "0", activeChar.getName(), Integer.toString(activeChar.getObjectId()), activeChar.getAccountName(), "9", " ", " ", text.replaceAll("<br>", System.lineSeparator()), "0", "0", "0", "0")));
 	}
 	
-	/**
-	 * Return the number of playable characters in a defined radius around the specified object.
-	 * @param range : the radius in which to look for players
-	 * @param npc : the object whose knownlist to check
-	 * @param playable : if {@code true}, count summons and pets aswell
-	 * @param invisible : if {@code true}, count invisible characters aswell
-	 * @return the number of targets found
-	 */
-	public static int getPlayersCountInRadius(int range, WorldObject npc, boolean playable, boolean invisible)
-	{
-		int count = 0;
-		final Collection<WorldObject> objs = npc.getKnownList().getKnownObjects().values();
-		for (WorldObject obj : objs)
-		{
-			if ((obj != null) && (playable && (obj.isPlayable() || obj.isPet())))
-			{
-				if (!invisible && obj.isInvisible())
-				{
-					continue;
-				}
-				
-				final Creature cha = (Creature) obj;
-				if (((cha.getZ() < (npc.getZ() - 100)) && (cha.getZ() > (npc.getZ() + 100))) || !(GeoData.getInstance().canSeeTarget(cha.getX(), cha.getY(), cha.getZ(), npc.getX(), npc.getY(), npc.getZ())))
-				{
-					continue;
-				}
-				
-				if (Util.checkIfInRange(range, npc, obj, true) && !cha.isDead())
-				{
-					count++;
-				}
-			}
-		}
-		return count;
-	}
-	
 	public static boolean isInsideRangeOfObjectId(WorldObject obj, int targetObjId, int radius)
 	{
-		WorldObject target = obj.getKnownList().getKnownObjects().get(targetObjId);
-		if (target == null)
-		{
-			return false;
-		}
-		
-		if (obj.calculateDistance(target, false, false) > radius)
-		{
-			return false;
-		}
-		
-		return true;
+		final WorldObject target = World.getInstance().findObject(targetObjId);
+		return (target != null) && (obj.calculateDistance(target, true, false) <= radius);
 	}
 	
 	public static int min(int value1, int value2, int... values)

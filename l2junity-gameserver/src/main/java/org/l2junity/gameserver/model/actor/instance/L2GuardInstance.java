@@ -26,7 +26,6 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldRegion;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.knownlist.GuardKnownList;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.EventType;
@@ -59,18 +58,6 @@ public class L2GuardInstance extends Attackable
 		setInstanceType(InstanceType.L2GuardInstance);
 	}
 	
-	@Override
-	public final GuardKnownList getKnownList()
-	{
-		return (GuardKnownList) super.getKnownList();
-	}
-	
-	@Override
-	public void initKnownList()
-	{
-		setKnownList(new GuardKnownList(this));
-	}
-	
 	/**
 	 * Return True if hte attacker is a L2MonsterInstance.
 	 */
@@ -90,7 +77,7 @@ public class L2GuardInstance extends Attackable
 		super.onSpawn();
 		
 		// check the region where this mob is, do not activate the AI if region is inactive.
-		WorldRegion region = World.getInstance().getRegion(getX(), getY());
+		WorldRegion region = World.getInstance().getRegion(this);
 		if ((region != null) && (!region.isActive()))
 		{
 			getAI().stopAITask();

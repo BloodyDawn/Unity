@@ -18,9 +18,8 @@
  */
 package org.l2junity.gameserver.model.items;
 
-import java.util.Objects;
-
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -436,16 +435,11 @@ public final class Weapon extends L2Item
 		// notify quests of a skill use
 		if (caster instanceof PlayerInstance)
 		{
-			//@formatter:off
-			caster.getKnownList().getKnownObjects().values().stream()
-				.filter(Objects::nonNull)
-				.filter(npc -> npc.isNpc())
-				.filter(npc -> Util.checkIfInRange(1000, npc, caster, false))
-				.forEach(npc -> 
-				{
-					EventDispatcher.getInstance().notifyEventAsync(new OnNpcSkillSee((Npc) npc, caster.getActingPlayer(), onMagicSkill, targets, false), npc);
-				});
-			//@formatter:on
+			World.getInstance().forEachVisibleObjectInRange(caster, Npc.class, 1000, npc ->
+			{
+				EventDispatcher.getInstance().notifyEventAsync(new OnNpcSkillSee(npc, caster.getActingPlayer(), onMagicSkill, targets, false), npc);
+			});
+			
 		}
 		if (caster.isPlayer())
 		{

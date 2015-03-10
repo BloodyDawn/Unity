@@ -24,7 +24,6 @@ import org.l2junity.gameserver.instancemanager.AirShipManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.VehiclePathPoint;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2AirShipInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -150,16 +149,13 @@ public final class AirShipGludioGracia extends Quest implements Runnable
 	private final Npc findController()
 	{
 		// check objects around the ship
-		for (WorldObject obj : World.getInstance().getVisibleObjects(_ship, 600))
+		for (Npc obj : World.getInstance().getVisibleObjects(_ship, Npc.class, 600))
 		{
-			if (obj.isNpc())
+			for (int id : CONTROLLERS)
 			{
-				for (int id : CONTROLLERS)
+				if (obj.getId() == id)
 				{
-					if (obj.getId() == id)
-					{
-						return (Npc) obj;
-					}
+					return obj;
 				}
 			}
 		}

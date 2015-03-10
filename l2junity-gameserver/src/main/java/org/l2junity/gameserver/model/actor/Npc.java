@@ -62,7 +62,6 @@ import org.l2junity.gameserver.model.actor.instance.L2TeleporterInstance;
 import org.l2junity.gameserver.model.actor.instance.L2TrainerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2WarehouseInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.actor.knownlist.NpcKnownList;
 import org.l2junity.gameserver.model.actor.stat.NpcStat;
 import org.l2junity.gameserver.model.actor.status.NpcStatus;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
@@ -448,18 +447,6 @@ public class Npc extends Creature
 	}
 	
 	@Override
-	public NpcKnownList getKnownList()
-	{
-		return (NpcKnownList) super.getKnownList();
-	}
-	
-	@Override
-	public void initKnownList()
-	{
-		setKnownList(new NpcKnownList(this));
-	}
-	
-	@Override
 	public NpcStat getStat()
 	{
 		return (NpcStat) super.getStat();
@@ -551,14 +538,13 @@ public class Npc extends Creature
 	@Override
 	public void updateAbnormalVisualEffects()
 	{
-		// Send a Server->Client packet NpcInfo with state of abnormal effect to all L2PcInstance in the _KnownPlayers of the L2NpcInstance
-		Collection<PlayerInstance> plrs = getKnownList().getKnownPlayers().values();
-		for (PlayerInstance player : plrs)
+		World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
 		{
-			if ((player == null) || !isVisibleFor(player))
+			if (!isVisibleFor(player))
 			{
-				continue;
+				return;
 			}
+			
 			if (getRunSpeed() == 0)
 			{
 				player.sendPacket(new ServerObjectInfo(this, player));
@@ -567,7 +553,7 @@ public class Npc extends Creature
 			{
 				player.sendPacket(new NpcInfoAbnormalVisualEffect(this));
 			}
-		}
+		});
 	}
 	
 	public boolean isEventMob()
@@ -1263,16 +1249,6 @@ public class Npc extends Creature
 		
 		ZoneManager.getInstance().getRegion(this).removeFromZones(this);
 		
-		// Remove all L2Object from _knownObjects and _knownPlayer of the L2Character then cancel Attack or Cast and notify AI
-		try
-		{
-			getKnownList().removeAllKnownObjects();
-		}
-		catch (Exception e)
-		{
-			_log.error("Failed removing cleaning knownlist.", e);
-		}
-		
 		// Remove L2Object object from _allObjects of L2World
 		World.getInstance().removeObject(this);
 		
@@ -1655,13 +1631,13 @@ public class Npc extends Creature
 	 */
 	public void broadcastEvent(String eventName, int radius, WorldObject reference)
 	{
-		for (WorldObject obj : World.getInstance().getVisibleObjects(this, radius))
+		World.getInstance().forEachVisibleObjectInRange(this, Npc.class, radius, obj ->
 		{
-			if (obj.isNpc() && obj.hasListener(EventType.ON_NPC_EVENT_RECEIVED))
+			if (obj.hasListener(EventType.ON_NPC_EVENT_RECEIVED))
 			{
-				EventDispatcher.getInstance().notifyEventAsync(new OnNpcEventReceived(eventName, this, (Npc) obj, reference), obj);
+				EventDispatcher.getInstance().notifyEventAsync(new OnNpcEventReceived(eventName, this, obj, reference), obj);
 			}
-		}
+		});
 	}
 	
 	/**

@@ -19,8 +19,6 @@
 package org.l2junity.gameserver.model.actor.instance;
 
 import java.util.Collection;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Set;
 import java.util.concurrent.Future;
 
@@ -37,10 +35,9 @@ import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.Location;
-import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.actor.knownlist.DoorKnownList;
 import org.l2junity.gameserver.model.actor.stat.DoorStat;
 import org.l2junity.gameserver.model.actor.status.DoorStatus;
 import org.l2junity.gameserver.model.actor.templates.L2DoorTemplate;
@@ -155,18 +152,6 @@ public class L2DoorInstance extends Creature
 			delay += Rnd.get(getTemplate().getRandomTime());
 		}
 		ThreadPoolManager.getInstance().scheduleGeneral(new TimerOpen(), delay * 1000);
-	}
-	
-	@Override
-	public final DoorKnownList getKnownList()
-	{
-		return (DoorKnownList) super.getKnownList();
-	}
-	
-	@Override
-	public void initKnownList()
-	{
-		setKnownList(new DoorKnownList(this));
 	}
 	
 	@Override
@@ -437,7 +422,7 @@ public class L2DoorInstance extends Creature
 	@Override
 	public void broadcastStatusUpdate()
 	{
-		Collection<PlayerInstance> knownPlayers = getKnownList().getKnownPlayers().values();
+		Collection<PlayerInstance> knownPlayers = World.getInstance().getVisibleObjects(this, PlayerInstance.class);
 		if ((knownPlayers == null) || knownPlayers.isEmpty())
 		{
 			return;
@@ -581,19 +566,6 @@ public class L2DoorInstance extends Creature
 	public int getZMax()
 	{
 		return getTemplate().getNodeZ() + getTemplate().getHeight();
-	}
-	
-	public Collection<L2DefenderInstance> getKnownDefenders()
-	{
-		final List<L2DefenderInstance> result = new LinkedList<>();
-		for (WorldObject obj : getKnownList().getKnownObjects().values())
-		{
-			if (obj instanceof L2DefenderInstance)
-			{
-				result.add((L2DefenderInstance) obj);
-			}
-		}
-		return result;
 	}
 	
 	public void setMeshIndex(int mesh)

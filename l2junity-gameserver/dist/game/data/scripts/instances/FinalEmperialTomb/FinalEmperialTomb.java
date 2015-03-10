@@ -766,7 +766,6 @@ public final class FinalEmperialTomb extends AbstractInstance
 					break;
 				}
 				L2MonsterInstance demon = (L2MonsterInstance) addSpawn(PORTRAIT_SPAWNS[i][0] + 2, PORTRAIT_SPAWNS[i][5], PORTRAIT_SPAWNS[i][6], PORTRAIT_SPAWNS[i][7], PORTRAIT_SPAWNS[i][8], false, 0, false, _world.getInstanceId());
-				updateKnownList(_world, demon);
 				_world.demons.add(demon);
 			}
 			ThreadPoolManager.getInstance().scheduleGeneral(new DemonSpawnTask(_world), TIME_BETWEEN_DEMON_SPAWNS);
@@ -968,14 +967,12 @@ public final class FinalEmperialTomb extends AbstractInstance
 					_world.frintezza.setIsImmobilized(true);
 					_world.frintezza.setIsInvul(true);
 					_world.frintezza.disableAllSkills();
-					updateKnownList(_world, _world.frintezza);
 					
 					for (int[] element : PORTRAIT_SPAWNS)
 					{
 						L2MonsterInstance demon = (L2MonsterInstance) addSpawn(element[0] + 2, element[5], element[6], element[7], element[8], false, 0, false, _world.getInstanceId());
 						demon.setIsImmobilized(true);
 						demon.disableAllSkills();
-						updateKnownList(_world, demon);
 						_world.demons.add(demon);
 					}
 					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 4), 6500);
@@ -1059,7 +1056,6 @@ public final class FinalEmperialTomb extends AbstractInstance
 					_world.activeScarlet.setIsInvul(true);
 					_world.activeScarlet.setIsImmobilized(true);
 					_world.activeScarlet.disableAllSkills();
-					updateKnownList(_world, _world.activeScarlet);
 					broadCastPacket(_world, new SocialAction(_world.activeScarlet.getObjectId(), 3));
 					broadCastPacket(_world, new SpecialCamera(_world.scarletDummy, 800, 180, 10, 1000, 10000, 0, 0, 1, 0, 0));
 					ThreadPoolManager.getInstance().scheduleGeneral(new IntroTask(_world, 19), 2100);
@@ -1077,7 +1073,6 @@ public final class FinalEmperialTomb extends AbstractInstance
 					for (int i = 0; i < PORTRAIT_SPAWNS.length; i++)
 					{
 						L2MonsterInstance portrait = (L2MonsterInstance) addSpawn(PORTRAIT_SPAWNS[i][0], PORTRAIT_SPAWNS[i][1], PORTRAIT_SPAWNS[i][2], PORTRAIT_SPAWNS[i][3], PORTRAIT_SPAWNS[i][4], false, 0, false, _world.getInstanceId());
-						updateKnownList(_world, portrait);
 						_world.portraits.put(portrait, i);
 					}
 					
@@ -1161,7 +1156,6 @@ public final class FinalEmperialTomb extends AbstractInstance
 					_world.activeScarlet.setIsInvul(true);
 					_world.activeScarlet.setIsImmobilized(true);
 					_world.activeScarlet.disableAllSkills();
-					updateKnownList(_world, _world.activeScarlet);
 					
 					broadCastPacket(_world, new SpecialCamera(_world.activeScarlet, 450, _world.scarlet_a, 12, 500, 14000, 0, 0, 1, 0, 0));
 					
@@ -1340,19 +1334,6 @@ public final class FinalEmperialTomb extends AbstractInstance
 			if ((player != null) && player.isOnline() && (player.getInstanceId() == world.getInstanceId()))
 			{
 				player.sendPacket(packet);
-			}
-		}
-	}
-	
-	protected void updateKnownList(FETWorld world, Npc npc)
-	{
-		Map<Integer, PlayerInstance> npcKnownPlayers = npc.getKnownList().getKnownPlayers();
-		for (int objId : world.getAllowed())
-		{
-			PlayerInstance player = World.getInstance().getPlayer(objId);
-			if ((player != null) && player.isOnline() && (player.getInstanceId() == world.getInstanceId()))
-			{
-				npcKnownPlayers.put(player.getObjectId(), player);
 			}
 		}
 	}

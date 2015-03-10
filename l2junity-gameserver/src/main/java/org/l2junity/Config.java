@@ -505,8 +505,6 @@ public final class Config
 	public static boolean GRIDS_ALWAYS_ON;
 	public static int GRID_NEIGHBOR_TURNON_TIME;
 	public static int GRID_NEIGHBOR_TURNOFF_TIME;
-	public static boolean MOVE_BASED_KNOWNLIST;
-	public static long KNOWNLIST_UPDATE_INTERVAL;
 	public static int PEACE_ZONE_MODE;
 	public static String DEFAULT_GLOBAL_CHAT;
 	public static String DEFAULT_TRADE_CHAT;
@@ -1757,8 +1755,6 @@ public final class Config
 			MAX_NPC_ANIMATION = General.getInt("MaxNPCAnimation", 20);
 			MIN_MONSTER_ANIMATION = General.getInt("MinMonsterAnimation", 5);
 			MAX_MONSTER_ANIMATION = General.getInt("MaxMonsterAnimation", 20);
-			MOVE_BASED_KNOWNLIST = General.getBoolean("MoveBasedKnownlist", false);
-			KNOWNLIST_UPDATE_INTERVAL = General.getLong("KnownListUpdateInterval", 1250);
 			GRIDS_ALWAYS_ON = General.getBoolean("GridsAlwaysOn", false);
 			GRID_NEIGHBOR_TURNON_TIME = General.getInt("GridNeighborTurnOnTime", 1);
 			GRID_NEIGHBOR_TURNOFF_TIME = General.getInt("GridNeighborTurnOffTime", 90);

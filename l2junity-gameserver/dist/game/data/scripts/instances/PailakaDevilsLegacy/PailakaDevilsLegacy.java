@@ -26,9 +26,11 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
@@ -183,16 +185,12 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 				{
 					if ((damage > 0) && npc.isScriptValue(0))
 					{
-						for (Creature characters : npc.getKnownList().getKnownCharactersInRadius(600))
+						World.getInstance().forEachVisibleObject(npc, L2MonsterInstance.class, 600, monster ->
 						{
-							if ((characters != null) && characters.isMonster())
-							{
-								final Attackable monster = (Attackable) characters;
-								monster.addDamageHate(npc, 0, 999);
-								monster.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, npc);
-								monster.reduceCurrentHp(500 + getRandom(0, 200), npc, BOOM.getSkill());
-							}
-						}
+							monster.addDamageHate(npc, 0, 999);
+							monster.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, npc);
+							monster.reduceCurrentHp(500 + getRandom(0, 200), npc, BOOM.getSkill());
+						});
 						npc.doCast(BOOM.getSkill());
 						npc.setScriptValue(1);
 						startQuestTimer("DELETE", 2000, npc, null);

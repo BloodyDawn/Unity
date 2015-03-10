@@ -55,7 +55,6 @@ import org.l2junity.gameserver.model.WorldRegion;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.actor.knownlist.NullKnownList;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerAugment;
 import org.l2junity.gameserver.model.events.impl.character.player.inventory.OnPlayerItemDrop;
@@ -232,12 +231,6 @@ public final class ItemInstance extends WorldObject
 	public ItemInstance(int itemId)
 	{
 		this(IdFactory.getInstance().getNextId(), itemId);
-	}
-	
-	@Override
-	public void initKnownList()
-	{
-		setKnownList(new NullKnownList(this));
 	}
 	
 	/**

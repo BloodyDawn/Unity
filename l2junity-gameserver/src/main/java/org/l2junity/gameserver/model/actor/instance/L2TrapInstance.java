@@ -26,10 +26,10 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.enums.TrapAction;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.knownlist.TrapKnownList;
 import org.l2junity.gameserver.model.actor.tasks.npc.trap.TrapTask;
 import org.l2junity.gameserver.model.actor.tasks.npc.trap.TrapTriggerTask;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
@@ -94,25 +94,25 @@ public final class L2TrapInstance extends Npc
 	@Override
 	public void broadcastPacket(IClientOutgoingPacket mov)
 	{
-		for (PlayerInstance player : getKnownList().getKnownPlayers().values())
+		World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
 		{
-			if ((player != null) && (_isTriggered || canBeSeen(player)))
+			if (_isTriggered || canBeSeen(player))
 			{
 				player.sendPacket(mov);
 			}
-		}
+		});
 	}
 	
 	@Override
 	public void broadcastPacket(IClientOutgoingPacket mov, int radiusInKnownlist)
 	{
-		for (PlayerInstance player : getKnownList().getKnownPlayers().values())
+		World.getInstance().forEachVisibleObjectInRange(this, PlayerInstance.class, radiusInKnownlist, player ->
 		{
-			if ((player != null) && isInsideRadius(player, radiusInKnownlist, false, false) && (_isTriggered || canBeSeen(player)))
+			if (_isTriggered || canBeSeen(player))
 			{
 				player.sendPacket(mov);
 			}
-		}
+		});
 	}
 	
 	/**
@@ -241,12 +241,6 @@ public final class L2TrapInstance extends Npc
 		return _owner != null ? _owner.getKarma() : 0;
 	}
 	
-	@Override
-	public TrapKnownList getKnownList()
-	{
-		return (TrapKnownList) super.getKnownList();
-	}
-	
 	/**
 	 * Get the owner of this trap.
 	 * @return the owner
@@ -276,12 +270,6 @@ public final class L2TrapInstance extends Npc
 	public Skill getSkill()
 	{
 		return _skill.getSkill();
-	}
-	
-	@Override
-	public void initKnownList()
-	{
-		setKnownList(new TrapKnownList(this));
 	}
 	
 	@Override
@@ -420,7 +408,6 @@ public final class L2TrapInstance extends Npc
 		if (isVisible() && !isDead())
 		{
 			ZoneManager.getInstance().getRegion(this).removeFromZones(this);
-			
 			deleteMe();
 		}
 	}

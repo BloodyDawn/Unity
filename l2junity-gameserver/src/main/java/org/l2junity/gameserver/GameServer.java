@@ -132,7 +132,6 @@ import org.l2junity.gameserver.network.client.ClientNetworkManager;
 import org.l2junity.gameserver.pathfinding.PathFinding;
 import org.l2junity.gameserver.script.faenor.FaenorScriptEngine;
 import org.l2junity.gameserver.scripting.ScriptEngineManager;
-import org.l2junity.gameserver.taskmanager.KnownListUpdateTaskManager;
 import org.l2junity.gameserver.taskmanager.TaskManager;
 import org.l2junity.gameserver.util.Broadcast;
 import org.l2junity.status.Status;
@@ -355,7 +354,6 @@ public class GameServer
 		_log.info("IdFactory: Free ObjectID's remaining: " + IdFactory.getInstance().size());
 		
 		TvTManager.getInstance();
-		KnownListUpdateTaskManager.getInstance();
 		
 		if ((Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE) && Config.RESTORE_OFFLINERS)
 		{

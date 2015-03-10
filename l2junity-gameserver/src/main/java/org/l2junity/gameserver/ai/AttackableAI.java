@@ -22,7 +22,6 @@ import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_ACTIVE;
 import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
 import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.Future;
@@ -37,6 +36,7 @@ import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.enums.AISkillScope;
 import org.l2junity.gameserver.enums.AIType;
 import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -316,7 +316,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			if (!npc.isAlikeDead())
 			{
 				// If its _knownPlayer isn't empty set the Intention to AI_INTENTION_ACTIVE
-				if (!npc.getKnownList().getKnownPlayers().isEmpty())
+				if (!World.getInstance().getVisibleObjects(npc, PlayerInstance.class).isEmpty())
 				{
 					intention = AI_INTENTION_ACTIVE;
 				}
@@ -434,16 +434,12 @@ public class AttackableAI extends CharacterAI implements Runnable
 		// A L2Attackable isn't aggressive during 10s after its spawn because _globalAggro is set to -10
 		if (_globalAggro >= 0)
 		{
-			// Get all visible objects inside its Aggro Range
-			Collection<WorldObject> objs = npc.getKnownList().getKnownObjects().values();
-			
-			for (WorldObject obj : objs)
+			World.getInstance().forEachVisibleObject(npc, Creature.class, target ->
 			{
-				if (!(obj instanceof Creature) || (obj instanceof L2StaticObjectInstance))
+				if (target instanceof L2StaticObjectInstance)
 				{
-					continue;
+					return;
 				}
-				Creature target = (Creature) obj;
 				
 				// For each L2Character check if the target is autoattackable
 				if (autoAttackCondition(target)) // check aggression
@@ -453,7 +449,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 						final TerminateReturn term = EventDispatcher.getInstance().notifyEvent(new OnAttackableHate(getActiveChar(), target.getActingPlayer(), target.isSummon()), getActiveChar(), TerminateReturn.class);
 						if ((term != null) && term.terminate())
 						{
-							continue;
+							return;
 						}
 					}
 					
@@ -466,7 +462,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 						npc.addDamageHate(target, 0, 0);
 					}
 				}
-			}
+			});
 			
 			// Chose a target from its aggroList
 			Creature hated;
@@ -710,42 +706,35 @@ public class AttackableAI extends CharacterAI implements Runnable
 		{
 			int factionRange = npc.getTemplate().getClanHelpRange() + collision;
 			// Go through all L2Object that belong to its faction
-			Collection<WorldObject> objs = npc.getKnownList().getKnownObjects().values();
-			
 			try
 			{
-				for (WorldObject obj : objs)
+				World.getInstance().forEachVisibleObject(npc, Npc.class, called ->
 				{
-					if (obj instanceof Npc)
+					if (!getActiveChar().getTemplate().isClan(called.getTemplate().getClans()))
 					{
-						Npc called = (Npc) obj;
-						
-						if (!getActiveChar().getTemplate().isClan(called.getTemplate().getClans()))
+						return;
+					}
+					
+					// Check if the L2Object is inside the Faction Range of the actor
+					if (npc.isInsideRadius(called, factionRange, true, false) && called.hasAI())
+					{
+						if ((Math.abs(originalAttackTarget.getZ() - called.getZ()) < 600) && npc.getAttackByList().contains(originalAttackTarget) && ((called.getAI()._intention == CtrlIntention.AI_INTENTION_IDLE) || (called.getAI()._intention == CtrlIntention.AI_INTENTION_ACTIVE)) && (called.getInstanceId() == npc.getInstanceId()))
 						{
-							continue;
-						}
-						
-						// Check if the L2Object is inside the Faction Range of the actor
-						if (npc.isInsideRadius(called, factionRange, true, false) && called.hasAI())
-						{
-							if ((Math.abs(originalAttackTarget.getZ() - called.getZ()) < 600) && npc.getAttackByList().contains(originalAttackTarget) && ((called.getAI()._intention == CtrlIntention.AI_INTENTION_IDLE) || (called.getAI()._intention == CtrlIntention.AI_INTENTION_ACTIVE)) && (called.getInstanceId() == npc.getInstanceId()))
+							if (originalAttackTarget.isPlayable())
 							{
-								if (originalAttackTarget.isPlayable())
-								{
-									// By default, when a faction member calls for help, attack the caller's attacker.
-									// Notify the AI with EVT_AGGRESSION
-									called.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, originalAttackTarget, 1);
-									EventDispatcher.getInstance().notifyEventAsync(new OnAttackableFactionCall(called, getActiveChar(), originalAttackTarget.getActingPlayer(), originalAttackTarget.isSummon()), called);
-								}
-								else if ((called instanceof Attackable) && (getAttackTarget() != null) && (called.getAI()._intention != CtrlIntention.AI_INTENTION_ATTACK))
-								{
-									((Attackable) called).addDamageHate(getAttackTarget(), 0, npc.getHating(getAttackTarget()));
-									called.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, getAttackTarget());
-								}
+								// By default, when a faction member calls for help, attack the caller's attacker.
+								// Notify the AI with EVT_AGGRESSION
+								called.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, originalAttackTarget, 1);
+								EventDispatcher.getInstance().notifyEventAsync(new OnAttackableFactionCall(called, getActiveChar(), originalAttackTarget.getActingPlayer(), originalAttackTarget.isSummon()), called);
+							}
+							else if ((called instanceof Attackable) && (getAttackTarget() != null) && (called.getAI()._intention != CtrlIntention.AI_INTENTION_ATTACK))
+							{
+								((Attackable) called).addDamageHate(getAttackTarget(), 0, npc.getHating(getAttackTarget()));
+								called.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, getAttackTarget());
 							}
 						}
 					}
-				}
+				});
 			}
 			catch (NullPointerException e)
 			{
@@ -800,9 +789,9 @@ public class AttackableAI extends CharacterAI implements Runnable
 		// around player without any sense, so decrease chance for now
 		if (!npc.isMovementDisabled() && (Rnd.nextInt(100) <= 3))
 		{
-			for (WorldObject nearby : npc.getKnownList().getKnownObjects().values())
+			for (Attackable nearby : World.getInstance().getVisibleObjects(npc, Attackable.class))
 			{
-				if ((nearby instanceof Attackable) && npc.isInsideRadius(nearby, collision, false, false) && (nearby != mostHate))
+				if (npc.isInsideRadius(nearby, collision, false, false) && (nearby != mostHate))
 				{
 					int newX = combinedCollision + Rnd.get(40);
 					if (Rnd.nextBoolean())
@@ -995,17 +984,16 @@ public class AttackableAI extends CharacterAI implements Runnable
 					}
 					if (sk.getTargetType() == L2TargetType.ONE)
 					{
-						for (Creature obj : npc.getKnownList().getKnownCharactersInRadius(sk.getCastRange() + collision))
+						for (Attackable targets : World.getInstance().getVisibleObjects(npc, Attackable.class, sk.getCastRange() + collision))
 						{
-							if (!(obj instanceof Attackable) || obj.isDead())
+							if (targets.isDead())
 							{
-								continue;
+								return;
 							}
 							
-							Attackable targets = ((Attackable) obj);
-							if (!((Attackable) obj).isInMyClan(npc))
+							if (!targets.isInMyClan(npc))
 							{
-								continue;
+								return;
 							}
 							percentage = (targets.getCurrentHp() / targets.getMaxHp()) * 100;
 							if (Rnd.get(100) < ((100 - percentage) / 10))
@@ -1013,7 +1001,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 								if (GeoData.getInstance().canSeeTarget(npc, targets))
 								{
 									clientStopMoving(null);
-									npc.setTarget(obj);
+									npc.setTarget(targets);
 									npc.doCast(sk);
 									return;
 								}
@@ -1071,14 +1059,13 @@ public class AttackableAI extends CharacterAI implements Runnable
 					}
 					if (sk.getTargetType() == L2TargetType.ONE)
 					{
-						for (Creature obj : npc.getKnownList().getKnownCharactersInRadius(sk.getCastRange() + collision))
+						for (Attackable targets : World.getInstance().getVisibleObjects(npc, Attackable.class, sk.getCastRange() + collision))
 						{
-							if (!(obj instanceof Attackable) || !obj.isDead())
+							if (!targets.isDead())
 							{
 								continue;
 							}
 							
-							Attackable targets = ((Attackable) obj);
 							if (!npc.isInMyClan(targets))
 							{
 								continue;
@@ -1088,7 +1075,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 								if (GeoData.getInstance().canSeeTarget(npc, targets))
 								{
 									clientStopMoving(null);
-									npc.setTarget(obj);
+									npc.setTarget(targets);
 									npc.doCast(sk);
 									return;
 								}
@@ -1454,23 +1441,22 @@ public class AttackableAI extends CharacterAI implements Runnable
 			
 			if (sk.getTargetType() == L2TargetType.ONE)
 			{
-				for (Creature obj : caster.getKnownList().getKnownCharactersInRadius(sk.getCastRange() + caster.getTemplate().getCollisionRadius()))
+				for (Attackable obj : World.getInstance().getVisibleObjects(caster, Attackable.class, sk.getCastRange() + caster.getTemplate().getCollisionRadius()))
 				{
-					if (!(obj instanceof Attackable) || obj.isDead())
+					if (obj.isDead())
 					{
 						continue;
 					}
 					
-					Attackable targets = ((Attackable) obj);
-					if (!caster.isInMyClan(targets))
+					if (!caster.isInMyClan(obj))
 					{
 						continue;
 					}
 					
-					percentage = (targets.getCurrentHp() / targets.getMaxHp()) * 100;
+					percentage = (obj.getCurrentHp() / obj.getMaxHp()) * 100;
 					if (Rnd.get(100) < ((100 - percentage) / 10))
 					{
-						if (GeoData.getInstance().canSeeTarget(caster, targets))
+						if (GeoData.getInstance().canSeeTarget(caster, obj))
 						{
 							clientStopMoving(null);
 							caster.setTarget(obj);
@@ -1482,14 +1468,9 @@ public class AttackableAI extends CharacterAI implements Runnable
 			}
 			if (isParty(sk))
 			{
-				for (Creature obj : caster.getKnownList().getKnownCharactersInRadius(sk.getAffectRange() + caster.getTemplate().getCollisionRadius()))
+				for (Attackable obj : World.getInstance().getVisibleObjects(caster, Attackable.class, sk.getAffectRange() + caster.getTemplate().getCollisionRadius()))
 				{
-					if (!(obj instanceof Attackable))
-					{
-						continue;
-					}
-					Npc targets = ((Npc) obj);
-					if (targets.isInMyClan(caster))
+					if (obj.isInMyClan(caster))
 					{
 						if ((obj.getCurrentHp() < obj.getMaxHp()) && (Rnd.get(100) <= 20))
 						{
@@ -1677,21 +1658,21 @@ public class AttackableAI extends CharacterAI implements Runnable
 					}
 				}
 				
-				for (Creature obj : caster.getKnownList().getKnownCharactersInRadius(sk.getCastRange() + caster.getTemplate().getCollisionRadius()))
+				for (Attackable obj : World.getInstance().getVisibleObjects(caster, Attackable.class, sk.getCastRange() + caster.getTemplate().getCollisionRadius()))
 				{
-					if (!(obj instanceof Attackable) || !obj.isDead())
+					if (!obj.isDead())
 					{
 						continue;
 					}
 					
-					Attackable targets = ((Attackable) obj);
-					if (!caster.isInMyClan(targets))
+					if (!caster.isInMyClan(obj))
 					{
 						continue;
 					}
+					
 					if (Rnd.get(100) < 10)
 					{
-						if (GeoData.getInstance().canSeeTarget(caster, targets))
+						if (GeoData.getInstance().canSeeTarget(caster, obj))
 						{
 							clientStopMoving(null);
 							caster.setTarget(obj);
@@ -1703,7 +1684,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			}
 			else if (isParty(sk))
 			{
-				for (Creature obj : caster.getKnownList().getKnownCharactersInRadius(sk.getAffectRange() + caster.getTemplate().getCollisionRadius()))
+				for (Creature obj : World.getInstance().getVisibleObjects(caster, Creature.class, sk.getAffectRange() + caster.getTemplate().getCollisionRadius()))
 				{
 					if (!(obj instanceof Attackable))
 					{
@@ -2043,7 +2024,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				
 				// ----------------------------------------------------------------------
 				// If there is nearby Target with aggro, start going on random target that is attackable
-				for (Creature obj : actor.getKnownList().getKnownCharactersInRadius(range))
+				for (Creature obj : World.getInstance().getVisibleObjects(actor, Creature.class, range))
 				{
 					if (obj.isDead() || !GeoData.getInstance().canSeeTarget(actor, obj))
 					{
@@ -2082,14 +2063,13 @@ public class AttackableAI extends CharacterAI implements Runnable
 				double dist = 0;
 				double dist2 = 0;
 				int range = 0;
-				for (Creature obj : actor.getKnownList().getKnownCharactersInRadius(range))
+				for (Attackable targets : World.getInstance().getVisibleObjects(actor, Attackable.class, range))
 				{
-					if (!(obj instanceof Attackable) || obj.isDead() || !GeoData.getInstance().canSeeTarget(actor, obj))
+					if (targets.isDead() || !GeoData.getInstance().canSeeTarget(actor, targets))
 					{
 						continue;
 					}
 					
-					Attackable targets = ((Attackable) obj);
 					if (targets.isInMyClan(actor))
 					{
 						continue;
@@ -2098,10 +2078,10 @@ public class AttackableAI extends CharacterAI implements Runnable
 					try
 					{
 						actor.setTarget(getAttackTarget());
-						dist = actor.calculateDistance(obj, false, false);
+						dist = actor.calculateDistance(targets, false, false);
 						dist2 = dist - actor.getTemplate().getCollisionRadius();
-						range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + obj.getTemplate().getCollisionRadius();
-						if (obj.isMoving())
+						range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + targets.getTemplate().getCollisionRadius();
+						if (targets.isMoving())
 						{
 							dist2 = dist2 - 70;
 						}
@@ -2112,9 +2092,9 @@ public class AttackableAI extends CharacterAI implements Runnable
 					}
 					if (dist2 <= range)
 					{
-						if (!obj.isAffectedBySkill(sk.getId()))
+						if (!targets.isAffectedBySkill(sk.getId()))
 						{
-							return obj;
+							return targets;
 						}
 					}
 				}
@@ -2126,9 +2106,9 @@ public class AttackableAI extends CharacterAI implements Runnable
 			double dist2 = 0;
 			int range = 0;
 			range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + getAttackTarget().getTemplate().getCollisionRadius();
-			for (Creature obj : actor.getKnownList().getKnownCharactersInRadius(range))
+			for (Creature obj : World.getInstance().getVisibleObjects(actor, Creature.class, range))
 			{
-				if ((obj == null) || obj.isDead() || !GeoData.getInstance().canSeeTarget(actor, obj))
+				if (obj.isDead() || !GeoData.getInstance().canSeeTarget(actor, obj))
 				{
 					continue;
 				}
@@ -2200,8 +2180,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		
 		if (!(actor instanceof L2GuardInstance))
 		{
-			Collection<WorldObject> objs = actor.getKnownList().getKnownObjects().values();
-			for (WorldObject target : objs)
+			for (WorldObject target : World.getInstance().getVisibleObjects(actor, WorldObject.class))
 			{
 				try
 				{
@@ -2299,18 +2278,11 @@ public class AttackableAI extends CharacterAI implements Runnable
 		}
 		if (!(actor instanceof L2GuardInstance))
 		{
-			Collection<WorldObject> objs = actor.getKnownList().getKnownObjects().values();
-			for (WorldObject target : objs)
+			World.getInstance().forEachVisibleObject(actor, Creature.class, obj ->
 			{
-				Creature obj = null;
-				if (target instanceof Creature)
-				{
-					obj = (Creature) target;
-				}
-				
 				if ((obj == null) || !GeoData.getInstance().canSeeTarget(actor, obj) || obj.isDead() || (obj != MostHate) || (obj == actor) || (obj == getAttackTarget()))
 				{
-					continue;
+					return;
 				}
 				if (obj instanceof PlayerInstance)
 				{
@@ -2332,7 +2304,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					{
 						if (((Attackable) obj).isInMyClan(actor))
 						{
-							continue;
+							return;
 						}
 						
 						if (MostHate != null)
@@ -2360,7 +2332,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					actor.setTarget(obj);
 					setAttackTarget(obj);
 				}
-			}
+			});
 		}
 	}
 	
@@ -2410,22 +2382,11 @@ public class AttackableAI extends CharacterAI implements Runnable
 		
 		if (!(actor instanceof L2GuardInstance))
 		{
-			Collection<WorldObject> objs = actor.getKnownList().getKnownObjects().values();
-			for (WorldObject target : objs)
+			World.getInstance().forEachVisibleObject(actor, Creature.class, obj ->
 			{
-				Creature obj = null;
-				if (target instanceof Creature)
-				{
-					obj = (Creature) target;
-				}
-				else
-				{
-					continue;
-				}
-				
 				if (!GeoData.getInstance().canSeeTarget(actor, obj) || obj.isDead() || (obj != MostHate) || (obj == actor))
 				{
-					continue;
+					return;
 				}
 				if (obj instanceof PlayerInstance)
 				{
@@ -2446,7 +2407,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					{
 						if (((Attackable) obj).isInMyClan(actor))
 						{
-							continue;
+							return;
 						}
 						
 						if (MostHate != null)
@@ -2474,7 +2435,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					actor.setTarget(obj);
 					setAttackTarget(obj);
 				}
-			}
+			});
 		}
 	}
 	

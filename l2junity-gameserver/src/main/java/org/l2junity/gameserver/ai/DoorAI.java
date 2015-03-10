@@ -20,6 +20,7 @@ package org.l2junity.gameserver.ai;
 
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2DefenderInstance;
@@ -168,13 +169,13 @@ public class DoorAI extends CharacterAI
 		@Override
 		public void run()
 		{
-			for (L2DefenderInstance guard : _door.getKnownDefenders())
+			World.getInstance().forEachVisibleObject(_door, L2DefenderInstance.class, guard ->
 			{
-				if (_actor.isInsideRadius(guard, guard.getTemplate().getClanHelpRange(), false, true) && (Math.abs(_attacker.getZ() - guard.getZ()) < 200))
+				if (_actor.isInsideRadius(guard, guard.getTemplate().getClanHelpRange(), true, true))
 				{
 					guard.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, _attacker, 15);
 				}
-			}
+			});
 		}
 	}
 	

@@ -20,6 +20,7 @@ package handlers.effecthandlers;
 
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
@@ -63,16 +64,16 @@ public final class Hide extends AbstractEffect
 				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 			}
 			
-			for (Creature target : activeChar.getKnownList().getKnownCharacters())
+			World.getInstance().forEachVisibleObject(activeChar, Creature.class, target ->
 			{
-				if ((target != null) && (target.getTarget() == activeChar))
+				if ((target.getTarget() == activeChar))
 				{
 					target.setTarget(null);
 					target.abortAttack();
 					target.abortCast();
 					target.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 				}
-			}
+			});
 		}
 	}
 }

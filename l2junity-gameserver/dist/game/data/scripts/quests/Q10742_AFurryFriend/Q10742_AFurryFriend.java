@@ -21,6 +21,7 @@ package quests.Q10742_AFurryFriend;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
@@ -102,7 +103,7 @@ public class Q10742_AFurryFriend extends Quest
 			{
 				if (qs.isStarted())
 				{
-					if (!player.getKnownList().getKnownCharactersInRadius(500).stream().anyMatch(n -> (n.getId() == RICKY) && (n.getSummoner() == player)))
+					if (!World.getInstance().getVisibleObjects(player, Npc.class, 500).stream().anyMatch(n -> (n.getId() == RICKY) && (n.getSummoner() == player)))
 					{
 						showOnScreenMsg(player, NpcStringId.TAKE_RICKY_TO_LEIRA_IN_UNDER_2_MINUTES, ExShowScreenMessage.MIDDLE_CENTER, 4500);
 						final Npc ricky = addSpawn(RICKY, player.getLocation());
@@ -140,7 +141,7 @@ public class Q10742_AFurryFriend extends Quest
 					}
 					else
 					{
-						final Npc leira = (Npc) npc.getKnownList().getKnownCharactersInRadius(100).stream().filter(n -> (n.getId() == LEIRA)).findFirst().orElse(null);
+						final Npc leira = World.getInstance().getVisibleObjects(npc, Npc.class, 100).stream().filter(n -> (n.getId() == LEIRA)).findFirst().orElse(null);
 						if (leira != null)
 						{
 							qs.setCond(2, true);

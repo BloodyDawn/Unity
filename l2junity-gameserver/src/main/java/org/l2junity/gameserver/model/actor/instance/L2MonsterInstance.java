@@ -23,7 +23,6 @@ import java.util.concurrent.ScheduledFuture;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.knownlist.MonsterKnownList;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.util.MinionList;
 
@@ -61,18 +60,6 @@ public class L2MonsterInstance extends Attackable
 		super(template);
 		setInstanceType(InstanceType.L2MonsterInstance);
 		setAutoAttackable(true);
-	}
-	
-	@Override
-	public final MonsterKnownList getKnownList()
-	{
-		return (MonsterKnownList) super.getKnownList();
-	}
-	
-	@Override
-	public void initKnownList()
-	{
-		setKnownList(new MonsterKnownList(this));
 	}
 	
 	/**

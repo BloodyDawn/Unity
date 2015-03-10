@@ -30,7 +30,7 @@ import org.l2junity.gameserver.instancemanager.GrandBossManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.L2GrandBossInstance;
@@ -468,7 +468,7 @@ public final class Valakas extends AbstractNpcAI
 		}
 		
 		// Pickup a target if no or dead victim. 10% luck he decides to reconsiders his target.
-		if ((_actualVictim == null) || _actualVictim.isDead() || !(npc.getKnownList().knowsObject(_actualVictim)) || (getRandom(10) == 0))
+		if ((_actualVictim == null) || _actualVictim.isDead() || !(npc.isInSurroundingRegion(_actualVictim)) || (getRandom(10) == 0))
 		{
 			_actualVictim = getRandomTarget(npc);
 		}
@@ -528,7 +528,7 @@ public final class Valakas extends AbstractNpcAI
 		}
 		
 		// Valakas will use mass spells if he feels surrounded.
-		if (Util.getPlayersCountInRadius(1200, npc, false, false) >= 20)
+		if (World.getInstance().getVisibleObjects(npc, PlayerInstance.class, 1200).size() >= 20)
 		{
 			return VALAKAS_AOE_SKILLS[getRandom(VALAKAS_AOE_SKILLS.length)];
 		}
@@ -550,17 +550,13 @@ public final class Valakas extends AbstractNpcAI
 	{
 		List<Playable> result = new ArrayList<>();
 		
-		for (Creature obj : npc.getKnownList().getKnownCharacters())
+		World.getInstance().forEachVisibleObject(npc, Playable.class, obj ->
 		{
-			if ((obj == null) || obj.isPet())
+			if (!obj.isPet() && !obj.isDead())
 			{
-				continue;
+				result.add(obj);
 			}
-			else if (!obj.isDead() && obj.isPlayable())
-			{
-				result.add((Playable) obj);
-			}
-		}
+		});
 		
 		return (result.isEmpty()) ? null : result.get(getRandom(result.size()));
 	}

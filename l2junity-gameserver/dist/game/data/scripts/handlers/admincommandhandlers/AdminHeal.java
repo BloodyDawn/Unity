@@ -18,8 +18,6 @@
  */
 package handlers.admincommandhandlers;
 
-import java.util.Collection;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.World;
@@ -97,19 +95,14 @@ public class AdminHeal implements IAdminCommandHandler
 				try
 				{
 					int radius = Integer.parseInt(player);
-					Collection<WorldObject> objs = activeChar.getKnownList().getKnownObjects().values();
-					for (WorldObject object : objs)
+					World.getInstance().forEachVisibleObject(activeChar, Creature.class, character ->
 					{
-						if (object instanceof Creature)
+						character.setCurrentHpMp(character.getMaxHp(), character.getMaxMp());
+						if (character instanceof PlayerInstance)
 						{
-							Creature character = (Creature) object;
-							character.setCurrentHpMp(character.getMaxHp(), character.getMaxMp());
-							if (object instanceof PlayerInstance)
-							{
-								character.setCurrentCp(character.getMaxCp());
-							}
+							character.setCurrentCp(character.getMaxCp());
 						}
-					}
+					});
 					
 					activeChar.sendMessage("Healed within " + radius + " unit radius.");
 					return;

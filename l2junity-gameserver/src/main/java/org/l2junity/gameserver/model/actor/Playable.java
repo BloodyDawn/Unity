@@ -23,7 +23,6 @@ import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.actor.knownlist.PlayableKnownList;
 import org.l2junity.gameserver.model.actor.stat.PlayableStat;
 import org.l2junity.gameserver.model.actor.status.PlayableStatus;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
@@ -71,18 +70,6 @@ public abstract class Playable extends Creature
 		super(template);
 		setInstanceType(InstanceType.L2Playable);
 		setIsInvul(false);
-	}
-	
-	@Override
-	public PlayableKnownList getKnownList()
-	{
-		return (PlayableKnownList) super.getKnownList();
-	}
-	
-	@Override
-	public void initKnownList()
-	{
-		setKnownList(new PlayableKnownList(this));
 	}
 	
 	@Override

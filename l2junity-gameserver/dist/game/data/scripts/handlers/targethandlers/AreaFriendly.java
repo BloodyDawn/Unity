@@ -19,13 +19,12 @@
 package handlers.targethandlers;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2SiegeFlagInstance;
@@ -68,25 +67,20 @@ public class AreaFriendly implements ITargetTypeHandler
 		if (target != null)
 		{
 			int maxTargets = skill.getAffectLimit();
-			final Collection<Creature> objs = target.getKnownList().getKnownCharactersInRadius(skill.getAffectRange());
-			
-			// TODO: Chain Heal - The recovery amount decreases starting from the most injured person.
-			Collections.sort(targetList, new CharComparator());
-			
-			for (Creature obj : objs)
+			World.getInstance().forEachVisibleObject(target, Creature.class, skill.getAffectRange(), obj ->
 			{
 				if (!checkTarget(activeChar, obj) || (obj == activeChar))
 				{
-					continue;
+					return;
 				}
 				
 				if ((maxTargets > 0) && (targetList.size() >= maxTargets))
 				{
-					break;
+					return;
 				}
 				
 				targetList.add(obj);
-			}
+			});
 		}
 		
 		if (targetList.isEmpty())

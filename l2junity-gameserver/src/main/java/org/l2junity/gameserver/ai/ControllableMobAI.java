@@ -22,13 +22,12 @@ import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_ACTIVE;
 import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.MobGroup;
 import org.l2junity.gameserver.model.MobGroupTable;
-import org.l2junity.gameserver.model.WorldObject;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Creature.AIAccessor;
@@ -280,26 +279,18 @@ public final class ControllableMobAI extends AttackableAI
 			// notify aggression
 			if (((Npc) _actor).getTemplate().getClans() != null)
 			{
-				Collection<WorldObject> objs = _actor.getKnownList().getKnownObjects().values();
-				for (WorldObject obj : objs)
+				World.getInstance().forEachVisibleObject(_actor, Npc.class, npc ->
 				{
-					if (!(obj instanceof Npc))
-					{
-						continue;
-					}
-					
-					Npc npc = (Npc) obj;
-					
 					if (!npc.isInMyClan((Npc) _actor))
 					{
-						continue;
+						return;
 					}
 					
-					if (_actor.isInsideRadius(npc, npc.getTemplate().getClanHelpRange(), false, true) && (Math.abs(getAttackTarget().getZ() - npc.getZ()) < 200))
+					if (_actor.isInsideRadius(npc, npc.getTemplate().getClanHelpRange(), true, true))
 					{
 						npc.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, getAttackTarget(), 1);
 					}
-				}
+				});
 			}
 			
 			_actor.setTarget(getAttackTarget());
@@ -441,24 +432,13 @@ public final class ControllableMobAI extends AttackableAI
 	private Creature findNextRndTarget()
 	{
 		final List<Creature> potentialTarget = new ArrayList<>();
-		for (WorldObject obj : _actor.getKnownList().getKnownObjects().values())
+		World.getInstance().forEachVisibleObject(_actor, Creature.class, target ->
 		{
-			if (!(obj instanceof Creature))
-			{
-				continue;
-			}
-			
-			if (!Util.checkIfInShortRange(((Attackable) _actor).getAggroRange(), _actor, obj, false))
-			{
-				continue;
-			}
-			
-			final Creature target = (Creature) obj;
-			if (checkAutoAttackCondition(target))
+			if (Util.checkIfInShortRange(((Attackable) _actor).getAggroRange(), _actor, target, true) && checkAutoAttackCondition(target))
 			{
 				potentialTarget.add(target);
 			}
-		}
+		});
 		
 		return !potentialTarget.isEmpty() ? potentialTarget.get(Rnd.nextInt(potentialTarget.size())) : null;
 	}

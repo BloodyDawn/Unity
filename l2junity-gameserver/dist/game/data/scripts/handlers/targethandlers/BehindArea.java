@@ -19,10 +19,10 @@
 package handlers.targethandlers;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -72,40 +72,39 @@ public class BehindArea implements ITargetTypeHandler
 			origin = activeChar;
 		}
 		
-		final Collection<Creature> objs = activeChar.getKnownList().getKnownCharacters();
 		int maxTargets = skill.getAffectLimit();
-		for (Creature obj : objs)
+		World.getInstance().forEachVisibleObject(activeChar, Creature.class, obj ->
 		{
 			if (!(obj.isAttackable() || obj.isPlayable()))
 			{
-				continue;
+				return;
 			}
 			
 			if (obj == origin)
 			{
-				continue;
+				return;
 			}
 			
 			if (Util.checkIfInRange(skill.getAffectRange(), origin, obj, true))
 			{
 				if (!obj.isBehind(activeChar))
 				{
-					continue;
+					return;
 				}
 				
 				if (!Skill.checkForAreaOffensiveSkills(activeChar, obj, skill, srcInArena))
 				{
-					continue;
+					return;
 				}
 				
 				if ((maxTargets > 0) && (targetList.size() >= maxTargets))
 				{
-					break;
+					return;
 				}
 				
 				targetList.add(obj);
 			}
-		}
+		});
 		
 		if (targetList.isEmpty())
 		{

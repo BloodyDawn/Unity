@@ -19,16 +19,15 @@
 package handlers.targethandlers;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.zone.ZoneId;
-import org.l2junity.gameserver.util.Util;
 
 /**
  * @author UnAfraid
@@ -56,38 +55,32 @@ public class AreaSummon implements ITargetTypeHandler
 		}
 		
 		final boolean srcInArena = (activeChar.isInsideZone(ZoneId.PVP) && !activeChar.isInsideZone(ZoneId.SIEGE));
-		final Collection<Creature> objs = target.getKnownList().getKnownCharacters();
 		int maxTargets = skill.getAffectLimit();
 		
-		for (Creature obj : objs)
+		World.getInstance().forEachVisibleObjectInRange(target, Creature.class, skill.getAffectRange(), obj ->
 		{
-			if ((obj == null) || (obj == target) || (obj == activeChar))
+			if ((obj == activeChar))
 			{
-				continue;
-			}
-			
-			if (!Util.checkIfInRange(skill.getAffectRange(), target, obj, true))
-			{
-				continue;
+				return;
 			}
 			
 			if (!(obj.isAttackable() || obj.isPlayable()))
 			{
-				continue;
+				return;
 			}
 			
 			if (!Skill.checkForAreaOffensiveSkills(activeChar, obj, skill, srcInArena))
 			{
-				continue;
+				return;
 			}
 			
 			if ((maxTargets > 0) && (targetList.size() >= maxTargets))
 			{
-				break;
+				return;
 			}
 			
 			targetList.add(obj);
-		}
+		});
 		
 		if (targetList.isEmpty())
 		{

@@ -24,7 +24,6 @@ import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Decoy;
-import org.l2junity.gameserver.model.actor.knownlist.DecoyKnownList;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.taskmanager.DecayTaskManager;
@@ -62,18 +61,6 @@ public class L2DecoyInstance extends Decoy
 		_totalLifeTime = 0;
 		DecayTaskManager.getInstance().add(this);
 		return true;
-	}
-	
-	@Override
-	public DecoyKnownList getKnownList()
-	{
-		return (DecoyKnownList) super.getKnownList();
-	}
-	
-	@Override
-	public void initKnownList()
-	{
-		setKnownList(new DecoyKnownList(this));
 	}
 	
 	static class DecoyLifetime implements Runnable

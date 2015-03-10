@@ -64,15 +64,15 @@ public class AdminKill implements IAdminCommandHandler
 						try
 						{
 							int radius = Integer.parseInt(st.nextToken());
-							for (Creature knownChar : plyr.getKnownList().getKnownCharactersInRadius(radius))
+							World.getInstance().forEachVisibleObject(plyr, Creature.class, radius, knownChar ->
 							{
 								if ((knownChar instanceof L2ControllableMobInstance) || (knownChar == activeChar))
 								{
-									continue;
+									return;
 								}
 								
 								kill(activeChar, knownChar);
-							}
+							});
 							
 							activeChar.sendMessage("Killed all characters within a " + radius + " unit radius.");
 							return true;
@@ -91,14 +91,14 @@ public class AdminKill implements IAdminCommandHandler
 					{
 						int radius = Integer.parseInt(firstParam);
 						
-						for (Creature knownChar : activeChar.getKnownList().getKnownCharactersInRadius(radius))
+						World.getInstance().forEachVisibleObjectInRange(activeChar, Creature.class, radius, wo ->
 						{
-							if ((knownChar instanceof L2ControllableMobInstance) || (knownChar == activeChar))
+							if ((wo instanceof L2ControllableMobInstance))
 							{
-								continue;
+								return;
 							}
-							kill(activeChar, knownChar);
-						}
+							kill(activeChar, wo);
+						});
 						
 						activeChar.sendMessage("Killed all characters within a " + radius + " unit radius.");
 						return true;

@@ -23,11 +23,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ScheduledFuture;
+
 import javolution.util.FastList;
 
 import org.l2junity.Config;
@@ -49,6 +49,7 @@ import org.l2junity.gameserver.model.SiegeClan;
 import org.l2junity.gameserver.model.SiegeScheduleDate;
 import org.l2junity.gameserver.model.TeleportWhereType;
 import org.l2junity.gameserver.model.TowerSpawn;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
@@ -610,17 +611,16 @@ public class Siege implements Siegable
 					}
 				}
 				member.sendPacket(new UserInfo(member));
-				final Collection<PlayerInstance> plrs = member.getKnownList().getKnownPlayers().values();
 				
-				for (PlayerInstance player : plrs)
+				World.getInstance().forEachVisibleObject(member, PlayerInstance.class, player ->
 				{
-					if ((player == null) || !member.isVisibleFor(player))
+					if (!member.isVisibleFor(player))
 					{
-						continue;
+						return;
 					}
 					
 					final int relation = member.getRelation(player);
-					Integer oldrelation = member.getKnownList().getKnownRelations().get(player.getObjectId());
+					Integer oldrelation = member.getKnownRelations().get(player.getObjectId());
 					if ((oldrelation == null) || (oldrelation != relation))
 					{
 						final RelationChanged rc = new RelationChanged();
@@ -638,9 +638,9 @@ public class Siege implements Siegable
 							}
 						}
 						player.sendPacket(rc);
-						member.getKnownList().getKnownRelations().put(player.getObjectId(), relation);
+						member.getKnownRelations().put(player.getObjectId(), relation);
 					}
-				}
+				});
 			}
 		}
 		for (SiegeClan siegeclan : getDefenderClans())
@@ -677,17 +677,15 @@ public class Siege implements Siegable
 				}
 				member.sendPacket(new UserInfo(member));
 				
-				final Collection<PlayerInstance> plrs = member.getKnownList().getKnownPlayers().values();
-				
-				for (PlayerInstance player : plrs)
+				World.getInstance().forEachVisibleObject(member, PlayerInstance.class, player ->
 				{
-					if ((player == null) || !member.isVisibleFor(player))
+					if (!member.isVisibleFor(player))
 					{
-						continue;
+						return;
 					}
 					
 					final int relation = member.getRelation(player);
-					Integer oldrelation = member.getKnownList().getKnownRelations().get(player.getObjectId());
+					Integer oldrelation = member.getKnownRelations().get(player.getObjectId());
 					if ((oldrelation == null) || (oldrelation != relation))
 					{
 						final RelationChanged rc = new RelationChanged();
@@ -705,9 +703,9 @@ public class Siege implements Siegable
 							}
 						}
 						player.sendPacket(rc);
-						member.getKnownList().getKnownRelations().put(player.getObjectId(), relation);
+						member.getKnownRelations().put(player.getObjectId(), relation);
 					}
-				}
+				});
 			}
 		}
 	}

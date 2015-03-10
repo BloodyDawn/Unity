@@ -97,10 +97,10 @@ public class AdminRes implements IAdminCommandHandler
 				{
 					int radius = Integer.parseInt(resParam);
 					
-					for (PlayerInstance knownPlayer : activeChar.getKnownList().getKnownPlayersInRadius(radius))
+					World.getInstance().forEachVisibleObjectInRange(activeChar, PlayerInstance.class, radius, knownPlayer ->
 					{
 						doResurrect(knownPlayer);
-					}
+					});
 					
 					activeChar.sendMessage("Resurrected all players within a " + radius + " unit radius.");
 					return;
@@ -149,13 +149,13 @@ public class AdminRes implements IAdminCommandHandler
 			{
 				radius = Integer.parseInt(radiusStr);
 				
-				for (Creature knownChar : activeChar.getKnownList().getKnownCharactersInRadius(radius))
+				World.getInstance().forEachVisibleObject(activeChar, Creature.class, radius, knownChar ->
 				{
 					if (!(knownChar instanceof PlayerInstance) && !(knownChar instanceof L2ControllableMobInstance))
 					{
 						doResurrect(knownChar);
 					}
-				}
+				});
 				
 				activeChar.sendMessage("Resurrected all non-players within a " + radius + " unit radius.");
 			}

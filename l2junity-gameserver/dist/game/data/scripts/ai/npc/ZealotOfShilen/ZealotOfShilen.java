@@ -19,9 +19,10 @@
 package ai.npc.ZealotOfShilen;
 
 import org.l2junity.gameserver.ai.CtrlIntention;
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Attackable;
-import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
+import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 import ai.npc.AbstractNpcAI;
@@ -59,15 +60,15 @@ public final class ZealotOfShilen extends AbstractNpcAI
 		startQuestTimer("WATCHING", 10000, npc, null, true);
 		if (event.equalsIgnoreCase("WATCHING") && !npc.isAttackingNow())
 		{
-			for (Creature character : npc.getKnownList().getKnownCharacters())
+			World.getInstance().forEachVisibleObject(npc, L2MonsterInstance.class, character ->
 			{
-				if (character.isMonster() && !character.isDead() && !((Attackable) character).isDecayed())
+				if (!character.isDead() && !((Attackable) character).isDecayed())
 				{
 					npc.setRunning();
 					((Attackable) npc).addDamageHate(character, 0, 999);
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, character, null);
 				}
-			}
+			});
 		}
 		return super.onAdvEvent(event, npc, player);
 	}

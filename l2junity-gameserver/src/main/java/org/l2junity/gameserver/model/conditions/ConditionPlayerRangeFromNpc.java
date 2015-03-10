@@ -18,7 +18,9 @@
  */
 package org.l2junity.gameserver.model.conditions;
 
+import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.util.Util;
@@ -49,9 +51,9 @@ public class ConditionPlayerRangeFromNpc extends Condition
 		boolean existNpc = false;
 		if ((_npcIds != null) && (_npcIds.length > 0) && (_radius > 0))
 		{
-			for (Creature target : effector.getKnownList().getKnownCharactersInRadius(_radius))
+			for (Npc target : World.getInstance().getVisibleObjects(effector, Npc.class, _radius))
 			{
-				if (target.isNpc() && Util.contains(_npcIds, target.getId()))
+				if (Util.contains(_npcIds, target.getId()))
 				{
 					existNpc = true;
 					break;

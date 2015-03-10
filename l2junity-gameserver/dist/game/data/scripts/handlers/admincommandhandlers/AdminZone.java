@@ -129,6 +129,7 @@ public class AdminZone implements IAdminCommandHandler
 		adminReply.replace("%DANGER%", (activeChar.isInsideZone(ZoneId.DANGER_AREA) ? "<font color=\"LEVEL\">YES</font>" : "NO"));
 		adminReply.replace("%NOSTORE%", (activeChar.isInsideZone(ZoneId.NO_STORE) ? "<font color=\"LEVEL\">YES</font>" : "NO"));
 		adminReply.replace("%SCRIPT%", (activeChar.isInsideZone(ZoneId.SCRIPT) ? "<font color=\"LEVEL\">YES</font>" : "NO"));
+		
 		final StringBuilder zones = new StringBuilder(100);
 		for (ZoneType zone : ZoneManager.getInstance().getRegion(activeChar).getZones().values())
 		{

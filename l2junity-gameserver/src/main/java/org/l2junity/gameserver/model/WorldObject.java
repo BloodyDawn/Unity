@@ -35,7 +35,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.actor.knownlist.ObjectKnownList;
 import org.l2junity.gameserver.model.actor.poly.ObjectPoly;
 import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.events.ListenersContainer;
@@ -80,13 +79,11 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	private final AtomicInteger _instanceId = new AtomicInteger(0);
 	private boolean _isVisible;
 	private boolean _isInvisible;
-	private ObjectKnownList _knownList;
 	
 	public WorldObject(int objectId)
 	{
 		setInstanceType(InstanceType.L2Object);
 		_objectId = objectId;
-		initKnownList();
 	}
 	
 	/**
@@ -234,25 +231,20 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 			{
 				y = World.MAP_MIN_Y + 5000;
 			}
+			if (z > World.MAP_MAX_Z)
+			{
+				System.out.println("Im out of bounds " + this + " z: " + z);
+				z = World.MAP_MAX_Z - 1000;
+			}
+			if (z < World.MAP_MIN_Z)
+			{
+				System.out.println("Im out of bounds " + this + " z: " + z);
+				z = World.MAP_MIN_Z + 1000;
+			}
 			
 			setXYZ(x, y, z);
-			setWorldRegion(World.getInstance().getRegion(getLocation()));
-			
-			// Add the L2Object spawn in the _allobjects of L2World
 		}
-		
-		World.getInstance().storeObject(this);
-		
-		// these can synchronize on others instances, so they're out of
-		// synchronized, to avoid deadlocks
-		
-		// Add the L2Object spawn to _visibleObjects and if necessary to _allplayers of its L2WorldRegion
-		getWorldRegion().addVisibleObject(this);
-		
-		// Add the L2Object spawn in the world as a visible object
-		World.getInstance().addVisibleObject(this, getWorldRegion());
-		
-		onSpawn();
+		spawnMe();
 	}
 	
 	/**
@@ -290,21 +282,6 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 		{
 			spawnMe();
 		}
-	}
-	
-	public ObjectKnownList getKnownList()
-	{
-		return _knownList;
-	}
-	
-	public void initKnownList()
-	{
-		_knownList = new ObjectKnownList(this);
-	}
-	
-	public final void setKnownList(ObjectKnownList value)
-	{
-		_knownList = value;
 	}
 	
 	@Override
@@ -627,11 +604,9 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 		if (newRegion != getWorldRegion())
 		{
 			getWorldRegion().removeVisibleObject(this);
-			
+			newRegion.addVisibleObject(this);
+			World.getInstance().switchRegion(this, newRegion);
 			setWorldRegion(newRegion);
-			
-			// Add the L2Oject spawn to _visibleObjects and if necessary to _allplayers of its L2WorldRegion
-			getWorldRegion().addVisibleObject(this);
 		}
 	}
 	
@@ -844,7 +819,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 		}
 		
 		_instanceId.set(instanceId);
-		if (_isVisible && (_knownList != null))
+		if (_isVisible)
 		{
 			// We don't want some ugly looking disappear/appear effects, so don't update
 			// the knownlist here, but players usually enter instancezones through teleporting
@@ -952,17 +927,13 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 		if (invis)
 		{
 			final DeleteObject deletePacket = new DeleteObject(this);
-			for (WorldObject obj : getKnownList().getKnownObjects().values())
+			World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
 			{
-				if ((obj != null) && obj.isPlayer())
+				if (!isVisibleFor(player))
 				{
-					final PlayerInstance player = obj.getActingPlayer();
-					if (!isVisibleFor(player))
-					{
-						obj.sendPacket(deletePacket);
-					}
+					player.sendPacket(deletePacket);
 				}
-			}
+			});
 		}
 		
 		// Broadcast information regarding the object to those which are suppose to see.
@@ -983,18 +954,40 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	 */
 	public void broadcastInfo()
 	{
-		for (WorldObject obj : getKnownList().getKnownObjects().values())
+		World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
 		{
-			if ((obj != null) && obj.isPlayer() && isVisibleFor(obj.getActingPlayer()))
+			if (isVisibleFor(player))
 			{
-				sendInfo(obj.getActingPlayer());
+				sendInfo(player);
 			}
-		}
+		});
 	}
 	
 	public boolean isInvul()
 	{
 		return false;
+	}
+	
+	public boolean isInSurroundingRegion(WorldObject worldObject)
+	{
+		if (worldObject == null)
+		{
+			return false;
+		}
+		
+		final WorldRegion worldRegion1 = worldObject.getWorldRegion();
+		if (worldRegion1 == null)
+		{
+			return false;
+		}
+		
+		final WorldRegion worldRegion2 = getWorldRegion();
+		if (worldRegion2 == null)
+		{
+			return false;
+		}
+		
+		return worldRegion1.isSurroundingRegion(worldRegion2);
 	}
 	
 	@Override

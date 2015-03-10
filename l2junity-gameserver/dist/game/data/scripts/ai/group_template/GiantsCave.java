@@ -19,7 +19,8 @@
 package ai.group_template;
 
 import org.l2junity.gameserver.enums.ChatType;
-import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
@@ -60,13 +61,13 @@ public final class GiantsCave extends AbstractNpcAI
 				npc.broadcastSay(ChatType.NPC_SHOUT, NpcStringId.OH_GIANTS_AN_INTRUDER_HAS_BEEN_DISCOVERED);
 			}
 			
-			for (Creature characters : npc.getKnownList().getKnownCharactersInRadius(450))
+			World.getInstance().forEachVisibleObjectInRange(npc, Attackable.class, 450, characters ->
 			{
-				if ((characters != null) && (characters.isAttackable()) && (getRandomBoolean()))
+				if ((getRandomBoolean()))
 				{
-					addAttackPlayerDesire((Npc) characters, player);
+					addAttackPlayerDesire(characters, player);
 				}
-			}
+			});
 		}
 		else if (event.equals("CLEAR") && (npc != null) && !npc.isDead())
 		{

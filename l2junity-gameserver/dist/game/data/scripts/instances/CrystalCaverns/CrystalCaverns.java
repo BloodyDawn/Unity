@@ -1378,9 +1378,9 @@ public final class CrystalCaverns extends AbstractInstance
 				}
 				CrystalGolem cryGolem = world.crystalGolems.get(npc);
 				int minDist = 300000;
-				for (WorldObject object : World.getInstance().getVisibleObjects(npc, 300))
+				for (ItemInstance object : World.getInstance().getVisibleObjects(npc, ItemInstance.class, 300))
 				{
-					if ((object instanceof ItemInstance) && (object.getId() == CRYSTALFOOD))
+					if (object.getId() == CRYSTALFOOD)
 					{
 						int dx = npc.getX() - object.getX();
 						int dy = npc.getY() - object.getY();
@@ -1388,7 +1388,7 @@ public final class CrystalCaverns extends AbstractInstance
 						if (d < minDist)
 						{
 							minDist = d;
-							cryGolem.foodItem = (ItemInstance) object;
+							cryGolem.foodItem = object;
 						}
 					}
 				}

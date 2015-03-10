@@ -18,12 +18,12 @@
  */
 package org.l2junity.gameserver.model;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
+import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
+import java.util.function.Predicate;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -37,25 +37,21 @@ import org.slf4j.LoggerFactory;
 
 public final class WorldRegion
 {
-	private static final Logger _log = LoggerFactory.getLogger(WorldRegion.class.getName());
-	
-	/** Map containing all playable characters in game in this world region. */
-	private final Map<Integer, Playable> _allPlayable = new ConcurrentHashMap<>();
+	private static final Logger _log = LoggerFactory.getLogger(WorldRegion.class);
 	
 	/** Map containing visible objects in this world region. */
-	private final Map<Integer, WorldObject> _visibleObjects = new ConcurrentHashMap<>();
-	
-	private final List<WorldRegion> _surroundingRegions;
-	private final int _tileX, _tileY;
+	private volatile Map<Integer, WorldObject> _visibleObjects;
+	private final int _regionX;
+	private final int _regionY;
+	private final int _regionZ;
 	private boolean _active = false;
 	private ScheduledFuture<?> _neighborsTask = null;
 	
-	public WorldRegion(int pTileX, int pTileY)
+	public WorldRegion(int regionX, int regionY, int regionZ)
 	{
-		_surroundingRegions = new ArrayList<>();
-		
-		_tileX = pTileX;
-		_tileY = pTileY;
+		_regionX = regionX;
+		_regionY = regionY;
+		_regionZ = regionZ;
 		
 		// default a newly initialized region to inactive, unless always on is specified
 		_active = Config.GRIDS_ALWAYS_ON;
@@ -77,10 +73,11 @@ public final class WorldRegion
 			if (_isActivating)
 			{
 				// for each neighbor, if it's not active, activate.
-				for (WorldRegion neighbor : getSurroundingRegions())
+				forEachSurroundingRegion(w ->
 				{
-					neighbor.setActive(true);
-				}
+					w.setActive(true);
+					return true;
+				});
 			}
 			else
 			{
@@ -90,19 +87,26 @@ public final class WorldRegion
 				}
 				
 				// check and deactivate
-				for (WorldRegion neighbor : getSurroundingRegions())
+				forEachSurroundingRegion(w ->
 				{
-					if (neighbor.areNeighborsEmpty())
+					if (w.areNeighborsEmpty())
 					{
-						neighbor.setActive(false);
+						w.setActive(false);
 					}
-				}
+					return true;
+				});
+				
 			}
 		}
 	}
 	
 	private void switchAI(boolean isOn)
 	{
+		if (_visibleObjects == null)
+		{
+			return;
+		}
+		
 		int c = 0;
 		if (!isOn)
 		{
@@ -125,7 +129,6 @@ public final class WorldRegion
 					
 					mob.clearAggroList();
 					mob.getAttackByList().clear();
-					mob.getKnownList().removeAllKnownObjects();
 					
 					// stop the ai tasks
 					if (mob.hasAI())
@@ -137,7 +140,6 @@ public final class WorldRegion
 				else if (o instanceof Vehicle)
 				{
 					c++;
-					((Vehicle) o).getKnownList().removeAllKnownObjects();
 				}
 			}
 			
@@ -172,27 +174,12 @@ public final class WorldRegion
 		return _active;
 	}
 	
-	// check if all 9 neighbors (including self) are inactive or active but with no players.
-	// returns true if the above condition is met.
 	public boolean areNeighborsEmpty()
 	{
-		// if this region is occupied, return false.
-		if (isActive() && !_allPlayable.isEmpty())
+		return !forEachSurroundingRegion(w ->
 		{
-			return false;
-		}
-		
-		// if any one of the neighbors is occupied, return false
-		for (WorldRegion neighbor : _surroundingRegions)
-		{
-			if (neighbor.isActive() && !neighbor._allPlayable.isEmpty())
-			{
-				return false;
-			}
-		}
-		
-		// in all other cases, return true.
-		return true;
+			return !(w.isActive() && w.getVisibleObjects().values().stream().anyMatch(WorldObject::isPlayable));
+		});
 	}
 	
 	/**
@@ -211,16 +198,7 @@ public final class WorldRegion
 		// turn the AI on or off to match the region's activation.
 		switchAI(value);
 		
-		// TODO
-		// turn the geodata on or off to match the region's activation.
-		if (value)
-		{
-			_log.debug("Starting Grid " + _tileX + "," + _tileY);
-		}
-		else
-		{
-			_log.debug("Stoping Grid " + _tileX + "," + _tileY);
-		}
+		_log.debug("{} Grid {}", (value ? "Starting" : "Stoping"), getName());
 	}
 	
 	/**
@@ -279,15 +257,22 @@ public final class WorldRegion
 		}
 		
 		assert object.getWorldRegion() == this;
-		
+		if (_visibleObjects == null)
+		{
+			synchronized (object)
+			{
+				if (_visibleObjects == null)
+				{
+					_visibleObjects = new ConcurrentHashMap<>();
+				}
+			}
+		}
 		_visibleObjects.put(object.getObjectId(), object);
 		
 		if (object instanceof Playable)
 		{
-			_allPlayable.put(object.getObjectId(), (Playable) object);
-			
 			// if this is the first player to enter the region, activate self & neighbors
-			if ((_allPlayable.size() == 1) && (!Config.GRIDS_ALWAYS_ON))
+			if (!isActive() && (!Config.GRIDS_ALWAYS_ON))
 			{
 				startActivation();
 			}
@@ -307,46 +292,29 @@ public final class WorldRegion
 		}
 		
 		assert (object.getWorldRegion() == this) || (object.getWorldRegion() == null);
-		
+		if (_visibleObjects == null)
+		{
+			return;
+		}
 		_visibleObjects.remove(object.getObjectId());
 		
 		if (object instanceof Playable)
 		{
-			_allPlayable.remove(object.getObjectId());
-			
-			if (_allPlayable.isEmpty() && !Config.GRIDS_ALWAYS_ON)
+			if (areNeighborsEmpty() && !Config.GRIDS_ALWAYS_ON)
 			{
 				startDeactivation();
 			}
 		}
 	}
 	
-	public void addSurroundingRegion(WorldRegion region)
-	{
-		_surroundingRegions.add(region);
-	}
-	
-	/**
-	 * @return the FastList _surroundingRegions containing all L2WorldRegion around the current L2WorldRegion
-	 */
-	public List<WorldRegion> getSurroundingRegions()
-	{
-		return _surroundingRegions;
-	}
-	
-	public Map<Integer, Playable> getVisiblePlayable()
-	{
-		return _allPlayable;
-	}
-	
 	public Map<Integer, WorldObject> getVisibleObjects()
 	{
-		return _visibleObjects;
+		return _visibleObjects != null ? _visibleObjects : Collections.emptyMap();
 	}
 	
 	public String getName()
 	{
-		return "(" + _tileX + ", " + _tileY + ")";
+		return "(" + _regionX + ", " + _regionY + ", " + _regionZ + ")";
 	}
 	
 	/**
@@ -354,7 +322,13 @@ public final class WorldRegion
 	 */
 	public void deleteVisibleNpcSpawns()
 	{
+		if (_visibleObjects == null)
+		{
+			return;
+		}
+		
 		_log.debug("Deleting all visible NPC's in Region: " + getName());
+		
 		Collection<WorldObject> vNPC = _visibleObjects.values();
 		for (WorldObject obj : vNPC)
 		{
@@ -372,5 +346,47 @@ public final class WorldRegion
 			}
 		}
 		_log.info("All visible NPC's deleted in Region: " + getName());
+	}
+	
+	public boolean forEachSurroundingRegion(Predicate<WorldRegion> p)
+	{
+		for (int x = _regionX - 1; x <= (_regionX + 1); x++)
+		{
+			for (int y = _regionY - 1; y <= (_regionY + 1); y++)
+			{
+				for (int z = _regionZ - 1; z <= (_regionZ + 1); z++)
+				{
+					if (World.validRegion(x, y, z))
+					{
+						final WorldRegion worldRegion = World.getInstance().getWorldRegions()[x][y][z];
+						if (!p.test(worldRegion))
+						{
+							return false;
+						}
+					}
+				}
+			}
+		}
+		return true;
+	}
+	
+	public int getRegionX()
+	{
+		return _regionX;
+	}
+	
+	public int getRegionY()
+	{
+		return _regionY;
+	}
+	
+	public int getRegionZ()
+	{
+		return _regionZ;
+	}
+	
+	public boolean isSurroundingRegion(WorldRegion region)
+	{
+		return (region != null) && (getRegionX() >= (region.getRegionX() - 1)) && (getRegionX() <= (region.getRegionX() + 1)) && (getRegionY() >= (region.getRegionY() - 1)) && (getRegionY() <= (region.getRegionY() + 1)) && (getRegionZ() >= (region.getRegionZ() - 1)) && (getRegionZ() <= (region.getRegionZ() + 1));
 	}
 }

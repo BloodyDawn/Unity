@@ -21,7 +21,6 @@ package org.l2junity.gameserver.model.actor.instance;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.knownlist.FriendlyMobKnownList;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 
 /**
@@ -34,18 +33,6 @@ public class L2FriendlyMobInstance extends Attackable
 	{
 		super(template);
 		setInstanceType(InstanceType.L2FriendlyMobInstance);
-	}
-	
-	@Override
-	public final FriendlyMobKnownList getKnownList()
-	{
-		return (FriendlyMobKnownList) super.getKnownList();
-	}
-	
-	@Override
-	public void initKnownList()
-	{
-		setKnownList(new FriendlyMobKnownList(this));
 	}
 	
 	@Override
