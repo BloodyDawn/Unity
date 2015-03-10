@@ -18,85 +18,247 @@
  */
 package org.l2junity.gameserver.model.stats;
 
+import java.io.File;
+import java.util.NoSuchElementException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 /**
- * @author Sdw
+ * @author DS
  */
 public enum BaseStats
 {
-	STR // #TODO Check if correct
-	{
-		@Override
-		public double calcBonus(Creature actor)
-		{
-			return Math.pow(1.009, actor.getSTR() - 49);
-		}
-	},
-	INT // @TODO Update
-	{
-		@Override
-		public double calcBonus(Creature actor)
-		{
-			return Math.pow(1.01, actor.getINT() - 49.4);
-		}
-	},
-	DEX // Updated and better Formula to match Ertheia
-	{
-		@Override
-		public double calcBonus(Creature actor)
-		{
-			return Math.pow(1.004558949443461, actor.getDEX() - 19.27356040917275);
-		}
-	},
-	WIT // Updated and better Formula to match Ertheia
-	{
-		@Override
-		public double calcBonus(Creature actor)
-		{
-			return Math.pow(1.013832042738272, actor.getWIT() - 64.57078483041223);
-		}
-	},
-	CON // Updated and better Formula to match Ertheia
-	{
-		@Override
-		public double calcBonus(Creature actor)
-		{
-			return Math.pow(1.011685289099497, actor.getCON() - 34.80273839854561);
-		}
-	},
-	MEN // Updated and better Formula to match Ertheia
-	{
-		@Override
-		public double calcBonus(Creature actor)
-		{
-			return Math.pow(1.003687502032154, actor.getMEN() + 30.4505503162);
-		}
-	},
-	CHA // Addition for Ertheia
-	{
-		@Override
-		public double calcBonus(Creature actor)
-		{
-			return Math.pow(1.001, actor.getCHA() - 43);
-		}
-	},
-	LUC // @TODO: Implement
-	{
-		@Override
-		public double calcBonus(Creature actor)
-		{
-			return 1;
-		}
-	},
-	NONE
-	{
-		@Override
-		public double calcBonus(Creature actor)
-		{
-			return 1;
-		}
-	};
+	STR(new STR()),
+	INT(new INT()),
+	DEX(new DEX()),
+	WIT(new WIT()),
+	CON(new CON()),
+	MEN(new MEN()),
+	CHA(new CHA()),
+	NONE(new NONE());
 	
-	public abstract double calcBonus(Creature actor);
+	private static final Logger _log = Logger.getLogger(BaseStats.class.getName());
+	
+	public static final int MAX_STAT_VALUE = 201;
+	
+	protected static final double[] STRbonus = new double[MAX_STAT_VALUE];
+	protected static final double[] INTbonus = new double[MAX_STAT_VALUE];
+	protected static final double[] DEXbonus = new double[MAX_STAT_VALUE];
+	protected static final double[] WITbonus = new double[MAX_STAT_VALUE];
+	protected static final double[] CONbonus = new double[MAX_STAT_VALUE];
+	protected static final double[] MENbonus = new double[MAX_STAT_VALUE];
+	protected static final double[] CHAbonus = new double[MAX_STAT_VALUE];
+	
+	private final BaseStat _stat;
+	
+	public final String getValue()
+	{
+		return _stat.getClass().getSimpleName();
+	}
+	
+	private BaseStats(BaseStat s)
+	{
+		_stat = s;
+	}
+	
+	public final double calcBonus(Creature actor)
+	{
+		if (actor != null)
+		{
+			return _stat.calcBonus(actor);
+		}
+		
+		return 1;
+	}
+	
+	public static final BaseStats valueOfXml(String name)
+	{
+		name = name.intern();
+		for (BaseStats s : values())
+		{
+			if (s.getValue().equalsIgnoreCase(name))
+			{
+				return s;
+			}
+		}
+		throw new NoSuchElementException("Unknown name '" + name + "' for enum BaseStats");
+	}
+	
+	private interface BaseStat
+	{
+		public double calcBonus(Creature actor);
+	}
+	
+	protected static final class STR implements BaseStat
+	{
+		@Override
+		public final double calcBonus(Creature actor)
+		{
+			return STRbonus[actor.getSTR()];
+		}
+	}
+	
+	protected static final class INT implements BaseStat
+	{
+		@Override
+		public final double calcBonus(Creature actor)
+		{
+			return INTbonus[actor.getINT()];
+		}
+	}
+	
+	protected static final class DEX implements BaseStat
+	{
+		@Override
+		public final double calcBonus(Creature actor)
+		{
+			return DEXbonus[actor.getDEX()];
+		}
+	}
+	
+	protected static final class WIT implements BaseStat
+	{
+		@Override
+		public final double calcBonus(Creature actor)
+		{
+			return WITbonus[actor.getWIT()];
+		}
+	}
+	
+	protected static final class CON implements BaseStat
+	{
+		@Override
+		public final double calcBonus(Creature actor)
+		{
+			return CONbonus[actor.getCON()];
+		}
+	}
+	
+	protected static final class MEN implements BaseStat
+	{
+		@Override
+		public final double calcBonus(Creature actor)
+		{
+			return MENbonus[actor.getMEN()];
+		}
+	}
+	
+	protected static final class CHA implements BaseStat
+	{
+		@Override
+		public final double calcBonus(Creature actor)
+		{
+			return 1.002;
+		}
+	}
+	
+	protected static final class NONE implements BaseStat
+	{
+		@Override
+		public final double calcBonus(Creature actor)
+		{
+			return 1f;
+		}
+	}
+	
+	static
+	{
+		final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		factory.setValidating(false);
+		factory.setIgnoringComments(true);
+		final File file = new File(Config.DATAPACK_ROOT, "data/stats/statBonus.xml");
+		Document doc = null;
+		
+		if (file.exists())
+		{
+			try
+			{
+				doc = factory.newDocumentBuilder().parse(file);
+			}
+			catch (Exception e)
+			{
+				_log.log(Level.WARNING, "[BaseStats] Could not parse file: " + e.getMessage(), e);
+			}
+			
+			if (doc != null)
+			{
+				String statName;
+				int val;
+				double bonus;
+				NamedNodeMap attrs;
+				for (Node list = doc.getFirstChild(); list != null; list = list.getNextSibling())
+				{
+					if ("list".equalsIgnoreCase(list.getNodeName()))
+					{
+						for (Node stat = list.getFirstChild(); stat != null; stat = stat.getNextSibling())
+						{
+							statName = stat.getNodeName();
+							for (Node value = stat.getFirstChild(); value != null; value = value.getNextSibling())
+							{
+								if ("stat".equalsIgnoreCase(value.getNodeName()))
+								{
+									attrs = value.getAttributes();
+									try
+									{
+										val = Integer.parseInt(attrs.getNamedItem("value").getNodeValue());
+										bonus = Double.parseDouble(attrs.getNamedItem("bonus").getNodeValue());
+									}
+									catch (Exception e)
+									{
+										_log.severe("[BaseStats] Invalid stats value: " + value.getNodeValue() + ", skipping");
+										continue;
+									}
+									
+									if ("STR".equalsIgnoreCase(statName))
+									{
+										STRbonus[val] = bonus;
+									}
+									else if ("INT".equalsIgnoreCase(statName))
+									{
+										INTbonus[val] = bonus;
+									}
+									else if ("DEX".equalsIgnoreCase(statName))
+									{
+										DEXbonus[val] = bonus;
+									}
+									else if ("WIT".equalsIgnoreCase(statName))
+									{
+										WITbonus[val] = bonus;
+									}
+									else if ("CON".equalsIgnoreCase(statName))
+									{
+										CONbonus[val] = bonus;
+									}
+									else if ("MEN".equalsIgnoreCase(statName))
+									{
+										MENbonus[val] = bonus;
+									}
+									else if ("CHA".equalsIgnoreCase(statName))
+									{
+										CHAbonus[val] = bonus;
+									}
+									else
+									{
+										_log.severe("[BaseStats] Invalid stats name: " + statName + ", skipping");
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		else
+		{
+			throw new Error("[BaseStats] File not found: " + file.getName());
+		}
+	}
 }
