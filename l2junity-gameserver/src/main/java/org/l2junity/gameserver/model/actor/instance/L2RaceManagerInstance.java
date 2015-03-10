@@ -19,8 +19,7 @@
 package org.l2junity.gameserver.model.actor.instance;
 
 import java.util.List;
-
-import javolution.util.FastList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.l2junity.gameserver.MonsterRace;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -46,7 +45,6 @@ public class L2RaceManagerInstance extends Npc
 	public static final int LANES = 8;
 	public static final int WINDOW_START = 0;
 	
-	// private static List<Race> _history;
 	private static List<L2RaceManagerInstance> _managers;
 	protected static int _raceNumber = 4;
 	
@@ -100,8 +98,7 @@ public class L2RaceManagerInstance extends Npc
 		{
 			_notInitialized = false;
 			
-			// _history = new FastList<>();
-			_managers = new FastList<>();
+			_managers = new CopyOnWriteArrayList<>();
 			
 			ThreadPoolManager s = ThreadPoolManager.getInstance();
 			s.scheduleGeneralAtFixedRate(new Announcement(SystemMessageId.TICKETS_ARE_NOW_AVAILABLE_FOR_MONSTER_RACE_S1), 0, 10 * MINUTE);

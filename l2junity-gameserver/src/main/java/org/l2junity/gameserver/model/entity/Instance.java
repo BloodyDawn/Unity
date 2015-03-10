@@ -27,12 +27,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import javolution.util.FastList;
 import javolution.util.FastMap;
 
 import org.l2junity.Config;
@@ -80,8 +80,8 @@ public final class Instance
 	private int _ejectTime = Config.EJECT_DEAD_PLAYER_TIME;
 	/** Allow random walk for NPCs, global parameter. */
 	private boolean _allowRandomWalk = true;
-	private final List<Integer> _players = new FastList<Integer>().shared();
-	private final List<Npc> _npcs = new FastList<Npc>().shared();
+	private final Set<Integer> _players = ConcurrentHashMap.newKeySet();
+	private final Set<Npc> _npcs = ConcurrentHashMap.newKeySet();
 	private final Map<Integer, L2DoorInstance> _doors = new ConcurrentHashMap<>();
 	private final Map<String, List<L2Spawn>> _manualSpawn = new HashMap<>();
 	private Location _spawnLoc = null;
@@ -280,12 +280,12 @@ public final class Instance
 		_doors.put(doorId, newdoor);
 	}
 	
-	public List<Integer> getPlayers()
+	public Set<Integer> getPlayers()
 	{
 		return _players;
 	}
 	
-	public List<Npc> getNpcs()
+	public Set<Npc> getNpcs()
 	{
 		return _npcs;
 	}

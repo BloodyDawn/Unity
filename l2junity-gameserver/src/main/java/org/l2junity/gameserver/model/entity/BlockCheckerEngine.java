@@ -18,11 +18,11 @@
  */
 package org.l2junity.gameserver.model.entity;
 
-import java.util.List;
 import java.util.Map.Entry;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
 
-import javolution.util.FastList;
 import javolution.util.FastMap;
 
 import org.l2junity.Config;
@@ -73,7 +73,7 @@ public final class BlockCheckerEngine
 	// Current used arena
 	protected int _arena = -1;
 	// All blocks
-	protected List<L2Spawn> _spawns = new FastList<>();
+	protected Set<L2Spawn> _spawns = ConcurrentHashMap.newKeySet();
 	// Sets if the red team won the event at the end of this (used for packets)
 	protected boolean _isRedWinner;
 	// Time when the event starts. Used on packet sending
@@ -122,7 +122,7 @@ public final class BlockCheckerEngine
 	// Common z coordinate
 	private static final int _zCoord = -2405;
 	// List of dropped items in event (for later deletion)
-	protected List<ItemInstance> _drops = new FastList<>();
+	protected Set<ItemInstance> _drops = ConcurrentHashMap.newKeySet();
 	// Default arena
 	private static final byte DEFAULT_ARENA = -1;
 	// Event is started

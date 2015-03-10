@@ -23,13 +23,15 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
-import javolution.util.FastList;
 import javolution.util.FastMap;
 
 import org.l2junity.Config;
@@ -58,12 +60,11 @@ public class L2Event
 	public static String _eventCreator = "";
 	public static String _eventInfo = "";
 	public static int _teamsNumber = 0;
-	public static final Map<Integer, String> _teamNames = new FastMap<>();
-	public static final List<PlayerInstance> _registeredPlayers = new FastList<>();
-	public static final Map<Integer, List<PlayerInstance>> _teams = new FastMap<>();
+	public static final Map<Integer, String> _teamNames = new ConcurrentHashMap<>();
+	public static final Set<PlayerInstance> _registeredPlayers = ConcurrentHashMap.newKeySet();
+	public static final Map<Integer, Set<PlayerInstance>> _teams = new FastMap<>();
 	public static int _npcId = 0;
-	// public static final List<L2Npc> _npcs = new FastList<L2Npc>();
-	private static final Map<PlayerInstance, PlayerEventHolder> _connectionLossData = new FastMap<>();
+	private static final Map<PlayerInstance, PlayerEventHolder> _connectionLossData = new ConcurrentHashMap<>();
 	
 	public enum EventState
 	{
@@ -83,7 +84,7 @@ public class L2Event
 			return -1;
 		}
 		
-		for (Entry<Integer, List<PlayerInstance>> team : _teams.entrySet())
+		for (Entry<Integer, Set<PlayerInstance>> team : _teams.entrySet())
 		{
 			if (team.getValue().contains(player))
 			{
@@ -97,7 +98,7 @@ public class L2Event
 	public static List<PlayerInstance> getTopNKillers(int n)
 	{
 		final Map<PlayerInstance, Integer> tmp = new HashMap<>();
-		for (List<PlayerInstance> teamList : _teams.values())
+		for (Set<PlayerInstance> teamList : _teams.values())
 		{
 			for (PlayerInstance player : teamList)
 			{
@@ -231,7 +232,7 @@ public class L2Event
 			case STANDBY:
 				return _registeredPlayers.contains(player);
 			case ON:
-				for (List<PlayerInstance> teamList : _teams.values())
+				for (Set<PlayerInstance> teamList : _teams.values())
 				{
 					if (teamList.contains(player))
 					{
@@ -376,7 +377,7 @@ public class L2Event
 				_eventInfo = br.readLine();
 			}
 			
-			List<PlayerInstance> temp = new FastList<>();
+			Set<PlayerInstance> temp = new HashSet<>();
 			for (PlayerInstance player : World.getInstance().getPlayers())
 			{
 				if (!player.isOnline())
@@ -390,13 +391,7 @@ public class L2Event
 					temp.add(player);
 				}
 				
-				World.getInstance().forEachVisibleObject(player, PlayerInstance.class, playertemp ->
-				{
-					if ((Math.abs(playertemp.getX() - player.getX()) < 1000) && (Math.abs(playertemp.getY() - player.getY()) < 1000) && (Math.abs(playertemp.getZ() - player.getZ()) < 1000))
-					{
-						temp.add(playertemp);
-					}
-				});
+				World.getInstance().forEachVisibleObjectInRange(player, PlayerInstance.class, 1000, temp::add);
 			}
 		}
 		catch (Exception e)
@@ -435,7 +430,7 @@ public class L2Event
 			// Insert empty lists at _teams.
 			for (int i = 0; i < _teamsNumber; i++)
 			{
-				_teams.put(i + 1, new FastList<PlayerInstance>());
+				_teams.put(i + 1, ConcurrentHashMap.newKeySet());
 			}
 			
 			int i = 0;
@@ -505,7 +500,7 @@ public class L2Event
 				eventState = EventState.OFF;
 				return "The event has been stopped at STANDBY mode, all players unregistered and all event npcs unspawned.";
 			case ON:
-				for (List<PlayerInstance> teamList : _teams.values())
+				for (Set<PlayerInstance> teamList : _teams.values())
 				{
 					for (PlayerInstance player : teamList)
 					{

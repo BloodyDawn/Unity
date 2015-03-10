@@ -28,10 +28,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-import javolution.util.FastList;
 import javolution.util.FastMap;
 
 import org.l2junity.Config;
@@ -84,9 +84,9 @@ public final class Fort extends AbstractResidence
 	
 	// Spawn Data
 	private boolean _isSuspiciousMerchantSpawned = false;
-	private final List<L2Spawn> _siegeNpcs = new FastList<>();
-	private final List<L2Spawn> _npcCommanders = new FastList<>();
-	private final List<L2Spawn> _specialEnvoys = new FastList<>();
+	private final Set<L2Spawn> _siegeNpcs = ConcurrentHashMap.newKeySet();
+	private final Set<L2Spawn> _npcCommanders = ConcurrentHashMap.newKeySet();
+	private final Set<L2Spawn> _specialEnvoys = ConcurrentHashMap.newKeySet();
 	
 	private final Map<Integer, Integer> _envoyCastles = new HashMap<>(2);
 	private final Set<Integer> _availableCastles = new HashSet<>(1);

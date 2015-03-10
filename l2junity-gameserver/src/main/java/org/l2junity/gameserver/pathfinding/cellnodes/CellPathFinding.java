@@ -19,10 +19,10 @@
 package org.l2junity.gameserver.pathfinding.cellnodes;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
-
-import javolution.util.FastList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.GeoData;
@@ -49,7 +49,7 @@ public class CellPathFinding extends PathFinding
 	private int _postFilterPasses = 0;
 	private long _postFilterElapsed = 0;
 	
-	private FastList<ItemInstance> _debugItems = null;
+	private List<ItemInstance> _debugItems = null;
 	
 	public static CellPathFinding getInstance()
 	{
@@ -120,7 +120,7 @@ public class CellPathFinding extends PathFinding
 		{
 			if (_debugItems == null)
 			{
-				_debugItems = new FastList<>();
+				_debugItems = new CopyOnWriteArrayList<>();
 			}
 			else
 			{
@@ -137,7 +137,7 @@ public class CellPathFinding extends PathFinding
 			}
 		}
 		
-		FastList<AbstractNodeLoc> path = null;
+		List<AbstractNodeLoc> path = null;
 		try
 		{
 			CellNode result = buffer.findPath(gx, gy, gz, gtx, gty, gtz);
@@ -243,9 +243,9 @@ public class CellPathFinding extends PathFinding
 		return path;
 	}
 	
-	private FastList<AbstractNodeLoc> constructPath(AbstractNode node)
+	private List<AbstractNodeLoc> constructPath(AbstractNode node)
 	{
-		FastList<AbstractNodeLoc> path = new FastList<>();
+		LinkedList<AbstractNodeLoc> path = new LinkedList<>();
 		int previousDirectionX = Integer.MIN_VALUE;
 		int previousDirectionY = Integer.MIN_VALUE;
 		int directionX, directionY;
