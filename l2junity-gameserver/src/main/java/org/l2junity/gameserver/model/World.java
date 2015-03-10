@@ -384,11 +384,16 @@ public final class World
 			// Go through all surrounding L2WorldRegion L2Characters
 			oldRegion.forEachSurroundingRegion(w ->
 			{
-				for (WorldObject obj : w.getVisibleObjects().values())
+				for (WorldObject wo : w.getVisibleObjects().values())
 				{
-					if (obj instanceof PlayerInstance)
+					if (object.isPlayer())
 					{
-						obj.sendPacket(new DeleteObject(object));
+						object.sendPacket(new DeleteObject(wo));
+					}
+					
+					if (wo.isPlayer())
+					{
+						wo.sendPacket(new DeleteObject(object));
 					}
 				}
 				return true;
