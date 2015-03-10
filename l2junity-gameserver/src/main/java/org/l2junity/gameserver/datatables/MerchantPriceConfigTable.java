@@ -20,11 +20,11 @@ package org.l2junity.gameserver.datatables;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
+
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-
-import javolution.util.FastMap;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.InstanceListManager;
@@ -53,7 +53,7 @@ public class MerchantPriceConfigTable implements InstanceListManager
 	
 	private static final String MPCS_FILE = "MerchantPriceConfig.xml";
 	
-	private final Map<Integer, MerchantPriceConfig> _mpcs = new FastMap<>();
+	private final Map<Integer, MerchantPriceConfig> _mpcs = new HashMap<>();
 	private MerchantPriceConfig _defaultMpc;
 	
 	public MerchantPriceConfig getMerchantPriceConfig(L2MerchantInstance npc)

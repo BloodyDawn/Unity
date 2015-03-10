@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import javolution.util.FastMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.AccessLevel;
@@ -45,7 +45,7 @@ public final class AdminData implements IXmlReader
 {
 	private final Map<Integer, AccessLevel> _accessLevels = new HashMap<>();
 	private final Map<String, AdminCommandAccessRight> _adminCommandAccessRights = new HashMap<>();
-	private final Map<PlayerInstance, Boolean> _gmList = new FastMap<PlayerInstance, Boolean>().shared();
+	private final Map<PlayerInstance, Boolean> _gmList = new ConcurrentHashMap<>();
 	private int _highestLevel = 0;
 	
 	protected AdminData()

@@ -23,11 +23,11 @@ import static org.l2junity.gameserver.model.itemcontainer.Inventory.ADENA_ID;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
-
-import javolution.util.FastMap;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -60,7 +60,7 @@ public class ItemTable
 	private static Logger LOGGER = LoggerFactory.getLogger(ItemTable.class.getName());
 	private static Logger LOGGER_ITEMS = LoggerFactory.getLogger("item");
 	
-	public static final Map<String, Integer> _slots = new FastMap<>();
+	public static final Map<String, Integer> _slots = new HashMap<>();
 	
 	private L2Item[] _allTemplates;
 	private final Map<Integer, EtcItem> _etcItems;
@@ -119,9 +119,9 @@ public class ItemTable
 	
 	protected ItemTable()
 	{
-		_etcItems = new FastMap<>();
-		_armors = new FastMap<>();
-		_weapons = new FastMap<>();
+		_etcItems = new ConcurrentHashMap<>();
+		_armors = new ConcurrentHashMap<>();
+		_weapons = new ConcurrentHashMap<>();
 		load();
 	}
 	
