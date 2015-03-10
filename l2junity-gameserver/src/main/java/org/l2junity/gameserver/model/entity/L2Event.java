@@ -32,8 +32,6 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-import javolution.util.FastMap;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
@@ -62,7 +60,7 @@ public class L2Event
 	public static int _teamsNumber = 0;
 	public static final Map<Integer, String> _teamNames = new ConcurrentHashMap<>();
 	public static final Set<PlayerInstance> _registeredPlayers = ConcurrentHashMap.newKeySet();
-	public static final Map<Integer, Set<PlayerInstance>> _teams = new FastMap<>();
+	public static final Map<Integer, Set<PlayerInstance>> _teams = new ConcurrentHashMap<>();
 	public static int _npcId = 0;
 	private static final Map<PlayerInstance, PlayerEventHolder> _connectionLossData = new ConcurrentHashMap<>();
 	
