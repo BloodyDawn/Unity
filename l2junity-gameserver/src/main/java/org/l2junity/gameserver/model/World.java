@@ -305,7 +305,7 @@ public final class World
 		
 		forEachVisibleObject(object, WorldObject.class, 1, wo ->
 		{
-			if (object.isPlayer())
+			if (object.isPlayer() && wo.isVisibleFor((PlayerInstance) object))
 			{
 				wo.sendInfo((PlayerInstance) object);
 				if (wo.isCreature())
@@ -322,7 +322,7 @@ public final class World
 				}
 			}
 			
-			if (wo.isPlayer())
+			if (wo.isPlayer() && object.isVisibleFor((PlayerInstance) wo))
 			{
 				object.sendInfo((PlayerInstance) wo);
 				if (object.isCreature())
@@ -455,7 +455,7 @@ public final class World
 						continue;
 					}
 					
-					if (object.isPlayer())
+					if (object.isPlayer() && wo.isVisibleFor((PlayerInstance) object))
 					{
 						wo.sendInfo((PlayerInstance) object);
 						if (wo.isCreature())
@@ -472,7 +472,7 @@ public final class World
 						}
 					}
 					
-					if (wo.isPlayer())
+					if (wo.isPlayer() && object.isVisibleFor((PlayerInstance) wo))
 					{
 						object.sendInfo((PlayerInstance) wo);
 						if (object.isCreature())
