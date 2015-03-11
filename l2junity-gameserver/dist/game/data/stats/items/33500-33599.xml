@@ -4,53 +4,62 @@
 		<!-- Proof received as a campaign reward. Can exchange for a gift from the Kingdom Mark Manager in the Town of each castle. -->
 		<set name="icon" val="icon.campaign_high_rank_reward" />
 		<set name="price" val="20000" />
+		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33501" name="Mark of the King" additionalName="" type="EtcItem">
 		<!-- High-level proof received by those with high achievements during the campaign. Can exchange for a special gift from the Kingdom Mark Manager in the Town of each castle. -->
 		<set name="icon" val="icon.campaign_public_reward" />
 		<set name="price" val="400000" />
+		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33502" name="Weapon Attribute Change Crystal (S-grade)" additionalName="" type="EtcItem">
 		<!-- Double-click to change the attribute of an S(S80) grade weapon that cannot be bound. Can be used when an S-grade weapon with a bestowed attribute exists in the inventory. Cannot be exchanged, dropped, sold in shops, or used in a private store. -->
 		<set name="icon" val="icon.change_elemental_crystal" />
+		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33503" name="Hero's Blessed Buff Scroll" additionalName="" type="EtcItem">
 		<!-- When used, HP Recovery Bonus, Max MP, and Critical Atk. Rate + 20%, and you can feel the effects of Prophecy of Water, Might, Haste, Empower, Acumen, Wind Walk, Vampiric Rage, Berserker Spirit, Shield, Focus, Death Whisper, Guidance, Clarity, Wild Magic, and Concentration for 1 hour. -->
 		<set name="icon" val="icon.etc_piece_of_paper_white_i00" />
 		<set name="weight" val="120" />
+		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33504" name="Hero's Blessed Buff Scroll 5-unit Pack" additionalName="" type="EtcItem">
 		<!-- Contains 5 scrolls that have the following effects for 1 hour: HP Recovery Bonus, Max MP, and Critical Atk. Rate + 20%, and you can feel the effects of Prophecy of Water, Might, Haste, Empower, Acumen, Wind Walk, Vampiric Rage, Berserker Spirit, Shield, Focus, Death Whisper, Guidance, Clarity, Wild Magic, and Concentration. -->
 		<set name="icon" val="icon.etc_pi_gift_box_i00" />
 		<set name="weight" val="100" />
+		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33505" name="Scroll: Noblesse Blessing" additionalName="" type="EtcItem">
 		<!-- For 60 minutes, maintains buffs upon death. -->
 		<set name="icon" val="icon.etc_piece_of_paper_gray_i00" />
 		<set name="weight" val="120" />
+		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33506" name="Scroll: Noblesse Blessing 5-unit Pack" additionalName="" type="EtcItem">
 		<!-- Contains 5 scrolls that maintain buffs upon death, for 60 min. -->
 		<set name="icon" val="icon.etc_pi_gift_box_i00" />
 		<set name="weight" val="100" />
+		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33507" name="Scroll: Mount Kukuru" additionalName="" type="EtcItem">
 		<!-- Scroll for mounting a kukuru. When used by a character who is level 40 or above, he/she can mount a Kukuru. -->
 		<set name="icon" val="icon.scroll_of_kukur_event" />
 		<set name="weight" val="120" />
+		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33508" name="Scroll: Mount Kukuru 30-unit Pack" additionalName="" type="EtcItem">
 		<!-- Scroll for mounting a kukuru. When used by a character who is level 40 or above, he/she can mount a Kukuru. Contains 30 scrolls that allow 10 minutes of mounting. -->
 		<set name="icon" val="icon.etc_pi_gift_box_i00" />
 		<set name="weight" val="100" />
+		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33509" name="Returning Hero's Shirt" additionalName="" type="Armor">
@@ -71,68 +80,80 @@
 	<item id="33511" name="Returning Hero's Mark" additionalName="" type="EtcItem">
 		<!-- Mark for a returning hero. If you bring it to the Dimensional Merchant, you can exchange for a returning hero's equipment. -->
 		<set name="icon" val="icon.return_user_item" />
+		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33512" name="Returning Hero's Vitality Replenishing Juice" additionalName="" type="EtcItem">
 		<!-- Recovers Vitality while acquiring XP through hunting for 4 hours. No effect applies when used while the 'Birthday Vitality' buff is in effect. Cooldown is 60 minutes. Vitality item with limited usage. -->
 		<set name="icon" val="BranchSys2.icon.br_breath_of_hero_i00" />
 		<set name="weight" val="120" />
+		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33513" name="Returning Hero's Vitality Replenishing Juice 5-unit Pack" additionalName="" type="EtcItem">
 		<!-- Wrapped Pack containing 5 Vitality Recovering Cakes (4-hour) that recover Vitality of nearby party members while acquiring XP through hunting. -->
 		<set name="icon" val="icon.etc_pi_gift_box_i00" />
 		<set name="weight" val="100" />
+		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33514" name="Hero's Gift Box" additionalName="" type="EtcItem">
 		<!-- Can acquire a 5-unit Hero's Blessing Buff Scroll pack, a 3-unit Minion Coupon pack, a 5-unit Noblesse Blessing buff scroll pack, a 30-unit Kukuru mounting scroll pack, and a 3-unit Feather of Blessing pack. -->
 		<set name="icon" val="icon.present_of_destination_event" />
 		<set name="weight" val="100" />
+		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33515" name="Gift Box of Destiny" additionalName="" type="EtcItem">
 		<!-- Can acquire 250 Returning Hero's Marks, 1 Returning Hero's Vitality Replenishing Juice pack of 5, and a Superior Minion coupon pack of 2. -->
 		<set name="icon" val="icon.new_user_box" />
 		<set name="weight" val="100" />
+		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33516" name="Unbind Scroll (R-grade)" additionalName="Campaign" type="EtcItem">
 		<!-- Has a low chance to transforms R-grade Bound items to Standard items. -->
 		<set name="icon" val="icon.cursed_free_r" />
 		<set name="weight" val="2" />
+		<set name="crystal_type" val="R" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33517" name="Unbind Scroll (R95-grade)" additionalName="Campaign" type="EtcItem">
 		<!-- Has a low chance to transforms R95-grade Bound items to Standard items. -->
 		<set name="icon" val="icon.cursed_free_r95" />
 		<set name="weight" val="2" />
+		<set name="crystal_type" val="R95" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33518" name="Blessed Scroll of Resurrection" additionalName="" type="EtcItem">
 		<!-- Magic scroll that resurrects a dead character and restores his or her XP completely. -->
 		<set name="icon" val="icon.etc_scroll_of_resurrection_i01" />
 		<set name="weight" val="120" />
+		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33519" name="Scroll: Enchant Weapon (R-grade)" additionalName="Campaign" type="EtcItem">
 		<!-- P. Atk. + 6 for R-grade one-handed sword, one-handed blunt, dagger, spear, and other weapons when enchanted. P. Atk. + 7 for two-handed sword, two-handed blunt, dualsword, two-handed fist weapon, and crossbow. P. Atk. + 12 for bow weapons. M. Atk. + 5 for all weapons. P. Atk./M. Atk. greatly increases starting at + 4. All amounts are increased for blessed weapons. -->
 		<set name="icon" val="icon.scroll_of_enchant_weapon_i06" />
 		<set name="weight" val="120" />
+		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33520" name="Scroll: Enchant Armor (R-grade)" additionalName="Campaign" type="EtcItem">
 		<!-- When enchanted, P. Def. + 2 for R-grade armor and accessories. Greatly increased starting at + 4. Can be enhanced safely to + 3. When enhanced + 4 or more, HP also increases according to the enchant value. -->
 		<set name="icon" val="icon.scroll_of_enchant_armor_i06" />
 		<set name="weight" val="120" />
+		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="33521" name="Wig Box" additionalName="Campaign" type="EtcItem">
 		<!-- Box containing various wigs. -->
+		<set name="crystal_type" val="NONE" />
 		<set name="icon" val="icon.event_hero_treasure_box_i00" />
 	</item>
 	<item id="33522" name="Attribute Pack" additionalName="Campaign" type="EtcItem">
 		<!-- Box containing attribute stones, attribute crystals, and attribute changing crystals. -->
+		<set name="crystal_type" val="NONE" />
 		<set name="icon" val="icon.event_hero_treasure_box_i00" />
 	</item>
 	<item id="33523" name="Talisman - M. Critical (Passive)" additionalName="Campaign" type="Armor">
@@ -273,6 +294,7 @@
 	</item>
 	<item id="33544" name="Unidentified Samurai Long Sword*Samurai Long Sword" additionalName="" type="EtcItem">
 		<!-- Samurai Long Sword*Samurai Long Sword in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
+		<set name="crystal_type" val="NONE" />
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 	</item>
 	<item id="33545" name="Bound Tallum Blade*Damascus" additionalName="Event" type="Weapon">
@@ -293,6 +315,7 @@
 	</item>
 	<item id="33546" name="Unidentified Tallum Blade*Damascus" additionalName="" type="EtcItem">
 		<!-- Tallum blade*Damascus in an Unidentified state. Double-click the item to identify it. The acquired item can be Standard or Bound. (Type: two-handed weapon / dualsword) -->
+		<set name="crystal_type" val="NONE" />
 		<set name="icon" val="icon.weapon_dual_sword_i00" />
 	</item>
 	<item id="33547" name="Bound Dynasty Sword" additionalName="Focus (Event)" type="Weapon">

@@ -372,6 +372,7 @@
 		<set name="material" val="WOOD" />
 		<set name="weight" val="6" />
 		<set name="price" val="2" />
+		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="18" type="Armor" name="Leather Shield">
@@ -884,6 +885,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="handler" val="ExtractableItems" />
+		<set name="crystal_type" val="NONE" />
 		<set name="capsuled_items" val="13024,1,1,100" />
 	</item>
 	<item id="54" type="EtcItem" name="(Not in Use)">
@@ -898,6 +900,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="handler" val="ExtractableItems" />
+		<set name="crystal_type" val="NONE" />
 		<set name="capsuled_items" val="13025,1,1,100" />
 	</item>
 	<item id="55" type="EtcItem" name="Agathion - Shiny Pack (7-day) (Event)">
@@ -912,6 +915,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="handler" val="ExtractableItems" />
+		<set name="crystal_type" val="NONE" />
 		<set name="capsuled_items" val="14102,1,1,100" />
 	</item>
 	<item id="56" type="EtcItem" name="Agathion - Sobbing Pack (7-day) (Event)">
@@ -926,12 +930,14 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="handler" val="ExtractableItems" />
+		<set name="crystal_type" val="NONE" />
 		<set name="capsuled_items" val="14103,1,1,100" />
 	</item>
 	<item id="57" type="EtcItem" name="Adena">
 		<set name="icon" val="icon.etc_adena_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="GOLD" />
+		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="58" type="Armor" name="Mithril Breastplate">
@@ -1069,6 +1075,7 @@
 		<set name="weight" val="80" />
 		<set name="price" val="40" />
 		<set name="is_stackable" val="true" />
+		<set name="crystal_type" val="NONE" />
 		<set name="is_oly_restricted" val="true" />
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
