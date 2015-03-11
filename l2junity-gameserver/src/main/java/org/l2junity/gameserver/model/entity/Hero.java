@@ -27,6 +27,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -669,7 +670,7 @@ public class Hero
 			return;
 		}
 		
-		Map<Integer, StatsSet> heroes = new FastMap<>();
+		Map<Integer, StatsSet> heroes = new HashMap<>();
 		
 		for (StatsSet hero : newHeroes)
 		{

@@ -18,12 +18,11 @@
  */
 package org.l2junity.gameserver.model.entity;
 
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
-
-import javolution.util.FastMap;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
@@ -65,8 +64,8 @@ public final class BlockCheckerEngine
 	// The object which holds all basic members info
 	protected ArenaParticipantsHolder _holder;
 	// Maps to hold player of each team and his points
-	protected FastMap<PlayerInstance, Integer> _redTeamPoints = new FastMap<>();
-	protected FastMap<PlayerInstance, Integer> _blueTeamPoints = new FastMap<>();
+	protected Map<PlayerInstance, Integer> _redTeamPoints = new ConcurrentHashMap<>();
+	protected Map<PlayerInstance, Integer> _blueTeamPoints = new ConcurrentHashMap<>();
 	// The initial points of the event
 	protected int _redPoints = 15;
 	protected int _bluePoints = 15;
@@ -662,7 +661,7 @@ public final class BlockCheckerEngine
 		 */
 		private void rewardAsWinner(boolean isRed)
 		{
-			FastMap<PlayerInstance, Integer> tempPoints = isRed ? _redTeamPoints : _blueTeamPoints;
+			Map<PlayerInstance, Integer> tempPoints = isRed ? _redTeamPoints : _blueTeamPoints;
 			
 			// Main give
 			for (Entry<PlayerInstance, Integer> points : tempPoints.entrySet())
@@ -719,8 +718,7 @@ public final class BlockCheckerEngine
 		 */
 		private void rewardAsLooser(boolean isRed)
 		{
-			FastMap<PlayerInstance, Integer> tempPoints = isRed ? _redTeamPoints : _blueTeamPoints;
-			
+			Map<PlayerInstance, Integer> tempPoints = isRed ? _redTeamPoints : _blueTeamPoints;
 			for (Entry<PlayerInstance, Integer> entry : tempPoints.entrySet())
 			{
 				PlayerInstance player = entry.getKey();

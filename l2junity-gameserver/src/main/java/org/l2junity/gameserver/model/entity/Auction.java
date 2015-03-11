@@ -26,7 +26,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Calendar;
 import java.util.Map;
-import javolution.util.FastMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -61,7 +61,7 @@ public class Auction
 	private long _currentBid = 0;
 	private long _startingBid = 0;
 	
-	private final Map<Integer, Bidder> _bidders = new FastMap<>();
+	private final Map<Integer, Bidder> _bidders = new ConcurrentHashMap<>();
 	
 	private static final String[] ItemTypeName =
 	{

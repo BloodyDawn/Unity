@@ -23,7 +23,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Map;
-import javolution.util.FastMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -50,7 +50,7 @@ public abstract class ClanHall
 	private final String _location;
 	private ClanHallZone _zone;
 	protected boolean _isFree = true;
-	private final Map<Integer, ClanHallFunction> _functions;
+	private final Map<Integer, ClanHallFunction> _functions = new ConcurrentHashMap<>();
 	
 	/** Clan Hall Functions */
 	public static final int FUNC_TELEPORT = 1;
@@ -212,7 +212,6 @@ public abstract class ClanHall
 		_ownerId = set.getInt("ownerId");
 		_desc = set.getString("desc");
 		_location = set.getString("location");
-		_functions = new FastMap<>();
 		
 		if (_ownerId > 0)
 		{

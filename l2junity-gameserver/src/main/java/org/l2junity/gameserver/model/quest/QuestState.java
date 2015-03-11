@@ -24,6 +24,7 @@ import java.sql.ResultSet;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.enums.QuestType;
@@ -213,8 +214,8 @@ public final class QuestState
 	 * <ul>
 	 * <li>Initialize class variable "vars" if is null.</li>
 	 * <li>Initialize parameter "val" if is null</li>
-	 * <li>Add/Update couple (var,val) in class variable FastMap "vars"</li>
-	 * <li>If the key represented by "var" exists in FastMap "vars", the couple (var,val) is updated in the database.<br>
+	 * <li>Add/Update couple (var,val) in class variable Map "vars"</li>
+	 * <li>If the key represented by "var" exists in Map "vars", the couple (var,val) is updated in the database.<br>
 	 * The key is known as existing if the preceding value of the key (given as result of function put()) is not null.<br>
 	 * If the key doesn't exist, the couple is added/created in the database</li>
 	 * <ul>

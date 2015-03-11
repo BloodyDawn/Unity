@@ -22,8 +22,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Map;
-
-import javolution.util.FastMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -47,7 +46,7 @@ public final class CHSiegeManager
 	private static final Logger _log = LoggerFactory.getLogger(CHSiegeManager.class.getName());
 	private static final String SQL_LOAD_HALLS = "SELECT * FROM siegable_clanhall";
 	
-	private final FastMap<Integer, SiegableHall> _siegableHalls = new FastMap<>();
+	private final Map<Integer, SiegableHall> _siegableHalls = new ConcurrentHashMap<>();
 	
 	protected CHSiegeManager()
 	{
@@ -88,7 +87,7 @@ public final class CHSiegeManager
 		}
 	}
 	
-	public FastMap<Integer, SiegableHall> getConquerableHalls()
+	public Map<Integer, SiegableHall> getConquerableHalls()
 	{
 		return _siegableHalls;
 	}

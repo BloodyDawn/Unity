@@ -22,8 +22,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Map;
-
-import javolution.util.FastMap;
+import java.util.concurrent.ConcurrentSkipListMap;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
@@ -45,10 +44,10 @@ public final class ClanHallManager
 {
 	protected static final Logger _log = LoggerFactory.getLogger(ClanHallManager.class.getName());
 	
-	private final Map<Integer, AuctionableHall> _clanHall;
-	private final Map<Integer, AuctionableHall> _freeClanHall;
-	private final Map<Integer, AuctionableHall> _allAuctionableClanHalls;
-	private static Map<Integer, ClanHall> _allClanHalls = new FastMap<>();
+	private final Map<Integer, AuctionableHall> _clanHall = new ConcurrentSkipListMap<>();
+	private final Map<Integer, AuctionableHall> _freeClanHall = new ConcurrentSkipListMap<>();
+	private final Map<Integer, AuctionableHall> _allAuctionableClanHalls = new ConcurrentSkipListMap<>();
+	private static Map<Integer, ClanHall> _allClanHalls = new ConcurrentSkipListMap<>();
 	private boolean _loaded = false;
 	
 	public boolean loaded()
@@ -58,9 +57,6 @@ public final class ClanHallManager
 	
 	protected ClanHallManager()
 	{
-		_clanHall = new FastMap<>();
-		_freeClanHall = new FastMap<>();
-		_allAuctionableClanHalls = new FastMap<>();
 		load();
 	}
 	

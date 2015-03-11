@@ -77,7 +77,7 @@ import org.w3c.dom.Node;
  */
 public final class SkillTreesData implements IXmlReader
 {
-	// ClassId, FastMap of Skill Hash Code, L2SkillLearn
+	// ClassId, Map of Skill Hash Code, L2SkillLearn
 	private static final Map<ClassId, Map<Integer, SkillLearn>> _classSkillTrees = new HashMap<>();
 	private static final Map<ClassId, Map<Integer, SkillLearn>> _transferSkillTrees = new HashMap<>();
 	private static final Map<Race, Map<Integer, SkillLearn>> _raceSkillTree = new HashMap<>();

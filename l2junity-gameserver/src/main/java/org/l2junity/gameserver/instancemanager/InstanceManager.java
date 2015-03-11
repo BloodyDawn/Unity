@@ -21,11 +21,9 @@ package org.l2junity.gameserver.instancemanager;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-
-import javolution.util.FastMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.xml.IXmlReader;
@@ -41,12 +39,12 @@ import org.w3c.dom.Node;
  */
 public final class InstanceManager implements IXmlReader
 {
-	private static final Map<Integer, Instance> _instanceList = new FastMap<>();
-	private final Map<Integer, InstanceWorld> _instanceWorlds = new FastMap<>();
+	private static final Map<Integer, Instance> _instanceList = new ConcurrentHashMap<>();
+	private final Map<Integer, InstanceWorld> _instanceWorlds = new ConcurrentHashMap<>();
 	private int _dynamic = 300000;
 	// InstanceId Names
-	private static final Map<Integer, String> _instanceIdNames = new HashMap<>();
-	private final Map<Integer, Map<Integer, Long>> _playerInstanceTimes = new FastMap<>();
+	private static final Map<Integer, String> _instanceIdNames = new ConcurrentHashMap<>();
+	private final Map<Integer, Map<Integer, Long>> _playerInstanceTimes = new ConcurrentHashMap<>();
 	// SQL Queries
 	private static final String ADD_INSTANCE_TIME = "INSERT INTO character_instance_time (charId,instanceId,time) values (?,?,?) ON DUPLICATE KEY UPDATE time=?";
 	private static final String RESTORE_INSTANCE_TIMES = "SELECT instanceId,time FROM character_instance_time WHERE charId=?";
@@ -167,7 +165,7 @@ public final class InstanceManager implements IXmlReader
 		{
 			return; // already restored
 		}
-		_playerInstanceTimes.put(playerObjId, new FastMap<Integer, Long>());
+		_playerInstanceTimes.put(playerObjId, new ConcurrentHashMap<>());
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement ps = con.prepareStatement(RESTORE_INSTANCE_TIMES))
 		{
