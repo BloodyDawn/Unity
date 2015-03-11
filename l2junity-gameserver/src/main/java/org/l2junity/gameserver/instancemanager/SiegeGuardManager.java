@@ -21,8 +21,8 @@ package org.l2junity.gameserver.instancemanager;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.List;
-import javolution.util.FastList;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.L2Spawn;
@@ -36,7 +36,7 @@ public final class SiegeGuardManager
 	private static Logger _log = LoggerFactory.getLogger(SiegeGuardManager.class.getName());
 	
 	private final Castle _castle;
-	private final List<L2Spawn> _siegeGuardSpawn = new FastList<>();
+	private final Set<L2Spawn> _siegeGuardSpawn = ConcurrentHashMap.newKeySet();
 	
 	public SiegeGuardManager(Castle castle)
 	{
@@ -262,7 +262,7 @@ public final class SiegeGuardManager
 		return _castle;
 	}
 	
-	public final List<L2Spawn> getSiegeGuardSpawn()
+	public final Set<L2Spawn> getSiegeGuardSpawn()
 	{
 		return _siegeGuardSpawn;
 	}

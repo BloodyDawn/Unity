@@ -20,6 +20,7 @@ package handlers.bypasshandlers;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.sql.impl.NpcBufferTable;
@@ -144,11 +145,11 @@ public class OlympiadManagerLink implements IBypassHandler
 						break;
 					case 2: // show waiting list | TODO: cleanup (not used anymore)
 						final int nonClassed = OlympiadManager.getInstance().getRegisteredNonClassBased().size();
-						final Collection<List<Integer>> allClassed = OlympiadManager.getInstance().getRegisteredClassBased().values();
+						final Collection<Set<Integer>> allClassed = OlympiadManager.getInstance().getRegisteredClassBased().values();
 						int classed = 0;
 						if (!allClassed.isEmpty())
 						{
-							for (List<Integer> cls : allClassed)
+							for (Set<Integer> cls : allClassed)
 							{
 								if (cls != null)
 								{

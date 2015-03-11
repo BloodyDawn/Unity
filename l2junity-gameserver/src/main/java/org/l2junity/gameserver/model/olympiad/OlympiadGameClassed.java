@@ -19,6 +19,7 @@
 package org.l2junity.gameserver.model.olympiad;
 
 import java.util.List;
+import java.util.Set;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
@@ -58,14 +59,14 @@ public class OlympiadGameClassed extends OlympiadGameNormal
 		return COMP_DONE_WEEK_CLASSED;
 	}
 	
-	protected static final OlympiadGameClassed createGame(int id, List<List<Integer>> classList)
+	protected static final OlympiadGameClassed createGame(int id, List<Set<Integer>> classList)
 	{
 		if ((classList == null) || classList.isEmpty())
 		{
 			return null;
 		}
 		
-		List<Integer> list;
+		Set<Integer> list;
 		Participant[] opponents;
 		while (!classList.isEmpty())
 		{

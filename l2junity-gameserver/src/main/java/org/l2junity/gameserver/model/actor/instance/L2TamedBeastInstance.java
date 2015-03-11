@@ -21,9 +21,8 @@ package org.l2junity.gameserver.model.actor.instance;
 import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
 
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Future;
-
-import javolution.util.FastList;
 
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -205,7 +204,7 @@ public final class L2TamedBeastInstance extends L2FeedableBeastInstance
 	{
 		if (_beastSkills == null)
 		{
-			_beastSkills = new FastList<>();
+			_beastSkills = new CopyOnWriteArrayList<>();
 		}
 		_beastSkills.add(skill);
 	}

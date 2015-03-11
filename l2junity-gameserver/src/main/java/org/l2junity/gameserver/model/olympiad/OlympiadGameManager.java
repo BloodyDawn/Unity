@@ -21,6 +21,8 @@ package org.l2junity.gameserver.model.olympiad;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
+
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -91,7 +93,7 @@ public class OlympiadGameManager implements Runnable
 		{
 			AbstractOlympiadGame newGame;
 			
-			List<List<Integer>> readyClassed = OlympiadManager.getInstance().hasEnoughRegisteredClassed();
+			List<Set<Integer>> readyClassed = OlympiadManager.getInstance().hasEnoughRegisteredClassed();
 			boolean readyNonClassed = OlympiadManager.getInstance().hasEnoughRegisteredNonClassed();
 			
 			if ((readyClassed != null) || readyNonClassed)
@@ -161,7 +163,7 @@ public class OlympiadGameManager implements Runnable
 						}
 					}
 					
-					for (List<Integer> list : OlympiadManager.getInstance().getRegisteredClassBased().values())
+					for (Set<Integer> list : OlympiadManager.getInstance().getRegisteredClassBased().values())
 					{
 						for (Integer id : list)
 						{

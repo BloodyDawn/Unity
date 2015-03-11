@@ -19,6 +19,7 @@
 package org.l2junity.gameserver.model.olympiad;
 
 import java.util.List;
+import java.util.Set;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.holders.ItemHolder;
@@ -57,7 +58,7 @@ public class OlympiadGameNonClassed extends OlympiadGameNormal
 		return COMP_DONE_WEEK_NON_CLASSED;
 	}
 	
-	protected static final OlympiadGameNonClassed createGame(int id, List<Integer> list)
+	protected static final OlympiadGameNonClassed createGame(int id, Set<Integer> list)
 	{
 		final Participant[] opponents = OlympiadGameNormal.createListOfParticipants(list);
 		if (opponents == null)

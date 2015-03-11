@@ -18,11 +18,12 @@
  */
 package org.l2junity.gameserver.model.olympiad;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-
-import javolution.util.FastList;
-import javolution.util.FastMap;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.instancemanager.AntiFeedManager;
@@ -37,13 +38,11 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public class OlympiadManager
 {
-	private final List<Integer> _nonClassBasedRegisters;
-	private final Map<Integer, List<Integer>> _classBasedRegisters;
+	private final Set<Integer> _nonClassBasedRegisters = ConcurrentHashMap.newKeySet();
+	private final Map<Integer, Set<Integer>> _classBasedRegisters = new ConcurrentHashMap<>();
 	
 	protected OlympiadManager()
 	{
-		_nonClassBasedRegisters = new FastList<Integer>().shared();
-		_classBasedRegisters = new FastMap<Integer, List<Integer>>().shared();
 	}
 	
 	public static final OlympiadManager getInstance()
@@ -51,26 +50,26 @@ public class OlympiadManager
 		return SingletonHolder._instance;
 	}
 	
-	public final List<Integer> getRegisteredNonClassBased()
+	public final Set<Integer> getRegisteredNonClassBased()
 	{
 		return _nonClassBasedRegisters;
 	}
 	
-	public final Map<Integer, List<Integer>> getRegisteredClassBased()
+	public final Map<Integer, Set<Integer>> getRegisteredClassBased()
 	{
 		return _classBasedRegisters;
 	}
 	
-	protected final List<List<Integer>> hasEnoughRegisteredClassed()
+	protected final List<Set<Integer>> hasEnoughRegisteredClassed()
 	{
-		List<List<Integer>> result = null;
-		for (Map.Entry<Integer, List<Integer>> classList : _classBasedRegisters.entrySet())
+		List<Set<Integer>> result = null;
+		for (Map.Entry<Integer, Set<Integer>> classList : _classBasedRegisters.entrySet())
 		{
 			if ((classList.getValue() != null) && (classList.getValue().size() >= Config.ALT_OLY_CLASSED))
 			{
 				if (result == null)
 				{
-					result = new FastList<>();
+					result = new ArrayList<>();
 				}
 				
 				result.add(classList.getValue());
@@ -110,7 +109,7 @@ public class OlympiadManager
 			return true;
 		}
 		
-		final List<Integer> classed = _classBasedRegisters.get(noble.getBaseClass());
+		final Set<Integer> classed = _classBasedRegisters.get(noble.getBaseClass());
 		if ((classed != null) && classed.contains(objId))
 		{
 			if (showMessage)
@@ -212,18 +211,7 @@ public class OlympiadManager
 					return false;
 				}
 				
-				List<Integer> classed = _classBasedRegisters.get(player.getBaseClass());
-				if (classed != null)
-				{
-					classed.add(charId);
-				}
-				else
-				{
-					classed = new FastList<Integer>().shared();
-					classed.add(charId);
-					_classBasedRegisters.put(player.getBaseClass(), classed);
-				}
-				
+				_classBasedRegisters.computeIfAbsent(player.getBaseClass(), k -> ConcurrentHashMap.newKeySet()).add(charId);
 				player.sendPacket(SystemMessageId.YOU_HAVE_BEEN_REGISTERED_FOR_THE_OLYMPIAD_WAITING_LIST_FOR_A_CLASS_BATTLE);
 				break;
 			}
@@ -287,12 +275,9 @@ public class OlympiadManager
 			return true;
 		}
 		
-		final List<Integer> classed = _classBasedRegisters.get(noble.getBaseClass());
+		final Set<Integer> classed = _classBasedRegisters.get(noble.getBaseClass());
 		if ((classed != null) && classed.remove(objId))
 		{
-			_classBasedRegisters.remove(noble.getBaseClass());
-			_classBasedRegisters.put(noble.getBaseClass(), classed);
-			
 			if (Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP > 0)
 			{
 				AntiFeedManager.getInstance().removePlayer(AntiFeedManager.OLYMPIAD_ID, noble);
@@ -319,11 +304,7 @@ public class OlympiadManager
 			return;
 		}
 		
-		final List<Integer> classed = _classBasedRegisters.get(player.getBaseClass());
-		if ((classed != null) && classed.remove(objId))
-		{
-			return;
-		}
+		_classBasedRegisters.getOrDefault(player.getBaseClass(), Collections.emptySet()).remove(objId);
 	}
 	
 	/**

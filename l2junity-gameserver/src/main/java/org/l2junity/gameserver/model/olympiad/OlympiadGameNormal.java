@@ -23,6 +23,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -61,13 +62,13 @@ public abstract class OlympiadGameNormal extends AbstractOlympiadGame
 		_playerTwo.getPlayer().setOlympiadGameId(id);
 	}
 	
-	protected static final Participant[] createListOfParticipants(List<Integer> list)
+	protected static final Participant[] createListOfParticipants(Set<Integer> set)
 	{
-		if ((list == null) || list.isEmpty() || (list.size() < 2))
+		if ((set == null) || set.isEmpty() || (set.size() < 2))
 		{
 			return null;
 		}
-		
+		List<Integer> list = new ArrayList<>(set.size());
 		int playerOneObjectId = 0;
 		PlayerInstance playerOne = null;
 		PlayerInstance playerTwo = null;

@@ -26,11 +26,12 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.PriorityBlockingQueue;
 import java.util.function.Consumer;
 import java.util.function.Function;
-import javolution.util.FastList;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
@@ -140,7 +141,7 @@ public abstract class AbstractScript extends ManagedScript
 {
 	protected static final Logger _log = LoggerFactory.getLogger(AbstractScript.class.getName());
 	private final Map<ListenerRegisterType, Set<Integer>> _registeredIds = new ConcurrentHashMap<>();
-	private final List<AbstractEventListener> _listeners = new FastList<AbstractEventListener>().shared();
+	private final Queue<AbstractEventListener> _listeners = new PriorityBlockingQueue<>();
 	
 	public AbstractScript()
 	{
@@ -1488,7 +1489,7 @@ public abstract class AbstractScript extends ManagedScript
 		return _registeredIds.getOrDefault(type, Collections.emptySet());
 	}
 	
-	public List<AbstractEventListener> getListeners()
+	public Queue<AbstractEventListener> getListeners()
 	{
 		return _listeners;
 	}

@@ -26,9 +26,8 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ScheduledFuture;
-
-import javolution.util.FastList;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -222,9 +221,9 @@ public class Siege implements Siegable
 	}
 	
 	// must support Concurrent Modifications
-	private final List<SiegeClan> _attackerClans = new FastList<>();
-	private final List<SiegeClan> _defenderClans = new FastList<>();
-	private final List<SiegeClan> _defenderWaitingClans = new FastList<>();
+	private final List<SiegeClan> _attackerClans = new CopyOnWriteArrayList<>();
+	private final List<SiegeClan> _defenderClans = new CopyOnWriteArrayList<>();
+	private final List<SiegeClan> _defenderWaitingClans = new CopyOnWriteArrayList<>();
 	
 	// Castle setting
 	private final List<L2ControlTowerInstance> _controlTowers = new ArrayList<>();

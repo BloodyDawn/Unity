@@ -21,9 +21,8 @@ package org.l2junity.gameserver.model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.List;
-
-import javolution.util.FastList;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
@@ -44,7 +43,7 @@ public class ContactList
 {
 	private final Logger _log = LoggerFactory.getLogger(getClass().getName());
 	private final PlayerInstance activeChar;
-	private final List<String> _contacts;
+	private final Set<String> _contacts = ConcurrentHashMap.newKeySet();
 	
 	private static final String QUERY_ADD = "INSERT INTO character_contacts (charId, contactId) VALUES (?, ?)";
 	private static final String QUERY_REMOVE = "DELETE FROM character_contacts WHERE charId = ? and contactId = ?";
@@ -53,7 +52,6 @@ public class ContactList
 	public ContactList(PlayerInstance player)
 	{
 		activeChar = player;
-		_contacts = new FastList<String>().shared();
 		restore();
 	}
 	
@@ -181,7 +179,7 @@ public class ContactList
 		}
 	}
 	
-	public List<String> getAllContacts()
+	public Set<String> getAllContacts()
 	{
 		return _contacts;
 	}

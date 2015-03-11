@@ -23,8 +23,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.List;
-import javolution.util.FastList;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -43,7 +43,7 @@ public final class ItemsOnGroundManager implements Runnable
 {
 	private static final Logger _log = LoggerFactory.getLogger(ItemsOnGroundManager.class.getName());
 	
-	private final List<ItemInstance> _items = new FastList<ItemInstance>().shared();
+	private final Set<ItemInstance> _items = ConcurrentHashMap.newKeySet();
 	
 	protected ItemsOnGroundManager()
 	{
@@ -154,11 +154,10 @@ public final class ItemsOnGroundManager implements Runnable
 	
 	public void save(ItemInstance item)
 	{
-		if (!Config.SAVE_DROPPED_ITEM)
+		if (Config.SAVE_DROPPED_ITEM)
 		{
-			return;
+			_items.add(item);
 		}
-		_items.add(item);
 	}
 	
 	public void removeObject(ItemInstance item)
