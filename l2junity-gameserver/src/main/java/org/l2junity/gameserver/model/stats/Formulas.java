@@ -66,7 +66,6 @@ import org.l2junity.gameserver.model.stats.functions.formulas.FuncMatkEvasion;
 import org.l2junity.gameserver.model.stats.functions.formulas.FuncMaxCpMul;
 import org.l2junity.gameserver.model.stats.functions.formulas.FuncMaxHpMul;
 import org.l2junity.gameserver.model.stats.functions.formulas.FuncMaxMpMul;
-import org.l2junity.gameserver.model.stats.functions.formulas.FuncMoveSpeed;
 import org.l2junity.gameserver.model.stats.functions.formulas.FuncPAtkMod;
 import org.l2junity.gameserver.model.stats.functions.formulas.FuncPAtkSpeed;
 import org.l2junity.gameserver.model.stats.functions.formulas.FuncPDefMod;
@@ -152,9 +151,6 @@ public final class Formulas
 		std[Stats.MAGIC_ATTACK_SPEED.ordinal()] = new Calculator();
 		std[Stats.MAGIC_ATTACK_SPEED.ordinal()].addFunc(FuncMAtkSpeed.getInstance());
 		
-		std[Stats.MOVE_SPEED.ordinal()] = new Calculator();
-		std[Stats.MOVE_SPEED.ordinal()].addFunc(FuncMoveSpeed.getInstance());
-		
 		std[Stats.ACCURACY_MAGIC.ordinal()] = new Calculator();
 		std[Stats.ACCURACY_MAGIC.ordinal()].addFunc(FuncMatkAccuracy.getInstance());
 		
@@ -188,7 +184,6 @@ public final class Formulas
 			cha.addStatFunc(FuncAtkEvasion.getInstance());
 			cha.addStatFunc(FuncPAtkSpeed.getInstance());
 			cha.addStatFunc(FuncMAtkSpeed.getInstance());
-			cha.addStatFunc(FuncMoveSpeed.getInstance());
 			cha.addStatFunc(FuncMatkAccuracy.getInstance());
 			cha.addStatFunc(FuncMatkEvasion.getInstance());
 			
@@ -222,7 +217,6 @@ public final class Formulas
 			cha.addStatFunc(FuncMAtkCritical.getInstance());
 			cha.addStatFunc(FuncAtkAccuracy.getInstance());
 			cha.addStatFunc(FuncAtkEvasion.getInstance());
-			cha.addStatFunc(FuncMoveSpeed.getInstance());
 			cha.addStatFunc(FuncPAtkSpeed.getInstance());
 			cha.addStatFunc(FuncMAtkSpeed.getInstance());
 			cha.addStatFunc(FuncMatkAccuracy.getInstance());
