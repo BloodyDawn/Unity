@@ -66,17 +66,17 @@ public final class CharEffectList
 {
 	private static final Logger _log = LoggerFactory.getLogger(CharEffectList.class.getName());
 	/** Map containing all effects from buffs for this effect list. */
-	private volatile FastMap<Integer, BuffInfo> _buffs;
+	private volatile Map<Integer, BuffInfo> _buffs;
 	/** Map containing all triggered skills for this effect list. */
-	private volatile FastMap<Integer, BuffInfo> _triggered;
+	private volatile Map<Integer, BuffInfo> _triggered;
 	/** Map containing all dances/songs for this effect list. */
-	private volatile FastMap<Integer, BuffInfo> _dances;
+	private volatile Map<Integer, BuffInfo> _dances;
 	/** Map containing all toggle for this effect list. */
-	private volatile FastMap<Integer, BuffInfo> _toggles;
+	private volatile Map<Integer, BuffInfo> _toggles;
 	/** Map containing all debuffs for this effect list. */
-	private volatile FastMap<Integer, BuffInfo> _debuffs;
+	private volatile Map<Integer, BuffInfo> _debuffs;
 	/** They bypass most of the actions, they are not included in most operations. */
-	private volatile FastMap<Integer, BuffInfo> _passives;
+	private volatile Map<Integer, BuffInfo> _passives;
 	/** Map containing the all stacked effect in progress for each abnormal type. */
 	private volatile Map<AbnormalType, BuffInfo> _stackedEffects;
 	/** Set containing all abnormal types that shouldn't be added to this creature effect list. */
@@ -119,8 +119,7 @@ public final class CharEffectList
 			{
 				if (_buffs == null)
 				{
-					_buffs = new FastMap<>();
-					_buffs.shared();
+					_buffs = new FastMap<Integer, BuffInfo>().shared();
 				}
 			}
 		}
@@ -139,8 +138,7 @@ public final class CharEffectList
 			{
 				if (_triggered == null)
 				{
-					_triggered = new FastMap<>();
-					_triggered.shared();
+					_triggered = new FastMap<Integer, BuffInfo>().shared();
 				}
 			}
 		}
@@ -159,8 +157,7 @@ public final class CharEffectList
 			{
 				if (_dances == null)
 				{
-					_dances = new FastMap<>();
-					_dances.shared();
+					_dances = new FastMap<Integer, BuffInfo>().shared();
 				}
 			}
 		}
@@ -179,8 +176,7 @@ public final class CharEffectList
 			{
 				if (_toggles == null)
 				{
-					_toggles = new FastMap<>();
-					_toggles.shared();
+					_toggles = new FastMap<Integer, BuffInfo>().shared();
 				}
 			}
 		}
@@ -199,8 +195,7 @@ public final class CharEffectList
 			{
 				if (_debuffs == null)
 				{
-					_debuffs = new FastMap<>();
-					_debuffs.shared();
+					_debuffs = new FastMap<Integer, BuffInfo>().shared();
 				}
 			}
 		}
@@ -219,8 +214,7 @@ public final class CharEffectList
 			{
 				if (_passives == null)
 				{
-					_passives = new FastMap<>();
-					_passives.shared();
+					_passives = new FastMap<Integer, BuffInfo>().shared();
 				}
 			}
 		}

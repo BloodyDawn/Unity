@@ -23,8 +23,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-
-import javolution.util.FastMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.Location;
@@ -51,7 +50,7 @@ public abstract class ZoneType extends ListenersContainer
 	
 	private final int _id;
 	protected L2ZoneForm _zone;
-	protected FastMap<Integer, Creature> _characterList;
+	protected Map<Integer, Creature> _characterList = new ConcurrentHashMap<>();
 	
 	/** Parameters to affect specific characters */
 	private boolean _checkAffected = false;
@@ -69,8 +68,6 @@ public abstract class ZoneType extends ListenersContainer
 	protected ZoneType(int id)
 	{
 		_id = id;
-		_characterList = new FastMap<>();
-		_characterList.shared();
 		
 		_minLvl = 0;
 		_maxLvl = 0xFF;

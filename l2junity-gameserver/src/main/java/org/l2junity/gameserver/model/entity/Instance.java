@@ -33,8 +33,6 @@ import java.util.concurrent.ScheduledFuture;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import javolution.util.FastMap;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
@@ -102,7 +100,7 @@ public final class Instance
 	private final List<Integer> _exceptionList = new ArrayList<>();
 	
 	protected ScheduledFuture<?> _checkTimeUpTask = null;
-	protected final Map<Integer, ScheduledFuture<?>> _ejectDeadTasks = new FastMap<>();
+	protected final Map<Integer, ScheduledFuture<?>> _ejectDeadTasks = new ConcurrentHashMap<>();
 	
 	public Instance(int id)
 	{
