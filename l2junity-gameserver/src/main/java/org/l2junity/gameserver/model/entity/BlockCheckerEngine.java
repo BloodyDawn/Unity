@@ -60,7 +60,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class BlockCheckerEngine
 {
-	protected static final Logger _log = LoggerFactory.getLogger(BlockCheckerEngine.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(BlockCheckerEngine.class);
 	// The object which holds all basic members info
 	protected ArenaParticipantsHolder _holder;
 	// Maps to hold player of each team and his points

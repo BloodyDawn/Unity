@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ItemVariables extends AbstractVariables
 {
-	private static final Logger _log = LoggerFactory.getLogger(ItemVariables.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(ItemVariables.class);
 	
 	// SQL Queries.
 	private static final String SELECT_QUERY = "SELECT * FROM item_variables WHERE id = ?";

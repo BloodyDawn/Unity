@@ -37,7 +37,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class Broadcast
 {
-	private static Logger _log = LoggerFactory.getLogger(Broadcast.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(Broadcast.class);
 	
 	/**
 	 * Send a packet to all L2PcInstance in the _KnownPlayers of the L2Character that have the Character targeted.<BR>

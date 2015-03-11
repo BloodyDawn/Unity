@@ -18,9 +18,6 @@
  */
 package org.l2junity.gameserver.network.client.recv.friend;
 
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -74,14 +71,6 @@ public final class RequestSendFriendMsg implements IClientIncomingPacket
 		
 		if (Config.LOG_CHAT)
 		{
-			LogRecord record = new LogRecord(Level.INFO, _message);
-			record.setLoggerName("chat");
-			record.setParameters(new Object[]
-			{
-				"PRIV_MSG",
-				"[" + activeChar.getName() + " to " + _reciever + "]"
-			});
-			
 			_logChat.info("PRIV_MSG [{} to {}] {}", activeChar, targetPlayer, _message);
 		}
 		

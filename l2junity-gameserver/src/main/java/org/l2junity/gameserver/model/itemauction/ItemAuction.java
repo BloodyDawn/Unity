@@ -43,7 +43,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class ItemAuction
 {
-	static final Logger _log = LoggerFactory.getLogger(ItemAuctionManager.class.getName());
+	static final Logger _log = LoggerFactory.getLogger(ItemAuctionManager.class);
 	private static final long ENDING_TIME_EXTEND_5 = TimeUnit.MILLISECONDS.convert(5, TimeUnit.MINUTES);
 	private static final long ENDING_TIME_EXTEND_3 = TimeUnit.MILLISECONDS.convert(3, TimeUnit.MINUTES);
 	

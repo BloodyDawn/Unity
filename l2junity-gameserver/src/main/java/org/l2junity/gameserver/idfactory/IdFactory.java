@@ -38,7 +38,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class IdFactory
 {
-	protected final Logger _log = LoggerFactory.getLogger(getClass().getName());
+	protected final Logger _log = LoggerFactory.getLogger(getClass());
 	
 	@Deprecated
 	protected static final String[] ID_UPDATES =

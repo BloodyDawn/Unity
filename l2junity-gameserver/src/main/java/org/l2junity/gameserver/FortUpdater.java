@@ -31,7 +31,7 @@ import org.slf4j.LoggerFactory;
  */
 public class FortUpdater implements Runnable
 {
-	protected static Logger _log = LoggerFactory.getLogger(FortUpdater.class.getName());
+	protected static Logger _log = LoggerFactory.getLogger(FortUpdater.class);
 	private final L2Clan _clan;
 	private final Fort _fort;
 	private int _runCount;

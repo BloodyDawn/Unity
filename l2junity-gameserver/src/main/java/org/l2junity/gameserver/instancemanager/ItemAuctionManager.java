@@ -43,7 +43,7 @@ import org.w3c.dom.Node;
  */
 public final class ItemAuctionManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(ItemAuctionManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(ItemAuctionManager.class);
 	
 	private final Map<Integer, ItemAuctionInstance> _managerInstances = new HashMap<>();
 	private final AtomicInteger _auctionIds;

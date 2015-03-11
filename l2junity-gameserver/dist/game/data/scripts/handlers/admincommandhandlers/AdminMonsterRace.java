@@ -34,7 +34,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public class AdminMonsterRace implements IAdminCommandHandler
 {
-	// private static Logger _log = LoggerFactory.getLogger(AdminMonsterRace.class.getName());
+	// private static Logger _log = LoggerFactory.getLogger(AdminMonsterRace.class);
 	
 	private static final String[] ADMIN_COMMANDS =
 	{

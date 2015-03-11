@@ -41,7 +41,7 @@ import org.slf4j.LoggerFactory;
 
 public class AdminQuest implements IAdminCommandHandler
 {
-	public static final Logger LOGGER = LoggerFactory.getLogger(AdminQuest.class.getName());
+	public static final Logger LOGGER = LoggerFactory.getLogger(AdminQuest.class);
 	
 	private static final String[] ADMIN_COMMANDS =
 	{

@@ -67,7 +67,7 @@ import org.slf4j.LoggerFactory;
 
 public final class Castle extends AbstractResidence
 {
-	protected static final Logger _log = LoggerFactory.getLogger(Castle.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(Castle.class);
 	
 	private final List<L2DoorInstance> _doors = new ArrayList<>();
 	private final List<Npc> _sideNpcs = new ArrayList<>();

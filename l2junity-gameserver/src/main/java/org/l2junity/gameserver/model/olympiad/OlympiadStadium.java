@@ -46,7 +46,7 @@ import org.slf4j.LoggerFactory;
  */
 public class OlympiadStadium
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(OlympiadStadium.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(OlympiadStadium.class);
 	private final OlympiadStadiumZone _zone;
 	private final Instance _instance;
 	private final List<L2Spawn> _buffers;

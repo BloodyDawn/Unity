@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class EventDispatcher
 {
-	private static final Logger _log = LoggerFactory.getLogger(EventDispatcher.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(EventDispatcher.class);
 	
 	protected EventDispatcher()
 	{

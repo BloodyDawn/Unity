@@ -32,7 +32,7 @@ import org.slf4j.LoggerFactory;
  */
 public class TvTManager
 {
-	protected static final Logger _log = LoggerFactory.getLogger(TvTManager.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(TvTManager.class);
 	
 	/** Task for event cycles<br> */
 	private TvTStartTask _task;

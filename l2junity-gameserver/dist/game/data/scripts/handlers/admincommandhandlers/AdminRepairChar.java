@@ -34,7 +34,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AdminRepairChar implements IAdminCommandHandler
 {
-	private static Logger _log = LoggerFactory.getLogger(AdminRepairChar.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(AdminRepairChar.class);
 	
 	private static final String[] ADMIN_COMMANDS =
 	{

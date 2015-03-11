@@ -64,7 +64,7 @@ import org.slf4j.LoggerFactory;
 
 public final class Fort extends AbstractResidence
 {
-	protected static final Logger _log = LoggerFactory.getLogger(Fort.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(Fort.class);
 	
 	private final List<L2DoorInstance> _doors = new ArrayList<>();
 	private L2StaticObjectInstance _flagPole = null;

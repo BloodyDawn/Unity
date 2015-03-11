@@ -44,7 +44,7 @@ import org.xml.sax.SAXException;
 public class MerchantPriceConfigTable implements InstanceListManager
 {
 	// Zoey76: TODO: Implement using IXmlReader.
-	private static Logger LOGGER = LoggerFactory.getLogger(MerchantPriceConfigTable.class.getName());
+	private static Logger LOGGER = LoggerFactory.getLogger(MerchantPriceConfigTable.class);
 	
 	public static MerchantPriceConfigTable getInstance()
 	{

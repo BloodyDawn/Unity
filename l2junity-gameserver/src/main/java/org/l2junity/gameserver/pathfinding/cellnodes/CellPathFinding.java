@@ -40,7 +40,7 @@ import org.slf4j.LoggerFactory;
  */
 public class CellPathFinding extends PathFinding
 {
-	private static final Logger _log = LoggerFactory.getLogger(CellPathFinding.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(CellPathFinding.class);
 	private BufferInfo[] _allBuffers;
 	private int _findSuccess = 0;
 	private int _findFails = 0;

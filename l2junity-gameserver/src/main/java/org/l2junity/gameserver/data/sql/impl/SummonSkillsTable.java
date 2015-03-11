@@ -34,7 +34,7 @@ import org.slf4j.LoggerFactory;
 
 public class SummonSkillsTable
 {
-	private static Logger LOGGER = LoggerFactory.getLogger(SummonSkillsTable.class.getName());
+	private static Logger LOGGER = LoggerFactory.getLogger(SummonSkillsTable.class);
 	private final Map<Integer, Map<Integer, L2PetSkillLearn>> _skillTrees = new HashMap<>();
 	
 	protected SummonSkillsTable()

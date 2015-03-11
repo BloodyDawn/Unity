@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
  */
 public class L2ShuttleEngine implements Runnable
 {
-	private static final Logger _log = LoggerFactory.getLogger(L2ShuttleEngine.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(L2ShuttleEngine.class);
 	
 	private static final int DELAY = 15 * 1000;
 	

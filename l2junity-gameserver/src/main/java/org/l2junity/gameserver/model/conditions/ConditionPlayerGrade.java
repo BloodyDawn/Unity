@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class ConditionPlayerGrade extends Condition
 {
-	protected static final Logger _log = LoggerFactory.getLogger(ConditionPlayerGrade.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(ConditionPlayerGrade.class);
 	// conditional values
 	public static final int COND_NO_GRADE = 0x0001;
 	public static final int COND_D_GRADE = 0x0002;

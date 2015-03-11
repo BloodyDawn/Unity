@@ -44,7 +44,7 @@ import org.slf4j.LoggerFactory;
 
 public class Auction
 {
-	protected static final Logger _log = LoggerFactory.getLogger(Auction.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(Auction.class);
 	private int _id = 0;
 	private long _endDate;
 	private int _highestBidderId = 0;

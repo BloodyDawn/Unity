@@ -47,7 +47,7 @@ import org.slf4j.LoggerFactory;
  */
 public class GameServerAuth extends BaseRecievePacket
 {
-	protected static Logger _log = LoggerFactory.getLogger(GameServerAuth.class.getName());
+	protected static Logger _log = LoggerFactory.getLogger(GameServerAuth.class);
 	GameServerThread _server;
 	private final byte[] _hexId;
 	private final int _desiredId;

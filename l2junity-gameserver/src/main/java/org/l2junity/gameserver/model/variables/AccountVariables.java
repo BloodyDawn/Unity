@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AccountVariables extends AbstractVariables
 {
-	private static final Logger _log = LoggerFactory.getLogger(AccountVariables.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(AccountVariables.class);
 	
 	// SQL Queries.
 	private static final String SELECT_QUERY = "SELECT * FROM account_gsdata WHERE account_name = ?";

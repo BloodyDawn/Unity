@@ -44,7 +44,7 @@ import org.slf4j.LoggerFactory;
 
 public final class World
 {
-	private static final Logger _log = LoggerFactory.getLogger(World.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(World.class);
 	/** Gracia border Flying objects not allowed to the east of it. */
 	public static final int GRACIA_MAX_X = -166168;
 	public static final int GRACIA_MAX_Z = 6105;

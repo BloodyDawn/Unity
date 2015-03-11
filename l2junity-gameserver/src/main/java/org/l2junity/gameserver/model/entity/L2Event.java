@@ -52,7 +52,7 @@ import org.slf4j.LoggerFactory;
  */
 public class L2Event
 {
-	protected static final Logger _log = LoggerFactory.getLogger(L2Event.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(L2Event.class);
 	public static EventState eventState = EventState.OFF;
 	public static String _eventName = "";
 	public static String _eventCreator = "";

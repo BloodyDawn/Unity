@@ -39,7 +39,7 @@ import org.slf4j.LoggerFactory;
 
 public class OfflineTradersTable
 {
-	private static Logger LOGGER = LoggerFactory.getLogger(OfflineTradersTable.class.getName());
+	private static Logger LOGGER = LoggerFactory.getLogger(OfflineTradersTable.class);
 	
 	// SQL DEFINITIONS
 	private static final String SAVE_OFFLINE_STATUS = "INSERT INTO character_offline_trade (`charId`,`time`,`type`,`title`) VALUES (?,?,?,?)";

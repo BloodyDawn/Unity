@@ -64,7 +64,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class CharEffectList
 {
-	private static final Logger _log = LoggerFactory.getLogger(CharEffectList.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(CharEffectList.class);
 	/** Map containing all effects from buffs for this effect list. */
 	private volatile Map<Integer, BuffInfo> _buffs;
 	/** Map containing all triggered skills for this effect list. */

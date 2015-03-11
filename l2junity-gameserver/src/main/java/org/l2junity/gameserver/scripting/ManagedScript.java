@@ -29,7 +29,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class ManagedScript
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(ManagedScript.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(ManagedScript.class);
 	
 	private final Path _scriptFile;
 	private long _lastLoadTime;

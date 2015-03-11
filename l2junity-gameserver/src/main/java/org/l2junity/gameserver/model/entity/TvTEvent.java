@@ -74,7 +74,7 @@ public class TvTEvent
 		REWARDING
 	}
 	
-	protected static final Logger _log = LoggerFactory.getLogger(TvTEvent.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(TvTEvent.class);
 	/** html path **/
 	private static final String htmlPath = "data/scripts/custom/events/TvT/TvTManager/";
 	/** The teams of the TvTEvent<br> */

@@ -44,7 +44,7 @@ public final class Augmentation
 	
 	public static class AugmentationStatBoni
 	{
-		private static final Logger _log = LoggerFactory.getLogger(AugmentationStatBoni.class.getName());
+		private static final Logger _log = LoggerFactory.getLogger(AugmentationStatBoni.class);
 		private final List<Options> _options = new ArrayList<>();
 		private boolean _active;
 		

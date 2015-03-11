@@ -21,14 +21,12 @@ package org.l2junity.loginserver;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.security.GeneralSecurityException;
 import java.sql.SQLException;
-import java.util.logging.LogManager;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -48,7 +46,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class L2LoginServer
 {
-	private final Logger _log = LoggerFactory.getLogger(L2LoginServer.class.getName());
+	private final Logger _log = LoggerFactory.getLogger(L2LoginServer.class);
 	
 	public static final int PROTOCOL_REV = 0x0106;
 	private static L2LoginServer _instance;
@@ -71,25 +69,6 @@ public final class L2LoginServer
 	{
 		_instance = this;
 		Server.serverMode = Server.MODE_LOGINSERVER;
-		// Local Constants
-		final String LOG_FOLDER = "log"; // Name of folder for log file
-		final String LOG_NAME = "./log.cfg"; // Name of log file
-		
-		/*** Main ***/
-		// Create log folder
-		File logFolder = new File(Config.DATAPACK_ROOT, LOG_FOLDER);
-		logFolder.mkdir();
-		
-		// Create input stream for log file -- or store file data into memory
-		
-		try (InputStream is = new FileInputStream(new File(LOG_NAME)))
-		{
-			LogManager.getLogManager().readConfiguration(is);
-		}
-		catch (IOException e)
-		{
-			_log.warn(getClass().getSimpleName() + ": " + e.getMessage());
-		}
 		
 		// Load Config
 		Config.load();

@@ -32,7 +32,7 @@ import org.xml.sax.SAXException;
  */
 public class UPnPService
 {
-	private static final Logger _log = LoggerFactory.getLogger(UPnPService.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(UPnPService.class);
 	private static final String PROTOCOL = "TCP";
 	
 	private final GatewayDiscover _gatewayDiscover = new GatewayDiscover();

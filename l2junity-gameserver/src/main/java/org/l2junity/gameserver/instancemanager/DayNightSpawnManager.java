@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
 public final class DayNightSpawnManager
 {
 	
-	private static Logger _log = LoggerFactory.getLogger(DayNightSpawnManager.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(DayNightSpawnManager.class);
 	
 	private final List<L2Spawn> _dayCreatures;
 	private final List<L2Spawn> _nightCreatures;

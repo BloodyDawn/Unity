@@ -35,7 +35,7 @@ import org.slf4j.LoggerFactory;
 
 public class Forum
 {
-	private static final Logger _log = LoggerFactory.getLogger(Forum.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(Forum.class);
 	
 	// type
 	public static final int ROOT = 0;

@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ExPacket implements IIncomingPacket<L2GameClient>
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(ExPacket.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(ExPacket.class);
 	
 	private ExIncomingPackets _exIncomingPacket;
 	private IIncomingPacket<L2GameClient> _exPacket;

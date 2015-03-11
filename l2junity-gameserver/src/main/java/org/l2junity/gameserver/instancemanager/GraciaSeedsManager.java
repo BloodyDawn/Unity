@@ -29,7 +29,7 @@ import org.slf4j.LoggerFactory;
 
 public final class GraciaSeedsManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(GraciaSeedsManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(GraciaSeedsManager.class);
 	
 	public static String ENERGY_SEEDS = "EnergySeeds";
 	

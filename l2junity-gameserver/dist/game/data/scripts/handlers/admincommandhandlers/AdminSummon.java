@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AdminSummon implements IAdminCommandHandler
 {
-	private static final Logger _log = LoggerFactory.getLogger(AdminSummon.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(AdminSummon.class);
 	
 	public static final String[] ADMIN_COMMANDS =
 	{

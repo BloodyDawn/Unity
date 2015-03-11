@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
  */
 public class FunctionEventListener extends AbstractEventListener
 {
-	private static final Logger _log = LoggerFactory.getLogger(FunctionEventListener.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(FunctionEventListener.class);
 	private final Function<IBaseEvent, ? extends AbstractEventReturn> _callback;
 	
 	@SuppressWarnings("unchecked")

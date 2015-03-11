@@ -41,7 +41,7 @@ import org.slf4j.LoggerFactory;
  */
 public class SkillChannelizer implements Runnable
 {
-	private static final Logger _log = LoggerFactory.getLogger(SkillChannelizer.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(SkillChannelizer.class);
 	
 	private final Creature _channelizer;
 	private List<Creature> _channelized;

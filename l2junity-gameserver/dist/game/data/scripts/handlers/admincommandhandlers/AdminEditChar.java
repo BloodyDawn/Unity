@@ -63,7 +63,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AdminEditChar implements IAdminCommandHandler
 {
-	private static Logger _log = LoggerFactory.getLogger(AdminEditChar.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(AdminEditChar.class);
 	
 	private static final String[] ADMIN_COMMANDS =
 	{

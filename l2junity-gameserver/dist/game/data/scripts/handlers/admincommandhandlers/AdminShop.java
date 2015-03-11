@@ -37,7 +37,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AdminShop implements IAdminCommandHandler
 {
-	private static final Logger _log = LoggerFactory.getLogger(AdminShop.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(AdminShop.class);
 	
 	private static final String[] ADMIN_COMMANDS =
 	{

@@ -52,7 +52,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class Util
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(Util.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(Util.class);
 	private static final NumberFormat ADENA_FORMATTER = NumberFormat.getIntegerInstance(Locale.ENGLISH);
 	
 	public static void handleIllegalPlayerAction(PlayerInstance actor, String message, IllegalActionPunishmentType punishment)

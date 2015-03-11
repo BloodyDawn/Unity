@@ -38,7 +38,7 @@ import org.slf4j.LoggerFactory;
  */
 public class MinionList
 {
-	private static final Logger _log = LoggerFactory.getLogger(MinionList.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(MinionList.class);
 	
 	protected final L2MonsterInstance _master;
 	/** List containing the current spawned minions */

@@ -54,7 +54,7 @@ import org.slf4j.LoggerFactory;
  */
 public class L2Spawn implements IPositionable, IIdentifiable, INamable
 {
-	protected static final Logger _log = LoggerFactory.getLogger(L2Spawn.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(L2Spawn.class);
 	
 	/** String identifier of this spawn */
 	private String _name;

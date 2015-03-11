@@ -38,7 +38,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class SkillData
 {
-	private static Logger LOGGER = LoggerFactory.getLogger(SkillData.class.getName());
+	private static Logger LOGGER = LoggerFactory.getLogger(SkillData.class);
 	
 	private final Map<Integer, Skill> _skills = new HashMap<>();
 	private final Map<Integer, Integer> _skillMaxLevel = new HashMap<>();

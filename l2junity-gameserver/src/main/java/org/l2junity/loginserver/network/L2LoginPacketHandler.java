@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class L2LoginPacketHandler implements IPacketHandler<L2LoginClient>
 {
-	protected static final Logger _log = LoggerFactory.getLogger(L2LoginPacketHandler.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(L2LoginPacketHandler.class);
 	
 	@Override
 	public ReceivablePacket<L2LoginClient> handlePacket(ByteBuffer buf, L2LoginClient client)

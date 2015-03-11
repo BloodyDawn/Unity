@@ -45,7 +45,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class ScriptEngineManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(ScriptEngineManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(ScriptEngineManager.class);
 	public static final Path SCRIPT_LIST_FILE = Paths.get(Config.DATAPACK_ROOT.getAbsolutePath(), "data", "scripts.cfg");
 	public static final Path SCRIPT_FOLDER = Paths.get(Config.DATAPACK_ROOT.getAbsolutePath(), "data", "scripts");
 	public static final Path MASTER_HANDLER_FILE = Paths.get(SCRIPT_FOLDER.toString(), "handlers", "MasterHandler.java");

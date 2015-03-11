@@ -41,7 +41,7 @@ import org.w3c.dom.Node;
  */
 public final class SystemMessageId
 {
-	private static final Logger _log = LoggerFactory.getLogger(SystemMessageId.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(SystemMessageId.class);
 	private static final SMLocalisation[] EMPTY_SML_ARRAY = new SMLocalisation[0];
 	public static final SystemMessageId[] EMPTY_ARRAY = new SystemMessageId[0];
 	

@@ -37,7 +37,7 @@ import org.slf4j.LoggerFactory;
 
 public class GameStatusThread extends Thread
 {
-	private static final Logger _log = LoggerFactory.getLogger(GameStatusThread.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(GameStatusThread.class);
 	
 	private final Socket _cSocket;
 	

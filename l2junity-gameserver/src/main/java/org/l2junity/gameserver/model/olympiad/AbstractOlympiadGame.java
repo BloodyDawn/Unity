@@ -49,7 +49,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractOlympiadGame
 {
-	protected static final Logger _log = LoggerFactory.getLogger(AbstractOlympiadGame.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(AbstractOlympiadGame.class);
 	protected static final Logger _logResults = LoggerFactory.getLogger("olympiad");
 	
 	protected static final String POINTS = "olympiad_points";

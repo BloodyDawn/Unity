@@ -42,7 +42,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class AnnouncementsTable
 {
-	private static Logger LOGGER = LoggerFactory.getLogger(AnnouncementsTable.class.getName());
+	private static Logger LOGGER = LoggerFactory.getLogger(AnnouncementsTable.class);
 	
 	private final Map<Integer, IAnnouncement> _announcements = new ConcurrentSkipListMap<>();
 	

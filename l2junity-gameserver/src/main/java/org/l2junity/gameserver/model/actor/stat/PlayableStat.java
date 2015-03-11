@@ -37,7 +37,7 @@ import org.slf4j.LoggerFactory;
 
 public class PlayableStat extends CharStat
 {
-	protected static final Logger _log = LoggerFactory.getLogger(PlayableStat.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(PlayableStat.class);
 	
 	public PlayableStat(Playable activeChar)
 	{

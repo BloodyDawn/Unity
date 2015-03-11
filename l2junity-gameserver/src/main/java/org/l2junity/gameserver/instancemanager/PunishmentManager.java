@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class PunishmentManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(PunishmentManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(PunishmentManager.class);
 	
 	private final Map<PunishmentAffect, PunishmentHolder> _tasks = new ConcurrentHashMap<>();
 	

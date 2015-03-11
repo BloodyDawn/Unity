@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
 public abstract class AbstractFunction
 {
 	/** Logger. */
-	protected static final Logger LOG = LoggerFactory.getLogger(AbstractFunction.class.getName());
+	protected static final Logger LOG = LoggerFactory.getLogger(AbstractFunction.class);
 	/** Statistics, that is affected by this function (See L2Character.CALCULATOR_XXX constants) */
 	private final Stats _stat;
 	/**

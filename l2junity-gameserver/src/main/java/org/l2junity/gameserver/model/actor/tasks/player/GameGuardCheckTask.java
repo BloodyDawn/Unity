@@ -31,7 +31,7 @@ import org.slf4j.LoggerFactory;
  */
 public class GameGuardCheckTask implements Runnable
 {
-	private static final Logger _log = LoggerFactory.getLogger(GameGuardCheckTask.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(GameGuardCheckTask.class);
 	
 	private final PlayerInstance _player;
 	

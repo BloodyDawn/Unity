@@ -20,13 +20,13 @@ package org.l2junity.gameserver.model.stats;
 
 import java.io.File;
 import java.util.NoSuchElementException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -45,7 +45,7 @@ public enum BaseStats
 	CHA(new CHA()),
 	NONE(new NONE());
 	
-	private static final Logger _log = Logger.getLogger(BaseStats.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(BaseStats.class);
 	
 	public static final int MAX_STAT_VALUE = 201;
 	
@@ -185,7 +185,7 @@ public enum BaseStats
 			}
 			catch (Exception e)
 			{
-				_log.log(Level.WARNING, "[BaseStats] Could not parse file: " + e.getMessage(), e);
+				_log.warn("Could not parse file: " + e.getMessage(), e);
 			}
 			
 			if (doc != null)
@@ -213,7 +213,7 @@ public enum BaseStats
 									}
 									catch (Exception e)
 									{
-										_log.severe("[BaseStats] Invalid stats value: " + value.getNodeValue() + ", skipping");
+										_log.error("Invalid stats value: " + value.getNodeValue() + ", skipping");
 										continue;
 									}
 									
@@ -247,7 +247,7 @@ public enum BaseStats
 									}
 									else
 									{
-										_log.severe("[BaseStats] Invalid stats name: " + statName + ", skipping");
+										_log.error("Invalid stats name: " + statName + ", skipping");
 									}
 								}
 							}

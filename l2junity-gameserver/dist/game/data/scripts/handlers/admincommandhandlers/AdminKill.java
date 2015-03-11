@@ -38,7 +38,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AdminKill implements IAdminCommandHandler
 {
-	private static Logger _log = LoggerFactory.getLogger(AdminKill.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(AdminKill.class);
 	private static final String[] ADMIN_COMMANDS =
 	{
 		"admin_kill",

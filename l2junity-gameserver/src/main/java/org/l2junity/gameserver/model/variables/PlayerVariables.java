@@ -35,7 +35,7 @@ import org.slf4j.LoggerFactory;
  */
 public class PlayerVariables extends AbstractVariables
 {
-	private static final Logger _log = LoggerFactory.getLogger(PlayerVariables.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(PlayerVariables.class);
 	
 	// SQL Queries.
 	private static final String SELECT_QUERY = "SELECT * FROM character_variables WHERE charId = ?";

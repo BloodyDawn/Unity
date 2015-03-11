@@ -59,7 +59,7 @@ import org.slf4j.LoggerFactory;
  */
 public class Olympiad extends ListenersContainer
 {
-	protected static final Logger _log = LoggerFactory.getLogger(Olympiad.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(Olympiad.class);
 	protected static final Logger _logResults = LoggerFactory.getLogger("olympiad");
 	
 	private static final Map<Integer, StatsSet> _nobles = new ConcurrentHashMap<>();

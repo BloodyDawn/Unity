@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
  */
 public class UIKeysSettings
 {
-	private static final Logger _log = LoggerFactory.getLogger(UIKeysSettings.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(UIKeysSettings.class);
 	
 	private final int _playerObjId;
 	private Map<Integer, List<ActionKey>> _storedKeys;

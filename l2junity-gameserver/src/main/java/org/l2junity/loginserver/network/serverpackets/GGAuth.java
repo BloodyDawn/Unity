@@ -27,7 +27,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class GGAuth extends L2LoginServerPacket
 {
-	static final Logger _log = LoggerFactory.getLogger(GGAuth.class.getName());
+	static final Logger _log = LoggerFactory.getLogger(GGAuth.class);
 	public static final int SKIP_GG_AUTH_REQUEST = 0x0b;
 	
 	private final int _response;

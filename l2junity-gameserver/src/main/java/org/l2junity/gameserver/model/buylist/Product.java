@@ -35,7 +35,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class Product
 {
-	private static final Logger _log = LoggerFactory.getLogger(Product.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(Product.class);
 	
 	private final int _buyListId;
 	private final L2Item _item;

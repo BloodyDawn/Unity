@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class MessageDeletionTask implements Runnable
 {
-	private static final Logger _log = LoggerFactory.getLogger(MessageDeletionTask.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(MessageDeletionTask.class);
 	
 	final int _msgId;
 	

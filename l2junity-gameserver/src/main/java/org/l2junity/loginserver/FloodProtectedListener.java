@@ -34,7 +34,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class FloodProtectedListener extends Thread
 {
-	private final Logger _log = LoggerFactory.getLogger(FloodProtectedListener.class.getName());
+	private final Logger _log = LoggerFactory.getLogger(FloodProtectedListener.class);
 	private final Map<String, ForeignConnection> _floodProtection = new ConcurrentHashMap<>();
 	private ServerSocket _serverSocket;
 	

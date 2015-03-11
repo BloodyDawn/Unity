@@ -42,7 +42,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class PetitionManager
 {
-	protected static final Logger _log = LoggerFactory.getLogger(PetitionManager.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(PetitionManager.class);
 	
 	private final Map<Integer, Petition> _pendingPetitions;
 	private final Map<Integer, Petition> _completedPetitions;

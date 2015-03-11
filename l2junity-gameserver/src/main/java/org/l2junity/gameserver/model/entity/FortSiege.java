@@ -61,7 +61,7 @@ import org.slf4j.LoggerFactory;
 
 public class FortSiege implements Siegable
 {
-	protected static final Logger _log = LoggerFactory.getLogger(FortSiege.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(FortSiege.class);
 	
 	// SQL
 	private static final String DELETE_FORT_SIEGECLANS_BY_CLAN_ID = "DELETE FROM fortsiege_clans WHERE fort_id = ? AND clan_id = ?";

@@ -44,7 +44,7 @@ import org.slf4j.LoggerFactory;
  */
 public class BaseMail implements Runnable
 {
-	private static final Logger _log = LoggerFactory.getLogger(BaseMail.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(BaseMail.class);
 	
 	private MimeMessage _messageMime = null;
 	

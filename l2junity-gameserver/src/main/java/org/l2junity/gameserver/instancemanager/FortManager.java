@@ -35,7 +35,7 @@ import org.slf4j.LoggerFactory;
 
 public final class FortManager implements InstanceListManager
 {
-	protected static final Logger _log = LoggerFactory.getLogger(FortManager.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(FortManager.class);
 	
 	private final Map<Integer, Fort> _forts = new ConcurrentSkipListMap<>();
 	

@@ -56,7 +56,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AdminReload implements IAdminCommandHandler
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(AdminReload.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(AdminReload.class);
 	
 	private static final String[] ADMIN_COMMANDS =
 	{

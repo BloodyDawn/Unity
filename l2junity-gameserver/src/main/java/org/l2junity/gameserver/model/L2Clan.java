@@ -78,7 +78,7 @@ import org.slf4j.LoggerFactory;
 
 public class L2Clan implements IIdentifiable, INamable
 {
-	private static final Logger _log = LoggerFactory.getLogger(L2Clan.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(L2Clan.class);
 	
 	// SQL queries
 	private static final String INSERT_CLAN_DATA = "INSERT INTO clan_data (clan_id,clan_name,clan_level,hasCastle,blood_alliance_count,blood_oath_count,ally_id,ally_name,leader_id,crest_id,crest_large_id,ally_crest_id,new_leader_id) values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -312,7 +312,7 @@ public class L2Clan implements IIdentifiable, INamable
 	{
 		if (_leader == null)
 		{
-			_log.warn(L2Clan.class.getName() + ": Clan " + getName() + " without clan leader!");
+			_log.warn("Clan " + getName() + " without clan leader!");
 			return "";
 		}
 		return _leader.getName();

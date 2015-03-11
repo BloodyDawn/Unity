@@ -45,7 +45,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AdminPunishment implements IAdminCommandHandler
 {
-	private static final Logger _log = LoggerFactory.getLogger(AdminPunishment.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(AdminPunishment.class);
 	
 	private static final String[] ADMIN_COMMANDS =
 	{

@@ -32,7 +32,7 @@ import org.slf4j.LoggerFactory;
  */
 public class PlayerAuthRequest extends BaseRecievePacket
 {
-	private static Logger _log = LoggerFactory.getLogger(PlayerAuthRequest.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(PlayerAuthRequest.class);
 	
 	/**
 	 * @param decrypt

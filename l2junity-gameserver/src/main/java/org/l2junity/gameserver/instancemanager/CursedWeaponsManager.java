@@ -57,7 +57,7 @@ import org.w3c.dom.Node;
  */
 public final class CursedWeaponsManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(CursedWeaponsManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(CursedWeaponsManager.class);
 	
 	private Map<Integer, CursedWeapon> _cursedWeapons;
 	

@@ -50,7 +50,7 @@ import org.slf4j.LoggerFactory;
  */
 public class GameServerThread extends Thread
 {
-	protected static final Logger _log = LoggerFactory.getLogger(GameServerThread.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(GameServerThread.class);
 	private final Socket _connection;
 	private InputStream _in;
 	private OutputStream _out;

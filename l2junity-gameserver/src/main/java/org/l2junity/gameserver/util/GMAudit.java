@@ -31,7 +31,7 @@ import org.slf4j.LoggerFactory;
  */
 public class GMAudit
 {
-	private static final Logger _log = LoggerFactory.getLogger(GMAudit.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(GMAudit.class);
 	
 	static
 	{

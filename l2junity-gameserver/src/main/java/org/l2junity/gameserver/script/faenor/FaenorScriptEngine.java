@@ -40,7 +40,7 @@ import org.w3c.dom.Node;
  */
 public class FaenorScriptEngine extends ScriptEngine
 {
-	private static final Logger _log = LoggerFactory.getLogger(FaenorScriptEngine.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(FaenorScriptEngine.class);
 	public static final String PACKAGE_DIRECTORY = "data/faenor/";
 	
 	protected FaenorScriptEngine()

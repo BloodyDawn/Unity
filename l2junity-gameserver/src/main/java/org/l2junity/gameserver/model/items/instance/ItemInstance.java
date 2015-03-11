@@ -93,7 +93,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class ItemInstance extends WorldObject
 {
-	private static final Logger _log = LoggerFactory.getLogger(ItemInstance.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(ItemInstance.class);
 	private static final Logger _logItems = LoggerFactory.getLogger("item");
 	
 	/** ID of the owner */
@@ -1214,7 +1214,7 @@ public final class ItemInstance extends WorldObject
 	 */
 	public static class ScheduleConsumeManaTask implements Runnable
 	{
-		private static final Logger _log = LoggerFactory.getLogger(ScheduleConsumeManaTask.class.getName());
+		private static final Logger _log = LoggerFactory.getLogger(ScheduleConsumeManaTask.class);
 		private final ItemInstance _shadowItem;
 		
 		public ScheduleConsumeManaTask(ItemInstance item)
@@ -1884,7 +1884,7 @@ public final class ItemInstance extends WorldObject
 	
 	public static class ScheduleLifeTimeTask implements Runnable
 	{
-		private static final Logger _log = LoggerFactory.getLogger(ScheduleLifeTimeTask.class.getName());
+		private static final Logger _log = LoggerFactory.getLogger(ScheduleLifeTimeTask.class);
 		private final ItemInstance _limitedItem;
 		
 		public ScheduleLifeTimeTask(ItemInstance item)

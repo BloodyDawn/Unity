@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
  */
 public class PlayerInGame extends BaseRecievePacket
 {
-	private static Logger _log = LoggerFactory.getLogger(PlayerInGame.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(PlayerInGame.class);
 	
 	/**
 	 * @param decrypt

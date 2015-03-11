@@ -31,7 +31,7 @@ import org.slf4j.LoggerFactory;
  */
 public class TrapTask implements Runnable
 {
-	private static final Logger _log = LoggerFactory.getLogger(TrapTask.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(TrapTask.class);
 	private static final int TICK = 1000; // 1s
 	private final L2TrapInstance _trap;
 	

@@ -53,7 +53,7 @@ import org.w3c.dom.Node;
 
 public final class ItemAuctionInstance
 {
-	protected static final Logger _log = LoggerFactory.getLogger(ItemAuctionInstance.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(ItemAuctionInstance.class);
 	private final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("HH:mm:ss dd.MM.yy");
 	
 	private static final long START_TIME_SPACE = TimeUnit.MILLISECONDS.convert(1, TimeUnit.MINUTES);

@@ -41,7 +41,7 @@ import org.slf4j.LoggerFactory;
  */
 public class BlockList
 {
-	private static Logger _log = LoggerFactory.getLogger(BlockList.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(BlockList.class);
 	private static Map<Integer, List<Integer>> _offlineList = new ConcurrentHashMap<>();
 	
 	private final PlayerInstance _owner;

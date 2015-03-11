@@ -42,7 +42,7 @@ import org.w3c.dom.Node;
  */
 public final class NpcStringId
 {
-	private static final Logger _log = LoggerFactory.getLogger(NpcStringId.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(NpcStringId.class);
 	private static final NSLocalisation[] EMPTY_NSL_ARRAY = new NSLocalisation[0];
 	public static final NpcStringId[] EMPTY_ARRAY = new NpcStringId[0];
 	

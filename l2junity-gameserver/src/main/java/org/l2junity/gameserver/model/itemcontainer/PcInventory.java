@@ -53,7 +53,7 @@ import org.slf4j.LoggerFactory;
 
 public class PcInventory extends Inventory
 {
-	private static final Logger _log = LoggerFactory.getLogger(PcInventory.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(PcInventory.class);
 	
 	private final PlayerInstance _owner;
 	private ItemInstance _adena;

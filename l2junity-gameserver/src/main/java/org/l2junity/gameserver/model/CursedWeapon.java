@@ -52,7 +52,7 @@ import org.slf4j.LoggerFactory;
 
 public class CursedWeapon implements INamable
 {
-	private static final Logger _log = LoggerFactory.getLogger(CursedWeapon.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(CursedWeapon.class);
 	
 	// _name is the name of the cursed weapon associated with its ID.
 	private final String _name;

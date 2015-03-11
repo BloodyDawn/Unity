@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ScrambledKeyPair
 {
-	private static Logger _log = LoggerFactory.getLogger(ScrambledKeyPair.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(ScrambledKeyPair.class);
 	public KeyPair _pair;
 	public byte[] _scrambledModulus;
 	

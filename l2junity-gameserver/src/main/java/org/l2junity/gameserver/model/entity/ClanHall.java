@@ -40,7 +40,7 @@ import org.slf4j.LoggerFactory;
 
 public abstract class ClanHall
 {
-	protected static final Logger _log = LoggerFactory.getLogger(ClanHall.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(ClanHall.class);
 	
 	private final int _clanHallId;
 	private ArrayList<L2DoorInstance> _doors;

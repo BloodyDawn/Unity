@@ -172,7 +172,7 @@ public class RecipeController
 	
 	private static class RecipeItemMaker implements Runnable
 	{
-		private static final Logger _log = LoggerFactory.getLogger(RecipeItemMaker.class.getName());
+		private static final Logger _log = LoggerFactory.getLogger(RecipeItemMaker.class);
 		protected boolean _isValid;
 		protected List<TempItem> _items = null;
 		protected final RecipeList _recipeList;

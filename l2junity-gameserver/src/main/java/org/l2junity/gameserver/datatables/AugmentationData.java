@@ -47,7 +47,7 @@ import org.w3c.dom.Node;
 public class AugmentationData
 {
 	// Zoey76: TODO: Implement using IXmlReader.
-	private static final Logger LOGGER = LoggerFactory.getLogger(AugmentationData.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(AugmentationData.class);
 	
 	// stats
 	private static final int STAT_BLOCKSIZE = 3640;

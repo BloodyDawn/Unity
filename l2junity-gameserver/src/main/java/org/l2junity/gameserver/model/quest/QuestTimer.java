@@ -27,7 +27,7 @@ import org.slf4j.LoggerFactory;
 
 public class QuestTimer
 {
-	protected static final Logger _log = LoggerFactory.getLogger(QuestTimer.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(QuestTimer.class);
 	
 	public class ScheduleTimerTask implements Runnable
 	{

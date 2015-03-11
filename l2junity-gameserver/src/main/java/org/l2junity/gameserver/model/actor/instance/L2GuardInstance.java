@@ -40,7 +40,7 @@ import org.slf4j.LoggerFactory;
  */
 public class L2GuardInstance extends Attackable
 {
-	private static Logger _log = LoggerFactory.getLogger(L2GuardInstance.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(L2GuardInstance.class);
 	
 	/**
 	 * Constructor of L2GuardInstance (use L2Character and L2NpcInstance constructor).<br>

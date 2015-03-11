@@ -53,7 +53,7 @@ import org.slf4j.LoggerFactory;
  */
 public class Wedding implements IVoicedCommandHandler
 {
-	static final Logger _log = LoggerFactory.getLogger(Wedding.class.getName());
+	static final Logger _log = LoggerFactory.getLogger(Wedding.class);
 	private static final String[] _voicedCommands =
 	{
 		"divorce",

@@ -35,7 +35,7 @@ import org.slf4j.LoggerFactory;
  */
 public class TerritoryTable
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(TerritoryTable.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(TerritoryTable.class);
 	
 	private static final Map<Integer, Territory> _territory = new HashMap<>();
 	

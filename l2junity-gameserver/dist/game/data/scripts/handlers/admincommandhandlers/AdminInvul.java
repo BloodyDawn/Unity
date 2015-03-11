@@ -31,7 +31,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AdminInvul implements IAdminCommandHandler
 {
-	private static Logger _log = LoggerFactory.getLogger(AdminInvul.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(AdminInvul.class);
 	private static final String[] ADMIN_COMMANDS =
 	{
 		"admin_invul",

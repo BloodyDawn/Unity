@@ -71,7 +71,7 @@ import org.w3c.dom.Node;
  */
 public final class Instance
 {
-	private static final Logger _log = LoggerFactory.getLogger(Instance.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(Instance.class);
 	
 	private final int _id;
 	private String _name;

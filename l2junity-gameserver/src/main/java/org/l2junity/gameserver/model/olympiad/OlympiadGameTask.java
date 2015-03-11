@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class OlympiadGameTask implements Runnable
 {
-	protected static final Logger _log = LoggerFactory.getLogger(OlympiadGameTask.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(OlympiadGameTask.class);
 	
 	private static final int[] TELEPORT_TO_ARENA_TIMES =
 	{

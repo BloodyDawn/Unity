@@ -38,7 +38,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class CubicAction implements Runnable
 {
-	private static final Logger _log = LoggerFactory.getLogger(CubicAction.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(CubicAction.class);
 	private final L2CubicInstance _cubic;
 	private final AtomicInteger _currentCount = new AtomicInteger();
 	private final int _chance;

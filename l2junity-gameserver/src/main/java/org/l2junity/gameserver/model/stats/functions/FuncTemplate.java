@@ -35,7 +35,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class FuncTemplate
 {
-	private static final Logger LOG = LoggerFactory.getLogger(FuncTemplate.class.getName());
+	private static final Logger LOG = LoggerFactory.getLogger(FuncTemplate.class);
 	
 	private final Condition _attachCond;
 	private final Condition _applayCond;

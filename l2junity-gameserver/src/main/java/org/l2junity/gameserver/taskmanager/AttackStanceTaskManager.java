@@ -38,7 +38,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AttackStanceTaskManager
 {
-	protected static final Logger _log = LoggerFactory.getLogger(AttackStanceTaskManager.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(AttackStanceTaskManager.class);
 	
 	protected static final Map<Creature, Long> _attackStanceTasks = new ConcurrentHashMap<>();
 	

@@ -34,7 +34,7 @@ import org.slf4j.LoggerFactory;
  */
 public class RequestTempBan extends BaseRecievePacket
 {
-	private static final Logger _log = LoggerFactory.getLogger(RequestTempBan.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(RequestTempBan.class);
 	
 	private final String _accountName;
 	@SuppressWarnings("unused")

@@ -280,7 +280,7 @@ import org.slf4j.LoggerFactory;
  */
 public class MasterHandler
 {
-	private static final Logger _log = LoggerFactory.getLogger(MasterHandler.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(MasterHandler.class);
 	
 	private static final IHandler<?, ?>[] LOAD_INSTANCES =
 	{

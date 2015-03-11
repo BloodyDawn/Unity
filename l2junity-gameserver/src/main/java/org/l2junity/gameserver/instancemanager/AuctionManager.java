@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class AuctionManager
 {
-	protected static final Logger _log = LoggerFactory.getLogger(AuctionManager.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(AuctionManager.class);
 	private final List<Auction> _auctions = new ArrayList<>();
 	
 	private static final String[] ITEM_INIT_DATA =

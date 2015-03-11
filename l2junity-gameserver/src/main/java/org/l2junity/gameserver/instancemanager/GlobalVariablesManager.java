@@ -35,7 +35,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class GlobalVariablesManager extends AbstractVariables
 {
-	private static final Logger _log = LoggerFactory.getLogger(GlobalVariablesManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(GlobalVariablesManager.class);
 	
 	// SQL Queries.
 	private static final String SELECT_QUERY = "SELECT * FROM global_variables";

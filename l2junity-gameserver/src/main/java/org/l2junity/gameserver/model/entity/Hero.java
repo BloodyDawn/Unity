@@ -66,7 +66,7 @@ import org.slf4j.LoggerFactory;
  */
 public class Hero
 {
-	private static final Logger _log = LoggerFactory.getLogger(Hero.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(Hero.class);
 	
 	private static final String GET_HEROES = "SELECT heroes.charId, characters.char_name, heroes.class_id, heroes.count, heroes.played, heroes.claimed FROM heroes, characters WHERE characters.charId = heroes.charId AND heroes.played = 1";
 	private static final String GET_ALL_HEROES = "SELECT heroes.charId, characters.char_name, heroes.class_id, heroes.count, heroes.played, heroes.claimed FROM heroes, characters WHERE characters.charId = heroes.charId";

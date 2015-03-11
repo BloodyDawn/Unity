@@ -63,7 +63,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class L2Item extends ListenersContainer implements IIdentifiable
 {
-	protected static final Logger _log = LoggerFactory.getLogger(L2Item.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(L2Item.class);
 	
 	public static final int TYPE1_WEAPON_RING_EARRING_NECKLACE = 0;
 	public static final int TYPE1_SHIELD_ARMOR = 1;

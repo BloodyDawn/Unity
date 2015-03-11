@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class QuestManager
 {
-	protected static final Logger _log = LoggerFactory.getLogger(QuestManager.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(QuestManager.class);
 	
 	/** Map containing all the quests. */
 	private final Map<String, Quest> _quests = new ConcurrentHashMap<>();

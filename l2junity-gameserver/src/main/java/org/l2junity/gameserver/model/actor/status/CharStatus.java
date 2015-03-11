@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
 
 public class CharStatus
 {
-	protected static final Logger _log = LoggerFactory.getLogger(CharStatus.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(CharStatus.class);
 	
 	private final Creature _activeChar;
 	

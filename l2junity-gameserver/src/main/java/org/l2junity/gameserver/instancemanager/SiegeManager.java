@@ -46,7 +46,7 @@ import org.slf4j.LoggerFactory;
 
 public final class SiegeManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(SiegeManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(SiegeManager.class);
 	
 	private final Map<Integer, List<TowerSpawn>> _controlTowers = new HashMap<>();
 	private final Map<Integer, List<TowerSpawn>> _flameTowers = new HashMap<>();

@@ -34,7 +34,7 @@ import org.slf4j.LoggerFactory;
  */
 public class Couple
 {
-	private static final Logger _log = LoggerFactory.getLogger(Couple.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(Couple.class);
 	
 	private int _Id = 0;
 	private int _player1Id = 0;

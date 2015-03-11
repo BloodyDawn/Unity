@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
 
 public final class SiegeGuardManager
 {
-	private static Logger _log = LoggerFactory.getLogger(SiegeGuardManager.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(SiegeGuardManager.class);
 	
 	private final Castle _castle;
 	private final Set<L2Spawn> _siegeGuardSpawn = ConcurrentHashMap.newKeySet();

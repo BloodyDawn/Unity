@@ -34,7 +34,7 @@ import org.slf4j.LoggerFactory;
  */
 public class BoatGludinRune implements Runnable
 {
-	private static final Logger _log = LoggerFactory.getLogger(BoatGludinRune.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(BoatGludinRune.class);
 	
 	// Time: 1151s
 	private static final VehiclePathPoint[] GLUDIN_TO_RUNE =

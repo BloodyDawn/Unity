@@ -35,7 +35,7 @@ import org.xml.sax.SAXException;
  */
 public class ScriptDocument
 {
-	private static final Logger _log = LoggerFactory.getLogger(ScriptDocument.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(ScriptDocument.class);
 	
 	private Document _document;
 	private final String _name;

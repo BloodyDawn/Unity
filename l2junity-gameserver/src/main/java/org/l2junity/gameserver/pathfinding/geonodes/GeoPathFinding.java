@@ -51,7 +51,7 @@ import org.slf4j.LoggerFactory;
  */
 public class GeoPathFinding extends PathFinding
 {
-	private static Logger _log = LoggerFactory.getLogger(GeoPathFinding.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(GeoPathFinding.class);
 	private static Map<Short, ByteBuffer> _pathNodes = new ConcurrentHashMap<>();
 	private static Map<Short, IntBuffer> _pathNodesIndex = new ConcurrentHashMap<>();
 	

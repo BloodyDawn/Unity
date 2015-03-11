@@ -222,7 +222,7 @@ import quests.Q10746_SeeTheWorld.Q10746_SeeTheWorld;
  */
 public class QuestMasterHandler
 {
-	private static final Logger _log = LoggerFactory.getLogger(QuestMasterHandler.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(QuestMasterHandler.class);
 	
 	private static final Class<?>[] QUESTS =
 	{

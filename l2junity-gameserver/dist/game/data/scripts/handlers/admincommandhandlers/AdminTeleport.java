@@ -52,7 +52,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AdminTeleport implements IAdminCommandHandler
 {
-	private static final Logger _log = LoggerFactory.getLogger(AdminTeleport.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(AdminTeleport.class);
 	
 	private static final String[] ADMIN_COMMANDS =
 	{

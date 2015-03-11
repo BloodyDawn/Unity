@@ -46,7 +46,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class MailManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(MailManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(MailManager.class);
 	
 	private final Map<Integer, Message> _messages = new ConcurrentHashMap<>();
 	

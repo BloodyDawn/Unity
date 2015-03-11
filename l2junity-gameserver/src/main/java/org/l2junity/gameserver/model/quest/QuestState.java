@@ -45,7 +45,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class QuestState
 {
-	protected static final Logger _log = LoggerFactory.getLogger(QuestState.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(QuestState.class);
 	
 	/** The name of the quest of this QuestState */
 	private final String _questName;

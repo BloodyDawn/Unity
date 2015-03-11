@@ -55,7 +55,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class Inventory extends ItemContainer
 {
-	protected static final Logger _log = LoggerFactory.getLogger(Inventory.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(Inventory.class);
 	
 	public interface PaperdollListener
 	{

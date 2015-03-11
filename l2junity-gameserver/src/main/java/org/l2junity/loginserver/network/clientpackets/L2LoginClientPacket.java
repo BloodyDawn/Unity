@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class L2LoginClientPacket extends ReceivablePacket<L2LoginClient>
 {
-	private static Logger _log = LoggerFactory.getLogger(L2LoginClientPacket.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(L2LoginClientPacket.class);
 	
 	@Override
 	protected final boolean read()

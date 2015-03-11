@@ -37,7 +37,7 @@ import org.slf4j.LoggerFactory;
  */
 public class OlympiadGameManager implements Runnable
 {
-	private static final Logger _log = LoggerFactory.getLogger(OlympiadGameManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(OlympiadGameManager.class);
 	private static final int STADIUM_COUNT = 80; // TODO dynamic
 	
 	private volatile boolean _battleStarted = false;

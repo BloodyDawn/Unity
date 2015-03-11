@@ -34,7 +34,7 @@ import org.slf4j.LoggerFactory;
  */
 public class BlowFishKey extends BaseRecievePacket
 {
-	protected static final Logger _log = LoggerFactory.getLogger(BlowFishKey.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(BlowFishKey.class);
 	
 	/**
 	 * @param decrypt

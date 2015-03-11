@@ -51,7 +51,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractAI implements Ctrl
 {
-	protected final Logger _log = LoggerFactory.getLogger(getClass().getName());
+	protected final Logger _log = LoggerFactory.getLogger(getClass());
 	
 	private NextAction _nextAction;
 	

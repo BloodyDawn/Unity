@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
  */
 public class Mentee
 {
-	private static final Logger _log = LoggerFactory.getLogger(Mentee.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(Mentee.class);
 	
 	private final int _objectId;
 	private String _name;

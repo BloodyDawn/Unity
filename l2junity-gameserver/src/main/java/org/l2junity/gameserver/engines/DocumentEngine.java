@@ -38,7 +38,7 @@ import org.slf4j.LoggerFactory;
  */
 public class DocumentEngine
 {
-	private static final Logger _log = LoggerFactory.getLogger(DocumentEngine.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(DocumentEngine.class);
 	
 	private final List<File> _itemFiles = new LinkedList<>();
 	private final List<File> _skillFiles = new LinkedList<>();

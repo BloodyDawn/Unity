@@ -37,7 +37,7 @@ import org.w3c.dom.Node;
  */
 public class FaenorEventParser extends FaenorParser
 {
-	static Logger _log = LoggerFactory.getLogger(FaenorEventParser.class.getName());
+	static Logger _log = LoggerFactory.getLogger(FaenorEventParser.class);
 	private DateRange _eventDates = null;
 	
 	@Override

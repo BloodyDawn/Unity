@@ -31,7 +31,7 @@ import org.slf4j.LoggerFactory;
  */
 public class CubicHeal implements Runnable
 {
-	private static final Logger _log = LoggerFactory.getLogger(CubicHeal.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(CubicHeal.class);
 	private final L2CubicInstance _cubic;
 	
 	public CubicHeal(L2CubicInstance cubic)

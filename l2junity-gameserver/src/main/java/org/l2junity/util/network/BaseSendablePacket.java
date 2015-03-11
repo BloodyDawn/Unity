@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class BaseSendablePacket
 {
-	private static final Logger _log = LoggerFactory.getLogger(BaseSendablePacket.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(BaseSendablePacket.class);
 	
 	private final ByteArrayOutputStream _bao;
 	

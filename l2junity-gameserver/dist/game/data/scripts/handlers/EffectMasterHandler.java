@@ -31,7 +31,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class EffectMasterHandler
 {
-	private static final Logger _log = LoggerFactory.getLogger(EffectMasterHandler.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(EffectMasterHandler.class);
 	
 	private static final Class<?>[] EFFECTS =
 	{

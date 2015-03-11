@@ -31,7 +31,7 @@ import org.slf4j.LoggerFactory;
 
 public class TeleportLocationTable
 {
-	private static Logger LOGGER = LoggerFactory.getLogger(TeleportLocationTable.class.getName());
+	private static Logger LOGGER = LoggerFactory.getLogger(TeleportLocationTable.class);
 	
 	private final Map<Integer, L2TeleportLocation> _teleports = new HashMap<>();
 	

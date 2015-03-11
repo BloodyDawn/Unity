@@ -46,7 +46,7 @@ import org.slf4j.LoggerFactory;
  */
 public class RaidBossSpawnManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(RaidBossSpawnManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(RaidBossSpawnManager.class);
 	
 	protected static final Map<Integer, L2RaidBossInstance> _bosses = new ConcurrentHashMap<>();
 	protected static final Map<Integer, L2Spawn> _spawns = new ConcurrentHashMap<>();
@@ -122,7 +122,7 @@ public class RaidBossSpawnManager
 	
 	private static class SpawnSchedule implements Runnable
 	{
-		private static final Logger _log = LoggerFactory.getLogger(SpawnSchedule.class.getName());
+		private static final Logger _log = LoggerFactory.getLogger(SpawnSchedule.class);
 		
 		private final int bossId;
 		

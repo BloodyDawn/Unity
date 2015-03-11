@@ -185,7 +185,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class Creature extends WorldObject implements ISkillsHolder, IDeletable
 {
-	public static final Logger _log = LoggerFactory.getLogger(Creature.class.getName());
+	public static final Logger _log = LoggerFactory.getLogger(Creature.class);
 	
 	private volatile Set<Creature> _attackByList;
 	private volatile boolean _isCastingNow = false;

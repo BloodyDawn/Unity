@@ -62,7 +62,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class InstanceLoader
 {
-	private static final Logger _log = LoggerFactory.getLogger(InstanceLoader.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(InstanceLoader.class);
 	
 	private static final Class<?>[] SCRIPTS =
 	{

@@ -65,7 +65,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class FourSepulchersManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(FourSepulchersManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(FourSepulchersManager.class);
 	
 	private static final int QUEST_ID = 620;
 	

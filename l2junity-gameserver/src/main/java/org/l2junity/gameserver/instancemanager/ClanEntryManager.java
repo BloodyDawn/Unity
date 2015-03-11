@@ -47,7 +47,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ClanEntryManager
 {
-	protected static final Logger _log = LoggerFactory.getLogger(ClanEntryManager.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(ClanEntryManager.class);
 	
 	private static final Map<Integer, PledgeWaitingInfo> _waitingList = new ConcurrentHashMap<>();
 	private static final Map<Integer, PledgeRecruitInfo> _clanList = new ConcurrentHashMap<>();

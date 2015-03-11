@@ -34,7 +34,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractEnchantItem
 {
-	protected static final Logger _log = LoggerFactory.getLogger(AbstractEnchantItem.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(AbstractEnchantItem.class);
 	
 	private static final ItemType[] ENCHANT_TYPES = new ItemType[]
 	{

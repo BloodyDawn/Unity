@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
  */
 public class DateRange
 {
-	protected static final Logger _log = LoggerFactory.getLogger(DateRange.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(DateRange.class);
 	private final Date _startDate, _endDate;
 	
 	public DateRange(Date from, Date to)

@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
  */
 public class PlayerLogout extends BaseRecievePacket
 {
-	protected static Logger _log = LoggerFactory.getLogger(PlayerLogout.class.getName());
+	protected static Logger _log = LoggerFactory.getLogger(PlayerLogout.class);
 	
 	/**
 	 * @param decrypt

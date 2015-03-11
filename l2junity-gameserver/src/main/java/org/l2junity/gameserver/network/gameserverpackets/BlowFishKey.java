@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
  */
 public class BlowFishKey extends BaseSendablePacket
 {
-	private static Logger _log = LoggerFactory.getLogger(BlowFishKey.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(BlowFishKey.class);
 	
 	/**
 	 * @param blowfishKey

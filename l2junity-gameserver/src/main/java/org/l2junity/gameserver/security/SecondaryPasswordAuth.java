@@ -41,7 +41,7 @@ import org.slf4j.LoggerFactory;
  */
 public class SecondaryPasswordAuth
 {
-	private final Logger _log = LoggerFactory.getLogger(SecondaryPasswordAuth.class.getName());
+	private final Logger _log = LoggerFactory.getLogger(SecondaryPasswordAuth.class);
 	private final L2GameClient _activeClient;
 	
 	private String _password;

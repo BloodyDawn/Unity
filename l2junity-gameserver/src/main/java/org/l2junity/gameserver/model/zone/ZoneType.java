@@ -46,7 +46,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class ZoneType extends ListenersContainer
 {
-	protected static final Logger _log = LoggerFactory.getLogger(ZoneType.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(ZoneType.class);
 	
 	private final int _id;
 	protected L2ZoneForm _zone;

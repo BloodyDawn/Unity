@@ -65,7 +65,7 @@ import ai.npc.AbstractNpcAI;
  */
 public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 {
-	private static final Logger _log = LoggerFactory.getLogger(AdminPathNode.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(AdminPathNode.class);
 	private final Map<Integer, ZoneNodeHolder> _zones = new ConcurrentHashMap<>();
 	
 	private static final String[] COMMANDS =

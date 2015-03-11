@@ -75,7 +75,7 @@ public abstract class AirShipController extends Quest
 		}
 	}
 	
-	public static final Logger _log = LoggerFactory.getLogger(AirShipController.class.getName());
+	public static final Logger _log = LoggerFactory.getLogger(AirShipController.class);
 	protected int _dockZone = 0;
 	protected int _shipSpawnX = 0;
 	protected int _shipSpawnY = 0;

@@ -70,7 +70,7 @@ import org.slf4j.LoggerFactory;
  */
 public class Party extends AbstractPlayerGroup
 {
-	private static final Logger _log = LoggerFactory.getLogger(Party.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(Party.class);
 	
 	// @formatter:off
 	private static final double[] BONUS_EXP_SP =

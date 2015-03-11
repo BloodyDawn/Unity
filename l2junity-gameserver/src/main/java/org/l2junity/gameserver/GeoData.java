@@ -39,7 +39,7 @@ import org.slf4j.LoggerFactory;
  */
 public class GeoData
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(GeoData.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(GeoData.class);
 	private static final String FILE_NAME_FORMAT = "%d_%d.l2j";
 	private static final int ELEVATED_SEE_OVER_DISTANCE = 2;
 	private static final int MAX_SEE_OVER_HEIGHT = 48;

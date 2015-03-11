@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
 
 public class Status extends Thread
 {
-	protected static final Logger _log = LoggerFactory.getLogger(Status.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(Status.class);
 	
 	private final ServerSocket statusServerSocket;
 	

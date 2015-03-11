@@ -38,7 +38,7 @@ import org.slf4j.LoggerFactory;
  */
 public class StatsSet implements IParserAdvUtils
 {
-	private static final Logger _log = LoggerFactory.getLogger(StatsSet.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(StatsSet.class);
 	/** Static empty immutable map, used to avoid multiple null checks over the source. */
 	public static final StatsSet EMPTY_STATSET = new StatsSet(Collections.emptyMap());
 	

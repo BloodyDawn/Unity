@@ -69,7 +69,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 {
-	protected static final Logger _log = LoggerFactory.getLogger(L2GameClient.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(L2GameClient.class);
 	protected static final Logger _logAccounting = LoggerFactory.getLogger("accounting");
 	
 	// Info

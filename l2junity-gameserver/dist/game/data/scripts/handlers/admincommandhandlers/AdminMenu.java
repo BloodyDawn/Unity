@@ -40,7 +40,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AdminMenu implements IAdminCommandHandler
 {
-	private static final Logger _log = LoggerFactory.getLogger(AdminMenu.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(AdminMenu.class);
 	
 	private static final String[] ADMIN_COMMANDS =
 	{

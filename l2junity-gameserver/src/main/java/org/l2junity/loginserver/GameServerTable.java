@@ -53,7 +53,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class GameServerTable
 {
-	private static final Logger _log = LoggerFactory.getLogger(GameServerTable.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(GameServerTable.class);
 	// Server Names Config
 	private static final Map<Integer, String> _serverNames = new HashMap<>();
 	// Game Server Table

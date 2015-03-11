@@ -29,7 +29,7 @@ import org.slf4j.LoggerFactory;
  */
 public class PlayerTracert extends BaseRecievePacket
 {
-	protected static Logger _log = LoggerFactory.getLogger(PlayerTracert.class.getName());
+	protected static Logger _log = LoggerFactory.getLogger(PlayerTracert.class);
 	
 	/**
 	 * @param decrypt

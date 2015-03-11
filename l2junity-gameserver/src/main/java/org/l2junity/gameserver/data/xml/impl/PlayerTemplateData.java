@@ -40,7 +40,7 @@ import org.w3c.dom.Node;
  */
 public final class PlayerTemplateData implements IXmlReader
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(PlayerTemplateData.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(PlayerTemplateData.class);
 	
 	private final Map<ClassId, L2PcTemplate> _playerTemplates = new HashMap<>();
 	

@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class EnchantItemGroup
 {
-	private static final Logger _log = LoggerFactory.getLogger(EnchantItemGroup.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(EnchantItemGroup.class);
 	private final List<RangeChanceHolder> _chances = new ArrayList<>();
 	private final String _name;
 	

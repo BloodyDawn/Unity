@@ -39,7 +39,7 @@ import org.slf4j.LoggerFactory;
  */
 public class CharNameTable
 {
-	private static Logger _log = LoggerFactory.getLogger(CharNameTable.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(CharNameTable.class);
 	
 	private final Map<Integer, String> _chars = new ConcurrentHashMap<>();
 	private final Map<Integer, Integer> _accessLevels = new ConcurrentHashMap<>();

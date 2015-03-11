@@ -41,7 +41,7 @@ import org.slf4j.LoggerFactory;
 
 public class MacroList implements IRestorable
 {
-	private static final Logger _log = LoggerFactory.getLogger(MacroList.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(MacroList.class);
 	
 	private final PlayerInstance _owner;
 	private int _macroId;

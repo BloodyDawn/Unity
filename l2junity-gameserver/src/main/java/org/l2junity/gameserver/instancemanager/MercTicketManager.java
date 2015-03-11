@@ -48,7 +48,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class MercTicketManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(MercTicketManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(MercTicketManager.class);
 	
 	private static final FastList<ItemInstance> _droppedTickets = new FastList<>();
 	

@@ -58,7 +58,7 @@ import org.slf4j.LoggerFactory;
  */
 public class L2VillageMasterInstance extends L2NpcInstance
 {
-	private static Logger _log = LoggerFactory.getLogger(L2VillageMasterInstance.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(L2VillageMasterInstance.class);
 	
 	public L2VillageMasterInstance(L2NpcTemplate template)
 	{

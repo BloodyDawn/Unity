@@ -41,7 +41,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class ChatGeneral implements IChatHandler
 {
-	private static Logger _log = LoggerFactory.getLogger(ChatGeneral.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(ChatGeneral.class);
 	
 	private static final ChatType[] CHAT_TYPES =
 	{

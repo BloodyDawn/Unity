@@ -66,7 +66,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ClanTable
 {
-	private static final Logger _log = LoggerFactory.getLogger(ClanTable.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(ClanTable.class);
 	
 	private final Map<Integer, L2Clan> _clans = new HashMap<>();
 	

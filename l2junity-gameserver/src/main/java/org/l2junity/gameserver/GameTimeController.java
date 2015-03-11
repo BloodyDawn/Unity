@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class GameTimeController extends Thread
 {
-	private static final Logger _log = LoggerFactory.getLogger(GameTimeController.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(GameTimeController.class);
 	
 	public static final int TICKS_PER_SECOND = 10; // not able to change this without checking through code
 	public static final int MILLIS_IN_TICK = 1000 / TICKS_PER_SECOND;

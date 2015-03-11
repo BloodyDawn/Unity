@@ -48,7 +48,7 @@ import org.slf4j.LoggerFactory;
 
 public class Duel
 {
-	protected static final Logger _log = LoggerFactory.getLogger(Duel.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(Duel.class);
 	
 	public static final int DUELSTATE_NODUEL = 0;
 	public static final int DUELSTATE_DUELLING = 1;

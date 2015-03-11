@@ -36,7 +36,7 @@ import org.w3c.dom.Node;
  */
 public class UIData implements IXmlReader
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(UIData.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(UIData.class);
 	
 	private final Map<Integer, List<ActionKey>> _storedKeys = new HashMap<>();
 	private final Map<Integer, List<Integer>> _storedCategories = new HashMap<>();

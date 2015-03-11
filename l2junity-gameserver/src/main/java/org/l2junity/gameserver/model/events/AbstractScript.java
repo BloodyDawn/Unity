@@ -139,7 +139,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractScript extends ManagedScript
 {
-	protected static final Logger _log = LoggerFactory.getLogger(AbstractScript.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(AbstractScript.class);
 	private final Map<ListenerRegisterType, Set<Integer>> _registeredIds = new ConcurrentHashMap<>();
 	private final Queue<AbstractEventListener> _listeners = new PriorityBlockingQueue<>();
 	

@@ -42,7 +42,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class JavaExecutionContext extends AbstractExecutionContext<JavaScriptingEngine>
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(JavaExecutionContext.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(JavaExecutionContext.class);
 	
 	JavaExecutionContext(final JavaScriptingEngine engine)
 	{

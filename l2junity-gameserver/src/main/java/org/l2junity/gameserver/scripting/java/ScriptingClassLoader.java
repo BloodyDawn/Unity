@@ -26,7 +26,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class ScriptingClassLoader extends ClassLoader
 {
-	public static final Logger LOGGER = LoggerFactory.getLogger(ScriptingClassLoader.class.getName());
+	public static final Logger LOGGER = LoggerFactory.getLogger(ScriptingClassLoader.class);
 	
 	private Iterable<ScriptingOutputFileObject> _compiledClasses;
 	

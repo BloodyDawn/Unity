@@ -79,7 +79,7 @@ import org.slf4j.LoggerFactory;
 
 public class L2PetInstance extends Summon
 {
-	protected static final Logger _logPet = LoggerFactory.getLogger(L2PetInstance.class.getName());
+	protected static final Logger _logPet = LoggerFactory.getLogger(L2PetInstance.class);
 	
 	private static final String ADD_SKILL_SAVE = "INSERT INTO character_pet_skills_save (petObjItemId,skill_id,skill_level,remaining_time,buff_index) VALUES (?,?,?,?,?)";
 	private static final String RESTORE_SKILL_SAVE = "SELECT petObjItemId,skill_id,skill_level,remaining_time,buff_index FROM character_pet_skills_save WHERE petObjItemId=? ORDER BY buff_index ASC";

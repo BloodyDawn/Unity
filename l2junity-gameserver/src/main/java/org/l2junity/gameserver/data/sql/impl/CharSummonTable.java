@@ -48,7 +48,7 @@ import org.slf4j.LoggerFactory;
  */
 public class CharSummonTable
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(CharSummonTable.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(CharSummonTable.class);
 	private static final Map<Integer, Integer> _pets = new ConcurrentHashMap<>();
 	private static final Map<Integer, Set<Integer>> _servitors = new ConcurrentHashMap<>();
 	

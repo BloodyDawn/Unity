@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
 
 public class Topic
 {
-	private static final Logger _log = LoggerFactory.getLogger(Topic.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(Topic.class);
 	
 	public static final int MORMAL = 0;
 	public static final int MEMO = 1;

@@ -42,7 +42,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class CrestTable
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(CrestTable.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(CrestTable.class);
 	
 	private final Map<Integer, Crest> _crests = new ConcurrentHashMap<>();
 	private final AtomicInteger _nextId = new AtomicInteger(1);

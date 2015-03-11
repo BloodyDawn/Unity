@@ -29,7 +29,7 @@ import org.slf4j.LoggerFactory;
  */
 public interface ITelnetHandler
 {
-	public static Logger _log = LoggerFactory.getLogger(ITelnetHandler.class.getName());
+	public static Logger _log = LoggerFactory.getLogger(ITelnetHandler.class);
 	
 	/**
 	 * this is the worker method that is called when someone uses an bypass command

@@ -70,7 +70,7 @@ import org.slf4j.LoggerFactory;
 
 public class Siege implements Siegable
 {
-	protected static final Logger _log = LoggerFactory.getLogger(Siege.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(Siege.class);
 	
 	// typeId's
 	public static final byte OWNER = -1;
@@ -1555,7 +1555,7 @@ public class Siege implements Siegable
 			}
 			catch (Exception e)
 			{
-				_log.warn(getClass().getName() + ": Cannot spawn control tower! " + e);
+				_log.warn("Cannot spawn control tower! " + e);
 			}
 		}
 		_controlTowerCount = _controlTowers.size();
@@ -1579,7 +1579,7 @@ public class Siege implements Siegable
 			}
 			catch (Exception e)
 			{
-				_log.warn(getClass().getName() + ": Cannot spawn flame tower! " + e);
+				_log.warn("Cannot spawn flame tower! " + e);
 			}
 		}
 	}

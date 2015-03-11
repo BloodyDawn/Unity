@@ -80,7 +80,7 @@ import org.slf4j.LoggerFactory;
  */
 public class Quest extends AbstractScript implements IIdentifiable
 {
-	public static final Logger _log = LoggerFactory.getLogger(Quest.class.getName());
+	public static final Logger _log = LoggerFactory.getLogger(Quest.class);
 	
 	/** Map containing lists of timers from the name of the timer. */
 	private volatile Map<String, List<QuestTimer>> _questTimers = null;

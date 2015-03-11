@@ -35,7 +35,7 @@ import org.slf4j.LoggerFactory;
  */
 public class Post
 {
-	private static Logger _log = LoggerFactory.getLogger(Post.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(Post.class);
 	
 	public static class CPost
 	{

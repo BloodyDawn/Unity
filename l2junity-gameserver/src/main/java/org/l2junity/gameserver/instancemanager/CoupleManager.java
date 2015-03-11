@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class CoupleManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(CoupleManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(CoupleManager.class);
 	
 	private volatile Map<Integer, Couple> _couples;
 	

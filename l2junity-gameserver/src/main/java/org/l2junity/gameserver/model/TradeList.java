@@ -49,7 +49,7 @@ import org.slf4j.LoggerFactory;
  */
 public class TradeList
 {
-	private static final Logger _log = LoggerFactory.getLogger(TradeList.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(TradeList.class);
 	
 	private final PlayerInstance _owner;
 	private PlayerInstance _partner;

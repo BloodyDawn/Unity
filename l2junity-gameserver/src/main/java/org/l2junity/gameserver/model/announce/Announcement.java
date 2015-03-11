@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
  */
 public class Announcement implements IAnnouncement
 {
-	protected static final Logger _log = LoggerFactory.getLogger(Announcement.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(Announcement.class);
 	
 	private static final String INSERT_QUERY = "INSERT INTO announcements (type, content, author) VALUES (?, ?, ?)";
 	private static final String UPDATE_QUERY = "UPDATE announcements SET type = ?, content = ?, author = ? WHERE id = ?";

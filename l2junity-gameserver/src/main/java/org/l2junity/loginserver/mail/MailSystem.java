@@ -38,7 +38,7 @@ import org.w3c.dom.Node;
  */
 public class MailSystem
 {
-	private static final Logger _log = LoggerFactory.getLogger(MailSystem.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(MailSystem.class);
 	private final Map<String, MailContent> _mailData = new ConcurrentHashMap<>();
 	
 	public static MailSystem getInstance()

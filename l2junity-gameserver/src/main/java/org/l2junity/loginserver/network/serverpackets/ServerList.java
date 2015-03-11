@@ -61,7 +61,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class ServerList extends L2LoginServerPacket
 {
-	protected static final Logger _log = LoggerFactory.getLogger(ServerList.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(ServerList.class);
 	
 	private final List<ServerData> _servers;
 	private final int _lastServer;

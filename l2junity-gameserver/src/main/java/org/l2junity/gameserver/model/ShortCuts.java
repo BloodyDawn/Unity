@@ -38,7 +38,7 @@ import org.slf4j.LoggerFactory;
 
 public class ShortCuts implements IRestorable
 {
-	private static Logger _log = LoggerFactory.getLogger(ShortCuts.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(ShortCuts.class);
 	private static final int MAX_SHORTCUTS_PER_BAR = 12;
 	private final PlayerInstance _owner;
 	private final Map<Integer, Shortcut> _shortCuts = new TreeMap<>();

@@ -54,7 +54,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AdminSpawn implements IAdminCommandHandler
 {
-	private static final Logger _log = LoggerFactory.getLogger(AdminSpawn.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(AdminSpawn.class);
 	
 	private static final String[] ADMIN_COMMANDS =
 	{

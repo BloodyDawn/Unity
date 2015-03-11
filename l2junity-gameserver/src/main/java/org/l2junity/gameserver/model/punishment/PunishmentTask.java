@@ -38,7 +38,7 @@ import org.slf4j.LoggerFactory;
  */
 public class PunishmentTask implements Runnable
 {
-	protected static final Logger _log = LoggerFactory.getLogger(PunishmentTask.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(PunishmentTask.class);
 	
 	private static final String INSERT_QUERY = "INSERT INTO punishments (`key`, `affect`, `type`, `expiration`, `reason`, `punishedBy`) VALUES (?, ?, ?, ?, ?, ?)";
 	private static final String UPDATE_QUERY = "UPDATE punishments SET expiration = ? WHERE id = ?";

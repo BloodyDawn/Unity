@@ -40,7 +40,7 @@ import org.slf4j.LoggerFactory;
 
 public class CharSelectionInfo implements IClientOutgoingPacket
 {
-	private static Logger _log = LoggerFactory.getLogger(CharSelectionInfo.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(CharSelectionInfo.class);
 	private final String _loginName;
 	private final int _sessionId;
 	private int _activeId;

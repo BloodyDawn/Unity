@@ -72,7 +72,7 @@ import org.slf4j.LoggerFactory;
 
 public final class Skill implements IIdentifiable
 {
-	private static final Logger _log = LoggerFactory.getLogger(Skill.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(Skill.class);
 	
 	private static final WorldObject[] EMPTY_TARGET_LIST = new WorldObject[0];
 	

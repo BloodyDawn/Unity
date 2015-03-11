@@ -50,7 +50,7 @@ import org.w3c.dom.Node;
  */
 public final class SpawnTable implements IXmlReader
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(SpawnTable.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(SpawnTable.class);
 	// SQL
 	private static final String SELECT_SPAWNS = "SELECT count, npc_templateid, locx, locy, locz, heading, respawn_delay, respawn_random, loc_id, periodOfDay FROM spawnlist";
 	private static final String SELECT_CUSTOM_SPAWNS = "SELECT count, npc_templateid, locx, locy, locz, heading, respawn_delay, respawn_random, loc_id, periodOfDay FROM custom_spawnlist";

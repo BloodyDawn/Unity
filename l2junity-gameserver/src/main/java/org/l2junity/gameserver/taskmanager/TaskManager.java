@@ -57,7 +57,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class TaskManager
 {
-	protected static final Logger _log = LoggerFactory.getLogger(TaskManager.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(TaskManager.class);
 	
 	private final Map<Integer, Task> _tasks = new ConcurrentHashMap<>();
 	protected final List<ExecutedTask> _currentTasks = new CopyOnWriteArrayList<>();

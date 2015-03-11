@@ -50,7 +50,7 @@ import org.slf4j.LoggerFactory;
 
 public final class L2CubicInstance implements IIdentifiable
 {
-	private static final Logger _log = LoggerFactory.getLogger(L2CubicInstance.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(L2CubicInstance.class);
 	
 	// Type of Cubics
 	public static final int STORM_CUBIC = 1;

@@ -61,7 +61,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AdminSkill implements IAdminCommandHandler
 {
-	private static Logger _log = LoggerFactory.getLogger(AdminSkill.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(AdminSkill.class);
 	
 	private static final String[] ADMIN_COMMANDS =
 	{

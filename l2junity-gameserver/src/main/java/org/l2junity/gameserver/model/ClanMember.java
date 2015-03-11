@@ -34,7 +34,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ClanMember
 {
-	private static final Logger _log = LoggerFactory.getLogger(ClanMember.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(ClanMember.class);
 	
 	private final L2Clan _clan;
 	private int _objectId;

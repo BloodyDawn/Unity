@@ -48,7 +48,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class ItemContainer
 {
-	protected static final Logger _log = LoggerFactory.getLogger(ItemContainer.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(ItemContainer.class);
 	
 	protected final List<ItemInstance> _items = new FastList<ItemInstance>().shared();
 	

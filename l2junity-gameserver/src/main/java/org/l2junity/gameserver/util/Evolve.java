@@ -49,7 +49,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class Evolve
 {
-	protected static final Logger _log = LoggerFactory.getLogger(Evolve.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(Evolve.class);
 	
 	public static final boolean doEvolve(PlayerInstance player, Npc npc, int itemIdtake, int itemIdgive, int petminlvl)
 	{

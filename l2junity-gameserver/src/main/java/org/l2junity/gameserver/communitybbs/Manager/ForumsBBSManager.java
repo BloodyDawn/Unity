@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
 
 public class ForumsBBSManager extends BaseBBSManager
 {
-	private static Logger _log = LoggerFactory.getLogger(ForumsBBSManager.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(ForumsBBSManager.class);
 	private final List<Forum> _table;
 	private int _lastid = 1;
 	

@@ -41,7 +41,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class ItemsOnGroundManager implements Runnable
 {
-	private static final Logger _log = LoggerFactory.getLogger(ItemsOnGroundManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(ItemsOnGroundManager.class);
 	
 	private final Set<ItemInstance> _items = ConcurrentHashMap.newKeySet();
 	

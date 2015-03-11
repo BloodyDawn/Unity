@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AdminGm implements IAdminCommandHandler
 {
-	private static Logger _log = LoggerFactory.getLogger(AdminGm.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(AdminGm.class);
 	private static final String[] ADMIN_COMMANDS =
 	{
 		"admin_gm"

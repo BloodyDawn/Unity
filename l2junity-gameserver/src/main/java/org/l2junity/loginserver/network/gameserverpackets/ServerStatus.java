@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ServerStatus extends BaseRecievePacket
 {
-	protected static Logger _log = LoggerFactory.getLogger(ServerStatus.class.getName());
+	protected static Logger _log = LoggerFactory.getLogger(ServerStatus.class);
 	
 	public static final int SERVER_LIST_STATUS = 0x01;
 	public static final int SERVER_TYPE = 0x02;

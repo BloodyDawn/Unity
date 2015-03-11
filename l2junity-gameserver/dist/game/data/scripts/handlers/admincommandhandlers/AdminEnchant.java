@@ -35,7 +35,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AdminEnchant implements IAdminCommandHandler
 {
-	private static Logger _log = LoggerFactory.getLogger(AdminEnchant.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(AdminEnchant.class);
 	
 	private static final String[] ADMIN_COMMANDS =
 	{

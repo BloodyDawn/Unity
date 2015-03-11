@@ -34,7 +34,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
  */
 public class DatabaseFactory
 {
-	private static final Logger _log = LoggerFactory.getLogger(DatabaseFactory.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(DatabaseFactory.class);
 	
 	private static DatabaseFactory _instance;
 	private static volatile ScheduledExecutorService _executor;
@@ -197,7 +197,7 @@ public class DatabaseFactory
 	 */
 	private static class ConnectionCloser implements Runnable
 	{
-		private static final Logger _log = LoggerFactory.getLogger(ConnectionCloser.class.getName());
+		private static final Logger _log = LoggerFactory.getLogger(ConnectionCloser.class);
 		
 		/** The connection. */
 		private final Connection c;

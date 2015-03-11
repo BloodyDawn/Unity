@@ -144,7 +144,7 @@ import org.w3c.dom.Node;
  */
 public abstract class DocumentBase
 {
-	protected final Logger _log = LoggerFactory.getLogger(getClass().getName());
+	protected final Logger _log = LoggerFactory.getLogger(getClass());
 	
 	private final File _file;
 	protected Map<String, String[]> _tables;

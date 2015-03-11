@@ -37,7 +37,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ClanWarsList implements IUserCommandHandler
 {
-	private static final Logger _log = LoggerFactory.getLogger(ClanWarsList.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(ClanWarsList.class);
 	private static final int[] COMMAND_IDS =
 	{
 		88,

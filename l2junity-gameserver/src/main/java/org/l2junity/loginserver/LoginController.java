@@ -53,7 +53,7 @@ import org.slf4j.LoggerFactory;
 
 public class LoginController
 {
-	protected static final Logger _log = LoggerFactory.getLogger(LoginController.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(LoginController.class);
 	
 	private static LoginController _instance;
 	

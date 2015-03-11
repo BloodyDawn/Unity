@@ -42,7 +42,7 @@ import org.slf4j.LoggerFactory;
  */
 public class L2JGameServerPacketHandler
 {
-	protected static Logger _log = LoggerFactory.getLogger(L2JGameServerPacketHandler.class.getName());
+	protected static Logger _log = LoggerFactory.getLogger(L2JGameServerPacketHandler.class);
 	
 	public static enum GameServerState
 	{

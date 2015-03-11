@@ -78,7 +78,7 @@ import org.slf4j.LoggerFactory;
 
 public class LoginServerThread extends Thread
 {
-	protected static final Logger _log = LoggerFactory.getLogger(LoginServerThread.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(LoginServerThread.class);
 	protected static final Logger _logAccounting = LoggerFactory.getLogger("accounting");
 	
 	/** @see org.l2junity.loginserver.L2LoginServer#PROTOCOL_REV */

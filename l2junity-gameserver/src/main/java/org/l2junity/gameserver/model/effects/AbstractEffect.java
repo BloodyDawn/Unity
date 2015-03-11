@@ -45,7 +45,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractEffect
 {
-	protected static final Logger _log = LoggerFactory.getLogger(AbstractEffect.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(AbstractEffect.class);
 	
 	// Conditions
 	/** Attach condition. */

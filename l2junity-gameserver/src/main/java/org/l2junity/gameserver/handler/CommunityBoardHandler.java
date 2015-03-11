@@ -35,7 +35,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class CommunityBoardHandler implements IHandler<IParseBoardHandler, String>
 {
-	private static final Logger LOG = LoggerFactory.getLogger(CommunityBoardHandler.class.getName());
+	private static final Logger LOG = LoggerFactory.getLogger(CommunityBoardHandler.class);
 	/** The registered handlers. */
 	private final Map<String, IParseBoardHandler> _datatable = new HashMap<>();
 	/** The bypasses used by the players. */

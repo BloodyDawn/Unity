@@ -34,7 +34,7 @@ import org.slf4j.LoggerFactory;
  */
 public class PetFeedTask implements Runnable
 {
-	private static final Logger _log = LoggerFactory.getLogger(PetFeedTask.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(PetFeedTask.class);
 	
 	private final PlayerInstance _player;
 	

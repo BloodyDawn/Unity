@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AnnotationEventListener extends AbstractEventListener
 {
-	private static final Logger _log = LoggerFactory.getLogger(AnnotationEventListener.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(AnnotationEventListener.class);
 	private final Method _callback;
 	
 	public AnnotationEventListener(ListenersContainer container, EventType type, Method callback, Object owner, int priority)

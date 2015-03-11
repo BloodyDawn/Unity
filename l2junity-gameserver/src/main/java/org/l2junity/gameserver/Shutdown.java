@@ -55,7 +55,7 @@ import org.slf4j.LoggerFactory;
  */
 public class Shutdown extends Thread
 {
-	private static final Logger _log = LoggerFactory.getLogger(Shutdown.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(Shutdown.class);
 	private static Shutdown _counterInstance = null;
 	
 	private int _secondsShut;

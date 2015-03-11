@@ -62,7 +62,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class CommissionManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(CommissionManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(CommissionManager.class);
 	
 	private static final int INTERACTION_DISTANCE = 250;
 	private static final int ITEMS_LIMIT_PER_REQUEST = 999;

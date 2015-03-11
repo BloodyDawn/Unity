@@ -63,7 +63,7 @@ import org.slf4j.LoggerFactory;
  */
 public class AutoSpawnHandler
 {
-	protected static final Logger _log = LoggerFactory.getLogger(AutoSpawnHandler.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(AutoSpawnHandler.class);
 	
 	private static final int DEFAULT_INITIAL_SPAWN = 30000; // 30 seconds after registration
 	private static final int DEFAULT_RESPAWN = 3600000; // 1 hour in millisecs

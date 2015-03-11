@@ -40,7 +40,7 @@ import org.slf4j.LoggerFactory;
 
 public class LoginStatusThread extends Thread
 {
-	private static final Logger _log = LoggerFactory.getLogger(LoginStatusThread.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(LoginStatusThread.class);
 	
 	private final Socket _cSocket;
 	

@@ -57,7 +57,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ItemTable
 {
-	private static Logger LOGGER = LoggerFactory.getLogger(ItemTable.class.getName());
+	private static Logger LOGGER = LoggerFactory.getLogger(ItemTable.class);
 	private static Logger LOGGER_ITEMS = LoggerFactory.getLogger("item");
 	
 	public static final Map<String, Integer> _slots = new HashMap<>();

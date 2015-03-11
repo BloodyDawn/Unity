@@ -45,7 +45,7 @@ import org.slf4j.LoggerFactory;
  */
 public class MentorManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(MentorManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(MentorManager.class);
 	
 	private final Map<Integer, Map<Integer, Mentee>> _menteeData = new FastMap<Integer, Map<Integer, Mentee>>().shared();
 	private final Map<Integer, Mentee> _mentors = new FastMap<Integer, Mentee>().shared();

@@ -37,7 +37,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ChangePassword extends BaseRecievePacket
 {
-	protected static Logger _log = LoggerFactory.getLogger(ChangePassword.class.getName());
+	protected static Logger _log = LoggerFactory.getLogger(ChangePassword.class);
 	private static GameServerThread gst = null;
 	
 	public ChangePassword(byte[] decrypt)

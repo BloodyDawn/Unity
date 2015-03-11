@@ -37,7 +37,7 @@ import org.w3c.dom.Node;
  */
 public final class CategoryData implements IXmlReader
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(CategoryData.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(CategoryData.class);
 	
 	private final Map<CategoryType, Set<Integer>> _categories = new HashMap<>();
 	

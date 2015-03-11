@@ -31,7 +31,7 @@ public enum DropListScope
 	DEATH(DeathDropItem.class, GroupedDeathDropItem.class),
 	CORPSE(CorpseDropItem.class, GroupedCorpseDropItem.class);
 	
-	private static final Logger _log = LoggerFactory.getLogger(DropListScope.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(DropListScope.class);
 	
 	private final Class<? extends GeneralDropItem> _dropItemClass;
 	private final Class<? extends GroupedGeneralDropItem> _groupedDropItemClass;

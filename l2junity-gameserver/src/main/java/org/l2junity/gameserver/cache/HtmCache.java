@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
  */
 public class HtmCache
 {
-	private static final Logger _log = LoggerFactory.getLogger(HtmCache.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(HtmCache.class);
 	
 	private static final HTMLFilter htmlFilter = new HTMLFilter();
 	

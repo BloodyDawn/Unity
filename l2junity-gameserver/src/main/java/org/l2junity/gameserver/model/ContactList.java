@@ -41,7 +41,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ContactList
 {
-	private final Logger _log = LoggerFactory.getLogger(getClass().getName());
+	private final Logger _log = LoggerFactory.getLogger(getClass());
 	private final PlayerInstance activeChar;
 	private final Set<String> _contacts = ConcurrentHashMap.newKeySet();
 	

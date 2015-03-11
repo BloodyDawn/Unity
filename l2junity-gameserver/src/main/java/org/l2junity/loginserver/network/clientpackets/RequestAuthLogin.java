@@ -47,7 +47,7 @@ import org.slf4j.LoggerFactory;
  */
 public class RequestAuthLogin extends L2LoginClientPacket
 {
-	private static Logger _log = LoggerFactory.getLogger(RequestAuthLogin.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(RequestAuthLogin.class);
 	
 	private final byte[] _raw1 = new byte[128];
 	private final byte[] _raw2 = new byte[128];

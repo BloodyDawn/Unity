@@ -43,7 +43,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class CHSiegeManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(CHSiegeManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(CHSiegeManager.class);
 	private static final String SQL_LOAD_HALLS = "SELECT * FROM siegable_clanhall";
 	
 	private final Map<Integer, SiegableHall> _siegableHalls = new ConcurrentHashMap<>();

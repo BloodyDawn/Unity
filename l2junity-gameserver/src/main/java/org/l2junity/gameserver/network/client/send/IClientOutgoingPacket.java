@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
  */
 public interface IClientOutgoingPacket extends IOutgoingPacket
 {
-	static final Logger _log = LoggerFactory.getLogger(IClientOutgoingPacket.class.getName());
+	static final Logger _log = LoggerFactory.getLogger(IClientOutgoingPacket.class);
 	
 	static final int[] PAPERDOLL_ORDER = new int[]
 	{

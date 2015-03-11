@@ -26,7 +26,7 @@ import org.slf4j.LoggerFactory;
 
 public interface IActionShiftHandler
 {
-	public static Logger _log = LoggerFactory.getLogger(IActionShiftHandler.class.getName());
+	public static Logger _log = LoggerFactory.getLogger(IActionShiftHandler.class);
 	
 	public boolean action(PlayerInstance activeChar, WorldObject target, boolean interact);
 	

@@ -140,7 +140,7 @@ import org.slf4j.LoggerFactory;
 
 public class GameServer
 {
-	private static final Logger _log = LoggerFactory.getLogger(GameServer.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(GameServer.class);
 	
 	private final DeadLockDetector _deadDetectThread;
 	public static GameServer gameServer;

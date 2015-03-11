@@ -34,7 +34,7 @@ import org.slf4j.LoggerFactory;
  */
 public class L2BoatInstance extends Vehicle
 {
-	protected static final Logger _logBoat = LoggerFactory.getLogger(L2BoatInstance.class.getName());
+	protected static final Logger _logBoat = LoggerFactory.getLogger(L2BoatInstance.class);
 	
 	public L2BoatInstance(L2CharTemplate template)
 	{

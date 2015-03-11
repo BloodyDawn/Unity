@@ -29,7 +29,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ChangeAccessLevel extends BaseRecievePacket
 {
-	protected static Logger _log = LoggerFactory.getLogger(ChangeAccessLevel.class.getName());
+	protected static Logger _log = LoggerFactory.getLogger(ChangeAccessLevel.class);
 	
 	/**
 	 * @param decrypt

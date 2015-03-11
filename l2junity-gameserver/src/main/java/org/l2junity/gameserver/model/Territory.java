@@ -31,7 +31,7 @@ import org.slf4j.LoggerFactory;
  */
 public class Territory
 {
-	private static Logger _log = LoggerFactory.getLogger(Territory.class.getName());
+	private static Logger _log = LoggerFactory.getLogger(Territory.class);
 	
 	protected static class Point
 	{

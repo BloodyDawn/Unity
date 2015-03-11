@@ -29,7 +29,7 @@ import org.slf4j.LoggerFactory;
  */
 public interface IClientIncomingPacket extends IIncomingPacket<L2GameClient>
 {
-	static final Logger _log = LoggerFactory.getLogger(IClientIncomingPacket.class.getName());
+	static final Logger _log = LoggerFactory.getLogger(IClientIncomingPacket.class);
 	
 	/**
 	 * Overridden with true value on some packets that should disable spawn protection (RequestItemList and UseItem only)

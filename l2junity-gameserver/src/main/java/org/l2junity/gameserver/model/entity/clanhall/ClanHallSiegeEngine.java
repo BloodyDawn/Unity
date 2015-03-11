@@ -84,7 +84,7 @@ public abstract class ClanHallSiegeEngine extends Quest implements Siegable
 	public ClanHallSiegeEngine(String name, String descr, final int hallId)
 	{
 		super(-1, name, descr);
-		_log = LoggerFactory.getLogger(getClass().getName());
+		_log = LoggerFactory.getLogger(getClass());
 		
 		_hall = CHSiegeManager.getInstance().getSiegableHall(hallId);
 		_hall.setSiege(this);

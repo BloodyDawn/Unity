@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
 
 public class NpcBufferTable
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(NpcBufferTable.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(NpcBufferTable.class);
 	
 	private final Map<Integer, NpcBufferSkills> _buffers = new HashMap<>();
 	

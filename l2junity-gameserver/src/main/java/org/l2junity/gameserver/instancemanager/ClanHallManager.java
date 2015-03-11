@@ -42,7 +42,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class ClanHallManager
 {
-	protected static final Logger _log = LoggerFactory.getLogger(ClanHallManager.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(ClanHallManager.class);
 	
 	private final Map<Integer, AuctionableHall> _clanHall = new ConcurrentSkipListMap<>();
 	private final Map<Integer, AuctionableHall> _freeClanHall = new ConcurrentSkipListMap<>();

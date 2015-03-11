@@ -48,7 +48,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class L2LoginClient extends MMOClient<MMOConnection<L2LoginClient>>
 {
-	private static final Logger _log = LoggerFactory.getLogger(L2LoginClient.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(L2LoginClient.class);
 	
 	public static enum LoginClientState
 	{

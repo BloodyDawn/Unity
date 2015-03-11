@@ -42,7 +42,7 @@ import org.slf4j.LoggerFactory;
  */
 public class RaidBossPointsManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(RaidBossPointsManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(RaidBossPointsManager.class);
 	
 	private final Map<Integer, Map<Integer, Integer>> _list = new ConcurrentHashMap<>();
 	

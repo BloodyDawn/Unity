@@ -50,7 +50,7 @@ import org.slf4j.LoggerFactory;
 
 public final class FortSiegeManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(FortSiegeManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(FortSiegeManager.class);
 	
 	private int _attackerMaxClans = 500; // Max number of clans
 	

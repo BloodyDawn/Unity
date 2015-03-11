@@ -68,7 +68,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ThreadPoolManager
 {
-	protected static final Logger _log = LoggerFactory.getLogger(ThreadPoolManager.class.getName());
+	protected static final Logger _log = LoggerFactory.getLogger(ThreadPoolManager.class);
 	
 	private static final class RunnableWrapper implements Runnable
 	{

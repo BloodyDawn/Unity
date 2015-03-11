@@ -34,7 +34,7 @@ import org.slf4j.LoggerFactory;
 
 public class PetNameTable
 {
-	private static Logger LOGGER = LoggerFactory.getLogger(PetNameTable.class.getName());
+	private static Logger LOGGER = LoggerFactory.getLogger(PetNameTable.class);
 	
 	public static PetNameTable getInstance()
 	{

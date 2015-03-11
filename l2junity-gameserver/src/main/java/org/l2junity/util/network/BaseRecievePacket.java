@@ -27,7 +27,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class BaseRecievePacket
 {
-	private static final Logger _log = LoggerFactory.getLogger(BaseRecievePacket.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(BaseRecievePacket.class);
 	
 	private final byte[] _decrypt;
 	private int _off;

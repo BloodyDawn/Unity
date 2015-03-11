@@ -40,7 +40,7 @@ import org.slf4j.LoggerFactory;
 
 public class AirShipManager
 {
-	private static final Logger _log = LoggerFactory.getLogger(AirShipManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(AirShipManager.class);
 	
 	private static final String LOAD_DB = "SELECT * FROM airships";
 	private static final String ADD_DB = "INSERT INTO airships (owner_id,fuel) VALUES (?,?)";
