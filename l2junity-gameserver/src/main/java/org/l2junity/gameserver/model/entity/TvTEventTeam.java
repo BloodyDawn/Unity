@@ -19,8 +19,7 @@
 package org.l2junity.gameserver.model.entity;
 
 import java.util.Map;
-
-import javolution.util.FastMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
@@ -35,8 +34,8 @@ public class TvTEventTeam
 	private int[] _coordinates = new int[3];
 	/** The points of the team<br> */
 	private short _points;
-	/** Name and instance of all participated players in FastMap<br> */
-	private Map<Integer, PlayerInstance> _participatedPlayers = new FastMap<>();
+	/** Name and instance of all participated players in Map<br> */
+	private Map<Integer, PlayerInstance> _participatedPlayers = new ConcurrentHashMap<>();
 	
 	/**
 	 * C'tor initialize the team<br>
@@ -98,7 +97,7 @@ public class TvTEventTeam
 	public void cleanMe()
 	{
 		_participatedPlayers.clear();
-		_participatedPlayers = new FastMap<>();
+		_participatedPlayers = new ConcurrentHashMap<>();
 		_points = 0;
 	}
 	
@@ -150,7 +149,7 @@ public class TvTEventTeam
 	}
 	
 	/**
-	 * Returns name and instance of all participated players in FastMap<br>
+	 * Returns name and instance of all participated players in Map<br>
 	 * <br>
 	 * @return Map<String, L2PcInstance>: map of players in this team<br>
 	 */

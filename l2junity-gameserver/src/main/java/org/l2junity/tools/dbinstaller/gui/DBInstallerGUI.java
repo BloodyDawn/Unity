@@ -30,7 +30,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import org.l2junity.tools.dbinstaller.DBOutputInterface;
-import org.l2junity.tools.images.ImagesTable;
 
 /**
  * @author mrTJO
@@ -48,7 +47,6 @@ public class DBInstallerGUI extends JFrame implements DBOutputInterface
 		super("L2J Database Installer");
 		setLayout(new BorderLayout());
 		setDefaultLookAndFeelDecorated(true);
-		setIconImage(ImagesTable.getImage("l2j.png").getImage());
 		
 		_con = con;
 		

@@ -19,9 +19,8 @@
 package org.l2junity.gameserver.model;
 
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
-
-import javolution.util.FastMap;
 
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.enums.ShotType;
@@ -506,7 +505,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 			{
 				if (_scripts == null)
 				{
-					_scripts = new FastMap<String, Object>().shared();
+					_scripts = new ConcurrentHashMap<>();
 				}
 			}
 		}

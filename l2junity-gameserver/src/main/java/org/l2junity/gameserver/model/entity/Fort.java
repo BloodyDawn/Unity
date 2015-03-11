@@ -32,8 +32,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-import javolution.util.FastMap;
-
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.FortUpdater;
@@ -79,7 +77,7 @@ public final class Fort extends AbstractResidence
 	private int _state = 0;
 	private int _castleId = 0;
 	private int _supplyLvL = 0;
-	private final FastMap<Integer, FortFunction> _function;
+	private final Map<Integer, FortFunction> _function = new ConcurrentHashMap<>();
 	private final ScheduledFuture<?>[] _FortUpdater = new ScheduledFuture<?>[2];
 	
 	// Spawn Data
@@ -245,7 +243,6 @@ public final class Fort extends AbstractResidence
 		super(fortId);
 		load();
 		loadFlagPoles();
-		_function = new FastMap<>();
 		if (getOwnerClan() != null)
 		{
 			setVisibleFlag(true);

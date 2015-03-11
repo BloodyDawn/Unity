@@ -32,8 +32,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-
-import javolution.util.FastMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.GeoData;
@@ -53,8 +52,8 @@ import org.slf4j.LoggerFactory;
 public class GeoPathFinding extends PathFinding
 {
 	private static Logger _log = LoggerFactory.getLogger(GeoPathFinding.class.getName());
-	private static Map<Short, ByteBuffer> _pathNodes = new FastMap<>();
-	private static Map<Short, IntBuffer> _pathNodesIndex = new FastMap<>();
+	private static Map<Short, ByteBuffer> _pathNodes = new ConcurrentHashMap<>();
+	private static Map<Short, IntBuffer> _pathNodesIndex = new ConcurrentHashMap<>();
 	
 	public static GeoPathFinding getInstance()
 	{

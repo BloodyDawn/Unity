@@ -25,10 +25,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-
-import javolution.util.FastMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -43,7 +44,7 @@ public class RaidBossPointsManager
 {
 	private static final Logger _log = LoggerFactory.getLogger(RaidBossPointsManager.class.getName());
 	
-	private FastMap<Integer, Map<Integer, Integer>> _list;
+	private final Map<Integer, Map<Integer, Integer>> _list = new ConcurrentHashMap<>();
 	
 	public RaidBossPointsManager()
 	{
@@ -52,7 +53,6 @@ public class RaidBossPointsManager
 	
 	private final void init()
 	{
-		_list = new FastMap<>();
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			Statement s = con.createStatement();
 			ResultSet rs = s.executeQuery("SELECT `charId`,`boss_id`,`points` FROM `character_raid_points`"))
@@ -65,7 +65,7 @@ public class RaidBossPointsManager
 				Map<Integer, Integer> values = _list.get(charId);
 				if (values == null)
 				{
-					values = new FastMap<>();
+					values = new ConcurrentHashMap<>();
 				}
 				values.put(bossId, points);
 				_list.put(charId, values);
@@ -96,7 +96,7 @@ public class RaidBossPointsManager
 	
 	public final void addPoints(PlayerInstance player, int bossId, int points)
 	{
-		final Map<Integer, Integer> tmpPoint = _list.computeIfAbsent(player.getObjectId(), k -> new FastMap<>());
+		final Map<Integer, Integer> tmpPoint = _list.computeIfAbsent(player.getObjectId(), k -> new ConcurrentHashMap<>());
 		updatePointsInDB(player, bossId, tmpPoint.merge(bossId, points, Integer::sum));
 	}
 	
@@ -149,8 +149,8 @@ public class RaidBossPointsManager
 	
 	public Map<Integer, Integer> getRankList()
 	{
-		Map<Integer, Integer> tmpRanking = new FastMap<>();
-		Map<Integer, Integer> tmpPoints = new FastMap<>();
+		Map<Integer, Integer> tmpRanking = new LinkedHashMap<>();
+		Map<Integer, Integer> tmpPoints = new HashMap<>();
 		
 		for (int ownerId : _list.keySet())
 		{

@@ -32,9 +32,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
-
-import javolution.util.FastMap;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -78,14 +77,14 @@ public class Hero
 	// delete hero items
 	private static final String DELETE_ITEMS = "DELETE FROM items WHERE item_id IN (6842, 6611, 6612, 6613, 6614, 6615, 6616, 6617, 6618, 6619, 6620, 6621, 9388, 9389, 9390) AND owner_id NOT IN (SELECT charId FROM characters WHERE accesslevel > 0)";
 	
-	private static final Map<Integer, StatsSet> _heroes = new FastMap<>();
-	private static final Map<Integer, StatsSet> _completeHeroes = new FastMap<>();
+	private static final Map<Integer, StatsSet> _heroes = new ConcurrentHashMap<>();
+	private static final Map<Integer, StatsSet> _completeHeroes = new ConcurrentHashMap<>();
 	
-	private static final Map<Integer, StatsSet> _herocounts = new FastMap<>();
-	private static final Map<Integer, List<StatsSet>> _herofights = new FastMap<>();
+	private static final Map<Integer, StatsSet> _herocounts = new ConcurrentHashMap<>();
+	private static final Map<Integer, List<StatsSet>> _herofights = new ConcurrentHashMap<>();
 	
-	private static final Map<Integer, List<StatsSet>> _herodiary = new FastMap<>();
-	private static final Map<Integer, String> _heroMessage = new FastMap<>();
+	private static final Map<Integer, List<StatsSet>> _herodiary = new ConcurrentHashMap<>();
+	private static final Map<Integer, String> _heroMessage = new ConcurrentHashMap<>();
 	
 	public static final String COUNT = "count";
 	public static final String PLAYED = "played";

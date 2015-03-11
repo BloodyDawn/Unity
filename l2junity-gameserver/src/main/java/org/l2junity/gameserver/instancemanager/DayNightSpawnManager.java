@@ -21,8 +21,7 @@ package org.l2junity.gameserver.instancemanager;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-import javolution.util.FastMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.model.L2Spawn;
@@ -54,7 +53,7 @@ public final class DayNightSpawnManager
 	{
 		_dayCreatures = new ArrayList<>();
 		_nightCreatures = new ArrayList<>();
-		_bosses = new FastMap<>();
+		_bosses = new ConcurrentHashMap<>();
 	}
 	
 	public void addDayCreature(L2Spawn spawnDat)

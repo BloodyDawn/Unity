@@ -35,10 +35,9 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import javax.crypto.Cipher;
-
-import javolution.util.FastMap;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -62,10 +61,10 @@ public class LoginController
 	public static final int LOGIN_TIMEOUT = 60 * 1000;
 	
 	/** Authed Clients on LoginServer */
-	protected FastMap<String, L2LoginClient> _loginServerClients = new FastMap<String, L2LoginClient>().shared();
+	protected Map<String, L2LoginClient> _loginServerClients = new ConcurrentHashMap<>();
 	
 	private final Map<InetAddress, Integer> _failedLoginAttemps = new HashMap<>();
-	private final Map<InetAddress, Long> _bannedIps = new FastMap<InetAddress, Long>().shared();
+	private final Map<InetAddress, Long> _bannedIps = new ConcurrentHashMap<>();
 	
 	protected ScrambledKeyPair[] _keyPairs;
 	

@@ -27,8 +27,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-
-import javolution.util.FastMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -52,7 +51,7 @@ public final class GrandBossManager implements IStorable
 	
 	protected static Logger _log = LoggerFactory.getLogger(GrandBossManager.class.getName());
 	
-	protected static Map<Integer, L2GrandBossInstance> _bosses = new FastMap<>();
+	protected static Map<Integer, L2GrandBossInstance> _bosses = new ConcurrentHashMap<>();
 	
 	protected static Map<Integer, StatsSet> _storedInfo = new HashMap<>();
 	

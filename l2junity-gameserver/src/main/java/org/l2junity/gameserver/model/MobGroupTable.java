@@ -19,8 +19,7 @@
 package org.l2junity.gameserver.model;
 
 import java.util.Map;
-
-import javolution.util.FastMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.gameserver.model.actor.instance.L2ControllableMobInstance;
 
@@ -29,14 +28,13 @@ import org.l2junity.gameserver.model.actor.instance.L2ControllableMobInstance;
  */
 public class MobGroupTable
 {
-	private final Map<Integer, MobGroup> _groupMap;
+	private final Map<Integer, MobGroup> _groupMap = new ConcurrentHashMap<>();
 	
 	public static final int FOLLOW_RANGE = 300;
 	public static final int RANDOM_RANGE = 300;
 	
 	protected MobGroupTable()
 	{
-		_groupMap = new FastMap<>();
 	}
 	
 	public static MobGroupTable getInstance()

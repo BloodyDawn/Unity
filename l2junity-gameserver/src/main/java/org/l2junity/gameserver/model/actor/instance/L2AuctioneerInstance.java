@@ -25,8 +25,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
-
-import javolution.util.FastMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.enums.InstanceType;
@@ -47,7 +46,7 @@ public final class L2AuctioneerInstance extends Npc
 	private static final int COND_BUSY_BECAUSE_OF_SIEGE = 1;
 	private static final int COND_REGULAR = 3;
 	
-	private final Map<Integer, Auction> _pendingAuctions = new FastMap<>();
+	private final Map<Integer, Auction> _pendingAuctions = new ConcurrentHashMap<>();
 	
 	public L2AuctioneerInstance(L2NpcTemplate template)
 	{
@@ -104,12 +103,7 @@ public final class L2AuctioneerInstance extends Npc
 							bid = Math.min(Long.parseLong(st.nextToken()), MAX_ADENA);
 						}
 						
-						Auction a = new Auction(player.getClan().getHideoutId(), player.getClan(), days * 86400000L, bid, ClanHallManager.getInstance().getClanHallByOwner(player.getClan()).getName());
-						if (_pendingAuctions.get(a.getId()) != null)
-						{
-							_pendingAuctions.remove(a.getId());
-						}
-						
+						final Auction a = new Auction(player.getClan().getHideoutId(), player.getClan(), days * 86400000L, bid, ClanHallManager.getInstance().getClanHallByOwner(player.getClan()).getName());
 						_pendingAuctions.put(a.getId(), a);
 						
 						String filename = "data/html/auction/AgitSale3.htm";
@@ -139,9 +133,8 @@ public final class L2AuctioneerInstance extends Npc
 			{
 				try
 				{
-					Auction a = _pendingAuctions.get(player.getClan().getHideoutId());
+					Auction a = _pendingAuctions.remove(player.getClan().getHideoutId());
 					a.confirmAuction();
-					_pendingAuctions.remove(player.getClan().getHideoutId());
 				}
 				catch (Exception e)
 				{

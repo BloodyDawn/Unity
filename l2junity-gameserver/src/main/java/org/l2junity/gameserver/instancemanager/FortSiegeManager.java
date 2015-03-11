@@ -28,9 +28,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.StringTokenizer;
+import java.util.concurrent.ConcurrentHashMap;
 
 import javolution.util.FastList;
-import javolution.util.FastMap;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -139,8 +139,8 @@ public final class FortSiegeManager
 		_suspiciousMerchantRespawnDelay = Integer.decode(siegeSettings.getProperty("SuspiciousMerchantRespawnDelay", "180"));
 		
 		// Siege spawns settings
-		_commanderSpawnList = new FastMap<>();
-		_flagList = new FastMap<>();
+		_commanderSpawnList = new ConcurrentHashMap<>();
+		_flagList = new ConcurrentHashMap<>();
 		
 		for (Fort fort : FortManager.getInstance().getForts())
 		{

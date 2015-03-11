@@ -18,8 +18,8 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
+import java.util.HashMap;
 import java.util.Map;
-import javolution.util.FastMap;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -165,7 +165,7 @@ public final class RequestPreviewItem implements IClientIncomingPacket
 		}
 		
 		long totalPrice = 0;
-		Map<Integer, Integer> itemList = new FastMap<>();
+		Map<Integer, Integer> itemList = new HashMap<>();
 		
 		for (int i = 0; i < _count; i++)
 		{

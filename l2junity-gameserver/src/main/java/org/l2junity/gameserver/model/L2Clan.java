@@ -138,7 +138,6 @@ public class L2Clan implements IIdentifiable, INamable
 	
 	private Forum _forum;
 	
-	/** FastMap(Integer, L2Skill) containing all skills of the L2Clan */
 	private final Map<Integer, Skill> _skills = new FastMap<>();
 	private final Map<Integer, RankPrivs> _privs = new FastMap<>();
 	private final Map<Integer, SubPledge> _subPledges = new FastMap<>();

@@ -28,9 +28,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
+
 import javolution.util.FastList;
-import javolution.util.FastMap;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -122,9 +123,9 @@ public final class FourSepulchersManager
 	};
 	// @formatter:on
 	
-	protected Map<Integer, Boolean> _archonSpawned = new FastMap<>();
-	protected Map<Integer, Boolean> _hallInUse = new FastMap<>();
-	protected Map<Integer, PlayerInstance> _challengers = new FastMap<>();
+	protected Map<Integer, Boolean> _archonSpawned = new ConcurrentHashMap<>();
+	protected Map<Integer, Boolean> _hallInUse = new ConcurrentHashMap<>();
+	protected Map<Integer, PlayerInstance> _challengers = new ConcurrentHashMap<>();
 	protected Map<Integer, int[]> _startHallSpawns = new HashMap<>();
 	protected Map<Integer, Integer> _hallGateKeepers = new HashMap<>();
 	protected Map<Integer, Integer> _keyBoxNpc = new HashMap<>();

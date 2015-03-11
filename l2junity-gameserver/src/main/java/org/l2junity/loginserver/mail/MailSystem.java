@@ -23,10 +23,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import javax.xml.parsers.DocumentBuilderFactory;
-
-import javolution.util.FastMap;
 
 import org.l2junity.Config;
 import org.slf4j.Logger;
@@ -40,7 +39,7 @@ import org.w3c.dom.Node;
 public class MailSystem
 {
 	private static final Logger _log = LoggerFactory.getLogger(MailSystem.class.getName());
-	private final Map<String, MailContent> _mailData = new FastMap<>();
+	private final Map<String, MailContent> _mailData = new ConcurrentHashMap<>();
 	
 	public static MailSystem getInstance()
 	{

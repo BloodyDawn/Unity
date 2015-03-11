@@ -24,8 +24,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-import javolution.util.FastMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
@@ -43,7 +42,7 @@ import org.slf4j.LoggerFactory;
 public class BlockList
 {
 	private static Logger _log = LoggerFactory.getLogger(BlockList.class.getName());
-	private static Map<Integer, List<Integer>> _offlineList = new FastMap<Integer, List<Integer>>().shared();
+	private static Map<Integer, List<Integer>> _offlineList = new ConcurrentHashMap<>();
 	
 	private final PlayerInstance _owner;
 	private List<Integer> _blockList;

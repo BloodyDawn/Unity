@@ -18,9 +18,9 @@
  */
 package org.l2junity.gameserver.model.zone.type;
 
+import java.util.Map;
 import java.util.Map.Entry;
-
-import javolution.util.FastMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -46,7 +46,7 @@ public class EffectZone extends ZoneType
 	private int _reuse;
 	protected boolean _bypassConditions;
 	private boolean _isShowDangerIcon;
-	protected volatile FastMap<Integer, Integer> _skills;
+	protected volatile Map<Integer, Integer> _skills;
 	
 	public EffectZone(int id)
 	{
@@ -92,12 +92,12 @@ public class EffectZone extends ZoneType
 		}
 		else if (name.equals("maxDynamicSkillCount"))
 		{
-			_skills = new FastMap<Integer, Integer>(Integer.parseInt(value)).shared();
+			_skills = new ConcurrentHashMap<>(Integer.parseInt(value));
 		}
 		else if (name.equals("skillIdLvl"))
 		{
 			String[] propertySplit = value.split(";");
-			_skills = new FastMap<>(propertySplit.length);
+			_skills = new ConcurrentHashMap<>(propertySplit.length);
 			for (String skill : propertySplit)
 			{
 				String[] skillSplit = skill.split("-");
@@ -203,7 +203,7 @@ public class EffectZone extends ZoneType
 			{
 				if (_skills == null)
 				{
-					_skills = new FastMap<Integer, Integer>(3).shared();
+					_skills = new ConcurrentHashMap<>(3);
 				}
 			}
 		}

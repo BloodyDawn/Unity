@@ -35,7 +35,6 @@ import javax.swing.SwingConstants;
 import org.l2junity.tools.dbinstaller.RunTasks;
 import org.l2junity.tools.dbinstaller.util.mysql.MySqlConnect;
 import org.l2junity.tools.dbinstaller.util.swing.SpringUtilities;
-import org.l2junity.tools.images.ImagesTable;
 
 /**
  * @author mrTJO
@@ -61,7 +60,6 @@ public class DBConfigGUI extends JFrame
 		super("L2J Database Installer");
 		setLayout(new SpringLayout());
 		setDefaultLookAndFeelDecorated(true);
-		setIconImage(ImagesTable.getImage("l2j.png").getImage());
 		
 		_db = db;
 		_dir = dir;

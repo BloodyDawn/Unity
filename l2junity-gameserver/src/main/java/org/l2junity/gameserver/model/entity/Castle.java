@@ -26,7 +26,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import javolution.util.FastMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -84,7 +84,7 @@ public final class Castle extends AbstractResidence
 	private ResidenceTeleportZone _teleZone;
 	private L2Clan _formerOwner = null;
 	private final List<L2ArtefactInstance> _artefacts = new ArrayList<>(1);
-	private final Map<Integer, CastleFunction> _function;
+	private final Map<Integer, CastleFunction> _function = new ConcurrentHashMap<>();
 	private int _ticketBuyCount = 0;
 	
 	/** Castle Functions */
@@ -241,7 +241,6 @@ public final class Castle extends AbstractResidence
 	{
 		super(castleId);
 		load();
-		_function = new FastMap<>();
 		initResidenceZone();
 		spawnSideNpcs();
 		if (getOwnerId() != 0)

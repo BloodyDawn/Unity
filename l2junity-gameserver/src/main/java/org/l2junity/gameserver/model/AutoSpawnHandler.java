@@ -23,14 +23,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 import javolution.util.FastList;
-import javolution.util.FastMap;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.commons.util.Rnd;
@@ -75,8 +76,8 @@ public class AutoSpawnHandler
 	
 	protected AutoSpawnHandler()
 	{
-		_registeredSpawns = new FastMap<>();
-		_runningSpawns = new FastMap<>();
+		_registeredSpawns = new ConcurrentHashMap<>();
+		_runningSpawns = new ConcurrentHashMap<>();
 		
 		restoreSpawnData();
 	}
@@ -111,8 +112,8 @@ public class AutoSpawnHandler
 		}
 		
 		// create clean list
-		_registeredSpawns = new FastMap<>();
-		_runningSpawns = new FastMap<>();
+		_registeredSpawns = new ConcurrentHashMap<>();
+		_runningSpawns = new ConcurrentHashMap<>();
 		
 		// load
 		restoreSpawnData();
@@ -372,7 +373,7 @@ public class AutoSpawnHandler
 	
 	public Map<Integer, AutoSpawnInstance> getAutoSpawnInstances(int npcId)
 	{
-		Map<Integer, AutoSpawnInstance> spawnInstList = new FastMap<>();
+		Map<Integer, AutoSpawnInstance> spawnInstList = new HashMap<>();
 		
 		for (AutoSpawnInstance spawnInst : _registeredSpawns.values())
 		{
