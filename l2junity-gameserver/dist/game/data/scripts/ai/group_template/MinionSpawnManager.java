@@ -394,8 +394,8 @@ public final class MinionSpawnManager extends AbstractNpcAI
 		NPC.add(29141); // Lost Captain
 		NPC.add(29144); // Lost Captain
 		NPC.add(29147); // Lost Captain
-		NPC.add(22958); //
-		NPC.add(23160); //
+		NPC.add(22958); // Moon Garden Manager
+		NPC.add(23160); // Garden Chief Priest
 	}
 	
 	private static final NpcStringId[] ON_ATTACK_MSG =
