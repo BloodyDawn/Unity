@@ -31,8 +31,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-import javolution.util.FastList;
 import javolution.util.FastMap;
 
 import org.l2junity.Config;
@@ -235,7 +235,7 @@ public class Hero
 	
 	public void loadDiary(int charId)
 	{
-		final List<StatsSet> _diary = new FastList<>();
+		final List<StatsSet> _diary = new CopyOnWriteArrayList<>();
 		int diaryentries = 0;
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement("SELECT * FROM  heroes_diary WHERE charId=? ORDER BY time ASC"))
@@ -290,7 +290,7 @@ public class Hero
 	
 	public void loadFights(int charId)
 	{
-		final List<StatsSet> _fights = new FastList<>();
+		final List<StatsSet> _fights = new CopyOnWriteArrayList<>();
 		StatsSet _herocountdata = new StatsSet();
 		Calendar _data = Calendar.getInstance();
 		_data.set(Calendar.DAY_OF_MONTH, 1);

@@ -18,10 +18,10 @@
  */
 package org.l2junity.gameserver.model;
 
+import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.Function;
-
-import javolution.util.FastList;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -38,7 +38,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public class CommandChannel extends AbstractPlayerGroup
 {
-	private final List<Party> _parties;
+	private final List<Party> _parties = new CopyOnWriteArrayList<>();
 	private PlayerInstance _commandLeader = null;
 	private int _channelLvl;
 	
@@ -50,7 +50,6 @@ public class CommandChannel extends AbstractPlayerGroup
 	{
 		_commandLeader = leader;
 		Party party = leader.getParty();
-		_parties = new FastList<Party>().shared();
 		_parties.add(party);
 		_channelLvl = party.getLevel();
 		party.setCommandChannel(this);
@@ -164,7 +163,7 @@ public class CommandChannel extends AbstractPlayerGroup
 	@Override
 	public List<PlayerInstance> getMembers()
 	{
-		List<PlayerInstance> members = new FastList<PlayerInstance>().shared();
+		List<PlayerInstance> members = new LinkedList<>();
 		for (Party party : getPartys())
 		{
 			members.addAll(party.getMembers());

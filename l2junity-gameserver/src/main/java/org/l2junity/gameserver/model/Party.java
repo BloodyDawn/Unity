@@ -24,12 +24,10 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Future;
-
-import javolution.util.FastList;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
@@ -84,7 +82,7 @@ public class Party extends AbstractPlayerGroup
 	private static final Duration PARTY_POSITION_BROADCAST_INTERVAL = Duration.ofSeconds(12);
 	private static final Duration PARTY_DISTRIBUTION_TYPE_REQUEST_TIMEOUT = Duration.ofSeconds(15);
 	
-	private final FastList<PlayerInstance> _members;
+	private final List<PlayerInstance> _members = new CopyOnWriteArrayList<>();
 	private boolean _pendingInvitation = false;
 	private long _pendingInviteTimeout;
 	private int _partyLvl = 0;
@@ -125,7 +123,6 @@ public class Party extends AbstractPlayerGroup
 	 */
 	public Party(PlayerInstance leader, PartyDistributionType partyDistributionType)
 	{
-		_members = new FastList<PlayerInstance>().shared();
 		_members.add(leader);
 		_partyLvl = leader.getLevel();
 		_distributionType = partyDistributionType;
@@ -1059,9 +1056,9 @@ public class Party extends AbstractPlayerGroup
 	{
 		try
 		{
-			return _members.getFirst();
+			return _members.get(0);
 		}
-		catch (NoSuchElementException e)
+		catch (IndexOutOfBoundsException e)
 		{
 			return null;
 		}

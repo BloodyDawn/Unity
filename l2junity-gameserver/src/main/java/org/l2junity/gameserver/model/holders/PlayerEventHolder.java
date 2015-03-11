@@ -18,9 +18,9 @@
  */
 package org.l2junity.gameserver.model.holders;
 
-import java.util.List;
-
-import javolution.util.FastList;
+import java.util.Collections;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.model.Location;
@@ -51,7 +51,7 @@ public final class PlayerEventHolder
 	private final int _pkKills;
 	private final int _karma;
 	
-	private final List<PlayerInstance> _kills;
+	private final Map<PlayerInstance, Integer> _kills = new ConcurrentHashMap<>();
 	private boolean _sitForced;
 	
 	public PlayerEventHolder(PlayerInstance player)
@@ -69,7 +69,6 @@ public final class PlayerEventHolder
 		_pvpKills = player.getPvpKills();
 		_pkKills = player.getPkKills();
 		_karma = player.getKarma();
-		_kills = new FastList<>();
 		_sitForced = sitForced;
 	}
 	
@@ -95,8 +94,13 @@ public final class PlayerEventHolder
 		return _sitForced;
 	}
 	
-	public List<PlayerInstance> getKills()
+	public Map<PlayerInstance, Integer> getKills()
 	{
-		return _kills;
+		return Collections.unmodifiableMap(_kills);
+	}
+	
+	public void addKill(PlayerInstance player)
+	{
+		_kills.merge(player, 1, Integer::sum);
 	}
 }

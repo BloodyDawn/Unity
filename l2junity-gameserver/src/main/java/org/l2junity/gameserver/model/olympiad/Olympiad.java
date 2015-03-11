@@ -26,16 +26,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
-
-import javolution.util.FastList;
-import javolution.util.FastMap;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -62,8 +62,7 @@ public class Olympiad extends ListenersContainer
 	protected static final Logger _log = LoggerFactory.getLogger(Olympiad.class.getName());
 	protected static final Logger _logResults = LoggerFactory.getLogger("olympiad");
 	
-	private static final Map<Integer, StatsSet> _nobles = new FastMap<>();
-	protected static List<StatsSet> _heroesToBe;
+	private static final Map<Integer, StatsSet> _nobles = new ConcurrentHashMap<>();
 	private static final Map<Integer, Integer> _noblesRank = new HashMap<>();
 	
 	public static final String OLYMPIAD_HTML_PATH = "data/html/olympiad/";
@@ -379,9 +378,9 @@ public class Olympiad extends ListenersContainer
 			saveNobleData();
 			
 			_period = 1;
-			sortHerosToBe();
+			List<StatsSet> heroesToBe = sortHerosToBe();
 			Hero.getInstance().resetData();
-			Hero.getInstance().computeNewHeroes(_heroesToBe);
+			Hero.getInstance().computeNewHeroes(heroesToBe);
 			
 			saveOlympiadStatus();
 			updateMonthlyData();
@@ -805,11 +804,11 @@ public class Olympiad extends ListenersContainer
 		}
 	}
 	
-	protected void sortHerosToBe()
+	protected List<StatsSet> sortHerosToBe()
 	{
 		if (_period != 1)
 		{
-			return;
+			return Collections.emptyList();
 		}
 		
 		if (_nobles != null)
@@ -834,7 +833,7 @@ public class Olympiad extends ListenersContainer
 			}
 		}
 		
-		_heroesToBe = new FastList<>();
+		List<StatsSet> heroesToBe = new LinkedList<>();
 		
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(OLYMPIAD_GET_HEROS))
@@ -854,7 +853,7 @@ public class Olympiad extends ListenersContainer
 						hero.set(CHAR_NAME, rset.getString(CHAR_NAME));
 						
 						_logResults.info("Hero {},{},{}", hero.getString(CHAR_NAME), hero.getInt(CHAR_ID), hero.getInt(CLASS_ID));
-						_heroesToBe.add(hero);
+						heroesToBe.add(hero);
 					}
 				}
 			}
@@ -863,6 +862,8 @@ public class Olympiad extends ListenersContainer
 		{
 			_log.warn("Olympiad System: Couldnt load heros from DB");
 		}
+		
+		return heroesToBe;
 	}
 	
 	public List<String> getClassLeaderBoard(int classId)

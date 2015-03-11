@@ -5173,7 +5173,7 @@ public final class PlayerInstance extends Playable
 				
 				if (L2Event.isParticipant(pk))
 				{
-					pk.getEventStatus().getKills().add(this);
+					pk.getEventStatus().addKill(this);
 				}
 				
 				// announce pvp/pk
