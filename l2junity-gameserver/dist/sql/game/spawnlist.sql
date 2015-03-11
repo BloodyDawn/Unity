@@ -38592,4 +38592,331 @@ INSERT INTO `spawnlist` VALUES
 ('26_20', 1, 32908, 206807, 91560, -544, 0, 0, 34728, 60, 0, 0, 0), -- Un Magnier
 ('26_20', 1, 32906, 206324, 92057, -544, 0, 0, 54604, 60, 0, 0, 0), -- Mystery Cat
 ('26_20', 1, 32893, 206433, 92096, -544, 0, 0, 51168, 60, 0, 0, 0), -- Slaski
-('26_20', 1, 32899, 208124, 90119, -1024, 0, 0, 43992, 60, 0, 0, 0); -- Hamrun
+('26_20', 1, 32899, 208124, 90119, -1024, 0, 0, 43992, 60, 0, 0, 0), -- Hamrun
+-- Garden of Genesis NPCs
+('garden_of_genesis', 1, 33031, 207798, 112440, -2064, 0, 0, 1032, 60, 0, 0, 0), -- Horpina
+('garden_of_genesis', 1, 33032, 207896, 112474, -2056, 0, 0, 49988, 60, 0, 0, 0), -- Selina
+('garden_of_genesis', 1, 33089, 211049, 89489, -1144, 0, 0, 0, 60, 0, 0, 0), -- Teleport Device Garden of Genesis
+('garden_of_genesis', 1, 33090, 207548, 112632, -2016, 0, 0, 0, 60, 0, 0, 0), -- Teleport Device Garden of Genesis
+('garden_of_genesis', 1, 33138, 209824, 119364, -1328, 0, 0, 0, 60, 0, 0, 0), -- Genesis Angel Statue
+('garden_of_genesis', 1, 33139, 217788, 110940, -1320, 0, 0, 15476, 60, 0, 0, 0), -- Fountain of Genesis
+('garden_of_genesis', 1, 33140, 217792, 119136, -1736, 0, 0, 48660, 60, 0, 0, 0), -- Genesis Goddess Statue
+('garden_of_genesis', 1, 33565, 207036, 111212, -2032, 0, 0, 0, 60, 0, 0, 0), -- Hermuncus' Minion Dimension Keeper
+-- Garden of Genesis monsters
+('garden_of_genesis', 1, 18987, 208268, 119790, -1304, 0, 0, 0, 60, 0, 0, 0), -- Vine
+('garden_of_genesis', 1, 18987, 208363, 120615, -1304, 0, 0, 0, 60, 0, 0, 0), -- Vine
+('garden_of_genesis', 1, 18987, 209236, 118067, -1304, 0, 0, 0, 60, 0, 0, 0), -- Vine
+('garden_of_genesis', 1, 18987, 209995, 120637, -1304, 0, 0, 0, 60, 0, 0, 0), -- Vine
+('garden_of_genesis', 1, 18987, 210850, 118064, -1304, 0, 0, 0, 60, 0, 0, 0), -- Vine
+('garden_of_genesis', 1, 18987, 210852, 119030, -1304, 0, 0, 0, 60, 0, 0, 0), -- Vine
+('garden_of_genesis', 1, 18987, 212211, 116137, -896, 0, 0, 0, 60, 0, 0, 0), -- Vine
+('garden_of_genesis', 1, 18987, 212867, 113722, -896, 0, 0, 0, 60, 0, 0, 0), -- Vine
+('garden_of_genesis', 1, 18987, 214490, 116789, -896, 0, 0, 0, 60, 0, 0, 0), -- Vine
+('garden_of_genesis', 1, 18987, 214538, 113754, -896, 0, 0, 0, 60, 0, 0, 0), -- Vine
+('garden_of_genesis', 1, 18987, 216493, 109893, -1304, 0, 0, 0, 60, 0, 0, 0), -- Vine
+('garden_of_genesis', 1, 18987, 216558, 112414, -1304, 0, 0, 0, 60, 0, 0, 0), -- Vine
+('garden_of_genesis', 1, 18987, 218097, 112429, -1304, 0, 0, 0, 60, 0, 0, 0), -- Vine
+('garden_of_genesis', 1, 18987, 219014, 110853, -1304, 0, 0, 0, 60, 0, 0, 0), -- Vine
+('garden_of_genesis', 1, 18987, 219026, 109908, -1304, 0, 0, 0, 60, 0, 0, 0), -- Vine
+('garden_of_genesis', 1, 18987, 219063, 112424, -1304, 0, 0, 0, 60, 0, 0, 0), -- Vine
+('garden_of_genesis', 1, 22947, 205697, 117278, -2112, 0, 0, 61794, 60, 0, 0, 0), -- Garden Sentry
+('garden_of_genesis', 1, 22947, 206419, 117449, -2144, 0, 0, 24415, 60, 0, 0, 0), -- Garden Sentry
+('garden_of_genesis', 1, 22947, 206592, 114688, -2000, 0, 0, 9649, 60, 0, 0, 0), -- Garden Sentry
+('garden_of_genesis', 1, 22947, 206997, 115892, -2064, 0, 0, 62759, 60, 0, 0, 0), -- Garden Sentry
+('garden_of_genesis', 1, 22947, 210743, 109746, -1976, 0, 0, 44989, 60, 0, 0, 0), -- Garden Sentry
+('garden_of_genesis', 1, 22947, 210940, 110456, -2040, 0, 0, 40323, 60, 0, 0, 0), -- Garden Sentry
+('garden_of_genesis', 1, 22947, 211013, 111564, -2048, 0, 0, 3715, 60, 0, 0, 0), -- Garden Sentry
+('garden_of_genesis', 1, 22947, 211743, 109510, -2096, 0, 0, 8727, 60, 0, 0, 0), -- Garden Sentry
+('garden_of_genesis', 1, 22947, 211743, 110465, -2088, 0, 0, 58765, 60, 0, 0, 0), -- Garden Sentry
+('garden_of_genesis', 1, 22947, 212445, 110274, -2080, 0, 0, 17907, 60, 0, 0, 0), -- Garden Sentry
+('garden_of_genesis', 1, 22947, 213525, 121977, -1976, 0, 0, 45996, 60, 0, 0, 0), -- Garden Sentry
+('garden_of_genesis', 1, 22947, 214491, 119232, -2096, 0, 0, 55227, 60, 0, 0, 0), -- Garden Sentry
+('garden_of_genesis', 1, 22947, 215043, 121062, -2128, 0, 0, 8708, 60, 0, 0, 0), -- Garden Sentry
+('garden_of_genesis', 1, 22947, 215181, 121428, -2120, 0, 0, 38213, 60, 0, 0, 0), -- Garden Sentry
+('garden_of_genesis', 1, 22947, 219035, 115570, -2056, 0, 0, 30949, 60, 0, 0, 0), -- Garden Sentry
+('garden_of_genesis', 1, 22947, 219740, 116329, -2112, 0, 0, 36173, 60, 0, 0, 0), -- Garden Sentry
+('garden_of_genesis', 1, 22947, 220210, 115570, -2048, 0, 0, 29907, 60, 0, 0, 0), -- Garden Sentry
+('garden_of_genesis', 1, 22947, 221150, 116076, -1992, 0, 0, 9580, 60, 0, 0, 0), -- Garden Sentry
+('garden_of_genesis', 1, 22947, 221385, 115064, -2008, 0, 0, 45067, 60, 0, 0, 0), -- Garden Sentry
+('garden_of_genesis', 1, 22947, 221855, 116582, -1912, 0, 0, 51748, 60, 0, 0, 0), -- Garden Sentry
+('garden_of_genesis', 1, 22948, 205861, 117415, -2120, 0, 0, 63790, 60, 0, 0, 0), -- Garden Scout
+('garden_of_genesis', 1, 22948, 206293, 116783, -2128, 0, 0, 23095, 60, 0, 0, 0), -- Garden Scout
+('garden_of_genesis', 1, 22948, 206698, 114962, -2024, 0, 0, 19079, 60, 0, 0, 0), -- Garden Scout
+('garden_of_genesis', 1, 22948, 206773, 114931, -2024, 0, 0, 5505, 60, 0, 0, 0), -- Garden Scout
+('garden_of_genesis', 1, 22948, 206906, 114727, -2008, 0, 0, 7699, 60, 0, 0, 0), -- Garden Scout
+('garden_of_genesis', 1, 22948, 207599, 114917, -2064, 0, 0, 1529, 60, 0, 0, 0), -- Garden Scout
+('garden_of_genesis', 1, 22948, 208932, 110898, -2048, 0, 0, 9509, 60, 0, 0, 0), -- Garden Scout
+('garden_of_genesis', 1, 22948, 209624, 110713, -2008, 0, 0, 17666, 60, 0, 0, 0), -- Garden Scout
+('garden_of_genesis', 1, 22948, 210936, 109255, -2040, 0, 0, 46014, 60, 0, 0, 0), -- Garden Scout
+('garden_of_genesis', 1, 22948, 211702, 110715, -2096, 0, 0, 55096, 60, 0, 0, 0), -- Garden Scout
+('garden_of_genesis', 1, 22948, 213111, 121794, -2024, 0, 0, 7196, 60, 0, 0, 0), -- Garden Scout
+('garden_of_genesis', 1, 22948, 213525, 121428, -2016, 0, 0, 42213, 60, 0, 0, 0), -- Garden Scout
+('garden_of_genesis', 1, 22948, 214077, 119232, -2088, 0, 0, 34900, 60, 0, 0, 0), -- Garden Scout
+('garden_of_genesis', 1, 22948, 214353, 121977, -2016, 0, 0, 16516, 60, 0, 0, 0), -- Garden Scout
+('garden_of_genesis', 1, 22948, 214629, 119415, -2104, 0, 0, 8455, 60, 0, 0, 0), -- Garden Scout
+('garden_of_genesis', 1, 22948, 219270, 116329, -2096, 0, 0, 6173, 60, 0, 0, 0), -- Garden Scout
+('garden_of_genesis', 1, 22948, 219505, 115317, -2048, 0, 0, 21249, 60, 0, 0, 0), -- Garden Scout
+('garden_of_genesis', 1, 22948, 219505, 115570, -2040, 0, 0, 41989, 60, 0, 0, 0), -- Garden Scout
+('garden_of_genesis', 1, 22948, 220915, 114305, -2048, 0, 0, 47613, 60, 0, 0, 0), -- Garden Scout
+('garden_of_genesis', 1, 22948, 221855, 113546, -2048, 0, 0, 35052, 60, 0, 0, 0), -- Garden Scout
+('garden_of_genesis', 1, 22949, 205712, 116039, -2000, 0, 0, 31445, 30, 0, 0, 0), -- Garden Commander
+('garden_of_genesis', 1, 22949, 206095, 117368, -2136, 0, 0, 1162, 30, 0, 0, 0), -- Garden Commander
+('garden_of_genesis', 1, 22949, 206107, 114725, -1976, 0, 0, 15728, 30, 0, 0, 0), -- Garden Commander
+('garden_of_genesis', 1, 22949, 206523, 115905, -2056, 0, 0, 45646, 30, 0, 0, 0), -- Garden Commander
+('garden_of_genesis', 1, 22949, 208835, 114701, -2056, 0, 0, 20015, 30, 0, 0, 0), -- Garden Commander
+('garden_of_genesis', 1, 22949, 210953, 109457, -2032, 0, 0, 25392, 30, 0, 0, 0), -- Garden Commander
+('garden_of_genesis', 1, 22949, 210977, 111646, -2048, 0, 0, 61783, 30, 0, 0, 0), -- Garden Commander
+('garden_of_genesis', 1, 22949, 211060, 110538, -2048, 0, 0, 2272, 30, 0, 0, 0), -- Garden Commander
+('garden_of_genesis', 1, 22949, 211128, 109818, -2024, 0, 0, 35324, 30, 0, 0, 0), -- Garden Commander
+('garden_of_genesis', 1, 22949, 211295, 111224, -2048, 0, 0, 57619, 30, 0, 0, 0), -- Garden Commander
+('garden_of_genesis', 1, 22949, 213939, 120513, -2064, 0, 0, 1741, 30, 0, 0, 0), -- Garden Commander
+('garden_of_genesis', 1, 22949, 214353, 119598, -2088, 0, 0, 7837, 30, 0, 0, 0), -- Garden Commander
+('garden_of_genesis', 1, 22949, 214491, 122160, -2000, 0, 0, 26345, 30, 0, 0, 0), -- Garden Commander
+('garden_of_genesis', 1, 22949, 214629, 119781, -2096, 0, 0, 21932, 30, 0, 0, 0), -- Garden Commander
+('garden_of_genesis', 1, 22949, 214629, 120513, -2072, 0, 0, 50225, 30, 0, 0, 0), -- Garden Commander
+('garden_of_genesis', 1, 22949, 214629, 120696, -2080, 0, 0, 2785, 30, 0, 0, 0), -- Garden Commander
+('garden_of_genesis', 1, 22949, 217860, 115823, -2056, 0, 0, 23099, 30, 0, 0, 0), -- Garden Commander
+('garden_of_genesis', 1, 22949, 218800, 116076, -2112, 0, 0, 8959, 30, 0, 0, 0), -- Garden Commander
+('garden_of_genesis', 1, 22949, 221620, 115570, -1896, 0, 0, 32618, 30, 0, 0, 0), -- Garden Commander
+('garden_of_genesis', 1, 22949, 222090, 114811, -1912, 0, 0, 63653, 60, 0, 0, 0), -- Garden Commander
+('garden_of_genesis', 1, 22950, 207097, 114788, -2024, 0, 0, 27030, 60, 0, 0, 0), -- Outdoor Gardener
+('garden_of_genesis', 1, 22950, 211459, 110326, -2088, 0, 0, 53504, 60, 0, 0, 0), -- Outdoor Gardener
+('garden_of_genesis', 1, 22950, 214856, 122284, -2040, 0, 0, 57344, 60, 0, 0, 0), -- Outdoor Gardener
+('garden_of_genesis', 1, 22950, 221425, 113883, -2056, 0, 0, 15774, 60, 0, 0, 0), -- Outdoor Gardener
+('garden_of_genesis', 1, 22951, 206619, 116659, -2128, 0, 0, 59269, 60, 0, 0, 0), -- Garden Destroyer
+('garden_of_genesis', 1, 22951, 206635, 114713, -2000, 0, 0, 7470, 60, 0, 0, 0), -- Garden Destroyer
+('garden_of_genesis', 1, 22951, 206836, 116051, -2072, 0, 0, 58378, 60, 0, 0, 0), -- Garden Destroyer
+('garden_of_genesis', 1, 22951, 211233, 111116, -2048, 0, 0, 12619, 60, 0, 0, 0), -- Garden Destroyer
+('garden_of_genesis', 1, 22951, 211275, 110465, -2072, 0, 0, 54981, 60, 0, 0, 0), -- Garden Destroyer
+('garden_of_genesis', 1, 22951, 212034, 111403, -2096, 0, 0, 30397, 60, 0, 0, 0), -- Garden Destroyer
+('garden_of_genesis', 1, 22951, 213387, 122526, -1904, 0, 0, 14836, 60, 0, 0, 0), -- Garden Destroyer
+('garden_of_genesis', 1, 22951, 214353, 120330, -2056, 0, 0, 64613, 60, 0, 0, 0), -- Garden Destroyer
+('garden_of_genesis', 1, 22951, 215181, 121062, -2120, 0, 0, 61013, 60, 0, 0, 0), -- Garden Destroyer
+('garden_of_genesis', 1, 22951, 219740, 116582, -2128, 0, 0, 3558, 60, 0, 0, 0), -- Garden Destroyer
+('garden_of_genesis', 1, 22951, 220445, 113799, -2104, 0, 0, 40877, 60, 0, 0, 0), -- Garden Destroyer
+('garden_of_genesis', 1, 22951, 221620, 118100, -2072, 0, 0, 64674, 60, 0, 0, 0), -- Garden Destroyer
+('garden_of_genesis', 1, 22953, 208699, 121154, -1304, 0, 0, 49950, 60, 0, 0, 1), -- Garden Scout (Day)
+('garden_of_genesis', 1, 22953, 209143, 118117, -1304, 0, 0, 8560, 60, 0, 0, 1), -- Garden Scout (Day)
+('garden_of_genesis', 1, 22953, 211001, 118458, -1144, 0, 0, 10250, 60, 0, 0, 1), -- Garden Scout (Day)
+('garden_of_genesis', 1, 22953, 211094, 120061, -1304, 0, 0, 11993, 60, 0, 0, 1), -- Garden Scout (Day)
+('garden_of_genesis', 1, 22953, 212758, 113440, -896, 0, 0, 36465, 60, 0, 0, 1), -- Garden Scout (Day)
+('garden_of_genesis', 1, 22953, 213222, 116717, -896, 0, 0, 17197, 60, 0, 0, 1), -- Garden Scout (Day)
+('garden_of_genesis', 1, 22953, 214713, 113821, -896, 0, 0, 48764, 60, 0, 0, 1), -- Garden Scout (Day)
+('garden_of_genesis', 1, 22953, 215301, 115737, -896, 0, 0, 34013, 60, 0, 0, 1), -- Garden Scout (Day)
+('garden_of_genesis', 1, 22953, 216358, 112675, -1304, 0, 0, 1755, 60, 0, 0, 1), -- Garden Scout (Day)
+('garden_of_genesis', 1, 22953, 217124, 110982, -1144, 0, 0, 4641, 60, 0, 0, 1), -- Garden Scout (Day)
+('garden_of_genesis', 1, 22953, 218237, 111582, -1344, 0, 0, 54808, 60, 0, 0, 1), -- Garden Scout (Day)
+('garden_of_genesis', 1, 22953, 218726, 110719, -1304, 0, 0, 46338, 60, 0, 0, 1), -- Garden Scout (Day)
+('garden_of_genesis', 1, 22954, 207911, 117844, -1304, 0, 0, 4972, 60, 0, 0, 1), -- Sun Garden Manager (Day)
+('garden_of_genesis', 1, 22954, 208527, 120074, -1304, 0, 0, 24292, 60, 0, 0, 1), -- Sun Garden Manager (Day)
+('garden_of_genesis', 1, 22954, 209319, 117935, -1304, 0, 0, 22587, 60, 0, 0, 1), -- Sun Garden Manager (Day)
+('garden_of_genesis', 1, 22954, 209387, 120974, -1304, 0, 0, 60580, 60, 0, 0, 1), -- Sun Garden Manager (Day)
+('garden_of_genesis', 1, 22954, 209473, 120074, -1352, 0, 0, 55488, 60, 0, 0, 1), -- Sun Garden Manager (Day)
+('garden_of_genesis', 1, 22954, 209718, 120241, -1320, 0, 0, 1494, 60, 0, 0, 1), -- Sun Garden Manager (Day)
+('garden_of_genesis', 1, 22954, 209797, 118818, -1352, 0, 0, 17958, 60, 0, 0, 1), -- Sun Garden Manager (Day)
+('garden_of_genesis', 1, 22954, 210227, 118548, -1336, 0, 0, 14934, 60, 0, 0, 1), -- Sun Garden Manager (Day)
+('garden_of_genesis', 1, 22954, 210578, 120781, -1304, 0, 0, 5423, 60, 0, 0, 1), -- Sun Garden Manager (Day)
+('garden_of_genesis', 1, 22954, 212046, 116414, -896, 0, 0, 15202, 60, 0, 0, 1), -- Sun Garden Manager (Day)
+('garden_of_genesis', 1, 22954, 213444, 113440, -896, 0, 0, 37292, 60, 0, 0, 1), -- Sun Garden Manager (Day)
+('garden_of_genesis', 1, 22954, 214125, 116815, -896, 0, 0, 63812, 60, 0, 0, 1), -- Sun Garden Manager (Day)
+('garden_of_genesis', 1, 22954, 215007, 114213, -896, 0, 0, 45339, 60, 0, 0, 1), -- Sun Garden Manager (Day)
+('garden_of_genesis', 1, 22954, 216264, 109812, -1304, 0, 0, 29427, 60, 0, 0, 1), -- Sun Garden Manager (Day)
+('garden_of_genesis', 1, 22954, 216283, 111861, -1304, 0, 0, 62474, 60, 0, 0, 1), -- Sun Garden Manager (Day)
+('garden_of_genesis', 1, 22954, 216608, 111162, -1304, 0, 0, 50774, 60, 0, 0, 1), -- Sun Garden Manager (Day)
+('garden_of_genesis', 1, 22954, 216617, 112534, -1304, 0, 0, 4368, 60, 0, 0, 1), -- Sun Garden Manager (Day)
+('garden_of_genesis', 1, 22954, 217046, 112945, -1304, 0, 0, 6144, 60, 0, 0, 1), -- Sun Garden Manager (Day)
+('garden_of_genesis', 1, 22954, 217468, 110802, -1344, 0, 0, 1771, 60, 0, 0, 1), -- Sun Garden Manager (Day)
+('garden_of_genesis', 1, 22954, 218667, 112842, -1304, 0, 0, 32728, 60, 0, 0, 1), -- Sun Garden Manager (Day)
+('garden_of_genesis', 1, 22954, 218746, 109439, -1304, 0, 0, 11733, 60, 0, 0, 1), -- Sun Garden Manager (Day)
+('garden_of_genesis', 1, 22954, 219097, 112302, -1304, 0, 0, 21258, 60, 0, 0, 1), -- Sun Garden Manager (Day)
+('garden_of_genesis', 1, 22954, 219176, 110609, -1304, 0, 0, 19846, 60, 0, 0, 1), -- Sun Garden Manager (Day)
+('garden_of_genesis', 1, 22955, 208175, 118117, -1304, 0, 0, 50203, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 208699, 119624, -1312, 0, 0, 36457, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 208703, 118754, -1312, 0, 0, 51826, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 209301, 120794, -1304, 0, 0, 8291, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 210313, 118638, -1352, 0, 0, 7500, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 210492, 120151, -1320, 0, 0, 8260, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 211087, 117738, -1304, 0, 0, 40866, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 211094, 120421, -1304, 0, 0, 64220, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 211948, 116111, -896, 0, 0, 64052, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 211974, 114322, -896, 0, 0, 14692, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 212072, 114518, -896, 0, 0, 53572, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 212732, 116515, -896, 0, 0, 55408, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 214321, 117305, -896, 0, 0, 26295, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 215105, 113919, -896, 0, 0, 806, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 216350, 110532, -1304, 0, 0, 36071, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 216400, 120636, -1736, 0, 0, 37740, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 216482, 120636, -1736, 0, 0, 40985, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 216491, 118777, -1736, 0, 0, 1011, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 216530, 112855, -1304, 0, 0, 5347, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 216694, 109632, -1304, 0, 0, 44584, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 216749, 118957, -1752, 0, 0, 59061, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 216835, 119137, -1760, 0, 0, 13568, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 217046, 112945, -1304, 0, 0, 2736, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 217056, 120458, -1736, 0, 0, 37152, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 217712, 120191, -1760, 0, 0, 49832, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 217712, 120636, -1736, 0, 0, 6967, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 217957, 120287, -1760, 0, 0, 12516, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 218215, 120833, -1736, 0, 0, 16797, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 218230, 109619, -1304, 0, 0, 8881, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 218473, 120196, -1752, 0, 0, 950, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 218807, 117684, -1736, 0, 0, 20147, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 218839, 112752, -1304, 0, 0, 47205, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 218903, 120742, -1736, 0, 0, 1402, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 218979, 118044, -1736, 0, 0, 44244, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 218979, 118134, -1736, 0, 0, 37742, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 218989, 120105, -1736, 0, 0, 15389, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 219004, 109439, -1304, 0, 0, 7347, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 219065, 118944, -1736, 0, 0, 4006, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22955, 219183, 111942, -1304, 0, 0, 63040, 60, 0, 0, 1), -- Sun Gardener (Day)
+('garden_of_genesis', 1, 22956, 207911, 118663, -1304, 0, 0, 48284, 60, 0, 0, 1), -- Garden Commander (Day)
+('garden_of_genesis', 1, 22956, 208183, 121154, -1304, 0, 0, 44673, 60, 0, 0, 1), -- Garden Commander (Day)
+('garden_of_genesis', 1, 22956, 208699, 119984, -1312, 0, 0, 57994, 60, 0, 0, 1), -- Garden Commander (Day)
+('garden_of_genesis', 1, 22956, 209495, 117753, -1304, 0, 0, 18056, 60, 0, 0, 1), -- Garden Commander (Day)
+('garden_of_genesis', 1, 22956, 210750, 120241, -1144, 0, 0, 30674, 60, 0, 0, 1), -- Garden Commander (Day)
+('garden_of_genesis', 1, 22956, 211259, 117918, -1304, 0, 0, 29753, 60, 0, 0, 1), -- Garden Commander (Day)
+('garden_of_genesis', 1, 22956, 211778, 114910, -896, 0, 0, 58324, 60, 0, 0, 1), -- Garden Commander (Day)
+('garden_of_genesis', 1, 22956, 212242, 116515, -896, 0, 0, 46644, 60, 0, 0, 1), -- Garden Commander (Day)
+('garden_of_genesis', 1, 22956, 214125, 113723, -896, 0, 0, 13507, 60, 0, 0, 1), -- Garden Commander (Day)
+('garden_of_genesis', 1, 22956, 214321, 116815, -896, 0, 0, 33174, 60, 0, 0, 1), -- Garden Commander (Day)
+('garden_of_genesis', 1, 22956, 216178, 110802, -1304, 0, 0, 39501, 60, 0, 0, 1), -- Garden Commander (Day)
+('garden_of_genesis', 1, 22956, 216272, 112315, -1304, 0, 0, 46022, 60, 0, 0, 1), -- Garden Commander (Day)
+('garden_of_genesis', 1, 22956, 216960, 112855, -1304, 0, 0, 35339, 60, 0, 0, 1), -- Garden Commander (Day)
+('garden_of_genesis', 1, 22956, 217640, 110262, -1312, 0, 0, 56574, 60, 0, 0, 1), -- Garden Commander (Day)
+('garden_of_genesis', 1, 22956, 218058, 109439, -1304, 0, 0, 31548, 60, 0, 0, 1), -- Garden Commander (Day)
+('garden_of_genesis', 1, 22956, 219355, 111492, -1304, 0, 0, 47224, 60, 0, 0, 1), -- Garden Commander (Day)
+('garden_of_genesis', 1, 22957, 208791, 117753, -1304, 0, 0, 60773, 60, 0, 0, 1), -- Garden Warrior (Day)
+('garden_of_genesis', 1, 22957, 209129, 120254, -1320, 0, 0, 27864, 60, 0, 0, 1), -- Garden Warrior (Day)
+('garden_of_genesis', 1, 22957, 209976, 121141, -1304, 0, 0, 10581, 60, 0, 0, 1), -- Garden Warrior (Day)
+('garden_of_genesis', 1, 22957, 210743, 118728, -1304, 0, 0, 22652, 60, 0, 0, 1), -- Garden Warrior (Day)
+('garden_of_genesis', 1, 22957, 212268, 114126, -896, 0, 0, 65134, 60, 0, 0, 1), -- Garden Warrior (Day)
+('garden_of_genesis', 1, 22957, 212340, 116111, -896, 0, 0, 42891, 60, 0, 0, 1), -- Garden Warrior (Day)
+('garden_of_genesis', 1, 22957, 214713, 116619, -896, 0, 0, 32894, 60, 0, 0, 1), -- Garden Warrior (Day)
+('garden_of_genesis', 1, 22957, 215399, 114703, -896, 0, 0, 16315, 60, 0, 0, 1), -- Garden Warrior (Day)
+('garden_of_genesis', 1, 22957, 217038, 111162, -1336, 0, 0, 10930, 60, 0, 0, 1), -- Garden Warrior (Day)
+('garden_of_genesis', 1, 22957, 217304, 111595, -1344, 0, 0, 64376, 60, 0, 0, 1), -- Garden Warrior (Day)
+('garden_of_genesis', 1, 22957, 219176, 110429, -1304, 0, 0, 26514, 60, 0, 0, 1), -- Garden Warrior (Day)
+('garden_of_genesis', 1, 22957, 219441, 111942, -1304, 0, 0, 40552, 60, 0, 0, 1), -- Garden Warrior (Day)
+('garden_of_genesis', 1, 22958, 208263, 118754, -1304, 0, 0, 8099, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 208441, 121244, -1040, 0, 0, 23536, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 208791, 118481, -1320, 0, 0, 26036, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 208967, 118299, -1304, 0, 0, 20191, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 209043, 119894, -1352, 0, 0, 35513, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 209473, 120074, -1352, 0, 0, 28348, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 209718, 120691, -1304, 0, 0, 52954, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 210227, 117828, -1304, 0, 0, 29956, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 211001, 117918, -1304, 0, 0, 32821, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 211266, 119791, -1304, 0, 0, 31870, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 211778, 114812, -896, 0, 0, 37491, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 211948, 116111, -896, 0, 0, 43528, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 212830, 117323, -896, 0, 0, 29939, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 212954, 113440, -896, 0, 0, 2490, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 214125, 116717, -896, 0, 0, 24880, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 214419, 113625, -896, 0, 0, 6017, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 214517, 117305, -896, 0, 0, 39176, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 215203, 115193, -896, 0, 0, 41329, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 216092, 109722, -1304, 0, 0, 27552, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 216100, 112225, -1304, 0, 0, 17187, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 216178, 110802, -1304, 0, 0, 49883, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 217218, 112855, -1304, 0, 0, 26309, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 217640, 110802, -1344, 0, 0, 58300, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 217648, 111775, -1344, 0, 0, 47328, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 218058, 110879, -1344, 0, 0, 56626, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 218574, 110429, -1336, 0, 0, 23336, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 218925, 112932, -1304, 0, 0, 45136, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22958, 219097, 111672, -1304, 0, 0, 65284, 60, 0, 0, 2), -- Moon Garden Manager (Night)
+('garden_of_genesis', 1, 22960, 207999, 118208, -1304, 0, 0, 37369, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 208097, 119534, -1304, 0, 0, 61589, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 208351, 118754, -1304, 0, 0, 15946, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 208967, 119391, -1352, 0, 0, 31018, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 209129, 119534, -1352, 0, 0, 55420, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 209129, 120524, -1304, 0, 0, 22785, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 209890, 120781, -1304, 0, 0, 37459, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 210743, 118188, -1304, 0, 0, 59226, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 211173, 119088, -1304, 0, 0, 5992, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 211752, 115808, -896, 0, 0, 6388, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 212634, 116414, -896, 0, 0, 61986, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 212856, 113930, -896, 0, 0, 28357, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 213150, 113538, -896, 0, 0, 3796, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 213831, 113821, -896, 0, 0, 49091, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 214125, 117109, -896, 0, 0, 48666, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 216092, 111162, -1304, 0, 0, 21523, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 216233, 117607, -1736, 0, 0, 16787, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 216400, 120636, -1736, 0, 0, 37465, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 216405, 118957, -1736, 0, 0, 652, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 216436, 109542, -1304, 0, 0, 21046, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 216530, 111505, -1304, 0, 0, 36428, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 216577, 118687, -1736, 0, 0, 31922, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 216646, 120992, -1736, 0, 0, 10744, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 216835, 118957, -1760, 0, 0, 28404, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 217046, 112135, -1304, 0, 0, 14878, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 217138, 120814, -1736, 0, 0, 18423, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 217304, 112765, -1304, 0, 0, 38084, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 217351, 118867, -1760, 0, 0, 37095, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 217468, 110352, -1328, 0, 0, 52428, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 217548, 120725, -1736, 0, 0, 7472, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 217957, 120287, -1760, 0, 0, 37720, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 218215, 120742, -1736, 0, 0, 38504, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 218377, 117954, -1736, 0, 0, 63254, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 218495, 112032, -1320, 0, 0, 55392, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 218549, 117774, -1736, 0, 0, 2120, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 218635, 118674, -1752, 0, 0, 14437, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 218645, 121106, -1736, 0, 0, 11371, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 218667, 112932, -1304, 0, 0, 3793, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 218893, 118764, -1736, 0, 0, 16420, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 218979, 118584, -1736, 0, 0, 23885, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 219004, 109979, -1304, 0, 0, 62078, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 219090, 110879, -1304, 0, 0, 53840, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22960, 219333, 120469, -1736, 0, 0, 40361, 60, 0, 0, 2), -- Moon Gardener (Night)
+('garden_of_genesis', 1, 22961, 208011, 120884, -1304, 0, 0, 40940, 60, 0, 0, 2), -- Garden Sentry (Night)
+('garden_of_genesis', 1, 22961, 209495, 118299, -1304, 0, 0, 22136, 60, 0, 0, 2), -- Garden Sentry (Night)
+('garden_of_genesis', 1, 22961, 210055, 118188, -1304, 0, 0, 37789, 60, 0, 0, 2), -- Garden Sentry (Night)
+('garden_of_genesis', 1, 22961, 211008, 121141, -1304, 0, 0, 32006, 60, 0, 0, 2), -- Garden Sentry (Night)
+('garden_of_genesis', 1, 22961, 211850, 115707, -896, 0, 0, 23981, 60, 0, 0, 2), -- Garden Sentry (Night)
+('garden_of_genesis', 1, 22961, 212268, 113930, -896, 0, 0, 22102, 60, 0, 0, 2), -- Garden Sentry (Night)
+('garden_of_genesis', 1, 22961, 215203, 114311, -896, 0, 0, 50884, 60, 0, 0, 2), -- Garden Sentry (Night)
+('garden_of_genesis', 1, 22961, 215399, 116423, -896, 0, 0, 6363, 60, 0, 0, 2), -- Garden Sentry (Night)
+('garden_of_genesis', 1, 22961, 216530, 112765, -1304, 0, 0, 38821, 60, 0, 0, 2), -- Garden Sentry (Night)
+('garden_of_genesis', 1, 22961, 217640, 110172, -1304, 0, 0, 5163, 60, 0, 0, 2), -- Garden Sentry (Night)
+('garden_of_genesis', 1, 22961, 217931, 112762, -1304, 0, 0, 2703, 60, 0, 0, 2), -- Garden Sentry (Night)
+('garden_of_genesis', 1, 22961, 218402, 110519, -1248, 0, 0, 1635, 60, 0, 0, 2), -- Garden Sentry (Night)
+('garden_of_genesis', 1, 22962, 207999, 118754, -1304, 0, 0, 54082, 60, 0, 0, 2), -- Garden Commander (Night)
+('garden_of_genesis', 1, 22962, 208183, 120974, -1304, 0, 0, 11878, 60, 0, 0, 2), -- Garden Commander (Night)
+('garden_of_genesis', 1, 22962, 208703, 118754, -1312, 0, 0, 52374, 60, 0, 0, 2), -- Garden Commander (Night)
+('garden_of_genesis', 1, 22962, 209387, 120254, -1320, 0, 0, 20210, 60, 0, 0, 2), -- Garden Commander (Night)
+('garden_of_genesis', 1, 22962, 210406, 119521, -1336, 0, 0, 6504, 60, 0, 0, 2), -- Garden Commander (Night)
+('garden_of_genesis', 1, 22962, 211087, 119358, -1304, 0, 0, 53150, 60, 0, 0, 2), -- Garden Commander (Night)
+('garden_of_genesis', 1, 22962, 211778, 114812, -896, 0, 0, 47756, 60, 0, 0, 2), -- Garden Commander (Night)
+('garden_of_genesis', 1, 22962, 213011, 116993, -896, 0, 0, 43774, 60, 0, 0, 2), -- Garden Commander (Night)
+('garden_of_genesis', 1, 22962, 214321, 117011, -896, 0, 0, 63896, 60, 0, 0, 2), -- Garden Commander (Night)
+('garden_of_genesis', 1, 22962, 215497, 114507, -896, 0, 0, 44531, 60, 0, 0, 2), -- Garden Commander (Night)
+('garden_of_genesis', 1, 22962, 216608, 109902, -1304, 0, 0, 46866, 60, 0, 0, 2), -- Garden Commander (Night)
+('garden_of_genesis', 1, 22962, 217132, 112855, -1304, 0, 0, 12547, 60, 0, 0, 2), -- Garden Commander (Night)
+('garden_of_genesis', 1, 22962, 217304, 112315, -1304, 0, 0, 40716, 60, 0, 0, 2), -- Garden Commander (Night)
+('garden_of_genesis', 1, 22962, 217640, 109722, -1304, 0, 0, 26233, 60, 0, 0, 2), -- Garden Commander (Night)
+('garden_of_genesis', 1, 22962, 218144, 109619, -1304, 0, 0, 26250, 60, 0, 0, 2), -- Garden Commander (Night)
+('garden_of_genesis', 1, 22962, 219269, 111942, -1304, 0, 0, 41373, 60, 0, 0, 2), -- Garden Commander (Night)
+('garden_of_genesis', 1, 22963, 208183, 120074, -1304, 0, 0, 42912, 60, 0, 0, 2), -- Garden Warrior (Night)
+('garden_of_genesis', 1, 22963, 208791, 119300, -1336, 0, 0, 19012, 60, 0, 0, 2), -- Garden Warrior (Night)
+('garden_of_genesis', 1, 22963, 210148, 120511, -1304, 0, 0, 32613, 60, 0, 0, 2), -- Garden Warrior (Night)
+('garden_of_genesis', 1, 22963, 210915, 118908, -1304, 0, 0, 13908, 60, 0, 0, 2), -- Garden Warrior (Night)
+('garden_of_genesis', 1, 22963, 212758, 113930, -896, 0, 0, 5229, 60, 0, 0, 2), -- Garden Warrior (Night)
+('garden_of_genesis', 1, 22963, 213026, 117020, -896, 0, 0, 17229, 60, 0, 0, 2), -- Garden Warrior (Night)
+('garden_of_genesis', 1, 22963, 214419, 116717, -896, 0, 0, 15181, 60, 0, 0, 2), -- Garden Warrior (Night)
+('garden_of_genesis', 1, 22963, 215399, 115095, -896, 0, 0, 4615, 60, 0, 0, 2), -- Garden Warrior (Night)
+('garden_of_genesis', 1, 22963, 216186, 112135, -1304, 0, 0, 50382, 60, 0, 0, 2), -- Garden Warrior (Night)
+('garden_of_genesis', 1, 22963, 216608, 109812, -1304, 0, 0, 39161, 60, 0, 0, 2), -- Garden Warrior (Night)
+('garden_of_genesis', 1, 22963, 218151, 111492, -1344, 0, 0, 52872, 60, 0, 0, 2), -- Garden Warrior (Night)
+('garden_of_genesis', 1, 22963, 218963, 110900, -1304, 0, 0, 27707, 60, 0, 0, 2), -- Garden Warrior (Night)
+('garden_of_genesis', 1, 23160, 207293, 114825, -2040, 0, 0, 21076, 60, 0, 0, 0), -- Garden Chief Priest
+('garden_of_genesis', 1, 23160, 208118, 119843, -1304, 0, 0, 22400, 60, 0, 0, 0), -- Garden Chief Priest
+('garden_of_genesis', 1, 23160, 208859, 111092, -2072, 0, 0, 49336, 60, 0, 0, 0), -- Garden Chief Priest
+('garden_of_genesis', 1, 23160, 208943, 120673, -1304, 0, 0, 59086, 60, 0, 0, 0), -- Garden Chief Priest
+('garden_of_genesis', 1, 23160, 213499, 116176, -888, 0, 0, 61995, 60, 0, 0, 0), -- Garden Chief Priest
+('garden_of_genesis', 1, 23160, 214215, 119598, -2080, 0, 0, 45156, 60, 0, 0, 0), -- Garden Chief Priest
+('garden_of_genesis', 1, 23160, 215155, 114704, -896, 0, 0, 41341, 60, 0, 0, 0), -- Garden Chief Priest
+('garden_of_genesis', 1, 23160, 216467, 110149, -1304, 0, 0, 35725, 60, 0, 0, 0), -- Garden Chief Priest
+('garden_of_genesis', 1, 23160, 217457, 109983, -1304, 0, 0, 49384, 60, 0, 0, 0), -- Garden Chief Priest
+('garden_of_genesis', 1, 23160, 218288, 118045, -1736, 0, 0, 64577, 60, 0, 0, 0), -- Garden Chief Priest
+('garden_of_genesis', 1, 23160, 219278, 118377, -1736, 0, 0, 43996, 60, 0, 0, 0), -- Garden Chief Priest
+('garden_of_genesis', 1, 23160, 221385, 114811, -2024, 0, 0, 41196, 60, 0, 0, 0); -- Garden Chief Priest
