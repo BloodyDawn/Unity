@@ -1226,7 +1226,8 @@ public final class Kamaloka extends AbstractInstance
 	 * @param index (0-18) index of the kamaloka in arrays
 	 * @return true if party allowed to enter
 	 */
-	private static final boolean checkConditions(PlayerInstance player, int index)
+	@Override
+	protected final boolean checkConditions(PlayerInstance player, int index)
 	{
 		final Party party = player.getParty();
 		// player must be in party

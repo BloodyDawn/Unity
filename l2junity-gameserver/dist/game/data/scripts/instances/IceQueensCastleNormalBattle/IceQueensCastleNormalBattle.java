@@ -1268,7 +1268,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 	}
 	
 	@Override
-	protected boolean checkConditions(PlayerInstance player)
+	protected boolean checkConditions(PlayerInstance player, int templateId)
 	{
 		final Party party = player.getParty();
 		final CommandChannel channel = party != null ? party.getCommandChannel() : null;

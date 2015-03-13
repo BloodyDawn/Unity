@@ -208,7 +208,7 @@ public abstract class Chamber extends AbstractInstance
 	}
 	
 	@Override
-	protected boolean checkConditions(PlayerInstance player)
+	protected boolean checkConditions(PlayerInstance player, int templateId)
 	{
 		final Party party = player.getParty();
 		if (party == null)
@@ -630,7 +630,7 @@ public abstract class Chamber extends AbstractInstance
 		
 		if (npcId == ENTRANCE_GATEKEEPER)
 		{
-			if (checkConditions(player))
+			if (checkConditions(player, INSTANCEID))
 			{
 				final Party party = player.getParty();
 				enterInstance(player, new CDWorld(party), INSTANCE_TEMPLATE, INSTANCEID);

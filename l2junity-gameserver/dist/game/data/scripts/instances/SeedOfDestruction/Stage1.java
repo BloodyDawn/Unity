@@ -456,7 +456,7 @@ public final class Stage1 extends AbstractInstance
 	}
 	
 	@Override
-	protected boolean checkConditions(PlayerInstance player)
+	protected boolean checkConditions(PlayerInstance player, int templateId)
 	{
 		final Party party = player.getParty();
 		if (party == null)

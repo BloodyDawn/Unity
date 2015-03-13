@@ -207,7 +207,7 @@ public final class IceQueensCastle extends AbstractInstance
 	}
 	
 	@Override
-	protected boolean checkConditions(PlayerInstance player)
+	protected boolean checkConditions(PlayerInstance player, int templateId)
 	{
 		if (player.getLevel() < MIN_LV)
 		{

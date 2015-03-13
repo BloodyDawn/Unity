@@ -84,7 +84,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 			return;
 		}
 		
-		if (checkConditions(player))
+		if (checkConditions(player, templateId))
 		{
 			instance.setInstanceId(InstanceManager.getInstance().createDynamicInstance(template));
 			instance.setTemplateId(templateId);
@@ -200,7 +200,7 @@ public abstract class AbstractInstance extends AbstractNpcAI
 	
 	protected abstract void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance);
 	
-	protected boolean checkConditions(PlayerInstance player)
+	protected boolean checkConditions(PlayerInstance player, int templateId)
 	{
 		return true;
 	}

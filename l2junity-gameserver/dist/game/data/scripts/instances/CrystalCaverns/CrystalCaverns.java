@@ -510,14 +510,11 @@ public final class CrystalCaverns extends AbstractInstance
 	}
 	
 	@Override
-	protected boolean checkConditions(PlayerInstance player)
+	protected boolean checkConditions(PlayerInstance player, int templateId)
 	{
 		if (debug || player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS))
 		{
-			if (debug)
-			{
-				return true;
-			}
+			return true;
 		}
 		
 		final Party party = player.getParty();
