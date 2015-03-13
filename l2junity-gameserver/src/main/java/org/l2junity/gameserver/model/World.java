@@ -33,9 +33,12 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.events.EventDispatcher;
+import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcCreatureSee;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.network.client.send.DeleteObject;
 import org.l2junity.util.Util;
@@ -338,6 +341,16 @@ public final class World
 					}
 				}
 			}
+			
+			if (wo.isNpc() && object.isCreature())
+			{
+				EventDispatcher.getInstance().notifyEventAsync(new OnNpcCreatureSee((Npc) wo, (Creature) object, object.isSummon()), (Npc) wo);
+			}
+			
+			if (object.isNpc() && wo.isCreature())
+			{
+				EventDispatcher.getInstance().notifyEventAsync(new OnNpcCreatureSee((Npc) object, (Creature) wo, wo.isSummon()), (Npc) object);
+			}
 		});
 	}
 	
@@ -487,6 +500,16 @@ public final class World
 								}
 							}
 						}
+					}
+					
+					if (wo.isNpc() && object.isCreature())
+					{
+						EventDispatcher.getInstance().notifyEventAsync(new OnNpcCreatureSee((Npc) wo, (Creature) object, object.isSummon()), (Npc) wo);
+					}
+					
+					if (object.isNpc() && wo.isCreature())
+					{
+						EventDispatcher.getInstance().notifyEventAsync(new OnNpcCreatureSee((Npc) object, (Creature) wo, wo.isSummon()), (Npc) object);
 					}
 				}
 			}
