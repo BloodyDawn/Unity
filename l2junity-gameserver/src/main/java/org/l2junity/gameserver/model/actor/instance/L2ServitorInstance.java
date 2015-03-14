@@ -25,9 +25,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Future;
-
-import javolution.util.FastList;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -300,7 +299,7 @@ public class L2ServitorInstance extends Summon implements Runnable
 			
 			int buff_index = 0;
 			
-			final List<Integer> storedSkills = new FastList<>();
+			final List<Integer> storedSkills = new CopyOnWriteArrayList<>();
 			
 			// Store all effect data along with calculated remaining
 			if (storeEffects)
@@ -359,7 +358,7 @@ public class L2ServitorInstance extends Summon implements Runnable
 						}
 						if (!SummonEffectsTable.getInstance().getServitorEffects(getOwner()).containsKey(getReferenceSkill()))
 						{
-							SummonEffectsTable.getInstance().getServitorEffects(getOwner()).put(getReferenceSkill(), new FastList<SummonEffect>());
+							SummonEffectsTable.getInstance().getServitorEffects(getOwner()).put(getReferenceSkill(), new CopyOnWriteArrayList<SummonEffect>());
 						}
 						
 						SummonEffectsTable.getInstance().getServitorEffects(getOwner()).get(getReferenceSkill()).add(new SummonEffect(skill, info.getTime()));
@@ -415,7 +414,7 @@ public class L2ServitorInstance extends Summon implements Runnable
 								}
 								if (!SummonEffectsTable.getInstance().getServitorEffects(getOwner()).containsKey(getReferenceSkill()))
 								{
-									SummonEffectsTable.getInstance().getServitorEffects(getOwner()).put(getReferenceSkill(), new FastList<SummonEffect>());
+									SummonEffectsTable.getInstance().getServitorEffects(getOwner()).put(getReferenceSkill(), new CopyOnWriteArrayList<>());
 								}
 								
 								SummonEffectsTable.getInstance().getServitorEffects(getOwner()).get(getReferenceSkill()).add(new SummonEffect(skill, effectCurTime));

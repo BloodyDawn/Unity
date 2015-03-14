@@ -25,8 +25,8 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Future;
-import javolution.util.FastList;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -1068,7 +1068,7 @@ public class L2PetInstance extends Summon
 					ps2.setInt(5, ++buff_index);
 					ps2.execute();
 					
-					SummonEffectsTable.getInstance().getPetEffects().computeIfAbsent(getControlObjectId(), k -> new FastList<>()).add(new SummonEffect(skill, info.getTime()));
+					SummonEffectsTable.getInstance().getPetEffects().computeIfAbsent(getControlObjectId(), k -> new CopyOnWriteArrayList<>()).add(new SummonEffect(skill, info.getTime()));
 				}
 			}
 		}
@@ -1102,7 +1102,7 @@ public class L2PetInstance extends Summon
 						
 						if (skill.hasEffects(EffectScope.GENERAL))
 						{
-							SummonEffectsTable.getInstance().getPetEffects().computeIfAbsent(getControlObjectId(), k -> new FastList<>()).add(new SummonEffect(skill, effectCurTime));
+							SummonEffectsTable.getInstance().getPetEffects().computeIfAbsent(getControlObjectId(), k -> new CopyOnWriteArrayList<>()).add(new SummonEffect(skill, effectCurTime));
 						}
 					}
 				}

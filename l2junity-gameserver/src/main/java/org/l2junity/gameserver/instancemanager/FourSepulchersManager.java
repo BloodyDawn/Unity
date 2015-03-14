@@ -31,8 +31,6 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
 
-import javolution.util.FastList;
-
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.commons.util.Rnd;
@@ -134,19 +132,19 @@ public final class FourSepulchersManager
 	protected Map<Integer, L2Spawn> _keyBoxSpawns = new HashMap<>();
 	protected Map<Integer, L2Spawn> _mysteriousBoxSpawns = new HashMap<>();
 	protected Map<Integer, L2Spawn> _shadowSpawns = new HashMap<>();
-	protected Map<Integer, List<L2Spawn>> _dukeFinalMobs = new HashMap<>();
-	protected Map<Integer, List<L2SepulcherMonsterInstance>> _dukeMobs = new HashMap<>();
-	protected Map<Integer, List<L2Spawn>> _emperorsGraveNpcs = new HashMap<>();
-	protected Map<Integer, List<L2Spawn>> _magicalMonsters = new HashMap<>();
-	protected Map<Integer, List<L2Spawn>> _physicalMonsters = new HashMap<>();
-	protected Map<Integer, List<L2SepulcherMonsterInstance>> _viscountMobs = new HashMap<>();
+	protected Map<Integer, Set<L2Spawn>> _dukeFinalMobs = new HashMap<>();
+	protected Map<Integer, Set<L2SepulcherMonsterInstance>> _dukeMobs = new HashMap<>();
+	protected Map<Integer, Set<L2Spawn>> _emperorsGraveNpcs = new HashMap<>();
+	protected Map<Integer, Set<L2Spawn>> _magicalMonsters = new HashMap<>();
+	protected Map<Integer, Set<L2Spawn>> _physicalMonsters = new HashMap<>();
+	protected Map<Integer, Set<L2SepulcherMonsterInstance>> _viscountMobs = new HashMap<>();
 	
-	protected List<L2Spawn> _physicalSpawns;
-	protected List<L2Spawn> _magicalSpawns;
-	protected List<L2Spawn> _managers;
-	protected List<L2Spawn> _dukeFinalSpawns;
-	protected List<L2Spawn> _emperorsGraveSpawns;
-	protected List<Npc> _allMobs = new FastList<>();
+	protected Set<L2Spawn> _physicalSpawns;
+	protected Set<L2Spawn> _magicalSpawns;
+	protected Set<L2Spawn> _managers;
+	protected Set<L2Spawn> _dukeFinalSpawns;
+	protected Set<L2Spawn> _emperorsGraveSpawns;
+	protected Set<Npc> _allMobs = ConcurrentHashMap.newKeySet();
 	
 	private long _attackTimeEnd = 0;
 	private long _coolDownTimeEnd = 0;
@@ -268,7 +266,7 @@ public final class FourSepulchersManager
 	
 	protected void spawnManagers()
 	{
-		_managers = new FastList<>();
+		_managers = ConcurrentHashMap.newKeySet();
 		
 		for (int i = 31921; i <= 31924; i++)
 		{
@@ -482,7 +480,7 @@ public final class FourSepulchersManager
 					ps2.setInt(2, 1);
 					try (ResultSet rs2 = ps2.executeQuery())
 					{
-						_physicalSpawns = new FastList<>();
+						_physicalSpawns = ConcurrentHashMap.newKeySet();
 						while (rs2.next())
 						{
 							final L2Spawn spawnDat = new L2Spawn(rs2.getInt("npc_templateid"));
@@ -529,7 +527,7 @@ public final class FourSepulchersManager
 					ps2.setInt(2, 2);
 					try (ResultSet rset2 = ps2.executeQuery())
 					{
-						_magicalSpawns = new FastList<>();
+						_magicalSpawns = ConcurrentHashMap.newKeySet();
 						
 						while (rset2.next())
 						{
@@ -580,7 +578,7 @@ public final class FourSepulchersManager
 					{
 						ps2.clearParameters();
 						
-						_dukeFinalSpawns = new FastList<>();
+						_dukeFinalSpawns = ConcurrentHashMap.newKeySet();
 						
 						while (rset2.next())
 						{
@@ -629,7 +627,7 @@ public final class FourSepulchersManager
 					ps2.setInt(2, 6);
 					try (ResultSet rs2 = ps2.executeQuery())
 					{
-						_emperorsGraveSpawns = new FastList<>();
+						_emperorsGraveSpawns = ConcurrentHashMap.newKeySet();
 						
 						while (rs2.next())
 						{
@@ -1084,8 +1082,8 @@ public final class FourSepulchersManager
 			return;
 		}
 		
-		List<L2Spawn> monsterList;
-		List<L2SepulcherMonsterInstance> mobs = new FastList<>();
+		Set<L2Spawn> monsterList;
+		Set<L2SepulcherMonsterInstance> mobs = ConcurrentHashMap.newKeySet();
 		L2Spawn keyBoxMobSpawn;
 		
 		if (Rnd.get(2) == 0)
@@ -1193,7 +1191,7 @@ public final class FourSepulchersManager
 	
 	public synchronized boolean isViscountMobsAnnihilated(int npcId)
 	{
-		List<L2SepulcherMonsterInstance> mobs = _viscountMobs.get(npcId);
+		Set<L2SepulcherMonsterInstance> mobs = _viscountMobs.get(npcId);
 		if (mobs == null)
 		{
 			return true;
@@ -1212,7 +1210,7 @@ public final class FourSepulchersManager
 	
 	public synchronized boolean isDukeMobsAnnihilated(int npcId)
 	{
-		List<L2SepulcherMonsterInstance> mobs = _dukeMobs.get(npcId);
+		Set<L2SepulcherMonsterInstance> mobs = _dukeMobs.get(npcId);
 		if (mobs == null)
 		{
 			return true;
@@ -1283,7 +1281,7 @@ public final class FourSepulchersManager
 			return;
 		}
 		
-		List<L2Spawn> monsterList = _dukeFinalMobs.get(npcId);
+		Set<L2Spawn> monsterList = _dukeFinalMobs.get(npcId);
 		if (monsterList != null)
 		{
 			for (L2Spawn spawnDat : monsterList)
@@ -1308,7 +1306,7 @@ public final class FourSepulchersManager
 			return;
 		}
 		
-		List<L2Spawn> monsterList = _emperorsGraveNpcs.get(npcId);
+		Set<L2Spawn> monsterList = _emperorsGraveNpcs.get(npcId);
 		if (monsterList != null)
 		{
 			for (L2Spawn spawnDat : monsterList)

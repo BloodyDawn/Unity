@@ -26,12 +26,11 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Vector;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
-
-import javolution.util.FastList;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.commons.util.Rnd;
@@ -599,9 +598,9 @@ public class AutoSpawnHandler
 		
 		protected int _lastLocIndex = -1;
 		
-		private final List<Npc> _npcList = new FastList<>();
+		private final List<Npc> _npcList = new Vector<>();
 		
-		private final List<Location> _locList = new FastList<>();
+		private final List<Location> _locList = new Vector<>();
 		
 		private boolean _spawnActive;
 		
@@ -669,7 +668,10 @@ public class AutoSpawnHandler
 		
 		public Location[] getLocationList()
 		{
-			return _locList.toArray(new Location[_locList.size()]);
+			synchronized (_locList)
+			{
+				return _locList.toArray(new Location[_locList.size()]);
+			}
 		}
 		
 		public Npc[] getNPCInstanceList()
@@ -686,7 +688,10 @@ public class AutoSpawnHandler
 		
 		public Collection<L2Spawn> getSpawns()
 		{
-			return _npcList.stream().map(Npc::getSpawn).collect(Collectors.toList());
+			synchronized (_npcList)
+			{
+				return _npcList.stream().map(Npc::getSpawn).collect(Collectors.toList());
+			}
 		}
 		
 		public void setSpawnCount(int spawnCount)

@@ -1257,7 +1257,7 @@ public class FortSiege implements Siegable
 	}
 	
 	@Override
-	public List<Npc> getFlag(L2Clan clan)
+	public Set<Npc> getFlag(L2Clan clan)
 	{
 		if (clan != null)
 		{

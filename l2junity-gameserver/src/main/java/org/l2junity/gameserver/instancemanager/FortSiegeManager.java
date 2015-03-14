@@ -29,8 +29,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.StringTokenizer;
 import java.util.concurrent.ConcurrentHashMap;
-
-import javolution.util.FastList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -144,8 +143,8 @@ public final class FortSiegeManager
 		
 		for (Fort fort : FortManager.getInstance().getForts())
 		{
-			List<FortSiegeSpawn> _commanderSpawns = new FastList<>();
-			List<CombatFlag> _flagSpawns = new FastList<>();
+			List<FortSiegeSpawn> _commanderSpawns = new CopyOnWriteArrayList<>();
+			List<CombatFlag> _flagSpawns = new CopyOnWriteArrayList<>();
 			for (int i = 1; i < 5; i++)
 			{
 				final String _spawnParams = siegeSettings.getProperty(fort.getName().replace(" ", "") + "Commander" + i, "");
@@ -266,18 +265,14 @@ public final class FortSiegeManager
 	{
 		if (_sieges == null)
 		{
-			_sieges = new FastList<>();
+			_sieges = new CopyOnWriteArrayList<>();
 		}
 		return _sieges;
 	}
 	
 	public final void addSiege(FortSiege fortSiege)
 	{
-		if (_sieges == null)
-		{
-			_sieges = new FastList<>();
-		}
-		_sieges.add(fortSiege);
+		getSieges().add(fortSiege);
 	}
 	
 	public boolean isCombat(int itemId)

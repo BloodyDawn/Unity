@@ -27,6 +27,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
 
@@ -210,9 +211,9 @@ public abstract class ClanHallSiegeEngine extends Quest implements Siegable
 	}
 	
 	@Override
-	public List<Npc> getFlag(L2Clan clan)
+	public Set<Npc> getFlag(L2Clan clan)
 	{
-		List<Npc> result = null;
+		Set<Npc> result = null;
 		SiegeClan sClan = getAttackerClan(clan);
 		if (sClan != null)
 		{

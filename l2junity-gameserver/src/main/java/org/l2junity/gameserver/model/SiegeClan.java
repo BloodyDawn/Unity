@@ -18,9 +18,8 @@
  */
 package org.l2junity.gameserver.model;
 
-import java.util.List;
-
-import javolution.util.FastList;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.gameserver.enums.SiegeClanType;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -28,7 +27,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 public class SiegeClan
 {
 	private int _clanId = 0;
-	private List<Npc> _flag = new FastList<>();
+	private final Set<Npc> _flag = ConcurrentHashMap.newKeySet();
 	private int _numFlagsAdded = 0;
 	private SiegeClanType _type;
 	
@@ -84,12 +83,8 @@ public class SiegeClan
 		return _clanId;
 	}
 	
-	public final List<Npc> getFlag()
+	public final Set<Npc> getFlag()
 	{
-		if (_flag == null)
-		{
-			_flag = new FastList<>();
-		}
 		return _flag;
 	}
 	

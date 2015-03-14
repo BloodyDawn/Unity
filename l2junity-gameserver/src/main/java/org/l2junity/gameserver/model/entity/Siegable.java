@@ -21,6 +21,7 @@ package org.l2junity.gameserver.model.entity;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.SiegeClan;
@@ -54,7 +55,7 @@ public interface Siegable
 	
 	public boolean checkIsDefender(L2Clan clan);
 	
-	public List<Npc> getFlag(L2Clan clan);
+	public Set<Npc> getFlag(L2Clan clan);
 	
 	public Calendar getSiegeDate();
 	

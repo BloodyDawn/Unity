@@ -26,6 +26,7 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ScheduledFuture;
 
@@ -1774,7 +1775,7 @@ public class Siege implements Siegable
 	}
 	
 	@Override
-	public List<Npc> getFlag(L2Clan clan)
+	public Set<Npc> getFlag(L2Clan clan)
 	{
 		if (clan != null)
 		{

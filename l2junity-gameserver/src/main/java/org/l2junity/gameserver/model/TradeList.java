@@ -24,8 +24,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
-
-import javolution.util.FastList;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.datatables.ItemTable;
@@ -53,7 +52,7 @@ public class TradeList
 	
 	private final PlayerInstance _owner;
 	private PlayerInstance _partner;
-	private final List<TradeItem> _items;
+	private final Set<TradeItem> _items = ConcurrentHashMap.newKeySet();
 	private String _title;
 	private boolean _packaged;
 	
@@ -62,7 +61,6 @@ public class TradeList
 	
 	public TradeList(PlayerInstance owner)
 	{
-		_items = new FastList<>();
 		_owner = owner;
 	}
 	
