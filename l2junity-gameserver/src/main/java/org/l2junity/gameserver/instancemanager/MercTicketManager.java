@@ -23,8 +23,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Iterator;
 import java.util.List;
-
-import javolution.util.FastList;
+import java.util.Vector;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
@@ -50,7 +49,7 @@ public final class MercTicketManager
 {
 	private static final Logger _log = LoggerFactory.getLogger(MercTicketManager.class);
 	
-	private static final FastList<ItemInstance> _droppedTickets = new FastList<>();
+	private static final List<ItemInstance> _droppedTickets = new Vector<>();
 	
 	// TODO: move all these values into siege.properties
 	// max tickets per merc type = 10 + (castleid * 2)?
@@ -114,7 +113,6 @@ public final class MercTicketManager
 	
 	protected MercTicketManager()
 	{
-		_droppedTickets.shared();
 		load();
 	}
 	
@@ -237,11 +235,14 @@ public final class MercTicketManager
 		}
 		
 		int count = 0;
-		for (ItemInstance ticket : _droppedTickets)
+		synchronized (_droppedTickets)
 		{
-			if ((ticket != null) && (ticket.getId() == itemId))
+			for (ItemInstance ticket : _droppedTickets)
 			{
-				count++;
+				if ((ticket != null) && (ticket.getId() == itemId))
+				{
+					count++;
+				}
 			}
 		}
 		if (count >= limit)
@@ -291,15 +292,18 @@ public final class MercTicketManager
 	
 	public boolean isTooCloseToAnotherTicket(int x, int y, int z)
 	{
-		for (ItemInstance item : _droppedTickets)
+		synchronized (_droppedTickets)
 		{
-			double dx = x - item.getX();
-			double dy = y - item.getY();
-			double dz = z - item.getZ();
-			
-			if (((dx * dx) + (dy * dy) + (dz * dz)) < (25 * 25))
+			for (ItemInstance item : _droppedTickets)
 			{
-				return true;
+				double dx = x - item.getX();
+				double dy = y - item.getY();
+				double dz = z - item.getZ();
+				
+				if (((dx * dx) + (dy * dy) + (dz * dz)) < (25 * 25))
+				{
+					return true;
+				}
 			}
 		}
 		return false;
@@ -372,15 +376,18 @@ public final class MercTicketManager
 	 */
 	public void deleteTickets(int castleId)
 	{
-		Iterator<ItemInstance> it = _droppedTickets.iterator();
-		while (it.hasNext())
+		synchronized (_droppedTickets)
 		{
-			ItemInstance item = it.next();
-			if ((item != null) && (getTicketCastleId(item.getId()) == castleId))
+			Iterator<ItemInstance> it = _droppedTickets.iterator();
+			while (it.hasNext())
 			{
-				item.decayMe();
-				World.getInstance().removeObject(item);
-				it.remove();
+				ItemInstance item = it.next();
+				if ((item != null) && (getTicketCastleId(item.getId()) == castleId))
+				{
+					item.decayMe();
+					World.getInstance().removeObject(item);
+					it.remove();
+				}
 			}
 		}
 	}
@@ -417,11 +424,6 @@ public final class MercTicketManager
 	public int[] getItemIds()
 	{
 		return ITEM_IDS;
-	}
-	
-	public final List<ItemInstance> getDroppedTickets()
-	{
-		return _droppedTickets;
 	}
 	
 	/**

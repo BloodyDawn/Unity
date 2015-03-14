@@ -23,8 +23,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-
-import javolution.util.FastList;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -121,7 +121,7 @@ public abstract class Inventory extends ItemContainer
 	private static final class ChangeRecorder implements PaperdollListener
 	{
 		private final Inventory _inventory;
-		private final List<ItemInstance> _changed;
+		private final Set<ItemInstance> _changed = ConcurrentHashMap.newKeySet();
 		
 		/**
 		 * Constructor of the ChangeRecorder
@@ -130,7 +130,6 @@ public abstract class Inventory extends ItemContainer
 		ChangeRecorder(Inventory inventory)
 		{
 			_inventory = inventory;
-			_changed = new FastList<>();
 			_inventory.addPaperdollListener(this);
 		}
 		
@@ -143,10 +142,7 @@ public abstract class Inventory extends ItemContainer
 		@Override
 		public void notifyEquiped(int slot, ItemInstance item, Inventory inventory)
 		{
-			if (!_changed.contains(item))
-			{
-				_changed.add(item);
-			}
+			_changed.add(item);
 		}
 		
 		/**
@@ -158,10 +154,7 @@ public abstract class Inventory extends ItemContainer
 		@Override
 		public void notifyUnequiped(int slot, ItemInstance item, Inventory inventory)
 		{
-			if (!_changed.contains(item))
-			{
-				_changed.add(item);
-			}
+			_changed.add(item);
 		}
 		
 		/**
