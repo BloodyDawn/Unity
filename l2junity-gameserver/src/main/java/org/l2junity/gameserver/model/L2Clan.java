@@ -28,9 +28,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.concurrent.atomic.AtomicInteger;
-
-import javolution.util.FastMap;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -112,7 +111,7 @@ public class L2Clan implements IIdentifiable, INamable
 	private String _name;
 	private int _clanId;
 	private ClanMember _leader;
-	private final Map<Integer, ClanMember> _members = new FastMap<>();
+	private final Map<Integer, ClanMember> _members = new ConcurrentHashMap<>();
 	
 	private String _allyName;
 	private int _allyId;
@@ -138,10 +137,10 @@ public class L2Clan implements IIdentifiable, INamable
 	
 	private Forum _forum;
 	
-	private final Map<Integer, Skill> _skills = new FastMap<>();
-	private final Map<Integer, RankPrivs> _privs = new FastMap<>();
-	private final Map<Integer, SubPledge> _subPledges = new FastMap<>();
-	private final Map<Integer, Skill> _subPledgeSkills = new FastMap<>();
+	private final Map<Integer, Skill> _skills = new ConcurrentSkipListMap<>();
+	private final Map<Integer, RankPrivs> _privs = new ConcurrentSkipListMap<>();
+	private final Map<Integer, SubPledge> _subPledges = new ConcurrentSkipListMap<>();
+	private final Map<Integer, Skill> _subPledgeSkills = new ConcurrentSkipListMap<>();
 	
 	private int _reputationScore = 0;
 	private int _rank = 0;
@@ -1688,7 +1687,7 @@ public class L2Clan implements IIdentifiable, INamable
 		private final int _id;
 		private String _subPledgeName;
 		private int _leaderId;
-		private final Map<Integer, Skill> _subPledgeSkills = new FastMap<>();
+		private final Map<Integer, Skill> _subPledgeSkills = new ConcurrentSkipListMap<>();
 		
 		public SubPledge(int id, String name, int leaderId)
 		{

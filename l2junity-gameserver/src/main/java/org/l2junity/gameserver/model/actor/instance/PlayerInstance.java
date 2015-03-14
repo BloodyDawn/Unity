@@ -505,7 +505,7 @@ public final class PlayerInstance extends Playable
 	
 	private int _bookmarkslot = 0; // The Teleport Bookmark Slot
 	
-	private final Map<Integer, TeleportBookmark> _tpbookmarks = new FastMap<>();
+	private final Map<Integer, TeleportBookmark> _tpbookmarks = new ConcurrentSkipListMap<>();
 	
 	private boolean _canFeed;
 	private boolean _isInSiege;
@@ -546,11 +546,11 @@ public final class PlayerInstance extends Playable
 	private Transform _transformation;
 	
 	/** The table containing all L2RecipeList of the L2PcInstance */
-	private final Map<Integer, RecipeList> _dwarvenRecipeBook = new FastMap<>();
-	private final Map<Integer, RecipeList> _commonRecipeBook = new FastMap<>();
+	private final Map<Integer, RecipeList> _dwarvenRecipeBook = new ConcurrentSkipListMap<>();
+	private final Map<Integer, RecipeList> _commonRecipeBook = new ConcurrentSkipListMap<>();
 	
 	/** Premium Items */
-	private final Map<Integer, PremiumItem> _premiumItems = new FastMap<>();
+	private final Map<Integer, PremiumItem> _premiumItems = new ConcurrentSkipListMap<>();
 	
 	/** True if the L2PcInstance is sitting */
 	private boolean _waitTypeSitting;
@@ -598,7 +598,7 @@ public final class PlayerInstance extends Playable
 	private int _questNpcObject = 0;
 	
 	/** The table containing all Quests began by the L2PcInstance */
-	private final Map<String, QuestState> _quests = new FastMap<>();
+	private final Map<String, QuestState> _quests = new ConcurrentHashMap<>();
 	
 	/** The list containing all shortCuts of this player. */
 	private final ShortCuts _shortCuts = new ShortCuts(this);
@@ -725,7 +725,7 @@ public final class PlayerInstance extends Playable
 	/** The fists L2Weapon of the L2PcInstance (used when no weapon is equipped) */
 	private Weapon _fistsWeaponItem;
 	
-	private final Map<Integer, String> _chars = new FastMap<>();
+	private final Map<Integer, String> _chars = new ConcurrentSkipListMap<>();
 	
 	// private byte _updateKnownCounter = 0;
 	
@@ -14102,7 +14102,7 @@ public final class PlayerInstance extends Playable
 		{
 			if (_customSkills == null)
 			{
-				_customSkills = new FastMap<Integer, Skill>().shared();
+				_customSkills = new ConcurrentSkipListMap<>();
 			}
 			_customSkills.put(skill.getDisplayId(), skill);
 		}
