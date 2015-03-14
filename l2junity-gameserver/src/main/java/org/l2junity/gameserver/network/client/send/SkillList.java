@@ -19,8 +19,10 @@
 package org.l2junity.gameserver.network.client.send;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
+import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
@@ -61,7 +63,7 @@ public final class SkillList implements IClientOutgoingPacket
 	public boolean write(PacketWriter packet)
 	{
 		OutgoingPackets.SKILL_LIST.writeId(packet);
-		
+		_skills.sort(Comparator.comparing(s -> SkillData.getInstance().getSkill(s.id, s.level).isToggle() ? 1 : 0));
 		packet.writeD(_skills.size());
 		for (Skill temp : _skills)
 		{

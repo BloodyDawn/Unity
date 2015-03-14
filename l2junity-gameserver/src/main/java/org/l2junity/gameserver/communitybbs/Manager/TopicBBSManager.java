@@ -24,9 +24,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
+import java.util.concurrent.ConcurrentHashMap;
 
 import javolution.util.FastList;
-import javolution.util.FastMap;
 
 import org.l2junity.gameserver.communitybbs.BB.Forum;
 import org.l2junity.gameserver.communitybbs.BB.Post;
@@ -38,12 +38,11 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 public class TopicBBSManager extends BaseBBSManager
 {
 	private final List<Topic> _table;
-	private final Map<Forum, Integer> _maxId;
+	private final Map<Forum, Integer> _maxId = new ConcurrentHashMap<>();
 	
 	protected TopicBBSManager()
 	{
 		_table = new FastList<>();
-		_maxId = new FastMap<Forum, Integer>().shared();
 	}
 	
 	public void addTopic(Topic tt)

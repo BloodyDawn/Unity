@@ -23,9 +23,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import javolution.util.FastList;
-import javolution.util.FastMap;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.communitybbs.Manager.ForumsBBSManager;
@@ -50,7 +50,7 @@ public class Forum
 	public static final int OWNERONLY = 3;
 	
 	private final List<Forum> _children;
-	private final Map<Integer, Topic> _topic;
+	private final Map<Integer, Topic> _topic = new ConcurrentHashMap<>();
 	private final int _forumId;
 	private String _forumName;
 	private int _forumType;
@@ -70,7 +70,6 @@ public class Forum
 		_forumId = Forumid;
 		_fParent = FParent;
 		_children = new FastList<>();
-		_topic = new FastMap<>();
 	}
 	
 	/**
@@ -90,7 +89,6 @@ public class Forum
 		_fParent = parent;
 		_ownerID = OwnerID;
 		_children = new FastList<>();
-		_topic = new FastMap<>();
 		parent._children.add(this);
 		ForumsBBSManager.getInstance().addForum(this);
 		_loaded = true;

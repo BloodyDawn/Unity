@@ -23,8 +23,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Map;
 import java.util.StringTokenizer;
-
-import javolution.util.FastMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.gameserver.communitybbs.BB.Forum;
 import org.l2junity.gameserver.communitybbs.BB.Post;
@@ -35,7 +34,7 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 
 public class PostBBSManager extends BaseBBSManager
 {
-	private final Map<Topic, Post> _postByTopic = new FastMap<>();
+	private final Map<Topic, Post> _postByTopic = new ConcurrentHashMap<>();
 	
 	public Post getGPosttByTopic(Topic t)
 	{
