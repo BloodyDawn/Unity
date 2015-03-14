@@ -24,8 +24,7 @@ import java.sql.ResultSet;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
-import javolution.util.FastList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.communitybbs.Manager.ForumsBBSManager;
@@ -69,7 +68,7 @@ public class Forum
 	{
 		_forumId = Forumid;
 		_fParent = FParent;
-		_children = new FastList<>();
+		_children = new CopyOnWriteArrayList<>();
 	}
 	
 	/**
@@ -88,7 +87,7 @@ public class Forum
 		_forumPerm = perm;
 		_fParent = parent;
 		_ownerID = OwnerID;
-		_children = new FastList<>();
+		_children = new CopyOnWriteArrayList<>();
 		parent._children.add(this);
 		ForumsBBSManager.getInstance().addForum(this);
 		_loaded = true;

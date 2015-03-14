@@ -25,8 +25,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.concurrent.ConcurrentHashMap;
-
-import javolution.util.FastList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.l2junity.gameserver.communitybbs.BB.Forum;
 import org.l2junity.gameserver.communitybbs.BB.Post;
@@ -42,7 +41,7 @@ public class TopicBBSManager extends BaseBBSManager
 	
 	protected TopicBBSManager()
 	{
-		_table = new FastList<>();
+		_table = new CopyOnWriteArrayList<>();
 	}
 	
 	public void addTopic(Topic tt)

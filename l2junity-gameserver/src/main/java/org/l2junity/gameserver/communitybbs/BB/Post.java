@@ -22,8 +22,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.List;
-
-import javolution.util.FastList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.communitybbs.Manager.PostBBSManager;
@@ -60,7 +59,7 @@ public class Post
 	 */
 	public Post(String _PostOwner, int _PostOwnerID, long date, int tid, int _PostForumID, String txt)
 	{
-		_post = new FastList<>();
+		_post = new CopyOnWriteArrayList<>();
 		CPost cp = new CPost();
 		cp.postId = 0;
 		cp.postOwner = _PostOwner;
@@ -96,7 +95,7 @@ public class Post
 	
 	public Post(Topic t)
 	{
-		_post = new FastList<>();
+		_post = new CopyOnWriteArrayList<>();
 		load(t);
 	}
 	
