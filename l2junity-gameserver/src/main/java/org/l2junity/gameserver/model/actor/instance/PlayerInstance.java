@@ -464,7 +464,7 @@ public final class PlayerInstance extends Playable
 	private boolean _petItems = false;
 	
 	/** The list of sub-classes this character has. */
-	private Map<Integer, SubClass> _subClasses;
+	private volatile Map<Integer, SubClass> _subClasses;
 	
 	private final PcAppearance _appearance;
 	
@@ -10290,7 +10290,13 @@ public final class PlayerInstance extends Playable
 	{
 		if (_subClasses == null)
 		{
-			_subClasses = new ConcurrentHashMap<>();
+			synchronized (this)
+			{
+				if (_subClasses == null)
+				{
+					_subClasses = new ConcurrentHashMap<>();
+				}
+			}
 		}
 		
 		return _subClasses;
