@@ -27,8 +27,7 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Objects;
-
-import javolution.util.FastMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.Mentee;
@@ -47,8 +46,8 @@ public class MentorManager
 {
 	private static final Logger _log = LoggerFactory.getLogger(MentorManager.class);
 	
-	private final Map<Integer, Map<Integer, Mentee>> _menteeData = new FastMap<Integer, Map<Integer, Mentee>>().shared();
-	private final Map<Integer, Mentee> _mentors = new FastMap<Integer, Mentee>().shared();
+	private final Map<Integer, Map<Integer, Mentee>> _menteeData = new ConcurrentHashMap<>();
+	private final Map<Integer, Mentee> _mentors = new ConcurrentHashMap<>();
 	
 	protected MentorManager()
 	{
@@ -166,14 +165,14 @@ public class MentorManager
 	 */
 	public void addMentor(int mentorId, int menteeId)
 	{
-		_menteeData.computeIfAbsent(mentorId, map -> new FastMap<Integer, Mentee>().shared());
-		if (_menteeData.get(mentorId).containsKey(menteeId))
+		final Map<Integer, Mentee> mentees = _menteeData.computeIfAbsent(mentorId, map -> new ConcurrentHashMap<>());
+		if (mentees.containsKey(menteeId))
 		{
-			_menteeData.get(mentorId).get(menteeId).load(); // Just reloading data if is already there
+			mentees.get(menteeId).load(); // Just reloading data if is already there
 		}
 		else
 		{
-			_menteeData.get(mentorId).put(menteeId, new Mentee(menteeId));
+			mentees.put(menteeId, new Mentee(menteeId));
 		}
 	}
 	

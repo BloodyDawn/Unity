@@ -45,8 +45,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
 
-import javolution.util.FastMap;
-
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.commons.util.Rnd;
@@ -10292,7 +10290,7 @@ public final class PlayerInstance extends Playable
 	{
 		if (_subClasses == null)
 		{
-			_subClasses = new FastMap<>();
+			_subClasses = new ConcurrentHashMap<>();
 		}
 		
 		return _subClasses;
