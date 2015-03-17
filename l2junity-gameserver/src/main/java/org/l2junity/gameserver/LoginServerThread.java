@@ -280,7 +280,7 @@ public class LoginServerThread extends Thread
 								st.addAttribute(ServerStatus.SERVER_AGE, ServerStatus.SERVER_AGE_ALL);
 							}
 							sendPacket(st);
-							if (World.getInstance().getAllPlayersCount() > 0)
+							if (World.getInstance().getPlayers().size() > 0)
 							{
 								final List<String> playerList = new ArrayList<>();
 								for (PlayerInstance player : World.getInstance().getPlayers())

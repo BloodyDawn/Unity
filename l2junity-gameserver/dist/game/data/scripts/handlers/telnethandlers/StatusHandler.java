@@ -122,7 +122,7 @@ public class StatusHandler implements ITelnetHandler
 		int playerCount = 0, objectCount = 0;
 		int max = LoginServerThread.getInstance().getMaxPlayer();
 		
-		playerCount = World.getInstance().getAllPlayersCount();
+		playerCount = World.getInstance().getPlayers().size();
 		objectCount = World.getInstance().getVisibleObjectsCount();
 		
 		int itemCount = 0;

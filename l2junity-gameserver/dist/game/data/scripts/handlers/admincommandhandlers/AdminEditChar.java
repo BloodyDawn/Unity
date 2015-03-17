@@ -890,7 +890,8 @@ public class AdminEditChar implements IAdminCommandHandler
 	
 	private void listCharacters(PlayerInstance activeChar, int page)
 	{
-		final PlayerInstance[] players = World.getInstance().getPlayersSortedBy(Comparator.comparingLong(PlayerInstance::getUptime));
+		final List<PlayerInstance> players = new ArrayList<>(World.getInstance().getPlayers());
+		players.sort(Comparator.comparingLong(PlayerInstance::getUptime));
 		
 		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/charlist.htm");
@@ -1092,7 +1093,9 @@ public class AdminEditChar implements IAdminCommandHandler
 		
 		final StringBuilder replyMSG = new StringBuilder(1000);
 		
-		for (PlayerInstance player : World.getInstance().getPlayersSortedBy(Comparator.comparingLong(PlayerInstance::getUptime)))
+		final List<PlayerInstance> players = new ArrayList<>(World.getInstance().getPlayers());
+		players.sort(Comparator.comparingLong(PlayerInstance::getUptime));
+		for (PlayerInstance player : players)
 		{ // Add player info into new Table row
 			name = player.getName();
 			if (name.toLowerCase().contains(CharacterToFind.toLowerCase()))
@@ -1167,7 +1170,10 @@ public class AdminEditChar implements IAdminCommandHandler
 		final StringBuilder replyMSG = new StringBuilder(1000);
 		final NpcHtmlMessage adminReply = new NpcHtmlMessage(0, 1);
 		adminReply.setFile(activeChar.getHtmlPrefix(), "data/html/admin/ipfind.htm");
-		for (PlayerInstance player : World.getInstance().getPlayersSortedBy(Comparator.comparingLong(PlayerInstance::getUptime)))
+		
+		final List<PlayerInstance> players = new ArrayList<>(World.getInstance().getPlayers());
+		players.sort(Comparator.comparingLong(PlayerInstance::getUptime));
+		for (PlayerInstance player : players)
 		{
 			client = player.getClient();
 			if (client == null)
@@ -1276,7 +1282,9 @@ public class AdminEditChar implements IAdminCommandHandler
 		L2GameClient client;
 		final Map<String, Integer> dualboxIPs = new HashMap<>();
 		
-		for (PlayerInstance player : World.getInstance().getPlayersSortedBy(Comparator.comparingLong(PlayerInstance::getUptime)))
+		final List<PlayerInstance> players = new ArrayList<>(World.getInstance().getPlayers());
+		players.sort(Comparator.comparingLong(PlayerInstance::getUptime));
+		for (PlayerInstance player : players)
 		{
 			client = player.getClient();
 			if ((client == null) || client.isDetached())
@@ -1328,7 +1336,9 @@ public class AdminEditChar implements IAdminCommandHandler
 		L2GameClient client;
 		final Map<IpPack, Integer> dualboxIPs = new HashMap<>();
 		
-		for (PlayerInstance player : World.getInstance().getPlayersSortedBy(Comparator.comparingLong(PlayerInstance::getUptime)))
+		final List<PlayerInstance> players = new ArrayList<>(World.getInstance().getPlayers());
+		players.sort(Comparator.comparingLong(PlayerInstance::getUptime));
+		for (PlayerInstance player : players)
 		{
 			client = player.getClient();
 			if ((client == null) || client.isDetached())

@@ -18,10 +18,7 @@
  */
 package org.l2junity.gameserver.model;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -31,10 +28,8 @@ import java.util.function.Consumer;
 import org.l2junity.gameserver.ai.CharacterAI;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
-import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
-import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
@@ -182,35 +177,9 @@ public final class World
 		return _allObjects.size();
 	}
 	
-	public List<PlayerInstance> getAllGMs()
-	{
-		return AdminData.getInstance().getAllGms(true);
-	}
-	
 	public Collection<PlayerInstance> getPlayers()
 	{
 		return _allPlayers.values();
-	}
-	
-	/**
-	 * Gets all players sorted by the given comparator.
-	 * @param comparator the comparator
-	 * @return the players sorted by the comparator
-	 */
-	public PlayerInstance[] getPlayersSortedBy(Comparator<PlayerInstance> comparator)
-	{
-		final PlayerInstance[] players = _allPlayers.values().toArray(new PlayerInstance[_allPlayers.values().size()]);
-		Arrays.sort(players, comparator);
-		return players;
-	}
-	
-	/**
-	 * Return how many players are online.
-	 * @return number of online players.
-	 */
-	public int getAllPlayersCount()
-	{
-		return _allPlayers.size();
 	}
 	
 	/**
@@ -584,17 +553,6 @@ public final class World
 	{
 		final List<T> result = new LinkedList<>();
 		forEachVisibleObjectInRange(worldObject, clazz, range, result::add);
-		return result;
-	}
-	
-	public List<Playable> getVisiblePlayable(WorldObject worldObject)
-	{
-		final List<Playable> result = new ArrayList<>();
-		forEachVisibleObject(worldObject, Playable.class, w ->
-		{
-			result.add(w);
-		});
-		
 		return result;
 	}
 	
