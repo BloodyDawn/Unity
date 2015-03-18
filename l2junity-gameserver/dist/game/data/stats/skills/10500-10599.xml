@@ -466,18 +466,27 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10546" levels="4" name="Uppercut">
-		<!-- AUTO GENERATED SKILL -->
-		<!-- Delivers a powerful blow to Knock Down target for 2 seconds. Requires a dagger or dual dagger to be equipped. -->
-		<table name="#mpConsumes"> 40 43 45 47 </table>
+		<table name="#mpConsume"> 40 43 45 47 </table>
+		<!-- Delivers a powerful blow to Knock Down the target for 2 seconds. Requires a dagger or dual dagger to be equipped. -->
 		<set name="icon" val="icon.skill10546" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
+		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
+		<set name="abnormalTime" val="2" />
 		<set name="castRange" val="40" />
+		<set name="operateType" val="A2" />
 		<set name="hitTime" val="1800" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="30000" />
 		<set name="isDebuff" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="targetType" val="ONE" />
+		<cond msgId="113" addName="1">
+			<target playable="true" />
+		</cond>
+		<for>
+			<effect name="KnockDown">
+				<param speed="700" distance="50" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10547" levels="1" name="Shadow Attack">
 		<!-- AUTO GENERATED SKILL -->
@@ -505,18 +514,24 @@
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="10549" levels="5" name="Kick">
-		<!-- AUTO GENERATED SKILL -->
-		<!-- Powerfully Knock Back target with a kick. -->
-		<table name="#mpConsumes"> 38 40 42 44 46 </table>
+		<!-- Powerfully Knock Back the target with a kick. -->
+		<table name="#mpConsume"> 38 40 42 44 46 </table>
 		<set name="icon" val="icon.skill10549" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
+		<set name="abnormalTime" val="1" />
+		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
 		<set name="castRange" val="40" />
+		<set name="operateType" val="A2" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="1000" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isDebuff" val="true" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="targetType" val="ONE" />
+		<for>
+			<effect name="KnockBack">
+				<param speed="400" distance="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10550" levels="4" name="Illusion Strike">
 		<!-- AUTO GENERATED SKILL -->
