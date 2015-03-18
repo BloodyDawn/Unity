@@ -40,6 +40,7 @@ public final class KnockDown extends AbstractEffect
 	private int _speed = 0;
 	private int _delay = 0;
 	private int _animationSpeed = 0;
+	private FlyType _type;
 	
 	public KnockDown(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
@@ -50,6 +51,7 @@ public final class KnockDown extends AbstractEffect
 			_speed = params.getInt("speed", 0);
 			_delay = params.getInt("delay", 0);
 			_animationSpeed = params.getInt("animationSpeed", 0);
+			_type = params.getEnum("type", FlyType.class, FlyType.PUSH_DOWN_HORIZONTAL);
 		}
 	}
 	
@@ -65,7 +67,7 @@ public final class KnockDown extends AbstractEffect
 		final Location loc = GeoData.getInstance().moveCheck(effected.getX(), effected.getY(), effected.getZ(), x, y, z, effected.getInstanceId());
 		
 		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		effected.broadcastPacket(new FlyToLocation(effected, loc, FlyType.PUSH_DOWN_HORIZONTAL, _speed, _delay, _animationSpeed));
+		effected.broadcastPacket(new FlyToLocation(effected, loc, _type, _speed, _delay, _animationSpeed));
 		effected.abortAttack();
 		effected.abortCast();
 		effected.setXYZ(loc);

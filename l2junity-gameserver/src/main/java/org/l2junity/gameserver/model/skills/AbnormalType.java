@@ -372,7 +372,8 @@ public enum AbnormalType
 	HOLY_ATTACK_RESISTANCE_ISS,
 	MENTAL_ATTACK_RESISTANCE_ISS,
 	CRIPPLING_ATTACK,
-	SHADOW_BLADE;
+	SHADOW_BLADE,
+	STORM_SIGN;
 	
 	/**
 	 * Get the enumerate for the given String.

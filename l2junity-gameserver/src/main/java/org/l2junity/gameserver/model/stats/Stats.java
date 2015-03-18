@@ -206,7 +206,10 @@ public enum Stats
 	MAX_SUMMON_POINTS("summonPoints"),
 	
 	// Exp bonus applied to vitality
-	VITALITY_EXP_BONUS("vitalityExpBonus");
+	VITALITY_EXP_BONUS("vitalityExpBonus"),
+	
+	// Storm Sign damage bonus
+	STORM_SIGN_BONUS("stormSignBonus");
 	
 	public static final int NUM_STATS = values().length;
 	

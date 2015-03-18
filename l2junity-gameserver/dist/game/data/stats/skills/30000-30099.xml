@@ -9,16 +9,20 @@
 		<set name="castRange" val="0" />
 	</skill>
 	<skill id="30001" levels="25" name="Hydro Attack">
-		<!-- TODO: 10% more damage if target is debuffed -->
+		<!-- Updated to Ertheia -->
 		<!-- Attacks target with 6 Power added to M. Atk. 10% more damage if target is debuffed. Requires a sword or blunt weapon. -->
 		<table name="#mpInitialConsume"> 1 2 2 3 3 4 4 4 5 5 5 6 6 6 6 6 7 7 7 7 7 7 7 7 7 </table>
 		<table name="#mpConsume"> 2 6 8 10 13 14 16 17 18 20 22 23 24 25 26 26 26 26 26 27 27 27 27 27 28 </table>
+		<table name="#power">6 14 19 25 32 36 41 46 50 55 60 64 69 72 75 77 79 171 179 187 195 203 211 219 227</table>
 		<set name="icon" val="icon.skill30001" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
+		<set name="power" val="#power" />
 		<set name="castRange" val="80" />
+		<set name="affectRange" val="160" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="-720" /> <!-- Unconfirmed -->
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="isMagic" val="1" />
@@ -27,16 +31,30 @@
 		</cond>
 		<for>
 			<effect name="MagicalAttack" />
+			<effect name="CallSkill">
+				<param skillId="30002" skillLevel="1" skillLevelScaleTo="3" /> <!-- Storm Sign -->
+			</effect>
 		</for>
 	</skill>
 	<skill id="30002" levels="3" name="Storm Sign">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- M. Def. - 30%, Speed - 70. -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<set name="abnormalType" val="STORM_SIGN" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="icon" val="icon.skill30027" />
+		<set name="abnormalTime" val="5" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="stormSignBonus" val="1.10" />
+				<mul stat="mDef" val="0.7" />
+				<mul stat="runSpd" val="0.3" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="30003" levels="17" name="Hydro Flare">
 		<!-- AUTO GENERATED SKILL -->
@@ -75,18 +93,34 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="30006" levels="8" name="Storm Rage">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Attacks target with 255 Power added to M. Atk. and blows them away. 10% more damage if target is debuffed. Requires a sword or blunt weapon. -->
 		<table name="#mpConsumes"> 134 135 136 137 138 138 139 141 </table>
+		<table name="#power"> 255 269 283 297 311 325 339 353 </table>
 		<set name="icon" val="icon.skill30006" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="abnormalTime" val="1" />
+		<set name="affectLimit" val="5-10" /> <!-- Unconfirmed -->
+		<set name="affectRange" val="100" /> <!-- Unconfirmed -->
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="castRange" val="60" />
+		<set name="effectPoint" val="-720" /> <!-- Unconfirmed -->
+		<set name="power" val="#power" />
 		<set name="hitTime" val="1800" />
 		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="30000" />
+		<set name="reuseDelay" val="20000" />
 		<set name="isMagic" val="1" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="113" addName="1">
+			<using kind="SWORD,BLUNT" />
+		</cond>
+		<for>
+			<effect name="KnockBack">
+				<param distance="60" type="THROW_UP" />
+			</effect>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="30007" levels="12" name="Hydro Drain">
 		<!-- AUTO GENERATED SKILL -->
@@ -153,19 +187,35 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="30012" levels="22" name="Air Rush">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Knocks down target and attacks with 57 Power added to M. Atk. 10% more damage if target is debuffed. If target has Storm Sign, eliminates it and inflicts additional damage. Requires a sword or blunt weapon. -->
 		<table name="#mpConsumes"> 31 34 38 41 45 49 53 56 59 62 63 64 65 66 67 67 68 68 69 69 69 70 </table>
+		<table name="#power"> 57 66 74 83 92 101 110 118 127 136 141 145 150 154 376 397 418 438 459 480 501 522 </table>
 		<set name="icon" val="icon.skill30012" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="abnormalTime" val="1" />
+		<set name="operateType" val="DA1" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="effectPoint" val="-720" /> <!-- Unconfirmed -->
 		<set name="castRange" val="900" />
-		<set name="hitTime" val="1000" />
+		<set name="hitTime" val="500" />
 		<set name="coolTime" val="500" />
+		<set name="power" val="#power" />
 		<set name="reuseDelay" val="7000" />
+		<set name="flyRadius" val="900" />
+		<set name="flyType" val="CHARGE" />
 		<set name="isMagic" val="1" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="113" addName="1">
+			<using kind="SWORD,BLUNT" />
+		</cond>
+		<for>
+			<effect name="EnemyCharge" />
+			<effect name="MagicalAttack" />
+			<effect name="DispelBySlot">
+				<param dispel="STORM_SIGN,3" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="30013" levels="1" name="Switch Places">
 		<!-- AUTO GENERATED SKILL -->

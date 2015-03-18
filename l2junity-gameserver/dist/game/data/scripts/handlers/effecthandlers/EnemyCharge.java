@@ -25,7 +25,6 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.network.client.send.FlyToLocation;
-import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.ValidateLocation;
 
 /**
@@ -95,7 +94,7 @@ public final class EnemyCharge extends AbstractEffect
 		
 		final Location destination = GeoData.getInstance().moveCheck(info.getEffector().getX(), info.getEffector().getY(), info.getEffector().getZ(), x, y, z, info.getEffector().getInstanceId());
 		
-		info.getEffector().broadcastPacket(new FlyToLocation(info.getEffector(), destination, FlyType.CHARGE));
+		info.getEffector().broadcastPacket(new FlyToLocation(info.getEffector(), destination, info.getSkill().getFlyType()));
 		
 		// maybe is need force set X,Y,Z
 		info.getEffector().setXYZ(destination);

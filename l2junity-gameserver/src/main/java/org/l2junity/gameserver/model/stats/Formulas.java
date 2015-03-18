@@ -911,6 +911,9 @@ public final class Formulas
 		
 		damage *= calcAttributeBonus(attacker, target, skill);
 		
+		// Bonus damage if target is affected by Storm Sign
+		damage *= target.calcStat(Stats.STORM_SIGN_BONUS, 1);
+		
 		if (target.isAttackable())
 		{
 			damage *= attacker.calcStat(Stats.PVE_MAGICAL_DMG, 1, null, null);
