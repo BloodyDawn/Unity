@@ -24,7 +24,6 @@ import java.sql.ResultSet;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 import org.l2junity.Config;
@@ -289,7 +288,7 @@ public class PcInventory extends Inventory
 	public Collection<TradeItem> getAvailableItems(TradeList tradeList)
 	{
 		//@formatter:off
-		return _items.values().stream().filter(Objects::nonNull)
+		return _items.values().stream()
 			.filter(i -> i.isAvailable(getOwner(), false, false))
 			.map(tradeList::adjustAvailableItem)
 			.collect(Collectors.toCollection(LinkedList::new));
