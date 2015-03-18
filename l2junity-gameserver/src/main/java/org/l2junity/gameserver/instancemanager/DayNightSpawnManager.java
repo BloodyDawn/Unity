@@ -245,21 +245,7 @@ public final class DayNightSpawnManager
 	
 	public L2RaidBossInstance handleBoss(L2Spawn spawnDat)
 	{
-		if (_bosses.containsKey(spawnDat))
-		{
-			return _bosses.get(spawnDat);
-		}
-		
-		if (GameTimeController.getInstance().isNight())
-		{
-			L2RaidBossInstance raidboss = (L2RaidBossInstance) spawnDat.doSpawn();
-			_bosses.put(spawnDat, raidboss);
-			
-			return raidboss;
-		}
-		
-		_bosses.put(spawnDat, null);
-		return null;
+		return _bosses.computeIfAbsent(spawnDat, s -> GameTimeController.getInstance().isNight() ? (L2RaidBossInstance) s.doSpawn() : null);
 	}
 	
 	private static class SingletonHolder
