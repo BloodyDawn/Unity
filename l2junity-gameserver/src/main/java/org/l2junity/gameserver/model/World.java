@@ -498,17 +498,17 @@ public final class World
 		});
 	}
 	
-	public <T extends WorldObject> boolean forEachVisibleObject(WorldObject worldObject, Class<T> clazz, int depth, Consumer<T> c)
+	public <T extends WorldObject> void forEachVisibleObject(WorldObject worldObject, Class<T> clazz, int depth, Consumer<T> c)
 	{
 		if (worldObject == null)
 		{
-			return true;
+			return;
 		}
 		
 		final WorldRegion centerWorldRegion = worldObject.getWorldRegion();
 		if (centerWorldRegion == null)
 		{
-			return true;
+			return;
 		}
 		
 		for (int x = Math.max(centerWorldRegion.getRegionX() - depth, 0); x <= Math.min(centerWorldRegion.getRegionX() + depth, REGIONS_X); x++)
@@ -534,8 +534,6 @@ public final class World
 				}
 			}
 		}
-		
-		return true;
 	}
 	
 	public <T extends WorldObject> void forEachVisibleObject(WorldObject worldObject, Class<T> clazz, Consumer<T> c)
