@@ -283,12 +283,15 @@ public final class World
 				if (wo.isCreature())
 				{
 					final CharacterAI ai = ((Creature) wo).getAI();
-					ai.describeStateToPlayer((PlayerInstance) object);
-					if (wo.isMonster())
+					if (ai != null)
 					{
-						if (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
+						ai.describeStateToPlayer((PlayerInstance) object);
+						if (wo.isMonster())
 						{
-							ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+							if (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
+							{
+								ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+							}
 						}
 					}
 				}
@@ -300,12 +303,15 @@ public final class World
 				if (object.isCreature())
 				{
 					final CharacterAI ai = ((Creature) object).getAI();
-					ai.describeStateToPlayer((PlayerInstance) wo);
-					if (object.isMonster())
+					if (ai != null)
 					{
-						if (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
+						ai.describeStateToPlayer((PlayerInstance) wo);
+						if (object.isMonster())
 						{
-							ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+							if (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
+							{
+								ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+							}
 						}
 					}
 				}
@@ -443,12 +449,15 @@ public final class World
 						if (wo.isCreature())
 						{
 							final CharacterAI ai = ((Creature) wo).getAI();
-							ai.describeStateToPlayer((PlayerInstance) object);
-							if (wo.isMonster())
+							if (ai != null)
 							{
-								if (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
+								ai.describeStateToPlayer((PlayerInstance) object);
+								if (wo.isMonster())
 								{
-									ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+									if (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
+									{
+										ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+									}
 								}
 							}
 						}
@@ -460,12 +469,15 @@ public final class World
 						if (object.isCreature())
 						{
 							final CharacterAI ai = ((Creature) object).getAI();
-							ai.describeStateToPlayer((PlayerInstance) wo);
-							if (object.isMonster())
+							if (ai != null)
 							{
-								if (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
+								ai.describeStateToPlayer((PlayerInstance) wo);
+								if (object.isMonster())
 								{
-									ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+									if (ai.getIntention() == CtrlIntention.AI_INTENTION_IDLE)
+									{
+										ai.setIntention(CtrlIntention.AI_INTENTION_ACTIVE, null);
+									}
 								}
 							}
 						}
