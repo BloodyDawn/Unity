@@ -468,13 +468,7 @@ public class Attackable extends Npc
 						// Calculate Exp and SP rewards
 						if (isInSurroundingRegion(attacker))
 						{
-							// Calculate the difference of level between this attacker (player or servitor owner) and the L2Attackable
-							// mob = 24, atk = 10, diff = -14 (full xp)
-							// mob = 24, atk = 28, diff = 4 (some xp)
-							// mob = 24, atk = 50, diff = 26 (no xp)
-							final int levelDiff = attacker.getLevel() - getLevel();
-							
-							final int[] expSp = calculateExpAndSp(levelDiff, damage, totalDamage);
+							final int[] expSp = calculateExpAndSp(attacker.getLevel(), damage, totalDamage);
 							long exp = expSp[0];
 							int sp = expSp[1];
 							
@@ -1312,52 +1306,78 @@ public class Attackable extends Npc
 	
 	/**
 	 * Calculate the Experience and SP to distribute to attacker (L2PcInstance, L2ServitorInstance or L2Party) of the L2Attackable.
-	 * @param diff The difference of level between attacker (L2PcInstance, L2ServitorInstance or L2Party) and the L2Attackable
+	 * @param charLevel The killer level
 	 * @param damage The damages given by the attacker (L2PcInstance, L2ServitorInstance or L2Party)
 	 * @param totalDamage The total damage done
 	 * @return
 	 */
-	private int[] calculateExpAndSp(int diff, int damage, long totalDamage)
+	private int[] calculateExpAndSp(int charLevel, int damage, long totalDamage)
 	{
-		double xp;
-		double sp;
+		final int levelDiff = charLevel - getLevel();
+		double xp = 0;
+		double sp = 0;
 		
-		if (diff < -5)
+		if ((levelDiff < 11) || (levelDiff > -11))
 		{
-			diff = -5; // makes possible to use ALT_GAME_EXPONENT configuration
-		}
-		
-		xp = ((double) getExpReward() * damage) / totalDamage;
-		if (Config.ALT_GAME_EXPONENT_XP != 0)
-		{
-			xp *= Math.pow(2., -diff / Config.ALT_GAME_EXPONENT_XP);
-		}
-		
-		sp = ((double) getSpReward() * damage) / totalDamage;
-		if (Config.ALT_GAME_EXPONENT_SP != 0)
-		{
-			sp *= Math.pow(2., -diff / Config.ALT_GAME_EXPONENT_SP);
-		}
-		
-		if ((Config.ALT_GAME_EXPONENT_XP == 0) && (Config.ALT_GAME_EXPONENT_SP == 0))
-		{
-			if (diff > 5) // formula revised May 07
-			{
-				double pow = Math.pow((double) 5 / 6, diff - 5);
-				xp = xp * pow;
-				sp = sp * pow;
-			}
+			xp = Math.max(0, ((double) getExpReward() * damage) / totalDamage);
+			sp = Math.max(0, ((double) getSpReward() * damage) / totalDamage);
 			
-			if (xp <= 0)
+			if ((charLevel > 84) && (levelDiff <= -3))
 			{
-				xp = 0;
-				sp = 0;
-			}
-			else if (sp <= 0)
-			{
-				sp = 0;
+				double mul;
+				switch (levelDiff)
+				{
+					case -3:
+					{
+						mul = 0.97;
+						break;
+					}
+					case -4:
+					{
+						mul = 0.67;
+						break;
+					}
+					case -5:
+					{
+						mul = 0.42;
+						break;
+					}
+					case -6:
+					{
+						mul = 0.25;
+						break;
+					}
+					case -7:
+					{
+						mul = 0.15;
+						break;
+					}
+					case -8:
+					{
+						mul = 0.09;
+						break;
+					}
+					case -9:
+					{
+						mul = 0.05;
+						break;
+					}
+					case -10:
+					{
+						mul = 0.03;
+						break;
+					}
+					default:
+					{
+						mul = 1.;
+						break;
+					}
+				}
+				xp *= mul;
+				sp *= mul;
 			}
 		}
+		
 		int[] tmp =
 		{
 			(int) xp,
