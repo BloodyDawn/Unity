@@ -68,13 +68,8 @@ public class Mail extends ItemContainer
 	public void setNewMessageId(int messageId)
 	{
 		_messageId = messageId;
-		for (ItemInstance item : _items)
+		for (ItemInstance item : _items.values())
 		{
-			if (item == null)
-			{
-				continue;
-			}
-			
 			item.setItemLocation(getBaseLocation(), messageId);
 		}
 		
@@ -83,12 +78,8 @@ public class Mail extends ItemContainer
 	
 	public void returnToWh(ItemContainer wh)
 	{
-		for (ItemInstance item : _items)
+		for (ItemInstance item : _items.values())
 		{
-			if (item == null)
-			{
-				continue;
-			}
 			if (wh == null)
 			{
 				item.setItemLocation(ItemLocation.WAREHOUSE);
@@ -113,12 +104,9 @@ public class Mail extends ItemContainer
 	@Override
 	public void updateDatabase()
 	{
-		for (ItemInstance item : _items)
+		for (ItemInstance item : _items.values())
 		{
-			if (item != null)
-			{
-				item.updateDatabase(true);
-			}
+			item.updateDatabase(true);
 		}
 	}
 	

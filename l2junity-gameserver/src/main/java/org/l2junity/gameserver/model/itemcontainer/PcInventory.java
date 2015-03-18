@@ -145,12 +145,8 @@ public class PcInventory extends Inventory
 	public Collection<ItemInstance> getUniqueItems(boolean allowAdena, boolean allowAncientAdena, boolean onlyAvailable)
 	{
 		final Collection<ItemInstance> list = new LinkedList<>();
-		for (ItemInstance item : _items)
+		for (ItemInstance item : _items.values())
 		{
-			if (item == null)
-			{
-				continue;
-			}
 			if ((!allowAdena && (item.getId() == ADENA_ID)))
 			{
 				continue;
@@ -191,12 +187,8 @@ public class PcInventory extends Inventory
 	public Collection<ItemInstance> getUniqueItemsByEnchantLevel(boolean allowAdena, boolean allowAncientAdena, boolean onlyAvailable)
 	{
 		final Collection<ItemInstance> list = new LinkedList<>();
-		for (ItemInstance item : _items)
+		for (ItemInstance item : _items.values())
 		{
-			if (item == null)
-			{
-				continue;
-			}
 			if ((!allowAdena && (item.getId() == ADENA_ID)))
 			{
 				continue;
@@ -297,7 +289,7 @@ public class PcInventory extends Inventory
 	public Collection<TradeItem> getAvailableItems(TradeList tradeList)
 	{
 		//@formatter:off
-		return _items.stream().filter(Objects::nonNull)
+		return _items.values().stream().filter(Objects::nonNull)
 			.filter(i -> i.isAvailable(getOwner(), false, false))
 			.map(tradeList::adjustAvailableItem)
 			.collect(Collectors.toCollection(LinkedList::new));
@@ -1037,7 +1029,7 @@ public class PcInventory extends Inventory
 	 */
 	public void applyItemSkills()
 	{
-		for (ItemInstance item : _items)
+		for (ItemInstance item : _items.values())
 		{
 			item.giveSkillsToOwner();
 			item.applyEnchantStats();

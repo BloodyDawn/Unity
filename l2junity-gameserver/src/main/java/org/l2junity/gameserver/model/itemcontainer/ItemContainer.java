@@ -23,12 +23,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Collection;
 import java.util.LinkedList;
-import java.util.List;
-import java.util.Objects;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-
-import javolution.util.FastList;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -50,7 +48,7 @@ public abstract class ItemContainer
 {
 	protected static final Logger _log = LoggerFactory.getLogger(ItemContainer.class);
 	
-	protected final List<ItemInstance> _items = new FastList<ItemInstance>().shared();
+	protected final Map<Integer, ItemInstance> _items = new ConcurrentHashMap<>();
 	
 	protected ItemContainer()
 	{
@@ -97,7 +95,7 @@ public abstract class ItemContainer
 	 */
 	public Collection<ItemInstance> getItems(Predicate<ItemInstance> filter)
 	{
-		return _items.stream().filter(Objects::nonNull).filter(filter).collect(Collectors.toCollection(LinkedList::new));
+		return _items.values().stream().filter(filter).collect(Collectors.toCollection(LinkedList::new));
 	}
 	
 	/**
@@ -106,7 +104,7 @@ public abstract class ItemContainer
 	 */
 	public ItemInstance getItemByItemId(int itemId)
 	{
-		for (ItemInstance item : _items)
+		for (ItemInstance item : _items.values())
 		{
 			if ((item != null) && (item.getId() == itemId))
 			{
@@ -121,7 +119,7 @@ public abstract class ItemContainer
 	 */
 	public final boolean haveItemForSelfResurrection()
 	{
-		for (ItemInstance item : _items)
+		for (ItemInstance item : _items.values())
 		{
 			if ((item != null) && (item.getItem().isAllowSelfResurrection()))
 			{
@@ -146,14 +144,7 @@ public abstract class ItemContainer
 	 */
 	public ItemInstance getItemByObjectId(int objectId)
 	{
-		for (ItemInstance item : _items)
-		{
-			if ((item != null) && (item.getObjectId() == objectId))
-			{
-				return item;
-			}
-		}
-		return null;
+		return _items.get(objectId);
 	}
 	
 	/**
@@ -178,7 +169,7 @@ public abstract class ItemContainer
 	{
 		long count = 0;
 		
-		for (ItemInstance item : _items)
+		for (ItemInstance item : _items.values())
 		{
 			if ((item.getId() == itemId) && ((item.getEnchantLevel() == enchantLevel) || (enchantLevel < 0)) && (includeEquipped || !item.isEquipped()))
 			{
@@ -421,7 +412,7 @@ public abstract class ItemContainer
 		
 		synchronized (item)
 		{
-			if (!_items.contains(item))
+			if (!_items.containsKey(item.getObjectId()))
 			{
 				return null;
 			}
@@ -581,12 +572,9 @@ public abstract class ItemContainer
 	 */
 	public void destroyAllItems(String process, PlayerInstance actor, Object reference)
 	{
-		for (ItemInstance item : _items)
+		for (ItemInstance item : _items.values())
 		{
-			if (item != null)
-			{
-				destroyItem(process, item, actor, reference);
-			}
+			destroyItem(process, item, actor, reference);
 		}
 	}
 	
@@ -595,9 +583,9 @@ public abstract class ItemContainer
 	 */
 	public long getAdena()
 	{
-		for (ItemInstance item : _items)
+		for (ItemInstance item : _items.values())
 		{
-			if ((item != null) && (item.getId() == Inventory.ADENA_ID))
+			if (item.getId() == Inventory.ADENA_ID)
 			{
 				return item.getCount();
 			}
@@ -607,9 +595,9 @@ public abstract class ItemContainer
 	
 	public long getBeautyTickets()
 	{
-		for (ItemInstance item : _items)
+		for (ItemInstance item : _items.values())
 		{
-			if ((item != null) && (item.getId() == Inventory.BEAUTY_TICKET_ID))
+			if (item.getId() == Inventory.BEAUTY_TICKET_ID)
 			{
 				return item.getCount();
 			}
@@ -623,7 +611,7 @@ public abstract class ItemContainer
 	 */
 	protected void addItem(ItemInstance item)
 	{
-		_items.add(item);
+		_items.put(item.getObjectId(), item);
 	}
 	
 	/**
@@ -633,7 +621,7 @@ public abstract class ItemContainer
 	 */
 	protected boolean removeItem(ItemInstance item)
 	{
-		return _items.remove(item);
+		return _items.remove(item.getObjectId()) != null;
 	}
 	
 	/**
@@ -650,14 +638,11 @@ public abstract class ItemContainer
 	{
 		if (getOwner() != null)
 		{
-			for (ItemInstance item : _items)
+			for (ItemInstance item : _items.values())
 			{
-				if (item != null)
-				{
-					item.updateDatabase(true);
-					item.deleteMe();
-					World.getInstance().removeObject(item);
-				}
+				item.updateDatabase(true);
+				item.deleteMe();
+				World.getInstance().removeObject(item);
 			}
 		}
 		_items.clear();
@@ -670,12 +655,9 @@ public abstract class ItemContainer
 	{
 		if (getOwner() != null)
 		{
-			for (ItemInstance item : _items)
+			for (ItemInstance item : _items.values())
 			{
-				if (item != null)
-				{
-					item.updateDatabase(true);
-				}
+				item.updateDatabase(true);
 			}
 		}
 	}

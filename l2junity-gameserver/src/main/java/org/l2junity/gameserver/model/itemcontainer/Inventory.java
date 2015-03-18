@@ -927,7 +927,7 @@ public abstract class Inventory extends ItemContainer
 		
 		synchronized (item)
 		{
-			if (!_items.contains(item))
+			if (!_items.containsKey(item.getObjectId()))
 			{
 				return null;
 			}
@@ -962,7 +962,7 @@ public abstract class Inventory extends ItemContainer
 		
 		synchronized (item)
 		{
-			if (!_items.contains(item))
+			if (!_items.containsKey(item.getObjectId()))
 			{
 				return null;
 			}
@@ -1742,7 +1742,7 @@ public abstract class Inventory extends ItemContainer
 	{
 		long weight = 0;
 		
-		for (ItemInstance item : _items)
+		for (ItemInstance item : _items.values())
 		{
 			if ((item != null) && (item.getItem() != null))
 			{
