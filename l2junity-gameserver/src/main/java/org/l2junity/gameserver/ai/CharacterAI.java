@@ -119,13 +119,9 @@ public class CharacterAI extends AbstractAI
 		}
 	}
 	
-	/**
-	 * Constructor of L2CharacterAI.
-	 * @param accessor The AI accessor of the L2Character
-	 */
-	public CharacterAI(Creature.AIAccessor accessor)
+	public CharacterAI(Creature creature)
 	{
-		super(accessor);
+		super(creature);
 	}
 	
 	public IntentionCommand getNextIntention()
@@ -728,16 +724,16 @@ public class CharacterAI extends AbstractAI
 	@Override
 	protected void onEvtArrived()
 	{
-		_accessor.getActor().revalidateZone(true);
+		getActor().revalidateZone(true);
 		
-		if (_accessor.getActor().moveToNextRoutePoint())
+		if (getActor().moveToNextRoutePoint())
 		{
 			return;
 		}
 		
-		if (_accessor.getActor() instanceof Attackable)
+		if (getActor() instanceof Attackable)
 		{
-			((Attackable) _accessor.getActor()).setisReturningToSpawnPoint(false);
+			((Attackable) getActor()).setisReturningToSpawnPoint(false);
 		}
 		clientStoppedMoving();
 		

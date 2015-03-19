@@ -819,7 +819,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * </ul>
 	 * @param target The L2Character targeted
 	 */
-	protected void doAttack(Creature target)
+	public void doAttack(Creature target)
 	{
 		if (!_attackLock.tryLock())
 		{
@@ -2606,7 +2606,16 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	protected CharacterAI initAI()
 	{
-		return new CharacterAI(new AIAccessor());
+		return new CharacterAI(this);
+	}
+	
+	public void detachAI()
+	{
+		if (isWalker())
+		{
+			return;
+		}
+		setAI(null);
 	}
 	
 	public void setAI(CharacterAI newAI)
@@ -3411,93 +3420,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public boolean isAffectedBySkill(int skillId)
 	{
 		return _effectList.isAffectedBySkill(skillId);
-	}
-	
-	// TODO: NEED TO ORGANIZE AND MOVE TO PROPER PLACE
-	/** This class permit to the L2Character AI to obtain informations and uses L2Character method */
-	public class AIAccessor
-	{
-		/**
-		 * @return the L2Character managed by this Accessor AI.
-		 */
-		public Creature getActor()
-		{
-			return Creature.this;
-		}
-		
-		/**
-		 * Accessor to L2Character moveToLocation() method with an interaction area.
-		 * @param x
-		 * @param y
-		 * @param z
-		 * @param offset
-		 */
-		public void moveTo(int x, int y, int z, int offset)
-		{
-			moveToLocation(x, y, z, offset);
-		}
-		
-		/**
-		 * Accessor to L2Character moveToLocation() method without interaction area.
-		 * @param x
-		 * @param y
-		 * @param z
-		 */
-		public void moveTo(int x, int y, int z)
-		{
-			moveToLocation(x, y, z, 0);
-		}
-		
-		/**
-		 * Accessor to L2Character stopMove() method.
-		 * @param loc
-		 */
-		public void stopMove(Location loc)
-		{
-			Creature.this.stopMove(loc);
-		}
-		
-		/**
-		 * Accessor to L2Character doAttack() method.
-		 * @param target
-		 */
-		public void doAttack(Creature target)
-		{
-			Creature.this.doAttack(target);
-		}
-		
-		/**
-		 * Accessor to L2Character doCast() method.
-		 * @param skill
-		 */
-		public void doCast(Skill skill)
-		{
-			Creature.this.doCast(skill);
-		}
-		
-		/**
-		 * Create a NotifyAITask.
-		 * @param evt
-		 * @return
-		 */
-		public NotifyAITask newNotifyTask(CtrlEvent evt)
-		{
-			return new NotifyAITask(getActor(), evt);
-		}
-		
-		/**
-		 * Cancel the AI.
-		 */
-		public void detachAI()
-		{
-			// Skip character, if it is controlled by Walking Manager
-			if (isWalker())
-			{
-				return;
-			}
-			
-			setAI(null);
-		}
 	}
 	
 	/**
@@ -4390,7 +4312,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * @param z The Y position of the destination
 	 * @param offset The size of the interaction area of the L2Character targeted
 	 */
-	protected void moveToLocation(int x, int y, int z, int offset)
+	public void moveToLocation(int x, int y, int z, int offset)
 	{
 		// Get the Move Speed of the L2Charcater
 		double speed = getMoveSpeed();

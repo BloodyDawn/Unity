@@ -18,7 +18,6 @@
  */
 package org.l2junity.gameserver.ai;
 
-import org.l2junity.gameserver.model.actor.instance.L2AirShipInstance;
 import org.l2junity.gameserver.model.actor.instance.L2ShuttleInstance;
 import org.l2junity.gameserver.network.client.send.shuttle.ExShuttleMove;
 
@@ -27,9 +26,9 @@ import org.l2junity.gameserver.network.client.send.shuttle.ExShuttleMove;
  */
 public class ShuttleAI extends VehicleAI
 {
-	public ShuttleAI(L2AirShipInstance.AIAccessor accessor)
+	public ShuttleAI(L2ShuttleInstance shuttle)
 	{
-		super(accessor);
+		super(shuttle);
 	}
 	
 	@Override
@@ -38,7 +37,7 @@ public class ShuttleAI extends VehicleAI
 		if (!_actor.isMovementDisabled())
 		{
 			_clientMoving = true;
-			_accessor.moveTo(x, y, z);
+			_actor.moveToLocation(x, y, z, 0);
 			_actor.broadcastPacket(new ExShuttleMove(getActor(), x, y, z));
 		}
 	}

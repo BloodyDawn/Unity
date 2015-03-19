@@ -92,13 +92,9 @@ public class AttackableAI extends CharacterAI implements Runnable
 	private final L2NpcTemplate _skillrender;
 	int lastBuffTick;
 	
-	/**
-	 * Constructor of L2AttackableAI.
-	 * @param accessor The AI accessor of the L2Character
-	 */
-	public AttackableAI(Creature.AIAccessor accessor)
+	public AttackableAI(Attackable attackable)
 	{
-		super(accessor);
+		super(attackable);
 		_skillrender = NpcData.getInstance().getTemplate(getActiveChar().getTemplate().getId());
 		_attackTimeout = Integer.MAX_VALUE;
 		_globalAggro = -10; // 10 seconds timeout of ATTACK after respawn
@@ -348,7 +344,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				}
 				
 				// Cancel the AI
-				_accessor.detachAI();
+				_actor.detachAI();
 				
 				return;
 			}
@@ -401,7 +397,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		}
 		clientStopMoving(null);
 		setIntention(AI_INTENTION_ACTIVE);
-		_accessor.doCast(_skill);
+		_actor.doCast(_skill);
 	}
 	
 	/**
@@ -1248,7 +1244,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 			}
 		}
 		
-		_accessor.doAttack(getAttackTarget());
+		_actor.doAttack(getAttackTarget());
 	}
 	
 	private boolean cast(Skill sk)

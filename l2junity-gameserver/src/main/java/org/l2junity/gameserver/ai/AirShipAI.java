@@ -29,9 +29,9 @@ import org.l2junity.gameserver.network.client.send.ExStopMoveAirShip;
  */
 public class AirShipAI extends VehicleAI
 {
-	public AirShipAI(L2AirShipInstance.AIAccessor accessor)
+	public AirShipAI(L2AirShipInstance airShip)
 	{
-		super(accessor);
+		super(airShip);
 	}
 	
 	@Override
@@ -40,7 +40,7 @@ public class AirShipAI extends VehicleAI
 		if (!_actor.isMovementDisabled())
 		{
 			_clientMoving = true;
-			_accessor.moveTo(x, y, z);
+			_actor.moveToLocation(x, y, z, 0);
 			_actor.broadcastPacket(new ExMoveToLocationAirShip(getActor()));
 		}
 	}
@@ -50,7 +50,7 @@ public class AirShipAI extends VehicleAI
 	{
 		if (_actor.isMoving())
 		{
-			_accessor.stopMove(loc);
+			_actor.stopMove(loc);
 		}
 		
 		if (_clientMoving || (loc != null))

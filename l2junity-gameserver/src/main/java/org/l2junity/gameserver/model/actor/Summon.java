@@ -91,24 +91,6 @@ public abstract class Summon extends Playable
 	};
 	// @formatter:on
 	
-	public class AIAccessor extends Creature.AIAccessor
-	{
-		public Summon getSummon()
-		{
-			return Summon.this;
-		}
-		
-		public boolean isAutoFollow()
-		{
-			return getFollowStatus();
-		}
-		
-		public void doPickupItem(WorldObject object)
-		{
-			Summon.this.doPickupItem(object);
-		}
-	}
-	
 	public Summon(L2NpcTemplate template, PlayerInstance owner)
 	{
 		super(template);
@@ -178,7 +160,7 @@ public abstract class Summon extends Playable
 	@Override
 	protected CharacterAI initAI()
 	{
-		return new SummonAI(new Summon.AIAccessor());
+		return new SummonAI(this);
 	}
 	
 	@Override
@@ -513,10 +495,6 @@ public abstract class Summon extends Playable
 	public PetInventory getInventory()
 	{
 		return null;
-	}
-	
-	protected void doPickupItem(WorldObject object)
-	{
 	}
 	
 	public void setRestoreSummon(boolean val)

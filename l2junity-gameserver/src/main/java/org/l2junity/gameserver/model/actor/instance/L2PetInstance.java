@@ -478,7 +478,7 @@ public class L2PetInstance extends Summon
 	}
 	
 	@Override
-	protected void doPickupItem(WorldObject object)
+	public void doPickupItem(WorldObject object)
 	{
 		if (isDead())
 		{

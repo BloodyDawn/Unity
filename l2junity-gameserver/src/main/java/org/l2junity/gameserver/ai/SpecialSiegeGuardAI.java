@@ -19,27 +19,24 @@
 package org.l2junity.gameserver.ai;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Creature.AIAccessor;
 
 /**
  * @author BiggBoss
  */
 public final class SpecialSiegeGuardAI extends SiegeGuardAI
 {
-	private final ArrayList<Integer> _allied;
+	private final List<Integer> _allied;
 	
-	/**
-	 * @param accessor
-	 */
-	public SpecialSiegeGuardAI(AIAccessor accessor)
+	public SpecialSiegeGuardAI(Creature creature)
 	{
-		super(accessor);
+		super(creature);
 		_allied = new ArrayList<>();
 	}
 	
-	public ArrayList<Integer> getAlly()
+	public List<Integer> getAlly()
 	{
 		return _allied;
 	}

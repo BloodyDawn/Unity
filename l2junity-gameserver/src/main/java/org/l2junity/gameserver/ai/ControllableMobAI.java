@@ -30,7 +30,6 @@ import org.l2junity.gameserver.model.MobGroupTable;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Creature.AIAccessor;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.L2ControllableMobInstance;
@@ -152,7 +151,7 @@ public final class ControllableMobAI extends AttackableAI
 			{
 				if (Util.checkIfInRange(sk.getCastRange(), _actor, getAttackTarget(), true) && !_actor.isSkillDisabled(sk) && (_actor.getCurrentMp() > _actor.getStat().getMpConsume(sk)))
 				{
-					_accessor.doCast(sk);
+					_actor.doCast(sk);
 					return;
 				}
 				
@@ -202,7 +201,7 @@ public final class ControllableMobAI extends AttackableAI
 				
 				if (((castRange * castRange) >= dist2) && !_actor.isSkillDisabled(sk) && (_actor.getCurrentMp() > _actor.getStat().getMpConsume(sk)))
 				{
-					_accessor.doCast(sk);
+					_actor.doCast(sk);
 					return;
 				}
 				
@@ -216,7 +215,7 @@ public final class ControllableMobAI extends AttackableAI
 			
 			return;
 		}
-		_accessor.doAttack(target);
+		_actor.doAttack(target);
 	}
 	
 	protected void thinkForceAttack()
@@ -242,7 +241,7 @@ public final class ControllableMobAI extends AttackableAI
 				
 				if (((castRange * castRange) >= dist2) && !_actor.isSkillDisabled(sk) && (_actor.getCurrentMp() > _actor.getStat().getMpConsume(sk)))
 				{
-					_accessor.doCast(sk);
+					_actor.doCast(sk);
 					return;
 				}
 				
@@ -257,7 +256,7 @@ public final class ControllableMobAI extends AttackableAI
 			return;
 		}
 		
-		_accessor.doAttack(getForcedTarget());
+		_actor.doAttack(getForcedTarget());
 	}
 	
 	@Override
@@ -307,7 +306,7 @@ public final class ControllableMobAI extends AttackableAI
 					
 					if (((castRange * castRange) >= dist2) && !_actor.isSkillDisabled(sk) && (_actor.getCurrentMp() > _actor.getStat().getMpConsume(sk)))
 					{
-						_accessor.doCast(sk);
+						_actor.doCast(sk);
 						return;
 					}
 					
@@ -349,13 +348,13 @@ public final class ControllableMobAI extends AttackableAI
 					
 					if (((castRange * castRange) >= dist2) && !_actor.isSkillDisabled(sk) && (_actor.getCurrentMp() < _actor.getStat().getMpConsume(sk)))
 					{
-						_accessor.doCast(sk);
+						_actor.doCast(sk);
 						return;
 					}
 				}
 			}
 			
-			_accessor.doAttack(getAttackTarget());
+			_actor.doAttack(getAttackTarget());
 		}
 	}
 	
@@ -448,9 +447,9 @@ public final class ControllableMobAI extends AttackableAI
 		return getGroupTarget().getRandomMob();
 	}
 	
-	public ControllableMobAI(AIAccessor accessor)
+	public ControllableMobAI(L2ControllableMobInstance controllableMob)
 	{
-		super(accessor);
+		super(controllableMob);
 		setAlternateAI(AI_IDLE);
 	}
 	

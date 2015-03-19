@@ -45,41 +45,6 @@ public final class L2StaticObjectInstance extends Creature
 	private int _type = -1; // 0 - map signs, 1 - throne , 2 - arena signs
 	private ShowTownMap _map;
 	
-	/** This class may be created only by L2Character and only for AI */
-	public class AIAccessor extends Creature.AIAccessor
-	{
-		@Override
-		public L2StaticObjectInstance getActor()
-		{
-			return L2StaticObjectInstance.this;
-		}
-		
-		@Override
-		public void moveTo(int x, int y, int z, int offset)
-		{
-		}
-		
-		@Override
-		public void moveTo(int x, int y, int z)
-		{
-		}
-		
-		@Override
-		public void stopMove(Location loc)
-		{
-		}
-		
-		@Override
-		public void doAttack(Creature target)
-		{
-		}
-		
-		@Override
-		public void doCast(Skill skill)
-		{
-		}
-	}
-	
 	@Override
 	protected CharacterAI initAI()
 	{
@@ -224,5 +189,25 @@ public final class L2StaticObjectInstance extends Creature
 	public void sendInfo(PlayerInstance activeChar)
 	{
 		activeChar.sendPacket(new StaticObject(this));
+	}
+	
+	@Override
+	public void moveToLocation(int x, int y, int z, int offset)
+	{
+	}
+	
+	@Override
+	public void stopMove(Location loc)
+	{
+	}
+	
+	@Override
+	public void doAttack(Creature target)
+	{
+	}
+	
+	@Override
+	public void doCast(Skill skill)
+	{
 	}
 }

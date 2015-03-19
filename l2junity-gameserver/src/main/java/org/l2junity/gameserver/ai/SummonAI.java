@@ -29,7 +29,6 @@ import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Creature.AIAccessor;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.skills.Skill;
 
@@ -44,9 +43,9 @@ public class SummonAI extends PlayableAI implements Runnable
 	private volatile boolean _startAvoid = false;
 	private Future<?> _avoidTask = null;
 	
-	public SummonAI(AIAccessor accessor)
+	public SummonAI(Summon summon)
 	{
-		super(accessor);
+		super(summon);
 	}
 	
 	@Override
@@ -99,7 +98,7 @@ public class SummonAI extends PlayableAI implements Runnable
 			return;
 		}
 		clientStopMoving(null);
-		_accessor.doAttack(getAttackTarget());
+		_actor.doAttack(getAttackTarget());
 	}
 	
 	private void thinkCast()
@@ -119,7 +118,7 @@ public class SummonAI extends PlayableAI implements Runnable
 		summon.setFollowStatus(false);
 		setIntention(AI_INTENTION_IDLE);
 		_startFollow = val;
-		_accessor.doCast(_skill);
+		_actor.doCast(_skill);
 	}
 	
 	private void thinkPickUp()
@@ -133,7 +132,7 @@ public class SummonAI extends PlayableAI implements Runnable
 			return;
 		}
 		setIntention(AI_INTENTION_IDLE);
-		((Summon.AIAccessor) _accessor).doPickupItem(getTarget());
+		getActor().doPickupItem(getTarget());
 	}
 	
 	private void thinkInteract()
@@ -298,5 +297,11 @@ public class SummonAI extends PlayableAI implements Runnable
 	{
 		stopAvoidTask();
 		super.stopAITask();
+	}
+	
+	@Override
+	public Summon getActor()
+	{
+		return (Summon) super.getActor();
 	}
 }

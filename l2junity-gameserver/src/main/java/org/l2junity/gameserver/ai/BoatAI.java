@@ -30,9 +30,9 @@ import org.l2junity.gameserver.network.client.send.VehicleStarted;
  */
 public class BoatAI extends VehicleAI
 {
-	public BoatAI(L2BoatInstance.AIAccessor accessor)
+	public BoatAI(L2BoatInstance boat)
 	{
-		super(accessor);
+		super(boat);
 	}
 	
 	@Override
@@ -46,7 +46,7 @@ public class BoatAI extends VehicleAI
 			}
 			
 			_clientMoving = true;
-			_accessor.moveTo(x, y, z);
+			_actor.moveToLocation(x, y, z, 0);
 			_actor.broadcastPacket(new VehicleDeparture(getActor()));
 		}
 	}
@@ -56,7 +56,7 @@ public class BoatAI extends VehicleAI
 	{
 		if (_actor.isMoving())
 		{
-			_accessor.stopMove(loc);
+			_actor.stopMove(loc);
 		}
 		
 		if (_clientMoving || (loc != null))

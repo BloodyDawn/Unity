@@ -40,7 +40,7 @@ public class L2AirShipInstance extends Vehicle
 	{
 		super(template);
 		setInstanceType(InstanceType.L2AirShipInstance);
-		setAI(new AirShipAI(new AIAccessor()));
+		setAI(new AirShipAI(this));
 	}
 	
 	@Override

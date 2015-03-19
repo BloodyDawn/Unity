@@ -30,11 +30,11 @@ public abstract class VehicleAI extends CharacterAI
 {
 	/**
 	 * Simple AI for vehicles
-	 * @param accessor
+	 * @param vehicle
 	 */
-	public VehicleAI(Vehicle.AIAccessor accessor)
+	public VehicleAI(Vehicle vehicle)
 	{
-		super(accessor);
+		super(vehicle);
 	}
 	
 	@Override

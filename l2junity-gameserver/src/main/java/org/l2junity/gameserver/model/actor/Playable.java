@@ -22,6 +22,7 @@ import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.stat.PlayableStat;
 import org.l2junity.gameserver.model.actor.status.PlayableStatus;
@@ -331,6 +332,8 @@ public abstract class Playable extends Creature
 	{
 		return transferDmgTo;
 	}
+	
+	public abstract void doPickupItem(WorldObject object);
 	
 	public abstract int getKarma();
 	

@@ -70,11 +70,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 	
 	private final int _attackRange;
 	
-	/**
-	 * Constructor of L2AttackableAI.
-	 * @param accessor The AI accessor of the L2Character
-	 */
-	public FortSiegeGuardAI(Creature.AIAccessor accessor)
+	public FortSiegeGuardAI(Creature accessor)
 	{
 		super(accessor);
 		_selfAnalysis.init();
@@ -228,7 +224,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 				}
 				
 				// Cancel the AI
-				_accessor.detachAI();
+				_actor.detachAI();
 				
 				return;
 			}
@@ -467,7 +463,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 							WorldObject OldTarget = _actor.getTarget();
 							_actor.setTarget(cha);
 							clientStopMoving(null);
-							_accessor.doCast(sk);
+							_actor.doCast(sk);
 							_actor.setTarget(OldTarget);
 							return;
 						}
@@ -526,7 +522,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 						WorldObject OldTarget = _actor.getTarget();
 						_actor.setTarget(npc);
 						clientStopMoving(null);
-						_accessor.doCast(sk);
+						_actor.doCast(sk);
 						_actor.setTarget(OldTarget);
 						return;
 					}
@@ -624,7 +620,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 					}
 					
 					clientStopMoving(null);
-					_accessor.doCast(sk);
+					_actor.doCast(sk);
 					_actor.setTarget(OldTarget);
 					return;
 				}
@@ -767,14 +763,14 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 						}
 						
 						clientStopMoving(null);
-						_accessor.doCast(sk);
+						_actor.doCast(sk);
 						_actor.setTarget(OldTarget);
 						return;
 					}
 				}
 			}
 			// Finally, do the physical attack itself
-			_accessor.doAttack(attackTarget);
+			_actor.doAttack(attackTarget);
 		}
 	}
 	
@@ -958,7 +954,7 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 			_aiTask.cancel(false);
 			_aiTask = null;
 		}
-		_accessor.detachAI();
+		_actor.detachAI();
 		super.stopAITask();
 	}
 }

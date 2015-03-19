@@ -470,12 +470,9 @@ public abstract class Vehicle extends Creature
 		return false;
 	}
 	
-	public class AIAccessor extends Creature.AIAccessor
+	@Override
+	public void detachAI()
 	{
-		@Override
-		public void detachAI()
-		{
-		}
 	}
 	
 	@Override

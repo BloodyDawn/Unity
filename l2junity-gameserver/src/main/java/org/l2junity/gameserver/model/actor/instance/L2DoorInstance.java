@@ -103,45 +103,30 @@ public class L2DoorInstance extends Creature
 		}
 	}
 	
-	/** This class may be created only by L2Character and only for AI */
-	public class AIAccessor extends Creature.AIAccessor
-	{
-		@Override
-		public L2DoorInstance getActor()
-		{
-			return L2DoorInstance.this;
-		}
-		
-		@Override
-		public void moveTo(int x, int y, int z, int offset)
-		{
-		}
-		
-		@Override
-		public void moveTo(int x, int y, int z)
-		{
-		}
-		
-		@Override
-		public void stopMove(Location loc)
-		{
-		}
-		
-		@Override
-		public void doAttack(Creature target)
-		{
-		}
-		
-		@Override
-		public void doCast(Skill skill)
-		{
-		}
-	}
-	
 	@Override
 	protected CharacterAI initAI()
 	{
-		return new DoorAI(new AIAccessor());
+		return new DoorAI(this);
+	}
+	
+	@Override
+	public void moveToLocation(int x, int y, int z, int offset)
+	{
+	}
+	
+	@Override
+	public void stopMove(Location loc)
+	{
+	}
+	
+	@Override
+	public void doAttack(Creature target)
+	{
+	}
+	
+	@Override
+	public void doCast(Skill skill)
+	{
 	}
 	
 	private void startTimerOpen()

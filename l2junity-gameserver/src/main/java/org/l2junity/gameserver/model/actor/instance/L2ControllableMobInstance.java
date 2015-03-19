@@ -31,15 +31,6 @@ public class L2ControllableMobInstance extends L2MonsterInstance
 {
 	private boolean _isInvul;
 	
-	protected class ControllableAIAcessor extends AIAccessor
-	{
-		@Override
-		public void detachAI()
-		{
-			// do nothing, AI of controllable mobs can't be detached automatically
-		}
-	}
-	
 	@Override
 	public boolean isAggressive()
 	{
@@ -62,7 +53,13 @@ public class L2ControllableMobInstance extends L2MonsterInstance
 	@Override
 	protected CharacterAI initAI()
 	{
-		return new ControllableMobAI(new ControllableAIAcessor());
+		return new ControllableMobAI(this);
+	}
+	
+	@Override
+	public void detachAI()
+	{
+		// do nothing, AI of controllable mobs can't be detached automatically
 	}
 	
 	@Override

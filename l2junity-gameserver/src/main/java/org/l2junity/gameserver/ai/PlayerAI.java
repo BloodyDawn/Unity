@@ -29,7 +29,6 @@ import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_REST;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Creature.AIAccessor;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -41,9 +40,9 @@ public class PlayerAI extends PlayableAI
 	
 	IntentionCommand _nextIntention = null;
 	
-	public PlayerAI(AIAccessor accessor)
+	public PlayerAI(PlayerInstance player)
 	{
-		super(accessor);
+		super(player);
 	}
 	
 	void saveNextIntention(CtrlIntention intention, Object arg0, Object arg1)
@@ -240,7 +239,7 @@ public class PlayerAI extends PlayableAI
 			return;
 		}
 		
-		_accessor.doAttack(target);
+		_actor.doAttack(target);
 	}
 	
 	private void thinkCast()
@@ -278,7 +277,7 @@ public class PlayerAI extends PlayableAI
 			clientStopMoving(null);
 		}
 		
-		_accessor.doCast(_skill);
+		_actor.doCast(_skill);
 	}
 	
 	private void thinkPickUp()
@@ -297,7 +296,7 @@ public class PlayerAI extends PlayableAI
 			return;
 		}
 		setIntention(AI_INTENTION_IDLE);
-		((PlayerInstance.AIAccessor) _accessor).doPickupItem(target);
+		getActor().doPickupItem(target);
 	}
 	
 	private void thinkInteract()
@@ -317,7 +316,7 @@ public class PlayerAI extends PlayableAI
 		}
 		if (!(target instanceof L2StaticObjectInstance))
 		{
-			((PlayerInstance.AIAccessor) _accessor).doInteract((Creature) target);
+			getActor().doInteract((Creature) target);
 		}
 		setIntention(AI_INTENTION_IDLE);
 	}
@@ -354,5 +353,11 @@ public class PlayerAI extends PlayableAI
 		{
 			_thinking = false;
 		}
+	}
+	
+	@Override
+	public PlayerInstance getActor()
+	{
+		return (PlayerInstance) super.getActor();
 	}
 }

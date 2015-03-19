@@ -138,7 +138,7 @@ public class Attackable extends Npc
 	@Override
 	protected CharacterAI initAI()
 	{
-		return new AttackableAI(new AIAccessor());
+		return new AttackableAI(this);
 	}
 	
 	public final Map<Creature, AggroInfo> getAggroList()

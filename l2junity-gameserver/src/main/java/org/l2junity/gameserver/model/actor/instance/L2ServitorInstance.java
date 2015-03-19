@@ -567,4 +567,9 @@ public class L2ServitorInstance extends Summon implements Runnable
 		sendPacket(new SetSummonRemainTime(getLifeTime(), _lifeTimeRemaining));
 		updateEffectIcons();
 	}
+	
+	@Override
+	public void doPickupItem(WorldObject object)
+	{
+	}
 }

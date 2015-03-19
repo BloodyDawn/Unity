@@ -32,9 +32,9 @@ import org.l2junity.gameserver.model.skills.Skill;
  */
 public class DoorAI extends CharacterAI
 {
-	public DoorAI(L2DoorInstance.AIAccessor accessor)
+	public DoorAI(L2DoorInstance door)
 	{
-		super(accessor);
+		super(door);
 	}
 	
 	// rather stupid AI... well, it's for doors :D

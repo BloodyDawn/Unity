@@ -43,7 +43,7 @@ public class L2ShuttleInstance extends Vehicle
 	{
 		super(template);
 		setInstanceType(InstanceType.L2ShuttleInstance);
-		setAI(new ShuttleAI(new AIAccessor()));
+		setAI(new ShuttleAI(this));
 	}
 	
 	public List<L2ShuttleStop> getStops()
