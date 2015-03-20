@@ -113,6 +113,7 @@
 				<xs:attribute type="xs:string" name="npcId" use="optional" />
 				<xs:attribute type="xs:string" name="npcType" use="optional" />
 				<xs:attribute type="xs:string" name="playable" use="optional" />
+				<xs:attribute type="xs:string" name="active_effect_id_lvl" use="optional" />
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -252,9 +253,16 @@
 				<xs:attribute type="xs:short" name="skillId2" use="optional" />
 				<xs:attribute type="xs:short" name="skillId3" use="optional" />
 				<xs:attribute type="xs:string" name="KNOCKDOWN" use="optional" />
+				<xs:attribute type="xs:string" name="KNOCKBACK" use="optional" />
+				<xs:attribute type="xs:string" name="HATE" use="optional" />
+				<xs:attribute type="xs:string" name="PULL" use="optional" />
+				<xs:attribute type="xs:string" name="AGGRESSION" use="optional" />
+				<xs:attribute type="xs:string" name="AERIAL_YOKE" use="optional" />
 				<xs:attribute type="xs:integer" name="speed" use="optional" />
 				<xs:attribute type="xs:integer" name="distance" use="optional" />
 				<xs:attribute type="xs:string" name="type" use="optional" />
+				<xs:attribute type="xs:int" name="attackSkillId" use="optional" />
+				<xs:attribute type="xs:int" name="attackSkillLevel" use="optional" />
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -288,6 +296,7 @@
 			<xs:enumeration value="mAtkSpd" />
 			<xs:enumeration value="cAtkAdd" />
 			<xs:enumeration value="defCritDamage" />
+			<xs:enumeration value="defMCritDamage" />
 			<xs:enumeration value="absorbDamMana" />
 			<xs:enumeration value="manaCharge" />
 			<xs:enumeration value="damageZoneVuln" />

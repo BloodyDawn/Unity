@@ -66,7 +66,6 @@ public class L2DoorInstance extends Creature
 	private ClanHall _clanHall;
 	private boolean _open = false;
 	private boolean _isAttackableDoor = false;
-	private boolean _isTargetable;
 	private int _meshindex = 1;
 	// used for autoclose on open
 	private Future<?> _autoCloseTask;
@@ -79,7 +78,7 @@ public class L2DoorInstance extends Creature
 		setLethalable(false);
 		_open = template.isOpenByDefault();
 		_isAttackableDoor = template.isAttackable();
-		_isTargetable = template.isTargetable();
+		setTargetable(template.isTargetable());
 		
 		if (getGroupName() != null)
 		{
@@ -642,16 +641,11 @@ public class L2DoorInstance extends Creature
 		}
 	}
 	
-	public void setTargetable(boolean b)
-	{
-		_isTargetable = b;
-		broadcastStatusUpdate();
-	}
-	
 	@Override
-	public boolean isTargetable()
+	public void setTargetable(boolean targetable)
 	{
-		return _isTargetable;
+		super.setTargetable(targetable);
+		broadcastStatusUpdate();
 	}
 	
 	public boolean checkCollision()

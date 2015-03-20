@@ -31,6 +31,7 @@ import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 /**
+ * TODO: Fix
  * @author Sdw
  */
 public class Q10742_AFurryFriend extends Quest
@@ -110,8 +111,9 @@ public class Q10742_AFurryFriend extends Quest
 						ricky.setSummoner(player);
 						ricky.setTitle(player.getAppearance().getVisibleName());
 						ricky.setIsRunning(true);
+						ricky.setScriptValue(4);
 						ricky.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, player);
-						startQuestTimer("check_ricky_distance", 1000, ricky, player, true);
+						startQuestTimer("check_ricky_distance", 5000, ricky, player, true);
 						startQuestTimer("unspawn_ricky_failed", 120000, ricky, player);
 						player.sendPacket(new ExSendUIEvent(player, false, false, 0, 120, NpcStringId.REMAINING_TIME));
 					}
@@ -137,11 +139,12 @@ public class Q10742_AFurryFriend extends Quest
 					}
 					else if (distanceToRicky > 500)
 					{
+						cancelQuestTimer("check_ricky_distance", npc, player);
 						startQuestTimer("unspawn_ricky_failed", 120000, npc, player);
 					}
 					else
 					{
-						final Npc leira = World.getInstance().getVisibleObjects(npc, Npc.class, 100).stream().filter(n -> (n.getId() == LEIRA)).findFirst().orElse(null);
+						final Npc leira = World.getInstance().getVisibleObjects(npc, Npc.class, 200).stream().filter(n -> (n.getId() == LEIRA)).findAny().orElse(null);
 						if (leira != null)
 						{
 							qs.setCond(2, true);

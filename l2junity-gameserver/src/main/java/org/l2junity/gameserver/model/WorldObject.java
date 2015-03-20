@@ -78,6 +78,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	private final AtomicInteger _instanceId = new AtomicInteger(0);
 	private boolean _isVisible;
 	private boolean _isInvisible;
+	private boolean _isTargetable;
 	
 	public WorldObject(int objectId)
 	{
@@ -445,12 +446,17 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 		return false;
 	}
 	
+	public void setTargetable(boolean targetable)
+	{
+		_isTargetable = targetable;
+	}
+	
 	/**
-	 * @return {@code true} if object Can be targeted
+	 * @return {@code true} if the object can be targetted by other players, {@code false} otherwise.
 	 */
 	public boolean isTargetable()
 	{
-		return true;
+		return _isTargetable;
 	}
 	
 	/**

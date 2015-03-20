@@ -127,7 +127,6 @@ public class Npc extends Creature
 	/** Support for random animation switching */
 	private boolean _isRandomAnimationEnabled = true;
 	private boolean _isTalkable = getTemplate().isTalkable();
-	private boolean _isTargetable = getTemplate().isTargetable();
 	
 	protected RandomAnimationTask _rAniTask = null;
 	private int _currentLHandId; // normally this shouldn't change from the template, but there exist exceptions
@@ -1323,17 +1322,6 @@ public class Npc extends Creature
 	public boolean isShowName()
 	{
 		return getTemplate().isShowName();
-	}
-	
-	@Override
-	public boolean isTargetable()
-	{
-		return _isTargetable;
-	}
-	
-	public void setTargetable(boolean isTargetable)
-	{
-		_isTargetable = isTargetable;
 	}
 	
 	public void setCollisionHeight(double height)

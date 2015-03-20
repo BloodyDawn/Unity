@@ -484,7 +484,18 @@
 	<item id="40061" name="Apprentice's Staff" additionalName="" type="Weapon">
 		<set name="icon" val="icon.weapon_willow_staff_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="random_damage" val="20" />
+		<set name="attack_range" val="40" />
+		<set name="damage_range" val="0;0;46;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
 		<set name="weight" val="1080" />
+		<set name="price" val="21000" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
+		<set name="is_magic_weapon" val="true" />
 		<for>
 			<add stat="pAtk" val="6.0" />
 			<add stat="mAtk" val="8.0" />

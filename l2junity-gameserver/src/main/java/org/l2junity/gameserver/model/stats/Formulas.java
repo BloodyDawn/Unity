@@ -914,6 +914,9 @@ public final class Formulas
 		// Bonus damage if target is affected by Storm Sign
 		damage *= target.calcStat(Stats.STORM_SIGN_BONUS, 1);
 		
+		// Critical damage resistance
+		damage *= target.calcStat(Stats.DEFENCE_MAGIC_CRITICAL_DAMAGE, 1);
+		
 		if (target.isAttackable())
 		{
 			damage *= attacker.calcStat(Stats.PVE_MAGICAL_DMG, 1, null, null);
