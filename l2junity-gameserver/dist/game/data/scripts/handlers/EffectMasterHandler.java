@@ -40,6 +40,7 @@ public final class EffectMasterHandler
 		Backstab.class,
 		Betray.class,
 		Blink.class,
+		BlinkSwap.class,
 		BlockAction.class,
 		BlockChat.class,
 		BlockParty.class,
@@ -193,7 +194,9 @@ public final class EffectMasterHandler
 		TriggerSkillByAvoid.class,
 		TriggerSkillByDamage.class,
 		TriggerSkillBySkill.class,
+		TriggerSkillBySkillAttack.class,
 		UnsummonAgathion.class,
+		Untargetable.class,
 		VitalityPointUp.class,
 	};
 	

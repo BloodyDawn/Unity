@@ -70,7 +70,9 @@ public enum TraitType
 	KNOCKDOWN(44, 3),
 	PULL(45, 3),
 	HATE(46, 3),
-	NONE(47, 0);
+	AGGRESSION(47, 3),
+	AERIAL_YOKE(48, 3),
+	NONE(49, 0);
 	
 	private final int _id;
 	private final int _type; // 1 = weapon, 2 = weakness, 3 = resistance
