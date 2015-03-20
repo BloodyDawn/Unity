@@ -32,7 +32,11 @@ import ai.npc.AbstractNpcAI;
 public final class AdventurersGuide extends AbstractNpcAI
 {
 	// NPC
-	private static final int ADVENTURERS_GUIDE = 32327;
+	private static final int[] ADVENTURERS_GUIDE =
+	{
+		32327,
+		33950,
+	};
 	// Skills
 	private static final SkillHolder BLESS_PROTECTION = new SkillHolder(5182, 1); // Blessing of Protection
 	private static final SkillHolder KNIGHT = new SkillHolder(15648, 1); // Knight's Harmony (Adventurer)
@@ -103,12 +107,6 @@ public final class AdventurersGuide extends AbstractNpcAI
 			}
 		}
 		return htmltext;
-	}
-	
-	@Override
-	public String onFirstTalk(Npc npc, PlayerInstance player)
-	{
-		return "guide.html";
 	}
 	
 	private String applyBuffs(Npc npc, PlayerInstance player, Skill skill)
