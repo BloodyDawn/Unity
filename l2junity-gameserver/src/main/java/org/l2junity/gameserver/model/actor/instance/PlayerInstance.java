@@ -5635,6 +5635,11 @@ public final class PlayerInstance extends Playable
 			}
 		}
 		
+		if ((killer != null) && killer.isPlayable() && atWarWith(killer.getActingPlayer()))
+		{
+			lostExp /= 4.0;
+		}
+		
 		setExpBeforeDeath(getExp());
 		
 		getStat().addExp(-lostExp);
