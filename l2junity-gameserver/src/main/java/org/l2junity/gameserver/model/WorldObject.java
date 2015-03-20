@@ -78,7 +78,7 @@ public abstract class WorldObject extends ListenersContainer implements IIdentif
 	private final AtomicInteger _instanceId = new AtomicInteger(0);
 	private boolean _isVisible;
 	private boolean _isInvisible;
-	private boolean _isTargetable;
+	private boolean _isTargetable = true;
 	
 	public WorldObject(int objectId)
 	{

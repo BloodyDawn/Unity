@@ -6921,4 +6921,10 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	{
 		return _knownRelations;
 	}
+	
+	@Override
+	public boolean isTargetable()
+	{
+		return super.isTargetable() && !isAffected(EffectFlag.UNTARGETABLE);
+	}
 }

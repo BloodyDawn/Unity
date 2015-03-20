@@ -42,7 +42,8 @@ public enum EffectFlag
 	INVUL,
 	PARALYZED,
 	BLOCK_RESURRECTION,
-	SERVITOR_SHARE;
+	SERVITOR_SHARE,
+	UNTARGETABLE;
 	
 	public int getMask()
 	{
