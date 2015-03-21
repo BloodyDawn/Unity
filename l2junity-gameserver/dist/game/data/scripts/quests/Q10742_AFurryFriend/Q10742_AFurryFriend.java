@@ -107,7 +107,7 @@ public class Q10742_AFurryFriend extends Quest
 					if (!World.getInstance().getVisibleObjects(player, Npc.class, 500).stream().anyMatch(n -> (n.getId() == RICKY) && (n.getSummoner() == player)))
 					{
 						showOnScreenMsg(player, NpcStringId.TAKE_RICKY_TO_LEIRA_IN_UNDER_2_MINUTES, ExShowScreenMessage.MIDDLE_CENTER, 4500);
-						final Npc ricky = addSpawn(RICKY, player.getLocation());
+						final Npc ricky = addSpawn(RICKY, player);
 						ricky.setSummoner(player);
 						ricky.setTitle(player.getAppearance().getVisibleName());
 						ricky.setIsRunning(true);
@@ -131,7 +131,7 @@ public class Q10742_AFurryFriend extends Quest
 					// Follow was breaking sometimes, making sure it doesn't happen.
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, player);
 					
-					final double distanceToRicky = player.calculateDistance(npc, false, true);
+					final double distanceToRicky = player.calculateDistance(npc, false, false);
 					
 					if ((distanceToRicky > 200) && (distanceToRicky < 500))
 					{
@@ -141,10 +141,11 @@ public class Q10742_AFurryFriend extends Quest
 					{
 						cancelQuestTimer("check_ricky_distance", npc, player);
 						startQuestTimer("unspawn_ricky_failed", 120000, npc, player);
+						startQuestTimer("unspawn_ricky", 1000, npc, player);
 					}
 					else
 					{
-						final Npc leira = World.getInstance().getVisibleObjects(npc, Npc.class, 200).stream().filter(n -> (n.getId() == LEIRA)).findAny().orElse(null);
+						final Npc leira = World.getInstance().getVisibleObjects(npc, Npc.class, 100).stream().filter(n -> (n.getId() == LEIRA)).findAny().orElse(null);
 						if (leira != null)
 						{
 							qs.setCond(2, true);
@@ -165,7 +166,6 @@ public class Q10742_AFurryFriend extends Quest
 			case "unspawn_ricky_failed":
 			{
 				showOnScreenMsg(player, NpcStringId.BRING_BACK_RICKY, ExShowScreenMessage.TOP_CENTER, 4500);
-				npc.deleteMe();
 				break;
 			}
 		}
