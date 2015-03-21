@@ -11,4 +11,4 @@ CREATE TABLE IF NOT EXISTS `announcements` (
 
 INSERT INTO announcements (`type`, `author`, `content`) VALUES 
 (0, 'L2jUnity', 'Thanks for using L2jUnity!'),
-(1, 'L2jUnity', 'http://www.l2junity.org/');
+(1, 'L2jUnity', '[=http://www.l2junity.org/=]');
