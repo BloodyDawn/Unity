@@ -538,7 +538,7 @@ public final class World
 	
 	public <T extends WorldObject> void forEachVisibleObject(WorldObject worldObject, Class<T> clazz, Consumer<T> c)
 	{
-		forEachVisibleObject(worldObject, clazz, 2, c);
+		forEachVisibleObject(worldObject, clazz, 1, c);
 	}
 	
 	public <T extends WorldObject> void forEachVisibleObjectInRange(WorldObject worldObject, Class<T> clazz, int range, Consumer<T> c)
