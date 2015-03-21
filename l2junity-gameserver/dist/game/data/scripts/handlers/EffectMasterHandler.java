@@ -43,6 +43,7 @@ public final class EffectMasterHandler
 		BlinkSwap.class,
 		BlockAction.class,
 		BlockChat.class,
+		BlockEscape.class,
 		BlockParty.class,
 		BlockBuffSlot.class,
 		BlockResurrection.class,

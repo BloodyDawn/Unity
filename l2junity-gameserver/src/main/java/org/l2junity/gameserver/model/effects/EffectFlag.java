@@ -43,7 +43,8 @@ public enum EffectFlag
 	PARALYZED,
 	BLOCK_RESURRECTION,
 	SERVITOR_SHARE,
-	UNTARGETABLE;
+	UNTARGETABLE,
+	CANNOT_ESCAPE;
 	
 	public int getMask()
 	{

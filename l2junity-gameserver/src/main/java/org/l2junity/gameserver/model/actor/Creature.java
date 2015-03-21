@@ -6927,4 +6927,9 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	{
 		return super.isTargetable() && !isAffected(EffectFlag.UNTARGETABLE);
 	}
+	
+	public boolean cannotEscape()
+	{
+		return isAffected(EffectFlag.CANNOT_ESCAPE);
+	}
 }

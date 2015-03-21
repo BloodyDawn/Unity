@@ -54,6 +54,13 @@ public final class Escape extends AbstractEffect
 	}
 	
 	@Override
+	public boolean canStart(BuffInfo info)
+	{
+		// While affected by escape blocking effect you cannot use Blink or Scroll of Escape
+		return super.canStart(info) && !info.getEffected().cannotEscape();
+	}
+	
+	@Override
 	public void onStart(BuffInfo info)
 	{
 		if (_escapeType == null)
