@@ -27,9 +27,10 @@ import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 /**
+ * StrangeFungus (10743)
  * @author Sdw
  */
-public class Q10743_StrangeFungus extends Quest
+public final class Q10743_StrangeFungus extends Quest
 {
 	// NPCs
 	private static final int LEIRA = 33952;

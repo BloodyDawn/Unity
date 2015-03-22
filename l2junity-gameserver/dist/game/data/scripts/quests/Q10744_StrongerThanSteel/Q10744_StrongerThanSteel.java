@@ -25,21 +25,22 @@ import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 
 /**
+ * Stronger Than Steel (10744)
  * @author Sdw
  */
-public class Q10744_StrongerThanSteel extends Quest
+public final class Q10744_StrongerThanSteel extends Quest
 {
 	// NPC's
 	private static final int MILONE = 33953;
 	private static final int DOLKIN = 33954;
 	private static final int TREANT = 23457;
 	private static final int LEAFIE = 23458;
-	// Misc
-	private static final int MIN_LEVEL = 15;
-	private static final int MAX_LEVEL = 20;
 	// Item
 	private static final int TREANT_LEAF = 39532;
 	private static final int LEAFIE_LEAF = 39531;
+	// Misc
+	private static final int MIN_LEVEL = 15;
+	private static final int MAX_LEVEL = 20;
 	
 	public Q10744_StrongerThanSteel()
 	{
@@ -129,7 +130,6 @@ public class Q10744_StrongerThanSteel extends Quest
 				break;
 			}
 		}
-		
 		return htmltext;
 	}
 	
@@ -154,7 +154,6 @@ public class Q10744_StrongerThanSteel extends Quest
 				qs.setCond(3, true);
 			}
 		}
-		
 		return super.onKill(npc, killer, isSummon);
 	}
 }

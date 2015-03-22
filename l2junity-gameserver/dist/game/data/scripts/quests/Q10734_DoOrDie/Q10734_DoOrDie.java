@@ -31,17 +31,16 @@ import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import quests.Q10733_TheTestForSurvival.Q10733_TheTestForSurvival;
 
 /**
+ * Do Or Die (10734)
  * @author Sdw
  */
-public class Q10734_DoOrDie extends Quest
+public final class Q10734_DoOrDie extends Quest
 {
 	// NPC's
 	private static final int KATALIN = 33943;
 	private static final int AYANTHE = 33942;
 	private static final int ADVENTURER_S_GUIDE_APPRENTICE = 33950;
 	private static final int TRAINING_DUMMY = 19546;
-	// Misc
-	private static final int MAX_LEVEL = 20;
 	// Skills
 	private final static SkillHolder[] COMMON_BUFFS =
 	{
@@ -58,6 +57,8 @@ public class Q10734_DoOrDie extends Quest
 	};
 	private static final SkillHolder WARRIOR_HARMONY = new SkillHolder(15649, 1);
 	private static final SkillHolder WIZARD_HARMONY = new SkillHolder(15650, 1);
+	// Misc
+	private static final int MAX_LEVEL = 20;
 	
 	public Q10734_DoOrDie()
 	{
@@ -92,15 +93,7 @@ public class Q10734_DoOrDie extends Quest
 			}
 			case "other_buffs":
 			{
-				if (player.isMageClass())
-				{
-					htmltext = "33950-03.htm";
-				}
-				else
-				{
-					htmltext = "33950-05.htm";
-				}
-				
+				htmltext = player.isMageClass() ? "33950-03.htm" : "33950-05.htm";
 				player.sendPacket(new TutorialShowHtml(npc.getObjectId(), "..\\L2Text\\QT_002_Guide_01.htm", TutorialShowHtml.LARGE_WINDOW));
 				break;
 			}
@@ -145,7 +138,7 @@ public class Q10734_DoOrDie extends Quest
 	@Override
 	public String onTalk(Npc npc, PlayerInstance player)
 	{
-		QuestState qs = getQuestState(player, true);
+		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
 		
 		if (qs.isCompleted())
@@ -161,14 +154,7 @@ public class Q10734_DoOrDie extends Quest
 				{
 					case 0:
 					{
-						if (!player.isMageClass())
-						{
-							htmltext = "33943-01.htm";
-						}
-						else
-						{
-							htmltext = "33943-08.htm";
-						}
+						htmltext = player.isMageClass() ? "33943-08.htm" : "33943-01.htm";
 						break;
 					}
 					case 1:
@@ -208,14 +194,7 @@ public class Q10734_DoOrDie extends Quest
 				{
 					case 0:
 					{
-						if (player.isMageClass())
-						{
-							htmltext = "33942-01.htm";
-						}
-						else
-						{
-							htmltext = "33942-08.htm";
-						}
+						htmltext = player.isMageClass() ? "33942-01.htm" : "33942-08.htm";
 						break;
 					}
 					case 1:
@@ -261,14 +240,7 @@ public class Q10734_DoOrDie extends Quest
 					}
 					case 6:
 					{
-						if (player.isMageClass())
-						{
-							htmltext = "33950-06.htm";
-						}
-						else
-						{
-							htmltext = "33950-04.htm";
-						}
+						htmltext = player.isMageClass() ? "33950-06.htm" : "33950-04.htm";
 						break;
 					}
 				}
@@ -285,6 +257,7 @@ public class Q10734_DoOrDie extends Quest
 		{
 			return super.onKill(npc, killer, isSummon);
 		}
+		
 		if (npc.getId() == TRAINING_DUMMY)
 		{
 			if (qs.isCond(1))

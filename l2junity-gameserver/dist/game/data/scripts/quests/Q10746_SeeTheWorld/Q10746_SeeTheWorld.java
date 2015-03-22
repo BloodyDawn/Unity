@@ -33,7 +33,7 @@ import quests.Q10745_TheSecretIngredients.Q10745_TheSecretIngredients;
  * See the World (10746)
  * @author Sdw
  */
-public class Q10746_SeeTheWorld extends Quest
+public final class Q10746_SeeTheWorld extends Quest
 {
 	// NPCs
 	private static final int KARLA = 33933;
@@ -42,8 +42,9 @@ public class Q10746_SeeTheWorld extends Quest
 	// Items
 	private static final ItemHolder EMISSARY_SUPPORT_BOX_WARRIOR = new ItemHolder(40264, 1);
 	private static final ItemHolder EMISSARY_SUPPORT_BOX_MAGE = new ItemHolder(40265, 1);
-	// Misc
+	// Location
 	private static final Location GLUDIN_VILLAGE = new Location(-80806, 149975, -3048);
+	// Misc
 	private static final int MIN_LEVEL = 19;
 	private static final int MAX_LEVEL = 25;
 	
@@ -109,7 +110,6 @@ public class Q10746_SeeTheWorld extends Quest
 				}
 				break;
 			}
-			
 			case ASTIEL:
 			{
 				if (qs.isCond(1))
@@ -119,7 +119,6 @@ public class Q10746_SeeTheWorld extends Quest
 				}
 				break;
 			}
-			
 			case LEVIAN:
 			{
 				if (qs.isCond(2))
@@ -143,5 +142,4 @@ public class Q10746_SeeTheWorld extends Quest
 		}
 		return htmltext;
 	}
-	
 }

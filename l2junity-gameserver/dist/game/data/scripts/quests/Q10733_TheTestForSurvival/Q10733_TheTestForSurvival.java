@@ -29,9 +29,10 @@ import org.l2junity.gameserver.network.client.send.TutorialShowHtml;
 import quests.Q10732_AForeignLand.Q10732_AForeignLand;
 
 /**
+ * The Test For Survival (10733)
  * @author Sdw
  */
-public class Q10733_TheTestForSurvival extends Quest
+public final class Q10733_TheTestForSurvival extends Quest
 {
 	// NPC's
 	private static final int GERETH = 33932;

@@ -28,18 +28,19 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import quests.Q10737_GrakonsWarehouse.Q10737_GrakonsWarehouse;
 
 /**
+ * An Inner Beauty (10738)
  * @author Sdw
  */
-public class Q10738_AnInnerBeauty extends Quest
+public final class Q10738_AnInnerBeauty extends Quest
 {
 	// NPC's
 	private static final int GRAKON = 33947;
 	private static final int EVNA = 33935;
+	// Items
+	private static final ItemHolder GRAKON_S_NOTE = new ItemHolder(39521, 1);
 	// Misc
 	private static final int MIN_LEVEL = 5;
 	private static final int MAX_LEVEL = 20;
-	// Items
-	private static final ItemHolder GRAKON_S_NOTE = new ItemHolder(39521, 1);
 	
 	public Q10738_AnInnerBeauty()
 	{

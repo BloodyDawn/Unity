@@ -30,9 +30,10 @@ import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import quests.Q10738_AnInnerBeauty.Q10738_AnInnerBeauty;
 
 /**
+ * Supply And Demand (10739)
  * @author Sdw
  */
-public class Q10739_SupplyAndDemand extends Quest
+public final class Q10739_SupplyAndDemand extends Quest
 {
 	// NPC's
 	private static final int EVNA = 33935;
@@ -195,7 +196,6 @@ public class Q10739_SupplyAndDemand extends Quest
 				}
 				break;
 		}
-		
 		return htmltext;
 	}
 }

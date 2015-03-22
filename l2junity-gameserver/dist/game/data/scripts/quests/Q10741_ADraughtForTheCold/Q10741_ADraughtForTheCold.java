@@ -26,9 +26,10 @@ import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 
 /**
+ * A Draught For The Cold (10741)
  * @author Sdw
  */
-public class Q10741_ADraughtForTheCold extends Quest
+public final class Q10741_ADraughtForTheCold extends Quest
 {
 	// NPC's
 	private static final int SIVANTHE = 33951;

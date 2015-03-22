@@ -31,22 +31,18 @@ import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 /**
- * TODO: Fix
+ * A Furry Friend (10742)
  * @author Sdw
  */
-public class Q10742_AFurryFriend extends Quest
+public final class Q10742_AFurryFriend extends Quest
 {
 	// NPC's
 	private static final int LEIRA = 33952;
 	private static final int KIKU_S_CAVE = 33995;
 	private static final int RICKY = 19552;
 	private static final int KIKU = 23453;
-	// Misc
-	private static final int MIN_LEVEL = 11;
-	private static final int MAX_LEVEL = 20;
 	// Location
 	private static final Location RICKY_SPAWN = new Location(-78138, 237328, -3548);
-	// Waypoints
 	protected static Location[] WAYPOINTS =
 	{
 		new Location(-78152, 237352, -3569),
@@ -54,6 +50,9 @@ public class Q10742_AFurryFriend extends Quest
 		new Location(-80072, 237064, -3311),
 		new Location(-80440, 237320, -3313)
 	};
+	// Misc
+	private static final int MIN_LEVEL = 11;
+	private static final int MAX_LEVEL = 20;
 	
 	public Q10742_AFurryFriend()
 	{

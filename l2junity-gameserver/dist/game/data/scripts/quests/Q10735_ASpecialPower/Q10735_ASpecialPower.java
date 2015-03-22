@@ -35,25 +35,25 @@ import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import quests.Q10734_DoOrDie.Q10734_DoOrDie;
 
 /**
+ * A Special Power (10735)
  * @author Sdw
  */
-public class Q10735_ASpecialPower extends Quest
+public final class Q10735_ASpecialPower extends Quest
 {
 	// NPC's
 	private static final int AYANTHE = 33942;
 	private static final int AYANTHE_2 = 33944;
 	private static final int FLOATO = 27526;
 	private static final int RATEL = 27527;
-	// Misc
-	private static final int MIN_LEVEL = 4;
-	private static final int MAX_LEVEL = 20;
 	// Items
 	private static final ItemHolder SPIRITSHOTS_TRAINING = new ItemHolder(2509, 150);
 	private static final ItemHolder SPIRITSHOTS_REWARD = new ItemHolder(2509, 500);
 	// Locations
 	private static final Location MOB_1 = new Location(-75112, 240760, -3615);
 	private static final Location MOB_2 = new Location(-75016, 240456, -3628);
-	
+	// Misc
+	private static final int MIN_LEVEL = 4;
+	private static final int MAX_LEVEL = 20;
 	private static final int KILL_COUNT_ID = 0;
 	
 	public Q10735_ASpecialPower()
@@ -116,7 +116,7 @@ public class Q10735_ASpecialPower extends Quest
 	@Override
 	public String onTalk(Npc npc, PlayerInstance player)
 	{
-		QuestState qs = getQuestState(player, true);
+		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
 		
 		if (qs.isCompleted())

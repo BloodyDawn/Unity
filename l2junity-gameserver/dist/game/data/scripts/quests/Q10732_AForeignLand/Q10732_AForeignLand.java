@@ -27,9 +27,10 @@ import org.l2junity.gameserver.network.client.send.ExShowUsm;
 import org.l2junity.gameserver.network.client.send.TutorialShowHtml;
 
 /**
+ * A Foreign Land (10732)
  * @author Sdw
  */
-public class Q10732_AForeignLand extends Quest
+public final class Q10732_AForeignLand extends Quest
 {
 	// NPC's
 	private static final int NAVARI = 33931;

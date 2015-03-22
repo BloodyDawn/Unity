@@ -30,7 +30,7 @@ import org.l2junity.gameserver.network.client.send.string.NpcStringId;
  * The Secret Ingredients (10745)
  * @author Sdw
  */
-public class Q10745_TheSecretIngredients extends Quest
+public final class Q10745_TheSecretIngredients extends Quest
 {
 	// Npc's
 	private static final int DOLKIN = 33954;
@@ -147,7 +147,6 @@ public class Q10745_TheSecretIngredients extends Quest
 				break;
 			}
 		}
-		
 		return htmltext;
 	}
 	
@@ -171,7 +170,6 @@ public class Q10745_TheSecretIngredients extends Quest
 				qs.setMemoStateEx(0, killedMobs);
 			}
 		}
-		
 		return super.onKill(npc, killer, isSummon);
 	}
 }

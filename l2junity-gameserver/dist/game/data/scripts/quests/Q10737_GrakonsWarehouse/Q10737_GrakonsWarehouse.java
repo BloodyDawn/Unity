@@ -27,21 +27,22 @@ import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 
 /**
+ * Grakons Warehouse (10737)
  * @author Sdw
  */
-public class Q10737_GrakonsWarehouse extends Quest
+public final class Q10737_GrakonsWarehouse extends Quest
 {
 	// NPC's
 	private static final int KATALIN = 33943;
 	private static final int AYANTHE = 33942;
 	private static final int GRAKON = 33947;
-	// Misc
-	private static final int MIN_LEVEL = 5;
-	private static final int MAX_LEVEL = 20;
 	// Items
 	private static final ItemHolder APPRENTICE_SUPPORT_BOX = new ItemHolder(39520, 1);
 	private static final ItemHolder APPRENTICE_ADVENTURER_STAFF = new ItemHolder(7816, 1);
 	private static final ItemHolder APPRENTICE_ADVENTURER_FISTS = new ItemHolder(7819, 1);
+	// Misc
+	private static final int MIN_LEVEL = 5;
+	private static final int MAX_LEVEL = 20;
 	
 	public Q10737_GrakonsWarehouse()
 	{
@@ -149,7 +150,6 @@ public class Q10737_GrakonsWarehouse extends Quest
 				break;
 			}
 		}
-		
 		return htmltext;
 	}
 }

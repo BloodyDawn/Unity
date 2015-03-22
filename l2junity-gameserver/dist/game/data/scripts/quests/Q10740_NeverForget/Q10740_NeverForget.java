@@ -28,9 +28,10 @@ import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 /**
+ * Never Forget (10740)
  * @author Sdw
  */
-public class Q10740_NeverForget extends Quest
+public final class Q10740_NeverForget extends Quest
 {
 	// NPC's
 	private static final int SIVANTHE = 33951;

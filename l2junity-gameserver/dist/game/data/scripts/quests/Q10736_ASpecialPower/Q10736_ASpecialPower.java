@@ -35,25 +35,25 @@ import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import quests.Q10734_DoOrDie.Q10734_DoOrDie;
 
 /**
+ * A Special Power (10736)
  * @author Sdw
  */
-public class Q10736_ASpecialPower extends Quest
+public final class Q10736_ASpecialPower extends Quest
 {
 	// NPC's
 	private static final int KATALIN = 33943;
 	private static final int KATALIN_2 = 33945;
 	private static final int FLOATO = 27526;
 	private static final int RATEL = 27527;
-	// Misc
-	private static final int MIN_LEVEL = 4;
-	private static final int MAX_LEVEL = 20;
 	// Items
 	private static final ItemHolder SOULSHOTS_TRAINING = new ItemHolder(1835, 150);
 	private static final ItemHolder SOULSHOTS_REWARD = new ItemHolder(1835, 500);
 	// Locations
 	private static final Location MOB_1 = new Location(-75112, 240760, -3615);
 	private static final Location MOB_2 = new Location(-75016, 240456, -3628);
-	
+	// Misc
+	private static final int MIN_LEVEL = 4;
+	private static final int MAX_LEVEL = 20;
 	private static final int KILL_COUNT_ID = 0;
 	
 	public Q10736_ASpecialPower()
