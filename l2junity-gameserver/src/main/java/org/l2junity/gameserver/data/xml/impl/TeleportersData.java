@@ -20,6 +20,7 @@ package org.l2junity.gameserver.data.xml.impl;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.teleporter.TeleportHolder;
@@ -83,8 +84,26 @@ public class TeleportersData implements IXmlReader
 									}
 								}
 							}
+							else if ("npcs".equals(tpNode.getNodeName()))
+							{
+								for (Node locNode = tpNode.getFirstChild(); locNode != null; locNode = locNode.getNextSibling())
+								{
+									if ("npc".equals(locNode.getNodeName()))
+									{
+										final int npcId = parseInteger(locNode.getAttributes(), "id");
+										if (_teleporters.putIfAbsent(npcId, holder) != null)
+										{
+											LOGGER.warn("Duplicate location entires for npc: {}", npcId);
+										}
+									}
+								}
+							}
 						}
-						_teleporters.put(id, holder);
+						
+						if (_teleporters.putIfAbsent(id, holder) != null)
+						{
+							LOGGER.warn("Duplicate location entires for npc: {}", id);
+						}
 					}
 				}
 			}
