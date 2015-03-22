@@ -326,7 +326,9 @@
 			<using kind="SWORD,BLUNT" />
 		</cond>
 		<for>
-			<effect name="EnemyCharge" />
+			<effect name="EnemyCharge">
+				<param animationSpeed="333" />
+			</effect>
 			<effect name="MagicalAttack" />
 			<effect name="DispelBySlot">
 				<param dispel="STORM_SIGN,3" />

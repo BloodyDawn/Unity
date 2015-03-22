@@ -56,6 +56,7 @@ public enum Stats
 	DANCE_REUSE("dReuse"), // Dance Skill Reuse Rate
 	SHIELD_DEFENCE("sDef"),
 	CRITICAL_DAMAGE("cAtk"),
+	CRITICAL_DAMAGE_SKILL("cAtkSkill"),
 	CRITICAL_DAMAGE_ADD("cAtkAdd"), // this is another type for special critical damage mods - vicious stance, critical power and critical damage SA
 	MAGIC_CRIT_DMG("mCritPower"),
 	
@@ -209,8 +210,14 @@ public enum Stats
 	// Exp bonus applied to vitality
 	VITALITY_EXP_BONUS("vitalityExpBonus"),
 	
-	// Storm Sign damage bonus
-	STORM_SIGN_BONUS("stormSignBonus");
+	// Storm Sign bonus damage
+	STORM_SIGN_BONUS("stormSignBonus"),
+	
+	// Regular attacks bonus damage
+	REGULAR_ATTACKS_DMG("regularAttacksDmg"),
+	
+	// Increases the damage
+	DAMAGE_UP("damageUp");
 	
 	public static final int NUM_STATS = values().length;
 	

@@ -32,9 +32,19 @@ import org.l2junity.gameserver.network.client.send.ValidateLocation;
  */
 public final class EnemyCharge extends AbstractEffect
 {
+	private int _speed = 0;
+	private int _delay = 0;
+	private int _animationSpeed = 0;
+	
 	public EnemyCharge(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
+		if (params != null)
+		{
+			_speed = params.getInt("speed", 0);
+			_delay = params.getInt("delay", 0);
+			_animationSpeed = params.getInt("animationSpeed", 0);
+		}
 	}
 	
 	@Override
@@ -94,7 +104,7 @@ public final class EnemyCharge extends AbstractEffect
 		
 		final Location destination = GeoData.getInstance().moveCheck(info.getEffector().getX(), info.getEffector().getY(), info.getEffector().getZ(), x, y, z, info.getEffector().getInstanceId());
 		
-		info.getEffector().broadcastPacket(new FlyToLocation(info.getEffector(), destination, info.getSkill().getFlyType()));
+		info.getEffector().broadcastPacket(new FlyToLocation(info.getEffector(), destination, info.getSkill().getFlyType(), _speed, _delay, _animationSpeed));
 		
 		// maybe is need force set X,Y,Z
 		info.getEffector().setXYZ(destination);

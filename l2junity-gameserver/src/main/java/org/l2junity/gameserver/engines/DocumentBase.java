@@ -287,7 +287,7 @@ public abstract class DocumentBase
 		}
 		else
 		{
-			throw new RuntimeException("Attaching stat to a non-effect template!!!");
+			throw new RuntimeException("Attaching stat to a non-effect template [" + template + "]!!!");
 		}
 	}
 	

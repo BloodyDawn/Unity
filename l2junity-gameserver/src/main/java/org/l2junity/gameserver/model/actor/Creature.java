@@ -1243,6 +1243,9 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// Calculate physical damages
 			damage1 = (int) Formulas.calcPhysDam(this, target, null, shld1, crit1, attack.hasSoulshot());
 			
+			// Normal attacks have normal damage x 5
+			damage1 = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage1);
+			
 			// Bows Ranged Damage Formula (Damage gradually decreases when 60% or lower than full hit range, and increases when 60% or higher).
 			// full hit range is 500 which is the base bow range, and the 60% of this is 800.
 			damage1 *= (calculateDistance(target, true, false) / 4000) + 0.8;
@@ -1311,6 +1314,9 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			
 			// Calculate physical damages
 			damage1 = (int) Formulas.calcPhysDam(this, target, null, shld1, crit1, attack.hasSoulshot());
+			
+			// Normal attacks have normal damage x 5
+			damage1 = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage1);
 		}
 		
 		// Check if the L2Character is a L2PcInstance
@@ -1377,6 +1383,10 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			
 			// Calculate physical damages of hit 1
 			damage1 = (int) Formulas.calcPhysDam(this, target, null, shld1, crit1, attack.hasSoulshot());
+			
+			// Normal attacks have normal damage x 5
+			damage1 = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage1);
+			
 			damage1 /= 2;
 		}
 		
@@ -1391,6 +1401,10 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			
 			// Calculate physical damages of hit 2
 			damage2 = (int) Formulas.calcPhysDam(this, target, null, shld2, crit2, attack.hasSoulshot());
+			
+			// Normal attacks have normal damage x 5
+			damage2 = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage2);
+			
 			damage2 /= 2;
 		}
 		
@@ -1548,6 +1562,9 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			
 			// Calculate physical damages
 			damage1 = (int) Formulas.calcPhysDam(this, target, null, shld1, crit1, attack.hasSoulshot());
+			
+			// Normal attacks have normal damage x 5
+			damage1 = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage1);
 			
 			if (attackpercent != 100)
 			{

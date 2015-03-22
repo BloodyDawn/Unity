@@ -247,7 +247,7 @@
 				<xs:attribute type="xs:byte" name="PHYSICAL_BLOCKADE" use="optional" />
 				<xs:attribute type="xs:string" name="canKill" use="optional" />
 				<xs:attribute type="xs:string" name="TURN_STONE" use="optional" />
-				<xs:attribute type="xs:byte" name="FIST" use="optional" />
+				<xs:attribute type="xs:string" name="FIST" use="optional" />
 				<xs:attribute type="xs:byte" name="randomOffset" use="optional" />
 				<xs:attribute type="xs:short" name="skillId1" use="optional" />
 				<xs:attribute type="xs:short" name="skillId2" use="optional" />
@@ -260,9 +260,12 @@
 				<xs:attribute type="xs:string" name="AERIAL_YOKE" use="optional" />
 				<xs:attribute type="xs:integer" name="speed" use="optional" />
 				<xs:attribute type="xs:integer" name="distance" use="optional" />
+				<xs:attribute type="xs:integer" name="animationSpeed" use="optional" />
 				<xs:attribute type="xs:string" name="type" use="optional" />
 				<xs:attribute type="xs:int" name="attackSkillId" use="optional" />
 				<xs:attribute type="xs:int" name="attackSkillLevel" use="optional" />
+				<xs:attribute type="xs:float" name="stunnedMod" use="optional" />
+				<xs:attribute type="xs:float" name="pDefMod" use="optional" />
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -284,6 +287,7 @@
 			<xs:enumeration value="mEvas" />
 			<xs:enumeration value="accMagic" />
 			<xs:enumeration value="cAtk" />
+			<xs:enumeration value="cAtkSkill" />
 			<xs:enumeration value="runSpd" />
 			<xs:enumeration value="reflectDam" />
 			<xs:enumeration value="defCritRate" />
@@ -389,6 +393,8 @@
 			<xs:enumeration value="magicSuccRes" />
 			<xs:enumeration value="healPower" />
 			<xs:enumeration value="stormSignBonus" />
+			<xs:enumeration value="regularAttacksDmg" />
+			<xs:enumeration value="damageUp" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="addType" mixed="true">

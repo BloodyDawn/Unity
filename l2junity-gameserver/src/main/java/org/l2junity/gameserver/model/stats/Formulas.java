@@ -759,9 +759,17 @@ public final class Formulas
 		if (skill != null)
 		{
 			damage = attacker.calcStat(Stats.PHYSICAL_SKILL_POWER, damage, null, null);
+			if (crit)
+			{
+				damage = attacker.calcStat(Stats.CRITICAL_DAMAGE_SKILL, damage, target, skill);
+			}
 		}
 		
 		damage *= calcAttributeBonus(attacker, target, skill);
+		
+		// Increases the damage
+		damage = attacker.calcStat(Stats.DAMAGE_UP, damage);
+		
 		if (target.isAttackable())
 		{
 			final Weapon weapon = attacker.getActiveWeaponItem();

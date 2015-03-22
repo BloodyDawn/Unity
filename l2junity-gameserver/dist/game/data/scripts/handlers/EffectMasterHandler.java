@@ -105,6 +105,7 @@ public final class EffectMasterHandler
 		Heal.class,
 		HealOverTime.class,
 		HealPercent.class,
+		HealPercentOnExit.class,
 		Hide.class,
 		HpByLevel.class,
 		HpCpHeal.class,
