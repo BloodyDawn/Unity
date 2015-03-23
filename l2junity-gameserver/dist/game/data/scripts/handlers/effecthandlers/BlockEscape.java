@@ -29,7 +29,7 @@ import org.l2junity.gameserver.model.effects.EffectFlag;
  */
 public class BlockEscape extends AbstractEffect
 {
-	protected BlockEscape(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public BlockEscape(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 	}
