@@ -92,6 +92,7 @@ public final class EffectMasterHandler
 		Fear.class,
 		Fishing.class,
 		Flag.class,
+		FlyMove.class,
 		FocusEnergy.class,
 		FocusMaxEnergy.class,
 		FocusSouls.class,
