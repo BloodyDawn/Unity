@@ -1317,7 +1317,7 @@ public class Attackable extends Npc
 		double xp = 0;
 		double sp = 0;
 		
-		if ((levelDiff < 11) || (levelDiff > -11))
+		if ((levelDiff < 11) && (levelDiff > -11))
 		{
 			xp = Math.max(0, ((double) getExpReward() * damage) / totalDamage);
 			sp = Math.max(0, ((double) getSpReward() * damage) / totalDamage);
