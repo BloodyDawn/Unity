@@ -37,6 +37,7 @@
 	<skill id="30501" levels="24" name="Backspin Blow">
 		<!-- Updated to Ertheia -->
 		<!-- Attacks target with 129 Power added to P. Atk. Requires a fist weapon. -->
+		<table name="#magicLevel"> 20 28 36 42 46 50 54 58 62 66 70 74 77 79 81 83 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 17 23 29 35 39 44 47 52 55 59 63 67 69 70 71 73 73 74 75 75 75 76 76 77 </table>
 		<table name="#power"> 129 235 369 1116 1428 1789 2205 2671 3189 3760 4383 5058 6466 6916 7390 7888 28134 30832 34221 38446 43706 50268 58492 68865 </table>
 		<set name="icon" val="icon.skill30501" />
@@ -53,6 +54,7 @@
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="5000" />
 		<set name="targetType" val="ONE" />
+		<set name="magicLevel" val="#magicLevel" />
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
@@ -94,6 +96,7 @@
 	<skill id="30503" levels="8" name="Spinning Kick">
 		<!-- Updated to Ertheia -->
 		<!-- Attacks target with 35167 Power added to P. Atk. Ignores Shield Defense. Requires a fist weapon. -->
+		<table name="#magicLevel"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 81 81 82 83 83 83 84 84 </table>
 		<table name="#power"> 35167 36755 40540 45273 51165 58506 67683 79217 </table>
 		<set name="icon" val="icon.skill30503" />
@@ -104,6 +107,7 @@
 		<set name="effectRange" val="400" /> <!-- Unconfirmed -->
 		<set name="hitTime" val="2000" />
 		<set name="ignoreShld" val="true" />
+		<set name="magicLevel" val="#magicLevel" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A1" />
@@ -121,6 +125,7 @@
 	<skill id="30504" levels="13" name="Gravity Hit">
 		<!-- Updated to Ertheia -->
 		<!-- Attacks target with 10417 Power added to P. Atk. Ignores 50% of target's P. Def. Requires a fist weapon. -->
+		<table name="#magicLevel"> 76 78 80 82 84 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 75 77 78 79 80 81 82 82 83 83 84 84 85 </table>
 		<table name="#power"> 10417 11147 11917 12727 13577 35167 38540 42776 48058 54633 62836 73116 86081 </table>
 		<set name="icon" val="icon.skill30504" />
@@ -131,6 +136,7 @@
 		<set name="effectRange" val="400" /> <!-- Unconfirmed -->
 		<set name="hitTime" val="2500" />
 		<set name="ignoreShld" val="true" />
+		<set name="magicLevel" val="#magicLevel" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A1" />
@@ -150,6 +156,7 @@
 	<skill id="30505" levels="7" name="Pressure Punch">
 		<!-- Updated to Ertheia -->
 		<!-- Attacks target with 17266 Power added to P. Atk, causing target to tumble toward you. Requires a fist weapon. -->
+		<table name="#magicLevel"> 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 149 150 151 151 152 153 155 </table>
 		<table name="#power"> 17266 19164 21530 24475 28150 32755 38563 </table>
 		<set name="icon" val="icon.skill30505" />
@@ -159,6 +166,7 @@
 		<set name="effectPoint" val="-1" /> <!-- Unconfirmed dummy value -->
 		<set name="effectRange" val="400" /> <!-- Unconfirmed -->
 		<set name="hitTime" val="2000" />
+		<set name="magicLevel" val="#magicLevel" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A2" />
@@ -178,6 +186,7 @@
 	<skill id="30506" levels="11" name="Distant Kick">
 		<!-- Updated to Ertheia -->
 		<!-- Attacks frontal target with 5164 Power added to P. Atk. and blows them away. Requires a fist weapon. -->
+		<table name="#magicLevel"> 79 81 83 85 87 89 91 93 95 97 99 </table>
 		<table name="#mpConsumes"> 141 143 146 147 149 150 151 151 152 153 155 </table>
 		<table name="#power"> 5164 5518 5890 19693 21581 23953 26909 30589 35181 40936 48195 </table>
 		<set name="icon" val="icon.skill30506" />
@@ -189,6 +198,7 @@
 		<set name="effectPoint" val="-1" /> <!-- Unconfirmed dummy value -->
 		<set name="effectRange" val="400" /> <!-- Unconfirmed -->
 		<set name="hitTime" val="2000" />
+		<set name="magicLevel" val="#magicLevel" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A2" />
@@ -313,10 +323,12 @@
 	<skill id="30511" levels="3" name="Air Light">
 		<!-- Updated to Ertheia -->
 		<!-- For 10 min., you're less bound by gravity and P. Atk. + 10%. -->
+		<table name="#abnormalLvls"> 1 2 3 </table>
 		<table name="#mpConsumes"> 20 44 45 </table>
 		<table name="#pAtk"> 1.10 1.15 1.20 </table>
 		<table name="#resists"> 0 15 20 </table>
 		<set name="icon" val="icon.skill30511" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="600" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -351,11 +363,13 @@
 	<skill id="30514" levels="2" name="Fluid Weave">
 		<!-- Updated to Ertheia -->
 		<!-- For 3 sec., P. Skill Evasion + 50%, P. Evasion + 50, M. Evasion + 50. Requires a fist weapon. -->
+		<table name="#abnormalLvls"> 1 2 </table>
 		<table name="#mpConsumes"> 13 29 </table>
 		<table name="#pSkillEvas"> 50 70 </table>
 		<table name="#rEvas"> 50 70 </table>
 		<table name="#mEvas"> 50 70 </table>
 		<set name="icon" val="icon.skill30514" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="3" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -746,11 +760,19 @@
 		</for>
 	</skill>
 	<skill id="30544" levels="2" name="Eminent Trait Resistance">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Hold/Mental Resistance + 30. -->
+		<table name="#magicLvl"> 76 85 </table>
+		<table name="#traitResist1"> 30 30 </table>
+		<table name="#traitResist2"> 0 30 </table>
 		<set name="icon" val="icon.skill10005" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="DefenceTrait">
+				<param HOLD="#traitResist1" DERANGEMENT="#traitResist1" PULL="#traitResist2" KNOCKBACK="#traitResist2" KNOCKDOWN="#traitResist2" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="30545" levels="3" name="Eminent Ability">
 		<!-- STR + 2. -->
