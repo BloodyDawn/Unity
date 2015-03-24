@@ -83,13 +83,16 @@ public final class Fear extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		if (info.getEffected().isCastingNow() && info.getEffected().canAbortCast())
-		{
-			info.getEffected().abortCast();
-		}
-		
 		info.getEffected().getAI().notifyEvent(CtrlEvent.EVT_AFRAID);
 		fearAction(info, true);
+	}
+	
+	@Override
+	public void onExit(BuffInfo info)
+	{
+		// Fear should make you stop moving instantly when it disappears
+		info.getEffector().stopMove(null);
+		super.onExit(info);
 	}
 	
 	private void fearAction(BuffInfo info, boolean start)

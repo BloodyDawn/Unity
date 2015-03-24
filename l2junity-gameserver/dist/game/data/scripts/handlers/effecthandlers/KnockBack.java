@@ -19,12 +19,15 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.GeoData;
+import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.effects.EffectFlag;
+import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.network.client.send.FlyToLocation;
 import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
@@ -32,6 +35,7 @@ import org.l2junity.gameserver.network.client.send.ValidateLocation;
 import org.l2junity.gameserver.util.Util;
 
 /**
+ * Check if this effect is not counted as being stunned.
  * @author UnAfraid
  */
 public final class KnockBack extends AbstractEffect
@@ -56,6 +60,18 @@ public final class KnockBack extends AbstractEffect
 	}
 	
 	@Override
+	public int getEffectFlags()
+	{
+		return EffectFlag.STUNNED.getMask();
+	}
+	
+	@Override
+	public L2EffectType getEffectType()
+	{
+		return L2EffectType.KNOCK;
+	}
+	
+	@Override
 	public void onStart(BuffInfo info)
 	{
 		final Creature effected = info.getEffected();
@@ -67,9 +83,17 @@ public final class KnockBack extends AbstractEffect
 		
 		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		effected.broadcastPacket(new FlyToLocation(effected, loc, _type, _speed, _delay, _animationSpeed));
-		effected.abortAttack();
-		effected.abortCast();
+		effected.startStunning();
 		effected.setXYZ(loc);
 		effected.broadcastPacket(new ValidateLocation(effected));
+	}
+	
+	@Override
+	public void onExit(BuffInfo info)
+	{
+		if (!info.getEffected().isPlayer())
+		{
+			info.getEffected().getAI().notifyEvent(CtrlEvent.EVT_THINK);
+		}
 	}
 }

@@ -218,13 +218,15 @@
 		</for>
 	</skill>
 	<skill id="30507" levels="21" name="Left Sidestep">
-		<!-- Updated to Ertheia TODO Skill is incomplete -->
+		<!-- Updated to Ertheia -->
 		<!-- Disables targeting and finds weakness to the enemy's left. Enemy is stunned for 5 sec. Requires a fist weapon. -->
 		<table name="#mpConsumes"> 13 14 16 18 19 21 23 24 26 27 28 28 29 29 29 30 30 30 30 30 30 </table>
 		<set name="icon" val="icon.skill30507" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="STUN" />
+		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="activateRate" val="80" /> <!-- Unconfirmed -->
 		<set name="effectPoint" val="-1" /> <!-- Unconfirmed dummy value -->
 		<set name="effectRange" val="900" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A1" />
@@ -241,6 +243,10 @@
 			<using kind="DUALFIST" />
 		</cond>
 		<for>
+			<effect name="FlyMove">
+				<param flyType="CHARGE" />
+				<param angle="270" /> <!-- Left -->
+			</effect>
 			<effect name="Stun" />
 			<effect name="TargetCancel">
 				<param chance="40" /> <!-- Unconfirmed -->
@@ -248,7 +254,7 @@
 		</for>
 	</skill>
 	<skill id="30508" levels="24" name="Right Sidestep">
-		<!-- Updated to Ertheia TODO Skill is incomplete -->
+		<!-- Updated to Ertheia -->
 		<!-- Disables targeting and finds weakness to the enemy's right. Decreases enemy's resistance to Fist Weapons by 10%. Requires a fist weapon. -->
 		<table name="#mpConsumes"> 7 9 11 14 15 17 19 20 22 23 25 26 27 28 28 29 29 29 30 30 30 30 30 31 </table>
 		<table name="#fistDecrease"> 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.7 0.7 0.7 0.7 0.7 0.7 0.7 0.7 </table>
@@ -269,6 +275,10 @@
 			<using kind="DUALFIST" />
 		</cond>
 		<for>
+			<effect name="FlyMove">
+				<param flyType="CHARGE" />
+				<param angle="90" /> <!-- Right -->
+			</effect>
 			<effect name="DefenceTrait">
 				<param FIST="#fistDecrease" />
 			</effect>
@@ -283,20 +293,22 @@
 		<table name="#mpConsumes"> 27 30 35 44 </table>
 		<table name="#percentHp"> 10 20 30 40 </table>
 		<set name="icon" val="icon.skill30509" />
-		<set name="flyCourse" val="0" /> <!-- Teleport to Back -->
-		<set name="flyRadius" val="280" />
-		<set name="effectRange" val="900" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
-		<set name="castRange" val="280" />
+		<set name="castRange" val="40" /> <!-- Unconfirmed. Was 280, but thats probably rush range. -->
 		<set name="hitTime" val="100" />
 		<set name="reuseDelay" val="60000" />
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
 		<for>
-			<effect name="Blink" />
+			<effect name="FlyMove">
+				<param flyType="CHARGE" />
+				<param range="280" />
+				<param angle="180" /> <!-- Your back -->
+				<param effectedPos="false" />
+			</effect>
 			<effect name="TargetCancel">
 				<param chance="40" /> <!-- Unconfirmed -->
 			</effect>
@@ -368,6 +380,7 @@
 		<table name="#pSkillEvas"> 50 70 </table>
 		<table name="#rEvas"> 50 70 </table>
 		<table name="#mEvas"> 50 70 </table>
+		<table name="#blockDebuff"> 0 1 </table>
 		<set name="icon" val="icon.skill30514" />
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="3" />
@@ -380,19 +393,21 @@
 			<using kind="DUALFIST" />
 		</cond>
 		<for>
+			<!-- TODO: Effect should be only available on skill level 2. -->
+			<effect name="DebuffBlock" /> <!-- Linken Sphere effect - blocks a debuff attack once -->
 			<effect name="Buff">
 				<add stat="pSkillEvas" val="#pSkillEvas" />
 				<add stat="rEvas" val="#rEvas" />
 				<add stat="mEvas" val="#mEvas" />
 			</effect>
-			<!-- TODO: Linken Sphere effect - blocks a debuff attack once -->
 		</for>
 	</skill>
 	<skill id="30515" levels="1" name="Spallation">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Creates a protective sphere that diffuses all ranged attacks and debuffs for 30 sec. Damaged if attacked within the sphere. Requires a fist weapon. -->
 		<set name="icon" val="icon.skill30515" />
-		<set name="abnormalTime" val="30" /> <!-- Unconfirmed -->
+		<set name="abnormalTime" val="30" />
+		<set name="abnormalVisualEffect" val="SPACEREF" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="31" />
@@ -402,12 +417,18 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
+		<for>
+			<effect name="Buff">
+				<set stat="damagedMaxRange" val="150" /> <!-- Unconfirmed -->
+				<set stat="debuffedMaxRange" val="150" /> <!-- Unconfirmed -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="30516" levels="1" name="Gravity Barrier">
 		<!-- Updated to Ertheia -->
 		<!-- Cancels all debuffs and becomes invincible against all debuffs and damage. -->
 		<set name="icon" val="icon.skill30516" />
-		<set name="abnormalTime" val="30" /> <!-- Unconfirmed -->
+		<set name="abnormalTime" val="10" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="30" />
@@ -447,7 +468,7 @@
 		</for>
 	</skill>
 	<skill id="30518" levels="8" name="Reverse Weight">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Attacks nearby enemies with 19693 Power added to P. Atk. and knocks them down. Damage increases with the number of enemies affected. Requires a fist weapon. -->
 		<table name="#mpConsumes"> 1479 1487 1500 1510 1516 1523 1532 1544 </table>
 		<table name="#power"> 19693 20582 22701 25350 28648 32757 37894 44352 </table>
@@ -497,6 +518,7 @@
 		<table name="#cAtk"> 1.10 1.15 </table>
 		<set name="icon" val="icon.skill30520" />
 		<set name="abnormalTime" val="30" />
+		<set name="abnormalVisualEffect" val="PMENTAL_TRAIL" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -507,23 +529,29 @@
 			<using kind="DUALFIST" />
 		</cond>
 		<for>
-			<effect name="HealPercentOnExit">
-				<param power="30" />
-			</effect>
 			<effect name="Buff">
 				<add stat="runSpd" val="#runSpd" />
 				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="cAtk" val="#cAtk" />
 				<mul stat="cAtkSkill" val="#cAtk" />
 				<mul stat="regularAttacksDmg" val="5" />
+				<set stat="hpLock" val="1" />
+			</effect>
+			<effect name="SetHp"> <!-- This effect is needed because hpLock updates when HP changes. -->
+				<param amount="1" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param KNOCKDOWN="90" KNOCKBACK="90" PULL="90" AERIAL_YOKE="90" AGGRESSION="90" />
 			</effect>
 		</for>
+		<endEffects>
+			<effect name="HealPercent">
+				<param power="30" />
+			</effect>
+		</endEffects>
 	</skill>
 	<skill id="30521" levels="1" name="Damage Up">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Inflicts normal damage x 5. (including skill) -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="abnormalTime" val="3" /> <!-- Unconfirmed -->
@@ -618,18 +646,26 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="30530" levels="12" name="Crushing Air">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Crushes the air to decrease target's battle strength. Requires a fist weapon. -->
 		<table name="#mpConsumes"> 34 35 35 36 36 37 37 37 37 38 38 38 </table>
 		<set name="icon" val="icon.skill30530" />
+		<set name="abnormalTime" val="10" /> <!-- Unconfirmed -->
+		<set name="abnormalVisualEffect" val="GRAVITY_SPACE_3" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<set stat="runSpd" val="0" /> <!-- Set speed to 1 :) -->
+				<!-- TODO: Some other effects -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="30532" levels="3" name="Inside Position">
 		<!-- Updated to Ertheia -->
@@ -658,7 +694,7 @@
 	<skill id="30540" levels="11" name="Eminent Fist Weapon Mastery">
 		<!-- When equipped with a fist weapon, P. Atk. + 10% and + 4. -->
 		<table name="#accCombat"> 0 2 3 3 3 4 4 8 8 8 8 </table>
-		<table name="#cAtkAdd"> 0 0 0 0 0 1.10 1.10 1.45 1.45 1.45 1.45 </table>
+		<table name="#cAtk"> 1 1 1 1 1 1.10 1.10 1.45 1.45 1.45 1.45 </table>
 		<table name="#magicLvl"> 5 20 40 52 64 76 80 85 90 95 99 </table>
 		<table name="#pAtkAdd"> 4 13 63 124 208 306 471 2156 2803 3342 4060 </table>
 		<table name="#pAtkMul"> 1.10 1.10 1.10 1.10 1.10 1.10 1.10 1.45 1.45 1.45 1.45 </table>
@@ -681,7 +717,7 @@
 				<add stat="accCombat" val="#accCombat">
 					<using kind="FIST,DUALFIST" />
 				</add>
-				<mul stat="cAtkAdd" val="#cAtkAdd">
+				<mul stat="cAtk" val="#cAtk">
 					<using kind="FIST,DUALFIST" />
 				</mul>
 				<mul stat="pAtkSpd" val="1.10">
@@ -692,10 +728,10 @@
 	</skill>
 	<skill id="30541" levels="11" name="Eminent Light Armor Mastery">
 		<!-- When equipped with light armor, P. Def. + 14. -->
-		<!-- FIXME: Received P./M. Critical Rate -->
-		<table name="#crit"> 0 0.85 0.80 0.80 0.80 0.75 0.75 0.65 0.65 0.65 0.65</table>
+		<!-- TODO: Received P./M. Critical Rate -->
+		<table name="#crit"> 1 0.85 0.80 0.80 0.80 0.75 0.75 0.65 0.65 0.65 0.65</table>
 		<table name="#pDef">14 17 34 51 69 91 99 1398 1520 1642 1807</table>
-		<table name="#mDef"> 0 0 0 0 0 0 1.03 1.05 1.05 1.05 1.05</table>
+		<table name="#mDef"> 1 1 1 1 1 1 1.03 1.05 1.05 1.05 1.05</table>
 		<table name="#mDef2"> 0 0 0 0 0 0 276 552 575 598 630</table>
 		<table name="#rEvas"> 0 2 3 3 3 4 4 8 8 8 8 </table>
 		<table name="#magicLvl"> 5 20 40 52 64 76 80 85 90 95 99</table>

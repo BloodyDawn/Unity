@@ -487,6 +487,12 @@ public final class Formulas
 	
 	public static double calcBlowDamage(Creature attacker, Creature target, Skill skill, byte shld, boolean ss)
 	{
+		final double distance = attacker.calculateDistance(target, true, false);
+		if (distance > target.calcStat(Stats.DAMAGED_MAX_RANGE, Integer.MAX_VALUE, target, skill))
+		{
+			return 0;
+		}
+		
 		double defence = target.getPDef(attacker);
 		
 		switch (shld)
@@ -578,6 +584,12 @@ public final class Formulas
 	
 	public static double calcBackstabDamage(Creature attacker, Creature target, Skill skill, byte shld, boolean ss)
 	{
+		final double distance = attacker.calculateDistance(target, true, false);
+		if (distance > target.calcStat(Stats.DAMAGED_MAX_RANGE, Integer.MAX_VALUE, target, skill))
+		{
+			return 0;
+		}
+		
 		double defence = target.getPDef(attacker);
 		
 		switch (shld)
@@ -680,6 +692,12 @@ public final class Formulas
 		final boolean isPvE = attacker.isPlayable() && target.isAttackable();
 		double damage = attacker.getPAtk(target);
 		double defence = target.getPDef(attacker);
+		final double distance = attacker.calculateDistance(target, true, false);
+		
+		if (distance > target.calcStat(Stats.DAMAGED_MAX_RANGE, Integer.MAX_VALUE, target, skill))
+		{
+			return 0;
+		}
 		
 		// Defense bonuses in PvP fight
 		if (isPvP)
@@ -831,6 +849,13 @@ public final class Formulas
 	
 	public static final double calcMagicDam(Creature attacker, Creature target, Skill skill, byte shld, boolean sps, boolean bss, boolean mcrit)
 	{
+		final double distance = attacker.calculateDistance(target, true, false);
+		
+		if (distance > target.calcStat(Stats.DAMAGED_MAX_RANGE, Integer.MAX_VALUE, target, skill))
+		{
+			return 0;
+		}
+		
 		int mDef = target.getMDef(attacker, skill);
 		switch (shld)
 		{
@@ -1277,13 +1302,31 @@ public final class Formulas
 			return false;
 		}
 		
-		if (skill.isDebuff() && (target.calcStat(Stats.DEBUFF_IMMUNITY, 0, attacker, skill) > 0))
+		if (skill.isDebuff())
 		{
-			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_RESISTED_YOUR_S2);
-			sm.addCharName(target);
-			sm.addSkillName(skill);
-			attacker.sendPacket(sm);
-			return false;
+			boolean resisted = target.calcStat(Stats.DEBUFF_IMMUNITY, 0, attacker, skill) > 0;
+			if (!resisted)
+			{
+				final double distance = attacker.calculateDistance(target, true, false);
+				if (distance > target.calcStat(Stats.DEBUFFED_MAX_RANGE, Integer.MAX_VALUE, target, skill))
+				{
+					resisted = true;
+				}
+			}
+			if (!resisted && (target.getEffectList().getFirstEffect(L2EffectType.DEBUFF_BLOCK) != null))
+			{
+				target.stopEffects(L2EffectType.DEBUFF_BLOCK);
+				resisted = true;
+			}
+			
+			if (resisted)
+			{
+				final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_HAS_RESISTED_YOUR_S2);
+				sm.addCharName(target);
+				sm.addSkillName(skill);
+				attacker.sendPacket(sm);
+				return false;
+			}
 		}
 		
 		final int activateRate = skill.getActivateRate();

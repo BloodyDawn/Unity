@@ -140,6 +140,12 @@ public final class PhysicalAttack extends AbstractEffect
 		double defence = target.getPDef(attacker);
 		boolean ss = info.getSkill().isPhysical() && attacker.isChargedShot(ShotType.SOULSHOTS);
 		final byte shld = Formulas.calcShldUse(attacker, target, info.getSkill());
+		final double distance = attacker.calculateDistance(target, true, false);
+		
+		if (distance > target.calcStat(Stats.DAMAGED_MAX_RANGE, Integer.MAX_VALUE, target, skill))
+		{
+			return 0;
+		}
 		
 		// Defense bonuses in PvP fight
 		if (isPvP)
