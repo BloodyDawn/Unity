@@ -121,6 +121,7 @@ import org.l2junity.gameserver.model.ArenaParticipantsHolder;
 import org.l2junity.gameserver.model.BlockList;
 import org.l2junity.gameserver.model.ClanMember;
 import org.l2junity.gameserver.model.ClanPrivilege;
+import org.l2junity.gameserver.model.ClanWar;
 import org.l2junity.gameserver.model.ContactList;
 import org.l2junity.gameserver.model.EnchantSkillLearn;
 import org.l2junity.gameserver.model.L2Clan;
@@ -5219,25 +5220,15 @@ public final class PlayerInstance extends Playable
 				{
 					onDieDropItem(killer); // Check if any item should be dropped
 					
-					if (!insidePvpZone)
+					if (!insidePvpZone && (pk != null))
 					{
-						if ((pk != null) && (pk.getClan() != null) && (getClan() != null) && !isAcademyMember() && !(pk.isAcademyMember()))
+						final L2Clan pkClan = pk.getClan();
+						if ((pkClan != null) && (getClan() != null) && !isAcademyMember() && !(pk.isAcademyMember()))
 						{
-							if ((_clan.isAtWarWith(pk.getClanId()) && pk.getClan().isAtWarWith(_clan.getId())) || (isInSiege() && pk.isInSiege()))
+							final ClanWar clanWar = _clan.getWarWith(pkClan.getId());
+							if ((clanWar != null) && AntiFeedManager.getInstance().check(killer, this))
 							{
-								if (AntiFeedManager.getInstance().check(killer, this))
-								{
-									// when your reputation score is 0 or below, the other clan cannot acquire any reputation points
-									if (getClan().getReputationScore() > 0)
-									{
-										pk.getClan().addReputationScore(Config.REPUTATION_SCORE_PER_KILL, false);
-									}
-									// when the opposing sides reputation score is 0 or below, your clans reputation score does not decrease
-									if (pk.getClan().getReputationScore() > 0)
-									{
-										_clan.takeReputationScore(Config.REPUTATION_SCORE_PER_KILL, false);
-									}
-								}
+								clanWar.onKill(pk, this);
 							}
 						}
 					}

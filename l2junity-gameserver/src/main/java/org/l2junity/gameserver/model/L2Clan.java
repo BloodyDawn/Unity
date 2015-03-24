@@ -26,7 +26,6 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -132,8 +131,7 @@ public class L2Clan implements IIdentifiable, INamable
 	private int _bloodOathCount;
 	
 	private final ItemContainer _warehouse = new ClanWarehouse(this);
-	private final Set<Integer> _atWarWith = ConcurrentHashMap.newKeySet();
-	private final Set<Integer> _atWarAttackers = ConcurrentHashMap.newKeySet();
+	private final ConcurrentHashMap<Integer, ClanWar> _atWarWith = new ConcurrentHashMap<>();
 	
 	private Forum _forum;
 	
@@ -1595,9 +1593,9 @@ public class L2Clan implements IIdentifiable, INamable
 		return _warehouse;
 	}
 	
-	public boolean isAtWarWith(Integer id)
+	public boolean isAtWarWith(int clanId)
 	{
-		return _atWarWith.contains(id);
+		return _atWarWith.containsKey(clanId);
 	}
 	
 	public boolean isAtWarWith(L2Clan clan)
@@ -1606,46 +1604,7 @@ public class L2Clan implements IIdentifiable, INamable
 		{
 			return false;
 		}
-		return _atWarWith.contains(clan.getId());
-	}
-	
-	public boolean isAtWarAttacker(Integer id)
-	{
-		return _atWarAttackers.contains(id);
-	}
-	
-	public void setEnemyClan(L2Clan clan)
-	{
-		Integer id = clan.getId();
-		_atWarWith.add(id);
-	}
-	
-	public void setEnemyClan(Integer clan)
-	{
-		_atWarWith.add(clan);
-	}
-	
-	public void setAttackerClan(L2Clan clan)
-	{
-		Integer id = clan.getId();
-		_atWarAttackers.add(id);
-	}
-	
-	public void setAttackerClan(Integer clan)
-	{
-		_atWarAttackers.add(clan);
-	}
-	
-	public void deleteEnemyClan(L2Clan clan)
-	{
-		Integer id = clan.getId();
-		_atWarWith.remove(id);
-	}
-	
-	public void deleteAttackerClan(L2Clan clan)
-	{
-		Integer id = clan.getId();
-		_atWarAttackers.remove(id);
+		return _atWarWith.containsKey(clan.getId());
 	}
 	
 	public int getHiredGuards()
@@ -1663,14 +1622,9 @@ public class L2Clan implements IIdentifiable, INamable
 		return !_atWarWith.isEmpty();
 	}
 	
-	public Set<Integer> getWarList()
+	public Map<Integer, ClanWar> getWarList()
 	{
 		return _atWarWith;
-	}
-	
-	public Set<Integer> getAttackerList()
-	{
-		return _atWarAttackers;
 	}
 	
 	public void broadcastClanStatus()
@@ -3029,5 +2983,20 @@ public class L2Clan implements IIdentifiable, INamable
 	public int getWarCount()
 	{
 		return _atWarWith.size();
+	}
+	
+	public void addWar(int clanId, ClanWar war)
+	{
+		_atWarWith.put(clanId, war);
+	}
+	
+	public void deleteWar(int clanId)
+	{
+		_atWarWith.remove(clanId);
+	}
+	
+	public ClanWar getWarWith(int clanId)
+	{
+		return _atWarWith.get(clanId);
 	}
 }

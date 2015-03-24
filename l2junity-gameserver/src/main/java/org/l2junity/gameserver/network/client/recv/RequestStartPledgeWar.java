@@ -25,6 +25,8 @@ import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.enums.UserInfoType;
 import org.l2junity.gameserver.model.ClanMember;
 import org.l2junity.gameserver.model.ClanPrivilege;
+import org.l2junity.gameserver.model.ClanWar;
+import org.l2junity.gameserver.model.ClanWar.ClanWarState;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
@@ -103,8 +105,25 @@ public final class RequestStartPledgeWar implements IClientIncomingPacket
 			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		else if (clanDeclaringWar.isAtWarWith(clanDeclaredWar.getId()))
+		else if (clanDeclaredWar.getDissolvingExpiryTime() > System.currentTimeMillis())
 		{
+			client.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.A_CLAN_WAR_CAN_NOT_BE_DECLARED_AGAINST_A_CLAN_THAT_IS_BEING_DISSOLVED));
+			client.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+		
+		final ClanWar clanWar = clanDeclaringWar.getWarWith(clanDeclaredWar.getId());
+		if (clanWar != null)
+		{
+			if (clanWar.getClanWarState(clanDeclaringWar) == ClanWarState.WIN)
+			{
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_CAN_T_DECLARE_A_WAR_BECAUSE_THE_21_DAY_PERIOD_HASN_T_PASSED_AFTER_A_DEFEAT_DECLARATION_WITH_THE_S1_CLAN);
+				sm.addString(clanDeclaredWar.getName());
+				client.sendPacket(sm);
+				client.sendPacket(ActionFailed.STATIC_PACKET);
+				return;
+			}
+			
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_ALREADY_BEEN_AT_WAR_WITH_THE_S1_CLAN_5_DAYS_MUST_PASS_BEFORE_YOU_CAN_DECLARE_WAR_AGAIN);
 			sm.addString(clanDeclaredWar.getName());
 			client.sendPacket(sm);
@@ -112,7 +131,9 @@ public final class RequestStartPledgeWar implements IClientIncomingPacket
 			return;
 		}
 		
-		ClanTable.getInstance().storeclanswars(player.getClanId(), clanDeclaredWar.getId());
+		final ClanWar newClanWar = new ClanWar(clanDeclaringWar, clanDeclaredWar);
+		
+		ClanTable.getInstance().storeclanswars(newClanWar);
 		
 		clanDeclaringWar.getMembers().stream().filter(Objects::nonNull).filter(ClanMember::isOnline).forEach(p -> p.getPlayerInstance().broadcastUserInfo(UserInfoType.CLAN));
 		

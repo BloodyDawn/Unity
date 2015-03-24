@@ -18,7 +18,13 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
+import java.util.Objects;
+
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
+import org.l2junity.gameserver.model.ClanMember;
+import org.l2junity.gameserver.model.ClanPrivilege;
+import org.l2junity.gameserver.model.ClanWar;
+import org.l2junity.gameserver.model.ClanWar.ClanWarState;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
@@ -53,6 +59,13 @@ public final class RequestSurrenderPledgeWar implements IClientIncomingPacket
 			return;
 		}
 		
+		if (myClan.getMembers().stream().filter(Objects::nonNull).filter(ClanMember::isOnline).map(ClanMember::getPlayerInstance).anyMatch(p -> !p.isInCombat()))
+		{
+			activeChar.sendPacket(SystemMessageId.A_CEASE_FIRE_DURING_A_CLAN_WAR_CAN_NOT_BE_CALLED_WHILE_MEMBERS_OF_YOUR_CLAN_ARE_ENGAGED_IN_BATTLE);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+		
 		final L2Clan targetClan = ClanTable.getInstance().getClanByName(_pledgeName);
 		if (targetClan == null)
 		{
@@ -60,39 +73,31 @@ public final class RequestSurrenderPledgeWar implements IClientIncomingPacket
 			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		
-		_log.info("RequestSurrenderPledgeWar by " + client.getActiveChar().getClan().getName() + " with " + _pledgeName);
-		
-		if (!myClan.isAtWarWith(targetClan.getId()))
+		else if (!activeChar.hasClanPrivilege(ClanPrivilege.CL_PLEDGE_WAR))
 		{
-			activeChar.sendMessage("You aren't at war with this clan.");
+			client.sendPacket(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT);
 			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
-		final SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_SURRENDERED_TO_THE_S1_CLAN);
-		msg.addString(_pledgeName);
-		client.sendPacket(msg);
-		ClanTable.getInstance().deleteclanswars(myClan.getId(), targetClan.getId());
-		// Zoey76: TODO: Implement or cleanup.
-		// L2PcInstance leader = L2World.getInstance().getPlayer(clan.getLeaderName());
-		// if ((leader != null) && (leader.isOnline() == 0))
-		// {
-		// player.sendMessage("Clan leader isn't online.");
-		// player.sendPacket(ActionFailed.STATIC_PACKET);
-		// return;
-		// }
-		//
-		// if (leader.isTransactionInProgress())
-		// {
-		// SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_IS_BUSY_TRY_LATER);
-		// sm.addString(leader.getName());
-		// player.sendPacket(sm);
-		// return;
-		// }
-		//
-		// leader.setTransactionRequester(player);
-		// player.setTransactionRequester(leader);
-		// leader.sendPacket(new SurrenderPledgeWar(_clan.getName(), player.getName()));
+		final ClanWar clanWar = myClan.getWarWith(targetClan.getId());
+		
+		if (clanWar == null)
+		{
+			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_NOT_DECLARED_A_CLAN_WAR_AGAINST_THE_CLAN_S1);
+			sm.addString(targetClan.getName());
+			activeChar.sendPacket(sm);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+		
+		if (clanWar.getState() == ClanWarState.BLOOD_DECLARATION)
+		{
+			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_DECLARE_DEFEAT_AS_IT_HAS_NOT_BEEN_7_DAYS_SINCE_STARTING_A_CLAN_WAR_WITH_CLAN_S1);
+			client.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+		
+		clanWar.cancel(activeChar, myClan);
 	}
 }

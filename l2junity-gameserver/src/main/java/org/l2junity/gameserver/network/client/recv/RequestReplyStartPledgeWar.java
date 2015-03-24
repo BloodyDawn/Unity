@@ -19,6 +19,9 @@
 package org.l2junity.gameserver.network.client.recv;
 
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
+import org.l2junity.gameserver.model.ClanWar;
+import org.l2junity.gameserver.model.ClanWar.ClanWarState;
+import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -43,12 +46,12 @@ public final class RequestReplyStartPledgeWar implements IClientIncomingPacket
 	@Override
 	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = client.getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
-		PlayerInstance requestor = activeChar.getActiveRequester();
+		final PlayerInstance requestor = activeChar.getActiveRequester();
 		if (requestor == null)
 		{
 			return;
@@ -56,7 +59,17 @@ public final class RequestReplyStartPledgeWar implements IClientIncomingPacket
 		
 		if (_answer == 1)
 		{
-			ClanTable.getInstance().storeclanswars(requestor.getClanId(), activeChar.getClanId());
+			final L2Clan attacked = activeChar.getClan();
+			final L2Clan attacker = requestor.getClan();
+			if ((attacked != null) && (attacker != null))
+			{
+				final ClanWar clanWar = attacker.getWarWith(attacked.getId());
+				if (clanWar.getState() == ClanWarState.BLOOD_DECLARATION)
+				{
+					clanWar.mutualClanWarAccepted(attacker, attacked);
+					ClanTable.getInstance().storeclanswars(clanWar);
+				}
+			}
 		}
 		else
 		{
