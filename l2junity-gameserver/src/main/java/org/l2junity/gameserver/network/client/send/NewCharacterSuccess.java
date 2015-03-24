@@ -50,24 +50,30 @@ public final class NewCharacterSuccess implements IClientOutgoingPacket
 			// TODO: Unhardcode these
 			packet.writeD(chr.getRace().ordinal());
 			packet.writeD(chr.getClassId().getId());
-			packet.writeD(0x46);
+			
+			packet.writeD(99);
 			packet.writeD(chr.getBaseSTR());
-			packet.writeD(0x0A);
-			packet.writeD(0x46);
+			packet.writeD(1);
+			
+			packet.writeD(99);
 			packet.writeD(chr.getBaseDEX());
-			packet.writeD(0x0A);
-			packet.writeD(0x46);
+			packet.writeD(1);
+			
+			packet.writeD(99);
 			packet.writeD(chr.getBaseCON());
-			packet.writeD(0x0A);
-			packet.writeD(0x46);
+			packet.writeD(1);
+			
+			packet.writeD(99);
 			packet.writeD(chr.getBaseINT());
-			packet.writeD(0x0A);
-			packet.writeD(0x46);
+			packet.writeD(1);
+			
+			packet.writeD(99);
 			packet.writeD(chr.getBaseWIT());
-			packet.writeD(0x0A);
-			packet.writeD(0x46);
+			packet.writeD(1);
+			
+			packet.writeD(99);
 			packet.writeD(chr.getBaseMEN());
-			packet.writeD(0x0A);
+			packet.writeD(1);
 		}
 		return true;
 	}
