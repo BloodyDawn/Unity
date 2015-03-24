@@ -217,7 +217,16 @@ public enum Stats
 	REGULAR_ATTACKS_DMG("regularAttacksDmg"),
 	
 	// Increases the damage
-	DAMAGE_UP("damageUp");
+	DAMAGE_UP("damageUp"),
+	
+	// The maximum allowed range to be damaged from.
+	DAMAGED_MAX_RANGE("damagedMaxRange"),
+	
+	// The maximum allowed range to be debuffed from.
+	DEBUFFED_MAX_RANGE("debuffedMaxRange"),
+	
+	// Lock your HP at the given value.
+	HP_LOCK("hpLock");
 	
 	public static final int NUM_STATS = values().length;
 	

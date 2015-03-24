@@ -21,6 +21,7 @@ package org.l2junity.gameserver.model.actor.status;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Future;
+
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -28,6 +29,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.stat.CharStat;
 import org.l2junity.gameserver.model.stats.Formulas;
+import org.l2junity.gameserver.model.stats.Stats;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -276,6 +278,18 @@ public class CharStatus
 			if (getActiveChar().isDead())
 			{
 				return false;
+			}
+			
+			double hpLock = getActiveChar().calcStat(Stats.HP_LOCK, 0);
+			if (hpLock > 0)
+			{
+				if (_currentHp == hpLock)
+				{
+					return false;
+				}
+				
+				_currentHp = hpLock;
+				return true;
 			}
 			
 			if (newHp >= maxHp)

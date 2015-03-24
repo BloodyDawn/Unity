@@ -266,6 +266,11 @@
 				<xs:attribute type="xs:int" name="attackSkillLevel" use="optional" />
 				<xs:attribute type="xs:float" name="stunnedMod" use="optional" />
 				<xs:attribute type="xs:float" name="pDefMod" use="optional" />
+				<xs:attribute type="xs:string" name="flyType" use="optional" />
+				<xs:attribute type="xs:int" name="angle" use="optional" />
+				<xs:attribute type="xs:int" name="range" use="optional" />
+				<xs:attribute type="xs:boolean" name="absoluteAngle" use="optional" />
+				<xs:attribute type="xs:boolean" name="effectedPos" use="optional" />
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -395,6 +400,10 @@
 			<xs:enumeration value="stormSignBonus" />
 			<xs:enumeration value="regularAttacksDmg" />
 			<xs:enumeration value="damageUp" />
+			<xs:enumeration value="blockDebuff" />
+			<xs:enumeration value="damagedMaxRange" />
+			<xs:enumeration value="debuffedMaxRange" />
+			<xs:enumeration value="hpLock" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="addType" mixed="true">
