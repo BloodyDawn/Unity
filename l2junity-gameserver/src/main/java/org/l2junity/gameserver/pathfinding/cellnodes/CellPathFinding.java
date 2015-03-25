@@ -190,7 +190,7 @@ public class CellPathFinding extends PathFinding
 		}
 		
 		int currentX, currentY, currentZ;
-		ListIterator<AbstractNodeLoc> middlePoint, endPoint;
+		ListIterator<AbstractNodeLoc> middlePoint;
 		boolean remove;
 		int pass = 0;
 		do
@@ -200,15 +200,19 @@ public class CellPathFinding extends PathFinding
 			
 			remove = false;
 			middlePoint = path.listIterator();
-			endPoint = path.listIterator(1);
 			currentX = x;
 			currentY = y;
 			currentZ = z;
 			
-			while (endPoint.hasNext())
+			while (middlePoint.hasNext())
 			{
-				AbstractNodeLoc locEnd = endPoint.next();
 				AbstractNodeLoc locMiddle = middlePoint.next();
+				if (!middlePoint.hasNext())
+				{
+					break;
+				}
+				
+				AbstractNodeLoc locEnd = path.get(middlePoint.nextIndex());
 				if (GeoData.getInstance().canMove(currentX, currentY, currentZ, locEnd.getX(), locEnd.getY(), locEnd.getZ(), instanceId))
 				{
 					middlePoint.remove();
@@ -231,11 +235,7 @@ public class CellPathFinding extends PathFinding
 		
 		if (debug)
 		{
-			middlePoint = path.listIterator();
-			while (middlePoint.hasNext())
-			{
-				dropDebugItem(65, 1, middlePoint.next());
-			}
+			path.forEach(n -> dropDebugItem(65, 1, n));
 		}
 		
 		_findSuccess++;
