@@ -84,8 +84,6 @@ public class Die implements IClientOutgoingPacket
 		}
 		
 		_isSweepable = activeChar.isAttackable() && activeChar.isSweepActive();
-		addItem(57);
-		_itemsEnabled = true;
 	}
 	
 	public void setHideAnimation(boolean val)
