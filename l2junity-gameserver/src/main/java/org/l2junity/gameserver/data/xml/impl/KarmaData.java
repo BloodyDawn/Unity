@@ -48,7 +48,6 @@ public class KarmaData implements IXmlReader
 	@Override
 	public void parseDocument(Document doc)
 	{
-		NamedNodeMap attrs;
 		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
 		{
 			if ("pcKarmaIncrease".equalsIgnoreCase(n.getNodeName()))
@@ -57,7 +56,7 @@ public class KarmaData implements IXmlReader
 				{
 					if ("increase".equalsIgnoreCase(d.getNodeName()))
 					{
-						attrs = d.getAttributes();
+						final NamedNodeMap attrs = d.getAttributes();
 						_karmaTable.put(parseInteger(attrs, "lvl"), parseDouble(attrs, "val"));
 					}
 				}

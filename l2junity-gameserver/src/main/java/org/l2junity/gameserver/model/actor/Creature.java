@@ -2510,10 +2510,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		
 		stopAllEffectsExceptThoseThatLastThroughDeath();
 		
-		if (isPlayer() && (getActingPlayer().getAgathionId() != 0))
-		{
-			getActingPlayer().setAgathionId(0);
-		}
 		calculateRewards(killer);
 		
 		// Send the Server->Client packet StatusUpdate with current HP and MP to all other L2PcInstance to inform

@@ -43,9 +43,24 @@ public final class MagicalAttackMp extends AbstractEffect
 	@Override
 	public boolean calcSuccess(BuffInfo info)
 	{
-		if (info.getEffected().isInvul() || !Formulas.calcMagicAffected(info.getEffector(), info.getEffected(), info.getSkill()))
+		if (info.getEffected().isInvul())
 		{
-			info.getEffector().sendPacket(SystemMessageId.YOU_HAVE_MISSED);
+			return false;
+		}
+		
+		if (!Formulas.calcMagicAffected(info.getEffector(), info.getEffected(), info.getSkill()))
+		{
+			if (info.getEffector().isPlayer())
+			{
+				info.getEffector().sendPacket(SystemMessageId.YOUR_ATTACK_HAS_FAILED);
+			}
+			if (info.getEffected().isPlayer())
+			{
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_RESISTED_C2_S_DRAIN);
+				sm.addCharName(info.getEffected());
+				sm.addCharName(info.getEffector());
+				info.getEffected().sendPacket(sm);
+			}
 			return false;
 		}
 		return true;
@@ -89,7 +104,7 @@ public final class MagicalAttackMp extends AbstractEffect
 		
 		if (target.isPlayer())
 		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S2_S_MP_HAS_BEEN_DRAINED_BY_C1);
+			final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S2_S_MP_HAS_BEEN_DRAINED_BY_C1);
 			sm.addCharName(activeChar);
 			sm.addInt((int) mp);
 			target.sendPacket(sm);
