@@ -399,7 +399,20 @@
 		<!-- Magical scroll that relocates you to Talking Island. -->
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
 		<set name="crystal_type" val="NONE" />
+		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="weight" val="0" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="9224-1" />
+		<cond msgId="113" addName="1">
+			<player flyMounted="false" />
+		</cond>
 	</item>
 	<item id="32227" name="Stone of Awakening" additionalName="" type="EtcItem">
 		<!-- Proof for awakening. -->

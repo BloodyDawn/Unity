@@ -205,11 +205,29 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9224" levels="1" name="Scroll of Escape: Talking Island Village">
-		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="20000" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeId" val="32226" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="magicLvl" val="1" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player canEscape="true" />
+				<not>
+					<player insideZoneId="10501, 10502, 10503" />
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="Teleport">
+				<param x="-114558" y="253605" z="-1536" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="9225" levels="1" name="Specter of Light">
 		<!-- AUTO GENERATED SKILL -->
