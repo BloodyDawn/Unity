@@ -84,6 +84,8 @@ public class Die implements IClientOutgoingPacket
 		}
 		
 		_isSweepable = activeChar.isAttackable() && activeChar.isSweepActive();
+		addItem(57);
+		_itemsEnabled = true;
 	}
 	
 	public void setHideAnimation(boolean val)
@@ -131,12 +133,13 @@ public class Die implements IClientOutgoingPacket
 		packet.writeD(_isSweepable ? 0x01 : 0x00);
 		packet.writeD(_useFeather ? 0x01 : 0x00);
 		packet.writeD(_toFortress ? 0x01 : 0x00);
+		packet.writeD(0x00); // Disables use Feather button for X seconds
+		packet.writeD(0x00); // Adventure's Song
 		packet.writeC(_hideAnimation ? 0x01 : 0x00);
 		
+		packet.writeD(_itemsEnabled ? 0x01 : 0x00);
 		packet.writeD(getItems().size());
 		getItems().forEach(packet::writeD);
-		
-		packet.writeD(_itemsEnabled ? 0x01 : 0x00);
 		return true;
 	}
 }

@@ -241,14 +241,17 @@ public final class RequestRestartPoint implements IClientIncomingPacket
 					activeChar.doRevive(100.00);
 				}
 				else
-				// Festival Participant
 				{
 					instanceId = activeChar.getInstanceId();
 					loc = new Location(activeChar);
 				}
 				break;
 			}
-			case 6: // TODO: agathion ress
+			case 6: // TODO: Agathion ress
+			{
+				break;
+			}
+			case 7: // TODO: Adventurer's Song
 			{
 				break;
 			}

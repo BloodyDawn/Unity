@@ -10043,6 +10043,11 @@ public final class PlayerInstance extends Playable
 				continue;
 			}
 			
+			if (SkillTreesData.getInstance().getAlchemySkill(s.getId(), s.getLevel()) != null)
+			{
+				continue;
+			}
+			
 			if ((_transformation != null) && (!hasTransformSkill(s.getId()) && !s.allowOnTransform()))
 			{
 				continue;

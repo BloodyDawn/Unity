@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
+import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
@@ -44,6 +45,7 @@ public class ExAlchemySkillList implements IClientOutgoingPacket
 				_skills.add(skill);
 			}
 		}
+		_skills.add(SkillData.getInstance().getSkill(17943, 1));
 	}
 	
 	@Override
@@ -56,8 +58,8 @@ public class ExAlchemySkillList implements IClientOutgoingPacket
 		{
 			packet.writeD(skill.getId());
 			packet.writeD(skill.getLevel());
-			packet.writeQ(0x00); // Always 0 on Naia, SP i guess?
-			packet.writeC(0x01); // Always 1 on Naia
+			packet.writeQ(9999); // Always 0 on Naia, SP i guess?
+			packet.writeC(skill.getId() == 17943 ? 0 : 1); // This is type in flash, visible or not
 		}
 		return true;
 	}
