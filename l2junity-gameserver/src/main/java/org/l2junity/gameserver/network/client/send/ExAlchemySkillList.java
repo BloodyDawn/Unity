@@ -58,7 +58,7 @@ public class ExAlchemySkillList implements IClientOutgoingPacket
 		{
 			packet.writeD(skill.getId());
 			packet.writeD(skill.getLevel());
-			packet.writeQ(9999); // Always 0 on Naia, SP i guess?
+			packet.writeQ(0x00); // Always 0 on Naia, SP i guess?
 			packet.writeC(skill.getId() == 17943 ? 0 : 1); // This is type in flash, visible or not
 		}
 		return true;
