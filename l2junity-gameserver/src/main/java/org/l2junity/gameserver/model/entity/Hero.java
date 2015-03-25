@@ -27,7 +27,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -160,7 +159,7 @@ public class Hero
 		}
 		catch (SQLException e)
 		{
-			_log.warn("Hero System: Couldnt load Heroes", e);
+			_log.warn("Hero System: Couldnt load Heroes: ", e.getMessage());
 		}
 		
 		_log.info("Hero System: Loaded " + _heroes.size() + " Heroes.");
@@ -449,33 +448,32 @@ public class Hero
 	public void showHeroDiary(PlayerInstance activeChar, int heroclass, int charid, int page)
 	{
 		final int perpage = 10;
-		
-		if (_herodiary.containsKey(charid))
+		final List<StatsSet> mainList = _herodiary.get(charid);
+		if (mainList != null)
 		{
-			List<StatsSet> _mainlist = _herodiary.get(charid);
 			final NpcHtmlMessage DiaryReply = new NpcHtmlMessage();
 			final String htmContent = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/olympiad/herodiary.htm");
-			if ((htmContent != null) && _heroMessage.containsKey(charid))
+			final String heroMessage = _heroMessage.get(charid);
+			if ((htmContent != null) && (heroMessage != null))
 			{
 				DiaryReply.setHtml(htmContent);
 				DiaryReply.replace("%heroname%", CharNameTable.getInstance().getNameById(charid));
-				DiaryReply.replace("%message%", _heroMessage.get(charid));
+				DiaryReply.replace("%message%", heroMessage);
 				DiaryReply.disableValidation();
 				
-				if (!_mainlist.isEmpty())
+				if (!mainList.isEmpty())
 				{
-					List<StatsSet> _list = new LinkedList<>();
-					_list.addAll(_mainlist);
-					Collections.reverse(_list);
+					List<StatsSet> list = new LinkedList<>(mainList);
+					Collections.reverse(list);
 					
 					boolean color = true;
 					final StringBuilder fList = new StringBuilder(500);
 					int counter = 0;
 					int breakat = 0;
-					for (int i = ((page - 1) * perpage); i < _list.size(); i++)
+					for (int i = ((page - 1) * perpage); i < list.size(); i++)
 					{
 						breakat = i;
-						StatsSet _diaryentry = _list.get(i);
+						StatsSet _diaryentry = list.get(i);
 						fList.append("<tr><td>");
 						if (color)
 						{
@@ -497,7 +495,7 @@ public class Hero
 						}
 					}
 					
-					if (breakat < (_list.size() - 1))
+					if (breakat < (list.size() - 1))
 					{
 						DiaryReply.replace("%buttprev%", "<button value=\"Prev\" action=\"bypass _diary?class=" + heroclass + "&page=" + (page + 1) + "\" width=60 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 					}
@@ -536,10 +534,9 @@ public class Hero
 		int _loss = 0;
 		int _draw = 0;
 		
-		if (_herofights.containsKey(charid))
+		final List<StatsSet> heroFights = _herofights.get(charid);
+		if (heroFights != null)
 		{
-			List<StatsSet> _list = _herofights.get(charid);
-			
 			final NpcHtmlMessage FightReply = new NpcHtmlMessage();
 			final String htmContent = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/olympiad/herohistory.htm");
 			if (htmContent != null)
@@ -547,24 +544,24 @@ public class Hero
 				FightReply.setHtml(htmContent);
 				FightReply.replace("%heroname%", CharNameTable.getInstance().getNameById(charid));
 				
-				if (!_list.isEmpty())
+				if (!heroFights.isEmpty())
 				{
-					if (_herocounts.containsKey(charid))
+					final StatsSet heroCount = _herocounts.get(charid);
+					if (heroCount != null)
 					{
-						StatsSet _herocount = _herocounts.get(charid);
-						_win = _herocount.getInt("victory");
-						_loss = _herocount.getInt("loss");
-						_draw = _herocount.getInt("draw");
+						_win = heroCount.getInt("victory");
+						_loss = heroCount.getInt("loss");
+						_draw = heroCount.getInt("draw");
 					}
 					
 					boolean color = true;
 					final StringBuilder fList = new StringBuilder(500);
 					int counter = 0;
 					int breakat = 0;
-					for (int i = ((page - 1) * perpage); i < _list.size(); i++)
+					for (int i = ((page - 1) * perpage); i < heroFights.size(); i++)
 					{
 						breakat = i;
-						StatsSet fight = _list.get(i);
+						StatsSet fight = heroFights.get(i);
 						fList.append("<tr><td>");
 						if (color)
 						{
@@ -586,7 +583,7 @@ public class Hero
 						}
 					}
 					
-					if (breakat < (_list.size() - 1))
+					if (breakat < (heroFights.size() - 1))
 					{
 						FightReply.replace("%buttprev%", "<button value=\"Prev\" action=\"bypass _match?class=" + heroclass + "&page=" + (page + 1) + "\" width=60 height=25 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
 					}
@@ -663,45 +660,42 @@ public class Hero
 			player.broadcastUserInfo();
 		}
 		
+		deleteItemsInDb();
+		_heroes.clear();
+		
 		if (newHeroes.isEmpty())
 		{
 			_heroes.clear();
 			return;
 		}
 		
-		Map<Integer, StatsSet> heroes = new HashMap<>();
-		
 		for (StatsSet hero : newHeroes)
 		{
 			int charId = hero.getInt(Olympiad.CHAR_ID);
 			
-			if ((_completeHeroes != null) && _completeHeroes.containsKey(charId))
+			if (_completeHeroes != null)
 			{
-				StatsSet oldHero = _completeHeroes.get(charId);
-				int count = oldHero.getInt(COUNT);
-				oldHero.set(COUNT, count + 1);
-				oldHero.set(PLAYED, 1);
-				oldHero.set(CLAIMED, false);
-				heroes.put(charId, oldHero);
-			}
-			else
-			{
-				StatsSet newHero = new StatsSet();
-				newHero.set(Olympiad.CHAR_NAME, hero.getString(Olympiad.CHAR_NAME));
-				newHero.set(Olympiad.CLASS_ID, hero.getInt(Olympiad.CLASS_ID));
-				newHero.set(COUNT, 1);
-				newHero.set(PLAYED, 1);
-				newHero.set(CLAIMED, false);
-				heroes.put(charId, newHero);
+				final StatsSet oldHero = _completeHeroes.get(charId);
+				if (oldHero != null)
+				{
+					int count = oldHero.getInt(COUNT);
+					oldHero.set(COUNT, count + 1);
+					oldHero.set(PLAYED, 1);
+					oldHero.set(CLAIMED, false);
+					_heroes.put(charId, oldHero);
+				}
+				else
+				{
+					StatsSet newHero = new StatsSet();
+					newHero.set(Olympiad.CHAR_NAME, hero.getString(Olympiad.CHAR_NAME));
+					newHero.set(Olympiad.CLASS_ID, hero.getInt(Olympiad.CLASS_ID));
+					newHero.set(COUNT, 1);
+					newHero.set(PLAYED, 1);
+					newHero.set(CLAIMED, false);
+					_heroes.put(charId, newHero);
+				}
 			}
 		}
-		
-		deleteItemsInDb();
-		
-		_heroes.clear();
-		_heroes.putAll(heroes);
-		
-		heroes.clear();
 		
 		updateHeroes(false);
 	}

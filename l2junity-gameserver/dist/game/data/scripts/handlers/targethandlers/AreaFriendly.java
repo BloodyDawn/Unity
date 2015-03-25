@@ -30,6 +30,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2SiegeFlagInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
+import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
@@ -109,6 +110,11 @@ public class AreaFriendly implements ITargetTypeHandler
 		
 		if (target.isPlayable())
 		{
+			if (activeChar == target)
+			{
+				return true;
+			}
+			
 			if ((target != activeChar) && activeChar.isInParty() && target.isInParty())
 			{
 				return (activeChar.getParty().getLeader() == target.getParty().getLeader());
@@ -124,7 +130,12 @@ public class AreaFriendly implements ITargetTypeHandler
 				return (activeChar.getAllyId() == target.getAllyId());
 			}
 			
-			if ((target != activeChar) && (target.getActingPlayer().getPvpFlag() > 0))
+			if ((target != activeChar) && ((target.getActingPlayer().getPvpFlag() > 0) || (target.getActingPlayer().getKarma() > 0)))
+			{
+				return false;
+			}
+			
+			if (target.isInsideZone(ZoneId.PVP))
 			{
 				return false;
 			}

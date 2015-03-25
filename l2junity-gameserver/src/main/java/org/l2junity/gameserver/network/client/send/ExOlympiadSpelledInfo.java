@@ -55,8 +55,8 @@ public class ExOlympiadSpelledInfo implements IClientOutgoingPacket
 		{
 			if ((info != null) && info.isInUse())
 			{
-				packet.writeD(info.getSkill().getId());
-				packet.writeH(info.getSkill().getLevel());
+				packet.writeD(info.getSkill().getDisplayId());
+				packet.writeH(info.getSkill().getDisplayLevel());
 				packet.writeD(0x00);
 				packet.writeH(info.getTime());
 			}

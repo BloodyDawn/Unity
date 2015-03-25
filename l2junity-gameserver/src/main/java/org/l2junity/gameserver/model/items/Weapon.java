@@ -397,8 +397,14 @@ public final class Weapon extends L2Item
 			return;
 		}
 		
-		// No Trigger if not Magic Skill
+		// No Trigger if not Magic Skill or is toggle
 		if (!trigger.isMagic() && !onMagicSkill.isMagic())
+		{
+			return;
+		}
+		
+		// No Trigger if skill is toggle
+		if (trigger.isToggle())
 		{
 			return;
 		}
