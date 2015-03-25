@@ -26,6 +26,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Consumer;
 
 import org.l2junity.gameserver.ai.CharacterAI;
+import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -374,14 +375,49 @@ public final class World
 			{
 				for (WorldObject wo : w.getVisibleObjects().values())
 				{
-					if (object.isPlayer())
+					if (wo == object)
 					{
-						object.sendPacket(new DeleteObject(wo));
+						continue;
 					}
 					
-					if (wo.isPlayer())
+					if (object.isCreature())
 					{
-						wo.sendPacket(new DeleteObject(object));
+						final Creature objectCreature = (Creature) object;
+						final CharacterAI ai = objectCreature.getAI();
+						if (ai != null)
+						{
+							ai.notifyEvent(CtrlEvent.EVT_FORGET_OBJECT, wo);
+						}
+						
+						if (objectCreature.getTarget() == wo)
+						{
+							objectCreature.setTarget(null);
+						}
+						
+						if (object.isPlayer())
+						{
+							object.sendPacket(new DeleteObject(wo));
+						}
+					}
+					
+					if (wo.isCreature())
+					{
+						final Creature woCreature = (Creature) wo;
+						final CharacterAI ai = woCreature.getAI();
+						if (ai != null)
+						{
+							ai.notifyEvent(CtrlEvent.EVT_FORGET_OBJECT, object);
+						}
+						
+						if (woCreature.getTarget() == object)
+						{
+							woCreature.setTarget(null);
+						}
+						
+						if (wo.isPlayer())
+						{
+							wo.sendPacket(new DeleteObject(object));
+						}
 					}
 				}
 				return true;
@@ -418,14 +454,44 @@ public final class World
 						continue;
 					}
 					
-					if (object.isPlayer())
+					if (object.isCreature())
 					{
-						object.sendPacket(new DeleteObject(wo));
+						final Creature objectCreature = (Creature) object;
+						final CharacterAI ai = objectCreature.getAI();
+						if (ai != null)
+						{
+							ai.notifyEvent(CtrlEvent.EVT_FORGET_OBJECT, wo);
+						}
+						
+						if (objectCreature.getTarget() == wo)
+						{
+							objectCreature.setTarget(null);
+						}
+						
+						if (object.isPlayer())
+						{
+							object.sendPacket(new DeleteObject(wo));
+						}
 					}
 					
-					if (wo.isPlayer())
+					if (wo.isCreature())
 					{
-						wo.sendPacket(new DeleteObject(object));
+						final Creature woCreature = (Creature) wo;
+						final CharacterAI ai = woCreature.getAI();
+						if (ai != null)
+						{
+							ai.notifyEvent(CtrlEvent.EVT_FORGET_OBJECT, object);
+						}
+						
+						if (woCreature.getTarget() == object)
+						{
+							woCreature.setTarget(null);
+						}
+						
+						if (wo.isPlayer())
+						{
+							wo.sendPacket(new DeleteObject(object));
+						}
 					}
 				}
 			}
