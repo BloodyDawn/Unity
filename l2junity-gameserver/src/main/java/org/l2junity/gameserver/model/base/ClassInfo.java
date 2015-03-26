@@ -77,6 +77,19 @@ public final class ClassInfo
 		{
 			classClientId += 1438;
 		}
+		else if ((classClientId >= 139) && (classClientId <= 146))
+		{
+			classClientId += 2338;
+		}
+		else if ((classClientId >= 148) && (classClientId <= 181))
+		{
+			classClientId += 2884;
+		}
+		else if ((classClientId >= 182) && (classClientId <= 189))
+		{
+			classClientId += 3121;
+		}
+		
 		return classClientId;
 	}
 	
