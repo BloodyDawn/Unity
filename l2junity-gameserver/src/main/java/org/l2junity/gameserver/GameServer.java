@@ -39,6 +39,7 @@ import org.l2junity.gameserver.data.sql.impl.SummonSkillsTable;
 import org.l2junity.gameserver.data.sql.impl.TeleportLocationTable;
 import org.l2junity.gameserver.data.xml.impl.AbilityPointsData;
 import org.l2junity.gameserver.data.xml.impl.AdminData;
+import org.l2junity.gameserver.data.xml.impl.AlchemyData;
 import org.l2junity.gameserver.data.xml.impl.AppearanceItemData;
 import org.l2junity.gameserver.data.xml.impl.ArmorSetsData;
 import org.l2junity.gameserver.data.xml.impl.BeautyShopData;
@@ -216,6 +217,7 @@ public class GameServer
 		HennaData.getInstance();
 		PrimeShopData.getInstance();
 		AppearanceItemData.getInstance();
+		AlchemyData.getInstance();
 		
 		printSection("Characters");
 		ClassListData.getInstance();

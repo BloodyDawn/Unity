@@ -20,10 +20,12 @@ package org.l2junity.gameserver.network.client.send;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
@@ -37,15 +39,8 @@ public class ExAlchemySkillList implements IClientOutgoingPacket
 	
 	public ExAlchemySkillList(final PlayerInstance player)
 	{
-		for (Skill skill : player.getAllSkills())
-		{
-			// Make sure its alchemy skill.
-			if (SkillTreesData.getInstance().getAlchemySkill(skill.getId(), skill.getLevel()) != null)
-			{
-				_skills.add(skill);
-			}
-		}
-		_skills.add(SkillData.getInstance().getSkill(17943, 1));
+		_skills.addAll(player.getAllSkills().stream().filter(s -> SkillTreesData.getInstance().isAlchemySkill(s.getId(), s.getLevel())).collect(Collectors.toList()));
+		_skills.add(SkillData.getInstance().getSkill(CommonSkill.ALCHEMY_CUBE.getId(), 1));
 	}
 	
 	@Override
@@ -59,7 +54,7 @@ public class ExAlchemySkillList implements IClientOutgoingPacket
 			packet.writeD(skill.getId());
 			packet.writeD(skill.getLevel());
 			packet.writeQ(0x00); // Always 0 on Naia, SP i guess?
-			packet.writeC(skill.getId() == 17943 ? 0 : 1); // This is type in flash, visible or not
+			packet.writeC(skill.getId() == CommonSkill.ALCHEMY_CUBE.getId() ? 0 : 1); // This is type in flash, visible or not
 		}
 		return true;
 	}

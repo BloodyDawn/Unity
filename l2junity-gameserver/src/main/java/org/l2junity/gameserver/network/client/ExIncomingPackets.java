@@ -27,6 +27,8 @@ import org.l2junity.gameserver.network.client.recv.*;
 import org.l2junity.gameserver.network.client.recv.adenadistribution.RequestDivideAdena;
 import org.l2junity.gameserver.network.client.recv.adenadistribution.RequestDivideAdenaCancel;
 import org.l2junity.gameserver.network.client.recv.adenadistribution.RequestDivideAdenaStart;
+import org.l2junity.gameserver.network.client.recv.alchemy.RequestAlchemyConversion;
+import org.l2junity.gameserver.network.client.recv.alchemy.RequestAlchemyTryMixCube;
 import org.l2junity.gameserver.network.client.recv.appearance.RequestExCancelShape_Shifting_Item;
 import org.l2junity.gameserver.network.client.recv.appearance.RequestExTryToPutShapeShiftingEnchantSupportItem;
 import org.l2junity.gameserver.network.client.recv.appearance.RequestExTryToPutShapeShiftingTargetItem;
@@ -319,8 +321,8 @@ public enum ExIncomingPackets implements IIncomingPackets<IIncomingPacket<L2Game
 	REQUEST_NEW_ENCHANT_TRY(0xF9, RequestNewEnchantTry::new, ConnectionState.IN_GAME),
 	EX_SEND_SELECTED_QUEST_ZONE_ID(0xFE, null, ConnectionState.IN_GAME),
 	REQUEST_ALCHEMY_SKILL_LIST(0xFF, RequestAlchemySkillList::new, ConnectionState.IN_GAME),
-	REQUEST_ALCHEMY_TRY_MIX_CUBE(0x100, null, ConnectionState.IN_GAME),
-	REQUEST_ALCHEMY_CONVERSION(0x101, null, ConnectionState.IN_GAME),
+	REQUEST_ALCHEMY_TRY_MIX_CUBE(0x100, RequestAlchemyTryMixCube::new, ConnectionState.IN_GAME),
+	REQUEST_ALCHEMY_CONVERSION(0x101, RequestAlchemyConversion::new, ConnectionState.IN_GAME),
 	SEND_EXECUTED_UI_EVENTS_COUNT(0x102, null, ConnectionState.IN_GAME),
 	EX_SEND_CLIENT_INI(0x103, null, ConnectionState.IN_GAME),
 	REQUEST_EX_AUTO_FISH(0x104, null, ConnectionState.IN_GAME);

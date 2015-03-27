@@ -68,6 +68,9 @@ public abstract class Inventory extends ItemContainer
 	public static final int ADENA_ID = 57;
 	public static final int ANCIENT_ADENA_ID = 5575;
 	public static final int BEAUTY_TICKET_ID = 36308;
+	public static final int AIR_STONE_ID = 39461;
+	public static final int TEMPEST_STONE_ID = 39592;
+	public static final int ELCYUM_CRYSTAL_ID = 36514;
 	
 	public static final long MAX_ADENA = Config.MAX_ADENA;
 	

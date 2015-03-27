@@ -235,7 +235,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	private Creature _debugger = null;
 	
 	private final ReentrantLock _teleportLock = new ReentrantLock();
-	private final ReentrantLock _attackLock = new ReentrantLock();
+	private final Object _attackLock = new Object();
 	
 	private Team _team = Team.NONE;
 	
@@ -821,11 +821,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public void doAttack(Creature target)
 	{
-		if (!_attackLock.tryLock())
-		{
-			return;
-		}
-		try
+		synchronized (_attackLock)
 		{
 			if ((target == null) || isAttackingDisabled())
 			{
@@ -1190,10 +1186,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			
 			// Notify AI with EVT_READY_TO_ACT
 			ThreadPoolManager.getInstance().scheduleAi(new NotifyAITask(this, CtrlEvent.EVT_READY_TO_ACT), timeAtk + reuse);
-		}
-		finally
-		{
-			_attackLock.unlock();
 		}
 	}
 	

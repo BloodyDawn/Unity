@@ -1392,6 +1392,11 @@ public final class SkillTreesData implements IXmlReader
 		}
 	}
 	
+	public boolean isAlchemySkill(int skillId, int skillLevel)
+	{
+		return _alchemySkillTree.containsKey(SkillData.getSkillHashCode(skillId, skillLevel));
+	}
+	
 	/**
 	 * Checks if is hero skill.
 	 * @param skillId the Id of the skill to check
