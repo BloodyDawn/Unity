@@ -81,7 +81,30 @@ public class RequestAlchemyConversion implements IClientIncomingPacket
 		// }
 		
 		// TODO: Figure out the chance
-		final int baseChance = 50;
+		final int baseChance;
+		switch (data.getGrade())
+		{
+			case 1: // Elementary
+			{
+				baseChance = 100;
+				break;
+			}
+			case 2: // Intermediate
+			{
+				baseChance = 80;
+				break;
+			}
+			case 3: // Advanced
+			{
+				baseChance = 60;
+				break;
+			}
+			default: // Master
+			{
+				baseChance = 50;
+				break;
+			}
+		}
 		
 		int successCount = 0;
 		int failureCount = 0;
