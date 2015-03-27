@@ -102,7 +102,7 @@ public enum BaseStats
 		@Override
 		public final double calcBonus(Creature actor)
 		{
-			return STRbonus[actor.getSTR()];
+			return STRbonus[Math.min(actor.getSTR(), MAX_STAT_VALUE - 1)];
 		}
 	}
 	
@@ -111,7 +111,7 @@ public enum BaseStats
 		@Override
 		public final double calcBonus(Creature actor)
 		{
-			return INTbonus[actor.getINT()];
+			return INTbonus[Math.min(actor.getINT(), MAX_STAT_VALUE - 1)];
 		}
 	}
 	
@@ -120,7 +120,7 @@ public enum BaseStats
 		@Override
 		public final double calcBonus(Creature actor)
 		{
-			return DEXbonus[actor.getDEX()];
+			return DEXbonus[Math.min(actor.getDEX(), MAX_STAT_VALUE - 1)];
 		}
 	}
 	
@@ -129,7 +129,7 @@ public enum BaseStats
 		@Override
 		public final double calcBonus(Creature actor)
 		{
-			return WITbonus[actor.getWIT()];
+			return WITbonus[Math.min(actor.getWIT(), MAX_STAT_VALUE - 1)];
 		}
 	}
 	
@@ -138,7 +138,7 @@ public enum BaseStats
 		@Override
 		public final double calcBonus(Creature actor)
 		{
-			return CONbonus[actor.getCON()];
+			return CONbonus[Math.min(actor.getCON(), MAX_STAT_VALUE - 1)];
 		}
 	}
 	
@@ -147,7 +147,7 @@ public enum BaseStats
 		@Override
 		public final double calcBonus(Creature actor)
 		{
-			return MENbonus[actor.getMEN()];
+			return MENbonus[Math.min(actor.getMEN(), MAX_STAT_VALUE - 1)];
 		}
 	}
 	
