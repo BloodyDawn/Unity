@@ -18,18 +18,14 @@
  */
 package org.l2junity.gameserver;
 
-import java.awt.Color;
 import java.nio.file.Files;
 import java.nio.file.Path;
-
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.interfaces.ILocational;
-import org.l2junity.gameserver.network.client.send.ExServerPrimitive;
-import org.l2junity.gameserver.util.Broadcast;
 import org.l2junity.gameserver.util.GeoUtils;
 import org.l2junity.gameserver.util.LinePointIterator;
 import org.l2junity.gameserver.util.LinePointIterator3D;
@@ -353,8 +349,6 @@ public class GeoData
 			geoY = tmp;
 		}
 		
-		final ExServerPrimitive esp = new ExServerPrimitive("geo_debug", x, y, -16000);
-		
 		LinePointIterator3D pointIter = new LinePointIterator3D(geoX, geoY, z, tGeoX, tGeoY, tz);
 		// first point is guaranteed to be available, skip it, we can always see our own position
 		pointIter.next();
@@ -376,8 +370,6 @@ public class GeoData
 			int beeCurZ = pointIter.z();
 			int curGeoZ = prevGeoZ;
 			
-			esp.addLine(Color.GREEN, getWorldX(prevX), getWorldY(prevY), prevZ, getWorldX(curX), getWorldY(curY), beeCurZ);
-			
 			// check if the position has geodata
 			if (hasGeoPos(curX, curY))
 			{
@@ -393,10 +385,6 @@ public class GeoData
 				{
 					maxHeight = beeCurZ + MAX_SEE_OVER_HEIGHT;
 				}
-				
-				esp.addPoint("" + maxHeight, Color.GRAY, true, getWorldX(curX), getWorldY(curY), maxHeight);
-				esp.addPoint("" + z, Color.RED, true, getWorldX(curX), getWorldY(curY), z);
-				esp.addPoint("" + beeCurZ, Color.ORANGE, true, getWorldX(curX), getWorldY(curY), beeCurZ);
 				
 				boolean canSeeThrough = false;
 				if ((curGeoZ <= maxHeight) && (curGeoZ <= beeCurGeoZ))
@@ -433,18 +421,16 @@ public class GeoData
 				
 				if (!canSeeThrough)
 				{
-					Broadcast.toAllOnlinePlayers(esp);
 					return false;
 				}
 			}
 			
 			prevX = curX;
 			prevY = curY;
-			prevZ = beeCurZ;
 			prevGeoZ = curGeoZ;
 			++ptIndex;
 		}
-		Broadcast.toAllOnlinePlayers(esp);
+		
 		return true;
 	}
 	
