@@ -104,8 +104,8 @@ public final class GeoUtils
 	
 	public static void debugGrid(PlayerInstance player)
 	{
-		int geoRadius = 10;
-		int blocksPerPacket = 49;
+		int geoRadius = 20;
+		int blocksPerPacket = 40;
 		if (geoRadius < 0)
 		{
 			throw new IllegalArgumentException("geoRadius < 0");
