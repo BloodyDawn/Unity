@@ -23,7 +23,6 @@ import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 import java.sql.SQLException;
 import java.util.Map.Entry;
-import java.util.ResourceBundle;
 
 import org.l2junity.loginserver.GameServerTable;
 
@@ -37,18 +36,14 @@ public class GameServerRegister extends BaseGameServerRegister
 		BaseGameServerRegister.main(args);
 	}
 	
-	/**
-	 * @param bundle
-	 */
-	public GameServerRegister(ResourceBundle bundle)
+	public GameServerRegister()
 	{
-		super(bundle);
 		load();
 		
 		int size = GameServerTable.getInstance().getServerNames().size();
 		if (size == 0)
 		{
-			System.out.println(getBundle().getString("noServerNames"));
+			System.out.println("No available names for GameServer, verify servername.xml file exists in the LoginServer folder.");
 			System.exit(1);
 		}
 	}
@@ -64,15 +59,15 @@ public class GameServerRegister extends BaseGameServerRegister
 			hr();
 			System.out.println("GSRegister");
 			System.out.println(System.lineSeparator());
-			System.out.println("1 - " + getBundle().getString("cmdMenuRegister"));
-			System.out.println("2 - " + getBundle().getString("cmdMenuListNames"));
-			System.out.println("3 - " + getBundle().getString("cmdMenuRemoveGS"));
-			System.out.println("4 - " + getBundle().getString("cmdMenuRemoveAll"));
-			System.out.println("5 - " + getBundle().getString("cmdMenuExit"));
+			System.out.println("1 - Register GameServer");
+			System.out.println("2 - List GameServers Names and IDs");
+			System.out.println("3 - Remove GameServer");
+			System.out.println("4 - Remove ALL GameServers");
+			System.out.println("5 - Exit");
 			
 			do
 			{
-				System.out.print(getBundle().getString("yourChoice") + ' ');
+				System.out.print("Choice: ");
 				choice = _in.readLine();
 				try
 				{
@@ -97,14 +92,14 @@ public class GameServerRegister extends BaseGameServerRegister
 							System.exit(0);
 							break;
 						default:
-							System.out.printf(getBundle().getString("invalidChoice") + System.lineSeparator(), choice);
+							System.out.printf("Invalid Choice: %s" + System.lineSeparator(), choice);
 							choiceOk = false;
 					}
 					
 				}
 				catch (NumberFormatException nfe)
 				{
-					System.out.printf(getBundle().getString("invalidChoice") + System.lineSeparator(), choice);
+					System.out.printf("Invalid Choice: %s" + System.lineSeparator(), choice);
 				}
 			}
 			while (!choiceOk);
@@ -142,8 +137,8 @@ public class GameServerRegister extends BaseGameServerRegister
 		
 		String id;
 		boolean inUse;
-		String gsInUse = getBundle().getString("gsInUse");
-		String gsFree = getBundle().getString("gsFree");
+		String gsInUse = "In Use";
+		String gsFree = "Free";
 		int gsStatusMaxLen = Math.max(gsInUse.length(), gsFree.length()) + 2;
 		for (Entry<Integer, String> e : GameServerTable.getInstance().getServerNames().entrySet())
 		{
@@ -181,16 +176,16 @@ public class GameServerRegister extends BaseGameServerRegister
 	 */
 	private void unregisterAllGS() throws IOException
 	{
-		if (yesNoQuestion(getBundle().getString("confirmRemoveAllText")))
+		if (yesNoQuestion("Are you sure you want to remove ALL GameServers?"))
 		{
 			try
 			{
 				BaseGameServerRegister.unregisterAllGameServers();
-				System.out.println(getBundle().getString("unregisterAllOk"));
+				System.out.println("All GameServers were successfully removed.");
 			}
 			catch (SQLException e)
 			{
-				showError(getBundle().getString("sqlErrorUnregisterAll"), e);
+				showError("An SQL error occurred while trying to remove ALL GameServers.", e);
 			}
 		}
 	}
@@ -202,9 +197,9 @@ public class GameServerRegister extends BaseGameServerRegister
 		{
 			hr();
 			System.out.println(question);
-			System.out.println("1 - " + getBundle().getString("yes"));
-			System.out.println("2 - " + getBundle().getString("no"));
-			System.out.print(getBundle().getString("yourChoice") + ' ');
+			System.out.println("1 - Yes");
+			System.out.println("2 - No");
+			System.out.print("Choice: ");
 			String choice;
 			choice = _in.readLine();
 			if (choice != null)
@@ -219,7 +214,7 @@ public class GameServerRegister extends BaseGameServerRegister
 				}
 				else
 				{
-					System.out.printf(getBundle().getString("invalidChoice") + System.lineSeparator(), choice);
+					System.out.printf("Invalid Choice: %s" + System.lineSeparator(), choice);
 				}
 			}
 		}
@@ -236,7 +231,7 @@ public class GameServerRegister extends BaseGameServerRegister
 		
 		do
 		{
-			System.out.print(getBundle().getString("enterDesiredId") + ' ');
+			System.out.print("Enter desired ID:");
 			line = _in.readLine();
 			try
 			{
@@ -244,7 +239,7 @@ public class GameServerRegister extends BaseGameServerRegister
 			}
 			catch (NumberFormatException e)
 			{
-				System.out.printf(getBundle().getString("invalidChoice") + System.lineSeparator(), line);
+				System.out.printf("Invalid Choice: %s" + System.lineSeparator(), line);
 			}
 		}
 		while (id == Integer.MIN_VALUE);
@@ -252,27 +247,27 @@ public class GameServerRegister extends BaseGameServerRegister
 		String name = GameServerTable.getInstance().getServerNameById(id);
 		if (name == null)
 		{
-			System.out.printf(getBundle().getString("noNameForId") + System.lineSeparator(), id);
+			System.out.printf("No name for ID: %d" + System.lineSeparator(), id);
 		}
 		else
 		{
 			if (GameServerTable.getInstance().hasRegisteredGameServerOnId(id))
 			{
-				System.out.printf(getBundle().getString("confirmRemoveText") + System.lineSeparator(), id, name);
+				System.out.printf("Are you sure you want to remove GameServer %d - %s?" + System.lineSeparator(), id, name);
 				try
 				{
 					BaseGameServerRegister.unregisterGameServer(id);
-					System.out.printf(getBundle().getString("unregisterOk") + System.lineSeparator(), id);
+					System.out.printf("GameServer ID: %d was successfully removed from LoginServer." + System.lineSeparator(), id);
 				}
 				catch (SQLException e)
 				{
-					showError(getBundle().getString("sqlErrorUnregister"), e);
+					showError("An SQL error occurred while trying to remove the GameServer.", e);
 				}
 				
 			}
 			else
 			{
-				System.out.printf(getBundle().getString("noServerForId") + System.lineSeparator(), id);
+				System.out.printf("No GameServer is registered on ID: %d" + System.lineSeparator(), id);
 			}
 		}
 		
@@ -285,7 +280,7 @@ public class GameServerRegister extends BaseGameServerRegister
 		
 		do
 		{
-			System.out.println(getBundle().getString("enterDesiredId"));
+			System.out.println("Enter desired ID:");
 			line = _in.readLine();
 			try
 			{
@@ -293,7 +288,7 @@ public class GameServerRegister extends BaseGameServerRegister
 			}
 			catch (NumberFormatException e)
 			{
-				System.out.printf(getBundle().getString("invalidChoice") + System.lineSeparator(), line);
+				System.out.printf("Invalid Choice: %s" + System.lineSeparator(), line);
 			}
 		}
 		while (id == Integer.MIN_VALUE);
@@ -301,13 +296,13 @@ public class GameServerRegister extends BaseGameServerRegister
 		String name = GameServerTable.getInstance().getServerNameById(id);
 		if (name == null)
 		{
-			System.out.printf(getBundle().getString("noNameForId") + System.lineSeparator(), id);
+			System.out.printf("No name for ID: %d" + System.lineSeparator(), id);
 		}
 		else
 		{
 			if (GameServerTable.getInstance().hasRegisteredGameServerOnId(id))
 			{
-				System.out.println(getBundle().getString("idIsNotFree"));
+				System.out.println("This ID is not available.");
 			}
 			else
 			{
@@ -317,7 +312,7 @@ public class GameServerRegister extends BaseGameServerRegister
 				}
 				catch (IOException e)
 				{
-					showError(getBundle().getString("ioErrorRegister"), e);
+					showError("An error saving the hexid file occurred while trying to register the GameServer.", e);
 				}
 			}
 		}
@@ -326,17 +321,7 @@ public class GameServerRegister extends BaseGameServerRegister
 	@Override
 	public void showError(String msg, Throwable t)
 	{
-		String title;
-		if (getBundle() != null)
-		{
-			title = getBundle().getString("error");
-			msg += System.lineSeparator() + getBundle().getString("reason") + ' ' + t.getLocalizedMessage();
-		}
-		else
-		{
-			title = "Error";
-			msg += System.lineSeparator() + "Cause: " + t.getLocalizedMessage();
-		}
-		System.out.println(title + ": " + msg);
+		msg += System.lineSeparator() + "Reason: " + t.getMessage();
+		System.out.println("Error: " + msg);
 	}
 }

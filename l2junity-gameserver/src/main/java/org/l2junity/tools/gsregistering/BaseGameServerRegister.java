@@ -28,7 +28,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Locale;
 import java.util.Map.Entry;
 import java.util.Properties;
 import java.util.ResourceBundle;
@@ -37,7 +36,6 @@ import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.Server;
 import org.l2junity.loginserver.GameServerTable;
-import org.l2junity.tools.i18n.LanguageControl;
 import org.l2junity.util.Util;
 
 /**
@@ -47,7 +45,6 @@ import org.l2junity.util.Util;
 public abstract class BaseGameServerRegister
 {
 	private boolean _loaded = false;
-	private ResourceBundle _bundle;
 	
 	/**
 	 * The main method.
@@ -55,23 +52,10 @@ public abstract class BaseGameServerRegister
 	 */
 	public static void main(String[] args)
 	{
-		Locale locale = null;
 		boolean interactive = true;
 		boolean force = false;
 		boolean fallback = false;
 		BaseTask task = null;
-		
-		ResourceBundle bundle = null;
-		try
-		{
-			locale = Locale.getDefault();
-			bundle = ResourceBundle.getBundle("gsregister.GSRegister", locale, LanguageControl.INSTANCE);
-		}
-		catch (Throwable t)
-		{
-			System.out.println("FATAL: Failed to load default translation.");
-			System.exit(666);
-		}
 		
 		String arg;
 		for (int i = 0; i < args.length; i++)
@@ -116,41 +100,8 @@ public abstract class BaseGameServerRegister
 					}
 					catch (NumberFormatException e)
 					{
-						if (bundle != null)
-						{
-							System.out.printf(bundle.getString("wrongUnregisterArg") + System.lineSeparator(), gsId);
-						}
+						System.out.printf("wrong argument for GameServer removal, specify a numeric ID or \"all\" without quotes to remove all." + System.lineSeparator(), gsId);
 						System.exit(1);
-					}
-				}
-			}
-			// --language <locale> : Sets the app to use the specified locale, overriding auto-detection
-			else if (arg.equals("-l") || arg.equals("--language"))
-			{
-				String loc = args[++i];
-				Locale[] availableLocales = Locale.getAvailableLocales();
-				Locale l;
-				for (int j = 0; (j < availableLocales.length) && (locale == null); j++)
-				{
-					l = availableLocales[j];
-					if (l.toString().equals(loc))
-					{
-						locale = l;
-					}
-				}
-				if (locale == null)
-				{
-					System.out.println("Specified locale '" + loc + "' was not found, using default behaviour.");
-				}
-				else
-				{
-					try
-					{
-						bundle = ResourceBundle.getBundle("gsregister.GSRegister", locale, LanguageControl.INSTANCE);
-					}
-					catch (Throwable t)
-					{
-						System.out.println("Failed to load translation ''");
 					}
 				}
 			}
@@ -159,7 +110,7 @@ public abstract class BaseGameServerRegister
 			{
 				interactive = false;
 				
-				BaseGameServerRegister.printHelp(bundle);
+				BaseGameServerRegister.printHelp();
 			}
 		}
 		
@@ -167,55 +118,45 @@ public abstract class BaseGameServerRegister
 		{
 			if (interactive)
 			{
-				BaseGameServerRegister.startCMD(bundle);
+				BaseGameServerRegister.startCMD();
 			}
 			else
 			{
 				// if there is a task, do it, else the app has already finished
 				if (task != null)
 				{
-					task.setBundle(bundle);
 					task.run();
 				}
 			}
 		}
 		catch (HeadlessException e)
 		{
-			BaseGameServerRegister.startCMD(bundle);
+			BaseGameServerRegister.startCMD();
 		}
 	}
 	
 	/**
 	 * Prints the help.
-	 * @param bundle the bundle
 	 */
-	private static void printHelp(ResourceBundle bundle)
+	private static void printHelp()
 	{
 		String[] help =
 		{
-			bundle.getString("purpose"),
+			"Allows to register/remove GameServers from LoginServer.",
 			"",
-			bundle.getString("options"),
-			"-b, --fallback\t\t\t\t" + bundle.getString("fallbackOpt"),
-			"-c, --cmd\t\t\t\t" + bundle.getString("cmdOpt"),
-			"-f, --force\t\t\t\t" + bundle.getString("forceOpt"),
-			"-h, --help\t\t\t\t" + bundle.getString("helpOpt"),
-			"-l, --language\t\t\t\t" + bundle.getString("languageOpt"),
-			"-r, --register <id> <hexid_dest_dir>\t" + bundle.getString("registerOpt1"),
-			"\t\t\t\t\t" + bundle.getString("registerOpt2"),
-			"\t\t\t\t\t" + bundle.getString("registerOpt3"),
+			"Options:",
+			"-b, --fallback\t\t\t\tIf during the register operation the specified GameServer ID is in use, an attempt with the first available ID will be made.",
+			"-c, --cmd\t\t\t\tForces this application to run in console mode, even if GUI is supported.",
+			"-f, --force\t\t\t\tForces GameServer register operation to overwrite a previous registration on the specified ID, if necessary.",
+			"-h, --help\t\t\t\tShows this help message and exits.",
+			"-r, --register <id> <hexid_dest_dir>\tRegisters a GameServer on ID <id> and saves the hexid.txt file on <hexid_dest_dir>.",
+			"\t\t\t\t\tYou can provide a negative value for <id> to register under the first available ID.",
+			"\t\t\t\t\tNothing is done if <id> is already in use, unless --force or --fallback is used.",
 			"",
-			"-u, --unregister <id>|all\t\t" + bundle.getString("unregisterOpt"),
+			"-u, --unregister <id>|all\t\tRemoves the GameServer specified by <id>, use \"all\" to remove all currently registered GameServers.",
 			"",
-			bundle.getString("credits"),
-			bundle.getString("bugReports") + " http://www.l2jserver.com"
-		
-		/*
-		 * "-b, --fallback\t\t\t\tIf an register operation fails due to ID already being in use it will then try to register first available ID", "-c, --cmd\t\t\t\tForces application to run in command-line mode even if the GUI is supported.",
-		 * "-f, --force\t\t\t\tForces GameServer register operations to overwrite a server if necessary", "-h, --help\t\t\t\tPrints this help message", "-l, --language <locale>\t\t\t\tAsks the application to use the specified locale, overriding auto-detection",
-		 * "-r, --register <id> <hexid_dest_dir>\tRegister GameServer with ID <id> and output hexid on <hexid_dest_dir>", "\t\t\t\t\tUse a negative value on <id> to register the first available ID", "\t\t\t\t\tFails if <id> already in use, unless --force is used (overwrites)", "",
-		 * "-u, --unregister <id>|all\t\tRemoves GameServer denoted by <id>, use \"all\" for removing all registered GameServers", "", "Copyright (C) L2J Team 2008-2012.", "Report bugs: http://www.l2jserver.com"
-		 */
+			"© 2008-2009 L2J Team. All rights reserved.",
+			"Bug Reports: http://www.l2jserver.com"
 		};
 		
 		for (String str : help)
@@ -226,11 +167,10 @@ public abstract class BaseGameServerRegister
 	
 	/**
 	 * Start the CMD.
-	 * @param bundle the bundle.
 	 */
-	private static void startCMD(final ResourceBundle bundle)
+	private static void startCMD()
 	{
-		GameServerRegister cmdUi = new GameServerRegister(bundle);
+		GameServerRegister cmdUi = new GameServerRegister();
 		try
 		{
 			cmdUi.consoleUI();
@@ -239,15 +179,6 @@ public abstract class BaseGameServerRegister
 		{
 			cmdUi.showError("I/O exception trying to get input from keyboard.", e);
 		}
-	}
-	
-	/**
-	 * Instantiates a new base game server register.
-	 * @param bundle the bundle.
-	 */
-	public BaseGameServerRegister(ResourceBundle bundle)
-	{
-		setBundle(bundle);
 	}
 	
 	/**
@@ -270,24 +201,6 @@ public abstract class BaseGameServerRegister
 	public boolean isLoaded()
 	{
 		return _loaded;
-	}
-	
-	/**
-	 * Sets the bundle.
-	 * @param bundle the bundle to set.
-	 */
-	public void setBundle(ResourceBundle bundle)
-	{
-		_bundle = bundle;
-	}
-	
-	/**
-	 * Gets the bundle.
-	 * @return the bundle.
-	 */
-	public ResourceBundle getBundle()
-	{
-		return _bundle;
 	}
 	
 	/**
