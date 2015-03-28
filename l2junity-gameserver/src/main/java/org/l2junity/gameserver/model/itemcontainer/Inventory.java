@@ -28,6 +28,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.data.xml.impl.ArmorSetsData;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.enums.ItemLocation;
@@ -45,7 +46,6 @@ import org.l2junity.gameserver.model.items.type.WeaponType;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.ExUserInfoEquipSlot;
 import org.l2junity.gameserver.network.client.send.SkillCoolTime;
-import org.l2junity.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -1495,7 +1495,7 @@ public abstract class Inventory extends ItemContainer
 				break;
 			default:
 				_log.info("Unhandled slot type: " + slot);
-				_log.info(Util.getTraceString(Thread.currentThread().getStackTrace()));
+				_log.info(CommonUtil.getTraceString(Thread.currentThread().getStackTrace()));
 		}
 		if (pdollSlot >= 0)
 		{

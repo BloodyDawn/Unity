@@ -22,6 +22,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.function.Function;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.model.PageResult;
 
 /**
@@ -131,7 +132,7 @@ public class HtmlUtil
 	 */
 	public static String getWeightGauge(int width, long current, long max, boolean displayAsPercentage)
 	{
-		return getWeightGauge(width, current, max, displayAsPercentage, Util.map(current, 0, max, 1, 5));
+		return getWeightGauge(width, current, max, displayAsPercentage, CommonUtil.map(current, 0, max, 1, 5));
 	}
 	
 	/**

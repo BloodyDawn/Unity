@@ -23,6 +23,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.QuestSound;
@@ -191,7 +192,7 @@ public final class Q00456_DontKnowDontCare extends Quest
 			return htmltext;
 		}
 		
-		if (Util.contains(SEPARATED_SOUL, npc.getId()))
+		if (CommonUtil.contains(SEPARATED_SOUL, npc.getId()))
 		{
 			switch (qs.getState())
 			{

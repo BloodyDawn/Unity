@@ -18,6 +18,7 @@
  */
 package quests.Q10363_RequestOfTheSeeker;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -31,7 +32,6 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
-import org.l2junity.gameserver.util.Util;
 
 import quests.Q10362_CertificationOfTheSeeker.Q10362_CertificationOfTheSeeker;
 
@@ -198,7 +198,7 @@ public final class Q10363_RequestOfTheSeeker extends Quest
 		
 		final WorldObject target = player.getTarget();
 		
-		if ((target != null) && target.isNpc() && Util.contains(CORPSES, target.getId()))
+		if ((target != null) && target.isNpc() && CommonUtil.contains(CORPSES, target.getId()))
 		{
 			final Npc npc = (Npc) player.getTarget();
 			

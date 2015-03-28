@@ -20,6 +20,7 @@ package ai.group_template;
 
 import java.util.EnumMap;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.Playable;
@@ -27,7 +28,6 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.util.Util;
 
 import ai.npc.AbstractNpcAI;
 
@@ -205,7 +205,7 @@ public final class DragonValley extends AbstractNpcAI
 		{
 			startQuestTimer("SELF_DESTRUCTION", 3000, npc, null);
 		}
-		else if (Util.contains(SPAWN_ANIMATION, npc.getId()))
+		else if (CommonUtil.contains(SPAWN_ANIMATION, npc.getId()))
 		{
 			npc.setShowSummonAnimation(true);
 		}

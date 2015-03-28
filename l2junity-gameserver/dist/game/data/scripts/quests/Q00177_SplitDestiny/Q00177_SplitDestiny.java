@@ -18,6 +18,7 @@
  */
 package quests.Q00177_SplitDestiny;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.data.xml.impl.CategoryData;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.SubclassInfoType;
@@ -30,7 +31,6 @@ import org.l2junity.gameserver.network.client.send.ExSubjobInfo;
 import org.l2junity.gameserver.network.client.send.SocialAction;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
-import org.l2junity.gameserver.util.Util;
 
 /**
  * Split of Destiny (177)
@@ -342,7 +342,7 @@ public final class Q00177_SplitDestiny extends Quest
 			{
 				case 1:
 				{
-					if (Util.contains(GIANTS_HAND_MONSTERS, npc.getId()))
+					if (CommonUtil.contains(GIANTS_HAND_MONSTERS, npc.getId()))
 					{
 						giveItems(killer, PETRIFIED_GIANTS_HAND_PIECE, 1);
 						qs.setCond(2, true);
@@ -351,7 +351,7 @@ public final class Q00177_SplitDestiny extends Quest
 				}
 				case 2:
 				{
-					if (Util.contains(GIANTS_HAND_MONSTERS, npc.getId()))
+					if (CommonUtil.contains(GIANTS_HAND_MONSTERS, npc.getId()))
 					{
 						if (giveItemRandomly(killer, npc, PETRIFIED_GIANTS_HAND_PIECE, 1, 10, 1.0, true))
 						{
@@ -362,7 +362,7 @@ public final class Q00177_SplitDestiny extends Quest
 				}
 				case 4:
 				{
-					if (Util.contains(GIANTS_FOOT_MONSTERS, npc.getId()))
+					if (CommonUtil.contains(GIANTS_FOOT_MONSTERS, npc.getId()))
 					{
 						qs.giveItems(PETRIFIED_GIANTS_FOOT_PIECE, 1);
 						qs.setCond(5, true);
@@ -371,7 +371,7 @@ public final class Q00177_SplitDestiny extends Quest
 				}
 				case 5:
 				{
-					if (Util.contains(GIANTS_FOOT_MONSTERS, npc.getId()))
+					if (CommonUtil.contains(GIANTS_FOOT_MONSTERS, npc.getId()))
 					{
 						if (giveItemRandomly(killer, npc, PETRIFIED_GIANTS_FOOT_PIECE, 1, 10, 1.0, true))
 						{

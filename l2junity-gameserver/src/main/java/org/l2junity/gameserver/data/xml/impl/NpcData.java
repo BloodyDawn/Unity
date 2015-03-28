@@ -32,6 +32,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.AISkillScope;
@@ -46,7 +47,6 @@ import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.holders.MinionHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.util.Util;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -756,7 +756,7 @@ public class NpcData implements IXmlReader
 	 */
 	public List<L2NpcTemplate> getAllOfLevel(int... lvls)
 	{
-		return getTemplates(template -> Util.contains(lvls, template.getLevel()));
+		return getTemplates(template -> CommonUtil.contains(lvls, template.getLevel()));
 	}
 	
 	/**
@@ -766,7 +766,7 @@ public class NpcData implements IXmlReader
 	 */
 	public List<L2NpcTemplate> getAllMonstersOfLevel(int... lvls)
 	{
-		return getTemplates(template -> Util.contains(lvls, template.getLevel()) && template.isType("L2Monster"));
+		return getTemplates(template -> CommonUtil.contains(lvls, template.getLevel()) && template.isType("L2Monster"));
 	}
 	
 	/**
@@ -786,7 +786,7 @@ public class NpcData implements IXmlReader
 	 */
 	public List<L2NpcTemplate> getAllNpcOfClassType(String... classTypes)
 	{
-		return getTemplates(template -> Util.contains(classTypes, template.getType(), true));
+		return getTemplates(template -> CommonUtil.contains(classTypes, template.getType(), true));
 	}
 	
 	public void loadNpcsSkillLearn()

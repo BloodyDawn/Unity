@@ -38,6 +38,7 @@ import java.util.stream.Collectors;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.enums.CategoryType;
@@ -70,7 +71,6 @@ import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.ExQuestNpcLogList;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.NpcQuestHtmlMessage;
-import org.l2junity.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -1439,7 +1439,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 		}
 		if ((player != null) && player.getAccessLevel().isGm())
 		{
-			String res = "<html><body><title>Script error</title>" + Util.getStackTrace(t) + "</body></html>";
+			String res = "<html><body><title>Script error</title>" + CommonUtil.getStackTrace(t) + "</body></html>";
 			return showResult(player, res);
 		}
 		return false;
@@ -2834,7 +2834,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	{
 		if ((target != null) && clazz.isInstance(target))
 		{
-			return org.l2junity.gameserver.util.Util.contains(ids, target.getId());
+			return CommonUtil.contains(ids, target.getId());
 		}
 		return false;
 	}

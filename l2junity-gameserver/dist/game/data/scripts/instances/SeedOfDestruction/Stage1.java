@@ -32,6 +32,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.InstanceType;
@@ -516,7 +517,7 @@ public final class Stage1 extends AbstractInstance
 			spawnState((SOD1World) world);
 			for (L2DoorInstance door : InstanceManager.getInstance().getInstance(world.getInstanceId()).getDoors())
 			{
-				if (Util.contains(ATTACKABLE_DOORS, door.getId()))
+				if (CommonUtil.contains(ATTACKABLE_DOORS, door.getId()))
 				{
 					door.setIsAttackableDoor(true);
 				}

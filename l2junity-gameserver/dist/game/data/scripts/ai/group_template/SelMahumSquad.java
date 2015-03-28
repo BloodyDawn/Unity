@@ -18,6 +18,7 @@
  */
 package ai.group_template;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.datatables.SkillData;
@@ -29,7 +30,6 @@ import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
-import org.l2junity.gameserver.util.Util;
 
 import ai.npc.AbstractNpcAI;
 
@@ -203,7 +203,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 			startQuestTimer("chef_set_invul", 60000, npc, null);
 			npc.getVariables().set("BUSY_STATE", 1);
 		}
-		else if (Util.contains(SQUAD_LEADERS, npc.getId()))
+		else if (CommonUtil.contains(SQUAD_LEADERS, npc.getId()))
 		{
 			handlePreAttackMotion(npc);
 		}
@@ -236,7 +236,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 			}
 			case "SCE_CAMPFIRE_START":
 			{
-				if (!receiver.isNoRndWalk() && !receiver.isDead() && (receiver.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK) && Util.contains(SQUAD_LEADERS, receiver.getId()))
+				if (!receiver.isNoRndWalk() && !receiver.isDead() && (receiver.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK) && CommonUtil.contains(SQUAD_LEADERS, receiver.getId()))
 				{
 					receiver.setIsNoRndWalk(true); // Moving to fire - i_ai0 = 1
 					receiver.setIsRunning(true);
@@ -255,7 +255,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 				{
 					receiver.deleteMe();
 				}
-				else if ((receiver.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK) && Util.contains(SQUAD_LEADERS, receiver.getId()))
+				else if ((receiver.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK) && CommonUtil.contains(SQUAD_LEADERS, receiver.getId()))
 				{
 					receiver.setIsNoRndWalk(false);
 					receiver.getVariables().remove("BUSY_STATE");
@@ -266,7 +266,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 			}
 			case "SCE_DINNER_EAT":
 			{
-				if (!receiver.isDead() && (receiver.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK) && (receiver.getVariables().getInt("BUSY_STATE", 0) == 0) && Util.contains(SQUAD_LEADERS, receiver.getId()))
+				if (!receiver.isDead() && (receiver.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK) && (receiver.getVariables().getInt("BUSY_STATE", 0) == 0) && CommonUtil.contains(SQUAD_LEADERS, receiver.getId()))
 				{
 					if (receiver.isNoRndWalk()) // i_ai0 == 1
 					{
@@ -287,7 +287,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 			}
 			case "SCE_SOUP_FAILURE":
 			{
-				if (Util.contains(SQUAD_LEADERS, receiver.getId()))
+				if (CommonUtil.contains(SQUAD_LEADERS, receiver.getId()))
 				{
 					receiver.getVariables().set("FULL_BARREL_REWARDING_PLAYER", reference.getObjectId()); // TODO: Use it in 289 quest
 					startQuestTimer("reset_full_bottle_prize", 180000, receiver, null);
@@ -332,7 +332,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 	@Override
 	public String onSkillSee(Npc npc, PlayerInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
-		if ((npc.getId() == STOVE) && (skill.getId() == 9075) && Util.contains(targets, npc))
+		if ((npc.getId() == STOVE) && (skill.getId() == 9075) && CommonUtil.contains(targets, npc))
 		{
 			npc.doCast(SkillData.getInstance().getSkill(6688, 1));
 			npc.broadcastEvent("SCE_SOUP_FAILURE", 600, caster);
@@ -351,7 +351,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 		{
 			startQuestTimer("fire", 1000, npc, null);
 		}
-		else if (Util.contains(SQUAD_LEADERS, npc.getId()))
+		else if (CommonUtil.contains(SQUAD_LEADERS, npc.getId()))
 		{
 			npc.setState(3);
 			npc.setIsNoRndWalk(false);

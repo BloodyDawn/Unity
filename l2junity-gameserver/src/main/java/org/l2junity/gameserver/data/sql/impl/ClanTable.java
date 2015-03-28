@@ -58,8 +58,8 @@ import org.l2junity.gameserver.network.client.send.PledgeShowMemberListAll;
 import org.l2junity.gameserver.network.client.send.PledgeShowMemberListUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.l2junity.gameserver.util.EnumIntBitmask;
 import org.l2junity.gameserver.util.Util;
-import org.l2junity.util.EnumIntBitmask;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

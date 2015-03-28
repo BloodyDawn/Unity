@@ -18,6 +18,7 @@
  */
 package quests.Q10292_SevenSignsGirlOfDoubt;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -25,7 +26,6 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
-import org.l2junity.gameserver.util.Util;
 
 import quests.Q00198_SevenSignsEmbryo.Q00198_SevenSignsEmbryo;
 
@@ -202,7 +202,7 @@ public final class Q10292_SevenSignsGirlOfDoubt extends Quest
 	@Override
 	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
-		if (Util.contains(MOBS, npc.getId()))
+		if (CommonUtil.contains(MOBS, npc.getId()))
 		{
 			final QuestState st = getRandomPartyMemberState(player, 3, 3, npc);
 			if ((st != null) && giveItemRandomly(st.getPlayer(), npc, ELCADIAS_MARK.getId(), 1, ELCADIAS_MARK.getCount(), 1.0, true))

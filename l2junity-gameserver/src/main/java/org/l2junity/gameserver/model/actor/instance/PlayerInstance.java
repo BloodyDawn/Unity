@@ -330,9 +330,9 @@ import org.l2junity.gameserver.network.client.send.friend.L2FriendStatus;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
 import org.l2junity.gameserver.util.Broadcast;
+import org.l2junity.gameserver.util.EnumIntBitmask;
 import org.l2junity.gameserver.util.FloodProtectors;
 import org.l2junity.gameserver.util.Util;
-import org.l2junity.util.EnumIntBitmask;
 
 /**
  * This class represents all player characters in the world.<br>

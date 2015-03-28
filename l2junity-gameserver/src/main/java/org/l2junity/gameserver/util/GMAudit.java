@@ -49,8 +49,8 @@ public class GMAudit
 	{
 		final SimpleDateFormat _formatter = new SimpleDateFormat("dd/MM/yyyy H:mm:ss");
 		final String date = _formatter.format(new Date());
-		String name = org.l2junity.util.Util.replaceIllegalCharacters(gmName);
-		if (!org.l2junity.util.Util.isValidFileName(name))
+		String name = org.l2junity.commons.util.CommonUtil.replaceIllegalCharacters(gmName);
+		if (!org.l2junity.commons.util.CommonUtil.isValidFileName(name))
 		{
 			name = "INVALID_GM_NAME_" + date;
 		}

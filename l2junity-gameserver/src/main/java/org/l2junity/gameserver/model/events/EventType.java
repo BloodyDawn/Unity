@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.model.events;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.model.events.impl.IBaseEvent;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttack;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttackAvoid;
@@ -113,7 +114,6 @@ import org.l2junity.gameserver.model.events.impl.sieges.fort.OnFortSiegeFinish;
 import org.l2junity.gameserver.model.events.impl.sieges.fort.OnFortSiegeStart;
 import org.l2junity.gameserver.model.events.returns.ChatFilterReturn;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
-import org.l2junity.gameserver.util.Util;
 
 /**
  * @author UnAfraid
@@ -270,6 +270,6 @@ public enum EventType
 	
 	public boolean isReturnClass(Class<?> clazz)
 	{
-		return Util.contains(_returnClass, clazz);
+		return CommonUtil.contains(_returnClass, clazz);
 	}
 }

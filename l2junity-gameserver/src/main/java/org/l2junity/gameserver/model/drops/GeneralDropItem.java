@@ -22,13 +22,13 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.items.L2Item;
-import org.l2junity.gameserver.util.Util;
 
 /**
  * @author NosBit
@@ -206,11 +206,11 @@ public class GeneralDropItem implements IDropItem
 		final double levelGapChanceToDrop;
 		if (getItemId() == Inventory.ADENA_ID)
 		{
-			levelGapChanceToDrop = Util.map(levelDifference, -Config.DROP_ADENA_MAX_LEVEL_DIFFERENCE, -Config.DROP_ADENA_MIN_LEVEL_DIFFERENCE, Config.DROP_ADENA_MIN_LEVEL_GAP_CHANCE, 100.0);
+			levelGapChanceToDrop = CommonUtil.map(levelDifference, -Config.DROP_ADENA_MAX_LEVEL_DIFFERENCE, -Config.DROP_ADENA_MIN_LEVEL_DIFFERENCE, Config.DROP_ADENA_MIN_LEVEL_GAP_CHANCE, 100.0);
 		}
 		else
 		{
-			levelGapChanceToDrop = Util.map(levelDifference, -Config.DROP_ITEM_MAX_LEVEL_DIFFERENCE, -Config.DROP_ITEM_MIN_LEVEL_DIFFERENCE, Config.DROP_ITEM_MIN_LEVEL_GAP_CHANCE, 100.0);
+			levelGapChanceToDrop = CommonUtil.map(levelDifference, -Config.DROP_ITEM_MAX_LEVEL_DIFFERENCE, -Config.DROP_ITEM_MIN_LEVEL_DIFFERENCE, Config.DROP_ITEM_MIN_LEVEL_GAP_CHANCE, 100.0);
 		}
 		
 		// There is a chance of level gap that it wont drop this item

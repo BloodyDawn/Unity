@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -30,7 +31,6 @@ import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.quest.Event;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.util.Broadcast;
-import org.l2junity.gameserver.util.Util;
 
 /**
  * Rabbits event.<br>
@@ -207,7 +207,7 @@ public final class Rabbits extends Event
 	{
 		if (skill.getId() == RABBIT_TORNADO.getSkillId())
 		{
-			if (!npc.isInvisible() && Util.contains(targets, npc))
+			if (!npc.isInvisible() && CommonUtil.contains(targets, npc))
 			{
 				dropItem(npc, caster, DROPLIST);
 				npc.deleteMe();

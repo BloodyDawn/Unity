@@ -98,8 +98,7 @@ public class AdminHtml implements IAdminCommandHandler
 		}
 		else
 		{
-			File file = new File(Config.DATAPACK_ROOT, path);
-			content = HtmCache.getInstance().loadFile(file);
+			content = HtmCache.getInstance().loadFile(new File(Config.DATAPACK_ROOT, path));
 		}
 		final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 		if (content != null)

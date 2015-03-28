@@ -25,6 +25,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Consumer;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.ai.CharacterAI;
 import org.l2junity.gameserver.ai.CtrlEvent;
 import org.l2junity.gameserver.ai.CtrlIntention;
@@ -37,7 +38,6 @@ import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcCreatureSee;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.network.client.send.DeleteObject;
-import org.l2junity.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -124,7 +124,7 @@ public final class World
 		if (_allObjects.containsKey(object.getObjectId()))
 		{
 			_log.warn(getClass().getSimpleName() + ": Current object: " + object + " already exist in OID map!");
-			_log.warn(Util.getTraceString(Thread.currentThread().getStackTrace()));
+			_log.warn(CommonUtil.getTraceString(Thread.currentThread().getStackTrace()));
 			_log.warn(getClass().getSimpleName() + ": Previous object: " + _allObjects.get(object.getObjectId()) + " already exist in OID map!");
 			_log.warn(_allObjectsDebug.get(object.getObjectId()));
 			_log.warn("---------------------- End ---------------------");
@@ -132,7 +132,7 @@ public final class World
 		}
 		
 		_allObjects.put(object.getObjectId(), object);
-		_allObjectsDebug.put(object.getObjectId(), Util.getTraceString(Thread.currentThread().getStackTrace()));
+		_allObjectsDebug.put(object.getObjectId(), CommonUtil.getTraceString(Thread.currentThread().getStackTrace()));
 	}
 	
 	/**

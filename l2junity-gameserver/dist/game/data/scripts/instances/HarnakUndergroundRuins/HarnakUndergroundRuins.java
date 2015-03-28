@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.ChatType;
@@ -39,7 +40,6 @@ import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.client.send.ExSendUIEvent;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
-import org.l2junity.gameserver.util.Util;
 
 /**
  * Harnak Underground Ruins Instance Zone.
@@ -777,7 +777,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 	@Override
 	public String onSeeCreature(Npc npc, Creature creature, boolean isSummon)
 	{
-		if (Util.contains(POWER_SOURCES, npc.getId()) && creature.isPlayer())
+		if (CommonUtil.contains(POWER_SOURCES, npc.getId()) && creature.isPlayer())
 		{
 			startQuestTimer("cast_release_power", 2000, npc, creature.getActingPlayer());
 			if (npc.getId() == POWER_SOURCE)

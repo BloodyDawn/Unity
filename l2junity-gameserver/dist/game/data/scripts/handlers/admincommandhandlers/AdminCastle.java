@@ -20,6 +20,7 @@ package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.enums.CastleSide;
@@ -245,7 +246,7 @@ public final class AdminCastle implements IAdminCommandHandler
 			html.replace("%castleName%", castle.getName());
 			html.replace("%ownerName%", ownerClan != null ? ownerClan.getLeaderName() : "NPC");
 			html.replace("%ownerClan%", ownerClan != null ? ownerClan.getName() : "NPC");
-			html.replace("%castleSide%", Util.capitalizeFirst(castle.getSide().toString().toLowerCase()));
+			html.replace("%castleSide%", CommonUtil.capitalizeFirst(castle.getSide().toString().toLowerCase()));
 			player.sendPacket(html);
 		}
 	}

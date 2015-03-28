@@ -21,6 +21,7 @@ package quests.Q00453_NotStrongEnoughAlone;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.enums.QuestType;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -112,7 +113,7 @@ public final class Q00453_NotStrongEnoughAlone extends Quest
 		
 		if (Util.checkIfInRange(1500, npc, player, false))
 		{
-			if (Util.contains(MONSTER1, npcId) && st.isCond(2))
+			if (CommonUtil.contains(MONSTER1, npcId) && st.isCond(2))
 			{
 				if (npcId == MONSTER1[4])
 				{
@@ -139,7 +140,7 @@ public final class Q00453_NotStrongEnoughAlone extends Quest
 				}
 				checkProgress(st, 15, MONSTER1[0], MONSTER1[1], MONSTER1[2], MONSTER1[3]);
 			}
-			else if (Util.contains(MONSTER2, npcId) && st.isCond(3))
+			else if (CommonUtil.contains(MONSTER2, npcId) && st.isCond(3))
 			{
 				if (npcId == MONSTER2[3])
 				{
@@ -162,7 +163,7 @@ public final class Q00453_NotStrongEnoughAlone extends Quest
 				}
 				checkProgress(st, 20, MONSTER2[0], MONSTER2[1], MONSTER2[2]);
 			}
-			else if (Util.contains(MONSTER3, npcId) && st.isCond(4))
+			else if (CommonUtil.contains(MONSTER3, npcId) && st.isCond(4))
 			{
 				if (npcId == MONSTER3[3])
 				{

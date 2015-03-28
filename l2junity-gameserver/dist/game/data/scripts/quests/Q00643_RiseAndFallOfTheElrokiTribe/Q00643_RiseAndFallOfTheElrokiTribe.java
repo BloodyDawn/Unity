@@ -19,13 +19,13 @@
 package quests.Q00643_RiseAndFallOfTheElrokiTribe;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
-import org.l2junity.gameserver.util.Util;
 
 /**
  * Rise and Fall of the Elroki Tribe (643)
@@ -193,7 +193,7 @@ public class Q00643_RiseAndFallOfTheElrokiTribe extends Quest
 		final QuestState st = getQuestState(partyMember, false);
 		int npcId = npc.getId();
 		
-		if (Util.contains(MOBS1, npcId))
+		if (CommonUtil.contains(MOBS1, npcId))
 		{
 			float chance = (CHANCE_MOBS1 * Config.RATE_QUEST_DROP);
 			if (getRandom(1000) < chance)
@@ -207,7 +207,7 @@ public class Q00643_RiseAndFallOfTheElrokiTribe extends Quest
 			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		
-		if (Util.contains(MOBS2, npcId))
+		if (CommonUtil.contains(MOBS2, npcId))
 		{
 			float chance = (CHANCE_MOBS2 * Config.RATE_QUEST_DROP);
 			if (getRandom(1000) < chance)

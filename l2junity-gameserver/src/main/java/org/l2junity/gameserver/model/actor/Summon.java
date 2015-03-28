@@ -19,6 +19,7 @@
 package org.l2junity.gameserver.model.actor;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ai.CharacterAI;
 import org.l2junity.gameserver.ai.CtrlIntention;
@@ -70,7 +71,6 @@ import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.TeleportToLocation;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.taskmanager.DecayTaskManager;
-import org.l2junity.gameserver.util.Util;
 
 public abstract class Summon extends Playable
 {
@@ -982,7 +982,7 @@ public abstract class Summon extends Playable
 		
 		// Sin eater, Big Boom, Wyvern can't attack with attack button.
 		final int npcId = getId();
-		if (Util.contains(PASSIVE_SUMMONS, npcId))
+		if (CommonUtil.contains(PASSIVE_SUMMONS, npcId))
 		{
 			getOwner().sendPacket(ActionFailed.STATIC_PACKET);
 			return false;

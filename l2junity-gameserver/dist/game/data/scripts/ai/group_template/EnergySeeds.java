@@ -22,6 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
@@ -38,7 +39,6 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
-import org.l2junity.gameserver.util.Util;
 
 import ai.npc.AbstractNpcAI;
 
@@ -120,7 +120,7 @@ public final class EnergySeeds extends AbstractNpcAI
 	@Override
 	public String onSkillSee(Npc npc, PlayerInstance caster, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
-		if (!Util.contains(targets, npc) || (skill.getId() != 5780))
+		if (!CommonUtil.contains(targets, npc) || (skill.getId() != 5780))
 		{
 			return super.onSkillSee(npc, caster, skill, targets, isSummon);
 		}

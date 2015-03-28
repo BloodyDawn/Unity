@@ -54,7 +54,6 @@ import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.UserInfo;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.HtmlUtil;
-import org.l2junity.gameserver.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -999,7 +998,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		adminReply.replace("%pkkills%", String.valueOf(player.getPkKills()));
 		adminReply.replace("%currentload%", String.valueOf(player.getCurrentLoad()));
 		adminReply.replace("%maxload%", String.valueOf(player.getMaxLoad()));
-		adminReply.replace("%percent%", String.valueOf(Util.roundTo(((float) player.getCurrentLoad() / (float) player.getMaxLoad()) * 100, 2)));
+		adminReply.replace("%percent%", String.format("%.2f", (((float) player.getCurrentLoad() / (float) player.getMaxLoad()) * 100)));
 		adminReply.replace("%patk%", String.valueOf(player.getPAtk(null)));
 		adminReply.replace("%matk%", String.valueOf(player.getMAtk(null, null)));
 		adminReply.replace("%pdef%", String.valueOf(player.getPDef(null)));

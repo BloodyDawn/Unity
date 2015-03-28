@@ -22,6 +22,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.Location;
@@ -31,7 +32,6 @@ import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.type.EffectZone;
-import org.l2junity.gameserver.util.Util;
 
 import ai.npc.AbstractNpcAI;
 
@@ -288,7 +288,7 @@ public final class SeedOfAnnihilation extends AbstractNpcAI
 	{
 		for (SeedRegion element : _regionsData)
 		{
-			if (Util.contains(element.elite_mob_ids, npc.getId()))
+			if (CommonUtil.contains(element.elite_mob_ids, npc.getId()))
 			{
 				spawnGroupOfMinion((L2MonsterInstance) npc, element.minion_lists[getRandom(element.minion_lists.length)]);
 			}

@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.impl.HitConditionBonusData;
 import org.l2junity.gameserver.data.xml.impl.KarmaData;
@@ -1384,7 +1385,7 @@ public final class Formulas
 		}
 		
 		final double rate = baseMod * elementMod * traitMod * mAtkMod * buffDebuffMod;
-		final double finalRate = traitMod > 0 ? Util.constrain(rate, skill.getMinChance(), skill.getMaxChance()) : 0;
+		final double finalRate = traitMod > 0 ? CommonUtil.constrain(rate, skill.getMinChance(), skill.getMaxChance()) : 0;
 		
 		if (attacker.isDebug())
 		{
@@ -1456,7 +1457,7 @@ public final class Formulas
 		// Add Matk/Mdef Bonus (TODO: Pending)
 		
 		// Check the Rate Limits.
-		final double finalRate = Util.constrain(rate, skill.getMinChance(), skill.getMaxChance());
+		final double finalRate = CommonUtil.constrain(rate, skill.getMinChance(), skill.getMaxChance());
 		
 		if (attacker.getOwner().isDebug())
 		{
@@ -1836,7 +1837,7 @@ public final class Formulas
 		
 		double attribute_mod_diff = attack_attribute_mod - defence_attribute_mod;
 		
-		attribute_mod_diff = Util.constrain(attribute_mod_diff, min, max);
+		attribute_mod_diff = CommonUtil.constrain(attribute_mod_diff, min, max);
 		
 		double result = (attribute_mod_diff / 100.0) + 1;
 		
@@ -2016,7 +2017,7 @@ public final class Formulas
 	{
 		// Lvl Bonus Modifier.
 		rate *= info.getSkill().getMagicLevel() > 0 ? 1 + ((cancelMagicLvl - info.getSkill().getMagicLevel()) / 100.) : 1;
-		return Rnd.get(100) < Util.constrain(rate, skill.getMinChance(), skill.getMaxChance());
+		return Rnd.get(100) < CommonUtil.constrain(rate, skill.getMinChance(), skill.getMaxChance());
 	}
 	
 	/**
@@ -2051,7 +2052,7 @@ public final class Formulas
 			double resMod = calcGeneralTraitBonus(caster, target, skill.getTraitType(), false);
 			double lvlBonusMod = calcLvlBonusMod(caster, target, skill);
 			double elementMod = calcAttributeBonus(caster, target, skill);
-			time = (int) Math.ceil(Util.constrain(((time * resMod * lvlBonusMod * elementMod) / statMod), (time * 0.5), time));
+			time = (int) Math.ceil(CommonUtil.constrain(((time * resMod * lvlBonusMod * elementMod) / statMod), (time * 0.5), time));
 		}
 		return time;
 	}
@@ -2164,7 +2165,7 @@ public final class Formulas
 		}
 		
 		final double result = (attacker.getStat().getAttackTrait(traitType) - target.getStat().getDefenceTrait(traitType)) + 1.0;
-		return Util.constrain(result, 0.05, 2.0);
+		return CommonUtil.constrain(result, 0.05, 2.0);
 	}
 	
 	public static double calcWeaponTraitBonus(Creature attacker, Creature target)
@@ -2195,6 +2196,6 @@ public final class Formulas
 			}
 		}
 		
-		return Util.constrain((weaponTraitBonus * weaknessBonus), 0.05, 2.0);
+		return CommonUtil.constrain((weaponTraitBonus * weaknessBonus), 0.05, 2.0);
 	}
 }

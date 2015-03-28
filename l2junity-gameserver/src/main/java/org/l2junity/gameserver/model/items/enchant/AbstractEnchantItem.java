@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.model.items.enchant;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.items.L2Item;
@@ -25,7 +26,6 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.CrystalType;
 import org.l2junity.gameserver.model.items.type.EtcItemType;
 import org.l2junity.gameserver.model.items.type.ItemType;
-import org.l2junity.gameserver.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -60,7 +60,7 @@ public abstract class AbstractEnchantItem
 		{
 			throw new NullPointerException();
 		}
-		else if (!Util.contains(ENCHANT_TYPES, getItem().getItemType()))
+		else if (!CommonUtil.contains(ENCHANT_TYPES, getItem().getItemType()))
 		{
 			throw new IllegalAccessError();
 		}

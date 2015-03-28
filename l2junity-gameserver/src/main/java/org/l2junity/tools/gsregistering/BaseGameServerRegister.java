@@ -35,8 +35,8 @@ import java.util.ResourceBundle;
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.Server;
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.loginserver.GameServerTable;
-import org.l2junity.util.Util;
 
 /**
  * The Class BaseGameServerRegister.
@@ -249,7 +249,7 @@ public abstract class BaseGameServerRegister
 	 */
 	public static void registerGameServer(int id, String outDir) throws IOException
 	{
-		byte[] hexId = Util.generateHex(16);
+		byte[] hexId = CommonUtil.generateHex(16);
 		GameServerTable.getInstance().registerServerOnDB(hexId, id, "");
 		
 		Properties hexSetting = new Properties();

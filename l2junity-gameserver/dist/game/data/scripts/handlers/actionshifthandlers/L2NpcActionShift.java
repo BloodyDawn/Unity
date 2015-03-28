@@ -23,6 +23,7 @@ import handlers.bypasshandlers.NpcViewMod;
 import java.util.Set;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.handler.IActionShiftHandler;
 import org.l2junity.gameserver.instancemanager.WalkingManager;
@@ -34,7 +35,6 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
-import org.l2junity.gameserver.util.Util;
 
 public class L2NpcActionShift implements IActionShiftHandler
 {
@@ -140,8 +140,8 @@ public class L2NpcActionShift implements IActionShiftHandler
 			{
 				Set<Integer> clans = ((Npc) target).getTemplate().getClans();
 				Set<Integer> ignoreClanNpcIds = ((Npc) target).getTemplate().getIgnoreClanNpcIds();
-				String clansString = clans != null ? Util.implode(clans.toArray(), ", ") : "";
-				String ignoreClanNpcIdsString = ignoreClanNpcIds != null ? Util.implode(ignoreClanNpcIds.toArray(), ", ") : "";
+				String clansString = clans != null ? CommonUtil.implode(clans, ", ") : "";
+				String ignoreClanNpcIdsString = ignoreClanNpcIds != null ? CommonUtil.implode(ignoreClanNpcIds, ", ") : "";
 				
 				html.replace("%ai_intention%", "<tr><td><table width=270 border=0 bgcolor=131210><tr><td width=100><font color=FFAA00>Intention:</font></td><td align=right width=170>" + String.valueOf(((Npc) target).getAI().getIntention().name()) + "</td></tr></table></td></tr>");
 				html.replace("%ai%", "<tr><td><table width=270 border=0><tr><td width=100><font color=FFAA00>AI</font></td><td align=right width=170>" + ((Npc) target).getAI().getClass().getSimpleName() + "</td></tr></table></td></tr>");

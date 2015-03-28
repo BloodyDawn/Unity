@@ -18,11 +18,11 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.instancemanager.ClanEntryManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.ExPledgeDraftListSearch;
-import org.l2junity.gameserver.util.Util;
 import org.l2junity.network.PacketReader;
 
 /**
@@ -40,8 +40,8 @@ public class RequestPledgeDraftListSearch implements IClientIncomingPacket
 	@Override
 	public boolean read(PacketReader packet)
 	{
-		_levelMin = Util.constrain(packet.readD(), 0, 99);
-		_levelMax = Util.constrain(packet.readD(), 0, 99);
+		_levelMin = CommonUtil.constrain(packet.readD(), 0, 99);
+		_levelMax = CommonUtil.constrain(packet.readD(), 0, 99);
 		_classId = packet.readD();
 		_query = packet.readS();
 		_sortBy = packet.readD();

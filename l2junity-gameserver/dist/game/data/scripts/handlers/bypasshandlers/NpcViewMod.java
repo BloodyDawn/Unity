@@ -24,6 +24,7 @@ import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.concurrent.TimeUnit;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.handler.IBypassHandler;
@@ -184,7 +185,7 @@ public class NpcViewMod implements IBypassHandler
 			}
 		}
 		
-		html.replace("%atktype%", Util.capitalizeFirst(npc.getAttackType().name().toLowerCase()));
+		html.replace("%atktype%", CommonUtil.capitalizeFirst(npc.getAttackType().name().toLowerCase()));
 		html.replace("%atkrange%", npc.getStat().getPhysicalAttackRange());
 		
 		html.replace("%patk%", npc.getPAtk(activeChar));

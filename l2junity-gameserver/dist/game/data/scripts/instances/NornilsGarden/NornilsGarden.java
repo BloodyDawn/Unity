@@ -20,6 +20,7 @@ package instances.NornilsGarden;
 
 import instances.AbstractInstance;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
@@ -521,7 +522,7 @@ public final class NornilsGarden extends AbstractInstance
 			{
 			}
 		}
-		else if (Util.contains(_final_gates, npc.getId()))
+		else if (CommonUtil.contains(_final_gates, npc.getId()))
 		{
 			if (event.equalsIgnoreCase("32260-02.html") || event.equalsIgnoreCase("32261-02.html") || event.equalsIgnoreCase("32262-02.html"))
 			{
@@ -561,7 +562,7 @@ public final class NornilsGarden extends AbstractInstance
 	@Override
 	public final String onTalk(Npc npc, PlayerInstance player)
 	{
-		if (Util.contains(_final_gates, npc.getId()))
+		if (CommonUtil.contains(_final_gates, npc.getId()))
 		{
 			return npc.getId() + "-01.html";
 		}

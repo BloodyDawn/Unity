@@ -18,6 +18,7 @@
  */
 package ai.group_template;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
@@ -29,7 +30,6 @@ import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.type.EffectZone;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
-import org.l2junity.gameserver.util.Util;
 
 import ai.npc.AbstractNpcAI;
 
@@ -216,7 +216,7 @@ public final class DenOfEvil extends AbstractNpcAI
 						{
 							// respawn eye
 							Npc npc = (Npc) character;
-							if (Util.contains(EYE_IDS, npc.getId()))
+							if (CommonUtil.contains(EYE_IDS, npc.getId()))
 							{
 								ThreadPoolManager.getInstance().scheduleAi(new RespawnNewEye(npc.getLocation()), 15000);
 							}

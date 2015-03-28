@@ -34,6 +34,7 @@ import java.util.concurrent.ScheduledFuture;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
@@ -58,7 +59,6 @@ import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.util.Broadcast;
-import org.l2junity.gameserver.util.Util;
 
 /**
  * Rainbow Springs Chateau clan hall siege script.
@@ -326,7 +326,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 				html = "game_manager001.htm";
 			}
 		}
-		else if (Util.contains(YETIS, npcId))
+		else if (CommonUtil.contains(YETIS, npcId))
 		{
 			// TODO: Review.
 			if (_rainbow.isInSiege())

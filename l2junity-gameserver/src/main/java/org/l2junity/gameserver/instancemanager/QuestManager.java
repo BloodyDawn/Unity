@@ -20,10 +20,11 @@ package org.l2junity.gameserver.instancemanager;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
 import org.l2junity.Config;
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.scripting.ScriptEngineManager;
-import org.l2junity.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -199,7 +200,7 @@ public final class QuestManager
 		if (Config.ALT_DEV_SHOW_QUESTS_LOAD_IN_LOGS)
 		{
 			final String questName = quest.getName().contains("_") ? quest.getName().substring(quest.getName().indexOf('_') + 1) : quest.getName();
-			_log.info("Loaded quest " + Util.splitWords(questName) + ".");
+			_log.info("Loaded quest " + CommonUtil.splitWords(questName) + ".");
 		}
 	}
 	
@@ -258,7 +259,7 @@ public final class QuestManager
 		
 		if (Config.ALT_DEV_SHOW_SCRIPTS_LOAD_IN_LOGS)
 		{
-			_log.info("Loaded script " + Util.splitWords(script.getClass().getSimpleName()) + ".");
+			_log.info("Loaded script " + CommonUtil.splitWords(script.getClass().getSimpleName()) + ".");
 		}
 	}
 	

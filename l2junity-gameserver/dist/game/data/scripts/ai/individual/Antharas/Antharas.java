@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.MountType;
 import org.l2junity.gameserver.instancemanager.GrandBossManager;
@@ -46,7 +47,6 @@ import org.l2junity.gameserver.network.client.send.SocialAction;
 import org.l2junity.gameserver.network.client.send.SpecialCamera;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.util.Broadcast;
-import org.l2junity.gameserver.util.Util;
 
 import ai.npc.AbstractNpcAI;
 
@@ -796,7 +796,7 @@ public final class Antharas extends AbstractNpcAI
 		}
 		else
 		{
-			final int i1 = Util.min(attacker_1_hate, attacker_2_hate, attacker_3_hate);
+			final int i1 = CommonUtil.min(attacker_1_hate, attacker_2_hate, attacker_3_hate);
 			if (attacker_1_hate == i1)
 			{
 				attacker_1_hate = damage + getRandom(3000);

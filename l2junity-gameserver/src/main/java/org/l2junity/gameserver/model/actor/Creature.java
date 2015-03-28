@@ -42,6 +42,7 @@ import java.util.stream.Stream;
 import javolution.util.WeakFastSet;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.commons.util.EmptyQueue;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GameTimeController;
@@ -5889,13 +5890,13 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 						{
 							if (targets.length == 1)
 							{
-								if (Util.contains(targets, player.getPet()))
+								if (CommonUtil.contains(targets, player.getPet()))
 								{
 									skillEffectPoint = 0;
 								}
 								for (Summon servitor : player.getServitors().values())
 								{
-									if (Util.contains(targets, servitor))
+									if (CommonUtil.contains(targets, servitor))
 									{
 										skillEffectPoint = 0;
 									}

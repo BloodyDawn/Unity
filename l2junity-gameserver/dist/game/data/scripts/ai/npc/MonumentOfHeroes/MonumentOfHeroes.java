@@ -18,9 +18,9 @@
  */
 package ai.npc.MonumentOfHeroes;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.util.Util;
 
 import ai.npc.AbstractNpcAI;
 
@@ -101,7 +101,7 @@ public final class MonumentOfHeroes extends AbstractNpcAI
 			default:
 			{
 				int weaponId = Integer.parseInt(event);
-				if (Util.contains(WEAPONS, weaponId))
+				if (CommonUtil.contains(WEAPONS, weaponId))
 				{
 					giveItems(player, weaponId, 1);
 				}

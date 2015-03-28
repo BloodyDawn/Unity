@@ -18,11 +18,11 @@
  */
 package org.l2junity.gameserver.model.conditions;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.util.Util;
 
 /**
  * The Class ConditionPlayerRace.
@@ -48,6 +48,6 @@ public class ConditionPlayerRace extends Condition
 		{
 			return false;
 		}
-		return Util.contains(_races, effector.getActingPlayer().getRace());
+		return CommonUtil.contains(_races, effector.getActingPlayer().getRace());
 	}
 }

@@ -43,6 +43,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.ConnectionState;
@@ -70,7 +71,6 @@ import org.l2junity.gameserver.network.loginserverpackets.KickPlayer;
 import org.l2junity.gameserver.network.loginserverpackets.LoginServerFail;
 import org.l2junity.gameserver.network.loginserverpackets.PlayerAuthResponse;
 import org.l2junity.gameserver.network.loginserverpackets.RequestCharacters;
-import org.l2junity.util.Util;
 import org.l2junity.util.crypt.NewCrypt;
 import org.l2junity.util.network.BaseSendablePacket;
 import org.slf4j.Logger;
@@ -124,7 +124,7 @@ public class LoginServerThread extends Thread
 		if (_hexID == null)
 		{
 			_requestID = Config.REQUEST_ID;
-			_hexID = Util.generateHex(16);
+			_hexID = CommonUtil.generateHex(16);
 		}
 		else
 		{
@@ -164,7 +164,7 @@ public class LoginServerThread extends Thread
 				_out = new BufferedOutputStream(_loginSocket.getOutputStream());
 				
 				// init Blowfish
-				byte[] blowfishKey = Util.generateHex(40);
+				byte[] blowfishKey = CommonUtil.generateHex(40);
 				_blowfish = new NewCrypt("_;v.]05-31!|+-%xT!^[$\00");
 				while (!isInterrupted())
 				{

@@ -30,6 +30,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.loginserver.GameServerTable.GameServerInfo;
 import org.l2junity.loginserver.network.L2JGameServerPacketHandler;
 import org.l2junity.loginserver.network.L2JGameServerPacketHandler.GameServerState;
@@ -38,7 +39,6 @@ import org.l2junity.loginserver.network.loginserverpackets.InitLS;
 import org.l2junity.loginserver.network.loginserverpackets.KickPlayer;
 import org.l2junity.loginserver.network.loginserverpackets.LoginServerFail;
 import org.l2junity.loginserver.network.loginserverpackets.RequestCharacters;
-import org.l2junity.util.Util;
 import org.l2junity.util.crypt.NewCrypt;
 import org.l2junity.util.network.BaseSendablePacket;
 import org.slf4j.Logger;
@@ -130,7 +130,7 @@ public class GameServerThread extends Thread
 				
 				if (Config.DEBUG)
 				{
-					_log.warn("[C]" + System.lineSeparator() + Util.printData(data));
+					_log.warn("[C]" + System.lineSeparator() + CommonUtil.printData(data));
 				}
 				
 				L2JGameServerPacketHandler.handlePacket(data, this);
@@ -241,7 +241,7 @@ public class GameServerThread extends Thread
 			NewCrypt.appendChecksum(data);
 			if (Config.DEBUG)
 			{
-				_log.trace("[S] " + sl.getClass().getSimpleName() + ":" + System.lineSeparator() + Util.printData(data));
+				_log.trace("[S] " + sl.getClass().getSimpleName() + ":" + System.lineSeparator() + CommonUtil.printData(data));
 			}
 			_blowfish.crypt(data, 0, data.length);
 			

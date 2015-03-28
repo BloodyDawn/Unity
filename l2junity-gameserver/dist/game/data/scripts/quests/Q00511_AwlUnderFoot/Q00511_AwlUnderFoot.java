@@ -21,6 +21,7 @@ package quests.Q00511_AwlUnderFoot;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
@@ -379,7 +380,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 		if (tmpworld instanceof FAUWorld)
 		{
 			FAUWorld world = (FAUWorld) tmpworld;
-			if (Util.contains(RAIDS3, npc.getId()))
+			if (CommonUtil.contains(RAIDS3, npc.getId()))
 			{
 				if (player.getParty() != null)
 				{

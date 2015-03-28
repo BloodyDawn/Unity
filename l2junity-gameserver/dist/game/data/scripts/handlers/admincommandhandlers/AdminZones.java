@@ -31,6 +31,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.enums.PlayerAction;
@@ -204,7 +205,7 @@ public class AdminZones extends AbstractNpcAI implements IAdminCommandHandler
 					}
 					case "list":
 					{
-						final int page = Util.parseNextInt(st, 0);
+						final int page = CommonUtil.parseNextInt(st, 0);
 						buildHtmlWindow(activeChar, page);
 						return false;
 					}

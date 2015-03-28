@@ -35,6 +35,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.ai.CtrlIntention;
@@ -729,7 +730,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 		{
 			((Attackable) npc).setSeeThroughSilentMove(true);
 		}
-		if (Util.contains(AI_DISABLED_MOBS, npcId))
+		if (CommonUtil.contains(AI_DISABLED_MOBS, npcId))
 		{
 			npc.disableCoreAI(true);
 		}
@@ -1356,7 +1357,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 			if (skill != null)
 			{
 				// When Dewdrop of Destruction is used on Portraits they suicide.
-				if (Util.contains(PORTRAITS, npc.getId()) && (skill.getId() == DEWDROP_OF_DESTRUCTION_SKILL_ID))
+				if (CommonUtil.contains(PORTRAITS, npc.getId()) && (skill.getId() == DEWDROP_OF_DESTRUCTION_SKILL_ID))
 				{
 					npc.doDie(attacker);
 				}

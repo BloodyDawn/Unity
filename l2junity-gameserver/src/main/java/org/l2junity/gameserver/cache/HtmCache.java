@@ -18,16 +18,14 @@
  */
 package org.l2junity.gameserver.cache;
 
-import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.FileInputStream;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.file.filter.HTMLFilter;
-import org.l2junity.gameserver.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -106,39 +104,32 @@ public class HtmCache
 	
 	public String loadFile(File file)
 	{
-		if (!htmlFilter.accept(file))
+		if (htmlFilter.accept(file))
 		{
-			return null;
-		}
-		
-		final String relpath = Util.getRelativePath(Config.DATAPACK_ROOT, file);
-		String content = null;
-		try (FileInputStream fis = new FileInputStream(file);
-			BufferedInputStream bis = new BufferedInputStream(fis))
-		{
-			final int bytes = bis.available();
-			byte[] raw = new byte[bytes];
-			
-			bis.read(raw);
-			content = new String(raw, "UTF-8");
-			content = content.replaceAll("(?s)<!--.*?-->", ""); // Remove html comments
-			
-			String oldContent = _cache.put(relpath, content);
-			if (oldContent == null)
+			try
 			{
-				_bytesBuffLen += bytes;
-				_loadedFiles++;
+				byte[] bytes = Files.readAllBytes(file.toPath());
+				String content = new String(bytes, "UTF-8");
+				content = content.replaceAll("(?s)<!--.*?-->", ""); // Remove html comments
+				
+				String oldContent = _cache.put(file.toURI().getPath().substring(Config.DATAPACK_ROOT.toURI().getPath().length()), content);
+				if (oldContent == null)
+				{
+					_bytesBuffLen += bytes.length;
+					_loadedFiles++;
+				}
+				else
+				{
+					_bytesBuffLen = (_bytesBuffLen - oldContent.length()) + bytes.length;
+				}
+				return content;
 			}
-			else
+			catch (Exception e)
 			{
-				_bytesBuffLen = (_bytesBuffLen - oldContent.length()) + bytes;
+				_log.warn("Problem with htm file " + e.getMessage(), e);
 			}
 		}
-		catch (Exception e)
-		{
-			_log.warn("Problem with htm file " + e.getMessage(), e);
-		}
-		return content;
+		return null;
 	}
 	
 	public String getHtmForce(String prefix, String path)

@@ -34,11 +34,11 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 import org.l2junity.DatabaseFactory;
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.model.clan.entry.PledgeApplicantInfo;
 import org.l2junity.gameserver.model.clan.entry.PledgeRecruitInfo;
 import org.l2junity.gameserver.model.clan.entry.PledgeWaitingInfo;
-import org.l2junity.gameserver.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -323,7 +323,7 @@ public class ClanEntryManager
 	
 	public List<PledgeWaitingInfo> getSortedWaitingList(int levelMin, int levelMax, int role, int sortBy, boolean descending)
 	{
-		sortBy = Util.constrain(sortBy, 1, PLAYER_COMPARATOR.size() - 1);
+		sortBy = CommonUtil.constrain(sortBy, 1, PLAYER_COMPARATOR.size() - 1);
 		
 		// TODO: Handle Role
 		//@formatter:off
@@ -366,7 +366,7 @@ public class ClanEntryManager
 	
 	public List<PledgeRecruitInfo> getSortedClanList(int clanLevel, int karma, int sortBy, boolean descending)
 	{
-		sortBy = Util.constrain(sortBy, 1, CLAN_COMPARATOR.size() - 1);
+		sortBy = CommonUtil.constrain(sortBy, 1, CLAN_COMPARATOR.size() - 1);
 		//@formatter:off
 		return _clanList.values().stream()
 		      .filter((p -> (((clanLevel < 0) && (karma >= 0) && (karma != p.getKarma())) || ((clanLevel >= 0) && (karma < 0) && (clanLevel != p.getClanLevel())) || ((clanLevel >= 0) && (karma >= 0) && ((clanLevel != p.getClanLevel()) || (karma != p.getKarma()))))))
