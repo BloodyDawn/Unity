@@ -18,23 +18,15 @@
  */
 package org.l2junity.commons.util.file.filter;
 
-import java.io.File;
-import java.io.FileFilter;
-
 /**
- * Specialized {@link FileFilter} class.<br>
+ * Specialized {@link ExtFilter} class.<br>
  * Accepts <b>files</b> ending with ".sql" only.
  * @author Zoey76
  */
-public class SQLFilter implements FileFilter
+public class SQLFilter extends ExtFilter
 {
-	@Override
-	public boolean accept(File f)
+	public SQLFilter()
 	{
-		if ((f == null) || !f.isFile())
-		{
-			return false;
-		}
-		return f.getName().toLowerCase().endsWith(".sql");
+		super(".sql");
 	}
 }

@@ -18,23 +18,16 @@
  */
 package org.l2junity.commons.util.file.filter;
 
-import java.io.File;
-import java.io.FileFilter;
 
 /**
- * Specialized {@link FileFilter} class.<br>
+ * Specialized {@link ExtFilter} class.<br>
  * Accepts files ending with ".xml" only.
  * @author mrTJO
  */
-public class XMLFilter implements FileFilter
+public class XMLFilter extends ExtFilter
 {
-	@Override
-	public boolean accept(File f)
+	public XMLFilter()
 	{
-		if ((f == null) || !f.isFile())
-		{
-			return false;
-		}
-		return f.getName().toLowerCase().endsWith(".xml");
+		super(".xml");
 	}
 }

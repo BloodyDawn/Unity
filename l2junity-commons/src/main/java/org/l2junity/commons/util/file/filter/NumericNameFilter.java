@@ -19,10 +19,9 @@
 package org.l2junity.commons.util.file.filter;
 
 import java.io.File;
-import java.io.FileFilter;
 
 /**
- * Specialized {@link FileFilter} class.<br>
+ * Specialized {@link XMLFilter} class.<br>
  * Accepts <b>files</b> matching "numbers".xml only.
  * @author UnAfraid
  */
