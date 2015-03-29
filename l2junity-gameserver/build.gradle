@@ -32,6 +32,10 @@ dependencies {
 	runtime(group: 'mysql', name: 'mysql-connector-java', version: '5.1.34')
 }
 
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
 def generalManifest = manifest {
 	attributes('Built-By': System.getProperty('user.name'),
 			'Implementation-URL': 'http://www.l2junity.org/',

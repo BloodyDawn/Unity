@@ -21,12 +21,13 @@ package org.l2junity.loginserver.network.client.crypt;
 import java.security.GeneralSecurityException;
 import java.security.KeyPairGenerator;
 import java.security.spec.RSAKeyGenParameterSpec;
-import java.util.logging.Logger;
 
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 
 import org.l2junity.commons.util.Rnd;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Manages the keys and key pairs required for network communication.
@@ -34,7 +35,7 @@ import org.l2junity.commons.util.Rnd;
  */
 public class KeyManager
 {
-	private static final Logger _log = Logger.getLogger(KeyManager.class.getName());
+	private static final Logger _log = LoggerFactory.getLogger(KeyManager.class.getName());
 	
 	private final KeyGenerator _blowfishKeyGenerator;
 	private final ScrambledRSAKeyPair[] _scrambledRSAKeyPairs = new ScrambledRSAKeyPair[50];

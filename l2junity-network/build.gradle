@@ -9,6 +9,12 @@ dependencies {
 	compile(group: 'io.netty', name: 'netty-all', version: '5.0.0.Alpha2')
 }
 
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+
 jar {
 	manifest {
 		attributes('Built-By': System.getProperty('user.name'),

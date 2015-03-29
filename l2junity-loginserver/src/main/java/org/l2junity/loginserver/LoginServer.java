@@ -18,12 +18,7 @@
  */
 package org.l2junity.loginserver;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.logging.Level;
-import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 import org.l2junity.loginserver.network.client.ClientNetworkManager;
@@ -41,7 +36,6 @@ public class LoginServer
 	{
 		try
 		{
-			init();
 			printSection("Config");
 			Config.load();
 			
@@ -56,23 +50,6 @@ public class LoginServer
 		catch (Exception e)
 		{
 			_log.log(Level.WARNING, "Error while initializing: ", e);
-		}
-	}
-	
-	private static final void init()
-	{
-		// Create log folder
-		File logFolder = new File(Config.LOG_FOLDER);
-		logFolder.mkdir();
-		
-		// Create input stream for log file -- or store file data into memory
-		try (InputStream is = new FileInputStream(new File(Config.ROOT_DIRECTORY, Config.LOG_NAME)))
-		{
-			LogManager.getLogManager().readConfiguration(is);
-		}
-		catch (IOException e)
-		{
-			_log.warning(Config.class.getSimpleName() + ": " + e.getMessage());
 		}
 	}
 	
