@@ -57,7 +57,6 @@ public final class DoorManager extends AbstractNpcAI
 	@Override
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
-		player.sendMessage("Event je: " + event);
 		final StringTokenizer st = new StringTokenizer(event, " ");
 		final String action = st.nextToken();
 		
