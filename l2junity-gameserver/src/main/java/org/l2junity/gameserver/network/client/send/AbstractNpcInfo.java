@@ -121,7 +121,7 @@ public abstract class AbstractNpcInfo implements IClientOutgoingPacket
 			packet.writeD(0x00); // title color 0 = client default
 			
 			packet.writeD(_trap.getPvpFlag());
-			packet.writeD(_trap.getKarma());
+			packet.writeD(_trap.getReputation());
 			
 			packet.writeD(0); // was AVE and was adding stealth
 			packet.writeD(0x00); // clan id

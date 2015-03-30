@@ -295,7 +295,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 		{
 			packet.writeH(22);
 			packet.writeC(_activeChar.getPvpFlag());
-			packet.writeD(_activeChar.getKarma()); // Reputation
+			packet.writeD(_activeChar.getReputation()); // Reputation
 			packet.writeC(_activeChar.isNoble() ? 0x01 : 0x00);
 			packet.writeC(_activeChar.isHero() ? 0x01 : 0x00);
 			packet.writeC(_activeChar.getPledgeClass());

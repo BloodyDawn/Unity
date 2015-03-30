@@ -70,7 +70,7 @@ public class AdminCursedWeapons implements IAdminCommandHandler
 					{
 						PlayerInstance pl = cw.getPlayer();
 						activeChar.sendMessage("  Player holding: " + (pl == null ? "null" : pl.getName()));
-						activeChar.sendMessage("    Player karma: " + cw.getPlayerKarma());
+						activeChar.sendMessage("    Player Reputation: " + cw.getPlayerReputation());
 						activeChar.sendMessage("    Time Remaining: " + (cw.getTimeLeft() / 60000) + " min.");
 						activeChar.sendMessage("    Kills : " + cw.getNbKills());
 					}
@@ -108,7 +108,7 @@ public class AdminCursedWeapons implements IAdminCommandHandler
 						replyMSG.append(pl == null ? "null" : pl.getName());
 						replyMSG.append("</td></tr>");
 						replyMSG.append("<tr><td>Karma:</td><td>");
-						replyMSG.append(cw.getPlayerKarma());
+						replyMSG.append(cw.getPlayerReputation());
 						replyMSG.append("</td></tr>");
 						replyMSG.append("<tr><td>Kills:</td><td>");
 						replyMSG.append(cw.getPlayerPkKills());

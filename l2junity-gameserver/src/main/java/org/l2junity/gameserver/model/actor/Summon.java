@@ -229,9 +229,9 @@ public abstract class Summon extends Playable
 	}
 	
 	@Override
-	public final int getKarma()
+	public final int getReputation()
 	{
-		return getOwner() != null ? getOwner().getKarma() : 0;
+		return getOwner() != null ? getOwner().getReputation() : 0;
 	}
 	
 	@Override

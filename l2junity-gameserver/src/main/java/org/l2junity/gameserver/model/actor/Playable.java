@@ -206,11 +206,11 @@ public abstract class Playable extends Creature
 		{
 			return false; // Target is null
 		}
-		if (target == this)
+		else if (target == this)
 		{
 			return false; // Target is self
 		}
-		if (!target.isPlayable())
+		else if (!target.isPlayable())
 		{
 			return false; // Target is not a L2Playable
 		}
@@ -220,8 +220,7 @@ public abstract class Playable extends Creature
 		{
 			return false; // Active player is null
 		}
-		
-		if (player.getKarma() != 0)
+		else if (player.getReputation() < 0)
 		{
 			return false; // Active player has karma
 		}
@@ -231,20 +230,18 @@ public abstract class Playable extends Creature
 		{
 			return false; // Target player is null
 		}
-		
-		if (targetPlayer == this)
+		else if (targetPlayer == this)
 		{
 			return false; // Target player is self
 		}
-		if (targetPlayer.getKarma() != 0)
+		else if (targetPlayer.getReputation() < 0)
 		{
 			return false; // Target player has karma
 		}
-		if (targetPlayer.getPvpFlag() == 0)
+		else if (targetPlayer.getPvpFlag() == 0)
 		{
 			return false;
 		}
-		
 		return true;
 		// Even at war, there should be PvP flag
 		// if(
@@ -335,7 +332,7 @@ public abstract class Playable extends Creature
 	
 	public abstract void doPickupItem(WorldObject object);
 	
-	public abstract int getKarma();
+	public abstract int getReputation();
 	
 	public abstract byte getPvpFlag();
 	

@@ -22,6 +22,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.concurrent.ScheduledFuture;
+
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.commons.util.Rnd;
@@ -79,7 +80,7 @@ public class CursedWeapon implements INamable
 	private int _playerId = 0;
 	protected PlayerInstance _player = null;
 	private ItemInstance _item = null;
-	private int _playerKarma = 0;
+	private int _playerReputation = 0;
 	private int _playerPkKills = 0;
 	protected int transformationId = 0;
 	
@@ -102,7 +103,7 @@ public class CursedWeapon implements INamable
 				
 				_player.abortAttack();
 				
-				_player.setKarma(_playerKarma);
+				_player.setReputation(_playerReputation);
 				_player.setPkKills(_playerPkKills);
 				_player.setCursedWeaponEquippedId(0);
 				removeSkill();
@@ -141,7 +142,7 @@ public class CursedWeapon implements INamable
 				
 				try (Connection con = DatabaseFactory.getInstance().getConnection();
 					PreparedStatement del = con.prepareStatement("DELETE FROM items WHERE owner_id=? AND item_id=?");
-					PreparedStatement ps = con.prepareStatement("UPDATE characters SET karma=?, pkkills=? WHERE charId=?"))
+					PreparedStatement ps = con.prepareStatement("UPDATE characters SET reputation=?, pkkills=? WHERE charId=?"))
 				{
 					// Delete the item
 					del.setInt(1, _playerId);
@@ -151,8 +152,8 @@ public class CursedWeapon implements INamable
 						_log.warn("Error while deleting itemId " + _itemId + " from userId " + _playerId);
 					}
 					
-					// Restore the karma
-					ps.setInt(1, _playerKarma);
+					// Restore the reputation
+					ps.setInt(1, _playerReputation);
 					ps.setInt(2, _playerPkKills);
 					ps.setInt(3, _playerId);
 					if (ps.executeUpdate() != 1)
@@ -218,7 +219,7 @@ public class CursedWeapon implements INamable
 		_endTime = 0;
 		_player = null;
 		_playerId = 0;
-		_playerKarma = 0;
+		_playerReputation = 0;
 		_playerPkKills = 0;
 		_item = null;
 		_nbKills = 0;
@@ -273,7 +274,7 @@ public class CursedWeapon implements INamable
 		{
 			_item = _player.getInventory().getItemByItemId(_itemId);
 			_player.dropItem("DieDrop", _item, killer, true);
-			_player.setKarma(_playerKarma);
+			_player.setReputation(_playerReputation);
 			_player.setPkKills(_playerPkKills);
 			_player.setCursedWeaponEquippedId(0);
 			removeSkill();
@@ -421,13 +422,13 @@ public class CursedWeapon implements INamable
 		// Player holding it data
 		_player = player;
 		_playerId = _player.getObjectId();
-		_playerKarma = _player.getKarma();
+		_playerReputation = _player.getReputation();
 		_playerPkKills = _player.getPkKills();
 		saveData();
 		
 		// Change player stats
 		_player.setCursedWeaponEquippedId(_itemId);
-		_player.setKarma(9999999);
+		_player.setReputation(-9999999);
 		_player.setPkKills(0);
 		if (_player.isInParty())
 		{
@@ -497,7 +498,7 @@ public class CursedWeapon implements INamable
 			{
 				ps.setInt(1, _itemId);
 				ps.setInt(2, _playerId);
-				ps.setInt(3, _playerKarma);
+				ps.setInt(3, _playerReputation);
 				ps.setInt(4, _playerPkKills);
 				ps.setInt(5, _nbKills);
 				ps.setLong(6, _endTime);
@@ -522,7 +523,7 @@ public class CursedWeapon implements INamable
 			// Unequip & Drop
 			dropIt(null, null, killer, false);
 			// Reset player stats
-			_player.setKarma(_playerKarma);
+			_player.setReputation(_playerReputation);
 			_player.setPkKills(_playerPkKills);
 			_player.setCursedWeaponEquippedId(0);
 			removeSkill();
@@ -587,9 +588,9 @@ public class CursedWeapon implements INamable
 		_playerId = playerId;
 	}
 	
-	public void setPlayerKarma(int playerKarma)
+	public void setPlayerReputation(int playerReputation)
 	{
-		_playerKarma = playerKarma;
+		_playerReputation = playerReputation;
 	}
 	
 	public void setPlayerPkKills(int playerPkKills)
@@ -663,9 +664,9 @@ public class CursedWeapon implements INamable
 		return _player;
 	}
 	
-	public int getPlayerKarma()
+	public int getPlayerReputation()
 	{
-		return _playerKarma;
+		return _playerReputation;
 	}
 	
 	public int getPlayerPkKills()

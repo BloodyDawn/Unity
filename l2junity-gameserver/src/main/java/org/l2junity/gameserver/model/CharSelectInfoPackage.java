@@ -49,7 +49,7 @@ public class CharSelectInfoPackage
 	private int _maxMp = 0;
 	private double _currentMp = 0;
 	private final int[][] _paperdoll;
-	private int _karma = 0;
+	private int _reputation = 0;
 	private int _pkKills = 0;
 	private int _pvpKills = 0;
 	private int _augmentationId = 0;
@@ -304,14 +304,14 @@ public class CharSelectInfoPackage
 		return _paperdoll[Inventory.PAPERDOLL_RHAND][2];
 	}
 	
-	public void setKarma(int k)
+	public void setReputation(int reputation)
 	{
-		_karma = k;
+		_reputation = reputation;
 	}
 	
-	public int getKarma()
+	public int getReputation()
 	{
-		return _karma;
+		return _reputation;
 	}
 	
 	public void setAugmentationId(int augmentationId)

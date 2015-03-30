@@ -149,7 +149,7 @@ public class CharSelectionInfo implements IClientOutgoingPacket
 																																																																									// Five
 			packet.writeD(charInfoPackage.getLevel());
 			
-			packet.writeD(charInfoPackage.getKarma());
+			packet.writeD(charInfoPackage.getReputation());
 			packet.writeD(charInfoPackage.getPkKills());
 			packet.writeD(charInfoPackage.getPvPKills());
 			
@@ -161,8 +161,8 @@ public class CharSelectionInfo implements IClientOutgoingPacket
 			packet.writeD(0x00);
 			packet.writeD(0x00);
 			
-			packet.writeD(0x00); // Erthreia
-			packet.writeD(0x00); // Erthreia
+			packet.writeD(0x00); // Ertheia
+			packet.writeD(0x00); // Ertheia
 			
 			for (int slot : getPaperdollOrder())
 			{
@@ -297,7 +297,7 @@ public class CharSelectionInfo implements IClientOutgoingPacket
 		charInfopackage.setCurrentHp(chardata.getDouble("curhp"));
 		charInfopackage.setMaxMp(chardata.getInt("maxmp"));
 		charInfopackage.setCurrentMp(chardata.getDouble("curmp"));
-		charInfopackage.setKarma(chardata.getInt("karma"));
+		charInfopackage.setReputation(chardata.getInt("reputation"));
 		charInfopackage.setPkKills(chardata.getInt("pkkills"));
 		charInfopackage.setPvPKills(chardata.getInt("pvpkills"));
 		charInfopackage.setFace(chardata.getInt("face"));

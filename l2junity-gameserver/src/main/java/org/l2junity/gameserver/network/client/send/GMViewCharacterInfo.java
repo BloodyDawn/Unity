@@ -116,7 +116,7 @@ public class GMViewCharacterInfo implements IClientOutgoingPacket
 		packet.writeD(_activeChar.getMCriticalHit(null, null));
 		
 		packet.writeD(_activeChar.getPvpFlag()); // 0-non-pvp 1-pvp = violett name
-		packet.writeD(_activeChar.getKarma());
+		packet.writeD(_activeChar.getReputation());
 		
 		packet.writeD(_runSpd);
 		packet.writeD(_walkSpd);

@@ -141,7 +141,7 @@ public class CharInfo implements IClientOutgoingPacket
 		}
 		
 		packet.writeC(_activeChar.getPvpFlag());
-		packet.writeD(_activeChar.getKarma());
+		packet.writeD(_activeChar.getReputation());
 		
 		packet.writeD(_mAtkSpd);
 		packet.writeD(_pAtkSpd);

@@ -60,7 +60,6 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerEquipI
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerFameChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerHennaAdd;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerHennaRemove;
-import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerKarmaChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLevelChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogout;
@@ -69,6 +68,7 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPKChan
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerProfessionChange;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPvPChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPvPKill;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerReputationChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerRestore;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSelect;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSkillLearn;
@@ -216,7 +216,7 @@ public enum EventType
 	ON_PLAYER_MENTEE_STATUS(OnPlayerMenteeStatus.class, void.class),
 	ON_PLAYER_MENTOR_STATUS(OnPlayerMentorStatus.class, void.class),
 	// Other player events
-	ON_PLAYER_KARMA_CHANGED(OnPlayerKarmaChanged.class, void.class),
+	ON_PLAYER_REPUTATION_CHANGED(OnPlayerReputationChanged.class, void.class),
 	ON_PLAYER_LEVEL_CHANGED(OnPlayerLevelChanged.class, void.class),
 	ON_PLAYER_LOGIN(OnPlayerLogin.class, void.class),
 	ON_PLAYER_LOGOUT(OnPlayerLogout.class, void.class),

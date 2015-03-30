@@ -68,8 +68,7 @@ public class AdminEditChar implements IAdminCommandHandler
 	{
 		"admin_edit_character",
 		"admin_current_player",
-		"admin_nokarma", // this is to remove karma from selected char...
-		"admin_setkarma", // sets karma of target char to any amount. //setkarma <karma>
+		"admin_setreputation", // sets reputation of target char to any amount. //setreputation <amout>
 		"admin_setfame", // sets fame of target char to any amount. //setfame <fame>
 		"admin_character_list", // same as character_info, kept for compatibility purposes
 		"admin_character_info", // given a player name, displays an information window
@@ -199,38 +198,33 @@ public class AdminEditChar implements IAdminCommandHandler
 				activeChar.sendPacket(SystemMessageId.INVALID_TARGET);
 			}
 		}
-		// Karma control commands
-		else if (command.equals("admin_nokarma"))
-		{
-			setTargetKarma(activeChar, 0);
-		}
-		else if (command.startsWith("admin_setkarma"))
+		else if (command.startsWith("admin_setreputation"))
 		{
 			try
 			{
-				String val = command.substring(15);
-				int karma = Integer.parseInt(val);
-				setTargetKarma(activeChar, karma);
+				final String val = command.substring(20);
+				final int reputation = Integer.parseInt(val);
+				setTargetReputation(activeChar, reputation);
 			}
 			catch (Exception e)
 			{
 				if (Config.DEVELOPER)
 				{
-					_log.warn("Set karma error: " + e);
+					_log.warn("Set reputation error: " + e);
 				}
-				activeChar.sendMessage("Usage: //setkarma <new_karma_value>");
+				activeChar.sendMessage("Usage: //setreputation <new_reputation_value>");
 			}
 		}
 		else if (command.startsWith("admin_setpk"))
 		{
 			try
 			{
-				String val = command.substring(12);
-				int pk = Integer.parseInt(val);
-				WorldObject target = activeChar.getTarget();
-				if (target instanceof PlayerInstance)
+				final String val = command.substring(12);
+				final int pk = Integer.parseInt(val);
+				final WorldObject target = activeChar.getTarget();
+				if (target.isPlayer())
 				{
-					PlayerInstance player = (PlayerInstance) target;
+					final PlayerInstance player = target.getActingPlayer();
 					player.setPkKills(pk);
 					player.broadcastUserInfo();
 					player.sendPacket(new UserInfo(player));
@@ -988,7 +982,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		adminReply.replace("%z%", String.valueOf(player.getZ()));
 		adminReply.replace("%currenthp%", String.valueOf((int) player.getCurrentHp()));
 		adminReply.replace("%maxhp%", String.valueOf(player.getMaxHp()));
-		adminReply.replace("%karma%", String.valueOf(player.getKarma()));
+		adminReply.replace("%reputation%", String.valueOf(player.getReputation()));
 		adminReply.replace("%currentmp%", String.valueOf((int) player.getCurrentMp()));
 		adminReply.replace("%maxmp%", String.valueOf(player.getMaxMp()));
 		adminReply.replace("%pvpflag%", String.valueOf(player.getPvpFlag()));
@@ -1018,12 +1012,11 @@ public class AdminEditChar implements IAdminCommandHandler
 		activeChar.sendPacket(adminReply);
 	}
 	
-	private void setTargetKarma(PlayerInstance activeChar, int newKarma)
+	private void setTargetReputation(PlayerInstance activeChar, int newReputation)
 	{
-		// function to change karma of selected char
-		WorldObject target = activeChar.getTarget();
+		final WorldObject target = activeChar.getTarget();
 		PlayerInstance player = null;
-		if (target instanceof PlayerInstance)
+		if (target.isPlayer())
 		{
 			player = (PlayerInstance) target;
 		}
@@ -1032,31 +1025,20 @@ public class AdminEditChar implements IAdminCommandHandler
 			return;
 		}
 		
-		if (newKarma >= 0)
+		if (newReputation > Config.MAX_REPUTATION)
 		{
-			// for display
-			int oldKarma = player.getKarma();
-			// update karma
-			player.setKarma(newKarma);
-			// Common character information
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOUR_REPUTATION_HAS_BEEN_CHANGED_TO_S1);
-			sm.addInt(newKarma);
-			player.sendPacket(sm);
-			// Admin information
-			activeChar.sendMessage("Successfully Changed karma for " + player.getName() + " from (" + oldKarma + ") to (" + newKarma + ").");
-			if (Config.DEBUG)
-			{
-				_log.debug("[SET KARMA] [GM]" + activeChar.getName() + " Changed karma for " + player.getName() + " from (" + oldKarma + ") to (" + newKarma + ").");
-			}
+			newReputation = Config.MAX_REPUTATION;
 		}
-		else
+		
+		final int oldReputation = player.getReputation();
+		player.setReputation(newReputation);
+		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOUR_REPUTATION_HAS_BEEN_CHANGED_TO_S1);
+		sm.addInt(newReputation);
+		player.sendPacket(sm);
+		activeChar.sendMessage("Successfully Changed karma for " + player.getName() + " from (" + oldReputation + ") to (" + newReputation + ").");
+		if (Config.DEBUG)
 		{
-			// tell admin of mistake
-			activeChar.sendMessage("You must enter a value for karma greater than or equal to 0.");
-			if (Config.DEBUG)
-			{
-				_log.debug("[SET KARMA] ERROR: [GM]" + activeChar.getName() + " entered an incorrect value for new karma: " + newKarma + " for " + player.getName() + ".");
-			}
+			_log.debug("[SET KARMA] [GM]" + activeChar.getName() + " Changed karma for " + player.getName() + " from (" + oldReputation + ") to (" + newReputation + ").");
 		}
 	}
 	
@@ -1471,11 +1453,11 @@ public class AdminEditChar implements IAdminCommandHandler
 		html.replace("%ai%", target.hasAI() ? String.valueOf(target.getAI().getIntention().name()) : "NULL");
 		html.replace("%hp%", (int) target.getStatus().getCurrentHp() + "/" + target.getStat().getMaxHp());
 		html.replace("%mp%", (int) target.getStatus().getCurrentMp() + "/" + target.getStat().getMaxMp());
-		html.replace("%karma%", Integer.toString(target.getKarma()));
+		html.replace("%karma%", Integer.toString(target.getReputation()));
 		html.replace("%race%", target.getTemplate().getRace().toString());
-		if (target instanceof L2PetInstance)
+		if (target.isPet())
 		{
-			int objId = target.getActingPlayer().getObjectId();
+			final int objId = target.getActingPlayer().getObjectId();
 			html.replace("%inv%", " <a action=\"bypass admin_show_pet_inv " + objId + "\">view</a>");
 		}
 		else

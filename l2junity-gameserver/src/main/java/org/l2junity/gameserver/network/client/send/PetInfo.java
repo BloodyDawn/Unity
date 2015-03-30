@@ -130,7 +130,7 @@ public class PetInfo implements IClientOutgoingPacket
 		packet.writeS(_summon.getTitle()); // owner name
 		
 		packet.writeC(_summon.getPvpFlag()); // confirmed
-		packet.writeD(_summon.getKarma()); // confirmed
+		packet.writeD(_summon.getReputation()); // confirmed
 		
 		packet.writeD(_curFed); // how fed it is
 		packet.writeD(_maxFed); // max fed it can be

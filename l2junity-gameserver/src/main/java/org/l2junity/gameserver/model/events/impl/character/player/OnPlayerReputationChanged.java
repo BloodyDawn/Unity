@@ -25,17 +25,17 @@ import org.l2junity.gameserver.model.events.impl.IBaseEvent;
 /**
  * @author UnAfraid
  */
-public class OnPlayerKarmaChanged implements IBaseEvent
+public class OnPlayerReputationChanged  implements IBaseEvent
 {
 	private final PlayerInstance _activeChar;
-	private final int _oldKarma;
-	private final int _newKarma;
+	private final int _oldReputation;
+	private final int _newReputation;
 	
-	public OnPlayerKarmaChanged(PlayerInstance activeChar, int oldKarma, int newKarma)
+	public OnPlayerReputationChanged(PlayerInstance activeChar, int oldReputation, int newReputation)
 	{
 		_activeChar = activeChar;
-		_oldKarma = oldKarma;
-		_newKarma = newKarma;
+		_oldReputation = oldReputation;
+		_newReputation = newReputation;
 	}
 	
 	public PlayerInstance getActiveChar()
@@ -43,19 +43,19 @@ public class OnPlayerKarmaChanged implements IBaseEvent
 		return _activeChar;
 	}
 	
-	public int getOldKarma()
+	public int getOldReputation()
 	{
-		return _oldKarma;
+		return _oldReputation;
 	}
 	
-	public int getNewKarma()
+	public int getNewReputation()
 	{
-		return _newKarma;
+		return _newReputation;
 	}
 	
 	@Override
 	public EventType getType()
 	{
-		return EventType.ON_PLAYER_KARMA_CHANGED;
+		return EventType.ON_PLAYER_REPUTATION_CHANGED;
 	}
 }

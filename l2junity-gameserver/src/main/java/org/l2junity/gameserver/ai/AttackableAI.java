@@ -205,13 +205,13 @@ public class AttackableAI extends CharacterAI implements Runnable
 		// Check if the actor is a L2GuardInstance
 		if (me instanceof L2GuardInstance)
 		{
-			// Check if the L2PcInstance target has karma (=PK)
-			if ((player != null) && (player.getKarma() > 0))
+			// Check if the PlayerInstance target has negative Reputation (=PK)
+			if ((player != null) && (player.getReputation() < 0))
 			{
 				return GeoData.getInstance().canSeeTarget(me, player); // Los Check
 			}
 			// Check if the L2MonsterInstance target is aggressive
-			if ((target instanceof L2MonsterInstance) && Config.GUARD_ATTACK_AGGRO_MOB)
+			if ((target.isMonster()) && Config.GUARD_ATTACK_AGGRO_MOB)
 			{
 				return (((L2MonsterInstance) target).isAggressive() && GeoData.getInstance().canSeeTarget(me, target));
 			}
@@ -220,14 +220,14 @@ public class AttackableAI extends CharacterAI implements Runnable
 		}
 		else if (me instanceof L2FriendlyMobInstance)
 		{
-			// Check if the target isn't another L2Npc
-			if (target instanceof Npc)
+			// Check if the target isn't another Npc
+			if (target.isNpc())
 			{
 				return false;
 			}
 			
-			// Check if the L2PcInstance target has karma (=PK)
-			if ((target instanceof PlayerInstance) && (((PlayerInstance) target).getKarma() > 0))
+			// Check if the PlayerInstance target has negative Reputation (=PK)
+			if ((target.isPlayer()) && (target.getActingPlayer().getReputation() < 0))
 			{
 				return GeoData.getInstance().canSeeTarget(me, target); // Los Check
 			}
@@ -235,7 +235,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		}
 		else
 		{
-			if (target instanceof Attackable)
+			if (target.isAttackable())
 			{
 				if (!target.isAutoAttackable(me))
 				{
@@ -253,7 +253,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 				}
 			}
 			
-			if ((target instanceof Attackable) || (target instanceof Npc))
+			if ((target.isAttackable()) || (target.isNpc()))
 			{
 				return false;
 			}

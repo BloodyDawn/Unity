@@ -243,8 +243,6 @@ public final class MapRegionManager implements IXmlReader
 	 */
 	public Location getTeleToLocation(Creature activeChar, TeleportWhereType teleportWhere)
 	{
-		Location loc;
-		
 		if (activeChar.isPlayer())
 		{
 			final PlayerInstance player = activeChar.getActingPlayer();
@@ -264,7 +262,7 @@ public final class MapRegionManager implements IXmlReader
 						ClanHallZone zone = clanhall.getZone();
 						if ((zone != null) && !player.isFlyingMounted())
 						{
-							if (player.getKarma() > 0)
+							if (player.getReputation() < 0)
 							{
 								return zone.getChaoticSpawnLoc();
 							}
@@ -290,7 +288,7 @@ public final class MapRegionManager implements IXmlReader
 					
 					if ((castle != null) && (castle.getResidenceId() > 0))
 					{
-						if (player.getKarma() > 0)
+						if (player.getReputation() < 0)
 						{
 							return castle.getResidenceZone().getChaoticSpawnLoc();
 						}
@@ -315,7 +313,7 @@ public final class MapRegionManager implements IXmlReader
 					
 					if ((fort != null) && (fort.getResidenceId() > 0))
 					{
-						if (player.getKarma() > 0)
+						if (player.getReputation() < 0)
 						{
 							return fort.getResidenceZone().getChaoticSpawnLoc();
 						}
@@ -369,11 +367,11 @@ public final class MapRegionManager implements IXmlReader
 			}
 			
 			// Karma player land out of city
-			if (player.getKarma() > 0)
+			if (player.getReputation() < 0)
 			{
 				try
 				{
-					RespawnZone zone = ZoneManager.getInstance().getZone(player, RespawnZone.class);
+					final RespawnZone zone = ZoneManager.getInstance().getZone(player, RespawnZone.class);
 					if (zone != null)
 					{
 						return getRestartRegion(activeChar, zone.getRespawnPoint((PlayerInstance) activeChar)).getChaoticSpawnLoc();
@@ -407,10 +405,10 @@ public final class MapRegionManager implements IXmlReader
 			// Checking if in an instance
 			if (player.getInstanceId() > 0)
 			{
-				Instance inst = InstanceManager.getInstance().getInstance(player.getInstanceId());
+				final Instance inst = InstanceManager.getInstance().getInstance(player.getInstanceId());
 				if (inst != null)
 				{
-					loc = inst.getSpawnLoc();
+					final Location loc = inst.getSpawnLoc();
 					if (loc != null)
 					{
 						return loc;

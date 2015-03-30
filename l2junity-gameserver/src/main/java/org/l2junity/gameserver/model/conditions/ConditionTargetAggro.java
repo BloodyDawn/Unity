@@ -30,7 +30,6 @@ import org.l2junity.gameserver.model.skills.Skill;
  */
 public class ConditionTargetAggro extends Condition
 {
-	
 	private final boolean _isAggro;
 	
 	/**
@@ -51,7 +50,7 @@ public class ConditionTargetAggro extends Condition
 		}
 		if (effected instanceof PlayerInstance)
 		{
-			return ((PlayerInstance) effected).getKarma() > 0;
+			return ((PlayerInstance) effected).getReputation() < 0;
 		}
 		return false;
 	}

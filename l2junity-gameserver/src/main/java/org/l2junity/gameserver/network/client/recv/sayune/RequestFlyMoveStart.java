@@ -57,7 +57,7 @@ public class RequestFlyMoveStart implements IClientIncomingPacket
 			return;
 		}
 		
-		if (activeChar.getKarma() != 0)
+		if (activeChar.getReputation() < 0)
 		{
 			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_USE_SAYUNE_WHILE_IN_A_CHAOTIC_STATE);
 			return;

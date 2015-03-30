@@ -61,7 +61,7 @@ public class CharSelected implements IClientOutgoingPacket
 		packet.writeQ(_activeChar.getSp());
 		packet.writeQ(_activeChar.getExp());
 		packet.writeD(_activeChar.getLevel());
-		packet.writeD(_activeChar.getKarma()); // thx evill33t
+		packet.writeD(_activeChar.getReputation());
 		packet.writeD(_activeChar.getPkKills());
 		packet.writeD(GameTimeController.getInstance().getGameTime() % (24 * 60)); // "reset" on 24th hour
 		packet.writeD(0x00);

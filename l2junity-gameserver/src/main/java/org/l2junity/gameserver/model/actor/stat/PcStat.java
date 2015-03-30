@@ -90,15 +90,12 @@ public class PcStat extends PlayableStat
 		}
 		
 		// Set new karma
-		if (!activeChar.isCursedWeaponEquipped() && (activeChar.getKarma() > 0) && (activeChar.isGM() || !activeChar.isInsideZone(ZoneId.PVP)))
+		if (!activeChar.isCursedWeaponEquipped() && (activeChar.getReputation() < 0) && (activeChar.isGM() || !activeChar.isInsideZone(ZoneId.PVP)))
 		{
-			int karmaLost = Formulas.calculateKarmaLost(activeChar, value);
+			final int karmaLost = Formulas.calculateKarmaLost(activeChar, value);
 			if (karmaLost > 0)
 			{
-				activeChar.setKarma(activeChar.getKarma() - karmaLost);
-				final SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.YOUR_REPUTATION_HAS_BEEN_CHANGED_TO_S1);
-				msg.addInt(activeChar.getKarma());
-				activeChar.sendPacket(msg);
+				activeChar.setReputation(Math.min((activeChar.getReputation() + karmaLost), 0));
 			}
 		}
 		

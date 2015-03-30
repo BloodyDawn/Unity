@@ -36,8 +36,8 @@ public class EnemySummon implements ITargetTypeHandler
 	{
 		if (target.isSummon())
 		{
-			Summon targetSummon = (Summon) target;
-			if ((activeChar.isPlayer() && (activeChar.getPet() != targetSummon) && activeChar.hasServitor(targetSummon.getObjectId()) && !targetSummon.isDead() && ((targetSummon.getOwner().getPvpFlag() != 0) || (targetSummon.getOwner().getKarma() > 0))) || (targetSummon.getOwner().isInsideZone(ZoneId.PVP) && activeChar.getActingPlayer().isInsideZone(ZoneId.PVP)) || (targetSummon.getOwner().isInDuel() && activeChar.getActingPlayer().isInDuel() && (targetSummon.getOwner().getDuelId() == activeChar.getActingPlayer().getDuelId())))
+			final Summon targetSummon = (Summon) target;
+			if ((activeChar.isPlayer() && (activeChar.getPet() != targetSummon) && activeChar.hasServitor(targetSummon.getObjectId()) && !targetSummon.isDead() && ((targetSummon.getOwner().getPvpFlag() != 0) || (targetSummon.getOwner().getReputation() < 0))) || (targetSummon.getOwner().isInsideZone(ZoneId.PVP) && activeChar.getActingPlayer().isInsideZone(ZoneId.PVP)) || (targetSummon.getOwner().isInDuel() && activeChar.getActingPlayer().isInDuel() && (targetSummon.getOwner().getDuelId() == activeChar.getActingPlayer().getDuelId())))
 			{
 				return new Creature[]
 				{

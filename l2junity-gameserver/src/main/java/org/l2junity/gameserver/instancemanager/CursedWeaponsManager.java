@@ -28,6 +28,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.l2junity.Config;
@@ -172,7 +173,7 @@ public final class CursedWeaponsManager
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			Statement s = con.createStatement();
-			ResultSet rs = s.executeQuery("SELECT itemId, charId, playerKarma, playerPkKills, nbKills, endTime FROM cursed_weapons"))
+			ResultSet rs = s.executeQuery("SELECT itemId, charId, playerReputation, playerPkKills, nbKills, endTime FROM cursed_weapons"))
 		{
 			// Retrieve the L2PcInstance from the characters table of the database
 			CursedWeapon cw;
@@ -180,7 +181,7 @@ public final class CursedWeaponsManager
 			{
 				cw = _cursedWeapons.get(rs.getInt("itemId"));
 				cw.setPlayerId(rs.getInt("charId"));
-				cw.setPlayerKarma(rs.getInt("playerKarma"));
+				cw.setPlayerReputation(rs.getInt("playerReputation"));
 				cw.setPlayerPkKills(rs.getInt("playerPkKills"));
 				cw.setNbKills(rs.getInt("nbKills"));
 				cw.setEndTime(rs.getLong("endTime"));
@@ -234,9 +235,9 @@ public final class CursedWeaponsManager
 						}
 						
 						// Restore the player's old karma and pk count
-						try (PreparedStatement update = con.prepareStatement("UPDATE characters SET karma=?, pkkills=? WHERE charId=?"))
+						try (PreparedStatement update = con.prepareStatement("UPDATE characters SET reputation=?, pkkills=? WHERE charId=?"))
 						{
-							update.setInt(1, cw.getPlayerKarma());
+							update.setInt(1, cw.getPlayerReputation());
 							update.setInt(2, cw.getPlayerPkKills());
 							update.setInt(3, playerId);
 							if (update.executeUpdate() != 1)

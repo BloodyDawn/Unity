@@ -27,7 +27,6 @@ import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.enums.TrapAction;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.tasks.npc.trap.TrapTask;
@@ -176,7 +175,7 @@ public final class L2TrapInstance extends Npc
 		}
 		
 		// observers
-		if ((target instanceof PlayerInstance) && ((PlayerInstance) target).inObserverMode())
+		if ((target.isPlayer()) && target.getActingPlayer().inObserverMode())
 		{
 			return false;
 		}
@@ -199,13 +198,13 @@ public final class L2TrapInstance extends Npc
 		// trap owned by players not attack non-flagged players
 		if (_owner != null)
 		{
-			if (target instanceof Attackable)
+			if (target.isAttackable())
 			{
 				return true;
 			}
 			
 			final PlayerInstance player = target.getActingPlayer();
-			if ((player == null) || ((player.getPvpFlag() == 0) && (player.getKarma() == 0)))
+			if ((player == null) || ((player.getPvpFlag() == 0) && (player.getReputation() >= 0)))
 			{
 				return false;
 			}
@@ -236,9 +235,9 @@ public final class L2TrapInstance extends Npc
 		return null;
 	}
 	
-	public int getKarma()
+	public int getReputation()
 	{
-		return _owner != null ? _owner.getKarma() : 0;
+		return _owner != null ? _owner.getReputation() : 0;
 	}
 	
 	/**
@@ -349,7 +348,7 @@ public final class L2TrapInstance extends Npc
 			return;
 		}
 		
-		if ((_owner != null) && (_owner.getPvpFlag() == 0) && (_owner.getKarma() == 0))
+		if ((_owner != null) && (_owner.getPvpFlag() == 0) && (_owner.getReputation() >= 0))
 		{
 			return;
 		}

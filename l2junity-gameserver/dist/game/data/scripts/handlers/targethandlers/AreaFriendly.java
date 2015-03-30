@@ -130,7 +130,7 @@ public class AreaFriendly implements ITargetTypeHandler
 				return (activeChar.getAllyId() == target.getAllyId());
 			}
 			
-			if ((target != activeChar) && ((target.getActingPlayer().getPvpFlag() > 0) || (target.getActingPlayer().getKarma() > 0)))
+			if ((target != activeChar) && ((target.getActingPlayer().getPvpFlag() > 0) || (target.getActingPlayer().getReputation() < 0)))
 			{
 				return false;
 			}

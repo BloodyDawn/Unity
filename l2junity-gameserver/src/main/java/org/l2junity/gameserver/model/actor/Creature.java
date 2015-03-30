@@ -5138,16 +5138,15 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		if (Config.ALT_GAME_KARMA_PLAYER_CAN_BE_KILLED_IN_PEACEZONE)
 		{
 			// allows red to be attacked and red to attack flagged players
-			if ((target.getActingPlayer() != null) && (target.getActingPlayer().getKarma() > 0))
+			if ((target.getActingPlayer() != null) && (target.getActingPlayer().getReputation() < 0))
 			{
 				return false;
 			}
-			if ((attacker.getActingPlayer() != null) && (attacker.getActingPlayer().getKarma() > 0) && (target.getActingPlayer() != null) && (target.getActingPlayer().getPvpFlag() > 0))
+			if ((attacker.getActingPlayer() != null) && (attacker.getActingPlayer().getReputation() < 0) && (target.getActingPlayer() != null) && (target.getActingPlayer().getPvpFlag() > 0))
 			{
 				return false;
 			}
 		}
-		
 		return (target.isInsideZone(ZoneId.PEACE) || attacker.isInsideZone(ZoneId.PEACE));
 	}
 	
@@ -5861,7 +5860,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 							if (target.isPlayer())
 							{
 								// Casting non offensive skill on player with pvp flag set or with karma
-								if (!(target.equals(this) || target.equals(player)) && ((target.getActingPlayer().getPvpFlag() > 0) || (target.getActingPlayer().getKarma() > 0)))
+								if (!(target.equals(this) || target.equals(player)) && ((target.getActingPlayer().getPvpFlag() > 0) || (target.getActingPlayer().getReputation() < 0)))
 								{
 									player.updatePvPStatus();
 								}

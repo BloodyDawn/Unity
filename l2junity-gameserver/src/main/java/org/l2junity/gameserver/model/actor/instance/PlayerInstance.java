@@ -196,13 +196,13 @@ import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerEquipItem;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerFameChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerHennaRemove;
-import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerKarmaChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogout;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPKChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerProfessionChange;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPvPChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPvPKill;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerReputationChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerSubChange;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerTransform;
 import org.l2junity.gameserver.model.events.impl.character.player.mentoring.OnPlayerMenteeStatus;
@@ -359,8 +359,8 @@ public final class PlayerInstance extends Playable
 	private static final String DELETE_ITEM_REUSE_SAVE = "DELETE FROM character_item_reuse_save WHERE charId=?";
 	
 	// Character Character SQL String Definitions:
-	private static final String INSERT_CHARACTER = "INSERT INTO characters (account_name,charId,char_name,level,maxHp,curHp,maxCp,curCp,maxMp,curMp,face,hairStyle,hairColor,sex,exp,sp,karma,fame,pvpkills,pkkills,clanid,race,classid,deletetime,cancraft,title,title_color,accesslevel,online,isin7sdungeon,clan_privs,wantspeace,base_class,newbie,nobless,power_grade,vitality_points,createDate) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-	private static final String UPDATE_CHARACTER = "UPDATE characters SET level=?,maxHp=?,curHp=?,maxCp=?,curCp=?,maxMp=?,curMp=?,face=?,hairStyle=?,hairColor=?,sex=?,heading=?,x=?,y=?,z=?,exp=?,expBeforeDeath=?,sp=?,karma=?,fame=?,pvpkills=?,pkkills=?,clanid=?,race=?,classid=?,deletetime=?,title=?,title_color=?,accesslevel=?,online=?,isin7sdungeon=?,clan_privs=?,wantspeace=?,base_class=?,onlinetime=?,newbie=?,nobless=?,power_grade=?,subpledge=?,lvl_joined_academy=?,apprentice=?,sponsor=?,clan_join_expiry_time=?,clan_create_expiry_time=?,char_name=?,death_penalty_level=?,bookmarkslot=?,vitality_points=?,language=? WHERE charId=?";
+	private static final String INSERT_CHARACTER = "INSERT INTO characters (account_name,charId,char_name,level,maxHp,curHp,maxCp,curCp,maxMp,curMp,face,hairStyle,hairColor,sex,exp,sp,reputation,fame,pvpkills,pkkills,clanid,race,classid,deletetime,cancraft,title,title_color,accesslevel,online,isin7sdungeon,clan_privs,wantspeace,base_class,newbie,nobless,power_grade,vitality_points,createDate) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	private static final String UPDATE_CHARACTER = "UPDATE characters SET level=?,maxHp=?,curHp=?,maxCp=?,curCp=?,maxMp=?,curMp=?,face=?,hairStyle=?,hairColor=?,sex=?,heading=?,x=?,y=?,z=?,exp=?,expBeforeDeath=?,sp=?,reputation=?,fame=?,pvpkills=?,pkkills=?,clanid=?,race=?,classid=?,deletetime=?,title=?,title_color=?,accesslevel=?,online=?,isin7sdungeon=?,clan_privs=?,wantspeace=?,base_class=?,onlinetime=?,newbie=?,nobless=?,power_grade=?,subpledge=?,lvl_joined_academy=?,apprentice=?,sponsor=?,clan_join_expiry_time=?,clan_create_expiry_time=?,char_name=?,death_penalty_level=?,bookmarkslot=?,vitality_points=?,language=? WHERE charId=?";
 	private static final String RESTORE_CHARACTER = "SELECT * FROM characters WHERE charId=?";
 	
 	// Character Teleport Bookmark:
@@ -436,8 +436,8 @@ public final class PlayerInstance extends Playable
 	/** The Experience of the L2PcInstance before the last Death Penalty */
 	private long _expBeforeDeath;
 	
-	/** The Karma of the L2PcInstance (if higher than 0, the name of the L2PcInstance appears in red) */
-	private int _karma;
+	/** The Reputation of the L2PcInstance */
+	private int _reputation;
 	
 	/** The number of player killed during a PvP (the player killed was PvP Flagged) */
 	private int _pvpKills;
@@ -1922,28 +1922,34 @@ public final class PlayerInstance extends Playable
 	}
 	
 	/**
-	 * Return the Karma of the L2PcInstance.
+	 * @return the reputation of the PlayerInstance.
 	 */
 	@Override
-	public int getKarma()
+	public int getReputation()
 	{
-		return _karma;
+		return _reputation;
 	}
 	
 	/**
-	 * Set the Karma of the L2PcInstance and send a Server->Client packet StatusUpdate (broadcast).
-	 * @param karma
+	 * Set the reputation of the PlayerInstance and send a Server->Client packet StatusUpdate (broadcast).
+	 * @param reputation
 	 */
-	public void setKarma(int karma)
+	public void setReputation(int reputation)
 	{
 		// Notify to scripts.
-		EventDispatcher.getInstance().notifyEventAsync(new OnPlayerKarmaChanged(this, getKarma(), karma), this);
+		EventDispatcher.getInstance().notifyEventAsync(new OnPlayerReputationChanged(this, getReputation(), reputation), this);
 		
-		if (karma < 0)
+		if (reputation > Config.MAX_REPUTATION) // Max count of positive reputation
 		{
-			karma = 0;
+			reputation = Config.MAX_REPUTATION;
 		}
-		if ((_karma == 0) && (karma > 0))
+		
+		if (getReputation() == reputation)
+		{
+			return;
+		}
+		
+		if ((getReputation() >= 0) && (reputation < 0))
 		{
 			World.getInstance().forEachVisibleObject(this, L2GuardInstance.class, object ->
 			{
@@ -1953,14 +1959,9 @@ public final class PlayerInstance extends Playable
 				}
 			});
 		}
-		else if ((_karma > 0) && (karma == 0))
-		{
-			// Send a Server->Client StatusUpdate packet with Karma and PvP Flag to the L2PcInstance and all L2PcInstance to inform (broadcast)
-			setKarmaFlag(0);
-		}
-		
-		_karma = karma;
-		broadcastKarma();
+		_reputation = reputation;
+		sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOUR_REPUTATION_HAS_BEEN_CHANGED_TO_S1).addInt(getReputation()));
+		broadcastReputation();
 	}
 	
 	public int getExpertiseArmorPenalty()
@@ -5298,8 +5299,8 @@ public final class PlayerInstance extends Playable
 			return;
 		}
 		
-		PlayerInstance pk = killer.getActingPlayer();
-		if ((getKarma() <= 0) && (pk != null) && (pk.getClan() != null) && (getClan() != null) && (pk.getClan().isAtWarWith(getClanId())
+		final PlayerInstance pk = killer.getActingPlayer();
+		if ((getReputation() >= 0) && (pk != null) && (pk.getClan() != null) && (getClan() != null) && (pk.getClan().isAtWarWith(getClanId())
 		// || getClan().isAtWarWith(((L2PcInstance)killer).getClanId())
 		))
 		{
@@ -5309,7 +5310,6 @@ public final class PlayerInstance extends Playable
 		if ((!isInsideZone(ZoneId.PVP) || (pk == null)) && (!isGM() || Config.KARMA_DROP_GM))
 		{
 			boolean isKarmaDrop = false;
-			boolean isKillerNpc = (killer instanceof Npc);
 			int pkLimit = Config.KARMA_PK_LIMIT;
 			
 			int dropEquip = 0;
@@ -5318,7 +5318,7 @@ public final class PlayerInstance extends Playable
 			int dropLimit = 0;
 			int dropPercent = 0;
 			
-			if ((getKarma() > 0) && (getPkKills() >= pkLimit))
+			if ((getReputation() < 0) && (getPkKills() >= pkLimit))
 			{
 				isKarmaDrop = true;
 				dropPercent = Config.KARMA_RATE_DROP;
@@ -5327,7 +5327,7 @@ public final class PlayerInstance extends Playable
 				dropItem = Config.KARMA_RATE_DROP_ITEM;
 				dropLimit = Config.KARMA_DROP_LIMIT;
 			}
-			else if (isKillerNpc && (getLevel() > 4))
+			else if (killer.isNpc() && (getLevel() > 4))
 			{
 				dropPercent = Config.PLAYER_RATE_DROP;
 				dropEquip = Config.PLAYER_RATE_DROP_EQUIP;
@@ -5339,9 +5339,7 @@ public final class PlayerInstance extends Playable
 			if ((dropPercent > 0) && (Rnd.get(100) < dropPercent))
 			{
 				int dropCount = 0;
-				
 				int itemDropPercent = 0;
-				
 				final Summon pet = getPet();
 				
 				for (ItemInstance itemDrop : getInventory().getItems())
@@ -5434,11 +5432,16 @@ public final class PlayerInstance extends Playable
 			}
 			return;
 		}
-		
 		// Check if it's pvp
 		if ((checkIfPvP(target) && (targetPlayer.getPvpFlag() != 0)) || (isInsideZone(ZoneId.PVP) && targetPlayer.isInsideZone(ZoneId.PVP)))
 		{
 			increasePvpKills(target);
+			
+			final int levelDiff = target.getLevel() - getLevel();
+			if ((getReputation() >= 0) && (levelDiff < 11) && (levelDiff > -11)) // TODO: Time check, same player can't be killed again in 8 hours
+			{
+				setReputation(getReputation() + Config.REPUTATION_INCREASE);
+			}
 		}
 		else
 		{
@@ -5452,7 +5455,7 @@ public final class PlayerInstance extends Playable
 			}
 			
 			// 'No war' or 'One way war' -> 'Normal PK'
-			if (targetPlayer.getKarma() > 0) // Target player has karma
+			if (targetPlayer.getReputation() < 0) // Target player has karma
 			{
 				if (Config.KARMA_AWARD_PK_KILL)
 				{
@@ -5463,7 +5466,7 @@ public final class PlayerInstance extends Playable
 			{
 				increasePvpKills(target);
 			}
-			else if (targetPlayer.getPvpFlag() == 0) // Target player doesn't have karma
+			else if (targetPlayer.getReputation() >= 0) // Target player doesn't have karma
 			{
 				increasePkKillsAndKarma(target);
 				checkItemRestriction(); // Unequip adventurer items
@@ -5477,7 +5480,7 @@ public final class PlayerInstance extends Playable
 	 */
 	public void increasePvpKills(Creature target)
 	{
-		if ((target instanceof PlayerInstance) && AntiFeedManager.getInstance().check(this, target))
+		if ((target.isPlayer()) && AntiFeedManager.getInstance().check(this, target))
 		{
 			setPvpKills(getPvpKills() + 1);
 			
@@ -5500,17 +5503,25 @@ public final class PlayerInstance extends Playable
 			return;
 		}
 		
-		// Calculate new karma. (calculate karma before incrase pk count!)
-		setKarma(getKarma() + Formulas.calculateKarmaGain(getPkKills(), target.isSummon()));
-		
-		// PK Points are increased only if you kill a player.
-		if (target.isPlayer())
+		if ((getReputation() > 0) && (getPkKills() == 0))
 		{
+			setReputation(0);
 			setPkKills(getPkKills() + 1);
+		}
+		else
+		{
+			// Calculate new karma. (calculate karma before incrase pk count!)
+			setReputation(getReputation() - Formulas.calculateKarmaGain(getPkKills(), target.isSummon()));
+			
+			// PK Points are increased only if you kill a player.
+			if (target.isPlayer())
+			{
+				setPkKills(getPkKills() + 1);
+			}
 		}
 		
 		// Update player's UI.
-		UserInfo ui = new UserInfo(this, false);
+		final UserInfo ui = new UserInfo(this, false);
 		ui.addComponentType(UserInfoType.SOCIAL);
 		sendPacket(ui);
 	}
@@ -5531,8 +5542,7 @@ public final class PlayerInstance extends Playable
 	
 	public void updatePvPStatus(Creature target)
 	{
-		PlayerInstance player_target = target.getActingPlayer();
-		
+		final PlayerInstance player_target = target.getActingPlayer();
 		if (player_target == null)
 		{
 			return;
@@ -5542,7 +5552,8 @@ public final class PlayerInstance extends Playable
 		{
 			return;
 		}
-		if ((!isInsideZone(ZoneId.PVP) || !player_target.isInsideZone(ZoneId.PVP)) && (player_target.getKarma() == 0))
+		
+		if ((!isInsideZone(ZoneId.PVP) || !player_target.isInsideZone(ZoneId.PVP)) && (player_target.getReputation() >= 0))
 		{
 			if (checkIfPvP(player_target))
 			{
@@ -5552,6 +5563,7 @@ public final class PlayerInstance extends Playable
 			{
 				setPvpFlagLasts(System.currentTimeMillis() + Config.PVP_NORMAL_TIME);
 			}
+			
 			if (getPvpFlag() == 0)
 			{
 				startPvPFlag();
@@ -5607,7 +5619,7 @@ public final class PlayerInstance extends Playable
 			}
 		}
 		
-		if (getKarma() > 0)
+		if (getReputation() < 0)
 		{
 			percentLost *= Config.RATE_KARMA_EXP_LOST;
 		}
@@ -5632,7 +5644,6 @@ public final class PlayerInstance extends Playable
 		}
 		
 		setExpBeforeDeath(getExp());
-		
 		getStat().addExp(-lostExp);
 	}
 	
@@ -6644,54 +6655,11 @@ public final class PlayerInstance extends Playable
 	}
 	
 	/**
-	 * Send a Server->Client StatusUpdate packet with Karma and PvP Flag to the L2PcInstance and all L2PcInstance to inform (broadcast).
-	 * @param flag
-	 */
-	public void setKarmaFlag(int flag)
-	{
-		StatusUpdate su = new StatusUpdate(this);
-		su.addAttribute(StatusUpdate.PVP_FLAG, getKarma());
-		sendPacket(su);
-		
-		World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
-		{
-			if (!isVisibleFor(player))
-			{
-				return;
-			}
-			
-			final int relation = getRelation(player);
-			Integer oldrelation = getKnownRelations().get(player.getObjectId());
-			if ((oldrelation == null) || (oldrelation != relation))
-			{
-				final RelationChanged rc = new RelationChanged();
-				rc.addRelation(this, relation, isAutoAttackable(player));
-				if (hasSummon())
-				{
-					final Summon pet = getPet();
-					if (pet != null)
-					{
-						rc.addRelation(pet, relation, isAutoAttackable(player));
-					}
-					if (hasServitors())
-					{
-						getServitors().values().forEach(s -> rc.addRelation(s, relation, isAutoAttackable(player)));
-					}
-				}
-				player.sendPacket(rc);
-				getKnownRelations().put(player.getObjectId(), relation);
-			}
-		});
-	}
-	
-	/**
 	 * Send a Server->Client StatusUpdate packet with Karma to the L2PcInstance and all L2PcInstance to inform (broadcast).
 	 */
-	public void broadcastKarma()
+	public void broadcastReputation()
 	{
-		StatusUpdate su = new StatusUpdate(this);
-		su.addAttribute(StatusUpdate.KARMA, getKarma());
-		sendPacket(su);
+		broadcastUserInfo(UserInfoType.SOCIAL);
 		
 		World.getInstance().forEachVisibleObject(this, PlayerInstance.class, player ->
 		{
@@ -6701,7 +6669,7 @@ public final class PlayerInstance extends Playable
 			}
 			
 			final int relation = getRelation(player);
-			Integer oldrelation = getKnownRelations().get(player.getObjectId());
+			final Integer oldrelation = getKnownRelations().get(player.getObjectId());
 			if ((oldrelation == null) || (oldrelation != relation))
 			{
 				final RelationChanged rc = new RelationChanged();
@@ -6787,7 +6755,7 @@ public final class PlayerInstance extends Playable
 			statement.setInt(14, getAppearance().getSex() ? 1 : 0);
 			statement.setLong(15, getExp());
 			statement.setLong(16, getSp());
-			statement.setInt(17, getKarma());
+			statement.setInt(17, getReputation());
 			statement.setInt(18, getFame());
 			statement.setInt(19, getPvpKills());
 			statement.setInt(20, getPkKills());
@@ -6858,7 +6826,7 @@ public final class PlayerInstance extends Playable
 					
 					player.setHeading(rset.getInt("heading"));
 					
-					player.setKarma(rset.getInt("karma"));
+					player.setReputation(rset.getInt("reputation"));
 					player.setFame(rset.getInt("fame"));
 					player.setPvpKills(rset.getInt("pvpkills"));
 					player.setPkKills(rset.getInt("pkkills"));
@@ -7404,7 +7372,7 @@ public final class PlayerInstance extends Playable
 			statement.setLong(16, exp);
 			statement.setLong(17, getExpBeforeDeath());
 			statement.setLong(18, sp);
-			statement.setInt(19, getKarma());
+			statement.setInt(19, getReputation());
 			statement.setInt(20, getFame());
 			statement.setInt(21, getPvpKills());
 			statement.setInt(22, getPkKills());
@@ -8429,7 +8397,7 @@ public final class PlayerInstance extends Playable
 		}
 		
 		// Check if the L2PcInstance has Karma
-		if ((getKarma() > 0) || (getPvpFlag() > 0))
+		if ((getReputation() < 0) || (getPvpFlag() > 0))
 		{
 			return true;
 		}
@@ -9063,7 +9031,7 @@ public final class PlayerInstance extends Playable
 			}
 			
 			// On retail, it is impossible to debuff a "peaceful" player.
-			if ((targetPlayer.getPvpFlag() == 0) && (targetPlayer.getKarma() == 0))
+			if ((targetPlayer.getPvpFlag() == 0) && (targetPlayer.getReputation() >= 0))
 			{
 				// Check if skill can do dmg
 				if ((skill.getEffectRange() > 0) && isCtrlPressed && (getTarget() == target))
@@ -9076,7 +9044,7 @@ public final class PlayerInstance extends Playable
 				return false;
 			}
 			
-			if ((targetPlayer.getPvpFlag() > 0) || (targetPlayer.getKarma() > 0))
+			if ((targetPlayer.getPvpFlag() > 0) || (targetPlayer.getReputation() < 0))
 			{
 				return true;
 			}
@@ -12488,7 +12456,7 @@ public final class PlayerInstance extends Playable
 		
 		if (killer.isInCategory(CategoryType.SHILENS_FOLLOWERS) || (Rnd.get(1, 100) <= ((Config.DEATH_PENALTY_CHANCE) * percent)))
 		{
-			if (!killer.isPlayable() || (getKarma() > 0))
+			if (!killer.isPlayable() || (getReputation() < 0))
 			{
 				increaseShilensBreathDebuff();
 			}
@@ -13811,26 +13779,18 @@ public final class PlayerInstance extends Playable
 	
 	public boolean canAttackCharacter(Creature cha)
 	{
-		if (cha instanceof Attackable)
+		if (cha.isAttackable())
 		{
 			return true;
 		}
-		else if (cha instanceof Playable)
+		else if (cha.isPlayable())
 		{
 			if (cha.isInsideZone(ZoneId.PVP) && !cha.isInsideZone(ZoneId.SIEGE))
 			{
 				return true;
 			}
 			
-			PlayerInstance target;
-			if (cha instanceof Summon)
-			{
-				target = ((Summon) cha).getOwner();
-			}
-			else
-			{
-				target = (PlayerInstance) cha;
-			}
+			final PlayerInstance target = cha.isSummon() ? ((Summon) cha).getOwner() : (PlayerInstance) cha;
 			
 			if (isInDuel() && target.isInDuel() && (target.getDuelId() == getDuelId()))
 			{
@@ -13864,7 +13824,7 @@ public final class PlayerInstance extends Playable
 			}
 			else if ((getClan() == null) || (target.getClan() == null))
 			{
-				if ((target.getPvpFlag() == 0) && (target.getKarma() == 0))
+				if ((target.getPvpFlag() == 0) && (target.getReputation() >= 0))
 				{
 					return false;
 				}
