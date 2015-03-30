@@ -43,6 +43,7 @@ import org.l2junity.gameserver.instancemanager.SiegeManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.L2Spawn;
+import org.l2junity.gameserver.model.PcCondOverride;
 import org.l2junity.gameserver.model.TowerSpawn;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -462,12 +463,33 @@ public final class Castle extends AbstractResidence
 	
 	public void openCloseDoor(PlayerInstance activeChar, int doorId, boolean open)
 	{
-		if (activeChar.getClanId() != getOwnerId())
+		if ((activeChar.getClanId() != getOwnerId()) && !activeChar.canOverrideCond(PcCondOverride.CASTLE_CONDITIONS))
 		{
 			return;
 		}
 		
-		L2DoorInstance door = getDoor(doorId);
+		final L2DoorInstance door = getDoor(doorId);
+		if (door != null)
+		{
+			if (open)
+			{
+				door.openMe();
+			}
+			else
+			{
+				door.closeMe();
+			}
+		}
+	}
+	
+	public void openCloseDoor(PlayerInstance activeChar, String doorName, boolean open)
+	{
+		if ((activeChar.getClanId() != getOwnerId()) && !activeChar.canOverrideCond(PcCondOverride.CASTLE_CONDITIONS))
+		{
+			return;
+		}
+		
+		final L2DoorInstance door = getDoor(doorName);
 		if (door != null)
 		{
 			if (open)
@@ -882,19 +904,12 @@ public final class Castle extends AbstractResidence
 	
 	public final L2DoorInstance getDoor(int doorId)
 	{
-		if (doorId <= 0)
-		{
-			return null;
-		}
-		
-		for (L2DoorInstance door : getDoors())
-		{
-			if (door.getId() == doorId)
-			{
-				return door;
-			}
-		}
-		return null;
+		return getDoors().stream().filter(d -> d.getId() == doorId).findFirst().orElse(null);
+	}
+	
+	public final L2DoorInstance getDoor(String doorName)
+	{
+		return getDoors().stream().filter(d -> d.getTemplate().getName().equals(doorName)).findFirst().orElse(null);
 	}
 	
 	public final List<L2DoorInstance> getDoors()

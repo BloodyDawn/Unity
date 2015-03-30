@@ -89,7 +89,6 @@ public enum InstanceType
 	L2VillageMasterInstance(L2NpcInstance),
 	// Doormens
 	L2DoormenInstance(L2NpcInstance),
-	L2CastleDoormenInstance(L2DoormenInstance),
 	L2FortDoormenInstance(L2DoormenInstance),
 	L2ClanHallDoormenInstance(L2DoormenInstance),
 	// Custom
