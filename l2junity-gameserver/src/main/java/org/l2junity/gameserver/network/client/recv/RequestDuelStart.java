@@ -19,6 +19,7 @@
 package org.l2junity.gameserver.network.client.recv;
 
 import org.l2junity.Config;
+import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
@@ -88,7 +89,8 @@ public final class RequestDuelStart implements IClientIncomingPacket
 		if (_partyDuel == 1)
 		{
 			// Player must be in a party & the party leader
-			if (!activeChar.isInParty() || !(activeChar.isInParty() && activeChar.getParty().isLeader(activeChar)))
+			final Party party = activeChar.getParty();
+			if ((party == null) || !party.isLeader(activeChar))
 			{
 				activeChar.sendMessage("You have to be the leader of a party in order to request a party duel.");
 				return;
