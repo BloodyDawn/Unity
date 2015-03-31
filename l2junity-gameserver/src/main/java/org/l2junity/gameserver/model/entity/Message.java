@@ -465,6 +465,7 @@ public class Message
 		if (_attachments != null)
 		{
 			_attachments.deleteMe();
+			MailManager.getInstance().removeAttachmentsInDb(_messageId);
 			_attachments = null;
 		}
 	}

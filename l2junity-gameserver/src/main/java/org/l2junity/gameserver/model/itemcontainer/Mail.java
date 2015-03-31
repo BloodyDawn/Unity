@@ -151,6 +151,19 @@ public class Mail extends ItemContainer
 	}
 	
 	@Override
+	public void deleteMe()
+	{
+		for (ItemInstance item : _items.values())
+		{
+			item.updateDatabase(true);
+			item.deleteMe();
+			World.getInstance().removeObject(item);
+		}
+		
+		_items.clear();
+	}
+	
+	@Override
 	public int getOwnerId()
 	{
 		return _ownerId;
