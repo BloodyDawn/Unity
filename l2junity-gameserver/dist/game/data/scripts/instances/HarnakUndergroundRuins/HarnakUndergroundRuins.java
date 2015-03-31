@@ -280,6 +280,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 					if (tmpworld instanceof HuRWorld)
 					{
 						final HuRWorld world = (HuRWorld) tmpworld;
+						world.setStatus(2);
 						final List<Npc> spawnedNpcs = spawnGroup("second_room_wave_1_" + npcId, world.getInstanceId());
 						world.spawnedNpc.addAll(spawnedNpcs);
 						world.waveNpcId = npcId;
@@ -550,7 +551,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 				if (world.spawnedNpc.isEmpty())
 				{
 					startQuestTimer("spawn_npc2", 100, npc, killer);
-					world.setStatus(2);
+					world.setStatus(1);
 				}
 			}
 			else if (world.isStatus(1))
