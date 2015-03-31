@@ -1397,14 +1397,6 @@ public final class SkillTreesData implements IXmlReader
 			final int maxLvl = SkillData.getInstance().getMaxLevel(skill.getId());
 			final int hashCode = SkillData.getSkillHashCode(skill.getId(), maxLvl);
 			
-			System.out.println("Skill ID : " + skill.getId());
-			System.out.println("Skill Name : " + skill.getName());
-			System.out.println("Is Current Class Skill No Parent : " + isCurrentClassSkillNoParent(player.getClassId(), hashCode));
-			System.out.println("Is Remove Skill : " + isRemoveSkill(player.getClassId(), skill.getId()));
-			System.out.println("Is Awaken Save Skill : " + isAwakenSaveSkill(player.getClassId(), skill.getId()));
-			
-			System.out.println("----------------------------------");
-			
 			if (!isCurrentClassSkillNoParent(player.getClassId(), hashCode) && !isRemoveSkill(player.getClassId(), skill.getId()) && !isAwakenSaveSkill(player.getClassId(), skill.getId()))
 			{
 				player.removeSkill(skill, true, true);
