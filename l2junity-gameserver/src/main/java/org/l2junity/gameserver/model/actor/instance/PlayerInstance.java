@@ -1438,9 +1438,16 @@ public final class PlayerInstance extends Playable
 			return;
 		}
 		
-		if (getLastQuestNpcObject() > 0)
+		final Npc target = getLastFolkNPC();
+		
+		if ((target != null) && isInsideRadius(target, Npc.INTERACTION_DISTANCE, false, false))
+		{
+			quest.notifyEvent(event, target, this);
+		}
+		else if (getLastQuestNpcObject() > 0)
 		{
 			final WorldObject object = World.getInstance().findObject(getLastQuestNpcObject());
+			
 			if (object.isNpc() && isInsideRadius(object, Npc.INTERACTION_DISTANCE, false, false))
 			{
 				final Npc npc = (Npc) object;
