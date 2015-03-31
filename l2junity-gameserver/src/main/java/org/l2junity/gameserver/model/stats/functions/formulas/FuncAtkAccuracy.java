@@ -46,6 +46,10 @@ public class FuncAtkAccuracy extends AbstractFunction
 		final int level = effector.getLevel();
 		// [Square(DEX)] * 5 + lvl + weapon hitbonus;
 		double value = initVal + (Math.sqrt(effector.getDEX()) * 5) + level;
+		if (level > 69)
+		{
+			value += level - 69;
+		}
 		if (level > 77)
 		{
 			value += 1;
@@ -66,6 +70,9 @@ public class FuncAtkAccuracy extends AbstractFunction
 		{
 			value += 1;
 		}
+		
+		// System.out.println(value);
+		
 		return value;
 	}
 }
