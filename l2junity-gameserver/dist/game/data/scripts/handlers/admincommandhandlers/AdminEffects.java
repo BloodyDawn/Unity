@@ -34,6 +34,7 @@ import org.l2junity.gameserver.model.skills.AbnormalVisualEffect;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.Earthquake;
 import org.l2junity.gameserver.network.client.send.ExRedSky;
+import org.l2junity.gameserver.network.client.send.ExUserInfoAbnormalVisualEffect;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
@@ -107,6 +108,7 @@ public class AdminEffects implements IAdminCommandHandler
 			{
 				activeChar.setInvisible(true);
 				activeChar.broadcastUserInfo();
+				activeChar.sendPacket(new ExUserInfoAbnormalVisualEffect(activeChar));
 				activeChar.decayMe();
 				activeChar.spawnMe();
 				activeChar.sendMessage("You are now invisible.");
@@ -115,6 +117,7 @@ public class AdminEffects implements IAdminCommandHandler
 			{
 				activeChar.setInvisible(false);
 				activeChar.broadcastUserInfo();
+				activeChar.sendPacket(new ExUserInfoAbnormalVisualEffect(activeChar));
 				activeChar.sendMessage("You are now visible.");
 			}
 			
@@ -125,6 +128,7 @@ public class AdminEffects implements IAdminCommandHandler
 		{
 			activeChar.setInvisible(true);
 			activeChar.broadcastUserInfo();
+			activeChar.sendPacket(new ExUserInfoAbnormalVisualEffect(activeChar));
 			activeChar.decayMe();
 			activeChar.spawnMe();
 			activeChar.sendMessage("You are now invisible.");
@@ -133,6 +137,7 @@ public class AdminEffects implements IAdminCommandHandler
 		{
 			activeChar.setInvisible(false);
 			activeChar.broadcastUserInfo();
+			activeChar.sendPacket(new ExUserInfoAbnormalVisualEffect(activeChar));
 			activeChar.sendMessage("You are now visible.");
 		}
 		else if (command.startsWith("admin_setinvis"))

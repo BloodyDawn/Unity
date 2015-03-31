@@ -241,10 +241,14 @@ public class CharInfo implements IClientOutgoingPacket
 		
 		packet.writeC(0x00); // TODO: Find me!
 		final Set<AbnormalVisualEffect> abnormalVisualEffects = _activeChar.getCurrentAbnormalVisualEffects();
-		packet.writeD(abnormalVisualEffects.size()); // Confirmed
+		packet.writeD(abnormalVisualEffects.size() + (_gmSeeInvis ? 1 : 0)); // Confirmed
 		for (AbnormalVisualEffect abnormalVisualEffect : abnormalVisualEffects)
 		{
 			packet.writeH(abnormalVisualEffect.getClientId()); // Confirmed
+		}
+		if (_gmSeeInvis)
+		{
+			packet.writeH(AbnormalVisualEffect.STEALTH.getClientId());
 		}
 		packet.writeC(0x00); // TODO: Find me!
 		packet.writeC(_activeChar.isHairAccessoryEnabled() ? 0x01 : 0x00); // Hair accessory

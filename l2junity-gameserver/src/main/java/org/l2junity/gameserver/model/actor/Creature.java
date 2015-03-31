@@ -3146,7 +3146,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		
 		if ((_currentAbnormalVisualEffects == null) || !_currentAbnormalVisualEffects.equals(abnormalVisualEffects))
 		{
-			_currentAbnormalVisualEffects = abnormalVisualEffects;
+			_currentAbnormalVisualEffects = Collections.unmodifiableSet(abnormalVisualEffects);
 			updateAbnormalVisualEffects();
 		}
 	}

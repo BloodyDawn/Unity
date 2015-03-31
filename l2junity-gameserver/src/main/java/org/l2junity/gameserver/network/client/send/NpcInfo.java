@@ -58,11 +58,29 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 	private int _clanId = 0;
 	private int _statusMask = 0;
 	private final Set<AbnormalVisualEffect> _abnormalVisualEffects;
+	private final String _title;
 	
 	public NpcInfo(Npc npc)
 	{
 		_npc = npc;
 		_abnormalVisualEffects = npc.getCurrentAbnormalVisualEffects();
+		
+		if (_npc.isInvisible())
+		{
+			_title = "Invisible";
+		}
+		else if (Config.L2JMOD_CHAMPION_ENABLE && _npc.isChampion())
+		{
+			_title = (Config.L2JMOD_CHAMP_TITLE);
+		}
+		else if (_npc.getTemplate().isUsingServerSideTitle())
+		{
+			_title = _npc.getTemplate().getTitle();
+		}
+		else
+		{
+			_title = _npc.getTitle();
+		}
 		
 		if (npc.getTemplate().getDisplayId() != npc.getTemplate().getId())
 		{
@@ -136,7 +154,7 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 			addComponentType(NpcInfoType.NAME);
 		}
 		
-		if (!_abnormalVisualEffects.isEmpty())
+		if (!_abnormalVisualEffects.isEmpty() || npc.isInvisible())
 		{
 			addComponentType(NpcInfoType.ABNORMALS);
 		}
@@ -217,7 +235,7 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 			}
 			case TITLE:
 			{
-				_initSize += type.getBlockLength() + (npc.getTitle().length() * 2);
+				_initSize += type.getBlockLength() + (_title.length() * 2);
 				break;
 			}
 			case NAME:
@@ -256,7 +274,7 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 		}
 		if (containsMask(NpcInfoType.TITLE))
 		{
-			packet.writeS(_npc.getTitle());
+			packet.writeS(_title);
 		}
 		
 		// Block 2
@@ -397,10 +415,14 @@ public class NpcInfo extends AbstractMaskPacket<NpcInfoType>
 		
 		if (containsMask(NpcInfoType.ABNORMALS))
 		{
-			packet.writeH(_abnormalVisualEffects.size());
+			packet.writeH(_abnormalVisualEffects.size() + (_npc.isInvisible() ? 1 : 0));
 			for (AbnormalVisualEffect abnormalVisualEffect : _abnormalVisualEffects)
 			{
 				packet.writeH(abnormalVisualEffect.getClientId());
+			}
+			if (_npc.isInvisible())
+			{
+				packet.writeH(AbnormalVisualEffect.STEALTH.getClientId());
 			}
 		}
 		return true;

@@ -48,6 +48,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 	private final double _moveMultiplier;
 	private int _enchantLevel = 0;
 	private int _armorEnchant = 0;
+	private final String _title;
 	
 	private final byte[] _masks = new byte[]
 	{
@@ -77,6 +78,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 		_flyWalkSpd = cha.isFlying() ? _walkSpd : 0;
 		_enchantLevel = cha.getInventory().getWeaponEnchant();
 		_armorEnchant = cha.getInventory().getArmorMinEnchant();
+		_title = cha.isInvisible() ? "Invisible" : _activeChar.getAppearance().getVisibleTitle();
 		
 		if (addAll)
 		{
@@ -102,12 +104,12 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 		{
 			case BASIC_INFO:
 			{
-				_initSize += type.getBlockLength() + (_activeChar.getName().length() * 2);
+				_initSize += type.getBlockLength() + (_activeChar.getAppearance().getVisibleName().length() * 2);
 				break;
 			}
 			case CLAN:
 			{
-				_initSize += type.getBlockLength() + (_activeChar.getTitle().length() * 2);
+				_initSize += type.getBlockLength() + (_title.length() * 2);
 				break;
 			}
 			default:
@@ -135,7 +137,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 		
 		if (containsMask(UserInfoType.BASIC_INFO))
 		{
-			packet.writeH(16 + (_activeChar.getName().length() * 2));
+			packet.writeH(16 + (_activeChar.getAppearance().getVisibleName().length() * 2));
 			packet.writeString(_activeChar.getName());
 			packet.writeC(_activeChar.isGM() ? 0x01 : 0x00);
 			packet.writeC(_activeChar.getRace().ordinal());
@@ -278,8 +280,8 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 		
 		if (containsMask(UserInfoType.CLAN))
 		{
-			packet.writeH(32 + (_activeChar.getTitle().length() * 2));
-			packet.writeString(_activeChar.getTitle());
+			packet.writeH(32 + (_title.length() * 2));
+			packet.writeString(_title);
 			packet.writeH(_activeChar.getPledgeType());
 			packet.writeD(_activeChar.getClanId());
 			packet.writeD(_activeChar.getClanCrestLargeId());
