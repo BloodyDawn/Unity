@@ -82,6 +82,7 @@ public final class SkillTreesData implements IXmlReader
 	private static final Map<ClassId, Map<Integer, SkillLearn>> _transferSkillTrees = new HashMap<>();
 	private static final Map<Race, Map<Integer, SkillLearn>> _raceSkillTree = new HashMap<>();
 	private static final Map<SubclassType, Map<Integer, SkillLearn>> _revelationSkillTree = new HashMap<>();
+	private static final Map<ClassId, Set<Integer>> _awakeningSaveSkillTree = new HashMap<>();
 	// Skill Hash Code, L2SkillLearn
 	private static final Map<Integer, SkillLearn> _collectSkillTree = new HashMap<>();
 	private static final Map<Integer, SkillLearn> _fishingSkillTree = new HashMap<>();
@@ -142,6 +143,8 @@ public final class SkillTreesData implements IXmlReader
 		_raceSkillTree.clear();
 		_revelationSkillTree.clear();
 		_dualClassSkillTree.clear();
+		_removeSkillCache.clear();
+		_awakeningSaveSkillTree.clear();
 		
 		// Load files.
 		parseDatapackDirectory("data/skillTrees/", false);
@@ -357,6 +360,11 @@ public final class SkillTreesData implements IXmlReader
 										_dualClassSkillTree.put(skillHashCode, skillLearn);
 										break;
 									}
+									case "awakeningSaveSkillTree":
+									{
+										_awakeningSaveSkillTree.computeIfAbsent(classId, k -> new HashSet<>()).add(skillLearn.getSkillId());
+										break;
+									}
 									default:
 									{
 										LOGGER.warn(getClass().getSimpleName() + ": Unknown Skill Tree type: " + type + "!");
@@ -371,35 +379,38 @@ public final class SkillTreesData implements IXmlReader
 						}
 						else if (type.equals("classSkillTree") && (cId > -1))
 						{
-							if (!_classSkillTrees.containsKey(classId))
+							final Map<Integer, SkillLearn> classSkillTrees = _classSkillTrees.get(classId);
+							if (classSkillTrees == null)
 							{
 								_classSkillTrees.put(classId, classSkillTree);
 							}
 							else
 							{
-								_classSkillTrees.get(classId).putAll(classSkillTree);
+								classSkillTrees.putAll(classSkillTree);
 							}
 						}
 						else if (type.equals("raceSkillTree") && (race != null))
 						{
-							if (!_raceSkillTree.containsKey(race))
+							final Map<Integer, SkillLearn> raceSkillTrees = _raceSkillTree.get(race);
+							if (raceSkillTrees == null)
 							{
 								_raceSkillTree.put(race, raceSkillTree);
 							}
 							else
 							{
-								_raceSkillTree.get(race).putAll(raceSkillTree);
+								raceSkillTrees.putAll(raceSkillTree);
 							}
 						}
 						else if (type.equals("revelationSkillTree") && (subType != null))
 						{
-							if (!_revelationSkillTree.containsKey(subType))
+							final Map<Integer, SkillLearn> revelationSkillTrees = _revelationSkillTree.get(race);
+							if (revelationSkillTrees == null)
 							{
 								_revelationSkillTree.put(subType, revelationSkillTree);
 							}
 							else
 							{
-								_revelationSkillTree.get(subType).putAll(revelationSkillTree);
+								revelationSkillTrees.putAll(revelationSkillTree);
 							}
 						}
 					}
@@ -765,7 +776,7 @@ public final class SkillTreesData implements IXmlReader
 						result.add(skill);
 					}
 				}
-				else if (!isAwaken || SkillTreesData.getInstance().isCurrentClassSkillNoParent(player.getClassId(), hashCode))
+				else if (!isAwaken || isCurrentClassSkillNoParent(player.getClassId(), hashCode) || isAwakenSaveSkill(player.getClassId(), skill.getSkillId()))
 				{
 					result.add(skill);
 				}
@@ -1382,10 +1393,19 @@ public final class SkillTreesData implements IXmlReader
 	{
 		for (Skill skill : player.getAllSkills())
 		{
+			
 			final int maxLvl = SkillData.getInstance().getMaxLevel(skill.getId());
 			final int hashCode = SkillData.getSkillHashCode(skill.getId(), maxLvl);
 			
-			if (!isCurrentClassSkillNoParent(player.getClassId(), hashCode) && !isRemoveSkill(player.getClassId(), skill.getId()))
+			System.out.println("Skill ID : " + skill.getId());
+			System.out.println("Skill Name : " + skill.getName());
+			System.out.println("Is Current Class Skill No Parent : " + isCurrentClassSkillNoParent(player.getClassId(), hashCode));
+			System.out.println("Is Remove Skill : " + isRemoveSkill(player.getClassId(), skill.getId()));
+			System.out.println("Is Awaken Save Skill : " + isAwakenSaveSkill(player.getClassId(), skill.getId()));
+			
+			System.out.println("----------------------------------");
+			
+			if (!isCurrentClassSkillNoParent(player.getClassId(), hashCode) && !isRemoveSkill(player.getClassId(), skill.getId()) && !isAwakenSaveSkill(player.getClassId(), skill.getId()))
 			{
 				player.removeSkill(skill, true, true);
 			}
@@ -1477,6 +1497,11 @@ public final class SkillTreesData implements IXmlReader
 	public boolean isCurrentClassSkillNoParent(ClassId classId, Integer hashCode)
 	{
 		return _classSkillTrees.getOrDefault(classId, Collections.emptyMap()).containsKey(hashCode);
+	}
+	
+	public boolean isAwakenSaveSkill(ClassId classId, int skillId)
+	{
+		return _awakeningSaveSkillTree.getOrDefault(classId, Collections.emptySet()).contains(skillId);
 	}
 	
 	/**
@@ -1722,6 +1747,7 @@ public final class SkillTreesData implements IXmlReader
 		LOGGER.info(className + ": Loaded " + _gameMasterAuraSkillTree.size() + " Game Master Aura Skills.");
 		LOGGER.info(className + ": Loaded " + _abilitySkillTree.size() + " Ability Skills.");
 		LOGGER.info(className + ": Loaded " + _alchemySkillTree.size() + " Alchemy Skills.");
+		LOGGER.info(className + ": Loaded " + _awakeningSaveSkillTree.size() + " Class Awaken Save Skills.");
 		LOGGER.info(className + ": Loaded " + revelationSkillTreeCount + " Revelation Skills.");
 		
 		final int commonSkills = _commonSkillTree.size();
