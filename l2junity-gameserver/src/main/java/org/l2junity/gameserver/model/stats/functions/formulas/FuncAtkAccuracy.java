@@ -71,8 +71,6 @@ public class FuncAtkAccuracy extends AbstractFunction
 			value += 1;
 		}
 		
-		// System.out.println(value);
-		
 		return value;
 	}
 }
