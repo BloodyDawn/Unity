@@ -2042,8 +2042,13 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="5000" />
 		<set name="reuseDelay" val="3000" />
-		<cond>
-			<player canSwitchSubClass="0" />
+		<cond msgId="3574">
+			<and>
+				<player canSwitchSubClass="0" />
+				<not>
+					<player active_effect_id="1570" />
+				</not>
+			</and>
 		</cond>
 		<for>
 			<effect name="ClassChange">
@@ -2058,8 +2063,13 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="5000" />
 		<set name="reuseDelay" val="3000" />
-		<cond>
-			<player canSwitchSubClass="1" />
+		<cond msgId="3574">
+			<and>
+				<player canSwitchSubClass="1" />
+				<not>
+					<player active_effect_id="1570" />
+				</not>
+			</and>
 		</cond>
 		<for>
 			<effect name="ClassChange">
@@ -2074,8 +2084,13 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="5000" />
 		<set name="reuseDelay" val="3000" />
-		<cond>
-			<player canSwitchSubClass="2" />
+		<cond msgId="3574">
+			<and>
+				<player canSwitchSubClass="2" />
+				<not>
+					<player active_effect_id="1570" />
+				</not>
+			</and>
 		</cond>
 		<for>
 			<effect name="ClassChange">
@@ -2090,8 +2105,13 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="5000" />
 		<set name="reuseDelay" val="3000" />
-		<cond>
-			<player canSwitchSubClass="3" />
+		<cond msgId="3574">
+			<and>
+				<player canSwitchSubClass="2" />
+				<not>
+					<player active_effect_id="1570" />
+				</not>
+			</and>
 		</cond>
 		<for>
 			<effect name="ClassChange">
@@ -2112,7 +2132,6 @@
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Buff">
-				<add stat="runSpd" val="33" />
 				<mul stat="pAtkSpd" val="0.65" />
 				<mul stat="mAtkSpd" val="0.65" />
 				<mul stat="pAtk" val="0.25" />
@@ -2339,11 +2358,16 @@
 		<set name="isMagic" val="3" />
 	</skill>
 	<skill id="1597" levels="1" name="Weight Increase">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases weight capacity by 15000. -->
 		<set name="icon" val="icon.skill0150" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="weightPenalty" val="15000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1598" levels="1" name="Rhythm of Magician Dark">
 		<!-- AUTO GENERATED SKILL -->
