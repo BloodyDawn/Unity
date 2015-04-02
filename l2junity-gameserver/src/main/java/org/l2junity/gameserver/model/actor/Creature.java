@@ -22,6 +22,7 @@ import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_ACTIVE;
 import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
 import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_FOLLOW;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -38,8 +39,6 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import javolution.util.WeakFastSet;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.CommonUtil;
@@ -188,7 +187,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 {
 	public static final Logger _log = LoggerFactory.getLogger(Creature.class);
 	
-	private volatile Set<Creature> _attackByList;
+	private volatile Set<WeakReference<Creature>> _attackByList;
 	private volatile boolean _isCastingNow = false;
 	private volatile boolean _isCastingSimultaneouslyNow = false;
 	private Skill _lastSkillCast;
@@ -2670,7 +2669,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	/**
 	 * @return a list of L2Character that attacked.
 	 */
-	public final Set<Creature> getAttackByList()
+	public final Set<WeakReference<Creature>> getAttackByList()
 	{
 		if (_attackByList == null)
 		{
@@ -2678,7 +2677,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			{
 				if (_attackByList == null)
 				{
-					_attackByList = new WeakFastSet<>(true);
+					_attackByList = ConcurrentHashMap.newKeySet();
 				}
 			}
 		}

@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.model.actor;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
@@ -621,7 +622,7 @@ public class Attackable extends Npc
 		{
 			return;
 		}
-		getAttackByList().add(player);
+		getAttackByList().add(new WeakReference<>(player));
 	}
 	
 	/**

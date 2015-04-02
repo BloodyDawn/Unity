@@ -22,6 +22,7 @@ import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_ACTIVE;
 import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
 import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
 
+import java.lang.ref.WeakReference;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.Future;
@@ -1988,19 +1989,25 @@ public class AttackableAI extends CharacterAI implements Runnable
 				double dist2 = 0;
 				int range = 0;
 				
-				for (Creature obj : actor.getAttackByList())
+				for (WeakReference<Creature> obj : actor.getAttackByList())
 				{
-					if ((obj == null) || obj.isDead() || !GeoData.getInstance().canSeeTarget(actor, obj) || (obj == getAttackTarget()))
+					final Creature creature = obj.get();
+					if (creature == null)
+					{
+						actor.getAttackByList().remove(obj);
+						continue;
+					}
+					else if (creature.isDead() || !GeoData.getInstance().canSeeTarget(actor, creature) || (creature == getAttackTarget()))
 					{
 						continue;
 					}
 					try
 					{
 						actor.setTarget(getAttackTarget());
-						dist = actor.calculateDistance(obj, false, false);
+						dist = actor.calculateDistance(creature, false, false);
 						dist2 = dist - actor.getTemplate().getCollisionRadius();
-						range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + obj.getTemplate().getCollisionRadius();
-						if (obj.isMoving())
+						range = sk.getCastRange() + actor.getTemplate().getCollisionRadius() + creature.getTemplate().getCollisionRadius();
+						if (creature.isMoving())
 						{
 							dist2 = dist2 - 70;
 						}
@@ -2013,7 +2020,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 					{
 						if (!getAttackTarget().isAffectedBySkill(sk.getId()))
 						{
-							return obj;
+							return creature;
 						}
 					}
 				}
