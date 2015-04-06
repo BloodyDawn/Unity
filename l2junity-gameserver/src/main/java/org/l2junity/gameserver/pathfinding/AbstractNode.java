@@ -18,32 +18,32 @@
  */
 package org.l2junity.gameserver.pathfinding;
 
-public abstract class AbstractNode
+public abstract class AbstractNode<T extends AbstractNodeLoc>
 {
-	private AbstractNodeLoc _loc;
-	private AbstractNode _parent;
+	private T _loc;
+	private AbstractNode<T> _parent;
 	
-	public AbstractNode(AbstractNodeLoc loc)
+	public AbstractNode(T loc)
 	{
 		_loc = loc;
 	}
 	
-	public void setParent(AbstractNode p)
+	public void setParent(AbstractNode<T> p)
 	{
 		_parent = p;
 	}
 	
-	public AbstractNode getParent()
+	public AbstractNode<T> getParent()
 	{
 		return _parent;
 	}
 	
-	public AbstractNodeLoc getLoc()
+	public T getLoc()
 	{
 		return _loc;
 	}
 	
-	public void setLoc(AbstractNodeLoc l)
+	public void setLoc(T l)
 	{
 		_loc = l;
 	}
@@ -72,7 +72,7 @@ public abstract class AbstractNode
 		{
 			return false;
 		}
-		final AbstractNode other = (AbstractNode) obj;
+		final AbstractNode<?> other = (AbstractNode<?>) obj;
 		if (_loc == null)
 		{
 			if (other._loc != null)

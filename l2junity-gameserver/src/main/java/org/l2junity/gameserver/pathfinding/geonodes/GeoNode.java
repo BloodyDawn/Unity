@@ -19,18 +19,17 @@
 package org.l2junity.gameserver.pathfinding.geonodes;
 
 import org.l2junity.gameserver.pathfinding.AbstractNode;
-import org.l2junity.gameserver.pathfinding.AbstractNodeLoc;
 
 /**
  * @author -Nemesiss-
  */
-public class GeoNode extends AbstractNode
+public class GeoNode extends AbstractNode<GeoNodeLoc>
 {
 	private final int _neighborsIdx;
 	private short _cost;
 	private GeoNode[] _neighbors;
 	
-	public GeoNode(AbstractNodeLoc Loc, int Neighbors_idx)
+	public GeoNode(GeoNodeLoc Loc, int Neighbors_idx)
 	{
 		super(Loc);
 		_neighborsIdx = Neighbors_idx;

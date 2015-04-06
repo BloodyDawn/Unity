@@ -243,7 +243,7 @@ public class CellPathFinding extends PathFinding
 		return path;
 	}
 	
-	private List<AbstractNodeLoc> constructPath(AbstractNode node)
+	private List<AbstractNodeLoc> constructPath(AbstractNode<NodeLoc> node)
 	{
 		LinkedList<AbstractNodeLoc> path = new LinkedList<>();
 		int previousDirectionX = Integer.MIN_VALUE;

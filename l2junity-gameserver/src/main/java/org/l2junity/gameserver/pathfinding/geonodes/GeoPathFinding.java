@@ -41,7 +41,6 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.pathfinding.AbstractNode;
 import org.l2junity.gameserver.pathfinding.AbstractNodeLoc;
 import org.l2junity.gameserver.pathfinding.PathFinding;
-import org.l2junity.gameserver.pathfinding.utils.FastNodeList;
 import org.l2junity.gameserver.util.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -125,7 +124,7 @@ public class GeoPathFinding extends PathFinding
 		// load) level of intelligence though.
 		
 		// List of Visited Nodes
-		FastNodeList visited = new FastNodeList(550);
+		List<GeoNode> visited = new ArrayList<>(550);
 		
 		// List of Nodes to Visit
 		LinkedList<GeoNode> to_visit = new LinkedList<>();
@@ -163,7 +162,7 @@ public class GeoPathFinding extends PathFinding
 			}
 			for (GeoNode n : neighbors)
 			{
-				if (!visited.containsRev(n) && !to_visit.contains(n))
+				if ((visited.lastIndexOf(n) == -1) && !to_visit.contains(n))
 				{
 					added = false;
 					n.setParent(node);
@@ -191,7 +190,7 @@ public class GeoPathFinding extends PathFinding
 		return null;
 	}
 	
-	public List<AbstractNodeLoc> constructPath2(AbstractNode node)
+	public List<AbstractNodeLoc> constructPath2(AbstractNode<GeoNodeLoc> node)
 	{
 		LinkedList<AbstractNodeLoc> path = new LinkedList<>();
 		int previousDirectionX = -1000;
@@ -225,7 +224,7 @@ public class GeoPathFinding extends PathFinding
 		short regoffset = getRegionOffset(getRegionX(node_x), getRegionY(node_y));
 		ByteBuffer pn = _pathNodes.get(regoffset);
 		
-		List<AbstractNode> Neighbors = new ArrayList<>(8);
+		List<AbstractNode<GeoNodeLoc>> Neighbors = new ArrayList<>(8);
 		GeoNode newNode;
 		short new_node_x, new_node_y;
 		

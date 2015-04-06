@@ -19,15 +19,14 @@
 package org.l2junity.gameserver.pathfinding.cellnodes;
 
 import org.l2junity.gameserver.pathfinding.AbstractNode;
-import org.l2junity.gameserver.pathfinding.AbstractNodeLoc;
 
-public class CellNode extends AbstractNode
+public class CellNode extends AbstractNode<NodeLoc>
 {
 	private CellNode _next = null;
 	private boolean _isInUse = true;
 	private float _cost = -1000;
 	
-	public CellNode(AbstractNodeLoc loc)
+	public CellNode(NodeLoc loc)
 	{
 		super(loc);
 	}
