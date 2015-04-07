@@ -115,13 +115,6 @@ public final class Baium extends AbstractNpcAI
 		addSpellFinishedId(BAIUM);
 		
 		final StatsSet info = GrandBossManager.getInstance().getStatsSet(BAIUM);
-		final double curr_hp = info.getDouble("currentHP");
-		final double curr_mp = info.getDouble("currentMP");
-		final int loc_x = info.getInt("loc_x");
-		final int loc_y = info.getInt("loc_y");
-		final int loc_z = info.getInt("loc_z");
-		final int heading = info.getInt("heading");
-		final long respawnTime = info.getLong("respawn_time");
 		
 		switch (getStatus())
 		{
@@ -136,6 +129,13 @@ public final class Baium extends AbstractNpcAI
 			}
 			case IN_FIGHT:
 			{
+				final double curr_hp = info.getDouble("currentHP");
+				final double curr_mp = info.getDouble("currentMP");
+				final int loc_x = info.getInt("loc_x");
+				final int loc_y = info.getInt("loc_y");
+				final int loc_z = info.getInt("loc_z");
+				final int heading = info.getInt("heading");
+				
 				_baium = (L2GrandBossInstance) addSpawn(BAIUM, loc_x, loc_y, loc_z, heading, false, 0);
 				_baium.setCurrentHpMp(curr_hp, curr_mp);
 				_lastAttack = System.currentTimeMillis();
@@ -151,7 +151,7 @@ public final class Baium extends AbstractNpcAI
 			}
 			case DEAD:
 			{
-				final long remain = respawnTime - System.currentTimeMillis();
+				final long remain = info.getLong("respawn_time") - System.currentTimeMillis();
 				if (remain > 0)
 				{
 					startQuestTimer("CLEAR_STATUS", remain, null, null);
@@ -213,7 +213,7 @@ public final class Baium extends AbstractNpcAI
 					addBoss(_baium);
 					_lastAttack = System.currentTimeMillis();
 					startQuestTimer("WAKEUP_ACTION", 50, _baium, null);
-					startQuestTimer("MANAGE_EARTHQUAKE", 2000, _baium, null);
+					startQuestTimer("MANAGE_EARTHQUAKE", 2000, _baium, player);
 					startQuestTimer("CHECK_ATTACK", 60000, _baium, null);
 				}
 				break;
