@@ -191,7 +191,6 @@ public final class SiegeManager
 			}
 			_controlTowers.put(castle.getResidenceId(), controlTowers);
 			_flameTowers.put(castle.getResidenceId(), flameTowers);
-			MercTicketManager.MERCS_MAX_PER_CASTLE[castle.getResidenceId() - 1] = siegeSettings.getInt(castle.getName() + "MaxMercenaries", MercTicketManager.MERCS_MAX_PER_CASTLE[castle.getResidenceId() - 1]);
 			
 			if (castle.getOwnerId() != 0)
 			{

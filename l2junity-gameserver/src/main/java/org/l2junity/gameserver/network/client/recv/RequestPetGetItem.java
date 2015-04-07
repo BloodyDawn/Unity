@@ -19,10 +19,12 @@
 package org.l2junity.gameserver.network.client.recv;
 
 import org.l2junity.gameserver.ai.CtrlIntention;
+import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.FortSiegeManager;
-import org.l2junity.gameserver.instancemanager.MercTicketManager;
+import org.l2junity.gameserver.instancemanager.SiegeGuardManager;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
+import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
@@ -51,8 +53,8 @@ public final class RequestPetGetItem implements IClientIncomingPacket
 			return;
 		}
 		
-		final int castleId = MercTicketManager.getInstance().getTicketCastleId(item.getId());
-		if (castleId > 0)
+		final Castle castle = CastleManager.getInstance().getCastle(item);
+		if ((castle != null) && (SiegeGuardManager.getInstance().getSiegeGuardByItem(castle.getResidenceId(), item.getId()) != null))
 		{
 			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;

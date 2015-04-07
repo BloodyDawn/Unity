@@ -69,11 +69,11 @@ public final class CastleMercenaryManager extends AbstractNpcAI
 			{
 				final Castle castle = npc.getCastle();
 				final NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
-				if (castle.getName().equals("aden"))
+				if (castle.getName().equalsIgnoreCase("Aden"))
 				{
 					html.setHtml(getHtm(player.getHtmlPrefix(), "mercmanager-aden-limit.html"));
 				}
-				else if (castle.getName().equals("rune"))
+				else if (castle.getName().equalsIgnoreCase("Rune"))
 				{
 					html.setHtml(getHtm(player.getHtmlPrefix(), "mercmanager-rune-limit.html"));
 				}
@@ -111,14 +111,7 @@ public final class CastleMercenaryManager extends AbstractNpcAI
 		final String htmltext;
 		if (player.canOverrideCond(PcCondOverride.CASTLE_CONDITIONS) || ((player.getClanId() == npc.getCastle().getOwnerId()) && player.hasClanPrivilege(ClanPrivilege.CS_MERCENARIES)))
 		{
-			if (npc.getCastle().getSiege().isInProgress())
-			{
-				htmltext = "mercmanager-siege.html";
-			}
-			else
-			{
-				htmltext = "mercmanager.html";
-			}
+			htmltext = npc.getCastle().getSiege().isInProgress() ? "mercmanager-siege.html" : "mercmanager.html";
 		}
 		else
 		{

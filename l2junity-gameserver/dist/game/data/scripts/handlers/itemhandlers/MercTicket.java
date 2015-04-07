@@ -18,21 +18,42 @@
  */
 package handlers.itemhandlers;
 
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+import org.l2junity.gameserver.enums.PlayerAction;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.instancemanager.CastleManager;
-import org.l2junity.gameserver.instancemanager.MercTicketManager;
+import org.l2junity.gameserver.instancemanager.SiegeGuardManager;
+import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
+import org.l2junity.gameserver.model.events.EventType;
+import org.l2junity.gameserver.model.events.ListenerRegisterType;
+import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
+import org.l2junity.gameserver.model.events.annotations.RegisterType;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerDlgAnswer;
+import org.l2junity.gameserver.model.holders.SiegeGuardHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.l2junity.gameserver.network.client.send.ConfirmDlg;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
-public class MercTicket implements IItemHandler
+import ai.npc.AbstractNpcAI;
+
+/**
+ * Mercenary Ticket Item Handler.
+ * @author St3eT
+ */
+public final class MercTicket extends AbstractNpcAI implements IItemHandler
 {
-	/**
-	 * handler for using mercenary tickets. Things to do: 1) Check constraints: 1.a) Tickets may only be used in a castle 1.b) Only specific tickets may be used in each castle (different tickets for each castle) 1.c) only the owner of that castle may use them 1.d) tickets cannot be used during siege
-	 * 1.e) Check if max number of tickets has been reached 1.f) Check if max number of tickets from this ticket's TYPE has been reached 2) If allowed, call the MercTicketManager to add the item and spawn in the world 3) Remove the item from the person's inventory
-	 */
+	private final Map<Integer, ItemInstance> _items = new ConcurrentHashMap<>();
+	
+	public MercTicket()
+	{
+		super(MercTicket.class.getSimpleName(), "handlers");
+	}
+	
 	@Override
 	public boolean useItem(Playable playable, ItemInstance item, boolean forceUse)
 	{
@@ -42,51 +63,66 @@ public class MercTicket implements IItemHandler
 			return false;
 		}
 		
-		int itemId = item.getId();
-		PlayerInstance activeChar = (PlayerInstance) playable;
-		Castle castle = CastleManager.getInstance().getCastle(activeChar);
-		int castleId = -1;
-		if (castle != null)
-		{
-			castleId = castle.getResidenceId();
-		}
-		
-		// add check that certain tickets can only be placed in certain castles
-		if (MercTicketManager.getInstance().getTicketCastleId(itemId) != castleId)
-		{
-			activeChar.sendPacket(SystemMessageId.MERCENARIES_CANNOT_BE_POSITIONED_HERE);
-			return false;
-		}
-		else if (!activeChar.isCastleLord(castleId))
+		final PlayerInstance activeChar = playable.getActingPlayer();
+		final Castle castle = CastleManager.getInstance().getCastle(activeChar);
+		if ((castle == null) || (activeChar.getClan() == null) || (castle.getOwnerId() != activeChar.getClanId()) || !activeChar.hasClanPrivilege(ClanPrivilege.CS_MERCENARIES))
 		{
 			activeChar.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_THE_AUTHORITY_TO_POSITION_MERCENARIES);
 			return false;
 		}
-		else if ((castle != null) && castle.getSiege().isInProgress())
-		{
-			activeChar.sendPacket(SystemMessageId.THIS_MERCENARY_CANNOT_BE_POSITIONED_ANYMORE);
-			return false;
-		}
 		
-		if (MercTicketManager.getInstance().isAtCasleLimit(item.getId()))
+		final int castleId = castle.getResidenceId();
+		final SiegeGuardHolder holder = SiegeGuardManager.getInstance().getSiegeGuardByItem(castleId, item.getId());
+		if ((holder == null) || (castleId != holder.getCastleId()))
+		{
+			activeChar.sendPacket(SystemMessageId.MERCENARIES_CANNOT_BE_POSITIONED_HERE);
+			return false;
+		}
+		else if (castle.getSiege().isInProgress())
 		{
 			activeChar.sendPacket(SystemMessageId.THIS_MERCENARY_CANNOT_BE_POSITIONED_ANYMORE);
 			return false;
 		}
-		else if (MercTicketManager.getInstance().isAtTypeLimit(item.getId()))
-		{
-			activeChar.sendPacket(SystemMessageId.THIS_MERCENARY_CANNOT_BE_POSITIONED_ANYMORE);
-			return false;
-		}
-		else if (MercTicketManager.getInstance().isTooCloseToAnotherTicket(activeChar.getX(), activeChar.getY(), activeChar.getZ()))
+		else if (SiegeGuardManager.getInstance().isTooCloseToAnotherTicket(activeChar))
 		{
 			activeChar.sendPacket(SystemMessageId.POSITIONING_CANNOT_BE_DONE_HERE_BECAUSE_THE_DISTANCE_BETWEEN_MERCENARIES_IS_TOO_SHORT);
 			return false;
 		}
+		else if (SiegeGuardManager.getInstance().isAtNpcLimit(castleId, item.getId()))
+		{
+			activeChar.sendPacket(SystemMessageId.THIS_MERCENARY_CANNOT_BE_POSITIONED_ANYMORE);
+			return false;
+		}
 		
-		MercTicketManager.getInstance().addTicket(item.getId(), activeChar);
-		activeChar.destroyItem("Consume", item.getObjectId(), 1, null, false); // Remove item from char's inventory
-		activeChar.sendPacket(SystemMessageId.PLACE_S1_IN_THE_CURRENT_LOCATION_AND_DIRECTION_DO_YOU_WISH_TO_CONTINUE);
+		_items.put(activeChar.getObjectId(), item);
+		final ConfirmDlg dlg = new ConfirmDlg(SystemMessageId.PLACE_S1_IN_THE_CURRENT_LOCATION_AND_DIRECTION_DO_YOU_WISH_TO_CONTINUE);
+		dlg.addTime(15000);
+		dlg.addNpcName(holder.getNpcId());
+		activeChar.sendPacket(dlg);
+		activeChar.addAction(PlayerAction.MERCENARY_CONFIRM);
 		return true;
+	}
+	
+	@RegisterEvent(EventType.ON_PLAYER_DLG_ANSWER)
+	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+	public void onPlayerDlgAnswer(OnPlayerDlgAnswer event)
+	{
+		final PlayerInstance activeChar = event.getActiveChar();
+		if (activeChar.removeAction(PlayerAction.MERCENARY_CONFIRM) && _items.containsKey(activeChar.getObjectId()))
+		{
+			if (SiegeGuardManager.getInstance().isTooCloseToAnotherTicket(activeChar))
+			{
+				activeChar.sendPacket(SystemMessageId.POSITIONING_CANNOT_BE_DONE_HERE_BECAUSE_THE_DISTANCE_BETWEEN_MERCENARIES_IS_TOO_SHORT);
+				return;
+			}
+			
+			if (event.getAnswer() == 1)
+			{
+				final ItemInstance item = _items.get(activeChar.getObjectId());
+				SiegeGuardManager.getInstance().addTicket(item.getId(), activeChar);
+				activeChar.destroyItem("Consume", item.getObjectId(), 1, null, false); // Remove item from char's inventory
+			}
+			_items.remove(activeChar.getObjectId());
+		}
 	}
 }

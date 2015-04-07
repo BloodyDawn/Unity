@@ -21,38 +21,33 @@ package handlers.actionhandlers;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.handler.IActionHandler;
-import org.l2junity.gameserver.instancemanager.MercTicketManager;
+import org.l2junity.gameserver.instancemanager.CastleManager;
+import org.l2junity.gameserver.instancemanager.SiegeGuardManager;
+import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.entity.Castle;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 public class L2ItemInstanceAction implements IActionHandler
 {
 	@Override
 	public boolean action(PlayerInstance activeChar, WorldObject target, boolean interact)
 	{
-		// this causes the validate position handler to do the pickup if the location is reached.
-		// mercenary tickets can only be picked up by the castle owner.
-		final int castleId = MercTicketManager.getInstance().getTicketCastleId(target.getId());
-		
-		if ((castleId > 0) && (!activeChar.isCastleLord(castleId) || activeChar.isInParty()))
+		final Castle castle = CastleManager.getInstance().getCastle(target);
+		if ((castle != null) && (SiegeGuardManager.getInstance().getSiegeGuardByItem(castle.getResidenceId(), target.getId()) != null))
 		{
-			if (activeChar.isInParty())
+			if ((activeChar.getClan() == null) || (castle.getOwnerId() != activeChar.getClanId()) || !activeChar.hasClanPrivilege(ClanPrivilege.CS_MERCENARIES))
 			{
-				activeChar.sendMessage("You cannot pickup mercenaries while in a party.");
+				activeChar.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_THE_AUTHORITY_TO_CANCEL_MERCENARY_POSITIONING);
+				activeChar.setTarget(target);
+				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 			}
-			else
+			else if (!activeChar.isFlying())
 			{
-				activeChar.sendMessage("Only the castle lord can pickup mercenaries.");
+				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_PICK_UP, target);
 			}
-			
-			activeChar.setTarget(target);
-			activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		}
-		else if (!activeChar.isFlying())
-		{
-			activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_PICK_UP, target);
-		}
-		
 		return true;
 	}
 	

@@ -38,7 +38,6 @@ import org.l2junity.gameserver.data.xml.impl.SiegeScheduleData;
 import org.l2junity.gameserver.enums.SiegeClanType;
 import org.l2junity.gameserver.enums.SiegeTeleportWhoType;
 import org.l2junity.gameserver.instancemanager.CastleManager;
-import org.l2junity.gameserver.instancemanager.MercTicketManager;
 import org.l2junity.gameserver.instancemanager.SiegeGuardManager;
 import org.l2junity.gameserver.instancemanager.SiegeManager;
 import org.l2junity.gameserver.model.ClanMember;
@@ -234,14 +233,12 @@ public class Siege implements Siegable
 	private boolean _isNormalSide = true; // true = Atk is Atk, false = Atk is Def
 	protected boolean _isRegistrationOver = false;
 	protected Calendar _siegeEndDate;
-	private SiegeGuardManager _siegeGuardManager;
 	protected ScheduledFuture<?> _scheduledStartSiegeTask = null;
 	protected int _firstOwnerClanId = -1;
 	
 	public Siege(Castle castle)
 	{
 		_castle = castle;
-		_siegeGuardManager = new SiegeGuardManager(getCastle());
 		
 		startAutoTask();
 	}
@@ -333,10 +330,10 @@ public class Siege implements Siegable
 			saveCastleSiege(); // Save castle specific data
 			clearSiegeClan(); // Clear siege clan from db
 			removeTowers(); // Remove all towers from this castle
-			_siegeGuardManager.unspawnSiegeGuard(); // Remove all spawned siege guard from this castle
+			SiegeGuardManager.getInstance().unspawnSiegeGuard(getCastle()); // Remove all spawned siege guard from this castle
 			if (getCastle().getOwnerId() > 0)
 			{
-				_siegeGuardManager.removeMercs();
+				SiegeGuardManager.getInstance().removeSiegeGuards(getCastle());
 			}
 			getCastle().spawnDoor(); // Respawn door to castle
 			getCastle().getZone().setIsActive(false);
@@ -394,7 +391,7 @@ public class Siege implements Siegable
 		{
 			if (getCastle().getOwnerId() > 0)
 			{
-				_siegeGuardManager.removeMercs(); // Remove all merc entry from db
+				SiegeGuardManager.getInstance().removeSiegeGuards(getCastle()); // Remove all merc entry from db
 			}
 			
 			if (getDefenderClans().isEmpty() && // If defender doesn't exist (Pc vs Npc)
@@ -520,7 +517,7 @@ public class Siege implements Siegable
 			spawnFlameTower(); // Spawn control tower
 			getCastle().spawnDoor(); // Spawn door
 			spawnSiegeGuard(); // Spawn siege guard
-			MercTicketManager.getInstance().deleteTickets(getCastle().getResidenceId()); // remove the tickets from the ground
+			SiegeGuardManager.getInstance().deleteTickets(getCastle().getResidenceId()); // remove the tickets from the ground
 			getCastle().getZone().setSiegeInstance(this);
 			getCastle().getZone().setIsActive(true);
 			getCastle().getZone().updateZoneStatusForCharactersInside();
@@ -1586,21 +1583,21 @@ public class Siege implements Siegable
 	}
 	
 	/**
-	 * Spawn siege guard.<BR>
-	 * <BR>
+	 * Spawn siege guard.
 	 */
 	private void spawnSiegeGuard()
 	{
-		getSiegeGuardManager().spawnSiegeGuard();
+		SiegeGuardManager.getInstance().spawnSiegeGuard(getCastle());
 		
 		// Register guard to the closest Control Tower
 		// When CT dies, so do all the guards that it controls
-		if (!getSiegeGuardManager().getSiegeGuardSpawn().isEmpty())
+		final Set<L2Spawn> spawned = SiegeGuardManager.getInstance().getSpawnedGuards(getCastle().getResidenceId());
+		if (!spawned.isEmpty())
 		{
 			L2ControlTowerInstance closestCt;
 			double distance;
 			double distanceClosest = 0;
-			for (L2Spawn spawn : getSiegeGuardManager().getSiegeGuardSpawn())
+			for (L2Spawn spawn : spawned)
 			{
 				if (spawn == null)
 				{
@@ -1786,15 +1783,6 @@ public class Siege implements Siegable
 			}
 		}
 		return null;
-	}
-	
-	public final SiegeGuardManager getSiegeGuardManager()
-	{
-		if (_siegeGuardManager == null)
-		{
-			_siegeGuardManager = new SiegeGuardManager(getCastle());
-		}
-		return _siegeGuardManager;
 	}
 	
 	public int getControlTowerCount()

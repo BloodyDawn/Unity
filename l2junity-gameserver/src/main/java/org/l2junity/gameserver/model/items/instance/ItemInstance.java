@@ -43,8 +43,9 @@ import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.enums.UserInfoType;
 import org.l2junity.gameserver.idfactory.IdFactory;
+import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.ItemsOnGroundManager;
-import org.l2junity.gameserver.instancemanager.MercTicketManager;
+import org.l2junity.gameserver.instancemanager.SiegeGuardManager;
 import org.l2junity.gameserver.model.Augmentation;
 import org.l2junity.gameserver.model.DropProtection;
 import org.l2junity.gameserver.model.Elementals;
@@ -55,6 +56,7 @@ import org.l2junity.gameserver.model.WorldRegion;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerAugment;
 import org.l2junity.gameserver.model.events.impl.character.player.inventory.OnPlayerItemDrop;
@@ -268,11 +270,10 @@ public final class ItemInstance extends WorldObject
 		}
 		
 		// if this item is a mercenary ticket, remove the spawns!
-		int itemId = getId();
-		
-		if (MercTicketManager.getInstance().getTicketCastleId(itemId) > 0)
+		final Castle castle = CastleManager.getInstance().getCastle(this);
+		if ((castle != null) && (SiegeGuardManager.getInstance().getSiegeGuardByItem(castle.getResidenceId(), getId()) != null))
 		{
-			MercTicketManager.getInstance().removeTicket(this);
+			SiegeGuardManager.getInstance().removeTicket(this);
 			ItemsOnGroundManager.getInstance().removeObject(this);
 		}
 		

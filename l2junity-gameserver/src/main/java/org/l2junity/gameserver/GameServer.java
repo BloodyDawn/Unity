@@ -114,12 +114,12 @@ import org.l2junity.gameserver.instancemanager.MailManager;
 import org.l2junity.gameserver.instancemanager.MapRegionManager;
 import org.l2junity.gameserver.instancemanager.MatchingRoomManager;
 import org.l2junity.gameserver.instancemanager.MentorManager;
-import org.l2junity.gameserver.instancemanager.MercTicketManager;
 import org.l2junity.gameserver.instancemanager.PetitionManager;
 import org.l2junity.gameserver.instancemanager.PunishmentManager;
 import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.instancemanager.RaidBossPointsManager;
 import org.l2junity.gameserver.instancemanager.RaidBossSpawnManager;
+import org.l2junity.gameserver.instancemanager.SiegeGuardManager;
 import org.l2junity.gameserver.instancemanager.SiegeManager;
 import org.l2junity.gameserver.instancemanager.WalkingManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
@@ -314,7 +314,7 @@ public class GameServer
 		
 		MerchantPriceConfigTable.getInstance().updateReferences();
 		CastleManorManager.getInstance();
-		MercTicketManager.getInstance();
+		SiegeGuardManager.getInstance();
 		QuestManager.getInstance().report();
 		
 		if (Config.SAVE_DROPPED_ITEM)
