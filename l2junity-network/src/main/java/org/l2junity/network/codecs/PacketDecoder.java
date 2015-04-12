@@ -66,20 +66,21 @@ public class PacketDecoder extends ByteToMessageDecoder
 			final short packetId = in.readUnsignedByte();
 			if (packetId >= _incomingPackets.length)
 			{
+				LOGGER.debug("Unknown packet: {}", Integer.toHexString(packetId));
 				return;
 			}
 			
 			final IIncomingPackets<?> incomingPacket = _incomingPackets[packetId];
 			if (incomingPacket == null)
 			{
-				LOGGER.debug(getClass().getSimpleName() + ": Unknown packet: " + Integer.toHexString(packetId));
+				LOGGER.debug("Unknown packet: {}", Integer.toHexString(packetId));
 				return;
 			}
 			
 			final IConnectionState connectionState = ctx.channel().attr(IConnectionState.ATTRIBUTE_KEY).get();
 			if ((connectionState == null) || !incomingPacket.getConnectionStates().contains(connectionState))
 			{
-				LOGGER.warn(incomingPacket + ": Connection at invalid state: " + connectionState + " Required State: " + incomingPacket.getConnectionStates());
+				LOGGER.warn("{}: Connection at invalid state: {} Required States: {}", incomingPacket, connectionState, incomingPacket.getConnectionStates());
 				return;
 			}
 			
