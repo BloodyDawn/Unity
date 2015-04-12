@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
  */
 public final class GameTimeController extends Thread
 {
-	private static final Logger _log = LoggerFactory.getLogger(GameTimeController.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(GameTimeController.class);
 	
 	public static final int TICKS_PER_SECOND = 10; // not able to change this without checking through code
 	public static final int MILLIS_IN_TICK = 1000 / TICKS_PER_SECOND;
@@ -132,13 +132,13 @@ public final class GameTimeController extends Thread
 	public final void stopTimer()
 	{
 		super.interrupt();
-		_log.info("Stopping " + getClass().getSimpleName());
+		LOGGER.info("Stopped.");
 	}
 	
 	@Override
 	public final void run()
 	{
-		_log.info(getClass().getSimpleName() + ": Started.");
+		LOGGER.info("Started.");
 		
 		long nextTickTime, sleepTime;
 		boolean isNight = isNight();
@@ -158,7 +158,7 @@ public final class GameTimeController extends Thread
 			}
 			catch (final Throwable e)
 			{
-				_log.warn("", e);
+				LOGGER.warn("", e);
 			}
 			
 			sleepTime = nextTickTime - System.currentTimeMillis();

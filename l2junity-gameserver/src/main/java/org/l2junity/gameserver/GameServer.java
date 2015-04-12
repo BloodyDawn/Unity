@@ -19,6 +19,7 @@
 package org.l2junity.gameserver;
 
 import java.awt.Toolkit;
+import java.lang.management.ManagementFactory;
 import java.time.Duration;
 import java.util.Calendar;
 
@@ -141,7 +142,7 @@ import org.slf4j.LoggerFactory;
 
 public class GameServer
 {
-	private static final Logger _log = LoggerFactory.getLogger(GameServer.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(GameServer.class);
 	
 	private final DeadLockDetector _deadDetectThread;
 	public static GameServer gameServer;
@@ -159,13 +160,11 @@ public class GameServer
 	
 	public GameServer() throws Exception
 	{
-		long serverLoadStart = System.currentTimeMillis();
-		
-		_log.info(getClass().getSimpleName() + ": Used memory: " + getUsedMemoryMB() + "MB");
+		LOGGER.info("Used memory: {} MB", getUsedMemoryMB());
 		
 		if (!IdFactory.getInstance().isInitialized())
 		{
-			_log.error(getClass().getSimpleName() + ": Could not read object IDs from DB. Please check your data.");
+			LOGGER.error("Could not read object IDs from DB. Please check your data.");
 			throw new Exception("Could not initialize the ID factory");
 		}
 		
@@ -291,12 +290,12 @@ public class GameServer
 		
 		try
 		{
-			_log.info("Loading server scripts...");
+			LOGGER.info("Loading server scripts...");
 			ScriptEngineManager.getInstance().executeScriptList();
 		}
 		catch (Exception e)
 		{
-			_log.warn("Failed to execute script list!", e);
+			LOGGER.warn("Failed to execute script list!", e);
 		}
 		
 		SpawnTable.getInstance().load();
@@ -333,7 +332,7 @@ public class GameServer
 		FaenorScriptEngine.getInstance();
 		// Init of a cursed weapon manager
 		
-		_log.info("AutoSpawnHandler: Loaded " + AutoSpawnHandler.getInstance().size() + " handlers in total.");
+		LOGGER.info("AutoSpawnHandler: Loaded {} handlers in total.", AutoSpawnHandler.getInstance().size());
 		
 		if (Config.L2JMOD_ALLOW_WEDDING)
 		{
@@ -353,7 +352,7 @@ public class GameServer
 		
 		Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
 		
-		_log.info("IdFactory: Free ObjectID's remaining: " + IdFactory.getInstance().size());
+		LOGGER.info("IdFactory: Free ObjectID's remaining: {}", IdFactory.getInstance().size());
 		
 		TvTManager.getInstance();
 		
@@ -384,14 +383,14 @@ public class GameServer
 		// the current allocation pool, freeMemory the unused memory in the allocation pool
 		long freeMem = ((Runtime.getRuntime().maxMemory() - Runtime.getRuntime().totalMemory()) + Runtime.getRuntime().freeMemory()) / 1048576;
 		long totalMem = Runtime.getRuntime().maxMemory() / 1048576;
-		_log.info(getClass().getSimpleName() + ": Started, free memory " + freeMem + " Mb of " + totalMem + " Mb");
+		LOGGER.info("Started, free memory {} MB of {} MB", freeMem, totalMem);
 		Toolkit.getDefaultToolkit().beep();
 		LoginServerThread.getInstance().start();
 		
 		ClientNetworkManager.getInstance().start();
 		
-		_log.info(getClass().getSimpleName() + ": Maximum numbers of connected players: " + Config.MAXIMUM_ONLINE_USERS);
-		_log.info(getClass().getSimpleName() + ": Server loaded in " + ((System.currentTimeMillis() - serverLoadStart) / 1000) + " seconds.");
+		LOGGER.info("Maximum numbers of connected players: {}", Config.MAXIMUM_ONLINE_USERS);
+		LOGGER.info("Server loaded in {} seconds.", ManagementFactory.getRuntimeMXBean().getUptime() / 1000);
 		
 		printSection("UPnP");
 		UPnPService.getInstance();
@@ -412,7 +411,7 @@ public class GameServer
 		}
 		else
 		{
-			_log.info(GameServer.class.getSimpleName() + ": Telnet server is currently disabled.");
+			LOGGER.info("Telnet server is currently disabled.");
 		}
 	}
 	
@@ -423,6 +422,6 @@ public class GameServer
 		{
 			s = "-" + s;
 		}
-		_log.info(s);
+		LOGGER.info(s);
 	}
 }

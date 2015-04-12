@@ -55,7 +55,7 @@ import org.slf4j.LoggerFactory;
  */
 public class Shutdown extends Thread
 {
-	private static final Logger _log = LoggerFactory.getLogger(Shutdown.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(Shutdown.class);
 	private static Shutdown _counterInstance = null;
 	
 	private int _secondsShut;
@@ -85,7 +85,7 @@ public class Shutdown extends Thread
 	
 	public void startTelnetShutdown(String IP, int seconds, boolean restart)
 	{
-		_log.warn("IP: " + IP + " issued shutdown command. " + MODE_TEXT[_shutdownMode] + " in " + seconds + " seconds!");
+		LOGGER.warn("IP: {} issued shutdown command. {} in {} seconds!", IP, MODE_TEXT[_shutdownMode], seconds);
 		
 		if (restart)
 		{
@@ -136,7 +136,7 @@ public class Shutdown extends Thread
 	 */
 	public void telnetAbort(String IP)
 	{
-		_log.warn("IP: " + IP + " issued shutdown ABORT. " + MODE_TEXT[_shutdownMode] + " has been stopped!");
+		LOGGER.warn("IP: {} issued shutdown ABORT. {} has been stopped!", IP, MODE_TEXT[_shutdownMode]);
 		
 		if (_counterInstance != null)
 		{
@@ -192,11 +192,11 @@ public class Shutdown extends Thread
 			try
 			{
 				UPnPService.getInstance().removeAllPorts();
-				_log.info("UPnP Service: All ports mappings deleted (" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+				LOGGER.info("UPnP Service: All ports mappings deleted ({}ms).", tc.getEstimatedTimeAndRestartCounter());
 			}
 			catch (Throwable t)
 			{
-				_log.warn("Error while removing UPnP port mappings: ", t);
+				LOGGER.warn("Error while removing UPnP port mappings: ", t);
 			}
 			
 			try
@@ -204,18 +204,18 @@ public class Shutdown extends Thread
 				if ((Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE) && Config.RESTORE_OFFLINERS)
 				{
 					OfflineTradersTable.getInstance().storeOffliners();
-					_log.info("Offline Traders Table: Offline shops stored(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+					LOGGER.info("Offline Traders Table: Offline shops stored(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 				}
 			}
 			catch (Throwable t)
 			{
-				_log.warn("Error saving offline shops.", t);
+				LOGGER.warn("Error saving offline shops.", t);
 			}
 			
 			try
 			{
 				disconnectAllCharacters();
-				_log.info("All players disconnected and saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+				LOGGER.info("All players disconnected and saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 			}
 			catch (Throwable t)
 			{
@@ -226,7 +226,7 @@ public class Shutdown extends Thread
 			try
 			{
 				GameTimeController.getInstance().stopTimer();
-				_log.info("Game Time Controller: Timer stopped(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+				LOGGER.info("Game Time Controller: Timer stopped(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 			}
 			catch (Throwable t)
 			{
@@ -237,7 +237,7 @@ public class Shutdown extends Thread
 			try
 			{
 				ThreadPoolManager.getInstance().shutdown();
-				_log.info("Thread Pool Manager: Manager has been shut down(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+				LOGGER.info("Thread Pool Manager: Manager has been shut down(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 			}
 			catch (Throwable t)
 			{
@@ -247,7 +247,7 @@ public class Shutdown extends Thread
 			try
 			{
 				LoginServerThread.getInstance().interrupt();
-				_log.info("Login Server Thread: Thread interruped(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+				LOGGER.info("Login Server Thread: Thread interruped(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 			}
 			catch (Throwable t)
 			{
@@ -263,7 +263,7 @@ public class Shutdown extends Thread
 			{
 				ClientNetworkManager.getInstance().stop();
 				EventLoopGroupManager.getInstance().shutdown();
-				_log.info("Game Server: Selector thread has been shut down(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+				LOGGER.info("Game Server: Selector thread has been shut down(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 			}
 			catch (Throwable t)
 			{
@@ -274,7 +274,7 @@ public class Shutdown extends Thread
 			try
 			{
 				DatabaseFactory.getInstance().shutdown();
-				_log.info("L2Database Factory: Database connection has been shut down(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+				LOGGER.info("L2Database Factory: Database connection has been shut down(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 			}
 			catch (Throwable t)
 			{
@@ -291,14 +291,14 @@ public class Shutdown extends Thread
 				Runtime.getRuntime().halt(0);
 			}
 			
-			_log.info("The server has been successfully shut down in " + (tc1.getEstimatedTime() / 1000) + "seconds.");
+			LOGGER.info("The server has been successfully shut down in " + (tc1.getEstimatedTime() / 1000) + "seconds.");
 		}
 		else
 		{
 			// gm shutdown: send warnings and then call exit to start shutdown sequence
 			countdown();
 			// last point where logging is operational :(
-			_log.warn("GM shutdown countdown is over. " + MODE_TEXT[_shutdownMode] + " NOW!");
+			LOGGER.warn("GM shutdown countdown is over. " + MODE_TEXT[_shutdownMode] + " NOW!");
 			switch (_shutdownMode)
 			{
 				case GM_SHUTDOWN:
@@ -333,7 +333,7 @@ public class Shutdown extends Thread
 			_shutdownMode = GM_SHUTDOWN;
 		}
 		
-		_log.warn("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") issued shutdown command. " + MODE_TEXT[_shutdownMode] + " in " + seconds + " seconds!");
+		LOGGER.warn("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") issued shutdown command. " + MODE_TEXT[_shutdownMode] + " in " + seconds + " seconds!");
 		
 		if (_shutdownMode > 0)
 		{
@@ -377,7 +377,7 @@ public class Shutdown extends Thread
 	 */
 	public void abort(PlayerInstance activeChar)
 	{
-		_log.warn("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") issued shutdown ABORT. " + MODE_TEXT[_shutdownMode] + " has been stopped!");
+		LOGGER.warn("GM: " + activeChar.getName() + "(" + activeChar.getObjectId() + ") issued shutdown ABORT. " + MODE_TEXT[_shutdownMode] + " has been stopped!");
 		if (_counterInstance != null)
 		{
 			_counterInstance._abort();
@@ -491,13 +491,13 @@ public class Shutdown extends Thread
 		switch (_shutdownMode)
 		{
 			case SIGTERM:
-				_log.info("SIGTERM received. Shutting down NOW!");
+				LOGGER.info("SIGTERM received. Shutting down NOW!");
 				break;
 			case GM_SHUTDOWN:
-				_log.info("GM shutdown received. Shutting down NOW!");
+				LOGGER.info("GM shutdown received. Shutting down NOW!");
 				break;
 			case GM_RESTART:
-				_log.info("GM restart received. Restarting NOW!");
+				LOGGER.info("GM restart received. Restarting NOW!");
 				break;
 		
 		}
@@ -509,54 +509,54 @@ public class Shutdown extends Thread
 		
 		// Save all raidboss and GrandBoss status ^_^
 		RaidBossSpawnManager.getInstance().cleanUp();
-		_log.info("RaidBossSpawnManager: All raidboss info saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+		LOGGER.info("RaidBossSpawnManager: All raidboss info saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		GrandBossManager.getInstance().cleanUp();
-		_log.info("GrandBossManager: All Grand Boss info saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+		LOGGER.info("GrandBossManager: All Grand Boss info saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		ItemAuctionManager.getInstance().shutdown();
-		_log.info("Item Auction Manager: All tasks stopped(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+		LOGGER.info("Item Auction Manager: All tasks stopped(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		Olympiad.getInstance().saveOlympiadStatus();
-		_log.info("Olympiad System: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+		LOGGER.info("Olympiad System: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		Hero.getInstance().shutdown();
-		_log.info("Hero System: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+		LOGGER.info("Hero System: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		ClanTable.getInstance().storeClanScore();
-		_log.info("Clan System: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+		LOGGER.info("Clan System: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		
 		// Save Cursed Weapons data before closing.
 		CursedWeaponsManager.getInstance().saveData();
-		_log.info("Cursed Weapons Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+		LOGGER.info("Cursed Weapons Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		
 		// Save all manor data
 		if (!Config.ALT_MANOR_SAVE_ALL_ACTIONS)
 		{
 			CastleManorManager.getInstance().storeMe();
-			_log.info("Castle Manor Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+			LOGGER.info("Castle Manor Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		}
 		
 		CHSiegeManager.getInstance().onServerShutDown();
-		_log.info("CHSiegeManager: Siegable hall attacker lists saved!");
+		LOGGER.info("CHSiegeManager: Siegable hall attacker lists saved!");
 		
 		// Save all global (non-player specific) Quest data that needs to persist after reboot
 		QuestManager.getInstance().save();
-		_log.info("Quest Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+		LOGGER.info("Quest Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		
 		// Save all global variables data
 		GlobalVariablesManager.getInstance().storeMe();
-		_log.info("Global Variables Manager: Variables saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+		LOGGER.info("Global Variables Manager: Variables saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		
 		// Save items on ground before closing
 		if (Config.SAVE_DROPPED_ITEM)
 		{
 			ItemsOnGroundManager.getInstance().saveInDb();
-			_log.info("Items On Ground Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+			LOGGER.info("Items On Ground Manager: Data saved(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 			ItemsOnGroundManager.getInstance().cleanUp();
-			_log.info("Items On Ground Manager: Cleaned up(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
+			LOGGER.info("Items On Ground Manager: Cleaned up(" + tc.getEstimatedTimeAndRestartCounter() + "ms).");
 		}
 		
 		// Save bot reports to database
 		if (Config.BOTREPORT_ENABLE)
 		{
 			BotReportTable.getInstance().saveReportedCharData();
-			_log.info("Bot Report Table: Sucessfully saved reports to database!");
+			LOGGER.info("Bot Report Table: Sucessfully saved reports to database!");
 		}
 		
 		try
@@ -590,7 +590,7 @@ public class Shutdown extends Thread
 			}
 			catch (Throwable t)
 			{
-				_log.warn("Failed logour char " + player, t);
+				LOGGER.warn("Failed logour char " + player, t);
 			}
 		}
 	}

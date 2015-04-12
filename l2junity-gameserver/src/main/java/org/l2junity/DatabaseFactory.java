@@ -23,6 +23,7 @@ import java.sql.SQLException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,7 +35,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
  */
 public class DatabaseFactory
 {
-	private static final Logger _log = LoggerFactory.getLogger(DatabaseFactory.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(DatabaseFactory.class);
 	
 	private static DatabaseFactory _instance;
 	private static volatile ScheduledExecutorService _executor;
@@ -51,7 +52,7 @@ public class DatabaseFactory
 			if (Config.DATABASE_MAX_CONNECTIONS < 2)
 			{
 				Config.DATABASE_MAX_CONNECTIONS = 2;
-				_log.warn("A minimum of " + Config.DATABASE_MAX_CONNECTIONS + " db connections are required.");
+				LOGGER.warn("A minimum of {} db connections are required.", Config.DATABASE_MAX_CONNECTIONS);
 			}
 			
 			_source = new ComboPooledDataSource();
@@ -101,14 +102,14 @@ public class DatabaseFactory
 			
 			if (Config.DEBUG)
 			{
-				_log.debug("Database Connection Working");
+				LOGGER.debug("Database Connection Working");
 			}
 		}
 		catch (SQLException x)
 		{
 			if (Config.DEBUG)
 			{
-				_log.debug("Database Connection FAILED");
+				LOGGER.debug("Database Connection FAILED");
 			}
 			// re-throw the exception
 			throw x;
@@ -117,7 +118,7 @@ public class DatabaseFactory
 		{
 			if (Config.DEBUG)
 			{
-				_log.debug("Database Connection FAILED");
+				LOGGER.debug("Database Connection FAILED");
 			}
 			throw new SQLException("Could not init DB connection:" + e.getMessage());
 		}
@@ -134,16 +135,10 @@ public class DatabaseFactory
 		}
 		catch (Exception e)
 		{
-			_log.info("", e);
+			LOGGER.info("", e);
 		}
-		try
-		{
-			_source = null;
-		}
-		catch (Exception e)
-		{
-			_log.info("", e);
-		}
+		
+		_source = null;
 	}
 	
 	/**
@@ -186,7 +181,7 @@ public class DatabaseFactory
 			}
 			catch (SQLException e)
 			{
-				_log.warn("L2DatabaseFactory: getConnection() failed, trying again " + e.getMessage(), e);
+				LOGGER.warn("getConnection() failed, trying again", e);
 			}
 		}
 		return con;
@@ -197,7 +192,7 @@ public class DatabaseFactory
 	 */
 	private static class ConnectionCloser implements Runnable
 	{
-		private static final Logger _log = LoggerFactory.getLogger(ConnectionCloser.class);
+		private static final Logger LOGGER = LoggerFactory.getLogger(ConnectionCloser.class);
 		
 		/** The connection. */
 		private final Connection c;
@@ -223,12 +218,12 @@ public class DatabaseFactory
 			{
 				if (!c.isClosed())
 				{
-					_log.warn("Unclosed connection! Trace: " + exp.getStackTrace()[1], exp);
+					LOGGER.warn("Unclosed connection! Trace: {}", exp.getStackTrace()[1], exp);
 				}
 			}
 			catch (SQLException e)
 			{
-				_log.warn("", e);
+				LOGGER.warn("", e);
 			}
 		}
 	}

@@ -20,6 +20,7 @@ package org.l2junity.gameserver;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.model.Location;
@@ -62,7 +63,7 @@ public class GeoData
 					{
 						if (loadFile)
 						{
-							LOGGER.info(getClass().getSimpleName() + ": Loading " + geoFilePath.getFileName() + "...");
+							LOGGER.info("Loading " + geoFilePath.getFileName() + "...");
 							_driver.loadRegion(geoFilePath, regionX, regionY);
 							loadedRegions++;
 						}
@@ -71,13 +72,13 @@ public class GeoData
 					{
 						try
 						{
-							LOGGER.info(getClass().getSimpleName() + ": Loading " + geoFilePath.getFileName() + "...");
+							LOGGER.info("Loading " + geoFilePath.getFileName() + "...");
 							_driver.loadRegion(geoFilePath, regionX, regionY);
 							loadedRegions++;
 						}
 						catch (Exception e)
 						{
-							LOGGER.warn(getClass().getSimpleName() + ": Failed to load " + geoFilePath.getFileName() + "!", e);
+							LOGGER.warn("Failed to load " + geoFilePath.getFileName() + "!", e);
 						}
 					}
 				}
@@ -85,11 +86,11 @@ public class GeoData
 		}
 		catch (Exception e)
 		{
-			LOGGER.error(getClass().getSimpleName() + ": Failed to load geodata!", e);
+			LOGGER.error("Failed to load geodata!", e);
 			System.exit(1);
 		}
 		
-		LOGGER.info(getClass().getSimpleName() + ": Loaded " + loadedRegions + " regions.");
+		LOGGER.info("Loaded " + loadedRegions + " regions.");
 	}
 	
 	public boolean hasGeoPos(int geoX, int geoY)

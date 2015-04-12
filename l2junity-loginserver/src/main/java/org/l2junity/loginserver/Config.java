@@ -19,22 +19,17 @@
 package org.l2junity.loginserver;
 
 import java.io.File;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.commons.util.PropertiesParser;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author UnAfraid
  */
 public final class Config
 {
-	private static final Logger _log = Logger.getLogger(Config.class.getName());
-	
-	// --------------------------------------------------
-	// Constants
-	// --------------------------------------------------
-	public static final String EOL = System.getProperty("line.separator");
+	private static final Logger LOGGER = LoggerFactory.getLogger(Config.class);
 	
 	// --------------------------------------------------
 	// L2J Property File Definitions
@@ -46,8 +41,6 @@ public final class Config
 	// L2J Variable Definitions
 	// --------------------------------------------------
 	
-	public static final String LOG_FOLDER = "log"; // Name of folder for log file
-	public static final String LOG_NAME = "config/log.cfg"; // Name of log file
 	public static final String ROOT_DIRECTORY = System.getProperty("rootDirectory", ".");
 	
 	// --------------------------------------------------
@@ -87,7 +80,7 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, Config.class.getSimpleName() + ": Error while loading configuration: ", e);
+			LOGGER.warn("Error while loading configuration:", e);
 		}
 		
 		try
@@ -101,9 +94,9 @@ public final class Config
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.WARNING, Config.class.getSimpleName() + ": Error while loading configuration: ", e);
+			LOGGER.warn("Error while loading configuration:", e);
 		}
 		
-		_log.log(Level.INFO, Config.class.getSimpleName() + ": Initialized!");
+		LOGGER.info("Loaded!");
 	}
 }

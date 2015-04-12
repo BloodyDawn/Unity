@@ -19,8 +19,6 @@
 package org.l2junity.loginserver;
 
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.l2junity.loginserver.db.AccountBansDAO;
 import org.l2junity.loginserver.db.AccountLoginsDAO;
@@ -31,6 +29,8 @@ import org.skife.jdbi.v2.Handle;
 import org.skife.jdbi.v2.exceptions.DBIException;
 import org.skife.jdbi.v2.exceptions.UnableToObtainConnectionException;
 import org.skife.jdbi.v2.tweak.HandleCallback;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
@@ -39,7 +39,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
  */
 public class DatabaseFactory
 {
-	private static final Logger _log = Logger.getLogger(DatabaseFactory.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(DatabaseFactory.class.getName());
 	
 	private final ComboPooledDataSource _source = new ComboPooledDataSource();
 	private final DBI _dbi;
@@ -54,7 +54,7 @@ public class DatabaseFactory
 			if (Config.DATABASE_MAX_CONNECTIONS < 2)
 			{
 				Config.DATABASE_MAX_CONNECTIONS = 2;
-				_log.warning("A minimum of " + Config.DATABASE_MAX_CONNECTIONS + " db connections are required.");
+				LOGGER.warn("A minimum of {} db connections are required.", Config.DATABASE_MAX_CONNECTIONS);
 			}
 			
 			_source.setAutoCommitOnClose(true);
@@ -103,7 +103,7 @@ public class DatabaseFactory
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.SEVERE, "Could not init DB connection:", e);
+			LOGGER.error("Could not init DB connection:", e);
 			System.exit(0);
 		}
 		finally
@@ -123,7 +123,7 @@ public class DatabaseFactory
 		}
 		catch (Exception e)
 		{
-			_log.log(Level.INFO, "", e);
+			LOGGER.info("", e);
 		}
 	}
 	
@@ -143,7 +143,7 @@ public class DatabaseFactory
 			}
 			catch (UnableToObtainConnectionException e)
 			{
-				_log.log(Level.WARNING, getClass().getSimpleName() + ": getHandle() failed, trying again", e);
+				LOGGER.warn("getHandle() failed, trying again", e);
 			}
 		}
 		return handle;

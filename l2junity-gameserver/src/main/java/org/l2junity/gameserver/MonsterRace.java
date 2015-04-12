@@ -29,7 +29,7 @@ import org.slf4j.LoggerFactory;
 
 public class MonsterRace
 {
-	protected static final Logger _log = LoggerFactory.getLogger(MonsterRace.class);
+	protected static final Logger LOGGER = LoggerFactory.getLogger(MonsterRace.class);
 	
 	private final Npc[] _monsters;
 	private int[][] _speeds;
@@ -76,7 +76,7 @@ public class MonsterRace
 			}
 			catch (Exception e)
 			{
-				_log.warn("", e);
+				LOGGER.warn("", e);
 			}
 			// _log.info("Monster "+i+" is id: "+(id+random));
 		}
