@@ -4,6 +4,9 @@ defaultTasks('build')
 
 sourceCompatibility = '1.8'
 
+dependencies {
+	compile(group: 'org.slf4j', name: 'slf4j-api', version: '1.7.10')
+}
 
 tasks.withType(JavaCompile) {
 	options.encoding = 'UTF-8'

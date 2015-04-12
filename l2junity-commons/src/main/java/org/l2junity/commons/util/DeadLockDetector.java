@@ -24,8 +24,9 @@ import java.lang.management.MonitorInfo;
 import java.lang.management.ThreadInfo;
 import java.lang.management.ThreadMXBean;
 import java.time.Duration;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Thread to check for deadlocked threads.
@@ -33,7 +34,7 @@ import java.util.logging.Logger;
  */
 public class DeadLockDetector extends Thread
 {
-	private static Logger LOGGER = Logger.getLogger(DeadLockDetector.class.getName());
+	private static Logger LOGGER = LoggerFactory.getLogger(DeadLockDetector.class);
 	
 	private final Duration _checkInterval;
 	private final Runnable _deadLockCallback;
@@ -103,7 +104,7 @@ public class DeadLockDetector extends Thread
 						}
 					}
 					
-					LOGGER.warning(info.toString());
+					LOGGER.warn(info.toString());
 					
 					if (_deadLockCallback != null)
 					{
@@ -114,7 +115,7 @@ public class DeadLockDetector extends Thread
 			}
 			catch (Exception e)
 			{
-				LOGGER.log(Level.WARNING, "DeadLockDetector: ", e);
+				LOGGER.warn("", e);
 			}
 		}
 	}
