@@ -36,7 +36,7 @@ import org.slf4j.LoggerFactory;
 @Sharable
 public class PacketEncoder extends MessageToByteEncoder<IOutgoingPacket>
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(PacketEncoder.class.getName());
+	private static final Logger LOGGER = LoggerFactory.getLogger(PacketEncoder.class);
 	
 	private final ByteOrder _byteOrder;
 	private final int _maxPacketSize;
