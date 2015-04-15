@@ -375,7 +375,14 @@ public abstract class Summon extends Playable
 		decayMe();
 		if (owner != null)
 		{
-			owner.setPet(null);
+			if (isPet())
+			{
+				owner.setPet(null);
+			}
+			else
+			{
+				owner.removeServitor(getObjectId());
+			}
 		}
 		super.deleteMe();
 	}
