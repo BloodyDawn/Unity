@@ -25,11 +25,19 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="19003" levels="5" name="Clan Resistance Hall">
-		<!-- AUTO GENERATED SKILL -->
-		<!-- Increases clan members' Holy/Dark Attack Resistance by 3. Applies after the elder stage. -->
+		<!-- Updated to Ertheia -->
+		<!-- Only 4 level are in use -->
+		<table name="#res"> 3 4 5 6 7 </table> <!-- Confirmed -->
 		<set name="icon" val="icon.skill19003" />
+		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="holyRes" val="#res" />
+				<add stat="darkRes" val="#res" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="19004" levels="5" name="Clan De-Buff Control">
 		<!-- AUTO GENERATED SKILL -->
@@ -39,18 +47,30 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="19005" levels="5" name="Clan Muzzle Control">
-		<!-- AUTO GENERATED SKILL -->
-		<!-- Increases clan members' Paralysis Resistance by 12. Applies after the elder stage. -->
+		<!-- Updated to Ertheia -->
+		<table name="#trait_paralyze"> 12 13 14 15 16 </table> <!-- Confirmed -->
 		<set name="icon" val="icon.skill19005" />
+		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="DefenceTrait">
+				<param PARALYZE="#trait_paralyze" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="19006" levels="5" name="Clan Mental Control">
-		<!-- AUTO GENERATED SKILL -->
-		<!-- Increases clan members' Mental Attack Resistance by 12. Applies after the elder stage. -->
+		<!-- Updated to Ertheia -->
+		<table name="#trait_derangement"> 12 13 14 15 16 </table> <!-- Confirmed -->
 		<set name="icon" val="icon.skill19006" />
+		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="DefenceTrait">
+				<param DERANGEMENT="#trait_derangement" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="19007" levels="1" name="Clan Summon">
 		<!-- AUTO GENERATED SKILL -->
