@@ -57,7 +57,7 @@ public class SayuneZone extends ZoneType
 	@Override
 	protected void onEnter(Creature character)
 	{
-		if (character.isPlayer() && character.isInCategory(CategoryType.AWAKEN_GROUP))
+		if (character.isPlayer() && character.isInCategory(CategoryType.AWAKEN_GROUP) && !character.getActingPlayer().isMounted() && !character.isTransformed())
 		{
 			character.setInsideZone(ZoneId.SAYUNE, true);
 			ThreadPoolManager.getInstance().executeGeneral(new FlyMoveStartTask(this, character.getActingPlayer()));
