@@ -4025,6 +4025,12 @@ public final class PlayerInstance extends Playable
 			return false;
 		}
 		
+		if (isInsideZone(ZoneId.SAYUNE))
+		{
+			sendPacket(SystemMessageId.YOU_CANNOT_USE_SKILLS_IN_THE_CORRESPONDING_REGION);
+			return false;
+		}
+		
 		// Check if the spell using charges or not in AirShip
 		if (((getCharges() < skill.getChargeConsume())) || (isInAirShip() && !skill.hasEffectType(L2EffectType.REFUEL_AIRSHIP)))
 		{
