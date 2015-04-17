@@ -36604,27 +36604,21 @@ INSERT INTO `spawnlist` VALUES
 ('altar_of_evil', 1, 23174, -11948, 21399, -3776, 0, 0, 18259, 60, 0, 0, 0), -- Arbitor of Darkness
 ('altar_of_evil', 1, 23174, -12005, 19537, -3760, 0, 0, 56370, 60, 0, 0, 0), -- Arbitor of Darkness
 ('altar_of_evil', 1, 23174, -12007, 29154, -2768, 0, 0, 8920, 60, 0, 0, 0), -- Arbitor of Darkness
-('altar_of_evil', 1, 23174, -12380, 31015, -2880, 0, 0, 25729, 60, 0, 0, 0), -- Arbitor of Darkness
 ('altar_of_evil', 1, 23174, -12733, 19395, -3760, 0, 0, 35084, 60, 0, 0, 0), -- Arbitor of Darkness
-('altar_of_evil', 1, 23174, -13004, 29955, -2968, 0, 0, 45293, 60, 0, 0, 0), -- Arbitor of Darkness
 ('altar_of_evil', 1, 23174, -13079, 18799, -2952, 0, 0, 42235, 60, 0, 0, 0), -- Arbitor of Darkness
 ('altar_of_evil', 1, 23174, -13219, 20407, -3768, 0, 0, 8645, 60, 0, 0, 0), -- Arbitor of Darkness
 ('altar_of_evil', 1, 23174, -13366, 14846, -3776, 0, 0, 11444, 60, 0, 0, 0), -- Arbitor of Darkness
-('altar_of_evil', 1, 23174, -13850, 30582, -3224, 0, 0, 43404, 60, 0, 0, 0), -- Arbitor of Darkness
-('altar_of_evil', 1, 23174, -13850, 30769, -3224, 0, 0, 22900, 60, 0, 0, 0), -- Arbitor of Darkness
 ('altar_of_evil', 1, 23174, -14139, 18268, -2896, 0, 0, 30517, 60, 0, 0, 0), -- Arbitor of Darkness
 ('altar_of_evil', 1, 23174, -14139, 18976, -2984, 0, 0, 6658, 60, 0, 0, 0), -- Arbitor of Darkness
 ('altar_of_evil', 1, 23174, -14475, 23976, -3648, 0, 0, 24146, 60, 0, 0, 0), -- Arbitor of Darkness
 ('altar_of_evil', 1, 23174, -14492, 24517, -2744, 0, 0, 32667, 60, 0, 0, 0), -- Arbitor of Darkness
 ('altar_of_evil', 1, 23174, -14594, 26291, -3696, 0, 0, 28496, 60, 0, 0, 0), -- Arbitor of Darkness
-('altar_of_evil', 1, 23174, -14722, 31025, -3488, 0, 0, 36809, 60, 0, 0, 0), -- Arbitor of Darkness
 ('altar_of_evil', 1, 23174, -14979, 17322, -3688, 0, 0, 45614, 60, 0, 0, 0), -- Arbitor of Darkness
 ('altar_of_evil', 1, 23174, -15143, 25411, -3496, 0, 0, 44083, 60, 0, 0, 0), -- Arbitor of Darkness
 ('altar_of_evil', 1, 23174, -15209, 16477, -3776, 0, 0, 52979, 60, 0, 0, 0), -- Arbitor of Darkness
 ('altar_of_evil', 1, 23174, -15279, 24269, -3632, 0, 0, 22169, 60, 0, 0, 0), -- Arbitor of Darkness
 ('altar_of_evil', 1, 23174, -15310, 17569, -3696, 0, 0, 40087, 60, 0, 0, 0), -- Arbitor of Darkness
 ('altar_of_evil', 1, 23174, -15418, 14237, -3760, 0, 0, 51639, 60, 0, 0, 0), -- Arbitor of Darkness
-('altar_of_evil', 1, 23174, -15463, 32093, -3648, 0, 0, 22605, 60, 0, 0, 0), -- Arbitor of Darkness
 ('altar_of_evil', 1, 23174, -15749, 12827, -3776, 0, 0, 43155, 60, 0, 0, 0), -- Arbitor of Darkness
 ('altar_of_evil', 1, 23174, -15760, 11886, -3768, 0, 0, 50698, 60, 0, 0, 0), -- Arbitor of Darkness
 ('altar_of_evil', 1, 23174, -16141, 16700, -3696, 0, 0, 48228, 60, 0, 0, 0), -- Arbitor of Darkness
@@ -36706,26 +36700,19 @@ INSERT INTO `spawnlist` VALUES
 ('altar_of_evil', 1, 23175, -12007, 28787, -2880, 0, 0, 32474, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
 ('altar_of_evil', 1, 23175, -12033, 23305, -3656, 0, 0, 10185, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
 ('altar_of_evil', 1, 23175, -12570, 14014, -3760, 0, 0, 42074, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
-('altar_of_evil', 1, 23175, -12668, 29747, -2888, 0, 0, 21260, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
-('altar_of_evil', 1, 23175, -12861, 30312, -2888, 0, 0, 31093, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
 ('altar_of_evil', 1, 23175, -12900, 19588, -3760, 0, 0, 61419, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
 ('altar_of_evil', 1, 23175, -12946, 12718, -3752, 0, 0, 48458, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
 ('altar_of_evil', 1, 23175, -12961, 24232, -3680, 0, 0, 7201, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
 ('altar_of_evil', 1, 23175, -13079, 18799, -2952, 0, 0, 31871, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
-('altar_of_evil', 1, 23175, -13251, 30995, -3104, 0, 0, 42720, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
 ('altar_of_evil', 1, 23175, -13515, 13071, -3752, 0, 0, 21064, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
 ('altar_of_evil', 1, 23175, -13560, 20025, -3720, 0, 0, 15509, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
 ('altar_of_evil', 1, 23175, -14014, 11555, -3712, 0, 0, 42324, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
 ('altar_of_evil', 1, 23175, -14119, 18176, -3304, 0, 0, 31290, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
-('altar_of_evil', 1, 23175, -14134, 30021, -3288, 0, 0, 45505, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
 ('altar_of_evil', 1, 23175, -14139, 18976, -2984, 0, 0, 54609, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
 ('altar_of_evil', 1, 23175, -14216, 23962, -2736, 0, 0, 30914, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
-('altar_of_evil', 1, 23175, -14418, 31517, -3464, 0, 0, 19304, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
 ('altar_of_evil', 1, 23175, -14492, 23407, -3768, 0, 0, 62705, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
-('altar_of_evil', 1, 23175, -14702, 30582, -3448, 0, 0, 33765, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
 ('altar_of_evil', 1, 23175, -14725, 10903, -3704, 0, 0, 5760, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
 ('altar_of_evil', 1, 23175, -14866, 11787, -3760, 0, 0, 34554, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
-('altar_of_evil', 1, 23175, -14925, 31743, -3552, 0, 0, 18698, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
 ('altar_of_evil', 1, 23175, -15182, 26084, -3512, 0, 0, 28036, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
 ('altar_of_evil', 1, 23175, -15209, 24173, -3640, 0, 0, 35851, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
 ('altar_of_evil', 1, 23175, -15308, 24026, -3664, 0, 0, 41942, 60, 0, 0, 0), -- Altar of Evil Spirit Offering Box
@@ -36801,23 +36788,15 @@ INSERT INTO `spawnlist` VALUES
 ('altar_of_evil', 1, 23176, -11860, 31958, -3000, 0, 0, 6126, 60, 0, 0, 0), -- Mutated Cerberos
 ('altar_of_evil', 1, 23176, -11928, 31875, -2984, 0, 0, 38622, 60, 0, 0, 0), -- Mutated Cerberos
 ('altar_of_evil', 1, 23176, -12143, 29534, -2728, 0, 0, 60638, 60, 0, 0, 0), -- Mutated Cerberos
-('altar_of_evil', 1, 23176, -12146, 30208, -2688, 0, 0, 36464, 60, 0, 0, 0), -- Mutated Cerberos
 ('altar_of_evil', 1, 23176, -12166, 19721, -3728, 0, 0, 7379, 60, 0, 0, 0), -- Mutated Cerberos
-('altar_of_evil', 1, 23176, -12304, 31713, -2968, 0, 0, 30649, 60, 0, 0, 0), -- Mutated Cerberos
-('altar_of_evil', 1, 23176, -12430, 30956, -2880, 0, 0, 3943, 60, 0, 0, 0), -- Mutated Cerberos
 ('altar_of_evil', 1, 23176, -12749, 20953, -3760, 0, 0, 9904, 60, 0, 0, 0), -- Mutated Cerberos
 ('altar_of_evil', 1, 23176, -13079, 18799, -2952, 0, 0, 61230, 60, 0, 0, 0), -- Mutated Cerberos
 ('altar_of_evil', 1, 23176, -13112, 11908, -3720, 0, 0, 37604, 60, 0, 0, 0), -- Mutated Cerberos
 ('altar_of_evil', 1, 23176, -13239, 15682, -3696, 0, 0, 11851, 60, 0, 0, 0), -- Mutated Cerberos
-('altar_of_evil', 1, 23176, -13244, 29880, -3080, 0, 0, 27715, 60, 0, 0, 0), -- Mutated Cerberos
 ('altar_of_evil', 1, 23176, -13256, 19623, -3680, 0, 0, 16051, 60, 0, 0, 0), -- Mutated Cerberos
 ('altar_of_evil', 1, 23176, -13290, 13923, -3760, 0, 0, 372, 60, 0, 0, 0), -- Mutated Cerberos
 ('altar_of_evil', 1, 23176, -13388, 24147, -3576, 0, 0, 47025, 60, 0, 0, 0), -- Mutated Cerberos
 ('altar_of_evil', 1, 23176, -13388, 24332, -3704, 0, 0, 56025, 60, 0, 0, 0), -- Mutated Cerberos
-('altar_of_evil', 1, 23176, -13566, 31704, -3216, 0, 0, 19391, 60, 0, 0, 0), -- Mutated Cerberos
-('altar_of_evil', 1, 23176, -13743, 31245, -3264, 0, 0, 51831, 60, 0, 0, 0), -- Mutated Cerberos
-('altar_of_evil', 1, 23176, -13850, 30395, -3224, 0, 0, 48780, 60, 0, 0, 0), -- Mutated Cerberos
-('altar_of_evil', 1, 23176, -13850, 32078, -3304, 0, 0, 52367, 60, 0, 0, 0), -- Mutated Cerberos
 ('altar_of_evil', 1, 23176, -13956, 19617, -3704, 0, 0, 19717, 60, 0, 0, 0), -- Mutated Cerberos
 ('altar_of_evil', 1, 23176, -13992, 19252, -3704, 0, 0, 15964, 60, 0, 0, 0), -- Mutated Cerberos
 ('altar_of_evil', 1, 23176, -14024, 23701, -3688, 0, 0, 46699, 60, 0, 0, 0), -- Mutated Cerberos
@@ -36828,7 +36807,6 @@ INSERT INTO `spawnlist` VALUES
 ('altar_of_evil', 1, 23176, -14407, 11159, -3688, 0, 0, 23340, 60, 0, 0, 0), -- Mutated Cerberos
 ('altar_of_evil', 1, 23176, -14492, 24517, -2744, 0, 0, 21814, 60, 0, 0, 0), -- Mutated Cerberos
 ('altar_of_evil', 1, 23176, -14806, 16924, -3696, 0, 0, 9610, 60, 0, 0, 0), -- Mutated Cerberos
-('altar_of_evil', 1, 23176, -14828, 31673, -3520, 0, 0, 36758, 60, 0, 0, 0), -- Mutated Cerberos
 ('altar_of_evil', 1, 23176, -15184, 15763, -3768, 0, 0, 6257, 60, 0, 0, 0), -- Mutated Cerberos
 ('altar_of_evil', 1, 23176, -15294, 26091, -3480, 0, 0, 44628, 60, 0, 0, 0), -- Mutated Cerberos
 ('altar_of_evil', 1, 23176, -15566, 12231, -3768, 0, 0, 36538, 60, 0, 0, 0), -- Mutated Cerberos
