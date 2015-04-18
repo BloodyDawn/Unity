@@ -233,6 +233,7 @@ public final class Q10365_SeekerEscort extends Quest
 				final Npc bloodhound = addSpawn(BLOODHOUND, BLOODHOUND_SPAWN_2, false, 300000);
 				bloodhound.setTitle(player.getName());
 				bloodhound.setSummoner(player);
+				bloodhound.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.RUFF_RUFF_RRRRRR);
 				startQuestTimer("MOVE_DELAY", 500, bloodhound, player);
 				break;
 			}

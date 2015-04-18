@@ -65,6 +65,7 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogout;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerMoveRequest;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPKChanged;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPressTutorialMark;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerProfessionChange;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPvPChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPvPKill;
@@ -221,6 +222,7 @@ public enum EventType
 	ON_PLAYER_LOGIN(OnPlayerLogin.class, void.class),
 	ON_PLAYER_LOGOUT(OnPlayerLogout.class, void.class),
 	ON_PLAYER_PK_CHANGED(OnPlayerPKChanged.class, void.class),
+	ON_PLAYER_PRESS_TUTORIAL_MARK(OnPlayerPressTutorialMark.class, void.class),
 	ON_PLAYER_MOVE_REQUEST(OnPlayerMoveRequest.class, void.class, TerminateReturn.class),
 	ON_PLAYER_PROFESSION_CHANGE(OnPlayerProfessionChange.class, void.class),
 	ON_PLAYER_CHANGE_TO_AWAKENED_CLASS(OnPlayerChangeToAwakenedClass.class, void.class),

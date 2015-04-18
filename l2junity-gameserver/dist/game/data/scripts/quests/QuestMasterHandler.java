@@ -190,6 +190,7 @@ import quests.Q10327_IntruderWhoWantsTheBookOfGiants.Q10327_IntruderWhoWantsTheB
 import quests.Q10328_RequestToSealTheEvilFragment.Q10328_RequestToSealTheEvilFragment;
 import quests.Q10329_BackupSeekers.Q10329_BackupSeekers;
 import quests.Q10330_ToTheRuinsOfYeSagira.Q10330_ToTheRuinsOfYeSagira;
+import quests.Q10331_StartOfFate.Q10331_StartOfFate;
 import quests.Q10338_SeizeYourDestiny.Q10338_SeizeYourDestiny;
 import quests.Q10361_RolesOfTheSeeker.Q10361_RolesOfTheSeeker;
 import quests.Q10362_CertificationOfTheSeeker.Q10362_CertificationOfTheSeeker;
@@ -396,6 +397,7 @@ public class QuestMasterHandler
 		Q10328_RequestToSealTheEvilFragment.class,
 		Q10329_BackupSeekers.class,
 		Q10330_ToTheRuinsOfYeSagira.class,
+		Q10331_StartOfFate.class,
 		Q10338_SeizeYourDestiny.class,
 		Q10361_RolesOfTheSeeker.class,
 		Q10362_CertificationOfTheSeeker.class,

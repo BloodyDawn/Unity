@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance name="Labyrinth of Belis" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
+	<activityTime val="60" />
+	<allowSummon val="false" />
+	<emptyDestroyTime val="30" />
+	<spawnPoint spawnX="-111789" spawnY="231891" spawnZ="-3178" />
+		<doorlist>
+		<door doorId="16240001" />
+		<door doorId="16240002" />
+		<door doorId="16240003" />
+		<door doorId="16240004" />
+		<door doorId="16240005" />
+		<door doorId="16240006" />
+		<door doorId="16240007" />
+		<door doorId="16240008" />
+	</doorlist>
+	<spawnlist>
+		<group name="general">
+			<!-- Belis Veritification System -->
+			<spawn npcId="33215" x="-116507" y="212976" z="-8551" heading="0" respawn="0" />
+			<!-- Handyman -->
+			<spawn npcId="22997" x="-116515" y="212635" z="-8602" heading="0" respawn="0" />
+			<spawn npcId="22997" x="-116217" y="212876" z="-8602" heading="0" respawn="0" />
+			<spawn npcId="22997" x="-116395" y="213284" z="-8602" heading="0" respawn="0" />
+			<spawn npcId="22997" x="-116776" y="213087" z="-8602" heading="0" respawn="0" />
+		</group>
+		<group name="operatives">
+			<!-- Operative -->
+			<spawn npcId="22998" x="-118633" y="211144" z="-8602" heading="0" respawn="0" />
+			<spawn npcId="22998" x="-118434" y="211432" z="-8602" heading="0" respawn="0" />
+			<spawn npcId="22998" x="-118021" y="211334" z="-8602" heading="0" respawn="0" />
+			<spawn npcId="22998" x="-117949" y="211104" z="-8602" heading="0" respawn="0" />
+			<spawn npcId="22998" x="-118167" y="210784" z="-8602" heading="0" respawn="0" />
+			<spawn npcId="22998" x="-118380" y="210883" z="-8602" heading="0" respawn="0" />
+		</group>
+	</spawnlist>
+</instance>

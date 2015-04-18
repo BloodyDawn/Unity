@@ -967,14 +967,22 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14698" levels="1" name="Current Shock">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Zone Skill -->
 		<!-- Incurs a current shock. -->
 		<set name="icon" val="icon.skill1072" />
+		<set name="abnormalTime" val="3" />
+		<set name="effectPoint" val="-100" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="hitTime" val="3000" />
-		<set name="isMagic" val="1" />
+		<set name="targetType" val="ONE" />
+		<set name="hitTime" val="1000" />
 		<set name="isDebuff" val="true" />
+		<set name="magicLvl" val="1" />
+		<set name="isMagic" val="1" />
+		<for>
+			<effect name="DamOverTime" ticks="2">
+				<param canKill="true" power="85" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="14699" levels="1" name="Illusion of Pain">
 		<!-- AUTO GENERATED SKILL -->
