@@ -84,7 +84,7 @@ public class CharSummonTable
 			}
 			catch (Exception e)
 			{
-				LOGGER.warn(getClass().getSimpleName() + ": Error while loading saved servitor: " + e);
+				LOGGER.warn("Error while loading saved servitor: " + e);
 			}
 		}
 		
@@ -101,7 +101,7 @@ public class CharSummonTable
 			}
 			catch (Exception e)
 			{
-				LOGGER.warn(getClass().getSimpleName() + ": Error while loading saved pet: " + e);
+				LOGGER.warn("Error while loading saved pet: " + e);
 			}
 		}
 	}
@@ -123,7 +123,7 @@ public class CharSummonTable
 		}
 		catch (SQLException e)
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": Summon cannot be removed: " + e);
+			LOGGER.warn("Summon cannot be removed: " + e);
 		}
 	}
 	
@@ -132,26 +132,26 @@ public class CharSummonTable
 		final ItemInstance item = activeChar.getInventory().getItemByObjectId(_pets.get(activeChar.getObjectId()));
 		if (item == null)
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": Null pet summoning item for: " + activeChar);
+			LOGGER.warn("Null pet summoning item for: " + activeChar);
 			return;
 		}
 		final PetData petData = PetDataTable.getInstance().getPetDataByItemId(item.getId());
 		if (petData == null)
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": Null pet data for: " + activeChar + " and summoning item: " + item);
+			LOGGER.warn("Null pet data for: " + activeChar + " and summoning item: " + item);
 			return;
 		}
 		final L2NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(petData.getNpcId());
 		if (npcTemplate == null)
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": Null pet NPC template for: " + activeChar + " and pet Id:" + petData.getNpcId());
+			LOGGER.warn("Null pet NPC template for: " + activeChar + " and pet Id:" + petData.getNpcId());
 			return;
 		}
 		
 		final L2PetInstance pet = L2PetInstance.spawnPet(npcTemplate, activeChar, item);
 		if (pet == null)
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": Null pet instance for: " + activeChar + " and pet NPC template:" + npcTemplate);
+			LOGGER.warn("Null pet instance for: " + activeChar + " and pet NPC template:" + npcTemplate);
 			return;
 		}
 		
@@ -217,7 +217,7 @@ public class CharSummonTable
 		}
 		catch (SQLException e)
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": Servitor cannot be restored: " + e);
+			LOGGER.warn("Servitor cannot be restored: " + e);
 		}
 	}
 	
@@ -243,9 +243,8 @@ public class CharSummonTable
 		}
 		catch (Exception e)
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": Failed to store summon: " + summon + " from " + summon.getOwner() + ", error: " + e);
+			LOGGER.warn("Failed to store summon: {} from {}, error: {}", summon, summon.getOwner(), e);
 		}
-		
 	}
 	
 	public static CharSummonTable getInstance()

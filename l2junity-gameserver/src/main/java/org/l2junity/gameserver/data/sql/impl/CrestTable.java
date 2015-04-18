@@ -113,7 +113,7 @@ public final class CrestTable
 			LOGGER.warn("There was an error while loading crests from database:", e);
 		}
 		
-		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _crests.size() + " Crests.");
+		LOGGER.info("Loaded {} Crests.", _crests.size());
 		
 		for (L2Clan clan : ClanTable.getInstance().getClans())
 		{
@@ -121,7 +121,7 @@ public final class CrestTable
 			{
 				if (getCrest(clan.getCrestId()) == null)
 				{
-					LOGGER.info("Removing non-existent crest for clan " + clan.getName() + " [" + clan.getId() + "], crestId:" + clan.getCrestId());
+					LOGGER.info("Removing non-existent crest for clan {}, crestId: {}", clan, clan.getCrestId());
 					clan.setCrestId(0);
 					clan.changeClanCrest(0);
 				}
@@ -131,7 +131,7 @@ public final class CrestTable
 			{
 				if (getCrest(clan.getCrestLargeId()) == null)
 				{
-					LOGGER.info("Removing non-existent large crest for clan " + clan.getName() + " [" + clan.getId() + "], crestLargeId:" + clan.getCrestLargeId());
+					LOGGER.info("Removing non-existent large crest for clan {}, crestLargeId: {}", clan, clan.getCrestLargeId());
 					clan.setCrestLargeId(0);
 					clan.changeLargeCrest(0);
 				}
@@ -141,7 +141,7 @@ public final class CrestTable
 			{
 				if (getCrest(clan.getAllyCrestId()) == null)
 				{
-					LOGGER.info("Removing non-existent ally crest for clan " + clan.getName() + " [" + clan.getId() + "], allyCrestId:" + clan.getAllyCrestId());
+					LOGGER.info("Removing non-existent ally crest for clan {}, allyCrestId: {}", clan.getAllyCrestId());
 					clan.setAllyCrestId(0);
 					clan.changeAllyCrest(0, true);
 				}
@@ -179,7 +179,7 @@ public final class CrestTable
 		}
 		catch (SQLException e)
 		{
-			LOGGER.warn("There was an error while saving crest in database:", e);
+			LOGGER.warn("There was an error while saving crest in database: {}", e);
 		}
 		return null;
 	}
@@ -207,7 +207,7 @@ public final class CrestTable
 		}
 		catch (SQLException e)
 		{
-			LOGGER.warn("There was an error while deleting crest from database:", e);
+			LOGGER.warn("There was an error while deleting crest from database: {}", e);
 		}
 	}
 	

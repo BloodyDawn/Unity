@@ -20,6 +20,7 @@ package org.l2junity.gameserver.data.xml.impl;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.options.Options;
@@ -48,7 +49,7 @@ public class OptionData implements IXmlReader
 	{
 		_optionData.clear();
 		parseDatapackDirectory("data/stats/options", false);
-		LOGGER.info(getClass().getSimpleName() + ": Loaded: " + _optionData.size() + " Options.");
+		LOGGER.info("Loaded: {} Options.", _optionData.size());
 	}
 	
 	@Override

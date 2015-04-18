@@ -20,6 +20,7 @@ package org.l2junity.gameserver.data.xml.impl;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.model.holders.RangeChanceHolder;
@@ -51,8 +52,8 @@ public final class EnchantItemGroupsData implements IXmlReader
 		_itemGroups.clear();
 		_scrollGroups.clear();
 		parseDatapackFile("data/enchantItemGroups.xml");
-		LOGGER.info(getClass().getSimpleName() + ": Loaded: " + _itemGroups.size() + " item group templates.");
-		LOGGER.info(getClass().getSimpleName() + ": Loaded: " + _scrollGroups.size() + " scroll group templates.");
+		LOGGER.info("Loaded: {} item group templates.", _itemGroups.size());
+		LOGGER.info("Loaded: {} scroll group templates.", _scrollGroups.size());
 	}
 	
 	@Override

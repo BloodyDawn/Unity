@@ -115,7 +115,7 @@ public class EnchantItemHPBonusData implements IXmlReader
 	{
 		_armorHPBonuses.clear();
 		parseDatapackFile("data/stats/enchantHPBonus.xml");
-		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _armorHPBonuses.size() + " Enchant HP Bonuses.");
+		LOGGER.info("Loaded {} Enchant HP Bonuses.", _armorHPBonuses.size());
 	}
 	
 	/**

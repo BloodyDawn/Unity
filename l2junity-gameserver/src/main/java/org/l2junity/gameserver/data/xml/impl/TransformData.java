@@ -20,6 +20,7 @@ package org.l2junity.gameserver.data.xml.impl;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -51,7 +52,7 @@ public final class TransformData implements IXmlReader
 	{
 		_transformData.clear();
 		parseDatapackDirectory("data/stats/transformations", false);
-		LOGGER.info(getClass().getSimpleName() + ": Loaded: " + _transformData.size() + " transform templates.");
+		LOGGER.info("Loaded: {} transform templates.", _transformData.size());
 	}
 	
 	@Override

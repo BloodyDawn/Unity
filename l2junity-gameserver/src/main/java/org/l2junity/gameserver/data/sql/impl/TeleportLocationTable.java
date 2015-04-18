@@ -23,6 +23,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
+
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.L2TeleportLocation;
@@ -62,16 +63,16 @@ public class TeleportLocationTable
 				
 				_teleports.put(teleport.getTeleId(), teleport);
 			}
-			LOGGER.info(getClass().getSimpleName() + ": Loaded " + _teleports.size() + " Teleport Location Templates.");
+			LOGGER.info("Loaded {} Teleport Location Templates.", _teleports.size());
 		}
 		catch (Exception e)
 		{
-			LOGGER.error(getClass().getSimpleName() + ": Error loading Teleport Table.", e);
+			LOGGER.error("Error loading Teleport Table.", e);
 		}
 		
 		if (Config.CUSTOM_TELEPORT_TABLE)
 		{
-			int _cTeleCount = _teleports.size();
+			int cTeleCount = _teleports.size();
 			try (Connection con = DatabaseFactory.getInstance().getConnection();
 				Statement s = con.createStatement();
 				ResultSet rs = s.executeQuery("SELECT id, loc_x, loc_y, loc_z, price, fornoble, itemId FROM custom_teleport"))
@@ -90,15 +91,15 @@ public class TeleportLocationTable
 					
 					_teleports.put(teleport.getTeleId(), teleport);
 				}
-				_cTeleCount = _teleports.size() - _cTeleCount;
-				if (_cTeleCount > 0)
+				cTeleCount = _teleports.size() - cTeleCount;
+				if (cTeleCount > 0)
 				{
-					LOGGER.info(getClass().getSimpleName() + ": Loaded " + _cTeleCount + " Custom Teleport Location Templates.");
+					LOGGER.info("Loaded {} Custom Teleport Location Templates.", cTeleCount);
 				}
 			}
 			catch (Exception e)
 			{
-				LOGGER.warn(getClass().getSimpleName() + ": Error while creating custom teleport table " + e.getMessage(), e);
+				LOGGER.warn("Error while creating custom teleport table {}", e.getMessage(), e);
 			}
 		}
 	}

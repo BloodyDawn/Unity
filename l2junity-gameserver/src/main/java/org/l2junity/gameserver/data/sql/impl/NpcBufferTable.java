@@ -24,6 +24,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
+
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.model.holders.ItemHolder;
@@ -131,7 +132,7 @@ public class NpcBufferTable
 		}
 		catch (SQLException e)
 		{
-			LOGGER.error(getClass().getSimpleName() + ": Error reading npc_buffer table: " + e.getMessage(), e);
+			LOGGER.error("Error reading npc_buffer table: {}", e.getMessage(), e);
 		}
 		
 		if (Config.CUSTOM_NPCBUFFER_TABLES)
@@ -176,10 +177,10 @@ public class NpcBufferTable
 			}
 			catch (SQLException e)
 			{
-				LOGGER.error(getClass().getSimpleName() + ": Error reading custom_npc_buffer table: " + e.getMessage(), e);
+				LOGGER.error("Error reading custom_npc_buffer table: {}", e.getMessage(), e);
 			}
 		}
-		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _buffers.size() + " buffers and " + skillCount + " skills.");
+		LOGGER.info("Loaded: {} buffers and {} skills.", _buffers.size(), skillCount);
 	}
 	
 	public NpcBufferData getSkillInfo(int npcId, int buffGroup)

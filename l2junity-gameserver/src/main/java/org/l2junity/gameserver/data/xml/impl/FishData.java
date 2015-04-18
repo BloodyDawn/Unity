@@ -55,7 +55,7 @@ public final class FishData implements IXmlReader
 		_fishNormal.clear();
 		_fishHard.clear();
 		parseDatapackFile("data/stats/fishing/fishes.xml");
-		LOGGER.info(getClass().getSimpleName() + ": Loaded " + (_fishEasy.size() + _fishNormal.size() + _fishHard.size()) + " Fishes.");
+		LOGGER.info("Loaded " + (_fishEasy.size() + _fishNormal.size() + _fishHard.size()) + " Fishes.");
 	}
 	
 	@Override
@@ -133,7 +133,7 @@ public final class FishData implements IXmlReader
 			}
 			default:
 			{
-				LOGGER.warn(getClass().getSimpleName() + ": Unmanaged fish grade!");
+				LOGGER.warn("Unmanaged fish grade!");
 				return result;
 			}
 		}
@@ -149,7 +149,7 @@ public final class FishData implements IXmlReader
 		
 		if (result.isEmpty())
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": Cannot find any fish for level: " + level + " group: " + group + " and grade: " + grade + "!");
+			LOGGER.warn("Cannot find any fish for level: {} group: {} and grade: {}", level, group, grade);
 		}
 		return result;
 	}

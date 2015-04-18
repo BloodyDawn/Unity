@@ -124,7 +124,7 @@ public abstract class AbstractAI implements Ctrl
 			}
 			catch (Exception e)
 			{
-				_log.warn(getClass().getSimpleName() + ": Error: " + e.getMessage());
+				_log.warn("Error: " + e.getMessage());
 			}
 		}
 	}
