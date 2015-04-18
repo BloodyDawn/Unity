@@ -124,12 +124,12 @@ public final class SkillData
 		{
 			if (Config.DEBUG)
 			{
-				LOGGER.warn(getClass().getSimpleName() + ": call to unexisting skill level id: " + skillId + " requested level: " + level + " max level: " + maxLvl, new Throwable());
+				LOGGER.warn("call to unexisting skill level id: {} requested level: {} max level: {}", skillId, level, maxLvl, new Throwable());
 			}
 			return _skills.get(getSkillHashCode(skillId, maxLvl));
 		}
 		
-		LOGGER.warn(getClass().getSimpleName() + ": No skill info found for skill id " + skillId + " and skill level " + level + ".");
+		LOGGER.warn("No skill info found for skill id {} and skill level {}", skillId, level);
 		return null;
 	}
 	

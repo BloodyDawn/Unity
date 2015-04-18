@@ -131,20 +131,20 @@ public class OfflineTradersTable
 				}
 				catch (Exception e)
 				{
-					LOGGER.warn(getClass().getSimpleName() + ": Error while saving offline trader: " + pc.getObjectId() + " " + e, e);
+					LOGGER.warn("Error while saving offline trader: {} ", pc, e);
 				}
 			}
-			LOGGER.info(getClass().getSimpleName() + ": Offline traders stored.");
+			LOGGER.info("Offline traders stored.");
 		}
 		catch (Exception e)
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": Error while saving offline traders: " + e, e);
+			LOGGER.warn("Error while saving offline traders: {}", e);
 		}
 	}
 	
 	public void restoreOfflineTraders()
 	{
-		LOGGER.info(getClass().getSimpleName() + ": Loading offline traders...");
+		LOGGER.info("Loading offline traders...");
 		int nTraders = 0;
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			Statement stm = con.createStatement();
@@ -167,7 +167,7 @@ public class OfflineTradersTable
 				PrivateStoreType type = PrivateStoreType.findById(rs.getInt("type"));
 				if (type == null)
 				{
-					LOGGER.warn(getClass().getSimpleName() + ": PrivateStoreType with id " + rs.getInt("type") + " could not be found.");
+					LOGGER.warn("PrivateStoreType with id {} could not be found.", rs.getInt("type"));
 					continue;
 				}
 				
@@ -243,7 +243,7 @@ public class OfflineTradersTable
 				}
 				catch (Exception e)
 				{
-					LOGGER.warn(getClass().getSimpleName() + ": Error loading trader: " + player, e);
+					LOGGER.warn("Error loading trader: " + player, e);
 					if (player != null)
 					{
 						player.deleteMe();
@@ -251,7 +251,7 @@ public class OfflineTradersTable
 				}
 			}
 			
-			LOGGER.info(getClass().getSimpleName() + ": Loaded: " + nTraders + " offline trader(s)");
+			LOGGER.info("Loaded: " + nTraders + " offline trader(s)");
 			
 			try (Statement stm1 = con.createStatement())
 			{
@@ -261,7 +261,7 @@ public class OfflineTradersTable
 		}
 		catch (Exception e)
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": Error while loading offline traders: ", e);
+			LOGGER.warn("Error while loading offline traders: ", e);
 		}
 	}
 	

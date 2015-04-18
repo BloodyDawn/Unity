@@ -53,13 +53,13 @@ public class PrimeShopData implements IXmlReader
 		_primeItems.clear();
 		parseDatapackFile("data/PrimeShop.xml");
 		
-		if (_primeItems.size() > 0)
+		if (!_primeItems.isEmpty())
 		{
-			LOGGER.info(getClass().getSimpleName() + ": Loaded " + _primeItems.size() + " items");
+			LOGGER.info("Loaded {} items", _primeItems.size());
 		}
 		else
 		{
-			LOGGER.info(getClass().getSimpleName() + ": System is disabled.");
+			LOGGER.info("System is disabled.");
 		}
 	}
 	
@@ -100,7 +100,7 @@ public class PrimeShopData implements IXmlReader
 									final L2Item item = ItemTable.getInstance().getTemplate(itemId);
 									if (item == null)
 									{
-										LOGGER.error(getClass().getSimpleName() + ": Item template null for itemId: " + itemId + " brId: " + set.getInt("id"));
+										LOGGER.error("Item template null for itemId: {} brId: {}", itemId, set.getInt("id"));
 										return;
 									}
 									

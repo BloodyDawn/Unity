@@ -47,7 +47,7 @@ public class AlchemyData implements IXmlReader
 	{
 		_alchemy.clear();
 		parseDatapackFile("data/AlchemyData.xml");
-		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _alchemy.size() + " alchemy craft skills.");
+		LOGGER.info("Loaded {} alchemy craft skills.", _alchemy.size());
 	}
 	
 	@Override

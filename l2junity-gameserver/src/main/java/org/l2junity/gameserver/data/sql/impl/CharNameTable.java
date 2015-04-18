@@ -116,7 +116,7 @@ public class CharNameTable
 		}
 		catch (SQLException e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Could not check existing char name: " + e.getMessage(), e);
+			_log.warn("Couldn't retrieve class for id: {}", e.getMessage(), e);
 		}
 		
 		if (id > 0)
@@ -164,7 +164,7 @@ public class CharNameTable
 		}
 		catch (SQLException e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Could not check existing char id: " + e.getMessage(), e);
+			_log.warn("Couldn't retrieve class for id: {}", e.getMessage(), e);
 		}
 		
 		return null; // not found
@@ -194,7 +194,7 @@ public class CharNameTable
 		}
 		catch (SQLException e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Could not check existing charname: " + e.getMessage(), e);
+			_log.warn("Couldn't retrieve char name for id: {}", e.getMessage(), e);
 		}
 		return result;
 	}
@@ -215,7 +215,7 @@ public class CharNameTable
 		}
 		catch (SQLException e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Could not check existing char count: " + e.getMessage(), e);
+			_log.warn("Couldn't retrieve account for id: {}", e.getMessage(), e);
 		}
 		return 0;
 	}
@@ -236,7 +236,7 @@ public class CharNameTable
 		}
 		catch (SQLException e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Could not check existing char count: " + e.getMessage(), e);
+			_log.warn("Couldn't retrieve level for id: {}", e.getMessage(), e);
 		}
 		return 0;
 	}
@@ -257,7 +257,7 @@ public class CharNameTable
 		}
 		catch (SQLException e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Could not check existing char count: " + e.getMessage(), e);
+			_log.warn("Couldn't retrieve class for id: {}" + e.getMessage(), e);
 		}
 		return 0;
 	}
@@ -277,9 +277,9 @@ public class CharNameTable
 		}
 		catch (SQLException e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Could not load char name: " + e.getMessage(), e);
+			_log.warn("Couldn't retrieve all char id/name/access: {}", e.getMessage(), e);
 		}
-		_log.info(getClass().getSimpleName() + ": Loaded " + _chars.size() + " char names.");
+		_log.info("Loaded " + _chars.size() + " char names.");
 	}
 	
 	public static CharNameTable getInstance()

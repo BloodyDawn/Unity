@@ -23,6 +23,7 @@ import java.io.FileFilter;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+
 import org.l2junity.Config;
 import org.l2junity.commons.util.file.filter.NumericNameFilter;
 import org.l2junity.gameserver.data.xml.IXmlReader;
@@ -71,7 +72,7 @@ public final class MultisellData implements IXmlReader
 		}
 		
 		verify();
-		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _entries.size() + " multisell lists.");
+		LOGGER.info("Loaded {} multisell lists.", _entries.size());
 	}
 	
 	@Override
@@ -151,7 +152,7 @@ public final class MultisellData implements IXmlReader
 		}
 		catch (Exception e)
 		{
-			LOGGER.error(getClass().getSimpleName() + ": Error in file " + f, e);
+			LOGGER.error("Error in file: {}", f, e);
 		}
 	}
 	
@@ -233,13 +234,13 @@ public final class MultisellData implements IXmlReader
 		ListContainer template = _entries.get(listId);
 		if (template == null)
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": can't find list id: " + listId + " requested by player: " + player.getName() + ", npcId:" + (npc != null ? npc.getId() : 0));
+			LOGGER.warn("Can't find list id: {} requested by player: {}, npcId: {}", listId, player.getName(), (npc != null ? npc.getId() : 0));
 			return;
 		}
 		
 		if (((npc != null) && !template.isNpcAllowed(npc.getId())) || ((npc == null) && template.isNpcOnly()))
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": player " + player + " attempted to open multisell " + listId + " from npc " + npc + " which is not allowed!");
+			LOGGER.warn("Player {} attempted to open multisell {} from npc {} which is not allowed!", player, listId, npc);
 			return;
 		}
 		
@@ -354,14 +355,14 @@ public final class MultisellData implements IXmlReader
 				{
 					if (!verifyIngredient(ing))
 					{
-						LOGGER.warn(getClass().getSimpleName() + ": can't find ingredient with itemId: " + ing.getItemId() + " in list: " + list.getListId());
+						LOGGER.warn("can't find ingredient with itemId: {} in list: {}", ing.getItemId(), list.getListId());
 					}
 				}
 				for (Ingredient ing : ent.getProducts())
 				{
 					if (!verifyIngredient(ing))
 					{
-						LOGGER.warn(getClass().getSimpleName() + ": can't find product with itemId: " + ing.getItemId() + " in list: " + list.getListId());
+						LOGGER.warn("can't find product with itemId: {} in list: {}", ing.getItemId(), list.getListId());
 					}
 				}
 			}

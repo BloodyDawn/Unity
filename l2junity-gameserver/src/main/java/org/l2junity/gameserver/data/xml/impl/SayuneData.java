@@ -21,6 +21,7 @@ package org.l2junity.gameserver.data.xml.impl;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.SayuneEntry;
 import org.w3c.dom.Document;
@@ -43,7 +44,7 @@ public class SayuneData implements IXmlReader
 	public void load()
 	{
 		parseDatapackFile("data/SayuneData.xml");
-		LOGGER.info(getClass().getSimpleName() + ": Loaded: " + _maps.size() + " maps.");
+		LOGGER.info("Loaded: {} maps.", _maps.size());
 	}
 	
 	@Override

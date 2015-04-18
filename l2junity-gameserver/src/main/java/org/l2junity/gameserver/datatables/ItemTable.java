@@ -151,10 +151,10 @@ public class ItemTable
 			}
 		}
 		buildFastLookupTable(highest);
-		LOGGER.info(getClass().getSimpleName() + ": Loaded: " + _etcItems.size() + " Etc Items");
-		LOGGER.info(getClass().getSimpleName() + ": Loaded: " + _armors.size() + " Armor Items");
-		LOGGER.info(getClass().getSimpleName() + ": Loaded: " + _weapons.size() + " Weapon Items");
-		LOGGER.info(getClass().getSimpleName() + ": Loaded: " + (_etcItems.size() + _armors.size() + _weapons.size()) + " Items in total.");
+		LOGGER.info("Loaded: {} Etc Items", _etcItems.size());
+		LOGGER.info("Loaded: {} Armor Items", _armors.size());
+		LOGGER.info("Loaded: {} Weapon Items", _weapons.size());
+		LOGGER.info("Loaded: {} Items in total.", (_etcItems.size() + _armors.size() + _weapons.size()));
 	}
 	
 	/**
@@ -164,7 +164,7 @@ public class ItemTable
 	private void buildFastLookupTable(int size)
 	{
 		// Create a FastLookUp Table called _allTemplates of size : value of the highest item ID
-		LOGGER.info(getClass().getSimpleName() + ": Highest item id used:" + size);
+		LOGGER.info("Highest item id used:" + size);
 		_allTemplates = new L2Item[size + 1];
 		
 		// Insert armor item in Fast Look Up Table
@@ -240,7 +240,7 @@ public class ItemTable
 		
 		if (Config.DEBUG)
 		{
-			LOGGER.debug(getClass().getSimpleName() + ": Item created  oid:" + item.getObjectId() + " itemid:" + itemId);
+			LOGGER.debug("Item created: {}", item);
 		}
 		
 		// Add the L2ItemInstance object to _allObjects of L2world

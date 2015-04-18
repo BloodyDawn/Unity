@@ -52,16 +52,16 @@ public final class HitConditionBonusData implements IXmlReader
 	public void load()
 	{
 		parseDatapackFile("data/stats/hitConditionBonus.xml");
-		LOGGER.info(getClass().getSimpleName() + ": Loaded Hit Condition bonuses.");
+		LOGGER.info("Loaded Hit Condition bonuses.");
 		if (Config.DEBUG)
 		{
-			LOGGER.info(getClass().getSimpleName() + ": Front bonus: " + frontBonus);
-			LOGGER.info(getClass().getSimpleName() + ": Side bonus: " + sideBonus);
-			LOGGER.info(getClass().getSimpleName() + ": Back bonus: " + backBonus);
-			LOGGER.info(getClass().getSimpleName() + ": High bonus: " + highBonus);
-			LOGGER.info(getClass().getSimpleName() + ": Low bonus: " + lowBonus);
-			LOGGER.info(getClass().getSimpleName() + ": Dark bonus: " + darkBonus);
-			LOGGER.info(getClass().getSimpleName() + ": Rain bonus: " + rainBonus);
+			LOGGER.info("Front bonus: {}", frontBonus);
+			LOGGER.info("Side bonus: {}", sideBonus);
+			LOGGER.info("Back bonus: {}", backBonus);
+			LOGGER.info("High bonus: {}", highBonus);
+			LOGGER.info("Low bonus: {}", lowBonus);
+			LOGGER.info("Dark bonus: {}", darkBonus);
+			LOGGER.info("Rain bonus: {}", rainBonus);
 		}
 	}
 	

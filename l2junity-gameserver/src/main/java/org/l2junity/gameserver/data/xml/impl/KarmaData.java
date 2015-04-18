@@ -20,6 +20,7 @@ package org.l2junity.gameserver.data.xml.impl;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
@@ -42,7 +43,7 @@ public class KarmaData implements IXmlReader
 	{
 		_karmaTable.clear();
 		parseDatapackFile("data/stats/chars/pcKarmaIncrease.xml");
-		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _karmaTable.size() + " karma modifiers.");
+		LOGGER.info("Loaded {} karma modifiers.", _karmaTable.size());
 	}
 	
 	@Override

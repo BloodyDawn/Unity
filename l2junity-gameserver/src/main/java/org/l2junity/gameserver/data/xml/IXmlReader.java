@@ -72,7 +72,7 @@ public interface IXmlReader
 	{
 		if (!getCurrentFileFilter().accept(f))
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": Could not parse " + f.getName() + " is not a file or it doesn't exist!");
+			LOGGER.warn("Could not parse {} is not a file or it doesn't exist!", f.getName());
 			return;
 		}
 		
@@ -89,12 +89,12 @@ public interface IXmlReader
 		}
 		catch (SAXParseException e)
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": Could not parse file " + f.getName() + " at line " + e.getLineNumber() + ", column " + e.getColumnNumber() + ": " + e.getMessage());
+			LOGGER.warn("Could not parse file: {} at line: {}, column: {} :", f.getName(), e.getLineNumber(), e.getColumnNumber(), e);
 			return;
 		}
 		catch (Exception e)
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": Could not parse file " + f.getName() + ": ", e);
+			LOGGER.warn("Could not parse file: {} ", f.getName(), e);
 			return;
 		}
 	}
@@ -119,7 +119,7 @@ public interface IXmlReader
 	{
 		if (!dir.exists())
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": Folder " + dir.getAbsolutePath() + " doesn't exist!");
+			LOGGER.warn("Folder {} doesn't exist!", dir.getAbsolutePath());
 			return false;
 		}
 		

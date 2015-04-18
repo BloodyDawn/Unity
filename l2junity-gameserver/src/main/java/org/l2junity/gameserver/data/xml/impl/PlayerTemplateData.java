@@ -56,8 +56,8 @@ public final class PlayerTemplateData implements IXmlReader
 	{
 		_playerTemplates.clear();
 		parseDatapackDirectory("data/stats/chars/baseStats", false);
-		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _playerTemplates.size() + " character templates.");
-		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _dataCount + " level up gain records.");
+		LOGGER.info("Loaded {} character templates.", _playerTemplates.size());
+		LOGGER.info("Loaded {} level up gain records.", _dataCount);
 	}
 	
 	@Override

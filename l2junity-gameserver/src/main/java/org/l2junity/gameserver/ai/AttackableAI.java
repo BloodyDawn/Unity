@@ -1945,7 +1945,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		catch (NullPointerException e)
 		{
 			setIntention(AI_INTENTION_ACTIVE);
-			_log.warn(getClass().getSimpleName() + ": " + this + " - failed executing movementDisable(): " + e.getMessage());
+			_log.warn("{} - failed executing movementDisable(): {}", this, e.getMessage());
 			return;
 		}
 	}
@@ -2495,7 +2495,7 @@ public class AttackableAI extends CharacterAI implements Runnable
 		}
 		catch (Exception e)
 		{
-			_log.warn(getClass().getSimpleName() + ": " + this + " -  onEvtThink() failed: " + e.getMessage());
+			_log.warn("{} -  onEvtThink() failed: {}", this, e.getMessage());
 		}
 		finally
 		{

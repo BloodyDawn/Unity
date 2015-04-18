@@ -72,13 +72,13 @@ public class NpcData implements IXmlReader
 		_minionData = new MinionData();
 		
 		parseDatapackDirectory("data/stats/npcs", false);
-		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _npcs.size() + " NPCs.");
+		LOGGER.info("Loaded {} NPCs.", _npcs.size());
 		
 		if (Config.CUSTOM_NPC_DATA)
 		{
 			final int npcCount = _npcs.size();
 			parseDatapackDirectory("data/stats/npcs/custom", true);
-			LOGGER.info(getClass().getSimpleName() + ": Loaded " + (_npcs.size() - npcCount) + " Custom NPCs.");
+			LOGGER.info("Loaded {} Custom NPCs.", (_npcs.size() - npcCount));
 		}
 		
 		_minionData = null;
@@ -339,7 +339,7 @@ public class NpcData implements IXmlReader
 											}
 											else
 											{
-												LOGGER.warn("[" + f.getName() + "] skill not found. NPC ID: " + npcId + " Skill ID:" + skillId + " Skill Level: " + skillLevel);
+												LOGGER.warn("[{}] skill not found. NPC ID: {} Skill ID: {} Skill Level: {}", f.getName(), npcId, skillId, skillLevel);
 											}
 										}
 									}
@@ -820,7 +820,7 @@ public class NpcData implements IXmlReader
 		{
 			_tempMinions.clear();
 			parseDatapackFile("data/minionData.xml");
-			LOGGER.info(getClass().getSimpleName() + ": Loaded " + _tempMinions.size() + " minions data.");
+			LOGGER.info("Loaded {} minions data.", _tempMinions.size());
 		}
 		
 		@Override

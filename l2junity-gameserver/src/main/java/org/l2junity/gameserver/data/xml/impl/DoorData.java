@@ -88,7 +88,7 @@ public class DoorData implements IXmlReader
 			}
 		}
 		
-		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _doors.size() + " Door Templates for " + _regions.size() + " regions.");
+		LOGGER.info("Loaded {} Door Templates for {} regions.", _doors.size(), _regions.size());
 	}
 	
 	public void insertCollisionData(StatsSet set)

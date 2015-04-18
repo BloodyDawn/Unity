@@ -68,7 +68,7 @@ import org.slf4j.LoggerFactory;
  */
 public class ClanTable
 {
-	private static final Logger _log = LoggerFactory.getLogger(ClanTable.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ClanTable.class);
 	
 	private final Map<Integer, L2Clan> _clans = new HashMap<>();
 	
@@ -106,9 +106,9 @@ public class ClanTable
 		}
 		catch (Exception e)
 		{
-			_log.error("Error restoring ClanTable.", e);
+			LOGGER.error("Error restoring ClanTable.", e);
 		}
-		_log.info(getClass().getSimpleName() + ": Restored " + clanCount + " clans from the database.");
+		LOGGER.info("Restored " + clanCount + " clans from the database.");
 		allianceCheck();
 		restorewars();
 	}
@@ -146,11 +146,6 @@ public class ClanTable
 		if (null == player)
 		{
 			return null;
-		}
-		
-		if (Config.DEBUG)
-		{
-			_log.info(getClass().getSimpleName() + ": " + player.getObjectId() + "(" + player.getName() + ") requested a clan creation.");
 		}
 		
 		if (10 > player.getLevel())
@@ -343,7 +338,7 @@ public class ClanTable
 		}
 		catch (Exception e)
 		{
-			_log.error(getClass().getSimpleName() + ": Error removing clan from DB.", e);
+			LOGGER.error("Error removing clan from DB: {}", e);
 		}
 		
 		// Notify to scripts
@@ -394,7 +389,7 @@ public class ClanTable
 		}
 		catch (Exception e)
 		{
-			_log.error(getClass().getSimpleName() + ": Error storing clan wars data.", e);
+			LOGGER.error("Error storing clan wars data: {}", e);
 		}
 	}
 	
@@ -419,7 +414,7 @@ public class ClanTable
 		}
 		catch (Exception e)
 		{
-			_log.error(getClass().getSimpleName() + ": Error removing clan wars data.", e);
+			LOGGER.error("Error removing clan wars data: {}", e);
 		}
 	}
 	
@@ -443,13 +438,13 @@ public class ClanTable
 				}
 				else
 				{
-					_log.warn(getClass().getSimpleName() + ": restorewars one of clans is null clan1:" + attacker + " clan2:" + attacked);
+					LOGGER.warn("restorewars one of clans is null clan1:" + attacker + " clan2:" + attacked);
 				}
 			}
 		}
 		catch (Exception e)
 		{
-			_log.error(getClass().getSimpleName() + ": Error restoring clan wars data.", e);
+			LOGGER.error("Error restoring clan wars data: {}", e);
 		}
 	}
 	
@@ -469,7 +464,7 @@ public class ClanTable
 					clan.setAllyName(null);
 					clan.changeAllyCrest(0, true);
 					clan.updateClanInDB();
-					_log.info(getClass().getSimpleName() + ": Removed alliance from clan: " + clan);
+					LOGGER.info("Removed alliance from clan: {}", clan);
 				}
 			}
 		}

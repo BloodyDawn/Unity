@@ -20,6 +20,7 @@ package org.l2junity.gameserver.data.xml.impl;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.EnchantSkillGroup;
@@ -68,7 +69,7 @@ public class EnchantSkillGroupsData implements IXmlReader
 		{
 			routes += group.getEnchantGroupDetails().size();
 		}
-		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _enchantSkillGroups.size() + " groups and " + routes + " routes.");
+		LOGGER.info("Loaded " + _enchantSkillGroups.size() + " groups and " + routes + " routes.");
 	}
 	
 	@Override
@@ -140,7 +141,7 @@ public class EnchantSkillGroupsData implements IXmlReader
 			
 			return _enchantSkillGroups.get(group).getEnchantGroupDetails().size();
 		}
-		LOGGER.error(getClass().getSimpleName() + ": Error while loading generating enchant skill id: " + skillId + "; route: " + route + "; missing group: " + group);
+		LOGGER.error("Error while loading generating enchant skill id: {}; route: {} missing group: {}", skillId, route, group);
 		return 0;
 	}
 	

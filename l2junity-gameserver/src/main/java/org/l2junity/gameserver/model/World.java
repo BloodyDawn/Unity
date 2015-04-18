@@ -107,7 +107,7 @@ public final class World
 			}
 		}
 		
-		_log.info(getClass().getSimpleName() + ": (" + REGIONS_X + " by " + REGIONS_Y + " by " + REGIONS_Z + ") World Region Grid set up.");
+		_log.info("(" + REGIONS_X + " by " + REGIONS_Y + " by " + REGIONS_Z + ") World Region Grid set up.");
 	}
 	
 	/**

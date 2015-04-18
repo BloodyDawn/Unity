@@ -51,7 +51,7 @@ public final class CategoryData implements IXmlReader
 	{
 		_categories.clear();
 		parseDatapackFile("data/categoryData.xml");
-		LOGGER.info(getClass().getSimpleName() + ": Loaded " + _categories.size() + " Categories.");
+		LOGGER.info("Loaded {} Categories.", _categories.size());
 	}
 	
 	@Override
@@ -69,7 +69,7 @@ public final class CategoryData implements IXmlReader
 						final CategoryType categoryType = CategoryType.findByName(attrs.getNamedItem("name").getNodeValue());
 						if (categoryType == null)
 						{
-							LOGGER.warn(getClass().getSimpleName() + ": Can't find category by name :" + attrs.getNamedItem("name").getNodeValue());
+							LOGGER.warn("Can't find category by name: {}", attrs.getNamedItem("name").getNodeValue());
 							continue;
 						}
 						
@@ -99,7 +99,7 @@ public final class CategoryData implements IXmlReader
 		final Set<Integer> category = getCategoryByType(type);
 		if (category == null)
 		{
-			LOGGER.warn(getClass().getSimpleName() + ": Can't find category type :" + type);
+			LOGGER.warn("Can't find category type: {}", type);
 			return false;
 		}
 		return category.contains(id);

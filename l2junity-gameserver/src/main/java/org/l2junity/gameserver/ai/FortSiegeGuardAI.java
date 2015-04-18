@@ -25,7 +25,6 @@ import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
 import java.util.Collection;
 import java.util.concurrent.Future;
 
-import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.GeoData;
@@ -188,11 +187,6 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 	@Override
 	synchronized void changeIntention(CtrlIntention intention, Object arg0, Object arg1)
 	{
-		if (Config.DEBUG)
-		{
-			_log.warn(getClass().getSimpleName() + ": changeIntention(" + intention + ", " + arg0 + ", " + arg1 + ")");
-		}
-		
 		if (intention == AI_INTENTION_IDLE /* || intention == AI_INTENTION_ACTIVE */) // active becomes idle if only a summon is present
 		{
 			// Check if actor is not dead
@@ -361,11 +355,6 @@ public class FortSiegeGuardAI extends CharacterAI implements Runnable
 	 */
 	private void thinkAttack()
 	{
-		if (Config.DEBUG)
-		{
-			_log.warn(getClass().getSimpleName() + ": thinkAttack(); timeout=" + (_attackTimeout - GameTimeController.getInstance().getGameTicks()));
-		}
-		
 		if (_attackTimeout < GameTimeController.getInstance().getGameTicks())
 		{
 			// Check if the actor is running
