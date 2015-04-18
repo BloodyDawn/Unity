@@ -151,10 +151,10 @@ public class ItemTable
 			}
 		}
 		buildFastLookupTable(highest);
-		LOGGER.info("Loaded: " + _etcItems.size() + " Etc Items");
-		LOGGER.info("Loaded: " + _armors.size() + " Armor Items");
-		LOGGER.info("Loaded: " + _weapons.size() + " Weapon Items");
-		LOGGER.info("Loaded: " + (_etcItems.size() + _armors.size() + _weapons.size()) + " Items in total.");
+		LOGGER.info("Loaded: {} Etc Items", _etcItems.size());
+		LOGGER.info("Loaded: {} Armor Items", _armors.size());
+		LOGGER.info("Loaded: {} Weapon Items", _weapons.size());
+		LOGGER.info("Loaded: {} Items in total.", (_etcItems.size() + _armors.size() + _weapons.size()));
 	}
 	
 	/**
