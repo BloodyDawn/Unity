@@ -66,7 +66,7 @@ public class PcStat extends PlayableStat
 	private int _vitalityPoints = 0;
 	
 	public static final int MAX_VITALITY_POINTS = 140000;
-	public static final int MIN_VITALITY_POINTS = 1;
+	public static final int MIN_VITALITY_POINTS = 0;
 	
 	public PcStat(PlayerInstance activeChar)
 	{
@@ -665,7 +665,7 @@ public class PcStat extends PlayableStat
 	
 	public double getVitalityExpBonus()
 	{
-		return calcStat(Stats.VITALITY_EXP_BONUS, Config.RATE_VITALITY_EXP_MULTIPLIER);
+		return (getVitalityPoints() > 0) ? calcStat(Stats.VITALITY_EXP_BONUS, Config.RATE_VITALITY_EXP_MULTIPLIER) : 0;
 	}
 	
 	public void setVitalityPoints(int value)
