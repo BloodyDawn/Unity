@@ -421,10 +421,10 @@
 				<mul stat="mDef" val="1.3" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="PA_UP;PD_UP;MA_UP;MD_UP;IMPROVE_MA_MD_UP;IMPROVE_PA_PD_UP" rate="100" />
+				<param dispel="MD_UP;PD_UP;PA_UP;IMPROVE_PA_PD_UP" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="PA_UP;PD_UP;MA_UP;MD_UP;IMPROVE_MA_MD_UP;IMPROVE_PA_PD_UP" />
+				<param slot="MD_UP;PD_UP;PA_UP;IMPROVE_PA_PD_UP" />
 			</effect>
 		</for>
 	</skill>
@@ -466,10 +466,10 @@
 				<param allowWeapons="SWORD,BLUNT,DAGGER,DUALDAGGER,DUAL,DUALFIST,POLE,ANCIENTSWORD,RAPIER,BOW,CROSSBOW" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="MAX_MP_UP;HP_REGEN_UP;MAGIC_CRITICAL_UP;PA_UP;PD_UP;ATTACK_TIME_DOWN;MA_UP;MD_UP;CASTING_TIME_DOWN;SPEED_UP;IMPROVE_MA_MD_UP;IMPROVE_PA_PD_UP" rate="100" />
+				<param dispel="MULTI_BUFF" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="MAX_MP_UP;HP_REGEN_UP;MAGIC_CRITICAL_UP;PA_UP;PD_UP;ATTACK_TIME_DOWN;MA_UP;MD_UP;CASTING_TIME_DOWN;SPEED_UP;IMPROVE_MA_MD_UP;IMPROVE_PA_PD_UP" />
+				<param slot="MULTI_BUFF" />
 			</effect>
 		</for>
 	</skill>
@@ -494,10 +494,10 @@
 				<mul stat="regHp" val="1.2" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP;IMPROVE_HP_MP_UP" rate="100" />
+				<param dispel="MAX_MP_UP;MAX_HP_UP;HP_REGEN_UP;IMPROVE_HP_MP_UP" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="MAX_HP_UP;MAX_MP_UP;HP_REGEN_UP;IMPROVE_HP_MP_UP" />
+				<param slot="MAX_MP_UP;MAX_HP_UP;HP_REGEN_UP;IMPROVE_HP_MP_UP" />
 			</effect>
 		</for>
 	</skill>
@@ -523,10 +523,10 @@
 				<mul stat="MagicalMpConsumeRate" val="1.1" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="CRITICAL_DMG_UP;CRITICAL_PROB_UP;MAGIC_CRITICAL_UP;CHEAP_MAGIC;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP" rate="100" />
+				<param dispel="INSTINCT;CRITICAL_DMG_UP;IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="CRITICAL_DMG_UP;CRITICAL_PROB_UP;MAGIC_CRITICAL_UP;CHEAP_MAGIC;IMPROVE_HIT_DEFENCE_CRT_RATE_UP;IMPROVE_CRT_RATE_DMG_UP" />
+				<param slot="INSTINCT;CRITICAL_DMG_UP;IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP" />
 			</effect>
 		</for>
 	</skill>
@@ -552,10 +552,10 @@
 				<mul stat="defCritDamage" val="1.3" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="AVOID_UP;HIT_UP;SPEED_UP;CRITICAL_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;IMPROVE_VAMPIRIC_HASTE" rate="100" />
+				<param dispel="HIT_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP;T_CRT_DMG_DOWN" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="AVOID_UP;HIT_UP;SPEED_UP;CRITICAL_DMG_DOWN;IMPROVE_SPEED_AVOID_UP;IMPROVE_VAMPIRIC_HASTE" />
+				<param slot="HIT_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP;T_CRT_DMG_DOWN" />
 			</effect>
 		</for>
 	</skill>
@@ -579,10 +579,10 @@
 				<add stat="absorbDam" val="9" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="ATTACK_TIME_DOWN;CASTING_TIME_DOWN;VAMPIRIC_ATTACK;IMPROVE_VAMPIRIC_HASTE" rate="100" />
+				<param dispel="VAMPIRIC_ATTACK;CASTING_TIME_DOWN;IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param dispel="ATTACK_TIME_DOWN;CASTING_TIME_DOWN;VAMPIRIC_ATTACK;IMPROVE_VAMPIRIC_HASTE" />
+				<param dispel="VAMPIRIC_ATTACK;CASTING_TIME_DOWN;IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN" />
 			</effect>
 		</for>
 	</skill>
@@ -609,10 +609,10 @@
 				<mul stat="rCrit" val="2.0" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="PA_UP;PD_UP;SHIELD_DEFENCE_UP;SHIELD_PROB_UP;CRITICAL_DMG_UP;CRITICAL_PROB_UP;IMPROVE_PA_PD_UP;IMPROVE_CRT_RATE_DMG_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP" rate="100" />
+				<param dispel="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="PA_UP;PD_UP;SHIELD_DEFENCE_UP;SHIELD_PROB_UP;CRITICAL_DMG_UP;CRITICAL_PROB_UP;IMPROVE_PA_PD_UP;IMPROVE_CRT_RATE_DMG_UP;IMPROVE_SHIELD_RATE_DEFENCE_UP" />
+				<param slot="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" />
 			</effect>
 		</for>
 	</skill>
@@ -640,10 +640,10 @@
 				<add stat="runSpd" val="8" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="PA_UP;PD_UP;CRITICAL_DMG_UP;CRITICAL_PROB_UP;ATTACK_TIME_DOWN;MA_UP;CASTING_TIME_DOWN;SPEED_UP" rate="100" />
+				<param dispel="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="PA_UP;PD_UP;CRITICAL_DMG_UP;CRITICAL_PROB_UP;ATTACK_TIME_DOWN;MA_UP;CASTING_TIME_DOWN;SPEED_UP" />
+				<param slot="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" />
 			</effect>
 		</for>
 	</skill>
@@ -677,10 +677,10 @@
 				<mul stat="dReuse" val="0.8" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="MA_UP;PA_UP;CASTING_TIME_DOWN;ATTACK_TIME_DOWN;MD_UP;MAGIC_CRITICAL_UP;MP_REGEN_UP;SPEED_UP;MP_COST_DOWN;REUSE_DELAY_DOWN" rate="100" />
+				<param dispel="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="MA_UP;PA_UP;CASTING_TIME_DOWN;ATTACK_TIME_DOWN;MD_UP;MAGIC_CRITICAL_UP;MP_REGEN_UP;SPEED_UP;MP_COST_DOWN;REUSE_DELAY_DOWN" />
+				<param slot="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" />
 			</effect>
 		</for>
 	</skill>
@@ -707,10 +707,10 @@
 				<sub stat="cancel" val="50" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="ATTACK_TIME_DOWN;CASTING_TIME_DOWN;MAX_HP_UP;MP_REGEN_UP;MP_COST_DOWN" rate="100" />
+				<param dispel="SONG_OF_VITALITY;SONG_OF_MEDITATION;DANCE_OF_CONCENTRATION;DANCE_OF_FURY" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="ATTACK_TIME_DOWN;CASTING_TIME_DOWN;MAX_HP_UP;MP_REGEN_UP;MP_COST_DOWN" />
+				<param slot="SONG_OF_VITALITY;SONG_OF_MEDITATION;DANCE_OF_CONCENTRATION;DANCE_OF_FURY" />
 			</effect>
 		</for>
 	</skill>
@@ -740,10 +740,10 @@
 				<add stat="reflectDam" val="10" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="PA_UP;MA_UP;ATTACK_TIME_DOWN;CASTING_TIME_DOWN;PD_UP;MD_UP;AVOID_UP;VAMPIRIC_ATTACK" rate="100" />
+				<param dispel="DMG_SHIELD;SONG_OF_VENGEANCE;DANCE_OF_VAMPIRE" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="PA_UP;MA_UP;ATTACK_TIME_DOWN;CASTING_TIME_DOWN;PD_UP;MD_UP;AVOID_UP;VAMPIRIC_ATTACK" />
+				<param slot="DMG_SHIELD;SONG_OF_VENGEANCE;DANCE_OF_VAMPIRE" />
 			</effect>
 		</for>
 	</skill>
@@ -772,10 +772,10 @@
 				<mul stat="pReuse" val="0.95" />
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="HP_REGEN_UP;HIT_UP;AVOID_UP;SPEED_UP;MP_COST_DOWN;REUSE_DELAY_DOWN" rate="100" />
+				<param dispel="SONG_OF_WIND;SONG_OF_WATER;SONG_OF_LIFE;SONG_OF_CHAMPION;MAX_BREATH_UP;DANCE_OF_INSPIRATION" rate="100" />
 			</effect>
 			<effect name="BlockBuffSlot">
-				<param slot="HP_REGEN_UP;HIT_UP;AVOID_UP;SPEED_UP;MP_COST_DOWN;REUSE_DELAY_DOWN" />
+				<param slot="SONG_OF_WIND;SONG_OF_WATER;SONG_OF_LIFE;SONG_OF_CHAMPION;MAX_BREATH_UP;DANCE_OF_INSPIRATION" />
 			</effect>
 		</for>
 	</skill>
