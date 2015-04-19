@@ -731,12 +731,10 @@ public final class Q10331_StartOfFate extends Quest
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void onPlayerPressTutorialMark(OnPlayerPressTutorialMark event)
 	{
-		System.out.print("bypass");
 		if (event.getMarkId() == getId())
 		{
 			final PlayerInstance player = event.getActiveChar();
 			final String filename = "popup-" + player.getRace().toString().toLowerCase() + ".htm";
-			_log.info("File name je: " + filename);
 			player.sendPacket(new TutorialShowHtml(getHtm(player.getHtmlPrefix(), filename)));
 		}
 	}
@@ -745,7 +743,6 @@ public final class Q10331_StartOfFate extends Quest
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void OnPlayerLevelChanged(OnPlayerLevelChanged event)
 	{
-		System.out.print("level change");
 		final PlayerInstance player = event.getActiveChar();
 		final int oldLevel = event.getOldLevel();
 		final int newLevel = event.getNewLevel();
