@@ -111,7 +111,7 @@ public final class L2TeleporterInstance extends Npc
 					}
 				}
 				
-				final Stream<TeleportLocation> stream = !questLocations.isEmpty() ? locs.stream().sorted((o1, o2) -> questLocations.contains(o1.getNpcStringId()) ? 1 : questLocations.contains(o2.getNpcStringId()) ? -1 : 0) : locs.stream();
+				final Stream<TeleportLocation> stream = !questLocations.isEmpty() ? locs.stream().sorted((o2, o1) -> questLocations.contains(o1.getNpcStringId()) ? 1 : questLocations.contains(o2.getNpcStringId()) ? -1 : 0) : locs.stream();
 				stream.forEach(loc ->
 				{
 					final int id = loc.getId();
