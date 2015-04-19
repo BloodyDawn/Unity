@@ -12668,6 +12668,11 @@ public final class PlayerInstance extends Playable
 	
 	public boolean hasTransformSkill(int id)
 	{
+		if ((_transformation != null) && _transformation.allowAllSkills())
+		{
+			return true;
+		}
+		
 		return (_transformAllowedSkills != null) && _transformAllowedSkills.contains(id);
 	}
 	

@@ -4,40 +4,80 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 5 minutes, increases clan members' Atk. Spd. + 15%, Casting Spd. + 30%, Max HP + 30%, and MP recovery bonus + 20%. Decreases MP Consumption for magic skills - 10% and the magic cancel rate. -->
 		<set name="icon" val="icon.skill11600" />
+		<set name="abnormalTime" val="300" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="140" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtkSpd" val="1.15" />
+				<mul stat="mAtkSpd" val="1.30" />
+				<mul stat="maxHp" val="1.30" />
+				<mul stat="regMp" val="1.20" />
+				<mul stat="MagicalMpConsumeRate" val="1.10" />
+				<add stat="cancel" val="53" /> <!-- Custom -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11601" levels="1" name="Frenzied Daring Sonata">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 5 minutes, increases clan members' P. Atk. + 8%, M. Atk. + 16%, Atk. Spd. and Casting Spd. + 8%. Decreases P. Def. - 3%, M. Def. - 11%, and P. Evasion - 4. Chance of applying 8% Vampiric Rage effect. Reflects 10% of incurred damage back to the enemy. -->
 		<set name="icon" val="icon.skill11601" />
+		<set name="abnormalTime" val="300" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="140" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.08" />
+				<mul stat="pAtkSpd" val="1.16" />
+				<mul stat="mAtkSpd" val="1.08" />
+				<mul stat="pDef" val="1.03" />
+				<mul stat="mDef" val="1.11" />
+				<sub stat="rEvas" val="4" />
+				<add stat="absorbDam" val="8" /> <!-- Custom, I think it should be some kind of a trigger -->
+				<add stat="reflectDam" val="10" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11602" levels="1" name="Frenzied Refreshing Sonata">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 5 minutes, increases clan members' HP Recovery Bonus + 20%, P.ﾠAccuracy + 4, P.ﾠEvasion + 3, and Spd. + 20. Decreases skill MP Consumption - 20% and skill Cooldown - 10%. -->
 		<set name="icon" val="icon.skill11602" />
+		<set name="abnormalTime" val="300" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="140" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="regHp" val="1.20" />
+				<add stat="accCombat" val="4" />
+				<add stat="rEvas" val="3" />
+				<add stat="runSpd" val="20" />
+				<mul stat="PhysicalMpConsumeRate" val="1.10" /> <!-- Custom -->
+				<mul stat="MagicalMpConsumeRate" val="1.10" /> <!-- Custom -->
+				<mul stat="DanceMpConsumeRate" val="1.10" /> <!-- Custom -->
+				<mul stat="pReuse" val="1.10" /> <!-- Custom -->
+				<mul stat="mReuse" val="1.10" /> <!-- Custom -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11603" levels="4" name="Mass Restriction">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- During PvP, limits the CP, HP, and MP recovery of target and nearby enemies to maximum 60% for 30 seconds. -->
 		<table name="#mpConsumes"> 252 278 306 332 </table>
+		<table name="#limit"> 0.60 0.50 0.40 0.30 </table>
 		<set name="icon" val="icon.skill11603" />
+		<set name="abnormalTime" val="30" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -47,6 +87,13 @@
 		<set name="reuseDelay" val="120000" />
 		<set name="isMagic" val="1" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="maxRecoverableHp" val="#limit" />
+				<mul stat="maxRecoverableMp" val="#limit" />
+				<mul stat="maxRecoverableCp" val="#limit" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11604" levels="4" name="Shocking Blow">
 		<!-- AUTO GENERATED SKILL -->
@@ -66,23 +113,45 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 min., P. Def. + 5%, Attribute Def. + 20, Resistance to bows/crossbows + 10%, and Debuff Resistance + 10%. -->
 		<set name="icon" val="icon.skill11606new" />
+		<set name="abnormalTime" val="1800" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="83" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pDef" val="1.05" />
+				<add stat="holyRes" val="20" />
+				<add stat="darkRes" val="20" />
+				<sub stat="debuffVuln" val="10" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param BOW="10" />
+				<param CROSSBOW="10" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11606" levels="1" name="Dance of Might">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 min., P. Atk. + 5%, Atk. Spd. + 5%, P. Critical Rate + 10, and Speed + 10. -->
 		<set name="icon" val="icon.skill11605new" />
+		<set name="abnormalTime" val="1800" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="83" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.05" />
+				<mul stat="pAtkSpd" val="1.05" />
+				<add stat="rCrit" val="10" />
+				<add stat="runSpd" val="10" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11607" levels="1" name="Prevailing Song" enchantGroup1="10" enchantGroup2="10">
 		<!-- For 5 minutes, increases party members' Atk. Spd. + 15%, Casting Spd. + 30%, Max HP + 30%, and MP recovery bonus + 20%. Decreases magic skill MP Consumption - 10% and the magic cancel rate. -->
@@ -330,30 +399,52 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 sec., increases your P. Def. + 5000 and M. Def. + 5000. Restores 1000 HP. -->
 		<table name="#mpConsumes"> 319 427 534 640 </table>
+		<table name="#power"> 1000 2000 3000 5000 </table>
 		<set name="icon" val="icon.skill11613" />
+		<set name="abnormalTime" val="30" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="600000" />
+		<for>
+			<effect name="Buff">
+				<add stat="pDef" val="5000" />
+				<add stat="mDef" val="5000" />
+			</effect>
+			<effect name="Heal">
+				<param power="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11614" levels="4" name="Battle Rhapsody Dance">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 sec., increases your P. Atk./M. Atk./Atk. Spd./Casting Spd. + 50%. -->
 		<table name="#mpConsumes"> 319 427 534 640 </table>
+		<table name="#stats"> 1.50 1.60 1.70 2.00 </table>
 		<set name="icon" val="icon.skill11614" />
+		<set name="abnormalTime" val="30" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="600000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#stats" />
+				<mul stat="mAtk" val="#stats" />
+				<mul stat="pAtkSpd" val="#stats" />
+				<mul stat="mAtkSpd" val="#stats" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11615" levels="1" name="Battle Ditty">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 min., selected party member's PvP Damage + 10%, Attribute Attack + 10, MP Recovery Bonus + 10%. Consumes 10 Spirit Ores. -->
 		<set name="icon" val="icon.skill11615" />
+		<set name="abnormalTime" val="1800" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="181" />
@@ -361,11 +452,22 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="2000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pvpPhysDmg" val="1.10" />
+				<mul stat="pvpMagicalDmg" val="1.10" />
+				<mul stat="pvpPhysSkillsDmg" val="1.10" />
+				<add stat="holyPower" val="10" />
+				<add stat="darkPower" val="10" />
+				<mul stat="regMp" val="1.10" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11616" levels="1" name="Protective Ditty">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 min., selected party member's Received PvP Damage - 10%, Speed + 4, HP Recovery Bonus + 10%. Consumes 10 Spirit Ores. -->
 		<set name="icon" val="icon.skill11616" />
+		<set name="abnormalTime" val="1800" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="181" />
@@ -373,11 +475,21 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="2000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pvpPhysDef" val="1.10" />
+				<mul stat="pvpMagicalDef" val="1.10" />
+				<mul stat="pvpPhysSkillsDef" val="1.10" />
+				<add stat="runSpd" val="4" />
+				<mul stat="regHp" val="1.10" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11617" levels="1" name="Frezied Battle Ditty">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 min., selected clan member's PvP Damage + 10%, Attribute Attack + 10, MP Recovery Bonus + 10%. Consumes 10 Spirit Ores. -->
 		<set name="icon" val="icon.skill11617" />
+		<set name="abnormalTime" val="1800" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="181" />
@@ -385,11 +497,22 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="2000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pvpPhysDmg" val="1.10" />
+				<mul stat="pvpMagicalDmg" val="1.10" />
+				<mul stat="pvpPhysSkillsDmg" val="1.10" />
+				<add stat="holyPower" val="10" />
+				<add stat="darkPower" val="10" />
+				<mul stat="regMp" val="1.10" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11618" levels="1" name="Frenzied Protective Ditty">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 min., selected clan member's Received PvP Damage - 10%, Speed + 4, HP Recovery Bonus + 10%. Consumes 10 Spirit Ores. -->
 		<set name="icon" val="icon.skill11618" />
+		<set name="abnormalTime" val="1800" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="181" />
@@ -397,16 +520,40 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="2000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pvpPhysDef" val="1.10" />
+				<mul stat="pvpMagicalDef" val="1.10" />
+				<mul stat="pvpPhysSkillsDef" val="1.10" />
+				<add stat="runSpd" val="4" />
+				<mul stat="regHp" val="1.10" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11619" levels="3" name="Soul Ditty">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Entire party's P. Atk. + 3%, P. Critical Damage + 3%, Atk. Spd. + 2%, M. Atk. + 2%, Casting Spd. + 2%, P. Def. + 2%, M. Def. + 2%, Skill Power + 2%. -->
+		<table name="#pAtkcAtk"> 1.03 1.05 1.07 </table>
+		<table name="#atkSpdDefPower"> 1.02 1.03 1.05 </table>
 		<set name="icon" val="icon.skill11529" />
+		<set name="abnormalTime" val="1800" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="140" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#pAtkcAtk" />
+				<mul stat="cAtk" val="#pAtkcAtk" />
+				<mul stat="pAtkSpd" val="#atkSpdDefPower" />
+				<mul stat="mAtk" val="#atkSpdDefPower" />
+				<mul stat="mAtkSpd" val="#atkSpdDefPower" />
+				<mul stat="pDef" val="#atkSpdDefPower" />
+				<mul stat="mDef" val="#atkSpdDefPower" />
+				<mul stat="physicalSkillPower" val="#atkSpdDefPower" />
+			</effect>
+		</for>
 	</skill>
 </list>

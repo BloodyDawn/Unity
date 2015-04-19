@@ -3,9 +3,20 @@
 	<skill id="11746" levels="3" name="Superior Inquisition">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Damage inflicted on monsters + 50%, and M. Skill MP Consumption + 30%. -->
+		<table name="#pveDamage"> 1.50 1.55 1.60 </table>
 		<set name="icon" val="icon.skill1520" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pvePhysDmg" val="#pveDamage" />
+				<mul stat="pvePhysSkillsDmg" val="#pveDamage" />
+				<mul stat="pveBowDmg" val="#pveDamage" />
+				<mul stat="pveBowSkillsDmg" val="#pveDamage" />
+				<mul stat="pveMagicalDmg" val="#pveDamage" />
+				<mul stat="MagicalMpConsumeRate" val="1.30" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11747" levels="1" name="Enchanter - Individual Passive">
 		<!-- AUTO GENERATED SKILL -->
@@ -14,7 +25,7 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="11748" levels="1" name="Enchanter - Individual">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Atk. Spd. + 30% for 5 seconds. -->
 		<set name="icon" val="icon.skill1543" />
 		<set name="operateType" val="A2" />
@@ -22,6 +33,11 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtkSpd" val="1.30" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11749" levels="1" name="Heavy Hit">
 		<!-- AUTO GENERATED SKILL -->
@@ -144,7 +160,7 @@
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
-				<param chance="5" />
+				<param chance="50" /> <!-- On retail activated every ~2 attacks with ~2sec cooldown -->
 				<param skillId="11807" skillLevel="#effectLvl" />
 				<param targetType="SELF" />
 			</effect>
@@ -157,7 +173,7 @@
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
-				<param chance="5" />
+				<param chance="50" /> <!-- On retail activated every ~2 attacks with ~2sec cooldown -->
 				<param skillId="11807" skillLevel="#ench1triggeredLevel" />
 				<param targetType="SELF" />
 			</effect>
@@ -170,7 +186,7 @@
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
-				<param chance="5" />
+				<param chance="50" /> <!-- On retail activated every ~2 attacks with ~2sec cooldown -->
 				<param skillId="11807" skillLevel="5" />
 				<param targetType="SELF" />
 			</effect>
@@ -268,27 +284,49 @@
 		</for>
 	</skill>
 	<skill id="11758" levels="1" name="Celestial Protection">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
+		<!-- Skill does not remove on action -->
 		<!-- Renders the selected party member invincible for 10 seconds. -->
 		<set name="icon" val="icon.skill11758" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="CELESTIAL_INVINCIBILITY" />
+		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="17" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="120000" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Invincible" />
+			<effect name="CallSkill">
+				<param skillId="11833" skillLevel="1" /> <!-- Lingering Protection -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11759" levels="1" name="Celestial Party Protection">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
+		<!-- Skill does not remove on action -->
 		<!-- Renders all party members invincible for 10 seconds. -->
 		<set name="icon" val="icon.skill11759" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="CELESTIAL_INVINCIBILITY" />
+		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY" />
 		<set name="mpConsume" val="36" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="120000" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Invincible" />
+			<effect name="CallSkill">
+				<param skillId="11834" skillLevel="1" /> <!-- Lingering Protection -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11760" levels="8" name="Radiant Recharge" enchantGroup1="10">
 		<!-- Instantly recovers target's MP with a maximum of 166 Power depending on target's level. Also, for 10 seconds, recovers 12 MP per second. Ineffective on classes that have the Recharge skill. -->
@@ -498,32 +536,49 @@
 		</enchant1for>
 	</skill>
 	<skill id="11766" levels="8" name="Dark Blast">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Attacks target with 153 Power added to M. Atk. -->
 		<table name="#mpConsumes"> 70 72 76 78 82 85 88 92 </table>
+		<table name="#effectPoints"> -617 -624 -630 -635 -641 -646 -650 -655 </table> <!-- Custom -->
+		<table name="#power"> 153 158 163 167 171 176 180 185 </table>
 		<set name="icon" val="icon.skill11766" />
+		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectRange" val="1400" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="power" val="#power" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2280" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="2000" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11767" levels="8" name="Mass Dark Veil">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
+		<!-- On retail appears that this skill can hit monsters without aggressing them. Although once aggressed monster, it cannot get its aggression removed (or very hard on clan aggroed mobs) simply by spamming this skill. -->
 		<!-- Inflicts damage on target and nearby enemies with 117 Power and decreases aggression toward yourself. -->
 		<table name="#mpConsumes"> 423 432 450 468 487 506 526 547 </table>
+		<table name="#effectPoints"> 617 624 630 635 641 646 650 655 </table> <!-- Custom -->
+		<table name="#power"> 117 119 123 126 129 133 136 139 </table>
 		<set name="icon" val="icon.skill11767" />
+		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectRange" val="1400" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="power" val="#power" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3780" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="6700" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11768" levels="1" name="Rebirth" enchantGroup1="10" enchantGroup2="10">
 		<!-- Restores all party members' HP/MP/CP and has a chance of dispelling their debuffs. -->
@@ -605,15 +660,27 @@
 		</for>
 	</skill>
 	<skill id="11770" levels="1" name="Dissolve">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Removes the aggression of nearby enemies toward you and increases speed by 100. -->
 		<set name="icon" val="icon.skill11770" />
+		<set name="affectLimit" val="9-10" /> <!-- Custom -->
+		<set name="affectRange" val="200" /> <!-- Custom -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="10" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="300000" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="DeleteHate">
+				<param chance="100" /> <!-- Custom -->
+			</effect>
+		</for>
+		<selfEffects>
+			<effect name="CallSkill">
+				<param skillId="11835" skillLevel="1" />
+			</effect>
+		</selfEffects>
 	</skill>
 	<skill id="11771" levels="1" name="Wise Retainer of Lights">
 		<!-- AUTO GENERATED SKILL -->
@@ -715,50 +782,96 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11777" levels="5" name="Mark of Lumi">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Leaves a mark that decreases target's P. Def. and M. Def. by 10%, and consumes 113 HP every second for 60 seconds. -->
 		<table name="#coolTimes"> 800 800 800 800 0 </table>
+		<table name="#effectPoints"> -630 -635 -641 -646 -650 </table> <!-- Custom -->
 		<table name="#mpConsumes"> 40 42 45 47 32 </table>
+		<table name="#dot"> 113 118 123 128 134 </table>
+		<table name="#defences"> 0.90 0.85 0.80 0.75 0.70 </table>
 		<set name="icon" val="icon.skill11777" />
+		<set name="abnormalTime" val="60" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
+		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="#coolTimes" />
 		<set name="reuseDelay" val="4000" />
 		<set name="isMagic" val="1" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="DamOverTime" ticks="5">
+				<param power="#dot" />
+				<mul stat="pDef" val="#defences" />
+				<mul stat="mDef" val="#defences" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11778" levels="6" name="Fatal Sleep">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- For 20 seconds, inflicts Sleep on target. When Sleep ends, decreases Atk. Spd., Casting Spd., and Speed by 50%. -->
+		<table name="#effectPoints"> -630 -635 -641 -646 -650 -655 </table> <!-- Custom -->
 		<table name="#mpConsumes"> 26 26 27 30 31 33 </table>
 		<set name="icon" val="icon.skill11778" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="20" />
+		<set name="abnormalType" val="SLEEP" />
+		<set name="abnormalVisualEffect" val="SLEEP" />
+		<set name="activateRate" val="80" /> <!-- Custom -->
+		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
+		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="30000" />
+		<set name="removedOnDamage" val="true" />
 		<set name="isMagic" val="1" />
 		<set name="isDebuff" val="true" />
+		<set name="trait" val="SLEEP" />
+		<for>
+			<effect name="Sleep" />
+			<effect name="DefenceTrait">
+				<param SLEEP="100" />
+			</effect>
+		</for>
+		<endEffects>
+			<effect name="CallSkill">
+				<param skillId="11779" skillLevel="1" />
+			</effect>
+		</endEffects>
 	</skill>
 	<skill id="11779" levels="5" name="Yoked status">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Decreases Speed, Atk. Spd. and Casting Spd. by 50%. -->
+		<table name="#speeds"> 0.50 0.40 0.30 0.20 0.10 </table>
 		<set name="icon" val="icon.skill1394" />
+		<set name="abnormalTime" val="10" />
+		<set name="abnormalVisualEffect" val="ROOT" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="runSpd" val="#speeds" />
+				<mul stat="pAtkSpd" val="#speeds" />
+				<mul stat="mAtkSpd" val="#speeds" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11780" levels="6" name="Dark Devour">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Decreases target's Recovery by 50%. -->
 		<table name="#mpConsumes"> 35 35 37 40 42 45 </table>
+		<table name="#healEffect"> 0.50 0.48 0.44 0.40 0.35 0.30 </table>
 		<set name="icon" val="icon.skill11780" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
@@ -766,6 +879,11 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="isMagic" val="1" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="healEffect" val="#healEffect" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11781" levels="6" name="Dark Devour">
 		<!-- AUTO GENERATED SKILL -->
@@ -776,22 +894,34 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11782" levels="2" name="Frantic Healing">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Casting Spd. + 30% when equipped with a Robe/ Light Armor. MP is continuously consumed. -->
+		<table name="#mAtkSpd"> 1.30 1.50 </table>
 		<set name="icon" val="icon.skill11782" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="ManaDamOverTime">
+				<param power="200" /> <!-- 200 MP per tick. -->
+				<mul stat="mAtkSpd" val="#mAtkSpd">
+					<using kind="LIGHT, MAGIC" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
 	<skill id="11783" levels="1" name="Reset">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Restarts target's debuff timers. -->
 		<set name="icon" val="icon.skill11783" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="6000" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="ResetDebuff" />
+		</for>
 	</skill>
 	<skill id="11784" levels="4" name="Blessed Resurrection">
 		<!-- Resurrects a dead target and restores 85% of the XP lost. -->
@@ -822,26 +952,45 @@
 		</for>
 	</skill>
 	<skill id="11785" levels="3" name="Party Resurrection">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Resurrects all dead party members and restores 80% of the XP lost. -->
+		<table name="#effectPoints"> 290 331 417 </table> <!-- Custom -->
 		<table name="#mpConsumes"> 133 145 152 </table>
+		<table name="#power"> 80 90 100 </table>
 		<set name="icon" val="icon.skill11785" />
+		<set name="affectRange" val="1000" /> <!-- Custom -->
+		<set name="blockedInOlympiad" val="true" />
+		<set name="effectPoint" val="#effectPoints" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="CORPSE_PARTY" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="600000" />
 		<set name="isMagic" val="4" />
+		<cond>
+			<player canResurrect="true" />
+		</cond>
+		<for>
+			<effect name="Resurrection">
+				<param power="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11786" levels="1" name="Debuff Immunity">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Immune to debuffs for 5 seconds. -->
 		<set name="icon" val="icon.skill1411" />
+		<set name="abnormalTime" val="5" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="30000" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<set stat="debuffImmunity" val="1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11787" levels="1" name="Superior Armor Mastery" enchantGroup1="10">
 		<!-- INT + 2. Max HP + 4299 and M. Def. + 610 when equipped with Light Armor or a Robe. P. Def. + 1126 when equipped with a Robe, and P. Def. + 809 when equipped with Light Armor. Additional HP Recovery Bonus + 2.8 and MP Recovery Bonus + 3.6. -->
@@ -1013,79 +1162,175 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="11793" levels="3" name="Sustain">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- For 15 seconds, Heals allies over time. Also increases your Healing power. If triggered again, the effect will increase. -->
 		<table name="#mpConsumes"> 48 0 0 </table>
+		<table name="#power"> 1.10 1.20 1.30 </table> <!-- Custom -->
+		<table name="#magicLvl"> 85 95 99 </table> <!-- Custom -->
+		<table name="#hotValue"> 172 174 176 </table> <!-- Custom -->
+		<table name="#aggroPoints"> 419 452 468 </table> <!-- Custom -->
 		<set name="icon" val="icon.skill1217" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
+		<set name="abnormalTime" val="15" />
 		<set name="castRange" val="600" />
-		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="1000" />
+		<set name="mpConsume" val="#mpConsumes" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="PARTY_MEMBER" />
+		<set name="hitTime" val="500" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="HealOverTime" ticks="1">
+				<param power="#hotValue" />
+				<mul stat="healEffect" val="#power" />
+			</effect>
+		</for>
+		<selfEffects>
+			<effect name="CallSkill">
+				<param skillId="11794" skillLevel="1" skillLevelScaleTo="3" />
+			</effect>
+		</selfEffects>
 	</skill>
 	<skill id="11794" levels="3" name="Sustain">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- For 10 second, increases Healing power by 50. If triggered again, the effect will increase. -->
+		<table name="#healPower"> 50 100 200 </table>
+		<table name="#abnormalLevel"> 1 2 3 </table>
+		<set name="abnormalTime" val="10" />
 		<set name="icon" val="icon.skill1217" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<add stat="healPower" val="#healPower" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11795" levels="3" name="Sustain">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- For 15 seconds, Heals allies over time. Also increases your Healing power. If triggered again, the effect will increase. -->
 		<table name="#mpConsumes"> 50 0 0 </table>
+		<table name="#power"> 1.10 1.20 1.30 </table> <!-- Custom -->
+		<table name="#magicLvl"> 85 95 99 </table> <!-- Custom -->
+		<table name="#hotValue"> 172 174 176 </table> <!-- Custom -->
+		<table name="#aggroPoints"> 419 452 468 </table> <!-- Custom -->
 		<set name="icon" val="icon.skill1217" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
+		<set name="abnormalTime" val="15" />
 		<set name="castRange" val="600" />
-		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="1000" />
+		<set name="mpConsume" val="#mpConsumes" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="PARTY_MEMBER" />
+		<set name="hitTime" val="500" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="HealOverTime" ticks="1">
+				<param power="#hotValue" />
+				<mul stat="healEffect" val="#power" />
+			</effect>
+		</for>
+		<selfEffects>
+			<effect name="CallSkill">
+				<param skillId="11796" skillLevel="1" skillLevelScaleTo="3" />
+			</effect>
+		</selfEffects>
 	</skill>
 	<skill id="11796" levels="3" name="Sustain">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- For 10 second, increases Healing power by 50. If triggered again, the effect will increase. -->
+		<table name="#healPower"> 50 100 200 </table>
+		<table name="#abnormalLevel"> 1 2 3 </table>
+		<set name="abnormalTime" val="10" />
 		<set name="icon" val="icon.skill1217" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<add stat="healPower" val="#healPower" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11797" levels="3" name="Sustain">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- For 15 seconds, Heals allies over time. Also increases your Healing power. If triggered again, the effect will increase. -->
 		<table name="#mpConsumes"> 52 0 0 </table>
+		<table name="#power"> 1.10 1.20 1.30 </table> <!-- Custom -->
+		<table name="#magicLvl"> 85 95 99 </table> <!-- Custom -->
+		<table name="#hotValue"> 172 174 176 </table> <!-- Custom -->
+		<table name="#aggroPoints"> 419 452 468 </table> <!-- Custom -->
 		<set name="icon" val="icon.skill1217" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
+		<set name="abnormalTime" val="15" />
 		<set name="castRange" val="600" />
-		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="1000" />
+		<set name="mpConsume" val="#mpConsumes" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="PARTY_MEMBER" />
+		<set name="hitTime" val="500" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="HealOverTime" ticks="1">
+				<param power="#hotValue" />
+				<mul stat="healEffect" val="#power" />
+			</effect>
+		</for>
+		<selfEffects>
+			<effect name="CallSkill">
+				<param skillId="11798" skillLevel="1" skillLevelScaleTo="3" />
+			</effect>
+		</selfEffects>
 	</skill>
 	<skill id="11798" levels="3" name="Sustain">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- For 10 second, increases Healing power by 50. If triggered again, the effect will increase. -->
+		<table name="#healPower"> 50 100 200 </table>
+		<table name="#abnormalLevel"> 1 2 3 </table>
+		<set name="abnormalTime" val="10" />
 		<set name="icon" val="icon.skill1217" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<add stat="healPower" val="#healPower" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11799" levels="3" name="Sustain">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- For 15 seconds, Heals allies over time. Also increases your Healing power. If triggered again, the effect will increase. -->
-		<table name="#mpConsumes"> 54 0 0 </table>
+		<table name="#mpConsumes"> 57 0 0 </table>
+		<table name="#power"> 1.10 1.20 1.30 </table> <!-- Custom -->
+		<table name="#magicLvl"> 85 95 99 </table> <!-- Custom -->
+		<table name="#hotValue"> 172 174 176 </table> <!-- Custom -->
+		<table name="#aggroPoints"> 419 452 468 </table> <!-- Custom -->
 		<set name="icon" val="icon.skill1217" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
+		<set name="abnormalTime" val="15" />
 		<set name="castRange" val="600" />
-		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="1000" />
+		<set name="mpConsume" val="#mpConsumes" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="aggroPoints" val="#aggroPoints" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="PARTY_MEMBER" />
+		<set name="hitTime" val="500" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="HealOverTime" ticks="1">
+				<param power="#hotValue" />
+				<mul stat="healEffect" val="#power" />
+			</effect>
+		</for>
+		<selfEffects>
+			<effect name="CallSkill">
+				<param skillId="11800" skillLevel="1" skillLevelScaleTo="3" />
+			</effect>
+		</selfEffects>
 	</skill>
 </list>

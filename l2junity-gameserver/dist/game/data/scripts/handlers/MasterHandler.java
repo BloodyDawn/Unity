@@ -201,6 +201,7 @@ import handlers.targethandlers.ClanMember;
 import handlers.targethandlers.CommandChannel;
 import handlers.targethandlers.CorpseClan;
 import handlers.targethandlers.CorpseMob;
+import handlers.targethandlers.CorpseParty;
 import handlers.targethandlers.EnemySummon;
 import handlers.targethandlers.FlagPole;
 import handlers.targethandlers.FrontArea;
@@ -257,6 +258,7 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.handler.ActionHandler;
 import org.l2junity.gameserver.handler.ActionShiftHandler;
@@ -539,6 +541,7 @@ public class MasterHandler
 			ClanMember.class,
 			CommandChannel.class,
 			CorpseClan.class,
+			CorpseParty.class,
 			CorpseMob.class,
 			EnemySummon.class,
 			FlagPole.class,

@@ -92,7 +92,7 @@ public final class MagicalAttackMp extends AbstractEffect
 		boolean sps = info.getSkill().useSpiritShot() && activeChar.isChargedShot(ShotType.SPIRITSHOTS);
 		boolean bss = info.getSkill().useSpiritShot() && activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
 		final byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
-		final boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, info.getSkill()));
+		final boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, info.getSkill()), info.getSkill(), target);
 		double damage = Formulas.calcManaDam(activeChar, target, info.getSkill(), shld, sps, bss, mcrit);
 		double mp = (damage > target.getCurrentMp() ? target.getCurrentMp() : damage);
 		

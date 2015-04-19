@@ -246,6 +246,10 @@
 		<!-- Rushes the enemy to inflict Stun for 1 second. Requires a sword, dualsword or dual blunt to be equipped. -->
 		<table name="#mpConsumes"> 38 39 41 43 45 47 </table>
 		<set name="icon" val="icon.skill11508" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="1" />
+		<set name="abnormalType" val="STUN" />
+		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -254,6 +258,10 @@
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="10000" />
 		<set name="isDebuff" val="true" />
+		<set name="trait" val="SHOCK" />
+		<for>
+			<effect name="Stun" />
+		</for>
 	</skill>
 	<skill id="11509" levels="8" name="Crippling Attack" enchantGroup1="10" enchantGroup2="10" enchantGroup3="10" enchantGroup4="10" enchantGroup5="10" enchantGroup6="10" enchantGroup7="10" enchantGroup8="10">
 		<!-- Attacks target with 14608 Power added to P. Atk. For 20 seconds, P. Def. and M. Def. - 40% and P. Evasion - 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical. -->
@@ -443,30 +451,137 @@
 	<skill id="11513" levels="8" name="Mass Crippling Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks target and nearby enemies with 10263 Power added to P. Atk. For 20 seconds, decreases target's P. Def. and M. Def. by 40% and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical. -->
+		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table> <!-- Custom -->
 		<table name="#mpConsumes"> 130 132 136 142 146 150 156 160 </table>
+		<table name="#power"> 10263 10616 11322 12027 12733 13438 14144 14849 </table>
+		<table name="#ench1MpConsume"> 54 52 50 47 45 43 41 38 36 34 </table> <!-- Custom -->
+		<table name="#enchDuel"> 23368 23952 24536 25120 25704 26288 26872 27456 28040 28624 </table> <!-- Custom -->
+		<table name="#enchElementPower"> 1 2 3 4 5 6 7 8 9 10 </table> <!-- Custom -->
+		<table name="#enchMagicLvl"> 98 98 98 98 98 99 99 99 99 99 </table> <!-- Custom -->
+		<table name="#enchPower"> 23368 23952 24536 25120 25704 26288 26872 27456 28040 28624 </table> <!-- Custom -->
 		<set name="icon" val="icon.skill11513" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="20" />
+		<set name="abnormalType" val="CRIPPLING_ATTACK" />
+		<set name="affectLimit" val="5-12" /> <!-- Custom -->
+		<set name="affectRange" val="150" /> <!-- Custom -->
+		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="40" />
-		<set name="hitTime" val="1210" />
-		<set name="coolTime" val="500" />
-		<set name="reuseDelay" val="10000" />
+		<set name="coolTime" val="300" />
+		<set name="hitTime" val="910" />
+		<set name="icon" val="icon.skill11509" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsumes" />
+		<set name="operateType" val="A2" />
+		<set name="overHit" val="true" />
+		<set name="power" val="#power" />
+		<set name="reuseDelay" val="7000" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="ONE" />
 		<set name="isDebuff" val="true" />
+		<enchant1 name="magicLvl" val="#enchMagicLvl" />
+		<enchant1 name="mpConsume" val="#ench1MpConsume" />
+		<enchant1 name="power" val="#enchPower" />
+		<enchant2 name="magicLvl" val="#enchMagicLvl" />
+		<enchant2 name="pvpPower" val="#enchDuel" />
+		<enchant3 name="element" val="0" /> <!-- Fire -->
+		<enchant3 name="elementPower" val="#enchElementPower" />
+		<enchant3 name="magicLvl" val="#enchMagicLvl" />
+		<enchant3 name="power" val="#enchPower" />
+		<enchant4 name="element" val="1" /> <!-- Water -->
+		<enchant4 name="elementPower" val="#enchElementPower" />
+		<enchant4 name="magicLvl" val="#enchMagicLvl" />
+		<enchant4 name="power" val="#enchPower" />
+		<enchant5 name="element" val="2" /> <!-- Wind -->
+		<enchant5 name="elementPower" val="#enchElementPower" />
+		<enchant5 name="magicLvl" val="#enchMagicLvl" />
+		<enchant5 name="power" val="#enchPower" />
+		<enchant6 name="element" val="3" /> <!-- Earth -->
+		<enchant6 name="elementPower" val="#enchElementPower" />
+		<enchant6 name="magicLvl" val="#enchMagicLvl" />
+		<enchant6 name="power" val="#enchPower" />
+		<enchant7 name="element" val="4" /> <!-- Holy -->
+		<enchant7 name="elementPower" val="#enchElementPower" />
+		<enchant7 name="magicLvl" val="#enchMagicLvl" />
+		<enchant7 name="power" val="#enchPower" />
+		<enchant8 name="element" val="5" /> <!-- Unholy -->
+		<enchant8 name="elementPower" val="#enchElementPower" />
+		<enchant8 name="magicLvl" val="#enchMagicLvl" />
+		<enchant8 name="power" val="#enchPower" />
+		<cond msgId="113" addName="1">
+			<using kind="SWORD, DUAL, DUALBLUNT" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack" />
+			<effect name="Debuff">
+				<mul stat="pDef" val="0.60" />
+				<sub stat="rEvas" val="15" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11514" levels="8" name="Mass Shadow Blade">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks target and nearby enemies with 11722 Power added to P. Atk. For 20 seconds, decreases P. Atk. and M. Atk. by 40%. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical. -->
-		<table name="#mpConsumes"> 146 150 156 160 166 172 176 182 </table>
 		<set name="icon" val="icon.skill11514" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
+		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
+		<table name="#mpConsumes"> 146 150 156 160 166 172 176 182 </table>
+		<table name="#power"> 11722 12525 13327 14130 14933 15736 16539 17342 </table>
+		<table name="#ench1MpConsume"> 59 57 54 52 49 47 44 42 39 37 </table> <!-- Custom -->
+		<table name="#enchDuel"> 23368 23952 24536 25120 25704 26288 26872 27456 28040 28624 </table> <!-- Custom -->
+		<table name="#enchElementPower"> 1 2 3 4 5 6 7 8 9 10 </table> <!-- Custom -->
+		<table name="#enchPower"> 23368 23952 24536 25120 25704 26288 26872 27456 28040 28624 </table> <!-- Custom -->
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="20" />
+		<set name="abnormalType" val="SHADOW_BLADE" />
+		<set name="affectLimit" val="5-12" /> <!-- Custom -->
+		<set name="affectRange" val="150" /> <!-- Custom -->
+		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="40" />
-		<set name="hitTime" val="1410" />
 		<set name="coolTime" val="500" />
+		<set name="hitTime" val="1410" />
+		<set name="icon" val="icon.skill11510" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsumes" />
+		<set name="operateType" val="A2" />
+		<set name="overHit" val="true" />
+		<set name="power" val="#power" />
 		<set name="reuseDelay" val="10000" />
+		<set name="rideState" val="NONE" />
+		<set name="targetType" val="ONE" />
 		<set name="isDebuff" val="true" />
+		<enchant1 name="mpConsume" val="#ench1MpConsume" />
+		<enchant1 name="power" val="#enchPower" />
+		<enchant2 name="pvpPower" val="#enchDuel" />
+		<enchant3 name="element" val="0" /> <!-- Fire -->
+		<enchant3 name="elementPower" val="#enchElementPower" />
+		<enchant3 name="power" val="#enchPower" />
+		<enchant4 name="element" val="1" /> <!-- Water -->
+		<enchant4 name="elementPower" val="#enchElementPower" />
+		<enchant4 name="power" val="#enchPower" />
+		<enchant5 name="element" val="2" /> <!-- Wind -->
+		<enchant5 name="elementPower" val="#enchElementPower" />
+		<enchant5 name="power" val="#enchPower" />
+		<enchant6 name="element" val="3" /> <!-- Earth -->
+		<enchant6 name="elementPower" val="#enchElementPower" />
+		<enchant6 name="power" val="#enchPower" />
+		<enchant7 name="element" val="4" /> <!-- Holy -->
+		<enchant7 name="elementPower" val="#enchElementPower" />
+		<enchant7 name="power" val="#enchPower" />
+		<enchant8 name="element" val="5" /> <!-- Unholy -->
+		<enchant8 name="elementPower" val="#enchElementPower" />
+		<enchant8 name="power" val="#enchPower" />
+		<cond msgId="113" addName="1">
+			<using kind="SWORD, DUAL, DUALBLUNT" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack" />
+			<effect name="Debuff">
+				<mul stat="pAtk" val="0.60" />
+				<mul stat="mAtk" val="0.60" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11515" levels="5" name="Confusion Bomber">
 		<!-- AUTO GENERATED SKILL -->
@@ -1058,6 +1173,25 @@
 		<set name="icon" val="icon.skill10001" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.20">
+					<using kind="SWORD,BLUNT" />
+				</mul>
+				<mul stat="pAtkSpd" val="1.20">
+					<using kind="SWORD,BLUNT" />
+				</mul>
+				<mul stat="cAtk" val="1.15">
+					<using kind="SWORD,BLUNT" />
+				</mul>
+				<add stat="accCombat" val="4">
+					<using kind="SWORD,BLUNT" />
+				</add>
+				<mul stat="pvePhysDmg" val="1.20">
+					<using kind="SWORD,BLUNT" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
 	<skill id="11529" levels="1" name="Prevailing Sonata" enchantGroup1="10" enchantGroup2="10">
 		<!-- Increases party members' Atk. Spd. by 15%, Casting Spd. by 30%, Max HP by 30%, MP recovery bonus by 20% and decreases MP Consumption for magic skill by 10% and the magic cancel rate for 5 minutes. -->
@@ -1196,34 +1330,52 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Party members receives 80% Vampiric Rage effect for 15 seconds. -->
 		<set name="icon" val="icon.skill11546" />
+		<set name="abnormalLvl" val="5" />
+		<set name="abnormalTime" val="15" />
+		<set name="abnormalType" val="VAMPIRIC_ATTACK_SPECIAL" />
+		<set name="affectRange" val="1000" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY" />
 		<set name="mpConsume" val="342" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="600000" />
+		<for>
+			<effect name="Buff">
+				<add stat="absorbDam" val="80" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11534" levels="5" name="Angel's Touch">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 7 seconds, renders target immune to debuffs. -->
 		<table name="#mpConsumes"> 70 75 80 85 90 </table>
 		<set name="icon" val="icon.skill11534" />
+		<set name="abnormalLvl" val="4" /> <!-- Custom -->
+		<set name="abnormalTime" val="7" />
+		<set name="abnormalType" val="ABNORMAL_INVINCIBILITY" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<set stat="debuffImmunity" val="1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11536" levels="6" name="Divine Cancel">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Has a chance of canceling up to 2 of the buff effects on target. -->
 		<table name="#mpConsumes"> 70 70 75 80 85 90 </table>
 		<set name="icon" val="icon.skill11536" />
+		<set name="effectPoint" val="-1" /> <!-- Custom -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="700" />
@@ -1231,29 +1383,55 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="isMagic" val="1" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="DispelByCategory">
+				<param slot="buff" rate="50" max="2" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11537" levels="7" name="Transform">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Transforms target into a harmless creature and decrease its Speed by 20% for 15 seconds. The effect is canceled if the transformed target is attacked. -->
 		<table name="#mpConsumes"> 126 126 135 139 148 157 166 </table>
+		<table name="#runSpd"> 0.80 0.70 0.60 0.50 0.40 0.30 0.20 </table>
 		<set name="icon" val="icon.skill11537" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="abnormalTime" val="15" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="60000" />
+		<set name="removedOnDamage" val="true" />
 		<set name="isMagic" val="1" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="2195">
+			<player canTransform="true" />
+		</cond>
+		<for>
+			<effect name="Mute" />
+			<effect name="PhysicalMute" />
+			<effect name="PhysicalAttackMute" />
+			<effect name="Transformation">
+				<param id="0" />
+				<mul stat="runSpd" val="#runSpd" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11538" levels="4" name="Mass Giant Root">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Inflicts Hold on nearby enemies for 15 seconds. -->
 		<table name="#mpConsumes"> 252 558 612 666 </table>
 		<set name="icon" val="icon.skill11538" />
+		<set name="abnormalTime" val="15" />
+		<set name="activateRate" val="50" />
+		<set name="affectLimit" val="10-10" />
+		<set name="affectRange" val="200" />
+		<set name="basicProperty" val="MEN" />
+		<set name="effectPoint" val="-679" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1500" />
@@ -1261,14 +1439,28 @@
 		<set name="reuseDelay" val="120000" />
 		<set name="isMagic" val="1" />
 		<set name="isDebuff" val="true" />
+		<set name="trait" val="HOLD" />
+		<for>
+			<effect name="Root" />
+			<effect name="DefenceTrait">
+				<param HOLD="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11539" levels="8" name="Petrify">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Petrifies target for 15 seconds. -->
 		<table name="#mpConsumes"> 70 72 76 78 82 85 88 92 </table>
 		<set name="icon" val="icon.skill11539" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="15" />
+		<set name="abnormalType" val="TURN_STONE" />
+		<set name="abnormalVisualEffect" val="FLESH_STONE" />
+		<set name="activateRate" val="80" /> <!-- Custom -->
+		<set name="basicProperty" val="MEN" />
+		<set name="effectPoint" val="-666" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1700" />
@@ -1276,12 +1468,18 @@
 		<set name="reuseDelay" val="120000" />
 		<set name="isMagic" val="1" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Petrification" />
+		</for>
 	</skill>
 	<skill id="11540" levels="4" name="Quick Escape">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Transforms yourself into a cute pig for 15 seconds. P. Def. and M. Def. + 3000, and Speed + 30%. -->
 		<table name="#mpConsumes"> 70 77 85 92 </table>
+		<table name="#def"> 3000 3500 4000 4500 </table>
+		<table name="#runSpd"> 1.30 1.40 1.50 1.60 </table>
 		<set name="icon" val="icon.skill11540" />
+		<set name="abnormalTime" val="15" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1289,11 +1487,20 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Transformation">
+				<param id="0" />
+				<add stat="pDef" val="#def" />
+				<add stat="mDef" val="#def" />
+				<mul stat="runSpd" val="#runSpd" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11541" levels="1" name="Polymorph">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Transforms yourself into a stone for 15 seconds to eliminate nearby enemies' aggression and keep them from targeting you. Greatly decreases Speed while transformed. Cannot be used while Disparition is active. -->
 		<set name="icon" val="icon.skill11541" />
+		<set name="abnormalTime" val="15" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="70" />
@@ -1301,12 +1508,21 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Untargetable" />
+			<effect name="Transformation">
+				<param id="0" />
+				<mul stat="runSpd" val="0.50" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11543" levels="3" name="Disperse">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 sec., transforms yourself and nearby party members to increase P. Def. and M. Def. + 2000 and Speed + 44. Decreases P. Atk. and M. Atk. + 80%. -->
 		<table name="#mpConsumes"> 330 350 370 </table>
 		<set name="icon" val="icon.skill11543" />
+		<set name="abnormalTime" val="30" />
+		<set name="affectRange" val="1000" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1319,28 +1535,47 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 sec., doubles all party members' P. Atk., M. Atk., Atk. Spd. and Casting Spd. -->
 		<set name="icon" val="icon.skill11544" />
+		<set name="abnormalTime" val="30" />
+		<set name="affectRange" val="1000" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY" />
 		<set name="mpConsume" val="916" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="600000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="2.00" />
+				<mul stat="mAtk" val="2.00" />
+				<mul stat="pAtkSpd" val="2.00" />
+				<mul stat="mAtkSpd" val="2.00" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11545" levels="1" name="Crazy Nocturne">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 15 sec., decreases standard attack and M. Skill's Critical Rate targeting party members by 50%. -->
 		<set name="icon" val="icon.skill11545" />
+		<set name="abnormalTime" val="15" />
+		<set name="affectRange" val="1000" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY" />
 		<set name="mpConsume" val="1032" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="600000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="defCritRate" val="1.50" />
+				<mul stat="defMCritRate" val="1.50" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11546" levels="1" name="Chaos Symphony">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts 38826 damage on target and nearby enemies. Decreases nearby enemies' P. Atk., P. Def., M. Atk., M. Def. and Speed by 50% for 10 seconds. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical. -->
 		<set name="icon" val="icon.skill11533" />
+		<set name="abnormalTime" val="10" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1767" />
@@ -1348,6 +1583,15 @@
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="30000" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="pAtk" val="0.50" />
+				<mul stat="pDef" val="0.50" />
+				<mul stat="mAtk" val="0.50" />
+				<mul stat="mDef" val="0.50" />
+				<mul stat="runSpd" val="0.50" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11547" levels="1" name="Superior HP Recovery" enchantGroup1="10">
 		<!-- STR + 2 and HP Recovery Bonus + 2.8. -->
@@ -1483,59 +1727,105 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Disables nearby enemies' natural HP Recovery for 2 minutes. -->
 		<set name="icon" val="icon.skill11557" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="120" />
+		<set name="abnormalType" val="HP_REGEN_DOWN" />
+		<set name="activateRate" val="80" /> <!-- Custom -->
+		<set name="affectRange" val="200" />
+		<set name="affectLimit" val="10-10" /> <!-- Custom -->
+		<set name="effectPoint" val="-1" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="423" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="120000" />
 		<set name="isMagic" val="1" />
 		<set name="isDebuff" val="true" />
+		<set name="trait" val="BOSS" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="regHp" val="0" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11558" levels="1" name="Ultimate Oblivion">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Cancels nearby enemies' targets. -->
 		<set name="icon" val="icon.skill11558" />
+		<set name="affectRange" val="200" />
+		<set name="effectPoint" val="-1" /> <!-- Custom -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="423" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="120000" />
 		<set name="isMagic" val="1" />
 		<set name="isDebuff" val="true" />
+		<set name="trait" val="DERANGEMENT" />
+		<for>
+			<effect name="TargetCancel">
+				<param chance="80" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11559" levels="1" name="Ultimate Suspension">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Increases nearby enemies' physical/magic skill Cooldown by 200% for 2 minutes. -->
 		<set name="icon" val="icon.skill11559" />
+		<set name="abnormalTime" val="120" />
+		<set name="affectRange" val="200" /> <!-- (x1 - x2)^2 + (y1 - y2)^2 = range^2 isnt it like that? 72819->71818  142606->142808 -->
+		<set name="effectPoint" val="-1" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="423" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="120000" />
 		<set name="isMagic" val="1" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="pReuse" val="3.00" /> <!-- 200% -->
+				<mul stat="mReuse" val="3.00" /> <!-- 200% -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11560" levels="2" name="Celestial Aegis">
-		<!-- AUTO GENERATED SKILL -->
+		<!--Updated to Ertheia -->
 		<!-- Makes all party members invincible for 30 seconds. -->
 		<table name="#mpConsumes"> 423 557 </table>
 		<set name="icon" val="icon.skill11560" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="30" />
+		<set name="abnormalType" val="CELESTIAL_INVINCIBILITY" />
+		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
+		<set name="affectRange" val="1000" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Invincible" />
+			<effect name="CallSkill">
+				<param skillId="20007" skillLevel="1" /> <!-- Block Invincibility -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11561" levels="4" name="Giant Root">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Inflicts Hold on the enemy for 15 seconds. -->
 		<table name="#mpConsumes"> 126 139 153 166 </table>
 		<set name="icon" val="icon.skill11561" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="15" />
+		<set name="abnormalType" val="ROOT_MAGICALLY" />
+		<set name="activateRate" val="80" /> <!-- Custom -->
+		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1545,40 +1835,81 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
 		<set name="isDebuff" val="true" />
+		<set name="trait" val="HOLD" />
+		<for>
+			<effect name="Root" />
+			<effect name="DefenceTrait">
+				<param HOLD="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11562" levels="1" name="Devil's Movement">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Prevents all party members from being attacked preemptively by monsters for 2 minutes. But if any party member initiates an attack, the effect will be canceled. -->
 		<set name="icon" val="icon.skill11562" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="120" />
+		<set name="abnormalType" val="DANCE_OF_SHADOW" /> <!-- Custom -->
+		<set name="abnormalVisualEffect" val="STEALTH" />
+		<set name="affectRange" val="1000" />
+		<set name="effectPoint" val="666" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY" />
 		<set name="mpConsume" val="60" />
 		<set name="hitTime" val="2500" />
 		<set name="reuseDelay" val="3000" />
+		<for>
+			<effect name="CancelEffectOnOffense" /> <!-- Cancels this effect from you and party members around skill range on offense -->
+			<effect name="SilentMove" />
+		</for>
 	</skill>
 	<skill id="11563" levels="1" name="Quick Return">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Copy-Pasted from Return Skill -->
 		<!-- Teleports to a town. Cannot be used in a specially designated place such as the GM Consultation Service. -->
 		<set name="icon" val="icon.skill11819" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="60" />
 		<set name="hitTime" val="2500" />
 		<set name="reuseDelay" val="75000" />
 		<set name="isMagic" val="1" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player canEscape="true" />
+				<not>
+					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="Escape">
+				<param escapeType="TOWN" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11564" levels="3" name="Angel's Resurrection">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Resurrects a dead target and restores 40% of the XP lost. -->
+		<table name="#power"> 40 50 60 </table>
 		<set name="icon" val="icon.skill1016" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PC_BODY" />
 		<set name="mpConsume" val="60" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
 		<set name="isMagic" val="4" />
+		<cond>
+			<player canResurrect="true" />
+		</cond>
+		<for>
+			<effect name="Resurrection">
+				<param power="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11565" levels="1" name="Elemental Resistance" enchantGroup1="10" enchantGroup2="10">
 		<!-- Increases party members' Fire/Water/Wind/Earth Resistance by 30 for 30 minutes. -->
@@ -1731,39 +2062,71 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Heals target and the 10 most injured allies around target by up to 35% of their Max HP. The recovery amount decreases starting from the most injured person. -->
 		<set name="icon" val="icon.skill11570" />
+		<set name="affectLimit" val="5-12" /> <!-- Custom -->
+		<set name="affectRange" val="300" />
+		<set name="effectPoint" val="398" /> <!-- Custom from chain heal -->
+		<set name="effectRange" val="1400" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA_FRIENDLY" />
 		<set name="mpConsume" val="582" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="HealPercent">
+				<param power="30" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11571" levels="1" name="Recovery Melody">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
 		<!-- Restores target's CP by 1000. -->
 		<set name="icon" val="icon.skill11571" />
+		<set name="effectPoint" val="1" /> <!-- Custom -->
+		<set name="effectRange" val="1400" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="120" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="5000" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="CpHeal">
+				<param power="1000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11580" levels="4" name="Mass Transform">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10 sec., mutates enemies to reduce their Speed by 20% and render them unable to attack. Mutated enemies return to normal when inflicted with damage. -->
 		<table name="#mpConsumes"> 126 139 153 166 </table>
 		<set name="icon" val="icon.skill11580" />
+		<set name="abnormalTime" val="10" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
+		<set name="affectRange" val="200" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="removedOnDamage" val="true" />
 		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="1410" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="120000" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="2195">
+			<player canTransform="true" />
+		</cond>
+		<for>
+			<effect name="Mute" />
+			<effect name="PhysicalMute" />
+			<effect name="PhysicalAttackMute" />
+			<effect name="Transformation">
+				<param id="0" />
+				<mul stat="runSpd" val="0.80" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11581" levels="4" name="Superior Advantage">
 		<!-- Skill Cooldown - 5%, Skill Power + 5%, MP Recovery Rate + 5, and Max HP, MP, and CP + 5%. Skill mastery effect + 10%. -->
@@ -1794,6 +2157,7 @@
 		<!-- Plays the Song of Silence. For 10 sec., enemies' P. Skills and M. Skills are locked. -->
 		<table name="#mpConsumes"> 126 139 153 166 </table>
 		<set name="icon" val="icon.skill11839" />
+		<set name="abnormalTime" val="10" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1801,6 +2165,10 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="120000" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Mute" />
+			<effect name="PhysicalMute" />
+		</for>
 	</skill>
 	<skill id="11583" levels="4" name="Superior Song of Mastery">
 		<!-- AUTO GENERATED SKILL -->
@@ -1808,12 +2176,30 @@
 		<set name="icon" val="icon.skill0153" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pDef" val="1.05" />
+				<mul stat="mDef" val="1.05" />
+				<mul stat="physicalSkillPower" val="1.05" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11584" levels="4" name="Mass Medusa's Dance">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Performs that evokes the mirage of a Medusa. For 10 sec., Petrifies nearby enemies. -->
 		<table name="#mpConsumes"> 126 139 153 166 </table>
 		<set name="icon" val="icon.skill11840" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="TURN_STONE" />
+		<set name="abnormalVisualEffect" val="FLESH_STONE" />
+		<set name="activateRate" val="80" /> <!-- Custom -->
+		<set name="affectLimit" val="10-10" /> <!-- Custom -->
+		<set name="affectRange" val="150" /> <!-- Custom -->
+		<set name="basicProperty" val="MEN" />
+		<set name="effectPoint" val="-666" /> <!-- Custom -->
+		<set name="element" val="3" /> <!-- Earth -->
+		<set name="elementPower" val="20" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1821,6 +2207,9 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="120000" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Petrification" />
+		</for>
 	</skill>
 	<skill id="11585" levels="4" name="Superior Dance of Mastery">
 		<!-- AUTO GENERATED SKILL -->
@@ -1828,12 +2217,20 @@
 		<set name="icon" val="icon.skill0141" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.05" />
+				<mul stat="mAtk" val="1.05" />
+				<mul stat="physicalSkillPower" val="1.05" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11586" levels="4" name="Pa'agrio's Bravery">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 sec., restores clan members' Max CP and increases it by 5%. -->
 		<table name="#mpConsumes"> 126 139 153 166 </table>
 		<set name="icon" val="icon.skill11843" />
+		<set name="abnormalTime" val="30" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1847,6 +2244,7 @@
 		<!-- For 10 sec., locks target and nearby enemies' standard attacks during PvP. -->
 		<table name="#mpConsumes"> 252 278 306 332 </table>
 		<set name="icon" val="icon.skill11587" />
+		<set name="abnormalTime" val="10" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1855,6 +2253,9 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="120000" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttackMute" /> <!-- TODO: Only during pvp? -->
+		</for>
 	</skill>
 	<skill id="11588" levels="4" name="Superior Wizard Mastery">
 		<!-- AUTO GENERATED SKILL -->
@@ -1862,12 +2263,18 @@
 		<set name="icon" val="icon.skill0164" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="maxMp" val="1.10" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11589" levels="4" name="Horn Frenzy">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 min., clan members' P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, and M. Def. + 30%. -->
 		<table name="#mpConsumes"> 140 151 170 181 </table>
 		<set name="icon" val="icon.skill11589" />
+		<set name="abnormalTime" val="1800" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1880,6 +2287,7 @@
 		<!-- For 30 min., clan members' Max MP + 20%, HP Recovery Bonus + 20%, and M. Critical Rate + 20. During a standard attack, P. Atk. and Debuff Resistance + 10%, and Critical Damage, P. Def., Atk. Spd., M. Atk., M. Def., and Casting Spd. + 20%. When hit with a critical attack, received damage - 30% and Speed - 15%. Increases Critical Damage during a standard attack for a member equipped with a melee weapon/bow/crossbow who receives more than a certain amount of damage. -->
 		<table name="#mpConsumes"> 140 151 170 181 </table>
 		<set name="icon" val="icon.skill11590" />
+		<set name="abnormalTime" val="1800" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1892,6 +2300,7 @@
 		<!-- For 30 min., clan members' Max HP/MP/CP + 37%, and HP Recovery Bonus + 20%. -->
 		<table name="#mpConsumes"> 140 151 170 181 </table>
 		<set name="icon" val="icon.skill11591" />
+		<set name="abnormalTime" val="1800" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1904,6 +2313,7 @@
 		<!-- For 30 min., clan members' P. Critical Rate + 32%, P. Critical Damage + 35%, and M. Critical Rate + 20. P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and Iss Enchanter's Enchant Skill MP Consumption - 20%. -->
 		<table name="#mpConsumes"> 140 151 170 181 </table>
 		<set name="icon" val="icon.skill11592" />
+		<set name="abnormalTime" val="1800" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1916,6 +2326,7 @@
 		<!-- For 30 min., clan members' P. Accuracy and P. Evasion/ M. Evasion + 5, and Speed + 34. Received Critical Damage - 30%. -->
 		<table name="#mpConsumes"> 140 151 170 181 </table>
 		<set name="icon" val="icon.skill11593" />
+		<set name="abnormalTime" val="1800" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1928,6 +2339,7 @@
 		<!-- For 30 min., clan members' Atk. Spd. + 34% and Casting Spd. + 31%. Has a chance of applying 9% Vampiric Rage effect. -->
 		<table name="#mpConsumes"> 140 151 170 181 </table>
 		<set name="icon" val="icon.skill11594" />
+		<set name="abnormalTime" val="1800" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1939,6 +2351,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 minutes, increases clan members' P. Atk. + 12%, P. Critical Damage + 35%, P. Critical Rate + 100%, P. Def. + 45%, Shield Defense Rate + 30%, and Shield Defense + 50%. -->
 		<set name="icon" val="icon.skill11596" />
+		<set name="abnormalTime" val="1800" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="140" />
@@ -1951,6 +2364,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 minutes, increases clan members' P. Atk. + 35%, P. Critical Damage + 35%, P. Critical Rate + 100%, Atk. Spd. + 8%, M. Atk. + 16%, Casting Spd. + 8%, and Spd. + 8. -->
 		<set name="icon" val="icon.skill11595" />
+		<set name="abnormalTime" val="1800" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="140" />
@@ -1963,6 +2377,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 minutes, increases clan members' M. Atk. + 40%, M. Critical Rate + 100%, Casting Spd. + 8%, P. Atk. + 8%, Atk. Spd. + 8%, Spd. + 8, M. Def. + 14%, and MP Recovery Bonus + 20%. Decreases magic skill MP Consumption - 15%, physical skill MP Consumption - 5%, and Skill Cooldown - 20%. -->
 		<set name="icon" val="icon.skill11597" />
+		<set name="abnormalTime" val="1800" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="140" />
@@ -1976,6 +2391,7 @@
 		<!-- A powerful cold flame. For 10 sec., decreases enemy's HP by 326. -->
 		<table name="#mpConsumes"> 73 79 86 91 </table>
 		<set name="icon" val="icon.skill11598" />
+		<set name="abnormalTime" val="10" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />

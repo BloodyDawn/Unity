@@ -298,6 +298,31 @@ public final class BuffInfo
 	}
 	
 	/**
+	 * Resets the effects' duration.
+	 */
+	public void resetEffects()
+	{
+		if ((_effected == null) || (_skill == null))
+		{
+			return;
+		}
+		
+		// Resets the task that will stop all the effects.
+		if (_abnormalTime > 0)
+		{
+			if (_scheduledFutureTimeTask != null)
+			{
+				_scheduledFutureTimeTask.cancel(true);
+			}
+			
+			_scheduledFutureTimeTask = ThreadPoolManager.getInstance().scheduleEffectAtFixedRate(new BuffTimeTask(this), 0, 1000L);
+		}
+		
+		// Reset abnormal visual effects.
+		resetAbnormalVisualEffects();
+	}
+	
+	/**
 	 * Called on each tick.<br>
 	 * Verify if the effect should end and the effect task should be cancelled.
 	 * @param effect the effect that is ticking

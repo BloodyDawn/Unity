@@ -98,13 +98,24 @@
 		</for>
 	</skill>
 	<skill id="20007" levels="1" name="Block Invincibility">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to Ertheia -->
+		<!-- Skill activates once Celestial Aegis, Celestial Protection, or the Celestial Party Protection is received. -->
 		<!-- For 2 min., HP/MP Recovery Bonus increase, and Speed + 5. You cannot receive the Celestial Aegis, Celestial Protection, or the Celestial Party Protection effect. -->
 		<set name="icon" val="icon.skill11560" />
+		<set name="abnormalLvl" val="99" />
+		<set name="abnormalTime" val="70" /> <!-- Tested -->
+		<set name="abnormalType" val="CELESTIAL_INVINCIBILITY" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="1" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Buff">
+				<add stat="regHp" val="1" /> <!-- 1 Bonus HP/MP regen... what a joke :D -->
+				<add stat="regMp" val="1" />
+				<add stat="runSpd" val="5" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="20008" levels="1" name="Clan Advent (Event)">
 		<!-- AUTO GENERATED SKILL -->

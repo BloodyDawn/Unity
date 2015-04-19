@@ -81,6 +81,8 @@ public enum Stats
 	P_SKILL_EVASION("pSkillEvas"),
 	DEFENCE_CRITICAL_RATE("defCritRate"),
 	DEFENCE_CRITICAL_RATE_ADD("defCritRateAdd"),
+	DEFENCE_MAGIC_CRITICAL_RATE("defMCritRate"),
+	DEFENCE_MAGIC_CRITICAL_RATE_ADD("defMCritRateAdd"),
 	DEFENCE_CRITICAL_DAMAGE("defCritDamage"),
 	DEFENCE_MAGIC_CRITICAL_DAMAGE("defMCritDamage"),
 	DEFENCE_CRITICAL_DAMAGE_ADD("defCritDamageAdd"), // Resistance to critical damage in value (Example: +100 will be 100 more critical damage, NOT 100% more).

@@ -1069,9 +1069,15 @@ public final class Formulas
 		return finalRate > Rnd.get(1000);
 	}
 	
-	public static final boolean calcMCrit(double mRate)
+	public static final boolean calcMCrit(double mRate, Skill skill, Creature target)
 	{
-		return mRate > Rnd.get(1000);
+		if ((target == null) || (skill == null) || !skill.isBad())
+		{
+			return mRate > Rnd.get(1000);
+		}
+		
+		double finalRate = target.getStat().calcStat(Stats.DEFENCE_MAGIC_CRITICAL_RATE, mRate, null, null) + target.getStat().calcStat(Stats.DEFENCE_MAGIC_CRITICAL_RATE_ADD, 0, null, null);
+		return finalRate > Rnd.get(1000);
 	}
 	
 	/**

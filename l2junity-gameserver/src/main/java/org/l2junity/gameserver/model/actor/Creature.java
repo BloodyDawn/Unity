@@ -100,6 +100,7 @@ import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttacked;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureDamageDealt;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureDamageReceived;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureKill;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureSkillFinishCast;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureSkillUse;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureTeleported;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcSkillSee;
@@ -5674,6 +5675,9 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		
 		// Notify the AI of the L2Character with EVT_FINISH_CASTING
 		getAI().notifyEvent(CtrlEvent.EVT_FINISH_CASTING);
+		
+		final Creature creatureTarget = ((target != null) && target.isCreature()) ? (Creature) target : null;
+		EventDispatcher.getInstance().notifyEvent(new OnCreatureSkillFinishCast(this, skill, mut.isSimultaneous(), creatureTarget, mut.getTargets()), this);
 		
 		// Notify DP Scripts
 		notifyQuestEventSkillFinished(skill, target);

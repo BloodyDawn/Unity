@@ -71,7 +71,7 @@ public final class DeathLink extends AbstractEffect
 			target.stopFakeDeath(true);
 		}
 		
-		final boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, info.getSkill()));
+		final boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, info.getSkill()), info.getSkill(), target);
 		final byte shld = Formulas.calcShldUse(activeChar, target, info.getSkill());
 		int damage = (int) Formulas.calcMagicDam(activeChar, target, info.getSkill(), shld, sps, bss, mcrit);
 		

@@ -105,7 +105,7 @@ public final class Heal extends AbstractEffect
 			amount += staticShotBonus + Math.sqrt(mAtkMul * activeChar.getMAtk(activeChar, null));
 			amount = target.calcStat(Stats.HEAL_EFFECT, amount, null, null);
 			// Heal critic, since CT2.3 Gracia Final
-			if (info.getSkill().isMagic() && Formulas.calcMCrit(activeChar.getMCriticalHit(target, info.getSkill())))
+			if (info.getSkill().isMagic() && Formulas.calcMCrit(activeChar.getMCriticalHit(target, info.getSkill()), info.getSkill(), target))
 			{
 				amount *= 3;
 				activeChar.sendPacket(SystemMessageId.M_CRITICAL);

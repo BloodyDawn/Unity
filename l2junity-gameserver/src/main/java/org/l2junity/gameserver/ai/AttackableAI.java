@@ -148,6 +148,13 @@ public class AttackableAI extends CharacterAI implements Runnable
 		{
 			return false;
 		}
+		
+		// Untargetable targets cannot be autoattacked.
+		if (target.isTargetable())
+		{
+			return false;
+		}
+		
 		final Attackable me = getActiveChar();
 		
 		// Check if the target isn't invulnerable

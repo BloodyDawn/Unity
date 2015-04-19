@@ -21,6 +21,7 @@ package org.l2junity.gameserver.model.actor.instance;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Future;
+
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
@@ -528,7 +529,7 @@ public final class L2CubicInstance implements IIdentifiable
 				}
 			}
 			
-			boolean mcrit = Formulas.calcMCrit(activeCubic.getOwner().getMCriticalHit(target, skill));
+			boolean mcrit = Formulas.calcMCrit(activeCubic.getOwner().getMCriticalHit(target, skill), skill, target);
 			byte shld = Formulas.calcShldUse(activeCubic.getOwner(), target, skill);
 			int damage = (int) Formulas.calcMagicDam(activeCubic, target, skill, mcrit, shld);
 			
@@ -574,7 +575,7 @@ public final class L2CubicInstance implements IIdentifiable
 				continue;
 			}
 			
-			boolean mcrit = Formulas.calcMCrit(activeCubic.getOwner().getMCriticalHit(target, skill));
+			boolean mcrit = Formulas.calcMCrit(activeCubic.getOwner().getMCriticalHit(target, skill), skill, target);
 			byte shld = Formulas.calcShldUse(activeCubic.getOwner(), target, skill);
 			
 			int damage = (int) Formulas.calcMagicDam(activeCubic, target, skill, mcrit, shld);
