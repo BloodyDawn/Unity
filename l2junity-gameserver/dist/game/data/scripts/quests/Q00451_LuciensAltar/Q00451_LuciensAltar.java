@@ -18,19 +18,24 @@
  */
 package quests.Q00451_LuciensAltar;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.enums.QuestType;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.holders.NpcLogListHolder;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 /**
  * Lucien's Altar (451)
  * @author malyelfik
  */
-public class Q00451_LuciensAltar extends Quest
+public final class Q00451_LuciensAltar extends Quest
 {
 	// NPCs
 	private static final int DAICHIR = 30537;
@@ -42,7 +47,6 @@ public class Q00451_LuciensAltar extends Quest
 		32709,
 		32710
 	};
-	
 	// Items
 	private static final int REPLENISHED_BEAD = 14877;
 	private static final int DISCHARGED_BEAD = 14878;
@@ -56,6 +60,7 @@ public class Q00451_LuciensAltar extends Quest
 		addTalkId(ALTARS);
 		addTalkId(DAICHIR);
 		registerQuestItems(REPLENISHED_BEAD, DISCHARGED_BEAD);
+		addCondMinLevel(MIN_LEVEL, "30537-02.htm");
 	}
 	
 	@Override
@@ -77,6 +82,8 @@ public class Q00451_LuciensAltar extends Quest
 		{
 			st.startQuest();
 			st.giveItems(REPLENISHED_BEAD, 5);
+			st.setQuestLocation(NpcStringId.MITHRIL_MINES_LV_81);
+			sendNpcLogList(player);
 			htmltext = event;
 		}
 		return htmltext;
@@ -99,16 +106,21 @@ public class Q00451_LuciensAltar extends Quest
 			switch (st.getState())
 			{
 				case State.COMPLETED:
+				{
 					if (!st.isNowAvailable())
 					{
 						htmltext = "30537-03.html";
 						break;
 					}
 					st.setState(State.CREATED);
+				}
 				case State.CREATED:
+				{
 					htmltext = (player.getLevel() >= MIN_LEVEL) ? "30537-01.htm" : "30537-02.htm";
 					break;
+				}
 				case State.STARTED:
+				{
 					if (st.isCond(1))
 					{
 						if (st.isSet("32706") || st.isSet("32707") || st.isSet("32708") || st.isSet("32709") || st.isSet("32710"))
@@ -122,11 +134,16 @@ public class Q00451_LuciensAltar extends Quest
 					}
 					else
 					{
-						st.giveAdena(255380, true); // Tauti reward: 13 773 960 exp, 16 232 820 sp, 742 800 Adena
 						st.exitQuest(QuestType.DAILY, true);
+						st.giveAdena(742_800, true);
+						if (player.getLevel() >= MIN_LEVEL)
+						{
+							addExpAndSp(player, 13_773_960, 3_305);
+						}
 						htmltext = "30537-08.html";
 					}
 					break;
+				}
 			}
 		}
 		else if (st.isCond(1) && st.hasQuestItems(REPLENISHED_BEAD))
@@ -141,8 +158,8 @@ public class Q00451_LuciensAltar extends Quest
 				if (st.getQuestItemsCount(DISCHARGED_BEAD) >= 5)
 				{
 					st.setCond(2, true);
+					st.unsetQuestLocation();
 				}
-				
 				htmltext = "recharge.html";
 			}
 			else
@@ -150,7 +167,19 @@ public class Q00451_LuciensAltar extends Quest
 				htmltext = "findother.html";
 			}
 		}
-		
 		return htmltext;
+	}
+	
+	@Override
+	public Set<NpcLogListHolder> getNpcLogList(PlayerInstance player)
+	{
+		final QuestState qs = getQuestState(player, false);
+		if (qs != null)
+		{
+			final Set<NpcLogListHolder> npcLogList = new HashSet<>(1);
+			npcLogList.add(new NpcLogListHolder(DISCHARGED_BEAD, false, (int) getQuestItemsCount(player, DISCHARGED_BEAD)));
+			return npcLogList;
+		}
+		return super.getNpcLogList(player);
 	}
 }
