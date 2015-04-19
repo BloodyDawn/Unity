@@ -22,6 +22,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.l2junity.commons.util.CommonUtil;
+import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.enums.QuestType;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -174,6 +175,7 @@ public final class Q00490_DutyOfTheSurvivor extends Quest
 				if (getQuestItemsCount(player, itemId) < 20)
 				{
 					giveItems(player, itemId, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				
 				if ((getQuestItemsCount(player, EXTRACT) == 20) && (getQuestItemsCount(player, BLOOD) == 20))
