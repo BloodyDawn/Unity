@@ -779,33 +779,26 @@ public class Party extends AbstractPlayerGroup
 	 */
 	public void distributeAdena(PlayerInstance player, long adena, Creature target)
 	{
-		// Get all the party members
-		List<PlayerInstance> membersList = getMembers();
-		
 		// Check the number of party members that must be rewarded
 		// (The party member must be in range to receive its reward)
 		List<PlayerInstance> toReward = new LinkedList<>();
-		for (PlayerInstance member : membersList)
+		for (PlayerInstance member : getMembers())
 		{
-			if (!Util.checkIfInRange(Config.ALT_PARTY_RANGE2, target, member, true))
+			if (Util.checkIfInRange(Config.ALT_PARTY_RANGE2, target, member, true))
 			{
-				continue;
+				toReward.add(member);
 			}
-			toReward.add(member);
 		}
 		
-		// Avoid null exceptions, if any
-		if (toReward.isEmpty())
+		if (!toReward.isEmpty())
 		{
-			return;
-		}
-		
-		// Now we can actually distribute the adena reward
-		// (Total adena splitted by the number of party members that are in range and must be rewarded)
-		long count = adena / toReward.size();
-		for (PlayerInstance member : toReward)
-		{
-			member.addAdena("Party", count, player, true);
+			// Now we can actually distribute the adena reward
+			// (Total adena splitted by the number of party members that are in range and must be rewarded)
+			long count = adena / toReward.size();
+			for (PlayerInstance member : toReward)
+			{
+				member.addAdena("Party", count, player, true);
+			}
 		}
 	}
 	
@@ -1054,14 +1047,7 @@ public class Party extends AbstractPlayerGroup
 	@Override
 	public PlayerInstance getLeader()
 	{
-		try
-		{
-			return _members.get(0);
-		}
-		catch (IndexOutOfBoundsException e)
-		{
-			return null;
-		}
+		return _members.get(0);
 	}
 	
 	public synchronized void requestLootChange(PartyDistributionType partyDistributionType)
