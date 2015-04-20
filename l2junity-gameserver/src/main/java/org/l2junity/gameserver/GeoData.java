@@ -158,6 +158,11 @@ public class GeoData
 		return _driver.getGeoY(worldY);
 	}
 	
+	public int getGeoZ(int worldZ)
+	{
+		return _driver.getGeoZ(worldZ);
+	}
+	
 	public int getWorldX(int geoX)
 	{
 		return _driver.getWorldX(geoX);
@@ -166,6 +171,11 @@ public class GeoData
 	public int getWorldY(int geoY)
 	{
 		return _driver.getWorldY(geoY);
+	}
+	
+	public int getWorldZ(int geoZ)
+	{
+		return _driver.getWorldZ(geoZ);
 	}
 	
 	// ///////////////////
