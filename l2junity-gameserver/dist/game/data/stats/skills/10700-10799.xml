@@ -74,33 +74,155 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<skill id="10751" levels="1" name="Superior Bow/Crossbow Mastery">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10751" levels="1" name="Superior Bow/Crossbow Mastery" enchantGroup1="10">
 		<!-- STR + 2 and P. Accuracy + 8. P. Atk. + 1316 and Atk. Spd. + 12% when using a bow or crossbow. Depending on your STR, the Cooldown resets or the abnormal status duration increases + 2 times. -->
+		<table name="#ench1pAtk"> 1402 1488 1574 1660 1746 1832 1918 2004 2090 2176 </table>
+		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
 		<set name="icon" val="icon.skill10751" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<enchant1 name="magicLvl" val="#enchMagicLvl" />
+		<for>
+			<effect name="Buff">
+				<add stat="STR" val="2">
+					<using kind="BOW, CROSSBOW" />
+				</add>
+				<add stat="accCombat" val="8">
+					<using kind="BOW, CROSSBOW" />
+				</add>
+				<add stat="pAtk" val="1316">
+					<using kind="BOW, CROSSBOW" />
+				</add>
+				<mul stat="pAtkSpd" val="1.12">
+					<using kind="BOW, CROSSBOW" />
+				</mul>
+				<add stat="skillCritical" val="1">
+					<using kind="BOW, CROSSBOW" />
+				</add>
+			</effect>
+		</for>
+		<enchant1for>
+			<effect name="Buff">
+				<add stat="STR" val="2">
+					<using kind="BOW, CROSSBOW" />
+				</add>
+				<add stat="accCombat" val="8">
+					<using kind="BOW, CROSSBOW" />
+				</add>
+				<add stat="pAtk" val="#ench1pAtk">
+					<using kind="BOW, CROSSBOW" />
+				</add>
+				<mul stat="pAtkSpd" val="1.12">
+					<using kind="BOW, CROSSBOW" />
+				</mul>
+				<add stat="skillCritical" val="1">
+					<using kind="BOW, CROSSBOW" />
+				</add>
+			</effect>
+		</enchant1for>
 	</skill>
-	<skill id="10752" levels="1" name="Superior Light Armor Mastery">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10752" levels="1" name="Superior Light Armor Mastery" enchantGroup1="10">
 		<!-- STR + 2. Max HP + 4783, P. Def. + 1386, P. Evasion + 7, MP recovery bonus + 10%, and chance of receiving critical attacks - 35% when equipped with Light Armor. Spd. and P. Skill Critical Rate change depending on DEX. -->
+		<table name="#ench1pDef"> 1426 1466 1506 1546 1586 1626 1666 1706 1746 1792 </table>
+		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
 		<set name="icon" val="icon.skill10752" />
 		<set name="operateType" val="P" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
+		<enchant1 name="magicLvl" val="#enchMagicLvl" />
+		<for>
+			<effect name="Buff">
+				<add stat="STR" val="2">
+					<using kind="LIGHT" />
+				</add>
+				<add stat="maxHp" val="4783">
+					<using kind="LIGHT" />
+				</add>
+				<add stat="pDef" val="1386">
+					<using kind="LIGHT" />
+				</add>
+				<add stat="rEvas" val="7">
+					<using kind="LIGHT" />
+				</add>
+				<mul stat="regMp" val="1.1">
+					<using kind="LIGHT" />
+				</mul>
+				<mul stat="defCritRate" val="0.65">
+					<using kind="LIGHT" />
+				</mul>
+			</effect>
+		</for>
+		<enchant1for>
+			<effect name="Buff">
+				<add stat="STR" val="2">
+					<using kind="LIGHT" />
+				</add>
+				<add stat="maxHp" val="4783">
+					<using kind="LIGHT" />
+				</add>
+				<add stat="pDef" val="#ench1pDef">
+					<using kind="LIGHT" />
+				</add>
+				<add stat="rEvas" val="7">
+					<using kind="LIGHT" />
+				</add>
+				<mul stat="regMp" val="1.1">
+					<using kind="LIGHT" />
+				</mul>
+				<mul stat="defCritRate" val="0.65">
+					<using kind="LIGHT" />
+				</mul>
+			</effect>
+		</enchant1for>
 	</skill>
 	<skill id="10753" levels="1" name="Superior Hawkeye Mastery">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- When using a bow/crossbow, increases range by 500 and Max MP by 25%, and decreases MP consumption upon skill use by 30%. -->
 		<set name="icon" val="icon.skill0113" />
 		<set name="operateType" val="P" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="pAtkRange" val="500">
+					<using kind="BOW, CROSSBOW" />
+				</add>
+				<mul stat="maxMp" val="1.25">
+					<using kind="BOW, CROSSBOW" />
+				</mul>
+				<mul stat="PhysicalMpConsumeRate" val="0.7">
+					<using kind="BOW, CROSSBOW" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
-	<skill id="10754" levels="1" name="Superior Survival Ability">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10754" levels="1" name="Superior Survival Ability" enchantGroup1="10">
 		<!-- STR + 2, speed + 17, terrain damage - 30% and weight limit + 50%. When inflicting a critical during a normal Bow/Crossbow attack, Survival Movement is triggered. Once Survival Movement is triggered, it will not trigger again for 30 seconds. -->
+		<!-- TODO : Trigger skill 10809 Survival Moment -->
+		<table name="#ench1DamageZoneVuln"> 31 32 33 34 35 36 37 38 39 40 </table>
+		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
+		<table name="#ench1WeightLimit"> 1.51 1.52 1.53 1.54 1.55 1.56 1.57 1.58 1.59 1.60 </table>
 		<set name="icon" val="icon.skill0295" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<enchant1 name="magicLvl" val="#enchMagicLvl" />
+		<for>
+			<effect name="Buff">
+				<add stat="STR" val="2" />
+				<add stat="runSpd" val="17" />
+				<sub stat="damageZoneVuln" val="30" />
+				<mul stat="weightLimit" val="1.5" />
+			</effect>
+		</for>
+		<enchant1for>
+			<effect name="Buff">
+				<add stat="STR" val="2" />
+				<add stat="runSpd" val="17" />
+				<sub stat="damageZoneVuln" val="#ench1DamageZoneVuln" />
+				<mul stat="weightLimit" val="#ench1WeightLimit" />
+			</effect>
+		</enchant1for>
 	</skill>
 	<skill id="10755" levels="1" name="Superior Mental Attack Resistance">
 		<!-- AUTO GENERATED SKILL -->
@@ -109,12 +231,31 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 	</skill>
-	<skill id="10756" levels="1" name="Superior Critical Arrow">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10756" levels="1" name="Superior Critical Arrow" enchantGroup1="10">
 		<!-- STR + 2, Critical Rate + 25%, and Critical Damage + 774. Increases Skill Mastery rate + 1000%. -->
+		<table name="#ench1cAtkAdd"> 808 841 875 910 946 983 1022 1062 1104 1147 </table>
+		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
 		<set name="icon" val="icon.skill10756" />
 		<set name="operateType" val="P" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
+		<enchant1 name="magicLvl" val="#enchMagicLvl" />
+		<for>
+			<effect name="Buff">
+				<add stat="STR" val="2" />
+				<mul stat="rCrit" val="1.25" />
+				<mul stat="cAtkAdd" val="774" />
+				<mul stat="skillCriticalProbability" val="11" />
+			</effect>
+		</for>
+		<enchant1for>
+			<effect name="Buff">
+				<add stat="STR" val="2" />
+				<mul stat="rCrit" val="1.25" />
+				<mul stat="cAtkAdd" val="#ench1cAtkAdd" />
+				<mul stat="skillCriticalProbability" val="11" />
+			</effect>
+		</enchant1for>
 	</skill>
 	<skill id="10757" levels="4" name="Dead Eye Stance">
 		<!-- AUTO GENERATED SKILL -->
@@ -616,10 +757,39 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10799" levels="1" name="Superior M. Def.">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- STR + 2 and M. Def. + 199. When receiving damage, has a chance of increasing M. Def. and Attribute Resistance momentarily. -->
+		<table name="#ench1mDef"> 206 213 220 227 234 241 248 255 262 270 </table>
+		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
 		<set name="icon" val="icon.skill10004" />
 		<set name="operateType" val="P" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
+		<enchant1 name="magicLvl" val="#enchMagicLvl" />
+		<for>
+			<effect name="Buff">
+				<add stat="STR" val="2" />
+				<add stat="mDef" val="199" />
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="20" />
+				<param skillId="10058" skillLevel="1" />
+				<param targetType="SELF" />
+			</effect>
+		</for>
+		<enchant1for>
+			<effect name="Buff">
+				<add stat="STR" val="2" />
+				<add stat="mDef" val="#ench1mDef" />
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="20" />
+				<param skillId="10058" skillLevel="1" />
+				<param targetType="SELF" />
+			</effect>
+		</enchant1for>
 	</skill>
 </list>
