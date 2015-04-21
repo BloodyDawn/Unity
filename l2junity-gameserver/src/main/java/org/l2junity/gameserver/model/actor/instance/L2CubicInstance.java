@@ -35,6 +35,7 @@ import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.tasks.cubics.CubicAction;
+import org.l2junity.gameserver.model.actor.tasks.cubics.CubicBuff;
 import org.l2junity.gameserver.model.actor.tasks.cubics.CubicDisappear;
 import org.l2junity.gameserver.model.actor.tasks.cubics.CubicHeal;
 import org.l2junity.gameserver.model.effects.L2EffectType;
@@ -68,6 +69,13 @@ public final class L2CubicInstance implements IIdentifiable
 	public static final int SMART_CUBIC_ARCANALORD = 12;
 	public static final int SMART_CUBIC_ELEMENTALMASTER = 13;
 	public static final int SMART_CUBIC_SPECTRALMASTER = 14;
+	public static final int CUBIC_AVENGE = 15;
+	public static final int CUBIC_KNIGHT = 16;
+	public static final int CUBIC_HEALER = 17;
+	public static final int CUBIC_POEM = 18;
+	public static final int CUBIC_MENTAL = 19;
+	public static final int CUBIC_SPIRIT = 20;
+	public static final int CUBIC_WHAMMY = 21;
 	
 	// Max range of cubic skills
 	// TODO: Check/fix the max range
@@ -76,6 +84,12 @@ public final class L2CubicInstance implements IIdentifiable
 	// Cubic skills
 	public static final int SKILL_CUBIC_HEAL = 4051;
 	public static final int SKILL_CUBIC_CURE = 5579;
+	public static final int SKILL_CUBIC_KNIGHT = 10056;
+	public static final int SKILL_CUBIC_HEALER = 11807;
+	public static final int SKILL_POEM_CUBIC_HEAL = 10083;
+	public static final int SKILL_MENTAL_CUBIC_RECHARGE = 10084;
+	public static final int SKILL_POEM_CUBIC_GREAT_HEAL = 10082;
+	public static final int SKILL_MENTAL_CUBIC_GREAT_RECHARGE = 10089;
 	
 	private final PlayerInstance _owner;
 	private Creature _target;
@@ -157,6 +171,35 @@ public final class L2CubicInstance implements IIdentifiable
 				_skills.add(SkillData.getInstance().getSkill(4049, 8));
 				_skills.add(SkillData.getInstance().getSkill(5115, 4));
 				break;
+			case CUBIC_AVENGE:
+				_skills.add(SkillData.getInstance().getSkill(11292, level));
+				_skills.add(SkillData.getInstance().getSkill(11293, level));
+				_skills.add(SkillData.getInstance().getSkill(11294, level));
+				break;
+			case CUBIC_KNIGHT:
+				_skills.add(SkillData.getInstance().getSkill(10056, level));
+				doAction();
+				break;
+			case CUBIC_HEALER:
+				_skills.add(SkillData.getInstance().getSkill(11807, level));
+				doAction();
+				break;
+			case CUBIC_POEM:
+				_skills.add(SkillData.getInstance().getSkill(10083, level));
+				_skills.add(SkillData.getInstance().getSkill(10082, level));
+				doAction();
+				break;
+			case CUBIC_MENTAL:
+				_skills.add(SkillData.getInstance().getSkill(10084, level));
+				_skills.add(SkillData.getInstance().getSkill(10089, level));
+				doAction();
+				break;
+			case CUBIC_SPIRIT:
+				_skills.add(SkillData.getInstance().getSkill(10085, level));
+				break;
+			case CUBIC_WHAMMY:
+				_skills.add(SkillData.getInstance().getSkill(10086, level));
+				break;
 		}
 		_disappearTask = ThreadPoolManager.getInstance().scheduleGeneral(new CubicDisappear(this), cubicDuration * 1000); // disappear
 	}
@@ -184,10 +227,19 @@ public final class L2CubicInstance implements IIdentifiable
 			case SMART_CUBIC_SPECTRALMASTER:
 			case SMART_CUBIC_EVATEMPLAR:
 			case SMART_CUBIC_SHILLIENTEMPLAR:
+			case CUBIC_AVENGE:
+			case CUBIC_SPIRIT:
+			case CUBIC_WHAMMY:
 				_actionTask = ThreadPoolManager.getInstance().scheduleEffectAtFixedRate(new CubicAction(this, _cubicSkillChance), 0, _cubicDelay);
 				break;
 			case LIFE_CUBIC:
+			case CUBIC_HEALER:
+			case CUBIC_POEM:
+			case CUBIC_MENTAL:
 				_actionTask = ThreadPoolManager.getInstance().scheduleEffectAtFixedRate(new CubicHeal(this), 0, _cubicDelay);
+				break;
+			case CUBIC_KNIGHT:
+				_actionTask = ThreadPoolManager.getInstance().scheduleEffectAtFixedRate(new CubicBuff(this, 10), 0, _cubicDelay); // TODO: Custom chance here
 				break;
 		}
 	}

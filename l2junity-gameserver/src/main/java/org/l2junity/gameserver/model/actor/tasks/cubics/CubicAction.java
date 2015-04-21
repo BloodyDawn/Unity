@@ -19,6 +19,7 @@
 package org.l2junity.gameserver.model.actor.tasks.cubics;
 
 import java.util.concurrent.atomic.AtomicInteger;
+
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -155,59 +156,31 @@ public final class CubicAction implements Runnable
 						
 						if (skill.isContinuous())
 						{
-							if (Config.DEBUG)
-							{
-								_log.info("L2CubicInstance: Action.run() skill " + skill);
-							}
 							_cubic.useCubicContinuous(skill, targets);
 						}
 						else
 						{
 							skill.activateSkill(_cubic.getOwner(), targets);
-							if (Config.DEBUG)
-							{
-								_log.info("L2CubicInstance: Action.run(); other handler");
-							}
 						}
 						
 						if (skill.hasEffectType(L2EffectType.MAGICAL_ATTACK))
 						{
-							if (Config.DEBUG)
-							{
-								_log.info("L2CubicInstance: Action.run() skill " + skill);
-							}
 							_cubic.useCubicMdam(_cubic, skill, targets);
 						}
 						else if (skill.hasEffectType(L2EffectType.HP_DRAIN))
 						{
-							if (Config.DEBUG)
-							{
-								_log.info("L2CubicInstance: Action.run() skill " + skill);
-							}
 							_cubic.useCubicDrain(_cubic, skill, targets);
 						}
 						else if (skill.hasEffectType(L2EffectType.STUN, L2EffectType.ROOT, L2EffectType.PARALYZE))
 						{
-							if (Config.DEBUG)
-							{
-								_log.info("L2CubicInstance: Action.run() skill " + skill);
-							}
 							_cubic.useCubicDisabler(skill, targets);
 						}
 						else if (skill.hasEffectType(L2EffectType.DMG_OVER_TIME, L2EffectType.DMG_OVER_TIME_PERCENT))
 						{
-							if (Config.DEBUG)
-							{
-								_log.info("L2CubicInstance: Action.run() skill " + skill);
-							}
 							_cubic.useCubicContinuous(skill, targets);
 						}
 						else if (skill.hasEffectType(L2EffectType.AGGRESSION))
 						{
-							if (Config.DEBUG)
-							{
-								_log.info("L2CubicInstance: Action.run() skill " + skill);
-							}
 							_cubic.useCubicDisabler(skill, targets);
 						}
 						

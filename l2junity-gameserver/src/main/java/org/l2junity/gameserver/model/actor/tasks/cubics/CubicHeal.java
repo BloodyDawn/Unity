@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J Server
+ * Copyright (C) 2004-2014 L2J Server
  * 
  * This file is part of L2J Server.
  * 
@@ -18,12 +18,14 @@
  */
 package org.l2junity.gameserver.model.actor.tasks.cubics;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.L2CubicInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Cubic heal task.
@@ -31,7 +33,7 @@ import org.slf4j.LoggerFactory;
  */
 public class CubicHeal implements Runnable
 {
-	private static final Logger _log = LoggerFactory.getLogger(CubicHeal.class);
+	private static final Logger _log = Logger.getLogger(CubicHeal.class.getName());
 	private final L2CubicInstance _cubic;
 	
 	public CubicHeal(L2CubicInstance cubic)
@@ -58,12 +60,37 @@ public class CubicHeal implements Runnable
 		try
 		{
 			Skill skill = null;
-			for (Skill sk : _cubic.getSkills())
+			final int chance = Rnd.get(100);
+			OUTTER: for (Skill sk : _cubic.getSkills())
 			{
-				if (sk.getId() == L2CubicInstance.SKILL_CUBIC_HEAL)
+				switch (sk.getId())
 				{
-					skill = sk;
-					break;
+					case L2CubicInstance.SKILL_CUBIC_HEAL:
+					case L2CubicInstance.SKILL_CUBIC_HEALER:
+					{
+						skill = sk;
+						break OUTTER;
+					}
+					case L2CubicInstance.SKILL_POEM_CUBIC_HEAL:
+					case L2CubicInstance.SKILL_MENTAL_CUBIC_RECHARGE:
+					{
+						if (chance < 90)
+						{
+							skill = sk;
+							break OUTTER;
+						}
+						break;
+					}
+					case L2CubicInstance.SKILL_POEM_CUBIC_GREAT_HEAL:
+					case L2CubicInstance.SKILL_MENTAL_CUBIC_GREAT_RECHARGE:
+					{
+						if (chance < 10)
+						{
+							skill = sk;
+							break OUTTER;
+						}
+						break;
+					}
 				}
 			}
 			
@@ -89,7 +116,7 @@ public class CubicHeal implements Runnable
 		}
 		catch (Exception e)
 		{
-			_log.error("", e);
+			_log.log(Level.SEVERE, "", e);
 		}
 	}
 }
