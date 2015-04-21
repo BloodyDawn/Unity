@@ -292,7 +292,7 @@ public final class Q10323_TrainLikeItsReal extends Quest
 	public Set<NpcLogListHolder> getNpcLogList(PlayerInstance activeChar)
 	{
 		final QuestState qs = getQuestState(activeChar, false);
-		if ((qs != null) && (qs.isCond(2)))
+		if (qs != null)
 		{
 			final Set<NpcLogListHolder> npcLogList = new HashSet<>(1);
 			if (qs.isCond(2))
