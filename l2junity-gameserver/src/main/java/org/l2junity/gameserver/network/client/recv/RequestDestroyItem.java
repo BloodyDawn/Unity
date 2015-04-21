@@ -26,6 +26,8 @@ import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.model.PcCondOverride;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -87,11 +89,26 @@ public final class RequestDestroyItem implements IClientIncomingPacket
 			return;
 		}
 		
-		ItemInstance itemToRemove = activeChar.getInventory().getItemByObjectId(_objectId);
+		final ItemInstance itemToRemove = activeChar.getInventory().getItemByObjectId(_objectId);
 		
 		// if we can't find the requested item, its actually a cheat
 		if (itemToRemove == null)
 		{
+			// gm can destroy other player items
+			if (activeChar.isGM())
+			{
+				final WorldObject obj = World.getInstance().findObject(_objectId);
+				if (obj instanceof ItemInstance)
+				{
+					if (_count > ((ItemInstance) obj).getCount())
+					{
+						count = ((ItemInstance) obj).getCount();
+					}
+					activeChar.useAdminCommand("admin_delete_item " + _objectId + " " + count);
+				}
+				return;
+			}
+			
 			client.sendPacket(SystemMessageId.THIS_ITEM_CANNOT_BE_DESTROYED);
 			return;
 		}

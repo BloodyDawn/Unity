@@ -22,10 +22,14 @@ import java.util.StringTokenizer;
 
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
+import org.l2junity.gameserver.handler.IItemHandler;
+import org.l2junity.gameserver.handler.ItemHandler;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.items.L2Item;
+import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.send.ExAdenaInvenCount;
+import org.l2junity.gameserver.network.client.send.GMViewItemList;
 
 /**
  * This class handles following admin commands: - itemcreate = show menu - create_item <id> [num] = creates num items with respective id, if num is not specified, assumes 1.
@@ -39,7 +43,9 @@ public class AdminCreateItem implements IAdminCommandHandler
 		"admin_create_item",
 		"admin_create_coin",
 		"admin_give_item_target",
-		"admin_give_item_to_all"
+		"admin_give_item_to_all",
+		"admin_delete_item",
+		"admin_use_item"
 	};
 	
 	@Override
@@ -197,6 +203,87 @@ public class AdminCreateItem implements IAdminCommandHandler
 				}
 			}
 			activeChar.sendMessage(counter + " players rewarded with " + template.getName());
+		}
+		else if (command.startsWith("admin_delete_item"))
+		{
+			String val = command.substring(18);
+			StringTokenizer st = new StringTokenizer(val);
+			int idval = 0;
+			long numval = 0;
+			if (st.countTokens() == 2)
+			{
+				String id = st.nextToken();
+				idval = Integer.parseInt(id);
+				String num = st.nextToken();
+				numval = Long.parseLong(num);
+			}
+			else if (st.countTokens() == 1)
+			{
+				String id = st.nextToken();
+				idval = Integer.parseInt(id);
+				numval = 1;
+			}
+			ItemInstance item = (ItemInstance) World.getInstance().findObject(idval);
+			int ownerId = item.getOwnerId();
+			if (ownerId > 0)
+			{
+				PlayerInstance player = World.getInstance().getPlayer(ownerId);
+				if (player == null)
+				{
+					activeChar.sendMessage("Player is not online.");
+					return false;
+				}
+				
+				if (numval == 0)
+				{
+					numval = item.getCount();
+				}
+				
+				player.getInventory().destroyItem("AdminDelete", idval, numval, activeChar, null);
+				activeChar.sendPacket(new GMViewItemList(player));
+				activeChar.sendMessage("Item deleted.");
+			}
+			else
+			{
+				activeChar.sendMessage("Item doesn't have owner.");
+				return false;
+			}
+		}
+		else if (command.startsWith("admin_use_item"))
+		{
+			String val = command.substring(15);
+			int idval = Integer.parseInt(val);
+			ItemInstance item = (ItemInstance) World.getInstance().findObject(idval);
+			int ownerId = item.getOwnerId();
+			if (ownerId > 0)
+			{
+				PlayerInstance player = World.getInstance().getPlayer(ownerId);
+				if (player == null)
+				{
+					activeChar.sendMessage("Player is not online.");
+					return false;
+				}
+				
+				// equip
+				if (item.isEquipable())
+				{
+					player.useEquippableItem(item, false);
+				}
+				else
+				{
+					final IItemHandler ih = ItemHandler.getInstance().getHandler(item.getEtcItem());
+					if (ih != null)
+					{
+						ih.useItem(player, item, false);
+					}
+				}
+				activeChar.sendPacket(new GMViewItemList(player));
+			}
+			else
+			{
+				activeChar.sendMessage("Item doesn't have owner.");
+				return false;
+			}
 		}
 		return true;
 	}

@@ -22,12 +22,8 @@ import java.util.StringTokenizer;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.ai.CtrlIntention;
-import org.l2junity.gameserver.data.xml.impl.AdminData;
-import org.l2junity.gameserver.enums.PlayerAction;
-import org.l2junity.gameserver.handler.AdminCommandHandler;
 import org.l2junity.gameserver.handler.BypassHandler;
 import org.l2junity.gameserver.handler.CommunityBoardHandler;
-import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.handler.IBypassHandler;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
@@ -42,10 +38,7 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerBypass
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
-import org.l2junity.gameserver.network.client.send.ConfirmDlg;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
-import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
-import org.l2junity.gameserver.util.GMAudit;
 import org.l2junity.gameserver.util.Util;
 import org.l2junity.network.PacketReader;
 
@@ -131,44 +124,7 @@ public final class RequestBypassToServer implements IClientIncomingPacket
 		{
 			if (_command.startsWith("admin_"))
 			{
-				String command = _command.split(" ")[0];
-				
-				IAdminCommandHandler ach = AdminCommandHandler.getInstance().getHandler(command);
-				
-				if (ach == null)
-				{
-					if (activeChar.isGM())
-					{
-						activeChar.sendMessage("The command " + command.substring(6) + " does not exist!");
-					}
-					_log.warn(activeChar + " requested not registered admin command '" + command + "'");
-					return;
-				}
-				
-				if (!AdminData.getInstance().hasAccess(command, activeChar.getAccessLevel()))
-				{
-					activeChar.sendMessage("You don't have the access rights to use this command!");
-					_log.warn("Character " + activeChar.getName() + " tried to use admin command " + command + ", without proper access level!");
-					return;
-				}
-				
-				if (AdminData.getInstance().requireConfirm(command))
-				{
-					activeChar.setAdminConfirmCmd(_command);
-					ConfirmDlg dlg = new ConfirmDlg(SystemMessageId.S13);
-					dlg.addString("Are you sure you want execute command " + _command.substring(6) + " ?");
-					activeChar.addAction(PlayerAction.ADMIN_COMMAND);
-					activeChar.sendPacket(dlg);
-				}
-				else
-				{
-					if (Config.GMAUDIT)
-					{
-						GMAudit.auditGMAction(activeChar.getName() + " [" + activeChar.getObjectId() + "]", _command, (activeChar.getTarget() != null ? activeChar.getTarget().getName() : "no-target"));
-					}
-					
-					ach.useAdminCommand(_command, activeChar);
-				}
+				activeChar.useAdminCommand(_command);
 			}
 			else if (CommunityBoardHandler.getInstance().isCommunityBoardCommand(_command))
 			{

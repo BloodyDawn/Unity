@@ -97,6 +97,8 @@ import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.enums.SubclassInfoType;
 import org.l2junity.gameserver.enums.Team;
 import org.l2junity.gameserver.enums.UserInfoType;
+import org.l2junity.gameserver.handler.AdminCommandHandler;
+import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.handler.ItemHandler;
 import org.l2junity.gameserver.idfactory.IdFactory;
@@ -332,6 +334,7 @@ import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
 import org.l2junity.gameserver.util.Broadcast;
 import org.l2junity.gameserver.util.EnumIntBitmask;
 import org.l2junity.gameserver.util.FloodProtectors;
+import org.l2junity.gameserver.util.GMAudit;
 import org.l2junity.gameserver.util.Util;
 
 /**
@@ -14672,5 +14675,49 @@ public final class PlayerInstance extends Playable
 	public boolean isVisibleFor(PlayerInstance player)
 	{
 		return (super.isVisibleFor(player) || ((player.getParty() != null) && (player.getParty() == getParty())));
+	}
+	
+	/**
+	 * @param fullCommand
+	 */
+	public void useAdminCommand(String fullCommand)
+	{
+		final String command = fullCommand.split(" ")[0];
+		
+		final IAdminCommandHandler ach = AdminCommandHandler.getInstance().getHandler(command);
+		if (ach == null)
+		{
+			if (isGM())
+			{
+				sendMessage("The command " + command.substring(6) + " does not exist!");
+			}
+			_log.warn("No handler registered for admin command '{}'", command);
+			return;
+		}
+		
+		if (!AdminData.getInstance().hasAccess(command, getAccessLevel()))
+		{
+			sendMessage("You don't have the access rights to use this command!");
+			_log.warn("Character {} tried to use admin command {}, without proper access level!", getName(), command);
+			return;
+		}
+		
+		if (AdminData.getInstance().requireConfirm(command))
+		{
+			setAdminConfirmCmd(fullCommand);
+			ConfirmDlg dlg = new ConfirmDlg(SystemMessageId.S1);
+			dlg.addString("Are you sure you want execute command " + fullCommand.substring(6) + " ?");
+			addAction(PlayerAction.ADMIN_COMMAND);
+			sendPacket(dlg);
+		}
+		else
+		{
+			if (Config.GMAUDIT)
+			{
+				GMAudit.auditGMAction(getName() + " [" + getObjectId() + "]", fullCommand, (getTarget() != null ? getTarget().getName() : "no-target"));
+			}
+			
+			ach.useAdminCommand(fullCommand, this);
+		}
 	}
 }

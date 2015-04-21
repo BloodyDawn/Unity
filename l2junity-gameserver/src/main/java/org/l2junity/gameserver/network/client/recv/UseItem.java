@@ -29,6 +29,8 @@ import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.handler.ItemHandler;
 import org.l2junity.gameserver.instancemanager.FortSiegeManager;
 import org.l2junity.gameserver.model.PcCondOverride;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.holders.SkillHolder;
@@ -118,6 +120,16 @@ public final class UseItem implements IClientIncomingPacket
 		final ItemInstance item = activeChar.getInventory().getItemByObjectId(_objectId);
 		if (item == null)
 		{
+			// gm can use other player item
+			if (activeChar.isGM())
+			{
+				WorldObject obj = World.getInstance().findObject(_objectId);
+				if (obj instanceof ItemInstance)
+				{
+					activeChar.useAdminCommand("admin_use_item " + _objectId);
+				}
+				
+			}
 			return;
 		}
 		
