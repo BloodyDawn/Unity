@@ -84,21 +84,21 @@ public final class GrandBossManager implements IStorable
 				int status = rs.getInt("status");
 				_bossStatus.put(bossId, status);
 				_storedInfo.put(bossId, info);
-				_log.info(getClass().getSimpleName() + ": " + NpcData.getInstance().getTemplate(bossId).getName() + "(" + bossId + ") status is " + status + ".");
+				_log.info("{}({}) status is {}", NpcData.getInstance().getTemplate(bossId).getName(), bossId, status);
 				if (status > 0)
 				{
-					_log.info(getClass().getSimpleName() + ": Next spawn date of " + NpcData.getInstance().getTemplate(bossId).getName() + " is " + new Date(info.getLong("respawn_time")) + ".");
+					_log.info("Next spawn date of {} is {}", NpcData.getInstance().getTemplate(bossId).getName(), new Date(info.getLong("respawn_time")));
 				}
 			}
-			_log.info(getClass().getSimpleName() + ": Loaded " + _storedInfo.size() + " Instances");
+			_log.info("Loaded {} Instances", _storedInfo.size());
 		}
 		catch (SQLException e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Could not load grandboss_data table: " + e.getMessage(), e);
+			_log.warn("Could not load grandboss_data table: {}", e.getMessage(), e);
 		}
 		catch (Exception e)
 		{
-			_log.warn("Error while initializing GrandBossManager: " + e.getMessage(), e);
+			_log.warn("Error while initializing GrandBossManager: {}", e.getMessage(), e);
 		}
 		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new GrandBossManagerStoreTask(), 5 * 60 * 1000, 5 * 60 * 1000);
 	}
@@ -111,7 +111,7 @@ public final class GrandBossManager implements IStorable
 	public void setBossStatus(int bossId, int status)
 	{
 		_bossStatus.put(bossId, status);
-		_log.info(getClass().getSimpleName() + ": Updated " + NpcData.getInstance().getTemplate(bossId).getName() + "(" + bossId + ") status to " + status);
+		_log.info("{}: Updated {}({}) status to {}", this, NpcData.getInstance().getTemplate(bossId).getName(), bossId, status);
 		updateDb(bossId, true);
 	}
 	
@@ -190,7 +190,7 @@ public final class GrandBossManager implements IStorable
 		}
 		catch (SQLException e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Couldn't store grandbosses to database:" + e.getMessage(), e);
+			_log.warn("Couldn't store grandbosses to database: {}", e.getMessage(), e);
 			return false;
 		}
 		return true;
@@ -238,7 +238,7 @@ public final class GrandBossManager implements IStorable
 		}
 		catch (SQLException e)
 		{
-			_log.warn(getClass().getSimpleName() + ": Couldn't update grandbosses to database:" + e.getMessage(), e);
+			_log.warn("Couldn't update grandbosses to database:{}", e.getMessage(), e);
 		}
 	}
 	

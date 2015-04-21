@@ -797,6 +797,7 @@ public class AdminEditChar implements IAdminCommandHandler
 				{
 					activeChar.sendMessage("You've changed nobless status of: " + player.getName());
 				}
+				player.broadcastUserInfo();
 				player.sendMessage("GM changed your nobless status!");
 			}
 		}
