@@ -182,7 +182,7 @@ public abstract class AbstractItemPacket extends AbstractMaskPacket<ItemListType
 		// Enchant Effects
 		for (int op : item.getEnchantOptions())
 		{
-			packet.writeH(op);
+			packet.writeD(op);
 		}
 	}
 	
