@@ -54,7 +54,7 @@ public class AcquireSkillList implements IClientOutgoingPacket
 		for (SkillLearn skill : _learnable)
 		{
 			packet.writeD(skill.getSkillId());
-			packet.writeH(skill.getSkillLevel());
+			packet.writeD(skill.getSkillLevel());
 			packet.writeQ(skill.getLevelUpSp());
 			packet.writeC(skill.getGetLevel());
 			packet.writeC(0x00); // Dual Class Level Required
