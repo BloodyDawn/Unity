@@ -357,7 +357,8 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="30512" levels="1" name="Distortion">
+	<skill id="30512" levels="3" name="Distortion">
+		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 60 sec., distorts space to attack from behind. Requires a fist weapon. -->
 		<set name="icon" val="icon.skill30512" />
@@ -824,5 +825,31 @@
 				<add stat="skillCritical" val="1" /> <!-- STR -->
 			</effect>
 		</for>
+	</skill>
+	<skill id="30546" levels="11" name="Flying Knee Kick">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Lands a knee kick on the target. Target is knocked down for 3 seconds. Fist weapon must be equipped. -->
+		<table name="#mpConsumes"> 29 29 30 30 30 30 30 31 32 33 34 </table>
+		<set name="icon" val="icon.skill30546" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="#mpConsumes" />
+		<set name="castRange" val="300" />
+		<set name="hitTime" val="100" />
+		<set name="coolTime" val="300" />
+		<set name="reuseDelay" val="7000" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="30547" levels="4" name="Stamp Punch">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Throws a powerful punch to a fallen target with 91570 Power added to P. Atk. Ignores 50% of target's P. Def. Fist weapon must be equipped. -->
+		<set name="icon" val="icon.skill30547" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="85" />
+		<set name="castRange" val="80" />
+		<set name="hitTime" val="500" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="5000" />
 	</skill>
 </list>

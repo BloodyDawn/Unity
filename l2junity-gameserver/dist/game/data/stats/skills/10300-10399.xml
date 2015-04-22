@@ -232,7 +232,8 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="isMagic" val="4" />
 	</skill>
-	<skill id="10320" levels="1" name="Faceoff">
+	<skill id="10320" levels="3" name="Faceoff">
+		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Engages target in 1:1 combat. Ignores all normal attacks, skills, and debuffs, except those of the opponent. Increases your P. Atk., Spd., and debuff resistance. -->
 		<set name="icon" val="icon.skll10319" />
@@ -347,5 +348,116 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="7000" />
 		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="10331" levels="1" name="Last Man Standing">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Engages target in 1:1 combat. All damage from the target is ignored. -->
+		<set name="icon" val="icon.skill10331" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="43" />
+		<set name="castRange" val="600" />
+		<set name="hitTime" val="300" />
+		<set name="reuseDelay" val="600000" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="10332" levels="1" name="Duelist Wrath">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Increases P. Atk. by 20% for 60 seconds when a dualsword/dual blunt is equipped. Critical Rate of skills that consume Momentum greatly increases, and their Power increases by 20%. Consumes 5 Soulstones. -->
+		<set name="icon" val="icon.skill10332" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="64" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="200" />
+		<set name="reuseDelay" val="300000" />
+	</skill>
+	<skill id="10333" levels="1" name="Winged Spear">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Increases P. Atk. by 30% for 60 seconds when a spear is equipped. Range of regular skills increases by 80 and has a 10% chance to Stun when striking. Consumes 5 Soulstones. -->
+		<set name="icon" val="icon.skill10333" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="64" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="200" />
+		<set name="reuseDelay" val="300000" />
+	</skill>
+	<skill id="10334" levels="1" name="Furious Slasher">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Increases P. Atk. by 30% for 60 seconds when a two-handed sword/two-handed blunt weapon is equipped. Attack 5 enemies at the same time with a regular attack. Consumes 5 Soulstones. -->
+		<set name="icon" val="icon.skill10334" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="64" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="200" />
+		<set name="reuseDelay" val="300000" />
+	</skill>
+	<skill id="10335" levels="1" name="Furious Fist">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Increases P. Atk. by 30% and P. Critical Damage by 10% for 60 seconds when a fist weapon is equipped. Has 10% chance to decrease Fist Weapon Resistance by 30% when striking. Consumes 5 Soulstones. -->
+		<set name="icon" val="icon.skill10335" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="64" />
+		<set name="hitTime" val="2000" />
+		<set name="coolTime" val="200" />
+		<set name="reuseDelay" val="300000" />
+	</skill>
+	<skill id="10336" levels="1" name="Infinity Rush">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Increases power when using the Rush Impact. -->
+		<set name="icon" val="icon.skill10336" />
+		<set name="operateType" val="P" />
+		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="10337" levels="3" name="Infinity Rush">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- P. Atk. + 10% and P. Critical Damage + 10%. -->
+		<set name="icon" val="icon.skill10336" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="isMagic" val="4" />
+	</skill>
+	<skill id="10338" levels="1" name="Punch Drunk">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Decreases target's resistance to Fist Weapons by 30%. -->
+		<set name="icon" val="icon.skill10335" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="1" />
+		<set name="castRange" val="500" />
+		<set name="hitTime" val="100" />
+		<set name="coolTime" val="100" />
+		<set name="isMagic" val="4" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="10339" levels="1" name="Winged Spear - Stun">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Stuns target for 3 seconds. -->
+		<set name="icon" val="icon.skill10333" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="1" />
+		<set name="castRange" val="500" />
+		<set name="hitTime" val="100" />
+		<set name="coolTime" val="100" />
+		<set name="isMagic" val="4" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="10340" levels="3" name="Blade Slasher">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Attacks enemies in front with 16214 Power added to P. Atk. If the target is stunned, attacks with 48641 power. Can be used while a sword or blunt weapon is equipped. Consumes 1 Soulstone. -->
+		<table name="#icons"> icon.skill10340 icon.skill0526 icon.skill0526 </table>
+		<table name="#mpConsumes"> 233 236 239 </table>
+		<set name="icon" val="#icons" />
+		<set name="operateType" val="A1" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="#mpConsumes" />
+		<set name="castRange" val="40" />
+		<set name="hitTime" val="1000" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="10000" />
 	</skill>
 </list>

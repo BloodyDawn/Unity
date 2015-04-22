@@ -52,4 +52,73 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="isDebuff" val="true" />
 	</skill>
+	<skill id="10104" levels="1" name="Paladin's Aura">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Increases P. Def. by 25%, Received Heal by 25%, and decreases Received P. Critical Damage by 25%. Increases party members' P. Def. by 20%, Received Heal by 20%, and decreases Received Critical Damage by 20%. Only one Knight's Aura can be active at any time. -->
+		<set name="icon" val="icon.skill10104" />
+		<set name="operateType" val="T" />
+		<set name="targetType" val="SELF" />
+		<set name="reuseDelay" val="1000" />
+	</skill>
+	<skill id="10105" levels="1" name="Avenger's Aura">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Increases P. Atk./Atk. Spd by 25%, P. Critical Rate by 80, P. Critical Damage by 25%, and Speed by 20. Decreases P./M. Atk. by 30%, Atk. Spd./Casting Spd. by 30%, Speed by 20 and Received Critical Damage by 15% of nearby enemies. Only one Knight's Aura can be active at any time. -->
+		<set name="icon" val="icon.skill10105" />
+		<set name="operateType" val="T" />
+		<set name="targetType" val="SELF" />
+		<set name="reuseDelay" val="1000" />
+	</skill>
+	<skill id="10106" levels="1" name="Sentinel's Aura">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Increases M. Def. by 25%, Attribute Resistance by 50, and Debuff Resistance by 25%. Increases party members' M. Def. by 20%, Attribute Resistance by 40, and Debuff Resistance by 20%. Only one Knight's Aura can be active at any time. -->
+		<set name="icon" val="icon.skill10106" />
+		<set name="operateType" val="T" />
+		<set name="targetType" val="SELF" />
+		<set name="reuseDelay" val="1000" />
+	</skill>
+	<skill id="10107" levels="1" name="Templar's Aura">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Increases P. Atk. by 15%, Atk. Spd. by 15%, and Speed by 10. Increases party members' P. Atk. by 10%, Atk. Spd. by 10%, M. Atk. by 10%, Casting Spd. by 10% and Speed by 10. Only one Knight's Aura can be active at any time. -->
+		<set name="icon" val="icon.skill10107" />
+		<set name="operateType" val="T" />
+		<set name="targetType" val="SELF" />
+		<set name="reuseDelay" val="1000" />
+	</skill>
+	<skill id="10108" levels="1" name="Paladin's Aura">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- P. Def. + 20%, heal amount + 20%, and Received P. Critical Damage - 20%. -->
+		<set name="icon" val="icon.skill10104" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="hitTime" val="500" />
+		<set name="reuseDelay" val="1000" />
+	</skill>
+	<skill id="10109" levels="1" name="Avenger's Aura">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- P./M. Atk. - 30%, Atk. Spd./Casting Spd. - 30%, Speed - 30%, and Received Critical Damage + 15%. -->
+		<set name="icon" val="icon.skill10105" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="hitTime" val="500" />
+		<set name="reuseDelay" val="1000" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="10110" levels="1" name="Sentinel's Aura">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- M. Def. + 20%, Attribute Resistance + 40, Debuff Resistance + 20%. -->
+		<set name="icon" val="icon.skill10106" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="hitTime" val="500" />
+		<set name="reuseDelay" val="1000" />
+	</skill>
+	<skill id="10111" levels="1" name="Templar's Aura">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- P. Atk. + 10%, Atk. Spd. + 10%, M. Atk. + 10%, Casting Spd. + 10%, Speed + 10. -->
+		<set name="icon" val="icon.skill10107" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="hitTime" val="500" />
+		<set name="reuseDelay" val="1000" />
+	</skill>
 </list>

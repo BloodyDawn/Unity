@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="30600" levels="1" name="Additional Hit">
+	<skill id="30600" levels="1" name="Heavy Hit">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Powerful hit on target. -->
 		<set name="icon" val="icon.skill0000" />
@@ -10,7 +10,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<skill id="30601" levels="1" name="Additional Hit">
+	<skill id="30601" levels="1" name="Heavy Hit">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Powerful hit on target. -->
 		<set name="icon" val="icon.skill0000" />
@@ -70,5 +70,14 @@
 		<set name="icon" val="icon.icon_Er_wizard" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+	</skill>
+	<skill id="30608" levels="5" name="Fury of Eviscerator">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- P. Atk. + 5%. -->
+		<set name="icon" val="icon.skill30509" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="hitTime" val="300" />
+		<set name="isMagic" val="4" />
 	</skill>
 </list>

@@ -33,6 +33,40 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
+	<skill id="10703" levels="3" name="Armor Breaker">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Cancels target's armor for 3 seconds. Requires dagger/dual dagger. Consumes 2 Soulstones. -->
+		<table name="#mpConsumes"> 77 79 81 </table>
+		<set name="icon" val="icon.skill10703" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="#mpConsumes" />
+		<set name="castRange" val="40" />
+		<set name="hitTime" val="1500" />
+		<set name="coolTime" val="500" />
+		<set name="reuseDelay" val="90000" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="10704" levels="3" name="Mass Power Bluff">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Reveals the enemy's back and inflicts Stun for 3 seconds. Requires dagger/dual dagger. Consumes 2 Soulstones. -->
+		<set name="icon" val="icon.skill10704" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="155" />
+		<set name="castRange" val="40" />
+		<set name="hitTime" val="1000" />
+		<set name="reuseDelay" val="30000" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="10705" levels="1" name="Shadow Walking">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Front Critical Rate - 10%, Side Critical Rate + 10%, Critical Damage + 10%, Rear Critical Rate + 20%, Critical Damage + 20%. -->
+		<set name="icon" val="icon.skill10705" />
+		<set name="operateType" val="T" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="64" />
+	</skill>
 	<skill id="10747" levels="1" name="Rogue - Individual Passive">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0217" />
@@ -224,7 +258,8 @@
 			</effect>
 		</enchant1for>
 	</skill>
-	<skill id="10755" levels="1" name="Superior Mental Attack Resistance">
+	<skill id="10755" levels="10" name="Superior Mental Attack Resistance">
+		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- STR + 2. Resistance + 20 to Hold, Sleep, Paralysis, Mental attack, Poison, Bleed, and Stun. In addition, has a chance of reflecting debuffs back to the attacker. -->
 		<set name="icon" val="icon.skill10005" />
@@ -491,7 +526,8 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="900000" />
 	</skill>
-	<skill id="10777" levels="1" name="Lure Shot">
+	<skill id="10777" levels="4" name="Lure Shot">
+		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Draws in the enemy's attention. -->
 		<set name="icon" val="icon.skill10777" />
@@ -542,7 +578,8 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="10781" levels="1" name="Phoenix Arrow">
+	<skill id="10781" levels="4" name="Phoenix Arrow">
+		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Shoots a magical arrow to obliterate an area. Attacks targets within the skill's range with 45215 power. -->
 		<set name="icon" val="icon.skill10781" />
@@ -589,7 +626,8 @@
 		<set name="hitTime" val="200" />
 		<set name="reuseDelay" val="120000" />
 	</skill>
-	<skill id="10785" levels="1" name="Flare">
+	<skill id="10785" levels="5" name="Flare">
+		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Fires a Flare to reveal nearby hiding enemies or traps. Requires a bow or crossbow to be equipped. -->
 		<set name="icon" val="icon.skill10785" />
@@ -659,7 +697,8 @@
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="45000" />
 	</skill>
-	<skill id="10791" levels="1" name="Frost Trap">
+	<skill id="10791" levels="4" name="Frost Trap">
+		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Plants a Frost Trap, decreasing the enemy's Speed, Atk. Spd. and Casting Spd. -->
 		<set name="icon" val="icon.skill10791" />
@@ -670,7 +709,8 @@
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="45000" />
 	</skill>
-	<skill id="10792" levels="1" name="Gravity Trap">
+	<skill id="10792" levels="4" name="Gravity Trap">
+		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Plants a Gravity Trap, immobilizing the enemy. -->
 		<set name="icon" val="icon.skill10792" />

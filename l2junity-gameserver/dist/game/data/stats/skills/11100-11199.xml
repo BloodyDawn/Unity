@@ -433,6 +433,93 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="isDebuff" val="true" />
 	</skill>
+	<skill id="11134" levels="1" name="Meteor">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Drops meteors to attack surrounding enemies and deals great damage. Inflicts abnormal state and deals continuous damage. The higher the level of the abnormal state, the greater the damage. Consumes 5 Spirit Ores. -->
+		<set name="icon" val="icon.skill11134" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="52" />
+		<set name="castRange" val="900" />
+		<set name="hitTime" val="12000" />
+		<set name="reuseDelay" val="120000" />
+		<set name="isMagic" val="1" />
+	</skill>
+	<skill id="11135" levels="1" name="Black Pool">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Creates a black swamp in the selected location, dealing great damage, and receiving 50% of the target's damage as HP. Inflicts abnormal state and decreases Speed. The higher the level of the abnormal state, the greater the damage, and at the last stage, Shocks the target. Consumes 5 Spirit Ores. -->
+		<set name="icon" val="icon.skill11135" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="52" />
+		<set name="castRange" val="900" />
+		<set name="hitTime" val="12000" />
+		<set name="reuseDelay" val="120000" />
+		<set name="isMagic" val="1" />
+	</skill>
+	<skill id="11136" levels="1" name="Snow Storm">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Creates an ice storm in the selected location, dealing continuous damage. Inflicts abnormal state and decreases Speed. The higher the level of the abnormal state, the greater the damage, and at the last stage, Freezes the target. Consumes 5 Spirit Ores. -->
+		<set name="icon" val="icon.skill11136" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="52" />
+		<set name="castRange" val="900" />
+		<set name="hitTime" val="12000" />
+		<set name="reuseDelay" val="120000" />
+		<set name="isMagic" val="1" />
+	</skill>
+	<skill id="11137" levels="1" name="Tornado">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Creates a tornado in the selected location, dealing great damage. Inflicts abnormal state and decreases Speed. The higher the level of the abnormal state, the greater the damage, and at the last stage, locks the target in an Aerial Yoke. Consumes 5 Spirit Ores. -->
+		<set name="icon" val="icon.skill11137" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="52" />
+		<set name="castRange" val="900" />
+		<set name="hitTime" val="12000" />
+		<set name="reuseDelay" val="120000" />
+		<set name="isMagic" val="1" />
+	</skill>
+	<skill id="11138" levels="1" name="Soul Barrage">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Detonates the soul in the selected location to attack surrounding enemies. Inflicts abnormal state and increases PvP Damage. The effect increases as the level of the abnormal state increases. Consumes 5 Spirit Ores. -->
+		<set name="icon" val="icon.skill11138" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="mpConsume" val="52" />
+		<set name="castRange" val="900" />
+		<set name="hitTime" val="12000" />
+		<set name="reuseDelay" val="120000" />
+		<set name="isMagic" val="1" />
+	</skill>
+	<skill id="11139" levels="3" name="Ignite">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Engulfed in flames. -->
+		<set name="icon" val="icon.skill11134" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="isMagic" val="4" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="11140" levels="5" name="Black Shackle">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Bound to dark power. -->
+		<set name="icon" val="icon.skill11135" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="isMagic" val="4" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="11141" levels="5" name="Freezing Slow">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- The cold is creeping up from your feet. -->
+		<set name="icon" val="icon.skill11136" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="isMagic" val="4" />
+		<set name="isDebuff" val="true" />
+	</skill>
 	<skill id="11142" levels="3" name="Damaged Area">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Momentarily incurs damage. All speeds are decreased. -->
@@ -449,6 +536,24 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="1" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="11144" levels="5" name="Wind Binding">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Speed has decreased due to the gust. -->
+		<set name="icon" val="icon.skill11137" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="isMagic" val="4" />
+		<set name="isDebuff" val="true" />
+	</skill>
+	<skill id="11145" levels="5" name="Soul Weakness">
+		<!-- AUTO GENERATED SKILL -->
+		<!-- Cursed by a soul. -->
+		<set name="icon" val="icon.skill11138" />
+		<set name="operateType" val="A2" />
+		<set name="targetType" val="SELF" />
+		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11150" levels="1" name="Dark Curse">
@@ -485,7 +590,8 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="isMagic" val="1" />
 	</skill>
-	<skill id="11174" levels="1" name="Shadow Snare Zone">
+	<skill id="11174" levels="2" name="Shadow Snare Zone">
+		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Pulls nearby enemies to the center. -->
 		<set name="icon" val="icon.skill1469" />
@@ -493,7 +599,8 @@
 		<set name="targetType" val="SELF" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="11175" levels="1" name="Shadow Snare Zone">
+	<skill id="11175" levels="2" name="Shadow Snare Zone">
+		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Pulls nearby enemies to the center. -->
 		<set name="icon" val="icon.skill1469" />
@@ -508,7 +615,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 	</skill>
-	<skill id="11177" levels="4" name="Aqua Crash">
+	<skill id="11177" levels="7" name="Aqua Crash">
+		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage with 193 Power to target. Applies a stacking debuff that decreases Speed. At 5 stacks target will be frozen for 2 seconds. When Double Casting is active, the debuff will not stack. Instead, there is a chance target will be frozen for 3 seconds. Over-hit. -->
 		<set name="icon" val="icon.skill10879" />
@@ -520,7 +628,7 @@
 		<set name="coolTime" val="300" />
 		<set name="isMagic" val="1" />
 	</skill>
-	<skill id="11178" levels="1" name="Aqua Crash - Speed Decrease">
+	<skill id="11178" levels="1" name="Frozen">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Use Aqua Crash to decrease target's Speed. -->
 		<set name="icon" val="icon.skill11011" />
@@ -555,7 +663,8 @@
 		<set name="castRange" val="1100" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="11182" levels="1" name="Yoke Status">
+	<skill id="11182" levels="4" name="Yoke Status">
+		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Momentarily immobilized midair. -->
 		<set name="icon" val="icon.skill1042" />
@@ -578,21 +687,24 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 	</skill>
-	<skill id="11185" levels="1" name="Superior MP Boost">
+	<skill id="11185" levels="10" name="Superior MP Boost">
+		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- INT + 2 and increases Max MP by 313. -->
 		<set name="icon" val="icon.skill0213" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 	</skill>
-	<skill id="11186" levels="1" name="Superior Fast MP Recovery">
+	<skill id="11186" levels="10" name="Superior Fast MP Recovery">
+		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- INT + 2 and increases MP Recovery Bonus by 3.6. -->
 		<set name="icon" val="icon.skill0229" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 	</skill>
-	<skill id="11187" levels="1" name="Superior Clear Mind">
+	<skill id="11187" levels="10" name="Superior Clear Mind">
+		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- INT + 2, increases MP Recovery Bonus by 5.1 while standing and by 6.5 while walking. -->
 		<set name="icon" val="icon.skill11187" />
@@ -608,7 +720,8 @@
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="11189" levels="4" name="Aqua Crash">
+	<skill id="11189" levels="7" name="Aqua Crash">
+		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage with 193 Power to target. Applies a stacking debuff that decreases Speed. At 5 stacks target will be frozen for 2 seconds. When Double Casting is active, the debuff will not stack. Instead, there is a chance target will be frozen for 3 seconds. Over-hit. -->
 		<set name="icon" val="icon.skill10879" />
