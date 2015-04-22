@@ -53,20 +53,19 @@ public final class ShortCutInit implements IClientOutgoingPacket
 				case ITEM:
 				{
 					packet.writeD(sc.getId());
-					packet.writeD(0x01);
+					packet.writeD(0x01); // Enabled or not
 					packet.writeD(sc.getSharedReuseGroup());
 					packet.writeD(0x00);
 					packet.writeD(0x00);
-					packet.writeH(0x00);
-					packet.writeH(0x00);
-					packet.writeD(0x00); // TODO: Find me!
+					packet.writeQ(0x00); // Augment id
+					packet.writeD(0x00); // Visual id
 					break;
 				}
 				case SKILL:
 				{
 					packet.writeD(sc.getId());
 					packet.writeD(sc.getLevel());
-					packet.writeD(0x00); // TODO: Find me!
+					packet.writeD(sc.getSharedReuseGroup());
 					packet.writeC(0x00); // C5
 					packet.writeD(0x01); // C6
 					break;

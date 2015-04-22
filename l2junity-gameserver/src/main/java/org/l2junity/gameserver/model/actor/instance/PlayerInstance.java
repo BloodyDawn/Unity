@@ -8512,6 +8512,12 @@ public final class PlayerInstance extends Playable
 				break;
 		}
 		
+		if (target == null)
+		{
+			sendPacket(ActionFailed.STATIC_PACKET);
+			return false;
+		}
+		
 		// Notify the AI with AI_INTENTION_CAST and target
 		getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill, target);
 		return true;
