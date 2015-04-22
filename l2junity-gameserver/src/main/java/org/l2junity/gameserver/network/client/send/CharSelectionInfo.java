@@ -191,7 +191,7 @@ public class CharSelectionInfo implements IClientOutgoingPacket
 			packet.writeD(i == _activeId ? 1 : 0);
 			
 			packet.writeC(charInfoPackage.getEnchantEffect() > 127 ? 127 : charInfoPackage.getEnchantEffect());
-			packet.writeD(charInfoPackage.getAugmentationId());
+			packet.writeQ(charInfoPackage.getAugmentationId());
 			
 			// packet.writeD(charInfoPackage.getTransformId()); // Used to display Transformations
 			packet.writeD(0x00); // Currently on retail when you are on character select you don't see your transformation.
