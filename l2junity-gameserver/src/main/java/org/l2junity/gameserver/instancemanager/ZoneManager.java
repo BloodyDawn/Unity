@@ -45,6 +45,8 @@ import org.l2junity.gameserver.model.zone.type.ArenaZone;
 import org.l2junity.gameserver.model.zone.type.NpcSpawnTerritory;
 import org.l2junity.gameserver.model.zone.type.OlympiadStadiumZone;
 import org.l2junity.gameserver.model.zone.type.RespawnZone;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -55,6 +57,8 @@ import org.w3c.dom.Node;
  */
 public final class ZoneManager implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(ZoneManager.class);
+	
 	private static final Map<String, AbstractZoneSettings> _settings = new HashMap<>();
 	
 	public static final int SHIFT_BY = 15;

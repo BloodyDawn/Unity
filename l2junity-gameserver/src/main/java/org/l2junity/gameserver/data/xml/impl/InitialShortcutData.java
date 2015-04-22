@@ -33,6 +33,8 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.send.ShortCutRegister;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -44,6 +46,8 @@ import org.w3c.dom.Node;
  */
 public final class InitialShortcutData implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(InitialShortcutData.class);
+	
 	private final Map<ClassId, List<Shortcut>> _initialShortcutData = new HashMap<>();
 	private final List<Shortcut> _initialGlobalShortcutList = new ArrayList<>();
 	private final Map<Integer, Macro> _macroPresets = new HashMap<>();

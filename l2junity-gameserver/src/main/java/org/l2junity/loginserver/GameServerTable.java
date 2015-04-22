@@ -37,6 +37,8 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.loginserver.network.gameserverpackets.ServerStatus;
 import org.l2junity.util.IPSubnet;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 
@@ -46,6 +48,8 @@ import org.w3c.dom.NodeList;
  */
 public final class GameServerTable implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(GameServerTable.class);
+	
 	// Server Names
 	private static final Map<Integer, String> SERVER_NAMES = new HashMap<>();
 	// Game Server Table

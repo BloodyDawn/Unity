@@ -50,6 +50,8 @@ import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.interfaces.ISkillsHolder;
 import org.l2junity.gameserver.model.skills.CommonSkill;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -77,6 +79,8 @@ import org.w3c.dom.Node;
  */
 public final class SkillTreesData implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(SkillTreesData.class);
+	
 	// ClassId, Map of Skill Hash Code, L2SkillLearn
 	private static final Map<ClassId, Map<Integer, SkillLearn>> _classSkillTrees = new HashMap<>();
 	private static final Map<ClassId, Map<Integer, SkillLearn>> _transferSkillTrees = new HashMap<>();

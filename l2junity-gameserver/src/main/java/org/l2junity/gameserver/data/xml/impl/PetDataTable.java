@@ -26,6 +26,8 @@ import org.l2junity.gameserver.enums.MountType;
 import org.l2junity.gameserver.model.PetData;
 import org.l2junity.gameserver.model.PetLevelData;
 import org.l2junity.gameserver.model.StatsSet;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -37,6 +39,8 @@ import org.w3c.dom.Node;
  */
 public final class PetDataTable implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(PetDataTable.class);
+	
 	private final Map<Integer, PetData> _pets = new HashMap<>();
 	
 	/**

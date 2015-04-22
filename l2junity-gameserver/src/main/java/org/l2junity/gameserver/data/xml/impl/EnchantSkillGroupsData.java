@@ -21,7 +21,6 @@ package org.l2junity.gameserver.data.xml.impl;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.EnchantSkillGroup;
 import org.l2junity.gameserver.model.EnchantSkillGroup.EnchantSkillHolder;
@@ -29,6 +28,8 @@ import org.l2junity.gameserver.model.EnchantSkillLearn;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -39,8 +40,7 @@ import org.w3c.dom.Node;
  */
 public class EnchantSkillGroupsData implements IXmlReader
 {
-	public static final int NORMAL_ENCHANT_COST_MULTIPLIER = Config.NORMAL_ENCHANT_COST_MULTIPLIER;
-	public static final int SAFE_ENCHANT_COST_MULTIPLIER = Config.SAFE_ENCHANT_COST_MULTIPLIER;
+	private static final Logger LOGGER = LoggerFactory.getLogger(EnchantSkillGroupsData.class);
 	
 	public static final int NORMAL_ENCHANT_BOOK = 6622;
 	public static final int SAFE_ENCHANT_BOOK = 9627;

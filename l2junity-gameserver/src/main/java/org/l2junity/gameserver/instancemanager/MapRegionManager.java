@@ -38,6 +38,8 @@ import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.zone.type.ClanHallZone;
 import org.l2junity.gameserver.model.zone.type.RespawnZone;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -47,6 +49,8 @@ import org.w3c.dom.Node;
  */
 public final class MapRegionManager implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(MapRegionManager.class);
+	
 	private static final Map<String, MapRegion> _regions = new HashMap<>();
 	private static final String defaultRespawn = "talking_island_town";
 	

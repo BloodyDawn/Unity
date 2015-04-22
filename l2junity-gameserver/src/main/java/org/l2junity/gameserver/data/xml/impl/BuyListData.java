@@ -34,6 +34,8 @@ import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.model.buylist.L2BuyList;
 import org.l2junity.gameserver.model.buylist.Product;
 import org.l2junity.gameserver.model.items.L2Item;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -44,6 +46,8 @@ import org.w3c.dom.Node;
  */
 public final class BuyListData implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(BuyListData.class);
+	
 	private final Map<Integer, L2BuyList> _buyLists = new HashMap<>();
 	private static final FileFilter NUMERIC_FILTER = new NumericNameFilter();
 	

@@ -25,6 +25,8 @@ import java.util.Map;
 
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.base.ClassId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
@@ -34,6 +36,8 @@ import org.w3c.dom.Node;
  */
 public final class SkillLearnData implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(SkillLearnData.class);
+	
 	private final Map<Integer, List<ClassId>> _skillLearn = new HashMap<>();
 	
 	protected SkillLearnData()

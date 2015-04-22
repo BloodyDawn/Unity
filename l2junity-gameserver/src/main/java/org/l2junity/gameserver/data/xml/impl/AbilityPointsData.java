@@ -23,6 +23,8 @@ import java.util.List;
 
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.holders.RangeAbilityPointsHolder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -32,6 +34,7 @@ import org.w3c.dom.Node;
  */
 public final class AbilityPointsData implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(AbilityPointsData.class);
 	private final List<RangeAbilityPointsHolder> _points = new ArrayList<>();
 	
 	protected AbilityPointsData()

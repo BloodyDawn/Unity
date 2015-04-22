@@ -72,11 +72,11 @@ public class ExEnchantSkillInfoDetail implements IClientOutgoingPacket
 		
 		if (type == 0)
 		{
-			multi = EnchantSkillGroupsData.NORMAL_ENCHANT_COST_MULTIPLIER;
+			multi = Config.NORMAL_ENCHANT_COST_MULTIPLIER;
 		}
 		else if (type == 1)
 		{
-			multi = EnchantSkillGroupsData.SAFE_ENCHANT_COST_MULTIPLIER;
+			multi = Config.SAFE_ENCHANT_COST_MULTIPLIER;
 		}
 		_chance = esd.getRate(ply);
 		_sp = esd.getSpCost();

@@ -49,6 +49,8 @@ import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.interfaces.IStorable;
 import org.l2junity.gameserver.model.itemcontainer.ItemContainer;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -59,6 +61,8 @@ import org.w3c.dom.Node;
  */
 public final class CastleManorManager implements IXmlReader, IStorable
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(CastleManorManager.class);
+	
 	// SQL queries
 	private static final String INSERT_PRODUCT = "INSERT INTO castle_manor_production VALUES (?, ?, ?, ?, ?, ?)";
 	private static final String INSERT_CROP = "INSERT INTO castle_manor_procure VALUES (?, ?, ?, ?, ?, ?, ?)";

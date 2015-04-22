@@ -47,6 +47,8 @@ import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.holders.MinionHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -57,6 +59,8 @@ import org.w3c.dom.Node;
  */
 public class NpcData implements IXmlReader
 {
+	protected static final Logger LOGGER = LoggerFactory.getLogger(NpcData.class);
+	
 	private final Map<Integer, L2NpcTemplate> _npcs = new ConcurrentHashMap<>();
 	private final Map<String, Integer> _clans = new ConcurrentHashMap<>();
 	private MinionData _minionData;

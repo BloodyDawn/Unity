@@ -108,7 +108,7 @@ public final class RequestExEnchantSkill implements IClientIncomingPacket
 			return;
 		}
 		
-		final int costMultiplier = EnchantSkillGroupsData.NORMAL_ENCHANT_COST_MULTIPLIER;
+		final int costMultiplier = Config.NORMAL_ENCHANT_COST_MULTIPLIER;
 		final int requiredSp = esd.getSpCost() * costMultiplier;
 		if (player.getSp() >= requiredSp)
 		{

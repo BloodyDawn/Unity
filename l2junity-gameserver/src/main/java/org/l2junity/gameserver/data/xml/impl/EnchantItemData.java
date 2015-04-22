@@ -26,6 +26,8 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.items.enchant.EnchantScroll;
 import org.l2junity.gameserver.model.items.enchant.EnchantSupportItem;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -36,6 +38,8 @@ import org.w3c.dom.Node;
  */
 public class EnchantItemData implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(EnchantItemData.class);
+	
 	private final Map<Integer, EnchantScroll> _scrolls = new HashMap<>();
 	private final Map<Integer, EnchantSupportItem> _supports = new HashMap<>();
 	

@@ -21,6 +21,8 @@ package org.l2junity.gameserver.data.xml.impl;
 import java.util.Arrays;
 
 import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -31,6 +33,8 @@ import org.w3c.dom.Node;
  */
 public final class PlayerXpPercentLostData implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(PlayerXpPercentLostData.class);
+	
 	private final int _maxlevel = ExperienceData.getInstance().getMaxLevel();
 	private final double[] _playerXpPercentLost = new double[_maxlevel + 1];
 	

@@ -22,6 +22,8 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -32,6 +34,8 @@ import org.w3c.dom.Node;
  */
 public final class HitConditionBonusData implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(HitConditionBonusData.class);
+	
 	private int frontBonus = 0;
 	private int sideBonus = 0;
 	private int backBonus = 0;

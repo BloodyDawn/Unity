@@ -32,6 +32,8 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.items.type.CrystalType;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
@@ -41,6 +43,8 @@ import org.w3c.dom.Node;
  */
 public class EnchantItemHPBonusData implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(EnchantItemHPBonusData.class);
+	
 	private final Map<CrystalType, List<Integer>> _armorHPBonuses = new EnumMap<>(CrystalType.class);
 	
 	private static final float FULL_ARMOR_MODIFIER = 1.5f; // TODO: Move it to config!

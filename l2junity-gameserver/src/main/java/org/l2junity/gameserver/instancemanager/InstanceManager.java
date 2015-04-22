@@ -30,6 +30,8 @@ import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -39,6 +41,8 @@ import org.w3c.dom.Node;
  */
 public final class InstanceManager implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(InstanceManager.class);
+	
 	private static final Map<Integer, Instance> _instanceList = new ConcurrentHashMap<>();
 	private final Map<Integer, InstanceWorld> _instanceWorlds = new ConcurrentHashMap<>();
 	private int _dynamic = 300000;

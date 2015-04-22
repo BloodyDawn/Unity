@@ -26,6 +26,8 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.teleporter.TeleportHolder;
 import org.l2junity.gameserver.model.teleporter.TeleportLocation;
 import org.l2junity.gameserver.model.teleporter.TeleportType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -35,6 +37,8 @@ import org.w3c.dom.Node;
  */
 public class TeleportersData implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(TeleportersData.class);
+	
 	private final Map<Integer, TeleportHolder> _teleporters = new HashMap<>();
 	
 	protected TeleportersData()

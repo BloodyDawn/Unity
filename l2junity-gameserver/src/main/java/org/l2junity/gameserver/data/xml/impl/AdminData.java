@@ -33,6 +33,8 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.IClientOutgoingPacket;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -43,6 +45,8 @@ import org.w3c.dom.Node;
  */
 public final class AdminData implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(AdminData.class);
+	
 	private final Map<Integer, AccessLevel> _accessLevels = new HashMap<>();
 	private final Map<String, AdminCommandAccessRight> _adminCommandAccessRights = new HashMap<>();
 	private final Map<PlayerInstance, Boolean> _gmList = new ConcurrentHashMap<>();

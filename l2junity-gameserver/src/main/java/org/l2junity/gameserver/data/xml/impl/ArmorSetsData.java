@@ -25,6 +25,8 @@ import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.ArmorSet;
 import org.l2junity.gameserver.model.holders.ArmorsetSkillHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -35,6 +37,8 @@ import org.w3c.dom.Node;
  */
 public final class ArmorSetsData implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(ArmorSetsData.class);
+	
 	private final Map<Integer, ArmorSet> _armorSets = new HashMap<>();
 	
 	/**

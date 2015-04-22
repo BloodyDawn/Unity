@@ -29,6 +29,8 @@ import org.l2junity.gameserver.model.RecipeList;
 import org.l2junity.gameserver.model.RecipeStatInstance;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -39,6 +41,8 @@ import org.w3c.dom.Node;
  */
 public class RecipeData implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(RecipeData.class);
+	
 	private final Map<Integer, RecipeList> _recipes = new HashMap<>();
 	
 	/**

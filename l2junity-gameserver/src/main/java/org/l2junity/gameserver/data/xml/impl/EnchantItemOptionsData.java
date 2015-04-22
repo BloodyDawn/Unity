@@ -25,6 +25,8 @@ import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.options.EnchantOptions;
 import org.l2junity.gameserver.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
@@ -33,6 +35,8 @@ import org.w3c.dom.Node;
  */
 public class EnchantItemOptionsData implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(EnchantItemOptionsData.class);
+	
 	private final Map<Integer, Map<Integer, EnchantOptions>> _data = new HashMap<>();
 	
 	protected EnchantItemOptionsData()

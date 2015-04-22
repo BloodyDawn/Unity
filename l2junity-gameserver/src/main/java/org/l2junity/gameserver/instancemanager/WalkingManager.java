@@ -39,6 +39,8 @@ import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcMoveNodeArrived;
 import org.l2junity.gameserver.model.holders.NpcRoutesHolder;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -49,6 +51,8 @@ import org.w3c.dom.Node;
  */
 public final class WalkingManager implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(WalkingManager.class);
+	
 	// Repeat style:
 	// 0 - go back
 	// 1 - go to first point (circle style)

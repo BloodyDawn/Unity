@@ -23,6 +23,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
@@ -31,6 +33,8 @@ import org.w3c.dom.Node;
  */
 public class SecondaryAuthData implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(SecondaryAuthData.class);
+	
 	private final Set<String> _forbiddenPasswords = new HashSet<>();
 	private boolean _enabled = false;
 	private int _maxAttempts = 5;

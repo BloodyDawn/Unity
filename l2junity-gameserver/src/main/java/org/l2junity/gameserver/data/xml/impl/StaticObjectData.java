@@ -26,6 +26,8 @@ import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
 import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -36,6 +38,8 @@ import org.w3c.dom.Node;
  */
 public final class StaticObjectData implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(StaticObjectData.class);
+	
 	private final Map<Integer, L2StaticObjectInstance> _staticObjects = new HashMap<>();
 	
 	/**

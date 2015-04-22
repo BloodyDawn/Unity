@@ -24,6 +24,8 @@ import java.util.Map;
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.CrystalizationData;
 import org.l2junity.gameserver.model.holders.ItemChanceHolder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -33,6 +35,8 @@ import org.w3c.dom.Node;
  */
 public final class ItemCrystalizationData implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(ItemCrystalizationData.class);
+	
 	private final Map<Integer, CrystalizationData> _items = new HashMap<>();
 	
 	protected ItemCrystalizationData()

@@ -76,7 +76,7 @@ import org.w3c.dom.Node;
  */
 public final class Config
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(Config.class);
+	protected static final Logger LOGGER = LoggerFactory.getLogger(Config.class);
 	
 	// --------------------------------------------------
 	// L2J Property File Definitions

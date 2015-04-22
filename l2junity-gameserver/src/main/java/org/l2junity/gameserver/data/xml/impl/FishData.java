@@ -26,6 +26,8 @@ import java.util.Map;
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.fishing.L2Fish;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -36,6 +38,8 @@ import org.w3c.dom.Node;
  */
 public final class FishData implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(FishData.class);
+	
 	private final Map<Integer, L2Fish> _fishNormal = new HashMap<>();
 	private final Map<Integer, L2Fish> _fishEasy = new HashMap<>();
 	private final Map<Integer, L2Fish> _fishHard = new HashMap<>();

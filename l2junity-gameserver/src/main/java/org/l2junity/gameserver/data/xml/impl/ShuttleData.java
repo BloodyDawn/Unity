@@ -32,6 +32,8 @@ import org.l2junity.gameserver.model.actor.templates.L2CharTemplate;
 import org.l2junity.gameserver.model.shuttle.L2ShuttleData;
 import org.l2junity.gameserver.model.shuttle.L2ShuttleEngine;
 import org.l2junity.gameserver.model.shuttle.L2ShuttleStop;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -41,6 +43,8 @@ import org.w3c.dom.Node;
  */
 public final class ShuttleData implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(ShuttleData.class);
+	
 	private final Map<Integer, L2ShuttleData> _shuttles = new HashMap<>();
 	private final Map<Integer, L2ShuttleInstance> _shuttleInstances = new HashMap<>();
 	

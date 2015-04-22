@@ -33,6 +33,8 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.instance.L2DoorInstance;
 import org.l2junity.gameserver.model.actor.templates.L2DoorTemplate;
 import org.l2junity.gameserver.pathfinding.AbstractNodeLoc;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -43,6 +45,8 @@ import org.w3c.dom.Node;
  */
 public class DoorData implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(DoorData.class);
+	
 	private static final Map<String, Set<Integer>> _groups = new HashMap<>();
 	private final Map<Integer, L2DoorInstance> _doors = new HashMap<>();
 	private final Map<Integer, StatsSet> _templates = new HashMap<>();

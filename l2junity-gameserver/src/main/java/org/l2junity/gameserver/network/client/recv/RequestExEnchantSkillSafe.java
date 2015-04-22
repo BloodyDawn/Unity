@@ -96,7 +96,7 @@ public final class RequestExEnchantSkillSafe implements IClientIncomingPacket
 			return;
 		}
 		
-		int costMultiplier = EnchantSkillGroupsData.SAFE_ENCHANT_COST_MULTIPLIER;
+		int costMultiplier = Config.SAFE_ENCHANT_COST_MULTIPLIER;
 		int reqItemId = EnchantSkillGroupsData.SAFE_ENCHANT_BOOK;
 		
 		EnchantSkillLearn s = EnchantSkillGroupsData.getInstance().getSkillEnchantmentBySkillId(_skillId);

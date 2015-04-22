@@ -28,6 +28,8 @@ import org.l2junity.gameserver.model.options.OptionsSkillHolder;
 import org.l2junity.gameserver.model.options.OptionsSkillType;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.stats.functions.FuncTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -37,6 +39,8 @@ import org.w3c.dom.Node;
  */
 public class OptionData implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(OptionData.class);
+	
 	private final Map<Integer, Options> _optionData = new HashMap<>();
 	
 	protected OptionData()

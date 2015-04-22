@@ -39,6 +39,8 @@ import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.UserInfo;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
@@ -46,6 +48,8 @@ import org.w3c.dom.Node;
 
 public final class MultisellData implements IXmlReader
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(MultisellData.class);
+	
 	private final Map<Integer, ListContainer> _entries = new HashMap<>();
 	
 	public static final int PAGE_SIZE = 40;
