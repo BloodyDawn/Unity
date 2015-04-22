@@ -71,7 +71,7 @@ public class AcquireSkillList implements IClientOutgoingPacket
 			for (Skill skillRemove : skillRem)
 			{
 				packet.writeD(skillRemove.getId());
-				packet.writeH(skillRemove.getLevel());
+				packet.writeD(skillRemove.getLevel());
 			}
 		}
 		return true;
