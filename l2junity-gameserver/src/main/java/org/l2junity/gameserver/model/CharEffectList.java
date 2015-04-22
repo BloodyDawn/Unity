@@ -1428,13 +1428,16 @@ public final class CharEffectList
 		{
 			for (BuffInfo info : getBuffs().values())
 			{
-				if (info.getSkill().isHealingPotionSkill())
+				if (info != null)
 				{
-					shortBuffStatusUpdate(info);
-				}
-				else
-				{
-					addIcon(info, asu, ps, psSummon, os, isSummon);
+					if (info.getSkill().isHealingPotionSkill())
+					{
+						shortBuffStatusUpdate(info);
+					}
+					else
+					{
+						addIcon(info, asu, ps, psSummon, os, isSummon);
+					}
 				}
 			}
 		}
@@ -1444,7 +1447,10 @@ public final class CharEffectList
 		{
 			for (BuffInfo info : getTriggered().values())
 			{
-				addIcon(info, asu, ps, psSummon, os, isSummon);
+				if (info != null)
+				{
+					addIcon(info, asu, ps, psSummon, os, isSummon);
+				}
 			}
 		}
 		
@@ -1453,7 +1459,10 @@ public final class CharEffectList
 		{
 			for (BuffInfo info : getDances().values())
 			{
-				addIcon(info, asu, ps, psSummon, os, isSummon);
+				if (info != null)
+				{
+					addIcon(info, asu, ps, psSummon, os, isSummon);
+				}
 			}
 		}
 		
@@ -1462,7 +1471,10 @@ public final class CharEffectList
 		{
 			for (BuffInfo info : getToggles().values())
 			{
-				addIcon(info, asu, ps, psSummon, os, isSummon);
+				if (info != null)
+				{
+					addIcon(info, asu, ps, psSummon, os, isSummon);
+				}
 			}
 		}
 		
@@ -1471,7 +1483,10 @@ public final class CharEffectList
 		{
 			for (BuffInfo info : getDebuffs().values())
 			{
-				addIcon(info, asu, ps, psSummon, os, isSummon);
+				if (info != null)
+				{
+					addIcon(info, asu, ps, psSummon, os, isSummon);
+				}
 			}
 		}
 		

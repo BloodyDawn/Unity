@@ -20,6 +20,7 @@ package org.l2junity.gameserver.network.client.send;
 
 import java.io.PrintStream;
 import java.util.Arrays;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
@@ -429,7 +430,7 @@ public abstract class AbstractMessagePacket<T extends AbstractMessagePacket<?>> 
 				{
 					final int[] array = param.getIntArrayValue();
 					packet.writeD(array[0]); // SkillId
-					packet.writeH(array[1]); // SkillLevel
+					packet.writeD(array[1]); // SkillLevel
 					break;
 				}
 				
