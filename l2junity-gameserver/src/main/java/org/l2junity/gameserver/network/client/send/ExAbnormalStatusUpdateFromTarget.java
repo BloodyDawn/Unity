@@ -87,7 +87,8 @@ public class ExAbnormalStatusUpdateFromTarget implements IClientOutgoingPacket
 		for (Effect info : _effects)
 		{
 			packet.writeD(info._skillId);
-			packet.writeD(info._level);
+			packet.writeH(info._level);
+			packet.writeH(0x00); // Sub level
 			packet.writeH(0x00); // Combo abnormal ?
 			packet.writeH(info._duration);
 			packet.writeD(info._caster);

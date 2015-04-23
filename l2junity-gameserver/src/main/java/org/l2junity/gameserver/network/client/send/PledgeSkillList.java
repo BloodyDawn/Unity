@@ -61,13 +61,15 @@ public class PledgeSkillList implements IClientOutgoingPacket
 		for (Skill sk : _skills)
 		{
 			packet.writeD(sk.getDisplayId());
-			packet.writeD(sk.getDisplayLevel());
+			packet.writeH(sk.getDisplayLevel());
+			packet.writeH(0x00); // Sub level
 		}
 		for (SubPledgeSkill sk : _subSkills)
 		{
 			packet.writeD(sk._subType); // Clan Sub-unit types
 			packet.writeD(sk._skillId);
-			packet.writeD(sk._skillLvl);
+			packet.writeH(sk._skillLvl);
+			packet.writeH(0x00); // Sub level
 		}
 		return true;
 	}
