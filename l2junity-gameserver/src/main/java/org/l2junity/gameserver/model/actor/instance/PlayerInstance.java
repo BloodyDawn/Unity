@@ -78,6 +78,7 @@ import org.l2junity.gameserver.data.xml.impl.RecipeData;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.datatables.SkillData;
+import org.l2junity.gameserver.enums.AdminTeleportType;
 import org.l2junity.gameserver.enums.CastleSide;
 import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.ChatType;
@@ -502,7 +503,7 @@ public final class PlayerInstance extends Playable
 	/** Store object used to summon the strider you are mounting **/
 	private int _mountObjectID = 0;
 	
-	public int _telemode = 0;
+	public AdminTeleportType _teleportType = AdminTeleportType.NORMAL;
 	
 	private boolean _inCrystallize;
 	private boolean _inCraftMode;
@@ -9662,14 +9663,14 @@ public final class PlayerInstance extends Playable
 		return _observerMode;
 	}
 	
-	public int getTeleMode()
+	public AdminTeleportType getTeleMode()
 	{
-		return _telemode;
+		return _teleportType;
 	}
 	
-	public void setTeleMode(int mode)
+	public void setTeleMode(AdminTeleportType type)
 	{
-		_telemode = mode;
+		_teleportType = type;
 	}
 	
 	public void setLoto(int i, int val)

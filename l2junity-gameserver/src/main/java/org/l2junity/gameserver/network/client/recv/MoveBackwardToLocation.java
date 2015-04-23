@@ -18,17 +18,27 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
+import java.util.Arrays;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.ai.CtrlIntention;
+import org.l2junity.gameserver.enums.AdminTeleportType;
+import org.l2junity.gameserver.enums.SayuneType;
 import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.SayuneEntry;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerMoveRequest;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
+import org.l2junity.gameserver.network.client.send.FlyToLocation;
+import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.StopMove;
+import org.l2junity.gameserver.network.client.send.sayune.ExFlyMove;
+import org.l2junity.gameserver.network.client.send.sayune.ExFlyMoveBroadcast;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.l2junity.gameserver.util.Broadcast;
 import org.l2junity.network.PacketReader;
 
 /**
@@ -45,6 +55,12 @@ public class MoveBackwardToLocation implements IClientIncomingPacket
 	private int _originY;
 	private int _originZ;
 	private int _moveMovement;
+	
+	// For geodata
+	private int _curX;
+	private int _curY;
+	@SuppressWarnings("unused")
+	private int _curZ;
 	
 	@Override
 	public boolean read(PacketReader packet)
@@ -99,25 +115,45 @@ public class MoveBackwardToLocation implements IClientIncomingPacket
 			}
 		}
 		
-		if (activeChar.getTeleMode() > 0)
-		{
-			if (activeChar.getTeleMode() == 1)
-			{
-				activeChar.setTeleMode(0);
-			}
-			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			activeChar.teleToLocation(new Location(_targetX, _targetY, _targetZ));
-			return;
-		}
+		_curX = activeChar.getX();
+		_curY = activeChar.getY();
+		_curZ = activeChar.getZ();
 		
-		double dx = _targetX - activeChar.getX();
-		double dy = _targetY - activeChar.getY();
-		// Can't move if character is confused, or trying to move a huge distance
-		if (activeChar.isOutOfControl() || (((dx * dx) + (dy * dy)) > 98010000)) // 9900*9900
+		switch (activeChar.getTeleMode())
 		{
-			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
+			case DEMONIC:
+			{
+				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+				activeChar.teleToLocation(new Location(_targetX, _targetY, _targetZ));
+				break;
+			}
+			case SAYUNE:
+			{
+				activeChar.sendPacket(new ExFlyMove(activeChar, SayuneType.ONE_WAY_LOC, -1, Arrays.asList(new SayuneEntry(false, -1, _targetX, _targetY, _targetZ))));
+				activeChar.setXYZ(_targetX, _targetY, _targetZ);
+				Broadcast.toKnownPlayers(activeChar, new ExFlyMoveBroadcast(activeChar, SayuneType.ONE_WAY_LOC, -1, new Location(_targetX, _targetY, _targetZ)));
+				activeChar.setTeleMode(AdminTeleportType.NORMAL);
+				break;
+			}
+			case CHARGE:
+			{
+				activeChar.setXYZ(_targetX, _targetY, _targetZ);
+				Broadcast.toSelfAndKnownPlayers(activeChar, new FlyToLocation(activeChar, _targetX, _targetY, _targetZ, FlyType.CHARGE));
+				break;
+			}
+			default:
+			{
+				double dx = _targetX - _curX;
+				double dy = _targetY - _curY;
+				// Can't move if character is confused, or trying to move a huge distance
+				if (activeChar.isOutOfControl() || (((dx * dx) + (dy * dy)) > 98010000)) // 9900*9900
+				{
+					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+					return;
+				}
+				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(_targetX, _targetY, _targetZ));
+				break;
+			}
 		}
-		activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(_targetX, _targetY, _targetZ));
 	}
 }

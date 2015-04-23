@@ -29,6 +29,7 @@ import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.datatables.SpawnTable;
+import org.l2junity.gameserver.enums.AdminTeleportType;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.instancemanager.MapRegionManager;
 import org.l2junity.gameserver.instancemanager.RaidBossSpawnManager;
@@ -84,28 +85,30 @@ public class AdminTeleport implements IAdminCommandHandler
 	@Override
 	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
-		if (command.equals("admin_teleto"))
-		{
-			activeChar.setTeleMode(1);
-		}
 		if (command.equals("admin_instant_move"))
 		{
 			activeChar.sendMessage("Instant move ready. Click where you want to go.");
-			activeChar.setTeleMode(1);
+			activeChar.setTeleMode(AdminTeleportType.DEMONIC);
 		}
-		if (command.equals("admin_teleto r"))
+		else if (command.equals("admin_teleto sayune"))
 		{
-			activeChar.setTeleMode(2);
+			activeChar.sendMessage("Sayune move ready. Click where you want to go.");
+			activeChar.setTeleMode(AdminTeleportType.SAYUNE);
 		}
-		if (command.equals("admin_teleto end"))
+		else if (command.equals("admin_teleto charge"))
 		{
-			activeChar.setTeleMode(0);
+			activeChar.sendMessage("Charge move ready. Click where you want to go.");
+			activeChar.setTeleMode(AdminTeleportType.CHARGE);
 		}
-		if (command.equals("admin_show_moves"))
+		else if (command.equals("admin_teleto end"))
+		{
+			activeChar.setTeleMode(AdminTeleportType.NORMAL);
+		}
+		else if (command.equals("admin_show_moves"))
 		{
 			AdminHtml.showAdminHtml(activeChar, "teleports.htm");
 		}
-		if (command.equals("admin_show_moves_other"))
+		else if (command.equals("admin_show_moves_other"))
 		{
 			AdminHtml.showAdminHtml(activeChar, "tele/other.html");
 		}
