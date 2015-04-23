@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/castleData.xsd">
 	<castle id="3"> <!-- Giran Castle -->
-		<spawn castleSide="LIGHT">
-			<npc id="35184" x="117095" y="144997" z="-2539" heading="32768" /> <!-- Chamberlain of Light -->
-			<npc id="36611" x="83312" y="147907" z="-3404" heading="16400" /> <!-- Proclaimer -->
-		</spawn>
-		<spawn castleSide="DARK">
-			<npc id="36655" x="117095" y="144997" z="-2539" heading="32768" /> <!-- Chamberlain of Darkness -->
-		</spawn>
+		<spawns>
+			<!-- Light -->
+			<npc id="35184" castleSide="LIGHT" x="117095" y="144997" z="-2539" heading="32768" /> <!-- Chamberlain of Light -->
+			<npc id="36611" castleSide="LIGHT" x="83312" y="147907" z="-3404" heading="16400" /> <!-- Proclaimer -->
+			<!-- Dark -->
+			<npc id="36655" castleSide="DARK" x="117095" y="144997" z="-2539" heading="32768" /> <!-- Chamberlain of Darkness -->
+		</spawns>
 		<siegeGuards>
 			<guard itemId="6064" type="SWORD" stationary="true" npcId="35030" npcMaxAmount="2" /> <!-- Greater Mercenary Posting Ticket (Sword/Stationary) -->
 			<guard itemId="6065" type="POLE" stationary="true" npcId="35031" npcMaxAmount="2" /> <!-- Greater Mercenary Posting Ticket (Spear/Stationary) -->

@@ -39,7 +39,7 @@ import org.w3c.dom.Node;
  */
 public final class CastleData implements IXmlReader
 {
-	private final Map<Integer, List<CastleSpawnHolder>> _castles = new HashMap<>();
+	private final Map<Integer, List<CastleSpawnHolder>> _spawns = new HashMap<>();
 	private static final Map<Integer, List<SiegeGuardHolder>> _siegeGuards = new HashMap<>();
 	
 	protected CastleData()
@@ -50,7 +50,7 @@ public final class CastleData implements IXmlReader
 	@Override
 	public void load()
 	{
-		_castles.clear();
+		_spawns.clear();
 		_siegeGuards.clear();
 		parseDatapackDirectory("data/castles", true);
 	}
@@ -71,15 +71,15 @@ public final class CastleData implements IXmlReader
 						{
 							final List<CastleSpawnHolder> spawns = new ArrayList<>();
 							
-							if ("spawn".equals(tpNode.getNodeName()))
+							if ("spawns".equals(tpNode.getNodeName()))
 							{
-								final CastleSide side = parseEnum(tpNode.getAttributes(), CastleSide.class, "castleSide", CastleSide.NEUTRAL);
 								for (Node npcNode = tpNode.getFirstChild(); npcNode != null; npcNode = npcNode.getNextSibling())
 								{
 									if ("npc".equals(npcNode.getNodeName()))
 									{
 										final NamedNodeMap np = npcNode.getAttributes();
 										final int npcId = parseInteger(np, "id");
+										final CastleSide side = parseEnum(np, CastleSide.class, "castleSide", CastleSide.NEUTRAL);
 										final int x = parseInteger(np, "x");
 										final int y = parseInteger(np, "y");
 										final int z = parseInteger(np, "z");
@@ -88,7 +88,7 @@ public final class CastleData implements IXmlReader
 										spawns.add(new CastleSpawnHolder(npcId, side, x, y, z, heading));
 									}
 								}
-								_castles.put(castleId, spawns);
+								_spawns.put(castleId, spawns);
 							}
 							else if ("siegeGuards".equals(tpNode.getNodeName()))
 							{
@@ -119,7 +119,7 @@ public final class CastleData implements IXmlReader
 	
 	public final List<CastleSpawnHolder> getSpawnsForSide(int castleId, CastleSide side)
 	{
-		return _castles.getOrDefault(castleId, Collections.emptyList()).stream().filter(s -> s.getSide() == side).collect(Collectors.toList());
+		return _spawns.getOrDefault(castleId, Collections.emptyList()).stream().filter(s -> s.getSide() == side).collect(Collectors.toList());
 	}
 	
 	public final List<SiegeGuardHolder> getSiegeGuardsForCastle(int castleId)
@@ -133,8 +133,8 @@ public final class CastleData implements IXmlReader
 	}
 	
 	/**
-	 * Gets the single instance of TeleportersData.
-	 * @return single instance of TeleportersData
+	 * Gets the single instance of CastleData.
+	 * @return single instance of CastleData
 	 */
 	public static CastleData getInstance()
 	{
