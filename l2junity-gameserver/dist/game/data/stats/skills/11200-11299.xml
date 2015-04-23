@@ -40,9 +40,11 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-100" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11225" levels="7" name="Physical Soul Barrier">
+
 		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 20 sec., P. Def. + 5000. -->
@@ -52,6 +54,7 @@
 		<set name="mpConsume" val="498" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="204" />
 		<set name="reuseDelay" val="200000" />
 	</skill>
 	<skill id="11226" levels="4" name="Superior Wizardry">
@@ -71,6 +74,7 @@
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="15000" />
+		<set name="effectPoint" val="-709" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11242" levels="1" name="Shadow Snare Zone">
@@ -79,6 +83,7 @@
 		<set name="icon" val="icon.skill1469" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="-709" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11245" levels="1" name="Sampling">
@@ -88,6 +93,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-696" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11247" levels="1" name="Heavy Hit">
@@ -100,6 +106,7 @@
 		<set name="hitTime" val="3380" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="3000" />
+		<set name="effectPoint" val="-687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11248" levels="1" name="Heavy Hit">
@@ -112,6 +119,7 @@
 		<set name="hitTime" val="1830" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="3000" />
+		<set name="effectPoint" val="-687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11249" levels="1" name="Heavy Hit">
@@ -124,6 +132,7 @@
 		<set name="hitTime" val="3700" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="3000" />
+		<set name="effectPoint" val="-687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11250" levels="1" name="Heavy Hit">
@@ -136,6 +145,7 @@
 		<set name="hitTime" val="3700" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="3000" />
+		<set name="effectPoint" val="-687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11251" levels="10" name="Superior Weapon Mastery">
@@ -216,6 +226,7 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11259" levels="8" name="Mark of Weakness">
+		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 -709 -709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Weakens target for 10 seconds. Decreases 326 HP per second, P. Def. by 30%, M. Def. by 30%, and Debuff Resistance by 30%. -->
 		<table name="#mpConsumes"> 54 58 62 66 70 74 78 82 </table>
@@ -228,9 +239,11 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11260" levels="5" name="Mark of Void">
+		<table name="#effectPoint"> -692 -698 -704 -708 -709 -709 -709 -709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Carves a mark linked to the Void Dimension onto target and steals their life force. For 10 seconds, decreases HP by 326 every second and absorbs 50% of the damage inflicted as HP/MP for yourself and your servitor(s). Absorbs 25% of the inflicted damage during PvP. -->
 		<table name="#mpConsumes"> 54 60 66 72 78 </table>
@@ -243,9 +256,11 @@
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11261" levels="6" name="Mark of Plague">
+		<table name="#effectPoint"> -692 -698 -704 -708 -709 -709 -709 -709 -709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Carves a mark linked to the cursed dimension on target. For 10 seconds, decreases HP by 326 every second and decreases the power of incoming Heals. -->
 		<table name="#mpConsumes"> 54 58 64 70 76 82 </table>
@@ -258,9 +273,11 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11262" levels="6" name="Mark of Trick">
+		<table name="#effectPoint"> -692 -698 -704 -708 -709 -709 -709 -709 -709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Carves a mark linked to the dupery dimension on target. For 10 seconds, decreases HP by 326 every second. Has a 25% of causing target to fail to use a skill. -->
 		<table name="#mpConsumes"> 54 56 62 68 74 80 </table>
@@ -273,9 +290,11 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11263" levels="7" name="Invoke">
+		<table name="#effectPoint"> -700 -704 -707 -709 -709 -709 -709 -709 -709 -709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Calls forth the fist of a Giant from the outer world to inflict powerful damage on target and nearby enemies with 147 power. -->
 		<table name="#mpConsumes"> 227 236 245 255 265 276 286 </table>
@@ -287,9 +306,11 @@
 		<set name="hitTime" val="2560" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="15000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11264" levels="4" name="Strong Will">
+		<table name="#effectPoint"> 696 702 707 709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Consume HP to recover 200 MP. Dispels debuffs and escapes immobility. -->
 		<table name="#hpConsumes"> 400 420 440 460 </table>
@@ -300,6 +321,7 @@
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="60000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11265" levels="1" name="Summon Team Mate">
@@ -313,6 +335,7 @@
 		<set name="hitTime" val="1390" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="60000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11266" levels="4" name="Summon Death Gate">
@@ -330,6 +353,7 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11267" levels="3" name="Spirit of Naviarope">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Transform into Naviarope. For 5 minutes, M. Def. and P. Def. + 50%; and Bow/Crossbow Resistance + 50% using his powerful skills. -->
 		<set name="icon" val="icon.skill11267" />
@@ -339,6 +363,7 @@
 		<set name="hitTime" val="4000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="3600000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11268" levels="8" name="Summon Avenging Cubic">
@@ -378,6 +403,7 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11271" levels="8" name="Mark Retriever">
+		<table name="#effectPoint"> -696 -700 -704 -707 -709 -709 -709 -709 -709 -709 -709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Retrieves any Mark of Weakness, Mark of Plague, or Mark of Trick from target. Inflicts damage according to the number of retrieved marks. -->
 		<table name="#mpConsumes"> 82 84 88 92 96 100 104 108 </table>
@@ -389,6 +415,7 @@
 		<set name="hitTime" val="1760" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11272" levels="1" name="Replace">
@@ -402,9 +429,11 @@
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="60000" />
+		<set name="effectPoint" val="709" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11273" levels="5" name="Exile">
+		<table name="#effectPoint"> -687 -694 -700 -705 -709 -713 -717 -721 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Banishes target to another dimension. The exiled target becomes incapacitated and invincible to some attacks, skills, and debuffs. Decreases HP by 353 per second. -->
 		<table name="#mpConsumes"> 78 83 87 92 97 </table>
@@ -417,6 +446,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11274" levels="4" name="Summon Barrier">
@@ -433,6 +463,7 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11275" levels="2" name="Mark Flare">
+		<table name="#effectPoint"> -707 -709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts powerful magic damage on target. -->
 		<table name="#mpConsumes"> 52 53 </table>
@@ -444,9 +475,11 @@
 		<set name="hitTime" val="2500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="1000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11276" levels="6" name="Dimensional Binding">
+
 		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Binds target midair in another dimension. -->
@@ -457,6 +490,7 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="10000" />
 		<set name="reuseDelay" val="300000" />
+		<set name="effectPoint" val="-707" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11277" levels="4" name="Sense of Loyalty">
@@ -469,6 +503,7 @@
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="11278" levels="9" name="Bear Claw">
+		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Provokes the enemy and inflicts damage. -->
 		<table name="#mpConsumes"> 79 81 84 86 89 92 95 98 99 </table>
@@ -480,9 +515,11 @@
 		<set name="hitTime" val="1560" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="15000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11279" levels="9" name="Bear Tumbling">
+		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Rolls over at the same spot to give a shock to the ground and temporarily stops nearby targets from moving. -->
 		<table name="#mpConsumes"> 332 337 349 360 372 384 396 408 414 </table>
@@ -493,9 +530,11 @@
 		<set name="hitTime" val="1660" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="7000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11280" levels="9" name="Cougar Bite">
+		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Bites target to inflict damage. -->
 		<table name="#mpConsumes"> 79 81 84 86 89 92 95 98 99 </table>
@@ -506,9 +545,11 @@
 		<set name="castRange" val="50" />
 		<set name="hitTime" val="1560" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="11281" levels="9" name="Cougar Pounce">
+		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Jumps to inflict damage on targets within a certain range. Speed - 100. Can be used when below 200 grids. -->
 		<table name="#mpConsumes"> 194 197 204 210 217 224 231 238 242 </table>
@@ -520,9 +561,11 @@
 		<set name="hitTime" val="660" />
 		<set name="coolTime" val="600" />
 		<set name="reuseDelay" val="7000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11282" levels="9" name="Reaper Touch">
+		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage on the enemy and absorbs 20% of damage as HP. -->
 		<table name="#mpConsumes"> 56 57 59 61 64 66 69 71 73 </table>
@@ -534,9 +577,11 @@
 		<set name="hitTime" val="2560" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11283" levels="9" name="Reaper Power">
+		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Creates a death space near the enemy to inflict damage. -->
 		<table name="#mpConsumes"> 218 222 231 241 250 260 270 281 286 </table>
@@ -548,9 +593,11 @@
 		<set name="hitTime" val="2560" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11284" levels="4" name="Naviarope Smash">
+		<table name="#effectPoint"> -700 -704 -707 -709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts a powerful attack on target. -->
 		<table name="#mpConsumes"> 93 96 99 99 </table>
@@ -561,9 +608,11 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1760" />
 		<set name="coolTime" val="300" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="11285" levels="4" name="Naviarope Power">
+		<table name="#effectPoint"> -700 -704 -707 -709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Uses the authority of Naviarope to inflict powerful damage on nearby targets. -->
 		<table name="#mpConsumes"> 372 383 395 395 </table>
@@ -573,6 +622,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1760" />
 		<set name="coolTime" val="300" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="15000" />
 	</skill>
 	<skill id="11286" levels="1" name="Forced Summon">
@@ -607,6 +657,7 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11289" levels="4" name="Gate Root">
+
 		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Temporarily stops nearby enemies from moving. -->
@@ -617,6 +668,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="4000" />
+		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11290" levels="1" name="Summon Hodling">
@@ -633,6 +685,7 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11291" levels="4" name="Gate Vortex">
+
 		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts magic damage on nearby enemies. -->
@@ -643,6 +696,7 @@
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="4000" />
+		<set name="effectPoint" val="-687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11292" levels="8" name="Cubic Cleanse">
@@ -652,6 +706,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="600" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11293" levels="8" name="Cubic Cancellation">
@@ -661,9 +716,11 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="600" />
+		<set name="effectPoint" val="-687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11294" levels="11" name="Cubic Root">
+
 		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Temporarily stops the enemy from moving. -->
@@ -672,6 +729,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="600" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11295" levels="10" name="Superior Light Armor Mastery">
@@ -683,6 +741,7 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="11296" levels="6" name="Mass Exile">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Banishes target and nearby enemies to another dimension. The exiled targets become incapacitated and invincible to some attacks, skills, and debuffs. Decreases HP by 282 per second. -->
 		<table name="#mpConsumes"> 102 106 112 118 125 132 </table>
@@ -695,6 +754,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="300000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11297" levels="4" name="Blessing of the Giants">
@@ -711,6 +771,7 @@
 		<set name="reuseDelay" val="60000" />
 	</skill>
 	<skill id="11298" levels="8" name="Mark of Fire">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Carves a burning mark on target to inflict damage with 168 Power added to M. Atk. -->
 		<table name="#mpConsumes"> 63 65 68 70 73 76 79 82 </table>
@@ -722,6 +783,7 @@
 		<set name="hitTime" val="3360" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="-500" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11299" levels="1" name="Servitor Balance Life">
@@ -735,6 +797,7 @@
 		<set name="hitTime" val="5000" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="30000" />
+		<set name="effectPoint" val="398" />
 		<set name="isMagic" val="1" />
 	</skill>
 </list>

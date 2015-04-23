@@ -148,6 +148,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="coolTime" val="800" />
 		<set name="reuseDelay" val="30000" />
+		<set name="effectPoint" val="1000" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="21321" levels="1" name="Desperate Exorcism - Trigger">
@@ -155,6 +156,7 @@
 		<!-- Has a 30% of removing the curse. -->
 		<set name="icon" val="icon.skill1551" />
 		<set name="operateType" val="P" />
+		<set name="effectPoint" val="1000" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21322" levels="1" name="Cancel Transformation">
@@ -164,6 +166,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="600" />
+		<set name="effectPoint" val="1000" />
 		<set name="hitTime" val="100" />
 	</skill>
 	<skill id="21323" levels="1" name="Restore the Crystal of Protection">
@@ -174,6 +177,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="350" />
 		<set name="hitTime" val="5000" />
+		<set name="effectPoint" val="1000" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="21324" levels="1" name="Einhasad's Authority">
@@ -257,6 +261,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="7200000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="21335" levels="2" name="Adenia's Damage Reflect">
@@ -265,6 +270,7 @@
 		<set name="icon" val="icon.skill3080" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="379" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="21336" levels="2" name="Adenia's Damage Reflect">
@@ -276,6 +282,7 @@
 		<set name="mpConsume" val="25" />
 		<set name="hitTime" val="4000" />
 		<set name="reuseDelay" val="600000" />
+		<set name="effectPoint" val="379" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="21337" levels="1" name="Adenia's Duel Might">
@@ -306,6 +313,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="500" />
+		<set name="effectPoint" val="10" />
 		<set name="reuseDelay" val="1800000" />
 	</skill>
 	<skill id="21341" levels="1" name="Adenia's Shield">
@@ -316,6 +324,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="48" />
 		<set name="hitTime" val="4000" />
+		<set name="effectPoint" val="440" />
 		<set name="reuseDelay" val="300000" />
 	</skill>
 	<skill id="21342" levels="1" name="Adenia's Magic Barrier">
@@ -326,6 +335,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="48" />
 		<set name="hitTime" val="4000" />
+		<set name="effectPoint" val="440" />
 		<set name="reuseDelay" val="300000" />
 	</skill>
 	<skill id="21343" levels="1" name="Adenia's Barrier">
@@ -336,6 +346,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="48" />
 		<set name="hitTime" val="4000" />
+		<set name="effectPoint" val="440" />
 		<set name="reuseDelay" val="300000" />
 	</skill>
 	<skill id="21344" levels="2" name="Adenia's Invincibility">
@@ -384,6 +395,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="-2" />
 		<set name="hitTime" val="10000" />
+		<set name="effectPoint" val="1000" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="21349" levels="1" name="Memory Shot">
@@ -522,6 +534,7 @@
 		<set name="icon" val="BranchSys2.icon.g_twilight_gem" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="21366" levels="1" name="Wondrous Hunt Dye">
@@ -544,12 +557,14 @@
 		<set name="icon" val="BranchSys3.icon1.g_premium_hena_etc_slaughter" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="21369" levels="1" name="Cancel Wondrous Dye Effect">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="BranchSys3.icon1.g_premium_hena_etc_slaughter" />
 		<set name="operateType" val="A1" />
+		<set name="effectPoint" val="1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21370" levels="5" name="Talisman - Slaughterer">
@@ -558,6 +573,7 @@
 		<set name="icon" val="BranchSys2.icon.g_twilight_gem" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="21371" levels="5" name="Talisman - Conquerer">
@@ -566,6 +582,7 @@
 		<set name="icon" val="BranchSys2.icon.g_twilight_gem" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="21372" levels="5" name="Talisman - Outlaw">
@@ -574,6 +591,7 @@
 		<set name="icon" val="BranchSys2.icon.g_twilight_gem" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="21373" levels="1" name="Unequip Talisman - Hunter">
@@ -581,6 +599,7 @@
 		<!-- The Talisman's power fades. -->
 		<set name="icon" val="BranchSys2.icon.g_twilight_gem" />
 		<set name="operateType" val="A1" />
+		<set name="effectPoint" val="1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21374" levels="1" name="Unequip Talisman - Slaughterer">
@@ -588,6 +607,7 @@
 		<!-- The Talisman's power fades. -->
 		<set name="icon" val="BranchSys2.icon.g_twilight_gem" />
 		<set name="operateType" val="A1" />
+		<set name="effectPoint" val="1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21375" levels="1" name="Unequip Talisman - Conquerer">
@@ -595,6 +615,7 @@
 		<!-- The Talisman's power fades. -->
 		<set name="icon" val="BranchSys2.icon.g_twilight_gem" />
 		<set name="operateType" val="A1" />
+		<set name="effectPoint" val="1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21376" levels="1" name="Unequip Talisman - Outlaw">
@@ -602,6 +623,7 @@
 		<!-- The Talisman's power fades. -->
 		<set name="icon" val="BranchSys2.icon.g_twilight_gem" />
 		<set name="operateType" val="A1" />
+		<set name="effectPoint" val="1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21377" levels="3" name="Adenian Tattoo: Protection">
@@ -611,6 +633,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="500" />
+		<set name="effectPoint" val="10" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="21378" levels="3" name="Adenian Tattoo: Valor">
@@ -620,6 +643,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="500" />
+		<set name="effectPoint" val="10" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="21379" levels="3" name="Adenian Tattoo: Deviance">
@@ -629,6 +653,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="500" />
+		<set name="effectPoint" val="10" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="21380" levels="1" name="Adenian Tattoo: Speed">
@@ -657,6 +682,7 @@
 		<!-- Transforms into Pirate Captain Uthanka. -->
 		<set name="icon" val="icon.skilltransform3" />
 		<set name="operateType" val="A2" />
+		<set name="effectPoint" val="1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21384" levels="1" name="Cancel Transformation">
@@ -665,12 +691,14 @@
 		<set name="icon" val="icon.skilltransform2" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="10" />
 		<set name="hitTime" val="2500" />
 	</skill>
 	<skill id="21385" levels="1" name="Cancel Dye Effect">
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="BranchSys2.icon.g_twilight_gem" />
 		<set name="operateType" val="A1" />
+		<set name="effectPoint" val="1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21386" levels="1" name="Parade Firecracker">

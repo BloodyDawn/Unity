@@ -28,6 +28,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="3600000" />
+		<set name="effectPoint" val="100" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="9404" levels="1" name="Wondrous Herb of Power">
@@ -37,6 +38,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="100" />
+		<set name="effectPoint" val="100" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="9405" levels="1" name="Wondrous Herb of Magic">
@@ -46,6 +48,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="100" />
+		<set name="effectPoint" val="100" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="9406" levels="1" name="Ingredient and Hardener Pouch (R-grade)">
@@ -101,6 +104,7 @@
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="3000" />
 	</skill>
 	<skill id="9413" levels="1" name="Agathion Cute Trick - Jang Hyuk">
@@ -109,6 +113,7 @@
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="3800" />
 	</skill>
 	<skill id="9414" levels="1" name="Agathion Cute Trick - Kim Sooro">
@@ -117,6 +122,7 @@
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="3400" />
 	</skill>
 	<skill id="9415" levels="1" name="Agathion Cute Trick - Park Jaebum">
@@ -125,6 +131,7 @@
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="6200" />
 	</skill>
 	<skill id="9416" levels="1" name="Agathion Cute Trick - Kim Shinyoung">
@@ -133,6 +140,7 @@
 		<set name="icon" val="icon.skill_agathion_cute" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="3700" />
 	</skill>
 	<skill id="9417" levels="1" name="Dimension Keeper's Blue Box">
@@ -268,6 +276,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="1800000" />
+		<set name="effectPoint" val="100" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="9439" levels="1" name="Scroll: 10,000 Individual Fame">
@@ -323,6 +332,7 @@
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="castRange" val="230" />
 	</skill>
 	<skill id="9445" levels="1" name="Summoning Stone">
@@ -375,6 +385,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="24000" />
+		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9452" levels="1" name="Item Skill: Dash">
@@ -384,6 +395,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="500" />
+		<set name="effectPoint" val="692" />
 		<set name="reuseDelay" val="90000" />
 	</skill>
 	<skill id="9453" levels="1" name="Item Skill: Undying Will">
@@ -404,6 +416,7 @@
 		<set name="castRange" val="1000" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="240000" />
+		<set name="effectPoint" val="-1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9455" levels="1" name="Item Skill: Disable Target">
@@ -416,6 +429,7 @@
 		<set name="reuseDelay" val="480000" />
 	</skill>
 	<skill id="9456" levels="3" name="Item Skill: Damage Reflect Resistance">
+		<table name="#effectPoint"> 379 438 495 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 5 sec., Damage Reflect Resistance + 10%. -->
 		<set name="icon" val="icon.active_damage_shield1" />
@@ -423,6 +437,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="4000" />
 		<set name="reuseDelay" val="4000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="9459" levels="1" name="Tauti's Wrath">
@@ -435,6 +450,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="15000" />
+		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9460" levels="1" name="Tauti's Authority">
@@ -448,6 +464,7 @@
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="15000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9461" levels="1" name="Scroll of Escape: Guillotine Fortress">
@@ -559,6 +576,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="180000" />
+		<set name="effectPoint" val="-700" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9479" levels="1" name="Extra Pass">
@@ -617,6 +635,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="1800000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="9488" levels="1" name="Holiday Blessing Stage 1">
@@ -626,6 +645,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
+		<set name="effectPoint" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9489" levels="1" name="Holiday Blessing Stage 2">
@@ -635,6 +655,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
+		<set name="effectPoint" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9490" levels="1" name="Holiday Blessing Stage 3">
@@ -644,6 +665,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
+		<set name="effectPoint" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9491" levels="1" name="Holiday Blessing Stage 4">
@@ -653,6 +675,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
+		<set name="effectPoint" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9492" levels="1" name="Holiday Blessing Stage 5">
@@ -662,6 +685,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
+		<set name="effectPoint" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9493" levels="1" name="Lingering Holiday Blessing Stage 1">
@@ -670,6 +694,7 @@
 		<set name="icon" val="BranchSys.icon.br_xmas_reward_buff_i00" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9494" levels="1" name="Lingering Holiday Blessing Stage 2">
@@ -678,6 +703,7 @@
 		<set name="icon" val="BranchSys.icon.br_xmas_reward_buff_i00" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9495" levels="1" name="Lingering Holiday Blessing Stage 3">
@@ -686,6 +712,7 @@
 		<set name="icon" val="BranchSys.icon.br_xmas_reward_buff_i00" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9496" levels="1" name="Lingering Holiday Blessing Stage 4">
@@ -694,6 +721,7 @@
 		<set name="icon" val="BranchSys.icon.br_xmas_reward_buff_i00" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9497" levels="1" name="Lingering Holiday Blessing Stage 5">
@@ -702,6 +730,7 @@
 		<set name="icon" val="BranchSys.icon.br_xmas_reward_buff_i00" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="9498" levels="1" name="Santa Girl's Cloak">

@@ -37,6 +37,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -60,6 +61,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="6000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -76,6 +78,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-1" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="10250" levels="1" name="Heavy Hit">
@@ -86,6 +89,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="600" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-1" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="10251" levels="1" name="Superior Weapon Mastery" enchantGroup1="10">
@@ -355,6 +359,7 @@
 		</for>
 	</skill>
 	<skill id="10258" levels="8" name="Armor Destruction" enchantGroup1="10" enchantGroup2="10" enchantGroup3="10" enchantGroup4="10" enchantGroup5="10" enchantGroup6="10" enchantGroup7="10" enchantGroup8="10">
+		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -710 -711 -712 </table>
 		<!-- Attacks target with 11159 Power added to P. Atk. Weakens P. Def. and absorbs Momentum. Requires a sword, blunt, spear, fist, dual blunt weapon, or dualsword weapon to be equipped. Over-hit. Critical. -->
 		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#magicLvl"> 85 87 89 90 92 93 94 95 </table>
@@ -383,6 +388,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant1 name="mpConsume" val="#ench2MpConsume" />
@@ -424,6 +430,7 @@
 		</for>
 	</skill>
 	<skill id="10260" levels="8" name="Mega Strike" enchantGroup1="10" enchantGroup2="10" enchantGroup3="10" enchantGroup4="10" enchantGroup5="10" enchantGroup6="10" enchantGroup7="10" enchantGroup8="10">
+		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -710 -711 -712 </table>
 		<!-- Attacks target with 19893 added to P. Atk. and increases damage as Momentum increases. Increases damage by 30% when Momentum is used up to 3. Requires a sword, blunt, spear, fist, dual blunt, or dualsword Over-hit. Critical. Ignores Shield Defense. -->
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 65 66 69 71 73 76 78 80 </table>
@@ -444,6 +451,7 @@
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant1 name="mpConsume" val="#ench2MpConsume" />
@@ -486,6 +494,7 @@
 		</for>
 	</skill>
 	<skill id="10262" levels="6" name="Power Bomber" enchantGroup1="10" enchantGroup2="10" enchantGroup3="10" enchantGroup4="10" enchantGroup5="10" enchantGroup6="10" enchantGroup7="10" enchantGroup8="10">
+		<table name="#effectPoint"> -700 -704 -707 -709 -709 -709 -709 -709 -709 </table>
 		<!-- Inflicts a powerful strike on target with 20483 Power added to P. Atk., knocking them down for 3 sec., and increases damage as Momentum increases. Increases damage by 30% when Momentum is used up to 3. Requires a sword, blunt, spear, fist, dual blunt, or dualsword. Critical. Ignores Shield Defense. -->
 		<table name="#abnormalLvls"> 1 2 3 4 5 6 </table>
 		<table name="#magicLvl"> 85 88 91 94 97 99 </table>
@@ -512,6 +521,7 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<set name="isDebuff" val="true" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="trait" val="KNOCKDOWN" />
 		<enchant1 name="mpConsume" val="#ench2MpConsume" />
 		<enchant1 name="power" val="#enchPower" />
@@ -549,6 +559,7 @@
 		</for>
 	</skill>
 	<skill id="10263" levels="8" name="Hurricane Blaster" enchantGroup1="10" enchantGroup2="10" enchantGroup3="10" enchantGroup4="10" enchantGroup5="10" enchantGroup6="10" enchantGroup7="10" enchantGroup8="10">
+		<table name="#effectPoint"> -692 -696 -700 -704 -707 -709 -709 -709 -709 -709 -709 </table>
 		<!-- Attacks target with 551 power, lowers P. Def., and absorbs Momentum. Requires a sword, blunt, spear, fist, dual blunt, or dualsword. -->
 		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
@@ -574,6 +585,7 @@
 		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant1 name="mpConsume" val="#ench2MpConsume" />
@@ -684,6 +696,7 @@
 		</for>
 	</skill>
 	<skill id="10266" levels="8" name="Giant Punch" enchantGroup1="10" enchantGroup2="10" enchantGroup3="10" enchantGroup4="10">
+		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 -709 -709 </table>
 		<!-- Strikes down at the ground with a fist to Knock Down nearby enemies for 5 sec. Requires a sword, blunt, spear, fist, dual blunt weapon, or dualsword weapon to be equipped. -->
 		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#ench1MpConsume"> 91 87 83 79 76 72 68 64 60 57 </table>
@@ -710,6 +723,7 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="isDebuff" val="true" />
 		<set name="trait" val="KNOCKDOWN" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
 		<enchant1 name="mpConsume" val="#ench1MpConsume" />
 		<enchant2 name="activateRate" val="#ench2ActivateRates" />
@@ -741,6 +755,7 @@
 		</enchant4for>
 	</skill>
 	<skill id="10267" levels="6" name="Hurricane Rush">
+		<table name="#effectPoint"> -704 -709 -709 -709 -709 -709 -709 -709 -709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Shoulder charge target to Stun it for 3 seconds. Requires a sword, blunt, spear, fist, dual blunt weapon, or dualsword weapon to be equipped. -->
 		<table name="#mpConsumes"> 38 39 41 43 44 47 </table>
@@ -752,6 +767,7 @@
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="100" />
 		<set name="reuseDelay" val="15000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10268" levels="6" name="Rolling Thunder">
@@ -764,6 +780,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 	</skill>
 	<skill id="10269" levels="7" name="Jump Attack">
+		<table name="#effectPoint"> -696 -700 -704 -707 -709 -711 -711 -711 -711 -711 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Jumps to attack frontal enemies with 10508 Power added to P. Atk. and decreases their Speed by 180 for 5 seconds. The more Momentum used the more damage inflicted, up to a maximum of 5 Momentum levels. Requires a sword, blunt, spear, fist, dual blunt weapon, or dualsword weapon to be equipped. Over-hit. Critical. -->
 		<table name="#mpConsumes"> 111 114 118 122 126 130 134 </table>
@@ -775,6 +792,7 @@
 		<set name="hitTime" val="890" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10270" levels="1" name="Second Wind" enchantGroup1="10">
@@ -784,7 +802,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="MAX_HP_CP_UP" />
-		<set name="effectPoint" val="635" />
+		<set name="effectPoint" val="696" />
 		<set name="hitTime" val="1200" />
 		<set name="icon" val="icon.skill10270" />
 		<set name="magicLvl" val="93" />
@@ -819,9 +837,11 @@
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="4000" />
+		<set name="effectPoint" val="-709" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10273" levels="4" name="Lightning Disarm">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Disarms nearby enemies for 5 seconds. Lowers P. Atk. and M. Atk. by 10%. -->
 		<set name="icon" val="icon.skill10273" />
@@ -831,9 +851,11 @@
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="120000" />
+		<set name="effectPoint" val="-707" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10274" levels="4" name="Berserker">
+		<table name="#effectPoint"> 687 698 707 709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- You have reached your physical limit. Increases debuff resistance, Speed, P. Atk., Accuracy, P. Def., Atk. Spd., and Critical Damage. When target is killed, recovers HP by 20%. When HP falls below 60%, increases P. Atk. by 10% and Critical Rate by 100. When HP falls below 30%, increases P. Atk. by 30% and Critical Rate by an additional 300. Can be used when HP is below 70%. -->
 		<table name="#mpConsumes"> 38 41 45 47 </table>
@@ -843,9 +865,11 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="300000" />
 	</skill>
 	<skill id="10275" levels="4" name="Infinity Strike">
+
 		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts a powerful attack on target with 65085 Power added to P. Atk. Requires a sword, blunt, spear, fist, dual blunt weapon, or dualsword weapon to be equipped. Over-hit. Critical. -->
@@ -857,6 +881,7 @@
 		<set name="hitTime" val="5000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
+		<set name="effectPoint" val="-709" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10276" levels="1" name="Force of Nature">
@@ -868,9 +893,11 @@
 		<set name="mpConsume" val="38" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
+		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="60000" />
 	</skill>
 	<skill id="10277" levels="4" name="Final Cry">
+		<table name="#effectPoint"> 687 698 707 709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases P. Atk. + 20% and skill damage + 10% for 2 minutes. Increases general/skill attack damage + 5% during PvP. -->
 		<table name="#mpConsumes"> 38 41 45 47 </table>
@@ -880,6 +907,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="180000" />
 	</skill>
 	<skill id="10278" levels="8" name="Reduce Anger">
@@ -903,6 +931,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="42" />
 		<set name="hitTime" val="200" />
+		<set name="effectPoint" val="707" />
 		<set name="reuseDelay" val="300000" />
 	</skill>
 	<skill id="10280" levels="1" name="Momentum Charge">
@@ -914,6 +943,7 @@
 		<set name="mpConsume" val="58" />
 	</skill>
 	<skill id="10281" levels="2" name="Sonic Star">
+		<table name="#effectPoint"> -700 -704 -708 -712 -716 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks and knocks down nearby enemies at the speed of light with 44711 Power added to P. Atk. Requires a sword, blunt, spear, fist, dual blunt weapon, or dualsword weapon. Over-hit. Critical. -->
 		<table name="#mpConsumes"> 1103 1158 </table>
@@ -924,6 +954,7 @@
 		<set name="hitTime" val="7500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10283" levels="1" name="Increase Momentum">
@@ -950,6 +981,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="10000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="10286" levels="10" name="Superior Resistance">
@@ -961,6 +993,7 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="10287" levels="6" name="Rolling Thunder">
+		<table name="#effectPoint"> -702 -705 -708 -709 -709 -709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- HP decreases by 225 per second. -->
 		<set name="icon" val="icon.skill0494" />
@@ -968,9 +1001,11 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="3000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10288" levels="8" name="Hurricane Storm">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks near the enemy with 11557 Power added to P. Atk. Power - 10% when using a sword, dualsword, blunt, or fist weapon. Power + 50% when using a spear. Requires a sword, blunt, spear, fist weapon, dual blunt, or dualsword. Over-hit. Critical hit. -->
 		<table name="#mpConsumes"> 161 163 169 175 180 186 192 198 </table>
@@ -981,9 +1016,11 @@
 		<set name="castRange" val="500" />
 		<set name="hitTime" val="1790" />
 		<set name="coolTime" val="300" />
+		<set name="effectPoint" val="-709" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="10289" levels="4" name="Boost">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases skills' effect by 30% for 60 seconds and normal/skill attack damage by 5% during PvP. -->
 		<set name="icon" val="icon.skill10289" />
@@ -992,6 +1029,7 @@
 		<set name="mpConsume" val="143" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="200" />
+		<set name="effectPoint" val="673" />
 		<set name="reuseDelay" val="180000" />
 	</skill>
 	<skill id="10290" levels="8" name="Hurricane Slasher">
@@ -1003,6 +1041,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1800" />
+		<set name="effectPoint" val="-709" />
 		<set name="reuseDelay" val="7000" />
 	</skill>
 	<skill id="10291" levels="1" name="Feral Bear Cry" enchantGroup1="10" enchantGroup2="10">
@@ -1013,7 +1052,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="POSSESSION" />
-		<set name="effectPoint" val="438" />
+		<set name="effectPoint" val="707" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill10291" />
 		<set name="magicLvl" val="85" />
@@ -1048,7 +1087,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="POSSESSION" />
-		<set name="effectPoint" val="438" />
+		<set name="effectPoint" val="707" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill10292" />
 		<set name="magicLvl" val="85" />
@@ -1095,7 +1134,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="POSSESSION" />
-		<set name="effectPoint" val="438" />
+		<set name="effectPoint" val="707" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill10293" />
 		<set name="magicLvl" val="85" />
@@ -1132,7 +1171,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="POSSESSION" />
-		<set name="effectPoint" val="438" />
+		<set name="effectPoint" val="707" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill10294" />
 		<set name="magicLvl" val="85" />
@@ -1166,7 +1205,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="POSSESSION" />
-		<set name="effectPoint" val="438" />
+		<set name="effectPoint" val="707" />
 		<set name="hitTime" val="2000" />
 		<set name="icon" val="icon.skill10295" />
 		<set name="magicLvl" val="85" />
@@ -1200,6 +1239,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="38" />
 		<set name="hitTime" val="2000" />
+		<set name="effectPoint" val="707" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10297" levels="1" name="Spirit of the Slayer">
@@ -1210,11 +1250,12 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="38" />
 		<set name="hitTime" val="2000" />
+		<set name="effectPoint" val="707" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10298" levels="1" name="Power Revival">
 		<!-- Recovers all of your HP. -->
-		<set name="effectPoint" val="562" />
+		<set name="effectPoint" val="707" />
 		<set name="icon" val="icon.skill10298" />
 		<set name="operateType" val="A1" />
 		<set name="magicLvl" val="86" />
@@ -1236,6 +1277,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="40" />
+		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
 	</skill>
 </list>

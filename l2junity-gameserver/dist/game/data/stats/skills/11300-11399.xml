@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="11300" levels="4" name="Yoke Status">
+		<table name="#effectPoint"> -692 0 0 -692 -692 -692 </table>
 		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Momentarily immobilized midair. -->
@@ -8,6 +9,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="500" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11301" levels="8" name="Dimension Storm">
@@ -20,9 +22,11 @@
 		<set name="hitTime" val="2560" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
+		<set name="effectPoint" val="-704" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11302" levels="11" name="Servitor Major Heal">
+
 		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Heals the servitor with 1637 Power. -->
@@ -34,6 +38,7 @@
 		<set name="hitTime" val="3500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="3000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11303" levels="1" name="Mass Servitor Magic Barrier">
@@ -47,6 +52,7 @@
 		<set name="hitTime" val="3500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11304" levels="1" name="Mass Servitor Haste">
@@ -60,6 +66,7 @@
 		<set name="hitTime" val="3500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11305" levels="1" name="Mass Servitor Shield">
@@ -73,6 +80,7 @@
 		<set name="hitTime" val="3500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11306" levels="1" name="Mass Servitor Empower">
@@ -86,6 +94,7 @@
 		<set name="hitTime" val="3500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11307" levels="1" name="Mass Servitor Might">
@@ -99,6 +108,7 @@
 		<set name="hitTime" val="3500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11308" levels="1" name="Mass Servitor Wind Walk">
@@ -112,6 +122,7 @@
 		<set name="hitTime" val="3500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11309" levels="1" name="Mass Servitor Blessing">
@@ -125,9 +136,11 @@
 		<set name="hitTime" val="3500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11310" levels="2" name="Mass Servitor Blessing">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases all servitor's P. Def. by 4680 and M. Def. by 4212 for 60 seconds. -->
 		<set name="icon" val="icon.skill1299" />
@@ -138,6 +151,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="900000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11311" levels="3" name="Naviarope Strike">
@@ -150,6 +164,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-704" />
 		<set name="reuseDelay" val="4000" />
 	</skill>
 	<skill id="11312" levels="3" name="Naviarope Flame">
@@ -162,6 +177,7 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-704" />
 		<set name="reuseDelay" val="4000" />
 	</skill>
 	<skill id="11313" levels="3" name="Naviarope Explosion">
@@ -173,6 +189,7 @@
 		<set name="mpConsume" val="70" />
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-704" />
 		<set name="reuseDelay" val="4000" />
 	</skill>
 	<skill id="11314" levels="3" name="Corpse Blast">
@@ -186,6 +203,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-704" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11315" levels="1" name="Summon Defense">
@@ -218,6 +236,7 @@
 		<set name="hitTime" val="6500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="6000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11320" levels="8" name="Summon Wynn Kai the Cat">
@@ -270,6 +289,7 @@
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="15000" />
+		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11324" levels="8" name="Feline Stun">
@@ -283,6 +303,7 @@
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="15000" />
+		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11325" levels="8" name="Feline Bite">
@@ -296,6 +317,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="11326" levels="8" name="Feline Pounce">
@@ -310,6 +332,7 @@
 		<set name="hitTime" val="100" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11327" levels="8" name="Feline Touch">
@@ -323,6 +346,7 @@
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2200" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="11328" levels="8" name="Feline Power">
@@ -336,6 +360,7 @@
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2900" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="11329" levels="8" name="Summon Wynn Merrow">
@@ -388,6 +413,7 @@
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="15000" />
+		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11333" levels="8" name="Unicorn's Stun">
@@ -401,6 +427,7 @@
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="15000" />
+		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11334" levels="8" name="Unicorn's Bite">
@@ -414,6 +441,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="11335" levels="8" name="Unicorn's Pounce">
@@ -428,6 +456,7 @@
 		<set name="hitTime" val="100" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11336" levels="8" name="Unicorn's Touch">
@@ -441,6 +470,7 @@
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2200" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="11337" levels="8" name="Unicorn's Power">
@@ -454,6 +484,7 @@
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2900" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="11338" levels="8" name="Summon Wynn Nightshade">
@@ -506,6 +537,7 @@
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="15000" />
+		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11342" levels="8" name="Phantom Stun">
@@ -519,6 +551,7 @@
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="15000" />
+		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11343" levels="8" name="Phantom Bite">
@@ -532,6 +565,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="11344" levels="8" name="Phantom Pounce">
@@ -546,6 +580,7 @@
 		<set name="hitTime" val="100" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11345" levels="8" name="Phantom Touch">
@@ -559,6 +594,7 @@
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2200" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="11346" levels="8" name="Phantom Power">
@@ -572,9 +608,11 @@
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2900" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="11347" levels="4" name="Greater Servitor Haste">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 min., all servitors' Atk. Spd. + 10%. -->
 		<table name="#mpConsumes"> 61 67 73 79 </table>
@@ -586,9 +624,11 @@
 		<set name="hitTime" val="3500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11348" levels="4" name="Servitor Death Whisper">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 min., all servitors' Critical Damage + 10%. -->
 		<table name="#mpConsumes"> 61 67 73 79 </table>
@@ -600,9 +640,11 @@
 		<set name="hitTime" val="3500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11349" levels="4" name="Greater Servitor Might">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 min., all servitors' P. Atk. + 10%. -->
 		<table name="#mpConsumes"> 61 67 73 79 </table>
@@ -614,9 +656,11 @@
 		<set name="hitTime" val="3500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11350" levels="4" name="Arcane Rage">
+		<table name="#effectPoint"> -700 -704 -707 -709 -711 -713 -715 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Use Arcana Wrath to inflict severe damage on a target with 188 Power added to M. Atk. -->
 		<table name="#mpConsumes"> 53 60 67 70 </table>
@@ -628,6 +672,7 @@
 		<set name="hitTime" val="2780" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2400" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11351" levels="5" name="Arcane Link">
@@ -660,6 +705,7 @@
 		</for>
 	</skill>
 	<skill id="11353" levels="4" name="Elemental Rage">
+		<table name="#effectPoint"> -700 -704 -707 -709 -711 -713 -715 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Use Elemental Wrath to inflict severe damage on a target with 188 Power added to M. Atk. -->
 		<table name="#mpConsumes"> 53 60 67 70 </table>
@@ -671,6 +717,7 @@
 		<set name="hitTime" val="2780" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2400" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11354" levels="5" name="Elemental Link">
@@ -691,6 +738,7 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="11356" levels="4" name="Spectral Rage">
+		<table name="#effectPoint"> -700 -704 -707 -709 -711 -713 -715 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Use Spectral Wrath to inflict severe damage on a target with 188 Power added to M. Atk. -->
 		<table name="#mpConsumes"> 53 60 67 70 </table>
@@ -702,6 +750,7 @@
 		<set name="hitTime" val="2780" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2400" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11357" levels="5" name="Spectral Link">
@@ -787,6 +836,7 @@
 		<set name="reuseDelay" val="4000" />
 	</skill>
 	<skill id="11365" levels="3" name="Summon Demonic Crucifix">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks target with 518 Power added to M. Atk. and casts a curse that decreases target's Atk./Casting Spd. by 30% and Speed by 180. Consumes 3 Spirit Ores. -->
 		<table name="#mpConsumes"> 394 382 394 </table>
@@ -799,6 +849,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-700" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11366" levels="3" name="Spectral Curse">
@@ -811,6 +862,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="4000" />
+		<set name="effectPoint" val="-709" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11367" levels="3" name="Arcane Protection">
@@ -925,6 +977,7 @@
 		<set name="hitTime" val="100" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="-709" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11376" levels="3" name="Commando Double Smash">
@@ -939,9 +992,11 @@
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="7000" />
+		<set name="effectPoint" val="-709" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11377" levels="3" name="Witch Cat Power">
+		<table name="#effectPoint"> -3541 -3561 -3561 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage to nearby enemies with 31903 Power added to P. Atk. -->
 		<table name="#mpConsumes"> 172 173 174 </table>
@@ -952,9 +1007,11 @@
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="11378" levels="3" name="Elemental Slam">
+		<table name="#effectPoint"> -3541 -3561 -3561 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage to nearby enemies with 30623 Power added to P. Atk. and pushes them back. -->
 		<table name="#mpConsumes"> 172 173 174 </table>
@@ -966,9 +1023,11 @@
 		<set name="hitTime" val="2500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="15000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11379" levels="3" name="Lancer Rush">
+		<table name="#effectPoint"> -3541 -3561 -3561 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Rushes forward to target inflicting damage with 16198 Power added to P. Atk. And stuns them for 5 seconds. -->
 		<table name="#mpConsumes"> 86 86 87 </table>
@@ -980,9 +1039,11 @@
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11380" levels="3" name="Power Stump">
+		<table name="#effectPoint"> -3541 -3561 -3561 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage to nearby enemies with 22677 Power added to P. Atk. and blows them away. -->
 		<table name="#mpConsumes"> 86 86 87 </table>
@@ -992,9 +1053,11 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="7000" />
 	</skill>
 	<skill id="11381" levels="3" name="Cherub Power">
+		<table name="#effectPoint"> -3541 -3561 -3561 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage to nearby enemies with 31903 Power added to P. Atk. -->
 		<table name="#mpConsumes"> 172 173 174 </table>
@@ -1005,9 +1068,11 @@
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="11382" levels="3" name="Multiple Icicles">
+		<table name="#effectPoint"> -3541 -3561 -3561 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage to target and nearby enemies with 34449 Power added to P. Atk., and decreases Speed by 100 for 5 seconds. -->
 		<table name="#mpConsumes"> 172 173 174 </table>
@@ -1019,6 +1084,7 @@
 		<set name="hitTime" val="2500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="15000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11383" levels="3" name="Phantom Sword Attack">
@@ -1032,6 +1098,7 @@
 		<set name="castRange" val="50" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-709" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="11384" levels="3" name="Phantom Blow">
@@ -1045,6 +1112,7 @@
 		<set name="castRange" val="50" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-709" />
 		<set name="reuseDelay" val="7000" />
 	</skill>
 	<skill id="11385" levels="3" name="Phantom Spike">
@@ -1058,6 +1126,7 @@
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-709" />
 		<set name="reuseDelay" val="7000" />
 	</skill>
 	<skill id="11386" levels="3" name="Phantom Crash">
@@ -1071,6 +1140,7 @@
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-709" />
 		<set name="reuseDelay" val="7000" />
 	</skill>
 	<skill id="11387" levels="1" name="Arcana's Call">
@@ -1084,6 +1154,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="300000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11388" levels="1" name="Lord of Arcana">
@@ -1097,6 +1168,7 @@
 		<set name="hitTime" val="300" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="300000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11389" levels="1" name="Elemental's Call">
@@ -1110,6 +1182,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="300000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11390" levels="1" name="Lord of Elemental">
@@ -1123,6 +1196,7 @@
 		<set name="hitTime" val="300" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="300000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11391" levels="1" name="Spectral's Call">
@@ -1136,6 +1210,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="300000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11392" levels="1" name="Lord of Spectral">
@@ -1149,6 +1224,7 @@
 		<set name="hitTime" val="300" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="300000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 	</skill>
 </list>

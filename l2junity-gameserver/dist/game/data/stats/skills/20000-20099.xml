@@ -3,11 +3,13 @@
 	<skill id="20000" levels="1" name="Block Checker Search">
 		<!-- "If you open your heart and look afar, you can find a hidden treasure chest." -->
 		<set name="operateType" val="P" />
+		<set name="effectPoint" val="1000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="20001" levels="1" name="Block Checker Hammer Punch">
 		<!-- Slams down on the treasure chest with a hammer to open it. -->
 		<set name="operateType" val="P" />
+		<set name="effectPoint" val="-1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="20002" levels="1" name="Dragon Kick">
@@ -22,6 +24,7 @@
 		<set name="power" val="3420" />
 		<set name="reuseDelay" val="5000" /> <!-- FIXME: value unconfirmed -->
 		<set name="rideState" val="NONE" />
+		<set name="effectPoint" val="-347" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="FatalBlow" />
@@ -38,6 +41,7 @@
 		<set name="power" val="3420" />
 		<set name="reuseDelay" val="5000" /> <!-- FIXME: value unconfirmed -->
 		<set name="rideState" val="NONE" />
+		<set name="effectPoint" val="-348" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="PhysicalAttack" />
@@ -50,6 +54,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="30000" /> <!-- FIXME: value unconfirmed -->
 		<set name="rideState" val="NONE" />
+		<set name="effectPoint" val="689" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -65,6 +70,7 @@
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="5000" /> <!-- FIXME: value unconfirmed -->
 		<set name="rideState" val="NONE" />
+		<set name="effectPoint" val="635" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
@@ -75,7 +81,7 @@
 	<skill id="20006" levels="1" name="Soul Roar">
 		<!-- High Five Skill -->
 		<set name="abnormalTime" val="600" />
-		<set name="effectPoint" val="611" />
+		<set name="effectPoint" val="635" />
 		<set name="hitTime" val="1500" />
 		<set name="icon" val="BranchSys2.icon.skill20006" />
 		<set name="magicLvl" val="62" />
@@ -108,6 +114,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="1" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Buff">
@@ -122,6 +129,7 @@
 		<!-- When the clan leader logs in, clan members' P. Atk. / P. Def. / M. Def. + 5%, M. Atk. + 6%, HP/MP Recovery Bonus + 5, and XP gain + 100%. -->
 		<set name="icon" val="icon.skill19009" />
 		<set name="operateType" val="A2" />
+		<set name="effectPoint" val="100" />
 		<set name="targetType" val="SELF" />
 	</skill>
 </list>

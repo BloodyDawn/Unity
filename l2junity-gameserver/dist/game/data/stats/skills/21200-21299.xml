@@ -379,6 +379,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="effectPoint" val="1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Transformation">
@@ -465,6 +466,7 @@
 	<skill id="21238" levels="1" name="Jet Bike">
 		<!-- Mounts a jet bike. -->
 		<set name="operateType" val="P" />
+		<set name="effectPoint" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21239" levels="1" name="Release Agathion's Seal - Cow">
@@ -654,6 +656,7 @@
 	<skill id="21251" levels="1" name="Shiny Party Hat - Greater Body">
 		<!-- Increases Max HP by 35% for 20 minutes. -->
 		<set name="operateType" val="P" />
+		<set name="effectPoint" val="1" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21252" levels="1" name="Hellblade">
@@ -759,6 +762,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="rideState" val="NONE" />
+		<set name="effectPoint" val="1" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Transformation">
@@ -803,11 +807,13 @@
 	<skill id="21264" levels="1" name="Summon Friend">
 		<!-- Description: Summons your friend. The target to be summoned must be equipped with a Shining Couple Ring and be a party member. -->
 		<set name="operateType" val="P" />
+		<set name="effectPoint" val="1000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21265" levels="1" name="Summon Friend">
 		<!-- Description: Summons your friend. The target to be summoned must be equipped with a Mysterious Friend Summon Bracelet and be a party member. -->
 		<set name="operateType" val="P" />
+		<set name="effectPoint" val="1000" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21266" levels="1" name="Release Agathion's Seal - Juju">
@@ -838,6 +844,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1600" />
 		<set name="coolTime" val="100" />
+		<set name="effectPoint" val="-500" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="21269" levels="1" name="Jack O'Lantern Blessing">
@@ -854,6 +861,7 @@
 		<!-- Ride a Tame Princess Ant. -->
 		<set name="icon" val="icon.skilltransform3" />
 		<set name="operateType" val="A2" />
+		<set name="effectPoint" val="1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21271" levels="1" name="Ride Black Bear">
@@ -861,6 +869,7 @@
 		<!-- Ride a Black Bear. -->
 		<set name="icon" val="icon.skilltransform3" />
 		<set name="operateType" val="A2" />
+		<set name="effectPoint" val="1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21272" levels="1" name="Ride Halloween Witch's Broomstick">
@@ -868,6 +877,7 @@
 		<!-- Ride a Halloween Witch's Broomstick. -->
 		<set name="icon" val="icon.skilltransform3" />
 		<set name="operateType" val="A2" />
+		<set name="effectPoint" val="1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21273" levels="7" name="Release Agathion's Seal - Valakas">
@@ -977,6 +987,7 @@
 		<!-- Mount a Unicorn. -->
 		<set name="icon" val="icon.skilltransform3" />
 		<set name="operateType" val="A2" />
+		<set name="effectPoint" val="1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21287" levels="1" name="Emergency Ballista Repair">
@@ -1054,6 +1065,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="BranchSys3.lcon.s_g_ring_of_uthanka" />
 		<set name="operateType" val="A1" />
+		<set name="effectPoint" val="1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="21296" levels="1" name="Exorcist's Punishment">
@@ -1073,6 +1085,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="3000" />
+		<set name="effectPoint" val="532" />
 		<set name="reuseDelay" val="20000" />
 	</skill>
 	<skill id="21298" levels="1" name="Release Agathion's Seal - Lancet">

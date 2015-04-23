@@ -9,6 +9,7 @@
 		<set name="icon" val="icon.skill1217" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -34,6 +35,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="hitTime" val="500" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -56,6 +58,7 @@
 		<set name="icon" val="icon.skill1217" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -81,6 +84,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="hitTime" val="500" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -103,6 +107,7 @@
 		<set name="icon" val="icon.skill1217" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -124,6 +129,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<set name="reuseDelay" val="7000" />
+		<set name="effectPoint" val="2" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HpCpHeal">
@@ -159,6 +165,7 @@
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="10000" />
+		<set name="effectPoint" val="379" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -175,6 +182,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="500" />
+		<set name="effectPoint" val="379" />
 		<set name="reuseDelay" val="10000" />
 		<for>
 			<effect name="Buff">
@@ -213,7 +221,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="RESURRECTION_SPECIAL" />
-		<set name="effectPoint" val="673" /> <!-- Custom -->
+		<set name="effectPoint" val="379" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="38" />
@@ -235,7 +243,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="RESURRECTION_SPECIAL" />
-		<set name="effectPoint" val="673" /> <!-- Custom -->
+		<set name="effectPoint" val="379" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="PARTY" />
 		<set name="mpConsume" val="77" />
@@ -293,6 +301,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="hitTime" val="500" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -315,6 +324,7 @@
 		<set name="icon" val="icon.skill1217" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -346,7 +356,7 @@
 	</skill>
 	<skill id="11818" levels="1" name="Price of Summoning">
 		<!-- Updated to Ertheia -->
-		<!-- Effect comes in 2 seconds after summoning Lumi. Debuff is updated 2 seconds after disappears. (the 1 second delay is the effect icon show delay)-->
+		<!-- Effect comes in 2 seconds after summoning Lumi. Debuff is updated 2 seconds after disappears. (the 1 second delay is the effect icon show delay) -->
 		<!-- Healing abilities are decreased as a price for summoning Lumi. -->
 		<set name="icon" val="icon.skill1100" />
 		<set name="abnormalTime" val="180" />
@@ -354,6 +364,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="600" />
 		<set name="reuseDelay" val="8000" />
+		<set name="effectPoint" val="1" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Buff">
@@ -401,6 +412,7 @@
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -423,6 +435,7 @@
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -446,6 +459,7 @@
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -467,6 +481,7 @@
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -490,6 +505,7 @@
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DefenceTrait">
@@ -514,6 +530,7 @@
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DefenceTrait">
@@ -533,7 +550,7 @@
 		<set name="abnormalType" val="RESURRECTION_SPECIAL" />
 		<set name="abnormalTime" val="3600" />
 		<set name="castRange" val="600" />
-		<set name="effectPoint" val="1" />
+		<set name="effectPoint" val="687" />
 		<set name="effectRange" val="900" />
 		<set name="hitTime" val="4000" />
 		<set name="icon" val="icon.skill11826" />
@@ -573,7 +590,7 @@
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="300" />
 		<set name="castRange" val="900" />
-		<set name="effectPoint" val="398" />
+		<set name="effectPoint" val="1301" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="3000" />
 		<set name="icon" val="icon.skill11828" />
@@ -605,6 +622,7 @@
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -630,7 +648,7 @@
 		<table name="#mpConsumes"> 373 377 380 383 384 387 390 393 </table>
 		<table name="#effectPoints"> -532 -549 -566 -582 -597 -611 -624 -635 </table> <!-- Custom -->
 		<set name="icon" val="icon.skill1395" />
-		<set name="affectRange" val="100" /> <!-- x:467->570   y:645->710    Pythagoras theorem says its 100 -->
+		<set name="affectRange" val="100" /> <!-- x:467->570 y:645->710 Pythagoras theorem says its 100 -->
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="1100" /> <!-- Custom -->
 		<set name="operateType" val="A1" />
@@ -691,6 +709,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="1" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Buff">
@@ -711,6 +730,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="1" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Buff">
@@ -758,6 +778,7 @@
 		<set name="isDebuff" val="#isDebuffs" />
 	</skill>
 	<skill id="11850" levels="4" name="Miraculous Benediction">
+
 		<!-- Restores clan members' CP/HP. Can only be used when MP is 50% or below. -->
 		<table name="#mpConsume"> 148 164 180 194 </table>
 		<table name="#mpInitialConsume"> 37 41 45 49 </table>
@@ -773,6 +794,7 @@
 		<set name="reuseDelay" val="600000" />
 		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
+		<set name="effectPoint" val="560" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<cond msgId="113" addName="1">
 			<player mp="#mp" />
@@ -787,6 +809,7 @@
 		</for>
 	</skill>
 	<skill id="11851" levels="4" name="Divine Prayer">
+
 		<!-- For 30 min., party members' HP heal amount + 5%. -->
 		<table name="#abnormalLvls"> 4 5 6 7 </table>
 		<table name="#healEffect"> 1.05 1.07 1.10 1.15 </table>
@@ -807,6 +830,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="targetType" val="PARTY" />
+		<set name="effectPoint" val="611" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<for>
 			<effect name="Buff">
@@ -815,6 +839,7 @@
 		</for>
 	</skill>
 	<skill id="11852" levels="4" name="Mass Mana Gain">
+
 		<!-- For 30 min., party members' MP heal amount + 33. -->
 		<table name="#abnormalLvls"> 2 3 4 5 </table>
 		<table name="#mpInitialConsume"> 37 41 45 49 </table>
@@ -834,6 +859,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
+		<set name="effectPoint" val="1" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -856,6 +882,7 @@
 		</for>
 	</skill>
 	<skill id="11854" levels="4" name="Mass Mana Gain">
+
 		<!-- For 30 min., party members' MP heal amount + 33. -->
 		<table name="#abnormalLvls"> 2 3 4 5 </table>
 		<table name="#mpInitialConsume"> 37 41 45 49 </table>
@@ -875,6 +902,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
+		<set name="effectPoint" val="1" />
 		<set name="targetType" val="PARTY" />
 		<for>
 			<effect name="Buff">
@@ -908,6 +936,7 @@
 		<set name="hitTime" val="5500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="600000" />
+		<set name="effectPoint" val="1811" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11857" levels="3" name="Summon Flag of Life">
@@ -921,6 +950,7 @@
 		<set name="hitTime" val="5000" />
 		<set name="coolTime" val="2000" />
 		<set name="reuseDelay" val="10000" />
+		<set name="effectPoint" val="1733" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11858" levels="3" name="Protective Heal">
@@ -935,6 +965,7 @@
 		<set name="hitTime" val="2200" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="15000" />
+		<set name="effectPoint" val="867" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11859" levels="3" name="Dark Vampirism">
@@ -950,6 +981,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="-700" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HpDrain">
@@ -969,6 +1001,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="3000" />
+		<set name="effectPoint" val="867" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack" />
@@ -985,6 +1018,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -1006,6 +1040,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DefenceTrait">
@@ -1032,6 +1067,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="DefenceTrait">

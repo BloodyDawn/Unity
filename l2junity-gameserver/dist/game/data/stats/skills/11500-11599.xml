@@ -11,6 +11,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="10000" />
+		<set name="effectPoint" val="-687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11501" levels="1" name="Superior Dual Weapon Mastery" enchantGroup1="10">
@@ -242,6 +243,7 @@
 		</enchant1for>
 	</skill>
 	<skill id="11508" levels="6" name="Assault Rush">
+		<table name="#effectPoint"> -687 -698 -707 -712 -712 -712 -712 -712 -712 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Rushes the enemy to inflict Stun for 1 second. Requires a sword, dualsword or dual blunt to be equipped. -->
 		<table name="#mpConsumes"> 38 39 41 43 45 47 </table>
@@ -258,12 +260,14 @@
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="10000" />
 		<set name="isDebuff" val="true" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="Stun" />
 		</for>
 	</skill>
 	<skill id="11509" levels="8" name="Crippling Attack" enchantGroup1="10" enchantGroup2="10" enchantGroup3="10" enchantGroup4="10" enchantGroup5="10" enchantGroup6="10" enchantGroup7="10" enchantGroup8="10">
+		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
 		<!-- Attacks target with 14608 Power added to P. Atk. For 20 seconds, P. Def. and M. Def. - 40% and P. Evasion - 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical. -->
 		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
@@ -290,6 +294,7 @@
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant1 name="mpConsume" val="#ench1MpConsume" />
@@ -332,6 +337,7 @@
 		</for>
 	</skill>
 	<skill id="11510" levels="8" name="Shadow Blade" enchantGroup1="10" enchantGroup2="10" enchantGroup3="10" enchantGroup4="10" enchantGroup5="10" enchantGroup6="10" enchantGroup7="10" enchantGroup8="10">
+		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
 		<!-- Attacks target with 14608 Power added to P. Atk. For 20 seconds, P. Atk. and M. Atk. - 40%. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical. -->
 		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
@@ -357,6 +363,7 @@
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<enchant1 name="mpConsume" val="#ench1MpConsume" />
 		<enchant1 name="power" val="#enchPower" />
@@ -391,6 +398,7 @@
 		</for>
 	</skill>
 	<skill id="11511" levels="8" name="Death Strike" enchantGroup1="10" enchantGroup2="10" enchantGroup3="10" enchantGroup4="10" enchantGroup5="10" enchantGroup6="10" enchantGroup7="10" enchantGroup8="10">
+		<table name="#effectPoint"> -692 -696 -700 -704 -707 -709 -712 -712 -712 -712 -712 </table>
 		<!-- Attacks target with 21642 Power added to P. Atk. Requires a sword, blunt, dualsword, or dual blunt weapon. Over-hit. Critical. -->
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 73 74 76 79 82 84 87 90 </table>
@@ -411,6 +419,7 @@
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant1 name="mpConsume" val="#ench1MpConsume" />
@@ -449,6 +458,7 @@
 		</for>
 	</skill>
 	<skill id="11513" levels="8" name="Mass Crippling Attack">
+		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks target and nearby enemies with 10263 Power added to P. Atk. For 20 seconds, decreases target's P. Def. and M. Def. by 40% and P. Evasion by 15. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical. -->
 		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
@@ -479,6 +489,7 @@
 		<set name="reuseDelay" val="7000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant1 name="mpConsume" val="#ench1MpConsume" />
@@ -521,6 +532,7 @@
 		</for>
 	</skill>
 	<skill id="11514" levels="8" name="Mass Shadow Blade">
+		<table name="#effectPoint"> -692 -696 -700 -704 -707 -709 -712 -712 -712 -712 -712 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks target and nearby enemies with 11722 Power added to P. Atk. For 20 seconds, decreases P. Atk. and M. Atk. by 40%. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical. -->
 		<set name="icon" val="icon.skill11514" />
@@ -550,6 +562,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<enchant1 name="mpConsume" val="#ench1MpConsume" />
 		<enchant1 name="power" val="#enchPower" />
@@ -584,6 +597,7 @@
 		</for>
 	</skill>
 	<skill id="11515" levels="5" name="Confusion Bomber">
+		<table name="#effectPoint"> -696 -702 -707 -711 -711 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Curses target with darkness. For 5 seconds, decreases Speed and Atk. Spd. by 5%. After 5 seconds, detonates target to inflict damage nearby. Requires a sword, dualsword or dual blunt to be equipped. -->
 		<table name="#mpConsumes"> 76 80 84 88 92 </table>
@@ -595,16 +609,20 @@
 		<set name="hitTime" val="1210" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="180000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11516" levels="15" name="Curse Explosion">
+		<table name="#effectPoint"> -696 -702 -707 -711 -711 -711 -711 -711 -711 -711 -711 -711 -711 -711 -711 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill1170" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11517" levels="4" name="Horn Melody" enchantGroup1="10" enchantGroup2="10">
+		<table name="#effectPoint"> 687 698 707 712 </table>
 		<!-- For 30 minutes, all party members' P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, and M. Def. + 30%. -->
 		<table name="#ench1MpConsume"> 138 132 126 120 115 109 103 97 92 86 </table>
 		<table name="#ench1MpInitialConsume"> 35 34 32 31 29 28 26 25 23 22 </table>
@@ -631,6 +649,7 @@
 		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<enchant1 name="mpConsume" val="#ench1MpConsume" />
 		<enchant1 name="mpInitialConsume" val="#ench1MpInitialConsume" />
@@ -651,6 +670,7 @@
 		</for>
 	</skill>
 	<skill id="11518" levels="4" name="Drum Melody" enchantGroup1="10" enchantGroup2="10">
+		<table name="#effectPoint"> 687 698 707 712 </table>
 		<!-- For 30 minutes, party members' Max MP + 20%, HP Recovery Bonus + 20%, M. Critical Rate + 20, Critical Damage during a normal attack + 20%, P. Atk. + 10%, P. Def. + 20%, Atk. Spd. + 20%, M. Atk. + 20%, M. Def. + 20%, Casting Spd. + 20%, Debuff Resistance + 10%, damage received from critical attacks - 30% and Speed - 15%. Party members equipped with melee weapons/bows/crossbows have increased Critical Damage after receiving an amount of damage. -->
 		<table name="#ench1MpConsume"> 138 132 126 120 115 109 103 97 92 86 </table>
 		<table name="#ench1MpInitialConsume"> 35 34 32 31 29 28 26 25 23 22 </table>
@@ -686,6 +706,7 @@
 		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<enchant1 name="mpConsume" val="#ench1MpConsume" />
 		<enchant1 name="mpInitialConsume" val="#ench1MpInitialConsume" />
@@ -723,6 +744,7 @@
 		</for>
 	</skill>
 	<skill id="11519" levels="4" name="Pipe Organ Melody" enchantGroup1="10" enchantGroup2="10">
+		<table name="#effectPoint"> 687 698 707 712 </table>
 		<!-- For 30 minutes, party members' Max HP + 37%, Max MP + 37%, Max CP + 37%, and HP Recovery Bonus + 20%. -->
 		<table name="#ench1MpConsume"> 138 132 126 120 115 109 103 97 92 86 </table>
 		<table name="#ench1MpInitialConsume"> 35 34 32 31 29 28 26 25 23 22 </table>
@@ -749,6 +771,7 @@
 		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<enchant1 name="mpConsume" val="#ench1MpConsume" />
 		<enchant1 name="mpInitialConsume" val="#ench1MpInitialConsume" />
@@ -769,6 +792,7 @@
 		</for>
 	</skill>
 	<skill id="11520" levels="4" name="Guitar Melody" enchantGroup1="10" enchantGroup2="10">
+
 		<!-- For 30 minutes, party members' P. Critical Rate + 32%, P. Critical Damage + 35%, M. Critical Rate + 20 , and MP Consumption - 20% for physical skills and - 10% for magic skills. Iss Enchanter's Enchant Skill MP Consumption - 20%. -->
 		<table name="#ench1MpConsume"> 138 132 126 120 115 109 103 97 92 86 </table>
 		<table name="#ench1MpInitialConsume"> 35 34 32 31 29 28 26 25 23 22 </table>
@@ -796,6 +820,7 @@
 		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<enchant1 name="mpConsume" val="#ench1MpConsume" />
 		<enchant1 name="mpInitialConsume" val="#ench1MpInitialConsume" />
@@ -817,6 +842,7 @@
 		</for>
 	</skill>
 	<skill id="11521" levels="4" name="Harp Melody" enchantGroup1="10" enchantGroup2="10">
+
 		<!-- For 30 minutes, party members' P. Accuracy + 5, P. and M. Evasion + 5, Speed + 34 and received Critical Damage - 30%. -->
 		<table name="#ench1MpConsume"> 138 132 126 120 115 109 103 97 92 86 </table>
 		<table name="#ench1MpInitialConsume"> 35 34 32 31 29 28 26 25 23 22 </table>
@@ -844,6 +870,7 @@
 		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<enchant1 name="mpConsume" val="#ench1MpConsume" />
 		<enchant1 name="mpInitialConsume" val="#ench1MpInitialConsume" />
@@ -865,6 +892,7 @@
 		</for>
 	</skill>
 	<skill id="11522" levels="4" name="Lute Melody" enchantGroup1="10" enchantGroup2="10">
+
 		<!-- For 30 minutes, party members' Atk. Spd. + 34% and Casting Spd. + 31%. Also has a chance of triggering a 9% Vampiric Rage effect during a normal attack. -->
 		<table name="#ench1MpConsume"> 138 132 126 120 115 109 103 97 92 86 </table>
 		<table name="#ench1MpInitialConsume"> 35 34 32 31 29 28 26 25 23 22 </table>
@@ -890,6 +918,7 @@
 		<set name="isMagic" val="1" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<enchant1 name="mpConsume" val="#ench1MpConsume" />
 		<enchant1 name="mpInitialConsume" val="#ench1MpInitialConsume" />
@@ -928,6 +957,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
+		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<enchant1 name="mpConsume" val="#ench1MpConsume" />
 		<enchant1 name="mpInitialConsume" val="#ench1MpInitialConsume" />
@@ -988,6 +1018,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
+		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<enchant1 name="mpConsume" val="#ench1MpConsume" />
 		<enchant1 name="mpInitialConsume" val="#ench1MpInitialConsume" />
@@ -1090,6 +1121,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
+		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<for>
 			<effect name="Buff">
@@ -1213,6 +1245,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
+		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<enchant1 name="mpConsume" val="#ench1MpConsume" />
 		<enchant1 name="mpInitialConsume" val="#ench1MpInitialConsume" />
@@ -1256,6 +1289,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
+		<set name="effectPoint" val="696" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<enchant1 name="mpConsume" val="#ench1MpConsume" />
 		<enchant1 name="mpInitialConsume" val="#ench1MpInitialConsume" />
@@ -1301,6 +1335,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
+		<set name="effectPoint" val="696" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<enchant1 name="mpConsume" val="#ench1MpConsume" />
 		<enchant1 name="mpInitialConsume" val="#ench1MpInitialConsume" />
@@ -1339,6 +1374,7 @@
 		<set name="mpConsume" val="342" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="711" />
 		<set name="reuseDelay" val="600000" />
 		<for>
 			<effect name="Buff">
@@ -1347,6 +1383,7 @@
 		</for>
 	</skill>
 	<skill id="11534" levels="5" name="Angel's Touch">
+		<table name="#effectPoint"> 704 707 709 709 709 709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 7 seconds, renders target immune to debuffs. -->
 		<table name="#mpConsumes"> 70 75 80 85 90 </table>
@@ -1361,6 +1398,7 @@
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="60000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -1373,7 +1411,7 @@
 		<!-- Has a chance of canceling up to 2 of the buff effects on target. -->
 		<table name="#mpConsumes"> 70 70 75 80 85 90 </table>
 		<set name="icon" val="icon.skill11536" />
-		<set name="effectPoint" val="-1" /> <!-- Custom -->
+		<set name="effectPoint" val="-709" /> <!-- Custom -->
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1390,6 +1428,7 @@
 		</for>
 	</skill>
 	<skill id="11537" levels="7" name="Transform">
+		<table name="#effectPoint"> -696 -702 -707 -711 -711 -711 -711 -711 -711 -711 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Transforms target into a harmless creature and decrease its Speed by 20% for 15 seconds. The effect is canceled if the transformed target is attacked. -->
 		<table name="#mpConsumes"> 126 126 135 139 148 157 166 </table>
@@ -1405,6 +1444,7 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="removedOnDamage" val="true" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="2195">
 			<player canTransform="true" />
@@ -1429,7 +1469,7 @@
 		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="200" />
 		<set name="basicProperty" val="MEN" />
-		<set name="effectPoint" val="-679" /> <!-- Custom -->
+		<set name="effectPoint" val="-709" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1458,7 +1498,7 @@
 		<set name="abnormalVisualEffect" val="FLESH_STONE" />
 		<set name="activateRate" val="80" /> <!-- Custom -->
 		<set name="basicProperty" val="MEN" />
-		<set name="effectPoint" val="-666" /> <!-- Custom -->
+		<set name="effectPoint" val="-687" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1486,6 +1526,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="60000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Transformation">
@@ -1507,6 +1548,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="60000" />
+		<set name="effectPoint" val="-687" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Untargetable" />
@@ -1517,6 +1559,7 @@
 		</for>
 	</skill>
 	<skill id="11543" levels="3" name="Disperse">
+		<table name="#effectPoint"> 704 711 711 715 719 722 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 sec., transforms yourself and nearby party members to increase P. Def. and M. Def. + 2000 and Speed + 44. Decreases P. Atk. and M. Atk. + 80%. -->
 		<table name="#mpConsumes"> 330 350 370 </table>
@@ -1529,6 +1572,7 @@
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="900000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11544" levels="1" name="Battle Rhapsody">
@@ -1542,6 +1586,7 @@
 		<set name="mpConsume" val="916" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="600000" />
 		<for>
 			<effect name="Buff">
@@ -1563,6 +1608,7 @@
 		<set name="mpConsume" val="1032" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="709" />
 		<set name="reuseDelay" val="600000" />
 		<for>
 			<effect name="Buff">
@@ -1572,6 +1618,7 @@
 		</for>
 	</skill>
 	<skill id="11546" levels="4" name="Chaos Symphony">
+
 		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts 38826 damage on target and nearby enemies. Decreases nearby enemies' P. Atk., P. Def., M. Atk., M. Def. and Speed by 50% for 10 seconds. Requires a sword, dualsword or dual blunt to be equipped. Over-hit. Critical. -->
@@ -1583,6 +1630,7 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="30000" />
+		<set name="effectPoint" val="-707" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -1722,6 +1770,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill01703" />
 		<set name="operateType" val="A1" />
+		<set name="effectPoint" val="1" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="11557" levels="1" name="Ultimate Scourge">
@@ -1734,7 +1783,7 @@
 		<set name="activateRate" val="80" /> <!-- Custom -->
 		<set name="affectRange" val="200" />
 		<set name="affectLimit" val="10-10" /> <!-- Custom -->
-		<set name="effectPoint" val="-1" /> <!-- Custom -->
+		<set name="effectPoint" val="-379" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="423" />
@@ -1755,7 +1804,7 @@
 		<!-- Cancels nearby enemies' targets. -->
 		<set name="icon" val="icon.skill11558" />
 		<set name="affectRange" val="200" />
-		<set name="effectPoint" val="-1" /> <!-- Custom -->
+		<set name="effectPoint" val="-457" /> <!-- Custom -->
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="423" />
@@ -1776,8 +1825,8 @@
 		<!-- Increases nearby enemies' physical/magic skill Cooldown by 200% for 2 minutes. -->
 		<set name="icon" val="icon.skill11559" />
 		<set name="abnormalTime" val="120" />
-		<set name="affectRange" val="200" /> <!-- (x1 - x2)^2 + (y1 - y2)^2 = range^2 isnt it like that? 72819->71818  142606->142808 -->
-		<set name="effectPoint" val="-1" /> <!-- Custom -->
+		<set name="affectRange" val="200" /> <!-- (x1 - x2)^2 + (y1 - y2)^2 = range^2 isnt it like that? 72819->71818 142606->142808 -->
+		<set name="effectPoint" val="-457" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="423" />
@@ -1818,6 +1867,7 @@
 		</for>
 	</skill>
 	<skill id="11561" levels="4" name="Giant Root">
+		<table name="#effectPoint"> -701 -705 -709 -709 -709 -709 -709 </table>
 		<!-- Updated to Ertheia -->
 		<!-- Inflicts Hold on the enemy for 15 seconds. -->
 		<table name="#mpConsumes"> 126 139 153 166 </table>
@@ -1836,6 +1886,7 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
 		<set name="isDebuff" val="true" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="trait" val="HOLD" />
 		<for>
 			<effect name="Root" />
@@ -1902,6 +1953,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
+		<set name="effectPoint" val="2" />
 		<set name="isMagic" val="4" />
 		<cond>
 			<player canResurrect="true" />
@@ -1932,6 +1984,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
+		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<enchant1 name="mpConsume" val="#ench1MpConsume" />
 		<enchant1 name="mpInitialConsume" val="#ench1MpInitialConsume" />
@@ -1973,6 +2026,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
+		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<enchant1 name="mpConsume" val="#ench1MpConsume" />
 		<enchant1 name="mpInitialConsume" val="#ench1MpInitialConsume" />
@@ -2015,6 +2069,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
+		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<enchant1 name="mpConsume" val="#ench1MpConsume" />
 		<enchant1 name="mpInitialConsume" val="#ench1MpInitialConsume" />
@@ -2065,7 +2120,7 @@
 		<set name="icon" val="icon.skill11570" />
 		<set name="affectLimit" val="5-12" /> <!-- Custom -->
 		<set name="affectRange" val="300" />
-		<set name="effectPoint" val="398" /> <!-- Custom from chain heal -->
+		<set name="effectPoint" val="1301" /> <!-- Custom from chain heal -->
 		<set name="effectRange" val="1400" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA_FRIENDLY" />
@@ -2084,7 +2139,7 @@
 		<!-- Updated to Ertheia -->
 		<!-- Restores target's CP by 1000. -->
 		<set name="icon" val="icon.skill11571" />
-		<set name="effectPoint" val="1" /> <!-- Custom -->
+		<set name="effectPoint" val="780" /> <!-- Custom -->
 		<set name="effectRange" val="1400" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
@@ -2100,6 +2155,7 @@
 		</for>
 	</skill>
 	<skill id="11580" levels="4" name="Mass Transform">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10 sec., mutates enemies to reduce their Speed by 20% and render them unable to attack. Mutated enemies return to normal when inflicted with damage. -->
 		<table name="#mpConsumes"> 126 139 153 166 </table>
@@ -2115,6 +2171,7 @@
 		<set name="hitTime" val="1410" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="120000" />
+		<set name="effectPoint" val="-696" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="2195">
 			<player canTransform="true" />
@@ -2165,6 +2222,7 @@
 		<set name="hitTime" val="1410" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="120000" />
+		<set name="effectPoint" val="-507" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Mute" />
@@ -2238,6 +2296,7 @@
 		<set name="hitTime" val="1410" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
+		<set name="effectPoint" val="669" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11587" levels="4" name="Mass Blockade">
@@ -2253,6 +2312,7 @@
 		<set name="hitTime" val="2110" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="120000" />
+		<set name="effectPoint" val="-673" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PhysicalAttackMute" /> <!-- TODO: Only during pvp? -->
@@ -2271,6 +2331,7 @@
 		</for>
 	</skill>
 	<skill id="11589" levels="4" name="Horn Frenzy">
+		<table name="#effectPoint"> 687 698 707 712 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 min., clan members' P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, and M. Def. + 30%. -->
 		<table name="#mpConsumes"> 140 151 170 181 </table>
@@ -2281,9 +2342,11 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="11590" levels="4" name="Drum Frenzy">
+		<table name="#effectPoint"> 687 698 707 712 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 min., clan members' Max MP + 20%, HP Recovery Bonus + 20%, and M. Critical Rate + 20. During a standard attack, P. Atk. and Debuff Resistance + 10%, and Critical Damage, P. Def., Atk. Spd., M. Atk., M. Def., and Casting Spd. + 20%. When hit with a critical attack, received damage - 30% and Speed - 15%. Increases Critical Damage during a standard attack for a member equipped with a melee weapon/bow/crossbow who receives more than a certain amount of damage. -->
 		<table name="#mpConsumes"> 140 151 170 181 </table>
@@ -2294,9 +2357,11 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="11591" levels="4" name="Pipe Organ Frenzy">
+		<table name="#effectPoint"> 687 698 707 712 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 min., clan members' Max HP/MP/CP + 37%, and HP Recovery Bonus + 20%. -->
 		<table name="#mpConsumes"> 140 151 170 181 </table>
@@ -2307,9 +2372,11 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="11592" levels="4" name="Guitar Frenzy">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 min., clan members' P. Critical Rate + 32%, P. Critical Damage + 35%, and M. Critical Rate + 20. P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and Iss Enchanter's Enchant Skill MP Consumption - 20%. -->
 		<table name="#mpConsumes"> 140 151 170 181 </table>
@@ -2320,9 +2387,11 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
+		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="11593" levels="4" name="Harp Frenzy">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 min., clan members' P. Accuracy and P. Evasion/ M. Evasion + 5, and Speed + 34. Received Critical Damage - 30%. -->
 		<table name="#mpConsumes"> 140 151 170 181 </table>
@@ -2333,9 +2402,11 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
+		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="11594" levels="4" name="Lute Frenzy">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 min., clan members' Atk. Spd. + 34% and Casting Spd. + 31%. Has a chance of applying 9% Vampiric Rage effect. -->
 		<table name="#mpConsumes"> 140 151 170 181 </table>
@@ -2346,6 +2417,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
+		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="11595" levels="1" name="Knight's Frenzied Harmony">
@@ -2359,6 +2431,7 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
+		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="11596" levels="1" name="Warrior's Frenzied Harmony">
@@ -2372,6 +2445,7 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
+		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="11597" levels="1" name="Wizard's Frenzied Harmony">
@@ -2385,6 +2459,7 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
+		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="11598" levels="4" name="Greater Freezing Flame">
@@ -2401,6 +2476,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-379" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11599" levels="4" name="Combat Cry">

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="10700" levels="4" name="Mug">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts 11903 damage onto nearby enemies and steals their item. Requires a dagger or dual dagger. -->
 		<table name="#mpConsumes"> 18 21 24 27 </table>
@@ -11,6 +12,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1030" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-709" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="10701" levels="4" name="Superior Vitality">
@@ -21,6 +23,7 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="10702" levels="4" name="Plunder">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts 13580 damage onto target and steals their item. Requires a dagger or dual dagger. -->
 		<table name="#mpConsumes"> 12 14 16 18 </table>
@@ -31,9 +34,11 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="830" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-709" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="10703" levels="3" name="Armor Breaker">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Cancels target's armor for 3 seconds. Requires dagger/dual dagger. Consumes 2 Soulstones. -->
 		<table name="#mpConsumes"> 77 79 81 </table>
@@ -45,9 +50,11 @@
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="90000" />
+		<set name="effectPoint" val="-655" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10704" levels="3" name="Mass Power Bluff">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Reveals the enemy's back and inflicts Stun for 3 seconds. Requires dagger/dual dagger. Consumes 2 Soulstones. -->
 		<set name="icon" val="icon.skill10704" />
@@ -57,6 +64,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="30000" />
+		<set name="effectPoint" val="-1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10705" levels="1" name="Shadow Walking">
@@ -84,6 +92,7 @@
 		<set name="coolTime" val="400" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="4" />
+		<set name="effectPoint" val="-709" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10749" levels="1" name="Heavy Hit">
@@ -95,6 +104,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="10750" levels="1" name="Heavy Hit">
@@ -106,6 +116,7 @@
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="10751" levels="1" name="Superior Bow/Crossbow Mastery" enchantGroup1="10">
@@ -293,6 +304,7 @@
 		</enchant1for>
 	</skill>
 	<skill id="10757" levels="4" name="Dead Eye Stance">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 min., P. Atk. + 10%, and skill power + 5% when equipped with a bow or crossbow. -->
 		<set name="icon" val="icon.skill10757" />
@@ -301,9 +313,11 @@
 		<set name="mpConsume" val="10" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10758" levels="4" name="Rapid Fire Stance">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 min., P. Atk. + 10% and P. Skill Cooldown - 5% when a bow or crossbow is equipped. -->
 		<set name="icon" val="icon.skill10758" />
@@ -312,9 +326,11 @@
 		<set name="mpConsume" val="10" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10759" levels="4" name="Sniper Stance">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 min., P. Atk. + 10% and Atk. Spd. + 5% when a bow or crossbow is equipped. -->
 		<set name="icon" val="icon.skill10759" />
@@ -323,9 +339,11 @@
 		<set name="mpConsume" val="10" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10760" levels="8" name="Tornado Shot">
+		<table name="#effectPoint"> -689 -692 -696 -700 -704 -707 -710 -713 -716 -719 -722 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks target with 20814 Power added to P. Atk. Requires a bow or crossbow to be equipped. Over-hit. Critical. -->
 		<table name="#mpConsumes"> 98 100 103 107 110 114 117 121 </table>
@@ -336,9 +354,11 @@
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2200" />
 		<set name="coolTime" val="350" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="7000" />
 	</skill>
 	<skill id="10761" levels="8" name="Bow Strike">
+		<table name="#effectPoint"> -689 -692 -696 -700 -704 -707 -710 -713 -716 -719 -722 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Knocks back frontal enemies. Attacks target with 2681 Power added to P. Atk. Requires a bow or crossbow to be equipped. Over-hit. Critical. -->
 		<table name="#mpConsumes"> 60 61 63 65 67 69 71 74 </table>
@@ -350,9 +370,11 @@
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="350" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10762" levels="8" name="Quick Shot">
+		<table name="#effectPoint"> -689 -694 -698 -702 -706 -709 -711 -714 -717 -720 -723 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks target with 19477 Power added to P. Atk. Requires a bow or crossbow to be equipped. Over-hit. Critical. -->
 		<table name="#mpConsumes"> 79 82 84 87 90 93 96 99 </table>
@@ -363,9 +385,11 @@
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="1800" />
 		<set name="coolTime" val="250" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="7000" />
 	</skill>
 	<skill id="10763" levels="8" name="Pinpoint Shot">
+		<table name="#effectPoint"> -689 -692 -696 -700 -704 -707 -710 -713 -716 -719 -722 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Aims for target's weak points to attack with 22198 Power added to P. Atk. Disregards 30% of target's P. Def. Requires a bow or crossbow to be equipped. Over-hit. Critical. Half-kill. -->
 		<table name="#mpConsumes"> 117 119 123 128 132 136 140 144 </table>
@@ -376,6 +400,7 @@
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2200" />
 		<set name="coolTime" val="850" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="7000" />
 	</skill>
 	<skill id="10764" levels="1" name="Knock Back">
@@ -420,9 +445,11 @@
 		<set name="hitTime" val="300" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="15000" />
+		<set name="effectPoint" val="-2" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10769" levels="5" name="Impact Shot">
+		<table name="#effectPoint"> -713 -696 -702 -707 -711 -711 -719 -723 -727 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Fires an arrow at the enemy with 19867 Power added to P. Atk. Stuns the enemy for 5 seconds. Requires a bow or crossbow to be equipped. Over-hit. -->
 		<table name="#mpConsumes"> 98 103 108 114 119 </table>
@@ -434,9 +461,11 @@
 		<set name="hitTime" val="2200" />
 		<set name="coolTime" val="350" />
 		<set name="reuseDelay" val="10000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10770" levels="8" name="Recoil Shot">
+		<table name="#effectPoint"> -689 -694 -698 -702 -706 -709 -711 -714 -717 -720 -723 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Shoots an arrow with 24888 Power added to P. Atk. to Knock Back target. Requires a bow or crossbow to be equipped. Over-hit. Critical. Chance of canceling the enemy's target. -->
 		<table name="#mpConsumes"> 102 106 109 113 116 120 124 127 </table>
@@ -448,9 +477,11 @@
 		<set name="hitTime" val="2200" />
 		<set name="coolTime" val="450" />
 		<set name="reuseDelay" val="30000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10771" levels="8" name="Multiple Arrow">
+		<table name="#effectPoint"> -689 -694 -698 -702 -706 -709 -711 -714 -717 -720 -723 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks frontal enemies with 23391 Power added to P. Atk. Requires a bow or crossbow to be equipped. Over-hit. Critical. -->
 		<table name="#mpConsumes"> 124 128 133 137 142 146 151 155 </table>
@@ -461,9 +492,11 @@
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2900" />
 		<set name="coolTime" val="350" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="7000" />
 	</skill>
 	<skill id="10772" levels="8" name="Heavy Arrow Rain">
+		<table name="#effectPoint"> -689 -692 -696 -700 -704 -707 -710 -713 -716 -719 -722 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Showers the enemy and nearby enemies with a rain of arrows, to inflict damage with 22526 damage added to P. Atk. Requires a bow or crossbow to be equipped. Over-hit. Critical. -->
 		<table name="#mpConsumes"> 125 127 131 136 140 145 149 154 </table>
@@ -474,6 +507,7 @@
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2900" />
 		<set name="coolTime" val="350" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="15000" />
 	</skill>
 	<skill id="10773" levels="1" name="Not in Use">
@@ -486,9 +520,11 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2200" />
 		<set name="coolTime" val="300" />
+		<set name="effectPoint" val="-709" />
 		<set name="reuseDelay" val="15000" />
 	</skill>
 	<skill id="10774" levels="4" name="Quick Evasion">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Momentarily teleports 300 backward. -->
 		<table name="#castRanges"> 300 350 400 450 </table>
@@ -500,6 +536,7 @@
 		<set name="castRange" val="#castRanges" />
 		<set name="hitTime" val="700" />
 		<set name="reuseDelay" val="15000" />
+		<set name="effectPoint" val="2" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10775" levels="3" name="Confusion Decoy">
@@ -515,6 +552,7 @@
 		<set name="reuseDelay" val="600000" />
 	</skill>
 	<skill id="10776" levels="4" name="Final Ultimate Escape">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 sec., P. Evasion + 60, M. Evasion + 60, M. Def. + 20%, Debuff Resistance + 95%, and P. Skill Evasion Rate + 80%. -->
 		<table name="#mpConsumes"> 58 63 68 72 </table>
@@ -524,6 +562,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="900000" />
 	</skill>
 	<skill id="10777" levels="4" name="Lure Shot">
@@ -553,6 +592,7 @@
 		<set name="reuseDelay" val="60000" />
 	</skill>
 	<skill id="10779" levels="4" name="Quick Fire">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 sec., Atk. Spd. + 20% when equipped with a bow/crossbow. -->
 		<table name="#mpConsumes"> 39 42 46 48 </table>
@@ -562,9 +602,11 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
+		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="120000" />
 	</skill>
 	<skill id="10780" levels="6" name="Slow Shot">
+		<table name="#effectPoint"> -689 -692 -698 -704 -709 -713 -717 -721 -725 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks target with 9338 Power added to P. Atk. For 10 sec., Speed - 70. Requires a bow or crossbow to be equipped. -->
 		<table name="#mpConsumes"> 94 96 101 106 111 116 </table>
@@ -576,9 +618,11 @@
 		<set name="hitTime" val="2100" />
 		<set name="coolTime" val="350" />
 		<set name="reuseDelay" val="30000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10781" levels="4" name="Phoenix Arrow">
+
 		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Shoots a magical arrow to obliterate an area. Attacks targets within the skill's range with 45215 power. -->
@@ -589,6 +633,7 @@
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="7500" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-706" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10782" levels="1" name="Deadly Move 2">
@@ -602,9 +647,11 @@
 		<set name="hitTime" val="2200" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="3600000" />
+		<set name="effectPoint" val="-709" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="10783" levels="4" name="Mind's Eye">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 1 minute, opens the eye of infinity to increase Accuracy + 25, Critical Rate + 200, and Critical Damage + 70%. -->
 		<table name="#mpConsumes"> 54 59 64 64 </table>
@@ -614,6 +661,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="600000" />
 	</skill>
 	<skill id="10784" levels="1" name="Camouflage">
@@ -624,6 +672,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="9" />
 		<set name="hitTime" val="200" />
+		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="120000" />
 	</skill>
 	<skill id="10785" levels="5" name="Flare">
@@ -639,6 +688,7 @@
 		<set name="reuseDelay" val="20000" />
 	</skill>
 	<skill id="10786" levels="3" name="Time Bomb">
+		<table name="#effectPoint"> -706 -710 -714 -718 -722 -726 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Plants a bomb on target that detonates after 10 seconds to inflict damage with 30000 power. While the bomb is being installed, target's P. Accuracy decreases by 10. -->
 		<table name="#mpConsumes"> 66 69 72 </table>
@@ -649,6 +699,7 @@
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="15000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10787" levels="8" name="Summon Thunder Hawk">
@@ -684,6 +735,7 @@
 		<set name="mpConsume" val="47" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
+		<set name="effectPoint" val="-709" />
 		<set name="reuseDelay" val="45000" />
 	</skill>
 	<skill id="10790" levels="1" name="Explosion Trap">
@@ -695,6 +747,7 @@
 		<set name="mpConsume" val="39" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
+		<set name="effectPoint" val="-709" />
 		<set name="reuseDelay" val="45000" />
 	</skill>
 	<skill id="10791" levels="4" name="Frost Trap">
@@ -731,9 +784,11 @@
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="60000" />
+		<set name="effectPoint" val="-689" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="10794" levels="8" name="Thunder Flight">
+		<table name="#effectPoint"> -687 -698 -707 -709 -709 -709 -709 -709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Flies straight into the enemy. -->
 		<set name="icon" val="icon.skill6041" />
@@ -742,6 +797,7 @@
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="750" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="10795" levels="1" name="Thunder Purity">
@@ -754,6 +810,7 @@
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="2500" />
 		<set name="reuseDelay" val="180000" />
+		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="10796" levels="1" name="Hawk Gust">
@@ -767,9 +824,11 @@
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="100" />
 		<set name="reuseDelay" val="120000" />
+		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10797" levels="8" name="Thunder Feather Blast">
+		<table name="#effectPoint"> -687 -698 -707 -709 -709 -709 -709 -709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Hurls feathers toward the enemy. -->
 		<table name="#mpConsumes"> 71 78 84 86 86 86 86 86 </table>
@@ -780,9 +839,11 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1080" />
 		<set name="coolTime" val="770" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="15000" />
 	</skill>
 	<skill id="10798" levels="8" name="Thunder Sharp Claw">
+		<table name="#effectPoint"> -687 -698 -707 -709 -709 -709 -709 -709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks the enemy with sharp talon to inflict bleed. -->
 		<table name="#mpConsumes"> 71 78 84 86 86 86 86 86 </table>
@@ -794,6 +855,7 @@
 		<set name="hitTime" val="1080" />
 		<set name="coolTime" val="770" />
 		<set name="reuseDelay" val="25000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10799" levels="1" name="Superior M. Def.">

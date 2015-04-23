@@ -23,7 +23,7 @@
 		<set name="power" val="#power" />
 		<set name="castRange" val="80" />
 		<set name="affectRange" val="160" /> <!-- Unconfirmed -->
-		<set name="effectPoint" val="-720" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="-692" /> <!-- Unconfirmed -->
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="isMagic" val="1" />
@@ -46,6 +46,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
+		<set name="effectPoint" val="-100" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -67,7 +68,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="power" val="#power" />
 		<set name="castRange" val="80" />
-		<set name="effectPoint" val="-720" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="-696" /> <!-- Unconfirmed -->
 		<set name="hitTime" val="4000" />
 		<set name="coolTime" val="500" />
 		<set name="isMagic" val="1" />
@@ -97,7 +98,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="power" val="#power" />
 		<set name="castRange" val="80" />
-		<set name="effectPoint" val="-720" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="-696" /> <!-- Unconfirmed -->
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
 		<set name="isMagic" val="1" />
@@ -123,6 +124,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
+		<set name="effectPoint" val="-100" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -145,7 +147,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="60" />
-		<set name="effectPoint" val="-720" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="-687" /> <!-- Unconfirmed -->
 		<set name="power" val="#power" />
 		<set name="hitTime" val="1800" />
 		<set name="coolTime" val="500" />
@@ -174,7 +176,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="80" />
-		<set name="effectPoint" val="-720" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="-696" /> <!-- Unconfirmed -->
 		<set name="power" val="#power" />
 		<set name="hitTime" val="4000" />
 		<set name="coolTime" val="500" />
@@ -212,7 +214,7 @@
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalVisualEffect" val="WIND_HIDE" />
-		<set name="effectPoint" val="679" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="687" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A2" />
 		<set name="removedOnAnyActionExceptMove" val="true" />
 		<set name="removedOnDamage" val="true" />
@@ -239,7 +241,7 @@
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalVisualEffect" val="DECEPTIVE_BLINK" />
-		<set name="effectPoint" val="679" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="687" /> <!-- Unconfirmed -->
 		<set name="flyCourse" val="0" /> <!-- Teleport to Back -->
 		<set name="flyRadius" val="400" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A2" />
@@ -269,7 +271,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="blockedInOlympiad" val="true" /> <!-- Unconfirmed -->
-		<set name="effectPoint" val="1" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="687" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="40" />
@@ -292,6 +294,7 @@
 		</for>
 	</skill>
 	<skill id="30011" levels="12" name="Threatening Wind">
+
 		<!-- Updated to Ertheia -->
 		<!-- Sends a slashing wind to brand target with Storm Sign Stage 3. Requires a sword or blunt Weapon. -->
 		<table name="#mpConsumes"> 31 31 32 32 33 33 34 34 34 34 34 35 </table>
@@ -304,6 +307,7 @@
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="15000" />
+		<set name="effectPoint" val="-687" />
 		<set name="isMagic" val="1" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
@@ -324,7 +328,7 @@
 		<set name="operateType" val="DA1" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
-		<set name="effectPoint" val="-720" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="-696" /> <!-- Unconfirmed -->
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="500" />
@@ -352,7 +356,7 @@
 		<!-- Trades places with target. Requires a sword or blunt weapon. PC targets only. -->
 		<set name="icon" val="icon.skill30005" />
 		<set name="affectRange" val="1400" /> <!-- Unconfirmed -->
-		<set name="effectPoint" val="-720" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="-709" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="705" />
@@ -376,7 +380,7 @@
 		<!-- Sends a breeze that pushes target toward you. Requires a sword / blunt weapon. -->
 		<table name="#mpConsumes"> 31 31 32 32 33 33 34 34 34 34 34 35 </table>
 		<set name="icon" val="icon.skill30014" />
-		<set name="effectPoint" val="-720" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="-1371" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -400,6 +404,7 @@
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="500" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-1371" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="30016" levels="3" name="Eye of the Storm">
@@ -410,7 +415,7 @@
 		<table name="#traitResist"> 0 0 90 </table>
 		<set name="icon" val="icon.skill30016" />
 		<set name="abnormalTime" val="30" />
-		<set name="effectPoint" val="-720" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="687" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -438,7 +443,7 @@
 		<table name="#triggerLevel"> 1 2 3 </table>
 		<set name="icon" val="icon.skill30017" />
 		<set name="abnormalTime" val="600" />
-		<set name="effectPoint" val="60" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="2" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -474,6 +479,7 @@
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="300000" />
+		<set name="effectPoint" val="100" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Untargetable" />
@@ -489,7 +495,7 @@
 		<table name="#power"> 533 561 589 617 645 673 701 729 </table>
 		<set name="icon" val="icon.skill30019" />
 		<set name="abnormalTime" val="10" />
-		<set name="effectPoint" val="-720" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="-687" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A2" />
 		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
@@ -523,6 +529,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="300000" />
+		<set name="effectPoint" val="2" />
 		<set name="isMagic" val="1" />
 		<cond msgId="113" addName="1">
 			<using kind="SWORD,BLUNT" />
@@ -545,7 +552,7 @@
 		<!-- For 30 sec., nearby party members' Speed + 50, and Knock Back / Knock Down / Pull / Aerial Yoke / Aggression Resistance + 30. Requires a sword or blunt weapon. -->
 		<set name="icon" val="icon.skill30022" />
 		<set name="abnormalTime" val="30" />
-		<set name="effectPoint" val="-720" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="687" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="PARTY" />
 		<set name="mpConsume" val="84" />
@@ -572,6 +579,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
+		<set name="effectPoint" val="-102" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="30026" levels="3" name="Lightning Squall">
@@ -581,7 +589,7 @@
 		<set name="icon" val="icon.skill30026" />
 		<set name="abnormalTime" val="30" /> <!-- Unconfirmed -->
 		<set name="affectRange" val="1600" /> <!-- Unconfirmed -->
-		<set name="effectPoint" val="-720" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="-711" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A2" />
 		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
@@ -599,7 +607,7 @@
 		<!-- Attacks target with 300 Power added to M. Atk. and has a 10% chance of branding target with Storm Sign Stage 4. -->
 		<set name="icon" val="icon.skill30026" />
 		<set name="affectRange" val="1600" /> <!-- Unconfirmed -->
-		<set name="effectPoint" val="-720" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="-711" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A1" />
 		<set name="power" val="300" />
 		<set name="targetType" val="ONE" />
@@ -621,7 +629,7 @@
 		<set name="abnormalTime" val="5" /> <!-- Unconfirmed -->
 		<set name="affectLimit" val="10-10" /> <!-- Unconfirmed -->
 		<set name="affectRange" val="200" /> <!-- Unconfirmed -->
-		<set name="effectPoint" val="-720" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="-707" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A2" />
 		<set name="power" val="448" />
 		<set name="targetType" val="AURA" />
@@ -645,6 +653,7 @@
 		<set name="icon" val="icon.skill1042" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="-707" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="30031" levels="1" name="Magic Potential">

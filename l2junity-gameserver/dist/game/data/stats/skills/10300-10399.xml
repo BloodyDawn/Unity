@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="10300" levels="3" name="Last Attack">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks target with 52746 Power added to P. Atk. Cuts regular monsters' HP down to 1. Usable when target's HP is 10% or below. Requires a sword, blunt, spear, fist, dual blunt, or dualsword. -->
 		<table name="#mpConsumes"> 276 297 315 </table>
@@ -11,6 +12,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1690" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-700" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10301" levels="1" name="Maximum Force Mastery">
@@ -31,6 +33,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-213" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="10303" levels="4" name="Superior Combat Master">
@@ -79,6 +82,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="4000" />
+		<set name="effectPoint" val="-436" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10306" levels="4" name="Superior Polearm Mastery">
@@ -103,6 +107,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="38" />
 		<set name="hitTime" val="2000" />
+		<set name="effectPoint" val="707" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10309" levels="4" name="Superior Fist Weapon Mastery">
@@ -120,6 +125,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="38" />
 		<set name="hitTime" val="1500" />
+		<set name="effectPoint" val="235" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10311" levels="4" name="Superior Two-handed Weapon Mastery">
@@ -147,6 +153,7 @@
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-669" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10314" levels="4" name="Disarmament">
@@ -160,6 +167,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="60000" />
+		<set name="effectPoint" val="-341" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10315" levels="2" name="Superior Polearm Mastery">
@@ -197,6 +205,7 @@
 		</for>
 	</skill>
 	<skill id="10317" levels="4" name="Thunder Slasher">
+		<table name="#effectPoint"> -92 -94 -97 -99 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Swings a spear to inflict 26003 added to P. Atk. on nearby enemies and Stuns them for 5 sec. Requires a spear. Ignores Shield Defense. Over-hit. Critical. -->
 		<table name="#mpConsumes"> 122 124 129 133 </table>
@@ -207,9 +216,11 @@
 		<set name="hitTime" val="1390" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="15000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10318" levels="4" name="Sonic Flash">
+		<table name="#effectPoint"> -183 -188 -193 -198 -203 -208 -213 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Launches a wave of sword energy to inflict 17348 damage added to P. Atk., increasing the damage as Momentum is consumed. Can consume up to 3. Requires a dual sword, sword, or blunt. Over-hit. Critical. -->
 		<table name="#mpConsumes"> 98 105 112 119 </table>
@@ -220,6 +231,7 @@
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="10319" levels="1" name="Duelist's Fury">
@@ -230,6 +242,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="300" />
 		<set name="reuseDelay" val="300000" />
+		<set name="effectPoint" val="500" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="10320" levels="3" name="Faceoff">
@@ -243,9 +256,11 @@
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="300" />
 		<set name="reuseDelay" val="600000" />
+		<set name="effectPoint" val="-500" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10321" levels="4" name="Thunder Spear">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks near the enemy by throwing a spear with 22536 Power added to P. Atk. Stuns for 9 seconds. Requires a spear. Over-hit. Critical hit. Ignores Shield Defense. Target cancel. -->
 		<table name="#mpConsumes"> 122 124 129 133 </table>
@@ -256,6 +271,7 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2500" />
 		<set name="reuseDelay" val="30000" />
+		<set name="effectPoint" val="-507" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10322" levels="1" name="Wolf's Cry">
@@ -266,6 +282,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="38" />
 		<set name="hitTime" val="2000" />
+		<set name="effectPoint" val="707" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10323" levels="1" name="Self Heal (Warrior)">
@@ -275,6 +292,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
+		<set name="effectPoint" val="100" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="10324" levels="3" name="Momentum Master">
@@ -285,6 +303,7 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="10325" levels="3" name="Dreadful Roar">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Cancels at least one buff of nearby enemies. Consumes 10 Soulstones. -->
 		<table name="#mpConsumes"> 149 151 154 </table>
@@ -294,6 +313,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-828" />
 		<set name="reuseDelay" val="120000" />
 	</skill>
 	<skill id="10326" levels="3" name="Bloody Fury">
@@ -306,9 +326,11 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="200" />
+		<set name="effectPoint" val="673" />
 		<set name="reuseDelay" val="180000" />
 	</skill>
 	<skill id="10327" levels="4" name="Momentum Flash">
+		<table name="#effectPoint"> -183 -188 -193 -198 -193 -193 -198 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks target with 17348 Power added to P. Atk. Requires a sword/dagger/blunt weapon/fist weapon. Damage increases when using Momentum, which you can use up to 3. Over-hit. Critical. -->
 		<table name="#mpConsumes"> 98 105 112 119 </table>
@@ -319,6 +341,7 @@
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="10328" levels="3" name="Soul Berserker">
@@ -336,6 +359,7 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="10330" levels="4" name="Power Hammer Crush">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks target with 18005 Power added to P. Atk. while ignoring 30% of their P. Def. Stuns for 5 sec. Requires a blunt weapon. Over-hit. Critical. -->
 		<table name="#mpConsumes"> 92 96 101 105 </table>
@@ -347,6 +371,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="7000" />
+		<set name="effectPoint" val="-183" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10331" levels="1" name="Last Man Standing">
@@ -359,6 +384,7 @@
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="300" />
 		<set name="reuseDelay" val="600000" />
+		<set name="effectPoint" val="500" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10332" levels="1" name="Duelist Wrath">
@@ -370,6 +396,7 @@
 		<set name="mpConsume" val="64" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="200" />
+		<set name="effectPoint" val="673" />
 		<set name="reuseDelay" val="300000" />
 	</skill>
 	<skill id="10333" levels="1" name="Winged Spear">
@@ -381,6 +408,7 @@
 		<set name="mpConsume" val="64" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="200" />
+		<set name="effectPoint" val="673" />
 		<set name="reuseDelay" val="300000" />
 	</skill>
 	<skill id="10334" levels="1" name="Furious Slasher">
@@ -392,6 +420,7 @@
 		<set name="mpConsume" val="64" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="200" />
+		<set name="effectPoint" val="673" />
 		<set name="reuseDelay" val="300000" />
 	</skill>
 	<skill id="10335" levels="1" name="Furious Fist">
@@ -403,6 +432,7 @@
 		<set name="mpConsume" val="64" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="200" />
+		<set name="effectPoint" val="673" />
 		<set name="reuseDelay" val="300000" />
 	</skill>
 	<skill id="10336" levels="1" name="Infinity Rush">
@@ -418,6 +448,7 @@
 		<set name="icon" val="icon.skill10336" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="2" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="10338" levels="1" name="Punch Drunk">
@@ -431,6 +462,7 @@
 		<set name="hitTime" val="100" />
 		<set name="coolTime" val="100" />
 		<set name="isMagic" val="4" />
+		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10339" levels="1" name="Winged Spear - Stun">
@@ -444,9 +476,11 @@
 		<set name="hitTime" val="100" />
 		<set name="coolTime" val="100" />
 		<set name="isMagic" val="4" />
+		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10340" levels="3" name="Blade Slasher">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks enemies in front with 16214 Power added to P. Atk. If the target is stunned, attacks with 48641 power. Can be used while a sword or blunt weapon is equipped. Consumes 1 Soulstone. -->
 		<table name="#icons"> icon.skill10340 icon.skill0526 icon.skill0526 </table>
@@ -458,6 +492,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-125" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 </list>

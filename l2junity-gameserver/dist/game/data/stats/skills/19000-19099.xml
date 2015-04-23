@@ -10,6 +10,7 @@
 		<set name="hitTime" val="1080" />
 		<set name="coolTime" val="720" />
 		<set name="reuseDelay" val="3000" />
+		<set name="effectPoint" val="-1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="19002" levels="1" name="Anchor">
@@ -22,6 +23,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="3000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="19003" levels="5" name="Clan Resistance Hall">
@@ -80,6 +82,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="-2" />
 		<set name="hitTime" val="15000" />
+		<set name="effectPoint" val="467" />
 		<set name="reuseDelay" val="1800000" />
 	</skill>
 	<skill id="19008" levels="1" name="Clan Guardian">
@@ -90,6 +93,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="100" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="19009" levels="1" name="Clan Advent">
@@ -98,6 +102,7 @@
 		<set name="icon" val="icon.skill19009" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="100" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="19010" levels="1" name="Clan Copy">
@@ -123,6 +128,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
+		<set name="effectPoint" val="100" />
 		<set name="reuseDelay" val="14400000" />
 	</skill>
 	<skill id="19013" levels="1" name="Clan Un-debuff">
@@ -133,6 +139,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="100" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="19014" levels="1" name="Clan Defense">
@@ -152,6 +159,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="2500" />
+		<set name="effectPoint" val="100" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="19016" levels="1" name="Clan Boundary">
@@ -161,6 +169,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="2500" />
+		<set name="effectPoint" val="100" />
 		<set name="reuseDelay" val="3600000" />
 	</skill>
 	<skill id="19017" levels="1" name="Clan Prison">
@@ -171,6 +180,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="3600000" />
+		<set name="effectPoint" val="-100" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="19018" levels="1" name="Clan Guardian Recovery">
@@ -180,6 +190,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1500" />
+		<set name="effectPoint" val="100" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="19019" levels="1" name="Revolution Blade">
@@ -191,6 +202,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
+		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="19020" levels="1" name="Revolution Eruption">
@@ -202,6 +214,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
+		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
 	<skill id="19021" levels="1" name="Revolution Strike">
@@ -213,6 +226,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
+		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="19022" levels="1" name="Revolution Shot">
@@ -224,6 +238,7 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
+		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="19023" levels="1" name="Revolution Multi-Shot">
@@ -235,6 +250,7 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
+		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
 	<skill id="19024" levels="1" name="Revolution Tornado Shot">
@@ -246,6 +262,7 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
+		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="19025" levels="1" name="Revolution Spike">
@@ -257,6 +274,7 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
+		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="19026" levels="1" name="Revolution Blast">
@@ -268,6 +286,7 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
+		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
 	<skill id="19027" levels="1" name="Revolution Destruction">
@@ -279,6 +298,7 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
+		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="19028" levels="2" name="Revolution Spirit">
@@ -289,6 +309,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
+		<set name="effectPoint" val="635" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="19029" levels="1" name="Revolution Self CP Recovery">
@@ -299,6 +320,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
+		<set name="effectPoint" val="669" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="19030" levels="1" name="Revolution CP Recovery">
@@ -310,6 +332,7 @@
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
+		<set name="effectPoint" val="669" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
 	<skill id="19031" levels="1" name="Revolution Party CP Recovery">
@@ -320,6 +343,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="200" />
+		<set name="effectPoint" val="669" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
 	<skill id="19032" levels="1" name="Ability of Light">
@@ -562,6 +586,7 @@
 		<set name="mpConsume" val="100" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="4000" />
+		<set name="effectPoint" val="100" />
 		<set name="reuseDelay" val="#reuseDelays" />
 	</skill>
 	<skill id="19075" levels="1" name="Clan Relation">
@@ -582,6 +607,7 @@
 		<set name="icon" val="icon.skilltransform3" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19081" levels="1" name="Tyrr Ixion">
@@ -590,6 +616,7 @@
 		<set name="icon" val="icon.skilltransform3" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19082" levels="1" name="Othell Ixion">
@@ -598,6 +625,7 @@
 		<set name="icon" val="icon.skilltransform3" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19083" levels="1" name="Yul Ixion">
@@ -606,6 +634,7 @@
 		<set name="icon" val="icon.skilltransform3" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19084" levels="1" name="Feoh Ixion">
@@ -614,6 +643,7 @@
 		<set name="icon" val="icon.skilltransform3" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19085" levels="1" name="Iss Ixion">
@@ -622,6 +652,7 @@
 		<set name="icon" val="icon.skilltransform3" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19086" levels="1" name="Wynn Ixion">
@@ -630,6 +661,7 @@
 		<set name="icon" val="icon.skilltransform3" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19087" levels="1" name="Aeore Ixion">
@@ -638,6 +670,7 @@
 		<set name="icon" val="icon.skilltransform3" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="1000" />
 	</skill>
 	<skill id="19088" levels="4" name="Summon Siege Golem">
@@ -680,9 +713,11 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-700" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="19092" levels="2" name="Chat Prohibited">
+		<table name="#effectPoint"> -700 0 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Chatting is restricted. -->
 		<table name="#castRanges"> 900 -1 </table>
@@ -702,6 +737,7 @@
 		<set name="coolTime" val="#coolTimes" />
 		<set name="reuseDelay" val="#reuseDelays" />
 		<set name="isMagic" val="#isMagics" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="#isDebuffs" />
 	</skill>
 	<skill id="19093" levels="1" name="Added Blow Quiver">
@@ -739,6 +775,7 @@
 		<set name="icon" val="icon.skill0056" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="-2" />
 		<set name="castRange" val="900" />
 	</skill>
 	<skill id="19097" levels="1" name="Critical Target">
@@ -747,6 +784,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
+		<set name="effectPoint" val="-2" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="19098" levels="1" name="Bleed Target">
@@ -757,6 +795,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="reuseDelay" val="10000" />
+		<set name="effectPoint" val="-2" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="19099" levels="1" name="GM's Authority">

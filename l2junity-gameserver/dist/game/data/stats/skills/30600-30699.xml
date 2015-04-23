@@ -8,6 +8,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="600" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-1" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="30601" levels="1" name="Heavy Hit">
@@ -19,6 +20,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-1" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="30602" levels="1" name="Eviscerator Aura">
@@ -37,6 +39,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="2" />
 		<set name="isMagic" val="3" />
 	</skill>
 	<skill id="30604" levels="1" name="Block Eviscerator Force">
@@ -62,6 +65,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="2" />
 		<set name="isMagic" val="3" />
 	</skill>
 	<skill id="30607" levels="1" name="Block Sayha's Seer Force">
@@ -72,12 +76,14 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="30608" levels="5" name="Fury of Eviscerator">
+
 		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Atk. + 5%. -->
 		<set name="icon" val="icon.skill30509" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="300" />
+		<set name="effectPoint" val="500" />
 		<set name="isMagic" val="4" />
 	</skill>
 </list>

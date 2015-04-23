@@ -6,6 +6,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="600" />
+		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="10000" />
 	</skill>
 	<skill id="16101" levels="1" name="Tauti">
@@ -24,6 +25,7 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-264" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16103" levels="6" name="Death Lift">
@@ -37,6 +39,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="1000" />
+		<set name="effectPoint" val="-150" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="16104" levels="7" name="Fatal Strike">
@@ -49,6 +52,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="800" />
+		<set name="effectPoint" val="-100" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="16105" levels="6" name="Fatal Bomber">
@@ -63,6 +67,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="3000" />
+		<set name="effectPoint" val="-1050" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16106" levels="5" name="Chain Smash">
@@ -77,6 +82,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="1000" />
 		<set name="reuseDelay" val="3000" />
+		<set name="effectPoint" val="-150" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16107" levels="3" name="Fatal Blow">
@@ -89,6 +95,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="830" />
 		<set name="coolTime" val="700" />
+		<set name="effectPoint" val="-100" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="16108" levels="7" name="Bloody Blades">
@@ -102,6 +109,7 @@
 		<set name="hitTime" val="#hitTimes" />
 		<set name="coolTime" val="800" />
 		<set name="reuseDelay" val="3000" />
+		<set name="effectPoint" val="-700" />
 		<set name="isMagic" val="#isMagics" />
 	</skill>
 	<skill id="16109" levels="1" name="Heavy Armor Rise">
@@ -114,6 +122,7 @@
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="1000" />
+		<set name="effectPoint" val="650" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16110" levels="1" name="Light Armor Rise">
@@ -126,6 +135,7 @@
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="1000" />
+		<set name="effectPoint" val="650" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16111" levels="1" name="Robe Rise">
@@ -138,6 +148,7 @@
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="1000" />
+		<set name="effectPoint" val="650" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16112" levels="1" name="Speed Rise">
@@ -150,6 +161,7 @@
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="1000" />
+		<set name="effectPoint" val="650" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16113" levels="1" name="Tragic Bleed">
@@ -164,6 +176,7 @@
 		<set name="coolTime" val="800" />
 		<set name="reuseDelay" val="1000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-100" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16114" levels="1" name="Curse of the Dead">
@@ -175,6 +188,7 @@
 		<set name="mpConsume" val="59" />
 		<set name="castRange" val="1300" />
 		<set name="hitTime" val="300" />
+		<set name="effectPoint" val="-10000" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16115" levels="2" name="Chain Smash">
@@ -188,6 +202,7 @@
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="1000" />
 		<set name="reuseDelay" val="1000" />
+		<set name="effectPoint" val="-150" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16116" levels="2" name="Self-Devastation">
@@ -197,6 +212,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="10000" />
+		<set name="effectPoint" val="-1000" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16117" levels="1" name="Amplify Damage - Stage 1">
@@ -208,6 +224,7 @@
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="1000" />
+		<set name="effectPoint" val="650" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16118" levels="1" name="Amplify Damage - Stage 2">
@@ -219,6 +236,7 @@
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="1000" />
+		<set name="effectPoint" val="650" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16119" levels="1" name="Flare Chain">
@@ -232,6 +250,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="-700" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16120" levels="1" name="Magma Chain">
@@ -244,6 +263,7 @@
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="1000" />
+		<set name="effectPoint" val="-150" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16121" levels="5" name="Sleeping Cloud">
@@ -258,6 +278,7 @@
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="3000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-700" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16122" levels="1" name="Flare Breath">
@@ -272,6 +293,7 @@
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-700" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16123" levels="1" name="Flare Outburst">
@@ -284,6 +306,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="-700" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16124" levels="1" name="Flare Life">
@@ -297,6 +320,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="10000" />
+		<set name="effectPoint" val="1300" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16125" levels="1" name="Volcano Sword Dance">
@@ -308,6 +332,7 @@
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="800" />
+		<set name="effectPoint" val="-100" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="16126" levels="1" name="Volcano Buster">
@@ -319,6 +344,7 @@
 		<set name="castRange" val="100" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="800" />
+		<set name="effectPoint" val="-100" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="16127" levels="1" name="Blind Flame">
@@ -330,6 +356,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="800" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="-700" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16128" levels="1" name="Flame Bog">
@@ -344,6 +371,7 @@
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-700" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16129" levels="5" name="Desert Thirst">
@@ -358,6 +386,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-500" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16130" levels="1" name="Oasis Energy">
@@ -371,6 +400,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="650" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16131" levels="1" name="Thirst Quench">
@@ -384,6 +414,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="650" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16132" levels="1" name="Oasis Mirage">
@@ -395,6 +426,7 @@
 		<set name="hitTime" val="5000" />
 		<set name="coolTime" val="800" />
 		<set name="reuseDelay" val="15000" />
+		<set name="effectPoint" val="-1000" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16133" levels="1" name="Watery Grave">
@@ -406,6 +438,7 @@
 		<set name="hitTime" val="5000" />
 		<set name="coolTime" val="800" />
 		<set name="reuseDelay" val="15000" />
+		<set name="effectPoint" val="-1000" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16134" levels="1" name="Doom Shrieker">
@@ -416,6 +449,7 @@
 		<set name="mpConsume" val="45" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="800" />
+		<set name="effectPoint" val="-1000" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="16135" levels="1" name="Begin Research">
@@ -426,6 +460,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16136" levels="1" name="Reward x 2">
@@ -436,6 +471,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16137" levels="1" name="Reward x 4">
@@ -446,6 +482,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16138" levels="1" name="Reward x 8">
@@ -456,6 +493,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16139" levels="1" name="Reward x 16">
@@ -466,6 +504,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16140" levels="1" name="Reward x 32">
@@ -476,6 +515,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16141" levels="1" name="Research Success">
@@ -485,6 +525,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="16142" levels="1" name="Research Success">
@@ -494,6 +535,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="16143" levels="1" name="Research Success">
@@ -503,6 +545,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="16144" levels="1" name="Research Success">
@@ -512,6 +555,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="16145" levels="1" name="Research Success">
@@ -521,6 +565,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="16146" levels="1" name="Research Fail">
@@ -530,6 +575,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="16147" levels="7" name="Fatal Wave">
@@ -543,6 +589,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="#hitTimes" />
 		<set name="coolTime" val="570" />
+		<set name="effectPoint" val="-1578" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="16148" levels="5" name="Fear">
@@ -557,6 +604,7 @@
 		<set name="hitTime" val="4000" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-150" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16149" levels="5" name="Poison">
@@ -571,6 +619,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-150" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16150" levels="5" name="Slow">
@@ -585,9 +634,11 @@
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="3000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-100" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16151" levels="7" name="Aura Spike">
+		<table name="#effectPoint"> -100 -105 -110 -115 -115 -120 -125 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Deals non-attribute magic damage to target. -->
 		<table name="#mpConsumes"> 30 36 42 48 54 54 60 </table>
@@ -598,9 +649,11 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16152" levels="7" name="Fire Spike">
+		<table name="#effectPoint"> -100 -105 -110 -115 -115 -120 -125 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Deals fire damage to target. -->
 		<table name="#mpConsumes"> 30 36 42 48 54 54 60 </table>
@@ -611,6 +664,7 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16153" levels="6" name="Power Slam">
@@ -625,6 +679,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="1000" />
+		<set name="effectPoint" val="-700" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16154" levels="6" name="Mass Chain Smash">
@@ -639,6 +694,7 @@
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="1000" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="-2140" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16155" levels="1" name="Charmed Kefensis">
@@ -650,6 +706,7 @@
 		<set name="hitTime" val="5000" />
 		<set name="coolTime" val="800" />
 		<set name="reuseDelay" val="10000" />
+		<set name="effectPoint" val="-1000" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16156" levels="8" name="Mass Droop">
@@ -665,6 +722,7 @@
 		<set name="coolTime" val="570" />
 		<set name="reuseDelay" val="6000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-1578" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16157" levels="5" name="Bleed">
@@ -680,6 +738,7 @@
 		<set name="coolTime" val="800" />
 		<set name="reuseDelay" val="3000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-100" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16158" levels="1" name="Beleth's Volcano">
@@ -693,6 +752,7 @@
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="-709" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16159" levels="1" name="Beleth's Blaze">
@@ -705,6 +765,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="800" />
 		<set name="reuseDelay" val="10000" />
+		<set name="effectPoint" val="-1500" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16160" levels="1" name="Beleth's Flame">
@@ -718,6 +779,7 @@
 		<set name="coolTime" val="800" />
 		<set name="reuseDelay" val="6000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-100" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16161" levels="1" name="Darion's Bleed">
@@ -731,6 +793,7 @@
 		<set name="coolTime" val="800" />
 		<set name="reuseDelay" val="6000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-100" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16162" levels="1" name="Beleth's Meteor">
@@ -742,6 +805,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="800" />
 		<set name="reuseDelay" val="6000" />
+		<set name="effectPoint" val="-1500" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16163" levels="1" name="Darion's Sword Storm">
@@ -753,6 +817,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="800" />
 		<set name="reuseDelay" val="6000" />
+		<set name="effectPoint" val="-1500" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16164" levels="1" name="Flame Blade">
@@ -765,6 +830,7 @@
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="570" />
 		<set name="reuseDelay" val="6000" />
+		<set name="effectPoint" val="-1578" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16165" levels="1" name="Dark Blade">
@@ -776,6 +842,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="800" />
 		<set name="reuseDelay" val="6000" />
+		<set name="effectPoint" val="-1500" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16166" levels="3" name="Escape Death">
@@ -787,6 +854,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="10" />
 		<set name="hitTime" val="1500" />
+		<set name="effectPoint" val="204" />
 		<set name="reuseDelay" val="#reuseDelays" />
 	</skill>
 	<skill id="16167" levels="2" name="Increase Evasion 1">
@@ -806,6 +874,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="830" />
 		<set name="coolTime" val="700" />
+		<set name="effectPoint" val="-100" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="16169" levels="1" name="Pull">
@@ -819,6 +888,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="1000" />
 		<set name="reuseDelay" val="7000" />
+		<set name="effectPoint" val="-150" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16170" levels="1" name="Hellbound Tornado">
@@ -830,6 +900,7 @@
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="7000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16171" levels="1" name="Summon Poison Zone">
@@ -840,6 +911,7 @@
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="300" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="-707" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16172" levels="1" name="Poisoned">
@@ -849,6 +921,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
+		<set name="effectPoint" val="-707" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16173" levels="1" name="Invincibility">
@@ -866,6 +939,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="100" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="100" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="16175" levels="1" name="Major Herb of Growth">
@@ -876,6 +950,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="100" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="100" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="16176" levels="1" name="Superior Herb of Growth">
@@ -886,6 +961,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="100" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="100" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="16177" levels="5" name="Knock Down Resistance">
@@ -905,6 +981,7 @@
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="3000" />
+		<set name="effectPoint" val="500" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16179" levels="1" name="Beleth">
@@ -944,6 +1021,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="5000" />
+		<set name="effectPoint" val="100" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16184" levels="1" name="Vengeful Petrify">
@@ -956,6 +1034,7 @@
 		<set name="castRange" val="300" />
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-100" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16185" levels="1" name="Sword Storm">
@@ -966,6 +1045,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="300" />
+		<set name="effectPoint" val="-1500" />
 		<set name="hitTime" val="1500" />
 	</skill>
 	<skill id="16186" levels="1" name="Belly Cut">
@@ -976,6 +1056,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="300" />
+		<set name="effectPoint" val="-1500" />
 		<set name="hitTime" val="1500" />
 	</skill>
 	<skill id="16187" levels="1" name="Head-on Crash">
@@ -986,6 +1067,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="300" />
+		<set name="effectPoint" val="-500" />
 		<set name="hitTime" val="1500" />
 	</skill>
 	<skill id="16188" levels="1" name="Darkness">
@@ -997,6 +1079,7 @@
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="300" />
 		<set name="hitTime" val="1500" />
+		<set name="effectPoint" val="-1500" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16189" levels="1" name="Disciple's Blow">
@@ -1008,6 +1091,7 @@
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="300" />
 		<set name="hitTime" val="1500" />
+		<set name="effectPoint" val="-500" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16190" levels="1" name="Recharge Fury">
@@ -1018,6 +1102,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="300" />
+		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="1500" />
 	</skill>
 	<skill id="16191" levels="1" name="Pandemonium">
@@ -1028,6 +1113,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="300" />
+		<set name="effectPoint" val="-1500" />
 		<set name="hitTime" val="1500" />
 	</skill>
 	<skill id="16192" levels="1" name="Tyranny">
@@ -1039,6 +1125,7 @@
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="300" />
 		<set name="hitTime" val="1500" />
+		<set name="effectPoint" val="-1500" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16193" levels="1" name="Lurking Lunacy">
@@ -1051,6 +1138,7 @@
 		<set name="castRange" val="300" />
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-1500" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16194" levels="1" name="Quiet Path to Death">
@@ -1062,6 +1150,7 @@
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="1000" />
 		<set name="hitTime" val="10000" />
+		<set name="effectPoint" val="-1500" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16195" levels="1" name="Guided Death">
@@ -1073,6 +1162,7 @@
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="1000" />
 		<set name="hitTime" val="5000" />
+		<set name="effectPoint" val="-1500" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="16196" levels="1" name="Blood Shower">
@@ -1085,6 +1175,7 @@
 		<set name="castRange" val="300" />
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-1500" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="16197" levels="1" name="Haughty Slaughter">
@@ -1095,6 +1186,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="300" />
+		<set name="effectPoint" val="-1500" />
 		<set name="hitTime" val="1500" />
 	</skill>
 	<skill id="16198" levels="1" name="Continuing Pain">
@@ -1105,6 +1197,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="300" />
+		<set name="effectPoint" val="-1500" />
 		<set name="hitTime" val="1500" />
 	</skill>
 	<skill id="16199" levels="1" name="Howling Abyss">
@@ -1116,6 +1209,7 @@
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="300" />
 		<set name="hitTime" val="1500" />
+		<set name="effectPoint" val="-500" />
 		<set name="isMagic" val="1" />
 	</skill>
 </list>

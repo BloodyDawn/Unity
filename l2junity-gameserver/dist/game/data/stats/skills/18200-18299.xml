@@ -97,6 +97,7 @@
 		<set name="icon" val="Icon.ev_invasion_debuff" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="reuseDelay" val="60000" />
 	</skill>
 	<skill id="18215" levels="1" name="Alien's Nano Cannister">
@@ -112,6 +113,7 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="18217" levels="5" name="Flame Spear">
+		<table name="#effectPoint"> -100 -105 -110 -115 -115 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
@@ -120,6 +122,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="300" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="18218" levels="5" name="Fire Stigma">
@@ -133,6 +136,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-500" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="18219" levels="1" name="Defense Decrease">
@@ -145,6 +149,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="3000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-100" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="18220" levels="1" name="Blazing Swamp Teleport">
@@ -174,6 +179,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="18224" levels="1" name="Appearance Stone: Zorro Hat (90-day)">
@@ -439,6 +445,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="18266" levels="1" name="Spellbook: Fate of the Exalted">

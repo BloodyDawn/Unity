@@ -32,6 +32,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -48,6 +49,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="11750" levels="1" name="Heavy Hit">
@@ -58,6 +60,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="11751" levels="1" name="Superior Magic Weapon Mastery" enchantGroup1="10">
@@ -86,6 +89,7 @@
 		</for>
 	</skill>
 	<skill id="11752" levels="8" name="Sustain">
+		<table name="#effectPoint"> 867 1 1 1 1 1 1 1 1 1 1 </table>
 		<!-- For 15 seconds, Heals the selected party member by 172 per second. Further increases incoming Healing power by 10%. Also increases your Healing power. -->
 		<table name="#mpConsume"> 42 38 40 42 43 45 46 46 </table>
 		<table name="#mpInitialConsume"> 11 10 10 10 11 11 11 11 </table>
@@ -104,6 +108,7 @@
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="icon" val="icon.skill11752" />
 		<set name="hitTime" val="500" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -125,6 +130,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="icon" val="icon.skill11752" />
+		<set name="effectPoint" val="2" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -133,6 +139,7 @@
 		</for>
 	</skill>
 	<skill id="11754" levels="5" name="Fairy of Life" enchantGroup1="10">
+		<table name="#effectPoint"> 867 886 899 909 922 </table>
 		<!-- Summons a fairy that follows and periodically heals the selected party member for 60 seconds. Has a chance of recovering HP when attacked. -->
 		<table name="#mpConsume"> 34 37 38 42 44 </table>
 		<table name="#mpInitialConsume"> 9 9 10 10 11 </table>
@@ -154,6 +161,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A2" />
 		<set name="icon" val="icon.skill11754" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<enchant2 name="abnormalTime" val="#ench2abnormalTime" />
 		<for>
@@ -298,6 +306,7 @@
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="120000" />
+		<set name="effectPoint" val="867" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Invincible" />
@@ -320,6 +329,7 @@
 		<set name="mpConsume" val="36" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="120000" />
+		<set name="effectPoint" val="1760" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Invincible" />
@@ -329,6 +339,7 @@
 		</for>
 	</skill>
 	<skill id="11760" levels="8" name="Radiant Recharge" enchantGroup1="10">
+		<table name="#effectPoint"> 867 874 886 895 902 909 918 927 935 944 952 </table>
 		<!-- Instantly recovers target's MP with a maximum of 166 Power depending on target's level. Also, for 10 seconds, recovers 12 MP per second. Ineffective on classes that have the Recharge skill. -->
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsume"> 146 149 150 154 157 160 162 166 </table>
@@ -347,6 +358,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="castRange" val="600" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="mpConsume" val="#ench1mpConsume" />
 		<enchant1 name="mpInitialConsume" val="#ench1mpInitialConsume" />
@@ -365,6 +377,7 @@
 		</for>
 	</skill>
 	<skill id="11761" levels="5" name="Brilliant Recharge" enchantGroup1="10">
+		<table name="#effectPoint"> 1798 1811 1826 1844 1865 1878 1895 1912 </table>
 		<!-- Instantly recovers party members' MP with a maximum of 700 Power depending on their level. Also, for 10 seconds, recovers 50 MP per second. -->
 		<table name="#magicLvl"> 91 93 95 97 99 </table>
 		<table name="#mpConsume"> 3120 3176 3224 3288 3344 </table>
@@ -384,6 +397,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="targetType" val="PARTY" />
 		<enchant1 name="mpConsume" val="#ench1mpConsume" />
 		<enchant1 name="mpInitialConsume" val="#ench1mpInitialConsume" />
@@ -402,7 +416,7 @@
 		<table name="#ench1mpInitialConsume"> 34 33 32 31 29 28 27 26 25 24 </table>
 		<set name="abnormalTime" val="15" />
 		<set name="affectRange" val="1000" />
-		<set name="effectPoint" val="398" />
+		<set name="effectPoint" val="1844" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="1000" />
 		<set name="icon" val="icon.skill11762" />
@@ -427,7 +441,7 @@
 		<!-- Dispels target's debuffs. Allies only. -->
 		<table name="#ench1power"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<set name="castRange" val="600" />
-		<set name="effectPoint" val="1" />
+		<set name="effectPoint" val="867" />
 		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
@@ -471,6 +485,7 @@
 		<set name="mpConsume" val="74" />
 		<set name="mpInitialConsume" val="18" />
 		<set name="castRange" val="600" />
+		<set name="effectPoint" val="1734" />
 		<set name="targetType" val="PARTY" />
 		<enchant1 name="mpConsume" val="#ench1mpConsume" />
 		<enchant1 name="mpInitialConsume" val="#ench1mpInitialConsume" />
@@ -495,6 +510,7 @@
 		</enchant2for>
 	</skill>
 	<skill id="11765" levels="4" name="Crystal Regeneration" enchantGroup1="10" enchantGroup2="10" enchantGroup3="10">
+		<table name="#effectPoint"> 867 895 913 933 956 977 999 </table>
 		<!-- Crystallize yourself and become immune to damage and debuffs for 10 seconds. Recover 266 HP and 74 MP every second. -->
 		<table name="#hpPower"> 266 273 280 285 </table>
 		<table name="#mpPower"> 74 77 81 83 </table>
@@ -513,6 +529,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="300000" />
 		<set name="mpConsume" val="#mpConsume" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="targetType" val="SELF" />
 		<enchant2 name="mpConsume" val="#ench1mpConsume" />
 		<enchant2 name="mpInitialConsume" val="#ench1mpInitialConsume" />
@@ -597,6 +614,7 @@
 		<set name="reuseDelay" val="600000" />
 		<set name="staticReuse" val="true" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="1811" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<enchant1 name="mpConsume" val="#ench1mpConsume" />
 		<enchant1 name="mpInitialConsume" val="#ench1mpInitialConsume" />
@@ -630,6 +648,7 @@
 		</enchant2for>
 	</skill>
 	<skill id="11769" levels="6" name="Dark Backfire">
+		<table name="#effectPoint"> -867 -880 -895 -906 -918 -933 -945 -958 -971 </table>
 		<!-- For 30 sec., target's MP Consumption + 50%, and Casting Spd. and Atk. Spd. - 20%. -->
 		<table name="#abnormalLvl"> 1 2 3 4 5 6 </table>
 		<table name="#mpInitialConsume"> 7 7 8 8 9 9 </table>
@@ -648,6 +667,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -736,14 +756,17 @@
 		</enchant3for>
 	</skill>
 	<skill id="11773" levels="2" name="Lakcis Disc">
+		<table name="#effectPoint"> 906 913 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Directly manipulates the power of light to Heal nearby allies and damage nearby enemies. Continuously consumes MP. -->
 		<set name="icon" val="icon.skill11773" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11774" levels="4" name="Summon Tree of Life">
+		<table name="#effectPoint"> 1733 1789 1825 1865 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons a Tree of Life. The summoned tree heals nearby party members for 30 seconds. Can also cast a debuff canceling blessing. -->
 		<table name="#mpConsumes"> 185 205 225 243 </table>
@@ -755,6 +778,7 @@
 		<set name="hitTime" val="5000" />
 		<set name="coolTime" val="2000" />
 		<set name="reuseDelay" val="10000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11775" levels="1" name="Return">
@@ -865,6 +889,7 @@
 		</for>
 	</skill>
 	<skill id="11780" levels="6" name="Dark Devour">
+		<table name="#effectPoint"> -867 -874 -891 -902 -913 -927 -938 -950 -962 </table>
 		<!-- Updated to Ertheia -->
 		<!-- Decreases target's Recovery by 50%. -->
 		<table name="#mpConsumes"> 35 35 37 40 42 45 </table>
@@ -878,6 +903,7 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
@@ -891,6 +917,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="0" />
+		<set name="effectPoint" val="-1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11782" levels="2" name="Frantic Healing">
@@ -918,6 +945,7 @@
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="6000" />
 		<set name="reuseDelay" val="60000" />
+		<set name="effectPoint" val="-100" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="ResetDebuff" />
@@ -941,6 +969,7 @@
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="effectPoint" val="2" />
 		<set name="targetType" val="PC_BODY" />
 		<cond>
 			<player canResurrect="true" />
@@ -985,6 +1014,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="30000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
@@ -1180,6 +1210,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="hitTime" val="500" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -1202,6 +1233,7 @@
 		<set name="icon" val="icon.skill1217" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -1227,6 +1259,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="hitTime" val="500" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -1249,6 +1282,7 @@
 		<set name="icon" val="icon.skill1217" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -1274,6 +1308,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="hitTime" val="500" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">
@@ -1296,6 +1331,7 @@
 		<set name="icon" val="icon.skill1217" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="4" />
 		<for>
 			<effect name="Buff">
@@ -1321,6 +1357,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="hitTime" val="500" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="HealOverTime" ticks="1">

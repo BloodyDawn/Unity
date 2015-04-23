@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="14100" levels="6" name="Lachik Front Foot Strike">
+		<table name="#effectPoint"> -350 -350 -351 -352 -352 -352 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<table name="#mpConsumes"> 84 84 84 85 85 85 </table>
 		<set name="icon" val="icon.skill0003" />
@@ -9,9 +10,11 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="120" />
 		<set name="hitTime" val="1500" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="2000" />
 	</skill>
 	<skill id="14101" levels="4" name="Wood Downward Strike">
+		<table name="#effectPoint"> -347 -349 -350 -350 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Speed is decreased by 20%. -->
 		<table name="#mpConsumes"> 83 84 84 84 </table>
@@ -21,6 +24,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14102" levels="1" name="Agathion Cute Trick - Magmeld Fairy">
@@ -37,6 +41,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="15000" />
+		<set name="effectPoint" val="100" />
 		<set name="reuseDelay" val="1800000" />
 	</skill>
 	<skill id="14104" levels="1" name="Transformed: Orbis' Curse">
@@ -45,9 +50,11 @@
 		<set name="icon" val="icon.skilltransform3" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="10" />
 		<set name="castRange" val="900" />
 	</skill>
 	<skill id="14105" levels="6" name="Howling">
+		<table name="#effectPoint"> -350 -350 -351 -352 -352 -352 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<table name="#mpConsumes"> 84 84 84 85 85 85 </table>
 		<set name="icon" val="icon.skill0412" />
@@ -57,6 +64,7 @@
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14106" levels="1" name="Recovery">
@@ -67,6 +75,7 @@
 		<set name="mpConsume" val="77" />
 		<set name="hitTime" val="3500" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14107" levels="1" name="Saturation">
@@ -77,9 +86,11 @@
 		<set name="mpConsume" val="77" />
 		<set name="hitTime" val="3500" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14108" levels="6" name="Lachik Ball">
+		<table name="#effectPoint"> -350 -350 -351 -352 -352 -352 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<table name="#mpConsumes"> 77 77 77 78 78 78 </table>
 		<set name="icon" val="icon.skill1230" />
@@ -89,9 +100,11 @@
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14109" levels="6" name="Lachik Beam">
+		<table name="#effectPoint"> -350 -350 -351 -352 -352 -352 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<table name="#mpConsumes"> 77 77 77 78 78 78 </table>
 		<set name="icon" val="icon.skill1230" />
@@ -101,6 +114,7 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="7500" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14110" levels="1" name="Teredor Blow">
@@ -113,6 +127,7 @@
 		<set name="castRange" val="100" />
 		<set name="hitTime" val="3750" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="-351" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14111" levels="1" name="Teredor Range Attack">
@@ -124,6 +139,7 @@
 		<set name="castRange" val="100" />
 		<set name="hitTime" val="3750" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="-351" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14112" levels="2" name="Teredor Poison">
@@ -137,6 +153,7 @@
 		<set name="hitTime" val="3750" />
 		<set name="reuseDelay" val="2000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-351" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14113" levels="1" name="Teredor Flu Infection">
@@ -148,6 +165,7 @@
 		<set name="mpConsume" val="77" />
 		<set name="reuseDelay" val="2000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-351" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14114" levels="1" name="Teredor P. Resistance">
@@ -177,6 +195,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="2000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14118" levels="1" name="Millipede P. Def. Enhancement">
@@ -187,6 +206,7 @@
 		<set name="mpConsume" val="77" />
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14119" levels="1" name="Underbug Self Blasting">
@@ -197,6 +217,7 @@
 		<set name="hitTime" val="5000" />
 		<set name="reuseDelay" val="2000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-351" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14120" levels="3" name="Enhance">
@@ -209,6 +230,7 @@
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="2000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14121" levels="1" name="Othell Rogue's Essence">
@@ -220,6 +242,7 @@
 		<set name="mpConsume" val="75" />
 		<set name="hitTime" val="10000" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14122" levels="1" name="Tyrr Warrior's Essence">
@@ -231,6 +254,7 @@
 		<set name="mpConsume" val="75" />
 		<set name="hitTime" val="10000" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14123" levels="1" name="Feoh Wizard's Essence">
@@ -242,6 +266,7 @@
 		<set name="mpConsume" val="75" />
 		<set name="hitTime" val="10000" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14124" levels="1" name="Iss Enchanter's Essence">
@@ -253,6 +278,7 @@
 		<set name="mpConsume" val="75" />
 		<set name="hitTime" val="10000" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14125" levels="1" name="Wynn Summoner's Essence">
@@ -264,6 +290,7 @@
 		<set name="mpConsume" val="75" />
 		<set name="hitTime" val="10000" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14126" levels="1" name="Sigel Knight's Essence">
@@ -275,6 +302,7 @@
 		<set name="mpConsume" val="75" />
 		<set name="hitTime" val="10000" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14127" levels="1" name="Yul Archer's Essence">
@@ -286,6 +314,7 @@
 		<set name="mpConsume" val="75" />
 		<set name="hitTime" val="10000" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14128" levels="1" name="Aeore Healer's Essence">
@@ -297,6 +326,7 @@
 		<set name="mpConsume" val="75" />
 		<set name="hitTime" val="10000" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14129" levels="1" name="Enchant Skill">
@@ -308,9 +338,11 @@
 		<set name="mpConsume" val="75" />
 		<set name="hitTime" val="10000" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14130" levels="3" name="Phantom Circle">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0006" />
 		<set name="operateType" val="A1" />
@@ -318,9 +350,11 @@
 		<set name="mpConsume" val="85" />
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="2500" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="14131" levels="3" name="Phantom Attack">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0006" />
 		<set name="operateType" val="A1" />
@@ -328,9 +362,11 @@
 		<set name="mpConsume" val="85" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="2000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="14132" levels="3" name="Curse Bloodstain">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Poison status. -->
 		<set name="icon" val="icon.skill1168" />
@@ -341,9 +377,11 @@
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="3000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14133" levels="3" name="Curse Shout">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill1230" />
 		<set name="operateType" val="A1" />
@@ -352,9 +390,11 @@
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="4000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14134" levels="3" name="Exile Attack">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0006" />
 		<set name="operateType" val="A1" />
@@ -362,9 +402,11 @@
 		<set name="mpConsume" val="85" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="2000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="14135" levels="3" name="Exile Slasher">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0006" />
 		<set name="operateType" val="A1" />
@@ -372,18 +414,22 @@
 		<set name="mpConsume" val="85" />
 		<set name="castRange" val="200" />
 		<set name="hitTime" val="1500" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="4000" />
 	</skill>
 	<skill id="14136" levels="3" name="Dark Counter">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0006" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="85" />
 		<set name="hitTime" val="1500" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="14137" levels="3" name="Bloody Fist">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Poison status. -->
 		<set name="icon" val="icon.skill1168" />
@@ -394,9 +440,11 @@
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14138" levels="3" name="Dark Avenger">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
@@ -405,6 +453,7 @@
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="7000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14139" levels="1" name="Teleport">
@@ -415,9 +464,11 @@
 		<set name="mpConsume" val="78" />
 		<set name="castRange" val="1000" />
 		<set name="hitTime" val="3000" />
+		<set name="effectPoint" val="-352" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14140" levels="3" name="Decrease Speed">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Spd decreased. -->
 		<set name="icon" val="icon.skill1160" />
@@ -427,9 +478,11 @@
 		<set name="castRange" val="1000" />
 		<set name="hitTime" val="10000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14141" levels="3" name="Sleep">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Sleep Status. -->
 		<set name="icon" val="icon.skill1069" />
@@ -439,9 +492,11 @@
 		<set name="castRange" val="1000" />
 		<set name="hitTime" val="10000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14142" levels="3" name="Fear">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Fear status. -->
 		<set name="icon" val="icon.skill1169" />
@@ -451,9 +506,11 @@
 		<set name="castRange" val="1000" />
 		<set name="hitTime" val="10000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14143" levels="3" name="Exile Sword Attack">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0006" />
 		<set name="operateType" val="A1" />
@@ -461,18 +518,22 @@
 		<set name="mpConsume" val="85" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="2000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="4000" />
 	</skill>
 	<skill id="14144" levels="3" name="Exile Sword Slasher">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0036" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="85" />
 		<set name="hitTime" val="2500" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="4000" />
 	</skill>
 	<skill id="14145" levels="3" name="Yoke of Blood">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Speed is decreased. -->
 		<set name="icon" val="icon.skill1160" />
@@ -483,9 +544,11 @@
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="4000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14146" levels="3" name="Bloodstain's Will">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0006" />
 		<set name="operateType" val="A1" />
@@ -494,9 +557,11 @@
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14147" levels="3" name="Exile Knuckle">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0006" />
 		<set name="operateType" val="A1" />
@@ -504,9 +569,11 @@
 		<set name="mpConsume" val="85" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="2000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="6000" />
 	</skill>
 	<skill id="14148" levels="3" name="Exile Circle">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0006" />
 		<set name="operateType" val="A1" />
@@ -514,9 +581,11 @@
 		<set name="mpConsume" val="85" />
 		<set name="castRange" val="500" />
 		<set name="hitTime" val="1500" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="14149" levels="3" name="Sound of Wind">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0793" />
 		<set name="operateType" val="A1" />
@@ -524,9 +593,11 @@
 		<set name="mpConsume" val="85" />
 		<set name="castRange" val="600" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14150" levels="3" name="Space Wave">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0006" />
 		<set name="operateType" val="A1" />
@@ -534,18 +605,22 @@
 		<set name="mpConsume" val="85" />
 		<set name="castRange" val="2000" />
 		<set name="hitTime" val="4000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="8000" />
 	</skill>
 	<skill id="14151" levels="3" name="Sky Dash">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0493" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="85" />
 		<set name="castRange" val="500" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="14152" levels="3" name="Roar of Destruction">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill1230" />
 		<set name="operateType" val="A1" />
@@ -553,18 +628,22 @@
 		<set name="mpConsume" val="85" />
 		<set name="castRange" val="250" />
 		<set name="hitTime" val="1500" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="7000" />
 	</skill>
 	<skill id="14153" levels="3" name="Sky Bomb">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0493" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="85" />
 		<set name="castRange" val="500" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="14154" levels="3" name="Earthquake Roar">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0036" />
 		<set name="operateType" val="A1" />
@@ -572,9 +651,11 @@
 		<set name="mpConsume" val="85" />
 		<set name="castRange" val="200" />
 		<set name="hitTime" val="2000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="14155" levels="3" name="Quake Bomb">
+		<table name="#effectPoint"> -352 -353 -353 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0006" />
 		<set name="operateType" val="A1" />
@@ -582,19 +663,23 @@
 		<set name="mpConsume" val="85" />
 		<set name="castRange" val="200" />
 		<set name="hitTime" val="3000" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="14156" levels="1" name="Snake">
 		<set name="operateType" val="P" />
+		<set name="effectPoint" val="-64" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="14157" levels="1" name="Long Snake">
 		<set name="operateType" val="P" />
+		<set name="effectPoint" val="-64" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="14158" levels="2" name="Crawler Spear">
 		<!-- TODO: Auto level parse, Requires manual update -->
 		<set name="operateType" val="P" />
+		<set name="effectPoint" val="-76" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="14159" levels="1" name="Fist Bump">
@@ -605,6 +690,7 @@
 		<set name="mpConsume" val="13" />
 		<set name="castRange" val="200" />
 		<set name="hitTime" val="3000" />
+		<set name="effectPoint" val="-70" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="14160" levels="1" name="Fist Slasher">
@@ -615,6 +701,7 @@
 		<set name="mpConsume" val="13" />
 		<set name="castRange" val="800" />
 		<set name="hitTime" val="3000" />
+		<set name="effectPoint" val="-70" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="14161" levels="1" name="Gash">
@@ -625,6 +712,7 @@
 		<set name="mpConsume" val="16" />
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="3000" />
+		<set name="effectPoint" val="-83" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="14162" levels="1" name="Sweep">
@@ -638,6 +726,7 @@
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-89" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14163" levels="1" name="Howl">
@@ -651,14 +740,17 @@
 		<set name="hitTime" val="2500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-89" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14164" levels="1" name="Arcane Jet">
 		<set name="operateType" val="P" />
+		<set name="effectPoint" val="-104" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="14165" levels="1" name="Arcane Bust">
 		<set name="operateType" val="P" />
+		<set name="effectPoint" val="-104" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="14166" levels="1" name="Baelz">
@@ -672,14 +764,17 @@
 		<set name="hitTime" val="2500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-83" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14167" levels="1" name="Black Powder">
 		<set name="operateType" val="P" />
+		<set name="effectPoint" val="-96" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="14168" levels="1" name="Throw Grenade">
 		<set name="operateType" val="P" />
+		<set name="effectPoint" val="-96" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="14169" levels="1" name="Dirty Fighting">
@@ -690,6 +785,7 @@
 		<set name="mpConsume" val="18" />
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="1500" />
+		<set name="effectPoint" val="-96" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="14170" levels="1" name="Grappling Web">
@@ -702,6 +798,7 @@
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-352" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14171" levels="1" name="Steady Shot">
@@ -713,6 +810,7 @@
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="-96" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14172" levels="1" name="Ray of Pain">
@@ -726,6 +824,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-104" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14173" levels="1" name="Assault">
@@ -736,6 +835,7 @@
 		<set name="mpConsume" val="20" />
 		<set name="castRange" val="350" />
 		<set name="hitTime" val="1500" />
+		<set name="effectPoint" val="-104" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="14174" levels="1" name="Black Powder Eruption">
@@ -747,6 +847,7 @@
 		<set name="castRange" val="300" />
 		<set name="hitTime" val="1500" />
 		<set name="reuseDelay" val="5000" />
+		<set name="effectPoint" val="-104" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14175" levels="1" name="Cannon Blast">
@@ -755,6 +856,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="600" />
+		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="2500" />
 	</skill>
 	<skill id="14176" levels="1" name="Exorcism">
@@ -763,6 +865,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="600" />
+		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="10000" />
 	</skill>
 	<skill id="14177" levels="1" name="Exorcism">
@@ -771,6 +874,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="600" />
+		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="10000" />
 	</skill>
 	<skill id="14178" levels="1" name="Exorcism">
@@ -779,6 +883,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="600" />
+		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="10000" />
 	</skill>
 	<skill id="14179" levels="1" name="Stronghold Water Cannon">
@@ -788,6 +893,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="121" />
 		<set name="hitTime" val="500" />
+		<set name="effectPoint" val="-100" />
 		<set name="reuseDelay" val="500" />
 	</skill>
 	<skill id="14180" levels="1" name="Trap Over Steam">
@@ -798,6 +904,7 @@
 		<set name="mpConsume" val="123" />
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="1000" />
+		<set name="effectPoint" val="-574" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14181" levels="1" name="Trap Over Steam">
@@ -808,6 +915,7 @@
 		<set name="mpConsume" val="123" />
 		<set name="hitTime" val="2000" />
 		<set name="reuseDelay" val="1000" />
+		<set name="effectPoint" val="-574" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14182" levels="1" name="Millipede Blow">
@@ -818,6 +926,7 @@
 		<set name="mpConsume" val="84" />
 		<set name="castRange" val="100" />
 		<set name="hitTime" val="1500" />
+		<set name="effectPoint" val="-700" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="14183" levels="1" name="Millipede Blow">
@@ -828,6 +937,7 @@
 		<set name="mpConsume" val="84" />
 		<set name="castRange" val="100" />
 		<set name="hitTime" val="1500" />
+		<set name="effectPoint" val="-700" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="14184" levels="1" name="Millipede Ultimate Blow">
@@ -839,6 +949,7 @@
 		<set name="mpConsume" val="84" />
 		<set name="castRange" val="100" />
 		<set name="hitTime" val="1500" />
+		<set name="effectPoint" val="-700" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="14185" levels="1" name="Rose Sleep">
@@ -848,6 +959,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="84" />
 		<set name="hitTime" val="100" />
+		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14186" levels="1" name="Fairy Lv.">
@@ -867,6 +979,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="10000" />
+		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="1800000" />
 	</skill>
 	<skill id="14188" levels="1" name="Millipede's Gas">
@@ -875,6 +988,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="600" />
+		<set name="effectPoint" val="100" />
 		<set name="hitTime" val="10000" />
 	</skill>
 	<skill id="14189" levels="1" name="Fairy Slow Attack">
@@ -888,6 +1002,7 @@
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="30000" />
+		<set name="effectPoint" val="-507" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14190" levels="1" name="Invincibility Activation">
@@ -897,6 +1012,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
+		<set name="effectPoint" val="673" />
 		<set name="hitTime" val="500" />
 	</skill>
 	<skill id="14191" levels="1" name="Cancel Invincibility">
@@ -916,6 +1032,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="500" />
+		<set name="effectPoint" val="343" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14193" levels="1" name="Damage Shield">
@@ -926,6 +1043,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="500" />
+		<set name="effectPoint" val="379" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="14194" levels="1" name="Range Stun">
@@ -937,6 +1055,7 @@
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="3000" />
+		<set name="effectPoint" val="-1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14195" levels="1" name="Range Fire Magic">
@@ -949,6 +1068,7 @@
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-1" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14196" levels="1" name="Decaying Darkness">
@@ -959,6 +1079,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="3000" />
+		<set name="effectPoint" val="-100" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14197" levels="1" name="Range Fire Damage Zone">
@@ -970,6 +1091,7 @@
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="500" />
 		<set name="isMagic" val="1" />
+		<set name="effectPoint" val="-352" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="14198" levels="1" name="Water Cannon Damage">
@@ -980,6 +1102,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="177" />
 		<set name="hitTime" val="500" />
+		<set name="effectPoint" val="-100" />
 		<set name="reuseDelay" val="500" />
 	</skill>
 	<skill id="14199" levels="6" name="Garden Voltage">
@@ -989,6 +1112,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="600" />
+		<set name="effectPoint" val="-700" />
 		<set name="hitTime" val="1500" />
 	</skill>
 </list>

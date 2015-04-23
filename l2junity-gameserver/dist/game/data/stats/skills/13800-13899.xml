@@ -149,6 +149,7 @@
 		<set name="mpConsume" val="382" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
+		<set name="effectPoint" val="100" />
 		<set name="reuseDelay" val="15000" />
 	</skill>
 	<skill id="13821" levels="1" name="Spirit's Evil Thoughts">
@@ -159,6 +160,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="10" />
 		<set name="castRange" val="100" />
+		<set name="effectPoint" val="-1" />
 		<set name="hitTime" val="5000" />
 	</skill>
 	<skill id="13822" levels="1" name="Stronghold I Teleport">
@@ -167,6 +169,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="15000" />
+		<set name="effectPoint" val="100" />
 		<set name="reuseDelay" val="1800000" />
 	</skill>
 	<skill id="13823" levels="1" name="Stronghold II Teleport">
@@ -175,6 +178,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="15000" />
+		<set name="effectPoint" val="100" />
 		<set name="reuseDelay" val="1800000" />
 	</skill>
 	<skill id="13824" levels="1" name="Stronghold III Teleport">
@@ -183,6 +187,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="15000" />
+		<set name="effectPoint" val="100" />
 		<set name="reuseDelay" val="1800000" />
 	</skill>
 	<skill id="13825" levels="1" name="Stronghold IV Teleport">
@@ -191,9 +196,11 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="15000" />
+		<set name="effectPoint" val="100" />
 		<set name="reuseDelay" val="1800000" />
 	</skill>
 	<skill id="13826" levels="2" name="Christmas Fishing Rod">
+		<table name="#effectPoint"> 0 1 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Changes the appearance into that of Santa while equipped with the Christmas Fishing Rod. -->
 		<table name="#icons"> icon.christmas_fishingrod_i00 BranchSys3.lcon.s_g_ring_of_uthanka </table>
@@ -201,6 +208,7 @@
 		<set name="icon" val="#icons" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="#isMagics" />
 	</skill>
 	<skill id="13827" levels="2" name="Christmas Talisman - ALL STAT (Low)">
@@ -232,6 +240,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="50" />
 		<set name="hitTime" val="500" />
+		<set name="effectPoint" val="532" />
 		<set name="reuseDelay" val="600000" />
 	</skill>
 	<skill id="13831" levels="1" name="Christmas Talisman - Debuff Resistance">
@@ -242,6 +251,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="50" />
 		<set name="hitTime" val="500" />
+		<set name="effectPoint" val="532" />
 		<set name="reuseDelay" val="600000" />
 	</skill>
 	<skill id="13832" levels="1" name="Christmas Talisman - P. Atk.">

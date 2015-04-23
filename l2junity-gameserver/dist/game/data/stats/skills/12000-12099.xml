@@ -11,6 +11,7 @@
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="10000" />
+		<set name="effectPoint" val="-1" />
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="12001" levels="1" name="Glimmer Crystal">
@@ -34,6 +35,7 @@
 		<set name="icon" val="icon.etc_dragons_blood_i03" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="effectPoint" val="-2" />
 		<set name="castRange" val="300" />
 	</skill>
 	<skill id="12004" levels="1" name="Summon Detector">
@@ -86,6 +88,7 @@
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="1000" />
 		<set name="reuseDelay" val="180000" />
+		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="12009" levels="1" name="Teredor Antidote">
@@ -102,6 +105,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="450" />
 		<set name="hitTime" val="500" />
+		<set name="effectPoint" val="-1" />
 		<set name="reuseDelay" val="3000" />
 	</skill>
 	<skill id="12011" levels="1" name="Glimmer Crystal">
@@ -109,6 +113,7 @@
 		<!-- can summon Magmeld's wisps at Anghell Waterfall -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A2" />
+		<set name="effectPoint" val="2" />
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="12012" levels="1" name="Check Item">
