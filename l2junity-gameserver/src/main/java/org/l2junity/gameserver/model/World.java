@@ -564,14 +564,14 @@ public final class World
 		});
 	}
 	
-	public <T extends WorldObject> void forEachVisibleObject(WorldObject worldObject, Class<T> clazz, int depth, Consumer<T> c)
+	public <T extends WorldObject> void forEachVisibleObject(ILocational locational, Class<T> clazz, int depth, Consumer<T> c)
 	{
-		if (worldObject == null)
+		if (locational == null)
 		{
 			return;
 		}
 		
-		final WorldRegion centerWorldRegion = worldObject.getWorldRegion();
+		final WorldRegion centerWorldRegion = getRegion(locational);
 		if (centerWorldRegion == null)
 		{
 			return;
@@ -585,12 +585,12 @@ public final class World
 				{
 					for (WorldObject visibleObject : _worldRegions[x][y][z].getVisibleObjects().values())
 					{
-						if ((visibleObject == null) || (visibleObject == worldObject) || !clazz.isInstance(visibleObject))
+						if ((visibleObject == null) || (visibleObject == locational) || !clazz.isInstance(visibleObject))
 						{
 							continue;
 						}
 						
-						if (visibleObject.getInstanceId() != worldObject.getInstanceId())
+						if (visibleObject.getInstanceId() != locational.getInstanceId())
 						{
 							continue;
 						}
@@ -602,33 +602,33 @@ public final class World
 		}
 	}
 	
-	public <T extends WorldObject> void forEachVisibleObject(WorldObject worldObject, Class<T> clazz, Consumer<T> c)
+	public <T extends WorldObject> void forEachVisibleObject(ILocational locational, Class<T> clazz, Consumer<T> c)
 	{
-		forEachVisibleObject(worldObject, clazz, 1, c);
+		forEachVisibleObject(locational, clazz, 1, c);
 	}
 	
-	public <T extends WorldObject> void forEachVisibleObjectInRange(WorldObject worldObject, Class<T> clazz, int range, Consumer<T> c)
+	public <T extends WorldObject> void forEachVisibleObjectInRange(ILocational locational, Class<T> clazz, int range, Consumer<T> c)
 	{
-		forEachVisibleObject(worldObject, clazz, (range / REGION_MIN_DIMENSION) + 1, o ->
+		forEachVisibleObject(locational, clazz, (range / REGION_MIN_DIMENSION) + 1, o ->
 		{
-			if (o.calculateDistance(worldObject, true, false) <= range)
+			if (o.calculateDistance(locational, true, false) <= range)
 			{
 				c.accept(o);
 			}
 		});
 	}
 	
-	public <T extends WorldObject> List<T> getVisibleObjects(WorldObject worldObject, Class<T> clazz)
+	public <T extends WorldObject> List<T> getVisibleObjects(ILocational locational, Class<T> clazz)
 	{
 		final List<T> result = new LinkedList<>();
-		forEachVisibleObject(worldObject, clazz, result::add);
+		forEachVisibleObject(locational, clazz, result::add);
 		return result;
 	}
 	
-	public <T extends WorldObject> List<T> getVisibleObjects(WorldObject worldObject, Class<T> clazz, int range)
+	public <T extends WorldObject> List<T> getVisibleObjects(ILocational locational, Class<T> clazz, int range)
 	{
 		final List<T> result = new LinkedList<>();
-		forEachVisibleObjectInRange(worldObject, clazz, range, result::add);
+		forEachVisibleObjectInRange(locational, clazz, range, result::add);
 		return result;
 	}
 	
