@@ -262,7 +262,7 @@
 		<!-- Inflicts damage on target with 124 Power added to M. Atk. Has a chance of pushing back target. -->
 		<table name="#mpConsumes"> 87 91 95 98 102 107 111 116 </table>
 		<table name="#power"> 124 127 129 133 137 141 144 148 </table>
-		<table name="#effectPoints"> -617 -624 -630 -635 -641 -646 -650 -655 </table> <!-- Custom -->
+		<table name="#effectPoints"> -867 -880 -891 -899 -906 -913 -922 -933 -941 -950 -959 </table> <!-- Custom -->
 		<set name="icon" val="icon.skill11814" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -337,7 +337,7 @@
 		<!-- Inflicts damage on nearby enemies with 102 Power added to M. Atk. and decreases aggression toward yourself. -->
 		<table name="#mpConsumes"> 282 288 300 312 325 337 351 365 </table>
 		<table name="#power"> 102 104 107 110 113 116 119 122 </table>
-		<table name="#effectPoints"> 617 624 630 635 641 646 650 655 </table> <!-- Custom -->
+		<table name="#effectPoints"> -1733 -1747 -1771 -1789 -1803 -1817 -1835 -1853 -1870 -1887 -1904 </table> <!-- Custom -->
 		<set name="icon" val="icon.skill11817" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -646,10 +646,10 @@
 		<!-- Updated to Ertheia -->
 		<!-- Banishes the enemy's servitor into another dimension. -->
 		<table name="#mpConsumes"> 373 377 380 383 384 387 390 393 </table>
-		<table name="#effectPoints"> -532 -549 -566 -582 -597 -611 -624 -635 </table> <!-- Custom -->
+		<!-- Custom -->
 		<set name="icon" val="icon.skill1395" />
 		<set name="affectRange" val="100" /> <!-- x:467->570 y:645->710 Pythagoras theorem says its 100 -->
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="-655" />
 		<set name="effectRange" val="1100" /> <!-- Custom -->
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
@@ -670,7 +670,7 @@
 		<!-- Updated to Ertheia -->
 		<!-- Casts Sleep on nearby enemies for 30 seconds. -->
 		<table name="#mpConsumes"> 52 52 54 60 62 66 </table>
-		<table name="#effectPoints"> -418 -532 -582 -611 -635 -659 </table> <!-- Custom -->
+		<table name="#effectPoints"> -867 -874 -891 -902 -913 -927 -938 -950 -962 </table> <!-- Custom -->
 		<set name="icon" val="icon.skill1072" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />

@@ -211,7 +211,7 @@
 		<table name="#ench1MpConsume"> 115 107 100 93 85 78 70 63 56 48 </table>
 		<table name="#ench1MpInitialConsume"> 28 26 25 23 21 19 17 15 14 12 </table>
 		<table name="#power"> 1488 1495 1507 1519 1532 1544 1557 1570 </table>
-		<table name="#effectPoints"> 467 484 500 516 530 544 556 559 </table>
+		<table name="#effectPoints"> 867 874 886 895 902 909 918 927 935 944 952 </table>
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<set name="icon" val="icon.skill11755" />
 		<set name="operateType" val="A1" />
@@ -238,7 +238,7 @@
 		<table name="#mpConsume"> 166 166 170 173 174 178 181 184 </table>
 		<table name="#mpInitialConsume"> 41 42 42 43 44 44 45 46 </table>
 		<table name="#power"> 1488 1495 1507 1519 1532 1544 1557 1570 </table>
-		<table name="#effectPoints"> 437 444 450 456 462 468 473 479 </table>
+		<table name="#effectPoints"> 867 874 886 895 902 909 918 927 935 944 952 </table>
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#ench1mpConsume"> 172 160 149 138 128 116 105 94 84 72 </table>
 		<table name="#ench1mpInitialConsume"> 43 40 37 34 32 29 26 23 21 18 </table>
@@ -266,7 +266,7 @@
 	<skill id="11757" levels="8" name="Brilliant Heal" enchantGroup1="10">
 		<!-- Heals yourself and nearby party members with 1191 Power added to M. Atk. If HP is full, CP is restored. -->
 		<table name="#power"> 1191 1200 1210 1220 1230 1240 1250 1261 </table>
-		<table name="#effectPoints"> 431 467 500 530 556 566 576 586 </table>
+		<table name="#effectPoints"> 1734 1760 1781 1798 1811 1826 1844 1865 1881 1899 1917 </table>
 		<table name="#mpConsumes"> 277 281 286 290 295 300 305 310 </table>
 		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 </table>
 		<table name="#ench1mpConsume"> 232 217 202 188 172 157 142 128 113 98 </table>
@@ -556,7 +556,7 @@
 		<!-- Updated to Ertheia -->
 		<!-- Attacks target with 153 Power added to M. Atk. -->
 		<table name="#mpConsumes"> 70 72 76 78 82 85 88 92 </table>
-		<table name="#effectPoints"> -617 -624 -630 -635 -641 -646 -650 -655 </table> <!-- Custom -->
+		<table name="#effectPoints"> -867 -880 -891 -899 -906 -913 -922 -933 -941 -950 -959 </table> <!-- Custom -->
 		<table name="#power"> 153 158 163 167 171 176 180 185 </table>
 		<set name="icon" val="icon.skill11766" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -579,7 +579,7 @@
 		<!-- On retail appears that this skill can hit monsters without aggressing them. Although once aggressed monster, it cannot get its aggression removed (or very hard on clan aggroed mobs) simply by spamming this skill. -->
 		<!-- Inflicts damage on target and nearby enemies with 117 Power and decreases aggression toward yourself. -->
 		<table name="#mpConsumes"> 423 432 450 468 487 506 526 547 </table>
-		<table name="#effectPoints"> 617 624 630 635 641 646 650 655 </table> <!-- Custom -->
+		<table name="#effectPoints"> -1733 -1747 -1771 -1789 -1803 -1817 -1835 -1853 -1870 -1887 -1904 </table> <!-- Custom -->
 		<table name="#power"> 117 119 123 126 129 133 136 139 </table>
 		<set name="icon" val="icon.skill11767" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -809,7 +809,7 @@
 		<!-- Updated to Ertheia -->
 		<!-- Leaves a mark that decreases target's P. Def. and M. Def. by 10%, and consumes 113 HP every second for 60 seconds. -->
 		<table name="#coolTimes"> 800 800 800 800 0 </table>
-		<table name="#effectPoints"> -630 -635 -641 -646 -650 </table> <!-- Custom -->
+		<table name="#effectPoints"> -867 -886 -899 -909 -922 -936 -949 -963 </table> <!-- Custom -->
 		<table name="#mpConsumes"> 40 42 45 47 32 </table>
 		<table name="#dot"> 113 118 123 128 134 </table>
 		<table name="#defences"> 0.90 0.85 0.80 0.75 0.70 </table>
@@ -837,7 +837,7 @@
 	<skill id="11778" levels="6" name="Fatal Sleep">
 		<!-- Updated to Ertheia -->
 		<!-- For 20 seconds, inflicts Sleep on target. When Sleep ends, decreases Atk. Spd., Casting Spd., and Speed by 50%. -->
-		<table name="#effectPoints"> -630 -635 -641 -646 -650 -655 </table> <!-- Custom -->
+		<table name="#effectPoints"> -867 -874 -891 -902 -913 -927 -938 -950 -962 </table> <!-- Custom -->
 		<table name="#mpConsumes"> 26 26 27 30 31 33 </table>
 		<set name="icon" val="icon.skill11778" />
 		<set name="abnormalLvl" val="1" />
@@ -983,13 +983,13 @@
 	<skill id="11785" levels="3" name="Party Resurrection">
 		<!-- Updated to Ertheia -->
 		<!-- Resurrects all dead party members and restores 80% of the XP lost. -->
-		<table name="#effectPoints"> 290 331 417 </table> <!-- Custom -->
+		<!-- Custom -->
 		<table name="#mpConsumes"> 133 145 152 </table>
 		<table name="#power"> 80 90 100 </table>
 		<set name="icon" val="icon.skill11785" />
 		<set name="affectRange" val="1000" /> <!-- Custom -->
 		<set name="blockedInOlympiad" val="true" />
-		<set name="effectPoint" val="#effectPoints" />
+		<set name="effectPoint" val="2" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="CORPSE_PARTY" />
 		<set name="mpConsume" val="#mpConsumes" />
