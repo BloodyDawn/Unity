@@ -91,8 +91,8 @@ public enum Movie
 	SC_KATACOMB(77, true),
 	SC_NECRO(78, true),
 	SC_HELLBOUND(79, true),
-	SC_HONORS(80, false), // TODO: Confirm escapable
-	SC_KELBIM_OPENING(81, false), // TODO: Confirm escapable
+	SC_HONORS(80, true),
+	SC_KELBIM_OPENING(81, false),
 	SC_NOBLE_OPENING(99, true),
 	SC_NOBLE_ENDING(100, true),
 	SI_ILLUSION_01_QUE(101, true),
