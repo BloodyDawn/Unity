@@ -34,6 +34,9 @@ public class ExShowReceivedPostList implements IClientOutgoingPacket
 {
 	private final List<Message> _inbox;
 	
+	private static final int MESSAGE_FEE = 100;
+	private static final int MESSAGE_FEE_PER_SLOT = 1000;
+	
 	public ExShowReceivedPostList(int objectId)
 	{
 		_inbox = MailManager.getInstance().getInbox(objectId);
@@ -75,8 +78,8 @@ public class ExShowReceivedPostList implements IClientOutgoingPacket
 		{
 			packet.writeD(0x00);
 		}
-		packet.writeD(100); // TODO: Find me
-		packet.writeD(1000); // TODO: Find me
+		packet.writeD(MESSAGE_FEE);
+		packet.writeD(MESSAGE_FEE_PER_SLOT);
 		return true;
 	}
 }

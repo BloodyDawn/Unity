@@ -27,13 +27,17 @@ import org.l2junity.network.PacketWriter;
  */
 public class ExDivideAdenaDone implements IClientOutgoingPacket
 {
+	private final boolean _isPartyLeader;
+	private final boolean _isCCLeader;
 	private final long _adenaCount;
 	private final long _distributedAdenaCount;
 	private final int _memberCount;
 	private final String _distributorName;
 	
-	public ExDivideAdenaDone(long adenaCount, long distributedAdenaCount, int memberCount, String distributorName)
+	public ExDivideAdenaDone(boolean isPartyLeader, boolean isCCLeader, long adenaCount, long distributedAdenaCount, int memberCount, String distributorName)
 	{
+		_isPartyLeader = isPartyLeader;
+		_isCCLeader = isCCLeader;
 		_adenaCount = adenaCount;
 		_distributedAdenaCount = distributedAdenaCount;
 		_memberCount = memberCount;
@@ -45,8 +49,8 @@ public class ExDivideAdenaDone implements IClientOutgoingPacket
 	{
 		OutgoingPackets.EX_DIVIDE_ADENA_DONE.writeId(packet);
 		
-		packet.writeC(0x00); // TODO: Find me / type ??
-		packet.writeC(0x00); // TODO: Find me
+		packet.writeC(_isPartyLeader ? 0x01 : 0x00);
+		packet.writeC(_isCCLeader ? 0x01 : 0x00);
 		packet.writeD(_memberCount);
 		packet.writeQ(_distributedAdenaCount);
 		packet.writeQ(_adenaCount);

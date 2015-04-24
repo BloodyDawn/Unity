@@ -45,7 +45,7 @@ public class RequestExManageMpccRoom implements IClientIncomingPacket
 		_maxMembers = packet.readD();
 		_minLevel = packet.readD();
 		_maxLevel = packet.readD();
-		packet.readD(); // TODO: Find me
+		packet.readD(); // Party Distrubtion Type
 		_title = packet.readS();
 		return true;
 	}

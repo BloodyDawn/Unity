@@ -138,7 +138,7 @@ public class RequestDivideAdena implements IClientIncomingPacket
 					continue;
 				}
 				target.addAdena("Adena Distribution", memberAdenaGet, player, false);
-				target.sendPacket(new ExDivideAdenaDone(_adenaCount, memberAdenaGet, targets.size(), player.getName()));
+				target.sendPacket(new ExDivideAdenaDone(party.isLeader(target), commandChannel != null ? commandChannel.isLeader(target) : false, _adenaCount, memberAdenaGet, targets.size(), player.getName()));
 				target.removeRequest(AdenaDistributionRequest.class);
 			}
 		}

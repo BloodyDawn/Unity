@@ -74,7 +74,7 @@ public final class MagicSkillUse implements IClientOutgoingPacket
 	{
 		OutgoingPackets.MAGIC_SKILL_USE.writeId(packet);
 		
-		packet.writeD(0x00); // TODO: Find me!
+		packet.writeD(0x00); // TODO: Find me! (Confirm : Feoh second skill cast would be 1)
 		packet.writeD(_activeChar.getObjectId());
 		packet.writeD(_target.getObjectId());
 		packet.writeD(_skillId);
@@ -100,8 +100,8 @@ public final class MagicSkillUse implements IClientOutgoingPacket
 		packet.writeD(_target.getX());
 		packet.writeD(_target.getY());
 		packet.writeD(_target.getZ());
-		packet.writeD(0x00); // TODO: Find me!
-		packet.writeD(0x00); // TODO: Find me!
+		packet.writeD(0x00); // TODO: Find me! Summon related
+		packet.writeD(0x00); // TODO: Find me! Summon related, confirm it's ID from RequestActionUse
 		return true;
 	}
 }
