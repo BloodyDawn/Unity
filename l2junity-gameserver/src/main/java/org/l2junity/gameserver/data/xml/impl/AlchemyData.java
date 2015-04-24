@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.data.xml.impl;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -55,7 +56,7 @@ public class AlchemyData implements IXmlReader
 	}
 	
 	@Override
-	public void parseDocument(Document doc)
+	public void parseDocument(Document doc, File f)
 	{
 		StatsSet set;
 		Node att;

@@ -155,20 +155,7 @@ public interface IXmlReader
 	 * @param doc the current document to parse
 	 * @param f the current file
 	 */
-	default void parseDocument(Document doc, File f)
-	{
-		parseDocument(doc);
-	}
-	
-	/**
-	 * Abstract method that when implemented will parse the current document.<br>
-	 * Is expected to be call from {@link #parseFile(File)}.
-	 * @param doc the current document to parse
-	 */
-	default void parseDocument(Document doc)
-	{
-		LOGGER.error("Parser not implemented!");
-	}
+	void parseDocument(Document doc, File f);
 	
 	/**
 	 * Parses a boolean value.

@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.data.xml.impl;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -62,7 +63,7 @@ public class RecipeData implements IXmlReader
 	}
 	
 	@Override
-	public void parseDocument(Document doc)
+	public void parseDocument(Document doc, File f)
 	{
 		// TODO: Cleanup checks enforced by XSD.
 		final List<RecipeInstance> recipePartList = new ArrayList<>();

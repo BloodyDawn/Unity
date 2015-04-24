@@ -55,7 +55,7 @@ public class SecondaryAuthData implements IXmlReader
 	}
 	
 	@Override
-	public void parseDocument(Document doc)
+	public void parseDocument(Document doc, File f)
 	{
 		try
 		{

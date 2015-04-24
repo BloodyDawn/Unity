@@ -18,6 +18,7 @@
  */
 package org.l2junity.loginserver;
 
+import java.io.File;
 import java.math.BigInteger;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -81,7 +82,7 @@ public final class GameServerTable implements IXmlReader
 	}
 	
 	@Override
-	public void parseDocument(Document doc)
+	public void parseDocument(Document doc, File f)
 	{
 		final NodeList servers = doc.getElementsByTagName("server");
 		for (int s = 0; s < servers.getLength(); s++)

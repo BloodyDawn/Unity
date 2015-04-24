@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.data.xml.impl;
 
+import java.io.File;
 import java.util.Arrays;
 
 import org.l2junity.gameserver.data.xml.IXmlReader;
@@ -51,7 +52,7 @@ public final class PlayerXpPercentLostData implements IXmlReader
 	}
 	
 	@Override
-	public void parseDocument(Document doc)
+	public void parseDocument(Document doc, File f)
 	{
 		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
 		{

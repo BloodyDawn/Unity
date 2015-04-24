@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.data.xml.impl;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -60,7 +61,7 @@ public final class ExperienceData implements IXmlReader
 	}
 	
 	@Override
-	public void parseDocument(Document doc)
+	public void parseDocument(Document doc, File f)
 	{
 		final Node table = doc.getFirstChild();
 		final NamedNodeMap tableAttr = table.getAttributes();

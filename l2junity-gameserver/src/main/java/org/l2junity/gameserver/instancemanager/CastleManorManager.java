@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.instancemanager;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -131,7 +132,7 @@ public final class CastleManorManager implements IXmlReader, IStorable
 	}
 	
 	@Override
-	public final void parseDocument(Document doc)
+	public final void parseDocument(Document doc, File f)
 	{
 		StatsSet set;
 		NamedNodeMap attrs;

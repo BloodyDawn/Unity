@@ -18,6 +18,7 @@
  */
 package ai.npc.ForgeOfTheGods;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -63,7 +64,7 @@ public class TarBeetleSpawn implements IXmlReader
 	}
 	
 	@Override
-	public void parseDocument(Document doc)
+	public void parseDocument(Document doc, File f)
 	{
 		int i = 0;
 		for (Node d = doc.getFirstChild(); d != null; d = d.getNextSibling())
@@ -99,11 +100,11 @@ public class TarBeetleSpawn implements IXmlReader
 										final Zone bannedZone = new Zone();
 										final int bMinZ = parseInteger(attrs, "minZ");
 										final int bMaxZ = parseInteger(attrs, "maxZ");
-										for (Node f = c.getFirstChild(); f != null; f = f.getNextSibling())
+										for (Node n = c.getFirstChild(); n != null; n = n.getNextSibling())
 										{
-											if (f.getNodeName().equals("point"))
+											if (n.getNodeName().equals("point"))
 											{
-												attrs = f.getAttributes();
+												attrs = n.getAttributes();
 												int x = parseInteger(attrs, "x");
 												int y = parseInteger(attrs, "y");
 												bannedZone.add(x, y, bMinZ, bMaxZ, 0);

@@ -18,6 +18,7 @@
  */
 package ai.npc.NpcBuffers;
 
+import java.io.File;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -53,7 +54,7 @@ public class NpcBuffersData implements IXmlReader
 	}
 	
 	@Override
-	public void parseDocument(Document doc)
+	public void parseDocument(Document doc, File f)
 	{
 		StatsSet set;
 		Node attr;

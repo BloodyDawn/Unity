@@ -828,7 +828,7 @@ public class NpcData implements IXmlReader
 		}
 		
 		@Override
-		public void parseDocument(Document doc)
+		public void parseDocument(Document doc, File f)
 		{
 			for (Node node = doc.getFirstChild(); node != null; node = node.getNextSibling())
 			{

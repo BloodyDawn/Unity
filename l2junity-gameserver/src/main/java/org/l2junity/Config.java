@@ -3784,7 +3784,7 @@ public final class Config
 		}
 		
 		@Override
-		public void parseDocument(Document doc)
+		public void parseDocument(Document doc, File f)
 		{
 			NamedNodeMap attrs;
 			for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())

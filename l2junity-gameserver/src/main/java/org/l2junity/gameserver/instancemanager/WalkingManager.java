@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.instancemanager;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -80,7 +81,7 @@ public final class WalkingManager implements IXmlReader
 	}
 	
 	@Override
-	public void parseDocument(Document doc)
+	public void parseDocument(Document doc, File f)
 	{
 		Node n = doc.getFirstChild();
 		for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())

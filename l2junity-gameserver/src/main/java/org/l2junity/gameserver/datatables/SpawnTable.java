@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.datatables;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -101,7 +102,7 @@ public final class SpawnTable implements IXmlReader
 	}
 	
 	@Override
-	public void parseDocument(Document doc)
+	public void parseDocument(Document doc, File f)
 	{
 		NamedNodeMap attrs;
 		for (Node list = doc.getFirstChild(); list != null; list = list.getNextSibling())

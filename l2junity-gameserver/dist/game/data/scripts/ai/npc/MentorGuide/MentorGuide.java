@@ -18,9 +18,11 @@
  */
 package ai.npc.MentorGuide;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.enums.CategoryType;
@@ -118,7 +120,7 @@ public class MentorGuide extends AbstractNpcAI implements IXmlReader
 	}
 	
 	@Override
-	public void parseDocument(Document doc)
+	public void parseDocument(Document doc, File f)
 	{
 		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
 		{

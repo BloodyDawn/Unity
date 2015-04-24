@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.instancemanager;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -68,7 +69,7 @@ public final class MapRegionManager implements IXmlReader
 	}
 	
 	@Override
-	public void parseDocument(Document doc)
+	public void parseDocument(Document doc, File f)
 	{
 		NamedNodeMap attrs;
 		String name;

@@ -18,6 +18,8 @@
  */
 package org.l2junity.gameserver.data.xml.impl;
 
+import java.io.File;
+
 import org.l2junity.Config;
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.data.xml.IXmlReader;
@@ -70,7 +72,7 @@ public final class HitConditionBonusData implements IXmlReader
 	}
 	
 	@Override
-	public void parseDocument(Document doc)
+	public void parseDocument(Document doc, File f)
 	{
 		for (Node d = doc.getFirstChild().getFirstChild(); d != null; d = d.getNextSibling())
 		{
