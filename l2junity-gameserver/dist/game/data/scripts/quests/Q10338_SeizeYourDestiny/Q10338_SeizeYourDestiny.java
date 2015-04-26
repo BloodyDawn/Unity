@@ -83,7 +83,7 @@ public final class Q10338_SeizeYourDestiny extends Quest
 					break;
 				}
 				teleportPlayer(player, RELIQUARY_OF_THE_GIANT, 0);
-				player.playMovie(Movie.SC_AWAKENING_VIEW);
+				playMovie(player, Movie.SC_AWAKENING_VIEW);
 				break;
 			}
 			case "33477-03.htm":

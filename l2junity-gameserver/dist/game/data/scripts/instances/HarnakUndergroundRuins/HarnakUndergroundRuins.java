@@ -234,7 +234,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 			}
 			case "show_movie_opening":
 			{
-				player.playMovie(Movie.SC_AWAKENING_BOSS_OPENING);
+				playMovie(player, Movie.SC_AWAKENING_BOSS_OPENING);
 				startQuestTimer("spawn_npc3", 29950, npc, player);
 				break;
 			}
@@ -375,7 +375,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 			case "fail_instance":
 			{
 				InstanceManager.getInstance().getInstance(player.getInstanceId()).removeSpawnedNpcs();
-				player.playMovie(Movie.SC_AWAKENING_BOSS_ENDING_B);
+				playMovie(player, Movie.SC_AWAKENING_BOSS_ENDING_B);
 				startQuestTimer("exit", 13500, npc, player);
 				break;
 			}
@@ -420,7 +420,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 						{
 							cancelQuestTimer("fail_instance", null, player);
 							InstanceManager.getInstance().getInstance(world.getInstanceId()).removeSpawnedNpcs();
-							player.playMovie(Movie.SC_AWAKENING_BOSS_ENDING_A);
+							playMovie(player, Movie.SC_AWAKENING_BOSS_ENDING_A);
 							startQuestTimer("spawn_hermuncus", 25050, npc, player);
 						}
 					}
@@ -679,7 +679,7 @@ public final class HarnakUndergroundRuins extends AbstractInstance
 			{
 				cancelQuestTimer("fail_instance", null, killer);
 				InstanceManager.getInstance().getInstance(world.getInstanceId()).removeSpawnedNpcs();
-				killer.playMovie(Movie.SC_AWAKENING_BOSS_ENDING_A);
+				playMovie(killer, Movie.SC_AWAKENING_BOSS_ENDING_A);
 				startQuestTimer("spawn_hermuncus", 25050, npc, killer);
 			}
 		}

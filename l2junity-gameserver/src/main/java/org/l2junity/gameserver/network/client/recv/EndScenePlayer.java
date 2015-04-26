@@ -19,6 +19,7 @@
 package org.l2junity.gameserver.network.client.recv;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.holders.MovieHolder;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.network.PacketReader;
 
@@ -45,15 +46,12 @@ public final class EndScenePlayer implements IClientIncomingPacket
 			return;
 		}
 		
-		if (activeChar.getMovie().getClientId() != _movieId)
+		final MovieHolder holder = activeChar.getMovieHolder();
+		if ((holder == null) || (holder.getMovie().getClientId() != _movieId))
 		{
 			_log.warn("Player " + client + " sent EndScenePlayer with wrong movie id: " + _movieId);
 			return;
 		}
-		activeChar.setMovie(null);
-		activeChar.setIsTeleporting(true, false); // avoid to get player removed from L2World
-		activeChar.decayMe();
-		activeChar.spawnMe(activeChar.getX(), activeChar.getY(), activeChar.getZ());
-		activeChar.setIsTeleporting(false, false);
+		activeChar.stopMovie();
 	}
 }

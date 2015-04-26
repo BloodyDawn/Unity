@@ -127,7 +127,7 @@ public final class MonasteryOfSilence1 extends AbstractInstance
 			}
 			case "START_MOVIE":
 			{
-				player.playMovie(Movie.SSQ2_HOLY_BURIAL_GROUND_OPENING);
+				playMovie(player, Movie.SSQ2_HOLY_BURIAL_GROUND_OPENING);
 				break;
 			}
 			case "BACK":

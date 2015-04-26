@@ -1393,12 +1393,6 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 	
 	private void manageMovie(IQCNBWorld world, Movie movie)
 	{
-		for (PlayerInstance players : world.playersInside)
-		{
-			if ((players != null) && (players.getInstanceId() == world.getInstanceId()))
-			{
-				players.playMovie(movie);
-			}
-		}
+		playMovie(World.getInstance().getVisibleObjects(world.controller, PlayerInstance.class, 8000), movie);
 	}
 }

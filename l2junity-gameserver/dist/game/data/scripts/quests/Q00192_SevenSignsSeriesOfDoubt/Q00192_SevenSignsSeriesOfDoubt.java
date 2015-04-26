@@ -80,7 +80,7 @@ public final class Q00192_SevenSignsSeriesOfDoubt extends Quest
 				if (st.isCond(1))
 				{
 					st.setCond(2, true);
-					player.playMovie(Movie.SSQ_SUSPICIOUS_DEATHS);
+					playMovie(player, Movie.SSQ_SUSPICIOUS_DEATHS);
 					startQuestTimer("back", 32000, npc, player);
 					return "";
 				}

@@ -126,7 +126,7 @@ public final class AncientArcanCity extends AbstractNpcAI implements IXmlReader
 			if (player.getVariables().getBoolean("ANCIEJNT_ARCAN_CITY_SCENE", true))
 			{
 				player.getVariables().set("ANCIEJNT_ARCAN_CITY_SCENE", false);
-				player.playMovie(Movie.SI_ARKAN_ENTER);
+				playMovie(player, Movie.SI_ARKAN_ENTER);
 			}
 		}
 		return super.onEnterZone(creature, zone);

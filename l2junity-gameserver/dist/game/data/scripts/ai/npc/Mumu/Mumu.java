@@ -54,7 +54,7 @@ public final class Mumu extends AbstractNpcAI
 			}
 			case "playMovie":
 			{
-				player.playMovie(Movie.SI_ARKAN_ENTER);
+				playMovie(player, Movie.SI_ARKAN_ENTER);
 				break;
 			}
 		}

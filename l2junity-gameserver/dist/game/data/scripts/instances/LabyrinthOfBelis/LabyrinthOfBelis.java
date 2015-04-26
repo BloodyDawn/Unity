@@ -222,7 +222,7 @@ public final class LabyrinthOfBelis extends AbstractInstance
 						world.setStatus(8);
 						world.fighting = true;
 						openDoor(DOOR_ID_ROOM_4_2, world.getInstanceId());
-						player.playMovie(Movie.SC_TALKING_ISLAND_BOSS_OPENING);
+						playMovie(player, Movie.SC_TALKING_ISLAND_BOSS_OPENING);
 						startQuestTimer("SPAWN_NEMERTESS", 50000, npc, player);
 						break;
 					}
@@ -559,7 +559,7 @@ public final class LabyrinthOfBelis extends AbstractInstance
 					giveItems(player, SARIL_NECKLACE, 1);
 				}
 				npc.deleteMe();
-				player.playMovie(Movie.SC_TALKING_ISLAND_BOSS_ENDING);
+				playMovie(player, Movie.SC_TALKING_ISLAND_BOSS_ENDING);
 				startQuestTimer("ROOM_4_DONE", 30000, npc, player);
 				break;
 			}

@@ -29,7 +29,6 @@ import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
-import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SkillHolder;
@@ -200,15 +199,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 							openDoor(DOOR_TWO, world.getInstanceId());
 							world.doorst++;
 							npc.decayMe();
-							for (int objId : world.getAllowed())
-							{
-								final PlayerInstance pl = World.getInstance().getPlayer(objId);
-								if (pl != null)
-								{
-									pl.playMovie(Movie.SSQ_RITUAL_OF_PRIEST);
-									startQuestTimer("spawn", 35000, null, talker);
-								}
-							}
+							playMovie(talker, Movie.SSQ_RITUAL_OF_PRIEST);
 						}
 						return "32578-01.html";
 					}

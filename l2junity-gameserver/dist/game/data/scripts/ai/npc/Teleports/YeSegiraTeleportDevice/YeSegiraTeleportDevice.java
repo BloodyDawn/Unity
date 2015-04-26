@@ -97,7 +97,7 @@ public final class YeSegiraTeleportDevice extends AbstractNpcAI
 			
 			if (event.equals("observatory") && player.getVariables().getBoolean(MOVIE_VAR, false))
 			{
-				player.playMovie(Movie.SI_ILLUSION_03_QUE);
+				playMovie(player, Movie.SI_ILLUSION_03_QUE);
 				player.getVariables().remove(MOVIE_VAR);
 			}
 			else if (event.equals("5_exploration_zone"))

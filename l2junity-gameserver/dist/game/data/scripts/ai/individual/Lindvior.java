@@ -83,13 +83,7 @@ public final class Lindvior extends AbstractNpcAI
 			{
 				if (npc != null)
 				{
-					World.getInstance().forEachVisibleObjectInRange(npc, PlayerInstance.class, 4000, pl ->
-					{
-						if ((pl.getZ() >= 1100) && (pl.getZ() <= 3100))
-						{
-							pl.playMovie(Movie.SC_LINDVIOR);
-						}
-					});
+					playMovie(World.getInstance().getVisibleObjects(npc, PlayerInstance.class, 4000), Movie.SC_LINDVIOR);
 				}
 				break;
 			}

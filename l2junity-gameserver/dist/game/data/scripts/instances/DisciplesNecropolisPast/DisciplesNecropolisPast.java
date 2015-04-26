@@ -205,7 +205,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 				{
 					if (getQuestItemsCount(player, SEAL_OF_BINDING) >= 4)
 					{
-						player.playMovie(Movie.SSQ_SEALING_EMPEROR_2ND);
+						playMovie(player, Movie.SSQ_SEALING_EMPEROR_2ND);
 						startQuestTimer("TELEPORT", 27000, null, player);
 					}
 					break;
@@ -459,7 +459,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 					{
 						DNPWorld world = (DNPWorld) tmpworld;
 						openDoor(DISCIPLES_NECROPOLIS_DOOR, world.getInstanceId());
-						talker.playMovie(Movie.SSQ_SEALING_EMPEROR_1ST);
+						playMovie(talker, Movie.SSQ_SEALING_EMPEROR_1ST);
 						startQuestTimer("FIGHT", 1000, null, talker);
 					}
 				}

@@ -58,7 +58,6 @@ public final class Apprentice extends AbstractNpcAI
 			if (!player.isTransformed())
 			{
 				KUKURU.getSkill().applyEffects(npc, player);
-				
 				final QuestState st = player.getQuestState(Q10329_BackupSeekers.class.getSimpleName());
 				if ((st != null) && st.isStarted())
 				{

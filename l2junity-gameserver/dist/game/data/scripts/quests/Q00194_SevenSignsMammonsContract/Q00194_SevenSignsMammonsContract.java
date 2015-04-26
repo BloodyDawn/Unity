@@ -102,7 +102,7 @@ public final class Q00194_SevenSignsMammonsContract extends Quest
 				if (st.isCond(1))
 				{
 					st.setCond(2, true);
-					player.playMovie(Movie.SSQ_CONTRACT_OF_MAMMON);
+					playMovie(player, Movie.SSQ_CONTRACT_OF_MAMMON);
 					return "";
 				}
 				break;

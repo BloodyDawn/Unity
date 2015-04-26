@@ -140,7 +140,7 @@ public final class Q10320_LetsGoToTheCentralSquare extends Quest
 				if (player.getLevel() <= MAX_LEVEL)
 				{
 					final QuestState qs = getQuestState(player, false);
-					player.playMovie(((qs != null) && qs.isStarted()) ? Movie.SI_ILLUSION_02_QUE : Movie.SI_ILLUSION_01_QUE);
+					playMovie(player, ((qs != null) && qs.isStarted()) ? Movie.SI_ILLUSION_02_QUE : Movie.SI_ILLUSION_01_QUE);
 				}
 				player.getVariables().remove(MOVIE_VAR);
 			}

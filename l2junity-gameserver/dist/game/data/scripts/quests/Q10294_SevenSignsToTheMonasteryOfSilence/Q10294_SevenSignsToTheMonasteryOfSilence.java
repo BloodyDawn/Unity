@@ -216,7 +216,7 @@ public final class Q10294_SevenSignsToTheMonasteryOfSilence extends Quest
 				htmltext = "32821-02.html";
 				if (hasCheckedAllRightBooks(qs))
 				{
-					player.playMovie(Movie.SSQ2_HOLY_BURIAL_GROUND_CLOSING);
+					playMovie(player, Movie.SSQ2_HOLY_BURIAL_GROUND_CLOSING);
 				}
 				break;
 			}
@@ -229,7 +229,7 @@ public final class Q10294_SevenSignsToTheMonasteryOfSilence extends Quest
 				htmltext = "32821-02.html";
 				if (hasCheckedAllRightBooks(qs))
 				{
-					player.playMovie(Movie.SSQ2_HOLY_BURIAL_GROUND_CLOSING);
+					playMovie(player, Movie.SSQ2_HOLY_BURIAL_GROUND_CLOSING);
 				}
 				break;
 			}
@@ -243,7 +243,7 @@ public final class Q10294_SevenSignsToTheMonasteryOfSilence extends Quest
 				htmltext = "32821-02.html";
 				if (hasCheckedAllRightBooks(qs))
 				{
-					player.playMovie(Movie.SSQ2_HOLY_BURIAL_GROUND_CLOSING);
+					playMovie(player, Movie.SSQ2_HOLY_BURIAL_GROUND_CLOSING);
 				}
 				break;
 			}
@@ -257,7 +257,7 @@ public final class Q10294_SevenSignsToTheMonasteryOfSilence extends Quest
 				htmltext = "32821-02.html";
 				if (hasCheckedAllRightBooks(qs))
 				{
-					player.playMovie(Movie.SSQ2_HOLY_BURIAL_GROUND_CLOSING);
+					playMovie(player, Movie.SSQ2_HOLY_BURIAL_GROUND_CLOSING);
 				}
 				break;
 			}

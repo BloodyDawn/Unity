@@ -117,7 +117,7 @@ public final class IceQueensCastle extends AbstractInstance
 			{
 				if (npc != null)
 				{
-					player.playMovie(Movie.SC_BOSS_FREYA_FORCED_DEFEAT);
+					playMovie(player, Movie.SC_BOSS_FREYA_FORCED_DEFEAT);
 					npc.deleteMe();
 					startQuestTimer("TIMER_PC_LEAVE", 24000, npc, player);
 				}

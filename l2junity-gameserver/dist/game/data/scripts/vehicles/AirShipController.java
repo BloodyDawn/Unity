@@ -294,13 +294,7 @@ public abstract class AirShipController extends Quest
 				{
 					if (_movie != null)
 					{
-						for (PlayerInstance passenger : _dockedShip.getPassengers())
-						{
-							if (passenger != null)
-							{
-								passenger.playMovie(_movie);
-							}
-						}
+						playMovie(_dockedShip.getPassengers(), _movie);
 					}
 					
 					ThreadPoolManager.getInstance().scheduleGeneral(_decayTask, 1000);

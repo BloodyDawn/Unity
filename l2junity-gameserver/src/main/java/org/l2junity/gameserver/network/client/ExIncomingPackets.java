@@ -221,7 +221,7 @@ public enum ExIncomingPackets implements IIncomingPackets<IIncomingPacket<L2Game
 	REQUEST_EX_BR_LECTURE_MARK(0x8D, null, ConnectionState.IN_GAME),
 	REQUEST_CRYSTALLIZE_ESTIMATE(0x8E, RequestCrystallizeEstimate::new, ConnectionState.IN_GAME),
 	REQUEST_CRYSTALLIZE_ITEM_CANCEL(0x8F, RequestCrystallizeItemCancel::new, ConnectionState.IN_GAME),
-	REQUEST_SCENE_EX_ESCAPE_SCENE(0x90, null, ConnectionState.IN_GAME),
+	REQUEST_SCENE_EX_ESCAPE_SCENE(0x90, RequestExEscapeScene::new, ConnectionState.IN_GAME),
 	REQUEST_FLY_MOVE(0x91, RequestFlyMove::new, ConnectionState.IN_GAME),
 	REQUEST_SURRENDER_PLEDGE_WAR_EX(0x92, null, ConnectionState.IN_GAME),
 	REQUEST_DYNAMIC_QUEST_ACTION(0x93, null, ConnectionState.IN_GAME), // TODO: Implement / HANDLE SWITCH

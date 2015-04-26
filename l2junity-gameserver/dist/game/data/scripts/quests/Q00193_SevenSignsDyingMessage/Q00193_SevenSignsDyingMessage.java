@@ -120,7 +120,7 @@ public final class Q00193_SevenSignsDyingMessage extends Quest
 				{
 					st.takeItems(DEADMANS_HERB, -1);
 					st.setCond(4, true);
-					player.playMovie(Movie.SSQ_DYING_MASSAGE);
+					playMovie(player, Movie.SSQ_DYING_MASSAGE);
 					return "";
 				}
 				break;

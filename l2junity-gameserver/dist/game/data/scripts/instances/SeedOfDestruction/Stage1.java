@@ -797,14 +797,7 @@ public final class Stage1 extends AbstractInstance
 				{
 					if (spawnState(world))
 					{
-						for (int objId : world.getAllowed())
-						{
-							PlayerInstance pl = World.getInstance().getPlayer(objId);
-							if (pl != null)
-							{
-								pl.playMovie(Movie.SC_BOSS_TIAT_OPENING);
-							}
-						}
+						playMovie(World.getInstance().getVisibleObjects(npc, PlayerInstance.class, 8000), Movie.SC_BOSS_TIAT_OPENING);
 						npc.deleteMe();
 					}
 				}
@@ -963,19 +956,8 @@ public final class Stage1 extends AbstractInstance
 				if (npc.getId() == TIAT)
 				{
 					world.incStatus();
-					for (int objId : world.getAllowed())
-					{
-						PlayerInstance pl = World.getInstance().getPlayer(objId);
-						if (pl != null)
-						{
-							pl.playMovie(Movie.SC_BOSS_TIAT_ENDING_SUCCES);
-						}
-					}
-					for (Npc mob : InstanceManager.getInstance().getInstance(world.getInstanceId()).getNpcs())
-					{
-						mob.deleteMe();
-					}
-					
+					playMovie(World.getInstance().getVisibleObjects(npc, PlayerInstance.class, 8000), Movie.SC_BOSS_TIAT_ENDING_SUCCES);
+					InstanceManager.getInstance().getInstance(world.getInstanceId()).removeSpawnedNpcs();
 					GraciaSeedsManager.getInstance().increaseSoDTiatKilled();
 				}
 				else if (npc.getId() == TIAT_GUARD)

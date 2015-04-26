@@ -86,7 +86,6 @@ import org.l2junity.gameserver.enums.HtmlActionScope;
 import org.l2junity.gameserver.enums.IllegalActionPunishmentType;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.enums.MountType;
-import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.enums.PartyDistributionType;
 import org.l2junity.gameserver.enums.PartySmallWindowUpdateType;
 import org.l2junity.gameserver.enums.PlayerAction;
@@ -213,6 +212,7 @@ import org.l2junity.gameserver.model.events.impl.character.player.mentoring.OnPl
 import org.l2junity.gameserver.model.fishing.L2Fish;
 import org.l2junity.gameserver.model.fishing.L2Fishing;
 import org.l2junity.gameserver.model.holders.ItemHolder;
+import org.l2junity.gameserver.model.holders.MovieHolder;
 import org.l2junity.gameserver.model.holders.PlayerEventHolder;
 import org.l2junity.gameserver.model.holders.SkillUseHolder;
 import org.l2junity.gameserver.model.interfaces.IEventListener;
@@ -276,6 +276,7 @@ import org.l2junity.gameserver.network.client.send.ExPledgeCount;
 import org.l2junity.gameserver.network.client.send.ExPrivateStoreSetWholeMsg;
 import org.l2junity.gameserver.network.client.send.ExSetCompassZoneCode;
 import org.l2junity.gameserver.network.client.send.ExStartScenePlayer;
+import org.l2junity.gameserver.network.client.send.ExStopScenePlayer;
 import org.l2junity.gameserver.network.client.send.ExStorageMaxCount;
 import org.l2junity.gameserver.network.client.send.ExSubjobInfo;
 import org.l2junity.gameserver.network.client.send.ExUseSharedGroupItem;
@@ -787,7 +788,7 @@ public final class PlayerInstance extends Playable
 	private int _multiSocialTarget = 0;
 	private int _multiSociaAction = 0;
 	
-	private Movie _movie = null;
+	private MovieHolder _movieHolder = null;
 	
 	private String _adminConfirmCmd = null;
 	
@@ -13243,17 +13244,27 @@ public final class PlayerInstance extends Playable
 		}
 	}
 	
-	public void playMovie(Movie movie)
+	public void playMovie(MovieHolder holder)
 	{
-		if (getMovie() != null)
+		if (getMovieHolder() != null)
 		{
 			return;
 		}
 		abortAttack();
 		abortCast();
 		stopMove(null);
-		setMovie(movie);
-		sendPacket(new ExStartScenePlayer(movie));
+		setMovieHolder(holder);
+		sendPacket(new ExStartScenePlayer(holder.getMovie()));
+	}
+	
+	public void stopMovie()
+	{
+		setIsTeleporting(true, false); // avoid to get player removed from L2World
+		decayMe();
+		spawnMe(getX(), getY(), getZ());
+		setIsTeleporting(false, false);
+		sendPacket(new ExStopScenePlayer(getMovieHolder().getMovie()));
+		setMovieHolder(null);
 	}
 	
 	public boolean isAllowedToEnchantSkills()
@@ -13615,14 +13626,14 @@ public final class PlayerInstance extends Playable
 	/**
 	 * @return the _movie
 	 */
-	public Movie getMovie()
+	public MovieHolder getMovieHolder()
 	{
-		return _movie;
+		return _movieHolder;
 	}
 	
-	public void setMovie(Movie movie)
+	public void setMovieHolder(MovieHolder movie)
 	{
-		_movie = movie;
+		_movieHolder = movie;
 	}
 	
 	/**
@@ -13645,7 +13656,7 @@ public final class PlayerInstance extends Playable
 	@Override
 	public boolean isMovementDisabled()
 	{
-		return super.isMovementDisabled() || (getMovie() != null);
+		return super.isMovementDisabled() || (getMovieHolder() != null);
 	}
 	
 	private void restoreUISettings()

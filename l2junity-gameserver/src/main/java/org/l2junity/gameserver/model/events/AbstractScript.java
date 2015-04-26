@@ -40,6 +40,7 @@ import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.datatables.ItemTable;
+import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.enums.QuestSound;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
@@ -110,6 +111,7 @@ import org.l2junity.gameserver.model.events.listeners.RunnableEventListener;
 import org.l2junity.gameserver.model.events.returns.AbstractEventReturn;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
 import org.l2junity.gameserver.model.holders.ItemHolder;
+import org.l2junity.gameserver.model.holders.MovieHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.interfaces.IPositionable;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
@@ -2797,5 +2799,35 @@ public abstract class AbstractScript extends ManagedScript
 	public void clearRadar(PlayerInstance player)
 	{
 		player.getRadar().removeAllMarkers();
+	}
+	
+	/**
+	 * Play scene for PlayerInstance.
+	 * @param player the player
+	 * @param movie the movie
+	 */
+	public void playMovie(PlayerInstance player, Movie movie)
+	{
+		new MovieHolder(Arrays.asList(player), movie);
+	}
+	
+	/**
+	 * Play scene for all PlayerInstance inside list.
+	 * @param players list with PlayerInstance
+	 * @param movie the movie
+	 */
+	public void playMovie(List<PlayerInstance> players, Movie movie)
+	{
+		new MovieHolder(players, movie);
+	}
+	
+	/**
+	 * Play scene for all PlayerInstance inside set.
+	 * @param players set with PlayerInstance
+	 * @param movie the movie
+	 */
+	public void playMovie(Set<PlayerInstance> players, Movie movie)
+	{
+		new MovieHolder(new ArrayList<>(players), movie);
 	}
 }
