@@ -27,8 +27,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 public class SiegeClan
 {
 	private int _clanId = 0;
-	private final Set<Npc> _flag = ConcurrentHashMap.newKeySet();
-	private int _numFlagsAdded = 0;
+	private final Set<Npc> _flags = ConcurrentHashMap.newKeySet();
 	private SiegeClanType _type;
 	
 	public SiegeClan(int clanId, SiegeClanType type)
@@ -39,13 +38,12 @@ public class SiegeClan
 	
 	public int getNumFlags()
 	{
-		return _numFlagsAdded;
+		return _flags.size();
 	}
 	
 	public void addFlag(Npc flag)
 	{
-		_numFlagsAdded++;
-		getFlag().add(flag);
+		_flags.add(flag);
 	}
 	
 	public boolean removeFlag(Npc flag)
@@ -54,20 +52,10 @@ public class SiegeClan
 		{
 			return false;
 		}
-		boolean ret = getFlag().remove(flag);
-		// check if null objects or duplicates remain in the list.
-		// for some reason, this might be happening sometimes...
-		// delete false duplicates: if this flag got deleted, delete its copies too.
-		if (ret)
-		{
-			while (getFlag().remove(flag))
-			{
-				//
-			}
-		}
+		
 		flag.deleteMe();
-		_numFlagsAdded--;
-		return ret;
+		
+		return getFlag().remove(flag);
 	}
 	
 	public void removeFlags()
@@ -85,7 +73,7 @@ public class SiegeClan
 	
 	public final Set<Npc> getFlag()
 	{
-		return _flag;
+		return _flags;
 	}
 	
 	public SiegeClanType getType()

@@ -23,7 +23,6 @@ import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.handler.ChatHandler;
 import org.l2junity.gameserver.handler.IChatHandler;
 import org.l2junity.gameserver.model.World;
-import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.events.EventDispatcher;
@@ -270,21 +269,15 @@ public final class Say2 implements IClientIncomingPacket
 				result.append(_text.charAt(pos++));
 			}
 			final int id = Integer.parseInt(result.toString());
-			final WorldObject item = World.getInstance().findObject(id);
-			if (item.isItem())
+			final ItemInstance item = owner.getInventory().getItemByObjectId(id);
+			
+			if (item == null)
 			{
-				if (owner.getInventory().getItemByObjectId(id) == null)
-				{
-					_log.info(client + " trying publish item which doesnt own! ID:" + id);
-					return false;
-				}
-				((ItemInstance) item).publish();
-			}
-			else
-			{
-				_log.info(client + " trying publish object which is not item! Object:" + item);
+				_log.info(client + " trying publish item which doesnt own! ID:" + id);
 				return false;
 			}
+			item.publish();
+			
 			pos1 = _text.indexOf(8, pos) + 1;
 			if (pos1 == 0) // missing ending tag
 			{
