@@ -10,7 +10,12 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="20160" />
 	</item>
 	<item id="20901" type="EtcItem" name="Santa Hat Set">
@@ -22,10 +27,15 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20900,1,1,100;14611,1,1,100" />
 	</item>
 	<item id="20902" type="EtcItem" name="Queen Ant's Ring Pack (7-day)">
@@ -37,12 +47,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20205,1,1,100" />
 	</item>
 	<item id="20903" type="EtcItem" name="Rose Petal">
@@ -54,6 +68,9 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="22158-1" />
 	</item>
 	<item id="20904" type="EtcItem" name="Rose Essence">
@@ -61,9 +78,12 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="2" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="20905" type="EtcItem" name="One Red Rose Bud">
@@ -72,7 +92,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="price" val="500" />
-		<set name="is_depositable" val="false" />
+
 		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -82,7 +102,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="price" val="500" />
-		<set name="is_depositable" val="false" />
+
 		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -92,7 +112,7 @@
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
 		<set name="price" val="500" />
-		<set name="is_depositable" val="false" />
+
 		<set name="crystal_type" val="NONE" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -109,6 +129,11 @@
 		<set name="handler" val="SummonItems" />
 		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
@@ -127,6 +152,11 @@
 		<set name="handler" val="SummonItems" />
 		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
@@ -145,6 +175,11 @@
 		<set name="handler" val="SummonItems" />
 		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
@@ -163,6 +198,11 @@
 		<set name="handler" val="SummonItems" />
 		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
@@ -181,6 +221,11 @@
 		<set name="handler" val="SummonItems" />
 		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
@@ -199,6 +244,11 @@
 		<set name="handler" val="SummonItems" />
 		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
@@ -212,11 +262,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="crystal_type" val="NONE" />
-		<set name="is_freightable" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
+		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20915" type="EtcItem" name="Enhanced Rose Necklace: Desheloph">
 		<set name="icon" val="BranchSys2.icon.br_necklace_of_rose_i00" />
@@ -229,10 +282,14 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+		<set name="is_freightable" val="false" />
 		<set name="handler" val="SummonItems" />
 		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
@@ -249,10 +306,14 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+		<set name="is_freightable" val="false" />
 		<set name="handler" val="SummonItems" />
 		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
@@ -269,10 +330,14 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+		<set name="is_freightable" val="false" />
 		<set name="handler" val="SummonItems" />
 		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
@@ -289,10 +354,14 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+		<set name="is_freightable" val="false" />
 		<set name="handler" val="SummonItems" />
 		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
@@ -309,10 +378,14 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+		<set name="is_freightable" val="false" />
 		<set name="handler" val="SummonItems" />
 		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
@@ -329,10 +402,14 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+		<set name="is_freightable" val="false" />
 		<set name="handler" val="SummonItems" />
 		<set name="item_skill" val="2046-1" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
@@ -350,6 +427,11 @@
 		<set name="is_questitem" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="1440" />
 	</item>
 	<item id="20922" type="Armor" name="Adventurer Hat">
@@ -358,9 +440,10 @@
 		<set name="bodypart" val="hairall" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
+		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="10" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
+
 	</item>
 	<item id="20923" type="EtcItem" name="Vesper Slasher">
 		<set name="icon" val="BranchSys2.icon.br_royal_crown_of_vesper_i00" />
@@ -372,6 +455,11 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="22159-1" />
 	</item>
 	<item id="20924" type="EtcItem" name="Vesper Caster">
@@ -384,6 +472,11 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="22160-1" />
 	</item>
 	<item id="20925" type="EtcItem" name="Vesper Dualsword">
@@ -396,6 +489,11 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="22161-1" />
 	</item>
 	<item id="20926" type="EtcItem" name="Mt. Fuji Herb">
@@ -405,10 +503,15 @@
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="22162-1" />
 	</item>
 	<item id="20927" type="EtcItem" name="Hawk Herb">
@@ -418,10 +521,15 @@
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="22163-1" />
 	</item>
 	<item id="20928" type="EtcItem" name="Eggplant Herb">
@@ -431,10 +539,15 @@
 		<set name="material" val="PAPER" />
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="22164-1" />
 	</item>
 	<item id="20929" type="Armor" name="Vesper Royal Crown">
@@ -447,10 +560,13 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
+		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20930" type="Armor" name="Vesper Royal Circlet">
 		<set name="icon" val="BranchSys2.icon.br_royal_circlet_of_vesper_i00" />
@@ -462,10 +578,13 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
+		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20931" type="Armor" name="Vesper Noble Mask">
 		<set name="icon" val="BranchSys2.icon.br_noblesse_oblige_of_vesper_i00" />
@@ -477,10 +596,13 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
+		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20932" type="Armor" name="Vesper Royal Crown">
 		<set name="icon" val="BranchSys2.icon.br_royal_crown_of_vesper_i00" />
@@ -492,9 +614,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 	</item>
 	<item id="20933" type="Armor" name="Vesper Royal Circlet">
@@ -507,9 +634,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 	</item>
 	<item id="20934" type="Armor" name="Vesper Noble Mask">
@@ -522,9 +654,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 	</item>
 	<item id="20935" type="Armor" name="Vesper Royal Crown">
@@ -534,10 +671,11 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="10" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20936" type="Armor" name="Vesper Royal Circlet">
 		<set name="icon" val="BranchSys2.icon.br_royal_circlet_of_vesper_i00" />
@@ -546,10 +684,11 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="10" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20937" type="Armor" name="Vesper Noble Mask">
 		<set name="icon" val="BranchSys2.icon.br_noblesse_oblige_of_vesper_i00" />
@@ -558,10 +697,11 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="10" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20938" type="Armor" name="Mount - Jet Bike">
 		<set name="icon" val="BranchSys2.icon.br_z_bike_i00" />
@@ -577,6 +717,11 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="unequip_skill" val="619-1" />
 		<set name="item_skill" val="21171-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 	</item>
 	<item id="20939" type="Armor" name="Mount - Jet Bike">
@@ -593,6 +738,11 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="unequip_skill" val="619-1" />
 		<set name="item_skill" val="21171-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 	</item>
 	<item id="20940" type="Armor" name="Agathion - Phoenix">
@@ -605,11 +755,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="unequip_skill" val="3267-1" />
 		<set name="item_skill" val="3267-1;21191-1;23171-1;23172-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 	</item>
 	<item id="20941" type="Armor" name="Agathion - Phoenix">
@@ -622,11 +777,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="unequip_skill" val="3267-1" />
 		<set name="item_skill" val="3267-1;21191-1;23171-1;23173-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 	</item>
 	<item id="20942" type="Armor" name="Fox Mask">
@@ -639,10 +799,13 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
+		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20943" type="Armor" name="Fox Mask">
 		<set name="icon" val="BranchSys2.icon.br_fox_japan_cap_i00" />
@@ -654,10 +817,15 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="item_skill" val="21192-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 	</item>
 	<item id="20944" type="Armor" name="Paiwan Hat">
@@ -670,10 +838,13 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
+		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20945" type="Armor" name="Paiwan Hat">
 		<set name="icon" val="BranchSys2.icon.br_paiwan_cap_i00" />
@@ -685,10 +856,15 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="item_skill" val="21193-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 	</item>
 	<item id="20946" type="EtcItem" name="Jet Bike Pack (7-day)">
@@ -702,9 +878,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20938,1,1,100" />
 	</item>
 	<item id="20947" type="EtcItem" name="Jet Bike Pack (30-day)">
@@ -718,9 +898,13 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20939,1,1,100" />
 	</item>
 	<item id="20948" type="EtcItem" name="Agathion - Phoenix Pack (7-day)">
@@ -732,12 +916,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20940,1,1,100" />
 	</item>
 	<item id="20949" type="EtcItem" name="Agathion - Phoenix Pack (7-day)">
@@ -749,12 +937,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20941,1,1,100" />
 	</item>
 	<item id="20950" type="EtcItem" name="Fox Mask Pack">
@@ -766,12 +958,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20942,1,1,100" />
 	</item>
 	<item id="20951" type="EtcItem" name="Fox Mask Pack (7-day)">
@@ -783,12 +979,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20943,1,1,100" />
 	</item>
 	<item id="20952" type="EtcItem" name="Paiwan Hat Pack">
@@ -800,12 +1000,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20944,1,1,100" />
 	</item>
 	<item id="20953" type="EtcItem" name="Paiwan Hat Pack (7-day)">
@@ -817,12 +1021,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20945,1,1,100" />
 	</item>
 	<item id="20954" type="EtcItem" name="Small Placid">
@@ -832,13 +1040,17 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="22165-1" />
 	</item>
 	<item id="20955" type="EtcItem" name="Medium Placid">
@@ -848,13 +1060,17 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="22166-1" />
 	</item>
 	<item id="20956" type="Armor" name="Agathion - Zombie">
@@ -867,11 +1083,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="unequip_skill" val="3267-1" />
 		<set name="item_skill" val="3267-1;21133-1;23117-1;23175-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 	</item>
 	<item id="20957" type="EtcItem" name="Agathion - Zombie Pack (7-day)">
@@ -883,12 +1104,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20956,1,1,100" />
 	</item>
 	<item id="20958" type="EtcItem" name="April Fools' Day Special Gift - For Event">
@@ -897,10 +1122,13 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="1" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="22167-1" />
 	</item>
 	<item id="20959" type="EtcItem" name="Vesper Royal Crown Pack">
@@ -912,12 +1140,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20929,1,1,100" />
 	</item>
 	<item id="20960" type="EtcItem" name="Vesper Royal Circlet Pack">
@@ -929,12 +1161,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20930,1,1,100" />
 	</item>
 	<item id="20961" type="EtcItem" name="Vesper Noble Mask Pack">
@@ -946,12 +1182,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20931,1,1,100" />
 	</item>
 	<item id="20962" type="EtcItem" name="Vesper Royal Crown Pack (30-day)">
@@ -963,12 +1203,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20932,1,1,100" />
 	</item>
 	<item id="20963" type="EtcItem" name="Vesper Royal Circlet Pack (30-day)">
@@ -980,12 +1224,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20933,1,1,100" />
 	</item>
 	<item id="20964" type="EtcItem" name="Vesper Noble Mask Pack (30-day)">
@@ -997,12 +1245,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20934,1,1,100" />
 	</item>
 	<item id="20965" type="EtcItem" name="Vesper Royal Crown Pack">
@@ -1014,12 +1266,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20935,1,1,100" />
 	</item>
 	<item id="20966" type="EtcItem" name="Vesper Royal Circlet Pack">
@@ -1031,12 +1287,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20936,1,1,100" />
 	</item>
 	<item id="20967" type="EtcItem" name="Vesper Noble Mask Pack">
@@ -1048,12 +1308,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20937,1,1,100" />
 	</item>
 	<item id="20968" type="Armor" name="Agathion - Guangong">
@@ -1066,10 +1330,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="unequip_skill" val="3267-1" />
-		<set name="is_freightable" val="true" />
+
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3267-1;21142-1;23123-1" />
 	</item>
 	<item id="20969" type="EtcItem" name="Agathion - Guangong Pack">
@@ -1081,12 +1349,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20968,1,1,100" />
 	</item>
 	<item id="20970" type="Armor" name="Agathion - Three-headed Dragon">
@@ -1103,6 +1375,11 @@
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="unequip_skill" val="3267-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3267-1;21194-1;23181-1;23182-1" />
 	</item>
 	<item id="20971" type="Weapon" name="Trejuo Transformation Stick">
@@ -1118,11 +1395,15 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="unequip_skill" val="839-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="21195-1" />
 		<for>
 			<set stat="pAtk" val="1" />
@@ -1144,11 +1425,15 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="unequip_skill" val="839-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="21196-1" />
 		<for>
 			<set stat="pAtk" val="1" />
@@ -1167,10 +1452,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="21197-1;21200-1" />
 	</item>
 	<item id="20974" type="Armor" name="Opera Mask - Guan Yu - Silence of Fidelity, Age of the Three Kingdoms">
@@ -1183,10 +1472,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="21198-1;21200-1" />
 	</item>
 	<item id="20975" type="Armor" name="Opera Mask - Zhang Fei - Vitality of Courage, Age of the Three Kingdoms">
@@ -1199,10 +1492,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="21199-1;21200-1" />
 	</item>
 	<item id="20976" type="EtcItem" name="Warrior's Mark">
@@ -1211,10 +1508,15 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 	</item>
 	<item id="20977" type="EtcItem" name="Mark of Affection">
@@ -1223,12 +1525,15 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="crystal_type" val="NONE" />
-		<set name="is_freightable" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
+		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20978" type="EtcItem" name="Zhongzi (B-grade)">
 		<set name="icon" val="BranchSys2.icon.br_taiwan_riceball_a_i00" />
@@ -1239,12 +1544,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="2517-1" />
 	</item>
 	<item id="20979" type="EtcItem" name="Zhongzi (A-grade)">
@@ -1256,12 +1565,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="2518-1" />
 	</item>
 	<item id="20980" type="EtcItem" name="Zhongzi (S-grade)">
@@ -1273,12 +1586,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="2519-1" />
 	</item>
 	<item id="20981" type="Armor" name="Dragon Boat">
@@ -1291,10 +1608,13 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
+		<set name="is_mailable" val="false" />
 	</item>
 	<item id="20982" type="Armor" name="Dragon Boat">
 		<set name="icon" val="BranchSys2.icon.br_dragonboat_cap_i00" />
@@ -1306,10 +1626,15 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="item_skill" val="21201-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="10080" />
 	</item>
 	<item id="20983" type="Armor" name="Agathion Seal Bracelet - Ball Trapping Gnosian - Soccer Ball of Cheers, Buff of Cheers">
@@ -1322,11 +1647,15 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="unequip_skill" val="3267-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3267-1;21202-1;23201-1;23183-1;23184-1" />
 	</item>
 	<item id="20984" type="Armor" name="Agathion Seal Bracelet - Ball Trapping Orodriel - Soccer Ball of Cheers, Buff of Cheers">
@@ -1339,11 +1668,15 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="unequip_skill" val="3267-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3267-1;21203-1;23202-1;23185-1;23186-1" />
 	</item>
 	<item id="20985" type="Armor" name="Agathion Seal Bracelet - Penalty Kick - Soccer Ball of Cheers, Buff of Cheers">
@@ -1356,11 +1689,15 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="unequip_skill" val="3267-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3267-1;21204-1;23203-1;23187-1;23188-1" />
 	</item>
 	<item id="20986" type="Armor" name="Agathion Seal Bracelet - Ball Trapping Gnosian - Soccer Ball of Cheers, Buff of Cheers">
@@ -1373,11 +1710,15 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="unequip_skill" val="3267-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3267-1;21205-1;23204-1;23189-1;23190-1" />
 	</item>
 	<item id="20987" type="Armor" name="Agathion Seal Bracelet - Ball Trapping Orodriel - Soccer Ball of Cheers, Buff of Cheers">
@@ -1390,11 +1731,15 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="unequip_skill" val="3267-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3267-1;21206-1;23205-1;23191-1;23192-1" />
 	</item>
 	<item id="20988" type="Armor" name="Agathion Seal Bracelet - Penalty Kick - Soccer Ball of Cheers, Buff of Cheers">
@@ -1407,11 +1752,15 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="unequip_skill" val="3267-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3267-1;21207-1;23206-1;23193-1;23194-1" />
 	</item>
 	<item id="20989" type="Armor" name="Agathion Seal Bracelet - Ball Trapping Gnosian - Soccer Ball of Cheers, Buff of Cheers">
@@ -1424,11 +1773,15 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="unequip_skill" val="3267-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3267-1;21208-1;23207-1;23195-1;23196-1" />
 	</item>
 	<item id="20990" type="Armor" name="Agathion Seal Bracelet - Ball Trapping Orodriel - Soccer Ball of Cheers, Buff of Cheers">
@@ -1441,11 +1794,15 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="unequip_skill" val="3267-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3267-1;21209-1;23208-1;23197-1;23198-1" />
 	</item>
 	<item id="20991" type="Armor" name="Agathion Seal Bracelet - Penalty Kick - Soccer Ball of Cheers, Buff of Cheers">
@@ -1458,11 +1815,15 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="unequip_skill" val="3267-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3267-1;21210-1;23209-1;23199-1;23200-1" />
 	</item>
 	<item id="20992" type="EtcItem" name="Thirst for Victory Quenching Juice">
@@ -1472,13 +1833,17 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="22168-1" />
 	</item>
 	<item id="20993" type="EtcItem" name="Soccer Ball of Cheers">
@@ -1490,13 +1855,17 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="22169-1" />
 	</item>
 	<item id="20994" type="EtcItem" name="Agathion - Three-headed Dragon Pack">
@@ -1508,13 +1877,17 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20970,1,1,100" />
 	</item>
 	<item id="20995" type="EtcItem" name="Liu Bei Opera Mask Pack - Buff of Virtue, Age of the Three Kingdoms">
@@ -1526,12 +1899,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20973,1,1,100" />
 	</item>
 	<item id="20996" type="EtcItem" name="Guan Yu Opera Mask Pack - Silence of Fidelity, Age of the Three Kingdoms">
@@ -1543,12 +1920,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20974,1,1,100" />
 	</item>
 	<item id="20997" type="EtcItem" name="Zhang Fei Opera Mask Pack - Vitality of Courage, Age of the Three Kingdoms">
@@ -1560,12 +1941,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20975,1,1,100" />
 	</item>
 	<item id="20998" type="EtcItem" name="Dragon Boat Pack">
@@ -1577,12 +1962,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20981,1,1,100" />
 	</item>
 	<item id="20999" type="EtcItem" name="Dragon Boat Pack (7-day)">
@@ -1594,12 +1983,16 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
-		<set name="is_freightable" val="true" />
+
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="20982,1,1,100" />
 	</item>
 </list>

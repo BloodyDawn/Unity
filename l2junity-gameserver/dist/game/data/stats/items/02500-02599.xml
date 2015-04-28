@@ -17,6 +17,7 @@
 		<set name="change_weaponId" val="9340" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="232" />
@@ -40,6 +41,7 @@
 		<set name="weight" val="1850" />
 		<set name="price" val="21000" />
 		<set name="soulshots" val="2" />
+		<set name="is_freightable" val="false" />
 		<set name="spiritshots" val="2" />
 		<for>
 			<set stat="pAtk" val="24" />
@@ -65,6 +67,7 @@
 		<set name="price" val="441940" />
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="122" />
@@ -93,6 +96,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
 		<for>
 			<set stat="pAtk" val="156" />
@@ -121,6 +125,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="BLUNT_WEAPON" />
 		<for>
 			<set stat="pAtk" val="213" />
@@ -144,6 +149,7 @@
 		<set name="material" val="STEEL" />
 		<set name="weight" val="100" />
 		<set name="price" val="7000" /> <!-- H5 Price -->
+		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
 		<cond msgId="113" addName="1">
 			<player categoryType="ALL_WOLF_GROUP" />
@@ -164,6 +170,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="160" />
 		<set name="price" val="3060" /> <!-- H5 Price -->
+		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
 		<cond msgId="113" addName="1">
 			<player categoryType="ALL_WOLF_GROUP" />
@@ -188,6 +195,7 @@
 		<set name="price" val="409000" />
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="5" />
@@ -207,6 +215,7 @@
 		<set name="weight" val="3" />
 		<set name="price" val="240" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="2509" type="EtcItem" name="Spiritshot: No Grade">
@@ -219,6 +228,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="SpiritShot" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2047-1" />
 	</item>
 	<item id="2510" type="EtcItem" name="Spiritshot (D-grade)">
@@ -232,6 +242,7 @@
 		<!-- <set name="enchant_enabled" val="1" /> NOTE: Retail typo. -->
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="SpiritShot" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2155-1" />
 	</item>
 	<item id="2511" type="EtcItem" name="Spiritshot (C-grade)">
@@ -245,6 +256,7 @@
 		<!-- <set name="enchant_enabled" val="1" /> NOTE: Retail typo. -->
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="SpiritShot" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2156-1" />
 	</item>
 	<item id="2512" type="EtcItem" name="Spiritshot (B-grade)">
@@ -258,6 +270,7 @@
 		<!-- <set name="enchant_enabled" val="1" /> NOTE: Retail typo. -->
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="SpiritShot" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2157-1" />
 	</item>
 	<item id="2513" type="EtcItem" name="Spiritshot (A-grade)">
@@ -271,6 +284,7 @@
 		<!-- <set name="enchant_enabled" val="1" /> NOTE: Retail typo. -->
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="SpiritShot" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2158-1" />
 	</item>
 	<item id="2514" type="EtcItem" name="Spiritshot (S-grade)">
@@ -284,6 +298,7 @@
 		<!-- <set name="enchant_enabled" val="1" /> NOTE: Retail typo. -->
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="SpiritShot" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2159-1" />
 	</item>
 	<item id="2515" type="EtcItem" name="Wolf Food">
@@ -298,6 +313,7 @@
 		<set name="handler" val="PetFood" />
 		<set name="item_skill" val="2048-1" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
 		<cond msgId="113" addName="1">
 			<player categoryType="ALL_WOLF_GROUP,SIN_EATER_GROUP,DEINONYCHUS_PET_GROUP" />
@@ -319,6 +335,7 @@
 		<set name="price" val="134880" />
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="73" />
@@ -345,6 +362,7 @@
 		<set name="price" val="163560" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="83" />
@@ -371,6 +389,7 @@
 		<set name="price" val="163560" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="83" />
@@ -397,6 +416,7 @@
 		<set name="price" val="163560" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="83" />
@@ -423,6 +443,7 @@
 		<set name="price" val="163560" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="83" />
@@ -449,6 +470,7 @@
 		<set name="price" val="214800" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="96" />
@@ -475,6 +497,7 @@
 		<set name="price" val="214800" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="96" />
@@ -501,6 +524,7 @@
 		<set name="price" val="300880" />
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="118" />
@@ -527,6 +551,7 @@
 		<set name="price" val="352580" />
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="130" />
@@ -553,6 +578,7 @@
 		<set name="price" val="214800" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="96" />
@@ -579,6 +605,7 @@
 		<set name="price" val="214800" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="96" />
@@ -605,6 +632,7 @@
 		<set name="price" val="214800" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="96" />
@@ -631,6 +659,7 @@
 		<set name="price" val="214800" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="96" />
@@ -657,6 +686,7 @@
 		<set name="price" val="255140" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="107" />
@@ -684,6 +714,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="DUALSWORD" />
 		<for>
 			<set stat="pAtk" val="107" />
@@ -710,6 +741,7 @@
 		<set name="price" val="326000" />
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="124" />
@@ -736,6 +768,7 @@
 		<set name="price" val="380700" />
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="136" />
@@ -762,6 +795,7 @@
 		<set name="price" val="214800" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="96" />
@@ -788,6 +822,7 @@
 		<set name="price" val="214800" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="96" />
@@ -814,6 +849,7 @@
 		<set name="price" val="214800" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="96" />
@@ -840,6 +876,7 @@
 		<set name="price" val="255140" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="107" />
@@ -866,6 +903,7 @@
 		<set name="price" val="255140" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="107" />
@@ -892,6 +930,7 @@
 		<set name="price" val="326000" />
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="124" />
@@ -918,6 +957,7 @@
 		<set name="price" val="380700" />
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="136" />
@@ -944,6 +984,7 @@
 		<set name="price" val="214800" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="96" />
@@ -970,6 +1011,7 @@
 		<set name="price" val="214800" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="96" />
@@ -996,6 +1038,7 @@
 		<set name="price" val="255140" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="107" />
@@ -1022,6 +1065,7 @@
 		<set name="price" val="255140" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="107" />
@@ -1048,6 +1092,7 @@
 		<set name="price" val="326000" />
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="124" />
@@ -1074,6 +1119,7 @@
 		<set name="price" val="380700" />
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="136" />
@@ -1100,6 +1146,7 @@
 		<set name="price" val="214800" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="96" />
@@ -1126,6 +1173,7 @@
 		<set name="price" val="255140" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="107" />
@@ -1152,6 +1200,7 @@
 		<set name="price" val="255140" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="107" />
@@ -1178,6 +1227,7 @@
 		<set name="price" val="326000" />
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="124" />
@@ -1204,6 +1254,7 @@
 		<set name="price" val="380700" />
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="136" />
@@ -1231,6 +1282,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="DUALSWORD" />
 		<for>
 			<set stat="pAtk" val="118" />
@@ -1257,6 +1309,7 @@
 		<set name="price" val="300880" />
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="118" />
@@ -1283,6 +1336,7 @@
 		<set name="price" val="380700" />
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="136" />
@@ -1310,6 +1364,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3046-2" />
 		<for>
 			<set stat="pAtk" val="148" />
@@ -1336,6 +1391,7 @@
 		<set name="price" val="300880" />
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="118" />
@@ -1362,6 +1418,7 @@
 		<set name="price" val="380700" />
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<for>
 			<set stat="pAtk" val="136" />
@@ -1389,6 +1446,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3042-2" />
 		<for>
 			<set stat="pAtk" val="148" />
@@ -1416,6 +1474,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3013-1" />
 		<for>
 			<set stat="pAtk" val="148" />
@@ -1443,6 +1502,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3044-3" />
 		<for>
 			<set stat="pAtk" val="155" />
@@ -1470,6 +1530,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3045-4" />
 		<for>
 			<set stat="pAtk" val="162" />
@@ -1497,6 +1558,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3046-6" />
 		<for>
 			<set stat="pAtk" val="175" />
@@ -1524,6 +1586,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3042-7" />
 		<for>
 			<set stat="pAtk" val="183" />
@@ -1551,6 +1614,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3013-1" />
 		<for>
 			<set stat="pAtk" val="183" />
@@ -1578,6 +1642,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3044-7" />
 		<for>
 			<set stat="pAtk" val="183" />
@@ -1605,6 +1670,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3045-7" />
 		<for>
 			<set stat="pAtk" val="183" />
@@ -1632,6 +1698,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3046-9" />
 		<for>
 			<set stat="pAtk" val="197" />
@@ -1659,6 +1726,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3042-9" />
 		<for>
 			<set stat="pAtk" val="197" />
@@ -1686,6 +1754,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3013-1" />
 		<for>
 			<set stat="pAtk" val="197" />
@@ -1713,6 +1782,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3044-9" />
 		<for>
 			<set stat="pAtk" val="197" />
@@ -1740,6 +1810,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3045-9" />
 		<for>
 			<set stat="pAtk" val="197" />
@@ -1767,6 +1838,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3046-11" />
 		<for>
 			<set stat="pAtk" val="213" />
@@ -1794,6 +1866,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3046-8" />
 		<for>
 			<set stat="pAtk" val="190" />
@@ -1821,6 +1894,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3042-8" />
 		<for>
 			<set stat="pAtk" val="190" />
@@ -1848,6 +1922,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3013-1" />
 		<for>
 			<set stat="pAtk" val="190" />
@@ -1875,6 +1950,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3044-8" />
 		<for>
 			<set stat="pAtk" val="190" />
@@ -1902,6 +1978,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3046-10" />
 		<for>
 			<set stat="pAtk" val="204" />
@@ -1929,6 +2006,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3042-10" />
 		<for>
 			<set stat="pAtk" val="204" />
@@ -1956,6 +2034,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3013-1" />
 		<for>
 			<set stat="pAtk" val="204" />
@@ -1983,6 +2062,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3044-10" />
 		<for>
 			<set stat="pAtk" val="204" />
@@ -2010,6 +2090,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3045-10" />
 		<for>
 			<set stat="pAtk" val="204" />
@@ -2037,6 +2118,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3046-12" />
 		<for>
 			<set stat="pAtk" val="220" />
@@ -2064,6 +2146,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3045-8" />
 		<for>
 			<set stat="pAtk" val="190" />
@@ -2091,6 +2174,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3046-8" />
 		<for>
 			<set stat="pAtk" val="190" />
@@ -2118,6 +2202,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3042-8" />
 		<for>
 			<set stat="pAtk" val="190" />
@@ -2145,6 +2230,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3046-10" />
 		<for>
 			<set stat="pAtk" val="204" />
@@ -2172,6 +2258,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3042-10" />
 		<for>
 			<set stat="pAtk" val="204" />
@@ -2199,6 +2286,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3013-1" />
 		<for>
 			<set stat="pAtk" val="204" />
@@ -2226,6 +2314,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3044-10" />
 		<for>
 			<set stat="pAtk" val="204" />
@@ -2253,6 +2342,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3045-10" />
 		<for>
 			<set stat="pAtk" val="204" />
@@ -2280,6 +2370,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3042-12" />
 		<for>
 			<set stat="pAtk" val="220" />
@@ -2307,6 +2398,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3013-1" />
 		<for>
 			<set stat="pAtk" val="190" />
@@ -2334,6 +2426,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3044-8" />
 		<for>
 			<set stat="pAtk" val="190" />
@@ -2361,6 +2454,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3046-10" />
 		<for>
 			<set stat="pAtk" val="204" />
@@ -2388,6 +2482,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3042-10" />
 		<for>
 			<set stat="pAtk" val="204" />
@@ -2415,6 +2510,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3013-1" />
 		<for>
 			<set stat="pAtk" val="204" />
@@ -2442,6 +2538,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3044-10" />
 		<for>
 			<set stat="pAtk" val="204" />
@@ -2469,6 +2566,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3045-10" />
 		<for>
 			<set stat="pAtk" val="204" />
@@ -2496,6 +2594,7 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3013-1" />
 		<for>
 			<set stat="pAtk" val="220" />
@@ -2524,6 +2623,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3045-8" />
+		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="DUALSWORD" />
 		<for>
 			<set stat="pAtk" val="190" />

@@ -14,6 +14,7 @@
 		<set name="item_skill" val="2863-1" />
 		<set name="for_npc" val="true" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="POTION" />
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
@@ -33,6 +34,7 @@
 		<set name="item_skill" val="2864-1" />
 		<set name="for_npc" val="true" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="POTION" />
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
@@ -48,6 +50,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2515-1" />
 	</item>
 	<item id="14703" type="EtcItem" name="Agathion Auxiliary Stone: Enchant Weapon (C-Grade)">
@@ -60,6 +63,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2516-1" />
 	</item>
 	<item id="14704" type="EtcItem" name="Agathion Auxiliary Stone: Enchant Weapon (B-Grade)">
@@ -72,6 +76,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2517-1" />
 	</item>
 	<item id="14705" type="EtcItem" name="Agathion Auxiliary Stone: Enchant Weapon (A-Grade)">
@@ -84,6 +89,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2518-1" />
 	</item>
 	<item id="14706" type="EtcItem" name="Agathion Auxiliary Stone: Enchant Weapon (S-Grade)">
@@ -96,6 +102,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2519-1" />
 	</item>
 	<item id="14707" type="EtcItem" name="Agathion Auxiliary Stone: Enchant Armor (D-Grade)">
@@ -108,6 +115,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2520-1" />
 	</item>
 	<item id="14708" type="EtcItem" name="Agathion Auxiliary Stone: Enchant Armor (C-Grade)">
@@ -120,6 +128,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2521-1" />
 	</item>
 	<item id="14709" type="EtcItem" name="Agathion Auxiliary Stone: Enchant Armor (B-Grade)">
@@ -132,6 +141,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2522-1" />
 	</item>
 	<item id="14710" type="EtcItem" name="Agathion Auxiliary Stone: Enchant Armor (A-Grade)">
@@ -144,6 +154,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2523-1" />
 	</item>
 	<item id="14711" type="EtcItem" name="Agathion Auxiliary Stone: Enchant Armor (S-Grade)">
@@ -156,6 +167,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2524-1" />
 	</item>
 	<item id="14712" type="Armor" name="Cow Hair Accessory">
@@ -167,6 +179,11 @@
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 	</item>
 	<item id="14713" type="EtcItem" name="Superior Elixir Gift Box (No-grade)">
@@ -181,6 +198,11 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="14682,3,3,100;14688,3,3,100;14694,3,3,100" />
 	</item>
 	<item id="14714" type="EtcItem" name="Superior Elixir Gift Box (D-grade)">
@@ -195,6 +217,11 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="14683,3,3,100;14689,3,3,100;14695,3,3,100" />
 	</item>
 	<item id="14715" type="EtcItem" name="Superior Elixir Gift Box (C-grade)">
@@ -209,6 +236,11 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="14684,3,3,100;14690,3,3,100;14696,3,3,100" />
 	</item>
 	<item id="14716" type="EtcItem" name="Superior Elixir Gift Box (B-grade)">
@@ -223,6 +255,11 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="14685,2,2,100;14691,2,2,100;14697,2,2,100" />
 	</item>
 	<item id="14717" type="EtcItem" name="Superior Elixir Gift Box (A-grade)">
@@ -237,6 +274,11 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="14686,2,2,100;14692,2,2,100;14698,2,2,100" />
 	</item>
 	<item id="14718" type="EtcItem" name="Superior Elixir Gift Box (S-grade)">
@@ -251,6 +293,11 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="14687,2,2,100;14693,2,2,100;14699,2,2,100" />
 	</item>
 	<item id="14719" type="EtcItem" name="Full Vitality Event Pack">
@@ -261,12 +308,16 @@
 		<set name="weight" val="100" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<set name="is_destroyable" val="false" />
+
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_premium" val="true" />
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="14675,1,1,100" />
 	</item>
 	<item id="14720" type="EtcItem" name="Event - Apiga">
@@ -274,6 +325,7 @@
 		<set name="material" val="PAPER" />
 		<set name="is_dropable" val="false" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14721" type="EtcItem" name="Event - Golden Apiga">
@@ -281,6 +333,7 @@
 		<set name="material" val="PAPER" />
 		<set name="is_dropable" val="false" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14722" type="EtcItem" name="Event - Cupid's Fatigue Recovery Potion">
@@ -293,6 +346,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2867-1" />
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
@@ -308,6 +362,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2868-1" />
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
@@ -322,6 +377,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2869-1" />
 	</item>
 	<item id="14725" type="EtcItem" name="Event - Summon Scroll: Milk Cow Captain">
@@ -333,6 +389,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2870-1" />
 	</item>
 	<item id="14726" type="EtcItem" name="Event - Summon Scroll: Gloomy Milk Cow">
@@ -344,6 +401,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2880-1" />
 	</item>
 	<item id="14727" type="EtcItem" name="Event - Summon Scroll: Gloomy Milk Cow Captain">
@@ -355,6 +413,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2881-1" />
 	</item>
 	<item id="14728" type="EtcItem" name="Event - Orr Cube">
@@ -368,6 +427,10 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2510-1" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="43200" />
 	</item>
 	<item id="14729" type="EtcItem" name="Event - Crystal Cube">
@@ -380,6 +443,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2882-1" />
 	</item>
 	<item id="14730" type="EtcItem" name="Event - Gold Crystal Cube Fragment">
@@ -388,6 +452,7 @@
 		<set name="material" val="PAPER" />
 		<set name="is_dropable" val="false" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14731" type="EtcItem" name="Event - Silver Crystal Cube Fragment">
@@ -396,6 +461,7 @@
 		<set name="material" val="PAPER" />
 		<set name="is_dropable" val="false" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14732" type="EtcItem" name="Event - Bronze Crystal Cube Fragment">
@@ -404,6 +470,7 @@
 		<set name="material" val="PAPER" />
 		<set name="is_dropable" val="false" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14733" type="EtcItem" name="Event - Black Crystal Cube Fragment">
@@ -412,6 +479,7 @@
 		<set name="material" val="PAPER" />
 		<set name="is_dropable" val="false" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14734" type="EtcItem" name="Event - Clear Crystal Cube Fragment">
@@ -420,6 +488,7 @@
 		<set name="material" val="PAPER" />
 		<set name="is_dropable" val="false" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14735" type="EtcItem" name="Event - Purple Crystal Cube Fragment">
@@ -428,6 +497,7 @@
 		<set name="material" val="PAPER" />
 		<set name="is_dropable" val="false" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14736" type="EtcItem" name="Event - Pink Crystal Cube Fragment">
@@ -436,6 +506,7 @@
 		<set name="material" val="PAPER" />
 		<set name="is_dropable" val="false" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14737" type="EtcItem" name="Event - Dark Brown Crystal Cube Fragment">
@@ -444,6 +515,7 @@
 		<set name="material" val="PAPER" />
 		<set name="is_dropable" val="false" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14738" type="EtcItem" name="Event - Black Crystal Cube Fragment">
@@ -452,6 +524,7 @@
 		<set name="material" val="PAPER" />
 		<set name="is_dropable" val="false" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14739" type="EtcItem" name="Event - Fresh Milk">
@@ -464,7 +537,7 @@
 		<set name="reuse_delay" val="3000" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
-		<set name="is_freightable" val="true" />
+		<set name="is_freightable" val="false" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2873-1;2874-1;2875-1;2876-1;2877-1;2878-1;2879-1;2885-1;2886-1;2887-1;2888-1;2889-1;2890-1;2891-6" />
 		<set name="crystal_type" val="NONE" />
@@ -482,6 +555,11 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="14722,60,60,100;14723,15,15,100;14724,1,1,100;14725,1,1,100" />
 	</item>
 	<item id="14741" type="EtcItem" name="Event - Vitality Replenishing Potion (5-minute)">
@@ -494,6 +572,7 @@
 		<set name="reuse_delay" val="3000" />
 		<set name="is_dropable" val="false" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14742" type="EtcItem" name="Event - Vitality Replenishing Potion (10-minute)">
@@ -508,6 +587,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2883-1" />
 	</item>
 	<item id="14743" type="EtcItem" name="Event - Vitality Replenishing Potion (20-minute)">
@@ -522,6 +602,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2884-1" />
 	</item>
 	<item id="14744" type="EtcItem" name="Event - Vitality Replenishing Potion (30-minute)">
@@ -534,11 +615,15 @@
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<set name="is_destroyable" val="false" />
+
 		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="9166-1" />
 	</item>
 	<item id="14745" type="EtcItem" name="Event - Vitality Replenishing Potion (60-minute)">
@@ -551,6 +636,7 @@
 		<set name="reuse_delay" val="3000" />
 		<set name="is_dropable" val="false" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="14746" type="Armor" name="Event - Refined Chick Hat">
@@ -562,6 +648,11 @@
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 	</item>
 	<item id="14747" type="Armor" name="Event - Refined Black Feather Mask">
@@ -573,6 +664,11 @@
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 	</item>
 	<item id="14748" type="Armor" name="Event - Refined Carnival Circlet">
@@ -584,6 +680,11 @@
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 	</item>
 	<item id="14749" type="Armor" name="Afro Perm Wig">
@@ -593,6 +694,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
+		<set name="is_freightable" val="false" />
 		<set name="price" val="2000000" />
 	</item>
 	<item id="14750" type="Armor" name="Bamboo Hat">
@@ -602,6 +704,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
+		<set name="is_freightable" val="false" />
 		<set name="price" val="2000000" />
 	</item>
 	<item id="14751" type="Armor" name="Smart Glasses">
@@ -611,6 +714,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
 		<set name="weight" val="10" />
+		<set name="is_freightable" val="false" />
 		<set name="price" val="2000000" />
 	</item>
 	<item id="14752" type="Armor" name="Event - Refined Medieval Party Mask">
@@ -622,8 +726,13 @@
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 	</item>
 	<item id="14753" type="Armor" name="Shadow Item: Refined Chick Hat">
 		<set name="icon" val="icon.accessory_chicken_cap2_i00" />
@@ -636,9 +745,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="item_skill" val="3264-1" />
 		<set name="duration" val="360" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="30" />
 	</item>
 	<item id="14754" type="Armor" name="Shadow Item: Refined Chick Hat">
@@ -652,9 +766,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="item_skill" val="3265-1" />
 		<set name="duration" val="360" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="10" />
 	</item>
 	<item id="14755" type="Armor" name="Shadow Item: Refined Chick Hat">
@@ -668,9 +787,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="item_skill" val="3266-1" />
 		<set name="duration" val="360" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="5" />
 	</item>
 	<item id="14756" type="Armor" name="Shadow Item: Refined Black Feather Mask">
@@ -684,9 +808,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="item_skill" val="3264-1" />
 		<set name="duration" val="360" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="30" />
 	</item>
 	<item id="14757" type="Armor" name="Shadow Item: Refined Black Feather Mask">
@@ -700,9 +829,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="item_skill" val="3265-1" />
 		<set name="duration" val="360" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="10" />
 	</item>
 	<item id="14758" type="Armor" name="Shadow Item: Refined Black Feather Mask">
@@ -716,9 +850,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="item_skill" val="3266-1" />
 		<set name="duration" val="360" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="5" />
 	</item>
 	<item id="14759" type="Armor" name="Shadow Item: Refined Carnival Circlet">
@@ -732,9 +871,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="item_skill" val="3264-1" />
 		<set name="duration" val="360" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="30" />
 	</item>
 	<item id="14760" type="Armor" name="Shadow Item: Refined Carnival Circlet">
@@ -748,9 +892,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="item_skill" val="3265-1" />
 		<set name="duration" val="360" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="10" />
 	</item>
 	<item id="14761" type="Armor" name="Shadow Item: Refined Carnival Circlet">
@@ -764,9 +913,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="item_skill" val="3266-1" />
 		<set name="duration" val="360" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="5" />
 	</item>
 	<item id="14762" type="Armor" name="Shadow Item: Refined Medieval Party Mask">
@@ -780,9 +934,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="item_skill" val="3264-1" />
 		<set name="duration" val="360" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="30" />
 	</item>
 	<item id="14763" type="Armor" name="Shadow Item: Refined Medieval Party Mask">
@@ -796,9 +955,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="item_skill" val="3265-1" />
 		<set name="duration" val="360" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="10" />
 	</item>
 	<item id="14764" type="Armor" name="Shadow Item: Refined Medieval Party Mask">
@@ -812,9 +976,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="item_skill" val="3266-1" />
 		<set name="duration" val="360" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="5" />
 	</item>
 	<item id="14765" type="EtcItem" name="Event - Extra Pass: Rim Kamaloka">
@@ -826,10 +995,15 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2892-1" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="1440" />
 	</item>
 	<item id="14766" type="EtcItem" name="Valentine's Day Candy Basket">
@@ -839,12 +1013,17 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_dropable" val="false" />
-		<set name="is_destroyable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
+
+
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="2895-1" />
 	</item>
 	<item id="14767" type="EtcItem" name="Valentine's Day Candy Basket">
@@ -854,12 +1033,17 @@
 		<set name="material" val="FISH" />
 		<set name="reuse_delay" val="3000" />
 		<set name="is_dropable" val="false" />
-		<set name="is_destroyable" val="false" />
-		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
+
+
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="2896-1" />
 	</item>
 	<item id="14768" type="EtcItem" name="Valentine's Day Solo Package">
@@ -870,12 +1054,17 @@
 		<set name="reuse_delay" val="3000" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<set name="is_destroyable" val="false" />
+
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ExtractableItems" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="capsuled_items" val="14770,1,1,100;14774,1,1,80" />
 	</item>
 	<item id="14769" type="EtcItem" name="Valentine's Day Candy">
@@ -885,12 +1074,16 @@
 		<set name="material" val="LIQUID" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<set name="is_destroyable" val="false" />
+
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="2894-1" />
 	</item>
 	<item id="14770" type="EtcItem" name="Solo Escape Petition">
@@ -900,12 +1093,17 @@
 		<set name="material" val="LIQUID" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<set name="is_destroyable" val="false" />
+
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="2893-1" />
 	</item>
 	<item id="14771" type="Armor" name="Kat the Cat Hat">
@@ -917,7 +1115,12 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="20160" />
 	</item>
 	<item id="14772" type="Armor" name="Coronet">
@@ -926,8 +1129,9 @@
 		<set name="bodypart" val="hairall" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
+		<set name="is_freightable" val="false" />
 		<set name="weight" val="10" />
-		<set name="is_depositable" val="false" />
+
 		<cond msgId="1518">
 			<player sex="1" />
 		</cond>
@@ -942,7 +1146,12 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="20160" />
 		<for>
 			<add stat="maxMp" val="15" />
@@ -961,8 +1170,13 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="item_skill" val="8325-1;8326-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="20160" />
 		<for>
 			<set stat="pAtk" val="1" />
@@ -980,9 +1194,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="unequip_skill" val="3267-1" />
 		<set name="item_skill" val="5763-1;8245-1;3267-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="20160" />
 	</item>
 	<item id="14776" type="Armor" name="Agathion - Juju (14-day)">
@@ -994,9 +1213,14 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
-		<set name="is_depositable" val="false" />
+
 		<set name="unequip_skill" val="3267-1" />
 		<set name="item_skill" val="6136-1;8327-1;3267-1;6137-1;6138-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="20160" />
 	</item>
 	<item id="14777" type="EtcItem" name="Baguette's Herb">
@@ -1006,6 +1230,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2897-1" />
 	</item>
 	<item id="14778" type="EtcItem" name="Cream Puff Herb">
@@ -1015,6 +1242,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2898-1" />
 	</item>
 	<item id="14779" type="EtcItem" name="Cheesecake Herb">
@@ -1024,6 +1254,9 @@
 		<set name="is_depositable" val="false" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2899-1" />
 	</item>
 	<item id="14780" type="Weapon" name="Baguette's Bread Sword">
@@ -1037,6 +1270,9 @@
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="is_depositable" val="false" />
 		<for>
 			<set stat="rCrit" val="8" />
@@ -1053,6 +1289,9 @@
 		<set name="weight" val="1130" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="is_depositable" val="false" />
 		<for>
 			<set stat="rCrit" val="12" />
@@ -1070,6 +1309,9 @@
 		<set name="weight" val="2250" />
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="is_depositable" val="false" />
 		<for>
 			<set stat="rCrit" val="8" />
@@ -1087,6 +1329,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="is_depositable" val="false" />
 		<for>
 			<set stat="rCrit" val="4" />
@@ -1105,6 +1350,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="is_depositable" val="false" />
 		<for>
 			<set stat="rCrit" val="8" />
@@ -1122,6 +1370,9 @@
 		<set name="weight" val="2120" />
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="is_depositable" val="false" />
 		<for>
 			<set stat="rCrit" val="8" />
@@ -1141,6 +1392,9 @@
 		<set name="spiritshots" val="2" />
 		<set name="mp_consume" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="is_depositable" val="false" />
 		<for>
 			<set stat="rCrit" val="12" />
@@ -1159,6 +1413,9 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="is_depositable" val="false" />
 		<for>
 			<set stat="rCrit" val="4" />
@@ -1178,6 +1435,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_depositable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<for>
 			<set stat="rCrit" val="8" />
@@ -1196,6 +1456,9 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_depositable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="is_magic_weapon" val="true" />
 		<for>
 			<set stat="rCrit" val="4" />
@@ -1218,6 +1481,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_magic_weapon" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="duration" val="600" />
 		<for>
 			<set stat="rCrit" val="4" />
@@ -1236,6 +1504,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="duration" val="600" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
@@ -1258,6 +1531,9 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="is_depositable" val="false" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1280,6 +1556,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="is_depositable" val="false" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1302,6 +1581,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="is_depositable" val="false" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1324,6 +1606,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="is_depositable" val="false" />
 		<for>
 			<set stat="rCrit" val="8" />
@@ -1339,6 +1624,9 @@
 		<set name="material" val="STEEL" />
 		<set name="weight" val="930" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="is_depositable" val="false" />
 		<cond msgId="1518">
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
@@ -1360,6 +1648,9 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="is_depositable" val="false" />
 		<cond msgId="1518">
 			<and>
@@ -1378,6 +1669,9 @@
 		<set name="ex_immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_depositable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
 	</item>
 	<item id="14799" type="Armor" name="Afro Perm Wig - Gold">
@@ -1386,6 +1680,9 @@
 		<set name="ex_immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_depositable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
 	</item>
 </list>

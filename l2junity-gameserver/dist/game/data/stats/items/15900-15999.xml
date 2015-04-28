@@ -19,6 +19,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="is_magic_weapon" val="true" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3047-3" />
 		<for>
 			<set stat="pAtk" val="350" />
@@ -52,6 +53,7 @@
 		<set name="reuse_delay" val="1500" />
 		<set name="oncrit_chance" val="33" />
 		<set name="oncrit_skill" val="3574-3" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3552-1" />
 		<for>
 			<set stat="pAtk" val="794" />
@@ -84,6 +86,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="1500" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3552-1;8312-2" />
 		<for>
 			<set stat="pAtk" val="794" />
@@ -116,6 +119,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="1500" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3567-5" />
 		<for>
 			<set stat="pAtk" val="794" />
@@ -147,6 +151,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="8289-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -181,6 +186,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3564-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -215,6 +221,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3013-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -248,6 +255,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3566-5" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -281,6 +289,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3564-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -314,6 +323,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3013-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -350,6 +360,7 @@
 		<set name="reuse_delay" val="400" />
 		<set name="oncrit_chance" val="33" />
 		<set name="oncrit_skill" val="3574-3" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3552-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -384,6 +395,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3552-1;3360-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -418,6 +430,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="8289-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -451,6 +464,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3653-1" />
 		<for>
 			<set stat="pAtk" val="437" />
@@ -480,6 +498,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3651-1;3652-1" />
 		<for>
 			<set stat="pAtk" val="382" />
@@ -510,6 +533,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3650-1" />
 		<for>
 			<set stat="pAtk" val="437" />
@@ -540,6 +568,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3654-1" />
 		<for>
 			<set stat="pAtk" val="532" />
@@ -570,6 +603,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3654-1" />
 		<for>
 			<set stat="pAtk" val="532" />
@@ -599,6 +637,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-4;3653-1" />
 		<for>
 			<set stat="pAtk" val="532" />
@@ -629,6 +672,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3650-1;3599-1" />
 		<for>
 			<set stat="pAtk" val="437" />
@@ -660,6 +708,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3654-1" />
 		<for>
 			<set stat="pAtk" val="350" />
@@ -691,6 +744,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3655-1" />
 		<for>
 			<set stat="pAtk" val="426" />
@@ -722,6 +780,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3651-1;3652-1" />
 		<for>
 			<set stat="pAtk" val="350" />
@@ -753,6 +816,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3656-1;3657-1" />
 		<for>
 			<set stat="pAtk" val="794" />
@@ -785,6 +853,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="oncrit_skill" val="3579-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3655-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -818,6 +891,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3651-1;3652-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -852,6 +930,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3653-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -885,6 +968,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3653-1" />
 		<for>
 			<set stat="pAtk" val="415" />
@@ -914,6 +1002,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3651-1;3652-1" />
 		<for>
 			<set stat="pAtk" val="363" />
@@ -944,6 +1037,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3650-1" />
 		<for>
 			<set stat="pAtk" val="415" />
@@ -974,6 +1072,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3654-1" />
 		<for>
 			<set stat="pAtk" val="505" />
@@ -1004,6 +1107,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3654-1" />
 		<for>
 			<set stat="pAtk" val="505" />
@@ -1033,6 +1141,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-4;3653-1" />
 		<for>
 			<set stat="pAtk" val="505" />
@@ -1063,6 +1176,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3650-1;3599-1" />
 		<for>
 			<set stat="pAtk" val="415" />
@@ -1094,6 +1212,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3654-1" />
 		<for>
 			<set stat="pAtk" val="332" />
@@ -1125,6 +1248,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3655-1" />
 		<for>
 			<set stat="pAtk" val="404" />
@@ -1156,6 +1284,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3651-1;3652-1" />
 		<for>
 			<set stat="pAtk" val="332" />
@@ -1187,6 +1320,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3656-1;3657-1" />
 		<for>
 			<set stat="pAtk" val="768" />
@@ -1219,6 +1357,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="oncrit_skill" val="3579-1" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3655-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1252,6 +1395,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3651-1;3652-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1286,6 +1434,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3653-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1319,6 +1472,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3650-1;3013-3" />
 		<for>
 			<set stat="pAtk" val="415" />
@@ -1348,6 +1506,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3650-1;3566-4" />
 		<for>
 			<set stat="pAtk" val="415" />
@@ -1377,6 +1540,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3650-1;3564-3" />
 		<for>
 			<set stat="pAtk" val="415" />
@@ -1406,6 +1574,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3651-1;3652-1;3568-2" />
 		<for>
 			<set stat="pAtk" val="363" />
@@ -1436,6 +1609,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3651-1;3652-1;3564-3" />
 		<for>
 			<set stat="pAtk" val="363" />
@@ -1466,6 +1644,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3651-1;3652-1;3572-3" />
 		<for>
 			<set stat="pAtk" val="363" />
@@ -1496,6 +1679,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3650-1;3013-3" />
 		<for>
 			<set stat="pAtk" val="415" />
@@ -1526,6 +1714,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3650-1;3569-3" />
 		<for>
 			<set stat="pAtk" val="415" />
@@ -1556,6 +1749,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3650-1;3568-2" />
 		<for>
 			<set stat="pAtk" val="415" />
@@ -1586,6 +1784,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3653-1;3013-3" />
 		<for>
 			<set stat="pAtk" val="505" />
@@ -1616,6 +1819,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3653-1;3568-2" />
 		<for>
 			<set stat="pAtk" val="505" />
@@ -1646,6 +1854,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3653-1;3569-3" />
 		<for>
 			<set stat="pAtk" val="505" />
@@ -1676,6 +1889,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3653-1;3013-3" />
 		<for>
 			<set stat="pAtk" val="505" />
@@ -1705,6 +1923,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3653-1;3566-4" />
 		<for>
 			<set stat="pAtk" val="505" />
@@ -1734,6 +1957,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3653-1;3564-3" />
 		<for>
 			<set stat="pAtk" val="505" />
@@ -1763,6 +1991,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3651-1;3652-1;3013-3" />
 		<for>
 			<set stat="pAtk" val="505" />
@@ -1794,6 +2027,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="oncrit_skill" val="3571-2" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3651-1;3652-1" />
 		<for>
 			<set stat="pAtk" val="505" />
@@ -1824,6 +2062,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3651-1;3652-1;3565-4" />
 		<for>
 			<set stat="pAtk" val="505" />
@@ -1854,6 +2097,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3653-1;3602-10" />
 		<for>
 			<set stat="pAtk" val="415" />
@@ -1884,6 +2132,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3653-1;3601-10" />
 		<for>
 			<set stat="pAtk" val="415" />
@@ -1914,6 +2167,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3653-1;3013-4" />
 		<for>
 			<set stat="pAtk" val="415" />
@@ -1945,6 +2203,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3654-1;3576-3" />
 		<for>
 			<set stat="pAtk" val="332" />
@@ -1976,6 +2239,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3654-1;3014-3" />
 		<for>
 			<set stat="pAtk" val="332" />
@@ -2007,6 +2275,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3654-1;3047-3" />
 		<for>
 			<set stat="pAtk" val="332" />
@@ -2038,6 +2311,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3654-1;3576-3" />
 		<for>
 			<set stat="pAtk" val="404" />
@@ -2071,6 +2349,11 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="20" />
 		<set name="onmagic_skill" val="3577-2" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3654-1" />
 		<for>
 			<set stat="pAtk" val="404" />
@@ -2102,6 +2385,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3654-1;3575-3" />
 		<for>
 			<set stat="pAtk" val="404" />
@@ -2133,6 +2421,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3654-1;3047-3" />
 		<for>
 			<set stat="pAtk" val="332" />
@@ -2165,6 +2458,11 @@
 		<set name="is_magic_weapon" val="true" />
 		<set name="onmagic_chance" val="20" />
 		<set name="onmagic_skill" val="3577-2" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3654-1" />
 		<for>
 			<set stat="pAtk" val="332" />
@@ -2195,6 +2493,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_magic_weapon" val="true" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3654-1;3014-3" />
 		<for>
 			<set stat="pAtk" val="332" />
@@ -2226,6 +2529,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3655-1;3567-4" />
 		<for>
 			<set stat="pAtk" val="768" />
@@ -2259,6 +2567,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="oncrit_skill" val="3574-3" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3655-1" />
 		<for>
 			<set stat="pAtk" val="768" />
@@ -2291,6 +2604,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3655-1;8312-2;3552-3" />
 		<for>
 			<set stat="pAtk" val="768" />
@@ -2322,6 +2640,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3650-1;3013-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2356,6 +2679,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3650-1;8289-2" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2390,6 +2718,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3650-1;3564-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2423,6 +2756,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3653-1;3013-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2456,6 +2794,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3653-1;3566-4" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2489,6 +2832,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3653-1;3564-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2523,6 +2871,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3655-1;8289-2" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2558,6 +2911,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="oncrit_skill" val="3574-3" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3655-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2592,6 +2950,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3655-1;3360-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2625,6 +2988,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3650-1;3566-5" />
 		<for>
 			<set stat="pAtk" val="437" />
@@ -2654,6 +3022,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3650-1;3564-3" />
 		<for>
 			<set stat="pAtk" val="437" />
@@ -2683,6 +3056,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3650-1;3013-3" />
 		<for>
 			<set stat="pAtk" val="437" />
@@ -2712,6 +3090,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3651-1;3652-1;3564-3" />
 		<for>
 			<set stat="pAtk" val="382" />
@@ -2742,6 +3125,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3651-1;3652-1;3572-3" />
 		<for>
 			<set stat="pAtk" val="382" />
@@ -2772,6 +3160,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3651-1;3652-1;3568-2" />
 		<for>
 			<set stat="pAtk" val="382" />
@@ -2802,6 +3195,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3650-1;3569-4" />
 		<for>
 			<set stat="pAtk" val="437" />
@@ -2832,6 +3230,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3650-1;3568-2" />
 		<for>
 			<set stat="pAtk" val="437" />
@@ -2862,6 +3265,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3650-1;3013-3" />
 		<for>
 			<set stat="pAtk" val="437" />
@@ -2892,6 +3300,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3653-1;3568-2" />
 		<for>
 			<set stat="pAtk" val="532" />
@@ -2922,6 +3335,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3653-1;3569-4" />
 		<for>
 			<set stat="pAtk" val="532" />
@@ -2952,6 +3370,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3653-1;3013-3" />
 		<for>
 			<set stat="pAtk" val="532" />
@@ -2982,6 +3405,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3653-1;3566-5" />
 		<for>
 			<set stat="pAtk" val="532" />
@@ -3011,6 +3439,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3653-1;3564-3" />
 		<for>
 			<set stat="pAtk" val="532" />
@@ -3040,6 +3473,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3653-1;3013-3" />
 		<for>
 			<set stat="pAtk" val="532" />
@@ -3070,6 +3508,11 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="oncrit_skill" val="3571-2" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-3;3651-1;3652-1" />
 		<for>
 			<set stat="pAtk" val="532" />
@@ -3100,6 +3543,11 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="item_skill" val="3552-1;3651-1;3652-1;3565-5" />
 		<for>
 			<set stat="pAtk" val="532" />

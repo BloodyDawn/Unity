@@ -13,6 +13,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3266-1" />
 		<set name="duration" val="360" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="5" />
 	</item>
 	<item id="9201" type="Armor" name="Shadow Item: Wizard Hat">
@@ -28,6 +33,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3266-1" />
 		<set name="duration" val="360" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="5" />
 	</item>
 	<item id="9202" type="Armor" name="Shadow Item: Dapper Cap">
@@ -43,6 +53,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3266-1" />
 		<set name="duration" val="360" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="5" />
 	</item>
 	<item id="9203" type="Armor" name="Shadow Item: Romantic Chapeau">
@@ -58,6 +73,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3266-1" />
 		<set name="duration" val="360" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="5" />
 	</item>
 	<item id="9204" type="Armor" name="Shadow Item: Iron Circlet">
@@ -73,6 +93,11 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3266-1" />
 		<set name="duration" val="360" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="useSkillDisTime" val="5" />
 	</item>
 	<item id="9205" type="EtcItem" name="Alchemist's Chest Key">
@@ -83,6 +108,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="2322-1" />
 	</item>
 	<item id="9206" type="EtcItem" name="Major Healing Potion (Event)">
@@ -98,6 +124,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2037-1" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
@@ -116,6 +143,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2038-1" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="for_npc" val="true" />
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
@@ -130,6 +158,11 @@
 		<set name="weight" val="10" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="is_sellable" val="false" />
 	</item>
 	<item id="9209" type="Weapon" name="Rapier">
@@ -150,6 +183,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3426-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -181,6 +215,7 @@
 		<set name="change_weaponId" val="5285" />
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -213,6 +248,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ANCIENT_SWORD" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -245,6 +281,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="400" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -277,6 +314,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3426-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -309,6 +347,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3426-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -341,6 +380,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3426-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -371,6 +411,7 @@
 		<set name="price" val="99100" />
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -403,6 +444,7 @@
 		<set name="soulshots" val="4" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="400" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -435,6 +477,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3426-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -467,6 +510,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3426-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -498,6 +542,7 @@
 		<set name="change_weaponId" val="124" />
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -530,6 +575,7 @@
 		<set name="soulshots" val="4" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="400" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -562,6 +608,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3426-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -593,6 +640,7 @@
 		<set name="change_weaponId" val="7881" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -625,6 +673,7 @@
 		<set name="soulshots" val="6" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="400" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -657,6 +706,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3426-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -688,6 +738,7 @@
 		<set name="change_weaponId" val="70" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -720,6 +771,7 @@
 		<set name="soulshots" val="6" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="400" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -752,6 +804,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3426-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -787,6 +840,7 @@
 		<set name="enchant4_skill" val="3426-1" />
 		<set name="oncrit_chance" val="10" />
 		<set name="oncrit_skill" val="3025-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3026-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -820,6 +874,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3010-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -853,6 +908,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3498-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -884,6 +940,7 @@
 		<set name="change_weaponId" val="71" />
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -916,6 +973,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3023-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -948,6 +1006,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3010-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -980,6 +1039,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3498-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1012,6 +1072,7 @@
 		<set name="soulshots" val="4" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="400" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1045,6 +1106,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3008-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1078,6 +1140,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3009-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1110,6 +1173,7 @@
 		<set name="soulshots" val="4" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="332" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1142,6 +1206,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3426-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1175,6 +1240,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3007-2" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1208,6 +1274,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3018-2" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1241,6 +1308,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3028-2" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1273,6 +1341,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3426-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1306,6 +1375,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3010-2" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1339,6 +1409,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3023-2" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1372,6 +1443,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3036-2" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1404,6 +1476,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3426-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1437,6 +1510,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3023-2" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1471,6 +1545,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
 		<set name="oncrit_chance" val="15" />
+		<set name="is_freightable" val="false" />
 		<set name="oncrit_skill" val="3024-2" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1504,6 +1579,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3036-2" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1536,6 +1612,7 @@
 		<set name="soulshots" val="2" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3426-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1569,6 +1646,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3010-2" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1603,6 +1681,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
 		<set name="oncrit_chance" val="35" />
+		<set name="is_freightable" val="false" />
 		<set name="oncrit_skill" val="3022-2" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1637,6 +1716,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
 		<set name="oncrit_chance" val="15" />
+		<set name="is_freightable" val="false" />
 		<set name="oncrit_skill" val="3024-2" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1669,6 +1749,7 @@
 		<set name="soulshots" val="5" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="400" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1702,6 +1783,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3008-2" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1735,6 +1817,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
+		<set name="is_freightable" val="false" />
 		<set name="reduced_soulshot" val="40,4" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1767,6 +1850,7 @@
 		<set name="soulshots" val="5" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="320" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1799,6 +1883,7 @@
 		<set name="soulshots" val="5" />
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="400" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1832,6 +1917,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3009-2" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1865,6 +1951,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
+		<set name="is_freightable" val="false" />
 		<set name="reduced_soulshot" val="40,4" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1898,6 +1985,7 @@
 		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3360-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1930,6 +2018,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3426-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1963,6 +2052,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3007-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -1996,6 +2086,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3010-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2029,6 +2120,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3023-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2061,6 +2153,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3426-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2094,6 +2187,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3010-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2127,6 +2221,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3013-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2160,6 +2255,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3032-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2192,6 +2288,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3426-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2225,6 +2322,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3010-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2258,6 +2356,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3023-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2291,6 +2390,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3036-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2323,6 +2423,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3426-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2356,6 +2457,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3013-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2389,6 +2491,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3010-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2422,6 +2525,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3498-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2454,6 +2558,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3426-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2487,6 +2592,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3007-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2521,6 +2627,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
 		<set name="oncrit_chance" val="35" />
+		<set name="is_freightable" val="false" />
 		<set name="oncrit_skill" val="3022-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2554,6 +2661,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3013-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2585,6 +2693,7 @@
 		<set name="change_weaponId" val="7882" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2617,6 +2726,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3010-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2649,6 +2759,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3013-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2682,6 +2793,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="oncrit_chance" val="35" />
+		<set name="is_freightable" val="false" />
 		<set name="oncrit_skill" val="3022-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2714,6 +2826,7 @@
 		<set name="soulshots" val="5" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="reuse_delay" val="400" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2747,6 +2860,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3008-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2780,6 +2894,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3009-3" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2813,6 +2928,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="reuse_delay" val="400" />
+		<set name="is_freightable" val="false" />
 		<set name="reduced_soulshot" val="32,4" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2845,6 +2961,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant4_skill" val="3426-1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2878,6 +2995,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3010-4" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2911,6 +3029,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3023-4" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2944,6 +3063,7 @@
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3426-1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3036-4" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -2975,6 +3095,7 @@
 		<set name="change_weaponId" val="5286" />
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
+		<set name="is_freightable" val="false" />
 		<set name="enchant_enabled" val="1" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -3007,6 +3128,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3010-4" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -3039,6 +3161,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3542-4" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />
@@ -3071,6 +3194,7 @@
 		<set name="soulshots" val="3" />
 		<set name="spiritshots" val="3" />
 		<set name="enchant_enabled" val="1" />
+		<set name="is_freightable" val="false" />
 		<set name="item_skill" val="3037-4" />
 		<cond msgId="1518">
 			<player races="KAMAEL" />

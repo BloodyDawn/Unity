@@ -5,29 +5,43 @@
 		<set name="icon" val="icon.etc_fruit_juice_glass_bottle_i11" />
 		<set name="weight" val="10" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37801" name="Bloody Eternal Enhancement Stone Fragment" additionalName="" type="EtcItem">
 		<!-- Bring 10 fragments to the Black of mammon to obtain a Bloody Eternal Enhancement Stone. -->
 		<set name="icon" val="icon.energy_condenser_fragment_pvp" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37802" name="Dark Eternal Enhancement Stone Fragment" additionalName="" type="EtcItem">
 		<!-- Bring 10 fragments to the Black of mammon to obtain a Dark Eternal Enhancement Stone. -->
 		<set name="icon" val="icon.energy_condenser_fragment_pve" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37803" name="Master Yogi's Special Scroll: Enchant Weapon" additionalName="" type="EtcItem">
 		<!-- Special weapon enchant scroll containing Master Yogi's power, only usable on Master Yogi's Staff. The item and the enchant value remain intact when enchanting fails. Cannot be used on a Staff enchanted to + 15 or above. Lucky Enchant Stones cannot be used with this item. -->
 		<set name="icon" val="icon.yogi_scroll_of_enchant_weapon_grade_i00" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37804" name="Golden Noblesse Tiara" additionalName="" type="Armor">
 		<set name="icon" val="icon.accessory_noblesse2_tiara_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="weight" val="10" />
 	</item>
 	<item id="37805" name="Master Yogi's Staff" additionalName="" type="Weapon">
@@ -37,6 +51,9 @@
 		<set name="bodypart" val="lrhand" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="crystal_type" val="EVENT" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="weight" val="10" />
 		<for>
 			<add stat="pAtk" val="11.0" />
@@ -53,6 +70,9 @@
 		<set name="bodypart" val="lrhand" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="crystal_type" val="EVENT" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="weight" val="10" />
 		<for>
 			<add stat="pAtk" val="11.0" />
@@ -69,6 +89,9 @@
 		<set name="bodypart" val="lrhand" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="crystal_type" val="EVENT" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="weight" val="10" />
 		<for>
 			<add stat="pAtk" val="11.0" />
@@ -85,6 +108,9 @@
 		<set name="bodypart" val="lrhand" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="crystal_type" val="EVENT" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="weight" val="10" />
 		<for>
 			<add stat="pAtk" val="11.0" />
@@ -98,31 +124,54 @@
 		<!-- Master Yogi's power assembly. Bring it to Master Yogi with a +15 ~ +17 Master Yogi's Staff to increase the Staff' enchant level by 1. -->
 		<set name="icon" val="icon.etc_unholy_crystal_1_i00" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37810" name="Metal Suit Hair Accessory" additionalName="" type="Armor">
 		<!-- Metal Suit Hair Accessory. Part of a costume. -->
 		<set name="icon" val="BranchSys3.icon1.g_co_sf_hair" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
 		<set name="default_action" val="EQUIP" />
 	</item>
 	<item id="37811" name="Metal Suit Breastplate" additionalName="" type="Armor">
 		<!-- Metal Suit Breastplate. Part of a costume. -->
 		<set name="icon" val="BranchSys3.icon1.g_co_sf_u" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
 		<set name="default_action" val="EQUIP" />
 	</item>
 	<item id="37812" name="Metal Suit Gaiters" additionalName="" type="Armor">
 		<!-- Metal Suit Gaiters. Part of a costume. -->
 		<set name="icon" val="BranchSys3.icon1.g_co_sf_l" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
 		<set name="default_action" val="EQUIP" />
 	</item>
 	<item id="37813" name="Metal Suit Gloves" additionalName="" type="Armor">
 		<!-- Metal Suit Gloves. Part of a costume. -->
 		<set name="icon" val="BranchSys3.icon1.g_co_sf_g" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
 		<set name="default_action" val="EQUIP" />
 	</item>
 	<item id="37814" name="Metal Suit Boots" additionalName="" type="Armor">
 		<!-- Metal Suit Boots. Part of a costume. -->
 		<set name="icon" val="BranchSys3.icon1.g_co_sf_b" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
 		<set name="default_action" val="EQUIP" />
 	</item>
 	<item id="37815" name="Metal Suit Pack" additionalName="" type="EtcItem">
@@ -130,6 +179,9 @@
 		<set name="icon" val="icon.event_hero_treasure_box_i00" />
 		<set name="is_stackable" val="true" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="37816" name="Metal Suit Hair Accessory Appearance Stone" additionalName="30-day" type="EtcItem">
@@ -140,6 +192,9 @@
 		<set name="handler" val="Appearance" />
 		<set name="time" val="2592000" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="37817" name="Metal Suit Breastplate Appearance Stone" additionalName="30-day" type="EtcItem">
@@ -150,6 +205,9 @@
 		<set name="handler" val="Appearance" />
 		<set name="time" val="2592000" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="37818" name="Metal Suit Gaiters Appearance Stone" additionalName="30-day" type="EtcItem">
@@ -160,6 +218,9 @@
 		<set name="handler" val="Appearance" />
 		<set name="time" val="2592000" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="37819" name="Metal Suit Gloves Appearance Stone" additionalName="30-day" type="EtcItem">
@@ -170,6 +231,9 @@
 		<set name="handler" val="Appearance" />
 		<set name="time" val="2592000" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="37820" name="Metal Suit Boots Appearance Stone" additionalName="30-day" type="EtcItem">
@@ -180,6 +244,9 @@
 		<set name="handler" val="Appearance" />
 		<set name="time" val="2592000" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 	</item>
 	<item id="37821" name="Transformation Potion: Metal Suit" additionalName="" type="EtcItem">
@@ -187,6 +254,9 @@
 		<set name="icon" val="icon.etc_whiteday_herb" />
 		<set name="weight" val="5" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37822" name="Scroll of Escape: Hellbound" additionalName="" type="EtcItem">
@@ -194,6 +264,7 @@
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
 		<set name="weight" val="30" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37823" name="Leona's Gift" additionalName="" type="EtcItem">
@@ -201,6 +272,12 @@
 		<set name="icon" val="icon.event_hero_treasure_box_i00" />
 		<set name="weight" val="10" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37824" name="Hair Accessory Appearance Stone Coupon" additionalName="15-day" type="EtcItem">
@@ -210,6 +287,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="1296000" />
 	</item>
 	<item id="37825" name="Hair Accessory Appearance Stone Coupon" additionalName="30-day" type="EtcItem">
@@ -219,6 +298,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37826" name="NC Dinos Hat Appearance Stone" additionalName="15-day" type="EtcItem">
@@ -228,6 +309,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="1296000" />
 	</item>
 	<item id="37827" name="NC Dinos Hat Appearance Stone" additionalName="30-day" type="EtcItem">
@@ -237,6 +320,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37828" name="Vigilante Hat Appearance Stone" additionalName="15-day" type="EtcItem">
@@ -246,6 +331,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="1296000" />
 	</item>
 	<item id="37829" name="Vigilante Hat Appearance Stone" additionalName="30-day" type="EtcItem">
@@ -255,6 +342,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37830" name="Valentine Appearance Stone Coupon: Weapon" additionalName="15-day" type="EtcItem">
@@ -264,6 +353,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="1296000" />
 	</item>
 	<item id="37831" name="Valentine Appearance Stone Coupon: Weapon" additionalName="30-day" type="EtcItem">
@@ -273,6 +364,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37832" name="Valentine Appearance Stone: Dagger" additionalName="15-day" type="EtcItem">
@@ -282,6 +375,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="1296000" />
 	</item>
 	<item id="37833" name="Valentine Appearance Stone: One-handed Sword" additionalName="15-day" type="EtcItem">
@@ -291,6 +386,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="1296000" />
 	</item>
 	<item id="37834" name="Valentine Appearance Stone: Two-handed Sword" additionalName="15-day" type="EtcItem">
@@ -300,6 +397,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="1296000" />
 	</item>
 	<item id="37835" name="Valentine Appearance Stone: One-handed Blunt Weapon" additionalName="15-day" type="EtcItem">
@@ -309,6 +408,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="1296000" />
 	</item>
 	<item id="37836" name="Valentine Appearance Stone: Fist Weapon" additionalName="15-day" type="EtcItem">
@@ -318,6 +419,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="1296000" />
 	</item>
 	<item id="37837" name="Valentine Appearance Stone: Spear" additionalName="15-day" type="EtcItem">
@@ -327,6 +430,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="1296000" />
 	</item>
 	<item id="37838" name="Valentine Appearance Stone: Bow" additionalName="15-day" type="EtcItem">
@@ -336,6 +441,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="1296000" />
 	</item>
 	<item id="37839" name="Valentine Appearance Stone: Crossbow" additionalName="15-day" type="EtcItem">
@@ -345,6 +452,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="1296000" />
 	</item>
 	<item id="37840" name="Valentine Appearance Stone: One-handed Magic Sword" additionalName="15-day" type="EtcItem">
@@ -354,6 +463,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="1296000" />
 	</item>
 	<item id="37841" name="Valentine Appearance Stone: One-handed Magic Blunt Weapon" additionalName="15-day" type="EtcItem">
@@ -363,6 +474,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="1296000" />
 	</item>
 	<item id="37842" name="Valentine Appearance Stone: Two-handed Magic Blunt Weapon" additionalName="15-day" type="EtcItem">
@@ -372,6 +485,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="1296000" />
 	</item>
 	<item id="37843" name="Valentine Appearance Stone: Dualsword" additionalName="15-day" type="EtcItem">
@@ -381,6 +496,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="1296000" />
 	</item>
 	<item id="37844" name="Valentine Appearance Stone: Dual Dagger" additionalName="15-day" type="EtcItem">
@@ -390,6 +507,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="1296000" />
 	</item>
 	<item id="37845" name="Valentine Appearance Stone: Dual Blunt Weapon" additionalName="15-day" type="EtcItem">
@@ -399,6 +518,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="1296000" />
 	</item>
 	<item id="37846" name="Valentine Appearance Stone: Shield" additionalName="15-day" type="EtcItem">
@@ -408,6 +529,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="1296000" />
 	</item>
 	<item id="37847" name="Valentine Appearance Stone: Sigil" additionalName="15-day" type="EtcItem">
@@ -417,6 +540,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="1296000" />
 	</item>
 	<item id="37848" name="Valentine Appearance Stone: Dagger" additionalName="30-day" type="EtcItem">
@@ -426,6 +551,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37849" name="Valentine Appearance Stone: One-handed Sword" additionalName="30-day" type="EtcItem">
@@ -435,6 +562,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37850" name="Valentine Appearance Stone: Two-handed Sword" additionalName="30-day" type="EtcItem">
@@ -444,6 +573,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37851" name="Valentine Appearance Stone: One-handed Blunt Weapon" additionalName="30-day" type="EtcItem">
@@ -453,6 +584,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37852" name="Valentine Appearance Stone: Fist Weapon" additionalName="30-day" type="EtcItem">
@@ -462,6 +595,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37853" name="Valentine Appearance Stone: Spear" additionalName="30-day" type="EtcItem">
@@ -471,6 +606,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37854" name="Valentine Appearance Stone: Bow" additionalName="30-day" type="EtcItem">
@@ -480,6 +617,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37855" name="Valentine Appearance Stone: Crossbow" additionalName="30-day" type="EtcItem">
@@ -489,6 +628,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37856" name="Valentine Appearance Stone: One-handed Magic Sword" additionalName="30-day" type="EtcItem">
@@ -498,6 +639,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37857" name="Valentine Appearance Stone: One-handed Magic Blunt Weapon" additionalName="30-day" type="EtcItem">
@@ -507,6 +650,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37858" name="Valentine Appearance Stone: Two-handed Magic Blunt Weapon" additionalName="30-day" type="EtcItem">
@@ -516,6 +661,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37859" name="Valentine Appearance Stone: Dualsword" additionalName="30-day" type="EtcItem">
@@ -525,6 +672,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37860" name="Valentine Appearance Stone: Dual Dagger" additionalName="30-day" type="EtcItem">
@@ -534,6 +683,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37861" name="Valentine Appearance Stone: Dual Blunt Weapon" additionalName="30-day" type="EtcItem">
@@ -543,6 +694,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37862" name="Valentine Appearance Stone: Shield" additionalName="30-day" type="EtcItem">
@@ -552,6 +705,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37863" name="Valentine Appearance Stone: Sigil" additionalName="30-day" type="EtcItem">
@@ -561,6 +716,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="handler" val="Appearance" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="time" val="2592000" />
 	</item>
 	<item id="37864" name="Hero's SP Scroll (Novice)" additionalName="" type="EtcItem">
@@ -568,6 +725,8 @@
 		<set name="icon" val="icon.etc_sp_scroll1_i00" />
 		<set name="weight" val="30" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37865" name="Hero's SP Scroll (Experienced)" additionalName="" type="EtcItem">
@@ -575,6 +734,8 @@
 		<set name="icon" val="icon.etc_sp_scroll2_i00" />
 		<set name="weight" val="30" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37866" name="Hero's SP Scroll (Expert)" additionalName="" type="EtcItem">
@@ -582,6 +743,8 @@
 		<set name="icon" val="icon.etc_sp_scroll3_i00" />
 		<set name="weight" val="30" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37867" name="Valiant Scroll" additionalName="" type="EtcItem">
@@ -589,6 +752,8 @@
 		<set name="icon" val="icon.etc_cave_page_i00" />
 		<set name="is_stackable" val="true" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="commissionItemType" val="SCROLL_OTHER" />
 	</item>
 	<item id="37868" name="Hero's Weapon: Dagger" additionalName="15-day" type="Weapon">
@@ -596,6 +761,14 @@
 		<set name="icon" val="icon.bm_the_dagger_of_hero" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="1296000" />
 		<for>
 			<add stat="pAtk" val="881.0" />
@@ -609,6 +782,14 @@
 		<set name="icon" val="icon.bm_the_sword_of_hero" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="1296000" />
 		<for>
 			<add stat="pAtk" val="1007.0" />
@@ -622,6 +803,14 @@
 		<set name="icon" val="icon.bm_the_two_handed_sword_of_hero" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="1296000" />
 		<for>
 			<add stat="pAtk" val="1225.0" />
@@ -635,6 +824,14 @@
 		<set name="icon" val="icon.bm_the_axe_of_hero" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="1296000" />
 		<for>
 			<add stat="pAtk" val="1007.0" />
@@ -649,6 +846,14 @@
 		<set name="icon" val="icon.bm_the_fist_of_hero" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="1296000" />
 		<for>
 			<add stat="pAtk" val="1225.0" />
@@ -663,6 +868,14 @@
 		<set name="icon" val="icon.bm_the_pole_of_hero" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="1296000" />
 		<for>
 			<add stat="pAtk" val="1007.0" />
@@ -676,6 +889,14 @@
 		<set name="icon" val="icon.bm_the_bow_of_hero" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="1296000" />
 		<for>
 			<add stat="pAtk" val="1983.0" />
@@ -689,6 +910,14 @@
 		<set name="icon" val="icon.bm_infinity_shooter" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="1296000" />
 		<for>
 			<add stat="pAtk" val="1786.0" />
@@ -702,6 +931,14 @@
 		<set name="icon" val="icon.bm_infinity_sword" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="1296000" />
 		<for>
 			<add stat="pAtk" val="805.0" />
@@ -715,6 +952,14 @@
 		<set name="icon" val="icon.bm_the_mace_of_hero" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="1296000" />
 		<for>
 			<add stat="pAtk" val="805.0" />
@@ -729,6 +974,14 @@
 		<set name="icon" val="icon.bm_the_staff_of_hero" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="1296000" />
 		<for>
 			<add stat="pAtk" val="981.0" />
@@ -743,6 +996,14 @@
 		<set name="icon" val="icon.bm_r_dualsword" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="1296000" />
 		<for>
 			<add stat="pAtk" val="1225.0" />
@@ -756,6 +1017,14 @@
 		<set name="icon" val="icon.bm_r_dualdagger" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="1296000" />
 		<for>
 			<add stat="pAtk" val="1007.0" />
@@ -769,6 +1038,14 @@
 		<set name="icon" val="icon.bm_r_dualblunt" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weight" val="500" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="1296000" />
 		<for>
 			<add stat="pAtk" val="1225.0" />
@@ -783,24 +1060,50 @@
 		<set name="icon" val="icon.etc_exchange_ticket_i00" />
 		<set name="is_stackable" val="true" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="1296000" />
 	</item>
 	<item id="37883" name="Valiant Chest" additionalName="" type="EtcItem">
 		<!-- Treasure box containing hero's present. Double click to acquire various appearance changing stones and SP scrolls. -->
 		<set name="icon" val="icon.new_user_box" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37884" name="Hero's Badge" additionalName="" type="EtcItem">
 		<!-- Hero's episode event item. After the event ends, characters will receive a reward according to the acquired quantity on the live server. -->
 		<set name="icon" val="icon.tiat_seal_i00" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37885" name="Hero's Energy" additionalName="" type="EtcItem">
 		<!-- Hero's episode event item. After the event ends, characters will be allowed to exchange them for XP scrolls and SP runes through the Adventurers' Guide on the live server. -->
 		<set name="icon" val="icon.tersi_specter_seed" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37886" name="Hero's XP Scroll" additionalName="" type="EtcItem">
@@ -808,45 +1111,95 @@
 		<set name="icon" val="icon.exp_bottle_scroll" />
 		<set name="weight" val="120" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37887" name="Hero's SP Rune" additionalName="1-day" type="EtcItem">
 		<!-- When held in the inventory, it increases SP acquired through hunting by 10%. 1-day item. Cannot be used in the Olympiad. -->
 		<set name="icon" val="br_cashtex.item.br_cash_rune_of_feather_i00" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="86400" />
 	</item>
 	<item id="37888" name="Vigilante Hat" additionalName="" type="Armor">
 		<!-- Vigilante Hat. -->
 		<set name="icon" val="icon.accessory_archer_hat_i00" />
 		<set name="default_action" val="EQUIP" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
 		<set name="weight" val="10" />
 	</item>
 	<item id="37889" name="Herb of Growth" additionalName="" type="EtcItem">
 		<!-- For 10 min., XP/SP obtained through hunting + 50%. -->
 		<set name="crystal_type" val="NONE" />
+		<set name="is_depositable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
 		<set name="icon" val="BranchSys.icon.br_herb_of_baguette_i00" />
 	</item>
 	<item id="37890" name="Major Herb of Growth" additionalName="" type="EtcItem">
 		<!-- For 10 min., XP/SP obtained through hunting + 100%. -->
 		<set name="crystal_type" val="NONE" />
+		<set name="is_depositable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
 		<set name="icon" val="BranchSys.icon.br_herb_of_baguette_i00" />
 	</item>
 	<item id="37891" name="Superior Herb of Growth" additionalName="" type="EtcItem">
 		<!-- For 5 min., XP/SP obtained through hunting + 200%. -->
 		<set name="crystal_type" val="NONE" />
+		<set name="is_depositable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_commissionable" val="false" />
 		<set name="icon" val="BranchSys.icon.br_herb_of_baguette_i00" />
 	</item>
 	<item id="37892" name="Leona's Reward Box" additionalName="" type="EtcItem">
 		<!-- Reward box given by Leona Blackbird of Hellbound for your help. Double click to acquire the item. -->
 		<set name="icon" val="icon.etc_box_of_adventure_1_i00" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37893" name="Bloodied Demonic Tome" additionalName="" type="EtcItem">
 		<!-- Ancient book of the demon stained with the blood of the caravan. The ancient book managing caravan Budenka is collecting it in the Refugee Village. -->
 		<set name="icon" val="icon.etc_codex_of_giant_i03" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_depositable" val="false" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37894" name="Enhanced Warrior's Quick Healing Potion" additionalName="" type="EtcItem">
@@ -855,6 +1208,7 @@
 		<set name="weight" val="180" />
 		<set name="is_stackable" val="true" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="POTION" />
 	</item>
 	<item id="37895" name="SP Rune (Low-grade)" additionalName="7-day" type="EtcItem">
@@ -862,6 +1216,14 @@
 		<set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
 		<set name="weight" val="120" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="37896" name="SP Rune (Mid-grade)" additionalName="7-day" type="EtcItem">
@@ -869,6 +1231,14 @@
 		<set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
 		<set name="weight" val="120" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="37897" name="SP Rune (High-grade)" additionalName="7-day" type="EtcItem">
@@ -876,18 +1246,30 @@
 		<set name="icon" val="br_cashtex.item.br_cash_rune_of_sp_i00" />
 		<set name="weight" val="120" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_clan_depositable" val="false" />
+		<set name="is_mailable" val="false" />
+		<set name="is_freightable" val="false" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_commissionable" val="false" />
+		<set name="is_private_storeable" val="false" />
 		<set name="time" val="604800" />
 	</item>
 	<item id="37898" name="SP Rune Pack (Low-grade) (1-day)" additionalName="" type="EtcItem">
 		<!-- Box containing Kat the Cat's gift. Double click to acquire 1 of the following at random: 150 Heavenly Recovery Potions, 1 Kat the Cat's Box of Roses, or 1 Emperor's Rune Box. Cannot be exchanged, dropped, sold in a private store, or used in an auction house. Can be shared within the same account through the Dimensional Merchant. Can be stored in a private warehouse. To be deleted on 30.10.13. -->
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="37899" name="SP Rune Pack (Mid-grade) (1-day)" additionalName="" type="EtcItem">
 		<!-- Double click to acquire 1 Enhanced Rose Spirit Coupon (5 hours) and 150 Rose Essences. Cannot be used in the auction house. -->
 		<set name="icon" val="icon.etc_pi_gift_box_i04" />
 		<set name="crystal_type" val="NONE" />
+		<set name="is_freightable" val="false" />
+		<set name="is_sellable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
 </list>
