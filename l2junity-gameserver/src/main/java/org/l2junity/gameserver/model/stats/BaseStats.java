@@ -156,7 +156,7 @@ public enum BaseStats
 		@Override
 		public final double calcBonus(Creature actor)
 		{
-			return 1.002;
+			return CHAbonus[Math.min(actor.getCHA(), MAX_STAT_VALUE - 1)];
 		}
 	}
 	
