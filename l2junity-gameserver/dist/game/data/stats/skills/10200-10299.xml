@@ -359,9 +359,9 @@
 		</for>
 	</skill>
 	<skill id="10258" levels="8" name="Armor Destruction" enchantGroup1="10" enchantGroup2="10" enchantGroup3="10" enchantGroup4="10" enchantGroup5="10" enchantGroup6="10" enchantGroup7="10" enchantGroup8="10">
-		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -710 -711 -712 </table>
 		<!-- Attacks target with 11159 Power added to P. Atk. Weakens P. Def. and absorbs Momentum. Requires a sword, blunt, spear, fist, dual blunt weapon, or dualsword weapon to be equipped. Over-hit. Critical. -->
 		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
+		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -710 -711 -712 </table>
 		<table name="#magicLvl"> 85 87 89 90 92 93 94 95 </table>
 		<table name="#mpConsumes"> 50 52 53 54 57 59 60 62 </table>
 		<table name="#power"> 11159 11932 12547 13206 14101 14995 15873 16601 </table>
@@ -558,14 +558,14 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10263" levels="8" name="Hurricane Blaster" enchantGroup1="10" enchantGroup2="10" enchantGroup3="10" enchantGroup4="10" enchantGroup5="10" enchantGroup6="10" enchantGroup7="10" enchantGroup8="10">
-		<table name="#effectPoint"> -692 -696 -700 -704 -707 -709 -709 -709 -709 -709 -709 </table>
+	<skill id="10263" levels="11" name="Hurricane Blaster" enchantGroup1="10" enchantGroup2="10" enchantGroup3="10" enchantGroup4="10" enchantGroup5="10" enchantGroup6="10" enchantGroup7="10" enchantGroup8="10">
 		<!-- Attacks target with 551 power, lowers P. Def., and absorbs Momentum. Requires a sword, blunt, spear, fist, dual blunt, or dualsword. -->
-		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
-		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
-		<table name="#mpConsumes"> 58 59 61 63 65 67 69 71 </table>
-		<table name="#pDef"> 0.98 0.96 0.94 0.92 0.90 0.88 0.86 0.84 0.82 0.80 </table>
-		<table name="#power"> 551 566 598 630 662 693 725 757 </table>
+		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 9 10 11 </table>
+		<table name="#effectPoint"> -692 -696 -700 -704 -707 -709 -709 -709 -709 -709 -709 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 99 100 101 </table> <!-- Fix me with L2Wiki Update -->
+		<table name="#mpConsumes"> 58 59 61 63 65 67 69 71 73 75 77 </table>
+		<table name="#pDef"> 0.98 0.96 0.94 0.92 0.90 0.88 0.86 0.84 0.82 0.80 0.78 </table>
+		<table name="#power"> 551 566 598 630 662 693 725 757 812 844 876 </table>
 		<table name="#ench2MpConsume"> 68 65 62 59 56 53 51 48 45 42 </table>
 		<table name="#enchDuel"> 789 805 820 836 852 868 884 900 916 932 </table>
 		<table name="#enchElementPower"> 30 33 36 40 43 46 50 53 56 60 </table>
@@ -754,14 +754,27 @@
 			</effect>
 		</enchant4for>
 	</skill>
-	<skill id="10267" levels="6" name="Hurricane Rush">
-		<table name="#effectPoint"> -704 -709 -709 -709 -709 -709 -709 -709 -709 </table>
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10267" levels="9" name="Hurricane Rush">
 		<!-- Shoulder charge target to Stun it for 3 seconds. Requires a sword, blunt, spear, fist, dual blunt weapon, or dualsword weapon to be equipped. -->
-		<table name="#mpConsumes"> 38 39 41 43 44 47 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 </table>
+		<table name="#effectPoint"> -704 -709 -709 -709 -709 -709 -709 -709 -709 </table>
+		<table name="#magicLvl"> 85 87 90 93 96 99 100 101 102 </table> <!-- Guessed, fix me with L2Wiki update -->
+		<table name="#mpConsumes"> 38 39 41 43 44 47 50 53 56 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="3" />
+		<set name="abnormalType" val="STUN" />
+		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="activateRate" val="60" />
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="600" />
+		<set name="basicProperty" val="CON" />
 		<set name="icon" val="icon.skill10267" />
+		<set name="effectRange" val="800" />
+		<set name="fanRange" val="0,0,600,60" />
+		<set name="flyType" val="CHARGE" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="nextActionAttack" val="true" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="500" />
@@ -769,6 +782,17 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<set name="rideState" val="NONE" />
+		<set name="trait" val="SHOCK" />
+		<cond msgId="113" addName="1">
+			<and>
+				<target mindistance="200" />
+				<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+			</and>
+		</cond>
+		<for>
+			<effect name="Stun" />
+		</for>
 	</skill>
 	<skill id="10268" levels="6" name="Rolling Thunder">
 		<!-- AUTO GENERATED SKILL -->
@@ -841,7 +865,6 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10273" levels="4" name="Lightning Disarm">
-
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Disarms nearby enemies for 5 seconds. Lowers P. Atk. and M. Atk. by 10%. -->
 		<set name="icon" val="icon.skill10273" />
@@ -855,18 +878,81 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10274" levels="4" name="Berserker">
-		<table name="#effectPoint"> 687 698 707 709 </table>
-		<!-- AUTO GENERATED SKILL -->
 		<!-- You have reached your physical limit. Increases debuff resistance, Speed, P. Atk., Accuracy, P. Def., Atk. Spd., and Critical Damage. When target is killed, recovers HP by 20%. When HP falls below 60%, increases P. Atk. by 10% and Critical Rate by 100. When HP falls below 30%, increases P. Atk. by 30% and Critical Rate by an additional 300. Can be used when HP is below 70%. -->
+		<table name="#abnormalLvl">3 4 5 6</table>
+		<table name="#accCombat"> 10 15 20 25 </table>
+		<table name="#bonus"> 1.05 1.07 1.09 1.11 </table>
+		<table name="#cAtkAdd">200 250 300 350</table>
+		<table name="#debuffVuln"> 1.4 1.5 1.6 1.7 </table>
+		<table name="#effectPoint"> 687 698 707 709 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 38 41 45 47 </table>
+		<table name="#runSpd"> 10 15 20 25 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="60" />
+		<set name="abnormalType" val="PINCH" />
 		<set name="icon" val="icon.skill10274" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="300000" />
+		<cond addName="1" msgId="113">
+			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+			<player hp="70" />
+		</cond>
+		<for>
+			<effect name="Buff">
+				<add stat="debuffVuln" val="#debuffVuln">
+					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+				</add>
+				<add stat="runSpd" val="#runSpd">
+					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+				</add>
+				<mul stat="pAtk" val="#bonus">
+					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+				</mul>
+				<add stat="accCombat" val="#accCombat">
+					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+				</add>
+				<mul stat="pDef" val="#bonus">
+					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+				</mul>
+				<mul stat="pAtkSpd" val="#bonus">
+					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+				</mul>
+				<add stat="cAtkAdd" val="#cAtkAdd">
+					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+				</add>
+				<mul stat="pAtk" val="1.1">
+					<and>
+						<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+						<player hp="60" />
+					</and>
+				</mul>
+				<add stat="rCrit" val="100">
+					<and>
+						<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+						<player hp="60" />
+					</and>
+				</add>
+				<mul stat="pAtk" val="1.3">
+					<and>
+						<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+						<player hp="30" />
+					</and>
+				</mul>
+				<add stat="rCrit" val="300">
+					<and>
+						<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+						<player hp="30" />
+					</and>
+				</add>
+			</effect>
+		</for>
 	</skill>
 	<skill id="10275" levels="4" name="Infinity Strike">
 
@@ -985,12 +1071,30 @@
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="10286" levels="10" name="Superior Resistance">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
 		<!-- STR + 2, M. Def. + 199, and Fire/Water/Wind/Earth Resistance + 20. When receiving damage, has a chance of increasing M. Def. and Attribute Resistance momentarily. -->
+		<table name="#magicLevel"> 85 86 87 88 89 90 91 92 93 94 </table> <!-- Fix me with L2wiki update -->
+		<table name="#mDef"> 776 878 993 1097 1237 1299 1365 1434 1507 1583 </table>
 		<set name="icon" val="icon.skill10005" />
 		<set name="operateType" val="P" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="STR" val="2" />
+				<add stat="mDef" val="#mDef" />
+				<add stat="waterRes" val="20" />
+				<add stat="fireRes" val="20" />
+				<add stat="windRes" val="20" />
+				<add stat="earthRes" val="20" />
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="20" />
+				<param skillId="10058" skillLevel="1" />
+				<param targetType="SELF" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10287" levels="6" name="Rolling Thunder">
 		<table name="#effectPoint"> -702 -705 -708 -709 -709 -709 </table>
@@ -1232,26 +1336,49 @@
 		</enchant2for>
 	</skill>
 	<skill id="10296" levels="1" name="Spirit of the Hunter">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 minutes, increases damage against insects/plants/animals + 10%. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="600" />
+		<set name="abnormalType" val="DETECT_WEAKNESS" />
 		<set name="icon" val="icon.skill0359" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="38" />
 		<set name="hitTime" val="2000" />
 		<set name="effectPoint" val="707" />
 		<set name="reuseDelay" val="30000" />
+		<set name="rideState" val="NONE" />
+		<for>
+			<effect name="AttackTrait">
+				<param BUG_WEAKNESS="10" />
+				<param PLANT_WEAKNESS="10" />
+				<param ANIMAL_WEAKNESS="10" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10297" levels="1" name="Spirit of the Slayer">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 minutes, increases damage against monsters/magic creatures/giants/dragons + 10%. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="600" />
+		<set name="abnormalType" val="DETECT_WEAKNESS" />
 		<set name="icon" val="icon.skill0360" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="38" />
 		<set name="hitTime" val="2000" />
 		<set name="effectPoint" val="707" />
 		<set name="reuseDelay" val="30000" />
+		<set name="rideState" val="NONE" />
+		<for>
+			<effect name="AttackTrait">
+				<param BEAST_WEAKNESS="10" />
+				<param CONSTRUCT_WEAKNESS="10" />
+				<param GIANT_WEAKNESS="10" />
+				<param DRAGON_WEAKNESS="10" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10298" levels="1" name="Power Revival">
 		<!-- Recovers all of your HP. -->

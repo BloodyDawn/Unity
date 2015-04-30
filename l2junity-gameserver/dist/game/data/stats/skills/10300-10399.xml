@@ -86,11 +86,28 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10306" levels="4" name="Superior Polearm Mastery">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- When a spear is equipped, P. Atk. + 2% and additional P. Atk. 583. Increases the number of possible targets by 1. -->
+		<table name="#atkCountMax"> 1 1 2 2 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#pAtkAdd"> 583 678 807 978 </table>
+		<table name="#pAtkMul"> 1.02 1.03 1.04 1.05 </table>
 		<set name="icon" val="icon.skill11836" />
 		<set name="operateType" val="P" />
+		<set name="magicLvl" val="#magicLvl"/>
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="atkCountMax" val="#atkCountMax">
+					<using kind="Pole" />
+				</add>
+				<mul stat="pAtk" val="#pAtkMul">
+					<using kind="Pole" />
+				</mul>
+				<add stat="pAtk" val="#pAtkAdd">
+					<using kind="Pole" />
+				</add>
+			</effect>
+		</for>
 	</skill>
 	<skill id="10307" levels="1" name="Fist of Fury">
 		<!-- AUTO GENERATED SKILL -->
@@ -260,7 +277,6 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10321" levels="4" name="Thunder Spear">
-
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks near the enemy by throwing a spear with 22536 Power added to P. Atk. Stuns for 9 seconds. Requires a spear. Over-hit. Critical hit. Ignores Shield Defense. Target cancel. -->
 		<table name="#mpConsumes"> 122 124 129 133 </table>
