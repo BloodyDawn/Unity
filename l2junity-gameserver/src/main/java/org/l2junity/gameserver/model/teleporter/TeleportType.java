@@ -25,5 +25,6 @@ public enum TeleportType
 {
 	NORMAL,
 	NOBLES_TOKEN,
-	NOBLES_ADENA;
+	NOBLES_ADENA,
+	OTHER;
 }
