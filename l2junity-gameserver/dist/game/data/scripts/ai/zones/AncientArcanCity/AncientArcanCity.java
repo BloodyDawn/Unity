@@ -26,12 +26,14 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
+import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.SpawnHolder;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.type.PeaceZone;
+import org.l2junity.gameserver.model.zone.type.ScriptZone;
 import org.l2junity.gameserver.network.client.send.Earthquake;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
 import org.l2junity.gameserver.network.client.send.OnEventTrigger;
@@ -50,8 +52,11 @@ public final class AncientArcanCity extends AbstractNpcAI implements IXmlReader
 {
 	// NPC
 	private static final int CEREMONIAL_CAT = 33093;
-	// Zone
-	private static final PeaceZone ZONE = ZoneManager.getInstance().getZoneById(23600, PeaceZone.class); // Ancient Arcan City zone
+	// Location
+	private static final Location ANCIENT_ARCAN_CITY = new Location(207559, 86429, -1000);
+	// Zones
+	private static final PeaceZone TOWN_ZONE = ZoneManager.getInstance().getZoneById(23600, PeaceZone.class); // Ancient Arcan City zone
+	private static final ScriptZone TELEPORT_ZONE = ZoneManager.getInstance().getZoneById(12015, ScriptZone.class); // Anghel Waterfall teleport zone
 	// Misc
 	private static final int CHANGE_STATE_TIME = 1800000; // 30min
 	private static final List<SpawnHolder> SPAWNS = new ArrayList<>();
@@ -61,7 +66,7 @@ public final class AncientArcanCity extends AbstractNpcAI implements IXmlReader
 	private AncientArcanCity()
 	{
 		super(AncientArcanCity.class.getSimpleName(), "ai/group_template");
-		addEnterZoneId(ZONE.getId());
+		addEnterZoneId(TOWN_ZONE.getId(), TELEPORT_ZONE.getId());
 		load();
 		notifyEvent("CHANGE_STATE", null, null);
 		startQuestTimer("CHANGE_STATE", CHANGE_STATE_TIME, null, null, true);
@@ -74,7 +79,7 @@ public final class AncientArcanCity extends AbstractNpcAI implements IXmlReader
 		{
 			isCeremonyRunning = !isCeremonyRunning;
 			
-			for (PlayerInstance temp : ZONE.getPlayersInside())
+			for (PlayerInstance temp : TOWN_ZONE.getPlayersInside())
 			{
 				temp.sendPacket(new OnEventTrigger(262001, !isCeremonyRunning));
 				temp.sendPacket(new OnEventTrigger(262003, isCeremonyRunning));
@@ -120,13 +125,20 @@ public final class AncientArcanCity extends AbstractNpcAI implements IXmlReader
 		{
 			final PlayerInstance player = creature.getActingPlayer();
 			
-			player.sendPacket(new OnEventTrigger(262001, !isCeremonyRunning));
-			player.sendPacket(new OnEventTrigger(262003, isCeremonyRunning));
-			
-			if (player.getVariables().getBoolean("ANCIEJNT_ARCAN_CITY_SCENE", true))
+			if (zone.getId() == TELEPORT_ZONE.getId())
 			{
-				player.getVariables().set("ANCIEJNT_ARCAN_CITY_SCENE", false);
-				playMovie(player, Movie.SI_ARKAN_ENTER);
+				player.teleToLocation(ANCIENT_ARCAN_CITY);
+			}
+			else
+			{
+				player.sendPacket(new OnEventTrigger(262001, !isCeremonyRunning));
+				player.sendPacket(new OnEventTrigger(262003, isCeremonyRunning));
+				
+				if (player.getVariables().getBoolean("ANCIEJNT_ARCAN_CITY_SCENE", true))
+				{
+					player.getVariables().set("ANCIEJNT_ARCAN_CITY_SCENE", false);
+					playMovie(player, Movie.SI_ARKAN_ENTER);
+				}
 			}
 		}
 		return super.onEnterZone(creature, zone);
