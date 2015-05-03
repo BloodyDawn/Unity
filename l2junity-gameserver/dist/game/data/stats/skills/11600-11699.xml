@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="11600" levels="1" name="Frenzied Prevailing Sonata">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 5 minutes, increases clan members' Atk. Spd. + 15%, Casting Spd. + 30%, Max HP + 30%, and MP recovery bonus + 20%. Decreases MP Consumption for magic skills - 10% and the magic cancel rate. -->
 		<set name="icon" val="icon.skill11600" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="PREV_SONATA" />
 		<set name="abnormalTime" val="300" />
+		<set name="affectRange" val="1000" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="CLAN" />
 		<set name="mpConsume" val="140" />
+		<set name="mpInitialConsume" val="28" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="687" />
@@ -21,16 +25,26 @@
 				<mul stat="MagicalMpConsumeRate" val="1.10" />
 				<add stat="cancel" val="53" /> <!-- Custom -->
 			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="SONG_OF_VITALITY;SONG_OF_MEDITATION;DANCE_OF_CONCENTRATION;DANCE_OF_FURY" rate="100" />
+			</effect>
+			<effect name="BlockBuffSlot">
+				<param slot="SONG_OF_VITALITY;SONG_OF_MEDITATION;DANCE_OF_CONCENTRATION;DANCE_OF_FURY" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11601" levels="1" name="Frenzied Daring Sonata">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 5 minutes, increases clan members' P. Atk. + 8%, M. Atk. + 16%, Atk. Spd. and Casting Spd. + 8%. Decreases P. Def. - 3%, M. Def. - 11%, and P. Evasion - 4. Chance of applying 8% Vampiric Rage effect. Reflects 10% of incurred damage back to the enemy. -->
 		<set name="icon" val="icon.skill11601" />
+		<set name="affectRange" val="1000" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="DARING_SONATA" />
 		<set name="abnormalTime" val="300" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="CLAN" />
 		<set name="mpConsume" val="140" />
+		<set name="mpInitialConsume" val="28" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="696" />
@@ -46,16 +60,26 @@
 				<add stat="absorbDam" val="8" /> <!-- Custom, I think it should be some kind of a trigger -->
 				<add stat="reflectDam" val="10" />
 			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="DMG_SHIELD;SONG_OF_VENGEANCE;DANCE_OF_VAMPIRE" rate="100" />
+			</effect>
+			<effect name="BlockBuffSlot">
+				<param slot="DMG_SHIELD;SONG_OF_VENGEANCE;DANCE_OF_VAMPIRE" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11602" levels="1" name="Frenzied Refreshing Sonata">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 5 minutes, increases clan members' HP Recovery Bonus + 20%, P.ﾠAccuracy + 4, P.ﾠEvasion + 3, and Spd. + 20. Decreases skill MP Consumption - 20% and skill Cooldown - 10%. -->
 		<set name="icon" val="icon.skill11602" />
+		<set name="affectRange" val="1000" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="REF_SONATA" />
 		<set name="abnormalTime" val="300" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="CLAN" />
 		<set name="mpConsume" val="140" />
+		<set name="mpInitialConsume" val="28" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="696" />
@@ -72,17 +96,29 @@
 				<mul stat="pReuse" val="1.10" /> <!-- Custom -->
 				<mul stat="mReuse" val="1.10" /> <!-- Custom -->
 			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="SONG_OF_WIND;SONG_OF_WATER;SONG_OF_LIFE;SONG_OF_CHAMPION;MAX_BREATH_UP;DANCE_OF_INSPIRATION" rate="100" />
+			</effect>
+			<effect name="BlockBuffSlot">
+				<param slot="SONG_OF_WIND;SONG_OF_WATER;SONG_OF_LIFE;SONG_OF_CHAMPION;MAX_BREATH_UP;DANCE_OF_INSPIRATION" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="11603" levels="4" name="Mass Restriction">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- During PvP, limits the CP, HP, and MP recovery of target and nearby enemies to maximum 60% for 30 seconds. -->
 		<table name="#mpConsumes"> 252 278 306 332 </table>
 		<table name="#limit"> 0.60 0.50 0.40 0.30 </table>
 		<set name="icon" val="icon.skill11603" />
+		<set name="abnormalLvl" val="4" /> <!-- Custom -->
 		<set name="abnormalTime" val="30" />
+		<set name="abnormalType" val="LIMIT" />
+		<set name="activateRate" val="60" /> <!-- Custom -->
+		<set name="affectLimit" val="10-10" /> <!-- Custom -->
+		<set name="affectRange" val="200" /> <!-- Custom -->
+		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2110" />
@@ -100,12 +136,14 @@
 		</for>
 	</skill>
 	<skill id="11604" levels="4" name="Shocking Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Removes Invincibility of target and nearby enemies during PvP. -->
 		<table name="#mpConsumes"> 252 278 306 332 </table>
 		<set name="icon" val="icon.skill11604" />
+		<set name="affectLimit" val="10-10" /> <!-- Custom -->
+		<set name="affectRange" val="200" /> <!-- Custom -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2110" />
@@ -113,9 +151,17 @@
 		<set name="reuseDelay" val="120000" />
 		<set name="effectPoint" val="-2036" />
 		<set name="isMagic" val="1" />
+		<cond msgId="113" addName="1">
+			<target playable="true" />
+		</cond>
+		<for>
+			<effect name="DispelBySlot">
+				<param dispel="CELESTIAL_INVINCIBILITY;INVINCIBILITY" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11605" levels="1" name="Shield Song">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 30 min., P. Def. + 5%, Attribute Def. + 20, Resistance to bows/crossbows + 10%, and Debuff Resistance + 10%. -->
 		<set name="icon" val="icon.skill11606new" />
 		<set name="abnormalTime" val="1800" />
@@ -140,7 +186,7 @@
 		</for>
 	</skill>
 	<skill id="11606" levels="1" name="Dance of Might">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 30 min., P. Atk. + 5%, Atk. Spd. + 5%, P. Critical Rate + 10, and Speed + 10. -->
 		<set name="icon" val="icon.skill11605new" />
 		<set name="abnormalTime" val="1800" />
@@ -190,7 +236,7 @@
 				<mul stat="maxHp" val="1.30" />
 				<mul stat="regMp" val="1.20" />
 				<mul stat="MagicalMpConsumeRate" val="0.90" />
-				<sub stat="cancel" val="50" /> <!-- Guess -->
+				<sub stat="cancel" val="53" /> <!-- Guess -->
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="SONG_OF_VITALITY;SONG_OF_MEDITATION;DANCE_OF_CONCENTRATION;DANCE_OF_FURY" rate="100" />
@@ -232,10 +278,11 @@
 				<mul stat="pDef" val="0.97" />
 				<mul stat="mDef" val="0.97" />
 				<sub stat="rEvas" val="4" />
-				<add stat="absorbDam" val="8" />
+				<add stat="absorbDam" val="8" /> <!-- Custom, I think it should be some kind of a trigger -->
+				<add stat="reflectDam" val="10" />
 			</effect>
-			<effect name="DispelBySlotProbability">
-				<param dispel="DMG_SHIELD;SONG_OF_VENGEANCE;DANCE_OF_VAMPIRE" rate="100" />
+			<effect name="DispelBySlot">
+				<param dispel="DMG_SHIELD;SONG_OF_VENGEANCE;DANCE_OF_VAMPIRE" />
 			</effect>
 			<effect name="BlockBuffSlot">
 				<param slot="DMG_SHIELD;SONG_OF_VENGEANCE;DANCE_OF_VAMPIRE" />
@@ -276,8 +323,8 @@
 				<mul stat="mReuse" val="0.90" />
 				<mul stat="pReuse" val="0.90" />
 			</effect>
-			<effect name="DispelBySlotProbability">
-				<param dispel="SONG_OF_WIND;SONG_OF_WATER;SONG_OF_LIFE;SONG_OF_CHAMPION;MAX_BREATH_UP;DANCE_OF_INSPIRATION" rate="100" />
+			<effect name="DispelBySlot">
+				<param dispel="SONG_OF_WIND;SONG_OF_WATER;SONG_OF_LIFE;SONG_OF_CHAMPION;MAX_BREATH_UP;DANCE_OF_INSPIRATION" />
 			</effect>
 			<effect name="BlockBuffSlot">
 				<param slot="SONG_OF_WIND;SONG_OF_WATER;SONG_OF_LIFE;SONG_OF_CHAMPION;MAX_BREATH_UP;DANCE_OF_INSPIRATION" />
@@ -314,10 +361,10 @@
 				<mul stat="maxHp" val="1.30" />
 				<mul stat="regMp" val="1.20" />
 				<mul stat="MagicalMpConsumeRate" val="0.90" />
-				<sub stat="cancel" val="50" /> <!-- Guess -->
+				<sub stat="cancel" val="53" /> <!-- Guess -->
 			</effect>
-			<effect name="DispelBySlotProbability">
-				<param dispel="SONG_OF_VITALITY;SONG_OF_MEDITATION;DANCE_OF_CONCENTRATION;DANCE_OF_FURY" rate="100" />
+			<effect name="DispelBySlot">
+				<param dispel="SONG_OF_VITALITY;SONG_OF_MEDITATION;DANCE_OF_CONCENTRATION;DANCE_OF_FURY"/>
 			</effect>
 			<effect name="BlockBuffSlot">
 				<param slot="SONG_OF_VITALITY;SONG_OF_MEDITATION;DANCE_OF_CONCENTRATION;DANCE_OF_FURY" />
@@ -356,7 +403,8 @@
 				<mul stat="pDef" val="0.97" />
 				<mul stat="mDef" val="0.97" />
 				<sub stat="rEvas" val="4" />
-				<add stat="absorbDam" val="8" />
+				<add stat="absorbDam" val="8" /> <!-- Custom, I think it should be some kind of a trigger -->
+				<add stat="reflectDam" val="10" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="DMG_SHIELD;SONG_OF_VENGEANCE;DANCE_OF_VAMPIRE" rate="100" />
@@ -409,8 +457,7 @@
 		</for>
 	</skill>
 	<skill id="11613" levels="4" name="Song of Protection">
-
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 30 sec., increases your P. Def. + 5000 and M. Def. + 5000. Restores 1000 HP. -->
 		<table name="#mpConsumes"> 319 427 534 640 </table>
 		<table name="#power"> 1000 2000 3000 5000 </table>
@@ -434,8 +481,7 @@
 		</for>
 	</skill>
 	<skill id="11614" levels="4" name="Battle Rhapsody Dance">
-
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 30 sec., increases your P. Atk./M. Atk./Atk. Spd./Casting Spd. + 50%. -->
 		<table name="#mpConsumes"> 319 427 534 640 </table>
 		<table name="#stats"> 1.50 1.60 1.70 2.00 </table>
@@ -458,12 +504,16 @@
 		</for>
 	</skill>
 	<skill id="11615" levels="1" name="Battle Ditty">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 30 min., selected party member's PvP Damage + 10%, Attribute Attack + 10, MP Recovery Bonus + 10%. Consumes 10 Spirit Ores. -->
 		<set name="icon" val="icon.skill11615" />
 		<set name="abnormalTime" val="1800" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="DITTY" />
+		<set name="itemConsumeCount" val="10" />
+		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="mpConsume" val="181" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
@@ -482,12 +532,16 @@
 		</for>
 	</skill>
 	<skill id="11616" levels="1" name="Protective Ditty">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 30 min., selected party member's Received PvP Damage - 10%, Speed + 4, HP Recovery Bonus + 10%. Consumes 10 Spirit Ores. -->
 		<set name="icon" val="icon.skill11616" />
 		<set name="abnormalTime" val="1800" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="DITTY" />
+		<set name="itemConsumeCount" val="10" />
+		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="mpConsume" val="181" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
@@ -505,12 +559,16 @@
 		</for>
 	</skill>
 	<skill id="11617" levels="1" name="Frezied Battle Ditty">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 30 min., selected clan member's PvP Damage + 10%, Attribute Attack + 10, MP Recovery Bonus + 10%. Consumes 10 Spirit Ores. -->
 		<set name="icon" val="icon.skill11617" />
 		<set name="abnormalTime" val="1800" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="DITTY" />
+		<set name="itemConsumeCount" val="10" />
+		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="CLAN_MEMBER" />
 		<set name="mpConsume" val="181" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
@@ -529,12 +587,16 @@
 		</for>
 	</skill>
 	<skill id="11618" levels="1" name="Frenzied Protective Ditty">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 30 min., selected clan member's Received PvP Damage - 10%, Speed + 4, HP Recovery Bonus + 10%. Consumes 10 Spirit Ores. -->
 		<set name="icon" val="icon.skill11618" />
 		<set name="abnormalTime" val="1800" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="DITTY" />
+		<set name="itemConsumeCount" val="10" />
+		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="CLAN_MEMBER" />
 		<set name="mpConsume" val="181" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
@@ -552,14 +614,15 @@
 		</for>
 	</skill>
 	<skill id="11619" levels="3" name="Soul Ditty">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Entire party's P. Atk. + 3%, P. Critical Damage + 3%, Atk. Spd. + 2%, M. Atk. + 2%, Casting Spd. + 2%, P. Def. + 2%, M. Def. + 2%, Skill Power + 2%. -->
 		<table name="#pAtkcAtk"> 1.03 1.05 1.07 </table>
 		<table name="#atkSpdDefPower"> 1.02 1.03 1.05 </table>
 		<set name="icon" val="icon.skill11529" />
 		<set name="abnormalTime" val="1800" /> <!-- Custom -->
+		<set name="affectRange" val="1000" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY" />
 		<set name="mpConsume" val="140" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />

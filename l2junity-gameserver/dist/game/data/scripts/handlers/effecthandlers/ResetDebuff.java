@@ -50,18 +50,6 @@ public final class ResetDebuff extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		if (!info.getEffected().getEffectList().hasDebuffs())
-		{
-			return;
-		}
-		
-		for (BuffInfo debuff : info.getEffected().getEffectList().getDebuffs().values())
-		{
-			// A safety check to avoid some kind of exploits.
-			if (debuff.getSkill().canBeDispeled())
-			{
-				debuff.resetEffects();
-			}
-		}
+		info.getEffected().getEffectList().resetAllDebuffs(true);
 	}
 }

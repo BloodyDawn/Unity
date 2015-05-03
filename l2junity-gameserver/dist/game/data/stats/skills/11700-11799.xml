@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="11746" levels="3" name="Superior Inquisition">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Damage inflicted on monsters + 50%, and M. Skill MP Consumption + 30%. -->
 		<table name="#pveDamage"> 1.50 1.55 1.60 </table>
 		<set name="icon" val="icon.skill1520" />
@@ -1174,23 +1174,37 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<add stat="INT" val="2">
-					<using kind="SIGIL" />
-				</add>
+				<add stat="INT" val="2" /> <!-- INT is increased regardless of equipped sigil. -->
 				<add stat="regMp" val="20">
 					<using kind="SIGIL" />
 				</add>
-				<!-- power of recovery skills by 40 -->
+				<!-- TODO power of recovery skills by 40 -->
 			</effect>
 		</for>
 	</skill>
 	<skill id="11792" levels="10" name="Superior Mental Attack Resistance">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- INT + 2. Resistance + 20 to Hold, Sleep, Paralysis, Mental attacks, Poison, Bleed, and Stun. In addition, has a chance of reflecting debuffs back to the attacker. -->
+		<table name="#traits"> 20 22 24 26 30 32 34 36 38 40 </table>
 		<set name="icon" val="icon.skill10005" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="DefenceTrait">
+				<param HOLD="#traits" />
+				<param SLEEP="#traits" />
+				<param PARALYZE="#traits" />
+				<param DERANGEMENT="#traits" />
+				<param POISON="#traits" />
+				<param BLEED="#traits" />
+				<param SHOCK="#traits" />
+			</effect>
+			<effect name="Buff">
+				<add stat="INT" val="2" />
+				<add stat="reflectSkillPhysic" val="10" />
+				<add stat="reflectSkillMagic" val="10" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11793" levels="3" name="Sustain">
 		<!-- Updated to Ertheia -->

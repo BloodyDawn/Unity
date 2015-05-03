@@ -359,6 +359,7 @@ public enum AbnormalType
 	WILL,
 	WIND_DOT,
 	WP_CHANGE_EVENT,
+	DITTY,
 	HARMONY,
 	MELODY_HORN,
 	MELODY_DRUM,

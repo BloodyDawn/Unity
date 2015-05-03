@@ -575,6 +575,21 @@ public class CharStat
 		return (int) calcStat(Stats.POWER_ATTACK_RANGE, baseAttackRange, null, null);
 	}
 	
+	public int getPhysicalAttackRadius()
+	{
+		final Weapon weapon = _activeChar.getActiveWeaponItem();
+		final int baseAttackRadius;
+		if (weapon != null)
+		{
+			baseAttackRadius = weapon.getBaseAttackRadius();
+		}
+		else
+		{
+			baseAttackRadius = 40;
+		}
+		return baseAttackRadius;
+	}
+	
 	public int getPhysicalAttackAngle()
 	{
 		final Weapon weapon = _activeChar.getActiveWeaponItem();

@@ -47,6 +47,7 @@ public final class Weapon extends L2Item
 	private int _spiritShotCount;
 	private int _mpConsume;
 	private int _baseAttackRange;
+	private int _baseAttackRadius;
 	private int _baseAttackAngle;
 	/**
 	 * Skill that activates when item is enchanted +4 (for duals).
@@ -93,12 +94,14 @@ public final class Weapon extends L2Item
 		_mpConsume = set.getInt("mp_consume", 0);
 		_baseAttackRange = set.getInt("attack_range", 40);
 		String[] damgeRange = set.getString("damage_range", "").split(";"); // 0?;0?;fan sector;base attack angle
-		if ((damgeRange.length > 1) && Util.isDigit(damgeRange[3]))
+		if ((damgeRange.length > 1) && Util.isDigit(damgeRange[2]) && Util.isDigit(damgeRange[3]))
 		{
+			_baseAttackRadius = Integer.parseInt(damgeRange[2]);
 			_baseAttackAngle = Integer.parseInt(damgeRange[3]);
 		}
 		else
 		{
+			_baseAttackRadius = 40;
 			_baseAttackAngle = 120;
 		}
 		
@@ -274,6 +277,11 @@ public final class Weapon extends L2Item
 	public int getBaseAttackRange()
 	{
 		return _baseAttackRange;
+	}
+	
+	public int getBaseAttackRadius()
+	{
+		return _baseAttackRadius;
 	}
 	
 	public int getBaseAttackAngle()

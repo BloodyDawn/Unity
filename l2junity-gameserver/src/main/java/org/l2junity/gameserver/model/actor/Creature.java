@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -1096,23 +1097,22 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			
 			// Get the Attack Reuse Delay of the L2Weapon
 			int reuse = calculateReuseTime(target, weaponItem);
-			
 			boolean hitted = false;
 			switch (getAttackType())
 			{
 				case BOW:
 				{
-					hitted = doAttackHitByBow(attack, target, timeAtk, reuse);
+					hitted = doAttackHitByBow(attack, target, timeAtk, reuse, false);
 					break;
 				}
 				case CROSSBOW:
 				{
-					hitted = doAttackHitByCrossBow(attack, target, timeAtk, reuse);
+					hitted = doAttackHitByBow(attack, target, timeAtk, reuse, true);
 					break;
 				}
 				case POLE:
 				{
-					hitted = doAttackHitByPole(attack, target, timeToHit);
+					hitted = doAttackHitSimple(attack, target, timeToHit);
 					break;
 				}
 				case FIST:
@@ -1208,9 +1208,10 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * @param target The L2Character targeted
 	 * @param sAtk The Attack Speed of the attacker
 	 * @param reuse
+	 * @param crossbow : if used weapon to fire is crossbow instead of a bow
 	 * @return True if the hit isn't missed
 	 */
-	private boolean doAttackHitByBow(Attack attack, Creature target, int sAtk, int reuse)
+	private boolean doAttackHitByBow(Attack attack, Creature target, int sAtk, int reuse, boolean crossbow)
 	{
 		int damage1 = 0;
 		byte shld1 = 0;
@@ -1220,7 +1221,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		boolean miss1 = Formulas.calcHitMiss(this, target);
 		
 		// Consume arrows
-		reduceArrowCount(false);
+		reduceArrowCount(crossbow);
 		
 		_move = null;
 		
@@ -1241,12 +1242,20 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			
 			// Bows Ranged Damage Formula (Damage gradually decreases when 60% or lower than full hit range, and increases when 60% or higher).
 			// full hit range is 500 which is the base bow range, and the 60% of this is 800.
-			damage1 *= (calculateDistance(target, true, false) / 4000) + 0.8;
+			if (!crossbow)
+			{
+				damage1 *= (calculateDistance(target, true, false) / 4000) + 0.8;
+			}
 		}
 		
 		// Check if the L2Character is a L2PcInstance
 		if (isPlayer())
 		{
+			if (crossbow)
+			{
+				sendPacket(SystemMessageId.YOUR_CROSSBOW_IS_PREPARING_TO_FIRE);
+			}
+			
 			sendPacket(new SetupGauge(getObjectId(), SetupGauge.RED, sAtk + reuse));
 		}
 		
@@ -1254,80 +1263,14 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		ThreadPoolManager.getInstance().scheduleAi(new HitTask(this, target, damage1, crit1, miss1, attack.hasSoulshot(), shld1), sAtk);
 		
 		// Calculate and set the disable delay of the bow in function of the Attack Speed
-		_disableBowAttackEndTime = ((sAtk + reuse) / GameTimeController.MILLIS_IN_TICK) + GameTimeController.getInstance().getGameTicks();
-		
-		// Add this hit to the Server-Client packet Attack
-		attack.addHit(target, damage1, miss1, crit1, shld1);
-		
-		// Return true if hit isn't missed
-		return !miss1;
-	}
-	
-	/**
-	 * Launch a CrossBow attack.<br>
-	 * <B><U>Actions</U>:</B>
-	 * <ul>
-	 * <li>Calculate if hit is missed or not</li>
-	 * <li>Consume bolts</li>
-	 * <li>If hit isn't missed, calculate if shield defense is efficient</li>
-	 * <li>If hit isn't missed, calculate if hit is critical</li>
-	 * <li>If hit isn't missed, calculate physical damages</li>
-	 * <li>If the L2Character is a L2PcInstance, Send a Server->Client packet SetupGauge</li>
-	 * <li>Create a new hit task with Medium priority</li>
-	 * <li>Calculate and set the disable delay of the crossbow in function of the Attack Speed</li>
-	 * <li>Add this hit to the Server-Client packet Attack</li>
-	 * @param attack Server->Client packet Attack in which the hit will be added
-	 * @param target The L2Character targeted
-	 * @param sAtk The Attack Speed of the attacker
-	 * @param reuse
-	 * @return True if the hit isn't missed
-	 */
-	private boolean doAttackHitByCrossBow(Attack attack, Creature target, int sAtk, int reuse)
-	{
-		int damage1 = 0;
-		byte shld1 = 0;
-		boolean crit1 = false;
-		
-		// Calculate if hit is missed or not
-		boolean miss1 = Formulas.calcHitMiss(this, target);
-		
-		// Consume bolts
-		reduceArrowCount(true);
-		
-		_move = null;
-		
-		// Check if hit isn't missed
-		if (!miss1)
+		if (crossbow)
 		{
-			// Calculate if shield defense is efficient
-			shld1 = Formulas.calcShldUse(this, target);
-			
-			// Calculate if hit is critical
-			crit1 = Formulas.calcCrit(getStat().getCriticalHit(target, null), false, target);
-			
-			// Calculate physical damages
-			damage1 = (int) Formulas.calcPhysDam(this, target, null, shld1, crit1, attack.hasSoulshot());
-			
-			// Normal attacks have normal damage x 5
-			damage1 = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage1);
+			_disableCrossBowAttackEndTime = ((sAtk + reuse) / GameTimeController.MILLIS_IN_TICK) + GameTimeController.getInstance().getGameTicks();
 		}
-		
-		// Check if the L2Character is a L2PcInstance
-		if (isPlayer())
+		else
 		{
-			// Send a system message
-			sendPacket(SystemMessageId.YOUR_CROSSBOW_IS_PREPARING_TO_FIRE);
-			
-			// Send a Server->Client packet SetupGauge
-			SetupGauge sg = new SetupGauge(getObjectId(), SetupGauge.RED, sAtk + reuse);
-			sendPacket(sg);
+			_disableBowAttackEndTime = ((sAtk + reuse) / GameTimeController.MILLIS_IN_TICK) + GameTimeController.getInstance().getGameTicks();
 		}
-		
-		// Create a new hit task with Medium priority
-		ThreadPoolManager.getInstance().scheduleAi(new HitTask(this, target, damage1, crit1, miss1, attack.hasSoulshot(), shld1), sAtk);
-		
-		// Calculate and set the disable delay of the bow in function of the Attack Speed
-		_disableCrossBowAttackEndTime = ((sAtk + reuse) / GameTimeController.MILLIS_IN_TICK) + GameTimeController.getInstance().getGameTicks();
 		
 		// Add this hit to the Server-Client packet Attack
 		attack.addHit(target, damage1, miss1, crit1, shld1);
@@ -1411,66 +1354,154 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		attack.addHit(target, damage1, miss1, crit1, shld1);
 		attack.addHit(target, damage2, miss2, crit2, shld2);
 		
+		// Launch multiple attack (if possible)
+		int attackCountMax = (int) getStat().calcStat(Stats.ATTACK_COUNT_MAX, 1, null, null);
+		if (attackCountMax > 1)
+		{
+			attackCountMax--; // Main target has already been attacked.
+			List<Creature> attackSurround = getAttackSurround(target, sAtk, attackCountMax);
+			for (Creature surroundTarget : attackSurround)
+			{
+				int damage = 0;
+				byte shld = 0;
+				boolean crit = false;
+				boolean miss = Formulas.calcHitMiss(this, target);
+				
+				if (!miss)
+				{
+					shld = Formulas.calcShldUse(this, surroundTarget);
+					crit = Formulas.calcCrit(getStat().getCriticalHit(surroundTarget, null), false, surroundTarget);
+					damage = (int) Formulas.calcPhysDam(this, surroundTarget, null, shld, crit, attack.hasSoulshot());
+					damage = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage);
+					damage /= 2;
+				}
+				
+				ThreadPoolManager.getInstance().scheduleAi(new HitTask(this, surroundTarget, damage, crit, miss, attack.hasSoulshot(), shld), sAtk / 2);
+				attack.addHit(surroundTarget, damage, miss, crit, shld);
+				miss1 |= miss;
+			}
+			
+			for (Creature surroundTarget : attackSurround)
+			{
+				int damage = 0;
+				byte shld = 0;
+				boolean crit = false;
+				boolean miss = Formulas.calcHitMiss(this, target);
+				
+				if (!miss)
+				{
+					shld = Formulas.calcShldUse(this, surroundTarget);
+					crit = Formulas.calcCrit(getStat().getCriticalHit(surroundTarget, null), false, surroundTarget);
+					damage = (int) Formulas.calcPhysDam(this, surroundTarget, null, shld, crit, attack.hasSoulshot());
+					damage = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage);
+					damage /= 2;
+				}
+				
+				ThreadPoolManager.getInstance().scheduleAi(new HitTask(this, surroundTarget, damage, crit, miss, attack.hasSoulshot(), shld), sAtk);
+				attack.addHit(surroundTarget, damage, miss, crit, shld);
+				miss2 |= miss;
+			}
+			
+		}
+		
 		// Return true if hit 1 or hit 2 isn't missed
 		return (!miss1 || !miss2);
 	}
 	
 	/**
-	 * Launch a Pole attack.<br>
+	 * Launch a simple attack.<br>
 	 * <B><U>Actions</U>:</B>
 	 * <ul>
-	 * <li>Get all visible objects in a spherical area near the L2Character to obtain possible targets</li>
-	 * <li>If possible target is the L2Character targeted, launch a simple attack against it</li>
-	 * <li>If possible target isn't the L2Character targeted but is attackable, launch a simple attack against it</li>
+	 * <li>Calculate if hit is missed or not</li>
+	 * <li>If hit isn't missed, calculate if shield defense is efficient</li>
+	 * <li>If hit isn't missed, calculate if hit is critical</li>
+	 * <li>If hit isn't missed, calculate physical damages</li>
+	 * <li>Create a new hit task with Medium priority</li>
+	 * <li>Add this hit to the Server-Client packet Attack</li>
 	 * </ul>
 	 * @param attack Server->Client packet Attack in which the hit will be added
-	 * @param target
+	 * @param target The L2Character targeted
 	 * @param sAtk
-	 * @return True if one hit isn't missed
+	 * @return True if the hit isn't missed
 	 */
-	private boolean doAttackHitByPole(Attack attack, Creature target, int sAtk)
+	private boolean doAttackHitSimple(Attack attack, Creature target, int sAtk)
 	{
-		// double angleChar;
-		int maxRadius = getStat().getPhysicalAttackRange();
-		int maxAngleDiff = getStat().getPhysicalAttackAngle();
+		int damage1 = 0;
+		byte shld1 = 0;
+		boolean crit1 = false;
 		
-		// o1 x: 83420 y: 148158 (Giran)
-		// o2 x: 83379 y: 148081 (Giran)
-		// dx = -41
-		// dy = -77
-		// distance between o1 and o2 = 87.24
-		// arctan2 = -120 (240) degree (excel arctan2(dx, dy); java arctan2(dy, dx))
-		//
-		// o2
-		//
-		// o1 ----- (heading)
-		// In the diagram above:
-		// o1 has a heading of 0/360 degree from horizontal (facing East)
-		// Degree of o2 in respect to o1 = -120 (240) degree
-		//
-		// o2 / (heading)
-		// /
-		// o1
-		// In the diagram above
-		// o1 has a heading of -80 (280) degree from horizontal (facing north east)
-		// Degree of o2 in respect to 01 = -40 (320) degree
+		// Calculate if hit is missed or not
+		boolean miss1 = Formulas.calcHitMiss(this, target);
 		
-		// Get char's heading degree
-		// angleChar = Util.convertHeadingToDegree(getHeading());
+		// Check if hit isn't missed
+		if (!miss1)
+		{
+			// Calculate if shield defense is efficient
+			shld1 = Formulas.calcShldUse(this, target);
+			
+			// Calculate if hit is critical
+			crit1 = Formulas.calcCrit(getStat().getCriticalHit(target, null), false, target);
+			
+			// Calculate physical damages
+			damage1 = (int) Formulas.calcPhysDam(this, target, null, shld1, crit1, attack.hasSoulshot());
+			
+			// Normal attacks have normal damage x 5
+			damage1 = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage1);
+		}
+		
+		// Create a new hit task with Medium priority
+		ThreadPoolManager.getInstance().scheduleAi(new HitTask(this, target, damage1, crit1, miss1, attack.hasSoulshot(), shld1), sAtk);
+		
+		// Add this hit to the Server-Client packet Attack
+		attack.addHit(target, damage1, miss1, crit1, shld1);
 		
 		// H5 Changes: without Polearm Mastery (skill 216) max simultaneous attacks is 3 (1 by default + 2 in skill 3599).
-		int attackRandomCountMax = (int) getStat().calcStat(Stats.ATTACK_COUNT_MAX, 1, null, null);
-		int attackcount = 0;
+		int attackCountMax = (int) getStat().calcStat(Stats.ATTACK_COUNT_MAX, 1, null, null);
+		if (attackCountMax > 1)
+		{
+			attackCountMax--; // Main target has already been attacked.
+			for (Creature surroundTarget : getAttackSurround(target, sAtk, attackCountMax))
+			{
+				int damage = 0;
+				byte shld = 0;
+				boolean crit = false;
+				boolean miss = Formulas.calcHitMiss(this, target);
+				
+				if (!miss)
+				{
+					shld = Formulas.calcShldUse(this, surroundTarget);
+					crit = Formulas.calcCrit(getStat().getCriticalHit(surroundTarget, null), false, surroundTarget);
+					damage = (int) Formulas.calcPhysDam(this, surroundTarget, null, shld, crit, attack.hasSoulshot());
+					damage = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage);
+				}
+				
+				ThreadPoolManager.getInstance().scheduleAi(new HitTask(this, surroundTarget, damage, crit, miss, attack.hasSoulshot(), shld), sAtk);
+				attack.addHit(surroundTarget, damage, miss, crit, shld);
+				miss1 |= miss;
+			}
+			
+		}
 		
-		// if (angleChar <= 0) angleChar += 360;
-		
-		boolean hitted = doAttackHitSimple(attack, target, 100, sAtk);
-		double attackpercent = 85;
+		// Return true if hit isn't missed
+		return !miss1;
+	}
+	
+	/**
+	 * @param target
+	 * @param sAtk
+	 * @param attackCountMax
+	 * @return a list of surrounding enemies based on your weapon.
+	 */
+	private List<Creature> getAttackSurround(Creature target, int sAtk, int attackCountMax)
+	{
+		final List<Creature> list = new LinkedList<>();
+		final int maxRadius = getStat().getPhysicalAttackRadius();
+		final int maxAngleDiff = getStat().getPhysicalAttackAngle();
 		for (Creature obj : World.getInstance().getVisibleObjects(this, Creature.class, maxRadius))
 		{
 			if (obj == target)
 			{
-				continue; // do not hit twice
+				continue;
 			}
 			
 			if (obj.isPet() && isPlayer() && (((L2PetInstance) obj).getOwner() == getActingPlayer()))
@@ -1498,11 +1529,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			{
 				if ((obj == getAI().getAttackTarget()) || obj.isAutoAttackable(this))
 				{
-					hitted |= doAttackHitSimple(attack, obj, attackpercent, sAtk);
-					attackpercent /= 1.15;
-					
-					attackcount++;
-					if (attackcount > attackRandomCountMax)
+					list.add(obj);
+					if (list.size() >= attackCountMax)
 					{
 						break;
 					}
@@ -1510,69 +1538,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			}
 		}
 		
-		// Return true if one hit isn't missed
-		return hitted;
-	}
-	
-	/**
-	 * Launch a simple attack.<br>
-	 * <B><U>Actions</U>:</B>
-	 * <ul>
-	 * <li>Calculate if hit is missed or not</li>
-	 * <li>If hit isn't missed, calculate if shield defense is efficient</li>
-	 * <li>If hit isn't missed, calculate if hit is critical</li>
-	 * <li>If hit isn't missed, calculate physical damages</li>
-	 * <li>Create a new hit task with Medium priority</li>
-	 * <li>Add this hit to the Server-Client packet Attack</li>
-	 * </ul>
-	 * @param attack Server->Client packet Attack in which the hit will be added
-	 * @param target The L2Character targeted
-	 * @param sAtk
-	 * @return True if the hit isn't missed
-	 */
-	private boolean doAttackHitSimple(Attack attack, Creature target, int sAtk)
-	{
-		return doAttackHitSimple(attack, target, 100, sAtk);
-	}
-	
-	private boolean doAttackHitSimple(Attack attack, Creature target, double attackpercent, int sAtk)
-	{
-		int damage1 = 0;
-		byte shld1 = 0;
-		boolean crit1 = false;
-		
-		// Calculate if hit is missed or not
-		boolean miss1 = Formulas.calcHitMiss(this, target);
-		
-		// Check if hit isn't missed
-		if (!miss1)
-		{
-			// Calculate if shield defense is efficient
-			shld1 = Formulas.calcShldUse(this, target);
-			
-			// Calculate if hit is critical
-			crit1 = Formulas.calcCrit(getStat().getCriticalHit(target, null), false, target);
-			
-			// Calculate physical damages
-			damage1 = (int) Formulas.calcPhysDam(this, target, null, shld1, crit1, attack.hasSoulshot());
-			
-			// Normal attacks have normal damage x 5
-			damage1 = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage1);
-			
-			if (attackpercent != 100)
-			{
-				damage1 = (int) ((damage1 * attackpercent) / 100);
-			}
-		}
-		
-		// Create a new hit task with Medium priority
-		ThreadPoolManager.getInstance().scheduleAi(new HitTask(this, target, damage1, crit1, miss1, attack.hasSoulshot(), shld1), sAtk);
-		
-		// Add this hit to the Server-Client packet Attack
-		attack.addHit(target, damage1, miss1, crit1, shld1);
-		
-		// Return true if hit isn't missed
-		return !miss1;
+		return list;
 	}
 	
 	/**

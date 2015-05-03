@@ -679,18 +679,6 @@
 		<table name="#mpConsumes"> 140 151 170 181 </table>
 		<table name="#mpInitialConsumes"> 28 31 34 37 </table>
 		<table name="#magicLvl"> 85 90 95 99 </table>
-		<table name="#maxMp"> 1.20 1.20 1.20 1.20 </table>
-		<table name="#regHp"> 1.20 1.20 1.20 1.20 </table>
-		<table name="#mCritRate"> 20 20 20 20 </table>
-		<table name="#cAtk"> 20 20 20 20 </table>
-		<table name="#pAtk"> 1.10 1.10 1.10 1.10 </table>
-		<table name="#pDef"> 1.20 1.20 1.20 1.20 </table>
-		<table name="#pAtkSpd"> 1.20 1.20 1.20 1.20 </table>
-		<table name="#mAtk"> 1.20 1.20 1.20 1.20 </table>
-		<table name="#mDef"> 1.20 1.20 1.20 1.20 </table>
-		<table name="#mAtkSpd"> 1.20 1.20 1.20 1.20 </table>
-		<table name="#debuffVuln"> 1.10 1.10 1.10 1.10 </table>
-		<table name="#defCritDamage"> 1.30 1.30 1.30 1.30 </table>
 		<table name="#runSpd"> 0.85 0.90 0.95 1.0 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalType" val="MELODY_DRUM" />
@@ -713,19 +701,19 @@
 		<enchant2 name="abnormalTime" val="#ench2AbnormalTime" />
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="#maxMp" />
-				<mul stat="regHp" val="#regHp" />
-				<add stat="mCritRate" val="#mCritRate" />
-				<add stat="cAtk" val="#cAtk" />
-				<mul stat="pAtk" val="#pAtk" />
-				<mul stat="pDef" val="#pDef" />
-				<mul stat="pAtkSpd" val="#pAtkSpd" />
-				<mul stat="mAtk" val="#mAtk" />
-				<mul stat="mDef" val="#mDef" />
-				<mul stat="mAtkSpd" val="#mAtkSpd" />
+				<mul stat="maxMp" val="1.20" />
+				<mul stat="regHp" val="1.20" />
+				<add stat="mCritRate" val="20" />
+				<mul stat="cAtk" val="1.20" />
+				<mul stat="pAtk" val="1.10" />
+				<mul stat="pDef" val="1.20" />
+				<mul stat="pAtkSpd" val="1.20" />
+				<mul stat="mAtk" val="1.20" />
+				<mul stat="mDef" val="1.20" />
+				<mul stat="mAtkSpd" val="1.20" />
 				<mul stat="runSpd" val="#runSpd" />
-				<mul stat="debuffVuln" val="#debuffVuln" />
-				<mul stat="defCritDamage" val="#defCritDamage" />
+				<mul stat="debuffVuln" val="1.10" />
+				<mul stat="defCritDamage" val="1.30" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
@@ -756,7 +744,6 @@
 		<table name="#maxHp"> 1.37 1.39 1.41 1.43 </table>
 		<table name="#maxMp"> 1.37 1.39 1.41 1.43 </table>
 		<table name="#maxCp"> 1.37 1.39 1.41 1.43 </table>
-		<table name="#regHp"> 1.20 1.20 1.20 1.20 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalType" val="MELODY_PIPE" />
 		<set name="abnormalTime" val="1800" />
@@ -781,7 +768,7 @@
 				<mul stat="maxHp" val="#maxHp" />
 				<mul stat="maxMp" val="#maxMp" />
 				<mul stat="maxCp" val="#maxCp" />
-				<mul stat="regHp" val="#regHp" />
+				<mul stat="regHp" val="1.20" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="MAX_MP_UP;MAX_HP_UP;HP_REGEN_UP;IMPROVE_HP_MP_UP" rate="100" />
@@ -802,10 +789,6 @@
 		<table name="#mpInitialConsumes"> 28 31 34 37 </table>
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#rCrit"> 1.32 1.34 1.36 1.38 </table>
-		<table name="#cAtk"> 1.35 1.35 1.35 1.35 </table>
-		<table name="#mCritRate"> 20 20 20 20 </table>
-		<table name="#magicMpConsumeRate"> 0.90 0.90 0.90 0.90 </table>
-		<table name="#physMpConsumeRate"> 0.80 0.80 0.80 0.80 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalType" val="MELODY_GUITAR" />
 		<set name="abnormalTime" val="1800" />
@@ -828,10 +811,10 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="rCrit" val="#rCrit" />
-				<mul stat="cAtk" val="#cAtk" />
-				<add stat="mCritRate" val="#mCritRate" />
-				<mul stat="MagicalMpConsumeRate" val="#magicMpConsumeRate" />
-				<mul stat="PhysicalMpConsumeRate" val="#physMpConsumeRate" />
+				<mul stat="cAtk" val="1.35" />
+				<add stat="mCritRate" val="20" />
+				<mul stat="MagicalMpConsumeRate" val="0.90" />
+				<mul stat="PhysicalMpConsumeRate" val="0.80" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="INSTINCT;CRITICAL_DMG_UP;IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP" rate="100" />
@@ -855,7 +838,6 @@
 		<table name="#rEvas"> 5 6 7 8 </table>
 		<table name="#mEvas"> 5 6 7 8 </table>
 		<table name="#runSpd"> 34 35 36 37 </table>
-		<table name="#defCritDamage"> 1.30 1.30 1.30 1.30 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalType" val="MELODY_HARP" />
 		<set name="abnormalTime" val="1800" />
@@ -881,7 +863,7 @@
 				<add stat="rEvas" val="#rEvas" />
 				<add stat="mEvas" val="#mEvas" />
 				<add stat="runSpd" val="#runSpd" />
-				<mul stat="defCritDamage" val="#defCritDamage" />
+				<mul stat="defCritDamage" val="1.30" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="HIT_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP;T_CRT_DMG_DOWN" rate="100" />
@@ -903,7 +885,6 @@
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#pAtkSpd"> 1.34 1.35 1.36 1.37 </table>
 		<table name="#mAtkSpd"> 1.31 1.32 1.33 1.34 </table>
-		<table name="#absorbDam"> 9 9 9 9 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalType" val="MELODY_LUTE" />
 		<set name="abnormalTime" val="1800" />
@@ -925,9 +906,9 @@
 		<enchant2 name="abnormalTime" val="#ench2AbnormalTime" />
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="1.34" />
-				<mul stat="mAtkSpd" val="1.31" />
-				<add stat="absorbDam" val="9" />
+				<mul stat="pAtkSpd" val="#pAtkSpd" />
+				<mul stat="mAtkSpd" val="#mAtkSpd" />
+				<add stat="absorbDam" val="9" /> <!-- TODO: 20%? chance to trigger Vampiric rage -->
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="VAMPIRIC_ATTACK;CASTING_TIME_DOWN;IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN" rate="100" />
@@ -1126,13 +1107,13 @@
 		<for>
 			<effect name="Buff">
 				<mul stat="mAtk" val="1.40" />
-				<mul stat="pAtk" val="1.08" />
-				<mul stat="mAtkSpd" val="1.08" />
-				<mul stat="pAtkSpd" val="1.08" />
-				<mul stat="mDef" val="1.14" />
 				<mul stat="mCritRate" val="2.00" />
+				<mul stat="mAtkSpd" val="1.08" />
+				<mul stat="pAtk" val="1.08" />
+				<mul stat="pAtkSpd" val="1.08" />
+				<add stat="runSpd" val="8" />
+				<mul stat="mDef" val="1.14" />
 				<mul stat="regMp" val="1.20" />
-				<mul stat="runSpd" val="1.08" />
 				<mul stat="MagicalMpConsumeRate" val="0.85" />
 				<mul stat="PhysicalMpConsumeRate" val="0.95" />
 				<mul stat="mReuse" val="0.80" />
@@ -1259,7 +1240,7 @@
 				<mul stat="maxHp" val="1.30" />
 				<mul stat="regMp" val="1.20" />
 				<mul stat="MagicalMpConsumeRate" val="0.90" />
-				<sub stat="cancel" val="50" /> <!-- Guess -->
+				<sub stat="cancel" val="53" /> <!-- Guess -->
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="SONG_OF_VITALITY;SONG_OF_MEDITATION;DANCE_OF_CONCENTRATION;DANCE_OF_FURY" rate="100" />
@@ -1305,7 +1286,8 @@
 				<mul stat="pDef" val="0.97" />
 				<mul stat="mDef" val="0.97" />
 				<sub stat="rEvas" val="4" />
-				<add stat="absorbDam" val="8" />
+				<add stat="absorbDam" val="8" /> <!-- Custom, I think it should be some kind of a trigger -->
+				<add stat="reflectDam" val="10" />
 			</effect>
 			<effect name="DispelBySlotProbability">
 				<param dispel="DMG_SHIELD;SONG_OF_VENGEANCE;DANCE_OF_VAMPIRE" rate="100" />
@@ -1362,7 +1344,7 @@
 		</for>
 	</skill>
 	<skill id="11533" levels="1" name="Blood Requiem">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Party members receives 80% Vampiric Rage effect for 15 seconds. -->
 		<set name="icon" val="icon.skill11546" />
 		<set name="abnormalLvl" val="5" />
@@ -1376,6 +1358,7 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="711" />
 		<set name="reuseDelay" val="600000" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<for>
 			<effect name="Buff">
 				<add stat="absorbDam" val="80" />
@@ -1383,13 +1366,14 @@
 		</for>
 	</skill>
 	<skill id="11534" levels="5" name="Angel's Touch">
-		<table name="#effectPoint"> 704 707 709 709 709 709 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 7 seconds, renders target immune to debuffs. -->
+		<table name="#effectPoint"> 704 707 709 709 709 709 </table>
 		<table name="#mpConsumes"> 70 75 80 85 90 </table>
+		<table name="#abnormalTime"> 7 9 11 13 15 </table>
 		<set name="icon" val="icon.skill11534" />
 		<set name="abnormalLvl" val="4" /> <!-- Custom -->
-		<set name="abnormalTime" val="7" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="abnormalType" val="ABNORMAL_INVINCIBILITY" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="PARTY_MEMBER" />
@@ -1400,6 +1384,7 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<for>
 			<effect name="Buff">
 				<set stat="debuffImmunity" val="1" />
@@ -2108,7 +2093,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="cAtk" val="2"> <!-- GUESS: From testing it's looking more like 120% increase to critical damage. More testing on live server is needed to confirm this -->
+				<mul stat="cAtk" val="2.00"> <!-- GUESS: From testing it's looking more like 120% increase to critical damage. More testing on live server is needed to confirm this -->
 					<using kind="SWORD,BLUNT,DAGGER,DUALDAGGER,DUAL,DUALFIST,POLE,ANCIENTSWORD,RAPIER,BOW,CROSSBOW,DUALBLUNT" />
 				</mul>
 			</effect>
@@ -2211,42 +2196,55 @@
 		</for>
 	</skill>
 	<skill id="11582" levels="4" name="Mass Song of Silence">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Plays the Song of Silence. For 10 sec., enemies' P. Skills and M. Skills are locked. -->
 		<table name="#mpConsumes"> 126 139 153 166 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#abnormalLvls"> 4 5 6 7 </table>
 		<set name="icon" val="icon.skill11839" />
 		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="SILENCE_ALL" />
+		<set name="abnormalVisualEffect" val="SILENCE" />
+		<set name="activateRate" val="60" /> <!-- Custom -->
+		<set name="affectLimit" val="10-10" /> <!-- Custom -->
+		<set name="affectRange" val="150" /> <!-- Custom -->
+		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="lvlBonusRate" val="1" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="hitTime" val="1410" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="120000" />
 		<set name="effectPoint" val="-507" />
 		<set name="isDebuff" val="true" />
+		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="Mute" />
 			<effect name="PhysicalMute" />
 		</for>
 	</skill>
 	<skill id="11583" levels="4" name="Superior Song of Mastery">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- P. Def./ M. Def. + 5%. Skill Power + 5%. -->
+		<table name="#defence"> 1.05 1.07 1.10 1.15 </table>
 		<set name="icon" val="icon.skill0153" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="pDef" val="1.05" />
-				<mul stat="mDef" val="1.05" />
+				<mul stat="pDef" val="#defence" />
+				<mul stat="mDef" val="#defence" />
 				<mul stat="physicalSkillPower" val="1.05" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11584" levels="4" name="Mass Medusa's Dance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Performs that evokes the mirage of a Medusa. For 10 sec., Petrifies nearby enemies. -->
 		<table name="#mpConsumes"> 126 139 153 166 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<set name="icon" val="icon.skill11840" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
@@ -2258,10 +2256,12 @@
 		<set name="basicProperty" val="MEN" />
 		<set name="effectPoint" val="-666" /> <!-- Custom -->
 		<set name="element" val="3" /> <!-- Earth -->
-		<set name="elementPower" val="20" /> <!-- Custom -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="lvlBonusRate" val="1" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="hitTime" val="1410" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="120000" />
@@ -2271,25 +2271,30 @@
 		</for>
 	</skill>
 	<skill id="11585" levels="4" name="Superior Dance of Mastery">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- P. Atk./ M. Atk. + 5%. Skill Power + 5%. -->
+		<table name="#attack"> 1.05 1.07 1.10 1.15 </table>
 		<set name="icon" val="icon.skill0141" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="1.05" />
-				<mul stat="mAtk" val="1.05" />
+				<mul stat="pAtk" val="#attack" />
+				<mul stat="mAtk" val="#attack" />
 				<mul stat="physicalSkillPower" val="1.05" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11586" levels="4" name="Pa'agrio's Bravery">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 30 sec., restores clan members' Max CP and increases it by 5%. -->
 		<table name="#mpConsumes"> 126 139 153 166 </table>
+		<table name="#maxCp"> 1.05 1.06 1.07 1.10 </table>
+		<table name="#cpHealPercent"> 5 6 7 10 </table>
 		<set name="icon" val="icon.skill11843" />
 		<set name="abnormalTime" val="30" />
+		<set name="affectLimit" val="50-100" /> <!-- Custom -->
+		<set name="affectRange" val="1000" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -2298,6 +2303,14 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="669" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<mul stat="maxCp" val="#maxCp" />
+			</effect>
+			<effect name="CpHealPercent">
+				<param power="#cpHealPercent" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11587" levels="4" name="Mass Blockade">
 		<!-- AUTO GENERATED SKILL -->
@@ -2319,172 +2332,446 @@
 		</for>
 	</skill>
 	<skill id="11588" levels="4" name="Superior Wizard Mastery">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Max MP + 10%. -->
+		<table name="#maxMp"> 1.10 1.12 1.15 1.20 </table>
 		<set name="icon" val="icon.skill0164" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="maxMp" val="1.10" />
+				<mul stat="maxMp" val="#maxMp" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11589" levels="4" name="Horn Frenzy">
-		<table name="#effectPoint"> 687 698 707 712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 30 min., clan members' P. Atk. + 17%, P. Def. + 15%, M. Atk. + 79%, and M. Def. + 30%. -->
+		<table name="#effectPoint"> 687 698 707 712 </table>
+		<table name="#abnormalLvls"> 1 2 3 4 </table>
 		<table name="#mpConsumes"> 140 151 170 181 </table>
+		<table name="#mpInitialConsumes"> 28 31 34 37 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#pAtk"> 1.17 1.19 1.21 1.23 </table>
+		<table name="#pDef"> 1.15 1.15 1.15 1.15 </table>
+		<table name="#mAtk"> 1.79 1.83 1.87 1.91 </table>
+		<table name="#mDef"> 1.30 1.30 1.30 1.30 </table>
 		<set name="icon" val="icon.skill11589" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="1800" />
+		<set name="abnormalType" val="MELODY_HORN" />
+		<set name="affectLimit" val="50-100" /> <!-- Custom -->
+		<set name="affectRange" val="1000" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="CLAN" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="2000" />
+		<set name="mpInitialConsume" val="#mpInitialConsumes" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#pAtk" />
+				<mul stat="pDef" val="#pDef" />
+				<mul stat="mAtk" val="#mAtk" />
+				<mul stat="mDef" val="#mDef" />
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="MD_UP;PD_UP;PA_UP;IMPROVE_PA_PD_UP" rate="100" />
+			</effect>
+			<effect name="BlockBuffSlot">
+				<param slot="MD_UP;PD_UP;PA_UP;IMPROVE_PA_PD_UP" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11590" levels="4" name="Drum Frenzy">
-		<table name="#effectPoint"> 687 698 707 712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 30 min., clan members' Max MP + 20%, HP Recovery Bonus + 20%, and M. Critical Rate + 20. During a standard attack, P. Atk. and Debuff Resistance + 10%, and Critical Damage, P. Def., Atk. Spd., M. Atk., M. Def., and Casting Spd. + 20%. When hit with a critical attack, received damage - 30% and Speed - 15%. Increases Critical Damage during a standard attack for a member equipped with a melee weapon/bow/crossbow who receives more than a certain amount of damage. -->
+		<table name="#effectPoint"> 687 698 707 712 </table>
+		<table name="#abnormalLvls"> 1 2 3 4</table>
 		<table name="#mpConsumes"> 140 151 170 181 </table>
+		<table name="#mpInitialConsumes"> 28 31 34 37 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#runSpd"> 0.85 0.90 0.95 1.0 </table>
 		<set name="icon" val="icon.skill11590" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalType" val="MELODY_DRUM" />
 		<set name="abnormalTime" val="1800" />
+		<set name="affectLimit" val="50-100" /> <!-- Custom -->
+		<set name="affectRange" val="1000" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="CLAN" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="mpInitialConsume" val="#mpInitialConsumes" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
-		<set name="effectPoint" val="#effectPoint" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="maxMp" val="1.20" />
+				<mul stat="regHp" val="1.20" />
+				<add stat="mCritRate" val="20" />
+				<mul stat="cAtk" val="1.20" />
+				<mul stat="pAtk" val="1.10" />
+				<mul stat="pDef" val="1.20" />
+				<mul stat="pAtkSpd" val="1.20" />
+				<mul stat="mAtk" val="1.20" />
+				<mul stat="mDef" val="1.20" />
+				<mul stat="mAtkSpd" val="1.20" />
+				<mul stat="runSpd" val="#runSpd" />
+				<mul stat="debuffVuln" val="1.10" />
+				<mul stat="defCritDamage" val="1.30" />
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="300" />
+				<param chance="25" />
+				<param skillId="11569" skillLevel="1" /> <!-- Critical Damage Increase -->
+				<param targetType="SELF" />
+				<param allowWeapons="SWORD,BLUNT,DAGGER,DUALDAGGER,DUAL,DUALFIST,POLE,ANCIENTSWORD,RAPIER,BOW,CROSSBOW,DUALBLUNT" />
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="MULTI_BUFF" rate="100" />
+			</effect>
+			<effect name="BlockBuffSlot">
+				<param slot="MULTI_BUFF" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11591" levels="4" name="Pipe Organ Frenzy">
-		<table name="#effectPoint"> 687 698 707 712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 30 min., clan members' Max HP/MP/CP + 37%, and HP Recovery Bonus + 20%. -->
+		<table name="#effectPoint"> 687 698 707 712 </table>
+		<table name="#abnormalLvls"> 1 2 3 4 </table>
 		<table name="#mpConsumes"> 140 151 170 181 </table>
+		<table name="#mpInitialConsumes"> 28 31 34 37 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#maxHp"> 1.37 1.39 1.41 1.43 </table>
+		<table name="#maxMp"> 1.37 1.39 1.41 1.43 </table>
+		<table name="#maxCp"> 1.37 1.39 1.41 1.43 </table>
 		<set name="icon" val="icon.skill11591" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalType" val="MELODY_PIPE" />
 		<set name="abnormalTime" val="1800" />
+		<set name="affectLimit" val="50-100" /> <!-- Custom -->
+		<set name="affectRange" val="1000" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="CLAN" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="mpInitialConsume" val="#mpInitialConsumes" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
-		<set name="effectPoint" val="#effectPoint" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="#effectPoint" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="maxHp" val="#maxHp" />
+				<mul stat="maxMp" val="#maxMp" />
+				<mul stat="maxCp" val="#maxCp" />
+				<mul stat="regHp" val="1.20" />
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="MAX_MP_UP;MAX_HP_UP;HP_REGEN_UP;IMPROVE_HP_MP_UP" rate="100" />
+			</effect>
+			<effect name="BlockBuffSlot">
+				<param slot="MAX_MP_UP;MAX_HP_UP;HP_REGEN_UP;IMPROVE_HP_MP_UP" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11592" levels="4" name="Guitar Frenzy">
-
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 30 min., clan members' P. Critical Rate + 32%, P. Critical Damage + 35%, and M. Critical Rate + 20. P. Skill MP Consumption - 20%, M. Skill MP Consumption - 10%, and Iss Enchanter's Enchant Skill MP Consumption - 20%. -->
 		<table name="#mpConsumes"> 140 151 170 181 </table>
+		<table name="#abnormalLvls"> 1 2 3 4 </table>
+		<table name="#mpConsumes"> 140 151 170 181 </table>
+		<table name="#mpInitialConsumes"> 28 31 34 37 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#rCrit"> 1.32 1.34 1.36 1.38 </table>
 		<set name="icon" val="icon.skill11592" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalType" val="MELODY_GUITAR" />
 		<set name="abnormalTime" val="1800" />
+		<set name="affectLimit" val="50-100" /> <!-- Custom -->
+		<set name="affectRange" val="1000" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="CLAN" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="mpInitialConsume" val="#mpInitialConsumes" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
-		<set name="effectPoint" val="687" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="687" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="rCrit" val="#rCrit" />
+				<mul stat="cAtk" val="1.35" />
+				<add stat="mCritRate" val="20" />
+				<mul stat="MagicalMpConsumeRate" val="0.90" />
+				<mul stat="PhysicalMpConsumeRate" val="0.80" />
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="INSTINCT;CRITICAL_DMG_UP;IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP" rate="100" />
+			</effect>
+			<effect name="BlockBuffSlot">
+				<param slot="INSTINCT;CRITICAL_DMG_UP;IMPROVE_CRT_RATE_DMG_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11593" levels="4" name="Harp Frenzy">
-
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 30 min., clan members' P. Accuracy and P. Evasion/ M. Evasion + 5, and Speed + 34. Received Critical Damage - 30%. -->
+		<table name="#abnormalLvls"> 1 2 3 4 </table>
 		<table name="#mpConsumes"> 140 151 170 181 </table>
+		<table name="#mpInitialConsumes"> 28 31 34 37 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#accCombat"> 5 6 7 8 </table>
+		<table name="#rEvas"> 5 6 7 8 </table>
+		<table name="#mEvas"> 5 6 7 8 </table>
+		<table name="#runSpd"> 34 35 36 37 </table>
 		<set name="icon" val="icon.skill11593" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalType" val="MELODY_HARP" />
 		<set name="abnormalTime" val="1800" />
+		<set name="affectLimit" val="50-100" /> <!-- Custom -->
+		<set name="affectRange" val="1000" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="CLAN" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="mpInitialConsume" val="#mpInitialConsumes" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
-		<set name="effectPoint" val="687" />
+		<set name="isMagic" val="1" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="687" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<for>
+			<effect name="Buff">
+				<add stat="accCombat" val="#accCombat" />
+				<add stat="rEvas" val="#rEvas" />
+				<add stat="mEvas" val="#mEvas" />
+				<add stat="runSpd" val="#runSpd" />
+				<mul stat="defCritDamage" val="1.30" />
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="HIT_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP;T_CRT_DMG_DOWN" rate="100" />
+			</effect>
+			<effect name="BlockBuffSlot">
+				<param slot="HIT_UP;IMPROVE_SPEED_AVOID_UP;SPEED_UP;AVOID_UP;T_CRT_DMG_DOWN" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11594" levels="4" name="Lute Frenzy">
-
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 30 min., clan members' Atk. Spd. + 34% and Casting Spd. + 31%. Has a chance of applying 9% Vampiric Rage effect. -->
+		<table name="#abnormalLvls"> 1 2 3 4 </table>
 		<table name="#mpConsumes"> 140 151 170 181 </table>
+		<table name="#mpInitialConsumes"> 28 31 34 37 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#pAtkSpd"> 1.34 1.35 1.36 1.37 </table>
+		<table name="#mAtkSpd"> 1.31 1.32 1.33 1.34 </table>
 		<set name="icon" val="icon.skill11594" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalType" val="MELODY_LUTE" />
 		<set name="abnormalTime" val="1800" />
+		<set name="affectLimit" val="50-100" /> <!-- Custom -->
+		<set name="affectRange" val="1000" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="CLAN" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="mpInitialConsume" val="#mpInitialConsumes" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
-		<set name="effectPoint" val="687" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="reuseDelay" val="2000" />
+		<set name="effectPoint" val="687" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtkSpd" val="#pAtkSpd" />
+				<mul stat="mAtkSpd" val="#mAtkSpd" />
+				<add stat="absorbDam" val="9" /> <!-- TODO: 20%? chance to trigger Vampiric rage -->
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="VAMPIRIC_ATTACK;CASTING_TIME_DOWN;IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN" rate="100" />
+			</effect>
+			<effect name="BlockBuffSlot">
+				<param dispel="VAMPIRIC_ATTACK;CASTING_TIME_DOWN;IMPROVE_VAMPIRIC_HASTE;ATTACK_TIME_DOWN" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11595" levels="1" name="Knight's Frenzied Harmony">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 30 minutes, increases clan members' P. Atk. + 12%, P. Critical Damage + 35%, P. Critical Rate + 100%, P. Def. + 45%, Shield Defense Rate + 30%, and Shield Defense + 50%. -->
 		<set name="icon" val="icon.skill11596" />
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
+		<set name="abnormalType" val="HARMONY" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="CLAN_MEMBER" />
 		<set name="mpConsume" val="140" />
+		<set name="mpInitialConsume" val="28" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
-		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="2000" />
+		<set name="magicLvl" val="85" />
+		<set name="effectPoint" val="687" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.12" />
+				<mul stat="cAtk" val="1.35" />
+				<mul stat="rCrit" val="2.00" />
+				<mul stat="pDef" val="1.45" />
+				<mul stat="rShld" val="1.30" />
+				<mul stat="sDef" val="1.50" />
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" rate="100" />
+			</effect>
+			<effect name="BlockBuffSlot">
+				<param slot="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11596" levels="1" name="Warrior's Frenzied Harmony">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 30 minutes, increases clan members' P. Atk. + 35%, P. Critical Damage + 35%, P. Critical Rate + 100%, Atk. Spd. + 8%, M. Atk. + 16%, Casting Spd. + 8%, and Spd. + 8. -->
 		<set name="icon" val="icon.skill11595" />
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
+		<set name="abnormalType" val="HARMONY" />
+		<set name="icon" val="icon.skill11524" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="CLAN_MEMBER" />
 		<set name="mpConsume" val="140" />
+		<set name="mpInitialConsume" val="28" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
-		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="2000" />
+		<set name="magicLvl" val="85" />
+		<set name="effectPoint" val="687" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.35" />
+				<mul stat="cAtk" val="1.35" />
+				<mul stat="rCrit" val="2.00" />
+				<mul stat="pAtkSpd" val="1.08" />
+				<mul stat="mAtk" val="1.16" />
+				<mul stat="mAtkSpd" val="1.08" />
+				<add stat="runSpd" val="8" />
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" rate="100" />
+			</effect>
+			<effect name="BlockBuffSlot">
+				<param slot="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11597" levels="1" name="Wizard's Frenzied Harmony">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 30 minutes, increases clan members' M. Atk. + 40%, M. Critical Rate + 100%, Casting Spd. + 8%, P. Atk. + 8%, Atk. Spd. + 8%, Spd. + 8, M. Def. + 14%, and MP Recovery Bonus + 20%. Decreases magic skill MP Consumption - 15%, physical skill MP Consumption - 5%, and Skill Cooldown - 20%. -->
 		<set name="icon" val="icon.skill11597" />
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
+		<set name="abnormalType" val="HARMONY" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="CLAN_MEMBER" />
 		<set name="mpConsume" val="140" />
+		<set name="mpInitialConsume" val="28" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="700" />
 		<set name="coolTime" val="300" />
-		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="2000" />
+		<set name="magicLvl" val="85" />
+		<set name="effectPoint" val="687" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="mAtk" val="1.40" />
+				<mul stat="mCritRate" val="2.00" />
+				<mul stat="mAtkSpd" val="1.08" />
+				<mul stat="pAtk" val="1.08" />
+				<mul stat="pAtkSpd" val="1.08" />
+				<add stat="runSpd" val="8" />
+				<mul stat="mDef" val="1.14" />
+				<mul stat="regMp" val="1.20" />
+				<mul stat="MagicalMpConsumeRate" val="0.85" />
+				<mul stat="PhysicalMpConsumeRate" val="0.95" />
+				<mul stat="mReuse" val="0.80" />
+				<mul stat="pReuse" val="0.80" />
+				<mul stat="dReuse" val="0.80" />
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" rate="100" />
+			</effect>
+			<effect name="BlockBuffSlot">
+				<param slot="PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;SHIELD_PROB_UP;PA_PD_UP;SONG_OF_EARTH;DANCE_OF_WARRIOR;PA_PD_UP;BERSERKER;SONG_OF_HUNTER;DANCE_OF_FIRE;DANCE_OF_MYSTIC;DANCE_OF_SIREN" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11598" levels="4" name="Greater Freezing Flame">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- A powerful cold flame. For 10 sec., decreases enemy's HP by 326. -->
 		<table name="#mpConsumes"> 73 79 86 91 </table>
+		<table name="#dot"> 326 343 359 375 </table>
 		<set name="icon" val="icon.skill11598" />
 		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="DOT_ATTR" />
+		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
+		<set name="activateRate" val="70" /> <!-- Custom -->
+		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+		<set name="element" val="0" /> <!-- Fire -->
+		<set name="elementPower" val="20" />
 		<set name="hitTime" val="910" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-379" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="DamOverTime" ticks="1">
+				<param power="#dot" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11599" levels="4" name="Combat Cry">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- P. Atk./P. Def., M. Atk./M. Def. + 5%, and Skill Power + 5%. MP drains consistently depending on level. -->
+		<table name="#attackDefense"> 1.05 1.07 1.10 1.15 </table>
+		<table name="#mdot"> 4 4 4 4 </table> <!-- Custom -->
 		<set name="icon" val="icon.skill1001" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
+		<for>
+			<effect name="ManaDamOverTime" ticks="5">
+				<param power="#mdot" />
+				<mul stat="pAtk" val="#attackDefense" />
+				<mul stat="pDef" val="#attackDefense" />
+				<mul stat="mAtk" val="#attackDefense" />
+				<mul stat="mDef" val="#attackDefense" />
+				<mul stat="physicalSkillPower" val="1.05" />
+			</effect>
+		</for>
 	</skill>
 </list>

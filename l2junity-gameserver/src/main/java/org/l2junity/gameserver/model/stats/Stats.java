@@ -227,6 +227,9 @@ public enum Stats
 	// The maximum allowed range to be debuffed from.
 	DEBUFFED_MAX_RANGE("debuffedMaxRange"),
 	
+	// Blocks given amount of debuffs.
+	DEBUFF_BLOCK("debuffBlock"),
+	
 	// Lock your HP at the given value.
 	HP_LOCK("hpLock");
 	

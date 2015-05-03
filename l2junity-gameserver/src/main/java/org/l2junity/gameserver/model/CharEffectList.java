@@ -846,6 +846,21 @@ public final class CharEffectList
 	}
 	
 	/**
+	 * Resets all debuffs' duration.
+	 * @param update set to true to update the effect flags and icons
+	 */
+	public void resetAllDebuffs(boolean update)
+	{
+		if (hasDebuffs())
+		{
+			// Safety check is made when resetting debuffs duration. Since we don't know which debuffs can be reset and which not, lets reset only dispellable debuffs.
+			getDebuffs().values().stream().filter(debuff -> debuff.getSkill().canBeDispeled()).forEach(info -> info.resetAbnormalTime());
+			// Update effect flags and icons.
+			updateEffectList(update);
+		}
+	}
+	
+	/**
 	 * Exit all effects having a specified type.<br>
 	 * TODO: Remove after all effect types are replaced by abnormal skill types.
 	 * @param type the type of the effect to stop

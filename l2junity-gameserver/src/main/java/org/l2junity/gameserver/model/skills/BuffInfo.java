@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ScheduledFuture;
 
 import org.l2junity.Config;
@@ -36,6 +37,8 @@ import org.l2junity.gameserver.model.effects.EffectTickTask;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Buff Info.<br>
@@ -44,6 +47,8 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class BuffInfo
 {
+	private static final Logger _log = LoggerFactory.getLogger(BuffInfo.class);
+	
 	// Data
 	/** Data. */
 	private final Creature _effector;
@@ -60,7 +65,7 @@ public final class BuffInfo
 	/** Abnormal time. */
 	private int _abnormalTime;
 	/** The game ticks at the start of this effect. */
-	private final int _periodStartTicks;
+	private int _periodStartTicks;
 	// Misc
 	/** If {@code true} then this effect has been cancelled. */
 	private boolean _isRemoved = false;
@@ -299,27 +304,33 @@ public final class BuffInfo
 	
 	/**
 	 * Resets the effects' duration.
+	 * @return true if the debuff duration is reset and a visual update is needed.
 	 */
-	public void resetEffects()
+	public boolean resetAbnormalTime()
 	{
 		if ((_effected == null) || (_skill == null))
 		{
-			return;
+			return false;
 		}
 		
-		// Resets the task that will stop all the effects.
-		if (_abnormalTime > 0)
+		// Check if the effect is continuous and has an active timer.
+		if ((_abnormalTime > 0) && (_scheduledFutureTimeTask != null))
 		{
-			if (_scheduledFutureTimeTask != null)
+			try
 			{
-				_scheduledFutureTimeTask.cancel(true);
+				// In retail Reset skill doesn't exactly reset to the bare milisecond. If a second is ticking, its counted.
+				// Thats why here its the same way. It just sets the elapsed time to 0, but including the seconds' tick time before it was reset.
+				((BuffTimeTask) _scheduledFutureTimeTask.get()).setElapsedTime(0);
+				_periodStartTicks = GameTimeController.getInstance().getGameTicks();
+				return true;
 			}
-			
-			_scheduledFutureTimeTask = ThreadPoolManager.getInstance().scheduleEffectAtFixedRate(new BuffTimeTask(this), 0, 1000L);
+			catch (InterruptedException | ExecutionException e)
+			{
+				_log.warn("Task interrupted while resetting the abnormal time. ", e);
+			}
 		}
 		
-		// Reset abnormal visual effects.
-		resetAbnormalVisualEffects();
+		return false;
 	}
 	
 	/**
