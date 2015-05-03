@@ -57,6 +57,7 @@ public final class MultisellData implements IXmlReader
 	public static final int PC_BANG_POINTS = -100;
 	public static final int CLAN_REPUTATION = -200;
 	public static final int FAME = -300;
+	public static final int RAIDBOSS_POINTS = -500;
 	// Misc
 	private static final FileFilter NUMERIC_FILTER = new NumericNameFilter();
 	
@@ -284,29 +285,42 @@ public final class MultisellData implements IXmlReader
 		switch (id)
 		{
 			case CLAN_REPUTATION:
+			{
 				if (player.getClan() == null)
 				{
 					player.sendPacket(SystemMessageId.YOU_ARE_NOT_A_CLAN_MEMBER_AND_CANNOT_PERFORM_THIS_ACTION);
-					break;
+					return false;
 				}
-				if (!player.isClanLeader())
+				else if (!player.isClanLeader())
 				{
 					player.sendPacket(SystemMessageId.ONLY_THE_CLAN_LEADER_IS_ENABLED);
-					break;
+					return false;
 				}
-				if (player.getClan().getReputationScore() < amount)
+				else if (player.getClan().getReputationScore() < amount)
 				{
 					player.sendPacket(SystemMessageId.THE_CLAN_REPUTATION_IS_TOO_LOW);
-					break;
+					return false;
 				}
 				return true;
+			}
 			case FAME:
+			{
 				if (player.getFame() < amount)
 				{
 					player.sendPacket(SystemMessageId.YOU_DON_T_HAVE_ENOUGH_FAME_TO_DO_THAT);
-					break;
+					return false;
 				}
 				return true;
+			}
+			case RAIDBOSS_POINTS:
+			{
+				if (player.getRaidbossPoints() < amount)
+				{
+					player.sendPacket(SystemMessageId.NOT_ENOUGH_RAID_POINTS);
+					return false;
+				}
+				return true;
+			}
 		}
 		return false;
 	}
@@ -316,16 +330,27 @@ public final class MultisellData implements IXmlReader
 		switch (id)
 		{
 			case CLAN_REPUTATION:
+			{
 				player.getClan().takeReputationScore((int) amount, true);
 				SystemMessage smsg = SystemMessage.getSystemMessage(SystemMessageId.S1_POINT_S_HAVE_BEEN_DEDUCTED_FROM_THE_CLAN_S_REPUTATION);
 				smsg.addLong(amount);
 				player.sendPacket(smsg);
 				return true;
+			}
 			case FAME:
+			{
 				player.setFame(player.getFame() - (int) amount);
 				player.sendPacket(new UserInfo(player));
 				// player.sendPacket(new ExBrExtraUserInfo(player));
 				return true;
+			}
+			case RAIDBOSS_POINTS:
+			{
+				player.setRaidbossPoints(player.getRaidbossPoints() - (int) amount);
+				player.sendPacket(new UserInfo(player));
+				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_CONSUMED_S1_RAID_POINTS).addLong(amount));
+				return true;
+			}
 		}
 		return false;
 	}
@@ -335,13 +360,23 @@ public final class MultisellData implements IXmlReader
 		switch (id)
 		{
 			case CLAN_REPUTATION:
+			{
 				player.getClan().addReputationScore((int) amount, true);
 				break;
+			}
 			case FAME:
+			{
 				player.setFame((int) (player.getFame() + amount));
 				player.sendPacket(new UserInfo(player));
 				// player.sendPacket(new ExBrExtraUserInfo(player));
 				break;
+			}
+			case RAIDBOSS_POINTS:
+			{
+				player.increaseRaidbossPoints((int) amount);
+				player.sendPacket(new UserInfo(player));
+				break;
+			}
 		}
 	}
 	
@@ -379,6 +414,7 @@ public final class MultisellData implements IXmlReader
 		{
 			case CLAN_REPUTATION:
 			case FAME:
+			case RAIDBOSS_POINTS:
 				return true;
 			default:
 				return ing.getTemplate() != null;
