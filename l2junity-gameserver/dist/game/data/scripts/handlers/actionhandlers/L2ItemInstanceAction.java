@@ -42,9 +42,11 @@ public class L2ItemInstanceAction implements IActionHandler
 				activeChar.sendPacket(SystemMessageId.YOU_DO_NOT_HAVE_THE_AUTHORITY_TO_CANCEL_MERCENARY_POSITIONING);
 				activeChar.setTarget(target);
 				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+				return false;
 			}
 		}
-		else if (!activeChar.isFlying())
+		
+		if (!activeChar.isFlying())
 		{
 			activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_PICK_UP, target);
 		}
