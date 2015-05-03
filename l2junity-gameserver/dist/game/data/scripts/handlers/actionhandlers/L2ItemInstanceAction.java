@@ -43,10 +43,10 @@ public class L2ItemInstanceAction implements IActionHandler
 				activeChar.setTarget(target);
 				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 			}
-			else if (!activeChar.isFlying())
-			{
-				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_PICK_UP, target);
-			}
+		}
+		else if (!activeChar.isFlying())
+		{
+			activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_PICK_UP, target);
 		}
 		return true;
 	}
