@@ -20,7 +20,6 @@ package org.l2junity.gameserver.network.client.send;
 
 import org.l2junity.gameserver.data.xml.impl.ExperienceData;
 import org.l2junity.gameserver.enums.UserInfoType;
-import org.l2junity.gameserver.instancemanager.RaidBossPointsManager;
 import org.l2junity.gameserver.model.Elementals;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.Party;
@@ -312,7 +311,7 @@ public class UserInfo extends AbstractMaskPacket<UserInfoType>
 			packet.writeD(_activeChar.getVitalityPoints());
 			packet.writeC(0x00); // Vita Bonus
 			packet.writeD(_activeChar.getFame());
-			packet.writeD(RaidBossPointsManager.getInstance().getPointsByOwnerId(_activeChar.getObjectId()));
+			packet.writeD(_activeChar.getRaidbossPoints());
 		}
 		
 		if (containsMask(UserInfoType.SLOTS))

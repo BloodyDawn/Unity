@@ -18,15 +18,8 @@
  */
 package org.l2junity.gameserver.model.actor.instance;
 
-import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.enums.InstanceType;
-import org.l2junity.gameserver.instancemanager.RaidBossPointsManager;
-import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
-import org.l2junity.gameserver.model.entity.Hero;
-import org.l2junity.gameserver.network.client.send.SystemMessage;
-import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * This class manages all Grand Bosses.
@@ -60,50 +53,6 @@ public final class L2GrandBossInstance extends L2MonsterInstance
 	{
 		setIsNoRndWalk(true);
 		super.onSpawn();
-	}
-	
-	@Override
-	public boolean doDie(Creature killer)
-	{
-		if (!super.doDie(killer))
-		{
-			return false;
-		}
-		PlayerInstance player = null;
-		
-		if (killer instanceof PlayerInstance)
-		{
-			player = (PlayerInstance) killer;
-		}
-		else if (killer instanceof Summon)
-		{
-			player = ((Summon) killer).getOwner();
-		}
-		
-		if (player != null)
-		{
-			broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.CONGRATULATIONS_YOUR_RAID_WAS_SUCCESSFUL));
-			if (player.getParty() != null)
-			{
-				for (PlayerInstance member : player.getParty().getMembers())
-				{
-					RaidBossPointsManager.getInstance().addPoints(member, getId(), (getLevel() / 2) + Rnd.get(-5, 5));
-					if (member.isNoble())
-					{
-						Hero.getInstance().setRBkilled(member.getObjectId(), getId());
-					}
-				}
-			}
-			else
-			{
-				RaidBossPointsManager.getInstance().addPoints(player, getId(), (getLevel() / 2) + Rnd.get(-5, 5));
-				if (player.isNoble())
-				{
-					Hero.getInstance().setRBkilled(player.getObjectId(), getId());
-				}
-			}
-		}
-		return true;
 	}
 	
 	@Override

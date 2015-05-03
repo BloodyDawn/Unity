@@ -22,14 +22,10 @@ import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.InstanceType;
-import org.l2junity.gameserver.instancemanager.RaidBossPointsManager;
 import org.l2junity.gameserver.instancemanager.RaidBossSpawnManager;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
-import org.l2junity.gameserver.model.entity.Hero;
-import org.l2junity.gameserver.network.client.send.SystemMessage;
-import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * This class manages all RaidBoss.<br>
@@ -79,31 +75,6 @@ public class L2RaidBossInstance extends L2MonsterInstance
 		if (!super.doDie(killer))
 		{
 			return false;
-		}
-		
-		final PlayerInstance player = killer.getActingPlayer();
-		if (player != null)
-		{
-			broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.CONGRATULATIONS_YOUR_RAID_WAS_SUCCESSFUL));
-			if (player.getParty() != null)
-			{
-				for (PlayerInstance member : player.getParty().getMembers())
-				{
-					RaidBossPointsManager.getInstance().addPoints(member, getId(), (getLevel() / 2) + Rnd.get(-5, 5));
-					if (member.isNoble())
-					{
-						Hero.getInstance().setRBkilled(member.getObjectId(), getId());
-					}
-				}
-			}
-			else
-			{
-				RaidBossPointsManager.getInstance().addPoints(player, getId(), (getLevel() / 2) + Rnd.get(-5, 5));
-				if (player.isNoble())
-				{
-					Hero.getInstance().setRBkilled(player.getObjectId(), getId());
-				}
-			}
 		}
 		
 		RaidBossSpawnManager.getInstance().updateStatus(this, true);

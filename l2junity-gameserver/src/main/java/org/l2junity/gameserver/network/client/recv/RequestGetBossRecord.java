@@ -18,12 +18,8 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
-import java.util.Map;
-
-import org.l2junity.gameserver.instancemanager.RaidBossPointsManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.L2GameClient;
-import org.l2junity.gameserver.network.client.send.ExGetBossRecord;
 import org.l2junity.network.PacketReader;
 
 /**
@@ -44,23 +40,12 @@ public class RequestGetBossRecord implements IClientIncomingPacket
 	@Override
 	public void run(L2GameClient client)
 	{
-		PlayerInstance activeChar = client.getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 		{
 			return;
 		}
 		
-		if (_bossId != 0)
-		{
-			_log.info("C5: RequestGetBossRecord: d: " + _bossId + " ActiveChar: " + activeChar); // should be always 0, log it if isnt 0 for furture research
-		}
-		
-		int points = RaidBossPointsManager.getInstance().getPointsByOwnerId(activeChar.getObjectId());
-		int ranking = RaidBossPointsManager.getInstance().calculateRanking(activeChar.getObjectId());
-		
-		Map<Integer, Integer> list = RaidBossPointsManager.getInstance().getList(activeChar);
-		
-		// trigger packet
-		activeChar.sendPacket(new ExGetBossRecord(ranking, points, list));
+		_log.warn("Player {} (boss ID: {}) used unsuded packet {}", activeChar, _bossId, RequestGetBossRecord.class.getSimpleName());
 	}
 }

@@ -34,6 +34,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ScheduledFuture;
+
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.taskmanager.tasks.TaskBirthday;
@@ -43,7 +44,6 @@ import org.l2junity.gameserver.taskmanager.tasks.TaskDailySkillReuseClean;
 import org.l2junity.gameserver.taskmanager.tasks.TaskDailyWorldChatPointReset;
 import org.l2junity.gameserver.taskmanager.tasks.TaskGlobalVariablesSave;
 import org.l2junity.gameserver.taskmanager.tasks.TaskOlympiadSave;
-import org.l2junity.gameserver.taskmanager.tasks.TaskRaidPointsReset;
 import org.l2junity.gameserver.taskmanager.tasks.TaskRecom;
 import org.l2junity.gameserver.taskmanager.tasks.TaskRestart;
 import org.l2junity.gameserver.taskmanager.tasks.TaskScript;
@@ -191,7 +191,6 @@ public final class TaskManager
 		registerTask(new TaskDailyWorldChatPointReset());
 		registerTask(new TaskGlobalVariablesSave());
 		registerTask(new TaskOlympiadSave());
-		registerTask(new TaskRaidPointsReset());
 		registerTask(new TaskRecom());
 		registerTask(new TaskRestart());
 		registerTask(new TaskScript());

@@ -118,7 +118,6 @@ import org.l2junity.gameserver.instancemanager.MentorManager;
 import org.l2junity.gameserver.instancemanager.PetitionManager;
 import org.l2junity.gameserver.instancemanager.PunishmentManager;
 import org.l2junity.gameserver.instancemanager.QuestManager;
-import org.l2junity.gameserver.instancemanager.RaidBossPointsManager;
 import org.l2junity.gameserver.instancemanager.RaidBossSpawnManager;
 import org.l2junity.gameserver.instancemanager.SiegeGuardManager;
 import org.l2junity.gameserver.instancemanager.SiegeManager;
@@ -229,7 +228,6 @@ public class GameServer
 		PlayerTemplateData.getInstance();
 		CharNameTable.getInstance();
 		AdminData.getInstance();
-		RaidBossPointsManager.getInstance();
 		PetDataTable.getInstance();
 		CharSummonTable.getInstance().init();
 		BeautyShopData.getInstance();

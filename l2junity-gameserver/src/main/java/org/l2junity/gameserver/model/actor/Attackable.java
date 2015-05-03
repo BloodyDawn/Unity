@@ -27,6 +27,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Collectors;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
@@ -59,6 +60,7 @@ import org.l2junity.gameserver.model.actor.status.AttackableStatus;
 import org.l2junity.gameserver.model.actor.tasks.attackable.CommandChannelTimer;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.drops.DropListScope;
+import org.l2junity.gameserver.model.entity.Hero;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.npc.attackable.OnAttackableAggroRangeEnter;
 import org.l2junity.gameserver.model.events.impl.character.npc.attackable.OnAttackableAttack;
@@ -419,6 +421,47 @@ public class Attackable extends Npc
 							maxDealer = attacker;
 							maxDamage = reward.getDamage();
 						}
+					}
+				}
+			}
+			
+			// Calculate raidboss points
+			if (isRaid() && !isRaidMinion())
+			{
+				final PlayerInstance player = (maxDealer != null) && maxDealer.isOnline() ? maxDealer : lastAttacker.getActingPlayer();
+				broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.CONGRATULATIONS_YOUR_RAID_WAS_SUCCESSFUL));
+				final int raidbossPoints = (int) (getTemplate().getRaidPoints() * Config.RATE_RAIDBOSS_POINTS);
+				final Party party = player.getParty();
+				
+				if (party != null)
+				{
+					final CommandChannel command = party.getCommandChannel();
+					//@formatter:off
+					final List<PlayerInstance> members = command != null ? 
+						command.getMembers().stream().filter(p -> p.calculateDistance(this, true, false) < Config.ALT_PARTY_RANGE).collect(Collectors.toList()) :
+						player.getParty().getMembers().stream().filter(p -> p.calculateDistance(this, true, false) < Config.ALT_PARTY_RANGE).collect(Collectors.toList());
+					//@formatter:on
+					
+					members.forEach(p ->
+					{
+						final int points = Math.max(raidbossPoints / members.size(), 1);
+						p.increaseRaidbossPoints(points);
+						p.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_EARNED_S1_RAID_POINT_S).addInt(points));
+						
+						if (p.isNoble())
+						{
+							Hero.getInstance().setRBkilled(p.getObjectId(), getId());
+						}
+					});
+				}
+				else
+				{
+					final int points = Math.max(raidbossPoints, 1);
+					player.increaseRaidbossPoints(points);
+					player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_EARNED_S1_RAID_POINT_S).addInt(points));
+					if (player.isNoble())
+					{
+						Hero.getInstance().setRBkilled(player.getObjectId(), getId());
 					}
 				}
 			}
@@ -959,7 +1002,7 @@ public class Attackable extends Npc
 			return;
 		}
 		
-		PlayerInstance player = mainDamageDealer.getActingPlayer();
+		final PlayerInstance player = mainDamageDealer.getActingPlayer();
 		
 		// Don't drop anything if the last attacker or owner isn't L2PcInstance
 		if (player == null)
