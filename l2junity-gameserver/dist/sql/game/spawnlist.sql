@@ -33257,6 +33257,7 @@ INSERT INTO `spawnlist` VALUES
 ('Hunters_Village', 1, 30710, 114512, 77966, -2592, 0, 0, 42902, 60, 0, 0, 0), -- Weston
 ('Hunters_Village', 1, 31825, 114592, 77904, -2600, 0, 0, 60000, 60, 0, 0, 0), -- Adventure Guildsman
 ('Hunters_Village', 1, 30709, 114564, 78107, -2592, 0, 0, 60929, 60, 0, 0, 0), -- Norton
+('Hunters_Village', 1, 31031, 116036, 76319, -2703, 0, 0, 0, 60, 0, 0, 0), -- Broadcasting Tower
 ('Hunters_Village', 1, 31756, 117200, 75824, -2725, 0, 0, 25000, 60, 0, 0, 0), -- Mr. Cat
 ('Hunters_Village', 1, 31757, 117160, 75784, -2725, 0, 0, 25000, 60, 0, 0, 0), -- Miss Queen
 -- Anghel Waterfall
