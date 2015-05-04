@@ -48,7 +48,7 @@ public final class DispelBySlotProbability extends AbstractEffect
 		super(attachCond, applyCond, set, params);
 		
 		_dispel = params.getString("dispel", null);
-		_rate = params.getInt("rate", 0);
+		_rate = params.getInt("rate", 100);
 		if ((_dispel != null) && !_dispel.isEmpty())
 		{
 			_dispelAbnormals = new EnumMap<>(AbnormalType.class);
