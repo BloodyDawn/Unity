@@ -127,6 +127,7 @@ public class MoveBackwardToLocation implements IClientIncomingPacket
 			{
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				activeChar.teleToLocation(new Location(_targetX, _targetY, _targetZ));
+				activeChar.setTeleMode(AdminTeleportType.NORMAL);
 				break;
 			}
 			case SAYUNE:
