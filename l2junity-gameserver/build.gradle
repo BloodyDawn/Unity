@@ -58,7 +58,6 @@ task loginJar(type: Jar, dependsOn: classes) {
 	from(sourceSets.main.output)
 	archiveName = 'l2jlogin.jar'
 	exclude('**/dbinstaller/**')
-	exclude('**/gameserver/**')
 	manifest {
 		from(generalManifest)
 		attributes('Main-Class': 'org.l2junity.loginserver.L2LoginServer')

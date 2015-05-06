@@ -69,14 +69,7 @@ public final class DlgAnswer implements IClientIncomingPacket
 		
 		if (_messageId == SystemMessageId.S13.getId())
 		{
-			if (activeChar.removeAction(PlayerAction.USER_ENGAGE))
-			{
-				if (Config.L2JMOD_ALLOW_WEDDING)
-				{
-					activeChar.engageAnswer(_answer);
-				}
-			}
-			else if (activeChar.removeAction(PlayerAction.ADMIN_COMMAND))
+			if (activeChar.removeAction(PlayerAction.ADMIN_COMMAND))
 			{
 				String cmd = activeChar.getAdminConfirmCmd();
 				activeChar.setAdminConfirmCmd(null);

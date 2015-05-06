@@ -30,7 +30,6 @@ import org.l2junity.gameserver.enums.SubclassInfoType;
 import org.l2junity.gameserver.instancemanager.CHSiegeManager;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.ClanHallManager;
-import org.l2junity.gameserver.instancemanager.CoupleManager;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.FortSiegeManager;
@@ -46,7 +45,6 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.L2ClassMasterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Castle;
-import org.l2junity.gameserver.model.entity.Couple;
 import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.FortSiege;
 import org.l2junity.gameserver.model.entity.L2Event;
@@ -408,13 +406,6 @@ public class EnterWorld implements IClientIncomingPacket
 			L2Event.restorePlayerEventStatus(activeChar);
 		}
 		
-		// Wedding Checks
-		if (Config.L2JMOD_ALLOW_WEDDING)
-		{
-			engage(activeChar);
-			notifyPartner(activeChar, activeChar.getPartnerId());
-		}
-		
 		if (activeChar.isCursedWeaponEquipped())
 		{
 			CursedWeaponsManager.getInstance().getCursedWeapon(activeChar.getCursedWeaponEquippedId()).cursedOnLogin();
@@ -587,53 +578,6 @@ public class EnterWorld implements IClientIncomingPacket
 		
 		activeChar.sendPacket(new ExAcquireAPSkillList(activeChar));
 		activeChar.sendPacket(new ExWorldChatCnt(activeChar));
-	}
-	
-	/**
-	 * @param cha
-	 */
-	private void engage(PlayerInstance cha)
-	{
-		int chaId = cha.getObjectId();
-		
-		for (Couple cl : CoupleManager.getInstance().getCouples().values())
-		{
-			if ((cl.getPlayer1Id() == chaId) || (cl.getPlayer2Id() == chaId))
-			{
-				if (cl.getMaried())
-				{
-					cha.setMarried(true);
-				}
-				
-				cha.setCoupleId(cl.getId());
-				
-				if (cl.getPlayer1Id() == chaId)
-				{
-					cha.setPartnerId(cl.getPlayer2Id());
-				}
-				else
-				{
-					cha.setPartnerId(cl.getPlayer1Id());
-				}
-			}
-		}
-	}
-	
-	/**
-	 * @param cha
-	 * @param partnerId
-	 */
-	private void notifyPartner(PlayerInstance cha, int partnerId)
-	{
-		int objId = cha.getPartnerId();
-		if (objId != 0)
-		{
-			final PlayerInstance partner = World.getInstance().getPlayer(objId);
-			if (partner != null)
-			{
-				partner.sendMessage("Your Partner has logged in.");
-			}
-		}
 	}
 	
 	/**

@@ -252,7 +252,6 @@ import handlers.voicedcommandhandlers.ChatAdmin;
 import handlers.voicedcommandhandlers.Debug;
 import handlers.voicedcommandhandlers.Lang;
 import handlers.voicedcommandhandlers.StatsVCmd;
-import handlers.voicedcommandhandlers.Wedding;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -520,7 +519,6 @@ public class MasterHandler
 			// TODO: Add configuration options for this voiced commands:
 			// CastleVCmd.class,
 			// SetVCmd.class,
-			(Config.L2JMOD_ALLOW_WEDDING ? Wedding.class : null),
 			(Config.BANKING_SYSTEM_ENABLED ? Banking.class : null),
 			(Config.L2JMOD_CHAT_ADMIN ? ChatAdmin.class : null),
 			(Config.L2JMOD_MULTILANG_ENABLE && Config.L2JMOD_MULTILANG_VOICED_ALLOW ? Lang.class : null),

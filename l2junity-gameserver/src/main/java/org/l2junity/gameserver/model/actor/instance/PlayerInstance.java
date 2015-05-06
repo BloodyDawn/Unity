@@ -104,7 +104,6 @@ import org.l2junity.gameserver.handler.ItemHandler;
 import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.AntiFeedManager;
 import org.l2junity.gameserver.instancemanager.CastleManager;
-import org.l2junity.gameserver.instancemanager.CoupleManager;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.instancemanager.DuelManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
@@ -848,15 +847,6 @@ public final class PlayerInstance extends Playable
 	
 	// Character UI
 	private UIKeysSettings _uiKeySettings;
-	
-	// L2JMOD Wedding
-	private boolean _married = false;
-	private int _partnerId = 0;
-	private int _coupleId = 0;
-	private boolean _engagerequest = false;
-	private int _engageid = 0;
-	private boolean _marryrequest = false;
-	private boolean _marryaccepted = false;
 	
 	// Save responder name for log it
 	private String _lastPetitionGmName = null;
@@ -5059,101 +5049,6 @@ public final class PlayerInstance extends Playable
 			}
 		}
 		return false;
-	}
-	
-	public boolean isMarried()
-	{
-		return _married;
-	}
-	
-	public void setMarried(boolean state)
-	{
-		_married = state;
-	}
-	
-	public boolean isEngageRequest()
-	{
-		return _engagerequest;
-	}
-	
-	public void setEngageRequest(boolean state, int playerid)
-	{
-		_engagerequest = state;
-		_engageid = playerid;
-	}
-	
-	public void setMarryRequest(boolean state)
-	{
-		_marryrequest = state;
-	}
-	
-	public boolean isMarryRequest()
-	{
-		return _marryrequest;
-	}
-	
-	public void setMarryAccepted(boolean state)
-	{
-		_marryaccepted = state;
-	}
-	
-	public boolean isMarryAccepted()
-	{
-		return _marryaccepted;
-	}
-	
-	public int getEngageId()
-	{
-		return _engageid;
-	}
-	
-	public int getPartnerId()
-	{
-		return _partnerId;
-	}
-	
-	public void setPartnerId(int partnerid)
-	{
-		_partnerId = partnerid;
-	}
-	
-	public int getCoupleId()
-	{
-		return _coupleId;
-	}
-	
-	public void setCoupleId(int coupleId)
-	{
-		_coupleId = coupleId;
-	}
-	
-	public void engageAnswer(int answer)
-	{
-		if (!_engagerequest)
-		{
-			return;
-		}
-		else if (_engageid == 0)
-		{
-			return;
-		}
-		else
-		{
-			PlayerInstance ptarget = World.getInstance().getPlayer(_engageid);
-			setEngageRequest(false, 0);
-			if (ptarget != null)
-			{
-				if (answer == 1)
-				{
-					CoupleManager.getInstance().createCouple(ptarget, PlayerInstance.this);
-					ptarget.sendMessage("Request to Engage has been >ACCEPTED<");
-				}
-				else
-				{
-					ptarget.sendMessage("Request to Engage has been >DENIED<!");
-				}
-			}
-		}
 	}
 	
 	/**

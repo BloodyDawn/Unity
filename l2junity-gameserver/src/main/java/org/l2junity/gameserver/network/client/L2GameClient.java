@@ -536,16 +536,6 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 				ps.setInt(1, objid);
 				ps.execute();
 			}
-			
-			if (Config.L2JMOD_ALLOW_WEDDING)
-			{
-				try (PreparedStatement ps = con.prepareStatement("DELETE FROM mods_wedding WHERE player1Id = ? OR player2Id = ?"))
-				{
-					ps.setInt(1, objid);
-					ps.setInt(2, objid);
-					ps.execute();
-				}
-			}
 		}
 		catch (Exception e)
 		{

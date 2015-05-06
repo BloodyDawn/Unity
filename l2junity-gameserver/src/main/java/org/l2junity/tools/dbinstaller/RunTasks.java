@@ -117,18 +117,6 @@ public class RunTasks extends Thread
 			}
 		}
 		
-		File modDir = new File(_sqlDir, "mods");
-		if (modDir.exists())
-		{
-			int ch = _frame.requestConfirm("Install Mods", "Do you want to install mod tables?", JOptionPane.YES_NO_OPTION);
-			if (ch == 0)
-			{
-				_frame.appendToProgressArea("Installing Mods Tables...");
-				exec.execSqlBatch(modDir);
-				_frame.appendToProgressArea("Mods Tables Installed!");
-			}
-		}
-		
 		try
 		{
 			_frame.getConnection().close();

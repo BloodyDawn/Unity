@@ -99,7 +99,6 @@ import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.CastleManorManager;
 import org.l2junity.gameserver.instancemanager.ClanEntryManager;
 import org.l2junity.gameserver.instancemanager.ClanHallManager;
-import org.l2junity.gameserver.instancemanager.CoupleManager;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
 import org.l2junity.gameserver.instancemanager.DayNightSpawnManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
@@ -331,11 +330,6 @@ public class GameServer
 		// Init of a cursed weapon manager
 		
 		LOGGER.info("AutoSpawnHandler: Loaded {} handlers in total.", AutoSpawnHandler.getInstance().size());
-		
-		if (Config.L2JMOD_ALLOW_WEDDING)
-		{
-			CoupleManager.getInstance();
-		}
 		
 		TaskManager.getInstance();
 		

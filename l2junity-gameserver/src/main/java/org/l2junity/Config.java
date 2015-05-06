@@ -702,15 +702,6 @@ public final class Config
 	public static Map<Integer, Integer> TVT_EVENT_MAGE_BUFFS;
 	public static int TVT_EVENT_MAX_PARTICIPANTS_PER_IP;
 	public static boolean TVT_ALLOW_VOICED_COMMAND;
-	public static boolean L2JMOD_ALLOW_WEDDING;
-	public static int L2JMOD_WEDDING_PRICE;
-	public static boolean L2JMOD_WEDDING_PUNISH_INFIDELITY;
-	public static boolean L2JMOD_WEDDING_TELEPORT;
-	public static int L2JMOD_WEDDING_TELEPORT_PRICE;
-	public static int L2JMOD_WEDDING_TELEPORT_DURATION;
-	public static boolean L2JMOD_WEDDING_SAMESEX;
-	public static boolean L2JMOD_WEDDING_FORMALWEAR;
-	public static int L2JMOD_WEDDING_DIVORCE_COSTS;
 	public static boolean BANKING_SYSTEM_ENABLED;
 	public static int BANKING_SYSTEM_GOLDBARS;
 	public static int BANKING_SYSTEM_ADENA;
@@ -2099,16 +2090,6 @@ public final class Config
 			TVT_EVENT_RUNNING_TIME = L2JModSettings.getInt("TvTEventRunningTime", 1800);
 			TVT_EVENT_PARTICIPATION_NPC_ID = L2JModSettings.getInt("TvTEventParticipationNpcId", 0);
 			
-			L2JMOD_ALLOW_WEDDING = L2JModSettings.getBoolean("AllowWedding", false);
-			L2JMOD_WEDDING_PRICE = L2JModSettings.getInt("WeddingPrice", 250000000);
-			L2JMOD_WEDDING_PUNISH_INFIDELITY = L2JModSettings.getBoolean("WeddingPunishInfidelity", true);
-			L2JMOD_WEDDING_TELEPORT = L2JModSettings.getBoolean("WeddingTeleport", true);
-			L2JMOD_WEDDING_TELEPORT_PRICE = L2JModSettings.getInt("WeddingTeleportPrice", 50000);
-			L2JMOD_WEDDING_TELEPORT_DURATION = L2JModSettings.getInt("WeddingTeleportDuration", 60);
-			L2JMOD_WEDDING_SAMESEX = L2JModSettings.getBoolean("WeddingAllowSameSex", false);
-			L2JMOD_WEDDING_FORMALWEAR = L2JModSettings.getBoolean("WeddingFormalWear", true);
-			L2JMOD_WEDDING_DIVORCE_COSTS = L2JModSettings.getInt("WeddingDivorceCosts", 20);
-			
 			L2JMOD_OLD_DROP_BEHAVIOR = L2JModSettings.getBoolean("OldDropBehavior", false);
 			
 			if (TVT_EVENT_PARTICIPATION_NPC_ID == 0)
@@ -3313,33 +3294,6 @@ public final class Config
 				break;
 			case "championenableininstances":
 				L2JMOD_CHAMPION_ENABLE_IN_INSTANCES = Boolean.parseBoolean(pValue);
-				break;
-			case "allowwedding":
-				L2JMOD_ALLOW_WEDDING = Boolean.parseBoolean(pValue);
-				break;
-			case "weddingprice":
-				L2JMOD_WEDDING_PRICE = Integer.parseInt(pValue);
-				break;
-			case "weddingpunishinfidelity":
-				L2JMOD_WEDDING_PUNISH_INFIDELITY = Boolean.parseBoolean(pValue);
-				break;
-			case "weddingteleport":
-				L2JMOD_WEDDING_TELEPORT = Boolean.parseBoolean(pValue);
-				break;
-			case "weddingteleportprice":
-				L2JMOD_WEDDING_TELEPORT_PRICE = Integer.parseInt(pValue);
-				break;
-			case "weddingteleportduration":
-				L2JMOD_WEDDING_TELEPORT_DURATION = Integer.parseInt(pValue);
-				break;
-			case "weddingallowsamesex":
-				L2JMOD_WEDDING_SAMESEX = Boolean.parseBoolean(pValue);
-				break;
-			case "weddingformalwear":
-				L2JMOD_WEDDING_FORMALWEAR = Boolean.parseBoolean(pValue);
-				break;
-			case "weddingdivorcecosts":
-				L2JMOD_WEDDING_DIVORCE_COSTS = Integer.parseInt(pValue);
 				break;
 			case "tvteventenabled":
 				TVT_EVENT_ENABLED = Boolean.parseBoolean(pValue);

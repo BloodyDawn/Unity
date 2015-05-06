@@ -141,10 +141,6 @@ public abstract class IdFactory
 		setAllCharacterOffline();
 		if (Config.DATABASE_CLEAN_UP)
 		{
-			if (Config.L2JMOD_ALLOW_WEDDING)
-			{
-				cleanInvalidWeddings();
-			}
 			cleanUpDB();
 		}
 		cleanUpTimeStamps();
@@ -299,21 +295,6 @@ public abstract class IdFactory
 		catch (SQLException e)
 		{
 			_log.warn("Could not clean up database: " + e.getMessage(), e);
-		}
-	}
-	
-	private void cleanInvalidWeddings()
-	{
-		try (Connection con = DatabaseFactory.getInstance().getConnection();
-			Statement s = con.createStatement())
-		{
-			s.executeUpdate("DELETE FROM mods_wedding WHERE player1Id NOT IN (SELECT charId FROM characters)");
-			s.executeUpdate("DELETE FROM mods_wedding WHERE player2Id NOT IN (SELECT charId FROM characters)");
-			_log.info("Cleaned up invalid Weddings.");
-		}
-		catch (SQLException e)
-		{
-			_log.warn("Could not clean up invalid Weddings: " + e.getMessage(), e);
 		}
 	}
 	
