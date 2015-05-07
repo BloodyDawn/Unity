@@ -20,7 +20,6 @@ package org.l2junity.gameserver.model.conditions;
 
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -55,11 +54,6 @@ public class ConditionPlayerCallPc extends Condition
 		}
 		else if (player.inObserverMode())
 		{
-			canCallPlayer = false;
-		}
-		else if (!TvTEvent.onEscapeUse(player.getObjectId()))
-		{
-			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_SUMMONING_OR_TELEPORTING_IN_THIS_AREA);
 			canCallPlayer = false;
 		}
 		else if (player.isInsideZone(ZoneId.NO_SUMMON_FRIEND) || player.isInsideZone(ZoneId.JAIL) || player.isFlyingMounted())

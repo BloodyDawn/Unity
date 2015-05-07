@@ -26,7 +26,6 @@ import org.l2junity.gameserver.handler.IActionHandler;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -55,12 +54,6 @@ public class L2PcInstanceAction implements IActionHandler
 	@Override
 	public boolean action(PlayerInstance activeChar, WorldObject target, boolean interact)
 	{
-		// See description in TvTEvent.java
-		if (!TvTEvent.onAction(activeChar, target.getObjectId()))
-		{
-			return false;
-		}
-		
 		// Check if the L2PcInstance is confused
 		if (activeChar.isOutOfControl())
 		{

@@ -103,7 +103,6 @@ import handlers.admincommandhandlers.AdminTarget;
 import handlers.admincommandhandlers.AdminTargetSay;
 import handlers.admincommandhandlers.AdminTeleport;
 import handlers.admincommandhandlers.AdminTest;
-import handlers.admincommandhandlers.AdminTvTEvent;
 import handlers.admincommandhandlers.AdminUnblockIp;
 import handlers.admincommandhandlers.AdminVitality;
 import handlers.admincommandhandlers.AdminZone;
@@ -395,7 +394,6 @@ public class MasterHandler
 			AdminTargetSay.class,
 			AdminTeleport.class,
 			AdminTest.class,
-			AdminTvTEvent.class,
 			AdminUnblockIp.class,
 			AdminVitality.class,
 			AdminZone.class,

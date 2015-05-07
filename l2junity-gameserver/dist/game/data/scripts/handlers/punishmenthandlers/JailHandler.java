@@ -25,7 +25,6 @@ import org.l2junity.gameserver.handler.IPunishmentHandler;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.tasks.player.TeleportTask;
-import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.model.events.Containers;
 import org.l2junity.gameserver.model.events.EventType;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
@@ -159,11 +158,6 @@ public class JailHandler implements IPunishmentHandler
 	private static void applyToPlayer(PunishmentTask task, PlayerInstance player)
 	{
 		player.setInstanceId(0);
-		
-		if (!TvTEvent.isInactive() && TvTEvent.isPlayerParticipant(player.getObjectId()))
-		{
-			TvTEvent.removeParticipant(player.getObjectId());
-		}
 		
 		if (OlympiadManager.getInstance().isRegisteredInComp(player))
 		{

@@ -39,8 +39,6 @@ import org.l2junity.gameserver.model.actor.tasks.cubics.CubicBuff;
 import org.l2junity.gameserver.model.actor.tasks.cubics.CubicDisappear;
 import org.l2junity.gameserver.model.actor.tasks.cubics.CubicHeal;
 import org.l2junity.gameserver.model.effects.L2EffectType;
-import org.l2junity.gameserver.model.entity.TvTEvent;
-import org.l2junity.gameserver.model.entity.TvTEventTeam;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.Formulas;
@@ -311,21 +309,7 @@ public final class L2CubicInstance implements IIdentifiable
 			{
 				return;
 			}
-			// TvT event targeting
-			if (TvTEvent.isStarted() && TvTEvent.isPlayerParticipant(_owner.getObjectId()))
-			{
-				TvTEventTeam enemyTeam = TvTEvent.getParticipantEnemyTeam(_owner.getObjectId());
-				
-				if (ownerTarget.getActingPlayer() != null)
-				{
-					PlayerInstance target = ownerTarget.getActingPlayer();
-					if (enemyTeam.containsPlayer(target.getObjectId()) && !(target.isDead()))
-					{
-						_target = (Creature) ownerTarget;
-					}
-				}
-				return;
-			}
+			
 			// Duel targeting
 			if (_owner.isInDuel())
 			{

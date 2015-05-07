@@ -53,7 +53,6 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
-import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
@@ -1156,11 +1155,6 @@ public final class Skill implements IIdentifiable
 					{
 						return false;
 					}
-				}
-				
-				if (!TvTEvent.checkForTvTSkill(player, targetPlayer, skill))
-				{
-					return false;
 				}
 				
 				if (!sourceInArena && !(targetPlayer.isInsideZone(ZoneId.PVP) && !targetPlayer.isInsideZone(ZoneId.SIEGE)))

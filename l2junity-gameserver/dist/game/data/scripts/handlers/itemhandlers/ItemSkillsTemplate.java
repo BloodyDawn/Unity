@@ -21,11 +21,9 @@ package handlers.itemhandlers;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.handler.IItemHandler;
 import org.l2junity.gameserver.model.actor.Playable;
-import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -40,12 +38,6 @@ public class ItemSkillsTemplate implements IItemHandler
 	{
 		if (!playable.isPlayer() && !playable.isPet())
 		{
-			return false;
-		}
-		
-		if (!TvTEvent.onScrollUse(playable.getObjectId()))
-		{
-			playable.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
 		

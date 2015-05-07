@@ -49,7 +49,6 @@ import org.l2junity.gameserver.model.entity.Fort;
 import org.l2junity.gameserver.model.entity.FortSiege;
 import org.l2junity.gameserver.model.entity.L2Event;
 import org.l2junity.gameserver.model.entity.Siege;
-import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.model.entity.clanhall.AuctionableHall;
 import org.l2junity.gameserver.model.entity.clanhall.SiegableHall;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
@@ -536,8 +535,6 @@ public class EnterWorld implements IClientIncomingPacket
 				client.sendPacket(ExNoticePostArrived.valueOf(false));
 			}
 		}
-		
-		TvTEvent.onLogin(activeChar);
 		
 		if (Config.WELCOME_MESSAGE_ENABLED)
 		{

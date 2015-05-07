@@ -28,7 +28,6 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.model.zone.ZoneId;
@@ -84,11 +83,6 @@ public class CorpseParty implements ITargetTypeHandler
 					
 					// Don't add this target if this is a Pc->Pc pvp casting and pvp condition not met
 					if (!player.checkPvpSkill(member, skill))
-					{
-						continue;
-					}
-					
-					if (!TvTEvent.checkForTvTSkill(player, member, skill))
 					{
 						continue;
 					}

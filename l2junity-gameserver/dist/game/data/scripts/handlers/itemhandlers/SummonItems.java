@@ -22,7 +22,6 @@ import org.l2junity.gameserver.data.xml.impl.PetDataTable;
 import org.l2junity.gameserver.model.PetData;
 import org.l2junity.gameserver.model.actor.Playable;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.model.holders.PetItemHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -38,11 +37,6 @@ public class SummonItems extends ItemSkillsTemplate
 		if (!playable.isPlayer())
 		{
 			playable.sendPacket(SystemMessageId.YOUR_PET_CANNOT_CARRY_THIS_ITEM);
-			return false;
-		}
-		
-		if (!TvTEvent.onItemSummon(playable.getObjectId()))
-		{
 			return false;
 		}
 		

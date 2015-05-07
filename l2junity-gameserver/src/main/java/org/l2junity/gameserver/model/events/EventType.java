@@ -101,10 +101,6 @@ import org.l2junity.gameserver.model.events.impl.character.player.mentoring.OnPl
 import org.l2junity.gameserver.model.events.impl.character.trap.OnTrapAction;
 import org.l2junity.gameserver.model.events.impl.clan.OnClanWarFinish;
 import org.l2junity.gameserver.model.events.impl.clan.OnClanWarStart;
-import org.l2junity.gameserver.model.events.impl.events.OnTvTEventFinish;
-import org.l2junity.gameserver.model.events.impl.events.OnTvTEventKill;
-import org.l2junity.gameserver.model.events.impl.events.OnTvTEventRegistrationStart;
-import org.l2junity.gameserver.model.events.impl.events.OnTvTEventStart;
 import org.l2junity.gameserver.model.events.impl.item.OnItemBypassEvent;
 import org.l2junity.gameserver.model.events.impl.item.OnItemCreate;
 import org.l2junity.gameserver.model.events.impl.item.OnItemTalk;
@@ -240,13 +236,7 @@ public enum EventType
 	ON_PLAYER_SUB_CHANGE(OnPlayerSubChange.class, void.class),
 	
 	// Trap events
-	ON_TRAP_ACTION(OnTrapAction.class, void.class),
-	
-	// TvT events.
-	ON_TVT_EVENT_FINISH(OnTvTEventFinish.class, void.class),
-	ON_TVT_EVENT_KILL(OnTvTEventKill.class, void.class),
-	ON_TVT_EVENT_REGISTRATION_START(OnTvTEventRegistrationStart.class, void.class),
-	ON_TVT_EVENT_START(OnTvTEventStart.class, void.class);
+	ON_TRAP_ACTION(OnTrapAction.class, void.class);
 	
 	private final Class<? extends IBaseEvent> _eventClass;
 	private final Class<?>[] _returnClass;

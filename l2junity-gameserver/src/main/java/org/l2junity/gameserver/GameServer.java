@@ -125,7 +125,6 @@ import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.AutoSpawnHandler;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.entity.Hero;
-import org.l2junity.gameserver.model.entity.TvTManager;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.olympiad.Olympiad;
 import org.l2junity.gameserver.network.client.ClientNetworkManager;
@@ -345,8 +344,6 @@ public class GameServer
 		Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
 		
 		LOGGER.info("IdFactory: Free ObjectID's remaining: {}", IdFactory.getInstance().size());
-		
-		TvTManager.getInstance();
 		
 		if ((Config.OFFLINE_TRADE_ENABLE || Config.OFFLINE_CRAFT_ENABLE) && Config.RESTORE_OFFLINERS)
 		{

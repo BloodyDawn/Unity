@@ -26,9 +26,7 @@ import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.handler.IUserCommandHandler;
 import org.l2junity.gameserver.model.TeleportWhereType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.model.skills.Skill;
-import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
 import org.l2junity.gameserver.network.client.send.SetupGauge;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -47,13 +45,7 @@ public class Unstuck implements IUserCommandHandler
 	@Override
 	public boolean useUserCommand(int id, PlayerInstance activeChar)
 	{
-		// Thanks nbd
-		if (!TvTEvent.onEscapeUse(activeChar.getObjectId()))
-		{
-			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			return false;
-		}
-		else if (activeChar.isJailed())
+		if (activeChar.isJailed())
 		{
 			activeChar.sendMessage("You cannot use this function while you are jailed.");
 			return false;

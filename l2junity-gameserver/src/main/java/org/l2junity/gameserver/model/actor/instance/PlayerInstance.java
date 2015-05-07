@@ -192,7 +192,6 @@ import org.l2junity.gameserver.model.entity.Hero;
 import org.l2junity.gameserver.model.entity.Instance;
 import org.l2junity.gameserver.model.entity.L2Event;
 import org.l2junity.gameserver.model.entity.Siege;
-import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerEquipItem;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerFameChanged;
@@ -5089,8 +5088,6 @@ public final class PlayerInstance extends Playable
 			if (pk != null)
 			{
 				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerPvPKill(pk, this), this);
-				
-				TvTEvent.onKill(killer, this);
 				
 				if (L2Event.isParticipant(pk))
 				{
@@ -10835,8 +10832,6 @@ public final class PlayerInstance extends Playable
 			s.setFollowStatus(true);
 			s.updateAndBroadcastStatus(0);
 		});
-		
-		TvTEvent.onTeleported(this);
 	}
 	
 	@Override
@@ -11502,16 +11497,6 @@ public final class PlayerInstance extends Playable
 					}
 				}
 			}
-		}
-		catch (Exception e)
-		{
-			_log.error("deleteMe()", e);
-		}
-		
-		// TvT Event removal
-		try
-		{
-			TvTEvent.onLogout(this);
 		}
 		catch (Exception e)
 		{

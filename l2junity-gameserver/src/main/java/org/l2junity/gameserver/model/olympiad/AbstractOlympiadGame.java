@@ -31,7 +31,6 @@ import org.l2junity.gameserver.model.Party.MessageType;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
@@ -123,7 +122,7 @@ public abstract class AbstractOlympiadGame
 		}
 		
 		// safety precautions
-		if (player.inObserverMode() || TvTEvent.isPlayerParticipant(player.getObjectId()))
+		if (player.inObserverMode())
 		{
 			return SystemMessage.getSystemMessage(SystemMessageId.YOUR_OPPONENT_DOES_NOT_MEET_THE_REQUIREMENTS_TO_DO_BATTLE_THE_MATCH_HAS_BEEN_CANCELLED);
 		}

@@ -20,7 +20,6 @@ package org.l2junity.gameserver.model.conditions;
 
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.entity.TvTEvent;
 import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.skills.Skill;
 
@@ -43,10 +42,6 @@ public class ConditionPlayerCanEscape extends Condition
 		boolean canTeleport = true;
 		final PlayerInstance player = effector.getActingPlayer();
 		if (player == null)
-		{
-			canTeleport = false;
-		}
-		else if (!TvTEvent.onEscapeUse(player.getObjectId()))
 		{
 			canTeleport = false;
 		}
