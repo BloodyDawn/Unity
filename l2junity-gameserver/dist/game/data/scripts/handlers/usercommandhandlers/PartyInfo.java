@@ -21,7 +21,6 @@ package handlers.usercommandhandlers;
 import org.l2junity.gameserver.handler.IUserCommandHandler;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
@@ -66,13 +65,13 @@ public class PartyInfo implements IUserCommandHandler
 					break;
 			}
 			
-			if (!party.isLeader(activeChar))
-			{
-				final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PARTY_LEADER_C1);
-				sm.addPcName(party.getLeader());
-				activeChar.sendPacket(sm);
-			}
-			activeChar.sendMessage("Members: " + party.getMemberCount() + "/9"); // TODO: Custom?
+			// Not used in Infinite Odissey
+			// if (!party.isLeader(activeChar))
+			// {
+			// final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PARTY_LEADER_C1);
+			// sm.addPcName(party.getLeader());
+			// activeChar.sendPacket(sm);
+			// }
 		}
 		activeChar.sendPacket(SystemMessageId.EMPTY3);
 		return true;
