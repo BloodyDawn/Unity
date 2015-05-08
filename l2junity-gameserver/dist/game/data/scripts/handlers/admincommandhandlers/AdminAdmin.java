@@ -26,7 +26,6 @@ import org.l2junity.gameserver.enums.ChatType;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
-import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Hero;
 import org.l2junity.gameserver.model.olympiad.Olympiad;
@@ -80,13 +79,6 @@ public class AdminAdmin implements IAdminCommandHandler
 		if (command.startsWith("admin_admin"))
 		{
 			showMainPage(activeChar, command);
-			
-			if (activeChar.getTarget() != null)
-			{
-				final Npc npc = (Npc) activeChar.getTarget();
-				npc.getRightHandItem();
-				activeChar.sendMessage("R: " + npc.getRightHandItem() + ", L: " + npc.getLeftHandItem());
-			}
 		}
 		else if (command.equals("admin_config_server"))
 		{
