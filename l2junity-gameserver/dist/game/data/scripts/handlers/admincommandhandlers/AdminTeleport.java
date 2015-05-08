@@ -26,6 +26,7 @@ import java.util.StringTokenizer;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
+import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.datatables.SpawnTable;
@@ -196,7 +197,7 @@ public class AdminTeleport implements IAdminCommandHandler
 				st.nextToken();
 				final int x = (int) Float.parseFloat(st.nextToken());
 				final int y = (int) Float.parseFloat(st.nextToken());
-				final int z = (int) Float.parseFloat(st.nextToken());
+				final int z = st.hasMoreTokens() ? ((int) Float.parseFloat(st.nextToken())) : GeoData.getInstance().getSpawnHeight(x, y, GeoData.getInstance().getNearestZ(GeoData.getInstance().getGeoX(x), GeoData.getInstance().getGeoY(y), 0));
 				
 				activeChar.teleToLocation(x, y, z);
 			}
