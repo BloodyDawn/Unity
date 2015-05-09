@@ -197,7 +197,7 @@ public class AdminTeleport implements IAdminCommandHandler
 				st.nextToken();
 				final int x = (int) Float.parseFloat(st.nextToken());
 				final int y = (int) Float.parseFloat(st.nextToken());
-				final int z = st.hasMoreTokens() ? ((int) Float.parseFloat(st.nextToken())) : GeoData.getInstance().getSpawnHeight(x, y, GeoData.getInstance().getNearestZ(GeoData.getInstance().getGeoX(x), GeoData.getInstance().getGeoY(y), 0));
+				final int z = st.hasMoreTokens() ? ((int) Float.parseFloat(st.nextToken())) : GeoData.getInstance().getHeight(x, y, World.MAP_MAX_Z);
 				
 				activeChar.teleToLocation(x, y, z);
 			}
