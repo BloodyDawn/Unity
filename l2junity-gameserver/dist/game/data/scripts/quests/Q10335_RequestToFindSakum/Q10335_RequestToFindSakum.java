@@ -98,10 +98,13 @@ public final class Q10335_RequestToFindSakum extends Quest
 			}
 			case "33509-04.htm":
 			{
-				giveAdena(player, 900, true);
-				addExpAndSp(player, 350000, 84);
-				st.exitQuest(false, true);
-				htmltext = event;
+				if (st.isCond(3))
+				{
+					giveAdena(player, 900, true);
+					addExpAndSp(player, 350000, 84);
+					st.exitQuest(false, true);
+					htmltext = event;
+				}
 				break;
 			}
 		}

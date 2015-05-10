@@ -89,11 +89,14 @@ public final class Q10332_ToughRoad extends Quest
 			}
 			case "30332-03.htm":
 			{
-				giveAdena(player, 700, true);
-				addExpAndSp(player, 90000, 21);
-				st.exitQuest(false, true);
-				player.getVariables().remove(MOVIE_VAR);
-				break;
+				if (st.isCond(1))
+				{
+					giveAdena(player, 700, true);
+					addExpAndSp(player, 90000, 21);
+					st.exitQuest(false, true);
+					player.getVariables().remove(MOVIE_VAR);
+					break;
+				}
 			}
 		}
 		return htmltext;

@@ -108,10 +108,13 @@ public final class Q10333_DisappearedSakum extends Quest
 			}
 			case "33508-03.htm":
 			{
-				giveAdena(player, 800, true);
-				addExpAndSp(player, 180000, 43);
-				st.exitQuest(false, true);
-				htmltext = event;
+				if (st.isCond(3))
+				{
+					giveAdena(player, 800, true);
+					addExpAndSp(player, 180000, 43);
+					st.exitQuest(false, true);
+					htmltext = event;
+				}
 				break;
 			}
 		}
@@ -198,7 +201,6 @@ public final class Q10333_DisappearedSakum extends Quest
 				break;
 			}
 		}
-		
 		return htmltext;
 	}
 	

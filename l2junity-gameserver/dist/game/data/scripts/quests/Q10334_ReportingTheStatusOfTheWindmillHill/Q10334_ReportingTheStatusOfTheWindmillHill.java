@@ -77,10 +77,13 @@ public final class Q10334_ReportingTheStatusOfTheWindmillHill extends Quest
 			}
 			case "30332-03.htm":
 			{
-				giveAdena(player, 850, true);
-				addExpAndSp(player, 200000, 48);
-				st.exitQuest(false, true);
-				htmltext = event;
+				if (st.isCond(1))
+				{
+					giveAdena(player, 850, true);
+					addExpAndSp(player, 200000, 48);
+					st.exitQuest(false, true);
+					htmltext = event;
+				}
 				break;
 			}
 		}
@@ -120,11 +123,5 @@ public final class Q10334_ReportingTheStatusOfTheWindmillHill extends Quest
 			}
 		}
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
-	{
-		return super.onKill(npc, killer, isSummon);
 	}
 }
