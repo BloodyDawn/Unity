@@ -9,6 +9,7 @@
 
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="is_questitem" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="4401" type="EtcItem" name="Green Dimensional Stone">
@@ -78,6 +79,7 @@
 		<set name="price" val="10" />
 		<set name="crystal_type" val="NONE" />
 		<set name="is_freightable" val="false" />
+		<set name="is_questitem" val="true" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="4408" type="EtcItem" name="Musical Score - Theme of Love">
@@ -318,6 +320,7 @@
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
 		<set name="is_private_storeable" val="false" />
+		<set name="is_questitem" val="true" />
 		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
 		<cond msgId="113" addName="1">
 			<player flyMounted="false" />
