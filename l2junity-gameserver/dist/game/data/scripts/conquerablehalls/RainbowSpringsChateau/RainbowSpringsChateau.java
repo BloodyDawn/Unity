@@ -565,28 +565,6 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 				}
 			}
 		}
-		else if (event.startsWith("getItem"))
-		{
-			if (!_pendingItemToGet.containsKey(clan))
-			{
-				html = "yeti_cannot_exchange.htm";
-			}
-			
-			int left = _pendingItemToGet.get(clan);
-			if (left > 0)
-			{
-				int itemId = Integer.parseInt(event.split("_")[1]);
-				player.addItem("Rainbow Spring Chateau Siege", itemId, 1, npc, true);
-				--left;
-				_pendingItemToGet.put(clan, left);
-				html = "yeti_main.htm";
-			}
-			else
-			{
-				html = "yeti_cannot_exchange.htm";
-			}
-		}
-		
 		return html;
 	}
 	
