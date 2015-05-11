@@ -138,6 +138,12 @@ public final class RequestDropItem implements IClientIncomingPacket
 			return;
 		}
 		
+		if (activeChar.hasItemRequest())
+		{
+			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_DESTROY_OR_CRYSTALLIZE_ITEMS_WHILE_ENCHANTING_ATTRIBUTES);
+			return;
+		}
+		
 		// Cannot discard item that the skill is consuming
 		if (activeChar.isCastingNow())
 		{

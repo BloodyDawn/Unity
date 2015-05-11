@@ -89,6 +89,12 @@ public final class RequestDestroyItem implements IClientIncomingPacket
 			return;
 		}
 		
+		if (activeChar.hasItemRequest())
+		{
+			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_DESTROY_OR_CRYSTALLIZE_ITEMS_WHILE_ENCHANTING_ATTRIBUTES);
+			return;
+		}
+		
 		final ItemInstance itemToRemove = activeChar.getInventory().getItemByObjectId(_objectId);
 		
 		// if we can't find the requested item, its actually a cheat
