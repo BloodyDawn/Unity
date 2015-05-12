@@ -18,8 +18,12 @@
  */
 package org.l2junity.gameserver.network.client.recv.alchemy;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.impl.AlchemyData;
+import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.alchemy.AlchemyCraftData;
@@ -29,6 +33,8 @@ import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.recv.IClientIncomingPacket;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
 import org.l2junity.gameserver.network.client.send.alchemy.ExAlchemyConversion;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
 import org.l2junity.network.PacketReader;
 
 /**
@@ -40,7 +46,7 @@ public class RequestAlchemyConversion implements IClientIncomingPacket
 	private int _skillId;
 	private int _skillLevel;
 	
-	// private final Set<ItemHolder> _ingredients = new HashSet<>();
+	private final Set<ItemHolder> _ingredients = new HashSet<>();
 	
 	@Override
 	public boolean read(PacketReader packet)
@@ -50,11 +56,11 @@ public class RequestAlchemyConversion implements IClientIncomingPacket
 		_skillId = packet.readD();
 		_skillLevel = packet.readD();
 		
-		// final int ingredientsSize = packet.readD();
-		// for (int i = 0; i < ingredientsSize; i++)
-		// {
-		// _ingredients.add(new ItemHolder(packet.readD(), packet.readQ()));
-		// }
+		final int ingredientsSize = packet.readD();
+		for (int i = 0; i < ingredientsSize; i++)
+		{
+			_ingredients.add(new ItemHolder(packet.readD(), packet.readQ()));
+		}
 		return true;
 	}
 	
@@ -67,13 +73,35 @@ public class RequestAlchemyConversion implements IClientIncomingPacket
 			return;
 		}
 		
-		final AlchemyCraftData data = AlchemyData.getInstance().getCraftData(_skillId, _skillLevel);
-		if (data == null)
+		if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(player))
 		{
-			_log.warn("Missing data");
+			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_ALCHEMY_DURING_BATTLE);
+			return;
+		}
+		else if (player.isInStoreMode() || (player.getPrivateStoreType() != PrivateStoreType.NONE))
+		{
+			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_ALCHEMY_WHILE_TRADING_OR_USING_A_PRIVATE_STORE_OR_SHOP);
+			return;
+		}
+		else if (player.isDead())
+		{
+			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_ALCHEMY_WHILE_DEAD);
+			return;
+		}
+		else if (player.isMovementDisabled())
+		{
+			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_ALCHEMY_WHILE_IMMOBILE);
 			return;
 		}
 		
+		final AlchemyCraftData data = AlchemyData.getInstance().getCraftData(_skillId, _skillLevel);
+		if (data == null)
+		{
+			_log.warn("Missing AlchemyData for skillId: {}, skillLevel: {}", _skillId, _skillLevel);
+			return;
+		}
+		
+		// TODO : Implement this
 		// if (!_ingredients.equals(data.getIngredients()))
 		// {
 		// _log.warn("Client ingredients are not same as server ingredients for alchemy conversion player: {}", player);

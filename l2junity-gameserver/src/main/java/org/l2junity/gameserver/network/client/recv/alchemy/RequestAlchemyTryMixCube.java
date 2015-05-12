@@ -22,6 +22,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.l2junity.commons.util.Rnd;
+import org.l2junity.gameserver.enums.PrivateStoreType;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.enums.TryMixCubeResultType;
 import org.l2junity.gameserver.enums.TryMixCubeType;
@@ -38,6 +39,7 @@ import org.l2junity.gameserver.network.client.send.InventoryUpdate;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
 import org.l2junity.gameserver.network.client.send.alchemy.ExTryMixCube;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
+import org.l2junity.gameserver.taskmanager.AttackStanceTaskManager;
 import org.l2junity.network.PacketReader;
 
 /**
@@ -72,6 +74,27 @@ public class RequestAlchemyTryMixCube implements IClientIncomingPacket
 		final PlayerInstance player = client.getActiveChar();
 		if ((player == null) || (player.getRace() != Race.ERTHEIA))
 		{
+			return;
+		}
+		
+		if (AttackStanceTaskManager.getInstance().hasAttackStanceTask(player))
+		{
+			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_ALCHEMY_DURING_BATTLE);
+			return;
+		}
+		else if (player.isInStoreMode() || (player.getPrivateStoreType() != PrivateStoreType.NONE))
+		{
+			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_ALCHEMY_WHILE_TRADING_OR_USING_A_PRIVATE_STORE_OR_SHOP);
+			return;
+		}
+		else if (player.isDead())
+		{
+			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_ALCHEMY_WHILE_DEAD);
+			return;
+		}
+		else if (player.isMovementDisabled())
+		{
+			player.sendPacket(SystemMessageId.YOU_CANNOT_USE_ALCHEMY_WHILE_IMMOBILE);
 			return;
 		}
 		
