@@ -58,7 +58,8 @@ public final class ShortCutRegister implements IClientOutgoingPacket
 			case SKILL:
 			{
 				packet.writeD(_shortcut.getId());
-				packet.writeD(_shortcut.getLevel());
+				packet.writeH(_shortcut.getLevel());
+				packet.writeH(0x00); // Sub level
 				packet.writeD(_shortcut.getSharedReuseGroup());
 				packet.writeC(0x00); // C5
 				packet.writeD(_shortcut.getCharacterType());

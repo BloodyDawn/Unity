@@ -42,7 +42,8 @@ public final class RequestShortCutReg implements IClientIncomingPacket
 		_slot = slot % 12;
 		_page = slot / 12;
 		_id = packet.readD();
-		_lvl = packet.readD();
+		_lvl = packet.readH();
+		packet.readH(); // Sublevel
 		_characterType = packet.readD();
 		return true;
 	}
