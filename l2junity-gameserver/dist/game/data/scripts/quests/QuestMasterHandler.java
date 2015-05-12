@@ -197,6 +197,7 @@ import quests.Q10333_DisappearedSakum.Q10333_DisappearedSakum;
 import quests.Q10334_ReportingTheStatusOfTheWindmillHill.Q10334_ReportingTheStatusOfTheWindmillHill;
 import quests.Q10335_RequestToFindSakum.Q10335_RequestToFindSakum;
 import quests.Q10336_DividedSakumKanilov.Q10336_DividedSakumKanilov;
+import quests.Q10337_SakumsImpact.Q10337_SakumsImpact;
 import quests.Q10338_SeizeYourDestiny.Q10338_SeizeYourDestiny;
 import quests.Q10361_RolesOfTheSeeker.Q10361_RolesOfTheSeeker;
 import quests.Q10362_CertificationOfTheSeeker.Q10362_CertificationOfTheSeeker;
@@ -410,6 +411,7 @@ public class QuestMasterHandler
 		Q10334_ReportingTheStatusOfTheWindmillHill.class,
 		Q10335_RequestToFindSakum.class,
 		Q10336_DividedSakumKanilov.class,
+		Q10337_SakumsImpact.class,
 		Q10338_SeizeYourDestiny.class,
 		Q10361_RolesOfTheSeeker.class,
 		Q10362_CertificationOfTheSeeker.class,

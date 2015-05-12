@@ -135,6 +135,7 @@ public final class Q10336_DividedSakumKanilov extends Quest
 						{
 							st.setCond(3);
 							giveItems(player, SAKUM_SKETCH, 1);
+							st.setQuestLocation(NpcStringId.THE_TOWN_OF_GLUDIO);
 							htmltext = "33509-05.htm";
 						}
 						else
