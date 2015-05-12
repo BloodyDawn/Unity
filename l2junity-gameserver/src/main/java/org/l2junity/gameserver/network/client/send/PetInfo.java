@@ -67,6 +67,9 @@ public class PetInfo implements IClientOutgoingPacket
 			_maxFed = sum.getLifeTime();
 		}
 		
+		// _statusMask |= 0x01; // Auto attackable status
+		// _statusMask |= 0x02; // can be chatted with
+		
 		if (summon.isRunning())
 		{
 			_statusMask |= 0x04;
@@ -78,6 +81,10 @@ public class PetInfo implements IClientOutgoingPacket
 		if (summon.isDead())
 		{
 			_statusMask |= 0x10;
+		}
+		if (summon.isMountable())
+		{
+			_statusMask |= 0x20;
 		}
 	}
 	
