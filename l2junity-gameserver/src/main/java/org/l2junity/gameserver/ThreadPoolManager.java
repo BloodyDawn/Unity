@@ -275,6 +275,18 @@ public class ThreadPoolManager
 	 * @param task the task to execute
 	 * @param initialDelay the initial delay in the given time unit
 	 * @param period the period between executions in the given time unit
+	 * @return a ScheduledFuture representing pending completion of the task, and whose get() method will throw an exception upon cancellation
+	 */
+	public ScheduledFuture<?> scheduleEventAtFixedRate(Runnable task, long initialDelay, long period)
+	{
+		return scheduleEventAtFixedRate(task, initialDelay, period, TimeUnit.MILLISECONDS);
+	}
+	
+	/**
+	 * Schedules a event task to be executed at fixed rate.
+	 * @param task the task to execute
+	 * @param initialDelay the initial delay in the given time unit
+	 * @param period the period between executions in the given time unit
 	 * @param unit the time unit of the initialDelay and period parameters
 	 * @return a ScheduledFuture representing pending completion of the task, and whose get() method will throw an exception upon cancellation
 	 */
