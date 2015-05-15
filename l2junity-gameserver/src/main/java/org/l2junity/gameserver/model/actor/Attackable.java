@@ -716,7 +716,7 @@ public class Attackable extends Npc
 	 */
 	public void addDamageHate(Creature attacker, int damage, int aggro)
 	{
-		if (attacker == null)
+		if ((attacker == null) || (attacker == this))
 		{
 			return;
 		}
