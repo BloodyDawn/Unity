@@ -8782,6 +8782,7 @@ public final class PlayerInstance extends Playable
 			case AURA:
 			case FRONT_AURA:
 			case BEHIND_AURA:
+			case AREA_SUMMON:
 			case GROUND:
 			case SELF:
 				break;
