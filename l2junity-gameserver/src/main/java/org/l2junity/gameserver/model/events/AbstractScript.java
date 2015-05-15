@@ -48,6 +48,7 @@ import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -110,6 +111,8 @@ import org.l2junity.gameserver.model.events.listeners.FunctionEventListener;
 import org.l2junity.gameserver.model.events.listeners.RunnableEventListener;
 import org.l2junity.gameserver.model.events.returns.AbstractEventReturn;
 import org.l2junity.gameserver.model.events.returns.TerminateReturn;
+import org.l2junity.gameserver.model.events.timers.IEventTimer;
+import org.l2junity.gameserver.model.events.timers.TimerHolder;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.holders.MovieHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
@@ -139,15 +142,45 @@ import org.slf4j.LoggerFactory;
 /**
  * @author UnAfraid
  */
-public abstract class AbstractScript extends ManagedScript
+public abstract class AbstractScript extends ManagedScript implements IEventTimer<String>
 {
 	protected static final Logger _log = LoggerFactory.getLogger(AbstractScript.class);
 	private final Map<ListenerRegisterType, Set<Integer>> _registeredIds = new ConcurrentHashMap<>();
 	private final Queue<AbstractEventListener> _listeners = new PriorityBlockingQueue<>();
+	private volatile TimerExecutor<String> _timerExecutor;
 	
 	public AbstractScript()
 	{
 		initializeAnnotationListeners();
+	}
+	
+	@Override
+	public final void onTimerEvent(TimerHolder<String> holder)
+	{
+		onTimerEvent(holder.getEvent(), holder.getParams(), holder.getNpc(), holder.getPlayer());
+	}
+	
+	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
+	{
+		_log.warn("[{}]: Timer event arrived at non overriden onTimerEvent method event: {} npc: {} player: {}", getClass().getSimpleName(), event, npc, player);
+	}
+	
+	/**
+	 * @return the {@link TimerExecutor} object that manages timers
+	 */
+	public TimerExecutor<String> getTimers()
+	{
+		if (_timerExecutor == null)
+		{
+			synchronized (this)
+			{
+				if (_timerExecutor == null)
+				{
+					_timerExecutor = new TimerExecutor<>(this);
+				}
+			}
+		}
+		return _timerExecutor;
 	}
 	
 	private void initializeAnnotationListeners()
@@ -305,6 +338,10 @@ public abstract class AbstractScript extends ManagedScript
 	{
 		_listeners.forEach(AbstractEventListener::unregisterMe);
 		_listeners.clear();
+		if (_timerExecutor != null)
+		{
+			_timerExecutor.cancelAllTimers();
+		}
 		return true;
 	}
 	
