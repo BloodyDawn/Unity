@@ -200,6 +200,7 @@ import quests.Q10336_DividedSakumKanilov.Q10336_DividedSakumKanilov;
 import quests.Q10337_SakumsImpact.Q10337_SakumsImpact;
 import quests.Q10338_SeizeYourDestiny.Q10338_SeizeYourDestiny;
 import quests.Q10358_DividedSakumPoslof.Q10358_DividedSakumPoslof;
+import quests.Q10359_TracesOfEvil.Q10359_TracesOfEvil;
 import quests.Q10361_RolesOfTheSeeker.Q10361_RolesOfTheSeeker;
 import quests.Q10362_CertificationOfTheSeeker.Q10362_CertificationOfTheSeeker;
 import quests.Q10363_RequestOfTheSeeker.Q10363_RequestOfTheSeeker;
@@ -415,6 +416,7 @@ public class QuestMasterHandler
 		Q10337_SakumsImpact.class,
 		Q10338_SeizeYourDestiny.class,
 		Q10358_DividedSakumPoslof.class,
+		Q10359_TracesOfEvil.class,
 		Q10361_RolesOfTheSeeker.class,
 		Q10362_CertificationOfTheSeeker.class,
 		Q10363_RequestOfTheSeeker.class,
