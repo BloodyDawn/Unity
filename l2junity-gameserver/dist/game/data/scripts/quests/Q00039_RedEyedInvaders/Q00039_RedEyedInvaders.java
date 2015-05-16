@@ -57,6 +57,7 @@ public final class Q00039_RedEyedInvaders extends Quest
 		addTalkId(GUARD_BABENCO, CAPTAIN_BATHIA);
 		addKillId(MALE_LIZARDMAN_GUARD, MALE_LIZARDMAN_SCOUT, MALE_LIZARDMAN, GIANT_ARANE);
 		registerQuestItems(LIZ_NECKLACE_A.getId(), LIZ_NECKLACE_B.getId(), LIZ_PERFUME.getId(), LIZ_GEM.getId());
+		addCondMinLevel(MIN_LVL, "30334-02.htm");
 	}
 	
 	@Override
@@ -72,11 +73,8 @@ public final class Q00039_RedEyedInvaders extends Quest
 		{
 			case "30334-03.htm":
 			{
-				if (qs.isCreated())
-				{
-					qs.startQuest();
-					htmltext = event;
-				}
+				qs.startQuest();
+				htmltext = event;
 				break;
 			}
 			case "30332-02.html":
@@ -114,7 +112,7 @@ public final class Q00039_RedEyedInvaders extends Quest
 						rewardItems(player, GREEN_HIGH_LURE);
 						rewardItems(player, BABYDUCK_ROD);
 						rewardItems(player, FISHING_SHOT_NONE);
-						addExpAndSp(player, 62366, 2783);
+						addExpAndSp(player, 62366, 14);
 						qs.exitQuest(false, true);
 						htmltext = event;
 					}
@@ -172,7 +170,7 @@ public final class Q00039_RedEyedInvaders extends Quest
 			{
 				if (qs.isCreated())
 				{
-					htmltext = (talker.getLevel() >= MIN_LVL) ? "30334-01.htm" : "30334-02.htm";
+					htmltext = "30334-01.htm";
 				}
 				else if (qs.isStarted() && qs.isCond(1))
 				{
