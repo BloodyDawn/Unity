@@ -82,10 +82,10 @@ public class QuestLink implements IBypassHandler
 	 */
 	public static void showQuestChooseWindow(PlayerInstance player, Npc npc, Collection<Quest> quests)
 	{
-		final StringBuilder sb = new StringBuilder(128);
-		sb.append("<html><body>");
-		String state = "";
-		String color = "";
+		final StringBuilder sbStarted = new StringBuilder(128);
+		final StringBuilder sbCanStart = new StringBuilder(128);
+		final StringBuilder sbCantStart = new StringBuilder(128);
+		final StringBuilder sbCompleted = new StringBuilder(128);
 		
 		//@formatter:off
 		final Set<Quest> startingQuests = npc.getListeners(EventType.ON_NPC_QUEST_START).stream()
@@ -101,39 +101,42 @@ public class QuestLink implements IBypassHandler
 			final QuestState qs = player.getQuestState(quest.getScriptName());
 			if ((qs == null) || qs.isCreated() || (qs.isCompleted() && qs.isNowAvailable()))
 			{
-				state = quest.isCustomQuest() ? "" : "01";
 				if (startingQuests.contains(quest) && quest.canStartQuest(player))
 				{
-					color = "bbaa88";
+					sbCanStart.append("<font color=\"bbaa88\">");
+					sbCanStart.append("<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
+					sbCompleted.append(quest.isCustomQuest() ? quest.getDescr() : "<fstring>" + quest.getNpcStringId() + "01" + "</fstring>");
+					sbCompleted.append("</button></font>");
 				}
 				else
 				{
-					color = "a62f31";
+					sbCantStart.append("<font color=\"a62f31\">");
+					sbCantStart.append("<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
+					sbCompleted.append(quest.isCustomQuest() ? quest.getDescr() : "<fstring>" + quest.getNpcStringId() + "01" + "</fstring>");
+					sbCompleted.append("</button></font>");
 				}
 			}
 			else if (qs.isStarted())
 			{
-				state = quest.isCustomQuest() ? " (In Progress)" : "02";
-				color = "ffdd66";
+				sbStarted.append("<font color=\"ffdd66\">");
+				sbStarted.append("<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
+				sbCompleted.append(quest.isCustomQuest() ? quest.getDescr() + " (In Progress)" : "<fstring>" + quest.getNpcStringId() + "02" + "</fstring>");
+				sbCompleted.append("</button></font>");
 			}
 			else if (qs.isCompleted())
 			{
-				state = quest.isCustomQuest() ? " (Done)" : "03";
-				color = "787878";
+				sbCompleted.append("<font color=\"787878\">");
+				sbCompleted.append("<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
+				sbCompleted.append(quest.isCustomQuest() ? quest.getDescr() + " (Done) " : "<fstring>" + quest.getNpcStringId() + "03" + "</fstring>");
+				sbCompleted.append("</button></font>");
 			}
-			sb.append("<font color=\"" + color + "\">");
-			sb.append("<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
-			
-			if (quest.isCustomQuest())
-			{
-				sb.append(quest.getDescr() + state);
-			}
-			else
-			{
-				sb.append("<fstring>" + quest.getNpcStringId() + state + "</fstring>");
-			}
-			sb.append("</button></font>");
 		}
+		final StringBuilder sb = new StringBuilder(128);
+		sb.append("<html><body>");
+		sb.append(sbStarted.toString());
+		sb.append(sbCanStart.toString());
+		sb.append(sbCantStart.toString());
+		sb.append(sbCompleted.toString());
 		sb.append("</body></html>");
 		
 		// Send a Server->Client packet NpcHtmlMessage to the L2PcInstance in order to display the message of the L2NpcInstance
