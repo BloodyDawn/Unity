@@ -235,12 +235,6 @@ public final class Wastelands extends AbstractNpcAI
 				break;
 			}
 		}
-		
-		if (npc.getId() == COMMANDER)
-		{
-			startQuestTimer("SOCIAL_SHOW", 13000, npc, null, true);
-		}
-		npc.setRandomAnimationEnabled(false);
 		return super.onSpawn(npc);
 	}
 	
