@@ -88,80 +88,81 @@ public final class Q00210_ObtainAWolfPet extends Quest
 		}
 		return htmltext;
 	}
+	
 	@Override
 	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
 		
-	switch (qs.getState())
-	{
-		case State.CREATED:
+		switch (qs.getState())
 		{
-			if (npc.getId() == LUNDY)
+			case State.CREATED:
 			{
-				htmltext = "30827-01.htm";
+				if (npc.getId() == LUNDY)
+				{
+					htmltext = "30827-01.htm";
+					break;
+				}
+			}
+			case State.STARTED:
+			{
+				switch (npc.getId())
+				{
+					case LUNDY:
+					{
+						if (qs.isCond(1))
+						{
+							htmltext = "30827-04.htm";
+							break;
+						}
+						else if (qs.isCond(4))
+						{
+							htmltext = "30827-05.htm";
+							break;
+						}
+						break;
+					}
+					case BELLA:
+					{
+						if (qs.isCond(1))
+						{
+							qs.setCond(2, true);
+							htmltext = "30256-01.htm";
+						}
+						break;
+					}
+					case BRYNN:
+					{
+						if (qs.isCond(2))
+						{
+							qs.setCond(3, true);
+							htmltext = "30335-01.htm";
+						}
+						break;
+					}
+					case SYDNIA:
+					{
+						if (qs.isCond(3))
+						{
+							qs.setCond(4, true);
+							htmltext = "30321-01.htm";
+						}
+						break;
+					}
+				}
+				break;
+			}
+			case State.COMPLETED:
+			{
+				if (npc.getId() == LUNDY)
+				{
+					htmltext = "30827-07.htm";
+					break;
+				}
 				break;
 			}
 		}
-		case State.STARTED:
-		{
-			switch (npc.getId())
-			{
-				case LUNDY:
-				{
-					if (qs.isCond(1))
-					{
-						htmltext = "30827-04.htm";
-						break;
-					}
-					else if (qs.isCond(4))
-					{
-						htmltext = "30827-05.htm";
-						break;
-					}
-					break;
-				}
-				case BELLA:				
-				{
-					if (qs.isCond(1))
-					{
-						qs.setCond(2, true);
-						htmltext = "30256-01.htm";
-					}
-					break;
-				}
-				case BRYNN:				
-				{
-					if (qs.isCond(2))
-					{					
-						qs.setCond(3, true);
-						htmltext = "30335-01.htm";
-					}
-					break;
-				}
-				case SYDNIA:
-				{
-					if (qs.isCond(3))
-					{
-						qs.setCond(4, true);
-						htmltext = "30321-01.htm";
-					}
-					break;
-				}
-			}
-			break;
-		}
-		case State.COMPLETED:
-		{
-			if (npc.getId() == LUNDY)
-			{
-				htmltext = "30827-07.htm";
-				break;
-			}
-			break;
-		}
+		return htmltext;
 	}
-	return htmltext;
-	}
-}		
+}
