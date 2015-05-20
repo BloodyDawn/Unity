@@ -81,8 +81,8 @@ public final class Q10360_CertificationOfFate extends Quest
 		addFirstTalkId(JOEL, SCHUAZEN);
 		addKillId(REGENERATED_KANILOV, REGENERATED_POSLOF, SAKUM);
 		registerQuestItems(SHINE_STONE);
-		addCondNotRace(Race.ERTHEIA, ""); // TODO: On retail you can't see quest in quest link
-		addCondMinLevel(MIN_LEVEL, ""); // TODO: On retail you can't see quest in quest link
+		addCondNotRace(Race.ERTHEIA, "");
+		addCondMinLevel(MIN_LEVEL, "");
 	}
 	
 	@Override

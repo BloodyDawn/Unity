@@ -101,7 +101,12 @@ public class QuestLink implements IBypassHandler
 			final QuestState qs = player.getQuestState(quest.getScriptName());
 			if ((qs == null) || qs.isCreated() || (qs.isCompleted() && qs.isNowAvailable()))
 			{
-				if (startingQuests.contains(quest) && quest.canStartQuest(player))
+				final String startConditionHtml = quest.getStartConditionHtml(player);
+				if ((startConditionHtml != null) && startConditionHtml.isEmpty())
+				{
+					continue;
+				}
+				else if (startingQuests.contains(quest) && quest.canStartQuest(player))
 				{
 					sbCanStart.append("<font color=\"bbaa88\">");
 					sbCanStart.append("<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
