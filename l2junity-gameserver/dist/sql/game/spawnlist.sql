@@ -5228,8 +5228,6 @@ INSERT INTO `spawnlist` VALUES
 ("gludio23_npc1921_302", 1, 30659, -28978, 122028, -3669, 0, 0, 45056, 60, 0, 0, 0),
 -- Broadcasting Tower
 ("gludio_broadcast", 1, 31031, -13188, 124432, -3110, 0, 0, 16384, 5, 0, 0, 0),
--- Grand Olympiad Manager
-("dion22_npc2023_04", 1, 31688, -15120, 122096, -3064, 0, 0, 3000, 60, 0, 0, 0),
 -- Monument of Heroes 
 ("dion22_npc2023_03", 1, 31690, -15104, 122040, -3048, 0, 0, 3000, 60, 0, 0, 0),
 -- Mr. Cat
