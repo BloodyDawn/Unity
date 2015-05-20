@@ -110,23 +110,23 @@ public class QuestLink implements IBypassHandler
 				{
 					sbCanStart.append("<font color=\"bbaa88\">");
 					sbCanStart.append("<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
-					sbCompleted.append(quest.isCustomQuest() ? quest.getDescr() : "<fstring>" + quest.getNpcStringId() + "01" + "</fstring>");
-					sbCompleted.append("</button></font>");
+					sbCanStart.append(quest.isCustomQuest() ? quest.getDescr() : "<fstring>" + quest.getNpcStringId() + "01" + "</fstring>");
+					sbCanStart.append("</button></font>");
 				}
 				else
 				{
 					sbCantStart.append("<font color=\"a62f31\">");
 					sbCantStart.append("<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
-					sbCompleted.append(quest.isCustomQuest() ? quest.getDescr() : "<fstring>" + quest.getNpcStringId() + "01" + "</fstring>");
-					sbCompleted.append("</button></font>");
+					sbCanStart.append(quest.isCustomQuest() ? quest.getDescr() : "<fstring>" + quest.getNpcStringId() + "01" + "</fstring>");
+					sbCanStart.append("</button></font>");
 				}
 			}
 			else if (qs.isStarted())
 			{
 				sbStarted.append("<font color=\"ffdd66\">");
 				sbStarted.append("<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
-				sbCompleted.append(quest.isCustomQuest() ? quest.getDescr() + " (In Progress)" : "<fstring>" + quest.getNpcStringId() + "02" + "</fstring>");
-				sbCompleted.append("</button></font>");
+				sbStarted.append(quest.isCustomQuest() ? quest.getDescr() + " (In Progress)" : "<fstring>" + quest.getNpcStringId() + "02" + "</fstring>");
+				sbStarted.append("</button></font>");
 			}
 			else if (qs.isCompleted())
 			{
