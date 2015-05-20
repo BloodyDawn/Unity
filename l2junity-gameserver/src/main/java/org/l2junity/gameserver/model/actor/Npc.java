@@ -59,7 +59,6 @@ import org.l2junity.gameserver.model.actor.instance.L2DoormenInstance;
 import org.l2junity.gameserver.model.actor.instance.L2FishermanInstance;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
 import org.l2junity.gameserver.model.actor.instance.L2TeleporterInstance;
-import org.l2junity.gameserver.model.actor.instance.L2TrainerInstance;
 import org.l2junity.gameserver.model.actor.instance.L2WarehouseInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.actor.stat.NpcStat;
@@ -1373,15 +1372,6 @@ public class Npc extends Creature
 		if (this instanceof L2WarehouseInstance)
 		{
 			html = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "data/html/warehouse/" + npcId + "-noteach.htm");
-		}
-		else if (this instanceof L2TrainerInstance)
-		{
-			html = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "data/html/trainer/" + npcId + "-noteach.htm");
-			// Trainer Healer?
-			if (html == null)
-			{
-				html = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), "data/scripts/ai/npc/Trainers/HealerTrainer/" + npcId + "-noteach.html");
-			}
 		}
 		
 		final NpcHtmlMessage noTeachMsg = new NpcHtmlMessage(getObjectId());
