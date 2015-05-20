@@ -127,7 +127,6 @@ import handlers.bypasshandlers.PrivateWarehouse;
 import handlers.bypasshandlers.QuestLink;
 import handlers.bypasshandlers.ReceivePremium;
 import handlers.bypasshandlers.ReleaseAttribute;
-import handlers.bypasshandlers.RentPet;
 import handlers.bypasshandlers.SkillList;
 import handlers.bypasshandlers.TerritoryStatus;
 import handlers.bypasshandlers.TutorialClose;
@@ -420,7 +419,6 @@ public class MasterHandler
 			PrivateWarehouse.class,
 			ReceivePremium.class,
 			ReleaseAttribute.class,
-			RentPet.class,
 			SkillList.class,
 			TerritoryStatus.class,
 			TutorialClose.class,

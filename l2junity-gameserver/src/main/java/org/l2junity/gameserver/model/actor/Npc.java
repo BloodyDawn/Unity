@@ -1062,15 +1062,6 @@ public class Npc extends Creature
 		// Send a Server->Client NpcHtmlMessage containing the text of the L2NpcInstance to the L2PcInstance
 		final NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 		html.setFile(player.getHtmlPrefix(), filename);
-		
-		if (this instanceof L2MerchantInstance)
-		{
-			if (Config.LIST_PET_RENT_NPC.contains(npcId))
-			{
-				html.replace("_Quest", "_RentPet\">Rent Pet</a><br><a action=\"bypass -h npc_%objectId%_Quest");
-			}
-		}
-		
 		html.replace("%objectId%", String.valueOf(getObjectId()));
 		player.sendPacket(html);
 		

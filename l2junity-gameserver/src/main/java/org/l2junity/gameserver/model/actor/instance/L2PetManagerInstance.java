@@ -18,7 +18,6 @@
  */
 package org.l2junity.gameserver.model.actor.instance;
 
-import org.l2junity.Config;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
@@ -60,10 +59,6 @@ public class L2PetManagerInstance extends L2MerchantInstance
 		
 		final NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 		html.setFile(player.getHtmlPrefix(), filename);
-		if (Config.ALLOW_RENTPET && Config.LIST_PET_RENT_NPC.contains(getId()))
-		{
-			html.replace("_Quest", "_RentPet\">Rent Pet</a><br><a action=\"bypass -h npc_%objectId%_Quest");
-		}
 		html.replace("%objectId%", String.valueOf(getObjectId()));
 		html.replace("%npcname%", getName());
 		player.sendPacket(html);

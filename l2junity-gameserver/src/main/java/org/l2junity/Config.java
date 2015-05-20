@@ -736,7 +736,6 @@ public final class Config
 	public static int CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY;
 	public static boolean GUARD_ATTACK_AGGRO_MOB;
 	public static boolean ALLOW_WYVERN_UPGRADER;
-	public static List<Integer> LIST_PET_RENT_NPC;
 	public static double RAID_HP_REGEN_MULTIPLIER;
 	public static double RAID_MP_REGEN_MULTIPLIER;
 	public static double RAID_PDEFENCE_MULTIPLIER;
@@ -1864,12 +1863,6 @@ public final class Config
 			CORPSE_CONSUME_SKILL_ALLOWED_TIME_BEFORE_DECAY = NPC.getInt("CorpseConsumeSkillAllowedTimeBeforeDecay", 2000);
 			GUARD_ATTACK_AGGRO_MOB = NPC.getBoolean("GuardAttackAggroMob", false);
 			ALLOW_WYVERN_UPGRADER = NPC.getBoolean("AllowWyvernUpgrader", false);
-			String[] listPetRentNpc = NPC.getString("ListPetRentNpc", "30827").split(",");
-			LIST_PET_RENT_NPC = new ArrayList<>(listPetRentNpc.length);
-			for (String id : listPetRentNpc)
-			{
-				LIST_PET_RENT_NPC.add(Integer.valueOf(id));
-			}
 			RAID_HP_REGEN_MULTIPLIER = NPC.getDouble("RaidHpRegenMultiplier", 100) / 100;
 			RAID_MP_REGEN_MULTIPLIER = NPC.getDouble("RaidMpRegenMultiplier", 100) / 100;
 			RAID_PDEFENCE_MULTIPLIER = NPC.getDouble("RaidPDefenceMultiplier", 100) / 100;
