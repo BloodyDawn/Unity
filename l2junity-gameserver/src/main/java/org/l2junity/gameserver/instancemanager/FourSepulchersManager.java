@@ -1564,6 +1564,11 @@ public final class FourSepulchersManager
 			html.replace("%member%", member.getName());
 		}
 		player.sendPacket(html);
+		
+		if (player.isGM() && player.isDebug())
+		{
+			player.sendMessage("HTML: data/html/SepulcherNpc/" + file);
+		}
 	}
 	
 	public static final FourSepulchersManager getInstance()

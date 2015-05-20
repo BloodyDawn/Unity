@@ -392,6 +392,10 @@ public class OlympiadManager
 			message.setFile(player.getHtmlPrefix(), "data/html/olympiad/noble_nopoints1.htm");
 			message.replace("%objectId%", String.valueOf(noble.getLastHtmlActionOriginId()));
 			player.sendPacket(message);
+			if (player.isGM() && player.isDebug())
+			{
+				player.sendMessage("HTML: data/html/olympiad/noble_nopoints1.htm");
+			}
 			return false;
 		}
 		
@@ -401,6 +405,10 @@ public class OlympiadManager
 			message.setFile(player.getHtmlPrefix(), "data/html/mods/OlympiadIPRestriction.htm");
 			message.replace("%max%", String.valueOf(AntiFeedManager.getInstance().getLimit(player, Config.L2JMOD_DUALBOX_CHECK_MAX_OLYMPIAD_PARTICIPANTS_PER_IP)));
 			player.sendPacket(message);
+			if (player.isGM() && player.isDebug())
+			{
+				player.sendMessage("HTML: data/html/mods/OlympiadIPRestriction.htm");
+			}
 			return false;
 		}
 		

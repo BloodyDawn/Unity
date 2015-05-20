@@ -523,6 +523,11 @@ public class Hero
 				}
 				
 				activeChar.sendPacket(DiaryReply);
+				
+				if (activeChar.isGM() && activeChar.isDebug())
+				{
+					activeChar.sendMessage("HTML: data/html/olympiad/herodiary.htm");
+				}
 			}
 		}
 	}
@@ -615,6 +620,11 @@ public class Hero
 				FightReply.replace("%loos%", String.valueOf(_loss));
 				
 				activeChar.sendPacket(FightReply);
+				
+				if (activeChar.isGM() && activeChar.isDebug())
+				{
+					activeChar.sendMessage("HTML: data/html/olympiad/herohistory.htm");
+				}
 			}
 		}
 	}

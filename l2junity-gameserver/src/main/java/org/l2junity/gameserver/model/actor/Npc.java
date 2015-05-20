@@ -930,6 +930,10 @@ public class Npc extends Creature
 		if (html != null)
 		{
 			insertObjectIdAndShowChatWindow(player, html);
+			if (player.isGM() && player.isDebug())
+			{
+				player.sendMessage("HTML : data/html/" + type + "/" + getId() + "-pk.htm");
+			}
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return true;
 		}
@@ -1070,6 +1074,11 @@ public class Npc extends Creature
 		html.replace("%objectId%", String.valueOf(getObjectId()));
 		player.sendPacket(html);
 		
+		if (player.isGM() && player.isDebug())
+		{
+			player.sendMessage("HTML: " + filename);
+		}
+		
 		// Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
@@ -1086,6 +1095,11 @@ public class Npc extends Creature
 		html.setFile(player.getHtmlPrefix(), filename);
 		html.replace("%objectId%", String.valueOf(getObjectId()));
 		player.sendPacket(html);
+		
+		if (player.isGM() && player.isDebug())
+		{
+			player.sendMessage("HTML: " + filename);
+		}
 		
 		// Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet
 		player.sendPacket(ActionFailed.STATIC_PACKET);

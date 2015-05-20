@@ -2680,6 +2680,11 @@ public class Quest extends AbstractScript implements IIdentifiable
 				player.sendPacket(npcReply);
 			}
 			player.sendPacket(ActionFailed.STATIC_PACKET);
+			
+			if (player.isGM() && player.isDebug())
+			{
+				player.sendMessage("HTML: " + (filename.startsWith("data/") ? filename : "data/scripts/" + getDescr().toLowerCase() + "/" + getName() + "/" + filename));
+			}
 		}
 		
 		return content;
