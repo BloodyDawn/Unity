@@ -30,7 +30,7 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 
 /**
- * Monster Uprising (10368)
+ * Rebellion of Monsters (10368)
  * @author St3eT
  */
 public final class Q10368_RebellionOfMonsters extends Quest
