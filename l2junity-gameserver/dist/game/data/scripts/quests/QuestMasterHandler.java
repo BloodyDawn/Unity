@@ -209,6 +209,7 @@ import quests.Q10363_RequestOfTheSeeker.Q10363_RequestOfTheSeeker;
 import quests.Q10364_ObligationsOfTheSeeker.Q10364_ObligationsOfTheSeeker;
 import quests.Q10365_SeekerEscort.Q10365_SeekerEscort;
 import quests.Q10366_RuinsStatusUpdate.Q10366_RuinsStatusUpdate;
+import quests.Q10368_RebellionOfMonsters.Q10368_RebellionOfMonsters;
 import quests.Q10501_ZakenEmbroideredSoulCloak.Q10501_ZakenEmbroideredSoulCloak;
 import quests.Q10502_FreyaEmbroideredSoulCloak.Q10502_FreyaEmbroideredSoulCloak;
 import quests.Q10503_FrintezzaEmbroideredSoulCloak.Q10503_FrintezzaEmbroideredSoulCloak;
@@ -427,6 +428,7 @@ public class QuestMasterHandler
 		Q10364_ObligationsOfTheSeeker.class,
 		Q10365_SeekerEscort.class,
 		Q10366_RuinsStatusUpdate.class,
+		Q10368_RebellionOfMonsters.class,
 		Q10501_ZakenEmbroideredSoulCloak.class,
 		Q10502_FreyaEmbroideredSoulCloak.class,
 		Q10503_FrintezzaEmbroideredSoulCloak.class,
