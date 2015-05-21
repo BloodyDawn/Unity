@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="10700" levels="4" name="Mug">
-
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts 11903 damage onto nearby enemies and steals their item. Requires a dagger or dual dagger. -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 18 21 24 27 </table>
 		<set name="icon" val="icon.skill10700" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1030" />
@@ -868,9 +869,9 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10797" levels="8" name="Thunder Feather Blast">
-		<table name="#effectPoint"> -687 -698 -707 -709 -709 -709 -709 -709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Hurls feathers toward the enemy. -->
+		<table name="#effectPoint"> -687 -698 -707 -709 -709 -709 -709 -709 </table>
 		<table name="#mpConsumes"> 71 78 84 86 86 86 86 86 </table>
 		<set name="icon" val="icon.skill6044" />
 		<set name="operateType" val="A1" />

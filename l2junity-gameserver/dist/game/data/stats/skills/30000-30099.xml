@@ -23,7 +23,7 @@
 		<set name="power" val="#power" />
 		<set name="castRange" val="80" />
 		<set name="affectRange" val="160" /> <!-- Unconfirmed -->
-		<set name="effectPoint" val="-692" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="-692" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="isMagic" val="1" />
@@ -98,7 +98,7 @@
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="power" val="#power" />
 		<set name="castRange" val="80" />
-		<set name="effectPoint" val="-696" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="-696" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
 		<set name="isMagic" val="1" />
@@ -213,7 +213,7 @@
 		<set name="icon" val="icon.skill30008" />
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="10" />
-		<set name="abnormalVisualEffect" val="WIND_HIDE" />
+		<set name="abnormalVisualEffect" val="WIND_BLEND" />
 		<set name="effectPoint" val="687" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A2" />
 		<set name="removedOnAnyActionExceptMove" val="true" />
@@ -270,8 +270,9 @@
 		<set name="icon" val="icon.skill30010" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="abnormalVisualEffect" val="WIND_HIDE" />
 		<set name="blockedInOlympiad" val="true" /> <!-- Unconfirmed -->
-		<set name="effectPoint" val="687" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="687" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="40" />
@@ -294,7 +295,6 @@
 		</for>
 	</skill>
 	<skill id="30011" levels="12" name="Threatening Wind">
-
 		<!-- Updated to Ertheia -->
 		<!-- Sends a slashing wind to brand target with Storm Sign Stage 3. Requires a sword or blunt Weapon. -->
 		<table name="#mpConsumes"> 31 31 32 32 33 33 34 34 34 34 34 35 </table>
@@ -438,11 +438,14 @@
 	<skill id="30017" levels="3" name="Squall">
 		<!-- Updated to Ertheia -->
 		<!-- For 10 min., Received P./M. Critical Damage - 15%, and Has a chance of striking target with lightning. -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<table name="#mpConsumes"> 18 37 40 </table>
 		<table name="#runSpd"> 0 7 7 </table>
 		<table name="#triggerLevel"> 1 2 3 </table>
 		<set name="icon" val="icon.skill30017" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="600" />
+		<set name="abnormalVisualEffect" val="SQUALL" />
 		<set name="effectPoint" val="2" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -471,7 +474,9 @@
 		<!-- Updated to Ertheia -->
 		<!-- Removes all debuffs and becomes invincible against targeting for 10 sec. -->
 		<set name="icon" val="icon.skill30018" />
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="abnormalVisualEffect" val="WIND_ILLUSION" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="41" />
@@ -491,9 +496,11 @@
 	<skill id="30019" levels="8" name="Sayha's Word">
 		<!-- Updated to Ertheia -->
 		<!-- Attacks target with 533 Power added to M. Atk., and decreases their Atk./Casting Spd. by 30% and Speed by 180 for 10 sec. Instantly brands target with Storm Sign Stage 3. 10% more damage if target is debuffed. Requires a sword or blunt weapon. -->
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#mpConsumes"> 670 677 682 687 690 694 699 705 </table>
 		<table name="#power"> 533 561 589 617 645 673 701 729 </table>
 		<set name="icon" val="icon.skill30019" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="10" />
 		<set name="effectPoint" val="-687" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A2" />
@@ -522,7 +529,9 @@
 		<!-- Updated to Ertheia -->
 		<!-- For 30 sec., Received P./M. Critical Damage - 50%, and Speed + 70. Has a chance of striking an attacker with lightning and branding them with Storm Sign Stage 4. Requires a sword or blunt weapon. -->
 		<set name="icon" val="icon.skill30020" />
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
+		<set name="abnormalVisualEffect" val="SAYHA_FURY" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="40" />
@@ -536,8 +545,8 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="defCritDamage" val="0.50" />
-				<mul stat="defMCritDamage" val="0.50" />
+				<mul stat="defCritDamage" val="0.5" />
+				<mul stat="defMCritDamage" val="0.5" />
 				<add stat="runSpd" val="70" />
 			</effect>
 			<effect name="TriggerSkillByDamage">
@@ -551,6 +560,7 @@
 		<!-- Updated to Ertheia -->
 		<!-- For 30 sec., nearby party members' Speed + 50, and Knock Back / Knock Down / Pull / Aerial Yoke / Aggression Resistance + 30. Requires a sword or blunt weapon. -->
 		<set name="icon" val="icon.skill30022" />
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="effectPoint" val="687" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A2" />
@@ -629,7 +639,7 @@
 		<set name="abnormalTime" val="5" /> <!-- Unconfirmed -->
 		<set name="affectLimit" val="10-10" /> <!-- Unconfirmed -->
 		<set name="affectRange" val="200" /> <!-- Unconfirmed -->
-		<set name="effectPoint" val="-707" /> <!-- Unconfirmed -->
+		<set name="effectPoint" val="-707" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="448" />
 		<set name="targetType" val="AURA" />
@@ -758,7 +768,6 @@
 		<for>
 			<effect name="Buff">
 				<add stat="maxHp" val="#maxHp" />
-				<add stat="maxMp" val="#maxMp" />
 				<add stat="regMp" val="#regMp" />
 				<mul stat="mReuse" val="#mReuse" />
 				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
@@ -781,7 +790,7 @@
 		</for>
 	</skill>
 	<skill id="30044" levels="2" name="Eminent Trait Resistance">
-		<!-- TODO Updated to Ertheia -->
+		<!-- Updated to Ertheia -->
 		<!-- Hold/Mental Resistance + 30. -->
 		<table name="#pullRes"> 0 30 </table>
 		<table name="#hateRes"> 0 30 </table>
