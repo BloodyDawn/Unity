@@ -2962,6 +2962,8 @@ public final class PlayerInstance extends Playable
 			{
 				sendPacket(new ItemList(this, false));
 			}
+			
+			sendPacket(new ExAdenaInvenCount(this));
 		}
 	}
 	
