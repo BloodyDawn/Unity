@@ -946,6 +946,28 @@
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
 		<ai isAggressive="false" />
+		<drop_lists>
+			<death>
+				<group chance="12.935">
+					<item id="2497" min="1" max="1" chance="63.965983764979" /> <!-- Full Plate Shield -->
+					<item id="7897" min="1" max="1" chance="12.17626594511" /> <!-- Dwarven Hammer -->
+					<item id="2503" min="1" max="1" chance="12.114418245072" /> <!-- Yaksa Mace -->
+					<item id="7891" min="1" max="1" chance="11.74333204484" /> <!-- Ecliptic Axe -->
+				</group>
+				<group chance="3.539">
+					<item id="473" min="1" max="1" chance="100" /> <!-- Divine Stockings -->
+				</group>
+				<group chance="2.656">
+					<item id="2438" min="1" max="1" chance="100" /> <!-- Full Plate Boots -->
+				</group>
+				<group chance="0.75">
+					<item id="6573" min="1" max="1" chance="100" /> <!-- Blessed Scroll: Enchant Weapon (C-grade) -->
+				</group>
+			</death>
+			<lucky_corpse>
+				<item id="39629" min="1" max="1" chance="59.79" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
 		<collision>
 			<radius normal="20" grown="25" />
 			<height normal="35" grown="41.5" />
@@ -1697,6 +1719,17 @@
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
 		<ai isAggressive="false" />
+		<drop_lists>
+			<death>
+				<group chance="0.6">
+					<item id="17413" min="1" max="1" chance="50" /> <!-- Seraph Necklace -->
+					<item id="17414" min="1" max="1" chance="50" /> <!-- Seraph Earring -->
+				</group>
+			</death>
+			<lucky_corpse>
+				<item id="39629" min="2" max="2" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
 		<collision>
 			<radius normal="24" />
 			<height normal="45" />
@@ -1728,6 +1761,17 @@
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
 		<ai isAggressive="false" />
+		<drop_lists>
+			<death>
+				<group chance="1.05">
+					<item id="17415" min="1" max="1" chance="71.428571428571" /> <!-- Seraph Ring -->
+					<item id="17414" min="1" max="1" chance="28.571428571429" /> <!-- Seraph Earring -->
+				</group>
+			</death>
+			<lucky_corpse>
+				<item id="39629" min="2" max="2" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
 		<collision>
 			<radius normal="18" />
 			<height normal="39" />
@@ -2594,6 +2638,81 @@
 			<skill id="14949" level="1" /> <!-- Succubus Blow -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 		</skill_list>
+		<drop_lists>
+			<death>
+				<group chance="39.528">
+					<item id="36796" min="1" max="1" chance="9.1555353167375" /> <!-- Requiem Slasher Fragment -->
+					<item id="36798" min="1" max="1" chance="9.1504756122242" /> <!-- Requiem Fighter Fragment -->
+					<item id="36804" min="1" max="1" chance="9.1504756122242" /> <!-- Requiem Retributer Fragment -->
+					<item id="36795" min="1" max="1" chance="9.1302367941712" /> <!-- Requiem Cutter Fragment -->
+					<item id="36801" min="1" max="1" chance="9.1201173851447" /> <!-- Requiem Shooter Fragment -->
+					<item id="36802" min="1" max="1" chance="9.1125278283748" /> <!-- Requiem Buster Fragment -->
+					<item id="36799" min="1" max="1" chance="9.0922890103218" /> <!-- Requiem Stormer Fragment -->
+					<item id="36797" min="1" max="1" chance="9.0821696012953" /> <!-- Requiem Avenger Fragment -->
+					<item id="36800" min="1" max="1" chance="9.0442218174459" /> <!-- Requiem Thrower Fragment -->
+					<item id="36803" min="1" max="1" chance="8.9961546245699" /> <!-- Requiem Caster Fragment -->
+					<item id="36794" min="1" max="1" chance="8.9657963974904" /> <!-- Requiem Shaper Fragment -->
+				</group>
+				<group chance="21.389">
+					<item id="36812" min="1" max="1" chance="16.732900088831" /> <!-- Immortal Leather Armor Ingredient -->
+					<item id="36817" min="1" max="1" chance="16.732900088831" /> <!-- Immortal Tunic Ingredient -->
+					<item id="36813" min="1" max="1" chance="16.718874187667" /> <!-- Immortal Leather Legging Ingredient -->
+					<item id="36806" min="1" max="1" chance="16.700172986114" /> <!-- Immortal Breastplate Ingredient -->
+					<item id="36807" min="1" max="1" chance="16.690822385338" /> <!-- Immortal Gaiter Ingredient -->
+					<item id="36818" min="1" max="1" chance="16.424330263219" /> <!-- Immortal Stocking Ingredient -->
+				</group>
+				<group chance="17.946">
+					<item id="36805" min="1" max="1" chance="20.13262008247" /> <!-- Immortal Helmet Ingredient -->
+					<item id="36816" min="1" max="1" chance="20.076897358743" /> <!-- Immortal Circlet Ingredient -->
+					<item id="36821" min="1" max="1" chance="20.054608269252" /> <!-- Immortal Sigil Ingredient -->
+					<item id="36811" min="1" max="1" chance="19.998885545525" /> <!-- Immortal Leather Helmet Ingredient -->
+					<item id="36810" min="1" max="1" chance="19.73698874401" /> <!-- Immortal Shield Ingredient -->
+				</group>
+				<group chance="100">
+					<item id="17526" min="1" max="1" chance="18.390686173501" /> <!-- Scroll: Enchant Weapon (R-grade) -->
+					<item id="17527" min="1" max="1" chance="18.309734773778" /> <!-- Scroll: Enchant Armor (R-grade) -->
+					<item id="36586" min="1" max="1" chance="9.6001000853669" /> <!-- Scroll: Modify Armor (R-grade) -->
+					<item id="36574" min="1" max="1" chance="9.0224014600689" /> <!-- Scroll: Modify Weapon (R-grade) -->
+					<item id="36738" min="1" max="1" chance="1.3393777045127" /> <!-- Recipe: Requiem Thrower (60%) -->
+					<item id="36756" min="1" max="1" chance="1.3375378999735" /> <!-- Recipe: Immortal Stockings (60%) -->
+					<item id="36750" min="1" max="1" chance="1.3349621736187" /> <!-- Recipe: Immortal Leather Armor (60%) -->
+					<item id="36809" min="1" max="1" chance="1.334226251803" /> <!-- Immortal Boot Ingredient -->
+					<item id="36820" min="1" max="1" chance="1.3331223690795" /> <!-- Immortal Shoe Ingredient -->
+					<item id="36734" min="1" max="1" chance="1.3290747990933" /> <!-- Recipe: Requiem Slasher (60%) -->
+					<item id="36749" min="1" max="1" chance="1.3283388772777" /> <!-- Recipe: Immortal Leather Helmet (60%) -->
+					<item id="36746" min="1" max="1" chance="1.325395190015" /> <!-- Recipe: Immortal Gauntlets (60%) -->
+					<item id="36759" min="1" max="1" chance="1.3264990727385" /> <!-- Recipe: Immortal Sigil (60%) -->
+					<item id="36751" min="1" max="1" chance="1.323187424568" /> <!-- Recipe: Immortal Leather Leggings (60%) -->
+					<item id="36745" min="1" max="1" chance="1.3202437373053" /> <!-- Recipe: Immortal Gaiters (60%) -->
+					<item id="36741" min="1" max="1" chance="1.3202437373053" /> <!-- Recipe: Requiem Caster (60%) -->
+					<item id="36754" min="1" max="1" chance="1.3202437373053" /> <!-- Recipe: Immortal Circlet (60%) -->
+					<item id="36737" min="1" max="1" chance="1.318771893674" /> <!-- Recipe: Requiem Stormer (60%) -->
+					<item id="36747" min="1" max="1" chance="1.3180359718583" /> <!-- Recipe: Immortal Boots (60%) -->
+					<item id="36752" min="1" max="1" chance="1.316564128227" /> <!-- Recipe: Immortal Leather Gloves (60%) -->
+					<item id="36736" min="1" max="1" chance="1.3161961673192" /> <!-- Recipe: Requiem Fighter (60%) -->
+					<item id="36735" min="1" max="1" chance="1.3161961673192" /> <!-- Recipe: Requiem Avenger (60%) -->
+					<item id="36757" min="1" max="1" chance="1.3158282064114" /> <!-- Recipe: Immortal Gloves (60%) -->
+					<item id="36744" min="1" max="1" chance="1.3150922845957" /> <!-- Recipe: Immortal Breastplate (60%) -->
+					<item id="36743" min="1" max="1" chance="1.3132524800565" /> <!-- Recipe: Immortal Helmet (60%) -->
+					<item id="36748" min="1" max="1" chance="1.3095728709782" /> <!-- Recipe: Immortal Shield (60%) -->
+					<item id="36758" min="1" max="1" chance="1.3062612228077" /> <!-- Recipe: Immortal Shoes (60%) -->
+					<item id="36814" min="1" max="1" chance="1.3062612228077" /> <!-- Immortal Leather Glove Ingredient -->
+					<item id="36753" min="1" max="1" chance="1.3047893791764" /> <!-- Recipe: Immortal Leather Boots (60%) -->
+					<item id="36808" min="1" max="1" chance="1.3025816137294" /> <!-- Immortal Gauntlet Ingredient -->
+					<item id="36739" min="1" max="1" chance="1.2992699655589" /> <!-- Recipe: Requiem Shooter (60%) -->
+					<item id="36819" min="1" max="1" chance="1.2974301610197" /> <!-- Immortal Glove Ingredient -->
+					<item id="36815" min="1" max="1" chance="1.2941185128492" /> <!-- Immortal Leather Boot Ingredient -->
+					<item id="36742" min="1" max="1" chance="1.2930146301257" /> <!-- Recipe: Requiem Retributer (60%) -->
+					<item id="36732" min="1" max="1" chance="1.29227870831" /> <!-- Recipe: Requiem Shaper (60%) -->
+					<item id="36740" min="1" max="1" chance="1.2911748255865" /> <!-- Recipe: Requiem Buster (60%) -->
+					<item id="36733" min="1" max="1" chance="1.2897029819552" /> <!-- Recipe: Requiem Cutter (60%) -->
+					<item id="36755" min="1" max="1" chance="1.2882311383239" /> <!-- Recipe: Immortal Tunic (60%) -->
+				</group>
+			</death>
+			<lucky_corpse>
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
 		<collision>
 			<radius normal="30" />
 			<height normal="54" />

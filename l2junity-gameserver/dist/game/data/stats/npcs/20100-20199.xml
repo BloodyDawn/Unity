@@ -324,6 +324,28 @@
 		<shots shotChance="30" spiritChance="30" />
 		<ex_crt_effect>false</ex_crt_effect>
 		<ai aggroRange="1000" clanHelpRange="300" />
+		<drop_lists>
+			<death>
+				<group chance="70">
+					<item id="57" min="22" max="51" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.3369">
+					<item id="8728" min="1" max="1" chance="89.047195013357" /> <!-- Life Stone - Lv. 61 -->
+					<item id="8738" min="1" max="1" chance="8.9047195013357" /> <!-- Mid-grade Life Stone - Lv. 61 -->
+					<item id="947" min="1" max="1" chance="0.89047195013357" /> <!-- Scroll: Enchant Weapon (B-grade) -->
+					<item id="8748" min="1" max="1" chance="0.89047195013357" /> <!-- High-grade Life Stone - Lv. 61 -->
+					<item id="8758" min="1" max="1" chance="0.26714158504007" /> <!-- Top-grade Life Stone - Lv. 61 -->
+				</group>
+			</death>
+			<corpse>
+				<item id="36531" min="1" max="1" chance="7.951" /> <!-- Thread -->
+				<item id="36532" min="1" max="1" chance="0.3" /> <!-- Thin Braid -->
+				<item id="36880" min="1" max="1" chance="0.0009" /> <!-- Recipe: Thread - Downgrade -->
+			</corpse>
+			<lucky_corpse>
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
 		<collision>
 			<radius normal="25" />
 			<height normal="65" />
@@ -377,6 +399,25 @@
 				<clan>CROC2</clan>
 			</clan_list>
 		</ai>
+		<drop_lists>
+			<death>
+				<group chance="70">
+					<item id="57" min="16" max="36" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.6">
+					<item id="952" min="1" max="1" chance="50" /> <!-- Scroll: Enchant Armor (C-grade) -->
+					<item id="36518" min="1" max="1" chance="50" /> <!-- Durable Leather -->
+				</group>
+			</death>
+			<corpse>
+				<item id="36531" min="1" max="1" chance="5.705" /> <!-- Thread -->
+				<item id="36533" min="1" max="1" chance="0.03" /> <!-- Synthetic Braid -->
+				<item id="36880" min="1" max="1" chance="0.0009" /> <!-- Recipe: Thread - Downgrade -->
+			</corpse>
+			<lucky_corpse>
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
 		<collision>
 			<radius normal="28" />
 			<height normal="11.5" />
@@ -448,6 +489,29 @@
 				<clan>UNDEAD</clan>
 			</clan_list>
 		</ai>
+		<drop_lists>
+			<death>
+				<group chance="70">
+					<item id="57" min="275" max="642" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="16.0935">
+					<item id="1539" min="1" max="1" chance="80.653680057166" /> <!-- Major Healing Potion -->
+					<item id="8725" min="1" max="1" chance="10.737254170939" /> <!-- Life Stone - Lv. 52 -->
+					<item id="36537" min="1" max="1" chance="4.6602665672476" /> <!-- Leather Braid -->
+					<item id="8735" min="1" max="1" chance="1.8641066268991" /> <!-- Mid-grade Life Stone - Lv. 52 -->
+					<item id="36557" min="1" max="1" chance="1.8641066268991" /> <!-- Accessory Gem -->
+					<item id="8745" min="1" max="1" chance="0.18641066268991" /> <!-- High-grade Life Stone - Lv. 52 -->
+					<item id="8755" min="1" max="1" chance="0.034175288159816" /> <!-- Top-grade Life Stone - Lv. 52 -->
+				</group>
+			</death>
+			<corpse>
+				<item id="36537" min="1" max="1" chance="2.533" /> <!-- Leather Braid -->
+				<item id="36557" min="1" max="1" chance="1.458" /> <!-- Accessory Gem -->
+			</corpse>
+			<lucky_corpse>
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
 		<collision>
 			<radius normal="12" grown="14.5" />
 			<height normal="31" grown="36" />
@@ -503,6 +567,27 @@
 				<clan>DRAGON</clan>
 			</clan_list>
 		</ai>
+		<drop_lists>
+			<death>
+				<group chance="70">
+					<item id="57" min="21" max="48" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.3339">
+					<item id="8727" min="1" max="1" chance="89.84725965858" /> <!-- Life Stone - Lv. 58 -->
+					<item id="8737" min="1" max="1" chance="8.984725965858" /> <!-- Mid-grade Life Stone - Lv. 58 -->
+					<item id="8747" min="1" max="1" chance="0.8984725965858" /> <!-- High-grade Life Stone - Lv. 58 -->
+					<item id="8757" min="1" max="1" chance="0.26954177897574" /> <!-- Top-grade Life Stone - Lv. 58 -->
+				</group>
+			</death>
+			<corpse>
+				<item id="36531" min="1" max="1" chance="7.557" /> <!-- Thread -->
+				<item id="36532" min="1" max="1" chance="0.3" /> <!-- Thin Braid -->
+				<item id="36880" min="1" max="1" chance="0.0009" /> <!-- Recipe: Thread - Downgrade -->
+			</corpse>
+			<lucky_corpse>
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
 		<collision>
 			<radius normal="30" />
 			<height normal="100" />
@@ -852,6 +937,22 @@
 		<shots shotChance="30" spiritChance="30" />
 		<ex_crt_effect>false</ex_crt_effect>
 		<ai aggroRange="1000" clanHelpRange="300" />
+		<drop_lists>
+			<death>
+				<group chance="70">
+					<item id="57" min="10" max="24" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.075">
+					<item id="955" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Weapon (D-grade) -->
+				</group>
+			</death>
+			<corpse>
+				<item id="36531" min="1" max="1" chance="10.91" /> <!-- Thread -->
+			</corpse>
+			<lucky_corpse>
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
 		<collision>
 			<radius normal="10" />
 			<height normal="42" />
@@ -910,6 +1011,27 @@
 				<clan>ALL</clan>
 			</clan_list>
 		</ai>
+		<drop_lists>
+			<death>
+				<group chance="70">
+					<item id="57" min="16" max="36" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.3639">
+					<item id="8725" min="1" max="1" chance="82.440230832646" /> <!-- Life Stone - Lv. 52 -->
+					<item id="4609" min="1" max="1" chance="8.2440230832646" /> <!-- Greater MEN Dye (Men + 3 Int - 3) -->
+					<item id="8735" min="1" max="1" chance="8.2440230832646" /> <!-- Mid-grade Life Stone - Lv. 52 -->
+					<item id="8745" min="1" max="1" chance="0.82440230832646" /> <!-- High-grade Life Stone - Lv. 52 -->
+					<item id="8755" min="1" max="1" chance="0.24732069249794" /> <!-- Top-grade Life Stone - Lv. 52 -->
+				</group>
+			</death>
+			<corpse>
+				<item id="36531" min="1" max="1" chance="8.576" /> <!-- Thread -->
+				<item id="36880" min="1" max="1" chance="0.0009" /> <!-- Recipe: Thread - Downgrade -->
+			</corpse>
+			<lucky_corpse>
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
 		<collision>
 			<radius normal="21" grown="24" />
 			<height normal="31" grown="38" />
@@ -963,6 +1085,23 @@
 				<clan>GOBLIN</clan>
 			</clan_list>
 		</ai>
+		<drop_lists>
+			<death>
+				<group chance="70">
+					<item id="57" min="6" max="13" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.3">
+					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
+				</group>
+			</death>
+			<corpse>
+				<item id="36531" min="1" max="1" chance="3.105" /> <!-- Thread -->
+				<item id="956" min="1" max="1" chance="0.3" /> <!-- Scroll: Enchant Armor (D-grade) -->
+			</corpse>
+			<lucky_corpse>
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
 		<collision>
 			<radius normal="12" />
 			<height normal="24" />
@@ -1270,6 +1409,23 @@
 				<clan>ALL</clan>
 			</clan_list>
 		</ai>
+		<drop_lists>
+			<death>
+				<group chance="70">
+					<item id="57" min="3" max="8" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="7.342">
+					<item id="1831" min="1" max="1" chance="95.91391991283" /> <!-- Antidote -->
+					<item id="36561" min="1" max="1" chance="4.0860800871697" /> <!-- Cokes -->
+				</group>
+			</death>
+			<corpse>
+				<item id="36531" min="1" max="1" chance="3.783" /> <!-- Thread -->
+			</corpse>
+			<lucky_corpse>
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
 		<collision>
 			<radius normal="11" grown="13" />
 			<height normal="20" grown="24" />
@@ -1326,6 +1482,24 @@
 				<clan>STAKATO</clan>
 			</clan_list>
 		</ai>
+		<drop_lists>
+			<death>
+				<group chance="70">
+					<item id="57" min="10" max="24" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="3.6389">
+					<item id="1061" min="1" max="1" chance="91.731017615213" /> <!-- Major Healing Potion -->
+					<item id="36517" min="1" max="1" chance="8.244249635879" /> <!-- Leather -->
+					<item id="36860" min="1" max="1" chance="0.024732748907637" /> <!-- Recipe: Durable Leather - Upgrade -->
+				</group>
+			</death>
+			<corpse>
+				<item id="36517" min="1" max="1" chance="0.75" /> <!-- Leather -->
+			</corpse>
+			<lucky_corpse>
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
 		<collision>
 			<radius normal="10" />
 			<height normal="20" />
@@ -1380,6 +1554,22 @@
 				<clan>ALL</clan>
 			</clan_list>
 		</ai>
+		<drop_lists>
+			<death>
+				<group chance="70">
+					<item id="57" min="11" max="27" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.75">
+					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
+				</group>
+			</death>
+			<corpse>
+				<item id="36531" min="1" max="1" chance="12.42" /> <!-- Thread -->
+			</corpse>
+			<lucky_corpse>
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
 		<collision>
 			<radius normal="10" />
 			<height normal="25" />
@@ -1483,6 +1673,43 @@
 				<clan>OEL_MAHUM</clan>
 			</clan_list>
 		</ai>
+		<drop_lists>
+			<death>
+				<group chance="70">
+					<item id="57" min="27" max="63" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.0955">
+					<item id="2387" min="1" max="1" chance="31.413612565445" /> <!-- Reinforced Mithril Gaiters -->
+					<item id="381" min="1" max="1" chance="31.413612565445" /> <!-- Chain Gaiters -->
+					<item id="380" min="1" max="1" chance="31.413612565445" /> <!-- Plate Gaiters -->
+					<item id="354" min="1" max="1" chance="5.7591623036649" /> <!-- Chain Mail Shirt -->
+				</group>
+				<group chance="0.18">
+					<item id="61" min="1" max="1" chance="16.666666666667" /> <!-- Mithril Gloves -->
+					<item id="2429" min="1" max="1" chance="16.666666666667" /> <!-- Chain Boots -->
+					<item id="2428" min="1" max="1" chance="16.666666666667" /> <!-- Plate Boots -->
+					<item id="607" min="1" max="1" chance="16.666666666667" /> <!-- Ogre Power Gauntlets -->
+					<item id="62" min="1" max="1" chance="16.666666666667" /> <!-- Reinforced Mithril Boots -->
+					<item id="2452" min="1" max="1" chance="16.666666666667" /> <!-- Reinforced Mithril Gloves -->
+				</group>
+				<group chance="0.0412">
+					<item id="8726" min="1" max="1" chance="72.815533980583" /> <!-- Life Stone - Lv. 55 -->
+					<item id="8736" min="1" max="1" chance="13.349514563107" /> <!-- Mid-grade Life Stone - Lv. 55 -->
+					<item id="36558" min="1" max="1" chance="7.2815533980583" /> <!-- Accessory Gem (Mid-grade) -->
+					<item id="8746" min="1" max="1" chance="2.1844660194175" /> <!-- High-grade Life Stone - Lv. 55 -->
+					<item id="8756" min="1" max="1" chance="2.1844660194175" /> <!-- Top-grade Life Stone - Lv. 55 -->
+					<item id="36548" min="1" max="1" chance="2.1844660194175" /> <!-- Weapon Fragment (Mid-grade) -->
+				</group>
+			</death>
+			<corpse>
+				<item id="36533" min="1" max="1" chance="0.03" /> <!-- Synthetic Braid -->
+				<item id="36534" min="1" max="1" chance="0.003" /> <!-- Durable Braid -->
+				<item id="36880" min="1" max="1" chance="0.0009" /> <!-- Recipe: Thread - Downgrade -->
+			</corpse>
+			<lucky_corpse>
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
 		<collision>
 			<radius normal="20" grown="24" />
 			<height normal="37" grown="44.5" />
@@ -1693,6 +1920,24 @@
 				<clan>SILENOS</clan>
 			</clan_list>
 		</ai>
+		<drop_lists>
+			<death>
+				<group chance="70">
+					<item id="57" min="9" max="21" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="4.5">
+					<item id="1061" min="1" max="1" chance="93.333333333333" /> <!-- Major Healing Potion -->
+					<item id="956" min="1" max="1" chance="6.6666666666667" /> <!-- Scroll: Enchant Armor (D-grade) -->
+				</group>
+			</death>
+			<corpse>
+				<item id="36531" min="1" max="1" chance="4.984" /> <!-- Thread -->
+				<item id="956" min="1" max="1" chance="0.3" /> <!-- Scroll: Enchant Armor (D-grade) -->
+			</corpse>
+			<lucky_corpse>
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
 		<collision>
 			<radius normal="14" />
 			<height normal="32.5" />
@@ -2051,6 +2296,22 @@
 				<clan>ALL</clan>
 			</clan_list>
 		</ai>
+		<drop_lists>
+			<death>
+				<group chance="70">
+					<item id="57" min="12" max="28" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.75">
+					<item id="956" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
+				</group>
+			</death>
+			<corpse>
+				<item id="36531" min="1" max="1" chance="13.79" /> <!-- Thread -->
+			</corpse>
+			<lucky_corpse>
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
 		<collision>
 			<radius normal="29" />
 			<height normal="72" />
@@ -2200,6 +2461,26 @@
 				<clan>SKELETON</clan>
 			</clan_list>
 		</ai>
+		<drop_lists>
+			<death>
+				<group chance="70">
+					<item id="57" min="9" max="21" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.3">
+					<item id="348" min="1" max="1" chance="100" /> <!-- Scale Mail -->
+				</group>
+				<group chance="0.0055">
+					<item id="36523" min="1" max="1" chance="100" /> <!-- Adamantite -->
+				</group>
+			</death>
+			<corpse>
+				<item id="36531" min="1" max="1" chance="4.949" /> <!-- Thread -->
+				<item id="36533" min="1" max="1" chance="0.03" /> <!-- Synthetic Braid -->
+			</corpse>
+			<lucky_corpse>
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
 		<collision>
 			<radius normal="11" />
 			<height normal="27" />
@@ -2252,6 +2533,23 @@
 				<clan>TYRANT</clan>
 			</clan_list>
 		</ai>
+		<drop_lists>
+			<death>
+				<group chance="70">
+					<item id="57" min="17" max="39" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.03">
+					<item id="157" min="1" max="1" chance="100" /> <!-- Spiked Club -->
+				</group>
+			</death>
+			<corpse>
+				<item id="36531" min="1" max="1" chance="9.201" /> <!-- Thread -->
+				<item id="36533" min="1" max="1" chance="0.03" /> <!-- Synthetic Braid -->
+			</corpse>
+			<lucky_corpse>
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
 		<collision>
 			<radius normal="15" />
 			<height normal="29" />
@@ -2362,6 +2660,24 @@
 				<clan>ALL</clan>
 			</clan_list>
 		</ai>
+		<drop_lists>
+			<death>
+				<group chance="70">
+					<item id="57" min="11" max="25" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="6.519">
+					<item id="1834" min="1" max="1" chance="94.937873907041" /> <!-- Emergency Dressing -->
+					<item id="6035" min="1" max="1" chance="4.6019328117809" /> <!-- Magic Haste Potion -->
+					<item id="36518" min="1" max="1" chance="0.46019328117809" /> <!-- Durable Leather -->
+				</group>
+			</death>
+			<corpse>
+				<item id="36531" min="1" max="1" chance="11.58" /> <!-- Thread -->
+			</corpse>
+			<lucky_corpse>
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
 		<collision>
 			<radius normal="34" />
 			<height normal="25" />
