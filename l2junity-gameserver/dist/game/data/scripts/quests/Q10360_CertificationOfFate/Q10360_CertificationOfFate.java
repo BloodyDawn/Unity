@@ -223,7 +223,7 @@ public final class Q10360_CertificationOfFate extends Quest
 					addExpAndSp(player, 2700000, 648);
 					MultisellData.getInstance().separateAndSend(718, player, npc, false);
 					st.exitQuest(false, true);
-					htmltext = "transfer_complete_" + player.getClassId().toString().toLowerCase();
+					htmltext = "transfer_complete_" + player.getClassId().toString().toLowerCase() + ".html";
 				}
 				break;
 			}
