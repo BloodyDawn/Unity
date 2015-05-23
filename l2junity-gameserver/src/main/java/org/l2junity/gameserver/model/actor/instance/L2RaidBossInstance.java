@@ -26,6 +26,7 @@ import org.l2junity.gameserver.instancemanager.RaidBossSpawnManager;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
+import org.l2junity.gameserver.network.client.send.PlaySound;
 
 /**
  * This class manages all RaidBoss.<br>
@@ -60,6 +61,7 @@ public class L2RaidBossInstance extends L2MonsterInstance
 	public void onSpawn()
 	{
 		setIsNoRndWalk(true);
+		broadcastPacket(new PlaySound(1, getTemplate().getParameters().getString("RaidSpawnMusic", "Rm01_A"), 0, 0, 0, 0, 0));
 		super.onSpawn();
 	}
 	
