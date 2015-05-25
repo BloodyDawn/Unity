@@ -36,7 +36,7 @@ import ai.npc.AbstractNpcAI;
  */
 public final class MinionSpawnManager extends AbstractNpcAI
 {
-	private static final Set<Integer> NPC = new HashSet<>(356);
+	private static final Set<Integer> NPC = new HashSet<>(358);
 	
 	static
 	{
@@ -397,6 +397,7 @@ public final class MinionSpawnManager extends AbstractNpcAI
 		NPC.add(29147); // Lost Captain
 		NPC.add(22958); // Moon Garden Manager
 		NPC.add(23160); // Garden Chief Priest
+		NPC.add(27470); // Shilen|s Messanger Cabrio
 	}
 	
 	private static final NpcStringId[] ON_ATTACK_MSG =

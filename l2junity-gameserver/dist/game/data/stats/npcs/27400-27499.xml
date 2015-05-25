@@ -2376,6 +2376,12 @@
 	</npc>
 	<npc id="27470" level="70" type="L2Monster" name="Shilen's Messenger Cabrio" title="Quest Monster">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<parameters>
+			<minions name="Privates">
+				<npc id="27471" count="2" respawnTime="3" weightPoint="4" /> <!-- Cabrio Captor -->
+				<npc id="27472" count="2" respawnTime="3" weightPoint="4" /> <!-- Cabrio Blader -->
+			</minions>
+		</parameters>
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
