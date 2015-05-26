@@ -31,7 +31,7 @@
 			<skill id="4416" level="1" /> <!-- Undead -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="35" />
@@ -68,7 +68,7 @@
 			<skill id="4416" level="1" /> <!-- Undead -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="35" />
@@ -105,7 +105,7 @@
 			<skill id="4416" level="1" /> <!-- Undead -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="35" />
@@ -143,7 +143,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="28" />
@@ -181,7 +181,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="28" />
@@ -219,7 +219,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="28" />
@@ -257,7 +257,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="28" />
@@ -1199,11 +1199,6 @@
 			<skill id="4416" level="19" /> <!-- Others -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai>
-			<clan_list>
-				<clan>ICE</clan>
-			</clan_list>
-		</ai>
 		<collision>
 			<radius normal="16" />
 			<height normal="20.5" />
@@ -1240,11 +1235,6 @@
 			<skill id="4416" level="19" /> <!-- Others -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai>
-			<clan_list>
-				<clan>ICE</clan>
-			</clan_list>
-		</ai>
 		<collision>
 			<radius normal="12" />
 			<height normal="24" />
@@ -2962,7 +2952,6 @@
 			<skill id="4416" level="14" /> <!-- Humans -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="100" />
 		<collision>
 			<radius normal="5" />
 			<height normal="12.3" />
@@ -3160,7 +3149,7 @@
 			<skill id="4416" level="7" /> <!-- Spirits -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -3360,7 +3349,7 @@
 			<skill id="4416" level="14" /> <!-- Humans -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="MAGE" isAggressive="false" />
+		<ai type="MAGE" />
 		<collision>
 			<radius normal="8" />
 			<height normal="23" />
@@ -3400,7 +3389,7 @@
 			<skill id="4416" level="14" /> <!-- Humans -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="MAGE" isAggressive="false" />
+		<ai type="MAGE" />
 		<collision>
 			<radius normal="8" />
 			<height normal="23" />
@@ -3440,7 +3429,7 @@
 			<skill id="4416" level="14" /> <!-- Humans -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="MAGE" isAggressive="false" />
+		<ai type="MAGE" />
 		<collision>
 			<radius normal="8" />
 			<height normal="23" />
@@ -3480,7 +3469,7 @@
 			<skill id="4416" level="14" /> <!-- Humans -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="MAGE" isAggressive="false" />
+		<ai type="MAGE" />
 		<collision>
 			<radius normal="8" />
 			<height normal="23" />
@@ -3520,7 +3509,7 @@
 			<skill id="4416" level="14" /> <!-- Humans -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="MAGE" isAggressive="false" />
+		<ai type="MAGE" />
 		<collision>
 			<radius normal="8" />
 			<height normal="23" />
@@ -3560,7 +3549,7 @@
 			<skill id="4416" level="14" /> <!-- Humans -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="MAGE" isAggressive="false" />
+		<ai type="MAGE" />
 		<collision>
 			<radius normal="8" />
 			<height normal="23" />
@@ -3600,7 +3589,7 @@
 			<skill id="4416" level="14" /> <!-- Humans -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="MAGE" isAggressive="false" />
+		<ai type="MAGE" />
 		<collision>
 			<radius normal="8" />
 			<height normal="23" />
@@ -3640,7 +3629,7 @@
 			<skill id="4416" level="14" /> <!-- Humans -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="MAGE" isAggressive="false" />
+		<ai type="MAGE" />
 		<collision>
 			<radius normal="8" />
 			<height normal="23" />
@@ -3760,7 +3749,7 @@
 			<skill id="4416" level="18" /> <!-- Dwarves -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="17.5" />
@@ -3801,7 +3790,7 @@
 			<skill id="4416" level="18" /> <!-- Dwarves -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="17" />
@@ -3842,7 +3831,7 @@
 			<skill id="4416" level="14" /> <!-- Humans -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="21.5" />
@@ -3883,7 +3872,7 @@
 			<skill id="4416" level="14" /> <!-- Humans -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="22.5" />
@@ -3924,7 +3913,7 @@
 			<skill id="4416" level="16" /> <!-- Dark Elves -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="12" />
 			<height normal="23" />
@@ -3964,7 +3953,7 @@
 			<skill id="4416" level="17" /> <!-- Orcs -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="25" />
@@ -4004,7 +3993,7 @@
 			<skill id="4416" level="14" /> <!-- Humans -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="MAGE" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<ai type="MAGE" clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="23" />

@@ -41,7 +41,7 @@
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300">
+		<ai aggroRange="500" clanHelpRange="300" isAggressive="true">
 			<clan_list>
 				<clan>FIRE</clan>
 			</clan_list>
@@ -103,7 +103,7 @@
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300">
+		<ai aggroRange="500" clanHelpRange="300" isAggressive="true">
 			<clan_list>
 				<clan>FIRE</clan>
 			</clan_list>
@@ -165,7 +165,7 @@
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300">
+		<ai aggroRange="500" clanHelpRange="300" isAggressive="true">
 			<clan_list>
 				<clan>FIRE</clan>
 			</clan_list>
@@ -229,7 +229,7 @@
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>6</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300">
+		<ai aggroRange="500" clanHelpRange="300" isAggressive="true">
 			<clan_list>
 				<clan>FIRE</clan>
 			</clan_list>
@@ -284,7 +284,7 @@
 			<skill id="6142" level="1" /> <!-- Tar Trap -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="18" />
 			<height normal="26" />
@@ -319,7 +319,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai type="BALANCED" clanHelpRange="300" />
 		<collision>
 			<radius normal="19" />
 			<height normal="28" />
@@ -354,7 +354,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai type="BALANCED" clanHelpRange="300" />
 		<collision>
 			<radius normal="16" />
 			<height normal="31" />
@@ -392,7 +392,7 @@
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="0.1518">
@@ -448,7 +448,7 @@
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
+		<ai clanHelpRange="300">
 			<clan_list>
 				<clan>BARANKA</clan>
 			</clan_list>
@@ -496,7 +496,7 @@
 			<skill id="5462" level="1" /> <!-- Fire Attacks -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
+		<ai clanHelpRange="300">
 			<clan_list>
 				<clan>BARANKA</clan>
 			</clan_list>
@@ -550,7 +550,7 @@
 			<skill id="5462" level="1" /> <!-- Fire Attacks -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
+		<ai clanHelpRange="300">
 			<clan_list>
 				<clan>BARANKA</clan>
 			</clan_list>
@@ -590,7 +590,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="17" />
 			<height normal="29" />
@@ -630,7 +630,7 @@
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>0.25</s_npc_prop_hp_rate>
-		<ai type="CORPSE" aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai type="CORPSE" clanHelpRange="300" />
 		<collision>
 			<radius normal="17" />
 			<height normal="29" />
@@ -670,7 +670,7 @@
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>0.25</s_npc_prop_hp_rate>
-		<ai type="CORPSE" aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai type="CORPSE" clanHelpRange="300" />
 		<collision>
 			<radius normal="17" />
 			<height normal="29" />
@@ -710,7 +710,7 @@
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>0.25</s_npc_prop_hp_rate>
-		<ai type="CORPSE" aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai type="CORPSE" clanHelpRange="300" />
 		<collision>
 			<radius normal="17" />
 			<height normal="29" />
@@ -756,7 +756,7 @@
 			<skill id="5313" level="9" /> <!-- NPC(party) -Magic Range Long Range DD - Fire -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
+		<ai aggroRange="500" clanHelpRange="300" isAggressive="true">
 			<clan_list>
 				<clan>LEGENDORC</clan>
 			</clan_list>
@@ -797,7 +797,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -837,7 +837,7 @@
 			<skill id="5376" level="4" /> <!-- NPC(party) -Magic Range Close Range DD - Fire(Self-Destruction) -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
+		<ai clanHelpRange="300">
 			<clan_list>
 				<clan>FANTASY</clan>
 			</clan_list>
@@ -880,7 +880,7 @@
 			<skill id="5376" level="4" /> <!-- NPC(party) -Magic Range Close Range DD - Fire(Self-Destruction) -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
+		<ai clanHelpRange="300">
 			<clan_list>
 				<clan>FANTASY</clan>
 			</clan_list>
@@ -918,7 +918,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="11" />
 			<height normal="8" />
@@ -952,7 +952,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="11" />
 			<height normal="8" />
@@ -991,7 +991,7 @@
 			<skill id="5376" level="5" /> <!-- NPC(party) -Magic Range Close Range DD - Fire(Self-Destruction) -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
+		<ai clanHelpRange="300">
 			<clan_list>
 				<clan>FANTASY</clan>
 			</clan_list>
@@ -1029,7 +1029,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="11" />
 			<height normal="8" />
@@ -1064,7 +1064,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="11" />
 			<height normal="8" />
@@ -1099,7 +1099,7 @@
 			<skill id="4416" level="18" /> <!-- Dwarves -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="17" />
@@ -1134,7 +1134,7 @@
 			<skill id="4416" level="18" /> <!-- Dwarves -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="19" />
@@ -1169,7 +1169,7 @@
 			<skill id="4416" level="9" /> <!-- Demons -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="14" />
 			<height normal="27.5" />
@@ -1204,7 +1204,7 @@
 			<skill id="4416" level="23" /> <!-- Mercenaries -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="23" />
@@ -1239,7 +1239,7 @@
 			<skill id="4416" level="14" /> <!-- Humans -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="10" />
 			<height normal="22.5" />
@@ -1275,7 +1275,7 @@
 			<skill id="6180" level="1" /> <!-- Presentation - Lilith Presentation1 -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="40" />
@@ -1311,7 +1311,7 @@
 			<skill id="6457" level="1" /> <!-- Presentation - Absorption of Sirr -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="11" />
 			<height normal="25" />
@@ -1346,7 +1346,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="11" />
 			<height normal="25" />
@@ -1381,7 +1381,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="11" />
 			<height normal="25" />
@@ -1416,7 +1416,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="21" />
 			<height normal="24" />
@@ -1457,7 +1457,7 @@
 			<skill id="5978" level="1" /> <!-- Devil Strike -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="150" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="23.5" />
@@ -1498,7 +1498,7 @@
 			<skill id="5978" level="1" /> <!-- Devil Strike -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="150" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="24" />
@@ -1543,7 +1543,7 @@
 			<skill id="6168" level="9" /> <!-- Shock -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300">
+		<ai clanHelpRange="300">
 			<clan_list>
 				<clan>BARANKA</clan>
 			</clan_list>
@@ -1587,7 +1587,7 @@
 			<skill id="6235" level="1" /> <!-- Blessed Focus -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="150" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="0.1" />
 			<height normal="0.1" />
@@ -1622,7 +1622,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="11" />
 			<height normal="8" />
@@ -1681,7 +1681,7 @@
 		</skill_list>
 		<corpse_time>1</corpse_time>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="11" />
 			<height normal="13.25" />
@@ -1719,7 +1719,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="0.1" />
 			<height normal="0.1" />
@@ -1757,7 +1757,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="0.1" />
 			<height normal="0.1" />
@@ -1795,7 +1795,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="0.1" />
 			<height normal="0.1" />
@@ -1830,7 +1830,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="30" />
 			<height normal="54" />
@@ -1865,7 +1865,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="30" />
 			<height normal="54" />
@@ -1901,7 +1901,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="0.1" />
 			<height normal="0.1" />
@@ -1941,7 +1941,7 @@
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>5</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="27.5" />
@@ -1983,7 +1983,7 @@
 			<skill id="6276" level="1" /> <!-- Eternal Blizzard -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai aggroRange="500" clanHelpRange="300" isAggressive="true" />
 		<collision>
 			<radius normal="50" />
 			<height normal="98.5" />
@@ -2024,7 +2024,7 @@
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="10" />
 			<height normal="23.75" />
@@ -2065,7 +2065,7 @@
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="14.5" />
 			<height normal="30" />
@@ -2107,7 +2107,7 @@
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="11" />
 			<height normal="23.5" />
@@ -2151,7 +2151,7 @@
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="27.5" />
@@ -2188,7 +2188,7 @@
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="10" />
 			<height normal="22" />
@@ -2230,7 +2230,7 @@
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="26" />
 			<height normal="27" />
@@ -2273,7 +2273,7 @@
 			<skill id="6300" level="1" /> <!-- Self-destruction -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai aggroRange="1200" clanHelpRange="300" isAggressive="true" />
 		<collision>
 			<radius normal="20" />
 			<height normal="50" />
@@ -2323,7 +2323,7 @@
 			<skill id="6292" level="1" /> <!-- Rush -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300">
+		<ai aggroRange="1200" clanHelpRange="300" isAggressive="true">
 			<clan_list>
 				<clan>FREYA</clan>
 			</clan_list>
@@ -2381,7 +2381,7 @@
 			<skill id="14765" level="2" /> <!-- Blood Siphon Resistance -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300">
+		<ai aggroRange="600" clanHelpRange="300" isAggressive="true">
 			<clan_list>
 				<clan>FREYA</clan>
 			</clan_list>
@@ -2421,7 +2421,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="0.1" />
 			<height normal="0.1" />
@@ -2457,7 +2457,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="0.1" />
 			<height normal="0.1" />
@@ -2493,7 +2493,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="0.1" />
 			<height normal="0.1" />
@@ -2529,7 +2529,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="0.1" />
 			<height normal="0.1" />
@@ -2565,7 +2565,7 @@
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="0.1" />
 			<height normal="0.1" />
@@ -2611,7 +2611,7 @@
 			<skill id="5601" level="9" /> <!-- Short-Range Physical Attack Resistance -->
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="300" clanHelpRange="300" isAggressive="true" />
 		<collision>
 			<radius normal="13" grown="22" />
 			<height normal="35" grown="42.2" />
@@ -2659,7 +2659,7 @@
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>4</s_npc_prop_hp_rate>
-		<ai type="MAGE" aggroRange="300" clanHelpRange="300" isAggressive="false">
+		<ai type="MAGE" aggroRange="2000" clanHelpRange="300" isAggressive="true">
 			<skill maxChance="100" />
 			<clan_list>
 				<clan>TANTAAR_LIZARD</clan>
@@ -2727,7 +2727,7 @@
 		<corpse_time>0</corpse_time>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>0.25</s_npc_prop_hp_rate>
-		<ai type="CORPSE" aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai type="CORPSE" clanHelpRange="300" />
 		<collision>
 			<radius normal="16" />
 			<height normal="23" />
@@ -2769,7 +2769,7 @@
 		<corpse_time>0</corpse_time>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>0.25</s_npc_prop_hp_rate>
-		<ai type="CORPSE" aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai type="CORPSE" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="25" />
@@ -2809,7 +2809,7 @@
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>0.25</s_npc_prop_hp_rate>
-		<ai type="CORPSE" aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai type="CORPSE" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="18" />
@@ -2851,7 +2851,7 @@
 		<corpse_time>0</corpse_time>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>0.25</s_npc_prop_hp_rate>
-		<ai type="CORPSE" aggroRange="300" clanHelpRange="300" isAggressive="false">
+		<ai type="CORPSE" clanHelpRange="300">
 			<clan_list>
 				<clan>TANTAAR_LIZARD</clan>
 			</clan_list>
@@ -2897,7 +2897,7 @@
 		<corpse_time>0</corpse_time>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>0.25</s_npc_prop_hp_rate>
-		<ai type="CORPSE" aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai type="CORPSE" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="33" />
@@ -2964,7 +2964,7 @@
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="6" />
 			<height normal="15" />
@@ -3031,7 +3031,7 @@
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="15.7" />
@@ -3098,7 +3098,7 @@
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
@@ -3164,7 +3164,7 @@
 		</skill_list>
 		<ex_crt_effect>true</ex_crt_effect>
 		<s_npc_prop_hp_rate>0.5</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="9" />
 			<height normal="12.5" />
@@ -3211,7 +3211,7 @@
 			<skill id="5620" level="2" /> <!-- Short-Range Physical Attack Weakness -->
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="0.9069">
@@ -3279,7 +3279,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="0.909">
@@ -3347,7 +3347,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="12" />
 			<height normal="21" />
@@ -3400,7 +3400,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="1.0815">
@@ -3464,7 +3464,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="26.4" />
@@ -3519,7 +3519,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="0.0018">
@@ -3593,7 +3593,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="10" grown="13" />
 			<height normal="33" grown="40" />
@@ -3640,7 +3640,7 @@
 			<skill id="5620" level="2" /> <!-- Short-Range Physical Attack Weakness -->
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="0.9069">
@@ -3708,7 +3708,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="0.909">
@@ -3776,7 +3776,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="13" />
 			<height normal="21" />
@@ -3829,7 +3829,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="0.753">
@@ -3893,7 +3893,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="16" />
 			<height normal="17.2" />
@@ -3948,7 +3948,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="0.0009">
@@ -4021,7 +4021,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="34" />
 			<height normal="28" grown="34" />
@@ -4068,7 +4068,7 @@
 			<skill id="5620" level="2" /> <!-- Short-Range Physical Attack Weakness -->
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="1.359">
@@ -4136,7 +4136,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="2.259">
@@ -4204,7 +4204,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="16" />
 			<height normal="22" />
@@ -4257,7 +4257,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="2.171">
@@ -4321,7 +4321,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="16" />
 			<height normal="25.2" />
@@ -4376,7 +4376,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="0.3048">
@@ -4444,7 +4444,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="22" grown="27" />
 			<height normal="31" grown="38" />
@@ -4490,7 +4490,7 @@
 			<skill id="5620" level="2" /> <!-- Short-Range Physical Attack Weakness -->
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="1.359">
@@ -4557,7 +4557,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="2.259">
@@ -4624,7 +4624,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>2</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="9" />
 			<height normal="12.5" />
@@ -4677,7 +4677,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="0.0055">
@@ -4740,7 +4740,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<collision>
 			<radius normal="15" grown="18" />
 			<height normal="39" grown="47.5" />
@@ -4794,7 +4794,7 @@
 		</skill_list>
 		<ex_crt_effect>false</ex_crt_effect>
 		<s_npc_prop_hp_rate>3</s_npc_prop_hp_rate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai clanHelpRange="300" />
 		<drop_lists>
 			<death>
 				<group chance="0.306">
