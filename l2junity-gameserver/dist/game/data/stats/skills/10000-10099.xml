@@ -168,7 +168,7 @@
 		<table name="#abnormalLvl"> 2 3 4 </table>
 		<table name="#icons"> icon.skill10006 icon.skill10007 icon.skill10007 </table>
 		<table name="#power">1.25 1.30 1.35</table>
-		<set name="#abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="9" />
 		<set name="icon" val="#icons" />
 		<set name="operateType" val="A2" />
@@ -190,7 +190,7 @@
 		<table name="#mpConsume"> 53 54 56 58 59 61 63 65 67 69 71 </table>
 		<table name="#power"> 13634 14179 15269 16359 17449 18539 19629 20719 22354 23444 24534 </table>
 		<set name="activateRate" val="80" />
-		<set name="#abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="20" />
 		<set name="icon" val="icon.skill10008" />
 		<set name="operateType" val="A2" />
@@ -915,7 +915,7 @@
 		<for>
 			<effect name="Summon">
 				<param npcId="#npcIds" />
-				<param lifeTime="1200" /> <!-- Unconfirmed -->
+				<param lifeTime="-1" />
 			</effect>
 		</for>
 		<endEffects>
@@ -1322,21 +1322,54 @@
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="10071" levels="4" name="Eva's Presence">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Def./ M. Def. + 2%. Has a 30% chance of increasing all party members' P. Def./ M. Def. and heal amount by 1% for 10 sec. when attacked. -->
+		<table name="#def"> 1.02 1.03 1.04 1.06 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#triggerLevel"> 1 2 3 4 </table>
 		<set name="icon" val="icon.skill10071" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pDef" val="#def" />
+				<mul stat="mDef" val="#def" />
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="1" />
+				<param chance="30" />
+				<param skillId="10072" skillLevel="#triggerLevel" />
+				<param targetType="PARTY" />
+				<param allowWeapons="ALL" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10072" levels="4" name="Eva's Presence">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- TODO abnormalType -->
 		<!-- For 10 sec., all party members' P. Def./ M. Def. and heal amount by 1%. -->
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
+		<table name="#def"> 1.02 1.03 1.04 1.06 </table> <!-- Unconfirmed -->
+		<table name="#healEffect"> 1.01 1.02 1.03 1.04 </table> <!-- Unconfirmed -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="10" />
+		<set name="affectRange" val="450" /> <!-- Unconfirmed -->
+		<set name="isTriggeredSkill" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10071" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY" />
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="100" />
 		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pDef" val="#def" />
+				<mul stat="mDef" val="#def" />
+				<mul stat="healEffect" val="#healEffect" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10073" levels="7" name="Summon Buff Cubic">
 		<!-- TODO: Auto level parse, Requires manual update -->
@@ -1364,36 +1397,81 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="10075" levels="1" name="Superior Cubic Mastery">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Can summon up to 3 Cubics at once. -->
 		<set name="icon" val="icon.skill0143" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="CubicMastery">
+				<param cubicCount="3" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10076" levels="4" name="Superior Guard Stance">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Shield Defense + 5%, Shield P. Def. + 2%. -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#sDef"> 1.02 1.03 1.04 1.05 </table>
+		<table name="#rShld"> 1.05 1.07 1.10 1.15 </table>
 		<set name="icon" val="icon.skill0288" />
 		<set name="operateType" val="P" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="8" />
+		<for>
+			<effect name="Buff">
+				<mul stat="sDef" val="#sDef" />
+				<mul stat="rShld" val="#rShld" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10077" levels="4" name="Shilen's Presence">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Atk./ M. Atk. + 2%. Has a 30% chance of doing the same to all party members for 10 sec. when attacked. -->
+		<table name="#atk"> 1.02 1.03 1.04 1.06 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#triggerLevel"> 1 2 3 4 </table>
 		<set name="icon" val="icon.skill11832" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#atk" />
+				<mul stat="mAtk" val="#atk" />
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="1" />
+				<param chance="30" />
+				<param skillId="10078" skillLevel="#triggerLevel" />
+				<param targetType="PARTY" />
+				<param allowWeapons="ALL" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10078" levels="4" name="Shilen's Presence">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- TODO abnormalType -->
 		<!-- For 10 sec., all party members' P. Atk./ M. Atk. + 2%. -->
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
+		<table name="#atk"> 1.02 1.03 1.04 1.06 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="10" />
+		<set name="affectRange" val="450" /> <!-- Unconfirmed -->
+		<set name="isTriggeredSkill" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill11832" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY" />
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="100" />
 		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#atk" />
+				<mul stat="mAtk" val="#atk" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10079" levels="7" name="Summon Phantom Cubic">
 		<!-- TODO: Auto level parse, Requires manual update -->
@@ -1648,7 +1726,6 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10098" levels="4" name="Paladin's Frenzy">
-
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 1 min., P./M. Def. +50%, Debuff Resistance + 10%, Speed + 10. When equipped with a sword or blunt weapon, Accuracy + 4, Atk. Spd. + 10%, Critical Rate + 30, Critical Damage + 30%. -->
 		<table name="#mpConsumes"> 20 21 23 24 </table>
@@ -1662,7 +1739,6 @@
 		<set name="reuseDelay" val="600000" />
 	</skill>
 	<skill id="10099" levels="4" name="Avenger's Frenzy">
-
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 1 min., P. Atk. + 5%, P./M. Def. + 50%, Speed + 10. When equipped with a sword or blunt weapon, Accuracy + 4, Atk. Spd. + 10%, Critical Rate + 30, Critical Damage + 30%. -->
 		<table name="#mpConsumes"> 20 21 23 24 </table>
