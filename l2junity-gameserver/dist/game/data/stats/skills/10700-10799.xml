@@ -242,17 +242,12 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10754" levels="1" name="Superior Survival Ability" enchantGroup1="10">
+	<skill id="10754" levels="1" name="Superior Survival Ability">
 		<!-- STR + 2, speed + 17, terrain damage - 30% and weight limit + 50%. When inflicting a critical during a normal Bow/Crossbow attack, Survival Movement is triggered. Once Survival Movement is triggered, it will not trigger again for 30 seconds. -->
-		<!-- TODO : Trigger skill 10809 Survival Moment -->
-		<table name="#ench1DamageZoneVuln"> 31 32 33 34 35 36 37 38 39 40 </table>
-		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
-		<table name="#ench1WeightLimit"> 1.51 1.52 1.53 1.54 1.55 1.56 1.57 1.58 1.59 1.60 </table>
 		<set name="icon" val="icon.skill0295" />
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<for>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
@@ -260,15 +255,15 @@
 				<sub stat="damageZoneVuln" val="30" />
 				<mul stat="weightLimit" val="1.5" />
 			</effect>
-		</for>
-		<enchant1for>
-			<effect name="Buff">
-				<add stat="STR" val="2" />
-				<add stat="runSpd" val="17" />
-				<sub stat="damageZoneVuln" val="#ench1DamageZoneVuln" />
-				<mul stat="weightLimit" val="#ench1WeightLimit" />
+			<effect name="TriggerSkillByAttack">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="true" />
+				<param minDamage="1" chance="100" />
+				<param skillId="10809" skillLevel="1" /> <!-- Blunt Mastery -->
+				<param targetType="SELF" />
+				<param allowWeapons="BOW,CROSSBOW" />
 			</effect>
-		</enchant1for>
+		</for>
 	</skill>
 	<skill id="10755" levels="10" name="Superior Mental Attack Resistance">
 		<!-- TODO: Auto level parse, Requires manual update -->

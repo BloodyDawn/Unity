@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="10300" levels="3" name="Last Attack">
-
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks target with 52746 Power added to P. Atk. Cuts regular monsters' HP down to 1. Usable when target's HP is 10% or below. Requires a sword, blunt, spear, fist, dual blunt, or dualsword. -->
 		<table name="#mpConsumes"> 276 297 315 </table>
@@ -72,18 +71,30 @@
 		</for>
 	</skill>
 	<skill id="10305" levels="4" name="Broad Pull">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Spear Resistance - 10%. Pulls enemies from a large radius nearby. Requires a sword, blunt, spear, fist weapon, dual blunt, or dual sword. -->
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 62 69 76 83 </table>
+		<table name="#trait_pole"> -10 -12 -15 -20 </table> <!-- Confirmed -->
+		<set name="affectLimit" val="9-10" />
+		<set name="affectRange" val="900" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="REAL_TARGET" />
 		<set name="icon" val="icon.skill11833" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="4000" />
 		<set name="effectPoint" val="-436" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="DefenceTrait">
+				<param POLE="#trait_pole" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10306" levels="4" name="Superior Polearm Mastery">
 		<!-- When a spear is equipped, P. Atk. + 2% and additional P. Atk. 583. Increases the number of possible targets by 1. -->
@@ -128,11 +139,24 @@
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10309" levels="4" name="Superior Fist Weapon Mastery">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- When a fist weapon is equipped, P. Atk. + 2 % and additional + 709. -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#pAtkAdd"> 709 825 982 1190 </table>
+		<table name="#pAtkMul"> 1.02 1.03 1.04 1.05 </table>
 		<set name="icon" val="icon.skill11837" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#pAtkMul">
+					<using kind="DUALFIST" />
+				</mul>
+				<add stat="pAtk" val="#pAtkAdd">
+					<using kind="DUALFIST" />
+				</add>
+			</effect>
+		</for>
 	</skill>
 	<skill id="10310" levels="1" name="Primal Rage">
 		<!-- AUTO GENERATED SKILL -->
@@ -146,11 +170,30 @@
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10311" levels="4" name="Superior Two-handed Weapon Mastery">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- When a two-handed sword or two handed blunt is equipped, P. Atk. + 2 % and additional + 709. -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#pAtkAdd"> 709 825 982 1190 </table>
+		<table name="#pAtkMul"> 1.02 1.03 1.04 1.05 </table>
 		<set name="icon" val="icon.skill11838" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#pAtkMul">
+					<and>
+						<using kind="SWORD,BLUNT" />
+						<using slot="lrhand" />
+					</and>
+				</mul>
+				<add stat="pAtk" val="#pAtkAdd">
+					<and>
+						<using kind="SWORD,BLUNT" />
+						<using slot="lrhand" />
+					</and>
+				</add>
+			</effect>
+		</for>
 	</skill>
 	<skill id="10312" levels="4" name="Crafting Mastery">
 		<!-- AUTO GENERATED SKILL -->
@@ -319,7 +362,6 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="10325" levels="3" name="Dreadful Roar">
-
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Cancels at least one buff of nearby enemies. Consumes 10 Soulstones. -->
 		<table name="#mpConsumes"> 149 151 154 </table>
@@ -368,14 +410,23 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="10329" levels="1" name="Superior Blunt Weapon Mastery">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- When equipped with a one-handed blunt weapon, P. Atk. + 21% and P. Critical Rate + 60. -->
 		<set name="icon" val="icon.skill10329" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.21">
+					<using kind="BLUNT" />
+				</mul>
+				<add stat="rCrit" val="60">
+					<using kind="BLUNT" />
+				</add>
+			</effect>
+		</for>
 	</skill>
 	<skill id="10330" levels="4" name="Power Hammer Crush">
-
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks target with 18005 Power added to P. Atk. while ignoring 30% of their P. Def. Stuns for 5 sec. Requires a blunt weapon. Over-hit. Critical. -->
 		<table name="#mpConsumes"> 92 96 101 105 </table>
@@ -496,7 +547,6 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10340" levels="3" name="Blade Slasher">
-
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks enemies in front with 16214 Power added to P. Atk. If the target is stunned, attacks with 48641 power. Can be used while a sword or blunt weapon is equipped. Consumes 1 Soulstone. -->
 		<table name="#icons"> icon.skill10340 icon.skill0526 icon.skill0526 </table>
