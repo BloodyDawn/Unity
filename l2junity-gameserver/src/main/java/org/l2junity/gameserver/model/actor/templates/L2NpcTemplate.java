@@ -157,7 +157,7 @@ public final class L2NpcTemplate extends L2CharTemplate implements IIdentifiable
 		_clanHelpRange = set.getInt("clanHelpRange", 0);
 		_dodge = set.getInt("dodge", 0);
 		_isChaos = set.getBoolean("isChaos", false);
-		_isAggressive = set.getBoolean("isAggressive", true);
+		_isAggressive = set.getBoolean("isAggressive", false);
 		
 		_soulShot = set.getInt("soulShot", 0);
 		_spiritShot = set.getInt("spiritShot", 0);
