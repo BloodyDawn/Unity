@@ -26,7 +26,7 @@ import org.l2junity.gameserver.model.quest.QuestState;
 
 /**
  * Red-eyed Invaders (39)
- * @author janiko, Gladicek
+ * @author janiko
  */
 public final class Q00039_RedEyedInvaders extends Quest
 {
@@ -69,6 +69,7 @@ public final class Q00039_RedEyedInvaders extends Quest
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
 			case "30334-03.htm":

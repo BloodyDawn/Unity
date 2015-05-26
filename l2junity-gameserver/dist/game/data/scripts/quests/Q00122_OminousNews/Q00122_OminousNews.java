@@ -27,9 +27,9 @@ import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 /**
  * Ominous News (122)
- * @author malyelfik, Gladicek
+ * @author malyelfik
  */
-public class Q00122_OminousNews extends Quest
+public final class Q00122_OminousNews extends Quest
 {
 	// NPCs
 	private static final int MOIRA = 31979;
@@ -57,14 +57,18 @@ public class Q00122_OminousNews extends Quest
 		switch (event)
 		{
 			case "31979-02.htm":
+			{
 				st.startQuest();
 				st.setQuestLocation(NpcStringId.CRYPTS_OF_DISGRACE_LV_80);
 				break;
+			}
 			case "32017-02.html":
-				st.giveAdena(8923, true);
-				st.addExpAndSp(45151, 10);
+			{
+				giveAdena(player, 8923, true);
+				addExpAndSp(player, 45151, 10);
 				st.exitQuest(false, true);
 				break;
+			}
 		}
 		return event;
 	}
@@ -82,6 +86,7 @@ public class Q00122_OminousNews extends Quest
 		switch (npc.getId())
 		{
 			case MOIRA:
+			{
 				switch (st.getState())
 				{
 					case State.CREATED:
@@ -95,12 +100,15 @@ public class Q00122_OminousNews extends Quest
 						break;
 				}
 				break;
+			}
 			case KARUDA:
+			{
 				if (st.isStarted())
 				{
 					htmltext = "32017-01.html";
 				}
 				break;
+			}
 		}
 		return htmltext;
 	}

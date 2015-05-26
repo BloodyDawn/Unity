@@ -27,9 +27,9 @@ import org.l2junity.gameserver.model.quest.State;
 
 /**
  * Help The Sister! (43)
- * @author malyelfik, Gladicek
+ * @author malyelfik
  */
-public class Q00043_HelpTheSister extends Quest
+public final class Q00043_HelpTheSister extends Quest
 {
 	// NPCs
 	private static final int COOPER = 30829;
@@ -68,12 +68,15 @@ public class Q00043_HelpTheSister extends Quest
 		switch (event)
 		{
 			case "30829-01.htm":
+			{
 				st.startQuest();
 				break;
+			}
 			case "30829-03.html":
-				if (st.hasQuestItems(CRAFTED_DAGGER))
+			{
+				if (hasQuestItems(player, CRAFTED_DAGGER))
 				{
-					st.takeItems(CRAFTED_DAGGER, 1);
+					takeItems(player, CRAFTED_DAGGER, 1);
 					st.setCond(2, true);
 				}
 				else
@@ -81,11 +84,13 @@ public class Q00043_HelpTheSister extends Quest
 					htmltext = getNoQuestMsg(player);
 				}
 				break;
+			}
 			case "30829-06.html":
-				if (st.getQuestItemsCount(MAP_PIECE) == 30)
+			{
+				if (getQuestItemsCount(player, MAP_PIECE) == 30)
 				{
-					st.takeItems(MAP_PIECE, -1);
-					st.giveItems(MAP, 1);
+					takeItems(player, MAP_PIECE, -1);
+					giveItems(player, MAP, 1);
 					st.setCond(4, true);
 				}
 				else
@@ -93,10 +98,12 @@ public class Q00043_HelpTheSister extends Quest
 					htmltext = "30829-06a.html";
 				}
 				break;
+			}
 			case "30097-02.html":
-				if (st.hasQuestItems(MAP))
+			{
+				if (hasQuestItems(player, MAP))
 				{
-					st.takeItems(MAP, -1);
+					takeItems(player, MAP, -1);
 					st.setCond(5, true);
 				}
 				else
@@ -104,10 +111,13 @@ public class Q00043_HelpTheSister extends Quest
 					htmltext = "30097-02a.html";
 				}
 				break;
+			}
 			case "30829-09.html":
-				st.giveItems(PET_TICKET, 1);
+			{
+				giveItems(player, PET_TICKET, 1);
 				st.exitQuest(false, true);
 				break;
+			}
 		}
 		return htmltext;
 	}
@@ -115,12 +125,12 @@ public class Q00043_HelpTheSister extends Quest
 	@Override
 	public String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
-		QuestState st = getQuestState(player, false);
+		final QuestState st = getQuestState(player, false);
 		
 		if ((st != null) && st.isCond(2))
 		{
-			st.giveItems(MAP_PIECE, 1);
-			if (st.getQuestItemsCount(MAP_PIECE) == 30)
+			giveItems(player, MAP_PIECE, 1);
+			if (getQuestItemsCount(player, MAP_PIECE) == 30)
 			{
 				st.setCond(3, true);
 			}
@@ -145,16 +155,20 @@ public class Q00043_HelpTheSister extends Quest
 		switch (npc.getId())
 		{
 			case COOPER:
+			{
 				switch (st.getState())
 				{
 					case State.CREATED:
+					{
 						htmltext = "30829-00.htm";
 						break;
+					}
 					case State.STARTED:
+					{
 						switch (st.getCond())
 						{
 							case 1:
-								htmltext = (st.hasQuestItems(CRAFTED_DAGGER)) ? "30829-02.html" : "30829-02a.html";
+								htmltext = (hasQuestItems(player, CRAFTED_DAGGER)) ? "30829-02.html" : "30829-02a.html";
 								break;
 							case 2:
 								htmltext = "30829-04.html";
@@ -170,25 +184,30 @@ public class Q00043_HelpTheSister extends Quest
 								break;
 						}
 						break;
+					}
 					case State.COMPLETED:
+					{
 						htmltext = getAlreadyCompletedMsg(player);
 						break;
-				}
-				break;
-			case GALLADUCCI:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
-						case 4:
-							htmltext = "30097-01.html";
-							break;
-						case 5:
-							htmltext = "30097-03.html";
-							break;
 					}
 				}
 				break;
+			}
+			case GALLADUCCI:
+			{
+				if (st.isStarted())
+				{
+					if (st.isCond(4))
+					{
+						htmltext = "30097-01.html";
+					}
+					else if (st.isCond(5))
+					{
+						htmltext = "30097-03.html";
+					}
+				}
+				break;
+			}
 		}
 		return htmltext;
 	}

@@ -26,7 +26,7 @@ import org.l2junity.gameserver.model.quest.QuestState;
 
 /**
  * Dragon Fangs (38)
- * @author Janiko, Gladicek
+ * @author Janiko
  */
 public final class Q00038_DragonFangs extends Quest
 {
@@ -96,7 +96,6 @@ public final class Q00038_DragonFangs extends Quest
 						htmltext = "30386-07.html";
 					}
 				}
-				
 				break;
 			}
 			case "30034-02.html":
@@ -219,7 +218,6 @@ public final class Q00038_DragonFangs extends Quest
 					{
 						htmltext = "30034-05.html";
 						break;
-						
 					}
 					case 6:
 					{

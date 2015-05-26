@@ -27,9 +27,9 @@ import org.l2junity.gameserver.model.quest.State;
 
 /**
  * Help The Son! (44)
- * @author malyelfik, Gladicek
+ * @author malyelfik
  */
-public class Q00044_HelpTheSon extends Quest
+public final class Q00044_HelpTheSon extends Quest
 {
 	// NPCs
 	private static final int LUNDY = 30827;
@@ -69,12 +69,15 @@ public class Q00044_HelpTheSon extends Quest
 		switch (event)
 		{
 			case "30827-01.htm":
+			{
 				st.startQuest();
 				break;
+			}
 			case "30827-03.html":
-				if (st.hasQuestItems(WORK_HAMMER))
+			{
+				if (hasQuestItems(player, WORK_HAMMER))
 				{
-					st.takeItems(WORK_HAMMER, 1);
+					takeItems(player, WORK_HAMMER, 1);
 					st.setCond(2, true);
 				}
 				else
@@ -82,11 +85,13 @@ public class Q00044_HelpTheSon extends Quest
 					htmltext = "30827-03a.html";
 				}
 				break;
+			}
 			case "30827-06.html":
-				if (st.getQuestItemsCount(GEMSTONE_FRAGMENT) == 30)
+			{
+				if (getQuestItemsCount(player, GEMSTONE_FRAGMENT) == 30)
 				{
-					st.takeItems(GEMSTONE_FRAGMENT, -1);
-					st.giveItems(GEMSTONE, 1);
+					takeItems(player, GEMSTONE_FRAGMENT, -1);
+					giveItems(player, GEMSTONE, 1);
 					st.setCond(4, true);
 				}
 				else
@@ -94,10 +99,12 @@ public class Q00044_HelpTheSon extends Quest
 					htmltext = "30827-06a.html";
 				}
 				break;
+			}
 			case "30505-02.html":
-				if (st.hasQuestItems(GEMSTONE))
+			{
+				if (hasQuestItems(player, GEMSTONE))
 				{
-					st.takeItems(GEMSTONE, -1);
+					takeItems(player, GEMSTONE, -1);
 					st.setCond(5, true);
 				}
 				else
@@ -105,12 +112,14 @@ public class Q00044_HelpTheSon extends Quest
 					htmltext = "30505-02a.html";
 				}
 				break;
+			}
 			case "30827-09.html":
-				st.giveItems(PET_TICKET, 1);
+			{
+				giveItems(player, PET_TICKET, 1);
 				st.exitQuest(false, true);
 				break;
+			}
 		}
-		
 		return htmltext;
 	}
 	
@@ -120,8 +129,8 @@ public class Q00044_HelpTheSon extends Quest
 		final QuestState st = getQuestState(player, false);
 		if ((st != null) && st.isCond(2))
 		{
-			st.giveItems(GEMSTONE_FRAGMENT, 1);
-			if (st.getQuestItemsCount(GEMSTONE_FRAGMENT) == 30)
+			giveItems(player, GEMSTONE_FRAGMENT, 1);
+			if (getQuestItemsCount(player, GEMSTONE_FRAGMENT) == 30)
 			{
 				st.setCond(3, true);
 			}
@@ -146,16 +155,20 @@ public class Q00044_HelpTheSon extends Quest
 		switch (npc.getId())
 		{
 			case LUNDY:
+			{
 				switch (st.getState())
 				{
 					case State.CREATED:
+					{
 						htmltext = "30827-00.htm";
 						break;
+					}
 					case State.STARTED:
+					{
 						switch (st.getCond())
 						{
 							case 1:
-								htmltext = (st.hasQuestItems(WORK_HAMMER)) ? "30827-02.html" : "30827-02a.html";
+								htmltext = (hasQuestItems(player, WORK_HAMMER)) ? "30827-02.html" : "30827-02a.html";
 								break;
 							case 2:
 								htmltext = "30827-04.html";
@@ -171,25 +184,30 @@ public class Q00044_HelpTheSon extends Quest
 								break;
 						}
 						break;
+					}
 					case State.COMPLETED:
+					{
 						htmltext = getAlreadyCompletedMsg(player);
 						break;
-				}
-				break;
-			case DRIKUS:
-				if (st.isStarted())
-				{
-					switch (st.getCond())
-					{
-						case 4:
-							htmltext = "30505-01.html";
-							break;
-						case 5:
-							htmltext = "30505-03.html";
-							break;
 					}
 				}
 				break;
+			}
+			case DRIKUS:
+			{
+				if (st.isStarted())
+				{
+					if (st.isCond(4))
+					{
+						htmltext = "30505-01.html";
+					}
+					else if (st.isCond(5))
+					{
+						htmltext = "30505-03.html";
+					}
+				}
+				break;
+			}
 		}
 		return htmltext;
 	}
