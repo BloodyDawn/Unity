@@ -56,7 +56,7 @@ public final class Summon extends AbstractEffect
 		_expMultiplier = params.getFloat("expMultiplier", 1);
 		_consumeItem = new ItemHolder(params.getInt("consumeItemId", 0), params.getInt("consumeItemCount", 1));
 		_consumeItemInterval = params.getInt("consumeItemInterval", 0);
-		_lifeTime = params.getInt("lifeTime", 3600) * 1000;
+		_lifeTime = params.getInt("lifeTime", 3600) > 0 ? params.getInt("lifeTime", 3600) * 1000 : -1;
 		_summonPoints = params.getInt("summonPoints", 0);
 	}
 	
