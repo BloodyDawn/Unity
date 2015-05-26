@@ -6,15 +6,13 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 	</skill>
-	<skill id="10001" levels="1" name="Superior Sword/Blunt Weapon Mastery" enchantGroup1="10">
+	<skill id="10001" levels="1" name="Superior Sword/Blunt Weapon Mastery">
 		<!-- STR + 2, P. Atk. + 205 when a Sword or Blunt weapon is equipped. Increases enmity toward you 60% of the damage you inflict with a Sword or Blunt weapon. Additionally, there is a chance the Cooldown of skills will reset or the duration double depending on your STR. -->
 		<table name="#pAtk"> 218 232 245 259 272 286 299 313 326 340 </table>
-		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
 		<set name="icon" val="icon.skill10001" />
 		<set name="operateType" val="P" />
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
-		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<for>
 			<effect name="Buff">
 				<add stat="pAtk" val="205">
@@ -33,30 +31,9 @@
 				<param allowWeapons="SWORD,BLUNT" />
 			</effect>
 		</for>
-		<enchant1for>
-			<effect name="Buff">
-				<add stat="pAtk" val="#pAtk">
-					<using kind="SWORD, BLUNT" />
-				</add>
-				<add stat="STR" val="2">
-					<using kind="SWORD, BLUNT" />
-				</add>
-				<add stat="skillCritical" val="1" /> <!-- STR -->
-			</effect>
-			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
-				<param minDamage="1" chance="60" />
-				<param skillId="10060" skillLevel="1" />
-				<param targetType="SELF" />
-				<param allowWeapons="SWORD,BLUNT" />
-			</effect>
-		</enchant1for>
 	</skill>
-	<skill id="10002" levels="1" name="Superior Heavy Armor Mastery" enchantGroup1="10">
+	<skill id="10002" levels="1" name="Superior Heavy Armor Mastery">
 		<!-- STR + 2. Max HP + 6883 and P. Def. + 1592 when equipped with Heavy Armor. MP Recovery Bonus + 8.4 and Critical Damage received - 35%. Reflects 10% of incurred damage back to the opponent. When HP falls below 30%, additional P. Def. + 280 and Evasion + 17. -->
-		<table name="#ench1pDef1"> 1638 1684 1730 1776 1822 1868 1914 1960 2006 2060 </table>
-		<table name="#ench1pDef2"> 298 316 334 353 371 389 408 426 444 463 </table>
-		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
 		<set name="icon" val="icon.skill10002" />
 		<set name="operateType" val="P" />
 		<set name="magicLvl" val="85" />
@@ -96,50 +73,13 @@
 				</add>
 			</effect>
 		</for>
-		<enchant1for>
-			<effect name="Buff">
-				<add stat="STR" val="2">
-					<using kind="HEAVY" />
-				</add>
-				<add stat="maxHp" val="6883">
-					<using kind="HEAVY" />
-				</add>
-				<add stat="pDef" val="#ench1pDef1">
-					<using kind="HEAVY" />
-				</add>
-				<mul stat="regMp" val="1.84">
-					<using kind="HEAVY" />
-				</mul>
-				<mul stat="defCritDamage" val="1.35">
-					<using kind="HEAVY" />
-				</mul>
-				<add stat="reflectDam" val="10">
-					<using kind="HEAVY" />
-				</add>
-				<add stat="pDef" val="#ench1pDef2">
-					<and>
-						<player hp="30" />
-						<using kind="HEAVY" />
-					</and>
-				</add>
-				<add stat="rEvas" val="17">
-					<and>
-						<player hp="30" />
-						<using kind="HEAVY" />
-					</and>
-				</add>
-			</effect>
-		</enchant1for>
 	</skill>
-	<skill id="10003" levels="1" name="Superior Shield Mastery" enchantGroup1="10">
+	<skill id="10003" levels="1" name="Superior Shield Mastery">
 		<!-- STR + 2 and Shield defense becomes possible in all directions. Shield defense success rate + 100%. When Shield defense succeeds, Shield Defense + 80% and an additional + 209. -->
-		<table name="#ench1pDef"> 222 236 249 263 277 290 304 317 331 345 </table>
-		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
 		<set name="icon" val="icon.skill10003" />
 		<set name="operateType" val="P" />
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
-		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<for>
 			<effect name="Buff">
 				<add stat="STR" val="2">
@@ -159,35 +99,13 @@
 				</add>
 			</effect>
 		</for>
-		<enchant1for>
-			<effect name="Buff">
-				<add stat="STR" val="2">
-					<using kind="SHIELD" />
-				</add>
-				<mul stat="rShld" val="2">
-					<using kind="SHIELD" />
-				</mul>
-				<mul stat="sDef" val="1.8">
-					<using kind="SHIELD" />
-				</mul>
-				<add stat="sDef" val="#ench1pDef">
-					<using kind="SHIELD" />
-				</add>
-				<add stat="shieldDefAngle" val="360">
-					<using kind="SHIELD" />
-				</add>
-			</effect>
-		</enchant1for>
 	</skill>
-	<skill id="10004" levels="1" name="Superior M. Def." enchantGroup1="10">
+	<skill id="10004" levels="1" name="Superior M. Def.">
 		<!-- STR + 2 and M. Def. + 158. Attack M. Def. rate + 25%. When receiving damage, has a chance of momentarily increasing M. Def. and Attribute Resistance. -->
-		<table name="#ench1mDef"> 168 178 188 199 209 219 230 240 250 261 </table>
-		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
 		<set name="icon" val="icon.skill10004" />
 		<set name="operateType" val="P" />
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
-		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<for>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
@@ -202,30 +120,13 @@
 				<param targetType="SELF" />
 			</effect>
 		</for>
-		<enchant1for>
-			<effect name="Buff">
-				<add stat="STR" val="2" />
-				<add stat="mDef" val="#ench1mDef" />
-				<mul stat="magicSuccRes" val="1.25" />
-			</effect>
-			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="20" />
-				<param skillId="10058" skillLevel="1" />
-				<param targetType="SELF" />
-			</effect>
-		</enchant1for>
 	</skill>
 	<skill id="10005" levels="1" name="Superior Mental Attack Resistance">
 		<!-- STR + 2. Resistance + 20 to Hold, Sleep, Paralysis, Mental attacks, Poison, Bleed, and Stun. In addition, has a chance of reflecting debuffs back to the attacker. -->
-		<table name="#ench1Vuln">21 22 23 24 25 26 27 28 29 30</table>
-		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
 		<set name="icon" val="icon.skill10005" />
 		<set name="operateType" val="P" />
 		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
-		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<for>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
@@ -241,46 +142,56 @@
 				<param SHOCK="20" />
 			</effect>
 		</for>
-		<enchant1for>
-			<effect name="Buff">
-				<add stat="STR" val="2" />
-				<add stat="reflectSkillMagic" val="10" />
-			</effect>
-			<effect name="DefenceTrait">
-				<param HOLD="#ench1Vuln" />
-				<param SLEEP="#ench1Vuln" />
-				<param PARALYZE="#ench1Vuln" />
-				<param DERANGEMENT="#ench1Vuln" />
-				<param POISON="#ench1Vuln" />
-				<param BLEED="#ench1Vuln" />
-				<param SHOCK="#ench1Vuln" />
-			</effect>
-		</enchant1for>
 	</skill>
 	<skill id="10006" levels="1" name="Last Patience">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- STR + 2. When receiving damage, has a chance of increasing P. Skill Power and Shield Defense -->
 		<set name="icon" val="icon.skill10006" />
+		<set name="magicLevel" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="STR" val="2" />
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="20" /> <!-- Unconfirmed -->
+				<param skillId="10007" skillLevel="3" /> <!-- Unconfirmed -->
+				<param targetType="SELF" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10007" levels="3" name="Last Patience">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- For 9 seconds, Shield Defense/Skill Power + 25%. -->
+		<!-- TODO: abnormalType -->
+		<table name="#abnormalLvl"> 2 3 4 </table>
 		<table name="#icons"> icon.skill10006 icon.skill10007 icon.skill10007 </table>
+		<table name="#power">1.25 1.30 1.35</table>
+		<set name="#abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="9" />
 		<set name="icon" val="#icons" />
 		<set name="operateType" val="A2" />
+		<set name="magicLevel" val="85" /> <!-- Unconfirmed -->
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="8000" />
 		<set name="isMagic" val="4" />
+		<effect name="Buff">
+			<mul stat="sDef" val="#power" />
+			<mul stat="physicalSkillPower" val="#power" />
+		</effect>
 	</skill>
-	<skill id="10008" levels="8" name="Shield Charge">
-		<table name="#effectPoint"> -689 -692 -696 -700 -704 -707 -710 -713 -716 -719 -722 </table>
-		<!-- TODO: abno -->
+	<skill id="10008" levels="11" name="Shield Charge">
+		<!-- TODO: abnormalType -->
 		<!-- Uses a shield to attack target with 13634 Power added to P. Atk. and also P. Def. - 10%, P. Evasion - 2, and P. Critical Damage + 10%. Can be used while a shield is equipped. -->
-		<table name="#power"> 13634 14179 15269 16359 17449 18539 19629 20719 </table>
-		<table name="#enchPower"> 21809 22354 22899 23444 23989 24534 25079 25624 26169 26714 </table>
-		<table name="#mpConsume"> 53 54 56 58 59 61 63 65 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 11 </table>
+		<table name="#effectPoint"> -689 -692 -696 -700 -704 -707 -710 -713 -716 -719 -722 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#mpConsume"> 53 54 56 58 59 61 63 65 67 69 71 </table>
+		<table name="#power"> 13634 14179 15269 16359 17449 18539 19629 20719 22354 23444 24534 </table>
+		<set name="activateRate" val="80" />
+		<set name="#abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="20" />
 		<set name="icon" val="icon.skill10008" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
@@ -288,19 +199,12 @@
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="570" />
+		<set name="magicLevel" val="#magicLvl" />
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isDebuff" val="true" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="overHit" val="true" />
-		<enchant1 name="power" val="#enchPower" />
-		<enchant2 name="pvpPower" val="#enchPower" />
-		<enchant3 name="power" val="#enchPower" />
-		<enchant4 name="power" val="#enchPower" />
-		<enchant5 name="power" val="#enchPower" />
-		<enchant6 name="power" val="#enchPower" />
-		<enchant7 name="power" val="#enchPower" />
-		<enchant8 name="power" val="#enchPower" />
 		<cond msgId="113" addName="1">
 			<using kind="SHIELD" />
 		</cond>
@@ -313,30 +217,65 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10009" levels="8" name="Last Judgment">
-		<table name="#effectPoint"> -689 -692 -696 -700 -704 -707 -710 -713 -716 -719 -722 </table>
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10009" levels="11" name="Last Judgment">
 		<!-- Attacks target with 16556 Power added to P. Atk, and Speed - 70. Can be used while a sword or blunt weapon is equipped. Over-hit. Critical. -->
-		<table name="#mpConsumes"> 64 66 68 70 72 75 77 79 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 9 10 11 </table>
+		<table name="#effectPoint"> -689 -692 -696 -700 -704 -707 -710 -713 -716 -719 -722 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#mpConsumes"> 64 66 68 70 72 75 77 79 81 83 85 </table>
+		<table name="#power"> 16556 17218 18542 19866 21190 22514 23838 25162 27148 28472 29796 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="SPEED_DOWN" />
+		<set name="baseCritRate" val="10" />
+		<set name="effectRange" val="99" />
 		<set name="icon" val="icon.skill10009" />
+		<set name="lvlBonusRate" val="2" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
+		<set name="overHit" val="true" />
+		<set name="power" val="#power" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="470" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="113" addName="1">
+			<using kind="SWORD, BLUNT" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack" />
+			<effect name="Debuff">
+				<sub stat="runSpd" val="70" />
+			</effect>
+		</for>
 	</skill>
-	<skill id="10010" levels="8" name="Justice Punishment">
-		<table name="#effectPoint"> -689 -694 -698 -702 -706 -709 -711 -714 -717 -720 -723 </table>
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10010" levels="11" name="Justice Punishment">
 		<!-- Attacks target with 20451 Power added to P. Atk, and P. Atk./M. Atk. - 20%. Blocks the use of magic skills. Requires a sword or blunt weapon to be equipped. Over-hit. Critical. -->
-		<table name="#mpConsumes"> 80 83 85 88 91 94 97 100 </table>
+		<table name="#effectPoint"> -689 -694 -698 -702 -706 -709 -711 -714 -717 -720 -723 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#mpConsumes"> 80 83 85 88 91 94 97 100 103 106 109 </table>
+		<table name="#power"> 20451 22087 23723 25359 26995 28631 30267 31903 35175 36811 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="4" />
+		<set name="abnormalType" val="SILENCE" />
+		<set name="abnormalVisualEffect" val="SILENCE" /> <!-- Unconfirmed -->
+		<set name="activateRate" val="80" />
+		<set name="baseCritRate" val="10" />
+		<set name="lvlBonusRate" val="2" />
+		<set name="nextActionAttack" val="true" />
+		<set name="power" val="#power" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="overHit" val="true" />
+		<set name="trait" val="DERANGEMENT" />
+		<set name="basicProperty" val="MEN" />
 		<set name="icon" val="icon.skill10010" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1700" />
@@ -344,15 +283,37 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="113" addName="1">
+			<using kind="SWORD, BLUNT" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack" />
+			<effect name="Debuff">
+				<mul stat="pDef" val="0.8" />
+				<mul stat="mDef" val="0.8" />
+			</effect>
+			<effect name="Mute" />
+		</for>
 	</skill>
-	<skill id="10011" levels="5" name="Shield Impact">
-		<table name="#effectPoint"> -1378 -1392 -1404 -1414 -1422 -1430 -1438 -1446 </table>
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10011" levels="8" name="Shield Impact">
 		<!-- Attacks target with 11253 Power added to P. Atk. and Stuns for 5 seconds. Can be used while a shield is equipped. -->
-		<table name="#mpConsumes"> 49 52 54 57 60 </table>
+		<table name="#effectPoint"> -1378 -1392 -1404 -1414 -1422 -1430 -1438 -1446 </table>
+		<table name="#magicLvl"> 85 88 91 94 97 101 103 105 </table>
+		<table name="#mpConsumes"> 49 52 54 57 60 63 66 69 </table>
+		<table name="#power"> 11253 12603 13953 15303 16653 18453 19353 20253 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="STUN" />
+		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="activateRate" val="50" />
+		<set name="basicProperty" val="CON" />
+		<set name="ignoreShld" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="power" val="#power" />
+		<set name="trait" val="SHOCK" />
 		<set name="icon" val="icon.skill10011" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="800" />
@@ -360,15 +321,35 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="113" addName="1">
+			<using kind="SHIELD" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack" />
+			<effect name="Stun" />
+		</for>
 	</skill>
-	<skill id="10012" levels="7" name="Shield Wave">
-		<table name="#effectPoint"> -1378 -1396 -1404 -1411 -1417 -1422 -1427 -1432 -1437 -1442 </table>
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10012" levels="10" name="Shield Wave">
 		<!-- Attacks nearby targets with 10174 Power added to P. Atk. Power added to P. Atk. and Stuns for 9 seconds Power added to P. Atk. Can be used while a shield is equipped. -->
-		<table name="#mpConsumes"> 59 61 63 65 67 69 71 </table>
+		<table name="#effectPoint"> -1378 -1396 -1404 -1411 -1417 -1422 -1427 -1432 -1437 -1442 </table>
+		<table name="#magicLvl"> 87 89 91 93 95 97 99 101 103 105 </table>
+		<table name="#mpConsumes"> 59 61 63 65 67 69 71  73 75 77 </table>
+		<table name="#power"> 10174 10833 11492 12150 12809 13468 14126 14897 15623 16349 </table>
+		<set name="affectLimit" val="10-10" /> <!-- Unconfirmed -->
+		<set name="affectRange" val="150" /> <!-- Unconfirmed -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="9" />
+		<set name="abnormalType" val="STUN" />
+		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="activateRate" val="50" />
+		<set name="basicProperty" val="CON" />
+		<set name="ignoreShld" val="true" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="power" val="#power" />
+		<set name="trait" val="SHOCK" />
 		<set name="icon" val="icon.skill10012" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1000" />
@@ -376,45 +357,83 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="113" addName="1">
+			<using kind="SHIELD" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack" />
+			<effect name="Stun" />
+		</for>
 	</skill>
-	<skill id="10013" levels="8" name="Gust Blade">
-		<table name="#effectPoint"> -1378 -1387 -1396 -1404 -1411 -1417 -1422 -1427 -1432 -1437 -1442 </table>
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10013" levels="11" name="Gust Blade">
 		<!-- Attacks nearby targets with 10314 Power added to P. Atk. Can be used while a sword or blunt weapon is equipped. Over-hit. Critical. -->
-		<table name="#mpConsumes"> 121 125 129 133 138 142 146 151 </table>
+		<table name="#effectPoint"> -1378 -1387 -1396 -1404 -1411 -1417 -1422 -1427 -1432 -1437 -1442 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 99 101 103 105 </table>
+		<table name="#mpConsumes"> 121 125 129 133 138 142 146 151 154 157 160 </table>
+		<table name="#power"> 10314 11026 11738 12450 13162 13874 14586 15298 18045 19013 19981 </table>
+		<set name="affectLimit" val="5-12" /> <!-- Unconfirmed -->
+		<set name="affectRange" val="200" /> <!-- Unconfirmed -->
+		<set name="baseCritRate" val="10" />
+		<set name="lvlBonusRate" val="2" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="overHit" val="true" />
+		<set name="nextActionAttack" val="true" />
+		<set name="power" val="#power" />
 		<set name="icon" val="icon.skill10013" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="370" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="10000" />
+		<cond msgId="113" addName="1">
+			<using kind="SWORD, BLUNT" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
-	<skill id="10014" levels="8" name="Chain Galaxy">
-		<table name="#effectPoint"> -1378 -1383 -1392 -1400 -1407 -1414 -1420 -1425 -1430 -1435 -1440 </table>
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10014" levels="11" name="Chain Galaxy">
 		<!-- Attacks nearby targets with 14300 Power added to P. Atk. Healing Power received - 90%. -->
-		<table name="#mpConsumes"> 159 162 167 173 179 184 190 196 </table>
+		<table name="#effectPoint"> -1378 -1383 -1392 -1400 -1407 -1414 -1420 -1425 -1430 -1435 -1440 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#mpConsumes"> 159 162 167 173 179 184 190 196 202 206 210 </table>
+		<table name="#power"> 14300 14789 15769 16748 17727 18707 19686 20666 23468 24612 25756 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="4" />
+		<set name="abnormalType" val="HEAL_EFFECT_DOWN" />  <!-- Unconfirmed -->
+		<set name="affectLimit" val="10-10" /> <!-- Unconfirmed -->
+		<set name="affectRange" val="250" /> <!-- Unconfirmed -->
+		<set name="lvlBonusRate" val="2" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="nextActionAttack" val="true" />
+		<set name="power" val="#power" />
 		<set name="icon" val="icon.skill10014" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1700" />
 		<set name="coolTime" val="370" />
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack">
+				<mul stat="healEffect" val="0.1" />
+			</effect>
+		</for>
 	</skill>
-	<skill id="10015" levels="6" name="Chain Strike">
-		<table name="#effectPoint"> -2066 -2080 -2099 -2116 -2129 -2140 -2151 -2162 -2173 </table>
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10015" levels="9" name="Chain Strike">
 		<!-- Pulls selected target to make them attack you. Requires a shield. -->
-		<table name="#mpConsumes"> 58 61 63 66 69 72 </table>
+		<table name="#effectPoint"> -2066 -2080 -2099 -2116 -2129 -2140 -2151 -2162 -2173 </table>
+		<table name="#magicLvl"> 85 87 90 93 96 99 101 103 105 </table>
+		<table name="#mpConsumes"> 58 61 63 66 69 72 75 78 81 </table>
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10015" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="500" />
@@ -422,15 +441,30 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="113" addName="1">
+			<using kind="SHIELD" />
+		</cond>
+		<for>
+			<effect name="FlyMove">
+				<param flyType="PUSH_DOWN_HORIZONTAL" /> <!-- Unconfirmed -->
+				<param speed="600" />
+				<param delay="600" />
+				<param range="600" />
+			</effect>
+		</for>
 	</skill>
-	<skill id="10016" levels="6" name="Chain Hydra">
-		<table name="#effectPoint"> -2093 -2105 -2116 -2125 -2133 -2140 -2147 -2154 -2161 </table>
+	<skill id="10016" levels="9" name="Chain Hydra">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Pulls target and nearby enemies to make them attack you. Requires a shield. -->
-		<table name="#mpConsumes"> 123 127 132 136 140 144 </table>
+		<table name="#effectPoint"> -2093 -2105 -2116 -2125 -2133 -2140 -2147 -2154 -2161 </table>
+		<table name="#magicLvl"> 89 91 93 95 97 99 101 103 105</table>
+		<table name="#mpConsumes"> 123 127 132 136 140 144 148 152 156 </table>
+		<set name="affectLimit" val="5-12" /> <!-- Unconfirmed -->
+		<set name="affectRange" val="600" /> <!-- Unconfirmed -->
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10016" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="500" />
@@ -438,12 +472,31 @@
 		<set name="reuseDelay" val="45000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="113" addName="1">
+			<using kind="SHIELD" />
+		</cond>
+		<for>
+			<effect name="FlyMove">
+				<param flyType="PUSH_DOWN_HORIZONTAL" /> <!-- Unconfirmed -->
+				<param speed="600" />
+				<param delay="600" />
+				<param range="600" />
+			</effect>
+		</for>
 	</skill>
-	<skill id="10017" levels="4" name="Final Ultimate Defense">
-		<table name="#effectPoint"> 689 700 709 714 719 724 729 </table>
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10017" levels="7" name="Final Ultimate Defense">
 		<!-- For 30 sec., P. Def. + 4000 and M. Def. + 4000. Damage received is capped at 300 and 40% of it is reflected back to the attacker. Additionally, + 80% Buff-canceling Attack Resistance. -->
-		<table name="#mpConsumes"> 58 63 68 72 </table>
+		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 </table>
+		<table name="#effectPoint"> 689 700 709 714 719 724 729 </table>
+		<table name="#mpConsumes"> 58 63 68 72 76 80 84 </table>
+		<table name="#def"> 4000 6000 8000 10000 12000 14000 16000 </table>
+		<table name="#reflectDam"> 40 60 80 100 100 100 100 </table>
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
+		<table name="#maxDamage"> 300 200 150 100 100 100 100 </table> <!-- TODO: Implement me -->
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="30" />
+		<set name="abnormalType" val="PD_UP_SPECIAL" />
+		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
 		<set name="icon" val="icon.skill10017" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -452,6 +505,14 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="900000" />
+		<for>
+			<effect name="ImmobileBuff">
+				<add stat="pDef" val="#def" />
+				<add stat="mDef" val="#def" />
+				<sub stat="cancelVuln" val="80" />
+				<add stat="reflectDam" val="#reflectDam"/>
+			</effect>
+		</for>
 	</skill>
 	<skill id="10018" levels="2" name="Noble Sacrifice">
 		<table name="#effectPoint"> 694 704 </table>
