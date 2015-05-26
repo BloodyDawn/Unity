@@ -894,16 +894,35 @@
 		<set name="reuseDelay" val="1000" />
 	</skill>
 	<skill id="10040" levels="6" name="Summon Golden Lion">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons a golden lion to fight alongside you. -->
+		<table name="#magicLvl"> 85 86 89 92 95 98 </table>
 		<table name="#mpConsumes"> 154 156 164 173 181 189 </table>
+		<table name="#npcIds"> 14936 14937 14938 14939 14974 14975 </table>
 		<set name="icon" val="icon.skill10040" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="3500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
+		<cond>
+			<and>
+				<player canSummonServitor="true" />
+				<player hasFreeSummonPoints="0" />
+			</and>
+		</cond>
+		<for>
+			<effect name="Summon">
+				<param npcId="#npcIds" />
+				<param lifeTime="1200" /> <!-- Unconfirmed -->
+			</effect>
+		</for>
+		<endEffects>
+			<effect name="CallSkill">
+				<param skillId="10061" skillLevel="1" /> <!-- Price of Summoning -->
+			</effect>
+		</endEffects>
 	</skill>
 	<skill id="10041" levels="4" name="Summon Cubic of Despair">
 		<!-- AUTO GENERATED SKILL -->
