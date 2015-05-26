@@ -26,12 +26,12 @@ import org.l2junity.gameserver.model.quest.QuestState;
 
 /**
  * Red-eyed Invaders (39)
- * @author janiko
+ * @author janiko, Gladicek
  */
 public final class Q00039_RedEyedInvaders extends Quest
 {
 	// NPCs
-	private static final int CAPTAIN_BATHIA = 30332;
+	private static final int CAPTAIN_BATHIS = 30332;
 	private static final int GUARD_BABENCO = 30334;
 	// Monsters
 	private static final int MALE_LIZARDMAN = 20919;
@@ -44,9 +44,9 @@ public final class Q00039_RedEyedInvaders extends Quest
 	private static final ItemHolder LIZ_PERFUME = new ItemHolder(7180, 30);
 	private static final ItemHolder LIZ_GEM = new ItemHolder(7181, 30);
 	// Rewards
-	private static final ItemHolder GREEN_HIGH_LURE = new ItemHolder(6521, 60);
-	private static final ItemHolder BABYDUCK_ROD = new ItemHolder(6529, 1);
-	private static final ItemHolder FISHING_SHOT_NONE = new ItemHolder(6535, 500);
+	private static final ItemHolder CORRODED_GREEN_BAIT = new ItemHolder(6521, 60);
+	private static final ItemHolder CORRODED_BABYDUCK_ROD = new ItemHolder(6529, 1);
+	private static final ItemHolder CORRODED_FISHING_SHOT = new ItemHolder(6535, 500);
 	// Misc
 	private static final int MIN_LVL = 20;
 	
@@ -54,7 +54,7 @@ public final class Q00039_RedEyedInvaders extends Quest
 	{
 		super(39, Q00039_RedEyedInvaders.class.getSimpleName(), "Red-eyed Invaders");
 		addStartNpc(GUARD_BABENCO);
-		addTalkId(GUARD_BABENCO, CAPTAIN_BATHIA);
+		addTalkId(GUARD_BABENCO, CAPTAIN_BATHIS);
 		addKillId(MALE_LIZARDMAN_GUARD, MALE_LIZARDMAN_SCOUT, MALE_LIZARDMAN, GIANT_ARANE);
 		registerQuestItems(LIZ_NECKLACE_A.getId(), LIZ_NECKLACE_B.getId(), LIZ_PERFUME.getId(), LIZ_GEM.getId());
 		addCondMinLevel(MIN_LVL, "30334-02.htm");
@@ -109,9 +109,9 @@ public final class Q00039_RedEyedInvaders extends Quest
 				{
 					if (hasAllItems(player, true, LIZ_PERFUME, LIZ_GEM))
 					{
-						rewardItems(player, GREEN_HIGH_LURE);
-						rewardItems(player, BABYDUCK_ROD);
-						rewardItems(player, FISHING_SHOT_NONE);
+						rewardItems(player, CORRODED_GREEN_BAIT);
+						rewardItems(player, CORRODED_BABYDUCK_ROD);
+						rewardItems(player, CORRODED_FISHING_SHOT);
 						addExpAndSp(player, 62366, 14);
 						qs.exitQuest(false, true);
 						htmltext = event;
@@ -134,7 +134,7 @@ public final class Q00039_RedEyedInvaders extends Quest
 		String htmltext = getNoQuestMsg(talker);
 		switch (npc.getId())
 		{
-			case CAPTAIN_BATHIA:
+			case CAPTAIN_BATHIS:
 			{
 				switch (qs.getCond())
 				{

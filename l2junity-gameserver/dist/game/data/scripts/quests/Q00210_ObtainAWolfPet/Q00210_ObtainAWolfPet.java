@@ -45,7 +45,7 @@ public final class Q00210_ObtainAWolfPet extends Quest
 		super(210, Q00210_ObtainAWolfPet.class.getSimpleName(), "Obtain a Wolf Pet");
 		addStartNpc(LUNDY);
 		addTalkId(LUNDY, BELLA, BRYNN, SYDNIA);
-		addCondMinLevel(MIN_LEVEL, "30827-08.htm");
+		addCondMinLevel(MIN_LEVEL, "30827-07.htm");
 	}
 	
 	@Override
@@ -157,7 +157,7 @@ public final class Q00210_ObtainAWolfPet extends Quest
 			{
 				if (npc.getId() == LUNDY)
 				{
-					htmltext = "30827-07.htm";
+					htmltext = getAlreadyCompletedMsg(player);
 					break;
 				}
 				break;

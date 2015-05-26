@@ -27,7 +27,7 @@ import org.l2junity.gameserver.model.quest.State;
 
 /**
  * Help The Son! (44)
- * @author malyelfik
+ * @author malyelfik, Gladicek
  */
 public class Q00044_HelpTheSon extends Quest
 {
@@ -43,6 +43,8 @@ public class Q00044_HelpTheSon extends Quest
 	private static final int GEMSTONE_FRAGMENT = 7552;
 	private static final int GEMSTONE = 7553;
 	private static final int PET_TICKET = 7585;
+	// Misc
+	private static final int MIN_LVL = 24;
 	
 	public Q00044_HelpTheSon()
 	{
@@ -51,6 +53,7 @@ public class Q00044_HelpTheSon extends Quest
 		addTalkId(LUNDY, DRIKUS);
 		addKillId(MAILLE_GUARD, MAILLE_LIZARDMAN, MAILLE_SCOUT);
 		registerQuestItems(GEMSTONE, GEMSTONE_FRAGMENT);
+		addCondMinLevel(MIN_LVL, "30827-00a.html");
 	}
 	
 	@Override
@@ -146,7 +149,7 @@ public class Q00044_HelpTheSon extends Quest
 				switch (st.getState())
 				{
 					case State.CREATED:
-						htmltext = (player.getLevel() >= 24) ? "30827-00.htm" : "30827-00a.html";
+						htmltext = "30827-00.htm";
 						break;
 					case State.STARTED:
 						switch (st.getCond())

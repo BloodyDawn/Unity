@@ -18,7 +18,6 @@
  */
 package quests.Q10733_TheTestForSurvival;
 
-import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.ClassId;
@@ -51,7 +50,6 @@ public final class Q10733_TheTestForSurvival extends Quest
 		addTalkId(GERETH, DIA, KATALIN, AYANTHE);
 		registerQuestItems(GERETH_RECOMMENDATION);
 		addCondMaxLevel(MAX_LEVEL, "33932-04.htm");
-		addCondRace(Race.ERTHEIA, "33932-04.htm");
 		addCondCompletedQuest(Q10732_AForeignLand.class.getSimpleName(), "33932-04.htm");
 	}
 	

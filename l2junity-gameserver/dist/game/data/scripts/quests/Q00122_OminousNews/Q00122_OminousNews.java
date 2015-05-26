@@ -23,22 +23,26 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 /**
  * Ominous News (122)
- * @author malyelfik
+ * @author malyelfik, Gladicek
  */
 public class Q00122_OminousNews extends Quest
 {
 	// NPCs
 	private static final int MOIRA = 31979;
 	private static final int KARUDA = 32017;
+	// Misc
+	private static final int MIN_LEVEL = 20;
 	
 	public Q00122_OminousNews()
 	{
 		super(122, Q00122_OminousNews.class.getSimpleName(), "Ominous News");
 		addStartNpc(MOIRA);
 		addTalkId(MOIRA, KARUDA);
+		addCondMinLevel(MIN_LEVEL, "31979-00.htm");
 	}
 	
 	@Override
@@ -54,10 +58,11 @@ public class Q00122_OminousNews extends Quest
 		{
 			case "31979-02.htm":
 				st.startQuest();
+				st.setQuestLocation(NpcStringId.CRYPTS_OF_DISGRACE_LV_80);
 				break;
 			case "32017-02.html":
 				st.giveAdena(8923, true);
-				st.addExpAndSp(45151, 2310);
+				st.addExpAndSp(45151, 10);
 				st.exitQuest(false, true);
 				break;
 		}
@@ -80,7 +85,7 @@ public class Q00122_OminousNews extends Quest
 				switch (st.getState())
 				{
 					case State.CREATED:
-						htmltext = (player.getLevel() >= 20) ? "31979-01.htm" : "31979-00.htm";
+						htmltext = "31979-01.htm";
 						break;
 					case State.STARTED:
 						htmltext = "31979-03.html";

@@ -27,7 +27,7 @@ import org.l2junity.gameserver.model.quest.State;
 
 /**
  * Help The Sister! (43)
- * @author malyelfik
+ * @author malyelfik, Gladicek
  */
 public class Q00043_HelpTheSister extends Quest
 {
@@ -42,6 +42,8 @@ public class Q00043_HelpTheSister extends Quest
 	private static final int MAP_PIECE = 7550;
 	private static final int MAP = 7551;
 	private static final int PET_TICKET = 7584;
+	// Misc
+	private static final int MIN_LVL = 26;
 	
 	public Q00043_HelpTheSister()
 	{
@@ -50,6 +52,7 @@ public class Q00043_HelpTheSister extends Quest
 		addTalkId(COOPER, GALLADUCCI);
 		addKillId(SORROW_MAIDEN, SPECTER);
 		registerQuestItems(MAP, MAP_PIECE);
+		addCondMinLevel(MIN_LVL, "30829-00a.html");
 	}
 	
 	@Override
@@ -145,7 +148,7 @@ public class Q00043_HelpTheSister extends Quest
 				switch (st.getState())
 				{
 					case State.CREATED:
-						htmltext = (player.getLevel() >= 26) ? "30829-00.htm" : "30829-00a.html";
+						htmltext = "30829-00.htm";
 						break;
 					case State.STARTED:
 						switch (st.getCond())
