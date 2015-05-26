@@ -167,7 +167,8 @@ public class CharStatus
 		
 		if (value > 0)
 		{
-			setCurrentHp(Math.max(getCurrentHp() - value, 0));
+			final double hpLockMin = getActiveChar().calcStat(Stats.HP_LOCK_MIN, 0);
+			setCurrentHp(Math.max(getCurrentHp() - value, hpLockMin));
 		}
 		
 		if ((getActiveChar().getCurrentHp() < 0.5) && getActiveChar().isMortal()) // Die

@@ -497,6 +497,7 @@
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="PD_UP_SPECIAL" />
 		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10017" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -515,45 +516,88 @@
 		</for>
 	</skill>
 	<skill id="10018" levels="2" name="Noble Sacrifice">
-		<table name="#effectPoint"> 694 704 </table>
-		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10 seconds, receives 60% of the damage inflicted to the party member. -->
+		<table name="#abnormalLvls"> 1 2 </table>
+		<table name="#effectPoint"> 694 704 </table>
+		<table name="#magicLvl"> 91 96 </table>
 		<table name="#mpConsumes"> 60 65 </table>
+		<table name="#transDamToPlayer"> 60 90 </table>
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="TRANSFER_DAMAGE" />
+		<set name="affectRange" val="1000" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10018" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="60000" />
+		<for>
+			<effect name="TransferDamage">
+				<add stat="transDamToPlayer" val="#transDamToPlayer" />
+			</effect>
+		</for>
 	</skill>
-	<skill id="10019" levels="2" name="Protection of Faith">
-		<table name="#effectPoint"> 702 711 720 729 738 </table>
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10019" levels="5" name="Protection of Faith">
 		<!-- For 15 seconds, all party members' P. Def. + 5000, M. Def. + 5000, and Debuff Resistance + 50%. Receives 90% of the damage inflicted to each party member. -->
-		<table name="#mpConsumes"> 127 140 </table>
+		<table name="#effectPoint"> 702 711 720 729 738 </table>
+		<table name="#magicLvl"> 85 97 100 102 104 </table>
+		<table name="#mpConsumes"> 127 140 153 166 179 </table>
+		<table name="#pDef"> 5000 10000 11000 12000 13000 </table>
+		<table name="#mDef"> 5000 7000 8000 9000 10000 </table>
+		<table name="#derangementTrait"> 50 70 70 70 70 </table>
+		<set name="affectRange" val="1000" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="15" />
+		<set name="abnormalType" val="TRANSFER_DAMAGE" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10019" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="900000" />
+		<for>
+			<effect name="Buff">
+				<add stat="pDef" val="#pDef" />
+				<add stat="mDef" val="#mDef" />
+			</effect>
+			<effect name="TransferDamage">
+				<add stat="transDamToPlayer" val="90" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param DERANGEMENT="#derangementTrait" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10020" levels="7" name="Focus Shield">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Def. + 350, Shield Defense + 700, and shield defense + 35%. MP is continuously consumed. -->
+		<table name="#sDef"> 700 800 900 1000 1100 1200 1300 </table>
+		<table name="#pDef"> 350 400 450 500 550 600 650 </table>
+		<table name="#rShld"> 1.35 1.4 1.45 1.5 1.5 1.5 1.5 </table>
+		<table name="#mpConsumes"> 50 50 50 50 0 0 0 </table>
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
+		<set name="mpConsume" val="#mpConsumes" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10020" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="50" />
+		<for>
+			<effect name="MpConsumePerLevel" ticks="5">
+				<add stat="pDef" val="#pDef" />
+				<add stat="sDef" val="#sDef" />
+				<mul stat="rShld" val="#rShld" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10021" levels="4" name="Spike Shield">
-
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10 seconds, reflects 10% of received damage back to the attacker. Also has a 50% chance of reflecting magic damage back to the attacker. Requires a shield. -->
 		<table name="#mpConsumes"> 20 21 23 24 </table>
@@ -566,8 +610,11 @@
 		<set name="reuseDelay" val="60000" />
 	</skill>
 	<skill id="10022" levels="1" name="Ignore Death">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10 seconds, HP does not decrease below 1. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="10" />
+		<!-- TODO: abnormalType -->
+		<set name="magicLvl" val="97" />
 		<set name="icon" val="icon.skill10022" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -576,38 +623,82 @@
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="1800000" />
+		<for>
+			<effect name="Buff">
+				<add stat="hpLockMin" val="1" />
+			</effect>
+		</for>
 	</skill>
-	<skill id="10023" levels="2" name="King of Beasts">
-		<table name="#effectPoint"> -3541 -3561 -3581 -3601 -3621 </table>
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10023" levels="5" name="King of Beasts">
 		<!-- Summons the King of Beasts to attack nearby and frontal targets with 35222 Power added to P. Atk. Requires a shield. Over-hit. -->
-		<table name="#mpConsumes"> 1103 1158 </table>
+		<table name="#effectPoint"> -3541 -3561 -3581 -3601 -3621 </table>
+		<table name="#magicLvl"> 95 98 101 103 105 </table>
+		<table name="#mpConsumes"> 1103 1158 1213 1268 1323 </table>
+		<table name="#power"> 35222 38826 43471 45591 47711 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="1" />
+		<set name="abnormalType" val="KNOCK_DOWN" />
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="150" />
+		<set name="lvlBonusRate" val="1" />
+		<set name="nextActionAttack" val="true" />
+		<set name="overHit" val="true" />
+		<set name="power" val="#power" />
+		<set name="trait" val="KNOCKDOWN" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10023" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="7500" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="30000" />
+		<cond msgId="113" addName="1">
+			<using kind="SHIELD" />
+		</cond>
+		<effect name="PhysicalDamage" />
+		<effect name="KnockDown">
+			<param speed="700" distance="50" />
+		</effect>
 	</skill>
 	<skill id="10024" levels="1" name="Party Rescue">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Drags all party members to oneself, and for 15 seconds receives 90% of the damage inflicted to all party members. Additionally, all damage received is capped at 10. Requires a shield. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="15" />
+		<set name="abnormalType" val="TRANSFER_DAMAGE" />
+		<set name="magicLevel" val="99" />
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="1000" />
 		<set name="icon" val="icon.skill10024" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY" />
 		<set name="mpConsume" val="96" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="600000" />
+		<cond msgId="113">
+			<using kind="SHIELD" />
+		</cond>
 	</skill>
 	<skill id="10025" levels="4" name="Knight Frenzy">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- TODO: abnormalType -->
 		<!-- For 1 minute, P. Def. and M. Def. + 50%, Speed + 10, Accuracy + 4 and Atk. Spd. + 10% when equipped with a sword or blunt weapon. Additionally, Critical Rate + 30 when equipped with a sword, and Critical Damage + 30% when equipped with a blunt weapon. -->
+		<table name="#accCombat">4 6 8 10</table>
+		<table name="#def"> 1.5 1.7 2 2.2 </table>
+		<table name="#cAtk"> 1.3 1.4 1.5 1.6 </table>
+		<table name="#cAtkAdd"> 30 40 50 60 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 20 21 23 24 </table>
+		<table name="#pAtkSpd"> 1.1 1.15 1.2 1.25 </table>
+		<table name="#runSpd"> 10 20 25 30 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="60" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="staticReuse" val="true" />
 		<set name="icon" val="icon.skill10025" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -616,35 +707,82 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="600000" />
+		<cond msgId="113" addName="1">
+			<using kind="SWORD, BLUNT" />
+		</cond>
+		<for>
+			<effect name="Buff">
+				<mul stat="mDef" val="#def">
+					<using kind="SWORD, BLUNT" />
+				</mul>
+				<mul stat="pDef" val="#def">
+					<using kind="SWORD, BLUNT" />
+				</mul>
+				<add stat="runSpd" val="#runSpd">
+					<using kind="SWORD, BLUNT" />
+				</add>
+				<add stat="accCombat" val="#accCombat">
+					<using kind="SWORD, BLUNT" />
+				</add>
+				<mul stat="pAtkSpd" val="#pAtkSpd">
+					<using kind="SWORD, BLUNT" />
+				</mul>
+				<add stat="cAtkAdd" val="#cAtkAdd">
+					<using kind="SWORD" />
+				</add>
+				<mul stat="cAtk" val="#cAtk">
+					<using kind="BLUNT" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
 	<skill id="10026" levels="9" name="Superior Aggression">
-		<table name="#effectPoint"> -10330 -10400 -10495 -10576 -10643 -10697 -10751 -10805 -10859 </table>
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Provokes target into attacking you. -->
+		<table name="#effectPoint"> -10330 -10400 -10495 -10576 -10643 -10697 -10751 -10805 -10859 </table>
+		<table name="#magicLvl"> 85 87 90 93 96 99 101 103 105 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3" />
+		<set name="abnormalType" val="TARGET_LOCK" />
+		<set name="effectRange" val="1300" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="staticReuse" val="true" />
 		<set name="icon" val="icon.skill10026" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="TargetMe" />
+			<effect name="GetAgro" />
+		</for>
 	</skill>
 	<skill id="10027" levels="8" name="Superior Aggression Aura">
-		<table name="#effectPoint"> -10330 -10433 -10523 -10600 -10663 -10726 -10789 -10852 </table>
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Provokes nearby enemies into attacking you. -->
+		<table name="#effectPoint"> -10330 -10433 -10523 -10600 -10663 -10726 -10789 -10852 </table>
+		<table name="#magicLvl"> 85 88 91 94 97 101 103 105 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3" />
+		<set name="abnormalType" val="TARGET_LOCK" />
+		<set name="affectLimit" val="10-10" />
+		<set name="affectRange" val="200" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="staticReuse" val="true" />
 		<set name="icon" val="icon.skill10027" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="TargetMe" />
+			<effect name="GetAgro" />
+		</for>
 	</skill>
 	<skill id="10028" levels="1" name="Rage Aura">
 		<!-- AUTO GENERATED SKILL -->

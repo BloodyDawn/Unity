@@ -231,7 +231,10 @@ public enum Stats
 	DEBUFF_BLOCK("debuffBlock"),
 	
 	// Lock your HP at the given value.
-	HP_LOCK("hpLock");
+	HP_LOCK("hpLock"),
+	
+	// Lock HP, can't go below min value.
+	HP_LOCK_MIN("hpLockMin");
 	
 	public static final int NUM_STATS = values().length;
 	
