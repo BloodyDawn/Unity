@@ -1802,16 +1802,12 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="69" levels="34" name="Sacrifice" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2">
-		<!-- Confirmed CT2.5 and Updated to Ertheia -->
-		<table name="#amount"> 350 412 474 536 598 660 722 784 846 908 970 1032 1094 1156 1218 1280 1342 1404 1466 1528 1590 1652 1714 1776 1838 1962 2024 2086 2148 2210 2272 2334 2396 2458 </table> <!-- Confirmed -->
-		<table name="#effectPoints"> 494 508 521 535 549 562 575 589 602 615 628 640 653 665 677 689 700 711 722 733 743 753 763 772 780 785 790 795 800 805 810 815 820 825 830 835 840 </table> <!-- Guessed -->
-		<table name="#hpConsume"> 300 345 390 435 480 525 570 615 660 705 750 795 840 885 930 975 1020 1065 1110 1155 1200 1245 1290 1335 1380 1425 1470 1515 1560 1605 1650 1695 1740 1785 </table> <!-- Guessed -->
-		<table name="#magicLvl"> 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 76 77 79 81 83 85 90 95 99 </table> <!-- Confirmed -->
-		<table name="#ench1amount"> 1231 1292 1353 1415 1476 1537 1598 1659 1720 1781 1842 1903 1964 2025 2086 2147 2208 2269 2331 2392 2453 2514 2575 2636 2697 2758 2819 2880 2941 3002 </table>
-		<table name="#ench2HpConsume"> 1534 1508 1482 1456 1430 1404 1378 1352 1326 1300 1274 1248 1222 1196 1170 1144 1118 1092 1066 1040 1014 988 962 936 910 884 858 832 806 780 </table>
-		<table name="#ench34HpConsume"> 1544 1528 1513 1497 1482 1466 1450 1435 1419 1404 1388 1372 1357 1341 1326 1310 1294 1279 1263 1248 1232 1216 1201 1185 1170 1154 1138 1123 1107 1092 </table>
-		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
+	<skill id="69" levels="37" name="Sacrifice">
+		<!-- Confirmed CT2.5 and Updated to IO -->
+		<table name="#amount"> 350 412 474 536 598 660 722 784 846 908 970 1032 1094 1156 1218 1280 1342 1404 1466 1528 1590 1652 1714 1776 1838 1962 2024 2086 2148 2210 2272 2334 2396 2458 2520 2582 2644 </table> <!-- Confirmed -->
+		<table name="#effectPoints"> 494 508 521 535 549 562 575 589 602 615 628 640 653 665 677 689 700 711 722 733 743 753 763 772 780 785 790 795 800 805 810 815 820 825 830 835 840 </table> <!-- Confirmed -->
+		<table name="#hpConsume"> 300 345 390 435 480 525 570 615 660 705 750 795 840 885 930 975 1020 1065 1110 1155 1200 1245 1290 1335 1380 1425 1470 1515 1560 1605 1650 1695 1740 1785 1830 1875 1920 </table> <!-- Confirmed -->
+		<table name="#magicLvl"> 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 76 77 79 81 83 85 90 95 99 101 103 105 </table> <!-- Confirmed -->
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="#effectPoints" />
 		<set name="effectRange" val="1100" />
@@ -1824,39 +1820,11 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="ONE" />
-		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant2 name="hpConsume" val="#ench2HpConsume" />
-		<enchant2 name="magicLvl" val="#enchMagicLvl" />
-		<enchant3 name="hpConsume" val="#ench34HpConsume" />
-		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<enchant4 name="hpConsume" val="#ench34HpConsume" />
-		<enchant4 name="magicLvl" val="#enchMagicLvl" />
 		<for>
 			<effect name="Heal">
 				<param power="#amount" />
 			</effect>
 		</for>
-		<enchant1for>
-			<effect name="Heal">
-				<param power="#ench1amount" />
-			</effect>
-		</enchant1for>
-		<enchant3for>
-			<effect name="Heal">
-				<param power="1170" />
-			</effect>
-			<effect name="DispelBySlot">
-				<param dispel="POISON,9" />
-			</effect>
-		</enchant3for>
-		<enchant4for>
-			<effect name="Heal">
-				<param power="1170" />
-			</effect>
-			<effect name="DispelBySlot">
-				<param dispel="BLEEDING,9" />
-			</effect>
-		</enchant4for>
 	</skill>
 	<skill id="70" levels="53" name="Drain Energy" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2">
 		<table name="#effectPoints"> -78 -84 -95 -102 -110 -114 -118 -251 -259 -268 -285 -294 -303 -322 -331 -341 -360 -369 -379 -389 -399 -408 -418 -428 -438 -448 -457 -467 -477 -486 -495 -505 -514 -523 -532 -541 -549 -558 -566 -574 -582 -590 -597 -604 -611 -617 -624 -630 -635 -641 -646 -650 -655 </table>

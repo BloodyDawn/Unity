@@ -268,13 +268,11 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="404" levels="14" name="Mass Shackling" enchantGroup1="1" enchantGroup2="1">
-		<!-- Confirmed CT2.5 and Updated to Ertheia -->
+	<skill id="404" levels="17" name="Mass Shackling">
+		<!-- Confirmed CT2.5 and Updated to IO -->
 		<table name="#effectPoints"> -1098 -1163 -1221 -1270 -1309 -1322 -1335 -1349 -1362 -1376 -1390 -1403 -1417 -1432 -1447 -1462 -1477 </table> <!-- Guessed -->
-		<table name="#magicLvl"> 58 62 66 70 74 75 77 79 81 83 85 90 95 99 </table>
-		<table name="#mpConsume"> 40 43 46 49 51 52 53 54 55 57 59 61 63 65 </table>
-		<table name="#ench1EffectPoints"> -2099 -2187 -2275 -2363 -2450 -2538 -2626 -2714 -2802 -2890 -2977 -3065 -3153 -3241 -3329 -3417 -3505 -3592 -3680 -3768 -3856 -3944 -4032 -4120 -4208 -4296 -4384 -4472 -4560 -4648 </table>
-		<table name="#ench2ActivateRates"> 40 41 42 42 43 44 44 45 46 46 47 48 48 49 50 50 51 52 52 53 54 54 55 56 56 57 58 58 59 60 </table>
+		<table name="#magicLvl"> 58 62 66 70 74 75 77 79 81 83 85 90 95 99 101 103 105 </table>
+		<table name="#mpConsume"> 40 43 46 49 51 52 53 54 55 57 59 61 63 65 67 69 71 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="ROOT_PHYSICALLY" />
@@ -296,8 +294,6 @@
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="HOLD" />
-		<enchant1 name="effectPoint" val="#ench1EffectPoints" />
-		<enchant2 name="activateRate" val="#ench2ActivateRates" />
 		<for>
 			<effect name="Root" />
 			<effect name="DefenceTrait">

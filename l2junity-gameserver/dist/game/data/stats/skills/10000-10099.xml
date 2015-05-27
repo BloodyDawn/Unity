@@ -131,7 +131,7 @@
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
 				<param chance="20" /> <!-- Unconfirmed -->
-				<param skillId="10007" skillLevel="3" /> <!-- Unconfirmed -->
+				<param skillId="10007" skillLevel="3" /> <!-- Unconfirmed level -->
 				<param targetType="SELF" />
 			</effect>
 		</for>
@@ -555,9 +555,8 @@
 		<table name="#sDef"> 700 800 900 1000 1100 1200 1300 </table>
 		<table name="#pDef"> 350 400 450 500 550 600 650 </table>
 		<table name="#rShld"> 1.35 1.4 1.45 1.5 1.5 1.5 1.5 </table>
-		<table name="#mpConsumes"> 50 50 50 50 0 0 0 </table>
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
-		<set name="mpConsume" val="#mpConsumes" />
+		<set name="mpConsume" val="50" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10020" />
 		<set name="operateType" val="T" />
@@ -1197,22 +1196,53 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10062" levels="4" name="Phoenix Spirit">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Def./ M. Def. + 2%. Has a 30% chance of doing the same to all party members for 10 sec. when attacked. -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#def"> 1.02 1.03 1.04 1.06 </table>
+		<table name="#triggerLevel"> 1 2 3 4 </table>
 		<set name="icon" val="icon.skill11829" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pDef" val="#def" />
+				<mul stat="mDef" val="#def" />
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="1" />
+				<param chance="30" />
+				<param skillId="10063" skillLevel="#triggerLevel" />
+				<param targetType="PARTY" />
+				<param allowWeapons="ALL" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10063" levels="4" name="Phoenix Spirit">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- TODO abnormalType -->
 		<!-- For 10 sec., all party members' P. Def./ M. Def. + 2%. -->
+		<table name="#abnormalLvls"> 1 2 3 4 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#def"> 1.02 1.03 1.04 1.06 </table>
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="10" />
+		<set name="affectRange" val="1000" />
 		<set name="icon" val="icon.skill11829" />
+		<set name="isTriggeredSkill" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="targetType" val="PARTY" />
 		<set name="castRange" val="400" />
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="100" />
 		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pDef" val="#def" />
+				<mul stat="mDef" val="#def" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10064" levels="4" name="Holy Sacrifice">
 		<!-- AUTO GENERATED SKILL -->
@@ -1228,11 +1258,20 @@
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="10065" levels="4" name="Fortress Shield">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Shield P. Def. + 5%, Shield Defense + 2%. -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#sDef"> 1.05 1.07 1.1 1.15 </table>
+		<table name="#rShld"> 1.02 1.03 1.04 1.05 </table>
 		<set name="icon" val="icon.skill0322" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="sDef" val="#sDef" />
+				<mul stat="rShld" val="#rShld" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10066" levels="4" name="Spirit of Revenge">
 		<!-- AUTO GENERATED SKILL -->
@@ -1669,9 +1708,9 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10097" levels="3" name="Riot Shield">
-		<table name="#effectPoint"> -10523 -10600 -10663 -10726 -10789 -10852 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks nearby targets with 17927 Power added to P. Atk., and forces them to target you. Requires a shield. Consumes 6 Soulstones. Over-hit. Critical. -->
+		<table name="#effectPoint"> -10523 -10600 -10663 -10726 -10789 -10852 </table>
 		<table name="#mpConsumes"> 185 191 197 </table>
 		<set name="icon" val="icon.skill10097" />
 		<set name="operateType" val="A2" />
@@ -1684,29 +1723,91 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10098" levels="4" name="Paladin's Frenzy">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- For 1 min., P./M. Def. +50%, Debuff Resistance + 10%, Speed + 10. When equipped with a sword or blunt weapon, Accuracy + 4, Atk. Spd. + 10%, Critical Rate + 30, Critical Damage + 30%. -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 20 21 23 24 </table>
+		<table name="#def"> 1.5 1.7 2 2.2 </table>
+		<table name="#debuffVuln"> 1.1 1.2 1.25 1.3 </table>
+		<table name="#runSpd"> 10 20 25 30 </table>
+		<table name="#accCombat"> 4 6 8 10 </table>
+		<table name="#pAtkSpd"> 1.1 1.2 1.25 1.3 </table>
+		<table name="#rCrit"> 30 40 50 60 </table>
+		<table name="#cAtk"> 1.3 1.4 1.5 1.6 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="60" />
+		<set name="abnormalType" val="PINCH" /> <!-- TODO Confirm -->
 		<set name="icon" val="icon.skill10098" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="600000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pDef" val="#def" />
+				<mul stat="mDef" val="#def" />
+				<mul stat="debuffVuln" val="#debuffVuln" />
+				<add stat="runSpd" val="#runSpd" />
+				<add stat="accCombat" val="#accCombat">
+					<using kind="SWORD,BLUNT" />
+				</add>
+				<mul stat="pAtkSpd" val="#pAtkSpd">
+					<using kind="SWORD,BLUNT" />
+				</mul>
+				<add stat="rCrit" val="#rCrit">
+					<using kind="SWORD,BLUNT" />
+				</add>
+				<mul stat="cAtk" val="#cAtk">
+					<using kind="SWORD,BLUNT" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
 	<skill id="10099" levels="4" name="Avenger's Frenzy">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- For 1 min., P. Atk. + 5%, P./M. Def. + 50%, Speed + 10. When equipped with a sword or blunt weapon, Accuracy + 4, Atk. Spd. + 10%, Critical Rate + 30, Critical Damage + 30%. -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 20 21 23 24 </table>
+		<table name="#def"> 1.5 1.65 1.8 2 </table>
+		<table name="#pAtk"> 1.05 1.07 1.1 1.15 </table>
+		<table name="#runSpd"> 10 20 25 30 </table>
+		<table name="#accCombat"> 4 6 8 10 </table>
+		<table name="#pAtkSpd"> 1.1 1.15 1.2 1.25 </table>
+		<table name="#rCrit"> 30 40 50 60 </table>
+		<table name="#cAtk"> 1.3 1.4 1.5 1.6 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="60" />
+		<set name="abnormalType" val="PINCH" /> <!-- TODO Confirm -->
 		<set name="icon" val="icon.skill10099" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="600000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#pAtk" />
+				<mul stat="pDef" val="#def" />
+				<mul stat="mDef" val="#def" />
+				<add stat="runSpd" val="#runSpd" />
+				<add stat="accCombat" val="#accCombat">
+					<using kind="SWORD,BLUNT" />
+				</add>
+				<mul stat="pAtkSpd" val="#pAtkSpd">
+					<using kind="SWORD,BLUNT" />
+				</mul>
+				<add stat="rCrit" val="#rCrit">
+					<using kind="SWORD,BLUNT" />
+				</add>
+				<mul stat="cAtk" val="#cAtk">
+					<using kind="SWORD,BLUNT" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
 </list>
