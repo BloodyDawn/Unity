@@ -1,32 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="10800" levels="1" name="Superior Elemental Resistance" enchantGroup1="10">
+	<skill id="10800" levels="7" name="Superior Elemental Resistance">
 		<!-- STR + 2 and Fire/Water/Wind/Earth Resistance + 20. -->
-		<table name="#enchRes"> 21 22 23 24 25 26 27 28 29 30 </table>
-		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
+		<table name="#res"> 20 22 24 26 30 32 34 </table>
 		<set name="icon" val="icon.skill10044" />
 		<set name="operateType" val="P" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
-		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<for>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
-				<add stat="fireRes" val="20" />
-				<add stat="windRes" val="20" />
-				<add stat="waterRes" val="20" />
-				<add stat="earthRes" val="20" />
+				<add stat="fireRes" val="#res" />
+				<add stat="windRes" val="#res" />
+				<add stat="waterRes" val="#res" />
+				<add stat="earthRes" val="#res" />
 			</effect>
 		</for>
-		<enchant1for>
-			<effect name="Buff">
-				<add stat="STR" val="2" />
-				<add stat="fireRes" val="#enchRes" />
-				<add stat="windRes" val="#enchRes" />
-				<add stat="waterRes" val="#enchRes" />
-				<add stat="earthRes" val="#enchRes" />
-			</effect>
-		</enchant1for>
 	</skill>
 	<skill id="10801" levels="5" name="Bullseye">
 		<!-- Decreases target's Bow/Crossbow Resistance by 40% and M. Def. by 5%. -->
