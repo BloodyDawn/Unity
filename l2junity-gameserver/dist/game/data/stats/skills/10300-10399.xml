@@ -1,18 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="10300" levels="3" name="Last Attack">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10300" levels="6" name="Last Attack">
+		<!-- TODO Cuts regular monsters' HP down to 1. -->
 		<!-- Attacks target with 52746 Power added to P. Atk. Cuts regular monsters' HP down to 1. Usable when target's HP is 10% or below. Requires a sword, blunt, spear, fist, dual blunt, or dualsword. -->
-		<table name="#mpConsumes"> 276 297 315 </table>
+		<table name="#mpConsumes"> 276 297 315 333 351 369 </table>
+		<table name="#magicLvl"> 90 95 99 101 103 105 </table>
+		<table name="#power"> 52746 59601 65085 69414 73352 77290 </table>
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="power" val="#power" />
 		<set name="icon" val="icon.skill10300" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1690" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-700" />
 		<set name="reuseDelay" val="30000" />
+		<cond msgId="113" addName="1">
+			<and>
+				<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+				<player hp="10" />
+			</and>
+		</cond>
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="10301" levels="1" name="Maximum Force Mastery">
 		<!-- AUTO GENERATED SKILL -->
@@ -319,19 +333,43 @@
 		<set name="effectPoint" val="-500" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="10321" levels="4" name="Thunder Spear">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10321" levels="7" name="Thunder Spear">
 		<!-- Attacks near the enemy by throwing a spear with 22536 Power added to P. Atk. Stuns for 9 seconds. Requires a spear. Over-hit. Critical hit. Ignores Shield Defense. Target cancel. -->
-		<table name="#mpConsumes"> 122 124 129 133 </table>
+		<table name="#magicLevel"> 85 90 95 99 101 103 105 </table>
+		<table name="#mpConsumes"> 122 124 129 133 137 141 145 </table>
+		<table name="#power"> 22536 26428 29542 32656 35788 37424 39060 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="9" />
+		<set name="abnormalType" val="STUN" />
+		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="activateRate" val="50" />
+		<set name="affectLimit" val="6-12" />
+		<set name="affectRange" val="150" />
+		<set name="baseCritRate" val="15" />
+		<set name="basicProperty" val="CON" />
+		<set name="ignoreShld" val="true" />
+		<set name="lvlBonusRate" val="1" />
+		<set name="magicLevel" val="#magicLevel" />
+		<set name="overHit" val="true" />
+		<set name="power" val="#power" />
+		<set name="trait" val="SHOCK" />
 		<set name="icon" val="icon.skll10321" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2500" />
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="-507" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="113" addName="1">
+			<using kind="POLE" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack" />
+			<effect name="Stun" />
+			<effect name="TargetCancel" />
+		</for>
 	</skill>
 	<skill id="10322" levels="1" name="Wolf's Cry">
 		<!-- AUTO GENERATED SKILL -->
@@ -362,17 +400,27 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="10325" levels="3" name="Dreadful Roar">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Cancels at least one buff of nearby enemies. Consumes 10 Soulstones. -->
+		<table name="#magicLevel"> 97 98 99 </table>
 		<table name="#mpConsumes"> 149 151 154 </table>
+		<set name="affectLimit" val="10-10" />
+		<set name="affectRange" val="180" />
+		<set name="magicLevel" val="#magicLevel" />
+		<set name="itemConsumeCount" val="2" />
+		<set name="itemConsumeId" val="1785" /> <!-- Soulstones -->
 		<set name="icon" val="icon.skill10325" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-828" />
 		<set name="reuseDelay" val="120000" />
+		<for>
+			<effect name="DispelByCategory">
+				<param slot="buff" rate="25" max="2" /> <!-- TODO rate -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="10326" levels="3" name="Bloody Fury">
 		<!-- AUTO GENERATED SKILL -->

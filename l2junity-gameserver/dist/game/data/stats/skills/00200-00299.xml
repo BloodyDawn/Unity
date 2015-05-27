@@ -2616,14 +2616,14 @@
 			</effect>
 		</enchant1for>
 	</skill>
-	<skill id="286" levels="12" name="Provoke">
+	<skill id="286" levels="13" name="Provoke">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
-		<table name="#affectRange"> 500 700 900 900 900 900 900 900 900 900 900 900 </table> <!-- Guessed -->
-		<table name="#magicLvl"> 43 55 60 75 77 79 81 83 85 90 95 99 </table> <!-- Confirmed -->
-		<table name="#mpConsume"> 54 55 56 57 58 59 60 61 62 69 75 80  </table> <!-- Confirmed -->
-		<table name="#trait_pole"> -10 -11 -12 -13 -14 -15 -16 -17 -18 -19 -20 -25 </table> <!-- Confirmed -->
+		<table name="#affectRange"> 500 700 900 900 900 900 900 900 900 900 900 900 900 </table> <!-- Guessed -->
+		<table name="#magicLvl"> 43 55 60 75 77 79 81 83 85 90 95 99 101 </table> <!-- Confirmed -->
+		<table name="#mpConsume"> 54 55 56 57 58 59 60 61 62 69 75 80 85 </table> <!-- Confirmed -->
+		<table name="#trait_pole"> -10 -11 -12 -13 -14 -15 -16 -17 -18 -19 -20 -25 30 </table> <!-- Confirmed -->
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
+		<set name="abnormalTime" val="20" />
 		<set name="abnormalType" val="REAL_TARGET" />
 		<set name="affectLimit" val="9-10" />
 		<set name="affectRange" val="#affectRange" />
