@@ -428,7 +428,6 @@
 		</for>
 	</skill>
 	<skill id="10016" levels="9" name="Chain Hydra">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Pulls target and nearby enemies to make them attack you. Requires a shield. -->
 		<table name="#effectPoint"> -2093 -2105 -2116 -2125 -2133 -2140 -2147 -2154 -2161 </table>
 		<table name="#magicLvl"> 89 91 93 95 97 99 101 103 105</table>
@@ -1274,20 +1273,51 @@
 		</for>
 	</skill>
 	<skill id="10066" levels="4" name="Spirit of Revenge">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Atk./ M. Atk. + 2%. Has a 30% chance of doing the same to all party members for 10 sec. when attacked. -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#atk"> 1.02 1.03 1.04 1.06 </table>
+		<table name="#triggerLevel"> 1 2 3 4 </table>
 		<set name="icon" val="icon.skill11830" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#atk" />
+				<mul stat="mAtk" val="#atk" />
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="1" />
+				<param chance="30" />
+				<param skillId="10067" skillLevel="#triggerLevel" />
+				<param targetType="PARTY" />
+				<param allowWeapons="ALL" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10067" levels="4" name="Spirit of Revenge">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- TODO abnormalType -->
 		<!-- For 10 sec., all party members' P. Atk./ M. Atk. + 2%. -->
+		<table name="#abnormalLvls"> 1 2 3 4 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#atk"> 1.02 1.03 1.04 1.06 </table>
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="10" />
+		<set name="affectRange" val="1000" />
+		<set name="isTriggeredSkill" val="true" />
 		<set name="icon" val="icon.skill11830" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="targetType" val="PARTY" />
 		<set name="reuseDelay" val="30000" />
 		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#atk" />
+				<mul stat="mAtk" val="#atk" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10068" levels="4" name="Summon Blood Panther">
 		<!-- AUTO GENERATED SKILL -->

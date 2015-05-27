@@ -11,52 +11,139 @@
 		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
-	<skill id="10501" levels="10" name="Superior Dagger Mastery">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
-		<!-- STR + 2 and P. Atk. + 344 when a dagger is equipped. Increases Atk. Spd. + 25% and Vital Spot Attack Rate + 5%. Additionally, there is a chance the Cooldown of skills will reset or the duration double depending on your STR. -->
+	<skill id="10501" levels="7" name="Superior Dagger Mastery">
+		<!-- TODO Lethal chance +5% -->
+		<!-- P. Atk. + 739, Atk. Spd. + 25%, Accuracy + 8, and vital spot attack success rate + 5%. STR +2. Depending on your STR, Cooldown can be reset or abnormal status duration increases + 2 times. -->
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
+		<table name="#pAtk"> 739 856 993 1117 1266 1343 1425 </table>
 		<set name="icon" val="icon.skill10501" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#pAtk">
+					<using kind="DAGGER" />
+				</mul>
+				<mul stat="pAtkSpd" val="1.25">
+					<using kind="DAGGER" />
+				</mul>
+				<add stat="accCombat" val="8">
+					<using kind="DAGGER" />
+				</add>
+				<add stat="STR" val="2" />
+				<add stat="skillCritical" val="1" /> <!-- STR -->
+			</effect>
+		</for>
 	</skill>
-	<skill id="10502" levels="10" name="Superior Dual Dagger Mastery">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
-		<!-- STR + 2 and P. Accuracy + 8. P. Atk. + 344 when using a dual dagger. -->
+	<skill id="10502" levels="7" name="Superior Dual Dagger Mastery">
+		<!-- TODO vital spot attack success rate + 5% -->
+		<!-- P. Atk. + 844, Atk. Spd. + 25%, Accuracy + 8, and vital spot attack success rate + 5%. STR + 2. -->
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
+		<table name="#pAtk"> 844 979 1135 1277 1447 1535 1629 </table>
 		<set name="icon" val="icon.skill10502" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#pAtk">
+					<using kind="DUALDAGGER" />
+				</mul>
+				<mul stat="pAtkSpd" val="1.25">
+					<using kind="DUALDAGGER" />
+				</mul>
+				<add stat="accCombat" val="8">
+					<using kind="DUALDAGGER" />
+				</add>
+				<add stat="STR" val="2" />
+			</effect>
+		</for>
 	</skill>
-	<skill id="10503" levels="10" name="Superior Light Armor Mastery">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10503" levels="7" name="Superior Light Armor Mastery">
+		<!-- TODO Depending on your DEX, Spd. and P. Skill Critical Rate change. -->
 		<!-- STR + 2. Max HP + 4880, P. Def. + 1386, P. Evasion + 20, and chance of receiving Critical Damage -35% when equipped with Light Armor. Depending on your DEX, Spd. and P. Skill Critical Rate change. Upon evasion, 10% chance of obtaining an Assassin's Reflex effect that raises Atk. Spd. -->
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
+		<table name="#pDef"> 1506 1654 1817 1959 2196 2279 2365 </table>
 		<set name="icon" val="icon.skill10503" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="maxHp" val="4880">
+					<using kind="LIGHT" />
+				</add>
+				<add stat="pDef" val="#pDef">
+					<using kind="LIGHT" />
+				</add>
+				<add stat="rEvas" val="20">
+					<using kind="LIGHT" />
+				</add>
+				<mul stat="defCritRate" val="0.65">
+					<using kind="LIGHT" />
+				</mul>
+				<add stat="STR" val="2" />
+			</effect>
+			<effect name="TriggerSkillByAvoid">
+				<param chance="10" />
+				<param skillId="10518" skillLevel="1" /> <!-- Assassin's Reflex -->
+				<param targetType="SELF" />
+			</effect>
+		</for>
 	</skill>
-	<skill id="10504" levels="10" name="Superior Movement">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
-		<!-- STR + 2. While sitting, increases HP Recovery Bonus by 7 and MP recovery bonus by 3.7. While running, increases P. Evasion by 7, HP Recovery Bonus by 6.3, MP recovery bonus by 2.6, and speed by 17. Also increases P. Evasion by 17 when HP is below 30%. -->
+	<skill id="10504" levels="7" name="Superior Movement">
+		<!-- Speed + 17, HP Recovery Bonus + 12, MP Recovery Bonus + 6. STR + 2. -->
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
+		<table name="#runSpd"> 17 18 19 20 22 23 24 </table>
 		<set name="icon" val="icon.skill10504" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="runSpd" val="#runSpd" />
+				<add stat="regHp" val="12" />
+				<add stat="regHp" val="6" />
+				<add stat="STR" val="2" />
+			</effect>
+		</for>
 	</skill>
-	<skill id="10505" levels="10" name="Superior Critical Mastery">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10505" levels="7" name="Superior Critical Mastery">
 		<!-- STR + 2, P. Critical Damage + 539 and P. Critical Rate + 60%. + 1000% chance of triggering skill mastery. -->
+		<table name="#cAtkAdd"> 539 644 750 891 970 1085 1200 </table>
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
 		<set name="icon" val="icon.skill10505" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="rCrit" val="1.6" />
+				<add stat="cAtkAdd" val="#cAtkAdd" />
+				<add stat="STR" val="2" />
+				<mul stat="skillCriticalProbability" val="11" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10506" levels="1" name="Superior Spirit Mastery">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- STR + 2 and Hold/Sleep/Bleed/Mind/Poison Resistance + 30. -->
 		<set name="icon" val="icon.skill10506" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="STR" val="2" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param HOLD="30" />
+				<param SLEEP="30" />
+				<param DERANGEMENT="30" />
+				<param POISON="30" />
+				<param BLEED="30" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10507" levels="1" name="Death Clock">
 		<!-- AUTO GENERATED SKILL -->
@@ -629,13 +716,25 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="10552" levels="10" name="Superior Resistance">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10552" levels="7" name="Superior Resistance">
 		<!-- STR + 2, M. Def. + 199, and Fire/Water/Wind/Earth Resistance + 20. When receiving damage, M. Def. and Attribute Resistance momentarily increase. -->
+		<table name="#magicLevel"> 85 90 95 99 100 102 104 </table>
+		<table name="#mDef"> 776 878 993 1097 1237 1299 1365 </table>
+		<table name="#res"> 20 22 24 26 30 32 34 </table>
 		<set name="icon" val="icon.skill10005" />
+		<set name="magicLvl" val="#magicLevel" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="STR" val="2" />
+				<add stat="mDef" val="#mDef" />
+				<add stat="waterRes" val="#res" />
+				<add stat="fireRes" val="#res" />
+				<add stat="windRes" val="#res" />
+				<add stat="earthRes" val="#res" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10553" levels="8" name="Dagger Storm">
 		<!-- AUTO GENERATED SKILL -->
@@ -731,11 +830,25 @@
 		<set name="reuseDelay" val="300000" />
 	</skill>
 	<skill id="10561" levels="4" name="Superior Vitality">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Max HP and CP + 7%. Increases resistance to poison, bleed, and stun + 4. -->
+		<table name="#inc"> 1.07 1.09 1.11 1.15 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#res"> 4 6 8 10 </table>
 		<set name="icon" val="icon.skill11864" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="maxHp" val="#inc" />
+				<mul stat="maxCp" val="#inc" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param POISON="#res" />
+				<param BLEED="#res" />
+				<param SHOCK="#res" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10562" levels="1" name="Critical Adventures">
 		<!-- AUTO GENERATED SKILL -->
