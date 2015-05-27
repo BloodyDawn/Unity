@@ -721,7 +721,7 @@
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
 		<table name="#effectPoints"> -307 -311 -314 -317 -320 -323 -326 -328 -331 -333 -333 -333 -333 -333 -333 -333 -333 </table>
 		<table name="#magicLvl"> 65 66 67 68 69 70 71 72 73 74 85 90 95 99 101 103 105 </table> <!-- Confirmed -->
-		<table name="#mpConsume"> 66 67 68 69 70 71 72 73 74 75 80 85 90 100 0 0 0 </table> <!-- TODO Confirm for 3 last level if not L2Wiki typo -->
+		<table name="#mpConsume"> 66 67 68 69 70 71 72 73 74 75 80 85 90 100 110 120 130 </table>
 		<table name="#power"> 7 10 12 15 17 20 22 25 27 30 33 36 40 45 50 55 60 </table> <!-- Confirmed -->
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="80" />
@@ -1457,11 +1457,11 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="345" levels="12" name="Sonic Rage">
-		<!-- Confirmed CT2.5 and Updated to Ertheia -->
-		<table name="#magicLevel"> 78 79 81 83 85 86 88 90 92 94 96 98 </table> <!-- Confirmed -->
-		<table name="#mpConsume"> 50 55 56 57 58 59 61 63 65 67 69 71 </table> <!-- Confirmed -->
-		<table name="#power"> 195 205 215 225 551 565 598 630 662 693 725 757 </table> <!-- Confirmed -->
+	<skill id="345" levels="15" name="Sonic Rage">
+		<!-- Confirmed CT2.5 and Updated to IO -->
+		<table name="#magicLevel"> 78 79 81 83 85 86 88 90 92 94 96 98 101 103 105 </table> <!-- Confirmed -->
+		<table name="#mpConsume"> 50 55 56 57 58 59 61 63 65 67 69 71 73 75 77 </table> <!-- Confirmed -->
+		<table name="#power"> 195 205 215 225 551 565 598 630 662 693 725 757 812 844 876 </table> <!-- Confirmed -->
 		<set name="baseCritRate" val="10" />
 		<set name="castRange" val="600" />
 		<set name="coolTime" val="300" />
