@@ -13,16 +13,12 @@
 		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<skill id="11001" levels="1" name="Superior Weapon Mastery" enchantGroup1="10">
+	<skill id="11001" levels="1" name="Superior Weapon Mastery">
 		<!-- P. Atk. + 83, M. Atk. + 104, and Casting Spd. + 23%. Additionally, there is a chance the Cooldown of skills will reset or the duration double depending on your INT. -->
-		<table name="#ench1pAtk"> 88 94 99 105 110 115 121 126 132 137 </table>
-		<table name="#ench1mAtk"> 111 117 124 131 138 144 151 158 164 171 </table>
 		<set name="targetType" val="SELF" />
 		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill11251" />
 		<set name="operateType" val="P" />
-		<enchant1 name="pAtk" val="#ench1pAtk" />
-		<enchant1 name="mAtk" val="#ench1mAtk" />
 		<for>
 			<effect name="Buff">
 				<add stat="pAtk" val="83" />
@@ -33,27 +29,13 @@
 				<add stat="skillCritical" val="4" /> <!-- INT -->
 			</effect>
 		</for>
-		<enchant1for>
-			<effect name="Buff">
-				<add stat="pAtk" val="#ench1pAtk" />
-				<add stat="mAtk" val="#ench1mAtk" />
-				<mul stat="pAtk" val="1.45" />
-				<mul stat="mAtk" val="1.17" />
-				<mul stat="mAtkSpd" val="1.23" />
-				<add stat="skillCritical" val="4" /> <!-- INT -->
-			</effect>
-		</enchant1for>
 	</skill>
-	<skill id="11002" levels="1" name="Superior Robe Mastery" enchantGroup1="10">
+	<skill id="11002" levels="1" name="Superior Robe Mastery">
 		<!-- Max HP + 4447, P. Def. + 1126, and M. Def. + 610 when equipped with a Robe. -->
-		<table name="#ench1pDef"> 77 81 86 90 95 100 104 109 113 118 </table>
-		<table name="#ench1mDef"> 320 340 360 380 400 420 440 460 480 500 </table>
 		<set name="targetType" val="SELF" />
 		<set name="magicLvl" val="85" />
 		<set name="icon" val="icon.skill11252" />
 		<set name="operateType" val="P" />
-		<enchant1 name="pDef" val="#ench1pDef" />
-		<enchant1 name="mDef" val="#ench1mDef" />
 		<for>
 			<effect name="Buff">
 				<add stat="pDef" val="72">
@@ -67,23 +49,9 @@
 				</add>
 			</effect>
 		</for>
-		<enchant1for>
-			<effect name="Buff">
-				<add stat="pDef" val="#ench1pDef">
-					<using kind="MAGIC" />
-				</add>
-				<add stat="mDef" val="#ench1mDef">
-					<using kind="MAGIC" />
-				</add>
-				<add stat="maxHp" val="4447">
-					<using kind="MAGIC" />
-				</add>
-			</effect>
-		</enchant1for>
 	</skill>
 	<skill id="11003" levels="1" name="Superior Anti Magic">
 		<!-- INT + 2, M. Def. + 139, Magic Attack Resistance + 35%. When receiving damage, has a chance of increasing M. Def. and Attribute Resistance for 10 seconds. -->
-		<table name="#ench1mDef"> 146 154 162 170 178 186 194 202 210 218 </table>
 		<set name="targetType" val="SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="magicLvl" val="85" />
@@ -103,20 +71,6 @@
 				<mul stat="magicSuccRes" val="1.35" />
 			</effect>
 		</for>
-		<enchant1for>
-			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="10" />
-				<param skillId="10058" skillLevel="1" />
-				<param targetType="SELF" />
-			</effect>
-			<effect name="Buff">
-				<add stat="INT" val="2" />
-				<add stat="mDef" val="#ench1mDef" />
-				<mul stat="magicSuccRes" val="1.35" />
-			</effect>
-		</enchant1for>
 	</skill>
 	<skill id="11004" levels="1" name="Superior Sigil Mastery">
 		<!-- When a Sigil is equipped, increases M. Atk. by 5% and MP Recovery Bonus by 20%. -->

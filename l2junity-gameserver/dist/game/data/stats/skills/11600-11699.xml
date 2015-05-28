@@ -206,11 +206,8 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11607" levels="1" name="Prevailing Song" enchantGroup1="10" enchantGroup2="10">
+	<skill id="11607" levels="1" name="Prevailing Song">
 		<!-- For 5 minutes, increases party members' Atk. Spd. + 15%, Casting Spd. + 30%, Max HP + 30%, and MP recovery bonus + 20%. Decreases magic skill MP Consumption - 10% and the magic cancel rate. -->
-		<table name="#ench1MpConsume"> 133 128 122 117 111 106 100 95 88 83 </table>
-		<table name="#ench2AbnormalTime"> 330 360 390 420 450 480 510 540 570 600 </table>
-		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
 		<set name="affectRange" val="1000" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalType" val="PREV_SONATA" />
@@ -225,10 +222,6 @@
 		<set name="magicLvl" val="85" />
 		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<enchant1 name="mpConsume" val="#ench1MpConsume" />
-		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant2 name="abnormalTime" val="#ench2AbnormalTime" />
-		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.15" />
@@ -246,11 +239,8 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11608" levels="1" name="Daring Song" enchantGroup1="10" enchantGroup2="10">
+	<skill id="11608" levels="1" name="Daring Song">
 		<!-- For 5 minutes, increases party members' P. Atk. + 8%, M. Atk. + 16%, Atk. Spd. and Casting Spd. + 8%. Decreases P. Def. - 3%, M. Def. - 11%, and P. Evasion - 4. Chance of applying 8% Vampiric Rage effect. Reflects 10% of incurred damage back to the enemy. -->
-		<table name="#ench1MpConsume"> 133 128 122 117 111 106 100 95 88 83 </table>
-		<table name="#ench2AbnormalTime"> 330 360 390 420 450 480 510 540 570 600 </table>
-		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
 		<set name="affectRange" val="1000" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalType" val="DARING_SONATA" />
@@ -265,10 +255,6 @@
 		<set name="magicLvl" val="85" />
 		<set name="effectPoint" val="696" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<enchant1 name="mpConsume" val="#ench1MpConsume" />
-		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant2 name="abnormalTime" val="#ench2AbnormalTime" />
-		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.08" />
@@ -291,9 +277,6 @@
 	</skill>
 	<skill id="11609" levels="1" name="Refreshing Song">
 		<!-- For 5 minutes, increases party members' HP Recovery Bonus + 20%, P.ﾠAccuracy + 4, P.ﾠEvasion + 3, and Spd. + 20. Decreases skill MP Consumption - 20% and skill Cooldown - 10%. -->
-		<table name="#ench1MpConsume"> 133 128 122 117 111 106 100 95 88 83 </table>
-		<table name="#ench2AbnormalTime"> 330 360 390 420 450 480 510 540 570 600 </table>
-		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
 		<set name="affectRange" val="1000" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalType" val="REF_SONATA" />
@@ -308,10 +291,6 @@
 		<set name="magicLvl" val="85" />
 		<set name="effectPoint" val="696" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<enchant1 name="mpConsume" val="#ench1MpConsume" />
-		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant2 name="abnormalTime" val="#ench2AbnormalTime" />
-		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<for>
 			<effect name="Buff">
 				<mul stat="regHp" val="1.20" />
@@ -331,11 +310,8 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11610" levels="1" name="Prevailing Dance" enchantGroup1="10" enchantGroup2="10">
+	<skill id="11610" levels="1" name="Prevailing Dance">
 		<!-- For 5 minutes, increases party members' Atk. Spd. + 15%, Casting Spd. + 30%, Max HP + 30%, and MP recovery bonus + 20%. Decreases magic skill MP Consumption - 10% and the magic cancel rate. -->
-		<table name="#ench1MpConsume"> 133 128 122 117 111 106 100 95 88 83 </table>
-		<table name="#ench2AbnormalTime"> 330 360 390 420 450 480 510 540 570 600 </table>
-		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
 		<set name="affectRange" val="1000" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalType" val="PREV_SONATA" />
@@ -350,10 +326,6 @@
 		<set name="magicLvl" val="85" />
 		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<enchant1 name="mpConsume" val="#ench1MpConsume" />
-		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant2 name="abnormalTime" val="#ench2AbnormalTime" />
-		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtkSpd" val="1.15" />
@@ -371,11 +343,8 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11611" levels="1" name="Daring Dance" enchantGroup1="10" enchantGroup2="10">
+	<skill id="11611" levels="1" name="Daring Dance">
 		<!-- For 5 minutes, increases party members' P. Atk. + 8%, M. Atk. + 16%, Atk. Spd. and Casting Spd. + 8%. Decreases P. Def. - 3%, M. Def. - 11%, and P. Evasion - 4. Chance of applying 8% Vampiric Rage effect. Reflects 10% of incurred damage back to the enemy. -->
-		<table name="#ench1MpConsume"> 133 128 122 117 111 106 100 95 88 83 </table>
-		<table name="#ench2AbnormalTime"> 330 360 390 420 450 480 510 540 570 600 </table>
-		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
 		<set name="affectRange" val="1000" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalType" val="DARING_SONATA" />
@@ -390,10 +359,6 @@
 		<set name="magicLvl" val="85" />
 		<set name="effectPoint" val="696" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<enchant1 name="mpConsume" val="#ench1MpConsume" />
-		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant2 name="abnormalTime" val="#ench2AbnormalTime" />
-		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<for>
 			<effect name="Buff">
 				<mul stat="pAtk" val="1.08" />
@@ -414,11 +379,8 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11612" levels="1" name="Refreshing Dance" enchantGroup1="10" enchantGroup2="10">
+	<skill id="11612" levels="1" name="Refreshing Dance">
 		<!-- For 5 minutes, increases party members' HP Recovery Bonus + 20%, P.ﾠAccuracy + 4, P.ﾠEvasion + 3, and Spd. + 20. Decreases skill MP Consumption - 20% and skill Cooldown - 10%. -->
-		<table name="#ench1MpConsume"> 133 128 122 117 111 106 100 95 88 83 </table>
-		<table name="#ench2AbnormalTime"> 330 360 390 420 450 480 510 540 570 600 </table>
-		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
 		<set name="affectRange" val="1000" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalType" val="REF_SONATA" />
@@ -433,10 +395,6 @@
 		<set name="magicLvl" val="85" />
 		<set name="effectPoint" val="696" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<enchant1 name="mpConsume" val="#ench1MpConsume" />
-		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant2 name="abnormalTime" val="#ench2AbnormalTime" />
-		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<for>
 			<effect name="Buff">
 				<mul stat="regHp" val="1.20" />

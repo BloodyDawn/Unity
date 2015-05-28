@@ -172,7 +172,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10254" />
 		<set name="targetType" val="SELF" />
-		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<for>
 			<effect name="Buff">
 				<add stat="STR" val="2">
@@ -221,7 +220,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10256" />
 		<set name="targetType" val="SELF" />
-		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<for>
 			<effect name="Buff">
 				<add stat="STR" val="2" />
@@ -401,7 +399,7 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10265" levels="11" name="Eruption" enchantGroup1="10" enchantGroup2="10" enchantGroup3="10" enchantGroup4="10" enchantGroup5="10" enchantGroup6="10" enchantGroup7="10" enchantGroup8="10">
+	<skill id="10265" levels="11" name="Eruption">
 		<!-- TODO: Power is decreased by 10% when equipped with a sword/blunt/fist weapon and increased by 50% when equipped with a spear. -->
 		<!-- Attacks nearby enemies with 11557 Power added to P. Atk., Stuns them for 2 seconds and remove their target. Power is decreased by 10% when equipped with a sword/blunt/fist weapon and increased by 50% when equipped with a spear. Requires a sword, blunt, spear, fist, dual blunt weapon, or dualsword weapon to be equipped. Over-hit. Critical. -->
 		<table name="#effectPoints"> -687 -690 -694 -698 -702 -705 -708 -709 -710 -711 -712 </table>
@@ -469,9 +467,6 @@
 		<set name="trait" val="KNOCKDOWN" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="rideState" val="NONE" />
-		<enchant1 name="mpConsume" val="#ench1MpConsume" />
-		<enchant2 name="activateRate" val="#ench2ActivateRates" />
-		<enchant3 name="power" val="#ench3Power" />
 		<cond msgId="113" addName="1">
 			<target playable="true" />
 		</cond>
