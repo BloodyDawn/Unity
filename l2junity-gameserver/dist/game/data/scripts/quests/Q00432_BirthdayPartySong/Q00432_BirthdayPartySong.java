@@ -37,8 +37,9 @@ public class Q00432_BirthdayPartySong extends Quest
 	private static final int GOLEM = 21103;
 	// Item
 	private static final int RED_CRYSTAL = 7541;
-	// Reward
 	private static final int ECHO_CRYSTAL = 7061;
+	// Misc
+	private static final int MIN_LVL = 31;
 	
 	public Q00432_BirthdayPartySong()
 	{
@@ -47,6 +48,7 @@ public class Q00432_BirthdayPartySong extends Quest
 		addTalkId(OCTAVIA);
 		addKillId(GOLEM);
 		registerQuestItems(RED_CRYSTAL);
+		addCondMinLevel(MIN_LVL, "31043-00.htm");
 	}
 	
 	@Override
@@ -63,20 +65,20 @@ public class Q00432_BirthdayPartySong extends Quest
 		switch (event)
 		{
 			case "31043-02.htm":
+			{
 				st.startQuest();
 				break;
+			}
 			case "31043-05.html":
-				if (st.getQuestItemsCount(RED_CRYSTAL) < 50)
+			{
+				if (getQuestItemsCount(player, RED_CRYSTAL) < 50)
 				{
 					return "31043-06.html";
 				}
-				
-				st.giveItems(ECHO_CRYSTAL, 25);
+				giveItems(player, ECHO_CRYSTAL, 25);
 				st.exitQuest(true, true);
 				break;
-			default:
-				htmltext = null;
-				break;
+			}
 		}
 		return htmltext;
 	}
@@ -88,8 +90,8 @@ public class Q00432_BirthdayPartySong extends Quest
 		
 		if ((st != null) && st.isCond(1) && getRandomBoolean())
 		{
-			st.giveItems(RED_CRYSTAL, 1);
-			if (st.getQuestItemsCount(RED_CRYSTAL) == 50)
+			giveItems(player, RED_CRYSTAL, 1);
+			if (getQuestItemsCount(player, RED_CRYSTAL) == 50)
 			{
 				st.setCond(2, true);
 			}
@@ -115,11 +117,15 @@ public class Q00432_BirthdayPartySong extends Quest
 		switch (st.getState())
 		{
 			case State.CREATED:
-				htmltext = (player.getLevel() >= 31) ? "31043-01.htm" : "31043-00.htm";
+			{
+				htmltext = "31043-01.htm";
 				break;
+			}
 			case State.STARTED:
+			{
 				htmltext = (st.isCond(1)) ? "31043-03.html" : "31043-04.html";
 				break;
+			}
 		}
 		return htmltext;
 	}
