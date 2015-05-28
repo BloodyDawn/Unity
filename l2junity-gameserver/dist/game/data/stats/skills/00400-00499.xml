@@ -586,17 +586,13 @@
 			</effect>
 		</selfEffects>
 	</skill>
-	<skill id="410" levels="8" name="Mortal Strike" enchantGroup1="2" enchantGroup2="2">
+	<skill id="410" levels="8" name="Mortal Strike">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
-		<!-- NOTE: This skill increases "Blow Rate" and description in client says "Critical Rate" but is client typo, so please don't change this skill -->
 		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#blowRate"> 1.1 1.15 1.2 1.22 1.24 1.26 1.28 1.30 </table>
 		<table name="#effectPoints"> 549 611 655 655 655 655 655 655 </table> <!-- Guessed -->
 		<table name="#magicLvl"> 58 66 74 80 85 90 95 99 </table>
 		<table name="#mpConsume"> 27 31 34 37 40 43 46 49 </table>
-		<table name="#ench1Chance"> 1.3 1.3 1.31 1.31 1.31 1.32 1.32 1.32 1.33 1.33 1.33 1.34 1.34 1.34 1.35 1.35 1.35 1.36 1.36 1.36 1.37 1.37 1.37 1.38 1.38 1.38 1.39 1.39 1.39 1.4 </table>
-		<table name="#ench2AbnormalTimes"> 124 128 132 136 140 144 148 152 156 160 164 168 172 176 180 184 188 192 196 200 204 208 212 216 220 224 228 232 236 240 </table>
-		<table name="#ench2Chance"> 1.31 1.31 1.31 1.31 1.31 1.31 1.32 1.32 1.32 1.32 1.32 1.32 1.33 1.33 1.33 1.33 1.33 1.33 1.34 1.34 1.34 1.34 1.34 1.34 1.35 1.35 1.35 1.35 1.35 1.35 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="MIGHT_MORTAL" />
@@ -609,7 +605,6 @@
 		<set name="reuseDelay" val="150000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<enchant2 name="abnormalTime" val="#ench2AbnormalTimes" />
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
@@ -618,16 +613,6 @@
 				<mul stat="blowRate" val="#blowRate" />
 			</effect>
 		</for>
-		<enchant1for>
-			<effect name="Buff">
-				<mul stat="blowRate" val="#ench1Chance" />
-			</effect>
-		</enchant1for>
-		<enchant2for>
-			<effect name="Buff">
-				<mul stat="blowRate" val="#ench2Chance" />
-			</effect>
-		</enchant2for>
 	</skill>
 	<skill id="411" levels="3" name="Stealth" enchantGroup1="1" enchantGroup2="1">
 		<table name="#abnormalLvls"> 1 2 3 </table>

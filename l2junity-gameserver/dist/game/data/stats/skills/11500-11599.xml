@@ -1474,12 +1474,8 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11565" levels="1" name="Elemental Resistance" enchantGroup1="10" enchantGroup2="10">
+	<skill id="11565" levels="1" name="Elemental Resistance">
 		<!-- Increases party members' Fire/Water/Wind/Earth Resistance by 30 for 30 minutes. -->
-		<table name="#ench1MpConsume"> 107 103 98 94 89 85 80 76 71 67 </table>
-		<table name="#ench1MpInitialConsume"> 26 25 24 23 22 21 20 19 17 16 </table>
-		<table name="#ench2AbnormalTime"> 1980 2160 2340 2520 2700 2880 3060 3240 3420 3600 </table>
-		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
 		<set name="affectRange" val="1000" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalType" val="ELEMENTAL_RESISTANCE_ISS" />
@@ -1496,11 +1492,6 @@
 		<set name="magicLvl" val="85" />
 		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<enchant1 name="mpConsume" val="#ench1MpConsume" />
-		<enchant1 name="mpInitialConsume" val="#ench1MpInitialConsume" />
-		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant2 name="abnormalTime" val="#ench2AbnormalTime" />
-		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<for>
 			<effect name="Buff">
 				<add stat="fireRes" val="30" />
@@ -1516,12 +1507,8 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11566" levels="1" name="Holy Attack Resistance" enchantGroup1="10" enchantGroup2="10">
+	<skill id="11566" levels="1" name="Holy Attack Resistance">
 		<!-- Increases party members' Holy/Dark Attack Resistance by 30, and Poison/Bleed Resistance by 50% for 30 minutes. -->
-		<table name="#ench1MpConsume"> 107 103 98 94 89 85 80 76 71 67 </table>
-		<table name="#ench1MpInitialConsume"> 26 25 24 23 22 21 20 19 17 16 </table>
-		<table name="#ench2AbnormalTime"> 1980 2160 2340 2520 2700 2880 3060 3240 3420 3600 </table>
-		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
 		<set name="affectRange" val="1000" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalType" val="HOLY_ATTACK_RESISTANCE_ISS" />
@@ -1538,11 +1525,6 @@
 		<set name="magicLvl" val="85" />
 		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<enchant1 name="mpConsume" val="#ench1MpConsume" />
-		<enchant1 name="mpInitialConsume" val="#ench1MpInitialConsume" />
-		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant2 name="abnormalTime" val="#ench2AbnormalTime" />
-		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<for>
 			<effect name="Buff">
 				<add stat="holyRes" val="30" />
@@ -1560,12 +1542,8 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11567" levels="1" name="Mental Attack Resistance" enchantGroup1="10" enchantGroup2="10">
+	<skill id="11567" levels="1" name="Mental Attack Resistance">
 		<!-- Increases party members' Hold/Sleep/Mental Attack Resistance by 50, Buff-canceling Attack Resistance by 30 and Debuff Resistance by 20 for 30 minutes. -->
-		<table name="#ench1MpConsume"> 107 103 98 94 89 85 80 76 71 67 </table>
-		<table name="#ench1MpInitialConsume"> 26 25 24 23 22 21 20 19 17 16 </table>
-		<table name="#ench2AbnormalTime"> 1980 2160 2340 2520 2700 2880 3060 3240 3420 3600 </table>
-		<table name="#enchMagicLvl"> 86 87 88 90 91 92 93 95 97 99 </table>
 		<set name="affectRange" val="1000" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalType" val="MENTAL_ATTACK_RESISTANCE_ISS" />
@@ -1581,11 +1559,6 @@
 		<set name="magicLvl" val="85" />
 		<set name="effectPoint" val="687" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
-		<enchant1 name="mpConsume" val="#ench1MpConsume" />
-		<enchant1 name="mpInitialConsume" val="#ench1MpInitialConsume" />
-		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant2 name="abnormalTime" val="#ench2AbnormalTime" />
-		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<for>
 			<effect name="Buff">
 				<add stat="cancelVuln" val="30" />
@@ -1625,12 +1598,11 @@
 		</for>
 	</skill>
 	<skill id="11570" levels="1" name="Healing Melody">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Heals target and the 10 most injured allies around target by up to 35% of their Max HP. The recovery amount decreases starting from the most injured person. -->
 		<set name="icon" val="icon.skill11570" />
 		<set name="affectLimit" val="5-12" /> <!-- Custom -->
 		<set name="affectRange" val="300" />
-		<set name="effectPoint" val="1301" /> <!-- Custom from chain heal -->
+		<set name="effectPoint" val="1301" />
 		<set name="effectRange" val="1400" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA_FRIENDLY" />
@@ -1665,7 +1637,6 @@
 		</for>
 	</skill>
 	<skill id="11580" levels="4" name="Mass Transform">
-
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10 sec., mutates enemies to reduce their Speed by 20% and render them unable to attack. Mutated enemies return to normal when inflicted with damage. -->
 		<table name="#mpConsumes"> 126 139 153 166 </table>

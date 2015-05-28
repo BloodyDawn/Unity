@@ -25,11 +25,20 @@
 		<set name="reuseDelay" val="300000" />
 	</skill>
 	<skill id="10608" levels="4" name="Superior Haste">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Physical skill Cooldown - 5%. Spd. + 5. -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#pReuse"> 0.95 0.94 0.93 0.9 </table>
+		<table name="#runSpd"> 5 6 7 10 </table>
 		<set name="icon" val="icon.skill10608" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="runSpd" val="#runSpd" />
+				<mul stat="pReuse" val="#pReuse" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10609" levels="1" name="Critical Chances">
 		<!-- AUTO GENERATED SKILL -->

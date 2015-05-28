@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="10903" levels="4" name="Hawk Eye">
-
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 minutes when a bow or crossbow is equipped, P. Atk. + 5%, Skill Power + 5%, and received M. Critical Damage - 5%. -->
 		<table name="#mpConsumes"> 62 69 76 83 </table>
@@ -15,11 +14,18 @@
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10904" levels="4" name="Superior Skill Mastery">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Skill power + 5%. -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#physicalSkillPower"> 1.05 1.06 1.07 1.1 </table>
 		<set name="icon" val="icon.skill11874" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="physicalSkillPower" val="#physicalSkillPower" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10905" levels="3" name="Fatal Arrow">
 		<table name="#effectPoint"> -709 -711 -714 </table>

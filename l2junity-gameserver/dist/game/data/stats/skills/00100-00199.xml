@@ -978,7 +978,7 @@
 			</effect>
 		</enchant1for>
 	</skill>
-	<skill id="139" levels="9" name="Guts" enchantGroup1="10" enchantGroup2="10">
+	<skill id="139" levels="9" name="Guts">
 		<!-- Confirmed CT2.5 and Updated to Ertheia -->
 		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 9 </table>
 		<table name="#debufResist"> 50 55 60 65 70 75 80 85 90 </table> <!-- Confirmed -->
@@ -987,8 +987,6 @@
 		<table name="#magicLvl"> 36 43 52 64 74 85 90 95 99 </table> <!-- Confirmed -->
 		<table name="#mpConsume"> 16 19 24 26 28 30 35 40 45 </table> <!-- Confirmed -->
 		<table name="#pDef"> 2 2.1 2.2 2.3 2.4 2.5 2.6 2.8 3 </table> <!-- Confirmed -->
-		<table name="#ench1AbnormalTimes"> 62 64 66 68 70 72 74 76 78 80 </table> <!-- Confirmed -->
-		<table name="#ench2hp"> 91 92 93 94 95 96 97 98 99 100 </table> <!-- Confirmed -->
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="60" /> <!-- Confirmed -->
 		<set name="abnormalType" val="PINCH" />
@@ -1001,13 +999,9 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="SELF" />
-		<enchant1 name="abnormalTime" val="#ench1AbnormalTimes" />
 		<cond msgId="113" addName="1">
 			<player hp="#hp" />
 		</cond>
-		<enchant2cond msgId="113" addName="1">
-			<player hp="#ench2hp" />
-		</enchant2cond>
 		<for>
 			<effect name="Buff">
 				<mul stat="pDef" val="#pDef" />
