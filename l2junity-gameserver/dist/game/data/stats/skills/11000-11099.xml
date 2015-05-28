@@ -13,37 +13,39 @@
 		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="10000" />
 	</skill>
-	<skill id="11001" levels="1" name="Superior Weapon Mastery">
-		<!-- P. Atk. + 83, M. Atk. + 104, and Casting Spd. + 23%. Additionally, there is a chance the Cooldown of skills will reset or the duration double depending on your INT. -->
+	<skill id="11001" levels="7" name="Superior Weapon Mastery">
+		<!--M. Atk. + 17%, additional M. Atk. + 981, Casting Spd. + 23%. Depending on your INT, the Cooldown resets or the duration increases by 2 times. -->
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
+		<table name="#mAtk"> 981 1138 1319 1485 1682 1785 1893 </table>
 		<set name="targetType" val="SELF" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill11251" />
 		<set name="operateType" val="P" />
 		<for>
 			<effect name="Buff">
-				<add stat="pAtk" val="83" />
-				<add stat="mAtk" val="104" />
-				<mul stat="pAtk" val="1.45" />
 				<mul stat="mAtk" val="1.17" />
+				<add stat="mAtk" val="#mAtk" />
 				<mul stat="mAtkSpd" val="1.23" />
 				<add stat="skillCritical" val="4" /> <!-- INT -->
 			</effect>
 		</for>
 	</skill>
-	<skill id="11002" levels="1" name="Superior Robe Mastery">
-		<!-- Max HP + 4447, P. Def. + 1126, and M. Def. + 610 when equipped with a Robe. -->
+	<skill id="11002" levels="7" name="Superior Robe Mastery">
+		<!-- Max HP + 4447, P. Def. + 1212, and M. Def. + 10% when equipped with a Robe. -->
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
+		<table name="#pDef"> 1212 1330 1462 1576 1767 1833 1903 </table>
 		<set name="targetType" val="SELF" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill11252" />
 		<set name="operateType" val="P" />
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="72">
+				<add stat="pDef" val="#pDef">
 					<using kind="MAGIC" />
 				</add>
-				<add stat="mDef" val="300">
+				<mul stat="mDef" val="1.1">
 					<using kind="MAGIC" />
-				</add>
+				</mul>
 				<add stat="maxHp" val="4447">
 					<using kind="MAGIC" />
 				</add>
@@ -51,23 +53,18 @@
 		</for>
 	</skill>
 	<skill id="11003" levels="1" name="Superior Anti Magic">
-		<!-- INT + 2, M. Def. + 139, Magic Attack Resistance + 35%. When receiving damage, has a chance of increasing M. Def. and Attribute Resistance for 10 seconds. -->
+		<!-- M. Def. + 862, Magic Attack Resistance + 35%. INT + 2. -->
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
+		<table name="#mDef"> 862 976 1104 1219 1374 1444 1517 </table>
 		<set name="targetType" val="SELF" />
 		<set name="skillType" val="BUFF" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10004" />
 		<set name="operateType" val="P" />
 		<for>
-			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
-				<param minDamage="1" />
-				<param chance="10" />
-				<param skillId="10058" skillLevel="1" />
-				<param targetType="SELF" />
-			</effect>
 			<effect name="Buff">
 				<add stat="INT" val="2" />
-				<add stat="mDef" val="139" />
+				<add stat="mDef" val="#mDef" />
 				<mul stat="magicSuccRes" val="1.35" />
 			</effect>
 		</for>

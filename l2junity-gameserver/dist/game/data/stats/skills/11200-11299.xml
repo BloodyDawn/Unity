@@ -148,43 +148,102 @@
 		<set name="effectPoint" val="-687" />
 		<set name="isMagic" val="1" />
 	</skill>
-	<skill id="11251" levels="10" name="Superior Weapon Mastery">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11251" levels="7" name="Superior Weapon Mastery">
 		<!-- Increases INT by 2, P. Atk. by 82.9, M. Atk. by 103.7, Casting Spd. by 23%, M. Atk. by 6% and M. Critical Rate by 6%. Decreases MP Consumption of magic skill by 6%. When a Sigil is equipped, increases M. Atk. by 5% and MP Recovery by 20%. Additionally, there is a chance the Cooldown of skills will reset or the duration double depending on your INT. When equipped with a two-handed blunt, additionally P. Atk. + 105% and P. Accuracy + 4. -->
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
+		<table name="#mAtk"> 1079 1252 1451 1633 1850 1963 2083 </table>
+		<table name="#pAtk"> 822 953 1105 1244 1409 1495 1586 </table>
+		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill11251" />
 		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="mAtk" val="1.24" />
+				<add stat="mAtk" val="#mAtk" />
+				<mul stat="mAtkSpd" val="1.23" />
+				<add stat="mCritRate" val="6" />
+				<mul stat="pAtk" val="2.05" />
+				<add stat="pAtk" val="#pAtk">
+					<using kind="DUALBLUNT" />
+				</add>
+				<add stat="accCombat" val="6">
+					<using kind="DUALBLUNT" />
+				</add>
+				<add stat="skillCritical" val="4" /> <!-- INT -->
+			</effect>
+		</for>
 	</skill>
-	<skill id="11252" levels="10" name="Superior Robe Mastery">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11252" levels="7" name="Superior Robe Mastery">
 		<!-- INT + 2. Max HP + 4151, P. Def. + 845, and Casting Spd. + 5% when equipped with a Robe. -->
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
+		<table name="#pDef"> 1212 1330 1462 1576 1767 1833 1903 </table>
+		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill11252" />
 		<set name="operateType" val="P" />
-		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="INT" val="2" />
+				<add stat="pDef" val="#pDef">
+					<using kind="MAGIC" />
+				</add>
+				<mul stat="mDef" val="1.1">
+					<using kind="MAGIC" />
+				</mul>
+				<add stat="maxHp" val="4151">
+					<using kind="MAGIC" />
+				</add>
+			</effect>
+		</for>
 	</skill>
-	<skill id="11253" levels="10" name="Superior Magic Mastery">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
-		<!-- INT + 2, M. Def. + 139, Magic Attack Resistance + 35%, and Max MP + 313. Increases HP/MP Recovery Bonus. Magic skill Cooldown - 25%. -->
-		<set name="icon" val="icon.skill11253" />
-		<set name="operateType" val="P" />
+	<skill id="11253" levels="7" name="Superior Magic Mastery">
+		<!-- M. Def. + 862, Magic Attack Resistance + 35%, Magic skill Cooldown - 25%, MP Consumption - 10%. INT +2 -->
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
+		<table name="#mDef"> 862 976 1104 1219 1374 1444 1517 </table>
 		<set name="targetType" val="SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="icon" val="icon.skill10004" />
+		<set name="operateType" val="P" />
+		<for>
+			<effect name="Buff">
+				<add stat="INT" val="2" />
+				<add stat="mDef" val="#mDef" />
+				<mul stat="magicSuccRes" val="1.35" />
+				<mul stat="mReuse" val="0.75" />
+				<mul stat="MagicalMpConsumeRate" val="0.9" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11254" levels="4" name="Superior Summon Mastery">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- INT + 2. Can summon a servitor within 4 summon points. Use Rage to transfer the effects onto your servitor. -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<set name="icon" val="icon.skill11254" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="INT" val="2" />
+				<add stat="summonPoints" val="4" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11255" levels="1" name="Superior Spirit Mastery">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- INT + 2 and Hold/Sleep/Bleed/Poison/Mental Attack Resistance + 30. -->
-		<set name="icon" val="icon.skill11255" />
-		<set name="operateType" val="P" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
+		<set name="icon" val="icon.skill11006" />
+		<set name="operateType" val="P" />
+		<for>
+			<effect name="Buff">
+				<add stat="INT" val="2" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param HOLD="30" SLEEP="30" BLEED="30" POISON="30" DERANGEMENT="30" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11256" levels="8" name="Summon Cute Bear">
 		<!-- AUTO GENERATED SKILL -->
@@ -635,13 +694,23 @@
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
-	<skill id="11287" levels="10" name="Superior Resistance">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
-		<!-- INT + 2, M. Def. + 199, and Fire/Water/Wind/Earth Resistance + 20. When receiving damage, has a chance of increasing M. Def. and Attribute Resistance momentarily. -->
+	<skill id="11287" levels="7" name="Superior Resistance">
+		<!-- Fire/Water/Wind/Earth Resistance + 20. INT + 2. -->
+		<table name="#magicLevel"> 85 90 95 99 100 102 104 </table>
+		<table name="#res"> 20 22 24 26 30 32 34 </table>
 		<set name="icon" val="icon.skill10005" />
 		<set name="operateType" val="P" />
+		<set name="magicLvl" val="#magicLevel" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="INT" val="2" />
+				<add stat="waterRes" val="#res" />
+				<add stat="fireRes" val="#res" />
+				<add stat="windRes" val="#res" />
+				<add stat="earthRes" val="#res" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11288" levels="3" name="Ultimate Servitor Share">
 		<!-- AUTO GENERATED SKILL -->
@@ -732,13 +801,25 @@
 		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="11295" levels="10" name="Superior Light Armor Mastery">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11295" levels="7" name="Superior Light Armor Mastery">
 		<!-- INT + 2. Max HP + 4151 and P. Def. + 1155 when equipped with Light Armor. -->
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
+		<table name="#pDef"> 1205 1323 1453 1567 1756 1823 1892 </table>
 		<set name="icon" val="icon.skill10254" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="INT" val="2" />
+				<add stat="pDef" val="#pDef">
+					<using kind="LIGHT" />
+				</add>
+				<add stat="maxHp" val="4151">
+					<using kind="LIGHT" />
+				</add>
+			</effect>
+		</for>
 	</skill>
 	<skill id="11296" levels="6" name="Mass Exile">
 

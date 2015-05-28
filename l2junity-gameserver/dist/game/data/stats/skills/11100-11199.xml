@@ -347,11 +347,21 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="11124" levels="4" name="Superior Wizardry">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- M. Atk. + 5%, Max MP, MP Recovery + 5%, and debuff resistance + 10%. -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#inc"> 1.05 1.06 1.07 1.1 </table>
 		<set name="icon" val="icon.skill0945" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="mAtk" val="#inc" />
+				<mul stat="maxMp" val="#inc" />
+				<mul stat="regMp" val="#inc" />
+				<mul stat="debuffVuln" val="1.1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11125" levels="4" name="Superior Wizardry">
 		<!-- AUTO GENERATED SKILL -->
@@ -739,42 +749,84 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11183" levels="1" name="Superior Quick Recovery">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- INT + 2 and Cooldown - 25% for magic skills. -->
 		<set name="icon" val="icon.skill11004" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="INT" val="2" />
+				<mul stat="mReuse" val="0.75" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11184" levels="1" name="Superior Arcane Lore">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- INT + 2 and increases Fire/Water/Wind/Earth Resistance by 20 and M. Def. by 5%. -->
 		<set name="icon" val="icon.skill10044" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="INT" val="2" />
+				<add stat="waterRes" val="20" />
+				<add stat="fireRes" val="20" />
+				<add stat="windRes" val="20" />
+				<add stat="earthRes" val="20" />
+			</effect>
+		</for>
 	</skill>
-	<skill id="11185" levels="10" name="Superior MP Boost">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11185" levels="7" name="Superior MP Boost">
 		<!-- INT + 2 and increases Max MP by 313. -->
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
+		<table name="#maxMp"> 313 374 435 517 566 635 704 </table>
 		<set name="icon" val="icon.skill0213" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="INT" val="2" />
+				<add stat="maxMp" val="#maxMp" />
+			</effect>
+		</for>
 	</skill>
-	<skill id="11186" levels="10" name="Superior Fast MP Recovery">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11186" levels="7" name="Superior Fast MP Recovery">
 		<!-- INT + 2 and increases MP Recovery Bonus by 3.6. -->
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
+		<table name="#regMp"> 3.6 4.2 4.8 5.4 6.2 7 7.8 </table>
 		<set name="icon" val="icon.skill0229" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="INT" val="2" />
+				<add stat="regMp" val="#regMp" />
+			</effect>
+		</for>
 	</skill>
-	<skill id="11187" levels="10" name="Superior Clear Mind">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11187" levels="7" name="Superior Clear Mind">
 		<!-- INT + 2, increases MP Recovery Bonus by 5.1 while standing and by 6.5 while walking. -->
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
+		<table name="#walk"> 5.1 5.7 6.3 6.9 7.7 8.5 9.3 </table>
+		<table name="#stand"> 6.5 7.1 7.7 8.3 9.1 9.9 10.7</table>
 		<set name="icon" val="icon.skill11187" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="INT" val="2" />
+				<add stat="regMp" val="#walk">
+					<player moving="true" />
+				</add>
+				<add stat="regMp" val="#stand">
+					<player standing="true" />
+				</add>
+			</effect>
+		</for>
 	</skill>
 	<skill id="11188" levels="5" name="Frozen">
 		<!-- AUTO GENERATED SKILL -->
@@ -786,7 +838,6 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11189" levels="7" name="Aqua Crash">
-
 		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage with 193 Power to target. Applies a stacking debuff that decreases Speed. At 5 stacks target will be frozen for 2 seconds. When Double Casting is active, the debuff will not stack. Instead, there is a chance target will be frozen for 3 seconds. Over-hit. -->
