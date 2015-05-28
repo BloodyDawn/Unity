@@ -147,6 +147,7 @@ public final class EffectMasterHandler
 		PhysicalSoulAttack.class,
 		Pumping.class,
 		ProtectionBlessing.class,
+		PullBack.class,
 		RandomizeHate.class,
 		RebalanceHP.class,
 		Recovery.class,
@@ -171,6 +172,7 @@ public final class EffectMasterHandler
 		SoulEating.class,
 		Sow.class,
 		Spoil.class,
+		EffectFlag.class,
 		StaticDamage.class,
 		StealAbnormal.class,
 		Stun.class,
@@ -204,6 +206,7 @@ public final class EffectMasterHandler
 		TriggerSkillBySkillAttack.class,
 		UnsummonAgathion.class,
 		Untargetable.class,
+		VisualBuff.class,
 		VitalityPointUp.class,
 	};
 	

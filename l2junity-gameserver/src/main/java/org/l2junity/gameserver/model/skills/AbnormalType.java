@@ -375,7 +375,11 @@ public enum AbnormalType
 	MENTAL_ATTACK_RESISTANCE_ISS,
 	CRIPPLING_ATTACK,
 	SHADOW_BLADE,
-	STORM_SIGN;
+	STORM_SIGN,
+	ELEMENT_STANCE,
+	BODY_DESTRUCTION,
+	AIR_BIND,
+	DEVIL_CURSE;
 	
 	/**
 	 * Get the enumerate for the given String.

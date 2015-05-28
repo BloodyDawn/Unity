@@ -52,6 +52,7 @@ import org.l2junity.gameserver.model.actor.instance.L2CubicInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.interfaces.IIdentifiable;
@@ -130,6 +131,7 @@ public final class Skill implements IIdentifiable
 	private final int _coolTime;
 	private final int _reuseHashCode;
 	private final int _reuseDelay;
+	private final int _sharedReuseSkillId;
 	
 	/** Target type of the skill : SELF, PARTY, CLAN, PET... */
 	private final L2TargetType _targetType;
@@ -218,6 +220,16 @@ public final class Skill implements IIdentifiable
 	// Mentoring
 	private final boolean _isMentoring;
 	
+	// Stance skill IDs
+	private final int _fireStanceSkillId;
+	private final int _waterStanceSkillId;
+	private final int _windStanceSkillId;
+	private final int _earthStanceSkillId;
+	private final int _allStanceSkillId;
+	
+	private final boolean _canDoubleCast;
+	private final boolean _canCastWhileDisabled;
+	
 	public Skill(StatsSet set)
 	{
 		_id = set.getInt("skill_id");
@@ -269,7 +281,6 @@ public final class Skill implements IIdentifiable
 		_isDebuff = set.getBoolean("isDebuff", false);
 		_isRecoveryHerb = set.getBoolean("isRecoveryHerb", false);
 		_feed = set.getInt("feed", 0);
-		_reuseHashCode = SkillData.getSkillHashCode(_id, _level);
 		
 		if (Config.ENABLE_MODIFY_SKILL_REUSE && Config.SKILL_REUSE_LIST.containsKey(_id))
 		{
@@ -283,6 +294,9 @@ public final class Skill implements IIdentifiable
 		{
 			_reuseDelay = set.getInt("reuseDelay", 0);
 		}
+		
+		_sharedReuseSkillId = set.getInt("sharedReuseSkillId", -1);
+		_reuseHashCode = SkillData.getSkillHashCode(_sharedReuseSkillId > 0 ? _sharedReuseSkillId : _id, _level);
 		
 		_affectRange = set.getInt("affectRange", 0);
 		
@@ -390,6 +404,15 @@ public final class Skill implements IIdentifiable
 		_channelingTickInitialDelay = set.getInt("channelingTickInitialDelay", _channelingTickInterval / 1000) * 1000;
 		
 		_isMentoring = set.getBoolean("isMentoring", false);
+		
+		_fireStanceSkillId = set.getInt("fireStanceSkillId", 0);
+		_waterStanceSkillId = set.getInt("waterStanceSkillId", 0);
+		_windStanceSkillId = set.getInt("windStanceSkillId", 0);
+		_earthStanceSkillId = set.getInt("earthStanceSkillId", 0);
+		_allStanceSkillId = set.getInt("allStanceSkillId", 0);
+		
+		_canDoubleCast = set.getBoolean("canDoubleCast", false);
+		_canCastWhileDisabled = set.getBoolean("canCastWhileDisabled", false);
 	}
 	
 	public TraitType getTraitType()
@@ -799,6 +822,14 @@ public final class Skill implements IIdentifiable
 	public int getReuseDelay()
 	{
 		return _reuseDelay;
+	}
+	
+	/**
+	 * @return the skill ID from which the reuse delay should be taken.
+	 */
+	public int getSharedReuseSkillId()
+	{
+		return _sharedReuseSkillId;
 	}
 	
 	public int getReuseHashCode()
@@ -1788,5 +1819,45 @@ public final class Skill implements IIdentifiable
 	public boolean isMentoring()
 	{
 		return _isMentoring;
+	}
+	
+	/**
+	 * @param activeChar
+	 * @return skill ID depending on the current stance of the character or 0 if there is no such relation.
+	 */
+	public int getIdByStance(Creature activeChar)
+	{
+		if (activeChar.isAffected(EffectFlag.FIRE_STANCE) && activeChar.isAffected(EffectFlag.WATER_STANCE) && activeChar.isAffected(EffectFlag.WIND_STANCE) && activeChar.isAffected(EffectFlag.EARTH_STANCE))
+		{
+			return _allStanceSkillId;
+		}
+		else if (activeChar.isAffected(EffectFlag.FIRE_STANCE))
+		{
+			return _fireStanceSkillId;
+		}
+		else if (activeChar.isAffected(EffectFlag.WATER_STANCE))
+		{
+			return _waterStanceSkillId;
+		}
+		else if (activeChar.isAffected(EffectFlag.WIND_STANCE))
+		{
+			return _windStanceSkillId;
+		}
+		else if (activeChar.isAffected(EffectFlag.EARTH_STANCE))
+		{
+			return _earthStanceSkillId;
+		}
+		
+		return 0;
+	}
+	
+	public boolean canDoubleCast()
+	{
+		return _canDoubleCast;
+	}
+	
+	public boolean canCastWhileDisabled()
+	{
+		return _canCastWhileDisabled;
 	}
 }

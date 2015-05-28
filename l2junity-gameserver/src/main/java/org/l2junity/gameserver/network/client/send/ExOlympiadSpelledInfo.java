@@ -23,6 +23,7 @@ import java.util.List;
 
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
@@ -33,6 +34,7 @@ public class ExOlympiadSpelledInfo implements IClientOutgoingPacket
 {
 	private final int _playerId;
 	private final List<BuffInfo> _effects = new ArrayList<>();
+	private final List<Skill> _effects2 = new ArrayList<>();
 	
 	public ExOlympiadSpelledInfo(PlayerInstance player)
 	{
@@ -44,13 +46,18 @@ public class ExOlympiadSpelledInfo implements IClientOutgoingPacket
 		_effects.add(info);
 	}
 	
+	public void addSkill(Skill skill)
+	{
+		_effects2.add(skill);
+	}
+	
 	@Override
 	public boolean write(PacketWriter packet)
 	{
 		OutgoingPackets.EX_OLYMPIAD_SPELLED_INFO.writeId(packet);
 		
 		packet.writeD(_playerId);
-		packet.writeD(_effects.size());
+		packet.writeD(_effects.size() + _effects2.size());
 		for (BuffInfo info : _effects)
 		{
 			if ((info != null) && info.isInUse())
@@ -60,6 +67,17 @@ public class ExOlympiadSpelledInfo implements IClientOutgoingPacket
 				packet.writeH(0x00); // Sub level
 				packet.writeD(0x00);
 				packet.writeH(info.getTime());
+			}
+		}
+		for (Skill skill : _effects2)
+		{
+			if (skill != null)
+			{
+				packet.writeD(skill.getDisplayId());
+				packet.writeH(skill.getDisplayLevel());
+				packet.writeH(0x00); // Sub level
+				packet.writeD(0x00);
+				packet.writeH(-1);
 			}
 		}
 		return true;

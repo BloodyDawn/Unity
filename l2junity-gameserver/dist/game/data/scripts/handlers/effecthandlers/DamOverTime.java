@@ -23,6 +23,7 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
@@ -39,6 +40,29 @@ public final class DamOverTime extends AbstractEffect
 		
 		_canKill = params.getBoolean("canKill", false);
 		_power = params.getDouble("power", 0);
+	}
+	
+	@Override
+	public void onStart(BuffInfo info)
+	{
+		if (!info.getSkill().isToggle() && info.getSkill().isMagic())
+		{
+			// TODO: M.Crit can occur even if this skill is resisted. Only then m.crit damage is applied and not debuff
+			final boolean mcrit = Formulas.calcMCrit(info.getEffector().getMCriticalHit(info.getEffected(), info.getSkill()), info.getSkill(), info.getEffected());
+			if (mcrit)
+			{
+				double damage = _power * 10; // Tests show that 10 times HP DOT is taken during magic critical.
+				
+				if (!_canKill && (damage >= (info.getEffected().getCurrentHp() - 1)))
+				{
+					damage = info.getEffected().getCurrentHp() - 1;
+				}
+				
+				info.getEffected().reduceCurrentHpByDOT(damage, info.getEffector(), info.getSkill());
+				info.getEffected().notifyDamageReceived(damage, info.getEffector(), info.getSkill(), true, true);
+			}
+		}
+		super.onStart(info);
 	}
 	
 	@Override

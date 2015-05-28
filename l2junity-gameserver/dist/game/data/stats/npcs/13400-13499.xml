@@ -1063,7 +1063,7 @@
 			<height normal="25" />
 		</collision>
 	</npc>
-	<npc id="13458" level="85" type="L2Npc" name="Whisper of Fear" title="">
+	<npc id="13458" level="85" type="L2EffectPoint" name="Whisper of Fear" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
@@ -1074,13 +1074,21 @@
 				<run ground="20" />
 			</speed>
 		</stats>
-		<status attackable="false" />
+		<status attackable="false" hasSummoner="true" />
+		<skill_list>
+			<skill id="11059" level="4" /> <!-- Shadow Snare Zone -->
+		</skill_list>
 		<collision>
 			<radius normal="0.001" />
 			<height normal="0.001" />
 		</collision>
+		<parameters>
+			<param name="skill_delay" value="2" />
+			<param name="despawn_time" value="8" />
+			<skill name="shadow_snare" id="11059" level="4" /> <!-- Shadow Snare Zone -->
+		</parameters>
 	</npc>
-	<npc id="13459" level="85" type="L2Npc" name="Whisper of Fear" title="">
+	<npc id="13459" level="85" type="L2EffectPoint" name="Whisper of Fear" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
@@ -1091,13 +1099,21 @@
 				<run ground="20" />
 			</speed>
 		</stats>
-		<status attackable="false" />
+		<status attackable="false" hasSummoner="true" />
+		<skill_list>
+			<skill id="11174" level="5" /> <!-- Shadow Snare Zone -->
+		</skill_list>
 		<collision>
 			<radius normal="0.001" />
 			<height normal="0.001" />
 		</collision>
+		<parameters>
+			<param name="skill_delay" value="2" />
+			<param name="despawn_time" value="8" />
+			<skill name="shadow_snare" id="11174" level="5" /> <!-- Shadow Snare Zone -->
+		</parameters>
 	</npc>
-	<npc id="13460" level="85" type="L2Npc" name="Whisper of Fear" title="">
+	<npc id="13460" level="85" type="L2EffectPoint" name="Whisper of Fear" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
@@ -1108,11 +1124,19 @@
 				<run ground="20" />
 			</speed>
 		</stats>
-		<status attackable="false" />
+		<status attackable="false" hasSummoner="true" />
+		<skill_list>
+			<skill id="11175" level="6" /> <!-- Shadow Snare Zone -->
+		</skill_list>
 		<collision>
 			<radius normal="0.001" />
 			<height normal="0.001" />
 		</collision>
+		<parameters>
+			<param name="skill_delay" value="2" />
+			<param name="despawn_time" value="8" />
+			<skill name="shadow_snare" id="11175" level="6" /> <!-- Shadow Snare Zone -->
+		</parameters>
 	</npc>
 	<npc id="13461" level="85" type="L2Monster" name="Severe Trap" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->

@@ -34,14 +34,16 @@ public final class SkillList implements IClientOutgoingPacket
 	static class Skill
 	{
 		public int id;
+		public int sharedReuseSkillId;
 		public int level;
 		public boolean passive;
 		public boolean disabled;
 		public boolean enchanted;
 		
-		Skill(int pId, int pLevel, boolean pPassive, boolean pDisabled, boolean pEnchanted)
+		Skill(int pId, int pSharedReuseSkillId, int pLevel, boolean pPassive, boolean pDisabled, boolean pEnchanted)
 		{
 			id = pId;
+			sharedReuseSkillId = pSharedReuseSkillId;
 			level = pLevel;
 			passive = pPassive;
 			disabled = pDisabled;
@@ -49,9 +51,9 @@ public final class SkillList implements IClientOutgoingPacket
 		}
 	}
 	
-	public void addSkill(int id, int level, boolean passive, boolean disabled, boolean enchanted)
+	public void addSkill(int id, int sharedReuseSkillId, int level, boolean passive, boolean disabled, boolean enchanted)
 	{
-		_skills.add(new Skill(id, level, passive, disabled, enchanted));
+		_skills.add(new Skill(id, sharedReuseSkillId, level, passive, disabled, enchanted));
 	}
 	
 	public void setLastLearnedSkillId(int lastLearnedSkillId)
@@ -70,7 +72,7 @@ public final class SkillList implements IClientOutgoingPacket
 			packet.writeD(temp.passive ? 1 : 0);
 			packet.writeD(temp.level);
 			packet.writeD(temp.id);
-			packet.writeD(-1); // GOD ReuseDelayShareGroupID
+			packet.writeD(temp.sharedReuseSkillId); // GOD ReuseDelayShareGroupID
 			packet.writeC(temp.disabled ? 1 : 0); // iSkillDisabled
 			packet.writeC(temp.enchanted ? 1 : 0); // CanEnchant
 		}

@@ -74,7 +74,7 @@ public final class MagicSkillUse implements IClientOutgoingPacket
 	{
 		OutgoingPackets.MAGIC_SKILL_USE.writeId(packet);
 		
-		packet.writeD(0x00); // TODO: Find me! (Confirm : Feoh second skill cast would be 1)
+		packet.writeD(0x00); // Casting bar type: 0 - default, 1 - default up, 2 - blue, 3 - green, 4 - red.
 		packet.writeD(_activeChar.getObjectId());
 		packet.writeD(_target.getObjectId());
 		packet.writeD(_skillId);

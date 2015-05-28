@@ -230,6 +230,9 @@ public enum Stats
 	// Blocks given amount of debuffs.
 	DEBUFF_BLOCK("debuffBlock"),
 	
+	// Affects the random weapon damage.
+	RANDOM_DAMAGE("randomDamage"),
+	
 	// Lock your HP at the given value.
 	HP_LOCK("hpLock"),
 	

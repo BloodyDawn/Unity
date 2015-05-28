@@ -252,6 +252,13 @@
 				<xs:attribute type="xs:short" name="skillId1" use="optional" />
 				<xs:attribute type="xs:short" name="skillId2" use="optional" />
 				<xs:attribute type="xs:short" name="skillId3" use="optional" />
+				<xs:attribute type="xs:short" name="skillId4" use="optional" />
+				<xs:attribute type="xs:short" name="skillId5" use="optional" />
+				<xs:attribute type="xs:byte" name="skillLvl1" use="optional" />
+				<xs:attribute type="xs:byte" name="skillLvl2" use="optional" />
+				<xs:attribute type="xs:byte" name="skillLvl3" use="optional" />
+				<xs:attribute type="xs:byte" name="skillLvl4" use="optional" />
+				<xs:attribute type="xs:byte" name="skillLvl5" use="optional" />
 				<xs:attribute type="xs:string" name="KNOCKDOWN" use="optional" />
 				<xs:attribute type="xs:string" name="KNOCKBACK" use="optional" />
 				<xs:attribute type="xs:string" name="HATE" use="optional" />
@@ -271,7 +278,8 @@
 				<xs:attribute type="xs:int" name="angle" use="optional" />
 				<xs:attribute type="xs:int" name="range" use="optional" />
 				<xs:attribute type="xs:boolean" name="absoluteAngle" use="optional" />
-				<xs:attribute type="xs:boolean" name="effectedPos" use="optional" />
+				<xs:attribute type="xs:boolean" name="selfPos" use="optional" />
+				<xs:attribute type="xs:string" name="effectFlag" use="optional" />
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -405,6 +413,7 @@
 			<xs:enumeration value="damagedMaxRange" />
 			<xs:enumeration value="debuffedMaxRange" />
 			<xs:enumeration value="debuffBlock" />
+			<xs:enumeration value="randomDamage" />
 			<xs:enumeration value="hpLock" />
 			<xs:enumeration value="hpLockMin" />
 			<xs:enumeration value="summonPoints" />

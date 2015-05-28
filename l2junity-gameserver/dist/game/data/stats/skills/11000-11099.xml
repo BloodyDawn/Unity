@@ -15,8 +15,8 @@
 	</skill>
 	<skill id="11001" levels="7" name="Superior Weapon Mastery">
 		<!--M. Atk. + 17%, additional M. Atk. + 981, Casting Spd. + 23%. Depending on your INT, the Cooldown resets or the duration increases by 2 times. -->
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
-		<table name="#mAtk"> 981 1138 1319 1485 1682 1785 1893 </table>
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 104 104 104 </table>
+		<table name="#mAtk"> 981 1138 1319 1485 1682 1785 1893 2009 2131 2261 </table>
 		<set name="targetType" val="SELF" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill11251" />
@@ -33,29 +33,29 @@
 	<skill id="11002" levels="7" name="Superior Robe Mastery">
 		<!-- Max HP + 4447, P. Def. + 1212, and M. Def. + 10% when equipped with a Robe. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
-		<table name="#pDef"> 1212 1330 1462 1576 1767 1833 1903 </table>
+		<table name="#pDef"> 1212 1330 1462 1576 1767 1833 1903 1975 2058 2136 </table>
 		<set name="targetType" val="SELF" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill11252" />
 		<set name="operateType" val="P" />
 		<for>
 			<effect name="Buff">
-				<add stat="pDef" val="#pDef">
-					<using kind="MAGIC" />
-				</add>
-				<mul stat="mDef" val="1.1">
-					<using kind="MAGIC" />
-				</mul>
 				<add stat="maxHp" val="4447">
 					<using kind="MAGIC" />
 				</add>
+				<add stat="pDef" val="#pDef">
+					<using kind="MAGIC" />
+				</add>
+				<mul stat="mDef" val="1.10">
+					<using kind="MAGIC" />
+				</mul>
 			</effect>
 		</for>
 	</skill>
-	<skill id="11003" levels="1" name="Superior Anti Magic">
+	<skill id="11003" levels="7" name="Superior Anti Magic">
 		<!-- M. Def. + 862, Magic Attack Resistance + 35%. INT + 2. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
-		<table name="#mDef"> 862 976 1104 1219 1374 1444 1517 </table>
+		<table name="#mDef"> 862 976 1104 1219 1374 1444 1517 1593 1674 1759 </table>
 		<set name="targetType" val="SELF" />
 		<set name="skillType" val="BUFF" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -63,9 +63,9 @@
 		<set name="operateType" val="P" />
 		<for>
 			<effect name="Buff">
-				<add stat="INT" val="2" />
 				<add stat="mDef" val="#mDef" />
 				<mul stat="magicSuccRes" val="1.35" />
+				<add stat="INT" val="2" />
 			</effect>
 		</for>
 	</skill>
@@ -98,7 +98,7 @@
 				<mul stat="mAtk" val="1.06" />
 				<mul stat="mAtkSpd" val="1.06" />
 				<mul stat="MagicalMpConsumeRate" val="0.94" />
-				<mul stat="PhysicalMpConsumeRate" val="0.94" />
+				<mul stat="PhysicalMpConsumeRate" val="0.94" /> <!-- TODO: Check me. I think is only magic skills. -->
 				<mul stat="mCritRate" val="1.06" />
 			</effect>
 		</for>
@@ -119,374 +119,647 @@
 		</for>
 	</skill>
 	<skill id="11007" levels="1" name="Fire Stance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Bestows the property of Fire to magic spells cast. -->
 		<set name="icon" val="icon.skill10305" />
+		<set name="abnormalType" val="ELEMENT_STANCE" />
+		<set name="abnormalLvl" val="1" />
+		<set name="canBeDispeled" val="false" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="2000" />
 		<set name="isMagic" val="1" />
+		<cond>
+			<and>
+				<not>
+					<player active_effect_id="11068" /> <!-- Double Casting -->
+				</not>
+				<not>
+					<player active_effect_id="11007" /> <!-- Fire Stance -->
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="EffectFlag">
+				<param effectFlag="FIRE_STANCE" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11008" levels="1" name="Water Stance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Bestows the property of Water to magic spells cast. -->
 		<set name="icon" val="icon.skill10306" />
+		<set name="abnormalType" val="ELEMENT_STANCE" />
+		<set name="abnormalLvl" val="1" />
+		<set name="canBeDispeled" val="false" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="2000" />
 		<set name="isMagic" val="1" />
+		<cond>
+			<and>
+				<not>
+					<player active_effect_id="11068" /> <!-- Double Casting -->
+				</not>
+				<not>
+					<player active_effect_id="11008" /> <!-- Water Stance -->
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="EffectFlag">
+				<param effectFlag="WATER_STANCE" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11009" levels="1" name="Wind Stance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Bestows the property of Wind to magic spells cast. -->
 		<set name="icon" val="icon.skill10307" />
+		<set name="abnormalType" val="ELEMENT_STANCE" />
+		<set name="abnormalLvl" val="1" />
+		<set name="canBeDispeled" val="false" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="2000" />
 		<set name="isMagic" val="1" />
+		<cond>
+			<and>
+				<not>
+					<player active_effect_id="11068" /> <!-- Double Casting -->
+				</not>
+				<not>
+					<player active_effect_id="11009" /> <!-- Wind Stance -->
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="EffectFlag">
+				<param effectFlag="WIND_STANCE" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11010" levels="1" name="Earth Stance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Bestows the property of Earth to magic spells cast. -->
 		<set name="icon" val="icon.skill10304" />
+		<set name="abnormalType" val="ELEMENT_STANCE" />
+		<set name="abnormalLvl" val="1" />
+		<set name="canBeDispeled" val="false" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="2000" />
 		<set name="isMagic" val="1" />
+		<cond>
+			<and>
+				<not>
+					<player active_effect_id="11068" /> <!-- Double Casting -->
+				</not>
+				<not>
+					<player active_effect_id="11010" /> <!-- Earth Stance -->
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="EffectFlag">
+				<param effectFlag="EARTH_STANCE" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11011" levels="8" name="Elemental Spike">
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
+		<table name="#power"> 133 134 139 142 146 150 154 157 </table>
 		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 </table>
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11011" />
+		<set name="fireStanceSkillId" val="11012" />
+		<set name="waterStanceSkillId" val="11013" />
+		<set name="windStanceSkillId" val="11014" />
+		<set name="earthStanceSkillId" val="11015" />
+		<set name="allStanceSkillId" val="11016" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="2280" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11012" levels="8" name="Elemental Spike (Fire)">
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
+		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
+		<table name="#power"> 133 134 139 142 146 150 154 157 </table>
 		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 </table>
 		<set name="icon" val="icon.skill11011" />
+		<set name="element" val="0" /> <!-- Fire -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11011" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="2280" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11013" levels="8" name="Elemental Spike (Water)">
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
+		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
+		<table name="#power"> 133 134 139 142 146 150 154 157 </table>
 		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 </table>
 		<set name="icon" val="icon.skill11011" />
+		<set name="element" val="1" /> <!-- Water -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11011" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="2280" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11014" levels="8" name="Elemental Spike (Wind)">
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
+		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
+		<table name="#power"> 133 134 139 142 146 150 154 157 </table>
 		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 </table>
 		<set name="icon" val="icon.skill11011" />
+		<set name="element" val="2" /> <!-- Wind -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11011" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="2280" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11015" levels="8" name="Elemental Spike (Earth)">
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
+		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
+		<table name="#power"> 133 134 139 142 146 150 154 157 </table>
 		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 </table>
 		<set name="icon" val="icon.skill11011" />
+		<set name="element" val="3" /> <!-- Earth -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11011" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="2280" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11016" levels="8" name="Elemental Spike (4 Elements)">
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
+		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
+		<table name="#power"> 133 134 139 142 146 150 154 157 </table>
 		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 </table>
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11011" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="2280" />
 		<set name="coolTime" val="300" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11017" levels="8" name="Elemental Crash">
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
+		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
+		<table name="#power"> 158 161 165 169 175 179 184 188 </table>
 		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 </table>
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11017" />
+		<set name="fireStanceSkillId" val="11018" />
+		<set name="waterStanceSkillId" val="11019" />
+		<set name="windStanceSkillId" val="11020" />
+		<set name="earthStanceSkillId" val="11021" />
+		<set name="allStanceSkillId" val="11022" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="2780" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2400" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11018" levels="8" name="Elemental Crash (Fire)">
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
+		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
+		<table name="#power"> 158 161 165 169 175 179 184 188 </table>
 		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 </table>
 		<set name="icon" val="icon.skill11017" />
+		<set name="element" val="0" /> <!-- Fire -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11017" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="2780" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2400" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11019" levels="8" name="Elemental Crash (Water)">
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
+		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
+		<table name="#power"> 158 161 165 169 175 179 184 188 </table>
 		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 </table>
 		<set name="icon" val="icon.skill11017" />
+		<set name="element" val="1" /> <!-- Water -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11017" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="2780" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2400" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11020" levels="8" name="Elemental Crash (Wind)">
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
+		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
+		<table name="#power"> 158 161 165 169 175 179 184 188 </table>
 		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 </table>
 		<set name="icon" val="icon.skill11017" />
+		<set name="element" val="2" /> <!-- Wind -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11017" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="2780" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2400" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11021" levels="8" name="Elemental Crash (Earth)">
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
+		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
+		<table name="#power"> 158 161 165 169 175 179 184 188 </table>
 		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 </table>
 		<set name="icon" val="icon.skill11017" />
+		<set name="element" val="3" /> <!-- Earth -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11017" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="2780" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2400" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11022" levels="8" name="Elemental Crash (4 Elements)">
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
+		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
+		<table name="#power"> 158 161 165 169 175 179 184 188 </table>
 		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 </table>
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11017" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="2780" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="2400" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11023" levels="8" name="Elemental Destruction">
-		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
+		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
+		<table name="#power"> 431 444 457 469 481 493 506 518 </table>
 		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 </table>
 		<set name="icon" val="icon.skill11023" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11023" />
+		<set name="fireStanceSkillId" val="11024" />
+		<set name="waterStanceSkillId" val="11025" />
+		<set name="windStanceSkillId" val="11026" />
+		<set name="earthStanceSkillId" val="11027" />
+		<set name="allStanceSkillId" val="11028" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="6080" />
 		<set name="coolTime" val="1000" />
 		<set name="reuseDelay" val="6700" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11024" levels="8" name="Elemental Destruction (Fire)">
-		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
+		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
+		<table name="#power"> 431 444 457 469 481 493 506 518 </table>
 		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 </table>
 		<set name="icon" val="icon.skill11023" />
+		<set name="element" val="0" /> <!-- Fire -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11023" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="6080" />
 		<set name="coolTime" val="1000" />
 		<set name="reuseDelay" val="6700" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11025" levels="8" name="Elemental Destruction (Water)">
-		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
+		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
+		<table name="#power"> 431 444 457 469 481 493 506 518 </table>
 		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 </table>
 		<set name="icon" val="icon.skill11023" />
+		<set name="element" val="1" /> <!-- Water -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11023" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="6080" />
 		<set name="coolTime" val="1000" />
 		<set name="reuseDelay" val="6700" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11026" levels="8" name="Elemental Destruction (Wind)">
-		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
+		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
+		<table name="#power"> 431 444 457 469 481 493 506 518 </table>
 		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 </table>
 		<set name="icon" val="icon.skill11023" />
+		<set name="element" val="2" /> <!-- Wind -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11023" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="6080" />
 		<set name="coolTime" val="1000" />
 		<set name="reuseDelay" val="6700" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11027" levels="8" name="Elemental Destruction (Earth)">
-		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
+		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
+		<table name="#power"> 431 444 457 469 481 493 506 518 </table>
 		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 </table>
 		<set name="icon" val="icon.skill11023" />
+		<set name="element" val="3" /> <!-- Earth -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11023" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="6080" />
 		<set name="coolTime" val="1000" />
 		<set name="reuseDelay" val="6700" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11028" levels="8" name="Elemental Destruction (4 Elements)">
-		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
+		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
+		<table name="#power"> 431 444 457 469 481 493 506 518 </table>
 		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 </table>
 		<set name="icon" val="icon.skill11023" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11023" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="6080" />
 		<set name="coolTime" val="1000" />
 		<set name="reuseDelay" val="6700" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11029" levels="5" name="Death Breath">
-		<table name="#effectPoint"> -692 -696 -700 -704 -707 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 15 seconds, decreases target's HP by 480 per second. -->
+		<table name="#effectPoint"> -692 -696 -700 -704 -707 </table>
+		<table name="#dot"> 480 494 509 523 537 </table>
 		<table name="#mpConsumes"> 68 72 72 80 84 </table>
 		<set name="icon" val="icon.skill11029" />
+		<set name="abnormalTime" val="15" />
+		<set name="abnormalType" val="DOT_ATTR" />
+		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
+		<set name="activateRate" val="80" />
+		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="16700" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="DamOverTime" ticks="1">
+				<param power="#dot" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11030" levels="4" name="Death Lord">
-		<table name="#effectPoint"> -696 -704 -709 -709 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 10 seconds, drains target's life with 25 Power per second. Absorbs 100% of the damage inflicted as HP. -->
+		<table name="#effectPoint"> -696 -704 -709 -709 </table>
+		<table name="#power"> 25 50 75 100 </table>
 		<table name="#mpConsumes"> 68 72 84 88 </table>
 		<set name="icon" val="icon.skill11030" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="channelingSkillId" val="11030" />
+		<set name="channelingTickInterval" val="1" />
+		<set name="channelingTickInitialDelay" val="2" />
+		<set name="operateType" val="CA1" />
+		<set name="targetType" val="ONE" />
+		<set name="power" val="#power" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="10000" />
 		<set name="reuseDelay" val="20000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<channelingEffects>
+			<effect name="HpDrain">
+				<param power="1.00" />
+			</effect>
+		</channelingEffects>
 	</skill>
 	<skill id="11032" levels="4" name="Death Howl">
-		<table name="#effectPoint"> -696 -702 -707 -711 -715 -719 -723 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Attacks nearby targets with 157 Power and pushes them back. Over-hit. -->
-		<table name="#mpConsumes"> 204 216 252 264 </table>
+		<table name="#effectPoint"> -696 -702 -707 -711 -715 -719 -723 </table>
+		<table name="#power"> 25 50 75 100 </table>
+		<table name="#mpConsumes"> 157 168 180 189 </table>
 		<set name="icon" val="icon.skill11032" />
+		<set name="abnormalTime" val="1" />
+		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
+		<set name="activateRate" val="80" />
+		<set name="affectRange" val="200" />
+		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
+		<set name="power" val="#power" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="4000" />
 		<set name="reuseDelay" val="15000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack" />
+			<effect name="KnockBack">
+				<param speed="400" distance="200" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11033" levels="3" name="Damaged Area">
 		<!-- AUTO GENERATED SKILL -->
@@ -499,183 +772,281 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11034" levels="8" name="Elemental Blast">
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
+		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
+		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
 		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
 		<set name="icon" val="icon.skill11034" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11034" />
+		<set name="fireStanceSkillId" val="11035" />
+		<set name="waterStanceSkillId" val="11036" />
+		<set name="windStanceSkillId" val="11037" />
+		<set name="earthStanceSkillId" val="11038" />
+		<set name="allStanceSkillId" val="11039" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="3780" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="6700" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11035" levels="8" name="Elemental Blast (Fire)">
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
+		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
+		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
 		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
 		<set name="icon" val="icon.skill11034" />
+		<set name="element" val="0" /> <!-- Fire -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11034" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="3780" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="6700" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11036" levels="8" name="Elemental Blast (Water)">
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
+		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
+		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
 		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
 		<set name="icon" val="icon.skill11034" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11034" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="3780" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="6700" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11037" levels="8" name="Elemental Blast (Wind)">
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
+		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
+		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
 		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
 		<set name="icon" val="icon.skill11034" />
+		<set name="element" val="2" /> <!-- Wind -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11034" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="3780" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="6700" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11038" levels="8" name="Elemental Blast (Earth)">
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
+		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
+		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
 		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
 		<set name="icon" val="icon.skill11034" />
+		<set name="element" val="3" /> <!-- Earth -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11034" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="3780" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="6700" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11039" levels="8" name="Elemental Blast (4 Elements)">
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
+		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
+		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
 		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
 		<set name="icon" val="icon.skill11034" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11034" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="3780" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="6700" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11040" levels="8" name="Elemental Storm">
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
+		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
+		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<set name="icon" val="icon.skill11040" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11040" />
+		<set name="fireStanceSkillId" val="11041" />
+		<set name="waterStanceSkillId" val="11042" />
+		<set name="windStanceSkillId" val="11043" />
+		<set name="earthStanceSkillId" val="11044" />
+		<set name="allStanceSkillId" val="11045" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="4780" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="6700" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11041" levels="8" name="Elemental Storm (Fire)">
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
+		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
+		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<set name="icon" val="icon.skill11040" />
+		<set name="element" val="0" /> <!-- Fire -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11040" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="4780" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="6700" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11042" levels="8" name="Elemental Storm (Water)">
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
+		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
+		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<set name="icon" val="icon.skill11040" />
+		<set name="element" val="1" /> <!-- Water -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11040" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="4780" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="6700" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11043" levels="8" name="Elemental Storm (Wind)">
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
+		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
+		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<set name="icon" val="icon.skill11040" />
+		<set name="element" val="2" /> <!-- Wind -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11040" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="4780" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="6700" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11044" levels="8" name="Elemental Storm (Earth)">
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
+		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
+		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<set name="icon" val="icon.skill11040" />
+		<set name="element" val="3" /> <!-- Earth -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11040" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="4780" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="6700" />
@@ -684,28 +1055,39 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11045" levels="8" name="Elemental Storm (4 Elements)">
-		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
+		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
+		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
 		<set name="icon" val="icon.skill11040" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
+		<set name="power" val="#power" />
+		<set name="sharedReuseSkillId" val="11040" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="4780" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="6700" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11046" levels="2" name="Wizard Spirit">
-		<table name="#effectPoint"> 696 705 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 30 sec., M. Atk. + 20%, M. Critical Rate + 50%, P. Def. and M. Def. + 20%, Evasion + 2, and MP Consumption for magic skills - 50%. When attacked, has a chance of inflicting magic damage on the attacking target. -->
+		<table name="#effectPoint"> 696 705 </table>
 		<table name="#mpConsumes"> 70 85 </table>
+		<table name="#mAtk"> 1.20 1.30 </table>
+		<table name="#mCritRate"> 1.50 1.60 </table>
+		<table name="#MagicalMpConsumeRate"> 0.50 0.40 </table>
 		<set name="icon" val="icon.skill11046" />
+		<set name="abnormalTime" val="30" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -713,40 +1095,84 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="mAtk" val="#mAtk"/>
+				<mul stat="mCritRate" val="#mCritRate"/>
+				<mul stat="pDef" val="1.20"/>
+				<mul stat="mDef" val="1.20"/>
+				<add stat="rEvas" val="2"/>
+				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate"/>
+			</effect>
+			<!-- TODO When attacked, has a chance of inflicting magic damage on the attacking target -->
+		</for>
 	</skill>
 	<skill id="11047" levels="6" name="Devil's Curse">
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Attacks target with 157 Power. For 20 sec., target's M. Atk. and M. Def. - 30%, Casting Spd., P. Critical Rate, M. Critical Rate, P. Def. and Speed - 10%, and P. Evasion - 6. -->
+		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 </table>
+		<table name="#power"> 157 160 166 174 180 187 </table>
 		<table name="#mpConsumes"> 70 71 76 81 85 91 </table>
 		<set name="icon" val="icon.skill11047" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="20" />
+		<set name="abnormalType" val="DEVIL_CURSE" />
+		<set name="activateRate" val="100" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="power" val="#power" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="3500" />
 		<set name="coolTime" val="580" />
 		<set name="reuseDelay" val="10000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11048" levels="6" name="Mass Devil's Curse">
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Attacks target and surrounding enemies with 125 power and absorbs 25% of the damage inflicted as HP. Additionally, for 10 seconds, target's M. Atk. and M. Def. - 30%; P. Def., M. Atk., Casting Spd., M. Def., P. Critical Rate, M. Critical Rate, and Speed - 8%; and Accuracy - 12. -->
+		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 </table>
+		<table name="#power"> 125 128 133 139 144 150 </table>
 		<table name="#mpConsumes"> 211 220 233 247 262 278 </table>
 		<set name="icon" val="icon.skill11048" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="20" />
+		<set name="abnormalType" val="DEVIL_CURSE" />
+		<set name="activateRate" val="100" />
+		<set name="affectRange" val="200" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
+		<set name="power" val="#power" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="3500" />
 		<set name="coolTime" val="580" />
 		<set name="reuseDelay" val="30000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="HpDrain">
+				<param power="0.25" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="mAtk" val="0.60"/>
+				<mul stat="mDef" val="0.60"/>
+				<mul stat="pDef" val="0.92"/>
+				<mul stat="mAtkSpd" val="0.92"/>
+				<mul stat="rCrit" val="0.92"/>
+				<mul stat="mCritRate" val="0.92"/>
+				<mul stat="runSpd" val="0.92"/>
+				<sub stat="accCombat" val="12"/>
+			</effect>
+		</for>
 	</skill>
 	<skill id="11049" levels="2" name="Ignore Divinity">
 		<table name="#effectPoint"> -704 -708 -712 -716 -720 </table>
@@ -758,6 +1184,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -769,15 +1196,26 @@
 		<!-- Immobilizes target midair. -->
 		<table name="#mpConsumes"> 70 76 82 88 </table>
 		<set name="icon" val="icon.skill11050" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="AIR_BIND" />
+		<set name="abnormalVisualEfect" val="AIR_BIND" />
+		<set name="activateRate" val="80" />
+		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="trait" val="AERIAL_YOKE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="120000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Paralyze" />
+		</for>
 	</skill>
 	<skill id="11051" levels="4" name="Hell Binding">
 		<table name="#effectPoint"> -692 -698 -704 -708 -712 -716 -720 </table>
@@ -785,15 +1223,26 @@
 		<!-- Immobilizes target midair. -->
 		<table name="#mpConsumes"> 70 76 82 88 </table>
 		<set name="icon" val="icon.skill11050" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="AIR_BIND" />
+		<set name="abnormalVisualEfect" val="AIR_BIND" />
+		<set name="activateRate" val="80" />
+		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="trait" val="AERIAL_YOKE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="120000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Paralyze" />
+		</for>
 	</skill>
 	<skill id="11052" levels="4" name="Mass Hell Binding">
 
@@ -801,10 +1250,16 @@
 		<!-- Immobilizes target and nearby enemies midair for 9 seconds and inflicts 100 damage per second. -->
 		<table name="#mpConsumes"> 228 243 257 273 </table>
 		<set name="icon" val="icon.skill11052" />
+		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="basicProperty" val="MEN" />
+		<set name="channelingSkillId" val="11054" /> <!-- Yoke Status -->
+		<set name="channelingTickInterval" val="10" /> <!-- No channeling ticks. If you end channel, debuff is canceled. -->
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="trait" val="AERIAL_YOKE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="10000" />
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="-707" />
@@ -816,10 +1271,16 @@
 		<!-- Immobilizes target and nearby enemies midair for 9 seconds and inflicts 100 damage per second. -->
 		<table name="#mpConsumes"> 228 243 257 273 </table>
 		<set name="icon" val="icon.skill1042" />
+		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="basicProperty" val="MEN" />
+		<set name="channelingSkillId" val="11054" /> <!-- Yoke Status -->
+		<set name="channelingTickInterval" val="10" /> <!-- No channeling ticks. If you end channel, debuff is canceled. -->
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="trait" val="AERIAL_YOKE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="10000" />
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="-707" />
@@ -829,54 +1290,102 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Momentarily immobilized midair. -->
 		<set name="icon" val="icon.skill1042" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="9" />
+		<set name="abnormalType" val="AIR_BIND" />
+		<set name="abnormalVisualEfect" val="AIR_BIND" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="effectPoint" val="-692" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Paralyze" />
+		</for>
 	</skill>
 	<skill id="11055" levels="7" name="Death Fear">
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 -709 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 10 seconds, inflicts Fear on target and decreases Speed by 40%. -->
+		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 -709 </table>
 		<table name="#mpConsumes"> 70 72 76 78 82 85 88 </table>
+		<table name="#runSpd"> 0.60 0.55 0.50 0.45 0.40 0.35 0.30 0.30 0.30 0.30 </table>
 		<set name="icon" val="icon.skill11055" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="TURN_FLEE" />
+		<set name="abnormalVisualEffect" val="TURN_FLEE" />
+		<set name="activateRate" val="80" />
+		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="trait" val="DERANGEMENT" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Fear">
+				<mul stat="runSpd" val="#runSpd" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11056" levels="8" name="Mass Death Fear">
-		<table name="#effectPoint"> -700 -705 -705 -705 -705 -705 -705 -705 -705 -705 -705 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 10 seconds, inflicts Fear on target and nearby enemies and decreases Speed by 25%. -->
+		<table name="#effectPoint"> -700 -705 -705 -705 -705 -705 -705 -705 -705 -705 -705 </table>
 		<table name="#mpConsumes"> 211 220 228 238 247 257 267 278 </table>
+		<table name="#runSpd"> 0.75 0.70 0.65 0.60 0.55 0.50 0.45 0.40 0.40 0.40 0.40 </table>
 		<set name="icon" val="icon.skill11056" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="TURN_FLEE" />
+		<set name="abnormalVisualEffect" val="TURN_FLEE" />
+		<set name="affectRange" val="200" />
+		<set name="activateRate" val="60" />
+		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="120000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Fear">
+				<mul stat="runSpd" val="#runSpd" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11057" levels="6" name="Magical Evasion">
-		<table name="#effectPoint"> -687 -696 -704 -709 -709 -709 -709 -709 -709 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Attacks nearby enemies with 133 Power added to M. Atk., inflicting Stun and canceling their targets. Teleports you to the back. -->
+		<table name="#effectPoint"> -687 -696 -704 -709 -709 -709 -709 -709 -709 </table>
+		<table name="#power"> 133 136 142 149 154 160 </table>
 		<table name="#mpConsumes"> 70 72 77 82 87 92 </table>
 		<set name="icon" val="icon.skill11057" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="2" />
+		<set name="abnormalType" val="STUN" />
+		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="affectRange" val="150" />
+		<set name="activateRate" val="40" />
+		<set name="basicProperty" val="CON" />
+		<set name="flyCourse" val="0" /> <!-- Back -->
+		<set name="flyRadius" val="400" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
+		<set name="trait" val="SHOCK" />
+		<set name="power" val="#power" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
@@ -884,45 +1393,80 @@
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack" />
+			<effect name="Stun" />
+			<effect name="TargetCancel">
+				<param chance="40" /> <!-- Custom -->
+			</effect>
+		</for>
+		<selfEffects>
+			<effect name="Blink" />
+		</selfEffects>
 	</skill>
-	<skill id="11058" levels="3" name="Shadow Snare">
+	<skill id="11058" levels="6" name="Shadow Snare">
 		<table name="#effectPoint"> -700 -705 -709 -700 -705 -709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Pulls enemies in a selected area to the center. -->
-		<table name="#mpConsumes"> 238 252 267 </table>
+		<table name="#mpConsumes"> 238 252 267 281 295 310 </table>
+		<table name="#npcId"> 13323 13324 13325 13458 13459 13460 </table>
 		<set name="icon" val="icon.skill11058" />
+		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="GROUND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="SummonNpc">
+				<param npcId="#npcId" npcCount="1" />
+			</effect>
+		</for>
 	</skill>
-	<skill id="11059" levels="2" name="Shadow Snare Zone">
-		<table name="#effectPoint"> -709 0 -709 </table>
+	<skill id="11059" levels="4" name="Shadow Snare Zone"> <!-- Client Levels only 1 and 4 -->
+		<table name="#effectPoint"> -709 0 0 -709 </table>
 		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Pulls nearby enemies to the center. -->
 		<set name="icon" val="icon.skill1469" />
+		<set name="abnormalTime" val="1" />
+		<set name="activateRate" val="60" />
+		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
+		<set name="trait" val="PULL" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PullBack">
+				<param speed="600" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11062" levels="4" name="Air Rider">
-		<table name="#effectPoint"> 692 700 707 707 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 15 seconds, increases Speed by 60. The effect disappears when attacked. -->
+		<table name="#effectPoint"> 692 700 707 707 </table>
 		<table name="#mpConsumes"> 7 8 9 9 </table>
+		<table name="#runSpd"> 60 70 80 90 </table>
 		<set name="icon" val="icon.skill11062" />
+		<set name="abnormalTime" val="15" />
 		<set name="operateType" val="A2" />
+		<set name="removedOnDamage" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="200" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="30000" />
+		<for>
+			<effect name="Buff">
+				<add stat="runSpd" val="#runSpd" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11063" levels="1" name="Floating Blow">
 		<!-- AUTO GENERATED SKILL -->
@@ -932,10 +1476,11 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="11064" levels="8" name="Ultimate Body To Mind">
-		<table name="#effectPoint"> 692 700 707 707 707 707 707 707 707 707 707 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Sacrifices 384 HP to recover 400 MP. -->
+		<table name="#effectPoint"> 692 700 707 707 707 707 707 707 707 707 707 </table>
 		<table name="#hpConsumes"> 384 388 396 404 412 420 428 436 </table>
+		<table name="#manaHeal"> 400 412 436 450 474 499 523 547 </table>
 		<set name="icon" val="icon.skill11064" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
@@ -944,11 +1489,18 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="ManaHeal">
+				<param power="#manaHeal" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11065" levels="1" name="Arcane Barrier">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 20 seconds, decreases incoming damage - 90% and defends against the rest by consuming MP. When attacked, reflects 10% of incoming damage. Ineffective when MP drops to 0. -->
 		<set name="icon" val="icon.skill11065" />
+		<set name="abnormalTime" val="20" />
+		<set name="abnormalVisualEffect" val="MP_SHIELD" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="70" />
@@ -956,47 +1508,87 @@
 		<set name="reuseDelay" val="120000" />
 		<set name="effectPoint" val="707" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<add stat="manaShield" val="90" />
+				<add stat="reflectDam" val="10" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11066" levels="4" name="Unleash Hell">
-
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
+		<!-- TODO: looks like skill does 0 damage every time to air binded targets -->
+		<!-- Updated to IO -->
 		<!-- Inflicts magical damage on target with 620 Power. Casts Fear and Burn and decreases target's Speed by 40%. Over-hit. -->
+		<table name="#mpConsumes"> 1655 1672 1689 1706 </table>
+		<table name="#power"> 620 677 693 709 </table>
 		<set name="icon" val="icon.skill11066" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="5" /> <!-- Guessed -->
+		<set name="abnormalType" val="TURN_FLEE" />
+		<set name="abnormalVisualEffect" val="TURN_FLEE" />
+		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="1655" />
+		<set name="targetType" val="ONE" />
+		<set name="trait" val="DERANGEMENT" />
+		<set name="power" val="#power" />
+		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="6750" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-704" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack" />
+			<effect name="Fear">
+				<mul stat="runSpd" val="0.60" />
+			</effect>
+			<!-- TODO: Cast Burn -->
+		</for>
 	</skill>
 	<skill id="11067" levels="4" name="Death Mass Unleash Hell">
-
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts magical damage on target and nearby enemies with 620 Power. Casts Fear and Burn and decreases target's Speed by 20%. Over-hit. -->
+		<table name="#mpConsumes"> 1767 1783 1799 1815 </table>
+		<table name="#power"> 620 641 655 669 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="5" /> <!-- Guessed -->
+		<set name="abnormalType" val="TURN_FLEE" />
+		<set name="abnormalVisualEffect" val="TURN_FLEE" />
+		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="basicProperty" val="MEN" />
 		<set name="icon" val="icon.skill11067" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="1767" />
+		<set name="targetType" val="AREA" />
+		<set name="trait" val="DERANGEMENT" />
+		<set name="power" val="#power" />
+		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="10000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-709" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack" />
+			<effect name="Fear">
+				<mul stat="runSpd" val="0.60" />
+			</effect>
+			<!-- TODO: Cast Burn -->
+		</for>
 	</skill>
 	<skill id="11068" levels="4" name="Double Casting">
-
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 30 sec., you can cast elemental spells with both hands.ﾠDecreases MP Consumption by 50% and magic skill Cooldown by 5%.ﾠEliminates magic cancel during magic use. -->
 		<table name="#mpConsumes"> 210 231 255 276 </table>
 		<set name="icon" val="icon.skill11068" />
+		<set name="abnormalTime" val="30" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1005,166 +1597,365 @@
 		<set name="reuseDelay" val="180000" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="VisualBuff">
+				<param skillId1="11007" />
+				<param skillId2="11008" />
+				<param skillId3="11009" />
+				<param skillId4="11010" />
+			</effect>
+			<effect name="EffectFlag">
+				<param effectFlag="FIRE_STANCE" />
+			</effect>
+			<effect name="EffectFlag">
+				<param effectFlag="WATER_STANCE" />
+			</effect>
+			<effect name="EffectFlag">
+				<param effectFlag="WIND_STANCE" />
+			</effect>
+			<effect name="EffectFlag">
+				<param effectFlag="EARTH_STANCE" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11072" levels="1" name="Fire - Elemental Spike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- target's Fire resistance is decreased. -->
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11012" /> <!-- Elemental Spike (Fire) -->
+				<param skillId="11077" skillLevel="1" skillLevelScaleTo="3" /> <!-- Decrease Fire Resistance -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11073" levels="1" name="Water - Elemental Spike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- target's Water resistance is decreased. -->
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11013" /> <!-- Elemental Spike (Water) -->
+				<param skillId="11078" skillLevel="1" skillLevelScaleTo="3" /> <!-- Decrease Water Resistance -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11074" levels="1" name="Wind - Elemental Spike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- target's Wind resistance is decreased. -->
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11014" /> <!-- Elemental Spike (Wind) -->
+				<param skillId="11079" skillLevel="1" skillLevelScaleTo="3" /> <!-- Decrease Wind Resistance -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11075" levels="1" name="Earth - Elemental Spike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- target's Earth resistance is decreased. -->
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11015" /> <!-- Elemental Spike (Earth) -->
+				<param skillId="11080" skillLevel="1" skillLevelScaleTo="3" /> <!-- Decrease Earth Resistance -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11076" levels="1" name="Double Casting - Elemental Spike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- target's Fire/Water/Wind/Earth resistances are decreased. -->
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11016" /> <!-- Elemental Spike (4 Elements) -->
+				<param skillId="11081" skillLevel="1" skillLevelScaleTo="3" /> <!-- Decrease Fire/Water/Wind/Earth Resistances -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11077" levels="3" name="Decrease Fire Resistance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Decreases Fire resistance by 20 for 3 seconds. -->
+		<table name="#abnormalTime"> 3 3 10 </table>
+		<table name="#fireRes"> 20 50 100 </table>
 		<set name="icon" val="icon.skill11011" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="#abnormalTime" />
+		<set name="activateRate" val="100" />
+		<set name="basicProperty" val="MEN" />
+		<set name="element" val="0" /> <!-- Fire -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<sub stat="fireRes" val="#fireRes" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11078" levels="3" name="Decrease Water Resistance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Decreases Water resistance by 20 for 3 seconds. -->
+		<table name="#abnormalTime"> 3 3 10 </table>
+		<table name="#waterRes"> 20 50 100 </table>
 		<set name="icon" val="icon.skill11011" />
+		<set name="abnormalLvl" val="#abnormalTime" />
+		<set name="abnormalTime" val="3" />
+		<set name="activateRate" val="100" />
+		<set name="basicProperty" val="MEN" />
+		<set name="element" val="1" /> <!-- Water -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<sub stat="waterRes" val="#waterRes" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11079" levels="3" name="Decrease Wind Resistance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Decreases Wind resistance by 20 for 3 seconds. -->
+		<table name="#abnormalTime"> 3 3 10 </table>
+		<table name="#windRes"> 20 50 100 </table>
 		<set name="icon" val="icon.skill11011" />
+		<set name="abnormalLvl" val="#abnormalTime" />
+		<set name="abnormalTime" val="3" />
+		<set name="activateRate" val="100" />
+		<set name="basicProperty" val="MEN" />
+		<set name="element" val="2" /> <!-- Wind -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<sub stat="windRes" val="#windRes" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11080" levels="3" name="Decrease Earth Resistance">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Decreases Earth resistance by 20 for 3 seconds. -->
+		<table name="#abnormalTime"> 3 3 10 </table>
+		<table name="#earthRes"> 20 50 100 </table>
 		<set name="icon" val="icon.skill11011" />
+		<set name="abnormalLvl" val="#abnormalTime" />
+		<set name="abnormalTime" val="3" />
+		<set name="activateRate" val="100" />
+		<set name="basicProperty" val="MEN" />
+		<set name="element" val="3" /> <!-- Earth -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<sub stat="earthRes" val="#earthRes" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11081" levels="3" name="Decrease Fire/Water/Wind/Earth Resistances">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Decreases Fire/Water/Wind/Earth resistances by 20 for 3 seconds. -->
+		<table name="#abnormalTime"> 3 3 10 </table>
+		<table name="#allRes"> 20 50 100 </table>
 		<set name="icon" val="icon.skill11011" />
+		<set name="abnormalLvl" val="#abnormalTime" />
+		<set name="abnormalTime" val="3" />
+		<set name="activateRate" val="100" />
+		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<sub stat="fireRes" val="#allRes" />
+				<sub stat="waterRes" val="#allRes" />
+				<sub stat="windRes" val="#allRes" />
+				<sub stat="earthRes" val="#allRes" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11082" levels="1" name="Fire - Elemental Crash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- target is inflicted with Fear. -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11018" /> <!-- Elemental Crash (Fire) -->
+				<param skillId="11087" skillLevel="1" chance="20" /> <!-- Elemental Crash (Fire) -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11083" levels="1" name="Water - Elemental Crash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- target's Speed is reduced. -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11019" /> <!-- Elemental Crash (Water) -->
+				<param skillId="11088" skillLevel="1" /> <!-- Elemental Crash (Water) -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11084" levels="1" name="Wind - Elemental Crash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- target is Knocked Back. -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11020" /> <!-- Elemental Crash (Wind) -->
+				<param skillId="11089" skillLevel="1" chance="30" /> <!-- Elemental Crash (Wind) -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11085" levels="1" name="Earth - Elemental Crash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- target is inflicted with Hold. -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11021" /> <!-- Elemental Crash (Earth) -->
+				<param skillId="11090" skillLevel="1" chance="20" /> <!-- Elemental Crash (Earth) -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11086" levels="1" name="Double Casting - Elemental Crash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- target is inflicted with Stun. -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11022" /> <!-- Elemental Crash (4 Elements) -->
+				<param skillId="11091" skillLevel="1" chance="20" /> <!-- Elemental Crash (4 Elements) -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11087" levels="3" name="Elemental Crash (Fire)">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts fear and hold on target. -->
 		<set name="icon" val="icon.skill11017" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3" />
+		<set name="abnormalType" val="TURN_FLEE" />
+		<set name="abnormalVisualEffect" val="TURN_FLEE" />
+		<set name="activateRate" val="80" />
+		<set name="basicProperty" val="MEN" />
+		<set name="element" val="0" /> <!-- Fire -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="trait" val="DERANGEMENT" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Fear" />
+			<effect name="Root" />
+		</for>
 	</skill>
 	<skill id="11088" levels="3" name="Elemental Crash (Water)">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Decreases target's Speed. -->
 		<set name="icon" val="icon.skill11017" />
+		<set name="abnormalTime" val="3" />
+		<set name="activateRate" val="80" />
+		<set name="basicProperty" val="MEN" />
+		<set name="element" val="1" /> <!-- Water -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="runSpd" val="0.60" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11089" levels="3" name="Elemental Crash (Wind)">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Knock Back target. -->
 		<set name="icon" val="icon.skill11017" />
+		<set name="abnormalTime" val="1" />
+		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
+		<set name="activateRate" val="40" />
+		<set name="basicProperty" val="MEN" />
+		<set name="element" val="2" /> <!-- Wind -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="KnockBack">
+				<param speed="400" distance="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11090" levels="3" name="Elemental Crash (Earth)">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts hold on target. -->
 		<set name="icon" val="icon.skill11017" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3" />
+		<set name="abnormalType" val="ROOT_MAGICALLY" />
+		<set name="abnormalVisualEffect" val="ROOT" />
+		<set name="basicProperty" val="MEN" />
+		<set name="activateRate" val="80" />
+		<set name="element" val="3" /> <!-- Earth -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
+		<set name="trait" val="HOLD" />
 	</skill>
 	<skill id="11091" levels="3" name="Elemental Crash (4 Elements)">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts stun on target. -->
 		<set name="icon" val="icon.skill11017" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3" />
+		<set name="abnormalType" val="STUN" />
+		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="activateRate" val="80" />
+		<set name="basicProperty" val="CON" /> <!-- Custom -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="trait" val="SHOCK" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Stun" />
+		</for>
 	</skill>
 	<skill id="11092" levels="3" name="Damaged Area">
 		<!-- AUTO GENERATED SKILL -->
@@ -1177,24 +1968,54 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11093" levels="1" name="Crystal Form">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Cancels Poison/Bleed/Hold/Stun effect. Becomes invincible for 10 seconds and rapidly recovers HP and MP. -->
 		<set name="icon" val="icon.skill11093" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="INVINCIBILITY" />
+		<set name="abnormalVisualEfect" val="INVINCIBILITY" />
+		<set name="canCastWhileDisabled" val="true" />
+		<set name="removedOnAnyActionExceptMove" val="true" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="73" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="300000" />
+		<for>
+			<effect name="Invincible" />
+			<effect name="HealOverTime" ticks="1" >
+				<param power="150" /> <!-- Guessed -->
+			</effect>
+			<effect name="ManaHealOverTime" ticks="1" >
+				<param power="150" /> <!-- Guessed -->
+			</effect>
+			<effect name="DispelBySlotProbability">
+				<param dispel="POISON;BLEEDING;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN" rate="100"/>
+			</effect>
+		</for>
 	</skill>
 	<skill id="11094" levels="6" name="Magical Charge">
-		<table name="#effectPoint"> -687 -696 -704 -709 -709 -709 -709 -709 -709 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Attacks nearby enemies with 133 Power added to M. Atk., inflicting Stun and canceling their targets. Teleports you to the front. -->
+		<table name="#effectPoint"> -687 -696 -704 -709 -709 -709 -709 -709 -709 </table>
+		<table name="#power"> 133 136 142 149 154 160 </table>
 		<table name="#mpConsumes"> 70 72 77 82 87 92 </table>
 		<set name="icon" val="icon.skill11094" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="2" />
+		<set name="abnormalType" val="STUN" />
+		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="activateRate" val="80" />
+		<set name="affectRange" val="150" />
+		<set name="basicProperty" val="CON" /> <!-- Custom -->
+		<set name="flyCourse" val="180" /> <!-- Front -->
+		<set name="flyRadius" val="400" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
+		<set name="trait" val="SHOCK" />
+		<set name="power" val="#power" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
@@ -1202,46 +2023,86 @@
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack" />
+			<effect name="Stun" />
+			<effect name="TargetCancel">
+				<param chance="40" /> <!-- Custom -->
+			</effect>
+		</for>
+		<selfEffects>
+			<effect name="Blink" />
+		</selfEffects>
 	</skill>
 	<skill id="11095" levels="1" name="Devil's Sway">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Resets the duration of target's paralysis, hold, silence, sleep, shock, fear, petrification, and disarm. -->
 		<set name="icon" val="icon.skill11535" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="190" />
 		<set name="castRange" val="1100" />
+		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="-692" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="ResetDebuff">
+				<param slot="PARALYZE;ROOT_MAGICALLY;ROOT_PHYSICALLY;SILENCE;SILENCE_ALL;SILENCE_PHYSICAL;SLEEP;STUN;TURN_FLEE;TURN_STONE;DISARM" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11096" levels="1" name="Elemental Destruction: Fire">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Fire Attribute -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11024" /> <!-- Elemental Destruction (Fire) -->
+				<param skillId="11101" skillLevel="1" chance="30" /> <!-- Elemental Destruction: Fire -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11097" levels="1" name="Elemental Destruction: Water">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Water Attribute -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11025" /> <!-- Elemental Destruction (Water) -->
+				<param skillId="11102" skillLevel="1" chance="30" /> <!-- Elemental Destruction: Water -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11098" levels="1" name="Elemental Destruction: Wind">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Wind Attribute -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11026" /> <!-- Elemental Destruction (Wind) -->
+				<param skillId="11103" skillLevel="1" chance="30" /> <!-- Elemental Destruction: Wind -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11099" levels="1" name="Elemental Destruction: Earth">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Earth Attribute -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11027" /> <!-- Elemental Destruction (Earth) -->
+				<param skillId="11104" skillLevel="1" chance="30" /> <!-- Elemental Destruction: Earth -->
+			</effect>
+		</for>
 	</skill>
 </list>

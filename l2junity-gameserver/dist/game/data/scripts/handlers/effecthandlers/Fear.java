@@ -90,8 +90,10 @@ public final class Fear extends AbstractEffect
 	@Override
 	public void onExit(BuffInfo info)
 	{
-		// Fear should make you stop moving instantly when it disappears
-		info.getEffector().stopMove(null);
+		if (!info.getEffected().isPlayer())
+		{
+			info.getEffected().getAI().notifyEvent(CtrlEvent.EVT_THINK);
+		}
 		super.onExit(info);
 	}
 	
@@ -102,11 +104,6 @@ public final class Fear extends AbstractEffect
 		int posX = (int) (info.getEffected().getX() + (FEAR_RANGE * Math.cos(radians)));
 		int posY = (int) (info.getEffected().getY() + (FEAR_RANGE * Math.sin(radians)));
 		int posZ = info.getEffected().getZ();
-		
-		if (!info.getEffected().isPet())
-		{
-			info.getEffected().setRunning();
-		}
 		
 		final Location destination = GeoData.getInstance().moveCheck(info.getEffected().getX(), info.getEffected().getY(), info.getEffected().getZ(), posX, posY, posZ, info.getEffected().getInstanceId());
 		info.getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, destination);

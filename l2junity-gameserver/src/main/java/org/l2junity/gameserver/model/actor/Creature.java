@@ -1825,7 +1825,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		int reuseDelay;
 		if (skill.isStaticReuse() || skill.isStatic())
 		{
-			reuseDelay = (skill.getReuseDelay());
+			reuseDelay = skill.getReuseDelay();
 		}
 		else if (skill.isMagic())
 		{
@@ -2376,21 +2376,26 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public boolean isSkillDisabled(Skill skill)
 	{
-		return (skill != null) && isSkillDisabled(skill.getReuseHashCode());
-	}
-	
-	/**
-	 * Verifies if the skill is disabled.
-	 * @param hashCode the skill hash code
-	 * @return {@code true} if the skill is disabled, {@code false} otherwise
-	 */
-	public boolean isSkillDisabled(int hashCode)
-	{
-		if (isAllSkillsDisabled())
+		if (skill == null)
+		{
+			return false;
+		}
+		
+		if (_allSkillsDisabled || (!skill.canCastWhileDisabled() && isAllSkillsDisabled()))
 		{
 			return true;
 		}
 		
+		return isSkillDisabledByReuse(skill.getReuseHashCode());
+	}
+	
+	/**
+	 * Verifies if the skill is under reuse.
+	 * @param hashCode the skill hash code
+	 * @return {@code true} if the skill is disabled, {@code false} otherwise
+	 */
+	public boolean isSkillDisabledByReuse(int hashCode)
+	{
 		if (_disabledSkills == null)
 		{
 			return false;
@@ -6063,7 +6068,9 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			random = 5 + (int) Math.sqrt(getLevel());
 		}
 		
-		return (1 + ((double) Rnd.get(0 - random, random) / 100));
+		random = (int) calcStat(Stats.RANDOM_DAMAGE, random);
+		
+		return (1 + ((double) Rnd.get(-random, random) / 100));
 	}
 	
 	public final long getAttackEndTime()

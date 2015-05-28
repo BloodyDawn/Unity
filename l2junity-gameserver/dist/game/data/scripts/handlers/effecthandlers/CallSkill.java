@@ -18,6 +18,7 @@
  */
 package handlers.effecthandlers;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.conditions.Condition;
@@ -34,6 +35,7 @@ public final class CallSkill extends AbstractEffect
 {
 	private final SkillHolder _skill;
 	private final int _skillLevelScaleTo;
+	private final int _chance;
 	
 	public CallSkill(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
@@ -41,6 +43,7 @@ public final class CallSkill extends AbstractEffect
 		
 		_skill = new SkillHolder(params.getInt("skillId"), params.getInt("skillLevel", 1));
 		_skillLevelScaleTo = params.getInt("skillLevelScaleTo", 0);
+		_chance = params.getInt("chance", 0);
 	}
 	
 	@Override
@@ -52,6 +55,11 @@ public final class CallSkill extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
+		if ((_chance > 0) && (_chance < 100) && (Rnd.get(100) > _chance))
+		{
+			return;
+		}
+		
 		final Skill skill;
 		if (_skillLevelScaleTo <= 0)
 		{
@@ -68,7 +76,6 @@ public final class CallSkill extends AbstractEffect
 			{
 				skill = _skill.getSkill();
 			}
-			
 		}
 		
 		if (skill != null)

@@ -2566,7 +2566,7 @@ public final class PlayerInstance extends Playable
 			}
 			
 			// fix when learning toggle skills
-			if (sk.isToggle() && isAffectedBySkill(sk.getId()))
+			if (sk.isToggle() && sk.canBeDispeled() && isAffectedBySkill(sk.getId()))
 			{
 				stopSkillEffects(true, sk.getId());
 			}
@@ -8380,6 +8380,17 @@ public final class PlayerInstance extends Playable
 			return false;
 		}
 		
+		// Support for GOD wizard skills with stances (Fire, Water, Wind, Earth, 4 Elements)
+		final int stanceSkillId = skill.getIdByStance(this);
+		if (stanceSkillId > 0)
+		{
+			final Skill stanceSkill = SkillData.getInstance().getSkill(stanceSkillId, skill.getLevel());
+			if (stanceSkill != null)
+			{
+				skill = stanceSkill;
+			}
+		}
+		
 		// ************************************* Check Casting in Progress *******************************************
 		
 		// If a skill is currently being used, queue this one if this is not the same
@@ -8456,7 +8467,7 @@ public final class PlayerInstance extends Playable
 		// ************************************* Check Player State *******************************************
 		
 		// Abnormal effects(ex : Stun, Sleep...) are checked in L2Character useMagic()
-		if (isOutOfControl() || isParalyzed() || isStunned() || isSleeping())
+		if (!skill.canCastWhileDisabled() && (isOutOfControl() || isParalyzed() || isStunned() || isSleeping()))
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
@@ -8496,7 +8507,7 @@ public final class PlayerInstance extends Playable
 			return false;
 		}
 		
-		// Check if the skill type is toggle.
+		// Check if the skill type is toggle and disable it, unless the skill doesnt allow disable.
 		if (skill.isToggle() && isAffectedBySkill(skill.getId()))
 		{
 			stopSkillEffects(true, skill.getId());
@@ -10000,7 +10011,7 @@ public final class PlayerInstance extends Playable
 				}
 			}
 			
-			sl.addSkill(s.getDisplayId(), s.getDisplayLevel(), s.isPassive(), isDisabled, isEnchantable);
+			sl.addSkill(s.getDisplayId(), s.getSharedReuseSkillId(), s.getDisplayLevel(), s.isPassive(), isDisabled, isEnchantable);
 		}
 		if (lastLearnedSkillId > 0)
 		{

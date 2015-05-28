@@ -36,9 +36,9 @@ public class FlyMove extends AbstractEffect
 {
 	private final FlyType _flyType;
 	private final int _angle;
-	private final boolean _absoluteAngle;
+	private final boolean _absoluteAngle; // Use map angle instead of character angle.
 	private final int _range;
-	private final boolean _effectedPos;
+	private final boolean _selfPos; // Use the position and heading of yourself to move in the given range
 	private final int _speed;
 	private final int _delay;
 	private final int _animationSpeed;
@@ -57,7 +57,7 @@ public class FlyMove extends AbstractEffect
 		_angle = params.getInt("angle", 0);
 		_absoluteAngle = params.getBoolean("absoluteAngle", false);
 		_range = params.getInt("range", 20);
-		_effectedPos = params.getBoolean("effectedPos", true);
+		_selfPos = params.getBoolean("selfPos", false);
 		_speed = params.getInt("speed", 0);
 		_delay = params.getInt("delay", 0);
 		_animationSpeed = params.getInt("animationSpeed", 0);
@@ -66,9 +66,11 @@ public class FlyMove extends AbstractEffect
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		final Creature effected = _effectedPos ? info.getEffected() : info.getEffector();
+		final Creature target = _selfPos ? info.getEffector() : info.getEffected();
 		
-		double angle = _absoluteAngle ? _angle : Util.convertHeadingToDegree(Util.calculateHeadingFrom(info.getEffector(), effected));
+		// Avoid calculating heading towards yourself because it always yields 0. Same results can be achieved with absoluteAngle of 0.
+		final int heading = (_selfPos || (info.getEffector() == info.getEffected())) ? info.getEffector().getHeading() : Util.calculateHeadingFrom(info.getEffector(), info.getEffected());
+		double angle = _absoluteAngle ? _angle : Util.convertHeadingToDegree(heading);
 		angle = (angle + _angle) % 360;
 		if (angle < 0)
 		{
@@ -76,12 +78,13 @@ public class FlyMove extends AbstractEffect
 		}
 		
 		final double radiansAngle = Math.toRadians(angle);
-		final int posX = (int) (info.getEffected().getX() + (_range * Math.cos(radiansAngle)));
-		final int posY = (int) (info.getEffected().getY() + (_range * Math.sin(radiansAngle)));
-		final Location destination = GeoData.getInstance().moveCheck(info.getEffector().getX(), info.getEffector().getY(), info.getEffector().getZ(), posX, posY, info.getEffected().getZ(), info.getEffected().getInstanceId());
+		final int posX = (int) (target.getX() + (_range * Math.cos(radiansAngle)));
+		final int posY = (int) (target.getY() + (_range * Math.sin(radiansAngle)));
+		final int posZ = target.getZ();
+		final Location destination = GeoData.getInstance().moveCheck(info.getEffector().getX(), info.getEffector().getY(), info.getEffector().getZ(), posX, posY, posZ, info.getEffector().getInstanceId());
 		
-		effected.broadcastPacket(new FlyToLocation(effected, destination, _flyType, _speed, _delay, _animationSpeed));
-		effected.setXYZ(destination);
+		info.getEffector().broadcastPacket(new FlyToLocation(info.getEffector(), destination, _flyType, _speed, _delay, _animationSpeed));
+		info.getEffector().setXYZ(destination);
 	}
 	
 	@Override

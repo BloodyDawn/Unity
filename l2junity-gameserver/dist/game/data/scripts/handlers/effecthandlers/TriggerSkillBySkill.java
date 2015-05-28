@@ -19,6 +19,7 @@
 package handlers.effecthandlers;
 
 import org.l2junity.commons.util.Rnd;
+import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.handler.TargetHandler;
 import org.l2junity.gameserver.model.StatsSet;
@@ -43,6 +44,7 @@ public final class TriggerSkillBySkill extends AbstractEffect
 	private final int _castSkillId;
 	private final int _chance;
 	private final SkillHolder _skill;
+	private final int _skillLevelScaleTo;
 	private final L2TargetType _targetType;
 	
 	/**
@@ -59,6 +61,7 @@ public final class TriggerSkillBySkill extends AbstractEffect
 		_castSkillId = params.getInt("castSkillId", 0);
 		_chance = params.getInt("chance", 100);
 		_skill = new SkillHolder(params.getInt("skillId", 0), params.getInt("skillLevel", 0));
+		_skillLevelScaleTo = params.getInt("skillLevelScaleTo", 0);
 		_targetType = params.getEnum("targetType", L2TargetType.class, L2TargetType.ONE);
 	}
 	
@@ -81,12 +84,29 @@ public final class TriggerSkillBySkill extends AbstractEffect
 			return;
 		}
 		
-		if (Rnd.get(100) > _chance)
+		if ((_chance < 100) && (Rnd.get(100) > _chance))
 		{
 			return;
 		}
 		
-		final Skill triggerSkill = _skill.getSkill();
+		final Skill triggerSkill;
+		if (_skillLevelScaleTo <= 0)
+		{
+			triggerSkill = _skill.getSkill();
+		}
+		else
+		{
+			final BuffInfo buffInfo = event.getTarget().getEffectList().getBuffInfoBySkillId(_skill.getSkillId());
+			if (buffInfo != null)
+			{
+				triggerSkill = SkillData.getInstance().getSkill(_skill.getSkillId(), Math.min(_skillLevelScaleTo, buffInfo.getSkill().getLevel() + 1));
+			}
+			else
+			{
+				triggerSkill = _skill.getSkill();
+			}
+		}
+		
 		final WorldObject[] targets = targetHandler.getTargetList(triggerSkill, event.getCaster(), false, event.getTarget());
 		
 		for (WorldObject triggerTarget : targets)

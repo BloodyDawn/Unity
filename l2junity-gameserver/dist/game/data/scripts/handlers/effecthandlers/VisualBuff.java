@@ -18,56 +18,51 @@
  */
 package handlers.effecthandlers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.effects.L2EffectType;
-import org.l2junity.gameserver.model.skills.AbnormalType;
+import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 
 /**
- * An effect that resets all debuffs' timers.
+ * An Effect that does nothing except showing visual representation of a skill in the buff bar.
  * @author Nik
  */
-public final class ResetDebuff extends AbstractEffect
+public class VisualBuff extends AbstractEffect
 {
-	private final AbnormalType[] _resetSlots;
+	private final List<SkillHolder> _visualSkills = new ArrayList<>();
 	
-	public ResetDebuff(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public VisualBuff(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
-		String resetSlots = params.getString("slot", null);
-		if ((resetSlots != null) && !resetSlots.isEmpty())
+		for (int i = 1;; i++)
 		{
-			String[] split = resetSlots.split(";");
-			_resetSlots = new AbnormalType[split.length];
-			for (int i = 0; i < split.length; i++)
+			final int skillId = params.getInt("skillId" + i, 0);
+			final int skillLvl = params.getInt("skillLvl" + i, 1);
+			if (skillId == 0)
 			{
-				_resetSlots[i] = AbnormalType.getAbnormalType(split[i]);
+				break;
 			}
+			
+			_visualSkills.add(new SkillHolder(skillId, skillLvl));
 		}
-		else
-		{
-			_resetSlots = new AbnormalType[0];
-		}
-	}
-	
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.DEBUFF;
-	}
-	
-	@Override
-	public boolean isInstant()
-	{
-		return true;
 	}
 	
 	@Override
 	public void onStart(BuffInfo info)
 	{
-		info.getEffected().getEffectList().resetDebuffs(true, _resetSlots);
+		info.getEffected().getEffectList().addVisualAbnormalStatus(_visualSkills);
+		super.onStart(info);
+	}
+	
+	@Override
+	public void onExit(BuffInfo info)
+	{
+		info.getEffected().getEffectList().removeVisualAbnormalStatus(_visualSkills);
+		super.onExit(info);
 	}
 }

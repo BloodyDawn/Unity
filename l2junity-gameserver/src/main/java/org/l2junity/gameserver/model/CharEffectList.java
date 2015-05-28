@@ -33,12 +33,14 @@ import java.util.function.Function;
 import javolution.util.FastMap;
 
 import org.l2junity.Config;
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
+import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.olympiad.OlympiadGameManager;
 import org.l2junity.gameserver.model.olympiad.OlympiadGameTask;
 import org.l2junity.gameserver.model.skills.AbnormalType;
@@ -81,6 +83,8 @@ public final class CharEffectList
 	private volatile Map<AbnormalType, BuffInfo> _stackedEffects;
 	/** Set containing all abnormal types that shouldn't be added to this creature effect list. */
 	private volatile Set<AbnormalType> _blockedBuffSlots = null;
+	/** Set containing skills that visually appear in the character buff bar */
+	private volatile Set<Skill> _visualAbnormalStatus = null;
 	/** Short buff skill ID. */
 	private BuffInfo _shortBuff = null;
 	/** If {@code true} this effect list has buffs removed on any action. */
@@ -497,6 +501,55 @@ public final class CharEffectList
 	}
 	
 	/**
+	 * Adds skills to visually-only display in the buff bar.
+	 * @param visualAbnormalStatus the visual abnormal status set to add
+	 */
+	public void addVisualAbnormalStatus(List<SkillHolder> visualAbnormalStatus)
+	{
+		if (_visualAbnormalStatus == null)
+		{
+			synchronized (this)
+			{
+				if (_visualAbnormalStatus == null)
+				{
+					_visualAbnormalStatus = ConcurrentHashMap.newKeySet();
+				}
+			}
+		}
+		
+		visualAbnormalStatus.forEach(skill -> _visualAbnormalStatus.add(skill.getSkill()));
+	}
+	
+	/**
+	 * Removes skills that are visually-only displayed in the buff bar.
+	 * @param visualAbnormalStatus the visual abnormal status set to remove
+	 * @return {@code true} if the abnormal visual status set has been modified, {@code false} otherwise
+	 */
+	public boolean removeVisualAbnormalStatus(List<SkillHolder> visualAbnormalStatus)
+	{
+		if (_visualAbnormalStatus != null)
+		{
+			boolean removed = false;
+			for (SkillHolder skill : visualAbnormalStatus)
+			{
+				removed |= _visualAbnormalStatus.remove(skill.getSkill());
+			}
+			
+			return removed;
+		}
+		return false;
+	}
+	
+	/**
+	 * Gets all visual-only skills that are displayed in the buff bar
+	 * @return the current visual abnormal status set
+	 */
+	public Set<Skill> getVisualAbnormalStatus()
+	{
+		return _visualAbnormalStatus;
+	}
+	
+	/**
 	 * Gets the Short Buff info.
 	 * @return the short buff info
 	 */
@@ -848,13 +901,22 @@ public final class CharEffectList
 	/**
 	 * Resets all debuffs' duration.
 	 * @param update set to true to update the effect flags and icons
+	 * @param abnormalTypes resets only debuffs with the given abnormal types, or all debuffs if empty.
 	 */
-	public void resetAllDebuffs(boolean update)
+	public void resetDebuffs(boolean update, AbnormalType... abnormalTypes)
 	{
 		if (hasDebuffs())
 		{
-			// Safety check is made when resetting debuffs duration. Since we don't know which debuffs can be reset and which not, lets reset only dispellable debuffs.
-			getDebuffs().values().stream().filter(debuff -> debuff.getSkill().canBeDispeled()).forEach(info -> info.resetAbnormalTime());
+			if (abnormalTypes.length > 0)
+			{
+				getDebuffs().values().stream().filter(debuff -> debuff.getSkill().canBeDispeled() && CommonUtil.contains(abnormalTypes, debuff.getSkill().getAbnormalType())).forEach(info -> info.resetAbnormalTime());
+			}
+			else
+			{
+				// Safety check is made when resetting debuffs duration. Since we don't know which debuffs can be reset and which not, lets reset only dispellable debuffs.
+				getDebuffs().values().stream().filter(debuff -> debuff.getSkill().canBeDispeled()).forEach(info -> info.resetAbnormalTime());
+			}
+			
 			// Update effect flags and icons.
 			updateEffectList(update);
 		}
@@ -1443,7 +1505,7 @@ public final class CharEffectList
 		{
 			for (BuffInfo info : getBuffs().values())
 			{
-				if (info != null)
+				if ((info != null) && ((_visualAbnormalStatus == null) || !_visualAbnormalStatus.contains(info.getSkill())))
 				{
 					if (info.getSkill().isHealingPotionSkill())
 					{
@@ -1462,7 +1524,7 @@ public final class CharEffectList
 		{
 			for (BuffInfo info : getTriggered().values())
 			{
-				if (info != null)
+				if ((info != null) && ((_visualAbnormalStatus == null) || !_visualAbnormalStatus.contains(info.getSkill())))
 				{
 					addIcon(info, asu, ps, psSummon, os, isSummon);
 				}
@@ -1474,7 +1536,7 @@ public final class CharEffectList
 		{
 			for (BuffInfo info : getDances().values())
 			{
-				if (info != null)
+				if ((info != null) && ((_visualAbnormalStatus == null) || !_visualAbnormalStatus.contains(info.getSkill())))
 				{
 					addIcon(info, asu, ps, psSummon, os, isSummon);
 				}
@@ -1486,7 +1548,7 @@ public final class CharEffectList
 		{
 			for (BuffInfo info : getToggles().values())
 			{
-				if (info != null)
+				if ((info != null) && ((_visualAbnormalStatus == null) || !_visualAbnormalStatus.contains(info.getSkill())))
 				{
 					addIcon(info, asu, ps, psSummon, os, isSummon);
 				}
@@ -1498,9 +1560,21 @@ public final class CharEffectList
 		{
 			for (BuffInfo info : getDebuffs().values())
 			{
-				if (info != null)
+				if ((info != null) && ((_visualAbnormalStatus == null) || !_visualAbnormalStatus.contains(info.getSkill())))
 				{
 					addIcon(info, asu, ps, psSummon, os, isSummon);
+				}
+			}
+		}
+		
+		// Visual skills
+		if ((_visualAbnormalStatus != null) && !_visualAbnormalStatus.isEmpty())
+		{
+			for (Skill skill : _visualAbnormalStatus)
+			{
+				if (skill != null)
+				{
+					addIcon(skill, asu, ps, psSummon, os, isSummon);
 				}
 			}
 		}
@@ -1571,6 +1645,34 @@ public final class CharEffectList
 		if (os != null)
 		{
 			os.addSkill(info);
+		}
+	}
+	
+	private void addIcon(Skill skill, AbnormalStatusUpdate asu, PartySpelled ps, PartySpelled psSummon, ExOlympiadSpelledInfo os, boolean isSummon)
+	{
+		if (skill == null)
+		{
+			return;
+		}
+		
+		if (asu != null)
+		{
+			asu.addSkill(skill);
+		}
+		
+		if ((ps != null) && (isSummon || !skill.isToggle()))
+		{
+			ps.addSkill(skill);
+		}
+		
+		if ((psSummon != null) && !skill.isToggle())
+		{
+			psSummon.addSkill(skill);
+		}
+		
+		if (os != null)
+		{
+			os.addSkill(skill);
 		}
 	}
 	
