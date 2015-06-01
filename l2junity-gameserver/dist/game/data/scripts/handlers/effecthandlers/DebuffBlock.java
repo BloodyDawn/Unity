@@ -21,6 +21,7 @@ package handlers.effecthandlers;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
+import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 
@@ -42,6 +43,12 @@ public final class DebuffBlock extends AbstractEffect
 	public void onStart(BuffInfo info)
 	{
 		info.getEffected().setDebuffBlockTimes(_times);
+	}
+	
+	@Override
+	public int getEffectFlags()
+	{
+		return EffectFlag.DEBUFF_BLOCK.getMask();
 	}
 	
 	@Override

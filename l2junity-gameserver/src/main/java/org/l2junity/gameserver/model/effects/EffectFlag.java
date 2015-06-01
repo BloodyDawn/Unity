@@ -44,7 +44,8 @@ public enum EffectFlag
 	BLOCK_RESURRECTION,
 	SERVITOR_SHARE,
 	UNTARGETABLE,
-	CANNOT_ESCAPE;
+	CANNOT_ESCAPE,
+	DEBUFF_BLOCK;
 	
 	public int getMask()
 	{

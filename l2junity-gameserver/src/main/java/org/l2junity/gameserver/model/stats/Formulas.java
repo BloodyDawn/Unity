@@ -41,6 +41,7 @@ import org.l2junity.gameserver.model.actor.instance.L2PetInstance;
 import org.l2junity.gameserver.model.actor.instance.L2SiegeFlagInstance;
 import org.l2junity.gameserver.model.actor.instance.L2StaticObjectInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.effects.EffectFlag;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.entity.Castle;
 import org.l2junity.gameserver.model.entity.ClanHall;
@@ -1320,7 +1321,7 @@ public final class Formulas
 					resisted = true;
 				}
 			}
-			if (!resisted && (target.getEffectList().getFirstEffect(L2EffectType.DEBUFF_BLOCK) != null))
+			if (!resisted && target.isAffected(EffectFlag.DEBUFF_BLOCK))
 			{
 				int times = target.getDebuffBlockedTime();
 				if (times > 0)
