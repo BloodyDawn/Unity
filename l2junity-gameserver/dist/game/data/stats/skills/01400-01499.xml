@@ -446,7 +446,11 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="1416" levels="1" name="Pa'agrio's Fist">
+	<skill id="1416" levels="8" name="Pa'agrio's Fist">
+		<table name="#magicLvl"> 79 81 83 85 90 95 99 101 </table>
+		<table name="#cp"> 1.02 1.03 1.04 1.05 1.06 1.07 1.1 1.15 </table>
+		<table name="#mpConsume"> 84 90 95 102 111 122 133 143 </table>
+		<table name="#mpInitialConsume"> 21 22 24 25 28 31 33 36 </table>
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="CP_UP" />
@@ -467,10 +471,10 @@
 		<set name="targetType" val="PARTY_CLAN" />
 		<for>
 			<effect name="Buff">
-				<add stat="maxCp" val="800" />
+				<mul stat="maxCp" val="#cp" />
 			</effect>
-			<effect name="CpHeal">
-				<param power="800" />
+			<effect name="CpHealPercent">
+				<param power="#cp" />
 			</effect>
 		</for>
 	</skill>
@@ -1748,11 +1752,11 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="1462" levels="7" name="Seal of Blockade">
-		<!-- Confirmed CT2.5 and Updated to Ertheia -->
-		<table name="#magicLvl"> 79 81 83 85 90 95 99 </table>
-		<table name="#mpConsume"> 80 104 136 202 222 245 266 </table>
-		<table name="#mpInitialConsume"> 20 26 34 50 56 61 68 </table>
+	<skill id="1462" levels="10" name="Seal of Blockade">
+		<!-- Confirmed CT2.5 and Updated to IO -->
+		<table name="#magicLvl"> 79 81 83 85 90 95 99 101 103 105 </table>
+		<table name="#mpConsume"> 80 104 136 202 222 245 266 286 307 238 </table>
+		<table name="#mpInitialConsume"> 20 26 34 50 56 61 68 72 77 82 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="NORMAL_ATTACK_BLOCK" />

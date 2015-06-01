@@ -284,9 +284,11 @@
 		</for>
 	</skill>
 	<skill id="1509" levels="9" name="Seal of Limit">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- Confirmed CT2.5 -->
+		<!-- Confirmed CT2.5 and updated to IO -->
+		<table name="#magicLvl"> 81 83 85 90 95 99 101 103 105 </table>
+		<table name="#mpConsume"> 72 104 202 222 245 266 286 307 328 </table>
+		<table name="#mpInitialConsume"> 18 26 50 56 61 66 77 82 </table>
+		<table name="#power"> 0.8 0.7 0.6 0.5 0.4 0.3 0.4 0.4 0.3 </table>
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="LIMIT" />
@@ -300,18 +302,18 @@
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="1" />
-		<set name="magicLvl" val="81" />
-		<set name="mpConsume" val="44" />
-		<set name="mpInitialConsume" val="11" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="2000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="maxRecoverableHp" val="0.3" />
-				<mul stat="maxRecoverableMp" val="0.3" />
-				<mul stat="maxRecoverableCp" val="0.3" />
+				<mul stat="maxRecoverableHp" val="#power" />
+				<mul stat="maxRecoverableMp" val="#power" />
+				<mul stat="maxRecoverableCp" val="#power" />
 			</effect>
 		</for>
 	</skill>

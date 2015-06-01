@@ -2407,10 +2407,14 @@
 		</for>
 	</skill>
 	<skill id="791" levels="8" name="Lightning Shock">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- Confirmed CT2.5 and Updated to H5 -->
-		<set name="abnormalTime" val="5" />
+		<!-- Confirmed CT2.5 and Updated to IO -->
+		<table name="#healEffect"> 0.9 0.8 0.7 0.6 0.5 0.5 0.5 0.5 </table>
+		<table name="#magicLvl"> 81 85 90 95 99 101 103 105 </table>
+		<table name="#power"> 149 158 169 179 188 191 195 199 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3" />
+		<set name="abnormalType" val="PARALYZE" />
+		<set name="abnormalVisualEffect" val="PARALYZE" />
 		<set name="activateRate" val="50" />
 		<set name="affectLimit" val="6-12" />
 		<set name="affectRange" val="150" />
@@ -2422,7 +2426,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="1" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="52" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="69" />
@@ -2430,19 +2434,22 @@
 		<set name="rideState" val="NONE" />
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="AURA" />
+		<set name="trait" val="PARALYZE" />
 		<for>
 			<effect name="MagicalSoulAttack" />
 			<effect name="Debuff">
-				<mul stat="pAtkSpd" val="0.5" />
-				<mul stat="runSpd" val="0.5" />
-				<mul stat="mAtkSpd" val="0.5" />
+				<mul stat="healEffect" val="#healEffect" />
 			</effect>
+			<effect name="Paralyze" />
 		</for>
+		<!-- TODO Confirm this isn't used anymore -->
+		<!--
 		<endEffects>
 			<effect name="CallSkill">
 				<param skillId="6092" skillLevel="1" />
 			</effect>
 		</endEffects>
+		-->
 	</skill>
 	<skill id="792" levels="1" name="Betrayal Mark">
 		<!-- Confirmed CT2.5 -->
