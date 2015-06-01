@@ -569,10 +569,14 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10021" levels="4" name="Spike Shield">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10021" levels="7" name="Spike Shield">
 		<!-- For 10 seconds, reflects 10% of received damage back to the attacker. Also has a 50% chance of reflecting magic damage back to the attacker. Requires a shield. -->
-		<table name="#mpConsumes"> 20 21 23 24 </table>
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
+		<table name="#mpConsumes"> 20 21 23 24 25 26 27 </table>
+		<table name="#reflectDam"> 10 15 20 25 27 30 32 </table>
+		<set name="abnormalLvl" val="3" />
+		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="DMG_SHIELD" />
 		<set name="icon" val="icon.skill10021" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -580,6 +584,16 @@
 		<set name="hitTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="60000" />
+		<cond addName="1" msgId="113">
+			<using kind="SHIELD" />
+		</cond>
+		<for>
+			<effect name="Buff">
+				<add stat="reflectDam" val="#reflectDam" />
+				<add stat="reflectSkillMagic" val="50" />
+				<add stat="vengeanceMdam" val="50" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10022" levels="1" name="Ignore Death">
 		<!-- For 10 seconds, HP does not decrease below 1. -->
@@ -610,6 +624,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1" />
 		<set name="abnormalType" val="KNOCK_DOWN" />
+		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="150" />
 		<set name="lvlBonusRate" val="1" />
@@ -949,9 +964,9 @@
 		</for>
 	</skill>
 	<skill id="10045" levels="3" name="Shield Charge II">
-		<table name="#effectPoint"> -692 -2 -2 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Strikes with the shield. Attacks target with 14179 Power added to P. Atk. Decreases P. Def. by 10% and Evasion by 2. Increases Critical damage by 10%. -->
+		<table name="#effectPoint"> -692 -2 -2 </table>
 		<table name="#mpConsumes"> 54 0 0 </table>
 		<set name="icon" val="icon.skill10045" />
 		<set name="operateType" val="A2" />
@@ -1159,7 +1174,6 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10060" levels="1" name="Aggression Attack">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Provokes. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
@@ -1244,17 +1258,27 @@
 		</for>
 	</skill>
 	<skill id="10064" levels="4" name="Holy Sacrifice">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Consumes your HP to restore target's HP by 1000. Requires a shield. -->
 		<table name="#hpConsumes"> 800 1100 1200 1600 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#power"> 1000 1300 1500 2000 </table>
 		<set name="icon" val="icon.skill10064" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="hpConsume" val="#hpConsumes" />
 		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
 		<set name="hitTime" val="1000" />
 		<set name="effectPoint" val="810" />
 		<set name="reuseDelay" val="5000" />
+		<cond addName="1" msgId="113">
+			<using kind="SHIELD" />
+		</cond>
+		<for>
+			<effect name="Heal">
+				<param power="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10065" levels="4" name="Fortress Shield">
 		<!-- Shield P. Def. + 5%, Shield Defense + 2%. -->
@@ -1332,21 +1356,39 @@
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10069" levels="4" name="Vampirism">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Has a 30% chance of recovering HP after a successful standard/ skill attack. -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#triggerLevel"> 1 2 3 4 </table>
 		<set name="icon" val="icon.skill10069" />
 		<set name="operateType" val="P" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="TriggerSkillByAttack">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" chance="30" />
+				<param skillId="10070" skillLevel="#triggerLevel" /> <!-- Vampirism -->
+				<param targetType="SELF" />
+				<param allowWeapons="ALL" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10070" levels="4" name="Vampirism">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- HP Recovery -->
+		<table name="#amount"> 250 500 750 1000 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<set name="icon" val="icon.skill10069" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="1" />
 		<set name="effectPoint" val="100" />
 		<set name="reuseDelay" val="10000" />
+		<for>
+			<effect name="Heal">
+				<param power="#amount" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10071" levels="4" name="Eva's Presence">
 		<!-- P. Def./ M. Def. + 2%. Has a 30% chance of increasing all party members' P. Def./ M. Def. and heal amount by 1% for 10 sec. when attacked. -->
@@ -1527,22 +1569,41 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="10081" levels="4" name="Lightning Root">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- With lightning, inflicts non-attribute damage on target with 15574 Power added to M. Atk. Instantly becomes stunned for 5 sec. Requires a shield. -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 87 95 103 110 </table>
+		<table name="#power"> 15574 18556 20701 22848 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="PARALYZE" />
+		<set name="activateRate" val="40" />
 		<set name="icon" val="icon.skill0279" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="lvlBonusRate" val="1" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="power" val="#power" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="-828" />
 		<set name="isDebuff" val="true" />
+		<set name="staticReuse" val="true" />
+		<set name="trait" val="PARALYZE" />
+		<cond msgId="113" addName="1">
+			<using kind="SHIELD" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack" />
+			<effect name="Paralyze" />
+			<effect name="DefenceTrait">
+				<param PARALYZE="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10082" levels="7" name="Strong Cubic Heal">
-
 		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<set name="icon" val="icon.skill0000" />
@@ -1633,8 +1694,8 @@
 		<set name="reuseDelay" val="5000" />
 	</skill>
 	<skill id="10090" levels="4" name="Provoking Shackle">
-		<table name="#effectPoint"> -1098 -1163 -1221 -1270 </table>
 		<!-- Provokes nearby enemies and inflicts Hold for 9 sec. -->
+		<table name="#effectPoint"> -1098 -1163 -1221 -1270 </table>
 		<table name="#mpConsume"> 59 61 63 65 </table>
 		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#abnormalLvl"> 1 2 3 4 </table>
@@ -1698,21 +1759,45 @@
 		<set name="effectPoint" val="408" />
 		<set name="reuseDelay" val="5000" />
 	</skill>
-	<skill id="10094" levels="4" name="Mass Lightning Strike">
-
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10094" levels="7" name="Mass Lightning Strike">
 		<!-- Strikes target and nearby enemies with a lightning bolt that inflicts non-attribute damage with 11997 Power. Paralyzes for 5 seconds. Consumes 1 Soulstone. -->
-		<table name="#mpConsumes"> 140 143 155 165 </table>
+		<table name="#magicLvl"> 85 90 95 99  101 103 105 </table>
+		<table name="#mpConsumes"> 140 143 155 165 175 185 195 </table>
+		<table name="#power"> 11997 14177 16357 18101 18973 19845 20717 </table>
+		<table name="#itemConsumeCount"> 1 2 4 6 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="PARALYZE" />
+		<set name="activateRate" val="40" />
+		<set name="affectLimit" val="10-10" />
+		<set name="affectRange" val="100" />
+		<set name="basicProperty" val="MEN" />
 		<set name="icon" val="icon.skll10094" />
+		<set name="itemConsumeId" val="1785" />
+		<set name="itemConsumeCount" val="#itemConsumeCount" />
+		<set name="lvlBonusRate" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
+		<set name="power" val="#power" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="60000" />
 		<set name="effectPoint" val="-828" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="113" addName="1">
+			<using kind="SHIELD" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack" />
+			<effect name="Paralyze" />
+			<effect name="DefenceTrait">
+				<param PARALYZE="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10095" levels="1" name="Blood Panther's Death Touch">
 		<!-- AUTO GENERATED SKILL -->
@@ -1737,20 +1822,33 @@
 		<set name="effectPoint" val="-671" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="10097" levels="3" name="Riot Shield">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10097" levels="6" name="Riot Shield">
 		<!-- Attacks nearby targets with 17927 Power added to P. Atk., and forces them to target you. Requires a shield. Consumes 6 Soulstones. Over-hit. Critical. -->
 		<table name="#effectPoint"> -10523 -10600 -10663 -10726 -10789 -10852 </table>
-		<table name="#mpConsumes"> 185 191 197 </table>
+		<table name="#magicLvl"> 97 98 99 101 103 105 </table>
+		<table name="#mpConsumes"> 185 191 197 203 209 215 </table>
+		<table name="#power"> 17927 18411 18895 19863 20831 21799 </table>
+		<set name="affectLimit" val="10-10" />
+		<set name="affectRange" val="200" />
 		<set name="icon" val="icon.skill10097" />
+		<set name="itemConsumeId" val="1785" />
+		<set name="itemConsumeCount" val="6" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="60000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="113" addName="1">
+			<using kind="SHIELD" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack" />
+			<effect name="TargetMe" />
+		</for>
 	</skill>
 	<skill id="10098" levels="4" name="Paladin's Frenzy">
 		<!-- For 1 min., P./M. Def. +50%, Debuff Resistance + 10%, Speed + 10. When equipped with a sword or blunt weapon, Accuracy + 4, Atk. Spd. + 10%, Critical Rate + 30, Critical Damage + 30%. -->

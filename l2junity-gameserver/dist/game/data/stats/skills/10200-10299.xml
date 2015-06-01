@@ -201,13 +201,32 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10255" levels="10" name="Superior Momentum Mastery">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10255" levels="7" name="Superior Momentum Mastery">
 		<!-- Absorbs Momentum by 20% during a normal physical attack and 40% during a critical attack. Can absorb up to 10 Momentum levels. -->
+		<table name="#chance"> 20 22 24 26 30 32 34 </table>
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
 		<set name="icon" val="icon.skill10255" />
 		<set name="operateType" val="P" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="TriggerSkillByAttack">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="false" />
+				<param minDamage="1" chance="#chance" />
+				<param skillId="6813" skillLevel="8" /> <!-- Focus Sonic -->
+				<param targetType="SELF" />
+				<param allowWeapons="ALL" />
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="true" />
+				<param minDamage="1" chance="40" />
+				<param skillId="6813" skillLevel="8" /> <!-- Focus Sonic -->
+				<param targetType="SELF" />
+				<param allowWeapons="ALL" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10256" levels="7" name="Superior HP Mastery">
 		<!-- Max HP + 606, Max CP + 296, HP Recovery Bonus + 12, MP Recovery Bonus + 6. When HP falls below 60%, P. Atk. + 1027. STR + 2. When receiving damage, has a chance of recovering 10% of Max HP. -->
@@ -668,8 +687,10 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="300000" />
 		<cond addName="1" msgId="113">
-			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
-			<player hp="70" />
+			<and>
+				<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+				<player hp="70" />
+			</and>
 		</cond>
 		<for>
 			<effect name="Buff">
@@ -722,19 +743,30 @@
 		</for>
 	</skill>
 	<skill id="10275" levels="4" name="Infinity Strike">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts a powerful attack on target with 65085 Power added to P. Atk. Requires a sword, blunt, spear, fist, dual blunt weapon, or dualsword weapon to be equipped. Over-hit. Critical. -->
+		<table name="#magicLvl">00 101 103 105 </table>
+		<table name="#power"> 65085 69414 73352 77290 </table>
+		<set name="baseCritRate" val="10" />
 		<set name="icon" val="icon.skill10275" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="1178" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="overHit" val="true" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
 		<set name="hitTime" val="5000" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="-709" />
 		<set name="isDebuff" val="true" />
+		<set name="nextActionAttack" val="true" />
+		<cond addName="1" msgId="113">
+			<using kind="SWORD, BLUNT, DUALFIST, POLE, DUALBLUNT" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="10276" levels="1" name="Force of Nature">
 		<!-- AUTO GENERATED SKILL -->
