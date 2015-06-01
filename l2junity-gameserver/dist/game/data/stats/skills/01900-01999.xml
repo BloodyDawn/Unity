@@ -203,15 +203,35 @@
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<cond addName="1" msgId="113">
+			<player hp="20" />
+		</cond>
+		<for>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="25" />
+				<param skillId="1918" skillLevel="1" /> <!-- Undying Will -->
+				<param targetType="ONE" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1918" levels="2" name="Undying Will">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Becomes invincible. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="INVINCIBILITY" />
+		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
 		<set name="icon" val="icon.skill1917" />
 		<set name="operateType" val="A2" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="200" />
 		<set name="reuseDelay" val="300000" />
+		<set name="staticReuse" val="true"/>
+		<for>
+			<effect name="Invincible" />
+		</for>
 	</skill>
 	<skill id="1919" levels="1" name="Dexterity">
 		<!-- Skill Cooldown - 1%. -->
@@ -227,13 +247,24 @@
 		</for>
 	</skill>
 	<skill id="1920" levels="2" name="Endurance">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- For 5 sec., reflects 50% of received damage to attacker and recovers 460 HP every second. -->
+		<table name="#abnormalLvl"> 1 2 </table>
+		<table name="#abnormalTime"> 5 7 </table>
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="icon" val="icon.skill1920" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="200" />
 		<set name="reuseDelay" val="600000" />
+		<for>
+			<effect name="HealOverTime" ticks="5">
+				<param power="460" />
+			</effect>
+			<effect name="Buff">
+				<add stat="reflectDam" val="50" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="1921" levels="1" name="Blessing of Earth">
 		<!-- Increases Earth resistance by 20. -->

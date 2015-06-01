@@ -37,6 +37,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -281,6 +282,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	/** Future Skill Cast */
 	protected Future<?> _skillCast;
 	protected Future<?> _skillCast2;
+	
+	private final AtomicInteger _blockedDebuffTimes = new AtomicInteger();
 	
 	private final Map<Integer, Integer> _knownRelations = new ConcurrentHashMap<>();
 	
@@ -6905,5 +6908,30 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public boolean cannotEscape()
 	{
 		return isAffected(EffectFlag.CANNOT_ESCAPE);
+	}
+	
+	/**
+	 * Sets amount of debuffs that player can avoid
+	 * @param times
+	 */
+	public void setDebuffBlockTimes(int times)
+	{
+		_blockedDebuffTimes.set(times);
+	}
+	
+	/**
+	 * @return the amount of debuffs that player can avoid
+	 */
+	public int getDebuffBlockedTime()
+	{
+		return _blockedDebuffTimes.get();
+	}
+	
+	/**
+	 * @return the amount of debuffs that player can avoid
+	 */
+	public int decrementDebuffBlockTimes()
+	{
+		return _blockedDebuffTimes.decrementAndGet();
 	}
 }

@@ -47,6 +47,7 @@ public final class EffectMasterHandler
 		BlockParty.class,
 		BlockBuffSlot.class,
 		BlockResurrection.class,
+		BlockTarget.class,
 		Bluff.class,
 		Buff.class,
 		CallParty.class,

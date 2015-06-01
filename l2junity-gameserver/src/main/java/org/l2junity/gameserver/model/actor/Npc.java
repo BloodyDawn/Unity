@@ -160,6 +160,7 @@ public class Npc extends Creature
 		super(template);
 		setInstanceType(InstanceType.L2Npc);
 		initCharStatusUpdateValues();
+		setTargetable(getTemplate().isTargetable());
 		
 		// initialize the "current" equipment
 		_currentLHandId = getTemplate().getLHandId();

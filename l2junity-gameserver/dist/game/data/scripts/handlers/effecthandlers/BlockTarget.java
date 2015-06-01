@@ -1,14 +1,14 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2015 L2J Server
  * 
- * This file is part of L2J DataPack.
+ * This file is part of L2J Server.
  * 
- * L2J DataPack is free software: you can redistribute it and/or modify
+ * L2J Server is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  * 
- * L2J DataPack is distributed in the hope that it will be useful,
+ * L2J Server is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
@@ -19,40 +19,38 @@
 package handlers.effecthandlers;
 
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.World;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
-import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 
 /**
- * An effect that blocks a debuff. Acts like DOTA's Linken Sphere.
- * @author Nik
+ * @author UnAfraid
  */
-public final class DebuffBlock extends AbstractEffect
+public class BlockTarget extends AbstractEffect
 {
-	private final int _times;
-	
-	public DebuffBlock(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
+	public BlockTarget(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
-		_times = params.getInt("times", -1);
-	}
-	
-	@Override
-	public void onStart(BuffInfo info)
-	{
-		info.getEffected().setDebuffBlockTimes(_times);
 	}
 	
 	@Override
 	public void onExit(BuffInfo info)
 	{
-		info.getEffected().setDebuffBlockTimes(Integer.MIN_VALUE);
+		info.getEffected().setTargetable(true);
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
+	public void onStart(BuffInfo info)
 	{
-		return L2EffectType.DEBUFF_BLOCK;
+		info.getEffected().setTargetable(false);
+		World.getInstance().forEachVisibleObject(info.getEffected(), Creature.class, target ->
+		{
+			if ((target.getTarget() == info.getEffected()))
+			{
+				target.setTarget(null);
+			}
+		});
 	}
 }

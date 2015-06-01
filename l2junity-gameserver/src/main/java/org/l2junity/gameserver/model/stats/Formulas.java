@@ -1322,7 +1322,19 @@ public final class Formulas
 			}
 			if (!resisted && (target.getEffectList().getFirstEffect(L2EffectType.DEBUFF_BLOCK) != null))
 			{
-				target.stopEffects(L2EffectType.DEBUFF_BLOCK);
+				int times = target.getDebuffBlockedTime();
+				if (times > 0)
+				{
+					times = target.decrementDebuffBlockTimes();
+					if (times == 0)
+					{
+						target.stopEffects(L2EffectType.DEBUFF_BLOCK);
+					}
+				}
+				else
+				{
+					target.stopEffects(L2EffectType.DEBUFF_BLOCK);
+				}
 				resisted = true;
 			}
 			

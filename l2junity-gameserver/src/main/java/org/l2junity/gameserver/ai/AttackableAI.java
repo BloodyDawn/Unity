@@ -144,18 +144,10 @@ public class AttackableAI extends CharacterAI implements Runnable
 	 */
 	private boolean autoAttackCondition(Creature target)
 	{
-		if ((target == null) || (getActiveChar() == null))
+		if ((target == null) || !target.isTargetable() || (getActiveChar() == null))
 		{
 			return false;
 		}
-		
-		// Untargetable targets cannot be autoattacked.
-		if (target.isTargetable())
-		{
-			return false;
-		}
-		
-		final Attackable me = getActiveChar();
 		
 		// Check if the target isn't invulnerable
 		if (target.isInvul())
@@ -176,6 +168,8 @@ public class AttackableAI extends CharacterAI implements Runnable
 		{
 			return false;
 		}
+		
+		final Attackable me = getActiveChar();
 		
 		// Check if the target isn't dead, is in the Aggro range and is at the same height
 		if (target.isAlikeDead() || ((target instanceof Playable) && !me.isInsideRadius(target, me.getAggroRange(), true, false)))

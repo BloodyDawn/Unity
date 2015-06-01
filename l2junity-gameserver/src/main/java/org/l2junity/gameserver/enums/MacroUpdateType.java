@@ -19,7 +19,7 @@
 package org.l2junity.gameserver.enums;
 
 /**
- * @author jeremy
+ * @author Sdw
  */
 public enum MacroUpdateType
 {
