@@ -157,8 +157,6 @@ public class GameServer
 	
 	public GameServer() throws Exception
 	{
-		LOGGER.info("Used memory: {} MB", getUsedMemoryMB());
-		
 		if (!IdFactory.getInstance().isInitialized())
 		{
 			LOGGER.error("Could not read object IDs from DB. Please check your data.");
