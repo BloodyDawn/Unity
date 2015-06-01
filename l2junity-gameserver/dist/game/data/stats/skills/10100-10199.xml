@@ -133,8 +133,9 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10103" levels="4" name="Mass Freezing Strike">
+	<skill id="10103" levels="6" name="Mass Freezing Strike">
 		<!-- Freezes the air, inflicting 18151 damage to target and nearby enemies, and for 10 sec., decreases enemy Speed by 100. Consumes 6 Soulstones. -->
+		<table name="#magicLvl"> 97 98 99 101 103 105 </table>
 		<table name="#mpConsumes"> 185 191 197 199 201 203 </table>
 		<table name="#power"> 18151 18641 19131 20111 21091 22071 </table>
 		<set name="abnormalLvl" val="2" />
