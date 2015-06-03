@@ -28,18 +28,14 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
  */
 public final class EffectFlag extends AbstractEffect
 {
-	private final org.l2junity.gameserver.model.effects.EffectFlag _flag;
+	private org.l2junity.gameserver.model.effects.EffectFlag _flag = org.l2junity.gameserver.model.effects.EffectFlag.NONE;
 	
 	public EffectFlag(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
 		String flag = params.getString("effectFlag", null);
-		if (flag == null)
-		{
-			_flag = org.l2junity.gameserver.model.effects.EffectFlag.NONE;
-		}
-		else
+		if (flag != null)
 		{
 			_flag = org.l2junity.gameserver.model.effects.EffectFlag.valueOf(flag.toUpperCase());
 		}
@@ -48,11 +44,6 @@ public final class EffectFlag extends AbstractEffect
 	@Override
 	public int getEffectFlags()
 	{
-		if (_flag == null)
-		{
-			return org.l2junity.gameserver.model.effects.EffectFlag.NONE.getMask();
-		}
-		
 		return _flag.getMask();
 	}
 }

@@ -39,16 +39,10 @@ public class VisualBuff extends AbstractEffect
 	{
 		super(attachCond, applyCond, set, params);
 		
-		for (int i = 1;; i++)
+		for (Object param : params.getSet().values())
 		{
-			final int skillId = params.getInt("skillId" + i, 0);
-			final int skillLvl = params.getInt("skillLvl" + i, 1);
-			if (skillId == 0)
-			{
-				break;
-			}
-			
-			_visualSkills.add(new SkillHolder(skillId, skillLvl));
+			final int skillId = Integer.parseInt((String) param);
+			_visualSkills.add(new SkillHolder(skillId, 1));
 		}
 	}
 	

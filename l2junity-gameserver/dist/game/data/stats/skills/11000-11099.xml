@@ -15,7 +15,7 @@
 	</skill>
 	<skill id="11001" levels="7" name="Superior Weapon Mastery">
 		<!--M. Atk. + 17%, additional M. Atk. + 981, Casting Spd. + 23%. Depending on your INT, the Cooldown resets or the duration increases by 2 times. -->
-		<table name="#magicLvl"> 85 90 95 99 100 102 104 104 104 104 </table>
+		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
 		<table name="#mAtk"> 981 1138 1319 1485 1682 1785 1893 2009 2131 2261 </table>
 		<set name="targetType" val="SELF" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -125,6 +125,7 @@
 		<set name="abnormalType" val="ELEMENT_STANCE" />
 		<set name="abnormalLvl" val="1" />
 		<set name="canBeDispeled" val="false" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
 		<set name="reuseDelay" val="2000" />
@@ -226,12 +227,13 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11011" levels="8" name="Elemental Spike">
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
+	<skill id="11011" levels="11" name="Elemental Spike">
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
-		<table name="#power"> 133 134 139 142 146 150 154 157 </table>
-		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 </table>
+		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
+		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
@@ -242,6 +244,7 @@
 		<set name="windStanceSkillId" val="11014" />
 		<set name="earthStanceSkillId" val="11015" />
 		<set name="allStanceSkillId" val="11016" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -253,12 +256,13 @@
 			<effect name="MagicalAttack" />
 		</for>
 	</skill>
-	<skill id="11012" levels="8" name="Elemental Spike (Fire)">
+	<skill id="11012" levels="11" name="Elemental Spike (Fire)">
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#power"> 133 134 139 142 146 150 154 157 </table>
-		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 </table>
+		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<set name="icon" val="icon.skill11011" />
 		<set name="element" val="0" /> <!-- Fire -->
 		<set name="elementPower" val="20" />
@@ -266,6 +270,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11011" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -277,12 +282,13 @@
 			<effect name="MagicalAttack" />
 		</for>
 	</skill>
-	<skill id="11013" levels="8" name="Elemental Spike (Water)">
+	<skill id="11013" levels="11" name="Elemental Spike (Water)">
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#power"> 133 134 139 142 146 150 154 157 </table>
-		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 </table>
+		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<set name="icon" val="icon.skill11011" />
 		<set name="element" val="1" /> <!-- Water -->
 		<set name="elementPower" val="20" />
@@ -290,6 +296,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11011" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -301,12 +308,13 @@
 			<effect name="MagicalAttack" />
 		</for>
 	</skill>
-	<skill id="11014" levels="8" name="Elemental Spike (Wind)">
+	<skill id="11014" levels="11" name="Elemental Spike (Wind)">
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#power"> 133 134 139 142 146 150 154 157 </table>
-		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 </table>
+		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<set name="icon" val="icon.skill11011" />
 		<set name="element" val="2" /> <!-- Wind -->
 		<set name="elementPower" val="20" />
@@ -314,6 +322,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11011" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -325,12 +334,13 @@
 			<effect name="MagicalAttack" />
 		</for>
 	</skill>
-	<skill id="11015" levels="8" name="Elemental Spike (Earth)">
+	<skill id="11015" levels="11" name="Elemental Spike (Earth)">
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#power"> 133 134 139 142 146 150 154 157 </table>
-		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 </table>
+		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<set name="icon" val="icon.skill11011" />
 		<set name="element" val="3" /> <!-- Earth -->
 		<set name="elementPower" val="20" />
@@ -338,6 +348,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11011" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -349,17 +360,19 @@
 			<effect name="MagicalAttack" />
 		</for>
 	</skill>
-	<skill id="11016" levels="8" name="Elemental Spike (4 Elements)">
+	<skill id="11016" levels="11" name="Elemental Spike (4 Elements)">
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 133 Power added to attribute damage. In addition, decreases target's attribute resistance according to the Elemental Stance used. Over-hit. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#power"> 133 134 139 142 146 150 154 157 </table>
-		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 </table>
+		<table name="#power"> 133 134 139 142 146 150 154 157 164 168 172 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#mpConsumes"> 37 38 39 42 43 45 48 50 52 54 56 </table>
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11011" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -371,12 +384,13 @@
 			<effect name="MagicalAttack" />
 		</for>
 	</skill>
-	<skill id="11017" levels="8" name="Elemental Crash">
+	<skill id="11017" levels="11" name="Elemental Crash">
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#power"> 158 161 165 169 175 179 184 188 </table>
-		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 73 76 79 </table>
+		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 </table>
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
@@ -387,6 +401,7 @@
 		<set name="windStanceSkillId" val="11020" />
 		<set name="earthStanceSkillId" val="11021" />
 		<set name="allStanceSkillId" val="11022" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -399,12 +414,13 @@
 			<effect name="MagicalAttack" />
 		</for>
 	</skill>
-	<skill id="11018" levels="8" name="Elemental Crash (Fire)">
+	<skill id="11018" levels="11" name="Elemental Crash (Fire)">
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#power"> 158 161 165 169 175 179 184 188 </table>
-		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 73 76 79 </table>
+		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 </table>
 		<set name="icon" val="icon.skill11017" />
 		<set name="element" val="0" /> <!-- Fire -->
 		<set name="elementPower" val="20" />
@@ -412,6 +428,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11017" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -424,12 +441,13 @@
 			<effect name="MagicalAttack" />
 		</for>
 	</skill>
-	<skill id="11019" levels="8" name="Elemental Crash (Water)">
+	<skill id="11019" levels="11" name="Elemental Crash (Water)">
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#power"> 158 161 165 169 175 179 184 188 </table>
-		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 73 76 79 </table>
+		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 </table>
 		<set name="icon" val="icon.skill11017" />
 		<set name="element" val="1" /> <!-- Water -->
 		<set name="elementPower" val="20" />
@@ -437,6 +455,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11017" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -449,12 +468,13 @@
 			<effect name="MagicalAttack" />
 		</for>
 	</skill>
-	<skill id="11020" levels="8" name="Elemental Crash (Wind)">
+	<skill id="11020" levels="11" name="Elemental Crash (Wind)">
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#power"> 158 161 165 169 175 179 184 188 </table>
-		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 73 76 79 </table>
+		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 </table>
 		<set name="icon" val="icon.skill11017" />
 		<set name="element" val="2" /> <!-- Wind -->
 		<set name="elementPower" val="20" />
@@ -462,6 +482,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11017" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -474,12 +495,13 @@
 			<effect name="MagicalAttack" />
 		</for>
 	</skill>
-	<skill id="11021" levels="8" name="Elemental Crash (Earth)">
+	<skill id="11021" levels="11" name="Elemental Crash (Earth)">
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#power"> 158 161 165 169 175 179 184 188 </table>
-		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 73 76 79 </table>
+		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 </table>
 		<set name="icon" val="icon.skill11017" />
 		<set name="element" val="3" /> <!-- Earth -->
 		<set name="elementPower" val="20" />
@@ -487,6 +509,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11017" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -499,17 +522,19 @@
 			<effect name="MagicalAttack" />
 		</for>
 	</skill>
-	<skill id="11022" levels="8" name="Elemental Crash (4 Elements)">
+	<skill id="11022" levels="11" name="Elemental Crash (4 Elements)">
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 158 Power added to attribute damage. In addition, Fire inflicts fear, Water decreases Speed, Wind causes Knock Back, and Earth inflicts hold. Double Casting inflicts stun. Over-hit. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -712 -712 -712 -712 -712 -712 </table>
-		<table name="#power"> 158 161 165 169 175 179 184 188 </table>
-		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#mpConsumes"> 53 55 57 60 62 65 67 70 73 76 79 </table>
+		<table name="#power"> 158 161 165 169 175 179 184 188 193 197 201 </table>
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11017" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -522,12 +547,13 @@
 			<effect name="MagicalAttack" />
 		</for>
 	</skill>
-	<skill id="11023" levels="8" name="Elemental Destruction">
+	<skill id="11023" levels="11" name="Elemental Destruction">
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
-		<table name="#power"> 431 444 457 469 481 493 506 518 </table>
-		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 </table>
+		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 169 175 181 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 </table>
 		<set name="icon" val="icon.skill11023" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
@@ -538,6 +564,7 @@
 		<set name="windStanceSkillId" val="11026" />
 		<set name="earthStanceSkillId" val="11027" />
 		<set name="allStanceSkillId" val="11028" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -550,12 +577,13 @@
 			<effect name="MagicalAttack" />
 		</for>
 	</skill>
-	<skill id="11024" levels="8" name="Elemental Destruction (Fire)">
+	<skill id="11024" levels="11" name="Elemental Destruction (Fire)">
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
-		<table name="#power"> 431 444 457 469 481 493 506 518 </table>
-		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 </table>
+		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 169 175 181 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 </table>
 		<set name="icon" val="icon.skill11023" />
 		<set name="element" val="0" /> <!-- Fire -->
 		<set name="elementPower" val="20" />
@@ -563,6 +591,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11023" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -576,12 +605,13 @@
 			<effect name="MagicalAttack" />
 		</for>
 	</skill>
-	<skill id="11025" levels="8" name="Elemental Destruction (Water)">
+	<skill id="11025" levels="11" name="Elemental Destruction (Water)">
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
-		<table name="#power"> 431 444 457 469 481 493 506 518 </table>
-		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 </table>
+		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 169 175 181 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 </table>
 		<set name="icon" val="icon.skill11023" />
 		<set name="element" val="1" /> <!-- Water -->
 		<set name="elementPower" val="20" />
@@ -589,6 +619,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11023" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -602,12 +633,13 @@
 			<effect name="MagicalAttack" />
 		</for>
 	</skill>
-	<skill id="11026" levels="8" name="Elemental Destruction (Wind)">
+	<skill id="11026" levels="11" name="Elemental Destruction (Wind)">
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
-		<table name="#power"> 431 444 457 469 481 493 506 518 </table>
-		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 </table>
+		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 169 175 181 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 </table>
 		<set name="icon" val="icon.skill11023" />
 		<set name="element" val="2" /> <!-- Wind -->
 		<set name="elementPower" val="20" />
@@ -615,6 +647,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11023" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -628,12 +661,13 @@
 			<effect name="MagicalAttack" />
 		</for>
 	</skill>
-	<skill id="11027" levels="8" name="Elemental Destruction (Earth)">
+	<skill id="11027" levels="11" name="Elemental Destruction (Earth)">
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
-		<table name="#power"> 431 444 457 469 481 493 506 518 </table>
-		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 </table>
+		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 169 175 181 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 </table>
 		<set name="icon" val="icon.skill11023" />
 		<set name="element" val="3" /> <!-- Earth -->
 		<set name="elementPower" val="20" />
@@ -641,6 +675,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11023" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -654,17 +689,19 @@
 			<effect name="MagicalAttack" />
 		</for>
 	</skill>
-	<skill id="11028" levels="8" name="Elemental Destruction (4 Elements)">
+	<skill id="11028" levels="11" name="Elemental Destruction (4 Elements)">
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target with 431 power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -692 -696 -700 -704 -707 -709 -712 -715 -718 -721 </table>
-		<table name="#power"> 431 444 457 469 481 493 506 518 </table>
-		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 </table>
+		<table name="#mpConsumes"> 125 130 135 140 146 151 157 163 169 175 181 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#power"> 431 444 457 469 481 493 506 518 529 541 553 </table>
 		<set name="icon" val="icon.skill11023" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11023" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -683,6 +720,7 @@
 		<!-- For 15 seconds, decreases target's HP by 480 per second. -->
 		<table name="#effectPoint"> -692 -696 -700 -704 -707 </table>
 		<table name="#dot"> 480 494 509 523 537 </table>
+		<table name="#magicLvl"> 85 88 91 94 97 </table>
 		<table name="#mpConsumes"> 68 72 72 80 84 </table>
 		<set name="icon" val="icon.skill11029" />
 		<set name="abnormalTime" val="15" />
@@ -692,6 +730,7 @@
 		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -711,6 +750,7 @@
 		<!-- For 10 seconds, drains target's life with 25 Power per second. Absorbs 100% of the damage inflicted as HP. -->
 		<table name="#effectPoint"> -696 -704 -709 -709 </table>
 		<table name="#power"> 25 50 75 100 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 68 72 84 88 </table>
 		<set name="icon" val="icon.skill11030" />
 		<set name="channelingSkillId" val="11030" />
@@ -719,6 +759,7 @@
 		<set name="operateType" val="CA1" />
 		<set name="targetType" val="ONE" />
 		<set name="power" val="#power" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -733,12 +774,13 @@
 			</effect>
 		</channelingEffects>
 	</skill>
-	<skill id="11032" levels="4" name="Death Howl">
+	<skill id="11032" levels="7" name="Death Howl">
 		<!-- Updated to IO -->
 		<!-- Attacks nearby targets with 157 Power and pushes them back. Over-hit. -->
 		<table name="#effectPoint"> -696 -702 -707 -711 -715 -719 -723 </table>
-		<table name="#power"> 25 50 75 100 </table>
-		<table name="#mpConsumes"> 157 168 180 189 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
+		<table name="#mpConsumes"> 204 216 252 264 276 288 300 </table>
+		<table name="#power"> 157 168 180 189 194 198 202 </table>
 		<set name="icon" val="icon.skill11032" />
 		<set name="abnormalTime" val="1" />
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
@@ -775,8 +817,9 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
+		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
 		<set name="icon" val="icon.skill11034" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
@@ -787,6 +830,7 @@
 		<set name="windStanceSkillId" val="11037" />
 		<set name="earthStanceSkillId" val="11038" />
 		<set name="allStanceSkillId" val="11039" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -803,8 +847,9 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
+		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
 		<set name="icon" val="icon.skill11034" />
 		<set name="element" val="0" /> <!-- Fire -->
 		<set name="elementPower" val="20" />
@@ -812,6 +857,7 @@
 		<set name="targetType" val="AREA" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11034" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -829,13 +875,15 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
+		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
 		<set name="icon" val="icon.skill11034" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11034" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -853,8 +901,9 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
+		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
 		<set name="icon" val="icon.skill11034" />
 		<set name="element" val="2" /> <!-- Wind -->
 		<set name="elementPower" val="20" />
@@ -862,6 +911,7 @@
 		<set name="targetType" val="AREA" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11034" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -879,8 +929,9 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
+		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
 		<set name="icon" val="icon.skill11034" />
 		<set name="element" val="3" /> <!-- Earth -->
 		<set name="elementPower" val="20" />
@@ -888,6 +939,7 @@
 		<set name="targetType" val="AREA" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11034" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -905,13 +957,15 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 210 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 213 216 228 234 246 255 264 276 </table>
+		<table name="#power"> 210 213 219 226 231 238 243 250 </table>
 		<set name="icon" val="icon.skill11034" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11034" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -929,8 +983,9 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
+		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
 		<set name="icon" val="icon.skill11040" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
@@ -941,6 +996,7 @@
 		<set name="windStanceSkillId" val="11043" />
 		<set name="earthStanceSkillId" val="11044" />
 		<set name="allStanceSkillId" val="11045" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -957,8 +1013,9 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
+		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
 		<set name="icon" val="icon.skill11040" />
 		<set name="element" val="0" /> <!-- Fire -->
 		<set name="elementPower" val="20" />
@@ -966,6 +1023,7 @@
 		<set name="targetType" val="AREA" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11040" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -983,8 +1041,9 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
+		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
 		<set name="icon" val="icon.skill11040" />
 		<set name="element" val="1" /> <!-- Water -->
 		<set name="elementPower" val="20" />
@@ -992,6 +1051,7 @@
 		<set name="targetType" val="AREA" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11040" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -1009,8 +1069,9 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
+		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
 		<set name="icon" val="icon.skill11040" />
 		<set name="element" val="2" /> <!-- Wind -->
 		<set name="elementPower" val="20" />
@@ -1018,6 +1079,7 @@
 		<set name="targetType" val="AREA" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11040" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -1035,8 +1097,9 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
+		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
 		<set name="icon" val="icon.skill11040" />
 		<set name="element" val="3" /> <!-- Earth -->
 		<set name="elementPower" val="20" />
@@ -1044,6 +1107,7 @@
 		<set name="targetType" val="AREA" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11040" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -1058,13 +1122,15 @@
 		<!-- Updated to IO -->
 		<!-- Inflicts a magic attack imbued with elemental properties on target and surrounding enemies with 262 Power added to attribute damage. Over-hit. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -712 -712 -712 -712 </table>
-		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 </table>
 		<table name="#mpConsumes"> 264 276 288 300 315 324 336 351 </table>
+		<table name="#power"> 262 270 277 28 292 299 307 315 </table>
 		<set name="icon" val="icon.skill11040" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
 		<set name="power" val="#power" />
 		<set name="sharedReuseSkillId" val="11040" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -1082,6 +1148,7 @@
 		<!-- Updated to IO -->
 		<!-- For 30 sec., M. Atk. + 20%, M. Critical Rate + 50%, P. Def. and M. Def. + 20%, Evasion + 2, and MP Consumption for magic skills - 50%. When attacked, has a chance of inflicting magic damage on the attacking target. -->
 		<table name="#effectPoint"> 696 705 </table>
+		<table name="#magicLvl"> 85 95 </table>
 		<table name="#mpConsumes"> 70 85 </table>
 		<table name="#mAtk"> 1.20 1.30 </table>
 		<table name="#mCritRate"> 1.50 1.60 </table>
@@ -1090,6 +1157,7 @@
 		<set name="abnormalTime" val="30" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="200" />
 		<set name="reuseDelay" val="300000" />
@@ -1097,22 +1165,23 @@
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Debuff">
-				<mul stat="mAtk" val="#mAtk"/>
-				<mul stat="mCritRate" val="#mCritRate"/>
-				<mul stat="pDef" val="1.20"/>
-				<mul stat="mDef" val="1.20"/>
-				<add stat="rEvas" val="2"/>
-				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate"/>
+				<mul stat="mAtk" val="#mAtk" />
+				<mul stat="mCritRate" val="#mCritRate" />
+				<mul stat="pDef" val="1.20" />
+				<mul stat="mDef" val="1.20" />
+				<add stat="rEvas" val="2" />
+				<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
 			</effect>
 			<!-- TODO When attacked, has a chance of inflicting magic damage on the attacking target -->
 		</for>
 	</skill>
-	<skill id="11047" levels="6" name="Devil's Curse">
+	<skill id="11047" levels="9" name="Devil's Curse">
 		<!-- Updated to IO -->
 		<!-- Attacks target with 157 Power. For 20 sec., target's M. Atk. and M. Def. - 30%, Casting Spd., P. Critical Rate, M. Critical Rate, P. Def. and Speed - 10%, and P. Evasion - 6. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 </table>
-		<table name="#power"> 157 160 166 174 180 187 </table>
-		<table name="#mpConsumes"> 70 71 76 81 85 91 </table>
+		<table name="#power"> 157 160 166 174 180 187 191 195 199 </table>
+		<table name="#magicLvl"> 85 86 89 92 95 98 101 103 105 </table>
+		<table name="#mpConsumes"> 70 71 76 81 85 91 97 103 109 </table>
 		<set name="icon" val="icon.skill11047" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="20" />
@@ -1121,6 +1190,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="power" val="#power" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -1132,14 +1202,25 @@
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="MagicalAttack" />
+			<effect name="Debuff">
+				<mul stat="mAtk" val="0.7" />
+				<mul stat="mDef" val="0.7" />
+				<mul stat="mAtkSpd" val="0.9" />
+				<mul stat="rCrit" val="0.9" />
+				<mul stat="mCritRate" val="0.9" />
+				<mul stat="pDef" val="0.9" />
+				<mul stat="runSpd" val="0.9" />
+				<sub stat="rEvas" val="6" />
+			</effect>
 		</for>
 	</skill>
-	<skill id="11048" levels="6" name="Mass Devil's Curse">
+	<skill id="11048" levels="9" name="Mass Devil's Curse">
 		<!-- Updated to IO -->
 		<!-- Attacks target and surrounding enemies with 125 power and absorbs 25% of the damage inflicted as HP. Additionally, for 10 seconds, target's M. Atk. and M. Def. - 30%; P. Def., M. Atk., Casting Spd., M. Def., P. Critical Rate, M. Critical Rate, and Speed - 8%; and Accuracy - 12. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 </table>
-		<table name="#power"> 125 128 133 139 144 150 </table>
-		<table name="#mpConsumes"> 211 220 233 247 262 278 </table>
+		<table name="#power"> 125 128 133 139 144 150  155 159 163 </table>
+		<table name="#mpConsumes"> 211 220 233 247 262 278 294 310 326 </table>
+		<table name="#magicLvl"> 85 86 89 92 95 98 101 103 105 </table>
 		<set name="icon" val="icon.skill11048" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="20" />
@@ -1149,6 +1230,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AREA" />
 		<set name="power" val="#power" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -1163,14 +1245,14 @@
 				<param power="0.25" />
 			</effect>
 			<effect name="Debuff">
-				<mul stat="mAtk" val="0.60"/>
-				<mul stat="mDef" val="0.60"/>
-				<mul stat="pDef" val="0.92"/>
-				<mul stat="mAtkSpd" val="0.92"/>
-				<mul stat="rCrit" val="0.92"/>
-				<mul stat="mCritRate" val="0.92"/>
-				<mul stat="runSpd" val="0.92"/>
-				<sub stat="accCombat" val="12"/>
+				<mul stat="mAtk" val="0.7" />
+				<mul stat="mDef" val="0.7" />
+				<mul stat="pDef" val="0.92" />
+				<mul stat="mAtkSpd" val="0.92" />
+				<mul stat="rCrit" val="0.92" />
+				<mul stat="mCritRate" val="0.92" />
+				<mul stat="runSpd" val="0.92" />
+				<sub stat="accCombat" val="12" />
 			</effect>
 		</for>
 	</skill>
@@ -1304,11 +1386,12 @@
 			<effect name="Paralyze" />
 		</for>
 	</skill>
-	<skill id="11055" levels="7" name="Death Fear">
+	<skill id="11055" levels="10" name="Death Fear">
 		<!-- Updated to IO -->
 		<!-- For 10 seconds, inflicts Fear on target and decreases Speed by 40%. -->
 		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 -709 </table>
-		<table name="#mpConsumes"> 70 72 76 78 82 85 88 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 97 101 103 105 </table>
+		<table name="#mpConsumes"> 70 72 76 78 82 85 88 91 94 97  </table>
 		<table name="#runSpd"> 0.60 0.55 0.50 0.45 0.40 0.35 0.30 0.30 0.30 0.30 </table>
 		<set name="icon" val="icon.skill11055" />
 		<set name="abnormalLvl" val="1" />
@@ -1320,6 +1403,7 @@
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -1335,11 +1419,12 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11056" levels="8" name="Mass Death Fear">
+	<skill id="11056" levels="11" name="Mass Death Fear">
 		<!-- Updated to IO -->
 		<!-- For 10 seconds, inflicts Fear on target and nearby enemies and decreases Speed by 25%. -->
 		<table name="#effectPoint"> -700 -705 -705 -705 -705 -705 -705 -705 -705 -705 -705 </table>
-		<table name="#mpConsumes"> 211 220 228 238 247 257 267 278 </table>
+		<table name="#magicLvl"> 85 87 89 91 93 95 96 99 101 103 105 </table>
+		<table name="#mpConsumes"> 211 220 228 238 247 257 267 278 289 300 311 </table>
 		<table name="#runSpd"> 0.75 0.70 0.65 0.60 0.55 0.50 0.45 0.40 0.40 0.40 0.40 </table>
 		<set name="icon" val="icon.skill11056" />
 		<set name="abnormalLvl" val="1" />
@@ -1351,6 +1436,7 @@
 		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -1366,12 +1452,13 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11057" levels="6" name="Magical Evasion">
+	<skill id="11057" levels="9" name="Magical Evasion">
 		<!-- Updated to IO -->
 		<!-- Attacks nearby enemies with 133 Power added to M. Atk., inflicting Stun and canceling their targets. Teleports you to the back. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -709 -709 -709 -709 -709 </table>
-		<table name="#power"> 133 136 142 149 154 160 </table>
-		<table name="#mpConsumes"> 70 72 77 82 87 92 </table>
+		<table name="#magicLvl"> 85 87 90 93 96 99 101 103 105 </table>
+		<table name="#mpConsumes"> 70 72 77 82 87 92 97 102 107 </table>
+		<table name="#power"> 133 136 142 149 154 160 163 167 171 </table>
 		<set name="icon" val="icon.skill11057" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="2" />
@@ -1386,6 +1473,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
 		<set name="power" val="#power" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />
@@ -1405,15 +1493,16 @@
 		</selfEffects>
 	</skill>
 	<skill id="11058" levels="6" name="Shadow Snare">
-		<table name="#effectPoint"> -700 -705 -709 -700 -705 -709 </table>
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Pulls enemies in a selected area to the center. -->
+		<table name="#effectPoint"> -700 -705 -709 -700 -705 -709 </table>
+		<table name="#magicLvl"> 91 94 97 101 103 105 </table>
 		<table name="#mpConsumes"> 238 252 267 281 295 310 </table>
 		<table name="#npcId"> 13323 13324 13325 13458 13459 13460 </table>
 		<set name="icon" val="icon.skill11058" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="GROUND" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -1428,10 +1517,10 @@
 		</for>
 	</skill>
 	<skill id="11059" levels="4" name="Shadow Snare Zone"> <!-- Client Levels only 1 and 4 -->
-		<table name="#effectPoint"> -709 0 0 -709 </table>
 		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Pulls nearby enemies to the center. -->
+		<table name="#effectPoint"> -709 0 0 -709 </table>
 		<set name="icon" val="icon.skill1469" />
 		<set name="abnormalTime" val="1" />
 		<set name="activateRate" val="60" />
@@ -1451,6 +1540,7 @@
 		<!-- Updated to IO -->
 		<!-- For 15 seconds, increases Speed by 60. The effect disappears when attacked. -->
 		<table name="#effectPoint"> 692 700 707 707 </table>
+		<table name="#magicLvl"> 87 91 95 99 </table>
 		<table name="#mpConsumes"> 7 8 9 9 </table>
 		<table name="#runSpd"> 60 70 80 90 </table>
 		<set name="icon" val="icon.skill11062" />
@@ -1458,6 +1548,7 @@
 		<set name="operateType" val="A2" />
 		<set name="removedOnDamage" val="true" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="200" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -1475,16 +1566,18 @@
 		<set name="effectPoint" val="709" />
 		<set name="targetType" val="SELF" />
 	</skill>
-	<skill id="11064" levels="8" name="Ultimate Body To Mind">
+	<skill id="11064" levels="11" name="Ultimate Body To Mind">
 		<!-- Updated to IO -->
 		<!-- Sacrifices 384 HP to recover 400 MP. -->
 		<table name="#effectPoint"> 692 700 707 707 707 707 707 707 707 707 707 </table>
-		<table name="#hpConsumes"> 384 388 396 404 412 420 428 436 </table>
-		<table name="#manaHeal"> 400 412 436 450 474 499 523 547 </table>
+		<table name="#hpConsumes"> 384 388 396 404 412 420 428 436 448 456 464 </table>
+		<table name="#manaHeal"> 400 412 436 450 474 499 523 547 591 623 655 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
 		<set name="icon" val="icon.skill11064" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hpConsume" val="#hpConsumes" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="hitTime" val="4000" />
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="#effectPoint" />
@@ -1510,6 +1603,7 @@
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="Buff">
+				<!-- TODO Check me : decreases incoming damage - 90% and defends against the rest by consuming MP -->
 				<add stat="manaShield" val="90" />
 				<add stat="reflectDam" val="10" />
 			</effect>
@@ -1519,6 +1613,7 @@
 		<!-- TODO: looks like skill does 0 damage every time to air binded targets -->
 		<!-- Updated to IO -->
 		<!-- Inflicts magical damage on target with 620 Power. Casts Fear and Burn and decreases target's Speed by 40%. Over-hit. -->
+		<table name="#magicLvl"> 95 101 103 105 </table>
 		<table name="#mpConsumes"> 1655 1672 1689 1706 </table>
 		<table name="#power"> 620 677 693 709 </table>
 		<set name="icon" val="icon.skill11066" />
@@ -1532,6 +1627,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<set name="power" val="#power" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -1552,6 +1648,7 @@
 	<skill id="11067" levels="4" name="Death Mass Unleash Hell">
 		<!-- Updated to IO -->
 		<!-- Inflicts magical damage on target and nearby enemies with 620 Power. Casts Fear and Burn and decreases target's Speed by 20%. Over-hit. -->
+		<table name="#magicLvl"> 95 101 103 105 </table>
 		<table name="#mpConsumes"> 1767 1783 1799 1815 </table>
 		<table name="#power"> 620 641 655 669 </table>
 		<set name="abnormalLvl" val="1" />
@@ -1566,6 +1663,7 @@
 		<set name="targetType" val="AREA" />
 		<set name="trait" val="DERANGEMENT" />
 		<set name="power" val="#power" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -1586,11 +1684,13 @@
 	<skill id="11068" levels="4" name="Double Casting">
 		<!-- Updated to IO -->
 		<!-- For 30 sec., you can cast elemental spells with both hands.ﾠDecreases MP Consumption by 50% and magic skill Cooldown by 5%.ﾠEliminates magic cancel during magic use. -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 210 231 255 276 </table>
 		<set name="icon" val="icon.skill11068" />
 		<set name="abnormalTime" val="30" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="4000" />
 		<set name="coolTime" val="500" />
@@ -1599,10 +1699,10 @@
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="VisualBuff">
-				<param skillId1="11007" />
-				<param skillId2="11008" />
-				<param skillId3="11009" />
-				<param skillId4="11010" />
+				<param skillId="11007" />
+				<param skillId="11008" />
+				<param skillId="11009" />
+				<param skillId="11010" />
 			</effect>
 			<effect name="EffectFlag">
 				<param effectFlag="FIRE_STANCE" />
@@ -1979,20 +2079,21 @@
 		<set name="removedOnAnyActionExceptMove" val="true" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="97" />
 		<set name="mpConsume" val="73" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="300000" />
 		<for>
 			<effect name="Invincible" />
-			<effect name="HealOverTime" ticks="1" >
+			<effect name="HealOverTime" ticks="1">
 				<param power="150" /> <!-- Guessed -->
 			</effect>
-			<effect name="ManaHealOverTime" ticks="1" >
+			<effect name="ManaHealOverTime" ticks="1">
 				<param power="150" /> <!-- Guessed -->
 			</effect>
 			<effect name="DispelBySlotProbability">
-				<param dispel="POISON;BLEEDING;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN" rate="100"/>
+				<param dispel="POISON;BLEEDING;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN" rate="100" />
 			</effect>
 		</for>
 	</skill>
@@ -2000,8 +2101,9 @@
 		<!-- Updated to IO -->
 		<!-- Attacks nearby enemies with 133 Power added to M. Atk., inflicting Stun and canceling their targets. Teleports you to the front. -->
 		<table name="#effectPoint"> -687 -696 -704 -709 -709 -709 -709 -709 -709 </table>
-		<table name="#power"> 133 136 142 149 154 160 </table>
-		<table name="#mpConsumes"> 70 72 77 82 87 92 </table>
+		<table name="#magicLvl"> 85 87 90 93 96 99 101 103 105 </table>
+		<table name="#mpConsumes"> 70 72 77 82 87 92 97 102 107 </table>
+		<table name="#power"> 133 136 142 149 154 160 163 167 171 </table>
 		<set name="icon" val="icon.skill11094" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="2" />
@@ -2016,6 +2118,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
 		<set name="power" val="#power" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="200" />

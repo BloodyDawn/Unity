@@ -18,6 +18,9 @@
  */
 package handlers.effecthandlers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
@@ -31,7 +34,7 @@ import org.l2junity.gameserver.model.skills.BuffInfo;
  */
 public final class ResetDebuff extends AbstractEffect
 {
-	private final AbnormalType[] _resetSlots;
+	private final List<AbnormalType> _resetSlots = new ArrayList<>();
 	
 	public ResetDebuff(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
@@ -40,16 +43,10 @@ public final class ResetDebuff extends AbstractEffect
 		String resetSlots = params.getString("slot", null);
 		if ((resetSlots != null) && !resetSlots.isEmpty())
 		{
-			String[] split = resetSlots.split(";");
-			_resetSlots = new AbnormalType[split.length];
-			for (int i = 0; i < split.length; i++)
+			for (String element : resetSlots.split(";"))
 			{
-				_resetSlots[i] = AbnormalType.getAbnormalType(split[i]);
+				_resetSlots.add(AbnormalType.getAbnormalType(element));
 			}
-		}
-		else
-		{
-			_resetSlots = new AbnormalType[0];
 		}
 	}
 	

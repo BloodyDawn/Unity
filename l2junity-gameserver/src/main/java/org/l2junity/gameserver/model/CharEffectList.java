@@ -33,7 +33,6 @@ import java.util.function.Function;
 import javolution.util.FastMap;
 
 import org.l2junity.Config;
-import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -903,13 +902,13 @@ public final class CharEffectList
 	 * @param update set to true to update the effect flags and icons
 	 * @param abnormalTypes resets only debuffs with the given abnormal types, or all debuffs if empty.
 	 */
-	public void resetDebuffs(boolean update, AbnormalType... abnormalTypes)
+	public void resetDebuffs(boolean update, List<AbnormalType> abnormalTypes)
 	{
 		if (hasDebuffs())
 		{
-			if (abnormalTypes.length > 0)
+			if (!abnormalTypes.isEmpty())
 			{
-				getDebuffs().values().stream().filter(debuff -> debuff.getSkill().canBeDispeled() && CommonUtil.contains(abnormalTypes, debuff.getSkill().getAbnormalType())).forEach(info -> info.resetAbnormalTime());
+				getDebuffs().values().stream().filter(debuff -> debuff.getSkill().canBeDispeled() && abnormalTypes.contains(debuff.getSkill().getAbnormalType())).forEach(info -> info.resetAbnormalTime());
 			}
 			else
 			{
