@@ -625,6 +625,11 @@
 		<set name="targetType" val="SELF" />
 		<set name="effectPoint" val="-100" />
 		<set name="mpConsume" val="1" />
+		<for>
+			<effect name="Buff">
+				<set stat="randomDamage" val="0" /> <!-- No random damage -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="30526" levels="1" name="Heavy Punch">
 		<!-- Updated to Ertheia -->

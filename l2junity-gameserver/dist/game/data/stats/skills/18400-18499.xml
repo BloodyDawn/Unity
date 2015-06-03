@@ -300,11 +300,20 @@
 	<skill id="18448" levels="1" name="Summon Piero">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summon Piero. -->
+		<!-- On summon npcString: 1802963 -->
+		<!-- Piero starts to cast Check Giveaway Number 1-1.5secs after being spawned. -->
 		<set name="icon" val="icon.skill0000" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="46219" /> <!-- Summon Scroll: Piero -->
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="10000" />
+		<for>
+			<effect name="SummonNpc">
+				<param npcId="34084" npcCount="1" despawnDelay="180000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="18449" levels="1" name="Magic Number Cube">
 		<!-- AUTO GENERATED SKILL -->
@@ -319,6 +328,10 @@
 	<skill id="18450" levels="6" name="Check Giveaway Number">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Shows number 1. -->
+		<!-- Piero casts the skill, 3 seconds later, you cast the skill. Skill level is random. You can guess who wins by logging the skill level when skill cast starts. -->
+		<!-- Rules: You win if you get number higher than Piero. If you both get same numbers, you still lose (that fucker). When you lose, you get 1 coin. Upon win you get 1 Piero's Victory Box Event (46245) -->
+		<!-- Upon lose you get the message: 1802956 -->
+		<!-- Upon win you get the message: 1802957 -->
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
@@ -331,12 +344,22 @@
 	<skill id="18451" levels="2" name="11th Anniversary Buff">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Receive an additional 11% XP/SP when hunting. Receive an 11th Anniversary Coin once the buff ends. (Note:) Cannot receive item if you are dead or don't have space in your inventory. -->
+		<!-- When level 1 ends, you get 11 coins and lvl 2 is casted. It cannot be canceled. Lv2 gives no coins. NPC which gives this buff doesnt give again, until it disappears. -->
 		<set name="icon" val="icon.ev_buff_11th" />
+		<table name="#abnormalTime"> 3600 7200 </table>
+		<table name="#bonusExp"> 1.11 1.30 </table>
+		<set name="abnormalTime" val="#abnormalTime" />
+		<set name="canBeDispelled" val="false" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<mul stat="bonusExp" val="#bonusExp" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="18452" levels="1" name="Participation Reward: Vitality Recovery">
 		<!-- AUTO GENERATED SKILL -->
