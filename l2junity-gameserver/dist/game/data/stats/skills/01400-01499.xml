@@ -1999,9 +1999,9 @@
 		</for>
 	</skill>
 	<skill id="1471" levels="2" name="Death Beam">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- Confirmed CT2.5 -->
+		<!-- Confirmed CT2.5 and updated to IO -->
 		<!-- Kamael Final Form Skill -->
+		<table name="#power"> 128 139 </table>
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="400" />
 		<set name="castRange" val="40" />
@@ -2017,7 +2017,7 @@
 		<set name="mpConsume" val="58" />
 		<set name="mpInitialConsume" val="15" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="138" />
+		<set name="power" val="#power" />
 		<set name="reuseDelay" val="4000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="FRONT_AREA" />

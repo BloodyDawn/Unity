@@ -455,11 +455,23 @@
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="10328" levels="3" name="Soul Berserker">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- When equipped with a sword or blunt weapon, P. Atk. +10%, P. Critical Damage + 10%, and P. Skill MP Consumption + 10%. -->
+		<table name="#magicLvl"> 97 98 99 </table>
+		<table name="#add"> 1.1 1.12 1.5 </table>
 		<set name="icon" val="icon.skill10328" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<using kind="SWORD, BLUNT" />
+		</cond>
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#add" />
+				<mul stat="cAtk" val="#add" />
+				<mul stat="PhysicalMpConsumeRate" val="1.1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10329" levels="1" name="Superior Blunt Weapon Mastery">
 		<!-- When equipped with a one-handed blunt weapon, P. Atk. + 21% and P. Critical Rate + 60. -->

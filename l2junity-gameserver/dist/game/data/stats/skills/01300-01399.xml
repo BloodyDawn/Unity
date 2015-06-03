@@ -396,7 +396,6 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="1320" levels="10" name="Create Common Item">
-		<!-- TODO: Auto level parse, Requires manual update -->
 		<set name="icon" val="icon.skill0172" />
 		<set name="magicLvl" val="5" />
 		<set name="operateType" val="P" />
@@ -451,15 +450,17 @@
 		</for>
 	</skill>
 	<skill id="1324" levels="2" name="Summon CP Potion">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- Confirmed CT2.5 -->
+		<!-- Confirmed CT2.5 and updated to IO -->
+		<table name="#itemConsumeCount"> 500 5000 </table>
+		<table name="#mpInitialConsume"> 412 1500 </table>
+		<table name="#reuseDelay"> 600000 3600000 </table>
 		<set name="hitTime" val="20000" />
 		<set name="icon" val="icon.skill1324" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="itemConsumeCount" val="50" />
-		<set name="itemConsumeId" val="1785" /> <!-- Soul Ore -->
+		<set name="itemConsumeCount" val="#itemConsumeCount" />
+		<set name="itemConsumeId" val="1785" /> <!-- Soulstones -->
 		<set name="magicLvl" val="-1" />
-		<set name="mpInitialConsume" val="412" />
+		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="600000" />
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
@@ -472,7 +473,7 @@
 		</cond>
 		<for>
 			<effect name="Restoration">
-				<param itemId="5592" itemCount="20" />
+				<param itemId="5592" itemCount="20" /> <!-- TODO Find item ID for level 2 -->
 			</effect>
 		</for>
 	</skill>

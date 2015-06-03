@@ -1004,9 +1004,10 @@
 		</selfEffects>
 	</skill>
 	<skill id="346" levels="15" name="Raging Force">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- Confirmed CT2.5 and Updated to H5 -->
+		<!-- Confirmed CT2.5 and Updated to IO -->
+		<table name="#magicLevel"> 78 79 81 83 85 86 88 90 92 94 96 98 101 103 105 </table> <!-- Confirmed -->
+		<table name="#mpConsume"> 50 55 56 57 58 59 61 63 65 67 69 71 73 75 77 </table> <!-- Confirmed -->
+		<table name="#power"> 195 205 215 225 551 565 598 630 662 693 725 757 812 844 876 </table> <!-- Confirmed -->
 		<set name="baseCritRate" val="10" />
 		<set name="castRange" val="600" />
 		<set name="effectPoint" val="-709" />
@@ -1014,11 +1015,12 @@
 		<set name="hitTime" val="1500" />
 		<set name="hpConsume" val="50" />
 		<set name="icon" val="icon.skill0346" />
-		<set name="magicLvl" val="78" />
-		<set name="mpConsume" val="5" />
+		<set name="magicLvl" val="#magicLevel" />
+		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
+		<set name="power" val="#power" />
 		<set name="rideState" val="NONE" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
