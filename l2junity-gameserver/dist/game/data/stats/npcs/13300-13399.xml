@@ -638,7 +638,7 @@
 			<height normal="22.5" />
 		</collision>
 	</npc>
-	<npc id="13323" level="85" type="L2Npc" name="Whisper of Fear" title="">
+	<npc id="13323" level="85" type="L2EffectPoint" name="Whisper of Fear" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
@@ -654,18 +654,24 @@
 				<defence fire="160" water="160" wind="160" earth="160" holy="160" dark="160" />
 			</attribute>
 		</stats>
-		<status attackable="false" />
+		<status attackable="false" hasSummoner="true" />
 		<skill_list>
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="11059" level="1" /> <!-- Shadow Snare Zone -->
 		</skill_list>
 		<collision>
 			<radius normal="0.001" />
 			<height normal="0.001" />
 		</collision>
+		<parameters>
+			<param name="skill_delay" value="2" />
+			<param name="despawn_time" value="8" />
+			<skill name="shadow_snare" id="11059" level="1" /> <!-- Shadow Snare Zone -->
+		</parameters>
 	</npc>
-	<npc id="13324" level="85" type="L2Npc" name="Whisper of Fear" title="">
+	<npc id="13324" level="85" type="L2EffectPoint" name="Whisper of Fear" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
@@ -681,18 +687,24 @@
 				<defence fire="160" water="160" wind="160" earth="160" holy="160" dark="160" />
 			</attribute>
 		</stats>
-		<status attackable="false" />
+		<status attackable="false" hasSummoner="true" />
 		<skill_list>
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="11174" level="1" /> <!-- Shadow Snare Zone -->
 		</skill_list>
 		<collision>
 			<radius normal="0.001" />
 			<height normal="0.001" />
 		</collision>
+		<parameters>
+			<param name="skill_delay" value="2" />
+			<param name="despawn_time" value="8" />
+			<skill name="shadow_snare" id="11174" level="1" /> <!-- Shadow Snare Zone -->
+		</parameters>
 	</npc>
-	<npc id="13325" level="85" type="L2Npc" name="Whisper of Fear" title="">
+	<npc id="13325" level="85" type="L2EffectPoint" name="Whisper of Fear" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
@@ -708,16 +720,22 @@
 				<defence fire="160" water="160" wind="160" earth="160" holy="160" dark="160" />
 			</attribute>
 		</stats>
-		<status attackable="false" />
+		<status attackable="false" hasSummoner="true" />
 		<skill_list>
 			<skill id="4416" level="2" /> <!-- Magic Creatures -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="11175" level="1" /> <!-- Shadow Snare Zone -->
 		</skill_list>
 		<collision>
 			<radius normal="0.001" />
 			<height normal="0.001" />
 		</collision>
+		<parameters>
+			<param name="skill_delay" value="2" />
+			<param name="despawn_time" value="8" />
+			<skill name="shadow_snare" id="11175" level="1" /> <!-- Shadow Snare Zone -->
+		</parameters>
 	</npc>
 	<npc id="13326" level="99" type="L2Monster" name="Severe Trap" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->

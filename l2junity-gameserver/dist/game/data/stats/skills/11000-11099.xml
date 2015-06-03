@@ -789,6 +789,7 @@
 		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
+		<set name="trait" val="KNOCKBACK" />
 		<set name="power" val="#power" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="4000" />
@@ -1281,7 +1282,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="AIR_BIND" />
-		<set name="abnormalVisualEfect" val="AIR_BIND" />
+		<set name="abnormalVisualEffect" val="AIR_BIND" />
 		<set name="activateRate" val="80" />
 		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
@@ -1296,7 +1297,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="Paralyze" />
+			<effect name="Stun" />
 		</for>
 	</skill>
 	<skill id="11051" levels="4" name="Hell Binding">
@@ -1308,7 +1309,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="AIR_BIND" />
-		<set name="abnormalVisualEfect" val="AIR_BIND" />
+		<set name="abnormalVisualEffect" val="AIR_BIND" />
 		<set name="activateRate" val="80" />
 		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
@@ -1323,7 +1324,7 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="Paralyze" />
+			<effect name="Stun" />
 		</for>
 	</skill>
 	<skill id="11052" levels="4" name="Mass Hell Binding">
@@ -1375,15 +1376,16 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
 		<set name="abnormalType" val="AIR_BIND" />
-		<set name="abnormalVisualEfect" val="AIR_BIND" />
+		<set name="abnormalVisualEffect" val="AIR_BIND" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
+		<set name="trait" val="AERIAL_YOKE" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="effectPoint" val="-692" />
 		<set name="isDebuff" val="true" />
 		<for>
-			<effect name="Paralyze" />
+			<effect name="Stun" />
 		</for>
 	</skill>
 	<skill id="11055" levels="10" name="Death Fear">
@@ -1438,6 +1440,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="trait" val="DERANGEMENT" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="1200" />
@@ -2012,6 +2015,7 @@
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
+		<set name="trait" val="KNOCKBACK" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
 		<for>
@@ -2034,9 +2038,13 @@
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
+		<set name="trait" val="HOLD" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
 		<set name="trait" val="HOLD" />
+		<for>
+			<effect name="Root" />
+		</for>
 	</skill>
 	<skill id="11091" levels="3" name="Elemental Crash (4 Elements)">
 		<!-- Updated to IO -->
@@ -2074,7 +2082,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="INVINCIBILITY" />
-		<set name="abnormalVisualEfect" val="INVINCIBILITY" />
+		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
 		<set name="canCastWhileDisabled" val="true" />
 		<set name="removedOnAnyActionExceptMove" val="true" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
