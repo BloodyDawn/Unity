@@ -58,11 +58,19 @@
 		<set name="reuseDelay" val="200000" />
 	</skill>
 	<skill id="11226" levels="4" name="Superior Wizardry">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- M. Critical Rate + 5% and PvP damage + 5%. -->
+		<table name="#inc"> 1.05 1.06 1.07 1.1 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<set name="icon" val="icon.skill0945" />
+		<set name="magicLvl" val="#magicLvl" 
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="mCritRate" val="#inc" />
+				<mul stat="pvpMagicalDmg" val="#inc" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11241" levels="1" name="Shadow Snare">
 		<!-- AUTO GENERATED SKILL -->

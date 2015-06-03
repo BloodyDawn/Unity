@@ -77,20 +77,20 @@
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="11106" levels="4" name="Elemental Mass Burst">
-
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11106" levels="7" name="Elemental Mass Burst">
 		<!-- Detonates an Elemental Destruction to inflict damage on nearby enemies with 569 Power. For 15 seconds, M. Def. - 20%. -->
-		<table name="#mpConsumes"> 137 154 166 179 </table>
+		<table name="#abnormalTime"> 15 20 25 30 30 30 30 </table>
+		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#power"> 569 618 649 683 705 723 741 </table>
-		<table name="#abnormalTime"> 20 25 30 30 30 30 </table>
 		<set name="icon" val="icon.skill11865" />
 		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -113,13 +113,12 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11107" levels="4" name="Elemental Mass Burst: Fire">
-
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11107" levels="7" name="Elemental Mass Burst: Fire">
 		<!-- Detonates an Elemental Destruction to inflict damage on nearby enemies with 569 Power. For 15 seconds, M. Def. - 20%. -->
-		<table name="#mpConsumes"> 137 154 166 179 </table>
+		<table name="#abnormalTime"> 15 20 25 30 30 30 30 </table>
+		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#power"> 569 618 649 683 705 723 741 </table>
-		<table name="#abnormalTime"> 20 25 30 30 30 30 </table>
 		<set name="icon" val="icon.skill11865" />
 		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
@@ -128,7 +127,8 @@
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -151,13 +151,12 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11108" levels="4" name="Elemental Mass Burst: Water">
-
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11108" levels="7" name="Elemental Mass Burst: Water">
 		<!-- Detonates an Elemental Destruction to inflict damage on nearby enemies with 569 Power. For 15 seconds, M. Def. - 20%. -->
-		<table name="#mpConsumes"> 137 154 166 179 </table>
+		<table name="#abnormalTime"> 15 20 25 30 30 30 30 </table>
+		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#power"> 569 618 649 683 705 723 741 </table>
-		<table name="#abnormalTime"> 20 25 30 30 30 30 </table>
 		<set name="icon" val="icon.skill11865" />
 		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
@@ -166,7 +165,8 @@
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -189,13 +189,12 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11109" levels="4" name="Elemental Mass Burst: Wind">
-
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11109" levels="7" name="Elemental Mass Burst: Wind">
 		<!-- Detonates an Elemental Destruction to inflict damage on nearby enemies with 569 Power. For 15 seconds, M. Def. - 20%. -->
-		<table name="#mpConsumes"> 137 154 166 179 </table>
+		<table name="#abnormalTime"> 15 20 25 30 30 30 30 </table>
+		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#power"> 569 618 649 683 705 723 741 </table>
-		<table name="#abnormalTime"> 20 25 30 30 30 30 </table>
 		<set name="icon" val="icon.skill11865" />
 		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
@@ -204,7 +203,8 @@
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -227,13 +227,12 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11110" levels="4" name="Elemental Mass Burst: Earth">
-
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11110" levels="7" name="Elemental Mass Burst: Earth">
 		<!-- Detonates an Elemental Destruction to inflict damage on nearby enemies with 569 Power. For 15 seconds, M. Def. - 20%. -->
-		<table name="#mpConsumes"> 137 154 166 179 </table>
+		<table name="#abnormalTime"> 15 20 25 30 30 30 30 </table>
+		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#power"> 569 618 649 683 705 723 741 </table>
-		<table name="#abnormalTime"> 20 25 30 30 30 30 </table>
 		<set name="icon" val="icon.skill11865" />
 		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
@@ -242,7 +241,8 @@
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -266,19 +266,19 @@
 		</for>
 	</skill>
 	<skill id="11111" levels="4" name="Elemental Mass Burst: 4 Attributes">
-
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Detonates an Elemental Destruction to inflict damage on nearby enemies with 569 Power. For 15 seconds, M. Def. - 20%. -->
-		<table name="#mpConsumes"> 137 154 166 179 </table>
+		<table name="#abnormalTime"> 15 20 25 30 30 30 30 </table>
+		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#power"> 569 618 649 683 705 723 741 </table>
-		<table name="#abnormalTime"> 20 25 30 30 30 30 </table>
 		<set name="icon" val="icon.skill11865" />
 		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -301,15 +301,15 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11112" levels="4" name="Elemental Speed Burst">
-
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11112" levels="7" name="Elemental Speed Burst">
 		<!-- Detonates an Elemental Destruction to inflict damage with 517 Power on a single target. -->
-		<table name="#mpConsumes"> 137 154 166 179 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
+		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 517 562 591 622 637 655 673 </table>
 		<set name="icon" val="icon.skill11865" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -328,18 +328,18 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11113" levels="4" name="Elemental Speed Burst: Fire">
-
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11113" levels="7" name="Elemental Speed Burst: Fire">
 		<!-- Detonates an Elemental Destruction to inflict damage with 517 Power on a single target. -->
-		<table name="#mpConsumes"> 137 154 166 179 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
+		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 517 562 591 622 637 655 673 </table>
 		<set name="icon" val="icon.skill11865" />
 		<set name="element" val="0" />
 		<set name="elementPower" val="20" /> <!-- Fire -->
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -358,18 +358,18 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11114" levels="4" name="Elemental Speed Burst: Water">
-
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11114" levels="7" name="Elemental Speed Burst: Water">
 		<!-- Detonates an Elemental Destruction to inflict damage with 517 Power on a single target. -->
-		<table name="#mpConsumes"> 137 154 166 179 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
+		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 517 562 591 622 637 655 673 </table>
 		<set name="icon" val="icon.skill11865" />
 		<set name="element" val="1" />
 		<set name="elementPower" val="20" /> <!-- Water -->
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -388,18 +388,18 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11115" levels="4" name="Elemental Speed Burst: Wind">
-
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11115" levels="7" name="Elemental Speed Burst: Wind">
 		<!-- Detonates an Elemental Destruction to inflict damage with 517 Power on a single target. -->
-		<table name="#mpConsumes"> 137 154 166 179 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
+		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 517 562 591 622 637 655 673 </table>
 		<set name="icon" val="icon.skill11865" />
 		<set name="element" val="2" />
 		<set name="elementPower" val="20" /> <!-- Wind -->
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -418,18 +418,18 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11116" levels="4" name="Elemental Speed Burst: Earth">
-
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11116" levels="7" name="Elemental Speed Burst: Earth">
 		<!-- Detonates an Elemental Destruction to inflict damage with 517 Power on a single target. -->
-		<table name="#mpConsumes"> 137 154 166 179 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
+		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 517 562 591 622 637 655 673 </table>
 		<set name="icon" val="icon.skill11865" />
 		<set name="element" val="3" />
 		<set name="elementPower" val="20" /> <!-- Earth -->
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -448,16 +448,16 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11117" levels="4" name="Elemental Speed Burst: 4 Attributes">
-
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11117" levels="7" name="Elemental Speed Burst: 4 Attributes">
 		<!-- Detonates an Elemental Destruction to inflict damage with 517 Power on a single target. -->
-		<table name="#mpConsumes"> 137 154 166 179 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
+		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 517 562 591 622 637 655 673 </table>
 		<set name="icon" val="icon.skill11865" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -476,15 +476,16 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11118" levels="4" name="Elemental Power Burst">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11118" levels="7" name="Elemental Power Burst">
 		<!-- Detonates an Elemental Destruction to inflict severe damage with 569 Power on a single target. -->
-		<table name="#mpConsumes"> 137 154 166 179 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
+		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 697 715 733 </table>
 		<set name="icon" val="icon.skill11865" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -503,18 +504,18 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11119" levels="4" name="Elemental Power Burst: Fire">
-
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11119" levels="7" name="Elemental Power Burst: Fire">
 		<!-- Detonates an Elemental Destruction to inflict severe damage with 569 Power on a single target. -->
-		<table name="#mpConsumes"> 137 154 166 179 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
+		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 697 715 733 </table>
 		<set name="icon" val="icon.skill11865" />
 		<set name="element" val="0" />
 		<set name="elementPower" val="20" /> <!-- Fire -->
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -533,18 +534,18 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11120" levels="4" name="Elemental Power Burst: Water">
-
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11120" levels="7" name="Elemental Power Burst: Water">
 		<!-- Detonates an Elemental Destruction to inflict severe damage with 569 Power on a single target. -->
-		<table name="#mpConsumes"> 137 154 166 179 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
+		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 697 715 733 </table>
 		<set name="icon" val="icon.skill11865" />
 		<set name="element" val="1" />
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -563,18 +564,18 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11121" levels="4" name="Elemental Power Burst: Wind">
-
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11121" levels="7" name="Elemental Power Burst: Wind">
 		<!-- Detonates an Elemental Destruction to inflict severe damage with 569 Power on a single target. -->
-		<table name="#mpConsumes"> 137 154 166 179 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
+		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 697 715 733 </table>
 		<set name="icon" val="icon.skill11865" />
 		<set name="element" val="2" />
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -593,18 +594,18 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11122" levels="4" name="Elemental Power Burst: Earth">
-
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11122" levels="7" name="Elemental Power Burst: Earth">
 		<!-- Detonates an Elemental Destruction to inflict severe damage with 569 Power on a single target. -->
-		<table name="#mpConsumes"> 137 154 166 179 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
+		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 697 715 733 </table>
 		<set name="icon" val="icon.skill11865" />
 		<set name="element" val="3" />
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -623,16 +624,16 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11123" levels="4" name="Elemental Power Burst: 4 Attributes">
-
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="11123" levels="7" name="Elemental Power Burst: 4 Attributes">
 		<!-- Detonates an Elemental Destruction to inflict severe damage with 569 Power on a single target. -->
-		<table name="#mpConsumes"> 137 154 166 179 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
+		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 697 715 733 </table>
 		<set name="icon" val="icon.skill11865" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -670,13 +671,14 @@
 		</for>
 	</skill>
 	<skill id="11125" levels="4" name="Superior Wizardry">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- M. Atk. + 10%. -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mAtk"> 1.10 1.12 1.15 1.20 </table>
 		<set name="icon" val="icon.skill0945" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-				<for>
+		<for>
 			<effect name="Buff">
 				<mul stat="mAtk" val="#mAtk" />
 			</effect>
@@ -1124,10 +1126,11 @@
 		</for>
 	</skill>
 	<skill id="11151" levels="4" name="Superior Wizardry">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- M. Atk., Max MP, and MP Recovery Rate + 5%. -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#values"> 1.05 1.06 1.07 1.10 </table>
 		<set name="icon" val="icon.skill0945" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
@@ -1203,10 +1206,11 @@
 		</for>
 	</skill>
 	<skill id="11176" levels="4" name="Superior Wizardry">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- M. Skill cooldown - 5%. -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mReuse"> 0.95 0.94 0.93 0.90 </table>
 		<set name="icon" val="icon.skill0945" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
