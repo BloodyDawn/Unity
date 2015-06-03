@@ -45,14 +45,11 @@ public enum EffectFlag
 	SERVITOR_SHARE,
 	UNTARGETABLE,
 	CANNOT_ESCAPE,
-<<<<<<< Upstream, based on branch 'master' of https://nik--@github.com/UnAfraid/L2JUnity
-	DEBUFF_BLOCK;
-=======
+	DEBUFF_BLOCK,
 	FIRE_STANCE,
 	WATER_STANCE,
 	WIND_STANCE,
 	EARTH_STANCE;
->>>>>>> ba7a782 The following effects have been fixed to match retail: DamOverTime - upon magic critical does 10x the DOT damage. Fear - Stops target when it ends and it doesnt change you to running state when it lands (you can walk and be feared). Also, as far as I saw, you run away from target only once and its upon landing. After that even if you are infront of the feared player, it doesnt run away in the opposite direction. Finally, you run until fear ends, there is no range limit of how much you can run from target. Also, I've notice fear getting removed when you get hit (need to confirm). ResetDebuff - there are cases where it resets only specific types of debuffs.
 	
 	public int getMask()
 	{
