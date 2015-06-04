@@ -93,7 +93,7 @@ public class SkillChannelizer implements Runnable
 		}
 		
 		// Cancel the task and unset it.
-		_task.cancel(false);
+		_task.cancel(true);
 		_task = null;
 		
 		// Cancel target channelization and unset it.
@@ -128,12 +128,15 @@ public class SkillChannelizer implements Runnable
 			return;
 		}
 		
+		final Skill skill = _skill;
+		List<Creature> channelized = _channelized;
+		
 		try
 		{
-			if (_skill.getMpPerChanneling() > 0)
+			if (skill.getMpPerChanneling() > 0)
 			{
 				// Validate mana per tick.
-				if (_channelizer.getCurrentMp() < _skill.getMpPerChanneling())
+				if (_channelizer.getCurrentMp() < skill.getMpPerChanneling())
 				{
 					if (_channelizer.isPlayer())
 					{
@@ -144,28 +147,28 @@ public class SkillChannelizer implements Runnable
 				}
 				
 				// Reduce mana per tick
-				_channelizer.reduceCurrentMp(_skill.getMpPerChanneling());
+				_channelizer.reduceCurrentMp(skill.getMpPerChanneling());
 			}
 			
 			// Apply channeling skills on the targets.
-			if (_skill.getChannelingSkillId() > 0)
+			if (skill.getChannelingSkillId() > 0)
 			{
-				final Skill baseSkill = SkillData.getInstance().getSkill(_skill.getChannelingSkillId(), 1);
+				final Skill baseSkill = SkillData.getInstance().getSkill(skill.getChannelingSkillId(), 1);
 				if (baseSkill == null)
 				{
-					_log.warn(getClass().getSimpleName() + ": skill " + _skill + " couldn't find effect id skill: " + _skill.getChannelingSkillId() + " !");
+					_log.warn(getClass().getSimpleName() + ": skill " + skill + " couldn't find effect id skill: " + skill.getChannelingSkillId() + " !");
 					_channelizer.abortCast();
 					return;
 				}
 				
 				final List<Creature> targetList = new ArrayList<>();
 				
-				for (WorldObject chars : _skill.getTargetList(_channelizer))
+				for (WorldObject chars : skill.getTargetList(_channelizer))
 				{
 					if (chars.isCreature())
 					{
 						targetList.add((Creature) chars);
-						((Creature) chars).getSkillChannelized().addChannelizer(_skill.getChannelingSkillId(), getChannelizer());
+						((Creature) chars).getSkillChannelized().addChannelizer(skill.getChannelingSkillId(), getChannelizer());
 					}
 				}
 				
@@ -173,11 +176,11 @@ public class SkillChannelizer implements Runnable
 				{
 					return;
 				}
-				_channelized = targetList;
+				channelized = targetList;
 				
-				for (Creature character : _channelized)
+				for (Creature character : channelized)
 				{
-					if (!Util.checkIfInRange(_skill.getEffectRange(), _channelizer, character, true))
+					if (!Util.checkIfInRange(skill.getEffectRange(), _channelizer, character, true))
 					{
 						continue;
 					}
@@ -187,16 +190,16 @@ public class SkillChannelizer implements Runnable
 					}
 					else
 					{
-						final int maxSkillLevel = SkillData.getInstance().getMaxLevel(_skill.getChannelingSkillId());
-						final int skillLevel = Math.min(character.getSkillChannelized().getChannerlizersSize(_skill.getChannelingSkillId()), maxSkillLevel);
-						final BuffInfo info = character.getEffectList().getBuffInfoBySkillId(_skill.getChannelingSkillId());
+						final int maxSkillLevel = SkillData.getInstance().getMaxLevel(skill.getChannelingSkillId());
+						final int skillLevel = Math.min(character.getSkillChannelized().getChannerlizersSize(skill.getChannelingSkillId()), maxSkillLevel);
+						final BuffInfo info = character.getEffectList().getBuffInfoBySkillId(skill.getChannelingSkillId());
 						
 						if ((info == null) || (info.getSkill().getLevel() < skillLevel))
 						{
-							final Skill skill = SkillData.getInstance().getSkill(_skill.getChannelingSkillId(), skillLevel);
-							if (skill == null)
+							final Skill channeledSkill = SkillData.getInstance().getSkill(skill.getChannelingSkillId(), skillLevel);
+							if (channeledSkill == null)
 							{
-								_log.warn(getClass().getSimpleName() + ": Non existent channeling skill requested: " + _skill);
+								_log.warn(getClass().getSimpleName() + ": Non existent channeling skill requested: " + skill);
 								_channelizer.abortCast();
 								return;
 							}
@@ -207,10 +210,11 @@ public class SkillChannelizer implements Runnable
 								((PlayerInstance) getChannelizer()).updatePvPStatus(character);
 							}
 							
-							skill.applyEffects(getChannelizer(), character);
+							// Be warned, this method has the possibility to call doDie->abortCast->stopChanneling method. Variable cache above try{} is used in this case to avoid NPEs.
+							channeledSkill.applyEffects(getChannelizer(), character);
 							
 							// Reduce shots.
-							if (_skill.useSpiritShot())
+							if (skill.useSpiritShot())
 							{
 								_channelizer.setChargedShot(_channelizer.isChargedShot(ShotType.BLESSED_SPIRITSHOTS) ? ShotType.BLESSED_SPIRITSHOTS : ShotType.SPIRITSHOTS, false);
 							}
@@ -220,16 +224,16 @@ public class SkillChannelizer implements Runnable
 							}
 							
 							// Shots are re-charged every cast.
-							_channelizer.rechargeShots(_skill.useSoulShot(), _skill.useSpiritShot());
+							_channelizer.rechargeShots(skill.useSoulShot(), skill.useSpiritShot());
 						}
-						_channelizer.broadcastPacket(new MagicSkillLaunched(_channelizer, _skill.getId(), _skill.getLevel(), character));
+						_channelizer.broadcastPacket(new MagicSkillLaunched(_channelizer, skill.getId(), skill.getLevel(), character));
 					}
 				}
 			}
 		}
 		catch (Exception e)
 		{
-			_log.warn("Error while channelizing skill: " + _skill + " channelizer: " + _channelizer + " channelized: " + _channelized, e);
+			_log.warn("Error while channelizing skill: " + skill + " channelizer: " + _channelizer + " channelized: " + channelized, e);
 		}
 	}
 }

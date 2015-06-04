@@ -545,7 +545,7 @@ public class AdminEffects implements IAdminCommandHandler
 				for (int i = 0; i < AbnormalVisualEffect.values().length; i++)
 				{
 					final AbnormalVisualEffect abnormalVisualEffect = AbnormalVisualEffect.values()[i];
-					sb.append("<button action=\"bypass admin_ave_abnormal " + abnormalVisualEffect.name() + "\" align=left icon=teleport>" + abnormalVisualEffect.name() + "</button>");
+					sb.append("<button action=\"bypass admin_ave_abnormal " + abnormalVisualEffect.name() + "\" align=left icon=teleport>" + abnormalVisualEffect.name() + "(" + abnormalVisualEffect.getClientId() + ")</button>");
 				}
 				final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 				html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/ave_abnormal.htm");

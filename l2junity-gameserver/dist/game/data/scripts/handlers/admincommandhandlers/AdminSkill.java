@@ -450,7 +450,7 @@ public class AdminSkill implements IAdminCommandHandler
 		}
 		final PlayerInstance player = target.getActingPlayer();
 		final StringTokenizer st = new StringTokenizer(val);
-		if (st.countTokens() != 2)
+		if ((st.countTokens() != 1) && (st.countTokens() != 2))
 		{
 			showMainPage(activeChar);
 		}
@@ -460,9 +460,9 @@ public class AdminSkill implements IAdminCommandHandler
 			try
 			{
 				String id = st.nextToken();
-				String level = st.nextToken();
+				String level = st.countTokens() == 1 ? st.nextToken() : null;
 				int idval = Integer.parseInt(id);
-				int levelval = Integer.parseInt(level);
+				int levelval = level == null ? 1 : Integer.parseInt(level);
 				skill = SkillData.getInstance().getSkill(idval, levelval);
 			}
 			catch (Exception e)
