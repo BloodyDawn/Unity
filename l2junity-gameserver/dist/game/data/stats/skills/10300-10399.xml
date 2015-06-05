@@ -297,20 +297,33 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="10318" levels="4" name="Sonic Flash">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10318" levels="7" name="Sonic Flash">
 		<!-- Launches a wave of sword energy to inflict 17348 damage added to P. Atk., increasing the damage as Momentum is consumed. Can consume up to 3. Requires a dual sword, sword, or blunt. Over-hit. Critical. -->
 		<table name="#effectPoint"> -183 -188 -193 -198 -203 -208 -213 </table>
-		<table name="#mpConsumes"> 98 105 112 119 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
+		<table name="#mpConsumes"> 98 105 112 119 126 133 140 </table>
+		<table name="#power"> 17438 20033 22717 25700 27419 28665 29911 </table>
 		<set name="icon" val="icon.skill10318new" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="overHit" val="true" />
+		<set name="targetType" val="ONE" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="10000" />
+		<cond msgId="113" addName="1">
+			<using kind="SWORD,BLUNT,DUAL" />
+		</cond>
+		<for>
+			<effect name="EnergyAttack">
+				<param power="#power" />
+				<param criticalChance="15" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10319" levels="1" name="Duelist's Fury">
 		<!-- AUTO GENERATED SKILL -->
@@ -376,8 +389,10 @@
 		</for>
 	</skill>
 	<skill id="10322" levels="1" name="Wolf's Cry">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Shouts loudly to invoke the power of the Wolf. For 5 minutes, P. Def. and M. Def. + 50%, Max HP + 25%, and Spd. + 20. Requires a sword, blunt, spear, fist weapon, dual blunt, or dualsword. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="330" />
+		<set name="abnormalType" val="POSSESSION" />
 		<set name="icon" val="icon.skll10320" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -385,6 +400,17 @@
 		<set name="hitTime" val="2000" />
 		<set name="effectPoint" val="707" />
 		<set name="reuseDelay" val="30000" />
+		<cond msgId="113" addName="1">
+			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+		</cond>
+		<for>
+			<effect name="Buff">
+				<mul stat="pDef" val="1.5" />
+				<mul stat="mDef" val="1.5" />
+				<mul stat="maxHp" val="1.25" />
+				<add stat="runSpd" val="20" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10323" levels="1" name="Self Heal (Warrior)">
 		<!-- AUTO GENERATED SKILL -->
@@ -467,9 +493,15 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtk" val="#add" />
-				<mul stat="cAtk" val="#add" />
-				<mul stat="PhysicalMpConsumeRate" val="1.1" />
+				<mul stat="pAtk" val="#add">
+					<using kind="SWORD, BLUNT" />
+				</mul>
+				<mul stat="cAtk" val="#add">
+					<using kind="SWORD, BLUNT" />
+				</mul>
+				<mul stat="PhysicalMpConsumeRate" val="1.1">
+					<using kind="SWORD, BLUNT" />
+				</mul>
 			</effect>
 		</for>
 	</skill>
@@ -531,9 +563,13 @@
 		<set name="reuseDelay" val="300000" />
 	</skill>
 	<skill id="10333" levels="1" name="Winged Spear">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases P. Atk. by 30% for 60 seconds when a spear is equipped. Range of regular skills increases by 80 and has a 10% chance to Stun when striking. Consumes 5 Soulstones. -->
+		<!-- TODO abnormalType -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="60" />
 		<set name="icon" val="icon.skill10333" />
+		<set name="itemConsumeCount" val="5" />
+		<set name="itemConsumeId" val="1785" /> <!-- Soulstones -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="64" />
@@ -541,11 +577,39 @@
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="673" />
 		<set name="reuseDelay" val="300000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.3">
+					<using kind="POLE" />
+				</mul>
+				<add stat="pAtkRange" val="80" />
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
+				<param isCritical="false" />
+				<param minDamage="1" chance="10" />
+				<param skillId="10339" skillLevel="1" /> <!-- Winged Spear - Stun -->
+				<param targetType="ONE" />
+				<param allowWeapons="POLE" />
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
+				<param isCritical="true" />
+				<param minDamage="1" chance="10" />
+				<param skillId="10339" skillLevel="1" /> <!-- Winged Spear - Stun -->
+				<param targetType="ONE" />
+				<param allowWeapons="POLE" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10334" levels="1" name="Furious Slasher">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases P. Atk. by 30% for 60 seconds when a two-handed sword/two-handed blunt weapon is equipped. Attack 5 enemies at the same time with a regular attack. Consumes 5 Soulstones. -->
+		<!-- TODO abnormalType -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="60" />
 		<set name="icon" val="icon.skill10334" />
+		<set name="itemConsumeCount" val="5" />
+		<set name="itemConsumeId" val="1785" /> <!-- Soulstones -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="64" />
@@ -553,11 +617,26 @@
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="673" />
 		<set name="reuseDelay" val="300000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.3">
+					<and>
+						<using kind="SWORD,BLUNT" />
+						<using slot="lrhand" />
+					</and>
+				</mul>
+				<add stat="atkCountMax" val="5" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10335" levels="1" name="Furious Fist">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases P. Atk. by 30% and P. Critical Damage by 10% for 60 seconds when a fist weapon is equipped. Has 10% chance to decrease Fist Weapon Resistance by 30% when striking. Consumes 5 Soulstones. -->
+		<!-- TODO abnormalType -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="60" />
 		<set name="icon" val="icon.skill10335" />
+		<set name="itemConsumeCount" val="5" />
+		<set name="itemConsumeId" val="1785" /> <!-- Soulstones -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="64" />
@@ -565,6 +644,32 @@
 		<set name="coolTime" val="200" />
 		<set name="effectPoint" val="673" />
 		<set name="reuseDelay" val="300000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.3">
+					<using kind="DUALFIST" />
+				</mul>
+				<mul stat="cAtk" val="1.1">
+					<using kind="DUALFIST" />
+				</mul>
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
+				<param isCritical="false" />
+				<param minDamage="1" chance="10" />
+				<param skillId="10338" skillLevel="1" /> <!-- Punch Drunk -->
+				<param targetType="ONE" />
+				<param allowWeapons="DUALFIST" />
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="107" />
+				<param isCritical="true" />
+				<param minDamage="1" chance="10" />
+				<param skillId="10338" skillLevel="1" /> <!-- Punch Drunk -->
+				<param targetType="ONE" />
+				<param allowWeapons="DUALFIST" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10336" levels="1" name="Infinity Rush">
 		<!-- AUTO GENERATED SKILL -->
@@ -583,11 +688,13 @@
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="10338" levels="1" name="Punch Drunk">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Decreases target's resistance to Fist Weapons by 30%. -->
+		<!-- TODO abnormalType -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="10" /> <!-- Unconfirmed -->
 		<set name="icon" val="icon.skill10335" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="1" />
 		<set name="castRange" val="500" />
 		<set name="hitTime" val="100" />
@@ -595,11 +702,23 @@
 		<set name="isMagic" val="4" />
 		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="DefenceTrait">
+				<param FIST="-30" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10339" levels="1" name="Winged Spear - Stun">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Stuns target for 3 seconds. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="9" />
+		<set name="abnormalType" val="STUN" />
+		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="activateRate" val="60" />
+		<set name="basicProperty" val="CON" />
 		<set name="icon" val="icon.skill10333" />
+		<set name="isTriggeredSkill" val="true" />
+		<set name="lvlBonusRate" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="1" />
@@ -609,6 +728,10 @@
 		<set name="isMagic" val="4" />
 		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
+		<set name="trait" val="SHOCK" />
+		<for>
+			<effect name="Stun" />
+		</for>
 	</skill>
 	<skill id="10340" levels="3" name="Blade Slasher">
 		<!-- AUTO GENERATED SKILL -->
