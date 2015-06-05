@@ -140,6 +140,7 @@ public final class EffectMasterHandler
 		Paralyze.class,
 		Passive.class,
 		Petrification.class,
+		Plunder.class,
 		PhysicalAttack.class,
 		PhysicalAttackHpLink.class,
 		PhysicalAttackMute.class,
