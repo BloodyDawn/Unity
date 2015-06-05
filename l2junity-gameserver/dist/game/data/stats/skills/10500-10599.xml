@@ -344,8 +344,11 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10517" levels="1" name="Shadow Hide">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- You go into Hide state, cancel debuffs and Hold effects on you, increase HP Recovery Bonus, and eliminate enemy enmity toward you. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="30" />
+		<set name="abnormalType" val="HIDE" />
+		<set name="abnormalVisualEffect" val="STEALTH" />
 		<set name="icon" val="icon.skill10517" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -354,30 +357,77 @@
 		<set name="coolTime" val="400" />
 		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="180000" />
+		<set name="removedOnAnyActionExceptMove" val="true" />
+		<set name="removedOnDamage" val="true" />
+		<set name="staticReuse" val="true" />
+		<for>
+			<effect name="Hide">
+				<add stat="regHp" val="6.7" />
+			</effect>
+			<effect name="DispelBySlot">
+				<param dispel="ROOT_PHYSICALLY,3" />
+			</effect>
+			<effect name="DispelByCategory">
+				<param slot="debuff" rate="100" max="10" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10518" levels="1" name="Assassin's Reflex">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- TODO abnormalType -->
 		<!-- Atk. Spd. + 20% for 10 seconds. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="10" />
 		<set name="icon" val="icon.skill10518" />
+		<set name="isTriggeredSkill" val="true" />
 		<set name="operateType" val="A2" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="700" />
 		<set name="reuseDelay" val="8000" />
 		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtkSpd" val="1.2" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10520" levels="4" name="Final Ultimate Evasion">
-		<table name="#effectPoint"> 692 698 707 709 </table>
-		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 sec., increases P. Evasion by 60, M. Evasion by 60, M. Def. by 20%, P. Skill Evasion Rate by 60% and Debuff Resistance. Has a 40% chance of canceling the enemy's targeting when attacked. -->
+		<table name="#effectPoint"> 692 698 707 709 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 38 41 45 47 </table>
+		<table name="#rEvas"> 60 65 70 75 </table>
+		<table name="#mEvas"> 60 70 80 90 </table>
+		<table name="#cancelVuln"> 25 30 35 40 </table>
+		<table name="#triggerLvl"> 1 2 3 4 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="30" />
+		<set name="abnormalType" val="AVOID_UP_SPECIAL" />
 		<set name="icon" val="icon.skill10520" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="100" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="600000" />
+		<for>
+			<effect name="Buff">
+				<add stat="rEvas" val="#rEvas" />
+				<add stat="rEvas" val="#mEvas" />
+				<mul stat="mDef" val="1.2" />
+				<mul stat="pSkillEvas" val="1.6" />
+				<sub stat="cancelVuln" val="80" />
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="107" />
+				<param minDamage="1" />
+				<param chance="40" />
+				<param skillId="10544" skillLevel="1" /> <!-- Cancel target -->
+				<param targetType="ONE" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10522" levels="6" name="Poison Zone">
 		<table name="#effectPoint"> -707 -709 -711 -711 -711 -711 -711 -711 -711 </table>
@@ -420,18 +470,32 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="150000" />
 	</skill>
-	<skill id="10525" levels="4" name="Shadow Dash">
-		<table name="#effectPoint"> 692 698 707 709 711 713 715 </table>
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10525" levels="7" name="Shadow Dash">
 		<!-- For 15 seconds, increases Speed by 66, P. Evasion by 4, and HP Recovery Bonus by 10. -->
-		<table name="#mpConsumes"> 38 41 45 47 </table>
+		<table name="#effectPoint"> 692 698 707 709 711 713 715 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
+		<table name="#mpConsumes"> 38 41 45 47 49 51 53 </table>
+		<table name="#regHp"> 10 20 30 40 43 46 49 </table>
+		<table name="#rEvas"> 4 6 8 10 12 14 16 </table>
+		<table name="#runSpd"> 66 66 66 66 68 70 72 </table>
+		<set name="abnormalLvl" val="2" />
+		<set name="abnormalTime" val="15" />
+		<set name="abnormalType" val="SPEED_UP_SPECIAL" />
 		<set name="icon" val="icon.skill10525" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="800" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="60000" />
+		<for>
+			<effect name="Buff">
+				<add stat="runSpd" val="#runSpd" />
+				<add stat="rEvas" val="#rEvas" />
+				<add stat="regHp" val="#regHp" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10526" levels="6" name="Mischief">
 		<table name="#effectPoint"> -696 -702 -707 -709 -709 -709 -709 -709 -709 </table>
@@ -450,7 +514,6 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10527" levels="4" name="Mass Trick">
-
 		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Cancels target of frontal enemies. Eliminates their aggression and prevent them from targeting anything for 3 seconds. -->
@@ -466,13 +529,19 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10528" levels="1" name="Shadow Fake Death">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Acts dead to stop monsters from attacking. Cannot be targeted until you get back up. Consumes 300 MP per second. -->
 		<set name="icon" val="icon.skill10528" />
+		<set name="magicLvl" val="93" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="1" />
+		<set name="mpInitialConsume" val="1" />
 		<set name="hitTime" val="800" />
+		<for>
+			<effect name="FakeDeath" ticks="5">
+				<param power="60" />
+			</effect>
+			<effect name="Untargetable" />
+		</for>
 	</skill>
 	<skill id="10529" levels="4" name="Shadow Flash">
 
@@ -491,31 +560,76 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10530" levels="1" name="Blind Spot">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- TODO abnormalType -->
 		<!-- Increases P. Atk., Critical Rate, Critical Damage and Vital Spot Attack Rate. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="20" />
 		<set name="icon" val="icon.skill10529" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="99" />
 		<set name="mpConsume" val="1" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="100" />
 		<set name="reuseDelay" val="1000" />
 		<set name="effectPoint" val="709" />
 		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.1">
+					<using kind="DAGGER,DUALDAGGER" />
+				</mul>
+				<mul stat="rCrit" val="1.1">
+					<using kind="DAGGER,DUALDAGGER" />
+				</mul>
+				<mul stat="cAtk" val="1.1">
+					<using kind="DAGGER,DUALDAGGER" />
+				</mul>
+				<mul stat="blowRate" val="1.1">
+					<using kind="DAGGER,DUALDAGGER" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
 	<skill id="10531" levels="2" name="Angel of Death">
-		<table name="#effectPoint"> 700 704 </table>
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Momentarily increases Speed by 30, P. Evasion by 40, skill Evasion by 75, Vital Spot Attack Rate by 40%, and Debuff Resistance by 80%. Casts Crippling Poison on enemies attacking you. Requires a dagger/dual dagger to be equipped. -->
+		<table name="#blowRate"> 1.4 1.45 </table>
+		<table name="#effectPoint"> 700 704 </table>
+		<table name="#magicLvl"> 85 98 </table>
 		<table name="#mpConsumes"> 45 47 </table>
+		<table name="#pSkillEvas"> 75 80 </table>
+		<table name="#runSpd"> 30 34 </table>
+		<set name="abnormalLvl" val="2" />
+		<set name="abnormalTime" val="20" />
+		<set name="abnormalType" val="AVOID_UP_SPECIAL" />
 		<set name="icon" val="icon.skill10531" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="3000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="600000" />
+		<cond msgId="113" addName="1">
+			<using kind="DAGGER,DUALDAGGER" />
+		</cond>
+		<for>
+			<effect name="Buff">
+				<add stat="runSpd" val="#runSpd" />
+				<add stat="rEvas" val="40" />
+				<add stat="pSkillEvas" val="#pSkillEvas" />
+				<mul stat="blowRate" val="#blowRate" />
+				<sub stat="cancelVuln" val="80" />
+			</effect>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="107" />
+				<param minDamage="1" />
+				<param chance="15" />
+				<param skillId="10545" skillLevel="1" /> <!-- Crippling Poison -->
+				<param targetType="ONE" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10532" levels="4" name="Clone Attack">
 		<table name="#effectPoint"> -687 -698 -707 -709 -711 -713 -715 </table>
