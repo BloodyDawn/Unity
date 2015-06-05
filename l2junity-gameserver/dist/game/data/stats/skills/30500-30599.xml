@@ -190,6 +190,8 @@
 		<table name="#mpConsumes"> 141 143 146 147 149 150 151 151 152 153 155 </table>
 		<table name="#power"> 5164 5518 5890 19693 21581 23953 26909 30589 35181 40936 48195 </table>
 		<set name="icon" val="icon.skill30506" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="KNOCK_BACK" />
 		<set name="abnormalTime" val="2" />
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
 		<set name="baseCritRate" val="15" /> <!-- Unconfirmed -->
@@ -207,6 +209,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="targetType" val="ONE" />
 		<set name="isDebuff" val="true" />
+		<set name="trait" val="KNOCKBACK" />
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>

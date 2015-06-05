@@ -263,6 +263,10 @@
 		<table name="#mpConsumes"> 87 91 95 98 102 107 111 116 </table>
 		<table name="#power"> 124 127 129 133 137 141 144 148 </table>
 		<table name="#effectPoints"> -867 -880 -891 -899 -906 -913 -922 -933 -941 -950 -959 </table> <!-- Custom -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="KNOCK_BACK" />
+		<set name="abnormalTime" val="1" />
+		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
 		<set name="icon" val="icon.skill11814" />
 		<set name="operateType" val="A2" />
 		<set name="effectPoint" val="#effectPoints" />
@@ -276,6 +280,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="isMagic" val="1" />
 		<set name="isDebuff" val="true" />
+		<set name="trait" val="KNOCKBACK" />
 		<for>
 			<effect name="MagicalAttack" />
 			<effect name="KnockBack">

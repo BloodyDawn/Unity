@@ -33,23 +33,32 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10702" levels="4" name="Plunder">
-
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10702" levels="7" name="Plunder">
 		<!-- Inflicts 13580 damage onto target and steals their item. Requires a dagger or dual dagger. -->
-		<table name="#mpConsumes"> 12 14 16 18 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
+		<table name="#mpConsumes"> 12 14 16 18 20 22 24 </table>
+		<table name="#power"> 13580 15946 18311 20204 27142 28466 29790 </table>
 		<set name="icon" val="icon.skill10548" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
 		<set name="hitTime" val="830" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-709" />
 		<set name="reuseDelay" val="3000" />
+		<cond msgId="113" addName="1">
+			<using kind="DAGGER,DUALDAGGER" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack" />
+			<effect name="Plunder" />
+		</for>
 	</skill>
 	<skill id="10703" levels="3" name="Armor Breaker">
-
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Cancels target's armor for 3 seconds. Requires dagger/dual dagger. Consumes 2 Soulstones. -->
 		<table name="#mpConsumes"> 77 79 81 </table>
@@ -274,43 +283,91 @@
 		</for>
 	</skill>
 	<skill id="10757" levels="4" name="Dead Eye Stance">
-
-		<!-- AUTO GENERATED SKILL -->
+		<!-- TODO abnormalType -->
 		<!-- For 30 min., P. Atk. + 10%, and skill power + 5% when equipped with a bow or crossbow. -->
+		<table name="#abnormalLvls"> 1 2 3 4 </table>
+		<table name="#pAtk"> 1.10 1.12 1.15 1.20 </table>
+		<table name="#physicalSkillPower"> 1.05 1.06 1.07 1.10 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="1800" />
 		<set name="icon" val="icon.skill10757" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="10" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="30000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#pAtk">
+					<using kind="BOW,CROSSBOW" />
+				</mul>
+				<mul stat="physicalSkillPower" val="#physicalSkillPower">
+					<using kind="BOW,CROSSBOW" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
 	<skill id="10758" levels="4" name="Rapid Fire Stance">
-
-		<!-- AUTO GENERATED SKILL -->
+		<!-- TODO abnormalType -->
 		<!-- For 30 min., P. Atk. + 10% and P. Skill Cooldown - 5% when a bow or crossbow is equipped. -->
+		<table name="#abnormalLvls"> 1 2 3 4 </table>
+		<table name="#pAtk"> 1.10 1.12 1.15 1.20 </table>
+		<table name="#pReuse"> 1.05 1.06 1.07 1.10 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="1800" />
 		<set name="icon" val="icon.skill10758" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="10" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="30000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#pAtk">
+					<using kind="BOW,CROSSBOW" />
+				</mul>
+				<mul stat="pReuse" val="#pReuse">
+					<using kind="BOW,CROSSBOW" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
 	<skill id="10759" levels="4" name="Sniper Stance">
-
-		<!-- AUTO GENERATED SKILL -->
+		<!-- TODO abnormalType -->
 		<!-- For 30 min., P. Atk. + 10% and Atk. Spd. + 5% when a bow or crossbow is equipped. -->
+		<table name="#abnormalLvls"> 1 2 3 4 </table>
+		<table name="#pAtk"> 1.10 1.12 1.15 1.20 </table>
+		<table name="#pAtkSpd"> 1.05 1.06 1.07 1.10 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="1800" />
 		<set name="icon" val="icon.skill10759" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="10" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="30000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#pAtk">
+					<using kind="BOW,CROSSBOW" />
+				</mul>
+				<mul stat="pAtkSpd" val="#pAtkSpd">
+					<using kind="BOW,CROSSBOW" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
 	<skill id="10760" levels="11" name="Tornado Shot">
 		<!-- Attacks target with 20814 Power added to P. Atk. Requires a bow or crossbow to be equipped. Over-hit. Critical. -->
@@ -339,21 +396,40 @@
 			<effect name="PhysicalAttack" />
 		</for>
 	</skill>
-	<skill id="10761" levels="8" name="Bow Strike">
-		<table name="#effectPoint"> -689 -692 -696 -700 -704 -707 -710 -713 -716 -719 -722 </table>
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10761" levels="11" name="Bow Strike">
 		<!-- Knocks back frontal enemies. Attacks target with 2681 Power added to P. Atk. Requires a bow or crossbow to be equipped. Over-hit. Critical. -->
-		<table name="#mpConsumes"> 60 61 63 65 67 69 71 74 </table>
+		<table name="#effectPoint"> -689 -692 -696 -700 -704 -707 -710 -713 -716 -719 -722 </table>
+		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
+		<table name="#mpConsumes"> 60 61 63 65 67 69 71 74 77 80 83 </table>
+		<table name="#power"> 2681 2771 2952 3133 3313 3494 3675 3855 4063 4239 4415 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="2" />
+		<set name="abnormalType" val="KNOCK_BACK" />
+		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
+		<set name="baseCritRate" val="15" />
 		<set name="icon" val="icon.skill10761" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="overHit" val="true" />
+		<set name="power" val="#power" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="350" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<set name="trait" val="KNOCKBACK" />
+		<cond msgId="113" addName="1">
+			<using kind="BOW,CROSSBOW" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack" />
+			<effect name="KnockBack">
+				<param speed="400" distance="200" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10762" levels="8" name="Quick Shot">
 		<table name="#effectPoint"> -689 -694 -698 -702 -706 -709 -711 -714 -717 -720 -723 </table>
