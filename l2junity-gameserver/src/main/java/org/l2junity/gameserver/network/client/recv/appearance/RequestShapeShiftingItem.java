@@ -34,6 +34,7 @@ import org.l2junity.gameserver.model.items.type.WeaponType;
 import org.l2junity.gameserver.model.variables.ItemVariables;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.recv.IClientIncomingPacket;
+import org.l2junity.gameserver.network.client.send.ExAdenaInvenCount;
 import org.l2junity.gameserver.network.client.send.ExUserInfoEquipSlot;
 import org.l2junity.gameserver.network.client.send.InventoryUpdate;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
@@ -409,5 +410,6 @@ public class RequestShapeShiftingItem implements IClientIncomingPacket
 			}
 			client.sendPacket(slots);
 		}
+		client.sendPacket(new ExAdenaInvenCount(player));
 	}
 }
