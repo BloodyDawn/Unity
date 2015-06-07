@@ -380,7 +380,9 @@ public enum AbnormalType
 	ELEMENT_STANCE,
 	BODY_DESTRUCTION,
 	AIR_BIND,
-	DEVIL_CURSE;
+	DEVIL_CURSE,
+	BANISH,
+	ARCANE_PROTECTION;
 	
 	/**
 	 * Get the enumerate for the given String.

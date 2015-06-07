@@ -17,12 +17,22 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 5 seconds, increases P. Atk., M. Atk., Critical rate, and critical damage by 10%. -->
 		<set name="icon" val="icon.skill1543" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="5" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="1" />
 		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.10" />
+				<mul stat="mAtk" val="1.10" />
+				<mul stat="rCrit" val="1.10" />
+				<mul stat="cAtk" val="1.10" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11499" levels="1" name="Heavy Hit">
 		<!-- AUTO GENERATED SKILL -->

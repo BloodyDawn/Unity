@@ -75,6 +75,7 @@ import org.l2junity.gameserver.model.conditions.ConditionPlayerHasClanHall;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerHasFort;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerHasFreeSummonPoints;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerHasPet;
+import org.l2junity.gameserver.model.conditions.ConditionPlayerHasSummon;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerHp;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerImmobile;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerInsideZoneId;
@@ -772,6 +773,12 @@ public abstract class DocumentBase
 				{
 					boolean val = Boolean.parseBoolean(a.getNodeValue());
 					cond = joinAnd(cond, new ConditionPlayerCloakStatus(val));
+					break;
+				}
+				case "hassummon":
+				{
+					boolean val = Boolean.parseBoolean(a.getNodeValue());
+					cond = joinAnd(cond, new ConditionPlayerHasSummon(val));
 					break;
 				}
 				case "haspet":

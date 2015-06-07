@@ -15,24 +15,29 @@
 	<skill id="11301" levels="8" name="Dimension Storm">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attack nearby enemies with 152 Power added to M. Atk. -->
+		<table name="#power"> 152 154 157 161 165 169 173 177 </table>
 		<set name="icon" val="icon.skill0005" />
+		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="70" />
 		<set name="hitTime" val="2560" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="-704" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11302" levels="11" name="Servitor Major Heal">
-
-		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Heals the servitor with 1637 Power. -->
+		<table name="#power"> 1637 1645 1658 1671 1685 1698 1713 1727 1928 1944 1960 </table>
 		<set name="icon" val="icon.skill1127" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="SERVITOR" />
 		<set name="mpConsume" val="70" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3500" />
@@ -40,13 +45,21 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Heal">
+				<param power="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11303" levels="1" name="Mass Servitor Magic Barrier">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases all servitors' M. Def. by 30% for 30 minutes. -->
 		<set name="icon" val="icon.skill1139" />
+		<set name="abnormalLvl" val="3" />
+		<set name="abnormalTime" val="1800" />
+		<set name="abnormalType" val="MD_UP" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="SERVITOR" />
 		<set name="mpConsume" val="70" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3500" />
@@ -54,13 +67,21 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<mul stat="mDef" val="1.30" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11304" levels="1" name="Mass Servitor Haste">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases all servitors' Atk. Spd. by 34% for 30 minutes. -->
 		<set name="icon" val="icon.skill1141" />
+		<set name="abnormalLvl" val="2" />
+		<set name="abnormalTime" val="1800" />
+		<set name="abnormalType" val="ATTACK_TIME_DOWN" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="SERVITOR" />
 		<set name="mpConsume" val="70" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3500" />
@@ -68,13 +89,21 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtkSpd" val="1.34" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11305" levels="1" name="Mass Servitor Shield">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases all servitors' P. Def. by 15% for 30 minutes. -->
 		<set name="icon" val="icon.skill1140" />
+		<set name="abnormalLvl" val="3" />
+		<set name="abnormalTime" val="1800" />
+		<set name="abnormalType" val="PD_UP" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="SERVITOR" />
 		<set name="mpConsume" val="70" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3500" />
@@ -82,13 +111,21 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pDef" val="1.15" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11306" levels="1" name="Mass Servitor Empower">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases all servitors' M. Atk. by 79% for 30 minutes. -->
 		<set name="icon" val="icon.skill1059" />
+		<set name="abnormalLvl" val="3" />
+		<set name="abnormalTime" val="1800" />
+		<set name="abnormalType" val="MA_UP" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="SERVITOR" />
 		<set name="mpConsume" val="70" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3500" />
@@ -96,13 +133,21 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<mul stat="mAtk" val="1.79" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11307" levels="1" name="Mass Servitor Might">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases all servitors' P. Atk. by 17% for 30 minutes. -->
 		<set name="icon" val="icon.skill1146" />
+		<set name="abnormalLvl" val="3" />
+		<set name="abnormalTime" val="1800" />
+		<set name="abnormalType" val="PA_UP" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="SERVITOR" />
 		<set name="mpConsume" val="70" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3500" />
@@ -110,13 +155,21 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.17" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11308" levels="1" name="Mass Servitor Wind Walk">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases all servitors' Speed by 34 for 30 minutes. -->
 		<set name="icon" val="icon.skill1144" />
+		<set name="abnormalLvl" val="2" />
+		<set name="abnormalTime" val="1800" />
+		<set name="abnormalType" val="SPEED_UP" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="SERVITOR" />
 		<set name="mpConsume" val="70" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3500" />
@@ -124,13 +177,18 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<add stat="runSpd" val="34" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11309" levels="1" name="Mass Servitor Blessing">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Dispels debuffs on all servitors. -->
 		<set name="icon" val="icon.skill1301" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="SERVITOR" />
 		<set name="mpConsume" val="70" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3500" />
@@ -138,14 +196,24 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="DispelByCategory">
+				<param slot="debuff" rate="100" max="10" /> <!-- Guessed -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11310" levels="2" name="Mass Servitor Blessing">
-
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases all servitor's P. Def. by 4680 and M. Def. by 4212 for 60 seconds. -->
+		<table name="#abnormalLvls"> 3 4 </table>
+		<table name="#pDef"> 4680 9360 </table>
+		<table name="#mDef"> 4212 8424 </table>
 		<set name="icon" val="icon.skill1299" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="60" />
+		<set name="abnormalType" val="PD_UP_SPECIAL" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="SERVITOR" />
 		<set name="mpConsume" val="70" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2000" />
@@ -153,51 +221,78 @@
 		<set name="reuseDelay" val="900000" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="ImmobilePetBuff">
+				<add stat="pDef" val="#pDef" />
+				<add stat="mDef" val="#mDef" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11311" levels="3" name="Naviarope Strike">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts 20633 damage. -->
+		<table name="#power"> 20633 21717 22799 </table>
 		<set name="icon" val="icon.skill_transform_etc" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="70" />
+		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-704" />
 		<set name="reuseDelay" val="4000" />
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="11312" levels="3" name="Naviarope Flame">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts 18758 ranged damage. -->
+		<table name="#power"> 18758 19743 20727 </table>
 		<set name="icon" val="icon.skill_transform_etc" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="70" />
+		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-704" />
 		<set name="reuseDelay" val="4000" />
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="11313" levels="3" name="Naviarope Explosion">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts 18758 damage to nearby enemies. -->
+		<table name="#power"> 18758 19743 20727 </table>
 		<set name="icon" val="icon.skill_transform_etc" />
+		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="70" />
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-704" />
 		<set name="reuseDelay" val="4000" />
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="11314" levels="3" name="Corpse Blast">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Detonates a corpse to inflict damage on nearby enemies. -->
+		<table name="#power"> 1 1 1 </table> <!-- TODO -->
 		<set name="icon" val="icon.skill_transform_debuff" />
+		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="AREA_CORPSE_MOB" />
 		<set name="mpConsume" val="70" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="1500" />
@@ -205,6 +300,9 @@
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-704" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11315" levels="1" name="Summon Defense">
 		<!-- AUTO GENERATED SKILL -->
@@ -212,17 +310,39 @@
 		<set name="icon" val="icon.skill11253" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="mDef" val="1.50" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param BOW="50" />
+				<param CROSSBOW="50" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11316" levels="1" name="Summon Soulshots">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons 1900 Beast Soulshots. Consumes 1 Crystal (R-grade). -->
 		<set name="icon" val="icon.skill11316" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="17371" /> <!-- Crystal (R-Grade) -->
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="398" />
 		<set name="hitTime" val="3000" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+		<for>
+			<effect name="Restoration">
+				<param itemId="6645" itemCount="1900" /> <!-- Beast Soulshot -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11317" levels="8" name="Servitor Group Heal">
 		<!-- AUTO GENERATED SKILL -->
@@ -230,7 +350,7 @@
 		<table name="#mpConsumes"> 278 280 284 289 293 298 303 308 </table>
 		<set name="icon" val="icon.skill1027" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="SERVITOR" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="6500" />
@@ -238,6 +358,11 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Heal">
+				<param power="1191" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11320" levels="8" name="Summon Wynn Kai the Cat">
 		<!-- AUTO GENERATED SKILL -->
@@ -283,85 +408,138 @@
 		<!-- Provokes nearby enemies. -->
 		<table name="#mpConsumes"> 73 76 79 81 84 87 90 93 </table>
 		<set name="icon" val="icon.skill0028" />
+		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="TargetMe" /> <!-- Guessed -->
+			<effect name="GetAgro" />
+		</for>
 	</skill>
 	<skill id="11324" levels="8" name="Feline Stun">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Temporarily Stuns nearby enemies. -->
 		<table name="#mpConsumes"> 73 76 79 81 84 87 90 93 </table>
 		<set name="icon" val="icon.skill0028" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="9" /> <!-- Guessed -->
+		<set name="abnormalType" val="STUN" />
+		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="basicProperty" val="CON" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
+		<set name="trait" val="SHOCK" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Stun" />
+		</for>
 	</skill>
 	<skill id="11325" levels="8" name="Feline Bite">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage on a target with 10508 Power added to P. Atk. -->
 		<table name="#mpConsumes"> 48 50 52 54 56 58 60 62 </table>
+		<table name="#power"> 10508 11190 11872 12554 13236 13918 14600 15282 </table>
 		<set name="icon" val="icon.skill0121" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="11326" levels="8" name="Feline Pounce">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage on a target with 8406 Power added to P. Atk. Speed - 100. -->
+		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#mpConsumes"> 48 50 52 54 56 58 60 62 </table>
+		<table name="#power"> 8406 8920 9497 10043 10588 11134 11680 12225 </table>
 		<set name="icon" val="icon.skill0121" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="SPEED_DOWN" />
+		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="basicProperty" val="CON" />
+		<set name="operateType" val="DA1" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="600" />
+		<set name="flyType" val="CHARGE" />
 		<set name="hitTime" val="100" />
 		<set name="coolTime" val="500" />
+		<set name="effectRange" val="800" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="113" addName="1">
+			<target mindistance="200" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack" />
+			<effect name="Debuff">
+				<sub stat="runSpd" val="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11327" levels="8" name="Feline Touch">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage on a target with 10508 Power added to P. Atk. -->
 		<table name="#mpConsumes"> 48 50 52 54 56 58 60 62 </table>
+		<table name="#power"> 10508 11190 11872 12554 13236 13918 14600 15282 </table>
 		<set name="icon" val="icon.skill1234" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2200" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="11328" levels="8" name="Feline Power">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage on nearby enemies with 11558 Power added to P. Atk. -->
 		<table name="#mpConsumes"> 73 76 79 81 84 87 90 93 </table>
+		<table name="#power"> 11558 12309 13059 13809 14559 15309 16060 16810 </table>
 		<set name="icon" val="icon.skill1171" />
+		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2900" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="11329" levels="8" name="Summon Wynn Merrow">
 		<!-- AUTO GENERATED SKILL -->
@@ -407,85 +585,138 @@
 		<!-- Provokes nearby enemies. -->
 		<table name="#mpConsumes"> 73 76 79 81 84 87 90 93 </table>
 		<set name="icon" val="icon.skill0028" />
+		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="TargetMe" /> <!-- Guessed -->
+			<effect name="GetAgro" />
+		</for>
 	</skill>
 	<skill id="11333" levels="8" name="Unicorn's Stun">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Temporarily Stuns nearby enemies. -->
 		<table name="#mpConsumes"> 73 76 79 81 84 87 90 93 </table>
 		<set name="icon" val="icon.skill0028" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="9" /> <!-- Guessed -->
+		<set name="abnormalType" val="STUN" />
+		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="basicProperty" val="CON" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
+		<set name="trait" val="SHOCK" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Stun" />
+		</for>
 	</skill>
 	<skill id="11334" levels="8" name="Unicorn's Bite">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage on a target with 10508 Power added to P. Atk. -->
 		<table name="#mpConsumes"> 48 50 52 54 56 58 60 62 </table>
+		<table name="#power"> 10508 11190 11872 12554 13236 13918 14600 15282 </table>
 		<set name="icon" val="icon.skill0121" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="11335" levels="8" name="Unicorn's Pounce">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage on a target with 8406 Power added to P. Atk. Speed - 100. -->
+		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#mpConsumes"> 48 50 52 54 56 58 60 62 </table>
+		<table name="#power"> 8406 8920 9497 10043 10588 11134 11680 12225 </table>
 		<set name="icon" val="icon.skill0121" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="SPEED_DOWN" />
+		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="basicProperty" val="CON" />
+		<set name="operateType" val="DA1" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="600" />
+		<set name="flyType" val="CHARGE" />
 		<set name="hitTime" val="100" />
 		<set name="coolTime" val="500" />
+		<set name="effectRange" val="800" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="113" addName="1">
+			<target mindistance="200" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack" />
+			<effect name="Debuff">
+				<sub stat="runSpd" val="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11336" levels="8" name="Unicorn's Touch">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage on a target with 10508 Power added to P. Atk. -->
 		<table name="#mpConsumes"> 48 50 52 54 56 58 60 62 </table>
+		<table name="#power"> 10508 11190 11872 12554 13236 13918 14600 15282 </table>
 		<set name="icon" val="icon.skill1234" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2200" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="11337" levels="8" name="Unicorn's Power">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage on nearby enemies with 11558 Power added to P. Atk. -->
 		<table name="#mpConsumes"> 73 76 79 81 84 87 90 93 </table>
+		<table name="#power"> 11558 12309 13059 13809 14559 15309 16060 16810 </table>
 		<set name="icon" val="icon.skill1171" />
+		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2900" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="11338" levels="8" name="Summon Wynn Nightshade">
 		<!-- AUTO GENERATED SKILL -->
@@ -531,94 +762,151 @@
 		<!-- Provokes nearby enemies. -->
 		<table name="#mpConsumes"> 73 76 79 81 84 87 90 93 </table>
 		<set name="icon" val="icon.skill0028" />
+		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="TargetMe" /> <!-- Guessed -->
+			<effect name="GetAgro" />
+		</for>
 	</skill>
 	<skill id="11342" levels="8" name="Phantom Stun">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Temporarily Stuns nearby enemies. -->
 		<table name="#mpConsumes"> 73 76 79 81 84 87 90 93 </table>
 		<set name="icon" val="icon.skill0028" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="9" /> <!-- Guessed -->
+		<set name="abnormalType" val="STUN" />
+		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="basicProperty" val="CON" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
+		<set name="trait" val="SHOCK" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Stun" />
+		</for>
 	</skill>
 	<skill id="11343" levels="8" name="Phantom Bite">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage on a target with 10508 Power added to P. Atk. -->
 		<table name="#mpConsumes"> 48 50 52 54 56 58 60 62 </table>
+		<table name="#power"> 10508 11190 11872 12554 13236 13918 14600 15282 </table>
 		<set name="icon" val="icon.skill0121" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1490" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="11344" levels="8" name="Phantom Pounce">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage on a target with 8406 Power added to P. Atk. Speed - 100. -->
+		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#mpConsumes"> 48 50 52 54 56 58 60 62 </table>
+		<table name="#power"> 8406 8920 9497 10043 10588 11134 11680 12225 </table>
 		<set name="icon" val="icon.skill0121" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="SPEED_DOWN" />
+		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="basicProperty" val="CON" />
+		<set name="operateType" val="DA1" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="600" />
+		<set name="flyType" val="CHARGE" />
 		<set name="hitTime" val="100" />
 		<set name="coolTime" val="500" />
+		<set name="effectRange" val="800" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="-687" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="113" addName="1">
+			<target mindistance="200" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack" />
+			<effect name="Debuff">
+				<sub stat="runSpd" val="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11345" levels="8" name="Phantom Touch">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage on a target with 10508 Power added to P. Atk. -->
 		<table name="#mpConsumes"> 48 50 52 54 56 58 60 62 </table>
+		<table name="#power"> 10508 11190 11872 12554 13236 13918 14600 15282 </table>
 		<set name="icon" val="icon.skill1234" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2200" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="11346" levels="8" name="Phantom Power">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage on nearby enemies with 11558 Power added to P. Atk. -->
 		<table name="#mpConsumes"> 73 76 79 81 84 87 90 93 </table>
+		<table name="#power"> 11558 12309 13059 13809 14559 15309 16060 16810 </table>
 		<set name="icon" val="icon.skill1171" />
+		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2900" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="11347" levels="4" name="Greater Servitor Haste">
-
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 min., all servitors' Atk. Spd. + 10%. -->
 		<table name="#mpConsumes"> 61 67 73 79 </table>
+		<table name="#abnormalLvls"> 1 2 3 4 </table>
+		<table name="#pAtkSpd"> 1.10 1.12 1.15 1.20 </table>
 		<set name="icon" val="icon.skill11347" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="1800" />
+		<set name="abnormalType" val="NONE" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="SERVITOR" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3500" />
@@ -626,15 +914,25 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtkSpd" val="#pAtkSpd" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11348" levels="4" name="Servitor Death Whisper">
 
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 min., all servitors' Critical Damage + 10%. -->
 		<table name="#mpConsumes"> 61 67 73 79 </table>
+		<table name="#abnormalLvls"> 1 2 3 4 </table>
+		<table name="#cAtk"> 1.10 1.12 1.15 1.20 </table>
 		<set name="icon" val="icon.skill11348" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="1800" />
+		<set name="abnormalType" val="NONE" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="SERVITOR" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3500" />
@@ -642,15 +940,24 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<mul stat="cAtk" val="#cAtk" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11349" levels="4" name="Greater Servitor Might">
-
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 min., all servitors' P. Atk. + 10%. -->
 		<table name="#mpConsumes"> 61 67 73 79 </table>
+		<table name="#abnormalLvls"> 1 2 3 4 </table>
+		<table name="#pAtk"> 1.10 1.12 1.15 1.20 </table>
 		<set name="icon" val="icon.skill11349" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="1800" />
+		<set name="abnormalType" val="NONE" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="SERVITOR" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3500" />
@@ -658,15 +965,22 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+		</for>
 	</skill>
-	<skill id="11350" levels="4" name="Arcane Rage">
-		<table name="#effectPoint"> -700 -704 -707 -709 -711 -713 -715 </table>
+	<skill id="11350" levels="7" name="Arcane Rage">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Use Arcana Wrath to inflict severe damage on a target with 188 Power added to M. Atk. -->
-		<table name="#mpConsumes"> 53 60 67 70 </table>
+		<table name="#effectPoint"> -700 -704 -707 -709 -711 -713 -715 </table>
+		<table name="#mpConsumes"> 53 60 67 70 73 76 79 </table>
+		<table name="#power"> 188 202 215 227 242 248 254 </table>
 		<set name="icon" val="icon.skill11350" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2780" />
@@ -674,44 +988,58 @@
 		<set name="reuseDelay" val="2400" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11351" levels="5" name="Arcane Link">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Servitor's wrath. P. Atk. + 1%, Critical Rate + 10%, and Critical Damage + 1%. -->
+		<table name="#pAtk"> 1.01 1.03 1.05 1.10 1.15 </table>
+		<table name="#rCrit"> 1.10 1.15 1.20 1.25 1.30 </table>
+		<table name="#cAtk"> 1.01 1.03 1.05 1.10 1.15 </table>
 		<set name="icon" val="icon.skill11351" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#pAtk" />
+				<mul stat="rCrit" val="#rCrit" />
+				<mul stat="cAtk" val="#cAtk" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11352" levels="4" name="Arcane Ability">
 		<!-- Atk. Spd., P. Def. + 3%, and PvP Damage - 3%. -->
 		<table name="#magicLvl"> 85 90 95 99 </table> <!-- TODO: get proper values -->
-		<table name="#rateUp"> 1.03 1.05 1.07 1.1 </table>
-		<table name="#rateDown"> 0.97 0.95 0.93 0.9 </table>
+		<table name="#stat"> 1.03 1.05 1.07 1.10 </table>
 		<set name="icon" val="icon.skill11277" />
 		<set name="operateType" val="P" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff">
-				<mul stat="pAtkSpd" val="#rateUp" />
-				<mul stat="pDef" val="#rateUp" />
-				<mul stat="pvpPhysDef" val="#rateDown" />
-				<mul stat="pvpMagicalDef" val="#rateDown" />
-				<mul stat="pvpPhysSkillsDef" val="#rateDown" />
+				<mul stat="pAtkSpd" val="#stat" />
+				<mul stat="pDef" val="#stat" />
+				<mul stat="pvpPhysDef" val="#stat" />
+				<mul stat="pvpMagicalDef" val="#stat" />
+				<mul stat="pvpPhysSkillsDef" val="#stat" />
 			</effect>
 		</for>
 	</skill>
-	<skill id="11353" levels="4" name="Elemental Rage">
-		<table name="#effectPoint"> -700 -704 -707 -709 -711 -713 -715 </table>
+	<skill id="11353" levels="7" name="Elemental Rage">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Use Elemental Wrath to inflict severe damage on a target with 188 Power added to M. Atk. -->
-		<table name="#mpConsumes"> 53 60 67 70 </table>
+		<table name="#effectPoint"> -700 -704 -707 -709 -711 -713 -715 </table>
+		<table name="#mpConsumes"> 53 60 67 70 73 76 79 </table>
+		<table name="#power"> 188 202 215 227 242 248 254 </table>
 		<set name="icon" val="icon.skill11353" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2780" />
@@ -719,32 +1047,53 @@
 		<set name="reuseDelay" val="2400" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11354" levels="5" name="Elemental Link">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Servitor's wrath. P. Atk. + 1%, Critical Rate + 10%, and Critical Damage + 1%. -->
+		<table name="#pAtk"> 1.01 1.03 1.05 1.10 1.15 </table>
+		<table name="#rCrit"> 1.10 1.15 1.20 1.25 1.30 </table>
+		<table name="#cAtk"> 1.01 1.03 1.05 1.10 1.15 </table>
 		<set name="icon" val="icon.skill11354" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#pAtk" />
+				<mul stat="rCrit" val="#rCrit" />
+				<mul stat="cAtk" val="#cAtk" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11355" levels="4" name="Elemental Ability">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Critical Damage + 5%. -->
+		<table name="#cAtk"> 1.05 1.07 1.10 1.12 </table>
 		<set name="icon" val="icon.skill11277" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="cAtk" val="#cAtk" />
+			</effect>
+		</for>
 	</skill>
-	<skill id="11356" levels="4" name="Spectral Rage">
-		<table name="#effectPoint"> -700 -704 -707 -709 -711 -713 -715 </table>
+	<skill id="11356" levels="7" name="Spectral Rage">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Use Spectral Wrath to inflict severe damage on a target with 188 Power added to M. Atk. -->
-		<table name="#mpConsumes"> 53 60 67 70 </table>
+		<table name="#effectPoint"> -700 -704 -707 -709 -711 -713 -715 </table>
+		<table name="#mpConsumes"> 53 60 67 70 73 76 79 </table>
+		<table name="#power"> 188 202 215 227 242 248 254 </table>
 		<set name="icon" val="icon.skill11356" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="2780" />
@@ -752,23 +1101,45 @@
 		<set name="reuseDelay" val="2400" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="MagicalAttack" />
+		</for>
 	</skill>
 	<skill id="11357" levels="5" name="Spectral Link">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Servitor's wrath. P. Atk. + 1%, Critical Rate + 10%, and Critical Damage + 1%. -->
+		<table name="#pAtk"> 1.01 1.03 1.05 1.10 1.15 </table>
+		<table name="#rCrit"> 1.10 1.15 1.20 1.25 1.30 </table>
+		<table name="#cAtk"> 1.01 1.03 1.05 1.10 1.15 </table>
 		<set name="icon" val="icon.skill11357" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#pAtk" />
+				<mul stat="rCrit" val="#rCrit" />
+				<mul stat="cAtk" val="#cAtk" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11358" levels="4" name="Spectral Ability">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Atk. + 3%, and PvP Damage - 3%. -->
+		<table name="#stat"> 1.03 1.05 1.07 1.10 </table>
 		<set name="icon" val="icon.skill11277" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#stat" />
+				<mul stat="pvpPhysDef" val="#stat" />
+				<mul stat="pvpMagicalDef" val="#stat" />
+				<mul stat="pvpPhysSkillsDef" val="#stat" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11359" levels="3" name="Summon Protection Stone">
 		<!-- AUTO GENERATED SKILL -->
@@ -786,7 +1157,14 @@
 	<skill id="11360" levels="3" name="Arcane Protection">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 sec., Received P./M. Critical Rate - 5%, Pull Resistance and Knock Back / Knock Down Resistance - 5. Debuff Resistance + 5%, HP/MP Recovery Bonus + 5%. -->
+		<table name="#abnormalLvls"> 1 2 3 </table>
+		<table name="#stat"> 1.05 1.07 1.10 </table>
+		<table name="#debuffVuln"> 0.95 0.93 0.90 </table>
+		<table name="#trait"> 5 7 10 </table>
 		<set name="icon" val="icon.skill11360" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="30" />
+		<set name="abnormalType" val="ARCANE_PROTECTION" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
@@ -794,6 +1172,18 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="4000" />
 		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<mul stat="defCritRate" val="#stat" />
+				<mul stat="defMCritRate" val="#stat" />
+				<mul stat="debuffVuln" val="#debuffVuln" />
+				<mul stat="regHp" val="#stat" />
+				<mul stat="regMp" val="#stat" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param PULL="#trait" KNOCKBACK="#trait" KNOCKDOWN="#trait" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11361" levels="3" name="Summon Moving Portal">
 		<!-- AUTO GENERATED SKILL -->
@@ -827,22 +1217,39 @@
 	<skill id="11364" levels="3" name="Elemental Dash">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Party's Speed + 15. -->
+		<table name="#runSpd"> 15 20 30 </table>
 		<set name="icon" val="icon.skill0028" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="15" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="PARTY" />
 		<set name="mpConsume" val="70" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="4000" />
+		<for>
+			<effect name="Buff">
+				<add stat="runSpd" val="#runSpd" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11365" levels="3" name="Summon Demonic Crucifix">
-
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks target with 518 Power added to M. Atk. and casts a curse that decreases target's Atk./Casting Spd. by 30% and Speed by 180. Consumes 3 Spirit Ores. -->
+		<table name="#abnormalLvls"> 1 2 3 </table>
 		<table name="#mpConsumes"> 394 382 394 </table>
+		<table name="#power"> 518 526 542 558 </table>
 		<set name="icon" val="icon.skill11365" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="5" /> <!-- Guessed -->
+		<set name="abnormalType" val="NONE" />
+		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="basicProperty" val="MEN" />
+		<set name="itemConsumeCount" val="3" />
+		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="2500" />
@@ -851,6 +1258,14 @@
 		<set name="isMagic" val="1" />
 		<set name="effectPoint" val="-700" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="MagicalAttack" />
+			<effect name="Debuff">
+				<mul stat="pAtkSpd" val="0.70" />
+				<mul stat="mAtkSpd" val="0.70" />
+				<sub stat="runSpd" val="180" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11366" levels="3" name="Spectral Curse">
 		<!-- AUTO GENERATED SKILL -->
@@ -868,7 +1283,15 @@
 	<skill id="11367" levels="3" name="Arcane Protection">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 sec., Received P./M. Critical Rate - 7%, Pull Resistance and Knock Back / Knock Down Resistance - 10. Debuff Resistance + 10%, HP/MP Recovery Bonus + 10%. -->
+		<table name="#abnormalLvls"> 3 4 5 </table>
+		<table name="#defCritRate"> 1.07 1.10 1.12 </table>
+		<table name="#regHpMp"> 1.10 1.12 1.15 </table>
+		<table name="#debuffVuln"> 0.90 0.88 0.85 </table>
+		<table name="#trait"> 10 12 15 </table>
 		<set name="icon" val="icon.skill11360" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="30" />
+		<set name="abnormalType" val="ARCANE_PROTECTION" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
@@ -876,16 +1299,48 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="4000" />
 		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<mul stat="defCritRate" val="#defCritRate" />
+				<mul stat="defMCritRate" val="#defCritRate" />
+				<mul stat="debuffVuln" val="#debuffVuln" />
+				<mul stat="regHp" val="#regHpMp" />
+				<mul stat="regMp" val="#regHpMp" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param PULL="#trait" KNOCKBACK="#trait" KNOCKDOWN="#trait" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11368" levels="3" name="Arcane Protection">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 sec., Debuff Resistance + 15%, Pull Resistance + 15%, Knock Back / Knock Down Resistance + 15%, HP/MP Recovery Bonus + 15%. Received P./M. Critical Rate - 10%. -->
+		<table name="#abnormalLvls"> 5 6 6 </table>
+		<table name="#defCritRate"> 1.10 1.15 1.15 </table>
+		<table name="#regHpMp"> 1.15 1.20 1.20 </table>
+		<table name="#debuffVuln"> 0.85 0.80 0.80 </table>
+		<table name="#trait"> 15 20 20 </table>
 		<set name="icon" val="icon.skill11360" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="30" />
+		<set name="abnormalType" val="ARCANE_PROTECTION" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
 		<set name="reuseDelay" val="4000" />
 		<set name="isMagic" val="4" />
+		<for>
+			<effect name="Buff">
+				<mul stat="defCritRate" val="#defCritRate" />
+				<mul stat="defMCritRate" val="#defCritRate" />
+				<mul stat="debuffVuln" val="#debuffVuln" />
+				<mul stat="regHp" val="#regHpMp" />
+				<mul stat="regMp" val="#regHpMp" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param PULL="#trait" KNOCKBACK="#trait" KNOCKDOWN="#trait" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11369" levels="6" name="Summon Commando Cat">
 		<!-- AUTO GENERATED SKILL -->
@@ -968,25 +1423,55 @@
 	<skill id="11375" levels="3" name="Commando Jumping Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Jumps and hulrs attack to target and nearby enemies with 18224 Power added to P. Atk., and decreases Speed by 100 for 5 seconds. -->
+		<table name="#abnormalLvls"> 1 2 3 </table>
 		<table name="#mpConsumes"> 86 86 87 </table>
+		<table name="#power"> 18224 19158 20092 </table>
 		<set name="icon" val="icon.skill0121" />
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="SPEED_DOWN" />
+		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="affectRange" val="600" />
+		<set name="basicProperty" val="CON" />
+		<set name="operateType" val="DA2" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="600" />
+		<set name="effectRange" val="800" />
+		<set name="fanRange" val="0,0,600,60" />
+		<set name="flyType" val="CHARGE" />
 		<set name="hitTime" val="100" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="-709" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="113" addName="1">
+			<target mindistance="200" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack" />
+			<effect name="Debuff">
+				<sub stat="runSpd" val="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11376" levels="3" name="Commando Double Smash">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage with 32410 Power added to P. Atk. And knocks down for 3 seconds. -->
 		<table name="#mpConsumes"> 86 86 87 </table>
+		<table name="#power"> 32410 34072 35734 </table>
 		<set name="icon" val="icon.skill10546" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3" />
+		<set name="abnormalType" val="KNOCK_DOWN" />
+		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
+		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="trait" val="KNOCKDOWN" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1500" />
@@ -994,30 +1479,51 @@
 		<set name="reuseDelay" val="7000" />
 		<set name="effectPoint" val="-709" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack" />
+			<effect name="KnockDown">
+				<param speed="700" distance="50" /> <!-- Guessed -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11377" levels="3" name="Witch Cat Power">
-		<table name="#effectPoint"> -3541 -3561 -3561 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage to nearby enemies with 31903 Power added to P. Atk. -->
+		<table name="#effectPoint"> -3541 -3561 -3561 </table>
 		<table name="#mpConsumes"> 172 173 174 </table>
+		<table name="#power"> 31903 33539 35175 </table>
 		<set name="icon" val="icon.skill1171" />
+		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="11378" levels="3" name="Elemental Slam">
-		<table name="#effectPoint"> -3541 -3561 -3561 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage to nearby enemies with 30623 Power added to P. Atk. and pushes them back. -->
+		<table name="#effectPoint"> -3541 -3561 -3561 </table>
 		<table name="#mpConsumes"> 172 173 174 </table>
+		<table name="#power"> 30623 32193 33763 </table>
 		<set name="icon" val="icon.skill1171" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="KNOCK_BACK" />
+		<set name="abnormalTime" val="1" />
+		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
+		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="AURA" />
+		<set name="trait" val="KNOCKBACK" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2500" />
@@ -1025,60 +1531,109 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack" />
+			<effect name="KnockBack">
+				<param speed="400" distance="100" /> <!-- Guessed -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11379" levels="3" name="Lancer Rush">
-		<table name="#effectPoint"> -3541 -3561 -3561 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Rushes forward to target inflicting damage with 16198 Power added to P. Atk. And stuns them for 5 seconds. -->
+		<table name="#effectPoint"> -3541 -3561 -3561 </table>
 		<table name="#mpConsumes"> 86 86 87 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
+		<table name="#power"> 16198 17028 17858 </table>
 		<set name="icon" val="icon.skill0121" />
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="STUN" />
+		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="activateRate" val="60" /> <!-- Guessed -->
+		<set name="affectRange" val="600" />
+		<set name="basicProperty" val="CON" />
+		<set name="effectRange" val="800" />
+		<set name="fanRange" val="0,0,600,60" />
+		<set name="flyType" val="CHARGE" />
+		<set name="operateType" val="DA1" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="FRONT_AREA" />
+		<set name="trait" val="SHOCK" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="113" addName="1">
+			<target mindistance="200" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack" />
+			<effect name="Stun" />
+		</for>
 	</skill>
 	<skill id="11380" levels="3" name="Power Stump">
-		<table name="#effectPoint"> -3541 -3561 -3561 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage to nearby enemies with 22677 Power added to P. Atk. and blows them away. -->
+		<table name="#effectPoint"> -3541 -3561 -3561 </table>
 		<table name="#mpConsumes"> 86 86 87 </table>
+		<table name="#power"> 22677 23839 25001 </table>
 		<set name="icon" val="icon.skill30006" />
+		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="7000" />
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="11381" levels="3" name="Cherub Power">
-		<table name="#effectPoint"> -3541 -3561 -3561 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage to nearby enemies with 31903 Power added to P. Atk. -->
+		<table name="#effectPoint"> -3541 -3561 -3561 </table>
 		<table name="#mpConsumes"> 172 173 174 </table>
+		<table name="#power"> 31903 33539 35175 </table>
 		<set name="icon" val="icon.skill1171" />
+		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="11382" levels="3" name="Multiple Icicles">
-		<table name="#effectPoint"> -3541 -3561 -3561 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage to target and nearby enemies with 34449 Power added to P. Atk., and decreases Speed by 100 for 5 seconds. -->
+		<table name="#effectPoint"> -3541 -3561 -3561 </table>
+		<table name="#abnormalLvls"> 1 2 3 </table>
 		<table name="#mpConsumes"> 172 173 174 </table>
+		<table name="#power"> 34449 36215 37981 </table>
 		<set name="icon" val="icon.skill10103" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="SPEED_DOWN" />
+		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="basicProperty" val="CON" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="400" />
 		<set name="hitTime" val="2500" />
@@ -1086,69 +1641,111 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="PhysicalAttack" />
+			<effect name="Debuff">
+				<sub stat="runSpd" val="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11383" levels="3" name="Phantom Sword Attack">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage with 40502 Power added to P. Atk. -->
 		<table name="#mpConsumes"> 86 86 87 </table>
+		<table name="#power"> 40502 42578 44654 </table>
 		<set name="icon" val="icon.skill0121" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="50" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-709" />
 		<set name="reuseDelay" val="5000" />
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="11384" levels="3" name="Phantom Blow">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks the target's vital points with 45696 Power added to P. Atk. -->
 		<table name="#mpConsumes"> 86 86 87 </table>
+		<table name="#power"> 45696 47772 49848 </table>
 		<set name="icon" val="icon.skill10511" />
+		<set name="blowChance" val="30" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="ONE" />
+		<set name="trait" val="DEATH" />
 		<set name="mpConsume" val="#mpConsumes" />
+		<set name="nextActionAttack" val="true" />
 		<set name="castRange" val="50" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-709" />
 		<set name="reuseDelay" val="7000" />
+		<for>
+			<effect name="FatalBlow" />
+			<effect name="Lethal">
+				<param halfLethal="10" /> <!-- Guessed -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11385" levels="3" name="Phantom Spike">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks the target's vital points with 51411 Power added to P. Atk. -->
 		<table name="#mpConsumes"> 86 86 87 </table>
+		<table name="#power"> 51411 56083 56083 </table>
 		<set name="icon" val="icon.skill1171" />
+		<set name="blowChance" val="30" /> <!-- Guessed -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="ONE" />
+		<set name="trait" val="DEATH" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-709" />
 		<set name="reuseDelay" val="7000" />
+		<for>
+			<effect name="FatalBlow" />
+			<effect name="Lethal">
+				<param halfLethal="10" /> <!-- Guessed -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11386" levels="3" name="Phantom Crash">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Inflicts damage with 45568 Power added to P. Atk. -->
 		<table name="#mpConsumes"> 86 86 87 </table>
+		<table name="#power"> 45568 47904 50240 </table>
 		<set name="icon" val="icon.skill1171" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="2000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-709" />
 		<set name="reuseDelay" val="7000" />
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="11387" levels="1" name="Arcana's Call">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Uses the power of nature to increase M. Atk. and M. Critical Rate for 30 seconds. Additionally increases your servitor's P. Atk. And success rate of Knock Back / Knock Down. Consumes 10 Spirit Ores. -->
 		<set name="icon" val="icon.skill11387" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="30" />
+		<set name="itemConsumeCount" val="10" />
+		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="SERVITOR" />
 		<set name="mpConsume" val="70" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
@@ -1156,11 +1753,26 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.30" /> <!-- Guessed -->
+			</effect>
+			<effect name="AttackTrait">
+				<param KNOCKBACK="30" KNOCKDOWN="30" /> <!-- Guessed -->
+			</effect>
+		</for>
+		<selfEffects>
+			<effect name="CallSkill">
+				<param skillId="11388" skillLevel="1" /> <!-- Lord of Arcana -->
+			</effect>
+		</selfEffects>
 	</skill>
 	<skill id="11388" levels="1" name="Lord of Arcana">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- M. Atk. + 30%, M. Critical Rate + 30% for 30 seconds. -->
 		<set name="icon" val="icon.skill11387" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="30" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="70" />
@@ -1170,13 +1782,23 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<mul stat="mAtk" val="1.30" />
+				<mul stat="mCritRate" val="1.30" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11389" levels="1" name="Elemental's Call">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Uses the power of spirits to increase M. Atk. And Casting Spd. for 30 seconds. Additionally increases your servitor's P. Atk. and Atk. Spd, and decreases cooldown. Consumes 10 Spirit Ores. -->
 		<set name="icon" val="icon.skill11388" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="30" />
+		<set name="itemConsumeCount" val="10" />
+		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="SERVITOR" />
 		<set name="mpConsume" val="70" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
@@ -1184,11 +1806,26 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.30" /> <!-- Guessed -->
+				<mul stat="pAtkSpd" val="1.30" /> <!-- Guessed -->
+				<mul stat="pReuse" val="0.90" /> <!-- Guessed -->
+				<mul stat="mReuse" val="0.90" /> <!-- Guessed -->
+			</effect>
+		</for>
+		<selfEffects>
+			<effect name="CallSkill">
+				<param skillId="11390" skillLevel="1" /> <!-- Lord of Elemental -->
+			</effect>
+		</selfEffects>
 	</skill>
 	<skill id="11390" levels="1" name="Lord of Elemental">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- M. Atk. + 30%, Casting Spd. + 30% for 30 seconds. -->
 		<set name="icon" val="icon.skill11388" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="30" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="70" />
@@ -1198,13 +1835,23 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<mul stat="mAtk" val="1.30" />
+				<mul stat="mAtkSpd" val="1.30" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11391" levels="1" name="Spectral's Call">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Use the power of ghosts to increase M. Atk. And M. Critical Damage for 30 seconds. Additionally increases your servitor's P. Critical Damage and vital point attack rate. Consumes 10 Spirit Ores. -->
 		<set name="icon" val="icon.skill11389" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="30" />
+		<set name="itemConsumeCount" val="10" />
+		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="SERVITOR" />
 		<set name="mpConsume" val="70" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="1000" />
@@ -1212,11 +1859,24 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<mul stat="cAtk" val="1.30" /> <!-- Guessed -->
+				<mul stat="blowRate" val="1.30" /> <!-- Guessed -->
+			</effect>
+		</for>
+		<selfEffects>
+			<effect name="CallSkill">
+				<param skillId="11392" skillLevel="1" /> <!-- Lord of Spectral -->
+			</effect>
+		</selfEffects>
 	</skill>
 	<skill id="11392" levels="1" name="Lord of Spectral">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- M. Atk. + 30%, M. Critical Damage + 30% for 30 seconds. -->
 		<set name="icon" val="icon.skill11389" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="30" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="70" />
@@ -1226,5 +1886,11 @@
 		<set name="reuseDelay" val="300000" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="Buff">
+				<mul stat="mAtk" val="1.30" />
+				<mul stat="mCritPower" val="1.30" />
+			</effect>
+		</for>
 	</skill>
 </list>

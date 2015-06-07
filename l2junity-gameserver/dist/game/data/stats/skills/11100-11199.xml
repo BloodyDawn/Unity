@@ -833,9 +833,9 @@
 		</for>
 	</skill>
 	<skill id="11131" levels="3" name="Life Straw">
-		<table name="#effectPoint"> -696 -704 -709 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 10 sec., attacks target with 115 Power per second and recovers HP equivalent to 100% of damage inflicted. -->
+		<table name="#effectPoint"> -696 -704 -709 </table>
 		<table name="#mpConsumes"> 68 72 84 </table>
 		<table name="#power"> 115 225 225 </table>
 		<set name="icon" val="icon.skill0000" />
@@ -911,14 +911,16 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Drops meteors to attack surrounding enemies and deals great damage. Inflicts abnormal state and deals continuous damage. The higher the level of the abnormal state, the greater the damage. Consumes 5 Spirit Ores. -->
 		<set name="icon" val="icon.skill11134" />
+		<set name="affectRange" val="250" /> <!-- Guessed -->
 		<set name="channelingSkillId" val="11134" />
-		<set name="channelingTickInterval" val="2" /> <!-- Guessed -->
+		<set name="channelingTickInterval" val="2" />
 		<set name="element" val="0" /> <!-- Fire -->
 		<set name="elementPower" val="20" />
 		<set name="itemConsumeCount" val="5" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="operateType" val="CA1" />
+		<set name="power" val="250" /> <!-- Guessed -->
+		<set name="targetType" val="GROUND" />
 		<set name="mpConsume" val="52" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="12000" />
@@ -936,14 +938,17 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Creates a black swamp in the selected location, dealing great damage, and receiving 50% of the target's damage as HP. Inflicts abnormal state and decreases Speed. The higher the level of the abnormal state, the greater the damage, and at the last stage, Shocks the target. Consumes 5 Spirit Ores. -->
 		<set name="icon" val="icon.skill11135" />
+		<set name="affectRange" val="250" /> <!-- Guessed -->
 		<set name="channelingSkillId" val="11135" />
-		<set name="channelingTickInterval" val="2" /> <!-- Guessed -->
+		<set name="channelingTickInterval" val="1" />
+		<set name="channelingTickInitialDelay" val="2" />
 		<set name="element" val="5" /> <!-- Dark -->
 		<set name="elementPower" val="20" />
 		<set name="itemConsumeCount" val="5" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="operateType" val="CA1" />
+		<set name="power" val="250" /> <!-- Guessed -->
+		<set name="targetType" val="GROUND" />
 		<set name="mpConsume" val="52" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="12000" />
@@ -951,7 +956,9 @@
 		<set name="effectPoint" val="-676" />
 		<set name="isMagic" val="1" />
 		<channelingEffects>
-			<effect name="MagicalAttack" />
+			<effect name="HpDrain">
+				<param power="0.50" />
+			</effect>
 			<effect name="CallSkill">
 				<param skillId="11140" skillLevel="1" skillLevelScaleTo="5" /> <!-- Black Shackle -->
 			</effect>
@@ -961,14 +968,19 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Creates an ice storm in the selected location, dealing continuous damage. Inflicts abnormal state and decreases Speed. The higher the level of the abnormal state, the greater the damage, and at the last stage, Freezes the target. Consumes 5 Spirit Ores. -->
 		<set name="icon" val="icon.skill11136" />
+		<set name="affectRange" val="250" /> <!-- Guessed -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="5" />
 		<set name="channelingSkillId" val="11136" />
-		<set name="channelingTickInterval" val="2" /> <!-- Guessed -->
+		<set name="channelingTickInterval" val="1" />
+		<set name="channelingTickInitialDelay" val="2" />
 		<set name="element" val="1" /> <!-- Water -->
 		<set name="elementPower" val="20" />
 		<set name="itemConsumeCount" val="5" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="operateType" val="CA1" />
+		<set name="power" val="250" /> <!-- Guessed -->
+		<set name="targetType" val="GROUND" />
 		<set name="mpConsume" val="52" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="12000" />
@@ -986,14 +998,17 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Creates a tornado in the selected location, dealing great damage. Inflicts abnormal state and decreases Speed. The higher the level of the abnormal state, the greater the damage, and at the last stage, locks the target in an Aerial Yoke. Consumes 5 Spirit Ores. -->
 		<set name="icon" val="icon.skill11137" />
+		<set name="affectRange" val="250" /> <!-- Guessed -->
 		<set name="channelingSkillId" val="11137" />
-		<set name="channelingTickInterval" val="2" /> <!-- Guessed -->
+		<set name="channelingTickInterval" val="1" />
+		<set name="channelingTickInitialDelay" val="2" />
 		<set name="element" val="2" /> <!-- Wind -->
 		<set name="elementPower" val="20" />
 		<set name="itemConsumeCount" val="5" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="operateType" val="CA1" />
+		<set name="power" val="250" /> <!-- Guessed -->
+		<set name="targetType" val="GROUND" />
 		<set name="mpConsume" val="52" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="12000" />
@@ -1011,12 +1026,15 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Detonates the soul in the selected location to attack surrounding enemies. Inflicts abnormal state and increases PvP Damage. The effect increases as the level of the abnormal state increases. Consumes 5 Spirit Ores. -->
 		<set name="icon" val="icon.skill11138" />
+		<set name="affectRange" val="250" /> <!-- Guessed -->
 		<set name="channelingSkillId" val="11138" />
-		<set name="channelingTickInterval" val="2" /> <!-- Guessed -->
+		<set name="channelingTickInterval" val="1" />
+		<set name="channelingTickInitialDelay" val="2" />
 		<set name="itemConsumeCount" val="5" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
-		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="operateType" val="CA1" />
+		<set name="power" val="250" /> <!-- Guessed -->
+		<set name="targetType" val="GROUND" />
 		<set name="mpConsume" val="52" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="12000" />
@@ -1031,37 +1049,72 @@
 		</channelingEffects>
 	</skill>
 	<skill id="11139" levels="3" name="Ignite">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Engulfed in flames. -->
+		<table name="#dot"> 431 503 720 </table>
 		<set name="icon" val="icon.skill11134" />
+		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="DOT_ATTR" />
+		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
+		<set name="activateRate" val="80" />
+		<set name="basicProperty" val="MEN" />
 		<set name="element" val="0" /> <!-- Fire -->
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="DamOverTime" ticks="1">
+				<param power="#dot" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11140" levels="5" name="Black Shackle">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Bound to dark power. -->
+		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
+		<table name="#runSpd"> 0.90 0.80 0.70 0.60 0.00 </table> <!-- Guessed. TODO: Stun Target at Lv5 -->
 		<set name="icon" val="icon.skill11135" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="5" /> <!-- Guessed -->
+		<set name="abnormalType" val="SPEED_DOWN" />
+		<set name="activateRate" val="80" />
+		<set name="basicProperty" val="MEN" />
 		<set name="element" val="5" /> <!-- Dark -->
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="runSpd" val="#runSpd" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11141" levels="5" name="Freezing Slow">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- The cold is creeping up from your feet. -->
+		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
+		<table name="#runSpd"> 0.90 0.80 0.70 0.60 0.00 </table> <!-- Guessed. TODO: Freeze Target at Lv5 -->
 		<set name="icon" val="icon.skill11136" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="5" /> <!-- Guessed -->
+		<set name="abnormalType" val="SPEED_DOWN" />
+		<set name="activateRate" val="80" />
+		<set name="basicProperty" val="MEN" />
 		<set name="element" val="1" /> <!-- Water -->
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="runSpd" val="#runSpd" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11142" levels="3" name="Damaged Area">
 		<!-- AUTO GENERATED SKILL -->
@@ -1086,30 +1139,58 @@
 	<skill id="11144" levels="5" name="Wind Binding">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Speed has decreased due to the gust. -->
+		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
+		<table name="#runSpd"> 0.90 0.80 0.70 0.60 0.00 </table> <!-- Guessed. TODO: Air Bind Target at Lv5 -->
 		<set name="icon" val="icon.skill11137" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="5" /> <!-- Guessed -->
+		<set name="abnormalType" val="SPEED_DOWN" />
+		<set name="activateRate" val="80" />
+		<set name="basicProperty" val="MEN" />
 		<set name="element" val="2" /> <!-- Wind -->
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="runSpd" val="#runSpd" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11145" levels="5" name="Soul Weakness">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Cursed by a soul. -->
+		<table name="#pvpDef"> 0.90 0.80 0.70 0.60 0.50 </table>
 		<set name="icon" val="icon.skill11138" />
+		<set name="activateRate" val="80" />
+		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="pvpPhysDef" val="#pvpDef" />
+				<mul stat="pvpMagicalDef" val="#pvpDef" />
+				<mul stat="pvpPhysSkillsDef" val="#pvpDef" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11150" levels="1" name="Dark Curse">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 10 sec., decreases target's M. Def. by 50% and Attribute Resistance by 50. -->
 		<set name="icon" val="icon.skill11867" />
+		<set name="abnormalLvl" val="4" />
 		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="MD_DOWN" />
+		<set name="activateRate" val="90" />
+		<set name="basicProperty" val="MEN" />
+		<set name="element" val="5" /> <!-- Dark -->
+		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="38" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -1122,6 +1203,10 @@
 		<for>
 			<effect name="Debuff">
 				<mul stat="mDef" val="0.50" />
+				<sub stat="fireRes" val="50" />
+				<sub stat="waterRes" val="50" />
+				<sub stat="windRes" val="50" />
+				<sub stat="earthRes" val="50" />
 				<sub stat="holyRes" val="50" />
 				<sub stat="darkRes" val="50" />
 			</effect>
@@ -1144,10 +1229,13 @@
 		</for>
 	</skill>
 	<skill id="11152" levels="1" name="Sacrificial Soul">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Sacrifice your servitor to become immune to debuffs for 3 sec. -->
 		<set name="icon" val="icon.skill1395" />
+		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
+		<set name="abnormalType" val="ABNORMAL_INVINCIBILITY" />
+		<set name="abnormalVisualEffect" val="ULTIMATE_DEFENCE" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SUMMON" />
 		<set name="mpConsume" val="276" />
@@ -1222,16 +1310,18 @@
 		</for>
 	</skill>
 	<skill id="11177" levels="7" name="Aqua Crash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts damage with 193 Power to target. Applies a stacking debuff that decreases Speed. At 5 stacks target will be frozen for 2 seconds. When Double Casting is active, the debuff will not stack. Instead, there is a chance target will be frozen for 3 seconds. Over-hit. -->
-		<set name="icon" val="icon.skill10879" />
+		<table name="#mpConsumes"> 37 37 37 37 39 41 43 </table>
 		<table name="#power"> 193 195 197 199 202 206 210 </table>
+		<set name="icon" val="icon.skill10879" />
+		<set name="allStanceSkillId" val="11189" /> <!-- Double Casting skill Id -->
 		<set name="element" val="1" /> <!-- Water -->
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="37" />
+		<set name="targetType" val="ONE" />
+		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="2280" />
@@ -1239,26 +1329,31 @@
 		<set name="effectPoint" val="-687" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="CallSkill">
-				<param skillId="11188" skillLevel="1" skillLevelScaleTo="5" /> <!-- Frozen -->
-			</effect>
-			<effect name="CallSkill">
-				<param skillId="11196" skillLevel="1" chance="33" /> <!-- Frozen --> <!-- Chance totally guessed -->
-			</effect>
+			<effect name="MagicalAttack" />
 		</for>
 	</skill>
 	<skill id="11178" levels="1" name="Frozen">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Use Aqua Crash to decrease target's Speed. -->
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="0" />
+		<for>
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11177" /> <!-- Aqua Crash -->
+				<param skillId="11188" skillLevel="1" skillLevelScaleTo="5" /> <!-- Frozen -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11179" levels="1" name="Yoke Status">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Momentarily immobilized midair. -->
 		<set name="icon" val="icon.skill1042" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="AIR_BIND" />
+		<set name="abnormalVisualEffect" val="AIR_BIND" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="1100" />
@@ -1270,6 +1365,10 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Momentarily immobilized midair. -->
 		<set name="icon" val="icon.skill1042" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="AIR_BIND" />
+		<set name="abnormalVisualEffect" val="AIR_BIND" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="1100" />
@@ -1281,6 +1380,10 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Momentarily immobilized midair. -->
 		<set name="icon" val="icon.skill1042" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="AIR_BIND" />
+		<set name="abnormalVisualEffect" val="AIR_BIND" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="1100" />
@@ -1294,6 +1397,10 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Momentarily immobilized midair. -->
 		<set name="icon" val="icon.skill1042" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="AIR_BIND" />
+		<set name="abnormalVisualEffect" val="AIR_BIND" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="1100" />
@@ -1386,19 +1493,17 @@
 	<skill id="11188" levels="5" name="Frozen">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- The cold is creeping up from your feet. -->
+		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
 		<table name="#runSpd"> 0.90 0.80 0.70 0.60 0.00 </table> <!-- Totally Guessed, TODO Freeze target at level 5 -->
-		<set name="abnormalTime" val="2" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="2" /> <!-- Guessed -->
+		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
 		<set name="isTriggeredSkill" val="true" />
 		<set name="isDebuff" val="true" />
-		<cond>
-			<not>
-				<player active_effect_id="11068" /> <!-- Double Casting -->
-			</not>
-		</cond>
 		<for>
 			<effect name="Debuff">
 				<mul stat="runSpd" val="#runSpd" />
@@ -1406,9 +1511,9 @@
 		</for>
 	</skill>
 	<skill id="11189" levels="7" name="Aqua Crash">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts damage with 193 Power to target. Applies a stacking debuff that decreases Speed. At 5 stacks target will be frozen for 2 seconds. When Double Casting is active, the debuff will not stack. Instead, there is a chance target will be frozen for 3 seconds. Over-hit. -->
+		<table name="#mpConsumes"> 37 37 37 37 39 41 43 </table>
 		<table name="#power"> 193 195 197 199 202 206 210 </table>
 		<set name="icon" val="icon.skill10879" />
 		<set name="element" val="1" /> <!-- Water -->
@@ -1416,7 +1521,7 @@
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
 		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="37" />
+		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
 		<set name="hitTime" val="2280" />
@@ -1424,12 +1529,7 @@
 		<set name="effectPoint" val="-687" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="CallSkill">
-				<param skillId="11188" skillLevel="1" skillLevelScaleTo="5" /> <!-- Frozen -->
-			</effect>
-			<effect name="CallSkill">
-				<param skillId="11196" skillLevel="1" chance="33" /> <!-- Frozen --> <!-- Chance totally guessed -->
-			</effect>
+			<effect name="MagicalAttack" />
 		</for>
 	</skill>
 	<skill id="11190" levels="1" name="Elemental Destruction: Fire">
@@ -1468,29 +1568,32 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="11195" levels="1" name="Aqua Crash - Freeze">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Use Aqua Crash to freeze target. -->
 		<set name="icon" val="icon.skill11011" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="0" />
+		<for>
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="11189" /> <!-- Aqua Crash -->
+				<param skillId="11196" skillLevel="1" chance="33" /> <!-- Frozen --> <!-- Chance guessed -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="11196" levels="1" name="Frozen">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Frozen. -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="FREEZING" /> <!-- Guessed -->
-		<set name="abnormalVisualEffect" val="FROZEN_PILLAR" /> <!-- Guessed -->
+		<set name="abnormalVisualEffect" val="FREEZING2" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
 		<set name="isTriggeredSkill" val="true" />
 		<set name="isDebuff" val="true" />
-		<cond>
-			<player active_effect_id="11068" /> <!-- Double Casting -->
-		</cond>
 		<for>
 			<effect name="Paralyze" />
 		</for>
