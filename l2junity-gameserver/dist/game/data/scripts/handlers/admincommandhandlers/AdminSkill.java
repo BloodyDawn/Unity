@@ -79,7 +79,9 @@ public class AdminSkill implements IAdminCommandHandler
 		"admin_give_all_clan_skills",
 		"admin_remove_all_skills",
 		"admin_add_clan_skill",
-		"admin_setskill"
+		"admin_setskill",
+		"admin_cast",
+		"admin_castnow"
 	};
 	
 	private static Skill[] adminSkills;
@@ -207,6 +209,49 @@ public class AdminSkill implements IAdminCommandHandler
 			activeChar.sendSkillList();
 			activeChar.sendMessage("You added yourself skill " + skill.getName() + "(" + id + ") level " + lvl);
 			activeChar.sendPacket(new AcquireSkillList(activeChar));
+		}
+		else if (command.startsWith("admin_cast"))
+		{
+			final StringTokenizer st = new StringTokenizer(command, " ");
+			command = st.nextToken();
+			if (!st.hasMoreTokens())
+			{
+				activeChar.sendMessage("Skill Id and level are not specified.");
+				activeChar.sendMessage("Usage: //cast <skillId> <skillLevel>");
+				return false;
+			}
+			
+			try
+			{
+				final int skillId = Integer.parseInt(st.nextToken());
+				final int skillLevel = st.hasMoreTokens() ? Integer.parseInt(st.nextToken()) : SkillData.getInstance().getMaxLevel(skillId);
+				final Skill skill = SkillData.getInstance().getSkill(skillId, skillLevel);
+				if (skill == null)
+				{
+					activeChar.sendMessage("Skill with id: " + skillId + ", lvl: " + skillLevel + " not found.");
+					return false;
+				}
+				
+				if (command.equalsIgnoreCase("admin_castnow"))
+				{
+					activeChar.sendMessage("Admin instant casting " + skill.getName() + " (" + skillId + "," + skillLevel + ")");
+					final WorldObject[] targets = skill.getTargetList(activeChar);
+					skill.activateSkill(activeChar, targets);
+				}
+				else
+				{
+					activeChar.sendMessage("Admin casting " + skill.getName() + " (" + skillId + "," + skillLevel + ")");
+					activeChar.doCast(skill);
+				}
+				
+				return true;
+			}
+			catch (Exception e)
+			{
+				activeChar.sendMessage("Failed casting: " + e.getMessage());
+				activeChar.sendMessage("Usage: //cast <skillId> <skillLevel>");
+				return false;
+			}
 		}
 		return true;
 	}

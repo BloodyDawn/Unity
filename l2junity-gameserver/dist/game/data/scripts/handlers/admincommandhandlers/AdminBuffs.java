@@ -25,6 +25,7 @@ import java.util.StringTokenizer;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
+import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -44,6 +45,7 @@ public class AdminBuffs implements IAdminCommandHandler
 	
 	private static final String[] ADMIN_COMMANDS =
 	{
+		"admin_buff",
 		"admin_getbuffs",
 		"admin_getbuffs_ps",
 		"admin_stopbuff",
@@ -59,7 +61,47 @@ public class AdminBuffs implements IAdminCommandHandler
 	@Override
 	public boolean useAdminCommand(String command, PlayerInstance activeChar)
 	{
-		if (command.startsWith("admin_getbuffs"))
+		if (command.startsWith("admin_buff"))
+		{
+			if ((activeChar.getTarget() == null) || !activeChar.getTarget().isCreature())
+			{
+				activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
+				return false;
+			}
+			
+			final StringTokenizer st = new StringTokenizer(command, " ");
+			command = st.nextToken();
+			if (!st.hasMoreTokens())
+			{
+				activeChar.sendMessage("Skill Id and level are not specified.");
+				activeChar.sendMessage("Usage: //buff <skillId> <skillLevel>");
+				return false;
+			}
+			
+			try
+			{
+				final int skillId = Integer.parseInt(st.nextToken());
+				final int skillLevel = st.hasMoreTokens() ? Integer.parseInt(st.nextToken()) : SkillData.getInstance().getMaxLevel(skillId);
+				final Creature target = (Creature) activeChar.getTarget();
+				final Skill skill = SkillData.getInstance().getSkill(skillId, skillLevel);
+				if (skill == null)
+				{
+					activeChar.sendMessage("Skill with id: " + skillId + ", lvl: " + skillLevel + " not found.");
+					return false;
+				}
+				
+				activeChar.sendMessage("Admin buffing " + skill.getName() + " (" + skillId + "," + skillLevel + ")");
+				skill.applyEffects(activeChar, target);
+				return true;
+			}
+			catch (Exception e)
+			{
+				activeChar.sendMessage("Failed buffing: " + e.getMessage());
+				activeChar.sendMessage("Usage: //buff <skillId> <skillLevel>");
+				return false;
+			}
+		}
+		else if (command.startsWith("admin_getbuffs"))
 		{
 			final StringTokenizer st = new StringTokenizer(command, " ");
 			command = st.nextToken();
