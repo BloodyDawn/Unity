@@ -63,11 +63,23 @@ public class AppearanceStone
 		_handType = set.getEnum("handType", AppearanceHandType.class, AppearanceHandType.NONE);
 		_magicType = set.getEnum("magicType", AppearanceMagicType.class, AppearanceMagicType.NONE);
 		
+		// No grade items cannot change appearance, because client doesn't have No-Grade restoration stones.
 		final CrystalType crystalType = set.getEnum("crystalType", CrystalType.class, CrystalType.NONE);
-		if (crystalType != CrystalType.NONE)
+		if (crystalType == CrystalType.NONE)
+		{
+			for (CrystalType cryType : CrystalType.values())
+			{
+				if ((cryType != CrystalType.NONE) && (cryType != CrystalType.EVENT))
+				{
+					addCrystalType(cryType);
+				}
+			}
+		}
+		else
 		{
 			addCrystalType(crystalType);
 		}
+		
 		final AppearanceTargetType targetType = set.getEnum("targetType", AppearanceTargetType.class, AppearanceTargetType.NONE);
 		if (targetType != AppearanceTargetType.NONE)
 		{

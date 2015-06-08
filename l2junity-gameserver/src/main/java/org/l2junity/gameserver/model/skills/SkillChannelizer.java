@@ -93,7 +93,7 @@ public class SkillChannelizer implements Runnable
 		}
 		
 		// Cancel the task and unset it.
-		_task.cancel(true);
+		_task.cancel(false);
 		_task = null;
 		
 		// Cancel target channelization and unset it.

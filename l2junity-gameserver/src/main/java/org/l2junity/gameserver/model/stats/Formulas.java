@@ -26,7 +26,6 @@ import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.xml.impl.HitConditionBonusData;
 import org.l2junity.gameserver.data.xml.impl.KarmaData;
-import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.instancemanager.CastleManager;
 import org.l2junity.gameserver.instancemanager.ClanHallManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
@@ -512,10 +511,10 @@ public final class Formulas
 		
 		final boolean isPvP = attacker.isPlayable() && target.isPlayable();
 		final boolean isPvE = attacker.isPlayable() && target.isAttackable();
-		double power = skill.getPower(isPvP, isPvE);
+		final double power = skill.getPower(isPvP, isPvE);
+		final double ssboost = ss ? 2 : 1;
+		final double proximityBonus = attacker.isBehindTarget() ? 1.2 : attacker.isInFrontOfTarget() ? 1 : 1.1; // Behind: +20% - Side: +10% (TODO: values are unconfirmed, possibly custom, remove or update when confirmed);
 		double damage = 0;
-		double proximityBonus = attacker.isBehindTarget() ? 1.2 : attacker.isInFrontOfTarget() ? 1 : 1.1; // Behind: +20% - Side: +10% (TODO: values are unconfirmed, possibly custom, remove or update when confirmed);
-		double ssboost = ss ? 2 : 1;
 		double pvpBonus = 1;
 		
 		if (isPvP)
@@ -527,17 +526,17 @@ public final class Formulas
 		}
 		
 		// Initial damage
-		double baseMod = ((77 * (power + (attacker.getPAtk(target) * ssboost))) / defence);
+		final double baseMod = ((77 * (power + (attacker.getPAtk(target) * ssboost))) / defence);
 		// Critical
-		double criticalMod = (attacker.calcStat(Stats.CRITICAL_DAMAGE, 1, target, skill));
-		double criticalVulnMod = (target.calcStat(Stats.DEFENCE_CRITICAL_DAMAGE, 1, target, skill));
-		double criticalAddMod = ((attacker.getStat().calcStat(Stats.CRITICAL_DAMAGE_ADD, 0) * 6.1 * 77) / defence);
-		double criticalAddVuln = target.calcStat(Stats.DEFENCE_CRITICAL_DAMAGE_ADD, 0, target, skill);
+		final double criticalMod = (attacker.calcStat(Stats.CRITICAL_DAMAGE, 1, target, skill));
+		final double criticalVulnMod = (target.calcStat(Stats.DEFENCE_CRITICAL_DAMAGE, 1, target, skill));
+		final double criticalAddMod = ((attacker.getStat().calcStat(Stats.CRITICAL_DAMAGE_ADD, 0) * 6.1 * 77) / defence);
+		final double criticalAddVuln = target.calcStat(Stats.DEFENCE_CRITICAL_DAMAGE_ADD, 0, target, skill);
 		// Trait, elements
-		double weaponTraitMod = calcWeaponTraitBonus(attacker, target);
-		double generalTraitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
-		double attributeMod = calcAttributeBonus(attacker, target, skill);
-		double weaponMod = attacker.getRandomDamageMultiplier();
+		final double weaponTraitMod = calcWeaponTraitBonus(attacker, target);
+		final double generalTraitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
+		final double attributeMod = calcAttributeBonus(attacker, target, skill);
+		final double weaponMod = attacker.getRandomDamageMultiplier();
 		
 		double penaltyMod = 1;
 		if ((target instanceof Attackable) && !target.isRaid() && !target.isRaidMinion() && (target.getLevel() >= Config.MIN_NPC_LVL_DMG_PENALTY) && (attacker.getActingPlayer() != null) && ((target.getLevel() - attacker.getActingPlayer().getLevel()) >= 2))
@@ -1388,22 +1387,7 @@ public final class Formulas
 		final double elementMod = calcAttributeBonus(attacker, target, skill);
 		final double traitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false);
 		final double buffDebuffMod = 1 + (target.calcStat(skill.isDebuff() ? Stats.DEBUFF_VULN : Stats.BUFF_VULN, 1, null, null) / 100);
-		double mAtkMod = 1;
-		
-		if (skill.isMagic())
-		{
-			double mAtk = attacker.getMAtk(null, null);
-			double val = 0;
-			if (attacker.isChargedShot(ShotType.BLESSED_SPIRITSHOTS))
-			{
-				val = mAtk * 3.0;// 3.0 is the blessed spiritshot multiplier
-			}
-			val += mAtk;
-			val = (Math.sqrt(val) / target.getMDef(null, null)) * 11.0;
-			mAtkMod = val;
-		}
-		
-		final double rate = baseMod * elementMod * traitMod * mAtkMod * buffDebuffMod;
+		final double rate = baseMod * elementMod * traitMod * buffDebuffMod;
 		final double finalRate = traitMod > 0 ? CommonUtil.constrain(rate, skill.getMinChance(), skill.getMaxChance()) : 0;
 		
 		if (attacker.isDebug())
@@ -1412,7 +1396,6 @@ public final class Formulas
 			set.set("baseMod", baseMod);
 			set.set("elementMod", elementMod);
 			set.set("traitMod", traitMod);
-			set.set("mAtkMod", mAtkMod);
 			set.set("buffDebuffMod", buffDebuffMod);
 			set.set("rate", rate);
 			set.set("finalRate", finalRate);
