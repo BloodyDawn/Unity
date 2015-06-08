@@ -105,14 +105,14 @@ public class Q00645_GhostsOfBatur extends Quest
 			if (getRandom(1000) < CHANCES[npc.getId() - CONTAMINATED_MOREK_WARRIOR])
 			{
 				final QuestState st = getQuestState(player, false);
-				st.giveItems(CURSED_BURIAL_ITEMS, 1);
-				if (st.isCond(1) && (st.getQuestItemsCount(CURSED_BURIAL_ITEMS) >= 500))
+				giveItems(player, CURSED_BURIAL_ITEMS, 1);
+				if (st.isCond(1) && (getQuestItemsCount(player, CURSED_BURIAL_ITEMS) >= 500))
 				{
 					st.setCond(2, true);
 				}
 				else
 				{
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
 		}
@@ -139,17 +139,17 @@ public class Q00645_GhostsOfBatur extends Quest
 			case State.STARTED:
 			{
 				// Support for old quest reward.
-				final long count = st.getQuestItemsCount(CURSED_GRAVE_GOODS);
+				final long count = getQuestItemsCount(player, CURSED_GRAVE_GOODS);
 				if ((count > 0) && (count < 180))
 				{
-					st.giveAdena(56000 + (count * 64), false);
-					st.addExpAndSp(138000, 7997);
+					giveAdena(player, 56000 + (count * 64), false);
+					addExpAndSp(player, 138000, 7997);
 					st.exitQuest(true, true);
 					htmltext = "32017-07.html";
 				}
 				else
 				{
-					htmltext = st.hasQuestItems(CURSED_BURIAL_ITEMS) ? "32017-04.html" : "32017-05.html";
+					htmltext = hasQuestItems(player, CURSED_BURIAL_ITEMS) ? "32017-04.html" : "32017-05.html";
 				}
 				break;
 			}

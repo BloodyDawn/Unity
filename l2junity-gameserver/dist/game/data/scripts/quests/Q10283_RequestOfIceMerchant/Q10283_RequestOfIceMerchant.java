@@ -94,8 +94,8 @@ public class Q10283_RequestOfIceMerchant extends Quest
 		}
 		else if ((npc.getId() == JINIA) && event.equalsIgnoreCase("32760-04.html"))
 		{
-			st.giveAdena(190000, true);
-			st.addExpAndSp(627000, 50300);
+			giveAdena(player, 190000, true);
+			addExpAndSp(player, 627000, 50300);
 			st.exitQuest(false, true);
 			npc.setRunning();
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, MOVE_TO_END);

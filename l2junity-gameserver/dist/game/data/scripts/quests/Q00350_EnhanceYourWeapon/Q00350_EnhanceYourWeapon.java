@@ -24,6 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
+
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.l2junity.Config;
@@ -156,15 +157,15 @@ public class Q00350_EnhanceYourWeapon extends Quest
 		}
 		else if (event.endsWith("-09.htm"))
 		{
-			st.giveItems(RED_SOUL_CRYSTAL0_ID, 1);
+			giveItems(player, RED_SOUL_CRYSTAL0_ID, 1);
 		}
 		else if (event.endsWith("-10.htm"))
 		{
-			st.giveItems(GREEN_SOUL_CRYSTAL0_ID, 1);
+			giveItems(player, GREEN_SOUL_CRYSTAL0_ID, 1);
 		}
 		else if (event.endsWith("-11.htm"))
 		{
-			st.giveItems(BLUE_SOUL_CRYSTAL0_ID, 1);
+			giveItems(player, BLUE_SOUL_CRYSTAL0_ID, 1);
 		}
 		else if (event.equalsIgnoreCase("exit.htm"))
 		{
@@ -235,7 +236,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 		{
 			htmltext = npc.getId() + "-03.htm";
 		}
-		else if (!st.hasQuestItems(RED_SOUL_CRYSTAL0_ID) && !st.hasQuestItems(GREEN_SOUL_CRYSTAL0_ID) && !st.hasQuestItems(BLUE_SOUL_CRYSTAL0_ID))
+		else if (!hasQuestItems(player, RED_SOUL_CRYSTAL0_ID) && !hasQuestItems(player, GREEN_SOUL_CRYSTAL0_ID) && !hasQuestItems(player, BLUE_SOUL_CRYSTAL0_ID))
 		{
 			htmltext = npc.getId() + "-21.htm";
 		}
@@ -246,7 +247,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 	{
 		for (int i = 4629; i < 4665; i++)
 		{
-			if (st.hasQuestItems(i))
+			if (hasQuestItems(st.getPlayer(), i))
 			{
 				return true;
 			}

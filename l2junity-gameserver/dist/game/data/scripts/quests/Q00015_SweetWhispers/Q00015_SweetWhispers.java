@@ -66,7 +66,7 @@ public class Q00015_SweetWhispers extends Quest
 			case "31517-01.html":
 				if (st.isCond(2))
 				{
-					st.addExpAndSp(350531, 28204);
+					addExpAndSp(player, 350531, 28204);
 					st.exitQuest(false, true);
 				}
 				break;

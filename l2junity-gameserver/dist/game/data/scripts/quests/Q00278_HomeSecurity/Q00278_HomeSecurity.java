@@ -79,55 +79,55 @@ public class Q00278_HomeSecurity extends Quest
 				
 				if (i0 < 10)
 				{
-					st.giveItems(960, 1);
+					giveItems(player, 960, 1);
 				}
 				else if (i0 < 19)
 				{
-					st.giveItems(960, 2);
+					giveItems(player, 960, 2);
 				}
 				else if (i0 < 27)
 				{
-					st.giveItems(960, 3);
+					giveItems(player, 960, 3);
 				}
 				else if (i0 < 34)
 				{
-					st.giveItems(960, 4);
+					giveItems(player, 960, 4);
 				}
 				else if (i0 < 40)
 				{
-					st.giveItems(960, 5);
+					giveItems(player, 960, 5);
 				}
 				else if (i0 < 45)
 				{
-					st.giveItems(960, 6);
+					giveItems(player, 960, 6);
 				}
 				else if (i0 < 49)
 				{
-					st.giveItems(960, 7);
+					giveItems(player, 960, 7);
 				}
 				else if (i0 < 52)
 				{
-					st.giveItems(960, 8);
+					giveItems(player, 960, 8);
 				}
 				else if (i0 < 54)
 				{
-					st.giveItems(960, 9);
+					giveItems(player, 960, 9);
 				}
 				else if (i0 < 55)
 				{
-					st.giveItems(960, 10);
+					giveItems(player, 960, 10);
 				}
 				else if (i0 < 75)
 				{
-					st.giveItems(9553, 1);
+					giveItems(player, 9553, 1);
 				}
 				else if (i0 < 90)
 				{
-					st.giveItems(9553, 2);
+					giveItems(player, 9553, 2);
 				}
 				else
 				{
-					st.giveItems(959, 1);
+					giveItems(player, 959, 1);
 				}
 				
 				st.exitQuest(true, true);

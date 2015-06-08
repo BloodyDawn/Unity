@@ -87,11 +87,11 @@ public class Q00237_WindsOfChange extends Quest
 				break;
 			case "30899-06.html":
 				st.startQuest();
-				st.giveItems(FLAUENS_LETTER, 1);
+				giveItems(player, FLAUENS_LETTER, 1);
 				htmltext = event;
 				break;
 			case "30969-02.html":
-				st.takeItems(FLAUENS_LETTER, -1);
+				takeItems(player, FLAUENS_LETTER, -1);
 				htmltext = event;
 				break;
 			case "30969-05.html":
@@ -118,7 +118,7 @@ public class Q00237_WindsOfChange extends Quest
 			case "30969-09.html":
 				if (st.isCond(4))
 				{
-					st.giveItems(DOSKOZER_LETTER, 1);
+					giveItems(player, DOSKOZER_LETTER, 1);
 					st.setCond(5, true);
 					htmltext = event;
 				}
@@ -126,22 +126,22 @@ public class Q00237_WindsOfChange extends Quest
 			case "30969-10.html":
 				if (st.isCond(4))
 				{
-					st.giveItems(ATHENIA_LETTER, 1);
+					giveItems(player, ATHENIA_LETTER, 1);
 					st.setCond(6, true);
 					htmltext = event;
 				}
 				break;
 			case "32641-02.html":
-				st.giveAdena(213876, true);
-				st.giveItems(VICINITY_OF_FOS, 1);
-				st.addExpAndSp(892773, 60012);
+				giveAdena(player, 213876, true);
+				giveItems(player, VICINITY_OF_FOS, 1);
+				addExpAndSp(player, 892773, 60012);
 				st.exitQuest(false, true);
 				htmltext = event;
 				break;
 			case "32643-02.html":
-				st.giveAdena(213876, true);
-				st.giveItems(SUPPORT_CERTIFICATE, 1);
-				st.addExpAndSp(892773, 60012);
+				giveAdena(player, 213876, true);
+				giveItems(player, SUPPORT_CERTIFICATE, 1);
+				addExpAndSp(player, 892773, 60012);
 				st.exitQuest(false, true);
 				htmltext = event;
 				break;
@@ -242,7 +242,7 @@ public class Q00237_WindsOfChange extends Quest
 				if (st.isCompleted())
 				{
 					final QuestState q238 = st.getPlayer().getQuestState(Q00238_SuccessFailureOfBusiness.class.getSimpleName());
-					htmltext = (st.hasQuestItems(VICINITY_OF_FOS) || ((q238 != null) && q238.isCompleted())) ? "32641-03.html" : "32641-05.html";
+					htmltext = (hasQuestItems(talker, VICINITY_OF_FOS) || ((q238 != null) && q238.isCompleted())) ? "32641-03.html" : "32641-05.html";
 				}
 				else if (st.isCond(5))
 				{
@@ -257,7 +257,7 @@ public class Q00237_WindsOfChange extends Quest
 				if (st.isCompleted())
 				{
 					final QuestState q239 = st.getPlayer().getQuestState(Q00239_WontYouJoinUs.class.getSimpleName());
-					htmltext = (st.hasQuestItems(SUPPORT_CERTIFICATE) || ((q239 != null) && q239.isCompleted())) ? "32643-03.html" : "32643-05.html";
+					htmltext = (hasQuestItems(talker, SUPPORT_CERTIFICATE) || ((q239 != null) && q239.isCompleted())) ? "32643-03.html" : "32643-05.html";
 				}
 				else if (st.isCond(5))
 				{

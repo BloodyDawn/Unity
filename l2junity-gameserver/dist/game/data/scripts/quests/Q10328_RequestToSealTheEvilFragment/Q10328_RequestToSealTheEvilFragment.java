@@ -65,7 +65,7 @@ public final class Q10328_RequestToSealTheEvilFragment extends Quest
 			case "32972-04.htm":
 			{
 				qs.startQuest();
-				qs.giveItems(EVIL_FRAGMENT, 1);
+				giveItems(player, EVIL_FRAGMENT, 1);
 				htmltext = event;
 				break;
 			}

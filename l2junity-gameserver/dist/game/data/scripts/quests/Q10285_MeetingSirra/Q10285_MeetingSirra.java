@@ -252,8 +252,8 @@ public final class Q10285_MeetingSirra extends Quest
 							}
 							case 3:
 							{
-								st.giveAdena(283425, true);
-								st.addExpAndSp(939075, 83855);
+								giveAdena(player, 283425, true);
+								addExpAndSp(player, 939075, 83855);
 								st.exitQuest(false, true);
 								htmltext = "32020-08.html";
 								break;

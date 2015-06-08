@@ -67,7 +67,7 @@ public final class Q10290_LandDragonConqueror extends Quest
 		if (event.equals("30755-05.htm"))
 		{
 			st.startQuest();
-			st.giveItems(SHABBY_NECKLACE, 1);
+			giveItems(player, SHABBY_NECKLACE, 1);
 		}
 		return event;
 	}
@@ -86,10 +86,10 @@ public final class Q10290_LandDragonConqueror extends Quest
 			{
 				QuestState st = getQuestState(p, false);
 				
-				if ((st != null) && st.isCond(1) && st.hasQuestItems(SHABBY_NECKLACE))
+				if ((st != null) && st.isCond(1) && hasQuestItems(player, SHABBY_NECKLACE))
 				{
-					st.takeItems(SHABBY_NECKLACE, -1);
-					st.giveItems(MIRACLE_NECKLACE, 1);
+					takeItems(player, SHABBY_NECKLACE, -1);
+					giveItems(player, MIRACLE_NECKLACE, 1);
 					st.setCond(2, true);
 				}
 			}
@@ -123,7 +123,7 @@ public final class Q10290_LandDragonConqueror extends Quest
 				}
 				else
 				{
-					htmltext = st.hasQuestItems(PORTAL_STONE) ? "30755-02.htm" : "30755-01.htm";
+					htmltext = hasQuestItems(player, PORTAL_STONE) ? "30755-02.htm" : "30755-01.htm";
 				}
 				break;
 			}
@@ -131,22 +131,22 @@ public final class Q10290_LandDragonConqueror extends Quest
 			{
 				if (st.isCond(1))
 				{
-					if (st.hasQuestItems(SHABBY_NECKLACE))
+					if (hasQuestItems(player, SHABBY_NECKLACE))
 					{
 						htmltext = "30755-06.html";
 					}
 					else
 					{
-						st.giveItems(SHABBY_NECKLACE, 1);
+						giveItems(player, SHABBY_NECKLACE, 1);
 						htmltext = "30755-07.html";
 					}
 				}
-				else if ((st.isCond(2)) && st.hasQuestItems(MIRACLE_NECKLACE))
+				else if ((st.isCond(2)) && hasQuestItems(player, MIRACLE_NECKLACE))
 				{
 					htmltext = "30755-08.html";
-					st.giveAdena(131236, true);
-					st.addExpAndSp(702557, 76334);
-					st.giveItems(ANTHARAS_SLAYER_CIRCLET, 1);
+					giveAdena(player, 131236, true);
+					addExpAndSp(player, 702557, 76334);
+					giveItems(player, ANTHARAS_SLAYER_CIRCLET, 1);
 					st.exitQuest(false, true);
 				}
 				break;

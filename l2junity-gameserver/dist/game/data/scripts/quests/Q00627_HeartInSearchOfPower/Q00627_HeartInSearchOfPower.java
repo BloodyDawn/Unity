@@ -94,12 +94,12 @@ public class Q00627_HeartInSearchOfPower extends Quest
 				st.startQuest();
 				break;
 			case "31518-06.html":
-				if (st.getQuestItemsCount(BEAD_OF_OBEDIENCE) < BEAD_OF_OBEDIENCE_COUNT_REQUIRED)
+				if (getQuestItemsCount(player, BEAD_OF_OBEDIENCE) < BEAD_OF_OBEDIENCE_COUNT_REQUIRED)
 				{
 					return "31518-05.html";
 				}
-				st.giveItems(SEAL_OF_LIGHT, 1);
-				st.takeItems(BEAD_OF_OBEDIENCE, -1);
+				giveItems(player, SEAL_OF_LIGHT, 1);
+				takeItems(player, BEAD_OF_OBEDIENCE, -1);
 				st.setCond(3);
 				break;
 			case "Adena":
@@ -107,40 +107,40 @@ public class Q00627_HeartInSearchOfPower extends Quest
 			case "Thons":
 			case "Enrias":
 			case "Mold_Hardener":
-				if (!st.hasQuestItems(GEM_OF_SAINTS))
+				if (!hasQuestItems(player, GEM_OF_SAINTS))
 				{
 					return "31518-11.html";
 				}
 				switch (event)
 				{
 					case "Adena":
-						st.giveAdena(100000, true);
+						giveAdena(player, 100000, true);
 						break;
 					case "Asofes":
-						st.rewardItems(ASOFE, 13);
-						st.giveAdena(6400, true);
+						rewardItems(player, ASOFE, 13);
+						giveAdena(player, 6400, true);
 						break;
 					case "Thons":
-						st.rewardItems(THONS, 13);
-						st.giveAdena(6400, true);
+						rewardItems(player, THONS, 13);
+						giveAdena(player, 6400, true);
 						break;
 					case "Enrias":
-						st.rewardItems(ENRIA, 6);
-						st.giveAdena(13600, true);
+						rewardItems(player, ENRIA, 6);
+						giveAdena(player, 13600, true);
 						break;
 					case "Mold_Hardener":
-						st.rewardItems(MOLD_HARDENER, 3);
-						st.giveAdena(17200, true);
+						rewardItems(player, MOLD_HARDENER, 3);
+						giveAdena(player, 17200, true);
 						break;
 				}
 				htmltext = "31518-10.html";
 				st.exitQuest(true);
 				break;
 			case "31519-02.html":
-				if (st.hasQuestItems(SEAL_OF_LIGHT) && st.isCond(3))
+				if (hasQuestItems(player, SEAL_OF_LIGHT) && st.isCond(3))
 				{
-					st.giveItems(GEM_OF_SAINTS, 1);
-					st.takeItems(SEAL_OF_LIGHT, -1);
+					giveItems(player, GEM_OF_SAINTS, 1);
+					takeItems(player, SEAL_OF_LIGHT, -1);
 					st.setCond(4);
 				}
 				else
@@ -167,10 +167,10 @@ public class Q00627_HeartInSearchOfPower extends Quest
 			final float chance = (MONSTERS.get(npc.getId()) * Config.RATE_QUEST_DROP);
 			if (getRandom(1000) < chance)
 			{
-				st.giveItems(BEAD_OF_OBEDIENCE, 1);
-				if (st.getQuestItemsCount(BEAD_OF_OBEDIENCE) < BEAD_OF_OBEDIENCE_COUNT_REQUIRED)
+				giveItems(partyMember, BEAD_OF_OBEDIENCE, 1);
+				if (getQuestItemsCount(partyMember, BEAD_OF_OBEDIENCE) < BEAD_OF_OBEDIENCE_COUNT_REQUIRED)
 				{
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				else
 				{

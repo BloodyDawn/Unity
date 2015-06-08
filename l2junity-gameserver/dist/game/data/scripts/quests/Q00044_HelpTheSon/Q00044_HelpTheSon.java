@@ -136,7 +136,7 @@ public final class Q00044_HelpTheSon extends Quest
 			}
 			else
 			{
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		return super.onKill(npc, player, isSummon);

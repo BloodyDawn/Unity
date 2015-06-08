@@ -168,7 +168,7 @@ public final class Q00128_PailakaSongOfIceAndFire extends Quest
 				giveAdena(player, 187200, true);
 				addExpAndSp(player, 1860000, 446);
 				giveItems(player, SCROLL_OF_ESCAPE, 1);
-				st.giveItems(Integer.parseInt(event), 1);
+				giveItems(player, Integer.parseInt(event), 1);
 				htmltext = "32510-2.htm";
 				break;
 			}

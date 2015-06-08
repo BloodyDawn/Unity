@@ -71,7 +71,7 @@ public final class Q00904_DragonTrophyAntharas extends Quest
 		}
 		
 		String htmltext = null;
-		if ((player.getLevel() >= MIN_LEVEL) && st.hasQuestItems(PORTAL_STONE))
+		if ((player.getLevel() >= MIN_LEVEL) && hasQuestItems(player, PORTAL_STONE))
 		{
 			switch (event)
 			{
@@ -112,7 +112,7 @@ public final class Q00904_DragonTrophyAntharas extends Quest
 				{
 					htmltext = "30755-02.html";
 				}
-				else if (!st.hasQuestItems(PORTAL_STONE))
+				else if (!hasQuestItems(player, PORTAL_STONE))
 				{
 					htmltext = "30755-04.html";
 				}
@@ -133,8 +133,8 @@ public final class Q00904_DragonTrophyAntharas extends Quest
 					}
 					case 2:
 					{
-						st.giveItems(MEDAL_OF_GLORY, 30);
-						st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						giveItems(player, MEDAL_OF_GLORY, 30);
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 						st.exitQuest(QuestType.DAILY, true);
 						htmltext = "30755-09.html";
 						break;
@@ -155,7 +155,7 @@ public final class Q00904_DragonTrophyAntharas extends Quest
 					{
 						htmltext = "30755-02.html";
 					}
-					else if (!st.hasQuestItems(PORTAL_STONE))
+					else if (!hasQuestItems(player, PORTAL_STONE))
 					{
 						htmltext = "30755-04.html";
 					}

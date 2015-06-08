@@ -91,7 +91,7 @@ public final class AwakeningMaster extends AbstractNpcAI
 			case "awakening":
 			{
 				final QuestState st2 = player.getQuestState(Q10338_SeizeYourDestiny.class.getSimpleName());
-				if (st.hasQuestItems(SCROLL_OF_AFTERLIFE) && (player.getLevel() > 84) && (!player.isSubClassActive() || player.isDualClassActive()) && player.isInCategory(CategoryType.FOURTH_CLASS_GROUP) && (st2 != null) && st2.isCompleted())
+				if (hasQuestItems(player, SCROLL_OF_AFTERLIFE) && (player.getLevel() > 84) && (!player.isSubClassActive() || player.isDualClassActive()) && player.isInCategory(CategoryType.FOURTH_CLASS_GROUP) && (st2 != null) && st2.isCompleted())
 				{
 					switch (npc.getId())
 					{

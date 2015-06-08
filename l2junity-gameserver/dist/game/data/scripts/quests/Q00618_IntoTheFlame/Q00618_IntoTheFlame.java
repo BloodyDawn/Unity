@@ -82,13 +82,13 @@ public class Q00618_IntoTheFlame extends Quest
 				htmltext = event;
 				break;
 			case "31540-05.html":
-				if (!st.hasQuestItems(VACUALITE))
+				if (!hasQuestItems(player, VACUALITE))
 				{
 					htmltext = "31540-03.htm";
 				}
 				else
 				{
-					st.giveItems(VACUALITE_FLOATING_STONE, 1);
+					giveItems(player, VACUALITE_FLOATING_STONE, 1);
 					st.exitQuest(true, true);
 					htmltext = event;
 				}
@@ -101,10 +101,10 @@ public class Q00618_IntoTheFlame extends Quest
 				}
 				break;
 			case "31271-05.html":
-				if ((st.getQuestItemsCount(VACUALITE_ORE) == REQUIRED_COUNT) && st.isCond(3))
+				if ((getQuestItemsCount(player, VACUALITE_ORE) == REQUIRED_COUNT) && st.isCond(3))
 				{
-					st.takeItems(VACUALITE_ORE, -1);
-					st.giveItems(VACUALITE, 1);
+					takeItems(player, VACUALITE_ORE, -1);
+					giveItems(player, VACUALITE, 1);
 					st.setCond(4, true);
 					htmltext = event;
 				}
@@ -124,16 +124,16 @@ public class Q00618_IntoTheFlame extends Quest
 		if (member != null)
 		{
 			final QuestState qs = getQuestState(member, false);
-			if ((qs.getQuestItemsCount(VACUALITE_ORE) < REQUIRED_COUNT) && (getRandom(1000) < MONSTERS.get(npc.getId())))
+			if ((getQuestItemsCount(member, VACUALITE_ORE) < REQUIRED_COUNT) && (getRandom(1000) < MONSTERS.get(npc.getId())))
 			{
-				qs.giveItems(VACUALITE_ORE, 1);
-				if (qs.getQuestItemsCount(VACUALITE_ORE) >= REQUIRED_COUNT)
+				giveItems(member, VACUALITE_ORE, 1);
+				if (getQuestItemsCount(member, VACUALITE_ORE) >= REQUIRED_COUNT)
 				{
 					qs.setCond(3, true);
 				}
 				else
 				{
-					qs.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					playSound(member, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
 		}

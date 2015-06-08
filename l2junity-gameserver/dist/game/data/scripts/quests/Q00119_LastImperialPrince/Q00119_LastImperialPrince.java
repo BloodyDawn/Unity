@@ -74,8 +74,8 @@ public class Q00119_LastImperialPrince extends Quest
 			{
 				if (st.isCond(2))
 				{
-					st.giveAdena(150292, true);
-					st.addExpAndSp(902439, 90067);
+					giveAdena(player, 150292, true);
+					addExpAndSp(player, 902439, 90067);
 					st.exitQuest(false, true);
 					htmltext = event;
 				}
@@ -83,12 +83,12 @@ public class Q00119_LastImperialPrince extends Quest
 			}
 			case "brooch":
 			{
-				htmltext = (st.hasQuestItems(ANTIQUE_BROOCH)) ? "32009-02.html" : "32009-03.html";
+				htmltext = (hasQuestItems(player, ANTIQUE_BROOCH)) ? "32009-02.html" : "32009-03.html";
 				break;
 			}
 			case "32009-04.html":
 			{
-				if (st.isCond(1) && st.hasQuestItems(ANTIQUE_BROOCH))
+				if (st.isCond(1) && hasQuestItems(player, ANTIQUE_BROOCH))
 				{
 					st.setCond(2, true);
 					htmltext = event;
@@ -121,7 +121,7 @@ public class Q00119_LastImperialPrince extends Quest
 			}
 			case State.CREATED:
 			{
-				htmltext = ((player.getLevel() >= MIN_LEVEL) && st.hasQuestItems(ANTIQUE_BROOCH)) ? "31453-01.htm" : "31453-05.html";
+				htmltext = ((player.getLevel() >= MIN_LEVEL) && hasQuestItems(player, ANTIQUE_BROOCH)) ? "31453-01.htm" : "31453-05.html";
 				break;
 			}
 			case State.STARTED:
@@ -130,7 +130,7 @@ public class Q00119_LastImperialPrince extends Quest
 				{
 					if (st.isCond(1))
 					{
-						if (st.hasQuestItems(ANTIQUE_BROOCH))
+						if (hasQuestItems(player, ANTIQUE_BROOCH))
 						{
 							htmltext = "31453-07.html";
 						}

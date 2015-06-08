@@ -101,7 +101,7 @@ public class Q00701_ProofOfExistence extends Quest
 		{
 			return super.onKill(npc, player, isSummon);
 		}
-		final QuestState st = getQuestState(member, false);
+		
 		if (npc.getId() == ENIRA)
 		{
 			final int chance = getRandom(1000);
@@ -126,13 +126,13 @@ public class Q00701_ProofOfExistence extends Quest
 			{
 				count = getRandom(5) + 14;
 			}
-			st.giveItems(BANSHEE_QUEENS_EYE, count);
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			giveItems(player, BANSHEE_QUEENS_EYE, count);
+			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		else if (getRandom(1000) < MOBS.get(npc.getId()))
 		{
-			st.giveItems(DEADMANS_REMAINS, 1);
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			giveItems(player, DEADMANS_REMAINS, 1);
+			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		return super.onKill(npc, player, isSummon);
 	}
@@ -154,17 +154,17 @@ public class Q00701_ProofOfExistence extends Quest
 				htmltext = ((player.getLevel() >= MIN_LEVEL) && (qs != null) && qs.isCompleted()) ? "32559-01.htm" : "32559-02.htm";
 				break;
 			case State.STARTED:
-				if (st.hasQuestItems(BANSHEE_QUEENS_EYE))
+				if (hasQuestItems(player, BANSHEE_QUEENS_EYE))
 				{
-					st.giveAdena((st.getQuestItemsCount(DEADMANS_REMAINS) * 2500) + (st.getQuestItemsCount(BANSHEE_QUEENS_EYE) * 50000) + 23835, true);
-					st.takeItems(BANSHEE_QUEENS_EYE, -1);
-					st.takeItems(DEADMANS_REMAINS, -1);
+					giveAdena(player, (getQuestItemsCount(player, DEADMANS_REMAINS) * 2500) + (getQuestItemsCount(player, BANSHEE_QUEENS_EYE) * 50000) + 23835, true);
+					takeItems(player, BANSHEE_QUEENS_EYE, -1);
+					takeItems(player, DEADMANS_REMAINS, -1);
 					htmltext = "32559-07.html";
 				}
-				else if (st.hasQuestItems(DEADMANS_REMAINS))
+				else if (hasQuestItems(player, DEADMANS_REMAINS))
 				{
-					st.giveAdena(st.getQuestItemsCount(DEADMANS_REMAINS) * 2500, true);
-					st.takeItems(DEADMANS_REMAINS, -1);
+					giveAdena(player, getQuestItemsCount(player, DEADMANS_REMAINS) * 2500, true);
+					takeItems(player, DEADMANS_REMAINS, -1);
 					htmltext = "32559-06.html";
 				}
 				else

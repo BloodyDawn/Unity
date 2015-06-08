@@ -92,14 +92,14 @@ public class Q00240_ImTheOnlyOneYouCanTrust extends Quest
 		}
 		
 		final QuestState st = getQuestState(partyMember, false);
-		st.giveItems(STAKATO_FANG, 1);
-		if (st.getQuestItemsCount(STAKATO_FANG) >= 25)
+		giveItems(partyMember, STAKATO_FANG, 1);
+		if (getQuestItemsCount(partyMember, STAKATO_FANG) >= 25)
 		{
 			st.setCond(2, true);
 		}
 		else
 		{
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		return super.onKill(npc, player, isSummon);
 	}
@@ -123,14 +123,14 @@ public class Q00240_ImTheOnlyOneYouCanTrust extends Quest
 				switch (st.getCond())
 				{
 					case 1:
-						htmltext = (!st.hasQuestItems(STAKATO_FANG)) ? "32640-8.html" : "32640-9.html";
+						htmltext = (!hasQuestItems(player, STAKATO_FANG)) ? "32640-8.html" : "32640-9.html";
 						break;
 					case 2:
-						if (st.getQuestItemsCount(STAKATO_FANG) >= 25)
+						if (getQuestItemsCount(player, STAKATO_FANG) >= 25)
 						{
-							st.giveAdena(147200, true);
-							st.takeItems(STAKATO_FANG, -1);
-							st.addExpAndSp(589542, 36800);
+							giveAdena(player, 147200, true);
+							takeItems(player, STAKATO_FANG, -1);
+							addExpAndSp(player, 589542, 36800);
 							st.exitQuest(false, true);
 							htmltext = "32640-10.html";
 						}

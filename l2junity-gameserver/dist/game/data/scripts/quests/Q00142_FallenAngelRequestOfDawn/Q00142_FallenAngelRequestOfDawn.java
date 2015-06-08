@@ -97,7 +97,7 @@ public class Q00142_FallenAngelRequestOfDawn extends Quest
 				st.startQuest();
 				break;
 			case "30894-03.html":
-				st.giveItems(CRYPTOGRAM_OF_THE_ANGEL_SEARCH, 1);
+				giveItems(player, CRYPTOGRAM_OF_THE_ANGEL_SEARCH, 1);
 				st.setCond(2, true);
 				break;
 			case "30289-05.html":
@@ -141,7 +141,7 @@ public class Q00142_FallenAngelRequestOfDawn extends Quest
 			st = player.getQuestState(getName());
 			if (st.isCond(5))
 			{
-				st.giveItems(FALLEN_ANGEL_BLOOD, 1);
+				giveItems(player, FALLEN_ANGEL_BLOOD, 1);
 				st.setCond(6, true);
 				isAngelSpawned = false;
 			}
@@ -154,15 +154,15 @@ public class Q00142_FallenAngelRequestOfDawn extends Quest
 				st = getQuestState(member, false);
 				if (getRandom(1000) < MOBS.get(npc.getId()))
 				{
-					st.giveItems(PROPHECY_FRAGMENT, 1);
-					if (st.getQuestItemsCount(PROPHECY_FRAGMENT) >= FRAGMENT_COUNT)
+					giveItems(member, PROPHECY_FRAGMENT, 1);
+					if (getQuestItemsCount(member, PROPHECY_FRAGMENT) >= FRAGMENT_COUNT)
 					{
-						st.takeItems(PROPHECY_FRAGMENT, -1);
+						takeItems(member, PROPHECY_FRAGMENT, -1);
 						st.setCond(5, true);
 					}
 					else
 					{
-						st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						playSound(member, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
 			}
@@ -216,7 +216,7 @@ public class Q00142_FallenAngelRequestOfDawn extends Quest
 							}
 							else
 							{
-								st.takeItems(CRYPTOGRAM_OF_THE_ANGEL_SEARCH, -1);
+								takeItems(player, CRYPTOGRAM_OF_THE_ANGEL_SEARCH, -1);
 								st.set("talk", "1");
 								htmltext = "30289-02.html";
 							}
@@ -227,10 +227,10 @@ public class Q00142_FallenAngelRequestOfDawn extends Quest
 							htmltext = "30289-06.html";
 							break;
 						case 6:
-							st.giveAdena(92676, true);
+							giveAdena(player, 92676, true);
 							if (player.getLevel() <= MAX_REWARD_LEVEL)
 							{
-								st.addExpAndSp(223036, 13091);
+								addExpAndSp(player, 223036, 13091);
 							}
 							st.exitQuest(false, true);
 							htmltext = "30289-07.html";

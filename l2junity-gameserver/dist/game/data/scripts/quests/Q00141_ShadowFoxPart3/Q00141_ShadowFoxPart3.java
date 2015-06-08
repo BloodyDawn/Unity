@@ -101,10 +101,10 @@ public class Q00141_ShadowFoxPart3 extends Quest
 				st.unset("talk");
 				break;
 			case "30894-21.html":
-				st.giveAdena(88888, true);
+				giveAdena(player, 88888, true);
 				if (player.getLevel() <= MAX_REWARD_LEVEL)
 				{
-					st.addExpAndSp(278005, 17058);
+					addExpAndSp(player, 278005, 17058);
 				}
 				st.exitQuest(false, true);
 				
@@ -132,14 +132,14 @@ public class Q00141_ShadowFoxPart3 extends Quest
 		final QuestState st = getQuestState(member, false);
 		if ((getRandom(100) < MOBS.get(npc.getId())))
 		{
-			st.giveItems(PREDECESSORS_REPORT, 1);
-			if (st.getQuestItemsCount(PREDECESSORS_REPORT) >= REPORT_COUNT)
+			giveItems(player, PREDECESSORS_REPORT, 1);
+			if (getQuestItemsCount(player, PREDECESSORS_REPORT) >= REPORT_COUNT)
 			{
 				st.setCond(3, true);
 			}
 			else
 			{
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		return super.onKill(npc, player, isSummon);
@@ -182,7 +182,7 @@ public class Q00141_ShadowFoxPart3 extends Quest
 						else
 						{
 							htmltext = "30894-08.html";
-							st.takeItems(PREDECESSORS_REPORT, -1);
+							takeItems(player, PREDECESSORS_REPORT, -1);
 							st.set("talk", "1");
 						}
 						break;

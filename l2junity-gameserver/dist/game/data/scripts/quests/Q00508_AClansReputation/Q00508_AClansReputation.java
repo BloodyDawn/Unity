@@ -134,7 +134,7 @@ public class Q00508_AClansReputation extends Quest
 		}
 		else
 		{
-			PlayerInstance pleader = player.getClan().getLeader().getPlayerInstance();
+			final PlayerInstance pleader = player.getClan().getLeader().getPlayerInstance();
 			if ((pleader != null) && player.isInsideRadius(pleader, 1500, true, false))
 			{
 				st = pleader.getQuestState(getName());
@@ -143,13 +143,13 @@ public class Q00508_AClansReputation extends Quest
 		
 		if ((st != null) && st.isStarted())
 		{
-			int raid = st.getInt("raid");
+			final int raid = st.getInt("raid");
 			if (REWARD_POINTS.containsKey(raid))
 			{
-				if ((npc.getId() == REWARD_POINTS.get(raid).get(0)) && !st.hasQuestItems(REWARD_POINTS.get(raid).get(1)))
+				if ((npc.getId() == REWARD_POINTS.get(raid).get(0)) && !hasQuestItems(st.getPlayer(), REWARD_POINTS.get(raid).get(1)))
 				{
-					st.rewardItems(REWARD_POINTS.get(raid).get(1), 1);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					rewardItems(st.getPlayer(), REWARD_POINTS.get(raid).get(1), 1);
+					playSound(st.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
 		}
@@ -183,11 +183,11 @@ public class Q00508_AClansReputation extends Quest
 				
 				if (REWARD_POINTS.containsKey(raid))
 				{
-					if (st.hasQuestItems(REWARD_POINTS.get(raid).get(1)))
+					if (hasQuestItems(player, REWARD_POINTS.get(raid).get(1)))
 					{
 						htmltext = "30868-" + raid + "b.html";
-						st.playSound(QuestSound.ITEMSOUND_QUEST_FANFARE_1);
-						st.takeItems(REWARD_POINTS.get(raid).get(1), -1);
+						playSound(player, QuestSound.ITEMSOUND_QUEST_FANFARE_1);
+						takeItems(player, REWARD_POINTS.get(raid).get(1), -1);
 						final int rep = REWARD_POINTS.get(raid).get(2);
 						clan.addReputationScore(rep, true);
 						player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_SUCCESSFULLY_COMPLETED_A_CLAN_QUEST_S1_POINT_S_HAVE_BEEN_ADDED_TO_YOUR_CLAN_REPUTATION).addInt(rep));

@@ -81,7 +81,7 @@ public final class Q00451_LuciensAltar extends Quest
 		else if (event.equals("30537-05.htm"))
 		{
 			st.startQuest();
-			st.giveItems(REPLENISHED_BEAD, 5);
+			giveItems(player, REPLENISHED_BEAD, 5);
 			st.setQuestLocation(NpcStringId.MITHRIL_MINES_LV_81);
 			sendNpcLogList(player);
 			htmltext = event;
@@ -135,7 +135,7 @@ public final class Q00451_LuciensAltar extends Quest
 					else
 					{
 						st.exitQuest(QuestType.DAILY, true);
-						st.giveAdena(742_800, true);
+						giveAdena(player, 742_800, true);
 						if (player.getLevel() >= MIN_LEVEL)
 						{
 							addExpAndSp(player, 13_773_960, 3_305);
@@ -146,16 +146,16 @@ public final class Q00451_LuciensAltar extends Quest
 				}
 			}
 		}
-		else if (st.isCond(1) && st.hasQuestItems(REPLENISHED_BEAD))
+		else if (st.isCond(1) && hasQuestItems(player, REPLENISHED_BEAD))
 		{
 			if (st.getInt(String.valueOf(npcId)) == 0)
 			{
 				st.set(String.valueOf(npcId), "1");
-				st.takeItems(REPLENISHED_BEAD, 1);
-				st.giveItems(DISCHARGED_BEAD, 1);
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				takeItems(player, REPLENISHED_BEAD, 1);
+				giveItems(player, DISCHARGED_BEAD, 1);
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				
-				if (st.getQuestItemsCount(DISCHARGED_BEAD) >= 5)
+				if (getQuestItemsCount(player, DISCHARGED_BEAD) >= 5)
 				{
 					st.setCond(2, true);
 					st.unsetQuestLocation();

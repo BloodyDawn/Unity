@@ -28,19 +28,17 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 
 /**
- * Olympiad Starter (551)<br>
+ * Olympiad Starter (551)
  * @author Gnacik
- * @since Nov. 5, 2011, improved by jurchiks
- * @version 2011-02-04 Based on official H5 PTS server
  */
 public class Q00551_OlympiadStarter extends Quest
 {
+	// NPC
 	private static final int MANAGER = 31688;
-	
+	// Items
 	private static final int CERT_3 = 17238;
 	private static final int CERT_5 = 17239;
 	private static final int CERT_10 = 17240;
-	
 	private static final int OLY_CHEST = 17169;
 	private static final int MEDAL_OF_GLORY = 21874;
 	
@@ -69,13 +67,13 @@ public class Q00551_OlympiadStarter extends Quest
 		}
 		else if (event.equalsIgnoreCase("31688-04.html"))
 		{
-			final long count = st.getQuestItemsCount(CERT_3) + st.getQuestItemsCount(CERT_5);
+			final long count = getQuestItemsCount(player, CERT_3) + getQuestItemsCount(player, CERT_5);
 			if (count > 0)
 			{
-				st.giveItems(OLY_CHEST, count); // max 2
+				giveItems(player, OLY_CHEST, count); // max 2
 				if (count == 2)
 				{
-					st.giveItems(MEDAL_OF_GLORY, 3);
+					giveItems(player, MEDAL_OF_GLORY, 3);
 				}
 				st.exitQuest(QuestType.DAILY, true);
 			}
@@ -99,21 +97,21 @@ public class Q00551_OlympiadStarter extends Quest
 				switch (matches)
 				{
 					case 3:
-						if (!st.hasQuestItems(CERT_3))
+						if (!hasQuestItems(loser, CERT_3))
 						{
-							st.giveItems(CERT_3, 1);
+							giveItems(loser, CERT_3, 1);
 						}
 						break;
 					case 5:
-						if (!st.hasQuestItems(CERT_5))
+						if (!hasQuestItems(loser, CERT_5))
 						{
-							st.giveItems(CERT_5, 1);
+							giveItems(loser, CERT_5, 1);
 						}
 						break;
 					case 10:
-						if (!st.hasQuestItems(CERT_10))
+						if (!hasQuestItems(loser, CERT_10))
 						{
-							st.giveItems(CERT_10, 1);
+							giveItems(loser, CERT_10, 1);
 						}
 						break;
 				}
@@ -139,21 +137,21 @@ public class Q00551_OlympiadStarter extends Quest
 				switch (matches)
 				{
 					case 3:
-						if (!st.hasQuestItems(CERT_3))
+						if (!hasQuestItems(player, CERT_3))
 						{
-							st.giveItems(CERT_3, 1);
+							giveItems(player, CERT_3, 1);
 						}
 						break;
 					case 5:
-						if (!st.hasQuestItems(CERT_5))
+						if (!hasQuestItems(player, CERT_5))
 						{
-							st.giveItems(CERT_5, 1);
+							giveItems(player, CERT_5, 1);
 						}
 						break;
 					case 10:
-						if (!st.hasQuestItems(CERT_10))
+						if (!hasQuestItems(player, CERT_10))
 						{
-							st.giveItems(CERT_10, 1);
+							giveItems(player, CERT_10, 1);
 						}
 						break;
 				}
@@ -175,21 +173,21 @@ public class Q00551_OlympiadStarter extends Quest
 				switch (matches)
 				{
 					case 3:
-						if (!st.hasQuestItems(CERT_3))
+						if (!hasQuestItems(player, CERT_3))
 						{
-							st.giveItems(CERT_3, 1);
+							giveItems(player, CERT_3, 1);
 						}
 						break;
 					case 5:
-						if (!st.hasQuestItems(CERT_5))
+						if (!hasQuestItems(player, CERT_5))
 						{
-							st.giveItems(CERT_5, 1);
+							giveItems(player, CERT_5, 1);
 						}
 						break;
 					case 10:
-						if (!st.hasQuestItems(CERT_10))
+						if (!hasQuestItems(player, CERT_10))
 						{
-							st.giveItems(CERT_10, 1);
+							giveItems(player, CERT_10, 1);
 						}
 						break;
 				}
@@ -230,12 +228,12 @@ public class Q00551_OlympiadStarter extends Quest
 		}
 		else if (st.isStarted())
 		{
-			final long count = st.getQuestItemsCount(CERT_3) + st.getQuestItemsCount(CERT_5) + st.getQuestItemsCount(CERT_10);
+			final long count = getQuestItemsCount(player, CERT_3) + getQuestItemsCount(player, CERT_5) + getQuestItemsCount(player, CERT_10);
 			if (count == 3)
 			{
 				htmltext = "31688-04.html";
-				st.giveItems(OLY_CHEST, 4);
-				st.giveItems(MEDAL_OF_GLORY, 5);
+				giveItems(player, OLY_CHEST, 4);
+				giveItems(player, MEDAL_OF_GLORY, 5);
 				st.exitQuest(QuestType.DAILY, true);
 			}
 			else

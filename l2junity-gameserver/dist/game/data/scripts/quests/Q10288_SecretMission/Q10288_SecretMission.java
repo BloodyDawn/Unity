@@ -70,19 +70,19 @@ public class Q10288_SecretMission extends Quest
 				break;
 			case "31350-05.htm":
 				st.startQuest();
-				st.giveItems(LETTER, 1);
+				giveItems(player, LETTER, 1);
 				break;
 			case "32780-03.html":
-				if (st.isCond(1) && st.hasQuestItems(LETTER))
+				if (st.isCond(1) && hasQuestItems(player, LETTER))
 				{
 					st.setCond(2, true);
 				}
 				break;
 			case "32757-03.html":
-				if (st.isCond(2) && st.hasQuestItems(LETTER))
+				if (st.isCond(2) && hasQuestItems(player, LETTER))
 				{
-					st.giveAdena(106583, true);
-					st.addExpAndSp(417788, 46320);
+					giveAdena(player, 106583, true);
+					addExpAndSp(player, 417788, 46320);
 					st.exitQuest(false, true);
 				}
 				break;
@@ -140,7 +140,7 @@ public class Q10288_SecretMission extends Quest
 			case AQUILANI:
 				if (st.isStarted())
 				{
-					if (st.isCond(1) && st.hasQuestItems(LETTER))
+					if (st.isCond(1) && hasQuestItems(player, LETTER))
 					{
 						htmltext = "32780-01.html";
 					}
@@ -151,7 +151,7 @@ public class Q10288_SecretMission extends Quest
 				}
 				break;
 			case GREYMORE:
-				if (st.isStarted() && st.isCond(2) && st.hasQuestItems(LETTER))
+				if (st.isStarted() && st.isCond(2) && hasQuestItems(player, LETTER))
 				{
 					return "32757-01.html";
 				}

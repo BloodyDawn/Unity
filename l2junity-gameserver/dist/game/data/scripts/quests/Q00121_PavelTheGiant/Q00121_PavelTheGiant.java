@@ -56,7 +56,7 @@ public class Q00121_PavelTheGiant extends Quest
 				st.startQuest();
 				break;
 			case "32041-02.html":
-				st.addExpAndSp(346320, 26069);
+				addExpAndSp(player, 346320, 26069);
 				st.exitQuest(false, true);
 				break;
 		}

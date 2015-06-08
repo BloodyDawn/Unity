@@ -97,7 +97,7 @@ public final class Q00432_BirthdayPartySong extends Quest
 			}
 			else
 			{
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		return super.onKill(npc, player, isSummon);

@@ -59,21 +59,21 @@ public class Q00019_GoToThePastureland extends Quest
 		if (event.equalsIgnoreCase("31302-02.htm"))
 		{
 			st.startQuest();
-			st.giveItems(VEAL, 1);
+			giveItems(player, VEAL, 1);
 		}
 		else if (event.equalsIgnoreCase("31537-02.html"))
 		{
-			if (st.hasQuestItems(YOUNG_WILD_BEAST_MEAT))
+			if (hasQuestItems(player, YOUNG_WILD_BEAST_MEAT))
 			{
-				st.giveAdena(50000, true);
-				st.addExpAndSp(136766, 12688);
+				giveAdena(player, 50000, true);
+				addExpAndSp(player, 136766, 12688);
 				st.exitQuest(false, true);
 				htmltext = "31537-02.html";
 			}
-			else if (st.hasQuestItems(VEAL))
+			else if (hasQuestItems(player, VEAL))
 			{
-				st.giveAdena(147200, true);
-				st.addExpAndSp(385040, 75250);
+				giveAdena(player, 147200, true);
+				addExpAndSp(player, 385040, 75250);
 				st.exitQuest(false, true);
 				htmltext = "31537-02.html";
 			}

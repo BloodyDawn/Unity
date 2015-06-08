@@ -56,13 +56,13 @@ public class Q00110_ToThePrimevalIsle extends Quest
 		switch (event)
 		{
 			case "31338-1.html":
-				st.giveItems(ANCIENT_BOOK, 1);
+				giveItems(player, ANCIENT_BOOK, 1);
 				st.startQuest();
 				break;
 			case "32113-2.html":
 			case "32113-2a.html":
-				st.giveAdena(191678, true);
-				st.addExpAndSp(251602, 25245);
+				giveAdena(player, 191678, true);
+				addExpAndSp(player, 251602, 25245);
 				st.exitQuest(false, true);
 				break;
 		}

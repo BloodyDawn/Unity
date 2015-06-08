@@ -58,13 +58,13 @@ public class Q00013_ParcelDelivery extends Quest
 		{
 			case "31274-02.html":
 				st.startQuest();
-				st.giveItems(PACKAGE, 1);
+				giveItems(player, PACKAGE, 1);
 				break;
 			case "31539-01.html":
-				if (st.isCond(1) && st.hasQuestItems(PACKAGE))
+				if (st.isCond(1) && hasQuestItems(player, PACKAGE))
 				{
-					st.giveAdena(157834, true);
-					st.addExpAndSp(589092, 58794);
+					giveAdena(player, 157834, true);
+					addExpAndSp(player, 589092, 58794);
 					st.exitQuest(false, true);
 				}
 				else

@@ -292,8 +292,8 @@ public final class Q10284_AcquisitionOfDivineSword extends Quest
 							}
 							case 3:
 							{
-								st.giveAdena(296425, true);
-								st.addExpAndSp(921805, 82230);
+								giveAdena(player, 296425, true);
+								addExpAndSp(player, 921805, 82230);
 								st.exitQuest(false, true);
 								htmltext = "32654-04.html";
 								break;
@@ -312,8 +312,8 @@ public final class Q10284_AcquisitionOfDivineSword extends Quest
 							}
 							case 3:
 							{
-								st.giveAdena(296425, true);
-								st.addExpAndSp(921805, 82230);
+								giveAdena(player, 296425, true);
+								addExpAndSp(player, 921805, 82230);
 								st.exitQuest(false, true);
 								htmltext = "32653-04.html";
 								break;

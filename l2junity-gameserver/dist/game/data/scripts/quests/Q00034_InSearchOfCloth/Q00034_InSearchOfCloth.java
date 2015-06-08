@@ -87,21 +87,21 @@ public class Q00034_InSearchOfCloth extends Quest
 				st.setCond(4, true);
 				break;
 			case "30165-05.html":
-				if (st.getQuestItemsCount(SPINNERET) < SPINNERET_COUNT)
+				if (getQuestItemsCount(player, SPINNERET) < SPINNERET_COUNT)
 				{
 					return getNoQuestMsg(player);
 				}
-				st.takeItems(SPINNERET, SPINNERET_COUNT);
-				st.giveItems(SKEIN_OF_YARN, 1);
+				takeItems(player, SPINNERET, SPINNERET_COUNT);
+				giveItems(player, SKEIN_OF_YARN, 1);
 				st.setCond(6, true);
 				break;
 			case "30088-10.html":
-				if ((st.getQuestItemsCount(SUEDE) >= SUEDE_COUNT) && (st.getQuestItemsCount(THREAD) >= THREAD_COUNT) && st.hasQuestItems(SKEIN_OF_YARN))
+				if ((getQuestItemsCount(player, SUEDE) >= SUEDE_COUNT) && (getQuestItemsCount(player, THREAD) >= THREAD_COUNT) && hasQuestItems(player, SKEIN_OF_YARN))
 				{
-					st.takeItems(SKEIN_OF_YARN, 1);
-					st.takeItems(SUEDE, SUEDE_COUNT);
-					st.takeItems(THREAD, THREAD_COUNT);
-					st.giveItems(MYSTERIOUS_CLOTH, 1);
+					takeItems(player, SKEIN_OF_YARN, 1);
+					takeItems(player, SUEDE, SUEDE_COUNT);
+					takeItems(player, THREAD, THREAD_COUNT);
+					giveItems(player, MYSTERIOUS_CLOTH, 1);
 					st.exitQuest(false, true);
 				}
 				else
@@ -123,14 +123,14 @@ public class Q00034_InSearchOfCloth extends Quest
 		if ((member != null) && getRandomBoolean())
 		{
 			final QuestState st = getQuestState(member, false);
-			st.giveItems(SPINNERET, 1);
-			if (st.getQuestItemsCount(SPINNERET) >= SPINNERET_COUNT)
+			giveItems(member, SPINNERET, 1);
+			if (getQuestItemsCount(member, SPINNERET) >= SPINNERET_COUNT)
 			{
 				st.setCond(5, true);
 			}
 			else
 			{
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				playSound(member, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		return super.onKill(npc, player, isSummon);
@@ -167,7 +167,7 @@ public class Q00034_InSearchOfCloth extends Quest
 								htmltext = "30088-07.html";
 								break;
 							case 6:
-								htmltext = ((st.getQuestItemsCount(SUEDE) >= SUEDE_COUNT) && (st.getQuestItemsCount(THREAD) >= THREAD_COUNT)) ? "30088-08.html" : "30088-09.html";
+								htmltext = ((getQuestItemsCount(player, SUEDE) >= SUEDE_COUNT) && (getQuestItemsCount(player, THREAD) >= THREAD_COUNT)) ? "30088-08.html" : "30088-09.html";
 								break;
 						}
 						break;

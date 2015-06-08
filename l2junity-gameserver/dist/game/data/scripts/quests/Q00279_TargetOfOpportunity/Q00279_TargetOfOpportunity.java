@@ -81,10 +81,10 @@ public final class Q00279_TargetOfOpportunity extends Quest
 			st.startQuest();
 			st.set("progress", "1");
 		}
-		else if (event.equalsIgnoreCase("32302-08.html") && (st.getInt("progress") == 1) && st.hasQuestItems(SEAL_COMPONENTS[0]) && st.hasQuestItems(SEAL_COMPONENTS[1]) && st.hasQuestItems(SEAL_COMPONENTS[2]) && st.hasQuestItems(SEAL_COMPONENTS[3]))
+		else if (event.equalsIgnoreCase("32302-08.html") && (st.getInt("progress") == 1) && hasQuestItems(player, SEAL_COMPONENTS[0]) && hasQuestItems(player, SEAL_COMPONENTS[1]) && hasQuestItems(player, SEAL_COMPONENTS[2]) && hasQuestItems(player, SEAL_COMPONENTS[3]))
 		{
-			st.giveItems(SEAL_BREAKERS[0], 1);
-			st.giveItems(SEAL_BREAKERS[1], 1);
+			giveItems(player, SEAL_BREAKERS[0], 1);
+			giveItems(player, SEAL_BREAKERS[1], 1);
 			st.exitQuest(true, true);
 		}
 		return htmltext;
@@ -93,7 +93,7 @@ public final class Q00279_TargetOfOpportunity extends Quest
 	@Override
 	public final String onKill(Npc npc, PlayerInstance player, boolean isSummon)
 	{
-		PlayerInstance pl = getRandomPartyMember(player, "progress", "1");
+		final PlayerInstance pl = getRandomPartyMember(player, "progress", "1");
 		final int idx = Arrays.binarySearch(MONSTERS, npc.getId());
 		if ((pl == null) || (idx < 0))
 		{
@@ -103,16 +103,16 @@ public final class Q00279_TargetOfOpportunity extends Quest
 		final QuestState st = getQuestState(pl, false);
 		if (getRandom(1000) < (int) (311 * Config.RATE_QUEST_DROP))
 		{
-			if (!st.hasQuestItems(SEAL_COMPONENTS[idx]))
+			if (!hasQuestItems(pl, SEAL_COMPONENTS[idx]))
 			{
-				st.giveItems(SEAL_COMPONENTS[idx], 1);
+				giveItems(pl, SEAL_COMPONENTS[idx], 1);
 				if (haveAllExceptThis(st, idx))
 				{
 					st.setCond(2, true);
 				}
 				else
 				{
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					playSound(pl, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
 		}
@@ -135,7 +135,7 @@ public final class Q00279_TargetOfOpportunity extends Quest
 		}
 		else if ((st.getState() == State.STARTED) && (st.getInt("progress") == 1))
 		{
-			htmltext = (st.hasQuestItems(SEAL_COMPONENTS[0]) && st.hasQuestItems(SEAL_COMPONENTS[1]) && st.hasQuestItems(SEAL_COMPONENTS[2]) && st.hasQuestItems(SEAL_COMPONENTS[3])) ? "32302-07.html" : "32302-06.html";
+			htmltext = (hasQuestItems(player, SEAL_COMPONENTS[0]) && hasQuestItems(player, SEAL_COMPONENTS[1]) && hasQuestItems(player, SEAL_COMPONENTS[2]) && hasQuestItems(player, SEAL_COMPONENTS[3])) ? "32302-07.html" : "32302-06.html";
 		}
 		return htmltext;
 	}
@@ -149,7 +149,7 @@ public final class Q00279_TargetOfOpportunity extends Quest
 				continue;
 			}
 			
-			if (!st.hasQuestItems(SEAL_COMPONENTS[i]))
+			if (!hasQuestItems(st.getPlayer(), SEAL_COMPONENTS[i]))
 			{
 				return false;
 			}

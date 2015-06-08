@@ -91,7 +91,7 @@ public class Q00510_AClansPrestige extends Quest
 		}
 		else
 		{
-			PlayerInstance pleader = player.getClan().getLeader().getPlayerInstance();
+			final PlayerInstance pleader = player.getClan().getLeader().getPlayerInstance();
 			if ((pleader != null) && player.isInsideRadius(pleader, 1500, true, false))
 			{
 				st = getQuestState(pleader, false);
@@ -100,8 +100,8 @@ public class Q00510_AClansPrestige extends Quest
 		
 		if ((st != null) && st.isStarted())
 		{
-			st.rewardItems(TYRANNOSAURUS_CLAW, 1);
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			rewardItems(st.getPlayer(), TYRANNOSAURUS_CLAW, 1);
+			playSound(st.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		return null;
 	}
@@ -116,7 +116,7 @@ public class Q00510_AClansPrestige extends Quest
 			return htmltext;
 		}
 		
-		L2Clan clan = player.getClan();
+		final L2Clan clan = player.getClan();
 		switch (st.getState())
 		{
 			case State.CREATED:
@@ -129,16 +129,16 @@ public class Q00510_AClansPrestige extends Quest
 					return "31331-8.html";
 				}
 				
-				if (!st.hasQuestItems(TYRANNOSAURUS_CLAW))
+				if (!hasQuestItems(player, TYRANNOSAURUS_CLAW))
 				{
 					htmltext = "31331-4.html";
 				}
 				else
 				{
-					int count = (int) st.getQuestItemsCount(TYRANNOSAURUS_CLAW);
-					int reward = (count < 10) ? (30 * count) : (59 + (30 * count));
-					st.playSound(QuestSound.ITEMSOUND_QUEST_FANFARE_1);
-					st.takeItems(TYRANNOSAURUS_CLAW, -1);
+					final int count = (int) getQuestItemsCount(player, TYRANNOSAURUS_CLAW);
+					final int reward = (count < 10) ? (30 * count) : (59 + (30 * count));
+					playSound(player, QuestSound.ITEMSOUND_QUEST_FANFARE_1);
+					takeItems(player, TYRANNOSAURUS_CLAW, -1);
 					clan.addReputationScore(reward, true);
 					player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_SUCCESSFULLY_COMPLETED_A_CLAN_QUEST_S1_POINT_S_HAVE_BEEN_ADDED_TO_YOUR_CLAN_REPUTATION).addInt(reward));
 					clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));

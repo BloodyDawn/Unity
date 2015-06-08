@@ -90,7 +90,7 @@ public class Q00126_TheNameOfEvil2 extends Quest
 				break;
 			case "32119-4a.html":
 			case "32119-5b.html":
-				st.playSound(QuestSound.ETCSOUND_ELROKI_SONG_1ST);
+				playSound(player, QuestSound.ETCSOUND_ELROKI_SONG_1ST);
 				break;
 			case "32119-5.html":
 				if (st.isCond(4))
@@ -112,7 +112,7 @@ public class Q00126_TheNameOfEvil2 extends Quest
 				break;
 			case "32120-4a.html":
 			case "32120-5b.html":
-				st.playSound(QuestSound.ETCSOUND_ELROKI_SONG_2ND);
+				playSound(player, QuestSound.ETCSOUND_ELROKI_SONG_2ND);
 				break;
 			case "32120-5.html":
 				if (st.isCond(7))
@@ -134,12 +134,12 @@ public class Q00126_TheNameOfEvil2 extends Quest
 				break;
 			case "32121-4a.html":
 			case "32121-5b.html":
-				st.playSound(QuestSound.ETCSOUND_ELROKI_SONG_3RD);
+				playSound(player, QuestSound.ETCSOUND_ELROKI_SONG_3RD);
 				break;
 			case "32121-5.html":
 				if (st.isCond(10))
 				{
-					st.giveItems(GAZKH_FRAGMENT, 1);
+					giveItems(player, GAZKH_FRAGMENT, 1);
 					st.setCond(11, true);
 				}
 				break;
@@ -147,7 +147,7 @@ public class Q00126_TheNameOfEvil2 extends Quest
 				npc.broadcastPacket(new MagicSkillUse(npc, player, 5089, 1, 1000, 0));
 				break;
 			case "32122-2d.html":
-				st.takeItems(GAZKH_FRAGMENT, -1);
+				takeItems(player, GAZKH_FRAGMENT, -1);
 				break;
 			case "32122-3.html":
 				if (st.isCond(12))
@@ -282,8 +282,8 @@ public class Q00126_TheNameOfEvil2 extends Quest
 				st.unset("MI2");
 				break;
 			case "32122-7.html":
-				st.giveItems(BONE_POWDER, 1);
-				st.playSound(QuestSound.ETCSOUND_ELROKI_SONG_FULL);
+				giveItems(player, BONE_POWDER, 1);
+				playSound(player, QuestSound.ETCSOUND_ELROKI_SONG_FULL);
 				npc.broadcastPacket(new MagicSkillUse(npc, player, 5089, 1, 1000, 0));
 				break;
 			case "32122-8.html":
@@ -301,7 +301,7 @@ public class Q00126_TheNameOfEvil2 extends Quest
 			case "32109-3.html":
 				if (st.isCond(19))
 				{
-					st.takeItems(BONE_POWDER, -1);
+					takeItems(player, BONE_POWDER, -1);
 					st.setCond(20, true);
 				}
 				break;
@@ -324,9 +324,9 @@ public class Q00126_TheNameOfEvil2 extends Quest
 				}
 				break;
 			case "32114-3.html":
-				st.rewardItems(ENCHANT_WEAPON_A, 1);
-				st.giveAdena(460483, true);
-				st.addExpAndSp(1015973, 102802);
+				rewardItems(player, ENCHANT_WEAPON_A, 1);
+				giveAdena(player, 460483, true);
+				addExpAndSp(player, 1015973, 102802);
 				st.exitQuest(false, true);
 				break;
 		}
@@ -536,7 +536,7 @@ public class Q00126_TheNameOfEvil2 extends Quest
 							st.unset("MI2");
 							break;
 						case 17:
-							htmltext = st.hasQuestItems(BONE_POWDER) ? "32122-7.html" : "32122-7b.html";
+							htmltext = hasQuestItems(player, BONE_POWDER) ? "32122-7.html" : "32122-7b.html";
 							break;
 						case 18:
 							htmltext = "32122-8.html";
@@ -572,7 +572,7 @@ public class Q00126_TheNameOfEvil2 extends Quest
 							htmltext = "32109-1a.html";
 							break;
 						case 18:
-							if (st.hasQuestItems(BONE_POWDER))
+							if (hasQuestItems(player, BONE_POWDER))
 							{
 								htmltext = "32109-1.html";
 							}

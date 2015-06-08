@@ -139,7 +139,7 @@ public final class Q00042_HelpTheUncle extends Quest
 			}
 			else
 			{
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		return super.onKill(npc, player, isSummon);

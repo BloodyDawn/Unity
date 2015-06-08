@@ -149,7 +149,7 @@ public final class Q00457_LostAndFound extends Quest
 						cancelQuestTimer("CHECK", npc, player);
 						npc.broadcastPacket(new CreatureSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getName(), NpcStringId.AH_FRESH_AIR));
 						broadcastNpcSay(npc, player, NpcStringId.AH_FRESH_AIR, false);
-						st.giveItems(PACKAGED_BOOK, 1);
+						giveItems(player, PACKAGED_BOOK, 1);
 						st.exitQuest(QuestType.DAILY, true);
 						break;
 					}

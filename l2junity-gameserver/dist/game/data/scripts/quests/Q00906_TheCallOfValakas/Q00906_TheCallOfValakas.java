@@ -59,8 +59,8 @@ public class Q00906_TheCallOfValakas extends Quest
 		final QuestState st = getQuestState(player, false);
 		if ((st != null) && Util.checkIfInRange(1500, npc, player, false))
 		{
-			st.giveItems(LAVASAURUS_ALPHA_FRAGMENT, 1);
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			giveItems(player, LAVASAURUS_ALPHA_FRAGMENT, 1);
+			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			st.setCond(2, true);
 		}
 	}
@@ -75,7 +75,7 @@ public class Q00906_TheCallOfValakas extends Quest
 		}
 		
 		String htmltext = null;
-		if ((player.getLevel() >= MIN_LEVEL) && st.hasQuestItems(VACUALITE_FLOATING_STONE))
+		if ((player.getLevel() >= MIN_LEVEL) && hasQuestItems(player, VACUALITE_FLOATING_STONE))
 		{
 			switch (event)
 			{
@@ -120,7 +120,7 @@ public class Q00906_TheCallOfValakas extends Quest
 				{
 					htmltext = "31540-03.html";
 				}
-				else if (!st.hasQuestItems(VACUALITE_FLOATING_STONE))
+				else if (!hasQuestItems(player, VACUALITE_FLOATING_STONE))
 				{
 					htmltext = "31540-04.html";
 				}
@@ -141,8 +141,8 @@ public class Q00906_TheCallOfValakas extends Quest
 					}
 					case 2:
 					{
-						st.giveItems(SCROLL_VALAKAS_CALL, 1);
-						st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						giveItems(player, SCROLL_VALAKAS_CALL, 1);
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 						st.exitQuest(QuestType.DAILY, true);
 						htmltext = "31540-08.html";
 						break;
@@ -163,7 +163,7 @@ public class Q00906_TheCallOfValakas extends Quest
 					{
 						htmltext = "31540-03.html";
 					}
-					else if (!st.hasQuestItems(VACUALITE_FLOATING_STONE))
+					else if (!hasQuestItems(player, VACUALITE_FLOATING_STONE))
 					{
 						htmltext = "31540-04.html";
 					}

@@ -109,7 +109,7 @@ public final class Q00197_SevenSignsTheSacredBookOfSeal extends Quest
 				{
 					if (player.getLevel() >= MIN_LEVEL)
 					{
-						st.addExpAndSp(52518015, 5817677);
+						addExpAndSp(player, 52518015, 5817677);
 						st.exitQuest(false, true);
 						htmltext = event;
 					}
@@ -211,7 +211,7 @@ public final class Q00197_SevenSignsTheSacredBookOfSeal extends Quest
 			{
 				if (st.isCond(5) && hasQuestItems(player, SCULPTURE_OF_DOUBT))
 				{
-					st.giveItems(MYSTERIOUS_HAND_WRITTEN_TEXT, 1);
+					giveItems(player, MYSTERIOUS_HAND_WRITTEN_TEXT, 1);
 					st.setCond(6, true);
 					htmltext = event;
 				}
@@ -233,8 +233,8 @@ public final class Q00197_SevenSignsTheSacredBookOfSeal extends Quest
 		final QuestState st = getQuestState(partyMember, false);
 		if (npc.isInsideRadius(partyMember, 1500, true, false))
 		{
-			st.giveItems(SCULPTURE_OF_DOUBT, 1);
-			st.playSound(QuestSound.ITEMSOUND_QUEST_FINISH);
+			giveItems(partyMember, SCULPTURE_OF_DOUBT, 1);
+			playSound(partyMember, QuestSound.ITEMSOUND_QUEST_FINISH);
 			st.setCond(4);
 		}
 		

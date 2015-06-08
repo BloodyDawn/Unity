@@ -88,7 +88,7 @@ public class Q00124_MeetingTheElroki extends Quest
 			case "32118-04.html":
 				if (st.isCond(5))
 				{
-					st.giveItems(MANTARASA_EGG, 1);
+					giveItems(player, MANTARASA_EGG, 1);
 					st.setCond(6, true);
 				}
 				break;
@@ -172,11 +172,11 @@ public class Q00124_MeetingTheElroki extends Quest
 							htmltext = "32115-08.html";
 							break;
 						case 6:
-							if (st.hasQuestItems(MANTARASA_EGG))
+							if (hasQuestItems(player, MANTARASA_EGG))
 							{
 								htmltext = "32115-09.html";
-								st.giveAdena(100013, true);
-								st.addExpAndSp(301922, 30294);
+								giveAdena(player, 100013, true);
+								addExpAndSp(player, 301922, 30294);
 								st.exitQuest(false, true);
 							}
 							break;

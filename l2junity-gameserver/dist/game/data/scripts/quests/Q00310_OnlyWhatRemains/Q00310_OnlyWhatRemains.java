@@ -117,12 +117,10 @@ public class Q00310_OnlyWhatRemains extends Quest
 			return super.onKill(npc, player, isSummon);
 		}
 		
-		final QuestState st = getQuestState(partyMember, false);
-		
 		if (getRandom(1000) < MOBS.get(npc.getId()))
 		{
-			st.giveItems(DIRTY_BEAD, 1);
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			giveItems(partyMember, DIRTY_BEAD, 1);
+			playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		return super.onKill(npc, player, isSummon);
 	}
@@ -145,19 +143,19 @@ public class Q00310_OnlyWhatRemains extends Quest
 				htmltext = ((player.getLevel() >= 81) && (prev != null) && prev.isCompleted()) ? "32640-01.htm" : "32640-00.htm";
 				break;
 			case State.STARTED:
-				if (!st.hasQuestItems(DIRTY_BEAD))
+				if (!hasQuestItems(player, DIRTY_BEAD))
 				{
 					htmltext = "32640-08.html";
 				}
-				else if (st.getQuestItemsCount(DIRTY_BEAD) < 500)
+				else if (getQuestItemsCount(player, DIRTY_BEAD) < 500)
 				{
 					htmltext = "32640-09.html";
 				}
 				else
 				{
-					st.takeItems(DIRTY_BEAD, 500);
-					st.giveItems(GROW_ACCELERATOR, 1);
-					st.giveItems(MULTI_COLORED_JEWEL, 1);
+					takeItems(player, DIRTY_BEAD, 500);
+					giveItems(player, GROW_ACCELERATOR, 1);
+					giveItems(player, MULTI_COLORED_JEWEL, 1);
 					htmltext = "32640-10.html";
 				}
 				break;

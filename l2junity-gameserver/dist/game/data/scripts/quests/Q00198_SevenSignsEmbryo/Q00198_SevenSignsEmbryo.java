@@ -137,7 +137,7 @@ public final class Q00198_SevenSignsEmbryo extends Quest
 			case "32597-09.html":
 			case "32597-10.html":
 			{
-				if (st.isCond(2) && st.hasQuestItems(SCULPTURE_OF_DOUBT))
+				if (st.isCond(2) && hasQuestItems(player, SCULPTURE_OF_DOUBT))
 				{
 					htmltext = event;
 				}
@@ -145,9 +145,9 @@ public final class Q00198_SevenSignsEmbryo extends Quest
 			}
 			case "32597-11.html":
 			{
-				if (st.isCond(2) && st.hasQuestItems(SCULPTURE_OF_DOUBT))
+				if (st.isCond(2) && hasQuestItems(player, SCULPTURE_OF_DOUBT))
 				{
-					st.takeItems(SCULPTURE_OF_DOUBT, -1);
+					takeItems(player, SCULPTURE_OF_DOUBT, -1);
 					st.setCond(3, true);
 					htmltext = event;
 					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.WE_WILL_BE_WITH_YOU_ALWAYS);
@@ -181,7 +181,7 @@ public final class Q00198_SevenSignsEmbryo extends Quest
 		final QuestState st = getQuestState(partyMember, false);
 		if (npc.isInsideRadius(partyMember, 1500, true, false))
 		{
-			st.giveItems(SCULPTURE_OF_DOUBT, 1);
+			giveItems(partyMember, SCULPTURE_OF_DOUBT, 1);
 			st.setCond(2, true);
 		}
 		
@@ -227,9 +227,9 @@ public final class Q00198_SevenSignsEmbryo extends Quest
 					{
 						if (player.getLevel() >= MIN_LEVEL)
 						{
-							st.addExpAndSp(315108090, 34906059);
-							st.giveItems(DAWNS_BRACELET, 1);
-							st.giveItems(Inventory.ANCIENT_ADENA_ID, 1500000);
+							addExpAndSp(player, 315108090, 34906059);
+							giveItems(player, DAWNS_BRACELET, 1);
+							giveItems(player, Inventory.ANCIENT_ADENA_ID, 1500000);
 							st.exitQuest(false, true);
 							htmltext = "32593-05.html";
 						}
@@ -250,7 +250,7 @@ public final class Q00198_SevenSignsEmbryo extends Quest
 						}
 						case 2:
 						{
-							if (st.hasQuestItems(SCULPTURE_OF_DOUBT))
+							if (hasQuestItems(player, SCULPTURE_OF_DOUBT))
 							{
 								htmltext = "32597-07.html";
 							}

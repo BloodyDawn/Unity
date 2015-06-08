@@ -77,9 +77,9 @@ public class Q00146_TheZeroHour extends Quest
 		if (partyMember != null)
 		{
 			final QuestState st = getQuestState(partyMember, false);
-			if (!st.hasQuestItems(FANG))
+			if (!hasQuestItems(partyMember, FANG))
 			{
-				st.giveItems(FANG, 1);
+				giveItems(partyMember, FANG, 1);
 				st.setCond(2, true);
 			}
 		}
@@ -123,8 +123,8 @@ public class Q00146_TheZeroHour extends Quest
 				}
 				else
 				{
-					st.giveItems(KAHMANS_SUPPLY_BOX, 1);
-					st.addExpAndSp(154616, 12500);
+					giveItems(player, KAHMANS_SUPPLY_BOX, 1);
+					addExpAndSp(player, 154616, 12500);
 					st.exitQuest(false, true);
 					htmltext = "31554-05.html";
 				}

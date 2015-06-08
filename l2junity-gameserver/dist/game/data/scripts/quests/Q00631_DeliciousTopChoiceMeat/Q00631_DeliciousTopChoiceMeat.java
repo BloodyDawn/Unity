@@ -125,52 +125,52 @@ public class Q00631_DeliciousTopChoiceMeat extends Quest
 					{
 						case 0:
 						{
-							st.rewardItems(RECIPE[getRandom(RECIPE.length)], 1);
+							rewardItems(player, RECIPE[getRandom(RECIPE.length)], 1);
 							break;
 						}
 						case 1:
 						{
-							st.rewardItems(PIECE[getRandom(PIECE.length)], 1);
+							rewardItems(player, PIECE[getRandom(PIECE.length)], 1);
 							break;
 						}
 						case 2:
 						{
-							st.rewardItems(PIECE[getRandom(PIECE.length)], 2);
+							rewardItems(player, PIECE[getRandom(PIECE.length)], 2);
 							break;
 						}
 						case 3:
 						{
-							st.rewardItems(PIECE[getRandom(PIECE.length)], 3);
+							rewardItems(player, PIECE[getRandom(PIECE.length)], 3);
 							break;
 						}
 						case 4:
 						{
-							st.rewardItems(PIECE[getRandom(PIECE.length)], getRandom(5) + 2);
+							rewardItems(player, PIECE[getRandom(PIECE.length)], getRandom(5) + 2);
 							break;
 						}
 						case 5:
 						{
-							st.rewardItems(PIECE[getRandom(PIECE.length)], getRandom(7) + 2);
+							rewardItems(player, PIECE[getRandom(PIECE.length)], getRandom(7) + 2);
 							break;
 						}
 						case 6:
 						{
-							st.rewardItems(GOLDEN_SPICE_CRATE, 1);
+							rewardItems(player, GOLDEN_SPICE_CRATE, 1);
 							break;
 						}
 						case 7:
 						{
-							st.rewardItems(GOLDEN_SPICE_CRATE, 2);
+							rewardItems(player, GOLDEN_SPICE_CRATE, 2);
 							break;
 						}
 						case 8:
 						{
-							st.rewardItems(CRYSTAL_SPICE_COMPRESSED_PACK, 1);
+							rewardItems(player, CRYSTAL_SPICE_COMPRESSED_PACK, 1);
 							break;
 						}
 						case 9:
 						{
-							st.rewardItems(CRYSTAL_SPICE_COMPRESSED_PACK, 2);
+							rewardItems(player, CRYSTAL_SPICE_COMPRESSED_PACK, 2);
 							break;
 						}
 					}
@@ -215,14 +215,14 @@ public class Q00631_DeliciousTopChoiceMeat extends Quest
 		{
 			if (st.isCond(1))
 			{
-				if (st.getQuestItemsCount(PRIME_MEAT) < PRIME_MEAT_COUNT)
+				if (getQuestItemsCount(player, PRIME_MEAT) < PRIME_MEAT_COUNT)
 				{
 					htmltext = "31537-04.html";
 				}
 			}
 			else if (st.isCond(2))
 			{
-				if (st.getQuestItemsCount(PRIME_MEAT) >= PRIME_MEAT_COUNT)
+				if (getQuestItemsCount(player, PRIME_MEAT) >= PRIME_MEAT_COUNT)
 				{
 					htmltext = "31537-05.html";
 				}

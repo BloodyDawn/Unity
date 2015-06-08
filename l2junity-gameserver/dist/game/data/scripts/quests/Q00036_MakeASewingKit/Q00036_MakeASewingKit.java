@@ -70,19 +70,19 @@ public class Q00036_MakeASewingKit extends Quest
 				st.startQuest();
 				break;
 			case "30847-06.html":
-				if (st.getQuestItemsCount(ENCHANTED_IRON) < IRON_COUNT)
+				if (getQuestItemsCount(player, ENCHANTED_IRON) < IRON_COUNT)
 				{
 					return getNoQuestMsg(player);
 				}
-				st.takeItems(ENCHANTED_IRON, -1);
+				takeItems(player, ENCHANTED_IRON, -1);
 				st.setCond(3, true);
 				break;
 			case "30847-09.html":
-				if ((st.getQuestItemsCount(ARTISANS_FRAME) >= COUNT) && (st.getQuestItemsCount(ORIHARUKON) >= COUNT))
+				if ((getQuestItemsCount(player, ARTISANS_FRAME) >= COUNT) && (getQuestItemsCount(player, ORIHARUKON) >= COUNT))
 				{
-					st.takeItems(ARTISANS_FRAME, 10);
-					st.takeItems(ORIHARUKON, 10);
-					st.giveItems(SEWING_KIT, 1);
+					takeItems(player, ARTISANS_FRAME, 10);
+					takeItems(player, ORIHARUKON, 10);
+					giveItems(player, SEWING_KIT, 1);
 					st.exitQuest(false, true);
 				}
 				else
@@ -106,14 +106,14 @@ public class Q00036_MakeASewingKit extends Quest
 			final QuestState st = getQuestState(member, false);
 			if (getRandomBoolean())
 			{
-				st.giveItems(ENCHANTED_IRON, 1);
-				if (st.getQuestItemsCount(ENCHANTED_IRON) >= IRON_COUNT)
+				giveItems(member, ENCHANTED_IRON, 1);
+				if (getQuestItemsCount(member, ENCHANTED_IRON) >= IRON_COUNT)
 				{
 					st.setCond(2, true);
 				}
 				else
 				{
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					playSound(member, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
 		}
@@ -145,7 +145,7 @@ public class Q00036_MakeASewingKit extends Quest
 						htmltext = "30847-05.html";
 						break;
 					case 3:
-						htmltext = ((st.getQuestItemsCount(ARTISANS_FRAME) >= COUNT) && (st.getQuestItemsCount(ORIHARUKON) >= COUNT)) ? "30847-07.html" : "30847-08.html";
+						htmltext = ((getQuestItemsCount(player, ARTISANS_FRAME) >= COUNT) && (getQuestItemsCount(player, ORIHARUKON) >= COUNT)) ? "30847-07.html" : "30847-08.html";
 						break;
 				}
 				break;

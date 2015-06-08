@@ -137,10 +137,10 @@ public class Q00463_IMustBeaGenius extends Quest
 			case "reward":
 				if (st.isCond(2))
 				{
-					int rnd = getRandom(REWARD.length);
-					String str = (REWARD[rnd][2] < 10) ? "0" + REWARD[rnd][2] : String.valueOf(REWARD[rnd][2]);
+					final int rnd = getRandom(REWARD.length);
+					final String str = (REWARD[rnd][2] < 10) ? "0" + REWARD[rnd][2] : String.valueOf(REWARD[rnd][2]);
 					
-					st.addExpAndSp(REWARD[rnd][0], REWARD[rnd][1]);
+					addExpAndSp(player, REWARD[rnd][0], REWARD[rnd][1]);
 					st.exitQuest(QuestType.DAILY, true);
 					htmltext = "32069-" + str + ".html";
 				}
@@ -175,23 +175,23 @@ public class Q00463_IMustBeaGenius extends Quest
 			
 			if (number > 0)
 			{
-				st.giveItems(CORPSE_LOG, number);
+				giveItems(player, CORPSE_LOG, number);
 				msg = true;
 			}
-			else if ((number < 0) && ((st.getQuestItemsCount(CORPSE_LOG) + number) > 0))
+			else if ((number < 0) && ((getQuestItemsCount(player, CORPSE_LOG) + number) > 0))
 			{
-				st.takeItems(CORPSE_LOG, Math.abs(number));
+				takeItems(player, CORPSE_LOG, Math.abs(number));
 				msg = true;
 			}
 			
 			if (msg)
 			{
 				npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.ATT_ATTACK_S1_RO_ROGUE_S2, player.getName(), String.valueOf(number));
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
-				if (st.getQuestItemsCount(CORPSE_LOG) == st.getInt("number"))
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				if (getQuestItemsCount(player, CORPSE_LOG) == st.getInt("number"))
 				{
-					st.takeItems(CORPSE_LOG, -1);
-					st.giveItems(COLLECTION, 1);
+					takeItems(player, CORPSE_LOG, -1);
+					giveItems(player, COLLECTION, 1);
 					st.setCond(2, true);
 				}
 			}
@@ -234,7 +234,7 @@ public class Q00463_IMustBeaGenius extends Quest
 					}
 					else
 					{
-						st.takeItems(COLLECTION, -1);
+						takeItems(player, COLLECTION, -1);
 						st.set("var", "1");
 						htmltext = "32069-06.html";
 					}

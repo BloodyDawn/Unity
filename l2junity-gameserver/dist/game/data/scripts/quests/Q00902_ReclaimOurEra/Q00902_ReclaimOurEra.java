@@ -76,7 +76,7 @@ public final class Q00902_ReclaimOurEra extends Quest
 		final QuestState st = getQuestState(player, false);
 		if ((st != null) && (st.isStarted()) && (!st.isCond(5)) && Util.checkIfInRange(1500, npc, player, false))
 		{
-			st.giveItems(MONSTER_DROPS.get(npc.getId()), 1);
+			giveItems(player, MONSTER_DROPS.get(npc.getId()), 1);
 			st.setCond(5, true);
 		}
 	}
@@ -218,20 +218,20 @@ public final class Q00902_ReclaimOurEra extends Quest
 					}
 					case 5:
 					{
-						if (st.hasQuestItems(SHATTERED_BONES))
+						if (hasQuestItems(player, SHATTERED_BONES))
 						{
-							st.giveItems(PROOF_OF_CHALLENGE, 1);
-							st.giveAdena(134038, true);
+							giveItems(player, PROOF_OF_CHALLENGE, 1);
+							giveAdena(player, 134038, true);
 						}
-						else if (st.hasQuestItems(CANNIBALISTIC_STAKATO_LDR_CLAW))
+						else if (hasQuestItems(player, CANNIBALISTIC_STAKATO_LDR_CLAW))
 						{
-							st.giveItems(PROOF_OF_CHALLENGE, 3);
-							st.giveAdena(210119, true);
+							giveItems(player, PROOF_OF_CHALLENGE, 3);
+							giveAdena(player, 210119, true);
 						}
-						else if (st.hasQuestItems(ANAIS_SCROLL))
+						else if (hasQuestItems(player, ANAIS_SCROLL))
 						{
-							st.giveItems(PROOF_OF_CHALLENGE, 3);
-							st.giveAdena(348155, true);
+							giveItems(player, PROOF_OF_CHALLENGE, 3);
+							giveAdena(player, 348155, true);
 						}
 						st.exitQuest(QuestType.DAILY, true);
 						htmltext = "31340-14.html";

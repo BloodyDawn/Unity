@@ -136,7 +136,7 @@ public final class Q00453_NotStrongEnoughAlone extends Quest
 				if (currValue < 15)
 				{
 					st.set("count_" + npcId, currValue + 1);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				checkProgress(st, 15, MONSTER1[0], MONSTER1[1], MONSTER1[2], MONSTER1[3]);
 			}
@@ -159,7 +159,7 @@ public final class Q00453_NotStrongEnoughAlone extends Quest
 				if (currValue < 20)
 				{
 					st.set("count_" + npcId, currValue + 1);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				checkProgress(st, 20, MONSTER2[0], MONSTER2[1], MONSTER2[2]);
 			}
@@ -182,7 +182,7 @@ public final class Q00453_NotStrongEnoughAlone extends Quest
 				if (currValue < 20)
 				{
 					st.set("count_" + npcId, currValue + 1);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				checkProgress(st, 20, MONSTER3[0], MONSTER3[1], MONSTER3[2]);
 			}

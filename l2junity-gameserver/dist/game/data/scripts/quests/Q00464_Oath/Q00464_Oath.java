@@ -102,16 +102,16 @@ public class Q00464_Oath extends Quest
 		switch (event)
 		{
 			case "32596-04.html":
-				if (!st.hasQuestItems(BOOK))
+				if (!hasQuestItems(player, BOOK))
 				{
 					return getNoQuestMsg(player);
 				}
 				
-				int cond = getRandom(2, 9);
+				final int cond = getRandom(2, 9);
 				st.set("npc", String.valueOf(NPC[cond - 1][0]));
 				st.setCond(cond, true);
-				st.takeItems(BOOK, 1);
-				st.giveItems(BOOK2, 1);
+				takeItems(player, BOOK, 1);
+				giveItems(player, BOOK2, 1);
 				switch (cond)
 				{
 					case 2:
@@ -141,14 +141,14 @@ public class Q00464_Oath extends Quest
 				}
 				break;
 			case "end_quest":
-				if (!st.hasQuestItems(BOOK2))
+				if (!hasQuestItems(player, BOOK2))
 				{
 					return getNoQuestMsg(player);
 				}
 				
-				int i = st.getCond() - 1;
-				st.addExpAndSp(NPC[i][1], NPC[i][2]);
-				st.giveAdena(NPC[i][3], true);
+				final int i = st.getCond() - 1;
+				addExpAndSp(player, NPC[i][1], NPC[i][2]);
+				giveAdena(player, NPC[i][3], true);
 				st.exitQuest(QuestType.DAILY, true);
 				htmltext = npc.getId() + "-02.html";
 				break;
@@ -195,8 +195,8 @@ public class Q00464_Oath extends Quest
 			if (player.getLevel() >= MIN_LEVEL)
 			{
 				st.startQuest();
-				st.takeItems(STRONGBOX, 1);
-				st.giveItems(BOOK, 1);
+				takeItems(player, STRONGBOX, 1);
+				giveItems(player, BOOK, 1);
 				htmltext = "strongbox-01.htm";
 			}
 			else

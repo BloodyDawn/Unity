@@ -28,10 +28,8 @@ import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 
 /**
- * Olympiad Veteran (552)<br>
+ * Olympiad Veteran (552)
  * @author lion
- * @since Nov. 5, 2011, improved by jurchiks
- * @version 2011-02-05 Based on official H5 PTS server and 551 quest ;)
  */
 public class Q00552_OlympiadVeteran extends Quest
 {
@@ -68,11 +66,11 @@ public class Q00552_OlympiadVeteran extends Quest
 		}
 		else if (event.equalsIgnoreCase("31688-04.html"))
 		{
-			final long count = st.getQuestItemsCount(TEAM_EVENT_CERTIFICATE) + st.getQuestItemsCount(CLASS_FREE_BATTLE_CERTIFICATE) + st.getQuestItemsCount(CLASS_BATTLE_CERTIFICATE);
+			final long count = getQuestItemsCount(player, TEAM_EVENT_CERTIFICATE) + getQuestItemsCount(player, CLASS_FREE_BATTLE_CERTIFICATE) + getQuestItemsCount(player, CLASS_BATTLE_CERTIFICATE);
 			
 			if (count > 0)
 			{
-				st.giveItems(OLY_CHEST, count);
+				giveItems(player, OLY_CHEST, count);
 				st.exitQuest(QuestType.DAILY, true);
 			}
 			else
@@ -104,9 +102,9 @@ public class Q00552_OlympiadVeteran extends Quest
 					{
 						matches = st.getInt("classed") + 1;
 						st.set("classed", String.valueOf(matches));
-						if ((matches == 5) && !st.hasQuestItems(CLASS_BATTLE_CERTIFICATE))
+						if ((matches == 5) && !hasQuestItems(player, CLASS_BATTLE_CERTIFICATE))
 						{
-							st.giveItems(CLASS_BATTLE_CERTIFICATE, 1);
+							giveItems(player, CLASS_BATTLE_CERTIFICATE, 1);
 						}
 						break;
 					}
@@ -114,9 +112,9 @@ public class Q00552_OlympiadVeteran extends Quest
 					{
 						matches = st.getInt("nonclassed") + 1;
 						st.set("nonclassed", String.valueOf(matches));
-						if ((matches == 5) && !st.hasQuestItems(CLASS_FREE_BATTLE_CERTIFICATE))
+						if ((matches == 5) && !hasQuestItems(player, CLASS_FREE_BATTLE_CERTIFICATE))
 						{
-							st.giveItems(CLASS_FREE_BATTLE_CERTIFICATE, 1);
+							giveItems(player, CLASS_FREE_BATTLE_CERTIFICATE, 1);
 						}
 						break;
 					}
@@ -143,7 +141,7 @@ public class Q00552_OlympiadVeteran extends Quest
 						st.set("classed", String.valueOf(matches));
 						if (matches == 5)
 						{
-							st.giveItems(CLASS_BATTLE_CERTIFICATE, 1);
+							giveItems(player, CLASS_BATTLE_CERTIFICATE, 1);
 						}
 						break;
 					}
@@ -153,7 +151,7 @@ public class Q00552_OlympiadVeteran extends Quest
 						st.set("nonclassed", String.valueOf(matches));
 						if (matches == 5)
 						{
-							st.giveItems(CLASS_FREE_BATTLE_CERTIFICATE, 1);
+							giveItems(player, CLASS_FREE_BATTLE_CERTIFICATE, 1);
 						}
 						break;
 					}
@@ -194,12 +192,12 @@ public class Q00552_OlympiadVeteran extends Quest
 		}
 		else if (st.isStarted())
 		{
-			final long count = st.getQuestItemsCount(TEAM_EVENT_CERTIFICATE) + st.getQuestItemsCount(CLASS_FREE_BATTLE_CERTIFICATE) + st.getQuestItemsCount(CLASS_BATTLE_CERTIFICATE);
+			final long count = getQuestItemsCount(player, TEAM_EVENT_CERTIFICATE) + getQuestItemsCount(player, CLASS_FREE_BATTLE_CERTIFICATE) + getQuestItemsCount(player, CLASS_BATTLE_CERTIFICATE);
 			
 			if (count == 3)
 			{
 				htmltext = "31688-04.html";
-				st.giveItems(OLY_CHEST, 4);
+				giveItems(player, OLY_CHEST, 4);
 				st.exitQuest(QuestType.DAILY, true);
 			}
 			else

@@ -78,13 +78,13 @@ public class Q00455_WingsOfSand extends Quest
 		final QuestState st = getQuestState(player, false);
 		if ((st != null) && Util.checkIfInRange(1500, npc, player, false) && (getRandom(1000) < CHANCE))
 		{
-			st.giveItems(LARGE_BABY_DRAGON, 1);
-			st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
-			if (st.getQuestItemsCount(LARGE_BABY_DRAGON) == 1)
+			giveItems(player, LARGE_BABY_DRAGON, 1);
+			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			if (getQuestItemsCount(player, LARGE_BABY_DRAGON) == 1)
 			{
 				st.setCond(2, true);
 			}
-			else if (st.getQuestItemsCount(LARGE_BABY_DRAGON) == 2)
+			else if (getQuestItemsCount(player, LARGE_BABY_DRAGON) == 2)
 			{
 				st.setCond(3, true);
 			}
@@ -208,39 +208,39 @@ public class Q00455_WingsOfSand extends Quest
 			parts = getRandom(1, 2);
 			if (chance < 50)
 			{
-				st.giveItems(getRandom(15815, 15825), 1); // Weapon Recipes
+				giveItems(st.getPlayer(), getRandom(15815, 15825), 1); // Weapon Recipes
 			}
 			else if (chance < 100)
 			{
-				st.giveItems(getRandom(15792, 15808), parts); // Armor Recipes
+				giveItems(st.getPlayer(), getRandom(15792, 15808), parts); // Armor Recipes
 			}
 			else if (chance < 150)
 			{
-				st.giveItems(getRandom(15809, 15811), parts); // Jewelry Recipes
+				giveItems(st.getPlayer(), getRandom(15809, 15811), parts); // Jewelry Recipes
 			}
 			else if (chance < 250)
 			{
-				st.giveItems(ARMOR_PARTS.get(getRandom(ARMOR_PARTS.size())), parts); // Armor Parts
+				giveItems(st.getPlayer(), ARMOR_PARTS.get(getRandom(ARMOR_PARTS.size())), parts); // Armor Parts
 			}
 			else if (chance < 500)
 			{
-				st.giveItems(getRandom(15634, 15644), parts); // Weapon Parts
+				giveItems(st.getPlayer(), getRandom(15634, 15644), parts); // Weapon Parts
 			}
 			else if (chance < 750)
 			{
-				st.giveItems(getRandom(15769, 15771), parts); // Jewelry Parts
+				giveItems(st.getPlayer(), getRandom(15769, 15771), parts); // Jewelry Parts
 			}
 			else if (chance < 900)
 			{
-				st.giveItems(getRandom(9552, 9557), 1); // Crystals
+				giveItems(st.getPlayer(), getRandom(9552, 9557), 1); // Crystals
 			}
 			else if (chance < 970)
 			{
-				st.giveItems(6578, 1); // Blessed Scroll: Enchant Armor (S-Grade)
+				giveItems(st.getPlayer(), 6578, 1); // Blessed Scroll: Enchant Armor (S-Grade)
 			}
 			else
 			{
-				st.giveItems(6577, 1); // Blessed Scroll: Enchant Weapon (S-Grade)
+				giveItems(st.getPlayer(), 6577, 1); // Blessed Scroll: Enchant Weapon (S-Grade)
 			}
 		}
 		st.exitQuest(QuestType.DAILY, true);

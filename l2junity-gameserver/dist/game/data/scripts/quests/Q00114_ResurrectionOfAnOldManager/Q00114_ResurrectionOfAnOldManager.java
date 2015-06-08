@@ -114,12 +114,12 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 				st.unset("talk");
 				break;
 			case "32041-31.html":
-				st.giveItems(DETCTOR, 1);
+				giveItems(player, DETCTOR, 1);
 				st.setCond(17, true);
 				break;
 			case "32041-34.html":
 				st.set("talk", "1");
-				st.takeItems(DETCTOR2, 1);
+				takeItems(player, DETCTOR2, 1);
 				break;
 			case "32041-38.html":
 				if (st.getInt("choice") == 2)
@@ -134,14 +134,14 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 			case "32041-40.html":
 				st.setCond(21, true);
 				st.unset("talk");
-				st.giveItems(LETTER, 1);
+				giveItems(player, LETTER, 1);
 				break;
 			// Suspicious-Looking Pile of Stones
 			case "32046-03.html":
 				st.setCond(19, true);
 				break;
 			case "32046-07.html":
-				st.addExpAndSp(1846611, 144270);
+				addExpAndSp(player, 1846611, 144270);
 				st.exitQuest(false, true);
 				break;
 			// Wendy
@@ -224,14 +224,14 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 				st.setCond(23, true);
 				break;
 			case "32047-23c.html":
-				st.takeItems(STARSTONE, 1);
+				takeItems(player, STARSTONE, 1);
 				st.setCond(15, true);
 				break;
 			case "32047-29c.html":
 				if (player.getAdena() >= 3000)
 				{
-					st.giveItems(STARSTONE2, 1);
-					st.takeItems(Inventory.ADENA_ID, 3000);
+					giveItems(player, STARSTONE2, 1);
+					takeItems(player, Inventory.ADENA_ID, 3000);
 					st.unset("talk");
 					st.setCond(26, true);
 				}
@@ -248,18 +248,18 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 				st.set("talk", "1");
 				break;
 			case "32050-03.html":
-				st.giveItems(STARSTONE, 1);
+				giveItems(player, STARSTONE, 1);
 				st.setCond(14, true);
 				st.unset("talk");
 				break;
 			case "32050-05.html":
 				st.setCond(24, true);
-				st.giveItems(STARSTONE2, 1);
+				giveItems(player, STARSTONE2, 1);
 				break;
 			// Newyear
 			case "31961-02.html":
-				st.takeItems(LETTER, 1);
-				st.giveItems(STARSTONE2, 1);
+				takeItems(player, LETTER, 1);
+				giveItems(player, STARSTONE2, 1);
 				st.setCond(22, true);
 				break;
 			// Quest timer
@@ -343,8 +343,8 @@ public class Q00114_ResurrectionOfAnOldManager extends Quest
 			final QuestState st = creature.getActingPlayer().getQuestState(getName());
 			if ((st != null) && st.isCond(17))
 			{
-				st.takeItems(DETCTOR, 1);
-				st.giveItems(DETCTOR2, 1);
+				takeItems(creature.getActingPlayer(), DETCTOR, 1);
+				giveItems(creature.getActingPlayer(), DETCTOR2, 1);
 				st.setCond(18, true);
 				showOnScreenMsg(creature.getActingPlayer(), NpcStringId.THE_RADIO_SIGNAL_DETECTOR_IS_RESPONDING_A_SUSPICIOUS_PILE_OF_STONES_CATCHES_YOUR_EYE, 2, 4500);
 			}

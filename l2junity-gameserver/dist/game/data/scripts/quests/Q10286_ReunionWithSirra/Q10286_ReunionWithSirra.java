@@ -135,9 +135,9 @@ public final class Q10286_ReunionWithSirra extends Quest
 			{
 				if (st.isMemoState(1) && (st.getInt("ex") == 1))
 				{
-					if (!st.hasQuestItems(BLACK_FROZEN_CORE))
+					if (!hasQuestItems(player, BLACK_FROZEN_CORE))
 					{
-						st.giveItems(BLACK_FROZEN_CORE, 5);
+						giveItems(player, BLACK_FROZEN_CORE, 5);
 					}
 					st.set("ex", 2);
 					st.setCond(4, true);
@@ -244,7 +244,7 @@ public final class Q10286_ReunionWithSirra extends Quest
 					{
 						if (st.isMemoState(10))
 						{
-							st.addExpAndSp(2152200, 181070);
+							addExpAndSp(player, 2152200, 181070);
 							st.exitQuest(false, true);
 							htmltext = "32781-01.html";
 						}

@@ -364,7 +364,7 @@ public final class Q00177_SplitDestiny extends Quest
 				{
 					if (CommonUtil.contains(GIANTS_FOOT_MONSTERS, npc.getId()))
 					{
-						qs.giveItems(PETRIFIED_GIANTS_FOOT_PIECE, 1);
+						giveItems(killer, PETRIFIED_GIANTS_FOOT_PIECE, 1);
 						qs.setCond(5, true);
 					}
 					break;

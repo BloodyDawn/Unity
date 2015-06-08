@@ -65,19 +65,19 @@ public class Q00903_TheCallOfAntharas extends Quest
 			{
 				case BEHEMOTH_DRAGON:
 				{
-					st.giveItems(BEHEMOTH_DRAGON_LEATHER, 1);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					giveItems(player, BEHEMOTH_DRAGON_LEATHER, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					break;
 				}
 				case TARASK_DRAGON:
 				{
-					st.giveItems(TARASK_DRAGONS_LEATHER_FRAGMENT, 1);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					giveItems(player, TARASK_DRAGONS_LEATHER_FRAGMENT, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					break;
 				}
 			}
 			
-			if (st.hasQuestItems(BEHEMOTH_DRAGON_LEATHER) && st.hasQuestItems(TARASK_DRAGONS_LEATHER_FRAGMENT))
+			if (hasQuestItems(player, BEHEMOTH_DRAGON_LEATHER) && hasQuestItems(player, TARASK_DRAGONS_LEATHER_FRAGMENT))
 			{
 				st.setCond(2, true);
 			}
@@ -94,7 +94,7 @@ public class Q00903_TheCallOfAntharas extends Quest
 		}
 		
 		String htmltext = null;
-		if ((player.getLevel() >= MIN_LEVEL) && st.hasQuestItems(PORTAL_STONE))
+		if ((player.getLevel() >= MIN_LEVEL) && hasQuestItems(player, PORTAL_STONE))
 		{
 			switch (event)
 			{
@@ -139,7 +139,7 @@ public class Q00903_TheCallOfAntharas extends Quest
 				{
 					htmltext = "30755-03.html";
 				}
-				else if (!st.hasQuestItems(PORTAL_STONE))
+				else if (!hasQuestItems(player, PORTAL_STONE))
 				{
 					htmltext = "30755-04.html";
 				}
@@ -160,8 +160,8 @@ public class Q00903_TheCallOfAntharas extends Quest
 					}
 					case 2:
 					{
-						st.giveItems(SCROLL_ANTHARAS_CALL, 1);
-						st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						giveItems(player, SCROLL_ANTHARAS_CALL, 1);
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 						st.exitQuest(QuestType.DAILY, true);
 						htmltext = "30755-08.html";
 						break;
@@ -182,7 +182,7 @@ public class Q00903_TheCallOfAntharas extends Quest
 					{
 						htmltext = "30755-03.html";
 					}
-					else if (!st.hasQuestItems(PORTAL_STONE))
+					else if (!hasQuestItems(player, PORTAL_STONE))
 					{
 						htmltext = "30755-04.html";
 					}

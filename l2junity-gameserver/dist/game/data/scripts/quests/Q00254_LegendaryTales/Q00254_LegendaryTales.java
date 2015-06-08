@@ -225,17 +225,17 @@ public class Q00254_LegendaryTales extends Quest
 		
 		if ((st != null) && st.isCond(1))
 		{
-			int raids = st.getInt("raids");
-			Bosses boss = Bosses.valueOf(npc.getId());
+			final int raids = st.getInt("raids");
+			final Bosses boss = Bosses.valueOf(npc.getId());
 			
 			if (!checkMask(st, boss))
 			{
 				st.set("raids", raids | boss.getMask());
-				st.giveItems(LARGE_DRAGON_SKULL, 1);
+				giveItems(player, LARGE_DRAGON_SKULL, 1);
 				
-				if (st.getQuestItemsCount(LARGE_DRAGON_SKULL) < 7)
+				if (getQuestItemsCount(player, LARGE_DRAGON_SKULL) < 7)
 				{
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				else
 				{

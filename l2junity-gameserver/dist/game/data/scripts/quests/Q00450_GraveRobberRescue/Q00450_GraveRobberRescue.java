@@ -115,11 +115,11 @@ public class Q00450_GraveRobberRescue extends Quest
 				case State.STARTED:
 					if (st.isCond(1))
 					{
-						htmltext = (!st.hasQuestItems(EVIDENCE_OF_MIGRATION)) ? "32650-08.html" : "32650-09.html";
+						htmltext = (!hasQuestItems(player, EVIDENCE_OF_MIGRATION)) ? "32650-08.html" : "32650-09.html";
 					}
 					else
 					{
-						st.giveAdena(65000, true); // Glory days reward: 6 886 980 exp, 8 116 410 sp, 371 400 Adena
+						giveAdena(player, 65000, true); // Glory days reward: 6 886 980 exp, 8 116 410 sp, 371 400 Adena
 						st.exitQuest(QuestType.DAILY, true);
 						htmltext = "32650-10.html";
 					}
@@ -135,14 +135,14 @@ public class Q00450_GraveRobberRescue extends Quest
 			
 			if (getRandom(100) < 66)
 			{
-				st.giveItems(EVIDENCE_OF_MIGRATION, 1);
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				giveItems(player, EVIDENCE_OF_MIGRATION, 1);
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(npc.getX() + 100, npc.getY() + 100, npc.getZ(), 0));
 				npc.setBusy(true);
 				
 				startQuestTimer("despawn", 3000, npc, player);
 				
-				if (st.getQuestItemsCount(EVIDENCE_OF_MIGRATION) == 10)
+				if (getQuestItemsCount(player, EVIDENCE_OF_MIGRATION) == 10)
 				{
 					st.setCond(2, true);
 				}

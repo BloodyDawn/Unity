@@ -91,7 +91,7 @@ public final class Q00195_SevenSignsSecretRitualOfThePriests extends Quest
 			{
 				if (st.isCond(1))
 				{
-					st.giveItems(IDENTITY_CARD, 1);
+					giveItems(player, IDENTITY_CARD, 1);
 					st.setCond(2, true);
 					htmltext = event;
 				}
@@ -128,9 +128,9 @@ public final class Q00195_SevenSignsSecretRitualOfThePriests extends Quest
 			}
 			case "30289-08.html":
 			{
-				if (st.isCond(3) && st.hasQuestItems(IDENTITY_CARD) && st.hasQuestItems(SHUNAIMANS_CONTRACT))
+				if (st.isCond(3) && hasQuestItems(player, IDENTITY_CARD) && hasQuestItems(player, SHUNAIMANS_CONTRACT))
 				{
-					st.takeItems(IDENTITY_CARD, -1);
+					takeItems(player, IDENTITY_CARD, -1);
 					st.setCond(4, true);
 					htmltext = event;
 					if (player.getTransformationId() == 113)
@@ -163,7 +163,7 @@ public final class Q00195_SevenSignsSecretRitualOfThePriests extends Quest
 			}
 			case "30969-02.html":
 			{
-				if (st.isCond(4) && st.hasQuestItems(SHUNAIMANS_CONTRACT))
+				if (st.isCond(4) && hasQuestItems(player, SHUNAIMANS_CONTRACT))
 				{
 					htmltext = event;
 				}
@@ -171,11 +171,11 @@ public final class Q00195_SevenSignsSecretRitualOfThePriests extends Quest
 			}
 			case "reward":
 			{
-				if (st.isCond(4) && st.hasQuestItems(SHUNAIMANS_CONTRACT))
+				if (st.isCond(4) && hasQuestItems(player, SHUNAIMANS_CONTRACT))
 				{
 					if (player.getLevel() >= MIN_LEVEL)
 					{
-						st.addExpAndSp(52518015, 5817677);
+						addExpAndSp(player, 52518015, 5817677);
 						st.exitQuest(false, true);
 						htmltext = "30969-03.html";
 					}
@@ -276,7 +276,7 @@ public final class Q00195_SevenSignsSecretRitualOfThePriests extends Quest
 						{
 							case 2:
 							{
-								if (st.hasQuestItems(IDENTITY_CARD) && (player.getTransformationId() != 113))
+								if (hasQuestItems(player, IDENTITY_CARD) && (player.getTransformationId() != 113))
 								{
 									htmltext = "30289-01.html";
 								}
@@ -284,9 +284,9 @@ public final class Q00195_SevenSignsSecretRitualOfThePriests extends Quest
 							}
 							case 3:
 							{
-								if (st.hasQuestItems(IDENTITY_CARD))
+								if (hasQuestItems(player, IDENTITY_CARD))
 								{
-									htmltext = st.hasQuestItems(SHUNAIMANS_CONTRACT) ? "30289-06.html" : "30289-09.html";
+									htmltext = hasQuestItems(player, SHUNAIMANS_CONTRACT) ? "30289-06.html" : "30289-09.html";
 								}
 								break;
 							}
@@ -302,7 +302,7 @@ public final class Q00195_SevenSignsSecretRitualOfThePriests extends Quest
 					{
 						if (st.isCond(3))
 						{
-							if (st.hasQuestItems(IDENTITY_CARD))
+							if (hasQuestItems(player, IDENTITY_CARD))
 							{
 								htmltext = "31001-07.html";
 							}
@@ -311,7 +311,7 @@ public final class Q00195_SevenSignsSecretRitualOfThePriests extends Quest
 					}
 					case PASSWORD_ENTRY_DEVICE:
 					{
-						if (st.isCond(3) && st.hasQuestItems(IDENTITY_CARD))
+						if (st.isCond(3) && hasQuestItems(player, IDENTITY_CARD))
 						{
 							htmltext = "32577-02.html";
 							player.teleToLocation(-78240, 205858, -7856);
@@ -320,16 +320,16 @@ public final class Q00195_SevenSignsSecretRitualOfThePriests extends Quest
 					}
 					case SHELF:
 					{
-						if (st.isCond(3) && !st.hasQuestItems(SHUNAIMANS_CONTRACT))
+						if (st.isCond(3) && !hasQuestItems(player, SHUNAIMANS_CONTRACT))
 						{
-							st.giveItems(SHUNAIMANS_CONTRACT, 1);
+							giveItems(player, SHUNAIMANS_CONTRACT, 1);
 							htmltext = "32580-02.html";
 						}
 						break;
 					}
 					case DARKNESS_OF_DAWN:
 					{
-						if (st.isCond(3) && !st.hasQuestItems(SHUNAIMANS_CONTRACT))
+						if (st.isCond(3) && !hasQuestItems(player, SHUNAIMANS_CONTRACT))
 						{
 							htmltext = "32579-02.html";
 						}
@@ -337,7 +337,7 @@ public final class Q00195_SevenSignsSecretRitualOfThePriests extends Quest
 					}
 					case IASON_HEINE:
 					{
-						if (st.isCond(4) && st.hasQuestItems(SHUNAIMANS_CONTRACT))
+						if (st.isCond(4) && hasQuestItems(player, SHUNAIMANS_CONTRACT))
 						{
 							htmltext = "30969-01.html";
 						}

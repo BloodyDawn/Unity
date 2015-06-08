@@ -98,17 +98,17 @@ public class Q00239_WontYouJoinUs extends Quest
 			if (partyMember != null)
 			{
 				final QuestState st = getQuestState(partyMember, false);
-				if (st.getQuestItemsCount(DESTROYED_MACHINE_PIECE) < DESTROYED_MACHINE_PIECE_NEEDED)
+				if (getQuestItemsCount(partyMember, DESTROYED_MACHINE_PIECE) < DESTROYED_MACHINE_PIECE_NEEDED)
 				{
-					st.giveItems(DESTROYED_MACHINE_PIECE, 1);
+					giveItems(partyMember, DESTROYED_MACHINE_PIECE, 1);
 				}
-				if (st.getQuestItemsCount(DESTROYED_MACHINE_PIECE) == DESTROYED_MACHINE_PIECE_NEEDED)
+				if (getQuestItemsCount(partyMember, DESTROYED_MACHINE_PIECE) == DESTROYED_MACHINE_PIECE_NEEDED)
 				{
 					st.setCond(2, true);
 				}
 				else
 				{
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
 		}
@@ -118,17 +118,17 @@ public class Q00239_WontYouJoinUs extends Quest
 			if ((partyMember != null) && (getRandom(100) < CHANCE_FOR_FRAGMENT))
 			{
 				final QuestState st = getQuestState(partyMember, false);
-				if (st.getQuestItemsCount(ENCHANTED_GOLEM_FRAGMENT) < ENCHANTED_GOLEM_FRAGMENT_NEEDED)
+				if (getQuestItemsCount(partyMember, ENCHANTED_GOLEM_FRAGMENT) < ENCHANTED_GOLEM_FRAGMENT_NEEDED)
 				{
-					st.giveItems(ENCHANTED_GOLEM_FRAGMENT, 1);
+					giveItems(partyMember, ENCHANTED_GOLEM_FRAGMENT, 1);
 				}
-				if (st.getQuestItemsCount(ENCHANTED_GOLEM_FRAGMENT) == ENCHANTED_GOLEM_FRAGMENT_NEEDED)
+				if (getQuestItemsCount(partyMember, ENCHANTED_GOLEM_FRAGMENT) == ENCHANTED_GOLEM_FRAGMENT_NEEDED)
 				{
 					st.setCond(4, true);
 				}
 				else
 				{
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
 		}
@@ -157,7 +157,7 @@ public class Q00239_WontYouJoinUs extends Quest
 				{
 					htmltext = "32643-12.html";
 				}
-				else if ((q237 != null) && q237.isCompleted() && (talker.getLevel() >= MIN_LEVEL) && st.hasQuestItems(SUPPORT_CERTIFICATE))
+				else if ((q237 != null) && q237.isCompleted() && (talker.getLevel() >= MIN_LEVEL) && hasQuestItems(talker, SUPPORT_CERTIFICATE))
 				{
 					htmltext = "32643-01.htm";
 				}
@@ -170,25 +170,25 @@ public class Q00239_WontYouJoinUs extends Quest
 				switch (st.getCond())
 				{
 					case 1:
-						htmltext = (st.hasQuestItems(DESTROYED_MACHINE_PIECE)) ? "32643-05.html" : "32643-04.html";
+						htmltext = (hasQuestItems(talker, DESTROYED_MACHINE_PIECE)) ? "32643-05.html" : "32643-04.html";
 						break;
 					case 2:
-						if (st.getQuestItemsCount(DESTROYED_MACHINE_PIECE) == DESTROYED_MACHINE_PIECE_NEEDED)
+						if (getQuestItemsCount(talker, DESTROYED_MACHINE_PIECE) == DESTROYED_MACHINE_PIECE_NEEDED)
 						{
 							htmltext = "32643-06.html";
-							st.takeItems(DESTROYED_MACHINE_PIECE, -1);
+							takeItems(talker, DESTROYED_MACHINE_PIECE, -1);
 						}
 						break;
 					case 3:
-						htmltext = (st.hasQuestItems(ENCHANTED_GOLEM_FRAGMENT)) ? "32643-08.html" : "32643-09.html";
+						htmltext = (hasQuestItems(talker, ENCHANTED_GOLEM_FRAGMENT)) ? "32643-08.html" : "32643-09.html";
 						break;
 					case 4:
-						if (st.getQuestItemsCount(ENCHANTED_GOLEM_FRAGMENT) == ENCHANTED_GOLEM_FRAGMENT_NEEDED)
+						if (getQuestItemsCount(talker, ENCHANTED_GOLEM_FRAGMENT) == ENCHANTED_GOLEM_FRAGMENT_NEEDED)
 						{
 							htmltext = "32643-10.html";
-							st.giveAdena(283346, true);
-							st.takeItems(SUPPORT_CERTIFICATE, 1);
-							st.addExpAndSp(1319736, 103553);
+							giveAdena(talker, 283346, true);
+							takeItems(talker, SUPPORT_CERTIFICATE, 1);
+							addExpAndSp(talker, 1319736, 103553);
 							st.exitQuest(false, true);
 						}
 						break;

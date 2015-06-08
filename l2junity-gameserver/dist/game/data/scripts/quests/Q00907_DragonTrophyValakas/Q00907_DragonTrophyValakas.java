@@ -71,7 +71,7 @@ public class Q00907_DragonTrophyValakas extends Quest
 		}
 		
 		String htmltext = null;
-		if ((player.getLevel() >= MIN_LEVEL) && st.hasQuestItems(VACUALITE_FLOATING_STONE))
+		if ((player.getLevel() >= MIN_LEVEL) && hasQuestItems(player, VACUALITE_FLOATING_STONE))
 		{
 			switch (event)
 			{
@@ -117,7 +117,7 @@ public class Q00907_DragonTrophyValakas extends Quest
 				{
 					htmltext = "31540-02.html";
 				}
-				else if (!st.hasQuestItems(VACUALITE_FLOATING_STONE))
+				else if (!hasQuestItems(player, VACUALITE_FLOATING_STONE))
 				{
 					htmltext = "31540-04.html";
 				}
@@ -138,8 +138,8 @@ public class Q00907_DragonTrophyValakas extends Quest
 					}
 					case 2:
 					{
-						st.giveItems(MEDAL_OF_GLORY, 30);
-						st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						giveItems(player, MEDAL_OF_GLORY, 30);
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 						st.exitQuest(QuestType.DAILY, true);
 						htmltext = "31540-09.html";
 						break;
@@ -160,7 +160,7 @@ public class Q00907_DragonTrophyValakas extends Quest
 					{
 						htmltext = "31540-02.html";
 					}
-					else if (!st.hasQuestItems(VACUALITE_FLOATING_STONE))
+					else if (!hasQuestItems(player, VACUALITE_FLOATING_STONE))
 					{
 						htmltext = "31540-04.html";
 					}

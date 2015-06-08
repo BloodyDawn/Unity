@@ -82,16 +82,16 @@ public final class Q00031_SecretBuriedInTheSwamp extends Quest
 				if (st.isCond(1))
 				{
 					st.setCond(2, true);
-					st.giveItems(KRORINS_JOURNAL, 1);
+					giveItems(player, KRORINS_JOURNAL, 1);
 					htmltext = event;
 				}
 				break;
 			}
 			case "31555-05.html":
 			{
-				if (st.isCond(2) && st.hasQuestItems(KRORINS_JOURNAL))
+				if (st.isCond(2) && hasQuestItems(player, KRORINS_JOURNAL))
 				{
-					st.takeItems(KRORINS_JOURNAL, -1);
+					takeItems(player, KRORINS_JOURNAL, -1);
 					st.setCond(3, true);
 					htmltext = event;
 				}
@@ -113,8 +113,8 @@ public final class Q00031_SecretBuriedInTheSwamp extends Quest
 			{
 				if (st.isCond(7))
 				{
-					st.addExpAndSp(490000, 45880);
-					st.giveAdena(120000, true);
+					addExpAndSp(player, 490000, 45880);
+					giveAdena(player, 120000, true);
 					st.exitQuest(false, true);
 					htmltext = event;
 				}
@@ -155,7 +155,7 @@ public final class Q00031_SecretBuriedInTheSwamp extends Quest
 							}
 							case 2:
 							{
-								if (st.hasQuestItems(KRORINS_JOURNAL))
+								if (hasQuestItems(player, KRORINS_JOURNAL))
 								{
 									htmltext = "31555-04.html";
 								}

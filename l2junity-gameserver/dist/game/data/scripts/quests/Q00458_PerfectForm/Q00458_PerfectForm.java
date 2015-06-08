@@ -178,24 +178,24 @@ public class Q00458_PerfectForm extends Quest
 			case "32768-17.html":
 				if (st.isCond(2))
 				{
-					int overhitsConsecutive = st.getInt("overhitsConsecutive");
+					final int overhitsConsecutive = st.getInt("overhitsConsecutive");
 					if (overhitsConsecutive >= 20)
 					{
-						int rnd = getRandom(ICARUS_WEAPON_RECIPES.length);
-						st.rewardItems(ICARUS_WEAPON_RECIPES[rnd], 1);
+						final int rnd = getRandom(ICARUS_WEAPON_RECIPES.length);
+						rewardItems(player, ICARUS_WEAPON_RECIPES[rnd], 1);
 					}
 					else if (overhitsConsecutive >= 7)
 					{
 						int rnd = getRandom(ICARUS_WEAPON_PIECES.length);
-						st.rewardItems(ICARUS_WEAPON_PIECES[rnd], 5);
+						rewardItems(player, ICARUS_WEAPON_PIECES[rnd], 5);
 					}
 					else
 					{
 						int rnd = getRandom(ICARUS_WEAPON_PIECES.length);
-						st.rewardItems(ICARUS_WEAPON_PIECES[rnd], 2);
+						rewardItems(player, ICARUS_WEAPON_PIECES[rnd], 2);
 						// not sure if this should use rewardItems
-						st.giveItems(15482, 10); // Golden Spice Crate
-						st.giveItems(15483, 10); // Crystal Spice Crate
+						giveItems(player, 15482, 10); // Golden Spice Crate
+						giveItems(player, 15483, 10); // Crystal Spice Crate
 					}
 					st.exitQuest(QuestType.DAILY, true);
 				}
@@ -266,7 +266,7 @@ public class Q00458_PerfectForm extends Quest
 				}
 				else
 				{
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				
 				final ExQuestNpcLogList log = new ExQuestNpcLogList(getId());

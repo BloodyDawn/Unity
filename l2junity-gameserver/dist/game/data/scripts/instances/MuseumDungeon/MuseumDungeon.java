@@ -215,7 +215,7 @@ public final class MuseumDungeon extends AbstractInstance
 		}
 		else if (qs.isCond(1))
 		{
-			if (((npc == world.bookDesk) && !qs.hasQuestItems(THE_WAR_OF_GODS_AND_GIANTS)))
+			if (((npc == world.bookDesk) && !hasQuestItems(player, THE_WAR_OF_GODS_AND_GIANTS)))
 			{
 				qs.setCond(2);
 				giveItems(player, THE_WAR_OF_GODS_AND_GIANTS, 1);

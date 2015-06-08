@@ -182,7 +182,7 @@ public final class Q10331_StartOfFate extends Quest
 			{
 				if (qs.isCond(5))
 				{
-					qs.takeItems(SARIL_NECKLACE, 1);
+					takeItems(player, SARIL_NECKLACE, 1);
 					
 					switch (player.getRace())
 					{
