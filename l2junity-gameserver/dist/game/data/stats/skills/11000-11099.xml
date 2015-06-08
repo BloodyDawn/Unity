@@ -1730,8 +1730,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkill">
-				<param castSkillId="11012" /> <!-- Elemental Spike (Fire) -->
+			<effect name="TriggerSkillBySkillAttack">
+				<param attackSkillId="11012" /> <!-- Elemental Spike (Fire) -->
 				<param skillId="11077" skillLevel="1" skillLevelScaleTo="3" /> <!-- Decrease Fire Resistance -->
 			</effect>
 		</for>
@@ -1743,8 +1743,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkill">
-				<param castSkillId="11013" /> <!-- Elemental Spike (Water) -->
+			<effect name="TriggerSkillBySkillAttack">
+				<param attackSkillId="11013" /> <!-- Elemental Spike (Water) -->
 				<param skillId="11078" skillLevel="1" skillLevelScaleTo="3" /> <!-- Decrease Water Resistance -->
 			</effect>
 		</for>
@@ -1756,8 +1756,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkill">
-				<param castSkillId="11014" /> <!-- Elemental Spike (Wind) -->
+			<effect name="TriggerSkillBySkillAttack">
+				<param attackSkillId="11014" /> <!-- Elemental Spike (Wind) -->
 				<param skillId="11079" skillLevel="1" skillLevelScaleTo="3" /> <!-- Decrease Wind Resistance -->
 			</effect>
 		</for>
@@ -1769,8 +1769,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkill">
-				<param castSkillId="11015" /> <!-- Elemental Spike (Earth) -->
+			<effect name="TriggerSkillBySkillAttack">
+				<param attackSkillId="11015" /> <!-- Elemental Spike (Earth) -->
 				<param skillId="11080" skillLevel="1" skillLevelScaleTo="3" /> <!-- Decrease Earth Resistance -->
 			</effect>
 		</for>
@@ -1782,8 +1782,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkill">
-				<param castSkillId="11016" /> <!-- Elemental Spike (4 Elements) -->
+			<effect name="TriggerSkillBySkillAttack">
+				<param attackSkillId="11016" /> <!-- Elemental Spike (4 Elements) -->
 				<param skillId="11081" skillLevel="1" skillLevelScaleTo="3" /> <!-- Decrease Fire/Water/Wind/Earth Resistances -->
 			</effect>
 		</for>
@@ -1906,8 +1906,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkill">
-				<param castSkillId="11018" /> <!-- Elemental Crash (Fire) -->
+			<effect name="TriggerSkillBySkillAttack">
+				<param attackSkillId="11018" /> <!-- Elemental Crash (Fire) -->
 				<param skillId="11087" skillLevel="1" chance="20" /> <!-- Elemental Crash (Fire) -->
 			</effect>
 		</for>
@@ -1919,8 +1919,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkill">
-				<param castSkillId="11019" /> <!-- Elemental Crash (Water) -->
+			<effect name="TriggerSkillBySkillAttack">
+				<param attackSkillId="11019" /> <!-- Elemental Crash (Water) -->
 				<param skillId="11088" skillLevel="1" /> <!-- Elemental Crash (Water) -->
 			</effect>
 		</for>
@@ -1932,8 +1932,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkill">
-				<param castSkillId="11020" /> <!-- Elemental Crash (Wind) -->
+			<effect name="TriggerSkillBySkillAttack">
+				<param attackSkillId="11020" /> <!-- Elemental Crash (Wind) -->
 				<param skillId="11089" skillLevel="1" chance="30" /> <!-- Elemental Crash (Wind) -->
 			</effect>
 		</for>
@@ -1945,8 +1945,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkill">
-				<param castSkillId="11021" /> <!-- Elemental Crash (Earth) -->
+			<effect name="TriggerSkillBySkillAttack">
+				<param attackSkillId="11021" /> <!-- Elemental Crash (Earth) -->
 				<param skillId="11090" skillLevel="1" chance="20" /> <!-- Elemental Crash (Earth) -->
 			</effect>
 		</for>
@@ -1958,8 +1958,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkill">
-				<param castSkillId="11022" /> <!-- Elemental Crash (4 Elements) -->
+			<effect name="TriggerSkillBySkillAttack">
+				<param attackSkillId="11022" /> <!-- Elemental Crash (4 Elements) -->
 				<param skillId="11091" skillLevel="1" chance="20" /> <!-- Elemental Crash (4 Elements) -->
 			</effect>
 		</for>
@@ -2175,8 +2175,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkill">
-				<param castSkillId="11024" /> <!-- Elemental Destruction (Fire) -->
+			<effect name="TriggerSkillBySkillAttack">
+				<param attackSkillId="11024" /> <!-- Elemental Destruction (Fire) -->
 				<param skillId="11101" skillLevel="1" chance="30" /> <!-- Elemental Destruction: Fire -->
 			</effect>
 		</for>
@@ -2188,8 +2188,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkill">
-				<param castSkillId="11025" /> <!-- Elemental Destruction (Water) -->
+			<effect name="TriggerSkillBySkillAttack">
+				<param attackSkillId="11025" /> <!-- Elemental Destruction (Water) -->
 				<param skillId="11102" skillLevel="1" chance="30" /> <!-- Elemental Destruction: Water -->
 			</effect>
 		</for>
@@ -2201,8 +2201,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkill">
-				<param castSkillId="11026" /> <!-- Elemental Destruction (Wind) -->
+			<effect name="TriggerSkillBySkillAttack">
+				<param attackSkillId="11026" /> <!-- Elemental Destruction (Wind) -->
 				<param skillId="11103" skillLevel="1" chance="30" /> <!-- Elemental Destruction: Wind -->
 			</effect>
 		</for>
@@ -2214,8 +2214,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkill">
-				<param castSkillId="11027" /> <!-- Elemental Destruction (Earth) -->
+			<effect name="TriggerSkillBySkillAttack">
+				<param attackSkillId="11027" /> <!-- Elemental Destruction (Earth) -->
 				<param skillId="11104" skillLevel="1" chance="30" /> <!-- Elemental Destruction: Earth -->
 			</effect>
 		</for>

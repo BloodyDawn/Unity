@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="11100" levels="1" name="Elemental Destruction: Double Casting">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- 4 Elements -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkill">
-				<param castSkillId="11028" /> <!-- Elemental Destruction (4 Elements) -->
+			<effect name="TriggerSkillBySkillAttack">
+				<param attackSkillId="11028" /> <!-- Elemental Destruction (4 Elements) -->
 				<param skillId="11105" skillLevel="1" chance="50" /> <!-- Elemental Destruction: 4 Attributes -->
 			</effect>
 		</for>
 	</skill>
 	<skill id="11101" levels="1" name="Elemental Destruction: Fire">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Body is destroyed. -->
 		<set name="icon" val="icon.skill11866" />
 		<set name="abnormalLvl" val="1" />
@@ -26,7 +26,7 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11102" levels="1" name="Elemental Destruction: Water">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Body is destroyed. -->
 		<set name="icon" val="icon.skill11866" />
 		<set name="abnormalLvl" val="1" />
@@ -39,7 +39,7 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11103" levels="1" name="Elemental Destruction: Wind">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Body is destroyed. -->
 		<set name="icon" val="icon.skill11866" />
 		<set name="abnormalLvl" val="1" />
@@ -52,7 +52,7 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11104" levels="1" name="Elemental Destruction: Earth">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Body is destroyed. -->
 		<set name="icon" val="icon.skill11866" />
 		<set name="abnormalLvl" val="1" />
@@ -65,7 +65,7 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11105" levels="1" name="Elemental Destruction: 4 Attributes">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Body is destroyed. -->
 		<set name="icon" val="icon.skill11866" />
 		<set name="abnormalLvl" val="1" />
@@ -78,6 +78,7 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11106" levels="7" name="Elemental Mass Burst">
+		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage on nearby enemies with 569 Power. For 15 seconds, M. Def. - 20%. -->
 		<table name="#abnormalTime"> 15 20 25 30 30 30 30 </table>
 		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
@@ -87,6 +88,12 @@
 		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="sharedReuseSkillId" val="11106" />
+		<set name="fireStanceSkillId" val="11107" />
+		<set name="waterStanceSkillId" val="11108" />
+		<set name="windStanceSkillId" val="11109" />
+		<set name="earthStanceSkillId" val="11110" />
+		<set name="allStanceSkillId" val="11111" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="#power" />
 		<set name="targetType" val="AREA" />
@@ -114,6 +121,7 @@
 		</for>
 	</skill>
 	<skill id="11107" levels="7" name="Elemental Mass Burst: Fire">
+		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage on nearby enemies with 569 Power. For 15 seconds, M. Def. - 20%. -->
 		<table name="#abnormalTime"> 15 20 25 30 30 30 30 </table>
 		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
@@ -123,6 +131,7 @@
 		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="sharedReuseSkillId" val="11106" />
 		<set name="element" val="0" /> <!-- Fire -->
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
@@ -152,6 +161,7 @@
 		</for>
 	</skill>
 	<skill id="11108" levels="7" name="Elemental Mass Burst: Water">
+		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage on nearby enemies with 569 Power. For 15 seconds, M. Def. - 20%. -->
 		<table name="#abnormalTime"> 15 20 25 30 30 30 30 </table>
 		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
@@ -161,6 +171,7 @@
 		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="sharedReuseSkillId" val="11106" />
 		<set name="element" val="1" /> <!-- Water -->
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
@@ -190,6 +201,7 @@
 		</for>
 	</skill>
 	<skill id="11109" levels="7" name="Elemental Mass Burst: Wind">
+		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage on nearby enemies with 569 Power. For 15 seconds, M. Def. - 20%. -->
 		<table name="#abnormalTime"> 15 20 25 30 30 30 30 </table>
 		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
@@ -199,6 +211,7 @@
 		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="sharedReuseSkillId" val="11106" />
 		<set name="element" val="2" /> <!-- Wind -->
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
@@ -228,6 +241,7 @@
 		</for>
 	</skill>
 	<skill id="11110" levels="7" name="Elemental Mass Burst: Earth">
+		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage on nearby enemies with 569 Power. For 15 seconds, M. Def. - 20%. -->
 		<table name="#abnormalTime"> 15 20 25 30 30 30 30 </table>
 		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
@@ -237,6 +251,7 @@
 		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="sharedReuseSkillId" val="11106" />
 		<set name="element" val="3" /> <!-- Earth -->
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
@@ -265,7 +280,8 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="11111" levels="4" name="Elemental Mass Burst: 4 Attributes">
+	<skill id="11111" levels="7" name="Elemental Mass Burst: 4 Attributes">
+		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage on nearby enemies with 569 Power. For 15 seconds, M. Def. - 20%. -->
 		<table name="#abnormalTime"> 15 20 25 30 30 30 30 </table>
 		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
@@ -275,6 +291,7 @@
 		<set name="abnormalTime" val="#abnormalTime" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="sharedReuseSkillId" val="11106" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="#power" />
 		<set name="targetType" val="AREA" />
@@ -302,12 +319,20 @@
 		</for>
 	</skill>
 	<skill id="11112" levels="7" name="Elemental Speed Burst">
+		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage with 517 Power on a single target. -->
 		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 517 562 591 622 637 655 673 </table>
 		<set name="icon" val="icon.skill11865" />
+		<set name="sharedReuseSkillId" val="11112" />
+		<set name="fireStanceSkillId" val="11113" />
+		<set name="waterStanceSkillId" val="11114" />
+		<set name="windStanceSkillId" val="11115" />
+		<set name="earthStanceSkillId" val="11116" />
+		<set name="allStanceSkillId" val="11117" />
 		<set name="operateType" val="A1" />
+		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -329,11 +354,13 @@
 		</for>
 	</skill>
 	<skill id="11113" levels="7" name="Elemental Speed Burst: Fire">
+		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage with 517 Power on a single target. -->
 		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 517 562 591 622 637 655 673 </table>
 		<set name="icon" val="icon.skill11865" />
+		<set name="sharedReuseSkillId" val="11112" />
 		<set name="element" val="0" />
 		<set name="elementPower" val="20" /> <!-- Fire -->
 		<set name="operateType" val="A1" />
@@ -359,11 +386,13 @@
 		</for>
 	</skill>
 	<skill id="11114" levels="7" name="Elemental Speed Burst: Water">
+		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage with 517 Power on a single target. -->
 		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 517 562 591 622 637 655 673 </table>
 		<set name="icon" val="icon.skill11865" />
+		<set name="sharedReuseSkillId" val="11112" />
 		<set name="element" val="1" />
 		<set name="elementPower" val="20" /> <!-- Water -->
 		<set name="operateType" val="A1" />
@@ -389,11 +418,13 @@
 		</for>
 	</skill>
 	<skill id="11115" levels="7" name="Elemental Speed Burst: Wind">
+		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage with 517 Power on a single target. -->
 		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 517 562 591 622 637 655 673 </table>
 		<set name="icon" val="icon.skill11865" />
+		<set name="sharedReuseSkillId" val="11112" />
 		<set name="element" val="2" />
 		<set name="elementPower" val="20" /> <!-- Wind -->
 		<set name="operateType" val="A1" />
@@ -419,11 +450,13 @@
 		</for>
 	</skill>
 	<skill id="11116" levels="7" name="Elemental Speed Burst: Earth">
+		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage with 517 Power on a single target. -->
 		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 517 562 591 622 637 655 673 </table>
 		<set name="icon" val="icon.skill11865" />
+		<set name="sharedReuseSkillId" val="11112" />
 		<set name="element" val="3" />
 		<set name="elementPower" val="20" /> <!-- Earth -->
 		<set name="operateType" val="A1" />
@@ -449,11 +482,13 @@
 		</for>
 	</skill>
 	<skill id="11117" levels="7" name="Elemental Speed Burst: 4 Attributes">
+		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict damage with 517 Power on a single target. -->
 		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 517 562 591 622 637 655 673 </table>
 		<set name="icon" val="icon.skill11865" />
+		<set name="sharedReuseSkillId" val="11112" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
@@ -477,11 +512,18 @@
 		</for>
 	</skill>
 	<skill id="11118" levels="7" name="Elemental Power Burst">
+		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict severe damage with 569 Power on a single target. -->
 		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 697 715 733 </table>
 		<set name="icon" val="icon.skill11865" />
+		<set name="sharedReuseSkillId" val="11118" />
+		<set name="fireStanceSkillId" val="11119" />
+		<set name="waterStanceSkillId" val="11120" />
+		<set name="windStanceSkillId" val="11121" />
+		<set name="earthStanceSkillId" val="11122" />
+		<set name="allStanceSkillId" val="11123" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
@@ -505,11 +547,13 @@
 		</for>
 	</skill>
 	<skill id="11119" levels="7" name="Elemental Power Burst: Fire">
+		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict severe damage with 569 Power on a single target. -->
 		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 697 715 733 </table>
 		<set name="icon" val="icon.skill11865" />
+		<set name="sharedReuseSkillId" val="11118" />
 		<set name="element" val="0" />
 		<set name="elementPower" val="20" /> <!-- Fire -->
 		<set name="operateType" val="A1" />
@@ -535,11 +579,13 @@
 		</for>
 	</skill>
 	<skill id="11120" levels="7" name="Elemental Power Burst: Water">
+		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict severe damage with 569 Power on a single target. -->
 		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 697 715 733 </table>
 		<set name="icon" val="icon.skill11865" />
+		<set name="sharedReuseSkillId" val="11118" />
 		<set name="element" val="1" />
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
@@ -565,11 +611,13 @@
 		</for>
 	</skill>
 	<skill id="11121" levels="7" name="Elemental Power Burst: Wind">
+		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict severe damage with 569 Power on a single target. -->
 		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 697 715 733 </table>
 		<set name="icon" val="icon.skill11865" />
+		<set name="sharedReuseSkillId" val="11118" />
 		<set name="element" val="2" />
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
@@ -595,11 +643,13 @@
 		</for>
 	</skill>
 	<skill id="11122" levels="7" name="Elemental Power Burst: Earth">
+		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict severe damage with 569 Power on a single target. -->
 		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 697 715 733 </table>
 		<set name="icon" val="icon.skill11865" />
+		<set name="sharedReuseSkillId" val="11118" />
 		<set name="element" val="3" />
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
@@ -625,11 +675,13 @@
 		</for>
 	</skill>
 	<skill id="11123" levels="7" name="Elemental Power Burst: 4 Attributes">
+		<!-- Updated to IO -->
 		<!-- Detonates an Elemental Destruction to inflict severe damage with 569 Power on a single target. -->
 		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#mpConsumes"> 137 154 166 179 192 205 218 </table>
 		<table name="#power"> 569 618 649 683 697 715 733 </table>
 		<set name="icon" val="icon.skill11865" />
+		<set name="sharedReuseSkillId" val="11118" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
@@ -685,7 +737,7 @@
 		</for>
 	</skill>
 	<skill id="11126" levels="3" name="Fire Destruction">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts 620 magical damage on target, and inflicts Fear. Over-hit. -->
 		<table name="#mpConsumes"> 768 873 993 </table>
 		<table name="#power"> 620 657 695 </table>
@@ -700,7 +752,7 @@
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -717,16 +769,16 @@
 		</for>
 	</skill>
 	<skill id="11127" levels="3" name="Dark Destruction">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts 713 magical damage on target. Over-hit. -->
 		<table name="#mpConsumes"> 768 873 993 </table>
 		<table name="#power"> 713 755 799 </table>
 		<set name="icon" val="icon.skill0000" />
-		<set name="element" val="4" />
+		<set name="element" val="4" /> <!-- Dark -->
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -740,19 +792,22 @@
 		</for>
 	</skill>
 	<skill id="11128" levels="3" name="Water Destruction">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts 620 magical damage on target, and decreases their Speed by 130. Over-hit. -->
+		<table name="#abnormalLvls"> 1 2 3 </table>
 		<table name="#mpConsumes"> 768 873 993 </table>
 		<table name="#power"> 620 657 695 </table>
 		<set name="icon" val="icon.skill0000" />
-		<set name="abnormalTime" val="3" /> <!-- Guessed -->
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="5" /> <!-- Guessed -->
+		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="basicProperty" val="MEN" />
 		<set name="element" val="1" />
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -770,7 +825,7 @@
 		</for>
 	</skill>
 	<skill id="11129" levels="3" name="Wind Destruction">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts 620 magical damage on target, and inflicts Knock Back. Over-hit. -->
 		<table name="#mpConsumes"> 768 873 993 </table>
 		<table name="#power"> 620 657 695 </table>
@@ -785,7 +840,7 @@
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="trait" val="KNOCKBACK" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -804,7 +859,7 @@
 		</for>
 	</skill>
 	<skill id="11130" levels="3" name="Soul Destruction">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts 620 magical damage on target, and inflicts Hold. Over-hit. -->
 		<table name="#mpConsumes"> 768 873 993 </table>
 		<table name="#power"> 620 657 695 </table>
@@ -816,7 +871,8 @@
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="ONE" />
 		<set name="trait" val="HOLD" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -844,7 +900,7 @@
 		<set name="channelingTickInitialDelay" val="2" />
 		<set name="operateType" val="CA1" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -860,11 +916,12 @@
 		</channelingEffects>
 	</skill>
 	<skill id="11132" levels="3" name="Lightning Shield">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 30 sec., creates a shield of lightning and Paralyzes those that attack you. -->
 		<table name="#triggerLevel"> 1 2 3 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<set name="icon" val="icon.skill1515" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="ELEMENTAL_ARMOR" /> <!-- Guessed -->
 		<set name="operateType" val="A2" />
@@ -878,21 +935,22 @@
 			<effect name="TriggerSkillByDamage">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="127" />
 				<param minDamage="100" /> <!-- Guessed -->
-				<param chance="20" /> <!-- Guessed -->
+				<param chance="50" /> <!-- Guessed -->
 				<param skillId="11133" skillLevel="#triggerLevel" /> <!-- Lightning Shield: Paralyze -->
 				<param targetType="ONE" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="11133" levels="3" name="Lightning Shield: Paralyze">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Momentarily stiffened. -->
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<set name="icon" val="icon.skill1515" />
-		<set name="abnormalLvl" val="1" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="3" /> <!-- Guessed -->
 		<set name="abnormalType" val="PARALYZE" />
 		<set name="abnormalVisualEffect" val="PARALYZE" />
-		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="activateRate" val="90" /> <!-- Guessed -->
 		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
@@ -908,7 +966,7 @@
 		</for>
 	</skill>
 	<skill id="11134" levels="1" name="Meteor">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Drops meteors to attack surrounding enemies and deals great damage. Inflicts abnormal state and deals continuous damage. The higher the level of the abnormal state, the greater the damage. Consumes 5 Spirit Ores. -->
 		<set name="icon" val="icon.skill11134" />
 		<set name="affectRange" val="250" /> <!-- Guessed -->
@@ -919,7 +977,7 @@
 		<set name="itemConsumeCount" val="5" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="CA1" />
-		<set name="power" val="250" /> <!-- Guessed -->
+		<set name="power" val="500" /> <!-- Guessed -->
 		<set name="targetType" val="GROUND" />
 		<set name="mpConsume" val="52" />
 		<set name="castRange" val="900" />
@@ -935,7 +993,7 @@
 		</channelingEffects>
 	</skill>
 	<skill id="11135" levels="1" name="Black Pool">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Creates a black swamp in the selected location, dealing great damage, and receiving 50% of the target's damage as HP. Inflicts abnormal state and decreases Speed. The higher the level of the abnormal state, the greater the damage, and at the last stage, Shocks the target. Consumes 5 Spirit Ores. -->
 		<set name="icon" val="icon.skill11135" />
 		<set name="affectRange" val="250" /> <!-- Guessed -->
@@ -965,7 +1023,7 @@
 		</channelingEffects>
 	</skill>
 	<skill id="11136" levels="1" name="Snow Storm">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Creates an ice storm in the selected location, dealing continuous damage. Inflicts abnormal state and decreases Speed. The higher the level of the abnormal state, the greater the damage, and at the last stage, Freezes the target. Consumes 5 Spirit Ores. -->
 		<set name="icon" val="icon.skill11136" />
 		<set name="affectRange" val="250" /> <!-- Guessed -->
@@ -995,7 +1053,7 @@
 		</channelingEffects>
 	</skill>
 	<skill id="11137" levels="1" name="Tornado">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Creates a tornado in the selected location, dealing great damage. Inflicts abnormal state and decreases Speed. The higher the level of the abnormal state, the greater the damage, and at the last stage, locks the target in an Aerial Yoke. Consumes 5 Spirit Ores. -->
 		<set name="icon" val="icon.skill11137" />
 		<set name="affectRange" val="250" /> <!-- Guessed -->
@@ -1023,7 +1081,7 @@
 		</channelingEffects>
 	</skill>
 	<skill id="11138" levels="1" name="Soul Barrage">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Detonates the soul in the selected location to attack surrounding enemies. Inflicts abnormal state and increases PvP Damage. The effect increases as the level of the abnormal state increases. Consumes 5 Spirit Ores. -->
 		<set name="icon" val="icon.skill11138" />
 		<set name="affectRange" val="250" /> <!-- Guessed -->
@@ -1052,7 +1110,9 @@
 		<!-- Updated to IO -->
 		<!-- Engulfed in flames. -->
 		<table name="#dot"> 431 503 720 </table>
+		<table name="#abnormalLvl"> 1 2 3 </table>
 		<set name="icon" val="icon.skill11134" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="DOT_ATTR" />
 		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
@@ -1071,7 +1131,7 @@
 		</for>
 	</skill>
 	<skill id="11140" levels="5" name="Black Shackle">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Bound to dark power. -->
 		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
 		<table name="#runSpd"> 0.90 0.80 0.70 0.60 0.00 </table> <!-- Guessed. TODO: Stun Target at Lv5 -->
@@ -1079,12 +1139,12 @@
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="5" /> <!-- Guessed -->
 		<set name="abnormalType" val="SPEED_DOWN" />
-		<set name="activateRate" val="80" />
+		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="basicProperty" val="MEN" />
 		<set name="element" val="5" /> <!-- Dark -->
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
 		<for>
@@ -1094,7 +1154,7 @@
 		</for>
 	</skill>
 	<skill id="11141" levels="5" name="Freezing Slow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- The cold is creeping up from your feet. -->
 		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
 		<table name="#runSpd"> 0.90 0.80 0.70 0.60 0.00 </table> <!-- Guessed. TODO: Freeze Target at Lv5 -->
@@ -1107,7 +1167,7 @@
 		<set name="element" val="1" /> <!-- Water -->
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
 		<for>
@@ -1137,7 +1197,7 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="11144" levels="5" name="Wind Binding">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Speed has decreased due to the gust. -->
 		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
 		<table name="#runSpd"> 0.90 0.80 0.70 0.60 0.00 </table> <!-- Guessed. TODO: Air Bind Target at Lv5 -->
@@ -1150,7 +1210,7 @@
 		<set name="element" val="2" /> <!-- Wind -->
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
 		<for>
@@ -1160,14 +1220,17 @@
 		</for>
 	</skill>
 	<skill id="11145" levels="5" name="Soul Weakness">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Cursed by a soul. -->
-		<table name="#pvpDef"> 0.90 0.80 0.70 0.60 0.50 </table>
+		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
+		<table name="#pvpDef"> 0.90 0.80 0.70 0.60 0.50 </table> <!-- Guessed -->
 		<set name="icon" val="icon.skill11138" />
-		<set name="activateRate" val="80" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="5" /> <!-- Guessed -->
+		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
 		<for>
@@ -1315,6 +1378,7 @@
 		<table name="#mpConsumes"> 37 37 37 37 39 41 43 </table>
 		<table name="#power"> 193 195 197 199 202 206 210 </table>
 		<set name="icon" val="icon.skill10879" />
+		<set name="sharedReuseSkillId" val="11177" />
 		<set name="allStanceSkillId" val="11189" /> <!-- Double Casting skill Id -->
 		<set name="element" val="1" /> <!-- Water -->
 		<set name="elementPower" val="20" />
@@ -1340,8 +1404,8 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="0" />
 		<for>
-			<effect name="TriggerSkillBySkill">
-				<param castSkillId="11177" /> <!-- Aqua Crash -->
+			<effect name="TriggerSkillBySkillAttack">
+				<param attackSkillId="11177" /> <!-- Aqua Crash -->
 				<param skillId="11188" skillLevel="1" skillLevelScaleTo="5" /> <!-- Frozen -->
 			</effect>
 		</for>
@@ -1491,7 +1555,7 @@
 		</for>
 	</skill>
 	<skill id="11188" levels="5" name="Frozen">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- The cold is creeping up from your feet. -->
 		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
 		<table name="#runSpd"> 0.90 0.80 0.70 0.60 0.00 </table> <!-- Totally Guessed, TODO Freeze target at level 5 -->
@@ -1516,11 +1580,12 @@
 		<table name="#mpConsumes"> 37 37 37 37 39 41 43 </table>
 		<table name="#power"> 193 195 197 199 202 206 210 </table>
 		<set name="icon" val="icon.skill10879" />
+		<set name="sharedReuseSkillId" val="11177" />
 		<set name="element" val="1" /> <!-- Water -->
 		<set name="elementPower" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -1575,8 +1640,8 @@
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="0" />
 		<for>
-			<effect name="TriggerSkillBySkill">
-				<param castSkillId="11189" /> <!-- Aqua Crash -->
+			<effect name="TriggerSkillBySkillAttack">
+				<param attackSkillId="11189" /> <!-- Aqua Crash -->
 				<param skillId="11196" skillLevel="1" chance="33" /> <!-- Frozen --> <!-- Chance guessed -->
 			</effect>
 		</for>
