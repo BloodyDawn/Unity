@@ -8414,7 +8414,6 @@ public final class PlayerInstance extends Playable
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
 		}
-		setIsCastingNow(true);
 		// Create a new SkillDat object and set the player _currentSkill
 		// This is used mainly to save & queue the button presses, since L2Character has
 		// _lastSkillCast which could otherwise replace it
@@ -8458,6 +8457,7 @@ public final class PlayerInstance extends Playable
 		}
 		
 		// Notify the AI with AI_INTENTION_CAST and target
+		setIsCastingNow(true);
 		getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill, target);
 		return true;
 	}
