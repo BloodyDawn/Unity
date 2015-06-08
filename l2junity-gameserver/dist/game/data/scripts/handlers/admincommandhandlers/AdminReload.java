@@ -28,6 +28,7 @@ import org.l2junity.gameserver.data.sql.impl.TeleportLocationTable;
 import org.l2junity.gameserver.data.xml.impl.AbilityPointsData;
 import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.data.xml.impl.AppearanceItemData;
+import org.l2junity.gameserver.data.xml.impl.ArmorSetsData;
 import org.l2junity.gameserver.data.xml.impl.BuyListData;
 import org.l2junity.gameserver.data.xml.impl.DoorData;
 import org.l2junity.gameserver.data.xml.impl.EnchantItemData;
@@ -275,6 +276,12 @@ public class AdminReload implements IAdminCommandHandler
 				{
 					SayuneData.getInstance().load();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Sayune data.");
+					break;
+				}
+				case "sets":
+				{
+					ArmorSetsData.getInstance().load();
+					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Armor sets data.");
 					break;
 				}
 				default:

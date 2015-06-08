@@ -110,7 +110,7 @@ public final class GeoDriver
 		
 		try (RandomAccessFile raf = new RandomAccessFile(filePath.toFile(), "r"))
 		{
-			_regions.set(regionOffset, new Region(raf.getChannel().map(MapMode.READ_ONLY, 0, raf.length()).order(ByteOrder.LITTLE_ENDIAN)));
+			_regions.set(regionOffset, new Region(raf.getChannel().map(MapMode.READ_ONLY, 0, raf.length()).load().order(ByteOrder.LITTLE_ENDIAN)));
 		}
 	}
 	

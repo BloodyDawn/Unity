@@ -104,29 +104,7 @@ public abstract class ItemContainer
 	 */
 	public ItemInstance getItemByItemId(int itemId)
 	{
-		for (ItemInstance item : _items.values())
-		{
-			if ((item != null) && (item.getId() == itemId))
-			{
-				return item;
-			}
-		}
-		return null;
-	}
-	
-	/**
-	 * @return true if player got item for self resurrection
-	 */
-	public final boolean haveItemForSelfResurrection()
-	{
-		for (ItemInstance item : _items.values())
-		{
-			if ((item != null) && (item.getItem().isAllowSelfResurrection()))
-			{
-				return true;
-			}
-		}
-		return false;
+		return _items.values().stream().filter(item -> item.getId() == itemId).findFirst().orElse(null);
 	}
 	
 	/**
@@ -181,6 +159,14 @@ public abstract class ItemContainer
 			}
 		}
 		return count;
+	}
+	
+	/**
+	 * @return true if player got item for self resurrection
+	 */
+	public final boolean haveItemForSelfResurrection()
+	{
+		return _items.values().stream().anyMatch(item -> item.getItem().isAllowSelfResurrection());
 	}
 	
 	/**

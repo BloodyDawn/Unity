@@ -58,32 +58,13 @@ public class FuncArmorSet extends AbstractFunction
 		final PlayerInstance player = effector.getActingPlayer();
 		if (player != null)
 		{
-			final ItemInstance chest = player.getChestArmorInstance();
-			if (chest != null)
+			for (ItemInstance item : player.getInventory().getItems(ItemInstance::isEquipped))
 			{
-				final ArmorSet set = ArmorSetsData.getInstance().getSet(chest.getId());
-				if ((set != null) && (set.getPiecesCount(player) >= set.getMinimumPieces()))
+				for (ArmorSet set : ArmorSetsData.getInstance().getSets(item.getId()))
 				{
-					switch (getStat())
+					if (set.getPiecesCount(player, ItemInstance::getId) >= set.getMinimumPieces())
 					{
-						case STAT_STR:
-							value += set.getSTR();
-							break;
-						case STAT_DEX:
-							value += set.getDEX();
-							break;
-						case STAT_INT:
-							value += set.getINT();
-							break;
-						case STAT_MEN:
-							value += set.getMEN();
-							break;
-						case STAT_CON:
-							value += set.getCON();
-							break;
-						case STAT_WIT:
-							value += set.getWIT();
-							break;
+						value += set.getStatsBonus(getStat());
 					}
 				}
 			}

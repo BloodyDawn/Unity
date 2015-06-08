@@ -25,6 +25,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.function.Function;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -332,7 +334,7 @@ public abstract class Inventory extends ItemContainer
 					}
 					else
 					{
-						_log.warn("Inventory.ItemSkillsListener.Weapon: Incorrect skill: " + skillInfo + ".");
+						_log.warn("Inventory.ItemSkillsListener.Weapon: Incorrect skill: {}", skillInfo);
 					}
 				}
 			}
@@ -471,7 +473,7 @@ public abstract class Inventory extends ItemContainer
 					}
 					else
 					{
-						_log.warn("Inventory.ItemSkillsListener.Weapon: Incorrect skill: " + skillInfo + ".");
+						_log.warn("Inventory.ItemSkillsListener.Weapon: Incorrect skill: {}", skillInfo);
 					}
 				}
 			}
@@ -497,93 +499,6 @@ public abstract class Inventory extends ItemContainer
 			return instance;
 		}
 		
-		private boolean addSkills(PlayerInstance player, ItemInstance item, List<ArmorsetSkillHolder> skills, int piecesCount)
-		{
-			boolean updateTimeStamp = false;
-			boolean update = false;
-			if (skills != null)
-			{
-				for (ArmorsetSkillHolder holder : skills)
-				{
-					final Skill itemSkill = holder.getSkill();
-					if (itemSkill != null)
-					{
-						if (holder.getMinimumPieces() > piecesCount)
-						{
-							continue;
-						}
-						
-						player.addSkill(itemSkill, false);
-						
-						if (itemSkill.isActive() && (item != null))
-						{
-							if (!player.hasSkillReuse(itemSkill.getReuseHashCode()))
-							{
-								int equipDelay = item.getEquipReuseDelay();
-								if (equipDelay > 0)
-								{
-									player.addTimeStamp(itemSkill, equipDelay);
-									player.disableSkill(itemSkill, equipDelay);
-								}
-							}
-							updateTimeStamp = true;
-						}
-						update = true;
-					}
-					else
-					{
-						_log.warn("Inventory.ArmorSetListener.addSkills: Incorrect skill: " + holder + ".");
-					}
-				}
-			}
-			if (updateTimeStamp)
-			{
-				player.sendPacket(new SkillCoolTime(player));
-			}
-			return update;
-		}
-		
-		private boolean addShieldSkills(PlayerInstance player, List<SkillHolder> skills)
-		{
-			boolean update = false;
-			for (SkillHolder holder : skills)
-			{
-				if (holder.getSkill() != null)
-				{
-					player.addSkill(holder.getSkill(), false);
-					update = true;
-				}
-				else
-				{
-					_log.warn("Inventory.ArmorSetListener.addShieldSkills: Incorrect skill: " + holder + ".");
-				}
-			}
-			return update;
-		}
-		
-		private boolean addEnchantSkills(PlayerInstance player, List<ArmorsetSkillHolder> skills, int lowestEnchantedItem)
-		{
-			boolean update = false;
-			for (ArmorsetSkillHolder holder : skills)
-			{
-				if (holder.getMinimumPieces() > lowestEnchantedItem)
-				{
-					continue;
-				}
-				
-				if (holder.getSkill() != null)
-				{
-					player.addSkill(holder.getSkill(), false);
-					update = true;
-				}
-				else
-				{
-					_log.warn("Inventory.ArmorSetListener.addEnchantSkills: Incorrect skill: " + holder + ".");
-				}
-			}
-			return update;
-		}
-		
 		@Override
 		public void notifyEquiped(int slot, ItemInstance item, Inventory inventory)
 		{
@@ -592,63 +507,19 @@ public abstract class Inventory extends ItemContainer
 				return;
 			}
 			
-			// Checks if player is wearing a chest item
-			final ItemInstance chestItem = inventory.getPaperdollItem(PAPERDOLL_CHEST);
-			if (chestItem == null)
-			{
-				return;
-			}
-			
 			final PlayerInstance player = (PlayerInstance) inventory.getOwner();
 			boolean update = false;
 			
-			final ArmorSet armorSet = ArmorSetsData.getInstance().getSet(chestItem.getId());
-			if (armorSet != null)
+			// Verify and apply normal set
+			if (verifyAndApply(player, item, ItemInstance::getId))
 			{
-				// Checks if equipped item is part of set
-				if (armorSet.containItem(slot, item.getId()))
-				{
-					final int piecesCount = armorSet.getPiecesCount(player);
-					final int lowestEnchantedItem = armorSet.getLowestSetEnchant(player);
-					
-					if (piecesCount >= armorSet.getMinimumPieces())
-					{
-						update = addSkills(player, item, armorSet.getSkills(), piecesCount);
-						
-						if (armorSet.containShield(player)) // has shield from set
-						{
-							if (addShieldSkills(player, armorSet.getShieldSkills()))
-							{
-								update = true;
-							}
-						}
-						
-						if (lowestEnchantedItem > 5) // has all parts of set enchanted to 6 or more
-						{
-							if (addEnchantSkills(player, armorSet.getEnchantSkills(), lowestEnchantedItem))
-							{
-								update = true;
-							}
-						}
-					}
-				}
-				else if (armorSet.containShield(item.getId()))
-				{
-					if (addShieldSkills(player, armorSet.getShieldSkills()))
-					{
-						update = true;
-					}
-				}
+				update = true;
 			}
 			
-			final ArmorSet visualArmorSet = ArmorSetsData.getInstance().getSet(chestItem.getVisualId());
-			if ((visualArmorSet != null) && visualArmorSet.isVisual())
+			// Very and apply visual set
+			if (verifyAndApply(player, item, ItemInstance::getVisualId))
 			{
-				int pieces = visualArmorSet.getVisualPiecesCount(player);
-				if (pieces >= visualArmorSet.getMinimumPieces())
-				{
-					addSkills(player, item, visualArmorSet.getSkills(), visualArmorSet.getPiecesCount(player));
-				}
+				update = true;
 			}
 			
 			if (update)
@@ -657,25 +528,95 @@ public abstract class Inventory extends ItemContainer
 			}
 		}
 		
-		private boolean removeShieldSkills(PlayerInstance player, List<SkillHolder> shieldSkills)
+		private static boolean applySkills(PlayerInstance player, ItemInstance item, ArmorSet armorSet, Function<ItemInstance, Integer> idProvider)
 		{
-			if ((shieldSkills != null) && !shieldSkills.isEmpty())
+			final long piecesCount = armorSet.getPiecesCount(player, idProvider);
+			if (piecesCount >= armorSet.getMinimumPieces())
 			{
-				for (SkillHolder holder : shieldSkills)
+				// Applying all skills that matching the conditions
+				final AtomicBoolean updateTimeStamp = new AtomicBoolean();
+				final AtomicBoolean update = new AtomicBoolean();
+				for (ArmorsetSkillHolder holder : armorSet.getSkills())
 				{
-					Skill itemSkill = holder.getSkill();
-					if (itemSkill != null)
+					if (holder.validateConditions(player, armorSet, idProvider))
 					{
-						player.removeSkill(itemSkill, false, itemSkill.isPassive());
-					}
-					else
-					{
-						_log.warn("Inventory.ArmorSetListener.removeShieldSkills: Incorrect skill: " + holder + ".");
+						final Skill itemSkill = holder.getSkill();
+						if (itemSkill == null)
+						{
+							_log.warn("Inventory.ArmorSetListener.addSkills: Incorrect skill: {}", holder);
+							continue;
+						}
+						
+						player.addSkill(itemSkill, false);
+						if (itemSkill.isActive() && (item != null))
+						{
+							if (!player.hasSkillReuse(itemSkill.getReuseHashCode()))
+							{
+								final int equipDelay = item.getEquipReuseDelay();
+								if (equipDelay > 0)
+								{
+									player.addTimeStamp(itemSkill, equipDelay);
+									player.disableSkill(itemSkill, equipDelay);
+								}
+							}
+							updateTimeStamp.compareAndSet(false, true);
+						}
+						update.compareAndSet(false, true);
 					}
 				}
-				return true;
+				if (updateTimeStamp.get())
+				{
+					player.sendPacket(new SkillCoolTime(player));
+				}
+				return update.get();
 			}
 			return false;
+		}
+		
+		private static boolean verifyAndApply(PlayerInstance player, ItemInstance item, Function<ItemInstance, Integer> idProvider)
+		{
+			boolean update = false;
+			final List<ArmorSet> armorSets = ArmorSetsData.getInstance().getSets(idProvider.apply(item));
+			for (ArmorSet armorSet : armorSets)
+			{
+				if (applySkills(player, item, armorSet, idProvider))
+				{
+					update = true;
+				}
+			}
+			return update;
+		}
+		
+		private static boolean verifyAndRemove(PlayerInstance player, ItemInstance item, Function<ItemInstance, Integer> idProvider)
+		{
+			boolean update = false;
+			final List<ArmorSet> armorSets = ArmorSetsData.getInstance().getSets(idProvider.apply(item));
+			for (ArmorSet armorSet : armorSets)
+			{
+				// Remove all skills that doesn't matches the conditions
+				for (ArmorsetSkillHolder holder : armorSet.getSkills())
+				{
+					if (holder.validateConditions(player, armorSet, idProvider))
+					{
+						final Skill itemSkill = holder.getSkill();
+						if (itemSkill == null)
+						{
+							_log.warn("Inventory.ArmorSetListener.removeSkills: Incorrect skill: {}", holder);
+							continue;
+						}
+						
+						player.removeSkill(itemSkill, false, itemSkill.isPassive());
+					}
+				}
+				
+				// Attempt to apply lower level skills if possible
+				if (applySkills(player, item, armorSet, idProvider))
+				{
+					update = true;
+				}
+			}
+			
+			return update;
 		}
 		
 		@Override
@@ -688,69 +629,17 @@ public abstract class Inventory extends ItemContainer
 			
 			final PlayerInstance player = (PlayerInstance) inventory.getOwner();
 			boolean remove = false;
-			if (slot == PAPERDOLL_CHEST)
+			
+			// verify and remove normal set bonus
+			if (verifyAndRemove(player, item, ItemInstance::getId))
 			{
-				if (removeArmorsetBonus(player, ArmorSetsData.getInstance().getSet(item.getId())))
-				{
-					remove = true;
-				}
-				
-				if (removeArmorsetBonus(player, ArmorSetsData.getInstance().getSet(item.getVisualId())))
-				{
-					remove = true;
-				}
+				remove = true;
 			}
-			else
+			
+			// verify and remove visual set bonus
+			if (verifyAndRemove(player, item, ItemInstance::getVisualId))
 			{
-				final ItemInstance chestItem = inventory.getPaperdollItem(PAPERDOLL_CHEST);
-				if (chestItem == null)
-				{
-					return;
-				}
-				
-				final ArmorSet armorSet = ArmorSetsData.getInstance().getSet(chestItem.getId());
-				if ((armorSet != null) && !armorSet.isVisual())
-				{
-					if (armorSet.containItem(slot, item.getId())) // removed part of set
-					{
-						if (removeArmorsetBonus(player, armorSet))
-						{
-							remove = true;
-						}
-						
-						final int piecesCount = armorSet.getPiecesCount(player);
-						if (piecesCount > armorSet.getMinimumPieces())
-						{
-							addSkills(player, null, armorSet.getSkills(), piecesCount);
-						}
-					}
-					else if (armorSet.containShield(item.getId())) // removed shield
-					{
-						if (removeShieldSkills(player, armorSet.getShieldSkills()))
-						{
-							remove = true;
-						}
-					}
-				}
-				
-				final ArmorSet visualArmorSet = ArmorSetsData.getInstance().getSet(chestItem.getVisualId());
-				if ((visualArmorSet != null) && visualArmorSet.isVisual())
-				{
-					if (visualArmorSet.containItem(slot, item.getVisualId())) // removed part of set
-					{
-						if (removeArmorsetBonus(player, visualArmorSet))
-						{
-							remove = true;
-						}
-					}
-					else if (visualArmorSet.containShield(item.getVisualId())) // removed shield
-					{
-						if (removeShieldSkills(player, visualArmorSet.getShieldSkills()))
-						{
-							remove = true;
-						}
-					}
-				}
+				remove = true;
 			}
 			
 			if (remove)
@@ -759,65 +648,6 @@ public abstract class Inventory extends ItemContainer
 				player.sendSkillList();
 			}
 		}
-	}
-	
-	protected static boolean removeArmorsetBonus(PlayerInstance player, ArmorSet armorSet)
-	{
-		boolean remove = armorSet != null;
-		final List<ArmorsetSkillHolder> skills = armorSet != null ? armorSet.getSkills() : null;
-		final List<SkillHolder> shieldSkill = armorSet != null ? armorSet.getShieldSkills() : null; // shield skill
-		final List<ArmorsetSkillHolder> enchantSkills = armorSet != null ? armorSet.getEnchantSkills() : null; // enchant +6 skill
-		
-		Skill itemSkill;
-		if (skills != null)
-		{
-			for (SkillHolder holder : skills)
-			{
-				itemSkill = holder.getSkill();
-				if (itemSkill != null)
-				{
-					player.removeSkill(itemSkill, false, itemSkill.isPassive());
-				}
-				else
-				{
-					_log.warn("Inventory.ArmorSetListener: Incorrect skill: " + holder + ".");
-				}
-			}
-		}
-		
-		if (shieldSkill != null)
-		{
-			for (SkillHolder holder : shieldSkill)
-			{
-				itemSkill = holder.getSkill();
-				if (itemSkill != null)
-				{
-					player.removeSkill(itemSkill, false, itemSkill.isPassive());
-				}
-				else
-				{
-					_log.warn("Inventory.ArmorSetListener: Incorrect skill: " + holder + ".");
-				}
-			}
-		}
-		
-		if (enchantSkills != null)
-		{
-			for (SkillHolder holder : enchantSkills)
-			{
-				itemSkill = holder.getSkill();
-				if (itemSkill != null)
-				{
-					player.removeSkill(itemSkill, false, itemSkill.isPassive());
-				}
-				else
-				{
-					_log.warn("Inventory.ArmorSetListener: Incorrect skill: " + holder + ".");
-				}
-			}
-		}
-		
-		return remove;
 	}
 	
 	private static final class BraceletListener implements PaperdollListener
@@ -1413,7 +1243,7 @@ public abstract class Inventory extends ItemContainer
 	{
 		if (Config.DEBUG)
 		{
-			_log.info(Inventory.class.getSimpleName() + ": Unequip body slot:" + slot);
+			_log.info("Unequip body slot: {}", slot);
 		}
 		
 		int pdollSlot = -1;
@@ -1494,7 +1324,7 @@ public abstract class Inventory extends ItemContainer
 				pdollSlot = PAPERDOLL_BROOCH_JEWEL1;
 				break;
 			default:
-				_log.info("Unhandled slot type: " + slot);
+				_log.info("Unhandled slot type: {}", slot);
 				_log.info(CommonUtil.getTraceString(Thread.currentThread().getStackTrace()));
 		}
 		if (pdollSlot >= 0)
@@ -1733,7 +1563,7 @@ public abstract class Inventory extends ItemContainer
 				equipBroochJewel(item);
 				break;
 			default:
-				_log.warn("Unknown body slot " + targetSlot + " for Item ID:" + item.getId());
+				_log.warn("Unknown body slot {} for Item ID: {}", targetSlot, item.getId());
 		}
 	}
 	
@@ -1862,7 +1692,7 @@ public abstract class Inventory extends ItemContainer
 		}
 		catch (Exception e)
 		{
-			_log.warn("Could not restore inventory: " + e.getMessage(), e);
+			_log.warn("Could not restore inventory: {}", e.getMessage(), e);
 		}
 	}
 	
@@ -1992,16 +1822,19 @@ public abstract class Inventory extends ItemContainer
 		}
 		
 		final PlayerInstance player = getOwner().getActingPlayer();
-		final ItemInstance chest = getPaperdollItem(PAPERDOLL_CHEST);
-		final ArmorSet set = chest != null ? ArmorSetsData.getInstance().getSet(chest.getId()) : null;
-		
-		// No Chest - No Bonus
-		if ((chest == null) || (set == null))
+		int maxSetEnchant = 0;
+		for (ItemInstance item : getItems(ItemInstance::isEquipped))
 		{
-			return 0;
+			for (ArmorSet set : ArmorSetsData.getInstance().getSets(item.getId()))
+			{
+				int enchantEffect = set.getLowestSetEnchant(player);
+				if (enchantEffect > maxSetEnchant)
+				{
+					maxSetEnchant = enchantEffect;
+				}
+			}
 		}
-		
-		return set.getLowestSetEnchant(player);
+		return maxSetEnchant;
 	}
 	
 	public int getWeaponEnchant()
