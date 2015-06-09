@@ -82,7 +82,7 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 	private SecondaryPasswordAuth _secondaryAuth;
 	
 	private boolean _isAuthedGG;
-	private final long _connectionStartTime;
+	private final long _connectionStartTime = System.currentTimeMillis();
 	private CharSelectInfoPackage[] _charSlotMapping = null;
 	
 	// flood protectors
@@ -93,7 +93,7 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 	protected ScheduledFuture<?> _cleanupTask = null;
 	
 	// Crypt
-	private final Crypt _crypt;
+	private final Crypt _crypt = new Crypt();
 	
 	private boolean _isDetached = false;
 	
@@ -103,9 +103,6 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 	
 	public L2GameClient()
 	{
-		_connectionStartTime = System.currentTimeMillis();
-		_crypt = new Crypt();
-		
 		if (Config.CHAR_STORE_INTERVAL > 0)
 		{
 			_autoSaveInDB = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new AutoSaveTask(), 300000L, (Config.CHAR_STORE_INTERVAL * 60000L));
