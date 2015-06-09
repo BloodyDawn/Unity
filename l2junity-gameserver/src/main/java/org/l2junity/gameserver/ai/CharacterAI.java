@@ -32,9 +32,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.commons.util.Rnd;
-import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.GeoData;
-import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.enums.ItemLocation;
 import org.l2junity.gameserver.instancemanager.WalkingManager;
 import org.l2junity.gameserver.model.Location;
@@ -318,14 +316,7 @@ public class CharacterAI extends AbstractAI
 			return;
 		}
 		
-		if (_actor.getBowAttackEndTime() > GameTimeController.getInstance().getGameTicks())
-		{
-			ThreadPoolManager.getInstance().scheduleGeneral(new CastTask(_actor, skill, target), (_actor.getBowAttackEndTime() - GameTimeController.getInstance().getGameTicks()) * GameTimeController.MILLIS_IN_TICK);
-		}
-		else
-		{
-			changeIntentionToCast(skill, target);
-		}
+		changeIntentionToCast(skill, target);
 	}
 	
 	protected void changeIntentionToCast(Skill skill, WorldObject target)
