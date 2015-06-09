@@ -290,7 +290,7 @@ public final class DarkCloudMansion extends AbstractInstance
 		{
 			runStartRoom((DMCWorld) world);
 			// teleport players
-			if (debug && (player.getParty() == null))
+			if (player.getParty() == null)
 			{
 				world.addAllowed(player.getObjectId());
 				teleportPlayer(player, new Location(146534, 180464, -6117), world.getInstanceId());
