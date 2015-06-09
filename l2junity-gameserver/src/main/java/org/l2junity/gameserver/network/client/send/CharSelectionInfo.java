@@ -177,7 +177,8 @@ public class CharSelectionInfo implements IClientOutgoingPacket
 			packet.writeD(0x00); // ??
 			packet.writeD(0x00); // ??
 			packet.writeD(0x00); // ??
-			packet.writeH(0x00); // ??
+			packet.writeC(0x00); // Armor Enchant
+			packet.writeC(0x00); // Weapon Enchant
 			
 			packet.writeD(charInfoPackage.getHairStyle());
 			packet.writeD(charInfoPackage.getHairColor());
