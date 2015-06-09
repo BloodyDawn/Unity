@@ -5,6 +5,7 @@
 		<!-- 4 Elements -->
 		<set name="icon" val="icon.skill11017" />
 		<set name="operateType" val="P" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="TriggerSkillBySkillAttack">
@@ -21,6 +22,7 @@
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="BODY_DESTRUCTION" />
 		<set name="operateType" val="A2" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
@@ -34,6 +36,7 @@
 		<set name="abnormalType" val="BODY_DESTRUCTION" />
 		<set name="activateRate" val="-1" />
 		<set name="operateType" val="A2" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
@@ -47,6 +50,7 @@
 		<set name="abnormalType" val="BODY_DESTRUCTION" />
 		<set name="activateRate" val="-1" />
 		<set name="operateType" val="A2" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
@@ -60,6 +64,7 @@
 		<set name="abnormalType" val="BODY_DESTRUCTION" />
 		<set name="activateRate" val="-1" />
 		<set name="operateType" val="A2" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
@@ -73,6 +78,7 @@
 		<set name="abnormalType" val="BODY_DESTRUCTION" />
 		<set name="activateRate" val="-1" />
 		<set name="operateType" val="A2" />
+		<set name="magicLvl" val="85" />
 		<set name="targetType" val="SELF" />
 		<set name="isMagic" val="4" />
 		<set name="isDebuff" val="true" />
@@ -1375,6 +1381,7 @@
 	<skill id="11177" levels="7" name="Aqua Crash">
 		<!-- Updated to IO -->
 		<!-- Inflicts damage with 193 Power to target. Applies a stacking debuff that decreases Speed. At 5 stacks target will be frozen for 2 seconds. When Double Casting is active, the debuff will not stack. Instead, there is a chance target will be frozen for 3 seconds. Over-hit. -->
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#mpConsumes"> 37 37 37 37 39 41 43 </table>
 		<table name="#power"> 193 195 197 199 202 206 210 </table>
 		<set name="icon" val="icon.skill10879" />
@@ -1385,6 +1392,7 @@
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="effectRange" val="1800" /> <!-- Custom -->
@@ -1400,6 +1408,7 @@
 		<!-- Updated to IO -->
 		<!-- Use Aqua Crash to decrease target's Speed. -->
 		<set name="icon" val="icon.skill11011" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="0" />
@@ -1533,7 +1542,6 @@
 		</for>
 	</skill>
 	<skill id="11187" levels="7" name="Superior Clear Mind">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- INT + 2, increases MP Recovery Bonus by 5.1 while standing and by 6.5 while walking. -->
 		<table name="#magicLvl"> 85 90 95 99 100 102 104 </table>
 		<table name="#regMpStand"> 5.1 5.7 6.3 6.9 7.7 8.5 9.3 10.1 10.9 11.7 </table>
@@ -1577,12 +1585,14 @@
 	<skill id="11189" levels="7" name="Aqua Crash">
 		<!-- Updated to IO -->
 		<!-- Inflicts damage with 193 Power to target. Applies a stacking debuff that decreases Speed. At 5 stacks target will be frozen for 2 seconds. When Double Casting is active, the debuff will not stack. Instead, there is a chance target will be frozen for 3 seconds. Over-hit. -->
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#mpConsumes"> 37 37 37 37 39 41 43 </table>
 		<table name="#power"> 193 195 197 199 202 206 210 </table>
 		<set name="icon" val="icon.skill10879" />
 		<set name="sharedReuseSkillId" val="11177" />
 		<set name="element" val="1" /> <!-- Water -->
 		<set name="elementPower" val="20" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
@@ -1636,6 +1646,7 @@
 		<!-- Updated to IO -->
 		<!-- Use Aqua Crash to freeze target. -->
 		<set name="icon" val="icon.skill11011" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="0" />
@@ -1654,6 +1665,7 @@
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="FREEZING" /> <!-- Guessed -->
 		<set name="abnormalVisualEffect" val="FREEZING2" /> <!-- Guessed -->
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="isMagic" val="4" />
