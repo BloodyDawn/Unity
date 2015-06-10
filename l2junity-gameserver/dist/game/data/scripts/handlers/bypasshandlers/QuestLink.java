@@ -136,16 +136,26 @@ public class QuestLink implements IBypassHandler
 				sbCompleted.append("</button></font>");
 			}
 		}
-		final StringBuilder sb = new StringBuilder(128);
-		sb.append("<html><body>");
-		sb.append(sbStarted.toString());
-		sb.append(sbCanStart.toString());
-		sb.append(sbCantStart.toString());
-		sb.append(sbCompleted.toString());
-		sb.append("</body></html>");
+		
+		String content;
+		if ((sbStarted.length() > 0) || (sbCanStart.length() > 0) || (sbCantStart.length() > 0) || (sbCompleted.length() > 0))
+		{
+			final StringBuilder sb = new StringBuilder(128);
+			sb.append("<html><body>");
+			sb.append(sbStarted.toString());
+			sb.append(sbCanStart.toString());
+			sb.append(sbCantStart.toString());
+			sb.append(sbCompleted.toString());
+			sb.append("</body></html>");
+			content = sb.toString();
+		}
+		else
+		{
+			content = Quest.getNoQuestMsg(player);
+		}
 		
 		// Send a Server->Client packet NpcHtmlMessage to the L2PcInstance in order to display the message of the L2NpcInstance
-		npc.insertObjectIdAndShowChatWindow(player, sb.toString());
+		npc.insertObjectIdAndShowChatWindow(player, content);
 	}
 	
 	/**
