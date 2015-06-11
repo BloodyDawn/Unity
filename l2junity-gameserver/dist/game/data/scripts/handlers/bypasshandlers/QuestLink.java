@@ -117,8 +117,8 @@ public class QuestLink implements IBypassHandler
 				{
 					sbCantStart.append("<font color=\"a62f31\">");
 					sbCantStart.append("<button icon=\"quest\" align=\"left\" action=\"bypass -h npc_" + npc.getObjectId() + "_Quest " + quest.getName() + "\">");
-					sbCanStart.append(quest.isCustomQuest() ? quest.getDescr() : "<fstring>" + quest.getNpcStringId() + "01" + "</fstring>");
-					sbCanStart.append("</button></font>");
+					sbCantStart.append(quest.isCustomQuest() ? quest.getDescr() : "<fstring>" + quest.getNpcStringId() + "01" + "</fstring>");
+					sbCantStart.append("</button></font>");
 				}
 			}
 			else if (qs.isStarted())
