@@ -810,8 +810,10 @@ public class NpcData implements IXmlReader
 	 * Once Spawn System gets reworked delete this class<br>
 	 * @author Zealar
 	 */
-	private final class MinionData implements IXmlReader
+	private static final class MinionData implements IXmlReader
 	{
+		private static final Logger MINION_LOGGER = LoggerFactory.getLogger(MinionData.class);
+		
 		public final Map<Integer, List<MinionHolder>> _tempMinions = new HashMap<>();
 		
 		protected MinionData()
@@ -824,7 +826,7 @@ public class NpcData implements IXmlReader
 		{
 			_tempMinions.clear();
 			parseDatapackFile("data/minionData.xml");
-			LOGGER.info("Loaded {} minions data.", _tempMinions.size());
+			MINION_LOGGER.info("Loaded {} minions data.", _tempMinions.size());
 		}
 		
 		@Override
