@@ -100,7 +100,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	public int[] questItemIds = null;
 	
 	private static final String DEFAULT_NO_QUEST_MSG = "<html><body>You are either not on a quest that involves this NPC, or you don't meet this NPC's minimum quest requirements.</body></html>";
-	private static final String DEFAULT_ALREADY_COMPLETED_MSG = "<html><body>This quest has already been completed.</body></html>";
+	private static final String DEFAULT_ALREADY_COMPLETED_MSG = "<html><body>You have already completed this quest.</body></html>";
 	
 	private static final String QUEST_DELETE_FROM_CHAR_QUERY = "DELETE FROM character_quests WHERE charId=? AND name=?";
 	private static final String QUEST_DELETE_FROM_CHAR_QUERY_NON_REPEATABLE_QUERY = "DELETE FROM character_quests WHERE charId=? AND name=? AND var!=?";
