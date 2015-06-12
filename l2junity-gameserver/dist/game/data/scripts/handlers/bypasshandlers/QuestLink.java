@@ -121,6 +121,10 @@ public class QuestLink implements IBypassHandler
 					sbCantStart.append("</button></font>");
 				}
 			}
+			else if (quest.onTalk(npc, player).equals(Quest.getNoQuestMsg(player)))
+			{
+				continue;
+			}
 			else if (qs.isStarted())
 			{
 				sbStarted.append("<font color=\"ffdd66\">");
@@ -232,6 +236,7 @@ public class QuestLink implements IBypassHandler
 			.filter(Quest.class::isInstance)
 			.map(Quest.class::cast)
 			.filter(quest -> (quest.getId() > 0) && (quest.getId() < 20000))
+			.filter(quest -> !quest.onTalk(npc, player).equals(Quest.getNoQuestMsg(player)))
 			.distinct()
 			.collect(Collectors.toSet());
 		//@formatter:on
