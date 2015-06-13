@@ -213,6 +213,7 @@ import quests.Q10366_RuinsStatusUpdate.Q10366_RuinsStatusUpdate;
 import quests.Q10368_RebellionOfMonsters.Q10368_RebellionOfMonsters;
 import quests.Q10390_KekropusLetter.Q10390_KekropusLetter;
 import quests.Q10391_ASuspiciousHelper.Q10391_ASuspiciousHelper;
+import quests.Q10392_FailureAndItsConsequences.Q10392_FailureAndItsConsequences;
 import quests.Q10501_ZakenEmbroideredSoulCloak.Q10501_ZakenEmbroideredSoulCloak;
 import quests.Q10502_FreyaEmbroideredSoulCloak.Q10502_FreyaEmbroideredSoulCloak;
 import quests.Q10503_FrintezzaEmbroideredSoulCloak.Q10503_FrintezzaEmbroideredSoulCloak;
@@ -435,6 +436,7 @@ public class QuestMasterHandler
 		Q10368_RebellionOfMonsters.class,
 		Q10390_KekropusLetter.class,
 		Q10391_ASuspiciousHelper.class,
+		Q10392_FailureAndItsConsequences.class,
 		Q10501_ZakenEmbroideredSoulCloak.class,
 		Q10502_FreyaEmbroideredSoulCloak.class,
 		Q10503_FrintezzaEmbroideredSoulCloak.class,
