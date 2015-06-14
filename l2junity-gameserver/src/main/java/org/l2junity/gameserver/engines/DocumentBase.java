@@ -93,6 +93,7 @@ import org.l2junity.gameserver.model.conditions.ConditionPlayerPkCount;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerPledgeClass;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerRace;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerRangeFromNpc;
+import org.l2junity.gameserver.model.conditions.ConditionPlayerRangeFromSummonedNpc;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerServitorNpcId;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerSex;
 import org.l2junity.gameserver.model.conditions.ConditionPlayerSiegeSide;
@@ -819,6 +820,23 @@ public abstract class DocumentBase
 						final int radius = Integer.parseInt(st.nextToken());
 						final boolean val = Boolean.parseBoolean(st.nextToken());
 						cond = joinAnd(cond, new ConditionPlayerRangeFromNpc(npcIds, radius, val));
+					}
+					break;
+				}
+				case "summonednpcidradius":
+				{
+					final StringTokenizer st = new StringTokenizer(a.getNodeValue(), ",");
+					if (st.countTokens() == 3)
+					{
+						final String[] ids = st.nextToken().split(";");
+						final int[] npcIds = new int[ids.length];
+						for (int index = 0; index < ids.length; index++)
+						{
+							npcIds[index] = Integer.parseInt(getValue(ids[index], template));
+						}
+						final int radius = Integer.parseInt(st.nextToken());
+						final boolean val = Boolean.parseBoolean(st.nextToken());
+						cond = joinAnd(cond, new ConditionPlayerRangeFromSummonedNpc(npcIds, radius, val));
 					}
 					break;
 				}

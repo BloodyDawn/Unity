@@ -40,7 +40,8 @@ public class SummonAI extends PlayableAI implements Runnable
 	private volatile boolean _startFollow = ((Summon) _actor).getFollowStatus();
 	private Creature _lastAttack = null;
 	
-	private volatile boolean _startAvoid = false;
+	private volatile boolean _startAvoid;
+	private volatile boolean _isDefending;
 	private Future<?> _avoidTask = null;
 	
 	public SummonAI(Summon summon)
@@ -199,7 +200,14 @@ public class SummonAI extends PlayableAI implements Runnable
 	{
 		super.onEvtAttacked(attacker);
 		
-		avoidAttack(attacker);
+		if (isDefending())
+		{
+			defendAttack(attacker);
+		}
+		else
+		{
+			avoidAttack(attacker);
+		}
 	}
 	
 	@Override
@@ -207,15 +215,44 @@ public class SummonAI extends PlayableAI implements Runnable
 	{
 		super.onEvtEvaded(attacker);
 		
-		avoidAttack(attacker);
+		if (isDefending())
+		{
+			defendAttack(attacker);
+		}
+		else
+		{
+			avoidAttack(attacker);
+		}
 	}
 	
 	private void avoidAttack(Creature attacker)
 	{
+		// Don't move while casting. It breaks casting animation, but still casts the skill... looks so bugged.
+		if (_actor.isCastingNow())
+		{
+			return;
+		}
+		
+		Creature owner = ((Summon) _actor).getOwner();
 		// trying to avoid if summon near owner
-		if ((((Summon) _actor).getOwner() != null) && (((Summon) _actor).getOwner() != attacker) && ((Summon) _actor).getOwner().isInsideRadius(_actor, 2 * AVOID_RADIUS, true, false))
+		if ((owner != null) && (owner != attacker) && owner.isInsideRadius(_actor, 2 * AVOID_RADIUS, true, false))
 		{
 			_startAvoid = true;
+		}
+	}
+	
+	public void defendAttack(Creature attacker)
+	{
+		// Cannot defend while attacking or casting.
+		if (_actor.isCastingNow())
+		{
+			return;
+		}
+		
+		final Summon summon = ((Summon) _actor);
+		if ((summon.getOwner() != null) && (summon.getOwner() != attacker) && !summon.isMoving() && summon.canAttack(attacker, false) && summon.getOwner().isInsideRadius(_actor, 2 * AVOID_RADIUS, true, false))
+		{
+			summon.doAttack(attacker);
 		}
 	}
 	
@@ -303,5 +340,21 @@ public class SummonAI extends PlayableAI implements Runnable
 	public Summon getActor()
 	{
 		return (Summon) super.getActor();
+	}
+	
+	/**
+	 * @return if the summon is defending itself or master.
+	 */
+	public boolean isDefending()
+	{
+		return _isDefending;
+	}
+	
+	/**
+	 * @param isDefending set the summon to defend itself and master, or be passive and avoid while being attacked.
+	 */
+	public void setDefending(boolean isDefending)
+	{
+		_isDefending = isDefending;
 	}
 }

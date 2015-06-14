@@ -153,6 +153,30 @@ public class PlayerAI extends PlayableAI
 	}
 	
 	@Override
+	protected void onEvtAttacked(Creature attacker)
+	{
+		super.onEvtAttacked(attacker);
+		
+		// Summons in defending mode defend its master when attacked.
+		if (_actor.getActingPlayer().hasServitors())
+		{
+			_actor.getActingPlayer().getServitors().values().stream().filter(summon -> ((SummonAI) summon.getAI()).isDefending()).forEach(summon -> ((SummonAI) summon.getAI()).defendAttack(attacker));
+		}
+	}
+	
+	@Override
+	protected void onEvtEvaded(Creature attacker)
+	{
+		super.onEvtEvaded(attacker);
+		
+		// Summons in defending mode defend its master when attacked.
+		if (_actor.getActingPlayer().hasServitors())
+		{
+			_actor.getActingPlayer().getServitors().values().stream().filter(summon -> ((SummonAI) summon.getAI()).isDefending()).forEach(summon -> ((SummonAI) summon.getAI()).defendAttack(attacker));
+		}
+	}
+	
+	@Override
 	protected void onIntentionRest()
 	{
 		if (getIntention() != AI_INTENTION_REST)

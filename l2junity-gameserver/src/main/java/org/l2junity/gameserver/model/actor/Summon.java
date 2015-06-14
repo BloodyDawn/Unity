@@ -658,6 +658,14 @@ public abstract class Summon extends Playable
 			return false;
 		}
 		
+		// Check if all casting conditions are completed
+		if (!skill.checkCondition(this, target, false))
+		{
+			// Send a Server->Client packet ActionFailed to the L2PcInstance
+			sendPacket(ActionFailed.STATIC_PACKET);
+			return false;
+		}
+		
 		// Check if this is bad magic skill
 		if (skill.isBad())
 		{
@@ -955,12 +963,12 @@ public abstract class Summon extends Playable
 	
 	/**
 	 * Performs an attack to the owner's target.
+	 * @param target the target to attack.
 	 */
-	public void doAttack()
+	public void doAttack(WorldObject target)
 	{
 		if (getOwner() != null)
 		{
-			final WorldObject target = getOwner().getTarget();
 			if (target != null)
 			{
 				setTarget(target);
@@ -971,17 +979,17 @@ public abstract class Summon extends Playable
 	
 	/**
 	 * Verify if the summon can perform an attack.
+	 * @param target the target to check if can be attacked.
 	 * @param ctrlPressed {@code true} if Ctrl key is pressed
 	 * @return {@code true} if the summon can attack, {@code false} otherwise
 	 */
-	public final boolean canAttack(boolean ctrlPressed)
+	public final boolean canAttack(WorldObject target, boolean ctrlPressed)
 	{
 		if (getOwner() == null)
 		{
 			return false;
 		}
 		
-		final WorldObject target = getOwner().getTarget();
 		if ((target == null) || (this == target) || (getOwner() == target))
 		{
 			return false;

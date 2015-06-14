@@ -180,9 +180,9 @@ public final class RequestActionUse implements IClientIncomingPacket
 			case 16: // Attack (Pets)
 				if (validateSummon(activeChar, pet, true))
 				{
-					if (pet.canAttack(_ctrlPressed))
+					if (pet.canAttack(activeChar.getTarget(), _ctrlPressed))
 					{
-						pet.doAttack();
+						pet.doAttack(activeChar.getTarget());
 					}
 				}
 				break;
@@ -235,9 +235,9 @@ public final class RequestActionUse implements IClientIncomingPacket
 			case 22: // Attack (Servitors)
 				if (validateSummon(activeChar, servitor, false))
 				{
-					if (servitor.canAttack(_ctrlPressed))
+					if (servitor.canAttack(activeChar.getTarget(), _ctrlPressed))
 					{
-						servitor.doAttack();
+						servitor.doAttack(activeChar.getTarget());
 					}
 				}
 				break;
@@ -717,9 +717,9 @@ public final class RequestActionUse implements IClientIncomingPacket
 				{
 					if (validateSummon(activeChar, s, false))
 					{
-						if (s.canAttack(_ctrlPressed))
+						if (s.canAttack(activeChar.getTarget(), _ctrlPressed))
 						{
-							s.doAttack();
+							s.doAttack(activeChar.getTarget());
 						}
 					}
 				});
@@ -763,15 +763,14 @@ public final class RequestActionUse implements IClientIncomingPacket
 				}
 				if (canUnsummon)
 				{
-					activeChar.getServitors().values().stream().forEach(s ->
-					{
-						s.unSummon(activeChar);
-					});
+					activeChar.getServitors().values().forEach(s -> s.unSummon(activeChar));
 				}
 				break;
 			case 1103: // seems to be passive mode
+				activeChar.getServitors().values().forEach(summon -> ((SummonAI) summon.getAI()).setDefending(false));
 				break;
 			case 1104: // seems to be defend mode
+				activeChar.getServitors().values().forEach(summon -> ((SummonAI) summon.getAI()).setDefending(true));
 				break;
 			case 1106: // Cute Bear - Bear Claw
 				useServitorsSkill(activeChar, 11278);
