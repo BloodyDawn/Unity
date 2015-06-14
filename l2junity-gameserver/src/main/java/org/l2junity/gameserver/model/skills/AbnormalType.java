@@ -381,8 +381,10 @@ public enum AbnormalType
 	BODY_DESTRUCTION,
 	AIR_BIND,
 	DEVIL_CURSE,
-	BANISH,
-	ARCANE_PROTECTION;
+	DEPORT,
+	ARCANE_PROTECTION,
+	GREATER_SERVITOR_BUFF,
+	SUMMONER_CALL;
 	
 	/**
 	 * Get the enumerate for the given String.

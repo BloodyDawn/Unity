@@ -836,9 +836,10 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10787" levels="8" name="Summon Thunder Hawk">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Summons a Thunder Hawk. -->
 		<table name="#mpConsumes"> 123 127 132 136 140 145 149 154 </table>
+		<table name="#npcIds"> 14932 14940 14941 14942 14986 14987 14988 14989 </table>
 		<set name="icon" val="icon.skill10787" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
@@ -847,6 +848,17 @@
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="60000" />
 		<set name="isMagic" val="1" />
+		<cond>
+			<and>
+				<player canSummonServitor="true" />
+				<player hasFreeSummonPoints="0" />
+			</and>
+		</cond>
+		<for>
+			<effect name="Summon">
+				<param npcId="#npcIds" lifeTime="-1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10788" levels="1" name="Remote Control">
 		<!-- AUTO GENERATED SKILL -->
@@ -921,30 +933,43 @@
 		<set name="isMagic" val="1" />
 	</skill>
 	<skill id="10794" levels="8" name="Thunder Flight">
-		<table name="#effectPoint"> -687 -698 -707 -709 -709 -709 -709 -709 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Flies straight into the enemy. -->
+		<table name="#effectPoint"> -687 -698 -707 -709 -709 -709 -709 -709 </table>
 		<set name="icon" val="icon.skill6041" />
+		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="400" />
+		<set name="flyType" val="CHARGE" />
 		<set name="hitTime" val="800" />
 		<set name="coolTime" val="750" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="10000" />
+		<cond msgId="113" addName="1">
+			<target mindistance="200" />
+		</cond>
+		<for>
+			<effect name="EnemyCharge" />
+		</for>
 	</skill>
 	<skill id="10795" levels="1" name="Thunder Purity">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Purifies the master. -->
 		<set name="icon" val="icon.skill6042" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="OWNER_PET" />
 		<set name="mpConsume" val="96" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="2500" />
 		<set name="reuseDelay" val="180000" />
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
+		<for>
+			<effect name="DispelByCategory">
+				<param slot="debuff" rate="100" max="10" /> <!-- Guessed -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="10796" levels="1" name="Hawk Gust">
 		<!-- AUTO GENERATED SKILL -->
@@ -961,28 +986,42 @@
 		<set name="isDebuff" val="true" />
 	</skill>
 	<skill id="10797" levels="8" name="Thunder Feather Blast">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Hurls feathers toward the enemy. -->
 		<table name="#effectPoint"> -687 -698 -707 -709 -709 -709 -709 -709 </table>
 		<table name="#mpConsumes"> 71 78 84 86 86 86 86 86 </table>
+		<table name="#power"> 5254 5595 5936 6277 6618 6959 7300 7641 </table> <!-- Guessed from Feline Bite / 2 -->
 		<set name="icon" val="icon.skill6044" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="power" val="#power" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1080" />
 		<set name="coolTime" val="770" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="15000" />
+		<for>
+			<effect name="PhysicalAttack" />
+		</for>
 	</skill>
 	<skill id="10798" levels="8" name="Thunder Sharp Claw">
-		<table name="#effectPoint"> -687 -698 -707 -709 -709 -709 -709 -709 </table>
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Attacks the enemy with sharp talon to inflict bleed. -->
+		<table name="#effectPoint"> -687 -698 -707 -709 -709 -709 -709 -709 </table>
 		<table name="#mpConsumes"> 71 78 84 86 86 86 86 86 </table>
+		<table name="#dot"> 100 120 140 160 180 200 220 240 </table> <!-- TODO -->
+		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 </table>
 		<set name="icon" val="icon.skill0096" />
+		<set name="abnormalLvl" val="#abnormalLvls" />
+		<set name="abnormalTime" val="20" /> <!-- Guessed -->
+		<set name="abnormalType" val="BLEEDING" />
+		<set name="abnormalVisualEffect" val="DOT_BLEEDING" />
+		<set name="activateRate" val="100" /> <!-- Guessed -->
+		<set name="basicProperty" val="CON" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="trait" val="BLEED" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1080" />
@@ -990,6 +1029,11 @@
 		<set name="reuseDelay" val="25000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="DamOverTime" ticks="5">
+				<param power="#dot" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10799" levels="1" name="Superior M. Def.">
 		<!-- M. Def. + 776, and M. Def. + 25%. STR + 2. -->

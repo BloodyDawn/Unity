@@ -205,10 +205,17 @@ public class AdminSkill implements IAdminCommandHandler
 			int id = Integer.parseInt(split[1]);
 			int lvl = Integer.parseInt(split[2]);
 			Skill skill = SkillData.getInstance().getSkill(id, lvl);
-			activeChar.addSkill(skill);
-			activeChar.sendSkillList();
-			activeChar.sendMessage("You added yourself skill " + skill.getName() + "(" + id + ") level " + lvl);
-			activeChar.sendPacket(new AcquireSkillList(activeChar));
+			if (skill != null)
+			{
+				activeChar.addSkill(skill);
+				activeChar.sendSkillList();
+				activeChar.sendMessage("You added yourself skill " + skill.getName() + "(" + id + ") level " + lvl);
+				activeChar.sendPacket(new AcquireSkillList(activeChar));
+			}
+			else
+			{
+				activeChar.sendMessage("No such skill found. Id: " + id + " Level: " + lvl);
+			}
 		}
 		else if (command.startsWith("admin_cast"))
 		{

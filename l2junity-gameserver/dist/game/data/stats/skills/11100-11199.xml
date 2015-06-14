@@ -975,7 +975,7 @@
 		<!-- Updated to IO -->
 		<!-- Drops meteors to attack surrounding enemies and deals great damage. Inflicts abnormal state and deals continuous damage. The higher the level of the abnormal state, the greater the damage. Consumes 5 Spirit Ores. -->
 		<set name="icon" val="icon.skill11134" />
-		<set name="affectRange" val="250" /> <!-- Guessed -->
+		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="channelingSkillId" val="11134" />
 		<set name="channelingTickInterval" val="2" />
 		<set name="element" val="0" /> <!-- Fire -->
@@ -983,7 +983,7 @@
 		<set name="itemConsumeCount" val="5" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="CA1" />
-		<set name="power" val="500" /> <!-- Guessed -->
+		<set name="power" val="860" />
 		<set name="targetType" val="GROUND" />
 		<set name="mpConsume" val="52" />
 		<set name="castRange" val="900" />
@@ -1011,7 +1011,7 @@
 		<set name="itemConsumeCount" val="5" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="CA1" />
-		<set name="power" val="250" /> <!-- Guessed -->
+		<set name="power" val="550" />
 		<set name="targetType" val="GROUND" />
 		<set name="mpConsume" val="52" />
 		<set name="castRange" val="900" />
@@ -1030,6 +1030,7 @@
 	</skill>
 	<skill id="11136" levels="1" name="Snow Storm">
 		<!-- Updated to IO -->
+		<!-- Hits 8 times -->
 		<!-- Creates an ice storm in the selected location, dealing continuous damage. Inflicts abnormal state and decreases Speed. The higher the level of the abnormal state, the greater the damage, and at the last stage, Freezes the target. Consumes 5 Spirit Ores. -->
 		<set name="icon" val="icon.skill11136" />
 		<set name="affectRange" val="250" /> <!-- Guessed -->
@@ -1043,7 +1044,7 @@
 		<set name="itemConsumeCount" val="5" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="CA1" />
-		<set name="power" val="250" /> <!-- Guessed -->
+		<set name="power" val="440" />
 		<set name="targetType" val="GROUND" />
 		<set name="mpConsume" val="52" />
 		<set name="castRange" val="900" />
@@ -1071,7 +1072,7 @@
 		<set name="itemConsumeCount" val="5" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="CA1" />
-		<set name="power" val="250" /> <!-- Guessed -->
+		<set name="power" val="550" />
 		<set name="targetType" val="GROUND" />
 		<set name="mpConsume" val="52" />
 		<set name="castRange" val="900" />
@@ -1097,7 +1098,7 @@
 		<set name="itemConsumeCount" val="5" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="CA1" />
-		<set name="power" val="250" /> <!-- Guessed -->
+		<set name="power" val="600" />
 		<set name="targetType" val="GROUND" />
 		<set name="mpConsume" val="52" />
 		<set name="castRange" val="900" />
@@ -1143,7 +1144,7 @@
 		<table name="#runSpd"> 0.90 0.80 0.70 0.60 0.00 </table> <!-- Guessed. TODO: Stun Target at Lv5 -->
 		<set name="icon" val="icon.skill11135" />
 		<set name="abnormalLvl" val="#abnormalLvls" />
-		<set name="abnormalTime" val="5" /> <!-- Guessed -->
+		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="basicProperty" val="MEN" />
@@ -1166,7 +1167,7 @@
 		<table name="#runSpd"> 0.90 0.80 0.70 0.60 0.00 </table> <!-- Guessed. TODO: Freeze Target at Lv5 -->
 		<set name="icon" val="icon.skill11136" />
 		<set name="abnormalLvl" val="#abnormalLvls" />
-		<set name="abnormalTime" val="5" /> <!-- Guessed -->
+		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="SPEED_DOWN" />
 		<set name="activateRate" val="80" />
 		<set name="basicProperty" val="MEN" />

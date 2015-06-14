@@ -18,6 +18,7 @@
  */
 package handlers.effecthandlers;
 
+import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
@@ -30,17 +31,24 @@ import org.l2junity.gameserver.model.stats.Formulas;
 public final class SkillTurning extends AbstractEffect
 {
 	private final int _chance;
+	private final boolean _staticChance;
 	
 	public SkillTurning(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
 		super(attachCond, applyCond, set, params);
 		
 		_chance = params.getInt("chance", 100);
+		_staticChance = params.getBoolean("staticChance", false);
 	}
 	
 	@Override
 	public boolean calcSuccess(BuffInfo info)
 	{
+		if (_staticChance)
+		{
+			return (_chance >= 100) || (Rnd.get(100) < _chance);
+		}
+		
 		return Formulas.calcProbability(_chance, info.getEffector(), info.getEffected(), info.getSkill());
 	}
 	

@@ -244,7 +244,7 @@ public class SummonAI extends PlayableAI implements Runnable
 	public void defendAttack(Creature attacker)
 	{
 		// Cannot defend while attacking or casting.
-		if (_actor.isCastingNow())
+		if (_actor.isAttackingNow() || _actor.isCastingNow())
 		{
 			return;
 		}

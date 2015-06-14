@@ -77,6 +77,7 @@
 				<xs:attribute type="xs:byte" name="clanHall" use="optional" />
 				<xs:attribute type="xs:byte" name="sex" use="optional" />
 				<xs:attribute type="xs:string" name="npcIdRadius" use="optional" />
+				<xs:attribute type="xs:string" name="summonedNpcIdRadius" use="optional" />
 				<xs:attribute type="xs:string" name="landingZone" use="optional" />
 				<xs:attribute type="xs:string" name="insideZoneId" use="optional" />
 				<xs:attribute type="xs:string" name="chaotic" use="optional" />
@@ -159,6 +160,7 @@
 			<xs:extension base="xs:string">
 				<xs:attribute type="xs:string" name="side" use="optional" />
 				<xs:attribute type="xs:string" name="chance" use="optional" />
+				<xs:attribute type="xs:boolean" name="staticChance" use="optional" />
 				<xs:attribute type="xs:string" name="power" use="optional" />
 				<xs:attribute type="xs:string" name="pvpPower" use="optional" />
 				<xs:attribute type="xs:string" name="index" use="optional" />
@@ -171,6 +173,7 @@
 				<xs:attribute type="xs:byte" name="cubicSkillChance" use="optional" />
 				<xs:attribute type="xs:string" name="cubicPower" use="optional" />
 				<xs:attribute type="xs:string" name="npcId" use="optional" />
+				<xs:attribute type="xs:int" name="summonPoints" use="optional" />
 				<xs:attribute type="xs:string" name="consumeItemId" use="optional" />
 				<xs:attribute type="xs:string" name="consumeItemCount" use="optional" />
 				<xs:attribute type="xs:string" name="lifeTime" use="optional" />
@@ -231,7 +234,7 @@
 				<xs:attribute type="xs:string" name="itemCount" use="optional" />
 				<xs:attribute type="xs:short" name="id" use="optional" />
 				<xs:attribute type="xs:short" name="amount" use="optional" />
-				<xs:attribute type="xs:int" name="despawnDelay" use="optional" />
+				<xs:attribute type="xs:string" name="despawnDelay" use="optional" />
 				<xs:attribute type="xs:string" name="isSummonSpawn" use="optional" />
 				<xs:attribute type="xs:string" name="escapeType" use="optional" />
 				<xs:attribute type="xs:string" name="slots" use="optional" />
@@ -283,6 +286,7 @@
 				<xs:attribute type="xs:boolean" name="selfPos" use="optional" />
 				<xs:attribute type="xs:string" name="effectFlag" use="optional" />
 				<xs:attribute type="xs:boolean" name="affectSummon" use="optional" />
+				<xs:attribute type="xs:boolean" name="summonedOnly" use="optional" />
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>

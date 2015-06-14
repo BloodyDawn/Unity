@@ -51,6 +51,8 @@ public final class TriggerSkillByAttack extends AbstractEffect
 	private final InstanceType _attackerType;
 	private int _allowWeapons;
 	private final boolean _isCritical;
+	private final boolean _allowNormalAttack;
+	private final boolean _allowSkillAttack;
 	
 	/**
 	 * @param attachCond
@@ -71,6 +73,8 @@ public final class TriggerSkillByAttack extends AbstractEffect
 		_targetType = params.getEnum("targetType", L2TargetType.class, L2TargetType.SELF);
 		_attackerType = params.getEnum("attackerType", InstanceType.class, InstanceType.L2Character);
 		_isCritical = params.getBoolean("isCritical", false);
+		_allowNormalAttack = params.getBoolean("allowNormalAttack", true);
+		_allowSkillAttack = params.getBoolean("allowSkillAttack", true);
 		
 		if (params.getString("allowWeapons", "ALL").equalsIgnoreCase("ALL"))
 		{
@@ -87,20 +91,26 @@ public final class TriggerSkillByAttack extends AbstractEffect
 	
 	public void onAttackEvent(OnCreatureDamageDealt event)
 	{
-		if (event.isDamageOverTime() || (_chance == 0) || ((_skill.getSkillId() == 0) || (_skill.getSkillLvl() == 0)))
+		if (event.isDamageOverTime() || (_chance == 0) || ((_skill.getSkillId() == 0) || (_skill.getSkillLvl() == 0)) || (!_allowNormalAttack && !_allowSkillAttack))
 		{
 			return;
 		}
 		
-		if (_isCritical != event.isCritical())
+		// When critical-only attacks are allowed, do not proceed if attack is not critical. Otherwise proceed no matter if the attack is critical or not.
+		if (_isCritical && (_isCritical != event.isCritical()))
 		{
 			return;
 		}
 		
-		final ITargetTypeHandler targetHandler = TargetHandler.getInstance().getHandler(_targetType);
-		if (targetHandler == null)
+		// When no skill attacks are allowed.
+		if (!_allowSkillAttack && (event.getSkill() != null))
 		{
-			_log.warn("Handler for target type: " + _targetType + " does not exist.");
+			return;
+		}
+		
+		// When no normal attacks are allowed.
+		if (!_allowNormalAttack && (event.getSkill() == null))
+		{
 			return;
 		}
 		
@@ -125,6 +135,13 @@ public final class TriggerSkillByAttack extends AbstractEffect
 			{
 				return;
 			}
+		}
+		
+		final ITargetTypeHandler targetHandler = TargetHandler.getInstance().getHandler(_targetType);
+		if (targetHandler == null)
+		{
+			_log.warn("Handler for target type: " + _targetType + " does not exist.");
+			return;
 		}
 		
 		final Skill triggerSkill = _skill.getSkill();

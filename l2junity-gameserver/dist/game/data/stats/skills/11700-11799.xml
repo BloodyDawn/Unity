@@ -631,6 +631,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons a Tree of Life. The summoned tree heals nearby party members for 30 seconds. Can also cast a debuff canceling blessing. -->
 		<table name="#mpConsumes"> 185 205 225 243 </table>
+		<table name="#npcIds"> 14933 14943 15010 15011 </table>
 		<set name="icon" val="icon.skill11774" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
@@ -657,6 +658,7 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons a Spirit of Light. -->
 		<table name="#mpConsumes"> 96 106 117 127 </table>
+		<table name="#npcIds"> 14925 14944 14945 14946 </table>
 		<set name="icon" val="icon.skill11776" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
@@ -665,6 +667,17 @@
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="10000" />
 		<set name="isMagic" val="1" />
+		<cond>
+			<and>
+				<player canSummonServitor="true" />
+				<player hasFreeSummonPoints="0" />
+			</and>
+		</cond>
+		<for>
+			<effect name="Summon">
+				<param npcId="#npcIds" lifeTime="-1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11777" levels="5" name="Mark of Lumi">
 		<!-- Updated to Ertheia -->
