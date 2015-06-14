@@ -36127,6 +36127,7 @@ INSERT INTO `spawnlist` VALUES
 ('Cemetery', 1, 27181, 180066, 15525, -3168, 0, 0, 46529, 60, 0, 0, 0), -- Imperial Gravekeeper
 ('Cemetery', 1, 27181, 181019, 22938, -3168, 0, 0, 45978, 60, 0, 0, 0), -- Imperial Gravekeeper
 -- New Alligator Island
+('Alligator_Island', 1, 19543, 115583, 192261, -3488, 0, 0, 0, 60, 0, 0, 0), -- Invisible Kekropus NPC
 ('Alligator_Island', 1, 33858, 114478, 191386, -3536, 0, 0, 18585, 60, 0, 0, 0), -- Eli
 ('Alligator_Island', 1, 33860, 115545, 191550, -3360, 0, 0, 10658, 60, 0, 0, 0), -- Enron
 ('Alligator_Island', 1, 33859, 115644, 191546, -3360, 0, 0, 25821, 60, 0, 0, 0), -- Iason Heine

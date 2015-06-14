@@ -18,6 +18,7 @@
  */
 package quests.Q10390_KekropusLetter;
 
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
@@ -47,6 +48,7 @@ public final class Q10390_KekropusLetter extends Quest
 	private static final int BATHIS = 30332;
 	private static final int GOSTA = 30916;
 	private static final int ELI = 33858;
+	private static final int INVISIBLE_NPC = 19543;
 	// Items
 	private static final int KEKROPUS_LETTER = 36706;
 	private static final int HAINE_SOE = 37112; // Scroll of Escape: Heine
@@ -62,6 +64,7 @@ public final class Q10390_KekropusLetter extends Quest
 		super(10390, Q10390_KekropusLetter.class.getSimpleName(), "Kekropus' Letter");
 		addStartNpc(RAYMOND, RAINS, TOBIAS, DRIKUS, MENDIO, GERSHWIN, ESRANDELL, ELLENIA);
 		addTalkId(RAYMOND, RAINS, TOBIAS, DRIKUS, MENDIO, GERSHWIN, ESRANDELL, ELLENIA, BATHIS, GOSTA, ELI);
+		addSeeCreatureId(INVISIBLE_NPC);
 		registerQuestItems(KEKROPUS_LETTER, HAINE_SOE, ALLIGATOR_ISLAND_SOE);
 		addCondCompletedQuest(Q10360_CertificationOfFate.class.getSimpleName(), "");
 	}
@@ -288,6 +291,22 @@ public final class Q10390_KekropusLetter extends Quest
 			}
 		}
 		return htmltext;
+	}
+	
+	@Override
+	public String onSeeCreature(Npc npc, Creature creature, boolean isSummon)
+	{
+		if (creature.isPlayer())
+		{
+			final PlayerInstance player = creature.getActingPlayer();
+			final QuestState st = getQuestState(player, false);
+			
+			if ((st != null) && st.isCond(4))
+			{
+				showOnScreenMsg(player, NpcStringId.ALLIGATOR_ISLAND_IS_A_GOOD_HUNTING_ZONE_FOR_LV_40_OR_ABOVE, ExShowScreenMessage.TOP_CENTER, 6000);
+			}
+		}
+		return super.onSeeCreature(npc, creature, isSummon);
 	}
 	
 	private boolean isRightMaster(Npc npc, PlayerInstance player)
