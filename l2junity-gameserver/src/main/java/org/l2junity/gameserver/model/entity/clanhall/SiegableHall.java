@@ -91,6 +91,12 @@ public final class SiegableHall extends ClanHall
 		{
 			_nextSiege.setTimeInMillis(nextSiege);
 		}
+		
+		if (getOwnerId() != 0)
+		{
+			_isFree = false;
+			loadFunctions();
+		}
 	}
 	
 	public void spawnDoor()
