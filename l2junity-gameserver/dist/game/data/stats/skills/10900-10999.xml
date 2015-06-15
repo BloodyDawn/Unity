@@ -63,25 +63,67 @@
 		<set name="reuseDelay" val="30000" />
 	</skill>
 	<skill id="10950" levels="4" name="Vengeful Sniper">
-
-		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 minutes when a bow or crossbow is equipped, P. Atk. + 5%, PvP damage + 5%, received magic skill damage during PvP - 5%. -->
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#power"> 1.05 1.06 1.07 1.10 </table>
 		<table name="#mpConsumes"> 62 69 76 83 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="1800" />
+		<!-- TODO: abnormalType -->
 		<set name="icon" val="icon.skill11873" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="30000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#power">
+					<using kind="BOW, CROSSBOW" />
+				</mul>
+				<mul stat="pvpPhysDmg" val="#power">
+					<using kind="BOW, CROSSBOW" />
+				</mul>
+				<mul stat="pvpPhysSkillsDmg" val="#power">
+					<using kind="BOW, CROSSBOW" />
+				</mul>
+				<mul stat="pvpMagicalDmg" val="#power">
+					<using kind="BOW, CROSSBOW" />
+				</mul>
+				<mul stat="pvpMagicalDef" val="#power">
+					<using kind="BOW, CROSSBOW" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
 	<skill id="10951" levels="4" name="Superior Instinct Mastery">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- PvP damage + 5%, and P. Atk. + 5% when equipped with a crossbow. -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
+		<table name="#power"> 1.05 1.07 1.1 1.15 </table>
 		<set name="icon" val="icon.skill10951" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#power">
+					<using kind="CROSSBOW" />
+				</mul>
+				<mul stat="pvpPhysDmg" val="#power">
+					<using kind="CROSSBOW" />
+				</mul>
+				<mul stat="pvpPhysSkillsDmg" val="#power">
+					<using kind="CROSSBOW" />
+				</mul>
+				<mul stat="pvpMagicalDmg" val="#power">
+					<using kind="CROSSBOW" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
 	<skill id="10952" levels="1" name="Survival Instinct">
 		<!-- AUTO GENERATED SKILL -->
