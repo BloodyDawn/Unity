@@ -1894,9 +1894,12 @@
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="TriggerSkillByAttack">
-				<param attackerType="L2Character" />
-				<param isCritical="true" />
-				<param minDamage="100" chance="30" /> <!-- Guessed -->
+				<param isCritical="false" chance="30" /> <!-- Guessed -->
+				<param skillId="10096" skillLevel="1" /> <!-- Death Touch -->
+				<param targetType="ONE" />
+			</effect>
+			<effect name="TriggerSkillByAttack">
+				<param isCritical="true" chance="15" /> <!-- Guessed -->
 				<param skillId="10096" skillLevel="1" /> <!-- Death Touch -->
 				<param targetType="ONE" />
 			</effect>

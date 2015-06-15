@@ -1073,10 +1073,21 @@ public final class Formulas
 	{
 		if ((target == null) || (skill == null) || !skill.isBad())
 		{
+			// Juji Producer Update: The devs said that 32% is the maximum critical chance for magic spells and that it is intended for balance reasons. It may change in a future update though.
+			if (mRate > 320)
+			{
+				mRate = 320;
+			}
+			
 			return mRate > Rnd.get(1000);
 		}
 		
 		double finalRate = target.getStat().calcStat(Stats.DEFENCE_MAGIC_CRITICAL_RATE, mRate, null, null) + target.getStat().calcStat(Stats.DEFENCE_MAGIC_CRITICAL_RATE_ADD, 0, null, null);
+		// Juji Producer Update: The devs said that 32% is the maximum critical chance for magic spells and that it is intended for balance reasons. It may change in a future update though.
+		if (finalRate > 320)
+		{
+			finalRate = 320;
+		}
 		return finalRate > Rnd.get(1000);
 	}
 	
