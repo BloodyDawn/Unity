@@ -44,12 +44,7 @@ public final class SkillTurning extends AbstractEffect
 	@Override
 	public boolean calcSuccess(BuffInfo info)
 	{
-		if (_staticChance)
-		{
-			return (_chance >= 100) || (Rnd.get(100) < _chance);
-		}
-		
-		return Formulas.calcProbability(_chance, info.getEffector(), info.getEffected(), info.getSkill());
+		return _staticChance ? Formulas.calcProbability(_chance, info.getEffector(), info.getEffected(), info.getSkill()) : ((_chance >= 100) || (Rnd.get(100) < _chance));
 	}
 	
 	@Override

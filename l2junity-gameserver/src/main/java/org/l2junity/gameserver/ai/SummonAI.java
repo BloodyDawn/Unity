@@ -233,7 +233,7 @@ public class SummonAI extends PlayableAI implements Runnable
 			return;
 		}
 		
-		Creature owner = ((Summon) _actor).getOwner();
+		Creature owner = getActor().getOwner();
 		// trying to avoid if summon near owner
 		if ((owner != null) && (owner != attacker) && owner.isInsideRadius(_actor, 2 * AVOID_RADIUS, true, false))
 		{
@@ -249,7 +249,7 @@ public class SummonAI extends PlayableAI implements Runnable
 			return;
 		}
 		
-		final Summon summon = ((Summon) _actor);
+		final Summon summon = getActor();
 		if ((summon.getOwner() != null) && (summon.getOwner() != attacker) && !summon.isMoving() && summon.canAttack(attacker, false) && summon.getOwner().isInsideRadius(_actor, 2 * AVOID_RADIUS, true, false))
 		{
 			summon.doAttack(attacker);

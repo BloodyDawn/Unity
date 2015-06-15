@@ -62,7 +62,7 @@ public final class EscapeToNpc extends AbstractEffect
 	public boolean canStart(BuffInfo info)
 	{
 		// While affected by escape blocking effect you cannot use Blink or Scroll of Escape
-		return super.canStart(info) && !info.getEffected().cannotEscape();
+		return !info.getEffected().cannotEscape();
 	}
 	
 	@Override
@@ -113,7 +113,6 @@ public final class EscapeToNpc extends AbstractEffect
 		}
 		catch (ClassNotFoundException e)
 		{
-			info.getEffector().sendMessage("Npc class \"" + template.getType() + "\" not found for " + template.getName() + "(" + _npcId + ").");
 			_log.warn("Npc class not found: {} ", template.getType(), e);
 		}
 	}
