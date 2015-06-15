@@ -1,17 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="10903" levels="4" name="Hawk Eye">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 minutes when a bow or crossbow is equipped, P. Atk. + 5%, Skill Power + 5%, and received M. Critical Damage - 5%. -->
+		<table name="#abnormalLvl"> 1 2 3 4 </table>
+		<table name="#defCritRate"> 0.95 0.93 0.9 0.85 </table>
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 62 69 76 83 </table>
+		<table name="#power"> 1.05 1.06 1.07 1.1 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="1800" />
+		<!-- TODO: abnormalType -->
 		<set name="icon" val="icon.skill11872" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="687" />
 		<set name="reuseDelay" val="30000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#power">
+					<using kind="BOW, CROSSBOW" />
+				</mul>
+				<mul stat="physicalSkillPower" val="#power">
+					<using kind="BOW, CROSSBOW" />
+				</mul>
+				<mul stat="defCritRate" val="#defCritRate">
+					<using kind="BOW, CROSSBOW" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
 	<skill id="10904" levels="4" name="Superior Skill Mastery">
 		<!-- Skill power + 5%. -->

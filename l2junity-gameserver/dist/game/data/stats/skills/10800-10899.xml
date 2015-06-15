@@ -18,19 +18,22 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10801" levels="5" name="Bullseye">
+	<skill id="10801" levels="8" name="Bullseye">
 		<!-- Decreases target's Bow/Crossbow Resistance by 40% and M. Def. by 5%. -->
-		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
+		<table name="#abnormalLvl"> 1 2 3 4 5 6 7 8 </table>
 		<table name="#effectPoint"> -689 -696 -702 -707 -711 -715 -719 -723 </table>
-		<table name="#magicLvl"> 85 88 91 94 97 </table>
-		<table name="#mDef"> 0.95 0.90 0.85 0.80 0.75 </table>
-		<table name="#mpConsumes"> 20 21 22 23 24 </table>
-		<table name="#trait"> -40 -45 -50 -55 -60 </table>
+		<table name="#magicLvl"> 85 88 91 94 97 101 103 105 </table>
+		<table name="#mDef"> 0.95 0.90 0.85 0.80 0.75 0.75 0.75 0.75 </table>
+		<table name="#mpConsumes"> 20 21 22 23 24 25 26 27 </table>
+		<table name="#trait"> -40 -45 -50 -55 -60 -60 -60 -60</table>
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="15" />
+		<set name="abnormalType" val="REAL_TARGET" />
+		<set name="abnormalVisualEffect" val="REAL_TARGET" />
+		<set name="activateRate" val="70" />
 		<set name="icon" val="icon.skill10801" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
@@ -49,12 +52,21 @@
 		</for>
 	</skill>
 	<skill id="10802" levels="4" name="Mass Bullseye">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Decreases target's and nearby enemies' Bow/Crossbow Resistance by 60% and M. Def. by 25%. After a certain time, target explodes, suffering heavy damage. -->
+		<table name="#abnormalLvl"> 5 6 7 8 </table>
+		<table name="#magicLvl"> 99 101 103 105 </table>
+		<table name="#triggerLvl"> 1 2 3 4 </table>
+		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="15" />
+		<set name="abnormalType" val="REAL_TARGET" />
+		<set name="abnormalVisualEffect" val="REAL_TARGET" />
+		<set name="activateRate" val="70" />
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="150" />
 		<set name="icon" val="icon.skill10782" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AREA" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="93" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="3000" />
@@ -62,6 +74,20 @@
 		<set name="reuseDelay" val="180000" />
 		<set name="effectPoint" val="-714" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="mDef" val="0.75" />
+			</effect>
+			<effect name="DefenceTrait">
+				<param BOW="-60" />
+				<param CROSSBOW="-60" />
+			</effect>
+		</for>
+		<endEffects>
+			<effect name="CallSkill">
+				<param skillId="10804" skillLevel="#triggerLvl" /> <!-- Bullseye -->
+			</effect>
+		</endEffects>
 	</skill>
 	<skill id="10803" levels="4" name="Time Bomb">
 		<!-- TODO: Auto level parse, Requires manual update -->
@@ -80,6 +106,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="isDebuff" val="true" />
+		<set name="isTriggeredSkill" val="true" />
 	</skill>
 	<skill id="10805" levels="4" name="Quick Charge">
 		<!-- AUTO GENERATED SKILL -->
@@ -202,9 +229,10 @@
 		</for>
 	</skill>
 	<skill id="10812" levels="3" name="Sneak Shot">
-		<table name="#effectPoint"> -709 -711 -714 </table>
 		<!-- AUTO GENERATED SKILL -->
+		<!-- NOT USED ANYMORE ? -->
 		<!-- Attacks distant target with 29176 Power added to P. Atk. Inflicts Stun when attacking from behind. Requires a bow/crossbow. Over-hit. Critical. -->
+		<table name="#effectPoint"> -709 -711 -714 </table>
 		<table name="#mpConsumes"> 93 96 99 </table>
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
@@ -276,9 +304,10 @@
 		</for>
 	</skill>
 	<skill id="10858" levels="3" name="Retreating Shot">
-		<table name="#effectPoint"> -702 -707 -711 </table>
 		<!-- AUTO GENERATED SKILL -->
+		<!-- NOT USED ANYMORE ? -->
 		<!-- Attacks target with 29176 Power added to P. Atk., cancels their targeting, and retreats 400 grids backward. -->
+		<table name="#effectPoint"> -702 -707 -711 </table>
 		<table name="#castRanges"> 400 400 450 </table>
 		<table name="#mpConsumes"> 32 33 34 </table>
 		<set name="icon" val="icon.skill0000" />
