@@ -845,6 +845,7 @@
 	</skill>
 	<skill id="531" levels="8" name="Critical Wound">
 		<table name="#defCritDamage"> 1.3 1.32 1.33 1.34 1.35 1.35 1.35 1.35 </table>
+		<table name="#magicLvl"> 79 85 90 95 99 101 103 105 </table>
 		<table name="#mpConsume"> 43 46 49 52 55 49 52 55 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
@@ -858,7 +859,7 @@
 		<set name="icon" val="icon.skill0531" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="2" />
-		<set name="magicLvl" val="79" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />

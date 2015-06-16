@@ -198,7 +198,6 @@
 		</for>
 	</skill>
 	<skill id="10509" levels="11" name="Heart Breaker">
-		<!-- TODO abnormalType -->
 		<!-- Stabs target's heart with 21344 Power added to P. Atk. to inflict a powerful vital spot attack. Increases Spd. + 40, Evasion + 5, and Rear Critical Damage + 30%. Over-hit. Critical hit. Half-kill. Requires a dagger or dual dagger. -->
 		<table name="#effectPoint"> -687 -690 -694 -698 -702 -705 -708 -709 -710 -711 -712 </table>
 		<table name="#magicLvl"> 85 86 88 90 92 94 96 98 101 103 105 </table>
@@ -206,6 +205,7 @@
 		<table name="#power"> 21344 22083 23560 25039 26516 27993 29472 30949 35304 37016 38748 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
+		<set name="abnomalType" val="SPEED_UP_SPECIAL" />
 		<set name="baseCritRate" val="15" />
 		<set name="blowChance" val="30" />
 		<set name="icon" val="icon.skill10509" />
@@ -300,14 +300,16 @@
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
 	</skill>
-	<skill id="10514" levels="5" name="Dark Paralysis">
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -713 -717 -721 </table>
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10514" levels="8" name="Dark Paralysis">
 		<!-- Seals an enemy with the power of darkness. Causes the enemy's body to go completely rigid for 10 seconds and causes paralysis for 5 seconds. -->
-		<table name="#mpConsumes"> 38 40 42 44 46 </table>
+		<table name="#effectPoint"> -687 -694 -700 -705 -709 -713 -717 -721 </table>
+		<table name="#magicLvl"> 85 88 91 94 97 101 103 105 </table>
+		<table name="#mpConsumes"> 38 40 42 44 46 48 50 52 </table>
+		<table name="#triggerLvl"> 1 2 3 4 5 6 6 6 </table>
 		<set name="icon" val="icon.skill10514" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1000" />
@@ -315,23 +317,52 @@
 		<set name="reuseDelay" val="120000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<set name="trait" val="PARALYZE" />
+		<endEffects>
+			<effect name="CallSkill">
+				<param skillId="10515" skillLevel="1" />
+			</effect>
+		</endEffects>
 	</skill>
 	<skill id="10515" levels="6" name="Paralyzed">
-		<table name="#effectPoint"> 687 694 700 705 709 709 </table>
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Your body is paralyzed. -->
+		<table name="#abnormalLvls"> 1 2 3 4 5 6 6 6 </table>
+		<table name="#effectPoint"> 687 694 700 705 709 709 </table>
+		<table name="#magicLvl"> 85 88 91 94 97 103 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3" />
+		<set name="abnormalType" val="PARALYZE" />
+		<set name="abnormalVisualEffect" val="PARALYZE" />
+		<set name="activateRate" val="50" />
+		<set name="basicProperty" val="MEN" />
 		<set name="icon" val="icon.skill1170" />
 		<set name="operateType" val="A2" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlBonusRate" val="1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1200" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<set name="isTriggeredSkill" val="true" />
+		<set name="trait" val="PARALYZE" />
+		<for>
+			<effect name="Paralyze" />
+		</for>
 	</skill>
-	<skill id="10516" levels="6" name="Shadow Chase">
-		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 </table>
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10516" levels="9" name="Shadow Chase">
 		<!-- Moves behind an enemy, cancels his target, and inflicts Stun. -->
-		<table name="#mpConsumes"> 38 39 41 43 45 47 </table>
+		<table name="#effectPoint"> -687 -694 -700 -705 -709 -709 -709 -709 -709 </table>
+		<table name="#magicLvl"> 85 87 90 93 96 99 101 103 105 </table>
+		<table name="#mpConsumes"> 38 39 41 43 45 47 49 51 53 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3" />
+		<set name="abnormalType" val="STUN" />
+		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="activateRate" val="40" />
+		<set name="basicProperty" val="MEN" />
+		<set name="lvlBonusRate" val="1" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="trait" val="DERANGEMENT" />
 		<set name="icon" val="icon.skill10516" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -342,6 +373,11 @@
 		<set name="reuseDelay" val="7000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="TeleportToTarget" />
+			<effect name="TargetCancel" />
+			<effect name="Stun" />
+		</for>
 	</skill>
 	<skill id="10517" levels="1" name="Shadow Hide">
 		<!-- You go into Hide state, cancel debuffs and Hold effects on you, increase HP Recovery Bonus, and eliminate enemy enmity toward you. -->
@@ -429,32 +465,64 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10522" levels="6" name="Poison Zone">
-		<table name="#effectPoint"> -707 -709 -711 -711 -711 -711 -711 -711 -711 </table>
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10522" levels="9" name="Poison Zone">
 		<!-- Sprays poison onto nearby targets for 15 seconds. Decreases P. Atk., Speed, Shield Defense, P. Def., and M. Def. Inflicts Poison that blocks the use of magic. -->
+		<table name="#effectPoint"> -707 -709 -711 -711 -711 -711 -711 -711 -711 </table>
+		<table name="#magicLvl"> 85 87 90 93 96 99 101 103 105 </table>
 		<table name="#mpConsumes"> 76 79 83 87 91 95 </table>
+		<table name="#npcIds"> 13310 13377 13378 13379 13380 13381 13452 13453 13454 </table>
 		<set name="icon" val="icon.skill10522" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="GROUND" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="800" />
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<for>
+			<effect name="SummonNpc">
+				<param npcId="#npcIds" npcCount="1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10523" levels="9" name="Poisoned">
-		<table name="#effectPoint"> -707 -709 -709 -709 -709 -709 -709 -709 -709 </table>
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Poisoned by a toxin cloud. Decreases Speed, P. Atk., Shield Defense, P. Def., and M. Def., and blocks the use of magic. Decreases HP by 687 per second. -->
+		<table name="#debuff"> 0.89 0.88 0.87 0.86 0.85 0.84 0.84 0.84 0.84 </table> <!-- Guessed -->
+		<table name="#dot"> 687 700 721 742 762 783 803 823 844 </table>
+		<table name="#effectPoint"> -707 -709 -709 -709 -709 -709 -709 -709 -709 </table>
+		<table name="#magicLevel"> 85 87 90 93 96 99 101 103 105 </table>
+		<set name="abnormalLvl" val="9" />
+		<set name="abnormalTime" val="15" />
+		<set name="abnormalType" val="POISON" />
+		<set name="abnormalVisualEffect" val="DOT_POISON" />
+		<set name="activateRate" val="35" />
+		<set name="affectLimit" val="6-12" />
+		<set name="affectRange" val="150" />
+		<set name="basicProperty" val="CON" />
 		<set name="icon" val="icon.skill1167" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="lvlBonusRate" val="1" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="1" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<set name="trait" val="POISON" />
+		<for>
+			<effect name="DamOverTime" ticks="5">
+				<param power="#dot" />
+			</effect>
+			<effect name="Debuff">
+				<mul stat="pAtk" val="#debuff" />
+				<mul stat="runSpd" val="#debuff" />
+				<mul stat="sDef" val="#debuff" />
+				<mul stat="pDef" val="#debuff" />
+				<mul stat="mDef" val="#debuff" />
+			</effect>
+			<effect name="Mute" />
+		</for>
 	</skill>
 	<skill id="10524" levels="3" name="Evasive Counterstrike">
 		<table name="#effectPoint"> 707 709 711 </table>
@@ -544,7 +612,6 @@
 		</for>
 	</skill>
 	<skill id="10529" levels="4" name="Shadow Flash">
-
 		<!-- TODO: Auto level parse, Requires manual update -->
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Moves behind the enemy, cancels his target, and inflicts Stun. Additionally increases Critical Damage on target, and prevents target's HP from recovering more than 50%. -->
@@ -1000,18 +1067,42 @@
 		<set name="reuseDelay" val="10000" />
 	</skill>
 	<skill id="10554" levels="7" name="Power Bluff">
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
 		<!-- For 3 sec., turns the enemy's back to you and Stuns them. Requires a dagger or dual dagger. -->
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3" />
+		<set name="abnormalType" val="STUN" />
+		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="activateRate" val="40" />
+		<set name="basicProperty" val="MEN" />
 		<set name="icon" val="icon.skill10554" />
+		<set name="lvlBonusRate" val="1" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="40" />
 		<set name="castRange" val="40" />
+		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1000" />
 		<set name="reuseDelay" val="8000" />
 		<set name="effectPoint" val="-1" />
 		<set name="isDebuff" val="true" />
+		<set name="trait" val="DERANGEMENT" />
+		<cond msgId="113" addName="1">
+			<using kind="DAGGER,DUALDAGGER" />
+		</cond>
+		<for>
+			<effect name="Bluff">
+				<param chance="80" />
+			</effect>
+			<effect name="TargetCancel">
+				<param chance="80" />
+			</effect>
+			<effect name="DeleteHateOfMe">
+				<param chance="80" />
+			</effect>
+			<effect name="Stun" />
+		</for>
 	</skill>
 	<skill id="10555" levels="1" name="Impaired">
 		<!-- AUTO GENERATED SKILL -->
@@ -1044,31 +1135,53 @@
 		<set name="isMagic" val="4" />
 	</skill>
 	<skill id="10558" levels="1" name="Elusive Mirage">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- For 30 sec., has a chance of cancelling target of the enemy that attacked you. Requires a dagger or dual dagger. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="30" />
+		<set name="abnormalType" val="MIRAGE" />
 		<set name="icon" val="icon.skill11861" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="72" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="673" />
 		<set name="reuseDelay" val="300000" />
+		<cond msgId="113" addName="1">
+			<using kind="DAGGER,DUALDAGGER" />
+		</cond>
+		<for>
+			<effect name="TriggerSkillByDamage">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="80" />
+				<param skillId="10559" skillLevel="1" /> <!-- Elusive Mirage -->
+				<param targetType="ONE" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10559" levels="1" name="Elusive Mirage">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Cannot target for 2 sec. -->
 		<set name="icon" val="icon.skill11861" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+		<set name="magicLvl" val="85" />
 		<set name="reuseDelay" val="5000" />
 		<set name="effectPoint" val="-564" />
 		<set name="isDebuff" val="true" />
+		<set name="isTriggeredSkill" val="true" />
+		<for>
+			<effect name="TargetCancel" />
+		</for>
 	</skill>
 	<skill id="10560" levels="1" name="Maximum Blow">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- For 20 sec., Vital Spot Attack Rate + 10%. Requires a dagger or dual dagger. -->
+		<set name="abnormalLvl" val="5" />
+		<set name="abnormalTime" val="20" />
+		<set name="abnormalType" val="MIGHT_MORTAL" />
 		<set name="icon" val="icon.skill11877" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -1077,6 +1190,14 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="549" />
 		<set name="reuseDelay" val="300000" />
+		<cond msgId="113" addName="1">
+			<using kind="DAGGER,DUALDAGGER" />
+		</cond>
+		<for>
+			<effect name="Buff">
+				<sub stat="blowRate" val="1.1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10561" levels="4" name="Superior Vitality">
 		<!-- Max HP and CP + 7%. Increases resistance to poison, bleed, and stun + 4. -->
@@ -1100,14 +1221,42 @@
 		</for>
 	</skill>
 	<skill id="10562" levels="1" name="Critical Adventures">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- For 5 min., Critical Damage + 304 and vital spot attack success rate + 10%. Front Critical Damage - 30%, Side Critical Rate + 20% and Critical Damage + 20%. Rear Critical Rate + 40% and Critical Damage + 40%. Requires a dagger or dual dagger. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="300" />
+		<set name="abnormalType" val="FOCUS_DAGGER" />
 		<set name="icon" val="icon.skill10562" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="36" />
 		<set name="hitTime" val="2000" />
 		<set name="effectPoint" val="669" />
 		<set name="reuseDelay" val="30000" />
+		<cond msgId="113" addName="1">
+			<using kind="DAGGER,DUALDAGGER" />
+		</cond>
+		<for>
+			<effect name="Buff">
+				<add stat="cAtkAdd" val="304">
+					<using kind="DAGGER,DUALDAGGER" />
+				</add>
+				<mul stat="blowRate" val="1.1">
+					<using kind="DAGGER,DUALDAGGER" />
+				</mul>
+				<mul stat="cAtk" val="0.7"> <!-- Decreases frontal critical attack rate by 30% -->
+					<player front="true" />
+				</mul>
+				<mul stat="cAtk" val="1.2"> <!-- Increase side critical attack rate by 20% -->
+					<and>
+						<player front="false" />
+						<player behind="false" />
+					</and>
+				</mul>
+				<mul stat="cAtk" val="1.4"> <!-- Increase rear critical attack rate by 40% -->
+					<player behind="true" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
 </list>
