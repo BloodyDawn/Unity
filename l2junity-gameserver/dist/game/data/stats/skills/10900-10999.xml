@@ -48,19 +48,28 @@
 		</for>
 	</skill>
 	<skill id="10905" levels="3" name="Fatal Arrow">
-		<table name="#effectPoint"> -709 -711 -714 </table>
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Attacks target with 29176 Power added to P. Atk. Damage increases as your HP decreases. Requires a bow. Over-hit. -->
+		<table name="#effectPoint"> -709 -711 -714 </table>
 		<table name="#mpConsumes"> 93 96 99 </table>
+		<table name="#power"> 29176 30726 32277 </table>
+		<set name="overHit" val="true" />
+		<set name="power" val="#power" />
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="1100" />
 		<set name="hitTime" val="1800" />
 		<set name="coolTime" val="250" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="30000" />
+		<set name="rideState" val="NONE" />
+		<cond msgId="113" addName="1">
+			<using kind="BOW,CROSSBOW" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttackHpLink" />
+		</for>
 	</skill>
 	<skill id="10950" levels="4" name="Vengeful Sniper">
 		<!-- For 30 minutes when a bow or crossbow is equipped, P. Atk. + 5%, PvP damage + 5%, received magic skill damage during PvP - 5%. -->
@@ -126,9 +135,13 @@
 		</for>
 	</skill>
 	<skill id="10952" levels="1" name="Survival Instinct">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- For 60 sec., increases P. Atk. by 40%, P. Def/M. Def. by 20%, and increases Max HP/CP by 20%. Consumes 5 Soulstones. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="60" />
+		<set name="abnormalType" val="INSTINCT" />
 		<set name="icon" val="icon.skill10952" />
+		<set name="itemConsumeCount" val="5" />
+		<set name="itemConsumeId" val="1785" /> <!-- Soulstones -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="64" />
@@ -136,11 +149,24 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="600000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.4" />
+				<mul stat="pDef" val="1.2" />
+				<mul stat="mDef" val="1.2" />
+				<mul stat="maxHp" val="1.2" />
+				<mul stat="maxCp" val="1.2" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10953" levels="1" name="Hunting Instinct">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- For 60 sec., increases Atk. Spd. by 20%, Skill Power by 20%, P. Skill Critical Rate by 40%, and Skill Critical Damage by 20%. Consumes 5 Soulstones. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="60" />
+		<set name="abnormalType" val="INSTINCT" />
 		<set name="icon" val="icon.skill10953" />
+		<set name="itemConsumeCount" val="5" />
+		<set name="itemConsumeId" val="1785" /> <!-- Soulstones -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="64" />
@@ -148,11 +174,22 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="600000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtkSpd" val="1.2" />
+				<mul stat="physicalSkillPower" val="1.2" />
+				<!-- TODO P. Skill Critical Rate by 40%, and Skill Critical Damage by 20% -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="10954" levels="1" name="Counter Instinct">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- For 60 sec., increases Skill Power by 40%, P. Skill Critical Rate by 20%, and Skill Critical Damage by 40%. Consumes 5 Soulstones. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="60" />
+		<set name="abnormalType" val="INSTINCT" />
 		<set name="icon" val="icon.skill10954" />
+		<set name="itemConsumeCount" val="5" />
+		<set name="itemConsumeId" val="1785" /> <!-- Soulstones -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="64" />
@@ -160,11 +197,21 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="600000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="physicalSkillPower" val="1.4" />
+				<!-- TODO P. Skill Critical Rate by 20%, and Skill Critical Damage by 40% -->
+			</effect>
+		</for>
 	</skill>
 	<skill id="10955" levels="1" name="Bloody Instinct">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- For 60 sec., increases PvP Damage by 20%, and Skill Power by 20%. Consumes 5 Soulstones. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="60" />
+		<set name="abnormalType" val="INSTINCT" />
 		<set name="icon" val="icon.skill10955" />
+		<set name="itemConsumeCount" val="5" />
+		<set name="itemConsumeId" val="1785" /> <!-- Soulstones -->
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="64" />
@@ -172,13 +219,26 @@
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="2" />
 		<set name="reuseDelay" val="600000" />
+		<for>
+			<effect name="Buff">
+				<mul stat="physicalSkillPower" val="1.2" />
+				<mul stat="pvpPhysSkillsDmg" val="1.2" />
+				<mul stat="pvpMagicalDmg" val="1.2" />
+				<mul stat="pvpMagicalDef" val="1.2" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10956" levels="1" name="Divine Expansion">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases the number of buffs an individual can receive by 1. -->
 		<set name="icon" val="icon.skillexofdiv" />
+		<set name="magicLvl" val="100" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="EnlargeAbnormalSlot">
+				<param slots="1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10997" levels="1" name="Archer - Individual Passive">
 		<!-- AUTO GENERATED SKILL -->
