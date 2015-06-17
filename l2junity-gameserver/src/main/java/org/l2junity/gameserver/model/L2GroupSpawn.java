@@ -18,7 +18,6 @@
  */
 package org.l2junity.gameserver.model;
 
-import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.data.sql.impl.TerritoryTable;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -89,12 +88,6 @@ public class L2GroupSpawn extends L2Spawn
 			
 			mob.setSpawn(this);
 			mob.spawnMe(newlocx, newlocy, newlocz);
-			mob.onSpawn();
-			
-			if (Config.DEBUG)
-			{
-				_log.trace("Spawned Mob Id: " + _template.getId() + " ,at: X: " + mob.getX() + " Y: " + mob.getY() + " Z: " + mob.getZ());
-			}
 			return mob;
 			
 		}
