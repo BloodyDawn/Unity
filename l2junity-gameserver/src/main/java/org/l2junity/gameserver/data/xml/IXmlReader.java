@@ -83,8 +83,7 @@ public interface IXmlReader
 		}
 		
 		final DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-		dbf.setNamespaceAware(true);
-		dbf.setValidating(true);
+		dbf.setValidating(isValidating());
 		dbf.setIgnoringComments(true);
 		try
 		{
@@ -104,7 +103,16 @@ public interface IXmlReader
 			return;
 		}
 	}
-	
+
+	/**
+	 * Checks if XML validation is enabled.
+	 * @return {@code true} if its enabled, {@code false} otherwise
+	 */
+	default boolean isValidating()
+	{
+		return true;
+	}
+
 	/**
 	 * Wrapper for {@link #parseDirectory(File, boolean)}.
 	 * @param file the path to the directory where the XML files are.
