@@ -83,6 +83,7 @@ public interface IXmlReader
 		}
 		
 		final DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+		dbf.setNamespaceAware(true);
 		dbf.setValidating(isValidating());
 		dbf.setIgnoringComments(true);
 		try
