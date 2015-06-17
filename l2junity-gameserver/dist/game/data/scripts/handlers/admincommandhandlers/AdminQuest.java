@@ -276,7 +276,6 @@ public class AdminQuest implements IAdminCommandHandler
 			msg.setFile(activeChar.getHtmlPrefix(), "data/html/admin/npc-quests.htm");
 			msg.replace("%quests%", sb.toString());
 			msg.replace("%questName%", "<table><tr><td width=\"50\" align=\"left\"><a action=\"bypass -h admin_script_load " + quest.getName() + "\">Reload</a></td> <td width=\"150\"  align=\"center\"><a action=\"bypass -h admin_quest_info " + quest.getName() + "\">" + quest.getName() + "</a></td> <td width=\"50\" align=\"right\"><a action=\"bypass -h admin_script_unload " + quest.getName() + "\">Unload</a></td></tr></table>");
-			System.out.println(msg.getHtml());
 			activeChar.sendPacket(msg);
 		}
 		return true;
