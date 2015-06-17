@@ -21,6 +21,8 @@ package org.l2junity.gameserver.network.client.recv;
 import org.l2junity.gameserver.handler.BypassHandler;
 import org.l2junity.gameserver.handler.IBypassHandler;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.events.EventDispatcher;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerBypass;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.network.PacketReader;
 
@@ -49,5 +51,7 @@ public class RequestTutorialPassCmdToServer implements IClientIncomingPacket
 		{
 			handler.useBypass(_bypass, player, null);
 		}
+		
+		EventDispatcher.getInstance().notifyEventAsync(new OnPlayerBypass(player, _bypass), player, player);
 	}
 }
