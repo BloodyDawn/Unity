@@ -45,7 +45,6 @@ import org.l2junity.gameserver.model.drops.GroupedGeneralDropItem;
 import org.l2junity.gameserver.model.drops.IDropItem;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.holders.MinionHolder;
-import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -127,43 +126,7 @@ public class NpcData implements IXmlReader
 									{
 										parameters = new HashMap<>();
 									}
-									
-									for (Node parameters_node = npc_node.getFirstChild(); parameters_node != null; parameters_node = parameters_node.getNextSibling())
-									{
-										attrs = parameters_node.getAttributes();
-										switch (parameters_node.getNodeName().toLowerCase())
-										{
-											case "param":
-											{
-												parameters.put(parseString(attrs, "name"), parseString(attrs, "value"));
-												break;
-											}
-											case "skill":
-											{
-												parameters.put(parseString(attrs, "name"), new SkillHolder(parseInteger(attrs, "id"), parseInteger(attrs, "level")));
-												break;
-											}
-											case "minions":
-											{
-												final List<MinionHolder> minions = new ArrayList<>(1);
-												for (Node minions_node = parameters_node.getFirstChild(); minions_node != null; minions_node = minions_node.getNextSibling())
-												{
-													if (minions_node.getNodeName().equalsIgnoreCase("npc"))
-													{
-														attrs = minions_node.getAttributes();
-														minions.add(new MinionHolder(parseInteger(attrs, "id"), parseInteger(attrs, "count"), parseInteger(attrs, "respawnTime"), parseInteger(attrs, "weightPoint")));
-													}
-												}
-												
-												if (!minions.isEmpty())
-												{
-													parameters.put(parseString(parameters_node.getAttributes(), "name"), minions);
-												}
-												
-												break;
-											}
-										}
-									}
+									parameters.putAll(parseParameters(npc_node));
 									break;
 								}
 								case "race":

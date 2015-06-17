@@ -20,12 +20,18 @@ package org.l2junity.gameserver.data.xml;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.file.filter.XMLFilter;
+import org.l2junity.gameserver.model.holders.MinionHolder;
+import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -593,6 +599,51 @@ public interface IXmlReader
 	default <T extends Enum<T>> T parseEnum(NamedNodeMap attrs, Class<T> clazz, String name, T defaultValue)
 	{
 		return parseEnum(attrs.getNamedItem(name), clazz, defaultValue);
+	}
+	
+	/**
+	 * @param n
+	 * @return a map of parameters
+	 */
+	default Map<String, Object> parseParameters(Node n)
+	{
+		final Map<String, Object> parameters = new HashMap<>();
+		for (Node parameters_node = n.getFirstChild(); parameters_node != null; parameters_node = parameters_node.getNextSibling())
+		{
+			NamedNodeMap attrs = parameters_node.getAttributes();
+			switch (parameters_node.getNodeName().toLowerCase())
+			{
+				case "param":
+				{
+					parameters.put(parseString(attrs, "name"), parseString(attrs, "value"));
+					break;
+				}
+				case "skill":
+				{
+					parameters.put(parseString(attrs, "name"), new SkillHolder(parseInteger(attrs, "id"), parseInteger(attrs, "level")));
+					break;
+				}
+				case "minions":
+				{
+					final List<MinionHolder> minions = new ArrayList<>(1);
+					for (Node minions_node = parameters_node.getFirstChild(); minions_node != null; minions_node = minions_node.getNextSibling())
+					{
+						if (minions_node.getNodeName().equalsIgnoreCase("npc"))
+						{
+							attrs = minions_node.getAttributes();
+							minions.add(new MinionHolder(parseInteger(attrs, "id"), parseInteger(attrs, "count"), parseInteger(attrs, "respawnTime"), parseInteger(attrs, "weightPoint")));
+						}
+					}
+					
+					if (!minions.isEmpty())
+					{
+						parameters.put(parseString(parameters_node.getAttributes(), "name"), minions);
+					}
+					break;
+				}
+			}
+		}
+		return parameters;
 	}
 	
 	/**
