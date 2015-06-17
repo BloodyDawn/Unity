@@ -185,12 +185,11 @@ public enum AbnormalVisualEffect
 	BIG_BODY_COMBINATION_CAT_PC(170),
 	BIG_BODY_COMBINATION_UNICORN_PC(171),
 	BIG_BODY_COMBINATION_DEMON_PC(172),
-	BIG_BODY(173),
-	BIG_BODY_2(174),
+	BIG_BODY_2(173),
+	BIG_BODY_3(174),
 	DRAGON_ULTIMATE(700),
 	CHANGE_HALLOWEEN(1000);
-
-
+	
 	private final int _clientId;
 	
 	private AbnormalVisualEffect(int clientId)
