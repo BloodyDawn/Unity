@@ -52,6 +52,6 @@ public class RequestTutorialPassCmdToServer implements IClientIncomingPacket
 			handler.useBypass(_bypass, player, null);
 		}
 		
-		EventDispatcher.getInstance().notifyEventAsync(new OnPlayerBypass(player, _bypass), player, player);
+		EventDispatcher.getInstance().notifyEventAsync(new OnPlayerBypass(player, _bypass), player);
 	}
 }
