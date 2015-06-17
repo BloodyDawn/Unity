@@ -136,6 +136,7 @@ public final class DayNightSpawnManager
 	
 	private void changeMode(int mode)
 	{
+		specialNightBoss(mode);
 		if (_nightCreatures.isEmpty() && _dayCreatures.isEmpty() && _bosses.isEmpty())
 		{
 			return;
@@ -145,11 +146,9 @@ public final class DayNightSpawnManager
 		{
 			case 0:
 				spawnDayCreatures();
-				specialNightBoss(0);
 				break;
 			case 1:
 				spawnNightCreatures();
-				specialNightBoss(1);
 				break;
 			default:
 				_log.warn("DayNightSpawnManager: Wrong mode sent");

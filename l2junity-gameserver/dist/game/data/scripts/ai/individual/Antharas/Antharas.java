@@ -719,8 +719,8 @@ public final class Antharas extends AbstractNpcAI
 		{
 			for (int i = 1; i <= 6; i++)
 			{
-				final int x = npc.getTemplate().getParameters().getInt("suicide" + i + "_x");
-				final int y = npc.getTemplate().getParameters().getInt("suicide" + i + "_y");
+				final int x = npc.getParameters().getInt("suicide" + i + "_x");
+				final int y = npc.getParameters().getInt("suicide" + i + "_y");
 				final Attackable bomber = (Attackable) addSpawn(BOMBER, npc.getX(), npc.getY(), npc.getZ(), 0, true, 15000, true);
 				bomber.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(x, y, npc.getZ()));
 			}

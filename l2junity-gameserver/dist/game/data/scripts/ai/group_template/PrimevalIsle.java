@@ -253,11 +253,11 @@ public final class PrimevalIsle extends AbstractNpcAI
 			if (creature.isPlayer())
 			{
 				final Attackable mob = (Attackable) npc;
-				final int ag_type = npc.getTemplate().getParameters().getInt("ag_type", 0);
-				final int probPhysicalSpecial1 = npc.getTemplate().getParameters().getInt("ProbPhysicalSpecial1", 0);
-				final int probPhysicalSpecial2 = npc.getTemplate().getParameters().getInt("ProbPhysicalSpecial2", 0);
-				final SkillHolder physicalSpecial1 = npc.getTemplate().getParameters().getObject("PhysicalSpecial1", SkillHolder.class);
-				final SkillHolder physicalSpecial2 = npc.getTemplate().getParameters().getObject("PhysicalSpecial2", SkillHolder.class);
+				final int ag_type = npc.getParameters().getInt("ag_type", 0);
+				final int probPhysicalSpecial1 = npc.getParameters().getInt("ProbPhysicalSpecial1", 0);
+				final int probPhysicalSpecial2 = npc.getParameters().getInt("ProbPhysicalSpecial2", 0);
+				final SkillHolder physicalSpecial1 = npc.getParameters().getObject("PhysicalSpecial1", SkillHolder.class);
+				final SkillHolder physicalSpecial2 = npc.getParameters().getObject("PhysicalSpecial2", SkillHolder.class);
 				
 				if (((getRandom(100) < 30) && (npc.getId() == DEINO)) || ((npc.getId() == ORNIT) && npc.isScriptValue(0)))
 				{
@@ -403,11 +403,11 @@ public final class PrimevalIsle extends AbstractNpcAI
 		else
 		{
 			Creature target = null;
-			final int probPhysicalSpecial1 = npc.getTemplate().getParameters().getInt("ProbPhysicalSpecial1", 0);
-			final int probPhysicalSpecial2 = npc.getTemplate().getParameters().getInt("ProbPhysicalSpecial2", 0);
-			final SkillHolder selfRangeBuff1 = npc.getTemplate().getParameters().getObject("SelfRangeBuff1", SkillHolder.class);
-			final SkillHolder physicalSpecial1 = npc.getTemplate().getParameters().getObject("PhysicalSpecial1", SkillHolder.class);
-			final SkillHolder physicalSpecial2 = npc.getTemplate().getParameters().getObject("PhysicalSpecial2", SkillHolder.class);
+			final int probPhysicalSpecial1 = npc.getParameters().getInt("ProbPhysicalSpecial1", 0);
+			final int probPhysicalSpecial2 = npc.getParameters().getInt("ProbPhysicalSpecial2", 0);
+			final SkillHolder selfRangeBuff1 = npc.getParameters().getObject("SelfRangeBuff1", SkillHolder.class);
+			final SkillHolder physicalSpecial1 = npc.getParameters().getObject("PhysicalSpecial1", SkillHolder.class);
+			final SkillHolder physicalSpecial2 = npc.getParameters().getObject("PhysicalSpecial2", SkillHolder.class);
 			
 			if (((npc.getCurrentHp() / npc.getMaxHp()) * 100) <= 50)
 			{
@@ -493,8 +493,8 @@ public final class PrimevalIsle extends AbstractNpcAI
 		}
 		else if (CommonUtil.contains(TREX, npc.getId()))
 		{
-			final int collectGhost = npc.getTemplate().getParameters().getInt("CollectGhost", 0);
-			final int collectDespawn = npc.getTemplate().getParameters().getInt("CollectGhostDespawnTime", 30);
+			final int collectGhost = npc.getParameters().getInt("CollectGhost", 0);
+			final int collectDespawn = npc.getParameters().getInt("CollectGhostDespawnTime", 30);
 			
 			if (collectGhost == 1)
 			{

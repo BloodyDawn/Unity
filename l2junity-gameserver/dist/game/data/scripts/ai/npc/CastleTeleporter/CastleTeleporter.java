@@ -104,7 +104,7 @@ public final class CastleTeleporter extends AbstractNpcAI
 				if (st.hasMoreTokens())
 				{
 					final int unknowInt = Integer.parseInt(st.nextToken());
-					final StatsSet npcParams = npc.getTemplate().getParameters();
+					final StatsSet npcParams = npc.getParameters();
 					Location teleLoc = null;
 					
 					switch (unknowInt)

@@ -95,8 +95,8 @@ public final class CastleDoorManager extends AbstractNpcAI
 					{
 						final Castle castle = npc.getCastle();
 						final boolean open = st.nextToken().equals("1");
-						final String doorName1 = npc.getTemplate().getParameters().getString("DoorName1");
-						final String doorName2 = npc.getTemplate().getParameters().getString("DoorName2");
+						final String doorName1 = npc.getParameters().getString("DoorName1");
+						final String doorName2 = npc.getParameters().getString("DoorName2");
 						
 						castle.openCloseDoor(player, doorName1, open);
 						castle.openCloseDoor(player, doorName2, open);
@@ -116,16 +116,16 @@ public final class CastleDoorManager extends AbstractNpcAI
 					
 					if (param == 1)
 					{
-						final int x = npc.getTemplate().getParameters().getInt("pos_x01");
-						final int y = npc.getTemplate().getParameters().getInt("pos_y01");
-						final int z = npc.getTemplate().getParameters().getInt("pos_z01");
+						final int x = npc.getParameters().getInt("pos_x01");
+						final int y = npc.getParameters().getInt("pos_y01");
+						final int z = npc.getParameters().getInt("pos_z01");
 						player.teleToLocation(x, y, z);
 					}
 					else
 					{
-						final int x = npc.getTemplate().getParameters().getInt("pos_x02");
-						final int y = npc.getTemplate().getParameters().getInt("pos_y02");
-						final int z = npc.getTemplate().getParameters().getInt("pos_z02");
+						final int x = npc.getParameters().getInt("pos_x02");
+						final int y = npc.getParameters().getInt("pos_y02");
+						final int z = npc.getParameters().getInt("pos_z02");
 						player.teleToLocation(x, y, z);
 					}
 				}

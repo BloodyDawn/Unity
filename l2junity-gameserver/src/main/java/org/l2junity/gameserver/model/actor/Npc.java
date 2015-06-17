@@ -33,7 +33,6 @@ import org.l2junity.gameserver.ItemsAutoDestroy;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.cache.HtmCache;
 import org.l2junity.gameserver.datatables.ItemTable;
-import org.l2junity.gameserver.datatables.NpcPersonalAIData;
 import org.l2junity.gameserver.enums.AISkillScope;
 import org.l2junity.gameserver.enums.AIType;
 import org.l2junity.gameserver.enums.ChatType;
@@ -52,6 +51,7 @@ import org.l2junity.gameserver.instancemanager.WalkingManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.Location;
+import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.instance.L2ClanHallManagerInstance;
@@ -82,6 +82,7 @@ import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.olympiad.Olympiad;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
+import org.l2junity.gameserver.model.spawns.NpcSpawnTemplate;
 import org.l2junity.gameserver.model.variables.NpcVariables;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.ExChangeNpcState;
@@ -514,7 +515,7 @@ public class Npc extends Creature
 	 */
 	public int getAggroRange()
 	{
-		return hasAIValue("aggroRange") ? getAIValue("aggroRange") : getTemplate().getAggroRange();
+		return getTemplate().getAggroRange();
 	}
 	
 	public boolean isInMyClan(Npc npc)
@@ -1146,6 +1147,12 @@ public class Npc extends Creature
 		_killingBlowWeaponId = (weapon != null) ? weapon.getId() : 0;
 		
 		DecayTaskManager.getInstance().add(this);
+		
+		final NpcSpawnTemplate npcTemplate = getSpawn().getNpcSpawnTemplate();
+		if (npcTemplate != null)
+		{
+			npcTemplate.notifyNpcDeath(this, killer);
+		}
 		return true;
 	}
 	
@@ -1556,24 +1563,6 @@ public class Npc extends Creature
 	}
 	
 	/**
-	 * @param paramName the parameter name to check
-	 * @return given AI parameter value
-	 */
-	public int getAIValue(final String paramName)
-	{
-		return hasAIValue(paramName) ? NpcPersonalAIData.getInstance().getAIValue(getSpawn().getName(), paramName) : -1;
-	}
-	
-	/**
-	 * @param paramName the parameter name to check
-	 * @return {@code true} if given parameter is set for NPC, {@code false} otherwise
-	 */
-	public boolean hasAIValue(final String paramName)
-	{
-		return (getSpawn() != null) && (getSpawn().getName() != null) && NpcPersonalAIData.getInstance().hasAIValue(getSpawn().getName(), paramName);
-	}
-	
-	/**
 	 * @param npc NPC to check
 	 * @return {@code true} if both given NPC and this NPC is in the same spawn group, {@code false} otherwise
 	 */
@@ -1904,5 +1893,22 @@ public class Npc extends Creature
 	public void broadcastSay(ChatType chatType, NpcStringId npcStringId, int radius)
 	{
 		Broadcast.toKnownPlayersInRadius(this, new NpcSay(this, chatType, npcStringId), radius);
+	}
+	
+	/**
+	 * @return the parameters of the npc merged with the spawn parameters (if there are any)
+	 */
+	public StatsSet getParameters()
+	{
+		final L2Spawn spawn = getSpawn();
+		if (spawn != null) // Minions doesn't have L2Spawn object bound
+		{
+			final NpcSpawnTemplate npcSpawnTemplate = spawn.getNpcSpawnTemplate();
+			if ((npcSpawnTemplate != null) && (npcSpawnTemplate.getParameters() != null) && !npcSpawnTemplate.getParameters().isEmpty())
+			{
+				return npcSpawnTemplate.getParameters();
+			}
+		}
+		return getTemplate().getParameters();
 	}
 }

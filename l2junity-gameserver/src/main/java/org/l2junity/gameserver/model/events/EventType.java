@@ -20,6 +20,7 @@ package org.l2junity.gameserver.model.events;
 
 import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.model.events.impl.IBaseEvent;
+import org.l2junity.gameserver.model.events.impl.OnDayNightChange;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttack;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttackAvoid;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttacked;
@@ -236,7 +237,9 @@ public enum EventType
 	ON_PLAYER_SUB_CHANGE(OnPlayerSubChange.class, void.class),
 	
 	// Trap events
-	ON_TRAP_ACTION(OnTrapAction.class, void.class);
+	ON_TRAP_ACTION(OnTrapAction.class, void.class),
+	
+	ON_DAY_NIGHT_CHNAGE(OnDayNightChange.class, void.class);
 	
 	private final Class<? extends IBaseEvent> _eventClass;
 	private final Class<?>[] _returnClass;

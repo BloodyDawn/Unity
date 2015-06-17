@@ -81,13 +81,13 @@ public final class TurekOrcs extends AbstractNpcAI
 		{
 			npc.getVariables().set("isHit", 1);
 		}
-		else if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.5)) && (npc.getCurrentHp() > (npc.getMaxHp() * 0.3)) && (attacker.getCurrentHp() > (attacker.getMaxHp() * 0.25)) && npc.hasAIValue("fleeX") && npc.hasAIValue("fleeY") && npc.hasAIValue("fleeZ") && (npc.getVariables().getInt("state") == 0) && (getRandom(100) < 10))
+		else if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.5)) && (npc.getCurrentHp() > (npc.getMaxHp() * 0.3)) && (attacker.getCurrentHp() > (attacker.getMaxHp() * 0.25)) && (npc.getParameters().getInt("fleeX", -1) != -1) && (npc.getParameters().getInt("fleeY", -1) != -1) && (npc.getParameters().getInt("fleeZ", -1) != -1) && (npc.getVariables().getInt("state") == 0) && (getRandom(100) < 10))
 		{
 			// Say and flee
 			npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.getNpcStringId(getRandom(1000007, 1000027)));
 			npc.disableCoreAI(true); // to avoid attacking behaviour, while flee
 			npc.setIsRunning(true);
-			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(npc.getAIValue("fleeX"), npc.getAIValue("fleeY"), npc.getAIValue("fleeZ")));
+			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(npc.getParameters().getInt("fleeX"), npc.getParameters().getInt("fleeY"), npc.getParameters().getInt("fleeZ")));
 			npc.getVariables().set("state", 1);
 			npc.getVariables().set("attacker", attacker.getObjectId());
 		}
@@ -113,7 +113,7 @@ public final class TurekOrcs extends AbstractNpcAI
 		// NPC reaches flee point
 		if (npc.getVariables().getInt("state") == 1)
 		{
-			if ((npc.getX() == npc.getAIValue("fleeX")) && (npc.getY() == npc.getAIValue("fleeY")))
+			if ((npc.getX() == npc.getParameters().getInt("fleeX")) && (npc.getY() == npc.getParameters().getInt("fleeY")))
 			{
 				npc.disableCoreAI(false);
 				startQuestTimer("checkState", 15000, npc, null);
@@ -122,7 +122,7 @@ public final class TurekOrcs extends AbstractNpcAI
 			}
 			else
 			{
-				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(npc.getAIValue("fleeX"), npc.getAIValue("fleeY"), npc.getAIValue("fleeZ")));
+				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(npc.getParameters().getInt("fleeX"), npc.getParameters().getInt("fleeY"), npc.getParameters().getInt("fleeZ")));
 			}
 		}
 		else if ((npc.getVariables().getInt("state") == 3) && npc.staysInSpawnLoc())

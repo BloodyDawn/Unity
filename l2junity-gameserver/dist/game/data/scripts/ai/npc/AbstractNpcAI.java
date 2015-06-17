@@ -98,7 +98,7 @@ public abstract class AbstractNpcAI extends Quest
 	
 	public void spawnMinions(final Npc npc, final String spawnName)
 	{
-		for (MinionHolder is : npc.getTemplate().getParameters().getMinionList(spawnName))
+		for (MinionHolder is : npc.getParameters().getMinionList(spawnName))
 		{
 			addMinion((L2MonsterInstance) npc, is.getId());
 		}

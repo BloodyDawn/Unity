@@ -124,6 +124,8 @@ import org.l2junity.gameserver.model.items.L2Item;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.olympiad.Olympiad;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.spawns.SpawnGroup;
+import org.l2junity.gameserver.model.spawns.SpawnTemplate;
 import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.client.send.ExAdenaInvenCount;
@@ -1531,6 +1533,57 @@ public abstract class AbstractScript extends ManagedScript implements IEventTime
 	public Queue<AbstractEventListener> getListeners()
 	{
 		return _listeners;
+	}
+	
+	/**
+	 * -------------------------------------------------------------------------------------------------------
+	 */
+	
+	/**
+	 * @param template
+	 */
+	public void onSpawnActivate(SpawnTemplate template)
+	{
+		
+	}
+	
+	/**
+	 * @param template
+	 */
+	public void onSpawnDeactivate(SpawnTemplate template)
+	{
+		
+	}
+	
+	/**
+	 * @param template
+	 * @param group
+	 * @param npc
+	 */
+	public void onSpawnNpc(SpawnTemplate template, SpawnGroup group, Npc npc)
+	{
+		
+	}
+	
+	/**
+	 * @param template
+	 * @param group
+	 * @param npc
+	 */
+	public void onSpawnDespawnNpc(SpawnTemplate template, SpawnGroup group, Npc npc)
+	{
+		
+	}
+	
+	/**
+	 * @param template
+	 * @param group
+	 * @param npc
+	 * @param killer
+	 */
+	public void onSpawnNpcDeath(SpawnTemplate template, SpawnGroup group, Npc npc, Creature killer)
+	{
+		
 	}
 	
 	/**

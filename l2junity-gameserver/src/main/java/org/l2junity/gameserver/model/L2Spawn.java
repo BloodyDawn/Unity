@@ -32,7 +32,6 @@ import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.sql.impl.TerritoryTable;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
-import org.l2junity.gameserver.datatables.NpcPersonalAIData;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2NpcInstance;
@@ -41,6 +40,7 @@ import org.l2junity.gameserver.model.interfaces.IIdentifiable;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.interfaces.INamable;
 import org.l2junity.gameserver.model.interfaces.IPositionable;
+import org.l2junity.gameserver.model.spawns.NpcSpawnTemplate;
 import org.l2junity.gameserver.model.zone.type.NpcSpawnTerritory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -81,11 +81,11 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 	/** If True a L2NpcInstance is respawned each time that another is killed */
 	private boolean _doRespawn;
 	/** If true then spawn is custom */
-	private boolean _customSpawn;
 	private static Set<SpawnListener> _spawnListeners = ConcurrentHashMap.newKeySet();
 	private final Deque<Npc> _spawnedNpcs = new ConcurrentLinkedDeque<>();
 	private Map<Integer, Location> _lastSpawnPoints;
 	private boolean _isNoRndWalk = false; // Is no random walk
+	private NpcSpawnTemplate _spawnTemplate;
 	
 	/** The task launching the function doSpawn() */
 	class SpawnTask implements Runnable
@@ -405,23 +405,6 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 	}
 	
 	/**
-	 * Set the spawn as custom.<BR>
-	 * @param custom
-	 */
-	public void setCustom(boolean custom)
-	{
-		_customSpawn = custom;
-	}
-	
-	/**
-	 * @return type of spawn.
-	 */
-	public boolean isCustom()
-	{
-		return _customSpawn;
-	}
-	
-	/**
 	 * Decrease the current number of L2NpcInstance of this L2Spawn and if necessary create a SpawnTask to launch after the respawn Delay. <B><U> Actions</U> :</B> <li>Decrease the current number of L2NpcInstance of this L2Spawn</li> <li>Check if respawn is possible to prevent multiple respawning
 	 * caused by lag</li> <li>Update the current number of SpawnTask in progress or stand by of this L2Spawn</li> <li>Create a new SpawnTask to launch after the respawn Delay</li> <FONT COLOR=#FF0000><B> <U>Caution</U> : A respawn is possible ONLY if _doRespawn=True and _scheduledCount +
 	 * _currentCount < _maximumCount</B></FONT>
@@ -554,12 +537,6 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 				npc.setShowSummonAnimation(isSummonSpawn);
 			}
 			
-			// Check for certain AI data, overriden in spawnlist
-			if (_name != null)
-			{
-				NpcPersonalAIData.getInstance().initializeNpcParameters(npc, this, _name);
-			}
-			
 			return initializeNpcInstance(npc);
 		}
 		catch (Exception e)
@@ -677,6 +654,11 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		
 		// Spawn NPC
 		mob.spawnMe(newlocx, newlocy, newlocz);
+		
+		if (_spawnTemplate != null)
+		{
+			_spawnTemplate.notifySpawnNpc(mob);
+		}
 		
 		notifyNpcSpawned(mob);
 		
@@ -844,5 +826,15 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 	public final void setIsNoRndWalk(boolean value)
 	{
 		_isNoRndWalk = value;
+	}
+	
+	public void setSpawnTemplate(NpcSpawnTemplate npcSpawnTemplate)
+	{
+		_spawnTemplate = npcSpawnTemplate;
+	}
+	
+	public NpcSpawnTemplate getNpcSpawnTemplate()
+	{
+		return _spawnTemplate;
 	}
 }

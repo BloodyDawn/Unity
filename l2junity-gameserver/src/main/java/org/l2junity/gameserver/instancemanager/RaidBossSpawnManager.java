@@ -341,10 +341,10 @@ public class RaidBossSpawnManager
 		if (updateDb)
 		{
 			try (Connection con = DatabaseFactory.getInstance().getConnection();
-				PreparedStatement statement = con.prepareStatement("DELETE FROM raidboss_spawnlist WHERE boss_id=?"))
+				PreparedStatement ps = con.prepareStatement("DELETE FROM raidboss_spawnlist WHERE boss_id=?"))
 			{
-				statement.setInt(1, bossId);
-				statement.execute();
+				ps.setInt(1, bossId);
+				ps.execute();
 			}
 			catch (Exception e)
 			{

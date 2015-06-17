@@ -572,13 +572,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			
 			try
 			{
-				// L2MonsterInstance mob = new L2MonsterInstance(monsterTemplate, template1);
-				
 				spawn = new L2Spawn(template1);
-				if (Config.SAVE_GMSPAWN_ON_CUSTOM)
-				{
-					spawn.setCustom(true);
-				}
 				spawn.setX(activeChar.getX());
 				spawn.setY(activeChar.getY());
 				spawn.setZ(activeChar.getZ());
@@ -626,10 +620,6 @@ public class AdminTeleport implements IAdminCommandHandler
 			try
 			{
 				final L2Spawn spawnDat = new L2Spawn(target.getId());
-				if (Config.SAVE_GMSPAWN_ON_CUSTOM)
-				{
-					spawn.setCustom(true);
-				}
 				spawnDat.setX(activeChar.getX());
 				spawnDat.setY(activeChar.getY());
 				spawnDat.setZ(activeChar.getZ());

@@ -61,7 +61,7 @@ public class L2RaidBossInstance extends L2MonsterInstance
 	public void onSpawn()
 	{
 		setIsNoRndWalk(true);
-		broadcastPacket(new PlaySound(1, getTemplate().getParameters().getString("RaidSpawnMusic", "Rm01_A"), 0, 0, 0, 0, 0));
+		broadcastPacket(new PlaySound(1, getParameters().getString("RaidSpawnMusic", "Rm01_A"), 0, 0, 0, 0, 0));
 		super.onSpawn();
 	}
 	

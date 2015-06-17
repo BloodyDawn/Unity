@@ -77,6 +77,7 @@ import org.l2junity.gameserver.data.xml.impl.ShuttleData;
 import org.l2junity.gameserver.data.xml.impl.SiegeScheduleData;
 import org.l2junity.gameserver.data.xml.impl.SkillLearnData;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
+import org.l2junity.gameserver.data.xml.impl.SpawnsData;
 import org.l2junity.gameserver.data.xml.impl.StaticObjectData;
 import org.l2junity.gameserver.data.xml.impl.TeleportersData;
 import org.l2junity.gameserver.data.xml.impl.TransformData;
@@ -247,6 +248,7 @@ public class GameServer
 		printSection("NPCs");
 		SkillLearnData.getInstance();
 		NpcData.getInstance();
+		SpawnsData.getInstance();
 		WalkingManager.getInstance();
 		StaticObjectData.getInstance();
 		ZoneManager.getInstance();
@@ -293,6 +295,7 @@ public class GameServer
 		}
 		
 		SpawnTable.getInstance().load();
+		SpawnsData.getInstance().init();
 		DayNightSpawnManager.getInstance().trim().notifyChangeMode();
 		FourSepulchersManager.getInstance().init();
 		RaidBossSpawnManager.getInstance();

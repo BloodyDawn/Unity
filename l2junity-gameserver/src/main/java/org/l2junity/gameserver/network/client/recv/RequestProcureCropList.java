@@ -101,7 +101,7 @@ public class RequestProcureCropList implements IClientIncomingPacket
 		}
 		
 		final int castleId = manager.getCastle().getResidenceId();
-		if (manager.getTemplate().getParameters().getInt("manor_id", -1) != castleId)
+		if (manager.getParameters().getInt("manor_id", -1) != castleId)
 		{
 			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;

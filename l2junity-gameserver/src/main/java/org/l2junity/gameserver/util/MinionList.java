@@ -79,7 +79,7 @@ public class MinionList
 			return;
 		}
 		
-		// List<MinionHolder> minions = _master.getTemplate().getParameters().getMinionList("Privates");
+		// List<MinionHolder> minions = _master.getParameters().getMinionList("Privates");
 		if (minions == null)
 		{
 			return;
@@ -148,7 +148,7 @@ public class MinionList
 		deleteSpawnedMinions();
 		
 		// if master has spawn and can respawn - try to reuse minions
-		if ((_reusedMinionReferences == null) && (_master.getTemplate().getParameters().getSet().get("SummonPrivateRate") == null) && !_master.getTemplate().getParameters().getMinionList("Privates").isEmpty() && (_master.getSpawn() != null) && _master.getSpawn().isRespawnEnabled())
+		if ((_reusedMinionReferences == null) && (_master.getParameters().getSet().get("SummonPrivateRate") == null) && !_master.getParameters().getMinionList("Privates").isEmpty() && (_master.getSpawn() != null) && _master.getSpawn().isRespawnEnabled())
 		{
 			_reusedMinionReferences = new CopyOnWriteArrayList<>();
 		}

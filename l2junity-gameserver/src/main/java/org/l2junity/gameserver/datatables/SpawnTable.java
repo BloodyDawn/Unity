@@ -18,13 +18,11 @@
  */
 package org.l2junity.gameserver.datatables;
 
-import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
@@ -32,54 +30,39 @@ import java.util.function.Function;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
-import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.instancemanager.DayNightSpawnManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
+import org.l2junity.gameserver.model.spawns.NpcSpawnTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
 
 /**
  * Spawn data retriever.
  * @author Zoey76
  */
-public final class SpawnTable implements IXmlReader
+public final class SpawnTable
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(SpawnTable.class);
 	// SQL
-	private static final String SELECT_SPAWNS = "SELECT count, npc_templateid, locx, locy, locz, heading, respawn_delay, respawn_random, loc_id, periodOfDay FROM spawnlist";
 	private static final String SELECT_CUSTOM_SPAWNS = "SELECT count, npc_templateid, locx, locy, locz, heading, respawn_delay, respawn_random, loc_id, periodOfDay FROM custom_spawnlist";
-	
+	private static final String INSERT_CUSTOM_SPAWN = "INSERT INTO custom_spawnlist (count,npc_templateid,locx,locy,locz,heading,respawn_delay,respawn_random,loc_id) values(?,?,?,?,?,?,?,?,?)";
+	private static final String DELETE_CUSTOM_SPAWN = "DELETE FROM custom_spawnlist WHERE locx=? AND locy=? AND locz=? AND npc_templateid=? AND heading=?";
 	private static final Map<Integer, Set<L2Spawn>> _spawnTable = new ConcurrentHashMap<>();
-	
-	private int _xmlSpawnCount = 0;
 	
 	/**
 	 * Wrapper to load all spawns.
 	 */
-	@Override
 	public void load()
 	{
-		if (!Config.ALT_DEV_NO_SPAWNS)
+		if (!Config.ALT_DEV_NO_SPAWNS && Config.CUSTOM_SPAWNLIST_TABLE)
 		{
-			fillSpawnTable(false);
-			final int spawnCount = _spawnTable.size();
-			LOGGER.info("Loaded " + spawnCount + " npc spawns.");
-			if (Config.CUSTOM_SPAWNLIST_TABLE)
-			{
-				fillSpawnTable(true);
-				LOGGER.info("Loaded " + (_spawnTable.size() - spawnCount) + " custom npc spawns.");
-			}
-			
-			// Load XML list
-			parseDatapackDirectory("data/spawnlist", false);
-			LOGGER.info("Loaded " + _xmlSpawnCount + " npc spawns from XML.");
+			fillSpawnTable();
+			LOGGER.info("Loaded " + _spawnTable.size() + " custom npc spawns.");
 		}
 	}
 	
@@ -101,156 +84,16 @@ public final class SpawnTable implements IXmlReader
 		return true;
 	}
 	
-	@Override
-	public void parseDocument(Document doc, File f)
-	{
-		NamedNodeMap attrs;
-		for (Node list = doc.getFirstChild(); list != null; list = list.getNextSibling())
-		{
-			if (list.getNodeName().equalsIgnoreCase("list"))
-			{
-				attrs = list.getAttributes();
-				// skip disabled spawnlists
-				if (!Boolean.parseBoolean(attrs.getNamedItem("enabled").getNodeValue()))
-				{
-					continue;
-				}
-				for (Node param = list.getFirstChild(); param != null; param = param.getNextSibling())
-				{
-					attrs = param.getAttributes();
-					if (param.getNodeName().equalsIgnoreCase("spawn"))
-					{
-						String territoryName = null;
-						String spawnName = null;
-						Map<String, Integer> map = null;
-						
-						// Check, if spawn name specified
-						if (attrs.getNamedItem("name") != null)
-						{
-							spawnName = parseString(attrs, "name");
-						}
-						// Check, if spawn territory specified and exists
-						if ((attrs.getNamedItem("zone") != null) && (ZoneManager.getInstance().getSpawnTerritory(attrs.getNamedItem("zone").getNodeValue()) != null))
-						{
-							territoryName = parseString(attrs, "zone");
-						}
-						
-						for (Node npctag = param.getFirstChild(); npctag != null; npctag = npctag.getNextSibling())
-						{
-							attrs = npctag.getAttributes();
-							// Check if there are any AI parameters
-							if (npctag.getNodeName().equalsIgnoreCase("AIData"))
-							{
-								attrs = npctag.getAttributes();
-								if (map == null)
-								{
-									map = new HashMap<>();
-								}
-								for (Node c = npctag.getFirstChild(); c != null; c = c.getNextSibling())
-								{
-									// Skip odd nodes
-									if (c.getNodeName().equals("#text"))
-									{
-										continue;
-									}
-									int val;
-									switch (c.getNodeName())
-									{
-										case "disableRandomAnimation":
-										case "disableRandomWalk":
-											val = Boolean.parseBoolean(c.getTextContent()) ? 1 : 0;
-											break;
-										default:
-											val = Integer.parseInt(c.getTextContent());
-									}
-									map.put(c.getNodeName(), val);
-								}
-							}
-							// Check for NPC spawns
-							else if (npctag.getNodeName().equalsIgnoreCase("npc"))
-							{
-								// mandatory
-								final int templateId = parseInteger(attrs, "id");
-								// coordinates are optional, if territory is specified; mandatory otherwise
-								int x = 0;
-								int y = 0;
-								int z = 0;
-								
-								try
-								{
-									x = parseInteger(attrs, "x");
-									y = parseInteger(attrs, "y");
-									z = parseInteger(attrs, "z");
-								}
-								catch (NullPointerException npe)
-								{
-									// x, y, z can be unspecified, if this spawn is territory based, do nothing
-								}
-								
-								if ((x == 0) && (y == 0) && (territoryName == null)) // Both coordinates and zone are unspecified
-								{
-									LOGGER.warn("XML Spawnlist: Spawn could not be initialized, both coordinates and zone are unspecified for ID " + templateId);
-									continue;
-								}
-								
-								StatsSet spawnInfo = new StatsSet();
-								spawnInfo.set("npcTemplateid", templateId);
-								spawnInfo.set("x", x);
-								spawnInfo.set("y", y);
-								spawnInfo.set("z", z);
-								spawnInfo.set("territoryName", territoryName);
-								spawnInfo.set("spawnName", spawnName);
-								
-								// trying to read optional parameters
-								if (attrs.getNamedItem("heading") != null)
-								{
-									spawnInfo.set("heading", parseInteger(attrs, "heading"));
-								}
-								
-								if (attrs.getNamedItem("count") != null)
-								{
-									spawnInfo.set("count", parseInteger(attrs, "count"));
-								}
-								
-								if (attrs.getNamedItem("respawnDelay") != null)
-								{
-									spawnInfo.set("respawnDelay", parseInteger(attrs, "respawnDelay"));
-								}
-								
-								if (attrs.getNamedItem("respawnRandom") != null)
-								{
-									spawnInfo.set("respawnRandom", parseInteger(attrs, "respawnRandom"));
-								}
-								
-								if (attrs.getNamedItem("periodOfDay") != null)
-								{
-									String period = attrs.getNamedItem("periodOfDay").getNodeValue();
-									if (period.equalsIgnoreCase("day") || period.equalsIgnoreCase("night"))
-									{
-										spawnInfo.set("periodOfDay", period.equalsIgnoreCase("day") ? 1 : 2);
-									}
-								}
-								
-								_xmlSpawnCount += addSpawn(spawnInfo, map);
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-	
 	/**
 	 * Retrieves spawn data from database.
-	 * @param isCustom if {@code true} the spawns are loaded as custom from custom spawn table
 	 * @return the spawn count
 	 */
-	private int fillSpawnTable(boolean isCustom)
+	private int fillSpawnTable()
 	{
 		int npcSpawnCount = 0;
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
 			Statement s = con.createStatement();
-			ResultSet rs = s.executeQuery(isCustom ? SELECT_CUSTOM_SPAWNS : SELECT_SPAWNS))
+			ResultSet rs = s.executeQuery(SELECT_CUSTOM_SPAWNS))
 		{
 			while (rs.next())
 			{
@@ -274,7 +117,6 @@ public final class SpawnTable implements IXmlReader
 				spawnInfo.set("respawnRandom", rs.getInt("respawn_random"));
 				spawnInfo.set("locId", rs.getInt("loc_id"));
 				spawnInfo.set("periodOfDay", rs.getInt("periodOfDay"));
-				spawnInfo.set("isCustomSpawn", isCustom);
 				npcSpawnCount += addSpawn(spawnInfo);
 			}
 		}
@@ -307,7 +149,6 @@ public final class SpawnTable implements IXmlReader
 			spawnDat.setLocationId(spawnInfo.getInt("locId", 0));
 			String territoryName = spawnInfo.getString("territoryName", "");
 			String spawnName = spawnInfo.getString("spawnName", "");
-			spawnDat.setCustom(spawnInfo.getBoolean("isCustomSpawn", false));
 			if (!spawnName.isEmpty())
 			{
 				spawnDat.setName(spawnName);
@@ -316,8 +157,6 @@ public final class SpawnTable implements IXmlReader
 			{
 				spawnDat.setSpawnTerritory(ZoneManager.getInstance().getSpawnTerritory(territoryName));
 			}
-			// Register AI Data for this spawn
-			NpcPersonalAIData.getInstance().storeData(spawnDat, AIData);
 			switch (spawnInfo.getInt("periodOfDay", 0))
 			{
 				case 0: // default
@@ -404,20 +243,19 @@ public final class SpawnTable implements IXmlReader
 		
 		if (storeInDb)
 		{
-			final String spawnTable = spawn.isCustom() && Config.CUSTOM_SPAWNLIST_TABLE ? "custom_spawnlist" : "spawnlist";
 			try (Connection con = DatabaseFactory.getInstance().getConnection();
-				PreparedStatement insert = con.prepareStatement("INSERT INTO " + spawnTable + "(count,npc_templateid,locx,locy,locz,heading,respawn_delay,respawn_random,loc_id) values(?,?,?,?,?,?,?,?,?)"))
+				PreparedStatement ps = con.prepareStatement(INSERT_CUSTOM_SPAWN))
 			{
-				insert.setInt(1, spawn.getAmount());
-				insert.setInt(2, spawn.getId());
-				insert.setInt(3, spawn.getX());
-				insert.setInt(4, spawn.getY());
-				insert.setInt(5, spawn.getZ());
-				insert.setInt(6, spawn.getHeading());
-				insert.setInt(7, spawn.getRespawnDelay() / 1000);
-				insert.setInt(8, spawn.getRespawnMaxDelay() - spawn.getRespawnMinDelay());
-				insert.setInt(9, spawn.getLocationId());
-				insert.execute();
+				ps.setInt(1, spawn.getAmount());
+				ps.setInt(2, spawn.getId());
+				ps.setInt(3, spawn.getX());
+				ps.setInt(4, spawn.getY());
+				ps.setInt(5, spawn.getZ());
+				ps.setInt(6, spawn.getHeading());
+				ps.setInt(7, spawn.getRespawnDelay() / 1000);
+				ps.setInt(8, spawn.getRespawnMaxDelay() - spawn.getRespawnMinDelay());
+				ps.setInt(9, spawn.getLocationId());
+				ps.execute();
 			}
 			catch (Exception e)
 			{
@@ -441,14 +279,14 @@ public final class SpawnTable implements IXmlReader
 		if (updateDb)
 		{
 			try (Connection con = DatabaseFactory.getInstance().getConnection();
-				PreparedStatement delete = con.prepareStatement("DELETE FROM " + (spawn.isCustom() ? "custom_spawnlist" : "spawnlist") + " WHERE locx=? AND locy=? AND locz=? AND npc_templateid=? AND heading=?"))
+				PreparedStatement ps = con.prepareStatement(DELETE_CUSTOM_SPAWN))
 			{
-				delete.setInt(1, spawn.getX());
-				delete.setInt(2, spawn.getY());
-				delete.setInt(3, spawn.getZ());
-				delete.setInt(4, spawn.getId());
-				delete.setInt(5, spawn.getHeading());
-				delete.execute();
+				ps.setInt(1, spawn.getX());
+				ps.setInt(2, spawn.getY());
+				ps.setInt(3, spawn.getZ());
+				ps.setInt(4, spawn.getId());
+				ps.setInt(5, spawn.getHeading());
+				ps.execute();
 			}
 			catch (Exception e)
 			{
@@ -481,9 +319,19 @@ public final class SpawnTable implements IXmlReader
 			{
 				_spawnTable.remove(spawn.getId());
 			}
+			set.forEach(s -> removeSpawn(s.getLastSpawn(), s.getNpcSpawnTemplate()));
 			return removed;
 		}
+		removeSpawn(spawn.getLastSpawn(), spawn.getNpcSpawnTemplate());
 		return false;
+	}
+	
+	private void removeSpawn(Npc npc, NpcSpawnTemplate template)
+	{
+		if ((template != null) && (npc != null))
+		{
+			template.notifyDespawnNpc(npc);
+		}
 	}
 	
 	/**

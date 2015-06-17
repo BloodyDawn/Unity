@@ -74,7 +74,7 @@ public final class L2TrapInstance extends Npc
 		
 		_owner = null;
 		_isTriggered = false;
-		_skill = getTemplate().getParameters().getObject("trap_skill", SkillHolder.class);
+		_skill = getParameters().getObject("trap_skill", SkillHolder.class);
 		_hasLifeTime = lifeTime >= 0;
 		_lifeTime = lifeTime != 0 ? lifeTime : 30000;
 		_remainingTime = _lifeTime;

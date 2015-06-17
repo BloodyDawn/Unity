@@ -24,6 +24,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.gameserver.instancemanager.DayNightSpawnManager;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.events.EventDispatcher;
+import org.l2junity.gameserver.model.events.impl.OnDayNightChange;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -145,6 +147,9 @@ public final class GameTimeController extends Thread
 		
 		if (isNight)
 		{
+			EventDispatcher.getInstance().notifyEventAsync(new OnDayNightChange(isNight));
+			
+			// TODO: Cleanup
 			ThreadPoolManager.getInstance().executeAi(() -> DayNightSpawnManager.getInstance().notifyChangeMode());
 		}
 		
@@ -170,7 +175,6 @@ public final class GameTimeController extends Thread
 				}
 				catch (final InterruptedException e)
 				{
-					
 				}
 			}
 			
@@ -178,6 +182,9 @@ public final class GameTimeController extends Thread
 			{
 				isNight = !isNight;
 				
+				EventDispatcher.getInstance().notifyEventAsync(new OnDayNightChange(isNight));
+				
+				// TODO: Cleanup
 				ThreadPoolManager.getInstance().executeAi(() -> DayNightSpawnManager.getInstance().notifyChangeMode());
 			}
 		}

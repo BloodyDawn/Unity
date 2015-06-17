@@ -111,7 +111,7 @@ public class RequestBuySeed implements IClientIncomingPacket
 		}
 		
 		final Npc manager = player.getLastFolkNPC();
-		if (!(manager instanceof L2MerchantInstance) || !manager.canInteract(player) || (manager.getTemplate().getParameters().getInt("manor_id", -1) != _manorId))
+		if (!(manager instanceof L2MerchantInstance) || !manager.canInteract(player) || (manager.getParameters().getInt("manor_id", -1) != _manorId))
 		{
 			client.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
