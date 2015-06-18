@@ -300,7 +300,7 @@ public final class SpawnTable
 			set.forEach(this::notifyRemoved);
 			return removed;
 		}
-		removeSpawn(spawn);
+		notifyRemoved(spawn);
 		return false;
 	}
 	
