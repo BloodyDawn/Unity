@@ -31,7 +31,6 @@ import org.l2junity.gameserver.datatables.ItemTable;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.datatables.SpawnTable;
 import org.l2junity.gameserver.handler.ITelnetHandler;
-import org.l2junity.gameserver.instancemanager.DayNightSpawnManager;
 import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.instancemanager.RaidBossSpawnManager;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
@@ -105,7 +104,6 @@ public class ReloadHandler implements ITelnetHandler
 				{
 					_print.print("Reloading spawns... ");
 					RaidBossSpawnManager.getInstance().cleanUp();
-					DayNightSpawnManager.getInstance().cleanUp();
 					World.getInstance().deleteVisibleNpcSpawns();
 					NpcData.getInstance().load();
 					SpawnTable.getInstance().load();

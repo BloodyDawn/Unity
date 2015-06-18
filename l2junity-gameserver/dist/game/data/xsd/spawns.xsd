@@ -8,11 +8,26 @@
 					<xs:sequence>
 						<xs:element name="minion" maxOccurs="unbounded" minOccurs="0">
 							<xs:complexType>
-								<xs:attribute type="xs:short" name="id" use="optional" />
+								<xs:attribute type="xs:positiveInteger" name="id" use="optional" />
 								<xs:attribute type="xs:byte" name="count" use="optional" />
 								<xs:attribute type="xs:string" name="respawnTime" use="optional" />
 								<xs:attribute type="xs:string" name="randomRespawn" use="optional" />
-								<xs:attribute type="xs:string" name="weightpoint" use="optional" />
+								<xs:attribute type="xs:nonNegativeInteger" name="weightpoint" use="optional" />
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="locations" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="location" maxOccurs="unbounded" minOccurs="0">
+							<xs:complexType>
+								<xs:attribute type="xs:integer" name="x" use="required" />
+								<xs:attribute type="xs:integer" name="y" use="required" />
+								<xs:attribute type="xs:integer" name="z" use="required" />
+								<xs:attribute type="xs:integer" name="heading" use="optional" />
+								<xs:attribute type="xs:double" name="chance" use="required" />
 							</xs:complexType>
 						</xs:element>
 					</xs:sequence>

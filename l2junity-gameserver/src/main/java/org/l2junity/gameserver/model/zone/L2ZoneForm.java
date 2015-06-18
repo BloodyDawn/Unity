@@ -20,6 +20,7 @@ package org.l2junity.gameserver.model.zone;
 
 import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
+import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 
 /**
@@ -57,5 +58,5 @@ public abstract class L2ZoneForm
 		ZoneManager.getInstance().getDebugItems().add(item);
 	}
 	
-	public abstract int[] getRandomPoint();
+	public abstract Location getRandomPoint();
 }

@@ -30,7 +30,6 @@ import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.instancemanager.WalkingManager;
 import org.l2junity.gameserver.model.Elementals;
 import org.l2junity.gameserver.model.L2Spawn;
-import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -112,26 +111,18 @@ public class L2NpcActionShift implements IActionShiftHandler
 					html.replace("%spawnfile%", fileName);
 					html.replace("%spawnname%", String.valueOf(template.getSpawnTemplate().getName()));
 					html.replace("%spawngroup%", String.valueOf(template.getGroup().getName()));
-					final Quest script = QuestManager.getInstance().getQuest(template.getSpawnTemplate().getAI());
-					if (script != null)
+					if (template.getSpawnTemplate().getAI() != null)
 					{
-						html.replace("%spawnai%", "<a action=\"bypass -h admin_quest_info " + script.getName() + "\"><font color=\"LEVEL\">" + script.getName() + "</font></a>");
+						final Quest script = QuestManager.getInstance().getQuest(template.getSpawnTemplate().getAI());
+						if (script != null)
+						{
+							html.replace("%spawnai%", "<a action=\"bypass -h admin_quest_info " + script.getName() + "\"><font color=\"LEVEL\">" + script.getName() + "</font></a>");
+						}
 					}
 					html.replace("%spawnai%", "<font color=FF0000>" + template.getSpawnTemplate().getAI() + "</font>");
 				}
 				
-				html.replace("%territory%", npc.getSpawn().getSpawnTerritory() == null ? "None" : npc.getSpawn().getSpawnTerritory().getName());
-				if (npc.getSpawn().isTerritoryBased())
-				{
-					html.replace("%spawntype%", "Random");
-					final Location spawnLoc = npc.getSpawn().getLocation(target);
-					html.replace("%spawn%", spawnLoc.getX() + " " + spawnLoc.getY() + " " + spawnLoc.getZ());
-				}
-				else
-				{
-					html.replace("%spawntype%", "Fixed");
-					html.replace("%spawn%", npc.getSpawn().getX() + " " + npc.getSpawn().getY() + " " + npc.getSpawn().getZ());
-				}
+				html.replace("%spawn%", npc.getSpawn().getX() + " " + npc.getSpawn().getY() + " " + npc.getSpawn().getZ());
 				html.replace("%loc2d%", String.valueOf((int) target.calculateDistance(npc.getSpawn().getLocation(target), false, false)));
 				html.replace("%loc3d%", String.valueOf((int) target.calculateDistance(npc.getSpawn().getLocation(target), true, false)));
 				if (npc.getSpawn().getRespawnMinDelay() == 0)
@@ -149,8 +140,6 @@ public class L2NpcActionShift implements IActionShiftHandler
 			}
 			else
 			{
-				html.replace("%territory%", "<font color=FF0000>--</font>");
-				html.replace("%spawntype%", "<font color=FF0000>--</font>");
 				html.replace("%spawn%", "<font color=FF0000>null</font>");
 				html.replace("%loc2d%", "<font color=FF0000>--</font>");
 				html.replace("%loc3d%", "<font color=FF0000>--</font>");

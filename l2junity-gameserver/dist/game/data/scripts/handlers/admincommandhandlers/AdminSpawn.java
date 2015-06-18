@@ -28,7 +28,6 @@ import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.datatables.SpawnTable;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
-import org.l2junity.gameserver.instancemanager.DayNightSpawnManager;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.instancemanager.RaidBossSpawnManager;
@@ -67,8 +66,6 @@ public class AdminSpawn implements IAdminCommandHandler
 		"admin_npc_index",
 		"admin_spawn_once",
 		"admin_show_npcs",
-		"admin_spawnnight",
-		"admin_spawnday",
 		"admin_instance_spawns",
 		"admin_list_spawns",
 		"admin_list_positions",
@@ -217,23 +214,13 @@ public class AdminSpawn implements IAdminCommandHandler
 		{
 			Broadcast.toAllOnlinePlayers(SystemMessage.getSystemMessage(SystemMessageId.THE_NPC_SERVER_IS_NOT_OPERATING_AT_THIS_TIME));
 			RaidBossSpawnManager.getInstance().cleanUp();
-			DayNightSpawnManager.getInstance().cleanUp();
 			World.getInstance().deleteVisibleNpcSpawns();
 			AdminData.getInstance().broadcastMessageToGMs("NPC Unspawn completed!");
-		}
-		else if (command.startsWith("admin_spawnday"))
-		{
-			DayNightSpawnManager.getInstance().spawnDayCreatures();
-		}
-		else if (command.startsWith("admin_spawnnight"))
-		{
-			DayNightSpawnManager.getInstance().spawnNightCreatures();
 		}
 		else if (command.startsWith("admin_respawnall") || command.startsWith("admin_spawn_reload"))
 		{
 			// make sure all spawns are deleted
 			RaidBossSpawnManager.getInstance().cleanUp();
-			DayNightSpawnManager.getInstance().cleanUp();
 			World.getInstance().deleteVisibleNpcSpawns();
 			// now respawn all
 			NpcData.getInstance().load();

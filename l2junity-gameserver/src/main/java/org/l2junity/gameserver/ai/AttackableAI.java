@@ -32,7 +32,6 @@ import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GameTimeController;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ThreadPoolManager;
-import org.l2junity.gameserver.data.sql.impl.TerritoryTable;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.enums.AISkillScope;
 import org.l2junity.gameserver.enums.AIType;
@@ -602,54 +601,22 @@ public class AttackableAI extends CharacterAI implements Runnable
 				}
 			}
 			
-			// If NPC with random coord in territory - old method (for backward compartibility)
-			if ((npc.getSpawn().getX() == 0) && (npc.getSpawn().getY() == 0) && (npc.getSpawn().getSpawnTerritory() == null))
+			x1 = npc.getSpawn().getX(npc);
+			y1 = npc.getSpawn().getY(npc);
+			z1 = npc.getSpawn().getZ(npc);
+			
+			if (!npc.isInsideRadius(x1, y1, 0, range, false, false))
 			{
-				// Calculate a destination point in the spawn area
-				final Location location = TerritoryTable.getInstance().getRandomPoint(npc.getSpawn().getLocationId());
-				if (location != null)
-				{
-					x1 = location.getX();
-					y1 = location.getY();
-					z1 = location.getZ();
-				}
-				
-				// Calculate the distance between the current position of the L2Character and the target (x,y)
-				double distance2 = npc.calculateDistance(x1, y1, 0, false, true);
-				
-				if (distance2 > ((range + range) * (range + range)))
-				{
-					npc.setisReturningToSpawnPoint(true);
-					float delay = (float) Math.sqrt(distance2) / range;
-					x1 = npc.getX() + (int) ((x1 - npc.getX()) / delay);
-					y1 = npc.getY() + (int) ((y1 - npc.getY()) / delay);
-				}
-				
-				// If NPC with random fixed coord, don't move (unless needs to return to spawnpoint)
-				if ((TerritoryTable.getInstance().getProcMax(npc.getSpawn().getLocationId()) > 0) && !npc.isReturningToSpawnPoint())
-				{
-					return;
-				}
+				npc.setisReturningToSpawnPoint(true);
 			}
 			else
 			{
-				x1 = npc.getSpawn().getX(npc);
-				y1 = npc.getSpawn().getY(npc);
-				z1 = npc.getSpawn().getZ(npc);
-				
-				if (!npc.isInsideRadius(x1, y1, 0, range, false, false))
-				{
-					npc.setisReturningToSpawnPoint(true);
-				}
-				else
-				{
-					int deltaX = Rnd.nextInt(range * 2); // x
-					int deltaY = Rnd.get(deltaX, range * 2); // distance
-					deltaY = (int) Math.sqrt((deltaY * deltaY) - (deltaX * deltaX)); // y
-					x1 = (deltaX + x1) - range;
-					y1 = (deltaY + y1) - range;
-					z1 = npc.getZ();
-				}
+				int deltaX = Rnd.nextInt(range * 2); // x
+				int deltaY = Rnd.get(deltaX, range * 2); // distance
+				deltaY = (int) Math.sqrt((deltaY * deltaY) - (deltaX * deltaX)); // y
+				x1 = (deltaX + x1) - range;
+				y1 = (deltaY + y1) - range;
+				z1 = npc.getZ();
 			}
 			
 			// _log.debug("Current pos ("+getX()+", "+getY()+"), moving to ("+x1+", "+y1+").");

@@ -22,6 +22,7 @@ import java.awt.Polygon;
 
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GeoData;
+import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.zone.L2ZoneForm;
 
@@ -120,7 +121,7 @@ public class ZoneNPoly extends L2ZoneForm
 	}
 	
 	@Override
-	public int[] getRandomPoint()
+	public Location getRandomPoint()
 	{
 		int x, y;
 		
@@ -139,12 +140,7 @@ public class ZoneNPoly extends L2ZoneForm
 			y = Rnd.get(_minY, _maxY);
 		}
 		
-		return new int[]
-		{
-			x,
-			y,
-			GeoData.getInstance().getHeight(x, y, _z1)
-		};
+		return new Location(x, y, GeoData.getInstance().getHeight(x, y, _z1));
 	}
 	
 	public int[] getX()

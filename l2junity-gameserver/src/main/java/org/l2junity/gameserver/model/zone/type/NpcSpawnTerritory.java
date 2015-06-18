@@ -20,6 +20,7 @@ package org.l2junity.gameserver.model.zone.type;
 
 import java.util.List;
 
+import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.zone.L2ZoneForm;
 
 /**
@@ -44,7 +45,7 @@ public class NpcSpawnTerritory
 		return _name;
 	}
 	
-	public int[] getRandomPoint()
+	public Location getRandomPoint()
 	{
 		return _territory.getRandomPoint();
 	}

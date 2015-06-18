@@ -101,7 +101,6 @@ import org.l2junity.gameserver.instancemanager.CastleManorManager;
 import org.l2junity.gameserver.instancemanager.ClanEntryManager;
 import org.l2junity.gameserver.instancemanager.ClanHallManager;
 import org.l2junity.gameserver.instancemanager.CursedWeaponsManager;
-import org.l2junity.gameserver.instancemanager.DayNightSpawnManager;
 import org.l2junity.gameserver.instancemanager.FortManager;
 import org.l2junity.gameserver.instancemanager.FortSiegeManager;
 import org.l2junity.gameserver.instancemanager.FourSepulchersManager;
@@ -296,7 +295,6 @@ public class GameServer
 		
 		SpawnTable.getInstance().load();
 		SpawnsData.getInstance().init();
-		DayNightSpawnManager.getInstance().trim().notifyChangeMode();
 		FourSepulchersManager.getInstance().init();
 		RaidBossSpawnManager.getInstance();
 		

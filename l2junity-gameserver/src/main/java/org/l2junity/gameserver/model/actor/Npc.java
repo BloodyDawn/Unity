@@ -1148,10 +1148,14 @@ public class Npc extends Creature
 		
 		DecayTaskManager.getInstance().add(this);
 		
-		final NpcSpawnTemplate npcTemplate = getSpawn().getNpcSpawnTemplate();
-		if (npcTemplate != null)
+		final L2Spawn spawn = getSpawn();
+		if (spawn != null)
 		{
-			npcTemplate.notifyNpcDeath(this, killer);
+			final NpcSpawnTemplate npcTemplate = spawn.getNpcSpawnTemplate();
+			if (npcTemplate != null)
+			{
+				npcTemplate.notifyNpcDeath(this, killer);
+			}
 		}
 		return true;
 	}

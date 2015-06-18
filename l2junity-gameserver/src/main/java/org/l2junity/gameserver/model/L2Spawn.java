@@ -20,7 +20,6 @@ package org.l2junity.gameserver.model;
 
 import java.lang.reflect.Constructor;
 import java.util.Deque;
-import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
@@ -30,7 +29,6 @@ import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.ThreadPoolManager;
-import org.l2junity.gameserver.data.sql.impl.TerritoryTable;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.model.actor.Attackable;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -41,7 +39,6 @@ import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.interfaces.INamable;
 import org.l2junity.gameserver.model.interfaces.IPositionable;
 import org.l2junity.gameserver.model.spawns.NpcSpawnTemplate;
-import org.l2junity.gameserver.model.zone.type.NpcSpawnTerritory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -54,7 +51,7 @@ import org.slf4j.LoggerFactory;
  */
 public class L2Spawn implements IPositionable, IIdentifiable, INamable
 {
-	protected static final Logger _log = LoggerFactory.getLogger(L2Spawn.class);
+	protected static final Logger LOGGER = LoggerFactory.getLogger(L2Spawn.class);
 	
 	/** String identifier of this spawn */
 	private String _name;
@@ -70,8 +67,6 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 	private int _locationId;
 	/** The Location of this NPC spawn. */
 	private Location _location = new Location(0, 0, 0, 0, 0);
-	/** Link to NPC spawn territory */
-	private NpcSpawnTerritory _spawnTerritory = null;
 	/** Minimum respawn delay */
 	private int _respawnMinDelay;
 	/** Maximum respawn delay */
@@ -83,7 +78,6 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 	/** If true then spawn is custom */
 	private static Set<SpawnListener> _spawnListeners = ConcurrentHashMap.newKeySet();
 	private final Deque<Npc> _spawnedNpcs = new ConcurrentLinkedDeque<>();
-	private Map<Integer, Location> _lastSpawnPoints;
 	private boolean _isNoRndWalk = false; // Is no random walk
 	private NpcSpawnTemplate _spawnTemplate;
 	
@@ -107,7 +101,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 			}
 			catch (Exception e)
 			{
-				_log.warn("", e);
+				LOGGER.warn("", e);
 			}
 			
 			_scheduledCount--;
@@ -210,7 +204,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 	
 	public Location getLocation(WorldObject obj)
 	{
-		return ((_lastSpawnPoints == null) || (obj == null) || !_lastSpawnPoints.containsKey(obj.getObjectId())) ? _location : _lastSpawnPoints.get(obj.getObjectId());
+		return _location;
 	}
 	
 	@Override
@@ -424,12 +418,6 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		// Remove this NPC from list of spawned
 		_spawnedNpcs.remove(oldNpc);
 		
-		// Remove spawn point for old NPC
-		if (_lastSpawnPoints != null)
-		{
-			_lastSpawnPoints.remove(oldNpc.getObjectId());
-		}
-		
 		// Check if respawn is possible to prevent multiple respawning caused by lag
 		if (_doRespawn && ((_scheduledCount + _currentCount) < _maximumCount))
 		{
@@ -541,16 +529,16 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		}
 		catch (Exception e)
 		{
-			_log.warn("NPC " + _template.getId() + " class not found", e);
+			LOGGER.warn("Error while spawning {}", _template.getId(), e);
 		}
 		return null;
 	}
 	
 	/**
-	 * @param mob
+	 * @param npc
 	 * @return
 	 */
-	private Npc initializeNpcInstance(Npc mob)
+	private Npc initializeNpcInstance(Npc npc)
 	{
 		int newlocx = 0;
 		int newlocy = 0;
@@ -558,31 +546,17 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		
 		// If Locx and Locy are not defined, the L2NpcInstance must be spawned in an area defined by location or spawn territory
 		// New method
-		if (isTerritoryBased())
+		if (_spawnTemplate != null)
 		{
-			int[] p = _spawnTerritory.getRandomPoint();
-			newlocx = p[0];
-			newlocy = p[1];
-			newlocz = p[2];
+			final Location loc = _spawnTemplate.getSpawnLocation();
+			newlocx = loc.getX();
+			newlocy = loc.getY();
+			newlocz = loc.getZ();
 		}
-		// Old method (for backward compatibility)
 		else if ((getX() == 0) && (getY() == 0))
 		{
-			if (getLocationId() == 0)
-			{
-				return mob;
-			}
-			
-			// Calculate the random position in the location area
-			final Location location = TerritoryTable.getInstance().getRandomPoint(getLocationId());
-			
-			// Set the calculated position of the L2NpcInstance
-			if (location != null)
-			{
-				newlocx = location.getX();
-				newlocy = location.getY();
-				newlocz = location.getZ();
-			}
+			LOGGER.warn("NPC {} doesn't have spawn location!", npc);
+			return null;
 		}
 		else
 		{
@@ -593,88 +567,82 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		}
 		
 		// don't correct z of flying npc's
-		if (!mob.isFlying())
+		if (!npc.isFlying())
 		{
 			newlocz = GeoData.getInstance().getSpawnHeight(newlocx, newlocy, newlocz);
 		}
 		
-		mob.stopAllEffects();
+		npc.stopAllEffects();
 		
-		mob.setIsDead(false);
+		npc.setIsDead(false);
+		
 		// Reset decay info
-		mob.setDecayed(false);
+		npc.setDecayed(false);
+		
 		// Set the HP and MP of the L2NpcInstance to the max
-		mob.setCurrentHpMp(mob.getMaxHp(), mob.getMaxMp());
+		npc.setCurrentHpMp(npc.getMaxHp(), npc.getMaxMp());
+		
 		// Clear script variables
-		if (mob.hasVariables())
+		if (npc.hasVariables())
 		{
-			mob.getVariables().getSet().clear();
+			npc.getVariables().getSet().clear();
 		}
+		
 		// Set is not random walk default value
-		mob.setIsNoRndWalk(isNoRndWalk());
+		npc.setIsNoRndWalk(isNoRndWalk());
 		
 		// Set the heading of the L2NpcInstance (random heading if not defined)
 		if (getHeading() == -1)
 		{
-			mob.setHeading(Rnd.nextInt(61794));
+			npc.setHeading(Rnd.nextInt(61794));
 		}
 		else
 		{
-			mob.setHeading(getHeading());
+			npc.setHeading(getHeading());
 		}
 		
-		if (mob instanceof Attackable)
+		if (npc instanceof Attackable)
 		{
-			((Attackable) mob).setChampion(false);
+			((Attackable) npc).setChampion(false);
 		}
 		
 		if (Config.L2JMOD_CHAMPION_ENABLE)
 		{
 			// Set champion on next spawn
-			if (mob.isMonster() && !getTemplate().isUndying() && !mob.isRaid() && !mob.isRaidMinion() && (Config.L2JMOD_CHAMPION_FREQUENCY > 0) && (mob.getLevel() >= Config.L2JMOD_CHAMP_MIN_LVL) && (mob.getLevel() <= Config.L2JMOD_CHAMP_MAX_LVL) && (Config.L2JMOD_CHAMPION_ENABLE_IN_INSTANCES || (getInstanceId() == 0)))
+			if (npc.isMonster() && !getTemplate().isUndying() && !npc.isRaid() && !npc.isRaidMinion() && (Config.L2JMOD_CHAMPION_FREQUENCY > 0) && (npc.getLevel() >= Config.L2JMOD_CHAMP_MIN_LVL) && (npc.getLevel() <= Config.L2JMOD_CHAMP_MAX_LVL) && (Config.L2JMOD_CHAMPION_ENABLE_IN_INSTANCES || (getInstanceId() == 0)))
 			{
 				if (Rnd.get(100) < Config.L2JMOD_CHAMPION_FREQUENCY)
 				{
-					((Attackable) mob).setChampion(true);
+					((Attackable) npc).setChampion(true);
 				}
 			}
 		}
 		
 		// Reset targetable state
-		mob.setTargetable(mob.getTemplate().isTargetable());
+		npc.setTargetable(npc.getTemplate().isTargetable());
 		
 		// Reset summoner
-		mob.setSummoner(null);
+		npc.setSummoner(null);
 		
 		// Reset summoned list
-		mob.resetSummonedNpcs();
+		npc.resetSummonedNpcs();
 		
 		// Link the L2NpcInstance to this L2Spawn
-		mob.setSpawn(this);
+		npc.setSpawn(this);
 		
 		// Spawn NPC
-		mob.spawnMe(newlocx, newlocy, newlocz);
+		npc.spawnMe(newlocx, newlocy, newlocz);
 		
 		if (_spawnTemplate != null)
 		{
-			_spawnTemplate.notifySpawnNpc(mob);
+			_spawnTemplate.notifySpawnNpc(npc);
 		}
 		
-		notifyNpcSpawned(mob);
+		notifyNpcSpawned(npc);
 		
-		_spawnedNpcs.add(mob);
-		if (_lastSpawnPoints != null)
-		{
-			_lastSpawnPoints.put(mob.getObjectId(), new Location(newlocx, newlocy, newlocz));
-		}
-		
-		if (Config.DEBUG)
-		{
-			_log.trace("Spawned Mob Id: " + _template.getId() + " , at: X: " + mob.getX() + " Y: " + mob.getY() + " Z: " + mob.getZ());
-		}
-		// Increase the current number of L2NpcInstance managed by this L2Spawn
+		_spawnedNpcs.add(npc);
 		_currentCount++;
-		return mob;
+		return npc;
 	}
 	
 	public static void addSpawnListener(SpawnListener listener)
@@ -715,7 +683,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 		{
 			if (delay < 0)
 			{
-				_log.warn("respawn delay is negative for spawn:" + this);
+				LOGGER.warn("respawn delay is negative for spawn:" + this);
 			}
 			
 			int minDelay = delay - randomInterval;
@@ -745,22 +713,6 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 	public boolean hasRespawnRandom()
 	{
 		return _respawnMinDelay != _respawnMaxDelay;
-	}
-	
-	public void setSpawnTerritory(NpcSpawnTerritory territory)
-	{
-		_spawnTerritory = territory;
-		_lastSpawnPoints = new ConcurrentHashMap<>();
-	}
-	
-	public NpcSpawnTerritory getSpawnTerritory()
-	{
-		return _spawnTerritory;
-	}
-	
-	public boolean isTerritoryBased()
-	{
-		return (_spawnTerritory != null) && (_location.getX() == 0) && (_location.getY() == 0);
 	}
 	
 	public Npc getLastSpawn()

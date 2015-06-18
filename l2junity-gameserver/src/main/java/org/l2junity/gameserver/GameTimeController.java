@@ -22,7 +22,6 @@ import java.util.Calendar;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.l2junity.gameserver.instancemanager.DayNightSpawnManager;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.events.EventDispatcher;
 import org.l2junity.gameserver.model.events.impl.OnDayNightChange;
@@ -145,13 +144,7 @@ public final class GameTimeController extends Thread
 		long nextTickTime, sleepTime;
 		boolean isNight = isNight();
 		
-		if (isNight)
-		{
-			EventDispatcher.getInstance().notifyEventAsync(new OnDayNightChange(isNight));
-			
-			// TODO: Cleanup
-			ThreadPoolManager.getInstance().executeAi(() -> DayNightSpawnManager.getInstance().notifyChangeMode());
-		}
+		EventDispatcher.getInstance().notifyEventAsync(new OnDayNightChange(isNight));
 		
 		while (true)
 		{
@@ -183,9 +176,6 @@ public final class GameTimeController extends Thread
 				isNight = !isNight;
 				
 				EventDispatcher.getInstance().notifyEventAsync(new OnDayNightChange(isNight));
-				
-				// TODO: Cleanup
-				ThreadPoolManager.getInstance().executeAi(() -> DayNightSpawnManager.getInstance().notifyChangeMode());
 			}
 		}
 	}

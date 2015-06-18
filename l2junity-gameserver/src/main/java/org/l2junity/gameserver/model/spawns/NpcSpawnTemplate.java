@@ -26,10 +26,10 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.commons.util.Rnd;
-import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.datatables.SpawnTable;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
+import org.l2junity.gameserver.model.ChanceLocation;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.StatsSet;
@@ -50,23 +50,23 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(SpawnTemplate.class);
 	
-	private final int _npcId;
+	private final int _id;
 	private final int _count;
 	private final Duration _respawnTime;
 	private final Duration _respawnTimeRandom;
-	private Location _location;
+	private List<ChanceLocation> _locations;
 	private NpcSpawnTerritory _zone;
 	private StatsSet _parameters;
 	private List<MinionHolder> _minions;
 	private final SpawnTemplate _spawnTemplate;
 	private final SpawnGroup _group;
-	private final Set<Npc> _spawns = ConcurrentHashMap.newKeySet();
+	private final Set<Npc> _spawnedNpcs = ConcurrentHashMap.newKeySet();
 	
 	public NpcSpawnTemplate(SpawnTemplate spawnTemplate, SpawnGroup group, StatsSet set) throws Exception
 	{
 		_spawnTemplate = spawnTemplate;
 		_group = group;
-		_npcId = set.getInt("id");
+		_id = set.getInt("id");
 		_count = set.getInt("count", 1);
 		_respawnTime = set.getDuration("respawnTime", null);
 		_respawnTimeRandom = set.getDuration("respawnRandom", null);
@@ -79,7 +79,8 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 		final boolean zDefined = z != Integer.MAX_VALUE;
 		if (xDefined && yDefined && zDefined)
 		{
-			_location = new Location(x, y, z, set.getInt("heading", 0));
+			_locations = new ArrayList<>();
+			_locations.add(new ChanceLocation(x, y, z, set.getInt("heading", 0), 100));
 		}
 		else
 		{
@@ -91,7 +92,7 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 			final String zoneName = set.getString("zone", null);
 			if (zoneName == null)
 			{
-				throw new NullPointerException("Spawn without zone and x y z!");
+				return;
 			}
 			
 			final NpcSpawnTerritory zone = ZoneManager.getInstance().getSpawnTerritory(zoneName);
@@ -101,6 +102,15 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 			}
 			_zone = zone;
 		}
+	}
+	
+	public void addSpawnLocation(ChanceLocation loc)
+	{
+		if (_locations == null)
+		{
+			_locations = new ArrayList<>();
+		}
+		_locations.add(loc);
 	}
 	
 	public SpawnTemplate getSpawnTemplate()
@@ -118,9 +128,9 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 		return value != Integer.MAX_VALUE ? Integer.toString(value) : "undefined";
 	}
 	
-	public int getNpcId()
+	public int getId()
 	{
-		return _npcId;
+		return _id;
 	}
 	
 	public int getCount()
@@ -138,9 +148,9 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 		return _respawnTimeRandom;
 	}
 	
-	public Location getLocation()
+	public List<ChanceLocation> getLocation()
 	{
-		return _location;
+		return _locations;
 	}
 	
 	public NpcSpawnTerritory getZone()
@@ -174,36 +184,54 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 		_minions.add(minion);
 	}
 	
+	public Set<Npc> getSpawnedNpcs()
+	{
+		return _spawnedNpcs;
+	}
+	
+	public final Location getSpawnLocation()
+	{
+		if (_locations != null)
+		{
+			final double locRandom = (100 * Rnd.nextDouble());
+			float cumulativeChance = 0;
+			for (ChanceLocation loc : _locations)
+			{
+				if (locRandom <= (cumulativeChance += loc.getChance()))
+				{
+					return loc;
+				}
+			}
+			LOGGER.warn("Couldn't match location by chance turning first..");
+			return null;
+		}
+		else if (_zone != null)
+		{
+			final Location loc = _zone.getRandomPoint();
+			loc.setHeading(Rnd.get(65535));
+			return loc;
+		}
+		return null;
+	}
+	
 	public void spawn()
 	{
 		try
 		{
-			final L2NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(_npcId);
+			final L2NpcTemplate npcTemplate = NpcData.getInstance().getTemplate(_id);
 			if (npcTemplate != null)
 			{
 				final L2Spawn spawn = new L2Spawn(npcTemplate);
-				final int x, y, z, heading;
-				if (_location != null)
+				final Location loc = getSpawnLocation();
+				if (loc == null)
 				{
-					x = _location.getX();
-					y = _location.getY();
-					z = GeoData.getInstance().getSpawnHeight(x, y, _location.getZ());
-					heading = _location.getHeading();
-				}
-				else
-				{
-					final int[] spawnLoc = _zone.getRandomPoint();
-					x = spawnLoc[0];
-					y = spawnLoc[1];
-					z = GeoData.getInstance().getSpawnHeight(x, y, spawnLoc[2]);
-					heading = Rnd.get(65535);
+					LOGGER.warn("Couldn't initialize new spawn, no location found!");
+					return;
 				}
 				
-				spawn.setX(x);
-				spawn.setY(y);
-				spawn.setZ(z);
+				spawn.setXYZ(loc);
+				spawn.setHeading(loc.getHeading());
 				spawn.setAmount(_count);
-				spawn.setHeading(heading);
 				int respawn = 0, respawnRandom = 0;
 				if (_respawnTime != null)
 				{
@@ -214,7 +242,7 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 					respawnRandom = (int) _respawnTimeRandom.getSeconds();
 				}
 				
-				if (respawn > 0)
+				if ((respawn > 0) || (respawnRandom > 0))
 				{
 					spawn.setRespawnDelay(respawn, respawnRandom);
 					spawn.startRespawn();
@@ -232,24 +260,24 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 					{
 						((L2MonsterInstance) npc).getMinionList().spawnMinions(_minions);
 					}
-					_spawns.add(npc);
+					_spawnedNpcs.add(npc);
 				}
 			}
 		}
 		catch (Exception e)
 		{
-			LOGGER.warn("Couldn't spawn npc {}", _npcId, e);
+			LOGGER.warn("Couldn't spawn npc {}", _id, e);
 		}
 	}
 	
 	public void despawn()
 	{
-		_spawns.forEach(npc ->
+		_spawnedNpcs.forEach(npc ->
 		{
 			SpawnTable.getInstance().deleteSpawn(npc.getSpawn(), false);
 			npc.deleteMe();
 		});
-		_spawns.clear();
+		_spawnedNpcs.clear();
 	}
 	
 	public void notifySpawnNpc(Npc npc)

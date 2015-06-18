@@ -26,6 +26,7 @@ import java.util.Map;
 
 import org.l2junity.Config;
 import org.l2junity.gameserver.data.xml.IXmlReader;
+import org.l2junity.gameserver.model.ChanceLocation;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
 import org.l2junity.gameserver.model.holders.MinionHolder;
@@ -188,14 +189,14 @@ public class SpawnsData implements IXmlReader
 		}
 		
 		final NpcSpawnTemplate npcTemplate = new NpcSpawnTemplate(spawnTemplate, group, set);
-		final L2NpcTemplate template = NpcData.getInstance().getTemplate(npcTemplate.getNpcId());
+		final L2NpcTemplate template = NpcData.getInstance().getTemplate(npcTemplate.getId());
 		if (template == null)
 		{
-			LOGGER.warn("Requested spawn for non existing npc: ", npcTemplate.getNpcId());
+			LOGGER.warn("Requested spawn for non existing npc: ", npcTemplate.getId());
 			return;
 		}
 		
-		if (template.isType("L2SiegeGuard") || template.isType("L2RaidBoss") || template.isType("L2Servitor") || template.isType("L2Pet"))
+		if (template.isType("L2Servitor") || template.isType("L2Pet"))
 		{
 			LOGGER.warn("Requested spawn for {} {}({}) file: {}", template.getType(), template.getName(), template.getId(), spawnTemplate.getFile().getName());
 			return;
@@ -213,12 +214,36 @@ public class SpawnsData implements IXmlReader
 			{
 				parseParameters(d, npcTemplate);
 			}
-			else if ("minions".equals(d.getNodeName()))
+			else if ("minions".equalsIgnoreCase(d.getNodeName()))
 			{
 				parseMinions(d, npcTemplate);
 			}
+			else if ("locations".equalsIgnoreCase(d.getNodeName()))
+			{
+				parseLocations(d, npcTemplate);
+			}
 		}
 		group.addSpawn(npcTemplate);
+	}
+	
+	/**
+	 * @param n
+	 * @param npcTemplate
+	 */
+	private void parseLocations(Node n, NpcSpawnTemplate npcTemplate)
+	{
+		for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+		{
+			if ("location".equalsIgnoreCase(d.getNodeName()))
+			{
+				final int x = parseInteger(d.getAttributes(), "x");
+				final int y = parseInteger(d.getAttributes(), "y");
+				final int z = parseInteger(d.getAttributes(), "z");
+				final int heading = parseInteger(d.getAttributes(), "heading", 0);
+				final double chance = parseDouble(d.getAttributes(), "chance");
+				npcTemplate.addSpawnLocation(new ChanceLocation(x, y, z, heading, chance));
+			}
+		}
 	}
 	
 	/**

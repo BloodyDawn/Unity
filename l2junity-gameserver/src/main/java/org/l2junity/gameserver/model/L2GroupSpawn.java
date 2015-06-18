@@ -19,7 +19,6 @@
 package org.l2junity.gameserver.model;
 
 import org.l2junity.commons.util.Rnd;
-import org.l2junity.gameserver.data.sql.impl.TerritoryTable;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2ControllableMobInstance;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
@@ -59,20 +58,12 @@ public class L2GroupSpawn extends L2Spawn
 					return null;
 				}
 				
-				final Location location = TerritoryTable.getInstance().getRandomPoint(getLocationId());
-				if (location != null)
-				{
-					newlocx = location.getX();
-					newlocy = location.getY();
-					newlocz = location.getZ();
-				}
+				return null;
 			}
-			else
-			{
-				newlocx = getX();
-				newlocy = getY();
-				newlocz = getZ();
-			}
+			
+			newlocx = getX();
+			newlocy = getY();
+			newlocz = getZ();
 			
 			final Npc mob = new L2ControllableMobInstance(_template);
 			mob.setCurrentHpMp(mob.getMaxHp(), mob.getMaxMp());
@@ -93,7 +84,7 @@ public class L2GroupSpawn extends L2Spawn
 		}
 		catch (Exception e)
 		{
-			_log.warn("NPC class not found: " + e.getMessage(), e);
+			LOGGER.warn("NPC class not found: " + e.getMessage(), e);
 			return null;
 		}
 	}

@@ -20,6 +20,7 @@ package org.l2junity.gameserver.model.zone.form;
 
 import org.l2junity.commons.util.Rnd;
 import org.l2junity.gameserver.GeoData;
+import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.itemcontainer.Inventory;
 import org.l2junity.gameserver.model.zone.L2ZoneForm;
 
@@ -138,20 +139,15 @@ public class ZoneCylinder extends L2ZoneForm
 	}
 	
 	@Override
-	public int[] getRandomPoint()
+	public Location getRandomPoint()
 	{
-		double x, y, q, r;
+		int x, y, q, r;
 		
-		q = Rnd.get() * 2 * Math.PI;
-		r = Math.sqrt(Rnd.get());
-		x = (_rad * r * Math.cos(q)) + _x;
-		y = (_rad * r * Math.sin(q)) + _y;
+		q = (int) (Rnd.get() * 2 * Math.PI);
+		r = (int) Math.sqrt(Rnd.get());
+		x = (int) ((_rad * r * Math.cos(q)) + _x);
+		y = (int) ((_rad * r * Math.sin(q)) + _y);
 		
-		return new int[]
-		{
-			(int) x,
-			(int) y,
-			GeoData.getInstance().getHeight((int) x, (int) y, _z1)
-		};
+		return new Location(x, y, GeoData.getInstance().getHeight(x, y, _z1));
 	}
 }

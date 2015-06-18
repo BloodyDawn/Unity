@@ -31,13 +31,9 @@ import java.util.function.Function;
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
-import org.l2junity.gameserver.instancemanager.DayNightSpawnManager;
-import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.L2Spawn;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.templates.L2NpcTemplate;
-import org.l2junity.gameserver.model.spawns.NpcSpawnTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -147,32 +143,14 @@ public final class SpawnTable
 			spawnDat.setHeading(spawnInfo.getInt("heading", -1));
 			spawnDat.setRespawnDelay(spawnInfo.getInt("respawnDelay", 0), spawnInfo.getInt("respawnRandom", 0));
 			spawnDat.setLocationId(spawnInfo.getInt("locId", 0));
-			String territoryName = spawnInfo.getString("territoryName", "");
 			String spawnName = spawnInfo.getString("spawnName", "");
 			if (!spawnName.isEmpty())
 			{
 				spawnDat.setName(spawnName);
 			}
-			if (!territoryName.isEmpty())
-			{
-				spawnDat.setSpawnTerritory(ZoneManager.getInstance().getSpawnTerritory(territoryName));
-			}
-			switch (spawnInfo.getInt("periodOfDay", 0))
-			{
-				case 0: // default
-					ret += spawnDat.init();
-					break;
-				case 1: // Day
-					DayNightSpawnManager.getInstance().addDayCreature(spawnDat);
-					ret = 1;
-					break;
-				case 2: // Night
-					DayNightSpawnManager.getInstance().addNightCreature(spawnDat);
-					ret = 1;
-					break;
-			}
-			
 			addSpawn(spawnDat);
+			
+			ret += spawnDat.init();
 		}
 		catch (Exception e)
 		{
@@ -319,18 +297,18 @@ public final class SpawnTable
 			{
 				_spawnTable.remove(spawn.getId());
 			}
-			set.forEach(s -> removeSpawn(s.getLastSpawn(), s.getNpcSpawnTemplate()));
+			set.forEach(this::notifyRemoved);
 			return removed;
 		}
-		removeSpawn(spawn.getLastSpawn(), spawn.getNpcSpawnTemplate());
+		removeSpawn(spawn);
 		return false;
 	}
 	
-	private void removeSpawn(Npc npc, NpcSpawnTemplate template)
+	private void notifyRemoved(L2Spawn spawn)
 	{
-		if ((template != null) && (npc != null))
+		if ((spawn != null) && (spawn.getLastSpawn() != null) && (spawn.getNpcSpawnTemplate() != null))
 		{
-			template.notifyDespawnNpc(npc);
+			spawn.getNpcSpawnTemplate().notifyDespawnNpc(spawn.getLastSpawn());
 		}
 	}
 	
