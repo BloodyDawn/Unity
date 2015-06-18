@@ -164,7 +164,7 @@ public class LoginServerThread extends Thread
 				_out = new BufferedOutputStream(_loginSocket.getOutputStream());
 				
 				// init Blowfish
-				byte[] blowfishKey = CommonUtil.generateHex(40);
+				final byte[] blowfishKey = CommonUtil.generateHex(40);
 				_blowfish = new NewCrypt("_;v.]05-31!|+-%xT!^[$\00");
 				while (!isInterrupted())
 				{

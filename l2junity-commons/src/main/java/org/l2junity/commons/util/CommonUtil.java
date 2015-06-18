@@ -99,6 +99,15 @@ public final class CommonUtil
 	{
 		byte[] array = new byte[size];
 		Rnd.nextBytes(array);
+		
+		// Don't allow 0s inside the array!
+		for (int i = 0; i < array.length; i++)
+		{
+			while (array[i] == 0)
+			{
+				array[i] = (byte) Rnd.get(Byte.MAX_VALUE);
+			}
+		}
 		return array;
 	}
 	
