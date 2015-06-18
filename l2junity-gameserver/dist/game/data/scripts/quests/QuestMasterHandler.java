@@ -216,13 +216,14 @@ import quests.Q10391_ASuspiciousHelper.Q10391_ASuspiciousHelper;
 import quests.Q10392_FailureAndItsConsequences.Q10392_FailureAndItsConsequences;
 import quests.Q10393_KekropusLetterAClueCompleted.Q10393_KekropusLetterAClueCompleted;
 import quests.Q10394_MutualBenefit.Q10394_MutualBenefit;
-import quests.Q10395NotATraitor.Q10395NotATraitor;
+import quests.Q10395_NotATraitor.Q10395_NotATraitor;
 import quests.Q10460_ReturnOfTheAlligatorHunter.Q10460_ReturnOfTheAlligatorHunter;
 import quests.Q10501_ZakenEmbroideredSoulCloak.Q10501_ZakenEmbroideredSoulCloak;
 import quests.Q10502_FreyaEmbroideredSoulCloak.Q10502_FreyaEmbroideredSoulCloak;
 import quests.Q10503_FrintezzaEmbroideredSoulCloak.Q10503_FrintezzaEmbroideredSoulCloak;
 import quests.Q10504_JewelOfAntharas.Q10504_JewelOfAntharas;
 import quests.Q10505_JewelOfValakas.Q10505_JewelOfValakas;
+import quests.Q10707_FlamesOfSorrow.Q10707_FlamesOfSorrow;
 import quests.Q10732_AForeignLand.Q10732_AForeignLand;
 import quests.Q10733_TheTestForSurvival.Q10733_TheTestForSurvival;
 import quests.Q10734_DoOrDie.Q10734_DoOrDie;
@@ -443,13 +444,14 @@ public class QuestMasterHandler
 		Q10392_FailureAndItsConsequences.class,
 		Q10393_KekropusLetterAClueCompleted.class,
 		Q10394_MutualBenefit.class,
-		Q10395NotATraitor.class,
+		Q10395_NotATraitor.class,
 		Q10460_ReturnOfTheAlligatorHunter.class,
 		Q10501_ZakenEmbroideredSoulCloak.class,
 		Q10502_FreyaEmbroideredSoulCloak.class,
 		Q10503_FrintezzaEmbroideredSoulCloak.class,
 		Q10504_JewelOfAntharas.class,
 		Q10505_JewelOfValakas.class,
+		Q10707_FlamesOfSorrow.class,
 		Q10732_AForeignLand.class,
 		Q10733_TheTestForSurvival.class,
 		Q10734_DoOrDie.class,
