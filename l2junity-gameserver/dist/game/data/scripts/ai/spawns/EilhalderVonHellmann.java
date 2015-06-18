@@ -77,14 +77,14 @@ public final class EilhalderVonHellmann extends AbstractNpcAI
 	@Override
 	public void onSpawnActivate(SpawnTemplate template)
 	{
-		for (SpawnGroup group : template.getGroups())
+		OUT: for (SpawnGroup group : template.getGroups())
 		{
 			for (NpcSpawnTemplate npc : group.getSpawns())
 			{
 				if (npc.getId() == EILHALDER_VON_HELLMANN)
 				{
 					_template = npc;
-					break;
+					break OUT;
 				}
 			}
 		}

@@ -20,6 +20,7 @@ package org.l2junity.gameserver.model.spawns;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.l2junity.gameserver.model.StatsSet;
 
@@ -56,6 +57,11 @@ public class SpawnGroup
 	public List<NpcSpawnTemplate> getSpawns()
 	{
 		return _spawns;
+	}
+	
+	public List<NpcSpawnTemplate> getSpawnsById(int id)
+	{
+		return _spawns.stream().filter(spawn -> spawn.getId() == id).collect(Collectors.toList());
 	}
 	
 	public void spawnAll()

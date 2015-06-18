@@ -22,6 +22,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.model.StatsSet;
@@ -69,6 +70,11 @@ public class SpawnTemplate implements IParameterized<StatsSet>
 	public List<SpawnGroup> getGroups()
 	{
 		return _groups;
+	}
+	
+	public List<SpawnGroup> getGroupsByName(String name)
+	{
+		return _groups.stream().filter(group -> String.valueOf(group.getName()).equalsIgnoreCase(name)).collect(Collectors.toList());
 	}
 	
 	@Override
