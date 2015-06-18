@@ -719,7 +719,7 @@ public class L2Spawn implements IPositionable, IIdentifiable, INamable
 	{
 		if (!_spawnedNpcs.isEmpty())
 		{
-			return _spawnedNpcs.getLast();
+			return _spawnedNpcs.peekLast();
 		}
 		
 		return null;

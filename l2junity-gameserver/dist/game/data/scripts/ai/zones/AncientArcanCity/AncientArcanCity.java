@@ -18,19 +18,17 @@
  */
 package ai.zones.AncientArcanCity;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
-import org.l2junity.gameserver.data.xml.IXmlReader;
 import org.l2junity.gameserver.enums.Movie;
 import org.l2junity.gameserver.instancemanager.ZoneManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.holders.SpawnHolder;
+import org.l2junity.gameserver.model.spawns.SpawnGroup;
+import org.l2junity.gameserver.model.spawns.SpawnTemplate;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.model.zone.type.PeaceZone;
 import org.l2junity.gameserver.model.zone.type.ScriptZone;
@@ -38,9 +36,6 @@ import org.l2junity.gameserver.network.client.send.Earthquake;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
 import org.l2junity.gameserver.network.client.send.OnEventTrigger;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
-import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
 
 import ai.npc.AbstractNpcAI;
 
@@ -48,27 +43,25 @@ import ai.npc.AbstractNpcAI;
  * Ancient Arcan City AI.
  * @author St3eT
  */
-public final class AncientArcanCity extends AbstractNpcAI implements IXmlReader
+public final class AncientArcanCity extends AbstractNpcAI
 {
 	// NPC
 	private static final int CEREMONIAL_CAT = 33093;
 	// Location
 	private static final Location ANCIENT_ARCAN_CITY = new Location(207559, 86429, -1000);
+	private static final Location EARTHQUAKE = new Location(207088, 88720, -1128);
 	// Zones
 	private static final PeaceZone TOWN_ZONE = ZoneManager.getInstance().getZoneById(23600, PeaceZone.class); // Ancient Arcan City zone
 	private static final ScriptZone TELEPORT_ZONE = ZoneManager.getInstance().getZoneById(12015, ScriptZone.class); // Anghel Waterfall teleport zone
 	// Misc
 	private static final int CHANGE_STATE_TIME = 1800000; // 30min
-	private static final List<SpawnHolder> SPAWNS = new ArrayList<>();
-	private static final List<Npc> SPAWNED_NPCS = new CopyOnWriteArrayList<>();
 	private boolean isCeremonyRunning = false;
+	private final Set<SpawnTemplate> _templates = ConcurrentHashMap.newKeySet();
 	
 	private AncientArcanCity()
 	{
 		super(AncientArcanCity.class.getSimpleName(), "ai/group_template");
 		addEnterZoneId(TOWN_ZONE.getId(), TELEPORT_ZONE.getId());
-		load();
-		notifyEvent("CHANGE_STATE", null, null);
 		startQuestTimer("CHANGE_STATE", CHANGE_STATE_TIME, null, null, true);
 	}
 	
@@ -87,27 +80,17 @@ public final class AncientArcanCity extends AbstractNpcAI implements IXmlReader
 				if (isCeremonyRunning)
 				{
 					showOnScreenMsg(temp, NpcStringId.THE_INCREASED_GRASP_OF_DARK_ENERGY_CAUSES_THE_GROUND_TO_SHAKE, ExShowScreenMessage.TOP_CENTER, 5000, true);
-					temp.sendPacket(new Earthquake(207088, 88720, -1128, 10, 5));
+					temp.sendPacket(new Earthquake(EARTHQUAKE, 10, 5));
 				}
 			}
 			
 			if (isCeremonyRunning)
 			{
-				for (SpawnHolder holder : SPAWNS)
-				{
-					final Npc temp = addSpawn(holder.getNpcId(), holder.getLocation());
-					SPAWNED_NPCS.add(temp);
-					if (temp.getId() == CEREMONIAL_CAT)
-					{
-						temp.setRandomAnimationEnabled(false);
-						startQuestTimer("SOCIAL_ACTION", 4500, temp, null, true);
-					}
-				}
+				_templates.stream().forEach(t -> t.spawn(g -> String.valueOf(g.getName()).equalsIgnoreCase("Ceremony")));
 			}
 			else
 			{
-				SPAWNED_NPCS.stream().forEach(Npc::deleteMe);
-				SPAWNED_NPCS.clear();
+				_templates.stream().forEach(t -> t.despawn(g -> String.valueOf(g.getName()).equalsIgnoreCase("Ceremony")));
 				cancelQuestTimers("SOCIAL_ACTION");
 			}
 		}
@@ -145,33 +128,24 @@ public final class AncientArcanCity extends AbstractNpcAI implements IXmlReader
 	}
 	
 	@Override
-	public synchronized void load()
+	public void onSpawnActivate(SpawnTemplate template)
 	{
-		SPAWNS.clear();
-		parseDatapackFile("data/scripts/ai/zones/AncientArcanCity/spawnlist.xml");
+		_templates.add(template);
 	}
 	
 	@Override
-	public void parseDocument(Document doc, File f)
+	public void onSpawnDeactivate(SpawnTemplate template)
 	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		_templates.remove(template);
+	}
+	
+	@Override
+	public void onSpawnNpc(SpawnTemplate template, SpawnGroup group, Npc npc)
+	{
+		if (npc.getId() == CEREMONIAL_CAT)
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
-			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if ("spawn".equalsIgnoreCase(d.getNodeName()))
-					{
-						final NamedNodeMap attrs = d.getAttributes();
-						final int npcId = parseInteger(attrs, "npcId");
-						final int x = parseInteger(attrs, "x");
-						final int y = parseInteger(attrs, "y");
-						final int z = parseInteger(attrs, "z");
-						final int heading = parseInteger(attrs, "heading");
-						SPAWNS.add(new SpawnHolder(npcId, x, y, z, heading));
-					}
-				}
-			}
+			npc.setRandomAnimationEnabled(npc.getParameters().getBoolean("disableRandomAnimation", false));
+			startQuestTimer("SOCIAL_ACTION", 4500, npc, null, true);
 		}
 	}
 	
