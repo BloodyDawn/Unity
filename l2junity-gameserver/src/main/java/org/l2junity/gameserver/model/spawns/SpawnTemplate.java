@@ -22,6 +22,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import org.l2junity.gameserver.instancemanager.QuestManager;
@@ -93,7 +94,7 @@ public class SpawnTemplate implements IParameterized<StatsSet>
 	{
 		if (_ai != null)
 		{
-			final Quest script = QuestManager.getInstance().getScripts().get(_ai);
+			final Quest script = QuestManager.getInstance().getQuest(_ai);
 			if (script != null)
 			{
 				event.accept(script);
@@ -101,10 +102,27 @@ public class SpawnTemplate implements IParameterized<StatsSet>
 		}
 	}
 	
+	public void spawn(Predicate<SpawnGroup> groupFilter)
+	{
+		_groups.stream().filter(groupFilter).forEach(SpawnGroup::spawnAll);
+		notifyEvent(script -> script.onSpawnActivate(this));
+	}
+	
 	public void spawnAll()
 	{
-		_groups.stream().filter(SpawnGroup::isSpawningByDefault).forEach(SpawnGroup::spawnAll);
+		spawn(SpawnGroup::isSpawningByDefault);
+	}
+	
+	public void spawnAllIncludingNotDefault()
+	{
+		_groups.forEach(SpawnGroup::spawnAll);
 		notifyEvent(script -> script.onSpawnActivate(this));
+	}
+	
+	public void despawn(Predicate<SpawnGroup> groupFilter)
+	{
+		_groups.stream().filter(groupFilter).forEach(SpawnGroup::despawnAll);
+		notifyEvent(script -> script.onSpawnDeactivate(this));
 	}
 	
 	public void despawnAll()
