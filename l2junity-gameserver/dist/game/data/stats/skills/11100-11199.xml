@@ -1165,10 +1165,12 @@
 		<!-- The cold is creeping up from your feet. -->
 		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
 		<table name="#runSpd"> 0.90 0.80 0.70 0.60 0.00 </table> <!-- Guessed. TODO: Freeze Target at Lv5 -->
+		<table name="#ave"> SNOW_SLOW SNOW_SLOW SNOW_SLOW SNOW_SLOW SNOW_HOLD </table>
 		<set name="icon" val="icon.skill11136" />
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="SPEED_DOWN" />
+		<set name="abnormalVisualEffect" val="#ave" />
 		<set name="activateRate" val="80" />
 		<set name="basicProperty" val="MEN" />
 		<set name="element" val="1" /> <!-- Water -->
@@ -1208,10 +1210,12 @@
 		<!-- Speed has decreased due to the gust. -->
 		<table name="#abnormalLvls"> 1 2 3 4 5 </table>
 		<table name="#runSpd"> 0.90 0.80 0.70 0.60 0.00 </table> <!-- Guessed. TODO: Air Bind Target at Lv5 -->
+		<table name="#ave"> TORNADO_SLOW TORNADO_SLOW TORNADO_SLOW TORNADO_SLOW TORNADO </table>
 		<set name="icon" val="icon.skill11137" />
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="5" /> <!-- Guessed -->
 		<set name="abnormalType" val="SPEED_DOWN" />
+		<set name="abnormalVisualEffect" val="#ave" />
 		<set name="activateRate" val="80" />
 		<set name="basicProperty" val="MEN" />
 		<set name="element" val="2" /> <!-- Wind -->

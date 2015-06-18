@@ -24,6 +24,7 @@ import org.l2junity.Config;
 import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.enums.Team;
 import org.l2junity.gameserver.handler.IAdminCommandHandler;
+import org.l2junity.gameserver.model.PageResult;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
@@ -44,6 +45,7 @@ import org.l2junity.gameserver.network.client.send.SunRise;
 import org.l2junity.gameserver.network.client.send.SunSet;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.l2junity.gameserver.util.Broadcast;
+import org.l2junity.gameserver.util.HtmlUtil;
 import org.l2junity.gameserver.util.Util;
 
 /**
@@ -495,9 +497,14 @@ public class AdminEffects implements IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_ave_abnormal"))
 		{
+			String param1 = null;
 			if (st.countTokens() > 0)
 			{
-				final String param1 = st.nextToken();
+				param1 = st.nextToken();
+			}
+			
+			if ((param1 != null) && !Util.isDigit(param1))
+			{
 				AbnormalVisualEffect ave;
 				
 				try
@@ -541,15 +548,39 @@ public class AdminEffects implements IAdminCommandHandler
 			}
 			else
 			{
-				final StringBuilder sb = new StringBuilder();
-				for (int i = 0; i < AbnormalVisualEffect.values().length; i++)
+				int page = 0;
+				if (param1 != null)
 				{
-					final AbnormalVisualEffect abnormalVisualEffect = AbnormalVisualEffect.values()[i];
-					sb.append("<button action=\"bypass admin_ave_abnormal " + abnormalVisualEffect.name() + "\" align=left icon=teleport>" + abnormalVisualEffect.name() + "(" + abnormalVisualEffect.getClientId() + ")</button>");
+					try
+					{
+						page = Integer.parseInt(param1);
+					}
+					catch (NumberFormatException nfe)
+					{
+						activeChar.sendMessage("Incorrect page.");
+					}
 				}
+				final PageResult result = HtmlUtil.createPage(AbnormalVisualEffect.values(), page, 100, i ->
+				{
+					return "<td align=center><a action=\"bypass -h admin_ave_abnormal " + i + "\">Page " + (i + 1) + "</a></td>";
+				}, ave ->
+				{
+					return "<button action=\"bypass admin_ave_abnormal " + ave.name() + "\" align=left icon=teleport>" + ave.name() + "(" + ave.getClientId() + ")</button>";
+				});
+				
 				final NpcHtmlMessage html = new NpcHtmlMessage(0, 1);
 				html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/ave_abnormal.htm");
-				html.replace("%abnormals%", sb.toString());
+				
+				if (result.getPages() > 0)
+				{
+					html.replace("%pages%", "<table width=280 cellspacing=0><tr>" + result.getPagerTemplate() + "</tr></table>");
+				}
+				else
+				{
+					html.replace("%pages%", "");
+				}
+				
+				html.replace("%abnormals%", result.getBodyTemplate().toString());
 				activeChar.sendPacket(html);
 				activeChar.sendMessage("Usage: //" + command.replace("admin_", "") + " <AbnormalVisualEffect> [radius]");
 				return true;

@@ -1427,7 +1427,7 @@ public final class Skill implements IIdentifiable
 			applyEffectScope(EffectScope.SELF, info, instant, addContinuousEffects);
 			
 			// TODO : Need to be done better after skill rework
-			if (addContinuousEffects && hasEffectType(L2EffectType.BUFF))
+			if (addContinuousEffects && hasEffectType(EffectScope.SELF, L2EffectType.BUFF))
 			{
 				info.getEffector().getEffectList().add(info);
 			}
@@ -1790,6 +1790,43 @@ public final class Skill implements IIdentifiable
 				return true;
 			}
 		}
+		return false;
+	}
+	
+	/**
+	 * @param effectScope Effect Scope to look inside for the specific effect type.
+	 * @param effectType Effect type to check if its present on this skill effects.
+	 * @param effectTypes Effect types to check if are present on this skill effects.
+	 * @return {@code true} if at least one of specified {@link L2EffectType} types is present on this skill effects, {@code false} otherwise.
+	 */
+	public boolean hasEffectType(EffectScope effectScope, L2EffectType effectType, L2EffectType... effectTypes)
+	{
+		if (hasEffects(effectScope))
+		{
+			return false;
+		}
+		
+		for (AbstractEffect effect : _effectLists.get(effectScope))
+		{
+			if (effect == null)
+			{
+				continue;
+			}
+			
+			if (effectType == effect.getEffectType())
+			{
+				return true;
+			}
+			
+			for (L2EffectType type : effectTypes)
+			{
+				if (type == effect.getEffectType())
+				{
+					return true;
+				}
+			}
+		}
+		
 		return false;
 	}
 	
