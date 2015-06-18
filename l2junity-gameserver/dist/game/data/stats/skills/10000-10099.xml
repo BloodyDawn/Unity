@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="10000" levels="1" name="Steel Door Guild Reward Box  (Top-grade)">
-		<!-- AUTO GENERATED SKILL -->
+		<table name="#extractableItems">
+			36558,1,25;36563,1,25;36553,1,25;36548,1,25
+		</table>
+		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="icon" val="icon.skill0000" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+		<for>
+			<effect name="RestorationRandom" />
+		</for>
 	</skill>
 	<skill id="10001" levels="7" name="Superior Sword/Blunt Weapon Mastery">
 		<!-- P. Atk. + 844 when a Sword or Blunt weapon is equipped. Increases enmity toward you by 60% of the damage. STR + 2. There is a chance the Cooldown of skills will reset or the duration double depending on your STR. -->
@@ -645,7 +658,7 @@
 		</effect>
 	</skill>
 	<skill id="10024" levels="1" name="Party Rescue">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- TODO Additionally, all damage received is capped at 10 -->
 		<!-- Drags all party members to oneself, and for 15 seconds receives 90% of the damage inflicted to all party members. Additionally, all damage received is capped at 10. Requires a shield. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" />
@@ -664,6 +677,14 @@
 		<cond msgId="113">
 			<using kind="SHIELD" />
 		</cond>
+		<for>
+			<effect name="PullBack">
+				<param speed="600" />
+			</effect>
+			<effect name="TransferDamage">
+				<add stat="transDamToPlayer" val="90" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10025" levels="4" name="Knight Frenzy">
 		<!-- TODO: abnormalType -->

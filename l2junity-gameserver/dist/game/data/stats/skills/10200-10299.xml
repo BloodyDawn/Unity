@@ -539,13 +539,22 @@
 		</for>
 	</skill>
 	<skill id="10268" levels="6" name="Rolling Thunder">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Becomes enveloped with the energy of a whirlwind. Continuously decreases nearby enemies' HP. Continuously decreases your MP. -->
-		<table name="#mpConsumes"> 40 42 43 45 46 47 </table>
+		<table name="#magicLvl"> 89 91 93 95 97 99 </table>
+		<table name="#mpInitialConsumes"> 40 42 43 45 46 47 </table>
+		<table name="#skillLvl"> 1 2 3 4 5 6 </table>
+		<set name="abnormalVisualEffect" val="HURRICANE_SELF" />
 		<set name="icon" val="icon.skill10268" />
 		<set name="operateType" val="T" />
 		<set name="targetType" val="SELF" />
-		<set name="mpConsume" val="#mpConsumes" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpInitialConsume" val="#mpInitialConsumes" />
+		<for>
+			<effect name="CallSkillOnActionTime" ticks="3">
+				<param power="57" />
+				<param skillId="10287" skillLevel="#skillLvl" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10269" levels="10" name="Jump Attack">
 		<!-- Jumps to attack frontal enemies with 10508 Power added to P. Atk. and decreases their Speed by 180 for 5 seconds. The more Momentum used the more damage inflicted, up to a maximum of 5 Momentum levels. Requires a sword, blunt, spear, fist, dual blunt weapon, or dualsword weapon to be equipped. Over-hit. Critical. -->
@@ -926,16 +935,32 @@
 		</for>
 	</skill>
 	<skill id="10287" levels="6" name="Rolling Thunder">
-		<table name="#effectPoint"> -702 -705 -708 -709 -709 -709 </table>
-		<!-- AUTO GENERATED SKILL -->
 		<!-- HP decreases by 225 per second. -->
+		<table name="#dot"> 225 228 232 235 238 242 </table>
+		<table name="#effectPoint"> -702 -705 -708 -709 -709 -709 </table>
+		<table name="#magicLvl"> 89 91 93 95 97 99 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3" />
+		<!-- TODO abnormalType -->
+		<set name="abnormalVisualEffect" val="HURRICANE" />
+		<set name="activateRate" val="40" />
+		<set name="affectLimit" val="10-10" />
+		<set name="affectRange" val="200" />
 		<set name="icon" val="icon.skill0494" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="targetType" val="AURA" />
 		<set name="hitTime" val="500" />
 		<set name="reuseDelay" val="3000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<set name="trait" val="POISON" />
+		<set name="staticReuse" val="true" />
+		<for>
+			<effect name="DamOverTime" ticks="1">
+				<param power="#dot" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10288" levels="11" name="Hurricane Storm">
 		<!-- TODO Power - 10% when using a sword, dualsword, blunt, or fist weapon. Power + 50% when using a spear. -->

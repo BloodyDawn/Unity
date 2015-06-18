@@ -53,6 +53,7 @@ public final class EffectMasterHandler
 		CallParty.class,
 		CallPc.class,
 		CallSkill.class,
+		CallSkillOnActionTime.class,
 		CancelEffectOnOffense.class,
 		ChameleonRest.class,
 		ChangeFace.class,
