@@ -18,11 +18,15 @@
  */
 package handlers.effecthandlers;
 
+import org.l2junity.gameserver.handler.ITargetTypeHandler;
+import org.l2junity.gameserver.handler.TargetHandler;
 import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
@@ -58,9 +62,15 @@ public final class CallSkillOnActionTime extends AbstractEffect
 		
 		info.getEffected().reduceCurrentMp(manaDam);
 		
-		if (_skill.getSkill() != null)
+		final Skill skill = _skill.getSkill();
+		
+		if (skill != null)
 		{
-			info.getEffector().makeTriggerCast(_skill.getSkill(), info.getEffected(), false);
+			final ITargetTypeHandler targetHandler = TargetHandler.getInstance().getHandler(skill.getTargetType());
+			
+			final WorldObject[] targets = targetHandler.getTargetList(skill, info.getEffector(), false, info.getEffected());
+			
+			info.getEffector().callSkill(skill, targets);
 		}
 		else
 		{
