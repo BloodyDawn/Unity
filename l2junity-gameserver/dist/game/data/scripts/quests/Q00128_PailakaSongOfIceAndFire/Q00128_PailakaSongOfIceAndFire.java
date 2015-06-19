@@ -23,9 +23,17 @@ import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.entity.Instance;
+import org.l2junity.gameserver.model.events.EventType;
+import org.l2junity.gameserver.model.events.ListenerRegisterType;
+import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
+import org.l2junity.gameserver.model.events.annotations.RegisterType;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLevelChanged;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPressTutorialMark;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
+import org.l2junity.gameserver.network.client.send.TutorialShowHtml;
+import org.l2junity.gameserver.network.client.send.TutorialShowQuestionMark;
 
 /**
  * Pailaka - Song of Ice and Fire (128)
@@ -349,5 +357,30 @@ public final class Q00128_PailakaSongOfIceAndFire extends Quest
 			}
 		}
 		return super.onKill(npc, player, isSummon);
+	}
+	
+	@RegisterEvent(EventType.ON_PLAYER_LEVEL_CHANGED)
+	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+	public void OnPlayerLevelChanged(OnPlayerLevelChanged event)
+	{
+		final PlayerInstance player = event.getActiveChar();
+		final int oldLevel = event.getOldLevel();
+		final int newLevel = event.getNewLevel();
+		
+		if ((oldLevel < newLevel) && (newLevel == MIN_LEVEL))
+		{
+			player.sendPacket(new TutorialShowQuestionMark(getId()));
+		}
+	}
+	
+	@RegisterEvent(EventType.ON_PLAYER_PRESS_TUTORIAL_MARK)
+	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+	public void onPlayerPressTutorialMark(OnPlayerPressTutorialMark event)
+	{
+		if (event.getMarkId() == getId())
+		{
+			final PlayerInstance player = event.getActiveChar();
+			player.sendPacket(new TutorialShowHtml(getHtm(player.getHtmlPrefix(), "popup.html")));
+		}
 	}
 }
