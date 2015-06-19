@@ -629,18 +629,30 @@
 		</for>
 	</skill>
 	<skill id="10271" levels="2" name="Power Provoke">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Provokes nearby enemies. Raises their P. Atk. and Atk. Spd. for 10 seconds but lower their P. Def. -->
 		<table name="#mpConsumes"> 76 83 </table>
+		<set name="abnormalLvl" val="4" />
+		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="PD_DOWN" />
+		<set name="affectLimit" val="9-10" />
+		<set name="affectRange" val="900" />
 		<set name="icon" val="icon.skill10271" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1200" />
 		<set name="coolTime" val="300" />
 		<set name="reuseDelay" val="4000" />
 		<set name="effectPoint" val="-709" />
 		<set name="isDebuff" val="true" />
+		<set name="rideState" val="NONE" />
+		<for>
+			<effect name="Debuff">
+				<mul stat="pAtk" val="1.2" />
+				<mul stat="pAtkSpd" val="1.2" />
+				<mul stat="pDef" val="0.76" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10273" levels="4" name="Lightning Disarm">
 		<!-- Disarms nearby enemies for 5 seconds. Lowers P. Atk. and M. Atk. by 10%. -->
@@ -790,9 +802,9 @@
 		<set name="reuseDelay" val="60000" />
 	</skill>
 	<skill id="10277" levels="4" name="Final Cry">
-		<table name="#effectPoint"> 687 698 707 709 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Increases P. Atk. + 20% and skill damage + 10% for 2 minutes. Increases general/skill attack damage + 5% during PvP. -->
+		<table name="#effectPoint"> 687 698 707 709 </table>
 		<table name="#mpConsumes"> 38 41 45 47 </table>
 		<set name="icon" val="icon.skill10277" />
 		<set name="operateType" val="A2" />

@@ -146,15 +146,37 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="10308" levels="1" name="Wild Roar">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Shouts loudly to invoke the power of the Bison. For 5 minutes, P. Atk. and Critical Damage + 45%, Critical Rate + 45, and Atk. Spd. - 15%. Requires a sword, blunt, spear, fist weapon, dual blunt, or dualsword. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="300" />
+		<set name="abnormalType" val="POSSESSION" />
 		<set name="icon" val="icon.skill11834" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="38" />
 		<set name="hitTime" val="2000" />
 		<set name="effectPoint" val="707" />
 		<set name="reuseDelay" val="30000" />
+		<cond msgId="113" addName="1">
+			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+		</cond>
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.45">
+					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+				</mul>
+				<mul stat="cAtk" val="1.45">
+					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+				</mul>
+				<add stat="rCrit" val="45">
+					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+				</add>
+				<mul stat="pAtkSpd" val="0.85">
+					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
 	<skill id="10309" levels="4" name="Superior Fist Weapon Mastery">
 		<!-- When a fist weapon is equipped, P. Atk. + 2 % and additional + 709. -->
@@ -179,13 +201,27 @@
 	<skill id="10310" levels="1" name="Primal Rage">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- For 10 min., P. Atk. + 15%. Requires a sword, blunt, spear, fist weapon, dual blunt, or dual sword. -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="600" />
+		<!-- TODO abnormalType -->
 		<set name="icon" val="icon.skill10310" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
+		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="38" />
 		<set name="hitTime" val="1500" />
 		<set name="effectPoint" val="235" />
 		<set name="reuseDelay" val="30000" />
+		<cond msgId="113" addName="1">
+			<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+		</cond>
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="1.15">
+					<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+				</mul>
+			</effect>
+		</for>
 	</skill>
 	<skill id="10311" levels="4" name="Superior Two-handed Weapon Mastery">
 		<!-- When a two-handed sword or two handed blunt is equipped, P. Atk. + 2 % and additional + 709. -->
@@ -221,18 +257,42 @@
 		<set name="targetType" val="SELF" />
 	</skill>
 	<skill id="10313" levels="4" name="Infinite Rush">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Rush toward the frontal enemies to inflict Shock for 9 sec. Requires a sword, blunt, spear, fist weapon, dual blunt, or dual sword. -->
+		<table name="#magicLvl"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 92 98 104 110 </table>
+		<set name="abnormalLvl" val="8" />
+		<set name="abnormalTime" val="9" />
+		<set name="abnormalType" val="STUN" />
+		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="activateRate" val="60" />
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="600" />
+		<set name="basicProperty" val="CON" />
+		<set name="effectRange" val="800" />
+		<set name="fanRange" val="0,0,600,60" />
+		<set name="flyType" val="CHARGE" />
+		<set name="lvlBonusRate" val="1" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="nextActionAttack" val="true" />
 		<set name="icon" val="icon.skill10313" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="FRONT_AREA" />
+		<set name="trait" val="SHOCK" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="500" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-669" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="113" addName="1">
+			<and>
+				<using kind="SWORD, BLUNT, DUAL, DUALFIST, POLE, DUALBLUNT" />
+				<target mindistance="200" />
+			</and>
+		</cond>
+		<for>
+			<effect name="Stun" />
+		</for>
 	</skill>
 	<skill id="10314" levels="4" name="Disarmament">
 		<!-- AUTO GENERATED SKILL -->
@@ -283,19 +343,42 @@
 		</for>
 	</skill>
 	<skill id="10317" levels="4" name="Thunder Slasher">
-		<table name="#effectPoint"> -92 -94 -97 -99 </table>
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Swings a spear to inflict 26003 added to P. Atk. on nearby enemies and Stuns them for 5 sec. Requires a spear. Ignores Shield Defense. Over-hit. Critical. -->
+		<table name="#effectPoint"> -92 -94 -97 -99 </table>
+		<table name="#magicLevel"> 85 90 95 99 </table>
 		<table name="#mpConsumes"> 122 124 129 133 </table>
+		<table name="#power"> 26003 30494 35883 37680 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="5" />
+		<set name="abnormalType" val="STUN" />
+		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="activateRate" val="50" />
+		<set name="affectLimit" val="6-12" />
+		<set name="affectRange" val="150" />
+		<set name="baseCritRate" val="15" />
+		<set name="basicProperty" val="CON" />
+		<set name="ignoreShld" val="true" />
+		<set name="lvlBonusRate" val="1" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="power" val="#power" />
+		<set name="trait" val="SHOCK" />
 		<set name="icon" val="icon.skill10317new" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1390" />
 		<set name="coolTime" val="200" />
 		<set name="reuseDelay" val="15000" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="113" addName="1">
+			<using kind="POLE" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack" />
+			<effect name="Stun" />
+		</for>
 	</skill>
 	<skill id="10318" levels="7" name="Sonic Flash">
 		<!-- Launches a wave of sword energy to inflict 17348 damage added to P. Atk., increasing the damage as Momentum is consumed. Can consume up to 3. Requires a dual sword, sword, or blunt. Over-hit. Critical. -->
@@ -352,7 +435,7 @@
 	</skill>
 	<skill id="10321" levels="7" name="Thunder Spear">
 		<!-- Attacks near the enemy by throwing a spear with 22536 Power added to P. Atk. Stuns for 9 seconds. Requires a spear. Over-hit. Critical hit. Ignores Shield Defense. Target cancel. -->
-		<table name="#magicLevel"> 85 90 95 99 101 103 105 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
 		<table name="#mpConsumes"> 122 124 129 133 137 141 145 </table>
 		<table name="#power"> 22536 26428 29542 32656 35788 37424 39060 </table>
 		<set name="abnormalLvl" val="1" />
@@ -366,7 +449,7 @@
 		<set name="basicProperty" val="CON" />
 		<set name="ignoreShld" val="true" />
 		<set name="lvlBonusRate" val="1" />
-		<set name="magicLevel" val="#magicLevel" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="trait" val="SHOCK" />
@@ -431,12 +514,12 @@
 	</skill>
 	<skill id="10325" levels="3" name="Dreadful Roar">
 		<!-- Cancels at least one buff of nearby enemies. Consumes 10 Soulstones. -->
-		<table name="#magicLevel"> 97 98 99 </table>
+		<table name="#magicLvl"> 97 98 99 </table>
 		<table name="#mpConsumes"> 149 151 154 </table>
 		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="180" />
-		<set name="magicLevel" val="#magicLevel" />
-		<set name="itemConsumeCount" val="2" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="itemConsumeCount" val="10" />
 		<set name="itemConsumeId" val="1785" /> <!-- Soulstones -->
 		<set name="icon" val="icon.skill10325" />
 		<set name="operateType" val="A1" />
