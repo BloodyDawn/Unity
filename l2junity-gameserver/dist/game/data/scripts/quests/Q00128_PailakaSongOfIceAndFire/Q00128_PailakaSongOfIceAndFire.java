@@ -72,9 +72,9 @@ public final class Q00128_PailakaSongOfIceAndFire extends Quest
 		addStartNpc(ADLER1);
 		addTalkId(ADLER1, ADLER2, SINAI, INSPECTOR);
 		addKillId(HILLAS, PAPION, KINSUS, GARGOS, ADIANTUM);
+		registerQuestItems(SWORD, ENH_SWORD1, ENH_SWORD2, BOOK1, BOOK2, BOOK3, BOOK4, BOOK5, BOOK6, BOOK7, WATER_ESSENCE, FIRE_ESSENCE, SHIELD_POTION, HEAL_POTION, FIRE_ENHANCER, WATER_ENHANCER);
 		addCondMinLevel(MIN_LEVEL, "32497-05.htm");
 		addCondMaxLevel(MAX_LEVEL, "32497-06.htm");
-		registerQuestItems(SWORD, ENH_SWORD1, ENH_SWORD2, BOOK1, BOOK2, BOOK3, BOOK4, BOOK5, BOOK6, BOOK7, WATER_ESSENCE, FIRE_ESSENCE, SHIELD_POTION, HEAL_POTION, FIRE_ENHANCER, WATER_ENHANCER);
 	}
 	
 	@Override
@@ -166,10 +166,13 @@ public final class Q00128_PailakaSongOfIceAndFire extends Quest
 				inst.setEmptyDestroyTime(0);
 				st.exitQuest(false, true);
 				giveAdena(player, 187200, true);
-				addExpAndSp(player, 1860000, 446);
-				giveItems(player, SCROLL_OF_ESCAPE, 1);
 				giveItems(player, Integer.parseInt(event), 1);
-				htmltext = "32510-2.htm";
+				giveItems(player, SCROLL_OF_ESCAPE, 1);
+				if (player.getLevel() >= MIN_LEVEL)
+				{
+					addExpAndSp(player, 1_860_000, 446);
+				}
+				htmltext = "32510-02.htm";
 				break;
 			}
 		}
