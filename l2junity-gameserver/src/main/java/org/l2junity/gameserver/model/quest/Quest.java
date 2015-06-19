@@ -3047,4 +3047,9 @@ public class Quest extends AbstractScript implements IIdentifiable
 	{
 		getStartConditions().put(p -> (p.getClan() != null) && (p.getClan().getLevel() > clanLevel), html);
 	}
+	
+	public void onQuestAborted(PlayerInstance player)
+	{
+		
+	}
 }

@@ -61,7 +61,8 @@ public final class RequestQuestAbort implements IClientIncomingPacket
 			{
 				qs.exitQuest(true);
 				activeChar.sendPacket(new QuestList(activeChar));
-				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerQuestAbort(activeChar), activeChar, Containers.Players());
+				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerQuestAbort(activeChar, _questId), activeChar, Containers.Players());
+				qe.onQuestAborted(activeChar);
 			}
 		}
 	}
