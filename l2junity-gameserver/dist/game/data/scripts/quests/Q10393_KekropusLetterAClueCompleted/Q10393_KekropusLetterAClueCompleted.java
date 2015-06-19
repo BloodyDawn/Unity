@@ -32,6 +32,7 @@ import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerBypass
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLevelChanged;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerLogin;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerPressTutorialMark;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerQuestAbort;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
@@ -220,5 +221,16 @@ public final class Q10393_KekropusLetterAClueCompleted extends Quest
 		{
 			player.sendPacket(new TutorialShowQuestionMark(getId()));
 		}
+	}
+	
+	@RegisterEvent(EventType.ON_PLAYER_QUEST_ABORT)
+	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
+	public void OnPlayerQuestAbort(OnPlayerQuestAbort event)
+	{
+		final PlayerInstance player = event.getActiveChar();
+		final QuestState qs = getQuestState(player, true);
+		
+		qs.startQuest();
+		qs.setQuestLocation(NpcStringId.TOWN_OF_OREN);
 	}
 }

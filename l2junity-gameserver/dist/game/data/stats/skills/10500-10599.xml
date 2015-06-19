@@ -146,11 +146,22 @@
 		</for>
 	</skill>
 	<skill id="10507" levels="1" name="Death Clock">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- P. Atk. + 200. Also, when using Shadow Flash, triggers the Blind Spot effect that increases P. Atk., Critical Rate, Critical Damage, and Vital Spot Attack Rate. -->
 		<set name="icon" val="icon.skill10507" />
+		<set name="magicLvl" val="99" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff">
+				<add stat="pAtk" val="200" />
+			</effect>
+			<effect name="TriggerSkillBySkill">
+				<param castSkillId="10529" /> <!-- Shadow Flash -->
+				<param chance="100" />
+				<param skillId="10530" skillLevel="1" /> <!-- Blind Spot -->
+				<param targetType="SELF" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10508" levels="11" name="Blood Stab">
 		<!-- Strike's the enemy's unprotected back with 32401 Power and additionally inflicts bleed. Over-hit. Critical hit. Half-kill. Requires a dagger or dual dagger. -->

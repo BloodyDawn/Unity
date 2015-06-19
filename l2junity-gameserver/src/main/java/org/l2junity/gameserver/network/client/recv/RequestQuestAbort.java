@@ -20,6 +20,9 @@ package org.l2junity.gameserver.network.client.recv;
 
 import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.events.Containers;
+import org.l2junity.gameserver.model.events.EventDispatcher;
+import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerQuestAbort;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.network.client.L2GameClient;
@@ -58,6 +61,7 @@ public final class RequestQuestAbort implements IClientIncomingPacket
 			{
 				qs.exitQuest(true);
 				activeChar.sendPacket(new QuestList(activeChar));
+				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerQuestAbort(activeChar), activeChar, Containers.Players());
 			}
 		}
 	}

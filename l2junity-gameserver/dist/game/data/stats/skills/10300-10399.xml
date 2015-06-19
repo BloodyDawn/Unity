@@ -605,13 +605,25 @@
 			</effect>
 		</for>
 	</skill>
-	<skill id="10330" levels="4" name="Power Hammer Crush">
-		<!-- AUTO GENERATED SKILL -->
+	<skill id="10330" levels="7" name="Power Hammer Crush">
 		<!-- Attacks target with 18005 Power added to P. Atk. while ignoring 30% of their P. Def. Stuns for 5 sec. Requires a blunt weapon. Over-hit. Critical. -->
-		<table name="#mpConsumes"> 92 96 101 105 </table>
+		<table name="#magicLvl"> 85 90 95 99 101 103 105 </table>
+		<table name="#mpConsumes"> 92 96 101 105 109 113 117 </table>
+		<table name="#power"> 18005 22505 27005 30605 32405 34205 36005 </table>
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3" />
+		<set name="abnormalType" val="STUN" />
+		<set name="abnormalVisualEffect" val="STUN" />
+		<set name="activateRate" val="60" /> <!-- Guessed -->
+		<set name="basicProperty" val="CON" />
+		<set name="lvlBonusRate" val="1" />
+		<set name="trait" val="SHOCK" />
+		<set name="overHit" val="true" />
+		<set name="baseCritRate" val="15" />
+		<set name="magicLvl" val="#magicLvl" />
 		<set name="icon" val="icon.skill10330" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1500" />
@@ -619,6 +631,14 @@
 		<set name="reuseDelay" val="7000" />
 		<set name="effectPoint" val="-183" />
 		<set name="isDebuff" val="true" />
+		<cond msgId="113" addName="1">
+			<using kind="BLUNT" />
+		</cond>
+		<for>
+			<effect name="PhysicalAttack">
+				<param pDefMod="0.7" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="10331" levels="1" name="Last Man Standing">
 		<!-- AUTO GENERATED SKILL -->
