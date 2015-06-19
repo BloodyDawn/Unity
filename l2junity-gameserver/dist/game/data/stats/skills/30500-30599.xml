@@ -581,19 +581,17 @@
 	</skill>
 	<skill id="30521" levels="1" name="Damage Up">
 		<!-- Updated to Ertheia -->
-		<!-- Inflicts normal damage x 5. (including skill) -->
+		<!-- Inflicts normal damage x 5. -->
 		<set name="icon" val="icon.skill0000" />
-		<set name="abnormalTime" val="3" /> <!-- Unconfirmed -->
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<set name="hitTime" val="1000" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-100" />
 		<set name="reuseDelay" val="1000" />
 		<for>
-			<effect name="Buff">
-				<mul stat="damageUp" val="5" />
-				<mul stat="regularAttacksDmg" val="5" />
+			<effect name="PhysicalAttack">
+				<param pAtkMod="5" />
 			</effect>
 		</for>
 	</skill>
@@ -665,7 +663,7 @@
 				<param minDamage="1" />
 				<param chance="10" /> <!-- Unconfirmed -->
 				<param skillId="30521" skillLevel="1" /> <!-- Damage Up -->
-				<param targetType="SELF" />
+				<param targetType="ONE" />
 			</effect>
 		</for>
 	</skill>

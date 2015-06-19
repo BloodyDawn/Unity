@@ -42,6 +42,7 @@ import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
  */
 public final class PhysicalAttack extends AbstractEffect
 {
+	private final double _pAtkMod;
 	private final double _pDefMod;
 	private final double _stunnedMod;
 	
@@ -49,6 +50,7 @@ public final class PhysicalAttack extends AbstractEffect
 	{
 		super(attachCond, applyCond, set, params);
 		
+		_pAtkMod = params.getDouble("pAtkMod", 1.0);
 		_pDefMod = params.getDouble("pDefMod", 1.0);
 		_stunnedMod = params.getDouble("stunnedMod", 1.0);
 	}
@@ -171,7 +173,7 @@ public final class PhysicalAttack extends AbstractEffect
 		
 		// Add soulshot boost.
 		int ssBoost = ss ? 2 : 1;
-		damage = (damage * ssBoost) + skill.getPower(attacker, target, isPvP, isPvE);
+		damage = (damage * _pAtkMod * ssBoost) + skill.getPower(attacker, target, isPvP, isPvE);
 		damage = (70 * damage) / (defence * _pDefMod); // Calculate defence modifier.
 		damage *= Formulas.calcAttackTraitBonus(attacker, target); // Calculate Weapon resists
 		

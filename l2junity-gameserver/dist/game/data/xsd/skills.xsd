@@ -278,6 +278,7 @@
 				<xs:attribute type="xs:int" name="attackSkillId" use="optional" />
 				<xs:attribute type="xs:int" name="attackSkillLevel" use="optional" />
 				<xs:attribute type="xs:float" name="stunnedMod" use="optional" />
+				<xs:attribute type="xs:float" name="pAtkMod" use="optional" />
 				<xs:attribute type="xs:float" name="pDefMod" use="optional" />
 				<xs:attribute type="xs:string" name="flyType" use="optional" />
 				<xs:attribute type="xs:int" name="angle" use="optional" />
@@ -416,8 +417,6 @@
 			<xs:enumeration value="magicSuccRes" />
 			<xs:enumeration value="healPower" />
 			<xs:enumeration value="stormSignBonus" />
-			<xs:enumeration value="regularAttacksDmg" />
-			<xs:enumeration value="damageUp" />
 			<xs:enumeration value="damagedMaxRange" />
 			<xs:enumeration value="debuffedMaxRange" />
 			<xs:enumeration value="debuffBlock" />

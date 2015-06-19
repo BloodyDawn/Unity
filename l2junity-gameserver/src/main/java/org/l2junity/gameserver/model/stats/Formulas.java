@@ -786,9 +786,6 @@ public final class Formulas
 		
 		damage *= calcAttributeBonus(attacker, target, skill);
 		
-		// Increases the damage
-		damage = attacker.calcStat(Stats.DAMAGE_UP, damage);
-		
 		if (target.isAttackable())
 		{
 			final Weapon weapon = attacker.getActiveWeaponItem();

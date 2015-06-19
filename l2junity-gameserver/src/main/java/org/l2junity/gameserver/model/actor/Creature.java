@@ -1240,9 +1240,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// Calculate physical damages
 			damage1 = (int) Formulas.calcPhysDam(this, target, null, shld1, crit1, attack.hasSoulshot());
 			
-			// Normal attacks have normal damage x 5
-			damage1 = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage1);
-			
 			// Bows Ranged Damage Formula (Damage gradually decreases when 60% or lower than full hit range, and increases when 60% or higher).
 			// full hit range is 500 which is the base bow range, and the 60% of this is 800.
 			if (!crossbow)
@@ -1322,10 +1319,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			
 			// Calculate physical damages of hit 1
 			damage1 = (int) Formulas.calcPhysDam(this, target, null, shld1, crit1, attack.hasSoulshot());
-			
-			// Normal attacks have normal damage x 5
-			damage1 = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage1);
-			
 			damage1 /= 2;
 		}
 		
@@ -1340,10 +1333,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			
 			// Calculate physical damages of hit 2
 			damage2 = (int) Formulas.calcPhysDam(this, target, null, shld2, crit2, attack.hasSoulshot());
-			
-			// Normal attacks have normal damage x 5
-			damage2 = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage2);
-			
 			damage2 /= 2;
 		}
 		
@@ -1375,7 +1364,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					shld = Formulas.calcShldUse(this, surroundTarget);
 					crit = Formulas.calcCrit(getStat().getCriticalHit(surroundTarget, null), false, surroundTarget);
 					damage = (int) Formulas.calcPhysDam(this, surroundTarget, null, shld, crit, attack.hasSoulshot());
-					damage = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage);
 					damage /= 2;
 				}
 				
@@ -1396,7 +1384,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					shld = Formulas.calcShldUse(this, surroundTarget);
 					crit = Formulas.calcCrit(getStat().getCriticalHit(surroundTarget, null), false, surroundTarget);
 					damage = (int) Formulas.calcPhysDam(this, surroundTarget, null, shld, crit, attack.hasSoulshot());
-					damage = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage);
 					damage /= 2;
 				}
 				
@@ -1447,9 +1434,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			
 			// Calculate physical damages
 			damage1 = (int) Formulas.calcPhysDam(this, target, null, shld1, crit1, attack.hasSoulshot());
-			
-			// Normal attacks have normal damage x 5
-			damage1 = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage1);
 		}
 		
 		// Create a new hit task with Medium priority
@@ -1475,7 +1459,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					shld = Formulas.calcShldUse(this, surroundTarget);
 					crit = Formulas.calcCrit(getStat().getCriticalHit(surroundTarget, null), false, surroundTarget);
 					damage = (int) Formulas.calcPhysDam(this, surroundTarget, null, shld, crit, attack.hasSoulshot());
-					damage = (int) calcStat(Stats.REGULAR_ATTACKS_DMG, damage);
 				}
 				
 				ThreadPoolManager.getInstance().scheduleAi(new HitTask(this, surroundTarget, damage, crit, miss, attack.hasSoulshot(), shld), sAtk);
