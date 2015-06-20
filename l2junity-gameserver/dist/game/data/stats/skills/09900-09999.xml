@@ -306,12 +306,30 @@
 		</for>
 	</skill>
 	<skill id="9931" levels="1" name="Scroll of Escape: Town of Oren">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Return to the Town of Oren. -->
 		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1500" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeId" val="37114" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="magicLvl" val="1" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player canEscape="true" />
+				<not>
+					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="Teleport">
+				<param x="81013" y="56413" z="-1552" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="9932" levels="1" name="Scroll of Escape: Town of Oren">
 		<!-- AUTO GENERATED SKILL -->
@@ -652,12 +670,30 @@
 		</for>
 	</skill>
 	<skill id="9969" levels="1" name="Scroll of Escape: Sea of Spores">
-		<!-- AUTO GENERATED SKILL -->
 		<!-- Return to the Sea of Spores. -->
 		<set name="icon" val="icon.skill0000" />
-		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hitTime" val="1500" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeId" val="37027" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="magicLvl" val="1" />
+		<set name="operateType" val="A1" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<player canEscape="true" />
+				<not>
+					<player insideZoneId="10501, 10502, 10503, 10504, 10505, 10506, 10507, 10508" />
+				</not>
+			</and>
+		</cond>
+		<for>
+			<effect name="Teleport">
+				<param x="63990" y="26647" z="-3768" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="9970" levels="1" name="Scroll of Escape: Forsaken Plains">
 		<!-- AUTO GENERATED SKILL -->

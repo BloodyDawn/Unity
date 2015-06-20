@@ -217,6 +217,7 @@ import quests.Q10392_FailureAndItsConsequences.Q10392_FailureAndItsConsequences;
 import quests.Q10393_KekropusLetterAClueCompleted.Q10393_KekropusLetterAClueCompleted;
 import quests.Q10394_MutualBenefit.Q10394_MutualBenefit;
 import quests.Q10395_NotATraitor.Q10395_NotATraitor;
+import quests.Q10397_KekropusLetterASuspiciousBadge.Q10397_KekropusLetterASuspiciousBadge;
 import quests.Q10460_ReturnOfTheAlligatorHunter.Q10460_ReturnOfTheAlligatorHunter;
 import quests.Q10501_ZakenEmbroideredSoulCloak.Q10501_ZakenEmbroideredSoulCloak;
 import quests.Q10502_FreyaEmbroideredSoulCloak.Q10502_FreyaEmbroideredSoulCloak;
@@ -445,6 +446,7 @@ public class QuestMasterHandler
 		Q10393_KekropusLetterAClueCompleted.class,
 		Q10394_MutualBenefit.class,
 		Q10395_NotATraitor.class,
+		Q10397_KekropusLetterASuspiciousBadge.class,
 		Q10460_ReturnOfTheAlligatorHunter.class,
 		Q10501_ZakenEmbroideredSoulCloak.class,
 		Q10502_FreyaEmbroideredSoulCloak.class,

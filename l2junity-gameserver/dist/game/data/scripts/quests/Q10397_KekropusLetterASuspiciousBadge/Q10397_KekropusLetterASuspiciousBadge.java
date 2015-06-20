@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package quests.Q10393_KekropusLetterAClueCompleted;
+package quests.Q10397_KekropusLetterASuspiciousBadge;
 
 import org.l2junity.gameserver.enums.HtmlActionScope;
 import org.l2junity.gameserver.enums.Race;
@@ -42,32 +42,32 @@ import org.l2junity.gameserver.network.client.send.TutorialShowQuestionMark;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 /**
- * Kekropus' Letter: A Clue Completed (10393)
+ * Kekropus' Letter: A Suspicious Badge (10397)
  * @author St3eT
  */
-public final class Q10393_KekropusLetterAClueCompleted extends Quest
+public final class Q10397_KekropusLetterASuspiciousBadge extends Quest
 {
 	// NPCs
-	private static final int FLUTER = 30677;
-	private static final int KELIOS = 33862;
+	private static final int MOUEN = 30196;
+	private static final int ANDY = 33845;
 	private static final int INVISIBLE_NPC = 19543;
 	// Items
-	private static final int SOE_TOWN_OF_OREN = 37113; // Scroll of Escape: Town of Oren
-	private static final int SOE_OUTLAW_FOREST = 37026; // Scroll of Escape: Outlaw Forest
-	private static final int EAC = 952; // Scroll: Enchant Armor (C-grade)
+	private static final int SOE_TOWN_OF_OREN = 37114; // Scroll of Escape: Town of Oren
+	private static final int SOE_SEA_OF_SPORES = 37027; // Scroll of Escape: Sea of Spores //TODO: item + skill is not done
+	private static final int EWB = 947; // Scroll: Enchant Weapon (B-grade)
 	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	// Location
-	private static final Location TELEPORT_LOC = new Location(83676, 55510, -1512);
+	private static final Location TELEPORT_LOC = new Location(81013, 56413, -1552);
 	// Misc
-	private static final int MIN_LEVEL = 46;
-	private static final int MAX_LEVEL = 51;
+	private static final int MIN_LEVEL = 52;
+	private static final int MAX_LEVEL = 57;
 	
-	public Q10393_KekropusLetterAClueCompleted()
+	public Q10397_KekropusLetterASuspiciousBadge()
 	{
-		super(10393, Q10393_KekropusLetterAClueCompleted.class.getSimpleName(), "Kekropus' Letter: A Clue Completed");
-		addTalkId(FLUTER, KELIOS);
+		super(10397, Q10397_KekropusLetterASuspiciousBadge.class.getSimpleName(), "Kekropus' Letter: A Suspicious Badge");
+		addTalkId(MOUEN, ANDY);
 		addSeeCreatureId(INVISIBLE_NPC);
-		registerQuestItems(SOE_TOWN_OF_OREN, SOE_OUTLAW_FOREST);
+		registerQuestItems(SOE_TOWN_OF_OREN, SOE_SEA_OF_SPORES);
 		addCondNotRace(Race.ERTHEIA, "");
 		addCondLevel(MIN_LEVEL, MAX_LEVEL, "");
 	}
@@ -85,31 +85,33 @@ public final class Q10393_KekropusLetterAClueCompleted extends Quest
 		String htmltext = null;
 		switch (event)
 		{
-			case "30677-02.html":
+			case "30196-02.html":
 			{
 				htmltext = event;
 				break;
 			}
-			case "30677-03.html":
+			case "30196-03.html":
 			{
 				if (st.isCond(1))
 				{
+					st.setQuestLocation(NpcStringId.SEA_OF_SPORES_LV_52);
+					giveItems(player, SOE_SEA_OF_SPORES, 1);
 					st.setCond(2, true);
-					giveItems(player, SOE_OUTLAW_FOREST, 1);
-					st.setQuestLocation(NpcStringId.OUTLAW_FOREST_LV_46);
 					htmltext = event;
 				}
 				break;
 			}
-			case "33862-02.html":
+			case "33845-02.html":
 			{
 				if (st.isCond(2))
 				{
 					st.exitQuest(false, true);
-					giveItems(player, EAC, 4);
-					giveItems(player, STEEL_COIN, 15);
-					addExpAndSp(player, 483840, 116);
-					showOnScreenMsg(player, NpcStringId.GROW_STRONGER_HERE_UNTIL_YOU_RECEIVE_THE_NEXT_LETTER_FROM_KEKROPUS_AT_LV_52, ExShowScreenMessage.TOP_CENTER, 6000);
+					giveItems(player, EWB, 2);
+					giveItems(player, STEEL_COIN, 20);
+					if (player.getLevel() >= MIN_LEVEL)
+					{
+						addExpAndSp(player, 635_250, 152);
+					}
 					htmltext = event;
 				}
 				break;
@@ -131,16 +133,13 @@ public final class Q10393_KekropusLetterAClueCompleted extends Quest
 		
 		if (st.getState() == State.STARTED)
 		{
-			if (st.isCond(1))
+			if (st.isCond(1) && (npc.getId() == MOUEN))
 			{
-				if (npc.getId() == FLUTER)
-				{
-					htmltext = "30677-01.html";
-				}
+				htmltext = "30196-01.html";
 			}
 			else if (st.isCond(2))
 			{
-				htmltext = npc.getId() == FLUTER ? "30677-04.html" : "33862-01.html";
+				htmltext = npc.getId() == MOUEN ? "30196-04.html" : "33845-01.html";
 			}
 		}
 		return htmltext;
@@ -156,7 +155,7 @@ public final class Q10393_KekropusLetterAClueCompleted extends Quest
 			
 			if ((st != null) && st.isCond(2))
 			{
-				showOnScreenMsg(player, NpcStringId.OUTLAW_FOREST_IS_A_GOOD_HUNTING_ZONE_FOR_LV_46_OR_ABOVE, ExShowScreenMessage.TOP_CENTER, 6000);
+				showOnScreenMsg(player, NpcStringId.SEA_OF_SPORES_IS_A_GOOD_HUNTING_ZONE_FOR_LV_52_OR_ABOVE, ExShowScreenMessage.TOP_CENTER, 6000);
 			}
 		}
 		return super.onSeeCreature(npc, creature, isSummon);
@@ -201,7 +200,7 @@ public final class Q10393_KekropusLetterAClueCompleted extends Quest
 		final PlayerInstance player = event.getActiveChar();
 		final QuestState st = getQuestState(player, false);
 		
-		if (command.equals("Q10393_teleport") && (st != null) && st.isCond(1) && hasQuestItems(player, SOE_TOWN_OF_OREN))
+		if (command.equals("Q10397_teleport") && (st != null) && st.isCond(1) && hasQuestItems(player, SOE_TOWN_OF_OREN))
 		{
 			player.teleToLocation(TELEPORT_LOC);
 			takeItems(player, SOE_TOWN_OF_OREN, -1);
