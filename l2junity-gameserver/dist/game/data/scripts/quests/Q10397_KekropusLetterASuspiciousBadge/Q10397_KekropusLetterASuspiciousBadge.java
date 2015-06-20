@@ -53,7 +53,7 @@ public final class Q10397_KekropusLetterASuspiciousBadge extends Quest
 	private static final int INVISIBLE_NPC = 19543;
 	// Items
 	private static final int SOE_TOWN_OF_OREN = 37114; // Scroll of Escape: Town of Oren
-	private static final int SOE_SEA_OF_SPORES = 37027; // Scroll of Escape: Sea of Spores //TODO: item + skill is not done
+	private static final int SOE_SEA_OF_SPORES = 37027; // Scroll of Escape: Sea of Spores
 	private static final int EWB = 947; // Scroll: Enchant Weapon (B-grade)
 	private static final int STEEL_COIN = 37045; // Steel Door Guild Coin
 	// Location
