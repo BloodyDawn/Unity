@@ -513,7 +513,7 @@ public final class Formulas
 		final boolean isPvE = attacker.isPlayable() && target.isAttackable();
 		final double power = skill.getPower(isPvP, isPvE);
 		final double ssboost = ss ? 2 : 1;
-		final double proximityBonus = attacker.isBehindTarget() ? 1.2 : attacker.isInFrontOfTarget() ? 1 : 1.1; // Behind: +20% - Side: +10% (TODO: values are unconfirmed, possibly custom, remove or update when confirmed);
+		final double proximityBonus = attacker.isBehindTarget(true) ? 1.2 : attacker.isInFrontOfTarget() ? 1 : 1.1; // Behind: +20% - Side: +10% (TODO: values are unconfirmed, possibly custom, remove or update when confirmed);
 		double damage = 0;
 		double pvpBonus = 1;
 		
@@ -609,7 +609,7 @@ public final class Formulas
 		boolean isPvP = attacker.isPlayable() && target.isPlayer();
 		boolean isPvE = attacker.isPlayable() && target.isAttackable();
 		double damage = 0;
-		double proximityBonus = attacker.isBehindTarget() ? 1.2 : attacker.isInFrontOfTarget() ? 1 : 1.1; // Behind: +20% - Side: +10% (TODO: values are unconfirmed, possibly custom, remove or update when confirmed)
+		double proximityBonus = attacker.isBehindTarget(true) ? 1.2 : attacker.isInFrontOfTarget() ? 1 : 1.1; // Behind: +20% - Side: +10% (TODO: values are unconfirmed, possibly custom, remove or update when confirmed)
 		double ssboost = ss ? 2 : 1;
 		double pvpBonus = 1;
 		

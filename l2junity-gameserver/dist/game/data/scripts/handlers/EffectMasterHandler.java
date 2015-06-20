@@ -157,6 +157,7 @@ public final class EffectMasterHandler
 		Recovery.class,
 		Reeling.class,
 		RefuelAirship.class,
+		RegularAttack.class,
 		Relax.class,
 		ResetDebuff.class,
 		ResistSkill.class,

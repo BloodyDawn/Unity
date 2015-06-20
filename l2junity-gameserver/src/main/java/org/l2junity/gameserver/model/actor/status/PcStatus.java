@@ -269,7 +269,8 @@ public class PcStatus extends PlayableStatus
 		
 		if (value > 0)
 		{
-			value = getCurrentHp() - value;
+			final double hpLockMin = getActiveChar().calcStat(Stats.HP_LOCK_MIN, 0);
+			value = Math.max(getCurrentHp() - value, hpLockMin);
 			if (value <= 0)
 			{
 				if (getActiveChar().isInDuel())

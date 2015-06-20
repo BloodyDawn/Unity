@@ -73,6 +73,6 @@ public class OnCreatureSkillFinishCast implements IBaseEvent
 	@Override
 	public EventType getType()
 	{
-		return EventType.ON_CREATURE_SKILL_USE;
+		return EventType.ON_CREATURE_SKILL_FINISH_CAST;
 	}
 }

@@ -49,7 +49,8 @@ public enum EffectFlag
 	FIRE_STANCE,
 	WATER_STANCE,
 	WIND_STANCE,
-	EARTH_STANCE;
+	EARTH_STANCE,
+	ATTACK_BEHIND;
 	
 	public int getMask()
 	{

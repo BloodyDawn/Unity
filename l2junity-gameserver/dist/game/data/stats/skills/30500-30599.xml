@@ -70,7 +70,7 @@
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="KNOCK_DOWN" />
 		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
-		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="activateRate" val="100" /> <!-- Guessed -->
 		<set name="castRange" val="40" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-709" />
@@ -159,6 +159,10 @@
 		<table name="#mpConsumes"> 149 150 151 151 152 153 155 157 159 161 </table>
 		<table name="#power"> 17266 19164 21530 24475 28150 32755 38563 39823 41083 42343 </table>
 		<set name="icon" val="icon.skill30505" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="1" />
+		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="affectRange" val="200" />
 		<set name="baseCritRate" val="15" /> <!-- Unconfirmed -->
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="-687" />
@@ -166,19 +170,20 @@
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="#magicLevel" />
 		<set name="mpConsume" val="#mpConsumes" />
-		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="overHit" val="true" /> <!-- Unconfirmed -->
+		<set name="trait" val="PULL" />
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="30000" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="AURA" />
 		<set name="isDebuff" val="true" />
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
 		<for>
 			<effect name="PhysicalAttack" />
-			<!-- TODO: causing target to tumble toward you -->
+			<effect name="PullBack">
+				<param type="THROW_UP" speed="333" animationSpeed="333" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="30506" levels="14" name="Distant Kick">
@@ -192,20 +197,21 @@
 		<set name="abnormalType" val="KNOCK_BACK" />
 		<set name="abnormalTime" val="2" />
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
+		<set name="affectRange" val="200" />
 		<set name="baseCritRate" val="15" /> <!-- Unconfirmed -->
 		<set name="castRange" val="80" />
 		<set name="coolTime" val="1000" />
 		<set name="effectPoint" val="-687" />
 		<set name="effectRange" val="400" /> <!-- Unconfirmed -->
+		<set name="fanRange" val="0,0,200,90" />
 		<set name="hitTime" val="2000" />
 		<set name="magicLvl" val="#magicLevel" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="overHit" val="true" /> <!-- Unconfirmed -->
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="30000" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="FRONT_AREA" />
 		<set name="isDebuff" val="true" />
 		<set name="trait" val="KNOCKBACK" />
 		<cond msgId="113" addName="1">
@@ -214,7 +220,7 @@
 		<for>
 			<effect name="PhysicalAttack" />
 			<effect name="KnockBack">
-				<param distance="200" />
+				<param type="THROW_UP" distance="200" animationSpeed="333" />
 			</effect>
 		</for>
 	</skill>
@@ -230,7 +236,7 @@
 		<set name="activateRate" val="80" /> <!-- Unconfirmed -->
 		<set name="effectPoint" val="-687" />
 		<set name="effectRange" val="900" /> <!-- Unconfirmed -->
-		<set name="operateType" val="A1" />
+		<set name="operateType" val="A2" /> <!-- A1 in client? -->
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
@@ -247,10 +253,11 @@
 			<effect name="FlyMove">
 				<param flyType="CHARGE" />
 				<param angle="270" /> <!-- Left -->
+				<param animationSpeed="333" />
 			</effect>
 			<effect name="Stun" />
 			<effect name="TargetCancel">
-				<param chance="40" /> <!-- Unconfirmed -->
+				<param chance="100" /> <!-- Unconfirmed -->
 			</effect>
 		</for>
 	</skill>
@@ -263,7 +270,7 @@
 		<set name="abnormalTime" val="5" />
 		<set name="effectPoint" val="-687" />
 		<set name="effectRange" val="900" /> <!-- Unconfirmed -->
-		<set name="operateType" val="A1" />
+		<set name="operateType" val="A2" /> <!-- A1 in client? -->
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="nextActionAttack" val="true" />
@@ -279,12 +286,13 @@
 			<effect name="FlyMove">
 				<param flyType="CHARGE" />
 				<param angle="90" /> <!-- Right -->
+				<param animationSpeed="333" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param FIST="#fistDecrease" />
 			</effect>
 			<effect name="TargetCancel">
-				<param chance="40" /> <!-- Unconfirmed -->
+				<param chance="100" /> <!-- Unconfirmed -->
 			</effect>
 		</for>
 	</skill>
@@ -298,10 +306,8 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="NONE" />
-		<set name="flyCourse" val="0" /> <!-- Teleport to Back -->
-		<set name="flyRadius" val="150" /> <!-- Guessed by CastRange -->
-		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="operateType" val="DA2" />
+		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="100" />
@@ -311,15 +317,23 @@
 			<using kind="DUALFIST" />
 		</cond>
 		<for>
-			<effect name="Blink" />
-			<effect name="Untargetable" />
-			<effect name="Buff">
-				<mul stat="pAtk" val="#pAtk" />
+			<effect name="FlyMove">
+				<param flyType="CHARGE" />
+				<param range="280" />
+				<param angle="180" /> <!-- Your back -->
+				<param selfPos="false" />
+				<param animationSpeed="333" />
 			</effect>
+			<effect name="Untargetable" />
 			<effect name="AttackTrait">
 				<param KNOCKDOWN="#knockdown" />
 			</effect>
 		</for>
+		<selfEffects>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+		</selfEffects>
 	</skill>
 	<skill id="30510" levels="1" name="Infighter">
 		<!-- Updated to Ertheia -->
@@ -328,6 +342,10 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
+			<effect name="TriggerSkillBySkill"> <!-- Check if is on skill cast or skill casted. -->
+				<param skillId="30532" skillLevel="1" /> <!-- Inside Position -->
+				<param castSkillId="30507" /> <!-- Left Sidestep -->
+			</effect>
 			<effect name="TriggerSkillBySkill"> <!-- Check if is on skill cast or skill casted. -->
 				<param skillId="30532" skillLevel="1" /> <!-- Inside Position -->
 				<param castSkillId="30508" /> <!-- Right Sidestep -->
@@ -362,11 +380,12 @@
 		</for>
 	</skill>
 	<skill id="30512" levels="3" name="Distortion">
-
-		<!-- TODO: Auto level parse, Requires manual update -->
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- For 60 sec., distorts space to attack from behind. Requires a fist weapon. -->
 		<set name="icon" val="icon.skill30512" />
+		<table name="#abnormalLvls"> 1 2 3 </table>
+		<table name="#attack"> 1.05 1.10 1.15 </table>
+		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="60" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
@@ -378,6 +397,16 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
+		<for>
+			<effect name="Buff">
+				<mul stat="pAtk" val="#attack" />
+				<mul stat="cAtk" val="#attack" />
+				<mul stat="physicalSkillPower" val="#attack" />
+			</effect>
+			<effect name="EffectFlag">
+				<param effectFlag="ATTACK_BEHIND" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="30514" levels="3" name="Fluid Weave">
 		<!-- Updated to IO -->
@@ -432,8 +461,8 @@
 		</cond>
 		<for>
 			<effect name="Buff">
-				<set stat="damagedMaxRange" val="150" /> <!-- Unconfirmed -->
-				<set stat="debuffedMaxRange" val="150" /> <!-- Unconfirmed -->
+				<set stat="damagedMaxRange" val="150" />
+				<set stat="debuffedMaxRange" val="150" />
 			</effect>
 		</for>
 	</skill>
@@ -445,6 +474,7 @@
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="INVINCIBILITY" />
 		<set name="abnormalVisualEffect" val="INVINCIBILITY" />
+		<set name="canCastWhileDisabled" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="removedOnAnyActionExceptMove" val="true" />
 		<set name="targetType" val="SELF" />
@@ -455,7 +485,7 @@
 		<for>
 			<effect name="Invincible" />
 			<effect name="DispelByCategory">
-				<param slot="debuff" rate="100" max="99" /> <!-- Since there is no way to get max debuffs, use 99. -->
+				<param slot="debuff" rate="100" max="99" />
 			</effect>
 		</for>
 	</skill>
@@ -497,11 +527,12 @@
 		<set name="abnormalTime" val="1" /> <!-- Unconfirmed -->
 		<set name="abnormalType" val="KNOCK_DOWN" />
 		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
-		<set name="activateRate" val="60" /> <!-- Guessed -->
+		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="basicProperty" val="CON" />
 		<set name="affectRange" val="300" /> <!-- Unconfirmed -->
 		<set name="effectPoint" val="-687" />
 		<set name="operateType" val="A2" />
+		<set name="power" val="#power" />
 		<set name="targetType" val="AURA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="2500" />
@@ -563,11 +594,8 @@
 				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="cAtk" val="#cAtk" />
 				<mul stat="cAtkSkill" val="#cAtkSkill" />
+				<set stat="hpLockMin" val="1" />
 				<mul stat="regularAttacksDmg" val="5" />
-				<set stat="hpLock" val="1" />
-			</effect>
-			<effect name="SetHp"> <!-- This effect is needed because hpLock updates when HP changes. -->
-				<param amount="1" />
 			</effect>
 			<effect name="DefenceTrait">
 				<param KNOCKDOWN="90" KNOCKBACK="90" PULL="90" AERIAL_YOKE="90" AGGRESSION="90" />
@@ -590,7 +618,7 @@
 		<set name="effectPoint" val="-100" />
 		<set name="reuseDelay" val="1000" />
 		<for>
-			<effect name="PhysicalAttack">
+			<effect name="RegularAttack">
 				<param pAtkMod="5" />
 			</effect>
 		</for>
@@ -661,7 +689,7 @@
 		<for>
 			<effect name="TriggerSkillByAttack">
 				<param minDamage="1" />
-				<param chance="10" /> <!-- Unconfirmed -->
+				<param chance="13" />
 				<param skillId="30521" skillLevel="1" /> <!-- Damage Up -->
 				<param targetType="ONE" />
 			</effect>
@@ -702,15 +730,16 @@
 		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="Debuff">
-				<set stat="runSpd" val="0" /> <!-- Set speed to 1 :) -->
-				<!-- TODO: Some other effects -->
+				<set order="80" stat="runSpd" val="1" /> <!-- Set speed to 1 :) -->
+				<mul stat="pAtkSpd" val="0.70" />
+				<mul stat="mAtkSpd" val="0.70" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="30532" levels="3" name="Inside Position">
 		<!-- Updated to IO -->
 		<!-- Increases P. Critical Rate by 10. -->
-		<table name="#triggeredLevel"> 2 3 0 </table>
+		<table name="#triggeredLevel"> 2 3 3 </table>
 		<table name="#rCrit"> 10 20 40 </table>
 		<table name="#cAtk"> 1 1 1.20 </table>
 		<table name="#rCritSkill"> 1.10 1.20 1.40 </table>
@@ -724,12 +753,18 @@
 		<set name="effectPoint" val="2" />
 		<set name="isMagic" val="4" />
 		<for>
-			<effect name="TriggerSkillBySkill"> <!-- Check if is on skill cast or skill casted. -->
-				<param skillId="30532" skillLevel="#triggeredLevel" /> <!-- Inside Position -->
-				<param castSkillId="30508" /> <!-- Right Sidestep -->
+			<effect name="Buff">
 				<add stat="rCrit" val="#rCrit" />
 				<mul stat="cAtk" val="#cAtk" />
 				<!-- TODO P. Skill Critical Rate and P. Skill Critical Damage -->
+			</effect>
+			<effect name="TriggerSkillBySkill"> <!-- Check if is on skill cast or skill casted. -->
+				<param skillId="30532" skillLevel="#triggeredLevel" /> <!-- Inside Position -->
+				<param castSkillId="30507" /> <!-- Left Sidestep -->
+			</effect>
+			<effect name="TriggerSkillBySkill"> <!-- Check if is on skill cast or skill casted. -->
+				<param skillId="30532" skillLevel="#triggeredLevel" /> <!-- Inside Position -->
+				<param castSkillId="30508" /> <!-- Right Sidestep -->
 			</effect>
 		</for>
 	</skill>
@@ -904,7 +939,7 @@
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="KNOCK_DOWN" />
 		<set name="abnormalVisualEffect" val="KNOCK_DOWN" />
-		<set name="activateRate" val="60" /> <!-- Guessed -->
+		<set name="activateRate" val="80" /> <!-- Guessed -->
 		<set name="basicProperty" val="CON" />
 		<set name="flyType" val="CHARGE" /> <!-- Guessed -->		
 		<set name="nextActionAttack" val="true" />

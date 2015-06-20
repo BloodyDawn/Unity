@@ -146,7 +146,7 @@ public final class HitConditionBonusData implements IXmlReader
 		}
 		
 		// Get side bonus
-		if (attacker.isBehindTarget())
+		if (attacker.isBehindTarget(true))
 		{
 			mod += backBonus;
 		}

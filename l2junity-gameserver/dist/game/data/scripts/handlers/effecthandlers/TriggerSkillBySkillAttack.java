@@ -64,7 +64,7 @@ public final class TriggerSkillBySkillAttack extends AbstractEffect
 		super(attachCond, applyCond, set, params);
 		
 		_minAttackerLevel = params.getInt("minAttackerLevel", 1);
-		_maxAttackerLevel = params.getInt("maxAttackerLevel", 100);
+		_maxAttackerLevel = params.getInt("maxAttackerLevel", 127);
 		_minDamage = params.getInt("minDamage", 1);
 		_chance = params.getInt("chance", 100);
 		_skill = new SkillHolder(params.getInt("skillId"), params.getInt("skillLevel", 1));
@@ -76,7 +76,7 @@ public final class TriggerSkillBySkillAttack extends AbstractEffect
 	
 	public void onAttackEvent(OnCreatureDamageDealt event)
 	{
-		if (event.isDamageOverTime() || (_chance == 0) || ((_skill.getSkillId() == 0) || (_skill.getSkillLvl() == 0)) || _attackSkill.getSkillId() == 0)
+		if (event.isDamageOverTime() || (_chance == 0) || ((_skill.getSkillId() == 0) || (_skill.getSkillLvl() == 0)) || (_attackSkill.getSkillId() == 0))
 		{
 			return;
 		}
