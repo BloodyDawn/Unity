@@ -19,6 +19,7 @@
 package org.l2junity.gameserver.network.client.recv;
 
 import org.l2junity.Config;
+import org.l2junity.gameserver.enums.CharacterDeleteFailType;
 import org.l2junity.gameserver.model.CharSelectInfoPackage;
 import org.l2junity.gameserver.model.events.Containers;
 import org.l2junity.gameserver.model.events.EventDispatcher;
@@ -50,7 +51,7 @@ public final class CharacterDelete implements IClientIncomingPacket
 	{
 		if (!client.getFloodProtectors().getCharacterSelect().tryPerformAction("CharacterDelete"))
 		{
-			client.sendPacket(new CharDeleteFail(CharDeleteFail.REASON_DELETION_FAILED));
+			client.sendPacket(new CharDeleteFail(CharacterDeleteFailType.UNKNOWN));
 			return;
 		}
 		
@@ -61,23 +62,16 @@ public final class CharacterDelete implements IClientIncomingPacket
 		
 		try
 		{
-			byte answer = client.markToDeleteChar(_charSlot);
-			
-			switch (answer)
+			final CharacterDeleteFailType failType = client.markToDeleteChar(_charSlot);
+			switch (failType)
 			{
-				default:
-				case -1: // Error
-					break;
-				case 0: // Success!
+				case NONE:// Success!
 					client.sendPacket(new CharDeleteSuccess());
 					final CharSelectInfoPackage charInfo = client.getCharSelection(_charSlot);
 					EventDispatcher.getInstance().notifyEvent(new OnPlayerDelete(charInfo.getObjectId(), charInfo.getName(), client), Containers.Players());
 					break;
-				case 1:
-					client.sendPacket(new CharDeleteFail(CharDeleteFail.REASON_YOU_MAY_NOT_DELETE_CLAN_MEMBER));
-					break;
-				case 2:
-					client.sendPacket(new CharDeleteFail(CharDeleteFail.REASON_CLAN_LEADERS_MAY_NOT_BE_DELETED));
+				default:
+					client.sendPacket(new CharDeleteFail(failType));
 					break;
 			}
 		}

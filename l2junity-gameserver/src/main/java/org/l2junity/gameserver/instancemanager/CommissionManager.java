@@ -448,6 +448,15 @@ public final class CommissionManager
 	}
 	
 	/**
+	 * @param objectId
+	 * @return {@code true} if player with the objectId has commission items, {@code false} otherwise
+	 */
+	public boolean hasCommissionItems(int objectId)
+	{
+		return _commissionItems.values().stream().anyMatch(item -> item.getItemInstance().getObjectId() == objectId);
+	}
+	
+	/**
 	 * Checks if the player is allowed to interact with commission manager.
 	 * @param player the player
 	 * @return {@code true} if the player is allowed to interact, {@code false} otherwise

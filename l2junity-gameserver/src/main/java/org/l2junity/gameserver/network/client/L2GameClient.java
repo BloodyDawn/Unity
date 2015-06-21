@@ -25,7 +25,7 @@ import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.concurrent.Future;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ScheduledFuture;
@@ -39,7 +39,11 @@ import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.sql.impl.CharNameTable;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.data.xml.impl.SecondaryAuthData;
+import org.l2junity.gameserver.enums.CharacterDeleteFailType;
 import org.l2junity.gameserver.instancemanager.AntiFeedManager;
+import org.l2junity.gameserver.instancemanager.CommissionManager;
+import org.l2junity.gameserver.instancemanager.MailManager;
+import org.l2junity.gameserver.instancemanager.MentorManager;
 import org.l2junity.gameserver.model.CharSelectInfoPackage;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.World;
@@ -279,68 +283,68 @@ public final class L2GameClient extends ChannelInboundHandler<L2GameClient>
 	 * @param charslot
 	 * @return a byte: <li>-1: Error: No char was found for such charslot, caught exception, etc... <li>0: character is not member of any clan, proceed with deletion <li>1: character is member of a clan, but not clan leader <li>2: character is clan leader
 	 */
-	public byte markToDeleteChar(int charslot)
+	public CharacterDeleteFailType markToDeleteChar(int charslot)
 	{
-		int objid = getObjectIdForSlot(charslot);
-		
-		if (objid < 0)
+		final int objectId = getObjectIdForSlot(charslot);
+		if (objectId < 0)
 		{
-			return -1;
+			return CharacterDeleteFailType.UNKNOWN;
 		}
 		
-		try (Connection con = DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("SELECT clanId FROM characters WHERE charId=?"))
+		if (MentorManager.getInstance().isMentor(objectId))
 		{
-			statement.setInt(1, objid);
-			byte answer = 0;
-			try (ResultSet rs = statement.executeQuery())
+			return CharacterDeleteFailType.MENTOR;
+		}
+		else if (MentorManager.getInstance().isMentee(objectId))
+		{
+			return CharacterDeleteFailType.MENTEE;
+		}
+		else if (CommissionManager.getInstance().hasCommissionItems(objectId))
+		{
+			return CharacterDeleteFailType.COMMISSION;
+		}
+		else if (MailManager.getInstance().getMailsInProgress(objectId) > 0)
+		{
+			return CharacterDeleteFailType.MAIL;
+		}
+		else
+		{
+			final int clanId = CharNameTable.getInstance().getClassIdById(objectId);
+			if (clanId > 0)
 			{
-				int clanId = rs.next() ? rs.getInt(1) : 0;
-				if (clanId != 0)
+				final L2Clan clan = ClanTable.getInstance().getClan(clanId);
+				if (clan != null)
 				{
-					L2Clan clan = ClanTable.getInstance().getClan(clanId);
-					
-					if (clan == null)
+					if (clan.getLeaderId() == objectId)
 					{
-						answer = 0; // jeezes!
+						return CharacterDeleteFailType.PLEDGE_MASTER;
 					}
-					else if (clan.getLeaderId() == objid)
-					{
-						answer = 2;
-					}
-					else
-					{
-						answer = 1;
-					}
-				}
-				
-				// Setting delete time
-				if (answer == 0)
-				{
-					if (Config.DELETE_DAYS == 0)
-					{
-						deleteCharByObjId(objid);
-					}
-					else
-					{
-						try (PreparedStatement ps2 = con.prepareStatement("UPDATE characters SET deletetime=? WHERE charId=?"))
-						{
-							ps2.setLong(1, System.currentTimeMillis() + (Config.DELETE_DAYS * 86400000L)); // 24*60*60*1000 = 86400000
-							ps2.setInt(2, objid);
-							ps2.execute();
-						}
-					}
-					
-					_logAccounting.info("Delete, {}, {}", objid, this);
+					return CharacterDeleteFailType.PLEDGE_MEMBER;
 				}
 			}
-			return answer;
 		}
-		catch (Exception e)
+		
+		if (Config.DELETE_DAYS == 0)
 		{
-			_log.error("Error updating delete time of character.", e);
-			return -1;
+			deleteCharByObjId(objectId);
 		}
+		else
+		{
+			try (Connection con = DatabaseFactory.getInstance().getConnection();
+				PreparedStatement ps2 = con.prepareStatement("UPDATE characters SET deletetime=? WHERE charId=?"))
+			{
+				ps2.setLong(1, System.currentTimeMillis() + (Config.DELETE_DAYS * 86400000L)); // 24*60*60*1000 = 86400000
+				ps2.setInt(2, objectId);
+				ps2.execute();
+			}
+			catch (SQLException e)
+			{
+				_log.warn("Failed to update char delete time: ", e);
+			}
+		}
+		
+		_logAccounting.info("Delete, {}, {}", objectId, this);
+		return CharacterDeleteFailType.NONE;
 	}
 	
 	/**

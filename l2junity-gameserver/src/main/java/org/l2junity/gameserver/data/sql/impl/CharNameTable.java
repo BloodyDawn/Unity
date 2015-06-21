@@ -262,6 +262,27 @@ public class CharNameTable
 		return 0;
 	}
 	
+	public int getClanIdById(int objectId)
+	{
+		try (Connection con = DatabaseFactory.getInstance().getConnection();
+			PreparedStatement ps = con.prepareStatement("SELECT clanId FROM characters WHERE charId = ?"))
+		{
+			ps.setInt(1, objectId);
+			try (ResultSet rset = ps.executeQuery())
+			{
+				while (rset.next())
+				{
+					return rset.getInt(1);
+				}
+			}
+		}
+		catch (SQLException e)
+		{
+			_log.warn("Couldn't retrieve clan for id: {}" + e.getMessage(), e);
+		}
+		return 0;
+	}
+	
 	private void loadAll()
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();

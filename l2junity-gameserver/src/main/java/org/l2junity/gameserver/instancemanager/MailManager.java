@@ -31,6 +31,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.DatabaseFactory;
 import org.l2junity.gameserver.ThreadPoolManager;
+import org.l2junity.gameserver.enums.MailType;
 import org.l2junity.gameserver.idfactory.IdFactory;
 import org.l2junity.gameserver.instancemanager.tasks.MessageDeletionTask;
 import org.l2junity.gameserver.model.World;
@@ -156,6 +157,26 @@ public final class MailManager
 	public final long getUnreadCount(PlayerInstance player)
 	{
 		return getInbox(player.getObjectId()).stream().filter(Message::isUnread).count();
+	}
+	
+	public int getMailsInProgress(int objectId)
+	{
+		int count = 0;
+		for (Message msg : getMessages())
+		{
+			if ((msg != null) && (msg.getMailType() == MailType.REGULAR))
+			{
+				if ((msg.getReceiverId() == objectId) && !msg.isDeletedByReceiver() && !msg.isReturned() && msg.hasAttachments())
+				{
+					count++;
+				}
+				else if ((msg.getSenderId() == objectId) && !msg.isDeletedBySender() && !msg.isReturned() && msg.hasAttachments())
+				{
+					count++;
+				}
+			}
+		}
+		return count;
 	}
 	
 	public final List<Message> getOutbox(int objectId)
