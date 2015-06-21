@@ -51,20 +51,6 @@ public final class EtcItem extends L2Item
 	{
 		super.set(set);
 		_type = set.getEnum("etcitem_type", EtcItemType.class, EtcItemType.NONE);
-		
-		// l2j custom - L2EtcItemType.SHOT
-		switch (getDefaultAction())
-		{
-			case SOULSHOT:
-			case SUMMON_SOULSHOT:
-			case SUMMON_SPIRITSHOT:
-			case SPIRITSHOT:
-			{
-				_type = EtcItemType.SHOT;
-				break;
-			}
-		}
-		
 		_type1 = L2Item.TYPE1_ITEM_QUESTITEM_ADENA;
 		_type2 = L2Item.TYPE2_OTHER; // default is other
 		

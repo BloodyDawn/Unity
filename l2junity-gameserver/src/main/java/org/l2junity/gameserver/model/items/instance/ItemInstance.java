@@ -2024,14 +2024,9 @@ public final class ItemInstance extends WorldObject
 		return enchant;
 	}
 	
-	public int getDefaultEnchantLevel()
-	{
-		return _item.getDefaultEnchantLevel();
-	}
-	
 	public boolean hasPassiveSkills()
 	{
-		return (getItemType() == EtcItemType.RUNE) && (getItemLocation() == ItemLocation.INVENTORY) && (getOwnerId() > 0) && getItem().hasSkills();
+		return (getItemType() == EtcItemType.ENCHT_ATTR_RUNE) && (getItemLocation() == ItemLocation.INVENTORY) && (getOwnerId() > 0) && getItem().hasSkills();
 	}
 	
 	public void giveSkillsToOwner()

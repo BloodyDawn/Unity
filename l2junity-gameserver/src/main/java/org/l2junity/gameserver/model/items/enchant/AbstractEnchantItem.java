@@ -38,14 +38,14 @@ public abstract class AbstractEnchantItem
 	
 	private static final ItemType[] ENCHANT_TYPES = new ItemType[]
 	{
-		EtcItemType.ANCIENT_CRYSTAL_ENCHANT_AM,
-		EtcItemType.ANCIENT_CRYSTAL_ENCHANT_WP,
-		EtcItemType.BLESS_SCRL_ENCHANT_AM,
-		EtcItemType.BLESS_SCRL_ENCHANT_WP,
-		EtcItemType.SCRL_ENCHANT_AM,
-		EtcItemType.SCRL_ENCHANT_WP,
-		EtcItemType.SCRL_INC_ENCHANT_PROP_AM,
-		EtcItemType.SCRL_INC_ENCHANT_PROP_WP,
+		EtcItemType.ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_AM,
+		EtcItemType.ENCHT_ATTR_ANCIENT_CRYSTAL_ENCHANT_WP,
+		EtcItemType.BLESS_ENCHT_AM,
+		EtcItemType.BLESS_ENCHT_WP,
+		EtcItemType.ENCHT_AM,
+		EtcItemType.ENCHT_WP,
+		EtcItemType.ENCHT_ATTR_INC_PROP_ENCHT_AM,
+		EtcItemType.ENCHT_ATTR_INC_PROP_ENCHT_WP,
 	};
 	
 	private final int _id;

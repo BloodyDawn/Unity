@@ -125,7 +125,7 @@ public class ShortCuts implements IRestorable
 		{
 			ItemInstance item = _owner.getInventory().getItemByObjectId(old.getId());
 			
-			if ((item != null) && (item.getItemType() == EtcItemType.SHOT))
+			if ((item != null) && (item.getItemType() == EtcItemType.SOULSHOT))
 			{
 				if (_owner.removeAutoSoulShot(item.getId()))
 				{

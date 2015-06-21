@@ -31,7 +31,7 @@ public final class EnchantSupportItem extends AbstractEnchantItem
 	public EnchantSupportItem(StatsSet set)
 	{
 		super(set);
-		_isWeapon = getItem().getItemType() == EtcItemType.SCRL_INC_ENCHANT_PROP_WP;
+		_isWeapon = getItem().getItemType() == EtcItemType.ENCHT_ATTR_INC_PROP_ENCHT_WP;
 	}
 	
 	@Override
