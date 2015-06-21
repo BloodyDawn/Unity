@@ -109,8 +109,8 @@ public class CharNameTable
 			{
 				while (rs.next())
 				{
-					id = rs.getInt(1);
-					accessLevel = rs.getInt(2);
+					id = rs.getInt("charId");
+					accessLevel = rs.getInt("accesslevel");
 				}
 			}
 		}
@@ -155,9 +155,9 @@ public class CharNameTable
 			{
 				if (rset.next())
 				{
-					name = rset.getString(1);
+					name = rset.getString("char_name");
 					_chars.put(id, name);
-					_accessLevels.put(id, rset.getInt(2));
+					_accessLevels.put(id, rset.getInt("accesslevel"));
 					return name;
 				}
 			}
@@ -182,14 +182,17 @@ public class CharNameTable
 	
 	public synchronized boolean doesCharNameExist(String name)
 	{
-		boolean result = true;
+		boolean result = false;
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
-			PreparedStatement ps = con.prepareStatement("SELECT account_name FROM characters WHERE char_name=?"))
+			PreparedStatement ps = con.prepareStatement("SELECT COUNT(*) as count FROM characters WHERE char_name=?"))
 		{
 			ps.setString(1, name);
 			try (ResultSet rs = ps.executeQuery())
 			{
-				result = rs.next();
+				if (rs.next())
+				{
+					result = rs.getInt("count") > 0;
+				}
 			}
 		}
 		catch (SQLException e)
@@ -202,14 +205,14 @@ public class CharNameTable
 	public int getAccountCharacterCount(String account)
 	{
 		try (Connection con = DatabaseFactory.getInstance().getConnection();
-			PreparedStatement ps = con.prepareStatement("SELECT COUNT(char_name) FROM characters WHERE account_name=?"))
+			PreparedStatement ps = con.prepareStatement("SELECT COUNT(char_name) as count FROM characters WHERE account_name=?"))
 		{
 			ps.setString(1, account);
 			try (ResultSet rset = ps.executeQuery())
 			{
-				while (rset.next())
+				if (rset.next())
 				{
-					return rset.getInt(1);
+					return rset.getInt("count");
 				}
 			}
 		}
@@ -228,9 +231,9 @@ public class CharNameTable
 			ps.setInt(1, objectId);
 			try (ResultSet rset = ps.executeQuery())
 			{
-				while (rset.next())
+				if (rset.next())
 				{
-					return rset.getInt(1);
+					return rset.getInt("level");
 				}
 			}
 		}
@@ -249,9 +252,9 @@ public class CharNameTable
 			ps.setInt(1, objectId);
 			try (ResultSet rset = ps.executeQuery())
 			{
-				while (rset.next())
+				if (rset.next())
 				{
-					return rset.getInt(1);
+					return rset.getInt("classid");
 				}
 			}
 		}
@@ -272,7 +275,7 @@ public class CharNameTable
 			{
 				while (rset.next())
 				{
-					return rset.getInt(1);
+					return rset.getInt("clanId");
 				}
 			}
 		}
@@ -291,9 +294,9 @@ public class CharNameTable
 		{
 			while (rs.next())
 			{
-				final int id = rs.getInt(1);
-				_chars.put(id, rs.getString(2));
-				_accessLevels.put(id, rs.getInt(3));
+				final int id = rs.getInt("charId");
+				_chars.put(id, rs.getString("char_name"));
+				_accessLevels.put(id, rs.getInt("accesslevel"));
 			}
 		}
 		catch (SQLException e)
