@@ -112,7 +112,7 @@ public class FuncEnchant extends AbstractFunction
 				case S:
 					if (item.getWeaponItem().getBodyPart() == L2Item.SLOT_LR_HAND)
 					{
-						if ((type == WeaponType.BOW) || (type == WeaponType.CROSSBOW))
+						if (item.getWeaponItem().isBowOrCrossBow())
 						{
 							// P. Atk. increases by 10 for bows.
 							// Starting at +4, P. Atk. bonus double.
@@ -135,7 +135,7 @@ public class FuncEnchant extends AbstractFunction
 				case A:
 					if (item.getWeaponItem().getBodyPart() == L2Item.SLOT_LR_HAND)
 					{
-						if ((type == WeaponType.BOW) || (type == WeaponType.CROSSBOW))
+						if (item.getWeaponItem().isBowOrCrossBow())
 						{
 							// P. Atk. increases by 8 for bows.
 							// Starting at +4, P. Atk. bonus double.
@@ -159,7 +159,7 @@ public class FuncEnchant extends AbstractFunction
 				case C:
 					if (item.getWeaponItem().getBodyPart() == L2Item.SLOT_LR_HAND)
 					{
-						if ((type == WeaponType.BOW) || (type == WeaponType.CROSSBOW))
+						if (item.getWeaponItem().isBowOrCrossBow())
 						{
 							// P. Atk. increases by 6 for bows.
 							// Starting at +4, P. Atk. bonus double.
@@ -185,6 +185,7 @@ public class FuncEnchant extends AbstractFunction
 					{
 						case BOW:
 						case CROSSBOW:
+						case TWOHANDCROSSBOW:
 						{
 							// Bows increase by 4.
 							// Starting at +4, P. Atk. bonus double.

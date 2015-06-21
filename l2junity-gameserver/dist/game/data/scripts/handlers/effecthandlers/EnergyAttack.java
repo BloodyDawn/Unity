@@ -27,7 +27,6 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.Weapon;
-import org.l2junity.gameserver.model.items.type.WeaponType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.stats.BaseStats;
@@ -121,7 +120,7 @@ public final class EnergyAttack extends AbstractEffect
 			
 			double weaponTypeBoost;
 			Weapon weapon = attacker.getActiveWeaponItem();
-			if ((weapon != null) && ((weapon.getItemType() == WeaponType.BOW) || (weapon.getItemType() == WeaponType.CROSSBOW)))
+			if ((weapon != null) && weapon.isBowOrCrossBow())
 			{
 				weaponTypeBoost = 70;
 			}

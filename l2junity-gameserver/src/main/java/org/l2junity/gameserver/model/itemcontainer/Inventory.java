@@ -191,17 +191,15 @@ public abstract class Inventory extends ItemContainer
 			
 			if (item.getItemType() == WeaponType.BOW)
 			{
-				ItemInstance arrow = inventory.getPaperdollItem(PAPERDOLL_LHAND);
-				
+				final ItemInstance arrow = inventory.getPaperdollItem(PAPERDOLL_LHAND);
 				if (arrow != null)
 				{
 					inventory.setPaperdollItem(PAPERDOLL_LHAND, null);
 				}
 			}
-			else if (item.getItemType() == WeaponType.CROSSBOW)
+			else if ((item.getItemType() == WeaponType.CROSSBOW) || (item.getItemType() == WeaponType.TWOHANDCROSSBOW))
 			{
-				ItemInstance bolts = inventory.getPaperdollItem(PAPERDOLL_LHAND);
-				
+				final ItemInstance bolts = inventory.getPaperdollItem(PAPERDOLL_LHAND);
 				if (bolts != null)
 				{
 					inventory.setPaperdollItem(PAPERDOLL_LHAND, null);
@@ -228,17 +226,15 @@ public abstract class Inventory extends ItemContainer
 			
 			if (item.getItemType() == WeaponType.BOW)
 			{
-				ItemInstance arrow = inventory.findArrowForBow(item.getItem());
-				
+				final ItemInstance arrow = inventory.findArrowForBow(item.getItem());
 				if (arrow != null)
 				{
 					inventory.setPaperdollItem(PAPERDOLL_LHAND, arrow);
 				}
 			}
-			else if (item.getItemType() == WeaponType.CROSSBOW)
+			else if ((item.getItemType() == WeaponType.CROSSBOW) || (item.getItemType() == WeaponType.TWOHANDCROSSBOW))
 			{
-				ItemInstance bolts = inventory.findBoltForCrossBow(item.getItem());
-				
+				final ItemInstance bolts = inventory.findBoltForCrossBow(item.getItem());
 				if (bolts != null)
 				{
 					inventory.setPaperdollItem(PAPERDOLL_LHAND, bolts);
@@ -1415,7 +1411,7 @@ public abstract class Inventory extends ItemContainer
 			case L2Item.SLOT_L_HAND:
 			{
 				ItemInstance rh = getPaperdollItem(PAPERDOLL_RHAND);
-				if ((rh != null) && (rh.getItem().getBodyPart() == L2Item.SLOT_LR_HAND) && !(((rh.getItemType() == WeaponType.BOW) && (item.getItemType() == EtcItemType.ARROW)) || ((rh.getItemType() == WeaponType.CROSSBOW) && (item.getItemType() == EtcItemType.BOLT)) || ((rh.getItemType() == WeaponType.FISHINGROD) && (item.getItemType() == EtcItemType.LURE))))
+				if ((rh != null) && (rh.getItem().getBodyPart() == L2Item.SLOT_LR_HAND) && !(((rh.getItemType() == WeaponType.BOW) && (item.getItemType() == EtcItemType.ARROW)) || (((rh.getItemType() == WeaponType.CROSSBOW) || (rh.getItemType() == WeaponType.TWOHANDCROSSBOW)) && (item.getItemType() == EtcItemType.BOLT)) || ((rh.getItemType() == WeaponType.FISHINGROD) && (item.getItemType() == EtcItemType.LURE))))
 				{
 					setPaperdollItem(PAPERDOLL_RHAND, null);
 				}

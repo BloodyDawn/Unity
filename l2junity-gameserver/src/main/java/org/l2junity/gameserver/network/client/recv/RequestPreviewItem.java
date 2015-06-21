@@ -24,6 +24,7 @@ import java.util.Map;
 import org.l2junity.Config;
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.impl.BuyListData;
+import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MerchantInstance;
@@ -192,7 +193,7 @@ public final class RequestPreviewItem implements IClientIncomingPacket
 			
 			if (template instanceof Weapon)
 			{
-				if (activeChar.getRace().ordinal() == 5)
+				if (activeChar.getRace() == Race.KAMAEL)
 				{
 					if (template.getItemType() == WeaponType.NONE)
 					{
@@ -206,7 +207,7 @@ public final class RequestPreviewItem implements IClientIncomingPacket
 			}
 			else if (template instanceof Armor)
 			{
-				if (activeChar.getRace().ordinal() == 5)
+				if (activeChar.getRace() == Race.KAMAEL)
 				{
 					if ((template.getItemType() == ArmorType.HEAVY) || (template.getItemType() == ArmorType.MAGIC))
 					{

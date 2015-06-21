@@ -789,7 +789,7 @@ public final class Formulas
 		if (target.isAttackable())
 		{
 			final Weapon weapon = attacker.getActiveWeaponItem();
-			if ((weapon != null) && ((weapon.getItemType() == WeaponType.BOW) || (weapon.getItemType() == WeaponType.CROSSBOW)))
+			if ((weapon != null) && weapon.isBowOrCrossBow())
 			{
 				if (skill != null)
 				{

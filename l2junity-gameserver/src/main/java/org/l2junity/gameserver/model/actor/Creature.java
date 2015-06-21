@@ -1006,7 +1006,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 						}
 					}
 				}
-				if (weaponItem.getItemType() == WeaponType.CROSSBOW)
+				if ((weaponItem.getItemType() == WeaponType.CROSSBOW) || (weaponItem.getItemType() == WeaponType.TWOHANDCROSSBOW))
 				{
 					// Check for bolts
 					if (isPlayer())
@@ -1109,6 +1109,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 					break;
 				}
 				case CROSSBOW:
+				case TWOHANDCROSSBOW:
 				{
 					hitted = doAttackHitByBow(attack, target, timeAtk, reuse, true);
 					break;
@@ -4848,7 +4849,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		if (!miss && (damage > 0))
 		{
 			Weapon weapon = getActiveWeaponItem();
-			boolean isBow = ((weapon != null) && ((weapon.getItemType() == WeaponType.BOW) || (weapon.getItemType() == WeaponType.CROSSBOW)));
+			boolean isBow = ((weapon != null) && weapon.isBowOrCrossBow());
 			int reflectedDamage = 0;
 			
 			if (!isBow && !target.isInvul()) // Do not reflect if weapon is of type bow or target is invunlerable
@@ -5163,6 +5164,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 				case BOW:
 					return (1500 * 345) / getPAtkSpd();
 				case CROSSBOW:
+				case TWOHANDCROSSBOW:
 					return (1200 * 345) / getPAtkSpd();
 				case DAGGER:
 					// atkSpd /= 1.15;
@@ -5192,6 +5194,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		{
 			case BOW:
 			case CROSSBOW:
+			case TWOHANDCROSSBOW:
 				return (int) ((reuse * 345) / atkSpd);
 			default:
 				return (int) ((reuse * 312) / atkSpd);

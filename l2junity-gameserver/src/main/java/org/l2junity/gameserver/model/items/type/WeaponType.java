@@ -26,23 +26,24 @@ import org.l2junity.gameserver.model.stats.TraitType;
  */
 public enum WeaponType implements ItemType
 {
+	NONE(TraitType.NONE),
 	SWORD(TraitType.SWORD),
 	BLUNT(TraitType.BLUNT),
 	DAGGER(TraitType.DAGGER),
-	BOW(TraitType.BOW),
 	POLE(TraitType.POLE),
-	NONE(TraitType.NONE),
-	DUAL(TraitType.DUAL),
-	ETC(TraitType.ETC),
-	FIST(TraitType.FIST),
 	DUALFIST(TraitType.DUALFIST),
+	BOW(TraitType.BOW),
+	ETC(TraitType.ETC),
+	DUAL(TraitType.DUAL),
+	FIST(TraitType.FIST), // 0 items with that type
 	FISHINGROD(TraitType.NONE),
 	RAPIER(TraitType.RAPIER),
-	ANCIENTSWORD(TraitType.ANCIENTSWORD),
 	CROSSBOW(TraitType.CROSSBOW),
-	FLAG(TraitType.NONE),
-	OWNTHING(TraitType.NONE),
+	ANCIENTSWORD(TraitType.ANCIENTSWORD),
+	FLAG(TraitType.NONE), // 0 items with that type
 	DUALDAGGER(TraitType.DUALDAGGER),
+	OWNTHING(TraitType.NONE), // 0 items with that type
+	TWOHANDCROSSBOW(TraitType.CROSSBOW), // TODO: Confirm this case..
 	DUALBLUNT(TraitType.DUALBLUNT);
 	
 	private final int _mask;

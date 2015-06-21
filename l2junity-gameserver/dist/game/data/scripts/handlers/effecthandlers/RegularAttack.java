@@ -25,7 +25,6 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.items.Weapon;
-import org.l2junity.gameserver.model.items.type.WeaponType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.Stats;
@@ -88,7 +87,7 @@ public final class RegularAttack extends AbstractEffect
 			target.notifyDamageReceived(damage, activeChar, info.getSkill(), crit, false, false);
 			
 			Weapon weapon = activeChar.getActiveWeaponItem();
-			boolean isBow = ((weapon != null) && ((weapon.getItemType() == WeaponType.BOW) || (weapon.getItemType() == WeaponType.CROSSBOW)));
+			boolean isBow = ((weapon != null) && weapon.isBowOrCrossBow());
 			if (!isBow && !target.isInvul()) // Do not reflect if weapon is of type bow or target is invunlerable
 			{
 				int reflectedDamage = 0;

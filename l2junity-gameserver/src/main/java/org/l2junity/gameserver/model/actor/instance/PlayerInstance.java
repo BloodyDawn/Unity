@@ -4658,7 +4658,7 @@ public final class PlayerInstance extends Playable
 						{
 							checkAndEquipArrows();
 						}
-						else if ((weapon.getItemType() == WeaponType.CROSSBOW) && (itemType == EtcItemType.BOLT))
+						else if (((weapon.getItemType() == WeaponType.CROSSBOW) || (weapon.getItemType() == WeaponType.TWOHANDCROSSBOW)) && (itemType == EtcItemType.BOLT))
 						{
 							checkAndEquipBolts();
 						}

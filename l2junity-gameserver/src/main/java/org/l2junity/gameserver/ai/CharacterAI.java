@@ -51,7 +51,6 @@ import org.l2junity.gameserver.model.events.impl.character.npc.OnNpcMoveFinished
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.items.Weapon;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
-import org.l2junity.gameserver.model.items.type.WeaponType;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
@@ -1408,7 +1407,7 @@ public class CharacterAI extends AbstractAI
 			else
 			{
 				Weapon weapon = target.getActiveWeaponItem();
-				if ((weapon != null) && ((weapon.getItemType() == WeaponType.BOW) || (weapon.getItemType() == WeaponType.CROSSBOW)))
+				if ((weapon != null) && weapon.isBowOrCrossBow())
 				{
 					isArcher = true;
 				}
