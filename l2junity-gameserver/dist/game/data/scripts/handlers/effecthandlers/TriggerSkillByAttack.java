@@ -53,6 +53,7 @@ public final class TriggerSkillByAttack extends AbstractEffect
 	private final Boolean _isCritical;
 	private final boolean _allowNormalAttack;
 	private final boolean _allowSkillAttack;
+	private final boolean _allowReflect;
 	
 	/**
 	 * @param attachCond
@@ -75,6 +76,7 @@ public final class TriggerSkillByAttack extends AbstractEffect
 		_isCritical = params.getObject("isCritical", Boolean.class);
 		_allowNormalAttack = params.getBoolean("allowNormalAttack", true);
 		_allowSkillAttack = params.getBoolean("allowSkillAttack", true);
+		_allowReflect = params.getBoolean("allowReflect", false);
 		
 		if (params.getString("allowWeapons", "ALL").equalsIgnoreCase("ALL"))
 		{
@@ -110,6 +112,11 @@ public final class TriggerSkillByAttack extends AbstractEffect
 		
 		// When no normal attacks are allowed.
 		if (!_allowNormalAttack && (event.getSkill() == null))
+		{
+			return;
+		}
+		
+		if (!_allowReflect && event.isReflect())
 		{
 			return;
 		}

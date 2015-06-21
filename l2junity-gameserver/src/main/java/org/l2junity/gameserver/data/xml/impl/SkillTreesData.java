@@ -716,8 +716,19 @@ public final class SkillTreesData implements IXmlReader
 		// Get available skills
 		PlayerSkillHolder holder = new PlayerSkillHolder(player);
 		List<SkillLearn> learnable = getAvailableSkills(player, classId, includeByFs, includeAutoGet, holder);
-		while (learnable.size() > 0)
+		// while (learnable.size() > 0)
+		for (int i = 0; learnable.size() > 0; i++) // Infinite loop warning
 		{
+			if (i >= 100)
+			{
+				StringBuilder sb = new StringBuilder();
+				for (SkillLearn learn : learnable)
+				{
+					sb.append(learn.getName()).append(", ");
+				}
+				LOGGER.error("SkillTreesData infinite loop found. {} learnable skills cannot be learned. Skills: {} ", learnable.size(), sb);
+				break;
+			}
 			for (SkillLearn s : learnable)
 			{
 				Skill sk = SkillData.getInstance().getSkill(s.getSkillId(), s.getSkillLevel());

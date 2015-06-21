@@ -79,7 +79,7 @@ public final class Backstab extends AbstractEffect
 		}
 		
 		target.reduceCurrentHp(damage, activeChar, info.getSkill());
-		target.notifyDamageReceived(damage, activeChar, info.getSkill(), true, false);
+		target.notifyDamageReceived(damage, activeChar, info.getSkill(), true, false, false);
 		
 		// Manage attack or cast break of the target (calculating rate, sending message...)
 		if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))

@@ -85,7 +85,7 @@ public final class RegularAttack extends AbstractEffect
 		{
 			activeChar.sendDamageMessage(target, damage, false, crit, false);
 			target.reduceCurrentHp(damage, activeChar, info.getSkill());
-			target.notifyDamageReceived(damage, activeChar, info.getSkill(), crit, false);
+			target.notifyDamageReceived(damage, activeChar, info.getSkill(), crit, false, false);
 			
 			Weapon weapon = activeChar.getActiveWeaponItem();
 			boolean isBow = ((weapon != null) && ((weapon.getItemType() == WeaponType.BOW) || (weapon.getItemType() == WeaponType.CROSSBOW)));
@@ -111,7 +111,7 @@ public final class RegularAttack extends AbstractEffect
 						if (reflectedDamage > 0)
 						{
 							activeChar.reduceCurrentHp(reflectedDamage, target, true, false, null);
-							activeChar.notifyDamageReceived(reflectedDamage, target, null, crit, false);
+							activeChar.notifyDamageReceived(reflectedDamage, target, null, crit, false, true);
 						}
 					}
 				}

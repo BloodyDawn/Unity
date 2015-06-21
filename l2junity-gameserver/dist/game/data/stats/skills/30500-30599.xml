@@ -249,12 +249,14 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<startEffects>
 			<effect name="FlyMove">
 				<param flyType="CHARGE" />
 				<param angle="270" /> <!-- Left -->
 				<param animationSpeed="333" />
 			</effect>
+		</startEffects>
+		<for>
 			<effect name="Stun" />
 			<effect name="TargetCancel">
 				<param chance="100" /> <!-- Unconfirmed -->
@@ -282,12 +284,14 @@
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<startEffects>
 			<effect name="FlyMove">
 				<param flyType="CHARGE" />
 				<param angle="90" /> <!-- Right -->
 				<param animationSpeed="333" />
 			</effect>
+		</startEffects>
+		<for>
 			<effect name="DefenceTrait">
 				<param FIST="#fistDecrease" />
 			</effect>
@@ -306,32 +310,36 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="NONE" />
-		<set name="operateType" val="DA2" />
+		<set name="operateType" val="A2" />
 		<set name="targetType" val="ONE" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="150" />
 		<set name="hitTime" val="100" />
 		<set name="effectPoint" val="-100" />
-		<set name="reuseDelay" val="60000" />
+		<set name="reuseDelay" val="7000" />
 		<cond msgId="113" addName="1">
 			<using kind="DUALFIST" />
 		</cond>
-		<for>
+		<startEffects>
 			<effect name="FlyMove">
-				<param flyType="CHARGE" />
+				<param flyType="WARP_BACK" />
 				<param range="280" />
 				<param angle="180" /> <!-- Your back -->
 				<param selfPos="false" />
 				<param animationSpeed="333" />
 			</effect>
-			<effect name="Untargetable" />
-			<effect name="AttackTrait">
-				<param KNOCKDOWN="#knockdown" />
+		</startEffects>
+		<for>
+			<effect name="TargetCancel">
+				<param chance="100" /> <!-- Unconfirmed -->
 			</effect>
 		</for>
 		<selfEffects>
 			<effect name="Buff">
 				<mul stat="pAtk" val="#pAtk" />
+			</effect>
+			<effect name="AttackTrait">
+				<param KNOCKDOWN="#knockdown" />
 			</effect>
 		</selfEffects>
 	</skill>

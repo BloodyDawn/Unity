@@ -4873,12 +4873,12 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			
 			// reduce targets HP
 			target.reduceCurrentHp(damage, this, null);
-			target.notifyDamageReceived(damage, this, null, crit, false);
+			target.notifyDamageReceived(damage, this, null, crit, false, false);
 			
 			if (reflectedDamage > 0)
 			{
 				reduceCurrentHp(reflectedDamage, target, true, false, null);
-				notifyDamageReceived(reflectedDamage, target, null, crit, false);
+				notifyDamageReceived(reflectedDamage, target, null, crit, false, true);
 			}
 			
 			if (!isBow) // Do not absorb if weapon is of type bow
@@ -6713,11 +6713,12 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * @param skill
 	 * @param critical
 	 * @param damageOverTime
+	 * @param reflect
 	 */
-	public void notifyDamageReceived(double damage, Creature attacker, Skill skill, boolean critical, boolean damageOverTime)
+	public void notifyDamageReceived(double damage, Creature attacker, Skill skill, boolean critical, boolean damageOverTime, boolean reflect)
 	{
-		EventDispatcher.getInstance().notifyEventAsync(new OnCreatureDamageReceived(attacker, this, damage, skill, critical, damageOverTime), this);
-		EventDispatcher.getInstance().notifyEventAsync(new OnCreatureDamageDealt(attacker, this, damage, skill, critical, damageOverTime), attacker);
+		EventDispatcher.getInstance().notifyEventAsync(new OnCreatureDamageReceived(attacker, this, damage, skill, critical, damageOverTime, reflect), this);
+		EventDispatcher.getInstance().notifyEventAsync(new OnCreatureDamageDealt(attacker, this, damage, skill, critical, damageOverTime, reflect), attacker);
 	}
 	
 	/**
