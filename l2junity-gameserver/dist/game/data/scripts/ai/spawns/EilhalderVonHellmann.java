@@ -19,7 +19,6 @@
 package ai.spawns;
 
 import org.l2junity.gameserver.GameTimeController;
-import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.instancemanager.RaidBossSpawnManager;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2RaidBossInstance;
@@ -57,7 +56,7 @@ public final class EilhalderVonHellmann extends AbstractNpcAI
 		// Spawn that comes from RaidBossSpawnManager
 		if ((npc.getSpawn() == null) || (npc.getSpawn().getNpcSpawnTemplate() == null))
 		{
-			ThreadPoolManager.getInstance().scheduleGeneral(() -> npc.deleteMe(), 1000);
+			getTimers().addTimer(1000, event -> npc.deleteMe());
 		}
 		return super.onSpawn(npc);
 	}
