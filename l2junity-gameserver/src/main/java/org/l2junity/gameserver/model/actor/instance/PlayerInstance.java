@@ -14649,7 +14649,7 @@ public final class PlayerInstance extends Playable
 		if (AdminData.getInstance().requireConfirm(command))
 		{
 			setAdminConfirmCmd(fullCommand);
-			ConfirmDlg dlg = new ConfirmDlg(SystemMessageId.S1);
+			ConfirmDlg dlg = new ConfirmDlg(SystemMessageId.S13);
 			dlg.addString("Are you sure you want execute command " + fullCommand.substring(6) + " ?");
 			addAction(PlayerAction.ADMIN_COMMAND);
 			sendPacket(dlg);

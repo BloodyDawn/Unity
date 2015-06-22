@@ -18,9 +18,14 @@
  */
 package ai.npc.AwakeningMaster;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
 import org.l2junity.gameserver.ThreadPoolManager;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.enums.CategoryType;
+import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.enums.UserInfoType;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
@@ -31,6 +36,7 @@ import org.l2junity.gameserver.model.events.ListenerRegisterType;
 import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
 import org.l2junity.gameserver.model.events.annotations.RegisterType;
 import org.l2junity.gameserver.model.events.impl.character.player.OnPlayerChangeToAwakenedClass;
+import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.network.client.send.AcquireSkillList;
@@ -41,6 +47,7 @@ import org.l2junity.gameserver.network.client.send.UserInfo;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 import quests.Q10338_SeizeYourDestiny.Q10338_SeizeYourDestiny;
+import quests.Q10472_WindsOfFateEncroachingShadows.Q10472_WindsOfFateEncroachingShadows;
 import ai.npc.AbstractNpcAI;
 
 /**
@@ -60,14 +67,27 @@ public final class AwakeningMaster extends AbstractNpcAI
 	private static final int AEORE_MASTER = 33404;
 	// Items
 	private static final int SCROLL_OF_AFTERLIFE = 17600;
-	private final static int ABELIUS_POWER = 32264;
-	private final static int SAPYROS_POWER = 32265;
-	private final static int ASHAGEN_POWER = 32266;
-	private final static int CRANIGG_POWER = 32267;
-	private final static int SOLTKREIG_POWER = 32268;
-	private final static int NAVIAROPE_POWER = 32269;
-	private final static int LEISTER_POWER = 32270;
-	private final static int LAKCIS_POWER = 32271;
+	private static final Map<CategoryType, Integer> AWAKE_POWER = new HashMap<>();
+	static
+	{
+		AWAKE_POWER.put(CategoryType.SIGEL_GROUP, 32264);
+		AWAKE_POWER.put(CategoryType.TYRR_GROUP, 32265);
+		AWAKE_POWER.put(CategoryType.OTHELL_GROUP, 32266);
+		AWAKE_POWER.put(CategoryType.YUL_GROUP, 32267);
+		AWAKE_POWER.put(CategoryType.FEOH_GROUP, 32268);
+		AWAKE_POWER.put(CategoryType.ISS_GROUP, 32269);
+		AWAKE_POWER.put(CategoryType.WYNN_GROUP, 32270);
+		AWAKE_POWER.put(CategoryType.AEORE_GROUP, 32271);
+	}
+	// Skills
+	private static final SkillHolder WYNN_POWER = new SkillHolder(16390, 1);
+	private static final SkillHolder FEOH_POWER = new SkillHolder(16391, 1);
+	private static final SkillHolder TYRR_POWER = new SkillHolder(16392, 1);
+	private static final SkillHolder OTHELL_POWER = new SkillHolder(16393, 1);
+	private static final SkillHolder ISS_POWER = new SkillHolder(16394, 1);
+	private static final SkillHolder YUL_POWER = new SkillHolder(16395, 1);
+	private static final SkillHolder SIGEL_POWER = new SkillHolder(16396, 1);
+	private static final SkillHolder AEORE_POWER = new SkillHolder(16397, 1);
 	
 	private AwakeningMaster()
 	{
@@ -176,6 +196,62 @@ public final class AwakeningMaster extends AbstractNpcAI
 		return htmltext;
 	}
 	
+	@Override
+	public String onFirstTalk(Npc npc, PlayerInstance player)
+	{
+		if (player.getRace().equals(Race.ERTHEIA))
+		{
+			// Ertheia dual class quest
+			final QuestState qs = player.getQuestState(Q10472_WindsOfFateEncroachingShadows.class.getSimpleName());
+			if (qs != null)
+			{
+				if ((npc.getId() == WYNN_MASTER) && qs.isCond(8))
+				{
+					return setNextErtheiaQuestState(npc, qs, WYNN_MASTER, 9, WYNN_POWER);
+				}
+				else if ((npc.getId() == FEOH_MASTER) && qs.isCond(9))
+				{
+					return setNextErtheiaQuestState(npc, qs, FEOH_MASTER, 10, FEOH_POWER);
+				}
+				else if ((npc.getId() == TYRR_MASTER) && qs.isCond(10))
+				{
+					return setNextErtheiaQuestState(npc, qs, TYRR_MASTER, 11, TYRR_POWER);
+				}
+				else if ((npc.getId() == OTHELL_MASTER) && qs.isCond(11))
+				{
+					return setNextErtheiaQuestState(npc, qs, OTHELL_MASTER, 12, OTHELL_POWER);
+				}
+				else if ((npc.getId() == ISS_MASTER) && qs.isCond(12))
+				{
+					return setNextErtheiaQuestState(npc, qs, ISS_MASTER, 13, ISS_POWER);
+				}
+				else if ((npc.getId() == YUL_MASTER) && qs.isCond(13))
+				{
+					return setNextErtheiaQuestState(npc, qs, YUL_MASTER, 14, YUL_POWER);
+				}
+				else if ((npc.getId() == SIGEL_MASTER) && qs.isCond(14))
+				{
+					return setNextErtheiaQuestState(npc, qs, SIGEL_MASTER, 15, SIGEL_POWER);
+				}
+				else if ((npc.getId() == AEORE_MASTER) && qs.isCond(15))
+				{
+					return setNextErtheiaQuestState(npc, qs, AEORE_MASTER, 16, AEORE_POWER);
+				}
+			}
+			return "ertheia.html";
+		}
+		return npc.getId() + ".html";
+	}
+	
+	private String setNextErtheiaQuestState(Npc npc, QuestState qs, int npcId, int cond, SkillHolder skill)
+	{
+		npc.setTarget(qs.getPlayer());
+		npc.doCast(skill.getSkill());
+		qs.setCond(cond, true);
+		qs.getQuest().sendNpcLogList(qs.getPlayer());
+		return npcId + "-01.html";
+	}
+	
 	@RegisterEvent(EventType.ON_PLAYER_CHANGE_TO_AWAKENED_CLASS)
 	@RegisterType(ListenerRegisterType.GLOBAL_PLAYERS)
 	public void OnPlayerChangeToAwakenedClass(OnPlayerChangeToAwakenedClass event)
@@ -193,7 +269,6 @@ public final class AwakeningMaster extends AbstractNpcAI
 		}
 		
 		final QuestState st = player.getQuestState(Q10338_SeizeYourDestiny.class.getSimpleName());
-		
 		if ((st == null) || !st.isCompleted())
 		{
 			return;
@@ -246,38 +321,15 @@ public final class AwakeningMaster extends AbstractNpcAI
 			player.sendPacket(ui);
 			player.broadcastInfo();
 			
-			int itemId = ABELIUS_POWER; // Sigel
-			if (player.isInCategory(CategoryType.TYRR_GROUP))
-			{
-				itemId = SAPYROS_POWER;
-			}
-			else if (player.isInCategory(CategoryType.OTHELL_GROUP))
-			{
-				itemId = ASHAGEN_POWER;
-			}
-			else if (player.isInCategory(CategoryType.YUL_GROUP))
-			{
-				itemId = CRANIGG_POWER;
-			}
-			else if (player.isInCategory(CategoryType.FEOH_GROUP))
-			{
-				itemId = SOLTKREIG_POWER;
-			}
-			else if (player.isInCategory(CategoryType.ISS_GROUP))
-			{
-				itemId = NAVIAROPE_POWER;
-			}
-			else if (player.isInCategory(CategoryType.WYNN_GROUP))
-			{
-				itemId = LEISTER_POWER;
-			}
-			else if (player.isInCategory(CategoryType.AEORE_GROUP))
-			{
-				itemId = LAKCIS_POWER;
-			}
 			player.broadcastPacket(new SocialAction(player.getObjectId(), 20));
-			giveItems(player, itemId, 1);
-			
+			for (Entry<CategoryType, Integer> ent : AWAKE_POWER.entrySet())
+			{
+				if (player.isInCategory(ent.getKey()))
+				{
+					giveItems(player, ent.getValue(), 1);
+					break;
+				}
+			}
 			SkillTreesData.getInstance().cleanSkillUponAwakening(player);
 			player.sendPacket(new AcquireSkillList(player));
 			player.sendSkillList();

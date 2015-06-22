@@ -221,6 +221,7 @@ import quests.Q10397_KekropusLetterASuspiciousBadge.Q10397_KekropusLetterASuspic
 import quests.Q10398_ASuspiciousBadge.Q10398_ASuspiciousBadge;
 import quests.Q10399_TheAlphabetOfTheGiants.Q10399_TheAlphabetOfTheGiants;
 import quests.Q10460_ReturnOfTheAlligatorHunter.Q10460_ReturnOfTheAlligatorHunter;
+import quests.Q10472_WindsOfFateEncroachingShadows.Q10472_WindsOfFateEncroachingShadows;
 import quests.Q10501_ZakenEmbroideredSoulCloak.Q10501_ZakenEmbroideredSoulCloak;
 import quests.Q10502_FreyaEmbroideredSoulCloak.Q10502_FreyaEmbroideredSoulCloak;
 import quests.Q10503_FrintezzaEmbroideredSoulCloak.Q10503_FrintezzaEmbroideredSoulCloak;
@@ -453,6 +454,7 @@ public class QuestMasterHandler
 		Q10398_ASuspiciousBadge.class,
 		Q10399_TheAlphabetOfTheGiants.class,
 		Q10460_ReturnOfTheAlligatorHunter.class,
+		Q10472_WindsOfFateEncroachingShadows.class,
 		Q10501_ZakenEmbroideredSoulCloak.class,
 		Q10502_FreyaEmbroideredSoulCloak.class,
 		Q10503_FrintezzaEmbroideredSoulCloak.class,

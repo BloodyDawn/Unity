@@ -55,6 +55,7 @@ import org.l2junity.gameserver.network.client.send.ExSubjobInfo;
 import org.l2junity.gameserver.network.client.send.NpcHtmlMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
+import quests.Q10472_WindsOfFateEncroachingShadows.Q10472_WindsOfFateEncroachingShadows;
 import ai.npc.AbstractNpcAI;
 
 /**
@@ -292,7 +293,9 @@ public final class Raina extends AbstractNpcAI
 			}
 			case "ertheiaDualClass":
 			{
-				if ((player.getRace() != Race.ERTHEIA) || (player.getLevel() < 85) || player.hasDualClass())
+				// TODO: Maybe html is different when you have 85lvl but you haven't completed quest
+				final QuestState qs = player.getQuestState(Q10472_WindsOfFateEncroachingShadows.class.getSimpleName());
+				if ((qs == null) || !qs.isCompleted() || player.hasDualClass())
 				{
 					htmltext = "addDualClassErtheiaFailed.html";
 					break;
@@ -576,7 +579,13 @@ public final class Raina extends AbstractNpcAI
 			case 6: // Add dual class for ertheia
 			{
 				final int classId = event.getReply();
-				if (player.isTransformed() || player.hasSummon())
+				if (player.isTransformed() || player.hasSummon() || player.hasDualClass())
+				{
+					break;
+				}
+				
+				final QuestState qs = player.getQuestState(Q10472_WindsOfFateEncroachingShadows.class.getSimpleName());
+				if ((qs == null) || !qs.isCompleted())
 				{
 					break;
 				}
