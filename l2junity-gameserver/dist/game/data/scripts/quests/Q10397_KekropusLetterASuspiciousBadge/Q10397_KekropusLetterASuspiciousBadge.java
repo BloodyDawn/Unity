@@ -112,6 +112,7 @@ public final class Q10397_KekropusLetterASuspiciousBadge extends Quest
 					{
 						addExpAndSp(player, 635_250, 152);
 					}
+					showOnScreenMsg(player, NpcStringId.GROW_STRONGER_HERE_UNTIL_YOU_RECEIVE_THE_NEXT_LETTER_FROM_KEKROPUS_AT_LV_58, ExShowScreenMessage.TOP_CENTER, 6000);
 					htmltext = event;
 				}
 				break;
