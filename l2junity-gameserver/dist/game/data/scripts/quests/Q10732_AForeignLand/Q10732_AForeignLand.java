@@ -43,43 +43,44 @@ public final class Q10732_AForeignLand extends Quest
 		super(10732, Q10732_AForeignLand.class.getSimpleName(), "A Foreign Land");
 		addStartNpc(NAVARI);
 		addTalkId(NAVARI, GERETH);
-		addCondMaxLevel(MAX_LEVEL, "findme.html"); // TODO: Find proper HTML
-		addCondRace(Race.ERTHEIA, "findme.html"); // TODO: Find proper HTML
+		addCondRace(Race.ERTHEIA, "");
+		addCondMaxLevel(MAX_LEVEL, "33931-00.htm");
 	}
 	
 	@Override
 	public String onAdvEvent(String event, Npc npc, PlayerInstance player)
 	{
 		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		
 		if (qs == null)
 		{
-			return htmltext;
+			return null;
 		}
 		
+		String htmltext = event;
 		switch (event)
 		{
+			case "33931-02.htm":
+				break;
 			case "33931-03.htm":
 			{
 				qs.startQuest();
 				player.sendPacket(ExShowUsm.ERTHEIA_FIRST_QUEST);
-				htmltext = event;
+				sendNpcLogList(player);
 				break;
 			}
-			case "33932-02.htm":
+			case "33932-02.html":
 			{
-				player.sendPacket(new TutorialShowHtml(npc.getObjectId(), "..\\L2Text\\QT_001_Radar_01.htm", TutorialShowHtml.LARGE_WINDOW));
-				giveAdena(player, 3000, true);
-				addExpAndSp(player, 75, 2);
-				qs.exitQuest(false, true);
+				if (qs.isStarted())
+				{
+					player.sendPacket(new TutorialShowHtml(npc.getObjectId(), "..\\L2Text\\QT_001_Radar_01.htm", TutorialShowHtml.LARGE_WINDOW));
+					giveAdena(player, 3000, true);
+					addExpAndSp(player, 75, 2);
+					qs.exitQuest(false, true);
+				}
 				break;
 			}
-			case "33931-02.htm":
-			{
-				htmltext = event;
-				break;
-			}
+			default:
+				htmltext = null;
 		}
 		return htmltext;
 	}
@@ -88,8 +89,12 @@ public final class Q10732_AForeignLand extends Quest
 	public String onTalk(Npc npc, PlayerInstance player)
 	{
 		final QuestState st = getQuestState(player, true);
-		String htmltext = getNoQuestMsg(player);
+		if (st.isCompleted())
+		{
+			return getAlreadyCompletedMsg(player);
+		}
 		
+		String htmltext = getNoQuestMsg(player);
 		switch (npc.getId())
 		{
 			case NAVARI:
@@ -100,11 +105,7 @@ public final class Q10732_AForeignLand extends Quest
 				}
 				else if (st.isStarted())
 				{
-					htmltext = "33931-04.htm";
-				}
-				else if (st.isCompleted())
-				{
-					htmltext = getAlreadyCompletedMsg(player);
+					htmltext = "33931-04.html";
 				}
 				break;
 			}
@@ -112,11 +113,7 @@ public final class Q10732_AForeignLand extends Quest
 			{
 				if (st.isStarted())
 				{
-					htmltext = "33932-01.htm";
-				}
-				else if (st.isCompleted())
-				{
-					htmltext = getAlreadyCompletedMsg(player);
+					htmltext = "33932-01.html";
 				}
 				break;
 			}

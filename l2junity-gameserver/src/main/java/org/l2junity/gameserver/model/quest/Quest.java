@@ -2904,7 +2904,8 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public String getStartConditionHtml(PlayerInstance player)
 	{
-		if (_startCondition == null)
+		final QuestState st = getQuestState(player, false);
+		if ((_startCondition == null) || ((st != null) && !st.isCreated()))
 		{
 			return null;
 		}

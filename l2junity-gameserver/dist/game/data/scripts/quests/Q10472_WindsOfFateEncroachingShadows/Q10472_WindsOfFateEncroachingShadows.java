@@ -18,20 +18,14 @@
  */
 package quests.Q10472_WindsOfFateEncroachingShadows;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
-
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.ItemHolder;
-import org.l2junity.gameserver.model.holders.NpcLogListHolder;
 import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
-import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
 /**
  * Winds of Fate: Encroaching Shadows (10472)<br>
@@ -454,76 +448,6 @@ public final class Q10472_WindsOfFateEncroachingShadows extends Quest
 			sendNpcLogList(killer);
 		}
 		return super.onKill(npc, killer, isSummon);
-	}
-	
-	@Override
-	public final Set<NpcLogListHolder> getNpcLogList(PlayerInstance player)
-	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs != null)
-		{
-			NpcStringId npcString = null;
-			switch (qs.getCond())
-			{
-				case 1:
-				case 17:
-					npcString = NpcStringId.TALK_TO_ZEPHYRA;
-					break;
-				case 2:
-					npcString = NpcStringId.TALK_TO_MOMET;
-					break;
-				case 3:
-				case 5:
-					npcString = NpcStringId.TALK_TO_THE_BLACK_MARKETEER_OF_MAMMON;
-					break;
-				case 6:
-					npcString = NpcStringId.TALK_TO_THE_BLACKSMITH_OF_MAMMON;
-					break;
-				case 7:
-					npcString = NpcStringId.TRACK_NIDRAH;
-					break;
-				case 8:
-					npcString = NpcStringId.WYNN_SUMMONER_MASTER_SUMMONER;
-					break;
-				case 9:
-					npcString = NpcStringId.FEOH_WIZARD_MASTER_WIZARD;
-					break;
-				case 10:
-					npcString = NpcStringId.TYRR_WARRIOR_WEAPON_FORCE_MASTER;
-					break;
-				case 11:
-					npcString = NpcStringId.OTHELL_ROGUE_DAGGER_MASTER;
-					break;
-				case 12:
-					npcString = NpcStringId.ISS_ENCHANTER_BUFF_MASTER;
-					break;
-				case 13:
-					npcString = NpcStringId.YUL_ARCHER_BOW_CROSSBOW_MASTER;
-					break;
-				case 14:
-					npcString = NpcStringId.SIGEL_KNIGHT_MASTER_DEFENDER;
-					break;
-				case 15:
-					npcString = NpcStringId.AEORE_HEALER_MASTER_HEALER;
-					break;
-				case 16:
-					npcString = NpcStringId.TALK_TO_HARDIN;
-					break;
-				case 18:
-					npcString = NpcStringId.TALK_TO_KARLA;
-					break;
-				case 19:
-					npcString = NpcStringId.TALK_TO_RAINA;
-					break;
-			}
-			if (npcString != null)
-			{
-				final Set<NpcLogListHolder> set = new HashSet<>(1);
-				set.add(new NpcLogListHolder(npcString, 0));
-				return set;
-			}
-		}
-		return Collections.emptySet();
 	}
 	
 	public static void main(String[] args)
