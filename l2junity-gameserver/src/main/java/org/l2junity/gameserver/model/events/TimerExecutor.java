@@ -70,13 +70,14 @@ public final class TimerExecutor<T>
 	
 	/**
 	 * Adds non-repeating timer (Lambda is supported on the last parameter)
+	 * @param event
 	 * @param time
 	 * @param eventTimer
 	 * @return {@code true} if timer were successfully added, {@code false} in case it exists already
 	 */
-	public boolean addTimer(long time, IEventTimer<T> eventTimer)
+	public boolean addTimer(T event, long time, IEventTimer<T> eventTimer)
 	{
-		return addTimer(new TimerHolder<>(null, null, time, null, null, false, eventTimer, this));
+		return addTimer(new TimerHolder<>(event, null, time, null, null, false, eventTimer, this));
 	}
 	
 	/**

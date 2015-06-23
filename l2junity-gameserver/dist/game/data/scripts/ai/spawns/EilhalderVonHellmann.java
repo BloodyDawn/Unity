@@ -56,7 +56,7 @@ public final class EilhalderVonHellmann extends AbstractNpcAI
 		// Spawn that comes from RaidBossSpawnManager
 		if ((npc.getSpawn() == null) || (npc.getSpawn().getNpcSpawnTemplate() == null))
 		{
-			getTimers().addTimer(1000, event -> npc.deleteMe());
+			getTimers().addTimer("delete", 1000, event -> npc.deleteMe());
 		}
 		return super.onSpawn(npc);
 	}
