@@ -254,6 +254,9 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	/** The character that summons this character. */
 	private Creature _summoner = null;
 	
+	/** Map of summoned NPCs by this creature. */
+	private volatile Map<Integer, Npc> _summonedNpcs = null;
+	
 	private SkillChannelizer _channelizer = null;
 	
 	private SkillChannelized _channelized = null;
@@ -536,6 +539,12 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	{
 		decayMe();
 		ZoneManager.getInstance().getRegion(this).removeFromZones(this);
+		
+		// Removes itself from the summoned list.
+		if ((getSummoner() != null))
+		{
+			getSummoner().removeSummonedNpc(getObjectId());
+		}
 	}
 	
 	@Override
@@ -2509,6 +2518,13 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		{
 			getAI().stopAITask();
 		}
+		
+		// Removes itself from the summoned list.
+		if ((getSummoner() != null))
+		{
+			getSummoner().removeSummonedNpc(getObjectId());
+		}
+		
 		return true;
 	}
 	
@@ -6774,6 +6790,83 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	public void setSummoner(Creature summoner)
 	{
 		_summoner = summoner;
+	}
+	
+	/**
+	 * Adds a summoned NPC.
+	 * @param npc the summoned NPC
+	 */
+	public final void addSummonedNpc(Npc npc)
+	{
+		if (_summonedNpcs == null)
+		{
+			synchronized (this)
+			{
+				if (_summonedNpcs == null)
+				{
+					_summonedNpcs = new ConcurrentHashMap<>();
+				}
+			}
+		}
+		
+		_summonedNpcs.put(npc.getObjectId(), npc);
+		
+		npc.setSummoner(this);
+	}
+	
+	/**
+	 * Removes a summoned NPC by object ID.
+	 * @param objectId the summoned NPC object ID
+	 */
+	public final void removeSummonedNpc(int objectId)
+	{
+		if (_summonedNpcs != null)
+		{
+			_summonedNpcs.remove(objectId);
+		}
+	}
+	
+	/**
+	 * Gets the summoned NPCs.
+	 * @return the summoned NPCs
+	 */
+	public final Collection<Npc> getSummonedNpcs()
+	{
+		return _summonedNpcs != null ? _summonedNpcs.values() : Collections.<Npc> emptyList();
+	}
+	
+	/**
+	 * Gets the summoned NPC by object ID.
+	 * @param objectId the summoned NPC object ID
+	 * @return the summoned NPC
+	 */
+	public final Npc getSummonedNpc(int objectId)
+	{
+		if (_summonedNpcs != null)
+		{
+			return _summonedNpcs.get(objectId);
+		}
+		return null;
+	}
+	
+	/**
+	 * Gets the summoned NPC count.
+	 * @return the summoned NPC count
+	 */
+	public final int getSummonedNpcCount()
+	{
+		return _summonedNpcs != null ? _summonedNpcs.size() : 0;
+	}
+	
+	/**
+	 * Resets the summoned NPCs list.
+	 */
+	public final void resetSummonedNpcs()
+	{
+		if (_summonedNpcs != null)
+		{
+			_summonedNpcs.clear();
+		}
 	}
 	
 	@Override

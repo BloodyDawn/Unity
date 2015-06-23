@@ -1109,15 +1109,22 @@
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack" />
+			<effect name="CallSkill">
+				<param skillId="11351" skillLevel="1" skillLevelScaleTo="5" /> <!-- Arcane Link -->
+			</effect>
 		</for>
 	</skill>
 	<skill id="11351" levels="5" name="Arcane Link">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Servitor's wrath. P. Atk. + 1%, Critical Rate + 10%, and Critical Damage + 1%. -->
+		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
 		<table name="#pAtk"> 1.01 1.03 1.05 1.10 1.15 </table>
 		<table name="#rCrit"> 1.10 1.15 1.20 1.25 1.30 </table>
 		<table name="#cAtk"> 1.01 1.03 1.05 1.10 1.15 </table>
 		<set name="icon" val="icon.skill11351" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="SUMMONER_LINK" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
@@ -1168,15 +1175,22 @@
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack" />
+			<effect name="CallSkill">
+				<param skillId="11354" skillLevel="1" skillLevelScaleTo="5" /> <!-- Elemental Link -->
+			</effect>
 		</for>
 	</skill>
 	<skill id="11354" levels="5" name="Elemental Link">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Servitor's wrath. P. Atk. + 1%, Critical Rate + 10%, and Critical Damage + 1%. -->
+		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
 		<table name="#pAtk"> 1.01 1.03 1.05 1.10 1.15 </table>
 		<table name="#rCrit"> 1.10 1.15 1.20 1.25 1.30 </table>
 		<table name="#cAtk"> 1.01 1.03 1.05 1.10 1.15 </table>
 		<set name="icon" val="icon.skill11354" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="SUMMONER_LINK" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SELF" />
 		<set name="castRange" val="900" />
@@ -1222,17 +1236,24 @@
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack" />
+			<effect name="CallSkill">
+				<param skillId="11357" skillLevel="1" skillLevelScaleTo="5" /> <!-- Spectral Link -->
+			</effect>
 		</for>
 	</skill>
 	<skill id="11357" levels="5" name="Spectral Link">
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Servitor's wrath. P. Atk. + 1%, Critical Rate + 10%, and Critical Damage + 1%. -->
+		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
 		<table name="#pAtk"> 1.01 1.03 1.05 1.10 1.15 </table>
 		<table name="#rCrit"> 1.10 1.15 1.20 1.25 1.30 </table>
 		<table name="#cAtk"> 1.01 1.03 1.05 1.10 1.15 </table>
 		<set name="icon" val="icon.skill11357" />
+		<set name="abnormalLvl" val="#abnormalLvl" />
+		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="SUMMONER_LINK" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="SUMMON" />
 		<set name="castRange" val="900" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="4" />
@@ -1321,7 +1342,7 @@
 		<set name="reuseDelay" val="50000" />
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="#npcId" npcCount="1" despawnDelay="#despawnDelay" />
+				<param npcId="#npcId" npcCount="1" despawnDelay="#despawnDelay" singleInstance="true" />
 			</effect>
 		</for>
 	</skill>

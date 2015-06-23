@@ -32,7 +32,6 @@ import org.l2junity.gameserver.model.conditions.Condition;
 import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.skills.BuffInfo;
-import org.l2junity.gameserver.model.skills.targets.L2TargetType;
 
 /**
  * Summon Npc effect implementation.
@@ -45,6 +44,7 @@ public final class SummonNpc extends AbstractEffect
 	private final int _npcCount;
 	private final boolean _randomOffset;
 	private final boolean _isSummonSpawn;
+	private final boolean _singleInstance; // Only one instance of this NPC is allowed.
 	
 	public SummonNpc(Condition attachCond, Condition applyCond, StatsSet set, StatsSet params)
 	{
@@ -55,6 +55,7 @@ public final class SummonNpc extends AbstractEffect
 		_npcCount = params.getInt("npcCount", 1);
 		_randomOffset = params.getBoolean("randomOffset", false);
 		_isSummonSpawn = params.getBoolean("isSummonSpawn", false);
+		_singleInstance = params.getBoolean("singleInstance", false);
 	}
 	
 	@Override
@@ -96,6 +97,37 @@ public final class SummonNpc extends AbstractEffect
 			return;
 		}
 		
+		int x = player.getX();
+		int y = player.getY();
+		int z = player.getZ();
+		
+		switch (info.getSkill().getTargetType())
+		{
+			case GROUND:
+				final Location wordPosition = player.getActingPlayer().getCurrentSkillWorldPosition();
+				if (wordPosition != null)
+				{
+					x = wordPosition.getX();
+					y = wordPosition.getY();
+					z = wordPosition.getZ();
+				}
+				break;
+			case ONE:
+				if (player.getTarget() != null)
+				{
+					x = player.getTarget().getX();
+					y = player.getTarget().getY();
+					z = player.getTarget().getZ();
+				}
+				break;
+		}
+		
+		if (_randomOffset)
+		{
+			x += (Rnd.nextBoolean() ? Rnd.get(20, 50) : Rnd.get(-50, -20));
+			y += (Rnd.nextBoolean() ? Rnd.get(20, 50) : Rnd.get(-50, -20));
+		}
+		
 		switch (npcTemplate.getType())
 		{
 			case "L2Decoy":
@@ -106,7 +138,7 @@ public final class SummonNpc extends AbstractEffect
 				decoy.setHeading(player.getHeading());
 				decoy.setInstanceId(player.getInstanceId());
 				decoy.setSummoner(player);
-				decoy.spawnMe(player.getX(), player.getY(), player.getZ());
+				decoy.spawnMe(x, y, z);
 				player.setDecoy(decoy);
 				break;
 			}
@@ -115,21 +147,6 @@ public final class SummonNpc extends AbstractEffect
 				final L2EffectPointInstance effectPoint = new L2EffectPointInstance(npcTemplate, player);
 				effectPoint.setCurrentHp(effectPoint.getMaxHp());
 				effectPoint.setCurrentMp(effectPoint.getMaxMp());
-				int x = player.getX();
-				int y = player.getY();
-				int z = player.getZ();
-				
-				if (info.getSkill().getTargetType() == L2TargetType.GROUND)
-				{
-					final Location wordPosition = player.getActingPlayer().getCurrentSkillWorldPosition();
-					if (wordPosition != null)
-					{
-						x = wordPosition.getX();
-						y = wordPosition.getY();
-						z = wordPosition.getZ();
-					}
-				}
-				
 				effectPoint.setIsInvul(true);
 				effectPoint.setSummoner(player);
 				effectPoint.spawnMe(x, y, z);
@@ -153,22 +170,20 @@ public final class SummonNpc extends AbstractEffect
 					return;
 				}
 				
-				int x = player.getX();
-				int y = player.getY();
-				if (_randomOffset)
-				{
-					x += (Rnd.nextBoolean() ? Rnd.get(20, 50) : Rnd.get(-50, -20));
-					y += (Rnd.nextBoolean() ? Rnd.get(20, 50) : Rnd.get(-50, -20));
-				}
-				
 				spawn.setX(x);
 				spawn.setY(y);
-				spawn.setZ(player.getZ());
+				spawn.setZ(z);
 				spawn.setHeading(player.getHeading());
 				spawn.stopRespawn();
 				
+				// If only single instance is allowed, delete previous NPCs.
+				if (_singleInstance)
+				{
+					player.getSummonedNpcs().stream().filter(npc -> npc.getId() == _npcId).forEach(npc -> npc.deleteMe());
+				}
+				
 				final Npc npc = spawn.doSpawn(_isSummonSpawn);
-				npc.setSummoner(player);
+				player.addSummonedNpc(npc); // npc.setSummoner(player);
 				npc.setName(npcTemplate.getName());
 				npc.setTitle(npcTemplate.getName());
 				if (_despawnDelay > 0)

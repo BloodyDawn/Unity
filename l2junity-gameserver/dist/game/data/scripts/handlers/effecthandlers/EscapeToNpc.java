@@ -18,6 +18,7 @@
  */
 package handlers.effecthandlers;
 
+import org.l2junity.gameserver.ai.CtrlIntention;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
 import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.World;
@@ -28,6 +29,9 @@ import org.l2junity.gameserver.model.effects.AbstractEffect;
 import org.l2junity.gameserver.model.effects.L2EffectType;
 import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.skills.BuffInfo;
+import org.l2junity.gameserver.network.client.send.FlyToLocation;
+import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
+import org.l2junity.gameserver.network.client.send.ValidateLocation;
 
 /**
  * Escape to NPC effect implementation.
@@ -43,7 +47,7 @@ public final class EscapeToNpc extends AbstractEffect
 		super(attachCond, applyCond, set, params);
 		
 		_npcId = params.getInt("npcId", 0);
-		_summonedOnly = params.getBoolean("summonedOnly", false);
+		_summonedOnly = params.getBoolean("summonedOnly", true);
 	}
 	
 	@Override
@@ -79,41 +83,50 @@ public final class EscapeToNpc extends AbstractEffect
 			return;
 		}
 		
-		try
+		ILocational teleLocation = null;
+		if (_summonedOnly)
 		{
-			// Use the right NPC class for faster search.
-			final Class<? extends Npc> clazz = Class.forName("org.l2junity.gameserver.model.actor.instance." + template.getType() + "Instance").asSubclass(Npc.class);
-			final int range = info.getSkill().getCastRange() <= 0 ? Integer.MAX_VALUE : info.getSkill().getCastRange();
-			ILocational teleLocation = null;
-			
-			for (Npc npc : World.getInstance().getVisibleObjects(info.getEffected(), clazz, range))
+			// Search only summoned NPCs
+			teleLocation = info.getEffector().getSummonedNpcs().stream().filter(npc -> npc.getId() == _npcId).findAny().orElse(null);
+		}
+		else
+		{
+			try
 			{
-				if ((npc != null) && (npc.getId() == _npcId))
+				// Use the right NPC class for faster search.
+				final Class<? extends Npc> clazz = Class.forName("org.l2junity.gameserver.model.actor.instance." + template.getType() + "Instance").asSubclass(Npc.class);
+				final int range = info.getSkill().getCastRange() <= 0 ? Integer.MAX_VALUE : info.getSkill().getCastRange();
+				
+				for (Npc npc : World.getInstance().getVisibleObjects(info.getEffected(), clazz, range))
 				{
-					if (_summonedOnly)
-					{
-						if (npc.getSummoner() == info.getEffector())
-						{
-							teleLocation = npc;
-							break;
-						}
-					}
-					else
+					if ((npc != null) && (npc.getId() == _npcId))
 					{
 						teleLocation = npc;
 						break;
 					}
 				}
 			}
-			
-			if (teleLocation != null)
+			catch (ClassNotFoundException e)
+			{
+				_log.warn("Npc class not found: {} ", template.getType(), e);
+			}
+		}
+		
+		if (teleLocation != null)
+		{
+			if (info.getEffected().isInsideRadius(teleLocation, 900, false, false))
+			{
+				info.getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+				info.getEffected().broadcastPacket(new FlyToLocation(info.getEffected(), teleLocation, FlyType.DUMMY));
+				info.getEffected().abortAttack();
+				info.getEffected().abortCast();
+				info.getEffected().setXYZ(teleLocation);
+				info.getEffected().broadcastPacket(new ValidateLocation(info.getEffected()));
+			}
+			else
 			{
 				info.getEffected().teleToLocation(teleLocation);
 			}
-		}
-		catch (ClassNotFoundException e)
-		{
-			_log.warn("Npc class not found: {} ", template.getType(), e);
 		}
 	}
 }

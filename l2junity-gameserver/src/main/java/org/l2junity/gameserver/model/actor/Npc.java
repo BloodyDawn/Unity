@@ -22,10 +22,7 @@ import static org.l2junity.gameserver.ai.CtrlIntention.AI_INTENTION_ACTIVE;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
@@ -141,8 +138,6 @@ public class Npc extends Creature
 	
 	private int _shotsMask = 0;
 	private int _killingBlowWeaponId;
-	/** Map of summoned NPCs by this NPC. */
-	private volatile Map<Integer, Npc> _summonedNpcs = null;
 	
 	/**
 	 * Constructor of L2NpcInstance (use L2Character constructor).<br>
@@ -1225,13 +1220,6 @@ public class Npc extends Creature
 		
 		// Notify Walking Manager
 		WalkingManager.getInstance().onDeath(this);
-		
-		// Removes itself from the summoned list.
-		final Creature summoner = getSummoner();
-		if ((summoner != null) && summoner.isNpc())
-		{
-			((Npc) summoner).removeSummonedNpc(getObjectId());
-		}
 	}
 	
 	/**
@@ -1766,83 +1754,6 @@ public class Npc extends Creature
 	public int getKillingBlowWeapon()
 	{
 		return _killingBlowWeaponId;
-	}
-	
-	/**
-	 * Adds a summoned NPC.
-	 * @param npc the summoned NPC
-	 */
-	public final void addSummonedNpc(Npc npc)
-	{
-		if (_summonedNpcs == null)
-		{
-			synchronized (this)
-			{
-				if (_summonedNpcs == null)
-				{
-					_summonedNpcs = new ConcurrentHashMap<>();
-				}
-			}
-		}
-		
-		_summonedNpcs.put(npc.getObjectId(), npc);
-		
-		npc.setSummoner(this);
-	}
-	
-	/**
-	 * Removes a summoned NPC by object ID.
-	 * @param objectId the summoned NPC object ID
-	 */
-	public final void removeSummonedNpc(int objectId)
-	{
-		if (_summonedNpcs != null)
-		{
-			_summonedNpcs.remove(objectId);
-		}
-	}
-	
-	/**
-	 * Gets the summoned NPCs.
-	 * @return the summoned NPCs
-	 */
-	public final Collection<Npc> getSummonedNpcs()
-	{
-		return _summonedNpcs != null ? _summonedNpcs.values() : Collections.<Npc> emptyList();
-	}
-	
-	/**
-	 * Gets the summoned NPC by object ID.
-	 * @param objectId the summoned NPC object ID
-	 * @return the summoned NPC
-	 */
-	public final Npc getSummonedNpc(int objectId)
-	{
-		if (_summonedNpcs != null)
-		{
-			return _summonedNpcs.get(objectId);
-		}
-		return null;
-	}
-	
-	/**
-	 * Gets the summoned NPC count.
-	 * @return the summoned NPC count
-	 */
-	public final int getSummonedNpcCount()
-	{
-		return _summonedNpcs != null ? _summonedNpcs.size() : 0;
-	}
-	
-	/**
-	 * Resets the summoned NPCs list.
-	 */
-	public final void resetSummonedNpcs()
-	{
-		if (_summonedNpcs != null)
-		{
-			_summonedNpcs.clear();
-		}
 	}
 	
 	/**

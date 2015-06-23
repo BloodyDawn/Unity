@@ -57,6 +57,7 @@ public final class MultisellData implements IXmlReader
 	public static final int PC_BANG_POINTS = -100;
 	public static final int CLAN_REPUTATION = -200;
 	public static final int FAME = -300;
+	public static final int FIELD_CYCLE_POINTS = -400;
 	public static final int RAIDBOSS_POINTS = -500;
 	// Misc
 	private static final FileFilter NUMERIC_FILTER = new NumericNameFilter();

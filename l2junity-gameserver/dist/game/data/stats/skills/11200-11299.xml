@@ -519,6 +519,7 @@
 		<table name="#hpConsumes"> 400 420 440 460 </table>
 		<table name="#manaHeal"> 200 210 220 230 </table>
 		<set name="icon" val="icon.skill11264" />
+		<set name="canCastWhleDisabled" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="hpConsume" val="#hpConsumes" />
@@ -577,6 +578,7 @@
 		<!-- Summons a Death Gate. The summoned Death Gate continuously inflicts damage and Hold on nearby enemies. -->
 		<table name="#magicLvl"> 99 101 103 105 </table>
 		<table name="#mpConsumes"> 90 97 100 103 </table>
+		<table name="#npcIds"> 14927 15200 15201 15202 </table>
 		<set name="icon" val="icon.skill11266" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="GROUND" />
@@ -589,7 +591,7 @@
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="SummonNpc">
-				<param npcId="14927" npcCount="1" despawnDelay="60000" /> <!-- Guessed -->
+				<param npcId="#npcIds" npcCount="1" despawnDelay="30000" singleInstance="true" />
 			</effect>
 		</for>
 	</skill>

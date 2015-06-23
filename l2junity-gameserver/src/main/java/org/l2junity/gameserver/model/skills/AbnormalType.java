@@ -390,7 +390,8 @@ public enum AbnormalType
 	DEPORT,
 	ARCANE_PROTECTION,
 	GREATER_SERVITOR_BUFF,
-	BIG_BODY_COMBINATION;
+	BIG_BODY_COMBINATION,
+	SUMMONER_LINK;
 	
 	/**
 	 * Get the enumerate for the given String.
