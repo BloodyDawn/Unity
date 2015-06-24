@@ -637,7 +637,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 			}
 			else
 			{
-				res = onTalk(npc, player);
+				res = onTalk(npc, player, isSimulated);
 			}
 		}
 		catch (Exception e)
