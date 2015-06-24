@@ -116,7 +116,7 @@ public final class Q10734_DoOrDie extends Quest
 	}
 	
 	@Override
-	public String onTalk(Npc npc, PlayerInstance player)
+	public String onTalk(Npc npc, PlayerInstance player, boolean isSimulated)
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
@@ -138,28 +138,40 @@ public final class Q10734_DoOrDie extends Quest
 							{
 								case 1:
 								{
-									showOnScreenMsg(player, NpcStringId.ATTACK_THE_TRAINING_DUMMY, ExShowScreenMessage.TOP_CENTER, 10000);
+									if (!isSimulated)
+									{
+										showOnScreenMsg(player, NpcStringId.ATTACK_THE_TRAINING_DUMMY, ExShowScreenMessage.TOP_CENTER, 10000);
+									}
 									htmltext = "33943-04.html";
 									break;
 								}
 								case 3:
 								{
-									showOnScreenMsg(player, NpcStringId.TALK_TO_THE_APPRENTICE_ADVENTURER_S_GUIDE, ExShowScreenMessage.TOP_CENTER, 10000);
-									qs.setCond(5, true);
+									if (!isSimulated)
+									{
+										showOnScreenMsg(player, NpcStringId.TALK_TO_THE_APPRENTICE_ADVENTURER_S_GUIDE, ExShowScreenMessage.TOP_CENTER, 10000);
+										qs.setCond(5, true);
+									}
 									htmltext = "33943-05.html";
 									break;
 								}
 								case 5:
 								{
-									showOnScreenMsg(player, NpcStringId.TALK_TO_THE_APPRENTICE_ADVENTURER_S_GUIDE, ExShowScreenMessage.TOP_CENTER, 10000);
+									if (!isSimulated)
+									{
+										showOnScreenMsg(player, NpcStringId.TALK_TO_THE_APPRENTICE_ADVENTURER_S_GUIDE, ExShowScreenMessage.TOP_CENTER, 10000);
+									}
 									htmltext = "33943-06.html";
 									break;
 								}
 								case 8:
 								{
-									giveAdena(player, 7000, true);
-									addExpAndSp(player, 805, 2);
-									qs.exitQuest(false, true);
+									if (!isSimulated)
+									{
+										giveAdena(player, 7000, true);
+										addExpAndSp(player, 805, 2);
+										qs.exitQuest(false, true);
+									}
 									htmltext = "33943-07.html";
 									break;
 								}
@@ -188,28 +200,40 @@ public final class Q10734_DoOrDie extends Quest
 							{
 								case 1:
 								{
-									showOnScreenMsg(player, NpcStringId.ATTACK_THE_TRAINING_DUMMY, ExShowScreenMessage.TOP_CENTER, 10000);
+									if (!isSimulated)
+									{
+										showOnScreenMsg(player, NpcStringId.ATTACK_THE_TRAINING_DUMMY, ExShowScreenMessage.TOP_CENTER, 10000);
+									}
 									htmltext = "33942-04.html";
 									break;
 								}
 								case 2:
 								{
-									showOnScreenMsg(player, NpcStringId.TALK_TO_THE_APPRENTICE_ADVENTURER_S_GUIDE, ExShowScreenMessage.TOP_CENTER, 10000);
-									qs.setCond(4, true);
+									if (!isSimulated)
+									{
+										showOnScreenMsg(player, NpcStringId.TALK_TO_THE_APPRENTICE_ADVENTURER_S_GUIDE, ExShowScreenMessage.TOP_CENTER, 10000);
+										qs.setCond(4, true);
+									}
 									htmltext = "33942-05.html";
 									break;
 								}
 								case 4:
 								{
-									showOnScreenMsg(player, NpcStringId.TALK_TO_THE_APPRENTICE_ADVENTURER_S_GUIDE, ExShowScreenMessage.TOP_CENTER, 10000);
+									if (!isSimulated)
+									{
+										showOnScreenMsg(player, NpcStringId.TALK_TO_THE_APPRENTICE_ADVENTURER_S_GUIDE, ExShowScreenMessage.TOP_CENTER, 10000);
+									}
 									htmltext = "33942-06.html";
 									break;
 								}
 								case 7:
 								{
-									giveAdena(player, 7000, true);
-									addExpAndSp(player, 805, 2);
-									qs.exitQuest(false, true);
+									if (!isSimulated)
+									{
+										giveAdena(player, 7000, true);
+										addExpAndSp(player, 805, 2);
+										qs.exitQuest(false, true);
+									}
 									htmltext = "33942-07.html";
 									break;
 								}
@@ -237,7 +261,10 @@ public final class Q10734_DoOrDie extends Quest
 						}
 						case 6:
 						{
-							showOnScreenMsg(player, NpcStringId.ATTACK_THE_TRAINING_DUMMY, ExShowScreenMessage.TOP_CENTER, 10000);
+							if (!isSimulated)
+							{
+								showOnScreenMsg(player, NpcStringId.ATTACK_THE_TRAINING_DUMMY, ExShowScreenMessage.TOP_CENTER, 10000);
+							}
 							htmltext = castBuffs(npc, player, "33950-07.html", "33950-08.html");
 							break;
 						}

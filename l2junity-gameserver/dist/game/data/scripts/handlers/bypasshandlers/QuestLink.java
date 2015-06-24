@@ -236,7 +236,7 @@ public class QuestLink implements IBypassHandler
 			.filter(Quest.class::isInstance)
 			.map(Quest.class::cast)
 			.filter(quest -> (quest.getId() > 0) && (quest.getId() < 20000))
-			.filter(quest -> !quest.onTalk(npc, player).equals(Quest.getNoQuestMsg(player)))
+			.filter(quest -> !quest.onTalk(npc, player, true).equals(Quest.getNoQuestMsg(player)))
 			.distinct()
 			.collect(Collectors.toSet());
 		//@formatter:on

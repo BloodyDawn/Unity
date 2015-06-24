@@ -42,7 +42,7 @@ import quests.Q10735_ASpecialPower.Q10735_ASpecialPower;
 public final class FaeronTrainingGrounds1 extends AbstractInstance
 {
 	// Instance world
-	public class FTG1World extends InstanceWorld
+	protected class FTG1World extends InstanceWorld
 	{
 		public Npc[] spawnedMonsters = new Npc[2];
 	}
