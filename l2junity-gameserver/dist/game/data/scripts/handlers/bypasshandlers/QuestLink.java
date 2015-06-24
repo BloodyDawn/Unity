@@ -121,7 +121,7 @@ public class QuestLink implements IBypassHandler
 					sbCantStart.append("</button></font>");
 				}
 			}
-			else if (quest.onTalk(npc, player).equals(Quest.getNoQuestMsg(player)))
+			else if (Quest.getNoQuestMsg(player).equals(quest.onTalk(npc, player, true)))
 			{
 				continue;
 			}
@@ -206,7 +206,7 @@ public class QuestLink implements IBypassHandler
 				}
 			}
 			
-			q.notifyTalk(npc, player);
+			q.notifyTalk(npc, player, false);
 		}
 		else
 		{
