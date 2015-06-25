@@ -21,10 +21,15 @@ package quests.Q10737_GrakonsWarehouse;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.base.ClassId;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
+import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
+import org.l2junity.gameserver.network.client.send.TutorialShowHtml;
+import org.l2junity.gameserver.network.client.send.string.NpcStringId;
+
+import quests.Q10735_ASpecialPower.Q10735_ASpecialPower;
+import quests.Q10736_ASpecialPower.Q10736_ASpecialPower;
 
 /**
  * Grakons Warehouse (10737)
@@ -49,8 +54,8 @@ public final class Q10737_GrakonsWarehouse extends Quest
 		super(10737, Q10737_GrakonsWarehouse.class.getSimpleName(), "Grakon's Warehouse");
 		addStartNpc(KATALIN, AYANTHE);
 		addTalkId(KATALIN, AYANTHE, GRAKON);
-		addCondLevel(MIN_LEVEL, MAX_LEVEL, "fixme.htm");
-		addCondRace(Race.ERTHEIA, "fixme.htm");
+		
+		addCondRace(Race.ERTHEIA, "");
 		registerQuestItems(APPRENTICE_SUPPORT_BOX.getId());
 	}
 	
@@ -63,47 +68,44 @@ public final class Q10737_GrakonsWarehouse extends Quest
 			return null;
 		}
 		
-		String htmltext = null;
+		String htmltext = event;
 		switch (event)
 		{
+			case "33942-02.htm":
+			case "33943-02.htm":
+			case "33947-03.html":
+			case "33947-04.html":
+				break;
 			case "33942-03.htm":
 			case "33943-03.htm":
 			{
 				qs.startQuest();
+				sendNpcLogList(player);
 				giveItems(player, APPRENTICE_SUPPORT_BOX);
-				htmltext = event;
 				break;
 			}
-			case "33947-04.htm":
-			case "33947-08.htm":
+			case "33947-05.html":
 			{
 				if (qs.isStarted())
 				{
+					player.sendPacket(new TutorialShowHtml(npc.getObjectId(), "..\\L2text\\QT_007_post_01.htm", TutorialShowHtml.LARGE_WINDOW));
+					showOnScreenMsg(player, NpcStringId.WEAPONS_HAVE_BEEN_ADDED_TO_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 10000);
 					giveAdena(player, 11000, true);
-					addExpAndSp(player, 2625, 0);
-					if (player.getClassId() == ClassId.ERTHEIA_FIGHTER)
-					{
-						giveItems(player, APPRENTICE_ADVENTURER_FISTS);
-					}
-					else if (player.getClassId() == ClassId.ERTHEIA_WIZARD)
+					if (player.isMageClass())
 					{
 						giveItems(player, APPRENTICE_ADVENTURER_STAFF);
 					}
+					else
+					{
+						giveItems(player, APPRENTICE_ADVENTURER_FISTS);
+					}
+					addExpAndSp(player, 2625, 0);
 					qs.exitQuest(false, true);
-					htmltext = event;
 				}
 				break;
 			}
-			case "33942-02.htm":
-			case "33943-02.htm":
-			case "33947-02.htm":
-			case "33947-03.htm":
-			case "33947-06.htm":
-			case "33947-07.htm":
-			{
-				htmltext = event;
-				break;
-			}
+			default:
+				htmltext = null;
 		}
 		return htmltext;
 	}
@@ -122,15 +124,32 @@ public final class Q10737_GrakonsWarehouse extends Quest
 		switch (npc.getId())
 		{
 			case KATALIN:
+			{
+				if (!player.isMageClass())
+				{
+					if (qs.isCreated())
+					{
+						htmltext = (meetStartRestrictions(player)) ? "33943-01.htm" : "33943-00.htm";
+					}
+					else if (qs.isStarted())
+					{
+						htmltext = "33943-04.html";
+					}
+				}
+				break;
+			}
 			case AYANTHE:
 			{
-				if (qs.isCreated())
+				if (player.isMageClass())
 				{
-					htmltext = npc.getId() + "-01.htm";
-				}
-				else if (qs.isStarted())
-				{
-					htmltext = npc.getId() + "-03.htm";
+					if (qs.isCreated())
+					{
+						htmltext = (meetStartRestrictions(player)) ? "33942-01.htm" : "33942-00.htm";
+					}
+					else if (qs.isStarted())
+					{
+						htmltext = "33942-04.html";
+					}
 				}
 				break;
 			}
@@ -138,18 +157,25 @@ public final class Q10737_GrakonsWarehouse extends Quest
 			{
 				if (qs.isStarted())
 				{
-					if (player.getClassId() == ClassId.ERTHEIA_FIGHTER)
-					{
-						htmltext = "33947-01.htm";
-					}
-					else if (player.getClassId() == ClassId.ERTHEIA_WIZARD)
-					{
-						htmltext = "33947-05.htm";
-					}
+					htmltext = (player.isMageClass()) ? "33947-02.html" : "33947-01.html";
 				}
 				break;
 			}
 		}
 		return htmltext;
+	}
+	
+	private boolean meetStartRestrictions(PlayerInstance player)
+	{
+		final QuestState qs;
+		if (player.isMageClass())
+		{
+			qs = player.getQuestState(Q10735_ASpecialPower.class.getSimpleName());
+		}
+		else
+		{
+			qs = player.getQuestState(Q10736_ASpecialPower.class.getSimpleName());
+		}
+		return (player.getLevel() >= MIN_LEVEL) && (player.getLevel() <= MAX_LEVEL) && (qs != null) && qs.isCompleted();
 	}
 }
