@@ -24,10 +24,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -45,6 +43,7 @@ import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.enums.TrapAction;
 import org.l2junity.gameserver.instancemanager.QuestManager;
+import org.l2junity.gameserver.model.KeyValuePair;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
@@ -88,7 +87,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	private final WriteLock _writeLock = _rwLock.writeLock();
 	private final ReadLock _readLock = _rwLock.readLock();
 	/** Map containing all the start conditions. */
-	private volatile Map<Predicate<PlayerInstance>, String> _startCondition = null;
+	private volatile Set<QuestCondition> _startCondition = null;
 	
 	private final int _questId;
 	private final String _name;
@@ -97,7 +96,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	protected boolean _onEnterWorld = false;
 	private boolean _isCustom = false;
 	
-	public int[] questItemIds = null;
+	private int[] _questItemIds = null;
 	
 	private static final String DEFAULT_NO_QUEST_MSG = "<html><body>You are either not on a quest that involves this NPC, or you don't meet this NPC's minimum quest requirements.</body></html>";
 	private static final String DEFAULT_ALREADY_COMPLETED_MSG = "<html><body>You have already completed this quest.</body></html>";
@@ -630,7 +629,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 				.collect(Collectors.toSet());
 			//@formatter:on
 			
-			final String startConditionHtml = getStartConditionHtml(player);
+			final String startConditionHtml = getStartConditionHtml(player, npc);
 			if (startingQuests.contains(this) && (startConditionHtml != null))
 			{
 				res = startConditionHtml;
@@ -2729,7 +2728,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public int[] getRegisteredItemIds()
 	{
-		return questItemIds;
+		return _questItemIds;
 	}
 	
 	/**
@@ -2738,7 +2737,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void registerQuestItems(int... items)
 	{
-		questItemIds = items;
+		_questItemIds = items;
 	}
 	
 	/**
@@ -2747,7 +2746,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void removeRegisteredQuestItems(PlayerInstance player)
 	{
-		takeItems(player, -1, questItemIds);
+		takeItems(player, -1, _questItemIds);
 	}
 	
 	@Override
@@ -2874,7 +2873,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 * Gets the start conditions.
 	 * @return the start conditions
 	 */
-	private Map<Predicate<PlayerInstance>, String> getStartConditions()
+	private Set<QuestCondition> getStartConditions()
 	{
 		if (_startCondition == null)
 		{
@@ -2882,7 +2881,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 			{
 				if (_startCondition == null)
 				{
-					_startCondition = new LinkedHashMap<>(1);
+					_startCondition = ConcurrentHashMap.newKeySet(1);
 				}
 			}
 		}
@@ -2901,7 +2900,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 			return true;
 		}
 		
-		for (Predicate<PlayerInstance> cond : _startCondition.keySet())
+		for (QuestCondition cond : _startCondition)
 		{
 			if (!cond.test(player))
 			{
@@ -2914,9 +2913,10 @@ public class Quest extends AbstractScript implements IIdentifiable
 	/**
 	 * Gets the HTML for the first starting condition not met.
 	 * @param player the player
+	 * @param npc
 	 * @return the HTML
 	 */
-	public String getStartConditionHtml(PlayerInstance player)
+	public String getStartConditionHtml(PlayerInstance player, Npc npc)
 	{
 		final QuestState st = getQuestState(player, false);
 		if ((_startCondition == null) || ((st != null) && !st.isCreated()))
@@ -2924,11 +2924,11 @@ public class Quest extends AbstractScript implements IIdentifiable
 			return null;
 		}
 		
-		for (Entry<Predicate<PlayerInstance>, String> startRequirement : _startCondition.entrySet())
+		for (QuestCondition cond : _startCondition)
 		{
-			if (!startRequirement.getKey().test(player))
+			if (!cond.test(player))
 			{
-				return startRequirement.getValue();
+				return cond.getHtml(npc);
 			}
 		}
 		return null;
@@ -2941,7 +2941,18 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void addCondStart(Predicate<PlayerInstance> questStartRequirement, String html)
 	{
-		getStartConditions().put(questStartRequirement, html);
+		getStartConditions().add(new QuestCondition(questStartRequirement, html));
+	}
+	
+	/**
+	 * Adds a predicate to the start conditions.
+	 * @param questStartRequirement the predicate condition
+	 * @param pairs the HTML to display if the condition is not met per each npc
+	 */
+	@SafeVarargs
+	public final void addCondStart(Predicate<PlayerInstance> questStartRequirement, KeyValuePair<Integer, String>... pairs)
+	{
+		getStartConditions().add(new QuestCondition(questStartRequirement, pairs));
 	}
 	
 	/**
@@ -2952,7 +2963,19 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void addCondLevel(int minLevel, int maxLevel, String html)
 	{
-		getStartConditions().put(p -> (p.getLevel() >= minLevel) && (p.getLevel() <= maxLevel), html);
+		addCondStart(p -> (p.getLevel() >= minLevel) && (p.getLevel() <= maxLevel), html);
+	}
+	
+	/**
+	 * Adds a minimum/maximum level start condition to the quest.
+	 * @param minLevel the minimum player's level to start the quest
+	 * @param maxLevel the maximum player's level to start the quest
+	 * @param pairs the HTML to display if the condition is not met per each npc
+	 */
+	@SafeVarargs
+	public final void addCondMinLevel(int minLevel, int maxLevel, KeyValuePair<Integer, String>... pairs)
+	{
+		addCondStart(p -> (p.getLevel() >= minLevel) && (p.getLevel() <= maxLevel), pairs);
 	}
 	
 	/**
@@ -2962,7 +2985,18 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void addCondMinLevel(int minLevel, String html)
 	{
-		getStartConditions().put(p -> p.getLevel() >= minLevel, html);
+		addCondStart(p -> p.getLevel() >= minLevel, html);
+	}
+	
+	/**
+	 * Adds a minimum level start condition to the quest.
+	 * @param minLevel the minimum player's level to start the quest
+	 * @param pairs the HTML to display if the condition is not met per each npc
+	 */
+	@SafeVarargs
+	public final void addCondMinLevel(int minLevel, KeyValuePair<Integer, String>... pairs)
+	{
+		addCondStart(p -> p.getLevel() >= minLevel, pairs);
 	}
 	
 	/**
@@ -2972,7 +3006,18 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void addCondMaxLevel(int maxLevel, String html)
 	{
-		getStartConditions().put(p -> p.getLevel() <= maxLevel, html);
+		addCondStart(p -> p.getLevel() <= maxLevel, html);
+	}
+	
+	/**
+	 * Adds a minimum/maximum level start condition to the quest.
+	 * @param maxLevel the maximum player's level to start the quest
+	 * @param pairs the HTML to display if the condition is not met per each npc
+	 */
+	@SafeVarargs
+	public final void addCondMaxLevel(int maxLevel, KeyValuePair<Integer, String>... pairs)
+	{
+		addCondStart(p -> p.getLevel() <= maxLevel, pairs);
 	}
 	
 	/**
@@ -2982,7 +3027,18 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void addCondRace(Race race, String html)
 	{
-		getStartConditions().put(p -> p.getRace() == race, html);
+		addCondStart(p -> p.getRace() == race, html);
+	}
+	
+	/**
+	 * Adds a race start condition to the quest.
+	 * @param race the race
+	 * @param pairs the HTML to display if the condition is not met per each npc
+	 */
+	@SafeVarargs
+	public final void addCondRace(Race race, KeyValuePair<Integer, String>... pairs)
+	{
+		addCondStart(p -> p.getRace() == race, pairs);
 	}
 	
 	/**
@@ -2992,7 +3048,18 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void addCondNotRace(Race race, String html)
 	{
-		getStartConditions().put(p -> p.getRace() != race, html);
+		addCondStart(p -> p.getRace() != race, html);
+	}
+	
+	/**
+	 * Adds a not-race start condition to the quest.
+	 * @param race the race
+	 * @param pairs the HTML to display if the condition is not met per each npc
+	 */
+	@SafeVarargs
+	public final void addCondNotRace(Race race, KeyValuePair<Integer, String>... pairs)
+	{
+		addCondStart(p -> p.getRace() != race, pairs);
 	}
 	
 	/**
@@ -3002,7 +3069,18 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void addCondCompletedQuest(String name, String html)
 	{
-		getStartConditions().put(p -> p.hasQuestState(name) && p.getQuestState(name).isCompleted(), html);
+		addCondStart(p -> p.hasQuestState(name) && p.getQuestState(name).isCompleted(), html);
+	}
+	
+	/**
+	 * Adds a quest completed start condition to the quest.
+	 * @param name the quest name
+	 * @param pairs the HTML to display if the condition is not met per each npc
+	 */
+	@SafeVarargs
+	public final void addCondCompletedQuest(String name, KeyValuePair<Integer, String>... pairs)
+	{
+		addCondStart(p -> p.hasQuestState(name) && p.getQuestState(name).isCompleted(), pairs);
 	}
 	
 	/**
@@ -3012,7 +3090,18 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void addCondClassId(ClassId classId, String html)
 	{
-		getStartConditions().put(p -> p.getClassId() == classId, html);
+		addCondStart(p -> p.getClassId() == classId, html);
+	}
+	
+	/**
+	 * Adds a class ID start condition to the quest.
+	 * @param classId the class ID
+	 * @param pairs the HTML to display if the condition is not met per each npc
+	 */
+	@SafeVarargs
+	public final void addCondClassId(ClassId classId, KeyValuePair<Integer, String>... pairs)
+	{
+		addCondStart(p -> p.getClassId() == classId, pairs);
 	}
 	
 	/**
@@ -3022,7 +3111,18 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void addCondNotClassId(ClassId classId, String html)
 	{
-		getStartConditions().put(p -> p.getClassId() != classId, html);
+		addCondStart(p -> p.getClassId() != classId, html);
+	}
+	
+	/**
+	 * Adds a not-class ID start condition to the quest.
+	 * @param classId the class ID
+	 * @param pairs the HTML to display if the condition is not met per each npc
+	 */
+	@SafeVarargs
+	public final void addCondNotClassId(ClassId classId, KeyValuePair<Integer, String>... pairs)
+	{
+		addCondStart(p -> p.getClassId() != classId, pairs);
 	}
 	
 	/**
@@ -3031,7 +3131,17 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void addCondIsSubClassActive(String html)
 	{
-		getStartConditions().put(p -> p.isSubClassActive(), html);
+		addCondStart(p -> p.isSubClassActive(), html);
+	}
+	
+	/**
+	 * Adds a subclass active start condition to the quest.
+	 * @param pairs the HTML to display if the condition is not met per each npc
+	 */
+	@SafeVarargs
+	public final void addCondIsSubClassActive(KeyValuePair<Integer, String>... pairs)
+	{
+		addCondStart(p -> p.isSubClassActive(), pairs);
 	}
 	
 	/**
@@ -3040,7 +3150,17 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void addCondIsNotSubClassActive(String html)
 	{
-		getStartConditions().put(p -> !p.isSubClassActive() && !p.isDualClassActive(), html);
+		addCondStart(p -> !p.isSubClassActive() && !p.isDualClassActive(), html);
+	}
+	
+	/**
+	 * Adds a not-subclass active start condition to the quest.
+	 * @param pairs the HTML to display if the condition is not met per each npc
+	 */
+	@SafeVarargs
+	public final void addCondIsNotSubClassActive(KeyValuePair<Integer, String>... pairs)
+	{
+		addCondStart(p -> !p.isSubClassActive() && !p.isDualClassActive(), pairs);
 	}
 	
 	/**
@@ -3050,7 +3170,18 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void addCondInCategory(CategoryType categoryType, String html)
 	{
-		getStartConditions().put(p -> p.isInCategory(categoryType), html);
+		addCondStart(p -> p.isInCategory(categoryType), html);
+	}
+	
+	/**
+	 * Adds a category start condition to the quest.
+	 * @param categoryType the category type
+	 * @param pairs the HTML to display if the condition is not met per each npc
+	 */
+	@SafeVarargs
+	public final void addCondInCategory(CategoryType categoryType, KeyValuePair<Integer, String>... pairs)
+	{
+		addCondStart(p -> p.isInCategory(categoryType), pairs);
 	}
 	
 	/**
@@ -3060,7 +3191,18 @@ public class Quest extends AbstractScript implements IIdentifiable
 	 */
 	public void addCondClanLevel(int clanLevel, String html)
 	{
-		getStartConditions().put(p -> (p.getClan() != null) && (p.getClan().getLevel() > clanLevel), html);
+		addCondStart(p -> (p.getClan() != null) && (p.getClan().getLevel() > clanLevel), html);
+	}
+	
+	/**
+	 * Adds a category start condition to the quest.
+	 * @param clanLevel the clan level
+	 * @param pairs the HTML to display if the condition is not met per each npc
+	 */
+	@SafeVarargs
+	public final void addCondClanLevel(int clanLevel, KeyValuePair<Integer, String>... pairs)
+	{
+		addCondStart(p -> (p.getClan() != null) && (p.getClan().getLevel() > clanLevel), pairs);
 	}
 	
 	public void onQuestAborted(PlayerInstance player)

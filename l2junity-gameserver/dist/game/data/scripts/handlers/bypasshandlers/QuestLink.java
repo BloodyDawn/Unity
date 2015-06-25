@@ -101,7 +101,7 @@ public class QuestLink implements IBypassHandler
 			final QuestState qs = player.getQuestState(quest.getScriptName());
 			if ((qs == null) || qs.isCreated() || (qs.isCompleted() && qs.isNowAvailable()))
 			{
-				final String startConditionHtml = quest.getStartConditionHtml(player);
+				final String startConditionHtml = quest.getStartConditionHtml(player, npc);
 				if ((startConditionHtml != null) && startConditionHtml.isEmpty())
 				{
 					continue;
