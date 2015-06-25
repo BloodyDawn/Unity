@@ -25,6 +25,7 @@ import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
+import org.l2junity.gameserver.network.client.send.PlaySound;
 import org.l2junity.gameserver.network.client.send.TutorialShowHtml;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 
@@ -122,6 +123,7 @@ public final class Q10390_KekropusLetter extends Quest
 				if (st.isCond(1))
 				{
 					player.sendPacket(new TutorialShowHtml(getHtm(player.getHtmlPrefix(), event)));
+					player.sendPacket(new PlaySound(3, "Npcdialog1.kekrops_quest_1", 0, 0, 0, 0, 0));
 					st.setCond(2);
 				}
 				break;

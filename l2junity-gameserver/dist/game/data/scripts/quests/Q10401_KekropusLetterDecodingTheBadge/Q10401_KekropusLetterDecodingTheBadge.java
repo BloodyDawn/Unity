@@ -172,10 +172,11 @@ public final class Q10401_KekropusLetterDecodingTheBadge extends Quest
 	public void OnPlayerLevelChanged(OnPlayerLevelChanged event)
 	{
 		final PlayerInstance player = event.getActiveChar();
+		final QuestState st = getQuestState(player, false);
 		final int oldLevel = event.getOldLevel();
 		final int newLevel = event.getNewLevel();
 		
-		if ((oldLevel < newLevel) && (newLevel == MIN_LEVEL) && (player.getRace() != Race.ERTHEIA))
+		if ((st == null) && (oldLevel < newLevel) && (newLevel == MIN_LEVEL) && (player.getRace() != Race.ERTHEIA))
 		{
 			showOnScreenMsg(player, NpcStringId.KEKROPUS_LETTER_HAS_ARRIVED_NCLICK_THE_QUESTION_MARK_ICON_TO_READ3, ExShowScreenMessage.TOP_CENTER, 6000);
 			player.sendPacket(new TutorialShowQuestionMark(getId()));
@@ -209,8 +210,15 @@ public final class Q10401_KekropusLetterDecodingTheBadge extends Quest
 		
 		if (command.equals("Q10401_teleport") && (st != null) && st.isCond(1) && hasQuestItems(player, SOE_TOWN_OF_ADEN))
 		{
-			player.teleToLocation(TELEPORT_LOC);
-			takeItems(player, SOE_TOWN_OF_ADEN, -1);
+			if (!player.isInCombat())
+			{
+				player.teleToLocation(TELEPORT_LOC);
+				takeItems(player, SOE_TOWN_OF_ADEN, -1);
+			}
+			else
+			{
+				showOnScreenMsg(player, NpcStringId.YOU_CANNOT_TELEPORT_IN_COMBAT, ExShowScreenMessage.TOP_CENTER, 6000);
+			}
 			player.sendPacket(TutorialCloseHtml.STATIC_PACKET);
 			player.clearHtmlActions(HtmlActionScope.TUTORIAL_HTML);
 		}

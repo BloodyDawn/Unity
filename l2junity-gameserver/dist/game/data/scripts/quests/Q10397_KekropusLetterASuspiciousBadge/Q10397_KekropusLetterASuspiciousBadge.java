@@ -36,6 +36,7 @@ import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
 import org.l2junity.gameserver.model.quest.State;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
+import org.l2junity.gameserver.network.client.send.PlaySound;
 import org.l2junity.gameserver.network.client.send.TutorialCloseHtml;
 import org.l2junity.gameserver.network.client.send.TutorialShowHtml;
 import org.l2junity.gameserver.network.client.send.TutorialShowQuestionMark;
@@ -167,10 +168,11 @@ public final class Q10397_KekropusLetterASuspiciousBadge extends Quest
 	public void OnPlayerLevelChanged(OnPlayerLevelChanged event)
 	{
 		final PlayerInstance player = event.getActiveChar();
+		final QuestState st = getQuestState(player, false);
 		final int oldLevel = event.getOldLevel();
 		final int newLevel = event.getNewLevel();
 		
-		if ((oldLevel < newLevel) && (newLevel == MIN_LEVEL) && (player.getRace() != Race.ERTHEIA))
+		if ((st == null) && (oldLevel < newLevel) && (newLevel == MIN_LEVEL) && (player.getRace() != Race.ERTHEIA))
 		{
 			showOnScreenMsg(player, NpcStringId.KEKROPUS_LETTER_HAS_ARRIVED_NCLICK_THE_QUESTION_MARK_ICON_TO_READ3, ExShowScreenMessage.TOP_CENTER, 6000);
 			player.sendPacket(new TutorialShowQuestionMark(getId()));
@@ -188,6 +190,7 @@ public final class Q10397_KekropusLetterASuspiciousBadge extends Quest
 			
 			st.startQuest();
 			st.setQuestLocation(NpcStringId.TOWN_OF_OREN);
+			player.sendPacket(new PlaySound(3, "Npcdialog1.kekrops_quest_3", 0, 0, 0, 0, 0));
 			giveItems(player, SOE_TOWN_OF_OREN, 1);
 			player.sendPacket(new TutorialShowHtml(getHtm(player.getHtmlPrefix(), "popup.html")));
 		}
@@ -203,8 +206,15 @@ public final class Q10397_KekropusLetterASuspiciousBadge extends Quest
 		
 		if (command.equals("Q10397_teleport") && (st != null) && st.isCond(1) && hasQuestItems(player, SOE_TOWN_OF_OREN))
 		{
-			player.teleToLocation(TELEPORT_LOC);
-			takeItems(player, SOE_TOWN_OF_OREN, -1);
+			if (!player.isInCombat())
+			{
+				player.teleToLocation(TELEPORT_LOC);
+				takeItems(player, SOE_TOWN_OF_OREN, -1);
+			}
+			else
+			{
+				showOnScreenMsg(player, NpcStringId.YOU_CANNOT_TELEPORT_IN_COMBAT, ExShowScreenMessage.TOP_CENTER, 6000);
+			}
 			player.sendPacket(TutorialCloseHtml.STATIC_PACKET);
 			player.clearHtmlActions(HtmlActionScope.TUTORIAL_HTML);
 		}
