@@ -1408,4 +1408,138 @@ public final class RequestActionUse implements IClientIncomingPacket
 		
 		partner.sendPacket(new ExAskCoupleAction(player.getObjectId(), id));
 	}
+	
+	/**
+	 * @param skillId
+	 * @return the actionId that calls the given skillId <br>
+	 *         TODO This shouldn't be here, nor handled like this... create a better handling.
+	 */
+	public static int getActionId(int skillId)
+	{
+		switch (skillId)
+		{//@formatter:off
+			case 4079: return 1000; // Siege Golem - Siege Hammer
+			case 4710: return 1003; // Wind Hatchling/Strider - Wild Stun
+			case 4711: return 1004; // Wind Hatchling/Strider - Wild Defense
+			case 4712: return 1005; // Star Hatchling/Strider - Bright Burst
+			case 4713: return 1006; // Star Hatchling/Strider - Bright Heal
+			case 4699: return 1007; // Cat Queen - Blessing of Queen
+			case 4700: return 1008; // Cat Queen - Gift of Queen
+			case 4701: return 1009; // Cat Queen - Cure of Queen
+			case 4702: return 1010; // Unicorn Seraphim - Blessing of Seraphim
+			case 4703: return 1011; // Unicorn Seraphim - Gift of Seraphim
+			case 4704: return 1012; // Unicorn Seraphim - Cure of Seraphim
+			case 4705: return 1013; // Nightshade - Curse of Shade
+			case 4706: return 1014; // Nightshade - Mass Curse of Shade
+			case 4707: return 1015; // Nightshade - Shade Sacrifice
+			case 4709: return 1016; // Cursed Man - Cursed Blow
+			case 4708: return 1017; // Cursed Man - Cursed Strike/Stun
+			case 5135: return 1031; // Feline King - Slash
+			case 5136: return 1032; // Feline King - Spinning Slash
+			case 5137: return 1033; // Feline King - Grip of the Cat
+			case 5138: return 1034; // Magnus the Unicorn - Whiplash
+			case 5139: return 1035; // Magnus the Unicorn - Tridal Wave
+			case 5142: return 1036; // Spectral Lord - Corpse Kaboom
+			case 5141: return 1037; // Spectral Lord - Dicing Death
+			case 5140: return 1038; // Spectral Lord - Force Curse
+			case 5110: return 1039; // Swoop Cannon - Cannon Fodder
+			case 5111: return 1040; // Swoop Cannon - Big Bang
+			case 5442: return 1041; // Great Wolf - Bite Attack
+			case 5444: return 1042; // Great Wolf - Maul
+			case 5443: return 1043; // Great Wolf - Cry of the Wolf
+			case 5445: return 1044; // Great Wolf - Awakening
+			case 5584: return 1045; // Great Wolf - Howl
+			case 5585: return 1046; // Strider - Roar
+			case 5580: return 1047; // Divine Beast - Bite
+			case 5581: return 1048; // Divine Beast - Stun Attack
+			case 5582: return 1049; // Divine Beast - Fire Breath
+			case 5583: return 1050; // Divine Beast - Roar
+			case 5638: return 1051; // Feline Queen - Bless The Body
+			case 5639: return 1052; // Feline Queen - Bless The Soul
+			case 5640: return 1053; // Feline Queen - Haste
+			case 5643: return 1054; // Unicorn Seraphim - Acumen
+			case 5647: return 1055; // Unicorn Seraphim - Clarity
+			case 5648: return 1056; // Unicorn Seraphim - Empower
+			case 5646: return 1057; // Unicorn Seraphim - Wild Magic
+			case 5652: return 1058; // Nightshade - Death Whisper
+			case 5653: return 1059; // Nightshade - Focus
+			case 5654: return 1060; // Nightshade - Guidance
+			case 5745: return 1061; // Wild Beast Fighter, White Weasel - Death blow
+			case 5746: return 1062; // Wild Beast Fighter - Double attack
+			case 5747: return 1063; // Wild Beast Fighter - Spin attack
+			case 5748: return 1064; // Wild Beast Fighter - Meteor Shower
+			case 5753: return 1065; // Fox Shaman, Wild Beast Fighter, White Weasel, Fairy Princess - Awakening
+			case 5749: return 1066; // Fox Shaman, Spirit Shaman - Thunder Bolt
+			case 5750: return 1067; // Fox Shaman, Spirit Shaman - Flash
+			case 5751: return 1068; // Fox Shaman, Spirit Shaman - Lightning Wave
+			case 5752: return 1068; // Fox Shaman, Fairy Princess - Flare
+			case 5771: return 1070; // White Weasel, Fairy Princess, Improved Baby Buffalo, Improved Baby Kookaburra, Improved Baby Cougar, Spirit Shaman, Toy Knight, Turtle Ascetic - Buff control
+			case 5761: return 1071; // Tigress - Power Strike
+			case 6046: return 1072; // Toy Knight - Piercing attack
+			case 6047: return 1073; // Toy Knight - Whirlwind
+			case 6048: return 1074; // Toy Knight - Lance Smash
+			case 6049: return 1075; // Toy Knight - Battle Cry
+			case 6050: return 1076; // Turtle Ascetic - Power Smash
+			case 6051: return 1077; // Turtle Ascetic - Energy Burst
+			case 6052: return 1078; // Turtle Ascetic - Shockwave
+			case 6053: return 1079; // Turtle Ascetic - Howl
+			case 6041: return 1080; // Phoenix Rush
+			case 6042: return 1081; // Phoenix Cleanse
+			case 6043: return 1082; // Phoenix Flame Feather
+			case 6044: return 1083; // Phoenix Flame Beak
+			case 6094: return 1086; // Panther Cancel
+			case 6095: return 1087; // Panther Dark Claw
+			case 6096: return 1088; // Panther Fatal Claw
+			case 6199: return 1089; // Deinonychus - Tail Strike
+			case 6205: return 1090; // Guardian's Strider - Strider Bite
+			case 6206: return 1091; // Guardian's Strider - Strider Fear
+			case 6207: return 1092; // Guardian's Strider - Strider Dash
+			case 6618: return 1093; // Maguen - Maguen Strike
+			case 6681: return 1094; // Maguen - Maguen Wind Walk
+			case 6619: return 1095; // Elite Maguen - Maguen Power Strike
+			case 6682: return 1096; // Elite Maguen - Elite Maguen Wind Walk
+			case 6683: return 1097; // Maguen - Maguen Return
+			case 6684: return 1098; // Elite Maguen - Maguen Party Return
+			case 11278: return 1106; // Cute Bear - Bear Claw
+			case 11279: return 1107; // Cute Bear - Bear Tumbling
+			case 11280: return 1108; // Saber Tooth Cougar- Cougar Bite
+			case 11281: return 1109; // Saber Tooth Cougar - Cougar Pounce
+			case 11282: return 1110; // Grim Reaper - Reaper Touch
+			case 11283: return 1111; // Grim Reaper - Reaper Power
+			case 10051: return 1113; // Golden Lion - Lion Roar
+			case 10052: return 1114; // Golden Lion - Lion Claw
+			case 10053: return 1115; // Golden Lion - Lion Dash
+			case 10054: return 1116; // Golden Lion - Lion Flame
+			case 10794: return 1117; // Thunder Hawk - Thunder Flight
+			case 10795: return 1118; // Thunder Hawk - Thunder Purity
+			case 10797: return 1120; // Thunder Hawk - Thunder Feather Blast
+			case 10798: return 1121; // Thunder Hawk - Thunder Sharp Claw
+			case 11806: return 1122; // Tree of Life - Blessing of Tree
+			case 11323: return 1124; // Wynn Kai the Cat - Feline Aggression
+			case 11324: return 1125; // Wynn Kai the Cat - Feline Stun
+			case 11325: return 1126; // Wynn Feline King - Feline Bite
+			case 11326: return 1127; // Wynn Feline King - Feline Pounce
+			case 11327: return 1128; // Wynn Feline Queen - Feline Touch
+			case 11328: return 1129; // Wynn Feline Queen - Feline Power
+			case 11332: return 1130; // Wynn Merrow - Unicorn's Aggression
+			case 11333: return 1131; // Wynn Merrow - Unicorn's Stun
+			case 11334: return 1132; // Wynn Magnus - Unicorn's Bite
+			case 11335: return 1133; // Wynn Magnus - Unicorn's Pounce
+			case 11336: return 1134; // Wynn Seraphim - Unicorn's Touch
+			case 11337: return 1135; // Wynn Seraphim - Unicorn's Power
+			case 11341: return 1136; // Wynn Nightshade - Phantom Aggression
+			case 11342: return 1137; // Wynn Nightshade - Phantom Stun
+			case 11343: return 1138; // Wynn Spectral Lord - Phantom Bite
+			case 11344: return 1139; // Wynn Spectral Lord - Phantom Pounce
+			case 11345: return 1140; // Wynn Soulless - Phantom Touch
+			case 11346: return 1141; // Wynn Soulless - Phantom Power
+			case 10087: return 1142; // Blood Panther - Panther Roar
+			case 10088: return 1143; // Blood Panther - Panther Rush
+			case 23155: return 5000; // Baby Rudolph - Reindeer Scratch
+			case 23167: return 5001; // Deseloph, Hyum, Rekang, Lilias, Lapham, Mafum - Rosy Seduction
+			case 23168: return 5002; // Deseloph, Hyum, Rekang, Lilias, Lapham, Mafum - Critical Seduction
+			case 6054: return 5015; // Deseloph, Hyum, Rekang, Lilias, Lapham, Mafum, Deseloph, Hyum, Rekang, Lilias, Lapham, Mafum - Switch Stance
+			default: return 0;
+		}//@formatter:on
+	}
 }

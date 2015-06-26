@@ -18,6 +18,7 @@
  */
 package org.l2junity.gameserver.model.actor.stat;
 
+import org.l2junity.Config;
 import org.l2junity.gameserver.model.actor.Summon;
 
 public class SummonStat extends PlayableStat
@@ -31,5 +32,59 @@ public class SummonStat extends PlayableStat
 	public Summon getActiveChar()
 	{
 		return (Summon) super.getActiveChar();
+	}
+	
+	@Override
+	public double getRunSpeed()
+	{
+		double val = super.getRunSpeed() + Config.RUN_SPD_BOOST;
+		
+		// Apply max run speed cap.
+		if (val > (Config.MAX_RUN_SPEED + 50)) // In retail maximum run speed is 350 for summons and 300 for players
+		{
+			return Config.MAX_RUN_SPEED + 50;
+		}
+		
+		return val;
+	}
+	
+	@Override
+	public double getWalkSpeed()
+	{
+		double val = super.getWalkSpeed() + Config.RUN_SPD_BOOST;
+		
+		// Apply max run speed cap.
+		if (val > (Config.MAX_RUN_SPEED + 50)) // In retail maximum run speed is 350 for summons and 300 for players
+		{
+			return Config.MAX_RUN_SPEED + 50;
+		}
+		
+		return val;
+	}
+	
+	@Override
+	public int getPAtkSpd()
+	{
+		int val = super.getPAtkSpd();
+		
+		// Apply attack speed cap.
+		if (val > Config.MAX_PATK_SPEED)
+		{
+			return Config.MAX_PATK_SPEED;
+		}
+		return val;
+	}
+	
+	@Override
+	public int getMAtkSpd()
+	{
+		int val = super.getMAtkSpd();
+		
+		// Apply casting speed cap.
+		if (val > Config.MAX_MATK_SPEED)
+		{
+			return Config.MAX_MATK_SPEED;
+		}
+		return val;
 	}
 }

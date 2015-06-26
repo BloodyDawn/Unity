@@ -21,8 +21,10 @@ package handlers.targethandlers;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
+import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.L2TargetType;
+import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
  * Target Servitor handler.
@@ -35,7 +37,16 @@ public class Servitor implements ITargetTypeHandler
 	{
 		if (activeChar.hasServitors())
 		{
-			return activeChar.getServitors().values().toArray(new Creature[activeChar.getServitors().size()]);
+			if ((target == null) || target.isDead() || !target.isSummon() || (((Summon) target).getOwner() != activeChar))
+			{
+				activeChar.sendPacket(SystemMessageId.THAT_IS_AN_INCORRECT_TARGET);
+				return EMPTY_TARGET_LIST;
+			}
+			
+			return new Creature[]
+			{
+				target
+			};
 			
 		}
 		return EMPTY_TARGET_LIST;

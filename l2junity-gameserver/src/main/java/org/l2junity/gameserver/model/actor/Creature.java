@@ -137,6 +137,7 @@ import org.l2junity.gameserver.model.stats.Stats;
 import org.l2junity.gameserver.model.stats.functions.AbstractFunction;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.model.zone.ZoneRegion;
+import org.l2junity.gameserver.network.client.recv.RequestActionUse;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.Attack;
 import org.l2junity.gameserver.network.client.send.ChangeMoveType;
@@ -1917,9 +1918,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			}
 		}
 		
+		final int actionId = isSummon() ? RequestActionUse.getActionId(skill.getId()) : -1;
+		
 		// Send a Server->Client packet MagicSkillUser with target, displayId, level, skillTime, reuseDelay
 		// to the L2Character AND to all L2PcInstance in the _KnownPlayers of the L2Character
-		broadcastPacket(new MagicSkillUse(this, target, skill.getDisplayId(), skill.getDisplayLevel(), skillTime, reuseDelay));
+		broadcastPacket(new MagicSkillUse(this, target, skill.getDisplayId(), skill.getDisplayLevel(), skillTime, reuseDelay, actionId));
 		
 		// Send a system message to the player.
 		if (isPlayer() && !skill.isAbnormalInstant())
@@ -4892,7 +4895,8 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			target.reduceCurrentHp(damage, this, null);
 			target.notifyDamageReceived(damage, this, null, crit, false, false);
 			
-			if (reflectedDamage > 0)
+			// When killing blow is made, the target doesn't reflect.
+			if ((reflectedDamage > 0) && !target.isDead())
 			{
 				reduceCurrentHp(reflectedDamage, target, true, false, null);
 				notifyDamageReceived(reflectedDamage, target, null, crit, false, true);

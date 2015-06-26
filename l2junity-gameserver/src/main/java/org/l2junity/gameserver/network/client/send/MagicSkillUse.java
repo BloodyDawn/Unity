@@ -39,12 +39,13 @@ public final class MagicSkillUse implements IClientOutgoingPacket
 	private final int _skillLevel;
 	private final int _hitTime;
 	private final int _reuseDelay;
+	private final int _actionId; // If skill is called from RequestActionUse, use that ID.
 	private final Creature _activeChar;
 	private final Creature _target;
 	private final List<Integer> _unknown = Collections.emptyList();
 	private final List<Location> _groundLocations;
 	
-	public MagicSkillUse(Creature cha, Creature target, int skillId, int skillLevel, int hitTime, int reuseDelay)
+	public MagicSkillUse(Creature cha, Creature target, int skillId, int skillLevel, int hitTime, int reuseDelay, int actionId)
 	{
 		_activeChar = cha;
 		_target = target;
@@ -52,6 +53,7 @@ public final class MagicSkillUse implements IClientOutgoingPacket
 		_skillLevel = skillLevel;
 		_hitTime = hitTime;
 		_reuseDelay = reuseDelay;
+		_actionId = actionId;
 		Location skillWorldPos = null;
 		if (cha.isPlayer())
 		{
@@ -64,9 +66,14 @@ public final class MagicSkillUse implements IClientOutgoingPacket
 		_groundLocations = skillWorldPos != null ? Arrays.asList(skillWorldPos) : Collections.<Location> emptyList();
 	}
 	
+	public MagicSkillUse(Creature cha, Creature target, int skillId, int skillLevel, int hitTime, int reuseDelay)
+	{
+		this(cha, cha, skillId, skillLevel, hitTime, reuseDelay, -1);
+	}
+	
 	public MagicSkillUse(Creature cha, int skillId, int skillLevel, int hitTime, int reuseDelay)
 	{
-		this(cha, cha, skillId, skillLevel, hitTime, reuseDelay);
+		this(cha, cha, skillId, skillLevel, hitTime, reuseDelay, -1);
 	}
 	
 	@Override
@@ -100,8 +107,8 @@ public final class MagicSkillUse implements IClientOutgoingPacket
 		packet.writeD(_target.getX());
 		packet.writeD(_target.getY());
 		packet.writeD(_target.getZ());
-		packet.writeD(0x00); // TODO: Find me! Summon related
-		packet.writeD(0x00); // TODO: Find me! Summon related, confirm it's ID from RequestActionUse
+		packet.writeD(_actionId >= 0 ? 0x01 : 0x00); // 1 when ID from RequestActionUse is used
+		packet.writeD(_actionId >= 0 ? _actionId : 0); // ID from RequestActionUse. Used to set cooldown on summon skills.
 		return true;
 	}
 }

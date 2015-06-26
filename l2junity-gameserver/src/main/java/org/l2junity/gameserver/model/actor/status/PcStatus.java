@@ -147,7 +147,7 @@ public class PcStatus extends PlayableStatus
 			}
 			
 			// Check and calculate transfered damage
-			final Summon summon = getActiveChar().getAnyServitor();
+			final Summon summon = getActiveChar().getFirstServitor();
 			if ((summon != null) && Util.checkIfInRange(1000, getActiveChar(), summon, true))
 			{
 				tDmg = ((int) value * (int) getActiveChar().getStat().calcStat(Stats.TRANSFER_DAMAGE_PERCENT, 0, null, null)) / 100;

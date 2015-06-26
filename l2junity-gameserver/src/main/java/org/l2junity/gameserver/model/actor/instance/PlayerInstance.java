@@ -5624,6 +5624,11 @@ public final class PlayerInstance extends Playable
 		return getServitors().values().stream().findAny().orElse(null);
 	}
 	
+	public Summon getFirstServitor()
+	{
+		return getServitors().values().stream().findFirst().orElse(null);
+	}
+	
 	@Override
 	public Summon getServitor(int objectId)
 	{
