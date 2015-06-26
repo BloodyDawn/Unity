@@ -391,7 +391,11 @@ public enum AbnormalType
 	ARCANE_PROTECTION,
 	GREATER_SERVITOR_BUFF,
 	BIG_BODY_COMBINATION,
-	SUMMONER_LINK;
+	SUMMONER_LINK,
+	MARK_OF_WEAKNESS,
+	MARK_OF_VOID,
+	MARK_OF_PLAGUE,
+	MARK_OF_TRICK;
 	
 	/**
 	 * Get the enumerate for the given String.

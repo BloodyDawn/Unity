@@ -1124,7 +1124,7 @@
 			<height normal="39.5" />
 		</collision>
 	</npc>
-	<npc id="14927" level="99" type="L2Monster" name="Death Gate" title="">
+	<npc id="14927" level="99" type="L2Npc" name="Death Gate" title="">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
@@ -1140,12 +1140,15 @@
 				<defence fire="260" water="260" wind="260" earth="260" holy="260" dark="260" />
 			</attribute>
 		</stats>
-		<status attackable="false" />
+		<status attackable="true" hasSummoner="true" />
+		<ai aggroRange="300" isAggressive="true" />
 		<skill_list>
 			<skill id="4121" level="9" /> <!-- Summoned Monster Magic Protection -->
 			<skill id="4416" level="23" /> <!-- Mercenaries -->
 			<skill id="4415" level="3" /> <!-- One-handed Sword -->
 			<skill id="5038" level="15" /> <!-- Servitor PvP Penalty -->
+			<skill id="11289" level="1" /> <!-- Gate Root -->
+			<skill id="11291" level="1" /> <!-- Gate Vortex -->
 		</skill_list>
 		<collision>
 			<radius normal="57" />

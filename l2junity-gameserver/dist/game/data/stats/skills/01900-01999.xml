@@ -204,13 +204,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<cond addName="1" msgId="113">
-			<player hp="20" />
+			<player hp="30" />
 		</cond>
 		<for>
 			<effect name="TriggerSkillByDamage">
-				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param attackerType="L2Playable" minAttackerLevel="1" />
 				<param minDamage="1" />
-				<param chance="25" />
+				<param chance="100" />
 				<param skillId="1918" skillLevel="1" /> <!-- Undying Will -->
 				<param targetType="ONE" />
 			</effect>
@@ -231,6 +231,9 @@
 		<set name="staticReuse" val="true"/>
 		<for>
 			<effect name="Invincible" />
+			<effect name="DispelByCategory">
+				<param slot="debuff" rate="100" max="99" /> <!-- In retail disables all debuffs as well. -->
+			</effect>
 		</for>
 	</skill>
 	<skill id="1919" levels="1" name="Dexterity">

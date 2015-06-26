@@ -229,6 +229,7 @@ public final class Skill implements IIdentifiable
 	
 	private final boolean _canDoubleCast;
 	private final boolean _canCastWhileDisabled;
+	private final boolean _isSharedWithSummon;
 	
 	public Skill(StatsSet set)
 	{
@@ -413,6 +414,7 @@ public final class Skill implements IIdentifiable
 		
 		_canDoubleCast = set.getBoolean("canDoubleCast", false);
 		_canCastWhileDisabled = set.getBoolean("canCastWhileDisabled", false);
+		_isSharedWithSummon = set.getBoolean("isSharedWithSummon", true);
 	}
 	
 	public TraitType getTraitType()
@@ -1402,7 +1404,7 @@ public final class Skill implements IIdentifiable
 			}
 			
 			// Support for buff sharing feature including healing herbs.
-			if (effected.isPlayer() && effected.hasServitors())
+			if (isSharedWithSummon() && effected.isPlayer() && effected.hasServitors())
 			{
 				if ((addContinuousEffects && isContinuous() && !isDebuff()) || isRecoveryHerb())
 				{
@@ -1434,7 +1436,7 @@ public final class Skill implements IIdentifiable
 			
 			// Support for buff sharing feature.
 			// Avoiding Servitor Share since it's implementation already "shares" the effect.
-			if (addContinuousEffects && info.getEffected().isPlayer() && info.getEffected().hasServitors() && isContinuous() && !isDebuff() && (getId() != CommonSkill.SERVITOR_SHARE.getId()))
+			if (addContinuousEffects && isSharedWithSummon() && info.getEffected().isPlayer() && isContinuous() && !isDebuff() && info.getEffected().hasServitors())
 			{
 				info.getEffected().getServitors().values().forEach(s ->
 				{
@@ -1896,5 +1898,10 @@ public final class Skill implements IIdentifiable
 	public boolean canCastWhileDisabled()
 	{
 		return _canCastWhileDisabled;
+	}
+	
+	public boolean isSharedWithSummon()
+	{
+		return _isSharedWithSummon;
 	}
 }

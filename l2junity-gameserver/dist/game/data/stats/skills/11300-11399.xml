@@ -222,7 +222,7 @@
 		<set name="effectPoint" val="687" />
 		<set name="isMagic" val="1" />
 		<for>
-			<effect name="ImmobilePetBuff">
+			<effect name="Buff">
 				<add stat="pDef" val="#pDef" />
 				<add stat="mDef" val="#mDef" />
 			</effect>
@@ -444,8 +444,11 @@
 		<!-- Provokes nearby enemies. -->
 		<table name="#mpConsumes"> 73 76 79 81 84 87 90 93 </table>
 		<set name="icon" val="icon.skill0028" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3" />
+		<set name="abnormalType" val="TARGET_LOCK" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
-		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
@@ -467,7 +470,7 @@
 		<table name="#mpConsumes"> 73 76 79 81 84 87 90 93 </table>
 		<set name="icon" val="icon.skill0028" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="9" /> <!-- Guessed -->
+		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
@@ -516,7 +519,7 @@
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="SPEED_DOWN" />
-		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="activateRate" val="100" />
 		<set name="affectRange" val="150" /> <!-- Guessed -->
 		<set name="basicProperty" val="CON" />
 		<set name="operateType" val="DA2" />
@@ -661,8 +664,11 @@
 		<!-- Provokes nearby enemies. -->
 		<table name="#mpConsumes"> 73 76 79 81 84 87 90 93 </table>
 		<set name="icon" val="icon.skill0028" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3" />
+		<set name="abnormalType" val="TARGET_LOCK" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
-		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
@@ -684,7 +690,7 @@
 		<table name="#mpConsumes"> 73 76 79 81 84 87 90 93 </table>
 		<set name="icon" val="icon.skill0028" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="9" /> <!-- Guessed -->
+		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
@@ -733,7 +739,7 @@
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="SPEED_DOWN" />
-		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="activateRate" val="100" />
 		<set name="affectRange" val="150" /> <!-- Guessed -->
 		<set name="basicProperty" val="CON" />
 		<set name="operateType" val="DA2" />
@@ -878,8 +884,11 @@
 		<!-- Provokes nearby enemies. -->
 		<table name="#mpConsumes"> 73 76 79 81 84 87 90 93 </table>
 		<set name="icon" val="icon.skill0028" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="3" />
+		<set name="abnormalType" val="TARGET_LOCK" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
-		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="activateRate" val="100" />
 		<set name="basicProperty" val="MEN" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="AURA" />
@@ -901,7 +910,7 @@
 		<table name="#mpConsumes"> 73 76 79 81 84 87 90 93 </table>
 		<set name="icon" val="icon.skill0028" />
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="9" /> <!-- Guessed -->
+		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="STUN" />
 		<set name="abnormalVisualEffect" val="STUN" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
@@ -950,7 +959,7 @@
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="SPEED_DOWN" />
-		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="activateRate" val="100" />
 		<set name="affectRange" val="150" /> <!-- Guessed -->
 		<set name="basicProperty" val="CON" />
 		<set name="operateType" val="DA2" />
@@ -1109,13 +1118,10 @@
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack" />
-			<effect name="CallSkill">
-				<param skillId="11351" skillLevel="1" skillLevelScaleTo="5" /> <!-- Arcane Link -->
-			</effect>
 		</for>
 	</skill>
 	<skill id="11351" levels="5" name="Arcane Link">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Servitor's wrath. P. Atk. + 1%, Critical Rate + 10%, and Critical Damage + 1%. -->
 		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
 		<table name="#pAtk"> 1.01 1.03 1.05 1.10 1.15 </table>
@@ -1125,8 +1131,10 @@
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="SUMMONER_LINK" />
+		<set name="isSharedWithSummon" val="false" />
+		<set name="isTriggeredSkill" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="SUMMON" />
 		<set name="castRange" val="900" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="4" />
@@ -1175,13 +1183,10 @@
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack" />
-			<effect name="CallSkill">
-				<param skillId="11354" skillLevel="1" skillLevelScaleTo="5" /> <!-- Elemental Link -->
-			</effect>
 		</for>
 	</skill>
 	<skill id="11354" levels="5" name="Elemental Link">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Servitor's wrath. P. Atk. + 1%, Critical Rate + 10%, and Critical Damage + 1%. -->
 		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
 		<table name="#pAtk"> 1.01 1.03 1.05 1.10 1.15 </table>
@@ -1191,8 +1196,10 @@
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="SUMMONER_LINK" />
+		<set name="isSharedWithSummon" val="false" />
+		<set name="isTriggeredSkill" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="SUMMON" />
 		<set name="castRange" val="900" />
 		<set name="reuseDelay" val="5000" />
 		<set name="isMagic" val="4" />
@@ -1236,13 +1243,10 @@
 		<set name="isMagic" val="1" />
 		<for>
 			<effect name="MagicalAttack" />
-			<effect name="CallSkill">
-				<param skillId="11357" skillLevel="1" skillLevelScaleTo="5" /> <!-- Spectral Link -->
-			</effect>
 		</for>
 	</skill>
 	<skill id="11357" levels="5" name="Spectral Link">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Servitor's wrath. P. Atk. + 1%, Critical Rate + 10%, and Critical Damage + 1%. -->
 		<table name="#abnormalLvl"> 1 2 3 4 5 </table>
 		<table name="#pAtk"> 1.01 1.03 1.05 1.10 1.15 </table>
@@ -1252,6 +1256,8 @@
 		<set name="abnormalLvl" val="#abnormalLvl" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="SUMMONER_LINK" />
+		<set name="isSharedWithSummon" val="false" />
+		<set name="isTriggeredSkill" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="targetType" val="SUMMON" />
 		<set name="castRange" val="900" />
@@ -1285,7 +1291,10 @@
 		<!-- AUTO GENERATED SKILL -->
 		<!-- Summons a giant shaman stone to temporarily increase party's abilities. Consumes 15 Spirit Ores. -->
 		<table name="#mpConsumes"> 137 132 137 </table>
+		<table name="#npcIds"> 13423 13424 13425 </table>
 		<set name="icon" val="icon.skill11359" />
+		<set name="itemConsumeCount" val="15" />
+		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<set name="mpConsume" val="#mpConsumes" />
@@ -1293,6 +1302,11 @@
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="reuseDelay" val="400000" />
+		<for>
+			<effect name="SummonNpc">
+				<param npcId="#npcIds" npcCount="1" despawnDelay="120000" singleInstance="true" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="11360" levels="3" name="Arcane Protection">
 		<!-- Updated to IO -->
@@ -1405,13 +1419,14 @@
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="NONE" />
-		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="activateRate" val="90" /> <!-- Guessed -->
+		<set name="affectRange" val="200" />
 		<set name="basicProperty" val="MEN" />
 		<set name="itemConsumeCount" val="3" />
 		<set name="itemConsumeId" val="3031" /> <!-- Spirit Ore -->
 		<set name="operateType" val="A2" />
 		<set name="power" val="#power" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="AREA" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="castRange" val="600" />
 		<set name="hitTime" val="2500" />
