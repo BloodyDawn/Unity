@@ -19,21 +19,26 @@
 package ai.npc.NpcBuffers;
 
 import org.l2junity.gameserver.ThreadPoolManager;
+import org.l2junity.gameserver.datatables.SkillData;
 import org.l2junity.gameserver.model.Party;
 import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2TamedBeastInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.skills.BuffInfo;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author UnAfraid
  */
 public class NpcBufferAI implements Runnable
 {
+	private static final Logger LOGGER = LoggerFactory.getLogger(NpcBufferAI.class);
 	private final Npc _npc;
 	private final NpcBufferSkillData _skillData;
 	
@@ -41,6 +46,33 @@ public class NpcBufferAI implements Runnable
 	{
 		_npc = npc;
 		_skillData = skill;
+	}
+	
+	private Skill getSkill(PlayerInstance player)
+	{
+		if (_skillData.getScaleToLevel() < 1)
+		{
+			return _skillData.getSkill();
+		}
+		
+		final BuffInfo currentBuff = player.getEffectList().getBuffInfoBySkillId(_skillData.getSkill().getId());
+		if (currentBuff != null)
+		{
+			int level = currentBuff.getSkill().getLevel();
+			if (_skillData.getScaleToLevel() > level)
+			{
+				level++;
+			}
+			
+			final Skill skill = SkillData.getInstance().getSkill(_skillData.getSkill().getId(), level);
+			if (skill == null)
+			{
+				LOGGER.warn("Requested non existing skill level: {} for id: {}", level, _skillData.getSkill().getId());
+			}
+			return skill;
+		}
+		
+		return _skillData.getSkill();
 	}
 	
 	@Override
@@ -56,7 +88,6 @@ public class NpcBufferAI implements Runnable
 			return;
 		}
 		
-		final Skill skill = _skillData.getSkill();
 		final PlayerInstance player = _npc.getSummoner().getActingPlayer();
 		
 		switch (_skillData.getAffectScope())
@@ -67,6 +98,11 @@ public class NpcBufferAI implements Runnable
 				{
 					for (PlayerInstance member : player.getParty().getMembers())
 					{
+						final Skill skill = getSkill(player);
+						if (skill == null)
+						{
+							return;
+						}
 						if (Util.checkIfInRange(skill.getAffectRange(), _npc, member, true) && !member.isDead())
 						{
 							skill.applyEffects(player, member);
@@ -75,6 +111,11 @@ public class NpcBufferAI implements Runnable
 				}
 				else
 				{
+					final Skill skill = getSkill(player);
+					if (skill == null)
+					{
+						return;
+					}
 					if (Util.checkIfInRange(skill.getAffectRange(), _npc, player, true) && !player.isDead())
 					{
 						skill.applyEffects(player, player);
@@ -84,7 +125,7 @@ public class NpcBufferAI implements Runnable
 			}
 			case RANGE:
 			{
-				World.getInstance().forEachVisibleObjectInRange(_npc, Creature.class, skill.getAffectRange(), target ->
+				World.getInstance().forEachVisibleObjectInRange(_npc, Creature.class, _skillData.getSkill().getAffectRange(), target ->
 				{
 					switch (_skillData.getAffectObject())
 					{
@@ -92,6 +133,11 @@ public class NpcBufferAI implements Runnable
 						{
 							if (isFriendly(player, target) && !target.isDead())
 							{
+								final Skill skill = getSkill(player);
+								if (skill == null)
+								{
+									return;
+								}
 								skill.applyEffects(target, target);
 							}
 							break;
@@ -104,6 +150,12 @@ public class NpcBufferAI implements Runnable
 								if (target.isPlayable())
 								{
 									player.updatePvPStatus(target);
+								}
+								
+								final Skill skill = getSkill(player);
+								if (skill == null)
+								{
+									return;
 								}
 								skill.applyEffects(target, target);
 							}

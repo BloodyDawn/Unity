@@ -4887,6 +4887,12 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 						{
 							reflectedDamage = target.getMaxHp();
 						}
+						
+						// Cannot reflect more damage than your own P.Def.
+						if (reflectedDamage > getStat().getPDef(target))
+						{
+							reflectedDamage = getStat().getPDef(target);
+						}
 					}
 				}
 			}

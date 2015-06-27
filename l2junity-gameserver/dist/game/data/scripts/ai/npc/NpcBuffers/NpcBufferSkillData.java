@@ -30,6 +30,7 @@ import org.l2junity.gameserver.model.skills.targets.AffectScope;
 public class NpcBufferSkillData
 {
 	private final SkillHolder _skill;
+	private final int _scaleToLevel;
 	private final int _initialDelay;
 	private final int _delay;
 	private final AffectScope _affectScope;
@@ -38,7 +39,8 @@ public class NpcBufferSkillData
 	public NpcBufferSkillData(StatsSet set)
 	{
 		_skill = new SkillHolder(set.getInt("id"), set.getInt("level"));
-		_initialDelay = set.getInt("skillInitDelay", 0) * 1000;
+		_scaleToLevel = set.getInt("scaleToLevel", -1);
+		_initialDelay = set.getInt("initialDelay", 0) * 1000;
 		_delay = set.getInt("delay") * 1000;
 		_affectScope = set.getEnum("affectScope", AffectScope.class);
 		_affectObject = set.getEnum("affectObject", AffectObject.class);
@@ -47,6 +49,11 @@ public class NpcBufferSkillData
 	public Skill getSkill()
 	{
 		return _skill.getSkill();
+	}
+	
+	public int getScaleToLevel()
+	{
+		return _scaleToLevel;
 	}
 	
 	public int getInitialDelay()

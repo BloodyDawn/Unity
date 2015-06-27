@@ -143,31 +143,29 @@
 	<npc id="13454"> <!-- Solo Dance -->
 		<skill id="10523" level="9" delay="2" affectScope="RANGE" affectObject="NOT_FRIEND" /> <!-- Poisoned -->
 	</npc>
-	<!-- TODO Multiple skills casted by one NPC -->
 	<npc id="14927"> <!-- Death Gate -->
 		<skill id="11289" level="1" initialDelay="3" delay="3" affectScope="RANGE" affectObject="NOT_FRIEND" /> <!-- Gate Root -->
-		<!-- skill id="11291" level="1" initialDelay="6" delay="3" affectScope="RANGE" affectObject="NOT_FRIEND" / --> <!-- Gate Vortex -->
+		<skill id="11291" level="1" initialDelay="6" delay="3" affectScope="RANGE" affectObject="NOT_FRIEND" /> <!-- Gate Vortex -->
 	</npc>
 	<npc id="15200"> <!-- Death Gate -->
 		<skill id="11289" level="2" initialDelay="3" delay="3" affectScope="RANGE" affectObject="NOT_FRIEND" /> <!-- Gate Root -->
-		<!-- skill id="11291" level="2" initialDelay="6" delay="3" affectScope="RANGE" affectObject="NOT_FRIEND" / --> <!-- Gate Vortex -->
+		<skill id="11291" level="2" initialDelay="6" delay="3" affectScope="RANGE" affectObject="NOT_FRIEND" /> <!-- Gate Vortex -->
 	</npc>
 	<npc id="15201"> <!-- Death Gate -->
 		<skill id="11289" level="3" initialDelay="3" delay="3" affectScope="RANGE" affectObject="NOT_FRIEND" /> <!-- Gate Root -->
-		<!-- skill id="11291" level="3" initialDelay="6" delay="3" affectScope="RANGE" affectObject="NOT_FRIEND" / --> <!-- Gate Vortex -->
+		<skill id="11291" level="3" initialDelay="6" delay="3" affectScope="RANGE" affectObject="NOT_FRIEND" /> <!-- Gate Vortex -->
 	</npc>
 	<npc id="15202"> <!-- Death Gate -->
 		<skill id="11289" level="4" initialDelay="3" delay="3" affectScope="RANGE" affectObject="NOT_FRIEND" /> <!-- Gate Root -->
-		<!-- skill id="11291" level="4" initialDelay="6" delay="3" affectScope="RANGE" affectObject="NOT_FRIEND" / --> <!-- Gate Vortex -->
+		<skill id="11291" level="4" initialDelay="6" delay="3" affectScope="RANGE" affectObject="NOT_FRIEND" /> <!-- Gate Vortex -->
 	</npc>
-	<!-- TODO Protection stone skill level scales from 1 to 3 -->
 	<npc id="13423"> <!-- Protection Stone -->
-		<skill id="11360" level="1" initialDelay="3" delay="3" affectScope="RANGE" affectObject="FRIEND" /> <!-- Arcane Protection -->
+		<skill id="11360" level="1" scaleToLevel="3" initialDelay="3" delay="3" affectScope="RANGE" affectObject="FRIEND" /> <!-- Arcane Protection -->
 	</npc>
 	<npc id="13424"> <!-- Protection Stone -->
-		<skill id="11367" level="1" initialDelay="3" delay="3" affectScope="RANGE" affectObject="FRIEND" /> <!-- Arcane Protection -->
+		<skill id="11367" level="1" scaleToLevel="3" initialDelay="3" delay="3" affectScope="RANGE" affectObject="FRIEND" /> <!-- Arcane Protection -->
 	</npc>
 	<npc id="13425"> <!-- Protection Stone -->
-		<skill id="11368" level="1" initialDelay="3" delay="3" affectScope="RANGE" affectObject="FRIEND" /> <!-- Arcane Protection -->
+		<skill id="11368" level="1" scaleToLevel="3" initialDelay="3" delay="3" affectScope="RANGE" affectObject="FRIEND" /> <!-- Arcane Protection -->
 	</npc>
 </list>
