@@ -873,8 +873,12 @@
 	<item id="39491" name="Scroll of Escape: Gludin Village" additionalName="" type="EtcItem">
 		<!-- Teleports you to Levian in Gludin Village. -->
 		<set name="icon" val="icon.etc_scroll_of_return_i03" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
+		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="item_skill" val="17981-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -883,14 +887,20 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="is_questitem" val="true" />
 		<set name="is_stackable" val="true" />
+		<cond msgId="113" addName="1">
+			<player flyMounted="false" />
+		</cond>
 	</item>
 	<item id="39492" name="Scroll of Escape: Windy Hill" additionalName="" type="EtcItem">
 		<!-- Teleports you to the Windy Hill. -->
 		<set name="icon" val="icon.etc_scroll_of_return_i03" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
+		<set name="handler" val="ItemSkills" />
 		<set name="crystal_type" val="NONE" />
+		<set name="item_skill" val="17982-1" />
 		<set name="is_clan_depositable" val="false" />
 		<set name="is_mailable" val="false" />
 		<set name="is_freightable" val="false" />
@@ -899,8 +909,10 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="is_questitem" val="true" />
 		<set name="is_stackable" val="true" />
+		<cond msgId="113" addName="1">
+			<player flyMounted="false" />
+		</cond>
 	</item>
 	<item id="39493" name="Unworldly Wind" additionalName="" type="EtcItem">
 		<!-- Obtained by killing off the crazed creatures in the Windy Hill. Something feels unworldly about this. -->
