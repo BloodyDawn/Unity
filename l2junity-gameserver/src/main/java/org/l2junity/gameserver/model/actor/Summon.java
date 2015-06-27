@@ -197,7 +197,14 @@ public abstract class Summon extends Playable
 			}
 			else
 			{
-				player.sendPacket(new SummonInfo(this, player, 1));
+				if (player == getOwner())
+				{
+					player.sendPacket(new PetInfo(this, 1));
+				}
+				else
+				{
+					player.sendPacket(new SummonInfo(this, player, 1));
+				}
 			}
 		});
 	}
@@ -391,9 +398,30 @@ public abstract class Summon extends Playable
 	{
 		if (isVisible() && !isDead())
 		{
-			getAI().stopFollow();
+			abortAttack();
+			abortCast();
+			storeMe();
+			storeEffect(true);
+			
+			// Stop AI tasks
+			if (hasAI())
+			{
+				getAI().stopAITask(); // Calls stopFollow as well.
+			}
+			
+			stopAllEffects();
+			
 			if (owner != null)
 			{
+				if (isPet())
+				{
+					owner.setPet(null);
+				}
+				else
+				{
+					owner.removeServitor(getObjectId());
+				}
+				
 				owner.sendPacket(new PetDelete(getSummonType(), getObjectId()));
 				final Party party = owner.getParty();
 				if (party != null)
@@ -411,29 +439,6 @@ public abstract class Summon extends Playable
 					getOwner().setPetInvItems(false);
 				}
 			}
-			abortAttack();
-			abortCast();
-			storeMe();
-			storeEffect(true);
-			if (owner != null)
-			{
-				if (isPet())
-				{
-					owner.setPet(null);
-				}
-				else
-				{
-					owner.removeServitor(getObjectId());
-				}
-			}
-			
-			// Stop AI tasks
-			if (hasAI())
-			{
-				getAI().stopAITask();
-			}
-			
-			stopAllEffects();
 			
 			final ZoneRegion oldRegion = ZoneManager.getInstance().getRegion(this);
 			decayMe();
