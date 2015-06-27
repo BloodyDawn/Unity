@@ -18,8 +18,6 @@
  */
 package instances.KaraphonHabitat;
 
-import instances.AbstractInstance;
-
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
 import org.l2junity.gameserver.model.actor.Npc;
@@ -27,18 +25,24 @@ import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.instancezone.InstanceWorld;
 import org.l2junity.gameserver.model.quest.QuestState;
 
+import instances.AbstractInstance;
 import quests.Q10745_TheSecretIngredients.Q10745_TheSecretIngredients;
 
 /**
+ * Karaphon Habitat instance.
  * @author Sdw
  */
 public class KaraphonHabitat extends AbstractInstance
 {
-	// NPC's
+	// NPCs
 	private static final int DOLKIN = 33954;
 	private static final int DOLKIN_INSTANCE = 34002;
+	// Monsters
+	private static final int KARAPHON = 23459;
+	private static final int KEEN_HONEYBEE = 23460;
+	private static final int KEEN_GROWLER = 23461;
 	// Locations
-	private static final Location START_LOC = new Location(-82100, 246311, -14152);
+	private static final Location START_LOC = new Location(-82242, 246404, -14152);
 	// Instance
 	private static final int TEMPLATE_ID = 253;
 	
@@ -48,6 +52,18 @@ public class KaraphonHabitat extends AbstractInstance
 		addStartNpc(DOLKIN);
 		addTalkId(DOLKIN);
 		addFirstTalkId(DOLKIN_INSTANCE);
+		addSpawnId(KARAPHON, KEEN_HONEYBEE, KEEN_GROWLER);
+		addKillId(KARAPHON);
+	}
+	
+	@Override
+	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
+	{
+		if (firstEntrance)
+		{
+			world.addAllowed(player.getObjectId());
+		}
+		teleportPlayer(player, START_LOC, world.getInstanceId());
 	}
 	
 	@Override
@@ -69,7 +85,10 @@ public class KaraphonHabitat extends AbstractInstance
 			case "exit_instance":
 			{
 				final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-				finishInstance(world, 0);
+				if (world != null)
+				{
+					finishInstance(world, 0);
+				}
 				break;
 			}
 		}
@@ -77,12 +96,20 @@ public class KaraphonHabitat extends AbstractInstance
 	}
 	
 	@Override
-	public void onEnterInstance(PlayerInstance player, InstanceWorld world, boolean firstEntrance)
+	public String onSpawn(Npc npc)
 	{
-		if (firstEntrance)
+		npc.setIsNoRndWalk(true);
+		return super.onSpawn(npc);
+	}
+	
+	@Override
+	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
+	{
+		final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(killer);
+		if (world != null)
 		{
-			world.addAllowed(player.getObjectId());
+			handleReenterTime(world);
 		}
-		teleportPlayer(player, START_LOC, world.getInstanceId());
+		return super.onKill(npc, killer, isSummon);
 	}
 }

@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <instance name="Karaphon Habitat" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/instance.xsd">
-	<activityTime val="15" />
 	<allowSummon val="false" />
 	<emptyDestroyTime val="5" />
-	<spawnPoint spawnX="-88293" spawnY="237393" spawnZ="-2890" />
+	<spawnPoint spawnX="-88282" spawnY="237468" spawnZ="-2880" />
+	<reenter additionStyle="NONE">
+		<reset time="51600000"/>
+	</reenter>
 	<spawnlist>
 		<group name="general">
-			<!-- Karaphon -->
-			<spawn npcId="23459" x="-81898" y="245792" z="-14152" heading="0" respawn="0" />
-			<!-- Keen Honeybee -->
-			<spawn npcId="23460" x="-81766" y="246077" z="-14152" heading="0" respawn="0" />
-			<!-- Keen Growler -->
-			<spawn npcId="23461" x="-81993" y="246117" z="-14152" heading="0" respawn="0" />
+			<spawn npcId="23459" x="-82358" y="246037" z="-14152" heading="12928" respawn="0" /> <!-- Karaphon -->
+			<spawn npcId="23460" x="-82410" y="246063" z="-14152" heading="12928" respawn="0" /> <!-- Keen Honeybee -->
+			<spawn npcId="23461" x="-82298" y="246047" z="-14152" heading="12928" respawn="0" /> <!-- Keen Growler -->
 		</group>
 	</spawnlist>
 </instance>

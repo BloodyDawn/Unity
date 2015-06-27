@@ -18,6 +18,7 @@
  */
 package quests.Q10745_TheSecretIngredients;
 
+import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.ItemHolder;
@@ -55,8 +56,10 @@ public final class Q10745_TheSecretIngredients extends Quest
 		addStartNpc(DOLKIN);
 		addTalkId(DOLKIN, KARLA);
 		addKillId(KARAPHON, KEEN_HONEYBEE, KEEN_GROWLER);
+		
+		addCondRace(Race.ERTHEIA, "");
+		addCondLevel(MIN_LEVEL, MAX_LEVEL, "33954-00.htm");
 		registerQuestItems(SECRET_INGREDIENTS.getId(), DOLKIN_REPORT.getId());
-		addCondLevel(MIN_LEVEL, MAX_LEVEL, "fixme.html");
 	}
 	
 	@Override
@@ -68,27 +71,27 @@ public final class Q10745_TheSecretIngredients extends Quest
 			return null;
 		}
 		
-		String htmltext = null;
+		String htmltext = event;
 		switch (event)
 		{
 			case "33954-02.htm":
 			{
 				qs.startQuest();
-				htmltext = event;
+				sendNpcLogList(player);
 				break;
 			}
-			case "33954-04.htm":
+			case "33954-05.html":
 			{
 				if (qs.isCond(2))
 				{
 					qs.setCond(3, true);
+					sendNpcLogList(player);
 					takeItem(player, SECRET_INGREDIENTS);
 					giveItems(player, DOLKIN_REPORT);
-					htmltext = event;
 				}
 				break;
 			}
-			case "33933-02.htm":
+			case "33933-02.html":
 			{
 				if (qs.isCond(3))
 				{
@@ -102,18 +105,20 @@ public final class Q10745_TheSecretIngredients extends Quest
 					{
 						giveItems(player, FAERON_SUPPORT_BOX);
 					}
-					showOnScreenMsg(player, NpcStringId.CHECK_YOUR_EQUIPMENT_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 4500);
+					showOnScreenMsg(player, NpcStringId.CHECK_YOUR_EQUIPMENT_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 10000);
 					qs.exitQuest(false, true);
-					htmltext = event;
 				}
 				break;
 			}
-			case "spawn_dolkin":
+			case "SPAWN_DOLKIN":
 			{
-				showOnScreenMsg(player, NpcStringId.TALK_TO_DOLKIN_AND_LEAVE_THE_KARAPHON_HABITAT, ExShowScreenMessage.TOP_CENTER, 4500);
-				addSpawn(DOLKIN_INSTANCE, player.getLocation(), false, 0, false, player.getInstanceId());
+				showOnScreenMsg(player, NpcStringId.TALK_TO_DOLKIN_AND_LEAVE_THE_KARAPHON_HABITAT, ExShowScreenMessage.TOP_CENTER, 5000);
+				addSpawn(DOLKIN_INSTANCE, npc.getLocation(), false, 0, false, player.getInstanceId());
+				htmltext = null;
 				break;
 			}
+			default:
+				htmltext = null;
 		}
 		return htmltext;
 	}
@@ -132,9 +137,20 @@ public final class Q10745_TheSecretIngredients extends Quest
 				{
 					htmltext = "33954-01.htm";
 				}
-				else if (qs.isCond(2))
+				else if (qs.isStarted())
 				{
-					htmltext = "33954-03.htm";
+					if (qs.isCond(1))
+					{
+						htmltext = "33954-03.html";
+					}
+					else if (qs.isCond(2))
+					{
+						htmltext = "33954-04.html";
+					}
+					else if (qs.isCond(3))
+					{
+						htmltext = "33954-06.html";
+					}
 				}
 				break;
 			}
@@ -142,7 +158,7 @@ public final class Q10745_TheSecretIngredients extends Quest
 			{
 				if (qs.isCond(3))
 				{
-					htmltext = "33933-01.htm";
+					htmltext = "33933-01.html";
 				}
 				break;
 			}
@@ -154,16 +170,18 @@ public final class Q10745_TheSecretIngredients extends Quest
 	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(killer, false);
-		
 		if (qs != null)
 		{
 			int killedMobs = qs.getMemoStateEx(0);
-			killedMobs++;
-			if (qs.isCond(1) && (killedMobs == 3))
+			if (npc.getId() == KARAPHON)
 			{
 				giveItems(killer, SECRET_INGREDIENTS);
 				qs.setCond(2, true);
-				startQuestTimer("spawn_dolkin", 5000, npc, killer);
+				sendNpcLogList(killer);
+			}
+			if ((++killedMobs) == 3)
+			{
+				startQuestTimer("SPAWN_DOLKIN", 5000, npc, killer);
 			}
 			else
 			{

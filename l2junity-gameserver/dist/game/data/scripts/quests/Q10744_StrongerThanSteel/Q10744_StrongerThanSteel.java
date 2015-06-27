@@ -30,12 +30,13 @@ import org.l2junity.gameserver.model.quest.QuestState;
  */
 public final class Q10744_StrongerThanSteel extends Quest
 {
-	// NPC's
+	// NPCs
 	private static final int MILONE = 33953;
 	private static final int DOLKIN = 33954;
+	// Monsters
 	private static final int TREANT = 23457;
 	private static final int LEAFIE = 23458;
-	// Item
+	// Items
 	private static final int TREANT_LEAF = 39532;
 	private static final int LEAFIE_LEAF = 39531;
 	// Misc
@@ -48,9 +49,10 @@ public final class Q10744_StrongerThanSteel extends Quest
 		addStartNpc(MILONE);
 		addTalkId(MILONE, DOLKIN);
 		addKillId(TREANT, LEAFIE);
+		
+		addCondRace(Race.ERTHEIA, "");
+		addCondLevel(MIN_LEVEL, MAX_LEVEL, "33953-00.htm");
 		registerQuestItems(TREANT_LEAF, LEAFIE_LEAF);
-		addCondLevel(MIN_LEVEL, MAX_LEVEL, "fixme.htm");
-		addCondRace(Race.ERTHEIA, "fixme.htm");
 	}
 	
 	@Override
@@ -62,35 +64,35 @@ public final class Q10744_StrongerThanSteel extends Quest
 			return null;
 		}
 		
-		String htmltext = null;
+		String htmltext = event;
 		switch (event)
 		{
 			case "33953-02.htm":
-			case "33954-02.htm":
-			{
-				htmltext = event;
+			case "33954-02.html":
 				break;
-			}
 			case "33953-03.htm":
 			{
 				qs.startQuest();
-				htmltext = event;
+				sendNpcLogList(player);
 				break;
 			}
-			case "33954-03.htm":
+			case "33954-03.html":
 			{
 				if (qs.isCond(1))
 				{
 					qs.setCond(2, true);
+					sendNpcLogList(player);
 				}
 				break;
 			}
+			default:
+				htmltext = null;
 		}
 		return htmltext;
 	}
 	
 	@Override
-	public String onTalk(Npc npc, PlayerInstance player)
+	public String onTalk(Npc npc, PlayerInstance player, boolean isSimulated)
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
@@ -108,24 +110,34 @@ public final class Q10744_StrongerThanSteel extends Quest
 				{
 					htmltext = "33953-01.htm";
 				}
-				else if (qs.isStarted())
+				else if (qs.isStarted() && qs.isCond(1))
 				{
-					htmltext = "33953-03.htm";
+					htmltext = "33953-04.html";
 				}
 				break;
 			}
 			case DOLKIN:
 			{
-				if (qs.isCond(1))
+				if (qs.isStarted())
 				{
-					htmltext = "33954-01.htm";
-				}
-				else if (qs.isCond(3))
-				{
-					htmltext = "33954-04.htm";
-					giveAdena(player, 34000, true);
-					addExpAndSp(player, 112001, 5);
-					qs.exitQuest(false, true);
+					if (qs.isCond(1))
+					{
+						htmltext = "33954-01.html";
+					}
+					else if (qs.isCond(2))
+					{
+						htmltext = "33954-04.html";
+					}
+					else if (qs.isCond(3))
+					{
+						if (!isSimulated)
+						{
+							giveAdena(player, 34000, true);
+							addExpAndSp(player, 112001, 5);
+							qs.exitQuest(false, true);
+						}
+						htmltext = "33954-05.html";
+					}
 				}
 				break;
 			}
@@ -152,6 +164,7 @@ public final class Q10744_StrongerThanSteel extends Quest
 			if ((getQuestItemsCount(killer, TREANT_LEAF) >= 20) && (getQuestItemsCount(killer, LEAFIE_LEAF) >= 15))
 			{
 				qs.setCond(3, true);
+				sendNpcLogList(killer);
 			}
 		}
 		return super.onKill(npc, killer, isSummon);
