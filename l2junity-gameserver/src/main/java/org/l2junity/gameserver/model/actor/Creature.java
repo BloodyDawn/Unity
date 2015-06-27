@@ -4904,6 +4904,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			// When killing blow is made, the target doesn't reflect.
 			if ((reflectedDamage > 0) && !target.isDead())
 			{
+				target.sendDamageMessage(this, reflectedDamage, false, false, false);
 				reduceCurrentHp(reflectedDamage, target, true, false, null);
 				notifyDamageReceived(reflectedDamage, target, null, crit, false, true);
 			}

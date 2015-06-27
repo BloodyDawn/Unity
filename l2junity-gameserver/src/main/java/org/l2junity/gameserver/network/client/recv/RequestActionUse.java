@@ -877,6 +877,42 @@ public final class RequestActionUse implements IClientIncomingPacket
 			case 1143: // Blood Panther - Panther Rush
 				useServitorsSkill(activeChar, 10088);
 				break;
+			case 1144: // Commando Cat - Commando Jumping Attack
+				useServitorsSkill(activeChar, 11375);
+				break;
+			case 1145: // Commando Cat - Commando Double Slash
+				useServitorsSkill(activeChar, 11376);
+				break;
+			case 1146: // Witch Cat - Elemental Slam
+				useServitorsSkill(activeChar, 11378);
+				break;
+			case 1147: // Witch Cat - Witch Cat Power
+				useServitorsSkill(activeChar, 11377);
+				break;
+			case 1148: // Unicorn Lancer - Lancer Rush
+				useServitorsSkill(activeChar, 11379);
+				break;
+			case 1149: // Unicorn Lancer - Power Stamp
+				useServitorsSkill(activeChar, 11380);
+				break;
+			case 1150: // Unicorn Cherub - Multiple Icicles
+				useServitorsSkill(activeChar, 11382);
+				break;
+			case 1151: // Unicorn Cherub - Cherub Power
+				useServitorsSkill(activeChar, 11381);
+				break;
+			case 1152: // Dark Crusader - Phantom Sword Attack
+				useServitorsSkill(activeChar, 11383);
+				break;
+			case 1153: // Dark Crusader - Phantom Blow
+				useServitorsSkill(activeChar, 11384);
+				break;
+			case 1154: // Banshee Queen - Phantom Spike
+				useServitorsSkill(activeChar, 11385);
+				break;
+			case 1155: // Banshee Queen - Phantom Crash
+				useServitorsSkill(activeChar, 11386);
+				break;
 			case 5000: // Baby Rudolph - Reindeer Scratch
 				useSkill(activeChar, 23155, true);
 				break;
@@ -1535,6 +1571,18 @@ public final class RequestActionUse implements IClientIncomingPacket
 			case 11346: return 1141; // Wynn Soulless - Phantom Power
 			case 10087: return 1142; // Blood Panther - Panther Roar
 			case 10088: return 1143; // Blood Panther - Panther Rush
+			case 11375: return 1144; // Commando Cat - Commando Jumping Attack
+			case 11376: return 1145; // Commando Cat - Commando Double Slash
+			case 11378: return 1146; // Witch Cat - Elemental Slam
+			case 11377: return 1147; // Witch Cat - Witch Cat Power
+			case 11379: return 1148; // Unicorn Lancer - Lancer Rush
+			case 11380: return 1149; // Unicorn Lancer - Power Stamp
+			case 11382: return 1150; // Unicorn Cherub - Multiple Icicles
+			case 11381: return 1151; // Unicorn Cherub - Cherub Power
+			case 11383: return 1152; // Dark Crusader - Phantom Sword Attack
+			case 11384: return 1153; // Dark Crusader - Phantom Blow
+			case 11385: return 1154; // Banshee Queen - Phantom Spike
+			case 11386: return 1155; // Banshee Queen - Phantom Crash
 			case 23155: return 5000; // Baby Rudolph - Reindeer Scratch
 			case 23167: return 5001; // Deseloph, Hyum, Rekang, Lilias, Lapham, Mafum - Rosy Seduction
 			case 23168: return 5002; // Deseloph, Hyum, Rekang, Lilias, Lapham, Mafum - Critical Seduction

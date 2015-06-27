@@ -1682,7 +1682,7 @@
 		</for>
 	</skill>
 	<skill id="11375" levels="3" name="Commando Jumping Attack">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Jumps and hulrs attack to target and nearby enemies with 18224 Power added to P. Atk., and decreases Speed by 100 for 5 seconds. -->
 		<table name="#abnormalLvls"> 1 2 3 </table>
 		<table name="#mpConsumes"> 86 86 87 </table>
@@ -1691,7 +1691,7 @@
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="SPEED_DOWN" />
-		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="activateRate" val="100" /> <!-- Guessed -->
 		<set name="affectRange" val="600" />
 		<set name="basicProperty" val="CON" />
 		<set name="operateType" val="DA2" />
@@ -1719,7 +1719,7 @@
 		</for>
 	</skill>
 	<skill id="11376" levels="3" name="Commando Double Smash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts damage with 32410 Power added to P. Atk. And knocks down for 3 seconds. -->
 		<table name="#mpConsumes"> 86 86 87 </table>
 		<table name="#power"> 32410 34072 35734 </table>
@@ -1748,7 +1748,7 @@
 		</for>
 	</skill>
 	<skill id="11377" levels="3" name="Witch Cat Power">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts damage to nearby enemies with 31903 Power added to P. Atk. -->
 		<table name="#effectPoint"> -3541 -3561 -3561 </table>
 		<table name="#mpConsumes"> 172 173 174 </table>
@@ -1769,7 +1769,7 @@
 		</for>
 	</skill>
 	<skill id="11378" levels="3" name="Elemental Slam">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts damage to nearby enemies with 30623 Power added to P. Atk. and pushes them back. -->
 		<table name="#effectPoint"> -3541 -3561 -3561 </table>
 		<table name="#mpConsumes"> 172 173 174 </table>
@@ -1780,7 +1780,8 @@
 		<set name="abnormalTime" val="1" />
 		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
 		<set name="activateRate" val="80" /> <!-- Guessed -->
-		<set name="affectRange" val="200" /> <!-- Guessed -->
+		<set name="affectRange" val="150" /> <!-- Guessed -->
+		<set name="basicProperty" val="CON" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="#power" />
 		<set name="targetType" val="AURA" />
@@ -1800,7 +1801,7 @@
 		</for>
 	</skill>
 	<skill id="11379" levels="3" name="Lancer Rush">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Rushes forward to target inflicting damage with 16198 Power added to P. Atk. And stuns them for 5 seconds. -->
 		<table name="#effectPoint"> -3541 -3561 -3561 </table>
 		<table name="#mpConsumes"> 86 86 87 </table>
@@ -1817,7 +1818,7 @@
 		<set name="effectRange" val="800" />
 		<set name="fanRange" val="0,0,600,60" />
 		<set name="flyType" val="CHARGE" />
-		<set name="operateType" val="DA1" />
+		<set name="operateType" val="DA2" />
 		<set name="power" val="#power" />
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="trait" val="SHOCK" />
@@ -1838,27 +1839,38 @@
 		</for>
 	</skill>
 	<skill id="11380" levels="3" name="Power Stump">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts damage to nearby enemies with 22677 Power added to P. Atk. and blows them away. -->
 		<table name="#effectPoint"> -3541 -3561 -3561 </table>
 		<table name="#mpConsumes"> 86 86 87 </table>
 		<table name="#power"> 22677 23839 25001 </table>
 		<set name="icon" val="icon.skill30006" />
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalType" val="KNOCK_BACK" />
+		<set name="abnormalTime" val="1" />
+		<set name="abnormalVisualEffect" val="KNOCK_BACK" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
-		<set name="operateType" val="A1" />
+		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="basicProperty" val="CON" />
+		<set name="operateType" val="A2" />
 		<set name="power" val="#power" />
 		<set name="targetType" val="AURA" />
+		<set name="trait" val="KNOCKBACK" />
 		<set name="mpConsume" val="#mpConsumes" />
 		<set name="hitTime" val="1500" />
 		<set name="coolTime" val="500" />
 		<set name="effectPoint" val="#effectPoint" />
 		<set name="reuseDelay" val="7000" />
+		<set name="isDebuff" val="true" />
 		<for>
 			<effect name="PhysicalAttack" />
+			<effect name="KnockBack">
+				<param speed="400" distance="100" /> <!-- Guessed -->
+			</effect>
 		</for>
 	</skill>
 	<skill id="11381" levels="3" name="Cherub Power">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts damage to nearby enemies with 31903 Power added to P. Atk. -->
 		<table name="#effectPoint"> -3541 -3561 -3561 </table>
 		<table name="#mpConsumes"> 172 173 174 </table>
@@ -1879,7 +1891,7 @@
 		</for>
 	</skill>
 	<skill id="11382" levels="3" name="Multiple Icicles">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts damage to target and nearby enemies with 34449 Power added to P. Atk., and decreases Speed by 100 for 5 seconds. -->
 		<table name="#effectPoint"> -3541 -3561 -3561 </table>
 		<table name="#abnormalLvls"> 1 2 3 </table>
@@ -1889,7 +1901,7 @@
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="5" />
 		<set name="abnormalType" val="SPEED_DOWN" />
-		<set name="activateRate" val="80" /> <!-- Guessed -->
+		<set name="activateRate" val="100" />
 		<set name="affectRange" val="200" /> <!-- Guessed -->
 		<set name="basicProperty" val="CON" />
 		<set name="operateType" val="A2" />
@@ -1910,7 +1922,7 @@
 		</for>
 	</skill>
 	<skill id="11383" levels="3" name="Phantom Sword Attack">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts damage with 40502 Power added to P. Atk. -->
 		<table name="#mpConsumes"> 86 86 87 </table>
 		<table name="#power"> 40502 42578 44654 </table>
@@ -1930,7 +1942,7 @@
 		</for>
 	</skill>
 	<skill id="11384" levels="3" name="Phantom Blow">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Attacks the target's vital points with 45696 Power added to P. Atk. -->
 		<table name="#mpConsumes"> 86 86 87 </table>
 		<table name="#power"> 45696 47772 49848 </table>
@@ -1955,7 +1967,7 @@
 		</for>
 	</skill>
 	<skill id="11385" levels="3" name="Phantom Spike">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Attacks the target's vital points with 51411 Power added to P. Atk. -->
 		<table name="#mpConsumes"> 86 86 87 </table>
 		<table name="#power"> 51411 56083 56083 </table>
@@ -1979,7 +1991,7 @@
 		</for>
 	</skill>
 	<skill id="11386" levels="3" name="Phantom Crash">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Inflicts damage with 45568 Power added to P. Atk. -->
 		<table name="#mpConsumes"> 86 86 87 </table>
 		<table name="#power"> 45568 47904 50240 </table>
