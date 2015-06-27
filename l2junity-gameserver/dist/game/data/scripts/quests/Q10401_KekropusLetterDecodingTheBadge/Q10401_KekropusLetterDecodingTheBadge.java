@@ -231,7 +231,7 @@ public final class Q10401_KekropusLetterDecodingTheBadge extends Quest
 		final PlayerInstance player = event.getActiveChar();
 		final QuestState st = getQuestState(player, false);
 		
-		if ((player.getLevel() >= MIN_LEVEL) && (player.getLevel() <= MAX_LEVEL) && (st == null))
+		if ((player.getLevel() >= MIN_LEVEL) && (player.getLevel() <= MAX_LEVEL) && (st == null) && (player.getRace() != Race.ERTHEIA))
 		{
 			showOnScreenMsg(player, NpcStringId.KEKROPUS_LETTER_HAS_ARRIVED_NCLICK_THE_QUESTION_MARK_ICON_TO_READ3, ExShowScreenMessage.TOP_CENTER, 6000);
 			player.sendPacket(new TutorialShowQuestionMark(getId()));
