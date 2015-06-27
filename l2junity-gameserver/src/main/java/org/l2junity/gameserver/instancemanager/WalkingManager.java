@@ -437,7 +437,11 @@ public final class WalkingManager implements IXmlReader
 					{
 						walk.setLastAction(System.currentTimeMillis());
 					}
-					ThreadPoolManager.getInstance().scheduleGeneral(new ArrivedTask(npc, walk), 100 + (node.getDelay() * 1000L));
+					
+					if (_activeRoutes.containsKey(npc.getObjectId()))
+					{
+						ThreadPoolManager.getInstance().scheduleGeneral(new ArrivedTask(npc, walk), 100 + (node.getDelay() * 1000L));
+					}
 				}
 			}
 		}

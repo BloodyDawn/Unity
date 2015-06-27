@@ -24,6 +24,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
+import org.l2junity.gameserver.model.quest.State;
 
 /**
  * A Draught For The Cold (10741)
@@ -52,9 +53,10 @@ public final class Q10741_ADraughtForTheCold extends Quest
 		addStartNpc(SIVANTHE);
 		addTalkId(SIVANTHE, LEIRA);
 		addKillId(HONEY_BEE, KIKU, ROBUST_HONEY_BEE);
+		
+		addCondRace(Race.ERTHEIA, "");
+		addCondLevel(MIN_LEVEL, MAX_LEVEL, "33951-00.htm");
 		registerQuestItems(EMPTY_HONEY_JAR, SWEET_HONEY, NUTRITIOUS_MEAT);
-		addCondLevel(MIN_LEVEL, MAX_LEVEL, "33951-07.htm");
-		addCondRace(Race.ERTHEIA, "33951-07.htm");
 	}
 	
 	@Override
@@ -66,32 +68,30 @@ public final class Q10741_ADraughtForTheCold extends Quest
 			return null;
 		}
 		
-		String htmltext = null;
+		String htmltext = event;
 		switch (event)
 		{
+			case "33951-02.htm":
+				break;
 			case "33951-03.htm":
 			{
 				qs.startQuest();
+				sendNpcLogList(player);
 				giveItems(player, EMPTY_HONEY_JAR, 10);
-				htmltext = event;
 				break;
 			}
-			case "33951-02.htm":
-			{
-				htmltext = event;
-				break;
-			}
-			case "33952-02.htm":
+			case "33952-02.html":
 			{
 				if (qs.isCond(2))
 				{
 					giveAdena(player, 2000, true);
 					addExpAndSp(player, 22973, 2);
 					qs.exitQuest(false, true);
-					htmltext = event;
 				}
 				break;
 			}
+			default:
+				htmltext = null;
 		}
 		return htmltext;
 	}
@@ -102,22 +102,26 @@ public final class Q10741_ADraughtForTheCold extends Quest
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
 		
-		if (qs.isCompleted())
-		{
-			htmltext = getAlreadyCompletedMsg(player);
-		}
-		
 		switch (npc.getId())
 		{
 			case SIVANTHE:
 			{
-				if (qs.isCreated())
+				switch (qs.getState())
 				{
-					htmltext = "33951-01.htm";
-				}
-				else if (qs.isStarted())
-				{
-					htmltext = "33951-04.htm";
+					case State.CREATED:
+						htmltext = "33951-01.htm";
+						break;
+					case State.STARTED:
+					{
+						if (qs.isCond(1))
+						{
+							htmltext = "33951-04.html";
+						}
+						break;
+					}
+					case State.COMPLETED:
+						htmltext = getAlreadyCompletedMsg(player);
+						break;
 				}
 				break;
 			}
@@ -125,7 +129,7 @@ public final class Q10741_ADraughtForTheCold extends Quest
 			{
 				if (qs.isCond(2))
 				{
-					htmltext = "33952-01.htm";
+					htmltext = "33952-01.html";
 				}
 				break;
 			}
@@ -162,6 +166,7 @@ public final class Q10741_ADraughtForTheCold extends Quest
 			if ((getQuestItemsCount(killer, SWEET_HONEY) >= 10) && (getQuestItemsCount(killer, NUTRITIOUS_MEAT) >= 10))
 			{
 				qs.setCond(2, true);
+				sendNpcLogList(killer);
 			}
 		}
 		return super.onKill(npc, killer, isSummon);

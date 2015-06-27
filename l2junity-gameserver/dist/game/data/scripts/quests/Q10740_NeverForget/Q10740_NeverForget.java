@@ -19,13 +19,17 @@
 package quests.Q10740_NeverForget;
 
 import org.l2junity.gameserver.enums.Race;
+import org.l2junity.gameserver.instancemanager.QuestManager;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
+import org.l2junity.gameserver.model.quest.State;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
 import org.l2junity.gameserver.network.client.send.string.NpcStringId;
+
+import ai.npc.RemembranceTower.RemembranceTower;
 
 /**
  * Never Forget (10740)
@@ -56,10 +60,11 @@ public final class Q10740_NeverForget extends Quest
 		super(10740, Q10740_NeverForget.class.getSimpleName(), "Never Forget");
 		addStartNpc(SIVANTHE);
 		addTalkId(SIVANTHE, REMEMBERANCE_TOWER);
-		registerQuestItems(UNNAMED_RELICS);
 		addKillId(MOBS);
+		
+		addCondRace(Race.ERTHEIA, "");
 		addCondLevel(MIN_LEVEL, MAX_LEVEL, "33951-07.htm");
-		addCondRace(Race.ERTHEIA, "33951-07.htm");
+		registerQuestItems(UNNAMED_RELICS);
 	}
 	
 	@Override
@@ -71,95 +76,106 @@ public final class Q10740_NeverForget extends Quest
 			return null;
 		}
 		
-		String htmltext = null;
+		String htmltext = event;
 		switch (event)
 		{
+			case "33951-02.htm":
+				break;
 			case "33951-03.htm":
 			{
 				qs.startQuest();
-				htmltext = event;
+				sendNpcLogList(player);
 				break;
 			}
-			case "33989-02.htm":
+			case "33989-02.html":
 			{
 				if (qs.isCond(2) && (getQuestItemsCount(player, UNNAMED_RELICS) >= 20))
 				{
-					takeItems(player, UNNAMED_RELICS, 20);
+					final Quest q = QuestManager.getInstance().getQuest(RemembranceTower.class.getSimpleName());
+					if (q != null)
+					{
+						q.notifyEvent("action", npc, null);
+					}
+					takeItems(player, UNNAMED_RELICS, -1);
 					qs.setCond(3, true);
-					htmltext = event;
+					sendNpcLogList(player);
 				}
 				break;
 			}
-			case "33951-02.htm":
-			{
-				htmltext = event;
-				break;
-			}
+			default:
+				htmltext = null;
 		}
 		return htmltext;
 	}
 	
 	@Override
-	public String onTalk(Npc npc, PlayerInstance player)
+	public String onTalk(Npc npc, PlayerInstance player, boolean isSimulated)
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		
-		if (qs.isCompleted())
-		{
-			htmltext = getAlreadyCompletedMsg(player);
-		}
 		
 		switch (npc.getId())
 		{
 			case SIVANTHE:
 			{
-				if (qs.isCreated())
+				switch (qs.getState())
 				{
-					htmltext = "33951-01.htm";
-				}
-				else if (qs.isStarted())
-				{
-					switch (qs.getCond())
+					case State.CREATED:
+						htmltext = "33951-01.htm";
+						break;
+					case State.STARTED:
 					{
-						case 1:
+						switch (qs.getCond())
 						{
-							htmltext = "33951-04.htm";
-							break;
+							case 1:
+							{
+								htmltext = "33951-04.html";
+								break;
+							}
+							case 2:
+							{
+								htmltext = "33951-05.html";
+								break;
+							}
+							case 3:
+							{
+								if (!isSimulated)
+								{
+									showOnScreenMsg(player, NpcStringId.CHECK_YOUR_EQUIPMENT_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 10000);
+									giveAdena(player, 1600, true);
+									giveItems(player, RING_OF_KNOWLEDGE);
+									giveItems(player, HEALING_POTION);
+									addExpAndSp(player, 16851, 0);
+									qs.exitQuest(false, true);
+								}
+								htmltext = "33951-06.html";
+								break;
+							}
 						}
-						case 2:
-						{
-							htmltext = "33951-05.htm";
-							break;
-						}
-						case 3:
-						{
-							giveItems(player, RING_OF_KNOWLEDGE);
-							giveItems(player, HEALING_POTION);
-							giveAdena(player, 1600, true);
-							addExpAndSp(player, 16851, 0);
-							qs.exitQuest(false, true);
-							showOnScreenMsg(player, NpcStringId.CHECK_YOUR_EQUIPMENT_IN_YOUR_INVENTORY, ExShowScreenMessage.TOP_CENTER, 4500);
-							htmltext = "33951-06.htm";
-							break;
-						}
+						break;
 					}
+					case State.COMPLETED:
+						htmltext = getAlreadyCompletedMsg(player);
+						break;
 				}
 				break;
 			}
 			case REMEMBERANCE_TOWER:
 			{
-				switch (qs.getCond())
+				if (qs.isStarted())
 				{
-					case 2:
+					switch (qs.getCond())
 					{
-						htmltext = "33989-01.htm";
-						break;
-					}
-					case 3:
-					{
-						htmltext = "33989-03.htm";
-						break;
+						case 2:
+						{
+							htmltext = "33989-01.html";
+							break;
+						}
+						case 3:
+						{
+							htmltext = "33989-03.html";
+							break;
+						}
 					}
 				}
 				break;
@@ -172,13 +188,10 @@ public final class Q10740_NeverForget extends Quest
 	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(killer, false);
-		
-		if ((qs != null) && qs.isCond(1))
+		if ((qs != null) && qs.isCond(1) && giveItemRandomly(killer, npc, UNNAMED_RELICS, 1, 20, 1.0, true))
 		{
-			if (giveItemRandomly(killer, npc, UNNAMED_RELICS, 1, 20, 1.0, true))
-			{
-				qs.setCond(2);
-			}
+			qs.setCond(2);
+			sendNpcLogList(killer);
 		}
 		return super.onKill(npc, killer, isSummon);
 	}

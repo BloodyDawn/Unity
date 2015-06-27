@@ -247,9 +247,21 @@
 			<npc id="33952" x="-78080" y="237343" z="-3536" heading="23740" respawnTime="60sec" /> <!-- Leira -->
 			<npc id="33953" x="-82832" y="237181" z="-3272" heading="16836" respawnTime="60sec" /> <!-- Milone -->
 			<npc id="33954" x="-88352" y="237472" z="-2880" respawnTime="60sec" /> <!-- Dolkin -->
-			<npc id="33995" x="-81213" y="237970" z="-3272" respawnTime="60sec" /> <!-- Kiku's Cave -->
-			<npc id="33995" x="-80109" y="237540" z="-3272" respawnTime="60sec" /> <!-- Kiku's Cave -->
-			<npc id="33995" x="-80336" y="237504" z="-3272" respawnTime="60sec" /> <!-- Kiku's Cave -->
+			<npc id="33995" x="-81213" y="237970" z="-3272" respawnTime="60sec"> <!-- Kiku's Cave -->
+				<parameters>
+					<param name="caveId" value="0" />
+				</parameters>
+			</npc>
+			<npc id="33995" x="-80109" y="237540" z="-3272" respawnTime="60sec"> <!-- Kiku's Cave -->
+				<parameters>
+					<param name="caveId" value="1" />
+				</parameters>
+			</npc>
+			<npc id="33995" x="-80336" y="237504" z="-3272" respawnTime="60sec"> <!-- Kiku's Cave -->
+				<parameters>
+					<param name="caveId" value="2" />
+				</parameters>
+			</npc>
 		</group>
 	</spawn>
 </list>
