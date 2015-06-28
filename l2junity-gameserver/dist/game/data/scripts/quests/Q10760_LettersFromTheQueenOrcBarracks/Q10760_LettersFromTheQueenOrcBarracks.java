@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package quests.Q10755_LettersFromTheQueenWindyHill;
+package quests.Q10760_LettersFromTheQueenOrcBarracks;
 
 import org.l2junity.gameserver.enums.HtmlActionScope;
 import org.l2junity.gameserver.enums.Race;
@@ -42,32 +42,32 @@ import org.l2junity.gameserver.network.client.send.string.NpcStringId;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
 /**
- * Letters from the Queen: Windy Hill (10755)
+ * Letters from the Queen: Orc Barracks (10760)
  * @author malyelfik
  */
-public final class Q10755_LettersFromTheQueenWindyHill extends Quest
+public class Q10760_LettersFromTheQueenOrcBarracks extends Quest
 {
-	// NPCs
+	// NPC
 	private static final int LEVIAN = 30037;
-	private static final int PIO = 33963;
+	private static final int PIOTUR = 30597;
+	// Items
+	private static final int STEEL_DOOR_GUILD_COIN = 37045;
+	private static final int SOE_GLUDIN_VILLAGE = 39486;
+	private static final int SOE_ORC_BARRACKS = 39487;
 	// Location
 	private static final Location TELEPORT_LOC = new Location(-79816, 150828, -3040);
-	// Item
-	private static final int STEEL_DOOR_GUILD_COIN = 37045;
-	private static final int SOE_GLUDIN_VILLAGE = 39491;
-	private static final int SOE_WINDY_HILL = 39492;
 	// Misc
-	private static final int MIN_LEVEL = 20;
-	private static final int MAX_LEVEL = 29;
+	private static final int MIN_LEVEL = 30;
+	private static final int MAX_LEVEL = 39;
 	
-	public Q10755_LettersFromTheQueenWindyHill()
+	public Q10760_LettersFromTheQueenOrcBarracks()
 	{
-		super(10755, Q10755_LettersFromTheQueenWindyHill.class.getSimpleName(), "Letters from the Queen: Windy Hill");
-		addTalkId(LEVIAN, PIO);
+		super(10760, Q10760_LettersFromTheQueenOrcBarracks.class.getSimpleName(), "Letters from the Queen: Orc Barracks");
+		addTalkId(LEVIAN, PIOTUR);
 		
 		addCondRace(Race.ERTHEIA, "");
 		addCondLevel(MIN_LEVEL, MAX_LEVEL, "");
-		registerQuestItems(SOE_GLUDIN_VILLAGE, SOE_WINDY_HILL);
+		registerQuestItems(SOE_GLUDIN_VILLAGE, SOE_ORC_BARRACKS);
 	}
 	
 	@Override
@@ -83,7 +83,7 @@ public final class Q10755_LettersFromTheQueenWindyHill extends Quest
 		switch (event)
 		{
 			case "30037-02.html":
-			case "33963-02.html":
+			case "30597-02.html":
 				break;
 			case "30037-03.html":
 			{
@@ -91,19 +91,19 @@ public final class Q10755_LettersFromTheQueenWindyHill extends Quest
 				{
 					qs.setCond(2, true);
 					sendNpcLogList(player);
-					giveItems(player, SOE_WINDY_HILL, 1);
-					qs.setQuestLocation(NpcStringId.WINDY_HILL_LV_26);
-					showOnScreenMsg(player, NpcStringId.TRY_USING_THE_TELEPORT_SCROLL_LEVIAN_GAVE_YOU, ExShowScreenMessage.TOP_CENTER, 5000);
+					giveItems(player, SOE_ORC_BARRACKS, 1);
+					qs.setQuestLocation(NpcStringId.ORC_BARRACKS_LV_35);
+					showOnScreenMsg(player, NpcStringId.TRY_USING_THE_TELEPORT_SCROLL_LEVIAN_GAVE_YOU_TO_GO_TO_ORC_BARRACKS, ExShowScreenMessage.TOP_CENTER, 5000);
 				}
 				break;
 			}
-			case "33963-03.html":
+			case "30597-03.html":
 			{
 				if (qs.isCond(2))
 				{
 					giveItems(player, STEEL_DOOR_GUILD_COIN, 5);
-					addExpAndSp(player, 120960, 29);
-					showOnScreenMsg(player, NpcStringId.GROW_STRONGER_HERE_UNTIL_YOU_RECEIVE_THE_NEXT_LETTER_FROM_QUEEN_NAVARI_AT_LV_30, ExShowScreenMessage.TOP_CENTER, 8000);
+					addExpAndSp(player, 242760, 58);
+					showOnScreenMsg(player, NpcStringId.TRY_TALKING_TO_VORBOS_BY_THE_WELL_NYOU_CAN_RECEIVE_QUEEN_NAVARI_S_NEXT_LETTER_AT_LV_40, ExShowScreenMessage.TOP_CENTER, 8000);
 					qs.exitQuest(false, true);
 				}
 				break;
@@ -131,7 +131,7 @@ public final class Q10755_LettersFromTheQueenWindyHill extends Quest
 		}
 		else if (qs.isStarted() && qs.isCond(2))
 		{
-			htmltext = "33963-01.html";
+			htmltext = "30597-01.html";
 		}
 		return htmltext;
 	}
@@ -147,7 +147,7 @@ public final class Q10755_LettersFromTheQueenWindyHill extends Quest
 			
 			st.startQuest();
 			st.setQuestLocation(NpcStringId.THE_VILLAGE_OF_GLUDIN);
-			player.sendPacket(new PlaySound(3, "Npcdialog1.serenia_quest_1", 0, 0, 0, 0, 0));
+			player.sendPacket(new PlaySound(3, "Npcdialog1.serenia_quest_2", 0, 0, 0, 0, 0));
 			player.sendPacket(new TutorialShowHtml(getHtm(player.getHtmlPrefix(), "popup.html")));
 			giveItems(player, SOE_GLUDIN_VILLAGE, 1);
 			sendNpcLogList(player);
@@ -162,7 +162,7 @@ public final class Q10755_LettersFromTheQueenWindyHill extends Quest
 		final PlayerInstance player = event.getActiveChar();
 		final QuestState st = getQuestState(player, false);
 		
-		if (command.equals("Q10755_teleport") && (st != null) && st.isCond(1) && hasQuestItems(player, SOE_GLUDIN_VILLAGE))
+		if (command.equals("Q10760_teleport") && (st != null) && st.isCond(1) && hasQuestItems(player, SOE_GLUDIN_VILLAGE))
 		{
 			if (!player.isInCombat())
 			{
@@ -220,6 +220,6 @@ public final class Q10755_LettersFromTheQueenWindyHill extends Quest
 	
 	public static void main(String[] args)
 	{
-		new Q10755_LettersFromTheQueenWindyHill();
+		new Q10760_LettersFromTheQueenOrcBarracks();
 	}
 }

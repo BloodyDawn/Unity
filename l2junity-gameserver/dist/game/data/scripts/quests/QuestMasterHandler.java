@@ -252,6 +252,7 @@ import quests.Q10755_LettersFromTheQueenWindyHill.Q10755_LettersFromTheQueenWind
 import quests.Q10756_AnInterdimensionalDraft.Q10756_AnInterdimensionalDraft;
 import quests.Q10757_QuietingTheStorm.Q10757_QuietingTheStorm;
 import quests.Q10758_TheOathOfTheWind.Q10758_TheOathOfTheWind;
+import quests.Q10760_LettersFromTheQueenOrcBarracks.Q10760_LettersFromTheQueenOrcBarracks;
 
 /**
  * @author NosBit
@@ -492,7 +493,8 @@ public class QuestMasterHandler
 		Q10755_LettersFromTheQueenWindyHill.class,
 		Q10756_AnInterdimensionalDraft.class,
 		Q10757_QuietingTheStorm.class,
-		Q10758_TheOathOfTheWind.class
+		Q10758_TheOathOfTheWind.class,
+		Q10760_LettersFromTheQueenOrcBarracks.class
 	};
 	
 	public static void main(String[] args)
