@@ -43,6 +43,7 @@ public final class Q10757_QuietingTheStorm extends Quest
 	// Monsters
 	private static final int VORTEX = 23417;
 	private static final int GIANT_WINDIMA = 23419;
+	private static final int IMMENSE_WINDIMA = 23420;
 	// Item
 	private static final int STEEL_DOOR_GUILD_COIN = 37045;
 	// Misc
@@ -55,7 +56,7 @@ public final class Q10757_QuietingTheStorm extends Quest
 		super(10757, Q10757_QuietingTheStorm.class.getSimpleName(), "Quieting the Storm");
 		addStartNpc(PIO);
 		addTalkId(PIO);
-		addKillId(VORTEX, GIANT_WINDIMA);
+		addKillId(VORTEX, GIANT_WINDIMA, IMMENSE_WINDIMA);
 		
 		addCondRace(Race.ERTHEIA, "33963-00.htm");
 		addCondMinLevel(MIN_LEVEL, "33963-00.htm");

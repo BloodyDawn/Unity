@@ -18,6 +18,7 @@
  */
 package ai.individual;
 
+import org.l2junity.gameserver.enums.Race;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.network.client.send.ExShowScreenMessage;
@@ -34,6 +35,7 @@ public final class WindVortex extends AbstractNpcAI
 	// NPC
 	private static final int VORTEX = 23417;
 	private static final int GIANT_WINDIMA = 23419;
+	private static final int IMMENSE_WINDIMA = 23420;
 	
 	public WindVortex()
 	{
@@ -47,8 +49,12 @@ public final class WindVortex extends AbstractNpcAI
 		if (npc.isScriptValue(0) && !npc.isDead())
 		{
 			npc.setScriptValue(1);
-			showOnScreenMsg(attacker, NpcStringId.A_POWERFUL_MONSTER_HAS_COME_TO_FACE_YOU, ExShowScreenMessage.TOP_CENTER, 5000);
-			addSpawn(GIANT_WINDIMA, npc, false, 120000);
+			if (attacker.getRace().equals(Race.ERTHEIA))
+			{
+				final int npcId = (attacker.isMageClass()) ? IMMENSE_WINDIMA : GIANT_WINDIMA;
+				showOnScreenMsg(attacker, NpcStringId.A_POWERFUL_MONSTER_HAS_COME_TO_FACE_YOU, ExShowScreenMessage.TOP_CENTER, 5000);
+				addSpawn(npcId, npc, false, 120000);
+			}
 		}
 		return super.onAttack(npc, attacker, damage, isSummon);
 	}
