@@ -36,6 +36,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListMap;
@@ -44,6 +45,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.stream.Collectors;
 
 import org.l2junity.Config;
 import org.l2junity.DatabaseFactory;
@@ -1409,24 +1411,16 @@ public final class PlayerInstance extends Playable
 	/**
 	 * @return a table containing all Quest in progress from the table _quests.
 	 */
-	public Quest[] getAllActiveQuests()
+	public List<Quest> getAllActiveQuests()
 	{
-		List<Quest> quests = new ArrayList<>();
-		for (QuestState qs : _quests.values())
-		{
-			if ((qs == null) || (qs.getQuest() == null) || (!qs.isStarted() && !Config.DEVELOPER))
-			{
-				continue;
-			}
-			final int questId = qs.getQuest().getId();
-			if ((questId > 19999) || (questId < 1))
-			{
-				continue;
-			}
-			quests.add(qs.getQuest());
-		}
-		
-		return quests.toArray(new Quest[quests.size()]);
+		//@formatter:off
+		return _quests.values().stream()
+			.filter(QuestState::isStarted)
+			.map(QuestState::getQuest)
+			.filter(Objects::nonNull)
+			.filter(q -> q.getId() > 1)
+			.collect(Collectors.toList());
+		//@formatter:on
 	}
 	
 	public void processQuestEvent(String questName, String event)

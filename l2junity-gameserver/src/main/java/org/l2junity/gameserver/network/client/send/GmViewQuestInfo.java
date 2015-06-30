@@ -18,6 +18,8 @@
  */
 package org.l2junity.gameserver.network.client.send;
 
+import java.util.List;
+
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.quest.QuestState;
@@ -29,30 +31,27 @@ import org.l2junity.network.PacketWriter;
  */
 public class GmViewQuestInfo implements IClientOutgoingPacket
 {
-	
 	private final PlayerInstance _activeChar;
+	private final List<Quest> _questList;
 	
 	public GmViewQuestInfo(PlayerInstance cha)
 	{
 		_activeChar = cha;
+		_questList = cha.getAllActiveQuests();
 	}
 	
 	@Override
 	public boolean write(PacketWriter packet)
 	{
 		OutgoingPackets.GM_VIEW_QUEST_INFO.writeId(packet);
-		
 		packet.writeS(_activeChar.getName());
+		packet.writeH(_questList.size()); // quest count
 		
-		Quest[] questList = _activeChar.getAllActiveQuests();
-		
-		packet.writeH(questList.length); // quest count
-		
-		for (Quest q : questList)
+		for (Quest quest : _questList)
 		{
-			final QuestState qs = _activeChar.getQuestState(q.getName());
+			final QuestState qs = _activeChar.getQuestState(quest.getName());
 			
-			packet.writeD(q.getId());
+			packet.writeD(quest.getId());
 			packet.writeD(qs == null ? 0 : qs.getCond());
 		}
 		packet.writeH(0x00); // some size

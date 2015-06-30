@@ -1586,12 +1586,6 @@ public class Quest extends AbstractScript implements IIdentifiable
 		{
 			_log.warn("could not insert char quest:", e);
 		}
-		
-		// events
-		for (String name : QuestManager.getInstance().getScripts().keySet())
-		{
-			player.processQuestEvent(name, "enter");
-		}
 	}
 	
 	/**
