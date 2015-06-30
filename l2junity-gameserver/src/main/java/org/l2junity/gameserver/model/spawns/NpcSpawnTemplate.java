@@ -262,6 +262,7 @@ public class NpcSpawnTemplate implements IParameterized<StatsSet>
 					}
 					_spawnedNpcs.add(npc);
 				}
+				SpawnTable.getInstance().addNewSpawn(spawn, false);
 			}
 		}
 		catch (Exception e)
